@@ -19,3 +19,13 @@ bool console::cursor_top(int top) noexcept {
   return set_cursor_position(cursor_left(), top);
 }
 
+std::string console::read_line() noexcept {
+  string result;
+  in >> result;
+  return result;
+}
+
+void console::write_line() noexcept {
+  out << std::endl;
+}
+

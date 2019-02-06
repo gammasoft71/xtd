@@ -5,6 +5,7 @@
 #include "export.hpp"
 
 #include <iostream>
+#include <string>
 
 /// @brief The gammasoft namespace contains all fundamental classes to access console.
 namespace gammasoft {
@@ -79,7 +80,9 @@ namespace gammasoft {
     static bool foreground_color(console_color color) noexcept;
     
     static bool reset_color() noexcept;
-    
+
+    static std::string read_line() noexcept;
+
     static bool set_cursor_position(int left, int top) noexcept;
 
     static int window_height() noexcept;
@@ -89,5 +92,35 @@ namespace gammasoft {
     static int window_top() noexcept;
     
     static int window_width() noexcept;
+    
+    template<typename Arg>
+    static void write(Arg&& arg) noexcept {
+      out << arg;
+    }
+    
+    static void write_line() noexcept;
+
+    template<typename Arg>
+    static void write_line(Arg&& arg) noexcept {
+      out << arg << std::endl;
+    }
+    
+    template<typename ... Args>
+    static void write(const std::string& format, Args&& ... args) noexcept {
+      out << console::format(format, std::forward<Args>(args) ...);
+    }
+    
+    template<typename ... Args>
+    static void write_line(const std::string& format, Args&& ... args) noexcept {
+      out << console::format(format, std::forward<Args>(args) ...) << std::endl;
+    }
+    
+  private:
+    template<typename ... Args>
+    static auto format(const std::string& format, Args&& ... args) noexcept {
+      std::string formated_string(snprintf(nullptr, 0, format.c_str(), std::forward<Args>(args) ...), 0);
+      snprintf(&formated_string[0], formated_string.size() + 1, format.c_str(), std::forward<Args>(args) ...);
+      return formated_string;
+    }
   };
 }
