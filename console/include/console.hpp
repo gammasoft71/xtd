@@ -2,7 +2,6 @@
 /// @brief Contains console class.
 #pragma once
 #include "console_color.hpp"
-#include "export.hpp"
 
 #include <iostream>
 #include <string>
@@ -15,7 +14,7 @@ namespace gammasoft {
   /// The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the SetIn and SetOut methods.
   /// @include Console.cpp
   /// @include ConsoleOut.cpp
-  class console_export_ console final {
+  class console final {
   public:
     static std::istream& in;
     
@@ -58,7 +57,7 @@ namespace gammasoft {
     static bool caps_lock() noexcept;
     
     static bool clrscr() noexcept;
-    
+
     static int cursor_left() noexcept;
 
     static bool cursor_left(int left) noexcept;
@@ -78,7 +77,15 @@ namespace gammasoft {
     static console_color foreground_color() noexcept;
     
     static bool foreground_color(console_color color) noexcept;
-    
+
+    static int input_code_page() noexcept;
+
+    static bool input_code_page(int codePage) noexcept;
+
+    static int output_code_page() noexcept;
+
+    static bool output_code_page(int codePage) noexcept;
+
     static bool reset_color() noexcept;
 
     static std::string read_line() noexcept;

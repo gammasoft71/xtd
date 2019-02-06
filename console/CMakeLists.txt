@@ -6,7 +6,6 @@ set(INCLUDES
   include/console
   include/console.hpp
   include/console_color.hpp
-  include/export.hpp
 )
 set(SOURCES
   src/console.cpp
@@ -23,7 +22,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Library properties
-add_library(${PROJECT_NAME} SHARED ${INCLUDES} ${SOURCES})
+add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

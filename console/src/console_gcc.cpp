@@ -208,6 +208,26 @@ bool console::foreground_color(console_color color) noexcept {
   return true;
 }
 
+int console::input_code_page() noexcept {
+  /// @todo console input code page status on linux and macOS
+  return 65001;
+}
+
+bool console::input_code_page(int codePage) noexcept {
+  /// @todo set console input code page on linux and macOS
+  return true;
+}
+
+int console::output_code_page() noexcept {
+  /// @todo console output code page status on linux and macOS
+  return 65001;
+}
+
+bool console::output_code_page(int codePage) noexcept {
+  /// @todo set console output code page on linux and macOS
+  return true;
+}
+
 bool console::reset_color() noexcept {
   if (!terminal::is_ansi_supported()) return false;
   cout << "\033[49m\033[39m" << flush;

@@ -41,6 +41,8 @@ int main() {
     u8"██████████████████████████████████████████████████████████████████",
   };
   
+  console::output_code_page(65001);
+
   for (size_t index = 0; index < logo.size(); ++index) {
     console::write(index == 0 || index == logo.size() - 1 ? "       " : "     ");
     console::background_color(console_color::white);

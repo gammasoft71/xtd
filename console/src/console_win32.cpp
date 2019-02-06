@@ -105,6 +105,23 @@ bool console::foreground_color(console_color color) noexcept {
   return SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes) == TRUE;
 }
 
+int console::input_code_page() noexcept {
+  return GetConsoleCP();
+}
+
+bool console::input_code_page(int codePage) noexcept {
+  return SetConsoleCP(codePage) == TRUE;
+}
+
+int console::output_code_page() noexcept {
+  return GetConsoleOutputCP();
+}
+
+bool console::output_code_page(int codePage) noexcept {
+  return SetConsoleOutputCP(codePage) == TRUE;
+}
+
+
 bool console::reset_color() noexcept {
   return background_color(backColor) && foreground_color(foreColor);
   return true;
