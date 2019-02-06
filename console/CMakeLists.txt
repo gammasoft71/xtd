@@ -3,9 +3,10 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(console VERSION 1.0.0)
 set(INCLUDES
-  include/export.hpp
+  include/console
   include/console.hpp
   include/console_color.hpp
+  include/export.hpp
 )
 set(SOURCES
   src/console.cpp

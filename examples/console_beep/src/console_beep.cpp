@@ -1,4 +1,4 @@
-#include <console/console.hpp>
+#include <console/console>
 
 using namespace gammasoft;
 

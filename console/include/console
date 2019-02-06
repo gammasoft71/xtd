@@ -1,0 +1,4 @@
+/// @file
+/// @brief Contains console class.
+#pragma once
+#include "console.hpp"
