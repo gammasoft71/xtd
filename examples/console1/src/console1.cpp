@@ -5,7 +5,7 @@ using namespace gammasoft;
 using namespace std;
 
 // The main entry point for the application.
-int main(int argc, char* argv[]) {
+int main() {
   console::write("Hello ");
   console::write_line("World!");
   console::write("Enter your name: ");

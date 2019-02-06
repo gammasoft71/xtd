@@ -65,7 +65,7 @@ void play(const vector<note>& tune) {
 }
 
 // The main entry point for the application.
-int main(int argc, char* argv[]) {
+int main() {
   // Declare the first few notes of the song, "Mary Had A Little Lamb".
   vector<note> mary = {
     note(tone::B, duration::QUARTER),
