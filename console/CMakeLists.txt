@@ -14,12 +14,10 @@ set(SOURCES
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})
-add_definitions(-DCONSOLE_EXPORT)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})
@@ -40,6 +38,12 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/consoleConfig.cmake
   "\n"
   "set(CONSOLE_LIBRARIES console)\n"
   "set(CONSOLE_FOUND TRUE)\n"
+  "\n"
+  "set(CMAKE_CXX_STANDARD 17)\n"
+  "set(CMAKE_CXX_STANDARD_REQUIRED ON)\n"
+  "if (MSVC)\n"
+  "  set(CMAKE_CXX_FLAGS \"${CMAKE_CXX_FLAGS} /utf-8\")\n"
+  "endif ()\n"
 )
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/consoleConfig.cmake DESTINATION cmake)
 install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)

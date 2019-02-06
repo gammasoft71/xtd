@@ -1,22 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-# Project
-project(console_color VERSION 1.0.0)
+project(console_color)
 find_package(console REQUIRED)
-set(SOURCES
-  src/console_color.cpp
-)
-source_group(src FILES ${SOURCES})
-
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-if (MSVC)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8")
-endif ()
-
-# Application properties
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} src/console_color.cpp)
 target_link_libraries(${PROJECT_NAME} console)

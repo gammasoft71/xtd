@@ -1,18 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-# Project
-project(console2 VERSION 1.0.0)
+project(console2)
 find_package(console REQUIRED)
-set(SOURCES
-  src/console2.cpp
-)
-source_group(src FILES ${SOURCES})
-
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-# Application properties
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} src/console2.cpp)
 target_link_libraries(${PROJECT_NAME} console)
