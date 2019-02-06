@@ -122,12 +122,84 @@ namespace gammasoft {
       out << console::format(format, std::forward<Args>(args) ...) << std::endl;
     }
     
-  private:
     template<typename ... Args>
     static auto format(const std::string& format, Args&& ... args) noexcept {
       std::string formated_string(snprintf(nullptr, 0, format.c_str(), std::forward<Args>(args) ...), 0);
       snprintf(&formated_string[0], formated_string.size() + 1, format.c_str(), std::forward<Args>(args) ...);
       return formated_string;
     }
+  };
+
+  class beep final {
+  public:
+    beep() = default;
+
+    beep(unsigned int frequency, unsigned int duration) {}
+    
+    /// @cond
+    friend std::ostream& operator <<(std::ostream& os, const beep& b) {
+      console::beep(b.frequency, b.duration);
+      return os;
+    }
+    /// @endcond
+    
+  private:
+    unsigned int frequency = 800;
+    unsigned int duration = 200;
+  };
+  
+  class background_color final {
+  public:
+    explicit background_color(console_color color) : color(color) {}
+    
+    /// @cond
+    friend std::ostream& operator <<(std::ostream& os, const background_color& color) {
+      console::background_color(color.color);
+      return os;
+    }
+    /// @endcond
+
+  private:
+    console_color color ;
+  };
+  
+  class foreground_color final {
+  public:
+    explicit foreground_color(console_color color) : color(color) {}
+    
+    /// @cond
+    friend std::ostream& operator <<(std::ostream& os, const foreground_color& color) {
+      console::foreground_color(color.color);
+      return os;
+    }
+    /// @endcond
+
+  private:
+    console_color color ;
+  };
+  
+  class format final {
+  public:
+    template<typename ... Args>
+    format(const std::string& format, Args&& ... args) : value(console::format(format, args...)) {}
+
+    /// @cond
+    friend std::ostream& operator <<(std::ostream& os, const format& fmt) {return os << fmt.value;}
+    /// @endcond
+
+  private:
+    std::string value;
+  };
+
+  class reset_color final {
+  public:
+    reset_color() = default;
+    
+    /// @cond
+    friend std::ostream& operator <<(std::ostream& os, const reset_color&) {
+      console::reset_color();
+      return os;
+    }
+    /// @endcond
   };
 }
