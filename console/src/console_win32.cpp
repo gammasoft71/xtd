@@ -15,7 +15,7 @@ namespace {
 console_color console::background_color() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<consolecolor>((csbi.wAttributes & 0x00F0) >> 4);
+  return static_cast<console_color>((csbi.wAttributes & 0x00F0) >> 4);
 }
 
 bool console::background_color(console_color color) noexcept {
@@ -47,7 +47,7 @@ bool console::clrscr() noexcept {
   DWORD nbCharsWritten = 0;
   FillConsoleOutputAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes, csbi.dwSize.X * csbi.dwSize.Y, coord, &nbCharsWritten);
   FillConsoleOutputCharacter(GetStdHandle(STD_OUTPUT_HANDLE), ' ', csbi.dwSize.X * csbi.dwSize.Y, coord, &nbCharsWritten);
-  return SetCursorPosition(0, 0) = TRUE;
+  return set_cursor_position(0, 0);
 }
 
 int console::cursor_left() noexcept {
@@ -62,7 +62,7 @@ int console::cursor_size() noexcept {
   return cci.dwSize;
 }
 
-void console::cursor_size(int size) {
+void console::cursor_size(int size) noexcept {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   
@@ -82,7 +82,7 @@ bool console::cursor_visible() noexcept {
   return cci.bVisible != FALSE;
 }
 
-void console::cursor_visible(bool visible) {
+void console::cursor_visible(bool visible) noexcept {
   CONSOLE_CURSOR_INFO cci;
   GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
   
@@ -93,7 +93,7 @@ void console::cursor_visible(bool visible) {
 console_color console::foreground_color() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<consolecolor>(csbi.wAttributes & 0x000F);
+  return static_cast<console_color>(csbi.wAttributes & 0x000F);
 }
 
 bool console::foreground_color(console_color color) noexcept {
@@ -106,11 +106,11 @@ bool console::foreground_color(console_color color) noexcept {
 }
 
 bool console::reset_color() noexcept {
-  return SetBackgroundColor(backColor) && SetForegroundColor(foreColor);
+  return background_color(backColor) && foreground_color(foreColor);
   return true;
 }
 
-bool console::set_cursor_position(int left, int top) {
+bool console::set_cursor_position(int left, int top) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.dwCursorPosition.X = (int16_t)left;
@@ -118,7 +118,7 @@ bool console::set_cursor_position(int left, int top) {
   return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwCursorPosition) == TRUE;
 }
 
-int console::GetWindowHeight() noexcept {
+int console::window_height() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
