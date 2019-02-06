@@ -11,5 +11,6 @@ endif ()
 
 add_subdirectory(console1)
 add_subdirectory(console2)
+add_subdirectory(console_color)
 add_subdirectory(hello_world)
 add_subdirectory(hello_world2)
