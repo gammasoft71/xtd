@@ -11,7 +11,7 @@ if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
 cd build/examples
-cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local
+cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=gcc++-7 -DCMAKE_INSTALL_PREFIX=~/local
 cmake --build . -- -j8
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
