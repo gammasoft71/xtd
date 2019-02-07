@@ -13,6 +13,7 @@ env:
 #    - g++-7
 #    - gcc-7
 #    - doxygen
+before_script: scripts/travis/install_3rd_parties.sh
 matrix:
   include:
   - env: TEST="Build on Linux"
