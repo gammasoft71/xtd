@@ -2,6 +2,7 @@
 
 #include "../include/console.hpp"
 
+#include <csignal>
 #include <iostream>
 #include <map>
 
