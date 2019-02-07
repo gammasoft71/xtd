@@ -8,7 +8,7 @@ cmake --build . -- -j8
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
-cd build/example
+cd build/examples
 cmake ../../examples -DCMAKE_BUILD_TYPE=Debug
 cmake --build . -- -j8
 if [ $? -ne 0 ]; then exit -1; fi
