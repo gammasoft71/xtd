@@ -16,13 +16,16 @@
 
 * Console I/O charecters and wide charercters Streams.
 * Full utf-8 support.
+* Writes the text representation of the specified list of arguments to the standard output stream using the specified format information.
 * Get or set the size of the console window.
 * Get or set the position of the console window relative to the screen buffer.
 * Get or set the size of the screen buffer.
 * Get or set the position of the cursor.
 * Get or set the size of the cursor.
 * Play the sound of a beep through the console speaker.
-* Get or set the foreground and background colors
+* Get or set the foreground and background colors.
+* Intercept and send callback to the user when the Control modifier key (Ctrl) and either the C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
+* ...
 
 For more information see [Documentation](docs).
 
