@@ -41,7 +41,7 @@ using namespace gammasoft;
 
 // The main entry point for the application.
 int main() {
-  console::fore_color(console_color::blue);
+  console::foreground_color(console_color::blue);
   console::write_line("Hello, World!");
   console::reset_color();
 }
@@ -60,7 +60,7 @@ using namespace std;
 
 // The main entry point for the application.
 int main() {
-  console::out << fore_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
+  console::out << foreground_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
 }
 
 ```
@@ -77,7 +77,7 @@ using namespace std;
 
 // The main entry point for the application.
 int main() {
-  cout << fore_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
+  cout << foreground_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
 }
 
 ```
