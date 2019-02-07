@@ -48,7 +48,7 @@ int main() {
 
 ```
 
-## Using gammasoft::wconsole::out wide character ostream
+## Using gammasoft::console::out ostream
 
 hello_world_console_out.cpp
 
@@ -60,7 +60,7 @@ using namespace std;
 
 // The main entry point for the application.
 int main() {
-  wconsole::out << fore_color(console_color::blue) << L"Hello, World!" << reset_color() << endl;
+  console::out << fore_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
 }
 
 ```
@@ -81,6 +81,8 @@ int main() {
 }
 
 ```
+
+Replace console class by wconsole class to use wide character wostream and wistream.
 
 For more examples see Examples
 
