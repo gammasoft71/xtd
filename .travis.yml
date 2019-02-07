@@ -6,14 +6,12 @@ env:
 addons:
   apt:
     sources:
-#    #- llvm-toolchain-trusty-3.9
     - ubuntu-toolchain-r-test
     packages:
     - cmake
-#    #- clang-3.9
     - g++-7
     - gcc-7
-#    - doxygen
+    - doxygen
 matrix:
   include:
   - env: TEST="Build on Linux"
