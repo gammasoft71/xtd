@@ -24,7 +24,7 @@
 * Play the sound of a beep through the console speaker.
 * Get or set the foreground and background colors
 
-For more information see Documentation.
+For more information see [Documentation](docs).
 
 # Examples
 
