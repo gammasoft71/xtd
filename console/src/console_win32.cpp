@@ -6,17 +6,17 @@
 #include <Windows.h>
 
 namespace {
-  gammasoft::cnsole_color backColor = __os_background_color();
-  gammasoft::cnsole_color foreColor = __os_foreground_color();
+  gammasoft::console_color backColor = __os_background_color();
+  gammasoft::console_color foreColor = __os_foreground_color();
 }
 
-gammasoft::cnsole_color __os_background_color() noexcept {
+gammasoft::console_color __os_background_color() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<gammasoft::cnsole_color>((csbi.wAttributes & 0x00F0) >> 4);
+  return static_cast<gammasoft::console_color>((csbi.wAttributes & 0x00F0) >> 4);
 }
 
-bool __os_background_color(gammasoft::cnsole_color color) noexcept {
+bool __os_background_color(gammasoft::console_color color) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -88,13 +88,13 @@ void __os_cursor_visible(bool visible) noexcept {
   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
 }
 
-gammasoft::cnsole_color __os_foreground_color() noexcept {
+gammasoft::console_color __os_foreground_color() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<gammasoft::cnsole_color>(csbi.wAttributes & 0x000F);
+  return static_cast<gammasoft::console_color>(csbi.wAttributes & 0x000F);
 }
 
-bool __os_foreground_color(gammasoft::cnsole_color color) noexcept {
+bool __os_foreground_color(gammasoft::console_color color) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
