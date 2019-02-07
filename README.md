@@ -30,7 +30,7 @@ For more information see Documentation.
 
 The following examples "Hello, world!" show how to change the color of the text in three different ways.
 
-## gammasoft::console
+## Using gammasoft::console::WriteLine
 
 hello_world_console.cpp
 
@@ -48,7 +48,7 @@ int main() {
 
 ```
 
-## gammasoft::console::out
+## Using gammasoft::wconsole::out wide character ostream
 
 hello_world_console_out.cpp
 
@@ -60,12 +60,12 @@ using namespace std;
 
 // The main entry point for the application.
 int main() {
-  console::out << fore_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
+  wconsole::out << fore_color(console_color::blue) << L"Hello, World!" << reset_color() << endl;
 }
 
 ```
 
-## std::cout
+## Using std::cout charecter ostream
 
 hello_world_cout.cpp
 
