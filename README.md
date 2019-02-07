@@ -28,6 +28,8 @@ For more information see Documentation.
 
 # Examples
 
+The following examples "Hello, world!" show how to change the color of the text in three different ways.
+
 ## gammasoft::console
 
 hello_world_console.cpp
@@ -54,7 +56,7 @@ hello_world_console_out.cpp
 #include <console/console>
 
 using namespace gammasoft;
-using namespace cout;
+using namespace std;
 
 // The main entry point for the application.
 int main() {
@@ -71,7 +73,7 @@ hello_world_cout.cpp
 #include <console/console>
 
 using namespace gammasoft;
-using namespace cout;
+using namespace std;
 
 // The main entry point for the application.
 int main() {
