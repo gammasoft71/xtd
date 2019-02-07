@@ -11,7 +11,8 @@ namespace gammasoft {
     format(const std::string& format, Args&& ... args) : value_(console::format(format, args...)) {}
 
     /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const format& fmt) {return os << fmt.value_;}
+    template<typename Char>
+    friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const format& fmt) {return os << fmt.value_;}
     /// @endcond
 
   private:

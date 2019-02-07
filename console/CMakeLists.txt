@@ -17,7 +17,6 @@ set(INCLUDES
   include/reset_color.hpp
 )
 set(SOURCES
-  src/console.cpp
   src/console_gcc.cpp
   src/console_win32.cpp
 )

@@ -12,8 +12,9 @@ namespace gammasoft {
     beep(unsigned int frequency, unsigned int duration) : frequency_(frequency), duration_(duration) {}
     
     /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const beep& b) {
-      if (os.rdbuf() == __cout_rdbuf)
+    template<typename Char>
+    friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const beep& b) {
+      if (os.rdbuf() == __get_out_rdbuf<Char>())
         console::beep(b.frequency_, b.duration_);
       return os;
     }

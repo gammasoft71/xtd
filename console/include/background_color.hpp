@@ -10,8 +10,9 @@ namespace gammasoft {
     explicit background_color(console_color color) : color(color) {}
     
     /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const background_color& color) {
-      if (os.rdbuf() == __cout_rdbuf)
+    template<typename Char>
+    friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const background_color& color) {
+      if (os.rdbuf() == __get_out_rdbuf<Char>())
         console::background_color(color.color);
       return os;
     }

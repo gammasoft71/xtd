@@ -10,8 +10,9 @@ namespace gammasoft {
     reset_color() = default;
     
     /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const reset_color&) {
-      if (os.rdbuf() == __cout_rdbuf)
+    template<typename Char>
+    friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const reset_color&) {
+      if (os.rdbuf() == __get_out_rdbuf<Char>())
         console::reset_color();
       return os;
     }

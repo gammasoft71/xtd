@@ -10,3 +10,6 @@ add_subdirectory(console_color)
 add_subdirectory(console_color2)
 add_subdirectory(hello_world)
 add_subdirectory(hello_world2)
+
+add_subdirectory(wconsole1)
+add_subdirectory(wconsole2)
