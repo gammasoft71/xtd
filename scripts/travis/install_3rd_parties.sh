@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # install 3rd parties
-mkdir -p build/3rdparty
+mkdir -p build
 pushd build
 
 if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
