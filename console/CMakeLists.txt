@@ -3,9 +3,18 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(console VERSION 1.0.0)
 set(INCLUDES
+  include/background_color.hpp
+  include/beep.hpp
   include/console
   include/console.hpp
   include/console_color.hpp
+  include/console_key.hpp
+  include/console_key_info.hpp
+  include/console_modifiers.hpp
+  include/console_special_key.hpp
+  include/foreground_color.hpp
+  include/format.hpp
+  include/reset_color.hpp
 )
 set(SOURCES
   src/console.cpp
