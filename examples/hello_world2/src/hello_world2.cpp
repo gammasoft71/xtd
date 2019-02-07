@@ -2,14 +2,14 @@
 #include <fstream>
 
 using namespace gammasoft;
+using namespace std;
 
 // The main entry point for the application.
 int main() {
-  console::open_standard_output() << "console::is_out_redireted() = " << std::boolalpha << console::is_out_redireted() << std::endl;
-  std::ofstream file("test.txt");
-  console::set_out(file);
-  console::open_standard_output() << "console::is_out_redireted() = " << console::is_out_redireted() << std::endl;
+  cout << "Hello, World!" << endl;
   console::out << "Hello, World!" << std::endl;
-  console::set_out(console::open_standard_output());
-  console::out << "Yessss" << std::endl;
+  console::write_line("Hello, World!");
+  wcout << L"Hello, World!" << endl;
+  wconsole::out << L"Hello, World!" << std::endl;
+  wconsole::write_line("Hello, World!");
 }

@@ -57,13 +57,15 @@ inline std::basic_streambuf<wchar_t>* __get_out_rdbuf<wchar_t>() {
 };
 
 template <class Char>
-inline std::basic_string<Char> __format(const Char* fmt, ...) {return 0;}
+inline std::basic_string<Char> __format(const Char* fmt, ...) {return std::basic_string<Char>();}
 
 template <>
 inline std::basic_string<char> __format<char>(const char* fmt, ...) {
   va_list args;
   va_start(args, fmt);
   std::basic_string<char> formated_string(vsnprintf(nullptr, 0, fmt, args), 0);
+  va_end(args);
+  va_start(args, fmt);
   vsnprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
   va_end(args);
   return formated_string;
@@ -74,6 +76,8 @@ inline std::basic_string<wchar_t> __format<wchar_t>(const wchar_t* fmt, ...) {
   va_list args;
   va_start(args, fmt);
   std::basic_string<wchar_t> formated_string(vswprintf(nullptr, 0, fmt, args), 0);
+  va_end(args);
+  va_start(args, fmt);
   vswprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
   va_end(args);
   return formated_string;
@@ -230,26 +234,18 @@ namespace gammasoft {
     static int window_width() noexcept {return __os_window_width();}
     
     template<typename Arg>
-    static void write(Arg&& arg) noexcept {
-      out << arg;
-    }
+    static void write(Arg&& arg) noexcept {out << arg;}
     
     static void write_line() noexcept {out << std::endl;}
     
     template<typename Arg>
-    static void write_line(Arg&& arg) noexcept {
-      out << arg << std::endl;
-    }
+    static void write_line(Arg&& arg) noexcept {out << arg << std::endl;}
     
     template<typename ... Args>
-    static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {
-      out << format(fmt, std::forward<Args>(args) ...);
-    }
+    static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, std::forward<Args>(args) ...);}
     
     template<typename ... Args>
-    static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {
-      out << format(fmt, std::forward<Args>(args) ...) << std::endl;
-    }
+    static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, std::forward<Args>(args) ...) << std::endl;}
   };
   
   template<class Char>
