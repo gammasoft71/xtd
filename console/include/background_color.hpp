@@ -12,7 +12,7 @@ namespace gammasoft {
     /// @cond
     template<typename Char>
     friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const background_color& color) {
-      if (os.rdbuf() == __get_out_rdbuf<Char>())
+      if (os.rdbuf() == __get_out_rdbuf<Char>() || os.rdbuf() == __get_err_rdbuf<Char>())
         console::background_color(color.color);
       return os;
     }

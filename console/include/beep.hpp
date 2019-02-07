@@ -14,7 +14,7 @@ namespace gammasoft {
     /// @cond
     template<typename Char>
     friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const beep& b) {
-      if (os.rdbuf() == __get_out_rdbuf<Char>())
+      if (os.rdbuf() == __get_out_rdbuf<Char>() || os.rdbuf() == __get_err_rdbuf<Char>())
         console::beep(b.frequency_, b.duration_);
       return os;
     }
