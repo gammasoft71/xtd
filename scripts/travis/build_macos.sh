@@ -1,9 +1,15 @@
 #!/usr/bin/env sh
 
 # generate and build Switch
-mkdir -p build
+mkdir -p build/examples
 pushd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug
+cmake --build . -- -j8
+if [ $? -ne 0 ]; then exit -1; fi
+popd
+
+pushd build/examples
+cmake ../../examples -DCMAKE_BUILD_TYPE=Debug
 cmake --build . -- -j8
 if [ $? -ne 0 ]; then exit -1; fi
 popd
