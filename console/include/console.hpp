@@ -5,6 +5,7 @@
 #include "console_key_info.hpp"
 #include "console_special_key.hpp"
 
+#include <cstdarg>
 #include <iostream>
 #include <map>
 #include <string>

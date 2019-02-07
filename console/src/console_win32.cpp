@@ -2,6 +2,7 @@
 
 #include "../include/console.hpp"
 
+#include <csignal>
 #include <Windows.h>
 
 using namespace gammasoft;
@@ -47,7 +48,7 @@ bool __os_clrscr() noexcept {
   DWORD nbCharsWritten = 0;
   FillConsoleOutputAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes, csbi.dwSize.X * csbi.dwSize.Y, coord, &nbCharsWritten);
   FillConsoleOutputCharacter(GetStdHandle(STD_OUTPUT_HANDLE), ' ', csbi.dwSize.X * csbi.dwSize.Y, coord, &nbCharsWritten);
-  return set_cursor_position(0, 0);
+  return __os_set_cursor_position(0, 0);
 }
 
 int __os_cursor_left() noexcept {
@@ -123,7 +124,7 @@ bool __os_output_code_page(int codePage) noexcept {
 
 
 bool __os_reset_color() noexcept {
-  return background_color(backColor) && foreground_color(foreColor);
+  return __os_background_color(backColor) && __os_foreground_color(foreColor);
   return true;
 }
 
