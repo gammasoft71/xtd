@@ -1,19 +1,18 @@
 language: cpp
-dist: trusty
+dist: xenial
 env:
   global:
   - secure: qfE+wXNckrl89kGoPFvtdSQgP+3Rl6jiY7W4M174icAGbAmFEuUTF8lk2yncLTX8RA0wJf2knG+GfUc3k0VQ75MfUB0J49p8W/ppQvQJzpGGQWiTILtmjRA3RCb87+BJgpe6dMjbK6eEbkHNXOZ+m6b2Z3fX7Q6GhtFfIDQQFgfyoAhiMlZ5wSu+5a03/OywtH0AqsxpFXV7W3cVLmXtyrZORQNO2hAZ72MRQZXSouITXS7HWpZ3UN5X2p72WCDwQ5X9bmVhdxAyUbfGiPwQtVli0aw7gMO9MVrWQMXqNN+trtrhsSQSAWnw0BlVO+iHc0aKK5yXxaY+r94mv77VdF71l8b/d7ZZ8lIGlJ1JBRzCnaiIDz2TpkQnqhChm3BRsjF2pF7bRPMZ6T5kjATfcp1c+gBuH3edPJbrherbcYkxMKgIWQ8G2cC3RS4sJXBSg26XlUCXFRroALhrSb92mUy+vbNvLT3hFedRDlYLeaJiBqys2zVWY0et0DiPecHpf2NSRTbW9FfPJGYBqP6XVteCSzef7ILcPdbWQMWJ8Z2OmO8o22O9qpuTJl+U2xxvt4Y8rlsjAQ59TPqYxe+s143DZHhEFxNdgqQLfHs/gh7KX/5HN6L3XaJKN5HBeKNpBkna/qMzu/oIxcaTBWYgAE6n3SojhaM1/dRyCLOO0/4=
-addons:
-  apt:
-    sources:
-    - llvm-toolchain-trusty-3.9
-    - ubuntu-toolchain-r-test
-    packages:
-    - clang-3.9
-    - g++-6
-    - gcc-6
-    - doxygen
-before_script: scripts/travis/install_3rd_parties.sh
+#addons:
+#  apt:
+#    sources:
+#    #- llvm-toolchain-trusty-3.9
+#    - ubuntu-toolchain-r-test
+#    packages:
+#    #- clang-3.9
+#    - g++-7
+#    - gcc-7
+#    - doxygen
 matrix:
   include:
   - env: TEST="Build on Linux"
@@ -21,6 +20,6 @@ matrix:
     script: scripts/travis/build_linux.sh
   - env: TEST="Build on macOS"
     os: osx
-    osx_image: xcode9.1
+    osx_image: xcode10.1
     script: scripts/travis/build_macos.sh
     #after_success: scripts/travis/publish_to_codecov.sh
