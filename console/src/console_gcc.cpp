@@ -88,12 +88,11 @@ namespace {
   private:
     int8_t peekCharacter {-1};
     termios backupedTermioAttributes;
-  };
+  } term;
   
-  static terminal term;
-  static console_color backColor = console_color::black;
-  static console_color foreColor = console_color::white;
-  static bool cursorVisible = true;
+  console_color backColor = console_color::black;
+  console_color foreColor = console_color::white;
+  bool cursorVisible = true;
 }
 
 console_color console::background_color() noexcept {

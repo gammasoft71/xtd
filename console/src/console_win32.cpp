@@ -8,8 +8,8 @@ using namespace gammasoft;
 using namespace std;
 
 namespace {
-  static console_color backColor = console::background_color();
-  static console_color foreColor = console::foreground_color();
+  console_color backColor = console::background_color();
+  console_color foreColor = console::foreground_color();
 }
 
 console_color console::background_color() noexcept {

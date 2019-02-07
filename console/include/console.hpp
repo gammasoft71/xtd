@@ -2,9 +2,18 @@
 /// @brief Contains console class.
 #pragma once
 #include "console_color.hpp"
+#include "console_key_info.hpp"
+#include "console_special_key.hpp"
 
 #include <iostream>
+#include <map>
 #include <string>
+
+/// @cond
+extern std::streambuf* __cerr_rdbuf;
+extern std::streambuf* __cin_rdbuf;
+extern std::streambuf* __cout_rdbuf;
+/// @endcond
 
 /// @brief The gammasoft namespace contains all fundamental classes to access console.
 namespace gammasoft {
@@ -14,13 +23,14 @@ namespace gammasoft {
   /// The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the SetIn and SetOut methods.
   /// @include Console.cpp
   /// @include ConsoleOut.cpp
+  //template<class Char>
   class console final {
   public:
-    static std::istream& in;
+    static std::istream in;
     
-    static std::ostream& err;
+    static std::ostream error;
     
-    static std::ostream& out;
+    static std::ostream out;
 
     /// @cond
     console() = delete;
@@ -77,10 +87,29 @@ namespace gammasoft {
     static console_color foreground_color() noexcept;
     
     static bool foreground_color(console_color color) noexcept;
+    
+    template<typename ... Args>
+    static std::string format(const std::string& format, Args&& ... args) noexcept {
+      std::string formated_string(snprintf(nullptr, 0, format.c_str(), std::forward<Args>(args) ...), 0);
+      snprintf(&formated_string[0], formated_string.size() + 1, format.c_str(), std::forward<Args>(args) ...);
+      return formated_string;
+    }
 
     static int input_code_page() noexcept;
 
     static bool input_code_page(int codePage) noexcept;
+    
+    static bool is_error_redireted() noexcept;
+    
+    static bool is_in_redireted() noexcept;
+    
+    static bool is_out_redireted() noexcept;
+    
+    static std::ostream open_standard_error() noexcept;
+    
+    static std::istream open_standard_input() noexcept;
+    
+    static std::ostream open_standard_output() noexcept;
 
     static int output_code_page() noexcept;
 
@@ -91,6 +120,14 @@ namespace gammasoft {
     static std::string read_line() noexcept;
 
     static bool set_cursor_position(int left, int top) noexcept;
+
+    static void set_error(const std::ostream& error) noexcept;
+    
+    static void set_in(const std::istream& in) noexcept;
+    
+    static void set_out(const std::ostream& out) noexcept;
+    
+    static std::map<int, console_special_key> signal_keys() noexcept;
 
     static int window_height() noexcept;
     
@@ -113,93 +150,22 @@ namespace gammasoft {
     }
     
     template<typename ... Args>
-    static void write(const std::string& format, Args&& ... args) noexcept {
-      out << console::format(format, std::forward<Args>(args) ...);
+    static void write(const std::string& fmt, Args&& ... args) noexcept {
+      out << format(format, std::forward<Args>(args) ...);
     }
     
     template<typename ... Args>
-    static void write_line(const std::string& format, Args&& ... args) noexcept {
-      out << console::format(format, std::forward<Args>(args) ...) << std::endl;
+    static void write_line(const std::string& fmt, Args&& ... args) noexcept {
+      out << format(format, std::forward<Args>(args) ...) << std::endl;
     }
-    
-    template<typename ... Args>
-    static auto format(const std::string& format, Args&& ... args) noexcept {
-      std::string formated_string(snprintf(nullptr, 0, format.c_str(), std::forward<Args>(args) ...), 0);
-      snprintf(&formated_string[0], formated_string.size() + 1, format.c_str(), std::forward<Args>(args) ...);
-      return formated_string;
-    }
-  };
-
-  class beep final {
-  public:
-    beep() = default;
-
-    beep(unsigned int frequency, unsigned int duration) {}
-    
-    /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const beep& b) {
-      console::beep(b.frequency, b.duration);
-      return os;
-    }
-    /// @endcond
-    
-  private:
-    unsigned int frequency = 800;
-    unsigned int duration = 200;
   };
   
-  class background_color final {
-  public:
-    explicit background_color(console_color color) : color(color) {}
-    
-    /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const background_color& color) {
-      console::background_color(color.color);
-      return os;
-    }
-    /// @endcond
-
-  private:
-    console_color color ;
-  };
-  
-  class foreground_color final {
-  public:
-    explicit foreground_color(console_color color) : color(color) {}
-    
-    /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const foreground_color& color) {
-      console::foreground_color(color.color);
-      return os;
-    }
-    /// @endcond
-
-  private:
-    console_color color ;
-  };
-  
-  class format final {
-  public:
-    template<typename ... Args>
-    format(const std::string& format, Args&& ... args) : value(console::format(format, args...)) {}
-
-    /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const format& fmt) {return os << fmt.value;}
-    /// @endcond
-
-  private:
-    std::string value;
-  };
-
-  class reset_color final {
-  public:
-    reset_color() = default;
-    
-    /// @cond
-    friend std::ostream& operator <<(std::ostream& os, const reset_color&) {
-      console::reset_color();
-      return os;
-    }
-    /// @endcond
-  };
+  //using console = basic_console<char>;
+  //using wconsole = basic_console<wchar_t>;
 }
+
+#include "background_color.hpp"
+#include "beep.hpp"
+#include "foreground_color.hpp"
+#include "format.hpp"
+#include "reset_color.hpp"
