@@ -84,7 +84,7 @@ int main() {
 
 Replace console class by wconsole class to use wide character wostream and wistream.
 
-For more examples see Examples
+For more examples see [examples](examples)
 
 # Download and install console
 
