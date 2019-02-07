@@ -1,10 +1,9 @@
 #include <console/console>
 
 using namespace gammasoft;
+using namespace std;
 
 // The main entry point for the application.
 int main() {
-  console::foreground_color(console_color::blue);
-  console::write_line("Hello, World!");
-  console::reset_color();
+  cout << foreground_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
 }

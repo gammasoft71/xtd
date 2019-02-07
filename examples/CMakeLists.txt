@@ -16,6 +16,7 @@ add_subdirectory(console_read_line2)
 add_subdirectory(console_song)
 add_subdirectory(hello_world)
 add_subdirectory(hello_world2)
+add_subdirectory(hello_world3)
 
 add_subdirectory(wconsole1)
 add_subdirectory(wconsole2)
