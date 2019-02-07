@@ -48,7 +48,7 @@ int main() {
 
 ```
 
-## Using gammasoft::console::out ostream
+## Using gammasoft::console::out character ostream
 
 hello_world_console_out.cpp
 
@@ -65,7 +65,7 @@ int main() {
 
 ```
 
-## Using std::cout charecter ostream
+## Using std::cout character ostream
 
 hello_world_cout.cpp
 
