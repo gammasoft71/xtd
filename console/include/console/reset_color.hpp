@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains console class.
+/// @brief Contains reset_color class.
 #pragma once
 #include "console.hpp"
 

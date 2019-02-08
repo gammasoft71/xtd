@@ -1,13 +1,10 @@
 /// @file
-/// @brief Contains console_modifiers enum.
+/// @brief Contains xtd::console_modifiers enum.
 #pragma once
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
   /// @brief Represents the SHIFT, ALT, and CTRL modifier keys on a keyboard.
-  /// @par Library
-  /// Switch.Core
-  /// @ingroup SwitchCore
   /// @see Console
   enum class console_modifiers {
     /// @brief The left or right ALT modifier key.

@@ -1,4 +1,4 @@
 /// @file
-/// @brief Contains console class.
+/// @brief Contains xtd::console class.
 #pragma once
 #include "console.hpp"

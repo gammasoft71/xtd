@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains console class.
+/// @brief Contains xtd::beep class.
 #pragma once
 #include "console.hpp"
 

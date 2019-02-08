@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::ConsoleKey enum.
+/// @brief Contains xtd::console_key enum.
 #pragma once
 
 /// @brief The xtd namespace contains all fundamental classes to access console.

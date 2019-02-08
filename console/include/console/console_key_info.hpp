@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::console_key_info class.
+/// @brief Contains xtd::console_key_info class.
 #pragma once
 
 #include <iostream>
@@ -9,9 +9,6 @@
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
   /// @brief Specifies the standard keys on a console.
-  /// @par Library
-  /// Switch.Core
-  /// @ingroup SwitchCore
   /// @see Console
   class console_key_info final {
   public:
@@ -45,15 +42,15 @@ namespace xtd {
     }
     
     /// @brief Gets the console key represented by the current console_key_info object.
-    /// @param A System::ConsoleKey value that identifies the console key that was pressed
+    /// @param A console_key value that identifies the console key that was pressed
     console_key key() {return this->key_;}
     
     /// @brief Gets the Unicode character represented by the current console_key_info object.
     /// @param An char32 object that corresponds to the console key represented by the current console_key_info object.
     char32_t key_char() {return this->key_char_;}
     
-    /// @brief Gets a bitwise combination of System::ConsoleModifiers values that specifies one or more modifier keys pressed simultaneously with the console key.
-    /// @param A bitwise combination of System::ConsoleModifiers values. There is no default value.
+    /// @brief Gets a bitwise combination of console_modifiers values that specifies one or more modifier keys pressed simultaneously with the console key.
+    /// @param A bitwise combination of console_modifiers values. There is no default value.
     console_modifiers modifiers() {return this->modifiers_;}
     
   private:
