@@ -1,6 +1,6 @@
 #if defined(__linux__) || defined(__APPLE__)
 
-#include "../include/console.hpp"
+#include "../include/console/console.hpp"
 
 #include <csignal>
 #include <iostream>

@@ -1,7 +1,8 @@
 /// @file
-/// @brief Contains Switch::System::ConsoleKeyInfo class.
+/// @brief Contains Switch::System::console_key_info class.
 #pragma once
 
+#include <iostream>
 #include "console_key.hpp"
 #include "console_modifiers.hpp"
 
@@ -14,29 +15,27 @@ namespace xtd {
   /// @see Console
   class console_key_info final {
   public:
-    /// @brief Create a new instance of ConsoleKeyInfo class.
+    /// @brief Create a new instance of console_key_info class.
     /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.
-    /// @remarks The ConsoleKeyInfo type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
+    /// @remarks The console_key_info type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
     console_key_info() = default;
     
-    /// @brief Create a new instance of ConsoleKeyInfo class.
-    /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.
-    /// @remarks The ConsoleKeyInfo type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
-    console_key_info(const console_key_info& key_info) = default;
-    
     /// @cond
-    console_key_info& operator=(const console_key_info& keyInfo) = default;
+    console_key_info(const console_key_info& key_info) noexcept = default;
+    console_key_info& operator=(const console_key_info& key_info) noexcept = default;
+    bool operator==(const console_key_info& key_info) const noexcept {return this->key_char_ == key_info.key_char_ && this->key_ == key_info.key_ && this->modifiers_ == key_info.modifiers_;}
+    bool operator!=(const console_key_info& key_info) const noexcept {return !this->operator==(key_info);}
     /// @endcond
     
-    /// @brief Initializes a new instance of the ConsoleKeyInfo class using the specified character, console key, and modifier keys.
+    /// @brief Initializes a new instance of the console_key_info class using the specified character, console key, and modifier keys.
     /// @param keyChar The Unicode character that corresponds to the key parameter.
     /// @param key The console key that corresponds to the keyChar parameter.
     /// @param shift true to indicate that a SHIFT key was pressed; otherwise, false.
     /// @param alt true to indicate that an ALT key was pressed; otherwise, false.
     /// @param control true to indicate that a CTRL key was pressed; otherwise, false.
     /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.
-    /// @remarks The ConsoleKeyInfo type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
-    console_key_info(char32_t keyChar, console_key key, bool shift, bool alt, bool control) {
+    /// @remarks The console_key_info type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
+    console_key_info(char32_t key_char, console_key key, bool shift, bool alt, bool control) : key_char_(key_char), key_(key) {
       if (shift == true)
         this->modifiers_ = (console_modifiers)((int)this->modifiers_ | (int)console_modifiers::shift);
       if (alt == true)
@@ -45,12 +44,12 @@ namespace xtd {
         this->modifiers_ = (console_modifiers)((int)this->modifiers_ | (int)console_modifiers::control);
     }
     
-    /// @brief Gets the console key represented by the current ConsoleKeyInfo object.
+    /// @brief Gets the console key represented by the current console_key_info object.
     /// @param A System::ConsoleKey value that identifies the console key that was pressed
     console_key key() {return this->key_;}
     
-    /// @brief Gets the Unicode character represented by the current ConsoleKeyInfo object.
-    /// @param An char32 object that corresponds to the console key represented by the current ConsoleKeyInfo object.
+    /// @brief Gets the Unicode character represented by the current console_key_info object.
+    /// @param An char32 object that corresponds to the console key represented by the current console_key_info object.
     char32_t key_char() {return this->key_char_;}
     
     /// @brief Gets a bitwise combination of System::ConsoleModifiers values that specifies one or more modifier keys pressed simultaneously with the console key.

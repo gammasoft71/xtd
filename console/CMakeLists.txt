@@ -3,18 +3,18 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(console VERSION 1.0.0)
 set(INCLUDES
-  include/background_color.hpp
-  include/beep.hpp
-  include/console
-  include/console.hpp
-  include/console_color.hpp
-  include/console_key.hpp
-  include/console_key_info.hpp
-  include/console_modifiers.hpp
-  include/console_special_key.hpp
-  include/foreground_color.hpp
-  include/format.hpp
-  include/reset_color.hpp
+  include/console/background_color.hpp
+  include/console/beep.hpp
+  include/console/console
+  include/console/console.hpp
+  include/console/console_color.hpp
+  include/console/console_key.hpp
+  include/console/console_key_info.hpp
+  include/console/console_modifiers.hpp
+  include/console/console_special_key.hpp
+  include/console/foreground_color.hpp
+  include/console/format.hpp
+  include/console/reset_color.hpp
 )
 set(SOURCES
   src/console_gcc.cpp
@@ -33,10 +33,10 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
-target_include_directories(${PROJECT_NAME} PUBLIC $<INSTALL_INTERFACE:include>)
+target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
 
 # install
-install(DIRECTORY include/. DESTINATION include/console)
+install(DIRECTORY include/console/. DESTINATION include/console)
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/consoleConfig.cmake
   "include(CMakeFindDependencyMacro)\n"
   "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"

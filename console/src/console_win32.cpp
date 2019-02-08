@@ -1,6 +1,6 @@
 #if defined(_WIN32)
 
-#include "../include/console.hpp"
+#include "../include/console/console.hpp"
 
 #include <csignal>
 #include <Windows.h>
