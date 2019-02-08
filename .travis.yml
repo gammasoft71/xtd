@@ -17,6 +17,9 @@ matrix:
   - env: TEST="Build on Linux"
     os: linux
     script: scripts/travis/build_linux.sh
+  - env: TEST="Build with coverage on Linux"
+    os: linux
+    script: scripts/travis/build_with_coverage_linux.sh
     after_success: scripts/travis/publish_to_codecov.sh
   - env: TEST="Build on macOS"
     os: osx

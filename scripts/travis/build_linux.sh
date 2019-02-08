@@ -3,7 +3,7 @@
 # generate and build console
 mkdir -p build/examples
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DENABLE_COVERAGE=ON -DCMAKE_INSTALL_PREFIX=~/local
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DCMAKE_INSTALL_PREFIX=~/local
 cmake --build . -- -j8
 cmake --build . --target install
 
