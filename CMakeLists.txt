@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 # Solution
 project(console)
 
+# Options
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "")
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 else ()
@@ -11,9 +12,11 @@ endif ()
 
 enable_testing()
 
+# External projects
 include(ExternalProject)
-ExternalProject_Add(catch GIT_REPOSITORY https://github.com/catchorg/Catch2.git GIT_TAG v2.0.1 GIT_SHALLOW 1 CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR})
+ExternalProject_Add(catch GIT_REPOSITORY https://github.com/catchorg/Catch2.git GIT_TAG v2.6.0 GIT_SHALLOW 1 CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR})
 include_directories(SYSTEM ${CMAKE_BINARY_DIR}/include)
 
+# Projects
 add_subdirectory(console)
 add_subdirectory(tests)
