@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/gammasoft71/console.svg?branch=master)](https://travis-ci.org/gammasoft71/console)
 [![Build status](https://ci.appveyor.com/api/projects/status/29f73qcp4e205549?svg=true)](https://ci.appveyor.com/project/gammasoft71/console)
 [![Documentation](https://codedocs.xyz/gammasoft71/console.svg)](https://codedocs.xyz/gammasoft71/console/)
-[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=console%20website)](https://gammasoft71.wixsite.com/gammasoft/libraries)
+[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=console%20website)](https://gammasoft71.wixsite.com/console)
 [![license](https://img.shields.io/github/license/gammasoft71/console.svg)](LICENSE.md)
 [![SourceForge Download console](https://img.shields.io/sourceforge/dt/switchpro.svg)](https://sourceforge.net/projects/console/files/latest/download)
 [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/console.svg)](README.md)
