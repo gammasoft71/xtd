@@ -6,7 +6,7 @@
 [![Documentation](https://codedocs.xyz/gammasoft71/console.svg)](https://codedocs.xyz/gammasoft71/console/)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=console%20website)](https://gammasoft71.wixsite.com/console)
 [![license](https://img.shields.io/github/license/gammasoft71/console.svg)](LICENSE.md)
-[![SourceForge Download console](https://img.shields.io/sourceforge/dt/console.svg)](https://sourceforge.net/projects/console/files/latest/download)
+[![SourceForge Download console](https://img.shields.io/sourceforge/dt/console-cpp.svg)](https://sourceforge.net/projects/console-cpp/files/latest/download)
 [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/console.svg)](README.md)
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
