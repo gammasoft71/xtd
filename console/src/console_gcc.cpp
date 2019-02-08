@@ -93,11 +93,11 @@ namespace {
   bool cursorVisible = true;
 }
 
-xtd::console_color __os_background_color() noexcept {
+xtd::console_color __opaque_console::background_color() noexcept {
   return backColor;
 }
 
-bool __os_background_color(xtd::console_color color) noexcept {
+bool __opaque_console::background_color(xtd::console_color color) noexcept {
   static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[40m"}, {xtd::console_color::dark_blue, "\033[44m"}, {xtd::console_color::dark_green, "\033[42m"}, {xtd::console_color::dark_cyan, "\033[46m"}, {xtd::console_color::dark_red, "\033[41m"}, {xtd::console_color::dark_magenta, "\033[45m"}, {xtd::console_color::dark_yellow, "\033[43m"}, {xtd::console_color::gray, "\033[47m"}, {xtd::console_color::dark_gray, "\033[100m"}, {xtd::console_color::blue, "\033[104m"}, {xtd::console_color::green, "\033[102m"}, {xtd::console_color::cyan, "\033[106m"}, {xtd::console_color::red, "\033[101m"}, {xtd::console_color::magenta, "\033[105m"}, {xtd::console_color::yellow, "\033[103m"}, {xtd::console_color::white, "\033[107m"}};
   if (!terminal::is_ansi_supported() && colors.find(color) != colors.end()) return false;
   std::cout << colors[color] << std::flush;
@@ -105,7 +105,7 @@ bool __os_background_color(xtd::console_color color) noexcept {
   return true;
 }
 
-bool __os_beep(unsigned int frequency, unsigned int duration) noexcept {
+bool __opaque_console::beep(unsigned int frequency, unsigned int duration) noexcept {
   if (frequency < 37 || frequency > 32767)
     return false;
 
@@ -124,28 +124,28 @@ bool __os_beep(unsigned int frequency, unsigned int duration) noexcept {
   return true;
 }
 
-int __os_buffer_height() noexcept {
+int __opaque_console::buffer_height() noexcept {
   /// @todo console buffer Height on linux and macOS
-  return __os_window_height();
+  return __opaque_console::window_height();
 }
 
-int __os_buffer_width() noexcept {
+int __opaque_console::buffer_width() noexcept {
   /// @todo console buffer Width on linux and macOS
-  return __os_window_width();
+  return __opaque_console::window_width();
 }
 
-bool __os_caps_lock() noexcept {
+bool __opaque_console::caps_lock() noexcept {
   /// @todo caps lock status on linux and macOS
   return false;
 }
 
-bool __os_clrscr() noexcept {
+bool __opaque_console::clrscr() noexcept {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[H\x1b[2J" << std::flush;
   return true;
 }
 
-int __os_cursor_left() noexcept {
+int __opaque_console::cursor_left() noexcept {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   term.getch();
@@ -157,11 +157,11 @@ int __os_cursor_left() noexcept {
   return atoi(left.c_str()) - 1;
 }
 
-int __os_cursor_size() noexcept {
+int __opaque_console::cursor_size() noexcept {
   return 100;
 }
 
-void __os_cursor_size(int size) noexcept {
+void __opaque_console::cursor_size(int size) noexcept {
   if (terminal::is_ansi_supported()) {
     if (size < 50)
       std::cout << "\x1b[4 q" << std::flush;
@@ -170,7 +170,7 @@ void __os_cursor_size(int size) noexcept {
   }
 }
 
-int __os_cursor_top() noexcept {
+int __opaque_console::cursor_top() noexcept {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
   term.getch();
@@ -182,22 +182,22 @@ int __os_cursor_top() noexcept {
   return atoi(top.c_str()) - 1;
 }
 
-bool __os_cursor_visible() noexcept {
+bool __opaque_console::cursor_visible() noexcept {
   return cursorVisible;
 }
 
-void __os_cursor_visible(bool visible) noexcept {
+void __opaque_console::cursor_visible(bool visible) noexcept {
   if (terminal::is_ansi_supported()) {
     cursorVisible = visible;
     std::cout << (cursorVisible ? "\x1b[?25h" : "\x1b[?25l") << std::flush;
   }
 }
 
-xtd::console_color __os_foreground_color() noexcept {
+xtd::console_color __opaque_console::foreground_color() noexcept {
   return foreColor;
 }
 
-bool __os_foreground_color(xtd::console_color color) noexcept {
+bool __opaque_console::foreground_color(xtd::console_color color) noexcept {
   static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[30m"}, {xtd::console_color::dark_blue, "\033[34m"}, {xtd::console_color::dark_green, "\033[32m"}, {xtd::console_color::dark_cyan, "\033[36m"}, {xtd::console_color::dark_red, "\033[31m"}, {xtd::console_color::dark_magenta, "\033[35m"}, {xtd::console_color::dark_yellow, "\033[33m"}, {xtd::console_color::gray, "\033[37m"}, {xtd::console_color::dark_gray, "\033[90m"}, {xtd::console_color::blue, "\033[94m"}, {xtd::console_color::green, "\033[92m"}, {xtd::console_color::cyan, "\033[96m"}, {xtd::console_color::red, "\033[91m"}, {xtd::console_color::magenta, "\033[95m"}, {xtd::console_color::yellow, "\033[93m"}, {xtd::console_color::white, "\033[97m"}};
   if (!terminal::is_ansi_supported() && colors.find(color) != colors.end()) return false;
   std::cout << colors[color] << std::flush;
@@ -205,67 +205,67 @@ bool __os_foreground_color(xtd::console_color color) noexcept {
   return true;
 }
 
-int __os_input_code_page() noexcept {
+int __opaque_console::input_code_page() noexcept {
   /// @todo console input code page status on linux and macOS
   return 65001;
 }
 
-bool __os_input_code_page(int codePage) noexcept {
+bool __opaque_console::input_code_page(int codePage) noexcept {
   /// @todo set console input code page on linux and macOS
   return true;
 }
 
-int __os_output_code_page() noexcept {
+int __opaque_console::output_code_page() noexcept {
   /// @todo console output code page status on linux and macOS
   return 65001;
 }
 
-bool __os_output_code_page(int codePage) noexcept {
+bool __opaque_console::output_code_page(int codePage) noexcept {
   /// @todo set console output code page on linux and macOS
   return true;
 }
 
-bool __os_reset_color() noexcept {
+bool __opaque_console::reset_color() noexcept {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\033[49m\033[39m" << std::flush;
   return true;
 }
 
-bool __os_set_cursor_position(int left, int top) noexcept {
+bool __opaque_console::set_cursor_position(int left, int top) noexcept {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
   return true;
 }
 
-std::map<int, xtd::console_special_key> __os_signal_keys() noexcept {
+std::map<int, xtd::console_special_key> __opaque_console::signal_keys() noexcept {
   return {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
 }
 
-int __os_window_left() noexcept {
+int __opaque_console::window_left() noexcept {
   /// @todo get console window left on linux and macOS
   return 0;
 }
 
-int __os_window_height() noexcept {
+int __opaque_console::window_height() noexcept {
   if (!terminal::is_ansi_supported()) return 24;
-  int top = __os_cursor_top();
-  __os_set_cursor_position(__os_cursor_left(), 999);
-  int height = __os_cursor_top() + 1;
-  __os_set_cursor_position(__os_cursor_left(), top);
+  int top = __opaque_console::cursor_top();
+  __opaque_console::set_cursor_position(__opaque_console::cursor_left(), 999);
+  int height = __opaque_console::cursor_top() + 1;
+  __opaque_console::set_cursor_position(__opaque_console::cursor_left(), top);
   return height;
 }
 
-int __os_window_top() noexcept {
+int __opaque_console::window_top() noexcept {
   /// @todo get console window top on linux and macOS
   return 0;
 }
 
-int __os_window_width() noexcept {
+int __opaque_console::window_width() noexcept {
   if (!terminal::is_ansi_supported()) return 80;
-  int left = __os_cursor_left();
-  __os_set_cursor_position(999, __os_cursor_top());
-  int width = __os_cursor_left() + 1;
-  __os_set_cursor_position(left, __os_cursor_top());
+  int left = __opaque_console::cursor_left();
+  __opaque_console::set_cursor_position(999, __opaque_console::cursor_top());
+  int width = __opaque_console::cursor_left() + 1;
+  __opaque_console::set_cursor_position(left, __opaque_console::cursor_top());
   return width;
 }
 

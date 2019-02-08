@@ -83,32 +83,41 @@ inline std::basic_string<wchar_t> __format<wchar_t>(const wchar_t* fmt, ...) {
   return formated_string;
 }
 
-xtd::console_color __os_background_color() noexcept;
-bool __os_background_color(xtd::console_color color) noexcept;
-bool __os_beep(unsigned int frequency, unsigned int duration) noexcept;
-int __os_buffer_height() noexcept;
-int __os_buffer_width() noexcept;
-bool __os_caps_lock() noexcept;
-bool __os_clrscr() noexcept;
-int __os_cursor_left() noexcept;
-int __os_cursor_size() noexcept;
-void __os_cursor_size(int size) noexcept;
-int __os_cursor_top() noexcept;
-bool __os_cursor_visible() noexcept;
-void __os_cursor_visible(bool visible) noexcept;
-xtd::console_color __os_foreground_color() noexcept;
-bool __os_foreground_color(xtd::console_color color) noexcept;
-int __os_input_code_page() noexcept;
-bool __os_input_code_page(int codePage) noexcept;
-int __os_output_code_page() noexcept;
-bool __os_output_code_page(int codePage) noexcept;
-bool __os_reset_color() noexcept;
-bool __os_set_cursor_position(int left, int top) noexcept;
-std::map<int, xtd::console_special_key> __os_signal_keys() noexcept;
-int __os_window_left() noexcept;
-int __os_window_height() noexcept;
-int __os_window_top() noexcept;
-int __os_window_width() noexcept;
+namespace xtd {
+  template<class Char>
+  class basic_console;
+}
+
+class __opaque_console final {
+  template<class Char>
+  friend class xtd::basic_console;
+  static xtd::console_color background_color() noexcept;
+  static bool background_color(xtd::console_color color) noexcept;
+  static bool beep(unsigned int frequency, unsigned int duration) noexcept;
+  static int buffer_height() noexcept;
+  static int buffer_width() noexcept;
+  static bool caps_lock() noexcept;
+  static bool clrscr() noexcept;
+  static int cursor_left() noexcept;
+  static int cursor_size() noexcept;
+  static void cursor_size(int size) noexcept;
+  static int cursor_top() noexcept;
+  static bool cursor_visible() noexcept;
+  static void cursor_visible(bool visible) noexcept;
+  static xtd::console_color foreground_color() noexcept;
+  static bool foreground_color(xtd::console_color color) noexcept;
+  static int input_code_page() noexcept;
+  static bool input_code_page(int codePage) noexcept;
+  static int output_code_page() noexcept;
+  static bool output_code_page(int codePage) noexcept;
+  static bool reset_color() noexcept;
+  static bool set_cursor_position(int left, int top) noexcept;
+  static std::map<int, xtd::console_special_key> signal_keys() noexcept;
+  static int window_left() noexcept;
+  static int window_height() noexcept;
+  static int window_top() noexcept;
+  static int window_width() noexcept;
+};
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
@@ -139,7 +148,7 @@ namespace xtd {
     /// @par Example
     /// The following example saves the values of the ConsoleColor enumeration to an array and stores the current values of the BackgroundColor and ForegroundColor properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the ConsoleColor enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the ResetColor method to restore the original console colors.
     /// @include ConsoleColor4.cpp
-    static console_color background_color() noexcept {return __os_background_color();}
+    static console_color background_color() noexcept {return  __opaque_console::background_color();}
     
     /// @brief Sets the background color of the console.
     /// @param A ConsoleColor that specifies the background color of the console; that is, the color that appears behind each character.
@@ -150,46 +159,46 @@ namespace xtd {
     /// @par Example
     /// The following example saves the values of the ConsoleColor enumeration to an array and stores the current values of the BackgroundColor and ForegroundColor properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the ConsoleColor enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the ResetColor method to restore the original console colors.
     /// @include ConsoleColor4.cpp
-    static bool background_color(console_color color) noexcept {return __os_background_color(color);}
+    static bool background_color(console_color color) noexcept {return __opaque_console::background_color(color);}
     
     static void beep() noexcept {beep(800, 200);}
     
-    static bool beep(unsigned int frequency, unsigned int duration) noexcept {return __os_beep(frequency, duration);}
+    static bool beep(unsigned int frequency, unsigned int duration) noexcept {return __opaque_console::beep(frequency, duration);}
     
-    static int buffer_height() noexcept {return __os_buffer_height();}
+    static int buffer_height() noexcept {return __opaque_console::buffer_height();}
     
-    static int buffer_width() noexcept {return __os_buffer_width();}
+    static int buffer_width() noexcept {return __opaque_console::buffer_width();}
     
-    static bool caps_lock() noexcept {return __os_caps_lock();}
+    static bool caps_lock() noexcept {return __opaque_console::caps_lock();}
     
-    static bool clrscr() noexcept {return __os_clrscr();}
+    static bool clrscr() noexcept {return __opaque_console::clrscr();}
     
-    static int cursor_left() noexcept {return __os_cursor_left();}
+    static int cursor_left() noexcept {return __opaque_console::cursor_left();}
     
     static bool cursor_left(int left) noexcept {return set_cursor_position(left, cursor_top());}
     
-    static int cursor_size() noexcept {return __os_cursor_size();}
+    static int cursor_size() noexcept {return __opaque_console::cursor_size();}
     
-    static void cursor_size(int size) noexcept {__os_cursor_size(size);}
+    static void cursor_size(int size) noexcept {__opaque_console::cursor_size(size);}
     
-    static int cursor_top() noexcept {return __os_cursor_top();}
+    static int cursor_top() noexcept {return __opaque_console::cursor_top();}
     
     static bool cursor_top(int top) noexcept {return set_cursor_position(cursor_left(), top);}
     
-    static bool cursor_visible() noexcept {return __os_cursor_visible();}
+    static bool cursor_visible() noexcept {return __opaque_console::cursor_visible();}
     
-    static void cursor_visible(bool visible) noexcept {__os_cursor_visible(visible);}
+    static void cursor_visible(bool visible) noexcept {__opaque_console::cursor_visible(visible);}
     
-    static console_color foreground_color() noexcept {return __os_foreground_color();}
+    static console_color foreground_color() noexcept {return __opaque_console::foreground_color();}
     
-    static bool foreground_color(console_color color) noexcept {return __os_foreground_color(color);}
+    static bool foreground_color(console_color color) noexcept {return __opaque_console::foreground_color(color);}
     
     template<typename ... Args>
     static std::basic_string<Char> format(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {return __format(fmt.c_str(), std::forward<Args>(args) ...);}
     
-    static int input_code_page() noexcept {return __os_input_code_page();}
+    static int input_code_page() noexcept {return __opaque_console::input_code_page();}
     
-    static bool input_code_page(int code_page) noexcept {return __os_input_code_page(code_page);}
+    static bool input_code_page(int code_page) noexcept {return __opaque_console::input_code_page(code_page);}
     
     static bool is_error_redireted() noexcept {return error.rdbuf() != __get_err_rdbuf<Char>();}
     
@@ -203,9 +212,9 @@ namespace xtd {
     
     static std::basic_ostream<Char> open_standard_output() noexcept {return std::basic_ostream<Char>(__get_out_rdbuf<Char>());}
     
-    static int output_code_page() noexcept {return __os_output_code_page();}
+    static int output_code_page() noexcept {return __opaque_console::output_code_page();}
     
-    static bool output_code_page(int code_page) noexcept {return __os_output_code_page(code_page);}
+    static bool output_code_page(int code_page) noexcept {return __opaque_console::output_code_page(code_page);}
     
     static std::basic_string<Char> read_line() noexcept {
       std::basic_string<Char> result;
@@ -213,9 +222,9 @@ namespace xtd {
       return result;
     }
     
-    static bool reset_color() noexcept {return __os_reset_color();}
+    static bool reset_color() noexcept {return __opaque_console::reset_color();}
     
-    static bool set_cursor_position(int left, int top) noexcept {return __os_set_cursor_position(left, top);}
+    static bool set_cursor_position(int left, int top) noexcept {return __opaque_console::set_cursor_position(left, top);}
     
     static void set_error(const std::ostream& os) noexcept {error.rdbuf(os.rdbuf());}
     
@@ -223,15 +232,15 @@ namespace xtd {
     
     static void set_out(const std::ostream& os) noexcept  {out.rdbuf(os.rdbuf());}
     
-    static std::map<int, console_special_key> signal_keys() noexcept {return __os_signal_keys();}
+    static std::map<int, console_special_key> signal_keys() noexcept {return __opaque_console::signal_keys();}
     
-    static int window_height() noexcept {return __os_window_height();}
+    static int window_height() noexcept {return __opaque_console::window_height();}
     
-    static int window_left() noexcept {return __os_window_left();}
+    static int window_left() noexcept {return __opaque_console::window_left();}
     
-    static int window_top() noexcept {return __os_window_top();}
+    static int window_top() noexcept {return __opaque_console::window_top();}
     
-    static int window_width() noexcept {return __os_window_width();}
+    static int window_width() noexcept {return __opaque_console::window_width();}
     
     template<typename Arg>
     static void write(Arg&& arg) noexcept {out << arg;}
