@@ -3,9 +3,16 @@ cmake_minimum_required(VERSION 3.3)
 # Solution
 project(console)
 
+option(ENABLE_COVERAGE "Enable code coverage" OFF)
+
 # Options
 enable_testing()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+if (ENABLE_COVERAGE AND UNIX)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+  set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} --coverage")
+endif()
 
 # External projects
 include(ExternalProject)
