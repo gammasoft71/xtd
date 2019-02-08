@@ -43,6 +43,32 @@ bool __opaque_console::beep(unsigned int frequency, unsigned int duration) noexc
   return true;
 }
 
+int __opaque_console::buffer_height() noexcept {
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+  return csbi.dwSize.Y;
+}
+
+bool __opaque_console::buffer_height(int height) noexcept {
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+  csbi.dwSize.Y = (int16)height;
+  return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
+}
+
+int __opaque_console::buffer_width() noexcept {
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+  return csbi.dwSize.X;
+}
+
+bool __opaque_console::buffer_width(int width) noexcept {
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+  csbi.dwSize.X = (int16)width;
+  return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
+}
+
 bool __opaque_console::caps_lock() noexcept {
   return (GetKeyState(VK_CAPITAL) & 0x0001) == 0x0001;
 }

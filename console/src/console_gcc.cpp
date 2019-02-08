@@ -129,9 +129,19 @@ int __opaque_console::buffer_height() noexcept {
   return __opaque_console::window_height();
 }
 
+bool __opaque_console::buffer_height(int height) noexcept {
+  /// @todo set console buffer height on linux and macOS
+  return true;
+}
+
 int __opaque_console::buffer_width() noexcept {
   /// @todo console buffer Width on linux and macOS
   return __opaque_console::window_width();
+}
+
+bool __opaque_console::buffer_width(int width) noexcept {
+  /// @todo set console buffer width on linux and macOS
+  return true;
 }
 
 bool __opaque_console::caps_lock() noexcept {

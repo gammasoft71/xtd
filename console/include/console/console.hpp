@@ -95,7 +95,9 @@ class __opaque_console final {
   static bool background_color(xtd::console_color color) noexcept;
   static bool beep(unsigned int frequency, unsigned int duration) noexcept;
   static int buffer_height() noexcept;
+  static bool buffer_height(int height) noexcept;
   static int buffer_width() noexcept;
+  static bool buffer_width(int width) noexcept;
   static bool caps_lock() noexcept;
   static bool clrscr() noexcept;
   static int cursor_left() noexcept;
@@ -156,9 +158,9 @@ namespace xtd {
     /// @brief Gets the background color of the console.
     /// @return the background console_color.
     /// @include
-    /// A get operation for a Windows-based application, in which a console does not exist, returns ConsoleColor.Black.
+    /// A get operation for a Windows-based application, in which a console does not exist, returns console_color.Black.
     /// @par Example
-    /// The following example saves the values of the ConsoleColor enumeration to an array and stores the current values of the BackgroundColor and ForegroundColor properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the ConsoleColor enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the ResetColor method to restore the original console colors.
+    /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     static console_color background_color() noexcept {return  __opaque_console::background_color();}
     
@@ -167,19 +169,40 @@ namespace xtd {
     /// @return false if the color specified in a set operation is not a valid member of console_color or I/O error occurred; otherise true.
     /// @remarks A change to the background_color method affects only output that is written to individual character cells after the background color is changed. To change the background color of the console window as a whole, set the BackgroundColor property and call the Clear method. The following example provides an illustration.
     /// @include
-    /// A get operation for a Windows-based application, in which a console does not exist, returns ConsoleColor.Black.
+    /// A get operation for a Windows-based application, in which a console does not exist, returns console_color.Black.
     /// @par Example
-    /// The following example saves the values of the ConsoleColor enumeration to an array and stores the current values of the BackgroundColor and ForegroundColor properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the ConsoleColor enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the ResetColor method to restore the original console colors.
+    /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     static bool background_color(console_color color) noexcept {return __opaque_console::background_color(color);}
     
+    /// @brief Plays the sound of a beep through the console speaker.
+    /// @remarks By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds
     static void beep() noexcept {beep(800, 200);}
     
+    /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
+    /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
+    /// @param duration The duration of the beep measured in milliseconds
+    /// @return false if ranging out of range; otherwise true.
     static bool beep(unsigned int frequency, unsigned int duration) noexcept {return __opaque_console::beep(frequency, duration);}
     
+    /// @brief Gets the height of the buffer area.
+    /// @return The current height, in rows, of the buffer area.
+    /// @par Example
+    /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
+    /// @include console_buffer.cpp
     static int buffer_height() noexcept {return __opaque_console::buffer_height();}
     
+    /// @brief Gets or sets the height of the buffer area.
+    /// @param The current height, in rows, of the buffer area.
+    // @return true if buffer heigh changed; otherwise false.
+    /// @par Example
+    /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
+    /// @include console_buffer.cpp
+    static bool buffer_height(int height) noexcept {return __opaque_console::buffer_height(height);}
+    
     static int buffer_width() noexcept {return __opaque_console::buffer_width();}
+    
+    static bool buffer_width(int width) noexcept {return __opaque_console::buffer_width(width);}
     
     static bool caps_lock() noexcept {return __opaque_console::caps_lock();}
     
