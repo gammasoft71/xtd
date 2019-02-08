@@ -2,8 +2,8 @@
 /// @brief Contains console_modifiers enum.
 #pragma once
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   /// @brief Represents the SHIFT, ALT, and CTRL modifier keys on a keyboard.
   /// @par Library
   /// Switch.Core

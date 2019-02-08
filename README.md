@@ -33,14 +33,14 @@ For more information see [Documentation](docs).
 
 The following examples "Hello, world!" show how to change the color of the text in three different ways.
 
-## Using gammasoft::console::WriteLine
+## Using xtd::console::WriteLine
 
 hello_world_console.cpp
 
 ```c++
 #include <console/console>
 
-using namespace gammasoft;
+using namespace xtd;
 
 // The main entry point for the application.
 int main() {
@@ -51,15 +51,15 @@ int main() {
 
 ```
 
-## Using gammasoft::console::out character ostream
+## Using xtd::console::out character ostream
 
 hello_world_console_out.cpp
 
 ```c++
 #include <console/console>
 
-using namespace gammasoft;
 using namespace std;
+using namespace xtd;
 
 // The main entry point for the application.
 int main() {
@@ -75,8 +75,8 @@ hello_world_cout.cpp
 ```c++
 #include <console/console>
 
-using namespace gammasoft;
 using namespace std;
+using namespace xtd;
 
 // The main entry point for the application.
 int main() {

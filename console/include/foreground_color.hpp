@@ -3,8 +3,8 @@
 #pragma once
 #include "console.hpp"
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   class foreground_color final {
   public:
     explicit foreground_color(console_color color) : color_(color) {}

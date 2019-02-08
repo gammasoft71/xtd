@@ -3,8 +3,8 @@
 #include <vector>
 #include <thread>
 
-using namespace gammasoft;
 using namespace std;
+using namespace xtd;
 
 // Define the frequencies of notes in an octave, as well as
 // silence (rest).

@@ -2,8 +2,8 @@
 /// @brief Contains Switch::System::ConsoleKey enum.
 #pragma once
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   /// @brief Specifies the standard keys on a console.
   /// @see Console
   enum class console_key {

@@ -2,8 +2,8 @@
 /// @brief Contains console_color enum class.
 #pragma once
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   /// @enum console_color
   /// @brief Specifies constants that define foreground and background colors for the console.
   /// @see console

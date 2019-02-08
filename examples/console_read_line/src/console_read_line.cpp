@@ -1,8 +1,8 @@
 #include <console/console>
 #include <string>
 
-using namespace gammasoft;
 using namespace std;
+using namespace xtd;
 
 // The main entry point for the application.
 int main() {

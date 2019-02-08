@@ -88,17 +88,17 @@ namespace {
     termios backupedTermioAttributes;
   } term;
   
-  gammasoft::console_color backColor = gammasoft::console_color::black;
-  gammasoft::console_color foreColor = gammasoft::console_color::white;
+  xtd::console_color backColor = xtd::console_color::black;
+  xtd::console_color foreColor = xtd::console_color::white;
   bool cursorVisible = true;
 }
 
-gammasoft::console_color __os_background_color() noexcept {
+xtd::console_color __os_background_color() noexcept {
   return backColor;
 }
 
-bool __os_background_color(gammasoft::console_color color) noexcept {
-  static std::map<gammasoft::console_color, const char*> colors {{gammasoft::console_color::black, "\033[40m"}, {gammasoft::console_color::dark_blue, "\033[44m"}, {gammasoft::console_color::dark_green, "\033[42m"}, {gammasoft::console_color::dark_cyan, "\033[46m"}, {gammasoft::console_color::dark_red, "\033[41m"}, {gammasoft::console_color::dark_magenta, "\033[45m"}, {gammasoft::console_color::dark_yellow, "\033[43m"}, {gammasoft::console_color::gray, "\033[47m"}, {gammasoft::console_color::dark_gray, "\033[100m"}, {gammasoft::console_color::blue, "\033[104m"}, {gammasoft::console_color::green, "\033[102m"}, {gammasoft::console_color::cyan, "\033[106m"}, {gammasoft::console_color::red, "\033[101m"}, {gammasoft::console_color::magenta, "\033[105m"}, {gammasoft::console_color::yellow, "\033[103m"}, {gammasoft::console_color::white, "\033[107m"}};
+bool __os_background_color(xtd::console_color color) noexcept {
+  static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[40m"}, {xtd::console_color::dark_blue, "\033[44m"}, {xtd::console_color::dark_green, "\033[42m"}, {xtd::console_color::dark_cyan, "\033[46m"}, {xtd::console_color::dark_red, "\033[41m"}, {xtd::console_color::dark_magenta, "\033[45m"}, {xtd::console_color::dark_yellow, "\033[43m"}, {xtd::console_color::gray, "\033[47m"}, {xtd::console_color::dark_gray, "\033[100m"}, {xtd::console_color::blue, "\033[104m"}, {xtd::console_color::green, "\033[102m"}, {xtd::console_color::cyan, "\033[106m"}, {xtd::console_color::red, "\033[101m"}, {xtd::console_color::magenta, "\033[105m"}, {xtd::console_color::yellow, "\033[103m"}, {xtd::console_color::white, "\033[107m"}};
   if (!terminal::is_ansi_supported() && colors.find(color) != colors.end()) return false;
   std::cout << colors[color] << std::flush;
   backColor = color;
@@ -193,12 +193,12 @@ void __os_cursor_visible(bool visible) noexcept {
   }
 }
 
-gammasoft::console_color __os_foreground_color() noexcept {
+xtd::console_color __os_foreground_color() noexcept {
   return foreColor;
 }
 
-bool __os_foreground_color(gammasoft::console_color color) noexcept {
-  static std::map<gammasoft::console_color, const char*> colors {{gammasoft::console_color::black, "\033[30m"}, {gammasoft::console_color::dark_blue, "\033[34m"}, {gammasoft::console_color::dark_green, "\033[32m"}, {gammasoft::console_color::dark_cyan, "\033[36m"}, {gammasoft::console_color::dark_red, "\033[31m"}, {gammasoft::console_color::dark_magenta, "\033[35m"}, {gammasoft::console_color::dark_yellow, "\033[33m"}, {gammasoft::console_color::gray, "\033[37m"}, {gammasoft::console_color::dark_gray, "\033[90m"}, {gammasoft::console_color::blue, "\033[94m"}, {gammasoft::console_color::green, "\033[92m"}, {gammasoft::console_color::cyan, "\033[96m"}, {gammasoft::console_color::red, "\033[91m"}, {gammasoft::console_color::magenta, "\033[95m"}, {gammasoft::console_color::yellow, "\033[93m"}, {gammasoft::console_color::white, "\033[97m"}};
+bool __os_foreground_color(xtd::console_color color) noexcept {
+  static std::map<xtd::console_color, const char*> colors {{xtd::console_color::black, "\033[30m"}, {xtd::console_color::dark_blue, "\033[34m"}, {xtd::console_color::dark_green, "\033[32m"}, {xtd::console_color::dark_cyan, "\033[36m"}, {xtd::console_color::dark_red, "\033[31m"}, {xtd::console_color::dark_magenta, "\033[35m"}, {xtd::console_color::dark_yellow, "\033[33m"}, {xtd::console_color::gray, "\033[37m"}, {xtd::console_color::dark_gray, "\033[90m"}, {xtd::console_color::blue, "\033[94m"}, {xtd::console_color::green, "\033[92m"}, {xtd::console_color::cyan, "\033[96m"}, {xtd::console_color::red, "\033[91m"}, {xtd::console_color::magenta, "\033[95m"}, {xtd::console_color::yellow, "\033[93m"}, {xtd::console_color::white, "\033[97m"}};
   if (!terminal::is_ansi_supported() && colors.find(color) != colors.end()) return false;
   std::cout << colors[color] << std::flush;
   foreColor = color;
@@ -237,8 +237,8 @@ bool __os_set_cursor_position(int left, int top) noexcept {
   return true;
 }
 
-std::map<int, gammasoft::console_special_key> __os_signal_keys() noexcept {
-  return {{SIGQUIT, gammasoft::console_special_key::control_backslash}, {SIGTSTP, gammasoft::console_special_key::control_z}, {SIGINT, gammasoft::console_special_key::control_c}};
+std::map<int, xtd::console_special_key> __os_signal_keys() noexcept {
+  return {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
 }
 
 int __os_window_left() noexcept {

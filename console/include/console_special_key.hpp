@@ -2,8 +2,8 @@
 /// @brief Contains Switch::System::ConsoleSpecialKey enum.
 #pragma once
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   /// @brief Specifies combinations of modifier and console keys that can interrupt the current process.
   /// @par Library
   /// Switch.Core

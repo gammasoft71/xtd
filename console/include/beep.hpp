@@ -3,8 +3,8 @@
 #pragma once
 #include "console.hpp"
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   class beep final {
   public:
     beep() = default;

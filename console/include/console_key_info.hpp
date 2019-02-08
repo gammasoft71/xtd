@@ -5,8 +5,8 @@
 #include "console_key.hpp"
 #include "console_modifiers.hpp"
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   /// @brief Specifies the standard keys on a console.
   /// @par Library
   /// Switch.Core

@@ -6,17 +6,17 @@
 #include <Windows.h>
 
 namespace {
-  gammasoft::console_color backColor = __os_background_color();
-  gammasoft::console_color foreColor = __os_foreground_color();
+  xtd::console_color backColor = __os_background_color();
+  xtd::console_color foreColor = __os_foreground_color();
 }
 
-gammasoft::console_color __os_background_color() noexcept {
+xtd::console_color __os_background_color() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<gammasoft::console_color>((csbi.wAttributes & 0x00F0) >> 4);
+  return static_cast<xtd::console_color>((csbi.wAttributes & 0x00F0) >> 4);
 }
 
-bool __os_background_color(gammasoft::console_color color) noexcept {
+bool __os_background_color(xtd::console_color color) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -88,13 +88,13 @@ void __os_cursor_visible(bool visible) noexcept {
   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
 }
 
-gammasoft::console_color __os_foreground_color() noexcept {
+xtd::console_color __os_foreground_color() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<gammasoft::console_color>(csbi.wAttributes & 0x000F);
+  return static_cast<xtd::console_color>(csbi.wAttributes & 0x000F);
 }
 
-bool __os_foreground_color(gammasoft::console_color color) noexcept {
+bool __os_foreground_color(xtd::console_color color) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   
@@ -133,8 +133,8 @@ bool __os_set_cursor_position(int left, int top) noexcept {
   return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwCursorPosition) == TRUE;
 }
 
-std::map<int, gammasoft::console_special_key> __os_signal_keys() noexcept {
-  return {{SIGBREAK, gammasoft::console_special_key::control_break}, {SIGINT, gammasoft::console_special_key::control_c}};
+std::map<int, xtd::console_special_key> __os_signal_keys() noexcept {
+  return {{SIGBREAK, xtd::console_special_key::control_break}, {SIGINT, xtd::console_special_key::control_c}};
 }
 
 int __os_window_height() noexcept {

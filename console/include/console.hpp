@@ -83,8 +83,8 @@ inline std::basic_string<wchar_t> __format<wchar_t>(const wchar_t* fmt, ...) {
   return formated_string;
 }
 
-gammasoft::console_color __os_background_color() noexcept;
-bool __os_background_color(gammasoft::console_color color) noexcept;
+xtd::console_color __os_background_color() noexcept;
+bool __os_background_color(xtd::console_color color) noexcept;
 bool __os_beep(unsigned int frequency, unsigned int duration) noexcept;
 int __os_buffer_height() noexcept;
 int __os_buffer_width() noexcept;
@@ -96,23 +96,23 @@ void __os_cursor_size(int size) noexcept;
 int __os_cursor_top() noexcept;
 bool __os_cursor_visible() noexcept;
 void __os_cursor_visible(bool visible) noexcept;
-gammasoft::console_color __os_foreground_color() noexcept;
-bool __os_foreground_color(gammasoft::console_color color) noexcept;
+xtd::console_color __os_foreground_color() noexcept;
+bool __os_foreground_color(xtd::console_color color) noexcept;
 int __os_input_code_page() noexcept;
 bool __os_input_code_page(int codePage) noexcept;
 int __os_output_code_page() noexcept;
 bool __os_output_code_page(int codePage) noexcept;
 bool __os_reset_color() noexcept;
 bool __os_set_cursor_position(int left, int top) noexcept;
-std::map<int, gammasoft::console_special_key> __os_signal_keys() noexcept;
+std::map<int, xtd::console_special_key> __os_signal_keys() noexcept;
 int __os_window_left() noexcept;
 int __os_window_height() noexcept;
 int __os_window_top() noexcept;
 int __os_window_width() noexcept;
 /// @endcond
 
-/// @brief The gammasoft namespace contains all fundamental classes to access console.
-namespace gammasoft {
+/// @brief The xtd namespace contains all fundamental classes to access console.
+namespace xtd {
   /// @brief Represents the standard input, output, and error streams for console applications.
   /// @remarks This class cannot be inherited.
   /// @par Examples
