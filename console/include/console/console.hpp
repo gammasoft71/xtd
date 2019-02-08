@@ -131,10 +131,22 @@ namespace xtd {
   template<class Char>
   class basic_console final {
   public:
+    /// @brief Gets the standard input stream.
+    /// @param A std::basic_istream<Char> that represents the standard input stream.
+    /// @par Example
+    /// The following sample illustrates the use of the in property.
+    /// @include console_in_out.cpp
     static std::basic_istream<Char> in;
     
+    /// @brief Gets the error output stream.
+    /// @param A std::basic_ostream<Char> that represents the error output stream.
     static std::basic_ostream<Char> error;
     
+    /// @brief Gets the standard output stream.
+    /// @param A std::basic_ostream<Char> that represents the standard output stream.
+    /// @par Example
+    /// The following sample illustrates the use of the out property.
+    /// @include console_in_out.cpp
     static std::basic_ostream<Char> out;
     
     /// @cond
@@ -147,7 +159,7 @@ namespace xtd {
     /// A get operation for a Windows-based application, in which a console does not exist, returns ConsoleColor.Black.
     /// @par Example
     /// The following example saves the values of the ConsoleColor enumeration to an array and stores the current values of the BackgroundColor and ForegroundColor properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the ConsoleColor enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the ResetColor method to restore the original console colors.
-    /// @include ConsoleColor4.cpp
+    /// @include console_color4.cpp
     static console_color background_color() noexcept {return  __opaque_console::background_color();}
     
     /// @brief Sets the background color of the console.
@@ -194,7 +206,7 @@ namespace xtd {
     static bool foreground_color(console_color color) noexcept {return __opaque_console::foreground_color(color);}
     
     template<typename ... Args>
-    static std::basic_string<Char> format(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {return __format(fmt.c_str(), std::forward<Args>(args) ...);}
+    static std::basic_string<Char> format(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {return __format(fmt.c_str(), convert_param(std::forward<Args>(args)) ...);}
     
     static int input_code_page() noexcept {return __opaque_console::input_code_page();}
     
@@ -251,10 +263,23 @@ namespace xtd {
     static void write_line(Arg&& arg) noexcept {out << arg << std::endl;}
     
     template<typename ... Args>
-    static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, std::forward<Args>(args) ...);}
+    static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, args...);}
     
     template<typename ... Args>
-    static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, std::forward<Args>(args) ...) << std::endl;}
+    static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, args...) << std::endl;}
+    
+  private:
+    template<typename T>
+    static auto convert_param(T&& t) {
+      if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<T>>, std::string>::value) {
+        return std::forward<T>(t).c_str();
+      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<T>>, std::wstring>::value) {
+        return std::forward<T>(t).c_str();
+      }
+      else {
+        return std::forward<T>(t);
+      }
+    }
   };
   
   template<class Char>
