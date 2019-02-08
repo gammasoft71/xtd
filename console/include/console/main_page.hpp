@@ -36,7 +36,8 @@
 ///   console::foreground_color(console_color::blue);
 ///   console::write_line("Hello, World!");
 ///   console::reset_color();
-/// }/// @endcode
+/// }
+/// @endcode
 ///
 /// <b>Using xtd::console::out character ostream</b>
 ///
@@ -50,7 +51,8 @@
 // The main entry point for the application.
 /// int main() {
 ///   console::out << foreground_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
-/// }/// @endcode
+/// }
+/// @endcode
 ///
 /// <b>Using std::cout character ostream</b>
 ///
