@@ -3,7 +3,7 @@
 # generate and build Switch
 mkdir -p build/examples
 pushd build
-cmake .. -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=ON -DCMAKE_INSTALL_PREFIX=~/local
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local
 cmake --build . -- -j8
 cmake --build . --target install
 if [ $? -ne 0 ]; then exit -1; fi
