@@ -1,5 +1,5 @@
 #include <console/console>
-#include <catch/catch.hpp>
+#include <catch2/catch.hpp>
 
 using namespace std;
 using namespace xtd;
