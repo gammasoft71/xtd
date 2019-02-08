@@ -20,7 +20,6 @@
 /// For more information see <a href=https://github.com/gammasoft71/console/blob/master/README.md>Documentation.md</a> file.
 ///
 /// @section ExamplesSection Examples
-///
 /// The following examples "Hello, world!" show how to change the color of the text in three different ways.
 ///
 /// <b>Using xtd::console::WriteLine</b>
@@ -48,7 +47,7 @@
 /// using namespace std;
 /// using namespace xtd;
 ///
-// The main entry point for the application.
+/// // The main entry point for the application.
 /// int main() {
 ///   console::out << foreground_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
 /// }
@@ -72,5 +71,4 @@
 /// For more examples see <a href="hhttps://github.com/gammasoft71/console/tree/master/examples/">Examples</a>.
 ///
 /// @section DownloadSection Download and install console
-///
 /// Before running examples you must download and install console. To download and install it read <a href="https://github.com/gammasoft71/console/blob/master/docs/Downloads.md">Downloads.md</a> file.
