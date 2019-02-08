@@ -17,9 +17,8 @@ matrix:
   - env: TEST="Build on Linux"
     os: linux
     script: scripts/travis/build_linux.sh
-    after_success: scripts/travis/publish_to_codecov.sh
   - env: TEST="Build on macOS"
     os: osx
     osx_image: xcode10.1
     script: scripts/travis/build_macos.sh
-    #after_success: scripts/travis/publish_to_codecov.sh
+    after_success: scripts/travis/publish_to_codecov.sh
