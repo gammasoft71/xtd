@@ -170,7 +170,7 @@ namespace xtd {
     /// A get operation for a Windows-based application, in which a console does not exist, returns ConsoleColor.Black.
     /// @par Example
     /// The following example saves the values of the ConsoleColor enumeration to an array and stores the current values of the BackgroundColor and ForegroundColor properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the ConsoleColor enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the ResetColor method to restore the original console colors.
-    /// @include ConsoleColor4.cpp
+    /// @include console_color4.cpp
     static bool background_color(console_color color) noexcept {return __opaque_console::background_color(color);}
     
     static void beep() noexcept {beep(800, 200);}
