@@ -6,14 +6,24 @@
 #include <Windows.h>
 
 namespace {
-  xtd::console_color backColor = __opaque_console::background_color();
-  xtd::console_color foreColor = __opaque_console::foreground_color();
+  xtd::console_color __background_color() noexcept {
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    return static_cast<xtd::console_color>((csbi.wAttributes & 0x00F0) >> 4);
+  }
+
+  xtd::console_color __foreground_color() noexcept {
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+    return static_cast<xtd::console_color>(csbi.wAttributes & 0x000F);
+  }
+
+  xtd::console_color backColor = __background_color();
+  xtd::console_color foreColor = __foreground_color();
 }
 
 xtd::console_color __opaque_console::background_color() noexcept {
-  CONSOLE_SCREEN_BUFFER_INFO csbi;
-  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<xtd::console_color>((csbi.wAttributes & 0x00F0) >> 4);
+  return __background_color();
 }
 
 bool __opaque_console::background_color(xtd::console_color color) noexcept {
@@ -89,9 +99,7 @@ void __opaque_console::cursor_visible(bool visible) noexcept {
 }
 
 xtd::console_color __opaque_console::foreground_color() noexcept {
-  CONSOLE_SCREEN_BUFFER_INFO csbi;
-  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  return static_cast<xtd::console_color>(csbi.wAttributes & 0x000F);
+  return __foreground_color();
 }
 
 bool __opaque_console::foreground_color(xtd::console_color color) noexcept {
