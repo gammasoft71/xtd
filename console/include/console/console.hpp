@@ -1,126 +1,11 @@
 /// @file
 /// @brief Contains xtd::console class.
 #pragma once
-#include "console_color.hpp"
-#include "console_key_info.hpp"
-#include "console_special_key.hpp"
-
-#include <cstdarg>
-#include <iostream>
-#include <map>
-#include <string>
-
-/// @cond
-template<class Char>
-inline std::basic_streambuf<Char>* __get_err_rdbuf() {return nullptr;};
-
-template<>
-inline std::basic_streambuf<char>* __get_err_rdbuf<char>() {
-  static std::basic_streambuf<char>* rdbuf = std::cerr.rdbuf();
-  return rdbuf;
-};
-
-template<>
-inline std::basic_streambuf<wchar_t>* __get_err_rdbuf<wchar_t>() {
-  static std::basic_streambuf<wchar_t>* rdbuf = std::wcerr.rdbuf();
-  return rdbuf;
-};
-
-template<class Char>
-inline std::basic_streambuf<Char>* __get_in_rdbuf() {return nullptr;};
-
-template<>
-inline std::basic_streambuf<char>* __get_in_rdbuf<char>() {
-  static std::basic_streambuf<char>* rdbuf = std::cin.rdbuf();
-  return rdbuf;
-};
-
-template<>
-inline std::basic_streambuf<wchar_t>* __get_in_rdbuf<wchar_t>() {
-  static std::basic_streambuf<wchar_t>* rdbuf = std::wcin.rdbuf();
-  return rdbuf;
-};
-
-template<class Char>
-inline std::basic_streambuf<Char>* __get_out_rdbuf() {return nullptr;};
-
-template<>
-inline std::basic_streambuf<char>* __get_out_rdbuf<char>() {
-  static std::basic_streambuf<char>* rdbuf = std::cout.rdbuf();
-  return rdbuf;
-};
-
-template<>
-inline std::basic_streambuf<wchar_t>* __get_out_rdbuf<wchar_t>() {
-  static std::basic_streambuf<wchar_t>* rdbuf = std::wcout.rdbuf();
-  return rdbuf;
-};
-
-template <class Char>
-inline std::basic_string<Char> __format(const Char* fmt, ...) {return std::basic_string<Char>();}
-
-template <>
-inline std::basic_string<char> __format<char>(const char* fmt, ...) {
-  va_list args;
-  va_start(args, fmt);
-  std::basic_string<char> formated_string(vsnprintf(nullptr, 0, fmt, args), 0);
-  va_end(args);
-  va_start(args, fmt);
-  vsnprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
-  va_end(args);
-  return formated_string;
-}
-
-template <>
-inline std::basic_string<wchar_t> __format<wchar_t>(const wchar_t* fmt, ...) {
-  va_list args;
-  va_start(args, fmt);
-  std::basic_string<wchar_t> formated_string(vswprintf(nullptr, 0, fmt, args), 0);
-  va_end(args);
-  va_start(args, fmt);
-  vswprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
-  va_end(args);
-  return formated_string;
-}
-
-namespace xtd {
-  template<class Char>
-  class basic_console;
-}
-
-class __opaque_console final {
-  template<class Char>
-  friend class xtd::basic_console;
-  static xtd::console_color background_color() noexcept;
-  static bool background_color(xtd::console_color color) noexcept;
-  static bool beep(unsigned int frequency, unsigned int duration) noexcept;
-  static int buffer_height() noexcept;
-  static bool buffer_height(int height) noexcept;
-  static int buffer_width() noexcept;
-  static bool buffer_width(int width) noexcept;
-  static bool caps_lock() noexcept;
-  static bool clrscr() noexcept;
-  static int cursor_left() noexcept;
-  static int cursor_size() noexcept;
-  static void cursor_size(int size) noexcept;
-  static int cursor_top() noexcept;
-  static bool cursor_visible() noexcept;
-  static void cursor_visible(bool visible) noexcept;
-  static xtd::console_color foreground_color() noexcept;
-  static bool foreground_color(xtd::console_color color) noexcept;
-  static int input_code_page() noexcept;
-  static bool input_code_page(int codePage) noexcept;
-  static int output_code_page() noexcept;
-  static bool output_code_page(int codePage) noexcept;
-  static bool reset_color() noexcept;
-  static bool set_cursor_position(int left, int top) noexcept;
-  static std::map<int, xtd::console_special_key> signal_keys() noexcept;
-  static int window_left() noexcept;
-  static int window_height() noexcept;
-  static int window_top() noexcept;
-  static int window_width() noexcept;
-};
-/// @endcond
+#include "__format.hpp"
+#include "__get_err_rdbuf.hpp"
+#include "__get_in_rdbuf.hpp"
+#include "__get_out_rdbuf.hpp"
+#include "__opaque_console.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
@@ -194,14 +79,24 @@ namespace xtd {
     
     /// @brief Gets or sets the height of the buffer area.
     /// @param The current height, in rows, of the buffer area.
-    // @return true if buffer heigh changed; otherwise false.
+    /// @return true if buffer heigh changed; otherwise false.
     /// @par Example
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
     static bool buffer_height(int height) noexcept {return __opaque_console::buffer_height(height);}
     
+    /// @brief Gets the width of the buffer area.
+    /// @param The current width, in columns, of the buffer area.
+    /// @par Example
+    /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
+    /// @include console_buffer.cpp
     static int buffer_width() noexcept {return __opaque_console::buffer_width();}
     
+    /// @brief Sets the width of the buffer area.
+    /// @param The current width, in columns, of the buffer area.
+    /// @par Example
+    /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
+    /// @include console_buffer.cpp
     static bool buffer_width(int width) noexcept {return __opaque_console::buffer_width(width);}
     
     static bool caps_lock() noexcept {return __opaque_console::caps_lock();}
@@ -292,15 +187,15 @@ namespace xtd {
     static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, args...) << std::endl;}
     
   private:
-    template<typename T>
-    static auto convert_param(T&& t) {
-      if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<T>>, std::string>::value) {
-        return std::forward<T>(t).c_str();
-      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<T>>, std::wstring>::value) {
-        return std::forward<T>(t).c_str();
+    template<typename Arg>
+    static auto convert_param(Arg&& arg) {
+      if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::string>::value) {
+        return std::forward<Arg>(arg).c_str();
+      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::wstring>::value) {
+        return std::forward<Arg>(arg).c_str();
       }
       else {
-        return std::forward<T>(t);
+        return std::forward<Arg>(arg);
       }
     }
   };

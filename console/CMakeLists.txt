@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(console VERSION 1.0.0)
 set(INCLUDES
+  include/console/__format.hpp
+  include/console/__get_err_rdbuf.hpp
+  include/console/__get_in_rdbuf.hpp
+  include/console/__get_out_rdbuf.hpp
+  include/console/__opaque_console.hpp
   include/console/background_color.hpp
   include/console/beep.hpp
   include/console/console
@@ -17,8 +22,8 @@ set(INCLUDES
   include/console/reset_color.hpp
 )
 set(SOURCES
-  src/console_gcc.cpp
-  src/console_win32.cpp
+  src/__opaque_console_gcc.cpp
+  src/__opaque_console_win32.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})
