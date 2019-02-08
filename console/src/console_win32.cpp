@@ -52,7 +52,7 @@ int __opaque_console::buffer_height() noexcept {
 bool __opaque_console::buffer_height(int height) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.dwSize.Y = (int16)height;
+  csbi.dwSize.Y = static_cast<int16_t>(height);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
 }
 
@@ -65,7 +65,7 @@ int __opaque_console::buffer_width() noexcept {
 bool __opaque_console::buffer_width(int width) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.dwSize.X = (int16)width;
+  csbi.dwSize.X = static_cast<int16_t>(width);
   return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwSize) == TRUE;
 }
 
@@ -162,8 +162,8 @@ bool __opaque_console::reset_color() noexcept {
 bool __opaque_console::set_cursor_position(int left, int top) noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-  csbi.dwCursorPosition.X = (int16_t)left;
-  csbi.dwCursorPosition.Y = (int16_t)top;
+  csbi.dwCursorPosition.X = static_cast<int16_t>(left);
+  csbi.dwCursorPosition.Y = static_cast<int16_t>(top);
   return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwCursorPosition) == TRUE;
 }
 
