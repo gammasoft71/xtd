@@ -9,5 +9,5 @@ environment:
 build_script:
 - cmd: scripts\appveyor\build.cmd
 
-#test_script:
-#- cmd: scripts\appveyor\test.cmd
+test_script:
+- cmd: scripts\appveyor\test.cmd
