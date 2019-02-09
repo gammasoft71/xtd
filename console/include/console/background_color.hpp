@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::background_color class.
 #pragma once
-#include "console.hpp"
+#include "basic_console.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
@@ -13,7 +13,7 @@ namespace xtd {
     template<typename Char>
     friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const background_color& color) {
       if (os.rdbuf() == __get_out_rdbuf<Char>() || os.rdbuf() == __get_err_rdbuf<Char>())
-        console::background_color(color.color);
+        basic_console<Char>::background_color(color.color);
       return os;
     }
     /// @endcond

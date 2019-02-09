@@ -9,6 +9,7 @@ set(INCLUDES
   include/console/__get_out_rdbuf.hpp
   include/console/__opaque_console.hpp
   include/console/background_color.hpp
+  include/console/basic_console.hpp
   include/console/beep.hpp
   include/console/console
   include/console/console.hpp

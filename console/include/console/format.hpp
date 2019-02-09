@@ -1,14 +1,14 @@
 /// @file
 /// @brief Contains format class.
 #pragma once
-#include "console.hpp"
+#include "basic_console.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
   class format final {
   public:
-    template<typename ... Args>
-    format(const std::string& format, Args&& ... args) : value_(console::format(format, args...)) {}
+    template<typename Char, typename ... Args>
+    format(const std::basic_string<Char>& format, Args&& ... args) : value_(basic_console<Char>::format(format, std::forward<Args>(args)...)) {}
 
     /// @cond
     template<typename Char>

@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::beep class.
 #pragma once
-#include "console.hpp"
+#include "basic_console.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
@@ -15,7 +15,7 @@ namespace xtd {
     template<typename Char>
     friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const beep& b) {
       if (os.rdbuf() == __get_out_rdbuf<Char>() || os.rdbuf() == __get_err_rdbuf<Char>())
-        console::beep(b.frequency_, b.duration_);
+        basic_console<Char>::beep(b.frequency_, b.duration_);
       return os;
     }
     /// @endcond
