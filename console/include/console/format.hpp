@@ -9,7 +9,10 @@ namespace xtd {
   public:
     template<typename Char, typename ... Args>
     format(const std::basic_string<Char>& format, Args&& ... args) : value_(basic_console<Char>::format(format, std::forward<Args>(args)...)) {}
-
+    
+    template<typename Char, typename ... Args>
+    format(const Char* format, Args&& ... args) : value_(basic_console<Char>::format(format, std::forward<Args>(args)...)) {}
+    
     /// @cond
     template<typename Char>
     friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const format& fmt) {return os << fmt.value_;}

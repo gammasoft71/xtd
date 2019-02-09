@@ -259,10 +259,12 @@ namespace xtd {
     }
   };
   
+  /// @cond
   template<class Char>
   std::basic_ostream<Char> basic_console<Char>::error {__get_err_rdbuf<Char>()};
   template<class Char>
   std::basic_istream<Char> basic_console<Char>::in {__get_in_rdbuf<Char>()};
   template<class Char>
   std::basic_ostream<Char> basic_console<Char>::out {__get_out_rdbuf<Char>()};
+  /// @endcond
 }
