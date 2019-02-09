@@ -154,12 +154,32 @@ namespace xtd {
     /// @include console_cursor.cpp
     static bool cursor_top(int top) noexcept {return set_cursor_position(cursor_left(), top);}
     
+    /// @brief Gets a value indicating whether the cursor is visible.
+    /// @return  true if the cursor is visible; otherwise, false.
+    /// @par Example
+    /// This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character.
+    /// @include console_cursor_visible.cpp
     static bool cursor_visible() noexcept {return __opaque_console::cursor_visible();}
     
+    /// @brief Sets a value indicating whether the cursor is visible.
+    /// @param visible true if the cursor is visible; otherwise, false.
+    /// @par Example
+    /// This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character.
+    /// @include console_cursor_visible.cpp
     static void cursor_visible(bool visible) noexcept {__opaque_console::cursor_visible(visible);}
     
+    /// @brief Gets the foreground color of the console.
+    /// @return A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed.
+    /// @par Example
+    /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
+    /// @include console_color4.cpp
     static console_color foreground_color() noexcept {return __opaque_console::foreground_color();}
     
+    /// @brief Sets the foreground color of the console.
+    /// @param color A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed.
+    /// @par Example
+    /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
+    /// @include console_color4.cpp
     static bool foreground_color(console_color color) noexcept {return __opaque_console::foreground_color(color);}
     
     template<typename ... Args>
