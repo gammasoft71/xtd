@@ -243,8 +243,13 @@ namespace xtd {
     template<typename ... Args>
     static std::basic_string<Char> format(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {return __format(fmt.c_str(), convert_param(std::forward<Args>(args)) ...);}
     
+    /// @brief Gets the code page the console uses to read input.
+    /// @return The code page used to read console input.
     static int input_code_page() noexcept {return __opaque_console::input_code_page();}
     
+    /// @brief Sets the code page the console uses to read input.
+    /// @param code_page The code page used to read console input.
+    /// @return true if the code page changed; otherwise false.
     static bool input_code_page(int code_page) noexcept {return __opaque_console::input_code_page(code_page);}
     
     static bool is_error_redireted() noexcept {return error.rdbuf() != __get_err_rdbuf<Char>();}
@@ -259,8 +264,13 @@ namespace xtd {
     
     static std::basic_ostream<Char> open_standard_output() noexcept {return std::basic_ostream<Char>(__get_out_rdbuf<Char>());}
     
+    /// @brief Gets the code page the console uses to write output.
+    /// @return The code page used to write console output.
     static int output_code_page() noexcept {return __opaque_console::output_code_page();}
     
+    /// @brief Sets the code page the console uses to write output.
+    /// @param code_page The code page used to write console output.
+    /// @return true if the code page changed; otherwise false.
     static bool output_code_page(int code_page) noexcept {return __opaque_console::output_code_page(code_page);}
     
     static std::basic_string<Char> read_line() noexcept {
