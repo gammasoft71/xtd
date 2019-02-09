@@ -56,12 +56,18 @@ namespace xtd {
     
     /// @brief Plays the sound of a beep through the console speaker.
     /// @remarks By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds
+    /// @par Example
+    /// The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times.
+    /// @include console_beep.cpp
     static void beep() noexcept {beep(800, 200);}
     
     /// @brief Plays the sound of a beep of a specified frequency and duration through the console speaker.
     /// @param frequency The frequency of the beep, ranging from 37 to 32767 hertz
     /// @param duration The duration of the beep measured in milliseconds
     /// @return false if ranging out of range; otherwise true.
+    /// @par Example
+    /// This example demonstrates the beep method by playing the first few notes of a song through the console speaker.
+    /// @include console_song.cpp
     static bool beep(unsigned int frequency, unsigned int duration) noexcept {return __opaque_console::beep(frequency, duration);}
     
     /// @brief Gets the height of the buffer area.
