@@ -239,7 +239,7 @@ namespace xtd {
     /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*     |
     /// | L      |               |                        | long double     |       |          |       |                |
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
-    /// @remarks you can use std::string or std::wstring with format param %s.
+    /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename ... Args>
     static std::basic_string<Char> format(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {return __format(fmt.c_str(), convert_param(std::forward<Args>(args)) ...);}
     
