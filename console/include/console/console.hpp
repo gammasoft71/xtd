@@ -18,19 +18,16 @@ namespace xtd {
   template<class Char>
   class basic_console final {
   public:
-    /// @brief Gets the standard input stream.
-    /// @param A std::basic_istream<Char> that represents the standard input stream.
+    /// @brief Gets the standard input stream. A std::basic_istream<Char> that represents the standard input stream.
     /// @par Example
     /// The following sample illustrates the use of the in property.
     /// @include console_in_out.cpp
     static std::basic_istream<Char> in;
     
-    /// @brief Gets the error output stream.
-    /// @param A std::basic_ostream<Char> that represents the error output stream.
+    /// @brief Gets the error output stream. A std::basic_ostream<Char> that represents the error output stream.
     static std::basic_ostream<Char> error;
     
-    /// @brief Gets the standard output stream.
-    /// @param A std::basic_ostream<Char> that represents the standard output stream.
+    /// @brief Gets the standard output stream. A std::basic_ostream<Char> that represents the standard output stream.
     /// @par Example
     /// The following sample illustrates the use of the out property.
     /// @include console_in_out.cpp
@@ -42,19 +39,16 @@ namespace xtd {
     
     /// @brief Gets the background color of the console.
     /// @return the background console_color.
-    /// @include
-    /// A get operation for a Windows-based application, in which a console does not exist, returns console_color.Black.
+    /// @remarks A get operation for a Windows-based application, in which a console does not exist, returns console_color.Black.
     /// @par Example
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
     static console_color background_color() noexcept {return  __opaque_console::background_color();}
     
     /// @brief Sets the background color of the console.
-    /// @param A ConsoleColor that specifies the background color of the console; that is, the color that appears behind each character.
+    /// @param color Aconsole_color that specifies the background color of the console; that is, the color that appears behind each character.
     /// @return false if the color specified in a set operation is not a valid member of console_color or I/O error occurred; otherise true.
     /// @remarks A change to the background_color method affects only output that is written to individual character cells after the background color is changed. To change the background color of the console window as a whole, set the BackgroundColor property and call the Clear method. The following example provides an illustration.
-    /// @include
-    /// A get operation for a Windows-based application, in which a console does not exist, returns console_color.Black.
     /// @par Example
     /// The following example saves the values of the console_color enumeration to an array and stores the current values of the background_color and foreground_color properties to variables. It then changes the foreground color to each color in the console_color enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the reset_color method to restore the original console colors.
     /// @include console_color4.cpp
@@ -78,7 +72,7 @@ namespace xtd {
     static int buffer_height() noexcept {return __opaque_console::buffer_height();}
     
     /// @brief Gets or sets the height of the buffer area.
-    /// @param The current height, in rows, of the buffer area.
+    /// @param height The current height, in rows, of the buffer area.
     /// @return true if buffer heigh changed; otherwise false.
     /// @par Example
     /// This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
@@ -93,14 +87,14 @@ namespace xtd {
     static int buffer_width() noexcept {return __opaque_console::buffer_width();}
     
     /// @brief Sets the width of the buffer area.
-    /// @param The current width, in columns, of the buffer area.
+    /// @param width The current width, in columns, of the buffer area.
     /// @par Example
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
     static bool buffer_width(int width) noexcept {return __opaque_console::buffer_width(width);}
     
     /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
-    /// @param true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
+    /// @return true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
     static bool caps_lock() noexcept {return __opaque_console::caps_lock();}
     
     /// @brief Clears the console buffer and corresponding console window of display information.
@@ -110,7 +104,7 @@ namespace xtd {
     /// The following example uses the cear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop.
     /// @include console_clear.cpp
     /// The example relies on a get_key_press method to validate the user's selection of a foreground and background color.
-    ///
+    /// @par Example
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
     static bool clear() noexcept {return __opaque_console::clear();}
@@ -122,20 +116,42 @@ namespace xtd {
     /// @include console_cursor.cpp
     static int cursor_left() noexcept {return __opaque_console::cursor_left();}
     
-    /// @brief Gets or sets the column position of the cursor within the buffer area.
-    /// @param The current position, in columns, of the cursor.
-    /// @return true if buffer heigh changed; otherwise false.
+    /// @brief Sets the column position of the cursor within the buffer area.
+    /// @param left The current position, in columns, of the cursor.
+    /// @return true if cursor left changed; otherwise false.
     /// @par Example
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
     /// @include console_cursor.cpp
     static bool cursor_left(int left) noexcept {return set_cursor_position(left, cursor_top());}
     
+    /// @brief Gets or sets the height of the cursor within a character cell.
+    /// @return The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
+    /// @par Example
+    /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
+    /// @include console_cursor_size.cpp
     static int cursor_size() noexcept {return __opaque_console::cursor_size();}
     
+    /// @brief Sets the height of the cursor within a character cell.
+    /// @param size The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100.
+    /// @return true if cursor size changed; otherwise false.
+    /// @par Example
+    /// This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating.
+    /// @include console_cursor_size.cpp
     static void cursor_size(int size) noexcept {__opaque_console::cursor_size(size);}
     
+    /// @brief Gets the row position of the cursor within the buffer area.
+    /// @return The current position, in rows, of the cursor.
+    /// @par Example
+    /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
+    /// @include console_cursor.cpp
     static int cursor_top() noexcept {return __opaque_console::cursor_top();}
     
+    /// @brief Sets the row position of the cursor within the buffer area.
+    /// @param top The current position, in rows, of the cursor.
+    /// @return true if cursor top changed; otherwise false.
+    /// @par Example
+    /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
+    /// @include console_cursor.cpp
     static bool cursor_top(int top) noexcept {return set_cursor_position(cursor_left(), top);}
     
     static bool cursor_visible() noexcept {return __opaque_console::cursor_visible();}
