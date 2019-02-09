@@ -5,7 +5,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  /// @brief Represent background color iomanipulator class.
+  /// @brief Represent background color output manipulator class.
   /// @see xtd::basic_console<Char>::background_color(console_color color) method.
   class background_color final {
   public:

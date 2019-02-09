@@ -5,7 +5,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  /// @brief Represent format iomanipulator class.
+  /// @brief Represent format output manipulator class.
   /// @see xtd::basic_console<Char>::format(const std::basic_string<Char>& format, Args&& ... args) method.
   class format final {
   public:

@@ -5,7 +5,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  /// @brief Represent beep iomanipulator class.
+  /// @brief Represent beep output manipulator class.
   /// @see xtd::basic_console<Char>::beep(unsigned int frequency, unsigned int duration) method.
   class beep final {
   public:
