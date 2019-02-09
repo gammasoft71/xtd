@@ -26,7 +26,7 @@ class __opaque_console final {
   static int buffer_width() noexcept;
   static bool buffer_width(int width) noexcept;
   static bool caps_lock() noexcept;
-  static bool clrscr() noexcept;
+  static bool clear() noexcept;
   static int cursor_left() noexcept;
   static int cursor_size() noexcept;
   static void cursor_size(int size) noexcept;

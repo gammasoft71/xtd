@@ -73,7 +73,7 @@ bool __opaque_console::caps_lock() noexcept {
   return (GetKeyState(VK_CAPITAL) & 0x0001) == 0x0001;
 }
 
-bool __opaque_console::clrscr() noexcept {
+bool __opaque_console::clear() noexcept {
   CONSOLE_SCREEN_BUFFER_INFO csbi;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   

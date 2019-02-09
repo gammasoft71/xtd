@@ -149,7 +149,7 @@ bool __opaque_console::caps_lock() noexcept {
   return false;
 }
 
-bool __opaque_console::clrscr() noexcept {
+bool __opaque_console::clear() noexcept {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[H\x1b[2J" << std::flush;
   return true;

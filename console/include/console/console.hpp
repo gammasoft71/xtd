@@ -86,7 +86,7 @@ namespace xtd {
     static bool buffer_height(int height) noexcept {return __opaque_console::buffer_height(height);}
     
     /// @brief Gets the width of the buffer area.
-    /// @param The current width, in columns, of the buffer area.
+    /// @return The current width, in columns, of the buffer area.
     /// @par Example
     /// This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns.
     /// @include console_buffer.cpp
@@ -99,12 +99,35 @@ namespace xtd {
     /// @include console_buffer.cpp
     static bool buffer_width(int width) noexcept {return __opaque_console::buffer_width(width);}
     
+    /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
+    /// @param true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
     static bool caps_lock() noexcept {return __opaque_console::caps_lock();}
     
-    static bool clrscr() noexcept {return __opaque_console::clrscr();}
+    /// @brief Clears the console buffer and corresponding console window of display information.
+    /// @remarks Using the clear method is equivalent invoking the MS-DOS cls command in the command prompt window.
+    /// @remarks When the Clear method is called, the cursor automatically scrolls to the top-left corner of the window and the contents of the screen buffer are set to blanks using the current foreground background colors.
+    /// @par Example
+    /// The following example uses the cear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop.
+    /// @include console_clear.cpp
+    /// The example relies on a get_key_press method to validate the user's selection of a foreground and background color.
+    ///
+    /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
+    /// @include console_cursor.cpp
+    static bool clear() noexcept {return __opaque_console::clear();}
     
+    /// @brief Gets the column position of the cursor within the buffer area.
+    /// @return The current position, in columns, of the cursor.
+    /// @par Example
+    /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
+    /// @include console_cursor.cpp
     static int cursor_left() noexcept {return __opaque_console::cursor_left();}
     
+    /// @brief Gets or sets the column position of the cursor within the buffer area.
+    /// @param The current position, in columns, of the cursor.
+    /// @return true if buffer heigh changed; otherwise false.
+    /// @par Example
+    /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
+    /// @include console_cursor.cpp
     static bool cursor_left(int left) noexcept {return set_cursor_position(left, cursor_top());}
     
     static int cursor_size() noexcept {return __opaque_console::cursor_size();}
