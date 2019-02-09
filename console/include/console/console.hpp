@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::console class.
+/// @brief Contains xtd::console and xtd::wconsole typedefs.
 #pragma once
 #include "__format.hpp"
 #include "__get_err_rdbuf.hpp"

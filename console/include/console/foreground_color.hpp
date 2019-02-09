@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains foreground_color class.
+/// @brief Contains std::foreground_color class.
 #pragma once
 #include "basic_console.hpp"
 

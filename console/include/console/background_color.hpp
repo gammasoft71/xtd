@@ -22,4 +22,3 @@ namespace xtd {
     console_color color ;
   };
 }
-

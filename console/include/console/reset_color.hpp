@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains reset_color class.
+/// @brief Contains xtd::reset_color class.
 #pragma once
 #include "basic_console.hpp"
 

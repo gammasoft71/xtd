@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::console class.
+/// @brief Contains xtd::__opaque_console class.
 #pragma once
 #include "console_color.hpp"
 #include "console_key_info.hpp"

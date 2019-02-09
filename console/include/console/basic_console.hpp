@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::console class.
+/// @brief Contains xtd::basic_console class.
 #pragma once
 #include "__format.hpp"
 #include "__get_err_rdbuf.hpp"
@@ -17,15 +17,15 @@ namespace xtd {
   /// @include console_out.cpp
   template<class Char>
   class basic_console final {
-  public:
+  public:    
+    /// @brief Gets the error output stream. A std::basic_ostream<Char> that represents the error output stream.
+    static std::basic_ostream<Char> error;
+
     /// @brief Gets the standard input stream. A std::basic_istream<Char> that represents the standard input stream.
     /// @par Example
     /// The following sample illustrates the use of the in property.
     /// @include console_in_out.cpp
     static std::basic_istream<Char> in;
-    
-    /// @brief Gets the error output stream. A std::basic_ostream<Char> that represents the error output stream.
-    static std::basic_ostream<Char> error;
     
     /// @brief Gets the standard output stream. A std::basic_ostream<Char> that represents the standard output stream.
     /// @par Example
@@ -234,13 +234,13 @@ namespace xtd {
     template<typename Arg>
     static void write(Arg&& arg) noexcept {out << arg;}
     
+    template<typename ... Args>
+    static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, args...);}
+
     static void write_line() noexcept {out << std::endl;}
     
     template<typename Arg>
     static void write_line(Arg&& arg) noexcept {out << arg << std::endl;}
-    
-    template<typename ... Args>
-    static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, args...);}
     
     template<typename ... Args>
     static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << format(fmt, args...) << std::endl;}

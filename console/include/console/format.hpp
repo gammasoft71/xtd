@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains format class.
+/// @brief Contains xtd::format class.
 #pragma once
 #include "basic_console.hpp"
 
