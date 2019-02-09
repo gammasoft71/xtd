@@ -5,9 +5,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
+  /// @brief Represent foreground color iomanipulator class.
+  /// @see xtd::basic_console<Char>::foreground_color(console_color color) method.
   class foreground_color final {
-    /// @brief Represent foreground color iomanipulator class.
-    /// @see xtd::basic_console<Char>::foreground_color(console_color color) method.
   public:
     explicit foreground_color(console_color color) : color_(color) {}
     
