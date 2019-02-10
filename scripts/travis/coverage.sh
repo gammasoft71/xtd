@@ -11,9 +11,9 @@ if [ $? -ne 0 ]; then exit -1; fi
 
 # Create lcov report
 lcov --capture --directory . --output-file coverage.info
-if [ $? -ne 0 ]; then exit -1; fi
+#if [ $? -ne 0 ]; then exit -1; fi
 lcov --remove coverage.info '/usr/*' --output-file coverage.info
-if [ $? -ne 0 ]; then exit -1; fi
+#if [ $? -ne 0 ]; then exit -1; fi
 lcov --list coverage.info
 #if [ $? -ne 0 ]; then exit -1; fi
 
