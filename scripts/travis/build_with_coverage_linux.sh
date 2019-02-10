@@ -6,7 +6,7 @@ mkdir -p build/examples
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DENABLE_COVERAGE=ON
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . -- -j8
+cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
