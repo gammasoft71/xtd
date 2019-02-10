@@ -18,6 +18,7 @@ matrix:
   - env: TEST="Build on Linux"
     os: linux
     script: scripts/travis/build_linux.sh
-  - env: TEST="Build with coverage on Linux"
-    os: linux
-    script: scripts/travis/build_with_coverage_linux.sh
+  - env: TEST="Coverage"
+    osx_image: xcode10.0
+    os: osx
+    script: scripts/travis/coverage.sh
