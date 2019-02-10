@@ -1,19 +1,20 @@
 :: cmd
 
 mkdir build\examples
+cd build
 
 :: generate and build lib
-cd build
 cmake .. -G "%BUILD_OPTION%" -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config Debug --target install
 if %ERRORLEVEL% NEQ 0 exit 1
-cd ..
 
 :: generate and build examples
-cd build\examples
+cd examples
 cmake ../../examples -G "%BUILD_OPTION%" -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config Debug
 if %ERRORLEVEL% NEQ 0 exit 1
-cd ..\..
+cd ..
+
+cd ..
