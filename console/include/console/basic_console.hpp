@@ -12,7 +12,7 @@ namespace xtd {
   /// @brief Represents the standard input, output, and error streams for console applications.
   /// @remarks This class cannot be inherited.
   /// @par Examples
-  /// The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the SetIn and SetOut methods.
+  /// The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the set_in and set_out methods.
   /// @include console1.cpp
   /// @include console_out.cpp
   template<class Char>
@@ -258,10 +258,16 @@ namespace xtd {
     /// @return true if the code page changed; otherwise false.
     static bool input_code_page(int code_page) noexcept {return __opaque_console::input_code_page(code_page);}
     
+    /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
+    /// @param true if error output is redirected; otherwise, false.
     static bool is_error_redireted() noexcept {return error.rdbuf() != __get_err_rdbuf<Char>();}
     
+    /// @brief  Gets a value that indicates whether the input stream has been redirected from the standard input stream.
+    /// @param true if input is redirected; otherwise, false.
     static bool is_in_redireted() noexcept {return in.rdbuf() != __get_in_rdbuf<Char>();}
     
+    /// @brief  Gets a value that indicates whether the output stream has been redirected from the standard output stream.
+    /// @param true if output is redirected; otherwise, false.
     static bool is_out_redireted() noexcept {return out.rdbuf() != __get_out_rdbuf<Char>();}
     
     static std::basic_ostream<Char> open_standard_error() noexcept {return std::basic_ostream<Char>(__get_err_rdbuf<Char>());}
