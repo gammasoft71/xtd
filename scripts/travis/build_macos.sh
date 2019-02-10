@@ -2,7 +2,7 @@
 
 mkdir -p build/examples
 
-# generate and build console
+# generate and build lib
 pushd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
