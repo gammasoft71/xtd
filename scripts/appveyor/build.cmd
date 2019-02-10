@@ -11,7 +11,7 @@ if %ERRORLEVEL% NEQ 0 exit 1
 cd ..
 
 :: generate and build examples
-cd build\example
+cd build\examples
 cmake ../../examples -G "%BUILD_OPTION%" -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config Debug
