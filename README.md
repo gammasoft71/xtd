@@ -1,7 +1,7 @@
 [![console](docs/pictures/consoleHeader.png)](README.md)
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd.console.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.console)
-[![Build status](https://ci.appveyor.com/api/projects/status/29f73qcp4e205549?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd.console)
+[![Build status](https://ci.appveyor.com/api/projects/status/7i6t0xilki708d2s?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-console)
 [![codecov](https://codecov.io/gh/gammasoft71/xtd.console/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.console)
 [![Documentation](https://codedocs.xyz/gammasoft71/xtd.console.svg)](https://codedocs.xyz/gammasoft71/xtd.console/)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-con.ole%20website)](https://gammasoft71.wixsite.com/xtd-console)
