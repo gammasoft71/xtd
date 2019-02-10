@@ -1,21 +1,24 @@
 #!/bin/bash
 
-# generate and build console
 mkdir -p build/examples
+
+# generate and build console
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DCMAKE_INSTALL_PREFIX=~/local
+if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j8
+if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install
-
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
 # generate and build examples
 cd build/examples
 cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DCMAKE_INSTALL_PREFIX=~/local
+if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j8
 if [ $? -ne 0 ]; then exit -1; fi
-cd ..
+cd ../..
 
 # run registered unit tests
 cd build

@@ -7,7 +7,6 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-7
-    - gcc-7
 
 matrix:
   include:
