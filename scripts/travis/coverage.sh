@@ -15,7 +15,7 @@ if [ $? -ne 0 ]; then exit -1; fi
 lcov --remove coverage.info '/usr/*' --output-file coverage.info
 if [ $? -ne 0 ]; then exit -1; fi
 lcov --list coverage.info
-if [ $? -ne 0 ]; then exit -1; fi
+#if [ $? -ne 0 ]; then exit -1; fi
 
 # publish result to codecov
 bash <(curl -s https://codecov.io/bash) -f coverage.info -t "8dfddc0a-d627-4211-b69b-f82557d3145a"
