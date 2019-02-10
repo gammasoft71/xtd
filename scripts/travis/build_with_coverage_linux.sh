@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# generate and build console
+# generate and build console with coverage
 mkdir -p build/examples
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DENABLE_COVERAGE=ON
