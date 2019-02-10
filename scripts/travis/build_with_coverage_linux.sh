@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 # generate and build console with coverage
 mkdir -p build/examples
