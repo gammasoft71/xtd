@@ -4,7 +4,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/7i6t0xilki708d2s?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-console)
 [![codecov](https://codecov.io/gh/gammasoft71/xtd.console/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.console)
 [![Documentation](https://codedocs.xyz/gammasoft71/xtd.console.svg)](https://codedocs.xyz/gammasoft71/xtd.console/)
-[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-con.ole%20website)](https://gammasoft71.wixsite.com/xtd-console)
+[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-console%20website)](https://gammasoft71.wixsite.com/xtd-console)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.console.svg)](LICENSE.md)
 [![SourceForge Download console](https://img.shields.io/sourceforge/dt/console-cpp.svg)](https://sourceforge.net/projects/console-cpp/files/latest/download)
 [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.console.svg)](README.md)
