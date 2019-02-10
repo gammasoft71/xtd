@@ -19,6 +19,5 @@ matrix:
     os: linux
     script: scripts/travis/build_linux.sh
   - env: TEST="Coverage"
-    osx_image: xcode10.0
-    os: osx
+    os: linux
     script: scripts/travis/coverage.sh
