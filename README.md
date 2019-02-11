@@ -1,7 +1,7 @@
 [![strings](docs/pictures/stringsHeader.png)](README.md)
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd.strings.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.strings)
-[![Build status](https://ci.appveyor.com/api/projects/status/29f73qcp4e205549?svg=true)](https://ci.appveyor.com/project/gammasoft71/strings)
+[![Build status](https://ci.appveyor.com/api/projects/status/tark5puo8mou967a?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-strings)
 [![codecov](https://codecov.io/gh/gammasoft71/strings/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/strings)
 [![Documentation](https://codedocs.xyz/gammasoft71/strings.svg)](https://codedocs.xyz/gammasoft71/strings/)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=strings%20website)](https://gammasoft71.wixsite.com/strings)
