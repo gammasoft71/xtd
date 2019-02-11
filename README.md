@@ -6,7 +6,7 @@
 [![Documentation](https://codedocs.xyz/gammasoft71/xtd.strings.svg)](https://codedocs.xyz/gammasoft71/xtd.strings/)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-strings%20website)](https://gammasoft71.wixsite.com/xtd-strings)
 [![license](https://img.shields.io/github/license/gammasoft71/strings.svg)](LICENSE.md)
-[![SourceForge Download strings](https://img.shields.io/sourceforge/dt/strings-cpp.svg)](https://sourceforge.net/projects/strings-cpp/files/latest/download)
+[![SourceForge Download strings](https://img.shields.io/sourceforge/dt/stringspro.svg)](https://sourceforge.net/projects/stringspro//files/latest/download)
 [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/strings.svg)](README.md)
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
