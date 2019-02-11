@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::console and xtd::wconsole typedefs.
 #pragma once
-#include "__format.hpp"
 #include "__get_err_rdbuf.hpp"
 #include "__get_in_rdbuf.hpp"
 #include "__get_out_rdbuf.hpp"

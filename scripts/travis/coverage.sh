@@ -3,6 +3,13 @@
 mkdir -p build
 cd build
 
+# install external std.strings package
+mkdir xtd.strings && cd xtd.strings
+git clone https://github.com/gammasoft71/xtd.strings .
+cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=~/local .
+cmake --build . --target install -- -j $(nproc)
+cd ..
+
 # generate and build lib with coverage
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DENABLE_COVERAGE=ON ..
 if [ $? -ne 0 ]; then exit -1; fi

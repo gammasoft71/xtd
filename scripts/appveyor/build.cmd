@@ -3,6 +3,13 @@
 mkdir build\examples
 cd build
 
+:: install external std.strings package
+mkdir xtd.strings & cd xtd.strings
+git clone https://github.com/gammasoft71/xtd.strings .
+cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local .
+cmake --build . --target install
+cd ..
+
 :: generate and build lib
 cmake .. -G "%BUILD_OPTION%" -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1

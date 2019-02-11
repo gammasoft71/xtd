@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::format class.
 #pragma once
-#include "basic_console.hpp"
+#include <xtd/strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
@@ -10,10 +10,10 @@ namespace xtd {
   class format final {
   public:
     template<typename Char, typename ... Args>
-    format(const std::basic_string<Char>& format, Args&& ... args) : value_(basic_console<Char>::format(format, std::forward<Args>(args)...)) {}
+    format(const std::basic_string<Char>& format, Args&& ... args) : value_(strings::format(format, std::forward<Args>(args)...)) {}
     
     template<typename Char, typename ... Args>
-    format(const Char* format, Args&& ... args) : value_(basic_console<Char>::format(format, std::forward<Args>(args)...)) {}
+    format(const Char* format, Args&& ... args) : value_(strings::format(format, std::forward<Args>(args)...)) {}
     
     /// @cond
     template<typename Char>
