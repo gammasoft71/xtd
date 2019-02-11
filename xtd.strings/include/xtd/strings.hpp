@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::console and xtd::wconsole typedefs.
+/// @brief Contains xtd::strings class.
 #pragma once
 
 #include "__format.hpp"
@@ -8,6 +8,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
+  /// @brief The strings Cainteins string operation methods.
   class strings {
   public:
     /// @cond
