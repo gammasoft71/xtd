@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} console)
+target_link_libraries(${PROJECT_NAME} xtd.console)
 add_dependencies(${PROJECT_NAME} catch)
 
 # Tests

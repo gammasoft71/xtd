@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Solution
-project(console)
+project(xtd.console)
 
 # Options
 enable_testing()
@@ -20,5 +20,5 @@ if (ENABLE_COVERAGE AND UNIX)
 endif()
 
 # Projects
-add_subdirectory(console)
+add_subdirectory(xtd.console)
 add_subdirectory(tests)

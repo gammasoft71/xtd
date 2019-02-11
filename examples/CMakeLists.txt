@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(examples)
+project(xtd.console.examples)
 
 add_subdirectory(console_background_color)
 add_subdirectory(console_background_color2)

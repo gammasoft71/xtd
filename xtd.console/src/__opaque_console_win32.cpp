@@ -1,6 +1,6 @@
 #if defined(_WIN32)
 
-#include "../include/console/__opaque_console.hpp"
+#include "../include/xtd/__opaque_console.hpp"
 
 #include <csignal>
 #include <Windows.h>
