@@ -4,6 +4,7 @@
 
 #include "__format.hpp"
 
+#include <algorithm>
 #include <string>
 #include <vector>
 
