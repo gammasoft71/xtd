@@ -5,9 +5,19 @@
 #include "__format.hpp"
 
 #include <string>
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
+  /// @brief Specifies whether applicable strings::Split method overloads include or omit empty substrings from the return value.
+  /// @see xtd::strings
+  enum class string_split_options {
+    /// @brief The return value includes array elements that contain an empty string.
+    none,
+    /// @brief The return value does not include array elements that contain an empty string.
+    remove_empty_entries
+  };
+
   /// @brief The strings Cainteins string operation methods.
   class strings {
   public:
@@ -80,7 +90,105 @@ namespace xtd {
     template<typename Char, typename ... Args>
     static std::basic_string<Char> format(const Char* fmt, Args&& ... args) noexcept {return __format(fmt, convert_param(std::forward<Args>(args)) ...);}
     /// @endcond
+    
+    /// @brief Splits a specified string into a maximum number of substrings based on the characters in an array.
+    /// @param str string to split.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    /// @remarks If the count parameter is zero, or the options parameter is remove_empty_entries and the length of this instance is zero, an empty array is returned.
+    /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of this instance, the corresponding array element contains an empty string.
+    /// @remarks If there are more than count substrings in this instance, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in this instance are returned in the last element of the return value.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+   template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str, const std::vector<Char>& separators, size_t count, string_split_options options) noexcept {
+      if (count == 0) return {};
+      if (count == 1) return {str};
+      
+      std::vector<std::basic_string<Char>> list;
+      std::basic_string<Char> subString;
+      std::vector<Char> split_char_separators = separators.size() == 0 ? std::vector<Char> {9, 10, 11, 12, 13, 32} : separators;
+      for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
+        bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
+        if (!is_separator) subString.append(std::string(1, *it));
+        if ((it - str.begin() == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0 && options != string_split_options::remove_empty_entries))) {
+          if (list.size() == count - 1) {
+            list.push_back(subString + std::string(str.c_str(), it - str.begin() + (is_separator ? 1 : 0), str.length() - (it - str.begin()) + (is_separator ? 1 : 0)));
+            return list;
+          }
+          list.push_back(subString);
+          subString.clear();
+        }
+      }
+      
+      return list;
+    }
 
+    /// @brief Splits a specified string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the std::isspace() or std::iswspace() method.
+    /// @param str string to split.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str) noexcept {return split(str, std::vector<Char> {9, 10, 11, 12, 13, 32}, std::numeric_limits<size_t>::max(), string_split_options::none);}
+    
+    /// @brief Splits a specified string into substrings that are based on the characters in an array.
+    /// @param str string to split.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str, const std::vector<Char>& separators) noexcept {return split(str, separators, std::numeric_limits<size_t>::max(), string_split_options::none);}
+    
+    /// @brief Splits a specified string into substrings based on the characters in an array. You can specify whether the substrings include empty array elements.
+    /// @param str string to split.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
+    /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    /// @remarks If this instance does not contain any of the characters in separator, the returned array consists of a single element that contains this instance.
+    /// @remarks If the options parameter is remove_empty_entries and the length of this instance is zero, the method returns an empty array.
+    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of this instance, the corresponding array element contains empty string. For example, if separator includes two elements, "-" and "_", the value of the string instance is "-_aa-_", and the value of the options argument is None, the method returns a string array with the following five elements:
+    ///   1. empty string, which represents the empty string that precedes the "-" character at index 0.
+    ///   2. empty string, which represents the empty string between the "-" character at index 0 and the "_" character at index 1.
+    ///   3. "aa",
+    ///   4. empty string, which represents the empty string that follows the "_" character at index 4.
+    ///   5. empty string, which represents the empty string that follows the "-" character at index 5.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the std::isspace() or std::iswspace() method.
+    /// @remarks If count is greater than the number of substrings, the available substrings are returned.
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str, const std::vector<Char>& separators, string_split_options options) noexcept {return split(str, separators, std::numeric_limits<size_t>::max(), options);}
+    
+    /// Splits a specified string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
+    /// @param str string to split.
+    /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
+    /// @param count The maximum number of substrings to return.
+    /// @remarks Delimiter characters are not included in the elements of the returned array.
+    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the Char.IsWhiteSpace method.
+    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of this instance, the corresponding array element contains empty string.
+    /// @remarks If there are more than count substrings in this instance, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in this instance are returned in the last element of the return value.
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str, const std::vector<Char>& separators, size_t count) noexcept {return split(str, separators, count, string_split_options::none);}
+
+    /// @cond
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const Char* str, const std::vector<Char>& separators, size_t count, string_split_options options) noexcept {return split(std::basic_string<Char>(str), separators, count, options);}
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const Char* str) noexcept {return split(str, std::vector<Char> {9, 10, 11, 12, 13, 32}, std::numeric_limits<size_t>::max(), string_split_options::none);}
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const Char* str, const std::vector<Char>& separators) noexcept {return split(str, separators, std::numeric_limits<size_t>::max(), string_split_options::none);}
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const Char* str, const std::vector<Char>& separators, string_split_options options) noexcept {return split(str, separators, std::numeric_limits<size_t>::max(), options);}
+    template<typename Char>
+    static std::vector<std::basic_string<Char>> split(const Char* str, const std::vector<Char>& separators, size_t count) noexcept {return split(str, separators, count, string_split_options::none);}
+    /// @endcond
+    
   private:
     template<typename Arg>
     static auto convert_param(Arg&& arg) {
