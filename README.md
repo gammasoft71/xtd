@@ -1,4 +1,4 @@
-[![console](docs/pictures/consoleHeader.png)](README.md)
+[![console](docs/pictures/header.png)](README.md)
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd.console.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.console)
 [![Build status](https://ci.appveyor.com/api/projects/status/7i6t0xilki708d2s?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-console)
