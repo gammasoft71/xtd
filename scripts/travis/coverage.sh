@@ -18,7 +18,7 @@ lcov --list coverage.info
 #if [ $? -ne 0 ]; then exit -1; fi
 
 # publish result to codecov
-bash <(curl -s https://codecov.io/bash) -f coverage.info -t "8dfddc0a-d627-4211-b69b-f82557d3145a"
+bash <(curl -s https://codecov.io/bash) -f coverage.info -t "a23c3019-e041-44ab-8fad-094d7069a8b8"
 #if [ $? -ne 0 ]; then exit -1; fi
 
 cd ..
