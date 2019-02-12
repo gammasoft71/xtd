@@ -209,10 +209,19 @@ namespace xtd {
     /// @param true if output is redirected; otherwise, false.
     static bool is_out_redireted() noexcept {return out.rdbuf() != __get_out_rdbuf<Char>();}
     
+    /// @brief Acquires the standard error stream.
+    /// @return The standard error stream.
+    /// @remarks This method can be used to reacquire the standard error stream after it has been changed by the set_error method.
     static std::basic_ostream<Char> open_standard_error() noexcept {return std::basic_ostream<Char>(__get_err_rdbuf<Char>());}
     
+    /// @brief Acquires the standard input stream.
+    /// @return The standard input stream.
+    /// @remarks This method can be used to reacquire the standard input stream after it has been changed by the set_int method.
     static std::basic_istream<Char> open_standard_input() noexcept {return std::basic_istream<Char>(__get_in_rdbuf<Char>());}
     
+    /// @brief Acquires the standard output stream.
+    /// @return The standard output stream.
+    /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
     static std::basic_ostream<Char> open_standard_output() noexcept {return std::basic_ostream<Char>(__get_out_rdbuf<Char>());}
     
     /// @brief Gets the code page the console uses to write output.

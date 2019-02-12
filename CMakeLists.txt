@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Solution
-project(xtd.console)
+project(xtd)
 
 # Code coverage
 option(ENABLE_COVERAGE "Enable code coverage" OFF)
