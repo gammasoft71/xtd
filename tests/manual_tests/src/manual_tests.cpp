@@ -6,15 +6,22 @@ using namespace xtd;
 
 // The main entry point for the application.
 int main() {
-  delegate<void(string str)> write_line;
+  delegate<void(const string& str)> write_line;
   
-  write_line += [&](string str)  {
-    cout << str << endl;
+  write_line += [&](const string& str)  {
+    cout << "cout: " << str << endl;
   };
   
-  write_line += [&](string str)  {
-    cerr << str << endl;
+  write_line += [&](const string& str)  {
+    cerr << "cerr: " << str << endl;
   };
   
-  write_line("Hello, world!");
+  write_line("Hello, World!");
 }
+
+// This code produces the following output :
+//
+// cout: Hello, World!
+// cerr: Hello, World!
+
+
