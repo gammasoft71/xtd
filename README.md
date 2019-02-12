@@ -1,4 +1,4 @@
-[![strings](docs/pictures/stringsHeader.png)](README.md)
+[![strings](docs/pictures/header.png)](https://gammasoft71.wixsite.com/xtd-strings)
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd.strings.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.strings)
 [![Build status](https://ci.appveyor.com/api/projects/status/tark5puo8mou967a?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-strings)
