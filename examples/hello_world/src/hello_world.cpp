@@ -8,3 +8,7 @@ int main() {
   console::write_line("%s", "Hello, World!");
   console::reset_color();
 }
+
+// This code produces the following output in blue :
+//
+// Hello, World!
