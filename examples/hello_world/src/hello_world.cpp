@@ -1,12 +1,20 @@
-#include <xtd/strings>
-
+#include <xtd/delegates>
 #include <iostream>
 
 using namespace std;
-using namespace string_literals;
 using namespace xtd;
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("%s, %s!", "Hello", "World"s) << endl;
+  delegate<void(string str)> write_line;
+  
+  write_line += [&](string str)  {
+    cout << str << endl;
+  };
+  
+  write_line += [&](string str)  {
+    cerr << str << endl;
+  };
+  
+  write_line("Hello, world!");
 }
