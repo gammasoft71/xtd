@@ -5,5 +5,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  using event_handler = delegate<void(const event_args&)>;
+  template<typename Type>
+  using event_handler = delegate<void(const Type&, const event_args&)>;
 }

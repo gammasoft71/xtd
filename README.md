@@ -18,9 +18,48 @@ For more information see [Documentation](docs).
 
 # Examples
 
+The classic first application 'Hello World'.
+
+src/delegates_hello_world.cpp:
+
+```c++
+#include <xtd/delegates>
+#include <iostream>
+#include <string>
+
+using namespace std;
+using namespace xtd;
+
+// The main entry point for the application.
+int main() {
+  delegate<void(string str)> write_line;
+  
+  write_line += [&](string str)  {
+    cout << str << endl;
+  };
+  
+  write_line += [&](string str)  {
+    cerr << str << endl;
+  };
+  
+  write_line("Hello, world!");
+}
+```
+
+CMakeLists.txt:
+
+```cmake
+cmake_minimum_required(VERSION 3.3)
+
+project(delegates_hello_world)
+find_package(xtd.delegates REQUIRED)
+add_executable(${PROJECT_NAME} src/delegates_hello_world.cpp)
+target_link_libraries(${PROJECT_NAME} xtd.delegates)
+```
+
 For more examples see [examples](examples)
 
-# Download and install console
+# Download and install
 
 Before running examples you must download and install delegates. To download and install it read Downloads file.
 
