@@ -1,7 +1,7 @@
 [![tunit](docs/pictures/header.png)](https://gammasoft71.wixsite.com/xtd-tunit)
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd.tunit.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.tunit)
-[![Build status](https://ci.appveyor.com/api/projects/status/tark5puo8mou967a?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-tunit)
+[![Build status](https://ci.appveyor.com/api/projects/status/1h8y1d4lodnk1wbb?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-tunit)
 [![codecov](https://codecov.io/gh/gammasoft71/xtd.tunit/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.tunit)
 [![Documentation](https://codedocs.xyz/gammasoft71/xtd.tunit.svg)](https://codedocs.xyz/gammasoft71/xtd.tunit/)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-tunit%20website)](https://gammasoft71.wixsite.com/xtd-tunit)
