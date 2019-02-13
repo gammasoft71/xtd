@@ -1,0 +1,26 @@
+# build folders
+build
+build*
+cmake-build*
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# CLion files
+.idea
+
+# Visual Studio files
+.vs
+
+# Visual Studio Code files
+.vscode
+
+# QT user config cmake files
+CMakeLists.txt.user
+
+# Visual Studio user config cmake files
+CMakeSettings.json
+
