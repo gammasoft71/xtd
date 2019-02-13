@@ -12,7 +12,6 @@
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
 
-
 # Features
 
 For more information see [Documentation](docs).
