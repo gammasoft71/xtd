@@ -36,7 +36,7 @@ The following examples "Hello, world!" show how to change the color of the text 
 
 ## Using xtd::console::WriteLine
 
-hello_world_console.cpp
+src/console_hello_world_console.cpp
 
 ```c++
 #include <console/console>
@@ -54,7 +54,7 @@ int main() {
 
 ## Using xtd::console::out character ostream
 
-hello_world_console_out.cpp
+src/console_hello_world_console_out.cpp
 
 ```c++
 #include <console/console>
@@ -71,7 +71,7 @@ int main() {
 
 ## Using std::cout character ostream
 
-hello_world_cout.cpp
+src/console_hello_world_cout.cpp
 
 ```c++
 #include <console/console>
@@ -90,7 +90,7 @@ Replace console class by wconsole class to use wide character wostream and wistr
 
 For more examples see [examples](examples)
 
-# Download and install console
+# Download and install
 
 Before running examples you must download and install console. To download and install it read Downloads file.
 
