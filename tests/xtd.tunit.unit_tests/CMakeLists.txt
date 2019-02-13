@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.tunit.unit_tests)
 set(SOURCES
   src/main.cpp 
-  src/template.cpp
+  src/tunit.cpp
 )
 source_group(src FILES ${SOURCES})
 
