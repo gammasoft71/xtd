@@ -1,3 +1,6 @@
 [submodule "xtd.strings"]
 	path = xtd.strings
 	url = https://github.com/gammasoft71/xtd.strings
+[submodule "xtd.delegates"]
+	path = xtd.delegates
+	url = https://github.com/gammasoft71/xtd.delegates
