@@ -5,24 +5,30 @@
 using namespace std;
 using namespace xtd;
 
+struct control {
+  virtual ~control() = default;
+  
+  const string& text() const {return this->text_;}
+  void text(const string& text) {this->text_ = text;}
+  
+private:
+  string text_;
+};
+
+struct button : public control {
+  
+  event_handler<control> click;
+};
+
 // The main entry point for the application.
 int main() {
-  delegate<void(const string& str)> write_line;
+  button button1;
+  button1.text("button1");
   
-  write_line += [&](const string& str)  {
-    cout << "cout: " << str << endl;
+  button1.click += [&](const control& sender, const event_args& e)  {
+    cout << "button (" << sender.text() << ") clicked!" << endl;
   };
   
-  write_line += [&](const string& str)  {
-    cerr << "cerr: " << str << endl;
-  };
-  
-  write_line("Hello, World!");
+  // click simulation
+  button1.click(button1, event_args::empty());
 }
-
-// This code produces the following output :
-//
-// cout: Hello, World!
-// cerr: Hello, World!
-
-
