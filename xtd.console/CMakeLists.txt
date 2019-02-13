@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.3)
 
 # Project
 project(xtd.console VERSION 0.0.1)
-#find_package(xtd.strings REQUIRED)
 set(INCLUDES
   include/xtd/__get_err_rdbuf.hpp
   include/xtd/__get_in_rdbuf.hpp
