@@ -1,5 +1,6 @@
 #include <xtd/delegates>
 #include <iostream>
+#include <string>
 
 using namespace std;
 using namespace xtd;
