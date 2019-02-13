@@ -1,0 +1,12 @@
+[submodule "xtd.console"]
+	path = xtd.console
+	url = https://github.com/gammasoft71/xtd.console
+[submodule "xtd.delegates"]
+	path = xtd.delegates
+	url = https://github.com/gammasoft71/xtd.delegates
+[submodule "xtd.properties"]
+	path = xtd.properties
+	url = https://github.com/gammasoft71/xtd.properties
+[submodule "xtd.strings"]
+	path = xtd.strings
+	url = https://github.com/gammasoft71/xtd.strings
