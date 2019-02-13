@@ -1,5 +1,9 @@
 :: cmd
 
+:: init and update submodule
+git submodule init
+git submodule update
+
 mkdir build\examples
 cd build
 
