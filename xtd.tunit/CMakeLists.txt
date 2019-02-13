@@ -23,6 +23,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
+target_link_libraries(${PROJECT_NAME} xtd.delegates)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
@@ -30,6 +31,8 @@ install(DIRECTORY include/xtd/. DESTINATION include/xtd)
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "include(CMakeFindDependencyMacro)\n"
   "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
+  "\n"
+  "find_package(xtd.delegates REQUIRED)\n"
   "\n"
   "get_filename_component(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
   "get_filename_component(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\" ABSOLUTE)\n"

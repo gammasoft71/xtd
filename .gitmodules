@@ -1,0 +1,3 @@
+[submodule "xtd.delegates"]
+	path = xtd.delegates
+	url = https://github.com/gammasoft71/xtd.delegates
