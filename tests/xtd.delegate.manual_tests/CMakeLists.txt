@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 #Project
-project(manual_tests)
+project(xtd.delegate.manual_tests)
 set(SOURCES
   src/manual_tests.cpp
 )
@@ -14,3 +14,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} xtd.delegates)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
