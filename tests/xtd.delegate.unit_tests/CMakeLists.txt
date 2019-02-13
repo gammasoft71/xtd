@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.delegate.unit_tests)
+project(xtd.delegates.unit_tests)
 set(SOURCES
   src/main.cpp 
   src/delegate.cpp
