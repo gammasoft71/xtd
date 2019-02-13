@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 #Project
-project(xtd.delegate.manual_tests)
+project(xtd.delegates.manual_tests)
 set(SOURCES
   src/manual_tests.cpp
 )
