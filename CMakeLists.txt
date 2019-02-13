@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Solution
-project(xtd)
+project(xtd.strings)
 
 # Options
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
