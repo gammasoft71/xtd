@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Solution
-project(xtd.strings)
+project(xtd)
+
+# Options
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Code coverage
 option(ENABLE_COVERAGE "Enable code coverage" OFF)

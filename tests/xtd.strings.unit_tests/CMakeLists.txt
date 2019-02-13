@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(unit_tests)
+project(xtd.strings.unit_tests)
 set(SOURCES
   src/main.cpp 
   src/strings_format.cpp
@@ -20,6 +20,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} xtd.strings)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
 add_dependencies(${PROJECT_NAME} catch)
 
 # Tests
