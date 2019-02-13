@@ -19,6 +19,118 @@ For more information see [Documentation](docs).
 
 # Examples
 
+The classic first application 'Hello World'.
+
+## Console
+
+src/hello_world_console.cpp:
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+
+// The main entry point for the application.
+int main() {
+  console::write_line("%s", "Hello, World!");
+}
+```
+
+CMakeLists.txt:
+
+```cmake
+cmake_minimum_required(VERSION 3.3)
+
+project(hello_world_console)
+find_package(xtd REQUIRED)
+add_executable(${PROJECT_NAME} src/hello_world_console.cpp)
+target_link_libraries(${PROJECT_NAME} xtd)
+```
+
+## Forms
+
+src/hello_world_forms.cpp:
+
+```c++
+#include <xtd/xtd>
+
+using namespace xtd;
+using namespace xtd::drawing;
+using namespace xtd::forms;
+
+// The main entry point for the application.
+int main() {
+  application::enable_visual_styles();
+  
+  button button1;
+  button1.text("Click me");
+  button1.location(point(10, 10));
+  button1.click += [&](const control& sender, const event_args& e) {
+    messageBox::show("Hello, World!");
+  };
+  
+  form form1;
+  form1.text("Hello World Form");
+  form.controls().push_back(button1);
+  
+  application::run(form1);
+}
+```
+
+CMakeLists.txt:
+
+```cmake
+cmake_minimum_required(VERSION 3.3)
+
+project(hello_world_forms)
+find_package(xtd REQUIRED)
+add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE src/hello_world_forms.cpp)
+target_link_libraries(${PROJECT_NAME} xtd)
+```
+
+## Unit tests
+
+src/hello_world_tunit.cpp:
+
+```c++
+#include <xtd/xtd>
+#include <string>
+
+using namespace std;
+using namespace xtd::tunit
+
+namespace unit_tests {
+  class test_class_(hello_world_test) {
+  public:
+    void test_method_(create_string_from_literal) {
+      string s = "Hello, World!";
+      sssert::are_equal("Hello, World!", s);
+    }
+    
+    void test_method_(create_string_from_chars) {
+      string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
+      assert::are_equal("Hello, World!", s);
+    }
+  };
+}
+
+// The main entry point for the application.
+int main(int argc, char* argv[]) {
+  return unit_test(argv, argc).run();
+}
+```
+
+CMakeLists.txt:
+
+```cmake
+cmake_minimum_required(VERSION 3.3)
+
+project(hello_world_tunit)
+find_package(xtd REQUIRED)
+add_executable(${PROJECT_NAME} src/hello_world_tunit.cpp)
+target_link_libraries(${PROJECT_NAME} xtd)
+```
+
 For more examples see [examples](examples)
 
 # Download and install
