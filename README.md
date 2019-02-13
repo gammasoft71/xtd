@@ -18,9 +18,38 @@ For more information see [Documentation](docs).
 
 # Examples
 
+The classic first application 'Hello World'.
+
+src/string_hello_world.cpp:
+
+```c++
+#include <xtd/strings>
+#include <iostream>
+
+using namespace std;
+using namespace string_literals;
+using namespace xtd;
+
+// The main entry point for the application.
+int main() {
+  cout << strings::format("%s, %s!", "Hello", "World"s) << endl;
+}
+```
+
+CMakeLists.txt:
+
+```cmake
+cmake_minimum_required(VERSION 3.3)
+
+project(hello_world)
+find_package(xtd.strings REQUIRED)
+add_executable(${PROJECT_NAME} src/hello_world.cpp)
+target_link_libraries(${PROJECT_NAME} xtd.strings)
+```
+
 For more examples see [examples](examples)
 
-# Download and install console
+# Download and install
 
 Before running examples you must download and install strings. To download and install it read Downloads file.
 
