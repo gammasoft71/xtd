@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		8FF2AA4ABD3944A4B6E3F1F9 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 716C316A4BAF4EF88CBAA576 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				8A89B1A4D3BF46C38C777D6A /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		EB6C0F955F8C48258334D813 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6FAA03D836764CAFB95A200B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				7FA35BACE79842CFBECAC96F /* CMake Rules */,
+			);
+			dependencies = (
+				5C65FCE9D9CD4437B7060545 /* PBXTargetDependency */,
+				FE43D8AF12CC4FCFBA570A61 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		4BA6E2BBBD9641299EF98BDF /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/src/hello_world_console.cpp */ = {isa = PBXBuildFile; fileRef = FC0352D48E334A7F88294204 /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/src/hello_world_console.cpp */; };
+		9F08F0F7FE9242F6B2E111F4 /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 6D13C46013DE46BFB55C62CF /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/CMakeLists.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		183E13AE2DD04DAAA302ADEE /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		461321870FF3440BA9394BB6 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		A6116D94B6874D17BE463018 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		B06961738FA3475591816172 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		52935EA8071344CFACDD1D02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFFC65FA314E4E07B2AB1972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FF2AA4ABD3944A4B6E3F1F9;
+			remoteInfo = ZERO_CHECK;
+		};
+		956CB0D6B86B49B4AAF46D91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFFC65FA314E4E07B2AB1972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B675EE7D1014B83B7516056;
+			remoteInfo = hello_world_console;
+		};
+		BFA644A199184CAE9FDC3954 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFFC65FA314E4E07B2AB1972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FF2AA4ABD3944A4B6E3F1F9;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		305488D1E39A46F39C46F362 /* hello_world_console */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = hello_world_console; sourceTree = BUILT_PRODUCTS_DIR; };
+		4697F75893FD498C891CA19E /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		6D13C46013DE46BFB55C62CF /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		FC0352D48E334A7F88294204 /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/src/hello_world_console.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = hello_world_console.cpp; path = src/hello_world_console.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1CEAFD2EDF0945E9889368C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				305488D1E39A46F39C46F362 /* hello_world_console */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59804764468341C3A238CA64 /* hello_world_console */ = {
+			isa = PBXGroup;
+			children = (
+				F0722BAA69BD4C83B8D5A83E /* Source Files */,
+				6D13C46013DE46BFB55C62CF /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/CMakeLists.txt */,
+			);
+			name = hello_world_console;
+			sourceTree = "<group>";
+		};
+		788E667A9F9A42368BB42644 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				C1E4A9FFC6684C148E9ADB70 /* CMake Rules */,
+				4697F75893FD498C891CA19E /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		C1E4A9FFC6684C148E9ADB70 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		C5B15C9494E64655BFBEB8B0 = {
+			isa = PBXGroup;
+			children = (
+				59804764468341C3A238CA64 /* hello_world_console */,
+				788E667A9F9A42368BB42644 /* ALL_BUILD */,
+				1CEAFD2EDF0945E9889368C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0722BAA69BD4C83B8D5A83E /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC0352D48E334A7F88294204 /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/src/hello_world_console.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B675EE7D1014B83B7516056 /* hello_world_console */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9060C5A19F14DAD9F37F1CB /* Build configuration list for PBXNativeTarget "hello_world_console" */;
+			buildPhases = (
+				79738099F8FF470AA668BDDC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				510B6F84AC424814BE646A31 /* PBXTargetDependency */,
+			);
+			name = hello_world_console;
+			productName = hello_world_console;
+			productReference = 305488D1E39A46F39C46F362 /* hello_world_console */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFFC65FA314E4E07B2AB1972 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1010;
+			};
+			buildConfigurationList = 6D37AF2DB6C84F86989E43C1 /* Build configuration list for PBXProject "hello_world_console" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				461321870FF3440BA9394BB6 /* Debug */,
+				A6116D94B6874D17BE463018 /* Release */,
+				183E13AE2DD04DAAA302ADEE /* MinSizeRel */,
+				B06961738FA3475591816172 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = C5B15C9494E64655BFBEB8B0;
+			projectDirPath = ../../hello_world_console;
+			projectRoot = "";
+			targets = (
+				EB6C0F955F8C48258334D813 /* ALL_BUILD */,
+				8FF2AA4ABD3944A4B6E3F1F9 /* ZERO_CHECK */,
+				1B675EE7D1014B83B7516056 /* hello_world_console */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FBA959F2AA24BC485257C22 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7FA35BACE79842CFBECAC96F /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console -f /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		8A89B1A4D3BF46C38C777D6A /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console -f /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		D6CB6B6FB93842408DCA0877 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79738099F8FF470AA668BDDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA6E2BBBD9641299EF98BDF /* /Users/yves/Projects/xtd/xtd/examples/hello_world_console/src/hello_world_console.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		510B6F84AC424814BE646A31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FF2AA4ABD3944A4B6E3F1F9 /* ZERO_CHECK */;
+			targetProxy = BFA644A199184CAE9FDC3954 /* PBXContainerItemProxy */;
+		};
+		5C65FCE9D9CD4437B7060545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FF2AA4ABD3944A4B6E3F1F9 /* ZERO_CHECK */;
+			targetProxy = 52935EA8071344CFACDD1D02 /* PBXContainerItemProxy */;
+		};
+		FE43D8AF12CC4FCFBA570A61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B675EE7D1014B83B7516056 /* hello_world_console */;
+			targetProxy = 956CB0D6B86B49B4AAF46D91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0EA1E475B41840F2BFD18825 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libxtd.a /usr/local/lib/libxtd.console.a /usr/local/lib/libxtd.delegates.a /usr/local/lib/libxtd.properties.a /usr/local/lib/libxtd.strings.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = hello_world_console;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		1BC555C4B9774CD58971A87B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		2B4273D345754B1887F59E91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		3B49ACC4CA6D427F957C291A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libxtd.a /usr/local/lib/libxtd.console.a /usr/local/lib/libxtd.delegates.a /usr/local/lib/libxtd.properties.a /usr/local/lib/libxtd.strings.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = hello_world_console;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4D4E892A43124D7CA6C172D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		553C3C053A074181B1977B78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libxtd.a /usr/local/lib/libxtd.console.a /usr/local/lib/libxtd.delegates.a /usr/local/lib/libxtd.properties.a /usr/local/lib/libxtd.strings.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = hello_world_console;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		6062AC6A0E9C43A3916E3AAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/build;
+			};
+			name = Debug;
+		};
+		7340B2D679294B26A78749CD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		78C7F2B677D84D2995F2DE50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/build;
+			};
+			name = Release;
+		};
+		859514E4AA524E6199CA7A43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++1z'  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /usr/local/lib/libxtd.a /usr/local/lib/libxtd.console.a /usr/local/lib/libxtd.delegates.a /usr/local/lib/libxtd.properties.a /usr/local/lib/libxtd.strings.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = hello_world_console;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				SYSTEM_HEADER_SEARCH_PATHS = (/usr/local/include);
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		A36D022B062C41CFB25A23A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		AFDBB045E1824D58B6B82F14 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B1BFDC9ECBEF4803A4086AA1 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C8D7E6A92B0044C6B13B25C2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/build;
+			};
+			name = RelWithDebInfo;
+		};
+		EEC34C1276B245DAB14D92A5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/build;
+			};
+			name = MinSizeRel;
+		};
+		F5D8685D0D3F4A768953738F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/examples/build/hello_world_console;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D37AF2DB6C84F86989E43C1 /* Build configuration list for PBXProject "hello_world_console" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6062AC6A0E9C43A3916E3AAE /* Debug */,
+				78C7F2B677D84D2995F2DE50 /* Release */,
+				EEC34C1276B245DAB14D92A5 /* MinSizeRel */,
+				C8D7E6A92B0044C6B13B25C2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6FAA03D836764CAFB95A200B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B4273D345754B1887F59E91 /* Debug */,
+				4D4E892A43124D7CA6C172D9 /* Release */,
+				AFDBB045E1824D58B6B82F14 /* MinSizeRel */,
+				7340B2D679294B26A78749CD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		716C316A4BAF4EF88CBAA576 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BC555C4B9774CD58971A87B /* Debug */,
+				A36D022B062C41CFB25A23A4 /* Release */,
+				F5D8685D0D3F4A768953738F /* MinSizeRel */,
+				B1BFDC9ECBEF4803A4086AA1 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A9060C5A19F14DAD9F37F1CB /* Build configuration list for PBXNativeTarget "hello_world_console" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				859514E4AA524E6199CA7A43 /* Debug */,
+				553C3C053A074181B1977B78 /* Release */,
+				3B49ACC4CA6D427F957C291A /* MinSizeRel */,
+				0EA1E475B41840F2BFD18825 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFFC65FA314E4E07B2AB1972 /* Project object */;
+}

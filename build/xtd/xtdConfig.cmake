@@ -1,7 +1,11 @@
 include(CMakeFindDependencyMacro)
 include("${CMAKE_CURRENT_LIST_DIR}/xtd.cmake")
 
+find_package(xtd.console REQUIRED)
+find_package(xtd.delegates REQUIRED)
+find_package(xtd.properties REQUIRED)
 find_package(xtd.strings REQUIRED)
+
 get_filename_component(xtd_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/../include" ABSOLUTE)
 get_filename_component(xtd_LIBRARIES_DIRS "${CMAKE_CURRENT_LIST_DIR}/../lib" ABSOLUTE)
 

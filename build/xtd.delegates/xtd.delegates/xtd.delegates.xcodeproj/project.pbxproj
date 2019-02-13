@@ -7,213 +7,213 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		0D1BDC16E3394924AF351EEF /* install */ = {
+		50394EEE1BD24C4FB2A4CE92 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 79911733B9A54339AEA0AD6B /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = 5B65CC67858C4DF4922C558B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
-				22C5B2999C104F0183AC2454 /* CMake PostBuild Rules */,
+				C8F47CB338BB4CE09EDC8B88 /* CMake Rules */,
 			);
 			dependencies = (
-				25F3A6BA82B34E82BC0DA56C /* PBXTargetDependency */,
-			);
-			name = install;
-			productName = install;
-		};
-		78B6B9490FE94531B30C0935 /* ALL_BUILD */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = FB2A5C4FF27B454C984194D8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
-			buildPhases = (
-				B26895BF169049EABB8FD5B7 /* CMake Rules */,
-			);
-			dependencies = (
-				CFAA3EE8550044F398EA10D7 /* PBXTargetDependency */,
-				D7B6DB21A37F40C0B4148AAE /* PBXTargetDependency */,
+				DD560EEE06214E49A37E90D7 /* PBXTargetDependency */,
+				2AC8D742194C453EAAFBE8F6 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
 		};
-		E175BB2A6C664169BE5A54DC /* ZERO_CHECK */ = {
+		5FC237F2D4EF4159A3B85902 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = C98A144F8B95433B886B9E03 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = BC7D666959194A408E47D3BE /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
-				937CAE9D1EBD45F4AF643497 /* CMake Rules */,
+				DD294A16B2B9494E92F07BAE /* CMake Rules */,
 			);
 			dependencies = (
 			);
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
+		D8AC47AE86EC421F9902C1EF /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 49E09E9EF42E4406A9EC5991 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				A2E729201358414099649C1B /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				EEF4E150CC164F4D92946B93 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		21224574E71A4F189376E336 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */ = {isa = PBXBuildFile; fileRef = 8F8DE9BBA87649BD955D8120 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */; };
-		243A135BA80A42A78645F458 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */ = {isa = PBXBuildFile; fileRef = 2AE16418786541AA9232E22E /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */; };
-		51941A11FEFF488092CEBA5F /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */ = {isa = PBXBuildFile; fileRef = F9527BA2634F402895B09B37 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */; };
-		6C42F7BF183148A2BD422AA0 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */ = {isa = PBXBuildFile; fileRef = 307579BF8B8844F6937A3562 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */; };
-		6F2C2CC790CB4D02B1EEBBED /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = D458BFF2ED96494BA7B5C89C /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */; };
-		757FDCA129BC4E7BA8E2A19E /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */ = {isa = PBXBuildFile; fileRef = 682F4C53BBF94AA1A9A47E2B /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */; };
-		763496FA348043798E600000 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */ = {isa = PBXBuildFile; fileRef = 09F19066B7AC42D6A9FD4566 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */; };
-		B612EECE6D9D4D1988008B19 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */ = {isa = PBXBuildFile; fileRef = 07945F4F1A2A4DAC88B96AF2 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */; };
-		CE25878776C24D9194FB65EA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */ = {isa = PBXBuildFile; fileRef = D3F324B13014489F95783ACA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */; };
-		DAC2F439C9A24BC7B46D29B7 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */ = {isa = PBXBuildFile; fileRef = 169EB0F5CE6948A78FBB4A57 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */; };
+		0EC9FC1BEB784196B4A5814B /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */ = {isa = PBXBuildFile; fileRef = 9C8C19DE5481496BAEE7BA16 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */; };
+		5A835FE9C5974F27B2149829 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */ = {isa = PBXBuildFile; fileRef = EED71565FAC64769AE5ABB50 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */; };
+		690F463DB13243C28AD5165C /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */ = {isa = PBXBuildFile; fileRef = E3343E22B8004B63845A0422 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */; };
+		8A09F6AC48C24F00A736EDB5 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 9AC49A665AB34619B723CBFD /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */; };
+		9C497967E7954ED8B525DA37 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */ = {isa = PBXBuildFile; fileRef = 77CF15384B464A4280617EF6 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */; };
+		A10B9DE2AC9E47C8AFD45AF1 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */ = {isa = PBXBuildFile; fileRef = AA32988DBC7740958ACCFA5B /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */; };
+		AF08085B6CB94A8D83877212 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */ = {isa = PBXBuildFile; fileRef = 99FB4E557AB14D12BBF55896 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */; };
+		B44C36808990489892F732DC /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */ = {isa = PBXBuildFile; fileRef = E40FCCB812D84BC48821D650 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */; };
+		C0D3BB3BC3474BC28708A2B9 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */ = {isa = PBXBuildFile; fileRef = 8FAA23A991394803A03AA118 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */; };
+		E70E0E31ADDE42B793A0E795 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */ = {isa = PBXBuildFile; fileRef = 9CE1DC6B5D124A8EA8B636BA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		5AAFFDB04CA347BFB4722B0C /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		60CFA3C5D1DF487AA8F69A5A /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		8FF5D52F3FAE49539E6211E6 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		FEED34D3A15E4BB599DF6354 /* MinSizeRel */ = {
+		010E1FA1F47A4F01A12B80E2 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		7B0E4FF86D3C46DD8FFDA07C /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		A5B0DA7BD66C4F21B0D0F460 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		BB1334C952C64277A5D959D1 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		312367E9F8294F66ABF4CDB1 /* PBXContainerItemProxy */ = {
+		4AF978F32BD841D899A67EB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A919F08BCB3742B799CE52E4 /* Project object */;
+			containerPortal = 82A82108CAB5411F8504DCFE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E175BB2A6C664169BE5A54DC;
-			remoteInfo = ZERO_CHECK;
-		};
-		9D1FD02A3C2B4307BDD52DC3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A919F08BCB3742B799CE52E4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78B6B9490FE94531B30C0935;
-			remoteInfo = ALL_BUILD;
-		};
-		9F3E96AFC30C4883AC37087B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A919F08BCB3742B799CE52E4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E5A7E37D939E4DC19FF9DB3D;
+			remoteGlobalIDString = BE60D33E0EE44B00B23BEA4B;
 			remoteInfo = xtd.delegates;
 		};
-		A84BE52AB5FC4C0493B94032 /* PBXContainerItemProxy */ = {
+		62903B5103B049DFAAFC8500 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A919F08BCB3742B799CE52E4 /* Project object */;
+			containerPortal = 82A82108CAB5411F8504DCFE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E175BB2A6C664169BE5A54DC;
+			remoteGlobalIDString = 5FC237F2D4EF4159A3B85902;
 			remoteInfo = ZERO_CHECK;
+		};
+		9B87F50C837740018AFEB773 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82A82108CAB5411F8504DCFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FC237F2D4EF4159A3B85902;
+			remoteInfo = ZERO_CHECK;
+		};
+		ACD91C17DAFF443493E8E171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82A82108CAB5411F8504DCFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50394EEE1BD24C4FB2A4CE92;
+			remoteInfo = ALL_BUILD;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07945F4F1A2A4DAC88B96AF2 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = func.hpp; path = include/xtd/func.hpp; sourceTree = SOURCE_ROOT; };
-		09F19066B7AC42D6A9FD4566 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = event_args.hpp; path = include/xtd/event_args.hpp; sourceTree = SOURCE_ROOT; };
-		139F95BC612C4D85A12DE091 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		169EB0F5CE6948A78FBB4A57 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = delegate.hpp; path = include/xtd/delegate.hpp; sourceTree = SOURCE_ROOT; };
-		1D56E6B77745467BABE793C0 /* xtd.delegates */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libxtd.delegates.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AE16418786541AA9232E22E /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = action.hpp; path = include/xtd/action.hpp; sourceTree = SOURCE_ROOT; };
-		307579BF8B8844F6937A3562 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = delegates.hpp; path = include/xtd/delegates.hpp; sourceTree = SOURCE_ROOT; };
-		682F4C53BBF94AA1A9A47E2B /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = delegates; path = include/xtd/delegates; sourceTree = SOURCE_ROOT; };
-		8F8DE9BBA87649BD955D8120 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = event_handler.hpp; path = include/xtd/event_handler.hpp; sourceTree = SOURCE_ROOT; };
-		D3F324B13014489F95783ACA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = delegates.cpp; path = src/delegates.cpp; sourceTree = SOURCE_ROOT; };
-		D458BFF2ED96494BA7B5C89C /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		F9527BA2634F402895B09B37 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = predicate.hpp; path = include/xtd/predicate.hpp; sourceTree = SOURCE_ROOT; };
+		77CF15384B464A4280617EF6 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = func.hpp; path = include/xtd/func.hpp; sourceTree = SOURCE_ROOT; };
+		8FAA23A991394803A03AA118 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = event_args.hpp; path = include/xtd/event_args.hpp; sourceTree = SOURCE_ROOT; };
+		97FD850242144985B0E4475A /* xtd.delegates */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libxtd.delegates.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FB4E557AB14D12BBF55896 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = delegate.hpp; path = include/xtd/delegate.hpp; sourceTree = SOURCE_ROOT; };
+		9A8A19044DD948BC9543EEA6 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9AC49A665AB34619B723CBFD /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9C8C19DE5481496BAEE7BA16 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = predicate.hpp; path = include/xtd/predicate.hpp; sourceTree = SOURCE_ROOT; };
+		9CE1DC6B5D124A8EA8B636BA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = delegates.hpp; path = include/xtd/delegates.hpp; sourceTree = SOURCE_ROOT; };
+		AA32988DBC7740958ACCFA5B /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = delegates.cpp; path = src/delegates.cpp; sourceTree = SOURCE_ROOT; };
+		E3343E22B8004B63845A0422 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = event_handler.hpp; path = include/xtd/event_handler.hpp; sourceTree = SOURCE_ROOT; };
+		E40FCCB812D84BC48821D650 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = delegates; path = include/xtd/delegates; sourceTree = SOURCE_ROOT; };
+		EED71565FAC64769AE5ABB50 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = action.hpp; path = include/xtd/action.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		08606DB4F03E4A6C8353E4F4 /* Products */ = {
+		1BFDEBA143F74AC0B7832EB1 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				1D56E6B77745467BABE793C0 /* xtd.delegates */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		224FC78E10E14C40BA1C67CA /* src */ = {
-			isa = PBXGroup;
-			children = (
-				D3F324B13014489F95783ACA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */,
+				AA32988DBC7740958ACCFA5B /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */,
 			);
 			name = src;
 			sourceTree = "<group>";
 		};
-		3792504598314561A48B94A9 /* xtd */ = {
+		28E716E1E6724907BCB1D2DD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				9AD6490687FE4A788790680B /* src */,
+				B6B10A90AD234A6183CE6998 /* xtd.delegates */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		33DF6CD8FB1E4C53B56F8DCD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EED71565FAC64769AE5ABB50 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */,
+				99FB4E557AB14D12BBF55896 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */,
+				E40FCCB812D84BC48821D650 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */,
+				9CE1DC6B5D124A8EA8B636BA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */,
+				8FAA23A991394803A03AA118 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */,
+				E3343E22B8004B63845A0422 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */,
+				77CF15384B464A4280617EF6 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */,
+				9C8C19DE5481496BAEE7BA16 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		7D7684857BCB47249A2D9297 = {
+			isa = PBXGroup;
+			children = (
+				97C2BF81501C42B4B32CFEFC /* xtd */,
+				84F6CB2BD98E4C99829A7E55 /* ALL_BUILD */,
+				82F5D1EB13CB4D00A8C7762E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		82F5D1EB13CB4D00A8C7762E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97FD850242144985B0E4475A /* xtd.delegates */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84F6CB2BD98E4C99829A7E55 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				9BA56DFCDFE74363BB63723B /* CMake Rules */,
+				9A8A19044DD948BC9543EEA6 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		97C2BF81501C42B4B32CFEFC /* xtd */ = {
+			isa = PBXGroup;
+			children = (
+				28E716E1E6724907BCB1D2DD /* src */,
 			);
 			name = xtd;
 			sourceTree = "<group>";
 		};
-		5171FBACCD3A4776B3780A1E /* CMake Rules */ = {
+		9BA56DFCDFE74363BB63723B /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		8BA083ECF8B142478DA73A60 = {
+		B6B10A90AD234A6183CE6998 /* xtd.delegates */ = {
 			isa = PBXGroup;
 			children = (
-				3792504598314561A48B94A9 /* xtd */,
-				C3155FAF3F2E4404B922EA43 /* ALL_BUILD */,
-				08606DB4F03E4A6C8353E4F4 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		8C92084D4ACE48338FC2BDCA /* include */ = {
-			isa = PBXGroup;
-			children = (
-				2AE16418786541AA9232E22E /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/action.hpp */,
-				169EB0F5CE6948A78FBB4A57 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegate.hpp */,
-				682F4C53BBF94AA1A9A47E2B /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates */,
-				307579BF8B8844F6937A3562 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/delegates.hpp */,
-				09F19066B7AC42D6A9FD4566 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_args.hpp */,
-				8F8DE9BBA87649BD955D8120 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/event_handler.hpp */,
-				07945F4F1A2A4DAC88B96AF2 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/func.hpp */,
-				F9527BA2634F402895B09B37 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/include/xtd/predicate.hpp */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
-		9AD6490687FE4A788790680B /* src */ = {
-			isa = PBXGroup;
-			children = (
-				DC6F3384A0FC4DF1BC854D17 /* xtd.delegates */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		C3155FAF3F2E4404B922EA43 /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				5171FBACCD3A4776B3780A1E /* CMake Rules */,
-				139F95BC612C4D85A12DE091 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
-			sourceTree = "<group>";
-		};
-		DC6F3384A0FC4DF1BC854D17 /* xtd.delegates */ = {
-			isa = PBXGroup;
-			children = (
-				8C92084D4ACE48338FC2BDCA /* include */,
-				224FC78E10E14C40BA1C67CA /* src */,
-				D458BFF2ED96494BA7B5C89C /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */,
+				33DF6CD8FB1E4C53B56F8DCD /* include */,
+				1BFDEBA143F74AC0B7832EB1 /* src */,
+				9AC49A665AB34619B723CBFD /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/CMakeLists.txt */,
 			);
 			name = xtd.delegates;
 			sourceTree = "<group>";
@@ -221,56 +221,56 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E5A7E37D939E4DC19FF9DB3D /* xtd.delegates */ = {
+		BE60D33E0EE44B00B23BEA4B /* xtd.delegates */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF5A59BBE9584489BDE6F723 /* Build configuration list for PBXNativeTarget "xtd.delegates" */;
+			buildConfigurationList = 2041C2B495624B62AB3E521A /* Build configuration list for PBXNativeTarget "xtd.delegates" */;
 			buildPhases = (
-				E01439E0AAAB4308A9456BD2 /* Sources */,
+				7CE553BAE3B94490886FDEA6 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D492314374FD4321945BC8F9 /* PBXTargetDependency */,
+				4003D36BAD464524A4A51140 /* PBXTargetDependency */,
 			);
 			name = xtd.delegates;
 			productName = xtd.delegates;
-			productReference = 1D56E6B77745467BABE793C0 /* xtd.delegates */;
+			productReference = 97FD850242144985B0E4475A /* xtd.delegates */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A919F08BCB3742B799CE52E4 /* Project object */ = {
+		82A82108CAB5411F8504DCFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1010;
 			};
-			buildConfigurationList = 0653A68FEACE4B62899D6EBD /* Build configuration list for PBXProject "xtd.delegates" */;
+			buildConfigurationList = B9BECB1EBAAC47F38A426577 /* Build configuration list for PBXProject "xtd.delegates" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				8FF5D52F3FAE49539E6211E6 /* Debug */,
-				5AAFFDB04CA347BFB4722B0C /* Release */,
-				FEED34D3A15E4BB599DF6354 /* MinSizeRel */,
-				60CFA3C5D1DF487AA8F69A5A /* RelWithDebInfo */,
+				A5B0DA7BD66C4F21B0D0F460 /* Debug */,
+				7B0E4FF86D3C46DD8FFDA07C /* Release */,
+				010E1FA1F47A4F01A12B80E2 /* MinSizeRel */,
+				BB1334C952C64277A5D959D1 /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 8BA083ECF8B142478DA73A60;
+			mainGroup = 7D7684857BCB47249A2D9297;
 			projectDirPath = ../../../xtd.delegates/xtd.delegates;
 			projectRoot = "";
 			targets = (
-				78B6B9490FE94531B30C0935 /* ALL_BUILD */,
-				E175BB2A6C664169BE5A54DC /* ZERO_CHECK */,
-				0D1BDC16E3394924AF351EEF /* install */,
-				E5A7E37D939E4DC19FF9DB3D /* xtd.delegates */,
+				50394EEE1BD24C4FB2A4CE92 /* ALL_BUILD */,
+				5FC237F2D4EF4159A3B85902 /* ZERO_CHECK */,
+				D8AC47AE86EC421F9902C1EF /* install */,
+				BE60D33E0EE44B00B23BEA4B /* xtd.delegates */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		22C5B2999C104F0183AC2454 /* CMake PostBuild Rules */ = {
+		A2E729201358414099649C1B /* CMake PostBuild Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,7 +281,7 @@
 			shellScript = "make -C /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates -f /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
 			showEnvVarsInLog = 0;
 		};
-		847A78CBD919427CB0560C69 = {
+		AEEE52D498824D40831C61FA = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,7 +296,7 @@
 exit 0";
 			showEnvVarsInLog = 0;
 		};
-		91C3E2323C984A609369B2B9 = {
+		B91A0E05AB4C46278C637295 = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,18 +311,7 @@ exit 0";
 exit 0";
 			showEnvVarsInLog = 0;
 		};
-		937CAE9D1EBD45F4AF643497 /* CMake Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates -f /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
-			showEnvVarsInLog = 0;
-		};
-		B26895BF169049EABB8FD5B7 /* CMake Rules */ = {
+		C8F47CB338BB4CE09EDC8B88 /* CMake Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -333,7 +322,7 @@ exit 0";
 			shellScript = "make -C /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates -f /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
 			showEnvVarsInLog = 0;
 		};
-		DD70C5F76E5F45FB85066F6D = {
+		D33EB2C4327848ECAED0F3E1 = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,44 +337,64 @@ exit 0";
 exit 0";
 			showEnvVarsInLog = 0;
 		};
+		DD294A16B2B9494E92F07BAE /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates -f /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E01439E0AAAB4308A9456BD2 /* Sources */ = {
+		7CE553BAE3B94490886FDEA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE25878776C24D9194FB65EA /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */,
+				A10B9DE2AC9E47C8AFD45AF1 /* /Users/yves/Projects/xtd/xtd/xtd.delegates/xtd.delegates/src/delegates.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		25F3A6BA82B34E82BC0DA56C /* PBXTargetDependency */ = {
+		2AC8D742194C453EAAFBE8F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 78B6B9490FE94531B30C0935 /* ALL_BUILD */;
-			targetProxy = 9D1FD02A3C2B4307BDD52DC3 /* PBXContainerItemProxy */;
+			target = 5FC237F2D4EF4159A3B85902 /* ZERO_CHECK */;
+			targetProxy = 9B87F50C837740018AFEB773 /* PBXContainerItemProxy */;
 		};
-		CFAA3EE8550044F398EA10D7 /* PBXTargetDependency */ = {
+		4003D36BAD464524A4A51140 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E175BB2A6C664169BE5A54DC /* ZERO_CHECK */;
-			targetProxy = 312367E9F8294F66ABF4CDB1 /* PBXContainerItemProxy */;
+			target = 5FC237F2D4EF4159A3B85902 /* ZERO_CHECK */;
+			targetProxy = 62903B5103B049DFAAFC8500 /* PBXContainerItemProxy */;
 		};
-		D492314374FD4321945BC8F9 /* PBXTargetDependency */ = {
+		DD560EEE06214E49A37E90D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E175BB2A6C664169BE5A54DC /* ZERO_CHECK */;
-			targetProxy = A84BE52AB5FC4C0493B94032 /* PBXContainerItemProxy */;
+			target = BE60D33E0EE44B00B23BEA4B /* xtd.delegates */;
+			targetProxy = 4AF978F32BD841D899A67EB0 /* PBXContainerItemProxy */;
 		};
-		D7B6DB21A37F40C0B4148AAE /* PBXTargetDependency */ = {
+		EEF4E150CC164F4D92946B93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E5A7E37D939E4DC19FF9DB3D /* xtd.delegates */;
-			targetProxy = 9F3E96AFC30C4883AC37087B /* PBXContainerItemProxy */;
+			target = 50394EEE1BD24C4FB2A4CE92 /* ALL_BUILD */;
+			targetProxy = ACD91C17DAFF443493E8E171 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		000C0F9D75A84CE389155C70 /* MinSizeRel */ = {
+		0185AE87465543038F6C146D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
+			};
+			name = RelWithDebInfo;
+		};
+		20DF4AFDB8F340FAA847F7BE /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -405,7 +414,56 @@ exit 0";
 			};
 			name = MinSizeRel;
 		};
-		19ECAC3639104BF1847E65AF /* MinSizeRel */ = {
+		21439367469F4A9EB45E6D1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		21B0080DE6154A88BA62EAE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		268285B689DB4C2DB115E796 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
+			};
+			name = MinSizeRel;
+		};
+		33898574E7564388AF42E0FD /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -423,78 +481,49 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
 			};
-			name = MinSizeRel;
-		};
-		1A882CAB22594D0E88C6A25A /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
-			};
-			name = MinSizeRel;
-		};
-		2639387215224833AD0C7274 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		2EB7092C932D422A987F4579 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		33869DB1EAE84EEDB7B2EBC6 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
 			name = RelWithDebInfo;
 		};
-		60E687CC3AA6495D856B45B3 /* RelWithDebInfo */ = {
+		36F0673BA9A843C2A7A592EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		475B893BBC904DFEB8458B27 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		48C7CB50E3C74882B1A5D34F /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -519,27 +548,7 @@ exit 0";
 			};
 			name = RelWithDebInfo;
 		};
-		76E2E4EF85144B1699A17172 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		79FB6E03A4BA4DE591EE11F8 /* Release */ = {
+		4CE4EB1286644AF1B779DF74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -564,7 +573,45 @@ exit 0";
 			};
 			name = Release;
 		};
-		7EDC11A2CD004CD391F1B80F /* Release */ = {
+		65A5EAB641AD48A4BED9C235 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
+			};
+			name = Release;
+		};
+		661E754E72C84C639E0C825D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
+			};
+			name = Debug;
+		};
+		6B1221CFFDC2417C9A94AFA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		791E5AC1748D4F9488DA3E44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -582,9 +629,9 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
 			};
-			name = Release;
+			name = Debug;
 		};
-		83810232DEAE4D55878F55CD /* Debug */ = {
+		B257231E1043434881F77693 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -609,7 +656,27 @@ exit 0";
 			};
 			name = Debug;
 		};
-		843B3C36F8CC49FD85D78042 /* Release */ = {
+		B3556324CA6749FE819D7B33 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		BC066718FFED4E7EB64C9069 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -627,18 +694,29 @@ exit 0";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
 			};
-			name = Release;
+			name = RelWithDebInfo;
 		};
-		89129CED7C0C433791C429D6 /* Release */ = {
+		BFA75DBEB90C42B78CA23281 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
 			};
-			name = Release;
+			name = MinSizeRel;
 		};
-		93F920AA8F9B4EA99C7E1AF4 /* MinSizeRel */ = {
+		C54FC2A328174E6AB7D057B3 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -663,7 +741,7 @@ exit 0";
 			};
 			name = MinSizeRel;
 		};
-		9E80B7273CEC4085ACAFFEA5 /* RelWithDebInfo */ = {
+		E8653EF933B04126956B1D5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -675,27 +753,7 @@ exit 0";
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		CA325366B4B44F51A50D370D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
+				PRODUCT_NAME = install;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
 				USE_HEADERMAP = NO;
@@ -703,123 +761,65 @@ exit 0";
 			};
 			name = Release;
 		};
-		CABFC48868004DD88C522676 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		D389459144574591823C58BD /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
-			};
-			name = RelWithDebInfo;
-		};
-		F442FAC505024F27AA9CFD45 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk;
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates/build;
-			};
-			name = Debug;
-		};
-		FCF0B7EC1B6F4006A0603D9C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yves/Projects/xtd/xtd/build/xtd.delegates/xtd.delegates;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0653A68FEACE4B62899D6EBD /* Build configuration list for PBXProject "xtd.delegates" */ = {
+		2041C2B495624B62AB3E521A /* Build configuration list for PBXNativeTarget "xtd.delegates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F442FAC505024F27AA9CFD45 /* Debug */,
-				89129CED7C0C433791C429D6 /* Release */,
-				1A882CAB22594D0E88C6A25A /* MinSizeRel */,
-				D389459144574591823C58BD /* RelWithDebInfo */,
+				B257231E1043434881F77693 /* Debug */,
+				4CE4EB1286644AF1B779DF74 /* Release */,
+				C54FC2A328174E6AB7D057B3 /* MinSizeRel */,
+				48C7CB50E3C74882B1A5D34F /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		79911733B9A54339AEA0AD6B /* Build configuration list for PBXAggregateTarget "install" */ = {
+		49E09E9EF42E4406A9EC5991 /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76E2E4EF85144B1699A17172 /* Debug */,
-				843B3C36F8CC49FD85D78042 /* Release */,
-				000C0F9D75A84CE389155C70 /* MinSizeRel */,
-				33869DB1EAE84EEDB7B2EBC6 /* RelWithDebInfo */,
+				21B0080DE6154A88BA62EAE7 /* Debug */,
+				E8653EF933B04126956B1D5E /* Release */,
+				20DF4AFDB8F340FAA847F7BE /* MinSizeRel */,
+				BC066718FFED4E7EB64C9069 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C98A144F8B95433B886B9E03 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		5B65CC67858C4DF4922C558B /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2EB7092C932D422A987F4579 /* Debug */,
-				7EDC11A2CD004CD391F1B80F /* Release */,
-				2639387215224833AD0C7274 /* MinSizeRel */,
-				9E80B7273CEC4085ACAFFEA5 /* RelWithDebInfo */,
+				6B1221CFFDC2417C9A94AFA5 /* Debug */,
+				36F0673BA9A843C2A7A592EC /* Release */,
+				BFA75DBEB90C42B78CA23281 /* MinSizeRel */,
+				33898574E7564388AF42E0FD /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		CF5A59BBE9584489BDE6F723 /* Build configuration list for PBXNativeTarget "xtd.delegates" */ = {
+		B9BECB1EBAAC47F38A426577 /* Build configuration list for PBXProject "xtd.delegates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				83810232DEAE4D55878F55CD /* Debug */,
-				79FB6E03A4BA4DE591EE11F8 /* Release */,
-				93F920AA8F9B4EA99C7E1AF4 /* MinSizeRel */,
-				60E687CC3AA6495D856B45B3 /* RelWithDebInfo */,
+				661E754E72C84C639E0C825D /* Debug */,
+				65A5EAB641AD48A4BED9C235 /* Release */,
+				268285B689DB4C2DB115E796 /* MinSizeRel */,
+				0185AE87465543038F6C146D /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		FB2A5C4FF27B454C984194D8 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		BC7D666959194A408E47D3BE /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FCF0B7EC1B6F4006A0603D9C /* Debug */,
-				CA325366B4B44F51A50D370D /* Release */,
-				19ECAC3639104BF1847E65AF /* MinSizeRel */,
-				CABFC48868004DD88C522676 /* RelWithDebInfo */,
+				791E5AC1748D4F9488DA3E44 /* Debug */,
+				21439367469F4A9EB45E6D1D /* Release */,
+				475B893BBC904DFEB8458B27 /* MinSizeRel */,
+				B3556324CA6749FE819D7B33 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A919F08BCB3742B799CE52E4 /* Project object */;
+	rootObject = 82A82108CAB5411F8504DCFE /* Project object */;
 }

@@ -1,0 +1,5 @@
+/Users/yves/Projects/xtd/xtd/examples/build/CMakeFiles/ALL_BUILD.dir
+/Users/yves/Projects/xtd/xtd/examples/build/CMakeFiles/ZERO_CHECK.dir
+/Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/CMakeFiles/hello_world_console.dir
+/Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/CMakeFiles/ALL_BUILD.dir
+/Users/yves/Projects/xtd/xtd/examples/build/hello_world_console/CMakeFiles/ZERO_CHECK.dir
