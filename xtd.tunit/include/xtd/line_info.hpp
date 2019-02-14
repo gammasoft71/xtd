@@ -35,7 +35,7 @@ namespace xtd {
       /// @return int32 line number
       unsigned int line_number() const noexcept {return this->line_number_;}
       
-      friend std::ostream& operator<<(std::ostream& os, const xtd::tunit::line_info caller) {
+      friend std::ostream& operator<<(std::ostream& os, const xtd::tunit::line_info caller) noexcept {
         if (caller.file_path_ == "" && caller.line_number_ == 0 && caller.member_name_ == "")
           return os << "{Empty}";
         if (caller.member_name_ == "")

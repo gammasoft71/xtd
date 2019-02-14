@@ -20,15 +20,15 @@ namespace xtd {
       /// @endcond
 
     protected:
-      void add_class_cleanup(const xtd::tunit::registered_method& class_cleanup) {this->class_cleanup_ = class_cleanup;}
+      void add_class_cleanup(const xtd::tunit::registered_method& class_cleanup) noexcept {this->class_cleanup_ = class_cleanup;}
       
-      void add_class_initialize(const xtd::tunit::registered_method& class_initialize) {this->class_initialize_ = class_initialize;}
+      void add_class_initialize(const xtd::tunit::registered_method& class_initialize) noexcept {this->class_initialize_ = class_initialize;}
       
-      void add_test_cleanup(const xtd::tunit::registered_method& test_cleanup) {this->test_cleanup_ = test_cleanup;}
+      void add_test_cleanup(const xtd::tunit::registered_method& test_cleanup) noexcept {this->test_cleanup_ = test_cleanup;}
       
-      void add_test_initialize(const xtd::tunit::registered_method& test_initialize) {this->test_initialize_ = test_initialize;}
+      void add_test_initialize(const xtd::tunit::registered_method& test_initialize) noexcept {this->test_initialize_ = test_initialize;}
       
-      void add_test_method(const xtd::tunit::registered_method& test_method) {this->test_methods_.push_back(test_method);}
+      void add_test_method(const xtd::tunit::registered_method& test_method) noexcept {this->test_methods_.push_back(test_method);}
       
     private:
       friend class xtd::tunit::unit_test;
@@ -38,6 +38,12 @@ namespace xtd {
       friend struct xtd::tunit::test_cleanup_attribute;
       friend struct xtd::tunit::test_method_attribute;
       
+      const xtd::tunit::registered_method& class_cleanup() const noexcept {return this->class_cleanup_;}
+      const xtd::tunit::registered_method& class_initialize() const noexcept {return this->class_initialize_;}
+      const xtd::tunit::registered_method& test_cleanup() const noexcept {return this->test_cleanup_;}
+      const xtd::tunit::registered_method& test_initialize() const noexcept {return this->test_initialize_;}
+      const std::vector<xtd::tunit::registered_method>& test_methods() const noexcept {return this->test_methods_;}
+
       xtd::tunit::registered_method class_cleanup_;
       xtd::tunit::registered_method class_initialize_;
       xtd::tunit::registered_method test_cleanup_;

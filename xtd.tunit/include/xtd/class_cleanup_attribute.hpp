@@ -10,10 +10,10 @@ namespace xtd {
     struct class_cleanup_attribute {
     public:
       template<typename TestClass>
-      class_cleanup_attribute(const std::string& name, TestClass& test_class, void (*method)()) :  class_cleanup_attribute(name, test_class, method, xtd::tunit::line_info()) {}
+      class_cleanup_attribute(const std::string& name, TestClass& test_class, void (*method)()) noexcept :  class_cleanup_attribute(name, test_class, method, xtd::tunit::line_info()) {}
       
       template<typename TestClass>
-      class_cleanup_attribute(const std::string& name, TestClass& test_class, void (*method)(), const xtd::tunit::line_info& caller) {test_class.add_class_cleanup({name, method, caller});}
+      class_cleanup_attribute(const std::string& name, TestClass& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_class_cleanup({name, method, caller});}
     };
   }
 }
