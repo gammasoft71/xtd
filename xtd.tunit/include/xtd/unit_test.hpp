@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief The TUnit namespace contains a unit test framework.
   namespace tunit {
     /// @brief The template class.
-    class unit_test {
+    class unit_test final {
     public:
       /// @cond
       unit_test() = delete;
