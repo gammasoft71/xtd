@@ -98,7 +98,7 @@ namespace xtd {
       size_t test_count() const noexcept {
         size_t count = 0;
         for (auto test_class : this->test_classes())
-          count += test_class.test()->test_methods().size();
+          count += test_class.test()->test_count();
         return count;
       }
       

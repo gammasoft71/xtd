@@ -28,7 +28,13 @@ namespace xtd {
       
       std::string name() const noexcept {return this->name_;}
       
-      size_t test_count() const noexcept {return this->tests_.size();}
+      size_t test_count() const noexcept {
+        size_t count = 0;
+        for (auto method : this->tests_)
+          if (!method.ignore() || this->also_run_ignored_tests_)
+            count++;
+        return count;
+      }
 
       const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
       
@@ -60,6 +66,7 @@ namespace xtd {
       const xtd::tunit::test& test_initialize() const noexcept {return this->test_initialize_;}
       const std::vector<xtd::tunit::test>& test_methods() const noexcept {return this->tests_;}
 
+      bool also_run_ignored_tests_ = false;
       xtd::tunit::test class_cleanup_;
       xtd::tunit::test class_initialize_;
       std::chrono::high_resolution_clock::time_point start_time_point = std::chrono::high_resolution_clock::now();
