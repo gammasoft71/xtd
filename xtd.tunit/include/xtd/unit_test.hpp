@@ -19,17 +19,33 @@ namespace xtd {
     public:
       unit_test() = default;
       
-      explicit unit_test(const char* argv, int argc);
+      unit_test(char* argv[], int argc) {}
       
-      int run() ;
+      int run() {
+        for (auto test_class : test_classes()) {
+          test_class.test_class_->class_initialize_.method()();
+          for (auto test_method : test_class.test_class_->test_methods_) {
+            if (!test_method.ignore_ || this->also_run_ignored_tests) {
+              test_class.test_class_->test_initialize_.method()();
+              test_method.method()();
+              test_class.test_class_->test_cleanup_.method()();
+            }
+          }
+          test_class.test_class_->class_cleanup_.method()();
+        }
+        return 0;
+      }
       
     private:
       template <typename TestClass>
       friend struct xtd::tunit::test_class_attribute;
       
-      static void add(const xtd::tunit::registered_test_class& test_class);
+      static void add(const xtd::tunit::registered_test_class& test_class) {test_classes().push_back(test_class);}
       
-      static std::vector<xtd::tunit::registered_test_class>& test_classs();
+      static std::vector<xtd::tunit::registered_test_class>& test_classes() {
+        static std::vector<xtd::tunit::registered_test_class> test_classes;
+        return test_classes;
+      }
       
       bool also_run_ignored_tests = false;
     };
