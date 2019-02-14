@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::unit_test class.
 #pragma once
+#include "class_event_handler.hpp"
 #include "registered_test_class.hpp"
 #include <chrono>
 
@@ -33,12 +34,12 @@ namespace xtd {
       }
       /// @endcond
       
-      xtd::event_handler<const xtd::tunit::unit_test&> class_cleanup_end;
-      xtd::event_handler<const xtd::tunit::unit_test&> class_cleanup_start;
-      xtd::event_handler<const xtd::tunit::unit_test&> class_end;
-      xtd::event_handler<const xtd::tunit::unit_test&> class_initialize_end;
-      xtd::event_handler<const xtd::tunit::unit_test&> class_initialize_start;
-      xtd::event_handler<const xtd::tunit::unit_test&> class_start;
+      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_cleanup_end;
+      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_cleanup_start;
+      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_end;
+      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_initialize_end;
+      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_initialize_start;
+      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_start;
       
       xtd::event_handler<const xtd::tunit::unit_test&> test_cleanup_end;
       xtd::event_handler<const xtd::tunit::unit_test&> test_cleanup_start;
@@ -56,12 +57,12 @@ namespace xtd {
       xtd::event_handler<const xtd::tunit::unit_test&> unit_test_initialize_start;
       xtd::event_handler<const xtd::tunit::unit_test&> unit_test_start;
 
-      virtual void on_class_cleanup_end(const xtd::event_args& e) {this->class_cleanup_end(*this, e);}
-      virtual void on_class_cleanup_start(const xtd::event_args& e) {this->class_cleanup_start(*this, e);}
-      virtual void on_class_end(const xtd::event_args& e) {this->class_end(*this, e);}
-      virtual void on_class_initialize_end(const xtd::event_args& e) {this->class_initialize_end(*this, e);}
-      virtual void on_class_initialize_start(const xtd::event_args& e) {this->class_initialize_start(*this, e);}
-      virtual void on_class_start(const xtd::event_args& e) {this->class_start(*this, e);}
+      virtual void on_class_cleanup_end(const xtd::tunit::class_event_args& e) {this->class_cleanup_end(*this, e);}
+      virtual void on_class_cleanup_start(const xtd::tunit::class_event_args& e) {this->class_cleanup_start(*this, e);}
+      virtual void on_class_end(const xtd::tunit::class_event_args& e) {this->class_end(*this, e);}
+      virtual void on_class_initialize_end(const xtd::tunit::class_event_args& e) {this->class_initialize_end(*this, e);}
+      virtual void on_class_initialize_start(const xtd::tunit::class_event_args& e) {this->class_initialize_start(*this, e);}
+      virtual void on_class_start(const xtd::tunit::class_event_args& e) {this->class_start(*this, e);}
 
       virtual void on_test_cleanup_end(const xtd::event_args& e) {this->test_cleanup_end(*this, e);}
       virtual void on_test_cleanup_start(const xtd::event_args& e) {this->test_cleanup_start(*this, e);}
@@ -84,11 +85,11 @@ namespace xtd {
           this->on_unit_test_start(xtd::event_args::empty());
           
           for (auto test_class : test_classes()) {
-            this->on_class_initialize_start(xtd::event_args::empty());
+            this->on_class_initialize_start(xtd::tunit::class_event_args(*test_class.test()));
             test_class.test()->class_initialize().method()();
-            this->on_class_initialize_end(xtd::event_args::empty());
+            this->on_class_initialize_end(xtd::tunit::class_event_args(*test_class.test()));
             
-            this->on_class_start(xtd::event_args::empty());
+            this->on_class_start(xtd::tunit::class_event_args(*test_class.test()));
             
             for (auto test_method : test_class.test()->tests_) {
               if (!test_method.ignore_ || this->also_run_ignored_tests) {
@@ -111,11 +112,11 @@ namespace xtd {
                 this->on_test_end(xtd::event_args::empty());
               }
             }
-            this->on_class_end(xtd::event_args::empty());
+            this->on_class_end(xtd::tunit::class_event_args(*test_class.test()));
             
-            this->on_class_cleanup_start(xtd::event_args::empty());
+            this->on_class_cleanup_start(xtd::tunit::class_event_args(*test_class.test()));
             test_class.test()->class_cleanup().method()();
-            this->on_class_cleanup_end(xtd::event_args::empty());
+            this->on_class_cleanup_end(xtd::tunit::class_event_args(*test_class.test()));
           }
           
           this->on_unit_test_end(xtd::event_args::empty());
@@ -125,9 +126,9 @@ namespace xtd {
         return 0;
       }
       
-      int test_cases_count() const noexcept {return this->test_classes().size();}
-      int test_count() const noexcept {
-        int count = 0;
+      size_t test_cases_count() const noexcept {return this->test_classes().size();}
+      size_t test_count() const noexcept {
+        size_t count = 0;
         for (auto test_class : this->test_classes())
           count += test_class.test()->test_methods().size();
         return count;

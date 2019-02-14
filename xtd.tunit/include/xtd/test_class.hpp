@@ -27,6 +27,8 @@ namespace xtd {
       std::chrono::high_resolution_clock::duration elapsed_time() const noexcept {return std::chrono::high_resolution_clock::now() - this->start_time_point;}
       
       std::string name() const noexcept {return this->name_;}
+      
+      size_t test_count() const noexcept {return this->tests_.size();}
 
       const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
 

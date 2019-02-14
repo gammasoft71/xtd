@@ -15,6 +15,16 @@ namespace xtd {
       
       console_unit_test(char* argv[], int argc) : unit_test(argv, argc) {}
       
+      void on_class_end(const xtd::tunit::class_event_args& e) override {
+        this->unit_test::on_unit_test_end(e);
+        std::cout << "  End " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << std::chrono::duration_cast<std::chrono::milliseconds>(e.test_class().elapsed_time()).count() << " ms total) " << std::endl;
+      }
+      
+      void on_class_start(const xtd::tunit::class_event_args& e) override {
+        std::cout << "  Start " << e.test_class().test_count() << " tests from " << e.test_class().name() << std::endl;
+        this->unit_test::on_unit_test_start(e);
+      }
+      
       void on_unit_test_end(const xtd::event_args& e) override {
         this->unit_test::on_unit_test_end(e);
         std::cout << "End " << this->test_count() << " tests from " << this->test_cases_count() << " test case ran. (" << std::chrono::duration_cast<std::chrono::milliseconds>(this->elapsed_time()).count() << " ms total)" << std::endl;
