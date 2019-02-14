@@ -10,10 +10,10 @@ namespace xtd {
     struct test_initialize_attribute final {
     public:
       template<typename TestClass>
-      test_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)()) :  test_initialize_attribute(name, test_class, method, xtd::tunit::caller()) {}
+      test_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)()) :  test_initialize_attribute(name, test_class, method, xtd::tunit::line_info()) {}
       
       template<typename TestClass>
-      test_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)(), const xtd::tunit::caller& caller) {test_class.add_test_initialize({name, method, caller});}
+      test_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)(), const xtd::tunit::line_info& caller) {test_class.add_test_initialize({name, method, caller});}
     };
   }
 }

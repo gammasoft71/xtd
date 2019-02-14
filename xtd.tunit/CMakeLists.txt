@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.tunit VERSION 1.0.0)
 set(INCLUDES
-  include/xtd/caller.hpp
   include/xtd/class_cleanup_attribute.hpp
   include/xtd/class_initialize_attribute.hpp
+  include/xtd/line_info.hpp
   include/xtd/registered_method.hpp
   include/xtd/registered_test_class.hpp
   include/xtd/test_cleanup_attribute.hpp

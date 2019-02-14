@@ -12,15 +12,15 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to use the caller
     /// @include caller.cpp
-    class caller final {
+    class line_info final {
     public:
-      caller() noexcept = default;
-      caller(const std::string& file_path, unsigned int line_number) noexcept : file_path_(file_path), line_number_(line_number) {}
-      caller(const std::string& member_name, const std::string& file_path, unsigned int line_number) noexcept : member_name_(member_name), file_path_(file_path), line_number_(line_number) {}
+      line_info() noexcept = default;
+      line_info(const std::string& file_path, unsigned int line_number) noexcept : file_path_(file_path), line_number_(line_number) {}
+      line_info(const std::string& member_name, const std::string& file_path, unsigned int line_number) noexcept : member_name_(member_name), file_path_(file_path), line_number_(line_number) {}
       
       /// @cond
-      caller(const caller& caller) = default;
-      caller& operator=(const caller&) = default;
+      line_info(const line_info& caller) = default;
+      line_info& operator=(const line_info&) = default;
       /// @endcond
       
       /// @brief Gets the member name
@@ -35,7 +35,7 @@ namespace xtd {
       /// @return int32 line number
       unsigned int line_number() const noexcept {return this->line_number_;}
       
-      friend std::ostream& operator<<(std::ostream& os, const xtd::tunit::caller caller) {
+      friend std::ostream& operator<<(std::ostream& os, const xtd::tunit::line_info caller) {
         if (caller.file_path_ == "" && caller.line_number_ == 0 && caller.member_name_ == "")
           return os << "{Empty}";
         if (caller.member_name_ == "")
@@ -49,12 +49,4 @@ namespace xtd {
       unsigned int line_number_ = 0;
     };
   }
-  /// @brief Get xtd::tunit::caller informations
-  /// @return xtd::tunit::caller caller informations.
-  /// @par Examples
-  /// The following example shows how to use the #caller_.
-  /// @include caller.cpp
-  /// @ingroup Helpers
-  #define caller_ \
-  xtd::tunit::caller(__func__, __FILE__, __LINE__)
 }
