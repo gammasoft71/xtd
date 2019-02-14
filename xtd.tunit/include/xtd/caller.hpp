@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::tunit::caller class.
 #pragma once
+#include <ostream>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
@@ -34,6 +35,14 @@ namespace xtd {
       /// @return int32 line number
       unsigned int line_number() const noexcept {return this->line_number_;}
       
+      friend std::ostream& operator<<(std::ostream& os, const xtd::tunit::caller caller) {
+        if (caller.file_path_ == "" && caller.line_number_ == 0 && caller.member_name_ == "")
+          return os << "{Empty}";
+        if (caller.member_name_ == "")
+          return os << "{file_path=\"" << caller.file_path_ << "\", line_number=" << caller.line_number_<< "}";
+        return os << "{member_name=\"" << caller.member_name_ << "\", file_path=\"" << caller.file_path_ << "\", line_number=" << caller.line_number_<< "}";
+      }
+
     private:
       std::string member_name_;
       std::string file_path_;
