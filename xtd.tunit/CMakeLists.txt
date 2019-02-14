@@ -9,6 +9,8 @@ set(INCLUDES
   include/xtd/registered_method.hpp
   include/xtd/test_cleanup_attribute.hpp
   include/xtd/test_initialize_attribute.hpp
+  include/xtd/test_method_attribute.hpp
+  include/xtd/test_state.hpp
   include/xtd/tunit
   include/xtd/tunit.hpp
   include/xtd/unit_test.hpp

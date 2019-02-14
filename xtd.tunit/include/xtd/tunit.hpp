@@ -7,4 +7,6 @@
 #include "registered_method.hpp"
 #include "test_cleanup_attribute.hpp"
 #include "test_initialize_attribute.hpp"
+#include "test_method_attribute.hpp"
+#include "test_state.hpp"
 #include "unit_test.hpp"
