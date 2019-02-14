@@ -12,7 +12,7 @@ namespace xtd {
     template <typename TestClass>
     struct test_class_attribute final {
     public:
-      test_class_attribute(const std::string& name) {xtd::tunit::unit_test::add({name, std::make_unique<TestClass>()});}
+      test_class_attribute(const std::string& name) {xtd::tunit::unit_test::add({name, std::make_shared<TestClass>()});}
     };
   }
 }
