@@ -6,4 +6,5 @@
 #include "class_initialize_attribute.hpp"
 #include "registered_method.hpp"
 #include "test_cleanup_attribute.hpp"
+#include "test_initialize_attribute.hpp"
 #include "unit_test.hpp"
