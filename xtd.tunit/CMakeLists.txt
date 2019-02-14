@@ -7,10 +7,12 @@ set(INCLUDES
   include/xtd/class_cleanup_attribute.hpp
   include/xtd/class_initialize_attribute.hpp
   include/xtd/registered_method.hpp
+  include/xtd/registered_test_class.hpp
   include/xtd/test_cleanup_attribute.hpp
   include/xtd/test_initialize_attribute.hpp
   include/xtd/test_method_attribute.hpp
   include/xtd/test_class.hpp
+  include/xtd/test_class_attribute.hpp
   include/xtd/test_state.hpp
   include/xtd/tunit
   include/xtd/tunit.hpp
