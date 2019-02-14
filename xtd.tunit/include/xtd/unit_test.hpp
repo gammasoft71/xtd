@@ -102,6 +102,13 @@ namespace xtd {
         return count;
       }
       
+      size_t ignore_test_count() const noexcept {
+        size_t count = 0;
+        for (auto test_class : this->test_classes())
+          count += test_class.test()->ignore_test_count();
+        return count;
+      }
+      
       std::chrono::high_resolution_clock::duration elapsed_time() const noexcept {return std::chrono::high_resolution_clock::now() - this->start_time_point;}
 
     private:

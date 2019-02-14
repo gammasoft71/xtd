@@ -31,11 +31,17 @@ namespace xtd {
       size_t test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (!method.ignore() || this->also_run_ignored_tests_)
-            count++;
+          if (!method.ignore() || this->also_run_ignored_tests_) count++;
         return count;
       }
-
+      
+      size_t ignore_test_count() const noexcept {
+        size_t count = 0;
+        for (auto method : this->tests_)
+          if (method.ignore()) count++;
+        return count;
+      }
+      
       const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
       
       void run(const xtd::tunit::unit_test& unit_test);
