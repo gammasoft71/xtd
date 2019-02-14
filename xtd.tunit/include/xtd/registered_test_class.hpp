@@ -11,14 +11,13 @@ namespace xtd {
   namespace tunit {
     struct registered_test_class final {
     public:
-      registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept : name_(name), test_(test_class) {}
+      registered_test_class(const std::string& name, std::shared_ptr<xtd::tunit::test_class> test_class) noexcept : test_(test_class) {test_->name_ = name;}
       
     private:
       friend class xtd::tunit::unit_test;
 
       const std::shared_ptr<xtd::tunit::test_class>& test() const noexcept {return this->test_;}
 
-      std::string name_;
       std::shared_ptr<xtd::tunit::test_class> test_;
     };
   }

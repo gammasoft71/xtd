@@ -12,6 +12,10 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test framework.
   namespace tunit {
+    /// @cond
+    struct registered_test_class;
+    /// @endcond
+    
     struct test_class {
     public:
       /// @cond
@@ -34,6 +38,7 @@ namespace xtd {
       friend class xtd::tunit::unit_test;
       friend struct xtd::tunit::class_initialize_attribute;
       friend struct xtd::tunit::class_cleanup_attribute;
+      friend struct xtd::tunit::registered_test_class;
       friend struct xtd::tunit::test_initialize_attribute;
       friend struct xtd::tunit::test_cleanup_attribute;
       friend struct xtd::tunit::test_method_attribute;
@@ -46,6 +51,7 @@ namespace xtd {
 
       xtd::tunit::test class_cleanup_;
       xtd::tunit::test class_initialize_;
+      std::string name_;
       xtd::tunit::test test_cleanup_;
       xtd::tunit::test test_initialize_;
       std::vector<xtd::tunit::test> test_methods_;

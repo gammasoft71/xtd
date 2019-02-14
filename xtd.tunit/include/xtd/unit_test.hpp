@@ -85,7 +85,7 @@ namespace xtd {
           
           for (auto test_class : test_classes()) {
             this->on_class_initialize_start(xtd::event_args::empty());
-            test_class.test_->class_initialize().method()();
+            test_class.test()->class_initialize().method()();
             this->on_class_initialize_end(xtd::event_args::empty());
             
             this->on_class_start(xtd::event_args::empty());
@@ -93,7 +93,7 @@ namespace xtd {
             for (auto test_method : test_class.test()->test_methods_) {
               if (!test_method.ignore_ || this->also_run_ignored_tests) {
                 this->on_test_initialize_start(xtd::event_args::empty());
-                test_class.test_->test_initialize().method()();
+                test_class.test()->test_initialize().method()();
                 this->on_test_initialize_end(xtd::event_args::empty());
                 
                 this->on_test_start(xtd::event_args::empty());
@@ -105,7 +105,7 @@ namespace xtd {
                 }
                 
                 this->on_test_cleanup_start(xtd::event_args::empty());
-                test_class.test_->test_cleanup().method()();
+                test_class.test()->test_cleanup().method()();
                 this->on_test_cleanup_end(xtd::event_args::empty());
                 
                 this->on_test_end(xtd::event_args::empty());
@@ -114,7 +114,7 @@ namespace xtd {
             this->on_class_end(xtd::event_args::empty());
             
             this->on_class_cleanup_start(xtd::event_args::empty());
-            test_class.test_->class_cleanup().method()();
+            test_class.test()->class_cleanup().method()();
             this->on_class_cleanup_end(xtd::event_args::empty());
           }
           
