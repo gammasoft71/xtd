@@ -5,7 +5,7 @@
 
 using namespace xtd::tunit;
 
-void test_class::run(unit_test& unit_test) {
+void test_class::run(const unit_test& unit_test) {
   this->start_time_point = std::chrono::high_resolution_clock::now();
   unit_test.on_class_initialize_start(xtd::tunit::class_event_args(*this));
   this->class_initialize().method()();
