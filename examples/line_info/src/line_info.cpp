@@ -13,7 +13,7 @@ void trace_message(const string& message, const line_info& info) {
 
 // The main entry point for the application.
 int main() {
-  trace_message("Something happened.", {__func__, __FILE__, __LINE__});
+  trace_message("Something happened.", line_info_);
 }
 
 // This code can produce the following output:

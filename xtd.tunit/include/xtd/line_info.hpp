@@ -50,3 +50,12 @@ namespace xtd {
     };
   }
 }
+
+/// @brief Get xtd::tunit::line_info informations
+/// @return xtd::tunit::line_info line informations.
+/// @par Examples
+/// The following example shows how to use the #line_info_.
+/// @include line_info.cpp
+/// @ingroup Helpers
+#define line_info_ \
+  xtd::tunit::line_info {__func__, __FILE__, __LINE__}

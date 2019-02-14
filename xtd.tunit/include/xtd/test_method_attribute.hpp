@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test framework.
   namespace tunit {
-    struct test_method_attribute final {
+    struct test_method_attribute {
     public:
       template<typename TestClass>
       test_method_attribute(const std::string& name, TestClass& test_class, void (TestClass::*method)()) : test_method_attribute(name, test_class, method, xtd::tunit::test_state::considered, xtd::tunit::line_info()) {}
@@ -24,3 +24,17 @@ namespace xtd {
     };
   }
 }
+
+#define ignore_test_method_(method_name) \
+  __##method_name##_unused() = delete; \
+  struct __##method_name##_attribute##_class : public xtd::tunit::test_method_attribute { \
+  template<typename test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name, xtd::tunit::test_state::ignored, {__func__, __FILE__, __LINE__}) {} \
+  } __##method_name##_attribute {*this}; \
+  void method_name()
+
+#define test_method_(method_name) \
+  __##method_name##_unused() = delete; \
+  struct __##method_name##_attribute##_class : public xtd::tunit::test_method_attribute { \
+  template<typename test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name, {__func__, __FILE__, __LINE__}) {} \
+  } __##method_name##_attribute {*this}; \
+  void method_name()

@@ -46,3 +46,14 @@ namespace xtd {
     };
   }
 }
+
+#define test_class_(class_name) \
+  class_name;\
+  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {#class_name}; \
+  class class_name : public xtd::tunit::test_class
+
+#define test_class_from_(class_name, from_class_name) \
+  class_name;\
+  xtd::tunit::test_class_attribute<class_name> __##class_name##_attribute {#class_name}; \
+  class class_name : public from_class_name
+
