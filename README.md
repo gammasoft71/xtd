@@ -27,7 +27,7 @@ src/tunit_hello_world.cpp:
 #include <string>
 
 using namespace std;
-using namespace xtd::tunit
+using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(hello_world_test) {
