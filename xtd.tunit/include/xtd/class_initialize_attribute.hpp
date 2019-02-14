@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::registered_method class.
+/// @brief Contains xtd::tunit::class_initialize_attribute class.
 #pragma once
 #include "registered_method.hpp"
 

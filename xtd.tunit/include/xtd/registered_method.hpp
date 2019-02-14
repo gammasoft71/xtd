@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::registered_method class.
+/// @brief Contains xtd::tunit::registered_method class.
 #pragma once
 #include "caller.hpp"
 #include <xtd/delegates>
