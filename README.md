@@ -47,7 +47,8 @@ namespace unit_tests {
 // The main entry point for the application.
 int main(int argc, char* argv[]) {
   return unit_test(argv, argc).run();
-}```
+}
+```
 
 CMakeLists.txt:
 
