@@ -14,7 +14,7 @@ namespace xtd {
     class unit_test;
     /// @endcond
     
-    struct registered_method {
+    struct registered_method final {
     public:
       registered_method() = default;
       registered_method(const std::string& name, xtd::delegate<void()> method, const xtd::tunit::caller& caller) : registered_method(name, method, false, caller) {}

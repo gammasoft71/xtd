@@ -11,7 +11,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to use the caller
     /// @include caller.cpp
-    class caller {
+    class caller final {
     public:
       caller() noexcept = default;
       caller(const std::string& file_path, unsigned int line_number) noexcept : file_path_(file_path), line_number_(line_number) {}
