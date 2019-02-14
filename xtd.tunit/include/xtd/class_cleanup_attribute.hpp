@@ -1,9 +1,7 @@
 /// @file
 /// @brief Contains xtd::registered_method class.
 #pragma once
-#include "caller.hpp"
-#include <xtd/delegates>
-#include <string>
+#include "registered_method.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
