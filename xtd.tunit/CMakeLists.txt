@@ -5,7 +5,8 @@ project(xtd.tunit VERSION 1.0.0)
 set(INCLUDES
   include/xtd/caller.hpp
   include/xtd/registered_method.hpp
-  include/xtd/unit_test
+  include/xtd/tunit
+  include/xtd/tunit.hpp
   include/xtd/unit_test.hpp
 )
 set(SOURCES
