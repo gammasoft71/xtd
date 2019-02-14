@@ -7,6 +7,7 @@ set(INCLUDES
   include/xtd/class_cleanup_attribute.hpp
   include/xtd/class_initialize_attribute.hpp
   include/xtd/registered_method.hpp
+  include/xtd/test_cleanup_attribute.hpp
   include/xtd/tunit
   include/xtd/tunit.hpp
   include/xtd/unit_test.hpp
