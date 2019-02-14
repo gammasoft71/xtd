@@ -24,23 +24,37 @@ src/tunit_hello_world.cpp:
 
 ```c++
 #include <xtd/tunit>
-#include <iostream>
+#include <string>
 
 using namespace std;
-using namespace xtd;
+using namespace xtd::tunit
+
+namespace unit_tests {
+  class test_class_(hello_world_test) {
+  public:
+    void test_method_(create_string_from_literal) {
+      string s = "Hello, World!";
+      sssert::are_equal("Hello, World!", s);
+    }
+    
+    void test_method_(create_string_from_chars) {
+      string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
+      assert::are_equal("Hello, World!", s);
+    }
+  };
+}
 
 // The main entry point for the application.
-int main() {
-  cout << "Hello, World !) << endl;
-}
-```
+int main(int argc, char* argv[]) {
+  return unit_test(argv, argc).run();
+}```
 
 CMakeLists.txt:
 
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(string_hello_world)
+project(tunit_hello_world)
 find_package(xtd.tunit REQUIRED)
 add_executable(${PROJECT_NAME} src/tunit_hello_world.cpp)
 target_link_libraries(${PROJECT_NAME} xtd.tunit)
