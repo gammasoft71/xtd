@@ -31,6 +31,8 @@ namespace xtd {
       size_t test_count() const noexcept {return this->tests_.size();}
 
       const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
+      
+      void run(xtd::tunit::unit_test& unit_test);
 
     protected:
       void add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept {this->class_cleanup_ = class_cleanup;}

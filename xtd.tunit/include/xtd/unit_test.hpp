@@ -57,6 +57,8 @@ namespace xtd {
       xtd::event_handler<const xtd::tunit::unit_test&> unit_test_initialize_start;
       xtd::event_handler<const xtd::tunit::unit_test&> unit_test_start;
 
+      bool also_run_ignored_tests() const noexcept {return this->also_run_ignored_tests_;}
+
       virtual void on_class_cleanup_end(const xtd::tunit::class_event_args& e) {this->class_cleanup_end(*this, e);}
       virtual void on_class_cleanup_start(const xtd::tunit::class_event_args& e) {this->class_cleanup_start(*this, e);}
       virtual void on_class_end(const xtd::tunit::class_event_args& e) {this->class_end(*this, e);}
@@ -83,45 +85,11 @@ namespace xtd {
       int run() {
         try {
           this->on_unit_test_start(xtd::event_args::empty());
-          
-          for (auto test_class : test_classes()) {
-            this->on_class_initialize_start(xtd::tunit::class_event_args(*test_class.test()));
-            test_class.test()->class_initialize().method()();
-            this->on_class_initialize_end(xtd::tunit::class_event_args(*test_class.test()));
-            
-            this->on_class_start(xtd::tunit::class_event_args(*test_class.test()));
-            
-            for (auto test_method : test_class.test()->tests_) {
-              if (!test_method.ignore_ || this->also_run_ignored_tests) {
-                this->on_test_initialize_start(xtd::event_args::empty());
-                test_class.test()->test_initialize().method()();
-                this->on_test_initialize_end(xtd::event_args::empty());
-                
-                this->on_test_start(xtd::event_args::empty());
-                try {
-                  test_method.method()();
-                  this->on_test_succeed(xtd::event_args::empty());
-                } catch(...) {
-                  this->on_test_failed(xtd::event_args::empty());
-                }
-                
-                this->on_test_cleanup_start(xtd::event_args::empty());
-                test_class.test()->test_cleanup().method()();
-                this->on_test_cleanup_end(xtd::event_args::empty());
-                
-                this->on_test_end(xtd::event_args::empty());
-              }
-            }
-            this->on_class_end(xtd::tunit::class_event_args(*test_class.test()));
-            
-            this->on_class_cleanup_start(xtd::tunit::class_event_args(*test_class.test()));
-            test_class.test()->class_cleanup().method()();
-            this->on_class_cleanup_end(xtd::tunit::class_event_args(*test_class.test()));
-          }
-          
+          for (auto test_class : test_classes())
+            test_class.test()->run(*this);
           this->on_unit_test_end(xtd::event_args::empty());
         } catch(...) {
-          
+          // do error...
         }
         return 0;
       }
@@ -154,7 +122,7 @@ namespace xtd {
         return test_classes;
       }
       
-      bool also_run_ignored_tests = false;
+      bool also_run_ignored_tests_ = false;
     };
   }
 }

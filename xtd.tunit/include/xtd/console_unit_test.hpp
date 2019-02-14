@@ -17,21 +17,21 @@ namespace xtd {
       
       void on_class_end(const xtd::tunit::class_event_args& e) override {
         this->unit_test::on_unit_test_end(e);
-        std::cout << "  End " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << std::chrono::duration_cast<std::chrono::milliseconds>(e.test_class().elapsed_time()).count() << " ms total) " << std::endl;
+        std::cout << "  End " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name() << " (" << std::chrono::duration_cast<std::chrono::milliseconds>(e.test_class().elapsed_time()).count() << " ms total) " << std::endl;
       }
       
       void on_class_start(const xtd::tunit::class_event_args& e) override {
-        std::cout << "  Start " << e.test_class().test_count() << " tests from " << e.test_class().name() << std::endl;
+        std::cout << "  Start " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name() << std::endl;
         this->unit_test::on_unit_test_start(e);
       }
       
       void on_unit_test_end(const xtd::event_args& e) override {
         this->unit_test::on_unit_test_end(e);
-        std::cout << "End " << this->test_count() << " tests from " << this->test_cases_count() << " test case ran. (" << std::chrono::duration_cast<std::chrono::milliseconds>(this->elapsed_time()).count() << " ms total)" << std::endl;
+        std::cout << "End " << this->test_count() << " test" << (this->test_count() < 2 ? "" : "s") << " from " << this->test_cases_count() << " test case" << (this->test_cases_count() < 2 ? "" : "s") << " ran. (" << std::chrono::duration_cast<std::chrono::milliseconds>(this->elapsed_time()).count() << " ms total)" << std::endl;
       }
       
       void on_unit_test_start(const xtd::event_args& e) override {
-        std::cout << "Start " << this->test_count() << " tests from " << this->test_cases_count() << " test cases" << std::endl;
+        std::cout << "Start " << this->test_count() << " test" << (this->test_count() < 2 ? "" : "s") << " from " << this->test_cases_count() << " test case" << (this->test_cases_count() < 2 ? "" : "s") << std::endl;
         this->unit_test::on_unit_test_start(e);
       }
     };

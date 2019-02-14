@@ -27,7 +27,7 @@ namespace xtd {
 
     private:
       // friend struct xtd::tunit::test_class;
-      friend class xtd::tunit::unit_test;
+      friend struct xtd::tunit::test_class;
       std::string name_;
       xtd::delegate<void()> method_;
       bool ignore_ = true;
