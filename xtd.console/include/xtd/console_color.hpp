@@ -41,4 +41,4 @@ namespace xtd {
     /// @brief The color white.
     white
   };
-};
+}
