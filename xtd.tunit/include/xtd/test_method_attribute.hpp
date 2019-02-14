@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test framework.
   namespace tunit {
-    struct test_method_attribute {
+    struct test_method_attribute final {
     public:
       template<typename TestClass>
       test_method_attribute(const std::string& name, TestClass& test_class, void (TestClass::*method)()) : test_method_attribute(name, test_class, method, xtd::tunit::test_state::considered, xtd::tunit::caller()) {}
