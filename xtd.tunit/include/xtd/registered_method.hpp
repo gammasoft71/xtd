@@ -21,7 +21,7 @@ namespace xtd {
       registered_method(const std::string& name, xtd::delegate<void()> method, bool ignore, const xtd::tunit::caller& caller) : name_(name), method_(method), ignore_(ignore), caller__(caller) {}
       
       const std::string& name() const noexcept {return this->name_;}
-      xtd::delegate<void()> methid() const noexcept {return this->method_;}
+      xtd::delegate<void()> method() const noexcept {return this->method_;}
       bool ignore() const noexcept {return this->ignore_;}
       const xtd::tunit::caller caller() const noexcept {return this->caller__;}
 
