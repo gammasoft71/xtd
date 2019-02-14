@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::tunit::test_state enum class.
 #pragma once
-#include "registered_method.hpp"
+#include "test.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {

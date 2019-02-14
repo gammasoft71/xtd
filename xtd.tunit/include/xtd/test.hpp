@@ -14,11 +14,11 @@ namespace xtd {
     class unit_test;
     /// @endcond
     
-    struct registered_method final {
+    struct test final {
     public:
-      registered_method() = default;
-      registered_method(const std::string& name, xtd::delegate<void()> method, const xtd::tunit::line_info& caller) noexcept : registered_method(name, method, false, caller) {}
-      registered_method(const std::string& name, xtd::delegate<void()> method, bool ignore, const xtd::tunit::line_info& caller) noexcept : name_(name), method_(method), ignore_(ignore), info_(caller) {}
+      test() = default;
+      test(const std::string& name, xtd::delegate<void()> method, const xtd::tunit::line_info& caller) noexcept : test(name, method, false, caller) {}
+      test(const std::string& name, xtd::delegate<void()> method, bool ignore, const xtd::tunit::line_info& caller) noexcept : name_(name), method_(method), ignore_(ignore), info_(caller) {}
       
       const std::string& name() const noexcept {return this->name_;}
       xtd::delegate<void()> method() const noexcept {return this->method_;}

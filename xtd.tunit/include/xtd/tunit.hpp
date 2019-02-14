@@ -5,7 +5,7 @@
 #include "class_initialize_attribute.hpp"
 #include "console_unit_test.hpp"
 #include "line_info.hpp"
-#include "registered_method.hpp"
+#include "test.hpp"
 #include "registered_test_class.hpp"
 #include "test_class.hpp"
 #include "test_class_attribute.hpp"

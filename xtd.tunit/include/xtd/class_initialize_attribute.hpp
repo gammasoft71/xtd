@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::tunit::class_initialize_attribute class.
 #pragma once
-#include "registered_method.hpp"
+#include "test.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
