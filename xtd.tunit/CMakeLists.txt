@@ -5,6 +5,7 @@ project(xtd.tunit VERSION 1.0.0)
 set(INCLUDES
   include/xtd/class_cleanup_attribute.hpp
   include/xtd/class_initialize_attribute.hpp
+  include/xtd/console_unit_test.hpp
   include/xtd/line_info.hpp
   include/xtd/registered_method.hpp
   include/xtd/registered_test_class.hpp

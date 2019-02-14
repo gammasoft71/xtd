@@ -36,5 +36,5 @@ namespace unit_tests {
 }
 
 int main(int argc, char* argv[]) {
-  return unit_test(argv, argc).run();
+  return console_unit_test(argv, argc).run();
 }
