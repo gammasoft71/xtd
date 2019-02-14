@@ -90,7 +90,7 @@ namespace xtd {
             
             this->on_class_start(xtd::event_args::empty());
             
-            for (auto test_method : test_class.test()->test_methods_) {
+            for (auto test_method : test_class.test()->tests_) {
               if (!test_method.ignore_ || this->also_run_ignored_tests) {
                 this->on_test_initialize_start(xtd::event_args::empty());
                 test_class.test()->test_initialize().method()();

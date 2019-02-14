@@ -6,6 +6,7 @@
 #include "test_initialize_attribute.hpp"
 #include "test_cleanup_attribute.hpp"
 #include "test_method_attribute.hpp"
+#include <chrono>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
@@ -23,6 +24,12 @@ namespace xtd {
       virtual ~test_class() = default;
       /// @endcond
 
+      std::chrono::high_resolution_clock::duration elapsed_time() const noexcept {return std::chrono::high_resolution_clock::now() - this->start_time_point;}
+      
+      std::string name() const noexcept {return this->name_;}
+
+      const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
+
     protected:
       void add_class_cleanup(const xtd::tunit::test& class_cleanup) noexcept {this->class_cleanup_ = class_cleanup;}
       
@@ -32,7 +39,7 @@ namespace xtd {
       
       void add_test_initialize(const xtd::tunit::test& test_initialize) noexcept {this->test_initialize_ = test_initialize;}
       
-      void add_test_method(const xtd::tunit::test& test_method) noexcept {this->test_methods_.push_back(test_method);}
+      void add_test_method(const xtd::tunit::test& test) noexcept {this->tests_.push_back(test);}
       
     private:
       friend class xtd::tunit::unit_test;
@@ -47,14 +54,15 @@ namespace xtd {
       const xtd::tunit::test& class_initialize() const noexcept {return this->class_initialize_;}
       const xtd::tunit::test& test_cleanup() const noexcept {return this->test_cleanup_;}
       const xtd::tunit::test& test_initialize() const noexcept {return this->test_initialize_;}
-      const std::vector<xtd::tunit::test>& test_methods() const noexcept {return this->test_methods_;}
+      const std::vector<xtd::tunit::test>& test_methods() const noexcept {return this->tests_;}
 
       xtd::tunit::test class_cleanup_;
       xtd::tunit::test class_initialize_;
+      std::chrono::high_resolution_clock::time_point start_time_point = std::chrono::high_resolution_clock::now();
       std::string name_;
       xtd::tunit::test test_cleanup_;
       xtd::tunit::test test_initialize_;
-      std::vector<xtd::tunit::test> test_methods_;
+      std::vector<xtd::tunit::test> tests_;
     };
   }
 }
