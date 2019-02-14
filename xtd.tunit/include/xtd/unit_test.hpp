@@ -1,8 +1,8 @@
 /// @file
 /// @brief Contains xtd::unit_test class.
 #pragma once
-
 #include "registered_test_class.hpp"
+#include <chrono>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
@@ -125,17 +125,20 @@ namespace xtd {
         return 0;
       }
       
-      int test_cases_count() const {return this->test_classes().size();}
-      int test_count() const {
+      int test_cases_count() const noexcept {return this->test_classes().size();}
+      int test_count() const noexcept {
         int count = 0;
         for (auto test_class : this->test_classes())
           count += test_class.test()->test_methods().size();
         return count;
       }
+      
+      std::chrono::high_resolution_clock::duration elapsed_time() const noexcept {return std::chrono::high_resolution_clock::now() - this->start_time_point;}
 
     private:
       template <typename TestClass>
       friend struct xtd::tunit::test_class_attribute;
+      std::chrono::high_resolution_clock::time_point start_time_point = std::chrono::high_resolution_clock::now();
       
       static void add(const xtd::tunit::registered_test_class& test_class) {test_classes().push_back(test_class);}
       
