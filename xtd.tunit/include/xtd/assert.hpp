@@ -37,7 +37,7 @@ namespace xtd {
       assert() = delete;
       /// @endcond
       
-      /// @brief Verifies that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -48,7 +48,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_equal(const TExpected& expected, const TActual& actual) {are_equal(expected, actual, "", line_info());}
       
-      /// @brief Verifies that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -60,7 +60,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_equal(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
       
-      /// @brief Verifies that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
@@ -72,7 +72,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_equal(const TExpected& expected, const TActual& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       
-      /// @brief Verifies that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
@@ -93,7 +93,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Verifies that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -104,7 +104,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_equal(const TExpected& expected, const TActual& actual) {are_not_equal(expected, actual, "", line_info());}
       
-      /// @brief Verifies that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -116,7 +116,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_equal(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
       
-      /// @brief Verifies that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
@@ -128,7 +128,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_equal(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       
-      /// @brief Verifies that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @brief Asserts that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
@@ -141,6 +141,74 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_equal(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (actual != expected)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: not " << expected << std::endl << "But was:  " << actual;
+          failed(ss.str(), message, line_info);
+        }
+      }
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_not_same(c, a); // test ok
+      /// xtd::tunit::asser::are_not_same(b, a); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_not_same(const TExpected& expected, const TActual& actual) {are_not_same(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_not_same(c, a); // test ok
+      /// xtd::tunit::asser::are_not_same(b, a); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_not_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_same(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_not_same(c, a); // test ok
+      /// xtd::tunit::asser::are_not_same(b, a); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_same(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_not_same(c, a); // test ok
+      /// xtd::tunit::asser::are_not_same(b, a); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (&actual != &expected)
           succeed(message, line_info);
         else {
           std::stringstream ss;
