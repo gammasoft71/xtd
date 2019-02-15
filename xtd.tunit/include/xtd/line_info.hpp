@@ -18,9 +18,13 @@ namespace xtd {
       line_info(const std::string& file_path, unsigned int line_number) noexcept : file_path_(file_path), line_number_(line_number) {}
       line_info(const std::string& member_name, const std::string& file_path, unsigned int line_number) noexcept : member_name_(member_name), file_path_(file_path), line_number_(line_number) {}
       
+      static xtd::tunit::line_info empty() {return {};}
+      
       /// @cond
       line_info(const line_info& caller) = default;
       line_info& operator=(const line_info&) = default;
+      bool operator==(const line_info& li) const {return this->member_name_ == li.member_name_ && this->file_path_ == li.file_path_ && this->line_number_ == li.line_number_;}
+      bool operator!=(const line_info& li) const {return !this->operator==(li);}
       /// @endcond
       
       /// @brief Gets the member name

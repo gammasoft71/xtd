@@ -119,6 +119,21 @@ namespace xtd {
         return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point - this->start_time_point);
       }
       
+      size_t failed_test_count() const noexcept {
+        size_t count = 0;
+        for (auto& test_class : this->test_classes())
+          for (auto& test : test_class.test()->tests())
+            if (!test.passed()) count++;
+        return count;
+      }
+      size_t passed_test_count() const noexcept {
+        size_t count = 0;
+        for (auto& test_class : this->test_classes())
+          for (auto& test : test_class.test()->tests())
+            if (test.passed()) count++;
+        return count;
+      }
+
     private:
       template <typename TestClass>
       friend struct xtd::tunit::test_class_attribute;

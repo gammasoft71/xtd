@@ -24,6 +24,8 @@ namespace xtd {
     public:
       /// @cond
       test_class() = default;
+      test_class(const test_class&) = default;
+      test_class& operator=(const test_class&) = default;
       virtual ~test_class() = default;
       /// @endcond
 

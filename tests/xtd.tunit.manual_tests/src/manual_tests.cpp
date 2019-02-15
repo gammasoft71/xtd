@@ -17,11 +17,13 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      std::this_thread::sleep_for(std::chrono::milliseconds(1));
+      bool b = true;
+      assert::are_equal(true, b);
     }
     
     void ignore_test_method_(test_case3) {
-      std::this_thread::sleep_for(std::chrono::milliseconds(4));
+      int i = 42;
+      assert::are_equal(42, i);
     }
   };
 
@@ -29,8 +31,8 @@ namespace unit_tests {
   class test_class_(uri_test) {
   public:
     void test_method_(test_case1) {
-      throw std::invalid_argument("");
-      std::this_thread::sleep_for(std::chrono::milliseconds(5));
+      bool b = true;
+      assert::are_equal_(false, b);
     }
   };
 }
@@ -40,5 +42,7 @@ void dump() {
 }
 
 int main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
+  console_unit_test unit_test(argv, argc);
+  settings::default_settings().also_run_ignored_tests(true);
+  return unit_test.run();
 }

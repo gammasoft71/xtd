@@ -28,8 +28,9 @@ set(INCLUDES
   include/xtd/unit_test.hpp
 )
 set(SOURCES
-src/test.cpp
-src/test_class.cpp
+  src/assert.cpp
+  src/test.cpp
+  src/test_class.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})

@@ -1,5 +1,3 @@
-/// @file
-/// @brief Contains xtd::tunit::test_class class.
 #include "../include/xtd/test_class.hpp"
 #include "../include/xtd/unit_test.hpp"
 

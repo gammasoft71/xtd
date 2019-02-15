@@ -1,13 +1,14 @@
-/// @file
-/// @brief Contains xtd::tunit::test_class class.
 #include "../include/xtd/test.hpp"
 #include "../include/xtd/unit_test.hpp"
 #include <exception>
 
 using namespace xtd::tunit;
 
+test* test::current_test_ = nullptr;
+
 void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
   this->start_time_point = std::chrono::high_resolution_clock::now();
+  current_test_ = this;
   
   if (!this->ignore_ || settings::default_settings().also_run_ignored_tests()) {
     unit_test.on_test_initialize_start(xtd::tunit::test_event_args(*this, test_class));
