@@ -23,11 +23,6 @@ namespace xtd {
       test(const std::string& name, xtd::delegate<void()> method, const xtd::tunit::line_info& caller) noexcept : test(name, method, false, caller) {}
       test(const std::string& name, xtd::delegate<void()> method, bool ignore, const xtd::tunit::line_info& info) noexcept :  ignore_(ignore), info_(info), method_(method), name_(name) {}
       
-      /// @cond
-      test(const test&) = default;
-      test& operator=(const test&) = default;
-      /// @endcond
-      
       bool ignore() const noexcept {return this->ignore_;}
       
       const xtd::tunit::line_info line_info() const noexcept {return this->info_;}

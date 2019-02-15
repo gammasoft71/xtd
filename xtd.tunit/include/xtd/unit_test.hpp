@@ -118,7 +118,7 @@ namespace xtd {
         if (this->end_time_point.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->start_time_point);
         return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point - this->start_time_point);
       }
-      
+
       size_t failed_test_count() const noexcept {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
@@ -126,6 +126,15 @@ namespace xtd {
             if (!test.passed()) count++;
         return count;
       }
+
+      std::vector<std::string> failed_test_names() const noexcept {
+        std::vector<std::string> names;
+        for (auto& test_class : this->test_classes())
+          for (auto& test : test_class.test()->tests())
+            if (!test.passed()) names.push_back(test_class.test()->name() + "." + test.name());
+        return names;
+      }
+
       size_t passed_test_count() const noexcept {
         size_t count = 0;
         for (auto& test_class : this->test_classes())

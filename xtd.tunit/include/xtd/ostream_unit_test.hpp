@@ -45,9 +45,13 @@ namespace xtd {
         this->unit_test::on_unit_test_end(e);
         this->os_ << std::endl;
         this->os_ << "  Summary :" << std::endl;
-        this->os_ << "   PASSED " << this->passed_test_count() << " tests." << std::endl;
+        this->os_ << "    PASSED " << this->passed_test_count() << " tests." << std::endl;
         if (this->failed_test_count()) {
-          this->os_ << "   FAILED " << this->failed_test_count() << " tests." << std::endl;
+          this->os_ << "*** FAILED " << this->failed_test_count() << " test, listed below:" << std::endl;
+          for(auto name : this->failed_test_names())
+            this->os_ << "*** FAILED " << name << std::endl;
+          this->os_ << std::endl;
+          this->os_ << "    FAILED " << this->failed_test_count() << " tests." << std::endl;
         }
         this->os_ << "End " << this->test_count() << " test" << (this->test_count() < 2 ? "" : "s") << " from " << this->test_cases_count() << " test case" << (this->test_cases_count() < 2 ? "" : "s") << " ran. (" << this->elapsed_time().count() << " ms total)" << std::endl;
       }
