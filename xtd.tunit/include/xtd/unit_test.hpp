@@ -17,10 +17,7 @@ namespace xtd {
     /// @brief The template class.
     class unit_test {
     public:
-      unit_test() = default;
-      
-      unit_test(char* argv[], int argc) {
-        // parse args...
+      unit_test() noexcept {
         on_unit_test_initialize_start(xtd::event_args::empty());
         unit_test_initialize();
         on_unit_test_initialize_end(xtd::event_args::empty());
