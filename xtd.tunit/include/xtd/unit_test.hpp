@@ -3,6 +3,7 @@
 #pragma once
 #include "class_event_handler.hpp"
 #include "registered_test_class.hpp"
+#include "settings.hpp"
 #include <chrono>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
@@ -53,8 +54,6 @@ namespace xtd {
       xtd::event_handler<const xtd::tunit::unit_test&> unit_test_initialize_end;
       xtd::event_handler<const xtd::tunit::unit_test&> unit_test_initialize_start;
       xtd::event_handler<const xtd::tunit::unit_test&> unit_test_start;
-
-      bool also_run_ignored_tests() const noexcept {return this->also_run_ignored_tests_;}
 
       virtual void on_class_cleanup_end(const xtd::tunit::class_event_args& e) const {this->class_cleanup_end(*this, e);}
       virtual void on_class_cleanup_start(const xtd::tunit::class_event_args& e) const {this->class_cleanup_start(*this, e);}
@@ -125,8 +124,6 @@ namespace xtd {
         static std::vector<xtd::tunit::registered_test_class> test_classes;
         return test_classes;
       }
-      
-      bool also_run_ignored_tests_ = false;
     };
   }
 }

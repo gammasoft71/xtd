@@ -14,7 +14,7 @@ void test_class::run(const unit_test& unit_test) {
   unit_test.on_class_start(xtd::tunit::class_event_args(*this));
   
   for (auto test_method : this->tests_) {
-    if (!test_method.ignore_ || unit_test.also_run_ignored_tests()) {
+    if (!test_method.ignore_ || settings::default_settings().also_run_ignored_tests()) {
       unit_test.on_test_initialize_start(xtd::event_args::empty());
       this->test_initialize().method()();
       unit_test.on_test_initialize_end(xtd::event_args::empty());
