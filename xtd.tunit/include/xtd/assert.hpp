@@ -144,7 +144,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: not same as " << expected << std::endl << "But was:  " << actual;
+          ss << "Expected: not " << expected << std::endl << "But was:  " << actual;
           failed(ss.str(), message, line_info);
         }
       }
@@ -212,7 +212,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: not " << expected << std::endl << "But was:  " << actual;
+          ss << "Expected: not same as " << expected << std::endl << "But was:  " << actual;
           failed(ss.str(), message, line_info);
         }
       }
