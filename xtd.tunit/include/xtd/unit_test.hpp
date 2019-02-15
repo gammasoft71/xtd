@@ -79,18 +79,18 @@ namespace xtd {
       virtual void on_unit_test_start(const xtd::event_args& e) const {this->unit_test_start(*this, e);}
 
       int run() {
-        int result= EXIT_SUCCESS;
         this->start_time_point = std::chrono::high_resolution_clock::now();
         try {
           this->on_unit_test_start(xtd::event_args::empty());
           for (auto test_class : test_classes())
-            result = test_class.test()->run(*this);
+            test_class.test()->run(*this);
           this->on_unit_test_end(xtd::event_args::empty());
         } catch(...) {
+          xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
           // do error...
         }
         this->end_time_point = std::chrono::high_resolution_clock::now();
-        return result;
+        return xtd::tunit::settings::default_settings().exit_status();
       }
       
       size_t test_cases_count() const noexcept {return this->test_classes().size();}

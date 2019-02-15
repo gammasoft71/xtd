@@ -36,7 +36,7 @@ namespace xtd {
         return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point - this->start_time_point);
       }
 
-      int run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
+      void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
 
     private:
       friend struct xtd::tunit::test_class;

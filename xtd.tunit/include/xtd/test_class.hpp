@@ -50,7 +50,7 @@ namespace xtd {
         return count;
       }
       
-      int run(const xtd::tunit::unit_test& unit_test);
+      void run(const xtd::tunit::unit_test& unit_test);
 
       const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
 

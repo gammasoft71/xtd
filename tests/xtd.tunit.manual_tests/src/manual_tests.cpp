@@ -1,5 +1,6 @@
 #include <xtd/tunit>
 #include <iostream>
+#include <stdexcept>
 #include <thread>
 
 using namespace xtd::tunit;
@@ -27,6 +28,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case1) {
       std::this_thread::sleep_for(std::chrono::milliseconds(2));
+      throw std::invalid_argument("");
     }
   };
 }

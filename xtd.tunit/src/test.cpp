@@ -5,8 +5,7 @@
 
 using namespace xtd::tunit;
 
-int test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
-  int result = EXIT_SUCCESS;
+void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
   this->start_time_point = std::chrono::high_resolution_clock::now();
   
   if (!this->ignore_ || settings::default_settings().also_run_ignored_tests()) {
@@ -18,7 +17,11 @@ int test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cla
     try {
       this->method()();
       unit_test.on_test_succeed(xtd::event_args::empty());
+    } catch(const std::exception& e) {
+      xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
+      unit_test.on_test_failed(xtd::event_args::empty());
     } catch(...) {
+      xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
       unit_test.on_test_failed(xtd::event_args::empty());
     }
     
@@ -30,6 +33,5 @@ int test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cla
   }
   
   this->end_time_point = std::chrono::high_resolution_clock::now();
-  return result;
 }
 
