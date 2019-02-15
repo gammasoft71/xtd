@@ -3,6 +3,7 @@
 #pragma once
 #include "line_info.hpp"
 #include <xtd/delegates>
+#include <chrono>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
