@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::unit_test class.
 #pragma once
+#include "assert.hpp"
 #include "assert_error.hpp"
 #include "class_cleanup_attribute.hpp"
 #include "class_event_args.hpp"

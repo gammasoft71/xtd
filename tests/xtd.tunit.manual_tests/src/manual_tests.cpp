@@ -12,7 +12,8 @@ namespace unit_tests {
   class test_class_(version_test) {
   public:
     void test_method_(test_case1) {
-      std::this_thread::sleep_for(std::chrono::milliseconds(5));
+      string s = "Hello, World!";
+      assert::are_equal("Hello, World!", s);
     }
     
     void test_method_(test_case2) {
