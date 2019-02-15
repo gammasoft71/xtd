@@ -10,27 +10,27 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
   this->start_time_point = std::chrono::high_resolution_clock::now();
   
   if (!this->ignore_ || settings::default_settings().also_run_ignored_tests()) {
-    unit_test.on_test_initialize_start(xtd::event_args::empty());
+    unit_test.on_test_initialize_start(xtd::tunit::test_event_args(*this, test_class));
     test_class.test_initialize().method()();
-    unit_test.on_test_initialize_end(xtd::event_args::empty());
+    unit_test.on_test_initialize_end(xtd::tunit::test_event_args(*this, test_class));
     
-    unit_test.on_test_start(xtd::event_args::empty());
+    unit_test.on_test_start(xtd::tunit::test_event_args(*this, test_class));
     try {
       this->method()();
-      unit_test.on_test_succeed(xtd::event_args::empty());
+      unit_test.on_test_succeed(xtd::tunit::test_event_args(*this, test_class));
     } catch(const std::exception& e) {
       xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
-      unit_test.on_test_failed(xtd::event_args::empty());
+      unit_test.on_test_failed(xtd::tunit::test_event_args(*this, test_class));
     } catch(...) {
       xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
-      unit_test.on_test_failed(xtd::event_args::empty());
+      unit_test.on_test_failed(xtd::tunit::test_event_args(*this, test_class));
     }
     
-    unit_test.on_test_cleanup_start(xtd::event_args::empty());
+    unit_test.on_test_cleanup_start(xtd::tunit::test_event_args(*this, test_class));
     test_class.test_cleanup().method()();
-    unit_test.on_test_cleanup_end(xtd::event_args::empty());
+    unit_test.on_test_cleanup_end(xtd::tunit::test_event_args(*this, test_class));
     
-    unit_test.on_test_end(xtd::event_args::empty());
+    unit_test.on_test_end(xtd::tunit::test_event_args(*this, test_class));
   }
   
   this->end_time_point = std::chrono::high_resolution_clock::now();

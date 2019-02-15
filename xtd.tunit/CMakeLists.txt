@@ -14,6 +14,8 @@ set(INCLUDES
   include/xtd/test.hpp
   include/xtd/registered_test_class.hpp
   include/xtd/test_cleanup_attribute.hpp
+  include/xtd/test_event_args.hpp
+  include/xtd/test_event_handler.hpp
   include/xtd/test_initialize_attribute.hpp
   include/xtd/test_method_attribute.hpp
   include/xtd/test_class.hpp

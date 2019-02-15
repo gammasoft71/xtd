@@ -14,6 +14,8 @@
 #include "test_class.hpp"
 #include "test_class_attribute.hpp"
 #include "test_cleanup_attribute.hpp"
+#include "test_event_args.hpp"
+#include "test_event_handler.hpp"
 #include "test_initialize_attribute.hpp"
 #include "test_method_attribute.hpp"
 #include "test_state.hpp"
