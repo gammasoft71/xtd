@@ -172,8 +172,8 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::asser::are_not_same(c, a); // test ok
-      /// xtd::tunit::asser::are_not_same(b, a); // test throws an AssertionException.
+      /// xtd::tunit::asser::are_not_same(c, a, line_info_); // test ok
+      /// xtd::tunit::asser::are_not_same(b, a, line_info); // test throws an AssertionException.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_same(expected, actual, "", line_info);}
@@ -187,8 +187,8 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::asser::are_not_same(c, a); // test ok
-      /// xtd::tunit::asser::are_not_same(b, a); // test throws an AssertionException.
+      /// xtd::tunit::asser::are_not_same(c, a, "User message..."); // test ok
+      /// xtd::tunit::asser::are_not_same(b, a, "User message..."); // test throws an AssertionException.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_same(expected, actual, message, line_info());}
@@ -203,8 +203,8 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::asser::are_not_same(c, a); // test ok
-      /// xtd::tunit::asser::are_not_same(b, a); // test throws an AssertionException.
+      /// xtd::tunit::asser::are_not_same(c, a, "User message...", line_info_); // test ok
+      /// xtd::tunit::asser::are_not_same(b, a, "User message...", line_info); // test throws an AssertionException.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -213,6 +213,74 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: not same as " << expected << std::endl << "But was:  " << actual;
+          failed(ss.str(), message, line_info);
+        }
+      }
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_same(b, a); // test ok
+      /// xtd::tunit::asser::are_same(c, a); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_same(const TExpected& expected, const TActual& actual) {are_same(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_same(b, a, line_info_); // test ok
+      /// xtd::tunit::asser::are_same(c, a, line_info_); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_same(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_same(b, a, "User message..."); // test ok
+      /// xtd::tunit::asser::are_same(c, a, "User message..."); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_same(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// int a = 24;
+      /// int& b = a;
+      /// int c=  24;
+      /// xtd::tunit::asser::are_same(b, a, "User message...", line_info_); // test ok
+      /// xtd::tunit::asser::are_same(c, a, "User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      template<typename TExpected, typename TActual>
+      static void are_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (&actual == &expected)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: same as " << expected << std::endl << "But was:  " << actual;
           failed(ss.str(), message, line_info);
         }
       }
