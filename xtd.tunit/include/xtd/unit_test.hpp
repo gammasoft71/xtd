@@ -86,6 +86,9 @@ namespace xtd {
           for (auto test_class : test_classes())
             test_class.test()->run(*this);
           this->on_unit_test_end(xtd::event_args::empty());
+        } catch(const std::exception& e) {
+          xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
+          // do error...
         } catch(...) {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
           // do error...

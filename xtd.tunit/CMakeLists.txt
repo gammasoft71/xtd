@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.tunit VERSION 1.0.0)
 set(INCLUDES
+  include/xtd/assert_error.hpp
   include/xtd/class_cleanup_attribute.hpp
   include/xtd/class_event_args.hpp
   include/xtd/class_event_handler.hpp

@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::tunit::registered_method class.
 #pragma once
+#include "assert_error.hpp"
 #include "line_info.hpp"
 #include <xtd/delegates>
 #include <chrono>

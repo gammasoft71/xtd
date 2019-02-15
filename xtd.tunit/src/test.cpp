@@ -18,6 +18,9 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
     try {
       this->method()();
       unit_test.on_test_succeed(xtd::tunit::test_event_args(*this, test_class));
+    } catch(const xtd::tunit::assert_error& e) {
+      xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
+      unit_test.on_test_failed(xtd::tunit::test_event_args(*this, test_class));
     } catch(const std::exception& e) {
       xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
       unit_test.on_test_failed(xtd::tunit::test_event_args(*this, test_class));
