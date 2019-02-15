@@ -11,7 +11,7 @@ void test_class::run(const unit_test& unit_test) {
   
   unit_test.on_class_start(xtd::tunit::class_event_args(*this));
   
-  for (auto test_method : this->tests_)
+  for (auto& test_method : this->tests_)
     test_method.run(unit_test, *this);
   unit_test.on_class_end(xtd::tunit::class_event_args(*this));
   

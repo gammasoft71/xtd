@@ -83,7 +83,7 @@ namespace xtd {
         this->start_time_point = std::chrono::high_resolution_clock::now();
         try {
           this->on_unit_test_start(xtd::event_args::empty());
-          for (auto test_class : test_classes())
+          for (auto& test_class : test_classes())
             test_class.test()->run(*this);
           this->on_unit_test_end(xtd::event_args::empty());
         } catch(const std::exception& e) {
