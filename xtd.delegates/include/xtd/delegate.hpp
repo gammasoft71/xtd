@@ -154,17 +154,20 @@ namespace xtd {
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The paramter list.
     /// @return result_t The return value.
-    result_t operator()(arguments_t... arguments) const noexcept {
+    result_t operator()(arguments_t... arguments) const {
       if (this->functions.size() == 0) return result_t();
-      for (size_t i = 0; i < this->functions.size() - 1; i++)
+      for (size_t i = 0; i < this->functions.size() - 1; i++) {
+        if (this->functions[i] == nullptr) throw std::invalid_argument("function null");
         this->functions[i](arguments...);
+      }
+      if (this->functions.back() == nullptr) throw std::invalid_argument("function null");
       return this->functions.back()(arguments...);
     }
 
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The paramter list.
     /// @return result_t The return value.
-    result_t invoke(arguments_t... arguments) const noexcept { return this->operator()(arguments...); }
+    result_t invoke(arguments_t... arguments) const { return this->operator()(arguments...); }
 
     /// @brief Concatenates the invocation lists of an array of delegates.
     /// @param delagates The array of delegates to combine.
