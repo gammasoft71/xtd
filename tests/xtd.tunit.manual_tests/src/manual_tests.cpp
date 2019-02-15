@@ -81,16 +81,16 @@ private:
 };
 
 namespace unit_tests {
-  class test_class_(version_test) {
+  class test_class_(manual_test) {
   public:
-    void test_method_(test_case1) {
+    void test_method_(version_test_case1) {
       version v(1, 2);
-      assert::are_equal(version {1, 1}, v);
+      assert::are_equal(version {1, 2}, v);
     }
 
-    void test_method_(test_case2) {
+    void test_method_(tuple_test_case2) {
       auto t = std::make_tuple("a"s, 2);
-      assert::are_equal(std::tuple<std::string, int>("a"s, 1), t);
+      assert::are_not_equal(std::tuple<std::string, int>("a"s, 1), t);
     }
   };
 }
