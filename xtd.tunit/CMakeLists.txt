@@ -24,7 +24,7 @@ set(INCLUDES
   include/xtd/unit_test.hpp
 )
 set(SOURCES
-src/tunit.cpp
+src/test.cpp
 src/test_class.cpp
 )
 source_group(include FILES ${INCLUDES})

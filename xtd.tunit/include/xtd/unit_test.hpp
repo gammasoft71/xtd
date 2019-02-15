@@ -79,15 +79,18 @@ namespace xtd {
       virtual void on_unit_test_start(const xtd::event_args& e) const {this->unit_test_start(*this, e);}
 
       int run() {
+        int result= EXIT_SUCCESS;
+        this->start_time_point = std::chrono::high_resolution_clock::now();
         try {
           this->on_unit_test_start(xtd::event_args::empty());
           for (auto test_class : test_classes())
-            test_class.test()->run(*this);
+            result = test_class.test()->run(*this);
           this->on_unit_test_end(xtd::event_args::empty());
         } catch(...) {
           // do error...
         }
-        return 0;
+        this->end_time_point = std::chrono::high_resolution_clock::now();
+        return result;
       }
       
       size_t test_cases_count() const noexcept {return this->test_classes().size();}
@@ -105,12 +108,16 @@ namespace xtd {
         return count;
       }
       
-      std::chrono::high_resolution_clock::duration elapsed_time() const noexcept {return std::chrono::high_resolution_clock::now() - this->start_time_point;}
-
+      std::chrono::milliseconds elapsed_time() const noexcept {
+        using namespace std::chrono_literals;
+        if (this->start_time_point.time_since_epoch() == 0ms && this->end_time_point.time_since_epoch() == 0ms) return 0ms;
+        if (this->end_time_point.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->start_time_point);
+        return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point - this->start_time_point);
+      }
+      
     private:
       template <typename TestClass>
       friend struct xtd::tunit::test_class_attribute;
-      std::chrono::high_resolution_clock::time_point start_time_point = std::chrono::high_resolution_clock::now();
       
       static void add(const xtd::tunit::registered_test_class& test_class) {test_classes().push_back(test_class);}
       
@@ -124,6 +131,9 @@ namespace xtd {
         static std::vector<xtd::tunit::registered_test_class> test_classes;
         return test_classes;
       }
+
+      std::chrono::high_resolution_clock::time_point end_time_point;
+      std::chrono::high_resolution_clock::time_point start_time_point;
     };
   }
 }
