@@ -3,8 +3,9 @@
 #include <stdexcept>
 #include <thread>
 
-using namespace xtd::tunit;
 using namespace std;
+using namespace xtd;
+using namespace xtd::tunit;
 
 namespace unit_tests {
   // The class test must be declared with test_class_ helper.
@@ -27,10 +28,14 @@ namespace unit_tests {
   class test_class_(uri_test) {
   public:
     void test_method_(test_case1) {
-      std::this_thread::sleep_for(std::chrono::milliseconds(2));
       throw std::invalid_argument("");
+      std::this_thread::sleep_for(std::chrono::milliseconds(5));
     }
   };
+}
+
+void dump() {
+  throw std::invalid_argument("");
 }
 
 int main(int argc, char* argv[]) {
