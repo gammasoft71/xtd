@@ -465,6 +465,62 @@ namespace xtd {
       static void fail(const std::string& message, const xtd::tunit::line_info& line_info) {
         failed("", message, line_info);
       }
+      
+      /// @brief Asserts that the first value is greater than the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::greater(24, 12, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::greater(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void greater(const TValue1& val1, const TValue2& val2) {greater(val1, val2, "", line_info());}
+      
+      /// @brief Asserts that the first value is greater than the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::greater(24, 12, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::greater(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void greater(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {greater(val1, val2, "", line_info);}
+      
+      /// @brief Asserts that the first value is greater than the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::greater(24, 12, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::greater(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void greater(const TValue1& val1, const TValue2& val2, const std::string& message) {greater(val1, val2, message, line_info());}
+      
+      /// @brief Asserts that the first value is greater than the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::greater(24, 12, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::greater(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void greater(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (val1 > val2)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: greater than " << val2 << std::endl << "But was:  " << val1;
+          failed(ss.str(), message, line_info);
+        }
+      }
 
     private:
       static void succeed(const std::string& message, const xtd::tunit::line_info& line_info);
