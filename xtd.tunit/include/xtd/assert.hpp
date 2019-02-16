@@ -75,7 +75,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24)); // test ok
+      /// xtd::tunit::assert::are_aqual(24, int(24)); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -88,7 +88,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24), line_info_); // test ok
+      /// xtd::tunit::assert::are_aqual(24, int(24), line_info_); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24), line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -101,7 +101,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24), "User message..."); // test ok
+      /// xtd::tunit::assert::are_aqual(24, int(24), "User message..."); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -115,7 +115,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24), "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::are_aqual(24, int(24), "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -135,7 +135,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_not_equal(23, int(24)); // test ok
+      /// xtd::tunit::assert::are_not_equal(23, int(24)); // test ok.
       /// xtd::tunit::assert::are_not_equal(24, int(24)); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -148,7 +148,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_not_equal(23, int(24), line_info_); // test ok
+      /// xtd::tunit::assert::are_not_equal(23, int(24), line_info_); // test ok.
       /// xtd::tunit::assert::are_not_equal(24, int(24), line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -161,7 +161,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_not_equal(23, int(24), "User message..."); // test ok
+      /// xtd::tunit::assert::are_not_equal(23, int(24), "User message..."); // test ok.
       /// xtd::tunit::assert::are_not_equal(24, int(24), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -175,7 +175,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_not_equal(23, int(24), "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::are_not_equal(23, int(24), "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::are_not_equal(24, int(24), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -198,7 +198,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_not_same(c, a); // test ok
+      /// xtd::tunit::assert::are_not_same(c, a); // test ok.
       /// xtd::tunit::assert::are_not_same(b, a); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -214,7 +214,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_not_same(c, a, line_info_); // test ok
+      /// xtd::tunit::assert::are_not_same(c, a, line_info_); // test ok.
       /// xtd::tunit::assert::are_not_same(b, a, line_info); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -230,7 +230,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_not_same(c, a, "User message..."); // test ok
+      /// xtd::tunit::assert::are_not_same(c, a, "User message..."); // test ok.
       /// xtd::tunit::assert::are_not_same(b, a, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -247,7 +247,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_not_same(c, a, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::are_not_same(c, a, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::are_not_same(b, a, "User message...", line_info); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -270,7 +270,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_same(b, a); // test ok
+      /// xtd::tunit::assert::are_same(b, a); // test ok.
       /// xtd::tunit::assert::are_same(c, a); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -286,7 +286,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_same(b, a, line_info_); // test ok
+      /// xtd::tunit::assert::are_same(b, a, line_info_); // test ok.
       /// xtd::tunit::assert::are_same(c, a, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -302,7 +302,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_same(b, a, "User message..."); // test ok
+      /// xtd::tunit::assert::are_same(b, a, "User message..."); // test ok.
       /// xtd::tunit::assert::are_same(c, a, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -319,7 +319,7 @@ namespace xtd {
       /// int a = 24;
       /// int& b = a;
       /// int c=  24;
-      /// xtd::tunit::assert::are_same(b, a, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::are_same(b, a, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::are_same(c, a, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -340,7 +340,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1); // test ok
+      /// xtd::tunit::assert::contains(2, v1); // test ok.
       /// xtd::tunit::assert::contains(4, v1); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -354,7 +354,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, line_info_); // test ok
+      /// xtd::tunit::assert::contains(2, v1, line_info_); // test ok.
       /// xtd::tunit::assert::contains(4, v1, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -368,7 +368,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, "User message..."); // test ok
+      /// xtd::tunit::assert::contains(2, v1, "User message..."); // test ok.
       /// xtd::tunit::assert::contains(4, v1, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -383,7 +383,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::contains(2, v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::contains(4, v1, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -404,7 +404,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}); // test ok.
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement) {does_not_throws(statement, "", line_info());}
@@ -416,7 +416,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, line_info_); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, line_info_); // test ok.
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {does_not_throws(statement, "", line_info);}
@@ -428,7 +428,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message..."); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message..."); // test ok.
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement, const std::string& message) {does_not_throws(statement, message, line_info());}
@@ -441,7 +441,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -455,7 +455,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Throws an xtd::tunit::assertion_error exception.
+      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
@@ -463,7 +463,7 @@ namespace xtd {
       /// @endcode
       static void fail() {fail("", line_info());}
       
-      /// @brief Throws an xtd::tunit::assertion_error exception.
+      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -472,7 +472,7 @@ namespace xtd {
       /// @endcode
       static void fail(const xtd::tunit::line_info& line_info) {fail("", line_info);}
       
-      /// @brief Throws an xtd::tunit::assertion_error exception.
+      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -481,8 +481,7 @@ namespace xtd {
       /// @endcode
       static void fail(const std::string& message) {fail(message, line_info());}
       
-      /// @brief Throws an xtd::tunit::assertion_error exception.
-      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -493,14 +492,25 @@ namespace xtd {
       static void fail(const std::string& message, const xtd::tunit::line_info& line_info) {
         fail("Failled", message, line_info);
       }
-      
+
+      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
+      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::fail("Fail message", "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
+
       /// @brief Asserts that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater(24, 12); // test ok
+      /// xtd::tunit::assert::greater(24, 12); // test ok.
       /// xtd::tunit::assert::greater(24, 48); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -513,7 +523,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater(24, 12, line_info_); // test ok
+      /// xtd::tunit::assert::greater(24, 12, line_info_); // test ok.
       /// xtd::tunit::assert::greater(24, 48, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -526,7 +536,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater(24, 12, "User message..."); // test ok
+      /// xtd::tunit::assert::greater(24, 12, "User message..."); // test ok.
       /// xtd::tunit::assert::greater(24, 48, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -540,7 +550,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater(24, 12, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::greater(24, 12, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::greater(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -560,8 +570,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12); // test ok
-      /// xtd::tunit::assert::greater_or_equal(24, 24); // test ok
+      /// xtd::tunit::assert::greater_or_equal(24, 12); // test ok.
+      /// xtd::tunit::assert::greater_or_equal(24, 24); // test ok.
       /// xtd::tunit::assert::greater_or_equal(24, 48); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -574,8 +584,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12, line_info_); // test ok
-      /// xtd::tunit::assert::greater_or_equal(24, 24, line_info_); // test ok
+      /// xtd::tunit::assert::greater_or_equal(24, 12, line_info_); // test ok.
+      /// xtd::tunit::assert::greater_or_equal(24, 24, line_info_); // test ok.
       /// xtd::tunit::assert::greater_or_equal(24, 48, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -588,8 +598,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12, "User message..."); // test ok
-      /// xtd::tunit::assert::greater_or_equal(24, 24, "User message..."); // test ok
+      /// xtd::tunit::assert::greater_or_equal(24, 12, "User message..."); // test ok.
+      /// xtd::tunit::assert::greater_or_equal(24, 24, "User message..."); // test ok.
       /// xtd::tunit::assert::greater_or_equal(24, 48, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -603,8 +613,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::greater_or_equal(24, 24, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::greater_or_equal(24, 12, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::greater_or_equal(24, 24, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::greater_or_equal(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -625,7 +635,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1); // test ok
+      /// xtd::tunit::assert::is_empty(v1); // test ok.
       /// xtd::tunit::assert::is_empty(v2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -639,7 +649,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1, line_info_); // test ok
+      /// xtd::tunit::assert::is_empty(v1, line_info_); // test ok.
       /// xtd::tunit::assert::is_empty(v2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -653,7 +663,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_empty(v2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -668,7 +678,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_empty(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -686,7 +696,7 @@ namespace xtd {
       /// @code
       /// std::string s1 = "Anything";
       /// std::string s2;
-      /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assertion_error exception.
       /// @endcode
       static void is_false(bool condition) {is_false(condition, "", line_info());}
@@ -699,7 +709,7 @@ namespace xtd {
       /// @code
       /// std::string s1 = "Anything";
       /// std::string s2;
-      /// xtd::tunit::assert::is_false(std::empty(s1), line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1), line_info_); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_false(bool condition, const xtd::tunit::line_info& line_info) {is_false(condition, "", line_info);}
@@ -712,7 +722,7 @@ namespace xtd {
       /// @code
       /// std::string s1 = "Anything";
       /// std::string s2;
-      /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void is_false(bool condition, const std::string& message) {is_false(condition, message, line_info());}
@@ -726,7 +736,7 @@ namespace xtd {
       /// @code
       /// std::string s1 = "Anything";
       /// std::string s2;
-      /// xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_false(bool condition, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -742,7 +752,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except); // test ok
+      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except); // test ok.
       /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -755,7 +765,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, line_info_); // test ok
+      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, line_info_); // test ok.
       /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -768,7 +778,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, "User message..."); // test ok
+      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, "User message..."); // test ok.
       /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message..."); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -782,7 +792,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_instance_of<std::logic_error>(except, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message...", line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -799,7 +809,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except); // test ok
+      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except); // test ok.
       /// xtd::tunit::assert::is_instance_of_type<std::bad_cast>(except); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_instance_of<Type, TValue>
@@ -813,7 +823,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except, line_info_); // test ok
+      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except, line_info_); // test ok.
       /// xtd::tunit::assert::is_instance_of_type<std::bad_cast>(except, line_info_); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_instance_of<Type, TValue>
@@ -827,7 +837,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except, "User message..."); // test ok
+      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except, "User message..."); // test ok.
       /// xtd::tunit::assert::is_instance_of_type<std::bad_cast>(except, "User message..."); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_instance_of<Type, TValue>
@@ -842,7 +852,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_instance_of_type<std::logic_error>(except, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_instance_of_type<std::bad_cast>(except, "User message...", line_info_); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_instance_of<Type, TValue>
@@ -856,7 +866,7 @@ namespace xtd {
       /// @code
       /// double v1 = std::numeric_limits<double>::quiet_NaN();
       /// double v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1); // test ok
+      /// xtd::tunit::assert::is_NaN(v1); // test ok.
       /// xtd::tunit::assert::is_NaN(v2); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(double value) {is_NaN(value, "", line_info());}
@@ -869,7 +879,7 @@ namespace xtd {
       /// @code
       /// double v1 = std::numeric_limits<double>::quiet_NaN();
       /// double v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1, line_info_); // test ok
+      /// xtd::tunit::assert::is_NaN(v1, line_info_); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(double value, const xtd::tunit::line_info& line_info) {is_NaN(value, "", line_info);}
@@ -882,7 +892,7 @@ namespace xtd {
       /// @code
       /// double v1 = std::numeric_limits<double>::quiet_NaN();
       /// double v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(double value, const std::string& message) {is_NaN(value, message, line_info());}
@@ -896,7 +906,7 @@ namespace xtd {
       /// @code
       /// double v1 = std::numeric_limits<double>::quiet_NaN();
       /// double v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(double value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -913,7 +923,7 @@ namespace xtd {
       /// @code
       /// float v1 = std::numeric_limits<float>::quiet_NaN();
       /// float v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1); // test ok
+      /// xtd::tunit::assert::is_NaN(v1); // test ok.
       /// xtd::tunit::assert::is_NaN(v2); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(float value) {is_NaN(value, "", line_info());}
@@ -926,7 +936,7 @@ namespace xtd {
       /// @code
       /// float v1 = std::numeric_limits<float>::quiet_NaN();
       /// float v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1, line_info_); // test ok
+      /// xtd::tunit::assert::is_NaN(v1, line_info_); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(float value, const xtd::tunit::line_info& line_info) {is_NaN(value, "", line_info);}
@@ -939,7 +949,7 @@ namespace xtd {
       /// @code
       /// float v1 = std::numeric_limits<float>::quiet_NaN();
       /// float v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(float value, const std::string& message) {is_NaN(value, message, line_info());}
@@ -953,7 +963,7 @@ namespace xtd {
       /// @code
       /// float v1 = std::numeric_limits<float>::quiet_NaN();
       /// float v2 = 3.14159265358979323846;
-      /// xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_NaN(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(float value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -970,7 +980,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1); // test ok
+      /// xtd::tunit::assert::is_not_empty(v1); // test ok.
       /// xtd::tunit::assert::is_not_empty(v2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -984,7 +994,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_empty(v1, line_info_); // test ok.
       /// xtd::tunit::assert::is_not_empty(v2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -998,7 +1008,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_empty(v2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -1013,7 +1023,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_empty(v1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_not_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue>
@@ -1030,7 +1040,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except); // test ok.
       /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -1043,7 +1053,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, line_info_); // test ok.
       /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -1056,7 +1066,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message..."); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -1070,7 +1080,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message...", line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename Type, typename TValue>
@@ -1087,7 +1097,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except); // test ok.
       /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
@@ -1101,7 +1111,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, line_info_); // test ok.
       /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, line_info_); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
@@ -1115,7 +1125,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, "User message..."); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
@@ -1130,7 +1140,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, "User message...", line_info_); test throws an assertion_error exception.
       /// @endcode
       /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
@@ -1145,7 +1155,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::is_not_null(s1); // test ok
+      /// xtd::tunit::assert::is_not_null(s1); // test ok.
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1160,7 +1170,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1175,7 +1185,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1191,7 +1201,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1209,7 +1219,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1); // test ok
+      /// xtd::tunit::assert::is_not_null(s1); // test ok.
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1223,7 +1233,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1237,7 +1247,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1252,7 +1262,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1270,7 +1280,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1); // test ok
+      /// xtd::tunit::assert::is_not_null(s1); // test ok.
       /// xtd::tunit::assert::is_not_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1284,7 +1294,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1298,7 +1308,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1313,7 +1323,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1332,8 +1342,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1); // test ok
-      /// xtd::tunit::assert::is_not_null(s2); // test ok
+      /// xtd::tunit::assert::is_not_null(s1); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2); // test ok.
       /// @endcode
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer) {is_not_null(pointer, "", line_info());}
@@ -1347,8 +1357,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok
-      /// xtd::tunit::assert::is_not_null(s2, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2, line_info_); // test ok.
       /// @endcode
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
@@ -1362,8 +1372,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok
-      /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2, "User message..."); // test ok.
       /// @endcode
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
@@ -1378,8 +1388,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test ok.
       /// @endcode
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {succeed(message, line_info);}
@@ -1436,7 +1446,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::is_null(s1); // test ok
+      /// xtd::tunit::assert::is_null(s1); // test ok.
       /// xtd::tunit::assert::is_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1451,7 +1461,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::is_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::is_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::is_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1466,7 +1476,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1482,7 +1492,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::is_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1500,7 +1510,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1); // test ok
+      /// xtd::tunit::assert::is_null(s1); // test ok.
       /// xtd::tunit::assert::is_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1514,7 +1524,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::is_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::is_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1528,7 +1538,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1543,7 +1553,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1561,7 +1571,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1); // test ok
+      /// xtd::tunit::assert::is_null(s1); // test ok.
       /// xtd::tunit::assert::is_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1575,7 +1585,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::is_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::is_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1589,7 +1599,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1604,7 +1614,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::is_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1681,7 +1691,7 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::is_null(nullptr); // test ok
+      /// xtd::tunit::assert::is_null(nullptr); // test ok.
       /// @endcode
       static void is_null(std::nullptr_t pointer) {is_null(pointer, "", line_info());}
       
@@ -1692,7 +1702,7 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::is_null(nullptr, line_info_); // test ok
+      /// xtd::tunit::assert::is_null(nullptr, line_info_); // test ok.
       /// @endcode
       static void is_null(std::nullptr_t pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
@@ -1703,7 +1713,7 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::is_null(nullptr, "User message..."); // test ok
+      /// xtd::tunit::assert::is_null(nullptr, "User message..."); // test ok.
       /// @endcode
       static void is_null(std::nullptr_t pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
@@ -1715,7 +1725,7 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::is_null(nullptr, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_null(nullptr, "User message...", line_info_); // test ok.
       /// @endcode
       static void is_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {succeed(message, line_info);}
 
@@ -1726,7 +1736,7 @@ namespace xtd {
       /// @code
       /// std::string s1;
       /// std::string s2 = "Anything";
-      /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assertion_error exception.
       /// @endcode
       static void is_true(bool condition) {is_true(condition, "", line_info());}
@@ -1739,7 +1749,7 @@ namespace xtd {
       /// @code
       /// std::string s1;
       /// std::string s2 = "Anything";
-      /// xtd::tunit::assert::is_false(std::empty(s1), line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1), line_info_); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_true(bool condition, const xtd::tunit::line_info& line_info) {is_true(condition, "", line_info);}
@@ -1752,7 +1762,7 @@ namespace xtd {
       /// @code
       /// std::string s1;
       /// std::string s2 = "Anything";
-      /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void is_true(bool condition, const std::string& message) {is_true(condition, message, line_info());}
@@ -1766,7 +1776,7 @@ namespace xtd {
       /// @code
       /// std::string s1;
       /// std::string s2 = "Anything";
-      /// xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::is_false(std::empty(s2), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_true(bool condition, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -1782,7 +1792,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less(24, 48); // test ok
+      /// xtd::tunit::assert::less(24, 48); // test ok.
       /// xtd::tunit::assert::less(24, 12); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1795,7 +1805,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less(24, 48, line_info_); // test ok
+      /// xtd::tunit::assert::less(24, 48, line_info_); // test ok.
       /// xtd::tunit::assert::less(24, 12, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1808,7 +1818,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less(24, 48, "User message..."); // test ok
+      /// xtd::tunit::assert::less(24, 48, "User message..."); // test ok.
       /// xtd::tunit::assert::less(24, 12, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1822,7 +1832,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less(24, 48, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::less(24, 48, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::less(24, 12, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1842,8 +1852,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less_or_equal(24, 48); // test ok
-      /// xtd::tunit::assert::less_or_equal(24, 24); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 48); // test ok.
+      /// xtd::tunit::assert::less_or_equal(24, 24); // test ok.
       /// xtd::tunit::assert::less_or_equal(24, 12); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1856,8 +1866,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less_or_equal(24, 48, line_info_); // test ok
-      /// xtd::tunit::assert::less_or_equal(24, 24, line_info_); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 48, line_info_); // test ok.
+      /// xtd::tunit::assert::less_or_equal(24, 24, line_info_); // test ok.
       /// xtd::tunit::assert::less_or_equal(24, 12, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1870,8 +1880,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less_or_equal(24, 48, "User message..."); // test ok
-      /// xtd::tunit::assert::less_or_equal(24, 24, "User message..."); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 48, "User message..."); // test ok.
+      /// xtd::tunit::assert::less_or_equal(24, 24, "User message..."); // test ok.
       /// xtd::tunit::assert::less_or_equal(24, 12, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1885,8 +1895,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::less_or_equal(24, 48, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::less_or_equal(24, 24, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 48, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::less_or_equal(24, 24, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::less_or_equal(24, 12, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TValue1, typename TValue2>
@@ -1908,7 +1918,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::not_null(s1); // test ok
+      /// xtd::tunit::assert::not_null(s1); // test ok.
       /// xtd::tunit::assert::not_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1923,7 +1933,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::not_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1938,7 +1948,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::not_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1954,7 +1964,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = &str;
       /// std::string* s2 = nullptr;
-      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::not_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1967,7 +1977,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1); // test ok
+      /// xtd::tunit::assert::not_null(s1); // test ok.
       /// xtd::tunit::assert::not_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1981,7 +1991,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::not_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -1995,7 +2005,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::not_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2010,7 +2020,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1 = std::make_unique<std::string>("Anything");
       /// std::unique_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::not_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2023,7 +2033,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1); // test ok
+      /// xtd::tunit::assert::not_null(s1); // test ok.
       /// xtd::tunit::assert::not_null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2037,7 +2047,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::not_null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2051,7 +2061,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::not_null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2066,7 +2076,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1 = std::make_shared<std::string>("Anything");
       /// std::shared_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::not_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2080,8 +2090,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1); // test ok
-      /// xtd::tunit::assert::not_null(s2); // test ok
+      /// xtd::tunit::assert::not_null(s1); // test ok.
+      /// xtd::tunit::assert::not_null(s2); // test ok.
       /// @endcode
       template<typename TPointer>
       static void not_null(const std::weak_ptr<TPointer>& pointer) {not_null(pointer, "", line_info());}
@@ -2095,8 +2105,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok
-      /// xtd::tunit::assert::not_null(s2, line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, line_info_); // test ok.
+      /// xtd::tunit::assert::not_null(s2, line_info_); // test ok.
       /// @endcode
       template<typename TPointer>
       static void not_null(const std::weak_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {not_null(pointer, "", line_info);}
@@ -2110,8 +2120,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok
-      /// xtd::tunit::assert::not_null(s2, "User message..."); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message..."); // test ok.
+      /// xtd::tunit::assert::not_null(s2, "User message..."); // test ok.
       /// @endcode
       template<typename TPointer>
       static void not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message) {not_null(pointer, message, line_info());}
@@ -2126,8 +2136,8 @@ namespace xtd {
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
       /// std::weak_ptr<std::string> s1 = s;
       /// std::weak_ptr<std::string> s2;
-      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::not_null(s2, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::not_null(s1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::not_null(s2, "User message...", line_info_); // test ok.
       /// @endcode
       template<typename TPointer>
       static void not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_not_null(pointer, message, line_info);}
@@ -2184,7 +2194,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::null(s1); // test ok
+      /// xtd::tunit::assert::null(s1); // test ok.
       /// xtd::tunit::assert::null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2199,7 +2209,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2214,7 +2224,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2230,7 +2240,7 @@ namespace xtd {
       /// std::string str = "Anything";
       /// std::string* s1 = nullptr;
       /// std::string* s2 = &str;
-      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2243,7 +2253,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1); // test ok
+      /// xtd::tunit::assert::null(s1); // test ok.
       /// xtd::tunit::assert::null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2257,7 +2267,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2271,7 +2281,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2286,7 +2296,7 @@ namespace xtd {
       /// @code
       /// std::unique_ptr<std::string> s1;
       /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2299,7 +2309,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1); // test ok
+      /// xtd::tunit::assert::null(s1); // test ok.
       /// xtd::tunit::assert::null(s2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2313,7 +2323,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::null(s1, line_info_); // test ok.
       /// xtd::tunit::assert::null(s2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2327,7 +2337,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::null(s1, "User message..."); // test ok.
       /// xtd::tunit::assert::null(s2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2342,7 +2352,7 @@ namespace xtd {
       /// @code
       /// std::shared_ptr<std::string> s1;
       /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
-      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
@@ -2414,7 +2424,7 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::null(nullptr); // test ok
+      /// xtd::tunit::assert::null(nullptr); // test ok.
       /// @endcode
       static void null(std::nullptr_t pointer) {null(pointer, "", line_info());}
       
@@ -2425,7 +2435,7 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::null(nullptr, line_info_); // test ok
+      /// xtd::tunit::assert::null(nullptr, line_info_); // test ok.
       /// @endcode
       static void null(std::nullptr_t pointer, const xtd::tunit::line_info& line_info) {null(pointer, "", line_info);}
       
@@ -2436,7 +2446,7 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::null(nullptr, "User message..."); // test ok
+      /// xtd::tunit::assert::null(nullptr, "User message..."); // test ok.
       /// @endcode
       static void null(std::nullptr_t pointer, const std::string& message) {null(pointer, message, line_info());}
       
@@ -2448,10 +2458,42 @@ namespace xtd {
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::null(nullptr, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::null(nullptr, "User message...", line_info_); // test ok.
       /// @endcode
       static void null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_null(pointer, message, line_info);}
       
+      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::succeed(); // test ok.
+      /// @endcode
+      static void succeed() {succeed("", line_info_);}
+      
+      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::succeed(line_info_); // test ok.
+      /// @endcode
+      static void succeed(const xtd::tunit::line_info& line_info) {succeed("", line_info);}
+      
+      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::succeed("User message..."); // test ok.
+      /// @endcode
+      static void succeed(const std::string& message) {succeed(message, line_info_);}
+      
+      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::succeed("User message...", line_info_); // test ok.
+      /// @endcode
+      static void succeed(const std::string& message, const xtd::tunit::line_info& line_info);
+
       /// @brief Asserts that the statement throws a particular exception when called.
       /// @param TException The exception type that must be throw.
       /// @param statement The statement that verify.
@@ -2459,7 +2501,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}); // test throws an assertion_error exception.
       /// @endcode
       template<typename TException>
@@ -2473,7 +2515,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, line_info_); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, line_info_); // test ok.
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TException>
@@ -2487,7 +2529,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message..."); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TException>
@@ -2502,7 +2544,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TException>
@@ -2525,7 +2567,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::assert::throws_any([&] {v1.at(2);}); // test throws an assertion_error exception.
       /// @endcode
       static void throws_any(const std::function<void()>& statement) {throws_any(statement, "", line_info());}
@@ -2537,7 +2579,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, line_info_); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, line_info_); // test ok.
       /// xtd::tunit::assert::throws_any([&] {v1.at(2);}, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {throws_any(statement, "", line_info);}
@@ -2549,7 +2591,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, "User message..."); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::assert::throws_any([&] {v1.at(2);}, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const std::string& message) {throws_any(statement, message, line_info());}
@@ -2562,7 +2604,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::throws_any([&] {v1.at(2);}, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -2575,10 +2617,6 @@ namespace xtd {
           succeed(message, line_info);
         }
       }
-
-    private:
-      static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
-      static void succeed(const std::string& message, const xtd::tunit::line_info& line_info);
     };
   }
 }
