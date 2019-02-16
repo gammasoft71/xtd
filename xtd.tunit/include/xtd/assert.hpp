@@ -75,7 +75,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24)); // test ok.
+      /// xtd::tunit::assert::are_equal(24, int(24)); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -88,7 +88,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24), line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal(24, int(24), line_info_); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24), line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -101,7 +101,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24), "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal(24, int(24), "User message..."); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
@@ -115,7 +115,7 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_aqual(24, int(24), "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal(24, int(24), "User message...", line_info_); // test ok.
       /// xtd::tunit::assert::are_equal(23, int(24), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
