@@ -88,8 +88,8 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      double v1 = std::numeric_limits<double>::quiet_NaN();
-      double v2 = 3.14159265358979323846;
+      float v1 = std::numeric_limits<float>::quiet_NaN();
+      float v2 = 3.14159265358979323846;
       xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok
       xtd::tunit::assert::is_NaN(v2, "User message...", line_info_); // test throws an AssertionException.
     }

@@ -909,6 +909,63 @@ namespace xtd {
           fail("Expected: false\nBut was:  true", message, line_info);
       }
 
+      /// @brief that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// float v1 = std::numeric_limits<float>::quiet_NaN();
+      /// float v2 = 3.14159265358979323846;
+      /// xtd::tunit::assert::is_NaN(v1); // test ok
+      /// xtd::tunit::assert::is_NaN(v2); // test throws an AssertionException.
+      /// @endcode
+      static void is_NaN(float value) {is_NaN(value, "", line_info());}
+      
+      /// @brief that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// float v1 = std::numeric_limits<float>::quiet_NaN();
+      /// float v2 = 3.14159265358979323846;
+      /// xtd::tunit::assert::is_NaN(v1, line_info_); // test ok
+      /// xtd::tunit::assert::is_NaN(v2, line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void is_NaN(float value, const xtd::tunit::line_info& line_info) {is_NaN(value, "", line_info);}
+      
+      /// @brief Asserts that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// float v1 = std::numeric_limits<float>::quiet_NaN();
+      /// float v2 = 3.14159265358979323846;
+      /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_NaN(v2, "User message..."); // test throws an AssertionException.
+      /// @endcode
+      static void is_NaN(float value, const std::string& message) {is_NaN(value, message, line_info());}
+      
+      /// @brief Asserts that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// float v1 = std::numeric_limits<float>::quiet_NaN();
+      /// float v2 = 3.14159265358979323846;
+      /// xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_NaN(v2, "User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void is_NaN(float value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::isnan(value))
+          succeed(message, line_info);
+        else
+          fail("Expected: false\nBut was:  true", message, line_info);
+      }
+
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
       static void succeed(const std::string& message, const xtd::tunit::line_info& line_info);
