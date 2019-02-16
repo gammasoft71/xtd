@@ -88,9 +88,8 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      std::vector<int> v1;
-      //std::vector<int> v1 = {0, 1, 2, 3};
-      xtd::tunit::assert::is_empty(v1, "My message");
+      std::string s1;
+      xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok
     }
     
     void test_method_(test_case3) {

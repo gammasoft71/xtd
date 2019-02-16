@@ -118,7 +118,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: " << expected << std::endl << "But was:  " << actual;
+          ss << "Expected: " << expected << "\nBut was:  " << actual;
           failed(ss.str(), message, line_info);
         }
       }
@@ -174,7 +174,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: not " << expected << std::endl << "But was:  " << actual;
+          ss << "Expected: not " << expected << "\nBut was:  " << actual;
           failed(ss.str(), message, line_info);
         }
       }
@@ -188,7 +188,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_not_same(c, a); // test ok
-      /// xtd::tunit::assert::are_not_same(b, a); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_not_same(b, a); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual) {are_not_same(expected, actual, "", line_info());}
@@ -203,7 +203,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_not_same(c, a, line_info_); // test ok
-      /// xtd::tunit::assert::are_not_same(b, a, line_info); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_not_same(b, a, line_info); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_same(expected, actual, "", line_info);}
@@ -218,7 +218,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_not_same(c, a, "User message..."); // test ok
-      /// xtd::tunit::assert::are_not_same(b, a, "User message..."); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_not_same(b, a, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_same(expected, actual, message, line_info());}
@@ -234,7 +234,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_not_same(c, a, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::are_not_same(b, a, "User message...", line_info); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_not_same(b, a, "User message...", line_info); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -242,7 +242,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: not same as " << expected << std::endl << "But was:  " << actual;
+          ss << "Expected: not same as " << expected << "\nBut was:  " << actual;
           failed(ss.str(), message, line_info);
         }
       }
@@ -256,7 +256,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_same(b, a); // test ok
-      /// xtd::tunit::assert::are_same(c, a); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_same(c, a); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_same(const TExpected& expected, const TActual& actual) {are_same(expected, actual, "", line_info());}
@@ -271,7 +271,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_same(b, a, line_info_); // test ok
-      /// xtd::tunit::assert::are_same(c, a, line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_same(c, a, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_same(expected, actual, "", line_info);}
@@ -286,7 +286,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_same(b, a, "User message..."); // test ok
-      /// xtd::tunit::assert::are_same(c, a, "User message..."); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_same(c, a, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_same(expected, actual, message, line_info());}
@@ -302,7 +302,7 @@ namespace xtd {
       /// int& b = a;
       /// int c=  24;
       /// xtd::tunit::assert::are_same(b, a, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::are_same(c, a, "User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::are_same(c, a, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TActual>
       static void are_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -310,7 +310,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: same as " << expected << std::endl << "But was:  " << actual;
+          ss << "Expected: same as " << expected << "\nBut was:  " << actual;
           failed(ss.str(), message, line_info);
         }
       }
@@ -322,7 +322,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::assert::contains(2, v1); // test ok
-      /// xtd::tunit::assert::contains(4, v1); // test throws an AssertionException.
+      /// xtd::tunit::assert::contains(4, v1); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
       static void contains(const TItem& item, const TCollection& collection) {contains(item, collection, "", line_info());}
@@ -335,7 +335,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::assert::contains(2, v1, line_info_); // test ok
-      /// xtd::tunit::assert::contains(4, v1, line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::contains(4, v1, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
       static void contains(const TItem& item, const TCollection& collection, const xtd::tunit::line_info& line_info) {contains(item, collection, "", line_info);}
@@ -348,7 +348,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::assert::contains(2, v1, "User message..."); // test ok
-      /// xtd::tunit::assert::contains(4, v1, "User message..."); // test throws an AssertionException.
+      /// xtd::tunit::assert::contains(4, v1, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
       static void contains(const TItem& item, const TCollection& collection, const std::string& message) {contains(item, collection, message, line_info());}
@@ -362,7 +362,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::assert::contains(2, v1, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::contains(4, v1, "User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::contains(4, v1, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TItem, typename TCollection>
       static void contains(const TItem& item, const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -371,7 +371,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: collection containing " << item << std::endl << "But was:  < " << __join__collection(collection) << " >";
+          ss << "Expected: collection containing " << item << "\nBut was:  < " << __join__collection(collection) << " >";
           failed(ss.str(), message, line_info);
         }
       }
@@ -382,7 +382,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}); // test ok
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}); // test throws an AssertionException.
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement) {does_not_throws(statement, "", line_info());}
       
@@ -393,7 +393,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, line_info_); // test ok
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {does_not_throws(statement, "", line_info);}
       
@@ -404,7 +404,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message..."); // test ok
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message..."); // test throws an AssertionException.
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement, const std::string& message) {does_not_throws(statement, message, line_info());}
       
@@ -416,27 +416,23 @@ namespace xtd {
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
           succeed(message, line_info);
         } catch (std::exception& e) {
-          std::stringstream ss;
-          ss << "Expected: No Exception to be thrown\nBut was:  <" << __demangle(typeid(e).name()) << ">";
-          failed(ss.str(), message, line_info);
+          failed("Expected: No Exception to be thrown\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
-          std::stringstream ss;
-          ss << "Expected: No Exception to be thrown\nBut was:  <exception>";
-          failed(ss.str(), message, line_info);
+          failed("Expected: No Exception to be thrown\nBut was:  <exception>", message, line_info);
         }
       }
       
       /// @brief Throws an xtd::tunit::assertion_error exception.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void fail() {fail("", line_info());}
       
@@ -444,7 +440,7 @@ namespace xtd {
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void fail(const xtd::tunit::line_info& line_info) {fail("", line_info);}
       
@@ -452,7 +448,7 @@ namespace xtd {
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void fail(const std::string& message) {fail(message, line_info());}
       
@@ -461,7 +457,7 @@ namespace xtd {
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void fail(const std::string& message, const xtd::tunit::line_info& line_info) {
         failed("", message, line_info);
@@ -518,7 +514,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: greater than " << val2 << std::endl << "But was:  " << val1;
+          ss << "Expected: greater than " << val2 << "\nBut was:  " << val1;
           failed(ss.str(), message, line_info);
         }
       }
@@ -578,7 +574,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: greater than or equal to " << val2 << std::endl << "But was:  " << val1;
+          ss << "Expected: greater than or equal to " << val2 << "\nBut was:  " << val1;
           failed(ss.str(), message, line_info);
         }
       }
@@ -591,7 +587,7 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1); // test ok
-      /// xtd::tunit::assert::is_empty(v2); // test throws an AssertionException.
+      /// xtd::tunit::assert::is_empty(v2); // test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
       static void is_empty(const TCollection& collection) {is_empty(collection, "", line_info());}
@@ -605,7 +601,7 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1, line_info_); // test ok
-      /// xtd::tunit::assert::is_empty(v2, line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::is_empty(v2, line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
       static void is_empty(const TCollection& collection, const xtd::tunit::line_info& line_info) {is_empty(collection, "", line_info);}
@@ -619,7 +615,7 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1, "User message..."); // test ok
-      /// xtd::tunit::assert::is_empty(v2, "User message..."); // test throws an AssertionException.
+      /// xtd::tunit::assert::is_empty(v2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
       static void is_empty(const TCollection& collection, const std::string& message) {is_empty(collection, message, line_info());}
@@ -634,17 +630,67 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1, "User message...", line_info_); // test ok
-      /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_); // test throws an AssertionException.
+      /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
       static void is_empty(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::empty(collection))
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: collection <empty>" << std::endl << "But was:  < " << __join__collection(collection) << " >";
-          failed(ss.str(), message, line_info);
-        }
+        else
+          failed("Expected: collection <empty>\nBut was:  < " + __join__collection(collection) + " >", message, line_info);
+      }
+
+      /// @brief Asserts that ta condition is false. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param statement The statement that verify.
+      /// @par Examples
+      /// @code
+      /// std::string s1 = "Anything";
+      /// std::string s2;
+      /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_false(bool condition) {is_false(condition, "", line_info());}
+      
+      /// @brief Asserts that a condition is false. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param statement The statement that verify.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::string s1 = "Anything";
+      /// std::string s2;
+      /// xtd::tunit::assert::is_false(std::empty(s1), line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_false(bool condition, const xtd::tunit::line_info& line_info) {is_false(condition, "", line_info);}
+      
+      /// @brief Asserts that a condition is false. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param statement The statement that verify.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// std::string s1 = "Anything";
+      /// std::string s2;
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_false(bool condition, const std::string& message) {is_false(condition, message, line_info());}
+      
+      /// @brief Asserts that a condition is false. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param statement The statement that verify.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::string s1 = "Anything";
+      /// std::string s2;
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_false(bool condition, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (condition == false)
+          succeed(message, line_info);
+        else
+          failed("Expected: false\nBut was:  true", message, line_info);
       }
 
     private:
