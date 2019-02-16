@@ -88,12 +88,11 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      std::string str = "Anything";
-      /// ...
-      std::string* s1 = &str;
-      std::string* s2 = nullptr;
+      std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      std::weak_ptr<std::string> s1 = s;
+      std::weak_ptr<std::string> s2;
       xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok
-      xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test throws an AssertionException.
+      xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test ok.
     }
     
     void test_method_(test_case3) {
