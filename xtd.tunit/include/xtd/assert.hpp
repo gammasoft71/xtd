@@ -2518,6 +2518,63 @@ namespace xtd {
           fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <exception>", message, line_info);
         }
       }
+      
+      /// @brief Asserts that the staement does not throw an exception.
+      /// @param statement The statement that verify.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(2);}); // test throws an assertion_error exception.
+      /// @endcode
+      static void throws_any(const std::function<void()>& statement) {throws_any(statement, "", line_info());}
+      
+      /// @brief Asserts that the staement does not throw an exception.
+      /// @param statement The statement that verify.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, line_info_); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(2);}, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void throws_any(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {throws_any(statement, "", line_info);}
+      
+      /// @brief Asserts that the staement does not throw an exception.
+      /// @param statement The statement that verify.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, "User message..."); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(2);}, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void throws_any(const std::function<void()>& statement, const std::string& message) {throws_any(statement, message, line_info());}
+      
+      /// @brief Asserts that the staement does not throw an exception.
+      /// @param statement The statement that verify.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws_any([&] {v1.at(5);}, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::throws_any([&] {v1.at(2);}, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void throws_any(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          statement();
+          fail("Expected: <exception>\nBut was:  <nothing>", message, line_info);
+        } catch (const xtd::tunit::assert_error&) {
+          throw;
+        } catch (...) {
+          succeed(message, line_info);
+        }
+      }
 
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
@@ -2584,3 +2641,5 @@ namespace xtd {
 #define null_(...) __CMD_ASSERT_ARGS(null, __VA_ARGS__)
 
 #define throws_(TException, ...) __CMD_ASSERT_ARGS(throws<TException>, __VA_ARGS__)
+
+#define throws_any_(...) __CMD_ASSERT_ARGS(throws_any, __VA_ARGS__)
