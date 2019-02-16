@@ -88,8 +88,7 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      std::string s1;
-      xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok
+      xtd::tunit::assert::fail("User message...", line_info_); // test ok
     }
     
     void test_method_(test_case3) {

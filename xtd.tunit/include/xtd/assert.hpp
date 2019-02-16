@@ -93,7 +93,7 @@ namespace xtd {
       /// @brief Asserts that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::are_aqual(24, int(24), "User message..."); // test ok
@@ -105,7 +105,7 @@ namespace xtd {
       /// @brief Asserts that two type are equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -119,7 +119,7 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: " << expected << "\nBut was:  " << actual;
-          failed(ss.str(), message, line_info);
+          fail(ss.str(), message, line_info);
         }
       }
       
@@ -149,7 +149,7 @@ namespace xtd {
       /// @brief Asserts that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::are_not_equal(23, int(24), "User message..."); // test ok
@@ -161,7 +161,7 @@ namespace xtd {
       /// @brief Asserts that two type are not equal. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -175,7 +175,7 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: not " << expected << "\nBut was:  " << actual;
-          failed(ss.str(), message, line_info);
+          fail(ss.str(), message, line_info);
         }
       }
       
@@ -211,7 +211,7 @@ namespace xtd {
       /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// int a = 24;
@@ -226,7 +226,7 @@ namespace xtd {
       /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -243,7 +243,7 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: not same as " << expected << "\nBut was:  " << actual;
-          failed(ss.str(), message, line_info);
+          fail(ss.str(), message, line_info);
         }
       }
       
@@ -279,7 +279,7 @@ namespace xtd {
       /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// int a = 24;
@@ -294,7 +294,7 @@ namespace xtd {
       /// @brief Asserts that two objects do refer to differents objects. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -311,7 +311,7 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: same as " << expected << "\nBut was:  " << actual;
-          failed(ss.str(), message, line_info);
+          fail(ss.str(), message, line_info);
         }
       }
       
@@ -343,7 +343,7 @@ namespace xtd {
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param item object to verify.
       /// @param collection that contains object.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
@@ -356,7 +356,7 @@ namespace xtd {
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param item object to verify.
       /// @param collection that contains object.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -372,7 +372,7 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: collection containing " << item << "\nBut was:  < " << __join__collection(collection) << " >";
-          failed(ss.str(), message, line_info);
+          fail(ss.str(), message, line_info);
         }
       }
       
@@ -399,7 +399,7 @@ namespace xtd {
       
       /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param statement The statement that verify.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
@@ -410,7 +410,7 @@ namespace xtd {
       
       /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param statement The statement that verify.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -423,9 +423,9 @@ namespace xtd {
           statement();
           succeed(message, line_info);
         } catch (std::exception& e) {
-          failed("Expected: No Exception to be thrown\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
+          fail("Expected: No Exception to be thrown\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
-          failed("Expected: No Exception to be thrown\nBut was:  <exception>", message, line_info);
+          fail("Expected: No Exception to be thrown\nBut was:  <exception>", message, line_info);
         }
       }
       
@@ -445,7 +445,7 @@ namespace xtd {
       static void fail(const xtd::tunit::line_info& line_info) {fail("", line_info);}
       
       /// @brief Throws an xtd::tunit::assertion_error exception.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
@@ -453,14 +453,15 @@ namespace xtd {
       static void fail(const std::string& message) {fail(message, line_info());}
       
       /// @brief Throws an xtd::tunit::assertion_error exception.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void fail(const std::string& message, const xtd::tunit::line_info& line_info) {
-        failed("", message, line_info);
+        fail("Failled", message, line_info);
       }
       
       /// @brief Asserts that the first value is greater than the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
@@ -489,7 +490,7 @@ namespace xtd {
       /// @brief Asserts that the first value is greater than the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param val1 the first value.
       /// @param val2 the second value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::greater(24, 12, "User message..."); // test ok
@@ -501,7 +502,7 @@ namespace xtd {
       /// @brief Asserts that the first value is greater than the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param val1 the first value.
       /// @param val2 the second value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -515,7 +516,7 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: greater than " << val2 << "\nBut was:  " << val1;
-          failed(ss.str(), message, line_info);
+          fail(ss.str(), message, line_info);
         }
       }
       
@@ -547,7 +548,7 @@ namespace xtd {
       /// @brief Asserts that the first value is greater than or equal to the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param val1 the first value.
       /// @param val2 the second value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// xtd::tunit::assert::greater_or_equal(24, 12, "User message..."); // test ok
@@ -560,7 +561,7 @@ namespace xtd {
       /// @brief Asserts that the first value is greater than or equal to the second value. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param val1 the first value.
       /// @param val2 the second value.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -575,7 +576,7 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: greater than or equal to " << val2 << "\nBut was:  " << val1;
-          failed(ss.str(), message, line_info);
+          fail(ss.str(), message, line_info);
         }
       }
       
@@ -609,7 +610,7 @@ namespace xtd {
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param item object to verify.
       /// @param collection that contains object.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// std::vector<int> v1;
@@ -623,7 +624,7 @@ namespace xtd {
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param item object to verify.
       /// @param collection that contains object.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -637,7 +638,7 @@ namespace xtd {
         if (std::empty(collection))
           succeed(message, line_info);
         else
-          failed("Expected: collection <empty>\nBut was:  < " + __join__collection(collection) + " >", message, line_info);
+          fail("Expected: collection <empty>\nBut was:  < " + __join__collection(collection) + " >", message, line_info);
       }
 
       /// @brief Asserts that ta condition is false. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
@@ -665,7 +666,7 @@ namespace xtd {
       
       /// @brief Asserts that a condition is false. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param statement The statement that verify.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
       /// std::string s1 = "Anything";
@@ -677,7 +678,7 @@ namespace xtd {
       
       /// @brief Asserts that a condition is false. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
       /// @param statement The statement that verify.
-      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -690,12 +691,12 @@ namespace xtd {
         if (condition == false)
           succeed(message, line_info);
         else
-          failed("Expected: false\nBut was:  true", message, line_info);
+          fail("Expected: false\nBut was:  true", message, line_info);
       }
 
     private:
+      static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
       static void succeed(const std::string& message, const xtd::tunit::line_info& line_info);
-      static void failed(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
     };
   }
 }
@@ -726,3 +727,7 @@ namespace xtd {
 #define greater_(...) __CMD_ASSERT_ARGS(greater, __VA_ARGS__)
 
 #define greater_or_equal_(...) __CMD_ASSERT_ARGS(greater_or_equal, __VA_ARGS__)
+
+#define is_empty_(...) __CMD_ASSERT_ARGS(is_empty, __VA_ARGS__)
+
+#define is_false_(...) __CMD_ASSERT_ARGS(is_false, __VA_ARGS__)
