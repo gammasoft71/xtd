@@ -89,7 +89,7 @@ namespace unit_tests {
     
     void test_method_(test_case2) {
       std::invalid_argument except("invalid argument");
-      xtd::tunit::assert::is_instance_of<std::bad_cast>(except, "User message...", line_info_); // test ok
+      xtd::tunit::assert::is_instance_of_type<std::bad_cast>(except, "User message...", line_info_); // test ok
     }
     
     void test_method_(test_case3) {
