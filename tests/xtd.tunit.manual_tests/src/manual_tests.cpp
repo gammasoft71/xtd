@@ -88,8 +88,10 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      std::invalid_argument except("invalid argument");
-      xtd::tunit::assert::is_instance_of_type<std::bad_cast>(except, "User message...", line_info_); // test ok
+      double v1 = std::numeric_limits<double>::quiet_NaN();
+      double v2 = 3.14159265358979323846;
+      xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok
+      xtd::tunit::assert::is_NaN(v2, "User message...", line_info_); // test throws an AssertionException.
     }
     
     void test_method_(test_case3) {
