@@ -1673,7 +1673,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {succeed(message, line_info);}
+      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: not null\nBut was:  null", message, line_info);}
       
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -1717,7 +1717,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::is_null(nullptr, "User message...", line_info_); // test ok
       /// @endcode
-      static void is_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: not null\nBut was:  null", message, line_info);}
+      static void is_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {succeed(message, line_info);}
 
       /// @brief Asserts that ta condition is true.
       /// @param condition The condition to check is true.
@@ -2175,6 +2175,282 @@ namespace xtd {
       /// xtd::tunit::assert::not_null(nullptr, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_not_null(pointer, message, line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string str = "Anything";
+      /// std::string* s1 = nullptr;
+      /// std::string* s2 = &str;
+      /// xtd::tunit::assert::null(s1); // test ok
+      /// xtd::tunit::assert::null(s2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const TPointer* pointer) {null(pointer, "", line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string str = "Anything";
+      /// std::string* s1 = nullptr;
+      /// std::string* s2 = &str;
+      /// xtd::tunit::assert::null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::null(s2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const TPointer* pointer, const xtd::tunit::line_info& line_info) {null(pointer, "", line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string str = "Anything";
+      /// std::string* s1 = nullptr;
+      /// std::string* s2 = &str;
+      /// xtd::tunit::assert::null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::null(s2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const TPointer* pointer, const std::string& message) {null(pointer, message, line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string str = "Anything";
+      /// std::string* s1 = nullptr;
+      /// std::string* s2 = &str;
+      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::null(s2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const TPointer* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_null(pointer, message, line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1;
+      /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1); // test ok
+      /// xtd::tunit::assert::null(s2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::unique_ptr<TPointer>& pointer) {null(pointer, "", line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1;
+      /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::null(s2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::unique_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {null(pointer, "", line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1;
+      /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::null(s2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::unique_ptr<TPointer>& pointer, const std::string& message) {null(pointer, message, line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::unique_ptr<std::string> s1;
+      /// std::unique_ptr<std::string> s2 = std::make_unique<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::null(s2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::unique_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_null(pointer, message, line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s1;
+      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1); // test ok
+      /// xtd::tunit::assert::null(s2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::shared_ptr<TPointer>& pointer) {null(pointer, "", line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s1;
+      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1, line_info_); // test ok
+      /// xtd::tunit::assert::null(s2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::shared_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {null(pointer, "", line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s1;
+      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1, "User message..."); // test ok
+      /// xtd::tunit::assert::null(s2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::shared_ptr<TPointer>& pointer, const std::string& message) {null(pointer, message, line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s1;
+      /// std::shared_ptr<std::string> s2 = std::make_shared<std::string>("Anything");
+      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::null(s2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::shared_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_null(pointer, message, line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// std::weak_ptr<std::string> s1;
+      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::tunit::assert::null(s1); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::null(s2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::weak_ptr<TPointer>& pointer) {null(pointer, "", line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param line_info Contains information about current file and current line.
+      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// std::weak_ptr<std::string> s1;
+      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::tunit::assert::null(s1, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::null(s2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::weak_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {null(pointer, "", line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// std::weak_ptr<std::string> s1;
+      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::tunit::assert::null(s1, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::null(s2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::weak_ptr<TPointer>& pointer, const std::string& message) {null(pointer, message, line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @par Examples
+      /// @code
+      /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
+      /// std::weak_ptr<std::string> s1;
+      /// std::weak_ptr<std::string> s2 = s;
+      /// xtd::tunit::assert::null(s1, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::null(s2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_null(pointer, message, line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::null(nullptr); // test ok
+      /// @endcode
+      static void null(std::nullptr_t pointer) {null(pointer, "", line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::null(nullptr, line_info_); // test ok
+      /// @endcode
+      static void null(std::nullptr_t pointer, const xtd::tunit::line_info& line_info) {null(pointer, "", line_info);}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::null(nullptr, "User message..."); // test ok
+      /// @endcode
+      static void null(std::nullptr_t pointer, const std::string& message) {null(pointer, message, line_info());}
+      
+      /// @brief Asserts that the pointer is null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @remarks Always false, a nullptr_t is always equal to nullptr.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::null(nullptr, "User message...", line_info_); // test ok
+      /// @endcode
+      static void null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_null(pointer, message, line_info);}
 
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
