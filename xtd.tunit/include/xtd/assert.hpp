@@ -1522,3 +1522,19 @@ namespace xtd {
 #define is_empty_(...) __CMD_ASSERT_ARGS(is_empty, __VA_ARGS__)
 
 #define is_false_(...) __CMD_ASSERT_ARGS(is_false, __VA_ARGS__)
+
+#define is_instance_of_(...) __CMD_ASSERT_ARGS(is_instance_of, __VA_ARGS__)
+
+#define is_instance_of_type_(...) __CMD_ASSERT_ARGS(is_instance_of_type, __VA_ARGS__)
+
+#define is_NaN_(...) __CMD_ASSERT_ARGS(is_NaN, __VA_ARGS__)
+
+#define is_not_empty_(...) __CMD_ASSERT_ARGS(is_not_empty, __VA_ARGS__)
+
+#define is_not_instance_of_(...) __CMD_ASSERT_ARGS(is_not_instance_of, __VA_ARGS__)
+
+#define is_not_instance_of_type_(...) __CMD_ASSERT_ARGS(is_not_instance_of_type, __VA_ARGS__)
+
+#define is_not_null_(...) __CMD_ASSERT_ARGS(is_not_null, __VA_ARGS__)
+
+#define is_true_(...) __CMD_ASSERT_ARGS(is_true, __VA_ARGS__)
