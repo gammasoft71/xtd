@@ -315,8 +315,8 @@ namespace xtd {
       }
       
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param item object to verify.
+      /// @param collection that contains object.
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
@@ -327,8 +327,8 @@ namespace xtd {
       static void contains(const TItem& item, const TCollection& collection) {contains(item, collection, "", line_info());}
       
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param item object to verify.
+      /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -340,8 +340,8 @@ namespace xtd {
       static void contains(const TItem& item, const TCollection& collection, const xtd::tunit::line_info& line_info) {contains(item, collection, "", line_info);}
       
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param item object to verify.
+      /// @param collection that contains object.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
@@ -353,8 +353,8 @@ namespace xtd {
       static void contains(const TItem& item, const TCollection& collection, const std::string& message) {contains(item, collection, message, line_info());}
       
       /// @brief Asserts that collection contains an item. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param item object to verify.
+      /// @param collection that contains object.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
@@ -376,8 +376,7 @@ namespace xtd {
       }
       
       /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param statement The statement that verify.
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
@@ -387,8 +386,7 @@ namespace xtd {
       static void does_not_throws(const std::function<void()>& statement) {does_not_throws(statement, "", line_info());}
       
       /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param statement The statement that verify.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
@@ -399,8 +397,7 @@ namespace xtd {
       static void does_not_throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {does_not_throws(statement, "", line_info);}
       
       /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param statement The statement that verify.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
@@ -411,8 +408,7 @@ namespace xtd {
       static void does_not_throws(const std::function<void()>& statement, const std::string& message) {does_not_throws(statement, message, line_info());}
       
       /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
-      /// @param expected the expected value.
-      /// @param actual the actual value.
+      /// @param statement The statement that verify.
       /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
@@ -434,6 +430,40 @@ namespace xtd {
           ss << "Expected: No Exception to be thrown\nBut was:  <exception>";
           failed(ss.str(), message, line_info);
         }
+      }
+      
+      /// @brief Throws an xtd::tunit::assertion_error exception.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void fail() {fail("", line_info());}
+      
+      /// @brief Throws an xtd::tunit::assertion_error exception.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void fail(const xtd::tunit::line_info& line_info) {fail("", line_info);}
+      
+      /// @brief Throws an xtd::tunit::assertion_error exception.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void fail(const std::string& message) {fail(message, line_info());}
+      
+      /// @brief Throws an xtd::tunit::assertion_error exception.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void fail(const std::string& message, const xtd::tunit::line_info& line_info) {
+        failed("", message, line_info);
       }
 
     private:

@@ -85,9 +85,7 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      std::vector<int> v1 = {1, 2, 3, 4};
-      xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message...", line_info_); // test ok
-      xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message...", line_info_); // test throws an AssertionException.
+      xtd::tunit::assert::fail("User message...", line_info_);
     }
   };
 }
