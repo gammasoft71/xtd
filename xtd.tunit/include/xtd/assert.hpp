@@ -1030,6 +1030,119 @@ namespace xtd {
         else
           fail("Expected: collection not <empty>\nBut was:  <empty>", message, line_info);
       }
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except); test throws an assertion_error exception.
+      /// @endcode
+      template<typename Type, typename TValue>
+      static void is_not_instance_of(const TValue& value) {is_not_instance_of<Type>(value, "", line_info());}
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename Type, typename TValue>
+      static void is_not_instance_of(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_instance_of<Type>(value, "", line_info);}
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message..."); test throws an assertion_error exception.
+      /// @endcode
+      template<typename Type, typename TValue>
+      static void is_not_instance_of(const TValue& value, const std::string& message) {is_not_instance_of<Type>(value, message, line_info());}
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of<std::bad_cast>(except, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of<std::logic_error>(except, "User message...", line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename Type, typename TValue>
+      static void is_not_instance_of(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (dynamic_cast<const Type*>(&value) == nullptr)
+          succeed(message, line_info);
+        else
+          fail("Expected: instance of <" + __demangle(typeid(Type).name()) + ">\nBut was:  <" + __demangle(typeid(value).name()) + ">", message, line_info);
+      }
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except); test throws an assertion_error exception.
+      /// @endcode
+      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
+      template<typename Type, typename TValue>
+      static void is_not_instance_of_type(const TValue& value) {is_not_instance_of_type<Type>(value, "", line_info());}
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, line_info_); test throws an assertion_error exception.
+      /// @endcode
+      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
+      template<typename Type, typename TValue>
+      static void is_not_instance_of_type(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_instance_of_type<Type>(value, "", line_info);}
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, "User message..."); test throws an assertion_error exception.
+      /// @endcode
+      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
+      template<typename Type, typename TValue>
+      static void is_not_instance_of_type(const TValue& value, const std::string& message) {is_not_instance_of_type<Type>(value, message, line_info());}
+      
+      /// @brief Asserts that an object is not of the type supplied or a derived type.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::invalid_argument except("invalid argument");
+      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, "User message...", line_info_); test throws an assertion_error exception.
+      /// @endcode
+      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
+      template<typename Type, typename TValue>
+      static void is_not_instance_not_of_type(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {is_not_instance_of<Type>(value, message, line_info);}
 
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
