@@ -2,6 +2,7 @@
 #include <string>
 #include <tuple>
 #include <regex>
+#include <vector>
 
 using namespace std;
 using namespace std::string_literals;
@@ -83,14 +84,9 @@ private:
 namespace unit_tests {
   class test_class_(manual_test) {
   public:
-    void test_method_(version_test_case1) {
-      version v(1, 2);
-      assert::are_equal(version {1, 2}, v);
-    }
-
-    void test_method_(tuple_test_case2) {
-      auto t = std::make_tuple("a"s, 2);
-      assert::are_not_equal(std::tuple<std::string, int>("a"s, 1), t);
+    void test_method_(test_case1) {
+      string s = "12345";
+      assert::contains('6', s);
     }
   };
 }
