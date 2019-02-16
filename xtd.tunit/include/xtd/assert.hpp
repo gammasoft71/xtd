@@ -29,7 +29,7 @@ std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTr
 }
 
 template<typename TCollection>
-std::string __join__collection(const TCollection& collection) {
+std::string __join__items(const TCollection& collection) {
   std::stringstream ss;
   bool first = true;
   for (const auto& item : collection) {
@@ -41,7 +41,7 @@ std::string __join__collection(const TCollection& collection) {
 }
 
 template<>
-inline std::string __join__collection<std::string>(const std::string& collection) {
+inline std::string __join__items<std::string>(const std::string& collection) {
   std::stringstream ss;
   bool first = true;
   for (const char& item : collection) {
@@ -392,7 +392,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: collection containing " << item << "\nBut was:  < " << __join__collection(collection) << " >";
+          ss << "Expected: collection containing " << item << "\nBut was:  < " << __join__items(collection) << " >";
           fail(ss.str(), message, line_info);
         }
       }
@@ -617,9 +617,8 @@ namespace xtd {
         }
       }
       
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @brief Asserts that collection or traits contains an item.
+      /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
@@ -628,12 +627,11 @@ namespace xtd {
       /// xtd::tunit::assert::is_empty(v1); // test ok
       /// xtd::tunit::assert::is_empty(v2); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_empty(const TCollection& collection) {is_empty(collection, "", line_info());}
+      template<typename TValue>
+      static void is_empty(const TValue& value) {is_empty(value, "", line_info());}
       
       /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @param value The value to check is empty.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -643,12 +641,11 @@ namespace xtd {
       /// xtd::tunit::assert::is_empty(v1, line_info_); // test ok
       /// xtd::tunit::assert::is_empty(v2, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_empty(const TCollection& collection, const xtd::tunit::line_info& line_info) {is_empty(collection, "", line_info);}
+      template<typename TValue>
+      static void is_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
       
       /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -658,12 +655,11 @@ namespace xtd {
       /// xtd::tunit::assert::is_empty(v1, "User message..."); // test ok
       /// xtd::tunit::assert::is_empty(v2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_empty(const TCollection& collection, const std::string& message) {is_empty(collection, message, line_info());}
+      template<typename TValue>
+      static void is_empty(const TValue& value, const std::string& message) {is_empty(value, message, line_info());}
       
       /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -674,12 +670,12 @@ namespace xtd {
       /// xtd::tunit::assert::is_empty(v1, "User message...", line_info_); // test ok
       /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_empty(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (std::empty(collection))
+      template<typename TValue>
+      static void is_empty(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::empty(value))
           succeed(message, line_info);
         else
-          fail("Expected: collection <empty>\nBut was:  < " + __join__collection(collection) + " >", message, line_info);
+          fail("Expected: collection <empty>\nBut was:  < " + __join__items(value) + " >", message, line_info);
       }
 
       /// @brief Asserts that ta condition is false.
@@ -966,9 +962,8 @@ namespace xtd {
           fail("Expected: false\nBut was:  true", message, line_info);
       }
       
-      /// @brief Asserts that collection does not contain any item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @brief Asserts that collection or traits does not contain any item.
+      /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
@@ -977,12 +972,11 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_empty(v1); // test ok
       /// xtd::tunit::assert::is_not_empty(v2); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_not_empty(const TCollection& collection) {is_not_empty(collection, "", line_info());}
+      template<typename TValue>
+      static void is_not_empty(const TValue& value) {is_not_empty(value, "", line_info());}
       
-      /// @brief Asserts that collection does not contain any item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @brief Asserts that collection or traits does not contain any item.
+      /// @param value The value to check is empty.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -992,12 +986,11 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_empty(v1, line_info_); // test ok
       /// xtd::tunit::assert::is_not_empty(v2, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_not_empty(const TCollection& collection, const xtd::tunit::line_info& line_info) {is_not_empty(collection, "", line_info);}
+      template<typename TValue>
+      static void is_not_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
       
-      /// @brief Asserts that collection does not contain any item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @brief Asserts that collection or traits does not contain any item.
+      /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -1007,12 +1000,11 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_empty(v1, "User message..."); // test ok
       /// xtd::tunit::assert::is_not_empty(v2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_not_empty(const TCollection& collection, const std::string& message) {is_not_empty(collection, message, line_info());}
+      template<typename TValue>
+      static void is_not_empty(const TValue& value, const std::string& message) {is_not_empty(value, message, line_info());}
       
-      /// @brief Asserts that collection does not contain any item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
+      /// @brief Asserts that collection or traits does not contain any item.
+      /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1023,9 +1015,9 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_empty(v1, "User message...", line_info_); // test ok
       /// xtd::tunit::assert::is_not_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      template<typename TCollection>
-      static void is_not_empty(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (!std::empty(collection))
+      template<typename TValue>
+      static void is_not_empty(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (!std::empty(value))
           succeed(message, line_info);
         else
           fail("Expected: collection not <empty>\nBut was:  <empty>", message, line_info);
@@ -1143,6 +1135,68 @@ namespace xtd {
       /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
       template<typename Type, typename TValue>
       static void is_not_instance_not_of_type(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {is_not_instance_of<Type>(value, message, line_info);}
+      
+      /// @brief Asserts that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {0, 1, 2, 3};
+      /// std::vector<int> v2;
+      /// xtd::tunit::assert::is_not_empty(v1); // test ok
+      /// xtd::tunit::assert::is_not_empty(v2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void is_not_null(const TPointer* pointer) {is_not_null(pointer, "", line_info());}
+      
+      /// @brief Asserts that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {0, 1, 2, 3};
+      /// std::vector<int> v2;
+      /// xtd::tunit::assert::is_not_empty(v1, line_info_); // test ok
+      /// xtd::tunit::assert::is_not_empty(v2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void is_not_null(const TPointer* pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
+      
+      /// @brief Asserts that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {0, 1, 2, 3};
+      /// std::vector<int> v2;
+      /// xtd::tunit::assert::is_not_empty(v1, "User message..."); // test ok
+      /// xtd::tunit::assert::is_not_empty(v2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TPointer>
+      static void is_not_null(const TPointer* pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
+      
+      /// @brief Asserts that the pointer is not null.
+      /// @param pointer The pointer to check is null.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string str = "Anything";
+      /// std::string* s1 = &str;
+      /// std::string* s2 = nullptr;
+      /// xtd::tunit::assert::is_not_null(s1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_not_null(s2, "User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      template<typename TPointer>
+      static void is_not_null(const TPointer* pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (pointer != nullptr)
+          succeed(message, line_info);
+        else
+          fail("Expected: not null\nBut was:  null", message, line_info);
+      }
 
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
