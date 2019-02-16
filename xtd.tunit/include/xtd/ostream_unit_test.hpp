@@ -26,14 +26,16 @@ namespace xtd {
       void on_test_failed(const xtd::tunit::test_event_args& e) const override {
         this->unit_test::on_test_failed(e);
         this->os_ << "    FAILED " << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
-        if (e.test().user_message() != "")
-          this->os_ << e.test().user_message() << std::endl;
+        this->os_ << std::endl;
         this->os_ << e.test().message() << std::endl;
         if (e.test().line_info() != xtd::tunit::line_info::empty()) {
           this->os_ << "error: " << e.test().line_info().file_path();
           if (e.test().line_info().line_number() != 0) this->os_ << ":" << e.test().line_info().line_number();
           this->os_ << std::endl;
         }
+        if (e.test().user_message() != "")
+          this->os_ << e.test().user_message() << std::endl;
+        this->os_ << std::endl;
       }
       
       void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
