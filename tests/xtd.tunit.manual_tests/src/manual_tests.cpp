@@ -88,7 +88,9 @@ namespace unit_tests {
     }
     
     void test_method_(test_case2) {
-      xtd::tunit::assert::less_or_equal(24, 48, "User message...", line_info_);
+      std::vector<int> v1 = {1, 2, 3, 4};
+      xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message...", line_info_); // test ok
+      xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, "User message...", line_info_); // test throws an assertion_error exception.
     }
     
     void test_method_(test_case3) {

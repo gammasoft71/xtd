@@ -448,7 +448,7 @@ namespace xtd {
         try {
           statement();
           succeed(message, line_info);
-        } catch (std::exception& e) {
+        } catch (const std::exception& e) {
           fail("Expected: No Exception to be thrown\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
           fail("Expected: No Exception to be thrown\nBut was:  <exception>", message, line_info);
@@ -2451,6 +2451,73 @@ namespace xtd {
       /// xtd::tunit::assert::null(nullptr, "User message...", line_info_); // test ok
       /// @endcode
       static void null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {is_null(pointer, message, line_info);}
+      
+      /// @brief Asserts that the statement throws a particular exception when called.
+      /// @param TException The exception type that must be throw.
+      /// @param statement The statement that verify.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TException>
+      static void throws(const std::function<void()>& statement) {throws<TException>(statement, "", line_info());}
+      
+      /// @brief Asserts that the statement throws a particular exception when called.
+      /// @param TException The exception type that must be throw.
+      /// @param statement The statement that verify.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, line_info_); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TException>
+      static void throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {throws<TException>(statement, "", line_info);}
+      
+      /// @brief Asserts that the statement throws a particular exception when called.
+      /// @param TException The exception type that must be throw.
+      /// @param statement The statement that verify.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message..."); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TException>
+      static void throws(const std::function<void()>& statement, const std::string& message) {throws<TException>(statement, message, line_info());}
+      
+      /// @brief Asserts that the statement throws a particular exception when called.
+      /// @param TException The exception type that must be throw.
+      /// @param statement The statement that verify.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TException>
+      static void throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          statement();
+          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <nothing", message, line_info);
+        } catch (const TException&) {
+          succeed(message, line_info);
+        } catch (const std::exception& e) {
+          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
+        } catch (...) {
+          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <exception>", message, line_info);
+        }
+      }
 
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
@@ -2515,3 +2582,5 @@ namespace xtd {
 #define not_null_(...) __CMD_ASSERT_ARGS(not_null, __VA_ARGS__)
 
 #define null_(...) __CMD_ASSERT_ARGS(null, __VA_ARGS__)
+
+#define throws_(TException, ...) __CMD_ASSERT_ARGS(throws<TException>, __VA_ARGS__)
