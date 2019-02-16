@@ -602,3 +602,17 @@ namespace xtd {
 #define are_equal_(...) __CMD_ASSERT_ARGS(are_equal, __VA_ARGS__)
 
 #define are_not_equal_(...) __CMD_ASSERT_ARGS(are_not_equal, __VA_ARGS__)
+
+#define are_not_same_(...) __CMD_ASSERT_ARGS(are_not_same, __VA_ARGS__)
+
+#define are_same_(...) __CMD_ASSERT_ARGS(are_same, __VA_ARGS__)
+
+#define contains_(...) __CMD_ASSERT_ARGS(contains, __VA_ARGS__)
+
+#define does_not_throws_(...) __CMD_ASSERT_ARGS(does_not_throws, __VA_ARGS__)
+
+#define fail_(...) __CMD_ASSERT_ARGS(fail, __VA_ARGS__)
+
+#define greater_(...) __CMD_ASSERT_ARGS(greater, __VA_ARGS__)
+
+#define greater_or_equal_(...) __CMD_ASSERT_ARGS(greater_or_equal, __VA_ARGS__)
