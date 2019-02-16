@@ -85,7 +85,7 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      xtd::tunit::assert::greater(24, 48, "User message...", line_info_); // test ok
+      xtd::tunit::assert::greater_or_equal(24, 12, "User message...", line_info_); // test ok
       //xtd::tunit::assert::greater(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
     }
   };
