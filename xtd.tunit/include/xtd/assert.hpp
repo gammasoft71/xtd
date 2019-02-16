@@ -1,9 +1,12 @@
 /// @file
 /// @brief Contains xtd::tunit::assert class.
 #pragma once
+#include "__demangle.hpp"
 #include "assert_error.hpp"
 #include "line_info.hpp"
 #include <algorithm>
+#include <exception>
+#include <functional>
 #include <string>
 #include <sstream>
 #include <iomanip>
@@ -317,7 +320,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// Txtd::tunit::assert::contains(2, v1); // test ok
+      /// xtd::tunit::assert::contains(2, v1); // test ok
       /// xtd::tunit::assert::contains(4, v1); // test throws an AssertionException.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -330,7 +333,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// Txtd::tunit::assert::contains(2, v1, line_info_); // test ok
+      /// xtd::tunit::assert::contains(2, v1, line_info_); // test ok
       /// xtd::tunit::assert::contains(4, v1, line_info_); // test throws an AssertionException.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -343,7 +346,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// Txtd::tunit::assert::contains(2, v1, "User message..."); // test ok
+      /// xtd::tunit::assert::contains(2, v1, "User message..."); // test ok
       /// xtd::tunit::assert::contains(4, v1, "User message..."); // test throws an AssertionException.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -357,7 +360,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// Txtd::tunit::assert::contains(2, v1, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::contains(2, v1, "User message...", line_info_); // test ok
       /// xtd::tunit::assert::contains(4, v1, "User message...", line_info_); // test throws an AssertionException.
       /// @endcode
       template<typename TItem, typename TCollection>
@@ -368,6 +371,67 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: collection containing " << item << std::endl << "But was:  < " << __join__collection(collection) << " >";
+          failed(ss.str(), message, line_info);
+        }
+      }
+      
+      /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}); // test throws an AssertionException.
+      /// @endcode
+      static void does_not_throws(const std::function<void()>& statement) {does_not_throws(statement, "", line_info());}
+      
+      /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, line_info_); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void does_not_throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {does_not_throws(statement, "", line_info);}
+      
+      /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message..."); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message..."); // test throws an AssertionException.
+      /// @endcode
+      static void does_not_throws(const std::function<void()>& statement, const std::string& message) {does_not_throws(statement, message, line_info());}
+      
+      /// @brief Asserts that the staement does not throw an exception. If they are not, then a xtd::tunit::assertion_error excpetion is thrown.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message...", line_info_); // test throws an AssertionException.
+      /// @endcode
+      static void does_not_throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          statement();
+          succeed(message, line_info);
+        } catch (std::exception& e) {
+          std::stringstream ss;
+          ss << "Expected: No Exception to be thrown\nBut was:  <" << __demangle(typeid(e).name()) << ">";
+          failed(ss.str(), message, line_info);
+        } catch (...) {
+          std::stringstream ss;
+          ss << "Expected: No Exception to be thrown\nBut was:  <exception>";
           failed(ss.str(), message, line_info);
         }
       }
