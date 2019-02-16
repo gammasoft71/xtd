@@ -680,7 +680,7 @@ namespace xtd {
       }
 
       /// @brief Asserts that ta condition is false.
-      /// @param statement The statement that verify.
+      /// @param condition The condition to check is false.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
@@ -692,7 +692,7 @@ namespace xtd {
       static void is_false(bool condition) {is_false(condition, "", line_info());}
       
       /// @brief Asserts that a condition is false.
-      /// @param statement The statement that verify.
+      /// @param condition The condition to check is false.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -705,7 +705,7 @@ namespace xtd {
       static void is_false(bool condition, const xtd::tunit::line_info& line_info) {is_false(condition, "", line_info);}
       
       /// @brief Asserts that a condition is false.
-      /// @param statement The statement that verify.
+      /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -718,7 +718,7 @@ namespace xtd {
       static void is_false(bool condition, const std::string& message) {is_false(condition, message, line_info());}
       
       /// @brief Asserts that a condition is false.
-      /// @param statement The statement that verify.
+      /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1427,6 +1427,63 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(nullptr, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: not null\nBut was:  null", message, line_info);}
+
+      /// @brief Asserts that ta condition is true.
+      /// @param condition The condition to check is true.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s1;
+      /// std::string s2 = "Anything";
+      /// xtd::tunit::assert::is_false(std::empty(s1)); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_true(bool condition) {is_true(condition, "", line_info());}
+      
+      /// @brief Asserts that a condition is true.
+      /// @param condition The condition to check is true.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s1;
+      /// std::string s2 = "Anything";
+      /// xtd::tunit::assert::is_false(std::empty(s1), line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_true(bool condition, const xtd::tunit::line_info& line_info) {is_true(condition, "", line_info);}
+      
+      /// @brief Asserts that a condition is true.
+      /// @param condition The condition to check is true.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s1;
+      /// std::string s2 = "Anything";
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message..."); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_true(bool condition, const std::string& message) {is_true(condition, message, line_info());}
+      
+      /// @brief Asserts that a condition is true.
+      /// @param condition The condition to check is true.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s1;
+      /// std::string s2 = "Anything";
+      /// xtd::tunit::assert::is_false(std::empty(s1), "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::is_false(std::empty(s2), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_true(bool condition, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (condition == true)
+          succeed(message, line_info);
+        else
+          fail("Expected: true\nBut was:  false", message, line_info);
+      }
 
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
