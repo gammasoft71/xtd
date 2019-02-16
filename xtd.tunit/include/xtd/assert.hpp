@@ -1484,6 +1484,130 @@ namespace xtd {
         else
           fail("Expected: true\nBut was:  false", message, line_info);
       }
+      
+      /// @brief Asserts that the first value is less than the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less(24, 48); // test ok
+      /// xtd::tunit::assert::less(24, 12); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less(const TValue1& val1, const TValue2& val2) {less(val1, val2, "", line_info());}
+      
+      /// @brief Asserts that the first value is less than the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less(24, 48, line_info_); // test ok
+      /// xtd::tunit::assert::less(24, 12, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {less(val1, val2, "", line_info);}
+      
+      /// @brief Asserts that the first value is less than the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less(24, 48, "User message..."); // test ok
+      /// xtd::tunit::assert::less(24, 12, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less(const TValue1& val1, const TValue2& val2, const std::string& message) {less(val1, val2, message, line_info());}
+      
+      /// @brief Asserts that the first value is less than the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less(24, 48, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::less(24, 12, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (val1 < val2)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: less than " << val2 << "\nBut was:  " << val1;
+          fail(ss.str(), message, line_info);
+        }
+      }
+      
+      /// @brief Asserts that the first value is less than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less_or_equal(24, 48); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 24); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 12); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less_or_equal(const TValue1& val1, const TValue2& val2) {less_or_equal(val1, val2, "", line_info());}
+      
+      /// @brief Asserts that the first value is less than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less_or_equal(24, 48, line_info_); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 24, line_info_); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 12, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less_or_equal(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {less_or_equal(val1, val2, "", line_info);}
+      
+      /// @brief Asserts that the first value is less than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less_or_equal(24, 48, "User message..."); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 24, "User message..."); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 12, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message) {less_or_equal(val1, val2, message, line_info());}
+      
+      /// @brief Asserts that the first value is less than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::less_or_equal(24, 48, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 24, "User message...", line_info_); // test ok
+      /// xtd::tunit::assert::less_or_equal(24, 12, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void less_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (val1 <= val2)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: less than " << val2 << "\nBut was:  " << val1;
+          fail(ss.str(), message, line_info);
+        }
+      }
 
     private:
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
