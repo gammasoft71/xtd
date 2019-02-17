@@ -5,7 +5,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  /// @brief The tunit namespace contains a unit test framework.
+  /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     struct test_initialize_attribute {
     public:

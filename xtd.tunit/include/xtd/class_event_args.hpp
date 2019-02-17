@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  /// @brief The tunit namespace contains a unit test framework.
+  /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief Provides data for the xtd::tunit::class_test events.
     class class_event_args : public xtd::tunit::tunit_event_args {

@@ -9,7 +9,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
-  /// @brief The TUnit namespace contains a unit test framework.
+  /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @cond
     template <typename TestClass>
@@ -56,6 +56,8 @@ namespace xtd {
       virtual void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const {}
       virtual void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const {}
 
+      /// @brief Runs all tests in this UnitTest object and prints the result.
+      /// @return 0 if succeed; otherwise return 1.
       int run() {
         this->start_time_point = std::chrono::high_resolution_clock::now();
         try {
