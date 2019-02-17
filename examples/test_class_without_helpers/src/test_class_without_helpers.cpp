@@ -5,7 +5,7 @@ using namespace xtd::tunit;
 namespace unit_tests {
   // Used test_class_attribute<> to add unit test suit.
   class test;
-  test_class_attribute<test> test_class_attr {"Test"};
+  test_class_attribute<test> test_class_attr {"test"};
   
   // The test class must be inherit from test_class class.
   class test : public test_class {
@@ -60,3 +60,5 @@ int main(int argc, char* argv[]) {
 //   Summary :
 //     PASSED 2 tests.
 // End 2 tests from 1 test case ran. (0 ms total)
+//
+// You have 1 ignored test
