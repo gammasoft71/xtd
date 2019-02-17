@@ -4,6 +4,7 @@
 #include "__demangle.hpp"
 #include "__join__items.hpp"
 #include "assert_error.hpp"
+#include "default_insert_basic_ostream_operator.hpp"
 #include "line_info.hpp"
 #include <algorithm>
 #include <cmath>
@@ -12,24 +13,11 @@
 #include <iterator>
 #include <memory>
 #include <string>
-#include <iomanip>
-#include <iostream>
 
 /// @cond
 #ifdef assert
 #undef assert
 #endif
-/// @endcond
-
-/// @cond
-template <typename Char, typename CharTraits, typename Type>
-std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) {
-  size_t size = sizeof(value) > 32 ? 32 : sizeof(value);
-  os << size << "-byte object <";
-  for (size_t index = 0; index != size; index++)
-    os <<  (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
-  return os << (size < sizeof(value) ? "-..." : "") << ">";
-}
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
