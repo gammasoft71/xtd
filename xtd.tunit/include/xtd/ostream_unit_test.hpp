@@ -25,7 +25,10 @@ namespace xtd {
       
       void on_test_failed(const xtd::tunit::test_event_args& e) const override {
         this->unit_test::on_test_failed(e);
-        this->os_ << "    FAILED " << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
+        //__console_foreground_color(__console_color::red);
+        this->os_ << "    FAILED ";
+        //__console_reset_color();
+        this->os_ << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
         this->os_ << std::endl;
         this->os_ << e.test().message() << std::endl;
         if (e.test().line_info() != xtd::tunit::line_info::empty()) {
@@ -40,22 +43,44 @@ namespace xtd {
       
       void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
         this->unit_test::on_test_succeed(e);
-        this->os_ << "    PASSED " << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
+        //__console_foreground_color(__console_color::green);
+        this->os_ << "    PASSED ";
+        //__console_reset_color();
+        this->os_ << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
       }
 
       void on_unit_test_end(const xtd::event_args& e) const override {
         this->unit_test::on_unit_test_end(e);
         this->os_ << std::endl;
         this->os_ << "  Summary :" << std::endl;
-        this->os_ << "    PASSED " << this->passed_test_count() << " tests." << std::endl;
+        //__console_foreground_color(__console_color::green);
+        this->os_ << "    PASSED ";
+        //__console_reset_color();
+        this->os_ << this->passed_test_count() << " tests." << std::endl;
         if (this->failed_test_count()) {
-          this->os_ << "*** FAILED " << this->failed_test_count() << " test, listed below:" << std::endl;
-          for(auto name : this->failed_test_names())
-            this->os_ << "*** FAILED " << name << std::endl;
+          //__console_foreground_color(__console_color::red);
+          this->os_ << "*** FAILED ";
+          //__console_reset_color();
+          this->os_ << this->failed_test_count() << " test, listed below:" << std::endl;
+          for(auto name : this->failed_test_names()) {
+            //__console_foreground_color(__console_color::red);
+            this->os_ << "*** FAILED ";
+            //__console_reset_color();
+            this->os_ << name << std::endl;
+          }
           this->os_ << std::endl;
-          this->os_ << "    FAILED " << this->failed_test_count() << " tests." << std::endl;
+          //__console_foreground_color(__console_color::red);
+          this->os_ << "    FAILED ";
+          //__console_reset_color();
+          this->os_ << this->failed_test_count() << " tests." << std::endl;
         }
         this->os_ << "End " << this->test_count() << " test" << (this->test_count() < 2 ? "" : "s") << " from " << this->test_cases_count() << " test case" << (this->test_cases_count() < 2 ? "" : "s") << " ran. (" << this->elapsed_time().count() << " ms total)" << std::endl;
+        if (this->ignore_test_count()) {
+          //__console_foreground_color(__console_color::magenta);
+          this->os_ << std::endl << "  You have " << this->ignore_test_count() << " ignored test" << (this->ignore_test_count() < 2 ? "" : "s") << std::endl;
+          //__console_reset_color();
+        }
+        this->os_ << std::endl;
       }
       
       void on_unit_test_start(const xtd::event_args& e) const override {
