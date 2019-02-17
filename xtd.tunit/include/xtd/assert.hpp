@@ -2,6 +2,7 @@
 /// @brief Contains xtd::tunit::assert class.
 #pragma once
 #include "__demangle.hpp"
+#include "__join__items.hpp"
 #include "assert_error.hpp"
 #include "line_info.hpp"
 #include <algorithm>
@@ -11,7 +12,6 @@
 #include <iterator>
 #include <memory>
 #include <string>
-#include <sstream>
 #include <iomanip>
 #include <iostream>
 
@@ -19,7 +19,9 @@
 #ifdef assert
 #undef assert
 #endif
+/// @endcond
 
+/// @cond
 template <typename Char, typename CharTraits, typename Type>
 std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) {
   size_t size = sizeof(value) > 32 ? 32 : sizeof(value);
@@ -28,31 +30,6 @@ std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTr
     os <<  (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
   return os << (size < sizeof(value) ? "-..." : "") << ">";
 }
-
-template<typename TCollection>
-std::string __join__items(const TCollection& collection) {
-  std::stringstream ss;
-  bool first = true;
-  for (const auto& item : collection) {
-    if (!first) ss << ", ";
-    ss << std::to_string(item);
-    first = false;
-  }
-  return ss.str();
-}
-
-template<>
-inline std::string __join__items<std::string>(const std::string& collection) {
-  std::stringstream ss;
-  bool first = true;
-  for (const char& item : collection) {
-    if (!first) ss << ", ";
-    ss << '\'' << item << '\'';
-    first = false;
-  }
-  return ss.str();
-}
-
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
