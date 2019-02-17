@@ -7,17 +7,30 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
+    /// @brief This attribute is use to add initialize class method to class test attribute.
     struct class_initialize_attribute {
     public:
+      /// @brief Crrates new instance of classinitialize_attribute attribute.
+      /// @param name Name of attribute
+      /// @param test_class xtd::tunit::class_test containing initialize method.
+      /// @param method Initialize class method.
       template<typename TestClass>
       class_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)()) noexcept :  class_initialize_attribute(name, test_class, method, xtd::tunit::line_info()) {}
       
+      /// @brief Crrates new instance of classinitialize_attribute attribute.
+      /// @param name Name of attribute
+      /// @param test_class xtd::tunit::class_test containing initialize method.
+      /// @param method Initialize class method.
+      /// @param line_info Contains information about current file and current line.
       template<typename TestClass>
       class_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)(), const xtd::tunit::line_info& caller) noexcept {test_class.add_class_initialize({name, method, caller});}
     };
   }
 }
 
+/// @brief add initialize class method to class test.
+/// @param method_name cleanup class method to add.
+/// @ingroup tunit
 #define class_initialize_(method_name) \
   __##method_name##_static() {} \
   struct __class_initialize_attribute : public xtd::tunit::class_initialize_attribute { \
