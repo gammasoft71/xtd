@@ -14,7 +14,6 @@ if (ENABLE_COVERAGE AND UNIX)
 endif()
 
 # Projects
-add_subdirectory(xtd.delegates/xtd.delegates)
 add_subdirectory(xtd.tunit)
 option(ENABLE_TESTS "Enable tests" ON)
 if (ENABLE_TESTS)
