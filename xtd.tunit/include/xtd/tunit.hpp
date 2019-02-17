@@ -2,7 +2,7 @@
 /// @brief Contains xtd::unit_test class.
 #pragma once
 
-/// @defgroup tunit tuit
+/// @defgroup tunit tunit
 /// @brief tunit unit test library
 
 #include "assert.hpp"
