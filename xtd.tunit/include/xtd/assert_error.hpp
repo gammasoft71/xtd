@@ -8,9 +8,15 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test framework.
   namespace tunit {
+    /// @brief Exception thow when an assertion failed.
     class assert_error : public std::exception {
     public:
+      /// @brief Create a new instance of assert_error class.
+      /// @param message Message string associate to the error.
       assert_error(const std::string& message) : message_(message) {}
+
+      /// @brief Create a new instance of assert_error class.
+      /// @param message Message string associate to the error.
       assert_error(const char* message) : message_(message) {}
 
       /// @cond
@@ -18,6 +24,8 @@ namespace xtd {
       assert_error& operator=(const assert_error&) = default;
       /// @endcond
 
+      /// @brief Returns a string that represents the current assert_error.
+      /// @return string A string that represents the current assert_error.
       const char* what() const noexcept {return this->message_.c_str();}
       
     private:
