@@ -12,6 +12,8 @@ namespace xtd {
     class ostream_unit_test : public unit_test {
     public:
       ostream_unit_test(std::ostream& os) noexcept : os_(os) {}
+      
+      ostream_unit_test(std::ostream& os, char* argv[], int argc) : unit_test(argv, argc), os_(os) {}
             
       void on_class_end(const xtd::tunit::class_event_args& e) const override {
         this->unit_test::on_class_end(e);

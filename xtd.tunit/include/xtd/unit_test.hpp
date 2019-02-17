@@ -24,6 +24,13 @@ namespace xtd {
         unit_test_initialize();
         on_unit_test_initialize_end(xtd::tunit::tunit_event_args::empty());
       }
+      
+      unit_test(char* argv[], int argc) noexcept {
+        /// parse args...
+        on_unit_test_initialize_start(xtd::tunit::tunit_event_args::empty());
+        unit_test_initialize();
+        on_unit_test_initialize_end(xtd::tunit::tunit_event_args::empty());
+      }
 
       /// @cond
       virtual ~unit_test() {

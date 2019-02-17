@@ -14,9 +14,7 @@ namespace xtd {
     public:
       console_unit_test() : ostream_unit_test(std::cout) {}
       
-      console_unit_test(char* argv[], int argc) : ostream_unit_test(std::cout) {
-        // parse args...
-      }
+      console_unit_test(char* argv[], int argc) : ostream_unit_test(std::cout, argv, argc) {}
     };
   }
 }
