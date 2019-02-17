@@ -3,18 +3,13 @@
 #pragma once
 #include "test_class.hpp"
 #include "test.hpp"
+#include "tunit_event_args.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
   /// @brief The tunit namespace contains a unit test framework.
   namespace tunit {
-    class event_args {
-    public:
-      event_args() = default;
-      static event_args empty() { return event_args(); }
-    };
-    
-    class test_event_args {
+    class test_event_args : public xtd::tunit::tunit_event_args {
     public:
       explicit test_event_args(const xtd::tunit::test& test, const xtd::tunit::test_class& test_class) : t_(test), tc_(test_class) {}
 

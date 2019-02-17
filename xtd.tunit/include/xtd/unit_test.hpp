@@ -1,10 +1,10 @@
 /// @file
 /// @brief Contains xtd::unit_test class.
 #pragma once
-#include "class_event_handler.hpp"
+#include "class_event_args.hpp"
 #include "registered_test_class.hpp"
 #include "settings.hpp"
-#include "test_event_handler.hpp"
+#include "test_event_args.hpp"
 #include <chrono>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
@@ -20,16 +20,16 @@ namespace xtd {
     class unit_test {
     public:
       unit_test() noexcept {
-        on_unit_test_initialize_start(xtd::tunit::event_args::empty());
+        on_unit_test_initialize_start(xtd::tunit::tunit_event_args::empty());
         unit_test_initialize();
-        on_unit_test_initialize_end(xtd::tunit::event_args::empty());
+        on_unit_test_initialize_end(xtd::tunit::tunit_event_args::empty());
       }
 
       /// @cond
       virtual ~unit_test() {
-        on_unit_test_cleanup_start(xtd::tunit::event_args::empty());
+        on_unit_test_cleanup_start(xtd::tunit::tunit_event_args::empty());
         unit_test_cleanup();
-        on_unit_test_cleanup_end(xtd::tunit::event_args::empty());
+        on_unit_test_cleanup_end(xtd::tunit::tunit_event_args::empty());
       }
       /// @endcond
       
@@ -49,20 +49,20 @@ namespace xtd {
       virtual void on_test_start(const xtd::tunit::test_event_args& e) const {}
       virtual void on_test_succeed(const xtd::tunit::test_event_args& e) const {}
 
-      virtual void on_unit_test_cleanup_end(const xtd::tunit::event_args& e) const {}
-      virtual void on_unit_test_cleanup_start(const xtd::tunit::event_args& e) const {}
-      virtual void on_unit_test_end(const xtd::tunit::event_args& e) const {}
-      virtual void on_unit_test_initialize_end(const xtd::tunit::event_args& e) const {}
-      virtual void on_unit_test_initialize_start(const xtd::tunit::event_args& e) const {}
-      virtual void on_unit_test_start(const xtd::tunit::event_args& e) const {}
+      virtual void on_unit_test_cleanup_end(const xtd::tunit::tunit_event_args& e) const {}
+      virtual void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const {}
+      virtual void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const {}
+      virtual void on_unit_test_initialize_end(const xtd::tunit::tunit_event_args& e) const {}
+      virtual void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const {}
+      virtual void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const {}
 
       int run() {
         this->start_time_point = std::chrono::high_resolution_clock::now();
         try {
-          this->on_unit_test_start(xtd::tunit::event_args::empty());
+          this->on_unit_test_start(xtd::tunit::tunit_event_args::empty());
           for (auto& test_class : test_classes())
             test_class.test()->run(*this);
-          this->on_unit_test_end(xtd::tunit::event_args::empty());
+          this->on_unit_test_end(xtd::tunit::tunit_event_args::empty());
         } catch(const std::exception& e) {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
           // do error...

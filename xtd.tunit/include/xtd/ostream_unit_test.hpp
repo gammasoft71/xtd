@@ -49,7 +49,7 @@ namespace xtd {
         this->os_ << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
       }
 
-      void on_unit_test_end(const xtd::tunit::event_args& e) const override {
+      void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
         this->unit_test::on_unit_test_end(e);
         this->os_ << std::endl;
         this->os_ << "  Summary :" << std::endl;
@@ -83,7 +83,7 @@ namespace xtd {
         this->os_ << std::endl;
       }
       
-      void on_unit_test_start(const xtd::tunit::event_args& e) const override {
+      void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override {
         this->os_ << "Start " << this->test_count() << " test" << (this->test_count() < 2 ? "" : "s") << " from " << this->test_cases_count() << " test case" << (this->test_cases_count() < 2 ? "" : "s") << std::endl;
         this->unit_test::on_unit_test_start(e);
       }
