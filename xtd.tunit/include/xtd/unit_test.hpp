@@ -139,7 +139,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (test.passed()) count++;
+            if ((!test.ignore() || settings::default_settings().also_run_ignored_tests()) && test.passed()) count++;
         return count;
       }
 
