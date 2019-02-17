@@ -1,6 +1,10 @@
 /// @file
 /// @brief Contains xtd::unit_test class.
 #pragma once
+
+/// @defgroup tunit tuit
+/// @brief tunit unit test library
+
 #include "assert.hpp"
 #include "assert_error.hpp"
 #include "class_cleanup_attribute.hpp"

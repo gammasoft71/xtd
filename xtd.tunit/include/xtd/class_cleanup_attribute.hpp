@@ -28,6 +28,9 @@ namespace xtd {
   }
 }
 
+/// @brief add cleaup class method to class cleanup.
+/// @param method_name cleanup class method to add.
+/// @ingroup tunit
 #define class_cleanup_(method_name) \
   __##method_name##_static() {} \
   struct __class_cleanup_attribute : public xtd::tunit::class_cleanup_attribute { \
