@@ -44,13 +44,13 @@ namespace xtd {
         return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point - this->start_time_point);
       }
 
-      void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
-
     private:
       friend class xtd::tunit::assert;
       friend struct xtd::tunit::test_class;
       static test& current_test() {return *current_test_;}
 
+      void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
+      
       std::chrono::high_resolution_clock::time_point end_time_point;
       static test* current_test_;
       bool ignore_ = true;

@@ -52,8 +52,6 @@ namespace xtd {
         return count;
       }
       
-      void run(const xtd::tunit::unit_test& unit_test);
-
       const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
 
     protected:
@@ -83,6 +81,8 @@ namespace xtd {
       const xtd::tunit::test& test_initialize() const noexcept {return this->test_initialize_;}
       const std::vector<xtd::tunit::test>& test_methods() const noexcept {return this->tests_;}
 
+      void run(const xtd::tunit::unit_test& unit_test);
+      
       xtd::tunit::test class_cleanup_;
       xtd::tunit::test class_initialize_;
       std::chrono::high_resolution_clock::time_point end_time_point;
