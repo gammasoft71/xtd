@@ -20,72 +20,49 @@ namespace xtd {
     class unit_test {
     public:
       unit_test() noexcept {
-        on_unit_test_initialize_start(xtd::event_args::empty());
+        on_unit_test_initialize_start(xtd::tunit::event_args::empty());
         unit_test_initialize();
-        on_unit_test_initialize_end(xtd::event_args::empty());
+        on_unit_test_initialize_end(xtd::tunit::event_args::empty());
       }
 
       /// @cond
       virtual ~unit_test() {
-        on_unit_test_cleanup_start(xtd::event_args::empty());
+        on_unit_test_cleanup_start(xtd::tunit::event_args::empty());
         unit_test_cleanup();
-        on_unit_test_cleanup_end(xtd::event_args::empty());
+        on_unit_test_cleanup_end(xtd::tunit::event_args::empty());
       }
       /// @endcond
       
-      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_cleanup_end;
-      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_cleanup_start;
-      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_end;
-      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_initialize_end;
-      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_initialize_start;
-      xtd::tunit::class_event_handler<const xtd::tunit::unit_test&> class_start;
-      
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_cleanup_end;
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_cleanup_start;
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_initialize_end;
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_initialize_start;
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_end;
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_failed;
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_start;
-      xtd::tunit::test_event_handler<const xtd::tunit::unit_test&> test_succeed;
-      
-      xtd::event_handler<const xtd::tunit::unit_test&> unit_test_cleanup_end;
-      xtd::event_handler<const xtd::tunit::unit_test&> unit_test_cleanup_start;
-      xtd::event_handler<const xtd::tunit::unit_test&> unit_test_end;
-      xtd::event_handler<const xtd::tunit::unit_test&> unit_test_initialize_end;
-      xtd::event_handler<const xtd::tunit::unit_test&> unit_test_initialize_start;
-      xtd::event_handler<const xtd::tunit::unit_test&> unit_test_start;
+      virtual void on_class_cleanup_end(const xtd::tunit::class_event_args& e) const {}
+      virtual void on_class_cleanup_start(const xtd::tunit::class_event_args& e) const {}
+      virtual void on_class_end(const xtd::tunit::class_event_args& e) const {}
+      virtual void on_class_initialize_end(const xtd::tunit::class_event_args& e) const {}
+      virtual void on_class_initialize_start(const xtd::tunit::class_event_args& e) const {}
+      virtual void on_class_start(const xtd::tunit::class_event_args& e) const {}
 
-      virtual void on_class_cleanup_end(const xtd::tunit::class_event_args& e) const {this->class_cleanup_end(*this, e);}
-      virtual void on_class_cleanup_start(const xtd::tunit::class_event_args& e) const {this->class_cleanup_start(*this, e);}
-      virtual void on_class_end(const xtd::tunit::class_event_args& e) const {this->class_end(*this, e);}
-      virtual void on_class_initialize_end(const xtd::tunit::class_event_args& e) const {this->class_initialize_end(*this, e);}
-      virtual void on_class_initialize_start(const xtd::tunit::class_event_args& e) const {this->class_initialize_start(*this, e);}
-      virtual void on_class_start(const xtd::tunit::class_event_args& e) const {this->class_start(*this, e);}
+      virtual void on_test_cleanup_end(const xtd::tunit::test_event_args& e) const {}
+      virtual void on_test_cleanup_start(const xtd::tunit::test_event_args& e) const {}
+      virtual void on_test_initialize_end(const xtd::tunit::test_event_args& e) const {}
+      virtual void on_test_initialize_start(const xtd::tunit::test_event_args& e) const {}
+      virtual void on_test_end(const xtd::tunit::test_event_args& e) const {}
+      virtual void on_test_failed(const xtd::tunit::test_event_args& e) const {}
+      virtual void on_test_start(const xtd::tunit::test_event_args& e) const {}
+      virtual void on_test_succeed(const xtd::tunit::test_event_args& e) const {}
 
-      virtual void on_test_cleanup_end(const xtd::tunit::test_event_args& e) const {this->test_cleanup_end(*this, e);}
-      virtual void on_test_cleanup_start(const xtd::tunit::test_event_args& e) const {this->test_cleanup_start(*this, e);}
-      virtual void on_test_initialize_end(const xtd::tunit::test_event_args& e) const {this->test_initialize_end(*this, e);}
-      virtual void on_test_initialize_start(const xtd::tunit::test_event_args& e) const {this->test_initialize_start(*this, e);}
-      virtual void on_test_end(const xtd::tunit::test_event_args& e) const {this->test_end(*this, e);}
-      virtual void on_test_failed(const xtd::tunit::test_event_args& e) const {this->test_failed(*this, e);}
-      virtual void on_test_start(const xtd::tunit::test_event_args& e) const {this->test_start(*this, e);}
-      virtual void on_test_succeed(const xtd::tunit::test_event_args& e) const {this->test_succeed(*this, e);}
-
-      virtual void on_unit_test_cleanup_end(const xtd::event_args& e) const {this->unit_test_cleanup_end(*this, e);}
-      virtual void on_unit_test_cleanup_start(const xtd::event_args& e) const {this->unit_test_cleanup_start(*this, e);}
-      virtual void on_unit_test_end(const xtd::event_args& e) const {this->unit_test_end(*this, e);}
-      virtual void on_unit_test_initialize_end(const xtd::event_args& e) const {this->unit_test_initialize_end(*this, e);}
-      virtual void on_unit_test_initialize_start(const xtd::event_args& e) const {this->unit_test_initialize_start(*this, e);}
-      virtual void on_unit_test_start(const xtd::event_args& e) const {this->unit_test_start(*this, e);}
+      virtual void on_unit_test_cleanup_end(const xtd::tunit::event_args& e) const {}
+      virtual void on_unit_test_cleanup_start(const xtd::tunit::event_args& e) const {}
+      virtual void on_unit_test_end(const xtd::tunit::event_args& e) const {}
+      virtual void on_unit_test_initialize_end(const xtd::tunit::event_args& e) const {}
+      virtual void on_unit_test_initialize_start(const xtd::tunit::event_args& e) const {}
+      virtual void on_unit_test_start(const xtd::tunit::event_args& e) const {}
 
       int run() {
         this->start_time_point = std::chrono::high_resolution_clock::now();
         try {
-          this->on_unit_test_start(xtd::event_args::empty());
+          this->on_unit_test_start(xtd::tunit::event_args::empty());
           for (auto& test_class : test_classes())
             test_class.test()->run(*this);
-          this->on_unit_test_end(xtd::event_args::empty());
+          this->on_unit_test_end(xtd::tunit::event_args::empty());
         } catch(const std::exception& e) {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
           // do error...

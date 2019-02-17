@@ -14,13 +14,13 @@ namespace xtd {
       ostream_unit_test(std::ostream& os) noexcept : os_(os) {}
             
       void on_class_end(const xtd::tunit::class_event_args& e) const override {
-        this->unit_test::on_unit_test_end(e);
+        this->unit_test::on_class_end(e);
         this->os_ << "  End " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms total) " << std::endl;
       }
       
       void on_class_start(const xtd::tunit::class_event_args& e) const override {
         this->os_ << "  Start " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name() << std::endl;
-        this->unit_test::on_unit_test_start(e);
+        this->unit_test::on_class_start(e);
       }
       
       void on_test_failed(const xtd::tunit::test_event_args& e) const override {
@@ -49,7 +49,7 @@ namespace xtd {
         this->os_ << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
       }
 
-      void on_unit_test_end(const xtd::event_args& e) const override {
+      void on_unit_test_end(const xtd::tunit::event_args& e) const override {
         this->unit_test::on_unit_test_end(e);
         this->os_ << std::endl;
         this->os_ << "  Summary :" << std::endl;
@@ -83,7 +83,7 @@ namespace xtd {
         this->os_ << std::endl;
       }
       
-      void on_unit_test_start(const xtd::event_args& e) const override {
+      void on_unit_test_start(const xtd::tunit::event_args& e) const override {
         this->os_ << "Start " << this->test_count() << " test" << (this->test_count() < 2 ? "" : "s") << " from " << this->test_cases_count() << " test case" << (this->test_cases_count() < 2 ? "" : "s") << std::endl;
         this->unit_test::on_unit_test_start(e);
       }

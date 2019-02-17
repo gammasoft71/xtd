@@ -4,7 +4,7 @@
 #include "assert.hpp"
 #include "assert_error.hpp"
 #include "line_info.hpp"
-#include <xtd/delegates>
+#include <functional>
 #include <chrono>
 #include <string>
 
@@ -20,14 +20,14 @@ namespace xtd {
     struct test final {
     public:
       test() = default;
-      test(const std::string& name, xtd::delegate<void()> method, const xtd::tunit::line_info& caller) noexcept : test(name, method, false, caller) {}
-      test(const std::string& name, xtd::delegate<void()> method, bool ignore, const xtd::tunit::line_info& info) noexcept :  ignore_(ignore), info_(info), method_(method), name_(name) {}
+      test(const std::string& name, const std::function<void()>& method, const xtd::tunit::line_info& caller) noexcept : test(name, method, false, caller) {}
+      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::tunit::line_info& info) noexcept :  ignore_(ignore), info_(info), method_(method), name_(name) {}
       
       bool ignore() const noexcept {return this->ignore_;}
       
       const xtd::tunit::line_info line_info() const noexcept {return this->info_;}
       
-      xtd::delegate<void()> method() const noexcept {return this->method_;}
+      std::function<void()> method() const noexcept {return this->method_;}
       
       const std::string& message() const noexcept {return this->message_;}
       
@@ -56,7 +56,7 @@ namespace xtd {
       bool ignore_ = true;
       xtd::tunit::line_info info_;
       std::string message_;
-      xtd::delegate<void()> method_;
+      std::function<void()> method_;
       std::string name_;
       bool passed_ = true;
       std::chrono::high_resolution_clock::time_point start_time_point;

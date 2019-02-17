@@ -12,7 +12,8 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
   
   if (!this->ignore_ || settings::default_settings().also_run_ignored_tests()) {
     unit_test.on_test_initialize_start(xtd::tunit::test_event_args(*this, test_class));
-    test_class.test_initialize().method()();
+    if (test_class.test_initialize().method() != nullptr)
+      test_class.test_initialize().method()();
     unit_test.on_test_initialize_end(xtd::tunit::test_event_args(*this, test_class));
     
     unit_test.on_test_start(xtd::tunit::test_event_args(*this, test_class));
@@ -31,7 +32,8 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
     }
     
     unit_test.on_test_cleanup_start(xtd::tunit::test_event_args(*this, test_class));
-    test_class.test_cleanup().method()();
+    if (test_class.test_cleanup().method() != nullptr)
+      test_class.test_cleanup().method()();
     unit_test.on_test_cleanup_end(xtd::tunit::test_event_args(*this, test_class));
     
     unit_test.on_test_end(xtd::tunit::test_event_args(*this, test_class));
