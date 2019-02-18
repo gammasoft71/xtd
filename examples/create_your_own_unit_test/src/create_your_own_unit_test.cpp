@@ -141,11 +141,25 @@ int main(int argc, char* argv[]) {
 
 // This code can produce the following output:
 //
-// Start 1 tests from 1 test case
-//   Start 1 tests from test
-//     PASSED test_case1 (0 ms total)
-//   End 1 tests from test (0 ms total)
+// [==========] Running 3 tests from 1 test case.
+// [----------] Global test environment set-up.
+// [----------] 3 tests from test
+// [ RUN      ] test.test_case1
+// [       OK ] test.test_case1 (0 ms)
+// [ RUN      ] test.test_case2
+// [       OK ] test.test_case2 (0 ms)
+// [ RUN      ] test.test_case3
+// !---OMITTED---!/xtd/xtd.tunit/examples/create_your_own_unit_test/src/create_your_own_unit_test.cpp:128
+// Failled
+// Your message...
+// [  FAILED  ] ManualTest.TestCase3 (0 ms)
+// [----------] 3 tests from test (0 ms)
 //
-//   Summary :
-//     PASSED 1 tests.
-// End 1 tests from 1 test case ran. (0 ms total)
+// [----------] Global test environment tear-down
+// [==========] 3 tests from 1 test case ran. (0 ms total)
+// [  PASSED  ] 2 tests.
+// [  FAILED  ] 1 test, listed below:
+// [  FAILED  ] test.test_case3
+//
+//  1 FAILED TEST
+//   YOU HAVE 1 DISABLED TESTS
