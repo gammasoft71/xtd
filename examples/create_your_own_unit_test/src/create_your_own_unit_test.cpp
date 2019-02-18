@@ -61,6 +61,7 @@ private:
     this->unit_test::on_test_failed(e);
     cout << e.test().line_info().file_path() << ":" << e.test().line_info().line_number() << endl;
     cout << e.test().message() << endl;
+    if (e.test().user_message() != "") cout << e.test().user_message() << endl;
     cout << "[  FAILED  ] ManualTest.TestCase3 (" << e.test().elapsed_time().count() << " ms)" << endl;
   }
   
@@ -125,7 +126,7 @@ namespace unit_tests {
     }
 
     void test_method_(test_case3) {
-      assert::fail();
+      assert::fail("Your message...");
     }
 
     void ignore_test_method_(test_case4) {
