@@ -5,7 +5,8 @@ project(xtd.tunit.unit_tests)
 set(SOURCES
   src/assert_unit_tests.hpp
   src/main.cpp
-  src/tunit.cpp
+  src/one_test_one_test_case.cpp
+  src/one_test_two_test_cases.cpp
 )
 source_group(src FILES ${SOURCES})
 
