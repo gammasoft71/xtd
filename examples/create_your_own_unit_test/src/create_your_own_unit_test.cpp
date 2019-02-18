@@ -5,7 +5,7 @@ using namespace std;
 using namespace xtd::tunit;
 
 // Simulate google test output
-class google_unit_test : public unit_test {
+class google_unit_test final : public unit_test {
 public:
   google_unit_test() = default;
   google_unit_test(char* argv[], int argc) : unit_test(argv, argc) {}
