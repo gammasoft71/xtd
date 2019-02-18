@@ -17,9 +17,9 @@ private:
     cout << "[==========] Running " << this->test_count() << " tests from " << this->test_cases_count() << " test case." << endl;
   }
   
-  void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const override {
-    this->unit_test::on_unit_test_initialize_start(e);
-  }
+  //void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const override {
+  //  this->unit_test::on_unit_test_initialize_start(e);
+  //}
   
   void on_unit_test_initialize_end(const xtd::tunit::tunit_event_args& e) const override {
     this->unit_test::on_unit_test_initialize_end(e);
@@ -31,21 +31,21 @@ private:
     cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << endl;
   }
   
-  void on_class_initialize_start(const xtd::tunit::class_event_args& e) const override {
-    this->unit_test::on_class_initialize_start(e);
-  }
+  //void on_class_initialize_start(const xtd::tunit::class_event_args& e) const override {
+  //  this->unit_test::on_class_initialize_start(e);
+  //}
   
-  void on_class_initialize_end(const xtd::tunit::class_event_args& e) const override {
-    this->unit_test::on_class_initialize_end(e);
-  }
+  //void on_class_initialize_end(const xtd::tunit::class_event_args& e) const override {
+  //  this->unit_test::on_class_initialize_end(e);
+  //}
   
-  void on_test_initialize_start(const xtd::tunit::test_event_args& e) const override {
-    this->unit_test::on_test_initialize_start(e);
-  }
+  //void on_test_initialize_start(const xtd::tunit::test_event_args& e) const override {
+  //  this->unit_test::on_test_initialize_start(e);
+  //}
   
-  void on_test_initialize_end(const xtd::tunit::test_event_args& e) const override {
-    this->unit_test::on_test_initialize_end(e);
-  }
+  //void on_test_initialize_end(const xtd::tunit::test_event_args& e) const override {
+  //  this->unit_test::on_test_initialize_end(e);
+  //}
   
   void on_test_start(const xtd::tunit::test_event_args& e) const override {
     this->unit_test::on_test_start(e);
@@ -65,34 +65,34 @@ private:
     cout << "[  FAILED  ] ManualTest.TestCase3 (" << e.test().elapsed_time().count() << " ms)" << endl;
   }
   
-  void on_test_end(const xtd::tunit::test_event_args& e) const override {
-    this->unit_test::on_test_end(e);
-  }
+  //void on_test_end(const xtd::tunit::test_event_args& e) const override {
+  //  this->unit_test::on_test_end(e);
+  //}
 
-  void on_test_cleanup_start(const xtd::tunit::test_event_args& e) const override {
-    this->unit_test::on_test_cleanup_start(e);
-  }
+  //void on_test_cleanup_start(const xtd::tunit::test_event_args& e) const override {
+  //  this->unit_test::on_test_cleanup_start(e);
+  //}
   
-  void on_test_cleanup_end(const xtd::tunit::test_event_args& e) const override {
-    this->unit_test::on_test_cleanup_end(e);
-  }
+  //void on_test_cleanup_end(const xtd::tunit::test_event_args& e) const override {
+  //  this->unit_test::on_test_cleanup_end(e);
+  //}
  
-  void on_class_cleanup_start(const xtd::tunit::class_event_args& e) const override {
-    this->unit_test::on_class_cleanup_start(e);
-  }
+  //void on_class_cleanup_start(const xtd::tunit::class_event_args& e) const override {
+  //  this->unit_test::on_class_cleanup_start(e);
+  //}
   
-  void on_class_cleanup_end(const xtd::tunit::class_event_args& e) const override {
-    this->unit_test::on_class_cleanup_end(e);
-  }
+  //void on_class_cleanup_end(const xtd::tunit::class_event_args& e) const override {
+  //  this->unit_test::on_class_cleanup_end(e);
+  //}
   
   void on_class_end(const xtd::tunit::class_event_args& e) const override {
     this->unit_test::on_class_end(e);
     cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms)" << endl;
   }
 
-  void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override {
-    this->unit_test::on_unit_test_cleanup_start(e);
-  }
+  //void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override {
+  //  this->unit_test::on_unit_test_cleanup_start(e);
+  //}
   
   void on_unit_test_cleanup_end(const xtd::tunit::tunit_event_args& e) const override {
     this->unit_test::on_unit_test_cleanup_end(e);
