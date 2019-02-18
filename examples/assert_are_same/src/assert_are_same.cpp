@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 //     PASSED test_case_succeed (0 ms total)
 //     FAILED test_case_failed (0 ms total)
 //
-// Expected: not 24
+// Expected: same as 24
 // But was:  24
 // error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_not_equal/src/assert_are_same.cpp:14
 //
