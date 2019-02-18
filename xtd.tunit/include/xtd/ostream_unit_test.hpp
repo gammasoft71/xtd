@@ -65,7 +65,7 @@ namespace xtd {
         //__console_foreground_color(__console_color::green);
         this->os_ << "    PASSED ";
         //__console_reset_color();
-        this->os_ << e.unit_test().passed_test_count() << " tests." << std::endl;
+        this->os_ << e.unit_test().passed_test_count() << " test" << (e.unit_test().passed_test_count() <2 ? "" : "s") << "." << std::endl;
         if (e.unit_test().failed_test_count()) {
           //__console_foreground_color(__console_color::red);
           this->os_ << "*** FAILED ";
@@ -81,7 +81,7 @@ namespace xtd {
           //__console_foreground_color(__console_color::red);
           this->os_ << "    FAILED ";
           //__console_reset_color();
-          this->os_ << e.unit_test().failed_test_count() << " tests." << std::endl;
+          this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
         this->os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << " ran.";
         if (xtd::tunit::settings::default_settings().show_duration())

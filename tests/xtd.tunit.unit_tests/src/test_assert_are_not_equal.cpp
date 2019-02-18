@@ -34,11 +34,11 @@ void test_(test_assert_are_not_equal, test_output) {
                 "  End 2 tests from test_assert_are_not_equal\n"
                 "\n"
                 "  Summary :\n"
-                "    PASSED 1 tests.\n"
+                "    PASSED 1 test.\n"
                 "*** FAILED 1 test, listed below:\n"
                 "*** FAILED test_assert_are_not_equal.test_case_failed\n"
                 "\n"
-                "    FAILED 1 tests.\n"
+                "    FAILED 1 test.\n"
                 "End 2 tests from 1 test case ran.\n"
                 "\n", ss.str());
 }

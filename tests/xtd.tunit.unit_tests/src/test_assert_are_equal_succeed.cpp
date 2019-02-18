@@ -23,7 +23,7 @@ void test_(test_assert_are_equal_succeed, test_output) {
                 "  End 1 test from test_assert_are_equal_succeed\n"
                 "\n"
                 "  Summary :\n"
-                "    PASSED 1 tests.\n"
+                "    PASSED 1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }
