@@ -13,11 +13,11 @@ namespace xtd {
     public:
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
-      assert_error(const std::string& message) : message_(message) {}
+      explicit assert_error(const std::string& message) : message_(message) {}
 
       /// @brief Create a new instance of assert_error class.
       /// @param message Message string associate to the error.
-      assert_error(const char* message) : message_(message) {}
+      explicit assert_error(const char* message) : message_(message) {}
 
       /// @cond
       assert_error(const assert_error&) = default;

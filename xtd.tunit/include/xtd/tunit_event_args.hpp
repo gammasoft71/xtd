@@ -6,20 +6,26 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
+    /// @cond
+    class unit_test;
+    /// @endcond
+    
     /// @brief tunit_event_args is the base class for classes containing event data.
     class tunit_event_args {
     public:
       /// @brief Create a new instance of class tunit_event_args
-      tunit_event_args() = default;
+      explicit tunit_event_args(const xtd::tunit::unit_test& unit_test) : ut_(unit_test) {};
       
       /// @cond
       tunit_event_args(const tunit_event_args&) = default;
       tunit_event_args& operator=(const tunit_event_args&) = default;
       virtual ~tunit_event_args() = default;
       /// @endcond
+      
+      const xtd::tunit::unit_test& unit_test() const {return this->ut_;}
 
-      /// @brief Represents an event with no event data.
-      static tunit_event_args empty() { return tunit_event_args(); }
+    private:
+      const xtd::tunit::unit_test& ut_;
     };
   }
 }
