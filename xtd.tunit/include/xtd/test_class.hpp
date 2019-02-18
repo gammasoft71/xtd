@@ -48,7 +48,7 @@ namespace xtd {
       size_t ignore_test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (method.ignore()) count++;
+          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.ignore()) count++;
         return count;
       }
       

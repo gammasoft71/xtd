@@ -30,7 +30,10 @@ namespace xtd {
       void filter_tests(const std::string& filter_tests) noexcept {this->filter_tests_ = filter_tests;}
 
       bool is_valid_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return this->pattern_compare(test_class_name + "." + test_name, this->filter_tests_);}
-      
+
+      bool show_duration() const noexcept {return this->show_duration_;}
+      void show_duration(bool show_duration) noexcept {this->show_duration_ = show_duration;}
+
     private:
       bool pattern_compare(const std::string& name, const std::string& pattern) const noexcept {
         if (pattern == "") return name == "";
@@ -43,6 +46,7 @@ namespace xtd {
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
       int exit_status_ = EXIT_SUCCESS;
+      bool show_duration_ = true;
     };
   }
 }

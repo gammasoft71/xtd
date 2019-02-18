@@ -15,7 +15,10 @@ namespace xtd {
 
       void on_class_end(const xtd::tunit::class_event_args& e) const override {
         this->event_listener::on_class_end(e);
-        this->os_ << "  End " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms total)" << std::endl;
+        this->os_ << "  End " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name();
+        if (xtd::tunit::settings::default_settings().show_duration())
+          this->os_<< " (" << e.test_class().elapsed_time().count() << " ms total)";
+        this->os_ << std::endl;
       }
       
       void on_class_start(const xtd::tunit::class_event_args& e) const override {
@@ -28,7 +31,10 @@ namespace xtd {
         //__console_foreground_color(__console_color::red);
         this->os_ << "    FAILED ";
         //__console_reset_color();
-        this->os_ << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
+        this->os_ << e.test().name();
+        if (xtd::tunit::settings::default_settings().show_duration())
+          this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+        this->os_ << std::endl;
         this->os_ << std::endl;
         this->os_ << e.test().message() << std::endl;
         if (e.test().line_info() != xtd::tunit::line_info::empty()) {
@@ -46,7 +52,10 @@ namespace xtd {
         //__console_foreground_color(__console_color::green);
         this->os_ << "    PASSED ";
         //__console_reset_color();
-        this->os_ << e.test().name()<< " (" << e.test().elapsed_time().count() << " ms total)" << std::endl;
+        this->os_ << e.test().name();
+        if (xtd::tunit::settings::default_settings().show_duration())
+          this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+        this->os_ << std::endl;
       }
       
       void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
@@ -74,7 +83,10 @@ namespace xtd {
           //__console_reset_color();
           this->os_ << e.unit_test().failed_test_count() << " tests." << std::endl;
         }
-        this->os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << " ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << std::endl;
+        this->os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << " ran.";
+        if (xtd::tunit::settings::default_settings().show_duration())
+          this->os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
+        this->os_ << std::endl;
         if (e.unit_test().ignore_test_count()) {
           //__console_foreground_color(__console_color::magenta);
           this->os_ << std::endl << "  You have " << e.unit_test().ignore_test_count() << " ignored test" << (e.unit_test().ignore_test_count() < 2 ? "" : "s") << std::endl;
