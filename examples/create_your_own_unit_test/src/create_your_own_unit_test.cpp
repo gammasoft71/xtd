@@ -111,7 +111,7 @@ private:
     cout << endl;
     if (this->failed_test_count()) cout << " " << this->failed_test_count() << " FAILED TEST" << endl;
     if (this->ignore_test_count()) cout << "  YOU HAVE " << this->ignore_test_count() << " DISABLED TESTS" << endl;
-    cout <<endl;
+    cout << endl;
   }
 };
 
