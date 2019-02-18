@@ -58,7 +58,7 @@ private:
   
   void on_test_failed(const xtd::tunit::test_event_args& e) const override {
     this->unit_test::on_test_failed(e);
-    cout << e.test().line_info().file_path() << ":" << e.test().line_info().line_number() << endl;
+    cout << e.test().line_info().file_path() << ":" << e.test().line_info().line_number() << ": Failure" << endl;
     cout << e.test().message() << endl;
     if (e.test().user_message() != "") cout << e.test().user_message() << endl;
     cout << "[  FAILED  ] ManualTest.TestCase3 (" << e.test().elapsed_time().count() << " ms)" << endl;
@@ -148,7 +148,7 @@ int main(int argc, char* argv[]) {
 // [ RUN      ] test.test_case2
 // [       OK ] test.test_case2 (0 ms)
 // [ RUN      ] test.test_case3
-// !---OMITTED---!/xtd/xtd.tunit/examples/create_your_own_unit_test/src/create_your_own_unit_test.cpp:128
+// !---OMITTED---!/xtd/xtd.tunit/examples/create_your_own_unit_test/src/create_your_own_unit_test.cpp:127: Failure
 // Failled
 // Your message...
 // [  FAILED  ] ManualTest.TestCase3 (0 ms)
