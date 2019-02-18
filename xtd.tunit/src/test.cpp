@@ -10,7 +10,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
   this->start_time_point = std::chrono::high_resolution_clock::now();
   current_test_ = this;
   
-  if (!this->ignore_ || settings::default_settings().also_run_ignored_tests()) {
+  if (settings::default_settings().is_valid_test_name(test_class.name(), this->name()) && (!this->ignore_ || settings::default_settings().also_run_ignored_tests())) {
     unit_test.event_listener_->on_test_initialize_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
     if (test_class.test_initialize().method() != nullptr)
       test_class.test_initialize().method()();

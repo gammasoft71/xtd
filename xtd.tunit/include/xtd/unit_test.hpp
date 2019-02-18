@@ -42,7 +42,8 @@ namespace xtd {
           this->event_listener_->on_unit_test_initialize_end(xtd::tunit::tunit_event_args(*this));
           
           for (auto& test_class : test_classes())
-            test_class.test()->run(*this);
+            if (test_class.test()->test_count())
+              test_class.test()->run(*this);
 
           this->event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
           unit_test_cleanup();
@@ -61,7 +62,14 @@ namespace xtd {
         return xtd::tunit::settings::default_settings().exit_status();
       }
       
-      size_t test_cases_count() const noexcept {return this->test_classes().size();}
+      size_t test_cases_count() const noexcept {
+        size_t count = 0;
+        for (auto test_class : this->test_classes())
+          if (test_class.test()->test_count())
+            count ++;
+        return count;
+      }
+      
       size_t test_count() const noexcept {
         size_t count = 0;
         for (auto test_class : this->test_classes())
@@ -103,7 +111,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if ((!test.ignore() || settings::default_settings().also_run_ignored_tests()) && test.passed()) count++;
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && (!test.ignore() || settings::default_settings().also_run_ignored_tests()) && test.passed()) count++;
         return count;
       }
 
