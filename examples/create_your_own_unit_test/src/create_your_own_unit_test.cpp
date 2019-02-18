@@ -8,7 +8,6 @@ using namespace xtd::tunit;
 class google_unit_test : public unit_test {
 public:
   google_unit_test() = default;
-  
   google_unit_test(char* argv[], int argc) : unit_test(argv, argc) {}
   
 private:
