@@ -107,11 +107,11 @@ private:
       for(string name : this->failed_test_names()) {
         cout << "[  FAILED  ] " << name << endl;
       }
+      cout << endl;
+      cout << " " << this->failed_test_count() << " FAILED TEST" << endl;
     }
-    cout << endl;
-    if (this->failed_test_count()) cout << " " << this->failed_test_count() << " FAILED TEST" << endl;
-    if (this->ignore_test_count()) cout << "  YOU HAVE " << this->ignore_test_count() << " DISABLED TESTS" << endl;
-    cout << endl;
+    if (!this->failed_test_count() && this->ignore_test_count()) cout << endl;
+    if (this->ignore_test_count()) cout << "  YOU HAVE " << this->ignore_test_count() << " DISABLED TESTS" << endl << endl;
   }
 };
 
