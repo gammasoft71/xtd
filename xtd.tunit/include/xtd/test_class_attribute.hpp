@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::test_state enum class.
+/// @brief Contains xtd::tunit::test_class_attribute class.
 #pragma once
 #include "unit_test.hpp"
 #include <memory>

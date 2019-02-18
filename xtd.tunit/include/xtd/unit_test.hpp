@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::unit_test class.
+/// @brief Contains xtd::tunit::unit_test class.
 #pragma once
 #include "event_listener.hpp"
 #include "registered_test_class.hpp"

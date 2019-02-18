@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::assert class.
+/// @brief Contains std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) function.
 #pragma once
 #include <iomanip>
 #include <iostream>

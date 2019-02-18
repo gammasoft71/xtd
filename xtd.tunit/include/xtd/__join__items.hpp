@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::assert class.
+/// @brief Contains__join__items functions.
 #pragma once
 #include <sstream>
 #include <string>

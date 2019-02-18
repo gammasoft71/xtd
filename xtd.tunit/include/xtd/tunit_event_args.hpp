@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::test_state enum class.
+/// @brief Contains xtd::tunit::tunit_event_args class.
 #pragma once
 
 /// @brief The xtd namespace contains all fundamental classes to access console.

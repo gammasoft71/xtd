@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::assert_exception class.
+/// @brief Contains xtd::tunit::assert_error exception.
 #pragma once
 #include <stdexcept>
 #include <string>

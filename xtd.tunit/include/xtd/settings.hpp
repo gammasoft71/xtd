@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::settings class.
+/// @brief Contains xtd::tunit::settings class.
 #pragma once
 #include <cstdlib>
 #include <string>

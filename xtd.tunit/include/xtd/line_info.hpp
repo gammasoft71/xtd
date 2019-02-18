@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::caller class.
+/// @brief Contains xtd::tunit::line_info class.
 #pragma once
 #include <ostream>
 #include <string>

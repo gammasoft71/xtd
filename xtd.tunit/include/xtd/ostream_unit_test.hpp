@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::ostream_unit_test class.
+/// @brief Contains xtd::tunit::ostream_event_listener class.
 #pragma once
 #include "unit_test.hpp"
 #include <ostream>

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::assert class.
+/// @brief Contains __demangle function.
 #pragma once
 #include <string>
 

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::registered_method class.
+/// @brief Contains xtd::tunit::test class.
 #pragma once
 #include "assert.hpp"
 #include "assert_error.hpp"

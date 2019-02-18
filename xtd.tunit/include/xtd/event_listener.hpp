@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::event_listener class.
+/// @brief Contains xtd::tunit::event_listener class.
 #pragma once
 #include "class_event_args.hpp"
 #include "test_event_args.hpp"

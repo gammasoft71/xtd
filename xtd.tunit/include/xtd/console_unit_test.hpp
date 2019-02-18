@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::console_unit_test class.
+/// @brief Contains xtd::tunit::console_unit_test class.
 #pragma once
 #include "unit_test.hpp"
 #include "ostream_unit_test.hpp"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::test_state enum class.
+/// @brief Contains xtd::tunit::class_event_args class.
 #pragma once
 #include "test_class.hpp"
 #include "tunit_event_args.hpp"
