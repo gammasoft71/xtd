@@ -9,6 +9,7 @@ set(SOURCES
   src/one_test_two_test_cases.cpp
   src/one_test_two_test_cases_and_one_ignore_test_case.cpp
   src/two_tests_five_test_cases.cpp
+  src/test_assert_are_equal.cpp
 )
 source_group(src FILES ${SOURCES})
 

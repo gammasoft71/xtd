@@ -95,7 +95,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (!test.passed()) count++;
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && !test.passed()) count++;
         return count;
       }
 
@@ -103,7 +103,7 @@ namespace xtd {
         std::vector<std::string> names;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (!test.passed()) names.push_back(test_class.test()->name() + "." + test.name());
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && !test.passed()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
 

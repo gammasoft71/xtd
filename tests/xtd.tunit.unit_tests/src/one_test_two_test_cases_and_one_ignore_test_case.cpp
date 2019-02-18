@@ -16,6 +16,7 @@ namespace unit_tests {
 
 void test_(one_test_two_test_cases_and_one_ignore_test_case, test_output) {
   std::stringstream ss;
+  xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("one_test_two_test_cases_and_one_ignore_test_case.*");
   xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::ostream_unit_test(ss, argv, argc).run();
@@ -35,6 +36,7 @@ void test_(one_test_two_test_cases_and_one_ignore_test_case, test_output) {
 
 void test_(one_test_two_test_cases_and_one_ignore_test_case, test_result) {
   std::stringstream ss;
+  xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("one_test_two_test_cases_and_one_ignore_test_case.*");
   xtd::tunit::settings::default_settings().show_duration(false);
   int result = xtd::tunit::ostream_unit_test(ss).run();
