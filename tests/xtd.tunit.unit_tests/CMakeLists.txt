@@ -12,6 +12,8 @@ set(SOURCES
   src/test_assert_are_equal_succeed.cpp
   src/test_assert_are_not_equal_failed.cpp
   src/test_assert_are_not_equal_succeed.cpp
+  src/test_assert_are_not_same_failed.cpp
+  src/test_assert_are_not_same_succeed.cpp
   src/two_tests_five_test_cases.cpp
 )
 source_group(src FILES ${SOURCES})
