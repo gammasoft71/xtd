@@ -15,7 +15,7 @@ namespace xtd {
 
       void on_class_end(const xtd::tunit::class_event_args& e) const override {
         this->event_listener::on_class_end(e);
-        this->os_ << "  End " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms total) " << std::endl;
+        this->os_ << "  End " << e.test_class().test_count() << " test" << (e.test_class().test_count() < 2 ? "" : "s") << " from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms total)" << std::endl;
       }
       
       void on_class_start(const xtd::tunit::class_event_args& e) const override {
