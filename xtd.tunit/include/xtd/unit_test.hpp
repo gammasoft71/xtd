@@ -19,24 +19,14 @@ namespace xtd {
     /// @brief The template class.
     class unit_test {
     public:
-      unit_test() noexcept {
-        on_unit_test_initialize_start(xtd::tunit::tunit_event_args::empty());
-        unit_test_initialize();
-        on_unit_test_initialize_end(xtd::tunit::tunit_event_args::empty());
-      }
+      unit_test() = default;
       
       unit_test(char* argv[], int argc) noexcept {
         /// parse args...
-        on_unit_test_initialize_start(xtd::tunit::tunit_event_args::empty());
-        unit_test_initialize();
-        on_unit_test_initialize_end(xtd::tunit::tunit_event_args::empty());
       }
 
       /// @cond
       virtual ~unit_test() {
-        on_unit_test_cleanup_start(xtd::tunit::tunit_event_args::empty());
-        unit_test_cleanup();
-        on_unit_test_cleanup_end(xtd::tunit::tunit_event_args::empty());
       }
       /// @endcond
       
@@ -69,8 +59,18 @@ namespace xtd {
         this->start_time_point = std::chrono::high_resolution_clock::now();
         try {
           this->on_unit_test_start(xtd::tunit::tunit_event_args::empty());
+
+          on_unit_test_initialize_start(xtd::tunit::tunit_event_args::empty());
+          unit_test_initialize();
+          on_unit_test_initialize_end(xtd::tunit::tunit_event_args::empty());
+          
           for (auto& test_class : test_classes())
             test_class.test()->run(*this);
+
+          on_unit_test_cleanup_start(xtd::tunit::tunit_event_args::empty());
+          unit_test_cleanup();
+          on_unit_test_cleanup_end(xtd::tunit::tunit_event_args::empty());
+          
           this->on_unit_test_end(xtd::tunit::tunit_event_args::empty());
         } catch(const std::exception& e) {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
@@ -80,6 +80,7 @@ namespace xtd {
           // do error...
         }
         this->end_time_point = std::chrono::high_resolution_clock::now();
+
         return xtd::tunit::settings::default_settings().exit_status();
       }
       
