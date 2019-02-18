@@ -26,10 +26,12 @@ namespace assert_unit_tests {
     else {
       std::cout << "  FAILED " << name << std::endl;
       std::cout << std::endl;
-      std::cout << "    Expected: " << std::endl;
+      std::cout << "--------------------------------------------------" << std::endl;
+      std::cout << "**  Expected: " << std::endl;
       std::cout << expected << std::endl;
-      std::cout <<"     But was:  " << std::endl;
+      std::cout << "**  But was:  " << std::endl;
       std::cout << actual << std::endl;
+      std::cout << "--------------------------------------------------" << std::endl;
       std::cout << file << ":" << line << std::endl;
       std::cout << std::endl;
       throw unit_test_error("assertion failed!");
@@ -46,13 +48,14 @@ namespace assert_unit_tests {
       try {
         for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
           assert_unit_test.method(assert_unit_test.name, argc, argv);
-        std::cout << "end unit tests" << std::endl;
       }catch(...) {
-        std::cout << "end unit tests" << std::endl;
-        std::cout << std::endl;
         std::cout << "FAILED TEST" << std::endl;
+        std::cout << std::endl;
         return 1;
       }
+
+      std::cout << "end unit tests" << std::endl;
+      std::cout << std::endl << "PASSED " << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl << std::endl;
       return 0;
     }
 
