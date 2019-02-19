@@ -70,7 +70,7 @@ namespace xtd {
           //__console_foreground_color(__console_color::red);
           this->os_ << "*** FAILED ";
           //__console_reset_color();
-          this->os_ << e.unit_test().failed_test_count() << " test, listed below:" << std::endl;
+          this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
           for(auto name : e.unit_test().failed_test_names()) {
             //__console_foreground_color(__console_color::red);
             this->os_ << "*** FAILED ";
