@@ -9,12 +9,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::vector v1 = {1, 2, 3, 4};
-      xtd::tunit::assert::does_not_throw([&] {v1.at(2);});
+      xtd::tunit::assert::does_not_throw_([&] {v1.at(2);});
     }
     
     void test_method_(test_case_failed) {
       std::vector v1 = {1, 2, 3, 4};
-      xtd::tunit::assert::does_not_throw([&] {v1.at(5);});
+      xtd::tunit::assert::does_not_throw_([&] {v1.at(5);});
     }
   };
 }
@@ -33,14 +33,14 @@ int main(int argc, char* argv[]) {
 //
 // Expected: No Exception to be thrown
 // But was:  <std::out_of_range>
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_does_not_throw.cpp:15
+// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_does_not_throw.cpp:17
 //
 //   End 2 tests from test (4 ms total)
 //
 //   Summary :
-//     PASSED 1 tests.
+//     PASSED 1 test.
 // *** FAILED 1 test, listed below:
 // *** FAILED test.test_case_failed
 //
-//     FAILED 1 tests.
+//     FAILED 1 test.
 // End 2 tests from 1 test case ran. (4 ms total)
