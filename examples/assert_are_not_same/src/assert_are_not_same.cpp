@@ -8,13 +8,13 @@ namespace unit_tests {
     void test_method_(test_case_succeed) {
       int a = 24;
       int b =  24;
-      xtd::tunit::assert::are_not_same_(b, a);
+      assert::are_not_same_(b, a);
     }
 
     void test_method_(test_case_failed) {
       int a = 24;
       int& b = a;
-      xtd::tunit::assert::are_not_same_(b, a);
+      assert::are_not_same_(b, a);
     }
   };
 }
