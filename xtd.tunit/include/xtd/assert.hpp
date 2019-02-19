@@ -1764,7 +1764,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: less than " << val2 << "\nBut was:  " << val1;
+          ss << "Expected: less than or equal to " << val2 << "\nBut was:  " << val1;
           fail(ss.str(), message, line_info);
         }
       }
