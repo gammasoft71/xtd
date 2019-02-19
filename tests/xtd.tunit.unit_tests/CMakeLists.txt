@@ -18,6 +18,8 @@ set(SOURCES
   src/test_assert_are_same_succeed.cpp
   src/test_assert_contains_collection_failed.cpp
   src/test_assert_contains_collection_succeed.cpp
+  src/test_assert_contains_string_failed.cpp
+  src/test_assert_contains_string_succeed.cpp
   src/two_tests_five_test_cases.cpp
 )
 source_group(src FILES ${SOURCES})
