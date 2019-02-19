@@ -2587,11 +2587,13 @@ namespace xtd {
 }
 
 /// @cond
+#define __CMD_ASSERT_0_ARGS__(cmd) cmd(line_info_)
+#define __CMD_ASSERT_1_ARGS__(cmd, arg1) cmd(arg1, line_info_)
 #define __CMD_ASSERT_2_ARGS__(cmd, arg1, arg2) cmd(arg1, arg2, line_info_)
 #define __CMD_ASSERT_3_ARGS__(cmd, arg1, arg2, arg3) cmd(arg1, arg2, arg3, line_info_)
 #define __CMD_ASSERT_4_ARGS__(cmd, arg1, arg2, arg3, arg4) cmd(arg1, arg2, arg3, arg4)
 #define __GET_LAST_ARG(arg1, arg2, arg3, arg4, arg5, ...) arg5
-#define __CMD_ASSERT_MACRO_CHOOSER(cmd, ...) __GET_LAST_ARG(__VA_ARGS__, __CMD_ASSERT_4_ARGS__, __CMD_ASSERT_3_ARGS__, __CMD_ASSERT_2_ARGS__, )
+#define __CMD_ASSERT_MACRO_CHOOSER(cmd, ...) __GET_LAST_ARG(__VA_ARGS__, __CMD_ASSERT_4_ARGS__, __CMD_ASSERT_3_ARGS__, __CMD_ASSERT_2_ARGS__, __CMD_ASSERT_1_ARGS__, __CMD_ASSERT_0_ARGS__, )
 #define __CMD_ASSERT_ARGS(cmd, ...) __CMD_ASSERT_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
 /// @endcond
 
@@ -2607,7 +2609,7 @@ namespace xtd {
 
 #define does_not_throw_(...) __CMD_ASSERT_ARGS(does_not_throw, __VA_ARGS__)
 
-#define fail_(...) __CMD_ASSERT_ARGS(fail, __VA_ARGS__)
+#define fail_() fail(line_info_)
 
 #define greater_(...) __CMD_ASSERT_ARGS(greater, __VA_ARGS__)
 
