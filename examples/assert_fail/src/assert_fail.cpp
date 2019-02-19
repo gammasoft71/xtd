@@ -33,5 +33,5 @@ int main(int argc, char* argv[]) {
 // *** FAILED 1 test, listed below:
 // *** FAILED test.test_case_failed
 //
-//     FAILED 1 tests.
+//     FAILED 1 test.
 // End 1 test from 1 test case ran. (0 ms total)
