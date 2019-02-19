@@ -9,22 +9,22 @@ namespace unit_tests {
   public:
     void test_method_(test_case_collection_succeed) {
       vector v = {0, 1, 2, 3};
-      assert::contains(2, v);
+      assert::contains_(2, v);
     }
     
     void test_method_(test_case_collection_failed) {
       vector v = {0, 1, 2, 3};
-      assert::contains(4, v);
+      assert::contains_(4, v);
     }
     
     void test_method_(test_case_string_succeed) {
       string s = "string";
-      assert::contains('i', s);
+      assert::contains_('i', s);
     }
     
     void test_method_(test_case_string_failed) {
       string s = "string";
-      assert::contains('a', s);
+      assert::contains_('a', s);
     }
   };
 }
@@ -43,20 +43,20 @@ int main(int argc, char* argv[]) {
 //
 // Expected: collection containing 4
 // But was:  < 0, 1, 2, 3 >
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:15
+// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:17
 //
 //     PASSED test_case_string_succeed (0 ms total)
 //     FAILED test_case_string_failed (0 ms total)
 //
 // Expected: collection containing a
 // But was:  < 's', 't', 'r', 'i', 'n', 'g' >
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:25
+// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:27
 //
 //   End 4 tests from test (0 ms total)
 //
 //   Summary :
 //     PASSED 2 tests.
-// *** FAILED 2 test, listed below:
+// *** FAILED 2 tests, listed below:
 // *** FAILED test.test_case_collection_failed
 // *** FAILED test.test_case_string_failed
 //
