@@ -1003,7 +1003,7 @@ namespace xtd {
         if (dynamic_cast<const Type*>(&value) == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: instance of <" + __demangle(typeid(Type).name()) + ">\nBut was:  <" + __demangle(typeid(value).name()) + ">", message, line_info);
+          fail("Expected: not instance of <" + __demangle(typeid(Type).name()) + ">\nBut was:  <" + __demangle(typeid(value).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -2521,7 +2521,7 @@ namespace xtd {
 
 #define is_not_empty_(...) __CMD_ASSERT_ARGS(is_not_empty, __VA_ARGS__)
 
-#define is_not_instance_of_(...) __CMD_ASSERT_ARGS(is_not_instance_of, __VA_ARGS__)
+#define is_not_instance_of_(Type, ...) __CMD_ASSERT_ARGS(is_not_instance_of<Type>, __VA_ARGS__)
 
 #define is_not_null_(...) __CMD_ASSERT_ARGS(is_not_null, __VA_ARGS__)
 
