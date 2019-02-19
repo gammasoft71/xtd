@@ -151,7 +151,7 @@ int main(int argc, char* argv[]) {
 // [ RUN      ] test.test_case2
 // [       OK ] test.test_case2 (0 ms)
 // [ RUN      ] test.test_case3
-// !---OMITTED---!/xtd/xtd.tunit/examples/create_your_own_unit_test/src/create_your_own_unit_test.cpp:127: Failure
+// !---OMITTED---!/xtd/xtd.tunit/examples/create_your_own_unit_test/src/create_your_own_unit_test.cpp:130: Failure
 // Failled
 // Your message...
 // [  FAILED  ] ManualTest.TestCase3 (0 ms)
