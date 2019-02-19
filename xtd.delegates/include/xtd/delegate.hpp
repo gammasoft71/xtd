@@ -201,7 +201,7 @@ namespace xtd {
     static delegate remove(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
       for (const function_t& function : value.functions) {
-        if (Find(result.functions.begin(), result.functions.end(), function) != result.functions.end()) {
+        if (find(result.functions.begin(), result.functions.end(), function) != result.functions.end()) {
           for (typename std::vector<function_t>::reverse_iterator iterator = result.functions.rbegin(); iterator != result.functions.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
               result.functions.erase((iterator + 1).base());
@@ -221,7 +221,7 @@ namespace xtd {
     static delegate remove_all(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
       for (const function_t& function : value.functions) {
-        if (Find(result.functions.begin(), result.functions.end(), function) != result.functions.end()) {
+        if (find(result.functions.begin(), result.functions.end(), function) != result.functions.end()) {
           for (typename std::vector<function_t>::reverse_iterator iterator = result.functions.rbegin(); iterator != result.functions.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
               result.functions.erase((iterator + 1).base());
@@ -298,7 +298,7 @@ namespace xtd {
       return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)(arguments_t...)>() == fct2.template target<result_t(*)(arguments_t...)>() || *fct1.template target<result_t(*)(arguments_t...)>() == *fct2.template target<result_t(*)(arguments_t...)>());
     }
 
-    static typename std::vector<function_t>::const_iterator Find(typename std::vector<function_t>::const_iterator begin, typename std::vector<function_t>::const_iterator end, const function_t& function) noexcept {
+    static typename std::vector<function_t>::const_iterator find(typename std::vector<function_t>::const_iterator begin, typename std::vector<function_t>::const_iterator end, const function_t& function) noexcept {
       for (typename std::vector<function_t>::const_iterator iterator = begin; iterator != end; ++iterator)
         if (are_equals(*iterator, function))
           return iterator;
