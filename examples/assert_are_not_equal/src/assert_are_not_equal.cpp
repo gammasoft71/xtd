@@ -7,12 +7,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       int i = 24;
-      xtd::tunit::assert::are_not_equal(23, i);
+      xtd::tunit::assert::are_not_equal_(23, i);
     }
 
     void test_method_(test_case_failed) {
       int i = 24;
-      xtd::tunit::assert::are_not_equal(24, i);
+      xtd::tunit::assert::are_not_equal_(24, i);
     }
   };
 }
@@ -31,15 +31,15 @@ int main(int argc, char* argv[]) {
 //
 // Expected: not 24
 // But was:  24
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_not_equal/src/assert_are_not_equal.cpp:13
+// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_not_equal/src/assert_are_not_equal.cpp:15
 //
 //   End 2 tests from test (0 ms total)
 //
 //   Summary :
-//     PASSED 1 tests.
+//     PASSED 1 test.
 // *** FAILED 1 test, listed below:
 // *** FAILED test.test_case_failed
 //
-//     FAILED 1 tests.
+//     FAILED 1 test.
 // End 2 tests from 1 test case ran. (0 ms total)
 
