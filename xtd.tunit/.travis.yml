@@ -1,0 +1,23 @@
+language: cpp
+dist: xenial
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-7
+    - lcov
+
+matrix:
+  include:
+  - env: TEST="Build on macOS"
+    os: osx
+    osx_image: xcode10.0
+    script: scripts/travis/build_macos.sh
+  - env: TEST="Build on Linux"
+    os: linux
+    script: scripts/travis/build_linux.sh
+  - env: TEST="Coverage"
+    os: linux
+    script: scripts/travis/coverage.sh
