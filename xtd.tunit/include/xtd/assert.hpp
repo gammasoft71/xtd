@@ -1985,7 +1985,7 @@ namespace xtd {
 
 #define null_(...) __CMD_ASSERT_ARGS(null, __VA_ARGS__)
 
-#define succeed_(...) __CMD_ASSERT_ARGS(succeed, __VA_ARGS__)
+#define succeed_() succeed(line_info_)
 
 #define throws_(TException, ...) __CMD_ASSERT_ARGS(throws<TException>, __VA_ARGS__)
 
