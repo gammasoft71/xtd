@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 //     PASSED test_case_succeed (0 ms total)
 //     FAILED test_case_failed (4 ms total)
 //
-// Expected: <std::out_of_range>
+// Expected: <exception>
 // But was:  <nothing>
 // error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_throws_any.cpp:17
 //
