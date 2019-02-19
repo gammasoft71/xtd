@@ -2565,9 +2565,7 @@ namespace xtd {
 
 #define is_false_(...) __CMD_ASSERT_ARGS(is_false, __VA_ARGS__)
 
-#define is_instance_of_(...) __CMD_ASSERT_ARGS(is_instance_of, __VA_ARGS__)
-
-#define is_instance_of_type_(...) __CMD_ASSERT_ARGS(is_instance_of_type, __VA_ARGS__)
+#define is_instance_of_(Type, ...) __CMD_ASSERT_ARGS(is_instance_of<Type>, __VA_ARGS__)
 
 #define is_NaN_(...) __CMD_ASSERT_ARGS(is_NaN, __VA_ARGS__)
 
