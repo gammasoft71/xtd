@@ -15,7 +15,7 @@ namespace unit_tests {
 // The main entry point for the application.
 int main(int argc, char* argv[]) {
   // create your own ostream in this case a string stream for example
-  std::stringstream ss;
+  stringstream ss;
   
   // create and run an ostream_unit_test
   int result = ostream_unit_test(ss, argv, argc).run();

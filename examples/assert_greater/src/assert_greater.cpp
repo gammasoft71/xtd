@@ -7,12 +7,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       int i = 24;
-      xtd::tunit::assert::greater_(i, 12);
+      assert::greater_(i, 12);
     }
     
     void test_method_(test_case_failed) {
       int i = 24;
-      xtd::tunit::assert::greater_(i, 48);
+      assert::greater_(i, 48);
     }
   };
 }

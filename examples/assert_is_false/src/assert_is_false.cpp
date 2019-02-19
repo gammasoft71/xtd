@@ -10,12 +10,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       string s = "string";
-      xtd::tunit::assert::is_false_(std::empty(s));
+      assert::is_false_(std::empty(s));
     }
 
     void test_method_(test_case_failed) {
       string s;
-      xtd::tunit::assert::is_false_(std::empty(s));
+      assert::is_false_(std::empty(s));
     }
   };
 }

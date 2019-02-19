@@ -1,14 +1,12 @@
 #include <xtd/tunit>
-#include <vector>
 
-using namespace std;
 using namespace xtd::tunit;
 
 namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_failed) {
-      xtd::tunit::assert::fail_();
+      assert::fail_();
     }
   };
 }
@@ -25,7 +23,7 @@ int main(int argc, char* argv[]) {
 //     FAILED test_case_failed (0 ms total)
 //
 // Failled
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_fail.cpp:11
+// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_fail.cpp:9
 //
 //   End 1 test from test (0 ms total)
 //

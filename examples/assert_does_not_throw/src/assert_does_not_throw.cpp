@@ -8,13 +8,13 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      std::vector v = {1, 2, 3, 4};
-      xtd::tunit::assert::does_not_throw_([&] {v.at(2);});
+      vector v = {1, 2, 3, 4};
+      assert::does_not_throw_([&] {v.at(2);});
     }
     
     void test_method_(test_case_failed) {
-      std::vector v = {1, 2, 3, 4};
-      xtd::tunit::assert::does_not_throw_([&] {v.at(5);});
+      vector v = {1, 2, 3, 4};
+      assert::does_not_throw_([&] {v.at(5);});
     }
   };
 }

@@ -7,17 +7,17 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed1) {
       int i = 24;
-      xtd::tunit::assert::greater_or_equal_(i, 12);
+      assert::greater_or_equal_(i, 12);
     }
     
     void test_method_(test_case_succeed2) {
       int i = 24;
-      xtd::tunit::assert::greater_or_equal_(i, 24);
+      assert::greater_or_equal_(i, 24);
     }
     
     void test_method_(test_case_failed) {
       int i = 24;
-      xtd::tunit::assert::greater_or_equal_(i, 48);
+      assert::greater_or_equal_(i, 48);
     }
   };
 }
