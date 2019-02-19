@@ -881,8 +881,11 @@ namespace xtd {
       static void is_NaN(float value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(value))
           succeed(message, line_info);
-        else
-          fail("Expected: false\nBut was:  true", message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: NaN\nBut was:  " << value;
+          fail(ss.str(), message, line_info);
+        }
       }
       
       /// @brief Asserts that collection or traits does not contain any item.
