@@ -1,6 +1,5 @@
 #include <xtd/tunit>
-#include <stdexcept>
-#include <string>
+#include <memory>
 
 using namespace std;
 using namespace xtd::tunit;
