@@ -1000,62 +1000,6 @@ namespace xtd {
           fail("Expected: instance of <" + __demangle(typeid(Type).name()) + ">\nBut was:  <" + __demangle(typeid(value).name()) + ">", message, line_info);
       }
       
-      /// @brief Asserts that an object is not of the type supplied or a derived type.
-      /// @param value The object to verify
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except); test throws an assertion_error exception.
-      /// @endcode
-      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
-      template<typename Type, typename TValue>
-      static void is_not_instance_of_type(const TValue& value) {is_not_instance_of_type<Type>(value, "", line_info());}
-      
-      /// @brief Asserts that an object is not of the type supplied or a derived type.
-      /// @param value The object to verify
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, line_info_); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, line_info_); test throws an assertion_error exception.
-      /// @endcode
-      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
-      template<typename Type, typename TValue>
-      static void is_not_instance_of_type(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_instance_of_type<Type>(value, "", line_info);}
-      
-      /// @brief Asserts that an object is not of the type supplied or a derived type.
-      /// @param value The object to verify
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, "User message..."); test throws an assertion_error exception.
-      /// @endcode
-      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
-      template<typename Type, typename TValue>
-      static void is_not_instance_of_type(const TValue& value, const std::string& message) {is_not_instance_of_type<Type>(value, message, line_info());}
-      
-      /// @brief Asserts that an object is not of the type supplied or a derived type.
-      /// @param value The object to verify
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::invalid_argument except("invalid argument");
-      /// xtd::tunit::assert::is_not_instance_of_type<std::bad_cast>(except, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::is_not_instance_of_type<std::logic_error>(except, "User message...", line_info_); test throws an assertion_error exception.
-      /// @endcode
-      /// @see td::tunit::assert::is_not_instance_of<Type, TValue>
-      template<typename Type, typename TValue>
-      static void is_not_instance_not_of_type(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {is_not_instance_of<Type>(value, message, line_info);}
-      
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -2572,8 +2516,6 @@ namespace xtd {
 #define is_not_empty_(...) __CMD_ASSERT_ARGS(is_not_empty, __VA_ARGS__)
 
 #define is_not_instance_of_(...) __CMD_ASSERT_ARGS(is_not_instance_of, __VA_ARGS__)
-
-#define is_not_instance_of_type_(...) __CMD_ASSERT_ARGS(is_not_instance_of_type, __VA_ARGS__)
 
 #define is_not_null_(...) __CMD_ASSERT_ARGS(is_not_null, __VA_ARGS__)
 
