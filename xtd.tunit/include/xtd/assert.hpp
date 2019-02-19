@@ -369,10 +369,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}); // test ok.
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(2);}); // test ok.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(5);}); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_throws(const std::function<void()>& statement) {does_not_throws(statement, "", line_info());}
+      static void does_not_throw(const std::function<void()>& statement) {does_not_throw(statement, "", line_info());}
       
       /// @brief Asserts that the staement does not throw an exception.
       /// @param statement The statement that verify.
@@ -381,10 +381,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, line_info_); // test ok.
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(2);}, line_info_); // test ok.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(5);}, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {does_not_throws(statement, "", line_info);}
+      static void does_not_throw(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {does_not_throw(statement, "", line_info);}
       
       /// @brief Asserts that the staement does not throw an exception.
       /// @param statement The statement that verify.
@@ -393,10 +393,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message..."); // test ok.
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(2);}, "User message..."); // test ok.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(5);}, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_throws(const std::function<void()>& statement, const std::string& message) {does_not_throws(statement, message, line_info());}
+      static void does_not_throw(const std::function<void()>& statement, const std::string& message) {does_not_throw(statement, message, line_info());}
       
       /// @brief Asserts that the staement does not throw an exception.
       /// @param statement The statement that verify.
@@ -406,10 +406,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<int> v1 = {1, 2, 3, 4};
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(2);}, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::does_not_throws([&] {v1.at(5);}, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(2);}, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::does_not_throw([&] {v1.at(5);}, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_throw(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
           succeed(message, line_info);
@@ -2605,7 +2605,7 @@ namespace xtd {
 
 #define contains_(...) __CMD_ASSERT_ARGS(contains, __VA_ARGS__)
 
-#define does_not_throws_(...) __CMD_ASSERT_ARGS(does_not_throws, __VA_ARGS__)
+#define does_not_throw_(...) __CMD_ASSERT_ARGS(does_not_throw, __VA_ARGS__)
 
 #define fail_(...) __CMD_ASSERT_ARGS(fail, __VA_ARGS__)
 
