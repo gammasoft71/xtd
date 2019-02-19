@@ -1359,7 +1359,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: not null\nBut was:  null", message, line_info);
+          fail("Expected: null\nBut was:  not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -1420,7 +1420,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: not null\nBut was:  null", message, line_info);
+          fail("Expected: null\nBut was:  not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -1478,10 +1478,10 @@ namespace xtd {
       /// @endcode
       template<typename TPointer>
       static void is_null(const std::shared_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (pointer -= nullptr)
+        if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: not null\nBut was:  null", message, line_info);
+          fail("Expected: null\nBut was:  not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
