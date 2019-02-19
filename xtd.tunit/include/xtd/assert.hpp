@@ -2516,9 +2516,11 @@ namespace xtd {
       static void throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
-          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <nothing", message, line_info);
+          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <nothing>", message, line_info);
         } catch (const TException&) {
           succeed(message, line_info);
+        } catch (const xtd::tunit::assert_error&) {
+          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <nothing>", message, line_info);
         } catch (const std::exception& e) {
           fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
