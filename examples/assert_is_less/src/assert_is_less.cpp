@@ -7,12 +7,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       int i = 24;
-      assert::less_(i, 48);
+      assert::is_less_(i, 48);
     }
     
     void test_method_(test_case_failed) {
       int i = 24;
-      assert::less_(i, 12);
+      assert::is_less_(i, 12);
     }
   };
 }
@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: less than 12
 // But was:  24
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_less.cpp:15
+// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_is_less.cpp:15
 //
 //   End 2 tests from test (0 ms total)
 //

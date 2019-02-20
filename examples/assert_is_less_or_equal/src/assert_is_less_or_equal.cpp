@@ -7,17 +7,17 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed1) {
       int i = 24;
-      assert::less_or_equal_(i, 48);
+      assert::is_less_or_equal_(i, 48);
     }
     
     void test_method_(test_case_succeed2) {
       int i = 24;
-      assert::less_or_equal_(i, 24);
+      assert::is_less_or_equal_(i, 24);
     }
     
     void test_method_(test_case_failed) {
       int i = 24;
-      assert::less_or_equal_(i, 12);
+      assert::is_less_or_equal_(i, 12);
     }
   };
 }
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: ess than or equal to 12
 // But was:  24
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_less_or_equal.cpp:20
+// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_is_less_or_equal.cpp:20
 //
 //   End 3 tests from test (0 ms total)
 //
