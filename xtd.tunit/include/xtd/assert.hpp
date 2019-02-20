@@ -1421,6 +1421,67 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: not null\nBut was:  null", message, line_info);}
       
+      /// @brief Asserts that ta condition is not zero.
+      /// @param value The value to check is not zero.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 42;
+      /// int i2 = 0;
+      /// xtd::tunit::assert::is_not_zero(i1); // test ok.
+      /// xtd::tunit::assert::is_not_zero(i2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_not_zero(const TValue& value) {is_not_zero(value, "", line_info());}
+      
+      /// @brief Asserts that ta condition is not zero.
+      /// @param value The value to check is not zero.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 42;
+      /// int i2 = 0;
+      /// xtd::tunit::assert::is_not_zero(i1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_not_zero(i2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_not_zero(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_zero(value, "", line_info);}
+      
+      /// @brief Asserts that ta condition is not zero.
+      /// @param value The value to check is not zero.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 42;
+      /// int i2 = 0;
+      /// xtd::tunit::assert::is_not_zero(i1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_not_zero(i2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_not_zero(const TValue& value, const std::string& message) {is_not_zero(value, message, line_info());}
+      
+      /// @brief Asserts that ta condition is not zero.
+      /// @param value The value to check is not zero.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 42;
+      /// int i2 = 0;
+      /// xtd::tunit::assert::is_not_zero(i1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_not_zero(i2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_not_zero(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (value == 0)
+          succeed(message, line_info);
+        else
+          fail("Expected: not 0\nBut was:  0", message, line_info);
+      }
+
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1770,7 +1831,7 @@ namespace xtd {
       }
  
       /// @brief Asserts that ta condition is zero.
-      /// @param value The condition to check is zero.
+      /// @param value The value to check is zero.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
@@ -1783,7 +1844,7 @@ namespace xtd {
       static void is_zero(const TValue& value) {is_zero(value, "", line_info());}
       
       /// @brief Asserts that ta condition is zero.
-      /// @param value The condition to check is zero.
+      /// @param value The value to check is zero.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -1797,7 +1858,7 @@ namespace xtd {
       static void is_zero(const TValue& value, const xtd::tunit::line_info& line_info) {is_zero(value, "", line_info);}
       
       /// @brief Asserts that ta condition is zero.
-      /// @param value The condition to check is zero.
+      /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -1811,7 +1872,7 @@ namespace xtd {
       static void is_zero(const TValue& value, const std::string& message) {is_zero(value, message, line_info());}
       
       /// @brief Asserts that ta condition is zero.
-      /// @param value The condition to check is zero.
+      /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
