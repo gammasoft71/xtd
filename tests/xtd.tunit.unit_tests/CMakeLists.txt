@@ -10,6 +10,10 @@ set(SOURCES
   src/one_test_two_test_cases_and_one_ignore_test_case.cpp
   src/test_assert_are_equal_failed.cpp
   src/test_assert_are_equal_succeed.cpp
+  src/test_assert_are_equal_double.cpp
+  src/test_assert_are_equal_double_NaN.cpp
+  src/test_assert_are_equal_float.cpp
+  src/test_assert_are_equal_float_NaN.cpp
   src/test_assert_are_not_equal_failed.cpp
   src/test_assert_are_not_equal_succeed.cpp
   src/test_assert_are_not_same_failed.cpp
