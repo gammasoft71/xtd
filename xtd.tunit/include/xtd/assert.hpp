@@ -1543,7 +1543,7 @@ namespace xtd {
         if (value == 0)
           succeed(message, line_info);
         else
-          fail("Expected: not 0\nBut was:  0", message, line_info);
+          fail("Expected: not zero\nBut was:  0", message, line_info);
       }
 
       /// @brief Asserts that the pointer is null.
@@ -2017,7 +2017,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: 0\nBut was:  " << value;
+          ss << "Expected: zero\nBut was:  " << value;
           fail(ss.str(), message, line_info);
         }
       }

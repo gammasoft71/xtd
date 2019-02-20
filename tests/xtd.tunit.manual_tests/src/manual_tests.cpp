@@ -81,10 +81,88 @@ private:
   int revision_ = -1;
 };
 
+namespace xtd {
+  namespace tunit {
+    template<typename TValue1, typename TValue2>
+    void that(const TValue1& value, void(*constraint)(const TValue1&, const TValue2&)) {
+      constraint(value);
+    }
+    
+    template<typename TValue>
+    void that(TValue value, void(*constraint)(TValue)) {
+      constraint(value);
+    }
+    
+    template<typename TValue>
+    void that(const TValue* value, void(*constraint)(const TValue*)) {
+      constraint(value);
+    }
+    
+    struct Is {
+      template<typename TActual, typename TExpected>
+      static void equal(const TExpected& expected, const TActual& actual) {
+        assert::are_equal(expected, actual);
+      }
+      
+      static void False(bool condition) {
+        assert::is_false(condition);
+      }
+      
+      template<typename TPointer>
+      static void Null(const TPointer* pointer) {
+        assert::is_null(pointer);
+      }
+      
+      static void True(bool condition) {
+        assert::is_true(condition);
+      }
+      
+      struct Not {
+        static void False(bool condition) {
+          if (condition == !false)
+            assert::succeed();
+          else
+            assert::fail("Expected: not false\nBut was:  false");
+        }
+        
+        template<typename TPointer>
+        static void Null(const TPointer* pointer) {
+          assert::is_not_null(pointer);
+        }
+
+        static void True(bool condition) {
+          if (condition == !true)
+            assert::succeed();
+          else
+            assert::fail("Expected: not true\nBut was:  true");
+        }
+      };
+    };
+  }
+}
+
 namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
+      bool b = true;
+      that(b, Is::True);
+    }
+    
+    void test_method_(test_case2) {
+      bool b = true;
+      that(b, Is::Not::False);
+    }
+    
+    void test_method_(test_case3) {
+      int* p = nullptr;
+      that(p, Is::Null);
+    }
+
+    void test_method_(test_case4) {
+      int i = 42;
+      int* p = &i;
+      that(p, Is::Not::Null);
     }
   };
 }
