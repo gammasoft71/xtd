@@ -172,9 +172,13 @@ namespace unit_tests {
     }
 
     void test_method_(test_case6) {
-      double d1 = std::numeric_limits<double>::quiet_NaN();
-      double d2 = std::numeric_limits<double>::quiet_NaN();
-      assert::are_equal_(d1, d2);
+      double d = std::numeric_limits<double>::quiet_NaN();
+      assert::is_true_(std::isnan(d));
+    }
+
+    void test_method_(test_case7) {
+      float f = std::numeric_limits<float>::quiet_NaN();
+      assert::are_equal_(std::numeric_limits<float>::quiet_NaN(), f);
     }
   };
 }
