@@ -1012,6 +1012,70 @@ namespace xtd {
         }
       }
       
+      /// @brief Asserts that ta condition is negative.
+      /// @param value The value to check is negative.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = -1;
+      /// int i2 = 1;
+      /// xtd::tunit::assert::is_negative(i1); // test ok.
+      /// xtd::tunit::assert::is_negative(i2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_negative(const TValue& value) {is_negative(value, "", line_info());}
+      
+      /// @brief Asserts that ta condition is negative.
+      /// @param value The value to check is negative.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = -1;
+      /// int i2 = 1;
+      /// xtd::tunit::assert::is_negative(i1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_negative(i2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_negative(const TValue& value, const xtd::tunit::line_info& line_info) {is_negative(value, "", line_info);}
+      
+      /// @brief Asserts that ta condition is negative.
+      /// @param value The value to check is negative.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = -1;
+      /// int i2 = 1;
+      /// xtd::tunit::assert::is_negative(i1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_negative(i2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_negative(const TValue& value, const std::string& message) {is_negative(value, message, line_info());}
+      
+      /// @brief Asserts that ta condition is negative.
+      /// @param value The value to check is negative.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = -1;
+      /// int i2 = 1;
+      /// xtd::tunit::assert::is_negative(i1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_negative(i2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_negative(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (value < 0)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: negative\nBut was:  " << value;
+          fail(ss.str(), message, line_info);
+        }
+      }
+
       /// @brief Asserts that collection or traits does not contain any item.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -2159,6 +2223,8 @@ namespace xtd {
 #define is_less_or_equal_(...) __CMD_ASSERT_ARGS(is_less_or_equal, __VA_ARGS__)
 
 #define is_NaN_(...) __CMD_ASSERT_ARGS(is_NaN, __VA_ARGS__)
+
+#define is_negative_(...) __CMD_ASSERT_ARGS(is_negative, __VA_ARGS__)
 
 #define is_not_empty_(...) __CMD_ASSERT_ARGS(is_not_empty, __VA_ARGS__)
 
