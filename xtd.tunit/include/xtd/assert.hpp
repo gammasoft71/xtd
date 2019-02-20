@@ -2102,6 +2102,8 @@ namespace xtd {
 
 #define is_not_null_(...) __CMD_ASSERT_ARGS(is_not_null, __VA_ARGS__)
 
+#define is_not_zero_(...) __CMD_ASSERT_ARGS(is_not_zero, __VA_ARGS__)
+
 #define is_null_(...) __CMD_ASSERT_ARGS(is_null, __VA_ARGS__)
 
 #define is_true_(...) __CMD_ASSERT_ARGS(is_true, __VA_ARGS__)
