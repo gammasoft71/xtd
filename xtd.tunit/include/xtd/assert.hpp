@@ -1768,7 +1768,71 @@ namespace xtd {
         else
           fail("Expected: true\nBut was:  false", message, line_info);
       }
-     
+ 
+      /// @brief Asserts that ta condition is zero.
+      /// @param value The condition to check is zero.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 0;
+      /// int i2 = 42;
+      /// xtd::tunit::assert::is_zero(i1); // test ok.
+      /// xtd::tunit::assert::is_zero(i2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_zero(const TValue& value) {is_zero(value, "", line_info());}
+      
+      /// @brief Asserts that ta condition is zero.
+      /// @param value The condition to check is zero.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 0;
+      /// int i2 = 42;
+      /// xtd::tunit::assert::is_zero(i1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_zero(i2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_zero(const TValue& value, const xtd::tunit::line_info& line_info) {is_zero(value, "", line_info);}
+      
+      /// @brief Asserts that ta condition is zero.
+      /// @param value The condition to check is zero.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 0;
+      /// int i2 = 42;
+      /// xtd::tunit::assert::is_zero(i1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_zero(i2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_zero(const TValue& value, const std::string& message) {is_zero(value, message, line_info());}
+      
+      /// @brief Asserts that ta condition is zero.
+      /// @param value The condition to check is zero.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 0;
+      /// int i2 = 42;
+      /// xtd::tunit::assert::is_zero(i1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_zero(i2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_zero(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (value == 0)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: 0\nBut was:  " << value;
+          fail(ss.str(), message, line_info);
+        }
+      }
+      
       /// @brief Generates a success with a generic message. This is used by the other Assert functions.
       /// @par Examples
       /// @code
@@ -1980,6 +2044,8 @@ namespace xtd {
 #define is_null_(...) __CMD_ASSERT_ARGS(is_null, __VA_ARGS__)
 
 #define is_true_(...) __CMD_ASSERT_ARGS(is_true, __VA_ARGS__)
+
+#define is_zero_(...) __CMD_ASSERT_ARGS(is_zero, __VA_ARGS__)
 
 #define succeed_() succeed(line_info_)
 
