@@ -1772,6 +1772,70 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(nullptr, "User message...", line_info_); // test ok.
       /// @endcode
       static void is_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {succeed(message, line_info);}
+      
+      /// @brief Asserts that ta condition is positive.
+      /// @param value The value to check is positive.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 1;
+      /// int i2 = -1;
+      /// xtd::tunit::assert::is_positive(i1); // test ok.
+      /// xtd::tunit::assert::is_positive(i2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_positive(const TValue& value) {is_positive(value, "", line_info());}
+      
+      /// @brief Asserts that ta condition is positive.
+      /// @param value The value to check is positive.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 1;
+      /// int i2 = -1;
+      /// xtd::tunit::assert::is_positive(i1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_positive(i2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_positive(const TValue& value, const xtd::tunit::line_info& line_info) {is_positive(value, "", line_info);}
+      
+      /// @brief Asserts that ta condition is positive.
+      /// @param value The value to check is positive.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 1;
+      /// int i2 = -1;
+      /// xtd::tunit::assert::is_positive(i1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_positive(i2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_positive(const TValue& value, const std::string& message) {is_positive(value, message, line_info());}
+      
+      /// @brief Asserts that ta condition is positive.
+      /// @param value The value to check is positive.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// int i1 = 1;
+      /// int i2 = -1;
+      /// xtd::tunit::assert::is_positive(i1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_positive(i2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_positive(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (value > 0)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: positive\nBut was:  " << value;
+          fail(ss.str(), message, line_info);
+        }
+      }
 
       /// @brief Asserts that ta condition is true.
       /// @param condition The condition to check is true.
@@ -2105,6 +2169,8 @@ namespace xtd {
 #define is_not_zero_(...) __CMD_ASSERT_ARGS(is_not_zero, __VA_ARGS__)
 
 #define is_null_(...) __CMD_ASSERT_ARGS(is_null, __VA_ARGS__)
+
+#define is_positive_(...) __CMD_ASSERT_ARGS(is_positive, __VA_ARGS__)
 
 #define is_true_(...) __CMD_ASSERT_ARGS(is_true, __VA_ARGS__)
 
