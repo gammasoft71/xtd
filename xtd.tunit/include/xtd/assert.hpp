@@ -1540,7 +1540,7 @@ namespace xtd {
       /// @endcode
       template<typename TValue>
       static void is_not_zero(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (value == 0)
+        if (value != 0)
           succeed(message, line_info);
         else
           fail("Expected: not zero\nBut was:  0", message, line_info);
