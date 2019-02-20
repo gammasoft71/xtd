@@ -166,8 +166,15 @@ namespace unit_tests {
     }
 
     void test_method_(test_case5) {
-      float d = 0.000079999999999;
-      assert::are_equal_(0.00008f, d, 0.00000000000001f);
+      vector v1 = {1, 2, 3, 4};
+      vector v2 = {1, 2, 3, 4};
+      assert::are_equal_(v1, v2);
+    }
+
+    void test_method_(test_case6) {
+      double d1 = std::numeric_limits<double>::quiet_NaN();
+      double d2 = std::numeric_limits<double>::quiet_NaN();
+      assert::are_equal_(d1, d2);
     }
   };
 }
