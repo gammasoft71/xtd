@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 //     FAILED test_case_failed (0 ms total)
 //
 // Failled
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_fail.cpp:9
+// error: !---OMITTED---!/xtd.tunit/examples/assert_does_not_throw/src/assert_fail.cpp:9
 //
 //   End 1 test from test (0 ms total)
 //

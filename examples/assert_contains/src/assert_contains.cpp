@@ -43,14 +43,14 @@ int main(int argc, char* argv[]) {
 //
 // Expected: collection containing 4
 // But was:  < 0, 1, 2, 3 >
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:17
+// error: !---OMITTED---!/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:17
 //
 //     PASSED test_case_string_succeed (0 ms total)
 //     FAILED test_case_string_failed (0 ms total)
 //
 // Expected: collection containing a
 // But was:  < 's', 't', 'r', 'i', 'n', 'g' >
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:27
+// error: !---OMITTED---!/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:27
 //
 //   End 4 tests from test (0 ms total)
 //

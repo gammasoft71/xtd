@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: not 24
 // But was:  24
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_not_equal/src/assert_are_not_equal.cpp:15
+// error: !---OMITTED---!/xtd.tunit/examples/assert_are_not_equal/src/assert_are_not_equal.cpp:15
 //
 //   End 2 tests from test (0 ms total)
 //

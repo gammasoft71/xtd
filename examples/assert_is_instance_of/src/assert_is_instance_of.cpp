@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: instance of <std::bad_cast>
 // But was:  <std::invalid_argument>
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_is_instance_of.cpp:18
+// error: !---OMITTED---!/xtd.tunit/examples/assert_are_equal/src/assert_is_instance_of.cpp:18
 //
 //   End 2 tests from test (0 ms total)
 //

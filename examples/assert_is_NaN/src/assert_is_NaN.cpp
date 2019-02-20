@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: NaN
 // But was:  3.14159
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_is_NaN.cpp:17
+// error: !---OMITTED---!/xtd.tunit/examples/assert_are_equal/src/assert_is_NaN.cpp:17
 //
 //   End 2 tests from test (0 ms total)
 //

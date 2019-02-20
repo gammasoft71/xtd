@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: true
 // But was:  false
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_is_true.cpp:18
+// error: !---OMITTED---!/xtd.tunit/examples/assert_are_equal/src/assert_is_true.cpp:18
 //
 //   End 2 tests from test (0 ms total)
 //

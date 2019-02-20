@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: greater than or equal to 48
 // But was:  24
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_are_equal/src/assert_is_greater_or_equal.cpp:20
+// error: !---OMITTED---!/xtd.tunit/examples/assert_are_equal/src/assert_is_greater_or_equal.cpp:20
 //
 //   End 3 tests from test (0 ms total)
 //

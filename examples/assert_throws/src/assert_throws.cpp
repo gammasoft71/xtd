@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 //
 // Expected: <std::out_of_range>
 // But was:  <nothing>
-// error: !---OMITTED---!/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_throws.cpp:17
+// error: !---OMITTED---!/xtd.tunit/examples/assert_does_not_throw/src/assert_throws.cpp:17
 //
 //   End 2 tests from test (4 ms total)
 //
