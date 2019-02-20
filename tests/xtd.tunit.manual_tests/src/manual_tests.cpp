@@ -145,40 +145,6 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      bool b = true;
-      that(b, Is::True);
-    }
-    
-    void test_method_(test_case2) {
-      bool b = true;
-      that(b, Is::Not::False);
-    }
-    
-    void test_method_(test_case3) {
-      int* p = nullptr;
-      that(p, Is::Null);
-    }
-
-    void test_method_(test_case4) {
-      int i = 42;
-      int* p = &i;
-      that(p, Is::Not::Null);
-    }
-
-    void test_method_(test_case5) {
-      vector v1 = {1, 2, 3, 4};
-      vector v2 = {1, 2, 3, 4};
-      assert::are_equal_(v1, v2);
-    }
-
-    void test_method_(test_case6) {
-      double d = std::numeric_limits<double>::quiet_NaN();
-      assert::is_true_(std::isnan(d));
-    }
-
-    void test_method_(test_case7) {
-      float f = std::numeric_limits<float>::quiet_NaN();
-      assert::are_equal_(std::numeric_limits<float>::quiet_NaN(), f);
     }
   };
 }
