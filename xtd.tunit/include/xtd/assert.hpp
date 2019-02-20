@@ -94,6 +94,126 @@ namespace xtd {
         }
       }
       
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24)); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(float expected, float actual, float tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
+
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24), line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(float expected, float actual, float tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
+
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24), "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(float expected, float& actual, float tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info_);}
+
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24), "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(float expected, float actual, float tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (abs(expected - actual) <= abs(tolerance))
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: " << expected << "\nBut was:  " << actual;
+          fail(ss.str(), message, line_info);
+        }
+      }
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24)); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(double expected, double actual, double tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24), line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(double expected, double actual, double tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24), "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(double expected, double actual, double tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info_);}
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::are_equal(24, int(24), "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal(23, int(24), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(double expected, double actual, double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (abs(expected - actual) <= abs(tolerance))
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: " << expected << "\nBut was:  " << actual;
+          fail(ss.str(), message, line_info);
+        }
+      }
+
       /// @brief Asserts that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.

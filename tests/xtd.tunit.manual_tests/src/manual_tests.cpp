@@ -164,6 +164,12 @@ namespace unit_tests {
       int* p = &i;
       that(p, Is::Not::Null);
     }
+
+    void test_method_(test_case5) {
+      double d = 0.00007999999999;
+      assert::are_equal_(0.00008, d, 0.0000000000001);
+      assert::are_equal_(0.00008, d);
+    }
   };
 }
 
