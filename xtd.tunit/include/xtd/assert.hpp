@@ -469,70 +469,6 @@ namespace xtd {
       /// @endcode
       static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
       
-      /// @brief Asserts that the first value is greater than or equal to the second value.
-      /// @param val1 the first value.
-      /// @param val2 the second value.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 24); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 48); // test throws an assertion_error exception.
-      /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void greater_or_equal(const TValue1& val1, const TValue2& val2) {greater_or_equal(val1, val2, "", line_info());}
-      
-      /// @brief Asserts that the first value is greater than or equal to the second value.
-      /// @param val1 the first value.
-      /// @param val2 the second value.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12, line_info_); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 24, line_info_); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 48, line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void greater_or_equal(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {greater_or_equal(val1, val2, "", line_info);}
-      
-      /// @brief Asserts that the first value is greater than or equal to the second value.
-      /// @param val1 the first value.
-      /// @param val2 the second value.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12, "User message..."); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 24, "User message..."); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 48, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message) {greater_or_equal(val1, val2, message, line_info());}
-      
-      /// @brief Asserts that the first value is greater than or equal to the second value.
-      /// @param val1 the first value.
-      /// @param val2 the second value.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::greater_or_equal(24, 12, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 24, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::greater_or_equal(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      template<typename TValue1, typename TValue2>
-      static void greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (val1 >= val2)
-          succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: greater than or equal to " << val2 << "\nBut was:  " << val1;
-          fail(ss.str(), message, line_info);
-        }
-      }
-      
       /// @brief Asserts that collection or traits contains an item.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -707,6 +643,70 @@ namespace xtd {
         else {
           std::stringstream ss;
           ss << "Expected: greater than " << val2 << "\nBut was:  " << val1;
+          fail(ss.str(), message, line_info);
+        }
+      }
+      
+      /// @brief Asserts that the first value is greater than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::is_greater_or_equal(24, 12); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 24); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 48); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2) {is_greater_or_equal(val1, val2, "", line_info());}
+      
+      /// @brief Asserts that the first value is greater than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::is_greater_or_equal(24, 12, line_info_); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 24, line_info_); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 48, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_greater_or_equal(val1, val2, "", line_info);}
+      
+      /// @brief Asserts that the first value is greater than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::is_greater_or_equal(24, 12, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 24, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 48, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message) {is_greater_or_equal(val1, val2, message, line_info());}
+      
+      /// @brief Asserts that the first value is greater than or equal to the second value.
+      /// @param val1 the first value.
+      /// @param val2 the second value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::is_greater_or_equal(24, 12, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 24, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_greater_or_equal(24, 48, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue1, typename TValue2>
+      static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (val1 >= val2)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: greater than or equal to " << val2 << "\nBut was:  " << val1;
           fail(ss.str(), message, line_info);
         }
       }
@@ -1955,13 +1955,13 @@ namespace xtd {
 
 #define fail_() fail(line_info_)
 
-#define greater_or_equal_(...) __CMD_ASSERT_ARGS(greater_or_equal, __VA_ARGS__)
-
 #define is_empty_(...) __CMD_ASSERT_ARGS(is_empty, __VA_ARGS__)
 
 #define is_false_(...) __CMD_ASSERT_ARGS(is_false, __VA_ARGS__)
 
 #define is_greater_(...) __CMD_ASSERT_ARGS(is_greater, __VA_ARGS__)
+
+#define is_greater_or_equal_(...) __CMD_ASSERT_ARGS(is_greater_or_equal, __VA_ARGS__)
 
 #define is_instance_of_(Type, ...) __CMD_ASSERT_ARGS(is_instance_of<Type>, __VA_ARGS__)
 
@@ -1980,10 +1980,6 @@ namespace xtd {
 #define less_(...) __CMD_ASSERT_ARGS(less, __VA_ARGS__)
 
 #define less_or_equal_(...) __CMD_ASSERT_ARGS(less_or_equal, __VA_ARGS__)
-
-#define not_null_(...) __CMD_ASSERT_ARGS(not_null, __VA_ARGS__)
-
-#define null_(...) __CMD_ASSERT_ARGS(null, __VA_ARGS__)
 
 #define succeed_() succeed(line_info_)
 
