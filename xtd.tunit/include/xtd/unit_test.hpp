@@ -50,7 +50,7 @@ namespace xtd {
           this->event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
           
           this->event_listener_->on_unit_test_end(xtd::tunit::tunit_event_args(*this));
-        } catch(const std::exception& e) {
+        } catch(const std::exception&) {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
           // do error...
         } catch(...) {

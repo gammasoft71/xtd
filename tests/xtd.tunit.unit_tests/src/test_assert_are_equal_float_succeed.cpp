@@ -5,7 +5,7 @@ namespace unit_tests {
   class test_class_(test_assert_are_equal_float_succeed) {
   public:
     void test_method_(test_case_succeed) {
-      float f = 0.2;
+      float f = 0.2f;
       xtd::tunit::assert::are_equal(0.2f, f, xtd::tunit::line_info {"test_assert_are_equal_float_succeed.cpp", 9});
     }
   };
