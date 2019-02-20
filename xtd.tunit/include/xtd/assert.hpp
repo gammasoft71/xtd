@@ -101,8 +101,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24)); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assertion_error exception.
+      /// float f = 0.00007999999999f;
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
 
@@ -114,8 +115,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24), line_info_); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24), line_info_); // test throws an assertion_error exception.
+      /// float f = 0.00007999999999f;
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f, line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
 
@@ -127,8 +129,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24), "User message..."); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24), "User message..."); // test throws an assertion_error exception.
+      /// float f = 0.00007999999999f;
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f, "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float& actual, float tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info_);}
 
@@ -141,8 +144,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24), "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24), "User message...", line_info_); // test throws an assertion_error exception.
+      /// float f = 0.00007999999999f;
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (abs(expected - actual) <= abs(tolerance))
@@ -161,8 +165,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24)); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24)); // test throws an assertion_error exception.
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
       
@@ -174,8 +179,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24), line_info_); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24), line_info_); // test throws an assertion_error exception.
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
       
@@ -187,8 +193,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24), "User message..."); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24), "User message..."); // test throws an assertion_error exception.
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info_);}
       
@@ -201,8 +208,9 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::are_equal(24, int(24), "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::are_equal(23, int(24), "User message...", line_info_); // test throws an assertion_error exception.
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (abs(expected - actual) <= abs(tolerance))

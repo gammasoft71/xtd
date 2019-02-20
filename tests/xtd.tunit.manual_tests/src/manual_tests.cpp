@@ -166,9 +166,8 @@ namespace unit_tests {
     }
 
     void test_method_(test_case5) {
-      double d = 0.00007999999999;
-      assert::are_equal_(0.00008, d, 0.0000000000001);
-      assert::are_equal_(0.00008, d);
+      float d = 0.000079999999999;
+      assert::are_equal_(0.00008f, d, 0.00000000000001f);
     }
   };
 }
