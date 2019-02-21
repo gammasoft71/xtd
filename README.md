@@ -99,3 +99,6 @@ For more examples see [examples](examples)
 
 Before running examples you must download and install tunit. To download and install it read Downloads file.
 
+______________________________________________________________________________________________
+
+© 2019 Gammasoft.
