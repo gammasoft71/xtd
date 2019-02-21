@@ -29,9 +29,9 @@ namespace unit_tests {
       
       assert::are_equal_(' ', cki.key_char());
       assert::are_equal_(console_key::spacebar, cki.key());
-      assert::are_equal_(static_cast<console_modifiers>(0), static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::alt)));
+      assert::is_zero_(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::alt));
       assert::are_equal_(console_modifiers::shift, static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::shift)));
-      assert::are_equal_(static_cast<console_modifiers>(0), static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::control)));
+      assert::is_zero_(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::control));
     }
     
     void test_method_(create_console_key_info_with_key_char_key_and_alt) {
@@ -40,8 +40,8 @@ namespace unit_tests {
       assert::are_equal_('\0', cki.key_char());
       assert::are_equal_(console_key::up_arrow, cki.key());
       assert::are_equal_(console_modifiers::alt, static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::alt)));
-      assert::are_equal_(static_cast<console_modifiers>(0), static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::shift)));
-      assert::are_equal_(static_cast<console_modifiers>(0), static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::control)));
+      assert::is_zero_(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::shift));
+      assert::is_zero_(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::control));
     }
     
     void test_method_(create_console_key_info_with_key_char_key_and_control) {
@@ -49,8 +49,8 @@ namespace unit_tests {
 
       assert::are_equal_('\t', cki.key_char());
       assert::are_equal_(console_key::tab, cki.key());
-      assert::are_equal_(static_cast<console_modifiers>(0), static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::alt)));
-      assert::are_equal_(static_cast<console_modifiers>(0), static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::shift)));
+      assert::is_zero_(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::alt));
+      assert::is_zero_(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::shift));
       assert::are_equal_(console_modifiers::control, static_cast<console_modifiers>(static_cast<int>(cki.modifiers()) & static_cast<int>(console_modifiers::control)));
     }
   };
