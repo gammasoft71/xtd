@@ -14,6 +14,7 @@ set(INCLUDES
   include/xtd/default_insert_basic_ostream_operator.hpp
   include/xtd/event_listener.hpp
   include/xtd/line_info.hpp
+  include/xtd/main_page.hpp
   include/xtd/ostream_unit_test.hpp
   include/xtd/settings.hpp
   include/xtd/test.hpp
