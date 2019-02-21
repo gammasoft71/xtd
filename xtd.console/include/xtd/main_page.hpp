@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains doygen main page.
 
-/// @mainpage console - Reference Guide Documentation
+/// @mainpage xtd.console - Reference Guide Documentation
 ///
 /// @section FeaturesSection Features
 ///   * Console I/O charecters and wide charercters Streams.
@@ -17,14 +17,14 @@
 ///   * Intercept and send callback to the user when the Control modifier key (Ctrl) and either the C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
 ///   * ...
 ///
-/// For more information see <a href=https://github.com/gammasoft71/console/blob/master/README.md>Documentation.md</a> file.
+/// For more information see <a href=https://github.com/gammasoft71/xtd.console/blob/master/README.md>Documentation.md</a> file.
 ///
 /// @section ExamplesSection Examples
 /// The following examples "Hello, world!" show how to change the color of the text in three different ways.
 ///
 /// <b>Using xtd::console::WriteLine</b>
 ///
-/// hello_world_console.hpp:
+/// hello_world_console.cpp:
 /// @code
 /// #include <console/console>
 ///
@@ -68,7 +68,7 @@
 /// }
 /// @endcode
 ///
-/// For more examples see <a href="hhttps://github.com/gammasoft71/console/tree/master/examples/">Examples</a>.
+/// For more examples see <a href="hhttps://github.com/gammasoft71/xtd.console/tree/master/examples/">Examples</a>.
 ///
-/// @section DownloadSection Download and install console
-/// Before running examples you must download and install console. To download and install it read <a href="https://github.com/gammasoft71/console/blob/master/docs/Downloads.md">Downloads.md</a> file.
+/// @section DownloadSection Download and install
+/// Before running examples you must download and install xtd.console. To download and install it read <a href="https://github.com/gammasoft71/xtd.console/blob/master/docs/Downloads.md">Downloads.md</a> file.
