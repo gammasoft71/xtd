@@ -97,7 +97,7 @@ For more examples see [examples](examples)
 
 # Download and install
 
-Before running examples you must download and install tunit. To download and install it read Downloads file.
+Before running examples you must download and install tunit. To download and install it read [downloads](docs/doanloads.md) file.
 
 ______________________________________________________________________________________________
 
