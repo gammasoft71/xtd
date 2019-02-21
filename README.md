@@ -12,7 +12,20 @@
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
 
+Modern c++17 unit testing library on Windows, macOS and Linux.
+
 # Features
+
+* An [xUnit](https://en.wikipedia.org/wiki/XUnit) test framework.
+* Modern c++17.
+* Auto registration of class and method based tests.
+* Rich set of assertions.
+* std::ostream output event listener.
+* You can create your own event listener (see [create_your_own_event_listener example](examples/create_your_own_event_listener))
+* Gets duration for each test, and for each class test.
+* multi-platform (Windows, macOS, linux, ...).
+* CMake build script.
+* Very easy to use.
 
 For more information see [Documentation](docs).
 

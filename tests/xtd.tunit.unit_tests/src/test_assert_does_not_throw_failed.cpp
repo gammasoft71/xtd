@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       std::vector v = {1, 2, 3, 4};
-      xtd::tunit::assert::does_not_throw([&] {auto i = v.at(5);}, xtd::tunit::line_info {"test_assert_does_not_throw_failed.cpp", 10});
+      xtd::tunit::assert::does_not_throw([&] {v.at(5);}, xtd::tunit::line_info {"test_assert_does_not_throw_failed.cpp", 10});
     }
   };
 }
