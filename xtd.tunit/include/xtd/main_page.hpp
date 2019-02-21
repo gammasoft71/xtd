@@ -5,18 +5,11 @@
 ///
 /// @section FeaturesSection Features
 ///   * An [xUnit](https://en.wikipedia.org/wiki/XUnit) test framework.
-///   * Modern c++17.
-///   *  Auto registration of class and method based tests.
-///   *  Rich set of assertions.
-///   *  std::ostream output event listener.
-///   *  You can create your own event listener (see [create_your_own_event_listener example](https://github.com/gammasoft71/xtd.tunit/blob/master/examples/create_your_own_event_listener)).
-///   *  Gets duration for each test, and for each class test.
-///   *  Multi-platform (Windows, macOS, linux, ...).
-///   *  CMake build script.
-///   *  Very easy to use.
+///   * Auto registration of class and method based tests.
+///   * Rich set of assertions.
 ///   * ...
 ///
-/// For more information see <a href=https://github.com/gammasoft71/xtd.tunit/blob/master/README.md>Documentation.md</a> file.
+/// For more information see [xtd.tunit website](https://gammasoft71.wixsite.com/xtd-tunit) (or [markdown documentations](https://github.com/gammasoft71/xtd.tunit/blob/master/docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.tunit/).
 ///
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
@@ -50,7 +43,7 @@
 /// }
 /// @endcode
 ///
-/// For more examples see <a href="hhttps://github.com/gammasoft71/xtd.tunit/tree/master/examples/">Examples</a>.
+/// For more examples see [examples](https://github.com/gammasoft71/xtd.tunit/tree/master/examples/).
 ///
 /// @section DownloadSection Download and install
-/// Before running examples you must download and install xtd.tunit. To download and install it read <a href="https://github.com/gammasoft71/xtd.tunit/blob/master/docs/Downloads.md">Downloads.md</a> file.
+/// Before running examples you must download and install xtd.tunit. To download and install it read [download.md](https://github.com/gammasoft71/xtd.tunit/blob/master/docs/Downloads.md) file.
