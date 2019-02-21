@@ -18,7 +18,7 @@ git clone https://github.com/gammasoft71/xtd.tunit .
 
 1. Install Microsoft Visual Studio 2017 Community
    
-   In order to build, you first need download and install Microsoft Visual Studio 2017 community from [https://www.visualstudio.com](https://www.visualstudio.com).
+   In order to build xtd.tunit, you first need download and install Microsoft Visual Studio 2017 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
 2. Install CMake 3.3 or later
    
@@ -26,10 +26,10 @@ git clone https://github.com/gammasoft71/xtd.tunit .
    
    *Remarks: Verify if you can execute cmake --version in "Command Prompt", if it's no, add cmake install directory to your path.*
 
-3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" to build and install :
+3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" to build and install xtd.tunit :
 
 ```shell
-cd C:\Users\YourName\YourProject\
+cd C:\Users\YourName\xtd.tunit\
 install.cmd
 ```
 
@@ -40,7 +40,7 @@ install.cmd
 
 1. Install Xcode 10.0 or later
    
-   In order to build, you first need download and install Xcode from App Store and install "Commands line tools".
+   In order to build xtd.tunit, you first need download and install Xcode from App Store and install "Commands line tools".
 
    *Remarks: Verify if you can execute clang --version in terminal.*
 
