@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-For more examples see [examples](examples)
+For more examples see [examples](docs/examples.md)
 
 # Download and install
 
