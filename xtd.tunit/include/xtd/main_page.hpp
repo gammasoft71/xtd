@@ -46,4 +46,4 @@
 /// For more examples see <a href="https://github.com/gammasoft71/xtd.tunit/tree/master/examples/">examples</a>.
 ///
 /// @section DownloadSection Download and install
-/// Before running examples you must download and install xtd.tunit. To download and install it read <a href="https://github.com/gammasoft71/xtd.tunit/blob/master/docs/Downloads.md">Downloads.md</a> file.
+/// Before running examples you must download and install xtd.tunit. To download and install it read <a href="https://github.com/gammasoft71/xtd.tunit/blob/master/docs/downloads.md">Downloads.md</a> file.
