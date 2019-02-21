@@ -57,7 +57,31 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-For more examples see [examples](docs/examples.md)
+CMakeLists.txt:
+
+```cmake
+cmake_minimum_required(VERSION 3.3)
+
+project(tunit_hello_world)
+find_package(xtd.tunit REQUIRED)
+add_executable(${PROJECT_NAME} src/tunit_hello_world.cpp)
+target_link_libraries(${PROJECT_NAME} xtd.tunit)
+```
+
+Output:
+```
+Start 2 tests from 1 test case
+  Start 2 tests from hello_world_test
+    PASSED create_string_from_literal (0 ms total)
+    PASSED create_string_from_chars (0 ms total)
+  End 2 tests from hello_world_test (0 ms total) 
+
+  Summary :
+    PASSED 2 tests.
+End 2 tests from 1 test case ran. (0 ms total)
+```
+
+For more examples see [examples](examples)
 
 # Download and install
 

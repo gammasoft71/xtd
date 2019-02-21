@@ -58,7 +58,7 @@ Start 2 tests from 1 test case
 End 2 tests from 1 test case ran. (0 ms total)
 ```
 
-For more examples see [examples](../examples)
+[Click gere to see more examples](../examples)
 
 ______________________________________________________________________________________________
 
