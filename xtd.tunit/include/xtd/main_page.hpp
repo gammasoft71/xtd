@@ -9,7 +9,7 @@
 ///   *  Auto registration of class and method based tests.
 ///   *  Rich set of assertions.
 ///   *  std::ostream output event listener.
-///   *  You can create your own event listener (see [create_your_own_event_listener example](examples/create_your_own_event_listener)).
+///   *  You can create your own event listener (see [create_your_own_event_listener example](https://github.com/gammasoft71/xtd.tunit/blob/master/examples/create_your_own_event_listener)).
 ///   *  Gets duration for each test, and for each class test.
 ///   *  Multi-platform (Windows, macOS, linux, ...).
 ///   *  CMake build script.
