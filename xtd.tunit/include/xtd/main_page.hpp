@@ -4,12 +4,12 @@
 /// @mainpage xtd.tunit - Reference Guide Documentation
 ///
 /// @section FeaturesSection Features
-///   * An [xUnit](https://en.wikipedia.org/wiki/XUnit) test framework.
+///   * An <a href="https://en.wikipedia.org/wiki/XUnit">xUnit</a> test framework.
 ///   * Auto registration of class and method based tests.
 ///   * Rich set of assertions.
 ///   * ...
 ///
-/// For more information see [xtd.tunit website](https://gammasoft71.wixsite.com/xtd-tunit) or [markdown documentations](https://github.com/gammasoft71/xtd.tunit/blob/master/docs/home.md) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.tunit/).
+/// For more information see <a href="https://gammasoft71.wixsite.com/xtd-tunit">xtd.tunit website</a> (or <a href="https://github.com/gammasoft71/xtd.tunit/blob/master/docs/home.md>markdown documentations</a>) and <a href="https://codedocs.xyz/gammasoft71/xtd.tunit/>Reference Guide</a>).
 ///
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
@@ -43,7 +43,7 @@
 /// }
 /// @endcode
 ///
-/// For more examples see [examples](https://github.com/gammasoft71/xtd.tunit/tree/master/examples/).
+/// For more examples see <a href="https://github.com/gammasoft71/xtd.tunit/tree/master/examples/">examples</a>.
 ///
 /// @section DownloadSection Download and install
-/// Before running examples you must download and install xtd.tunit. To download and install it read [download.md](https://github.com/gammasoft71/xtd.tunit/blob/master/docs/Downloads.md) file.
+/// Before running examples you must download and install xtd.tunit. To download and install it read <a href="https://github.com/gammasoft71/xtd.tunit/blob/master/docs/Downloads.md">Downloads.md</a> file.
