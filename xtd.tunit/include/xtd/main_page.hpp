@@ -9,7 +9,7 @@
 ///   * Rich set of assertions.
 ///   * ...
 ///
-/// For more information see [xtd.tunit website](https://gammasoft71.wixsite.com/xtd-tunit) (or [markdown documentations](https://github.com/gammasoft71/xtd.tunit/blob/master/docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.tunit/).
+/// For more information see [xtd.tunit website](https://gammasoft71.wixsite.com/xtd-tunit) or [markdown documentations](https://github.com/gammasoft71/xtd.tunit/blob/master/docs/home.md) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.tunit/).
 ///
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
