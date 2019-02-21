@@ -12,7 +12,7 @@
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
 
-Modern c++17 unit testing library on Windows, macOS and Linux.
+Modern c++17 unit testing library on Windows, macOS, Linux, iOS and android.
 
 # Features
 
