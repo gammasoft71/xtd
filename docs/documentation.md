@@ -4,7 +4,7 @@ This section contains the Switch documentation. ​
 
 # In This Section
 
-* [Reference Guide]((https://gammasoft71.wixsite.com/xtd-tunit) provide online user reference guide.
+* [Reference Guide](https://gammasoft71.wixsite.com/xtd-tunit) provide online user reference guide.
 
 ______________________________________________________________________________________________
 
