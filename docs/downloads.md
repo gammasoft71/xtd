@@ -81,3 +81,7 @@ cd /home/YourName/YourProject
 ```
 
 4. Create as many unit tests as you want with xtd.tunit.
+
+______________________________________________________________________________________________
+
+© 2019 Gammasoft.
