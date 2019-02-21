@@ -38,7 +38,7 @@ install.cmd
 
 ## macOS 10.14 (OS X Mojave) or later
 
-1. Install Xcode 10.0 or later
+1. Install Xcode 10 or later
    
    In order to build xtd.tunit, you first need download and install Xcode from App Store and install "Commands line tools".
 
