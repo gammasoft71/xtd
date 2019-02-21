@@ -139,6 +139,8 @@ namespace unit_tests {
 // The main entry point for the application.
 int main(int argc, char* argv[]) {
   return gtest_unit_test(argv, argc).run();
+  // is equiivalent to :
+  // return unit_test(std::make_unique<gtest_event_listener>(), argv, argc).run();
 }
 
 // This code can produce the following output:
