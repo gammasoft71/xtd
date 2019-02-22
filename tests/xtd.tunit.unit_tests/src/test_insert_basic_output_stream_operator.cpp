@@ -39,36 +39,6 @@ namespace unit_tests {
     assert_value_("42", ss.str());
   }
   
-  void test_(test_insert_basic_output_stream_operator, test_pointer_int) {
-    int i = 42;
-    int* p = &i;
-    std::stringstream ss;
-    ss << p;
-    assert_value_(0, ss.str().find("0x"));
-  }
-  
-  void test_(test_insert_basic_output_stream_operator, test_const_pointer_int) {
-    int i = 42;
-    const int* p = &i;
-    std::stringstream ss;
-    ss << p;
-    assert_value_(0, ss.str().find("0x"));
-  }
-  
-  void test_(test_insert_basic_output_stream_operator, test_unique_ptr) {
-    auto p = std::make_unique<int>(42);
-    std::stringstream ss;
-    ss << p;
-    assert_value_(0, ss.str().find("0x"));
-  }
-  
-  void test_(test_insert_basic_output_stream_operator, test_shared_ptr) {
-    auto p = std::make_shared<int>(42);
-    std::stringstream ss;
-    ss << p;
-    assert_value_(0, ss.str().find("0x"));
-  }
-
   void test_(test_insert_basic_output_stream_operator, test_const_char_pointer) {
     const char* s = "42";
     std::stringstream ss;
@@ -87,7 +57,7 @@ namespace unit_tests {
     std::exception e;
     std::stringstream ss;
     ss << e;
-    assert_value_("exception: std::exception", ss.str());
+    assert_value_(0, ss.str().find("exception: "));
   }
   
 #if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401

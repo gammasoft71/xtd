@@ -47,12 +47,17 @@ template<> struct __is_printable<std::wstring> : std::true_type {};
 
 template<typename Char, typename CharTraits, typename Value>
 static void __print_value(std::basic_ostream<Char, CharTraits>& os, const Value& value, std::true_type) {
-  os << value;
+  os.operator<<(value);
+}
+
+template<typename Char, typename CharTraits, typename Value>
+static void __print_value(std::basic_ostream<Char, CharTraits>& os, Value* value, std::true_type) {
+  os.operator<<(value);
 }
 
 template<typename Char, typename CharTraits, typename Value>
 static void __print_value(std::basic_ostream<Char, CharTraits>& os, const Value* value, std::true_type) {
-  os << value;
+  os.operator<<(value);
 }
 
 template<typename Char, typename CharTraits, typename Value>
@@ -296,6 +301,18 @@ struct __value_printer<Char, CharTraits, std::unordered_set<Value>> {
 
 template <typename Char, typename CharTraits, typename Type>
 std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) {
+  __value_printer<Char, CharTraits, Type>::print(os, value);
+  return os;
+}
+
+template <typename Char, typename CharTraits, typename Type>
+std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type* value) {
+  __value_printer<Char, CharTraits, Type>::print(os, value);
+  return os;
+}
+
+template <typename Char, typename CharTraits, typename Type>
+std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, Type* value) {
   __value_printer<Char, CharTraits, Type>::print(os, value);
   return os;
 }
