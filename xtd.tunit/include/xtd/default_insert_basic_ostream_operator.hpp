@@ -10,7 +10,9 @@
 #include <iostream>
 #include <list>
 #include <map>
+#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
 #include <optional>
+#endif
 #include <set>
 #include <stdexcept>
 #include <string>
@@ -80,20 +82,9 @@ static void __print(std::basic_ostream<Char, CharTraits>& os, const Value* value
 template <typename Char, typename CharTraits, typename Value>
 struct __value_printer {
   static void print(std::basic_ostream<Char, CharTraits>& os, const Value* value) {
-    //os << value;
     __print(os, value);
   }
-
-  template<typename Type>
-  static void print(std::basic_ostream<Char, CharTraits>& os, const std::optional<Type>& value) {
-    if (!value.has_value())
-      os << "(null)";
-    else
-      os << "(" << __value_printer<Char, CharTraits, Value>::print(os, value.value()) << ")";
-  }
-
   static void print(std::basic_ostream<Char, CharTraits>& os, const Value& value) {
-    //os << value;
     __print(os, value);
   }
 };
@@ -105,6 +96,7 @@ struct __value_printer<Char, CharTraits, std::exception> {
   }
 };
 
+#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
 template <typename Char, typename CharTraits, typename Value>
 struct __value_printer<Char, CharTraits, std::optional<Value>> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const std::optional<Value>& value) {
@@ -117,6 +109,7 @@ struct __value_printer<Char, CharTraits, std::optional<Value>> {
     }
   }
 };
+#endif
 
 template <typename Char, typename CharTraits>
 struct __value_printer<Char, CharTraits, std::string> {
