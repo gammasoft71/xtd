@@ -145,9 +145,6 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      array<int, 4> v1 = {1, 2, 3, 4};
-      array<int, 4> v2 = {1, 2, 3, 5};
-      assert::are_equal(v1, v2);
     }
   };
 }
