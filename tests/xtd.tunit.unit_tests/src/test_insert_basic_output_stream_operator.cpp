@@ -97,7 +97,6 @@ namespace unit_tests {
     ss << o;
     assert_value_("(null)", ss.str());
   }
-#endif
   
   void test_(test_insert_basic_output_stream_operator, test_optional_with_value) {
     std::optional<int> o = 42;
@@ -105,7 +104,8 @@ namespace unit_tests {
     ss << o;
     assert_value_("(42)", ss.str());
   }
-  
+#endif
+
   void test_(test_insert_basic_output_stream_operator, test_pair) {
     auto p = std::make_pair("string", 42);
     std::stringstream ss;
