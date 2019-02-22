@@ -145,10 +145,18 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
+      array<int, 4> v1 = {1, 2, 3, 4};
+      array<int, 4> v2 = {1, 2, 3, 5};
+      assert::are_equal(v1, v2);
     }
   };
 }
 
 int main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
+  //return console_unit_test(argv, argc).run();
+  //vector v = {1, 2, 3, 4};
+  //cout << v << endl;
+  
+  auto p = make_unique<int>(42);
+  cout << p << endl;
 }

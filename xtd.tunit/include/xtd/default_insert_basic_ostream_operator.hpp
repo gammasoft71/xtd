@@ -1,16 +1,262 @@
 /// @file
 /// @brief Contains std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) function.
 #pragma once
+#include <array>
+#include <deque>
+#include <exception>
+#include <forward_list>
+#include <initializer_list>
 #include <iomanip>
 #include <iostream>
+#include <list>
+#include <map>
+#include <optional>
+#include <set>
+#include <stdexcept>
+#include <string>
+#include <type_traits>
+#include <tuple>
+#include <utility>
+#include <vector>
 
 /// @cond
-template <typename Char, typename CharTraits, typename Type>
-std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) {
+template<class T> struct __is_printable : std::false_type {};
+template<> struct __is_printable<bool> : std::true_type {};
+template<> struct __is_printable<char> : std::true_type {};
+template<> struct __is_printable<signed char> : std::true_type {};
+template<> struct __is_printable<unsigned char> : std::true_type {};
+template<> struct __is_printable<wchar_t> : std::true_type {};
+template<> struct __is_printable<char16_t> : std::true_type {};
+template<> struct __is_printable<char32_t> : std::true_type {};
+template<> struct __is_printable<short> : std::true_type {};
+template<> struct __is_printable<unsigned short> : std::true_type {};
+template<> struct __is_printable<int> : std::true_type {};
+template<> struct __is_printable<unsigned int> : std::true_type {};
+template<> struct __is_printable<long> : std::true_type {};
+template<> struct __is_printable<unsigned long> : std::true_type {};
+template<> struct __is_printable<long long> : std::true_type {};
+template<> struct __is_printable<unsigned long long> : std::true_type {};
+
+template<typename Char, typename CharTraits, typename Value>
+static void __print_value(std::basic_ostream<Char, CharTraits>& os, const Value& value, std::true_type) {
+  os << value;
+}
+
+template<typename Char, typename CharTraits, typename Value>
+static void __print_value(std::basic_ostream<Char, CharTraits>& os, const Value* value, std::true_type) {
+  os << value;
+}
+
+template<typename Char, typename CharTraits, typename Value>
+static void __print_value(std::basic_ostream<Char, CharTraits>& os, const Value& value, std::false_type) {
   size_t size = sizeof(value) > 32 ? 32 : sizeof(value);
   os << size << "-byte object <";
   for (size_t index = 0; index != size; index++)
     os <<  (index != 0 ? (index % 2 == 0 ? " " : "-") : "") << std::hex << std::setiosflags(std::ios_base::uppercase) << std::setw(2) << std::setfill('0') << static_cast<int>(reinterpret_cast<const unsigned char*>(&value)[index]) << std::resetiosflags(std::ios_base::dec) << std::dec;
-  return os << (size < sizeof(value) ? "-..." : "") << ">";
+  os << (size < sizeof(value) ? "-..." : "") << ">";
 }
+
+template<typename Char, typename CharTraits, typename Value>
+static void __print(std::basic_ostream<Char, CharTraits>& os, const Value& value) {
+  __print_value(os, value, __is_printable<Value>());
+}
+
+template<typename Char, typename CharTraits, typename Value>
+static void __print(std::basic_ostream<Char, CharTraits>& os, Value* value) {
+  __print_value(os, value, __is_printable<Value>());
+}
+
+template<typename Char, typename CharTraits, typename Value>
+static void __print(std::basic_ostream<Char, CharTraits>& os, const Value* value) {
+  __print_value(os, value, __is_printable<Value>());
+}
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const Value* value) {
+    //os << value;
+    __print(os, value);
+  }
+
+  template<typename Type>
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::optional<Type>& value) {
+    if (!value.has_value())
+      os << "(null)";
+    else
+      os << "(" << __value_printer<Char, CharTraits, Value>::print(os, value.value()) << ")";
+  }
+
+  static void print(std::basic_ostream<Char, CharTraits>& os, const Value& value) {
+    //os << value;
+    __print(os, value);
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, std::exception> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::exception& value) {
+    os << "exception: " << value.what();
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::optional<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::optional<Value>& value) {
+    if (!value.has_value())
+      os << "(null)";
+    else {
+      os << "(";
+      __value_printer<Char, CharTraits, Value>::print(os, value.value());
+      os << ")";
+    }
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, std::string> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::string& value) {
+    os << "\"" << value << "\"";
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, const char *> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char* const & value) {
+    os << "\"" << value << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char* & value) {
+    os << "\"" << value << "\"";
+  }
+};
+
+template <typename Char, typename CharTraits, typename Type1, typename Type2>
+struct __value_printer<Char, CharTraits, std::pair<Type1, Type2>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::pair<Type1, Type2>& value) {
+    os << "(";
+    __value_printer<Char, CharTraits, Type1>::print(os, value.first);
+    os << ", ";
+    __value_printer<Char, CharTraits, Type2>::print(os, value.second);
+    os << ")";
+  }
+};
+
+template<typename Char, typename CharTraits, typename Type, unsigned N, unsigned Last>
+struct __tuple_printer {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const Type& value) {
+    __value_printer<Char, CharTraits, typename std::tuple_element<N, Type>::type>::print(os, std::get<N>(value));
+    os << ", ";
+    __tuple_printer<Char, CharTraits, Type, N + 1, Last>::print(os, value);
+  }
+};
+
+template<typename Char, typename CharTraits, typename Type, unsigned N>
+struct __tuple_printer<Char, CharTraits, Type, N, N> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const Type& value) {
+    __value_printer<Char, CharTraits, typename std::tuple_element<N, Type>::type>::print(os, std::get<N>(value));
+  }
+};
+
+template <typename Char, typename CharTraits, typename ... Types>
+struct __value_printer<Char, CharTraits, std::tuple<Types ...>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::tuple<Types ...>& value) {
+    os << "(";
+    __tuple_printer<Char, CharTraits, std::tuple<Types ...>, 0, sizeof...(Types) - 1>::print(os, value);
+    os << ")";
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, std::tuple<>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::tuple<>& value) {
+    os << "()";
+  }
+};
+
+template <typename Char, typename CharTraits, typename Iterator>
+std::basic_ostream<Char, CharTraits>& __print_sequence_container(std::basic_ostream<Char, CharTraits>& os, const Iterator& begin, const Iterator& end) {
+  os << "[";
+  bool first = true;
+  for (Iterator it = begin; it != end; ++it) {
+    if (!first) os << ", ";
+    __value_printer<Char, CharTraits, typename std::iterator_traits<Iterator>::value_type>::print(os, *it);
+    first = false;
+  }
+  return os << "]";
+}
+
+template <typename Char, typename CharTraits, typename Value, size_t Size>
+struct __value_printer<Char, CharTraits, std::array<Value, Size>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::array<Value, Size>& values) {
+    __print_sequence_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::deque<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::deque<Value>& values) {
+    __print_sequence_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::forward_list<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::forward_list<Value>& values) {
+    __print_sequence_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::list<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::list<Value>& values) {
+    __print_sequence_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::initializer_list<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::initializer_list<Value>& values) {
+    __print_sequence_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::vector<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::vector<Value>& values) {
+    __print_sequence_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Iterator>
+std::basic_ostream<Char, CharTraits>& __print_associative_container(std::basic_ostream<Char, CharTraits>& os, const Iterator& begin, const Iterator& end) {
+  os << "{";
+  bool first = true;
+  for (Iterator it = begin; it != end; ++it) {
+    if (!first) os << ", ";
+    __value_printer<Char, CharTraits, typename std::iterator_traits<Iterator>::value_type>::print(os, *it);
+    first = false;
+  }
+  return os << "}";
+}
+
+template <typename Char, typename CharTraits, typename Key, typename Value>
+struct __value_printer<Char, CharTraits, std::map<Key, Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::map<Key, Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::set<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::set<Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Type>
+std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type& value) {
+  __value_printer<Char, CharTraits, Type>::print(os, value);
+  return os;
+}
+
 /// @endcond
