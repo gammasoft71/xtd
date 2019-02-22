@@ -16,6 +16,8 @@
 #include <string>
 #include <type_traits>
 #include <tuple>
+#include <unordered_map>
+#include <unordered_set>
 #include <utility>
 #include <vector>
 
@@ -36,6 +38,10 @@ template<> struct __is_printable<long> : std::true_type {};
 template<> struct __is_printable<unsigned long> : std::true_type {};
 template<> struct __is_printable<long long> : std::true_type {};
 template<> struct __is_printable<unsigned long long> : std::true_type {};
+template<> struct __is_printable<const char*> : std::true_type {};
+template<> struct __is_printable<const wchar_t*> : std::true_type {};
+template<> struct __is_printable<std::string> : std::true_type {};
+template<> struct __is_printable<std::wstring> : std::true_type {};
 
 template<typename Char, typename CharTraits, typename Value>
 static void __print_value(std::basic_ostream<Char, CharTraits>& os, const Value& value, std::true_type) {
@@ -246,9 +252,51 @@ struct __value_printer<Char, CharTraits, std::map<Key, Value>> {
   }
 };
 
+template <typename Char, typename CharTraits, typename Key, typename Value>
+struct __value_printer<Char, CharTraits, std::multimap<Key, Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::multimap<Key, Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::multiset<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::multiset<Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
 template <typename Char, typename CharTraits, typename Value>
 struct __value_printer<Char, CharTraits, std::set<Value>> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const std::set<Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Key, typename Value>
+struct __value_printer<Char, CharTraits, std::unordered_map<Key, Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::unordered_map<Key, Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Key, typename Value>
+struct __value_printer<Char, CharTraits, std::unordered_multimap<Key, Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::unordered_multimap<Key, Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::unordered_multiset<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::unordered_multiset<Value>& values) {
+    __print_associative_container(os, values.begin(), values.end());
+  }
+};
+
+template <typename Char, typename CharTraits, typename Value>
+struct __value_printer<Char, CharTraits, std::unordered_set<Value>> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::unordered_set<Value>& values) {
     __print_associative_container(os, values.begin(), values.end());
   }
 };

@@ -4,13 +4,20 @@
 #include <deque>
 #include <exception>
 #include <forward_list>
-#include <memory>
+#include <initializer_list>
+#include <iostream>
+#include <list>
+#include <map>
 #include <optional>
 #include <set>
-#include <sstream>
+#include <stack>
+#include <stdexcept>
 #include <string>
 #include <tuple>
+#include <unordered_map>
+#include <unordered_set>
 #include <utility>
+#include <vector>
 
 namespace unit_tests {
   void test_(test_insert_basic_output_stream_operator, test_bool) {
@@ -60,13 +67,20 @@ namespace unit_tests {
     assert_value_(0, ss.str().find("0x"));
   }
 
+  void test_(test_insert_basic_output_stream_operator, test_const_char_pointer) {
+    const char* s = "42";
+    std::stringstream ss;
+    ss << s;
+    assert_value_("42", ss.str());
+  }
+  
   void test_(test_insert_basic_output_stream_operator, test_string) {
     std::string s = "42";
     std::stringstream ss;
     ss << s;
     assert_value_("42", ss.str());
   }
-
+  
   void test_(test_insert_basic_output_stream_operator, test_exception) {
     std::exception e;
     std::stringstream ss;
@@ -213,6 +227,69 @@ namespace unit_tests {
     ss << v;
     assert_value_("[\"1\", \"2\", \"3\", \"4\"]", ss.str());
   }
+  
+  void test_(test_insert_basic_output_stream_operator, test_map) {
+    std::map<int, int> m = {{1, 10}, {2, 20}, {3, 30}, {4, 40}};
+    std::stringstream ss;
+    ss << m;
+    assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
+  }
+  
+  void test_(test_insert_basic_output_stream_operator, test_map_with_const_char_pointer) {
+    std::map<int, const char*> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
+    std::stringstream ss;
+    ss << m;
+    assert_value_("{(1, \"10\"), (2, \"20\"), (3, \"30\"), (4, \"40\")}", ss.str());
+  }
+  
+  void test_(test_insert_basic_output_stream_operator, test_map_with_string) {
+    std::map<int, std::string> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
+    std::stringstream ss;
+    ss << m;
+    assert_value_("{(1, \"10\"), (2, \"20\"), (3, \"30\"), (4, \"40\")}", ss.str());
+  }
+  
+  void test_(test_insert_basic_output_stream_operator, test_multimap) {
+    std::multimap<int, int> m = {{1, 10}, {2, 20}, {3, 30}, {4, 40}};
+    std::stringstream ss;
+    ss << m;
+    assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
+  }
+  
+  void test_(test_insert_basic_output_stream_operator, test_multimap_with_const_char_pointer) {
+    std::multimap<int, const char*> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
+    std::stringstream ss;
+    ss << m;
+    assert_value_("{(1, \"10\"), (2, \"20\"), (3, \"30\"), (4, \"40\")}", ss.str());
+  }
+  
+  void test_(test_insert_basic_output_stream_operator, test_multimap_with_string) {
+    std::multimap<int, std::string> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
+    std::stringstream ss;
+    ss << m;
+    assert_value_("{(1, \"10\"), (2, \"20\"), (3, \"30\"), (4, \"40\")}", ss.str());
+  }
+
+  void test_(test_insert_basic_output_stream_operator, test_multiset) {
+    std::multiset s = {1, 2, 3, 4};
+    std::stringstream ss;
+    ss << s;
+    assert_value_("{1, 2, 3, 4}", ss.str());
+  }
+  
+  void test_(test_insert_basic_output_stream_operator, test_multiset_with_const_char_pointer) {
+    std::multiset s = {"1", "2", "3", "4"};
+    std::stringstream ss;
+    ss << s;
+    assert_value_("{\"1\", \"2\", \"3\", \"4\"}", ss.str());
+  }
+  
+  void test_(test_insert_basic_output_stream_operator, test_multiset_with_string) {
+    std::multiset<std::string> s = {"1", "2", "3", "4"};
+    std::stringstream ss;
+    ss << s;
+    assert_value_("{\"1\", \"2\", \"3\", \"4\"}", ss.str());
+  }
 
   void test_(test_insert_basic_output_stream_operator, test_set) {
     std::set s = {1, 2, 3, 4};
@@ -233,25 +310,5 @@ namespace unit_tests {
     std::stringstream ss;
     ss << s;
     assert_value_("{\"1\", \"2\", \"3\", \"4\"}", ss.str());
-  }
-  void test_(test_insert_basic_output_stream_operator, test_map) {
-    std::map<int, int> m = {{1, 10}, {2, 20}, {3, 30}, {4, 40}};
-    std::stringstream ss;
-    ss << m;
-    assert_value_("{(1, 10), (2, 20), (3, 30), (4, 40)}", ss.str());
-  }
-  
-  void test_(test_insert_basic_output_stream_operator, test_map_with_const_char_pointer) {
-    std::map<int, const char*> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
-    std::stringstream ss;
-    ss << m;
-    assert_value_("{(1, \"10\"), (2, \"20\"), (3, \"30\"), (4, \"40\")}", ss.str());
-  }
-  
-  void test_(test_insert_basic_output_stream_operator, test_map_with_string) {
-    std::map<int, std::string> m = {{1, "10"}, {2, "20"}, {3, "30"}, {4, "40"}};
-    std::stringstream ss;
-    ss << m;
-    assert_value_("{(1, \"10\"), (2, \"20\"), (3, \"30\"), (4, \"40\")}", ss.str());
   }
 }
