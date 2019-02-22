@@ -33,7 +33,7 @@ namespace assert_unit_tests {
       std::cout << actual << std::endl;
       std::cout << "--------------------------------------------------" << std::endl;
       std::cout << file << ":" << line << std::endl;
-      std::cout << std::endl;
+      std::cout << std::endl << std::flush;
       throw unit_test_error("assertion failed!");
     }
   }
