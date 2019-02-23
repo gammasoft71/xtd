@@ -5,6 +5,7 @@ This section contains the Switch documentation. ​
 # In This Section
 
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.tunit/) provide online user reference guide.
+* [License](license.md) provide license information.
 
 ______________________________________________________________________________________________
 
