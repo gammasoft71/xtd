@@ -5,7 +5,6 @@
 #include <string>
 
 /// @cond
-
 template<typename TCollection>
 std::string __join__items(const TCollection& collection) {
   std::stringstream ss;
