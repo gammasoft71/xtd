@@ -11,6 +11,8 @@
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
+[![iOS](https://img.shields.io/badge/os-iOS-004080.svg)](README.md)
+[![android](https://img.shields.io/badge/os-android-004080.svg)](README.md)
 
 Modern c++17 unit testing library on Windows, macOS, Linux, iOS and android.
 
