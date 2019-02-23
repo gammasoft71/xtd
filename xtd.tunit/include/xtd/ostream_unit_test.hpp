@@ -127,8 +127,14 @@ namespace xtd {
     /// @remarks All messages are writting on the specified ostream.
     class ostream_unit_test : public xtd::tunit::unit_test {
     public:
+      /// @brief Create a new console unit test with ostream specified.
+      /// @param os The ostream to write events.
       explicit ostream_unit_test(std::ostream& os) noexcept : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os)) {}
       
+      /// @brief Create a new console unit test with ostream specified, argv specified and argc specified.
+      /// @param os The ostream to write events.
+      /// @param argv Arguments array from main method.
+      /// @param argc Argument count from main method.
       ostream_unit_test(std::ostream& os, char* argv[], int argc) : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os), argv, argc) {}
     };
   }
