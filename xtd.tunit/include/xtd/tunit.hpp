@@ -14,6 +14,7 @@
 #include "default_insert_basic_ostream_operator.hpp"
 #include "event_listener.hpp"
 #include "line_info.hpp"
+#include "ostream_event_listener.hpp"
 #include "ostream_unit_test.hpp"
 #include "registered_test_class.hpp"
 #include "settings.hpp"
