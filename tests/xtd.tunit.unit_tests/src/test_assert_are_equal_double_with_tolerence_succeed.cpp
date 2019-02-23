@@ -12,7 +12,7 @@ namespace unit_tests {
 }
 
 // fail on linux
-void ignore_test_(test_assert_are_equal_double_with_tolerence_succeed, test_output) {
+void test_(test_assert_are_equal_double_with_tolerence_succeed, test_output) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("test_assert_are_equal_double_with_tolerence_succeed.*");
@@ -29,8 +29,7 @@ void ignore_test_(test_assert_are_equal_double_with_tolerence_succeed, test_outp
                 "\n", ss.str());
 }
 
-// fail on linux
-void ignore_test_(test_assert_are_equal_double_with_tolerence_succeed, test_result) {
+void test_(test_assert_are_equal_double_with_tolerence_succeed, test_result) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("test_assert_are_equal_double_with_tolerence_succeed.*");
