@@ -60,7 +60,12 @@ namespace xtd {
       /// @return Return true if class name and test name are valid with the current filter tests; otherwise false.
       bool is_valid_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return this->pattern_compare(test_class_name + "." + test_name, this->filter_tests_);}
 
+      /// @brief Gets if show duration for each test.
+      /// @return true if show duration for each test; otherwise false.
       bool show_duration() const noexcept {return this->show_duration_;}
+
+      /// @brief Sets if show duration for each test.
+      /// @param show_duration true if show duration for each test; otherwise false.
       void show_duration(bool show_duration) noexcept {this->show_duration_ = show_duration;}
 
     private:
