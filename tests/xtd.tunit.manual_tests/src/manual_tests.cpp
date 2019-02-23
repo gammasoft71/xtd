@@ -9,6 +9,9 @@ using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
+#undef major
+#undef minor
+
 class version final {
 public:
   version() = default;

@@ -175,7 +175,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (abs(expected - actual) <= abs(tolerance))
+        if (fabsf(expected - actual) <= fabsf(tolerance))
           succeed(message, line_info);
         else {
           std::stringstream ss;
@@ -239,7 +239,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (abs(expected - actual) <= abs(tolerance))
+        if (fabsl(expected - actual) <= fabsl(tolerance))
           succeed(message, line_info);
         else {
           std::stringstream ss;
