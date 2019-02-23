@@ -8,27 +8,56 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
-    /// @brief The settings class.
+    /// @brief The settings class contains xtd.tunit settings.
     class settings final {
     public:
+      /// @brief Creates new instance of settings.
       settings() = default;
+      
+      /// @cond
       settings(const settings&) = default;
       settings& operator=(const settings&) = default;
+      /// @endcond
 
-      static xtd::tunit::settings& default_settings() {
+      /// @brief Get default settings intance.
+      /// @return Default settings instance.
+      static xtd::tunit::settings& default_settings() noexcept {
         static xtd::tunit::settings settings;
         return settings;
       }
-      
+
+      /// @brief Gets also run ignored test.
+      /// @return true if  also run ignored test; otherwise false.
       bool also_run_ignored_tests() const noexcept {return this->also_run_ignored_tests_;}
+
+      /// @brief Sets also run ignored test.
+      /// @param also_run_ignored_tests  true if  also run ignored test; otherwise false.
       void also_run_ignored_tests(bool also_run_ignored_tests) noexcept {this->also_run_ignored_tests_ = also_run_ignored_tests;}
       
+      /// @brief Gets exit status.
+      /// @return exit status.
+      /// @remarks The value by default is EXIT_SUCCESS.
+      /// @remarks When an error occured in unit test the value is set to EXIT_FAILURE.
       int exit_status() const noexcept {return this->exit_status_;}
+      
+      /// @brief Sets exit status.
+      /// @param exit_status exit status.
+      /// @remarks The value by default is EXIT_SUCCESS.
+      /// @remarks When an error occured in unit test the value is set to EXIT_FAILURE.
       void exit_status(int exit_status) noexcept {this->exit_status_ = exit_status;}
       
+      /// @brief Gets filter tests.
+      /// @return filter tests.
+      /// @remarks The value by default is "*.*".
       const std::string& filter_tests() const noexcept {return this->filter_tests_;}
+
+      /// @brief Sets filter tests.
+      /// @param filter_tests filter tests.
+      /// @remarks The value by default is "*.*".
       void filter_tests(const std::string& filter_tests) noexcept {this->filter_tests_ = filter_tests;}
 
+      /// @brief Return true if a specified test class name and specified test name are valid with the current filter tests.
+      /// @return Return true if class name and test name are valid with the current filter tests; otherwise false.
       bool is_valid_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return this->pattern_compare(test_class_name + "." + test_name, this->filter_tests_);}
 
       bool show_duration() const noexcept {return this->show_duration_;}
