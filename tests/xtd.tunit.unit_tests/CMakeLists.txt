@@ -18,6 +18,7 @@ set(SOURCES
   src/test_assert_are_equal_float_failed.cpp
   src/test_assert_are_equal_float_succeed.cpp
   src/test_assert_are_equal_float_NaN.cpp
+  src/test_assert_are_equal_float_with_tolerence_failed.cpp
   src/test_assert_are_equal_float_with_tolerence_succeed.cpp
   src/test_assert_are_not_equal_failed.cpp
   src/test_assert_are_not_equal_succeed.cpp
