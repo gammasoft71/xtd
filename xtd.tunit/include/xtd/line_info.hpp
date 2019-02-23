@@ -8,20 +8,32 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
-    /// @brief caller information class is used to store current file, current line and current function information.
+    /// @brief line_info information class is used to store current file, current line and current function information.
     /// @par Examples
-    /// The following example shows how to use the caller
-    /// @include caller.cpp
+    /// The following example shows how to use the line_info
+    /// @include line_info.cpp
     class line_info final {
     public:
+      /// @brief Creates new instance of line info.
       line_info() noexcept = default;
+
+      /// @brief Creates new instance of line info with file path specified, and line number specified.
+      /// @param file_path Contains the file path string.
+      /// @param line_number Contains the line number.
       line_info(const std::string& file_path, unsigned int line_number) noexcept : file_path_(file_path), line_number_(line_number) {}
+
+      /// @brief Creates new instance of line info with member name specified, file path specified, and line number specified.
+      /// @param member_name Contains the member name string.
+      /// @param file_path Contains the file path string.
+      /// @param line_number Contains the line number.
       line_info(const std::string& member_name, const std::string& file_path, unsigned int line_number) noexcept : member_name_(member_name), file_path_(file_path), line_number_(line_number) {}
       
+      /// @brief Return an empty line info.
+      /// @return Empty line info.
       static xtd::tunit::line_info empty() {return {};}
       
       /// @cond
-      line_info(const line_info& caller) = default;
+      line_info(const line_info& line_info) = default;
       line_info& operator=(const line_info&) = default;
       bool operator==(const line_info& li) const {return this->member_name_ == li.member_name_ && this->file_path_ == li.file_path_ && this->line_number_ == li.line_number_;}
       bool operator!=(const line_info& li) const {return !this->operator==(li);}
@@ -39,13 +51,15 @@ namespace xtd {
       /// @return int32 line number
       unsigned int line_number() const noexcept {return this->line_number_;}
       
-      friend std::ostream& operator<<(std::ostream& os, const xtd::tunit::line_info caller) noexcept {
-        if (caller.file_path_ == "" && caller.line_number_ == 0 && caller.member_name_ == "")
+      /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const xtd::tunit::line_info line_info) noexcept {
+        if (line_info.file_path_ == "" && line_info.line_number_ == 0 && line_info.member_name_ == "")
           return os << "{Empty}";
-        if (caller.member_name_ == "")
-          return os << "{file_path=\"" << caller.file_path_ << "\", line_number=" << caller.line_number_<< "}";
-        return os << "{member_name=\"" << caller.member_name_ << "\", file_path=\"" << caller.file_path_ << "\", line_number=" << caller.line_number_<< "}";
+        if (line_info.member_name_ == "")
+          return os << "{file_path=\"" << line_info.file_path_ << "\", line_number=" << line_info.line_number_<< "}";
+        return os << "{member_name=\"" << line_info.member_name_ << "\", file_path=\"" << line_info.file_path_ << "\", line_number=" << line_info.line_number_<< "}";
       }
+      /// @endcond
 
     private:
       std::string member_name_;
