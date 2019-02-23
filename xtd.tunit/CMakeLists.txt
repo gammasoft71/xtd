@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.tunit VERSION 1.0.0)
+project(xtd.tunit VERSION 0.1.0)
 set(INCLUDES
   include/xtd/__demangle.hpp
   include/xtd/__join__items.hpp
