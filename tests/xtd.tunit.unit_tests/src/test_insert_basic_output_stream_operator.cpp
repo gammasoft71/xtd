@@ -285,4 +285,44 @@ namespace unit_tests {
     ss << s;
     assert_value_("{\"1\", \"2\", \"3\", \"4\"}", ss.str());
   }
+  
+  class class_without_insert_stream_operator {
+  public:
+    class_without_insert_stream_operator() = default;
+    explicit class_without_insert_stream_operator(int value) : value_(value) {}
+    
+    int value() const noexcept {return this->value_;}
+    
+  private:
+    int value_ = 0;
+  };
+  
+  void test_(test_insert_basic_output_stream_operator, test_class_without_insert_stream_operator) {
+    class_without_insert_stream_operator c(42);
+    std::stringstream ss;
+    ss << c;
+    assert_value_("4-byte object <2A-00 00-00>", ss.str());
+  }
+  
+  class class_with_insert_stream_operator {
+  public:
+    class_with_insert_stream_operator() = default;
+    explicit class_with_insert_stream_operator(int value) : value_(value) {}
+    
+    int value() const noexcept {return this->value_;}
+    
+    friend std::ostream& operator<<(std::ostream& os, const class_with_insert_stream_operator& c) {
+      return os << "(value = " << c.value_ << ")";
+    }
+    
+  private:
+    int value_ = 0;
+  };
+  
+  void test_(test_insert_basic_output_stream_operator, test_class_with_insert_stream_operator) {
+    class_with_insert_stream_operator c(42);
+    std::stringstream ss;
+    ss << c;
+    assert_value_("(value = 42)", ss.str());
+  }
 }
