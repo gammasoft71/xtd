@@ -18,11 +18,17 @@ Modern c++17 unit testing library on Windows, macOS, Linux, iOS and android.
 
 # Platforms
 
-* Windowd
+* Windows
 * macOS X
 * Linux
 * iOS
 * android
+
+# Compiler
+
+* Visual studio 2017
+* Xcode 10.1
+* g++ 7
 
 ______________________________________________________________________________________________
 
