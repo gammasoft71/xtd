@@ -13,6 +13,7 @@ set(SOURCES
   src/test_assert_are_equal_double_failed.cpp
   src/test_assert_are_equal_double_succeed.cpp
   src/test_assert_are_equal_double_NaN.cpp
+  src/test_assert_are_equal_double_with_tolerence_succeed.cpp
   src/test_assert_are_equal_float_failed.cpp
   src/test_assert_are_equal_float_succeed.cpp
   src/test_assert_are_equal_float_NaN.cpp
