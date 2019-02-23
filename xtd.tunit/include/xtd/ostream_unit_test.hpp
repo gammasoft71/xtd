@@ -123,7 +123,8 @@ namespace xtd {
       std::ostream& os_;
     };
 
-    /// @brief The ostream_unit_test class.
+    /// @brief The ostream_unit_test class is ostream unit test interface.
+    /// @remarks All messages are writting on the specified ostream.
     class ostream_unit_test : public xtd::tunit::unit_test {
     public:
       explicit ostream_unit_test(std::ostream& os) noexcept : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os)) {}
