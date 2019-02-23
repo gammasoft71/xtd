@@ -16,7 +16,7 @@ namespace unit_tests {
 int main(int argc, char* argv[]) {
   return console_unit_test(argv, argc).run();
   // is equiivalent to :
-  // return unit_test(std::make_unique<ostream_event_listener>(cout), argv, argc).run();
+  // return ostream_unit_test(std::make_unique<ostream_event_listener>(cout), argv, argc).run();
 }
 
 // This code can produce the following output:
