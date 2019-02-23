@@ -10,14 +10,14 @@ namespace xtd {
     /// @brief This attribute is use to add initialize class method to class test attribute.
     struct class_initialize_attribute {
     public:
-      /// @brief Crrates new instance of classinitialize_attribute attribute.
+      /// @brief Creates new instance of classinitialize_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing initialize method.
       /// @param method Initialize class method.
       template<typename TestClass>
       class_initialize_attribute(const std::string& name, TestClass& test_class, void (*method)()) noexcept :  class_initialize_attribute(name, test_class, method, xtd::tunit::line_info()) {}
       
-      /// @brief Crrates new instance of classinitialize_attribute attribute.
+      /// @brief Creates new instance of classinitialize_attribute attribute.
       /// @param name Name of attribute
       /// @param test_class xtd::tunit::class_test containing initialize method.
       /// @param method Initialize class method.
