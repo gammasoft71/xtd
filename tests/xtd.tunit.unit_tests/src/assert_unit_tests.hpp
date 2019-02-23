@@ -40,6 +40,7 @@ namespace assert_unit_tests {
   
   struct register_assert_unit_test {
     register_assert_unit_test(const std::string& name, std::function<void(const std::string&, int, char*[])> method) : method(method), name(name) {assert_unit_tests.push_back(*this);}
+    register_assert_unit_test(bool ignore) {if (ignore == true) ignore_test_count++;}
     register_assert_unit_test(const register_assert_unit_test&) = default;
     register_assert_unit_test& operator=(const register_assert_unit_test&) = default;
     
@@ -55,7 +56,9 @@ namespace assert_unit_tests {
       }
 
       std::cout << "end unit tests" << std::endl;
-      std::cout << std::endl << "PASSED " << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl << std::endl;
+      std::cout << std::endl << "PASSED " << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl;
+      if (ignore_test_count) std::cout << std::endl << "You have " << ignore_test_count << " ignored test" << (ignore_test_count < 2 ? "" : "s") << std::endl;
+      std::cout << std::endl;
       return 0;
     }
 
@@ -63,6 +66,7 @@ namespace assert_unit_tests {
     std::string name;
     
     static std::vector<register_assert_unit_test> assert_unit_tests;
+    static size_t ignore_test_count;
   };
 }
 
@@ -70,6 +74,11 @@ namespace assert_unit_tests {
 
 #define test_(class_name, function_name) \
   __##class_name##_##function_name##_unused() {} \
-void class_name##_##function_name(const std::string& name, int argc, char* argv[]); \
-assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {std::string(#class_name) + "." + std::string(#function_name), &class_name##_##function_name}; \
-void class_name##_##function_name(const std::string& name, int argc, char* argv[])
+  void class_name##_##function_name(const std::string& name, int argc, char* argv[]); \
+  assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {std::string(#class_name) + "." + std::string(#function_name), &class_name##_##function_name}; \
+ void class_name##_##function_name(const std::string& name, int argc, char* argv[])
+
+#define ignore_test_(class_name, function_name) \
+  __##class_name##_##function_name##_unused() {} \
+  assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {true}; \
+  void class_name##_##function_name(const std::string& name, int argc, char* argv[])
