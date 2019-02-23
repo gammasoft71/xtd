@@ -22,6 +22,8 @@ namespace xtd {
       virtual ~tunit_event_args() = default;
       /// @endcond
       
+      /// @brief Gets current unit test.
+      /// @return Current unit test.
       const xtd::tunit::unit_test& unit_test() const {return this->ut_;}
 
     private:
