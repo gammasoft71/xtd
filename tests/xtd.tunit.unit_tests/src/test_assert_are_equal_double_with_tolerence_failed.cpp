@@ -11,6 +11,7 @@ namespace unit_tests {
   };
 }
 
+// fail on linux
 void ignore_test_(test_assert_are_equal_double_with_tolerence_failed, test_output) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
@@ -37,6 +38,7 @@ void ignore_test_(test_assert_are_equal_double_with_tolerence_failed, test_outpu
                 "\n", ss.str());
 }
 
+// fail on linux
 void ignore_test_(test_assert_are_equal_double_with_tolerence_failed, test_result) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
