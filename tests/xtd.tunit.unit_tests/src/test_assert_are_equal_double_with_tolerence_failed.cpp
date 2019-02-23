@@ -5,8 +5,8 @@ namespace unit_tests {
   class test_class_(test_assert_are_equal_double_with_tolerence_failed) {
   public:
     void test_method_(test_case_failed) {
-      double d = 0.599999999999999;
-      xtd::tunit::assert::are_equal(0.6, d, 0.0000000000000001, xtd::tunit::line_info {"test_assert_are_equal_double_with_tolerence_failed.cpp", 9});
+      double d = 0.599;
+      xtd::tunit::assert::are_equal(0.6, d, 0.001, xtd::tunit::line_info {"test_assert_are_equal_double_with_tolerence_failed.cpp", 9});
     }
   };
 }
@@ -22,7 +22,7 @@ void test_(test_assert_are_equal_double_with_tolerence_failed, test_output) {
                 "    FAILED test_case_failed\n"
                 "\n"
                 "Expected: 0.6\n"
-                "But was:  0.6\n"
+                "But was:  0.599\n"
                 "error: test_assert_are_equal_double_with_tolerence_failed.cpp:9\n"
                 "\n"
                 "  End 1 test from test_assert_are_equal_double_with_tolerence_failed\n"
