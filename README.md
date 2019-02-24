@@ -12,7 +12,7 @@
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](https://en.wikipedia.org/wiki/MacOS)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](https://en.wikipedia.org/wiki/Linux)
 [![iOS](https://img.shields.io/badge/os-iOS-004080.svg)](https://en.wikipedia.org/wiki/IOS)
-[![android](https://img.shields.io/badge/os-android-004080.svg)](https://en.wikipedia.org/wiki/Android_(operating_system)d)
+[![android](https://img.shields.io/badge/os-android-004080.svg)](https://en.wikipedia.org/wiki/Android_(operating_system))
 
 Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
 
