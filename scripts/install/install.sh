@@ -12,8 +12,8 @@ fi
 # install needed packages and libraries for known distribution
 case "$OSTYPE" in
   *"Darwin"*) brew update; brew install cmake -y;;
-  *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install cmake -y;;
-  *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install cmake3 -y;;
+  *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential cmake -y;;
+  *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum groupinstall 'Development Tools'; sudo yum install cmake3 -y;;
 esac
 
 # generate, build and install
