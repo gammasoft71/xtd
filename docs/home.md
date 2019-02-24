@@ -2,7 +2,7 @@
 
 # xtd.tunit is ...
 
-Modern c++17 unit testing library on Windows, macOS, Linux, iOS and android.
+Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
 
 # Features
 
