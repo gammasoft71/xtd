@@ -4,9 +4,7 @@
 
 First version of xtd.tunit.
 
-## Functionalities :
-
-### Tests :
+## Tests :
 
 ![added](pictures/added.png) test
 
@@ -18,15 +16,15 @@ First version of xtd.tunit.
 
 ![added](pictures/added.png) console unit test
 
-### Event listener :
+## Event listener :
   
 ![added](pictures/added.png) event listener
 
 ![added](pictures/added.png) ostream event listener
 
-### Assertions :
+## Assertions :
 
-#### Assert :
+### Assert :
 
 ![added](pictures/added.png) are equals
 
@@ -82,7 +80,7 @@ First version of xtd.tunit.
 
 ![added](pictures/added.png) throws any
 
-#### Sring assert :
+### Sring assert :
 
 ![todo](pictures/todo.png) contains
 
@@ -108,7 +106,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) is not empty
 
-#### Collection assert :
+### Collection assert :
 
 ![todo](pictures/todo.png) all items are instances of type ?
 
@@ -134,7 +132,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) is ordered ?
 
-#### File assert :
+### File assert :
 
 ![todo](pictures/todo.png) are equals
 
@@ -144,7 +142,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not exist
 
-#### Directory assert :
+### Directory assert :
 
 ![todo](pictures/todo.png) are equals
 
@@ -154,11 +152,11 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not exist
   
-### Settings :
+## Settings :
 
 ![todo](pictures/todo.png) Parse params from console unit tests.
 
-#### Test selection :
+### Test selection :
 
 ![added](pictures/added.png) filter tests
 
@@ -166,7 +164,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) list tests.
 
-#### Test execution :
+### Test execution :
 
 ![added](pictures/added.png) exit status
 
@@ -176,13 +174,13 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) random seed
 
-#### Test output :
+### Test output :
 
 ![added](pictures/added.png) show duration
 
 ![added](pictures/added.png) generate xml
 
-![todo](pictures/todo.png) console colors
+![todo](pictures/todo.png) output colors
 
 ______________________________________________________________________________________________
 
