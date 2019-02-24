@@ -2,7 +2,7 @@
 
 # Status information
 
-![progressina](pictures/progressIna.png) Not applicable
+![progressina](pictures/progress_ina.png) Not applicable
 
 ![progress0](pictures/progress0.png) Not started
 
