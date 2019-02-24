@@ -20,8 +20,10 @@ int main(int argc, char* argv[]) {
   // create and run an ostream_unit_test
   int result = ostream_unit_test(ss, argv, argc).run();
   
-  // display string stream on cout
-  cout << ss.str();
+  // display string stream on cout line by line
+  string line;
+  while(std::getline(ss, line))
+    cout << line << endl;
   
   return result;
 }
