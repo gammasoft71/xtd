@@ -247,6 +247,70 @@ namespace xtd {
           fail(ss.str(), message, line_info);
         }
       }
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(long double expected, long double actual, long double tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(long double expected, long double actual, long double tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(long double expected, long double actual, long double tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
+      
+      /// @brief Asserts that two type are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// double d = 0.00007999999999;
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_equal(long double expected, long double actual, long double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (fabsl(expected - actual) <= fabsl(tolerance))
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: " << expected << "\nBut was:  " << actual;
+          fail(ss.str(), message, line_info);
+        }
+      }
 
       /// @brief Asserts that two type are not equal.
       /// @param expected the expected value.
