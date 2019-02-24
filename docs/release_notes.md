@@ -1,0 +1,123 @@
+| [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.tunit) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
+
+# xtd.tunit 0.1.0 (beta)
+
+First version of xtd.tunit.
+
+## Functionalities :
+
+### Tests :
+![added](pictures/added.png) test
+![added](pictures/added.png) test class
+![added](pictures/added.png) unit test base
+![added](pictures/added.png) ostream unit test
+![added](pictures/added.png) console unit test
+
+### Event listener :
+  
+![added](pictures/added.png) event listener
+![added](pictures/added.png) ostream event listener
+
+### Assertions :
+
+#### Assert :
+
+![added](pictures/added.png) are equals
+![added](pictures/added.png) are not equals
+![added](pictures/added.png) are not same
+![added](pictures/added.png) are same
+![added](pictures/added.png) contains
+![added](pictures/added.png) does not throw
+![added](pictures/added.png) fail
+![added](pictures/added.png) is empty
+![added](pictures/added.png) is false
+![added](pictures/added.png) is greater
+![added](pictures/added.png) is greater or equal
+![added](pictures/added.png) is instance of type
+![added](pictures/added.png) is less
+![added](pictures/added.png) is less or equal
+![added](pictures/added.png) is NaN
+![added](pictures/added.png) is negative
+![added](pictures/added.png) is not empty
+![added](pictures/added.png) is not instance of type
+![added](pictures/added.png) is not null
+![added](pictures/added.png) is not zero
+![added](pictures/added.png) is null
+![added](pictures/added.png) is positive
+![added](pictures/added.png) is true
+![added](pictures/added.png) is zero
+![added](pictures/added.png) succeed
+![added](pictures/added.png) throws
+![added](pictures/added.png) throws any
+
+#### Sring assert :
+
+![todo](pictures/todo.png) contains
+![todo](pictures/todo.png) does not contain
+![todo](pictures/todo.png) starts width
+![todo](pictures/todo.png) does not start width
+![todo](pictures/todo.png) ends width
+![todo](pictures/todo.png) does not end width
+![todo](pictures/todo.png) are equal ignring case
+![todo](pictures/todo.png) are not equal ignring case
+![todo](pictures/todo.png) matchs
+![todo](pictures/todo.png) does not match
+![todo](pictures/todo.png) is empty
+![todo](pictures/todo.png) is not empty
+
+#### Collection assert :
+
+![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) contains
+![todo](pictures/todo.png) does not contain
+![todo](pictures/todo.png) is empty
+![todo](pictures/todo.png) is not empty
+![todo](pictures/todo.png) is ordered ?
+
+#### File assert :
+
+![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) exists
+![todo](pictures/todo.png) does not exist
+
+#### Directory assert :
+
+![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) exists
+![todo](pictures/todo.png) does not exist
+  
+### Settings :
+
+![todo](pictures/todo.png) Parse params from console unit tests.
+
+#### Test selection :
+
+![added](pictures/added.png) filter tests
+![added](pictures/added.png) also run ignored tests
+![todo](pictures/todo.png) list tests.
+
+#### Test execution :
+
+![added](pictures/added.png) exit status
+![todo](pictures/todo.png) repeat tests
+![todo](pictures/todo.png) shuffle tests
+![todo](pictures/todo.png) random seed
+
+#### Test output :
+
+![added](pictures/added.png) show duration
+![added](pictures/added.png) generate xml
+![todo](pictures/todo.png) console colors
+
+______________________________________________________________________________________________
+
+© 2019 Gammasoft.
+
