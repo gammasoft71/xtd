@@ -148,15 +148,12 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
+      long double ld = 0.5l;
+      assert::are_equal(0.4l, ld, 0.1l);
     }
   };
 }
 
 int main(int argc, char* argv[]) {
-  //return console_unit_test(argv, argc).run();
-  //vector v = {1, 2, 3, 4};
-  //cout << v << endl;
-  
-  auto p = make_unique<int>(42);
-  cout << p << endl;
+  return console_unit_test(argv, argc).run();
 }
