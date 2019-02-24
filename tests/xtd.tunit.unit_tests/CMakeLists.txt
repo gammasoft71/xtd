@@ -35,6 +35,7 @@ set(SOURCES
   src/test_assert_does_not_throw_failed.cpp
   src/test_assert_does_not_throw_succeed.cpp
   src/test_assert_fail_failed.cpp
+  src/test_assert_is_empty_collection_failed.cpp
   src/test_assert_is_empty_collection_succeed.cpp
   src/test_assert_is_empty_string_succeed.cpp
   src/test_insert_basic_output_stream_operator.cpp
