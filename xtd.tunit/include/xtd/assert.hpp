@@ -1073,7 +1073,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: is_less than ";
+          ss << "Expected: less than ";
           __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
           ss << "\nBut was:  ";
           __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
@@ -1140,7 +1140,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: is_less than or equal to ";
+          ss << "Expected: less than or equal to ";
           __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
           ss << "\nBut was:  ";
           __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
