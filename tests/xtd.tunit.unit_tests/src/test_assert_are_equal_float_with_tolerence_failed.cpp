@@ -5,7 +5,7 @@ namespace unit_tests {
   class test_class_(test_assert_are_equal_float_with_tolerence_failed) {
   public:
     void test_method_(test_case_failed) {
-      float f = 0.599;
+      float f = 0.599f;
       xtd::tunit::assert::are_equal(0.6f, f, 0.001f, xtd::tunit::line_info {"test_assert_are_equal_float_with_tolerence_failed.cpp", 9});
     }
   };
