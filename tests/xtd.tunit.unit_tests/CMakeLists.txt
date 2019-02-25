@@ -59,6 +59,7 @@ set(SOURCES
   src/test_assert_is_NaN_long_double_succeed.cpp
   src/test_assert_is_negative_failed.cpp
   src/test_assert_is_negative_succeed.cpp
+  src/test_assert_is_not_empty_collection_succeed.cpp
   src/test_assert_is_true_failed.cpp
   src/test_assert_is_true_succeed.cpp
   src/test_insert_basic_output_stream_operator.cpp
