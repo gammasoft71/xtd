@@ -134,6 +134,13 @@ struct __value_printer<Char, CharTraits, const char *> {
   }
 };
 
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, char> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, char value) {
+    os << value;
+  }
+};
+
 template <typename Char, typename CharTraits, typename Type1, typename Type2>
 struct __value_printer<Char, CharTraits, std::pair<Type1, Type2>> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const std::pair<Type1, Type2>& value) {

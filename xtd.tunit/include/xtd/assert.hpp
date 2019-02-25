@@ -92,7 +92,7 @@ namespace xtd {
           ss << "Expected: ";
           __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
           ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, actual);
+          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
           fail(ss.str(), message, line_info);
         }
       }
@@ -105,10 +105,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: ";
-          __value_printer<char, std::char_traits<char>, float>::print(ss, expected);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, float>::print(ss, actual);
+          ss << "Expected: " << expected << "\nBut was:  " << actual;
           fail(ss.str(), message, line_info);
         }
       }
@@ -120,10 +117,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: ";
-          __value_printer<char, std::char_traits<char>, double>::print(ss, expected);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, double>::print(ss, actual);
+          ss << "Expected: " << expected << "\nBut was:  " << actual;
           fail(ss.str(), message, line_info);
         }
       }
@@ -135,10 +129,7 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: ";
-          __value_printer<char, std::char_traits<char>, long double>::print(ss, expected);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, long double>::print(ss, actual);
+          ss << "Expected: " << expected << "\nBut was:  " << actual;
           fail(ss.str(), message, line_info);
         }
       }
@@ -391,7 +382,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: not " << expected << "\nBut was:  " << actual;
+          ss << "Expected: not ";
+          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
           fail(ss.str(), message, line_info);
         }
       }
@@ -463,7 +457,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: not same as " << expected << "\nBut was:  " << actual;
+          ss << "Expected: not same as ";
+          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
           fail(ss.str(), message, line_info);
         }
       }
@@ -535,7 +532,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: same as " << expected << "\nBut was:  " << actual;
+          ss << "Expected: same as ";
+          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
           fail(ss.str(), message, line_info);
         }
       }
@@ -600,7 +600,9 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: collection containing " << item << "\nBut was:  < " << __join__items(collection) << " >";
+          ss << "Expected: collection containing ";
+          __value_printer<char, std::char_traits<char>, TItem>::print(ss, item);
+          ss << "\nBut was:  < " << __join__items(collection) << " >";
           fail(ss.str(), message, line_info);
         }
       }
@@ -884,7 +886,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: greater than " << val2 << "\nBut was:  " << val1;
+          ss << "Expected: greater than ";
+          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
           fail(ss.str(), message, line_info);
         }
       }
@@ -948,7 +953,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: greater than or equal to " << val2 << "\nBut was:  " << val1;
+          ss << "Expected: greater than or equal to ";
+          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
           fail(ss.str(), message, line_info);
         }
       }
@@ -1065,7 +1073,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: is_less than " << val2 << "\nBut was:  " << val1;
+          ss << "Expected: is_less than ";
+          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
           fail(ss.str(), message, line_info);
         }
       }
@@ -1129,7 +1140,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: is_less than or equal to " << val2 << "\nBut was:  " << val1;
+          ss << "Expected: is_less than or equal to ";
+          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
           fail(ss.str(), message, line_info);
         }
       }
@@ -1185,6 +1199,66 @@ namespace xtd {
       /// xtd::tunit::assert::is_NaN(v2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_NaN(double value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::isnan(value))
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: NaN\nBut was:  " << value;
+          fail(ss.str(), message, line_info);
+        }
+      }
+      
+      /// @brief that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// long double v1 = std::numeric_limits<double>::quiet_NaN();
+      /// long double v2 = 3.14159265358979323846l;
+      /// xtd::tunit::assert::is_NaN(v1); // test ok.
+      /// xtd::tunit::assert::is_NaN(v2); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_NaN(long double value) {is_NaN(value, "", line_info());}
+      
+      /// @brief that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// long double v1 = std::numeric_limits<long double>::quiet_NaN();
+      /// long double v2 = 3.14159265358979323846l;
+      /// xtd::tunit::assert::is_NaN(v1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_NaN(v2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_NaN(long double value, const xtd::tunit::line_info& line_info) {is_NaN(value, "", line_info);}
+      
+      /// @brief Asserts that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// long double v1 = std::numeric_limits<long double>::quiet_NaN();
+      /// long double v2 = 3.14159265358979323846l;
+      /// xtd::tunit::assert::is_NaN(v1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_NaN(v2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_NaN(long double value, const std::string& message) {is_NaN(value, message, line_info());}
+      
+      /// @brief Asserts that a value is NaN.
+      /// @param value The value to check is NaN.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// long double v1 = std::numeric_limits<long double>::quiet_NaN();
+      /// long double v2 = 3.14159265358979323846l;
+      /// xtd::tunit::assert::is_NaN(v1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_NaN(v2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void is_NaN(long double value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(value))
           succeed(message, line_info);
         else {
@@ -1313,8 +1387,9 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: negative\nBut was:  " << value;
-          fail(ss.str(), message, line_info);
+          ss << "Expected: negative\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
+         fail(ss.str(), message, line_info);
         }
       }
 
@@ -2138,7 +2213,8 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: positive\nBut was:  " << value;
+          ss << "Expected: positive\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
           fail(ss.str(), message, line_info);
         }
       }
@@ -2259,7 +2335,8 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: zero\nBut was:  " << value;
+          ss << "Expected: zero\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
           fail(ss.str(), message, line_info);
         }
       }
