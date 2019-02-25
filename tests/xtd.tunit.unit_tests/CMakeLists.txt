@@ -44,6 +44,7 @@ set(SOURCES
   src/test_assert_is_greater_failed.cpp
   src/test_assert_is_greater_succeed.cpp
   src/test_assert_is_greater_or_equal_succeed.cpp
+  src/test_assert_is_instance_of_failed.cpp
   src/test_assert_is_instance_of_succeed.cpp
   src/test_assert_is_true_failed.cpp
   src/test_assert_is_true_succeed.cpp
