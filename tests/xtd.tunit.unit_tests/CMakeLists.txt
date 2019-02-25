@@ -41,6 +41,7 @@ set(SOURCES
   src/test_assert_is_empty_string_succeed.cpp
   src/test_assert_is_false_failed.cpp
   src/test_assert_is_false_succeed.cpp
+  src/test_assert_is_greater_failed.cpp
   src/test_assert_is_greater_succeed.cpp
   src/test_assert_is_true_failed.cpp
   src/test_assert_is_true_succeed.cpp
