@@ -52,6 +52,7 @@ set(SOURCES
   src/test_assert_is_less_or_equal_failed.cpp
   src/test_assert_is_less_or_equal_succeed.cpp
   src/test_assert_is_NaN_double_succeed.cpp
+  src/test_assert_is_NaN_float_succeed.cpp
   src/test_assert_is_NaN_long_double_succeed.cpp
   src/test_assert_is_true_failed.cpp
   src/test_assert_is_true_succeed.cpp
