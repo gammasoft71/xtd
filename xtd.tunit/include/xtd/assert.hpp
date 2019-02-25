@@ -89,7 +89,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
+          ss << "Expected: ";
+          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, actual);
           fail(ss.str(), message, line_info);
         }
       }
@@ -102,7 +105,10 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
+          ss << "Expected: ";
+          __value_printer<char, std::char_traits<char>, float>::print(ss, expected);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, float>::print(ss, actual);
           fail(ss.str(), message, line_info);
         }
       }
@@ -114,7 +120,25 @@ namespace xtd {
           succeed(message, line_info);
         else {
           std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
+          ss << "Expected: ";
+          __value_printer<char, std::char_traits<char>, double>::print(ss, expected);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, double>::print(ss, actual);
+          fail(ss.str(), message, line_info);
+        }
+      }
+
+      static void are_equal(long double expected, long double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::isnan(actual) && std::isnan(expected))
+          succeed(message, line_info);
+        else if (actual == expected)
+          succeed(message, line_info);
+        else {
+          std::stringstream ss;
+          ss << "Expected: ";
+          __value_printer<char, std::char_traits<char>, long double>::print(ss, expected);
+          ss << "\nBut was:  ";
+          __value_printer<char, std::char_traits<char>, long double>::print(ss, actual);
           fail(ss.str(), message, line_info);
         }
       }
