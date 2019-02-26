@@ -24,9 +24,9 @@ namespace assert_unit_tests {
   template <typename TExcpected, typename TActual>
   void assert_value(const std::string& name, const TExcpected& expected, const TActual& actual, const std::string& file, int line) {
     if (actual == expected)
-      std::cout << "  PASSED " << name << std::endl;
+      std::cout << "  SUCCEED " << name << std::endl;
     else {
-      std::cout << "  FAILED " << name << std::endl;
+      std::cout << "  FAILED  " << name << std::endl;
       std::cout << std::endl;
       std::cout << "--------------------------------------------------" << std::endl;
       std::cout << "**  Expected: " << std::endl;
@@ -58,7 +58,7 @@ namespace assert_unit_tests {
       }
 
       std::cout << "end unit tests" << std::endl;
-      std::cout << std::endl << "PASSED " << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl;
+      std::cout << std::endl << "SUCCEED " << assert_unit_tests::register_assert_unit_test::assert_unit_tests.size() << " tests." << std::endl;
       if (ignore_test_count) std::cout << std::endl << "You have " << ignore_test_count << " ignored test" << (ignore_test_count < 2 ? "" : "s") << std::endl;
       std::cout << std::endl;
       return 0;
