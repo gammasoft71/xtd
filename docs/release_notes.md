@@ -80,7 +80,7 @@ First version of xtd.tunit.
 
 ![added](pictures/added.png) throws any
 
-### Sring assert :
+### String assert :
 
 ![todo](pictures/todo.png) contains
 
@@ -190,7 +190,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) throws any
 
-### Sring assume :
+### String assume :
 
 ![todo](pictures/todo.png) contains
 
