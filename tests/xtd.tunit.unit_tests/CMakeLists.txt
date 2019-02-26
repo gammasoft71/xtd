@@ -63,6 +63,7 @@ set(SOURCES
   src/test_assert_is_not_empty_collection_succeed.cpp
   src/test_assert_is_not_empty_string_failed.cpp
   src/test_assert_is_not_empty_string_succeed.cpp
+  src/test_assert_is_not_instance_of_failed.cpp
   src/test_assert_is_not_instance_of_succeed.cpp
   src/test_assert_is_true_failed.cpp
   src/test_assert_is_true_succeed.cpp
