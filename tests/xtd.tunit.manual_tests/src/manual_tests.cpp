@@ -156,7 +156,9 @@ namespace unit_tests {
     }
     
     void test_method_(test_case3) {
-      assert::fail();
+      //assert::fail();
+      //assert::is_empty(std::vector {1, 2, 3, 4});
+      assert::are_equal(24, 42);
     }
     
     void test_method_(test_case4) {

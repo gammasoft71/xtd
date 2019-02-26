@@ -33,6 +33,10 @@ namespace xtd {
       
       bool aborted() const noexcept {return this->status_ == test_status::aborted;}
       
+      const std::string& actual() const noexcept {return this->actual_;}
+      
+      const std::string& expect() const noexcept {return this->expect_;}
+      
       bool failed() const noexcept {return this->status_ == test_status::failed;}
       
       bool ignored() const noexcept {return this->status_ == test_status::ignored;}
@@ -67,6 +71,8 @@ namespace xtd {
       
       std::chrono::high_resolution_clock::time_point end_time_point;
       static test* current_test_;
+      std::string actual_;
+      std::string expect_;
       xtd::tunit::line_info info_;
       std::string message_;
       std::function<void()> method_;

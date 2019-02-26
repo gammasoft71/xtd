@@ -62,7 +62,10 @@ namespace xtd {
           this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
         this->os_ << std::endl;
         this->os_ << std::endl;
-        this->os_ << e.test().message() << std::endl;
+        if (e.test().expect() != "")
+          this->os_ << "Expected: " << e.test().expect() << std::endl;
+        if (e.test().actual() != "")
+          this->os_ << "But was:  " << e.test().actual() << std::endl;
         if (e.test().line_info() != xtd::tunit::line_info::empty()) {
           this->os_ << "error: " << e.test().line_info().file_path();
           if (e.test().line_info().line_number() != 0) this->os_ << ":" << e.test().line_info().line_number();

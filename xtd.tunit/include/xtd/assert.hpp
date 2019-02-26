@@ -175,14 +175,8 @@ namespace xtd {
       static void are_equal(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (actual == expected)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: ";
-          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -191,11 +185,8 @@ namespace xtd {
           succeed(message, line_info);
         else if (actual == expected)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
       }
 
       static void are_equal(double expected, double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -203,11 +194,8 @@ namespace xtd {
           succeed(message, line_info);
         else if (actual == expected)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
       }
 
       static void are_equal(long double expected, long double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -215,11 +203,8 @@ namespace xtd {
           succeed(message, line_info);
         else if (actual == expected)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
       }
       /// @endcond
       
@@ -280,11 +265,8 @@ namespace xtd {
       static void are_equal(float expected, float actual, float tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (fabsf(expected - actual) <= fabsf(tolerance))
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal.
@@ -344,11 +326,8 @@ namespace xtd {
       static void are_equal(double expected, double actual, double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (fabs(expected - actual) <= fabs(tolerance))
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal.
@@ -408,11 +387,8 @@ namespace xtd {
       static void are_equal(long double expected, long double actual, long double tolerance, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (fabsl(expected - actual) <= fabsl(tolerance))
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: " << expected << "\nBut was:  " << actual;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
       }
 
       /// @brief Asserts that two type are not equal.
@@ -468,14 +444,8 @@ namespace xtd {
       static void are_not_equal(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (actual != expected)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: not ";
-          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("not " + to_string(expected), to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two objects do refer to differents objects.
@@ -543,14 +513,8 @@ namespace xtd {
       static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (&actual != &expected)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: not same as ";
-          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("not same as " + to_string(expected), to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two objects do refer to differents objects.
@@ -618,14 +582,8 @@ namespace xtd {
       static void are_same(const TExpected& expected, const TActual& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (&actual == &expected)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: same as ";
-          __value_printer<char, std::char_traits<char>, TExpected>::print(ss, expected);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TActual>::print(ss, actual);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("same as " + to_string(expected), to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that collection contains an item.
@@ -686,13 +644,8 @@ namespace xtd {
         auto result = std::find(collection.begin(), collection.end(), item);
         if (result != collection.end())
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: collection containing ";
-          __value_printer<char, std::char_traits<char>, TItem>::print(ss, item);
-          ss << "\nBut was:  < " << __join__items(collection) << " >";
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("collection containing " + to_string(item), "< " + __join__items(collection) + " >", message, line_info);
       }
       
       /// @brief Asserts that the staement does not throw an exception.
@@ -746,9 +699,9 @@ namespace xtd {
           statement();
           succeed(message, line_info);
         } catch (const std::exception& e) {
-          fail("Expected: No Exception to be thrown\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
+          fail("No Exception to be thrown", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
-          fail("Expected: No Exception to be thrown\nBut was:  <exception>", message, line_info);
+          fail("No Exception to be thrown", "<exception>", message, line_info);
         }
       }
       
@@ -758,7 +711,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void fail() {fail("", line_info());}
+      static void fail() {fail("Failed", line_info());}
       
       /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @param line_info Contains information about current file and current line.
@@ -767,7 +720,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void fail(const xtd::tunit::line_info& line_info) {fail("", line_info);}
+      static void fail(const xtd::tunit::line_info& line_info) {fail("Failed", line_info);}
       
       /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -787,19 +740,8 @@ namespace xtd {
       /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void fail(const std::string& message, const xtd::tunit::line_info& line_info) {
-        fail("Failled", message, line_info);
+        fail("", "", message, line_info);
       }
-
-      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
-      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::fail("Fail message", "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void fail(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
       
       /// @brief Asserts that collection or traits contains an item.
       /// @param value The value to check is empty.
@@ -859,7 +801,7 @@ namespace xtd {
         if (std::empty(value))
           succeed(message, line_info);
         else
-          fail("Expected: collection <empty>\nBut was:  < " + __join__items(value) + " >", message, line_info);
+          fail("collection <empty>", "< " + __join__items(value) + " >", message, line_info);
       }
 
       /// @brief Asserts that ta condition is false.
@@ -916,7 +858,7 @@ namespace xtd {
         if (condition == false)
           succeed(message, line_info);
         else
-          fail("Expected: false\nBut was:  true", message, line_info);
+          fail("false", "true", message, line_info);
       }
  
       /// @brief Asserts that the first value is greater than the second value.
@@ -972,14 +914,8 @@ namespace xtd {
       static void is_greater(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (val1 > val2)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: greater than ";
-          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("greater than " + to_string(val2), to_string(val1), message, line_info);
       }
       
       /// @brief Asserts that the first value is greater than or equal to the second value.
@@ -1039,14 +975,8 @@ namespace xtd {
       static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (val1 >= val2)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: greater than or equal to ";
-          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("greater than or equal to " + to_string(val2), to_string(val1), message, line_info);
       }
 
       /// @brief Asserts that an object is of the type supplied or a derived type.
@@ -1103,7 +1033,7 @@ namespace xtd {
         if (dynamic_cast<const Type*>(&value) != nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: instance of <" + __demangle(typeid(Type).name()) + ">\nBut was:  <" + __demangle(typeid(value).name()) + ">", message, line_info);
+          fail("instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that the first value is is_less than the second value.
@@ -1160,12 +1090,7 @@ namespace xtd {
         if (val1 < val2)
           succeed(message, line_info);
         else {
-          std::stringstream ss;
-          ss << "Expected: less than ";
-          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
-          fail(ss.str(), message, line_info);
+          fail("less than " + to_string(val2), to_string(val1), message, line_info);
         }
       }
       
@@ -1226,14 +1151,8 @@ namespace xtd {
       static void is_less_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (val1 <= val2)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: less than or equal to ";
-          __value_printer<char, std::char_traits<char>, TValue2>::print(ss, val2);
-          ss << "\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TValue1>::print(ss, val1);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
       }
       
       /// @brief that a value is NaN.
@@ -1289,11 +1208,8 @@ namespace xtd {
       static void is_NaN(double value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(value))
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: NaN\nBut was:  " << value;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("NaN", to_string(value), message, line_info);
       }
       
       /// @brief that a value is NaN.
@@ -1349,11 +1265,8 @@ namespace xtd {
       static void is_NaN(long double value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(value))
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: NaN\nBut was:  " << value;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("NaN", to_string(value), message, line_info);
       }
 
       /// @brief that a value is NaN.
@@ -1409,11 +1322,8 @@ namespace xtd {
       static void is_NaN(float value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(value))
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: NaN\nBut was:  " << value;
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("NaN", to_string(value), message, line_info);
       }
       
       /// @brief Asserts that ta condition is negative.
@@ -1473,12 +1383,8 @@ namespace xtd {
       static void is_negative(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (value < 0)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: negative\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
-         fail(ss.str(), message, line_info);
-        }
+        else
+          fail("negative", to_string(value), message, line_info);
       }
 
       /// @brief Asserts that collection or traits does not contain any item.
@@ -1539,7 +1445,7 @@ namespace xtd {
         if (!std::empty(value))
           succeed(message, line_info);
         else
-          fail("Expected: collection not <empty>\nBut was:  <empty>", message, line_info);
+          fail("collection not <empty>", "<empty>", message, line_info);
       }
       
       /// @brief Asserts that an object is not of the type supplied or a derived type.
@@ -1596,7 +1502,7 @@ namespace xtd {
         if (dynamic_cast<const Type*>(&value) == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: not instance of <" + __demangle(typeid(Type).name()) + ">\nBut was:  <" + __demangle(typeid(value).name()) + ">", message, line_info);
+          fail("not instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -1661,7 +1567,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: not null\nBut was:  null", message, line_info);
+          fail("not null", "null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -1722,7 +1628,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: not null\nBut was:  null", message, line_info);
+          fail("not null", "null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -1783,7 +1689,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: not null\nBut was:  null", message, line_info);
+          fail("not null", "null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -1888,7 +1794,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::is_not_null(nullptr, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: not null\nBut was:  null", message, line_info);}
+      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("not null", "null", message, line_info);}
       
       /// @brief Asserts that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -1948,7 +1854,7 @@ namespace xtd {
         if (value != 0)
           succeed(message, line_info);
         else
-          fail("Expected: not zero\nBut was:  0", message, line_info);
+          fail("not zero", "0", message, line_info);
       }
 
       /// @brief Asserts that the pointer is null.
@@ -2013,7 +1919,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: null\nBut was:  not null", message, line_info);
+          fail("null", "not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -2074,7 +1980,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: null\nBut was:  not null", message, line_info);
+          fail("null", "not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -2135,7 +2041,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("Expected: null\nBut was:  not null", message, line_info);
+          fail("null", "not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -2196,7 +2102,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: null\nBut was:  not null", message, line_info);}
+      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("null", "not null", message, line_info);}
       
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2299,12 +2205,8 @@ namespace xtd {
       static void is_positive(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (value > 0)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: positive\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("positive", to_string(value), message, line_info);
       }
 
       /// @brief Asserts that ta condition is true.
@@ -2361,7 +2263,7 @@ namespace xtd {
         if (condition == true)
           succeed(message, line_info);
         else
-          fail("Expected: true\nBut was:  false", message, line_info);
+          fail("true", "false", message, line_info);
       }
  
       /// @brief Asserts that ta condition is zero.
@@ -2421,12 +2323,8 @@ namespace xtd {
       static void is_zero(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (value == 0)
           succeed(message, line_info);
-        else {
-          std::stringstream ss;
-          ss << "Expected: zero\nBut was:  ";
-          __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
-          fail(ss.str(), message, line_info);
-        }
+        else
+          fail("zero", to_string(value), message, line_info);
       }
       
       /// @brief Generates a success with a generic message. This is used by the other Assert functions.
@@ -2518,15 +2416,15 @@ namespace xtd {
       static void throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
-          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <nothing>", message, line_info);
+          fail("<"  + __demangle(typeid(TException).name()) + ">", "<nothing>", message, line_info);
         } catch (const TException&) {
           succeed(message, line_info);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (const std::exception& e) {
-          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <" + __demangle(typeid(e).name()) + ">", message, line_info);
+          fail("<"  + __demangle(typeid(TException).name()) + ">", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
-          fail("Expected: <"  + __demangle(typeid(TException).name()) + ">\nBut was:  <exception>", message, line_info);
+          fail("<"  + __demangle(typeid(TException).name()) + ">", "<exception>", message, line_info);
         }
       }
       
@@ -2579,12 +2477,22 @@ namespace xtd {
       static void throws_any(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
-          fail("Expected: <exception>\nBut was:  <nothing>", message, line_info);
+          fail("<exception>", "<nothing>", message, line_info);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (...) {
           succeed(message, line_info);
         }
+      }
+      
+    private:
+      static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
+
+      template <typename TValue>
+      static std::string to_string(const TValue& value) {
+        std::stringstream ss;
+        __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
+        return ss.str();
       }
     };
   }
