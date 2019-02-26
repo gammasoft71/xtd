@@ -148,7 +148,7 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      if (__APPLE__) assert::abort();
+      //if (__APPLE__) assert::abort();
       std::vector a = {1, 2, 3, 4};
       std::vector b = {1, 2, 3, 4, 5};
       assert::are_equal(a, b);
