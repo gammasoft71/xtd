@@ -2,7 +2,7 @@
 
 # Download the latest stable xtd.tunit version
 
-You can download latest stable version on [SourceForge](https://sourceforge.net/projects/tunithpro)
+You can download latest stable version on [SourceForge](https://sourceforge.net/projects/tunitpro/)
 
 [![Downloadxtd.tunit](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tunitpro/files/latest/download)
 
@@ -19,11 +19,11 @@ git clone https://github.com/gammasoft71/xtd.tunit .
 ## Windows 7 SP1 or later
 
 1. Install Microsoft Visual Studio 2017 Community
-   
+  
    In order to build xtd.tunit, you first need download and install Microsoft Visual Studio 2017 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
 2. Install CMake 3.3 or later
-   
+  
    After Microsoft Visual Studio, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/)
    
    *Remarks: Verify if you can execute 'cmake --version' in "Command Prompt", if it's no, add cmake install directory to your path.*
@@ -41,17 +41,17 @@ install.cmd
 ## macOS 10.14 (OS X Mojave) or later
 
 1. Install Xcode 10 or later
-   
+  
    In order to build xtd.tunit, you first need download and install Xcode from App Store and install "Commands line tools".
 
    *Remarks: Verify if you can execute 'clang --version' in "Terminal".*
 
 2. Install Homebrew
-   
+  
    After Xcode, to build Switch, you need to install package manager Homebrew ([http://brew.sh](http://brew.sh)).
    
 ```shell
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL ttps://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 3. After installing Xcode and Homebrew, do the following in "Terminal" to Build and install :
@@ -78,13 +78,13 @@ cd /home/YourName/YourProject
 ## Other linux Distribution
 
 1. Install g++ 7 or later
-   
+  
    In order to build , you first need download and install g++ 7 or later.
 
    *Remarks: Verify if you can execute 'g++ --version' in "Terminal".*
 
 2. Install CMake 3.3 or later
-   
+  
    After Microsoft Visual Studio, you need to install the latest version cmake from [https://cmake.org/download/](https://cmake.org/download/)
 
    *Remarks: Verify if you can execute 'cmake --version' in "Terminal", if it's no, add cmake install directory to your path.*
