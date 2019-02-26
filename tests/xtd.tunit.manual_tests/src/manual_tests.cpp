@@ -148,24 +148,10 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      assert::succeed("My message");
+      assert::ignore();
     }
     
-    void test_method_(test_case2) {
-      assert::abort("My message");
-    }
-    
-    void test_method_(test_case3) {
-      //assert::fail();
-      //assert::is_empty(std::vector {1, 2, 3, 4});
-      assert::are_equal(24, 42, "My message");
-    }
-    
-    void test_method_(test_case4) {
-      assert::ignore("My message");
-    }
-    
-    void ignore_test_method_(test_case5) {
+    void ignore_test_method_(test_case2) {
     }
   };
 }
