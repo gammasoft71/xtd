@@ -2052,7 +2052,7 @@ namespace xtd {
       
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -2067,7 +2067,7 @@ namespace xtd {
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -2082,7 +2082,7 @@ namespace xtd {
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
@@ -2098,7 +2098,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
-      /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @par Examples
       /// @code
       /// std::shared_ptr<std::string> s = std::make_shared<std::string>("Anything");
