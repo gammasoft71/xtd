@@ -41,6 +41,16 @@
 | file_assert       | class | ![progress100](pictures/progress0.png)   |
 | directory_assert  | class | ![progress100](pictures/progress0.png)   |
 
+# Assumptions :
+
+| Name             | Type  | Status                                 |
+|------------------|-------|----------------------------------------|
+| assum            | class | ![progress100](pictures/progress0.png) |
+| string_assum     | class | ![progress100](pictures/progress0.png) |
+| collection_assum | class | ![progress100](pictures/progress0.png) |
+| file_assum       | class | ![progress100](pictures/progress0.png) |
+| directory_assum  | class | ![progress100](pictures/progress0.png) |
+
 # settings :
 | Name     | Type  | Status                                  |
 |----------|-------|-----------------------------------------|
