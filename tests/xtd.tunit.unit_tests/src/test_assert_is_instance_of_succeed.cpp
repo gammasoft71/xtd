@@ -20,11 +20,11 @@ void test_(test_assert_is_instance_of_succeed, test_output) {
   xtd::tunit::ostream_unit_test(ss, argv, argc).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  Start 1 test from test_assert_is_instance_of_succeed\n"
-                "    PASSED test_case_succeed\n"
+                "    SUCCEED test_case_succeed\n"
                 "  End 1 test from test_assert_is_instance_of_succeed\n"
                 "\n"
                 "  Summary :\n"
-                "    PASSED 1 test.\n"
+                "    SUCCEED 1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }

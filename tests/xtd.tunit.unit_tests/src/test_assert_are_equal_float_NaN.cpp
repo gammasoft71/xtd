@@ -19,11 +19,11 @@ void test_(test_assert_are_equal_float_NaN, test_output) {
   xtd::tunit::ostream_unit_test(ss, argv, argc).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  Start 1 test from test_assert_are_equal_float_NaN\n"
-                "    PASSED test_case_succeed\n"
+                "    SUCCEED test_case_succeed\n"
                 "  End 1 test from test_assert_are_equal_float_NaN\n"
                 "\n"
                 "  Summary :\n"
-                "    PASSED 1 test.\n"
+                "    SUCCEED 1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }

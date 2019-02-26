@@ -28,8 +28,8 @@ int main(int argc, char* argv[]) {
 //
 /// tart 2 tests from 1 test case
 //   Start 2 tests from test
-//     PASSED test_case_succeed (0 ms total)
-//     FAILED test_case_failed (0 ms total)
+//     SUCCEED test_case_succeed (0 ms total)
+//     FAILED  test_case_failed (0 ms total)
 //
 // Expected: not null
 // But was:  null
@@ -38,10 +38,10 @@ int main(int argc, char* argv[]) {
 //   End 2 tests from test (0 ms total)
 //
 //   Summary :
-//     PASSED 1 test.
-// *** FAILED 1 test, listed below:
-// *** FAILED test.test_case_failed
+//     SUCCEED 1 test.
+// *** FAILED  1 test, listed below:
+// *** FAILED  test.test_case_failed
 //
-//     FAILED 1 test.
+//     FAILED  1 test.
 // End 2 tests from 1 test case ran. (0 ms total)
 

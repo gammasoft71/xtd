@@ -33,6 +33,8 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
       }
+    } catch(const xtd::tunit::abort_error&) {
+      unit_test.event_listener_->on_test_aborted(xtd::tunit::test_event_args(*this, test_class, unit_test));
     } catch(const xtd::tunit::assert_error&) {
       xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
       unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));

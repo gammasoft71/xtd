@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
 //
 // Start 1 test from 1 test case
 //   Start 1 test from test
-//     FAILED test_case_failed (0 ms total)
+//     FAILED  test_case_failed (0 ms total)
 //
 // Failled
 // error: !---OMITTED---!/xtd.tunit/examples/assert_does_not_throw/src/assert_fail.cpp:9
@@ -28,8 +28,8 @@ int main(int argc, char* argv[]) {
 //   End 1 test from test (0 ms total)
 //
 //   Summary :
-// *** FAILED 1 test, listed below:
-// *** FAILED test.test_case_failed
+// *** FAILED  1 test, listed below:
+// *** FAILED  test.test_case_failed
 //
-//     FAILED 1 test.
+//     FAILED  1 test.
 // End 1 test from 1 test case ran. (0 ms total)

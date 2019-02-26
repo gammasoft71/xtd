@@ -38,15 +38,15 @@ int main(int argc, char* argv[]) {
 //
 // Start 4 tests from 1 test case
 //   Start 4 tests from test
-//     PASSED test_case_collection_succeed (0 ms total)
-//     FAILED test_case_collection_failed (0 ms total)
+//     SUCCEED test_case_collection_succeed (0 ms total)
+//     FAILED  test_case_collection_failed (0 ms total)
 //
 // Expected: collection not <empty>
 // But was:  <empty>
 // error: !---OMITTED---!/xtd.tunit/examples/assert_contains/src/assert_is_not_empty.cpp:17
 //
-//     PASSED test_case_string_succeed (0 ms total)
-//     FAILED test_case_string_failed (0 ms total)
+//     SUCCEED test_case_string_succeed (0 ms total)
+//     FAILED  test_case_string_failed (0 ms total)
 //
 // Expected: collection not <empty>
 // But was:  <empty>
@@ -55,10 +55,10 @@ int main(int argc, char* argv[]) {
 //   End 4 tests from test (0 ms total)
 //
 //   Summary :
-//     PASSED 2 tests.
-// *** FAILED 2 tests, listed below:
-// *** FAILED test.test_case_collection_failed
-// *** FAILED test.test_case_string_failed
+//     SUCCEED 2 tests.
+// *** FAILED  2 tests, listed below:
+// *** FAILED  test.test_case_collection_failed
+// *** FAILED  test.test_case_string_failed
 //
-//     FAILED 2 tests.
+//     FAILED  2 tests.
 // End 4 tests from 1 test case ran. (0 ms total)

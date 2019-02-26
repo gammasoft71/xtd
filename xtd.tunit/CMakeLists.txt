@@ -5,6 +5,7 @@ project(xtd.tunit VERSION 0.1.0)
 set(INCLUDES
   include/xtd/__demangle.hpp
   include/xtd/__join__items.hpp
+  include/xtd/abort_error.hpp
   include/xtd/assert.hpp
   include/xtd/assert_error.hpp
   include/xtd/class_cleanup_attribute.hpp

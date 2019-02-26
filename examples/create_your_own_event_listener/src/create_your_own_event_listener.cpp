@@ -111,8 +111,8 @@ private:
       cout << endl;
       cout << " " << e.unit_test().failed_test_count() << " FAILED TEST" << endl;
     }
-    if (!e.unit_test().failed_test_count() && e.unit_test().ignore_test_count()) cout << endl;
-    if (e.unit_test().ignore_test_count()) cout << "  YOU HAVE " << e.unit_test().ignore_test_count() << " DISABLED TESTS" << endl << endl;
+    if (!e.unit_test().failed_test_count() && e.unit_test().ignored_test_count()) cout << endl;
+    if (e.unit_test().ignored_test_count()) cout << "  YOU HAVE " << e.unit_test().ignored_test_count() << " DISABLED TESTS" << endl << endl;
   }
 };
 

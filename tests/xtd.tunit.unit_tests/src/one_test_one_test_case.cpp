@@ -17,11 +17,11 @@ void test_(one_test_one_test_case, test_output) {
   xtd::tunit::ostream_unit_test(ss, argv, argc).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  Start 1 test from one_test_one_test_case\n"
-                "    PASSED test_case1\n"
+                "    SUCCEED test_case1\n"
                 "  End 1 test from one_test_one_test_case\n"
                 "\n"
                 "  Summary :\n"
-                "    PASSED 1 test.\n"
+                "    SUCCEED 1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }

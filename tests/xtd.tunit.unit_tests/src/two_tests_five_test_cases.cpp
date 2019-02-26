@@ -30,17 +30,17 @@ void test_(two_tests_five_test_cases, test_output) {
   xtd::tunit::ostream_unit_test(ss, argv, argc).run();
   assert_value_("Start 5 tests from 2 test cases\n"
                 "  Start 2 tests from two_tests_five_test_cases_1\n"
-                "    PASSED test_case1\n"
-                "    PASSED test_case2\n"
+                "    SUCCEED test_case1\n"
+                "    SUCCEED test_case2\n"
                 "  End 2 tests from two_tests_five_test_cases_1\n"
                 "  Start 3 tests from two_tests_five_test_cases_2\n"
-                "    PASSED test_case3\n"
-                "    PASSED test_case4\n"
-                "    PASSED test_case5\n"
+                "    SUCCEED test_case3\n"
+                "    SUCCEED test_case4\n"
+                "    SUCCEED test_case5\n"
                 "  End 3 tests from two_tests_five_test_cases_2\n"
                 "\n"
                 "  Summary :\n"
-                "    PASSED 5 tests.\n"
+                "    SUCCEED 5 tests.\n"
                 "End 5 tests from 2 test cases ran.\n"
                 "\n", ss.str());
 }

@@ -76,7 +76,23 @@ namespace xtd {
           count += test_class.test()->test_count();
         return count;
       }
+
+      size_t aborted_test_count() const noexcept {
+        size_t count = 0;
+        for (auto& test_class : this->test_classes())
+          for (auto& test : test_class.test()->tests())
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
+        return count;
+      }
       
+      std::vector<std::string> aborted_test_names() const noexcept {
+        std::vector<std::string> names;
+        for (auto& test_class : this->test_classes())
+          for (auto& test : test_class.test()->tests())
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
+        return names;
+      }
+
       size_t ignored_test_count() const noexcept {
         size_t count = 0;
         for (auto test_class : this->test_classes())

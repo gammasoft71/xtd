@@ -19,7 +19,7 @@ void test_(test_assert_is_positive_failed, test_output) {
   xtd::tunit::ostream_unit_test(ss, argv, argc).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  Start 1 test from test_assert_is_positive_failed\n"
-                "    FAILED test_case_failed\n"
+                "    FAILED  test_case_failed\n"
                 "\n"
                 "Expected: positive\n"
                 "But was:  -1\n"
@@ -28,11 +28,11 @@ void test_(test_assert_is_positive_failed, test_output) {
                 "  End 1 test from test_assert_is_positive_failed\n"
                 "\n"
                 "  Summary :\n"
-                "    PASSED 0 test.\n"
-                "*** FAILED 1 test, listed below:\n"
-                "*** FAILED test_assert_is_positive_failed.test_case_failed\n"
+                "    SUCCEED 0 test.\n"
+                "*** FAILED  1 test, listed below:\n"
+                "*** FAILED  test_assert_is_positive_failed.test_case_failed\n"
                 "\n"
-                "    FAILED 1 test.\n"
+                "    FAILED  1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }
