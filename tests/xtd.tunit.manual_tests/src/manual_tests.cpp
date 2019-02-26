@@ -148,21 +148,21 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      assert::succeed();
+      assert::succeed("My message");
     }
     
     void test_method_(test_case2) {
-      assert::abort();
+      assert::abort("My message");
     }
     
     void test_method_(test_case3) {
       //assert::fail();
       //assert::is_empty(std::vector {1, 2, 3, 4});
-      assert::are_equal(24, 42);
+      assert::are_equal(24, 42, "My message");
     }
     
     void test_method_(test_case4) {
-      assert::ignore();
+      assert::ignore("My message");
     }
     
     void ignore_test_method_(test_case5) {
@@ -171,6 +171,6 @@ namespace unit_tests {
 }
 
 int main(int argc, char* argv[]) {
-  settings::default_settings().also_run_ignored_tests(true);
+  //settings::default_settings().also_run_ignored_tests(true);
   return console_unit_test(argv, argc).run();
 }

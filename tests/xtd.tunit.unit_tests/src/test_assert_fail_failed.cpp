@@ -21,7 +21,6 @@ void test_(test_assert_fail_failed, test_output) {
                 "    FAILED  test_case_failed\n"
                 "\n"
                 "error: test_assert_fail_failed.cpp:8\n"
-                "Failed\n"
                 "\n"
                 "  End 1 test from test_assert_fail_failed\n"
                 "\n"

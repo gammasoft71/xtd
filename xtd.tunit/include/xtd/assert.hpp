@@ -67,17 +67,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      static void abort(const std::string& message, const xtd::tunit::line_info& line_info) {abort("Abort", message, line_info);}
-      
-      /// @brief Abort current test. This is used by the other Assert functions.
-      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::abort("Abort message", "User message...", line_info_); // test throws an abort_error exception.
-      /// @endcode
-      static void abort(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
+      static void abort(const std::string& message, const xtd::tunit::line_info& line_info);
       
       /// @brief Ignore current test. This is used by the other Assert functions.
       /// @par Examples
@@ -110,17 +100,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
       /// @endcode
-      static void ignore(const std::string& message, const xtd::tunit::line_info& line_info) {ignore("Ignored", message, line_info);}
-      
-      /// @brief Ignore current test. This is used by the other Assert functions.
-      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::ignore("Abort message", "User message...", line_info_); // test throws an ignore_error exception.
-      /// @endcode
-      static void ignore(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
+      static void ignore(const std::string& message, const xtd::tunit::line_info& line_info);
 
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
