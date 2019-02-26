@@ -23,6 +23,7 @@ Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
 * Linux
 * iOS
 * android
+* Probably others
 
 # Compilers
 
