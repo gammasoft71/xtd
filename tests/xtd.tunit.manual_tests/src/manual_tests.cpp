@@ -148,10 +148,8 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      assert::ignore();
-    }
-    
-    void ignore_test_method_(test_case2) {
+      //std::initializer_list<int> il = {1, 2, 3, 4};
+      assert::contains(3, {1, 2, 3, 4});
     }
   };
 }
