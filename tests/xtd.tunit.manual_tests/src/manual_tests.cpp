@@ -158,9 +158,17 @@ namespace unit_tests {
     void test_method_(test_case3) {
       assert::fail();
     }
+    
+    void test_method_(test_case4) {
+      assert::ignore();
+    }
+    
+    void ignore_test_method_(test_case5) {
+    }
   };
 }
 
 int main(int argc, char* argv[]) {
+  settings::default_settings().also_run_ignored_tests(true);
   return console_unit_test(argv, argc).run();
 }
