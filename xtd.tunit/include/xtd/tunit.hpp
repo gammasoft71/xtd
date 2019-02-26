@@ -5,6 +5,7 @@
 /// @defgroup tunit tunit
 /// @brief tunit unit test library
 
+#include "abort_error.hpp"
 #include "assert.hpp"
 #include "assert_error.hpp"
 #include "class_cleanup_attribute.hpp"
@@ -14,6 +15,7 @@
 #include "default_insert_basic_ostream_operator.hpp"
 #include "default_main.hpp"
 #include "event_listener.hpp"
+#include "ignore_error.hpp"
 #include "line_info.hpp"
 #include "ostream_event_listener.hpp"
 #include "ostream_unit_test.hpp"

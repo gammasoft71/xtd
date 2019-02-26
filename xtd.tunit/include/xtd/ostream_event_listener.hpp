@@ -73,6 +73,19 @@ namespace xtd {
         this->os_ << std::endl;
       }
       
+      /// @brief Occurs when test is ignored.
+      /// @param test_event_args Contains test event parameters.
+      void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
+        this->event_listener::on_test_ignored(e);
+        //__console_foreground_color(__console_color::magenta);
+        this->os_ << "    IGNORED ";
+        //__console_reset_color();
+        this->os_ << e.test().name();
+        if (xtd::tunit::settings::default_settings().show_duration())
+          this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+        this->os_ << std::endl;
+      }
+
       /// @brief Occurs when test is succeed.
       /// @param test_event_args Contains test event parameters.
       void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
@@ -92,10 +105,14 @@ namespace xtd {
         this->event_listener::on_unit_test_end(e);
         this->os_ << std::endl;
         this->os_ << "  Summary :" << std::endl;
-        //__console_foreground_color(__console_color::green);
-        this->os_ << "    SUCCEED ";
-        //__console_reset_color();
-        this->os_ << e.unit_test().passed_test_count() << " test" << (e.unit_test().passed_test_count() <2 ? "" : "s") << "." << std::endl;
+        
+        if (e.unit_test().succeed_test_count()) {
+          //__console_foreground_color(__console_color::green);
+          this->os_ << "    SUCCEED ";
+          //__console_reset_color();
+          this->os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() <2 ? "" : "s") << "." << std::endl;
+        }
+
         if (e.unit_test().aborted_test_count()) {
           //__console_foreground_color(__console_color::yellow);
           this->os_ << "    ABORTED ";
@@ -108,20 +125,34 @@ namespace xtd {
             this->os_ << name << std::endl;
           }
         }
+        
         if (e.unit_test().failed_test_count()) {
           //__console_foreground_color(__console_color::red);
-          this->os_ << "*** FAILED  ";
+          this->os_ << "    FAILED  ";
           //__console_reset_color();
           this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
           for(auto name : e.unit_test().failed_test_names()) {
             //__console_foreground_color(__console_color::red);
-            this->os_ << "*** FAILED  ";
+            this->os_ << "    FAILED  ";
+            //__console_reset_color();
+            this->os_ << name << std::endl;
+          }
+        }
+        
+        if (e.unit_test().ignored_test_count()) {
+          //__console_foreground_color(__console_color::red);
+          this->os_ << "    IGNORED ";
+          //__console_reset_color();
+          this->os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
+          for(auto name : e.unit_test().ignored_test_names()) {
+            //__console_foreground_color(__console_color::magenta);
+            this->os_ << "    IGNORED ";
             //__console_reset_color();
             this->os_ << name << std::endl;
           }
         }
 
-        if (e.unit_test().aborted_test_count() || e.unit_test().failed_test_count())
+        if (e.unit_test().aborted_test_count() || e.unit_test().failed_test_count() || e.unit_test().ignored_test_count())
           this->os_ << std::endl;
 
         if (e.unit_test().aborted_test_count()) {
@@ -130,24 +161,23 @@ namespace xtd {
           //__console_reset_color();
           this->os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
-        
         if (e.unit_test().failed_test_count()) {
           //__console_foreground_color(__console_color::red);
           this->os_ << "    FAILED  ";
           //__console_reset_color();
           this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
-
+        if (e.unit_test().ignored_test_count()) {
+          //__console_foreground_color(__console_color::magenta);
+          this->os_ << "    IGNORED ";
+          //__console_reset_color();
+          this->os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << "." << std::endl;
+        }
+        
         this->os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << " ran.";
         if (xtd::tunit::settings::default_settings().show_duration())
           this->os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
-        this->os_ << std::endl;
-        if (e.unit_test().ignored_test_count()) {
-          //__console_foreground_color(__console_color::magenta);
-          this->os_ << std::endl << "  You have " << e.unit_test().ignored_test_count() << " ignored test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << std::endl;
-          //__console_reset_color();
-        }
-        this->os_ << std::endl;
+        this->os_ << std::endl << std::endl;
       }
       
       /// @brief Occurs when unit test cleanup is started.

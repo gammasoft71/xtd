@@ -93,18 +93,26 @@ namespace xtd {
         return names;
       }
 
+      std::chrono::milliseconds elapsed_time() const noexcept {
+        using namespace std::chrono_literals;
+        if (this->start_time_point_.time_since_epoch() == 0ms && this->end_time_point_.time_since_epoch() == 0ms) return 0ms;
+        if (this->end_time_point_.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->start_time_point_);
+        return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point_ - this->start_time_point_);
+      }
+
       size_t ignored_test_count() const noexcept {
         size_t count = 0;
         for (auto test_class : this->test_classes())
           count += test_class.test()->ignored_test_count();
         return count;
       }
-      
-      std::chrono::milliseconds elapsed_time() const noexcept {
-        using namespace std::chrono_literals;
-        if (this->start_time_point_.time_since_epoch() == 0ms && this->end_time_point_.time_since_epoch() == 0ms) return 0ms;
-        if (this->end_time_point_.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->start_time_point_);
-        return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point_ - this->start_time_point_);
+
+      std::vector<std::string> ignored_test_names() const noexcept {
+        std::vector<std::string> names;
+        for (auto& test_class : this->test_classes())
+          for (auto& test : test_class.test()->tests())
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
+        return names;
       }
 
       size_t failed_test_count() const noexcept {
@@ -123,12 +131,20 @@ namespace xtd {
         return names;
       }
 
-      size_t passed_test_count() const noexcept {
+      size_t succeed_test_count() const noexcept {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
             if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
         return count;
+      }
+
+      std::vector<std::string> succeed_test_names() const noexcept {
+        std::vector<std::string> names;
+        for (auto& test_class : this->test_classes())
+          for (auto& test : test_class.test()->tests())
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
+        return names;
       }
 
     private:

@@ -56,9 +56,9 @@ int main(int argc, char* argv[]) {
 //
 //   Summary :
 //     SUCCEED 2 tests.
-// *** FAILED  2 tests, listed below:
-// *** FAILED  test.test_case_collection_failed
-// *** FAILED  test.test_case_string_failed
+//     FAILED  2 tests, listed below:
+//     FAILED  test.test_case_collection_failed
+//     FAILED  test.test_case_string_failed
 //
 //     FAILED  2 tests.
 // End 4 tests from 1 test case ran. (0 ms total)

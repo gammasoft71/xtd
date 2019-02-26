@@ -22,7 +22,6 @@ void test_(test_assert_abort_aborted, test_output) {
                 "  End 1 test from test_assert_abort_aborted\n"
                 "\n"
                 "  Summary :\n"
-                "    SUCCEED 0 test.\n"
                 "    ABORTED 1 test, listed below:\n"
                 "    ABORTED test_assert_abort_aborted.test_case_aborted\n"
                 "\n"

@@ -51,11 +51,10 @@ int main(int argc, char* argv[]) {
 //   End 3 tests from test (0 ms total)
 //
 //   Summary :
-//     SUCCEED 0 test.
-// *** FAILED  3 tests, listed below:
-// *** FAILED  test.test_case1
-// *** FAILED  test.test_case2
-// *** FAILED  test.test_case3
+//     FAILED  3 tests, listed below:
+//     FAILED  test.test_case1
+//     FAILED  test.test_case2
+//     FAILED  test.test_case3
 //
 //     FAILED  3 tests.
 // End 3 tests from 1 test case ran. (0 ms total)
