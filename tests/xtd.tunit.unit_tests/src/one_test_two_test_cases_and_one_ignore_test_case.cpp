@@ -20,19 +20,19 @@ void test_(one_test_two_test_cases_and_one_ignore_test_case, test_output) {
   xtd::tunit::settings::default_settings().filter_tests("one_test_two_test_cases_and_one_ignore_test_case.*");
   xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::ostream_unit_test(ss, argv, argc).run();
-  assert_value_("Start 2 tests from 1 test case\n"
-                "  Start 2 tests from one_test_two_test_cases_and_one_ignore_test_case\n"
+  assert_value_("Start 3 tests from 1 test case\n"
+                "  Start 3 tests from one_test_two_test_cases_and_one_ignore_test_case\n"
                 "    SUCCEED test_case1\n"
                 "    SUCCEED test_case2\n"
-                "  End 2 tests from one_test_two_test_cases_and_one_ignore_test_case\n"
+                "  End 3 tests from one_test_two_test_cases_and_one_ignore_test_case\n"
                 "\n"
                 "  Summary :\n"
-                "    SUCCEED 2 tests.\n"
                 "    IGNORED 1 test, listed below:\n"
                 "    IGNORED one_test_two_test_cases_and_one_ignore_test_case.test_case3\n"
                 "\n"
+                "    SUCCEED 2 tests.\n"
                 "    IGNORED 1 test.\n"
-                "End 2 tests from 1 test case ran.\n"
+                "End 3 tests from 1 test case ran.\n"
                 "\n", ss.str());
 }
 

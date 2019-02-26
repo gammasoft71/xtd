@@ -106,13 +106,6 @@ namespace xtd {
         this->os_ << std::endl;
         this->os_ << "  Summary :" << std::endl;
         
-        if (e.unit_test().succeed_test_count()) {
-          //__console_foreground_color(__console_color::green);
-          this->os_ << "    SUCCEED ";
-          //__console_reset_color();
-          this->os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() <2 ? "" : "s") << "." << std::endl;
-        }
-
         if (e.unit_test().aborted_test_count()) {
           //__console_foreground_color(__console_color::yellow);
           this->os_ << "    ABORTED ";
@@ -155,6 +148,12 @@ namespace xtd {
         if (e.unit_test().aborted_test_count() || e.unit_test().failed_test_count() || e.unit_test().ignored_test_count())
           this->os_ << std::endl;
 
+        if (e.unit_test().succeed_test_count()) {
+          //__console_foreground_color(__console_color::green);
+          this->os_ << "    SUCCEED ";
+          //__console_reset_color();
+          this->os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() < 2 ? "" : "s") << "." << std::endl;
+        }
         if (e.unit_test().aborted_test_count()) {
           //__console_foreground_color(__console_color::yellow);
           this->os_ << "    ABORTED ";

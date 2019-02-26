@@ -25,10 +25,12 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
     try {
       this->method()();
       if (this->not_started()) this->status_ = test_status::succeed;
-      if (this->succeed())
-        unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
-      else if (this->aborted())
+      if (this->aborted())
         unit_test.event_listener_->on_test_aborted(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      else if (this->ignored())
+        unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      else if (this->succeed())
+        unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
       else {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
@@ -38,6 +40,8 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
     } catch(const xtd::tunit::assert_error&) {
       xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
       unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
+    } catch(const xtd::tunit::ignore_error&) {
+      unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
     } catch(const std::exception&) {
       xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
       unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
