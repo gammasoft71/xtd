@@ -1,5 +1,7 @@
 [![tunit](docs/pictures/header.png)](https://gammasoft71.wixsite.com/xtd-tunit)
 
+Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
+
 [![Build Status](https://travis-ci.org/gammasoft71/xtd.tunit.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.tunit)
 [![Build status](https://ci.appveyor.com/api/projects/status/1h8y1d4lodnk1wbb?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-tunit)
 [![codecov](https://codecov.io/gh/gammasoft71/xtd.tunit/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.tunit)
@@ -14,8 +16,6 @@
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](https://en.wikipedia.org/wiki/Linux)
 [![iOS](https://img.shields.io/badge/os-iOS-004080.svg)](https://en.wikipedia.org/wiki/IOS)
 [![android](https://img.shields.io/badge/os-android-004080.svg)](https://en.wikipedia.org/wiki/Android_(operating_system))
-
-Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
 
 # Features
 
