@@ -49,7 +49,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void abort(const xtd::tunit::line_info& line_info) {fail("", line_info);}
+      static void abort(const xtd::tunit::line_info& line_info) {abort("", line_info);}
       
       /// @brief Abort current test. This is used by the other Assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -57,7 +57,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void abort(const std::string& message) {fail(message, line_info());}
+      static void abort(const std::string& message) {abort(message, line_info());}
       
       /// @brief Abort current test. This is used by the other Assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
