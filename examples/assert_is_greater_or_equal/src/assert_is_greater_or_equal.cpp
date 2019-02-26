@@ -31,9 +31,9 @@ int main(int argc, char* argv[]) {
 //
 /// tart 3 tests from 1 test case
 //   Start 3 tests from test
-//     PASSED test_case_succeed1 (0 ms total)
-//     PASSED test_case_succeed2 (0 ms total)
-//     FAILED test_case_failed (0 ms total)
+//     SUCCEED test_case_succeed1 (0 ms total)
+//     SUCCEED test_case_succeed2 (0 ms total)
+//     FAILED  test_case_failed (0 ms total)
 //
 // Expected: greater than or equal to 48
 // But was:  24
@@ -42,10 +42,10 @@ int main(int argc, char* argv[]) {
 //   End 3 tests from test (0 ms total)
 //
 //   Summary :
-//     PASSED 2 tests.
-// *** FAILED 1 test, listed below:
-// *** FAILED test.test_case_failed
+//     SUCCEED 2 tests.
+// *** FAILED  1 test, listed below:
+// *** FAILED  test.test_case_failed
 //
-//     FAILED 1 test.
+//     FAILED  1 test.
 // End 3 tests from 1 test case ran. (0 ms total)
 

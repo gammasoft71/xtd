@@ -30,19 +30,19 @@ int main(int argc, char* argv[]) {
 //
 // Start 3 tests from 1 test case
 //   Start 3 tests from test
-//     FAILED test_case1 (0 ms total)
+//     FAILED  test_case1 (0 ms total)
 //
 // Expected: true
 // But was:  false
 // error: |---OMITTED---|/xtd/xtd.tunit/examples/many_asserts/src/many_asserts.cpp:11
 //
-//     FAILED test_case2 (0 ms total)
+//     FAILED  test_case2 (0 ms total)
 //
 // Expected: false
 // But was:  true
 // error: |---OMITTED---|/xtd/xtd.tunit/examples/many_asserts/src/many_asserts.cpp:15
 //
-//     FAILED test_case3 (0 ms total)
+//     FAILED  test_case3 (0 ms total)
 //
 // Expected: No Exception to be thrown
 // But was:  <std::range_error>
@@ -51,11 +51,11 @@ int main(int argc, char* argv[]) {
 //   End 3 tests from test (0 ms total)
 //
 //   Summary :
-//     PASSED 0 test.
-// *** FAILED 3 tests, listed below:
-// *** FAILED test.test_case1
-// *** FAILED test.test_case2
-// *** FAILED test.test_case3
+//     SUCCEED 0 test.
+// *** FAILED  3 tests, listed below:
+// *** FAILED  test.test_case1
+// *** FAILED  test.test_case2
+// *** FAILED  test.test_case3
 //
-//     FAILED 3 tests.
+//     FAILED  3 tests.
 // End 3 tests from 1 test case ran. (0 ms total)

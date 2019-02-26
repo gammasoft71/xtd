@@ -32,9 +32,9 @@ int main(int argc, char* argv[]) {
 //
 // Start 1 test from 1 test case
 //   Start 1 test from test
-//     PASSED test_case1 (0 ms total)
+//     SUCCEED test_case1 (0 ms total)
 //   End 1 test from test (0 ms total)
 //
 //   Summary :
-//     PASSED 1 test.
+//     SUCCEED 1 test.
 // End 1 test from 1 test case ran. (0 ms total)

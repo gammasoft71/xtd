@@ -3,6 +3,7 @@
 #pragma once
 #include "__demangle.hpp"
 #include "__join__items.hpp"
+#include "abort_error.hpp"
 #include "assert_error.hpp"
 #include "default_insert_basic_ostream_operator.hpp"
 #include "line_info.hpp"
@@ -34,6 +35,49 @@ namespace xtd {
       assert() = delete;
       /// @endcond
       
+      /// @brief Abort current test. This is used by the other Assert functions.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void abort() {abort("", line_info());}
+      
+      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void abort(const xtd::tunit::line_info& line_info) {fail("", line_info);}
+      
+      /// @brief Abort current test. This is used by the other Assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void abort(const std::string& message) {fail(message, line_info());}
+      
+      /// @brief Abort current test. This is used by the other Assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void abort(const std::string& message, const xtd::tunit::line_info& line_info) {abort("Failled", message, line_info);}
+      
+      /// @brief Abort current test. This is used by the other Assert functions.
+      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::abort("Abort message", "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void abort(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
+
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.

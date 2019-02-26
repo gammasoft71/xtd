@@ -148,8 +148,15 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      long double ld = 0.5l;
-      assert::are_equal(0.4l, ld, 0.1l);
+      assert::succeed();
+    }
+    
+    void test_method_(test_case2) {
+      assert::abort();
+    }
+    
+    void test_method_(test_case3) {
+      assert::fail();
     }
   };
 }

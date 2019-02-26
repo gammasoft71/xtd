@@ -42,7 +42,7 @@ namespace xtd {
       void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
         this->event_listener::on_test_aborted(e);
         //__console_foreground_color(__console_color::yellow);
-        this->os_ << "    ABORTED";
+        this->os_ << "    ABORTED ";
         //__console_reset_color();
         this->os_ << e.test().name();
         if (xtd::tunit::settings::default_settings().show_duration())
@@ -55,7 +55,7 @@ namespace xtd {
       void on_test_failed(const xtd::tunit::test_event_args& e) const override {
         this->event_listener::on_test_failed(e);
         //__console_foreground_color(__console_color::red);
-        this->os_ << "    FAILED ";
+        this->os_ << "    FAILED  ";
         //__console_reset_color();
         this->os_ << e.test().name();
         if (xtd::tunit::settings::default_settings().show_duration())
@@ -78,7 +78,7 @@ namespace xtd {
       void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
         this->event_listener::on_test_succeed(e);
         //__console_foreground_color(__console_color::green);
-        this->os_ << "    PASSED ";
+        this->os_ << "    SUCCEED ";
         //__console_reset_color();
         this->os_ << e.test().name();
         if (xtd::tunit::settings::default_settings().show_duration())
@@ -93,26 +93,51 @@ namespace xtd {
         this->os_ << std::endl;
         this->os_ << "  Summary :" << std::endl;
         //__console_foreground_color(__console_color::green);
-        this->os_ << "    PASSED ";
+        this->os_ << "    SUCCEED ";
         //__console_reset_color();
         this->os_ << e.unit_test().passed_test_count() << " test" << (e.unit_test().passed_test_count() <2 ? "" : "s") << "." << std::endl;
+        if (e.unit_test().aborted_test_count()) {
+          //__console_foreground_color(__console_color::yellow);
+          this->os_ << "    ABORTED ";
+          //__console_reset_color();
+          this->os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
+          for(auto name : e.unit_test().aborted_test_names()) {
+            //__console_foreground_color(__console_color::yellow);
+            this->os_ << "    ABORTED ";
+            //__console_reset_color();
+            this->os_ << name << std::endl;
+          }
+        }
         if (e.unit_test().failed_test_count()) {
           //__console_foreground_color(__console_color::red);
-          this->os_ << "*** FAILED ";
+          this->os_ << "*** FAILED  ";
           //__console_reset_color();
           this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
           for(auto name : e.unit_test().failed_test_names()) {
             //__console_foreground_color(__console_color::red);
-            this->os_ << "*** FAILED ";
+            this->os_ << "*** FAILED  ";
             //__console_reset_color();
             this->os_ << name << std::endl;
           }
+        }
+
+        if (e.unit_test().aborted_test_count() || e.unit_test().failed_test_count())
           this->os_ << std::endl;
+
+        if (e.unit_test().aborted_test_count()) {
+          //__console_foreground_color(__console_color::yellow);
+          this->os_ << "    ABORTED ";
+          //__console_reset_color();
+          this->os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() < 2 ? "" : "s") << "." << std::endl;
+        }
+        
+        if (e.unit_test().failed_test_count()) {
           //__console_foreground_color(__console_color::red);
-          this->os_ << "    FAILED ";
+          this->os_ << "    FAILED  ";
           //__console_reset_color();
           this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
+
         this->os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << " ran.";
         if (xtd::tunit::settings::default_settings().show_duration())
           this->os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
