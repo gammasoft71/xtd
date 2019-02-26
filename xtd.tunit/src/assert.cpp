@@ -17,7 +17,7 @@ void assert::abort(const std::string& message, const xtd::tunit::line_info& line
 void assert::fail(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
   if (line_info != xtd::tunit::line_info::empty())
     xtd::tunit::test::current_test().info_ = line_info;
-  xtd::tunit::test::current_test().message_ = message;
+  xtd::tunit::test::current_test().message_ = message == "" && expected == "" && actual == "" ? "Test failed"s : message;
   xtd::tunit::test::current_test().actual_ = actual;
   xtd::tunit::test::current_test().expect_ = expected;
   xtd::tunit::test::current_test().status_ = test::test_status::failed;

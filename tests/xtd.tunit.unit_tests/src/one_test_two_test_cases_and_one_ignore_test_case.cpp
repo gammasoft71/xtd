@@ -24,6 +24,7 @@ void test_(one_test_two_test_cases_and_one_ignore_test_case, test_output) {
                 "  Start 3 tests from one_test_two_test_cases_and_one_ignore_test_case\n"
                 "    SUCCEED test_case1\n"
                 "    SUCCEED test_case2\n"
+                "    IGNORED test_case3\n"
                 "  End 3 tests from one_test_two_test_cases_and_one_ignore_test_case\n"
                 "\n"
                 "  Summary :\n"

@@ -691,7 +691,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void fail() {fail("Failed", line_info());}
+      static void fail() {fail("", line_info());}
       
       /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @param line_info Contains information about current file and current line.
@@ -700,7 +700,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void fail(const xtd::tunit::line_info& line_info) {fail("Failed", line_info);}
+      static void fail(const xtd::tunit::line_info& line_info) {fail("", line_info);}
       
       /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
