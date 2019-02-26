@@ -65,6 +65,7 @@ set(SOURCES
   src/test_assert_is_not_empty_string_succeed.cpp
   src/test_assert_is_not_instance_of_failed.cpp
   src/test_assert_is_not_instance_of_succeed.cpp
+  src/test_assert_is_not_null_pointer_failed.cpp
   src/test_assert_is_not_null_pointer_succeed.cpp
   src/test_assert_is_not_null_unique_ptr_succeed.cpp
   src/test_assert_is_not_null_shared_ptr_succeed.cpp
