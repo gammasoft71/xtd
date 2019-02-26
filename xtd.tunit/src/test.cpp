@@ -5,12 +5,17 @@
 using namespace xtd::tunit;
 
 test* test::current_test_ = nullptr;
+bool __tunit_unit_tests_mode__ = false;
 
 void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
   this->start_time_point = std::chrono::high_resolution_clock::now();
   current_test_ = this;
   
-  if (settings::default_settings().is_valid_test_name(test_class.name(), this->name()) && (!this->ignore_ || settings::default_settings().also_run_ignored_tests())) {
+  if (this->ignored() && settings::default_settings().also_run_ignored_tests()) this->status_ = test_status::not_started;
+
+  if (__tunit_unit_tests_mode__ && (this->aborted() || this->failed() || this->succeed())) this->status_ = test_status::not_started;
+
+  if (this->not_started() && settings::default_settings().is_valid_test_name(test_class.name(), this->name())) {
     unit_test.event_listener_->on_test_initialize_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
     if (test_class.test_initialize().method() != nullptr)
       test_class.test_initialize().method()();
@@ -19,8 +24,11 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
     unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
     try {
       this->method()();
-      if (this->passed_)
+      if (this->not_started()) this->status_ = test_status::succeed;
+      if (this->succeed())
         unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
+      else if (this->aborted())
+        unit_test.event_listener_->on_test_aborted(xtd::tunit::test_event_args(*this, test_class, unit_test));
       else {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));

@@ -77,10 +77,10 @@ namespace xtd {
         return count;
       }
       
-      size_t ignore_test_count() const noexcept {
+      size_t ignored_test_count() const noexcept {
         size_t count = 0;
         for (auto test_class : this->test_classes())
-          count += test_class.test()->ignore_test_count();
+          count += test_class.test()->ignored_test_count();
         return count;
       }
       
@@ -95,7 +95,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && !test.passed()) count++;
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
         return count;
       }
 
@@ -103,7 +103,7 @@ namespace xtd {
         std::vector<std::string> names;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && !test.passed()) names.push_back(test_class.test()->name() + "." + test.name());
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
 
@@ -111,7 +111,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && (!test.ignore() || settings::default_settings().also_run_ignored_tests()) && test.passed()) count++;
+            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
         return count;
       }
 

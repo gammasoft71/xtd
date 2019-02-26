@@ -37,6 +37,19 @@ namespace xtd {
         this->event_listener::on_class_start(e);
       }
       
+      /// @brief Occurs when test is aborted.
+      /// @param test_event_args Contains test event parameters.
+      void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
+        this->event_listener::on_test_aborted(e);
+        //__console_foreground_color(__console_color::yellow);
+        this->os_ << "    ABORTED";
+        //__console_reset_color();
+        this->os_ << e.test().name();
+        if (xtd::tunit::settings::default_settings().show_duration())
+          this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
+        this->os_ << std::endl;
+      }
+
       /// @brief Occurs when test is failed.
       /// @param test_event_args Contains test event parameters.
       void on_test_failed(const xtd::tunit::test_event_args& e) const override {
@@ -104,9 +117,9 @@ namespace xtd {
         if (xtd::tunit::settings::default_settings().show_duration())
           this->os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
         this->os_ << std::endl;
-        if (e.unit_test().ignore_test_count()) {
+        if (e.unit_test().ignored_test_count()) {
           //__console_foreground_color(__console_color::magenta);
-          this->os_ << std::endl << "  You have " << e.unit_test().ignore_test_count() << " ignored test" << (e.unit_test().ignore_test_count() < 2 ? "" : "s") << std::endl;
+          this->os_ << std::endl << "  You have " << e.unit_test().ignored_test_count() << " ignored test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << std::endl;
           //__console_reset_color();
         }
         this->os_ << std::endl;

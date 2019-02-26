@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+#define __TUNIT_UNIT_TESTS_MODE true
+
 namespace assert_unit_tests {
   class unit_test_error : public std::exception {
   public:
