@@ -5,6 +5,7 @@
 #include <functional>
 #include <string>
 #include <vector>
+#include "unit_tests_event_listener.hpp"
 
 #define __TUNIT_UNIT_TESTS_MODE true
 

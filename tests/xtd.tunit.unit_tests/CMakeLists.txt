@@ -97,6 +97,7 @@ set(SOURCES
   src/test_assert_throws_any_succeed.cpp
   src/test_insert_basic_output_stream_operator.cpp
   src/two_tests_five_test_cases.cpp
+  src/unit_tests_event_listener.hpp
 )
 source_group(src FILES ${SOURCES})
 

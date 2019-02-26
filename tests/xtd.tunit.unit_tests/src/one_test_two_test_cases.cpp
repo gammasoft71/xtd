@@ -17,7 +17,7 @@ void test_(one_test_two_test_cases, test_output) {
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("one_test_two_test_cases.*");
   xtd::tunit::settings::default_settings().show_duration(false);
-  xtd::tunit::ostream_unit_test(ss, argv, argc).run();
+  xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 2 tests from 1 test case\n"
                 "  Start 2 tests from one_test_two_test_cases\n"
                 "    SUCCEED test_case1\n"
@@ -35,6 +35,6 @@ void test_(one_test_two_test_cases, test_result) {
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("one_test_two_test_cases.*");
   xtd::tunit::settings::default_settings().show_duration(false);
-  int result = xtd::tunit::ostream_unit_test(ss).run();
+  int result = xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_(0, result);
 }

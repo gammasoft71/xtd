@@ -17,7 +17,7 @@ void test_(test_assert_is_empty_string_failed, test_output) {
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("test_assert_is_empty_string_failed.*");
   xtd::tunit::settings::default_settings().show_duration(false);
-  xtd::tunit::ostream_unit_test(ss, argv, argc).run();
+  xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  Start 1 test from test_assert_is_empty_string_failed\n"
                 "    FAILED  test_case_failed\n"
@@ -42,6 +42,6 @@ void test_(test_assert_is_empty_string_failed, test_result) {
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("test_assert_is_empty_string_failed.*");
   xtd::tunit::settings::default_settings().show_duration(false);
-  int result = xtd::tunit::ostream_unit_test(ss).run();
+  int result = xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_(1, result);
 }
