@@ -68,6 +68,7 @@ set(SOURCES
   src/test_assert_is_null_nullptr_succeed.cpp
   src/test_assert_is_null_pointer_failed.cpp
   src/test_assert_is_null_pointer_succeed.cpp
+  src/test_assert_is_null_unique_ptr_failed.cpp
   src/test_assert_is_null_unique_ptr_succeed.cpp
   src/test_assert_is_null_shared_ptr_succeed.cpp
   src/test_assert_is_true_failed.cpp
