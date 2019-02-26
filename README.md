@@ -75,12 +75,12 @@ Output:
 ```
 Start 2 tests from 1 test case
   Start 2 tests from hello_world_test
-    PASSED create_string_from_literal (0 ms total)
-    PASSED create_string_from_chars (0 ms total)
+    SUCCEED create_string_from_literal (0 ms total)
+    SUCCEED create_string_from_chars (0 ms total)
   End 2 tests from hello_world_test (0 ms total) 
 
   Summary :
-    PASSED 2 tests.
+    SUCCEED 2 tests.
 End 2 tests from 1 test case ran. (0 ms total)
 ```
 
