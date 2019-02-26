@@ -1,9 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::unit_tests_event_listener class.
 #pragma once
-#include <xtd/assert_error.hpp>
-#include <xtd/abort_error.hpp>
-#include <xtd/ignore_error.hpp>
 #include <xtd/event_listener.hpp>
 #include <xtd/unit_test.hpp>
 #include <ostream>
