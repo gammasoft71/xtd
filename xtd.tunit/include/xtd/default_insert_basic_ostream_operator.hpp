@@ -42,6 +42,9 @@ template<> struct __is_printable<long long> : std::true_type {};
 template<> struct __is_printable<unsigned long long> : std::true_type {};
 template<> struct __is_printable<const char*> : std::true_type {};
 template<> struct __is_printable<const wchar_t*> : std::true_type {};
+template<> struct __is_printable<float> : std::true_type {};
+template<> struct __is_printable<double> : std::true_type {};
+template<> struct __is_printable<long double> : std::true_type {};
 template<> struct __is_printable<std::string> : std::true_type {};
 template<> struct __is_printable<std::wstring> : std::true_type {};
 
