@@ -62,9 +62,14 @@ private:
     cout << e.test().line_info().file_path() << ":" << e.test().line_info().line_number() << ": Failure" << endl;
     cout << e.test().message() << endl;
     if (e.test().user_message() != "") cout << e.test().user_message() << endl;
-    cout << "[  FAILED  ] ManualTest.TestCase3 (" << e.test().elapsed_time().count() << " ms)" << endl;
+    cout << "[  FAILED  ] " << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
   }
   
+  void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
+    this->event_listener::on_test_ignored(e);
+    cout << "[  IGNORED ] " << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
+  }
+
   //void on_test_end(const xtd::tunit::test_event_args& e) const override {
   //  this->event_listener::on_test_end(e);
   //}
@@ -102,7 +107,7 @@ private:
   void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
     this->event_listener::on_unit_test_end(e);
     cout << "[==========] " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << endl;
-    cout << "[  PASSED  ] " << e.unit_test().passed_test_count() << " tests." << endl;
+    cout << "[  PASSED  ] " << e.unit_test().succeed_test_count() << " tests." << endl;
     if (e.unit_test().failed_test_count()) {
       cout << "[  FAILED  ] " << e.unit_test().failed_test_count() << " test, listed below:" << endl;
       for(string name : e.unit_test().failed_test_names()) {

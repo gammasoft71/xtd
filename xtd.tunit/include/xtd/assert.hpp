@@ -6,6 +6,7 @@
 #include "abort_error.hpp"
 #include "assert_error.hpp"
 #include "default_insert_basic_ostream_operator.hpp"
+#include "ignore_error.hpp"
 #include "line_info.hpp"
 #include <algorithm>
 #include <cmath>
@@ -38,16 +39,16 @@ namespace xtd {
       /// @brief Abort current test. This is used by the other Assert functions.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
       static void abort() {abort("", line_info());}
       
-      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
+      /// @brief Abort current test. This is used by the other Assert functions.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
       static void abort(const xtd::tunit::line_info& line_info) {abort("", line_info);}
       
@@ -55,7 +56,7 @@ namespace xtd {
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
       static void abort(const std::string& message) {abort(message, line_info());}
       
@@ -64,9 +65,9 @@ namespace xtd {
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      static void abort(const std::string& message, const xtd::tunit::line_info& line_info) {abort("Failled", message, line_info);}
+      static void abort(const std::string& message, const xtd::tunit::line_info& line_info) {abort("Abort", message, line_info);}
       
       /// @brief Abort current test. This is used by the other Assert functions.
       /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
@@ -74,9 +75,52 @@ namespace xtd {
       /// @param line_info Contains information about current file and current line.
       /// @par Examples
       /// @code
-      /// xtd::tunit::assert::abort("Abort message", "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::assert::abort("Abort message", "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
       static void abort(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
+      
+      /// @brief Ignore current test. This is used by the other Assert functions.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
+      /// @endcode
+      static void ignore() {ignore("", line_info());}
+      
+      /// @brief Ignore current test. This is used by the other Assert functions.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
+      /// @endcode
+      static void ignore(const xtd::tunit::line_info& line_info) {ignore("", line_info);}
+      
+      /// @brief Ignore current test. This is used by the other Assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
+      /// @endcode
+      static void ignore(const std::string& message) {ignore(message, line_info());}
+      
+      /// @brief Ignore current test. This is used by the other Assert functions.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
+      /// @endcode
+      static void ignore(const std::string& message, const xtd::tunit::line_info& line_info) {ignore("Ignored", message, line_info);}
+      
+      /// @brief Ignore current test. This is used by the other Assert functions.
+      /// @param fail_message A message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::assert::ignore("Abort message", "User message...", line_info_); // test throws an ignore_error exception.
+      /// @endcode
+      static void ignore(const std::string& failed_message, const std::string& message, const xtd::tunit::line_info& line_info);
 
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
@@ -2557,6 +2601,8 @@ namespace xtd {
 #define __CMD_ASSERT_ARGS(cmd, ...) __CMD_ASSERT_MACRO_CHOOSER(cmd, __VA_ARGS__)(cmd, __VA_ARGS__)
 /// @endcond
 
+#define abort_() abort(line_info_)
+
 #define are_equal_(...) __CMD_ASSERT_ARGS(are_equal, __VA_ARGS__)
 
 #define are_not_equal_(...) __CMD_ASSERT_ARGS(are_not_equal, __VA_ARGS__)
@@ -2570,6 +2616,8 @@ namespace xtd {
 #define does_not_throw_(...) __CMD_ASSERT_ARGS(does_not_throw, __VA_ARGS__)
 
 #define fail_() fail(line_info_)
+
+#define ignore_() ignore(line_info_)
 
 #define is_empty_(...) __CMD_ASSERT_ARGS(is_empty, __VA_ARGS__)
 

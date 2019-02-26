@@ -68,6 +68,10 @@ namespace xtd {
       /// @param test_event_args Contains test event parameters.
       virtual void on_test_end(const xtd::tunit::test_event_args& e) const {}
 
+      /// @brief Occurs when test is ignored.
+      /// @param test_event_args Contains test event parameters.
+      virtual void on_test_ignored(const xtd::tunit::test_event_args& e) const {}
+      
       /// @brief Occurs when test is failed.
       /// @param test_event_args Contains test event parameters.
       virtual void on_test_failed(const xtd::tunit::test_event_args& e) const {}
