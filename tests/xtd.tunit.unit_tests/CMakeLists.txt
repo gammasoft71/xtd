@@ -83,6 +83,7 @@ set(SOURCES
   src/test_assert_is_null_shared_ptr_failed.cpp
   src/test_assert_is_null_shared_ptr_succeed.cpp
   src/test_assert_is_null_weak_ptr_failed.cpp
+  src/test_assert_is_positive_failed.cpp
   src/test_assert_is_positive_succeed.cpp
   src/test_assert_is_true_failed.cpp
   src/test_assert_is_true_succeed.cpp
