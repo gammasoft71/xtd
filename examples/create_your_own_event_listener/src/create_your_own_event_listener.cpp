@@ -52,6 +52,11 @@ private:
     cout << "[       OK ] " << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
   }
   
+  void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
+    this->event_listener::on_test_aborted(e);
+    cout << "[  ABORTED ] " << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
+  }
+
   void on_test_failed(const xtd::tunit::test_event_args& e) const override {
     this->event_listener::on_test_failed(e);
     cout << e.test().line_info().file_path() << ":" << e.test().line_info().line_number() << ": Failure" << endl;

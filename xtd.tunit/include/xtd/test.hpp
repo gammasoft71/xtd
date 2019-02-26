@@ -18,12 +18,28 @@ namespace xtd {
     /// @endcond
     
     struct test final {
+      enum class test_status {
+        not_started,
+        ignored,
+        succeed,
+        aborted,
+        failed
+      };
+
     public:
       test() = default;
       test(const std::string& name, const std::function<void()>& method, const xtd::tunit::line_info& caller) noexcept : test(name, method, false, caller) {}
-      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::tunit::line_info& info) noexcept :  ignore_(ignore), info_(info), method_(method), name_(name) {}
+      test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::tunit::line_info& info) noexcept :  info_(info), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {}
       
-      bool ignore() const noexcept {return this->ignore_;}
+      bool aborted() const noexcept {return this->status_ == test_status::aborted;}
+      
+      bool failed() const noexcept {return this->status_ == test_status::failed;}
+      
+      bool ignored() const noexcept {return this->status_ == test_status::ignored;}
+      
+      bool not_started() const noexcept {return this->status_ == test_status::not_started;}
+      
+      bool succeed() const noexcept {return this->status_ == test_status::succeed;}
       
       const xtd::tunit::line_info line_info() const noexcept {return this->info_;}
       
@@ -34,8 +50,6 @@ namespace xtd {
       const std::string& name() const noexcept {return this->name_;}
       
       const std::string& user_message() const noexcept {return this->user_message_;}
-      
-      bool passed() const noexcept {return this->passed_;}
       
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
@@ -53,13 +67,12 @@ namespace xtd {
       
       std::chrono::high_resolution_clock::time_point end_time_point;
       static test* current_test_;
-      bool ignore_ = true;
       xtd::tunit::line_info info_;
       std::string message_;
       std::function<void()> method_;
       std::string name_;
-      bool passed_ = true;
       std::chrono::high_resolution_clock::time_point start_time_point;
+      test_status status_ = test_status::not_started;
       std::string user_message_;
     };
   }

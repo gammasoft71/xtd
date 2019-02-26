@@ -41,17 +41,38 @@ namespace xtd {
       size_t test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && (!method.ignore() || settings::default_settings().also_run_ignored_tests())) count++;
+          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && (!method.ignored() || settings::default_settings().also_run_ignored_tests())) count++;
         return count;
       }
       
-      size_t ignore_test_count() const noexcept {
+      size_t aborted_test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.ignore()) count++;
+          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.aborted()) count++;
         return count;
       }
       
+      size_t failed_test_count() const noexcept {
+        size_t count = 0;
+        for (auto method : this->tests_)
+          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.failed()) count++;
+        return count;
+      }
+
+      size_t ignored_test_count() const noexcept {
+        size_t count = 0;
+        for (auto method : this->tests_)
+          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.ignored()) count++;
+        return count;
+      }
+      
+      size_t succeed_test_count() const noexcept {
+        size_t count = 0;
+        for (auto method : this->tests_)
+          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.succeed()) count++;
+        return count;
+      }
+
       const std::vector<xtd::tunit::test>& tests() const noexcept {return this->tests_;}
 
     protected:

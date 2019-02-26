@@ -60,6 +60,10 @@ namespace xtd {
       /// @param test_event_args Contains test event parameters.
       virtual void on_test_initialize_start(const xtd::tunit::test_event_args& e) const {}
 
+      /// @brief Occurs when test is aborted.
+      /// @param test_event_args Contains test event parameters.
+      virtual void on_test_aborted(const xtd::tunit::test_event_args& e) const {}
+
       /// @brief Occurs when test is ended.
       /// @param test_event_args Contains test event parameters.
       virtual void on_test_end(const xtd::tunit::test_event_args& e) const {}
