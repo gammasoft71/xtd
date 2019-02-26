@@ -90,7 +90,7 @@ set(SOURCES
   src/test_assert_is_true_succeed.cpp
   src/test_assert_is_zero_failed.cpp
   src/test_assert_is_zero_succeed.cpp
-  src/test_assert_throws_Failed.cpp
+  src/test_assert_throws_failed.cpp
   src/test_assert_throws_succeed.cpp
   src/test_assert_throws_any_failed.cpp
   src/test_assert_throws_any_succeed.cpp
