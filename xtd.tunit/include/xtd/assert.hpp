@@ -2108,7 +2108,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: not null\nBut was:  null", message, line_info);}
+      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("Expected: null\nBut was:  not null", message, line_info);}
       
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
