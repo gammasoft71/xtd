@@ -66,6 +66,7 @@ set(SOURCES
   src/test_assert_is_not_instance_of_failed.cpp
   src/test_assert_is_not_instance_of_succeed.cpp
   src/test_assert_is_null_pointer_succeed.cpp
+  src/test_assert_is_null_unique_ptr_succeed.cpp
   src/test_assert_is_true_failed.cpp
   src/test_assert_is_true_succeed.cpp
   src/test_insert_basic_output_stream_operator.cpp
