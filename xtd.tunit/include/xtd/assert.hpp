@@ -101,7 +101,7 @@ namespace xtd {
       /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
       /// @endcode
       static void ignore(const std::string& message, const xtd::tunit::line_info& line_info);
-
+      
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -160,6 +160,13 @@ namespace xtd {
       }
       
       /// @cond
+      static void are_equal(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (strcmp(actual, expected) == 0)
+          succeed(message, line_info);
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
+      }
+      
       static void are_equal(float expected, float actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(actual) && std::isnan(expected))
           succeed(message, line_info);
@@ -168,7 +175,7 @@ namespace xtd {
         else
           fail(to_string(expected), to_string(actual), message, line_info);
       }
-
+      
       static void are_equal(double expected, double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(actual) && std::isnan(expected))
           succeed(message, line_info);
@@ -177,7 +184,7 @@ namespace xtd {
         else
           fail(to_string(expected), to_string(actual), message, line_info);
       }
-
+      
       static void are_equal(long double expected, long double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(actual) && std::isnan(expected))
           succeed(message, line_info);
@@ -200,7 +207,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
-
+      
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -214,7 +221,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
-
+      
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -228,7 +235,7 @@ namespace xtd {
       /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal(float expected, float& actual, float tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
-
+      
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -370,7 +377,7 @@ namespace xtd {
         else
           fail(to_string(expected), to_string(actual), message, line_info);
       }
-
+      
       /// @brief Asserts that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -427,7 +434,16 @@ namespace xtd {
         else
           fail("not " + to_string(expected), to_string(actual), message, line_info);
       }
-      
+
+      /// @cond
+      static void are_not_equal(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (strcmp(actual, expected) != 0)
+          succeed(message, line_info);
+        else
+          fail("not " + to_string(expected), to_string(actual), message, line_info);
+      }
+      /// @endcond
+
       /// @brief Asserts that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -628,59 +644,13 @@ namespace xtd {
           fail("collection containing " + to_string(item), "< " + __join__items(collection) + " >", message, line_info);
       }
       
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1); // test ok.
-      /// xtd::tunit::assert::contains(4, v1); // test throws an assertion_error exception.
-      /// @endcode
+      /// @cond
       template<typename TItem, typename TValue>
       static void contains(const TItem& item, const std::initializer_list<TValue>& values) {contains(item, values, "", line_info());}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, line_info_); // test ok.
-      /// xtd::tunit::assert::contains(4, v1, line_info_); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TItem, typename TValue>
       static void contains(const TItem& item, const std::initializer_list<TValue>& values, const xtd::tunit::line_info& line_info) {contains(item, values, "", line_info);}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, "User message..."); // test ok.
-      /// xtd::tunit::assert::contains(4, v1, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TItem, typename TValue>
       static void contains(const TItem& item, const std::initializer_list<TValue>& values, const std::string& message) {contains(item, values, message, line_info());}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::contains(4, v1, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TItem, typename TValue>
       static void contains(const TItem& item, const std::initializer_list<TValue>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
         auto result = std::find(values.begin(), values.end(), item);
@@ -690,56 +660,6 @@ namespace xtd {
           fail("collection containing " + to_string(item), "< " + __join__items(values) + " >", message, line_info);
       }
       
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1); // test ok.
-      /// xtd::tunit::assert::contains(4, v1); // test throws an assertion_error exception.
-      /// @endcode
-      static void contains(char item, const char* values) {contains(item, values, "", line_info());}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, line_info_); // test ok.
-      /// xtd::tunit::assert::contains(4, v1, line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void contains(char item, const char* values, const xtd::tunit::line_info& line_info) {contains(item, values, "", line_info);}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, "User message..."); // test ok.
-      /// xtd::tunit::assert::contains(4, v1, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
-      static void contains(char item, const char* values, const std::string& message) {contains(item, values, message, line_info());}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param item object to verify.
-      /// @param values that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::contains(2, v1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::contains(4, v1, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
       static void contains(char item, const char* values, const std::string& message, const xtd::tunit::line_info& line_info) {
         std::string s = values;
         auto result = std::find(s.begin(), s.end(), item);
@@ -748,7 +668,8 @@ namespace xtd {
         else
           fail("collection containing " + to_string(item), "< " + __join__items(s) + " >", message, line_info);
       }
-
+      /// @endcond
+      
       /// @brief Asserts that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -905,59 +826,13 @@ namespace xtd {
           fail("collection <empty>", "< " + __join__items(value) + " >", message, line_info);
       }
       
-      /// @brief Asserts that collection or traits contains an item.
-      /// @param value The value to check is empty.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1;
-      /// std::initializer_list<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1); // test ok.
-      /// xtd::tunit::assert::is_empty(v2); // test throws an assertion_error exception.
-      /// @endcode
+      /// @cond
       template<typename TValue>
       static void is_empty(const std::initializer_list<TValue>& value) {is_empty(value, "", line_info());}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param value The value to check is empty.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1;
-      /// std::initializer_list<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1, line_info_); // test ok.
-      /// xtd::tunit::assert::is_empty(v2, line_info_); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TValue>
       static void is_empty(const std::initializer_list<TValue>& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
-      
-      /// @brief Asserts that collection contains an item.
-      /// @param value The value to check is empty.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1;
-      /// std::initializer_list<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_empty(v2, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TValue>
       static void is_empty(const std::initializer_list<TValue>& value, const std::string& message) {is_empty(value, message, line_info());}
-
-      /// @brief Asserts that collection contains an item.
-      /// @param value The value to check is empty.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1;
-      /// std::initializer_list<int> v2 = {0, 1, 2, 3};
-      /// xtd::tunit::assert::is_empty(v1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TValue>
       static void is_empty(const std::initializer_list<TValue>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::empty(values))
@@ -965,7 +840,16 @@ namespace xtd {
         else
           fail("collection <empty>", "< " + __join__items(values) + " >", message, line_info);
       }
-
+      
+      static void is_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::string s(value);
+        if (std::empty(s))
+          succeed(message, line_info);
+        else
+          fail("collection <empty>", "< " + __join__items(s) + " >", message, line_info);
+      }
+      /// @endocnd
+      
       /// @brief Asserts that ta condition is false.
       /// @param condition The condition to check is false.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1022,7 +906,7 @@ namespace xtd {
         else
           fail("false", "true", message, line_info);
       }
- 
+      
       /// @brief Asserts that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -1080,6 +964,15 @@ namespace xtd {
           fail("greater than " + to_string(val2), to_string(val1), message, line_info);
       }
       
+      /// @cond
+      static void is_greater(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (strcmp(val1, val1) > 0)
+          succeed(message, line_info);
+        else
+          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+      }
+      /// @endcond
+
       /// @brief Asserts that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -1140,6 +1033,15 @@ namespace xtd {
         else
           fail("greater than or equal to " + to_string(val2), to_string(val1), message, line_info);
       }
+      
+      /// @cond
+      static void is_greater_or_equal(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (strcmp(val1, val1) >= 0)
+          succeed(message, line_info);
+        else
+          fail("greather than or equal to " + to_string(val2), to_string(val1), message, line_info);
+      }
+      /// @endcond
 
       /// @brief Asserts that an object is of the type supplied or a derived type.
       /// @param value The object to verify
@@ -1256,6 +1158,15 @@ namespace xtd {
         }
       }
       
+      /// @cond
+      static void is_less(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (strcmp(val1, val1) < 0)
+          succeed(message, line_info);
+        else
+          fail("less than " + to_string(val2), to_string(val1), message, line_info);
+      }
+      /// @endcond
+
       /// @brief Asserts that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -1317,6 +1228,15 @@ namespace xtd {
           fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
       }
       
+      /// @cond
+      static void is_less_or_equal(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (strcmp(val1, val1) <= 0)
+          succeed(message, line_info);
+        else
+          fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
+      }
+      /// @endcond
+
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1430,7 +1350,7 @@ namespace xtd {
         else
           fail("NaN", to_string(value), message, line_info);
       }
-
+      
       /// @brief that a value is NaN.
       /// @param value The value to check is NaN.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1548,7 +1468,7 @@ namespace xtd {
         else
           fail("negative", to_string(value), message, line_info);
       }
-
+      
       /// @brief Asserts that collection or traits does not contain any item.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1609,60 +1529,14 @@ namespace xtd {
         else
           fail("collection not <empty>", "<empty>", message, line_info);
       }
- 
-      /// @brief Asserts that collection or traits does not contain any item.
-      /// @param value The value to check is empty.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// std::initializer_list<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2); // test throws an assertion_error exception.
-      /// @endcode
+      
+      /// @cond
       template<typename TValue>
       static void is_not_empty(const std::initializer_list<TValue>& value) {is_not_empty(value, "", line_info());}
-      
-      /// @brief Asserts that collection or traits does not contain any item.
-      /// @param value The value to check is empty.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// std::initializer_list<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1, line_info_); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2, line_info_); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TValue>
       static void is_not_empty(const std::initializer_list<TValue>& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
-      
-      /// @brief Asserts that collection or traits does not contain any item.
-      /// @param value The value to check is empty.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// std::initializer_list<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TValue>
       static void is_not_empty(const std::initializer_list<TValue>& value, const std::string& message) {is_not_empty(value, message, line_info());}
-      
-      /// @brief Asserts that collection or traits does not contain any item.
-      /// @param value The value to check is empty.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::initializer_list<int> v1 = {0, 1, 2, 3};
-      /// std::initializer_list<int> v2;
-      /// xtd::tunit::assert::is_not_empty(v1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
       template<typename TValue>
       static void is_not_empty(const std::initializer_list<TValue>& value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (!std::empty(value))
@@ -1670,7 +1544,15 @@ namespace xtd {
         else
           fail("collection not <empty>", "<empty>", message, line_info);
       }
-
+      
+      static void is_not_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (!std::empty(std::string(value)))
+          succeed(message, line_info);
+        else
+          fail("collection not <empty>", "<empty>", message, line_info);
+      }
+      /// @endcond
+      
       /// @brief Asserts that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1974,7 +1856,7 @@ namespace xtd {
       /// @endcode
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {succeed(message, line_info);}
-
+      
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1984,7 +1866,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(nullptr); // test throws an assertion_error exception.
       /// @endcode
       static void is_not_null(std::nullptr_t pointer) {is_not_null(pointer, "", line_info());}
-
+      
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
@@ -1995,7 +1877,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(nullptr, line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
-
+      
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2006,7 +1888,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_not_null(nullptr, "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
-
+      
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2079,7 +1961,7 @@ namespace xtd {
         else
           fail("not zero", "0", message, line_info);
       }
-
+      
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -2431,7 +2313,7 @@ namespace xtd {
         else
           fail("positive", to_string(value), message, line_info);
       }
-
+      
       /// @brief Asserts that ta condition is true.
       /// @param condition The condition to check is true.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -2488,7 +2370,7 @@ namespace xtd {
         else
           fail("true", "false", message, line_info);
       }
- 
+      
       /// @brief Asserts that ta condition is zero.
       /// @param value The value to check is zero.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -2581,7 +2463,7 @@ namespace xtd {
       /// xtd::tunit::assert::succeed("User message...", line_info_); // test ok.
       /// @endcode
       static void succeed(const std::string& message, const xtd::tunit::line_info& line_info);
-
+      
       /// @brief Asserts that the statement throws a particular exception when called.
       /// @param TException The exception type that must be throw.
       /// @param statement The statement that verify.
@@ -2710,7 +2592,7 @@ namespace xtd {
       
     private:
       static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
-
+      
       template <typename TValue>
       static std::string to_string(const TValue& value) {
         std::stringstream ss;

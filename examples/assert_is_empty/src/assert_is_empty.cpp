@@ -8,23 +8,19 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_collection_succeed) {
-      list<int> l;
-      assert::is_empty(l);
+      assert::is_empty(std::initializer_list<int> {});
     }
     
     void test_method_(test_case_collection_failed) {
-      list l = {0, 1, 2, 3};
-      assert::is_empty(l);
+      assert::is_empty({0, 1, 2, 3});
     }
     
     void test_method_(test_case_string_succeed) {
-      string s;
-      assert::is_empty(s);
+      assert::is_empty("");
     }
     
     void test_method_(test_case_string_failed) {
-      string s = "string";
-      assert::is_empty(s);
+      assert::is_empty("string");
     }
   };
 }
@@ -42,12 +38,12 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_collection_failed (0 ms total)
 //     Expected: collection <empty>
 //     But was:  < 0, 1, 2, 3 >
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_empty/src/assert_is_empty.cpp:15
+//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_empty/src/assert_is_empty.cpp:14
 //   SUCCEED test.test_case_string_succeed (0 ms total)
 //   FAILED  test.test_case_string_failed (0 ms total)
 //     Expected: collection <empty>
 //     But was:  < 's', 't', 'r', 'i', 'n', 'g' >
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_empty/src/assert_is_empty.cpp:25
+//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_empty/src/assert_is_empty.cpp:22
 //
 // Test results:
 //   SUCCEED 2 tests.

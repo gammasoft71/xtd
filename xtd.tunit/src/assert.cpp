@@ -37,5 +37,6 @@ void assert::succeed(const std::string& message, const xtd::tunit::line_info& li
   if (line_info != xtd::tunit::line_info::empty())
     xtd::tunit::test::current_test().info_ = line_info;
   xtd::tunit::test::current_test().message_ = message;
-  xtd::tunit::test::current_test().status_ = test::test_status::succeed;
+  if (xtd::tunit::test::current_test().status_ != test::test_status::failed)
+    xtd::tunit::test::current_test().status_ = test::test_status::succeed;
 }
