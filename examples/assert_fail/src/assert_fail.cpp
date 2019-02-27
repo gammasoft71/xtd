@@ -6,7 +6,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_failed) {
-      assert::fail_();
+      assert::fail();
     }
   };
 }
@@ -19,17 +19,11 @@ int main(int argc, char* argv[]) {
 // This code produces the following output:
 //
 // Start 1 test from 1 test case
-//   Start 1 test from test
-//     FAILED  test_case_failed (0 ms total)
+// Run tests:
+//   FAILED  test.test_case_failed (0 ms total)
+//     Test failed
+//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_fail/src/assert_fail.cpp:8
 //
-// Failled
-// error: !---OMITTED---!/xtd.tunit/examples/assert_does_not_throw/src/assert_fail.cpp:9
-//
-//   End 1 test from test (0 ms total)
-//
-//   Summary :
-//     FAILED  1 test, listed below:
-//     FAILED  test.test_case_failed
-//
-//     FAILED  1 test.
+// Test results:
+//   FAILED  1 test.
 // End 1 test from 1 test case ran. (0 ms total)
