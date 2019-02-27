@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 // Run tests:
 //   FAILED  test.test_case_failed (0 ms total)
 //     Test failed
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_fail/src/assert_fail.cpp:8
+//     Stack Trace: in |---OMITTED---|/assert_fail.cpp:8
 //
 // Test results:
 //   FAILED  1 test.

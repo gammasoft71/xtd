@@ -37,12 +37,12 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_collection_failed (0 ms total)
 //     Expected: collection not <empty>
 //     But was:  <empty>
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_empty/src/assert_is_not_empty.cpp:13
+//     Stack Trace: in |---OMITTED---|/assert_is_not_empty.cpp:13
 //   SUCCEED test.test_case_string_succeed (0 ms total)
 //   FAILED  test.test_case_string_failed (0 ms total)
 //     Expected: collection not <empty>
 //     But was:  <empty>
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_empty/src/assert_is_not_empty.cpp:21
+//     Stack Trace: in |---OMITTED---|/assert_is_not_empty.cpp:21
 //
 // Test results:
 //   SUCCEED 2 tests.

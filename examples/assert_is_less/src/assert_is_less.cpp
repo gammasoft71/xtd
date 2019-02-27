@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: iess than 12
 //     But was:  24
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_instance_of/src/assert_is_less.cpp:13
+//     Stack Trace: in |---OMITTED---|/assert_is_less.cpp:13
 //
 // Test results:
 //   SUCCEED 1 test.

@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: greater than 48
 //     But was:  24
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_greater/src/assert_is_greater.cpp:13
+//     Stack Trace: in |---OMITTED---|/assert_is_greater.cpp:13
 //
 // Test results:
 //   SUCCEED 1 test.

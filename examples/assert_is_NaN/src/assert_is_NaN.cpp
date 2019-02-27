@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: NaN
 //     But was:  3.14159
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_instance_of/src/assert_is_NaN.cpp:15
+//     Stack Trace: in |---OMITTED---|/assert_is_NaN.cpp:15
 //
 // Test results:
 //   SUCCEED 1 test.

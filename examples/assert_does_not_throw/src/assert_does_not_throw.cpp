@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: No Exception to be thrown
 //     But was:  <std::out_of_range>
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_does_not_throw/src/assert_does_not_throw.cpp:15
+//     Stack Trace: in |---OMITTED---|/assert_does_not_throw.cpp:15
 //
 // Test results:
 //   SUCCEED 1 test.

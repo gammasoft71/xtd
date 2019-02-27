@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: less than or equal to 12
 //     But was:  24
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_greater_or_equal/src/assert_is_less_or_equal.cpp:18
+//     Stack Trace: in |---OMITTED---|/assert_is_less_or_equal.cpp:18
 //
 // Test results:
 //   SUCCEED 2 tests.

@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: 23
 //     But was:  24
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_are_equal/src/assert_are_equal.cpp:13
+//     Stack Trace: in |---OMITTED---|/assert_are_equal.cpp:13
 //
 // Test results:
 //   SUCCEED 1 test.
