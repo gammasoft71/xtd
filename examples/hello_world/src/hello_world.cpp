@@ -27,11 +27,10 @@ int main(int argc, char* argv[]) {
 // This code produces the following output:
 //
 // Start 2 tests from 1 test case
-//   Start 2 tests from hello_world_test
-//     SUCCEED create_string_from_literal (0 ms total)
-//     SUCCEED create_string_from_chars (0 ms total)
-//   End 2 tests from hello_world_test (0 ms total)
+// Run tests:
+//   SUCCEED hello_world_test.create_string_from_literal (0 ms total)
+//   SUCCEED hello_world_test.create_string_from_chars (0 ms total)
 //
-//   Summary :
-//     SUCCEED 2 tests.
+// Test results:
+//   SUCCEED 2 tests.
 // End 2 tests from 1 test case ran. (0 ms total)

@@ -9,22 +9,22 @@ namespace unit_tests {
   public:
     void test_method_(test_case_collection_succeed) {
       vector v = {0, 1, 2, 3};
-      assert::contains_(2, v);
+      assert::contains(2, v);
     }
     
     void test_method_(test_case_collection_failed) {
       vector v = {0, 1, 2, 3};
-      assert::contains_(4, v);
+      assert::contains(4, v);
     }
     
     void test_method_(test_case_string_succeed) {
       string s = "string";
-      assert::contains_('i', s);
+      assert::contains('i', s);
     }
     
     void test_method_(test_case_string_failed) {
       string s = "string";
-      assert::contains_('a', s);
+      assert::contains('a', s);
     }
   };
 }
@@ -36,29 +36,19 @@ int main(int argc, char* argv[]) {
 
 // This code produces the following output:
 //
-// Start 4 tests from 1 test case
-//   Start 4 tests from test
-//     SUCCEED test_case_collection_succeed (0 ms total)
-//     FAILED  test_case_collection_failed (0 ms total)
+// Run tests:
+//   SUCCEED test.test_case_collection_succeed (0 ms total)
+//   FAILED  test.test_case_collection_failed (0 ms total)
+//     Expected: collection containing 4
+//     But was:  < 0, 1, 2, 3 >
+//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:15
+//   SUCCEED test.test_case_string_succeed (0 ms total)
+//   FAILED  test.test_case_string_failed (0 ms total)
+//     Expected: collection containing a
+//     But was:  < 's', 't', 'r', 'i', 'n', 'g' >
+//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:25
 //
-// Expected: collection containing 4
-// But was:  < 0, 1, 2, 3 >
-// error: !---OMITTED---!/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:17
-//
-//     SUCCEED test_case_string_succeed (0 ms total)
-//     FAILED  test_case_string_failed (0 ms total)
-//
-// Expected: collection containing a
-// But was:  < 's', 't', 'r', 'i', 'n', 'g' >
-// error: !---OMITTED---!/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:27
-//
-//   End 4 tests from test (0 ms total)
-//
-//   Summary :
-//     SUCCEED 2 tests.
-//     FAILED  2 tests, listed below:
-//     FAILED  test.test_case_collection_failed
-//     FAILED  test.test_case_string_failed
-//
-//     FAILED  2 tests.
+// Test results:
+//   SUCCEED 2 tests.
+//   FAILED  2 tests.
 // End 4 tests from 1 test case ran. (0 ms total)
