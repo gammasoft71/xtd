@@ -168,6 +168,13 @@ namespace xtd {
           fail(to_string(expected), to_string(actual), message, line_info);
       }
       
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (wcscmp(actual, expected) == 0)
+          succeed(message, line_info);
+        else
+          fail(to_string(expected), to_string(actual), message, line_info);
+      }
+      
       static void are_equal(float expected, float actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::isnan(actual) && std::isnan(expected))
           succeed(message, line_info);
@@ -443,6 +450,13 @@ namespace xtd {
         else
           fail("not " + to_string(expected), to_string(actual), message, line_info);
       }
+
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (wcscmp(actual, expected) != 0)
+          succeed(message, line_info);
+        else
+          fail("not " + to_string(expected), to_string(actual), message, line_info);
+      }
       /// @endcond
 
       /// @brief Asserts that two objects do refer to differents objects.
@@ -662,7 +676,16 @@ namespace xtd {
       }
       
       static void contains(char item, const char* values, const std::string& message, const xtd::tunit::line_info& line_info) {
-        std::string s = values;
+        std::string s(values);
+        auto result = std::find(s.begin(), s.end(), item);
+        if (result != s.end())
+          succeed(message, line_info);
+        else
+          fail("collection containing " + to_string(item), "< " + __join__items(s) + " >", message, line_info);
+      }
+      
+      static void contains(wchar_t item, const wchar_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::wstring s(values);
         auto result = std::find(s.begin(), s.end(), item);
         if (result != s.end())
           succeed(message, line_info);
@@ -849,6 +872,14 @@ namespace xtd {
         else
           fail("collection <empty>", "< " + __join__items(s) + " >", message, line_info);
       }
+      
+      static void is_empty(const wchar_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::wstring s(value);
+        if (std::empty(s))
+          succeed(message, line_info);
+        else
+          fail("collection <empty>", "< " + __join__items(s) + " >", message, line_info);
+      }
       /// @endocnd
       
       /// @brief Asserts that ta condition is false.
@@ -972,6 +1003,13 @@ namespace xtd {
         else
           fail("greather than " + to_string(val2), to_string(val1), message, line_info);
       }
+
+      static void is_greater(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (wcscmp(val1, val1) > 0)
+          succeed(message, line_info);
+        else
+          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+      }
       /// @endcond
 
       /// @brief Asserts that the first value is greater than or equal to the second value.
@@ -1038,6 +1076,13 @@ namespace xtd {
       /// @cond
       static void is_greater_or_equal(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (strcmp(val1, val1) >= 0)
+          succeed(message, line_info);
+        else
+          fail("greather than or equal to " + to_string(val2), to_string(val1), message, line_info);
+      }
+
+      static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (wcscmp(val1, val1) >= 0)
           succeed(message, line_info);
         else
           fail("greather than or equal to " + to_string(val2), to_string(val1), message, line_info);
@@ -1166,6 +1211,13 @@ namespace xtd {
         else
           fail("less than " + to_string(val2), to_string(val1), message, line_info);
       }
+
+      static void is_less(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (wcscmp(val1, val1) < 0)
+          succeed(message, line_info);
+        else
+          fail("less than " + to_string(val2), to_string(val1), message, line_info);
+      }
       /// @endcond
 
       /// @brief Asserts that the first value is is_less than or equal to the second value.
@@ -1232,6 +1284,13 @@ namespace xtd {
       /// @cond
       static void is_less_or_equal(const char* val1, const char* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (strcmp(val1, val1) <= 0)
+          succeed(message, line_info);
+        else
+          fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
+      }
+
+      static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (wcscmp(val1, val1) <= 0)
           succeed(message, line_info);
         else
           fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
@@ -1548,6 +1607,13 @@ namespace xtd {
       
       static void is_not_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (!std::empty(std::string(value)))
+          succeed(message, line_info);
+        else
+          fail("collection not <empty>", "<empty>", message, line_info);
+      }
+      
+      static void is_not_empty(const wchar_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (!std::empty(std::wstring(value)))
           succeed(message, line_info);
         else
           fail("collection not <empty>", "<empty>", message, line_info);
