@@ -10,6 +10,7 @@
 #include "line_info.hpp"
 #include <algorithm>
 #include <cmath>
+#include <cstring>
 #include <exception>
 #include <functional>
 #include <iterator>
