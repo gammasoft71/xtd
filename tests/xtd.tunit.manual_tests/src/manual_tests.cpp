@@ -144,14 +144,28 @@ namespace xtd {
   }
 }
 
+template<typename TItem, typename TValue>
+void contains(const TItem& item, const TValue& value) {
+  try {
+    xtd::tunit::assert::contains(item, value);
+  } catch(const xtd::tunit::assert_error&) {
+  }
+}
+
 namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
       //if (__APPLE__) assert::abort();
       std::vector a = {1, 2, 3, 4};
-      std::vector b = {1, 2, 3, 4, 5};
-      assert::are_equal(a, b);
+      std::vector b = {1, 2, 3, 4};
+      try {
+        assert::are_equal(a, b);
+      } catch(const xtd::tunit::assert_error&) {
+      }
+      contains('i', "string");
+      std::cout << "Hello, test!" << std::endl;
+      assert::are_equal("string", "string1");
     }
   };
 }
