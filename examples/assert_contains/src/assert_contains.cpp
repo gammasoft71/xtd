@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_collection_failed (0 ms total)
 //     Expected: collection containing 4
 //     But was:  < 0, 1, 2, 3 >
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_contains/src/assert_contains.cpp:14
+//     Stack Trace: in |---OMITTED---|/assert_contains.cpp:14
 //   SUCCEED test.test_case_string_succeed (0 ms total)
 //   FAILED  test.test_case_string_failed (0 ms total)
 //     Expected: collection containing a

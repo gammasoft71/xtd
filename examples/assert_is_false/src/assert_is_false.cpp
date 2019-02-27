@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: false
 //     But was:  true
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_false/src/assert_is_false.cpp:16
+//     Stack Trace: in |---OMITTED---|/assert_is_false.cpp:16
 //
 // Test results:
 //   SUCCEED 1 test.

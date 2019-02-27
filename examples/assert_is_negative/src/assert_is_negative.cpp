@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: negative
 //     But was:  1
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_instance_of/src/assert_is_negative.cpp:16
+//     Stack Trace: in |---OMITTED---|/assert_is_negative.cpp:16
 //
 // Test results:
 //   SUCCEED 1 test.

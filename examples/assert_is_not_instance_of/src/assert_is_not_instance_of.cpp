@@ -25,7 +25,6 @@ int main(int argc, char* argv[]) {
   return console_unit_test(argv, argc).run();
 }
 
-
 // This code produces the following output:
 //
 // Start 2 tests from 1 test case
@@ -34,7 +33,7 @@ int main(int argc, char* argv[]) {
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: not instance of <std::logic_error>
 //     But was:  <std::invalid_argument>
-//     Stack Trace: in |---OMITTED---|/xtd/xtd.tunit/examples/assert_is_instance_of/src/assert_is_not_instance_of.cpp:16
+//     Stack Trace: in |---OMITTED---|/assert_is_not_instance_of.cpp:16
 //
 // Test results:
 //   SUCCEED 1 test.
