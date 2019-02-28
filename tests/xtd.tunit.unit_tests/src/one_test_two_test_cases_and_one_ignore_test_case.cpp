@@ -26,13 +26,6 @@ void test_(one_test_two_test_cases_and_one_ignore_test_case, test_output) {
                 "    SUCCEED test_case2\n"
                 "    IGNORED test_case3\n"
                 "  End 3 tests from one_test_two_test_cases_and_one_ignore_test_case\n"
-                "\n"
-                "  Summary :\n"
-                "    IGNORED 1 test, listed below:\n"
-                "    IGNORED one_test_two_test_cases_and_one_ignore_test_case.test_case3\n"
-                "\n"
-                "    SUCCEED 2 tests.\n"
-                "    IGNORED 1 test.\n"
                 "End 3 tests from 1 test case ran.\n"
                 "\n", ss.str());
 }

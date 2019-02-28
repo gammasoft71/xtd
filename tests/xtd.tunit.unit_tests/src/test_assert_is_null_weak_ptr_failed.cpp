@@ -28,12 +28,6 @@ void test_(test_assert_is_null_weak_ptr_failed, test_output) {
                 "error: test_assert_is_null_weak_ptr_failed.cpp:11\n"
                 "\n"
                 "  End 1 test from test_assert_is_null_weak_ptr_failed\n"
-                "\n"
-                "  Summary :\n"
-                "    FAILED  1 test, listed below:\n"
-                "    FAILED  test_assert_is_null_weak_ptr_failed.test_case_failed\n"
-                "\n"
-                "    FAILED  1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }

@@ -23,9 +23,6 @@ void test_(one_test_two_test_cases, test_output) {
                 "    SUCCEED test_case1\n"
                 "    SUCCEED test_case2\n"
                 "  End 2 tests from one_test_two_test_cases\n"
-                "\n"
-                "  Summary :\n"
-                "    SUCCEED 2 tests.\n"
                 "End 2 tests from 1 test case ran.\n"
                 "\n", ss.str());
 }

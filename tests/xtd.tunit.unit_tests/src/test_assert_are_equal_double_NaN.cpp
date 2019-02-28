@@ -21,9 +21,6 @@ void test_(test_assert_are_equal_double_NaN, test_output) {
                 "  Start 1 test from test_assert_are_equal_double_NaN\n"
                 "    SUCCEED test_case_succeed\n"
                 "  End 1 test from test_assert_are_equal_double_NaN\n"
-                "\n"
-                "  Summary :\n"
-                "    SUCCEED 1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }

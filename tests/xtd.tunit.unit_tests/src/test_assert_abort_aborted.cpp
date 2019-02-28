@@ -20,12 +20,6 @@ void test_(test_assert_abort_aborted, test_output) {
                 "  Start 1 test from test_assert_abort_aborted\n"
                 "    ABORTED test_case_aborted\n"
                 "  End 1 test from test_assert_abort_aborted\n"
-                "\n"
-                "  Summary :\n"
-                "    ABORTED 1 test, listed below:\n"
-                "    ABORTED test_assert_abort_aborted.test_case_aborted\n"
-                "\n"
-                "    ABORTED 1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }
