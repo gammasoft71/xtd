@@ -148,7 +148,7 @@ struct __value_printer<Char, CharTraits, std::wstring> {
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, const char *> {
+struct __value_printer<Char, CharTraits, char *> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const char* const & value) {
     os << "\"" << value << "\"";
   }
@@ -159,7 +159,7 @@ struct __value_printer<Char, CharTraits, const char *> {
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, const char16_t *> {
+struct __value_printer<Char, CharTraits, char16_t *> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const char16_t* const & value) {
     os << "\"";
     for (size_t index = 0; value[index] != L'\0'; index++)
@@ -176,7 +176,7 @@ struct __value_printer<Char, CharTraits, const char16_t *> {
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, const char32_t *> {
+struct __value_printer<Char, CharTraits, char32_t *> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const char32_t* const & value) {
     os << "\"";
     for (size_t index = 0; value[index] != L'\0'; index++)
@@ -193,7 +193,7 @@ struct __value_printer<Char, CharTraits, const char32_t *> {
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, const wchar_t *> {
+struct __value_printer<Char, CharTraits, wchar_t *> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const wchar_t* const & value) {
     os << "\"";
     for (size_t index = 0; value[index] != L'\0'; index++)
@@ -422,13 +422,13 @@ std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTr
 
 template <typename Char, typename CharTraits, typename Type>
 std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type* value) {
-  __value_printer<Char, CharTraits, Type>::print(os, value);
+  __value_printer<Char, CharTraits, Type*>::print(os, value);
   return os;
 }
 
 template <typename Char, typename CharTraits, typename Type>
 std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, Type* value) {
-  __value_printer<Char, CharTraits, Type>::print(os, value);
+  __value_printer<Char, CharTraits, Type*>::print(os, value);
   return os;
 }
 
