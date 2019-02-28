@@ -18,11 +18,8 @@ void test_(test_assert_is_less_succeed, test_output) {
   xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  Start 1 test from test_assert_is_less_succeed\n"
-                "    SUCCEED test_case_succeed\n"
-                "  End 1 test from test_assert_is_less_succeed\n"
-                "End 1 test from 1 test case ran.\n"
-                "\n", ss.str());
+                "  SUCCEED test_assert_is_less_succeed.test_case_succeed\n"
+                "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(test_assert_is_less_succeed, test_result) {

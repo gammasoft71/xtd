@@ -17,11 +17,9 @@ void test_(test_assert_abort_aborted, test_output) {
   xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  Start 1 test from test_assert_abort_aborted\n"
-                "    ABORTED test_case_aborted\n"
-                "  End 1 test from test_assert_abort_aborted\n"
-                "End 1 test from 1 test case ran.\n"
-                "\n", ss.str());
+                "  ABORTED test_assert_abort_aborted.test_case_aborted\n"
+                "    Test aborted\n"
+                "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(test_assert_abort_aborted, test_result) {

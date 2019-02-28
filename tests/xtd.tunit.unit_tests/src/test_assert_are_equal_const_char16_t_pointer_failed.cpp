@@ -18,16 +18,11 @@ void test_(test_assert_are_equal_const_char16_t_pointer_failed, test_output) {
   xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  Start 1 test from test_assert_are_equal_const_char16_t_pointer_failed\n"
-                "    FAILED  test_case_failed\n"
-                "\n"
-                "Expected: \"str\"\n"
-                "But was:  \"string\"\n"
-                "error: test_assert_are_equal_const_char16_t_pointer_failed.cpp:9\n"
-                "\n"
-                "  End 1 test from test_assert_are_equal_const_char16_t_pointer_failed\n"
-                "End 1 test from 1 test case ran.\n"
-                "\n", ss.str());
+                "  FAILED  test_assert_are_equal_const_char16_t_pointer_failed.test_case_failed\n"
+                "    Expected: \"str\"\n"
+                "    But was:  \"string\"\n"
+                "    Stack trace: in test_assert_are_equal_const_char16_t_pointer_failed.cpp:9\n"
+                "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(test_assert_are_equal_const_char16_t_pointer_failed, test_result) {

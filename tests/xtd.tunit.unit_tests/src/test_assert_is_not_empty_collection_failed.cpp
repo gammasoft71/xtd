@@ -19,16 +19,11 @@ void test_(test_assert_is_not_empty_collection_failed, test_output) {
   xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
-                "  Start 1 test from test_assert_is_not_empty_collection_failed\n"
-                "    FAILED  test_case_failed\n"
-                "\n"
-                "Expected: collection not <empty>\n"
-                "But was:  <empty>\n"
-                "error: test_assert_is_not_empty_collection_failed.cpp:10\n"
-                "\n"
-                "  End 1 test from test_assert_is_not_empty_collection_failed\n"
-                "End 1 test from 1 test case ran.\n"
-                "\n", ss.str());
+                "  FAILED  test_assert_is_not_empty_collection_failed.test_case_failed\n"
+                "    Expected: collection not <empty>\n"
+                "    But was:  <empty>\n"
+                "    Stack trace: in test_assert_is_not_empty_collection_failed.cpp:10\n"
+                "End 1 test from 1 test case ran.\n", ss.str());
 }
 
 void test_(test_assert_is_not_empty_collection_failed, test_result) {
