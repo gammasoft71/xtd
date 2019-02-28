@@ -132,21 +132,21 @@ struct __value_printer<Char, CharTraits, std::string> {
 template <typename Char, typename CharTraits>
 struct __value_printer<Char, CharTraits, std::u16string> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const std::u16string& value) {
-    os << "\"" << value.c_str() << "\"";
+    __value_printer<Char, CharTraits, char16_t>::print(os, value.c_str());
   }
 };
 
 template <typename Char, typename CharTraits>
 struct __value_printer<Char, CharTraits, std::u32string> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const std::u32string& value) {
-    os << "\"" << value.c_str() << "\"";
+    __value_printer<Char, CharTraits, char32_t>::print(os, value.c_str());
   }
 };
 
 template <typename Char, typename CharTraits>
 struct __value_printer<Char, CharTraits, std::wstring> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const std::wstring& value) {
-    os << "\"" << value.c_str() << "\"";
+    __value_printer<Char, CharTraits, wchar_t>::print(os, value.c_str());
   }
 };
 
