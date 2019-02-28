@@ -138,9 +138,33 @@ struct __value_printer<Char, CharTraits, const char *> {
 };
 
 template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, const wchar_t *> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const wchar_t* const & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      os << (value[index] <= 0xFF ? static_cast<char>(value[index]) : '?');
+    os << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, const wchar_t* & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      os << (value[index] <= 0xFF ? static_cast<char>(value[index]) : '?');
+    os << "\"";
+  }
+};
+
+template <typename Char, typename CharTraits>
 struct __value_printer<Char, CharTraits, char> {
   static void print(std::basic_ostream<Char, CharTraits>& os, char value) {
     os << value;
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, wchar_t> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, char value) {
+    os << (value <= 0xFF ? static_cast<char>(value) : '?');
   }
 };
 
