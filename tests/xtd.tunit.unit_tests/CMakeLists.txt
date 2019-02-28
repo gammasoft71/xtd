@@ -113,6 +113,8 @@ set(SOURCES
   src/test_insert_basic_output_stream_operator.cpp
   src/test_string_assert_are_equal_const_char_pointer_succeed.cpp
   src/test_string_assert_are_equal_string_succeed.cpp
+  src/test_string_assert_are_equal_u16string_succeed.cpp
+  src/test_string_assert_are_equal_u32string_succeed.cpp
   src/two_tests_five_test_cases.cpp
   src/unit_tests_event_listener.hpp
 )
