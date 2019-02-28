@@ -15,7 +15,6 @@ void test_(test_assert_is_not_zero_succeed, test_output) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("test_assert_is_not_zero_succeed.*");
-  xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  SUCCEED test_assert_is_not_zero_succeed.test_case_succeed\n"
@@ -26,7 +25,6 @@ void test_(test_assert_is_not_zero_succeed, test_result) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("test_assert_is_not_zero_succeed.*");
-  xtd::tunit::settings::default_settings().show_duration(false);
   int result = xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_(0, result);
 }
