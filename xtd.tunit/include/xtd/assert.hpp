@@ -27,6 +27,10 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
+    /// @cond
+    class string_assert;
+    /// @endcond
+    
     /// @brief The assert class contains a collection of static methods that implement the most common assertions used in xtd::tUnit.
     /// @par Examples
     /// This example show how to used some methods :
@@ -2790,6 +2794,7 @@ namespace xtd {
       }
       
     private:
+      friend class string_assert;
       static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
       
       template <typename TValue>

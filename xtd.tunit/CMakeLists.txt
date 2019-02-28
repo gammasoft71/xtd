@@ -21,6 +21,7 @@ set(INCLUDES
   include/xtd/ostream_event_listener.hpp
   include/xtd/ostream_unit_test.hpp
   include/xtd/settings.hpp
+  include/xtd/string_assert.hpp
   include/xtd/test.hpp
   include/xtd/registered_test_class.hpp
   include/xtd/test_cleanup_attribute.hpp

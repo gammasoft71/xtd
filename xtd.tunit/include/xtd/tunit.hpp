@@ -21,6 +21,7 @@
 #include "ostream_unit_test.hpp"
 #include "registered_test_class.hpp"
 #include "settings.hpp"
+#include "string_assert.hpp"
 #include "test.hpp"
 #include "test_class.hpp"
 #include "test_class_attribute.hpp"
