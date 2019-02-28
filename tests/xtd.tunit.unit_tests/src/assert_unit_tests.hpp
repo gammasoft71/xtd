@@ -23,20 +23,25 @@ namespace assert_unit_tests {
   };
   
   template <typename TExcpected, typename TActual>
-  void assert_value(const std::string& name, const TExcpected& expected, const TActual& actual, const std::string& file, int line) {
+  void assert_value(const std::string& name, const TExcpected& expected, const TActual& actual, const std::string& file, int line_number) {
     if (actual == expected)
       std::cout << "  SUCCEED " << name << std::endl;
     else {
       std::cout << "  FAILED  " << name << std::endl;
-      std::cout << std::endl;
-      std::cout << "--------------------------------------------------" << std::endl;
-      std::cout << "**  Expected: " << std::endl;
-      std::cout << expected << std::endl;
-      std::cout << "**  But was:  " << std::endl;
-      std::cout << actual << std::endl;
-      std::cout << "--------------------------------------------------" << std::endl;
-      std::cout << file << ":" << line << std::endl;
-      std::cout << std::endl << std::flush;
+      std::cout << "    Expected:" << std::endl;
+      std::stringstream f;
+      f << expected;
+      std::string line;
+      while (std::getline(f, line))
+        std::cout << "      " << line << std::endl;
+      std::cout << "    But was:" << std::endl;
+      f.str("");
+      f.clear();
+      f << actual;
+      while (std::getline(f, line))
+        std::cout << "      " << line << std::endl;
+      std::cout << "    Stack trace:" << std::endl;
+      std::cout << "      " << file << ":" << line_number << std::endl;
       throw unit_test_error("assertion failed!");
     }
   }
@@ -53,7 +58,8 @@ namespace assert_unit_tests {
         for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
           assert_unit_test.method(assert_unit_test.name, argc, argv);
       }catch(...) {
-        std::cout << "FAILED TEST" << std::endl;
+        std::cout << "end unit tests" << std::endl;
+        std::cout << std::endl << "FAILED TEST" << std::endl;
         std::cout << std::endl;
         return 1;
       }

@@ -2803,6 +2803,13 @@ namespace xtd {
         __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
         return ss.str();
       }
+      
+      template <typename TValue>
+      static std::string to_string(const TValue* value) {
+        std::stringstream ss;
+        __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
+        return ss.str();
+      }
     };
   }
 }
