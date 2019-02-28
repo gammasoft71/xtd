@@ -32,6 +32,7 @@ set(SOURCES
   src/test_assert_are_equal_long_double_with_tolerence_succeed.cpp
   src/test_assert_are_not_equal_failed.cpp
   src/test_assert_are_not_equal_succeed.cpp
+  src/test_assert_are_not_equal_const_char_pointer_succeed.cpp
   src/test_assert_are_not_same_failed.cpp
   src/test_assert_are_not_same_succeed.cpp
   src/test_assert_are_same_failed.cpp
