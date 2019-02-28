@@ -89,7 +89,10 @@ static void __print(std::basic_ostream<Char, CharTraits>& os, const Value* value
 
 template <typename Char, typename CharTraits, typename Value>
 struct __value_printer {
-  static void print(std::basic_ostream<Char, CharTraits>& os, const Value* value) {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const Value* & value) {
+    __print(os, value);
+  }
+  static void print(std::basic_ostream<Char, CharTraits>& os, const Value* const & value) {
     __print(os, value);
   }
   static void print(std::basic_ostream<Char, CharTraits>& os, const Value& value) {
@@ -148,7 +151,7 @@ struct __value_printer<Char, CharTraits, std::wstring> {
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, char *> {
+struct __value_printer<Char, CharTraits, const char*> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const char* const & value) {
     os << "\"" << value << "\"";
   }
@@ -156,10 +159,29 @@ struct __value_printer<Char, CharTraits, char *> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const char* & value) {
     os << "\"" << value << "\"";
   }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, char value) {
+    os << value;
+  }
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, char16_t *> {
+struct __value_printer<Char, CharTraits, char> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char* const & value) {
+    os << "\"" << value << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char* & value) {
+    os << "\"" << value << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, char value) {
+    os << value;
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, const char16_t*> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const char16_t* const & value) {
     os << "\"";
     for (size_t index = 0; value[index] != L'\0'; index++)
@@ -173,10 +195,43 @@ struct __value_printer<Char, CharTraits, char16_t *> {
       __value_printer<Char, CharTraits, char16_t>::print(os, value[index]);
     os << "\"";
   }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, char16_t value) {
+    if (value <= 0xFF)
+      os << static_cast<char>(value);
+    else {
+      os << "\\x" << std::hex << static_cast<int>(value);
+    }
+  }
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, char32_t *> {
+struct __value_printer<Char, CharTraits, char16_t> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char16_t* const & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      __value_printer<Char, CharTraits, char16_t>::print(os, value[index]);
+    os << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char16_t* & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      __value_printer<Char, CharTraits, char16_t>::print(os, value[index]);
+    os << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, char16_t value) {
+    if (value <= 0xFF)
+      os << static_cast<char>(value);
+    else {
+      os << "\\x" << std::hex << static_cast<int>(value);
+    }
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, const char32_t*> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const char32_t* const & value) {
     os << "\"";
     for (size_t index = 0; value[index] != L'\0'; index++)
@@ -190,10 +245,43 @@ struct __value_printer<Char, CharTraits, char32_t *> {
       __value_printer<Char, CharTraits, char32_t>::print(os, value[index]);
     os << "\"";
   }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, char32_t value) {
+    if (value <= 0xFF)
+      os << static_cast<char>(value);
+    else {
+      os << "\\x" << std::hex << static_cast<int>(value);
+    }
+  }
 };
 
 template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, wchar_t *> {
+struct __value_printer<Char, CharTraits, char32_t> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char32_t* const & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      __value_printer<Char, CharTraits, char32_t>::print(os, value[index]);
+    os << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, const char32_t* & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      __value_printer<Char, CharTraits, char32_t>::print(os, value[index]);
+    os << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, char32_t value) {
+    if (value <= 0xFF)
+      os << static_cast<char>(value);
+    else {
+      os << "\\x" << std::hex << static_cast<int>(value);
+    }
+  }
+};
+
+template <typename Char, typename CharTraits>
+struct __value_printer<Char, CharTraits, const wchar_t*> {
   static void print(std::basic_ostream<Char, CharTraits>& os, const wchar_t* const & value) {
     os << "\"";
     for (size_t index = 0; value[index] != L'\0'; index++)
@@ -207,29 +295,8 @@ struct __value_printer<Char, CharTraits, wchar_t *> {
       __value_printer<Char, CharTraits, wchar_t>::print(os, value[index]);
     os << "\"";
   }
-};
-
-template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, char> {
-  static void print(std::basic_ostream<Char, CharTraits>& os, char value) {
-    os << value;
-  }
-};
-
-template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, char16_t> {
-  static void print(std::basic_ostream<Char, CharTraits>& os, char16_t value) {
-    if (value <= 0xFF)
-      os << static_cast<char>(value);
-    else {
-      os << "\\x" << std::hex << static_cast<int>(value);
-    }
-  }
-};
-
-template <typename Char, typename CharTraits>
-struct __value_printer<Char, CharTraits, char32_t> {
-  static void print(std::basic_ostream<Char, CharTraits>& os, char32_t value) {
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, wchar_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
     else {
@@ -240,6 +307,20 @@ struct __value_printer<Char, CharTraits, char32_t> {
 
 template <typename Char, typename CharTraits>
 struct __value_printer<Char, CharTraits, wchar_t> {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const wchar_t* const & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      __value_printer<Char, CharTraits, wchar_t>::print(os, value[index]);
+    os << "\"";
+  }
+  
+  static void print(std::basic_ostream<Char, CharTraits>& os, const wchar_t* & value) {
+    os << "\"";
+    for (size_t index = 0; value[index] != L'\0'; index++)
+      __value_printer<Char, CharTraits, wchar_t>::print(os, value[index]);
+    os << "\"";
+  }
+  
   static void print(std::basic_ostream<Char, CharTraits>& os, wchar_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
@@ -422,13 +503,13 @@ std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTr
 
 template <typename Char, typename CharTraits, typename Type>
 std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const Type* value) {
-  __value_printer<Char, CharTraits, Type*>::print(os, value);
+  __value_printer<Char, CharTraits, Type>::print(os, value);
   return os;
 }
 
 template <typename Char, typename CharTraits, typename Type>
 std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, Type* value) {
-  __value_printer<Char, CharTraits, Type*>::print(os, value);
+  __value_printer<Char, CharTraits, Type>::print(os, value);
   return os;
 }
 
