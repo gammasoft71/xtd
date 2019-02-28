@@ -26,6 +26,5 @@ void test_(test_assert_is_empty_collection_succeed, test_result) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("test_assert_is_empty_collection_succeed.*");
-  int result = xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
-  assert_value_(0, result);
+  assert_value_(0, xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run());
 }

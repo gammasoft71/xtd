@@ -24,6 +24,5 @@ void test_(one_test_one_test_case, test_result) {
   std::stringstream ss;
   xtd::tunit::settings::default_settings().exit_status(0);
   xtd::tunit::settings::default_settings().filter_tests("one_test_one_test_case.*");
-  int result = xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
-  assert_value_(0, result);
+  assert_value_(0, xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run());
 }
