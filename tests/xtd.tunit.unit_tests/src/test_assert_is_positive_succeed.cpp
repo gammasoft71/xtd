@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       int i = 1;
-      xtd::tunit::assert::is_positive(i, xtd::tunit::line_info {"test_assert_is_positive_succeed.cpp", 9});
+      xtd::tunit::assert::is_positive(i);
     }
   };
 }

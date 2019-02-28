@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::vector v = {0, 1, 2, 3};
-      xtd::tunit::assert::contains(2, v, xtd::tunit::line_info {"test_assert_contains_collection_succeed.cpp", 10});
+      xtd::tunit::assert::contains(2, v);
     }
   };
 }

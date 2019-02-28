@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::vector v = {1, 2, 3, 4};
-      xtd::tunit::assert::throws_any([&] {v.at(5);}, xtd::tunit::line_info {"test_assert_does_throws_failed.cpp", 10});
+      xtd::tunit::assert::throws_any([&] {v.at(5);});
     }
   };
 }

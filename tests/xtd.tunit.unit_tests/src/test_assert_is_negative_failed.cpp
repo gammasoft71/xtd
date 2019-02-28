@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       int i = 1;
-      xtd::tunit::assert::is_negative(i, xtd::tunit::line_info {"test_assert_is_negative_failed.cpp", 9});
+      xtd::tunit::assert::is_negative(i);
     }
   };
 }
@@ -20,7 +20,6 @@ void test_(test_assert_is_negative_failed, test_output) {
                 "  FAILED  test_assert_is_negative_failed.test_case_failed\n"
                 "    Expected: negative\n"
                 "    But was:  1\n"
-                "    Stack trace: in test_assert_is_negative_failed.cpp:9\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

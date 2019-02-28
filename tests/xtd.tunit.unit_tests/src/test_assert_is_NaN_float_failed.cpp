@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       float f = 3.14159f;
-      xtd::tunit::assert::is_NaN(f, xtd::tunit::line_info {"test_assert_is_NaN_float_failed.cpp", 9});
+      xtd::tunit::assert::is_NaN(f);
     }
   };
 }
@@ -20,7 +20,6 @@ void test_(test_assert_is_NaN_float_failed, test_output) {
                 "  FAILED  test_assert_is_NaN_float_failed.test_case_failed\n"
                 "    Expected: NaN\n"
                 "    But was:  3.14159\n"
-                "    Stack trace: in test_assert_is_NaN_float_failed.cpp:9\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

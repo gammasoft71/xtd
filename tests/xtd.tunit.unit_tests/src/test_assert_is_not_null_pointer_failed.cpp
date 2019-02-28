@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       int* p = nullptr;
-      xtd::tunit::assert::is_not_null(p, xtd::tunit::line_info {"test_assert_is_not_null_pointer_failed.cpp", 9});
+      xtd::tunit::assert::is_not_null(p);
     }
   };
 }
@@ -20,7 +20,6 @@ void test_(test_assert_is_not_null_pointer_failed, test_output) {
                 "  FAILED  test_assert_is_not_null_pointer_failed.test_case_failed\n"
                 "    Expected: not null\n"
                 "    But was:  null\n"
-                "    Stack trace: in test_assert_is_not_null_pointer_failed.cpp:9\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

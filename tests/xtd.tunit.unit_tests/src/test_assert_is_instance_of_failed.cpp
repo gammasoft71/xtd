@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       std::invalid_argument e("invalid argument");;
-      xtd::tunit::assert::is_instance_of<std::bad_cast>(e, xtd::tunit::line_info {"test_assert_is_instance_of_failed.cpp", 10});
+      xtd::tunit::assert::is_instance_of<std::bad_cast>(e);
     }
   };
 }
@@ -21,7 +21,6 @@ void test_(test_assert_is_instance_of_failed, test_output) {
                 "  FAILED  test_assert_is_instance_of_failed.test_case_failed\n"
                 "    Expected: instance of <std::bad_cast>\n"
                 "    But was:  <std::invalid_argument>\n"
-                "    Stack trace: in test_assert_is_instance_of_failed.cpp:10\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

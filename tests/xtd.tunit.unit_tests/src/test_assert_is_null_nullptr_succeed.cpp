@@ -5,7 +5,7 @@ namespace unit_tests {
   class test_class_(test_assert_is_null_nullptr_succeed) {
   public:
     void test_method_(test_case_succeed) {
-      xtd::tunit::assert::is_null(nullptr, xtd::tunit::line_info {"test_assert_is_null_nullptr_succeed.cpp", 8});
+      xtd::tunit::assert::is_null(nullptr);
     }
   };
 }

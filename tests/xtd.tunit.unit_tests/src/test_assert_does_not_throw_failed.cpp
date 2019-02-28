@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       std::vector v = {1, 2, 3, 4};
-      xtd::tunit::assert::does_not_throw([&] {v.at(5);}, xtd::tunit::line_info {"test_assert_does_not_throw_failed.cpp", 10});
+      xtd::tunit::assert::does_not_throw([&] {v.at(5);});
     }
   };
 }
@@ -21,7 +21,6 @@ void test_(test_assert_does_not_throw_failed, test_output) {
                 "  FAILED  test_assert_does_not_throw_failed.test_case_failed\n"
                 "    Expected: No Exception to be thrown\n"
                 "    But was:  <std::out_of_range>\n"
-                "    Stack trace: in test_assert_does_not_throw_failed.cpp:10\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::shared_ptr<int> p;
-      xtd::tunit::assert::is_null(p, xtd::tunit::line_info {"test_assert_is_null_shared_ptr_succeed.cpp", 10});
+      xtd::tunit::assert::is_null(p);
     }
   };
 }

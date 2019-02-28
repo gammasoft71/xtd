@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       int i = 24;
-      xtd::tunit::assert::are_equal(24, i, xtd::tunit::line_info {"test_assert_are_equal_succeed.cpp", 9});
+      xtd::tunit::assert::are_equal(24, i);
     }
   };
 }

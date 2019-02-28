@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       const char32_t* s = U"string";
-      xtd::tunit::assert::are_equal(U"string", s, xtd::tunit::line_info {"test_assert_are_equal_const_char32_t_pointer_succeed.cpp", 9});
+      xtd::tunit::assert::are_equal(U"string", s);
     }
   };
 }

@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       int* p = nullptr;
-      xtd::tunit::assert::is_null(p, xtd::tunit::line_info {"test_assert_is_null_pointer_succeed.cpp", 9});
+      xtd::tunit::assert::is_null(p);
     }
   };
 }

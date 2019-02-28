@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::invalid_argument e("invalid argument");;
-      xtd::tunit::assert::is_instance_of<std::logic_error>(e, xtd::tunit::line_info {"test_assert_is_instance_of_succeed.cpp", 10});
+      xtd::tunit::assert::is_instance_of<std::logic_error>(e);
     }
   };
 }

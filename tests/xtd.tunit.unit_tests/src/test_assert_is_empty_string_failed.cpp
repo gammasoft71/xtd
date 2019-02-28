@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       std::string s = "string";
-      xtd::tunit::assert::is_empty(s, xtd::tunit::line_info {"test_assert_is_empty_string_failed.cpp", 10});
+      xtd::tunit::assert::is_empty(s);
     }
   };
 }
@@ -21,7 +21,6 @@ void test_(test_assert_is_empty_string_failed, test_output) {
                 "  FAILED  test_assert_is_empty_string_failed.test_case_failed\n"
                 "    Expected: collection <empty>\n"
                 "    But was:  < 's', 't', 'r', 'i', 'n', 'g' >\n"
-                "    Stack trace: in test_assert_is_empty_string_failed.cpp:10\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

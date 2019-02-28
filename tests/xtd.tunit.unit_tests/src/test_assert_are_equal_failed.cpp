@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       int i = 24;
-      xtd::tunit::assert::are_equal(23, i, xtd::tunit::line_info {"test_assert_are_equal_failed.cpp", 9});
+      xtd::tunit::assert::are_equal(23, i);
     }
   };
 }
@@ -20,7 +20,6 @@ void test_(test_assert_are_equal_failed, test_output) {
                 "  FAILED  test_assert_are_equal_failed.test_case_failed\n"
                 "    Expected: 23\n"
                 "    But was:  24\n"
-                "    Stack trace: in test_assert_are_equal_failed.cpp:9\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

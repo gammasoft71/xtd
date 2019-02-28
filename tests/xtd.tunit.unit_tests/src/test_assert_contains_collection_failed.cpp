@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       std::vector v = {0, 1, 2, 3};
-      xtd::tunit::assert::contains(4, v, xtd::tunit::line_info {"test_assert_contains_collection_failed.cpp", 10});
+      xtd::tunit::assert::contains(4, v);
     }
   };
 }
@@ -21,7 +21,6 @@ void test_(test_assert_contains_collection_failed, test_output) {
                 "  FAILED  test_assert_contains_collection_failed.test_case_failed\n"
                 "    Expected: collection containing 4\n"
                 "    But was:  < 0, 1, 2, 3 >\n"
-                "    Stack trace: in test_assert_contains_collection_failed.cpp:10\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

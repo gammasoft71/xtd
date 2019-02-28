@@ -7,7 +7,7 @@ namespace unit_tests {
     void test_method_(test_case_failed) {
       int a = 24;
       int& b = a;
-      xtd::tunit::assert::are_not_same(b, a, xtd::tunit::line_info {"test_assert_are_not_same_failed.cpp", 10});
+      xtd::tunit::assert::are_not_same(b, a);
     }
   };
 }
@@ -21,7 +21,6 @@ void test_(test_assert_are_not_same_failed, test_output) {
                 "  FAILED  test_assert_are_not_same_failed.test_case_failed\n"
                 "    Expected: not same as 24\n"
                 "    But was:  24\n"
-                "    Stack trace: in test_assert_are_not_same_failed.cpp:10\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

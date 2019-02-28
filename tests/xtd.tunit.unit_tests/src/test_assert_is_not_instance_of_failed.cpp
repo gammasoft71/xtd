@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       std::invalid_argument e("invalid argument");;
-      xtd::tunit::assert::is_not_instance_of<std::logic_error>(e, xtd::tunit::line_info {"test_assert_is_not_instance_of_failed.cpp", 10});
+      xtd::tunit::assert::is_not_instance_of<std::logic_error>(e);
     }
   };
 }
@@ -21,7 +21,6 @@ void test_(test_assert_is_not_instance_of_failed, test_output) {
                 "  FAILED  test_assert_is_not_instance_of_failed.test_case_failed\n"
                 "    Expected: not instance of <std::logic_error>\n"
                 "    But was:  <std::invalid_argument>\n"
-                "    Stack trace: in test_assert_is_not_instance_of_failed.cpp:10\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

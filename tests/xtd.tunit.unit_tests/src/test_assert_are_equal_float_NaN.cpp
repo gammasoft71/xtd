@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       float f = std::numeric_limits<float>::quiet_NaN();
-      xtd::tunit::assert::are_equal(std::numeric_limits<float>::quiet_NaN(), f, xtd::tunit::line_info {"test_assert_are_equal_float_NaN.cpp", 9});
+      xtd::tunit::assert::are_equal(std::numeric_limits<float>::quiet_NaN(), f);
     }
   };
 }
