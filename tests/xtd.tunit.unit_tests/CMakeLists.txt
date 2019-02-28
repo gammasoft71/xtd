@@ -125,6 +125,7 @@ set(SOURCES
   src/test_string_assert_are_equal_u16string_succeed.cpp
   src/test_string_assert_are_equal_u32string_failed.cpp
   src/test_string_assert_are_equal_u32string_succeed.cpp
+  src/test_string_assert_are_equal_wstring_failed.cpp
   src/test_string_assert_are_equal_wstring_succeed.cpp
   src/two_tests_five_test_cases.cpp
   src/unit_tests_event_listener.hpp
