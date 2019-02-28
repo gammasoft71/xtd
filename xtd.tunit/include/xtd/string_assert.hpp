@@ -436,7 +436,7 @@ namespace xtd {
         std::u32string result;
         std::locale lc = std::locale();
         //for(char32_t c : value) result.push_back(std::tolower(c, lc));
-        for(char16_t c : value) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::tolower(static_cast<char>(c), lc)) : c);
+        for(char32_t c : value) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::tolower(static_cast<char>(c), lc)) : c);
         return result;
       }
       static std::wstring to_lower(const std::wstring& value) {
