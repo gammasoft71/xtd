@@ -34,7 +34,9 @@ set(SOURCES
   src/test_assert_are_not_equal_succeed.cpp
   src/test_assert_are_not_equal_const_char_pointer_failed.cpp
   src/test_assert_are_not_equal_const_char_pointer_succeed.cpp
+  src/test_assert_are_not_equal_const_char16_t_pointer_failed.cpp
   src/test_assert_are_not_equal_const_char16_t_pointer_succeed.cpp
+  src/test_assert_are_not_equal_const_char32_t_pointer_failed.cpp
   src/test_assert_are_not_equal_const_char32_t_pointer_succeed.cpp
   src/test_assert_are_not_equal_const_wchar_t_pointer_succeed.cpp
   src/test_assert_are_not_same_failed.cpp
