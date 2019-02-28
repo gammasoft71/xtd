@@ -229,7 +229,7 @@ struct __value_printer<Char, CharTraits, char16_t> {
 
 template <typename Char, typename CharTraits>
 struct __value_printer<Char, CharTraits, char32_t> {
-  static void print(std::basic_ostream<Char, CharTraits>& os, wchar_t value) {
+  static void print(std::basic_ostream<Char, CharTraits>& os, char32_t value) {
     if (value <= 0xFF)
       os << static_cast<char>(value);
     else {
