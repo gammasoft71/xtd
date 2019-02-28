@@ -19,12 +19,9 @@ void test_(one_test_two_test_cases, test_output) {
   xtd::tunit::settings::default_settings().show_duration(false);
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 2 tests from 1 test case\n"
-                "  Start 2 tests from one_test_two_test_cases\n"
-                "    SUCCEED test_case1\n"
-                "    SUCCEED test_case2\n"
-                "  End 2 tests from one_test_two_test_cases\n"
-                "End 2 tests from 1 test case ran.\n"
-                "\n", ss.str());
+                "  SUCCEED one_test_two_test_cases.test_case1\n"
+                "  SUCCEED one_test_two_test_cases.test_case2\n"
+                "End 2 tests from 1 test case ran.\n", ss.str());
 }
 
 void test_(one_test_two_test_cases, test_result) {
