@@ -113,6 +113,7 @@ set(SOURCES
   src/test_insert_basic_output_stream_operator.cpp
   src/test_string_assert_are_equal_const_char_pointer_failed.cpp
   src/test_string_assert_are_equal_const_char_pointer_succeed.cpp
+  src/test_string_assert_are_equal_const_char16_t_pointer_failed.cpp
   src/test_string_assert_are_equal_const_char16_t_pointer_succeed.cpp
   src/test_string_assert_are_equal_const_char32_t_pointer_succeed.cpp
   src/test_string_assert_are_equal_const_wchar_t_pointer_succeed.cpp
