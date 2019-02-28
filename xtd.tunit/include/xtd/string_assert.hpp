@@ -213,9 +213,24 @@ namespace xtd {
       static void are_equal(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
 
       /// @cond
+      static void are_equal(const char* expected, const char* actual) {string_assert::are_equal(expected, actual, "", line_info());}
+      static void are_equal(const char* expected, const char* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
+      static void are_equal(const char* expected, const char* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
       static void are_equal(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
+
+      static void are_equal(const char16_t* expected, const char16_t* actual) {string_assert::are_equal(expected, actual, "", line_info());}
+      static void are_equal(const char16_t* expected, const char16_t* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
+      static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
       static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
+
+      static void are_equal(const char32_t* expected, const char32_t* actual) {string_assert::are_equal(expected, actual, "", line_info());}
+      static void are_equal(const char32_t* expected, const char32_t* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
+      static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
       static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
+
+      static void are_equal(const wchar_t* expected, const wchar_t* actual) {string_assert::are_equal(expected, actual, "", line_info());}
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
       static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
       /// @endcond
       
