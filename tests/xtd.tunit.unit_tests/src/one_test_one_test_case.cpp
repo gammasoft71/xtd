@@ -20,9 +20,6 @@ void test_(one_test_one_test_case, test_output) {
                 "  Start 1 test from one_test_one_test_case\n"
                 "    SUCCEED test_case1\n"
                 "  End 1 test from one_test_one_test_case\n"
-                "\n"
-                "  Summary :\n"
-                "    SUCCEED 1 test.\n"
                 "End 1 test from 1 test case ran.\n"
                 "\n", ss.str());
 }

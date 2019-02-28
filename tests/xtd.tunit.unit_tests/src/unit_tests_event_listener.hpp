@@ -74,56 +74,6 @@ namespace assert_unit_tests {
     
     void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
       this->event_listener::on_unit_test_end(e);
-      this->os_ << std::endl;
-      this->os_ << "  Summary :" << std::endl;
-      
-      if (e.unit_test().aborted_test_count()) {
-        this->os_ << "    ABORTED ";
-        this->os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
-        for(auto name : e.unit_test().aborted_test_names()) {
-          this->os_ << "    ABORTED ";
-          this->os_ << name << std::endl;
-        }
-      }
-      
-      if (e.unit_test().failed_test_count()) {
-        this->os_ << "    FAILED  ";
-        this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
-        for(auto name : e.unit_test().failed_test_names()) {
-          this->os_ << "    FAILED  ";
-          this->os_ << name << std::endl;
-        }
-      }
-      
-      if (e.unit_test().ignored_test_count()) {
-        this->os_ << "    IGNORED ";
-        this->os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << ", listed below:" << std::endl;
-        for(auto name : e.unit_test().ignored_test_names()) {
-          this->os_ << "    IGNORED ";
-          this->os_ << name << std::endl;
-        }
-      }
-      
-      if (e.unit_test().aborted_test_count() || e.unit_test().failed_test_count() || e.unit_test().ignored_test_count())
-        this->os_ << std::endl;
-      
-      if (e.unit_test().succeed_test_count()) {
-        this->os_ << "    SUCCEED ";
-        this->os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() < 2 ? "" : "s") << "." << std::endl;
-      }
-      if (e.unit_test().aborted_test_count()) {
-        this->os_ << "    ABORTED ";
-        this->os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() < 2 ? "" : "s") << "." << std::endl;
-      }
-      if (e.unit_test().failed_test_count()) {
-        this->os_ << "    FAILED  ";
-        this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << "." << std::endl;
-      }
-      if (e.unit_test().ignored_test_count()) {
-        this->os_ << "    IGNORED ";
-        this->os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << "." << std::endl;
-      }
-      
       this->os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << " ran.";
       if (xtd::tunit::settings::default_settings().show_duration())
         this->os_ << " (" << e.unit_test().elapsed_time().count() << " ms total)";
