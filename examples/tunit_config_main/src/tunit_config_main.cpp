@@ -17,14 +17,10 @@ namespace unit_tests {
 
 // This code can produce the following output:
 //
-// Start 2 tests from 1 test case
-//   Start 2 tests from test
-//     SUCCEED test_case1 (0 ms total)
-//     SUCCEED test_case2 (0 ms total)
-//   End 2 tests from test (0 ms total)
+// Start 1 test from 1 test case
+// Run tests:
+//   SUCCEED test.test_case1 (0 ms total)
 //
-//   Summary :
-//     SUCCEED 2 tests.
-// End 2 tests from 1 test case ran. (0 ms total)
-//
-// You have 1 ignored test
+// Test results:
+//   SUCCEED 1 test.
+// End 1 test from 1 test case ran. (0 ms total)

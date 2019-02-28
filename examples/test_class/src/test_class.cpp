@@ -40,14 +40,14 @@ int main(int argc, char* argv[]) {
 
 // This code can produce the following output:
 //
-// Start 2 tests from 1 test case
-//   Start 2 tests from test
-//     SUCCEED test_case1 (0 ms total)
-//     SUCCEED test_case2 (0 ms total)
-//   End 2 tests from test (0 ms total)
+// Start 3 tests from 1 test case
+// Run tests:
+//   SUCCEED test.test_case1 (0 ms total)
+//   SUCCEED test.test_case2 (0 ms total)
+//   IGNORED test.test_case3 (0 ms total)
+//     Test ignored
 //
-//   Summary :
-//     SUCCEED 2 tests.
-// End 2 tests from 1 test case ran. (0 ms total)
-//
-// You have 1 ignored test
+// Test results:
+//   SUCCEED 2 tests.
+//   IGNORED 1 test.
+// End 3 tests from 1 test case ran. (0 ms total)
