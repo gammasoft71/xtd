@@ -121,6 +121,7 @@ set(SOURCES
   src/test_string_assert_are_equal_const_wchar_t_pointer_succeed.cpp
   src/test_string_assert_are_equal_string_failed.cpp
   src/test_string_assert_are_equal_string_succeed.cpp
+  src/test_string_assert_are_equal_u16string_failed.cpp
   src/test_string_assert_are_equal_u16string_succeed.cpp
   src/test_string_assert_are_equal_u32string_succeed.cpp
   src/test_string_assert_are_equal_wstring_succeed.cpp
