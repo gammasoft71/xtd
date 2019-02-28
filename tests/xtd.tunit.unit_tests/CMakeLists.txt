@@ -9,6 +9,7 @@ set(SOURCES
   src/one_test_two_test_cases.cpp
   src/one_test_two_test_cases_and_one_ignore_test_case.cpp
   src/test_assert_abort_aborted.cpp
+  src/test_assert_are_equal_const_char_pointer_failed.cpp
   src/test_assert_are_equal_const_char_pointer_succeed.cpp
   src/test_assert_are_equal_double_failed.cpp
   src/test_assert_are_equal_double_succeed.cpp
