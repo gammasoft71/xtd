@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       std::vector v = {1, 2, 3, 4};
-      xtd::tunit::assert::throws_any([&] {v.at(2);}, xtd::tunit::line_info {"test_assert_throws_any_failed.cpp", 10});
+      xtd::tunit::assert::throws_any([&] {v.at(2);});
     }
   };
 }
@@ -21,7 +21,6 @@ void test_(test_assert_throws_any_failed, test_output) {
                 "  FAILED  test_assert_throws_any_failed.test_case_failed\n"
                 "    Expected: <exception>\n"
                 "    But was:  <nothing>\n"
-                "    Stack trace: in test_assert_throws_any_failed.cpp:10\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

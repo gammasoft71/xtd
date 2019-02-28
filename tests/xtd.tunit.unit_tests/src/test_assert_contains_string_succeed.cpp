@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::string s = "string";
-      xtd::tunit::assert::contains('i', s, xtd::tunit::line_info {"test_assert_contains_string_succeed.cpp", 10});
+      xtd::tunit::assert::contains('i', s);
     }
   };
 }

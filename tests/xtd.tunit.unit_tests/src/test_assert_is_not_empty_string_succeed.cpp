@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::string s = "string";
-      xtd::tunit::assert::is_not_empty(s, xtd::tunit::line_info {"test_assert_is_not_empty_string_succeed.cpp", 10});
+      xtd::tunit::assert::is_not_empty(s);
     }
   };
 }

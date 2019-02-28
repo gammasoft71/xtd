@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       float f = 0.599f;
-      xtd::tunit::assert::are_equal(0.6f, f, 0.01f, xtd::tunit::line_info {"test_assert_are_equal_float_with_tolerence_succeed.cpp", 9});
+      xtd::tunit::assert::are_equal(0.6f, f, 0.01f);
     }
   };
 }

@@ -7,7 +7,7 @@ namespace unit_tests {
     void test_method_(test_case_succeed) {
       int a = 24;
       int b =  24;
-      xtd::tunit::assert::are_not_same(b, a, xtd::tunit::line_info {"test_assert_are_not_same_succeed.cpp", 10});
+      xtd::tunit::assert::are_not_same(b, a);
     }
   };
 }

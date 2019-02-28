@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       long double ld = std::numeric_limits<long double>::quiet_NaN();
-      xtd::tunit::assert::is_NaN(ld, xtd::tunit::line_info {"test_assert_is_NaN_long_double_succeed.cpp", 10});
+      xtd::tunit::assert::is_NaN(ld);
     }
   };
 }

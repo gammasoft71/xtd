@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       long double ld = 0.599l;
-      xtd::tunit::assert::are_equal(0.6l, ld, 0.01l, xtd::tunit::line_info {"test_assert_are_equal_long_double_with_tolerence_succeed.cpp", 9});
+      xtd::tunit::assert::are_equal(0.6l, ld, 0.01l);
     }
   };
 }

@@ -8,7 +8,7 @@ namespace unit_tests {
     void test_method_(test_case_failed) {
       std::shared_ptr<int> i = std::make_shared<int>(42);
       std::weak_ptr<int> p = i;
-      xtd::tunit::assert::is_null(p, xtd::tunit::line_info {"test_assert_is_null_weak_ptr_failed.cpp", 11});
+      xtd::tunit::assert::is_null(p);
     }
   };
 }
@@ -22,7 +22,6 @@ void test_(test_assert_is_null_weak_ptr_failed, test_output) {
                 "  FAILED  test_assert_is_null_weak_ptr_failed.test_case_failed\n"
                 "    Expected: null\n"
                 "    But was:  not null\n"
-                "    Stack trace: in test_assert_is_null_weak_ptr_failed.cpp:11\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 

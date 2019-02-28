@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       int i = 42;
-      xtd::tunit::assert::is_less(i, 84, xtd::tunit::line_info {"test_assert_is_less_succeed.cpp", 9});
+      xtd::tunit::assert::is_less(i, 84);
     }
   };
 }

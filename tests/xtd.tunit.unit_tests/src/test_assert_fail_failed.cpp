@@ -17,7 +17,6 @@ void test_(test_assert_fail_failed, test_output) {
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  FAILED  test_assert_fail_failed.test_case_failed\n"
-                "    Stack trace: in test_assert_fail_failed.cpp:8\n"
                 "    Test failed\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }

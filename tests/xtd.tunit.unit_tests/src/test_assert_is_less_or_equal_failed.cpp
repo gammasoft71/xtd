@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_failed) {
       int i = 42;
-      xtd::tunit::assert::is_less_or_equal(i, 24, xtd::tunit::line_info {"test_assert_is_less_or_equal_failed.cpp", 9});
+      xtd::tunit::assert::is_less_or_equal(i, 24);
     }
   };
 }
@@ -20,7 +20,6 @@ void test_(test_assert_is_less_or_equal_failed, test_output) {
                 "  FAILED  test_assert_is_less_or_equal_failed.test_case_failed\n"
                 "    Expected: less than or equal to 24\n"
                 "    But was:  42\n"
-                "    Stack trace: in test_assert_is_less_or_equal_failed.cpp:9\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }
 
