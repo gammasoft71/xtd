@@ -94,9 +94,9 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not end width
 
-![todo](pictures/todo.png) are equal ignring case
+![todo](pictures/todo.png) are equal ignoring case
 
-![todo](pictures/todo.png) are not equal ignring case
+![todo](pictures/todo.png) are not equal ignoring case
 
 ![todo](pictures/todo.png) matchs
 
@@ -204,9 +204,9 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not end width
 
-![todo](pictures/todo.png) are equal ignring case
+![todo](pictures/todo.png) are equal ignoring case
 
-![todo](pictures/todo.png) are not equal ignring case
+![todo](pictures/todo.png) are not equal ignoring case
 
 ![todo](pictures/todo.png) matchs
 
@@ -334,9 +334,9 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not end width
 
-![todo](pictures/todo.png) are equal ignring case
+![todo](pictures/todo.png) are equal ignoring case
 
-![todo](pictures/todo.png) are not equal ignring case
+![todo](pictures/todo.png) are not equal ignoring case
 
 ![todo](pictures/todo.png) matchs
 
