@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.3)
 
 project(xtd.tunit.examples)
 
+add_subdirectory(assert_abort)
 add_subdirectory(assert_are_equal)
 add_subdirectory(assert_are_equal_with_tolerence)
 add_subdirectory(assert_are_not_equal)
