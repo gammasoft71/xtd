@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       const char* s = "VALUE";
-      xtd::tunit::string_assert::are_equal_ingoring_case("value", s);
+      xtd::tunit::string_assert::are_equal_ignoring_case("value", s);
     }
   };
 }
