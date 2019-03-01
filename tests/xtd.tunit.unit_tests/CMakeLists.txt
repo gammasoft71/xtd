@@ -127,6 +127,7 @@ set(SOURCES
   src/test_string_assert_are_equal_u32string_succeed.cpp
   src/test_string_assert_are_equal_wstring_failed.cpp
   src/test_string_assert_are_equal_wstring_succeed.cpp
+  src/test_string_assert_are_equal_ignoring_case_const_char_pointer_failed.cpp
   src/test_string_assert_are_equal_ignoring_case_const_char_pointer_succeed.cpp
   src/test_string_assert_are_equal_ignoring_case_const_char16_t_pointer_succeed.cpp
   src/test_string_assert_are_equal_ignoring_case_const_char32_t_pointer_succeed.cpp
