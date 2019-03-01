@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::tunit::settings class.
 #pragma once
+#include <chrono>
 #include <cstdlib>
 #include <string>
 
@@ -60,6 +61,14 @@ namespace xtd {
       /// @return Return true if class name and test name are valid with the current filter tests; otherwise false.
       bool is_valid_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return this->pattern_compare(test_class_name + "." + test_name, this->filter_tests_);}
 
+      /// @brief Gets output xml path.
+      /// @return Output xml path.
+      std::string output_xml() const noexcept {return this->output_xml_;}
+      
+      /// @brief Sets output xml path.
+      /// @param output_xml Output xml path.
+      void output_xml(const std::string& output_xml) noexcept {this->output_xml_ = output_xml;}
+
       /// @brief Gets if show duration for each test.
       /// @return true if show duration for each test; otherwise false.
       bool show_duration() const noexcept {return this->show_duration_;}
@@ -68,19 +77,17 @@ namespace xtd {
       /// @param show_duration true if show duration for each test; otherwise false.
       void show_duration(bool show_duration) noexcept {this->show_duration_ = show_duration;}
 
-      /// @brief Gets output xml path.
-      /// @return Output xml path.
-      /// @remarks By default is set to "out.xml".
-      /// @remarks If you cal xtd::unit_test constructor with argc and argv, the output xml path is set with application name (argv[0]).
-      std::string output_xml() const noexcept {return this->output_xml_;}
-      
-      /// @brief Sets output xml path.
-      /// @param output_xml Output xml path.
-      /// @remarks By default is set to "out.xml".
-      /// @remarks If you cal xtd::unit_test constructor with argc and argv, the output xml path is set with application name (argv[0]).
-      void output_xml(const std::string& output_xml) noexcept {this->output_xml_ = output_xml;}
+      /// @brief Gets unit test end time.
+      /// @return Unit test end time.
+      std::chrono::time_point<std::chrono::system_clock> end_time() const noexcept {return this->end_time_;}
+
+      /// @brief Gets unit test start time.
+      /// @return Unit test start time.
+      std::chrono::time_point<std::chrono::system_clock> start_time() const noexcept {return this->start_time_;}
 
     private:
+      friend class unit_test;
+      
       bool pattern_compare(const std::string& name, const std::string& pattern) const noexcept {
         if (pattern == "") return name == "";
         if (name == "") return false;
@@ -88,12 +95,17 @@ namespace xtd {
         if (pattern[0] == '*') return this->pattern_compare(name, pattern.substr(1)) || this->pattern_compare(name.substr(1), pattern);
         return ((pattern[0] == '?') || (name[0] == pattern[0])) && this->pattern_compare(name.substr(1), pattern.substr(1));
       }
-      
+
+      void end_time(const std::chrono::time_point<std::chrono::system_clock>& end_time) noexcept {this->start_time_ = end_time;}
+      void start_time(const std::chrono::time_point<std::chrono::system_clock>& start_time) noexcept {this->start_time_ = start_time;}
+
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
       int exit_status_ = EXIT_SUCCESS;
+      std::string output_xml_;
       bool show_duration_ = true;
-      std::string output_xml_ = "out.xml";
+      std::chrono::time_point<std::chrono::system_clock> start_time_;
+      std::chrono::time_point<std::chrono::system_clock> end_time_;
     };
   }
 }

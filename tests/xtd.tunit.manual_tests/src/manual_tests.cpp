@@ -1,5 +1,6 @@
 #include <xtd/tunit>
 #include <string>
+#include <thread>
 #include <tuple>
 #include <regex>
 #include <vector>
@@ -156,21 +157,37 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      //if (__APPLE__) assert::abort();
-      std::vector a = {1, 2, 3, 4};
-      std::vector b = {1, 2, 3, 4};
-      try {
-        assert::are_equal(a, b);
-      } catch(const xtd::tunit::assert_error&) {
-      }
-      contains('i', "string");
-      std::cout << "Hello, test!" << std::endl;
-      assert::are_equal("string", "string1");
+    }
+    
+    void test_method_(test_case2) {
+      std::this_thread::sleep_for(chrono::milliseconds(1));
+      assert::are_equal(12, 42);
+    }
+    
+    void test_method_(test_case3) {
+      std::this_thread::sleep_for(chrono::milliseconds(2));
+    }
+  };
+
+  class test_class_(manual_test2) {
+  public:
+    void test_method_(test_case1) {
+      std::this_thread::sleep_for(chrono::milliseconds(1));
+    }
+    void test_method_(test_case2) {
+      std::this_thread::sleep_for(chrono::milliseconds(2));
+    }
+    void ignore_test_method_(test_case3) {
+      std::this_thread::sleep_for(chrono::milliseconds(1));
+    }
+    void test_method_(test_case4) {
+      std::this_thread::sleep_for(chrono::milliseconds(1));
     }
   };
 }
 
 int main(int argc, char* argv[]) {
+  settings::default_settings().output_xml(std::string(argv[0]) + ".xml");
   //settings::default_settings().also_run_ignored_tests(true);
   return console_unit_test(argv, argc).run();
 }
