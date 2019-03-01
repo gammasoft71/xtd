@@ -17,7 +17,7 @@ First version of xtd.tunit.
 ![added](pictures/added.png) console unit test
 
 ## Event listener :
-  
+
 ![added](pictures/added.png) event listener
 
 ![added](pictures/added.png) ostream event listener
@@ -82,9 +82,21 @@ First version of xtd.tunit.
 
 ### String assert :
 
+![todo](pictures/todo.png) are equal
+
+![todo](pictures/todo.png) are not equal
+
+![todo](pictures/todo.png) are equal ignoring case
+
+![todo](pictures/todo.png) are not equal ignoring case
+
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
+
+![todo](pictures/todo.png) is empty
+
+![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -94,17 +106,9 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not end width
 
-![todo](pictures/todo.png) are equal ignoring case
-
-![todo](pictures/todo.png) are not equal ignoring case
-
-![todo](pictures/todo.png) matchs
+![todo](pictures/todo.png) matches
 
 ![todo](pictures/todo.png) does not match
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ### Collection assert :
 
@@ -192,9 +196,21 @@ First version of xtd.tunit.
 
 ### String valid :
 
+![todo](pictures/todo.png) are equal
+
+![todo](pictures/todo.png) are not equal
+
+![todo](pictures/todo.png) are equal ignoring case
+
+![todo](pictures/todo.png) are not equal ignoring case
+
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
+
+![todo](pictures/todo.png) is empty
+
+![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -204,17 +220,9 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not end width
 
-![todo](pictures/todo.png) are equal ignoring case
-
-![todo](pictures/todo.png) are not equal ignoring case
-
-![todo](pictures/todo.png) matchs
+![todo](pictures/todo.png) matches
 
 ![todo](pictures/todo.png) does not match
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ### Collection valid :
 
@@ -322,9 +330,21 @@ First version of xtd.tunit.
 
 ### String assume :
 
+![todo](pictures/todo.png) are equal
+
+![todo](pictures/todo.png) are not equal
+
+![todo](pictures/todo.png) are equal ignoring case
+
+![todo](pictures/todo.png) are not equal ignoring case
+
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
+
+![todo](pictures/todo.png) is empty
+
+![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -334,17 +354,9 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) does not end width
 
-![todo](pictures/todo.png) are equal ignoring case
-
-![todo](pictures/todo.png) are not equal ignoring case
-
-![todo](pictures/todo.png) matchs
+![todo](pictures/todo.png) matches
 
 ![todo](pictures/todo.png) does not match
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ### Collection assume :
 
@@ -391,7 +403,7 @@ First version of xtd.tunit.
 ![todo](pictures/todo.png) exists
 
 ![todo](pictures/todo.png) does not exist
-  
+
 ## Settings :
 
 ![todo](pictures/todo.png) Parse params from console unit tests.
