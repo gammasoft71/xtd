@@ -10,12 +10,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       auto s = "value"s;
-      string_assert::contains('a', s);
+      string_assert::contains("alu", s);
     }
     
     void test_method_(test_case_failed) {
       auto s = L"value";
-      string_assert::contains(L'z', s);
+      string_assert::contains(L"zor", s);
     }
   };
 }
