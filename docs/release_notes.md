@@ -1,7 +1,6 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.tunit) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
-![added](pictures/version_0_2_0.png) (beta) March ??th 2019
-
+![0.2.0](pictures/version_0_2_0.png) (beta) March ??th 2019
 
 ## Tests :
 
@@ -367,7 +366,7 @@
 
 ______________________________________________________________________________________________
 
-![added](pictures/version_0_1_0.png) (beta) February 24th 2019
+![01.0](pictures/version_0_1_0.png) (beta) February 24th 2019
 
 First version of xtd.tunit.
 
