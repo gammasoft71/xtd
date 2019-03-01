@@ -63,10 +63,22 @@ namespace xtd {
       /// @brief Gets if show duration for each test.
       /// @return true if show duration for each test; otherwise false.
       bool show_duration() const noexcept {return this->show_duration_;}
-
+      
       /// @brief Sets if show duration for each test.
       /// @param show_duration true if show duration for each test; otherwise false.
       void show_duration(bool show_duration) noexcept {this->show_duration_ = show_duration;}
+
+      /// @brief Gets output xml path.
+      /// @return Output xml path.
+      /// @remarks By default is set to "out.xml".
+      /// @remarks If you cal xtd::unit_test constructor with argc and argv, the output xml path is set with application name (argv[0]).
+      std::string output_xml() const noexcept {return this->output_xml_;}
+      
+      /// @brief Sets output xml path.
+      /// @param output_xml Output xml path.
+      /// @remarks By default is set to "out.xml".
+      /// @remarks If you cal xtd::unit_test constructor with argc and argv, the output xml path is set with application name (argv[0]).
+      void output_xml(const std::string& output_xml) noexcept {this->output_xml_ = output_xml;}
 
     private:
       bool pattern_compare(const std::string& name, const std::string& pattern) const noexcept {
@@ -81,6 +93,7 @@ namespace xtd {
       std::string filter_tests_ = "*.*";
       int exit_status_ = EXIT_SUCCESS;
       bool show_duration_ = true;
+      std::string output_xml_ = "out.xml";
     };
   }
 }
