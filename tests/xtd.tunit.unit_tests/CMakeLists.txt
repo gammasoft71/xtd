@@ -137,6 +137,7 @@ set(SOURCES
   src/test_string_assert_are_equal_ignoring_case_const_wchar_t_pointer_succeed.cpp
   src/test_string_assert_are_equal_ignoring_case_string_failed.cpp
   src/test_string_assert_are_equal_ignoring_case_string_succeed.cpp
+  src/test_string_assert_are_equal_ignoring_case_u16string_failed.cpp
   src/test_string_assert_are_equal_ignoring_case_u16string_succeed.cpp
   src/test_string_assert_are_equal_ignoring_case_u32string_succeed.cpp
   src/test_string_assert_are_equal_ignoring_case_wstring_succeed.cpp
