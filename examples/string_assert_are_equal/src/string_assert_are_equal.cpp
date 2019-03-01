@@ -9,7 +9,7 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto s = "value";
+      auto s = "value"s;
       string_assert::are_equal("value", s);
     }
     
