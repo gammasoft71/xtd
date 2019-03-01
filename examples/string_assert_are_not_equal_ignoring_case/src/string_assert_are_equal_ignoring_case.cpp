@@ -10,12 +10,12 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       auto s = u"VALUE"s;
-      string_assert::are_not_equal_ingoring_case(u"key", s);
+      string_assert::are_not_equal_ignoring_case(u"key", s);
     }
     
     void test_method_(test_case_failed) {
       auto s = U"VALUE"s;
-      string_assert::are_not_equal_ingoring_case(U"value", s);
+      string_assert::are_not_equal_ignoring_case(U"value", s);
     }
   };
 }
