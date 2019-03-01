@@ -9,13 +9,13 @@ namespace unit_tests {
   class test_class_(test) {
   public:
     void test_method_(test_case_succeed) {
-      auto s = "value"s;
-      string_assert::are_equal("value", s);
+      auto s = u"VALUE"s;
+      string_assert::are_equal_ingoring_case(u"value", s);
     }
     
     void test_method_(test_case_failed) {
-      auto s = L"value";
-      string_assert::are_equal(L"key", s);
+      auto s = U"VALUE"s;
+      string_assert::are_equal_ingoring_case(U"key", s);
     }
   };
 }
@@ -32,8 +32,8 @@ int main(int argc, char* argv[]) {
 //   SUCCEED test.test_case_succeed (0 ms total)
 //   FAILED  test.test_case_failed (0 ms total)
 //     Expected: "key"
-//     But was:  "value"
-//     Stack Trace: in |---OMITTED---|/string_assert_are_equal.cpp:16
+//     But was:  "VALUE"
+//     Stack Trace: in |---OMITTED---|/string_assert_are_equal_ignoring_case.cpp:16
 //
 // Test results:
 //   SUCCEED 1 test.
