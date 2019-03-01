@@ -2,25 +2,15 @@
 
 ![added](pictures/version_0_2_0.png) (beta) March ??th 2019
 +-- ***Tests***
-
 |    +-- ![fixed](pictures/fixed.png) output stream
-
 |    +-- ![added](pictures/added.png) write xml file
-
 +-- ***Event listener***
-
 |    +-- ![fixed](pictures/fixed.png) ostream event listener
-
 +-- ***Assertions***
-
 |    +-- ***assert***
-
 |    |    +-- ![todo](pictures/added.png) abort
-
 |    |    +-- ![todo](pictures/added.png) ignore
-
 |    +-- ***String assert***
-
 |    |    +-- ![added](pictures/added.png) are equal
 |    |    +-- ![added](pictures/added.png) are not equal
 |    |    +-- ![added](pictures/added.png) are equal ignoring case
