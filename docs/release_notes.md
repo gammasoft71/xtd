@@ -22,10 +22,6 @@
 
 ### String assert :
 
-![added](pictures/added.png) are equal
-
-![added](pictures/added.png) are not equal
-
 ![added](pictures/added.png) are equal ignoring case
 
 ![added](pictures/added.png) are not equal ignoring case
@@ -33,10 +29,6 @@
 ![added](pictures/added.png) contains
 
 ![added](pictures/added.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -136,10 +128,6 @@
 
 ### String valid :
 
-![todo](pictures/todo.png) are equal
-
-![todo](pictures/todo.png) are not equal
-
 ![todo](pictures/todo.png) are equal ignoring case
 
 ![todo](pictures/todo.png) are not equal ignoring case
@@ -147,10 +135,6 @@
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -270,10 +254,6 @@
 
 ### String assume :
 
-![todo](pictures/todo.png) are equal
-
-![todo](pictures/todo.png) are not equal
-
 ![todo](pictures/todo.png) are equal ignoring case
 
 ![todo](pictures/todo.png) are not equal ignoring case
@@ -281,10 +261,6 @@
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -448,10 +424,6 @@ First version of xtd.tunit.
 
 ### String assert :
 
-![todo](pictures/todo.png) are equal
-
-![todo](pictures/todo.png) are not equal
-
 ![todo](pictures/todo.png) are equal ignoring case
 
 ![todo](pictures/todo.png) are not equal ignoring case
@@ -459,10 +431,6 @@ First version of xtd.tunit.
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -562,10 +530,6 @@ First version of xtd.tunit.
 
 ### String valid :
 
-![todo](pictures/todo.png) are equal
-
-![todo](pictures/todo.png) are not equal
-
 ![todo](pictures/todo.png) are equal ignoring case
 
 ![todo](pictures/todo.png) are not equal ignoring case
@@ -573,10 +537,6 @@ First version of xtd.tunit.
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
@@ -696,10 +656,6 @@ First version of xtd.tunit.
 
 ### String assume :
 
-![todo](pictures/todo.png) are equal
-
-![todo](pictures/todo.png) are not equal
-
 ![todo](pictures/todo.png) are equal ignoring case
 
 ![todo](pictures/todo.png) are not equal ignoring case
@@ -707,10 +663,6 @@ First version of xtd.tunit.
 ![todo](pictures/todo.png) contains
 
 ![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
 
 ![todo](pictures/todo.png) starts width
 
