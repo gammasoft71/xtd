@@ -239,15 +239,12 @@ namespace xtd {
             for (auto& test : test_class.test()->tests()) {
               file << "    <testcase name=\"" << test.name() << "\" status=\"" << status_to_string(test) << "\" time=\"" << to_string(test.elapsed_time()) << "\" classname=\"" << test_class.test()->name() << "\"";
               if (!test.failed())
-                file << " />";
+                file << " />" << std::endl;
               else {
                 file << ">" << std::endl;
-                file << "      <failure message=\"" << message_to_string(test) << "\" type= \"" << "\">";
-                // datas...
-                file << "<![CDATA[" << cdata_message_to_string(test) << "]]></failure>";
-                file << std::endl << "    </testcase>";
+                file << "      <failure message=\"" << message_to_string(test) << "\" type= \"" << "\">" << "<![CDATA[" << cdata_message_to_string(test) << "]]></failure>" << std::endl;
+                file << "    </testcase>" << std::endl;
               }
-              file << std::endl;
             }
             file << "  </testsuite>" << std::endl;
           }
