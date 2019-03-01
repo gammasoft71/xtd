@@ -6,7 +6,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case_succeed) {
       std::u32string s = U"VALUE";
-      xtd::tunit::string_assert::are_equal_ingoring_case(U"value", s);
+      xtd::tunit::string_assert::are_equal_ignoring_case(U"value", s);
     }
   };
 }

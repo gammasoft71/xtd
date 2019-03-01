@@ -111,22 +111,6 @@ set(SOURCES
   src/test_assert_throws_any_failed.cpp
   src/test_assert_throws_any_succeed.cpp
   src/test_insert_basic_output_stream_operator.cpp
-  src/test_string_assert_are_equal_const_char_pointer_failed.cpp
-  src/test_string_assert_are_equal_const_char_pointer_succeed.cpp
-  src/test_string_assert_are_equal_const_char16_t_pointer_failed.cpp
-  src/test_string_assert_are_equal_const_char16_t_pointer_succeed.cpp
-  src/test_string_assert_are_equal_const_char32_t_pointer_failed.cpp
-  src/test_string_assert_are_equal_const_char32_t_pointer_succeed.cpp
-  src/test_string_assert_are_equal_const_wchar_t_pointer_failed.cpp
-  src/test_string_assert_are_equal_const_wchar_t_pointer_succeed.cpp
-  src/test_string_assert_are_equal_string_failed.cpp
-  src/test_string_assert_are_equal_string_succeed.cpp
-  src/test_string_assert_are_equal_u16string_failed.cpp
-  src/test_string_assert_are_equal_u16string_succeed.cpp
-  src/test_string_assert_are_equal_u32string_failed.cpp
-  src/test_string_assert_are_equal_u32string_succeed.cpp
-  src/test_string_assert_are_equal_wstring_failed.cpp
-  src/test_string_assert_are_equal_wstring_succeed.cpp
   src/test_string_assert_are_equal_ignoring_case_const_char_pointer_failed.cpp
   src/test_string_assert_are_equal_ignoring_case_const_char_pointer_succeed.cpp
   src/test_string_assert_are_equal_ignoring_case_const_char16_t_pointer_failed.cpp
