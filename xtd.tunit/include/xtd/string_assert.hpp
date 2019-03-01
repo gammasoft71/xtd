@@ -213,24 +213,24 @@ namespace xtd {
       static void are_equal(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
 
       /// @cond
-      static void are_equal(const char* expected, const char* actual) {string_assert::are_equal(expected, actual, "", line_info());}
-      static void are_equal(const char* expected, const char* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
-      static void are_equal(const char* expected, const char* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
+      static void are_equal(const char* expected, const char* actual) {are_equal(expected, actual, "", line_info());}
+      static void are_equal(const char* expected, const char* actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      static void are_equal(const char* expected, const char* actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       static void are_equal(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
 
-      static void are_equal(const char16_t* expected, const char16_t* actual) {string_assert::are_equal(expected, actual, "", line_info());}
-      static void are_equal(const char16_t* expected, const char16_t* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
-      static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
+      static void are_equal(const char16_t* expected, const char16_t* actual) {are_equal(expected, actual, "", line_info());}
+      static void are_equal(const char16_t* expected, const char16_t* actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
 
-      static void are_equal(const char32_t* expected, const char32_t* actual) {string_assert::are_equal(expected, actual, "", line_info());}
-      static void are_equal(const char32_t* expected, const char32_t* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
-      static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
+      static void are_equal(const char32_t* expected, const char32_t* actual) {are_equal(expected, actual, "", line_info());}
+      static void are_equal(const char32_t* expected, const char32_t* actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
 
-      static void are_equal(const wchar_t* expected, const wchar_t* actual) {string_assert::are_equal(expected, actual, "", line_info());}
-      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::tunit::line_info& line_info) {string_assert::are_equal(expected, actual, "", line_info);}
-      static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message) {string_assert::are_equal(expected, actual, message, line_info());}
+      static void are_equal(const wchar_t* expected, const wchar_t* actual) {are_equal(expected, actual, "", line_info());}
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(expected, actual, message, line_info);}
       /// @endcond
       
@@ -280,7 +280,12 @@ namespace xtd {
       /// xtd::tunit::string_assert::are_equal("value", std::string("VALUE"), "User message...", line_info_); // test ok.
       /// xtd::tunit::string_assert::are_equal("key", std::string("VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal_ingoring_case(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(expected), to_lower(actual), message, line_info);}
+      static void are_equal_ingoring_case(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (to_lower(actual) == to_lower(expected))
+          assert::succeed(message, line_info);
+        else
+          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+      }
       
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
@@ -328,7 +333,12 @@ namespace xtd {
       /// xtd::tunit::string_assert::are_equal(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test ok.
       /// xtd::tunit::string_assert::are_equal(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal_ingoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(expected), to_lower(actual), message, line_info);}
+      static void are_equal_ingoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (to_lower(actual) == to_lower(expected))
+          assert::succeed(message, line_info);
+        else
+          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+      }
       
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
@@ -376,7 +386,12 @@ namespace xtd {
       /// xtd::tunit::string_assert::are_equal(U"value", std::u32string(U"vValuealue"), "User message...", line_info_); // test ok.
       /// xtd::tunit::string_assert::are_equal(U"key", std::u32string(U"Value"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal_ingoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(expected), to_lower(actual), message, line_info);}
+      static void are_equal_ingoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (to_lower(actual) == to_lower(expected))
+          assert::succeed(message, line_info);
+        else
+          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+      }
       
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
@@ -424,12 +439,32 @@ namespace xtd {
       /// xtd::tunit::string_assert::are_equal(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test ok.
       /// xtd::tunit::string_assert::are_equal(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal_ingoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(expected), to_lower(actual), message, line_info);}
+      static void are_equal_ingoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (to_lower(actual) == to_lower(expected))
+          assert::succeed(message, line_info);
+        else
+          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+      }
       
       /// @cond
-      static void are_equal_ingoring_case(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(std::string(expected)), to_lower(std::string(actual)), message, line_info);}
+      static void are_equal_ingoring_case(const char* expected, const char* actual) {are_equal_ingoring_case(expected, actual, "", line_info());}
+      static void are_equal_ingoring_case(const char* expected, const char* actual, const xtd::tunit::line_info& line_info) {are_equal_ingoring_case(expected, actual, "", line_info);}
+      static void are_equal_ingoring_case(const char* expected, const char* actual, const std::string& message) {are_equal_ingoring_case(expected, actual, message, line_info());}
+      static void are_equal_ingoring_case(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal_ingoring_case(to_lower(std::string(expected)), to_lower(std::string(actual)), message, line_info);}
+
+      static void are_equal_ingoring_case(const char16_t* expected, const char16_t* actual) {are_equal_ingoring_case(expected, actual, "", line_info());}
+      static void are_equal_ingoring_case(const char16_t* expected, const char16_t* actual, const xtd::tunit::line_info& line_info) {are_equal_ingoring_case(expected, actual, "", line_info);}
+      static void are_equal_ingoring_case(const char16_t* expected, const char16_t* actual, const std::string& message) {are_equal_ingoring_case(expected, actual, message, line_info());}
       static void are_equal_ingoring_case(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(std::u16string(expected)), to_lower(std::u16string(actual)), message, line_info);}
+
+      static void are_equal_ingoring_case(const char32_t* expected, const char32_t* actual) {are_equal_ingoring_case(expected, actual, "", line_info());}
+      static void are_equal_ingoring_case(const char32_t* expected, const char32_t* actual, const xtd::tunit::line_info& line_info) {are_equal_ingoring_case(expected, actual, "", line_info);}
+      static void are_equal_ingoring_case(const char32_t* expected, const char32_t* actual, const std::string& message) {are_equal_ingoring_case(expected, actual, message, line_info());}
       static void are_equal_ingoring_case(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(std::u32string(expected)), to_lower(std::u32string(actual)), message, line_info);}
+
+      static void are_equal_ingoring_case(const wchar_t* expected, const wchar_t* actual) {are_equal_ingoring_case(expected, actual, "", line_info());}
+      static void are_equal_ingoring_case(const wchar_t* expected, const wchar_t* actual, const xtd::tunit::line_info& line_info) {are_equal_ingoring_case(expected, actual, "", line_info);}
+      static void are_equal_ingoring_case(const wchar_t* expected, const wchar_t* actual, const std::string& message) {are_equal_ingoring_case(expected, actual, message, line_info());}
       static void are_equal_ingoring_case(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(std::wstring(expected)), to_lower(std::wstring(actual)), message, line_info);}
       /// @endcond
       
