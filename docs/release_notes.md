@@ -1,369 +1,187 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.tunit) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
 ![added](pictures/version_0_2_0.png) (beta) March ??th 2019
-
-
-## Tests :
-
-![fixed](pictures/fixed.png) output stream
-
-![added](pictures/added.png) write xml file
-
-## Event listener :
-
-![fixed](pictures/fixed.png) ostream event listener
-
-## Assertions :
-
-### assert
-
-![todo](pictures/added.png) abort
-
-![todo](pictures/added.png) ignore
-
-### String assert :
-
-![added](pictures/added.png) are equal
-
-![added](pictures/added.png) are not equal
-
-![added](pictures/added.png) are equal ignoring case
-
-![added](pictures/added.png) are not equal ignoring case
-
-![added](pictures/added.png) contains
-
-![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) starts width
-
-![todo](pictures/todo.png) does not start width
-
-![todo](pictures/todo.png) ends width
-
-![todo](pictures/todo.png) does not end width
-
-![todo](pictures/todo.png) matches
-
-![todo](pictures/todo.png) does not match
-
-### Collection assert :
-
-![todo](pictures/todo.png) all items are instances of type ?
-
-![todo](pictures/todo.png) all items are not null ?
-
-![todo](pictures/todo.png) all items are unique ?
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are equivalent ?
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) are not equivalent ?
-
-![todo](pictures/todo.png) contains
-
-![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) is ordered ?
-
-## Validations :
-
-### Valid :
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) are not same
-
-![todo](pictures/todo.png) are same
-
-![todo](pictures/todo.png) contains
-
-![todo](pictures/todo.png) does not throw
-
-![todo](pictures/todo.png) fail
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is false
-
-![todo](pictures/todo.png) is greater
-
-![todo](pictures/todo.png) is greater or equal
-
-![todo](pictures/todo.png) is instance of type
-
-![todo](pictures/todo.png) is less
-
-![todo](pictures/todo.png) is less or equal
-
-![todo](pictures/todo.png) is NaN
-
-![todo](pictures/todo.png) is negative
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) is not instance of type
-
-![todo](pictures/todo.png) is not null
-
-![todo](pictures/todo.png) is not zero
-
-![todo](pictures/todo.png) is null
-
-![todo](pictures/todo.png) is positive
-
-![todo](pictures/todo.png) is true
-
-![todo](pictures/todo.png) is zero
-
-![todo](pictures/todo.png) succeed
-
-![todo](pictures/todo.png) throws
-
-![todo](pictures/todo.png) throws any
-
-### String valid :
-
-![todo](pictures/todo.png) are equal
-
-![todo](pictures/todo.png) are not equal
-
-![todo](pictures/todo.png) are equal ignoring case
-
-![todo](pictures/todo.png) are not equal ignoring case
-
-![todo](pictures/todo.png) contains
-
-![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) starts width
-
-![todo](pictures/todo.png) does not start width
-
-![todo](pictures/todo.png) ends width
-
-![todo](pictures/todo.png) does not end width
-
-![todo](pictures/todo.png) matches
-
-![todo](pictures/todo.png) does not match
-
-### Collection valid :
-
-![todo](pictures/todo.png) all items are instances of type ?
-
-![todo](pictures/todo.png) all items are not null ?
-
-![todo](pictures/todo.png) all items are unique ?
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are equivalent ?
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) are not equivalent ?
-
-![todo](pictures/todo.png) contains
-
-![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) is ordered ?
-
-### File valid :
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) exists
-
-![todo](pictures/todo.png) does not exist
-
-### Directory valid :
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) exists
-
-![todo](pictures/todo.png) does not exist
-
-## Assumptions :
-
-### Assume :
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) are not same
-
-![todo](pictures/todo.png) are same
-
-![todo](pictures/todo.png) contains
-
-![todo](pictures/todo.png) does not throw
-
-![todo](pictures/todo.png) fail
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is false
-
-![todo](pictures/todo.png) is greater
-
-![todo](pictures/todo.png) is greater or equal
-
-![todo](pictures/todo.png) is instance of type
-
-![todo](pictures/todo.png) is less
-
-![todo](pictures/todo.png) is less or equal
-
-![todo](pictures/todo.png) is NaN
-
-![todo](pictures/todo.png) is negative
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) is not instance of type
-
-![todo](pictures/todo.png) is not null
-
-![todo](pictures/todo.png) is not zero
-
-![todo](pictures/todo.png) is null
-
-![todo](pictures/todo.png) is positive
-
-![todo](pictures/todo.png) is true
-
-![todo](pictures/todo.png) is zero
-
-![todo](pictures/todo.png) succeed
-
-![todo](pictures/todo.png) throws
-
-![todo](pictures/todo.png) throws any
-
-### String assume :
-
-![todo](pictures/todo.png) are equal
-
-![todo](pictures/todo.png) are not equal
-
-![todo](pictures/todo.png) are equal ignoring case
-
-![todo](pictures/todo.png) are not equal ignoring case
-
-![todo](pictures/todo.png) contains
-
-![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) starts width
-
-![todo](pictures/todo.png) does not start width
-
-![todo](pictures/todo.png) ends width
-
-![todo](pictures/todo.png) does not end width
-
-![todo](pictures/todo.png) matches
-
-![todo](pictures/todo.png) does not match
-
-### Collection assume :
-
-![todo](pictures/todo.png) all items are instances of type ?
-
-![todo](pictures/todo.png) all items are not null ?
-
-![todo](pictures/todo.png) all items are unique ?
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are equivalent ?
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) are not equivalent ?
-
-![todo](pictures/todo.png) contains
-
-![todo](pictures/todo.png) does not contain
-
-![todo](pictures/todo.png) is empty
-
-![todo](pictures/todo.png) is not empty
-
-![todo](pictures/todo.png) is ordered ?
-
-### File assume :
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) exists
-
-![todo](pictures/todo.png) does not exist
-
-### Directory assume :
-
-![todo](pictures/todo.png) are equals
-
-![todo](pictures/todo.png) are not equals
-
-![todo](pictures/todo.png) exists
-
-![todo](pictures/todo.png) does not exist
-
-## Settings :
-
-![todo](pictures/todo.png) Parse params from console unit tests.
-
-### Test selection :
-
-![todo](pictures/todo.png) list tests.
-
-### Test execution :
-
-![todo](pictures/todo.png) repeat tests
-
-![todo](pictures/todo.png) shuffle tests
-
-![todo](pictures/todo.png) random seed
-
-### Test output :
-
-![todo](pictures/todo.png) output colors
++-- ***Tests***
+|    +-- ![fixed](pictures/fixed.png) output stream
+|    +-- ![added](pictures/added.png) write xml file
++-- ***Event listener***
+|    +-- ![fixed](pictures/fixed.png) ostream event listener
++-- ***Assertions***
+|    +-- ***assert***
+|    |    +-- ![todo](pictures/added.png) abort
+|    |    +-- ![todo](pictures/added.png) ignore
+|    +-- ***String assert***
+|    |    +-- ![added](pictures/added.png) are equal
+|    |    +-- ![added](pictures/added.png) are not equal
+|    |    +-- ![added](pictures/added.png) are equal ignoring case
+|    |    +-- ![added](pictures/added.png) are not equal ignoring case
+|    |    +-- ![added](pictures/added.png) contains
+|    |    +-- ![todo](pictures/todo.png) does not contain
+|    |    +-- ![todo](pictures/todo.png) is empty
+|    |    +-- ![todo](pictures/todo.png) is not empty
+|    |    +-- ![todo](pictures/todo.png) starts width
+|    |    +-- ![todo](pictures/todo.png) does not start width
+|    |    +-- ![todo](pictures/todo.png) ends width
+|    |    +-- ![todo](pictures/todo.png) does not end width
+|    |    +-- ![todo](pictures/todo.png) matches
+|    |    +-- ![todo](pictures/todo.png) does not match
+|    +-- ***Collection assert***
+|         +-- ![todo](pictures/todo.png) all items are instances of type ?
+|         +-- ![todo](pictures/todo.png) all items are not null ?
+|         +-- ![todo](pictures/todo.png) all items are unique ?
+|         +-- ![todo](pictures/todo.png) are equals
+|         +-- ![todo](pictures/todo.png) are equivalent ?
+|         +-- ![todo](pictures/todo.png) are not equals
+|         +-- ![todo](pictures/todo.png) are not equivalent ?
+|         +-- ![todo](pictures/todo.png) contains
+|         +-- ![todo](pictures/todo.png) does not contain
+|         +-- ![todo](pictures/todo.png) is empty
+|         +-- ![todo](pictures/todo.png) is not empty
+|         +-- ![todo](pictures/todo.png) is ordered ?
++-- ***Validations***
+|    +-- ***Valid***
+|    |    +-- ![todo](pictures/todo.png) are equals
+|    |    +-- ![todo](pictures/todo.png) are not equals
+|    |    +-- ![todo](pictures/todo.png) are not same
+|    |    +-- ![todo](pictures/todo.png) are same
+|    |    +-- ![todo](pictures/todo.png) contains
+|    |    +-- ![todo](pictures/todo.png) does not throw
+|    |    +-- ![todo](pictures/todo.png) fail
+|    |    +-- ![todo](pictures/todo.png) is empty
+|    |    +-- ![todo](pictures/todo.png) is false
+|    |    +-- ![todo](pictures/todo.png) is greater
+|    |    +-- ![todo](pictures/todo.png) is greater or equal
+|    |    +-- ![todo](pictures/todo.png) is instance of type
+|    |    +-- ![todo](pictures/todo.png) is less
+|    |    +-- ![todo](pictures/todo.png) is less or equal
+|    |    +-- ![todo](pictures/todo.png) is NaN
+|    |    +-- ![todo](pictures/todo.png) is negative
+|    |    +-- ![todo](pictures/todo.png) is not empty
+|    |    +-- ![todo](pictures/todo.png) is not instance of type
+|    |    +-- ![todo](pictures/todo.png) is not null
+|    |    +-- ![todo](pictures/todo.png) is not zero
+|    |    +-- ![todo](pictures/todo.png) is null
+|    |    +-- ![todo](pictures/todo.png) is positive
+|    |    +-- ![todo](pictures/todo.png) is true
+|    |    +-- ![todo](pictures/todo.png) is zero
+|    |    +-- ![todo](pictures/todo.png) succeed
+|    |    +-- ![todo](pictures/todo.png) throws
+|    |    +-- ![todo](pictures/todo.png) throws any
+|    +-- ***String valid***
+|    |    +-- ![todo](pictures/todo.png) are equal
+|    |    +-- ![todo](pictures/todo.png) are not equal
+|    |    +-- ![todo](pictures/todo.png) are equal ignoring case
+|    |    +-- ![todo](pictures/todo.png) are not equal ignoring case
+|    |    +-- ![todo](pictures/todo.png) contains
+|    |    +-- ![todo](pictures/todo.png) does not contain
+|    |    +-- ![todo](pictures/todo.png) is empty
+|    |    +-- ![todo](pictures/todo.png) is not empty
+|    |    +-- ![todo](pictures/todo.png) starts width
+|    |    +-- ![todo](pictures/todo.png) does not start width
+|    |    +-- ![todo](pictures/todo.png) ends width
+|    |    +-- ![todo](pictures/todo.png) does not end width
+|    |    +-- ![todo](pictures/todo.png) matches
+|    |    +-- ![todo](pictures/todo.png) does not match
+|    +-- ***Collection valid***
+|    |    +-- ![todo](pictures/todo.png) all items are instances of type ?
+|    |    +-- ![todo](pictures/todo.png) all items are not null ?
+|    |    +-- ![todo](pictures/todo.png) all items are unique ?
+|    |    +-- ![todo](pictures/todo.png) are equals
+|    |    +-- ![todo](pictures/todo.png) are equivalent ?
+|    |    +-- ![todo](pictures/todo.png) are not equals
+|    |    +-- ![todo](pictures/todo.png) are not equivalent ?
+|    |    +-- ![todo](pictures/todo.png) contains
+|    |    +-- ![todo](pictures/todo.png) does not contain
+|    |    +-- ![todo](pictures/todo.png) is empty
+|    |    +-- ![todo](pictures/todo.png) is not empty
+|    |    +-- ![todo](pictures/todo.png) is ordered ?
+|    +-- ***File valid***
+|    |    +-- ![todo](pictures/todo.png) are equals
+|    |    +-- ![todo](pictures/todo.png) are not equals
+|    |    +-- ![todo](pictures/todo.png) exists
+|    |    +-- ![todo](pictures/todo.png) does not exist
+|    +-- ***Directory valid***
+|         +-- ![todo](pictures/todo.png) are equals
+|         +-- ![todo](pictures/todo.png) are not equals
+|         +-- ![todo](pictures/todo.png) exists
+|         +-- ![todo](pictures/todo.png) does not exist
++-- ***Assumptions***
+|    +-- ***Assume***
+|    |    +-- ![todo](pictures/todo.png) are equals
+|    |    +-- ![todo](pictures/todo.png) are not equals
+|    |    +-- ![todo](pictures/todo.png) are not same
+|    |    +-- ![todo](pictures/todo.png) are same
+|    |    +-- ![todo](pictures/todo.png) contains
+|    |    +-- ![todo](pictures/todo.png) does not throw
+|    |    +-- ![todo](pictures/todo.png) fail
+|    |    +-- ![todo](pictures/todo.png) is empty
+|    |    +-- ![todo](pictures/todo.png) is false
+|    |    +-- ![todo](pictures/todo.png) is greater
+|    |    +-- ![todo](pictures/todo.png) is greater or equal
+|    |    +-- ![todo](pictures/todo.png) is instance of type
+|    |    +-- ![todo](pictures/todo.png) is less
+|    |    +-- ![todo](pictures/todo.png) is less or equal
+|    |    +-- ![todo](pictures/todo.png) is NaN
+|    |    +-- ![todo](pictures/todo.png) is negative
+|    |    +-- ![todo](pictures/todo.png) is not empty
+|    |    +-- ![todo](pictures/todo.png) is not instance of type
+|    |    +-- ![todo](pictures/todo.png) is not null
+|    |    +-- ![todo](pictures/todo.png) is not zero
+|    |    +-- ![todo](pictures/todo.png) is null
+|    |    +-- ![todo](pictures/todo.png) is positive
+|    |    +-- ![todo](pictures/todo.png) is true
+|    |    +-- ![todo](pictures/todo.png) is zero
+|    |    +-- ![todo](pictures/todo.png) succeed
+|    |    +-- ![todo](pictures/todo.png) throws
+|    |    +-- ![todo](pictures/todo.png) throws any
+|    +-- ***String assume***
+|    |    +-- ![todo](pictures/todo.png) are equal
+|    |    +-- ![todo](pictures/todo.png) are not equal
+|    |    +-- ![todo](pictures/todo.png) are equal ignoring case
+|    |    +-- ![todo](pictures/todo.png) are not equal ignoring case
+|    |    +-- ![todo](pictures/todo.png) contains
+|    |    +-- ![todo](pictures/todo.png) does not contain
+|    |    +-- ![todo](pictures/todo.png) is empty
+|    |    +-- ![todo](pictures/todo.png) is not empty
+|    |    +-- ![todo](pictures/todo.png) starts width
+|    |    +-- ![todo](pictures/todo.png) does not start width
+|    |    +-- ![todo](pictures/todo.png) ends width
+|    |    +-- ![todo](pictures/todo.png) does not end width
+|    |    +-- ![todo](pictures/todo.png) matches
+|    |    +-- ![todo](pictures/todo.png) does not match
+|    +-- ***Collection assume***
+|    |    +-- ![todo](pictures/todo.png) all items are instances of type ?
+|    |    +-- ![todo](pictures/todo.png) all items are not null ?
+|    |    +-- ![todo](pictures/todo.png) all items are unique ?
+|    |    +-- ![todo](pictures/todo.png) are equals
+|    |    +-- ![todo](pictures/todo.png) are equivalent ?
+|    |    +-- ![todo](pictures/todo.png) are not equals
+|    |    +-- ![todo](pictures/todo.png) are not equivalent ?
+|    |    +-- ![todo](pictures/todo.png) contains
+|    |    +-- ![todo](pictures/todo.png) does not contain
+|    |    +-- ![todo](pictures/todo.png) is empty
+|    |    +-- ![todo](pictures/todo.png) is not empty
+|    |    +-- ![todo](pictures/todo.png) is ordered ?
+|    +-- ***File assume***
+|    |    +-- ![todo](pictures/todo.png) are equals
+|    |    +-- ![todo](pictures/todo.png) are not equals
+|    |    +-- ![todo](pictures/todo.png) exists
+|    |    +-- ![todo](pictures/todo.png) does not exist
+|    +-- ***Directory assume***
+|         +-- ![todo](pictures/todo.png) are equals
+|         +-- ![todo](pictures/todo.png) are not equals
+|         +-- ![todo](pictures/todo.png) exists
+|         +-- ![todo](pictures/todo.png) does not exist
++-- ***Settings***
+     +-- ![todo](pictures/todo.png) Parse params from console unit tests.
+     +-- ***Test selection***
+     |    +-- ![todo](pictures/todo.png) list tests.
+     +-- ***Test execution***
+     |    +-- ![todo](pictures/todo.png) repeat tests
+     |    +-- ![todo](pictures/todo.png) shuffle tests
+     |    +-- ![todo](pictures/todo.png) random seed
+     +-- ***Test output***
+          +-- ![todo](pictures/todo.png) output colors
 
 ______________________________________________________________________________________________
 
