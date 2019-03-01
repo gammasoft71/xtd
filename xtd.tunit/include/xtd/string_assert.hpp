@@ -915,6 +915,64 @@ namespace xtd {
       static void are_not_equal_ingoring_case(const wchar_t* expected, const wchar_t* actual, const std::string& message) {are_not_equal_ingoring_case(expected, actual, message, line_info());}
       static void are_not_equal_ingoring_case(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal_ingoring_case(std::wstring(expected), std::wstring(actual), message, line_info);}
       /// @endcond
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s = "value";
+      /// xtd::tunit::string_assert::contains('a', s); // test ok.
+      /// xtd::tunit::string_assert::contains('z', s); // test throws an assertion_error exception.
+      /// @endcode
+      static void contains(char item, const std::string& string) {contains(item, string, "", line_info());}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s = "value";
+      /// xtd::tunit::string_assert::contains('a', s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::contains('z', s, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void contains(char item, const std::string& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s = "value";
+      /// xtd::tunit::string_assert::contains('a', s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::contains('z', s, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void contains(char item, const std::string& string, const std::string& message) {contains(item, string, message, line_info());}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::string s = "value";
+      /// xtd::tunit::string_assert::contains('a', s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::contains('z', s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void contains(char item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+        auto result = std::find(string.begin(), string.end(), item);
+        if (result != string.end())
+          assert::succeed(message, line_info);
+        else
+          assert::fail("string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+      }
 
     private:
       static std::string to_lower(const std::string& value) {
