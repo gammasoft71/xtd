@@ -468,6 +468,220 @@ namespace xtd {
       static void are_equal_ingoring_case(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_equal(to_lower(std::wstring(expected)), to_lower(std::wstring(actual)), message, line_info);}
       /// @endcond
       
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal("key", std::string("value")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal("value", std::string("value")); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::string& expected, const std::string& actual) {are_not_equal(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal("key", std::string("value"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal("value", std::string("value"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::string& expected, const std::string& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal("key", std::string("value"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal("value", std::string("value"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::string& expected, const std::string& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal("key", std::string("value"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal("value", std::string("value"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(u"key", std::u16string(u"value")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"value")); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u16string& expected, const std::u16string& actual) {are_not_equal(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(u"vakeylue", std::u16string(u"value"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"value"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u16string& expected, const std::u16string& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(u"key", std::u16string(u"value"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"value"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u16string& expected, const std::u16string& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(u"key", std::u16string(u"value"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"value"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u16string& expected, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(U"key", std::u32string(U"value")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(U"value", std::u32string(U"value")); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u32string& expected, const std::u32string& actual) {are_not_equal(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(U"key", std::u32string(U"value"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(U"value", std::u32string(U"value"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u32string& expected, const std::u32string& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(U"key", std::u32string(U"value"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(U"value", std::u32string(U"value"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u32string& expected, const std::u32string& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(U"key", std::u32string(U"value"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(U"value", std::u32string(U"value"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::u32string& expected, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"value")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"value")); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::wstring& expected, const std::wstring& actual) {are_not_equal(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"value"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"value"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::wstring& expected, const std::wstring& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"value"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"value"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::wstring& expected, const std::wstring& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that two type are not equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"value"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"value"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void are_not_equal(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      
+      /// @cond
+      static void are_not_equal(const char* expected, const char* actual) {are_not_equal(expected, actual, "", line_info());}
+      static void are_not_equal(const char* expected, const char* actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      static void are_not_equal(const char* expected, const char* actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      static void are_not_equal(const char* expected, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      
+      static void are_not_equal(const char16_t* expected, const char16_t* actual) {are_not_equal(expected, actual, "", line_info());}
+      static void are_not_equal(const char16_t* expected, const char16_t* actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      static void are_not_equal(const char16_t* expected, const char16_t* actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      static void are_not_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      
+      static void are_not_equal(const char32_t* expected, const char32_t* actual) {are_not_equal(expected, actual, "", line_info());}
+      static void are_not_equal(const char32_t* expected, const char32_t* actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      static void are_not_equal(const char32_t* expected, const char32_t* actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      static void are_not_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual) {are_not_equal(expected, actual, "", line_info());}
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
+      static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {assert::are_not_equal(expected, actual, message, line_info);}
+      /// @endcond
+
     private:
       static std::string to_lower(const std::string& value) {
         std::string result;
