@@ -162,6 +162,7 @@ namespace unit_tests {
       assert::are_equal(0,  s.rfind("toto") - strlen("toto"));
       assert::are_equal(std::string::npos, s.find("tutu"));
       string_assert::starts_width("titi", s);
+      string_assert::does_not_start_width("toto", s);
     }
     
     void test_method_(test_case2) {
