@@ -34,7 +34,7 @@
 
 ![added](pictures/added.png) does not start width
 
-![todo](pictures/todo.png) ends width
+![added](pictures/added.png) ends width
 
 ![todo](pictures/todo.png) does not end width
 
