@@ -18,6 +18,7 @@ int main() {
   cout << strings::concat<char>("item1 ", i, " ", 3.5) << endl;
   cout << strings::contains("Hello, Wolrd !", "Helli") << endl;
   cout << strings::join(", ", {"black", "yellow", "red"}, 0, 22) << endl;
+  cout << strings::pad_left("padded", 10) << endl;
 }
 
 // This code produces the following output with colors:

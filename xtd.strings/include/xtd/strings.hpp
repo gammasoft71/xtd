@@ -6,6 +6,7 @@
 #include "string_split_options.hpp"
 
 #include <algorithm>
+#include <iomanip>
 #include <locale>
 #include <sstream>
 #include <string>
@@ -106,18 +107,18 @@ namespace xtd {
     static bool contains(const Char* str, const Char* value) noexcept {return contains(std::basic_string<Char>(str), std::basic_string<Char>(value));}
     /// @endcond
 
-    /// @brief Determines whether the end of this instance matches the specified String.
+    /// @brief Determines whether the end of the specified string matches the specified String.
     /// @param value A String to compare to.
-    /// @return bool true if value matches the end of this instance; otherwise, false.
-    /// @remarks This method compares value to the substring at the end of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of this instance.
+    /// @return bool true if value matches the end of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
     template<typename Char>
     static bool ends_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return ends_width(str, value, false);}
     
-    /// @brief Determines whether the end of this instance matches the specified String, ignoring or honoring their case.
+    /// @brief Determines whether the end of the specified string matches the specified String, ignoring or honoring their case.
     /// @param value A String to compare to.
-    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
-    /// @return bool true if value matches the end of this instance; otherwise, false.
-    /// @remarks This method compares value to the substring at the end of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of this instance.
+    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
+    /// @return bool true if value matches the end of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
     template<typename Char>
     static bool ends_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
       if (ignore_case)
@@ -247,7 +248,7 @@ namespace xtd {
       }
       return ss.str();
     }
-    
+
     /// @cond
     template<typename Char, typename Value>
     static std::basic_string<Char> join(const Char* separator, const std::initializer_list<Value>& values) {return join(std::basic_string<Char>(separator), values);}
@@ -256,6 +257,36 @@ namespace xtd {
     template<typename Char, typename Value>
     static std::basic_string<Char> join(const Char* separator, const std::initializer_list<Value>& values, size_t index, size_t count) {return join(std::basic_string<Char>(separator), values, index, count);}
     /// @endcond
+    
+    /// @brief Right-aligns the characters iin the specified string, padding with spaces on the left for a specified total length.
+    /// @param total_width The number of characters in the resulting String, equal to the number of original characters plus any additional padding characters.
+    /// @return String A new String that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new String object that is identical to the specified string.
+    /// @remarks A Unicode space is defined as hexadecimal 0x20.
+    /// @remarks The pad_left(const std::basic_string<Char>&, int) method pads the beginning of the returned String. This means that, when used with right-to-left languages, it pads the right portion of the String..
+    template<typename Char>
+    static std::basic_string<Char> pad_left(const std::basic_string<Char>& str, size_t total_width) {return pad_left(str, total_width, static_cast<Char>(0x20));}
+    
+    /// @brief Right-aligns the characters in the specified string, padding with spaces on the left for a specified total length.
+    /// @param total_width The number of characters in the resulting String, equal to the number of original characters plus any additional padding characters.
+    /// @param paddingChar A Unicode padding character.
+    /// @return String A new String that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new String object that is identical the specified string.
+    /// @remarks A Unicode space is defined as hexadecimal 0x20.
+    /// @remarks The pad_left(const std::basic_string<Char>&, int) method pads the beginning of the returned String. This means that, when used with right-to-left languages, it pads the right portion of the String..
+    template<typename Char>
+    static std::basic_string<Char> pad_left(const std::basic_string<Char>& str, size_t total_width, Char padding_char) {
+      if (total_width < str.size()) return str;
+      return std::basic_string<Char>(total_width - str.size(), padding_char).append(str);
+    }
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> pad_left(const Char* str, size_t total_width) {return pad_left(std::basic_string<Char>(str), total_width, static_cast<Char>(0x20));}
+
+    template<typename Char>
+    static std::basic_string<Char> pad_left(const Char* str, size_t total_width, Char padding_char) {
+      return pad_left(std::basic_string<Char>(str), total_width, padding_char);
+    }
+    /// @endconst
 
     /// @brief Splits a specified string into a maximum number of substrings based on the characters in an array.
     /// @param str string to split.
@@ -264,10 +295,10 @@ namespace xtd {
     /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
-    /// @remarks If the count parameter is zero, or the options parameter is remove_empty_entries and the length of this instance is zero, an empty array is returned.
-    /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of this instance, the corresponding array element contains an empty string.
-    /// @remarks If there are more than count substrings in this instance, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in this instance are returned in the last element of the return value.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
+    /// @remarks If the count parameter is zero, or the options parameter is remove_empty_entries and the length of the specified string is zero, an empty array is returned.
+    /// @remarks Each element of separator defines a separate delimiter character. If the options parameter is None, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains an empty string.
+    /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
    template<typename Char>
     static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str, const std::vector<Char>& separators, size_t count, string_split_options options) noexcept {
@@ -297,7 +328,7 @@ namespace xtd {
     /// @param str string to split.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
     template<typename Char>
     static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str) noexcept {return split(str, std::vector<Char> {9, 10, 11, 12, 13, 32}, std::numeric_limits<size_t>::max(), string_split_options::none);}
     
@@ -306,7 +337,7 @@ namespace xtd {
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
     template<typename Char>
     static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str, const std::vector<Char>& separators) noexcept {return split(str, separators, std::numeric_limits<size_t>::max(), string_split_options::none);}
     
@@ -316,10 +347,10 @@ namespace xtd {
     /// @param options xtd::string_split_options::remove_empty_entries to omit empty array elements from the array returned; or None to include empty array elements in the array returned.
     /// @return An array whose elements contain the substrings in this string that are delimited by one or more characters in separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
-    /// @remarks If this instance does not contain any of the characters in separator, the returned array consists of a single element that contains this instance.
-    /// @remarks If the options parameter is remove_empty_entries and the length of this instance is zero, the method returns an empty array.
-    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of this instance, the corresponding array element contains empty string. For example, if separator includes two elements, "-" and "_", the value of the string instance is "-_aa-_", and the value of the options argument is None, the method returns a string array with the following five elements:
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
+    /// @remarks If the specified string does not contain any of the characters in separator, the returned array consists of a single element that contains the specified string.
+    /// @remarks If the options parameter is remove_empty_entries and the length of the specified string is zero, the method returns an empty array.
+    /// @remarks Each element of separator defines a separate delimiter that consists of a single character. If the options argument is none, and two delimiters are adjacent or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains empty string. For example, if separator includes two elements, "-" and "_", the value of the string instance is "-_aa-_", and the value of the options argument is None, the method returns a string array with the following five elements:
     ///   1. empty string, which represents the empty string that precedes the "-" character at index 0.
     ///   2. empty string, which represents the empty string between the "-" character at index 0 and the "_" character at index 1.
     ///   3. "aa",
@@ -335,10 +366,10 @@ namespace xtd {
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
     /// @param count The maximum number of substrings to return.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
-    /// @remarks If this instance does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains this instance.
+    /// @remarks If the specified string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified string.
     /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the Char.IsWhiteSpace method.
-    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of this instance, the corresponding array element contains empty string.
-    /// @remarks If there are more than count substrings in this instance, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in this instance are returned in the last element of the return value.
+    /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified string, the corresponding array element contains empty string.
+    /// @remarks If there are more than count substrings in the specified string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified string are returned in the last element of the return value.
     template<typename Char>
     static std::vector<std::basic_string<Char>> split(const std::basic_string<Char>& str, const std::vector<Char>& separators, size_t count) noexcept {return split(str, separators, count, string_split_options::none);}
 
@@ -357,16 +388,16 @@ namespace xtd {
 
     /// @brief Determines whether the beginning of an instance of String matches a specified String.
     /// @param value A String to compare to.
-    /// @return bool true if value matches the beginning of this instance; otherwise, false.
-    /// @remarks This method compares value to the substring at the beginning of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of this instance.
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     template<typename Char>
     static bool starts_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return starts_width(str, value, false);}
 
     /// @brief Determines whether the beginning of an instance of String matches a specified String, ignoring or honoring their case.
     /// @param value A String to compare to.
-    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
-    /// @return bool true if value matches the beginning of this instance; otherwise, false.
-    /// @remarks This method compares value to the substring at the beginning of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of this instance.
+    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     template<typename Char>
     static bool starts_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
       if (ignore_case)
