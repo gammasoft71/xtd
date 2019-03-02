@@ -6,6 +6,7 @@
 #include "string_split_options.hpp"
 
 #include <algorithm>
+#include <locale>
 #include <string>
 #include <vector>
 
@@ -17,7 +18,42 @@ namespace xtd {
     /// @cond
     strings() = delete;
     /// @endcond
+
+    /// @brief Determines whether the end of this instance matches the specified String.
+    /// @param value A String to compare to.
+    /// @return bool true if value matches the end of this instance; otherwise, false.
+    /// @remarks This method compares value to the substring at the end of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of this instance.
+    template<typename Char>
+    static bool ends_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return ends_width(str, value, false);}
     
+    /// @brief Determines whether the end of this instance matches the specified String, ignoring or honoring their case.
+    /// @param value A String to compare to.
+    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
+    /// @return bool true if value matches the end of this instance; otherwise, false.
+    /// @remarks This method compares value to the substring at the end of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of this instance.
+    template<typename Char>
+    static bool ends_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
+      if (ignore_case)
+        return to_lower(str).rfind(to_lower(value)) - to_lower(value).size() == 0;
+      return str.rfind(value) - value.size() == 0;
+    }
+    
+    /// @cond
+    template<typename Char>
+    static bool ends_width(const std::basic_string<Char>& str, const Char* value) noexcept {return ends_width(str, std::basic_string<Char>(value), false);}
+    template<typename Char>
+    static bool ends_width(const Char* str, const std::basic_string<Char>& value) noexcept {return ends_width(std::basic_string<Char>(str), value, false);}
+    template<typename Char>
+    static bool ends_width(const Char* str, const Char* value) noexcept {return ends_width(std::basic_string<Char>(str), std::basic_string<Char>(value), false);}
+
+    template<typename Char>
+    static bool ends_width(const std::basic_string<Char>& str, const Char* value, bool ignore_case) noexcept {return ends_width(str, std::basic_string<Char>(value), ignore_case);}
+    template<typename Char>
+    static bool ends_width(const Char* str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return ends_width(std::basic_string<Char>(str), value, ignore_case);}
+    template<typename Char>
+    static bool ends_width(const Char* str, const Char* value, bool ignore_case) noexcept {return ends_width(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
+    /// @endcond
+
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
     /// @param args anarguments list to write using format.
@@ -181,10 +217,107 @@ namespace xtd {
     template<typename Char>
     static std::vector<std::basic_string<Char>> split(const Char* str, const std::vector<Char>& separators, size_t count) noexcept {return split(str, separators, count, string_split_options::none);}
     /// @endcond
+
+    /// @brief Determines whether the beginning of an instance of String matches a specified String.
+    /// @param value A String to compare to.
+    /// @return bool true if value matches the beginning of this instance; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of this instance.
+    template<typename Char>
+    static bool starts_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return starts_width(str, value, false);}
+
+    /// @brief Determines whether the beginning of an instance of String matches a specified String, ignoring or honoring their case.
+    /// @param value A String to compare to.
+    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
+    /// @return bool true if value matches the beginning of this instance; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of this instance that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of this instance.
+    template<typename Char>
+    static bool starts_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
+      if (ignore_case)
+        return to_lower(str).find(to_lower(value)) == 0;
+      return str.find(value) == 0;
+    }
+
+    /// @cond
+    template<typename Char>
+    static bool starts_width(const std::basic_string<Char>& str, const Char* value) noexcept {return starts_width(str, std::basic_string<Char>(value), false);}
+    template<typename Char>
+    static bool starts_width(const Char* str, const std::basic_string<Char>& value) noexcept {return starts_width(std::basic_string<Char>(str), value, false);}
+    template<typename Char>
+    static bool starts_width(const Char* str, const Char* value) noexcept {return starts_width(std::basic_string<Char>(str), std::basic_string<Char>(value), false);}
+
+    template<typename Char>
+    static bool starts_width(const std::basic_string<Char>& str, const Char* value, bool ignore_case) noexcept {return starts_width(str, std::basic_string<Char>(value), ignore_case);}
+    template<typename Char>
+    static bool starts_width(const Char* str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return starts_width(std::basic_string<Char>(str), value, ignore_case);}
+    template<typename Char>
+    static bool starts_width(const Char* str, const Char* value, bool ignore_case) noexcept {return starts_width(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
+    /// @endcond
     
+    /// @brief Returns a copy of this String converted to lowercase.
+    /// @return String A new String in lowercase.
+    template<typename Char>
+    static const std::basic_string<Char> to_lower(const std::basic_string<Char>& str) noexcept {
+      std::basic_string<Char> result;
+      std::locale lc = std::locale();
+      for(char c : str) result.push_back(std::tolower(c, lc));
+      return result;
+    }
+    
+    /// @cond
+    static const std::basic_string<char16_t> to_lower(const std::basic_string<char16_t>& str) noexcept {
+      std::basic_string<char16_t> result;
+      std::locale lc = std::locale();
+      //for(char16_t c : str) result.push_back(std::tolower(c, lc));
+      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::tolower(static_cast<char>(c), lc)) : c);
+      return result;
+    }
+    
+    static const std::basic_string<char32_t> to_lower(const std::basic_string<char32_t>& str) noexcept {
+      std::basic_string<char32_t> result;
+      std::locale lc = std::locale();
+      //for(char c : str) result.push_back(std::tolower(c, lc));
+      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::tolower(static_cast<char>(c), lc)) : c);
+      return result;
+    }
+    
+    template<typename Char>
+    static const std::basic_string<Char> to_lower(const Char* str) noexcept {return to_lower(std::basic_string<Char>(str));}
+    /// @endcond
+    
+    /// @brief Returns a copy of this String converted to uppercase.
+    /// @return String A new String in uppercase.
+    template<typename Char>
+    static const std::basic_string<Char> to_upper(const std::basic_string<Char>& str) noexcept {
+      std::basic_string<Char> result;
+      std::locale lc = std::locale();
+      for(char c : str) result.push_back(std::toupper(c, lc));
+      return result;
+    }
+    
+    /// @cond
+    static const std::basic_string<char16_t> to_upper(const std::basic_string<char16_t>& str) noexcept {
+      std::basic_string<char16_t> result;
+      std::locale lc = std::locale();
+      //for(char16_t c : str) result.push_back(std::toupper(c, lc));
+      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::toupper(static_cast<char>(c), lc)) : c);
+      return result;
+    }
+    
+    static const std::basic_string<char32_t> to_upper(const std::basic_string<char32_t>& str) noexcept {
+      std::basic_string<char32_t> result;
+      std::locale lc = std::locale();
+      //for(char c : str) result.push_back(std::toupper(c, lc));
+      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::toupper(static_cast<char>(c), lc)) : c);
+      return result;
+    }
+    
+    template<typename Char>
+    static const std::basic_string<Char> to_upper(const Char* str) noexcept {return to_upper(std::basic_string<Char>(str));}
+    /// @endcond
+
   private:
     template<typename Arg>
-    static auto convert_param(Arg&& arg) {
+    static auto convert_param(Arg&& arg) noexcept {
       if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::string>::value) {
         return std::forward<Arg>(arg).c_str();
       } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::wstring>::value) {
