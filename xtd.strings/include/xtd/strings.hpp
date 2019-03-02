@@ -90,9 +90,9 @@ namespace xtd {
       return ss.str();
     }
 
-    /// @brief Returns a value indicating whether the specified String object occurs within this String.
+    /// @brief Returns a value indicating whether the specified String object occurs within the specified string.
     /// @param value The first String.
-    /// @return bool true if the value parameter occurs within this String, or if value is the empty String (""); otherwise, false
+    /// @return bool true if the value parameter occurs within the specified string, or if value is the empty String (""); otherwise, false
     template<typename Char>
     static bool contains(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {
       return str.find(value) != str.npos;
@@ -451,7 +451,7 @@ namespace xtd {
     static bool starts_width(const Char* str, const Char* value, bool ignore_case) noexcept {return starts_width(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
     /// @endcond
     
-    /// @brief Returns a copy of this String converted to lowercase.
+    /// @brief Returns a copy of the specified string converted to lowercase.
     /// @return String A new String in lowercase.
     template<typename Char>
     static const std::basic_string<Char> to_lower(const std::basic_string<Char>& str) noexcept {
@@ -482,7 +482,7 @@ namespace xtd {
     static const std::basic_string<Char> to_lower(const Char* str) noexcept {return to_lower(std::basic_string<Char>(str));}
     /// @endcond
     
-    /// @brief Returns a copy of this String converted to uppercase.
+    /// @brief Returns a copy of the specified string converted to uppercase.
     /// @return String A new String in uppercase.
     template<typename Char>
     static const std::basic_string<Char> to_upper(const std::basic_string<Char>& str) noexcept {
