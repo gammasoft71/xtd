@@ -30,7 +30,7 @@
 
 ![added](pictures/added.png) does not contain
 
-![todo](pictures/todo.png) starts width
+![added](pictures/added.png) starts width
 
 ![todo](pictures/todo.png) does not start width
 
