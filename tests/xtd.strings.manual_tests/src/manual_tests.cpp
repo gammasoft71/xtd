@@ -20,6 +20,8 @@ int main() {
   cout << strings::join(", ", {"black", "yellow", "red"}, 0, 22) << endl;
   cout << strings::pad_left("padded", 10) << endl;
   cout << strings::pad_right("padded", 10, '+') << endl;
+  cout << strings::replace("abc defabc def", "abc", "1234") << endl;
+  cout << strings::replace("abc defabc def", 'e', 'z') << endl;
 }
 
 // This code produces the following output with colors:
