@@ -318,6 +318,53 @@ namespace xtd {
     static std::basic_string<Char> pad_right(const Char* str, size_t total_width, Char padding_char) {return pad_right(std::basic_string<Char>(str), total_width, padding_char);}
     /// @endcond
     
+    /// @brief Replaces all occurrences of a specified Char in the specified string with another specified Char.
+    /// @param str String containing string to replace.
+    /// @param old_char A Char to be replaced.
+    /// @param new_char A Char to replace all occurrences of old_char.
+    /// @return String A A new String equivalent to the specified string but with all instances of old_char replaced with new_char.
+    template<typename Char>
+    static std::basic_string<Char> replace(const std::basic_string<Char>& str, Char old_char, Char new_char) {return replace(str, std::basic_string<Char>(1, old_char), std::basic_string<Char>(1, new_char));}
+    
+    /// @brief Replaces all occurrences of a specified String in the specified string with another specified String.
+    /// @param str String containing string to replace.
+    /// @param old_string A String to be replaced.
+    /// @param new_string A String to replace all occurrences of old_string.
+    /// @return String A A new String equivalent to the specified string but with all instances of old_string replaced with new_string.
+    /// @remarks If new_string is empty, all occurrences of old_string are removed
+    template<typename Char>
+    static std::basic_string<Char> replace(const std::basic_string<Char>& str, const std::basic_string<Char>& old_string, const std::basic_string<Char>& new_string) {
+      std::basic_string<Char> result(str);
+      size_t index = 0;
+      while (true) {
+        index = result.find(old_string, index);
+        if (index == std::string::npos) break;
+        result.erase(index, old_string.size());
+        result.insert(index, new_string);
+        index += new_string.size();
+      }
+      return result;
+    }
+
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> replace(const Char* str, Char old_char, Char new_char) {return replace(std::basic_string<Char>(str), old_char, new_char);}
+    template<typename Char>
+    static std::basic_string<Char> replace(const Char* str, const Char* old_string, const Char* new_string) {return replace(std::basic_string<Char>(str), std::basic_string<Char>(old_string), std::basic_string<Char>(new_string));}
+    template<typename Char>
+    static std::basic_string<Char> replace(const std::basic_string<Char>& str, const Char* old_string, const Char* new_string) {return replace(str, std::basic_string<Char>(old_string), std::basic_string<Char>(new_string));}
+    template<typename Char>
+    static std::basic_string<Char> replace(const Char* str, std::basic_string<Char>& old_string, const Char* new_string) {return replace(std::basic_string<Char>(str), old_string, std::basic_string<Char>(new_string));}
+    template<typename Char>
+    static std::basic_string<Char> replace(const Char* str, const Char* old_string, const std::basic_string<Char>& new_string) {return replace(std::basic_string<Char>(str), std::basic_string<Char>(old_string), new_string);}
+    template<typename Char>
+    static std::basic_string<Char> replace(const std::basic_string<Char>& str, const std::basic_string<Char>& old_string, const Char* new_string) {return replace(str, old_string, std::basic_string<Char>(new_string));}
+    template<typename Char>
+    static std::basic_string<Char> replace(const std::basic_string<Char>& str, const Char* old_string, const std::basic_string<Char>& new_string) {return replace(str, std::basic_string<Char>(old_string), new_string);}
+    template<typename Char>
+    static std::basic_string<Char> replace(const Char* str, const std::basic_string<Char>& old_string, const std::basic_string<Char>& new_string) {return replace(std::basic_string<Char>(str), old_string, new_string);}
+    /// @endcond
+
     /// @brief Splits a specified string into a maximum number of substrings based on the characters in an array.
     /// @param str string to split.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
