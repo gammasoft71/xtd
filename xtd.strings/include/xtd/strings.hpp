@@ -19,6 +19,64 @@ namespace xtd {
     strings() = delete;
     /// @endcond
 
+    /// @brief Compares two specified String objects.
+    /// @param str_a The first String.
+    /// @param str_b The second String.
+    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return Less than zero      str_a is less than str_b.
+    /// @return Zero                str_a is equal to str_b.
+    /// @return Greater than zero   str_a is greater than str_b.
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b) {return compare(str_a, str_b, false);}
+    
+    /// @brief Compares two specified String objects, ignoring or honoring their case.
+    /// @param str_a The first String.
+    /// @param str_b The second String.
+    /// @param ignore_case A bool indicating a case-sensitive or insensitive comparison. (true indicates a case-insensitive comparison.)
+    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return Less than zero      str_a is less than str_b.
+    /// @return Zero                str_a is equal to str_b.
+    /// @return Greater than zero   str_a is greater than str_b.
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, bool ignore_case) {
+      if (ignore_case)
+        return to_lower(str_a).compare(to_lower(str_b));
+      return str_a.compare(str_b);
+    }
+    
+    /// @brief Compares substrings of two specified String objects.
+    /// @param str_a The first String.
+    /// @param index_a The position of the substring within str_a.
+    /// @param str_b The second String.
+    /// @param index_b The position of the substring within str_b.
+    /// @param length The maximum number of characters in the substrings to compare
+    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return Less than zero      str_a is less than str_b.
+    /// @return Zero                str_a is equal to str_b.
+    /// @return Greater than zero   str_a is greater than str_b.
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length) {return compare(str_a, index_a, str_b, index_b, length, false);}
+    
+    /// @brief Compares substrings of two specified String objects, ignoring or honoring their case.
+    /// @param str_a The first String.
+    /// @param index_a The position of the substring within str_a.
+    /// @param str_b The second String.
+    /// @param index_b The position of the substring within str_b.
+    /// @param length The maximum number of characters in the substrings to compare
+    /// @param ignore_case A bool indicating a case-sensitive or insensitive comparison. (true indicates a case-insensitive comparison.)
+    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return Less than zero      str_a is less than str_b.
+    /// @return Zero                str_a is equal to str_b.
+    /// @return Greater than zero   str_a is greater than str_b.
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length, bool ignore_case) {
+      std::basic_string<Char> sa(str_a.substr(index_a, length));
+      std::basic_string<Char> sb(str_b.substr(index_b, length));
+      if (ignore_case)
+        return to_lower(sa).compare(to_lower(sb));
+      return sa.compare(sb);
+    }
+    
     /// @brief Determines whether the end of this instance matches the specified String.
     /// @param value A String to compare to.
     /// @return bool true if value matches the end of this instance; otherwise, false.
