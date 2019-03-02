@@ -14,6 +14,27 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
 namespace xtd {
+  /// @brief Immutable basic_string<Char>
+  /// @remarks It can be replaced by const std::basic_string<Char>.
+  template<typename Char>
+  using cbasic_string = const std::basic_string<Char>;
+  
+  /// @brief Immutable string<Char>
+  /// @remarks It can be replaced by const std::string<Char>.
+  using cstring = const std::string;
+
+  /// @brief Immutable u16string<Char>
+  /// @remarks It can be replaced by const std::u16string<Char>.
+  using cu16string = const std::u16string;
+
+  /// @brief Immutable u32string<Char>
+  /// @remarks It can be replaced by const std::u32string<Char>.
+  using cu32string = const std::u32string;
+
+  /// @brief Immutable wstring<Char>
+  /// @remarks It can be replaced by const std::wstring<Char>.
+  using cwstring = const std::wstring;
+
   /// @brief The strings Cainteins string operation methods.
   class strings {
   public:
