@@ -15,7 +15,7 @@ int main() {
   std::string s = "Hello, World!";
   cout << strings::starts_width(s, "HELLO", true) << endl;
   int i = 2;
-  cout << strings::concat<char>("item1 ", i, " ", 3.5) << endl;
+  cout << strings::concat("item1 ", i, " ", 3.5) << endl;
   cout << strings::contains("Hello, Wolrd !", "Helli") << endl;
   cout << strings::join(", ", {"black", "yellow", "red"}, 0, 22) << endl;
   cout << strings::pad_left("padded", 10) << endl;
