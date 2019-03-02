@@ -23,6 +23,11 @@ int main() {
   cout << strings::replace("abc defabc def", "abc", "1234") << endl;
   cout << strings::replace("abc defabc def", 'e', 'z') << endl;
   cout << strings::trim_start("    toto") << endl;
+  
+  cstring str = "My immutable string";
+  //str += " other";
+  cout << str << endl;
+  cout << strings::replace(str, 'm', 'z') << endl;
 }
 
 // This code produces the following output with colors:
