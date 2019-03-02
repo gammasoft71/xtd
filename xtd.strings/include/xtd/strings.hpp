@@ -90,6 +90,9 @@ namespace xtd {
       return ss.str();
     }
 
+    /// @brief Concatenates the String representations of the elements in a specified Args.
+    /// @param args Variadic tempalte arguments to concat.
+    /// @return string The concatenated string representations of the values of the elements in args.
     template<typename ... Args>
     static std::string concat(Args&& ... args) noexcept {
       std::stringstream ss;
