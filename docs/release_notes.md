@@ -68,6 +68,26 @@
 
 ![todo](pictures/todo.png) is ordered ?
 
+### File assert :
+
+![todo](pictures/todo.png) are equals
+
+![todo](pictures/todo.png) are not equals
+
+![todo](pictures/todo.png) exists
+
+![todo](pictures/todo.png) does not exist
+
+### Directory assert :
+
+![todo](pictures/todo.png) are equals
+
+![todo](pictures/todo.png) are not equals
+
+![todo](pictures/todo.png) exists
+
+![todo](pictures/todo.png) does not exist
+
 ## Validations :
 
 ### Valid :
