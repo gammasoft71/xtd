@@ -24,7 +24,7 @@ namespace xtd {
     /// @brief Compares two specified String objects.
     /// @param str_a The first String.
     /// @param str_b The second String.
-    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
     /// @return Less than zero      str_a is less than str_b.
     /// @return Zero                str_a is equal to str_b.
     /// @return Greater than zero   str_a is greater than str_b.
@@ -35,7 +35,7 @@ namespace xtd {
     /// @param str_a The first String.
     /// @param str_b The second String.
     /// @param ignore_case A bool indicating a case-sensitive or insensitive comparison. (true indicates a case-insensitive comparison.)
-    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
     /// @return Less than zero      str_a is less than str_b.
     /// @return Zero                str_a is equal to str_b.
     /// @return Greater than zero   str_a is greater than str_b.
@@ -52,7 +52,7 @@ namespace xtd {
     /// @param str_b The second String.
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
-    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
     /// @return Less than zero      str_a is less than str_b.
     /// @return Zero                str_a is equal to str_b.
     /// @return Greater than zero   str_a is greater than str_b.
@@ -66,7 +66,7 @@ namespace xtd {
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
     /// @param ignore_case A bool indicating a case-sensitive or insensitive comparison. (true indicates a case-insensitive comparison.)
-    /// @return int32 A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
+    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
     /// @return Less than zero      str_a is less than str_b.
     /// @return Zero                str_a is equal to str_b.
     /// @return Greater than zero   str_a is greater than str_b.
@@ -259,6 +259,7 @@ namespace xtd {
     /// @endcond
     
     /// @brief Right-aligns the characters iin the specified string, padding with spaces on the left for a specified total length.
+    /// @param str String to pad left.
     /// @param total_width The number of characters in the resulting String, equal to the number of original characters plus any additional padding characters.
     /// @return String A new String that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new String object that is identical to the specified string.
     /// @remarks A Unicode space is defined as hexadecimal 0x20.
@@ -267,6 +268,7 @@ namespace xtd {
     static std::basic_string<Char> pad_left(const std::basic_string<Char>& str, size_t total_width) {return pad_left(str, total_width, static_cast<Char>(0x20));}
     
     /// @brief Right-aligns the characters in the specified string, padding with spaces on the left for a specified total length.
+    /// @param str String to pad left.
     /// @param total_width The number of characters in the resulting String, equal to the number of original characters plus any additional padding characters.
     /// @param paddingChar A Unicode padding character.
     /// @return String A new String that is equivalent to the specified string, but right-aligned and padded on the left with as many spaces as needed to create a length of total_width. Or, if total_width is less than the length of the specified string, a new String object that is identical the specified string.
@@ -281,13 +283,41 @@ namespace xtd {
     /// @cond
     template<typename Char>
     static std::basic_string<Char> pad_left(const Char* str, size_t total_width) {return pad_left(std::basic_string<Char>(str), total_width, static_cast<Char>(0x20));}
-
+    
     template<typename Char>
-    static std::basic_string<Char> pad_left(const Char* str, size_t total_width, Char padding_char) {
-      return pad_left(std::basic_string<Char>(str), total_width, padding_char);
-    }
+    static std::basic_string<Char> pad_left(const Char* str, size_t total_width, Char padding_char) {return pad_left(std::basic_string<Char>(str), total_width, padding_char);}
     /// @endconst
-
+    
+    /// @brief Left-aligns the characters in the specified string, padding with spaces on the right for a specified total length.
+    /// @param str String to pad right.
+    /// @param totalWidth The number of characters in the resulting String, equal to the number of original characters plus any additional padding characters.
+    /// @return String A new String that is equivalent to the specified string, but left-aligned and padded on the right with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new String object that is identical to the specified string.
+    /// @remarks A Unicode space is defined as hexadecimal 0x20.
+    /// @remarks The PadRight(const std::basic_string<Char>&, int) method pads the end of the returned String. This means that, when used with right-to-left languages, it pads the left portion of the String..
+    template<typename Char>
+    static std::basic_string<Char> pad_right(const std::basic_string<Char>& str, size_t total_width) {return pad_right(str, total_width, static_cast<Char>(0x20));}
+    
+    /// @brief Left-aligns the characters in the specified string, padding with spaces on the right for a specified total length.
+    /// @param str String to pad right.
+    /// @param totalWidth The number of characters in the resulting String, equal to the number of original characters plus any additional padding characters.
+    /// @param paddingChar A Unicode padding character.
+    /// @return String A new String that is equivalent to the specified string, but left-aligned and padded on the tight with as many spaces as needed to create a length of totalWidth. Or, if totalWidth is less than the length of the specified string, a new String object that is identical to the specified string.
+    /// @remarks A Unicode space is defined as hexadecimal 0x20.
+    /// @remarks The PadRight(const std::basic_string<Char>&, int) method pads the end of the returned String. This means that, when used with right-to-left languages, it pads the left portion of the String..
+    template<typename Char>
+    static std::basic_string<Char> pad_right(const std::basic_string<Char>& str, size_t total_width, Char padding_char) {
+      if (total_width < str.size()) return str;
+      return std::basic_string<Char>(str).append(total_width - str.size(), padding_char);
+    }
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> pad_right(const Char* str, size_t total_width) {return pad_right(std::basic_string<Char>(str), total_width, static_cast<Char>(0x20));}
+    
+    template<typename Char>
+    static std::basic_string<Char> pad_right(const Char* str, size_t total_width, Char padding_char) {return pad_right(std::basic_string<Char>(str), total_width, padding_char);}
+    /// @endconst
+    
     /// @brief Splits a specified string into a maximum number of substrings based on the characters in an array.
     /// @param str string to split.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
