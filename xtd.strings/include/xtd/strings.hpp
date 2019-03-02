@@ -286,7 +286,7 @@ namespace xtd {
     
     template<typename Char>
     static std::basic_string<Char> pad_left(const Char* str, size_t total_width, Char padding_char) {return pad_left(std::basic_string<Char>(str), total_width, padding_char);}
-    /// @endconst
+    /// @endcond
     
     /// @brief Left-aligns the characters in the specified string, padding with spaces on the right for a specified total length.
     /// @param str String to pad right.
@@ -316,7 +316,7 @@ namespace xtd {
     
     template<typename Char>
     static std::basic_string<Char> pad_right(const Char* str, size_t total_width, Char padding_char) {return pad_right(std::basic_string<Char>(str), total_width, padding_char);}
-    /// @endconst
+    /// @endcond
     
     /// @brief Splits a specified string into a maximum number of substrings based on the characters in an array.
     /// @param str string to split.
