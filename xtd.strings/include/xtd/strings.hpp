@@ -83,7 +83,7 @@ namespace xtd {
     /// @return string The concatenated string representations of the values of the elements in args.
     template<typename Char, typename ... Args>
     static std::basic_string<Char> concat(Args&& ... args) noexcept {
-      std::stringstream ss;
+      std::basic_stringstream<Char> ss;
       int unpack[] {0, (ss << args, 0)...};
       static_cast<void>(unpack);
       return ss.str();
@@ -207,6 +207,44 @@ namespace xtd {
     static std::basic_string<Char> format(const Char* fmt, Args&& ... args) noexcept {return __format(fmt, convert_param(std::forward<Args>(args)) ...);}
     /// @endcond
     
+    /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
+    /// @param separator A String separator.
+    /// @param values An array of Object.
+    /// @return A String consisting of the elements of value interspersed with the separator String.
+    /// @exception ArgumentNullException The parameters value or a String of value is null.
+    /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
+    /// @remarks ToString() method is called on each object to generate the content.
+    template<typename Char, typename Collection>
+    static std::basic_string<Char> join(const std::basic_string<Char>& separator, const Collection& values) {
+      bool first = true;
+      
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : values) {
+        if (!first) ss << separator;
+        ss << item;
+        first = false;
+      }
+      return ss.str();
+    }
+
+    /// @cond
+    template<typename Char, typename Value>
+    static std::basic_string<Char> join(const std::basic_string<Char>& separator, const std::initializer_list<Value>& values) {
+      bool first = true;
+      
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : values) {
+        if (!first) ss << separator;
+        ss << item;
+        first = false;
+      }
+      return ss.str();
+    }
+    
+    template<typename Char, typename Value>
+    static std::basic_string<Char> join(const Char* separator, const std::initializer_list<Value>& values) {return join(std::basic_string<Char>(separator), values);}
+    /// @endcond
+
     /// @brief Splits a specified string into a maximum number of substrings based on the characters in an array.
     /// @param str string to split.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
