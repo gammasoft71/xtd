@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <locale>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -77,6 +78,34 @@ namespace xtd {
       return sa.compare(sb);
     }
     
+    /// @brief Concatenates the String representations of the elements in a specified Args.
+    /// @param args Variadic tempalte arguments to concat.
+    /// @return string The concatenated string representations of the values of the elements in args.
+    template<typename Char, typename ... Args>
+    static std::basic_string<Char> concat(Args&& ... args) noexcept {
+      std::stringstream ss;
+      int unpack[] {0, (ss << args, 0)...};
+      static_cast<void>(unpack);
+      return ss.str();
+    }
+
+    /// @brief Returns a value indicating whether the specified String object occurs within this String.
+    /// @param value The first String.
+    /// @return bool true if the value parameter occurs within this String, or if value is the empty String (""); otherwise, false
+    template<typename Char>
+    static bool contains(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {
+      return str.find(value) != str.npos;
+    }
+    
+    /// @cond
+    template<typename Char>
+    static bool contains(const std::basic_string<Char>& str, const Char* value) noexcept {return contains(str, std::basic_string<Char>(value));}
+    template<typename Char>
+    static bool contains(const Char* str, const std::basic_string<Char>& value) noexcept {return contains(std::basic_string<Char>(str), value);}
+    template<typename Char>
+    static bool contains(const Char* str, const Char* value) noexcept {return contains(std::basic_string<Char>(str), std::basic_string<Char>(value));}
+    /// @endcond
+
     /// @brief Determines whether the end of this instance matches the specified String.
     /// @param value A String to compare to.
     /// @return bool true if value matches the end of this instance; otherwise, false.
