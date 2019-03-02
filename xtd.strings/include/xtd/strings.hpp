@@ -90,6 +90,15 @@ namespace xtd {
       return ss.str();
     }
 
+    template<typename ... Args>
+    static std::string concat(Args&& ... args) noexcept {
+      std::stringstream ss;
+      int unpack[] {0, (ss << args, 0)...};
+      static_cast<void>(unpack);
+      return ss.str();
+    }
+    
+
     /// @brief Returns a value indicating whether the specified String object occurs within the specified string.
     /// @param value The first String.
     /// @return bool true if the value parameter occurs within the specified string, or if value is the empty String (""); otherwise, false
