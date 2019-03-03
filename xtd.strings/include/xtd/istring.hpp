@@ -64,7 +64,6 @@ namespace xtd {
     immutable_basic_string(const T& t, size_t pos, size_t n, const Allocator& a = Allocator()) : std::basic_string<Char, CharTraits, Allocator>(t, pos, n, a) {}
 
     ~immutable_basic_string() {}
-    /// @endcond
     
     const Char& at(size_t pos) {return this->std::basic_string<Char, CharTraits, Allocator>::at(pos);}
     const Char& at(size_t pos) const {return this->std::basic_string<Char, CharTraits, Allocator>::at(pos);}
@@ -107,12 +106,14 @@ namespace xtd {
     template<typename T>
     immutable_basic_string operator=(const T& t) {return this->std::basic_string<Char, CharTraits, Allocator>::assign(t);}
 
+    /*
     immutable_basic_string& operator+=(const immutable_basic_string& str) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(str); return *this;}
     immutable_basic_string& operator+=(Char ch) { this->std::basic_string<Char, CharTraits, Allocator>::operator+=(ch); return *this;}
     immutable_basic_string& operator+=(const Char* str) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(str); return *this;}
     immutable_basic_string& operator+=(const std::initializer_list<Char>& il) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(il); return *this;}
     template<typename T>
     immutable_basic_string& operator+=(const T& t) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(t); return *this;}
+     */
     
     int compare(const immutable_basic_string& str) const noexcept {return this->std::basic_string<Char, CharTraits, Allocator>::compare(str);}
     int compare(size_type pos1, size_type count1, const immutable_basic_string& str, size_type pos2, size_type count2 = npos) const noexcept {return this->std::basic_string<Char, CharTraits, Allocator>::compare(pos1, count1, str, pos2, count2);}
@@ -176,6 +177,7 @@ namespace xtd {
 
     friend std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, const immutable_basic_string<Char, CharTraits, Allocator>& str) {return os << ((const std::basic_string<Char, CharTraits, Allocator>&)str);}
     friend std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTraits>& os, immutable_basic_string<Char, CharTraits, Allocator>& str) {return os << ((std::basic_string<Char, CharTraits, Allocator>&)str);}
+    /// @endcond
 
   private:
     immutable_basic_string& assign(size_t count, Char ch );
