@@ -10,6 +10,7 @@ namespace xtd {
   template<class Char, class CharTraits = std::char_traits<Char>, class Allocator = std::allocator<Char>>
   class immutable_basic_string : public std::basic_string<Char, CharTraits, Allocator> {
   public:
+    /// @cond
     using __self = immutable_basic_string;
     using __self_view = std::basic_string_view<Char, CharTraits>;
     using traits_type = CharTraits;
@@ -27,7 +28,6 @@ namespace xtd {
     using reverse_iterator = typename std::basic_string<Char, CharTraits, Allocator>::reverse_iterator;
     using const_reverse_iterator = typename std::basic_string<Char, CharTraits, Allocator>::reverse_iterator;
 
-    /// @cond
     immutable_basic_string() noexcept {}
     explicit immutable_basic_string(const Allocator& a) noexcept : std::basic_string<Char, CharTraits, Allocator>(a) {}
 
