@@ -38,7 +38,7 @@
 
 ![added](pictures/added.png) does not end width
 
-![todo](pictures/todo.png) matches
+![added](pictures/added.png) matches
 
 ![todo](pictures/todo.png) does not match
 
