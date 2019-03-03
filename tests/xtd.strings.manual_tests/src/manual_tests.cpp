@@ -26,6 +26,7 @@ int main() {
   
   istring str = "My immutable string";
   //str += " other";
+  char c = str.at(2);
   cout << str << endl;
   cout << strings::replace(str, 'm', 'z') << endl;
 }
