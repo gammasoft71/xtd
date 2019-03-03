@@ -4,6 +4,7 @@
 #include "assert.hpp"
 #include <locale>
 #include <cstring>
+#include <regex>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access console.
@@ -26,8 +27,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal("value", std::string("VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_equal("key", std::string("VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("value", std::string("VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("key", std::string("VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -38,8 +39,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal("value", std::string("VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal("key", std::string("VALUE"), line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("value", std::string("VALUE"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("key", std::string("VALUE"), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -50,8 +51,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal("value", std::string("VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_equal("key", std::string("VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("value", std::string("VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("key", std::string("VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -63,8 +64,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal("value", std::string("VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal("key", std::string("VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("value", std::string("VALUE"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case("key", std::string("VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) == to_lower(expected))
@@ -79,8 +80,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(u"value", std::u16string(u"VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_equal(u"key", std::u16string(u"VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"value", std::u16string(u"VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"key", std::u16string(u"VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -91,8 +92,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(u"value", std::u16string(u"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal(u"key", std::u16string(u"VALUE"), line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"value", std::u16string(u"VALUE"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -103,8 +104,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(u"value", std::u16string(u"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_equal(u"key", std::u16string(u"VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -116,8 +117,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) == to_lower(expected))
@@ -132,8 +133,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(U"value", std::u32string(U"VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_equal(U"key", std::u32string(U"VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"value", std::u32string(U"VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"key", std::u32string(U"VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -144,8 +145,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(U"value", std::u32string(U"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal(U"key", std::u32string(U"VALUE"), line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"value", std::u32string(U"VALUE"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"key", std::u32string(U"VALUE"), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -156,8 +157,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(U"value", std::u32string(U"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_equal(U"key", std::u32string(U"VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"value", std::u32string(U"VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"key", std::u32string(U"VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -169,8 +170,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(U"value", std::u32string(U"vValuealue"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal(U"key", std::u32string(U"Value"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"value", std::u32string(U"VALUE"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(U"key", std::u32string(U"Value"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) == to_lower(expected))
@@ -185,8 +186,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(L"value", std::wstring(L"VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_equal(L"key", std::wstring(L"VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"value", std::wstring(L"VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"key", std::wstring(L"VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -197,8 +198,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(L"value", std::wstring(L"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal(L"key", std::wstring(L"VALUE"), line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"value", std::wstring(L"VALUE"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -209,8 +210,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(L"value", std::wstring(L"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_equal(L"key", std::wstring(L"VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -222,8 +223,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_equal(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_equal(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) == to_lower(expected))
@@ -260,8 +261,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal("key", std::string("VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal("value", std::string("VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("key", std::string("VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("value", std::string("VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -272,8 +273,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal("key", std::string("VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal("value", std::string("VALUE"), line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("key", std::string("VALUE"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("value", std::string("VALUE"), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -284,8 +285,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal("key", std::string("VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal("value", std::string("VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("key", std::string("VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("value", std::string("VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -297,8 +298,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal("key", std::string("VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal("value", std::string("VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("key", std::string("VALUE"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case("value", std::string("VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) != to_lower(expected))
@@ -313,8 +314,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(u"key", std::u16string(u"VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -325,8 +326,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(u"key", std::u16string(u"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"VALUE"), line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -337,8 +338,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(u"key", std::u16string(u"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -350,8 +351,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) != to_lower(expected))
@@ -366,8 +367,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(U"key", std::u32string(U"VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(U"value", std::u32string(U"VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(U"key", std::u32string(U"VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(U"value", std::u32string(U"VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -390,8 +391,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(U"key", std::u32string(U"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(U"value", std::u32string(U"VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(U"key", std::u32string(U"VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(U"value", std::u32string(U"VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -403,8 +404,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(U"key", std::u32string(U"vValuealue"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(U"value", std::u32string(U"Value"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(U"key", std::u32string(U"vValuealue"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(U"value", std::u32string(U"Value"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) != to_lower(expected))
@@ -419,8 +420,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"VALUE")); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"VALUE")); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE")); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE")); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -431,8 +432,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"VALUE"), line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -443,8 +444,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"VALUE"), "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message..."); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -456,8 +457,8 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// xtd::tunit::string_assert::are_not_equal(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::are_not_equal(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (to_lower(actual) != to_lower(expected))
@@ -1042,7 +1043,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1099,7 +1100,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts witdh item.
@@ -1156,7 +1157,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts witdh item.
@@ -1292,7 +1293,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1349,7 +1350,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does noy start witdh item.
@@ -1406,7 +1407,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does noy start witdh item.
@@ -1463,7 +1464,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -1542,7 +1543,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1599,7 +1600,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string ends witdh item.
@@ -1656,7 +1657,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string ends witdh item.
@@ -1713,7 +1714,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -1792,7 +1793,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1849,7 +1850,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does not end witdh item.
@@ -1906,7 +1907,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does not end witdh item.
@@ -1963,7 +1964,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not ends width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -1986,6 +1987,256 @@ namespace xtd {
       static void does_not_end_width(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       static void does_not_end_width(const wchar_t* item, const wchar_t* string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       static void does_not_end_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_width(std::wstring(item), std::wstring(string), message, line_info);}
+      /// @endcond
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches("^Hello", std::string("Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::matches("^Salut", std::string("Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::string& regex_pattern, const std::string& actual) {matches(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches("^Hello", std::string("Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches("^Salut", std::string("Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::string& regex_pattern, const std::string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches("^Hello", std::string("Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::matches("^Salut", std::string("Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::string& regex_pattern, const std::string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches("^Hello", "Hello, World!", std::string("User message..."), line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches("^Salut", "Hello, World!", std::string("User message..."), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::string& regex_pattern, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::regex r(regex_pattern);
+        std::smatch m;
+        if (std::regex_search(actual, m, r))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+      /** @todo : when std::regex ready: remove this comment.
+       
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(u"^Hello", std::u16string(u"Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::matches(u"^Salut", std::u16string(u"Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u16string& regex_pattern, const std::u16string& actual) {matches(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(u"^Hello", std::u16string(u"Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches(u"^Salut",std::u16string(u "Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(u"^Hello", std::u16string(u"Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::matches(u"^Salut", std::u16string(u"Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(u"^Hello", std::u16string(u"Hello, World!"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches(u"^Salut", std::u16string(u"Hello, World!"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        //std::u16regex r(regex_pattern);
+        //std::u16smatch m;
+        std::basic_regex<char16_t> r(regex_pattern);
+        std::match_results<std::u16string::const_iterator> m;
+        if (std::regex_search(actual, m, r))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(U"^Hello", std::u32string(U"Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::matches(U"^Salut", std::u32string(U"Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u32string& regex_pattern, const std::u32string& actual) {matches(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(U"^Hello", std::u32string(U"Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches(U"^Salut", std::u32string(U"Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(U"^Hello", std::u32string(U"Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::matches(U"^Salut", std::u32string(U"Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(U"^Hello", std::u32string(U"Hello, World!"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches(U"^Salut", std::u32string(U"Hello, World!"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        //std::u32regex r(regex_pattern);
+        //std::u32smatch m;
+        std::basic_regex<char32_t> r(regex_pattern);
+        std::match_results<std::u32string::const_iterator> m;
+        if (std::regex_search(actual, m, r))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+*/
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(L"^Hello", std::wstring(L"Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::matches(L"^Salut", std::wstring(L"Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::wstring& regex_pattern, const std::wstring& actual) {matches(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(L"^Hello", std::wstring(L"Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches(L"^Salut", std::wstring(L"Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(L"^Hello", std::wstring(L"Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::matches(L"^Salut", std::wstring(L"Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that matches regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::matches(L"^Hello", std::wstring(L"Hello, World!"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::matches(L"^Salut", std::wstring(L"Hello, World!"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::wregex r(regex_pattern);
+        std::wsmatch m;
+        if (std::regex_search(actual, m, r))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+      
+      /// @cond
+      static void matches(const char* regex_pattern, const char* actual) {matches(regex_pattern, actual, "", line_info());}
+      static void matches(const char* regex_pattern, const char* actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      static void matches(const char* regex_pattern, const char* actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      static void matches(const char* regex_pattern, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {matches(std::string(regex_pattern), std::string(actual), message, line_info);}
+      
+      /*
+      static void matches(const char16_t* regex_pattern, const char16_t* actual) {matches(regex_pattern, actual, "", line_info());}
+      static void matches(const char16_t* regex_pattern, const char16_t* actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      static void matches(const char16_t* regex_pattern, const char16_t* actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      static void matches(const char16_t* regex_pattern, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {matches(std::u16string(regex_pattern), std::u16string(actual), message, line_info);}
+      
+      static void matches(const char32_t* regex_pattern, const char32_t* actual) {matches(regex_pattern, actual, "", line_info());}
+      static void matches(const char32_t* regex_pattern, const char32_t* actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      static void matches(const char32_t* regex_pattern, const char32_t* actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      static void matches(const char32_t* regex_pattern, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {matches(std::u32string(regex_pattern), std::u32string(actual), message, line_info);}
+       */
+      
+      static void matches(const wchar_t* regex_pattern, const wchar_t* actual) {matches(regex_pattern, actual, "", line_info());}
+      static void matches(const wchar_t* regex_pattern, const wchar_t* actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
+      static void matches(const wchar_t* regex_pattern, const wchar_t* actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
+      static void matches(const wchar_t* regex_pattern, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {matches(std::wstring(regex_pattern), std::wstring(actual), message, line_info);}
       /// @endcond
 
     private:

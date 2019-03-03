@@ -157,12 +157,11 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      string s = "tititoto";
-      assert::are_equal(0, s.find("titi"));
-      assert::are_equal(0,  s.rfind("toto") - strlen("toto"));
-      assert::are_equal(std::string::npos, s.find("tutu"));
-      string_assert::starts_width("titi", s);
-      string_assert::does_not_start_width("toto", s);
+      auto actual = "Hello, World!"s;
+      auto expect = "^Ola"s;
+      regex r(expect);
+      smatch m;
+      assert::is_true(regex_search(actual, m, r));
     }
     
     void test_method_(test_case2) {
