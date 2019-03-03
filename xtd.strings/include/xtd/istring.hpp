@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::strings class.
+/// @brief Contains xtd::immutable_basic_string class.
 #pragma once
 
 #include <string>
@@ -107,8 +107,15 @@ namespace xtd {
     immutable_basic_string operator=(const T& t) {return this->std::basic_string<Char, CharTraits, Allocator>::assign(t);}
 
     /*
+    immutable_basic_string operator+(const immutable_basic_string& str) const {return this->std::basic_string<Char, CharTraits, Allocator>::operator+(str);;}
+    immutable_basic_string operator+(Char ch) const {return this->std::basic_string<Char, CharTraits, Allocator>::operator+(ch);}
+    immutable_basic_string operator+(const Char* str) const {return this->std::basic_string<Char, CharTraits, Allocator>::operator+(str);}
+    immutable_basic_string operator+(const std::initializer_list<Char>& il) const {return this->std::basic_string<Char, CharTraits, Allocator>::operator+(il);}
+    template<typename T>
+    immutable_basic_string operator+(const T& t) const {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(t); return *this;}
+
     immutable_basic_string& operator+=(const immutable_basic_string& str) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(str); return *this;}
-    immutable_basic_string& operator+=(Char ch) { this->std::basic_string<Char, CharTraits, Allocator>::operator+=(ch); return *this;}
+    immutable_basic_string& operator+=(Char ch) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(ch); return *this;}
     immutable_basic_string& operator+=(const Char* str) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(str); return *this;}
     immutable_basic_string& operator+=(const std::initializer_list<Char>& il) {this->std::basic_string<Char, CharTraits, Allocator>::operator+=(il); return *this;}
     template<typename T>
@@ -193,7 +200,7 @@ namespace xtd {
     void resize(size_type count);
   };
   
-  inline namespace string_literals {
+  namespace string_literals {
     inline std::basic_string<char> operator "" _s( const char* str, size_t len ) {
       return std::basic_string<char>(str, len);
     }
