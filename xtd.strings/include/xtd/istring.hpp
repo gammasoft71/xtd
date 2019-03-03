@@ -86,6 +86,24 @@ namespace xtd {
     immutable_basic_string& assign(size_t count, Char ch );
   };
   
+  inline namespace string_literals {
+    inline immutable_basic_string<char> operator "" _is( const char* str, size_t len ) {
+      return immutable_basic_string<char>(str, len);
+    }
+    
+    inline immutable_basic_string<wchar_t> operator "" _is( const wchar_t* str, size_t len ) {
+      return immutable_basic_string<wchar_t>(str, len);
+    }
+    
+    inline immutable_basic_string<char16_t> operator "" _is( const char16_t* str, size_t len ) {
+      return immutable_basic_string<char16_t>(str, len);
+    }
+    
+    inline immutable_basic_string<char32_t> operator "" _is( const char32_t* str, size_t len ) {
+      return immutable_basic_string<char32_t>(str, len);
+    }
+  }
+
   /// @brief Immutable string<Char>
   /// @remarks It can be replaced by const std::string<Char>.
   using istring = immutable_basic_string<char>;
