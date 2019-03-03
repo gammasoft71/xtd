@@ -10,6 +10,17 @@ namespace xtd {
   template<class Char, class CharTraits = std::char_traits<Char>, class Allocator = std::allocator<Char>>
   class immutable_basic_string : public std::basic_string<Char, CharTraits, Allocator> {
   public:
+    
+    using pointer = typename std::basic_string<Char, CharTraits, Allocator>::pointer;
+    using const_pointer = typename std::basic_string<Char, CharTraits, Allocator>::const_pointer;
+    using size_type = typename std::basic_string<Char, CharTraits, Allocator>::size_type;
+    using difference_type = typename std::basic_string<Char, CharTraits, Allocator>::difference_type;
+    using iterator = typename std::basic_string<Char, CharTraits, Allocator>::const_iterator;
+    using const_iterator = typename std::basic_string<Char, CharTraits, Allocator>::const_iterator;
+    using reverse_iterator = typename std::basic_string<Char, CharTraits, Allocator>::reverse_iterator;
+    using const_reverse_iterator = typename std::basic_string<Char, CharTraits, Allocator>::reverse_iterator;
+
+
     /// @cond
     immutable_basic_string() noexcept {}
     explicit immutable_basic_string(const Allocator& a) noexcept : std::basic_string<Char, CharTraits, Allocator>(a) {}
@@ -66,6 +77,10 @@ namespace xtd {
     
     const Char* c_str() {this->basic_string::c_str();}
     const Char* c_str() const {this->basic_string::c_str();}
+    
+    const_iterator begin() {this->basic_string::begin();}
+    const_iterator begin() const {this->basic_string::begin();}
+    const_iterator cbegin() const {this->basic_string::cbegin();}
 
   private:
     immutable_basic_string& assign(size_t count, Char ch );
