@@ -40,7 +40,7 @@
 
 ![added](pictures/added.png) matches
 
-![todo](pictures/todo.png) does not match
+![added](pictures/added.png) does not match
 
 ### Collection assert :
 
