@@ -11,7 +11,7 @@
 #include "format.hpp"
 #include "reset_color.hpp"
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the standard character input, output, and error streams for console applications.
   /// @remarks This class cannot be inherited.

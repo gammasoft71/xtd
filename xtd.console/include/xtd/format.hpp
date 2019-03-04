@@ -3,7 +3,7 @@
 #pragma once
 #include <xtd/strings>
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent format output manipulator class.
   /// @see xtd::basic_console<Char>::format(const std::basic_string<Char>& format, Args&& ... args) method.

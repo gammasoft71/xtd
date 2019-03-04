@@ -6,7 +6,7 @@
 #include "console_key.hpp"
 #include "console_modifiers.hpp"
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies the standard keys on a console.
   /// @see Console

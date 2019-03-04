@@ -7,7 +7,7 @@
 #include "__opaque_console.hpp"
 #include <xtd/strings>
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the standard input, output, and error streams for console applications.
   /// @remarks This class cannot be inherited.

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::console_modifiers enum.
 #pragma once
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the SHIFT, ALT, and CTRL modifier keys on a keyboard.
   /// @see Console

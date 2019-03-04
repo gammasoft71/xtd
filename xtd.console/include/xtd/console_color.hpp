@@ -2,7 +2,7 @@
 /// @brief Contains xtd::console_color enum class.
 #pragma once
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @enum console_color
   /// @brief Specifies constants that define foreground and background colors for the console.

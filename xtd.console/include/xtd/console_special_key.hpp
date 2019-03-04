@@ -2,7 +2,7 @@
 /// @brief Contains xtd::console_special_key enum.
 #pragma once
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Specifies combinations of modifier and console keys that can interrupt the current process.
   /// @remarks The ConsoleCancelEventArgs::SpecialKey property returns the console_special_key enumeration type.
