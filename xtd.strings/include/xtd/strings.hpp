@@ -13,7 +13,7 @@
 #include <string>
 #include <vector>
 
-/// @brief The xtd namespace contains all fundamental classes to access console.
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The strings Cainteins string operation methods.
   class strings {
