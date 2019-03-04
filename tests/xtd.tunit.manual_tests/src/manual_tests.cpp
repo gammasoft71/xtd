@@ -157,11 +157,7 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      auto actual = "Hello, World!"s;
-      auto expect = "^Ola"s;
-      regex r(expect);
-      smatch m;
-      assert::is_true(regex_search(actual, m, r));
+      string_assert::matches("^Ola", "Hello, World!");
     }
     
     void test_method_(test_case2) {
