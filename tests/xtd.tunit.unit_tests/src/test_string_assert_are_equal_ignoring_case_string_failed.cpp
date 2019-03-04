@@ -18,7 +18,7 @@ void test_(test_string_assert_are_equal_ignoring_case_string_failed, test_output
   xtd::tunit::unit_test(std::make_unique<assert_unit_tests::unit_tests_event_listener>(ss)).run();
   assert_value_("Start 1 test from 1 test case\n"
                 "  FAILED  test_string_assert_are_equal_ignoring_case_string_failed.test_case_failed\n"
-                "    Expected: \"key\"\n"
+                "    Expected: \"key\", ignoring case\n"
                 "    But was:  \"VALUE\"\n"
                 "End 1 test from 1 test case ran.\n", ss.str());
 }

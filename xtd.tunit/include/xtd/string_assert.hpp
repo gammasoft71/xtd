@@ -71,7 +71,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail(assert::to_string(expected) + ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal ignoring case.
@@ -124,7 +124,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail(assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal ignoring case.
@@ -177,7 +177,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail(assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal ignoring case.
@@ -230,7 +230,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail(assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -305,7 +305,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal ignoring case.
@@ -358,7 +358,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal ignoring case.
@@ -411,7 +411,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal ignoring case.
@@ -464,7 +464,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected), assert::to_string(actual), message, line_info);
+          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -793,7 +793,7 @@ namespace xtd {
         if (string.find(item) == std::string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -850,7 +850,7 @@ namespace xtd {
         if (string.find(item) == std::u16string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -907,7 +907,7 @@ namespace xtd {
         if (string.find(item) == std::u32string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -964,7 +964,7 @@ namespace xtd {
         if (string.find(item) == std::wstring::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string not containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
