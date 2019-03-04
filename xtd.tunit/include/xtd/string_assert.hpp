@@ -2038,7 +2038,7 @@ namespace xtd {
       static void matches(const std::string& regex_pattern, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         std::regex r(regex_pattern);
         std::smatch m;
-        if (std::regex_search(actual, m, r))
+        if (std::regex_search(actual, m, r) == true)
           assert::succeed(message, line_info);
         else
           assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
@@ -2153,7 +2153,7 @@ namespace xtd {
         //std::u32smatch m;
         std::basic_regex<char32_t> r(regex_pattern);
         std::match_results<std::u32string::const_iterator> m;
-        if (std::regex_search(actual, m, r))
+        if (std::regex_search(actual, m, r) == true)
           assert::succeed(message, line_info);
         else
           assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
@@ -2209,7 +2209,7 @@ namespace xtd {
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         std::wregex r(regex_pattern);
         std::wsmatch m;
-        if (std::regex_search(actual, m, r))
+        if (std::regex_search(actual, m, r) == true)
           assert::succeed(message, line_info);
         else
           assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
@@ -2237,6 +2237,257 @@ namespace xtd {
       static void matches(const wchar_t* regex_pattern, const wchar_t* actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       static void matches(const wchar_t* regex_pattern, const wchar_t* actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       static void matches(const wchar_t* regex_pattern, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {matches(std::wstring(regex_pattern), std::wstring(actual), message, line_info);}
+      /// @endcond
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match("^Salut", std::string("Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::does_not_match("^Hello", std::string("Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::string& regex_pattern, const std::string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match("^Salut", std::string("Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match("^Hello", std::string("Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::string& regex_pattern, const std::string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match("^Salut", std::string("Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_match("^Hello", std::string("Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::string& regex_pattern, const std::string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match("^Salut", "Hello, World!", std::string("User message..."), line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match("^Hello", "Hello, World!", std::string("User message..."), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::string& regex_pattern, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::regex r(regex_pattern);
+        std::smatch m;
+        if (std::regex_search(actual, m, r) == false)
+          assert::succeed(message, line_info);
+        else
+          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+
+      /** @todo : when std::regex ready: remove this comment.
+
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(u"^Salut", std::u16string(u"Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(u"^Hello", std::u16string(u"Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(u"^Salut", std::u16string(u"Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(u"^Hello",std::u16string(u "Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(u"^Salut", std::u16string(u"Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(u"^Hello", std::u16string(u"Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(u"^Salut", std::u16string(u"Hello, World!"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(u"^Hello", std::u16string(u"Hello, World!"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        //std::u16regex r(regex_pattern);
+        //std::u16smatch m;
+        std::basic_regex<char16_t> r(regex_pattern);
+        std::match_results<std::u16string::const_iterator> m;
+        if (std::regex_search(actual, m, r) == false)
+          assert::succeed(message, line_info);
+        else
+          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(U"^Salut", std::u32string(U"Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(U"^Hello", std::u32string(U"Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(U"^Salut", std::u32string(U"Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(U"^Salut", std::u32string(U"Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        //std::u32regex r(regex_pattern);
+        //std::u32smatch m;
+        std::basic_regex<char32_t> r(regex_pattern);
+        std::match_results<std::u32string::const_iterator> m;
+        if (std::regex_search(actual, m, r) == false)
+          assert::succeed(message, line_info);
+        else
+          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+*/
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(L"^Salut", std::wstring(L"Hello, World!")); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(L"^Hello", std::wstring(L"Hello, World!")); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual) {does_not_match(regex_pattern, actual, "", line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(L"^Salut", std::wstring(L"Hello, World!"), line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(L"^Salut", std::wstring(L"Hello, World!"), "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+      
+      /// @brief Asserts that does not match regex patern.
+      /// @param regex_pattern the regex patern.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// xtd::tunit::string_assert::does_not_match(L"^Salut", std::wstring(L"Hello, World!"), "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::wregex r(regex_pattern);
+        std::wsmatch m;
+        if (std::regex_search(actual, m, r) == false)
+          assert::succeed(message, line_info);
+        else
+          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+      }
+      
+      /// @cond
+      static void does_not_match(const char* regex_pattern, const char* actual) {does_not_match(regex_pattern, actual, "", line_info());}
+      static void does_not_match(const char* regex_pattern, const char* actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+      static void does_not_match(const char* regex_pattern, const char* actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+      static void does_not_match(const char* regex_pattern, const char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_match(std::string(regex_pattern), std::string(actual), message, line_info);}
+      
+      /*
+       static void does_not_match(const char16_t* regex_pattern, const char16_t* actual) {does_not_match(regex_pattern, actual, "", line_info());}
+       static void does_not_match(const char16_t* regex_pattern, const char16_t* actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+       static void does_not_match(const char16_t* regex_pattern, const char16_t* actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+       static void does_not_match(const char16_t* regex_pattern, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_match(std::u16string(regex_pattern), std::u16string(actual), message, line_info);}
+       
+       static void does_not_match(const char32_t* regex_pattern, const char32_t* actual) {does_not_match(regex_pattern, actual, "", line_info());}
+       static void does_not_match(const char32_t* regex_pattern, const char32_t* actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+       static void does_not_match(const char32_t* regex_pattern, const char32_t* actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+       static void does_not_match(const char32_t* regex_pattern, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_match(std::u32string(regex_pattern), std::u32string(actual), message, line_info);}
+       */
+      
+      static void does_not_match(const wchar_t* regex_pattern, const wchar_t* actual) {does_not_match(regex_pattern, actual, "", line_info());}
+      static void does_not_match(const wchar_t* regex_pattern, const wchar_t* actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
+      static void does_not_match(const wchar_t* regex_pattern, const wchar_t* actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
+      static void does_not_match(const wchar_t* regex_pattern, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_match(std::wstring(regex_pattern), std::wstring(actual), message, line_info);}
       /// @endcond
 
     private:
