@@ -80,7 +80,7 @@ namespace unit_tests {
     void test_method_(get_directory_name) {
       assert::are_equal("path1/path2", path::get_directory_name("path1/path2/file.ext"));
     }
-    
+
     void test_method_(get_directory_name_without_extension) {
       assert::are_equal("path1/path2", path::get_directory_name("path1/path2/file"));
     }
@@ -99,6 +99,26 @@ namespace unit_tests {
     
     void test_method_(get_directory_name_with_empty_source) {
       assert::are_equal("", path::get_directory_name(""));
+    }
+    
+    void test_method_(get_extension) {
+      assert::are_equal(".ext", path::get_extension("path1/path2/file.ext"));
+    }
+    
+    void test_method_(get_extension_without_path) {
+      assert::are_equal(".ext", path::get_extension("file.ext"));
+    }
+
+    void test_method_(get_extension_without_extension) {
+      assert::are_equal("", path::get_extension("path1/path2/file"));
+    }
+    
+    void test_method_(get_extension_without_file_name) {
+      assert::are_equal(".ext", path::get_extension("path1/path2/.ext"));
+    }
+    
+    void test_method_(get_extension_without_file) {
+      assert::are_equal("", path::get_extension("path1/path2/"));
     }
   };
 }
