@@ -292,7 +292,7 @@ namespace xtd {
       
       /// @cond
       template<typename Char>
-      static std::basic_ifstream<Char> open_read(const Char* path) noexcept {open_read(std::basic_string<Char>(path));}
+      static std::basic_ifstream<Char> open_read(const Char* path) noexcept {return open_read(std::basic_string<Char>(path));}
       /// @endcond
       
       /// @brief Opens an existing file for reading.
@@ -311,7 +311,7 @@ namespace xtd {
       
       /// @cond
       template<typename Char>
-      static std::basic_ifstream<Char> open_text(const Char* path) noexcept {opentext(std::basic_string<Char>(path));}
+      static std::basic_ifstream<Char> open_text(const Char* path) noexcept {return open_text(std::basic_string<Char>(path));}
       /// @endcond
       
       /// @brief Opens an existing file for writing.
@@ -330,7 +330,7 @@ namespace xtd {
       
       /// @cond
       template<typename Char>
-      static std::basic_ofstream<Char> open_write(const Char* path) noexcept {open_write(std::basic_string<Char>(path));}
+      static std::basic_ofstream<Char> open_write(const Char* path) noexcept {return open_write(std::basic_string<Char>(path));}
       /// @endcond
       
       template<typename Char>
@@ -387,7 +387,7 @@ namespace xtd {
       
       /// @cond
       template<typename Char>
-      static std::basic_string<Char> read_all_text(const Char* path) noexcept {return read_all_text(std::basic_string<Char>(&path));}
+      static std::basic_string<Char> read_all_text(const Char* path) noexcept {return read_all_text(std::basic_string<Char>(path));}
       /// @endcond
       
       /// @brief Deletes the specified file.
