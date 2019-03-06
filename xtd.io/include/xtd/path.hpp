@@ -12,7 +12,8 @@
 #include <string>
 
 /// @cond
-std::string __get_current_dirirectory();
+std::string __get_current_dirirectory() noexcept;
+bool __is_windows_os() noexcept;
 /// @endcond
 
 //#include <iostream>
@@ -443,14 +444,6 @@ namespace xtd {
       static char volume_separator_char() noexcept {return  volume_separator_char<char>();}
       
     private:
-      static bool __is_windows_os() noexcept {
-#if defined(_WIN32)
-        return true;
-#else
-        return false;
-#endif
-      }
-      
       template<typename Char>
       static bool __is_drive(const std::basic_string<Char>& path) noexcept {
         /// @todo remove comment when drive_info::get_drives will be create
