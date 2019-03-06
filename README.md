@@ -103,12 +103,12 @@ namespace unit_tests {
   public:
     void test_method_(create_string_from_literal) {
       string s = "Hello, World!";
-      sssert::are_equal_("Hello, World!", s);
+      asssert::are_equal("Hello, World!", s);
     }
     
     void test_method_(create_string_from_chars) {
       string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-      assert::are_equal_("Hello, World!", s);
+      assert::are_equal("Hello, World!", s);
     }
   };
 }
