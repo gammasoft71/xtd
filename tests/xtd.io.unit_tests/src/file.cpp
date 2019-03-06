@@ -331,7 +331,9 @@ namespace unit_tests {
       string contents {istreambuf_iterator<char> {file2}, istreambuf_iterator<char> {}};
       assert::are_equal("Text2", contents);
       
+      ::remove(file_name1);
       ::remove(file_name2);
+      ::remove(file_name3);
     }
     
     void test_method_(replace_without_destination) {
@@ -351,6 +353,8 @@ namespace unit_tests {
       assert::are_equal("Text1", contents);
       
       ::remove(file_name1);
+      ::remove(file_name2);
+      ::remove(file_name3);
     }
     
     void test_method_(replace_with_existing_destination_backuo) {
@@ -381,6 +385,24 @@ namespace unit_tests {
       ::remove(file_name1);
       ::remove(file_name2);
       ::remove(file_name3);
+    }
+    
+    void test_method_(write_all_lines) {
+      assert::is_true(file::write_all_lines(test_file_name, {"Line 1"}));
+      assert::is_true(file::write_all_lines(test_file_name, {"Line 2", "Line 3"}));
+      
+      ifstream file(test_file_name);
+      string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
+      assert::are_equal("Line 2\nLine 3\n", contents);
+    }
+
+    void test_method_(write_all_text) {
+      assert::is_true(file::write_all_text(test_file_name, "This is a text "));
+      assert::is_true(file::write_all_text(test_file_name, "to write"));
+      
+      ifstream file(test_file_name);
+      string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
+      assert::are_equal("to write", contents);
     }
   };
 }
