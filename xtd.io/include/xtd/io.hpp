@@ -3,7 +3,7 @@
 #pragma once
 
 /// @defgroup io io
-/// @brief io unit io library
+/// @brief io library
 
 #include "file.hpp"
 #include "file_attributes.hpp"
