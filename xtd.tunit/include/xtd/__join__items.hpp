@@ -5,6 +5,10 @@
 #include <string>
 
 /// @cond
+namespace std {
+  inline const std::string& to_string(const std::string& s) {return s;}
+}
+
 template<typename TCollection>
 std::string __join__items(const TCollection& collection) {
   std::stringstream ss;
