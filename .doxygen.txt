@@ -31,7 +31,7 @@ ARN_LOGFILE           = doxygen_warnings.txt
 #---------------------------------------------------------------------------
 
 INPUT                  = xtd.io/include
-#FILE_PATTERNS          = *.hpp
+FILE_PATTERNS          = *.hpp
 ECURSIVE              = YES
 EXCLUDE_PATTERNS       = __*.hpp
 EXAMPLE_PATH           = examples
