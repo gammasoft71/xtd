@@ -2,6 +2,7 @@
 #include <xtd/tunit>
 
 using namespace std;
+using namespace std::string_literals;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
@@ -51,5 +52,30 @@ namespace unit_tests {
       auto file_name = "";
       assert::are_equal(".bak", path::change_extension(file_name, ".bak"));
     }
+    
+    void test_method_(combine_two_paths) {
+      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s , path::combine("path1", "path2"));
+    }
+    
+    void test_method_(combine_three_paths) {
+      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s + path::directory_separator_char() + "path3"s, path::combine("path1", "path2", "path3"));
+    }
+    
+    void test_method_(combine_four_paths) {
+      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s + path::directory_separator_char() + "path3"s + path::directory_separator_char() + "path4"s, path::combine("path1", "path2", "path3", "path4"));
+    }
+    
+    void test_method_(combine_n_paths) {
+      assert::are_equal("path1"s + path::directory_separator_char() + "path2"s + path::directory_separator_char() + "path3"s + path::directory_separator_char() + "path4"s + path::directory_separator_char() + "path5"s, path::combine({"path1", "path2", "path3", "path4", "path5"}));
+    }
+
+    void test_method_(directory_separator_char) {
+#if defined(_WIN32)
+      assert::are_equal('\\', path::alt_directory_separator_char());
+#else
+      assert::are_equal('/', path::alt_directory_separator_char());
+#endif
+    }
+    
   };
 }
