@@ -200,8 +200,7 @@ namespace xtd {
       template<typename Char>
       static bool exists(const std::basic_string<Char>& path) noexcept {
         try {
-          std::basic_ifstream<Char> file(path);
-          return file.good();
+          return std::basic_ifstream<Char> {path}.good();
         } catch(...) {
           return false;
         }
