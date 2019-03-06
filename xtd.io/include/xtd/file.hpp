@@ -409,28 +409,28 @@ namespace xtd {
       /// @param ignore_metadata_errors true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, false.
       /// @return false source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal false and destination_backup_file_name bad format or on ani io error; otherwise true.
       template<typename Char>
-      static bool replace(const std::basic_string<Char>& source_file_name, const std::basic_string<Char>& destination_file_name, const std::basic_string<Char>& destination_backup_file_name, bool ignore_metadata_errors) noexcept {
+      static bool replace(const std::basic_string<Char>& source_file_name, const std::basic_string<Char>& destination_file_name, const std::basic_string<Char>& destination_backup_file_name) noexcept {
         if (!exists(source_file_name) || !exists(destination_file_name)) return false;
-        if (!copy(destination_file_name, destination_backup_file_name) && ignore_metadata_errors == false) return false;
-        if (!file::remove(destination_file_name) && ignore_metadata_errors == false) return false;
+        if (!copy(destination_file_name, destination_backup_file_name)) return false;
+        if (!remove(destination_file_name)) return false;
         return move(source_file_name, destination_file_name);
       }
       
       /// @cond
       template<typename Char>
-      static bool replace(const Char* source_file_name, const Char* destination_file_name, const Char* destination_backup_file_name, bool ignore_metadata_errors) noexcept {return replace(std::basic_string<Char>(source_file_name), std::basic_string<Char>(destination_file_name), std::basic_string<Char>(destination_backup_file_name), ignore_metadata_errors);}
+      static bool replace(const Char* source_file_name, const Char* destination_file_name, const Char* destination_backup_file_name) noexcept {return replace(std::basic_string<Char>(source_file_name), std::basic_string<Char>(destination_file_name), std::basic_string<Char>(destination_backup_file_name));}
       template<typename Char>
-      static bool replace(const std::basic_string<Char>& source_file_name, const Char* destination_file_name, const Char* destination_backup_file_name, bool ignore_metadata_errors) noexcept {return replace(source_file_name, std::basic_string<Char>(destination_file_name), std::basic_string<Char>(destination_backup_file_name), ignore_metadata_errors);}
+      static bool replace(const std::basic_string<Char>& source_file_name, const Char* destination_file_name, const Char* destination_backup_file_name) noexcept {return replace(source_file_name, std::basic_string<Char>(destination_file_name), std::basic_string<Char>(destination_backup_file_name));}
       template<typename Char>
-      static bool replace(const Char* source_file_name, const std::basic_string<Char>& destination_file_name, const Char* destination_backup_file_name, bool ignore_metadata_errors) noexcept {return replace(std::basic_string<Char>(source_file_name), destination_file_name, std::basic_string<Char>(destination_backup_file_name), ignore_metadata_errors);}
+      static bool replace(const Char* source_file_name, const std::basic_string<Char>& destination_file_name, const Char* destination_backup_file_name) noexcept {return replace(std::basic_string<Char>(source_file_name), destination_file_name, std::basic_string<Char>(destination_backup_file_name));}
       template<typename Char>
-      static bool replace(const Char* source_file_name, const Char* destination_file_name, const std::basic_string<Char>& destination_backup_file_name, bool ignore_metadata_errors) noexcept {return replace(std::basic_string<Char>(source_file_name), std::basic_string<Char>(destination_file_name), destination_backup_file_name, ignore_metadata_errors);}
+      static bool replace(const Char* source_file_name, const Char* destination_file_name, const std::basic_string<Char>& destination_backup_file_name) noexcept {return replace(std::basic_string<Char>(source_file_name), std::basic_string<Char>(destination_file_name), destination_backup_file_name);}
       template<typename Char>
-      static bool replace(const std::basic_string<Char>& source_file_name, const std::basic_string<Char>& destination_file_name, const Char* destination_backup_file_name, bool ignore_metadata_errors) noexcept {return replace(source_file_name, destination_file_name, std::basic_string<Char>(destination_backup_file_name), ignore_metadata_errors);}
+      static bool replace(const std::basic_string<Char>& source_file_name, const std::basic_string<Char>& destination_file_name, const Char* destination_backup_file_name) noexcept {return replace(source_file_name, destination_file_name, std::basic_string<Char>(destination_backup_file_name));}
       template<typename Char>
-      static bool replace(const std::basic_string<Char>& source_file_name, const Char* destination_file_name, const std::basic_string<Char>&destination_backup_file_name, bool ignore_metadata_errors) noexcept {return replace(source_file_name, std::basic_string<Char>(destination_file_name), destination_backup_file_name, ignore_metadata_errors);}
+      static bool replace(const std::basic_string<Char>& source_file_name, const Char* destination_file_name, const std::basic_string<Char>&destination_backup_file_name) noexcept {return replace(source_file_name, std::basic_string<Char>(destination_file_name), destination_backup_file_name);}
       template<typename Char>
-      static bool replace(const Char* source_file_name, const std::basic_string<Char>& destination_file_name, const std::basic_string<Char>& destination_backup_file_name, bool ignore_metadata_errors) noexcept {return replace(std::basic_string<Char>(source_file_name), destination_file_name, destination_backup_file_name, ignore_metadata_errors);}
+      static bool replace(const Char* source_file_name, const std::basic_string<Char>& destination_file_name, const std::basic_string<Char>& destination_backup_file_name) noexcept {return replace(std::basic_string<Char>(source_file_name), destination_file_name, destination_backup_file_name);}
       /// @endcond
       
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
@@ -501,7 +501,7 @@ namespace xtd {
       
       /// @cond
       template<typename Char, typename T>
-      static bool write_all_text(const Char* path, T text) noexcept {return write_all_lines(std::basic_string<Char>(path), text);}
+      static bool write_all_text(const Char* path, T text) noexcept {return write_all_text(std::basic_string<Char>(path), text);}
       /// @endcond
       
       /// @brief Creates a std::basic_ofstream that appends text to an existing file.

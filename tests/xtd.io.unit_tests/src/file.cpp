@@ -31,12 +31,12 @@ namespace unit_tests {
     }
 
     void test_method_(append_all_text) {
-      assert::is_true(file::append_all_text(test_file_name, "This is a text\n"));
+      assert::is_true(file::append_all_text(test_file_name, "This is a text "));
       assert::is_true(file::append_all_text(test_file_name, "to append"));
       
       ifstream file(test_file_name);
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
-      assert::are_equal("This is a text\nto append", contents);
+      assert::are_equal("This is a text to append", contents);
     }
     
     void test_method_(copy) {
@@ -277,6 +277,110 @@ namespace unit_tests {
     void test_method_(read_all_text_with_unexisting_file) {
       std::string text = file::read_all_text(test_file_name);
       assert::is_empty(text);
+    }
+    
+    void test_method_(remove) {
+      ofstream existing_file(test_file_name);
+      existing_file.close();
+      assert::is_true(ifstream(test_file_name).good());
+      file::remove(test_file_name);
+      
+      assert::is_false(ifstream(test_file_name).good());
+    }
+    
+    void test_method_(replace) {
+      auto file_name1 = "file1.txt";
+      ofstream existing_file1(file_name1);
+      existing_file1 << "Text1";
+      existing_file1.close();
+      auto file_name2 = "file2.txt";
+      ofstream existing_file2(file_name2);
+      existing_file2 << "Text2";
+      existing_file2.close();
+      auto file_name3 = "file2.bak";
+      assert::is_true(file::replace(file_name1, file_name2, file_name3));
+      
+      assert::is_false(ifstream(file_name1).good());
+      assert::is_true(ifstream(file_name2).good());
+      assert::is_true(ifstream(file_name3).good());
+      ifstream file2(file_name2);
+      string contents {istreambuf_iterator<char> {file2}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text1", contents);
+      ifstream file3(file_name3);
+      contents = {istreambuf_iterator<char> {file3}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text2", contents);
+      
+      ::remove(file_name1);
+      ::remove(file_name2);
+      ::remove(file_name3);
+    }
+    
+    void test_method_(replace_without_source) {
+      auto file_name1 = "file1.txt";
+      auto file_name2 = "file2.txt";
+      ofstream existing_file2(file_name2);
+      existing_file2 << "Text2";
+      existing_file2.close();
+      auto file_name3 = "file2.bak";
+      assert::is_false(file::replace(file_name1, file_name2, file_name3));
+      
+      assert::is_false(ifstream(file_name1).good());
+      assert::is_true(ifstream(file_name2).good());
+      assert::is_false(ifstream(file_name3).good());
+      ifstream file2(file_name2);
+      string contents {istreambuf_iterator<char> {file2}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text2", contents);
+      
+      ::remove(file_name2);
+    }
+    
+    void test_method_(replace_without_destination) {
+      auto file_name1 = "file1.txt";
+      ofstream existing_file1(file_name1);
+      existing_file1 << "Text1";
+      existing_file1.close();
+      auto file_name2 = "file2.txt";
+      auto file_name3 = "file2.bak";
+      assert::is_false(file::replace(file_name1, file_name2, file_name3));
+      
+      assert::is_true(ifstream(file_name1).good());
+      assert::is_false(ifstream(file_name2).good());
+      assert::is_false(ifstream(file_name3).good());
+      ifstream file1(file_name1);
+      string contents {istreambuf_iterator<char> {file1}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text1", contents);
+      
+      ::remove(file_name1);
+    }
+    
+    void test_method_(replace_with_existing_destination_backuo) {
+      auto file_name1 = "file1.txt";
+      ofstream existing_file1(file_name1);
+      existing_file1 << "Text1";
+      existing_file1.close();
+      auto file_name2 = "file2.txt";
+      ofstream existing_file2(file_name2);
+      existing_file2 << "Text2";
+      existing_file2.close();
+      auto file_name3 = "file2.bak";
+      ofstream existing_file3(file_name3);
+      existing_file3 << "Text3";
+      existing_file3.close();
+      assert::is_true(file::replace(file_name1, file_name2, file_name3));
+      
+      assert::is_false(ifstream(file_name1).good());
+      assert::is_true(ifstream(file_name2).good());
+      assert::is_true(ifstream(file_name3).good());
+      ifstream file2(file_name2);
+      string contents {istreambuf_iterator<char> {file2}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text1", contents);
+      ifstream file3(file_name3);
+      contents = {istreambuf_iterator<char> {file3}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text2", contents);
+      
+      ::remove(file_name1);
+      ::remove(file_name2);
+      ::remove(file_name3);
     }
   };
 }
