@@ -34,7 +34,7 @@ For more information see [Documentation](docs).
 
 The following examples "Hello, world!" show how to change the color of the text in three different ways.
 
-## Using xtd::console::WriteLine
+## Using xtd::console::write_line
 
 src/console_hello_world_console.cpp
 
