@@ -113,6 +113,53 @@ namespace xtd {
       static std::basic_ofstream<Char> append_text(const Char* path) noexcept {return append_text(std::basic_string<Char>(path));}
       /// @endcond
       
+      /// @brief Copies an existing file to a new file. Overwriting a file of the same name is not allowed.
+      /// @param src The file to be opened for reading.
+      /// @param dest The name of the destination file. This cannot be a directory or an existing file.
+      /// @return true if the text appended; otherwise, false.
+      /// @remarks This method also returns false if path is empty or an invalid path.
+      /// @remarks This method also returns false if the caller has not the required permissions.
+      template<typename Char>
+      static bool copy(const std::basic_string<Char>& src, const std::basic_string<Char>& dest) {return copy(src, dest, true);}
+      
+      /// @cond
+      template<typename Char>
+      static bool copy(const Char* src, const Char* dest) {return copy(std::basic_string<Char>(src), std::basic_string<Char>(dest));}
+      template<typename Char>
+      static bool copy(const std::basic_string<Char>& src, const Char* dest) {return copy(src, std::basic_string<Char>(dest));}
+      template<typename Char>
+      static bool copy(const Char* src, const std::basic_string<Char> dest) {return copy(src, std::basic_string<Char>(dest));}
+      /// @endcond
+      
+      /// @brief Copies an existing file to a new file. Overwriting a file of the same name is allowed.
+      /// @param src The file to be opened for reading.
+      /// @param dest The name of the destination file. This cannot be a directory.
+      /// @param overwrite true if the destination file can be overwritten; otherwise, false.
+      /// @return true if the text appended; otherwise, false.
+      /// @remarks This method also returns false if path is empty or an invalid path.
+      /// @remarks This method also returns false if the caller has not the required permissions.
+      template<typename Char>
+      static bool copy(const std::basic_string<Char>& src, const std::basic_string<Char>& dest, bool overwrite) {
+        try {
+          if (exists(dest) && overwrite == false) return false;
+          std::basic_ifstream<Char> file_src(src, std::ios::binary);
+          std::basic_ofstream<Char> file_dest(dest, std::ios::binary);
+          file_dest << file_src.rdbuf();
+          return true;
+        } catch(...) {
+          return false;
+        }
+      }
+      
+      /// @cond
+      template<typename Char>
+      static bool copy(const Char* src, const Char* dest, bool overwrite) {return copy(std::basic_string<Char>(src), std::basic_string<Char>(dest), overwrite);}
+      template<typename Char>
+      static bool copy(const std::basic_string<Char>& src, const Char* dest, bool overwrite) {return copy(src, std::basic_string<Char>(dest), overwrite);}
+      template<typename Char>
+      static bool copy(const Char* src, const std::basic_string<Char> dest, bool overwrite) {return copy(src, std::basic_string<Char>(dest), overwrite);}
+      /// @endcond
+
       /// @brief Creates or overwrites a file in the specified path.
       /// @param The path and name of the file to create.
       /// @return A std::basic_ofstream that provides read/write access to the file specified in path.
@@ -141,7 +188,6 @@ namespace xtd {
       template<typename Char>
       static std::basic_ofstream<Char> create_text(const std::basic_string<Char>& path) noexcept {
         try {
-          if (exists(path)) return std::basic_ofstream<Char>(path, std::ios::app);
           return std::basic_ofstream<Char>(path);
         } catch(...) {
           return std::basic_ofstream<Char>();
@@ -152,45 +198,6 @@ namespace xtd {
       template<typename Char>
       static std::basic_ofstream<Char> create_text(const Char* path) noexcept {return create_text(std::basic_string<Char>(path));}
       /// @endcond
-      
-      /// @brief Copies an existing file to a new file. Overwriting a file of the same name is not allowed.
-      /// @param src The file to be opened for reading.
-      /// @param dest The name of the destination file. This cannot be a directory or an existing file.
-      /// @return true if the text appended; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
-      template<typename Char>
-      static bool copy(const std::basic_string<Char>& src, const std::basic_string<Char>& dest) {return copy(src, dest, true);}
-      
-      /// @brief Copies an existing file to a new file. Overwriting a file of the same name is allowed.
-      /// @param src The file to be opened for reading.
-      /// @param dest The name of the destination file. This cannot be a directory.
-      /// @param overwrite true if the destination file can be overwritten; otherwise, false.
-      /// @return true if the text appended; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks This method also returns false if the caller has not the required permissions.
-      template<typename Char>
-      static bool copy(const std::basic_string<Char>& src, const std::basic_string<Char>& dest, bool overwrite) {
-        try {
-          if (exists(dest) && overwrite == false) return false;
-          std::basic_ifstream<Char> file_src(src, std::ios::binary);
-          std::basic_ofstream<Char> file_dest(dest, std::ios::binary);
-          file_dest << file_src.rdbuf();
-          return true;
-        } catch(...) {
-          return false;
-        }
-      }
-      
-      /// @cond
-      template<typename Char>
-      static bool copy(const Char* src, const Char* dest, bool overwrite) {return copy(std::basic_string<Char>(src), std::basic_string<Char>(dest));}
-      template<typename Char>
-      static bool copy(const std::basic_string<Char>& src, const Char* dest, bool overwrite) {return copy(src, std::basic_string<Char>(dest));}
-      template<typename Char>
-      static bool copy(const Char* src, const std::basic_string<Char> dest, bool overwrite) {return copy(src, std::basic_string<Char>(dest));}
-      /// @endcond
-      
       
       /// @brief Determines whether the specified file exists.
       /// @param path The file to check.
