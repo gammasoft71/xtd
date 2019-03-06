@@ -13,3 +13,6 @@
 [submodule "xtd.tunit"]
 	path = xtd.tunit
 	url = https://github.com/gammasoft71/xtd.tunit
+[submodule "xtd.io"]
+	path = xtd.io
+	url = https://github.com/gammasoft71/xtd.io
