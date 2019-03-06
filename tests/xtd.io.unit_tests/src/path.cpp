@@ -77,5 +77,28 @@ namespace unit_tests {
 #endif
     }
     
+    void test_method_(get_directory_name) {
+      assert::are_equal("path1/path2", path::get_directory_name("path1/path2/file.ext"));
+    }
+    
+    void test_method_(get_directory_name_without_extension) {
+      assert::are_equal("path1/path2", path::get_directory_name("path1/path2/file"));
+    }
+    
+    void test_method_(get_directory_name_without_file) {
+      assert::are_equal("path1/path2", path::get_directory_name("path1/path2/"));
+    }
+    
+    void test_method_(get_directory_name_without_path) {
+      assert::are_equal("", path::get_directory_name("file.ext"));
+    }
+    
+    void test_method_(get_directory_name_without_path_and_without_extension) {
+      assert::are_equal("", path::get_directory_name("file"));
+    }
+    
+    void test_method_(get_directory_name_with_empty_source) {
+      assert::are_equal("", path::get_directory_name(""));
+    }
   };
 }
