@@ -28,11 +28,11 @@ namespace xtd {
       }
 
       /// @brief Gets also run ignored test.
-      /// @return true if  also run ignored test; otherwise false.
+      /// @return true if also run ignored test; otherwise false.
       bool also_run_ignored_tests() const noexcept {return this->also_run_ignored_tests_;}
 
       /// @brief Sets also run ignored test.
-      /// @param also_run_ignored_tests  true if  also run ignored test; otherwise false.
+      /// @param also_run_ignored_tests  true if also run ignored test; otherwise false.
       void also_run_ignored_tests(bool also_run_ignored_tests) noexcept {this->also_run_ignored_tests_ = also_run_ignored_tests;}
       
       /// @brief Gets exit status.
@@ -57,10 +57,18 @@ namespace xtd {
       /// @remarks The value by default is "*.*".
       void filter_tests(const std::string& filter_tests) noexcept {this->filter_tests_ = filter_tests;}
 
-      /// @brief Return true if a specified test class name and specified test name are valid with the current filter tests.
-      /// @return Return true if class name and test name are valid with the current filter tests; otherwise false.
-      bool is_valid_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return this->pattern_compare(test_class_name + "." + test_name, this->filter_tests_);}
+      /// @brief Return true if a specified test class name and specified test name match with the current filter tests.
+      /// @return Return true if class name and test name match with the current filter tests; otherwise false.
+      bool is_match_test_name(const std::string& test_class_name, const std::string& test_name) const noexcept {return this->pattern_compare(test_class_name + "." + test_name, this->filter_tests_);}
 
+      /// @brief Gets list tests.
+      /// @return true if list tests; otherwise false.
+      bool list_tests() const noexcept {return this->list_tests_;}
+
+      /// @brief Sets list tests.
+      /// @param list_tests true if list tests; otherwise false.
+      void list_tests(bool list_tests) noexcept {this->list_tests_ = list_tests;}
+      
       /// @brief Gets output xml path.
       /// @return Output xml path.
       std::string output_xml() const noexcept {return this->output_xml_;}
@@ -102,6 +110,7 @@ namespace xtd {
       bool also_run_ignored_tests_ = false;
       std::string filter_tests_ = "*.*";
       int exit_status_ = EXIT_SUCCESS;
+      bool list_tests_ = false;
       std::string output_xml_;
       bool show_duration_ = true;
       std::chrono::time_point<std::chrono::system_clock> start_time_;

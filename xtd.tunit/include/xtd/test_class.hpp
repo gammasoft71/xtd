@@ -41,35 +41,35 @@ namespace xtd {
       size_t test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (settings::default_settings().is_valid_test_name(this->name(), method.name())) count++;
+          if (settings::default_settings().is_match_test_name(this->name(), method.name())) count++;
         return count;
       }
       
       size_t aborted_test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.aborted()) count++;
+          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.aborted()) count++;
         return count;
       }
       
       size_t failed_test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.failed()) count++;
+          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.failed()) count++;
         return count;
       }
 
       size_t ignored_test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.ignored()) count++;
+          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.ignored()) count++;
         return count;
       }
       
       size_t succeed_test_count() const noexcept {
         size_t count = 0;
         for (auto method : this->tests_)
-          if (settings::default_settings().is_valid_test_name(this->name(), method.name()) && method.succeed()) count++;
+          if (settings::default_settings().is_match_test_name(this->name(), method.name()) && method.succeed()) count++;
         return count;
       }
 

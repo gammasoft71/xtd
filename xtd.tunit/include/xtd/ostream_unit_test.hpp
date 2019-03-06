@@ -15,13 +15,28 @@ namespace xtd {
     public:
       /// @brief Create a new console unit test with ostream specified.
       /// @param os The ostream to write events.
-      explicit ostream_unit_test(std::ostream& os) noexcept : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os)) {}
+      explicit ostream_unit_test(std::ostream& os) noexcept : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os)), os_(os) {}
       
       /// @brief Create a new console unit test with ostream specified, argv specified and argc specified.
       /// @param os The ostream to write events.
       /// @param argv Arguments array from main method.
       /// @param argc Argument count from main method.
-      ostream_unit_test(std::ostream& os, char* argv[], int argc) : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os), argv, argc) {}
+      ostream_unit_test(std::ostream& os, char* argv[], int argc) : xtd::tunit::unit_test(std::make_unique<xtd::tunit::ostream_event_listener>(os), argv, argc), os_(os) {}
+      
+      /// @brief Runs all tests in this UnitTest object and prints the result.
+      /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
+      int run() override {
+        if (xtd::tunit::settings::default_settings().list_tests()) {
+          for (auto name : this->list_tests())
+            os_ << name << std::endl;
+            return xtd::tunit::settings::default_settings().exit_status();
+        }
+        
+        return this->ostream_unit_test::run();
+      }
+      
+    private:
+      std::ostream& os_;
     };
   }
 }

@@ -346,7 +346,7 @@
 
 ### Test selection :
 
-![todo](pictures/todo.png) list tests.
+![added](pictures/added.png) list tests.
 
 ### Test execution :
 

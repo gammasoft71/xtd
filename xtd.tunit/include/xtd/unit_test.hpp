@@ -35,8 +35,8 @@ namespace xtd {
       /// @endcond
       
       /// @brief Runs all tests in this UnitTest object and prints the result.
-      /// @return 0 if succeed; otherwise return 1.
-      int run() {
+      /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
+      virtual int run() {
         xtd::tunit::settings::default_settings().start_time(std::chrono::system_clock::now());
         this->start_time_point_ = std::chrono::high_resolution_clock::now();
         try {
@@ -89,7 +89,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
+            if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) count++;
         return count;
       }
       
@@ -97,7 +97,7 @@ namespace xtd {
         std::vector<std::string> names;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
+            if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
 
@@ -119,7 +119,7 @@ namespace xtd {
         std::vector<std::string> names;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
+            if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
 
@@ -127,7 +127,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
+            if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) count++;
         return count;
       }
 
@@ -135,7 +135,7 @@ namespace xtd {
         std::vector<std::string> names;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
+            if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
       }
 
@@ -143,7 +143,7 @@ namespace xtd {
         size_t count = 0;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
+            if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) count++;
         return count;
       }
 
@@ -151,8 +151,17 @@ namespace xtd {
         std::vector<std::string> names;
         for (auto& test_class : this->test_classes())
           for (auto& test : test_class.test()->tests())
-            if (settings::default_settings().is_valid_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
+            if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
         return names;
+      }
+      
+    protected:
+      std::vector<std::string> list_tests() {
+        std::vector<std::string> tests;
+        for (auto test_class : test_classes())
+          for(auto test : test_class.test()->tests())
+            tests.push_back(test_class.test()->name() + '.' + test.name());
+        return tests;
       }
 
     private:
