@@ -15,7 +15,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
 
   if (__tunit_unit_tests_mode__ && (this->aborted() || this->failed() || this->succeed())) this->status_ = test_status::not_started;
 
-  if (settings::default_settings().is_valid_test_name(test_class.name(), this->name())) {
+  if (settings::default_settings().is_match_test_name(test_class.name(), this->name())) {
     if (this->ignored()) {
       try {
         assert::ignore();
