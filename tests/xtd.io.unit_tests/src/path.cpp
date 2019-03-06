@@ -120,5 +120,9 @@ namespace unit_tests {
     void test_method_(get_extension_without_file) {
       assert::are_equal("", path::get_extension("path1/path2/"));
     }
+    
+    void test_method_(get_extension_with_empty_source) {
+      assert::are_equal("", path::get_extension(""));
+    }
   };
 }
