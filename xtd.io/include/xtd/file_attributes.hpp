@@ -41,17 +41,17 @@ namespace xtd {
 }
 
 /// @cond
-xtd::io::file_attributes& operator^=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-xtd::io::file_attributes& operator&=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-xtd::io::file_attributes& operator|=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-xtd::io::file_attributes& operator+=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-xtd::io::file_attributes& operator-=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
+inline xtd::io::file_attributes& operator^=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
+inline xtd::io::file_attributes& operator&=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
+inline xtd::io::file_attributes& operator|=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
+inline xtd::io::file_attributes& operator+=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
+inline xtd::io::file_attributes& operator-=(xtd::io::file_attributes& lhs, xtd::io::file_attributes rhs) {lhs = static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
 
-xtd::io::file_attributes operator^(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-xtd::io::file_attributes operator&(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-xtd::io::file_attributes operator|(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-xtd::io::file_attributes operator+(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-xtd::io::file_attributes operator-(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs));}
+inline xtd::io::file_attributes operator^(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
+inline xtd::io::file_attributes operator&(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) & static_cast<int>(rhs));}
+inline xtd::io::file_attributes operator|(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) | static_cast<int>(rhs));}
+inline xtd::io::file_attributes operator+(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) + static_cast<int>(rhs));}
+inline xtd::io::file_attributes operator-(xtd::io::file_attributes lhs, xtd::io::file_attributes rhs) {return static_cast<xtd::io::file_attributes>(static_cast<int>(lhs) - static_cast<int>(rhs));}
 
-xtd::io::file_attributes operator~(xtd::io::file_attributes lhs) {return static_cast<xtd::io::file_attributes>(~static_cast<int>(lhs));}
+inline xtd::io::file_attributes operator~(xtd::io::file_attributes lhs) {return static_cast<xtd::io::file_attributes>(~static_cast<int>(lhs));}
 /// @endcond

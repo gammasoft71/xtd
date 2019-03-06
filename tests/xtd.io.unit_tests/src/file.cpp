@@ -37,39 +37,38 @@ namespace unit_tests {
     
     void test_method_(copy) {
       assert::is_true(file::append_all_text(test_file_name, "Text"));
-      assert::is_true(file::copy(test_file_name, "file_copy.txt"));
-      std::ifstream file("file_copy.txt");
+      assert::is_true(file::copy(test_file_name, "file2.txt"));
+      assert::is_true(std::ifstream(test_file_name).good());
+      std::ifstream file("file2.txt");
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents);
-      ::remove("file_copy.txt");
+      ::remove("file2.txt");
     }
     
     void test_method_(copy_with_override) {
-      {
-        std::ofstream file("file_copy.txt");
-        file << "Existing";
-        file.close();
-      }
+      std::ofstream existing_file("file2.txt");
+      existing_file << "Existing";
+      existing_file.close();
       assert::is_true(file::append_all_text(test_file_name, "Text"));
-      assert::is_true(file::copy(test_file_name, "file_copy.txt", true));
-      std::ifstream file("file_copy.txt");
+      assert::is_true(file::copy(test_file_name, "file2.txt", true));
+      assert::is_true(std::ifstream(test_file_name).good());
+      std::ifstream file("file2.txt");
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
       assert::are_equal("Text", contents);
-      ::remove("file_copy.txt");
+      ::remove("file2.txt");
     }
     
     void test_method_(copy_with_override_false) {
-      {
-        std::ofstream file("file_copy.txt");
-        file << "Existing";
-        file.close();
-      }
+      std::ofstream existing_file("file2.txt");
+      existing_file << "Existing";
+      existing_file.close();
       assert::is_true(file::append_all_text(test_file_name, "Text"));
-      assert::is_false(file::copy(test_file_name, "file_copy.txt", false));
-      std::ifstream file("file_copy.txt");
+      assert::is_false(file::copy(test_file_name, "file2.txt", false));
+      assert::is_true(std::ifstream(test_file_name).good());
+      std::ifstream file("file2.txt");
       string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
       assert::are_equal("Existing", contents);
-      ::remove("file_copy.txt");
+      ::remove("file2.txt");
     }
 
     void test_method_(create) {
@@ -104,11 +103,45 @@ namespace unit_tests {
 
     void test_method_(exists) {
       assert::is_false(file::exists(test_file_name));
-      {
-        std::ofstream file(test_file_name);
-        file.close();
-      }
+      std::ofstream file(test_file_name);
+      file.close();
       assert::is_true(file::exists(test_file_name));
+    }
+    
+    void test_method_(get_attributes_directory) {
+      assert::is_true((file::get_attributes(".") & file_attributes::directory) == file_attributes::directory);
+    }
+    
+    void test_method_(get_attributes_normal) {
+      std::ofstream file(test_file_name);
+      file.close();
+      assert::is_true((file::get_attributes(test_file_name) & file_attributes::normal) == file_attributes::normal);
+    }
+    
+    void test_method_(move) {
+      assert::is_true(file::append_all_text(test_file_name, "Text"));
+      assert::is_true(file::move(test_file_name, "file2.txt"));
+      assert::is_false(std::ifstream(test_file_name).good());
+      std::ifstream file("file2.txt");
+      string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text", contents);
+      ::remove("file2.txt");
+    }
+    
+    void test_method_(move_on_existing_file) {
+      std::ofstream existing_file("file2.txt");
+      existing_file << "Existing";
+      existing_file.close();
+      assert::is_true(file::append_all_text(test_file_name, "Text"));
+      assert::is_false(file::move(test_file_name, "file2.txt"));
+      assert::is_true(std::ifstream(test_file_name).good());
+      std::ifstream file(test_file_name);
+      string contents {istreambuf_iterator<char> {file}, istreambuf_iterator<char> {}};
+      assert::are_equal("Text", contents);
+      std::ifstream file2("file2.txt");
+      contents = {istreambuf_iterator<char> {file2}, istreambuf_iterator<char> {}};
+      assert::are_equal("Existing", contents);
+      ::remove("file2.txt");
     }
   };
 }
