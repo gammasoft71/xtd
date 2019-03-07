@@ -77,16 +77,36 @@ namespace xtd {
       /// @param output_xml Output xml path.
       void output_xml(const std::string& output_xml) noexcept {this->output_xml_ = output_xml;}
 
+      /// @brief Gets shuffle tests.
+      /// @return Shuffle test.
+      /// @remarks By default is set to false (no shuffle).
+      bool shuffle_test() const noexcept {return this->shuffle_tests_;}
+      
+      /// @brief Sets shuffle tests.
+      /// @param shuffle_test Shuffle test.
+      /// @remarks By default is set to false (no shuffle).
+      void shuffle_test(bool shuffle_test) noexcept {this->shuffle_tests_ = shuffle_test;}
+      
+      /// @brief Gets random seed value.
+      /// @return Random seed value.
+      /// @remarks By default is set to 0 (no seed).
+      int random_seed() const noexcept {return this->random_seed_;}
+      
+      /// @brief Sets random seed value.
+      /// @param random_seed Random seed value.
+      /// @remarks By default is set to 0 (no seed).
+      void random_seed(int random_seed) noexcept {this->random_seed_ = random_seed;}
+      
       /// @brief Gets repeat tests count.
       /// @return Repeat test count.
-      /// @remarks By default is set to 1 (no repeat)
+      /// @remarks By default is set to 1 (no repeat).
       int repeaat_test() const noexcept {return this->repeat_tests_;}
-
+      
       /// @brief Sets repeat tests count.
       /// @param repeat_tests Repeat test count.
-      /// @remarks By default is set to 1 (no repeat)
+      /// @remarks By default is set to 1 (no repeat).
       void repeat_tests(int repeat_tests) noexcept {this->repeat_tests_ = repeat_tests;}
-      
+
       /// @brief Gets if show duration for each test.
       /// @return true if show duration for each test; otherwise false.
       bool show_duration() const noexcept {return this->show_duration_;}
@@ -123,6 +143,8 @@ namespace xtd {
       bool list_tests_ = false;
       std::string output_xml_;
       bool show_duration_ = true;
+      bool shuffle_tests_ = false;
+      int random_seed_ = 0;
       int repeat_tests_ = 1;
       std::chrono::time_point<std::chrono::system_clock> start_time_;
       std::chrono::time_point<std::chrono::system_clock> end_time_;
