@@ -1,6 +1,8 @@
 /// @file
 /// @brief Contains xtd::tunit::test class.
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "assert.hpp"
 #include "assert_error.hpp"
 #include "line_info.hpp"
