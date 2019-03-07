@@ -8,12 +8,11 @@ test* test::current_test_ = nullptr;
 bool __tunit_unit_tests_mode__ = false;
 
 void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
-  this->start_time_point = std::chrono::high_resolution_clock::now();
   current_test_ = this;
   
   if (this->ignored() && settings::default_settings().also_run_ignored_tests()) this->status_ = test_status::not_started;
 
-  if (__tunit_unit_tests_mode__ && (this->aborted() || this->failed() || this->succeed())) this->status_ = test_status::not_started;
+  if ((__tunit_unit_tests_mode__ || settings::default_settings().repeaat_test() != 1) && (this->aborted() || this->failed() || this->succeed())) this->status_ = test_status::not_started;
 
   if (settings::default_settings().is_match_test_name(test_class.name(), this->name())) {
     if (this->ignored()) {
@@ -30,7 +29,9 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
       
       unit_test.event_listener_->on_test_start(xtd::tunit::test_event_args(*this, test_class, unit_test));
       try {
+        this->start_time_point = std::chrono::high_resolution_clock::now();
         this->method()();
+        this->end_time_point = std::chrono::high_resolution_clock::now();
         if (this->not_started()) this->status_ = test_status::succeed;
         if (this->succeed())
           unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
@@ -61,8 +62,5 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
       unit_test.event_listener_->on_test_end(xtd::tunit::test_event_args(*this, test_class, unit_test));
     }
   }
-  
-  
-  this->end_time_point = std::chrono::high_resolution_clock::now();
 }
 

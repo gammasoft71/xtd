@@ -32,7 +32,7 @@ namespace xtd {
             return xtd::tunit::settings::default_settings().exit_status();
         }
         
-        return this->ostream_unit_test::run();
+        return this->unit_test::run();
       }
       
     private:

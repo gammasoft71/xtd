@@ -77,6 +77,16 @@ namespace xtd {
       /// @param output_xml Output xml path.
       void output_xml(const std::string& output_xml) noexcept {this->output_xml_ = output_xml;}
 
+      /// @brief Gets repeat tests count.
+      /// @return Repeat test count.
+      /// @remarks By default is set to 1 (no repeat)
+      int repeaat_test() const noexcept {return this->repeat_tests_;}
+
+      /// @brief Sets repeat tests count.
+      /// @param repeat_tests Repeat test count.
+      /// @remarks By default is set to 1 (no repeat)
+      void repeat_tests(int repeat_tests) noexcept {this->repeat_tests_ = repeat_tests;}
+      
       /// @brief Gets if show duration for each test.
       /// @return true if show duration for each test; otherwise false.
       bool show_duration() const noexcept {return this->show_duration_;}
@@ -113,6 +123,7 @@ namespace xtd {
       bool list_tests_ = false;
       std::string output_xml_;
       bool show_duration_ = true;
+      int repeat_tests_ = 1;
       std::chrono::time_point<std::chrono::system_clock> start_time_;
       std::chrono::time_point<std::chrono::system_clock> end_time_;
     };

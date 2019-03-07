@@ -350,7 +350,7 @@
 
 ### Test execution :
 
-![todo](pictures/todo.png) repeat tests
+![added](pictures/added.png) repeat tests
 
 ![todo](pictures/todo.png) shuffle tests
 
