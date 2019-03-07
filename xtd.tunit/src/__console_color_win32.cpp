@@ -23,7 +23,7 @@ void __opaque_foreground_color(__console_color color) {
 }
 
 void __opaque_reset_color() {
-  __opaque_console::foreground_color(foreColor);
+  __opaque_foreground_color(foreColor);
 }
 
 #endif
