@@ -25,12 +25,10 @@ namespace xtd {
     public:
       unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept : event_listener_(std::move(event_listener)) {}
       
-      explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, char* argv[], int argc) noexcept : arguments(argv + 1, argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
-      }
+      explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, char* argv[], int argc) noexcept : arguments(argv + 1, argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {}
 
       /// @cond
-      virtual ~unit_test() {
-      }
+      virtual ~unit_test() {}
       /// @endcond
       
       /// @brief Runs all tests in this UnitTest object and prints the result.

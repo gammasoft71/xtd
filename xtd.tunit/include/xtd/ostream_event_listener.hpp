@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::tunit::ostream_event_listener class.
 #pragma once
+#include "__console_color.hpp"
 #include "event_listener.hpp"
 #include <ostream>
 
@@ -24,9 +25,9 @@ namespace xtd {
       /// @param test_event_args Contains test event parameters.
       void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
         this->event_listener::on_test_aborted(e);
-        //__console_foreground_color(__console_color::yellow);
+        this->os_ << __foreground_color(__console_color::magenta);
         this->os_ << "  ABORTED ";
-        //__console_reset_color();
+        this->os_ << __reset_color();
         this->os_ << e.test_class().name() << "." << e.test().name();
         if (xtd::tunit::settings::default_settings().show_duration())
           this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -39,9 +40,9 @@ namespace xtd {
       /// @param test_event_args Contains test event parameters.
       void on_test_failed(const xtd::tunit::test_event_args& e) const override {
         this->event_listener::on_test_failed(e);
-        //__console_foreground_color(__console_color::red);
+        this->os_ << __foreground_color(__console_color::red);
         this->os_ << "  FAILED  ";
-        //__console_reset_color();
+        this->os_ << __reset_color();
         this->os_ << e.test_class().name() << "." << e.test().name();
         if (xtd::tunit::settings::default_settings().show_duration())
           this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -63,9 +64,9 @@ namespace xtd {
       /// @param test_event_args Contains test event parameters.
       void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
         this->event_listener::on_test_ignored(e);
-        //__console_foreground_color(__console_color::magenta);
+        this->os_ << __foreground_color(__console_color::yellow);
         this->os_ << "  IGNORED ";
-        //__console_reset_color();
+        this->os_ << __reset_color();
         this->os_ << e.test_class().name() << "." << e.test().name();
         if (xtd::tunit::settings::default_settings().show_duration())
           this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -78,9 +79,9 @@ namespace xtd {
       /// @param test_event_args Contains test event parameters.
       void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
         this->event_listener::on_test_succeed(e);
-        //__console_foreground_color(__console_color::green);
+        this->os_ << __foreground_color(__console_color::green);
         this->os_ << "  SUCCEED ";
-        //__console_reset_color();
+        this->os_ << __reset_color();
         this->os_ << e.test_class().name() << "." << e.test().name();
         if (xtd::tunit::settings::default_settings().show_duration())
           this->os_ << " (" << e.test().elapsed_time().count() << " ms total)";
@@ -96,27 +97,27 @@ namespace xtd {
         this->os_ << std::endl;
         this->os_ << "Test results:" << std::endl;
         if (e.unit_test().succeed_test_count()) {
-          //__console_foreground_color(__console_color::green);
+          this->os_ << __foreground_color(__console_color::green);
           this->os_ << "  SUCCEED ";
-          //__console_reset_color();
+          this->os_ << __reset_color();
           this->os_ << e.unit_test().succeed_test_count() << " test" << (e.unit_test().succeed_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
         if (e.unit_test().aborted_test_count()) {
-          //__console_foreground_color(__console_color::yellow);
+          this->os_ << __foreground_color(__console_color::magenta);
           this->os_ << "  ABORTED ";
-          //__console_reset_color();
+          this->os_ << __reset_color();
           this->os_ << e.unit_test().aborted_test_count() << " test" << (e.unit_test().aborted_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
         if (e.unit_test().failed_test_count()) {
-          //__console_foreground_color(__console_color::red);
+          this->os_ << __foreground_color(__console_color::red);
           this->os_ << "  FAILED  ";
-          //__console_reset_color();
+          this->os_ << __reset_color();
           this->os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
         if (e.unit_test().ignored_test_count()) {
-          //__console_foreground_color(__console_color::magenta);
+          this->os_ << __foreground_color(__console_color::yellow);
           this->os_ << "  IGNORED ";
-          //__console_reset_color();
+          this->os_ << __reset_color();
           this->os_ << e.unit_test().ignored_test_count() << " test" << (e.unit_test().ignored_test_count() < 2 ? "" : "s") << "." << std::endl;
         }
         
@@ -130,9 +131,9 @@ namespace xtd {
       /// @param tunit_event_args Contains unit test event parameters.
       void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override {
         if (e.unit_test().repeat_tests()) {
-          //__console_foreground_color(__console_color::cyan);
+          this->os_ << __foreground_color(__console_color::cyan);
           this->os_ << "Repeating all tests (iteration " << e.unit_test().repeat_iteration() << ") . . ." << std::endl << std::endl;
-          //__console_reset_color();
+          this->os_ << __reset_color();
         }
         this->os_ << "Start " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << std::endl;
         this->os_ << "Run tests:" << std::endl;

@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.tunit VERSION 0.2.0)
 set(INCLUDES
+  include/xtd/__console_color.hpp
   include/xtd/__demangle.hpp
   include/xtd/__join__items.hpp
   include/xtd/abort_error.hpp
@@ -37,6 +38,8 @@ set(INCLUDES
   include/xtd/unit_test.hpp
 )
 set(SOURCES
+  src/__console_color_gcc.cpp
+  src/__console_color_win32.cpp
   src/__demangle_gcc.cpp
   src/__demangle_win32.cpp
   src/assert.cpp
