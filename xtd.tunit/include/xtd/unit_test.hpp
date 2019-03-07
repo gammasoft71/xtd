@@ -37,38 +37,45 @@ namespace xtd {
       /// @brief Runs all tests in this UnitTest object and prints the result.
       /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
       virtual int run() {
-        xtd::tunit::settings::default_settings().start_time(std::chrono::system_clock::now());
-        this->start_time_point_ = std::chrono::high_resolution_clock::now();
-        try {
-          this->event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
+        for (this->repeat_iteration_ = 1; this->repeat_iteration_ <= xtd::tunit::settings::default_settings().repeaat_test() || xtd::tunit::settings::default_settings().repeaat_test() < 0; ++this->repeat_iteration_) {
+           try {
+            this->event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));
+            
+            this->event_listener_->on_unit_test_initialize_start(xtd::tunit::tunit_event_args(*this));
+            unit_test_initialize();
+            this->event_listener_->on_unit_test_initialize_end(xtd::tunit::tunit_event_args(*this));
+            
+            this->start_time_point_ = std::chrono::high_resolution_clock::now();
+            for (auto& test_class : test_classes())
+              if (test_class.test()->test_count())
+                test_class.test()->run(*this);
+            this->end_time_point_ = std::chrono::high_resolution_clock::now();
 
-          this->event_listener_->on_unit_test_initialize_start(xtd::tunit::tunit_event_args(*this));
-          unit_test_initialize();
-          this->event_listener_->on_unit_test_initialize_end(xtd::tunit::tunit_event_args(*this));
-          
-          for (auto& test_class : test_classes())
-            if (test_class.test()->test_count())
-              test_class.test()->run(*this);
-
-          this->event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
-          unit_test_cleanup();
-          this->event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
-          
-          this->event_listener_->on_unit_test_end(xtd::tunit::tunit_event_args(*this));
-        } catch(const std::exception&) {
-          xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
-          // do error...
-        } catch(...) {
-          xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
-          // do error...
+            this->event_listener_->on_unit_test_cleanup_start(xtd::tunit::tunit_event_args(*this));
+            unit_test_cleanup();
+            this->event_listener_->on_unit_test_cleanup_end(xtd::tunit::tunit_event_args(*this));
+            
+            this->event_listener_->on_unit_test_end(xtd::tunit::tunit_event_args(*this));
+          } catch(const std::exception&) {
+            xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
+            // do error...
+          } catch(...) {
+            xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
+            // do error...
+          }
         }
-        this->end_time_point_ = std::chrono::high_resolution_clock::now();
 
         xtd::tunit::settings::default_settings().end_time(std::chrono::system_clock::now());
         write_xml();
         
         return xtd::tunit::settings::default_settings().exit_status();
       }
+      
+      int repeat_iteration() const noexcept {return this->repeat_iteration_;}
+      
+      int repeat_iteration_count() const noexcept {return xtd::tunit::settings::default_settings().repeaat_test();}
+      
+      bool repeat_tests() const noexcept {return xtd::tunit::settings::default_settings().repeaat_test() != 1;}
       
       size_t test_cases_count() const noexcept {
         size_t count = 0;
@@ -265,6 +272,7 @@ namespace xtd {
       std::string name_ = "AllTests";
       std::unique_ptr<xtd::tunit::event_listener> event_listener_;
       std::chrono::high_resolution_clock::time_point end_time_point_;
+      int repeat_iteration_ = 0;
       std::chrono::high_resolution_clock::time_point start_time_point_;
     };
   }

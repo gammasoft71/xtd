@@ -129,6 +129,11 @@ namespace xtd {
       /// @brief Occurs when unit test cleanup is started.
       /// @param tunit_event_args Contains unit test event parameters.
       void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override {
+        if (e.unit_test().repeat_tests()) {
+          //__console_foreground_color(__console_color::cyan);
+          this->os_ << "Repeating all tests (iteration " << e.unit_test().repeat_iteration() << ") . . ." << std::endl << std::endl;
+          //__console_reset_color();
+        }
         this->os_ << "Start " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() < 2 ? "" : "s") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() < 2 ? "" : "s") << std::endl;
         this->os_ << "Run tests:" << std::endl;
         this->event_listener::on_unit_test_start(e);
