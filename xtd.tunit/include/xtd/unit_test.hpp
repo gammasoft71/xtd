@@ -8,6 +8,7 @@
 #include <iomanip>
 #include <fstream>
 #include <memory>
+#include <random>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -37,6 +38,12 @@ namespace xtd {
       /// @brief Runs all tests in this UnitTest object and prints the result.
       /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
       virtual int run() {
+        if (xtd::tunit::settings::default_settings().shuffle_test()) {
+          std::random_device rd;
+          std::mt19937 g = xtd::tunit::settings::default_settings().random_seed() == 0 ? std::mt19937(rd()) : std::mt19937(xtd::tunit::settings::default_settings().random_seed());
+          std::shuffle(test_classes().begin(), test_classes().end(), g);
+        }
+          
         for (this->repeat_iteration_ = 1; this->repeat_iteration_ <= xtd::tunit::settings::default_settings().repeaat_test() || xtd::tunit::settings::default_settings().repeaat_test() < 0; ++this->repeat_iteration_) {
            try {
             this->event_listener_->on_unit_test_start(xtd::tunit::tunit_event_args(*this));

@@ -352,9 +352,9 @@
 
 ![added](pictures/added.png) repeat tests
 
-![todo](pictures/todo.png) shuffle tests
+![added](pictures/added.png) shuffle tests
 
-![todo](pictures/todo.png) random seed
+![added](pictures/added.png) random seed
 
 ### Test output :
 
