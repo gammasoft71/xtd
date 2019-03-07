@@ -135,6 +135,10 @@ source_group(src FILES ${SOURCES})
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+if (MSVC)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4834")
+endif ()
+
 
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
