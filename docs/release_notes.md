@@ -342,7 +342,7 @@
 
 ## Settings :
 
-![todo](pictures/todo.png) Parse params from console unit tests.
+![added](pictures/added.png) Parse params from console unit tests.
 
 ### Test selection :
 

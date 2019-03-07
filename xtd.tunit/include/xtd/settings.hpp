@@ -69,14 +69,30 @@ namespace xtd {
       /// @param list_tests true if list tests; otherwise false.
       void list_tests(bool list_tests) noexcept {this->list_tests_ = list_tests;}
       
+      /// @brief Gets output color.
+      /// @return true for colored output; otherwise false.
+      bool output_color() const noexcept {return this->output_color_;}
+      
+      /// @brief Sets output color.
+      /// @param output_color true for colored output; otherwise false.
+      void output_color(bool output_color) noexcept {this->output_color_ = output_color;}
+      
+      /// @brief Gets output xml.
+      /// @return true for generate xml report; otherwise false.
+      bool output_xml() const noexcept {return this->output_xml_;}
+      
+      /// @brief Sets output xml.
+      /// @param output_xml true for generate xml report; otherwise false.
+      void output_xml(bool output_xml) noexcept {this->output_xml_ = output_xml;}
+      
       /// @brief Gets output xml path.
       /// @return Output xml path.
-      std::string output_xml() const noexcept {return this->output_xml_;}
+      std::string output_xml_path() const noexcept {return this->output_xml_path_;}
       
       /// @brief Sets output xml path.
-      /// @param output_xml Output xml path.
-      void output_xml(const std::string& output_xml) noexcept {this->output_xml_ = output_xml;}
-
+      /// @param output_xml_path Output xml path.
+      void output_xml_path(const std::string& output_xml_path) noexcept {this->output_xml_path_ = output_xml_path;}
+      
       /// @brief Gets shuffle tests.
       /// @return Shuffle test.
       /// @remarks By default is set to false (no shuffle).
@@ -141,7 +157,9 @@ namespace xtd {
       std::string filter_tests_ = "*.*";
       int exit_status_ = EXIT_SUCCESS;
       bool list_tests_ = false;
-      std::string output_xml_;
+      bool output_color_ = true;
+      bool output_xml_;
+      std::string output_xml_path_ = "tests.xml";
       bool show_duration_ = true;
       bool shuffle_tests_ = false;
       int random_seed_ = 0;
