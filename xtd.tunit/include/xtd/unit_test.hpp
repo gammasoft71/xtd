@@ -25,9 +25,7 @@ namespace xtd {
     public:
       unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener) noexcept : event_listener_(std::move(event_listener)) {}
       
-      explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, char* argv[], int argc) noexcept : event_listener_(std::move(event_listener)) {
-        this->name_ = get_filename(argv[0]);
-        /// parse args...
+      explicit unit_test(std::unique_ptr<xtd::tunit::event_listener> event_listener, char* argv[], int argc) noexcept : arguments(argv + 1, argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
       }
 
       /// @cond
@@ -37,7 +35,18 @@ namespace xtd {
       
       /// @brief Runs all tests in this UnitTest object and prints the result.
       /// @return EXIT_SUCCESS (0) if succeed; otherwise return EXIT_FAILURE (1).
-      virtual int run() {
+      int run() {
+        if (parse_arguments(this->arguments))
+          return xtd::tunit::settings::default_settings().exit_status();
+
+        if (xtd::tunit::settings::default_settings().list_tests()) {
+          std::vector<std::string> tests;
+          for (auto test_class : test_classes())
+            for(auto test : test_class.test()->tests())
+              tests.push_back(test_class.test()->name() + '.' + test.name());
+          return this->list_tests(tests);
+        }
+
         if (xtd::tunit::settings::default_settings().shuffle_test()) {
           std::random_device rd;
           std::mt19937 g = xtd::tunit::settings::default_settings().random_seed() == 0 ? std::mt19937(rd()) : std::mt19937(xtd::tunit::settings::default_settings().random_seed());
@@ -170,12 +179,26 @@ namespace xtd {
       }
       
     protected:
-      std::vector<std::string> list_tests() {
-        std::vector<std::string> tests;
-        for (auto test_class : test_classes())
-          for(auto test : test_class.test()->tests())
-            tests.push_back(test_class.test()->name() + '.' + test.name());
-        return tests;
+      virtual int list_tests(const std::vector<std::string>& tests) {
+        return xtd::tunit::settings::default_settings().exit_status();
+      }
+      
+      virtual bool parse_arguments(const std::vector<std::string>& args) {
+        for (auto arg : args) {
+          if (arg == "--also_run_ignored_tests") xtd::tunit::settings::default_settings().also_run_ignored_tests(true);
+          else if (arg.find("--filter_tests=") == 0) xtd::tunit::settings::default_settings().filter_tests(arg.substr(15));
+          else if (arg == "--list_tests") xtd::tunit::settings::default_settings().list_tests(true);
+          else if (arg == "--output_color=true") xtd::tunit::settings::default_settings().output_color(true);
+          else if (arg == "--output_color=false") xtd::tunit::settings::default_settings().output_color(false);
+          else if (arg.find("--output_xml") == 0) { xtd::tunit::settings::default_settings().output_xml(true);
+            if (arg[12] == '=') xtd::tunit::settings::default_settings().output_xml_path(arg.substr(13));
+          } else if (arg.find("--random_seed=") == 0) xtd::tunit::settings::default_settings().random_seed(std::stoi(arg.substr(14)));
+          else if (arg.find("--repeat_tests=") == 0) xtd::tunit::settings::default_settings().repeat_tests(std::stoi(arg.substr(15)));
+          else if (arg == "--show_duration=true") xtd::tunit::settings::default_settings().show_duration(true);
+          else if (arg == "--show_duration=false") xtd::tunit::settings::default_settings().show_duration(false);
+          else if (arg == "--shuffle_tests") xtd::tunit::settings::default_settings().shuffle_test(true);
+        }
+        return false;
       }
 
     private:
@@ -253,8 +276,8 @@ namespace xtd {
       }
       
       void write_xml() {
-        if (xtd::tunit::settings::default_settings().output_xml() != "") {
-          std::fstream file(xtd::tunit::settings::default_settings().output_xml(), std::ios::out | std::ios::trunc);
+        if (xtd::tunit::settings::default_settings().output_xml()) {
+          std::fstream file(xtd::tunit::settings::default_settings().output_xml_path(), std::ios::out | std::ios::trunc);
           file << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" << std::endl;
           file << "<testsuites tests=\"" << this->test_count() << "\" failures=\"" << this->failed_test_count() << "\" disabled=\"" << this->ignored_test_count() << "\" errors=\"" << 0 << "\" timestamp=\"" << to_string(xtd::tunit::settings::default_settings().start_time()) << "\" time=\"" << to_string(this->elapsed_time()) << "\" name=\"" << this->name_ << "\">" << std::endl;
           for (auto& test_class : test_classes()) {
@@ -276,6 +299,7 @@ namespace xtd {
         }
       }
 
+      std::vector<std::string> arguments;
       std::string name_ = "AllTests";
       std::unique_ptr<xtd::tunit::event_listener> event_listener_;
       std::chrono::high_resolution_clock::time_point end_time_point_;
