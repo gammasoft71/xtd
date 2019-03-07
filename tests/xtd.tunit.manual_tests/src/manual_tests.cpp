@@ -189,7 +189,7 @@ namespace unit_tests {
 
 int main(int argc, char* argv[]) {
   settings::default_settings().output_xml(std::string(argv[0]) + ".xml");
-  settings::default_settings().repeat_tests(-1);
+  settings::default_settings().repeat_tests(2);
   //settings::default_settings().list_tests(true);
   //settings::default_settings().also_run_ignored_tests(true);
   return console_unit_test(argv, argc).run();
