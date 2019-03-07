@@ -2,6 +2,8 @@
 /// @brief Contains xtd::tunit::unit_test class.
 #pragma once
 
+#define _CRT_SECURE_NO_WARNINGS
+
 /// @defgroup tunit tunit
 /// @brief tunit unit test library
 

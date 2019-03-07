@@ -4,7 +4,7 @@
 #include <Windows.h>
 
 namespace {
-  xtd::console_color __foreground_color() noexcept {
+ __console_color __foreground_color() noexcept {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
     return static_cast<__console_color>(csbi.wAttributes & 0x000F);
