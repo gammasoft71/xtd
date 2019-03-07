@@ -7,10 +7,10 @@ namespace {
   xtd::console_color __foreground_color() noexcept {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-    return static_cast<xtd::console_color>(csbi.wAttributes & 0x000F);
+    return static_cast<__console_color>(csbi.wAttributes & 0x000F);
   }
   
-  xtd::console_color foreColor = __foreground_color();
+  __console_color foreColor = __foreground_color();
 }
 
 void __opaque_foreground_color(__console_color color) {
