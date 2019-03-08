@@ -973,7 +973,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Asserts that collection or traits contains an item.
+      /// @brief Asserts that collection contains an item.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -1050,7 +1050,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Asserts that collection or traits does not contain any item.
+      /// @brief Asserts that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -1127,7 +1127,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Asserts that collection or traits contains an item.
+      /// @brief Asserts that collection is ordered.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
@@ -1140,7 +1140,7 @@ namespace xtd {
       template<typename TValue>
       static void is_ordered(const TValue& value) {is_ordered(value, "", line_info());}
       
-      /// @brief Asserts that collection contains an item.
+      /// @brief Asserts that collection is ordered.
       /// @param value The value to check is empty.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1154,7 +1154,7 @@ namespace xtd {
       template<typename TValue>
       static void is_ordered(const TValue& value, const xtd::tunit::line_info& line_info) {is_ordered(value, "", line_info);}
       
-      /// @brief Asserts that collection contains an item.
+      /// @brief Asserts that collection is ordered.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -1168,7 +1168,7 @@ namespace xtd {
       template<typename TValue>
       static void is_ordered(const TValue& value, const std::string& message) {is_ordered(value, message, line_info());}
       
-      /// @brief Asserts that collection contains an item.
+      /// @brief Asserts that collection is ordered.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
