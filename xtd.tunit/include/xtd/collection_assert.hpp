@@ -381,6 +381,129 @@ namespace xtd {
           assert::succeed(message, line_info);
       }
       /// @endcond
+
+      /// @brief Asserts that all collection items are equivalent.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equivalent({4, 3, 2, 1}, a); // test ok.
+      /// xtd::tunit::collection_assert::are_equivalent({1, 2, 3, 5}, a); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equivalent(const TExpected& expected, const TAcutal& actual) {are_equivalent(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that all collection items are equivalent.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equivalent({4, 3, 2, 1}, a, "User message..."); // test ok.
+      /// xtd::tunit::collection_assert::are_equivalent({1, 2, 3, 5}, a, "User message..."); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equivalent(const TExpected& expected, const TAcutal& actual, const std::string& message) {are_equivalent(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that all collection items are equivalent.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equivalent({4, 3, 2, 1}, a, line_info_); // test ok.
+      /// xtd::tunit::collection_assert::are_equivalent({1, 2, 3, 5}, a, line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equivalent(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {are_equivalent(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that all collection items are equivalent.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equivalent({4, 3, 2, 1}, a, "User message...", line_info_); // test ok.
+      /// xtd::tunit::collection_assert::are_equivalent({1, 2, 3, 5}, a, "User message...", line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equivalent(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        TExpected expect_sorted = expected;
+        std::sort(expect_sorted.begin(), expect_sorted.end());
+        TExpected actual_sorted = actual;
+        std::sort(actual_sorted.begin(), actual_sorted.end());
+        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+          assert::fail("equivalent " + __join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename TExpected, typename TActual>
+      static void are_equivalent(const std::initializer_list<TExpected>& expected, const std::initializer_list<TActual>& actual) {are_equivalent(expected, actual, "", line_info());}
+      template<typename TExpected, typename TActual>
+      static void are_equivalent(const std::initializer_list<TExpected>& expected, const std::initializer_list<TActual>& actual, const xtd::tunit::line_info& line_info) {are_equivalent(expected, actual, "", line_info);}
+      template<typename TExpected, typename TActual>
+      static void are_equivalent(const std::initializer_list<TExpected>& expected, const std::initializer_list<TActual>& actual, const std::string& message) {are_equal(are_equivalent, actual, message, line_info());}
+      template<typename TExpected, typename TActual>
+      static void are_equivalent(const std::initializer_list<TExpected>& expected, const std::initializer_list<TActual>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::vector<TExpected> expect_sorted = expected;
+        std::sort(expect_sorted.begin(), expect_sorted.end());
+        std::vector<TActual> actual_sorted = actual;
+        std::sort(actual_sorted.begin(), actual_sorted.end());
+        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+          assert::fail("equivalent " + __join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename TCollection, typename TItem>
+      static void are_equivalent(const TCollection& expected, const std::initializer_list<TItem>& actual) {are_equivalent(expected, actual, "", line_info());}
+      template<typename TCollection, typename TItem>
+      static void are_equivalent(const TCollection& expected, const std::initializer_list<TItem>& actual, const xtd::tunit::line_info& line_info) {are_equivalent(expected, actual, "", line_info);}
+      template<typename TCollection, typename TItem>
+      static void are_equivalent(const TCollection& expected, const std::initializer_list<TItem>& actual, const std::string& message) {are_equivalent(expected, actual, message, line_info());}
+      template<typename TCollection, typename TItem>
+      static void are_equivalent(const TCollection& expected, const std::initializer_list<TItem>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        TCollection expect_sorted = expected;
+        std::sort(expect_sorted.begin(), expect_sorted.end());
+        std::vector<TItem> actual_sorted = actual;
+        std::sort(actual_sorted.begin(), actual_sorted.end());
+        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+          assert::fail("equivalent " + __join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename TItem, typename TCollection>
+      static void are_equivalent(const std::initializer_list<TItem>& expected, const TCollection& actual) {are_equivalent(expected, actual, "", line_info());}
+      template<typename TItem, typename TCollection>
+      static void are_equivalent(const std::initializer_list<TItem>& expected, const TCollection& actual, const xtd::tunit::line_info& line_info) {are_equivalent(expected, actual, "", line_info);}
+      template<typename TItem, typename TCollection>
+      static void are_equivalent(const std::initializer_list<TItem>& expected, const TCollection& actual, const std::string& message) {are_equivalent(expected, actual, message, line_info());}
+      template<typename TItem, typename TCollection>
+      static void are_equivalent(const std::initializer_list<TItem>& expected, const TCollection& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::vector<TItem> expect_sorted = expected;
+        std::sort(expect_sorted.begin(), expect_sorted.end());
+        TCollection actual_sorted = actual;
+        std::sort(actual_sorted.begin(), actual_sorted.end());
+        if (std::equal(expect_sorted.begin(), expect_sorted.end(), actual_sorted.begin(), actual_sorted.end()) == false)
+          assert::fail("equivalent " + __join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
+      }
+      /// @endcond
     };
   }
 }

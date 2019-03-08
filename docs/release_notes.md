@@ -14,7 +14,7 @@
 
 ![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are equivalent
+![added](pictures/added.png) are equivalent
 
 ![todo](pictures/todo.png) are not equal
 
