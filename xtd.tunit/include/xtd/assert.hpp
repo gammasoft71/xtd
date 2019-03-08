@@ -689,7 +689,7 @@ namespace xtd {
         if (result != collection.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), "< " + __join__items(collection) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), __join__items(collection), message, line_info);
       }
       
       /// @cond
@@ -705,7 +705,7 @@ namespace xtd {
         if (result != values.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), "< " + __join__items(values) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), __join__items(values), message, line_info);
       }
       
       static void contains(char item, const char* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -714,7 +714,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
       }
       
       static void contains(char16_t item, const char16_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -723,7 +723,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
       }
       
       static void contains(char32_t item, const char32_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -732,7 +732,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
       }
 
       static void contains(wchar_t item, const wchar_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -741,7 +741,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
       }
       /// @endcond
       
@@ -898,7 +898,7 @@ namespace xtd {
         if (std::empty(value))
           succeed(message, line_info);
         else
-          fail("collection <empty>", "< " + __join__items(value) + " >", message, line_info);
+          fail("collection <empty>", __join__items(value), message, line_info);
       }
       
       /// @cond
@@ -913,7 +913,7 @@ namespace xtd {
         if (std::empty(values))
           succeed(message, line_info);
         else
-          fail("collection <empty>", "< " + __join__items(values) + " >", message, line_info);
+          fail("collection <empty>", __join__items(values), message, line_info);
       }
       
       static void is_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -921,7 +921,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", "< " + __join__items(s) + " >", message, line_info);
+          fail("collection <empty>", __join__items(s), message, line_info);
       }
       
       static void is_empty(const char16_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -929,7 +929,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", "< " + __join__items(s) + " >", message, line_info);
+          fail("collection <empty>", __join__items(s), message, line_info);
       }
       
       static void is_empty(const char32_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -937,7 +937,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", "< " + __join__items(s) + " >", message, line_info);
+          fail("collection <empty>", __join__items(s), message, line_info);
       }
 
       static void is_empty(const wchar_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -945,7 +945,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", "< " + __join__items(s) + " >", message, line_info);
+          fail("collection <empty>", __join__items(s), message, line_info);
       }
       /// @endocnd
       
