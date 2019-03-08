@@ -37,9 +37,9 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         this->method()();
         this->end_time_point = std::chrono::high_resolution_clock::now();
         if (this->not_started()) this->status_ = test_status::succeed;
-        /*
         if (this->succeed())
           unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
+        /*
         else {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
           unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
