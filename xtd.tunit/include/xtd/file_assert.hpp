@@ -17,7 +17,7 @@ namespace xtd {
       file_assert() = delete;
       /// @endcond
 
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -37,7 +37,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual) {are_equal(expected, actual, "", line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -58,7 +58,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -79,7 +79,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -125,7 +125,7 @@ namespace xtd {
         assert::succeed(message, line_info);
       }
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -145,7 +145,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual) {are_equal(expected, actual, "", line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -166,7 +166,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -187,7 +187,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that two files are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -236,7 +236,7 @@ namespace xtd {
       static void are_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       /// @endcond
 
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -256,7 +256,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual) {are_not_equal(expected, actual, "", line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -277,7 +277,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
       
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -298,7 +298,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_istream<Char>& expected, const std::basic_istream<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -344,7 +344,7 @@ namespace xtd {
         assert::fail("not equal <" + __demangle(typeid(expected).name()) + ">", "<" + __demangle(typeid(expected).name()) + ">", message, line_info);
       }
       
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
@@ -364,7 +364,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual) {are_not_equal(expected, actual, "", line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -385,7 +385,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
       
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -406,7 +406,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are not equal.
+      /// @brief Asserts that two files are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -516,7 +516,8 @@ namespace xtd {
       static void exists(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::basic_ifstream<Char>(file).good() == false)
           assert::fail("file exists", __to_string(file), message, line_info);
-        assert::succeed(message, line_info);
+        else
+          assert::succeed(message, line_info);
       }
       
       /// @cond
@@ -591,7 +592,8 @@ namespace xtd {
       static void does_not_exist(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::basic_ifstream<Char>(file).good() == true)
           assert::fail("not file exists", __to_string(file), message, line_info);
-        assert::succeed(message, line_info);
+        else
+          assert::succeed(message, line_info);
       }
       
       /// @cond

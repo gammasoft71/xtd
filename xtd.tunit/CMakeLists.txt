@@ -16,6 +16,7 @@ set(INCLUDES
   include/xtd/console_unit_test.hpp
   include/xtd/default_insert_basic_ostream_operator.hpp
   include/xtd/default_main.hpp
+  include/xtd/directory_assert.hpp
   include/xtd/event_listener.hpp
   include/xtd/file_assert.hpp
   include/xtd/ignore_error.hpp
