@@ -26,7 +26,7 @@
 
 ![added](pictures/added.png) is empty
 
-![todo](pictures/todo.png) is not empty
+![added](pictures/added.png) is not empty
 
 ![todo](pictures/todo.png) is ordered
 
