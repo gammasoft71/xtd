@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case1) {
       //std::vector<int> a = {1, 2, 3, 4, 1};
-      collection_assert::contains({1, 2, 6}, {1, 2, 3, 4});
+      collection_assert::does_not_contain({1, 2}, {1, 2, 3, 4});
     }
   };
 }
