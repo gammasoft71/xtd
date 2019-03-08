@@ -25,8 +25,8 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::ios_base*>(a); // test ok.
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::ios_base*>(a); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a); test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TCollection>
       static void all_items_are_instances_of(const TCollection& collection) {all_items_are_instances_of<TExpected>(collection, "", line_info());}
@@ -39,8 +39,8 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::ios_base*>(a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message..."); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::ios_base*>(a, "User message..."); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message..."); test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TCollection>
       static void all_items_are_instances_of(const TCollection& collection, const std::string& message) {all_items_are_instances_of<TExpected>(collection, message, line_info());}
@@ -53,11 +53,11 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::ios_base*>(a, line_info_); // test ok.
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a, line_info_); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::ios_base*>(a, line_info_); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a, line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TCollection>
-      static void are_equal(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of<TExpected>(collection, "", line_info);}
+      static void all_items_are_instances_of(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of<TExpected>(collection, "", line_info);}
       
       /// @brief Asserts that all collection items are of the type supplied or a derived type.
       /// @param value The object to verify
@@ -67,8 +67,8 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::ios_base*>(a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message...", line_info_); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::ios_base*>(a, "User message...", line_info_); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message...", line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TCollection>
       static void all_items_are_instances_of(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -79,6 +79,24 @@ namespace xtd {
           }
         assert::succeed(message, line_info);
       }
+      
+      /// @cond
+      template<typename TExpected, typename TItem>
+      static void all_items_are_instances_of(const std::initializer_list<TItem>& collection) {all_items_are_instances_of<TExpected>(collection, "", line_info());}
+      template<typename TExpected, typename TItem>
+      static void all_items_are_instances_of(const std::initializer_list<TItem>& collection, const std::string& message) {all_items_are_instances_of<TExpected>(collection, message, line_info());}
+      template<typename TExpected, typename TItem>
+      static void all_items_are_instances_of(const std::initializer_list<TItem>& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of<TExpected>(collection, "", line_info);}
+      template<typename TExpected, typename TItem>
+      static void all_items_are_instances_of(const std::initializer_list<TItem>& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
+        for (auto item : collection)
+          if (dynamic_cast<TExpected>(item) == nullptr) {
+            assert::fail("all items instance of <" + __demangle(typeid(TExpected).name()) + ">", __join__items(collection), message, line_info);
+            return;
+          }
+        assert::succeed(message, line_info);
+      }
+      /// @endcond
 
       /// @brief Asserts that all collection items are not null.
       /// @param value The object to verify
@@ -89,9 +107,9 @@ namespace xtd {
       /// @code
       /// int i1 = 0, i2 = 3;
       /// std::vector<int*> a1 = {&i1, &i2};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a1); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a1); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a2); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a2); test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
       static void all_items_are_not_null(const TCollection& collection) {all_items_are_not_null(collection, "", line_info());}
@@ -105,9 +123,9 @@ namespace xtd {
       /// @code
       /// int i1 = 0, i2 = 3;
       /// std::vector<int*> a1 = {&i1, &i2};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a1, "User message..."); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a1, "User message..."); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a2, "User message..."); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a2, "User message..."); test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
       static void all_items_are_not_null(const TCollection& collection, const std::string& message) {all_items_are_not_null(collection, message, line_info());}
@@ -121,12 +139,12 @@ namespace xtd {
       /// @code
       /// int i1 = 0, i2 = 3;
       /// std::vector<int*> a1 = {&i1, &i2};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a1, line_info_); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a1, line_info_); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a2, line_info_); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a2, line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
-      static void are_equal(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of(collection, "", line_info);}
+      static void all_items_are_not_null(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of(collection, "", line_info);}
       
       /// @brief Asserts that all collection items are not null.
       /// @param value The object to verify
@@ -137,9 +155,9 @@ namespace xtd {
       /// @code
       /// int i1 = 0, i2 = 3;
       /// std::vector<int*> a1 = {&i1, &i2};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a1, "User message...", line_info_); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assert::collection_assert::all_items_are_not_null(a2, "User message...", line_info_); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::all_items_are_not_null(a2, "User message...", line_info_); test throws an assertion_error exception.
       /// @endcode
       template<typename TCollection>
       static void all_items_are_not_null(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -150,6 +168,112 @@ namespace xtd {
           }
         assert::succeed(message, line_info);
       }
-   };
+
+      /// @cond
+      template<typename TItem>
+      static void all_items_are_not_null(const std::initializer_list<TItem>& collection) {all_items_are_not_null(collection, "", line_info());}
+      template<typename TItem>
+      static void all_items_are_not_null(const std::initializer_list<TItem>& collection, const std::string& message) {all_items_are_not_null(collection, message, line_info());}
+      template<typename TItem>
+      static void are_equal(const std::initializer_list<TItem>& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of(collection, "", line_info);}
+      template<typename TItem>
+      static void all_items_are_not_null(const std::initializer_list<TItem>& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
+        for (auto item : collection)
+          if (item == nullptr) {
+            assert::fail("all items are not null", __join__items(collection), message, line_info);
+            return;
+          }
+        assert::succeed(message, line_info);
+      }
+      /// @endcond
+
+      /// @brief Asserts that all collection items are unique.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a1 = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::all_items_are_unique(a1); // test ok.
+      /// std::vector<int> a2 = {1, 2, 3, 4, 1};
+      /// xtd::tunit::collection_assert::all_items_are_unique(a2); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TCollection>
+      static void all_items_are_unique(const TCollection& collection) {all_items_are_unique(collection, "", line_info());}
+      
+      /// @brief Asserts that all collection items are unique.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a1 = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::all_items_are_unique(a1, "User message..."); // test ok.
+      /// std::vector<int> a2 = {1, 2, 3, 4, 1};
+      /// xtd::tunit::collection_assert::all_items_are_unique(a2, "User message..."); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TCollection>
+      static void all_items_are_unique(const TCollection& collection, const std::string& message) {all_items_are_unique(collection, message, line_info());}
+      
+      /// @brief Asserts that all collection items are unique.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a1 = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::all_iall_items_are_uniquetems_are_not_null(a1, line_info_); // test ok.
+      /// std::vector<int> a2 = {1, 2, 3, 4, 1};
+      /// xtd::tunit::collection_assert::all_items_are_unique(a2, line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TCollection>
+      static void all_items_are_unique(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_unique(collection, "", line_info);}
+      
+      /// @brief Asserts that all collection items are unique.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a1 = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::all_items_are_unique(a1, "User message...", line_info_); // test ok.
+      /// std::vector<int> a2 = {1, 2, 3, 4, 1};
+      /// xtd::tunit::collection_assert::all_items_are_unique(a2, "User message...", line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TCollection>
+      static void all_items_are_unique(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
+        auto value = *collection.cbegin();
+        std::map<decltype(value), int> counts;
+        for (auto item : collection) {
+          auto result = counts.insert(std::pair<decltype(item), int>(item, 1));
+          if (result.second == false)
+            assert::fail("all items are unqiue", __join__items(collection), message, line_info);
+        }
+        assert::succeed(message, line_info);
+      }
+
+      /// @cond
+      template<typename TItem>
+      static void all_items_are_unique(const std::initializer_list<TItem>& collection) {all_items_are_unique(collection, "", line_info());}
+      template<typename TItem>
+      static void all_items_are_unique(const std::initializer_list<TItem>& collection, const xtd::tunit::line_info& line_info) {all_items_are_unique(collection, "", line_info);}
+      template<typename TItem>
+      static void all_items_are_unique(const std::initializer_list<TItem>& collection, const std::string& message) {all_items_are_unique(collection, message, line_info());}
+      template<typename TItem>
+      static void all_items_are_unique(const std::initializer_list<TItem>& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
+        std::map<TItem, int> counts;
+        for (auto item : collection) {
+          auto result = counts.insert(std::pair<TItem, int>(item, 1));
+          if (result.second == false)
+            assert::fail("all items are unqiue", __join__items(collection), message, line_info);
+        }
+        assert::succeed(message, line_info);
+      }
+      /// @endcond
+    };
   }
 }
