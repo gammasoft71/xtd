@@ -24,7 +24,7 @@
 
 ![added](pictures/added.png) does not contain
 
-![todo](pictures/todo.png) is empty
+![added](pictures/added.png) is empty
 
 ![todo](pictures/todo.png) is not empty
 

@@ -972,6 +972,83 @@ namespace xtd {
         assert::fail("not contains " + __join__items(expected), __join__items(actual), message, line_info);
       }
       /// @endcond
-   };
+      
+      /// @brief Asserts that collection or traits contains an item.
+      /// @param value The value to check is empty.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1;
+      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::tunit::assert::is_empty(v1); // test ok.
+      /// xtd::tunit::assert::is_empty(v2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_empty(const TValue& value) {is_empty(value, "", line_info());}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param value The value to check is empty.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1;
+      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::tunit::assert::is_empty(v1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_empty(v2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param value The value to check is empty.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1;
+      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::tunit::assert::is_empty(v1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_empty(v2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_empty(const TValue& value, const std::string& message) {is_empty(value, message, line_info());}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param value The value to check is empty.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1;
+      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::tunit::assert::is_empty(v1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_empty(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::empty(value))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("<empty>", __join__items(value), message, line_info);
+      }
+      
+      /// @cond
+      template<typename TValue>
+      static void is_empty(const std::initializer_list<TValue>& value) {is_empty(value, "", line_info());}
+      template<typename TValue>
+      static void is_empty(const std::initializer_list<TValue>& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
+      template<typename TValue>
+      static void is_empty(const std::initializer_list<TValue>& value, const std::string& message) {is_empty(value, message, line_info());}
+      template<typename TValue>
+      static void is_empty(const std::initializer_list<TValue>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::empty(values))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("<empty>", __join__items(values), message, line_info);
+      }
+      /// @endcond
+    };
   }
 }
