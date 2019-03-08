@@ -758,7 +758,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assert::contains({1, 2}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assert::are_equal({1, 2, 6}, a, "User message..."); test throws an assertion_error exception.
+      /// xtd::tunit::collection_assert::contains({1, 2, 6}, a, "User message..."); test throws an assertion_error exception.
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void contains(const TExpected& expected, const TAcutal& actual, const std::string& message) {contains(expected, actual, message, line_info());}
@@ -851,6 +851,125 @@ namespace xtd {
           }
         }
         assert::succeed(message, line_info);
+      }
+      /// @endcond
+
+      /// @brief Asserts that ollection contains all items.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2, a); // test ok.
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2, 6}, a); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void does_not_contain(const TExpected& expected, const TAcutal& actual) {does_not_contain(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that collection contains all items.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2}, a, "User message..."); // test ok.
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2, 6}, a, "User message..."); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void does_not_contain(const TExpected& expected, const TAcutal& actual, const std::string& message) {does_not_contain(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that collection contains all items.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2}, a, line_info_); // test ok.
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2, 6}, a, line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void does_not_contain(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {does_not_contain(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that collection contains all items.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2}, a, "User message...", line_info_); // test ok.
+      /// xtd::tunit::collection_assert::does_not_contain({1, 2, 6}, a, "User message...", line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void does_not_contain(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        for (auto item : expected) {
+          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+            assert::succeed(message, line_info);
+            return;
+          }
+        }
+        assert::fail("not contains " + __join__items(expected), __join__items(actual), message, line_info);
+      }
+      
+      /// @cond
+      template<typename TItem>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual) {does_not_contain(expected, actual, "", line_info());}
+      template<typename TItem>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual, const xtd::tunit::line_info& line_info) {does_not_contain(expected, actual, "", line_info);}
+      template<typename TItem>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual, const std::string& message) {does_not_contain(expected, actual, message, line_info());}
+      template<typename TItem>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        for (auto item : expected) {
+          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+            assert::succeed(message, line_info);
+            return;
+          }
+        }
+        assert::fail("not contains " + __join__items(expected), __join__items(actual), message, line_info);
+      }
+      
+      /// @cond
+      template<typename TCollection, typename TItem>
+      static void does_not_contain(const TCollection& expected, const std::initializer_list<TItem>& actual) {does_not_contain(expected, actual, "", line_info());}
+      template<typename TCollection, typename TItem>
+      static void does_not_contain(const TCollection& expected, const std::initializer_list<TItem>& actual, const xtd::tunit::line_info& line_info) {does_not_contain(expected, actual, "", line_info);}
+      template<typename TCollection, typename TItem>
+      static void does_not_contain(const TCollection& expected, const std::initializer_list<TItem>& actual, const std::string& message) {does_not_contain(expected, actual, message, line_info());}
+      template<typename TCollection, typename TItem>
+      static void does_not_contain(const TCollection& expected, const std::initializer_list<TItem>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        for (auto item : expected) {
+          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+            assert::succeed(message, line_info);
+            return;
+          }
+        }
+        assert::fail("not contains " + __join__items(expected), __join__items(actual), message, line_info);
+      }
+      
+      /// @cond
+      template<typename TItem, typename TCollection>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const TCollection& actual) {does_not_contain(expected, actual, "", line_info());}
+      template<typename TItem, typename TCollection>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const TCollection& actual, const xtd::tunit::line_info& line_info) {does_not_contain(expected, actual, "", line_info);}
+      template<typename TItem, typename TCollection>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const TCollection& actual, const std::string& message) {does_not_contain(expected, actual, message, line_info());}
+      template<typename TItem, typename TCollection>
+      static void does_not_contain(const std::initializer_list<TItem>& expected, const TCollection& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        for (auto item : expected) {
+          if (std::find(actual.begin(), actual.end(), item) == actual.end()) {
+            assert::succeed(message, line_info);
+            return;
+          }
+        }
+        assert::fail("not contains " + __join__items(expected), __join__items(actual), message, line_info);
       }
       /// @endcond
    };
