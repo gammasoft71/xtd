@@ -7,13 +7,9 @@ namespace unit_tests {
   public:
     void test_method_(test_case1) {
       std::ofstream of1("test1.txt");
-      of1 << "Test1";
       of1.close();
-      std::ofstream of2("test2.txt");
-      of2 << "Test1";
-      of2.close();
       
-      file_assert::are_not_equal("test1.txt", "test2.txt");
+      file_assert::exists("test2.txt");
     }
   };
 }
