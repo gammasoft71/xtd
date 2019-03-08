@@ -8,7 +8,7 @@
 
 ![added](pictures/added.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null
+![added](pictures/added.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
