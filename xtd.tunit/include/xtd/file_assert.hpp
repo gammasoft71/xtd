@@ -108,7 +108,7 @@ namespace xtd {
         size_t size_expected = if_expected.tellg();
         size_t size_actual = if_actual.tellg();
         if (size_expected != size_actual) {
-          assert::fail("istream length " + std::to_string(size_expected), std::to_string(size_actual), message, line_info);
+          assert::fail("istream length " + __to_string(size_expected), __to_string(size_actual), message, line_info);
           return;
         }
         
@@ -118,7 +118,7 @@ namespace xtd {
           Char value_expected = if_expected.get();
           Char value_actual = if_actual.get();
           if (value_expected != value_actual) {
-            assert::fail("istream at offset " + std::to_string(offset) + " value " + std::to_string(value_expected), std::to_string(value_actual), message, line_info);
+            assert::fail("istream at offset " + __to_string(offset) + " value " + __to_string(value_expected), __to_string(value_actual), message, line_info);
             return;
           }
         }
@@ -515,7 +515,7 @@ namespace xtd {
       template<typename Char>
       static void exists(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::basic_ifstream<Char>(file).good() == false)
-          assert::fail("file exists", file, message, line_info);
+          assert::fail("file exists", __to_string(file), message, line_info);
         assert::succeed(message, line_info);
       }
       
@@ -528,6 +528,81 @@ namespace xtd {
       static void exists(const Char* file, const std::string& message) {exists(file, message, line_info());}
       template<typename Char>
       static void exists(const Char* file, const std::string& message, const xtd::tunit::line_info& line_info) {exists(std::basic_string<Char>(file), message, line_info);}
+      /// @endcond
+      
+      /// @brief Asserts that file not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::does_not_exist("Test2.txt"); // test ok.
+      /// xtd::tunit::file_assert::does_not_exist("Test1.txt"); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void does_not_exist(const std::basic_string<Char>& file) {does_not_exist(file, "", line_info());}
+      
+      /// @brief Asserts that file not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::does_not_exist("Test2.txt", line_info_); // test ok.
+      /// xtd::tunit::file_assert::does_not_exist("Test1.txt", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void does_not_exist(const std::basic_string<Char>& file, const xtd::tunit::line_info& line_info) {does_not_exist(file, "", line_info);}
+      
+      /// @brief Asserts that file not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::does_not_exist("Test2.txt", "User message..."); // test ok.
+      /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void does_not_exist(const std::basic_string<Char>& file, const std::string& message) {does_not_exist(file, message, line_info());}
+      
+      /// @brief Asserts that file not exists.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::does_not_exist("Test2.txt" "User message...", line_info_); // test ok.
+      /// xtd::tunit::file_assert::does_not_exist("Test1.txt", "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void does_not_exist(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::basic_ifstream<Char>(file).good() == true)
+          assert::fail("not file exists", __to_string(file), message, line_info);
+        assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename Char>
+      static void does_not_exist(const Char* file) {does_not_exist(file, "", line_info());}
+      template<typename Char>
+      static void does_not_exist(const Char* file, const xtd::tunit::line_info& line_info) {does_not_exist(file, "", line_info);}
+      template<typename Char>
+      static void does_not_exist(const Char* file, const std::string& message) {does_not_exist(file, message, line_info());}
+      template<typename Char>
+      static void does_not_exist(const Char* file, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_exist(std::basic_string<Char>(file), message, line_info);}
       /// @endcond
     };
   }

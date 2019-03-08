@@ -38,7 +38,7 @@
 
 ![added](pictures/added.png) exists
 
-![todo](pictures/todo.png) does not exist
+![added](pictures/added.png) does not exist
 
 ### Directory assert :
 
