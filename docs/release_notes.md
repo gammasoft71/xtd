@@ -28,7 +28,7 @@
 
 ![added](pictures/added.png) is not empty
 
-![todo](pictures/todo.png) is ordered
+![added](pictures/added.png) is ordered
 
 ### File assert :
 

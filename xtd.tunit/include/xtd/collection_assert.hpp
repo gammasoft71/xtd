@@ -1126,6 +1126,83 @@ namespace xtd {
           assert::fail("not <empty>", "<empty>", message, line_info);
       }
       /// @endcond
+      
+      /// @brief Asserts that collection or traits contains an item.
+      /// @param value The value to check is empty.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// std::vector<int> v2 = {1, 2, 4, 3};
+      /// xtd::tunit::assert::is_ordered(v1); // test ok.
+      /// xtd::tunit::assert::is_ordered(v2); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_ordered(const TValue& value) {is_ordered(value, "", line_info());}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param value The value to check is empty.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// std::vector<int> v2 = {1, 2, 4, 3};
+      /// xtd::tunit::assert::is_ordered(v1, line_info_); // test ok.
+      /// xtd::tunit::assert::is_ordered(v2, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_ordered(const TValue& value, const xtd::tunit::line_info& line_info) {is_ordered(value, "", line_info);}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param value The value to check is empty.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// std::vector<int> v2 = {1, 2, 4, 3};
+      /// xtd::tunit::assert::is_ordered(v1, "User message..."); // test ok.
+      /// xtd::tunit::assert::is_ordered(v2, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_ordered(const TValue& value, const std::string& message) {is_ordered(value, message, line_info());}
+      
+      /// @brief Asserts that collection contains an item.
+      /// @param value The value to check is empty.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// std::vector<int> v2 = {1, 2, 4, 3};
+      /// xtd::tunit::assert::is_ordered(v1, "User message...", line_info_); // test ok.
+      /// xtd::tunit::assert::is_ordered(v2, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename TValue>
+      static void is_ordered(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::is_sorted(value.begin(), value.end()))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("<ordered>", __join__items(value), message, line_info);
+      }
+      
+      /// @cond
+      template<typename TValue>
+      static void is_ordered(const std::initializer_list<TValue>& value) {is_ordered(value, "", line_info());}
+      template<typename TValue>
+      static void is_ordered(const std::initializer_list<TValue>& value, const xtd::tunit::line_info& line_info) {is_ordered(value, "", line_info);}
+      template<typename TValue>
+      static void is_ordered(const std::initializer_list<TValue>& value, const std::string& message) {is_ordered(value, message, line_info());}
+      template<typename TValue>
+      static void is_ordered(const std::initializer_list<TValue>& values, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::is_sorted(values.begin(), values.end()))
+          assert::succeed(message, line_info);
+        else
+          assert::fail("<ordered>", __join__items(values), message, line_info);
+      }
+      /// @endcond
     };
   }
 }
