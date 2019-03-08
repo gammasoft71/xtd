@@ -156,7 +156,6 @@ bool __opaque_console::output_code_page(int codePage) noexcept {
 
 bool __opaque_console::reset_color() noexcept {
   return __opaque_console::background_color(backColor) && __opaque_console::foreground_color(foreColor);
-  return true;
 }
 
 bool __opaque_console::set_cursor_position(int left, int top) noexcept {
