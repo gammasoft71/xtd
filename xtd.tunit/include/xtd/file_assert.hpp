@@ -455,69 +455,51 @@ namespace xtd {
       static void are_not_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       /// @endcond
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::stringstream s1;
-      /// s1 << "Test";
-      /// s1.seekg(0, std::ios::beg);
-      /// std::stringstream s2;
-      /// s2 << "Test";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1); // test ok.
-      /// s2 << "Test2";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1); // test throws an assertion_error exception.
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt"); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt"); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
       static void exists(const std::basic_string<Char>& file) {exists(file, "", line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::stringstream s1;
-      /// s1 << "Test";
-      /// s1.seekg(0, std::ios::beg);
-      /// std::stringstream s2;
-      /// s2 << "Test";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1, line_info_); // test ok.
-      /// s2 << "Test2";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1, line_info_); // test throws an assertion_error exception.
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt", line_info_); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
       static void exists(const std::basic_string<Char>& file, const xtd::tunit::line_info& line_info) {exists(file, "", line_info);}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::stringstream s1;
-      /// s1 << "Test";
-      /// s1.seekg(0, std::ios::beg);
-      /// std::stringstream s2;
-      /// s2 << "Test";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1, "User message..."); // test ok.
-      /// s2 << "Test2";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1, "User message..."); // test throws an assertion_error exception.
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt", "User message..."); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", "User message..."); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
       static void exists(const std::basic_string<Char>& file, const std::string& message) {exists(file, message, line_info());}
       
-      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @brief Asserts that file exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -525,16 +507,10 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::stringstream s1;
-      /// s1 << "Test";
-      /// s1.seekg(0, std::ios::beg);
-      /// std::stringstream s2;
-      /// s2 << "Test";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1, "User message...", line_info_); // test ok.
-      /// s2 << "Test2";
-      /// s2.seekg(0, std::ios::beg);
-      /// xtd::tunit::file_assert::exists(s2, s1, "User message...", line_info_); // test throws an assertion_error exception.
+      /// std::ifstream f1("Test1.txt");
+      /// f1.close();
+      /// xtd::tunit::file_assert::exists("Test1.txt" "User message...", line_info_); // test ok.
+      /// xtd::tunit::file_assert::exists("Test2.txt", "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
       static void exists(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
