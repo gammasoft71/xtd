@@ -29,6 +29,7 @@ namespace xtd {
   namespace tunit {
     /// @cond
     class collection_assert;
+    class file_assert;
     class string_assert;
     /// @endcond
     
@@ -2796,6 +2797,7 @@ namespace xtd {
       
     private:
       friend class collection_assert;
+      friend class file_assert;
       friend class string_assert;
       static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
     };
