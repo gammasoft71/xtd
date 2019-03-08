@@ -20,7 +20,7 @@
 
 ![added](pictures/added.png) are not equivalent
 
-![todo](pictures/todo.png) contains
+![added](pictures/added.png) contains
 
 ![todo](pictures/todo.png) does not contain
 
