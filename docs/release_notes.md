@@ -12,11 +12,11 @@
 
 ![added](pictures/added.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![added](pictures/added.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -32,9 +32,9 @@
 
 ### File assert :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -42,9 +42,9 @@
 
 ### Directory assert :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -54,9 +54,9 @@
 
 ### Valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not same
 
@@ -138,11 +138,11 @@
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -158,9 +158,9 @@
 
 ### File valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -168,9 +168,9 @@
 
 ### Directory valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -180,9 +180,9 @@
 
 ### Assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not same
 
@@ -264,11 +264,11 @@
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -284,9 +284,9 @@
 
 ### File assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -294,9 +294,9 @@
 
 ### Directory assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -358,11 +358,11 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -378,9 +378,9 @@ ________________________________________________________________________________
 
 ### File assert :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -388,9 +388,9 @@ ________________________________________________________________________________
 
 ### Directory assert :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -400,9 +400,9 @@ ________________________________________________________________________________
 
 ### Valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not same
 
@@ -484,11 +484,11 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -504,9 +504,9 @@ ________________________________________________________________________________
 
 ### File valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -514,9 +514,9 @@ ________________________________________________________________________________
 
 ### Directory valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -526,9 +526,9 @@ ________________________________________________________________________________
 
 ### Assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not same
 
@@ -610,11 +610,11 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -630,9 +630,9 @@ ________________________________________________________________________________
 
 ### File assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -640,9 +640,9 @@ ________________________________________________________________________________
 
 ### Directory assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -696,9 +696,9 @@ First version of xtd.tunit.
 
 ### Assert :
 
-![added](pictures/added.png) are equals
+![added](pictures/added.png) are equal
 
-![added](pictures/added.png) are not equals
+![added](pictures/added.png) are not equal
 
 ![added](pictures/added.png) are not same
 
@@ -780,11 +780,11 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -802,9 +802,9 @@ First version of xtd.tunit.
 
 ### Valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not same
 
@@ -886,11 +886,11 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -906,9 +906,9 @@ First version of xtd.tunit.
 
 ### File valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -916,9 +916,9 @@ First version of xtd.tunit.
 
 ### Directory valid :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -928,9 +928,9 @@ First version of xtd.tunit.
 
 ### Assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not same
 
@@ -1012,11 +1012,11 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) all items are unique
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
 ![todo](pictures/todo.png) are equivalent
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) are not equivalent
 
@@ -1032,9 +1032,9 @@ First version of xtd.tunit.
 
 ### File assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
@@ -1042,9 +1042,9 @@ First version of xtd.tunit.
 
 ### Directory assume :
 
-![todo](pictures/todo.png) are equals
+![todo](pictures/todo.png) are equal
 
-![todo](pictures/todo.png) are not equals
+![todo](pictures/todo.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
