@@ -28,6 +28,7 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @cond
+    class collection_assert;
     class string_assert;
     /// @endcond
     
@@ -161,7 +162,7 @@ namespace xtd {
         if (actual == expected)
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -169,28 +170,28 @@ namespace xtd {
         if (strcmp(actual, expected) == 0)
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(actual) == std::u16string(expected))
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(actual) == std::u32string(expected))
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
 
       static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(actual, expected) == 0)
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
 
       static void are_equal(float expected, float actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -199,7 +200,7 @@ namespace xtd {
         else if (actual == expected)
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       static void are_equal(double expected, double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -208,7 +209,7 @@ namespace xtd {
         else if (actual == expected)
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       static void are_equal(long double expected, long double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -217,7 +218,7 @@ namespace xtd {
         else if (actual == expected)
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       /// @endcond
       
@@ -279,7 +280,7 @@ namespace xtd {
         if (fabsf(expected - actual) <= fabsf(tolerance))
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal.
@@ -340,7 +341,7 @@ namespace xtd {
         if (fabs(expected - actual) <= fabs(tolerance))
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal.
@@ -401,7 +402,7 @@ namespace xtd {
         if (fabsl(expected - actual) <= fabsl(tolerance))
           succeed(message, line_info);
         else
-          fail(to_string(expected), to_string(actual), message, line_info);
+          fail(__to_string(expected), __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal.
@@ -458,7 +459,7 @@ namespace xtd {
         if (actual != expected)
           succeed(message, line_info);
         else
-          fail("not " + to_string(expected), to_string(actual), message, line_info);
+          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
       }
 
       /// @cond
@@ -466,28 +467,28 @@ namespace xtd {
         if (strcmp(actual, expected) != 0)
           succeed(message, line_info);
         else
-          fail("not " + to_string(expected), to_string(actual), message, line_info);
+          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
       }
 
       static void are_not_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(actual) != std::u16string(expected))
           succeed(message, line_info);
         else
-          fail("not " + to_string(expected), to_string(actual), message, line_info);
+          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
       }
       
       static void are_not_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(actual) != std::u32string(expected))
           succeed(message, line_info);
         else
-          fail("not " + to_string(expected), to_string(actual), message, line_info);
+          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
       }
       
       static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(actual, expected) != 0)
           succeed(message, line_info);
         else
-          fail("not " + to_string(expected), to_string(actual), message, line_info);
+          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
       }
       /// @endcond
 
@@ -557,7 +558,7 @@ namespace xtd {
         if (&actual != &expected)
           succeed(message, line_info);
         else
-          fail("not same as " + to_string(expected), to_string(actual), message, line_info);
+          fail("not same as " + __to_string(expected), __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two objects do refer to differents objects.
@@ -626,7 +627,7 @@ namespace xtd {
         if (&actual == &expected)
           succeed(message, line_info);
         else
-          fail("same as " + to_string(expected), to_string(actual), message, line_info);
+          fail("same as " + __to_string(expected), __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that collection contains an item.
@@ -688,7 +689,7 @@ namespace xtd {
         if (result != collection.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + to_string(item), "< " + __join__items(collection) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), "< " + __join__items(collection) + " >", message, line_info);
       }
       
       /// @cond
@@ -704,7 +705,7 @@ namespace xtd {
         if (result != values.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + to_string(item), "< " + __join__items(values) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), "< " + __join__items(values) + " >", message, line_info);
       }
       
       static void contains(char item, const char* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -713,7 +714,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
       }
       
       static void contains(char16_t item, const char16_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -722,7 +723,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
       }
       
       static void contains(char32_t item, const char32_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -731,7 +732,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
       }
 
       static void contains(wchar_t item, const wchar_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -740,7 +741,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + to_string(item), "< " + __join__items(s) + " >", message, line_info);
+          fail("collection containing " + __to_string(item), "< " + __join__items(s) + " >", message, line_info);
       }
       /// @endcond
       
@@ -1059,7 +1060,7 @@ namespace xtd {
         if (val1 > val2)
           succeed(message, line_info);
         else
-          fail("greater than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greater than " + __to_string(val2), __to_string(val1), message, line_info);
       }
       
       /// @cond
@@ -1067,28 +1068,28 @@ namespace xtd {
         if (strcmp(val1, val2) > 0)
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_greater(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) > std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_greater(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) > std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_greater(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val2) > 0)
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1150,7 +1151,7 @@ namespace xtd {
         if (val1 >= val2)
           succeed(message, line_info);
         else
-          fail("greater than or equal to " + to_string(val2), to_string(val1), message, line_info);
+          fail("greater than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
       }
       
       /// @cond
@@ -1158,28 +1159,28 @@ namespace xtd {
         if (strcmp(val1, val2) >= 0)
           succeed(message, line_info);
         else
-          fail("greather than or equal to " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_greater_or_equal(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) >= std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
       
       static void is_greater_or_equal(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) >= std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val2) >= 0)
           succeed(message, line_info);
         else
-          fail("greather than or equal to " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1294,7 +1295,7 @@ namespace xtd {
         if (val1 < val2)
           succeed(message, line_info);
         else {
-          fail("less than " + to_string(val2), to_string(val1), message, line_info);
+          fail("less than " + __to_string(val2), __to_string(val1), message, line_info);
         }
       }
       
@@ -1303,28 +1304,28 @@ namespace xtd {
         if (strcmp(val1, val2) < 0)
           succeed(message, line_info);
         else
-          fail("less than " + to_string(val2), to_string(val1), message, line_info);
+          fail("less than " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_less(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) < std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
       
       static void is_less(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) < std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_less(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val2) < 0)
           succeed(message, line_info);
         else
-          fail("less than " + to_string(val2), to_string(val1), message, line_info);
+          fail("less than " + __to_string(val2), __to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1386,7 +1387,7 @@ namespace xtd {
         if (val1 <= val2)
           succeed(message, line_info);
         else
-          fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
+          fail("less than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
       }
       
       /// @cond
@@ -1394,28 +1395,28 @@ namespace xtd {
         if (strcmp(val1, val1) <= 0)
           succeed(message, line_info);
         else
-          fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
+          fail("less than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_less_or_equal(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) < std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
       
       static void is_less_or_equal(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) < std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + to_string(val2), to_string(val1), message, line_info);
+          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
       }
 
       static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val1) <= 0)
           succeed(message, line_info);
         else
-          fail("less than or equal to " + to_string(val2), to_string(val1), message, line_info);
+          fail("less than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1473,7 +1474,7 @@ namespace xtd {
         if (std::isnan(value))
           succeed(message, line_info);
         else
-          fail("NaN", to_string(value), message, line_info);
+          fail("NaN", __to_string(value), message, line_info);
       }
       
       /// @brief that a value is NaN.
@@ -1530,7 +1531,7 @@ namespace xtd {
         if (std::isnan(value))
           succeed(message, line_info);
         else
-          fail("NaN", to_string(value), message, line_info);
+          fail("NaN", __to_string(value), message, line_info);
       }
       
       /// @brief that a value is NaN.
@@ -1587,7 +1588,7 @@ namespace xtd {
         if (std::isnan(value))
           succeed(message, line_info);
         else
-          fail("NaN", to_string(value), message, line_info);
+          fail("NaN", __to_string(value), message, line_info);
       }
       
       /// @brief Asserts that ta condition is negative.
@@ -1648,7 +1649,7 @@ namespace xtd {
         if (value < 0)
           succeed(message, line_info);
         else
-          fail("negative", to_string(value), message, line_info);
+          fail("negative", __to_string(value), message, line_info);
       }
       
       /// @brief Asserts that collection or traits does not contain any item.
@@ -2514,7 +2515,7 @@ namespace xtd {
         if (value > 0)
           succeed(message, line_info);
         else
-          fail("positive", to_string(value), message, line_info);
+          fail("positive", __to_string(value), message, line_info);
       }
       
       /// @brief Asserts that ta condition is true.
@@ -2632,7 +2633,7 @@ namespace xtd {
         if (value == 0)
           succeed(message, line_info);
         else
-          fail("zero", to_string(value), message, line_info);
+          fail("zero", __to_string(value), message, line_info);
       }
       
       /// @brief Generates a success with a generic message. This is used by the other Assert functions.
@@ -2794,22 +2795,9 @@ namespace xtd {
       }
       
     private:
+      friend class collection_assert;
       friend class string_assert;
       static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
-      
-      template <typename TValue>
-      static std::string to_string(const TValue& value) {
-        std::stringstream ss;
-        __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
-        return ss.str();
-      }
-      
-      template <typename TValue>
-      static std::string to_string(const TValue* value) {
-        std::stringstream ss;
-        __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
-        return ss.str();
-      }
     };
   }
 }

@@ -6,9 +6,9 @@
 
 ### Collection assert :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![added](pictures/added.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -132,9 +132,9 @@
 
 ### Collection valid :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -258,9 +258,9 @@
 
 ### Collection assume :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -352,9 +352,9 @@ ________________________________________________________________________________
 
 ### Collection assert :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -478,9 +478,9 @@ ________________________________________________________________________________
 
 ### Collection valid :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -604,9 +604,9 @@ ________________________________________________________________________________
 
 ### Collection assume :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -774,9 +774,9 @@ First version of xtd.tunit.
 
 ### Collection assert :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -880,9 +880,9 @@ First version of xtd.tunit.
 
 ### Collection valid :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 
@@ -1006,9 +1006,9 @@ First version of xtd.tunit.
 
 ### Collection assume :
 
-![todo](pictures/todo.png) all items are instances of type ?
+![todo](pictures/todo.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null ?
+![todo](pictures/todo.png) all items are not null
 
 ![todo](pictures/todo.png) all items are unique ?
 

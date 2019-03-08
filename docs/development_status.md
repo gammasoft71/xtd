@@ -36,8 +36,8 @@
 | Name              | Type  | Status                                   |
 |-------------------|-------|------------------------------------------|
 | assert            | class | ![progress100](pictures/progress100.png) |
-| string_assert     | class | ![progress100](pictures/progress50.png)  |
-| collection_assert | class | ![progress100](pictures/progress0.png)   |
+| string_assert     | class | ![progress100](pictures/progress100.png) |
+| collection_assert | class | ![progress100](pictures/progress50.png)  |
 | file_assert       | class | ![progress100](pictures/progress0.png)   |
 | directory_assert  | class | ![progress100](pictures/progress0.png)   |
 
@@ -62,9 +62,9 @@
 | directory_assum  | class | ![progress100](pictures/progress0.png) |
 
 # settings :
-| Name     | Type  | Status                                  |
-|----------|-------|-----------------------------------------|
-| settings | class | ![progress100](pictures/progress50.png) |
+| Name     | Type  | Status                                   |
+|----------|-------|------------------------------------------|
+| settings | class | ![progress100](pictures/progress100.png) |
   
 ______________________________________________________________________________________________
 

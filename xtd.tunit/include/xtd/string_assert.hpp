@@ -71,7 +71,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected) + ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail(__to_string(expected) + ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal ignoring case.
@@ -124,7 +124,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail(__to_string(expected)+ ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal ignoring case.
@@ -177,7 +177,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail(__to_string(expected)+ ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal ignoring case.
@@ -230,7 +230,7 @@ namespace xtd {
         if (to_lower(actual) == to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail(assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail(__to_string(expected)+ ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -305,7 +305,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail("not " + __to_string(expected)+ ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal ignoring case.
@@ -358,7 +358,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail("not " + __to_string(expected)+ ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal ignoring case.
@@ -411,7 +411,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail("not " + __to_string(expected)+ ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal ignoring case.
@@ -464,7 +464,7 @@ namespace xtd {
         if (to_lower(actual) != to_lower(expected))
           assert::succeed(message, line_info);
         else
-          assert::fail("not " + assert::to_string(expected)+ ", ignoring case", assert::to_string(actual), message, line_info);
+          assert::fail("not " + __to_string(expected)+ ", ignoring case", __to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -543,7 +543,7 @@ namespace xtd {
         if (string.find(item) != std::string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -600,7 +600,7 @@ namespace xtd {
         if (string.find(item) != std::u16string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -657,7 +657,7 @@ namespace xtd {
         if (string.find(item) != std::u32string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -714,7 +714,7 @@ namespace xtd {
         if (string.find(item) != std::wstring::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
 
       /// @cond
@@ -793,7 +793,7 @@ namespace xtd {
         if (string.find(item) == std::string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -850,7 +850,7 @@ namespace xtd {
         if (string.find(item) == std::u16string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -907,7 +907,7 @@ namespace xtd {
         if (string.find(item) == std::u32string::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -964,7 +964,7 @@ namespace xtd {
         if (string.find(item) == std::wstring::npos)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string containing " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string containing " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -1043,7 +1043,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string starting width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1100,7 +1100,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string starting width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts witdh item.
@@ -1157,7 +1157,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string starting width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts witdh item.
@@ -1214,7 +1214,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string starts width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string starts width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -1293,7 +1293,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1350,7 +1350,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does noy start witdh item.
@@ -1407,7 +1407,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does noy start witdh item.
@@ -1464,7 +1464,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string starting width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string starting width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -1543,7 +1543,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1600,7 +1600,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string ends witdh item.
@@ -1657,7 +1657,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string ends witdh item.
@@ -1714,7 +1714,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -1793,7 +1793,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string starts width item.
@@ -1850,7 +1850,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does not end witdh item.
@@ -1907,7 +1907,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @brief Asserts that string does not end witdh item.
@@ -1964,7 +1964,7 @@ namespace xtd {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string ending width " + assert::to_string(item), "< " + __join__items(string) + " >", message, line_info);
+          assert::fail("not string ending width " + __to_string(item), "< " + __join__items(string) + " >", message, line_info);
       }
       
       /// @cond
@@ -2041,7 +2041,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r) == true)
           assert::succeed(message, line_info);
         else
-          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
       /** @todo : when std::regex ready: remove this comment.
        
@@ -2099,7 +2099,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r))
           assert::succeed(message, line_info);
         else
-          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that matches regex patern.
@@ -2156,7 +2156,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r) == true)
           assert::succeed(message, line_info);
         else
-          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
 */
       
@@ -2212,7 +2212,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r) == true)
           assert::succeed(message, line_info);
         else
-          assert::fail("string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -2291,7 +2291,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r) == false)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("not string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
 
       /** @todo : when std::regex ready: remove this comment.
@@ -2350,7 +2350,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r) == false)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("not string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that does not match regex patern.
@@ -2407,7 +2407,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r) == false)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("not string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
 */
       
@@ -2463,7 +2463,7 @@ namespace xtd {
         if (std::regex_search(actual, m, r) == false)
           assert::succeed(message, line_info);
         else
-          assert::fail("not string matching " + assert::to_string(regex_pattern), assert::to_string(actual), message, line_info);
+          assert::fail("not string matching " + __to_string(regex_pattern), __to_string(actual), message, line_info);
       }
       
       /// @cond
