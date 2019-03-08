@@ -34,7 +34,7 @@
 
 ![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are not equal
+![added](pictures/added.png) are not equal
 
 ![todo](pictures/todo.png) exists
 
