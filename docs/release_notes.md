@@ -46,9 +46,9 @@
 
 ![todo](pictures/todo.png) are not equal
 
-![todo](pictures/todo.png) exists
+![added](pictures/added.png) exists
 
-![todo](pictures/todo.png) does not exist
+![added](pictures/added.png) does not exist
 
 ## Validations :
 

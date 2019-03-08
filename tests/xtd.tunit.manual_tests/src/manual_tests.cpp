@@ -9,7 +9,7 @@ namespace unit_tests {
       std::ofstream of1("test1.txt");
       of1.close();
       
-      file_assert::does_not_exist("test1.txt");
+      directory_assert::exists(".");
     }
   };
 }

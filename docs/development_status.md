@@ -39,7 +39,7 @@
 | string_assert     | class | ![progress100](pictures/progress100.png) |
 | collection_assert | class | ![progress100](pictures/progress100.png) |
 | file_assert       | class | ![progress100](pictures/progress100.png) |
-| directory_assert  | class | ![progress100](pictures/progress0.png)   |
+| directory_assert  | class | ![progress100](pictures/progress75.png)  |
 
 # Validations :
 
