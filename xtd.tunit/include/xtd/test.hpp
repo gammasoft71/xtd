@@ -17,6 +17,7 @@ namespace xtd {
     /// @cond
     struct test_class;
     class unit_test;
+    class valid;
     /// @endcond
     
     struct test final {
@@ -67,12 +68,17 @@ namespace xtd {
     private:
       friend class xtd::tunit::assert;
       friend struct xtd::tunit::test_class;
+      friend class xtd::tunit::valid;
       static test& current_test() {return *current_test_;}
+      static const test_class& current_test_class() {return *current_test_class_;}
+      static const unit_test& current_unit_test() {return *current_unit_test_;}
 
       void run(const xtd::tunit::unit_test& unit_test, const xtd::tunit::test_class& test_class);
       
       std::chrono::high_resolution_clock::time_point end_time_point;
       static test* current_test_;
+      static const test_class* current_test_class_;
+      static const unit_test* current_unit_test_;
       std::string actual_;
       std::string expect_;
       xtd::tunit::line_info info_;

@@ -206,6 +206,7 @@ namespace xtd {
       friend struct xtd::tunit::test_class_attribute;
       friend struct xtd::tunit::test_class;
       friend struct xtd::tunit::test;
+      friend class xtd::tunit::valid;
 
       static void add(const xtd::tunit::registered_test_class& test_class) {test_classes().push_back(test_class);}
       

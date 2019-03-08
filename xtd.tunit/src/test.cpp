@@ -5,10 +5,14 @@
 using namespace xtd::tunit;
 
 test* test::current_test_ = nullptr;
+const test_class* test::current_test_class_ = nullptr;
+const unit_test* test::current_unit_test_ = nullptr;
 bool __tunit_unit_tests_mode__ = false;
 
 void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_class) {
   current_test_ = this;
+  current_test_class_ = &test_class;
+  current_unit_test_ = &unit_test;
   
   if (this->ignored() && settings::default_settings().also_run_ignored_tests()) this->status_ = test_status::not_started;
 
@@ -33,12 +37,14 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         this->method()();
         this->end_time_point = std::chrono::high_resolution_clock::now();
         if (this->not_started()) this->status_ = test_status::succeed;
+        /*
         if (this->succeed())
           unit_test.event_listener_->on_test_succeed(xtd::tunit::test_event_args(*this, test_class, unit_test));
         else {
           xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
           unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
         }
+         */
       } catch(const xtd::tunit::abort_error&) {
         unit_test.event_listener_->on_test_aborted(xtd::tunit::test_event_args(*this, test_class, unit_test));
       } catch(const xtd::tunit::assert_error&) {
