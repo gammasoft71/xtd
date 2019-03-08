@@ -6,10 +6,9 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      std::ofstream of1("test1.txt");
-      of1.close();
-      
-      directory_assert::exists(".");
+      valid::are_equal_(42, 24);
+      assert::are_equal_(12, 42);
+      valid::are_equal_(45, 24);
     }
   };
 }
