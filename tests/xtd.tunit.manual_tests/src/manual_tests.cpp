@@ -10,10 +10,10 @@ namespace unit_tests {
       of1 << "Test1";
       of1.close();
       std::ofstream of2("test2.txt");
-      of2 << "Test2";
+      of2 << "Test1";
       of2.close();
       
-      file_assert::are_equal("test1.txt", "test2.txt");
+      file_assert::are_not_equal("test1.txt", "test2.txt");
     }
   };
 }
