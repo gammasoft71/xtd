@@ -10,15 +10,15 @@
 
 ![added](pictures/added.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![added](pictures/added.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -28,7 +28,7 @@
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File assert :
 
@@ -136,15 +136,15 @@
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -154,7 +154,7 @@
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File valid :
 
@@ -262,15 +262,15 @@
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -280,7 +280,7 @@
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File assume :
 
@@ -356,15 +356,15 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -374,7 +374,7 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File assert :
 
@@ -482,15 +482,15 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -500,7 +500,7 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File valid :
 
@@ -608,15 +608,15 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -626,7 +626,7 @@ ________________________________________________________________________________
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File assume :
 
@@ -778,15 +778,15 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -796,7 +796,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ## Validations :
 
@@ -884,15 +884,15 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -902,7 +902,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File valid :
 
@@ -1010,15 +1010,15 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique ?
+![todo](pictures/todo.png) all items are unique
 
 ![todo](pictures/todo.png) are equals
 
-![todo](pictures/todo.png) are equivalent ?
+![todo](pictures/todo.png) are equivalent
 
 ![todo](pictures/todo.png) are not equals
 
-![todo](pictures/todo.png) are not equivalent ?
+![todo](pictures/todo.png) are not equivalent
 
 ![todo](pictures/todo.png) contains
 
@@ -1028,7 +1028,7 @@ First version of xtd.tunit.
 
 ![todo](pictures/todo.png) is not empty
 
-![todo](pictures/todo.png) is ordered ?
+![todo](pictures/todo.png) is ordered
 
 ### File assume :
 
