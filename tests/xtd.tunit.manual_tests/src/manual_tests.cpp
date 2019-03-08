@@ -7,7 +7,7 @@ namespace unit_tests {
   public:
     void test_method_(test_case1) {
       //std::vector<int> a = {1, 2, 3, 4, 1};
-      collection_assert::all_items_are_unique({1, 2, 3, 4, 1});
+      collection_assert::are_equal({1, 2, 3, 4}, {4, 3, 2, 1});
     }
   };
 }

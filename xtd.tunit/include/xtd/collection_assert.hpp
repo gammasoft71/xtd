@@ -175,7 +175,7 @@ namespace xtd {
       template<typename TItem>
       static void all_items_are_not_null(const std::initializer_list<TItem>& collection, const std::string& message) {all_items_are_not_null(collection, message, line_info());}
       template<typename TItem>
-      static void are_equal(const std::initializer_list<TItem>& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of(collection, "", line_info);}
+      static void all_items_are_not_null(const std::initializer_list<TItem>& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of(collection, "", line_info);}
       template<typename TItem>
       static void all_items_are_not_null(const std::initializer_list<TItem>& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
         for (auto item : collection)
@@ -272,6 +272,113 @@ namespace xtd {
             assert::fail("all items are unqiue", __join__items(collection), message, line_info);
         }
         assert::succeed(message, line_info);
+      }
+      /// @endcond
+
+      /// @brief Asserts that all collection items are equal.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equal({1, 2, 3, 4}, a); // test ok.
+      /// xtd::tunit::collection_assert::are_equal({4, 3, 2, 1}, a); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equal(const TExpected& expected, const TAcutal& actual) {are_equal(expected, actual, "", line_info());}
+      
+      /// @brief Asserts that all collection items are equal.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equal({1, 2, 3, 4}, a, "User message..."); // test ok.
+      /// xtd::tunit::collection_assert::are_equal({4, 3, 2, 1}, a, "User message..."); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equal(const TExpected& expected, const TAcutal& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      
+      /// @brief Asserts that all collection items are equal.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equal({1, 2, 3, 4}, a, line_info_); // test ok.
+      /// xtd::tunit::collection_assert::are_equal({4, 3, 2, 1}, a, line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equal(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      
+      /// @brief Asserts that all collection items are equal.
+      /// @param value The object to verify
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::vector<int> a = {1, 2, 3, 4};
+      /// xtd::tunit::collection_assert::are_equal({1, 2, 3, 4}, a, "User message...", line_info_); // test ok.
+      /// xtd::tunit::collection_assert::are_equal({4, 3, 2, 1}, a, "User message...", line_info_); test throws an assertion_error exception.
+      /// @endcode
+      template<typename TExpected, typename TAcutal>
+      static void are_equal(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+          assert::fail(__join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename TItem>
+      static void are_equal(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual) {are_equal(expected, actual, "", line_info());}
+      template<typename TItem>
+      static void are_equal(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      template<typename TItem>
+      static void are_equal(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      template<typename TItem>
+      static void are_equal(const std::initializer_list<TItem>& expected, const std::initializer_list<TItem>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+          assert::fail(__join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename TCollection, typename TItem>
+      static void are_equal(const TCollection& expected, const std::initializer_list<TItem>& actual) {are_equal(expected, actual, "", line_info());}
+      template<typename TCollection, typename TItem>
+      static void are_equal(const TCollection& expected, const std::initializer_list<TItem>& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      template<typename TCollection, typename TItem>
+      static void are_equal(const TCollection& expected, const std::initializer_list<TItem>& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      template<typename TCollection, typename TItem>
+      static void are_equal(const TCollection& expected, const std::initializer_list<TItem>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+          assert::fail(__join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename TItem, typename TCollection>
+      static void are_equal(const std::initializer_list<TItem>& expected, const TCollection& actual) {are_equal(expected, actual, "", line_info());}
+      template<typename TItem, typename TCollection>
+      static void are_equal(const std::initializer_list<TItem>& expected, const TCollection& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
+      template<typename TItem, typename TCollection>
+      static void are_equal(const std::initializer_list<TItem>& expected, const TCollection& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      template<typename TItem, typename TCollection>
+      static void are_equal(const std::initializer_list<TItem>& expected, const TCollection& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::equal(expected.begin(), expected.end(), actual.begin(), actual.end()) == false)
+          assert::fail(__join__items(expected), __join__items(actual), message, line_info);
+        else
+          assert::succeed(message, line_info);
       }
       /// @endcond
     };
