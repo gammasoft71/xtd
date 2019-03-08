@@ -16,6 +16,7 @@
 #include <set>
 #include <stdexcept>
 #include <string>
+#include <sstream>
 #include <type_traits>
 #include <tuple>
 #include <unordered_map>
@@ -513,4 +514,17 @@ std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTr
   return os;
 }
 
+template <typename TValue>
+static std::string __to_string(const TValue& value) {
+  std::stringstream ss;
+  __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
+  return ss.str();
+}
+
+template <typename TValue>
+static std::string __to_string(const TValue* value) {
+  std::stringstream ss;
+  __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
+  return ss.str();
+}
 /// @endcond

@@ -1,21 +1,18 @@
 /// @file
 /// @brief Contains__join__items functions.
 #pragma once
+#include "default_insert_basic_ostream_operator.hpp"
 #include <sstream>
 #include <string>
 
 /// @cond
-namespace std {
-  inline const std::string& to_string(const std::string& s) {return s;}
-}
-
 template<typename TCollection>
 std::string __join__items(const TCollection& collection) {
   std::stringstream ss;
   bool first = true;
   for (const auto& item : collection) {
     if (!first) ss << ", ";
-    ss << std::to_string(item);
+    ss << __to_string(item);
     first = false;
   }
   return ss.str();
