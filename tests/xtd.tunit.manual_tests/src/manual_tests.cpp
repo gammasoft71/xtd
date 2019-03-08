@@ -6,8 +6,14 @@ namespace unit_tests {
   class test_class_(manual_test) {
   public:
     void test_method_(test_case1) {
-      //std::vector<int> a = {1, 2, 3, 4, 1};
-      collection_assert::is_ordered({4, 3, 2, 1});
+      std::ofstream of1("test1.txt");
+      of1 << "Test1";
+      of1.close();
+      std::ofstream of2("test2.txt");
+      of2 << "Test2";
+      of2.close();
+      
+      file_assert::are_equal("test1.txt", "test2.txt");
     }
   };
 }

@@ -32,7 +32,7 @@
 
 ### File assert :
 
-![todo](pictures/todo.png) are equal
+![added](pictures/added.png) are equal
 
 ![todo](pictures/todo.png) are not equal
 

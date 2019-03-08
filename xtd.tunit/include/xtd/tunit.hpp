@@ -18,6 +18,7 @@
 #include "default_insert_basic_ostream_operator.hpp"
 #include "default_main.hpp"
 #include "event_listener.hpp"
+#include "file_assert.hpp"
 #include "ignore_error.hpp"
 #include "line_info.hpp"
 #include "ostream_event_listener.hpp"
