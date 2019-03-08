@@ -207,7 +207,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_equal(s2, s1, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       
       /// @cond
       template<typename Char>
@@ -217,7 +217,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       template<typename Char>
-      static void are_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       template<typename Char>
       static void are_equal(const Char* expected, const std::basic_string<Char>& actual) {are_equal(expected, actual, "", line_info());}
       template<typename Char>
@@ -225,7 +225,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       template<typename Char>
-      static void are_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       template<typename Char>
       static void are_equal(const Char* expected, const Char* actual) {are_equal(expected, actual, "", line_info());}
       template<typename Char>
@@ -233,7 +233,7 @@ namespace xtd {
       template<typename Char>
       static void are_equal(const Char* expected, const Char* actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       template<typename Char>
-      static void are_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       /// @endcond
 
       /// @brief Asserts that two basic_istream<Char> are not equal.
@@ -426,7 +426,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(s2, s1, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_not_equal(const std::basic_string<Char>& expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       
       /// @cond
       template<typename Char>
@@ -436,7 +436,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       template<typename Char>
-      static void are_not_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_not_equal(const std::basic_string<Char>& expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       template<typename Char>
       static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual) {are_not_equal(expected, actual, "", line_info());}
       template<typename Char>
@@ -444,7 +444,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       template<typename Char>
-      static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_not_equal(const Char* expected, const std::basic_string<Char>& actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
       template<typename Char>
       static void are_not_equal(const Char* expected, const Char* actual) {are_not_equal(expected, actual, "", line_info());}
       template<typename Char>
@@ -452,7 +452,106 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const Char* expected, const Char* actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       template<typename Char>
-      static void are_not_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual));}
+      static void are_not_equal(const Char* expected, const Char* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal(std::basic_ifstream<Char>(expected), std::basic_ifstream<Char>(actual), message, line_info);}
+      /// @endcond
+      
+      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::stringstream s1;
+      /// s1 << "Test";
+      /// s1.seekg(0, std::ios::beg);
+      /// std::stringstream s2;
+      /// s2 << "Test";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1); // test ok.
+      /// s2 << "Test2";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void exists(const std::basic_string<Char>& file) {exists(file, "", line_info());}
+      
+      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::stringstream s1;
+      /// s1 << "Test";
+      /// s1.seekg(0, std::ios::beg);
+      /// std::stringstream s2;
+      /// s2 << "Test";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1, line_info_); // test ok.
+      /// s2 << "Test2";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void exists(const std::basic_string<Char>& file, const xtd::tunit::line_info& line_info) {exists(file, "", line_info);}
+      
+      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::stringstream s1;
+      /// s1 << "Test";
+      /// s1.seekg(0, std::ios::beg);
+      /// std::stringstream s2;
+      /// s2 << "Test";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1, "User message..."); // test ok.
+      /// s2 << "Test2";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void exists(const std::basic_string<Char>& file, const std::string& message) {exists(file, message, line_info());}
+      
+      /// @brief Asserts that two basic_istream<Char> are equal.
+      /// @param expected the expected value.
+      /// @param actual the actual value.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::stringstream s1;
+      /// s1 << "Test";
+      /// s1.seekg(0, std::ios::beg);
+      /// std::stringstream s2;
+      /// s2 << "Test";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1, "User message...", line_info_); // test ok.
+      /// s2 << "Test2";
+      /// s2.seekg(0, std::ios::beg);
+      /// xtd::tunit::file_assert::exists(s2, s1, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      template<typename Char>
+      static void exists(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (std::basic_ifstream<Char>(file).good() == false)
+          assert::fail("file exists", file, message, line_info);
+        assert::succeed(message, line_info);
+      }
+      
+      /// @cond
+      template<typename Char>
+      static void exists(const Char* file) {exists(file, "", line_info());}
+      template<typename Char>
+      static void exists(const Char* file, const xtd::tunit::line_info& line_info) {exists(file, "", line_info);}
+      template<typename Char>
+      static void exists(const Char* file, const std::string& message) {exists(file, message, line_info());}
+      template<typename Char>
+      static void exists(const Char* file, const std::string& message, const xtd::tunit::line_info& line_info) {exists(std::basic_string<Char>(file), message, line_info);}
       /// @endcond
     };
   }
