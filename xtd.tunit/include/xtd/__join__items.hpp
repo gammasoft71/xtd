@@ -9,24 +9,28 @@
 template<typename TCollection>
 std::string __join__items(const TCollection& collection) {
   std::stringstream ss;
+  ss << "< ";
   bool first = true;
   for (const auto& item : collection) {
     if (!first) ss << ", ";
     ss << __to_string(item);
     first = false;
   }
+  ss << " >";
   return ss.str();
 }
 
 template<>
 inline std::string __join__items<std::string>(const std::string& collection) {
   std::stringstream ss;
+  ss << "< ";
   bool first = true;
   for (const char& item : collection) {
     if (!first) ss << ", ";
     ss << '\'' << item << '\'';
     first = false;
   }
+  ss << " >";
   return ss.str();
 }
 /// @endcond
