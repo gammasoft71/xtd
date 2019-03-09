@@ -10,6 +10,7 @@
 #include "abort_error.hpp"
 #include "assert.hpp"
 #include "assert_error.hpp"
+#include "assume.hpp"
 #include "class_cleanup_attribute.hpp"
 #include "class_event_args.hpp"
 #include "class_initialize_attribute.hpp"

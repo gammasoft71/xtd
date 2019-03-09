@@ -180,59 +180,59 @@
 
 ### Assume :
 
-![todo](pictures/todo.png) are equal
+![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are not equal
+![added](pictures/added.png) are not equal
 
-![todo](pictures/todo.png) are not same
+![added](pictures/added.png) are not same
 
-![todo](pictures/todo.png) are same
+![added](pictures/added.png) are same
 
-![todo](pictures/todo.png) contains
+![added](pictures/added.png) contains
 
-![todo](pictures/todo.png) does not throw
+![added](pictures/added.png) does not throw
 
-![todo](pictures/todo.png) fail
+![added](pictures/added.png) fail
 
-![todo](pictures/todo.png) is empty
+![added](pictures/added.png) is empty
 
-![todo](pictures/todo.png) is false
+![added](pictures/added.png) is false
 
-![todo](pictures/todo.png) is greater
+![added](pictures/added.png) is greater
 
-![todo](pictures/todo.png) is greater or equal
+![added](pictures/added.png) is greater or equal
 
-![todo](pictures/todo.png) is instance of type
+![added](pictures/added.png) is instance of type
 
-![todo](pictures/todo.png) is less
+![added](pictures/added.png) is less
 
-![todo](pictures/todo.png) is less or equal
+![added](pictures/added.png) is less or equal
 
-![todo](pictures/todo.png) is NaN
+![added](pictures/added.png) is NaN
 
-![todo](pictures/todo.png) is negative
+![added](pictures/added.png) is negative
 
-![todo](pictures/todo.png) is not empty
+![added](pictures/added.png) is not empty
 
-![todo](pictures/todo.png) is not instance of type
+![added](pictures/added.png) is not instance of type
 
-![todo](pictures/todo.png) is not null
+![added](pictures/added.png) is not null
 
-![todo](pictures/todo.png) is not zero
+![added](pictures/added.png) is not zero
 
-![todo](pictures/todo.png) is null
+![added](pictures/added.png) is null
 
-![todo](pictures/todo.png) is positive
+![added](pictures/added.png) is positive
 
-![todo](pictures/todo.png) is true
+![added](pictures/added.png) is true
 
-![todo](pictures/todo.png) is zero
+![added](pictures/added.png) is zero
 
-![todo](pictures/todo.png) succeed
+![added](pictures/added.png) succeed
 
-![todo](pictures/todo.png) throws
+![added](pictures/added.png) throws
 
-![todo](pictures/todo.png) throws any
+![added](pictures/added.png) throws any
 
 ### String assume :
 
