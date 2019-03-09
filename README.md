@@ -44,12 +44,15 @@ namespace unit_tests {
   public:
     void test_method_(create_string_from_literal) {
       string s = "Hello, World!";
+      valid::are_equal(13, s.size());
       assert::are_equal("Hello, World!", s);
     }
     
     void test_method_(create_string_from_chars) {
       string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-      assert::are_equal("Hello, World!", s);
+      valid::are_equal(13, s.size());
+      string_Assert::starts_with("Hello,", s);
+      string_Assert::ends_with(" World!", s);
     }
   };
 }
