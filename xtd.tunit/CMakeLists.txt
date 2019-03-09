@@ -23,6 +23,7 @@ set(INCLUDES
   include/xtd/directory_valid.hpp
   include/xtd/event_listener.hpp
   include/xtd/file_assert.hpp
+  include/xtd/file_assume.hpp
   include/xtd/file_valid.hpp
   include/xtd/ignore_error.hpp
   include/xtd/line_info.hpp

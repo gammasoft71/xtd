@@ -284,13 +284,13 @@
 
 ### File assume :
 
-![todo](pictures/todo.png) are equal
+![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are not equal
+![added](pictures/added.png) are not equal
 
-![todo](pictures/todo.png) exists
+![added](pictures/added.png) exists
 
-![todo](pictures/todo.png) does not exist
+![added](pictures/added.png) does not exist
 
 ### Directory assume :
 

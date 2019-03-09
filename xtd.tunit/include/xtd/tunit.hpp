@@ -24,6 +24,7 @@
 #include "directory_valid.hpp"
 #include "event_listener.hpp"
 #include "file_assert.hpp"
+#include "file_assume.hpp"
 #include "file_valid.hpp"
 #include "ignore_error.hpp"
 #include "line_info.hpp"

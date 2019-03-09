@@ -27,7 +27,7 @@ namespace xtd {
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::ios_base*>(a); // test ok.
-      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TCollection>
       static void all_items_are_instances_of(const TCollection& collection) {all_items_are_instances_of<TExpected>(collection, "", line_info());}
@@ -41,7 +41,7 @@ namespace xtd {
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::ios_base*>(a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TCollection>
       static void all_items_are_instances_of(const TCollection& collection, const std::string& message) {all_items_are_instances_of<TExpected>(collection, message, line_info());}
@@ -55,7 +55,7 @@ namespace xtd {
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::ios_base*>(a, line_info_); // test ok.
-      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TCollection>
       static void all_items_are_instances_of(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of<TExpected>(collection, "", line_info);}
@@ -69,7 +69,7 @@ namespace xtd {
       /// @code
       /// std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::ios_base*>(a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TCollection>
       static void all_items_are_instances_of(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -108,7 +108,7 @@ namespace xtd {
       /// std::vector<int*> a1 = {&i1, &i2};
       /// xtd::tunit::collection_assume::all_items_are_not_null(a1); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assume::all_items_are_not_null(a2); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_not_null(a2);// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_not_null(const TCollection& collection) {all_items_are_not_null(collection, "", line_info());}
@@ -124,7 +124,7 @@ namespace xtd {
       /// std::vector<int*> a1 = {&i1, &i2};
       /// xtd::tunit::collection_assume::all_items_are_not_null(a1, "User message..."); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assume::all_items_are_not_null(a2, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_not_null(a2, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_not_null(const TCollection& collection, const std::string& message) {all_items_are_not_null(collection, message, line_info());}
@@ -140,7 +140,7 @@ namespace xtd {
       /// std::vector<int*> a1 = {&i1, &i2};
       /// xtd::tunit::collection_assume::all_items_are_not_null(a1, line_info_); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assume::all_items_are_not_null(a2, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_not_null(a2, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_not_null(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_instances_of(collection, "", line_info);}
@@ -156,7 +156,7 @@ namespace xtd {
       /// std::vector<int*> a1 = {&i1, &i2};
       /// xtd::tunit::collection_assume::all_items_are_not_null(a1, "User message...", line_info_); // test ok.
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
-      /// xtd::tunit::collection_assume::all_items_are_not_null(a2, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_not_null(a2, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_not_null(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -194,7 +194,7 @@ namespace xtd {
       /// std::vector<int> a1 = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::all_items_are_unique(a1); // test ok.
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
-      /// xtd::tunit::collection_assume::all_items_are_unique(a2); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_unique(a2);// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_unique(const TCollection& collection) {all_items_are_unique(collection, "", line_info());}
@@ -209,7 +209,7 @@ namespace xtd {
       /// std::vector<int> a1 = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::all_items_are_unique(a1, "User message..."); // test ok.
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
-      /// xtd::tunit::collection_assume::all_items_are_unique(a2, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_unique(a2, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_unique(const TCollection& collection, const std::string& message) {all_items_are_unique(collection, message, line_info());}
@@ -224,7 +224,7 @@ namespace xtd {
       /// std::vector<int> a1 = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::all_iall_items_are_uniquetems_are_not_null(a1, line_info_); // test ok.
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
-      /// xtd::tunit::collection_assume::all_items_are_unique(a2, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_unique(a2, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_unique(const TCollection& collection, const xtd::tunit::line_info& line_info) {all_items_are_unique(collection, "", line_info);}
@@ -239,7 +239,7 @@ namespace xtd {
       /// std::vector<int> a1 = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::all_items_are_unique(a1, "User message...", line_info_); // test ok.
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
-      /// xtd::tunit::collection_assume::all_items_are_unique(a2, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::all_items_are_unique(a2, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TCollection>
       static void all_items_are_unique(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -276,7 +276,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equal({1, 2, 3, 4}, a); // test ok.
-      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a); // test fails.
+      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equal(const TExpected& expected, const TAcutal& actual) {are_equal(expected, actual, "", line_info());}
@@ -290,7 +290,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equal({1, 2, 3, 4}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equal(const TExpected& expected, const TAcutal& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
@@ -304,7 +304,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equal({1, 2, 3, 4}, a, line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equal(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
@@ -318,7 +318,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equal({1, 2, 3, 4}, a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equal(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -387,7 +387,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equivalent({4, 3, 2, 1}, a); // test ok.
-      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a); // test fails.
+      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equivalent(const TExpected& expected, const TAcutal& actual) {are_equivalent(expected, actual, "", line_info());}
@@ -401,7 +401,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equivalent({4, 3, 2, 1}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equivalent(const TExpected& expected, const TAcutal& actual, const std::string& message) {are_equivalent(expected, actual, message, line_info());}
@@ -415,7 +415,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equivalent({4, 3, 2, 1}, a, line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equivalent(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {are_equivalent(expected, actual, "", line_info);}
@@ -429,7 +429,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_equivalent({4, 3, 2, 1}, a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_equivalent(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -498,7 +498,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equal({4, 3, 2, 1}, a); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equal(const TExpected& expected, const TAcutal& actual) {are_not_equal(expected, actual, "", line_info());}
@@ -512,7 +512,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equal({4, 3, 2, 1}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equal(const TExpected& expected, const TAcutal& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
@@ -526,7 +526,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equal({4, 3, 2, 1}, a, line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equal(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
@@ -540,7 +540,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equal({4, 3, 2, 1}, a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equal(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -609,7 +609,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equivalent({1, 2, 3, 5}, a); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equivalent(const TExpected& expected, const TAcutal& actual) {are_not_equivalent(expected, actual, "", line_info());}
@@ -623,7 +623,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equivalent({1, 2, 3, 5}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equivalent(const TExpected& expected, const TAcutal& actual, const std::string& message) {are_not_equivalent(expected, actual, message, line_info());}
@@ -637,7 +637,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equivalent({1, 2, 3, 5}, a, line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equivalent(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {are_not_equivalent(expected, actual, "", line_info);}
@@ -651,7 +651,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::are_not_equivalent({1, 2, 3, 5}, a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void are_not_equivalent(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -720,7 +720,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::contains({1, 2, a); // test ok.
-      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a); // test fails.
+      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void contains(const TExpected& expected, const TAcutal& actual) {contains(expected, actual, "", line_info());}
@@ -734,7 +734,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::contains({1, 2}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void contains(const TExpected& expected, const TAcutal& actual, const std::string& message) {contains(expected, actual, message, line_info());}
@@ -748,7 +748,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::contains({1, 2}, a, line_info_); // test ok.
-      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void contains(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {contains(expected, actual, "", line_info);}
@@ -762,7 +762,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::contains({1, 2}, a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::contains({1, 2, 6}, a, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void contains(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -831,7 +831,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::does_not_contain({1, 2, a); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a); // test fails.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void does_not_contain(const TExpected& expected, const TAcutal& actual) {does_not_contain(expected, actual, "", line_info());}
@@ -845,7 +845,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, "User message..."); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message..."); // test fails.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message...");// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void does_not_contain(const TExpected& expected, const TAcutal& actual, const std::string& message) {does_not_contain(expected, actual, message, line_info());}
@@ -859,7 +859,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, line_info_); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, line_info_); // test fails.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void does_not_contain(const TExpected& expected, const TAcutal& actual, const xtd::tunit::line_info& line_info) {does_not_contain(expected, actual, "", line_info);}
@@ -873,7 +873,7 @@ namespace xtd {
       /// @code
       /// std::vector<int> a = {1, 2, 3, 4};
       /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, "User message...", line_info_); // test ok.
-      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message...", line_info_); // test fails.
+      /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message...", line_info_);// test throws an abort_error exception..
       /// @endcode
       template<typename TExpected, typename TAcutal>
       static void does_not_contain(const TExpected& expected, const TAcutal& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -941,7 +941,7 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1); // test ok.
-      /// xtd::tunit::assert::is_empty(v2); // test fails
+      /// xtd::tunit::assert::is_empty(v2);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_empty(const TValue& value) {is_empty(value, "", line_info());}
@@ -955,7 +955,7 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1, line_info_); // test ok.
-      /// xtd::tunit::assert::is_empty(v2, line_info_); // test fails
+      /// xtd::tunit::assert::is_empty(v2, line_info_);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
@@ -969,7 +969,7 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_empty(v2, "User message..."); // test fails
+      /// xtd::tunit::assert::is_empty(v2, "User message...");// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_empty(const TValue& value, const std::string& message) {is_empty(value, message, line_info());}
@@ -984,7 +984,7 @@ namespace xtd {
       /// std::vector<int> v1;
       /// std::vector<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assert::is_empty(v1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_); // test fails
+      /// xtd::tunit::assert::is_empty(v2, "User message...", line_info_);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_empty(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -1020,7 +1020,7 @@ namespace xtd {
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
       /// xtd::tunit::assert::is_not_empty(v1); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2); // test fails
+      /// xtd::tunit::assert::is_not_empty(v2);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_not_empty(const TValue& value) {is_not_empty(value, "", line_info());}
@@ -1034,7 +1034,7 @@ namespace xtd {
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
       /// xtd::tunit::assert::is_not_empty(v1, line_info_); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2, line_info_); // test fails
+      /// xtd::tunit::assert::is_not_empty(v2, line_info_);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_not_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
@@ -1048,7 +1048,7 @@ namespace xtd {
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
       /// xtd::tunit::assert::is_not_empty(v1, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2, "User message..."); // test fails
+      /// xtd::tunit::assert::is_not_empty(v2, "User message...");// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_not_empty(const TValue& value, const std::string& message) {is_not_empty(value, message, line_info());}
@@ -1063,7 +1063,7 @@ namespace xtd {
       /// std::vector<int> v1 = {0, 1, 2, 3};
       /// std::vector<int> v2;
       /// xtd::tunit::assert::is_not_empty(v1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::is_not_empty(v2, "User message...", line_info_); // test fails
+      /// xtd::tunit::assert::is_not_empty(v2, "User message...", line_info_);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_not_empty(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -1099,7 +1099,7 @@ namespace xtd {
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// std::vector<int> v2 = {1, 2, 4, 3};
       /// xtd::tunit::assert::is_ordered(v1); // test ok.
-      /// xtd::tunit::assert::is_ordered(v2); // test fails
+      /// xtd::tunit::assert::is_ordered(v2);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_ordered(const TValue& value) {is_ordered(value, "", line_info());}
@@ -1113,7 +1113,7 @@ namespace xtd {
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// std::vector<int> v2 = {1, 2, 4, 3};
       /// xtd::tunit::assert::is_ordered(v1, line_info_); // test ok.
-      /// xtd::tunit::assert::is_ordered(v2, line_info_); // test fails
+      /// xtd::tunit::assert::is_ordered(v2, line_info_);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_ordered(const TValue& value, const xtd::tunit::line_info& line_info) {is_ordered(value, "", line_info);}
@@ -1127,7 +1127,7 @@ namespace xtd {
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// std::vector<int> v2 = {1, 2, 4, 3};
       /// xtd::tunit::assert::is_ordered(v1, "User message..."); // test ok.
-      /// xtd::tunit::assert::is_ordered(v2, "User message..."); // test fails
+      /// xtd::tunit::assert::is_ordered(v2, "User message...");// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_ordered(const TValue& value, const std::string& message) {is_ordered(value, message, line_info());}
@@ -1142,7 +1142,7 @@ namespace xtd {
       /// std::vector<int> v1 = {1, 2, 3, 4};
       /// std::vector<int> v2 = {1, 2, 4, 3};
       /// xtd::tunit::assert::is_ordered(v1, "User message...", line_info_); // test ok.
-      /// xtd::tunit::assert::is_ordered(v2, "User message...", line_info_); // test fails
+      /// xtd::tunit::assert::is_ordered(v2, "User message...", line_info_);// test throws an abort_error exception.
       /// @endcode
       template<typename TValue>
       static void is_ordered(const TValue& value, const std::string& message, const xtd::tunit::line_info& line_info) {
