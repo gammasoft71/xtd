@@ -47,7 +47,7 @@
 |------------------|-------|------------------------------------------|
 | valid            | class | ![progress100](pictures/progress100.png) |
 | string_valid     | class | ![progress100](pictures/progress100.png) |
-| collection_valid | class | ![progress100](pictures/progress0.png)   |
+| collection_valid | class | ![progress100](pictures/progress100.png) |
 | file_valid       | class | ![progress100](pictures/progress0.png)   |
 | directory_valid  | class | ![progress100](pictures/progress0.png)   |
 

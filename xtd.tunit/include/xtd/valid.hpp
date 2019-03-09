@@ -2534,10 +2534,7 @@ namespace xtd {
       friend class file_valid;
       friend class string_valid;
 
-      static void message() {
-        xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
-        xtd::tunit::test::current_unit_test().event_listener_->on_test_failed(xtd::tunit::test_event_args(xtd::tunit::test::current_test(), xtd::tunit::test::current_test_class(), xtd::tunit::test::current_unit_test()));
-      }
+      static void message();
     };
   }
 }
