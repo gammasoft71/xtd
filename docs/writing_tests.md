@@ -30,7 +30,7 @@ xtd.tunit uses custom helpers to identify test fixtures and test methods. It's t
 
 ### Examples
 
-The following example shows how to create a tests with helpers :
+The following example shows how to create and register fixture and test cases with helpers :
 
 ```c++
 #include <xtd/tunit>
@@ -76,7 +76,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-The following example shows how to create the same tests without helpers :
+The following example shows how to create and register same fixture and same test cases without helpers :
 
 ```c++
 #include <xtd/tunit>
