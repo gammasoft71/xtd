@@ -146,6 +146,48 @@ int main(int argc, char* argv[]) {
 }
 ```
 
+The following example shows how to get current informations with helper :
+
+```c++
+#include <xtd/tunit>
+#include <iostream>
+
+using namespace std;
+using namespace xtd::tunit;
+
+void trace_message(const string& message, const line_info& info) {
+  cout << "message: " << message << endl;
+  cout << "member name: " << info.member_name() << endl;
+  cout << "source file path: " << info.file_path() << endl;
+  cout << "source line number: " << info.line_number() << endl;
+}
+
+int main() {
+  trace_message("Something happened.", line_info_);
+}
+```
+
+The following example shows how to get same current informations without :
+
+```c++
+#include <xtd/tunit>
+#include <iostream>
+
+using namespace std;
+using namespace xtd::tunit;
+
+void trace_message(const string& message, const line_info& info) {
+  cout << "message: " << message << endl;
+  cout << "member name: " << info.member_name() << endl;
+  cout << "source file path: " << info.file_path() << endl;
+  cout << "source line number: " << info.line_number() << endl;
+}
+
+int main() {
+  trace_message("Something happened.", line_info(__func__, __FILE__, __LINE__));
+}
+```
+
 ### More helpers
 
 
