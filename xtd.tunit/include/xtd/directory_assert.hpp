@@ -3,6 +3,9 @@
 #pragma once
 #include "assert.hpp"
 #include <sys/stat.h>
+#if defined(__cpp_lib_filesystem)
+#include <filesystem>
+#endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
