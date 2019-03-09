@@ -190,6 +190,54 @@ int main() {
 
 ### More helpers
 
+For each assertion, validation or assumption test, the last parameter is line_info class that contains current informations.
+To simplify the code helpers are create.
+
+The following example shows hot to call are_equal assertion tests with helper :
+
+```c++
+#include <xtd/tunit>
+
+using namespace xtd::tunit;
+
+namespace unit_tests {
+  class test_class_(test) {
+  public:
+    void test_method_(test_case_1) {
+      int i = 24;
+      assert::are_equal_(24, i);
+      assert::are_equal_(24, i, "My message");
+    }
+  };
+}
+
+int main(int argc, char* argv[]) {
+  return console_unit_test(argv, argc).run();
+}
+```
+
+The following example shows hot to call the same are_equal assertion tests without helper :
+
+```c++
+#include <xtd/tunit>
+
+using namespace xtd::tunit;
+
+namespace unit_tests {
+  class test_class_(test) {
+  public:
+    void test_method_(test_case_1) {
+      int i = 24;
+      assert::are_equal(24, i, line_info(__func__, __FILE__, __LINE__));
+      assert::are_equal(24, i, "My message", line_info(__func__, __FILE__, __LINE__));
+    }
+  };
+}
+
+int main(int argc, char* argv[]) {
+  return console_unit_test(argv, argc).run();
+}
+```
 
 ## Assertions
 
