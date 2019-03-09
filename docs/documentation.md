@@ -8,8 +8,8 @@ This section contains the xtd.tunit documentation. ​
 * [Release notes](release_notes.md) provide release notes information.
 * [License](license.md) provide license information.
 * [Getting started](getting_started.md) provide getting started documentation.
-* [Writing tests](writing_tets.md) provide writing tests documentation.
-* [Running tests](running_tets.md) provide running tests documentation.
+* [Writing tests](writing_tests.md) provide writing tests documentation.
+* [Running tests](running_tests.md) provide running tests documentation.
 * [Extending xtd.tunit](extending_tunit.md) provide extending xtd.tunit documentation.
 * [Development status](development_status.md) provide information about classes development status.
 
