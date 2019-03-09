@@ -6,8 +6,12 @@ This section contains the xtd.tunit documentation. ​
 
 * [Development status](development_status.md) provide information about classes development status.
 * [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.tunit/) provide online user reference guide.
+* [Release notes](release_notes.md) provide release notes information.
 * [License](license.md) provide license information.
-* [Release notes](release_notes.md) provide release notes informations.
+* [Getting started](getting_started.md) provide getting started documentation.
+* [Writing tests](writing_tets.md) provide writing tests documentation.
+* [Running tests](writing_tets.md) provide running tests documentation.
+* [Extending xtd.tunit](writing_tets.md) provide extending xtd.tunit documentation.
 
 ______________________________________________________________________________________________
 
