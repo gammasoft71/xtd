@@ -8,7 +8,7 @@
 * [Operating System](#operating-system)
 * [Compilers](#compilers)
 
-## C++17
+## C++
 
 ***Coming soon...***
 
