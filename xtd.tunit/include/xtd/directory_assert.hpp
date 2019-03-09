@@ -74,7 +74,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (expected != actual)
-          assert::fail(__to_string(expected.path()), __to_string(actual.path()), message, line_info);
+          assert::fail(__to_string(expected.path().string()), __to_string(actual.path().string()), message, line_info);
         else
           assert::succeed(message, line_info);
       }
@@ -135,7 +135,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (expected != actual)
-          assert::fail(__to_string(expected.path()), __to_string(actual.path()), message, line_info);
+          assert::fail(__to_string(expected.path().string()), __to_string(actual.path().string()), message, line_info);
         else
           assert::succeed(message, line_info);
       }
