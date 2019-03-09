@@ -167,7 +167,7 @@ int main() {
 }
 ```
 
-The following example shows how to get same current informations without :
+The following example shows how to get same current informations without helper :
 
 ```c++
 #include <xtd/tunit>
