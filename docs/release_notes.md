@@ -258,29 +258,29 @@
 
 ### Collection assume :
 
-![todo](pictures/todo.png) all items are instances of type
+![added](pictures/added.png) all items are instances of type
 
-![todo](pictures/todo.png) all items are not null
+![added](pictures/added.png) all items are not null
 
-![todo](pictures/todo.png) all items are unique
+![added](pictures/added.png) all items are unique
 
-![todo](pictures/todo.png) are equal
+![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are equivalent
+![added](pictures/added.png) are equivalent
 
-![todo](pictures/todo.png) are not equal
+![added](pictures/added.png) are not equal
 
-![todo](pictures/todo.png) are not equivalent
+![added](pictures/added.png) are not equivalent
 
-![todo](pictures/todo.png) contains
+![added](pictures/added.png) contains
 
-![todo](pictures/todo.png) does not contain
+![added](pictures/added.png) does not contain
 
-![todo](pictures/todo.png) is empty
+![added](pictures/added.png) is empty
 
-![todo](pictures/todo.png) is not empty
+![added](pictures/added.png) is not empty
 
-![todo](pictures/todo.png) is ordered
+![added](pictures/added.png) is ordered
 
 ### File assume :
 

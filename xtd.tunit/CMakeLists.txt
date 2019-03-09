@@ -14,6 +14,7 @@ set(INCLUDES
   include/xtd/class_event_args.hpp
   include/xtd/class_initialize_attribute.hpp
   include/xtd/collection_assert.hpp
+  include/xtd/collection_assume.hpp
   include/xtd/collection_valid.hpp
   include/xtd/console_unit_test.hpp
   include/xtd/default_insert_basic_ostream_operator.hpp

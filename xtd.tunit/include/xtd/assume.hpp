@@ -17,7 +17,7 @@ namespace xtd {
       assume() = delete;
       /// @endcond
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -29,7 +29,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_equal(const TExpected& expected, const TActual& actual) {are_equal(expected, actual, "", line_info());}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -42,7 +42,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_equal(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, "", line_info);}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -55,7 +55,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_equal(const TExpected& expected, const TActual& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -133,7 +133,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -146,7 +146,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -160,7 +160,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(float expected, float actual, float tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -174,7 +174,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(float expected, float& actual, float tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -195,7 +195,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -208,7 +208,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -222,7 +222,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -236,7 +236,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(double expected, double actual, double tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -257,7 +257,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -270,7 +270,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(long double expected, long double actual, long double tolerance) {are_equal(expected, actual, tolerance, "", line_info_);}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -284,7 +284,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(long double expected, long double actual, long double tolerance, const xtd::tunit::line_info& line_info) {are_equal(expected, actual, tolerance, "", line_info);}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -298,7 +298,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(long double expected, long double actual, long double tolerance, const std::string& message) {are_equal(expected, actual, tolerance, message, line_info());}
       
-      /// @brief Assums that two type are equal.
+      /// @brief Assumes that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param tolelerance Indicates a tolerance within which they will be considered as equal.
@@ -319,7 +319,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that two type are not equal.
+      /// @brief Assumes that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -331,7 +331,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_equal(const TExpected& expected, const TActual& actual) {are_not_equal(expected, actual, "", line_info());}
       
-      /// @brief Assums that two type are not equal.
+      /// @brief Assumes that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -344,7 +344,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_equal(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
       
-      /// @brief Assums that two type are not equal.
+      /// @brief Assumes that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -357,7 +357,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_equal(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       
-      /// @brief Assums that two type are not equal.
+      /// @brief Assumes that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -411,7 +411,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -426,7 +426,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual) {are_not_same(expected, actual, "", line_info());}
       
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -442,7 +442,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_not_same(expected, actual, "", line_info);}
       
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -458,7 +458,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_not_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_not_same(expected, actual, message, line_info());}
       
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -481,7 +481,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -496,7 +496,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_same(const TExpected& expected, const TActual& actual) {are_same(expected, actual, "", line_info());}
       
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -512,7 +512,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_same(const TExpected& expected, const TActual& actual, const xtd::tunit::line_info& line_info) {are_same(expected, actual, "", line_info);}
       
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -528,7 +528,7 @@ namespace xtd {
       template<typename TExpected, typename TActual>
       static void are_same(const TExpected& expected, const TActual& actual, const std::string& message) {are_same(expected, actual, message, line_info());}
       
-      /// @brief Assums that two objects do refer to differents objects.
+      /// @brief Assumes that two objects do refer to differents objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -551,7 +551,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -564,7 +564,7 @@ namespace xtd {
       template<typename TItem, typename TCollection>
       static void contains(const TItem& item, const TCollection& collection) {contains(item, collection, "", line_info());}
       
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -578,7 +578,7 @@ namespace xtd {
       template<typename TItem, typename TCollection>
       static void contains(const TItem& item, const TCollection& collection, const xtd::tunit::line_info& line_info) {contains(item, collection, "", line_info);}
       
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -592,7 +592,7 @@ namespace xtd {
       template<typename TItem, typename TCollection>
       static void contains(const TItem& item, const TCollection& collection, const std::string& message) {contains(item, collection, message, line_info());}
       
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -662,7 +662,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -673,7 +673,7 @@ namespace xtd {
       /// @endcode
       static void does_not_throw(const std::function<void()>& statement) {does_not_throw(statement, "", line_info());}
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -685,7 +685,7 @@ namespace xtd {
       /// @endcode
       static void does_not_throw(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {does_not_throw(statement, "", line_info);}
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -697,7 +697,7 @@ namespace xtd {
       /// @endcode
       static void does_not_throw(const std::function<void()>& statement, const std::string& message) {does_not_throw(statement, message, line_info());}
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -716,7 +716,7 @@ namespace xtd {
         }
       }
      
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -729,7 +729,7 @@ namespace xtd {
       template<typename TValue>
       static void is_empty(const TValue& value) {is_empty(value, "", line_info());}
       
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -743,7 +743,7 @@ namespace xtd {
       template<typename TValue>
       static void is_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_empty(value, "", line_info);}
       
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -757,7 +757,7 @@ namespace xtd {
       template<typename TValue>
       static void is_empty(const TValue& value, const std::string& message) {is_empty(value, message, line_info());}
       
-      /// @brief Assums that collection contains an item.
+      /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -827,7 +827,7 @@ namespace xtd {
       }
       /// @endocnd
       
-      /// @brief Assums that ta condition is false.
+      /// @brief Assumes that ta condition is false.
       /// @param condition The condition to check is false.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -839,7 +839,7 @@ namespace xtd {
       /// @endcode
       static void is_false(bool condition) {is_false(condition, "", line_info());}
       
-      /// @brief Assums that a condition is false.
+      /// @brief Assumes that a condition is false.
       /// @param condition The condition to check is false.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -852,7 +852,7 @@ namespace xtd {
       /// @endcode
       static void is_false(bool condition, const xtd::tunit::line_info& line_info) {is_false(condition, "", line_info);}
       
-      /// @brief Assums that a condition is false.
+      /// @brief Assumes that a condition is false.
       /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -865,7 +865,7 @@ namespace xtd {
       /// @endcode
       static void is_false(bool condition, const std::string& message) {is_false(condition, message, line_info());}
       
-      /// @brief Assums that a condition is false.
+      /// @brief Assumes that a condition is false.
       /// @param condition The condition to check is false.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -885,7 +885,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the first value is greater than the second value.
+      /// @brief Assumes that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -897,7 +897,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_greater(const TValue1& val1, const TValue2& val2) {is_greater(val1, val2, "", line_info());}
       
-      /// @brief Assums that the first value is greater than the second value.
+      /// @brief Assumes that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param line_info Contains information about current file and current line.
@@ -910,7 +910,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_greater(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_greater(val1, val2, "", line_info);}
       
-      /// @brief Assums that the first value is greater than the second value.
+      /// @brief Assumes that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -923,7 +923,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_greater(const TValue1& val1, const TValue2& val2, const std::string& message) {is_greater(val1, val2, message, line_info());}
       
-      /// @brief Assums that the first value is greater than the second value.
+      /// @brief Assumes that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -977,7 +977,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Assums that the first value is greater than or equal to the second value.
+      /// @brief Assumes that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -990,7 +990,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_greater_or_equal(const TValue1& val1, const TValue2& val2) {is_greater_or_equal(val1, val2, "", line_info());}
       
-      /// @brief Assums that the first value is greater than or equal to the second value.
+      /// @brief Assumes that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param line_info Contains information about current file and current line.
@@ -1004,7 +1004,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_greater_or_equal(val1, val2, "", line_info);}
       
-      /// @brief Assums that the first value is greater than or equal to the second value.
+      /// @brief Assumes that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1018,7 +1018,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_greater_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message) {is_greater_or_equal(val1, val2, message, line_info());}
       
-      /// @brief Assums that the first value is greater than or equal to the second value.
+      /// @brief Assumes that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1073,7 +1073,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Assums that an object is of the type supplied or a derived type.
+      /// @brief Assumes that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -1085,7 +1085,7 @@ namespace xtd {
       template<typename Type, typename TValue>
       static void is_instance_of(const TValue& value) {is_instance_of<Type>(value, "", line_info());}
       
-      /// @brief Assums that an object is of the type supplied or a derived type.
+      /// @brief Assumes that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1098,7 +1098,7 @@ namespace xtd {
       template<typename Type, typename TValue>
       static void is_instance_of(const TValue& value, const xtd::tunit::line_info& line_info) {is_instance_of<Type>(value, "", line_info);}
       
-      /// @brief Assums that an object is of the type supplied or a derived type.
+      /// @brief Assumes that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1111,7 +1111,7 @@ namespace xtd {
       template<typename Type, typename TValue>
       static void is_instance_of(const TValue& value, const std::string& message) {is_instance_of<Type>(value, message, line_info());}
       
-      /// @brief Assums that an object is of the type supplied or a derived type.
+      /// @brief Assumes that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1131,7 +1131,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the first value is is_less than the second value.
+      /// @brief Assumes that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1143,7 +1143,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_less(const TValue1& val1, const TValue2& val2) {is_less(val1, val2, "", line_info());}
       
-      /// @brief Assums that the first value is is_less than the second value.
+      /// @brief Assumes that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param line_info Contains information about current file and current line.
@@ -1156,7 +1156,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_less(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_less(val1, val2, "", line_info);}
       
-      /// @brief Assums that the first value is is_less than the second value.
+      /// @brief Assumes that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1169,7 +1169,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_less(const TValue1& val1, const TValue2& val2, const std::string& message) {is_less(val1, val2, message, line_info());}
       
-      /// @brief Assums that the first value is is_less than the second value.
+      /// @brief Assumes that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1223,7 +1223,7 @@ namespace xtd {
       }
       /// @endcond
 
-      /// @brief Assums that the first value is is_less than or equal to the second value.
+      /// @brief Assumes that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1236,7 +1236,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_less_or_equal(const TValue1& val1, const TValue2& val2) {is_less_or_equal(val1, val2, "", line_info());}
       
-      /// @brief Assums that the first value is is_less than or equal to the second value.
+      /// @brief Assumes that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param line_info Contains information about current file and current line.
@@ -1250,7 +1250,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_less_or_equal(const TValue1& val1, const TValue2& val2, const xtd::tunit::line_info& line_info) {is_less_or_equal(val1, val2, "", line_info);}
       
-      /// @brief Assums that the first value is is_less than or equal to the second value.
+      /// @brief Assumes that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1264,7 +1264,7 @@ namespace xtd {
       template<typename TValue1, typename TValue2>
       static void is_less_or_equal(const TValue1& val1, const TValue2& val2, const std::string& message) {is_less_or_equal(val1, val2, message, line_info());}
       
-      /// @brief Assums that the first value is is_less than or equal to the second value.
+      /// @brief Assumes that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1344,7 +1344,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(double value, const xtd::tunit::line_info& line_info) {is_NaN(value, "", line_info);}
       
-      /// @brief Assums that a value is NaN.
+      /// @brief Assumes that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1357,7 +1357,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(double value, const std::string& message) {is_NaN(value, message, line_info());}
       
-      /// @brief Assums that a value is NaN.
+      /// @brief Assumes that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1402,7 +1402,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(long double value, const xtd::tunit::line_info& line_info) {is_NaN(value, "", line_info);}
       
-      /// @brief Assums that a value is NaN.
+      /// @brief Assumes that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1415,7 +1415,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(long double value, const std::string& message) {is_NaN(value, message, line_info());}
       
-      /// @brief Assums that a value is NaN.
+      /// @brief Assumes that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1460,7 +1460,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(float value, const xtd::tunit::line_info& line_info) {is_NaN(value, "", line_info);}
       
-      /// @brief Assums that a value is NaN.
+      /// @brief Assumes that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1473,7 +1473,7 @@ namespace xtd {
       /// @endcode
       static void is_NaN(float value, const std::string& message) {is_NaN(value, message, line_info());}
       
-      /// @brief Assums that a value is NaN.
+      /// @brief Assumes that a value is NaN.
       /// @param value The value to check is NaN.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1493,7 +1493,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that ta condition is negative.
+      /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -1506,7 +1506,7 @@ namespace xtd {
       template<typename TValue>
       static void is_negative(const TValue& value) {is_negative(value, "", line_info());}
       
-      /// @brief Assums that ta condition is negative.
+      /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1520,7 +1520,7 @@ namespace xtd {
       template<typename TValue>
       static void is_negative(const TValue& value, const xtd::tunit::line_info& line_info) {is_negative(value, "", line_info);}
       
-      /// @brief Assums that ta condition is negative.
+      /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1534,7 +1534,7 @@ namespace xtd {
       template<typename TValue>
       static void is_negative(const TValue& value, const std::string& message) {is_negative(value, message, line_info());}
       
-      /// @brief Assums that ta condition is negative.
+      /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1555,7 +1555,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that collection oes not contain any item.
+      /// @brief Assumes that collection oes not contain any item.
       /// @param value The value to check is empty.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -1568,7 +1568,7 @@ namespace xtd {
       template<typename TValue>
       static void is_not_empty(const TValue& value) {is_not_empty(value, "", line_info());}
       
-      /// @brief Assums that collection does not contain any item.
+      /// @brief Assumes that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1582,7 +1582,7 @@ namespace xtd {
       template<typename TValue>
       static void is_not_empty(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_empty(value, "", line_info);}
       
-      /// @brief Assums that collection does not contain any item.
+      /// @brief Assumes that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1596,7 +1596,7 @@ namespace xtd {
       template<typename TValue>
       static void is_not_empty(const TValue& value, const std::string& message) {is_not_empty(value, message, line_info());}
       
-      /// @brief Assums that collection does not contain any item.
+      /// @brief Assumes that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1666,7 +1666,7 @@ namespace xtd {
       }
       /// @endcond
       
-      /// @brief Assums that an object is not of the type supplied or a derived type.
+      /// @brief Assumes that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -1678,7 +1678,7 @@ namespace xtd {
       template<typename Type, typename TValue>
       static void is_not_instance_of(const TValue& value) {is_not_instance_of<Type>(value, "", line_info());}
       
-      /// @brief Assums that an object is not of the type supplied or a derived type.
+      /// @brief Assumes that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1691,7 +1691,7 @@ namespace xtd {
       template<typename Type, typename TValue>
       static void is_not_instance_of(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_instance_of<Type>(value, "", line_info);}
       
-      /// @brief Assums that an object is not of the type supplied or a derived type.
+      /// @brief Assumes that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1704,7 +1704,7 @@ namespace xtd {
       template<typename Type, typename TValue>
       static void is_not_instance_of(const TValue& value, const std::string& message) {is_not_instance_of<Type>(value, message, line_info());}
       
-      /// @brief Assums that an object is not of the type supplied or a derived type.
+      /// @brief Assumes that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1724,7 +1724,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -1738,7 +1738,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const TPointer* pointer) {is_not_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1753,7 +1753,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const TPointer* pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1768,7 +1768,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const TPointer* pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1790,7 +1790,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -1803,7 +1803,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::unique_ptr<TPointer>& pointer) {is_not_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1817,7 +1817,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::unique_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1831,7 +1831,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::unique_ptr<TPointer>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1852,7 +1852,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -1865,7 +1865,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::shared_ptr<TPointer>& pointer) {is_not_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1879,7 +1879,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::shared_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1893,7 +1893,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::shared_ptr<TPointer>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1914,7 +1914,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1929,7 +1929,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer) {is_not_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
@@ -1945,7 +1945,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @remarks Always true, a weaptr can't be equal to nullptr by contruction or assignation.
@@ -1961,7 +1961,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -1978,7 +1978,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_not_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1988,7 +1988,7 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer) {is_not_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -1999,7 +1999,7 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const xtd::tunit::line_info& line_info) {is_not_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -2010,7 +2010,7 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const std::string& message) {is_not_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is not null.
+      /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2022,7 +2022,7 @@ namespace xtd {
       /// @endcode
       static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::fail("not null", "null", message, line_info);}
       
-      /// @brief Assums that ta condition is not zero.
+      /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2035,7 +2035,7 @@ namespace xtd {
       template<typename TValue>
       static void is_not_zero(const TValue& value) {is_not_zero(value, "", line_info());}
       
-      /// @brief Assums that ta condition is not zero.
+      /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2049,7 +2049,7 @@ namespace xtd {
       template<typename TValue>
       static void is_not_zero(const TValue& value, const xtd::tunit::line_info& line_info) {is_not_zero(value, "", line_info);}
       
-      /// @brief Assums that ta condition is not zero.
+      /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2063,7 +2063,7 @@ namespace xtd {
       template<typename TValue>
       static void is_not_zero(const TValue& value, const std::string& message) {is_not_zero(value, message, line_info());}
       
-      /// @brief Assums that ta condition is not zero.
+      /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2084,7 +2084,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2098,7 +2098,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const TPointer* pointer) {is_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2113,7 +2113,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const TPointer* pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2128,7 +2128,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const TPointer* pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2150,7 +2150,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2163,7 +2163,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::unique_ptr<TPointer>& pointer) {is_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2177,7 +2177,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::unique_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2191,7 +2191,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::unique_ptr<TPointer>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2212,7 +2212,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2225,7 +2225,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::shared_ptr<TPointer>& pointer) {is_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2239,7 +2239,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::shared_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2253,7 +2253,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::shared_ptr<TPointer>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2274,7 +2274,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2289,7 +2289,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::weak_ptr<TPointer>& pointer) {is_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
@@ -2305,7 +2305,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::weak_ptr<TPointer>& pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
@@ -2321,7 +2321,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2338,7 +2338,7 @@ namespace xtd {
       template<typename TPointer>
       static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::fail("null", "not null", message, line_info);}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2348,7 +2348,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer) {is_null(pointer, "", line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param line_info Contains information about current file and current line.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -2359,7 +2359,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer, const xtd::tunit::line_info& line_info) {is_null(pointer, "", line_info);}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @remarks Always false, a nullptr_t is always equal to nullptr.
@@ -2370,7 +2370,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer, const std::string& message) {is_null(pointer, message, line_info());}
       
-      /// @brief Assums that the pointer is null.
+      /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2382,7 +2382,7 @@ namespace xtd {
       /// @endcode
       static void is_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::succeed(message, line_info);}
       
-      /// @brief Assums that ta condition is positive.
+      /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2395,7 +2395,7 @@ namespace xtd {
       template<typename TValue>
       static void is_positive(const TValue& value) {is_positive(value, "", line_info());}
       
-      /// @brief Assums that ta condition is positive.
+      /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2409,7 +2409,7 @@ namespace xtd {
       template<typename TValue>
       static void is_positive(const TValue& value, const xtd::tunit::line_info& line_info) {is_positive(value, "", line_info);}
       
-      /// @brief Assums that ta condition is positive.
+      /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2423,7 +2423,7 @@ namespace xtd {
       template<typename TValue>
       static void is_positive(const TValue& value, const std::string& message) {is_positive(value, message, line_info());}
       
-      /// @brief Assums that ta condition is positive.
+      /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2444,7 +2444,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that ta condition is true.
+      /// @brief Assumes that ta condition is true.
       /// @param condition The condition to check is true.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2456,7 +2456,7 @@ namespace xtd {
       /// @endcode
       static void is_true(bool condition) {is_true(condition, "", line_info());}
       
-      /// @brief Assums that a condition is true.
+      /// @brief Assumes that a condition is true.
       /// @param condition The condition to check is true.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2469,7 +2469,7 @@ namespace xtd {
       /// @endcode
       static void is_true(bool condition, const xtd::tunit::line_info& line_info) {is_true(condition, "", line_info);}
       
-      /// @brief Assums that a condition is true.
+      /// @brief Assumes that a condition is true.
       /// @param condition The condition to check is true.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2482,7 +2482,7 @@ namespace xtd {
       /// @endcode
       static void is_true(bool condition, const std::string& message) {is_true(condition, message, line_info());}
       
-      /// @brief Assums that a condition is true.
+      /// @brief Assumes that a condition is true.
       /// @param condition The condition to check is true.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2502,7 +2502,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that ta condition is zero.
+      /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2515,7 +2515,7 @@ namespace xtd {
       template<typename TValue>
       static void is_zero(const TValue& value) {is_zero(value, "", line_info());}
       
-      /// @brief Assums that ta condition is zero.
+      /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2529,7 +2529,7 @@ namespace xtd {
       template<typename TValue>
       static void is_zero(const TValue& value, const xtd::tunit::line_info& line_info) {is_zero(value, "", line_info);}
       
-      /// @brief Assums that ta condition is zero.
+      /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2543,7 +2543,7 @@ namespace xtd {
       template<typename TValue>
       static void is_zero(const TValue& value, const std::string& message) {is_zero(value, message, line_info());}
       
-      /// @brief Assums that ta condition is zero.
+      /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
@@ -2564,7 +2564,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the statement throws a particular exception when called.
+      /// @brief Assumes that the statement throws a particular exception when called.
       /// @param TException The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2577,7 +2577,7 @@ namespace xtd {
       template<typename TException>
       static void throws(const std::function<void()>& statement) {throws<TException>(statement, "", line_info());}
       
-      /// @brief Assums that the statement throws a particular exception when called.
+      /// @brief Assumes that the statement throws a particular exception when called.
       /// @param TException The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param line_info Contains information about current file and current line.
@@ -2591,7 +2591,7 @@ namespace xtd {
       template<typename TException>
       static void throws(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {throws<TException>(statement, "", line_info);}
       
-      /// @brief Assums that the statement throws a particular exception when called.
+      /// @brief Assumes that the statement throws a particular exception when called.
       /// @param TException The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2605,7 +2605,7 @@ namespace xtd {
       template<typename TException>
       static void throws(const std::function<void()>& statement, const std::string& message) {throws<TException>(statement, message, line_info());}
       
-      /// @brief Assums that the statement throws a particular exception when called.
+      /// @brief Assumes that the statement throws a particular exception when called.
       /// @param TException The exception type that must be throw.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2626,7 +2626,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -2637,7 +2637,7 @@ namespace xtd {
       /// @endcode
       static void throws_any(const std::function<void()>& statement) {throws_any(statement, "", line_info());}
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param line_info Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2649,7 +2649,7 @@ namespace xtd {
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const xtd::tunit::line_info& line_info) {throws_any(statement, "", line_info);}
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -2661,7 +2661,7 @@ namespace xtd {
       /// @endcode
       static void throws_any(const std::function<void()>& statement, const std::string& message) {throws_any(statement, message, line_info());}
       
-      /// @brief Assums that the staement does not throw an exception.
+      /// @brief Assumes that the staement does not throw an exception.
       /// @param statement The statement that verify.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param line_info Contains information about current file and current line.
