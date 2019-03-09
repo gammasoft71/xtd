@@ -24,7 +24,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case("value", std::string("VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE")); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -35,7 +35,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case("value", std::string("VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -46,7 +46,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case("value", std::string("VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -58,7 +58,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case("value", std::string("VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case("key", std::string("VALUE"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -74,7 +74,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(u"value", std::u16string(u"VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE")); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -85,7 +85,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(u"value", std::u16string(u"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -96,7 +96,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -108,7 +108,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -124,7 +124,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(U"value", std::u32string(U"VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"VALUE")); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -135,7 +135,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(U"value", std::u32string(U"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -146,7 +146,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(U"value", std::u32string(U"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -158,7 +158,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(U"value", std::u32string(U"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"Value"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(U"key", std::u32string(U"Value"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -174,7 +174,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(L"value", std::wstring(L"VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE")); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -185,7 +185,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(L"value", std::wstring(L"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -196,7 +196,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -208,7 +208,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -246,7 +246,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case("key", std::string("VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE")); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -257,7 +257,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case("key", std::string("VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -268,7 +268,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case("key", std::string("VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -280,7 +280,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case("key", std::string("VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case("value", std::string("VALUE"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -296,7 +296,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE")); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -307,7 +307,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -318,7 +318,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -330,7 +330,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"key", std::u16string(u"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(u"value", std::u16string(u"VALUE"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -346,7 +346,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"key", std::u32string(U"VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"value", std::u32string(U"VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"value", std::u32string(U"VALUE")); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -357,7 +357,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal(U"key", std::u32string(U"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal(U"value", std::u32string(U"VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal(U"value", std::u32string(U"VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -368,7 +368,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"key", std::u32string(U"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"value", std::u32string(U"VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"value", std::u32string(U"VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -380,7 +380,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"key", std::u32string(U"vValuealue"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"value", std::u32string(U"Value"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(U"value", std::u32string(U"Value"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -396,7 +396,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE")); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE")); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE")); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
@@ -407,7 +407,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
@@ -418,7 +418,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message..."); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
@@ -430,7 +430,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"key", std::wstring(L"VALUE"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::are_not_equal_ignoring_case(L"value", std::wstring(L"VALUE"), "User message...", line_info_); // test fails.
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -469,7 +469,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s); // test fails
+      /// xtd::tunit::string_valid::contains("z", s); // test fails.
       /// @endcode
       static void contains(const std::string& item, const std::string& string) {contains(item, string, "", line_info());}
       
@@ -481,7 +481,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains("z", s, line_info_); // test fails.
       /// @endcode
       static void contains(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
@@ -493,7 +493,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains("z", s, "User message..."); // test fails.
       /// @endcode
       static void contains(const std::string& item, const std::string& string, const std::string& message) {contains(item, string, message, line_info());}
       
@@ -506,7 +506,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains("z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void contains(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -523,7 +523,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s); // test fails.
       /// @endcode
       static void contains(const std::u16string& item, const std::u16string& string) {contains(item, string, "", line_info());}
       
@@ -535,7 +535,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s, line_info_); // test fails.
       /// @endcode
       static void contains(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
@@ -547,7 +547,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s, "User message..."); // test fails.
       /// @endcode
       static void contains(const std::u16string& item, const std::u16string& string, const std::string& message) {contains(item, string, message, line_info());}
       
@@ -560,7 +560,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void contains(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -577,7 +577,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s); // test fails.
       /// @endcode
       static void contains(const std::u32string& item, const std::u32string& string) {contains(item, string, "", line_info());}
       
@@ -589,7 +589,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s, line_info_); // test fails.
       /// @endcode
       static void contains(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
@@ -601,7 +601,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s, "User message..."); // test fails.
       /// @endcode
       static void contains(const std::u32string& item, const std::u32string& string, const std::string& message) {contains(item, string, message, line_info());}
       
@@ -614,7 +614,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void contains(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -631,7 +631,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s); // test fails.
       /// @endcode
       static void contains(const std::wstring& item, const std::wstring& string) {contains(item, string, "", line_info());}
       
@@ -643,7 +643,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s, line_info_); // test fails.
       /// @endcode
       static void contains(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
@@ -655,7 +655,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s, "User message..."); // test fails.
       /// @endcode
       static void contains(const std::wstring& item, const std::wstring& string, const std::string& message) {contains(item, string, message, line_info());}
       
@@ -668,7 +668,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void contains(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -707,7 +707,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s); // test fails
+      /// xtd::tunit::string_valid::contains("z", s); // test fails.
       /// @endcode
       static void does_not_contain(const std::string& item, const std::string& string) {does_not_contain(item, string, "", line_info());}
       
@@ -719,7 +719,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains("z", s, line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
@@ -731,7 +731,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains("z", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_contain(const std::string& item, const std::string& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
@@ -744,7 +744,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::contains("a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains("z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains("z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -761,7 +761,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s); // test fails.
       /// @endcode
       static void does_not_contain(const std::u16string& item, const std::u16string& string) {does_not_contain(item, string, "", line_info());}
       
@@ -773,7 +773,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s, line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
@@ -785,7 +785,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_contain(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
@@ -798,7 +798,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::contains(u"a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(u"z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(u"z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -815,7 +815,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s); // test fails.
       /// @endcode
       static void does_not_contain(const std::u32string& item, const std::u32string& string) {does_not_contain(item, string, "", line_info());}
       
@@ -827,7 +827,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s, line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
@@ -839,7 +839,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_contain(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
@@ -852,7 +852,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::contains(U"a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(U"z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(U"z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -869,7 +869,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s); // test fails.
       /// @endcode
       static void does_not_contain(const std::wstring& item, const std::wstring& string) {does_not_contain(item, string, "", line_info());}
       
@@ -881,7 +881,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s, line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
@@ -893,7 +893,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_contain(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
@@ -906,7 +906,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::contains(L"a", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::contains(L"z", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::contains(L"z", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_contain(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -945,7 +945,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::starts_width("val", s); // test ok.
-      /// xtd::tunit::string_valid::starts_width("zoe", s); // test fails
+      /// xtd::tunit::string_valid::starts_width("zoe", s); // test fails.
       /// @endcode
       static void starts_width(const std::string& item, const std::string& string) {starts_width(item, string, "", line_info());}
       
@@ -957,7 +957,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::starts_width("val", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width("zoe", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width("zoe", s, line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
@@ -969,7 +969,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::starts_width("val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::starts_width("zoe", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::starts_width("zoe", s, "User message..."); // test fails.
       /// @endcode
       static void starts_width(const std::string& item, const std::string& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
@@ -982,7 +982,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::starts_width("val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width("zoe", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width("zoe", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -999,7 +999,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::starts_width(u"val", s); // test ok.
-      /// xtd::tunit::string_valid::starts_width(u"zoe", s); // test fails
+      /// xtd::tunit::string_valid::starts_width(u"zoe", s); // test fails.
       /// @endcode
       static void starts_width(const std::u16string& item, const std::u16string& string) {starts_width(item, string, "", line_info());}
       
@@ -1011,7 +1011,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::starts_width(u"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width(u"zoe", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width(u"zoe", s, line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
@@ -1023,7 +1023,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::starts_width(u"val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::starts_width(u"zoe", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::starts_width(u"zoe", s, "User message..."); // test fails.
       /// @endcode
       static void starts_width(const std::u16string& item, const std::u16string& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
@@ -1036,7 +1036,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::starts_width(u"val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width(u"zoe", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width(u"zoe", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1053,7 +1053,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::starts_width(U"val", s); // test ok.
-      /// xtd::tunit::string_valid::starts_width(U"zoe", s); // test fails
+      /// xtd::tunit::string_valid::starts_width(U"zoe", s); // test fails.
       /// @endcode
       static void starts_width(const std::u32string& item, const std::u32string& string) {starts_width(item, string, "", line_info());}
       
@@ -1065,7 +1065,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::starts_width(U"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width(U"zoe", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width(U"zoe", s, line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
@@ -1077,7 +1077,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::starts_width(U"val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::starts_width(U"zoe", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::starts_width(U"zoe", s, "User message..."); // test fails.
       /// @endcode
       static void starts_width(const std::u32string& item, const std::u32string& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
@@ -1090,7 +1090,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::starts_width(U"val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width(U"zoe", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width(U"zoe", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1107,7 +1107,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::starts_width(L"val", s); // test ok.
-      /// xtd::tunit::string_valid::starts_width(L"zoe", s); // test fails
+      /// xtd::tunit::string_valid::starts_width(L"zoe", s); // test fails.
       /// @endcode
       static void starts_width(const std::wstring& item, const std::wstring& string) {starts_width(item, string, "", line_info());}
       
@@ -1119,7 +1119,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::starts_width(L"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width(L"zoe", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width(L"zoe", s, line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
@@ -1131,7 +1131,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::starts_width(L"val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::starts_width(L"zoe", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::starts_width(L"zoe", s, "User message..."); // test fails.
       /// @endcode
       static void starts_width(const std::wstring& item, const std::wstring& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
@@ -1144,7 +1144,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::starts_width(L"val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::starts_width(L"zoe", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::starts_width(L"zoe", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void starts_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1183,7 +1183,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_start_width("zoe", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width("val", s); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width("val", s); // test fails.
       /// @endcode
       static void does_not_start_width(const std::string& item, const std::string& string) {does_not_start_width(item, string, "", line_info());}
       
@@ -1195,7 +1195,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_start_width("zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width("val", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width("val", s, line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
@@ -1207,7 +1207,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_start_width("zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width("val", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width("val", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_start_width(const std::string& item, const std::string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
@@ -1220,7 +1220,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_start_width("zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width("val", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width("val", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1237,7 +1237,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_start_width(u"zoe", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(u"val", s); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(u"val", s); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u16string& item, const std::u16string& string) {does_not_start_width(item, string, "", line_info());}
       
@@ -1249,7 +1249,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_start_width(u"zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(u"val", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(u"val", s, line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
@@ -1261,7 +1261,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_start_width(u"zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(u"val", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(u"val", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
@@ -1274,7 +1274,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_start_width(u"zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(u"val", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(u"val", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1291,7 +1291,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_start_width(U"zoe", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(U"val", s); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(U"val", s); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u32string& item, const std::u32string& string) {does_not_start_width(item, string, "", line_info());}
       
@@ -1303,7 +1303,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_start_width(U"zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(U"val", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(U"val", s, line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
@@ -1315,7 +1315,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_start_width(U"zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(U"val", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(U"val", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
@@ -1328,7 +1328,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_start_width(U"zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(U"val", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(U"val", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1345,7 +1345,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_start_width(L"zoe", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(L"val", s); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(L"val", s); // test fails.
       /// @endcode
       static void does_not_start_width(const std::wstring& item, const std::wstring& string) {does_not_start_width(item, string, "", line_info());}
       
@@ -1357,7 +1357,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_start_width(L"zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(L"val", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(L"val", s, line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
@@ -1369,7 +1369,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_start_width(L"zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(L"val", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(L"val", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_start_width(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
@@ -1382,7 +1382,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_start_width(L"zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_start_width(L"val", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_start_width(L"val", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_start_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1421,7 +1421,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::ends_width("val", s); // test ok.
-      /// xtd::tunit::string_valid::ends_width("law", s); // test fails
+      /// xtd::tunit::string_valid::ends_width("law", s); // test fails.
       /// @endcode
       static void ends_width(const std::string& item, const std::string& string) {ends_width(item, string, "", line_info());}
       
@@ -1433,7 +1433,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::ends_width("val", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width("law", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width("law", s, line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
@@ -1445,7 +1445,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::ends_width("val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::ends_width("law", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::ends_width("law", s, "User message..."); // test fails.
       /// @endcode
       static void ends_width(const std::string& item, const std::string& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
@@ -1458,7 +1458,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::ends_width("lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width("law", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width("law", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1475,7 +1475,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::ends_width(u"lue", s); // test ok.
-      /// xtd::tunit::string_valid::ends_width(u"law", s); // test fails
+      /// xtd::tunit::string_valid::ends_width(u"law", s); // test fails.
       /// @endcode
       static void ends_width(const std::u16string& item, const std::u16string& string) {ends_width(item, string, "", line_info());}
       
@@ -1487,7 +1487,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::ends_width(u"lue", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width(u"law", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width(u"law", s, line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
@@ -1499,7 +1499,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::ends_width(u"lue", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::ends_width(u"law", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::ends_width(u"law", s, "User message..."); // test fails.
       /// @endcode
       static void ends_width(const std::u16string& item, const std::u16string& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
@@ -1512,7 +1512,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::ends_width(u"lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width(u"law", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width(u"law", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1529,7 +1529,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::ends_width(U"lue", s); // test ok.
-      /// xtd::tunit::string_valid::ends_width(U"law", s); // test fails
+      /// xtd::tunit::string_valid::ends_width(U"law", s); // test fails.
       /// @endcode
       static void ends_width(const std::u32string& item, const std::u32string& string) {ends_width(item, string, "", line_info());}
       
@@ -1541,7 +1541,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::ends_width(U"lue", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width(U"law", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width(U"law", s, line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
@@ -1553,7 +1553,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::ends_width(U"lue", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::ends_width(U"law", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::ends_width(U"law", s, "User message..."); // test fails.
       /// @endcode
       static void ends_width(const std::u32string& item, const std::u32string& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
@@ -1566,7 +1566,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::ends_width(U"lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width(U"law", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width(U"law", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1583,7 +1583,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::ends_width(L"lue", s); // test ok.
-      /// xtd::tunit::string_valid::ends_width(L"law", s); // test fails
+      /// xtd::tunit::string_valid::ends_width(L"law", s); // test fails.
       /// @endcode
       static void ends_width(const std::wstring& item, const std::wstring& string) {ends_width(item, string, "", line_info());}
       
@@ -1595,7 +1595,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::ends_width(L"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width(L"law", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width(L"law", s, line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
@@ -1607,7 +1607,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::ends_width(L"lue", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::ends_width(L"law", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::ends_width(L"law", s, "User message..."); // test fails.
       /// @endcode
       static void ends_width(const std::wstring& item, const std::wstring& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
@@ -1620,7 +1620,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::ends_width(L"lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::ends_width(L"law", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::ends_width(L"law", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void ends_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1659,7 +1659,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_end_width("law", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width("lue", s); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width("lue", s); // test fails.
       /// @endcode
       static void does_not_end_width(const std::string& item, const std::string& string) {does_not_end_width(item, string, "", line_info());}
       
@@ -1671,7 +1671,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_end_width("law", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width("lue", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width("lue", s, line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
@@ -1683,7 +1683,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_end_width("law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width("lue", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width("lue", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_end_width(const std::string& item, const std::string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
@@ -1696,7 +1696,7 @@ namespace xtd {
       /// @code
       /// std::string s = "value";
       /// xtd::tunit::string_valid::does_not_end_width("law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width("lue", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width("lue", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1713,7 +1713,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_end_width(u"law", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u16string& item, const std::u16string& string) {does_not_end_width(item, string, "", line_info());}
       
@@ -1725,7 +1725,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_end_width(u"law", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s, line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
@@ -1737,7 +1737,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_end_width(u"law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
@@ -1750,7 +1750,7 @@ namespace xtd {
       /// @code
       /// std::u16string s = u"value";
       /// xtd::tunit::string_valid::does_not_end_width(u"law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(u"lue", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1767,7 +1767,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_end_width(U"law", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u32string& item, const std::u32string& string) {does_not_end_width(item, string, "", line_info());}
       
@@ -1779,7 +1779,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_end_width(U"law", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s, line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
@@ -1791,7 +1791,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_end_width(U"law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
@@ -1804,7 +1804,7 @@ namespace xtd {
       /// @code
       /// std::u32string s = U"value";
       /// xtd::tunit::string_valid::does_not_end_width(U"law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(U"lue", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1821,7 +1821,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_end_width(L"law", s); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s); // test fails.
       /// @endcode
       static void does_not_end_width(const std::wstring& item, const std::wstring& string) {does_not_end_width(item, string, "", line_info());}
       
@@ -1833,7 +1833,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_end_width(L"law", s, line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s, line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s, line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
@@ -1845,7 +1845,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_end_width(L"law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s, "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s, "User message..."); // test fails.
       /// @endcode
       static void does_not_end_width(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
@@ -1858,7 +1858,7 @@ namespace xtd {
       /// @code
       /// std::wstring s = L"value";
       /// xtd::tunit::string_valid::does_not_end_width(L"law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s, "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_end_width(L"lue", s, "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_end_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1896,7 +1896,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches("^Hello", std::string("Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::matches("^Salut", std::string("Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::matches("^Salut", std::string("Hello, World!")); // test fails.
       /// @endcode
       static void matches(const std::string& regex_pattern, const std::string& actual) {matches(regex_pattern, actual, "", line_info());}
       
@@ -1907,7 +1907,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches("^Hello", std::string("Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches("^Salut", std::string("Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::matches("^Salut", std::string("Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void matches(const std::string& regex_pattern, const std::string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
@@ -1918,7 +1918,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches("^Hello", std::string("Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::matches("^Salut", std::string("Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::matches("^Salut", std::string("Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void matches(const std::string& regex_pattern, const std::string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
@@ -1930,7 +1930,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches("^Hello", "Hello, World!", std::string("User message..."), line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches("^Salut", "Hello, World!", std::string("User message..."), line_info_); // test fails
+      /// xtd::tunit::string_valid::matches("^Salut", "Hello, World!", std::string("User message..."), line_info_); // test fails.
       /// @endcode
       static void matches(const std::string& regex_pattern, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1947,7 +1947,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(u"^Hello", std::u16string(u"Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::matches(u"^Salut", std::u16string(u"Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::matches(u"^Salut", std::u16string(u"Hello, World!")); // test fails.
       /// @endcode
       static void matches(const std::u16string& regex_pattern, const std::u16string& actual) {matches(regex_pattern, actual, "", line_info());}
       
@@ -1958,7 +1958,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(u"^Hello", std::u16string(u"Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches(u"^Salut",std::u16string(u "Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::matches(u"^Salut",std::u16string(u "Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
@@ -1969,7 +1969,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(u"^Hello", std::u16string(u"Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::matches(u"^Salut", std::u16string(u"Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::matches(u"^Salut", std::u16string(u"Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
@@ -1981,7 +1981,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(u"^Hello", std::u16string(u"Hello, World!"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches(u"^Salut", std::u16string(u"Hello, World!"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::matches(u"^Salut", std::u16string(u"Hello, World!"), "User message...", line_info_); // test fails.
       /// @endcode
       static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -1997,7 +1997,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(U"^Hello", std::u32string(U"Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!")); // test fails.
       /// @endcode
       static void matches(const std::u32string& regex_pattern, const std::u32string& actual) {matches(regex_pattern, actual, "", line_info());}
       
@@ -2008,7 +2008,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(U"^Hello", std::u32string(U"Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
@@ -2019,7 +2019,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(U"^Hello", std::u32string(U"Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
@@ -2031,7 +2031,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(U"^Hello", std::u32string(U"Hello, World!"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::matches(U"^Salut", std::u32string(U"Hello, World!"), "User message...", line_info_); // test fails.
       /// @endcode
       static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -2048,7 +2048,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(L"^Hello", std::wstring(L"Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!")); // test fails.
       /// @endcode
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual) {matches(regex_pattern, actual, "", line_info());}
       
@@ -2059,7 +2059,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(L"^Hello", std::wstring(L"Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
@@ -2070,7 +2070,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(L"^Hello", std::wstring(L"Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
@@ -2082,7 +2082,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::matches(L"^Hello", std::wstring(L"Hello, World!"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::matches(L"^Salut", std::wstring(L"Hello, World!"), "User message...", line_info_); // test fails.
       /// @endcode
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -2122,7 +2122,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match("^Salut", std::string("Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::does_not_match("^Hello", std::string("Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::does_not_match("^Hello", std::string("Hello, World!")); // test fails.
       /// @endcode
       static void does_not_match(const std::string& regex_pattern, const std::string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
@@ -2133,7 +2133,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match("^Salut", std::string("Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match("^Hello", std::string("Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match("^Hello", std::string("Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::string& regex_pattern, const std::string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
@@ -2144,7 +2144,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match("^Salut", std::string("Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_match("^Hello", std::string("Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_match("^Hello", std::string("Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void does_not_match(const std::string& regex_pattern, const std::string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
@@ -2156,7 +2156,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match("^Salut", "Hello, World!", std::string("User message..."), line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match("^Hello", "Hello, World!", std::string("User message..."), line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match("^Hello", "Hello, World!", std::string("User message..."), line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::string& regex_pattern, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -2174,7 +2174,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(u"^Salut", std::u16string(u"Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(u"^Hello", std::u16string(u"Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::does_not_match(u"^Hello", std::u16string(u"Hello, World!")); // test fails.
       /// @endcode
       static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
@@ -2185,7 +2185,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(u"^Salut", std::u16string(u"Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(u"^Hello",std::u16string(u "Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match(u"^Hello",std::u16string(u "Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
@@ -2196,7 +2196,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(u"^Salut", std::u16string(u"Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(u"^Hello", std::u16string(u"Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_match(u"^Hello", std::u16string(u"Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
@@ -2208,7 +2208,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(u"^Salut", std::u16string(u"Hello, World!"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(u"^Hello", std::u16string(u"Hello, World!"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match(u"^Hello", std::u16string(u"Hello, World!"), "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -2224,7 +2224,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(U"^Salut", std::u32string(U"Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!")); // test fails.
       /// @endcode
       static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
@@ -2235,7 +2235,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(U"^Salut", std::u32string(U"Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
@@ -2246,7 +2246,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(U"^Salut", std::u32string(U"Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
@@ -2258,7 +2258,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match(U"^Hello", std::u32string(U"Hello, World!"), "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
@@ -2275,7 +2275,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(L"^Salut", std::wstring(L"Hello, World!")); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!")); // test fails
+      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!")); // test fails.
       /// @endcode
       static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
@@ -2286,7 +2286,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(L"^Salut", std::wstring(L"Hello, World!"), line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
@@ -2297,7 +2297,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(L"^Salut", std::wstring(L"Hello, World!"), "User message..."); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), "User message..."); // test fails
+      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), "User message..."); // test fails.
       /// @endcode
       static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
@@ -2309,7 +2309,7 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// xtd::tunit::string_valid::does_not_match(L"^Salut", std::wstring(L"Hello, World!"), "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), "User message...", line_info_); // test fails
+      /// xtd::tunit::string_valid::does_not_match(L"^Hello", std::wstring(L"Hello, World!"), "User message...", line_info_); // test fails.
       /// @endcode
       static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {

@@ -15,6 +15,7 @@
 #include "class_event_args.hpp"
 #include "class_initialize_attribute.hpp"
 #include "collection_assert.hpp"
+#include "collection_assume.hpp"
 #include "collection_valid.hpp"
 #include "console_unit_test.hpp"
 #include "default_insert_basic_ostream_operator.hpp"
