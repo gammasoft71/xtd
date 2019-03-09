@@ -59,7 +59,7 @@
 | string_assum     | class | ![progress100](pictures/progress100.png) |
 | collection_assum | class | ![progress100](pictures/progress100.png) |
 | file_assum       | class | ![progress100](pictures/progress100.png) |
-| directory_assum  | class | ![progress100](pictures/progress0.png) |
+| directory_assum  | class | ![progress100](pictures/progress75.png)  |
 
 # settings :
 | Name     | Type  | Status                                   |

@@ -21,6 +21,7 @@
 #include "default_insert_basic_ostream_operator.hpp"
 #include "default_main.hpp"
 #include "directory_assert.hpp"
+#include "directory_assume.hpp"
 #include "directory_valid.hpp"
 #include "event_listener.hpp"
 #include "file_assert.hpp"
