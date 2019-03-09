@@ -21,6 +21,7 @@
 #include "directory_assert.hpp"
 #include "event_listener.hpp"
 #include "file_assert.hpp"
+#include "file_valid.hpp"
 #include "ignore_error.hpp"
 #include "line_info.hpp"
 #include "ostream_event_listener.hpp"
