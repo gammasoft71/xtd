@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::tunit::assert class.
+/// @brief Contains xtd::tunit::collection_assert class.
 #pragma once
 #include "assert.hpp"
 
