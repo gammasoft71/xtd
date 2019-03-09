@@ -236,25 +236,25 @@
 
 ### String assume :
 
-![todo](pictures/todo.png) are equal ignoring case
+![added](pictures/added.png) are equal ignoring case
 
-![todo](pictures/todo.png) are not equal ignoring case
+![added](pictures/added.png) are not equal ignoring case
 
-![todo](pictures/todo.png) contains
+![added](pictures/added.png) contains
 
-![todo](pictures/todo.png) does not contain
+![added](pictures/added.png) does not contain
 
-![todo](pictures/todo.png) starts width
+![added](pictures/added.png) starts width
 
-![todo](pictures/todo.png) does not start width
+![added](pictures/added.png) does not start width
 
-![todo](pictures/todo.png) ends width
+![added](pictures/added.png) ends width
 
-![todo](pictures/todo.png) does not end width
+![added](pictures/added.png) does not end width
 
-![todo](pictures/todo.png) matches
+![added](pictures/added.png) matches
 
-![todo](pictures/todo.png) does not match
+![added](pictures/added.png) does not match
 
 ### Collection assume :
 

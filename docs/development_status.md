@@ -53,10 +53,10 @@
 
 # Assumptions :
 
-| Name             | Type  | Status                                 |
-|------------------|-------|----------------------------------------|
-| assum            | class | ![progress100](pictures/progress0.png) |
-| string_assum     | class | ![progress100](pictures/progress0.png) |
+| Name             | Type  | Status                                   |
+|------------------|-------|------------------------------------------|
+| assum            | class | ![progress100](pictures/progress100.png) |
+| string_assum     | class | ![progress100](pictures/progress100.png) |
 | collection_assum | class | ![progress100](pictures/progress0.png) |
 | file_assum       | class | ![progress100](pictures/progress0.png) |
 | directory_assum  | class | ![progress100](pictures/progress0.png) |

@@ -31,6 +31,7 @@
 #include "registered_test_class.hpp"
 #include "settings.hpp"
 #include "string_assert.hpp"
+#include "string_assume.hpp"
 #include "string_valid.hpp"
 #include "test.hpp"
 #include "test_class.hpp"
