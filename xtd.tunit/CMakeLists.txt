@@ -13,6 +13,7 @@ set(INCLUDES
   include/xtd/class_event_args.hpp
   include/xtd/class_initialize_attribute.hpp
   include/xtd/collection_assert.hpp
+  include/xtd/collection_valid.hpp
   include/xtd/console_unit_test.hpp
   include/xtd/default_insert_basic_ostream_operator.hpp
   include/xtd/default_main.hpp
@@ -50,6 +51,7 @@ set(SOURCES
   src/assert.cpp
   src/test.cpp
   src/test_class.cpp
+  src/valid.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})

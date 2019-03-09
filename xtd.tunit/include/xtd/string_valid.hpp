@@ -18,7 +18,7 @@ namespace xtd {
       string_valid() = delete;
       /// @endcond
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -28,7 +28,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -39,7 +39,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -50,7 +50,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -68,7 +68,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -78,7 +78,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -89,7 +89,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -100,7 +100,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -118,7 +118,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -128,7 +128,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are equal.
+      /// @brief Valids that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -139,7 +139,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -150,7 +150,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are equal.
+      /// @brief Valids that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -168,7 +168,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -178,7 +178,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual) {are_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -189,7 +189,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -200,7 +200,7 @@ namespace xtd {
       /// @endcode
       static void are_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message) {are_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are equal ignoring case.
+      /// @brief Valids that two type are equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -240,7 +240,7 @@ namespace xtd {
       static void are_equal_ignoring_case(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_equal_ignoring_case(std::wstring(expected), std::wstring(actual), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -250,7 +250,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -261,7 +261,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -272,7 +272,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::string& expected, const std::string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -290,7 +290,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -300,7 +300,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -311,7 +311,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -322,7 +322,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u16string& expected, const std::u16string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -340,7 +340,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -350,7 +350,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -361,7 +361,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -372,7 +372,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::u32string& expected, const std::u32string& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -390,7 +390,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @par Examples
@@ -400,7 +400,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual) {are_not_equal_ignoring_case(expected, actual, "", line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -411,7 +411,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(expected, actual, "", line_info);}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -422,7 +422,7 @@ namespace xtd {
       /// @endcode
       static void are_not_equal_ignoring_case(const std::wstring& expected, const std::wstring& actual, const std::string& message) {are_not_equal_ignoring_case(expected, actual, message, line_info());}
       
-      /// @brief Valid that two type are not equal ignoring case.
+      /// @brief Valids that two type are not equal ignoring case.
       /// @param expected the expected value.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -462,7 +462,7 @@ namespace xtd {
       static void are_not_equal_ignoring_case(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {are_not_equal_ignoring_case(std::wstring(expected), std::wstring(actual), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -473,7 +473,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::string& item, const std::string& string) {contains(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -485,7 +485,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -497,7 +497,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::string& item, const std::string& string, const std::string& message) {contains(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -516,7 +516,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -527,7 +527,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::u16string& item, const std::u16string& string) {contains(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -539,7 +539,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -551,7 +551,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::u16string& item, const std::u16string& string, const std::string& message) {contains(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -570,7 +570,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -581,7 +581,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::u32string& item, const std::u32string& string) {contains(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -593,7 +593,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -605,7 +605,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::u32string& item, const std::u32string& string, const std::string& message) {contains(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -624,7 +624,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -635,7 +635,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::wstring& item, const std::wstring& string) {contains(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -647,7 +647,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {contains(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -659,7 +659,7 @@ namespace xtd {
       /// @endcode
       static void contains(const std::wstring& item, const std::wstring& string, const std::string& message) {contains(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -700,7 +700,7 @@ namespace xtd {
       static void contains(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {contains(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -711,7 +711,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::string& item, const std::string& string) {does_not_contain(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -723,7 +723,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -735,7 +735,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::string& item, const std::string& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -754,7 +754,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -765,7 +765,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::u16string& item, const std::u16string& string) {does_not_contain(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -777,7 +777,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -789,7 +789,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -808,7 +808,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -819,7 +819,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::u32string& item, const std::u32string& string) {does_not_contain(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -831,7 +831,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -843,7 +843,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -862,7 +862,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -873,7 +873,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::wstring& item, const std::wstring& string) {does_not_contain(item, string, "", line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -885,7 +885,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_contain(item, string, "", line_info);}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -897,7 +897,7 @@ namespace xtd {
       /// @endcode
       static void does_not_contain(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_contain(item, string, message, line_info());}
       
-      /// @brief Valid that string contains an item.
+      /// @brief Valids that string contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -938,7 +938,7 @@ namespace xtd {
       static void does_not_contain(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_contain(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -949,7 +949,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::string& item, const std::string& string) {starts_width(item, string, "", line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -961,7 +961,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -973,7 +973,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::string& item, const std::string& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -992,7 +992,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1003,7 +1003,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::u16string& item, const std::u16string& string) {starts_width(item, string, "", line_info());}
       
-      /// @brief Valid that srinbg start width item.
+      /// @brief Valids that srinbg start width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1015,7 +1015,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1027,7 +1027,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::u16string& item, const std::u16string& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1046,7 +1046,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1057,7 +1057,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::u32string& item, const std::u32string& string) {starts_width(item, string, "", line_info());}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1069,7 +1069,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1081,7 +1081,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::u32string& item, const std::u32string& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1100,7 +1100,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1111,7 +1111,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::wstring& item, const std::wstring& string) {starts_width(item, string, "", line_info());}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1123,7 +1123,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1135,7 +1135,7 @@ namespace xtd {
       /// @endcode
       static void starts_width(const std::wstring& item, const std::wstring& string, const std::string& message) {starts_width(item, string, message, line_info());}
       
-      /// @brief Valid that string starts witdh item.
+      /// @brief Valids that string starts witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1176,7 +1176,7 @@ namespace xtd {
       static void starts_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_width(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
 
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1187,7 +1187,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::string& item, const std::string& string) {does_not_start_width(item, string, "", line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1199,7 +1199,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1211,7 +1211,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::string& item, const std::string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1230,7 +1230,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1241,7 +1241,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::u16string& item, const std::u16string& string) {does_not_start_width(item, string, "", line_info());}
       
-      /// @brief Valid that srinbg start width item.
+      /// @brief Valids that srinbg start width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1253,7 +1253,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1265,7 +1265,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1284,7 +1284,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1295,7 +1295,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::u32string& item, const std::u32string& string) {does_not_start_width(item, string, "", line_info());}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1307,7 +1307,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1319,7 +1319,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1338,7 +1338,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1349,7 +1349,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::wstring& item, const std::wstring& string) {does_not_start_width(item, string, "", line_info());}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1361,7 +1361,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1373,7 +1373,7 @@ namespace xtd {
       /// @endcode
       static void does_not_start_width(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
       
-      /// @brief Valid that string does noy start witdh item.
+      /// @brief Valids that string does noy start witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1414,7 +1414,7 @@ namespace xtd {
       static void does_not_start_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_width(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1425,7 +1425,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::string& item, const std::string& string) {ends_width(item, string, "", line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1437,7 +1437,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1449,7 +1449,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::string& item, const std::string& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1468,7 +1468,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1479,7 +1479,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::u16string& item, const std::u16string& string) {ends_width(item, string, "", line_info());}
       
-      /// @brief Valid that srinbg start width item.
+      /// @brief Valids that srinbg start width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1491,7 +1491,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1503,7 +1503,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::u16string& item, const std::u16string& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1522,7 +1522,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1533,7 +1533,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::u32string& item, const std::u32string& string) {ends_width(item, string, "", line_info());}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1545,7 +1545,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1557,7 +1557,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::u32string& item, const std::u32string& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1576,7 +1576,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1587,7 +1587,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::wstring& item, const std::wstring& string) {ends_width(item, string, "", line_info());}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1599,7 +1599,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1611,7 +1611,7 @@ namespace xtd {
       /// @endcode
       static void ends_width(const std::wstring& item, const std::wstring& string, const std::string& message) {ends_width(item, string, message, line_info());}
       
-      /// @brief Valid that string ends witdh item.
+      /// @brief Valids that string ends witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1652,7 +1652,7 @@ namespace xtd {
       static void ends_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_width(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1663,7 +1663,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::string& item, const std::string& string) {does_not_end_width(item, string, "", line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1675,7 +1675,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1687,7 +1687,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::string& item, const std::string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1706,7 +1706,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string starts width item.
+      /// @brief Valids that string starts width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1717,7 +1717,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::u16string& item, const std::u16string& string) {does_not_end_width(item, string, "", line_info());}
       
-      /// @brief Valid that srinbg start width item.
+      /// @brief Valids that srinbg start width item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1729,7 +1729,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1741,7 +1741,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1760,7 +1760,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1771,7 +1771,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::u32string& item, const std::u32string& string) {does_not_end_width(item, string, "", line_info());}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1783,7 +1783,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1795,7 +1795,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1814,7 +1814,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @par Examples
@@ -1825,7 +1825,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::wstring& item, const std::wstring& string) {does_not_end_width(item, string, "", line_info());}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1837,7 +1837,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1849,7 +1849,7 @@ namespace xtd {
       /// @endcode
       static void does_not_end_width(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
       
-      /// @brief Valid that string does not end witdh item.
+      /// @brief Valids that string does not end witdh item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1890,7 +1890,7 @@ namespace xtd {
       static void does_not_end_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_width(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -1900,7 +1900,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::string& regex_pattern, const std::string& actual) {matches(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -1911,7 +1911,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::string& regex_pattern, const std::string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1922,7 +1922,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::string& regex_pattern, const std::string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1941,7 +1941,7 @@ namespace xtd {
       }
       /** @todo : when std::regex ready: remove this comment.
        
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -1951,7 +1951,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::u16string& regex_pattern, const std::u16string& actual) {matches(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -1962,7 +1962,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1973,7 +1973,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1991,7 +1991,7 @@ namespace xtd {
         }
       }
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -2001,7 +2001,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::u32string& regex_pattern, const std::u32string& actual) {matches(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -2012,7 +2012,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2023,7 +2023,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2042,7 +2042,7 @@ namespace xtd {
       }
 */
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -2052,7 +2052,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual) {matches(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -2063,7 +2063,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const xtd::tunit::line_info& line_info) {matches(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2074,7 +2074,7 @@ namespace xtd {
       /// @endcode
       static void matches(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message) {matches(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that matches regex patern.
+      /// @brief Valids that matches regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2116,7 +2116,7 @@ namespace xtd {
       static void matches(const wchar_t* regex_pattern, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {matches(std::wstring(regex_pattern), std::wstring(actual), message, line_info);}
       /// @endcond
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -2126,7 +2126,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::string& regex_pattern, const std::string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -2137,7 +2137,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::string& regex_pattern, const std::string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2148,7 +2148,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::string& regex_pattern, const std::string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2168,7 +2168,7 @@ namespace xtd {
 
       /** @todo : when std::regex ready: remove this comment.
 
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -2178,7 +2178,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -2189,7 +2189,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2200,7 +2200,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::u16string& regex_pattern, const std::u16string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2218,7 +2218,7 @@ namespace xtd {
        }
       }
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -2228,7 +2228,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -2239,7 +2239,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2250,7 +2250,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::u32string& regex_pattern, const std::u32string& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2269,7 +2269,7 @@ namespace xtd {
       }
 */
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @par Examples
@@ -2279,7 +2279,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual) {does_not_match(regex_pattern, actual, "", line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param line_info Contains information about current file and current line.
@@ -2290,7 +2290,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const xtd::tunit::line_info& line_info) {does_not_match(regex_pattern, actual, "", line_info);}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -2301,7 +2301,7 @@ namespace xtd {
       /// @endcode
       static void does_not_match(const std::wstring& regex_pattern, const std::wstring& actual, const std::string& message) {does_not_match(regex_pattern, actual, message, line_info());}
       
-      /// @brief Valid that does not match regex patern.
+      /// @brief Valids that does not match regex patern.
       /// @param regex_pattern the regex patern.
       /// @param actual the actual value.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
