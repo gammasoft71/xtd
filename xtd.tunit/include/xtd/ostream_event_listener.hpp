@@ -34,6 +34,14 @@ namespace xtd {
         this->os_ << std::endl;
         if (e.test().message() != "")
           this->os_ << "    " << e.test().message() << std::endl;
+        if (e.test().expect() != "")
+          this->os_ << "    Expected: " << e.test().expect() << std::endl;
+        if (e.test().actual() != "")
+          this->os_ << "    But was:  " << e.test().actual() << std::endl;
+        if ((e.test().expect() != "" || e.test().actual() != "") && e.test().line_info() != xtd::tunit::line_info::empty()) {
+          this->os_ << "    Stack Trace: in " << e.test().line_info().file_path();
+          if (e.test().line_info().line_number() != 0) this->os_ << ":" << e.test().line_info().line_number();
+        }
       }
 
       /// @brief Occurs when test is failed.
@@ -88,7 +96,7 @@ namespace xtd {
         this->os_ << std::endl;
         if (e.test().message() != "")
           this->os_ << "    " << e.test().message() << std::endl;
-     }
+      }
       
       /// @brief Occurs when unit test is ended.
       /// @param tunit_event_args Contains unit test event parameters.

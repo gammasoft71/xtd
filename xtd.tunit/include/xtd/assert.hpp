@@ -28,15 +28,20 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @cond
+    class assume;
     class collection_assert;
-    class directory_assert;
-    class file_assert;
-    class string_assert;
-    class valid;
+    class collection_assume;
     class collection_valid;
+    class directory_assert;
+    class directory_assume;
     class directory_valid;
+    class file_assert;
+    class file_assume;
     class file_valid;
+    class string_assert;
+    class string_assume;
     class string_valid;
+    class valid;
     /// @endcond
     
     /// @brief The assert class contains a collection of static methods that implement the most common assertions used in xtd::tUnit.
@@ -2802,15 +2807,20 @@ namespace xtd {
       }
       
     private:
+      friend class assume;
       friend class collection_assert;
-      friend class directory_assert;
-      friend class file_assert;
-      friend class string_assert;
-      friend class valid;
+      friend class collection_assume;
       friend class collection_valid;
+      friend class directory_assert;
+      friend class directory_assume;
       friend class directory_valid;
+      friend class file_assert;
+      friend class file_assume;
       friend class file_valid;
+      friend class string_assert;
+      friend class string_assume;
       friend class string_valid;
+      friend class valid;
       static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
     };
   }

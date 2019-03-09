@@ -9,6 +9,7 @@ set(INCLUDES
   include/xtd/abort_error.hpp
   include/xtd/assert.hpp
   include/xtd/assert_error.hpp
+  include/xtd/assume.hpp
   include/xtd/class_cleanup_attribute.hpp
   include/xtd/class_event_args.hpp
   include/xtd/class_initialize_attribute.hpp
