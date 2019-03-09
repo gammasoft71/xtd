@@ -39,7 +39,7 @@
 | string_assert     | class | ![progress100](pictures/progress100.png) |
 | collection_assert | class | ![progress100](pictures/progress100.png) |
 | file_assert       | class | ![progress100](pictures/progress100.png) |
-| directory_assert  | class | ![progress100](pictures/progress75.png)  |
+| directory_assert  | class | ![progress100](pictures/progress100.png) |
 
 # Validations :
 
@@ -49,7 +49,7 @@
 | string_valid     | class | ![progress100](pictures/progress100.png) |
 | collection_valid | class | ![progress100](pictures/progress100.png) |
 | file_valid       | class | ![progress100](pictures/progress100.png) |
-| directory_valid  | class | ![progress100](pictures/progress75.png)  |
+| directory_valid  | class | ![progress100](pictures/progress100.png) |
 
 # Assumptions :
 
@@ -59,7 +59,7 @@
 | string_assum     | class | ![progress100](pictures/progress100.png) |
 | collection_assum | class | ![progress100](pictures/progress100.png) |
 | file_assum       | class | ![progress100](pictures/progress100.png) |
-| directory_assum  | class | ![progress100](pictures/progress75.png)  |
+| directory_assum  | class | ![progress100](pictures/progress100.png) |
 
 # settings :
 | Name     | Type  | Status                                   |
