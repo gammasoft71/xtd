@@ -42,9 +42,9 @@
 
 ### Directory assert :
 
-![todo](pictures/todo.png) are equal
+![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are not equal
+![added](pictures/added.png) are not equal
 
 ![added](pictures/added.png) exists
 
@@ -168,9 +168,9 @@
 
 ### Directory valid :
 
-![todo](pictures/todo.png) are equal
+![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are not equal
+![added](pictures/added.png) are not equal
 
 ![added](pictures/added.png) exists
 
@@ -294,9 +294,9 @@
 
 ### Directory assume :
 
-![todo](pictures/todo.png) are equal
+![added](pictures/added.png) are equal
 
-![todo](pictures/todo.png) are not equal
+![added](pictures/added.png) are not equal
 
 ![added](pictures/added.png) exists
 

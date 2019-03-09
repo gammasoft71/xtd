@@ -18,7 +18,7 @@ namespace xtd {
       directory_assert() = delete;
       /// @endcond
       
-      /*
+#if defined(__cpp_lib_filesystem)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -55,7 +55,7 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message..."); // test ok.
       /// xtd::tunit::file_assert::are_equal(d1, d2, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void are_equal(const sstd::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
+      static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_equal(expected, actual, message, line_info());}
       
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
@@ -136,7 +136,7 @@ namespace xtd {
         else
           assert::succeed(message, line_info);
       }
-      */
+#endif
       
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
