@@ -253,7 +253,7 @@ int main(int argc, char* argv[]) {
 
 #### Remarques
 
-Some functions are templates, in this case the template parameter becomes the first parameter of the helper.
+Some functions are template, in this case the template parameter becomes the first parameter of the helper.
 
 example without helper : 
 
@@ -269,9 +269,45 @@ assert::is_instance_of_(std::ios_base, stream);
 
 ## Assertions
 
+Assertions are central to unit testing in any of the xUnit frameworks, and xtd.tunit is no exception. xtd.tunit provides a rich set of assertions as static methods of the Assert class.
+
+If an assertion fails, the method call does not return and an error is reported. If a test contains multiple assertions, any that follow the one that failed will not be executed. For this reason, it's usually best to try for one assertion per test.
+
+Each method may be called without a message, with a simple text message or with a message and arguments. In the last case the message is formatted using the provided text and arguments.
+
+Assertions make use with the following static classes :
+
+* assert
+* string_assert
+* collection_assert
+* file_assert
+* directory_assert.
+
 ## Validations
 
+Validations are the same as assertions with the difference, no exception is throwed but an error is generate. 
+
+If a validation fails, he test can be continue to the end or to an assertion is generate.
+
+Validations make use with the following static classes :
+
+* valid
+* string_avalid
+* collection_valid
+* file_valid
+*directory_valid.
+
 ## Assumptions
+
+Assumptions are intended to express the state a test must be in to provide a meaningful result. They are functionally similar to assertions, however a unmet assumption will produce an aborted test result, as opposed to a failure.
+
+Assumptions make use with the following static classes :
+
+* assume
+* string_assume
+* collection_assume
+* file_assume
+*directory_assume.
 
 ## Initialize and Cleanup
 
