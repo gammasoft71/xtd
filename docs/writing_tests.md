@@ -354,7 +354,7 @@ Validations make use with the following static classes :
 * string_avalid
 * collection_valid
 * file_valid
-*directory_valid.
+* directory_valid.
 
 ### Example
 
@@ -375,7 +375,7 @@ Assumptions make use with the following static classes :
 * string_assume
 * collection_assume
 * file_assume
-*directory_assume.
+* directory_assume.
 
 ### Example
 
