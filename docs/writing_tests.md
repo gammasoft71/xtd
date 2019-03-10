@@ -193,7 +193,17 @@ int main() {
 For each assertion, validation or assumption test method, the last parameter is line_info class that contains current informations.
 To add automatically line_info, helpers are create. Add '_' at the end of test method member to used helper.
 
-exemple : assert::contains(...) -> assert::contains_(...), string_valid::are_equal_ignoring_case(...) -> string_valid::are_equal_ignoring_case_(...), ...
+exemple wirthout helper :
+```c++
+assert::contains('a', str, line_info_);
+string_valid::are_equal_ignoring_case("value", str, line_linfo_);
+```
+
+example with helper :
+```c++
+assert::contains_('a', str);
+string_valid::are_equal_ignoring_case_("value");
+```
 
 The following example shows hot to call are_equal assertion tests with helper :
 
@@ -239,6 +249,22 @@ namespace unit_tests {
 int main(int argc, char* argv[]) {
   return console_unit_test(argv, argc).run();
 }
+```
+
+#### Remarques
+
+Some functions are templates, in this case the template parameter becomes the first parameter of the helper.
+
+example without helper : 
+
+```c++
+assert::is_instance_of<std::ios_base>(stream, line_info_);
+```
+
+example with helper :
+
+```c++
+assert::is_instance_of_(std::ios_base, stream);
 ```
 
 ## Assertions
