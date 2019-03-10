@@ -37,6 +37,7 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "find_package(xtd.io REQUIRED)\n"
   "find_package(xtd.properties REQUIRED)\n"
   "find_package(xtd.strings REQUIRED)\n"
+  "find_package(xtd.tunit REQUIRED)\n"
   "\n"
   "get_filename_component(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
   "get_filename_component(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\" ABSOLUTE)\n"
