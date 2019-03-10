@@ -1,6 +1,6 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.tunit) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
-# Test class (xtd::tunit::test_class)
+# Test class (test_class)
 
 This is the inherited class that marks a class that contains tests and, optionally, setup or teardown methods.
 
