@@ -67,16 +67,16 @@ int main(int argc, char* argv[]) {
 
 xtd.tunit uses custom helpers to identify test fixtures and test methods. It's the easy way to create tests.
 
-| helpers                            | Usage                                                                                                                            |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| test_class_(class_name)            | Is used to define the class (test fixture) wtih class_name name.                                                                 |
-| class_initialize_(initialize_name) | Is used to define class initialize method with initialize_name name.                                                             |
-| class_cleanup_(cleanup_name).      | Is used to define class cleanup method with cleanup_name name.                                                                   |
-| test_initialize_(initialize_name)  | Is used to define test initialize method with initialize_name name.                                                              |
-| test_cleanup_(cleanup_name)        | Is used to define test cleanup method with cleanup_name name.                                                                    |
-| test_method_(method_name)          | Is used to define test method (test case) with method_name name.                                                                 |
-| ingore_test_method_(method_name)   | Is used to define ignored test method (test case) with method_name name.                                                         |
-| line_info_                         | Is used to create a xtd::tunit::line_info class initialized with current method name, current file name and current line number. |
+| helpers                                                   | Usage                                                                                                                            |
+|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| [test_class_(class_name)](test_class.md)                  | Is used to define the class (test fixture) wtih class_name name.                                                                 |
+| [class_initialize_(initialize_name)](class_initialize.md) | Is used to define class initialize method with initialize_name name.                                                             |
+| [class_cleanup_(cleanup_name)](class_cleanup.md)          | Is used to define class cleanup method with cleanup_name name.                                                                   |
+| [test_initialize_(initialize_name)](test_initialize.md)   | Is used to define test initialize method with initialize_name name.                                                              |
+| [test_cleanup_(cleanup_name)](test_cleanup.md)            | Is used to define test cleanup method with cleanup_name name.                                                                    |
+| [test_method_(method_name)](test_method.md)               | Is used to define test method (test case) with method_name name.                                                                 |
+| [ingore_test_method_(method_name)](ingore_test_method.md) | Is used to define ignored test method (test case) with method_name name.                                                         |
+| [line_info_](line_info.md)                                | Is used to create a xtd::tunit::line_info class initialized with current method name, current file name and current line number. |
 
 ### Examples
 
