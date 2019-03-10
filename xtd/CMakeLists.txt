@@ -34,6 +34,7 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "\n"
   "find_package(xtd.console REQUIRED)\n"
   "find_package(xtd.delegates REQUIRED)\n"
+  "find_package(xtd.io REQUIRED)\n"
   "find_package(xtd.properties REQUIRED)\n"
   "find_package(xtd.strings REQUIRED)\n"
   "\n"
