@@ -4,6 +4,7 @@
 
 ## In This Section
 
+* [Namespace](#namespace)
 * [Helpers](#helpers)
 * [Assertions](#assertions)
 * [Validations](#validations)
@@ -12,6 +13,55 @@
 * [Test case](#test-case)
 * [Test class](#test-class)
 * [Test](#test)
+
+## Namespace
+
+xtd.tunit has a unqiue namespace : ***xtd::tunit***.
+
+This example show how to use xtd.tunit with using namespace:
+
+```c++
+#include <xtd/tunit>
+
+using namespace xtd::tunit;
+
+namespace unit_tests {
+  class test_class_(test) {
+  public:
+    // Test case 1
+    void test_method_(test_case1) {
+      assert::is_true(2 + 2 == 4);
+    }
+  };
+}
+
+
+int main(int argc, char* argv[]) {
+  return console_unit_test(argv, argc).run();
+}
+```
+
+
+This example show how to use xtd.tunit without using namespace:
+
+```c++
+#include <xtd/tunit>
+
+namespace unit_tests {
+  class test_class_(test) {
+  public:
+    // Test case 1
+    void test_method_(test_case1) {
+      xtd::tunit::assert::is_true(2 + 2 == 4);
+    }
+  };
+}
+
+
+int main(int argc, char* argv[]) {
+  return xtd::tunit::console_unit_test(argv, argc).run();
+}
+```
 
 ## Helpers
 
