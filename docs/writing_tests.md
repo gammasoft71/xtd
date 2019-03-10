@@ -190,8 +190,10 @@ int main() {
 
 ### More helpers
 
-For each assertion, validation or assumption test, the last parameter is line_info class that contains current informations.
-To simplify the code helpers are create.
+For each assertion, validation or assumption test method, the last parameter is line_info class that contains current informations.
+To add automatically line_info, helpers are create. Add '_' at the end of test method member to used helper.
+
+exemple : assert::contains(...) -> assert::contains_(...), string_valid::are_equal_ignoring_case(...) -> string_valid::are_equal_ignoring_case_(...), ...
 
 The following example shows hot to call are_equal assertion tests with helper :
 
