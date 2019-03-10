@@ -283,6 +283,15 @@ Assertions make use with the following static classes :
 * file_assert
 * directory_assert.
 
+### Example
+
+```c++
+void test_method_(test_case_1) {
+  assert::are_equal(4, 2 + 2, line_info_);
+  string_Assert::start_width("Hello", "Hello, World!", line_info_)
+}
+```
+
 ## Validations
 
 Validations are the same as assertions with the difference, no exception is throwed but an error is generate. 
@@ -297,6 +306,15 @@ Validations make use with the following static classes :
 * file_valid
 *directory_valid.
 
+### Example
+
+```c++
+void test_method_(test_case_1) {
+  valid::are_equal(4, 2 + 2, line_info_);
+  string_valid::start_width("Hello", "Hello, World!", line_info_)
+}
+```
+
 ## Assumptions
 
 Assumptions are intended to express the state a test must be in to provide a meaningful result. They are functionally similar to assertions, however a unmet assumption will produce an aborted test result, as opposed to a failure.
@@ -308,6 +326,15 @@ Assumptions make use with the following static classes :
 * collection_assume
 * file_assume
 *directory_assume.
+
+### Example
+
+```c++
+void test_method_(test_case_1) {
+  assume::are_equal(4, 2 + 2, line_info_);
+  string_vassume::start_width("Hello", "Hello, World!", line_info_)
+}
+```
 
 ## Initialize and Cleanup
 
