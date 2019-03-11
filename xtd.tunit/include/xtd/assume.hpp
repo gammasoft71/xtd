@@ -11,7 +11,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class assume final {
+    class assume final : private base_assert {
     public:
       /// @cond
       assume() = delete;
@@ -2020,7 +2020,13 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assume::is_not_null(nullptr, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::fail("not null", "null", message, line_info);}
+      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_not_null(pointer, message, line_info);
+        } catch (...) {
+          assert::abort();
+        }
+      }
       
       /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -2336,7 +2342,13 @@ namespace xtd {
       /// xtd::tunit::assume::is_null(s2, "User message...", line_info_); // test throws an abort_error exception.
       /// @endcode
       template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::fail("null", "not null", message, line_info);}
+      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_null(pointer, message, line_info);
+        } catch (...) {
+          assert::abort();
+        }
+      }
       
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2679,12 +2691,6 @@ namespace xtd {
           assert::abort();
         }
       }
-      
-    private:
-      friend class collection_assume;
-      friend class directory_assume;
-      friend class file_assume;
-      friend class string_assume;
     };
   }
 }

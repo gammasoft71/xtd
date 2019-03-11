@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class file_valid final {
+    class file_valid final : private base_assert {
     public:
       /// @cond
       file_valid() = delete;
@@ -100,7 +100,7 @@ namespace xtd {
         try {
           file_assert::are_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -293,7 +293,7 @@ namespace xtd {
         try {
           file_assert::are_not_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -462,7 +462,7 @@ namespace xtd {
         try {
           file_assert::exists(file, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -535,7 +535,7 @@ namespace xtd {
         try {
           file_assert::does_not_exist(file, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       

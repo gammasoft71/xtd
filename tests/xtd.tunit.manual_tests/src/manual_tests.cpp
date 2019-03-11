@@ -6,6 +6,7 @@ namespace unit_tests {
   class base_test : public test_class {
   public:
     void test_method_(base_test_case1) {
+      string_assert::are_equal_ignoring_case("hello", "HELLO");
     }
   };
   

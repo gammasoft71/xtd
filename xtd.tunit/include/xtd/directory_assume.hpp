@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class directory_assume final {
+    class directory_assume final : private base_assert {
     public:
       /// @cond
       directory_assume() = delete;
