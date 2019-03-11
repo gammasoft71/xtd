@@ -4,4 +4,4 @@ project(xtd.examples)
 
 add_subdirectory(hello_world_console)
 #add_subdirectory(hello_world_forms)
-#add_subdirectory(hello_world_tunit)
+add_subdirectory(hello_world_tunit)
