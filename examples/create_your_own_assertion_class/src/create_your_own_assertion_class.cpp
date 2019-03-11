@@ -1,43 +1,40 @@
 #include <xtd/tunit>
 #include <cmath>
 
-using namespace std;
-using namespace xtd::tunit;
-
-class math_assert final : private base_assert {
+class math_assert final : private xtd::tunit::base_assert {
 public:
   template<typename TValue1, typename TValue2>
-  static void is_max(TValue1 value1, TValue2 value2) {is_max(value1, value2, "", line_info());}
+  static void is_max(TValue1 value1, TValue2 value2) {is_max(value1, value2, "", xtd::tunit::line_info());}
   
   template<typename TValue1, typename TValue2>
-  static void is_max(TValue1 value1, TValue2 value2, const line_info& line_info) {is_max(value1, value2, "", line_info);}
+  static void is_max(TValue1 value1, TValue2 value2, const xtd::tunit::line_info& line_info) {is_max(value1, value2, "", line_info);}
   
   template<typename TValue1, typename TValue2>
-  static void is_max(TValue1 value1, TValue2 value2, const string& message) {is_max(value1, value2, message, line_info());}
+  static void is_max(TValue1 value1, TValue2 value2, const std::string& message) {is_max(value1, value2, message, xtd::tunit::line_info());}
 
   template<typename TValue1, typename TValue2>
-  static void is_max(TValue1 value1, TValue2 value2, const string& message, const line_info& line_info) {
-    if (::max(value1, value2) == value1)
-      base_assert::succeed(message, line_info);
+  static void is_max(TValue1 value1, TValue2 value2, const std::string& message, const xtd::tunit::line_info& line_info) {
+    if (std::max(value1, value2) == value1)
+      xtd::tunit::base_assert::succeed(message, line_info);
     else
-      base_assert::fail("greater of " + base_assert::to_string(value2), base_assert::to_string(value1), message, line_info);
+      xtd::tunit::base_assert::fail("greater of " + base_assert::to_string(value2), base_assert::to_string(value1), message, line_info);
   }
 
   template<typename TValue1, typename TValue2>
-  static void is_min(TValue1 value1, TValue2 value2) {is_min(value1, value2, "", line_info());}
+  static void is_min(TValue1 value1, TValue2 value2) {is_min(value1, value2, "", xtd::tunit::line_info());}
   
   template<typename TValue1, typename TValue2>
-  static void is_min(TValue1 value1, TValue2 value2, const line_info& line_info) {is_min(value1, value2, "", line_info);}
+  static void is_min(TValue1 value1, TValue2 value2, const xtd::tunit::line_info& line_info) {is_min(value1, value2, "", line_info);}
   
   template<typename TValue1, typename TValue2>
-  static void is_min(TValue1 value1, TValue2 value2, const string& message) {is_min(value1, value2, message, line_info());}
+  static void is_min(TValue1 value1, TValue2 value2, const std::string& message) {is_min(value1, value2, message, xtd::tunit::line_info());}
   
   template<typename TValue1, typename TValue2>
-  static void is_min(TValue1 value1, TValue2 value2, const string& message, const line_info& line_info) {
-    if (::max(value1, value2) == value1)
-      base_assert::succeed(message, line_info);
+  static void is_min(TValue1 value1, TValue2 value2, const std::string& message, const xtd::tunit::line_info& line_info) {
+    if (std::min(value1, value2) == value1)
+      xtd::tunit::base_assert::succeed(message, line_info);
     else
-      base_assert::fail("lesser of " + base_assert::to_string(value2), base_assert::to_string(value1), message, line_info);
+      xtd::tunit::base_assert::fail("lesser of " + base_assert::to_string(value2), base_assert::to_string(value1), message, line_info);
   }
 };
 
@@ -54,7 +51,7 @@ public:
 
 // The main entry point for the application.
 int main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
+  return xtd::tunit::console_unit_test(argv, argc).run();
 }
 
 // This code can produce the following output:
