@@ -1,5 +1,5 @@
 #include <xtd/tunit>
-#include <cmath>
+#include <algorithm>
 
 class math_assert final : private xtd::tunit::base_assert {
 public:
