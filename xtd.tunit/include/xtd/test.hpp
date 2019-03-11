@@ -67,6 +67,7 @@ namespace xtd {
 
     private:
       friend class xtd::tunit::assert;
+      friend class xtd::tunit::base_assert;
       friend struct xtd::tunit::test_class;
       friend class xtd::tunit::valid;
       static test& current_test() {return *current_test_;}

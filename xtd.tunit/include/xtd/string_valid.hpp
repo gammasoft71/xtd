@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class string_valid final {
+    class string_valid final : private base_assert {
     public:
       /// @cond
       string_valid() = delete;
@@ -64,7 +64,7 @@ namespace xtd {
         try {
           string_assert::are_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -114,7 +114,7 @@ namespace xtd {
         try {
           string_assert::are_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -164,7 +164,7 @@ namespace xtd {
         try {
           string_assert::are_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -214,7 +214,7 @@ namespace xtd {
         try {
           string_assert::are_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -286,7 +286,7 @@ namespace xtd {
         try {
           string_assert::are_not_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -336,7 +336,7 @@ namespace xtd {
         try {
           string_assert::are_not_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -386,7 +386,7 @@ namespace xtd {
         try {
           string_assert::are_not_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -436,7 +436,7 @@ namespace xtd {
         try {
           string_assert::are_not_equal_ignoring_case(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -512,7 +512,7 @@ namespace xtd {
         try {
           string_assert::contains(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -566,7 +566,7 @@ namespace xtd {
         try {
           string_assert::contains(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -620,7 +620,7 @@ namespace xtd {
         try {
           string_assert::contains(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -674,7 +674,7 @@ namespace xtd {
         try {
           string_assert::contains(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -750,7 +750,7 @@ namespace xtd {
         try {
           string_assert::does_not_contain(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -804,7 +804,7 @@ namespace xtd {
         try {
           string_assert::does_not_contain(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -858,7 +858,7 @@ namespace xtd {
         try {
           string_assert::does_not_contain(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -912,7 +912,7 @@ namespace xtd {
         try {
           string_assert::does_not_contain(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -988,7 +988,7 @@ namespace xtd {
         try {
           string_assert::starts_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1042,7 +1042,7 @@ namespace xtd {
         try {
           string_assert::starts_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1096,7 +1096,7 @@ namespace xtd {
         try {
           string_assert::starts_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1150,7 +1150,7 @@ namespace xtd {
         try {
           string_assert::starts_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1226,7 +1226,7 @@ namespace xtd {
         try {
           string_assert::does_not_start_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1280,7 +1280,7 @@ namespace xtd {
         try {
           string_assert::does_not_start_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1334,7 +1334,7 @@ namespace xtd {
         try {
           string_assert::does_not_start_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1388,7 +1388,7 @@ namespace xtd {
         try {
           string_assert::does_not_start_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1464,7 +1464,7 @@ namespace xtd {
         try {
           string_assert::ends_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1518,7 +1518,7 @@ namespace xtd {
         try {
           string_assert::ends_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1572,7 +1572,7 @@ namespace xtd {
         try {
           string_assert::ends_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1626,7 +1626,7 @@ namespace xtd {
         try {
           string_assert::ends_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1702,7 +1702,7 @@ namespace xtd {
         try {
           string_assert::does_not_end_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1756,7 +1756,7 @@ namespace xtd {
         try {
           string_assert::does_not_end_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1810,7 +1810,7 @@ namespace xtd {
         try {
           string_assert::does_not_end_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1864,7 +1864,7 @@ namespace xtd {
         try {
           string_assert::does_not_end_width(item, string, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1936,7 +1936,7 @@ namespace xtd {
         try {
           string_assert::matches(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /** @todo : when std::regex ready: remove this comment.
@@ -1987,7 +1987,7 @@ namespace xtd {
         try {
           string_assert::matches(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2037,7 +2037,7 @@ namespace xtd {
         try {
           string_assert::matches(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 */
@@ -2088,7 +2088,7 @@ namespace xtd {
         try {
           string_assert::matches(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2162,7 +2162,7 @@ namespace xtd {
         try {
           string_assert::does_not_match(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -2214,7 +2214,7 @@ namespace xtd {
         try {
           string_assert::does_not_match(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
        }
       }
       
@@ -2264,7 +2264,7 @@ namespace xtd {
         try {
           string_assert::does_not_match(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
        }
       }
 */
@@ -2315,7 +2315,7 @@ namespace xtd {
         try {
           string_assert::does_not_match(regex_pattern, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       

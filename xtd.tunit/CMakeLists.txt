@@ -10,6 +10,7 @@ set(INCLUDES
   include/xtd/assert.hpp
   include/xtd/assert_error.hpp
   include/xtd/assume.hpp
+  include/xtd/base_assert.hpp
   include/xtd/class_cleanup_attribute.hpp
   include/xtd/class_event_args.hpp
   include/xtd/class_initialize_attribute.hpp
@@ -55,10 +56,9 @@ set(SOURCES
   src/__console_color_win32.cpp
   src/__demangle_gcc.cpp
   src/__demangle_win32.cpp
-  src/assert.cpp
+  src/base_assert.cpp
   src/test.cpp
   src/test_class.cpp
-  src/valid.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})

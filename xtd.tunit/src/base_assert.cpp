@@ -1,4 +1,6 @@
-#include "../include/xtd/assert.hpp"
+#include "../include/xtd/base_assert.hpp"
+#include "../include/xtd/settings.hpp"
+#include "../include/xtd/unit_test.hpp"
 #include "../include/xtd/test.hpp"
 #include <string>
 
@@ -6,7 +8,7 @@ using namespace xtd::tunit;
 using namespace std;
 using namespace std::string_literals;
 
-void assert::abort(const std::string& message, const xtd::tunit::line_info& line_info) {
+void base_assert::abort(const std::string& message, const xtd::tunit::line_info& line_info) {
   if (line_info != xtd::tunit::line_info::empty())
     xtd::tunit::test::current_test().info_ = line_info;
   xtd::tunit::test::current_test().message_ = message != ""s ? message : "Test aborted"s;
@@ -14,7 +16,21 @@ void assert::abort(const std::string& message, const xtd::tunit::line_info& line
   throw abort_error(xtd::tunit::test::current_test().message_);
 }
 
-void assert::fail(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+void base_assert::error() {
+  xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
+  xtd::tunit::test::current_unit_test().event_listener_->on_test_failed(xtd::tunit::test_event_args(xtd::tunit::test::current_test(), xtd::tunit::test::current_test_class(), xtd::tunit::test::current_unit_test()));
+}
+
+void base_assert::error(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
+  if (line_info != xtd::tunit::line_info::empty())
+    xtd::tunit::test::current_test().info_ = line_info;
+  xtd::tunit::test::current_test().message_ = message == "" && expected == "" && actual == "" ? "Test failed"s : message;
+  xtd::tunit::test::current_test().actual_ = actual;
+  xtd::tunit::test::current_test().expect_ = expected;
+  base_assert::error();
+}
+
+void base_assert::fail(const std::string& expected, const std::string& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
   if (line_info != xtd::tunit::line_info::empty())
     xtd::tunit::test::current_test().info_ = line_info;
   xtd::tunit::test::current_test().message_ = message == "" && expected == "" && actual == "" ? "Test failed"s : message;
@@ -24,8 +40,7 @@ void assert::fail(const std::string& expected, const std::string& actual, const 
   throw assert_error(message != ""s ? message : "assertion failed!"s);
 }
 
-
-void assert::ignore(const std::string& message, const xtd::tunit::line_info& line_info) {
+void base_assert::ignore(const std::string& message, const xtd::tunit::line_info& line_info) {
   if (line_info != xtd::tunit::line_info::empty())
     xtd::tunit::test::current_test().info_ = line_info;
   xtd::tunit::test::current_test().message_ = message != ""s ? message : "Test ignored"s;
@@ -33,7 +48,7 @@ void assert::ignore(const std::string& message, const xtd::tunit::line_info& lin
   throw ignore_error(xtd::tunit::test::current_test().message_);
 }
 
-void assert::succeed(const std::string& message, const xtd::tunit::line_info& line_info) {
+void base_assert::succeed(const std::string& message, const xtd::tunit::line_info& line_info) {
   if (line_info != xtd::tunit::line_info::empty())
     xtd::tunit::test::current_test().info_ = line_info;
   xtd::tunit::test::current_test().message_ = message;

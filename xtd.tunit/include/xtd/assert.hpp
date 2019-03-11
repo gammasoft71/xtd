@@ -1,13 +1,7 @@
 /// @file
 /// @brief Contains xtd::tunit::assert class.
 #pragma once
-#include "__demangle.hpp"
-#include "__join__items.hpp"
-#include "abort_error.hpp"
-#include "assert_error.hpp"
-#include "default_insert_basic_ostream_operator.hpp"
-#include "ignore_error.hpp"
-#include "line_info.hpp"
+#include "base_assert.hpp"
 #include <algorithm>
 #include <cmath>
 #include <cstring>
@@ -27,98 +21,15 @@
 namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
-    /// @cond
-    class assume;
-    class collection_assert;
-    class collection_assume;
-    class collection_valid;
-    class directory_assert;
-    class directory_assume;
-    class directory_valid;
-    class file_assert;
-    class file_assume;
-    class file_valid;
-    class string_assert;
-    class string_assume;
-    class string_valid;
-    class valid;
-    /// @endcond
-    
     /// @brief The assert class contains a collection of static methods that implement the most common assertions used in xtd::tUnit.
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class assert final {
+    class assert final : public base_assert {
     public:
       /// @cond
       assert() = delete;
       /// @endcond
-      
-      /// @brief Abort current test. This is used by the other Assert functions.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
-      /// @endcode
-      static void abort() {abort("", line_info());}
-      
-      /// @brief Abort current test. This is used by the other Assert functions.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
-      /// @endcode
-      static void abort(const xtd::tunit::line_info& line_info) {abort("", line_info);}
-      
-      /// @brief Abort current test. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
-      /// @endcode
-      static void abort(const std::string& message) {abort(message, line_info());}
-      
-      /// @brief Abort current test. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::abort("User message...", line_info_); // test throws an abort_error exception.
-      /// @endcode
-      static void abort(const std::string& message, const xtd::tunit::line_info& line_info);
-      
-      /// @brief Ignore current test. This is used by the other Assert functions.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
-      /// @endcode
-      static void ignore() {ignore("", line_info());}
-      
-      /// @brief Ignore current test. This is used by the other Assert functions.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
-      /// @endcode
-      static void ignore(const xtd::tunit::line_info& line_info) {ignore("", line_info);}
-      
-      /// @brief Ignore current test. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
-      /// @endcode
-      static void ignore(const std::string& message) {ignore(message, line_info());}
-      
-      /// @brief Ignore current test. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::ignore("User message...", line_info_); // test throws an ignore_error exception.
-      /// @endcode
-      static void ignore(const std::string& message, const xtd::tunit::line_info& line_info);
       
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
@@ -174,7 +85,7 @@ namespace xtd {
         if (actual == expected)
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       /// @cond
@@ -182,28 +93,28 @@ namespace xtd {
         if (strcmp(actual, expected) == 0)
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       static void are_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(actual) == std::u16string(expected))
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       static void are_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(actual) == std::u32string(expected))
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
 
       static void are_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(actual, expected) == 0)
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
 
       static void are_equal(float expected, float actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -212,7 +123,7 @@ namespace xtd {
         else if (actual == expected)
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       static void are_equal(double expected, double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -221,7 +132,7 @@ namespace xtd {
         else if (actual == expected)
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       static void are_equal(long double expected, long double actual, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -230,7 +141,7 @@ namespace xtd {
         else if (actual == expected)
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       /// @endcond
       
@@ -292,7 +203,7 @@ namespace xtd {
         if (fabsf(expected - actual) <= fabsf(tolerance))
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal.
@@ -353,7 +264,7 @@ namespace xtd {
         if (fabs(expected - actual) <= fabs(tolerance))
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are equal.
@@ -414,7 +325,7 @@ namespace xtd {
         if (fabsl(expected - actual) <= fabsl(tolerance))
           succeed(message, line_info);
         else
-          fail(__to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail(base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two type are not equal.
@@ -471,7 +382,7 @@ namespace xtd {
         if (actual != expected)
           succeed(message, line_info);
         else
-          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
 
       /// @cond
@@ -479,28 +390,28 @@ namespace xtd {
         if (strcmp(actual, expected) != 0)
           succeed(message, line_info);
         else
-          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
 
       static void are_not_equal(const char16_t* expected, const char16_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(actual) != std::u16string(expected))
           succeed(message, line_info);
         else
-          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       static void are_not_equal(const char32_t* expected, const char32_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(actual) != std::u32string(expected))
           succeed(message, line_info);
         else
-          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       static void are_not_equal(const wchar_t* expected, const wchar_t* actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(actual, expected) != 0)
           succeed(message, line_info);
         else
-          fail("not " + __to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail("not " + base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       /// @endcond
 
@@ -570,7 +481,7 @@ namespace xtd {
         if (&actual != &expected)
           succeed(message, line_info);
         else
-          fail("not same as " + __to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail("not same as " + base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that two objects do refer to differents objects.
@@ -639,7 +550,7 @@ namespace xtd {
         if (&actual == &expected)
           succeed(message, line_info);
         else
-          fail("same as " + __to_string(expected), __to_string(actual), message, line_info);
+          base_assert::fail("same as " + base_assert::to_string(expected), base_assert::to_string(actual), message, line_info);
       }
       
       /// @brief Asserts that collection contains an item.
@@ -701,7 +612,7 @@ namespace xtd {
         if (result != collection.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), __join__items(collection), message, line_info);
+          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(collection), message, line_info);
       }
       
       /// @cond
@@ -717,7 +628,7 @@ namespace xtd {
         if (result != values.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), __join__items(values), message, line_info);
+          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(values), message, line_info);
       }
       
       static void contains(char item, const char* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -726,7 +637,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
+          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, line_info);
       }
       
       static void contains(char16_t item, const char16_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -735,7 +646,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
+          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, line_info);
       }
       
       static void contains(char32_t item, const char32_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -744,7 +655,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
+          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, line_info);
       }
 
       static void contains(wchar_t item, const wchar_t* values, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -753,7 +664,7 @@ namespace xtd {
         if (result != s.end())
           succeed(message, line_info);
         else
-          fail("collection containing " + __to_string(item), __join__items(s), message, line_info);
+          base_assert::fail("collection containing " + base_assert::to_string(item), base_assert::join_items(s), message, line_info);
       }
       /// @endcond
       
@@ -808,48 +719,10 @@ namespace xtd {
           statement();
           succeed(message, line_info);
         } catch (const std::exception& e) {
-          fail("No Exception to be thrown", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
+          base_assert::fail("No Exception to be thrown", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
-          fail("No Exception to be thrown", "<exception>", message, line_info);
+          base_assert::fail("No Exception to be thrown", "<exception>", message, line_info);
         }
-      }
-      
-      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void fail() {fail("", line_info());}
-      
-      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void fail(const xtd::tunit::line_info& line_info) {fail("", line_info);}
-      
-      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void fail(const std::string& message) {fail(message, line_info());}
-      
-      /// @brief Throws an xtd::tunit::assertion_error exception. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::fail("User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void fail(const std::string& message, const xtd::tunit::line_info& line_info) {
-        fail("", "", message, line_info);
       }
       
       /// @brief Asserts that collection contains an item.
@@ -910,7 +783,7 @@ namespace xtd {
         if (std::empty(value))
           succeed(message, line_info);
         else
-          fail("collection <empty>", __join__items(value), message, line_info);
+          base_assert::fail("collection <empty>", base_assert::join_items(value), message, line_info);
       }
       
       /// @cond
@@ -925,7 +798,7 @@ namespace xtd {
         if (std::empty(values))
           succeed(message, line_info);
         else
-          fail("collection <empty>", __join__items(values), message, line_info);
+          base_assert::fail("collection <empty>", base_assert::join_items(values), message, line_info);
       }
       
       static void is_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -933,7 +806,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", __join__items(s), message, line_info);
+          base_assert::fail("collection <empty>", base_assert::join_items(s), message, line_info);
       }
       
       static void is_empty(const char16_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -941,7 +814,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", __join__items(s), message, line_info);
+          base_assert::fail("collection <empty>", base_assert::join_items(s), message, line_info);
       }
       
       static void is_empty(const char32_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -949,7 +822,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", __join__items(s), message, line_info);
+          base_assert::fail("collection <empty>", base_assert::join_items(s), message, line_info);
       }
 
       static void is_empty(const wchar_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
@@ -957,7 +830,7 @@ namespace xtd {
         if (std::empty(s))
           succeed(message, line_info);
         else
-          fail("collection <empty>", __join__items(s), message, line_info);
+          base_assert::fail("collection <empty>", base_assert::join_items(s), message, line_info);
       }
       /// @endocnd
       
@@ -1015,7 +888,7 @@ namespace xtd {
         if (condition == false)
           succeed(message, line_info);
         else
-          fail("false", "true", message, line_info);
+          base_assert::fail("false", "true", message, line_info);
       }
       
       /// @brief Asserts that the first value is greater than the second value.
@@ -1072,7 +945,7 @@ namespace xtd {
         if (val1 > val2)
           succeed(message, line_info);
         else
-          fail("greater than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greater than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       
       /// @cond
@@ -1080,28 +953,28 @@ namespace xtd {
         if (strcmp(val1, val2) > 0)
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_greater(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) > std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_greater(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) > std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_greater(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val2) > 0)
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1163,7 +1036,7 @@ namespace xtd {
         if (val1 >= val2)
           succeed(message, line_info);
         else
-          fail("greater than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greater than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       
       /// @cond
@@ -1171,28 +1044,28 @@ namespace xtd {
         if (strcmp(val1, val2) >= 0)
           succeed(message, line_info);
         else
-          fail("greather than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_greater_or_equal(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) >= std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       
       static void is_greater_or_equal(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) >= std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_greater_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val2) >= 0)
           succeed(message, line_info);
         else
-          fail("greather than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1250,7 +1123,7 @@ namespace xtd {
         if (dynamic_cast<const Type*>(&value) != nullptr)
           succeed(message, line_info);
         else
-          fail("instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
+          base_assert::fail("instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that the first value is is_less than the second value.
@@ -1307,7 +1180,7 @@ namespace xtd {
         if (val1 < val2)
           succeed(message, line_info);
         else {
-          fail("less than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
         }
       }
       
@@ -1316,28 +1189,28 @@ namespace xtd {
         if (strcmp(val1, val2) < 0)
           succeed(message, line_info);
         else
-          fail("less than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_less(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) < std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       
       static void is_less(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) < std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_less(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val2) < 0)
           succeed(message, line_info);
         else
-          fail("less than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("less than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1399,7 +1272,7 @@ namespace xtd {
         if (val1 <= val2)
           succeed(message, line_info);
         else
-          fail("less than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       
       /// @cond
@@ -1407,28 +1280,28 @@ namespace xtd {
         if (strcmp(val1, val1) <= 0)
           succeed(message, line_info);
         else
-          fail("less than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_less_or_equal(const char16_t* val1, const char16_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u16string(val1) < std::u16string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       
       static void is_less_or_equal(const char32_t* val1, const char32_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::u32string(val1) < std::u32string(val2))
           succeed(message, line_info);
         else
-          fail("greather than " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("greather than " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
 
       static void is_less_or_equal(const wchar_t* val1, const wchar_t* val2, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (wcscmp(val1, val1) <= 0)
           succeed(message, line_info);
         else
-          fail("less than or equal to " + __to_string(val2), __to_string(val1), message, line_info);
+          base_assert::fail("less than or equal to " + base_assert::to_string(val2), base_assert::to_string(val1), message, line_info);
       }
       /// @endcond
 
@@ -1486,7 +1359,7 @@ namespace xtd {
         if (std::isnan(value))
           succeed(message, line_info);
         else
-          fail("NaN", __to_string(value), message, line_info);
+          base_assert::fail("NaN", base_assert::to_string(value), message, line_info);
       }
       
       /// @brief that a value is NaN.
@@ -1543,7 +1416,7 @@ namespace xtd {
         if (std::isnan(value))
           succeed(message, line_info);
         else
-          fail("NaN", __to_string(value), message, line_info);
+          base_assert::fail("NaN", base_assert::to_string(value), message, line_info);
       }
       
       /// @brief that a value is NaN.
@@ -1600,7 +1473,7 @@ namespace xtd {
         if (std::isnan(value))
           succeed(message, line_info);
         else
-          fail("NaN", __to_string(value), message, line_info);
+          base_assert::fail("NaN", base_assert::to_string(value), message, line_info);
       }
       
       /// @brief Asserts that ta condition is negative.
@@ -1661,7 +1534,7 @@ namespace xtd {
         if (value < 0)
           succeed(message, line_info);
         else
-          fail("negative", __to_string(value), message, line_info);
+          base_assert::fail("negative", base_assert::to_string(value), message, line_info);
       }
       
       /// @brief Asserts that collection oes not contain any item.
@@ -1722,7 +1595,7 @@ namespace xtd {
         if (!std::empty(value))
           succeed(message, line_info);
         else
-          fail("collection not <empty>", "<empty>", message, line_info);
+          base_assert::fail("collection not <empty>", "<empty>", message, line_info);
       }
       
       /// @cond
@@ -1737,35 +1610,35 @@ namespace xtd {
         if (!std::empty(value))
           succeed(message, line_info);
         else
-          fail("collection not <empty>", "<empty>", message, line_info);
+          base_assert::fail("collection not <empty>", "<empty>", message, line_info);
       }
       
       static void is_not_empty(const char* value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (!std::empty(std::string(value)))
           succeed(message, line_info);
         else
-          fail("collection not <empty>", "<empty>", message, line_info);
+          base_assert::fail("collection not <empty>", "<empty>", message, line_info);
       }
       
       static void is_not_empty(const char16_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (!std::empty(std::u16string(value)))
           succeed(message, line_info);
         else
-          fail("collection not <empty>", "<empty>", message, line_info);
+          base_assert::fail("collection not <empty>", "<empty>", message, line_info);
       }
       
       static void is_not_empty(const char32_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (!std::empty(std::u32string(value)))
           succeed(message, line_info);
         else
-          fail("collection not <empty>", "<empty>", message, line_info);
+          base_assert::fail("collection not <empty>", "<empty>", message, line_info);
       }
 
       static void is_not_empty(const wchar_t* value, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (!std::empty(std::wstring(value)))
           succeed(message, line_info);
         else
-          fail("collection not <empty>", "<empty>", message, line_info);
+          base_assert::fail("collection not <empty>", "<empty>", message, line_info);
       }
       /// @endcond
       
@@ -1823,7 +1696,7 @@ namespace xtd {
         if (dynamic_cast<const Type*>(&value) == nullptr)
           succeed(message, line_info);
         else
-          fail("not instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
+          base_assert::fail("not instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -1888,7 +1761,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, line_info);
         else
-          fail("not null", "null", message, line_info);
+          base_assert::fail("not null", "null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -1949,7 +1822,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, line_info);
         else
-          fail("not null", "null", message, line_info);
+          base_assert::fail("not null", "null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -2010,7 +1883,7 @@ namespace xtd {
         if (pointer != nullptr)
           succeed(message, line_info);
         else
-          fail("not null", "null", message, line_info);
+          base_assert::fail("not null", "null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -2115,7 +1988,7 @@ namespace xtd {
       /// @code
       /// xtd::tunit::assert::is_not_null(nullptr, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("not null", "null", message, line_info);}
+      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {base_assert::fail("not null", "null", message, line_info);}
       
       /// @brief Asserts that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -2175,7 +2048,7 @@ namespace xtd {
         if (value != 0)
           succeed(message, line_info);
         else
-          fail("not zero", "0", message, line_info);
+          base_assert::fail("not zero", "0", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -2240,7 +2113,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("null", "not null", message, line_info);
+          base_assert::fail("null", "not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -2301,7 +2174,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("null", "not null", message, line_info);
+          base_assert::fail("null", "not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -2362,7 +2235,7 @@ namespace xtd {
         if (pointer == nullptr)
           succeed(message, line_info);
         else
-          fail("null", "not null", message, line_info);
+          base_assert::fail("null", "not null", message, line_info);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -2423,7 +2296,7 @@ namespace xtd {
       /// xtd::tunit::assert::is_null(s2, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {fail("null", "not null", message, line_info);}
+      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {base_assert::fail("null", "not null", message, line_info);}
       
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2527,7 +2400,7 @@ namespace xtd {
         if (value > 0)
           succeed(message, line_info);
         else
-          fail("positive", __to_string(value), message, line_info);
+          base_assert::fail("positive", base_assert::to_string(value), message, line_info);
       }
       
       /// @brief Asserts that ta condition is true.
@@ -2584,7 +2457,7 @@ namespace xtd {
         if (condition == true)
           succeed(message, line_info);
         else
-          fail("true", "false", message, line_info);
+          base_assert::fail("true", "false", message, line_info);
       }
       
       /// @brief Asserts that ta condition is zero.
@@ -2645,40 +2518,8 @@ namespace xtd {
         if (value == 0)
           succeed(message, line_info);
         else
-          fail("zero", __to_string(value), message, line_info);
+          base_assert::fail("zero", base_assert::to_string(value), message, line_info);
       }
-      
-      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::succeed(); // test ok.
-      /// @endcode
-      static void succeed() {succeed("", line_info_);}
-      
-      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::succeed(line_info_); // test ok.
-      /// @endcode
-      static void succeed(const xtd::tunit::line_info& line_info) {succeed("", line_info);}
-      
-      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::succeed("User message..."); // test ok.
-      /// @endcode
-      static void succeed(const std::string& message) {succeed(message, line_info_);}
-      
-      /// @brief Generates a success with a generic message. This is used by the other Assert functions.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @par Examples
-      /// @code
-      /// xtd::tunit::assert::succeed("User message...", line_info_); // test ok.
-      /// @endcode
-      static void succeed(const std::string& message, const xtd::tunit::line_info& line_info);
       
       /// @brief Asserts that the statement throws a particular exception when called.
       /// @param TException The exception type that must be throw.
@@ -2737,15 +2578,15 @@ namespace xtd {
       static void throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
-          fail("<"  + __demangle(typeid(TException).name()) + ">", "<nothing>", message, line_info);
+          base_assert::fail("<"  + __demangle(typeid(TException).name()) + ">", "<nothing>", message, line_info);
         } catch (const TException&) {
           succeed(message, line_info);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (const std::exception& e) {
-          fail("<"  + __demangle(typeid(TException).name()) + ">", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
+          base_assert::fail("<"  + __demangle(typeid(TException).name()) + ">", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
-          fail("<"  + __demangle(typeid(TException).name()) + ">", "<exception>", message, line_info);
+          base_assert::fail("<"  + __demangle(typeid(TException).name()) + ">", "<exception>", message, line_info);
         }
       }
       
@@ -2798,7 +2639,7 @@ namespace xtd {
       static void throws_any(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
-          fail("<exception>", "<nothing>", message, line_info);
+          base_assert::fail("<exception>", "<nothing>", message, line_info);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (...) {
@@ -2807,21 +2648,6 @@ namespace xtd {
       }
       
     private:
-      friend class assume;
-      friend class collection_assert;
-      friend class collection_assume;
-      friend class collection_valid;
-      friend class directory_assert;
-      friend class directory_assume;
-      friend class directory_valid;
-      friend class file_assert;
-      friend class file_assume;
-      friend class file_valid;
-      friend class string_assert;
-      friend class string_assume;
-      friend class string_valid;
-      friend class valid;
-      static void fail(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
     };
   }
 }
@@ -2851,7 +2677,7 @@ namespace xtd {
 
 #define does_not_throw_(...) __CMD_ASSERT_ARGS(does_not_throw, __VA_ARGS__)
 
-#define fail_() fail(line_info_)
+#define fail_() base_assert::fail(line_info_)
 
 #define ignore_() ignore(line_info_)
 

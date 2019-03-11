@@ -11,7 +11,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class valid final {
+    class valid final : private base_assert {
     public:
       /// @cond
       valid() = delete;
@@ -67,7 +67,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -76,7 +76,7 @@ namespace xtd {
         try{
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -84,7 +84,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -92,7 +92,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -100,7 +100,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -108,7 +108,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -116,7 +116,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -124,7 +124,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -183,7 +183,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, tolerance, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -241,7 +241,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, tolerance, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -299,7 +299,7 @@ namespace xtd {
         try {
           assert::are_equal(expected, actual, tolerance, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -353,7 +353,7 @@ namespace xtd {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -362,7 +362,7 @@ namespace xtd {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -370,7 +370,7 @@ namespace xtd {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -378,7 +378,7 @@ namespace xtd {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -386,7 +386,7 @@ namespace xtd {
         try {
           assert::are_not_equal(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -453,7 +453,7 @@ namespace xtd {
         try {
           assert::are_not_same(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -519,7 +519,7 @@ namespace xtd {
         try {
           assert::are_same(expected, actual, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -577,7 +577,7 @@ namespace xtd {
         try {
           assert::contains(item, collection, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -593,7 +593,7 @@ namespace xtd {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -601,7 +601,7 @@ namespace xtd {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -609,7 +609,7 @@ namespace xtd {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -617,7 +617,7 @@ namespace xtd {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -625,7 +625,7 @@ namespace xtd {
         try {
           assert::contains(item, values, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -676,7 +676,7 @@ namespace xtd {
         try {
           assert::does_not_throw(statement, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
      
@@ -734,7 +734,7 @@ namespace xtd {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -750,7 +750,7 @@ namespace xtd {
         try {
           assert::is_empty(values, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -758,7 +758,7 @@ namespace xtd {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -766,7 +766,7 @@ namespace xtd {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -774,7 +774,7 @@ namespace xtd {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -782,7 +782,7 @@ namespace xtd {
         try {
           assert::is_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endocnd
@@ -837,7 +837,7 @@ namespace xtd {
         try {
           assert::is_false(condition, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -891,7 +891,7 @@ namespace xtd {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -900,7 +900,7 @@ namespace xtd {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -908,7 +908,7 @@ namespace xtd {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -916,7 +916,7 @@ namespace xtd {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -924,7 +924,7 @@ namespace xtd {
         try {
           assert::is_greater(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -983,7 +983,7 @@ namespace xtd {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -992,7 +992,7 @@ namespace xtd {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -1000,7 +1000,7 @@ namespace xtd {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1008,7 +1008,7 @@ namespace xtd {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -1016,7 +1016,7 @@ namespace xtd {
         try {
           assert::is_greater_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -1071,7 +1071,7 @@ namespace xtd {
         try {
           assert::is_instance_of<Type>(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1125,7 +1125,7 @@ namespace xtd {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1134,7 +1134,7 @@ namespace xtd {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -1142,7 +1142,7 @@ namespace xtd {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1150,7 +1150,7 @@ namespace xtd {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -1158,7 +1158,7 @@ namespace xtd {
         try {
           assert::is_less(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -1217,7 +1217,7 @@ namespace xtd {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1226,7 +1226,7 @@ namespace xtd {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -1234,7 +1234,7 @@ namespace xtd {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1242,7 +1242,7 @@ namespace xtd {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -1250,7 +1250,7 @@ namespace xtd {
         try {
           assert::is_less_or_equal(val1, val2, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -1305,7 +1305,7 @@ namespace xtd {
         try {
           assert::is_NaN(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1359,7 +1359,7 @@ namespace xtd {
         try {
           assert::is_NaN(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1413,7 +1413,7 @@ namespace xtd {
         try {
           assert::is_NaN(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1471,7 +1471,7 @@ namespace xtd {
         try {
           assert::is_negative(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1529,7 +1529,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1545,7 +1545,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1553,7 +1553,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1561,7 +1561,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1569,7 +1569,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -1577,7 +1577,7 @@ namespace xtd {
         try {
           assert::is_not_empty(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -1632,7 +1632,7 @@ namespace xtd {
         try {
           assert::is_not_instance_of<Type>(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1694,7 +1694,7 @@ namespace xtd {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1752,7 +1752,7 @@ namespace xtd {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1810,7 +1810,7 @@ namespace xtd {
         try {
           assert::is_not_null(pointer, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1912,7 +1912,13 @@ namespace xtd {
       /// @code
       /// xtd::tunit::valid::is_not_null(nullptr, "User message...", line_info_); // test fails.
       /// @endcode
-      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::fail("not null", "null", message, line_info);}
+      static void is_not_null(std::nullptr_t pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_not_null(pointer, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
       
       /// @brief Valids that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -1968,7 +1974,7 @@ namespace xtd {
         try {
           assert::is_zero(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2030,7 +2036,7 @@ namespace xtd {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2088,7 +2094,7 @@ namespace xtd {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2146,7 +2152,7 @@ namespace xtd {
         try {
           assert::is_null(pointer, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2208,7 +2214,13 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message...", line_info_); // test fails.
       /// @endcode
       template<typename TPointer>
-      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {assert::fail("null", "not null", message, line_info);}
+      static void is_null(const std::weak_ptr<TPointer>& pointer, const std::string& message, const xtd::tunit::line_info& line_info) {
+        try {
+          assert::is_null(pointer, message, line_info);
+        } catch (...) {
+          base_assert::error();
+        }
+      }
       
       /// @brief Valids that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -2304,7 +2316,7 @@ namespace xtd {
         try {
           assert::is_positive(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2358,7 +2370,7 @@ namespace xtd {
         try {
           assert::is_true(condition, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2416,7 +2428,7 @@ namespace xtd {
         try {
           assert::is_zero(value, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2474,7 +2486,7 @@ namespace xtd {
         try {
           assert::throws<TException>(statement, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -2524,17 +2536,9 @@ namespace xtd {
         try {
           assert::throws_any(statement, message, line_info);
         } catch (...) {
-          valid::message();
+          base_assert::error();
         }
       }
-      
-    private:
-      friend class collection_valid;
-      friend class directory_valid;
-      friend class file_valid;
-      friend class string_valid;
-
-      static void message();
     };
   }
 }

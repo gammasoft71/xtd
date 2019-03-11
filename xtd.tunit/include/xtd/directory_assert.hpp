@@ -15,7 +15,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class directory_assert final {
+    class directory_assert final : private base_assert {
     public:
       /// @cond
       directory_assert() = delete;
@@ -74,7 +74,7 @@ namespace xtd {
       /// @endcode
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (expected != actual)
-          assert::fail(__to_string(expected.path().string()), __to_string(actual.path().string()), message, line_info);
+          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, line_info);
         else
           assert::succeed(message, line_info);
       }
@@ -135,7 +135,7 @@ namespace xtd {
       template<typename Char>
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (expected != actual)
-          assert::fail(__to_string(expected.path().string()), __to_string(actual.path().string()), message, line_info);
+          base_assert::fail(base_assert::to_string(expected.path().string()), base_assert::to_string(actual.path().string()), message, line_info);
         else
           assert::succeed(message, line_info);
       }
@@ -202,7 +202,7 @@ namespace xtd {
       static void exists(const std::basic_string<Char>& directory, const std::string& message, const xtd::tunit::line_info& line_info) {
         struct stat info;
         if(stat(directory.c_str(), &info ) != 0 || (info.st_mode & S_IFDIR) != S_IFDIR)
-          assert::fail("directory exists", __to_string(directory), message, line_info);
+          base_assert::fail("directory exists", base_assert::to_string(directory), message, line_info);
         else
           assert::succeed(message, line_info);
       }
@@ -279,7 +279,7 @@ namespace xtd {
       static void does_not_exist(const std::basic_string<Char>& directory, const std::string& message, const xtd::tunit::line_info& line_info) {
         struct stat info;
         if(stat(directory.c_str(), &info ) == 0 && (info.st_mode & S_IFDIR) == S_IFDIR)
-          assert::fail("not directory exists", __to_string(directory), message, line_info);
+          base_assert::fail("not directory exists", base_assert::to_string(directory), message, line_info);
         else
           assert::succeed(message, line_info);
       }

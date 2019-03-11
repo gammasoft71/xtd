@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class collection_valid final {
+    class collection_valid final : private base_assert {
     public:
       /// @cond
       collection_valid() = delete;
@@ -72,7 +72,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_instances_of<TExpected>(collection, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -88,7 +88,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_instances_of<TExpected>(collection, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -155,7 +155,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_not_null(collection, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -171,7 +171,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_not_null(collection, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -234,7 +234,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_unique(collection, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
 
@@ -250,7 +250,7 @@ namespace xtd {
         try {
           collection_assert::all_items_are_unique(collection, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -309,7 +309,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -325,7 +325,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -341,7 +341,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -357,7 +357,7 @@ namespace xtd {
         try {
           collection_assert::are_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -416,7 +416,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -432,7 +432,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -448,7 +448,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -464,7 +464,7 @@ namespace xtd {
         try {
           collection_assert::are_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -523,7 +523,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -539,7 +539,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -555,7 +555,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -571,7 +571,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equal(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -630,7 +630,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -646,7 +646,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -662,7 +662,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -678,7 +678,7 @@ namespace xtd {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -737,7 +737,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -753,7 +753,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -769,7 +769,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -785,7 +785,7 @@ namespace xtd {
         try {
           collection_assert::contains(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -844,7 +844,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -860,7 +860,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -876,7 +876,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -892,7 +892,7 @@ namespace xtd {
         try {
           collection_assert::does_not_contain(expected, actual, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -951,7 +951,7 @@ namespace xtd {
         try {
           collection_assert::is_empty(value, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -967,7 +967,7 @@ namespace xtd {
         try {
           collection_assert::is_empty(value, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -1026,7 +1026,7 @@ namespace xtd {
         try {
           collection_assert::is_not_empty(value, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1042,7 +1042,7 @@ namespace xtd {
         try {
           collection_assert::is_not_empty(value, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond
@@ -1101,7 +1101,7 @@ namespace xtd {
         try {
           collection_assert::is_ordered(value, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       
@@ -1117,7 +1117,7 @@ namespace xtd {
         try {
           collection_assert::is_ordered(value, message, line_info);
         } catch(...) {
-          valid::message();
+          base_assert::error();
         }
       }
       /// @endcond

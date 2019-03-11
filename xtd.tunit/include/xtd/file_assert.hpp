@@ -11,7 +11,7 @@ namespace xtd {
     /// @par Examples
     /// This example show how to used some methods :
     /// @include assert.cpp
-    class file_assert final {
+    class file_assert final : private base_assert {
     public:
       /// @cond
       file_assert() = delete;
@@ -108,7 +108,7 @@ namespace xtd {
         size_t size_expected = if_expected.tellg();
         size_t size_actual = if_actual.tellg();
         if (size_expected != size_actual) {
-          assert::fail("istream length " + __to_string(size_expected), __to_string(size_actual), message, line_info);
+          base_assert::fail("istream length " + base_assert::to_string(size_expected), base_assert::to_string(size_actual), message, line_info);
           return;
         }
         
@@ -118,7 +118,7 @@ namespace xtd {
           Char value_expected = if_expected.get();
           Char value_actual = if_actual.get();
           if (value_expected != value_actual) {
-            assert::fail("istream at offset " + __to_string(offset) + " value " + __to_string(value_expected), __to_string(value_actual), message, line_info);
+            base_assert::fail("istream at offset " + base_assert::to_string(offset) + " value " + base_assert::to_string(value_expected), base_assert::to_string(value_actual), message, line_info);
             return;
           }
         }
@@ -341,7 +341,7 @@ namespace xtd {
             return;
           }
         }
-        assert::fail("not equal <" + __demangle(typeid(expected).name()) + ">", "<" + __demangle(typeid(expected).name()) + ">", message, line_info);
+        base_assert::fail("not equal <" + __demangle(typeid(expected).name()) + ">", "<" + __demangle(typeid(expected).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that two files are not equal.
@@ -515,7 +515,7 @@ namespace xtd {
       template<typename Char>
       static void exists(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::basic_ifstream<Char>(file).good() == false)
-          assert::fail("file exists", __to_string(file), message, line_info);
+          base_assert::fail("file exists", base_assert::to_string(file), message, line_info);
         else
           assert::succeed(message, line_info);
       }
@@ -591,7 +591,7 @@ namespace xtd {
       template<typename Char>
       static void does_not_exist(const std::basic_string<Char>& file, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (std::basic_ifstream<Char>(file).good() == true)
-          assert::fail("not file exists", __to_string(file), message, line_info);
+          base_assert::fail("not file exists", base_assert::to_string(file), message, line_info);
         else
           assert::succeed(message, line_info);
       }
