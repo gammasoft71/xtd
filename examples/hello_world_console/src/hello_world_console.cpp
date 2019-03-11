@@ -18,6 +18,7 @@ int main() {
   console::reset_color();
 }
 
-// This code produces the following output :
+// This code produces the following output with colors :
 //
+// Hello, World!
 // Hello, World!
