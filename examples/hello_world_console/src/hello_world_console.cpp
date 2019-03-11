@@ -1,4 +1,5 @@
 #include <xtd/xtd>
+#include <string>
 
 using namespace std;
 using namespace xtd;
