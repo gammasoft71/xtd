@@ -4,12 +4,12 @@
 /// @mainpage xtd. - Reference Guide Documentation
 ///
 /// @section FeaturesSection Features
-///   * <a hrf="https://github.com/gammasoft71/xtd.console">xtd.console</a>
-///   * <a hrf="https://github.com/gammasoft71/xtd.delegates">xtd.delegates</a>
-///   * <a hrf="https://github.com/gammasoft71/xtd.io">xtd.io</a>
-///   * <a hrf="https://github.com/gammasoft71/xtd.properties">xtd.properties</a>
-///   * <a hrf="https://github.com/gammasoft71/xtd.strings">xtd.strings</a>
-///   * <a hrf="https://github.com/gammasoft71/xtd.tunit">xtd.tunit</a>
+///   * <a href="https://github.com/gammasoft71/xtd.console">xtd.console</a>
+///   * <a href="https://github.com/gammasoft71/xtd.delegates">xtd.delegates</a>
+///   * <a href="https://github.com/gammasoft71/xtd.io">xtd.io</a>
+///   * <a href="https://github.com/gammasoft71/xtd.properties">xtd.properties</a>
+///   * <a href="https://github.com/gammasoft71/xtd.strings">xtd.strings</a>
+///   * <a href="https://github.com/gammasoft71/xtd.tunit">xtd.tunit</a>
 ///
 /// For more information see <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft website</a> (or <a href="https://github.com/gammasoft71/xtd/blob/master/docs/home.md">markdown documentations</a>) and <a href="https://codedocs.xyz/gammasoft71/xtd/">Reference Guide</a>).
 ///
