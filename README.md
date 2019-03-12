@@ -7,7 +7,7 @@
 [![Documentation](https://img.shields.io/badge/markdown-Documentation-brightgreen.svg)](./docs/home.md)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-tunit%20website)](https://gammasoft71.wixsite.com/xtd-tunit)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.io.svg)](LICENSE.md)
-[![SourceForge Download tunit]()](https://sourceforge.net/projects/iopro/files/latest/download)
+[![SourceForge Download tunit]()](https://img.shields.io/sourceforge/dt/iopro.svg)
 [![c++17](https://img.shields.io/badge/c++-17-004080.svg)](https://en.wikipedia.org/wiki/C%2B%2B17)
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](https://en.wikipedia.org/wiki/Microsoft_Windows)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](https://en.wikipedia.org/wiki/MacOS)
@@ -21,7 +21,6 @@ xtd.io is a modern c++17 library, that allow reading and writing to files and da
 
 * File : Provides methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_fstream objects.
 * Path : Performs operations on std::basic_string instances that contain file or directory path information. These operations are performed in a cross-platform manner.
-https://img.shields.io/sourceforge/dt/tunitpro.svg
 For more information see [xtd.io website](https://gammasoft71.wixsite.com/xtd-io) (or [markdown documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.io/).
 
 # Examples
