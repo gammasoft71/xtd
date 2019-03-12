@@ -2520,3 +2520,19 @@ namespace xtd {
     };
   }
 }
+
+#define are_equal_ignoring_case_(...) __CMD_ASSERT_ARGS(are_equal_ignoring_case, __VA_ARGS__)
+
+#define are_not_equal_ignoring_case_(...) __CMD_ASSERT_ARGS(are_not_equal_ignoring_case, __VA_ARGS__)
+
+#define does_not_end_with_(...) __CMD_ASSERT_ARGS(does_not_end_with, __VA_ARGS__)
+
+#define does_not_match_(...) __CMD_ASSERT_ARGS(does_not_match, __VA_ARGS__)
+
+#define does_not_start_with_(...) __CMD_ASSERT_ARGS(does_not_start_with, __VA_ARGS__)
+
+#define ends_with_(...) __CMD_ASSERT_ARGS(ends_with, __VA_ARGS__)
+
+#define matches_(...) __CMD_ASSERT_ARGS(matches, __VA_ARGS__)
+
+#define starts_with_(...) __CMD_ASSERT_ARGS(starts_with, __VA_ARGS__)
