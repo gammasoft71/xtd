@@ -19,7 +19,7 @@ xtd.io is a modern c++17 library, that allow reading and writing to files and da
 
 # Features
 
-* File : Provides methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_ftream objects.
+* File : Provides methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_fstream objects.
 * Path : Performs operations on std::basic_string instances that contain file or directory path information. These operations are performed in a cross-platform manner.
 https://img.shields.io/sourceforge/dt/tunitpro.svg
 For more information see [xtd.io website](https://gammasoft71.wixsite.com/xtd-io) (or [markdown documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.io/).
