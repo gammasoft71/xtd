@@ -13,7 +13,7 @@ Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
 * std::ostream output event listener.
 * Extendable :
   * you can create your own event listener (see [create_your_own_event_listener example](../examples/create_your_own_event_listener)).
-  * you can create your own assertion, validation and assume tests.
+  * you can create your own assertion, validation and assume tests (see [create_your_own_event_assertion_class example](../examples/create_your_own_assertion_class)).
 * Gets duration for each test, and for each class test.
 * Formatted XML output of the test results (JUnit-compatible).
 * CMake build script.
