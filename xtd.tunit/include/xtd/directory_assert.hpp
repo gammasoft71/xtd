@@ -297,3 +297,7 @@ namespace xtd {
     };
   }
 }
+
+#define exists_(...) __CMD_ASSERT_ARGS(exists, __VA_ARGS__)
+
+#define does_not_exist_(...) __CMD_ASSERT_ARGS(does_not_exist, __VA_ARGS__)

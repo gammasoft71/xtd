@@ -1206,3 +1206,15 @@ namespace xtd {
     };
   }
 }
+
+#define all_items_are_instances_of_(...) __CMD_ASSERT_ARGS(all_items_are_instances_of, __VA_ARGS__)
+
+#define all_items_are_not_null_(...) __CMD_ASSERT_ARGS(all_items_are_not_null, __VA_ARGS__)
+
+#define all_items_are_unqiue_(...) __CMD_ASSERT_ARGS(all_items_are_unqiue, __VA_ARGS__)
+
+#define are_equivalent_(...) __CMD_ASSERT_ARGS(are_equivalent, __VA_ARGS__)
+
+#define are_not_equivalent_(...) __CMD_ASSERT_ARGS(are_not_equivalent, __VA_ARGS__)
+
+#define is_ordered_(...) __CMD_ASSERT_ARGS(is_ordered, __VA_ARGS__)
