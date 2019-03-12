@@ -36,9 +36,15 @@ int main() {
   const char* s1 = "Hello,";
   string s2 = "World!";
   
-  cout << foreground_color(console_color::green);
+  console::out << background_color(console_color::cyan);
+  cout << foreground_color(console_color::yellow);
   cout << format("%s%7s", s1, s2);
   cout << reset_color() << endl;
+  
+  console::out << background_color(console_color::white);
+  console::out << foreground_color(console_color::black);
+  console::out << format("%s%7s", s1, s2);
+  console::out << reset_color() << endl;
   
   console::background_color(console_color::blue);
   console::foreground_color(console_color::white);
@@ -115,12 +121,15 @@ namespace unit_tests {
   public:
     void test_method_(create_string_from_literal) {
       string s = "Hello, World!";
-      asssert::are_equal("Hello, World!", s);
+      valid::are_equal(13, s.size());
+      assert::are_equal("Hello, World!", s);
     }
     
     void test_method_(create_string_from_chars) {
       string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
-      assert::are_equal("Hello, World!", s);
+      valid::are_equal(13, s.size());
+      string_assert::starts_with("Hello,", s);
+      string_assert::ends_with(" World!", s);
     }
   };
 }
