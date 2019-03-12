@@ -543,7 +543,7 @@ namespace xtd {
         if (string.find(item) != std::string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -600,7 +600,7 @@ namespace xtd {
         if (string.find(item) != std::u16string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -657,7 +657,7 @@ namespace xtd {
         if (string.find(item) != std::u32string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -714,7 +714,7 @@ namespace xtd {
         if (string.find(item) != std::wstring::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
 
       /// @cond
@@ -793,7 +793,7 @@ namespace xtd {
         if (string.find(item) == std::string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -850,7 +850,7 @@ namespace xtd {
         if (string.find(item) == std::u16string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -907,7 +907,7 @@ namespace xtd {
         if (string.find(item) == std::u32string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string contains an item.
@@ -964,7 +964,7 @@ namespace xtd {
         if (string.find(item) == std::wstring::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string containing " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @cond
@@ -1043,7 +1043,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string starts with item.
@@ -1100,7 +1100,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string starts witdh item.
@@ -1157,7 +1157,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string starts witdh item.
@@ -1214,7 +1214,7 @@ namespace xtd {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string starts with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string starts with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @cond
@@ -1293,7 +1293,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string starts with item.
@@ -1350,7 +1350,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string does noy start witdh item.
@@ -1407,7 +1407,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string does noy start witdh item.
@@ -1464,7 +1464,7 @@ namespace xtd {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @cond
@@ -1540,10 +1540,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::ends_with("law", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void ends_with(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() == 0)
+        if (string.rfind(item) != std::string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string starts with item.
@@ -1597,10 +1597,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::ends_with(u"law", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void ends_with(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() == 0)
+        if (string.rfind(item) != std::u16string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string ends witdh item.
@@ -1654,10 +1654,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::ends_with(U"law", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void ends_with(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() == 0)
+        if (string.rfind(item) != std::u32string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string ends witdh item.
@@ -1711,10 +1711,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::ends_with(L"law", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void ends_with(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() == 0)
+        if (string.rfind(item) != std::wstring::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @cond
@@ -1790,10 +1790,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::does_not_end_with("lue", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_end_with(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() != 0)
+        if (string.rfind(item) == std::string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string starts with item.
@@ -1847,10 +1847,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::does_not_end_with(u"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_end_with(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() != 0)
+        if (string.rfind(item) == std::u16string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string does not end witdh item.
@@ -1904,10 +1904,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::does_not_end_with(U"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_end_with(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() != 0)
+        if (string.rfind(item) == std::u32string::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @brief Asserts that string does not end witdh item.
@@ -1961,10 +1961,10 @@ namespace xtd {
       /// xtd::tunit::string_assert::does_not_end_with(L"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
       static void does_not_end_with(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() != 0)
+        if (string.rfind(item) == std::wstring::npos)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::to_string(string), message, line_info);
       }
       
       /// @cond
