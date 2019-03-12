@@ -996,12 +996,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::starts_width("val", s); // test ok.
-      /// xtd::tunit::string_assert::starts_width("zoe", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with("val", s); // test ok.
+      /// xtd::tunit::string_assert::starts_with("zoe", s); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::string& item, const std::string& string) {starts_width(item, string, "", line_info());}
+      static void starts_with(const std::string& item, const std::string& string) {starts_with(item, string, "", line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1009,12 +1009,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::starts_width("val", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width("zoe", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with("val", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with("zoe", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
+      static void starts_with(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1022,12 +1022,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::starts_width("val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::starts_width("zoe", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with("val", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::starts_with("zoe", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::string& item, const std::string& string, const std::string& message) {starts_width(item, string, message, line_info());}
+      static void starts_with(const std::string& item, const std::string& string, const std::string& message) {starts_with(item, string, message, line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1036,29 +1036,29 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::starts_width("val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width("zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with("val", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with("zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void starts_with(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string starting width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::starts_width(u"val", s); // test ok.
-      /// xtd::tunit::string_assert::starts_width(u"zoe", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with(u"val", s); // test ok.
+      /// xtd::tunit::string_assert::starts_with(u"zoe", s); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::u16string& item, const std::u16string& string) {starts_width(item, string, "", line_info());}
+      static void starts_with(const std::u16string& item, const std::u16string& string) {starts_with(item, string, "", line_info());}
       
-      /// @brief Asserts that srinbg start width item.
+      /// @brief Asserts that srinbg start with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1066,10 +1066,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::starts_width(u"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width(u"zoe", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with(u"val", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with(u"zoe", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
+      static void starts_with(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
       
       /// @brief Asserts that string starts witdh item.
       /// @param item object to verify.
@@ -1079,10 +1079,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::starts_width(u"val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::starts_width(u"zoe", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with(u"val", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::starts_with(u"zoe", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::u16string& item, const std::u16string& string, const std::string& message) {starts_width(item, string, message, line_info());}
+      static void starts_with(const std::u16string& item, const std::u16string& string, const std::string& message) {starts_with(item, string, message, line_info());}
       
       /// @brief Asserts that string starts witdh item.
       /// @param item object to verify.
@@ -1093,71 +1093,14 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::starts_width(u"val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width(u"zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::starts_with(u"val", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with(u"zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void starts_with(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string starting width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
-      }
-      
-      /// @brief Asserts that string starts witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::starts_width(U"val", s); // test ok.
-      /// xtd::tunit::string_assert::starts_width(U"zoe", s); // test throws an assertion_error exception.
-      /// @endcode
-      static void starts_width(const std::u32string& item, const std::u32string& string) {starts_width(item, string, "", line_info());}
-      
-      /// @brief Asserts that string starts witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::starts_width(U"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width(U"zoe", s, line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void starts_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
-      
-      /// @brief Asserts that string starts witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::starts_width(U"val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::starts_width(U"zoe", s, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
-      static void starts_width(const std::u32string& item, const std::u32string& string, const std::string& message) {starts_width(item, string, message, line_info());}
-      
-      /// @brief Asserts that string starts witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::starts_width(U"val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width(U"zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void starts_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.find(item) == 0)
-          assert::succeed(message, line_info);
-        else
-          base_assert::fail("string starting width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @brief Asserts that string starts witdh item.
@@ -1166,11 +1109,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::starts_width(L"val", s); // test ok.
-      /// xtd::tunit::string_assert::starts_width(L"zoe", s); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::starts_with(U"val", s); // test ok.
+      /// xtd::tunit::string_assert::starts_with(U"zoe", s); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::wstring& item, const std::wstring& string) {starts_width(item, string, "", line_info());}
+      static void starts_with(const std::u32string& item, const std::u32string& string) {starts_with(item, string, "", line_info());}
       
       /// @brief Asserts that string starts witdh item.
       /// @param item object to verify.
@@ -1179,11 +1122,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::starts_width(L"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width(L"zoe", s, line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::starts_with(U"val", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with(U"zoe", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
+      static void starts_with(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
       
       /// @brief Asserts that string starts witdh item.
       /// @param item object to verify.
@@ -1192,11 +1135,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::starts_width(L"val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::starts_width(L"zoe", s, "User message..."); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::starts_with(U"val", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::starts_with(U"zoe", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::wstring& item, const std::wstring& string, const std::string& message) {starts_width(item, string, message, line_info());}
+      static void starts_with(const std::u32string& item, const std::u32string& string, const std::string& message) {starts_with(item, string, message, line_info());}
       
       /// @brief Asserts that string starts witdh item.
       /// @param item object to verify.
@@ -1206,37 +1149,94 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::starts_width(L"val", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::starts_width(L"zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::starts_with(U"val", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with(U"zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void starts_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void starts_with(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.find(item) == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string starts width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+      }
+      
+      /// @brief Asserts that string starts witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::starts_with(L"val", s); // test ok.
+      /// xtd::tunit::string_assert::starts_with(L"zoe", s); // test throws an assertion_error exception.
+      /// @endcode
+      static void starts_with(const std::wstring& item, const std::wstring& string) {starts_with(item, string, "", line_info());}
+      
+      /// @brief Asserts that string starts witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::starts_with(L"val", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with(L"zoe", s, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void starts_with(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
+      
+      /// @brief Asserts that string starts witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::starts_with(L"val", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::starts_with(L"zoe", s, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void starts_with(const std::wstring& item, const std::wstring& string, const std::string& message) {starts_with(item, string, message, line_info());}
+      
+      /// @brief Asserts that string starts witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::starts_with(L"val", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::starts_with(L"zoe", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void starts_with(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (string.find(item) == 0)
+          assert::succeed(message, line_info);
+        else
+          base_assert::fail("string starts with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @cond
-      static void starts_width(const char* item, const char* string) {starts_width(item, string, "", line_info());}
-      static void starts_width(const char* item, const char* string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
-      static void starts_width(const char* item, const char* string, const std::string& message) {starts_width(item, string, message, line_info());}
-      static void starts_width(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_width(std::string(item), std::string(string), message, line_info);}
+      static void starts_with(const char* item, const char* string) {starts_with(item, string, "", line_info());}
+      static void starts_with(const char* item, const char* string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
+      static void starts_with(const char* item, const char* string, const std::string& message) {starts_with(item, string, message, line_info());}
+      static void starts_with(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_with(std::string(item), std::string(string), message, line_info);}
       
-      static void starts_width(const char16_t* item, const char16_t* string) {starts_width(item, string, "", line_info());}
-      static void starts_width(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
-      static void starts_width(const char16_t* item, const char16_t* string, const std::string& message) {starts_width(item, string, message, line_info());}
-      static void starts_width(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_width(std::u16string(item), std::u16string(string), message, line_info);}
+      static void starts_with(const char16_t* item, const char16_t* string) {starts_with(item, string, "", line_info());}
+      static void starts_with(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
+      static void starts_with(const char16_t* item, const char16_t* string, const std::string& message) {starts_with(item, string, message, line_info());}
+      static void starts_with(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_with(std::u16string(item), std::u16string(string), message, line_info);}
       
-      static void starts_width(const char32_t* item, const char32_t* string) {starts_width(item, string, "", line_info());}
-      static void starts_width(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
-      static void starts_width(const char32_t* item, const char32_t* string, const std::string& message) {starts_width(item, string, message, line_info());}
-      static void starts_width(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_width(std::u32string(item), std::u32string(string), message, line_info);}
+      static void starts_with(const char32_t* item, const char32_t* string) {starts_with(item, string, "", line_info());}
+      static void starts_with(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
+      static void starts_with(const char32_t* item, const char32_t* string, const std::string& message) {starts_with(item, string, message, line_info());}
+      static void starts_with(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_with(std::u32string(item), std::u32string(string), message, line_info);}
       
-      static void starts_width(const wchar_t* item, const wchar_t* string) {starts_width(item, string, "", line_info());}
-      static void starts_width(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {starts_width(item, string, "", line_info);}
-      static void starts_width(const wchar_t* item, const wchar_t* string, const std::string& message) {starts_width(item, string, message, line_info());}
-      static void starts_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_width(std::wstring(item), std::wstring(string), message, line_info);}
+      static void starts_with(const wchar_t* item, const wchar_t* string) {starts_with(item, string, "", line_info());}
+      static void starts_with(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {starts_with(item, string, "", line_info);}
+      static void starts_with(const wchar_t* item, const wchar_t* string, const std::string& message) {starts_with(item, string, message, line_info());}
+      static void starts_with(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {starts_with(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
 
       /// @brief Asserts that string does noy start witdh item.
@@ -1246,12 +1246,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_start_width("zoe", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width("val", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with("zoe", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with("val", s); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::string& item, const std::string& string) {does_not_start_width(item, string, "", line_info());}
+      static void does_not_start_with(const std::string& item, const std::string& string) {does_not_start_with(item, string, "", line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1259,12 +1259,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_start_width("zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width("val", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with("zoe", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with("val", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
+      static void does_not_start_with(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1272,12 +1272,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_start_width("zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width("val", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with("zoe", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with("val", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::string& item, const std::string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
+      static void does_not_start_with(const std::string& item, const std::string& string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1286,29 +1286,29 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_start_width("zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width("val", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with("zoe", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with("val", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_start_with(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string starting width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_start_width(u"zoe", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(u"val", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with(u"zoe", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(u"val", s); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::u16string& item, const std::u16string& string) {does_not_start_width(item, string, "", line_info());}
+      static void does_not_start_with(const std::u16string& item, const std::u16string& string) {does_not_start_with(item, string, "", line_info());}
       
-      /// @brief Asserts that srinbg start width item.
+      /// @brief Asserts that srinbg start with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1316,10 +1316,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_start_width(u"zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(u"val", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with(u"zoe", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(u"val", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
+      static void does_not_start_with(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
       
       /// @brief Asserts that string does noy start witdh item.
       /// @param item object to verify.
@@ -1329,10 +1329,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_start_width(u"zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(u"val", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with(u"zoe", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(u"val", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
+      static void does_not_start_with(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
       
       /// @brief Asserts that string does noy start witdh item.
       /// @param item object to verify.
@@ -1343,71 +1343,14 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_start_width(u"zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(u"val", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_start_with(u"zoe", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(u"val", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_start_with(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string starting width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
-      }
-      
-      /// @brief Asserts that string does noy start witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_start_width(U"zoe", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(U"val", s); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_start_width(const std::u32string& item, const std::u32string& string) {does_not_start_width(item, string, "", line_info());}
-      
-      /// @brief Asserts that string does noy start witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_start_width(U"zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(U"val", s, line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_start_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
-      
-      /// @brief Asserts that string does noy start witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_start_width(U"zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(U"val", s, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_start_width(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
-      
-      /// @brief Asserts that string does noy start witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_start_width(U"zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(U"val", s, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_start_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.find(item) != 0)
-          assert::succeed(message, line_info);
-        else
-          base_assert::fail("not string starting width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @brief Asserts that string does noy start witdh item.
@@ -1416,11 +1359,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_start_width(L"zoe", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(L"val", s); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_start_with(U"zoe", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(U"val", s); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::wstring& item, const std::wstring& string) {does_not_start_width(item, string, "", line_info());}
+      static void does_not_start_with(const std::u32string& item, const std::u32string& string) {does_not_start_with(item, string, "", line_info());}
       
       /// @brief Asserts that string does noy start witdh item.
       /// @param item object to verify.
@@ -1429,11 +1372,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_start_width(L"zoe", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(L"val", s, line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_start_with(U"zoe", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(U"val", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
+      static void does_not_start_with(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
       
       /// @brief Asserts that string does noy start witdh item.
       /// @param item object to verify.
@@ -1442,11 +1385,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_start_width(L"zoe", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(L"val", s, "User message..."); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_start_with(U"zoe", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(U"val", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
+      static void does_not_start_with(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
       
       /// @brief Asserts that string does noy start witdh item.
       /// @param item object to verify.
@@ -1456,37 +1399,94 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_start_width(L"zoe", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_start_width(L"val", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_start_with(U"zoe", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(U"val", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_start_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_start_with(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.find(item) != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string starting width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+      }
+      
+      /// @brief Asserts that string does noy start witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_start_with(L"zoe", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(L"val", s); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_start_with(const std::wstring& item, const std::wstring& string) {does_not_start_with(item, string, "", line_info());}
+      
+      /// @brief Asserts that string does noy start witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_start_with(L"zoe", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(L"val", s, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_start_with(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
+      
+      /// @brief Asserts that string does noy start witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_start_with(L"zoe", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(L"val", s, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_start_with(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
+      
+      /// @brief Asserts that string does noy start witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_start_with(L"zoe", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_start_with(L"val", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_start_with(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (string.find(item) != 0)
+          assert::succeed(message, line_info);
+        else
+          base_assert::fail("not string starting with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @cond
-      static void does_not_start_width(const char* item, const char* string) {does_not_start_width(item, string, "", line_info());}
-      static void does_not_start_width(const char* item, const char* string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
-      static void does_not_start_width(const char* item, const char* string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
-      static void does_not_start_width(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_width(std::string(item), std::string(string), message, line_info);}
+      static void does_not_start_with(const char* item, const char* string) {does_not_start_with(item, string, "", line_info());}
+      static void does_not_start_with(const char* item, const char* string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
+      static void does_not_start_with(const char* item, const char* string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
+      static void does_not_start_with(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_with(std::string(item), std::string(string), message, line_info);}
       
-      static void does_not_start_width(const char16_t* item, const char16_t* string) {does_not_start_width(item, string, "", line_info());}
-      static void does_not_start_width(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
-      static void does_not_start_width(const char16_t* item, const char16_t* string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
-      static void does_not_start_width(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_width(std::u16string(item), std::u16string(string), message, line_info);}
+      static void does_not_start_with(const char16_t* item, const char16_t* string) {does_not_start_with(item, string, "", line_info());}
+      static void does_not_start_with(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
+      static void does_not_start_with(const char16_t* item, const char16_t* string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
+      static void does_not_start_with(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_with(std::u16string(item), std::u16string(string), message, line_info);}
       
-      static void does_not_start_width(const char32_t* item, const char32_t* string) {does_not_start_width(item, string, "", line_info());}
-      static void does_not_start_width(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
-      static void does_not_start_width(const char32_t* item, const char32_t* string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
-      static void does_not_start_width(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_width(std::u32string(item), std::u32string(string), message, line_info);}
+      static void does_not_start_with(const char32_t* item, const char32_t* string) {does_not_start_with(item, string, "", line_info());}
+      static void does_not_start_with(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
+      static void does_not_start_with(const char32_t* item, const char32_t* string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
+      static void does_not_start_with(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_with(std::u32string(item), std::u32string(string), message, line_info);}
       
-      static void does_not_start_width(const wchar_t* item, const wchar_t* string) {does_not_start_width(item, string, "", line_info());}
-      static void does_not_start_width(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {does_not_start_width(item, string, "", line_info);}
-      static void does_not_start_width(const wchar_t* item, const wchar_t* string, const std::string& message) {does_not_start_width(item, string, message, line_info());}
-      static void does_not_start_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_width(std::wstring(item), std::wstring(string), message, line_info);}
+      static void does_not_start_with(const wchar_t* item, const wchar_t* string) {does_not_start_with(item, string, "", line_info());}
+      static void does_not_start_with(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {does_not_start_with(item, string, "", line_info);}
+      static void does_not_start_with(const wchar_t* item, const wchar_t* string, const std::string& message) {does_not_start_with(item, string, message, line_info());}
+      static void does_not_start_with(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_start_with(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
       /// @brief Asserts that string ends witdh item.
@@ -1496,12 +1496,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::ends_width("val", s); // test ok.
-      /// xtd::tunit::string_assert::ends_width("law", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with("val", s); // test ok.
+      /// xtd::tunit::string_assert::ends_with("law", s); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::string& item, const std::string& string) {ends_width(item, string, "", line_info());}
+      static void ends_with(const std::string& item, const std::string& string) {ends_with(item, string, "", line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1509,12 +1509,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::ends_width("val", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width("law", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with("val", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with("law", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
+      static void ends_with(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1522,12 +1522,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::ends_width("val", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::ends_width("law", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with("val", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::ends_with("law", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::string& item, const std::string& string, const std::string& message) {ends_width(item, string, message, line_info());}
+      static void ends_with(const std::string& item, const std::string& string, const std::string& message) {ends_with(item, string, message, line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1536,29 +1536,29 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::ends_width("lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width("law", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with("lue", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with("law", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void ends_with(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::ends_width(u"lue", s); // test ok.
-      /// xtd::tunit::string_assert::ends_width(u"law", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with(u"lue", s); // test ok.
+      /// xtd::tunit::string_assert::ends_with(u"law", s); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::u16string& item, const std::u16string& string) {ends_width(item, string, "", line_info());}
+      static void ends_with(const std::u16string& item, const std::u16string& string) {ends_with(item, string, "", line_info());}
       
-      /// @brief Asserts that srinbg start width item.
+      /// @brief Asserts that srinbg start with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1566,10 +1566,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::ends_width(u"lue", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width(u"law", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with(u"lue", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with(u"law", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
+      static void ends_with(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
       
       /// @brief Asserts that string ends witdh item.
       /// @param item object to verify.
@@ -1579,10 +1579,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::ends_width(u"lue", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::ends_width(u"law", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with(u"lue", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::ends_with(u"law", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::u16string& item, const std::u16string& string, const std::string& message) {ends_width(item, string, message, line_info());}
+      static void ends_with(const std::u16string& item, const std::u16string& string, const std::string& message) {ends_with(item, string, message, line_info());}
       
       /// @brief Asserts that string ends witdh item.
       /// @param item object to verify.
@@ -1593,71 +1593,14 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::ends_width(u"lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width(u"law", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::ends_with(u"lue", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with(u"law", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void ends_with(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
-      }
-      
-      /// @brief Asserts that string ends witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::ends_width(U"lue", s); // test ok.
-      /// xtd::tunit::string_assert::ends_width(U"law", s); // test throws an assertion_error exception.
-      /// @endcode
-      static void ends_width(const std::u32string& item, const std::u32string& string) {ends_width(item, string, "", line_info());}
-      
-      /// @brief Asserts that string ends witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::ends_width(U"lue", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width(U"law", s, line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void ends_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
-      
-      /// @brief Asserts that string ends witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::ends_width(U"lue", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::ends_width(U"law", s, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
-      static void ends_width(const std::u32string& item, const std::u32string& string, const std::string& message) {ends_width(item, string, message, line_info());}
-      
-      /// @brief Asserts that string ends witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::ends_width(U"lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width(U"law", s, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void ends_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() == 0)
-          assert::succeed(message, line_info);
-        else
-          base_assert::fail("string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @brief Asserts that string ends witdh item.
@@ -1666,11 +1609,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::ends_width(L"lue", s); // test ok.
-      /// xtd::tunit::string_assert::ends_width(L"law", s); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::ends_with(U"lue", s); // test ok.
+      /// xtd::tunit::string_assert::ends_with(U"law", s); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::wstring& item, const std::wstring& string) {ends_width(item, string, "", line_info());}
+      static void ends_with(const std::u32string& item, const std::u32string& string) {ends_with(item, string, "", line_info());}
       
       /// @brief Asserts that string ends witdh item.
       /// @param item object to verify.
@@ -1679,11 +1622,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::ends_width(L"val", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width(L"law", s, line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::ends_with(U"lue", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with(U"law", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
+      static void ends_with(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
       
       /// @brief Asserts that string ends witdh item.
       /// @param item object to verify.
@@ -1692,11 +1635,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::ends_width(L"lue", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::ends_width(L"law", s, "User message..."); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::ends_with(U"lue", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::ends_with(U"law", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::wstring& item, const std::wstring& string, const std::string& message) {ends_width(item, string, message, line_info());}
+      static void ends_with(const std::u32string& item, const std::u32string& string, const std::string& message) {ends_with(item, string, message, line_info());}
       
       /// @brief Asserts that string ends witdh item.
       /// @param item object to verify.
@@ -1706,37 +1649,94 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::ends_width(L"lue", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::ends_width(L"law", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::ends_with(U"lue", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with(U"law", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void ends_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void ends_with(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.rfind(item) - item.size() == 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+      }
+      
+      /// @brief Asserts that string ends witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::ends_with(L"lue", s); // test ok.
+      /// xtd::tunit::string_assert::ends_with(L"law", s); // test throws an assertion_error exception.
+      /// @endcode
+      static void ends_with(const std::wstring& item, const std::wstring& string) {ends_with(item, string, "", line_info());}
+      
+      /// @brief Asserts that string ends witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::ends_with(L"val", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with(L"law", s, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void ends_with(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
+      
+      /// @brief Asserts that string ends witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::ends_with(L"lue", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::ends_with(L"law", s, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void ends_with(const std::wstring& item, const std::wstring& string, const std::string& message) {ends_with(item, string, message, line_info());}
+      
+      /// @brief Asserts that string ends witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::ends_with(L"lue", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::ends_with(L"law", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void ends_with(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (string.rfind(item) - item.size() == 0)
+          assert::succeed(message, line_info);
+        else
+          base_assert::fail("string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @cond
-      static void ends_width(const char* item, const char* string) {ends_width(item, string, "", line_info());}
-      static void ends_width(const char* item, const char* string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
-      static void ends_width(const char* item, const char* string, const std::string& message) {ends_width(item, string, message, line_info());}
-      static void ends_width(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_width(std::string(item), std::string(string), message, line_info);}
+      static void ends_with(const char* item, const char* string) {ends_with(item, string, "", line_info());}
+      static void ends_with(const char* item, const char* string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
+      static void ends_with(const char* item, const char* string, const std::string& message) {ends_with(item, string, message, line_info());}
+      static void ends_with(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_with(std::string(item), std::string(string), message, line_info);}
       
-      static void ends_width(const char16_t* item, const char16_t* string) {ends_width(item, string, "", line_info());}
-      static void ends_width(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
-      static void ends_width(const char16_t* item, const char16_t* string, const std::string& message) {ends_width(item, string, message, line_info());}
-      static void ends_width(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_width(std::u16string(item), std::u16string(string), message, line_info);}
+      static void ends_with(const char16_t* item, const char16_t* string) {ends_with(item, string, "", line_info());}
+      static void ends_with(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
+      static void ends_with(const char16_t* item, const char16_t* string, const std::string& message) {ends_with(item, string, message, line_info());}
+      static void ends_with(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_with(std::u16string(item), std::u16string(string), message, line_info);}
       
-      static void ends_width(const char32_t* item, const char32_t* string) {ends_width(item, string, "", line_info());}
-      static void ends_width(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
-      static void ends_width(const char32_t* item, const char32_t* string, const std::string& message) {ends_width(item, string, message, line_info());}
-      static void ends_width(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_width(std::u32string(item), std::u32string(string), message, line_info);}
+      static void ends_with(const char32_t* item, const char32_t* string) {ends_with(item, string, "", line_info());}
+      static void ends_with(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
+      static void ends_with(const char32_t* item, const char32_t* string, const std::string& message) {ends_with(item, string, message, line_info());}
+      static void ends_with(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_with(std::u32string(item), std::u32string(string), message, line_info);}
       
-      static void ends_width(const wchar_t* item, const wchar_t* string) {ends_width(item, string, "", line_info());}
-      static void ends_width(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {ends_width(item, string, "", line_info);}
-      static void ends_width(const wchar_t* item, const wchar_t* string, const std::string& message) {ends_width(item, string, message, line_info());}
-      static void ends_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_width(std::wstring(item), std::wstring(string), message, line_info);}
+      static void ends_with(const wchar_t* item, const wchar_t* string) {ends_with(item, string, "", line_info());}
+      static void ends_with(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {ends_with(item, string, "", line_info);}
+      static void ends_with(const wchar_t* item, const wchar_t* string, const std::string& message) {ends_with(item, string, message, line_info());}
+      static void ends_with(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {ends_with(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
       /// @brief Asserts that string does not end witdh item.
@@ -1746,12 +1746,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_end_width("law", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width("lue", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with("law", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with("lue", s); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::string& item, const std::string& string) {does_not_end_width(item, string, "", line_info());}
+      static void does_not_end_with(const std::string& item, const std::string& string) {does_not_end_with(item, string, "", line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1759,12 +1759,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_end_width("law", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width("lue", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with("law", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with("lue", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
+      static void does_not_end_with(const std::string& item, const std::string& string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1772,12 +1772,12 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_end_width("law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width("lue", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with("law", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with("lue", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::string& item, const std::string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
+      static void does_not_end_with(const std::string& item, const std::string& string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1786,29 +1786,29 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::string s = "value";
-      /// xtd::tunit::string_assert::does_not_end_width("law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width("lue", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with("law", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with("lue", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_end_with(const std::string& item, const std::string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
-      /// @brief Asserts that string starts width item.
+      /// @brief Asserts that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_end_width(u"law", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(u"lue", s); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with(u"law", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(u"lue", s); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::u16string& item, const std::u16string& string) {does_not_end_width(item, string, "", line_info());}
+      static void does_not_end_with(const std::u16string& item, const std::u16string& string) {does_not_end_with(item, string, "", line_info());}
       
-      /// @brief Asserts that srinbg start width item.
+      /// @brief Asserts that srinbg start with item.
       /// @param item object to verify.
       /// @param collection that contains object.
       /// @param line_info Contains information about current file and current line.
@@ -1816,10 +1816,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_end_width(u"law", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(u"lue", s, line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with(u"law", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(u"lue", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
+      static void does_not_end_with(const std::u16string& item, const std::u16string& string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
       
       /// @brief Asserts that string does not end witdh item.
       /// @param item object to verify.
@@ -1829,10 +1829,10 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_end_width(u"law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(u"lue", s, "User message..."); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with(u"law", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(u"lue", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
+      static void does_not_end_with(const std::u16string& item, const std::u16string& string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
       
       /// @brief Asserts that string does not end witdh item.
       /// @param item object to verify.
@@ -1843,71 +1843,14 @@ namespace xtd {
       /// @par Examples
       /// @code
       /// std::u16string s = u"value";
-      /// xtd::tunit::string_assert::does_not_end_width(u"law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(u"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// xtd::tunit::string_assert::does_not_end_with(u"law", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(u"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_end_with(const std::u16string& item, const std::u16string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
-      }
-      
-      /// @brief Asserts that string does not end witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_end_width(U"law", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(U"lue", s); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_end_width(const std::u32string& item, const std::u32string& string) {does_not_end_width(item, string, "", line_info());}
-      
-      /// @brief Asserts that string does not end witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_end_width(U"law", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(U"lue", s, line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_end_width(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
-      
-      /// @brief Asserts that string does not end witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_end_width(U"law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(U"lue", s, "User message..."); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_end_width(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
-      
-      /// @brief Asserts that string does not end witdh item.
-      /// @param item object to verify.
-      /// @param collection that contains object.
-      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
-      /// @param line_info Contains information about current file and current line.
-      /// @exception xtd::tunit::assertion_error If bad assertion.
-      /// @par Examples
-      /// @code
-      /// std::u32string s = U"value";
-      /// xtd::tunit::string_assert::does_not_end_width(U"law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(U"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
-      /// @endcode
-      static void does_not_end_width(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
-        if (string.rfind(item) - item.size() != 0)
-          assert::succeed(message, line_info);
-        else
-          base_assert::fail("not string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @brief Asserts that string does not end witdh item.
@@ -1916,11 +1859,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_end_width(L"law", s); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(L"lue", s); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_end_with(U"law", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(U"lue", s); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::wstring& item, const std::wstring& string) {does_not_end_width(item, string, "", line_info());}
+      static void does_not_end_with(const std::u32string& item, const std::u32string& string) {does_not_end_with(item, string, "", line_info());}
       
       /// @brief Asserts that string does not end witdh item.
       /// @param item object to verify.
@@ -1929,11 +1872,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_end_width(L"law", s, line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(L"lue", s, line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_end_with(U"law", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(U"lue", s, line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
+      static void does_not_end_with(const std::u32string& item, const std::u32string& string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
       
       /// @brief Asserts that string does not end witdh item.
       /// @param item object to verify.
@@ -1942,11 +1885,11 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_end_width(L"law", s, "User message..."); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(L"lue", s, "User message..."); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_end_with(U"law", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(U"lue", s, "User message..."); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
+      static void does_not_end_with(const std::u32string& item, const std::u32string& string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
       
       /// @brief Asserts that string does not end witdh item.
       /// @param item object to verify.
@@ -1956,37 +1899,94 @@ namespace xtd {
       /// @exception xtd::tunit::assertion_error If bad assertion.
       /// @par Examples
       /// @code
-      /// std::wstring s = L"value";
-      /// xtd::tunit::string_assert::does_not_end_width(L"law", s, "User message...", line_info_); // test ok.
-      /// xtd::tunit::string_assert::does_not_end_width(L"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// std::u32string s = U"value";
+      /// xtd::tunit::string_assert::does_not_end_with(U"law", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(U"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
       /// @endcode
-      static void does_not_end_width(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+      static void does_not_end_with(const std::u32string& item, const std::u32string& string, const std::string& message, const xtd::tunit::line_info& line_info) {
         if (string.rfind(item) - item.size() != 0)
           assert::succeed(message, line_info);
         else
-          base_assert::fail("not string ending width " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
+      }
+      
+      /// @brief Asserts that string does not end witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_end_with(L"law", s); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(L"lue", s); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_end_with(const std::wstring& item, const std::wstring& string) {does_not_end_with(item, string, "", line_info());}
+      
+      /// @brief Asserts that string does not end witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_end_with(L"law", s, line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(L"lue", s, line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_end_with(const std::wstring& item, const std::wstring& string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
+      
+      /// @brief Asserts that string does not end witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_end_with(L"law", s, "User message..."); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(L"lue", s, "User message..."); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_end_with(const std::wstring& item, const std::wstring& string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
+      
+      /// @brief Asserts that string does not end witdh item.
+      /// @param item object to verify.
+      /// @param collection that contains object.
+      /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
+      /// @param line_info Contains information about current file and current line.
+      /// @exception xtd::tunit::assertion_error If bad assertion.
+      /// @par Examples
+      /// @code
+      /// std::wstring s = L"value";
+      /// xtd::tunit::string_assert::does_not_end_with(L"law", s, "User message...", line_info_); // test ok.
+      /// xtd::tunit::string_assert::does_not_end_with(L"lue", s, "User message...", line_info_); // test throws an assertion_error exception.
+      /// @endcode
+      static void does_not_end_with(const std::wstring& item, const std::wstring& string, const std::string& message, const xtd::tunit::line_info& line_info) {
+        if (string.rfind(item) - item.size() != 0)
+          assert::succeed(message, line_info);
+        else
+          base_assert::fail("not string ending with " + base_assert::to_string(item), base_assert::join_items(string), message, line_info);
       }
       
       /// @cond
-      static void does_not_end_width(const char* item, const char* string) {does_not_end_width(item, string, "", line_info());}
-      static void does_not_end_width(const char* item, const char* string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
-      static void does_not_end_width(const char* item, const char* string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
-      static void does_not_end_width(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_width(std::string(item), std::string(string), message, line_info);}
+      static void does_not_end_with(const char* item, const char* string) {does_not_end_with(item, string, "", line_info());}
+      static void does_not_end_with(const char* item, const char* string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
+      static void does_not_end_with(const char* item, const char* string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
+      static void does_not_end_with(const char* item, const char* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_with(std::string(item), std::string(string), message, line_info);}
       
-      static void does_not_end_width(const char16_t* item, const char16_t* string) {does_not_end_width(item, string, "", line_info());}
-      static void does_not_end_width(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
-      static void does_not_end_width(const char16_t* item, const char16_t* string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
-      static void does_not_end_width(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_width(std::u16string(item), std::u16string(string), message, line_info);}
+      static void does_not_end_with(const char16_t* item, const char16_t* string) {does_not_end_with(item, string, "", line_info());}
+      static void does_not_end_with(const char16_t* item, const char16_t* string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
+      static void does_not_end_with(const char16_t* item, const char16_t* string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
+      static void does_not_end_with(const char16_t* item, const char16_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_with(std::u16string(item), std::u16string(string), message, line_info);}
       
-      static void does_not_end_width(const char32_t* item, const char32_t* string) {does_not_end_width(item, string, "", line_info());}
-      static void does_not_end_width(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
-      static void does_not_end_width(const char32_t* item, const char32_t* string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
-      static void does_not_end_width(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_width(std::u32string(item), std::u32string(string), message, line_info);}
+      static void does_not_end_with(const char32_t* item, const char32_t* string) {does_not_end_with(item, string, "", line_info());}
+      static void does_not_end_with(const char32_t* item, const char32_t* string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
+      static void does_not_end_with(const char32_t* item, const char32_t* string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
+      static void does_not_end_with(const char32_t* item, const char32_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_with(std::u32string(item), std::u32string(string), message, line_info);}
       
-      static void does_not_end_width(const wchar_t* item, const wchar_t* string) {does_not_end_width(item, string, "", line_info());}
-      static void does_not_end_width(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {does_not_end_width(item, string, "", line_info);}
-      static void does_not_end_width(const wchar_t* item, const wchar_t* string, const std::string& message) {does_not_end_width(item, string, message, line_info());}
-      static void does_not_end_width(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_width(std::wstring(item), std::wstring(string), message, line_info);}
+      static void does_not_end_with(const wchar_t* item, const wchar_t* string) {does_not_end_with(item, string, "", line_info());}
+      static void does_not_end_with(const wchar_t* item, const wchar_t* string, const xtd::tunit::line_info& line_info) {does_not_end_with(item, string, "", line_info);}
+      static void does_not_end_with(const wchar_t* item, const wchar_t* string, const std::string& message) {does_not_end_with(item, string, message, line_info());}
+      static void does_not_end_with(const wchar_t* item, const wchar_t* string, const std::string& message, const xtd::tunit::line_info& line_info) {does_not_end_with(std::wstring(item), std::wstring(string), message, line_info);}
       /// @endcond
       
       /// @brief Asserts that matches regex patern.

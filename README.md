@@ -51,8 +51,8 @@ namespace unit_tests {
     void test_method_(create_string_from_chars) {
       string s = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!'};
       valid::are_equal(13, s.size());
-      string_Assert::starts_with("Hello,", s);
-      string_Assert::ends_with(" World!", s);
+      string_assert::starts_with("Hello,", s);
+      string_assert::ends_with(" World!", s);
     }
   };
 }
