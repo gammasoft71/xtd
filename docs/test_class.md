@@ -51,10 +51,10 @@ namespace unit_tests {
   class test;
 
   // Register generic test class with 'std:string' as generic partmeter.
-  test_class_attribute<test<std::string>> test_class_string_attr {"test_string"};
+  test_class_attribute<test<std::string>> test_class_string_attr {"test<string>"};
 
   // Register generic test class with 'int' as generic partmeter.
-  test_class_attribute<test<int>> test_class_int_attr {"test_int"};
+  test_class_attribute<test<int>> test_class_int_attr {"test<int>"};
 
   // Create new test fixture inherited test_class.
   template<typename T>
