@@ -514,17 +514,29 @@ std::basic_ostream<Char, CharTraits>& operator<<(std::basic_ostream<Char, CharTr
   return os;
 }
 
-template <typename TValue>
-static std::string __to_string(const TValue& value) {
+inline std::string __to_string(const std::string& value) {
   std::stringstream ss;
-  __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
+  ss << "\"" << value << "\"";
+  return ss.str();
+}
+
+static std::string __to_string(const char* value) {
+  std::stringstream ss;
+  ss << "\"" << value << "\"";
   return ss.str();
 }
 
 template <typename TValue>
-static std::string __to_string(const TValue* value) {
+inline std::string __to_string(const TValue& value) {
   std::stringstream ss;
-  __value_printer<char, std::char_traits<char>, TValue>::print(ss, value);
+  ss << value;
+  return ss.str();
+}
+
+template <typename TValue>
+inline std::string __to_string(const TValue* value) {
+  std::stringstream ss;
+  ss << value;
   return ss.str();
 }
 /// @endcond
