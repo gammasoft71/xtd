@@ -31,6 +31,16 @@ namespace xtd {
     /// @return Greater than zero   str_a is greater than str_b.
     template<typename Char>
     static int compare(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b) {return compare(str_a, str_b, false);}
+
+    /// @cond
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, const Char* str_b) {return compare(str_a, str_b, false);}
+    template<typename Char>
+    static int compare(const Char* str_a, const std::basic_string<Char>& str_b) {return compare(str_a, str_b, false);}
+    template<typename Char>
+    static int compare(const Char* str_a, const Char* str_b) {return compare(str_a, str_b, false);}
+    /// @endcond
+
     
     /// @brief Compares two specified String objects, ignoring or honoring their case.
     /// @param str_a The first String.
@@ -47,6 +57,15 @@ namespace xtd {
       return str_a.compare(str_b);
     }
     
+    /// @cond
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, const Char* str_b, bool ignore_case) {return compare(str_a, std::basic_string<Char>(str_b), ignore_case);}
+    template<typename Char>
+    static int compare(const Char* str_a, const std::basic_string<Char>& str_b, bool ignore_case) {return compare(std::basic_string<Char>(str_a), str_b, ignore_case);}
+    template<typename Char>
+    static int compare(const Char* str_a, const Char* str_b, bool ignore_case) {return compare(std::basic_string<Char>(str_a), std::basic_string<Char>(str_b), ignore_case);}
+    /// @endcond
+    
     /// @brief Compares substrings of two specified String objects.
     /// @param str_a The first String.
     /// @param index_a The position of the substring within str_a.
@@ -59,6 +78,16 @@ namespace xtd {
     /// @return Greater than zero   str_a is greater than str_b.
     template<typename Char>
     static int compare(const std::basic_string<Char>& str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length) {return compare(str_a, index_a, str_b, index_b, length, false);}
+
+    /// @cond
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length) {return compare(str_a, index_a, str_b, index_b, length, false);}
+    template<typename Char>
+    static int compare(const Char* str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length) {return compare(str_a, index_a, str_b, index_b, length, false);}
+    template<typename Char>
+    static int compare(const Char* str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length) {return compare(str_a, index_a, str_b, index_b, length, false);}
+    /// @endcond
+
     
     /// @brief Compares substrings of two specified String objects, ignoring or honoring their case.
     /// @param str_a The first String.
@@ -79,30 +108,143 @@ namespace xtd {
         return to_lower(sa).compare(to_lower(sb));
       return sa.compare(sb);
     }
-    
-    /// @brief Concatenates the String representations of the elements in a specified Args.
-    /// @param args Variadic tempalte arguments to concat.
-    /// @return string The concatenated string representations of the values of the elements in args.
-    template<typename Char, typename ... Args>
-    static std::basic_string<Char> concat(Args&& ... args) noexcept {
+
+    /// @cond
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length, bool ignore_case) {return compare(str_a, index_a, std::basic_string<Char>(str_b), index_b, length, ignore_case);}
+    template<typename Char>
+    static int compare(const Char* str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length, bool ignore_case) {return compare(std::basic_string<Char>(str_a), index_a, str_b, index_b, length, ignore_case);}
+    template<typename Char>
+    static int compare(const Char* str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length, bool ignore_case) {return compare(std::basic_string<Char>(str_a), index_a, std::basic_string<Char>(str_b), index_b, length, ignore_case);}
+    /// @endcond
+
+    /// @brief Creates the String representation of a specified object.
+    /// @param values collection of items to concat.
+    /// @return String The String representation of the value of obj.
+    template<typename Char, typename Collection>
+    static std::basic_string<Char> concat(const Collection& values) noexcept {
       std::basic_stringstream<Char> ss;
-      int unpack[] {0, (ss << args, 0)...};
-      static_cast<void>(unpack);
-      return ss.str();
-    }
-
-    /// @brief Concatenates the String representations of the elements in a specified Args.
-    /// @param args Variadic tempalte arguments to concat.
-    /// @return string The concatenated string representations of the values of the elements in args.
-    template<typename ... Args>
-    static std::string concat(Args&& ... args) noexcept {
-      std::stringstream ss;
-      int unpack[] {0, (ss << args, 0)...};
-      static_cast<void>(unpack);
+      for (const auto& item : values)
+        ss << item;
       return ss.str();
     }
     
+    /// @cond
+    template<typename Char, typename Value>
+    static std::basic_string<Char> concat(const std::initializer_list<Value>& values) noexcept {
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : values)
+        ss << item;
+      return ss.str();
+    }
+    /// @endcond
+    
+    /// @brief Creates the String representation of a specified object.
+    /// @param values collection of items to concat.
+    /// @return String The String representation of the value of obj.
+    template<typename Collection>
+    static std::string concat(const Collection& values) noexcept {
+      std::stringstream ss;
+      for (const auto& item : values)
+        ss << item;
+      return ss.str();
+    }
+    
+    /// @cond
+    template<typename Value>
+    static std::string concat(const std::initializer_list<Value>& values) noexcept {
+      std::stringstream ss;
+      for (const auto& item : values)
+        ss << item;
+      return ss.str();
+    }
+    /// @endcond
+    
+    /// @brief Creates the String representation of a specified object.
+    /// @param values collection of items to concat.
+    /// @return String The String representation of the value of obj.
+    template<typename Char>
+    static std::basic_string<Char> concat(const std::vector<std::basic_string<Char>>& values) noexcept {
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : values)
+        ss << item;
+      return ss.str();
+    }
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> concat(const std::vector<const Char*>& values) noexcept {
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : values)
+        ss << item;
+      return ss.str();
+    }
+    
+    template<typename Char>
+    static std::basic_string<Char> concat(const std::initializer_list<std::basic_string<Char>>& values) noexcept {
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : values)
+        ss << item;
+      return ss.str();
+    }
 
+    template<typename Char>
+    static std::basic_string<Char> concat(const std::initializer_list<const Char*>& values) noexcept {
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : values)
+        ss << item;
+      return ss.str();
+    }
+    /// @endcond
+    
+    /// @brief Concatenates the String representations of four specified objects.
+    /// @param value_a The first Object.
+    /// @param value_b The second Object.
+    /// @param value_c The third Object.
+    /// @param value_d The fourth Object.
+    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
+    template<typename Char, typename ValueA, typename ValueB, typename ValueC, typename ValueD>
+    static std::basic_string<Char> concat(const ValueA& value_a, const ValueB& value_b, const ValueC& value_c, const ValueD& value_d) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << value_a;
+      ss << value_b;
+      ss << value_c;
+      ss << value_d;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates the String representations of four specified objects.
+    /// @param value_a The first Object.
+    /// @param value_b The second Object.
+    /// @param value_c The third Object.
+    /// @param value_d The fourth Object.
+    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
+    template<typename ValueA, typename ValueB, typename ValueC, typename ValueD>
+    static std::string concat(const ValueA& value_a, const ValueB& value_b, const ValueC& value_c, const ValueD& value_d) noexcept {
+      std::stringstream ss;
+      ss << value_a;
+      ss << value_b;
+      ss << value_c;
+      ss << value_d;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates four specified instances of String.
+    /// @param str_a The first String.
+    /// @param str_b The second String.
+    /// @param str_c The third String.
+    /// @param str_d The fourth String.
+    /// @return String The concatenation of str_a, str_b, str_c and str_d.
+    template<typename Char>
+    static std::string concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, const std::basic_string<Char>& str_c, const std::basic_string<Char>& str_d) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << str_a;
+      ss << str_b;
+      ss << str_c;
+      ss << str_d;
+      return ss.str();
+    }
+    
     /// @brief Returns a value indicating whether the specified String object occurs within the specified string.
     /// @param value The first String.
     /// @return bool true if the value parameter occurs within the specified string, or if value is the empty String (""); otherwise, false
@@ -125,7 +267,7 @@ namespace xtd {
     /// @return bool true if value matches the end of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
     template<typename Char>
-    static bool ends_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return ends_width(str, value, false);}
+    static bool ends_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return ends_with(str, value, false);}
     
     /// @brief Determines whether the end of the specified string matches the specified String, ignoring or honoring their case.
     /// @param value A String to compare to.
@@ -133,7 +275,7 @@ namespace xtd {
     /// @return bool true if value matches the end of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
     template<typename Char>
-    static bool ends_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
+    static bool ends_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
       if (ignore_case)
         return to_lower(str).rfind(to_lower(value)) - to_lower(value).size() == 0;
       return str.rfind(value) - value.size() == 0;
@@ -141,18 +283,18 @@ namespace xtd {
     
     /// @cond
     template<typename Char>
-    static bool ends_width(const std::basic_string<Char>& str, const Char* value) noexcept {return ends_width(str, std::basic_string<Char>(value), false);}
+    static bool ends_with(const std::basic_string<Char>& str, const Char* value) noexcept {return ends_with(str, std::basic_string<Char>(value), false);}
     template<typename Char>
-    static bool ends_width(const Char* str, const std::basic_string<Char>& value) noexcept {return ends_width(std::basic_string<Char>(str), value, false);}
+    static bool ends_with(const Char* str, const std::basic_string<Char>& value) noexcept {return ends_with(std::basic_string<Char>(str), value, false);}
     template<typename Char>
-    static bool ends_width(const Char* str, const Char* value) noexcept {return ends_width(std::basic_string<Char>(str), std::basic_string<Char>(value), false);}
+    static bool ends_with(const Char* str, const Char* value) noexcept {return ends_with(std::basic_string<Char>(str), std::basic_string<Char>(value), false);}
 
     template<typename Char>
-    static bool ends_width(const std::basic_string<Char>& str, const Char* value, bool ignore_case) noexcept {return ends_width(str, std::basic_string<Char>(value), ignore_case);}
+    static bool ends_with(const std::basic_string<Char>& str, const Char* value, bool ignore_case) noexcept {return ends_with(str, std::basic_string<Char>(value), ignore_case);}
     template<typename Char>
-    static bool ends_width(const Char* str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return ends_width(std::basic_string<Char>(str), value, ignore_case);}
+    static bool ends_with(const Char* str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return ends_with(std::basic_string<Char>(str), value, ignore_case);}
     template<typename Char>
-    static bool ends_width(const Char* str, const Char* value, bool ignore_case) noexcept {return ends_width(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
+    static bool ends_with(const Char* str, const Char* value, bool ignore_case) noexcept {return ends_with(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
     /// @endcond
 
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
@@ -221,6 +363,93 @@ namespace xtd {
     static std::basic_string<Char> format(const Char* fmt, Args&& ... args) noexcept {return __format(fmt, convert_param(std::forward<Args>(args)) ...);}
     /// @endcond
     
+    /// @brief Reports the index of the first occurrence of the specified character in the sêcified tring.
+    /// @param str A String to find index of.
+    /// @param value A Unicode character to seek
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, Char value) {return str.find(value);}
+    
+    /// @brief Reports the index of the first occurrence of the specified string in the specified string.
+    /// @param str A String to find index of.
+    /// @param value A Unicode character to seek
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value) {return str.find(value);}
+
+    /// @cond
+    template<typename Char>
+    static size_t index_of(const Char* str, Char value) {return index_of(std::basic_string<Char>(str), value);}
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, const Char* value) {return index_of(str, std::basic_string<Char>(value));}
+    template<typename Char>
+    static size_t index_of(const Char* str, const std::basic_string<Char>& value) {return index_of(std::basic_string<Char>(str), value);}
+    template<typename Char>
+    static size_t index_of(const Char* str, const Char* value) {return index_of(std::basic_string<Char>(str), std::basic_string<Char>(value));}
+    /// @endcond
+    
+    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position.
+    /// @param str A String to find index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, Char value, size_t start_index) {return str.find(value, start_index);}
+    
+    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position.
+    /// @param str A String to find index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value, size_t start_index) {return str.find(value, start_index);}
+    
+    /// @cond
+    template<typename Char>
+    static size_t index_of(const Char* str, Char value, size_t start_index) {return index_of(std::basic_string<Char>(str), value, start_index);}
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, const Char* value, size_t start_index) {return index_of(str, std::basic_string<Char>(value), start_index);}
+    template<typename Char>
+    static size_t index_of(const Char* str, const std::basic_string<Char>& value, size_t start_index) {return index_of(std::basic_string<Char>(str), value, start_index);}
+    template<typename Char>
+    static size_t index_of(const Char* str, const Char* value, size_t start_index) {return index_of(std::basic_string<Char>(str), std::basic_string<Char>(value), start_index);}
+    /// @endcond
+    
+    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param str A String to find index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, Char value, size_t start_index, size_t count) {
+      size_t result = str.find(value, start_index);
+      return result > start_index + count ? std::basic_string<Char>::npos : result;
+    }
+    
+    /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param str A String to find index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value, size_t start_index, size_t count) {
+      size_t result = str.find(value, start_index);
+      return result > start_index + count ? std::basic_string<Char>::npos : result;
+    }
+    
+    /// @cond
+    template<typename Char>
+    static size_t index_of(const Char* str, Char value, size_t start_index, size_t count) {return index_of(std::basic_string<Char>(str), value, start_index, count);}
+    template<typename Char>
+    static size_t index_of(const std::basic_string<Char>& str, const Char* value, size_t start_index, size_t count) {return index_of(str, std::basic_string<Char>(value), start_index, count);}
+    template<typename Char>
+    static size_t index_of(const Char* str, const std::basic_string<Char>& value, size_t start_index, size_t count) {return index_of(std::basic_string<Char>(str), value, start_index, count);}
+    template<typename Char>
+    static size_t index_of(const Char* str, const Char* value, size_t start_index, size_t count) {return index_of(std::basic_string<Char>(str), std::basic_string<Char>(value), start_index, count);}
+    /// @endcond
+
     /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
     /// @param separator A String separator.
     /// @param values An array of Object.
@@ -233,7 +462,7 @@ namespace xtd {
     /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
     /// @param separator A String separator.
     /// @param values An array of Object.
-    /// @param startIndex The first array element in value to use.
+    /// @param start_index The first array element in value to use.
     /// @return A String consisting of the elements of value interspersed with the separator String.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
@@ -243,7 +472,7 @@ namespace xtd {
     /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
     /// @param separator A String separator.
     /// @param values An array of Object.
-    /// @param startIndex The first array element in value to use.
+    /// @param start_index The first array element in value to use.
     /// @param count The number of elements of value to use.
     /// @return A String consisting of the elements of value interspersed with the separator String.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
@@ -518,7 +747,7 @@ namespace xtd {
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     template<typename Char>
-    static bool starts_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return starts_width(str, value, false);}
+    static bool starts_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return starts_with(str, value, false);}
 
     /// @brief Determines whether the beginning of an instance of String matches a specified String, ignoring or honoring their case.
     /// @param value A String to compare to.
@@ -526,7 +755,7 @@ namespace xtd {
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     template<typename Char>
-    static bool starts_width(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
+    static bool starts_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
       if (ignore_case)
         return to_lower(str).find(to_lower(value)) == 0;
       return str.find(value) == 0;
@@ -534,18 +763,18 @@ namespace xtd {
 
     /// @cond
     template<typename Char>
-    static bool starts_width(const std::basic_string<Char>& str, const Char* value) noexcept {return starts_width(str, std::basic_string<Char>(value), false);}
+    static bool starts_with(const std::basic_string<Char>& str, const Char* value) noexcept {return starts_with(str, std::basic_string<Char>(value), false);}
     template<typename Char>
-    static bool starts_width(const Char* str, const std::basic_string<Char>& value) noexcept {return starts_width(std::basic_string<Char>(str), value, false);}
+    static bool starts_with(const Char* str, const std::basic_string<Char>& value) noexcept {return starts_with(std::basic_string<Char>(str), value, false);}
     template<typename Char>
-    static bool starts_width(const Char* str, const Char* value) noexcept {return starts_width(std::basic_string<Char>(str), std::basic_string<Char>(value), false);}
+    static bool starts_with(const Char* str, const Char* value) noexcept {return starts_with(std::basic_string<Char>(str), std::basic_string<Char>(value), false);}
 
     template<typename Char>
-    static bool starts_width(const std::basic_string<Char>& str, const Char* value, bool ignore_case) noexcept {return starts_width(str, std::basic_string<Char>(value), ignore_case);}
+    static bool starts_with(const std::basic_string<Char>& str, const Char* value, bool ignore_case) noexcept {return starts_with(str, std::basic_string<Char>(value), ignore_case);}
     template<typename Char>
-    static bool starts_width(const Char* str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return starts_width(std::basic_string<Char>(str), value, ignore_case);}
+    static bool starts_with(const Char* str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return starts_with(std::basic_string<Char>(str), value, ignore_case);}
     template<typename Char>
-    static bool starts_width(const Char* str, const Char* value, bool ignore_case) noexcept {return starts_width(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
+    static bool starts_with(const Char* str, const Char* value, bool ignore_case) noexcept {return starts_with(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
     /// @endcond
     
     /// @brief Returns a copy of the specified string converted to lowercase.

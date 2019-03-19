@@ -244,7 +244,7 @@ namespace xtd {
 
   /// @brief Immutable u32string<Char>
   /// @remarks It can be replaced by const std::u32string<Char>.
-  using iu32string =immutable_basic_string<char32_t>;
+  using iu32string = immutable_basic_string<char32_t>;
 
   /// @brief Immutable wstring<Char>
   /// @remarks It can be replaced by const std::wstring<Char>.

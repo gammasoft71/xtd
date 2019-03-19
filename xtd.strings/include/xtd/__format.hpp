@@ -23,12 +23,19 @@ inline std::basic_string<char> __format<char>(const char* fmt, ...) {
 template <>
 inline std::basic_string<wchar_t> __format<wchar_t>(const wchar_t* fmt, ...) {
   va_list args;
-  va_start(args, fmt);
-  std::basic_string<wchar_t> formated_string(vswprintf(nullptr, 0, fmt, args), 0);
-  va_end(args);
-  va_start(args, fmt);
-  vswprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
-  va_end(args);
+  size_t size = 1024;
+  int length = 0;
+  std::basic_string<wchar_t> formated_string;
+  bool error = false;
+  do {
+    formated_string = std::basic_string<wchar_t>(size, 0);
+    va_start(args, fmt);
+    length = vswprintf(&formated_string[0], formated_string.size() + 1, fmt, args);
+    error = length < 0;
+    va_end(args);
+    size *= 2;
+  } while (error);
+  formated_string.resize(length);
   return formated_string;
 }
 /// @endcond
