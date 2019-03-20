@@ -69,18 +69,36 @@ namespace unit_tests {
       assert::is_false(strings::contains("abcd", "ad"));
     }
     
-    void test_method_(ends_with) {
+    void test_method_(ends_with_char) {
+      assert::is_true(strings::ends_with("abcd", 'd'));
+      assert::is_false(strings::ends_with("abcd", 'D'));
+      assert::is_false(strings::ends_with("abcd", 'B'));
+    }
+
+    void test_method_(ends_with_char_ignore_case_false) {
+      assert::is_true(strings::ends_with("abcd", 'd', false));
+      assert::is_false(strings::ends_with("abcd", 'D', false));
+      assert::is_false(strings::ends_with("abcd", 'B', false));
+    }
+    
+    void test_method_(ends_with_char_ignore_case_true) {
+      assert::is_true(strings::ends_with("abcd", 'd', true));
+      assert::is_true(strings::ends_with("abcd", 'D', true));
+      assert::is_false(strings::ends_with("abcd", 'B', true));
+    }
+
+    void test_method_(ends_with_string) {
       assert::is_true(strings::ends_with("abcd", "cd"));
       assert::is_false(strings::ends_with("abcd", "ab"));
     }
-    
-    void test_method_(ends_with_ignore_case_false) {
+
+    void test_method_(ends_with_string_ignore_case_false) {
       assert::is_true(strings::ends_with("abcd", "cd", false));
       assert::is_false(strings::ends_with("abcd", "CD", false));
       assert::is_false(strings::ends_with("abcd", "AB", false));
     }
     
-    void test_method_(ends_with_ignore_case_true) {
+    void test_method_(ends_with_string_ignore_case_true) {
       assert::is_true(strings::ends_with("abcd", "cd", true));
       assert::is_true(strings::ends_with("abcd", "CD", true));
       assert::is_false(strings::ends_with("abcd", "AB", true));
@@ -247,6 +265,64 @@ namespace unit_tests {
     
     void test_method_(replace_string) {
       assert::are_equal("hola world and hola me", strings::replace("hello world and hello me", "hello", "hola"));
+    }
+    
+    void test_method_(split) {
+      collection_assert::are_equal({"One", "Two", "Three", "Four", "Five", "Six", "Seven"}, strings::split("One Two\vThree\fFour\rFive\nSix\nSeven"));
+    }
+    
+    void test_method_(split_empty_separators) {
+      collection_assert::are_equal({"One", "Two", "Three", "Four", "Five", "Six", "Seven"}, strings::split("One Two\vThree\fFour\rFive\nSix\nSeven", {}));
+    }
+    
+    void test_method_(split_one_separators) {
+      collection_assert::are_equal({"One Two", "Three", "Four", "Five", "Six", "Seven"}, strings::split("One Two,Three,Four,Five,Six,Seven", {','}));
+    }
+    
+    void test_method_(split_separators) {
+      collection_assert::are_equal({"One", "Two", "", "Three", "", "Four", "Five", "Six", "Seven"}, strings::split("One Two::Three,:Four.Five/Six,Seven", {' ', ',', ':', '.', '/'}));
+    }
+    
+    void test_method_(split_separators_split_option_none) {
+      collection_assert::are_equal({"One", "Two", "", "Three", "", "Four", "Five", "Six", "Seven"}, strings::split("One Two::Three,:Four.Five/Six,Seven", {' ', ',', ':', '.', '/'}, string_split_options::none));
+    }
+    
+    void test_method_(split_separators_split_option_remove_empty_entries) {
+      collection_assert::are_equal({"One", "Two", "Three", "Four", "Five", "Six", "Seven"}, strings::split("One      Two::Three,:Four......Five/Six,,,,,,,Seven", {' ', ',', ':', '.', '/'}, string_split_options::remove_empty_entries));
+    }
+    
+    void test_method_(split_separators_count_split_option_remove_empty_entries) {
+      collection_assert::are_equal({"One", "Two", "Three,:Four......Five/Six,,,,,,,Seven"}, strings::split("One      Two::Three,:Four......Five/Six,,,,,,,Seven", {' ', ',', ':', '.', '/'}, 3, string_split_options::remove_empty_entries));
+    }
+    
+    void test_method_(start_with_char) {
+      assert::is_true(strings::starts_with("Hello, World!", 'H'));
+      assert::is_false(strings::starts_with("Hello, World!", 'h'));
+    }
+ 
+    void test_method_(start_with_char_ignore_case_false) {
+      assert::is_true(strings::starts_with("Hello, World!", 'H', false));
+      assert::is_false(strings::starts_with("Hello, World!", 'h', false));
+    }
+    
+    void test_method_(start_with_char_ignore_case_true) {
+      assert::is_true(strings::starts_with("Hello, World!", 'H', true));
+      assert::is_true(strings::starts_with("Hello, World!", 'h', true));
+    }
+
+    void test_method_(start_with_string) {
+      assert::is_true(strings::starts_with("Hello, World!", "Hello"));
+      assert::is_false(strings::starts_with("Hello, World!", "hello"));
+    }
+
+    void test_method_(start_with_string_ignore_case_false) {
+      assert::is_true(strings::starts_with("Hello, World!", "Hello", false));
+      assert::is_false(strings::starts_with("Hello, World!", "hello", false));
+    }
+    
+    void test_method_(start_with_string_ignore_case_true) {
+      assert::is_true(strings::starts_with("Hello, World!", "Hello", true));
+      assert::is_true(strings::starts_with("Hello, World!", "hello", true));
     }
   };
 }

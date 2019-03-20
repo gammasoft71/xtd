@@ -314,6 +314,25 @@ namespace xtd {
     static bool contains(const Char* str, const Char* value) noexcept {return contains(std::basic_string<Char>(str), std::basic_string<Char>(value));}
     /// @endcond
 
+    /// @brief Determines whether the end of the specified string matches the specified Char.
+    /// @param value A Char to compare to.
+    /// @return bool true if value matches the end of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
+    template<typename Char>
+    static bool ends_with(const std::basic_string<Char>& str, Char value) noexcept {return ends_with(str, value, false);}
+    
+    /// @brief Determines whether the end of the specified string matches the specified Char, ignoring or honoring their case.
+    /// @param value A Char to compare to.
+    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
+    /// @return bool true if value matches the end of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
+    template<typename Char>
+    static bool ends_with(const std::basic_string<Char>& str, Char value, bool ignore_case) noexcept {
+      if (ignore_case)
+        return to_lower(str).rfind(std::tolower(value)) == str.size() - 1;
+      return str.rfind(value) == str.size() - 1;
+    }
+
     /// @brief Determines whether the end of the specified string matches the specified String.
     /// @param value A String to compare to.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
@@ -329,11 +348,15 @@ namespace xtd {
     template<typename Char>
     static bool ends_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
       if (ignore_case)
-        return to_lower(str).rfind(to_lower(value)) - to_lower(value).size() == 0;
-      return str.rfind(value) - value.size() == 0;
+        return to_lower(str).rfind(to_lower(value)) + to_lower(value).size() == str.size();
+      return str.rfind(value) + value.size() == str.size();
     }
-    
+
     /// @cond
+    template<typename Char>
+    static bool ends_with(const Char* str, Char value) noexcept {return ends_with(std::basic_string<Char>(str), value, false);}
+    template<typename Char>
+    static bool ends_with(const Char* str, Char value, bool ignore_case) noexcept {return ends_with(std::basic_string<Char>(str), value, ignore_case);}
     template<typename Char>
     static bool ends_with(const std::basic_string<Char>& str, const Char* value) noexcept {return ends_with(str, std::basic_string<Char>(value), false);}
     template<typename Char>
@@ -935,7 +958,7 @@ namespace xtd {
         if (!is_separator) subString.append(std::string(1, *it));
         if ((it - str.begin() == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0 && options != string_split_options::remove_empty_entries))) {
           if (list.size() == count - 1) {
-            list.push_back(subString + std::string(str.c_str(), it - str.begin() + (is_separator ? 1 : 0), str.length() - (it - str.begin()) + (is_separator ? 1 : 0)));
+            list.push_back(subString + std::string(str.c_str(), it - str.begin() + (is_separator ? 0 : 1), str.length() - (it - str.begin()) + (is_separator ? 0 : 1)));
             return list;
           }
           list.push_back(subString);
@@ -1013,8 +1036,27 @@ namespace xtd {
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
     template<typename Char>
-    static bool starts_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return starts_with(str, value, false);}
+    static bool starts_with(const std::basic_string<Char>& str, Char value) noexcept {return starts_with(str, value, false);}
+    
+    /// @brief Determines whether the beginning of an instance of String matches a specified String, ignoring or honoring their case.
+    /// @param value A String to compare to.
+    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
+    template<typename Char>
+    static bool starts_with(const std::basic_string<Char>& str, Char value, bool ignore_case) noexcept {
+      if (ignore_case)
+        return to_lower(str).find(std::tolower(value)) == 0;
+      return str.find(value) == 0;
+    }
 
+    /// @brief Determines whether the beginning of an instance of String matches a specified String.
+    /// @param value A String to compare to.
+    /// @return bool true if value matches the beginning of the specified string; otherwise, false.
+    /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
+    template<typename Char>
+    static bool starts_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return starts_with(str, value, false);}
+    
     /// @brief Determines whether the beginning of an instance of String matches a specified String, ignoring or honoring their case.
     /// @param value A String to compare to.
     /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
@@ -1028,6 +1070,10 @@ namespace xtd {
     }
 
     /// @cond
+    template<typename Char>
+    static bool starts_with(const Char* str, Char value) noexcept {return starts_with(std::basic_string<Char>(str), value, false);}
+    template<typename Char>
+    static bool starts_with(const Char* str, Char value, bool ignore_case) noexcept {return starts_with(std::basic_string<Char>(str), value, ignore_case);}
     template<typename Char>
     static bool starts_with(const std::basic_string<Char>& str, const Char* value) noexcept {return starts_with(str, std::basic_string<Char>(value), false);}
     template<typename Char>
@@ -1147,10 +1193,13 @@ namespace xtd {
     static auto convert_param(Arg&& arg) noexcept {
       if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::string>::value) {
         return std::forward<Arg>(arg).c_str();
+      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, xtd::istring>::value) {
+        return std::forward<Arg>(arg).c_str();
       } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::wstring>::value) {
         return std::forward<Arg>(arg).c_str();
-      }
-      else {
+      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, xtd::iwstring>::value) {
+        return std::forward<Arg>(arg).c_str();
+      } else {
         return std::forward<Arg>(arg);
       }
     }

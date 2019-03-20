@@ -82,7 +82,7 @@ namespace xtd {
     
     const Char* c_str() {this->std::basic_string<Char, CharTraits, Allocator>::c_str();}
     const Char* c_str() const {this->std::basic_string<Char, CharTraits, Allocator>::c_str();}
-    
+
     const_iterator begin() {return this->std::basic_string<Char, CharTraits, Allocator>::begin();}
     const_iterator begin() const {return this->std::basic_string<Char, CharTraits, Allocator>::begin();}
     const_iterator cbegin() const {return this->std::basic_string<Char, CharTraits, Allocator>::cbegin();}
@@ -210,7 +210,7 @@ namespace xtd {
     }
     
     inline std::basic_string<char16_t> operator "" _s( const char16_t* str, size_t len ) {
-      return immutable_basic_string<char16_t>(str, len);
+      return std::basic_string<char16_t>(str, len);
     }
     
     inline std::basic_string<char32_t> operator "" _s( const char32_t* str, size_t len ) {
@@ -236,17 +236,17 @@ namespace xtd {
 
   /// @brief Immutable string<Char>
   /// @remarks It can be replaced by const std::string<Char>.
-  using istring = immutable_basic_string<char>;
+  using istring = immutable_basic_string<char, std::char_traits<char>>;
 
   /// @brief Immutable u16string<Char>
   /// @remarks It can be replaced by const std::u16string<Char>.
-  using iu16string = immutable_basic_string<char16_t>;
+  using iu16string = immutable_basic_string<char16_t, std::char_traits<char16_t>>;
 
   /// @brief Immutable u32string<Char>
   /// @remarks It can be replaced by const std::u32string<Char>.
-  using iu32string = immutable_basic_string<char32_t>;
+  using iu32string = immutable_basic_string<char32_t, std::char_traits<char32_t>>;
 
   /// @brief Immutable wstring<Char>
   /// @remarks It can be replaced by const std::wstring<Char>.
-  using iwstring = immutable_basic_string<wchar_t>;
+  using iwstring = immutable_basic_string<wchar_t, std::char_traits<wchar_t>>;
 }
