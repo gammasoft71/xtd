@@ -368,5 +368,49 @@ namespace unit_tests {
     void test_method_(to_array_start_index_length_out_of_range) {
       collection_assert::are_equal({'2', '3', '4', '5', '6'}, strings::to_array("0123456", 2, 10));
     }
+    
+    void test_method_(to_lower) {
+      assert::are_equal("abcdef", strings::to_lower("ABCDEF"));
+    }
+    
+    void test_method_(to_upper) {
+      assert::are_equal("ABCDEF", strings::to_upper("abcdef"));
+    }
+    
+    void test_method_(trim_end) {
+      assert::are_equal("abcdef", strings::trim_end("abcdef   "));
+    }
+    
+    void test_method_(trim_end_char) {
+      assert::are_equal("abcdef", strings::trim_end("abcdef***", '*'));
+    }
+
+    void test_method_(trim_end_chars) {
+      assert::are_equal("abcdef", strings::trim_end("abcdef****   +++", {'*', ' ', '+'}));
+    }
+    
+    void test_method_(trim_start) {
+      assert::are_equal("abcdef", strings::trim_start("   abcdef"));
+    }
+    
+    void test_method_(trim_start_char) {
+      assert::are_equal("abcdef", strings::trim_start("***abcdef", '*'));
+    }
+    
+    void test_method_(trim_start_chars) {
+      assert::are_equal("abcdef", strings::trim_start("****   +++abcdef", {'*', ' ', '+'}));
+    }
+    
+    void test_method_(trim) {
+      assert::are_equal("abcdef", strings::trim("   abcdef     "));
+    }
+    
+    void test_method_(trim_char) {
+      assert::are_equal("abcdef", strings::trim("***abcdef******", '*'));
+    }
+    
+    void test_method_(trim_chars) {
+      assert::are_equal("abcdef", strings::trim("****   +++abcdef** ++++++    **", {'*', ' ', '+'}));
+    }
   };
 }

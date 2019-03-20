@@ -870,7 +870,7 @@ namespace xtd {
     /// @param start_index The position to begin deleting characters.
     /// @return String A A new String object that is equivalent to this String less the removed characters.
     template<typename Char>
-    static std::basic_string<Char> remove(const std::basic_string<Char>& str, size_t start_index) noexcept {return str.substr(0, start_index);}
+    static std::basic_string<Char> remove(const std::basic_string<Char>& str, size_t start_index) noexcept {return remove(str, start_index, str.size() - start_index);}
     
     /// @brief Deletes all the characters from this String beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
@@ -878,11 +878,10 @@ namespace xtd {
     /// @return String A A new String object that is equivalent to this String less the removed characters.
     template<typename Char>
     static std::basic_string<Char> remove(const std::basic_string<Char>& str, size_t start_index, size_t count) noexcept {
-      if (start_index + count < str.size())
-        return concat(str.substr(0, start_index), str.substr(start_index + count));
-      return str.substr(0, start_index);
-    }
-
+      if (start_index > str.size()) return str;
+      std::basic_string<Char> result(str);
+      return result.erase(start_index, count);}
+    
     /// @cond
     template<typename Char>
     static std::basic_string<Char> remove(const Char* str, size_t start_index) noexcept {return remove(std::basic_string<Char>(str), start_index);}
@@ -1161,6 +1160,7 @@ namespace xtd {
 
 
     /// @brief Returns a copy of the specified string converted to lowercase.
+    /// @param str string to convert to lower.
     /// @return String A new String in lowercase.
     template<typename Char>
     static const std::basic_string<Char> to_lower(const std::basic_string<Char>& str) noexcept {
@@ -1192,7 +1192,8 @@ namespace xtd {
     /// @endcond
     
     /// @brief Returns a copy of the specified string converted to uppercase.
-    /// @return String A new String in uppercase.
+    /// @param str string to convert to upper.
+  /// @return String A new String in uppercase.
     template<typename Char>
     static const std::basic_string<Char> to_upper(const std::basic_string<Char>& str) noexcept {
       std::basic_string<Char> result;
@@ -1221,7 +1222,76 @@ namespace xtd {
     template<typename Char>
     static const std::basic_string<Char> to_upper(const Char* str) noexcept {return to_upper(std::basic_string<Char>(str));}
     /// @endcond
+    
+    /// @brief Removes all leading and trailing occurrences of white-space characters from the specifed String.
+    /// @param str String to trim end.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and te and of the specified String.
+    template<typename Char>
+    static std::basic_string<Char> trim(const std::basic_string<Char>& str) noexcept {return trim(str, static_cast<Char>(0x20));}
+    
+    /// @brief Removes all eading and trailing occurrences of a character specified from the specifed String .
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and the end of the specofoed String.
+    template<typename Char>
+    static std::basic_string<Char> trim(const std::basic_string<Char>& str, Char trim_char) noexcept {return trim(str, std::vector<Char> {trim_char});}
+    
+    /// @brief Removes all eading and trailing occurrences of a set of characters specified in an array from the specified String.
+    /// @param str String to trim end.
+    /// @param trim_chars An array of characters to remove.
+    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start and the edn of the specified String.
+    template<typename Char>
+    static std::basic_string<Char> trim(const std::basic_string<Char>& str, const std::vector<Char>& trim_chars) noexcept {return trim_end(trim_start(str, trim_chars), trim_chars);}
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> trim(const Char* str) noexcept {return trim(std::basic_string<Char>(str), static_cast<Char>(0x20));}
+    
+    template<typename Char>
+    static std::basic_string<Char> trim(const Char* str, Char trim_char) noexcept {return trim(std::basic_string<Char>(str), std::vector<Char> {trim_char});}
+    
+    template<typename Char>
+    static std::basic_string<Char> trim(const Char* str, const std::vector<Char>& trim_chars) noexcept {return trim(std::basic_string<Char>(str), trim_chars);}
+    /// @endcond
 
+    /// @brief Removes all trailing occurrences of white-space characters from the specifed String.
+    /// @param str String to trim end.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified String.
+    template<typename Char>
+    static std::basic_string<Char> trim_end(const std::basic_string<Char>& str) noexcept {return trim_end(str, static_cast<Char>(0x20));}
+    
+    /// @brief Removes all trailing occurrences of a character specified from the specifed String .
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specofoed String.
+    template<typename Char>
+    static std::basic_string<Char> trim_end(const std::basic_string<Char>& str, Char trim_char) noexcept {return trim_end(str, std::vector<Char> {trim_char});}
+    
+    /// @brief Removes all trailing occurrences of a set of characters specified in an array from the specified String.
+    /// @param str String to trim end.
+    /// @param trim_chars An array of characters to remove.
+    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the end of the specified String.
+    template<typename Char>
+    static std::basic_string<Char> trim_end(const std::basic_string<Char>& str, const std::vector<Char>& trim_chars) noexcept {
+      std::basic_string<Char> result(str);
+      while (std::find(trim_chars.begin(), trim_chars.end(), result[result.size() - 1]) != trim_chars.end())
+        result.erase(result.size() - 1, 1);
+      return result;
+    }
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> trim_end(const Char* str) noexcept {return trim_end(std::basic_string<Char>(str), static_cast<Char>(0x20));}
+    
+    template<typename Char>
+    static std::basic_string<Char> trim_end(const Char* str, Char trim_char) noexcept {return trim_end(std::basic_string<Char>(str), std::vector<Char> {trim_char});}
+    
+    template<typename Char>
+    static std::basic_string<Char> trim_end(const Char* str, const std::vector<Char>& trim_chars) noexcept {return trim_end(std::basic_string<Char>(str), trim_chars);}
+    /// @endcond
+    
     /// @brief Removes all leading occurrences of white-space characters from the specifed String.
     /// @param str String to trim start.
     /// @param trim_char A character to remove.
