@@ -21,6 +21,7 @@ Modern c++17 library to add string utilities on Windows, macOS, Linux, iOS and a
 * String remove helper.
 * String replace helper.
 * Split strings helper.
+* Substring helper.
 * String lower and upper case helper.
 * String trimming left, right and both helper.
 

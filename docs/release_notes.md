@@ -44,11 +44,13 @@
 
 ![added](pictures/added.png) String replace helper.
 
-![todo](pictures/todo.png) String trimming left, right and both helper.
-
 ![added](pictures/added.png) Split strings helper.
 
+![added](pictures/added.png) Substrings helper.
+
 ![added](pictures/added.png) String lower and upper cases helper.
+
+![added](pictures/added.png) String trimming left, right and both helper.
 
 ______________________________________________________________________________________________
 
