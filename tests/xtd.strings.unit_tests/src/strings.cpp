@@ -142,6 +142,19 @@ namespace unit_tests {
     void test_method_(index_of_string_start_index_count) {
       assert::are_equal(std::string::npos, strings::index_of("012346723", "23", 3, 2));
     }
+    
+    void test_method_(index_of_any) {
+      assert::are_equal(2, strings::index_of_any("01234", {'5', '3', '2'}));
+    }
+    
+    void test_method_(index_of_any_start_index) {
+      assert::are_equal(3, strings::index_of_any("01234", {'5', '3', '2'}, 3));
+    }
+    
+    void test_method_(index_of_any_start_index_and_count) {
+      assert::are_equal(2, strings::index_of_any("01234", {'5', '2'}, 2, 1));
+      assert::are_equal(std::string::npos, strings::index_of_any("01234", {'5', '3'}, 0, 2));
+    }
 
     void test_method_(join_const_char_pointer_array) {
       assert::are_equal("One, Two, Three", strings::join(", ", {"One", "Two", "Three"}));
