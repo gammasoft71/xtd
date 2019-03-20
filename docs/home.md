@@ -11,17 +11,18 @@ Modern c++17 library to add string utilities on Windows, macOS, Linux, iOS and a
 * String compare helper.
 * String concat helper.
 * String contains helper.
-* String end_with and start_with helper.
+* String end with and start with helper.
 * String format helper.
-* String index_of and last_index_of helper.
-* String index_of_any and last_index_of_any helper.
+* String index of and last index of helper.
+* String index of any and last_index of any helper.
+* String insert helper.
 * Join strings helper.
 * String padding left and right helper.
 * String remove helper.
 * String replace helper.
 * String trimming left, right and both helper.
 * Split strings helper.
-* String lower and upper cases helper.
+* String lower and upper case helper.
 
 # Platforms
 
