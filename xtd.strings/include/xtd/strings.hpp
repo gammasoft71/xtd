@@ -1129,17 +1129,14 @@ namespace xtd {
     /// @param str string to convert to array.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     template<typename Char>
-    static const std::vector<Char> to_array(const std::basic_string<Char>& str) noexcept {return {str.begin(), str.end()};}
+    static const std::vector<Char> to_array(const std::basic_string<Char>& str) noexcept {return to_array(str, 0, str.size());}
     
     /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index.
     /// @param str string to convert to array.
     /// @param start_index The starting position of string to convert.
     /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
     template<typename Char>
-    static const std::vector<Char> to_array(const std::basic_string<Char>& str, size_t start_index) noexcept {
-      if (start_index >= str.size()) return {};
-      return {str.begin() + start_index, str.end()};
-    }
+    static const std::vector<Char> to_array(const std::basic_string<Char>& str, size_t start_index) noexcept {return to_array(str, start_index, str.size() - start_index);}
     
     /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index with specified legnth.
     /// @param str string to convert to array.
