@@ -18,8 +18,6 @@
 
 ## String helpers :
 
-![added](pictures/added.png) immutable_base string class.
-
 ![added](pictures/added.png) String compare helper.
 
 ![added](pictures/added.png) String concat helper.
