@@ -107,7 +107,7 @@ namespace unit_tests {
       assert::are_equal("str", strings::format("%s", "str"s));
     }
 
-    void test_method_(wstring_format_with_string_argument) {
+    void ignore_test_method_(wstring_format_with_string_argument) {
       assert::are_equal(L"str", strings::format(L"%s", "str"s));
     }
 
