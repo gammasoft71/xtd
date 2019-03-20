@@ -121,10 +121,12 @@ namespace unit_tests {
     
     void test_method_(index_of_char) {
       assert::are_equal(3, strings::index_of("01234", '3'));
+      assert::are_equal(3, strings::index_of("0123434", '3'));
     }
     
     void test_method_(index_of_string) {
       assert::are_equal(2, strings::index_of("01234", "23"));
+      assert::are_equal(2, strings::index_of("0123423", "23"));
     }
     
     void test_method_(index_of_char_start_index) {
@@ -174,6 +176,32 @@ namespace unit_tests {
 
     void test_method_(join_int_array_index_count) {
       assert::are_equal("2, 3", strings::join(", ", {1, 2, 3, 4, 5}, 1, 2));
+    }
+    
+    void test_method_(last_index_of_char) {
+      assert::are_equal(3, strings::last_index_of("01234", '3'));
+      assert::are_equal(5, strings::last_index_of("0123434", '3'));
+    }
+    
+    void test_method_(last_index_of_string) {
+      assert::are_equal(2, strings::last_index_of("01234", "23"));
+      assert::are_equal(5, strings::last_index_of("0123423", "23"));
+    }
+    
+    void test_method_(last_index_of_char_start_index) {
+      assert::are_equal(5, strings::last_index_of("0123434", '3', 4));
+    }
+    
+    void test_method_(last_index_of_string_start_index) {
+      assert::are_equal(5, strings::last_index_of("0123423", "23", 3));
+    }
+    
+    void test_method_(last_index_of_char_start_index_count) {
+      assert::are_equal(std::string::npos, strings::last_index_of("012346734", '3', 4, 2));
+    }
+    
+    void test_method_(last_index_of_string_start_index_count) {
+      assert::are_equal(std::string::npos, strings::last_index_of("012346723", "23", 3, 2));
     }
 
     void test_method_(pad_left) {
