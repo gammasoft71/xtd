@@ -30,7 +30,9 @@
 
 ![added](pictures/added.png) String format helper.
 
-![added](pictures/added.png) String index_of helper.
+![added](pictures/added.png) String index_of and last_index_of helper.
+
+![added](pictures/added.png) String index_of_any and last_index_of_any helper.
 
 ![added](pictures/added.png) Join strings helper.
 
