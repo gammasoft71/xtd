@@ -48,6 +48,8 @@
 
 ![added](pictures/added.png) Substrings helper.
 
+![added](pictures/added.png) Strings to array converter.
+
 ![added](pictures/added.png) String lower and upper cases helper.
 
 ![added](pictures/added.png) String trimming left, right and both helper.
