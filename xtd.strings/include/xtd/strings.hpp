@@ -329,7 +329,7 @@ namespace xtd {
     template<typename Char>
     static bool ends_with(const std::basic_string<Char>& str, Char value, bool ignore_case) noexcept {
       if (ignore_case)
-        return to_lower(str).rfind(std::tolower(value)) == str.size() - 1;
+        return to_lower(str).rfind(tolower(value)) == str.size() - 1;
       return str.rfind(value) == str.size() - 1;
     }
 
@@ -1051,7 +1051,7 @@ namespace xtd {
     template<typename Char>
     static bool starts_with(const std::basic_string<Char>& str, Char value, bool ignore_case) noexcept {
       if (ignore_case)
-        return to_lower(str).find(std::tolower(value)) == 0;
+        return to_lower(str).find(tolower(value)) == 0;
       return str.find(value) == 0;
     }
 
