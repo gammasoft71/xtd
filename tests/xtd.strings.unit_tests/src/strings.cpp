@@ -258,7 +258,15 @@ namespace unit_tests {
     void test_method_(remove_start_index_count) {
       assert::are_equal("01256", strings::remove("0123456", 3, 2));
     }
-    
+
+    void test_method_(remove_start_index_out_of_range) {
+      assert::are_equal("0123456", strings::remove("0123456", 10));
+    }
+
+    void test_method_(remove_start_index_count_out_of_range) {
+      assert::are_equal("012", strings::remove("0123456", 3, 10));
+    }
+
     void test_method_(replace_char) {
       assert::are_equal("accribuce", strings::replace("attribute", 't', 'c'));
     }
@@ -331,6 +339,34 @@ namespace unit_tests {
     
     void test_method_(substring_length) {
       assert::are_equal("234", strings::substring("0123456", 2, 3));
+    }
+    
+    void test_method_(substring_start_index_out_of_range) {
+      assert::are_equal("", strings::substring("0123456", 10));
+    }
+    
+    void test_method_(substring_count_out_of_range) {
+      assert::are_equal("23456", strings::substring("0123456", 2, 10));
+    }
+    
+    void test_method_(to_array) {
+      collection_assert::are_equal({'0', '1', '2', '3', '4', '5', '6'}, strings::to_array("0123456"));
+    }
+    
+    void test_method_(to_array_start_index) {
+      collection_assert::are_equal({'2', '3', '4', '5', '6'}, strings::to_array("0123456", 2));
+    }
+    
+    void test_method_(to_array_start_index_length) {
+      collection_assert::are_equal({'2', '3', '4'}, strings::to_array("0123456", 2, 3));
+    }
+    
+    void test_method_(to_array_start_index_out_of_range) {
+      collection_assert::are_equal(std::vector<char> {}, strings::to_array("0123456", 10));
+    }
+    
+    void test_method_(to_array_start_index_length_out_of_range) {
+      collection_assert::are_equal({'2', '3', '4', '5', '6'}, strings::to_array("0123456", 2, 10));
     }
   };
 }

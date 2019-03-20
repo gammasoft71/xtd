@@ -877,7 +877,11 @@ namespace xtd {
     /// @param count The number of characters to delete.
     /// @return String A A new String object that is equivalent to this String less the removed characters.
     template<typename Char>
-    static std::basic_string<Char> remove(const std::basic_string<Char>& str, size_t start_index, size_t count) noexcept {return concat(str.substr(0, start_index), str.substr(start_index + count));}
+    static std::basic_string<Char> remove(const std::basic_string<Char>& str, size_t start_index, size_t count) noexcept {
+      if (start_index + count < str.size())
+        return concat(str.substr(0, start_index), str.substr(start_index + count));
+      return str.substr(0, start_index);
+    }
 
     /// @cond
     template<typename Char>
@@ -1032,6 +1036,7 @@ namespace xtd {
     /// @endcond
 
     /// @brief Determines whether the beginning of an instance of String matches a specified String.
+    /// @param str string beginning with value.
     /// @param value A String to compare to.
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
@@ -1039,6 +1044,7 @@ namespace xtd {
     static bool starts_with(const std::basic_string<Char>& str, Char value) noexcept {return starts_with(str, value, false);}
     
     /// @brief Determines whether the beginning of an instance of String matches a specified String, ignoring or honoring their case.
+    /// @param str string beginning with value.
     /// @param value A String to compare to.
     /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
@@ -1051,6 +1057,7 @@ namespace xtd {
     }
 
     /// @brief Determines whether the beginning of an instance of String matches a specified String.
+    /// @param str string beginning with value.
     /// @param value A String to compare to.
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
     /// @remarks This method compares value to the substring at the beginning of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified string.
@@ -1058,6 +1065,7 @@ namespace xtd {
     static bool starts_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return starts_with(str, value, false);}
     
     /// @brief Determines whether the beginning of an instance of String matches a specified String, ignoring or honoring their case.
+    /// @param str string beginning with value.
     /// @param value A String to compare to.
     /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
     /// @return bool true if value matches the beginning of the specified string; otherwise, false.
@@ -1090,17 +1098,25 @@ namespace xtd {
     /// @endcond
     
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
+    /// @param str string to substring.
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @return String A String equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     template<typename Char>
-    static std::basic_string<Char> substring(const std::basic_string<Char>& str, size_t start_index) noexcept {return str.substr(start_index);}
+    static std::basic_string<Char> substring(const std::basic_string<Char>& str, size_t start_index) noexcept {
+      if (start_index >= str.size()) return "";
+      return str.substr(start_index);
+    }
     
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
+    /// @param str string to substring.
     /// @param start_index The zero-based starting character position of a substring in this instance.
     /// @param length The number of characters in the substring.
     /// @return String A String equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     template<typename Char>
-    static std::basic_string<Char> substring(const std::basic_string<Char>& str, size_t start_index, size_t length) noexcept {return str.substr(start_index, length);}
+    static std::basic_string<Char> substring(const std::basic_string<Char>& str, size_t start_index, size_t length) noexcept {
+      if (start_index >= str.size()) return "";
+      return str.substr(start_index, length);
+    }
     
     /// @cond
     template<typename Char>
@@ -1108,6 +1124,44 @@ namespace xtd {
     template<typename Char>
     static std::basic_string<Char> substring(const Char* str, size_t start_index, size_t length) noexcept {return substring(std::basic_string<Char>(str), start_index, length);}
     /// @endcond
+    
+    /// @brief Copies the characters in this instance to a Unicode character array.
+    /// @param str string to convert to array.
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    template<typename Char>
+    static const std::vector<Char> to_array(const std::basic_string<Char>& str) noexcept {return {str.begin(), str.end()};}
+    
+    /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index.
+    /// @param str string to convert to array.
+    /// @param start_index The starting position of string to convert.
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    template<typename Char>
+    static const std::vector<Char> to_array(const std::basic_string<Char>& str, size_t start_index) noexcept {
+      if (start_index >= str.size()) return {};
+      return {str.begin() + start_index, str.end()};
+    }
+    
+    /// @brief Copies the characters in this instance to a Unicode character array starting at specitied index with specified legnth.
+    /// @param str string to convert to array.
+    /// @param start_index The starting position of string to convert.
+    /// @param length The length of the string to convert
+    /// @return A character array whose elements are the individual characters of this instance. If this instance is an empty String, the returned array is empty and has a zero length.
+    template<typename Char>
+    static const std::vector<Char> to_array(const std::basic_string<Char>& str, size_t start_index, size_t length) noexcept {
+      if (start_index >= str.size()) return {};
+      if (start_index + length >= str.size()) return {str.begin() + start_index, str.end()};
+      return {str.begin() + start_index, str.begin() + start_index + length};
+    }
+    
+    /// @cond
+    template<typename Char>
+    static const std::vector<Char> to_array(const Char* str) noexcept {return to_array(std::basic_string<Char>(str));}
+    template<typename Char>
+    static const std::vector<Char> to_array(const Char* str, size_t start_index) noexcept {return to_array(std::basic_string<Char>(str), start_index);}
+    template<typename Char>
+    static const std::vector<Char> to_array(const Char* str, size_t start_index, size_t length) noexcept {return to_array(std::basic_string<Char>(str), start_index, length);}
+    /// @endcond
+
 
     /// @brief Returns a copy of the specified string converted to lowercase.
     /// @return String A new String in lowercase.
