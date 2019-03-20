@@ -910,43 +910,6 @@ namespace xtd {
     static std::basic_string<Char> replace(const Char* str, const std::basic_string<Char>& old_string, const std::basic_string<Char>& new_string) {return replace(std::basic_string<Char>(str), old_string, new_string);}
     /// @endcond
 
-    /// @brief Removes all leading occurrences of white-space characters from the specifed String.
-    /// @param str String to trim start.
-    /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
-    template<typename Char>
-    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str) {return trim_start(str, static_cast<Char>(0x20));}
-
-    /// @brief Removes all leading occurrences of a character specified from the specifed String .
-    /// @param str String to trim start.
-    /// @param trim_char A character to remove.
-    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specofoed String.
-    template<typename Char>
-    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str, Char trim_char) {return trim_start(str, std::vector<Char> {trim_char});}
-
-    /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified String.
-    /// @param str String to trim start.
-    /// @param trim_chars An array of characters to remove.
-    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified String.
-    template<typename Char>
-    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str, const std::vector<Char>& trim_chars) {
-      std::basic_string<Char> result(str);
-      while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
-        result.erase(0, 1);
-      return result;
-    }
-
-    /// @cond
-    template<typename Char>
-    static std::basic_string<Char> trim_start(const Char* str) {return trim_start(std::basic_string<Char>(str), static_cast<Char>(0x20));}
-    
-    template<typename Char>
-    static std::basic_string<Char> trim_start(const Char* str, Char trim_char) {return trim_start(std::basic_string<Char>(str), std::vector<Char> {trim_char});}
-    
-    template<typename Char>
-    static std::basic_string<Char> trim_start(const Char* str, const std::vector<Char>& trim_chars) {return trim_start(std::basic_string<Char>(str), trim_chars);}
-    /// @endcond
-
     /// @brief Splits a specified string into a maximum number of substrings based on the characters in an array.
     /// @param str string to split.
     /// @param separators A character array that delimits the substrings in this string, an empty array that contains no delimiters.
@@ -1140,6 +1103,43 @@ namespace xtd {
     
     template<typename Char>
     static const std::basic_string<Char> to_upper(const Char* str) noexcept {return to_upper(std::basic_string<Char>(str));}
+    /// @endcond
+
+    /// @brief Removes all leading occurrences of white-space characters from the specifed String.
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
+    template<typename Char>
+    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str) {return trim_start(str, static_cast<Char>(0x20));}
+    
+    /// @brief Removes all leading occurrences of a character specified from the specifed String .
+    /// @param str String to trim start.
+    /// @param trim_char A character to remove.
+    /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specofoed String.
+    template<typename Char>
+    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str, Char trim_char) {return trim_start(str, std::vector<Char> {trim_char});}
+    
+    /// @brief Removes all leading occurrences of a set of characters specified in an array from the specified String.
+    /// @param str String to trim start.
+    /// @param trim_chars An array of characters to remove.
+    /// @return The String that remains after all occurrences of the characters in the trim_chars parameter are removed from the start of the specified String.
+    template<typename Char>
+    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str, const std::vector<Char>& trim_chars) {
+      std::basic_string<Char> result(str);
+      while (std::find(trim_chars.begin(), trim_chars.end(), result[0]) != trim_chars.end())
+        result.erase(0, 1);
+      return result;
+    }
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> trim_start(const Char* str) {return trim_start(std::basic_string<Char>(str), static_cast<Char>(0x20));}
+    
+    template<typename Char>
+    static std::basic_string<Char> trim_start(const Char* str, Char trim_char) {return trim_start(std::basic_string<Char>(str), std::vector<Char> {trim_char});}
+    
+    template<typename Char>
+    static std::basic_string<Char> trim_start(const Char* str, const std::vector<Char>& trim_chars) {return trim_start(std::basic_string<Char>(str), trim_chars);}
     /// @endcond
 
   private:

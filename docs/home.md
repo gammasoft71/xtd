@@ -20,9 +20,9 @@ Modern c++17 library to add string utilities on Windows, macOS, Linux, iOS and a
 * String padding left and right helper.
 * String remove helper.
 * String replace helper.
-* String trimming left, right and both helper.
 * Split strings helper.
 * String lower and upper case helper.
+* String trimming left, right and both helper.
 
 # Platforms
 
