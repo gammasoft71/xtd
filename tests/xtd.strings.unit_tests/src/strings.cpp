@@ -324,5 +324,13 @@ namespace unit_tests {
       assert::is_true(strings::starts_with("Hello, World!", "Hello", true));
       assert::is_true(strings::starts_with("Hello, World!", "hello", true));
     }
+    
+    void test_method_(substring) {
+      assert::are_equal("23456", strings::substring("0123456", 2));
+    }
+    
+    void test_method_(substring_length) {
+      assert::are_equal("234", strings::substring("0123456", 2, 3));
+    }
   };
 }
