@@ -368,14 +368,14 @@ namespace xtd {
     /// @param value A Unicode character to seek
     /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
     template<typename Char>
-    static size_t index_of(const std::basic_string<Char>& str, Char value) {return str.find(value);}
+    static size_t index_of(const std::basic_string<Char>& str, Char value) {return index_of(str, value, 0, str.size());}
     
     /// @brief Reports the index of the first occurrence of the specified string in the specified string.
     /// @param str A String to find index of.
     /// @param value A Unicode character to seek
     /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
     template<typename Char>
-    static size_t index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value) {return str.find(value);}
+    static size_t index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value) {return index_of(str, value, 0, str.size());}
 
     /// @cond
     template<typename Char>
@@ -394,7 +394,7 @@ namespace xtd {
     /// @param start_index The search starting position
     /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
     template<typename Char>
-    static size_t index_of(const std::basic_string<Char>& str, Char value, size_t start_index) {return str.find(value, start_index);}
+    static size_t index_of(const std::basic_string<Char>& str, Char value, size_t start_index) {return index_of(str, value, start_index, str.size() - start_index);}
     
     /// @brief Reports the index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position.
     /// @param str A String to find index of.
@@ -402,7 +402,7 @@ namespace xtd {
     /// @param start_index The search starting position
     /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
     template<typename Char>
-    static size_t index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value, size_t start_index) {return str.find(value, start_index);}
+    static size_t index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value, size_t start_index) {return index_of(str, value, start_index, str.size() - start_index);}
     
     /// @cond
     template<typename Char>
@@ -455,9 +455,7 @@ namespace xtd {
     /// @param values A Unicode character array containing one or more characters to seek
     /// @return size_t The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<Char>::npos if no character in values was found.
     template<typename Char>
-    static size_t index_of_any(const std::basic_string<Char>& str, const std::vector<Char>& values) {
-      return index_of_any(str, values, 0, str.size());
-    }
+    static size_t index_of_any(const std::basic_string<Char>& str, const std::vector<Char>& values) {return index_of_any(str, values, 0, str.size());}
 
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param str A String to find index of any.
@@ -465,9 +463,7 @@ namespace xtd {
     /// @param start_index The search starting position
     /// @return size_t The index position of the first occurrence in this instance where any character in values was found; otherwise, std::basic_string<Char>::npos if no character in values was found.
     template<typename Char>
-    static size_t index_of_any(const std::basic_string<Char>& str, const std::vector<Char>& values, size_t start_index) {
-      return index_of_any(str, values, start_index, str.size() - start_index);
-    }
+    static size_t index_of_any(const std::basic_string<Char>& str, const std::vector<Char>& values, size_t start_index) {return index_of_any(str, values, start_index, str.size() - start_index);}
 
     /// @brief Reports the index of the first occurrence in this instance of any character in a specified array of characters. The search starts at a specified character position.
     /// @param str A String to find index of any.
@@ -488,49 +484,31 @@ namespace xtd {
     
     /// @cond
     template<typename Char>
-    static size_t index_of_any(const std::basic_string<Char>& str, const std::initializer_list<Char>& values) {
-      return index_of_any(str, std::vector<Char>(values));
-    }
+    static size_t index_of_any(const std::basic_string<Char>& str, const std::initializer_list<Char>& values) {return index_of_any(str, std::vector<Char>(values));}
     
     template<typename Char>
-    static size_t index_of_any(const std::basic_string<Char>& str, const std::initializer_list<Char>& values, size_t start_index) {
-      return index_of_any(str, std::vector<Char>(values), start_index);
-    }
+    static size_t index_of_any(const std::basic_string<Char>& str, const std::initializer_list<Char>& values, size_t start_index) {return index_of_any(str, std::vector<Char>(values), start_index);}
     
     template<typename Char>
-    static size_t index_of_any(const std::basic_string<Char>& str, const std::initializer_list<Char>& values, size_t start_index, size_t count) {
-      return index_of_any(str, std::vector<Char>(values), start_index, count);
-    }
+    static size_t index_of_any(const std::basic_string<Char>& str, const std::initializer_list<Char>& values, size_t start_index, size_t count) {return index_of_any(str, std::vector<Char>(values), start_index, count);}
 
     template<typename Char>
-    static size_t index_of_any(const Char* str, const std::vector<Char>& values) {
-      return index_of_any(std::basic_string<Char>(str), values);
-    }
+    static size_t index_of_any(const Char* str, const std::vector<Char>& values) {return index_of_any(std::basic_string<Char>(str), values);}
     
     template<typename Char>
-    static size_t index_of_any(const Char* str, const std::vector<Char>& values, size_t start_index) {
-      return index_of_any(std::basic_string<Char>(str), values, start_index);
-    }
+    static size_t index_of_any(const Char* str, const std::vector<Char>& values, size_t start_index) {return index_of_any(std::basic_string<Char>(str), values, start_index);}
     
     template<typename Char>
-    static size_t index_of_any(const Char* str, const std::vector<Char>& values, size_t start_index, size_t count) {
-      return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values), start_index, count);
-    }
+    static size_t index_of_any(const Char* str, const std::vector<Char>& values, size_t start_index, size_t count) {return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values), start_index, count);}
 
     template<typename Char>
-    static size_t index_of_any(const Char* str, const std::initializer_list<Char>& values) {
-      return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values));
-    }
+    static size_t index_of_any(const Char* str, const std::initializer_list<Char>& values) {return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values));}
     
     template<typename Char>
-    static size_t index_of_any(const Char* str, const std::initializer_list<Char>& values, size_t start_index) {
-      return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values), start_index);
-    }
+    static size_t index_of_any(const Char* str, const std::initializer_list<Char>& values, size_t start_index) {return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values), start_index);}
     
     template<typename Char>
-    static size_t index_of_any(const Char* str, const std::initializer_list<Char>& values, size_t start_index, size_t count) {
-      return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values), start_index, count);
-    }
+    static size_t index_of_any(const Char* str, const std::initializer_list<Char>& values, size_t start_index, size_t count) {return index_of_any(std::basic_string<Char>(str), std::vector<Char>(values), start_index, count);}
     /// @endcond
 
     /// @brief Inserts a specified instance of String at a specified index position in this instance.
@@ -605,6 +583,93 @@ namespace xtd {
     static std::basic_string<Char> join(const Char* separator, const std::initializer_list<Value>& values, size_t index, size_t count) {return join(std::basic_string<Char>(separator), values, index, count);}
     /// @endcond
     
+    /// @brief Reports the last index of the first occurrence of the specified character in the sêcified tring.
+    /// @param str A String to find last index of.
+    /// @param value A Unicode character to seek
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, Char value) {return last_index_of(str, value, 0, str.size());}
+    
+    /// @brief Reports the last index of the first occurrence of the specified string in the specified string.
+    /// @param str A String to find last index of.
+    /// @param value A Unicode character to seek
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value) {return last_index_of(str, value, 0, str.size());}
+    
+    /// @cond
+    template<typename Char>
+    static size_t last_index_of(const Char* str, Char value) {return last_index_of(std::basic_string<Char>(str), value);}
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, const Char* value) {return last_index_of(str, std::basic_string<Char>(value));}
+    template<typename Char>
+    static size_t last_index_of(const Char* str, const std::basic_string<Char>& value) {return last_index_of(std::basic_string<Char>(str), value);}
+    template<typename Char>
+    static size_t last_index_of(const Char* str, const Char* value) {return last_index_of(std::basic_string<Char>(str), std::basic_string<Char>(value));}
+    /// @endcond
+    
+    /// @brief Reports the last index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position.
+    /// @param str A String to find last index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, Char value, size_t start_index) {return last_index_of(str, value, start_index, str.size() - start_index);}
+    
+    /// @brief Reports the last index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position.
+    /// @param str A String to find last index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value, size_t start_index) {return last_index_of(str, value, start_index, str.size() - start_index);}
+    
+    /// @cond
+    template<typename Char>
+    static size_t last_index_of(const Char* str, Char value, size_t start_index) {return last_index_of(std::basic_string<Char>(str), value, start_index);}
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, const Char* value, size_t start_index) {return last_index_of(str, std::basic_string<Char>(value), start_index);}
+    template<typename Char>
+    static size_t last_index_of(const Char* str, const std::basic_string<Char>& value, size_t start_index) {return last_index_of(std::basic_string<Char>(str), value, start_index);}
+    template<typename Char>
+    static size_t last_index_of(const Char* str, const Char* value, size_t start_index) {return last_index_of(std::basic_string<Char>(str), std::basic_string<Char>(value), start_index);}
+    /// @endcond
+    
+    /// @brief Reports the last index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param str A String to find last index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, Char value, size_t start_index, size_t count) {
+      size_t result = str.rfind(value, start_index + count - 1);
+      return result < start_index ? std::basic_string<Char>::npos : result;
+    }
+    
+    /// @brief Reports the last index of the first occurrence of the specified character in the spexified string. The search starts at a specified character position and examines a specified number of character positions.
+    /// @param str A String to find last index of.
+    /// @param value A Unicode character to seek
+    /// @param start_index The search starting position
+    /// @param count The number of character positions to examine
+    /// @return size_t The index position of value if that character is found, or std::basic_string<Char>::npos if it is not.
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, const std::basic_string<Char>& value, size_t start_index, size_t count) {
+      size_t result = str.rfind(value, start_index + count - value.size());
+      return result < start_index ? std::basic_string<Char>::npos : result;
+    }
+    
+    /// @cond
+    template<typename Char>
+    static size_t last_index_of(const Char* str, Char value, size_t start_index, size_t count) {return last_index_of(std::basic_string<Char>(str), value, start_index, count);}
+    template<typename Char>
+    static size_t last_index_of(const std::basic_string<Char>& str, const Char* value, size_t start_index, size_t count) {return last_index_of(str, std::basic_string<Char>(value), start_index, count);}
+    template<typename Char>
+    static size_t last_index_of(const Char* str, const std::basic_string<Char>& value, size_t start_index, size_t count) {return last_index_of(std::basic_string<Char>(str), value, start_index, count);}
+    template<typename Char>
+    static size_t last_index_of(const Char* str, const Char* value, size_t start_index, size_t count) {return last_index_of(std::basic_string<Char>(str), std::basic_string<Char>(value), start_index, count);}
+    /// @endcond
+
     /// @brief Right-aligns the characters iin the specified string, padding with spaces on the left for a specified total length.
     /// @param str String to pad left.
     /// @param total_width The number of characters in the resulting String, equal to the number of original characters plus any additional padding characters.
