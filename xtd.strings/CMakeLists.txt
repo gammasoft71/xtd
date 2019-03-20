@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.strings VERSION 1.0.0)
+project(xtd.strings VERSION 0.1.0)
 set(INCLUDES
   include/xtd/__format.hpp
   include/xtd/istring.hpp
