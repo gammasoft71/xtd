@@ -18,7 +18,7 @@
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
 ///
-/// src/tunit_hello_world.cpp:
+/// src/strings_hello_world.cpp:
 /// @code
 /// #include <xtd/strings>
 /// #include <iostream>
