@@ -213,6 +213,58 @@ namespace xtd {
       return ss.str();
     }
     
+    /// @brief Concatenates the String representations of two specified objects.
+    /// @param value_a The first Object.
+    /// @param value_b The second Object.
+    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
+    template<typename ValueA, typename ValueB>
+    static std::string concat(const ValueA& value_a, const ValueB& value_b) noexcept {
+      std::stringstream ss;
+      ss << value_a;
+      ss << value_b;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates two specified instances of String.
+    /// @param str_a The first String.
+    /// @param str_b The second String.
+    /// @return String The concatenation of str_a, str_b, str_c and str_d.
+    template<typename Char>
+    static std::string concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << str_a;
+      ss << str_b;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates the String representations of three specified objects.
+    /// @param value_a The first Object.
+    /// @param value_b The second Object.
+    /// @param value_c The third Object.
+    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
+    template<typename ValueA, typename ValueB, typename ValueC>
+    static std::string concat(const ValueA& value_a, const ValueB& value_b, const ValueC& value_c) noexcept {
+      std::stringstream ss;
+      ss << value_a;
+      ss << value_b;
+      ss << value_c;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates three specified instances of String.
+    /// @param str_a The first String.
+    /// @param str_b The second String.
+    /// @param str_c The third String.
+    /// @return String The concatenation of str_a, str_b, str_c and str_d.
+    template<typename Char>
+    static std::string concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, const std::basic_string<Char>& str_c) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << str_a;
+      ss << str_b;
+      ss << str_c;
+      return ss.str();
+    }
+
     /// @brief Concatenates the String representations of four specified objects.
     /// @param value_a The first Object.
     /// @param value_b The second Object.
@@ -244,7 +296,7 @@ namespace xtd {
       ss << str_d;
       return ss.str();
     }
-    
+
     /// @brief Returns a value indicating whether the specified String object occurs within the specified string.
     /// @param value The first String.
     /// @return bool true if the value parameter occurs within the specified string, or if value is the empty String (""); otherwise, false
@@ -514,8 +566,8 @@ namespace xtd {
     /// @brief Inserts a specified instance of String at a specified index position in this instance.
     /// @param start_index The index position of the insertion.
     /// @param value The String to insert.
-    /// @return String A new String equivalent to this instance but with value inserted at position startIndex.
-    /// @remarks If startIndex is equal to the length of this instance, value is appended to the end of this instance.
+    /// @return String A new String equivalent to this instance but with value inserted at position start_index.
+    /// @remarks If start_index is equal to the length of this instance, value is appended to the end of this instance.
     /// @remarks For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc".
     template<typename Char>
     static std::basic_string<Char> insert(const std::basic_string<Char>& str, size_t start_index, const std::basic_string<Char>& value) {
@@ -789,6 +841,26 @@ namespace xtd {
     
     template<typename Char>
     static std::basic_string<Char> pad_right(const Char* str, size_t total_width, Char padding_char) {return pad_right(std::basic_string<Char>(str), total_width, padding_char);}
+    /// @endcond
+    
+    /// @brief Deletes all the characters from this String beginning at a specified position and continuing through the last position.
+    /// @param start_index The position to begin deleting characters.
+    /// @return String A A new String object that is equivalent to this String less the removed characters.
+    template<typename Char>
+    static std::basic_string<Char> remove(const std::basic_string<Char>& str, size_t start_index) {return str.substr(0, start_index);}
+    
+    /// @brief Deletes all the characters from this String beginning at a specified position and continuing through the last position.
+    /// @param start_index The position to begin deleting characters.
+    /// @param count The number of characters to delete.
+    /// @return String A A new String object that is equivalent to this String less the removed characters.
+    template<typename Char>
+    static std::basic_string<Char> remove(const std::basic_string<Char>& str, size_t start_index, size_t count) {return concat(str.substr(0, start_index), str.substr(start_index + count));}
+
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> remove(const Char* str, size_t start_index) {return remove(std::basic_string<Char>(str), start_index);}
+    template<typename Char>
+    static std::basic_string<Char> remove(const Char* str, size_t start_index, size_t count) {return remove(std::basic_string<Char>(str), start_index, count);}
     /// @endcond
     
     /// @brief Replaces all occurrences of a specified Char in the specified string with another specified Char.

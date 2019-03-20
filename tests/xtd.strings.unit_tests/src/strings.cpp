@@ -233,10 +233,18 @@ namespace unit_tests {
       assert::are_equal("str*******", strings::pad_right("str", 10, '*'));
     }
 
+    void test_method_(remove_start_index) {
+      assert::are_equal("012", strings::remove("0123456", 3));
+    }
+    
+    void test_method_(remove_start_index_count) {
+      assert::are_equal("01256", strings::remove("0123456", 3, 2));
+    }
+    
     void test_method_(replace_char) {
       assert::are_equal("accribuce", strings::replace("attribute", 't', 'c'));
     }
-
+    
     void test_method_(replace_string) {
       assert::are_equal("hola world and hola me", strings::replace("hello world and hello me", "hello", "hola"));
     }
