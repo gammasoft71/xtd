@@ -34,11 +34,13 @@
 
 ![added](pictures/added.png) String index_of_any and last_index_of_any helper.
 
+![added](pictures/added.png) String insert helper.
+
 ![added](pictures/added.png) Join strings helper.
 
 ![added](pictures/added.png) String padding left and right helper.
 
-![todo](pictures/todo.png) String remove helper.
+![added](pictures/added.png) String remove helper.
 
 ![added](pictures/added.png) String replace helper.
 
