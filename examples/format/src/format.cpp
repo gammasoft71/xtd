@@ -10,6 +10,6 @@ int main() {
   cout << strings::format("%10s %s %03d %c", "string", "literal"s, 42, 'a') << endl;
 }
 
-// This code produces the following output with colors:
+// This code produces the following output:
 //
 //     string literal 042 a
