@@ -203,6 +203,19 @@ namespace unit_tests {
     void test_method_(last_index_of_string_start_index_count) {
       assert::are_equal(std::string::npos, strings::last_index_of("012346723", "23", 3, 2));
     }
+    
+    void test_method_(last_index_of_any) {
+      assert::are_equal(3, strings::last_index_of_any("01234", {'5', '3', '2'}));
+    }
+    
+    void test_method_(last_index_of_any_start_index) {
+      assert::are_equal(3, strings::last_index_of_any("01234", {'5', '3', '2'}, 3));
+    }
+    
+    void test_method_(last_index_of_any_start_index_and_count) {
+      assert::are_equal(2, strings::last_index_of_any("01234", {'5', '2'}, 2, 1));
+      assert::are_equal(std::string::npos, strings::last_index_of_any("01234", {'5', '3'}, 0, 2));
+    }
 
     void test_method_(pad_left) {
       assert::are_equal("       str", strings::pad_left("str", 10));
