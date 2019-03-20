@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-using namespace string_literals;
+using namespace std::string_literals;
 using namespace xtd;
 
 // The main entry point for the application.
