@@ -1,6 +1,6 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.strings) | [Project](https://sourceforge.net/projects/stringspro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
-# xtd.tunit is ...
+# xtd.strings is ...
 
 Modern c++17 library to add string utilities on Windows, macOS, Linux, iOS and android.
 
