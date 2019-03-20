@@ -10,6 +10,6 @@ int main() {
   cout << strings::format("%s, %s!", "Hello", "World"s) << endl;
 }
 
-// This code produces the following output with colors:
+// This code produces the following output:
 //
 // Hello, World!
