@@ -533,6 +533,28 @@ namespace xtd {
     }
     /// @endcond
 
+    /// @brief Inserts a specified instance of String at a specified index position in this instance.
+    /// @param start_index The index position of the insertion.
+    /// @param value The String to insert.
+    /// @return String A new String equivalent to this instance but with value inserted at position startIndex.
+    /// @remarks If startIndex is equal to the length of this instance, value is appended to the end of this instance.
+    /// @remarks For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc".
+    template<typename Char>
+    static std::basic_string<Char> insert(const std::basic_string<Char>& str, size_t start_index, const std::basic_string<Char>& value) {
+      std::basic_string<Char> result(str);
+      result.insert(start_index, value);
+      return result;
+    }
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> insert(const Char* str, size_t start_index, const std::basic_string<Char>& value) {return insert(std::basic_string<Char>(str), start_index, value);}
+    template<typename Char>
+    static std::basic_string<Char> insert(const std::basic_string<Char>& str, size_t start_index, Char* value) {return insert(str, start_index, std::basic_string<Char>(value));}
+    template<typename Char>
+    static std::basic_string<Char> insert(const Char* str, size_t start_index, const Char* value) {return insert(std::basic_string<Char>(str), start_index, std::basic_string<Char>(value));}
+    /// @endcond
+
     /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
     /// @param separator A String separator.
     /// @param values An array of Object.

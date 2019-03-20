@@ -155,7 +155,11 @@ namespace unit_tests {
       assert::are_equal(2, strings::index_of_any("01234", {'5', '2'}, 2, 1));
       assert::are_equal(std::string::npos, strings::index_of_any("01234", {'5', '3'}, 0, 2));
     }
-
+    
+    void test_method_(insert) {
+      assert::are_equal("012345", strings::insert("345", 0, "012"));
+    }
+    
     void test_method_(join_const_char_pointer_array) {
       assert::are_equal("One, Two, Three", strings::join(", ", {"One", "Two", "Three"}));
     }
