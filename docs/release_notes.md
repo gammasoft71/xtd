@@ -19,18 +19,31 @@
 ## String helpers :
 
 ![added](pictures/added.png) immutable_base string class.
+
 ![added](pictures/added.png) String compare helper.
+
 ![added](pictures/added.png) String concat helper.
+
 ![added](pictures/added.png) String contains helper.
+
 ![added](pictures/added.png) String end_with and start_with helper.
+
 ![added](pictures/added.png) String format helper.
+
 ![added](pictures/added.png) String index_of helper.
+
 ![added](pictures/added.png) Join strings helper.
+
 ![added](pictures/added.png) String padding left and right helper.
+
 ![todo](pictures/todo.png) String remove helper.
+
 ![added](pictures/added.png) String replace helper.
+
 ![todo](pictures/todo.png) String trimming left, right and both helper.
+
 ![added](pictures/added.png) Split strings helper.
+
 ![added](pictures/added.png) String lower and upper cases helper.
 
 ______________________________________________________________________________________________
