@@ -14,6 +14,15 @@
 
 # Features
 
+* New istring, iu16string, iu32string, iwstring immutable string types and immutable_string_base immutable string class.
+* Immutable string litteral operators _is.
+* String format helper.
+* String concat helper.
+* String padding helper.
+* Join strings helper.
+* Split strings helper.
+* and more...
+
 For more information see [Documentation](docs).
 
 # Examples
