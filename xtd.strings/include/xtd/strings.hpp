@@ -4,6 +4,7 @@
 
 #include "__format.hpp"
 #include "istring.hpp"
+#include "string_comparison.hpp"
 #include "string_split_options.hpp"
 
 #include <algorithm>
@@ -22,13 +23,15 @@ namespace xtd {
     strings() = delete;
     /// @endcond
 
-    /// @brief Compares two specified String objects.
-    /// @param str_a The first String.
-    /// @param str_b The second String.
-    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
-    /// @return Less than zero      str_a is less than str_b.
-    /// @return Zero                str_a is equal to str_b.
-    /// @return Greater than zero   str_a is greater than str_b.
+    /// @brief Compares two specified String objects and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to compare.
+    /// @param str_b The second string to compare.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// | Value             | Condition                                                     |
+    /// |-------------------|---------------------------------------------------------------|
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
     template<typename Char>
     static int compare(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b) noexcept {return compare(str_a, str_b, false);}
 
@@ -42,20 +45,18 @@ namespace xtd {
     /// @endcond
 
     
-    /// @brief Compares two specified String objects, ignoring or honoring their case.
-    /// @param str_a The first String.
-    /// @param str_b The second String.
-    /// @param ignore_case A bool indicating a case-sensitive or insensitive comparison. (true indicates a case-insensitive comparison.)
-    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
-    /// @return Less than zero      str_a is less than str_b.
-    /// @return Zero                str_a is equal to str_b.
-    /// @return Greater than zero   str_a is greater than str_b.
+    /// @brief Compares two specified String objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to compare.
+    /// @param str_b The second string to compare.
+    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// | Value             | Condition                                                     |
+    /// |-------------------|---------------------------------------------------------------|
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
     template<typename Char>
-    static int compare(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, bool ignore_case) noexcept {
-      if (ignore_case)
-        return to_lower(str_a).compare(to_lower(str_b));
-      return str_a.compare(str_b);
-    }
+    static int compare(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, bool ignore_case) noexcept {return compare(str_a, str_b, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);}
     
     /// @cond
     template<typename Char>
@@ -65,20 +66,48 @@ namespace xtd {
     template<typename Char>
     static int compare(const Char* str_a, const Char* str_b, bool ignore_case) noexcept {return compare(std::basic_string<Char>(str_a), std::basic_string<Char>(str_b), ignore_case);}
     /// @endcond
+
+    /// @brief Compares two specified String objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to compare.
+    /// @param str_b The second string to compare.
+    /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// | Value             | Condition                                                     |
+    /// |-------------------|---------------------------------------------------------------|
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, xtd::string_comparison comparison_type) noexcept {
+      if (comparison_type == xtd::string_comparison::ordinal_ignore_case)
+        return to_lower(str_a).compare(to_lower(str_b));
+      return str_a.compare(str_b);
+    }
     
-    /// @brief Compares substrings of two specified String objects.
-    /// @param str_a The first String.
+    /// @cond
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, const Char* str_b, xtd::string_comparison comparison_type) noexcept {return compare(str_a, std::basic_string<Char>(str_b), comparison_type);}
+    template<typename Char>
+    static int compare(const Char* str_a, const std::basic_string<Char>& str_b, xtd::string_comparison comparison_type) noexcept {return compare(std::basic_string<Char>(str_a), str_b, comparison_type);}
+    template<typename Char>
+    static int compare(const Char* str_a, const Char* str_b, xtd::string_comparison comparison_type) noexcept {return compare(std::basic_string<Char>(str_a), std::basic_string<Char>(str_b), comparison_type);}
+    /// @endcond
+
+    /// @brief Compares substrings of two specified String objects and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
-    /// @param str_b The second String.
+    /// @param str_b The second string to use in the comparison.
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
-    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
-    /// @return Less than zero      str_a is less than str_b.
-    /// @return Zero                str_a is equal to str_b.
-    /// @return Greater than zero   str_a is greater than str_b.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// | Value             | Condition                                                     |
+    /// |-------------------|---------------------------------------------------------------|
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
     template<typename Char>
     static int compare(const std::basic_string<Char>& str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length) noexcept {return compare(str_a, index_a, str_b, index_b, length, false);}
-
+    
     /// @cond
     template<typename Char>
     static int compare(const std::basic_string<Char>& str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length) noexcept {return compare(str_a, index_a, str_b, index_b, length, false);}
@@ -87,28 +116,28 @@ namespace xtd {
     template<typename Char>
     static int compare(const Char* str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length) noexcept {return compare(str_a, index_a, str_b, index_b, length, false);}
     /// @endcond
-
     
-    /// @brief Compares substrings of two specified String objects, ignoring or honoring their case.
-    /// @param str_a The first String.
+    
+    /// @brief Compares substrings of two specified String objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to use in the comparison.
     /// @param index_a The position of the substring within str_a.
-    /// @param str_b The second String.
+    /// @param str_b The second string to use in the comparison.
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
-    /// @param ignore_case A bool indicating a case-sensitive or insensitive comparison. (true indicates a case-insensitive comparison.)
-    /// @return int A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:
-    /// @return Less than zero      str_a is less than str_b.
-    /// @return Zero                str_a is equal to str_b.
-    /// @return Greater than zero   str_a is greater than str_b.
+    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// | Value             | Condition                                                     |
+    /// |-------------------|---------------------------------------------------------------|
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
     template<typename Char>
     static int compare(const std::basic_string<Char>& str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length, bool ignore_case) noexcept {
       std::basic_string<Char> sa(str_a.substr(index_a, length));
       std::basic_string<Char> sb(str_b.substr(index_b, length));
-      if (ignore_case)
-        return to_lower(sa).compare(to_lower(sb));
-      return sa.compare(sb);
+      return compare(str_a, index_a, str_b, index_b, length, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);
     }
-
+    
     /// @cond
     template<typename Char>
     static int compare(const std::basic_string<Char>& str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length, bool ignore_case) noexcept {return compare(str_a, index_a, std::basic_string<Char>(str_b), index_b, length, ignore_case);}
@@ -118,51 +147,166 @@ namespace xtd {
     static int compare(const Char* str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length, bool ignore_case) noexcept {return compare(std::basic_string<Char>(str_a), index_a, std::basic_string<Char>(str_b), index_b, length, ignore_case);}
     /// @endcond
 
-    /// @brief Creates the String representation of a specified object.
-    /// @param values collection of items to concat.
-    /// @return String The String representation of the value of obj.
-    template<typename Char, typename Collection>
-    static std::basic_string<Char> concat(const Collection& values) noexcept {
-      std::basic_stringstream<Char> ss;
-      for (const auto& item : values)
-        ss << item;
-      return ss.str();
+    /// @brief Compares substrings of two specified String objects using the specified rules, and returns an integer that indicates their relative position in the sort order.
+    /// @param str_a The first string to use in the comparison.
+    /// @param index_a The position of the substring within str_a.
+    /// @param str_b The second string to use in the comparison.
+    /// @param index_b The position of the substring within str_b.
+    /// @param length The maximum number of characters in the substrings to compare
+    /// @param comparison_type One of the enumeration values that specifies the rules to use in the comparison.
+    /// @return A 32-bit signed integer that indicates the lexical relationship between the two comparands.
+    /// | Value             | Condition                                                     |
+    /// |-------------------|---------------------------------------------------------------|
+    /// | Less than zero    | str_a precedes str_b in the sort order.                       |
+    /// | Zero              | str_a occurs in the same position as str_b in the sort order. |
+    /// | Greater than zero | str_a follows str_b in the sort order.                        |
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept {
+      std::basic_string<Char> sa(str_a.substr(index_a, length));
+      std::basic_string<Char> sb(str_b.substr(index_b, length));
+      if (comparison_type == xtd::string_comparison::ordinal_ignore_case)
+        return to_lower(sa).compare(to_lower(sb));
+      return sa.compare(sb);
     }
     
     /// @cond
-    template<typename Char, typename Value>
-    static std::basic_string<Char> concat(const std::initializer_list<Value>& values) noexcept {
+    template<typename Char>
+    static int compare(const std::basic_string<Char>& str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept {return compare(str_a, index_a, std::basic_string<Char>(str_b), index_b, length, comparison_type);}
+    template<typename Char>
+    static int compare(const Char* str_a, size_t index_a, const std::basic_string<Char>& str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept {return compare(std::basic_string<Char>(str_a), index_a, str_b, index_b, length, comparison_type);}
+    template<typename Char>
+    static int compare(const Char* str_a, size_t index_a, const Char* str_b, size_t index_b, size_t length, xtd::string_comparison comparison_type) noexcept {return compare(std::basic_string<Char>(str_a), index_a, std::basic_string<Char>(str_b), index_b, length, comparison_type);}
+    /// @endcond
+
+    /// @brief Concatenates four specified instances of string.
+    /// @param str_a The first string to concatenate.
+    /// @param str_b The second string to concatenate.
+    /// @param str_c The third string to concatenate.
+    /// @param str_d The fourth string to concatenate.
+    /// @return The concatenation of str_a, str_b, str_c and str_d.
+    template<typename Char>
+    static std::basic_string<Char> concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, const std::basic_string<Char>& str_c, const std::basic_string<Char>& str_d) noexcept {
       std::basic_stringstream<Char> ss;
-      for (const auto& item : values)
-        ss << item;
+      ss << str_a;
+      ss << str_b;
+      ss << str_c;
+      ss << str_d;
       return ss.str();
     }
-    /// @endcond
-    
-    /// @brief Creates the String representation of a specified object.
-    /// @param values collection of items to concat.
-    /// @return String The String representation of the value of obj.
-    template<typename Collection>
-    static std::string concat(const Collection& values) noexcept {
+
+    /// @brief Concatenates four specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @param obj_c The third object to concatenate.
+    /// @param obj_d The fourth object to concatenate.
+    /// @return The concatenation of obj_a, obj_b, obj_c and obj_d.
+    template<typename Char, typename ObjectA, typename ObjectB, typename ObjectC, typename ObjectD>
+    static std::basic_string<Char> concat(ObjectA obj_a, ObjectB obj_b, ObjectC obj_c, ObjectD obj_d) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << obj_a;
+      ss << obj_b;
+      ss << obj_c;
+      ss << obj_d;
+      return ss.str();
+    }
+ 
+    /// @brief Concatenates four specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @param obj_c The third object to concatenate.
+    /// @param obj_d The fourth object to concatenate.
+    /// @return The concatenation of obj_a, obj_b, obj_c and obj_d.
+    template<typename ObjectA, typename ObjectB, typename ObjectC, typename ObjectD>
+    static std::string concat(ObjectA obj_a, ObjectB obj_b, ObjectC obj_c, ObjectD obj_d) noexcept {
       std::stringstream ss;
-      for (const auto& item : values)
-        ss << item;
+      ss << obj_a;
+      ss << obj_b;
+      ss << obj_c;
+      ss << obj_d;
       return ss.str();
     }
     
-    /// @cond
-    template<typename Value>
-    static std::string concat(const std::initializer_list<Value>& values) noexcept {
+    /// @brief Concatenates three specified instances of string.
+    /// @param str_a The first string to concatenate.
+    /// @param str_b The second string to concatenate.
+    /// @param str_c The third string to concatenate.
+    /// @return String The concatenation of str_a, str_b and str_c.
+    template<typename Char>
+    static std::basic_string<Char> concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, const std::basic_string<Char>& str_c) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << str_a;
+      ss << str_b;
+      ss << str_c;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates three specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @param obj_c The third object to concatenate.
+    /// @return The concatenation of obj_a, obj_b and obj_c.
+    template<typename Char, typename ObjectA, typename ObjectB, typename ObjectC>
+    static std::basic_string<Char> concat(ObjectA obj_a, ObjectB obj_b, ObjectC obj_c) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << obj_a;
+      ss << obj_b;
+      ss << obj_c;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates three specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @param obj_c The third object to concatenate.
+    /// @return The concatenation of obj_a, obj_b and obj_c.
+    template<typename ObjectA, typename ObjectB, typename ObjectC>
+    static std::string concat(ObjectA obj_a, ObjectB obj_b, ObjectC obj_c) noexcept {
       std::stringstream ss;
-      for (const auto& item : values)
-        ss << item;
+      ss << obj_a;
+      ss << obj_b;
+      ss << obj_c;
       return ss.str();
     }
-    /// @endcond
+
+    /// @brief Concatenates two specified instances of string.
+    /// @param str_a The first string to concatenate.
+    /// @param str_b The second string to concatenate.
+    /// @return String The concatenation of str_a and str_b.
+    template<typename Char>
+    static std::basic_string<Char> concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << str_a;
+      ss << str_b;
+      return ss.str();
+    }
     
-    /// @brief Creates the String representation of a specified object.
-    /// @param values collection of items to concat.
-    /// @return String The String representation of the value of obj.
+    /// @brief Concatenates two specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @return The concatenation of obj_a and obj_b.
+    template<typename Char, typename ObjectA, typename ObjectB>
+    static std::basic_string<Char> concat(ObjectA obj_a, ObjectB obj_b) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << obj_a;
+      ss << obj_b;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates two specified instances of object.
+    /// @param obj_a The first object to concatenate.
+    /// @param obj_b The second object to concatenate.
+    /// @return The concatenation of obj_a and obj_b.
+    template<typename ObjectA, typename ObjectB>
+    static std::string concat(const ObjectA& obj_a, const ObjectB& obj_b) noexcept {
+      std::stringstream ss;
+      ss << obj_a;
+      ss << obj_b;
+      return ss.str();
+    }
+    
+    /// @brief Concatenates the elements of a specified string array.
+    /// @param values An array of string instances.
+    /// @return The concatenated elements of values.
     template<typename Char>
     static std::basic_string<Char> concat(const std::vector<std::basic_string<Char>>& values) noexcept {
       std::basic_stringstream<Char> ss;
@@ -187,7 +331,7 @@ namespace xtd {
         ss << item;
       return ss.str();
     }
-
+    
     template<typename Char>
     static std::basic_string<Char> concat(const std::initializer_list<const Char*>& values) noexcept {
       std::basic_stringstream<Char> ss;
@@ -196,107 +340,69 @@ namespace xtd {
       return ss.str();
     }
     /// @endcond
-    
-    /// @brief Concatenates the String representations of four specified objects.
-    /// @param value_a The first Object.
-    /// @param value_b The second Object.
-    /// @param value_c The third Object.
-    /// @param value_d The fourth Object.
-    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
-    template<typename Char, typename ValueA, typename ValueB, typename ValueC, typename ValueD>
-    static std::basic_string<Char> concat(const ValueA& value_a, const ValueB& value_b, const ValueC& value_c, const ValueD& value_d) noexcept {
-      std::basic_stringstream<Char> ss;
-      ss << value_a;
-      ss << value_b;
-      ss << value_c;
-      ss << value_d;
-      return ss.str();
-    }
-    
-    /// @brief Concatenates the String representations of two specified objects.
-    /// @param value_a The first Object.
-    /// @param value_b The second Object.
-    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
-    template<typename ValueA, typename ValueB>
-    static std::string concat(const ValueA& value_a, const ValueB& value_b) noexcept {
-      std::stringstream ss;
-      ss << value_a;
-      ss << value_b;
-      return ss.str();
-    }
-    
-    /// @brief Concatenates two specified instances of String.
-    /// @param str_a The first String.
-    /// @param str_b The second String.
-    /// @return String The concatenation of str_a, str_b, str_c and str_d.
-    template<typename Char>
-    static std::string concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b) noexcept {
-      std::basic_stringstream<Char> ss;
-      ss << str_a;
-      ss << str_b;
-      return ss.str();
-    }
-    
-    /// @brief Concatenates the String representations of three specified objects.
-    /// @param value_a The first Object.
-    /// @param value_b The second Object.
-    /// @param value_c The third Object.
-    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
-    template<typename ValueA, typename ValueB, typename ValueC>
-    static std::string concat(const ValueA& value_a, const ValueB& value_b, const ValueC& value_c) noexcept {
-      std::stringstream ss;
-      ss << value_a;
-      ss << value_b;
-      ss << value_c;
-      return ss.str();
-    }
-    
-    /// @brief Concatenates three specified instances of String.
-    /// @param str_a The first String.
-    /// @param str_b The second String.
-    /// @param str_c The third String.
-    /// @return String The concatenation of str_a, str_b, str_c and str_d.
-    template<typename Char>
-    static std::string concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, const std::basic_string<Char>& str_c) noexcept {
-      std::basic_stringstream<Char> ss;
-      ss << str_a;
-      ss << str_b;
-      ss << str_c;
-      return ss.str();
-    }
 
-    /// @brief Concatenates the String representations of four specified objects.
-    /// @param value_a The first Object.
-    /// @param value_b The second Object.
-    /// @param value_c The third Object.
-    /// @param value_d The fourth Object.
-    /// @return String The concatenated String representations of the values of objA, objB, objC and objD.
-    template<typename ValueA, typename ValueB, typename ValueC, typename ValueD>
-    static std::string concat(const ValueA& value_a, const ValueB& value_b, const ValueC& value_c, const ValueD& value_d) noexcept {
-      std::stringstream ss;
-      ss << value_a;
-      ss << value_b;
-      ss << value_c;
-      ss << value_d;
+    /// @brief Concatenates the string representations of the elements in a specified Object array.
+    /// @param args An object array that contains the elements to concatenate.
+    /// @return The concatenated string representations of the values of the elements in args.
+    template<typename Char, typename Object>
+    static std::basic_string<Char> concat(const std::vector<Object>& args) noexcept {
+      std::basic_stringstream<Char> ss;
+      for (const auto& item : args)
+        ss << item;
       return ss.str();
     }
     
-    /// @brief Concatenates four specified instances of String.
-    /// @param str_a The first String.
-    /// @param str_b The second String.
-    /// @param str_c The third String.
-    /// @param str_d The fourth String.
-    /// @return String The concatenation of str_a, str_b, str_c and str_d.
-    template<typename Char>
-    static std::string concat(const std::basic_string<Char>& str_a, const std::basic_string<Char>& str_b, const std::basic_string<Char>& str_c, const std::basic_string<Char>& str_d) noexcept {
+    /// @cond
+    template<typename Char, typename Object>
+    static std::basic_string<Char> concat(const std::initializer_list<Object>& args) noexcept {
       std::basic_stringstream<Char> ss;
-      ss << str_a;
-      ss << str_b;
-      ss << str_c;
-      ss << str_d;
+      for (const auto& item : args)
+        ss << item;
       return ss.str();
     }
+    /// @endcond
 
+    /// @brief Concatenates the string representations of the elements in a specified Object array.
+    /// @param args An object array that contains the elements to concatenate.
+    /// @return The concatenated string representations of the values of the elements in args.
+    template<typename Object>
+    static std::string concat(const std::vector<Object>& args) noexcept {
+      std::stringstream ss;
+      for (const auto& item : args)
+        ss << item;
+      return ss.str();
+    }
+    
+    /// @cond
+    template<typename Object>
+    static std::string concat(const std::initializer_list<Object>& args) noexcept {
+      std::stringstream ss;
+      for (const auto& item : args)
+        ss << item;
+      return ss.str();
+    }
+    /// @endcond
+
+    /// @brief Creates the string representation of a specified object.
+    /// @param obj_a The object to represent.
+    /// @return The string representation of the value of arg0.
+    template<typename Char, typename Value>
+    static std::basic_string<Char> concat(Value value) noexcept {
+      std::basic_stringstream<Char> ss;
+      ss << value;
+      return ss.str();
+    }
+    
+    /// @brief Creates the string representation of a specified object.
+    /// @param obj_a The object to represent.
+    /// @return The string representation of the value of arg0.
+    template<typename Value>
+    static std::string concat(Value value) noexcept {
+      std::stringstream ss;
+      ss << value;
+      return ss.str();
+    }
+    
     /// @brief Returns a value indicating whether the specified String object occurs within the specified string.
     /// @param value The first String.
     /// @return bool true if the value parameter occurs within the specified string, or if value is the empty String (""); otherwise, false
@@ -313,7 +419,16 @@ namespace xtd {
     template<typename Char>
     static bool contains(const Char* str, const Char* value) noexcept {return contains(std::basic_string<Char>(str), std::basic_string<Char>(value));}
     /// @endcond
-
+    
+    /// @brief Represents the empty string.
+    /// @remarks The value of this method is the zero-length string, "".
+    template<typename Char>
+    static std::basic_string<Char> empty() noexcept {return {};}
+    
+    /// @brief Represents the empty string.
+    /// @remarks The value of this method is the zero-length string, "".
+    static std::string empty() noexcept {return {};}
+    
     /// @brief Determines whether the end of the specified string matches the specified Char.
     /// @param value A Char to compare to.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
@@ -607,6 +722,12 @@ namespace xtd {
     template<typename Char>
     static std::basic_string<Char> insert(const Char* str, size_t start_index, const Char* value) noexcept {return insert(std::basic_string<Char>(str), start_index, std::basic_string<Char>(value));}
     /// @endcond
+
+    /// @brief Indicates whether the specified string is an empty string ("").
+    /// @param str The string to test.
+    /// @return true if the value parameter is null or an empty string (""); otherwise, false.
+    template<typename Char>
+    static bool is_empty(const std::basic_string<Char>& str) {return str.empty();}
 
     /// @brief Concatenates a specified separator String between each element of a specified Object array, yielding a single concatenated String.
     /// @param separator A String separator.

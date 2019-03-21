@@ -23,16 +23,16 @@ namespace unit_tests {
       assert::is_zero(strings::compare("a", "A", true));
     }
     
-    void test_method_(compare_index_and_length) {
+    void test_method_(compare_index_length) {
       assert::is_not_zero(strings::compare("abcde", 1, "debcaf", 1, 2));
       assert::is_zero(strings::compare("abcde", 1, "debcaf", 2, 2));
     }
     
-    void test_method_(compare_index_length_and_ingore_case_false) {
+    void test_method_(compare_index_length_ingore_case_false) {
       assert::is_not_zero(strings::compare("abcde", 1, "DEBCAF", 2, 2, false));
     }
     
-    void test_method_(compare_index_length_and_ingore_case_true) {
+    void test_method_(compare_index_length_ingore_case_true) {
       assert::is_zero(strings::compare("abcde", 1, "DEBCAF", 2, 2, true));
     }
 
