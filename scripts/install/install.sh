@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo "Install xtd.strings librarie version $xtd_tunit_version, copyright Gammasoft, 2019"
+echo "Install xtd.strings library version $xtd_strings_version, copyright Gammasoft, 2019"
 echo ""
 
 # Detecting linux distribution
@@ -15,6 +15,10 @@ case "$OSTYPE" in
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential cmake -y;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum groupinstall 'Development Tools'; sudo yum install cmake3 -y;;
 esac
+
+# init and update submodule
+git submodule init
+git submodule update
 
 # generate, build and install
 mkdir -p build/examples
