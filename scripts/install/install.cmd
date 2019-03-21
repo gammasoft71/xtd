@@ -1,5 +1,5 @@
 @echo off
-echo Install xtd.tunit libraries version %xtd_tunit_version%, copyright Gammasoft, 2019
+echo Install xtd.tunit library version %xtd_tunit_version%, copyright Gammasoft, 2019
 echo.
 
 :: generate, build and install
