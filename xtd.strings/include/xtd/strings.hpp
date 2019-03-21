@@ -1453,17 +1453,11 @@ namespace xtd {
   private:
     template<typename Arg>
     static auto convert_param(Arg&& arg) noexcept {
-      if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::string>::value) {
-        return std::forward<Arg>(arg).c_str();
-      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, xtd::istring>::value) {
-        return std::forward<Arg>(arg).c_str();
-      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::wstring>::value) {
-        return std::forward<Arg>(arg).c_str();
-      } else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, xtd::iwstring>::value) {
-        return std::forward<Arg>(arg).c_str();
-      } else {
-        return std::forward<Arg>(arg);
-      }
+      if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::string>::value) return std::forward<Arg>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, xtd::istring>::value) return std::forward<Arg>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, std::wstring>::value) return std::forward<Arg>(arg).c_str();
+      else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<Arg>>, xtd::iwstring>::value) return std::forward<Arg>(arg).c_str();
+      else return std::forward<Arg>(arg);
     }
   };
 }

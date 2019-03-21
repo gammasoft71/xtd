@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains string_split_options enum class.
+/// @brief Contains xtd::string_split_options enum class.
 #pragma once
 
 #include <ostream>
