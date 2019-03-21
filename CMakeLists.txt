@@ -14,10 +14,10 @@ if (ENABLE_COVERAGE AND UNIX)
 endif()
 
 # Projects
-add_subdirectory(xtd.tunit/xtd.tunit)
 add_subdirectory(xtd.strings)
 option(ENABLE_TESTS "Enable tests" ON)
 if (ENABLE_TESTS)
   enable_testing()
+  add_subdirectory(xtd.tunit/xtd.tunit)
   add_subdirectory(tests)
 endif()
