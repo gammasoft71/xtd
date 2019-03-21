@@ -1,5 +1,5 @@
 @echo off
-echo Install xtd.strings libraries version %xtd_strings_version%, copyright Gammasoft, 2019
+echo Install xtd.strings library version %xtd_strings_version%, copyright Gammasoft, 2019
 echo.
 
 :: init and update submodule
