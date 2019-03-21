@@ -75,18 +75,6 @@ namespace unit_tests {
       assert::is_false(strings::ends_with("abcd", 'B'));
     }
 
-    void test_method_(ends_with_char_ignore_case_false) {
-      assert::is_true(strings::ends_with("abcd", 'd', false));
-      assert::is_false(strings::ends_with("abcd", 'D', false));
-      assert::is_false(strings::ends_with("abcd", 'B', false));
-    }
-    
-    void test_method_(ends_with_char_ignore_case_true) {
-      assert::is_true(strings::ends_with("abcd", 'd', true));
-      assert::is_true(strings::ends_with("abcd", 'D', true));
-      assert::is_false(strings::ends_with("abcd", 'B', true));
-    }
-
     void test_method_(ends_with_string) {
       assert::is_true(strings::ends_with("abcd", "cd"));
       assert::is_false(strings::ends_with("abcd", "ab"));

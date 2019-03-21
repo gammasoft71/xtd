@@ -403,9 +403,10 @@ namespace xtd {
       return ss.str();
     }
     
-    /// @brief Returns a value indicating whether the specified String object occurs within the specified string.
-    /// @param value The first String.
-    /// @return bool true if the value parameter occurs within the specified string, or if value is the empty String (""); otherwise, false
+    /// @brief Returns a value indicating whether a specified substring occurs within the specified string.
+    /// @param str The string to check.
+    /// @param value The string to seek.
+    /// @return true if the value parameter occurs within this string, or if value is the empty string (""); otherwise, false.
     template<typename Char>
     static bool contains(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {
       return str.find(value) != str.npos;
@@ -430,48 +431,43 @@ namespace xtd {
     static std::string empty() noexcept {return {};}
     
     /// @brief Determines whether the end of the specified string matches the specified Char.
-    /// @param value A Char to compare to.
-    /// @return bool true if value matches the end of the specified string; otherwise, false.
-    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
+    /// @param str The string to match.
+    /// @param value The Char to compare to the substring at the end of this instance.
+    /// @return true if value matches the end of this instance; otherwise, false.
     template<typename Char>
-    static bool ends_with(const std::basic_string<Char>& str, Char value) noexcept {return ends_with(str, value, false);}
+    static bool ends_with(const std::basic_string<Char>& str, Char value) noexcept {return str.rfind(value) == str.size() - 1;}
     
-    /// @brief Determines whether the end of the specified string matches the specified Char, ignoring or honoring their case.
-    /// @param value A Char to compare to.
-    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
-    /// @return bool true if value matches the end of the specified string; otherwise, false.
-    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
+    /// @cond
     template<typename Char>
-    static bool ends_with(const std::basic_string<Char>& str, Char value, bool ignore_case) noexcept {
-      if (ignore_case)
-        return to_lower(str).rfind(tolower(value)) == str.size() - 1;
-      return str.rfind(value) == str.size() - 1;
-    }
+    static bool ends_with(const Char* str, Char value) noexcept {return ends_with(std::basic_string<Char>(str), value);}
+    /// @endcond
 
-    /// @brief Determines whether the end of the specified string matches the specified String.
-    /// @param value A String to compare to.
-    /// @return bool true if value matches the end of the specified string; otherwise, false.
-    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
+    /// @brief Determines whether the end of the specified string matches the specified string.
+    /// @param str The string to match.
+    /// @param value The string to compare to the substring at the end of this instance.
+    /// @return true if value matches the end of this instance; otherwise, false.
     template<typename Char>
     static bool ends_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value) noexcept {return ends_with(str, value, false);}
     
-    /// @brief Determines whether the end of the specified string matches the specified String, ignoring or honoring their case.
-    /// @param value A String to compare to.
-    /// @param ignore_case true to ignore case when comparing the specified string and value; otherwise, false
+    /// @brief Determines whether the end of this string instance matches the specified string when compared using the specified culture.
+    /// @param str The string to match.
+    /// @param ignore_case true to ignore case during the comparison; otherwise, false.
     /// @return bool true if value matches the end of the specified string; otherwise, false.
-    /// @remarks This method compares value to the substring at the end of the specified string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the end of the specified string.
     template<typename Char>
-    static bool ends_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {
-      if (ignore_case)
+    static bool ends_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return ends_with(str, value, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);}
+    
+    /// @brief Determines whether the end of the specified string matches the specified string when compared using the specified comparison option.
+    /// @param str The string to match.
+    /// @param comparison_type One of the enumeration values that determines how this string and value are compared.
+    /// @return bool true if value matches the end of the specified string; otherwise, false.
+    template<typename Char>
+    static bool ends_with(const std::basic_string<Char>& str, const std::basic_string<Char>& value, xtd::string_comparison comparison_type) noexcept {
+      if (comparison_type == xtd::string_comparison::ordinal_ignore_case)
         return to_lower(str).rfind(to_lower(value)) + to_lower(value).size() == str.size();
       return str.rfind(value) + value.size() == str.size();
     }
 
     /// @cond
-    template<typename Char>
-    static bool ends_with(const Char* str, Char value) noexcept {return ends_with(std::basic_string<Char>(str), value, false);}
-    template<typename Char>
-    static bool ends_with(const Char* str, Char value, bool ignore_case) noexcept {return ends_with(std::basic_string<Char>(str), value, ignore_case);}
     template<typename Char>
     static bool ends_with(const std::basic_string<Char>& str, const Char* value) noexcept {return ends_with(str, std::basic_string<Char>(value), false);}
     template<typename Char>
@@ -485,6 +481,13 @@ namespace xtd {
     static bool ends_with(const Char* str, const std::basic_string<Char>& value, bool ignore_case) noexcept {return ends_with(std::basic_string<Char>(str), value, ignore_case);}
     template<typename Char>
     static bool ends_with(const Char* str, const Char* value, bool ignore_case) noexcept {return ends_with(std::basic_string<Char>(str), std::basic_string<Char>(value), ignore_case);}
+
+    template<typename Char>
+    static bool ends_with(const std::basic_string<Char>& str, const Char* value, xtd::string_comparison comparison_type) noexcept {return ends_with(str, std::basic_string<Char>(value), comparison_type);}
+    template<typename Char>
+    static bool ends_with(const Char* str, const std::basic_string<Char>& value, xtd::string_comparison comparison_type) noexcept {return ends_with(std::basic_string<Char>(str), value, comparison_type);}
+    template<typename Char>
+    static bool ends_with(const Char* str, const Char* value, xtd::string_comparison comparison_type) noexcept {return ends_with(std::basic_string<Char>(str), std::basic_string<Char>(value), comparison_type);}
     /// @endcond
 
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
