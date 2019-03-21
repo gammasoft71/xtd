@@ -11,7 +11,7 @@ fi
 
 # install needed packages and libraries for known distribution
 case "$OSTYPE" in
-  *"Darwin"*) brew update; brew install cmake;;
+  *"Darwin"*) brew update; brew upgrade; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential cmake -y;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum groupinstall 'Development Tools'; sudo yum install cmake3 -y;;
 esac
@@ -57,10 +57,10 @@ mkdir -p examples/build
 pushd examples/build
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW"* ]]; then
   cmake .. "$@"
-  start xtd.tunit.examples.sln
+  start xtd.strings.examples.sln
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   cmake .. -G "Xcode" "$@"
-  open xtd.tunit.examples.xcodeproj
+  open xtd.strings.examples.xcodeproj
 else
   mkdir Debug && mkdir Release
   pushd Release
@@ -68,7 +68,7 @@ else
   popd
   pushd Debug
   cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug "$@"
-  xdg-open xtd.tunit.examples.cbp
+  xdg-open xtd.strings.examples.cbp
   popd
 fi
 popd
