@@ -2,6 +2,10 @@
 echo Install xtd.strings libraries version %xtd_strings_version%, copyright Gammasoft, 2019
 echo.
 
+:: init and update submodule
+git submodule init
+git submodule update
+
 :: generate, build and install
 mkdir build\examples
 cd build

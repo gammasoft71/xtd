@@ -3,7 +3,7 @@
 #---------------------------------------------------------------------------
 
 PROJECT_NAME           = "xtd.string - Reference Guide"
-PROJECT_NUMBER         = 0.1.0
+PROJECT_NUMBER         = 0.1.1
 PROJECT_BRIEF          = "Modern c++17 library to add string utilities on Windows, macOS, Linux, iOS and android."
 PROJECT_LOGO           = docs/pictures/strings_doxygen.png
 OUTPUT_DIRECTORY       =

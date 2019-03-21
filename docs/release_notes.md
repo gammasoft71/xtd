@@ -1,5 +1,15 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.tunit) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
+![0.1.1](pictures/version_0_1_1.png) (beta) March 21th 2019
+
+## Other
+
+![fixed](pictures/fixed.png) install.
+
+![added](pictures/added.png) compare, concat and contains examples.
+
+______________________________________________________________________________________________
+
 ![0.1.0](pictures/version_0_1_0.png) (beta) March 20th 2019
 
 ## Immutable string :

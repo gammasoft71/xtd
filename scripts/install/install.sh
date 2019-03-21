@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo "Install xtd.tunit librarie version $xtd_tunit_version, copyright Gammasoft, 2019"
+echo "Install xtd.strings librarie version $xtd_tunit_version, copyright Gammasoft, 2019"
 echo ""
 
 # Detecting linux distribution
@@ -11,7 +11,7 @@ fi
 
 # install needed packages and libraries for known distribution
 case "$OSTYPE" in
-  *"Darwin"*) brew update; brew install cmake -y;;
+  *"Darwin"*) brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential cmake -y;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum groupinstall 'Development Tools'; sudo yum install cmake3 -y;;
 esac
@@ -43,6 +43,10 @@ else
   popd
 fi
 popd
+
+# init and update submodule
+git submodule init
+git submodule update
 
 # generate and launch examples
 mkdir -p examples/build
