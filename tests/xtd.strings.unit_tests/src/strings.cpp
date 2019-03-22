@@ -125,11 +125,16 @@ namespace unit_tests {
       assert::are_equal(L"str", strings::format(L"%ls", L"str"s));
     }
     
+    void test_method_(get_hash_code) {
+      assert::are_equal(strings::get_hash_code("01234"), strings::get_hash_code("01234"));
+      assert::are_not_equal(strings::get_hash_code("01235"), strings::get_hash_code("01234"));
+    }
+    
     void test_method_(index_of_char) {
       assert::are_equal(3, strings::index_of("01234", '3'));
       assert::are_equal(3, strings::index_of("0123434", '3'));
     }
-    
+
     void test_method_(index_of_string) {
       assert::are_equal(2, strings::index_of("01234", "23"));
       assert::are_equal(2, strings::index_of("0123423", "23"));

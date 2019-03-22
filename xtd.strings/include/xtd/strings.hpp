@@ -553,9 +553,19 @@ namespace xtd {
 
     /// @cond
     template<typename Char, typename ... Args>
-    static std::basic_string<Char> format(const Char* fmt, Args&& ... args) noexcept {return __format(fmt, convert_param(std::forward<Args>(args)) ...);}
+    static std::basic_string<Char> format(const Char* fmt, Args&& ... args) noexcept {return format(std::basic_string<Char>(fmt), std::forward<Args>(args) ...);}
     /// @endcond
-    
+
+    /// @brief Returns the hash code for this string.
+    /// @return A hash code.
+    template<typename Char>
+    static size_t get_hash_code(const std::basic_string<Char>& str) noexcept {return std::hash<std::basic_string<Char>>()(str);}
+
+    /// @cond
+    template<typename Char>
+    static size_t get_hash_code(const Char* str) noexcept {return std::hash<std::basic_string<Char>>{}(std::basic_string<Char>(str));}
+    /// @endcond
+
     /// @brief Reports the index of the first occurrence of the specified character in the sêcified tring.
     /// @param str A String to find index of.
     /// @param value A Unicode character to seek
