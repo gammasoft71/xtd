@@ -92,37 +92,37 @@ namespace unit_tests {
       assert::is_false(strings::ends_with("abcd", "AB", true));
     }
 
-    void test_method_(string_format_with_one_argument) {
-      std::string s = strings::format("%d", 42);
+    void test_method_(string_formatf_with_one_argument) {
+      std::string s = strings::formatf("%d", 42);
       assert::are_equal("42", s);
     }
     
-    void test_method_(wstring_format_with_one_argument) {
-       assert::are_equal(L"42", strings::format(L"%d", 42));
+    void test_method_(wstring_formatf_with_one_argument) {
+       assert::are_equal(L"42", strings::formatf(L"%d", 42));
     }
 
-    void test_method_(u16string_format_with_one_argument) {
-      assert::are_equal(u"", strings::format(u"%d", 42));
+    void test_method_(u16string_formatf_with_one_argument) {
+      assert::are_equal(u"", strings::formatf(u"%d", 42));
     }
 
-    void test_method_(u32string_format_with_one_argument) {
-      assert::are_equal(U"", strings::format(U"%d", 42));
+    void test_method_(u32string_formatf_with_one_argument) {
+      assert::are_equal(U"", strings::formatf(U"%d", 42));
     }
 
-    void test_method_(string_format_with_string_argument) {
-      assert::are_equal("str", strings::format("%s", "str"s));
+    void test_method_(string_formatf_with_string_argument) {
+      assert::are_equal("str", strings::formatf("%s", "str"s));
     }
 
     void ignore_test_method_(wstring_format_with_string_argument) {
-      assert::are_equal(L"str", strings::format(L"%s", "str"s));
+      assert::are_equal(L"str", strings::formatf(L"%s", "str"s));
     }
 
-    void test_method_(string_format_with_wstring_argument) {
-      assert::are_equal("str", strings::format("%ls", L"str"s));
+    void test_method_(string_formatf_with_wstring_argument) {
+      assert::are_equal("str", strings::formatf("%ls", L"str"s));
     }
 
-    void test_method_(wstring_format_with_wstring_argument) {
-      assert::are_equal(L"str", strings::format(L"%ls", L"str"s));
+    void test_method_(wstring_formatf_with_wstring_argument) {
+      assert::are_equal(L"str", strings::formatf(L"%ls", L"str"s));
     }
     
     void test_method_(get_hash_code) {
