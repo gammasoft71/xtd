@@ -502,22 +502,25 @@ namespace xtd {
     static bool ends_with(const Char* str, const Char* value, xtd::string_comparison comparison_type) noexcept {return ends_with(std::basic_string<Char>(str), std::basic_string<Char>(value), comparison_type);}
     /// @endcond
 
+    /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
+    /// @param fmt A composite format string.
+    /// @param args anarguments list to write using format.
+    /// @return string formated.
     template<typename Char, typename ...Args>
     static std::basic_string<Char> format(const std::basic_string<Char>&& fmt, Args&&... args) {
       std::basic_string<Char> result;
       size_t index = 0;
       std::vector<__format_information<Char>> formats;
-      
       typename std::basic_string<Char>::const_iterator begin_format_iterator =  fmt.cend();
       typename std::basic_string<Char>::const_iterator end_format_iterator =  fmt.cend();
       for (typename std::basic_string<Char>::const_iterator iterator = fmt.cbegin(); iterator != fmt.cend(); ++iterator) {
-        if (*iterator == '{') {
+        if (*iterator == static_cast<Char>('{')) {
           ++iterator;
-          if (*iterator == '{')
+          if (*iterator == static_cast<Char>('{'))
             result += *iterator;
           else {
             begin_format_iterator = iterator;
-            while (*iterator != '}' && iterator != fmt.end()) ++iterator;
+            while (*iterator != static_cast<Char>('}') && iterator != fmt.end()) ++iterator;
             if (iterator == fmt.end())
               throw std::invalid_argument("Invalid format expression : open bracket '}' without end bracket '{'");
             end_format_iterator = iterator;
@@ -527,7 +530,7 @@ namespace xtd {
             if (format.size() == 0)
               fi.index = index++;
             else {
-              size_t index_format_separator = format.find(':');
+              size_t index_format_separator = format.find(static_cast<Char>(':'));
               if (index_format_separator == std::basic_string<Char>::npos) {
                 fi.index = std::stoi(format.substr(0, index_format_separator));
               } else if (index_format_separator == 0) {
@@ -540,10 +543,10 @@ namespace xtd {
             }
             formats.push_back(fi);
           }
-        } else if (*iterator == '}') {
+        } else if (*iterator == static_cast<Char>('}')) {
           if (++iterator == fmt.cend())
             throw std::invalid_argument("Invalid format expression : closing bracket '{' without open bracket '}'");
-          if (*iterator != '}')
+          if (*iterator != static_cast<Char>('}'))
             throw std::invalid_argument("Invalid format expression : closing bracket '{' without open bracket '}'");
           result += *iterator;
         } else
@@ -554,8 +557,10 @@ namespace xtd {
       return result;
     }
     
+    /// @cond
     template<typename Char, typename ...Args>
     static std::basic_string<Char> format(const Char* fmt, Args&&... args) {return format(std::basic_string<Char>(fmt), std::forward<Args>(args)...);}
+    /// @endcond
 
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
@@ -1544,25 +1549,13 @@ namespace xtd {
 
 #include "to_string.hpp"
 
-template<typename Char>
-std::basic_string<Char> __extract_format_information(const std::basic_string<Char>& fmt, size_t index, size_t& pos, size_t& length) {
-  std::basic_string<Char> result;
-  std::basic_string<Char> starting_format;
-  
-  starting_format = index != std::basic_string<Char>::npos ? "{" + std::to_string(index) : "{";
-  pos = fmt.find(starting_format, pos);
-  size_t close_bace_pos = fmt.find("}", pos);
-  length = close_bace_pos - pos + 1;
-  return fmt.substr(pos + starting_format.length(), length - starting_format.length() - 1);
-}
-
 template<typename Char, typename Arg>
 void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vector<__format_information<Char>>& formats, Arg&& arg) {
   size_t offset = 0;
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
-      std::basic_string<Char> arg_str = format.format.empty() ? xtd::to_string(arg) : xtd::to_string(arg, format.format);
+      std::basic_string<Char> arg_str = format.format.empty() ? xtd::to_string<Char>(arg) : xtd::to_string<Char>(arg, format.format);
       fmt.insert(format.location, arg_str);
       offset += arg_str.size();
     }
