@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <codecvt>
 
 using namespace std;
 using namespace std::string_literals;
@@ -52,19 +53,6 @@ namespace xtd {
     ss << fmt[0];
     ss << value.value_b();
     ss << L"]";
-    return ss.str();
-  }
-
-  template<>
-  std::u16string to_string<char16_t, cl>(const cl& value, const std::u16string& fmt) {
-    std::basic_stringstream<char16_t> ss;
-    ss << u"[";
-    /*
-    ss << value.value_a();
-    ss << fmt[0];
-    ss << value.value_b();
-     */
-    ss << u"]";
     return ss.str();
   }
 }
