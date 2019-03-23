@@ -34,13 +34,37 @@ private:
 
 namespace xtd {
   template<>
-  std::string to_string<cl>(const cl& value, const std::string& fmt) {
+  std::string to_string<char, cl>(const cl& value, const std::string& fmt) {
     std::stringstream ss;
     ss << "[";
     ss << value.value_a();
     ss << fmt[0];
     ss << value.value_b();
     ss << "]";
+    return ss.str();
+  }
+
+  template<>
+  std::wstring to_string<wchar_t, cl>(const cl& value, const std::wstring& fmt) {
+    std::wstringstream ss;
+    ss << L"[";
+    ss << value.value_a();
+    ss << fmt[0];
+    ss << value.value_b();
+    ss << L"]";
+    return ss.str();
+  }
+
+  template<>
+  std::u16string to_string<char16_t, cl>(const cl& value, const std::u16string& fmt) {
+    std::basic_stringstream<char16_t> ss;
+    ss << u"[";
+    /*
+    ss << value.value_a();
+    ss << fmt[0];
+    ss << value.value_b();
+     */
+    ss << u"]";
     return ss.str();
   }
 }
@@ -51,6 +75,7 @@ int main() {
   cout << strings::format("{{0}} {} {} {} {}", 42, cl(32, 16), 42.3, "string {{0}}") << endl;
   cout << strings::format("{{0}} {0}", "{1}", 42) << endl;
   cout << strings::formatf("%%d %s", "%d", 42) << endl;
+  wcout << strings::format(L"{{0}} {} {} {} {}", 42, cl(32, 16), 42.3, L"string {{0}}") << endl;
 }
 
 // This code produces the following output with colors:
