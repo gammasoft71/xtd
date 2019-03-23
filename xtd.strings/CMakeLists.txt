@@ -10,6 +10,7 @@ set(INCLUDES
   include/xtd/string_split_options.hpp
   include/xtd/strings
   include/xtd/strings.hpp
+  include/xtd/to_string.hpp
 )
 set(SOURCES
   src/strings.cpp

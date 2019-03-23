@@ -6,10 +6,10 @@
 
 /// @cond
 template <class Char>
-inline std::basic_string<Char> __format(const Char* fmt, ...) {return std::basic_string<Char>();}
+inline std::basic_string<Char> __formatf(const Char* fmt, ...) {return std::basic_string<Char>();}
 
 template <>
-inline std::basic_string<char> __format<char>(const char* fmt, ...) {
+inline std::basic_string<char> __formatf<char>(const char* fmt, ...) {
   va_list args;
   va_start(args, fmt);
   std::basic_string<char> formated_string(vsnprintf(nullptr, 0, fmt, args), 0);
@@ -21,7 +21,7 @@ inline std::basic_string<char> __format<char>(const char* fmt, ...) {
 }
 
 template <>
-inline std::basic_string<wchar_t> __format<wchar_t>(const wchar_t* fmt, ...) {
+inline std::basic_string<wchar_t> __formatf<wchar_t>(const wchar_t* fmt, ...) {
   va_list args;
   size_t size = 1024;
   int length = 0;

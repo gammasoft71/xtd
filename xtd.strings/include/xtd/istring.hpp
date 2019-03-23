@@ -80,8 +80,8 @@ namespace xtd {
     const Char* data() {this->std::basic_string<Char, CharTraits, Allocator>::data();}
     const Char* data() const {this->std::basic_string<Char, CharTraits, Allocator>::data();}
     
-    const Char* c_str() {this->std::basic_string<Char, CharTraits, Allocator>::c_str();}
-    const Char* c_str() const {this->std::basic_string<Char, CharTraits, Allocator>::c_str();}
+    const Char* c_str() {return this->std::basic_string<Char, CharTraits, Allocator>::c_str();}
+    const Char* c_str() const {return this->std::basic_string<Char, CharTraits, Allocator>::c_str();}
 
     const_iterator begin() {return this->std::basic_string<Char, CharTraits, Allocator>::begin();}
     const_iterator begin() const {return this->std::basic_string<Char, CharTraits, Allocator>::begin();}
