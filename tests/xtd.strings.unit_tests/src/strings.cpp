@@ -114,7 +114,7 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_string_with_decimal_argument) {
-      assert::are_equal("42", strings::format("{0:D}", 42));
+      assert::are_equal("42", strings::format("{0:d}", 42));
     }
     
     void test_method_(string_format_int_with_decimal_argument_and_precision) {
@@ -157,6 +157,14 @@ namespace unit_tests {
       assert::are_equal("1,234,567.0000", strings::format("{0:N4}", 1234567));
     }
     
+    void test_method_(string_format_string_with_octal_argument) {
+      assert::are_equal("52", strings::format("{0:o}", 42));
+    }
+    
+    void test_method_(string_format_int_with_octal_argument_and_precision) {
+      assert::are_equal("00052", strings::format("{0:O5}", 42));
+    }
+
     void test_method_(string_format_string_with_percent_argument) {
       assert::are_equal("100.00 %", strings::format("{0:p}", 1));
     }
@@ -171,6 +179,14 @@ namespace unit_tests {
     
     void test_method_(string_format_int_with_round_trip_argument_and_precision) {
       assert::throws<std::invalid_argument>([]{strings::format("{0:R4}", 42);});
+    }
+    
+    void test_method_(string_format_string_with_hexadecimal_argument) {
+      assert::are_equal("2a", strings::format("{0:x}", 42));
+    }
+    
+    void test_method_(string_format_int_with_hexadecimal_argument_and_precision) {
+      assert::are_equal("002A", strings::format("{0:X4}", 42));
     }
 
     void test_method_(string_format_string_with_default_argument) {
