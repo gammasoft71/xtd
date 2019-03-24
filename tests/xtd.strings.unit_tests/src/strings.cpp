@@ -92,6 +92,71 @@ namespace unit_tests {
       assert::is_false(strings::ends_with("abcd", "AB", true));
     }
 
+    void test_method_(string_format_with_automatic_arguments) {
+      assert::are_equal("42 str 24", strings::format("{} {} {}", 42, "str", 24));
+    }
+
+    void test_method_(string_format_with_indexed_arguments) {
+      assert::are_equal("42 str 24 str 42", strings::format("{0} {1} {2} {1} {0}", 42, "str", 24));
+    }
+
+    void test_method_(string_format_int_with_default_argument) {
+      assert::are_equal("42", strings::format("{0}", 42));
+    }
+    
+    void test_method_(string_format_string_with_curency_argument) {
+      assert::are_equal("$42.00", strings::format("{0:c}", 42));
+    }
+    
+    void test_method_(string_format_int_with_curency_argument_and_precision) {
+       assert::are_not_equal("$42.00000", strings::format("{0:C5}", 42)); // the precision is ignored
+      assert::are_equal("$42.00", strings::format("{0:C5}", 42)); // the precision is ignored
+    }
+    
+    void test_method_(string_format_string_with_decimal_argument) {
+      assert::are_equal("42", strings::format("{0:D}", 42));
+    }
+    
+    void test_method_(string_format_int_with_decimal_argument_and_precision) {
+      assert::are_equal("00042", strings::format("{0:D5}", 42));
+    }
+    
+    void test_method_(string_format_nevative_int_with_decimal_argument_and_precision) {
+      assert::are_equal("-001234", strings::format("{0:D6}", -1234));
+    }
+    
+    void test_method_(string_format_string_with_exponencial_argument) {
+      assert::are_equal("4.200000e+01", strings::format("{0:e}", 42));
+    }
+    
+    void test_method_(string_format_int_with_exponencial_argument_and_precision) {
+      assert::are_equal("4.2000000000E+01", strings::format("{0:E10}", 42));
+    }
+    
+    void test_method_(string_format_string_with_fixed_point_argument) {
+      assert::are_equal("42.00", strings::format("{0:f}", 42));
+    }
+    
+    void test_method_(string_format_int_with_fixed_point_argument_and_precision) {
+      assert::are_equal("42.0000", strings::format("{0:F4}", 42));
+    }
+
+    void test_method_(string_format_string_with_default_argument) {
+      assert::are_equal("string", strings::format("{0}", std::string("string")));
+    }
+    
+    void test_method_(string_format_string_with_positive_precision) {
+      assert::are_equal("    string", strings::format("{0,10}", std::string("string")));
+    }
+    
+    void test_method_(string_format_string_with_negative_precision) {
+      assert::are_equal("string    ", strings::format("{0,-10}", std::string("string")));
+    }
+    
+    void test_method_(string_format_string_with_bad_format) {
+      assert::are_equal("string", strings::format("{0:S,10}", std::string("string")));
+    }
+
     void test_method_(string_formatf_with_one_argument) {
       std::string s = strings::formatf("%d", 42);
       assert::are_equal("42", s);
