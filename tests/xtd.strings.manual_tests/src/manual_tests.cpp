@@ -59,10 +59,7 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("{:F}", 42.5) << endl;
-  cout << strings::format("{:F0}", 42.5) << endl;
-  cout << strings::format("{:F1}", 42.5) << endl;
-  cout << strings::format("{:F2}", 42.5) << endl;
+  cout << strings::format("{}", xtd::string_comparison::ordinal_ignore_case) << endl;
 }
 
 // This code produces the following output with colors:
