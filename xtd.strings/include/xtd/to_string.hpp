@@ -15,34 +15,52 @@
 #include "strings.hpp"
 
 template<typename Char, typename Value>
-std::basic_string<Char> __default_format(Value value) {throw std::invalid_argument("Invalid format numeric type");}
+inline std::basic_string<Char> __default_format(Value value) {throw std::invalid_argument("Invalid format numeric type");}
 
 template<typename Char>
-std::basic_string<Char> __default_format(int value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('d')});}
+inline std::basic_string<Char> __default_format(int value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('d')});}
 template<typename Char>
-std::basic_string<Char> __default_format(unsigned int value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('u')});}
+inline std::basic_string<Char> __default_format(unsigned int value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('u')});}
 template<typename Char>
-std::basic_string<Char> __default_format(long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('d')});}
+inline std::basic_string<Char> __default_format(long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('d')});}
 template<typename Char>
-std::basic_string<Char> __default_format(unsigned long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('u')});}
+inline std::basic_string<Char> __default_format(unsigned long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('u')});}
 template<typename Char>
-std::basic_string<Char> __default_format(long long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('l'), static_cast<Char>('d')});}
+inline std::basic_string<Char> __default_format(long long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('l'), static_cast<Char>('d')});}
 template<typename Char>
-std::basic_string<Char> __default_format(unsigned long long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('l'), static_cast<Char>('u')});}
+inline std::basic_string<Char> __default_format(unsigned long long value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('l'), static_cast<Char>('l'), static_cast<Char>('u')});}
 template<typename Char>
-std::basic_string<Char> __default_format(float value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('2'), static_cast<Char>('f')});}
+inline std::basic_string<Char> __default_format(float value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('2'), static_cast<Char>('f')});}
 template<typename Char>
-std::basic_string<Char> __default_format(double value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('2'), static_cast<Char>('f')});}
+inline std::basic_string<Char> __default_format(double value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('2'), static_cast<Char>('f')});}
 template<typename Char>
-std::basic_string<Char> __default_format(long double value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('2'), static_cast<Char>('L'), static_cast<Char>('f')});}
+inline std::basic_string<Char> __default_format(long double value) {return std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('2'), static_cast<Char>('L'), static_cast<Char>('f')});}
+
+template<typename Char>
+inline std::basic_string<Char> __insert_group_separator(const std::basic_string<Char>& s, Char separator, Char group_separator) {
+  std::basic_string<Char> output;
+  int distance_from_separator = xtd::strings::index_of(s, separator);
+  if (distance_from_separator == -1) distance_from_separator = s.size();
+  for (Char c : s) {
+    output += c;
+    if (c == '-')
+      distance_from_separator -= 1;
+    else {
+      distance_from_separator -= 1;
+      if (distance_from_separator > 0 && (distance_from_separator % 3 == 0))
+        output += group_separator;
+    }
+  }
+  return output;
+}
 
 template<typename Char, typename Value>
-std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, Value value) {
+inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, Value value) {
   throw std::invalid_argument("Invalid format expression");
 }
 
 template<typename Char>
-std::basic_string<Char> __put_money(long double value, size_t precision) {
+inline std::basic_string<Char> __put_money(long double value, size_t precision) {
   std::basic_stringstream<Char> ss;
   ss.imbue(std::locale(std::locale().name() == "" || std::locale().name() == "C" ? "en_US.UTF-8" : std::locale().name().c_str()));
   ss << std::showbase << std::setprecision(precision) << std::put_money(value*100);
@@ -50,7 +68,7 @@ std::basic_string<Char> __put_money(long double value, size_t precision) {
 }
 
 template<typename Char>
-std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, int value) {
+inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, int value) {
   if (fmt.empty()) return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('d')}), value);
   
   size_t precision = 0;
@@ -66,6 +84,14 @@ std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, i
     case static_cast<Char>('E'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('E')}), precision == 0 ? 6 : precision, static_cast<double>(value));
     case static_cast<Char>('f'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('f')}), precision == 0 ? 2 : precision, static_cast<double>(value));
     case static_cast<Char>('F'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('F')}), precision == 0 ? 2 : precision, static_cast<double>(value));
+    case static_cast<Char>('g'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('g')}), precision == 0 ? 10 : precision, static_cast<double>(value));
+    case static_cast<Char>('G'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('G')}), precision == 0 ? 10 : precision, static_cast<double>(value));
+    case static_cast<Char>('n'): return __insert_group_separator<Char>(xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('f')}), precision == 0 ? 2 : precision, static_cast<double>(value)), static_cast<Char>('.'), static_cast<Char>(','));
+    case static_cast<Char>('N'): return __insert_group_separator<Char>(xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('F')}), precision == 0 ? 2 : precision, static_cast<double>(value)), static_cast<Char>('.'), static_cast<Char>(','));
+    case static_cast<Char>('p'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('f')}), precision == 0 ? 2 : precision, static_cast<double>(value * 100)) + std::basic_string<Char>({static_cast<Char>(' '), static_cast<Char>('%')});
+    case static_cast<Char>('P'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('.'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('F')}), precision == 0 ? 2 : precision, static_cast<double>(value * 100)) + std::basic_string<Char>({static_cast<Char>(' '), static_cast<Char>('%')});
+    case static_cast<Char>('r'):
+    case static_cast<Char>('R'): throw std::invalid_argument("Invalid format expression");
     case static_cast<Char>('x'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('0'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('x')}), precision, value);
     case static_cast<Char>('X'): return xtd::strings::formatf(std::basic_string<Char>({static_cast<Char>('%'), static_cast<Char>('0'), static_cast<Char>('*')}) + std::basic_string<Char>({static_cast<Char>('X')}), precision, value);
   }
@@ -73,11 +99,14 @@ std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, i
 }
 
 template<typename Char, typename Value>
-std::basic_string<Char> __string_formater(const std::basic_string<Char>& fmt, Value value) {
+inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& fmt, Value value) {
+  if (fmt.empty()) return xtd::strings::formatf(std::basic_string<Char>{static_cast<Char>('%'), static_cast<Char>('s')}, value);
+
   int precision = 0;
   if (fmt[0] == static_cast<Char>(',') && fmt.size() > 1) precision = std::stoi(fmt.substr(1));
   if (precision > 0) return xtd::strings::formatf(std::basic_string<Char>{static_cast<Char>('%'), static_cast<Char>('s')}, xtd::strings::pad_left(value, precision));
   if (precision < 0) return xtd::strings::formatf(std::basic_string<Char>{static_cast<Char>('%'), static_cast<Char>('s')}, xtd::strings::pad_right(value, std::abs(precision)));
+
   return xtd::strings::formatf(std::basic_string<Char>{static_cast<Char>('%'), static_cast<Char>('s')}, value);
 }
 

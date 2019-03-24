@@ -64,7 +64,8 @@ int main() {
   //cout << strings::format("{{0}} {0}", "{1}", 42) << endl;
   //cout << strings::formatf("%%d %s", "%d", 42) << endl;
   //wcout << strings::format(L"{{0}} {} {} {} {}", 42, cl(32, 16), 42.3, L"string {{0}}") << endl;
-  cout << strings::format("{0:D}", 42) << endl;
+  cout << strings::format("{0:X}", 42) << endl;
+  cout << strings::formatf("%A", 42.0) << endl;
 }
 
 // This code produces the following output with colors:

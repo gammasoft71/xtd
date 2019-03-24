@@ -140,6 +140,38 @@ namespace unit_tests {
     void test_method_(string_format_int_with_fixed_point_argument_and_precision) {
       assert::are_equal("42.0000", strings::format("{0:F4}", 42));
     }
+    
+    void test_method_(string_format_string_with_general_argument) {
+      assert::are_equal("42", strings::format("{0:g}", 42));
+    }
+    
+    void test_method_(string_format_int_with_general_argument_and_precision) {
+      assert::are_equal("42", strings::format("{0:G2}", 42));
+    }
+    
+    void test_method_(string_format_string_with_number_argument) {
+      assert::are_equal("1,234,567.00", strings::format("{0:n}", 1234567));
+    }
+    
+    void test_method_(string_format_int_with_number_argument_and_precision) {
+      assert::are_equal("1,234,567.0000", strings::format("{0:N4}", 1234567));
+    }
+    
+    void test_method_(string_format_string_with_percent_argument) {
+      assert::are_equal("100.00 %", strings::format("{0:p}", 1));
+    }
+    
+    void test_method_(string_format_int_with_percent_argument_and_precision) {
+      assert::are_equal("600.0000 %", strings::format("{0:P4}", 6));
+    }
+    
+    void test_method_(string_format_string_with_round_trip_argument) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:r}", 42);});
+    }
+    
+    void test_method_(string_format_int_with_round_trip_argument_and_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:R4}", 42);});
+    }
 
     void test_method_(string_format_string_with_default_argument) {
       assert::are_equal("string", strings::format("{0}", std::string("string")));
