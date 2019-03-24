@@ -188,6 +188,10 @@ namespace unit_tests {
     void test_method_(string_format_int_with_hexadecimal_argument_and_precision) {
       assert::are_equal("002A", strings::format("{0:X4}", 42));
     }
+    
+    void test_method_(string_format_int_with_invalid_format) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:V2}", 42);});
+    }
 
     void test_method_(string_format_string_with_default_argument) {
       assert::are_equal("string", strings::format("{0}", std::string("string")));
@@ -201,7 +205,7 @@ namespace unit_tests {
       assert::are_equal("string    ", strings::format("{0,-10}", std::string("string")));
     }
     
-    void test_method_(string_format_string_with_bad_format) {
+    void test_method_(string_format_string_with_invalid_format) {
       assert::are_equal("string", strings::format("{0:S,10}", std::string("string")));
     }
 

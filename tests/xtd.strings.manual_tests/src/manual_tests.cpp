@@ -59,13 +59,11 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
-  //cout << strings::format("{{0}} {0:D3} {1:*} {2} {3} {2} {1} 0x{0:X4}", 42, cl(32, 16), 42.3, "string") << endl;
-  //cout << strings::format("{{0}} {:d3} {} {} {}", 42, cl(32, 16), 42.3, "string {{0}}") << endl;
-  //cout << strings::format("{{0}} {0}", "{1}", 42) << endl;
-  //cout << strings::formatf("%%d %s", "%d", 42) << endl;
-  //wcout << strings::format(L"{{0}} {} {} {} {}", 42, cl(32, 16), 42.3, L"string {{0}}") << endl;
-  cout << strings::format("{0:X}", 42) << endl;
-  cout << strings::formatf("%A", 42.0) << endl;
+  cout << strings::format("{{0}} {0:D3} {1::} {2} {3} {2} {1} 0x{0:X4}", 42, cl(32, 16), 42.3, "string") << endl;
+  cout << strings::format("{{0}} {:d3} {} {} {}", 42, cl(32, 16), 42.3, "string {{0}}") << endl;
+  cout << strings::format("{{0}} {0}", "{1}", 42) << endl;
+  cout << strings::formatf("%%d %s", "%d", 42) << endl;
+  wcout << strings::format(L"{{0}} {} {} {} {}", 42, cl(32, 16), 42.3, L"string {{0}}") << endl;
 }
 
 // This code produces the following output with colors:
