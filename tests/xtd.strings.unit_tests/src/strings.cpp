@@ -99,7 +99,31 @@ namespace unit_tests {
     void test_method_(string_format_with_indexed_arguments) {
       assert::are_equal("42 str 24 str 42", strings::format("{0} {1} {2} {1} {0}", 42, "str", 24));
     }
+    
+    void test_method_(string_format_boolean_false_with_default_argument) {
+      assert::are_equal("false", strings::format("{0}", false));
+    }
 
+    void test_method_(string_format_boolean_true_with_default_argument) {
+      assert::are_equal("true", strings::format("{0}", true));
+    }
+
+    void test_method_(string_format_boolean_false_with_positive_precision) {
+      assert::are_equal("     false", strings::format("{0,10}", false));
+    }
+
+    void test_method_(string_format_boolean_true_with_positive_precision) {
+      assert::are_equal("      true", strings::format("{0,10}", true));
+    }
+
+    void test_method_(string_format_boolean_false_with_negative_precision) {
+      assert::are_equal("false     ", strings::format("{0, -10}", false));
+    }
+    
+    void test_method_(string_format_boolean_true_with_negative__precision) {
+      assert::are_equal("true      ", strings::format("{0, -10}", true));
+    }
+    
     void test_method_(string_format_int_with_default_argument) {
       assert::are_equal("42", strings::format("{0}", 42));
     }
