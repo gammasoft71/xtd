@@ -20,6 +20,7 @@ struct __format_information {
   size_t index = -1;
   size_t location;
   std::basic_string<Char> format;
+  int alignment;
 };
 
 template<typename Char, typename ...Args>
@@ -531,14 +532,25 @@ namespace xtd {
               fi.index = index++;
             else {
               size_t index_format_separator = format.find(static_cast<Char>(':'));
-              if (index_format_separator == std::basic_string<Char>::npos) {
-                fi.index = std::stoi(format.substr(0, index_format_separator));
-              } else if (index_format_separator == 0) {
+              size_t index_alignment_separator = format.find(static_cast<Char>(','));
+              if (index_format_separator == std::basic_string<Char>::npos && index_alignment_separator == std::basic_string<Char>::npos) {
+                fi.index = index++;
+              } else if (index_format_separator == 0 && index_alignment_separator == std::basic_string<Char>::npos) {
                 fi.index = index++;
                 fi.format = format;
+              } else if (index_alignment_separator == 0 && index_format_separator == std::basic_string<Char>::npos) {
+                fi.index = index++;
+                fi.alignment = std::stoi(format);
+              } else if (index_format_separator == 0) {
+                fi.index = index++;
+                fi.format = std::stoi(format.substr(0, index_alignment_separator));
+                fi.alignment = std::stoi(format.substr(index_alignment_separator + 1));
+              } else if (index_alignment_separator == 0) {
+                throw std::invalid_argument("Invalid format expression : precision separator before format separator");
               } else {
                 fi.index = std::stoi(format.substr(0, index_format_separator));
-                fi.format = format.substr(index_format_separator+1);
+                fi.format = format.substr(index_format_separator + 1, index_alignment_separator);
+                fi.alignment = std::stoi(format.substr(index_alignment_separator + 1));
               }
             }
             formats.push_back(fi);
