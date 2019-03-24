@@ -532,9 +532,10 @@ namespace xtd {
               fi.index = index++;
             else {
               size_t index_format_separator = index_of_any(format, {static_cast<Char>(':'), static_cast<Char>(',')});
-              if (index_format_separator == 0)
+              if (index_format_separator == 0) {
                 fi.index = index++;
-              else if (index_format_separator == std::basic_string<Char>::npos)
+                fi.format = format.substr(format[index_format_separator] == static_cast<Char>(':') ? index_format_separator + 1 : index_format_separator);
+              } else if (index_format_separator == std::basic_string<Char>::npos)
                 fi.index = std::stoi(format);
               else {
                 fi.index = std::stoi(format.substr(0, index_format_separator));
