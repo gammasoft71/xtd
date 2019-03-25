@@ -54,6 +54,7 @@ int main() {
   cout << strings::format("{0:D} 0x{0:X} 0{0:O} 0b{0:B}", 0x2A) << endl;
   cout << strings::format("{0:D} 0x{0:X} 0{0:O} 0b{0:B}", 052) << endl;
   cout << strings::format("{0:D} 0x{0:X} 0{0:O} 0b{0:B}", 0b101010) << endl;
+  cout << strings::format("{,10}", 42) << endl;
 }
 
 // This code produces the following output with colors:
