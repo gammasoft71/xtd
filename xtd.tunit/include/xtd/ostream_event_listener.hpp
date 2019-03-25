@@ -42,7 +42,8 @@ namespace xtd {
           this->os_ << "    Stack Trace: in " << e.test().line_info().file_path();
           if (e.test().line_info().line_number() != 0) this->os_ << ":" << e.test().line_info().line_number();
         }
-      }
+        this->os_ << std::endl;
+     }
 
       /// @brief Occurs when test is failed.
       /// @param test_event_args Contains test event parameters.
