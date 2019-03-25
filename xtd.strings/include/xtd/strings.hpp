@@ -1556,7 +1556,7 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
-      std::basic_string<Char> arg_str = format.format.empty() ? xtd::to_string<Char>(arg) : xtd::to_string<Char>(arg, format.format);
+      std::basic_string<Char> arg_str = format.format.empty() ? xtd::to_string<Char>(arg) : xtd::to_string(arg, format.format);
       fmt.insert(format.location, arg_str);
       offset += arg_str.size();
     }
