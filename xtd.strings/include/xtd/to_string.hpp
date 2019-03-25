@@ -170,13 +170,13 @@ namespace xtd {
   inline std::string to_string(unsigned int value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
   inline std::string to_string(unsigned int value) {return to_string(value, "");}
   
-  inline std::string to_string(long value, const std::string& fmt) {return strings::formatf(fmt, value);}
+  inline std::string to_string(long value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   inline std::string to_string(long value) {return to_string(value, "");}
   
   inline std::string to_string(unsigned long value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
   inline std::string to_string(unsigned long value) {return to_string(value, "");}
   
-  inline std::string to_string(long long value, const std::string& fmt) {return strings::formatf(fmt, value);}
+  inline std::string to_string(long long value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   inline std::string to_string(long long value) {return to_string(value, "");}
   
   inline std::string to_string(unsigned long long value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
@@ -230,6 +230,11 @@ namespace xtd {
   inline std::basic_string<Char> to_string(short value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
   template<typename Char>
   inline std::basic_string<Char> to_string(short value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
+  
+  template<typename Char>
+  inline std::basic_string<Char> to_string(unsigned short value, const std::basic_string<Char>& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  template<typename Char>
+  inline std::basic_string<Char> to_string(unsigned short value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
 
   template<typename Char>
   inline std::basic_string<Char> to_string(int value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
@@ -237,7 +242,7 @@ namespace xtd {
   inline std::basic_string<Char> to_string(int value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
   
   template<typename Char>
-  inline std::basic_string<Char> to_string(unsigned int value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
+  inline std::basic_string<Char> to_string(unsigned int value, const std::basic_string<Char>& fmt) {return __unsigned_numeric_formater(fmt, value);}
   template<typename Char>
   inline std::basic_string<Char> to_string(unsigned int value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
   
@@ -247,7 +252,7 @@ namespace xtd {
   inline std::basic_string<Char> to_string(long value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
   
   template<typename Char>
-  inline std::basic_string<Char> to_string(unsigned long value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
+  inline std::basic_string<Char> to_string(unsigned long value, const std::basic_string<Char>& fmt) {return __unsigned_numeric_formater(fmt, value);}
   template<typename Char>
   inline std::basic_string<Char> to_string(unsigned long value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
   
@@ -257,7 +262,7 @@ namespace xtd {
   inline std::basic_string<Char> to_string(long long value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
   
   template<typename Char>
-  inline std::basic_string<Char> to_string(unsigned long long value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
+  inline std::basic_string<Char> to_string(unsigned long long value, const std::basic_string<Char>& fmt) {return __unsigned_numeric_formater(fmt, value);}
   template<typename Char>
   inline std::basic_string<Char> to_string(unsigned long long value) {return to_string<Char>(value, xtd::strings::empty<Char>());}
   
