@@ -30,6 +30,14 @@ namespace unit_tests {
       assert::are_equal("42", strings::format("{0}", to_value<Value>(42)));
     }
     
+    void test_method_(string_format_string_with_binary_argument) {
+      assert::are_equal("101010", strings::format("{0:b}", to_value<Value>(42)));
+    }
+    
+    void test_method_(string_format_int_with_binary_argument_and_precision) {
+      assert::are_equal("00101010", strings::format("{0:B8}", to_value<Value>(42)));
+    }
+    
     void test_method_(string_format_string_with_currency_argument) {
       assert::are_equal("$42.00", strings::format("{0:c}", to_value<Value>(42)));
     }
@@ -68,7 +76,7 @@ namespace unit_tests {
       assert::are_equal("42.0000", strings::format("{0:F4}", to_value<Value>(42)));
     }
     
-    void test_method_(string_format_string_with_general_argument) {
+    void test_method_(string_format_int_with_general_argument) {
       assert::are_equal("42", strings::format("{0:g}", to_value<Value>(42)));
     }
     
