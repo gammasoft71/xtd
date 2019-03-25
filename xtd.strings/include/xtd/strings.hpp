@@ -8,6 +8,7 @@
 #include "string_split_options.hpp"
 
 #include <algorithm>
+#include <bitset>
 #include <iomanip>
 #include <locale>
 #include <sstream>
