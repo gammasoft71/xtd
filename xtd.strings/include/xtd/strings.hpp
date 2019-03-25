@@ -509,7 +509,7 @@ namespace xtd {
     /// @param args anarguments list to write using format.
     /// @return string formated.
     template<typename Char, typename ...Args>
-    static std::basic_string<Char> format(const std::basic_string<Char>&& fmt, Args&&... args) {
+    static std::basic_string<Char> format(const std::basic_string<Char>& fmt, Args&&... args) {
       std::basic_string<Char> result;
       size_t index = 0;
       std::vector<__format_information<Char>> formats;
