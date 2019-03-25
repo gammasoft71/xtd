@@ -317,7 +317,14 @@ namespace xtd {
     ss << value;
     return ss.str();
   }
-  template<typename Char, typename Value>
-  inline std::basic_string<Char> to_string(const Value& value, const std::basic_string<Char>& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
+
+  template<typename Value>
+  inline std::u16string to_string(const Value& value, const std::u16string& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
+
+  template<typename Value>
+  inline std::u32string to_string(const Value& value, const std::u32string& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
+
+  template<typename Value>
+  inline std::wstring to_string(const Value& value, const std::wstring& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
 }
 

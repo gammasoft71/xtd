@@ -35,7 +35,7 @@ private:
 
 namespace xtd {
   template<>
-  std::string to_string<char, cl>(const cl& value, const std::string& fmt) {
+  std::string to_string<cl>(const cl& value, const std::string& fmt) {
     std::stringstream ss;
     ss << "[";
     ss << value.value_a();
@@ -44,21 +44,11 @@ namespace xtd {
     ss << "]";
     return ss.str();
   }
-
-  template<>
-  std::wstring to_string<wchar_t, cl>(const cl& value, const std::wstring& fmt) {
-    std::wstringstream ss;
-    ss << L"[";
-    ss << value.value_a();
-    ss << fmt[0];
-    ss << value.value_b();
-    ss << L"]";
-    return ss.str();
-  }
 }
 
 // The main entry point for the application.
 int main() {
+  cout << strings::format("{:+}", cl(12, 36)) << endl;
   cout << strings::format("{}", xtd::string_comparison::ordinal_ignore_case) << endl;
 }
 
