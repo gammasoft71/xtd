@@ -11,9 +11,7 @@ using namespace std::string_literals;
 void base_assert::abort(const std::string& message, const xtd::tunit::line_info& line_info) {
   if (line_info != xtd::tunit::line_info::empty())
     xtd::tunit::test::current_test().info_ = line_info;
-  if (xtd::tunit::test::current_test().message_.empty() && !message.empty())
-    xtd::tunit::test::current_test().message_ = message;
-  else
+  if (xtd::tunit::test::current_test().message_.empty())
     xtd::tunit::test::current_test().message_ = !message.empty() ? message : "Test aborted"s;
   xtd::tunit::test::current_test().status_ = test::test_status::aborted;
   throw abort_error(xtd::tunit::test::current_test().message_);
