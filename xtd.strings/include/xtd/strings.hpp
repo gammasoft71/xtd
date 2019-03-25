@@ -515,13 +515,13 @@ namespace xtd {
       typename std::basic_string<Char>::const_iterator begin_format_iterator =  fmt.cend();
       typename std::basic_string<Char>::const_iterator end_format_iterator =  fmt.cend();
       for (typename std::basic_string<Char>::const_iterator iterator = fmt.cbegin(); iterator != fmt.cend(); ++iterator) {
-        if (*iterator == static_cast<Char>('{')) {
+        if (*iterator == Char('{')) {
           ++iterator;
-          if (*iterator == static_cast<Char>('{'))
+          if (*iterator == Char('{'))
             result += *iterator;
           else {
             begin_format_iterator = iterator;
-            while (*iterator != static_cast<Char>('}') && iterator != fmt.end()) ++iterator;
+            while (*iterator != Char('}') && iterator != fmt.end()) ++iterator;
             if (iterator == fmt.end())
               throw std::invalid_argument("Invalid format expression : open bracket '}' without end bracket '{'");
             end_format_iterator = iterator;
@@ -531,23 +531,23 @@ namespace xtd {
             if (format.size() == 0)
               fi.index = index++;
             else {
-              size_t index_format_separator = index_of_any(format, {static_cast<Char>(':'), static_cast<Char>(',')});
+              size_t index_format_separator = index_of_any(format, {Char(':'), Char(',')});
               if (index_format_separator == 0) {
                 fi.index = index++;
-                fi.format = format.substr(format[index_format_separator] == static_cast<Char>(':') ? index_format_separator + 1 : index_format_separator);
+                fi.format = format.substr(format[index_format_separator] == Char(':') ? index_format_separator + 1 : index_format_separator);
               } else if (index_format_separator == std::basic_string<Char>::npos)
                 fi.index = std::stoi(format);
               else {
                 fi.index = std::stoi(format.substr(0, index_format_separator));
-                fi.format = format.substr(format[index_format_separator] == static_cast<Char>(':') ? index_format_separator + 1 : index_format_separator);
+                fi.format = format.substr(format[index_format_separator] == Char(':') ? index_format_separator + 1 : index_format_separator);
               }
             }
             formats.push_back(fi);
           }
-        } else if (*iterator == static_cast<Char>('}')) {
+        } else if (*iterator == Char('}')) {
           if (++iterator == fmt.cend())
             throw std::invalid_argument("Invalid format expression : closing bracket '{' without open bracket '}'");
-          if (*iterator != static_cast<Char>('}'))
+          if (*iterator != Char('}'))
             throw std::invalid_argument("Invalid format expression : closing bracket '{' without open bracket '}'");
           result += *iterator;
         } else

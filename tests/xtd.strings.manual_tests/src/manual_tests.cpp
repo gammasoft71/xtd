@@ -23,7 +23,7 @@ public:
   friend std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, const cl& value) {
     os << "[";
     os << value.value_a();
-    os << static_cast<Char>(' ');
+    os << Char(' ');
     os << value.value_b();
     os << "]";
     return os;
