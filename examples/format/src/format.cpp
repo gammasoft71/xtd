@@ -8,7 +8,7 @@ using namespace xtd::string_literals;
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("{,10} {} {:D3} {}", "string", "literal"_is, 42, 'a') << endl;
+  cout << strings::format("{0,10} {1} {2:D3} {3}", "string", "literal"_is, 42, 'a') << endl;
 }
 
 // This code produces the following output:
