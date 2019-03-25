@@ -1398,9 +1398,25 @@ namespace xtd {
     static const std::basic_string<Char> to_lower(const Char* str) noexcept {return to_lower(std::basic_string<Char>(str));}
     /// @endcond
     
+    template<typename Char, typename Value>
+    static std::basic_string<Char> to_string(Value value) {
+      std::basic_stringstream<Char> ss;
+      ss << value;
+      return ss.str();
+    }
+    
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> to_string(bool value) {
+      std::basic_stringstream<Char> ss;
+      ss << (value ? "true" : "false");
+      return ss.str();
+    }
+    /// @endcond
+    
     /// @brief Returns a copy of the specified string converted to uppercase.
     /// @param str string to convert to upper.
-  /// @return String A new String in uppercase.
+    /// @return String A new String in uppercase.
     template<typename Char>
     static const std::basic_string<Char> to_upper(const std::basic_string<Char>& str) noexcept {
       std::basic_string<Char> result;
@@ -1556,13 +1572,7 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
-      std::basic_string<Char> arg_str;
-      if (format.format.empty()) {
-        std::basic_stringstream<Char> ss;
-        ss << arg;
-        arg_str = ss.str();
-      } else
-      arg_str = xtd::to_string(arg, format.format);
+      std::basic_string<Char> arg_str = format.format.empty() ? xtd::strings::to_string<Char>(arg) : xtd::to_string(arg, format.format);
       fmt.insert(format.location, arg_str);
       offset += arg_str.size();
     }
