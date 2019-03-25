@@ -4,7 +4,7 @@ mkdir -p build/examples
 cd build
 
 # generate and build lib
-cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-7 -DENABLE_TESTS=ON -DCMAKE_INSTALL_PREFIX=~/local ..
+cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DCMAKE_CXX_COMPILER=g++-7 -DCMAKE_INSTALL_PREFIX=~/local ..
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
