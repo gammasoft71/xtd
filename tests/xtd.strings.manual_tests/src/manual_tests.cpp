@@ -49,7 +49,7 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("0b{:b8}", 42) << endl;
+  cout << strings::format("{0:D} 0x{0:X} \\{0:O} 0b{0:B}", 42) << endl;
 }
 
 // This code produces the following output with colors:
