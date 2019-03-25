@@ -26,13 +26,13 @@ namespace unit_tests {
       assert::are_equal("42", strings::format("{0}", static_cast<Value>(42)));
     }
     
-    void test_method_(string_format_string_with_curency_argument) {
+    void test_method_(string_format_string_with_currency_argument) {
       assert::are_equal("$42.00", strings::format("{0:c}", static_cast<Value>(42)));
     }
     
-    void test_method_(string_format_int_with_curency_argument_and_precision) {
-       assert::are_not_equal("$42.00000", strings::format("{0:C5}", static_cast<Value>(42))); // the precision is ignored
-      assert::are_equal("$42.00", strings::format("{0:C5}", static_cast<Value>(42))); // the precision is ignored
+    void test_method_(string_format_int_with_currency_argument_and_precision) {
+       assert::are_not_equal("$42.00000", strings::format("{0:C5}", static_cast<Value>(42)), "The precision of currency format  is ignored");
+      assert::are_equal("$42.00", strings::format("{0:C5}", static_cast<Value>(42)), "The precision of currency format is ignored");
     }
     
     void test_method_(string_format_string_with_decimal_argument) {
@@ -73,11 +73,17 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_string_with_number_argument) {
-      assert::are_equal("1,234.00", strings::format("{0:n}", static_cast<Value>(1234)));
+      if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
+        assert::are_equal("1,234.00", strings::format("{0:n}", static_cast<Value>(1234)));
+      else
+        assert::are_equal("1,234,567.00", strings::format("{0:n}", static_cast<Value>(1234567)));
     }
     
     void test_method_(string_format_int_with_number_argument_and_precision) {
-      assert::are_equal("1,234.0000", strings::format("{0:N4}", static_cast<Value>(1234)));
+      if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
+        assert::are_equal("1,234.0000", strings::format("{0:N4}", static_cast<Value>(1234)));
+      else
+        assert::are_equal("1,234,567.00", strings::format("{0:n}", static_cast<Value>(1234567)));
     }
     
     void test_method_(string_format_string_with_octal_argument) {
