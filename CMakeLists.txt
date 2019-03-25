@@ -15,9 +15,9 @@ endif()
 
 # Projects
 add_subdirectory(xtd.io)
-add_subdirectory(xtd.tunit/xtd.tunit)
 option(ENABLE_TESTS "Enable tests" OFF)
 if (ENABLE_TESTS)
   enable_testing()
+  add_subdirectory(xtd.tunit/xtd.tunit)
   add_subdirectory(tests)
 endif()
