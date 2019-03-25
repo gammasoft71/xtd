@@ -1398,6 +1398,15 @@ namespace xtd {
     static const std::basic_string<Char> to_lower(const Char* str) noexcept {return to_lower(std::basic_string<Char>(str));}
     /// @endcond
     
+    /// @brief Returns the specified Value converted to string.
+    /// @param value Value to convert to string.
+    /// @return A string holding the converted value
+    template<typename Value>
+    static std::string to_string(Value value) {return to_string<char>(value);}
+    
+    /// @brief Returns the specified Value converted to string.
+    /// @param value Value to convert to string.
+    /// @return A string holding the converted value
     template<typename Char, typename Value>
     static std::basic_string<Char> to_string(Value value) {
       std::basic_stringstream<Char> ss;
@@ -1406,6 +1415,8 @@ namespace xtd {
     }
     
     /// @cond
+    static std::string to_string(bool value) {return to_string<char>(value);}
+
     template<typename Char>
     static std::basic_string<Char> to_string(bool value) {
       std::basic_stringstream<Char> ss;
