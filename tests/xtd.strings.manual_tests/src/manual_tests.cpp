@@ -1,5 +1,6 @@
 #include <xtd/strings>
 
+#include <bitset>
 #include <iostream>
 #include <vector>
 #include <codecvt>
@@ -48,8 +49,7 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("{:+}", cl(12, 36)) << endl;
-  cout << strings::format("{}", xtd::string_comparison::ordinal_ignore_case) << endl;
+  cout << strings::format("0b{:b8}", 42) << endl;
 }
 
 // This code produces the following output with colors:
