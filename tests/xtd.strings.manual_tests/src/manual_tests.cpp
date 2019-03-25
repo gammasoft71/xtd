@@ -49,6 +49,7 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
+  cout << strings::format("{}", cl(25, 52)) << endl;
   cout << strings::format("{0:D} 0x{0:X} 0{0:O} 0b{0:B}", 42) << endl;
   cout << strings::format("{0:D} 0x{0:X} 0{0:O} 0b{0:B}", 0x2A) << endl;
   cout << strings::format("{0:D} 0x{0:X} 0{0:O} 0b{0:B}", 052) << endl;
