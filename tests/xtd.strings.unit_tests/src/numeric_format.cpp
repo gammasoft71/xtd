@@ -56,7 +56,7 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_nevative_int_with_decimal_argument_and_precision) {
-      assume::is_true(std::is_signed<Value>::value, "Does not test with unsigned");
+      assume::is_true(std::is_signed<Value>::value, "Test not valid with unsigned");
       assert::are_equal("-001234", strings::format("{0:D6}", to_value<Value>(-1234)));
     }
     
