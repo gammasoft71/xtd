@@ -8,6 +8,7 @@
 #include "string_split_options.hpp"
 
 #include <algorithm>
+#include <cctype>
 #include <cmath>
 #include <iomanip>
 #include <locale>
@@ -101,7 +102,7 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, Value value, bool is_unsigned = false) {
-  if (fmt.empty()) return __to_string<Char>(value);
+  if (fmt.empty()) return __to_string<Char, Value>(value);
 
   int precision = 0;
   if (fmt[0] == Char('b') || fmt[0] == Char('B') || fmt[0] == Char('d') || fmt[0] == Char('D') || fmt[0] == Char('o') || fmt[0] == Char('O') || fmt[0] == Char('x') || fmt[0] == Char('X')) {

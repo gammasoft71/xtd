@@ -27,15 +27,71 @@ template<typename Char, typename ...Args>
 void __extract_format_arg(std::basic_string<Char>& fmt, std::vector<__format_information<Char>>& format, Args&&... args);
 
 template<typename Char, typename Value>
-static std::basic_string<Char> __to_string(Value value) {
+inline std::basic_string<Char> __to_string(Value value) {
   std::basic_stringstream<Char> ss;
   ss << value;
   return ss.str();
 }
 
 template<typename Char>
-static std::basic_string<Char> __to_string(bool value) {
+inline std::basic_string<Char> __to_string(bool value) {
   std::basic_stringstream<Char> ss;
+  ss << value;
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<char> __to_string<char, bool>(bool value) {
+  std::basic_stringstream<char> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<char16_t> __to_string<char16_t, bool>(bool value) {
+  std::basic_stringstream<char16_t> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<char32_t> __to_string<char32_t, bool>(bool value) {
+  std::basic_stringstream<char32_t> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<wchar_t> __to_string<wchar_t, bool>(bool value) {
+  std::basic_stringstream<wchar_t> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<char> __to_string<char, bool&>(bool& value) {
+  std::basic_stringstream<char> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<char16_t> __to_string<char16_t, bool&>(bool& value) {
+  std::basic_stringstream<char16_t> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<char32_t> __to_string<char32_t, bool&>(bool& value) {
+  std::basic_stringstream<char32_t> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
+
+template<>
+inline std::basic_string<wchar_t> __to_string<wchar_t, bool&>(bool& value) {
+  std::basic_stringstream<wchar_t> ss;
   ss << (value ? "true" : "false");
   return ss.str();
 }
@@ -1578,7 +1634,7 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
     if (format.index == index) {
       std::basic_string<Char> arg_str;
       if (format.format.empty())
-        arg_str = __to_string<Char>(arg);
+        arg_str = __to_string<Char, Arg>(arg);
       else if (format.format[0] == Char(',')) {
         int precision = 0;
         try {
@@ -1586,9 +1642,9 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
         } catch(...) {
           throw std::invalid_argument("Invalid format expression");
         }
-        if (precision > 0) arg_str = xtd::strings::pad_left(__to_string<Char>(arg), precision);
-        else if (precision < 0) arg_str = xtd::strings::pad_right(__to_string<Char>(arg), std::abs(precision));
-        else arg_str = __to_string<Char>(arg);
+        if (precision > 0) arg_str = xtd::strings::pad_left(__to_string<Char, Arg>(arg), precision);
+        else if (precision < 0) arg_str = xtd::strings::pad_right(__to_string<Char, Arg>(arg), std::abs(precision));
+        else arg_str = __to_string<Char, Arg>(arg);
       } else
         arg_str = xtd::to_string(arg, format.format);
       fmt.insert(format.location, arg_str);
