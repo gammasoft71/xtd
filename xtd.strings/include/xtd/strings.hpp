@@ -50,21 +50,25 @@ inline std::basic_string<char> __to_string<char, bool>(bool value) {
 template<>
 inline std::basic_string<char16_t> __to_string<char16_t, bool>(bool value) {
   std::basic_stringstream<char16_t> ss;
-  ss << (value ? "true" : "false");
+#if !defined(__APPLE__)
+  ss << (value ? u"true" : u"false");
+#endif
   return ss.str();
 }
 
 template<>
 inline std::basic_string<char32_t> __to_string<char32_t, bool>(bool value) {
   std::basic_stringstream<char32_t> ss;
-  ss << (value ? "true" : "false");
+#if !defined(__APPLE__)
+  ss << (value ? U"true" : U"false");
+#endif
   return ss.str();
 }
 
 template<>
 inline std::basic_string<wchar_t> __to_string<wchar_t, bool>(bool value) {
   std::basic_stringstream<wchar_t> ss;
-  ss << (value ? "true" : "false");
+  ss << (value ? L"true" : L"false");
   return ss.str();
 }
 
@@ -78,21 +82,25 @@ inline std::basic_string<char> __to_string<char, bool&>(bool& value) {
 template<>
 inline std::basic_string<char16_t> __to_string<char16_t, bool&>(bool& value) {
   std::basic_stringstream<char16_t> ss;
-  ss << (value ? "true" : "false");
+#if !defined(__APPLE__)
+  ss << (value ? u"true" : u"false");
+#endif
   return ss.str();
 }
 
 template<>
 inline std::basic_string<char32_t> __to_string<char32_t, bool&>(bool& value) {
   std::basic_stringstream<char32_t> ss;
-  ss << (value ? "true" : "false");
+#if !defined(__APPLE__)
+  ss << (value ? U"true" : U"false");
+#endif
   return ss.str();
 }
 
 template<>
 inline std::basic_string<wchar_t> __to_string<wchar_t, bool&>(bool& value) {
   std::basic_stringstream<wchar_t> ss;
-  ss << (value ? "true" : "false");
+  ss << (value ? L"true" : L"false");
   return ss.str();
 }
 /// @endcond
