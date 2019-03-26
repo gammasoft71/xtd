@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <cctype>
 #include <cmath>
+#include <cstdint>
 #include <iomanip>
 #include <locale>
 #include <sstream>
@@ -145,6 +146,10 @@ inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& 
 namespace xtd {
   inline std::string to_string(bool value, const std::string& fmt) {return __boolean_formater(fmt, value);}
 
+#if defined(__APPLE__)
+  inline std::string to_string(int8_t value, const std::string& fmt) {return __numeric_formater(fmt, value);}
+#endif
+
   inline std::string to_string(char value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   
   inline std::string to_string(unsigned char value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
@@ -188,6 +193,11 @@ namespace xtd {
 
   template<typename Char>
   inline std::basic_string<Char> to_string(bool value, const std::basic_string<Char>& fmt) {return __boolean_formater(fmt, value);}
+  
+#if defined(__APPLE__)
+  template<typename Char>
+  inline std::basic_string<Char> to_string(int8_t value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
+#endif
   
   template<typename Char>
   inline std::basic_string<Char> to_string(char value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
