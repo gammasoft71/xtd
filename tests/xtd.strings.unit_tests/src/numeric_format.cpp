@@ -35,7 +35,7 @@ namespace unit_tests {
         assert::are_equal("42", strings::format("{0}", to_value<Value>(42)));
     }
 
-    void test_method_(string_format_string_without_format_argument_separator) {
+    void test_method_(string_format_without_format_argument_separator) {
       assert::throws<std::invalid_argument>([]{strings::format("{0D}", to_value<Value>(42));});
     }
     
@@ -74,11 +74,15 @@ namespace unit_tests {
         assert::are_equal("42", strings::format("{0,-0}", to_value<Value>(42)));
     }
     
-    void test_method_(string_format_with_left_alignment_empty) {
+    void test_method_(string_format_with_alignment_empty) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
         assert::are_equal("*", strings::format("{0,}", to_value<Value>(42)));
       else
         assert::are_equal("42", strings::format("{0,}", to_value<Value>(42)));
+    }
+    
+    void test_method_(string_format_with_alignment_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0,a}", to_value<Value>(42));});
     }
     
     void test_method_(string_format_with_binary_argument) {
@@ -97,7 +101,11 @@ namespace unit_tests {
       assert::are_equal("00101010", strings::format("{0:B+8}", to_value<Value>(42)));
     }
 
-    void test_method_(string_format_string_with_currency_argument) {
+    void test_method_(string_format_with_binary_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Ba}", to_value<Value>(42));});
+    }
+    
+    void test_method_(string_format_with_currency_argument) {
       assert::are_equal("$42.00", strings::format("{0:c}", to_value<Value>(42)));
     }
     
@@ -115,8 +123,12 @@ namespace unit_tests {
       assert::are_not_equal("$42.00000", strings::format("{0:C-5}", to_value<Value>(42)), "The precision of currency format  is ignored");
       assert::are_equal("$42.00", strings::format("{0:C-5}", to_value<Value>(42)), "The precision of currency format is ignored");
     }
-    
-    void test_method_(string_format_string_with_decimal_argument) {
+  
+    void test_method_(string_format_with_currency_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Ca}", to_value<Value>(42));});
+    }
+
+    void test_method_(string_format_with_decimal_argument) {
       assert::are_equal("42", strings::format("{0:d}", to_value<Value>(42)));
     }
     
@@ -131,23 +143,27 @@ namespace unit_tests {
     void test_method_(string_format_with_decimal_argument_and_negative_precision) {
       assert::are_equal("42   ", strings::format("{0:D-5}", to_value<Value>(42)));
     }
+    
+    void test_method_(string_format_with_decimal_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Da}", to_value<Value>(42));});
+    }
 
-    void test_method_(string_format_nevative_int_with_decimal_argument_and_precision) {
+    void test_method_(string_format_negative_with_decimal_argument_and_precision) {
       assume::is_true(std::is_signed<Value>::value, "Test not valid with unsigned");
       assert::are_equal("-000123", strings::format("{0:D6}", to_value<Value>(-123)));
     }
     
-    void test_method_(string_format_nevative_int_with_decimal_argument_and_positive_precision) {
+    void test_method_(string_format_negative_with_decimal_argument_and_positive_precision) {
       assume::is_true(std::is_signed<Value>::value, "Test not valid with unsigned");
       assert::are_equal("-000123", strings::format("{0:D+6}", to_value<Value>(-123)));
     }
     
-    void test_method_(string_format_nevative_int_with_decimal_argument_and_negative_precision) {
+    void test_method_(string_format_negative_with_decimal_argument_and_negative_precision) {
       assume::is_true(std::is_signed<Value>::value, "Test not valid with unsigned");
       assert::are_equal("-123   ", strings::format("{0:D-6}", to_value<Value>(-123)));
     }
     
-    void test_method_(string_format_string_with_exponencial_argument) {
+    void test_method_(string_format_with_exponencial_argument) {
       assert::are_equal("4.200000e+01", strings::format("{0:e}", to_value<Value>(42)));
     }
     
@@ -163,7 +179,11 @@ namespace unit_tests {
       assert::are_equal("4.200000E+01", strings::format("{0:E-10}", to_value<Value>(42)), "Negative precision for exponencial format reset precision to default (6).");
     }
     
-    void test_method_(string_format_string_with_fixed_point_argument) {
+    void test_method_(string_format_with_exponencial_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Ea}", to_value<Value>(42));});
+    }
+    
+    void test_method_(string_format_with_fixed_point_argument) {
       assert::are_equal("42.00", strings::format("{0:f}", to_value<Value>(42)));
     }
     
@@ -177,6 +197,10 @@ namespace unit_tests {
     
     void test_method_(string_format_with_fixed_point_argument_and_negative_precision) {
       assert::are_equal("42.000000", strings::format("{0:F-4}", to_value<Value>(42)), "Negative precision for fixed-point format reset precision to default (6).");
+    }
+    
+    void test_method_(string_format_with_fixed_point_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Fa}", to_value<Value>(42));});
     }
     
     void test_method_(string_format_with_general_argument) {
@@ -195,7 +219,11 @@ namespace unit_tests {
       assert::are_equal("42", strings::format("{0:G-2}", to_value<Value>(42)));
     }
 
-    void test_method_(string_format_string_with_number_argument) {
+    void test_method_(string_format_with_general_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Ga}", to_value<Value>(42));});
+    }
+    
+    void test_method_(string_format_with_number_argument) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
         assert::are_equal("123.00", strings::format("{0:n}", to_value<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
@@ -231,7 +259,11 @@ namespace unit_tests {
         assert::are_equal("1,234,567.000000", strings::format("{0:N-4}", to_value<Value>(1234567)), "Negative precision for number format reset precision to default (6).");
     }
 
-    void test_method_(string_format_string_with_octal_argument) {
+    void test_method_(string_format_with_number_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Na}", to_value<Value>(123));});
+    }
+    
+    void test_method_(string_format_with_octal_argument) {
       assert::are_equal("52", strings::format("{0:o}", to_value<Value>(42)));
     }
     
@@ -247,7 +279,11 @@ namespace unit_tests {
       assert::are_equal("52   ", strings::format("{0:O-5}", to_value<Value>(42)));
     }
     
-    void test_method_(string_format_string_with_percent_argument) {
+    void test_method_(string_format_with_octal_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Oa}", to_value<Value>(42));});
+    }
+    
+    void test_method_(string_format_with_percent_argument) {
       assert::are_equal("100.00 %", strings::format("{0:p}", to_value<Value>(1)));
     }
     
@@ -263,23 +299,11 @@ namespace unit_tests {
       assert::are_equal("600.000000 %", strings::format("{0:P-4}", to_value<Value>(6)), "Negative precision for percent format reset precision to default (6).");
     }
     
-    void test_method_(string_format_string_with_round_trip_argument) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:r}", to_value<Value>(42));});
+    void test_method_(string_format_with_percent_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Pa}", to_value<Value>(42));});
     }
     
-    void test_method_(string_format_with_round_trip_argument_and_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:R4}", to_value<Value>(42));});
-    }
-    
-    void test_method_(string_format_with_round_trip_argument_and_positive_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:R+4}", to_value<Value>(42));});
-    }
-    
-    void test_method_(string_format_with_round_trip_argument_and_negative_precision) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:R-4}", to_value<Value>(42));});
-    }
-    
-    void test_method_(string_format_string_with_hexadecimal_argument) {
+    void test_method_(string_format_with_hexadecimal_argument) {
       assert::are_equal("2a", strings::format("{0:x}", to_value<Value>(42)));
     }
     
@@ -293,6 +317,10 @@ namespace unit_tests {
     
     void test_method_(string_format_with_hexadecimal_argument_and_negative_precision) {
       assert::are_equal("2A  ", strings::format("{0:X-4}", to_value<Value>(42)));
+    }
+    
+    void test_method_(string_format_with_hexadecimal_argument_and_precision_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Xa}", to_value<Value>(42));});
     }
     
     void test_method_(string_format_with_invalid_format) {
