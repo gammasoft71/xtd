@@ -7,6 +7,7 @@ set(SOURCES
   src/strings.cpp
   src/boolean_format.cpp
   src/numeric_format.cpp
+  src/string_format.cpp
 )
 source_group(src FILES ${SOURCES})
 
