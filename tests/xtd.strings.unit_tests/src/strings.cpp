@@ -100,22 +100,6 @@ namespace unit_tests {
       assert::are_equal("42 str 24 str 42", strings::format("{0} {1} {2} {1} {0}", 42, "str", 24));
     }
     
-    void test_method_(string_format_string_with_default_argument) {
-      assert::are_equal("string", strings::format("{0}", std::string("string")));
-    }
-    
-    void test_method_(string_format_string_with_positive_precision) {
-      assert::are_equal("    string", strings::format("{0,10}", std::string("string")));
-    }
-    
-    void test_method_(string_format_string_with_negative_precision) {
-      assert::are_equal("string    ", strings::format("{0,-10}", std::string("string")));
-    }
-    
-    void test_method_(string_format_string_with_invalid_format) {
-      assert::are_equal("string", strings::format("{0:S,10}", std::string("string")));
-    }
-
     void test_method_(string_formatf_with_one_argument) {
       std::string s = strings::formatf("%d", 42);
       assert::are_equal("42", s);
