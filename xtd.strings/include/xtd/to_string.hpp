@@ -146,7 +146,7 @@ inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& 
 namespace xtd {
   inline std::string to_string(bool value, const std::string& fmt) {return __boolean_formater(fmt, value);}
 
-#if defined(__APPLE__)
+#if defined(__APPLE__) || defined(__linux__)
   inline std::string to_string(int8_t value, const std::string& fmt) {return __numeric_formater(fmt, value);}
 #endif
 
@@ -194,7 +194,7 @@ namespace xtd {
   template<typename Char>
   inline std::basic_string<Char> to_string(bool value, const std::basic_string<Char>& fmt) {return __boolean_formater(fmt, value);}
   
-#if defined(__APPLE__)
+#if defined(__APPLE__) || defined(__linux__)
   template<typename Char>
   inline std::basic_string<Char> to_string(int8_t value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
 #endif
