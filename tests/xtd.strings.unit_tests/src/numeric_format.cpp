@@ -20,6 +20,14 @@ namespace unit_tests {
   test_class_attribute<test_numeric_format<unsigned long>> test_numeric_format_class_unsigned_long_attr {"test_numeric_format<unsigned long>"};
   test_class_attribute<test_numeric_format<long long>> test_numeric_format_class_long_long_attr {"test_numeric_format<long long>"};
   test_class_attribute<test_numeric_format<unsigned long long>> test_numeric_format_class_unsigned_long_long_attr {"test_numeric_format<unsigned long long>"};
+  test_class_attribute<test_numeric_format<int8_t>> test_numeric_format_class_int8_t_attr {"test_numeric_format<int8_t>"};
+  test_class_attribute<test_numeric_format<int16_t>> test_numeric_format_class_int16_t_attr {"test_numeric_format<int16_t>"};
+  test_class_attribute<test_numeric_format<int32_t>> test_numeric_format_class_int32_t_attr {"test_numeric_format<int32_t>"};
+  test_class_attribute<test_numeric_format<int64_t>> test_numeric_format_class_int64_t_attr {"test_numeric_format<int64_t>"};
+  test_class_attribute<test_numeric_format<uint8_t>> test_numeric_format_class_uint8_t_attr {"test_numeric_format<uint8_t>"};
+  test_class_attribute<test_numeric_format<uint16_t>> test_numeric_format_class_uint16_t_attr {"test_numeric_format<uint16_t>"};
+  test_class_attribute<test_numeric_format<uint32_t>> test_numeric_format_class_uint32_t_attr {"test_numeric_format<uint32_t>"};
+  test_class_attribute<test_numeric_format<uint64_t>> test_numeric_format_class_uint64_t_attr {"test_numeric_format<uint64_t>"};
 
   template<typename Value>
   class test_numeric_format : public test_class {
@@ -29,7 +37,7 @@ namespace unit_tests {
     
   public:
     void test_method_(string_format_with_default_argument) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("*", strings::format("{0}", to_value<Value>(42)));
       else
         assert::are_equal("42", strings::format("{0}", to_value<Value>(42)));
@@ -40,42 +48,42 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_with_left_alignment) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("   *", strings::format("{0,4}", to_value<Value>(42)));
       else
         assert::are_equal("  42", strings::format("{0,4}", to_value<Value>(42)));
     }
     
     void test_method_(string_format_with_left_alignment_with_plus) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("   *", strings::format("{0,+4}", to_value<Value>(42)));
       else
         assert::are_equal("  42", strings::format("{0,+4}", to_value<Value>(42)));
     }
     
     void test_method_(string_format_with_left_alignment_to_zero) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("*", strings::format("{0,0}", to_value<Value>(42)));
       else
         assert::are_equal("42", strings::format("{0,0}", to_value<Value>(42)));
     }
     
     void test_method_(string_format_with_right_alignment) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("*   ", strings::format("{0,-4}", to_value<Value>(42)));
       else
         assert::are_equal("42  ", strings::format("{0,-4}", to_value<Value>(42)));
     }
     
     void test_method_(string_format_with_right_alignment_to_zero) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("*", strings::format("{0,-0}", to_value<Value>(42)));
       else
         assert::are_equal("42", strings::format("{0,-0}", to_value<Value>(42)));
     }
     
     void test_method_(string_format_with_alignment_empty) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("*", strings::format("{0,}", to_value<Value>(42)));
       else
         assert::are_equal("42", strings::format("{0,}", to_value<Value>(42)));
@@ -224,7 +232,7 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_with_number_argument) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("123.00", strings::format("{0:n}", to_value<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.00", strings::format("{0:n}", to_value<Value>(1234)));
@@ -233,7 +241,7 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_with_number_argument_and_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("123.0000", strings::format("{0:N4}", to_value<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.0000", strings::format("{0:N4}", to_value<Value>(1234)));
@@ -242,7 +250,7 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_with_number_argument_and_positive_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("123.0000", strings::format("{0:N+4}", to_value<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.0000", strings::format("{0:N+4}", to_value<Value>(1234)));
@@ -251,7 +259,7 @@ namespace unit_tests {
     }
     
     void test_method_(string_format_with_number_argument_and_negative_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("123.000000", strings::format("{0:N-4}", to_value<Value>(123)), "Negative precision for number format reset precision to default (6).");
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.000000", strings::format("{0:N-4}", to_value<Value>(1234)), "Negative precision for number format reset precision to default (6).");
