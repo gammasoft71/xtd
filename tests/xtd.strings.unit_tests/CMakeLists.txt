@@ -5,6 +5,7 @@ project(xtd.strings.unit_tests)
 set(SOURCES
   src/main.cpp 
   src/strings.cpp
+  src/boolean_format.cpp
   src/numeric_format.cpp
 )
 source_group(src FILES ${SOURCES})
