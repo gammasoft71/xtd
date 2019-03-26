@@ -52,6 +52,37 @@ namespace unit_tests {
     void test_method_(format_with_right_alignment_with_zero) {
       assert::are_equal("42.24", strings::format("{0,-0}", to_value<Value>(42.24)));
     }
+    
+    void test_method_(format_with_alignment_empty) {
+      assert::are_equal("42.24", strings::format("{0,}", to_value<Value>(42.24)));
+    }
+    
+    void test_method_(format_with_alignment_invalid) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0,a}", to_value<Value>(42.24));});
+    }
+    
+    void test_method_(format_with_currency_argument) {
+      assert::are_equal("$42.24", strings::format("{0:c}", to_value<Value>(42.24)));
+    }
+    
+    void test_method_(format_with_currency_argument_and_precision) {
+      assert::are_not_equal("$42.24000", strings::format("{0:C5}", to_value<Value>(42.24)), "The precision of currency format  is ignored");
+      assert::are_equal("$42.24", strings::format("{0:C5}", to_value<Value>(42.24)), "The precision of currency format is ignored");
+    }
+    
+    void test_method_(format_with_currency_argument_and_positive_precision) {
+      assert::are_not_equal("$42.24000", strings::format("{0:C+5}", to_value<Value>(42.24)), "The precision of currency format  is ignored");
+      assert::are_equal("$42.24", strings::format("{0:C+5}", to_value<Value>(42.24)), "The precision of currency format is ignored");
+    }
+    
+    void test_method_(format_with_currency_argument_and_negative_precision) {
+      assert::are_not_equal("$42.24000", strings::format("{0:C-5}", to_value<Value>(42.24)), "The precision of currency format  is ignored");
+      assert::are_equal("$42.24", strings::format("{0:C-5}", to_value<Value>(42.24)), "The precision of currency format is ignored");
+    }
+    
+    void test_method_(format_with_currency_argument_and_invalid_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Ca}", to_value<Value>(42.24));});
+    }
 
   };
 }
