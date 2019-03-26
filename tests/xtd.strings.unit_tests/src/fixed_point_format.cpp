@@ -203,6 +203,29 @@ namespace unit_tests {
     void test_method_(format_with_number_argument_and_invalid_precision) {
       assert::throws<std::invalid_argument>([]{strings::format("{0:Na}", to_value<Value>(1234567.89));});
     }
-
+    
+    void test_method_(format_with_percent_argument) {
+      assert::are_equal("100.00 %", strings::format("{0:p}", to_value<Value>(1.0)));
+    }
+    
+    void test_method_(format_with_percent_argument_and_precision) {
+      assert::are_equal("6.5000 %", strings::format("{0:P4}", to_value<Value>(0.065)));
+    }
+    
+    void test_method_(format_with_percent_argument_and_positive_precision) {
+      assert::are_equal("6.5000 %", strings::format("{0:P+4}", to_value<Value>(0.065)));
+    }
+    
+    void test_method_(format_with_percent_argument_and_negative_precision) {
+      assert::are_equal("6.500000 %", strings::format("{0:P-4}", to_value<Value>(0.065)), "Negative precision for percent format reset precision to default (6).");
+    }
+    
+    void test_method_(format_with_percent_argument_and_invalid_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:Pa}", to_value<Value>(0.42));});
+    }
+    
+    void test_method_(format_with_invalid_format) {
+      assert::throws<std::invalid_argument>([]{strings::format("{0:V}", to_value<Value>(42.0));});
+    }
   };
 }
