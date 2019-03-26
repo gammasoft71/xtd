@@ -71,7 +71,9 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
 
   int precision = 0;
   try {
-    if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
+    for (auto c : fmt.substr(1))
+      if (!std::isdigit(c) && c != Char(' ') && c != Char('+') && c != Char('-')) throw std::invalid_argument("Invalid format expression");
+   if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
   } catch(...) {
     throw std::invalid_argument("Invalid format expression");
   }
@@ -108,6 +110,8 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
   int precision = 0;
   if (fmt[0] == Char('b') || fmt[0] == Char('B') || fmt[0] == Char('d') || fmt[0] == Char('D') || fmt[0] == Char('o') || fmt[0] == Char('O') || fmt[0] == Char('x') || fmt[0] == Char('X')) {
     try {
+      for (auto c : fmt.substr(1))
+        if (!std::isdigit(c) && c != Char(' ') && c != Char('+') && c != Char('-')) throw std::invalid_argument("Invalid format expression");
       if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
     } catch(...) {
       throw std::invalid_argument("Invalid format expression");

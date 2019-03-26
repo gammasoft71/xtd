@@ -550,8 +550,14 @@ namespace xtd {
                 fi.index = index++;
                 fi.format = format.substr(format[index_format_separator] == Char(':') ? index_format_separator + 1 : index_format_separator);
               } else if (index_format_separator == std::basic_string<Char>::npos)
-                fi.index = std::stoi(format);
-              else {
+                try {
+                  for (auto c : format)
+                    if (!std::isdigit(c)) throw std::invalid_argument("Invalid format expression : format argument must be start by ':'");
+                  fi.index = std::stoi(format);
+                } catch(...) {
+                  throw std::invalid_argument("Invalid format expression : format argument must be start by ':'");
+                }
+             else {
                 fi.index = std::stoi(format.substr(0, index_format_separator));
                 fi.format = format.substr(format[index_format_separator] == Char(':') ? index_format_separator + 1 : index_format_separator);
               }
