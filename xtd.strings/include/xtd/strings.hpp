@@ -25,6 +25,20 @@ struct __format_information {
 
 template<typename Char, typename ...Args>
 void __extract_format_arg(std::basic_string<Char>& fmt, std::vector<__format_information<Char>>& format, Args&&... args);
+
+template<typename Char, typename Value>
+static std::basic_string<Char> __to_string(Value value) {
+  std::basic_stringstream<Char> ss;
+  ss << value;
+  return ss.str();
+}
+
+template<typename Char>
+static std::basic_string<Char> __to_string(bool value) {
+  std::basic_stringstream<Char> ss;
+  ss << (value ? "true" : "false");
+  return ss.str();
+}
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -1398,25 +1412,6 @@ namespace xtd {
     static const std::basic_string<Char> to_lower(const Char* str) noexcept {return to_lower(std::basic_string<Char>(str));}
     /// @endcond
     
-    /// @brief Returns the specified Value converted to string.
-    /// @param value Value to convert to string.
-    /// @return A string holding the converted value
-    template<typename Char, typename Value>
-    static std::basic_string<Char> to_string(Value value) {
-      std::basic_stringstream<Char> ss;
-      ss << value;
-      return ss.str();
-    }
-    
-    /// @cond
-    template<typename Char>
-    static std::basic_string<Char> to_string(bool value) {
-      std::basic_stringstream<Char> ss;
-      ss << (value ? "true" : "false");
-      return ss.str();
-    }
-    /// @endcond
-    
     /// @brief Returns a copy of the specified string converted to uppercase.
     /// @param str string to convert to upper.
     /// @return String A new String in uppercase.
@@ -1575,7 +1570,21 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
-      std::basic_string<Char> arg_str = format.format.empty() ? xtd::strings::to_string<Char>(arg) : xtd::to_string(arg, format.format);
+      std::basic_string<Char> arg_str;
+      if (format.format.empty())
+        arg_str = __to_string<Char>(arg);
+      else if (format.format[0] == Char(',')) {
+        int precision = 0;
+        try {
+          if (format.format.size() > 1) precision = std::stoi(format.format.substr(1));
+        } catch(...) {
+          throw std::invalid_argument("Invalid format expression");
+        }
+        if (precision > 0) arg_str = xtd::strings::pad_left(__to_string<Char>(arg), precision);
+        else if (precision < 0) arg_str = xtd::strings::pad_right(__to_string<Char>(arg), std::abs(precision));
+        else arg_str = __to_string<Char>(arg);
+      } else
+        arg_str = xtd::to_string(arg, format.format);
       fmt.insert(format.location, arg_str);
       offset += arg_str.size();
     }

@@ -68,10 +68,14 @@ inline std::basic_string<Char> __character_formater(const std::basic_string<Char
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Char>& fmt, Value value) {
-  if (fmt.empty()) return xtd::strings::formatf(std::basic_string<Char>({Char('%'), Char('L'), Char('g')}), static_cast<long double>(value));
-  
+  if (fmt.empty()) return __to_string<Char>(value);
+
   int precision = 0;
-  if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
+  try {
+    if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
+  } catch(...) {
+    throw std::invalid_argument("Invalid format expression");
+  }
   if ((fmt[0] == 'd' || fmt[0] == 'D') && precision > 0 && value < 0) precision += 1;
   if ((fmt[0] == 'e' || fmt[0] == 'E') && fmt.size() == 1) precision = 6;
   if ((fmt[0] == 'f' || fmt[0] == 'F') && fmt.size() == 1) precision = 2;
@@ -79,13 +83,6 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
   if ((fmt[0] == 'n' || fmt[0] == 'N') && fmt.size() == 1) precision = 2;
   if ((fmt[0] == 'p' || fmt[0] == 'P') && fmt.size() == 1) precision = 2;
   if ((fmt[0] == 'r' || fmt[0] == 'R') && fmt.size() == 1) precision = 2;
-
-  if (fmt[0] == Char(',')) {
-    std::basic_string<Char> str_result = xtd::strings::formatf(std::basic_string<Char>({Char('%'), Char('L'), Char('g')}), static_cast<long double>(value));
-    if (precision > 0) return xtd::strings::pad_left(str_result, precision);
-    if (precision < 0) return xtd::strings::pad_right(str_result, std::abs(precision));
-    return str_result;
-  }
 
   switch (fmt[0]) {
     case Char('c'):
@@ -108,10 +105,14 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, Value value, bool is_unsigned = false) {
-  if (fmt.empty()) return xtd::strings::formatf(std::basic_string<Char>({Char('%'), Char('l'), Char('l'), static_cast<Char>(is_unsigned ? 'u' : 'd')}), static_cast<long long int>(value));
-  
+  if (fmt.empty()) return __to_string<Char>(value);
+
   int precision = 0;
-  if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
+  try {
+    if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
+  } catch(...) {
+    throw std::invalid_argument("Invalid format expression");
+  }
   if ((fmt[0] == 'd' || fmt[0] == 'D') && precision > 0 && value < 0) precision += 1;
   if ((fmt[0] == 'e' || fmt[0] == 'E') && fmt.size() == 1) precision = 6;
   if ((fmt[0] == 'f' || fmt[0] == 'F') && fmt.size() == 1) precision = 2;
@@ -120,13 +121,6 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
   if ((fmt[0] == 'p' || fmt[0] == 'P') && fmt.size() == 1) precision = 2;
   if ((fmt[0] == 'r' || fmt[0] == 'R') && fmt.size() == 1) precision = 2;
 
-  if (fmt[0] == Char(',')) {
-    std::basic_string<Char> str_result = xtd::strings::formatf(std::basic_string<Char>({Char('%'), Char('l'), Char('l'), static_cast<Char>(is_unsigned ? 'u' : 'd')}), static_cast<long long int>(value));
-    if (precision > 0) return xtd::strings::pad_left(str_result, precision);
-    if (precision < 0) return xtd::strings::pad_right(str_result, std::abs(precision));
-     return str_result;
-  }
-  
   switch (fmt[0]) {
     case Char('b'):
     case Char('B'): return xtd::strings::pad_left(xtd::strings::trim_start(std::bitset<sizeof(value)*8>(value).to_string(Char('0'), Char('1')), Char('0')), precision == 0 ? 1 : precision, Char('0'));;
@@ -159,14 +153,7 @@ inline std::basic_string<Char> __unsigned_numeric_formater(const std::basic_stri
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& fmt, Value value) {
-  if (fmt.empty()) return value;
-  
-  int precision = 0;
-  if (fmt[0] == Char(',') && fmt.size() > 1) precision = std::stoi(fmt.substr(1));
-  if (precision > 0) return xtd::strings::pad_left(value, precision);
-  if (precision < 0) return xtd::strings::pad_right(value, std::abs(precision));
-  
-  return value;
+  return __to_string<Char>(value);
 }
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
