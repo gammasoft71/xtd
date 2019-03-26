@@ -10,6 +10,8 @@ namespace unit_tests {
   template <typename Value>
   class test_numeric_format;
   
+  test_class_attribute<test_numeric_format<char>> test_numeric_format_class_char_attr {"test_numeric_format<char>"};
+  test_class_attribute<test_numeric_format<unsigned char>> test_numeric_format_class_unsigned_char_attr {"test_numeric_format<unsigned char>"};
   test_class_attribute<test_numeric_format<short>> test_numeric_format_class_short_attr {"test_numeric_format<short>"};
   test_class_attribute<test_numeric_format<unsigned short>> test_numeric_format_class_unsigned_short_attr {"test_numeric_format<unsigned short>"};
   test_class_attribute<test_numeric_format<int>> test_numeric_format_class_int_attr {"test_numeric_format<int>"};
@@ -27,7 +29,10 @@ namespace unit_tests {
     
   public:
     void test_method_(string_format_int_with_default_argument) {
-      assert::are_equal("42", strings::format("{0}", to_value<Value>(42)));
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+        assert::are_equal("*", strings::format("{0}", to_value<Value>(42)));
+      else
+        assert::are_equal("42", strings::format("{0}", to_value<Value>(42)));
     }
     
     void test_method_(string_format_string_with_binary_argument) {
@@ -36,6 +41,10 @@ namespace unit_tests {
     
     void test_method_(string_format_int_with_binary_argument_and_precision) {
       assert::are_equal("00101010", strings::format("{0:B8}", to_value<Value>(42)));
+    }
+    
+    void test_method_(string_format_int_with_binary_argument_and_negative_precision) {
+      assert::are_equal("101010  ", strings::format("{0:B-8}", to_value<Value>(42)));
     }
     
     void test_method_(string_format_string_with_currency_argument) {
@@ -55,9 +64,19 @@ namespace unit_tests {
       assert::are_equal("00042", strings::format("{0:D5}", to_value<Value>(42)));
     }
     
+    void test_method_(string_format_int_with_decimal_argument_and_negative_precision) {
+      assert::are_equal("42   ", strings::format("{0:D-5}", to_value<Value>(42)));
+    }
+
     void test_method_(string_format_nevative_int_with_decimal_argument_and_precision) {
       assume::is_true(std::is_signed<Value>::value, "Test not valid with unsigned");
-      assert::are_equal("-001234", strings::format("{0:D6}", to_value<Value>(-1234)));
+      assume::is_true(std::is_same<Value, unsigned char>::value, "Test not valid with unsigned char");
+      assert::are_equal("-000123", strings::format("{0:D6}", to_value<Value>(-123)));
+    }
+    
+    void test_method_(string_format_nevative_int_with_decimal_argument_and_negative_precision) {
+      assume::is_true(std::is_signed<Value>::value, "Test not valid with unsigned");
+      assert::are_equal("-123   ", strings::format("{0:D-6}", to_value<Value>(-123)));
     }
     
     void test_method_(string_format_string_with_exponencial_argument) {
@@ -76,6 +95,10 @@ namespace unit_tests {
       assert::are_equal("42.0000", strings::format("{0:F4}", to_value<Value>(42)));
     }
     
+    void test_method_(string_format_int_with_fixed_point_argument_and_negative_precision) {
+      assert::are_equal("42.000000", strings::format("{0:F-4}", to_value<Value>(42)), "Negative precision for fixed-point format reset presiosn to default (6).");
+    }
+    
     void test_method_(string_format_int_with_general_argument) {
       assert::are_equal("42", strings::format("{0:g}", to_value<Value>(42)));
     }
@@ -84,15 +107,23 @@ namespace unit_tests {
       assert::are_equal("42", strings::format("{0:G2}", to_value<Value>(42)));
     }
     
+    void test_method_(string_format_int_with_general_argument_and_negative_precision) {
+      assert::are_equal("42", strings::format("{0:G-2}", to_value<Value>(42)));
+    }
+
     void test_method_(string_format_string_with_number_argument) {
-      if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+        assert::are_equal("123.00", strings::format("{0:n}", to_value<Value>(123)));
+      else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.00", strings::format("{0:n}", to_value<Value>(1234)));
       else
         assert::are_equal("1,234,567.00", strings::format("{0:n}", to_value<Value>(1234567)));
     }
     
     void test_method_(string_format_int_with_number_argument_and_precision) {
-      if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
+      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value)
+        assert::are_equal("123.0000", strings::format("{0:N4}", to_value<Value>(123)));
+      else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
         assert::are_equal("1,234.0000", strings::format("{0:N4}", to_value<Value>(1234)));
       else
         assert::are_equal("1,234,567.00", strings::format("{0:n}", to_value<Value>(1234567)));
