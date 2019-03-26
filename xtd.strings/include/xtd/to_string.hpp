@@ -17,8 +17,8 @@
 template<typename Char>
 inline std::basic_string<Char> __insert_group_separator(const std::basic_string<Char>& str, Char separator, Char group_separator) {
   std::basic_string<Char> output;
-  int distance_from_separator = xtd::strings::index_of(str, separator);
-  if (distance_from_separator == -1) distance_from_separator = str.size();
+  int distance_from_separator = static_cast<int>(xtd::strings::index_of(str, separator));
+  if (distance_from_separator == -1) distance_from_separator = static_cast<int>(str.size());
   for (Char c : str) {
     output += c;
     if (c == '-')
@@ -32,8 +32,14 @@ inline std::basic_string<Char> __insert_group_separator(const std::basic_string<
   return output;
 }
 
+template<typename Char, typename Value>
+inline std::basic_string<Char> __binary_converter(Value value, int precision) {
+  if (precision < 0) return xtd::strings::pad_right(xtd::strings::trim_start(std::bitset<sizeof(value)*8>(value).to_string(Char('0'), Char('1')), Char('0')), std::abs(precision), Char(' '));
+  return xtd::strings::pad_left(xtd::strings::trim_start(std::bitset<sizeof(value)*8>(value).to_string(Char('0'), Char('1')), Char('0')), precision == 0 ? 1 : precision, Char('0'));
+}
+
 template<typename Char>
-inline std::basic_string<Char> __money_converter(long double value, size_t precision) {
+inline std::basic_string<Char> __money_converter(long double value, int precision) {
   std::basic_stringstream<Char> ss;
   ss.imbue(std::locale(std::locale().name() == "" || std::locale().name() == "C" ? "en_US.UTF-8" : std::locale().name().c_str()));
   ss << std::showbase << std::setprecision(precision) << std::put_money(value*100);
@@ -56,14 +62,7 @@ inline std::basic_string<Char> __boolean_formater(const std::basic_string<Char>&
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __character_formater(const std::basic_string<Char>& fmt, Value value) {
-  if (fmt.empty()) return xtd::strings::formatf(std::basic_string<Char>{Char('%'), Char('c')}, static_cast<Char>(value));
-  
-  int precision = 0;
-  if (fmt[0] == Char(',') && fmt.size() > 1) precision = std::stoi(fmt.substr(1));
-  if (precision > 0) return xtd::strings::formatf(std::basic_string<Char>{Char('%'), Char('s')}, xtd::strings::pad_left(std::basic_string<Char>{static_cast<Char>(value)}, precision));
-  if (precision < 0) return xtd::strings::formatf(std::basic_string<Char>{Char('%'), Char('s')}, xtd::strings::pad_right(std::basic_string<Char>{static_cast<Char>(value)}, std::abs(precision)));
-  
-  return xtd::strings::formatf(std::basic_string<Char>{Char('%'), Char('c')}, static_cast<Char>(value));
+  return __to_string<Char>(value);
 }
 
 template<typename Char, typename Value>
@@ -76,7 +75,6 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
   } catch(...) {
     throw std::invalid_argument("Invalid format expression");
   }
-  if ((fmt[0] == 'd' || fmt[0] == 'D') && precision > 0 && value < 0) precision += 1;
   if ((fmt[0] == 'e' || fmt[0] == 'E') && fmt.size() == 1) precision = 6;
   if ((fmt[0] == 'f' || fmt[0] == 'F') && fmt.size() == 1) precision = 2;
   if ((fmt[0] == 'g' || fmt[0] == 'G') && fmt.size() == 1) precision = 10;
@@ -114,6 +112,7 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     throw std::invalid_argument("Invalid format expression");
   }
   if ((fmt[0] == 'd' || fmt[0] == 'D') && precision > 0 && value < 0) precision += 1;
+  if ((fmt[0] == 'd' || fmt[0] == 'D') && precision < 0 && value < 0) precision -= 1;
   if ((fmt[0] == 'e' || fmt[0] == 'E') && fmt.size() == 1) precision = 6;
   if ((fmt[0] == 'f' || fmt[0] == 'F') && fmt.size() == 1) precision = 2;
   if ((fmt[0] == 'g' || fmt[0] == 'G') && fmt.size() == 1) precision = 10;
@@ -123,7 +122,7 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
 
   switch (fmt[0]) {
     case Char('b'):
-    case Char('B'): return xtd::strings::pad_left(xtd::strings::trim_start(std::bitset<sizeof(value)*8>(value).to_string(Char('0'), Char('1')), Char('0')), precision == 0 ? 1 : precision, Char('0'));;
+    case Char('B'): return __binary_converter<Char>(value, precision);
     case Char('c'):
     case Char('C'): return __money_converter<Char>(static_cast<long double>(value), precision);
     case Char('d'):
@@ -160,6 +159,10 @@ inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& 
 namespace xtd {
   inline std::string to_string(bool value, const std::string& fmt) {return __boolean_formater(fmt, value);}
 
+  inline std::string to_string(char value, const std::string& fmt) {return __numeric_formater(fmt, value);}
+  
+  inline std::string to_string(unsigned char value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  
   inline std::string to_string(short value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   
   inline std::string to_string(unsigned short value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
@@ -188,8 +191,6 @@ namespace xtd {
   
   inline std::string to_string(const char* value, const std::string& fmt) {return __string_formater(fmt, value);}
   
-  inline std::string to_string(char value, const std::string& fmt) {return __character_formater(fmt, value);}
-  
   inline std::string to_string(char16_t value, const std::string& fmt) {return __character_formater(fmt, value);}
   
   inline std::string to_string(char32_t value, const std::string& fmt) {return __character_formater(fmt, value);}
@@ -201,6 +202,12 @@ namespace xtd {
 
   template<typename Char>
   inline std::basic_string<Char> to_string(bool value, const std::basic_string<Char>& fmt) {return __boolean_formater(fmt, value);}
+  
+  template<typename Char>
+  inline std::basic_string<Char> to_string(char value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
+  
+  template<typename Char>
+  inline std::basic_string<Char> to_string(unsigned char value, const std::basic_string<Char>& fmt) {return __unsigned_numeric_formater(fmt, value);}
   
   template<typename Char>
   inline std::basic_string<Char> to_string(short value, const std::basic_string<Char>& fmt) {return __numeric_formater(fmt, value);}
@@ -243,9 +250,6 @@ namespace xtd {
   
   template<typename Char>
   inline std::basic_string<Char> to_string(const Char* value, const std::basic_string<Char>& fmt) {return __string_formater(fmt, value);}
-  
-  template<typename Char>
-  inline std::basic_string<Char> to_string(char value, const std::string& fmt) {return __character_formater(fmt, value);}
   
   template<typename Char>
   inline std::basic_string<Char> to_string(char16_t value, const std::string& fmt) {return __character_formater(fmt, value);}
