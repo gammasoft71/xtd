@@ -4,10 +4,11 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.strings.unit_tests)
 set(SOURCES
   src/main.cpp 
-  src/strings.cpp
   src/boolean_format.cpp
+  src/fixed_point_format.cpp
   src/numeric_format.cpp
   src/string_format.cpp
+  src/strings.cpp
 )
 source_group(src FILES ${SOURCES})
 
