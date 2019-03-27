@@ -185,7 +185,10 @@ namespace xtd {
   inline std::string to_string(char32_t value, const std::string& fmt) {return __character_formater(fmt, value);}
   
   inline std::string to_string(wchar_t value, const std::string& fmt) {return __character_formater(fmt, value);}
-
+  
+  template<typename Value>
+  inline std::string to_string(const Value& value, const std::string& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
+  
   inline std::wstring to_string(bool value, const std::wstring& fmt) {return __boolean_formater(fmt, value);}
   
   inline std::wstring to_string(int8_t value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
@@ -227,5 +230,8 @@ namespace xtd {
   inline std::wstring to_string(char32_t value, const std::wstring& fmt) {return __character_formater(fmt, value);}
   
   inline std::wstring to_string(wchar_t value, const std::wstring& fmt) {return __character_formater(fmt, value);}
+  
+  template<typename Value>
+  inline std::wstring to_string(const Value& value, const std::wstring& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
 }
 
