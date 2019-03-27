@@ -43,8 +43,10 @@
 /// <b>,precision</b> : Begin with , and contains a positive or negative integer value
 ///   * positivie value : pad left
 ///   * negative value : pad rigth
-/// @par Example
 ///
+/// @par Examples
+///
+/// Example with precision :
 /// @code
 /// cout << strings::format("{0,4} items", 10) << endl;
 /// cout << strings::format("{0,-4} items", 10) << endl;
