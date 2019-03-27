@@ -21,11 +21,11 @@ public:
 
   template<typename Char>
   friend std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, const cl& value) {
-    os << "[";
+    os << Char('[');
     os << value.value_a();
     os << Char(' ');
     os << value.value_b();
-    os << "]";
+    os << Char(']');
     return os;
   }
   
@@ -45,15 +45,25 @@ namespace xtd {
     ss << "]";
     return ss.str();
   }
+  
+  template<>
+  std::wstring to_string<cl>(const cl& value, const std::wstring& fmt) {
+    std::wstringstream ss;
+    ss << L"[";
+    ss << value.value_a();
+    ss << fmt[0];
+    ss << value.value_b();
+    ss << L"]";
+    return ss.str();
+  }
 }
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("{}", std::numeric_limits<uint64_t>::max()) << endl;
-  cout << strings::format("{:D}", std::numeric_limits<uint64_t>::max()) << endl;
-  cout << strings::format("{:F}", std::numeric_limits<uint64_t>::max()) << endl;
-  cout << strings::formatf("%llu", std::numeric_limits<uint64_t>::max()) << endl;
-  cout << strings::formatf("%Lf", (long double)std::numeric_limits<uint64_t>::max()) << endl;
+  cout << strings::format("{}", cl(32, 16)) << endl;
+  cout << strings::format("{:+}", cl(32, 16)) << endl;
+  wcout << strings::format(L"{}", cl(32, 16)) << endl;
+  wcout << strings::format(L"{:+}", cl(32, 16)) << endl;
 }
 
 // This code produces the following output with colors:
