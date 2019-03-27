@@ -10,6 +10,33 @@ using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::string_literals;
 
+enum class numbers {
+  one,
+  two,
+  three,
+  four,
+  five,
+  six,
+  seven,
+  eight,
+  nine
+};
+
+std::ostream& operator<<(std::ostream& os, numbers n) {
+  switch (n) {
+    case numbers::one: os << "one"; break;
+    case numbers::two: os << "two"; break;
+    case numbers::three: os << "three"; break;
+    case numbers::four: os << "four"; break;
+    case numbers::five: os << "five"; break;
+    case numbers::six: os << "six"; break;
+    case numbers::seven: os << "seven"; break;
+    case numbers::eight: os << "eight"; break;
+    case numbers::nine: os << "nine"; break;
+  }
+  return os;
+}
+
 class cl {
 public:
   cl() = default;
@@ -60,12 +87,13 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
+  cout << strings::format("{}", numbers::two) << endl;
   cout << strings::format("{}", cl(32, 16)) << endl;
   cout << strings::format("{:+}", cl(32, 16)) << endl;
   wcout << strings::format(L"{}", cl(32, 16)) << endl;
   wcout << strings::format(L"{:+}", cl(32, 16)) << endl;
 }
 
-// This code produces the following output with colors:
+// This code produces the following output:
 //
 // Hello, World!
