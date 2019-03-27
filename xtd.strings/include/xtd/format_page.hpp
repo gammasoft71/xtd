@@ -3,7 +3,9 @@
 
 /// @page FormatPage Format Documentation
 ///
-/// format : {[id][,precision | :format]}
+/// @section FormatExpression Format expression
+///
+/// format : { [<b>id</b>] [<b>,precision</b> | <b>:format</b>] }
 ///
 /// @section IdSection id
 ///
