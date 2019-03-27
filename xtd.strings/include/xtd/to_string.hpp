@@ -128,7 +128,7 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     case Char('O'): return xtd::strings::formatf(fmt_str + Char('o'), precision, static_cast<long long int>(value));
     case Char('x'):
     case Char('X'): return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long int>(value));
-    default: return __fixed_point_formater(fmt, static_cast<double>(value));
+    default: return __fixed_point_formater(fmt, static_cast<long double>(value));
   }
 }
 
