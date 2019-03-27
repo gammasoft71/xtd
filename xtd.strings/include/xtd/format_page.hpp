@@ -5,7 +5,7 @@
 ///
 /// @section FormatExpression Format expression
 ///
-/// format : <H1> { [<b>id</b>] [<b>,precision</b> | <b>:format</b>] } </H1>
+/// <H2> { [<b>id</b>] [<b>,precision</b> | <b>:format</b>] } </H2>
 ///
 /// @section IdSection id
 ///
