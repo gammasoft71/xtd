@@ -49,8 +49,11 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("{:F6}", 42.24f) << endl;
-  cout << strings::formatf("%.8g", 42.24f) << endl;
+  cout << strings::format("{}", std::numeric_limits<uint64_t>::max()) << endl;
+  cout << strings::format("{:D}", std::numeric_limits<uint64_t>::max()) << endl;
+  cout << strings::format("{:F}", std::numeric_limits<uint64_t>::max()) << endl;
+  cout << strings::formatf("%llu", std::numeric_limits<uint64_t>::max()) << endl;
+  cout << strings::formatf("%Lf", (long double)std::numeric_limits<uint64_t>::max()) << endl;
 }
 
 // This code produces the following output with colors:
