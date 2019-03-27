@@ -7,6 +7,32 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
+  template <typename Value>
+  class test_numeric_format;
+  
+  test_class_attribute<test_numeric_format<char>> test_numeric_format_class_char_attr {"test_numeric_format<char>"};
+  test_class_attribute<test_numeric_format<unsigned char>> test_numeric_format_class_unsigned_char_attr {"test_numeric_format<unsigned char>"};
+  test_class_attribute<test_numeric_format<short>> test_numeric_format_class_short_attr {"test_numeric_format<short>"};
+  test_class_attribute<test_numeric_format<unsigned short>> test_numeric_format_class_unsigned_short_attr {"test_numeric_format<unsigned short>"};
+  test_class_attribute<test_numeric_format<int>> test_numeric_format_class_int_attr {"test_numeric_format<int>"};
+  test_class_attribute<test_numeric_format<unsigned int>> test_numeric_format_class_unsigned_int_attr {"test_numeric_format<unsigned int>"};
+  test_class_attribute<test_numeric_format<long>> test_numeric_format_class_long_attr {"test_numeric_format<long>"};
+  test_class_attribute<test_numeric_format<unsigned long>> test_numeric_format_class_unsigned_long_attr {"test_numeric_format<unsigned long>"};
+  test_class_attribute<test_numeric_format<long long>> test_numeric_format_class_long_long_attr {"test_numeric_format<long long>"};
+  test_class_attribute<test_numeric_format<unsigned long long>> test_numeric_format_class_unsigned_long_long_attr {"test_numeric_format<unsigned long long>"};
+  test_class_attribute<test_numeric_format<int8_t>> test_numeric_format_class_int8_t_attr {"test_numeric_format<int8_t>"};
+  test_class_attribute<test_numeric_format<int16_t>> test_numeric_format_class_int16_t_attr {"test_numeric_format<int16_t>"};
+  test_class_attribute<test_numeric_format<int32_t>> test_numeric_format_class_int32_t_attr {"test_numeric_format<int32_t>"};
+  test_class_attribute<test_numeric_format<int64_t>> test_numeric_format_class_int64_t_attr {"test_numeric_format<int64_t>"};
+  test_class_attribute<test_numeric_format<intptr_t>> test_numeric_format_class_intptr_t_attr {"test_numeric_format<intptr_t>"};
+  test_class_attribute<test_numeric_format<ptrdiff_t>> test_numeric_format_class_ptrdiff_t_attr {"test_numeric_format<ptrdiff_t>"};
+  test_class_attribute<test_numeric_format<size_t>> test_numeric_format_class_size_t_attr {"test_numeric_format<size_t>"};
+  test_class_attribute<test_numeric_format<uint8_t>> test_numeric_format_class_uint8_t_attr {"test_numeric_format<uint8_t>"};
+  test_class_attribute<test_numeric_format<uint16_t>> test_numeric_format_class_uint16_t_attr {"test_numeric_format<uint16_t>"};
+  test_class_attribute<test_numeric_format<uint32_t>> test_numeric_format_class_uint32_t_attr {"test_numeric_format<uint32_t>"};
+  test_class_attribute<test_numeric_format<uint64_t>> test_numeric_format_class_uint64_t_attr {"test_numeric_format<uint64_t>"};
+  test_class_attribute<test_numeric_format<uintptr_t>> test_numeric_format_class_uintptr_t_attr {"test_numeric_format<uintptr_t>"};
+
   template<typename Value>
   class test_numeric_format : public test_class {
   private:
@@ -313,27 +339,4 @@ namespace unit_tests {
       assert::throws<std::invalid_argument>([]{strings::format("{0:V}", to_value<Value>(42));});
     }
   };
-
-  test_class_attribute<test_numeric_format<char>> test_numeric_format_class_char_attr {"test_numeric_format<char>"};
-  test_class_attribute<test_numeric_format<unsigned char>> test_numeric_format_class_unsigned_char_attr {"test_numeric_format<unsigned char>"};
-  test_class_attribute<test_numeric_format<short>> test_numeric_format_class_short_attr {"test_numeric_format<short>"};
-  test_class_attribute<test_numeric_format<unsigned short>> test_numeric_format_class_unsigned_short_attr {"test_numeric_format<unsigned short>"};
-  test_class_attribute<test_numeric_format<int>> test_numeric_format_class_int_attr {"test_numeric_format<int>"};
-  test_class_attribute<test_numeric_format<unsigned int>> test_numeric_format_class_unsigned_int_attr {"test_numeric_format<unsigned int>"};
-  test_class_attribute<test_numeric_format<long>> test_numeric_format_class_long_attr {"test_numeric_format<long>"};
-  test_class_attribute<test_numeric_format<unsigned long>> test_numeric_format_class_unsigned_long_attr {"test_numeric_format<unsigned long>"};
-  test_class_attribute<test_numeric_format<long long>> test_numeric_format_class_long_long_attr {"test_numeric_format<long long>"};
-  test_class_attribute<test_numeric_format<unsigned long long>> test_numeric_format_class_unsigned_long_long_attr {"test_numeric_format<unsigned long long>"};
-  test_class_attribute<test_numeric_format<int8_t>> test_numeric_format_class_int8_t_attr {"test_numeric_format<int8_t>"};
-  test_class_attribute<test_numeric_format<int16_t>> test_numeric_format_class_int16_t_attr {"test_numeric_format<int16_t>"};
-  test_class_attribute<test_numeric_format<int32_t>> test_numeric_format_class_int32_t_attr {"test_numeric_format<int32_t>"};
-  test_class_attribute<test_numeric_format<int64_t>> test_numeric_format_class_int64_t_attr {"test_numeric_format<int64_t>"};
-  test_class_attribute<test_numeric_format<intptr_t>> test_numeric_format_class_intptr_t_attr {"test_numeric_format<intptr_t>"};
-  test_class_attribute<test_numeric_format<ptrdiff_t>> test_numeric_format_class_ptrdiff_t_attr {"test_numeric_format<ptrdiff_t>"};
-  test_class_attribute<test_numeric_format<size_t>> test_numeric_format_class_size_t_attr {"test_numeric_format<size_t>"};
-  test_class_attribute<test_numeric_format<uint8_t>> test_numeric_format_class_uint8_t_attr {"test_numeric_format<uint8_t>"};
-  test_class_attribute<test_numeric_format<uint16_t>> test_numeric_format_class_uint16_t_attr {"test_numeric_format<uint16_t>"};
-  test_class_attribute<test_numeric_format<uint32_t>> test_numeric_format_class_uint32_t_attr {"test_numeric_format<uint32_t>"};
-  test_class_attribute<test_numeric_format<uint64_t>> test_numeric_format_class_uint64_t_attr {"test_numeric_format<uint64_t>"};
-  test_class_attribute<test_numeric_format<uintptr_t>> test_numeric_format_class_uintptr_t_attr {"test_numeric_format<uintptr_t>"};
 }
