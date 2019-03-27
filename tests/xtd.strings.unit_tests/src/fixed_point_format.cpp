@@ -7,6 +7,13 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
+  template <typename Value>
+  class test_fixed_point_format;
+  
+  test_class_attribute<test_fixed_point_format<float>> test_fixed_point_format_class_float_attr {"test_fixed_point_format<float>"};
+  test_class_attribute<test_fixed_point_format<double>> test_fixed_point_format_class_double_attr {"test_fixed_point_format<double>"};
+  test_class_attribute<test_fixed_point_format<long double>> test_fixed_point_format_class_long_double_attr {"test_fixed_point_format<long double>"};
+
   template<typename Value>
   class test_fixed_point_format : public test_class {
   private:
@@ -221,8 +228,4 @@ namespace unit_tests {
       assert::throws<std::invalid_argument>([]{strings::format("{0:V}", to_value<Value>(42.0));});
     }
   };
-
-  test_class_attribute<test_fixed_point_format<float>> test_fixed_point_format_class_float_attr {"test_fixed_point_format<float>"};
-  test_class_attribute<test_fixed_point_format<double>> test_fixed_point_format_class_double_attr {"test_fixed_point_format<double>"};
-  test_class_attribute<test_fixed_point_format<long double>> test_fixed_point_format_class_long_double_attr {"test_fixed_point_format<long double>"};
 }
