@@ -5,6 +5,7 @@ project(xtd.strings VERSION 0.1.1)
 set(INCLUDES
   include/xtd/__format.hpp
   include/xtd/istring.hpp
+  include/xtd/format_page.hpp
   include/xtd/main_page.hpp
   include/xtd/string_comparison.hpp
   include/xtd/string_split_options.hpp
