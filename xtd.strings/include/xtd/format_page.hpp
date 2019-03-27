@@ -16,11 +16,11 @@
 ///
 /// Example with specifying argument identifier :
 /// @code
-/// cout << string::format("{0}, {1}, {3}", 42, 'c', "word") << endl;
+/// cout << strings::format("{0}, {1}, {3}", 42, 'c', "word") << endl;
 /// cout << strings::format("The {0} we {1} {1} {2} {1}.", "man", "saw", 'a') << endl; // repeated identifier
 /// @endcode
 ///
-/// Result
+/// Output :
 /// @code
 /// 42, c, word
 /// The man saw saw a saw.
@@ -28,11 +28,11 @@
 ///
 /// Example without specifying argument identifier :
 /// @code
-/// cout << string::format("{} {} {}", 1, "two", 3.0) << endl;
+/// cout << strings::format("{} {} {}", 1, "two", 3.0) << endl;
 /// cout << strings::format("{}, {}!", "Hello", "World") << endl;
 /// @endcode
 ///
-/// Result
+/// Output :
 /// @code
 /// 1 two 3
 /// Hello, World!
@@ -40,13 +40,20 @@
 ///
 /// @section PrecisionSection precision
 ///
-/// * ,precision : Begin with , and contains an integer value positive or negative
-///   - positivie value : pad left
-///   - negative value : pad rigth
+/// <b>,precision</b> : Begin with , and contains a positive or negative integer value
+///   * positivie value : pad left
+///   * negative value : pad rigth
 /// @par Example
 ///
 /// @code
-/// strings.format({0,10}
+/// cout << strings::format("{0,4} items", 10) << endl;
+/// cout << strings::format("{0,-4} items", 10) << endl;
+/// @endcode
+///
+/// Output :
+/// @code
+/// 10   items
+///   10 items
 /// @endcode
 ///
 /// @section FormatSEction format
