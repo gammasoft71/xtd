@@ -12,6 +12,8 @@
 /// Represent argument identifier. You can specified it or not. If not, it's in automatic mode.
 /// If you specify identier, you can use it
 ///
+/// @par Examples:
+///
 /// Example with specifying argument identifier :
 /// @code
 /// cout << string::format("{0}, {1}, {3}", 42, 'c', "word") << endl;
@@ -39,8 +41,8 @@
 /// @section PrecisionSection precision
 ///
 /// * ,precision : Begin with , and contains an integer value positive or negative
-///                ** positivie value : pad left
-///                ** negative value : pad rigth
+///   - positivie value : pad left
+///   - negative value : pad rigth
 /// @par Example
 ///
 /// @code
