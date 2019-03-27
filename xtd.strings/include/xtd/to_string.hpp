@@ -16,6 +16,7 @@
 #include <sstream>
 #include "strings.hpp"
 
+/// @cond
 template<typename Char>
 inline std::basic_string<Char> __insert_group_separator(const std::basic_string<Char>& str, Char separator, Char group_separator) {
   std::basic_string<Char> output;
@@ -64,12 +65,12 @@ inline std::basic_string<Char> __boolean_formater(const std::basic_string<Char>&
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __character_formater(const std::basic_string<Char>& fmt, Value value) {
-  return __to_string<Char>(value);
+  return __format_stringer<Char>(value);
 }
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Char>& fmt, Value value) {
-  if (fmt.empty()) return __to_string<Char>(value);
+  if (fmt.empty()) return __format_stringer<Char>(value);
 
   int precision = 0;
   try {
@@ -103,7 +104,7 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, Value value, bool is_unsigned = false) {
-  if (fmt.empty()) return __to_string<Char, Value>(value);
+  if (fmt.empty()) return __format_stringer<Char, Value>(value);
 
   int precision = 0;
   if (fmt[0] == Char('b') || fmt[0] == Char('B') || fmt[0] == Char('d') || fmt[0] == Char('D') || fmt[0] == Char('o') || fmt[0] == Char('O') || fmt[0] == Char('x') || fmt[0] == Char('X')) {
@@ -139,99 +140,144 @@ inline std::basic_string<Char> __unsigned_numeric_formater(const std::basic_stri
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& fmt, Value value) {
-  return __to_string<Char>(value);
+  return __format_stringer<Char>(value);
 }
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  inline std::string to_string(bool value, const std::string& fmt) {return __boolean_formater(fmt, value);}
-
-  inline std::string to_string(int8_t value, const std::string& fmt) {return __numeric_formater(fmt, value);}
-
-  inline std::string to_string(char value, const std::string& fmt) {return __numeric_formater(fmt, value);}
-  
-  inline std::string to_string(unsigned char value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
-  
-  inline std::string to_string(short value, const std::string& fmt) {return __numeric_formater(fmt, value);}
-  
-  inline std::string to_string(unsigned short value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
-  
-  inline std::string to_string(int value, const std::string& fmt) {return __numeric_formater(fmt, value);}
-  
-  inline std::string to_string(unsigned int value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
-  
-  inline std::string to_string(long value, const std::string& fmt) {return __numeric_formater(fmt, value);}
-  
-  inline std::string to_string(unsigned long value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
-  
-  inline std::string to_string(long long value, const std::string& fmt) {return __numeric_formater(fmt, value);}
-  
-  inline std::string to_string(unsigned long long value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
-  
-  inline std::string to_string(float value, const std::string& fmt) {return __fixed_point_formater(fmt, value);}
-  
-  inline std::string to_string(double value, const std::string& fmt) {return __fixed_point_formater(fmt, value);}
-  
-  inline std::string to_string(long double value, const std::string& fmt) {return __fixed_point_formater(fmt, value);}
-  
-  inline std::string to_string(const std::string& value, const std::string& fmt) {return __string_formater(fmt, value);}
-  
-  inline std::string to_string(const xtd::istring& value, const std::string& fmt) {return __string_formater(fmt, value);}
-  
-  inline std::string to_string(const char* value, const std::string& fmt) {return __string_formater(fmt, value);}
-  
-  inline std::string to_string(char16_t value, const std::string& fmt) {return __character_formater(fmt, value);}
-  
-  inline std::string to_string(char32_t value, const std::string& fmt) {return __character_formater(fmt, value);}
-  
-  inline std::string to_string(wchar_t value, const std::string& fmt) {return __character_formater(fmt, value);}
-  
   template<typename Value>
   inline std::string to_string(const Value& value, const std::string& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
   
-  inline std::wstring to_string(bool value, const std::wstring& fmt) {return __boolean_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const bool& value, const std::string& fmt) {return __boolean_formater(fmt, value);}
+
+  template<>
+  inline std::string to_string(const int8_t& value, const std::string& fmt) {return __numeric_formater(fmt, value);}
+
+  template<>
+  inline std::string to_string(const char& value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(int8_t value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const unsigned char& value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(char value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const short& value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(unsigned char value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const unsigned short& value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(short value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const int& value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(unsigned short value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const unsigned int& value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(int value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const long& value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(unsigned int value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const unsigned long& value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(long value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const long long& value, const std::string& fmt) {return __numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(unsigned long value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const unsigned long long& value, const std::string& fmt) {return __unsigned_numeric_formater(fmt, value);}
   
-  inline std::wstring to_string(long long value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const float& value, const std::string& fmt) {return __fixed_point_formater(fmt, value);}
   
-  inline std::wstring to_string(unsigned long long value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const double& value, const std::string& fmt) {return __fixed_point_formater(fmt, value);}
   
-  inline std::wstring to_string(float value, const std::wstring& fmt) {return __fixed_point_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const long double& value, const std::string& fmt) {return __fixed_point_formater(fmt, value);}
   
-  inline std::wstring to_string(double value, const std::wstring& fmt) {return __fixed_point_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const std::string& value, const std::string& fmt) {return __string_formater(fmt, value);}
   
-  inline std::wstring to_string(long double value, const std::wstring& fmt) {return __fixed_point_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const xtd::istring& value, const std::string& fmt) {return __string_formater(fmt, value);}
   
-  inline std::wstring to_string(const std::wstring& value, const std::wstring& fmt) {return __string_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const char16_t& value, const std::string& fmt) {return __character_formater(fmt, value);}
   
-  inline std::wstring to_string(const xtd::iwstring& value, const std::wstring& fmt) {return __string_formater(fmt, value);}
+  template<>
+  inline std::string to_string(const char32_t& value, const std::string& fmt) {return __character_formater(fmt, value);}
   
-  inline std::wstring to_string(const char* value, const std::wstring& fmt) {return __string_formater(fmt, value);}
-  
-  inline std::wstring to_string(char16_t value, const std::wstring& fmt) {return __character_formater(fmt, value);}
-  
-  inline std::wstring to_string(char32_t value, const std::wstring& fmt) {return __character_formater(fmt, value);}
-  
-  inline std::wstring to_string(wchar_t value, const std::wstring& fmt) {return __character_formater(fmt, value);}
-  
+  template<>
+  inline std::string to_string(const wchar_t& value, const std::string& fmt) {return __character_formater(fmt, value);}
+
+  /// @cond
+  inline std::string to_string(const char*  value, const std::string& fmt) {return __string_formater(fmt, value);}
+  /// @endcond
+
   template<typename Value>
   inline std::wstring to_string(const Value& value, const std::wstring& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
+
+  template<>
+  inline std::wstring to_string(const bool& value, const std::wstring& fmt) {return __boolean_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const int8_t& value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const char& value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const unsigned char& value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const short& value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const unsigned short& value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const int& value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const unsigned int& value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const long& value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const unsigned long& value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const long long& value, const std::wstring& fmt) {return __numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const unsigned long long& value, const std::wstring& fmt) {return __unsigned_numeric_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const float& value, const std::wstring& fmt) {return __fixed_point_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const double& value, const std::wstring& fmt) {return __fixed_point_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const long double& value, const std::wstring& fmt) {return __fixed_point_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const std::wstring& value, const std::wstring& fmt) {return __string_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const xtd::iwstring& value, const std::wstring& fmt) {return __string_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const char16_t& value, const std::wstring& fmt) {return __character_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const char32_t& value, const std::wstring& fmt) {return __character_formater(fmt, value);}
+  
+  template<>
+  inline std::wstring to_string(const wchar_t& value, const std::wstring& fmt) {return __character_formater(fmt, value);}
+  
+  /// @cond
+  inline std::wstring to_string(const wchar_t*  value, const std::wstring& fmt) {return __string_formater(fmt, value);}
+  /// @endcond
 }
 
