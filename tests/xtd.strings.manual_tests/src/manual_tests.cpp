@@ -63,7 +63,7 @@ private:
 
 namespace xtd {
   template<>
-  std::string to_string<cl>(const cl& value, const std::string& fmt) {
+  std::string to_string(const cl& value, const std::string& fmt) {
     std::stringstream ss;
     ss << "[";
     ss << value.value_a();
@@ -74,7 +74,7 @@ namespace xtd {
   }
   
   template<>
-  std::wstring to_string<cl>(const cl& value, const std::wstring& fmt) {
+  std::wstring to_string(const cl& value, const std::wstring& fmt) {
     std::wstringstream ss;
     ss << L"[";
     ss << value.value_a();

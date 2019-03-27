@@ -27,28 +27,28 @@ template<typename Char, typename ...Args>
 void __extract_format_arg(std::basic_string<Char>& fmt, std::vector<__format_information<Char>>& format, Args&&... args);
 
 template<typename Char, typename Value>
-inline std::basic_string<Char> __to_string(Value value) {
+inline std::basic_string<Char> __format_stringer(Value value) {
   std::basic_stringstream<Char> ss;
   ss << value;
   return ss.str();
 }
 
 template<typename Char>
-inline std::basic_string<Char> __to_string(bool value) {
+inline std::basic_string<Char> __format_stringer(bool value) {
   std::basic_stringstream<Char> ss;
   ss << value;
   return ss.str();
 }
 
 template<>
-inline std::basic_string<char> __to_string<char, bool>(bool value) {
+inline std::basic_string<char> __format_stringer<char, bool>(bool value) {
   std::basic_stringstream<char> ss;
   ss << (value ? "true" : "false");
   return ss.str();
 }
 
 template<>
-inline std::basic_string<char16_t> __to_string<char16_t, bool>(bool value) {
+inline std::basic_string<char16_t> __format_stringer<char16_t, bool>(bool value) {
   std::basic_stringstream<char16_t> ss;
 #if !defined(__APPLE__)
   ss << (value ? u"true" : u"false");
@@ -57,7 +57,7 @@ inline std::basic_string<char16_t> __to_string<char16_t, bool>(bool value) {
 }
 
 template<>
-inline std::basic_string<char32_t> __to_string<char32_t, bool>(bool value) {
+inline std::basic_string<char32_t> __format_stringer<char32_t, bool>(bool value) {
   std::basic_stringstream<char32_t> ss;
 #if !defined(__APPLE__)
   ss << (value ? U"true" : U"false");
@@ -66,21 +66,21 @@ inline std::basic_string<char32_t> __to_string<char32_t, bool>(bool value) {
 }
 
 template<>
-inline std::basic_string<wchar_t> __to_string<wchar_t, bool>(bool value) {
+inline std::basic_string<wchar_t> __format_stringer<wchar_t, bool>(bool value) {
   std::basic_stringstream<wchar_t> ss;
   ss << (value ? L"true" : L"false");
   return ss.str();
 }
 
 template<>
-inline std::basic_string<char> __to_string<char, bool&>(bool& value) {
+inline std::basic_string<char> __format_stringer<char, bool&>(bool& value) {
   std::basic_stringstream<char> ss;
   ss << (value ? "true" : "false");
   return ss.str();
 }
 
 template<>
-inline std::basic_string<char16_t> __to_string<char16_t, bool&>(bool& value) {
+inline std::basic_string<char16_t> __format_stringer<char16_t, bool&>(bool& value) {
   std::basic_stringstream<char16_t> ss;
 #if !defined(__APPLE__)
   ss << (value ? u"true" : u"false");
@@ -89,7 +89,7 @@ inline std::basic_string<char16_t> __to_string<char16_t, bool&>(bool& value) {
 }
 
 template<>
-inline std::basic_string<char32_t> __to_string<char32_t, bool&>(bool& value) {
+inline std::basic_string<char32_t> __format_stringer<char32_t, bool&>(bool& value) {
   std::basic_stringstream<char32_t> ss;
 #if !defined(__APPLE__)
   ss << (value ? U"true" : U"false");
@@ -98,7 +98,7 @@ inline std::basic_string<char32_t> __to_string<char32_t, bool&>(bool& value) {
 }
 
 template<>
-inline std::basic_string<wchar_t> __to_string<wchar_t, bool&>(bool& value) {
+inline std::basic_string<wchar_t> __format_stringer<wchar_t, bool&>(bool& value) {
   std::basic_stringstream<wchar_t> ss;
   ss << (value ? L"true" : L"false");
   return ss.str();
@@ -1642,7 +1642,7 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
     if (format.index == index) {
       std::basic_string<Char> arg_str;
       if (format.format.empty())
-        arg_str = __to_string<Char, Arg>(arg);
+        arg_str = __format_stringer<Char, Arg>(arg);
       else if (format.format[0] == Char(',')) {
         int precision = 0;
         try {
@@ -1650,9 +1650,9 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
         } catch(...) {
           throw std::invalid_argument("Invalid format expression");
         }
-        if (precision > 0) arg_str = xtd::strings::pad_left(__to_string<Char, Arg>(arg), precision);
-        else if (precision < 0) arg_str = xtd::strings::pad_right(__to_string<Char, Arg>(arg), std::abs(precision));
-        else arg_str = __to_string<Char, Arg>(arg);
+        if (precision > 0) arg_str = xtd::strings::pad_left(__format_stringer<Char, Arg>(arg), precision);
+        else if (precision < 0) arg_str = xtd::strings::pad_right(__format_stringer<Char, Arg>(arg), std::abs(precision));
+        else arg_str = __format_stringer<Char, Arg>(arg);
       } else
         arg_str = xtd::to_string(arg, format.format);
       fmt.insert(format.location, arg_str);
