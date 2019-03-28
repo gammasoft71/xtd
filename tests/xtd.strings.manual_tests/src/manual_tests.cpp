@@ -11,7 +11,7 @@ using namespace xtd;
 using namespace xtd::string_literals;
 
 enum class numbers {
-  one,
+  one=1,
   two,
   three,
   four,
@@ -87,20 +87,11 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
-  /*
-  cout << strings::format("{}", numbers::two) << endl;
+  cout << strings::format("{:D}", numbers::two) << endl;
   cout << strings::format("{}", cl(32, 16)) << endl;
   cout << strings::format("{:+}", cl(32, 16)) << endl;
   wcout << strings::format(L"{}", cl(32, 16)) << endl;
   wcout << strings::format(L"{:+}", cl(32, 16)) << endl;
-   */
-
-  int value = 6324;
-  std::string output = xtd::strings::format("{0}{1:D}{2}", "{", value, "}");
-  std::cout << output << std::endl;
-  // The example displays the following output:
-  //
-  // {6324}
 }
 
 // This code produces the following output:
