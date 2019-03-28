@@ -520,7 +520,7 @@ inline std::string __to_string(const std::string& value) {
   return ss.str();
 }
 
-static std::string __to_string(const char* value) {
+inline std::string __to_string(const char* value) {
   std::stringstream ss;
   ss << "\"" << value << "\"";
   return ss.str();
