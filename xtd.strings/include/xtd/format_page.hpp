@@ -30,7 +30,7 @@
 ///
 /// ach format item takes the following form and consists of the following components:
 ///
-/// <H3>{[<b>index</b>][<b>,alignment</b>][<b>:format</b>]}</H3>
+/// <H3>{[<b>index</b>][<b>,alignment</b>][<b>:format_string</b>]}</H3>
 ///
 /// The matching braces ("{" and "}") are required.
 ///
@@ -64,10 +64,10 @@
 /// The following example show format without specified index:
 ///
 /// @code
-/// std::cout << xtd::strings::format("{} {} {}", 1, "two", 3.0) << std::endl;
+/// std::cout << xtd::strings::format("{} {} {:F2}", 1, "two", 3.0) << std::endl;
 /// // The example displays the following output:
 /// //
-/// // 1 two 3
+/// // 1 two 3.00
 /// @endcode
 ///
 /// @subsection AlignmentComponentSubsection Alignment Component
@@ -103,12 +103,36 @@
 /// // George                16.8
 /// @endcode
 ///
-/// @section FormatSection format
-/// Format is optional.
+/// @subsection FormatStringComponentSubsection Format String Component
 ///
 /// @subsection StringFormatSubsection String format
 ///
-/// No need format specification for string
+/// The optional format_string component is a format string that is appropriate for the type of object being formatted.
+///
+///
+///
+/// @subsection EscapingBracesSubsection Escaping Braces
+///
+/// Opening and closing braces are interpreted as starting and ending a format item. Consequently, you must use an escape sequence to display a literal opening brace or closing brace. Specify two opening braces ("{{") in the fixed text to display one opening brace ("{"), or two closing braces ("}}") to display one closing brace ("}"). Braces in a format item are interpreted sequentially in the order they are encountered. Interpreting nested braces is not supported.
+///
+/// The way escaped braces are interpreted can lead to unexpected results. For example, consider the format item "{{{0:D}}}", which is intended to display an opening brace, a numeric value formatted as a decimal number, and a closing brace. However, the format item is actually interpreted in the following manner:
+///
+/// 1. The first two opening braces ("{{") are escaped and yield one opening brace.
+/// 2. The next three characters ("{0:") are interpreted as the start of a format item.
+/// 3. The next character ("D") would be interpreted as the Decimal standard numeric format specifier, but the next two escaped braces ("}}") yield a single brace. Because the resulting string ("D}") is not a standard numeric format specifier, the resulting string is interpreted as a custom format string that means display the literal string "D}".
+/// 4. The last brace ("}") is interpreted as the end of the format item.
+/// 5. he final result that is displayed is the literal string, "{D}". The numeric value that was to be formatted is not displayed.
+///
+/// One way to write your code to avoid misinterpreting escaped braces and format items is to format the braces and format item separately. That is, in the first format operation display a literal opening brace, in the next operation display the result of the format item, then in the final operation display a literal closing brace. The following example illustrates this approach.
+///
+/// @code
+/// int value = 6324;
+/// std::string output = xtd::strings::format("{0}{1:D}{2}", "{", value, "}");
+/// std::cout << output << std::endl;
+/// // The example displays the following output:
+/// //
+/// // {6324}
+/// @endcode
 ///
 /// @subsection NumericFormatSubsection Numeric format
 ///
