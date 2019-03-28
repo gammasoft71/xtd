@@ -28,7 +28,7 @@
 ///
 /// @subsection FormatItemSyntaxSubsection Format Item Syntax
 ///
-/// ach format item takes the following form and consists of the following components:
+/// Each format item takes the following form and consists of the following components:
 ///
 /// <H3>{[<b>index</b>][<b>,alignment</b>][<b>:format_string</b>]}</H3>
 ///
@@ -61,7 +61,7 @@
 ///
 /// If the index component is not specified, it will be automatically generated in the order of the argument list.
 ///
-/// The following example show format without specified index:
+/// The following example shows format without specified index:
 ///
 /// @code
 /// std::cout << xtd::strings::format("{} {} {:F2}", 1, "two", 3.0) << std::endl;
@@ -107,9 +107,15 @@
 ///
 /// @subsection StringFormatSubsection String format
 ///
-/// The optional format_string component is a format string that is appropriate for the type of object being formatted.
+/// The optional formatString component is a format string that is appropriate for the type of object being formatted. Specify a numeric format string if the corresponding object is a numeric value, or an enumeration format string if the corresponding object is an enumeration value. If formatString is not specified, the general ("G") format specifier for a numeric or enumeration type is used. The colon is required if formatString is specified.
 ///
+/// The following table lists types or categories of types that support a predefined set of format strings, and provides links to the topics that list the supported format strings. Note that string formatting is an extensible mechanism that makes it possible to define new format strings for all existing types as well as to define a set of format strings supported by an application-defined type. For more information, see @ref CustomFormatSubsection.
 ///
+/// | Type or Type category                                                                                                                                            | See                              |
+/// |------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+/// | Boolean type (bool)                                                                                                                                              | @ref BooleanFormatSubsection     |
+/// | Enumeration types (all enum or enum class types)                                                                                                                 | @ref EnumerationFormatSubsection |
+/// | Numeric types (char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, float, double and long double) | @ref NumericFormatSubsection     |
 ///
 /// @subsection EscapingBracesSubsection Escaping Braces
 ///
