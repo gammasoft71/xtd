@@ -87,7 +87,7 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
-  cout << strings::format("{:D}", numbers::two) << endl;
+  cout << strings::format("{}", numbers::two) << endl;
   cout << strings::format("{}", cl(32, 16)) << endl;
   cout << strings::format("{:+}", cl(32, 16)) << endl;
   wcout << strings::format(L"{}", cl(32, 16)) << endl;
