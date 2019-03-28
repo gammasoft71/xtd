@@ -87,11 +87,21 @@ namespace xtd {
 
 // The main entry point for the application.
 int main() {
+  /*
   cout << strings::format("{}", numbers::two) << endl;
   cout << strings::format("{}", cl(32, 16)) << endl;
   cout << strings::format("{:+}", cl(32, 16)) << endl;
   wcout << strings::format(L"{}", cl(32, 16)) << endl;
   wcout << strings::format(L"{:+}", cl(32, 16)) << endl;
+   */
+
+  std::vector names = {"Adam", "Bridgette", "Carla", "Daniel", "Ebenezer", "Francine", "George"};
+  std::vector hours = {40.0, 6.667, 40.39, 82.0, 40.333, 80.0, 16.75};
+  
+  std::cout << xtd::strings::format("{0,-20} {1,5}\n", "Name", "Hours") << std::endl;
+  for (size_t ctr = 0; ctr < names.size(); ctr++)
+    std::cout << xtd::strings::format("{0,-20} {1:N1}", names[ctr], hours[ctr]) << std::endl;
+
 }
 
 // This code produces the following output:

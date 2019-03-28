@@ -30,58 +30,77 @@
 ///
 /// ach format item takes the following form and consists of the following components:
 ///
-/// <H2>{[<b>index</b>][<b>,alignment</b>][<b>:format</b>]}</H2>
+/// <H3>{[<b>index</b>][<b>,alignment</b>][<b>:format</b>]}</H3>
 ///
-/// @section IdSection index
+/// The matching braces ("{" and "}") are required.
 ///
-/// Represent argument identifier, it optional
+/// @subsection IndexComponentSubsection Index Component
 ///
-/// If not pecified, the argument identifiers are automaicaly generated.
+/// The optional index component, also called a parameter specifier, is a number starting from 0 that identifies a corresponding item in the list of objects. That is, the format item whose parameter specifier is 0 formats the first object in the list, the format item whose parameter specifier is 1 formats the second object in the list, and so on. The following example includes four parameter specifiers, numbered zero through three, to represent prime numbers less than ten:
 ///
-/// @par Examples:
-///
-/// Example with specifying argument identifier :
 /// @code
-/// cout << strings::format("{0}, {1}, {3}", 42, 'c', "word") << endl;
-/// cout << strings::format("The {0} we {1} {1} {2} {1}.", "man", "saw", 'a') << endl; // repeated identifier
+/// std::string primes;
+/// primes = xtd::strings::format("Prime numbers less than 10: {0}, {1}, {2}, {3}", 2, 3, 5, 7 );
+/// std::cout << primes << std::endl;
+/// // The example displays the following output:
+/// //
+/// // Prime numbers less than 10: 2, 3, 5, 7
 /// @endcode
 ///
-/// Output :
+/// Multiple format items can refer to the same element in the list of objects by specifying the same parameter specifier. For example, you can format the same numeric value in hexadecimal, scientific, and number format by specifying a composite format string such as : "0x{0:X} {0:E} {0:N}", as the following example shows.
+///
 /// @code
-/// 42, c, word
-/// The man saw saw a saw.
+/// std::string multiple = xtd::strings::format("0x{0:X} {0:E} {0:N}", std::numeric_limits<long long>::max());
+/// std::cout << multiple << std::endl;
+/// // The example displays the following output:
+/// //
+/// // 0x7FFFFFFFFFFFFFFF 9.223372E+18 9,223,372,036,854,775,807.00
 /// @endcode
 ///
-/// Example without specifying argument identifier :
+/// Each format item can refer to any object in the list. For example, if there are three objects, you can format the second, first, and third object by specifying a composite format string like this: "{1} {0} {2}". An object that is not referenced by a format item is ignored. A std::argument_error is thrown at runtime if a parameter specifier designates an item outside the bounds of the list of objects.
+///
+/// If the index component is not specified, it will be automatically generated in the order of the argument list.
+///
+/// The following example show format without specified index:
+///
 /// @code
-/// cout << strings::format("{} {} {}", 1, "two", 3.0) << endl;
-/// cout << strings::format("{}, {}!", "Hello", "World") << endl;
+/// std::cout << xtd::strings::format("{} {} {}", 1, "two", 3.0) << std::endl;
+/// // The example displays the following output:
+/// //
+/// // 1 two 3
 /// @endcode
 ///
-/// Output :
+/// @subsection AlignmentComponentSubsection Alignment Component
+///
+/// The optional alignment component is a signed integer indicating the preferred formatted field width. If the value of alignment is less than the length of the formatted string, alignment is ignored and the length of the formatted string is used as the field width. The formatted data in the field is right-aligned if alignment is positive and left-aligned if alignment is negative. If padding is necessary, white space is used. The comma is required if alignment is specified.
+///
+/// The following example defines two arrays, one containing the names of employees and the other containing the hours they worked over a two-week period. The composite format string left-aligns the names in a 20-character field, and right-aligns their hours in a 5-character field. Note that the "N1" standard format string is also used to format the hours with one fractional digit.
+///
 /// @code
-/// 1 two 3
-/// Hello, World!
-/// @endcode
+/// #include <iostream>
+/// #include <vector>
+/// #include <xtd/strings>
 ///
-/// @section PrecisionSection precision
+/// int main() {
+///   std::vector names = {"Adam", "Bridgette", "Carla", "Daniel", "Ebenezer", "Francine", "George"};
+///   std::vector hours = {40.0, 6.667, 40.39, 82.0, 40.333, 80.0, 16.75};
 ///
-/// Precision must begin with <b>,</b> character and contains a positive or negative integer value :
-///   * positivie value : pad left.
-///   * negative value : pad rigth.
+///   std::cout << xtd::strings::format("{0,-20} {1,5}\n", "Name", "Hours") << std::endl;
+///   for (size_t ctr = 0; ctr < names.size(); ctr++)
+///     std::cout << xtd::strings::format("{0,-20} {1,5:N1}", names[ctr], hours[ctr]) << std::endl;
+/// }
 ///
-/// @par Examples
-///
-/// Example with precision :
-/// @code
-/// cout << strings::format("{0,4} items", 10) << endl;
-/// cout << strings::format("{0,-4} items", 10) << endl;
-/// @endcode
-///
-/// Output :
-/// @code
-/// 10   items
-///   10 items
+/// // The example displays the following output:
+/// //
+/// // Name                 Hours
+/// //
+/// // Adam                  40.0
+/// // Bridgette              6.7
+/// // Carla                 40.4
+/// // Daniel                82.0
+/// // Ebenezer              40.3
+/// // Francine              80.0
+/// // George                16.8
 /// @endcode
 ///
 /// @section FormatSection format

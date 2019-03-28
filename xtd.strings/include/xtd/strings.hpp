@@ -20,6 +20,7 @@ template<typename Char>
 struct __format_information {
   size_t index = -1;
   size_t location;
+  std::basic_string<Char> alignment;
   std::basic_string<Char> format;
 };
 
@@ -585,6 +586,7 @@ namespace xtd {
     /// @param fmt A composite format string.
     /// @param args anarguments list to write using format.
     /// @return string formated.
+    /// @remarks for more information about format see @ref FormatPage "Format".
     template<typename Char, typename ...Args>
     static std::basic_string<Char> format(const std::basic_string<Char>& fmt, Args&&... args) {
       std::basic_string<Char> result;
@@ -1644,14 +1646,14 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
       if (format.format.empty())
         arg_str = __format_stringer<Char, Arg>(arg);
       else if (format.format[0] == Char(',')) {
-        int precision = 0;
+        int alignment = 0;
         try {
-          if (format.format.size() > 1) precision = std::stoi(format.format.substr(1));
+          if (format.format.size() > 1) alignment = std::stoi(format.format.substr(1));
         } catch(...) {
           throw std::invalid_argument("Invalid format expression");
         }
-        if (precision > 0) arg_str = xtd::strings::pad_left(__format_stringer<Char, Arg>(arg), precision);
-        else if (precision < 0) arg_str = xtd::strings::pad_right(__format_stringer<Char, Arg>(arg), std::abs(precision));
+        if (alignment > 0) arg_str = xtd::strings::pad_left(__format_stringer<Char, Arg>(arg), alignment);
+        else if (alignment < 0) arg_str = xtd::strings::pad_right(__format_stringer<Char, Arg>(arg), std::abs(alignment));
         else arg_str = __format_stringer<Char, Arg>(arg);
       } else
         arg_str = xtd::to_string(arg, format.format);
