@@ -113,9 +113,9 @@
 ///
 /// | Type or Type category                                                                                                                                            | See                              |
 /// |------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
-/// | Boolean type (bool)                                                                                                                                              | @ref BooleanFormatSubsection     |
-/// | Enumeration types (all enum or enum class types)                                                                                                                 | @ref EnumerationFormatSubsection |
-/// | Numeric types (char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, float, double and long double) | @ref NumericFormatSubsection     |
+/// | Boolean type (bool)                                                                                                                                              | @ref BooleanFormatSection        |
+/// | Enumeration types (all enum or enum class types)                                                                                                                 | @ref EnumerationFormatSection    |
+/// | Numeric types (char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, float, double and long double) | @ref NumericFormatSection        |
 ///
 /// @subsection EscapingBracesSubsection Escaping Braces
 ///
@@ -140,7 +140,16 @@
 /// // {6324}
 /// @endcode
 ///
-/// @subsection NumericFormatSubsection Numeric format
+/// @subsection CodeExamplesSubsection Code Examples
+///
+/// The following example shows one string created using composite formatting and another created using xtd::to_string method. Both types of formatting produce equivalent results.
+///
+/// @code
+/// std::string format_string1 = xtd::strings::format("0:X4", std::numeric_limits<short>::max());
+/// std::string format_string2 = xtd::to_strings::format(std::numeric_limits<short>::max(), "X4");
+/// @endcode
+///
+/// @section NumericFormatSection Numeric format
 ///
 /// Standard numeric format strings are used to format common numeric types. A standard numeric format string takes the form <b>Axx</b>, where:
 /// * <b>A</b> is a single alphabetic character called the format specifier.
