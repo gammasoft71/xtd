@@ -71,19 +71,19 @@ inline std::basic_string<Char> __character_formater(const std::basic_string<Char
 template<typename Char, typename Value>
 inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Char>& fmt, Value value) {
   if (fmt.empty()) return __format_stringer<Char>(value);
-
+  
   int precision = 0;
   try {
     for (auto c : fmt.substr(1))
       if (!std::isdigit(c) && c != Char(' ') && c != Char('+') && c != Char('-')) throw std::invalid_argument("Invalid format expression");
-   if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
+    if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
   } catch(...) {
     throw std::invalid_argument("Invalid format expression");
   }
   if ((fmt[0] == 'f' || fmt[0] == 'F' || fmt[0] == 'n' || fmt[0] == 'N' || fmt[0] == 'p' || fmt[0] == 'P' || fmt[0] == 'r' || fmt[0] == 'R') && fmt.size() == 1) precision = 2;
   if ((fmt[0] == 'e' || fmt[0] == 'E') && fmt.size() == 1) precision = 6;
   if ((fmt[0] == 'g' || fmt[0] == 'G') && fmt.size() == 1) precision = 10;
-
+  
   std::basic_string<Char> fmt_str({Char('%'), Char('.'), Char('*'), Char('L')});
   switch (fmt[0]) {
     case Char('c'):
@@ -105,7 +105,7 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
 template<typename Char, typename Value>
 inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>& fmt, Value value, bool is_unsigned = false) {
   if (fmt.empty()) return __format_stringer<Char, Value>(value);
-
+  
   int precision = 0;
   if (fmt[0] == Char('b') || fmt[0] == Char('B') || fmt[0] == Char('d') || fmt[0] == Char('D') || fmt[0] == Char('o') || fmt[0] == Char('O') || fmt[0] == Char('x') || fmt[0] == Char('X')) {
     try {
@@ -118,7 +118,7 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     if ((fmt[0] == 'd' || fmt[0] == 'D') && precision > 0 && value < 0) precision += 1;
     if ((fmt[0] == 'd' || fmt[0] == 'D') && precision < 0 && value < 0) precision -= 1;
   }
-
+  
   std::basic_string<Char> fmt_str({Char('%'), Char('0'), Char('*'), Char('l'), Char('l')});
   switch (fmt[0]) {
     case Char('b'):
@@ -130,6 +130,23 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     case Char('x'):
     case Char('X'): return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long int>(value));
     default: return __fixed_point_formater(fmt, static_cast<long double>(value));
+  }
+}
+
+template<typename Char, typename Value>
+inline std::basic_string<Char> __enum_formater(const std::basic_string<Char>& fmt, Value value, bool is_unsigned = false) {
+  if (fmt.empty()) return __format_stringer<Char, Value>(value);
+  
+  switch (fmt[0]) {
+    case Char('b'):
+    case Char('B'):
+    case Char('d'):
+    case Char('D'):
+    case Char('o'):
+    case Char('O'):
+    case Char('x'):
+    case Char('X'): return __numeric_formater(fmt, static_cast<long long int>(value), is_unsigned);
+    default: throw std::invalid_argument("Invalid format expression");
   }
 }
 
@@ -147,7 +164,11 @@ inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   template<typename Value>
-  inline std::string to_string(const Value& value, const std::string& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
+  inline std::string to_string(const Value& value, const std::string& fmt) {
+    if (std::is_enum<Value>::value)
+      return __enum_formater(fmt, value, std::is_unsigned<Value>::value);
+    throw std::invalid_argument("to_string speciailisation not found");
+  }
   
   template<>
   inline std::string to_string(const bool& value, const std::string& fmt) {return __boolean_formater(fmt, value);}
@@ -214,7 +235,11 @@ namespace xtd {
   /// @endcond
 
   template<typename Value>
-  inline std::wstring to_string(const Value& value, const std::wstring& fmt) {throw std::invalid_argument("to_string speciailisation not found");}
+  inline std::wstring to_string(const Value& value, const std::wstring& fmt) {
+    if (std::is_enum<Value>::value)
+      return __enum_formater(fmt, value, std::is_unsigned<Value>::value);
+    throw std::invalid_argument("to_string speciailisation not found");
+  }
 
   template<>
   inline std::wstring to_string(const bool& value, const std::wstring& fmt) {return __boolean_formater(fmt, value);}
