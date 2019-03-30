@@ -224,6 +224,14 @@ namespace unit_tests {
       assert::throws<std::invalid_argument>([]{strings::format(L"{0:Pa}", to_value<Value>(0.42));});
     }
     
+    void test_method_(format_with_alignment_before_format) {
+      assert::are_equal(L" 42.00", strings::format(L"{0,6:F}", to_value<Value>(42.0)));
+    }
+    
+    void test_method_(format_with_alignmentafter_format) {
+      assert::throws<std::invalid_argument>([]{strings::format("L{0:F,6}", to_value<Value>(42.0));});
+    }
+
     void test_method_(format_with_invalid_format) {
       assert::throws<std::invalid_argument>([]{strings::format(L"{0:V}", to_value<Value>(42.0));});
     }

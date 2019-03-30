@@ -336,11 +336,11 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_alignment_before_format) {
-      assert::are_equal("    42", strings::format("{0,6:D}", to_value<Value>(42)));
+      assert::are_equal(L"    42", strings::format(L"{0,6:D}", to_value<Value>(42)));
     }
     
     void test_method_(format_with_alignmentafter_format) {
-      assert::throws<std::invalid_argument>([]{strings::format("{0:D,6}", to_value<Value>(42));});
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:D,6}", to_value<Value>(42));});
     }
 
     void test_method_(format_with_invalid_format) {
