@@ -611,21 +611,35 @@ namespace xtd {
             if (format.size() == 0)
               fi.index = index++;
             else {
-              size_t index_format_separator = index_of_any(format, {Char(':'), Char(',')});
-              if (index_format_separator == 0) {
+              size_t index_alignment_separator = index_of(format, Char(','));
+              size_t index_format_separator = index_of(format, Char(':'));
+
+              if (index_alignment_separator != std::basic_string<Char>::npos && index_format_separator != std::basic_string<Char>::npos && index_alignment_separator > index_format_separator)
+                index_alignment_separator = std::basic_string<Char>::npos;
+
+              if (index_alignment_separator != std::basic_string<Char>::npos)
+                fi.alignment = format.substr(index_alignment_separator + 1, index_format_separator != std::basic_string<Char>::npos ? index_format_separator - index_alignment_separator - 1 : std::basic_string<Char>::npos);
+
+              if (index_format_separator != std::basic_string<Char>::npos)
+                fi.format = format.substr(index_format_separator + 1);
+              
+              if (index_alignment_separator == 0 || index_format_separator == 0)
                 fi.index = index++;
-                fi.format = format.substr(format[index_format_separator] == Char(':') ? index_format_separator + 1 : index_format_separator);
-              } else if (index_format_separator == std::basic_string<Char>::npos)
+              else {
+                std::basic_string<Char> index_str;
+                if (index_alignment_separator != std::basic_string<Char>::npos)
+                  index_str = format.substr(0, index_alignment_separator);
+                else if (index_format_separator != std::basic_string<Char>::npos)
+                  index_str = format.substr(0, index_format_separator);
+                else
+                  index_str = format;
                 try {
-                  for (auto c : format)
+                  for (auto c : index_str)
                     if (!std::isdigit(c)) throw std::invalid_argument("Invalid format expression : format argument must be start by ':'");
-                  fi.index = std::stoi(format);
+                  fi.index = std::stoi(index_str);
                 } catch(...) {
                   throw std::invalid_argument("Invalid format expression : format argument must be start by ':'");
                 }
-             else {
-                fi.index = std::stoi(format.substr(0, index_format_separator));
-                fi.format = format.substr(format[index_format_separator] == Char(':') ? index_format_separator + 1 : index_format_separator);
               }
             }
             formats.push_back(fi);
@@ -1642,21 +1656,18 @@ void __extract_format_arg(std::basic_string<Char>& fmt, size_t& index, std::vect
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
-      std::basic_string<Char> arg_str;
-      if (format.format.empty())
-        arg_str = __format_stringer<Char, Arg>(arg);
-      else if (format.format[0] == Char(',')) {
+      std::basic_string<Char> arg_str = format.format.empty() ? __format_stringer<Char, Arg>(arg) : xtd::to_string(arg, format.format);
+
+      if (!format.alignment.empty()) {
         int alignment = 0;
         try {
-          if (format.format.size() > 1) alignment = std::stoi(format.format.substr(1));
+          alignment = std::stoi(format.alignment);
         } catch(...) {
           throw std::invalid_argument("Invalid format expression");
         }
-        if (alignment > 0) arg_str = xtd::strings::pad_left(__format_stringer<Char, Arg>(arg), alignment);
-        else if (alignment < 0) arg_str = xtd::strings::pad_right(__format_stringer<Char, Arg>(arg), std::abs(alignment));
-        else arg_str = __format_stringer<Char, Arg>(arg);
-      } else
-        arg_str = xtd::to_string(arg, format.format);
+        if (alignment > 0) arg_str = xtd::strings::pad_left(arg_str, alignment);
+        else if (alignment < 0) arg_str = xtd::strings::pad_right(arg_str, -alignment);
+      }
       fmt.insert(format.location, arg_str);
       offset += arg_str.size();
     }
