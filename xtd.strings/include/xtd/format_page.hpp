@@ -105,7 +105,7 @@
 ///
 /// @subsection FormatStringComponentSubsection Format String Component
 ///
-/// @subsection StringFormatSubsection String format
+/// @subsubsection StringFormatSubsubsection String format
 ///
 /// The optional formatString component is a format string that is appropriate for the type of object being formatted. Specify a numeric format string if the corresponding object is a numeric value, or an enumeration format string if the corresponding object is an enumeration value. If formatString is not specified, the general ("G") format specifier for a numeric or enumeration type is used. The colon is required if formatString is specified.
 ///
@@ -119,7 +119,7 @@
 /// | Enumeration types (all enum or enum class types)                                                                                                                 | @ref EnumerationFormatSection    |
 /// | Numeric types (char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, float, double and long double) | @ref NumericFormatSection        |
 ///
-/// @subsection EscapingBracesSubsection Escaping Braces
+/// @subsubsection EscapingBracesSubsucsection Escaping Braces
 ///
 /// Opening and closing braces are interpreted as starting and ending a format item. Consequently, you must use an escape sequence to display a literal opening brace or closing brace. Specify two opening braces ("{{") in the fixed text to display one opening brace ("{"), or two closing braces ("}}") to display one closing brace ("}"). Braces in a format item are interpreted sequentially in the order they are encountered. Interpreting nested braces is not supported.
 ///
