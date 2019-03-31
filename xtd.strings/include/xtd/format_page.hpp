@@ -103,7 +103,7 @@
 /// // George                16.8
 /// @endcode
 ///
-/// @subsection FormatStringComponentSubsection Format String Component
+/// @subsubsection FormatStringComponentSubsubsection Format String Component
 ///
 /// The optional formatString component is a format string that is appropriate for the type of object being formatted. Specify a numeric format string if the corresponding object is a numeric value, or an enumeration format string if the corresponding object is an enumeration value. If formatString is not specified, the general ("G") format specifier for a numeric or enumeration type is used. The colon is required if formatString is specified.
 ///
