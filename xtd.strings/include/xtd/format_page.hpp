@@ -239,6 +239,3 @@
 /// When precision specifier controls the number of fractional digits in the result string, the result string reflects a number that is rounded to a representable result nearest to the infinitely precise result.
 ///
 /// @note The precision specifier determines the number of digits in the result string. To pad a result string with leading or trailing spaces, use the @ref CompositeFormattingSection feature and define an alignment component in the format item.
-///
-/// @remarks
-/// <b>precision</b> and <b>format</b> are optional and can be present in the same time.
