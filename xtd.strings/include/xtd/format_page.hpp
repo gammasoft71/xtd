@@ -114,6 +114,8 @@
 /// | Type or Type category                                                                                                                                            | See                              |
 /// |------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
 /// | Boolean type (bool)                                                                                                                                              | @ref BooleanFormatSection        |
+/// | Date and time type (std::chrono::time_point, std::time_t)                                                                                                        | @ref DateTimeFormatSection       |
+/// | Duration type (std::chrono::duration)                                                                                                                            | @ref DurationFormatSection       |
 /// | Enumeration types (all enum or enum class types)                                                                                                                 | @ref EnumerationFormatSection    |
 /// | Numeric types (char, unsigned char, short, unsigned short, int, unsigned int, long, unsigned long, long long, unsigned long long, float, double and long double) | @ref NumericFormatSection        |
 ///
