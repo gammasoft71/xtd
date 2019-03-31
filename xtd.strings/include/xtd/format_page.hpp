@@ -3,6 +3,17 @@
 ///
 /// @page FormatPage Format Documentation
 ///
+/// @section FormatingType Formating Types
+///
+/// Formatting is the process of converting an instance of a class, structure, or enumeration value to its string representation, often so that the resulting string can be displayed to users or deserialized to restore the original data type. This conversion can pose a number of challenges:
+///
+/// * The way that values are stored internally does not necessarily reflect the way that users want to view them. For example, a telephone number might be stored in the form 8009999999, which is not user-friendly. It should instead be displayed as 800-999-9999. See the @ref CustomFormatStringsSection section for an example that formats a number in this way.
+/// * Sometimes the conversion of an object to its string representation is not intuitive. For example, it is not clear how the string representation of a Temperature object or a Person object should appear. For an example that formats a Temperature object in a variety of ways, see the @ref StandardFormatStringsSection section.
+/// * Values often require culture-sensitive formatting. For example, in an application that uses numbers to reflect monetary values, numeric strings should include the current culture’s currency symbol, group separator (which, in most cultures, is the thousands separator), and decimal symbol.
+/// * An application may have to display the same value in different ways. For example, an application may represent an enumeration member by displaying a string representation of its name or by displaying its underlying value. For an example that formats a member of the day_of_week enumeration in different ways, see the @ref StandardFormatStringsSection section.
+///
+/// @note Formatting converts the value of a type into a string representation. Parsing is the inverse of formatting. A parsing operation creates an instance of a data type from its string representation.
+///
 /// @section CompositeFormattingSection Composite Formatting
 ///
 /// The composite formatting feature takes a list of objects and a composite format string as input. A composite format string consists of fixed text intermixed with indexed placeholders, called format items, that correspond to the objects in the list. The formatting operation yields a result string that consists of the original fixed text intermixed with the string representation of the objects in the list.
@@ -13,7 +24,7 @@
 /// * xtd::diagnostics::debug::write_line method, which outputs a formatted message to trace listeners (xtd.diagnostics library).
 /// * The xtd::diagnostics::trace::trace_error, xtd::diagnostics::trace::trace_information, and xtd::diagnostics::trace::trace_warning methods, which output formatted messages to trace listeners (xtd.diagnostics library).
 ///
-/// @subsection CompositeFormatStringSubsection Composite Format String
+/// @subsection CompositeFormatStringSection Composite Format String
 ///
 /// A composite format string and object list are used as arguments of methods that support the composite formatting feature. A composite format string consists of zero or more runs of fixed text intermixed with one or more format items. The fixed text is any string that you choose, and each format item corresponds to an object or boxed structure in the list. The composite formatting feature returns a new result string where each format item is replaced by the string representation of the corresponding object in the list.
 ///
@@ -26,7 +37,7 @@
 ///
 /// The fixed text is "Name = " and ", age = ". The format items are "{0}", whose index is 0, which corresponds to the object name, and "{1:D3}", whose index is 1, which corresponds to the integer 42.
 ///
-/// @subsection FormatItemSyntaxSubsection Format Item Syntax
+/// @subsection FormatItemSyntaxSection Format Item Syntax
 ///
 /// Each format item takes the following form and consists of the following components:
 ///
@@ -34,7 +45,7 @@
 ///
 /// The matching braces ("{" and "}") are required.
 ///
-/// @subsubsection IndexComponentSubsubsection Index Component
+/// @subsubsection IndexComponentSection Index Component
 ///
 /// The optional index component, also called a parameter specifier, is a number starting from 0 that identifies a corresponding item in the list of objects. That is, the format item whose parameter specifier is 0 formats the first object in the list, the format item whose parameter specifier is 1 formats the second object in the list, and so on. The following example includes four parameter specifiers, numbered zero through three, to represent prime numbers less than ten:
 ///
@@ -70,7 +81,7 @@
 /// // 1 two 3.00
 /// @endcode
 ///
-/// @subsubsection AlignmentComponentSubsubsection Alignment Component
+/// @subsubsection AlignmentComponentSection Alignment Component
 ///
 /// The optional alignment component is a signed integer indicating the preferred formatted field width. If the value of alignment is less than the length of the formatted string, alignment is ignored and the length of the formatted string is used as the field width. The formatted data in the field is right-aligned if alignment is positive and left-aligned if alignment is negative. If padding is necessary, white space is used. The comma is required if alignment is specified.
 ///
@@ -103,11 +114,11 @@
 /// // George                16.8
 /// @endcode
 ///
-/// @subsubsection FormatStringComponentSubsubsection Format String Component
+/// @subsubsection FormatStringComponentSection Format String Component
 ///
 /// The optional formatString component is a format string that is appropriate for the type of object being formatted. Specify a numeric format string if the corresponding object is a numeric value, or an enumeration format string if the corresponding object is an enumeration value. If formatString is not specified, the general ("G") format specifier for a numeric or enumeration type is used. The colon is required if formatString is specified.
 ///
-/// The following table lists types or categories of types that support a predefined set of format strings, and provides links to the topics that list the supported format strings. Note that string formatting is an extensible mechanism that makes it possible to define new format strings for all existing types as well as to define a set of format strings supported by an application-defined type. For more information, see @ref CustomFormatSubsection.
+/// The following table lists types or categories of types that support a predefined set of format strings, and provides links to the topics that list the supported format strings. Note that string formatting is an extensible mechanism that makes it possible to define new format strings for all existing types as well as to define a set of format strings supported by an application-defined type. For more information, see @ref CustomFormatSection.
 ///
 /// | Type or Type category                                                                                                                                            | See                              |
 /// |------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
@@ -140,7 +151,7 @@
 /// // {6324}
 /// @endcode
 ///
-/// @subsection CodeExamplesSubsection Code Examples
+/// @subsection CodeExamplesSection Code Examples
 ///
 /// The following example shows one string created using composite formatting and another created using xtd::to_string method. Both types of formatting produce equivalent results.
 ///
