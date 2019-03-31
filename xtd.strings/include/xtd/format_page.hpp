@@ -14,6 +14,25 @@
 ///
 /// @note Formatting converts the value of a type into a string representation. Parsing is the inverse of formatting. A parsing operation creates an instance of a data type from its string representation.
 ///
+/// xtd.strings provides rich formatting support that enables developers to address these requirements.
+///
+/// This overview contains the following sections:
+/// * @ref FormatingSection
+/// * @ref DefaultFormattingUsingToStringMethodSection
+/// * @ref OverridingToStringMethodSection
+/// * @ref ToStringMethodAndFormatStringsSection
+///   - @ref StandardFormatStringsSection
+///   - @ref CustomFormatStringsSection
+///   - @ref FormatStringsAndTypesSection
+/// * @ref CultureSensitiveFormattingSection
+///   - @ref CultureSensitiveFormattingOfNumericValuesSection
+///   - @ref CultureSensitiveFormattingOfDateAndTimeValuesSection
+/// * @ref CultureSensitiveFormattingSection
+/// * @ref CompositeFormattingSection
+/// * @ref CustomFormattingSection
+/// * @ref RelatedTopicsSection
+/// * @ref ReferenceSection
+///
 /// @section CompositeFormattingSection Composite Formatting
 ///
 /// The composite formatting feature takes a list of objects and a composite format string as input. A composite format string consists of fixed text intermixed with indexed placeholders, called format items, that correspond to the objects in the list. The formatting operation yields a result string that consists of the original fixed text intermixed with the string representation of the objects in the list.
