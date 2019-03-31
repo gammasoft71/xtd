@@ -3,7 +3,7 @@
 ///
 /// @page FormatPage Format Documentation
 ///
-/// @section CompositeFormatting Composite Formatting
+/// @section CompositeFormattingSection Composite Formatting
 ///
 /// The composite formatting feature takes a list of objects and a composite format string as input. A composite format string consists of fixed text intermixed with indexed placeholders, called format items, that correspond to the objects in the list. The formatting operation yields a result string that consists of the original fixed text intermixed with the string representation of the objects in the list.
 ///
@@ -208,9 +208,9 @@
 /// Standard numeric format strings are used to format common numeric types. A standard numeric format string takes the form <b>Axx</b>, where:
 /// * <b>A</b> is a single alphabetic character called the format specifier.
 /// * <b>xx</b> is an optional integer called the precision specifier. The precision specifier ranges from 0 to 99 and affects the number of digits in the result. Note that the precision specifier controls the number of digits in the string representation of a number. It does not round the number itself. To perform a rounding operation, use the std::ceil, std::floor, or std::round method.
-/// When precision specifier controls the number of fractional digits in the result string, the result string reflects a number that is rounded to a representable result nearest to the infinitely precise result
+/// When precision specifier controls the number of fractional digits in the result string, the result string reflects a number that is rounded to a representable result nearest to the infinitely precise result.
 ///
-///
+/// @note The precision specifier determines the number of digits in the result string. To pad a result string with leading or trailing spaces, use the @ref CompositeFormattingSection feature and define an alignment component in the format item.
 ///
 /// @remarks
-/// <b>precision>/b> and <b>format>/b> are optional and can be present in the same time.
+/// <b>precision</b> and <b>format</b> are optional and can be present in the same time.
