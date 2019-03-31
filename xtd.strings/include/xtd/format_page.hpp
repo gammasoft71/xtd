@@ -151,6 +151,58 @@
 /// std::string format_string2 = xtd::to_strings::format(std::numeric_limits<short>::max(), "X4");
 /// @endcode
 ///
+/// xtd::console::write_line exposes the same functionality as xtd::strings::format. The only difference between the two methods is that xtd::strings::format returns its result as a string, while xtd::console::write_line writes the result to the output stream (std::cout) associated with the console object. The following example uses the xtd::console::write_line method to format the value of my_int to a currency value.
+///
+/// @code
+/// int my_int = 100;
+/// xtd::console::write_line("{0:C}", my_int);
+/// // The example displays the following output if en-US is the current culture:
+/// //
+/// // $100.00
+/// @endcode
+///
+/// The following example demonstrates formatting multiple objects, including formatting one object two different ways.
+///
+/// @code
+/// std::string my_name = "Fred";
+/// xtd::console::write_line(xtd::strings::format("Name = {0}, hours = {1:hh}, minutes = {1:mm}", myName, std::chrono::system_clock::now()));
+/// // Depending on the current time, the example displays output like the following:
+/// //
+/// // Name = Fred, hours = 11, minutes = 30
+/// @endcode
+///
+/// The following example demonstrates the use of alignment in formatting. The arguments that are formatted are placed between vertical bar characters (|) to highlight the resulting alignment.
+///
+/// @code
+/// std::string my_first_name = "Fred";
+/// std::string my_last_name = "Opals";
+/// int myInt = 100;
+/// std::string format_first_name = xtd::strings::format("First Name = |{0,10}|", my_first_name);
+/// std::string format_last_name = xtd::strings::format("Last Name = |{0,10}|", my_last_name);
+/// std::string format_price = xtd::strings::format("Price = |{0,10:C}|", myInt);
+/// xtd::console::write_line(format_first_name);
+/// xtd::console::write_line(format_last_name);
+/// xtd::console::write_line(format_price);
+/// xtd::console::write_line();
+///
+/// format_first_name = xtd::strings::format("First Name = |{0,-10}|", my_first_name);
+/// format_last_name = xtd::strings::format("Last Name = |{0,-10}|", my_last_name);
+/// format_price = xtd::strings::format("Price = |{0,-10:C}|", myInt);
+/// xtd::console::write_line(format_first_name);
+/// xtd::console::write_line(format_last_name);
+/// xtd::console::write_line(format_price);
+///
+/// // The example displays the following output on a system whose current culture is en-US:
+/// //
+/// // First Name = |      Fred|
+/// // Last Name = |     Opals|
+/// // Price = |   $100.00|
+/// //
+/// // First Name = |Fred      |
+/// // Last Name = |Opals     |
+/// // Price = |$100.00   |
+/// @endcode
+///
 /// @section NumericFormatSection Numeric format
 ///
 /// Standard numeric format strings are used to format common numeric types. A standard numeric format string takes the form <b>Axx</b>, where:
