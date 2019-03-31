@@ -101,18 +101,22 @@ namespace unit_tests {
       assert::are_equal(L"101010", strings::format(L"{0:b}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_binary_argument_and_precision) {
+    void test_method_(format_with_binary_argument_and_one_digit_precision) {
       assert::are_equal(L"00101010", strings::format(L"{0:B8}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_binary_argument_and_negative_precision) {
-      assert::are_equal(L"101010  ", strings::format(L"{0:B-8}", to_value<Value>(42)));
+    void test_method_(format_with_binary_argument_and_two_digits_precision) {
+      assert::are_equal(L"0000101010", strings::format(L"{0:B10}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_binary_argument_and_positive_precision) {
-      assert::are_equal(L"00101010", strings::format(L"{0:B+8}", to_value<Value>(42)));
+    void test_method_(format_with_binary_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:B100}", to_value<Value>(42));});
     }
-
+    
+    void test_method_(format_with_binary_argument_and_negative_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:B-3}", to_value<Value>(42));});
+    }
+    
     void test_method_(format_with_binary_argument_and_invalid_precision) {
       assert::throws<std::invalid_argument>([]{strings::format(L"{0:Ba}", to_value<Value>(42));});
     }
@@ -121,19 +125,22 @@ namespace unit_tests {
       assert::are_equal(L"$42.00", strings::format(L"{0:c}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_currency_argument_and_precision) {
+    void test_method_(format_with_currency_argument_and_one_digit_precision) {
       assert::are_not_equal(L"$42.00000", strings::format(L"{0:C5}", to_value<Value>(42)), "The precision of currency format  is ignored");
       assert::are_equal(L"$42.00", strings::format(L"{0:C5}", to_value<Value>(42)), "The precision of currency format is ignored");
     }
     
-    void test_method_(format_with_currency_argument_and_positive_precision) {
-      assert::are_not_equal(L"$42.00000", strings::format(L"{0:C+5}", to_value<Value>(42)), "The precision of currency format  is ignored");
-      assert::are_equal(L"$42.00", strings::format(L"{0:C+5}", to_value<Value>(42)), "The precision of currency format is ignored");
+    void test_method_(format_with_currency_argument_and_two_digits_precision) {
+      assert::are_not_equal(L"$42.00000", strings::format(L"{0:C10}", to_value<Value>(42)), "The precision of currency format  is ignored");
+      assert::are_equal(L"$42.00", strings::format(L"{0:C10}", to_value<Value>(42)), "The precision of currency format is ignored");
+    }
+
+    void test_method_(format_with_currency_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:C100}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_currency_argument_and_negative_precision) {
-      assert::are_not_equal(L"$42.00000", strings::format(L"{0:C-5}", to_value<Value>(42)), "The precision of currency format  is ignored");
-      assert::are_equal(L"$42.00", strings::format(L"{0:C-5}", to_value<Value>(42)), "The precision of currency format is ignored");
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:C-5}", to_value<Value>(42));});
     }
   
     void test_method_(format_with_currency_argument_and_invalid_precision) {
@@ -144,51 +151,64 @@ namespace unit_tests {
       assert::are_equal(L"42", strings::format(L"{0:d}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_decimal_argument_and_precision) {
+    void test_method_(format_with_decimal_argument_and_one_digit_precision) {
       assert::are_equal(L"00042", strings::format(L"{0:D5}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_decimal_argument_and_positive_precision) {
-      assert::are_equal(L"00042", strings::format(L"{0:D+5}", to_value<Value>(42)));
+    void test_method_(format_with_decimal_argument_and_two_digits_precision) {
+      assert::are_equal(L"0000000042", strings::format(L"{0:D10}", to_value<Value>(42)));
     }
     
+    void test_method_(format_with_decimal_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:D100}", to_value<Value>(42));});
+    }
+
     void test_method_(format_with_decimal_argument_and_negative_precision) {
-      assert::are_equal(L"42   ", strings::format(L"{0:D-5}", to_value<Value>(42)));
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:D-5}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_decimal_argument_and_invalid_precision) {
       assert::throws<std::invalid_argument>([]{strings::format(L"{0:Da}", to_value<Value>(42));});
     }
 
-    void test_method_(format_negative_with_decimal_argument_and_precision) {
+    void test_method_(format_negative_with_decimal_argument_and_one_digit_precision) {
       if(std::is_signed<Value>::value)
         assert::are_equal(L"-000123", strings::format(L"{0:D6}", to_value<Value>(-123)));
     }
     
-    void test_method_(format_negative_with_decimal_argument_and_positive_precision) {
+    void test_method_(format_negative_with_decimal_argument_and_two_digits_precision) {
       if (std::is_signed<Value>::value)
-        assert::are_equal(L"-000123", strings::format(L"{0:D+6}", to_value<Value>(-123)));
+        assert::are_equal(L"-0000000123", strings::format(L"{0:D10}", to_value<Value>(-123)));
+    }
+    
+    void test_method_(format_negative_with_decimal_argument_and_three_digits_precision) {
+      if (std::is_signed<Value>::value)
+        assert::throws<std::invalid_argument>([]{strings::format(L"{0:D100}", to_value<Value>(-123));});
     }
     
     void test_method_(format_negative_with_decimal_argument_and_negative_precision) {
       if (std::is_signed<Value>::value)
-        assert::are_equal(L"-123   ", strings::format(L"{0:D-6}", to_value<Value>(-123)));
+        assert::throws<std::invalid_argument>([]{strings::format(L"{0:D-6}", to_value<Value>(-123));});
     }
     
     void test_method_(format_with_exponencial_argument) {
       assert::are_equal(L"4.200000e+01", strings::format(L"{0:e}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_exponencial_argument_and_precision) {
+    void test_method_(format_with_exponencial_argument_and_one_digit_precision) {
+      assert::are_equal(L"4.20000000E+01", strings::format(L"{0:E8}", to_value<Value>(42)));
+    }
+    
+    void test_method_(format_with_exponencial_argument_and_two_digits_precision) {
       assert::are_equal(L"4.2000000000E+01", strings::format(L"{0:E10}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_exponencial_argument_and_positive_precision) {
-      assert::are_equal(L"4.2000000000E+01", strings::format(L"{0:E+10}", to_value<Value>(42)));
+    void test_method_(format_with_exponencial_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:E100}", to_value<Value>(42));});
     }
-    
-    void test_method_(format_with_exponencial_argument_and_negative_precision) {
-      assert::are_equal(L"4.200000E+01", strings::format(L"{0:E-10}", to_value<Value>(42)), "Negative precision for exponencial format reset precision to default (6).");
+
+    void test_method_(format_with_exponencial_argument_and_nagetive_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:E-10}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_exponencial_argument_and_invalid_precision) {
@@ -199,16 +219,20 @@ namespace unit_tests {
       assert::are_equal(L"42.00", strings::format(L"{0:f}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_fixed_point_argument_and_precision) {
+    void test_method_(format_with_fixed_point_argument_and_one_digit_precision) {
       assert::are_equal(L"42.0000", strings::format(L"{0:F4}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_fixed_point_argument_and_positive_precision) {
-      assert::are_equal(L"42.0000", strings::format(L"{0:F+4}", to_value<Value>(42)));
+    void test_method_(format_with_fixed_point_argument_and_two_digits_precision) {
+      assert::are_equal(L"42.0000000000", strings::format(L"{0:F10}", to_value<Value>(42)));
     }
     
+    void test_method_(format_with_fixed_point_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:F100}", to_value<Value>(42));});
+    }
+
     void test_method_(format_with_fixed_point_argument_and_negative_precision) {
-      assert::are_equal(L"42.000000", strings::format(L"{0:F-4}", to_value<Value>(42)), "Negative precision for fixed-point format reset precision to default (6).");
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:F-4}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_fixed_point_argument_and_invalid_precision) {
@@ -219,16 +243,20 @@ namespace unit_tests {
       assert::are_equal(L"42", strings::format(L"{0:g}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_general_argument_and_precision) {
+    void test_method_(format_with_general_argument_and_one_digit_precision) {
       assert::are_equal(L"42", strings::format(L"{0:G2}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_general_argument_and_positive_precision) {
-      assert::are_equal(L"42", strings::format(L"{0:G+2}", to_value<Value>(42)));
+    void test_method_(format_with_general_argument_and_two_digits_precision) {
+      assert::are_equal(L"42", strings::format(L"{0:G10}", to_value<Value>(42)));
+    }
+    
+    void test_method_(format_with_general_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:G100}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_general_argument_and_negative_precision) {
-      assert::are_equal(L"42", strings::format(L"{0:G-2}", to_value<Value>(42)));
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:G-2}", to_value<Value>(42));});
     }
 
     void test_method_(format_with_general_argument_and_invalid_precision) {
@@ -244,7 +272,7 @@ namespace unit_tests {
         assert::are_equal(L"1,234,567.00", strings::format(L"{0:n}", to_value<Value>(1234567)));
     }
     
-    void test_method_(format_with_number_argument_and_precision) {
+    void test_method_(format_with_number_argument_and_one_digit_precision) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal(L"123.0000", strings::format(L"{0:N4}", to_value<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
@@ -253,22 +281,21 @@ namespace unit_tests {
         assert::are_equal(L"1,234,567.0000", strings::format(L"{0:N4}", to_value<Value>(1234567)));
     }
     
-    void test_method_(format_with_number_argument_and_positive_precision) {
+    void test_method_(format_with_number_argument_and_two_digits_precision) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal(L"123.0000", strings::format(L"{0:N+4}", to_value<Value>(123)));
+        assert::are_equal(L"123.0000000000", strings::format(L"{0:N10}", to_value<Value>(123)));
       else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
-        assert::are_equal(L"1,234.0000", strings::format(L"{0:N+4}", to_value<Value>(1234)));
+        assert::are_equal(L"1,234.0000000000", strings::format(L"{0:N10}", to_value<Value>(1234)));
       else
-        assert::are_equal(L"1,234,567.0000", strings::format(L"{0:N+4}", to_value<Value>(1234567)));
+        assert::are_equal(L"1,234,567.0000000000", strings::format(L"{0:N10}", to_value<Value>(1234567)));
     }
     
+    void test_method_(format_with_number_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:N100}", to_value<Value>(123));});
+    }
+
     void test_method_(format_with_number_argument_and_negative_precision) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal(L"123.000000", strings::format(L"{0:N-4}", to_value<Value>(123)), "Negative precision for number format reset precision to default (6).");
-      else if (std::is_same<Value, short>::value || std::is_same<Value, unsigned short>::value)
-        assert::are_equal(L"1,234.000000", strings::format(L"{0:N-4}", to_value<Value>(1234)), "Negative precision for number format reset precision to default (6).");
-      else
-        assert::are_equal(L"1,234,567.000000", strings::format(L"{0:N-4}", to_value<Value>(1234567)), "Negative precision for number format reset precision to default (6).");
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:N-4}", to_value<Value>(123));});
     }
 
     void test_method_(format_with_number_argument_and_invalid_precision) {
@@ -279,16 +306,20 @@ namespace unit_tests {
       assert::are_equal(L"52", strings::format(L"{0:o}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_octal_argument_and_precision) {
+    void test_method_(format_with_octal_argument_and_one_digit_precision) {
       assert::are_equal(L"00052", strings::format(L"{0:O5}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_octal_argument_and_positive_precision) {
-      assert::are_equal(L"00052", strings::format(L"{0:O+5}", to_value<Value>(42)));
+    void test_method_(format_with_octal_argument_and_two_digits_precision) {
+      assert::are_equal(L"0000000052", strings::format(L"{0:O10}", to_value<Value>(42)));
     }
     
+    void test_method_(format_with_octal_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:O100}", to_value<Value>(42));});
+    }
+
     void test_method_(format_with_octal_argument_and_negative_precision) {
-      assert::are_equal(L"52   ", strings::format(L"{0:O-5}", to_value<Value>(42)));
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:O-5}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_octal_argument_and_invalid_precision) {
@@ -299,16 +330,20 @@ namespace unit_tests {
       assert::are_equal(L"100.00 %", strings::format(L"{0:p}", to_value<Value>(1)));
     }
     
-    void test_method_(format_with_percent_argument_and_precision) {
+    void test_method_(format_with_percent_argument_and_one_digit_precision) {
       assert::are_equal(L"600.0000 %", strings::format(L"{0:P4}", to_value<Value>(6)));
     }
     
-    void test_method_(format_with_percent_argument_and_positive_precision) {
-      assert::are_equal(L"600.0000 %", strings::format(L"{0:P+4}", to_value<Value>(6)));
+    void test_method_(format_with_percent_argument_and_two_digits_precision) {
+      assert::are_equal(L"600.0000000000 %", strings::format(L"{0:P10}", to_value<Value>(6)));
     }
     
+    void test_method_(format_with_percent_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:P100}", to_value<Value>(42));});
+    }
+
     void test_method_(format_with_percent_argument_and_negative_precision) {
-      assert::are_equal(L"600.000000 %", strings::format(L"{0:P-4}", to_value<Value>(6)), "Negative precision for percent format reset precision to default (6).");
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:P-4}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_percent_argument_and_invalid_precision) {
@@ -319,16 +354,20 @@ namespace unit_tests {
       assert::are_equal(L"2a", strings::format(L"{0:x}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_hexadecimal_argument_and_precision) {
+    void test_method_(format_with_hexadecimal_argument_and_one_digit_precision) {
       assert::are_equal(L"002A", strings::format(L"{0:X4}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_hexadecimal_argument_and_positive_precision) {
-      assert::are_equal(L"002A", strings::format(L"{0:X+4}", to_value<Value>(42)));
+    void test_method_(format_with_hexadecimal_argument_and_two_digits_precision) {
+      assert::are_equal(L"000000002A", strings::format(L"{0:X10}", to_value<Value>(42)));
+    }
+    
+    void test_method_(format_with_hexadecimal_argument_and_three_digits_precision) {
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:X100}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_hexadecimal_argument_and_negative_precision) {
-      assert::are_equal(L"2A  ", strings::format(L"{0:X-4}", to_value<Value>(42)));
+      assert::throws<std::invalid_argument>([]{strings::format(L"{0:X-4}", to_value<Value>(42));});
     }
     
     void test_method_(format_with_hexadecimal_argument_and_invalid_precision) {
@@ -339,7 +378,7 @@ namespace unit_tests {
       assert::are_equal(L"    42", strings::format(L"{0,6:D}", to_value<Value>(42)));
     }
     
-    void test_method_(format_with_alignmentafter_format) {
+    void test_method_(format_with_alignment_after_format) {
       assert::throws<std::invalid_argument>([]{strings::format(L"{0:D,6}", to_value<Value>(42));});
     }
 
