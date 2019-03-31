@@ -140,7 +140,7 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
 }
 
 template<typename Char, typename Value>
-inline std::basic_string<Char> __enum_formater(const std::basic_string<Char>& fmt, Value value, bool is_unsigned = false) {
+inline std::basic_string<Char> __enum_formater(const std::basic_string<Char>& fmt, Value value) {
   if (fmt.empty()) return __format_stringer<Char>(value);
   
   switch (fmt[0]) {
@@ -162,14 +162,33 @@ template<typename Char, typename Value>
 inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& fmt, Value value) {
   return __format_stringer<Char>(value);
 }
+
+template<typename Value>
+static std::string __to_string_enum(const Value& value, const std::string& fmt, std::true_type) {
+  return __enum_formater(fmt, value);
+}
+
+template<typename Value>
+static std::string __to_string_enum(const Value& value, const std::string& fmt, std::false_type) {
+  throw std::invalid_argument("to_string speciailisation not found");
+}
+
+template<typename Value>
+static std::wstring __to_string_enum(const Value& value, const std::wstring& fmt, std::true_type) {
+  __enum_formater(fmt, value);
+}
+
+template<typename Value>
+static std::wstring __to_string_enum(const Value& value, const std::wstring& fmt, std::false_type) {
+  throw std::invalid_argument("to_string speciailisation not found");
+}
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   template<typename Value>
   inline std::string to_string(const Value& value, const std::string& fmt) {
-    //if (std::is_enum<Value>::value) return __enum_formater(fmt, value, std::is_unsigned<Value>::value);
-    throw std::invalid_argument("to_string speciailisation not found");
+    return __to_string_enum(value, fmt, std::is_enum<Value>());
   }
   
   template<>
@@ -238,9 +257,7 @@ namespace xtd {
 
   template<typename Value>
   inline std::wstring to_string(const Value& value, const std::wstring& fmt) {
-    if (std::is_enum<Value>::value)
-      return __enum_formater(fmt, value, std::is_unsigned<Value>::value);
-    throw std::invalid_argument("to_string speciailisation not found");
+    __to_string_enum(value, fmt, std::is_enum<Value>());
   }
 
   template<>
