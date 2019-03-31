@@ -34,7 +34,7 @@
 ///
 /// The matching braces ("{" and "}") are required.
 ///
-/// @subsection IndexComponentSubsection Index Component
+/// @subsubsection IndexComponentSubsubsection Index Component
 ///
 /// The optional index component, also called a parameter specifier, is a number starting from 0 that identifies a corresponding item in the list of objects. That is, the format item whose parameter specifier is 0 formats the first object in the list, the format item whose parameter specifier is 1 formats the second object in the list, and so on. The following example includes four parameter specifiers, numbered zero through three, to represent prime numbers less than ten:
 ///
@@ -70,7 +70,7 @@
 /// // 1 two 3.00
 /// @endcode
 ///
-/// @subsection AlignmentComponentSubsection Alignment Component
+/// @subsubsection AlignmentComponentSubsubsection Alignment Component
 ///
 /// The optional alignment component is a signed integer indicating the preferred formatted field width. If the value of alignment is less than the length of the formatted string, alignment is ignored and the length of the formatted string is used as the field width. The formatted data in the field is right-aligned if alignment is positive and left-aligned if alignment is negative. If padding is necessary, white space is used. The comma is required if alignment is specified.
 ///
@@ -104,8 +104,6 @@
 /// @endcode
 ///
 /// @subsection FormatStringComponentSubsection Format String Component
-///
-/// @subsubsection StringFormatSubsubsection String format
 ///
 /// The optional formatString component is a format string that is appropriate for the type of object being formatted. Specify a numeric format string if the corresponding object is a numeric value, or an enumeration format string if the corresponding object is an enumeration value. If formatString is not specified, the general ("G") format specifier for a numeric or enumeration type is used. The colon is required if formatString is specified.
 ///
