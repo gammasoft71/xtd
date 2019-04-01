@@ -92,6 +92,12 @@ int main() {
   cout << strings::format("{0:+}", cl(32, 16)) << endl;
   wcout << strings::format(L"{}", cl(32, 16)) << endl;
   wcout << strings::format(L"{:+}", cl(32, 16)) << endl;
+  cout << endl;
+  cout << xtd::to_string(42, "C") << endl;
+  cout << xtd::to_string(42, "C", std::locale("en_US")) << endl;
+  cout << xtd::to_string(42, "C", std::locale("fr_FR.UTF-8")) << endl;
+  cout << xtd::to_string(42, "C", std::locale("fr_CA.UTF-8")) << endl;
+  cout << xtd::to_string(42, "C", std::locale("ja_JP.UTF-8")) << endl;
 }
 
 // This code produces the following output:

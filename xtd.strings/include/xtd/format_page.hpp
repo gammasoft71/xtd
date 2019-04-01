@@ -44,6 +44,17 @@
 /// xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
 /// @endcode
 ///
+/// * Using format providers to take advantage of the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
+///
+/// @code
+/// double cost = 1632.54;
+/// xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US")));
+///
+/// // The example displays the following output:
+/// //
+/// // $1,632.54
+/// @endcode
+///
 /// For more information about format specifiers, see the @ref ToStringMethodAndFormatStringsSection section.
 ///
 /// @section CompositeFormattingSection Composite Formatting
