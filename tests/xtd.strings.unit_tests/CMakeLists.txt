@@ -4,12 +4,12 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.strings.unit_tests)
 set(SOURCES
   src/main.cpp 
-  src/boolean_format.cpp
   src/string_boolean_format.cpp
   src/string_enum_format.cpp
   src/string_enum_class_format.cpp
   src/string_fixed_point_format.cpp
   src/string_numeric_format.cpp
+  src/string_object_format.cpp
   src/string_string_format.cpp
   src/strings.cpp
   src/wstring_boolean_format.cpp
@@ -17,6 +17,7 @@ set(SOURCES
   src/wstring_enum_class_format.cpp
   src/wstring_fixed_point_format.cpp
   src/wstring_numeric_format.cpp
+  src/wstring_object_format.cpp
   src/wstring_string_format.cpp
 )
 source_group(src FILES ${SOURCES})
