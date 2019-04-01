@@ -12,7 +12,11 @@ set(SOURCES
   src/string_format.cpp
   src/string_numeric_format.cpp
   src/strings.cpp
+  src/wstring_boolean_format.cpp
+  src/wstring_enum_format.cpp
+  src/wstring_enum_class_format.cpp
   src/wstring_fixed_point_format.cpp
+  src/wstring_format.cpp
   src/wstring_numeric_format.cpp
 )
 source_group(src FILES ${SOURCES})
