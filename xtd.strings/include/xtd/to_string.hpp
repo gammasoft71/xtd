@@ -49,20 +49,6 @@ inline std::basic_string<Char> __money_converter(long double value, int precisio
   return ss.str();
 }
 
-template<typename Char>
-inline std::basic_string<Char> __boolean_formater(const std::basic_string<Char>& fmt, bool value, const std::locale& loc) {
-  std::basic_string<Char> false_string {Char('f'), Char('a'), Char('l'), Char('s'), Char('e')};
-    std::basic_string<Char> true_string {Char('t'), Char('r'), Char('u'), Char('e')};
-  if (fmt.empty()) return value ? true_string : false_string;
-  
-  int precision = 0;
-  if (fmt[0] == Char(',') && fmt.size() > 1) precision = std::stoi(fmt.substr(1));
-  if (precision > 0) return xtd::strings::pad_left(value ? true_string : false_string, precision);
-  if (precision < 0) return xtd::strings::pad_right(value ? true_string : false_string, std::abs(precision));
-  
-  return value ? true_string : false_string;
-}
-
 template<typename Char, typename Value>
 inline std::basic_string<Char> __character_formater(const std::basic_string<Char>& fmt, Value value, const std::locale& loc) {
   return __format_stringer<Char>(value);
@@ -136,6 +122,25 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     case Char('x'):
     case Char('X'): return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long int>(value));
     default: return __fixed_point_formater(fmt, static_cast<long double>(value), loc);
+  }
+}
+
+template<typename Char>
+inline std::basic_string<Char> __boolean_formater(const std::basic_string<Char>& fmt, bool value, const std::locale& loc) {
+  if (fmt.empty()) return value ? std::basic_string<Char> {'t', 'r', 'u', 'e'} : std::basic_string<Char> {'f', 'a', 'l', 's', 'e'};
+  
+  switch (fmt[0]) {
+    case Char('b'):
+    case Char('B'):
+    case Char('d'):
+    case Char('D'):
+    case Char('o'):
+    case Char('O'):
+    case Char('x'):
+    case Char('X'): return __numeric_formater(fmt, value ? 1 : 0, loc);
+    case Char('g'):
+    case Char('G'): return value ? std::basic_string<Char> {'t', 'r', 'u', 'e'} : std::basic_string<Char> {'f', 'a', 'l', 's', 'e'};
+    default: throw std::invalid_argument("Invalid format expression");
   }
 }
 
