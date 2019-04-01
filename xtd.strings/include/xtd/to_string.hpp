@@ -74,18 +74,18 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
   
   std::basic_string<Char> fmt_str({'%', '.', '*', 'L'});
   switch (fmt[0]) {
-    case Char('c'):
-    case Char('C'): return __money_converter<Char>(static_cast<long double>(value), precision, loc);
-    case Char('e'):
-    case Char('E'):
-    case Char('f'):
-    case Char('F'):
-    case Char('g'):
-    case Char('G'): return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long double>(value));
-    case Char('n'): return __insert_group_separator<Char>(xtd::strings::formatf(fmt_str + Char('f'), precision, static_cast<long double>(value)), Char('.'), Char(','));
-    case Char('N'): return __insert_group_separator<Char>(xtd::strings::formatf(fmt_str + Char('F'), precision, static_cast<long double>(value)), Char('.'), Char(','));
-    case Char('p'): return xtd::strings::formatf(fmt_str + Char('f'), precision, static_cast<long double>(value * 100)) + std::basic_string<Char>({Char(' '), Char('%')});
-    case Char('P'): return xtd::strings::formatf(fmt_str + Char('F'), precision, static_cast<long double>(value * 100)) + std::basic_string<Char>({Char(' '), Char('%')});
+    case 'c':
+    case 'C': return __money_converter<Char>(static_cast<long double>(value), precision, loc);
+    case 'e':
+    case 'E':
+    case 'f':
+    case 'F':
+    case 'g':
+    case 'G': return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long double>(value));
+    case 'n': return __insert_group_separator<Char>(xtd::strings::formatf(fmt_str + Char('f'), precision, static_cast<long double>(value)), Char('.'), Char(','));
+    case 'N': return __insert_group_separator<Char>(xtd::strings::formatf(fmt_str + Char('F'), precision, static_cast<long double>(value)), Char('.'), Char(','));
+    case 'p': return xtd::strings::formatf(fmt_str + Char('f'), precision, static_cast<long double>(value * 100)) + std::basic_string<Char>({Char(' '), Char('%')});
+    case 'P': return xtd::strings::formatf(fmt_str + Char('F'), precision, static_cast<long double>(value * 100)) + std::basic_string<Char>({Char(' '), Char('%')});
     default: throw std::invalid_argument("Invalid format expression");
   }
 }
@@ -99,10 +99,10 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     throw std::invalid_argument("Custom format not yet implemented");
 
   int precision = 0;
-  if (fmt[0] == Char('b') || fmt[0] == Char('B') || fmt[0] == Char('d') || fmt[0] == Char('D') || fmt[0] == Char('o') || fmt[0] == Char('O') || fmt[0] == Char('x') || fmt[0] == Char('X')) {
+  if (fmt[0] == 'b' || fmt[0] == 'B' || fmt[0] == 'd' || fmt[0] == 'D' || fmt[0] == 'o' || fmt[0] == 'O' || fmt[0] == 'x' || fmt[0] == 'X') {
     try {
       for (auto c : fmt.substr(1))
-        if (!std::isdigit(c) && c != Char(' ') && c != Char('+') && c != Char('-')) throw std::invalid_argument("Invalid format expression");
+        if (!std::isdigit(c) && c != ' ' && c != '+' && c != '-') throw std::invalid_argument("Invalid format expression");
       if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
     } catch(...) {
       throw std::invalid_argument("Invalid format expression");
@@ -111,16 +111,16 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     if ((fmt[0] == 'd' || fmt[0] == 'D') && precision < 0 && value < 0) precision -= 1;
   }
   
-  std::basic_string<Char> fmt_str({Char('%'), Char('0'), Char('*'), Char('l'), Char('l')});
+  std::basic_string<Char> fmt_str({'%', '0', '*', 'l', 'l'});
   switch (fmt[0]) {
-    case Char('b'):
-    case Char('B'): return __binary_converter<Char>(value, precision);
-    case Char('d'):
-    case Char('D'): return xtd::strings::formatf(fmt_str + Char(std::is_unsigned<Value>::value ? 'u' : 'd'), precision, static_cast<long long int>(value));
-    case Char('o'):
-    case Char('O'): return xtd::strings::formatf(fmt_str + Char('o'), precision, static_cast<long long int>(value));
-    case Char('x'):
-    case Char('X'): return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long int>(value));
+    case 'b':
+    case 'B': return __binary_converter<Char>(value, precision);
+    case 'd':
+    case 'D': return xtd::strings::formatf(fmt_str + Char(std::is_unsigned<Value>::value ? 'u' : 'd'), precision, static_cast<long long int>(value));
+    case 'o':
+    case 'O': return xtd::strings::formatf(fmt_str + Char('o'), precision, static_cast<long long int>(value));
+    case 'x':
+    case 'X': return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long int>(value));
     default: return __fixed_point_formater(fmt, static_cast<long double>(value), loc);
   }
 }
@@ -130,16 +130,16 @@ inline std::basic_string<Char> __boolean_formater(const std::basic_string<Char>&
   if (fmt.empty()) return value ? std::basic_string<Char> {'t', 'r', 'u', 'e'} : std::basic_string<Char> {'f', 'a', 'l', 's', 'e'};
   
   switch (fmt[0]) {
-    case Char('b'):
-    case Char('B'):
-    case Char('d'):
-    case Char('D'):
-    case Char('o'):
-    case Char('O'):
-    case Char('x'):
-    case Char('X'): return __numeric_formater(fmt, value ? 1 : 0, loc);
-    case Char('g'):
-    case Char('G'): return value ? std::basic_string<Char> {'t', 'r', 'u', 'e'} : std::basic_string<Char> {'f', 'a', 'l', 's', 'e'};
+    case 'b':
+    case 'B':
+    case 'd':
+    case 'D':
+    case 'o':
+    case 'O':
+    case 'x':
+    case 'X': return __numeric_formater(fmt, value ? 1 : 0, loc);
+    case 'g':
+    case 'G': return value ? std::basic_string<Char> {'t', 'r', 'u', 'e'} : std::basic_string<Char> {'f', 'a', 'l', 's', 'e'};
     default: throw std::invalid_argument("Invalid format expression");
   }
 }
@@ -149,16 +149,16 @@ inline std::basic_string<Char> __enum_formater(const std::basic_string<Char>& fm
   if (fmt.empty()) return __format_stringer<Char>(value);
   
   switch (fmt[0]) {
-    case Char('b'):
-    case Char('B'):
-    case Char('d'):
-    case Char('D'):
-    case Char('o'):
-    case Char('O'):
-    case Char('x'):
-    case Char('X'): return __numeric_formater(fmt, static_cast<long long int>(value), loc);
-    case Char('g'):
-    case Char('G'): return __format_stringer<Char, Value>(value);
+    case 'b':
+    case 'B':
+    case 'd':
+    case 'D':
+    case 'o':
+    case 'O':
+    case 'x':
+    case 'X': return __numeric_formater(fmt, static_cast<long long int>(value), loc);
+    case 'g':
+    case 'G': return __format_stringer<Char, Value>(value);
     default: throw std::invalid_argument("Invalid format expression");
   }
 }
