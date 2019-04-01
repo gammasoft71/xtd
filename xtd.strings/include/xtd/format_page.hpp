@@ -44,6 +44,8 @@
 /// xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
 /// @endcode
 ///
+/// For more information about format specifiers, see the @ref ToStringMethodAndFormatStringsSection section.
+///
 /// * Using format providers to take advantage of the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
 ///
 /// @code
@@ -55,7 +57,11 @@
 /// // $1,632.54
 /// @endcode
 ///
-/// For more information about format specifiers, see the @ref ToStringMethodAndFormatStringsSection section.
+/// For more information about formatting with format providers, see the @ref CultureSensitiveFormattingSection section.
+///
+/// * Using composite formatting to embed the string representation of a value in a larger string. For more information, see the @ref CompositeFormattingSection section.
+///
+/// The following sections examine these methods for converting an object to its string representation.
 ///
 /// @section CompositeFormattingSection Composite Formatting
 ///
