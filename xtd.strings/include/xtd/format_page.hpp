@@ -18,8 +18,8 @@
 ///
 /// This overview contains the following sections:
 /// * @ref FormatingSection
-/// * @ref DefaultFormattingUsingToStringMethodSection
-/// * @ref OverridingToStringMethodSection
+/// * @ref DefaultFormattingUsingOperatorShiftLeftSection
+/// * @ref OverridingShiftLeftoperatorMethodSection
 /// * @ref ToStringMethodAndFormatStringsSection
 ///   - @ref StandardFormatStringsSection
 ///   - @ref CustomFormatStringsSection
@@ -32,6 +32,19 @@
 /// * @ref CustomFormattingSection
 /// * @ref RelatedTopicsSection
 /// * @ref ReferenceSection
+///
+/// @subsection FormatingSection Formating
+///
+/// The basic mechanism for formatting is the default implementation of the operator << object method, which is discussed in the @ref DefaultFormattingUsingOperatorShiftLeftSection section later in this topic. xtd.Strings provides several ways to modify and extend its default formatting support. These include the following:
+/// * Overriding the operator << object method to define a custom string representation of an object’s value. For more information, see the @ref OverridingShiftLeftoperatorMethodSection section later in this topic.
+/// * Defining format specifiers that enable the string representation of an object’s value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
+///
+/// @code
+/// int integer_value = 60312;
+/// xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
+/// @endcode
+///
+/// For more information about format specifiers, see the @ref ToStringMethodAndFormatStringsSection section.
 ///
 /// @section CompositeFormattingSection Composite Formatting
 ///
