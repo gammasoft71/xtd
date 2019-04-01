@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
-  class test_class_(test_string_format) {
+  class test_class_(test_string_string_format) {
   public:
     void test_method_(format_string_with_default_argument) {
       assert::are_equal("string", strings::format("{0}", "string"));
