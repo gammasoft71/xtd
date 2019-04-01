@@ -16,8 +16,8 @@ enum class day_of_week {
   saturday
 };
 
-std::ostream& operator<<(std::ostream& os, day_of_week n) {
-  switch (n) {
+std::ostream& operator<<(std::ostream& os, day_of_week d) {
+  switch (d) {
     case day_of_week::sunday: os << "sunday"; break;
     case day_of_week::monday: os << "monday"; break;
     case day_of_week::tuesday: os << "tuesday"; break;
