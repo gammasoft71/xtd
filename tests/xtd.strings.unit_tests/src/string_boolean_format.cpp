@@ -12,7 +12,11 @@ namespace unit_tests {
     void test_method_(format_false_with_default_argument) {
       assert::are_equal("false", xtd::strings::format("{0}", false));
     }
-    
+
+    void test_method_(format_true_with_default_argument) {
+      assert::are_equal("true", xtd::strings::format("{0}", true));
+    }
+
     void test_method_(format_false_with_left_alignment) {
       assert::are_equal("     false", strings::format("{0,10}", false));
     }
@@ -28,9 +32,13 @@ namespace unit_tests {
     void test_method_(format_true_with_right_alignment) {
       assert::are_equal("true      ", strings::format("{0, -10}", true));
     }
-
-    void test_method_(format_true_with_default_argument) {
-      assert::are_equal("true", xtd::strings::format("{0}", true));
+    
+    void test_method_(format_false_with_zero_alignment) {
+      assert::are_equal("false", strings::format("{0,0}", false));
+    }
+    
+    void test_method_(formatn_true_with_zer_alignment) {
+      assert::are_equal("true", strings::format("{0,0}", true));
     }
     
     void test_method_(format_false_with_binary_argument) {
