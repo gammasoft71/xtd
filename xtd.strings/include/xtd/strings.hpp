@@ -1649,6 +1649,7 @@ namespace xtd {
   };
 }
 
+#include "parse.hpp"
 #include "to_string.hpp"
 
 template<typename Char, typename Arg>

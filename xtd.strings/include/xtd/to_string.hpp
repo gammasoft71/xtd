@@ -116,11 +116,11 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
     case 'b':
     case 'B': return __binary_converter<Char>(value, precision);
     case 'd':
-    case 'D': return xtd::strings::formatf(fmt_str + Char(std::is_unsigned<Value>::value ? 'u' : 'd'), precision, static_cast<long long int>(value));
+    case 'D': return xtd::strings::formatf(fmt_str + Char(std::is_unsigned<Value>::value ? 'u' : 'd'), precision, static_cast<long long>(value));
     case 'o':
-    case 'O': return xtd::strings::formatf(fmt_str + Char('o'), precision, static_cast<long long int>(value));
+    case 'O': return xtd::strings::formatf(fmt_str + Char('o'), precision, static_cast<long long>(value));
     case 'x':
-    case 'X': return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long int>(value));
+    case 'X': return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long long>(value));
     default: return __fixed_point_formater(fmt, static_cast<long double>(value), loc);
   }
 }

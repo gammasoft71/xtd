@@ -7,6 +7,8 @@ set(INCLUDES
   include/xtd/istring.hpp
   include/xtd/format_page.hpp
   include/xtd/main_page.hpp
+  include/xtd/number_styles.hpp
+  include/xtd/parse.hpp
   include/xtd/string_comparison.hpp
   include/xtd/string_split_options.hpp
   include/xtd/strings
