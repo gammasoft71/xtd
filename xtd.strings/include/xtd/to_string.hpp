@@ -169,32 +169,22 @@ inline std::basic_string<Char> __string_formater(const std::basic_string<Char>& 
 }
 
 template<typename Value>
-static std::string __to_string_enum(const Value& value, const std::string& fmt, const std::locale& loc, std::true_type) {
-  return __enum_formater(fmt, value, loc);
-}
+static std::string __to_string_enum(const Value& value, const std::string& fmt, const std::locale& loc, std::true_type) {return __enum_formater(fmt, value, loc);}
 
 template<typename Value>
-static std::string __to_string_enum(const Value& value, const std::string& fmt, const std::locale& loc, std::false_type) {
-  throw std::invalid_argument("to_string speciailisation not found");
-}
+static std::string __to_string_enum(const Value& value, const std::string& fmt, const std::locale& loc, std::false_type) {throw std::invalid_argument("to_string speciailisation not found");}
 
 template<typename Value>
-static std::wstring __to_string_enum(const Value& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {
-  __enum_formater(fmt, value, loc);
-}
+static std::wstring __to_string_enum(const Value& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {return __enum_formater(fmt, value, loc);}
 
 template<typename Value>
-static std::wstring __to_string_enum(const Value& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {
-  throw std::invalid_argument("to_string speciailisation not found");
-}
+static std::wstring __to_string_enum(const Value& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {throw std::invalid_argument("to_string speciailisation not found");}
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   template<typename Value>
-  inline std::string to_string(const Value& value, const std::string& fmt, const std::locale& loc) {
-    return __to_string_enum(value, fmt, loc, std::is_enum<Value>());
-  }
+  inline std::string to_string(const Value& value, const std::string& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<Value>());}
   
   template<>
   inline std::string to_string(const bool& value, const std::string& fmt, const std::locale& loc) {return __boolean_formater(fmt, value, loc);}
@@ -268,7 +258,7 @@ namespace xtd {
   /// @endcond
   
   template<typename Value>
-  inline std::wstring to_string(const Value& value, const std::wstring& fmt, const std::locale& loc) {__to_string_enum(value, fmt, std::is_enum<Value>());}
+  inline std::wstring to_string(const Value& value, const std::wstring& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<Value>());}
 
   template<>
   inline std::wstring to_string(const bool& value, const std::wstring& fmt, const std::locale& loc) {return __boolean_formater(fmt, value, loc);}
