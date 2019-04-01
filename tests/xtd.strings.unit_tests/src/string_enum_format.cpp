@@ -6,7 +6,7 @@ using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
-enum day_of_week {
+enum day {
   sunday,
   monday,
   tuesday,
@@ -16,7 +16,7 @@ enum day_of_week {
   saturday
 };
 
-std::ostream& operator<<(std::ostream& os, day_of_week n) {
+std::ostream& operator<<(std::ostream& os, day n) {
   switch (n) {
     case sunday: os << "sunday"; break;
     case monday: os << "monday"; break;

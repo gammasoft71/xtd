@@ -7,6 +7,7 @@ set(SOURCES
   src/boolean_format.cpp
   src/string_boolean_format.cpp
   src/string_enum_format.cpp
+  src/string_enum_class_format.cpp
   src/string_fixed_point_format.cpp
   src/string_format.cpp
   src/string_numeric_format.cpp
