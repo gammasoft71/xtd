@@ -958,6 +958,12 @@ namespace xtd {
     }
 
     /// @cond
+    template<typename Char, typename Collection>
+    static std::basic_string<Char> join(const Char* separator, const Collection& values) noexcept {return join(std::basic_string<Char>(separator), values);}
+    template<typename Char, typename Collection>
+    static std::basic_string<Char> join(const Char* separator, const Collection& values, size_t index) noexcept {return join(std::basic_string<Char>(separator), values, index);}
+    template<typename Char, typename Collection>
+    static std::basic_string<Char> join(const Char* separator, const Collection& values, size_t index, size_t count) noexcept {return join(std::basic_string<Char>(separator), values, index, count);}
     template<typename Char, typename Value>
     static std::basic_string<Char> join(const Char* separator, const std::initializer_list<Value>& values) noexcept {return join(std::basic_string<Char>(separator), values);}
     template<typename Char, typename Value>
@@ -1536,7 +1542,7 @@ namespace xtd {
     /// @param trim_char A character to remove.
     /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start and te and of the specified String.
     template<typename Char>
-    static std::basic_string<Char> trim(const std::basic_string<Char>& str) noexcept {return trim(str, static_cast<Char>(0x20));}
+    static std::basic_string<Char> trim(const std::basic_string<Char>& str) noexcept {return trim(str, std::vector<Char> {9, 10, 11, 12, 13, 32});}
     
     /// @brief Removes all eading and trailing occurrences of a character specified from the specifed String .
     /// @param str String to trim start.
@@ -1554,7 +1560,7 @@ namespace xtd {
     
     /// @cond
     template<typename Char>
-    static std::basic_string<Char> trim(const Char* str) noexcept {return trim(std::basic_string<Char>(str), static_cast<Char>(0x20));}
+    static std::basic_string<Char> trim(const Char* str) noexcept {return trim(std::basic_string<Char>(str), std::vector<Char> {9, 10, 11, 12, 13, 32});}
     
     template<typename Char>
     static std::basic_string<Char> trim(const Char* str, Char trim_char) noexcept {return trim(std::basic_string<Char>(str), std::vector<Char> {trim_char});}
@@ -1568,7 +1574,7 @@ namespace xtd {
     /// @param trim_char A character to remove.
     /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the end of the specified String.
     template<typename Char>
-    static std::basic_string<Char> trim_end(const std::basic_string<Char>& str) noexcept {return trim_end(str, static_cast<Char>(0x20));}
+    static std::basic_string<Char> trim_end(const std::basic_string<Char>& str) noexcept {return trim_end(str, std::vector<Char> {9, 10, 11, 12, 13, 32});}
     
     /// @brief Removes all trailing occurrences of a character specified from the specifed String .
     /// @param str String to trim start.
@@ -1591,7 +1597,7 @@ namespace xtd {
     
     /// @cond
     template<typename Char>
-    static std::basic_string<Char> trim_end(const Char* str) noexcept {return trim_end(std::basic_string<Char>(str), static_cast<Char>(0x20));}
+    static std::basic_string<Char> trim_end(const Char* str) noexcept {return trim_end(std::basic_string<Char>(str), std::vector<Char> {9, 10, 11, 12, 13, 32});}
     
     template<typename Char>
     static std::basic_string<Char> trim_end(const Char* str, Char trim_char) noexcept {return trim_end(std::basic_string<Char>(str), std::vector<Char> {trim_char});}
@@ -1605,7 +1611,7 @@ namespace xtd {
     /// @param trim_char A character to remove.
     /// @return The String that remains after all occurrences of the character in the trim_char parameter are removed from the start of the specified String.
     template<typename Char>
-    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str) noexcept {return trim_start(str, static_cast<Char>(0x20));}
+    static std::basic_string<Char> trim_start(const std::basic_string<Char>& str) noexcept {return trim_start(str, std::vector<Char> {9, 10, 11, 12, 13, 32});}
     
     /// @brief Removes all leading occurrences of a character specified from the specifed String .
     /// @param str String to trim start.
@@ -1628,7 +1634,7 @@ namespace xtd {
     
     /// @cond
     template<typename Char>
-    static std::basic_string<Char> trim_start(const Char* str) noexcept {return trim_start(std::basic_string<Char>(str), static_cast<Char>(0x20));}
+    static std::basic_string<Char> trim_start(const Char* str) noexcept {return trim_start(std::basic_string<Char>(str), std::vector<Char> {9, 10, 11, 12, 13, 32});}
     
     template<typename Char>
     static std::basic_string<Char> trim_start(const Char* str, Char trim_char) noexcept {return trim_start(std::basic_string<Char>(str), std::vector<Char> {trim_char});}
