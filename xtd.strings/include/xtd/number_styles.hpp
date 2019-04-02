@@ -22,7 +22,7 @@ namespace xtd {
     allow_trailing_sign = 0x8,
     /// @brief Indicates that the numeric string can have one pair of parentheses enclosing the number. The parentheses indicate that the string to be parsed represents a negative number. Valid trailing sign characters are determined by the positive_sign and negative_sign properties.
     allow_parentheses = 0x10,
-    /// @brief Indicates that the numeric string can have a decimal point. If the number_styles value includes the allow_currency_symbol flag and the parsed string includes a currency symbol, the decimal separator character is determined by the currency_decimal_separator property. Otherwise, the decimal separator character is determined by the number_decimal_separator property.
+    /// @brief Indicates that the numeric string can have a decimal point. If the number_styles value includes the allow_currency_symbol flag and the parsed string includes a currency symbol, the decimal separator character is determined by the std::use_facet<std::numpunct<char>>(std::locale()).decimal_point() method.
     allow_decimal_point = 0x20,
     /// @brief Indicates that the numeric string can have group separators, such as symbols that separate hundreds from thousands. If the number_styles value includes the allow_currency_symbol flag and the string to be parsed includes a currency symbol, the valid group separator character is determined by the currency_group_separator property, and the number of digits in each group is determined by the currency_Group_sizes property. Otherwise, the valid group separator character is determined by the number_group_separator property, and the number of digits in each group is determined by the number_group_sizes property.
     allow_thousands = 0x40,
@@ -32,7 +32,7 @@ namespace xtd {
     allow_exponent = 0x80,
     /// @brief Indicates that the allow_leading_white, allow_trailing_white, allow_leading_sign, allow_decimal_point, and allow_exponent styles are used. This is a composite number style.
     fixed_point = 0xA7,
-    /// @brief Indicates that the numeric string can contain a currency symbol. Valid currency symbols are determined by the currency_symbol property.
+    /// @brief Indicates that the numeric string can contain a currency symbol. Valid currency symbols are determined by the std::use_facet<std::moneypunct<char>>(std::locale()).curr_symbol() method.
     allow_currency_symbol = 0x100,
     /// @brief Indicates that all styles except allow_exponent and allowHex_specifier are used. This is a composite number style.
     currency = 0x17F,
