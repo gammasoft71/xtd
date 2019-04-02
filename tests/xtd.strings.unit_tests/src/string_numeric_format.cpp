@@ -36,6 +36,10 @@ namespace unit_tests {
   template<typename Value>
   class test_string_numeric_format : public test_class {
   public:
+    static void class_initialize_(class_initialize) {
+      std::locale::global(std::locale("en_US.UTF-8"));
+    }
+    
     void test_method_(format_with_default_argument) {
       if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
         assert::are_equal("*", strings::format("{0}", static_cast<Value>(42)));

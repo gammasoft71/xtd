@@ -17,6 +17,10 @@ namespace unit_tests {
   template<typename Value>
   class test_string_fixed_point_format : public test_class {
   public:
+    static void class_initialize_(class_initialize) {
+      std::locale::global(std::locale("en_US.UTF-8"));
+    }
+    
     void test_method_(format_with_default_argument) {
       assert::are_equal("42", strings::format("{0}", static_cast<Value>(42.0)));
     }
