@@ -9,7 +9,10 @@
 /// @cond
 template <typename Value, typename Char>
 inline long long int __parse_number(const std::basic_string<Char>& s, xtd::number_styles styles) {
-  
+  if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
+  if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
+  if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (styles - xtd::number_styles::hex_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
+
   int base = 10;
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) base = 2;
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) base = 8;
