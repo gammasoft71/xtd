@@ -17,41 +17,31 @@
 #include "strings.hpp"
 
 /// @cond
-template<typename Char>
-inline std::basic_string<Char> __insert_group_separator(const std::basic_string<Char>& str, Char separator, Char group_separator) {
-  std::basic_string<Char> output;
-  int distance_from_separator = static_cast<int>(xtd::strings::index_of(str, separator));
-  if (distance_from_separator == -1) distance_from_separator = static_cast<int>(str.size());
-  for (Char c : str) {
-    output += c;
-    if (c == '-')
-      distance_from_separator -= 1;
-    else {
-      distance_from_separator -= 1;
-      if (distance_from_separator > 0 && (distance_from_separator % 3 == 0))
-        output += group_separator;
-    }
-  }
-  return output;
-}
-
 template<typename Char, typename Value>
-inline std::basic_string<Char> __binary_converter(Value value, int precision) {
+inline std::basic_string<Char> __binary_formater(Value value, int precision) {
   if (precision < 0) return xtd::strings::pad_right(xtd::strings::trim_start(std::bitset<sizeof(value)*8>(value).to_string(Char('0'), Char('1')), Char('0')), std::abs(precision), Char(' '));
   return xtd::strings::pad_left(xtd::strings::trim_start(std::bitset<sizeof(value)*8>(value).to_string(Char('0'), Char('1')), Char('0')), precision == 0 ? 1 : precision, Char('0'));
 }
 
 template<typename Char>
-inline std::basic_string<Char> __money_converter(long double value, int precision, const std::locale& loc) {
+inline std::basic_string<Char> __currency_formater(long double value, int precision, const std::locale& loc) {
   std::basic_stringstream<Char> ss;
-  ss.imbue(loc.name() == "" || loc.name() == "C" ? std::locale("en_US.UTF-8") : loc);
-  ss << std::showbase << std::setprecision(precision) << std::put_money(value*100);
+  ss.imbue(loc);
+  ss << std::showbase << std::fixed << std::setprecision(precision) << std::put_money(value*100);
   return ss.str();
 }
 
 template<typename Char, typename Value>
 inline std::basic_string<Char> __character_formater(const std::basic_string<Char>& fmt, Value value, const std::locale& loc) {
   return __format_stringer<Char>(value);
+}
+
+template<typename Char>
+inline std::basic_string<Char> __natural_formater(long double value, int precision, const std::locale& loc) {
+  std::basic_stringstream<Char> ss;
+  ss.imbue(loc);
+  ss << std::fixed << std::setprecision(precision) << value;
+  return ss.str();
 }
 
 template<typename Char, typename Value>
@@ -75,15 +65,15 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
   std::basic_string<Char> fmt_str({'%', '.', '*', 'L'});
   switch (fmt[0]) {
     case 'c':
-    case 'C': return __money_converter<Char>(static_cast<long double>(value), precision, loc);
+    case 'C': return __currency_formater<Char>(static_cast<long double>(value), precision, loc);
     case 'e':
     case 'E':
     case 'f':
     case 'F':
     case 'g':
     case 'G': return xtd::strings::formatf(fmt_str + fmt[0], precision, static_cast<long double>(value));
-    case 'n': return __insert_group_separator<Char>(xtd::strings::formatf(fmt_str + Char('f'), precision, static_cast<long double>(value)), Char('.'), Char(','));
-    case 'N': return __insert_group_separator<Char>(xtd::strings::formatf(fmt_str + Char('F'), precision, static_cast<long double>(value)), Char('.'), Char(','));
+    case 'n':
+    case 'N': return __natural_formater<Char>(static_cast<long double>(value), precision, loc);
     case 'p': return xtd::strings::formatf(fmt_str + Char('f'), precision, static_cast<long double>(value * 100)) + std::basic_string<Char>({Char(' '), Char('%')});
     case 'P': return xtd::strings::formatf(fmt_str + Char('F'), precision, static_cast<long double>(value * 100)) + std::basic_string<Char>({Char(' '), Char('%')});
     default: throw std::invalid_argument("Invalid format expression");
@@ -114,7 +104,7 @@ inline std::basic_string<Char> __numeric_formater(const std::basic_string<Char>&
   std::basic_string<Char> fmt_str({'%', '0', '*', 'l', 'l'});
   switch (fmt[0]) {
     case 'b':
-    case 'B': return __binary_converter<Char>(value, precision);
+    case 'B': return __binary_formater<Char>(value, precision);
     case 'd':
     case 'D': return xtd::strings::formatf(fmt_str + Char(std::is_unsigned<Value>::value ? 'u' : 'd'), precision, static_cast<long long>(value));
     case 'o':
