@@ -116,7 +116,7 @@ namespace unit_tests {
     
     void test_method_(parse_styles_currency_with_two_thousands) {
       if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
-        assert::are_equal(static_cast<Value>(1234), xtd::parse<Value>("1,,234", number_styles::currency));
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,,234", number_styles::currency);});
     }
     
     void test_method_(parse_styles_currency_with_exponent) {
