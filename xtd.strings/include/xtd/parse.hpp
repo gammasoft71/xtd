@@ -77,6 +77,15 @@ inline void __parse_check_valid_characters(const std::basic_string<Char>& str, x
       throw std::invalid_argument("invalid character found");
   }
 
+  if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) {
+    size_t index = 1;
+    while((index = xtd::strings::index_of(str, std::use_facet<std::numpunct<Char>>(std::locale()).thousands_sep(), index)) != std::basic_string<Char>::npos) {
+      if (str[index - 1] == std::use_facet<std::numpunct<Char>>(std::locale()).thousands_sep())
+        throw std::invalid_argument("invalid character found");
+      ++index;
+    }
+  }
+
   if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) {
     size_t index = xtd::strings::index_of_any(str, std::vector<Char> {'+', '-'});
     if (index != std::basic_string<Char>::npos && str[index - 1] != 'e' && str[index - 1] != 'E')
