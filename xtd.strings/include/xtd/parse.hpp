@@ -74,6 +74,12 @@ inline void __parse_check_valid_characters(const std::basic_string<Char>& str, x
     if (index != std::basic_string<Char>::npos && xtd::strings::index_of(str, std::use_facet<std::numpunct<Char>>(std::locale()).decimal_point(), index + 1) != std::basic_string<Char>::npos)
       throw std::invalid_argument("invalid character found");
   }
+
+  if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) {
+    size_t index = xtd::strings::index_of_any(str, std::vector<Char> {'+', '-'});
+    if (index != std::basic_string<Char>::npos && str[index - 1] != 'e' && str[index - 1] != 'E')
+      throw std::invalid_argument("invalid character found");
+  }
 }
 
 template <typename Value, typename Char>
@@ -81,7 +87,8 @@ inline Value __parse_floating_point(const std::basic_string<Char>& str, int sign
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) throw std::invalid_argument("xtd::number_styles::binary_number not supported by floating point");
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) throw std::invalid_argument("xtd::number_styles::octal_number not supported by floating point");
   if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) throw std::invalid_argument("xtd::number_styles::hex_number not supported by floating point");
-  
+  if (std::is_unsigned<Value>::value && sign < 0) throw std::invalid_argument("unsigned type can't have minus sign");
+
   long double result;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
     result = std::stold(str, nullptr);
