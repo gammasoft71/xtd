@@ -132,15 +132,15 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_number_with_binary_specifier) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b42", number_styles::number);});
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b101010", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_with_octal_specifier) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("042", number_styles::number));
+      assert::are_equal(static_cast<Value>(52), xtd::parse<Value>("052", number_styles::number));
     }
     
     void test_method_(parse_styles_number_with_hexa_specifier) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x42", number_styles::number);});
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x2A", number_styles::number);});
     }
     
     void test_method_(parse_styles_number_invalid) {
