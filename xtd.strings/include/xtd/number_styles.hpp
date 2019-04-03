@@ -34,9 +34,9 @@ namespace xtd {
     fixed_point = 0xA7,
     /// @brief Indicates that the numeric string can contain a currency symbol. Valid currency symbols are determined by the std::use_facet<std::moneypunct<char>>(std::locale()).curr_symbol() method.
     allow_currency_symbol = 0x100,
-    /// @brief Indicates that all styles except allow_exponent and allowHex_specifier are used. This is a composite number style.
+    /// @brief Indicates that all styles except allow_exponent, allow_hex_specifier, allow_binary_specifier and allow_octal_specifier are used. This is a composite number style.
     currency = 0x17F,
-    /// @brief Indicates that all styles except allowbinary_specifier, allow_octal_specifier and allow_hex_specifier are used. This is a composite number style.
+    /// @brief Indicates that all styles except allow_binary_specifier, allow_octal_specifier and allow_hex_specifier are used. This is a composite number style.
     any = 0x1FF,
     /// @brief Indicates that the numeric string represents a hexadecimal value. Valid hexadecimal values include the numeric digits 0-9 and the hexadecimal digits A-F and a-f. Strings that are parsed using this style can be prefixed with "0x". A string that is parsed with the allow_hex_specifier style will always be interpreted as a hexadecimal value. The only flags that can be combined with allow_hex_specifier are allow_leading_white and allow_trailing_white. The number_styles enumeration includes a composite style, hex_number, that consists of these three flags.
     allow_hex_specifier = 0x200,
