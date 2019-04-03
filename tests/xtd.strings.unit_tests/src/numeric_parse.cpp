@@ -36,8 +36,20 @@ namespace unit_tests {
   template <typename Value>
   class test_numeric_parse_string : public test_class {
   public:
+    static void class_initialize_(class_initialize) {
+      std::locale::global(std::locale("en_US.UTF-8"));
+    }
+    
     void test_method_(parse_default) {
       assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42"));
+    }
+    
+    void test_method_(parse_default_with_leading_white_spaces) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>(" \f\n\r\t\v42"));
+    }
+    
+    void test_method_(parse_default_with_trailing_white_spaces) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42 \f\n\r\t\v"));
     }
     
     void test_method_(parse_default_with_leading_plus_sign) {
@@ -54,23 +66,380 @@ namespace unit_tests {
       else
         assert::throws<std::invalid_argument>([]{xtd::parse<Value>("-42");});
     }
-    
+
     void test_method_(parse_default_with_two_leading_minus_sign) {
       assert::throws<std::invalid_argument>([]{xtd::parse<Value>("--42");});
     }
+    
+    void test_method_(parse_default_with_trailing_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42+");});
+    }
+    
+    void test_method_(parse_default_with_two_trailing_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42++");});
+    }
+    
+    void test_method_(parse_default_with_trailing_minus_sign) {
+      if (std::is_signed<Value>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-");});
+      else
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-", number_styles::number);});
+    }
+    
+    void test_method_(parse_default_with_two_trailing_minus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42--");});
+    }
+    
+    void test_method_(parse_default_with_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("(42)");});
+    }
+    
+    void test_method_(parse_default_with_two_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("((42))");});
+    }
+    
+    void test_method_(parse_default_with_decimal_point) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42.0");});
+    }
+    
+    void test_method_(parse_default_with_two_decimal_point) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4.2.0");});
+    }
+    
+    void test_method_(parse_default_with_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,234");});
+    }
 
-    void test_method_(invalid_parse_default) {
+    void test_method_(parse_default_with_two_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,,234");});
+    }
+    
+    void test_method_(parse_default_with_exponent) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4E+01");});
+    }
+    
+    void test_method_(parse_default_with_currency_symbol) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("$42");});
+    }
+    
+    void test_method_(parse_default_with_binary_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b42");});
+    }
+    
+    void test_method_(parse_default_with_octal_specifier) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("042"));
+    }
+    
+    void test_method_(parse_default_with_hexa_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x42");});
+    }
+
+    void test_method_(parse_default_invalid) {
       assert::throws<std::invalid_argument>([]{xtd::parse<Value>("z42");});
     }
     
-    void test_method_(parse_with_number_styles_none) {
+    void test_method_(parse_styles_none) {
       assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42", number_styles::none));
     }
+
+    void test_method_(parse_styles_none_with_leading_white_spaces) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>(" \f\n\r\t\v42", number_styles::none);});
+    }
     
-    void test_method_(parse_with_number_styles_integer) {
+    void test_method_(parse_styles_none_with_trailing_white_spaces) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42 \f\n\r\t\v", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_leading_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("+42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_two_leading_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("++42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_leading_minus_sign) {
+      if (std::is_signed<Value>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("-42", number_styles::none);});
+      else
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("-42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_two_leading_minus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("--42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_trailing_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42+", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_two_trailing_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42++", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_trailing_minus_sign) {
+      if (std::is_signed<Value>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-", number_styles::none);});
+      else
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_none_with_two_trailing_minus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42--", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("(42)", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_two_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("((42))", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_decimal_point) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42.0", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_two_decimal_point) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4.2.0", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,234", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_two_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,,234", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_exponent) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4E+01", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_currency_symbol) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("$42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_binary_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_with_octal_specifier) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("042", number_styles::none));
+    }
+    
+    void test_method_(parse_styles_none_with_hexa_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_none_invalid) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("z42", number_styles::none);});
+    }
+    
+    void test_method_(parse_styles_integer) {
       assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42", number_styles::integer));
     }
     
+    void test_method_(parse_styles_integer_with_leading_white_spaces) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>(" \f\n\r\t\v42", number_styles::integer));
+    }
+    
+    void test_method_(parse_styles_integer_with_trailing_white_spaces) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42 \f\n\r\t\v", number_styles::integer));
+    }
+    
+    void test_method_(parse_styles_integer_with_leading_plus_sign) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("+42", number_styles::integer));
+    }
+    
+    void test_method_(parse_styles_integer_with_two_leading_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("++42", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_leading_minus_sign) {
+      if (std::is_signed<Value>::value)
+        assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("-42", number_styles::integer));
+      else
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("-42", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_two_leading_minus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("--42", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_trailing_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42+", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_two_trailing_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42++", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_trailing_minus_sign) {
+      if (std::is_signed<Value>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-", number_styles::integer);});
+      else
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_integer_with_two_trailing_minus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42--", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("(42)", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_two_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("((42))", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_decimal_point) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42.0", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_two_decimal_point) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4.2.0", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,234", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_two_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("1,,234", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_exponent) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4E+01", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_currency_symbol) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("$42", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_binary_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b42", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_with_octal_specifier) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("042", number_styles::integer));
+    }
+    
+    void test_method_(parse_styles_integer_with_hexa_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x42", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_integer_invalid) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("z42", number_styles::integer);});
+    }
+    
+    void test_method_(parse_styles_number) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_leading_white_spaces) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>(" \f\n\r\t\v42", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_trailing_white_spaces) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42 \f\n\r\t\v", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_leading_plus_sign) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("+42", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_two_leading_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("++42", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_leading_minus_sign) {
+      if (std::is_signed<Value>::value)
+        assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("-42", number_styles::number));
+      else
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("-42", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_two_leading_minus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("--42", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_trailing_plus_sign) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42+", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_two_trailing_plus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42++", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_trailing_minus_sign) {
+      if (std::is_signed<Value>::value)
+        assert::are_equal(static_cast<Value>(-42), xtd::parse<Value>("42-", number_styles::number));
+      else
+        assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42-", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_two_trailing_minus_sign) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("42--", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("(42)", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_two_parentheses) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("((42))", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_decimal_point) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("42.0", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_two_decimal_point) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4.2.0", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::are_equal(static_cast<Value>(1234), xtd::parse<Value>("1,234", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_two_thousands) {
+      if (!std::is_same<Value, int8_t>::value && !std::is_same<Value, char>::value && !std::is_same<Value, unsigned char>::value)
+        assert::are_equal(static_cast<Value>(1234), xtd::parse<Value>("1,,234", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_exponent) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("4E+01", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_currency_symbol) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("$42", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_binary_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b42", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_with_octal_specifier) {
+      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("042", number_styles::number));
+    }
+    
+    void test_method_(parse_styles_number_with_hexa_specifier) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x42", number_styles::number);});
+    }
+    
+    void test_method_(parse_styles_number_invalid) {
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("z42", number_styles::number);});
+    }
+
     void test_method_(parse_with_number_styles_binary) {
       assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("0b101010", number_styles::binary_number));
     }
