@@ -132,15 +132,15 @@ namespace unit_tests {
     }
     
     void test_method_(parse_styles_fixed_point_with_binary_specifier) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b42", number_styles::fixed_point);});
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0b101010", number_styles::fixed_point);});
     }
     
     void test_method_(parse_styles_fixed_point_with_octal_specifier) {
-      assert::are_equal(static_cast<Value>(42), xtd::parse<Value>("042", number_styles::fixed_point));
+      assert::are_equal(static_cast<Value>(52), xtd::parse<Value>("052", number_styles::fixed_point));
     }
     
     void test_method_(parse_styles_fixed_point_with_hexa_specifier) {
-      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x42", number_styles::fixed_point);});
+      assert::throws<std::invalid_argument>([]{xtd::parse<Value>("0x2A", number_styles::fixed_point);});
     }
     
     void test_method_(parse_styles_fixed_point_invalid) {
