@@ -48,21 +48,32 @@ inline int __parse_remove_signs(std::basic_string<Char>& str, xtd::number_styles
   
   while ((styles & xtd::number_styles::allow_parentheses) == xtd::number_styles::allow_parentheses && xtd::strings::starts_with(str, "(") && xtd::strings::ends_with(str, ")")) {
     str = xtd::strings::substring(str, 1, str.size()-2);
-    if (sign != 0 || xtd::strings::starts_with(str, "-") || xtd::strings::starts_with(str, "+")) throw std::invalid_argument("Format contains more than one sign");
+    if (sign != 0) throw std::invalid_argument("Format contains more than one sign");
     sign -= 1;
   }
   return sign;
 }
 
 template <typename Char>
-inline std::basic_string<Char> __parse_get_valid_characters(xtd::number_styles styles) {
+inline void __parse_check_valid_characters(const std::basic_string<Char>& str, xtd::number_styles styles) {
   std::basic_string<Char> valid_characters = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier) valid_characters = xtd::strings::remove(valid_characters, 2);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier) valid_characters = xtd::strings::remove(valid_characters, 7);
   if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier) valid_characters += std::basic_string<Char> {'A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
   if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) valid_characters += (std::use_facet<std::numpunct<Char>>(std::locale()).decimal_point());
   if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) valid_characters += (std::use_facet<std::numpunct<Char>>(std::locale()).thousands_sep());
-  return valid_characters;
+  if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) valid_characters += std::basic_string<Char> {'E', 'e', '+', '-'};
+
+  for (auto c : str) {
+    if (xtd::strings::index_of(valid_characters, c) == std::basic_string<Char>::npos)
+      throw std::invalid_argument("invalid character found");
+  }
+  
+  if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) {
+    size_t index = xtd::strings::index_of(str, std::use_facet<std::numpunct<Char>>(std::locale()).decimal_point());
+    if (index != std::basic_string<Char>::npos && xtd::strings::index_of(str, std::use_facet<std::numpunct<Char>>(std::locale()).decimal_point(), index + 1) != std::basic_string<Char>::npos)
+      throw std::invalid_argument("invalid character found");
+  }
 }
 
 template <typename Value, typename Char>
@@ -132,13 +143,9 @@ inline Value __parse_number(const std::basic_string<Char>& s, xtd::number_styles
   std::basic_string<Char> str = __parse_remove_decorations(s, styles);
   int sign = __parse_remove_signs(str, styles);
   
-  std::basic_string<Char> valid_characters = __parse_get_valid_characters<Char>(styles);
-  for (auto c : str) {
-    if (xtd::strings::index_of(valid_characters, c) == std::basic_string<Char>::npos)
-      throw std::invalid_argument("invalid character found");
-  }
+  __parse_check_valid_characters(str, styles);
   
-  if (std::is_floating_point<Value>::value) return __parse_floating_point<Value>(str, sign, styles);
+  if (std::is_floating_point<Value>::value || (styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) return __parse_floating_point<Value>(str, sign, styles);
   if (std::is_unsigned<Value>::value) return __parse_unsigned<Value>(str, base, sign, styles);
   return __parse_signed<Value>(str, base, sign, styles);
 }

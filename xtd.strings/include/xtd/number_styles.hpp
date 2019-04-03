@@ -18,9 +18,9 @@ namespace xtd {
     allow_leading_sign = 0x4,
     /// @brief Indicates that the allow_leading_white, allow_trailing_white, and allow_leading_sign styles are used. This is a composite number style.
     integer = 0x7,
-    /// @brief Indicates that the numeric string can have a trailing sign.
+    /// @brief Indicates that the numeric string can have a trailing sign. Valid trailing sign characters are determined by the positive_sign and negative_sign properties.
     allow_trailing_sign = 0x8,
-    /// @brief Indicates that the numeric string can have one pair of parentheses enclosing the number. The parentheses indicate that the string to be parsed represents a negative number. Valid trailing sign characters are determined by the positive_sign and negative_sign properties.
+    /// @brief Indicates that the numeric string can have one pair of parentheses enclosing the number. The parentheses indicate that the string to be parsed represents a negative number.
     allow_parentheses = 0x10,
     /// @brief Indicates that the numeric string can have a decimal point. If the number_styles value includes the allow_currency_symbol flag and the parsed string includes a currency symbol, the decimal separator character is determined by the std::use_facet<std::numpunct<char>>(std::locale()).decimal_point() method.
     allow_decimal_point = 0x20,
