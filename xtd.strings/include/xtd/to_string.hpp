@@ -24,10 +24,10 @@ inline std::basic_string<Char> __binary_formater(Value value, int precision) {
 }
 
 template<typename Char>
-inline std::basic_string<Char> __currency_formater(long double value, int precision, const std::locale& loc) {
+inline std::basic_string<Char> __currency_formater(long double value, const std::locale& loc) {
   std::basic_stringstream<Char> ss;
   ss.imbue(loc);
-  ss << std::showbase << std::fixed << std::setprecision(precision) << std::put_money(value*100);
+  ss << std::showbase << std::fixed << std::put_money(value*std::pow(10, std::use_facet<std::moneypunct<Char>>(loc).frac_digits()));
   return ss.str();
 }
 
@@ -65,7 +65,7 @@ inline std::basic_string<Char> __fixed_point_formater(const std::basic_string<Ch
   std::basic_string<Char> fmt_str({'%', '.', '*', 'L'});
   switch (fmt[0]) {
     case 'c':
-    case 'C': return __currency_formater<Char>(static_cast<long double>(value), precision, loc);
+    case 'C': return __currency_formater<Char>(static_cast<long double>(value), loc);
     case 'e':
     case 'E':
     case 'f':
