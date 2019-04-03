@@ -4,7 +4,12 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.strings.unit_tests)
 set(SOURCES
   src/main.cpp 
-  src/numeric_parse.cpp
+  src/numeric_parse_currency.cpp
+  src/numeric_parse_default.cpp
+  src/numeric_parse_fixed_point.cpp
+  src/numeric_parse_integer.cpp
+  src/numeric_parse_none.cpp
+  src/numeric_parse_number.cpp
   src/parse.cpp
   src/string_boolean_format.cpp
   src/string_enum_format.cpp
