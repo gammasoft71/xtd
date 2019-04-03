@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.strings.unit_tests)
 set(SOURCES
   src/main.cpp 
-  src/parse.cpp 
+  src/numeric_parse.cpp
+  src/parse.cpp
   src/string_boolean_format.cpp
   src/string_enum_format.cpp
   src/string_enum_class_format.cpp
