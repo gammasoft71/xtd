@@ -291,7 +291,16 @@ namespace xtd {
   inline long double parse<long double>(const std::string& str) {return parse<long double>(str, number_styles::fixed_point);}
 
   template<typename Value>
-  inline bool try_parse(const std::string& str, Value& value) {
+  inline Value parse(const std::wstring& str) {throw std::invalid_argument("Parse speciailisation not found");}
+
+  template<typename Value>
+  inline Value parse(const std::u16string& str) {throw std::invalid_argument("Parse speciailisation not found");}
+
+  template<typename Value>
+  inline Value parse(const std::u32string& str) {throw std::invalid_argument("Parse speciailisation not found");}
+
+  template<typename Value, typename Char>
+  inline bool try_parse(const std::basic_string<Char>& str, Value& value) {
     try {
       value = parse<Value>(str);
       return true;

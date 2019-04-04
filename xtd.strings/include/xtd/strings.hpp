@@ -109,6 +109,17 @@ inline std::basic_string<wchar_t> __format_stringer<wchar_t, bool&>(bool& value)
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  template<typename Value>
+  inline Value parse(const std::string& str);
+  template<typename Value>
+  inline Value parse(const std::wstring& str);
+  template<typename Value>
+  inline Value parse(const std::u16string& str);
+  template<typename Value>
+  inline Value parse(const std::u32string& str);
+  /// @endcond
+
   /// @brief The strings Caintains string operation methods.
   class strings {
   public:
@@ -1179,7 +1190,12 @@ namespace xtd {
     template<typename Char>
     static std::basic_string<Char> pad_right(const Char* str, size_t total_width, Char padding_char) noexcept {return pad_right(std::basic_string<Char>(str), total_width, padding_char);}
     /// @endcond
-    
+
+    template<typename Value>
+    static Value parse(const std::string& str) {
+      return xtd::parse<Value>(str);
+    }
+
     /// @brief Deletes all the characters from this String beginning at a specified position and continuing through the last position.
     /// @param start_index The position to begin deleting characters.
     /// @return String A A new String object that is equivalent to this String less the removed characters.
@@ -1642,6 +1658,16 @@ namespace xtd {
     template<typename Char>
     static std::basic_string<Char> trim_start(const Char* str, const std::vector<Char>& trim_chars) noexcept {return trim_start(std::basic_string<Char>(str), trim_chars);}
     /// @endcond
+
+    template<typename Value>
+    static bool try_parse(const std::string& str, Value& value) {
+      try {
+        value = parse<Value>(str);
+        return true;
+      } catch(...) {
+        return false;
+      }
+    }
 
   private:
     template<typename Arg>
