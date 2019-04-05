@@ -39,9 +39,9 @@ int main() {
   cout << strings::format("{:C}", 325) << endl;
    */
   
-  std::locale::global(std::locale("ja_JP.UTF-8"));
+  std::locale::global(std::locale("en_US.UTF-8"));
 
-  cout << strings::date_time_format("%A, %w %B %Y", std::chrono::system_clock::now()) << endl;
+  wcout << strings::date_time_format(L"%A, %w %B %Y", std::chrono::system_clock::now()) << endl;
   
   cout << strings::format("{:N}\n", std::chrono::system_clock::now());
 }

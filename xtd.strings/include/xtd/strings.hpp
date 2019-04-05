@@ -693,10 +693,10 @@ namespace xtd {
     /// @cond
     template<typename Char>
     static std::basic_string<Char> date_time_format(const Char* fmt, const std::chrono::system_clock::time_point& date_time) {
-      std::basic_stringstream<Char> ss;
+      std::basic_stringstream<Char> result;
       time_t t = std::chrono::system_clock::to_time_t(date_time);
-      ss << std::put_time(localtime(&t), fmt);
-      return ss.str();
+      result << std::put_time(localtime(&t), fmt);
+      return result.str();
     }
     /// @endcond
 
