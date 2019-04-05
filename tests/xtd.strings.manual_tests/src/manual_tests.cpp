@@ -46,7 +46,7 @@ int main() {
   cout << ss.str() << endl;
    */
   
-  std::locale::global(std::locale("ja_JP.UTF-8"));
+  std::locale::global(std::locale("en_US.UTF-8"));
   cout << strings::format("{:N}\n", std::chrono::system_clock::now());
 }
 
