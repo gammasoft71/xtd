@@ -687,6 +687,19 @@ namespace xtd {
     static bool contains(const Char* str, const Char* value) noexcept {return contains(std::basic_string<Char>(str), std::basic_string<Char>(value));}
     /// @endcond
     
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const std::basic_string<Char>& fmt, const std::chrono::system_clock::time_point& date_time) {return date_time_format(fmt.c_str(), date_time);}
+
+    /// @cond
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const Char* fmt, const std::chrono::system_clock::time_point& date_time) {
+      std::basic_stringstream<Char> ss;
+      time_t t = std::chrono::system_clock::to_time_t(date_time);
+      ss << std::put_time(localtime(&t), fmt);
+      return ss.str();
+    }
+    /// @endcond
+
     /// @brief Represents the empty string.
     /// @remarks The value of this method is the zero-length string, "".
     template<typename Char>
@@ -897,7 +910,7 @@ namespace xtd {
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename Char, typename ... Args>
     static std::basic_string<Char> formatf(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {return __formatf(fmt.c_str(), convert_param(std::forward<Args>(args)) ...);}
-
+    
     /// @cond
     template<typename Char, typename ... Args>
     static std::basic_string<Char> formatf(const Char* fmt, Args&& ... args) noexcept {return formatf(std::basic_string<Char>(fmt), std::forward<Args>(args) ...);}

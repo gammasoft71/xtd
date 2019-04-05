@@ -37,16 +37,12 @@ int main() {
   std::locale::global(std::locale("fi_FI.UTF-8"));
   cout << to_string(325, "C") << endl;
   cout << strings::format("{:C}", 325) << endl;
-
-  std::chrono::system_clock::time_point n = std::chrono::system_clock::now();
-  time_t t = std::chrono::system_clock::to_time_t(n);
-  tm tm = *localtime(&t);
-  stringstream ss;
-  ss << std::put_time(&tm, "%c %Z");
-  cout << ss.str() << endl;
    */
   
-  std::locale::global(std::locale("en_US.UTF-8"));
+  std::locale::global(std::locale("ja_JP.UTF-8"));
+
+  cout << strings::date_time_format("%A, %w %B %Y", std::chrono::system_clock::now()) << endl;
+  
   cout << strings::format("{:N}\n", std::chrono::system_clock::now());
 }
 
