@@ -149,10 +149,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_decimals_with_general_argument) {
-      if (std::is_same<Value, float>::value)
-        assert::are_equal("42.24000168", strings::format("{0:g}", static_cast<Value>(42.24)));
-      else
-        assert::are_equal("42.24", strings::format("{0:g}", static_cast<Value>(42.24)));
+      assert::are_equal("42.24", strings::format("{0:g}", static_cast<Value>(42.24)));
     }
     
     void test_method_(format_with_general_argument_and_one_digiti_precision) {
