@@ -41,10 +41,7 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_default_argument) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal("*", strings::format("{0}", static_cast<Value>(42)));
-      else
-        assert::are_equal("42", strings::format("{0}", static_cast<Value>(42)));
+      assert::are_equal("42", strings::format("{0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_without_format_argument_separator) {
@@ -52,45 +49,27 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_left_alignment) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal("   *", strings::format("{0,4}", static_cast<Value>(42)));
-      else
-        assert::are_equal("  42", strings::format("{0,4}", static_cast<Value>(42)));
+      assert::are_equal("  42", strings::format("{0,4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_left_alignment_with_plus) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal("   *", strings::format("{0,+4}", static_cast<Value>(42)));
-      else
-        assert::are_equal("  42", strings::format("{0,+4}", static_cast<Value>(42)));
+      assert::are_equal("  42", strings::format("{0,+4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_left_alignment_to_zero) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal("*", strings::format("{0,0}", static_cast<Value>(42)));
-      else
-        assert::are_equal("42", strings::format("{0,0}", static_cast<Value>(42)));
+      assert::are_equal("42", strings::format("{0,0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_right_alignment) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal("*   ", strings::format("{0,-4}", static_cast<Value>(42)));
-      else
-        assert::are_equal("42  ", strings::format("{0,-4}", static_cast<Value>(42)));
+      assert::are_equal("42  ", strings::format("{0,-4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_right_alignment_to_zero) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal("*", strings::format("{0,-0}", static_cast<Value>(42)));
-      else
-        assert::are_equal("42", strings::format("{0,-0}", static_cast<Value>(42)));
+      assert::are_equal("42", strings::format("{0,-0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_alignment_empty) {
-      if (std::is_same<Value, char>::value || std::is_same<Value, unsigned char>::value || std::is_same<Value, int8_t>::value || std::is_same<Value, uint8_t>::value)
-        assert::are_equal("*", strings::format("{0,}", static_cast<Value>(42)));
-      else
-        assert::are_equal("42", strings::format("{0,}", static_cast<Value>(42)));
+      assert::are_equal("42", strings::format("{0,}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_alignment_invalid) {
