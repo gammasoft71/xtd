@@ -153,7 +153,7 @@ inline std::basic_string<Char> __enum_formater(const std::basic_string<Char>& fm
 }
 
 template<typename Char>
-inline std::basic_string<Char> __get_weekday_name(const tm& value, const std::locale& loc) {
+inline std::basic_string<Char> __get_weekday_name(const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<Char> result;
   result.imbue(loc);
   result << std::put_time(&value, "%A");
@@ -161,7 +161,7 @@ inline std::basic_string<Char> __get_weekday_name(const tm& value, const std::lo
 }
 
 template<typename Char>
-inline std::basic_string<Char> __get_brief_weekday_name(const tm& value, const std::locale& loc) {
+inline std::basic_string<Char> __get_brief_weekday_name(const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<Char> result;
   result.imbue(loc);
   result << std::put_time(&value, "%a");
@@ -169,7 +169,7 @@ inline std::basic_string<Char> __get_brief_weekday_name(const tm& value, const s
 }
 
 template<typename Char>
-inline std::basic_string<Char> __get_month_name(const tm& value, const std::locale& loc) {
+inline std::basic_string<Char> __get_month_name(const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<Char> result;
   result.imbue(loc);
   result << std::put_time(&value, "%B");
@@ -177,7 +177,7 @@ inline std::basic_string<Char> __get_month_name(const tm& value, const std::loca
 }
 
 template<typename Char>
-inline std::basic_string<Char> __get_brief_month_name(const tm& value, const std::locale& loc) {
+inline std::basic_string<Char> __get_brief_month_name(const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<Char> result;
   result.imbue(loc);
   result << std::put_time(&value, "%b");
@@ -185,23 +185,21 @@ inline std::basic_string<Char> __get_brief_month_name(const tm& value, const std
 }
 
 template<typename Char>
-inline std::basic_string<Char> __tm_formater(const Char* fmt, const tm& value, const std::locale& loc) {
+inline std::basic_string<Char> __tm_formater(const Char* fmt, const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<Char> result;
   result.imbue(loc);
   result << std::put_time(&value, fmt);
   return result.str();
 }
 
-inline std::string __date_time_formater(std::string fmt, time_t value, const std::locale& loc) {
+inline std::string __date_time_formater(std::string fmt, const std::tm& time, const std::locale& loc) {
   if (fmt.empty()) fmt =  "G";
   if (fmt.size() > 1) throw std::invalid_argument("Invalid format");
   
   std::string result;
-  tm time = *std::localtime(&value);
-  tm gm_time = *std::gmtime(&value);
   switch (fmt[0]) {
     case 'd': return __tm_formater<char>("%x", time, loc);
-    case 'D': return xtd::strings::format("{}/{}/{}", time.tm_mon+1, time.tm_mday, time.tm_year + 1900);
+    case 'D': return xtd::strings::format("{}/{:D2}/{}", time.tm_mon+1, time.tm_mday, time.tm_year + 1900);
     case 'f': return __tm_formater<char>("%Ec", time, loc);
     case 'F': return __tm_formater<char>("%c", time, loc);
     case 'g': return __tm_formater<char>("%Ec", time, loc);
@@ -212,28 +210,34 @@ inline std::string __date_time_formater(std::string fmt, time_t value, const std
     case 'I': return xtd::strings::format("{}", time.tm_mday);
     case 'j': return xtd::strings::format("{}", __get_brief_month_name<char>(time, loc));
     case 'J': return xtd::strings::format("{}", __get_month_name<char>(time, loc));
-    case 'k': return xtd::strings::format("{:D2}", time.tm_mon);
-    case 'K': return xtd::strings::format("{}", time.tm_mon);
+    case 'k': return xtd::strings::format("{:D2}", time.tm_mon + 1);
+    case 'K': return xtd::strings::format("{}", time.tm_mon + 1);
     case 'l': return xtd::strings::format("{:D2}", time.tm_year % 100);
     case 'L': return xtd::strings::format("{}", time.tm_year + 1900);
     case 'm':
     case 'M': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_mday);
-    case 'n':
-    case 'N': return xtd::strings::format("{}, {} {} {}", __get_weekday_name<char>(time, loc), time.tm_mday, __get_month_name<char>(time, loc), time.tm_year + 1900);
+    case 'n': return xtd::strings::format("{}, {} {} {}", __get_weekday_name<char>(time, loc), time.tm_mday, __get_month_name<char>(time, loc), time.tm_year + 1900);
+    case 'N': return xtd::strings::format("{}, {} {} {} {}:{:D2}:{:D2}", __get_weekday_name<char>(time, loc), time.tm_mday, __get_month_name<char>(time, loc), time.tm_year + 1900, time.tm_hour, time.tm_min, time.tm_sec);
     case 'o':
     case 'O': return xtd::strings::format("{} {} {}", time.tm_mday, __get_month_name<char>(time, loc), time.tm_year + 1900);
     case 's': return xtd::strings::format("{}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}", time.tm_year + 1900, time.tm_mon+1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
     case 't': return xtd::strings::format("{:D2}:{:D2}:{:D2}", time.tm_hour, time.tm_min, time.tm_sec);
     case 'T': return xtd::strings::format("{}:{:D2}:{:D2}", time.tm_hour, time.tm_min, time.tm_sec);
     case 'u': return xtd::strings::format("{}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}Z", time.tm_year + 1900, time.tm_mon+1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
-    case 'U': return xtd::strings::format("{}, {} {} {} {}:{:D2}:{:D2}", __get_weekday_name<char>(gm_time, loc), gm_time.tm_mday, __get_month_name<char>(gm_time, loc), gm_time.tm_year + 1900, gm_time.tm_hour, gm_time.tm_min, gm_time.tm_sec);
+    case 'U': return xtd::strings::format("{}, {} {} {} {}:{:D2}:{:D2}", __get_weekday_name<char>(time, loc), time.tm_mday, __get_month_name<char>(time, loc), time.tm_year + 1900, time.tm_hour, time.tm_min, time.tm_sec);
     case 'v': return xtd::strings::format("{:D2}:{:D2}", time.tm_hour, time.tm_min);
     case 'V': return xtd::strings::format("{}:{:D2}", time.tm_hour, time.tm_min);
     case 'y': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_year % 100);
     case 'Y': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_year + 1900);
+    case 'z': return xtd::strings::format("{}", time.tm_zone);
+    case 'Z': return xtd::strings::format("{}", time.tm_zone);
     default: throw std::invalid_argument("Invalid format");
   }
   throw std::invalid_argument("Invalid format");
+}
+
+inline std::string __date_time_formater(std::string fmt, time_t time, const std::locale& loc) {
+  return __date_time_formater(fmt, *std::localtime(&time), loc);
 }
 
 template<typename Char, typename Value>
@@ -306,6 +310,9 @@ namespace xtd {
 
   template<>
   inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc) {return __date_time_formater(fmt, std::chrono::system_clock::to_time_t(value), loc);}
+
+  template<>
+  inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc) {return __date_time_formater(fmt, value, loc);}
 
   template<>
   inline std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
@@ -383,9 +390,15 @@ namespace xtd {
 
   //template<>
   //inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formater(fmt, std::chrono::system_clock::to_time_t(value), loc);}
-  
+ 
+  //template<>
+  //inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formater(fmt, value, loc);}
+
   template<>
   inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc) {throw std::invalid_argument("to_string speciailisation not found");}
+  
+  template<>
+  inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc) {throw std::invalid_argument("to_string speciailisation not found");}
   
   template<>
   inline std::wstring to_string(const std::wstring& value, const std::wstring& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
