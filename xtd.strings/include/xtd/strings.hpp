@@ -53,6 +53,8 @@ namespace xtd {
   inline std::string to_string(const long double& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc);
+  template<>
+  inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc);
 
   template<typename Value>
   inline std::wstring to_string(const Value& value, const std::wstring& fmt, const std::locale& loc);
@@ -185,6 +187,11 @@ inline std::string __format_stringer<char, long double&>(long double& value) {
 
 template<>
 inline std::string __format_stringer<char, std::chrono::system_clock::time_point&> (std::chrono::system_clock::time_point& value) {
+  return xtd::to_string(value, "G", std::locale());
+}
+
+template<>
+inline std::string __format_stringer<char, std::tm&> (tm& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 
@@ -686,18 +693,36 @@ namespace xtd {
     template<typename Char>
     static bool contains(const Char* str, const Char* value) noexcept {return contains(std::basic_string<Char>(str), std::basic_string<Char>(value));}
     /// @endcond
-    
+
     template<typename Char>
     static std::basic_string<Char> date_time_format(const std::basic_string<Char>& fmt, const std::chrono::system_clock::time_point& date_time) {return date_time_format(fmt.c_str(), date_time);}
-
+    
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const std::basic_string<Char>& fmt, time_t date_time) {return date_time_format(fmt.c_str(), date_time);}
+    
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const std::basic_string<Char>& fmt, const std::tm& date_time) {return date_time_format(fmt.c_str(), date_time);}
+    
     /// @cond
     template<typename Char>
-    static std::basic_string<Char> date_time_format(const Char* fmt, const std::chrono::system_clock::time_point& date_time) {
+    static std::basic_string<Char> date_time_format(const Char* fmt, const std::chrono::system_clock::time_point& date_time) {return date_time_format(fmt, std::chrono::system_clock::to_time_t(date_time));}
+
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const Char* fmt, time_t date_time) {return date_time_format(fmt, localtime(&date_time));}
+
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const Char* fmt, const std::tm& date_time) {return date_time_format(fmt, &date_time);}
+
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const std::basic_string<Char>& fmt, const std::tm* date_time) {return date_time_format(fmt.c_str(), date_time);}
+    
+    template<typename Char>
+    static std::basic_string<Char> date_time_format(const Char* fmt, const std::tm* date_time) {
       std::basic_stringstream<Char> result;
-      time_t t = std::chrono::system_clock::to_time_t(date_time);
-      result << std::put_time(localtime(&t), fmt);
+      result << std::put_time(date_time, fmt);
       return result.str();
     }
+    
     /// @endcond
 
     /// @brief Represents the empty string.
