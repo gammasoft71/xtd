@@ -1695,25 +1695,20 @@ namespace xtd {
     template<typename Char>
     static const std::basic_string<Char> to_lower(const std::basic_string<Char>& str) noexcept {
       std::basic_string<Char> result;
-      std::locale lc = std::locale();
-      for(char c : str) result.push_back(std::tolower(c, lc));
+      for(char c : str) result.push_back(std::tolower(c));
       return result;
     }
     
     /// @cond
     static const std::basic_string<char16_t> to_lower(const std::basic_string<char16_t>& str) noexcept {
       std::basic_string<char16_t> result;
-      std::locale lc = std::locale();
-      //for(char16_t c : str) result.push_back(std::tolower(c, lc));
-      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::tolower(static_cast<char>(c), lc)) : c);
+      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::tolower(static_cast<char>(c))) : c);
       return result;
     }
     
     static const std::basic_string<char32_t> to_lower(const std::basic_string<char32_t>& str) noexcept {
       std::basic_string<char32_t> result;
-      std::locale lc = std::locale();
-      //for(char c : str) result.push_back(std::tolower(c, lc));
-      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::tolower(static_cast<char>(c), lc)) : c);
+      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::tolower(static_cast<char>(c))) : c);
       return result;
     }
     
@@ -1727,25 +1722,20 @@ namespace xtd {
     template<typename Char>
     static const std::basic_string<Char> to_upper(const std::basic_string<Char>& str) noexcept {
       std::basic_string<Char> result;
-      std::locale lc = std::locale();
-      for(char c : str) result.push_back(std::toupper(c, lc));
+      for(char c : str) result.push_back(std::toupper(c));
       return result;
     }
     
     /// @cond
     static const std::basic_string<char16_t> to_upper(const std::basic_string<char16_t>& str) noexcept {
       std::basic_string<char16_t> result;
-      std::locale lc = std::locale();
-      //for(char16_t c : str) result.push_back(std::toupper(c, lc));
-      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::toupper(static_cast<char>(c), lc)) : c);
+      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::toupper(static_cast<char>(c))) : c);
       return result;
     }
     
     static const std::basic_string<char32_t> to_upper(const std::basic_string<char32_t>& str) noexcept {
       std::basic_string<char32_t> result;
-      std::locale lc = std::locale();
-      //for(char c : str) result.push_back(std::toupper(c, lc));
-      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::toupper(static_cast<char>(c), lc)) : c);
+      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::toupper(static_cast<char>(c))) : c);
       return result;
     }
     
