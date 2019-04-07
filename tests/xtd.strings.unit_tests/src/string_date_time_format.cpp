@@ -24,7 +24,7 @@ namespace {
   }
   
   static std::tm to_universal_time(time_t time) noexcept {return *std::gmtime(&time);}
-  //static std::tm to_universal_time(const std::chrono::system_clock::time_point& time) noexcept {return to_universal_time(std::chrono::system_clock::to_time_t(time));}
+  static std::tm to_universal_time(const std::chrono::system_clock::time_point& time) noexcept {return to_universal_time(std::chrono::system_clock::to_time_t(time));}
   static std::tm to_universal_time(std::tm time) noexcept {
     if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_universal_time(__make_local_date_time(&time));
     return to_universal_time(__make_utc_date_time(&time));
@@ -244,7 +244,7 @@ namespace unit_tests {
       assert::are_equal("1", strings::format("{0:K}", make_time<Value>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_year_argument_on_two_digits) {
+    void test_method_(format_date_time_local_with_std_tm_with_year_on_two_digits_argument) {
       assert::are_equal("19", strings::format("{0:l}", make_time<Value>(2019, 1, 2)));
     }
     
@@ -278,6 +278,34 @@ namespace unit_tests {
     
     void test_method_(format_date_time_local_with_std_tm_with_time_argument) {
       assert::are_equal("3:04:05", strings::format("{0:T}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_date_time_local_with_std_tm_with_alternative_universale_argument_and_zero_fill) {
+      assert::are_equal("2019-01-02 03:04:05", strings::format("{0:u}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_date_time_local_with_std_tm_with_universale_argument_and_zero_fill) {
+      assert::are_equal("Wednesday, 2 January 2019 3:04:05", strings::format("{0:U}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_date_time_local_with_std_tm_with_time_without_seconds_argument_and_zero_fill) {
+      assert::are_equal("03:04", strings::format("{0:v}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_date_time_local_with_std_tm_with_time_without_seconds_argument) {
+      assert::are_equal("3:04", strings::format("{0:V}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_date_time_local_with_std_tm_with_month_and_year_on_two_digits_argument) {
+      assert::are_equal("January 19", strings::format("{0:y}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_date_time_local_with_std_tm_with_month_and_year_argument) {
+      assert::are_equal("January 2019", strings::format("{0:Y}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_date_time_local_with_std_tm_with_time_zone_argument) {
+      assert::are_equal("UTC", strings::format("{0:Z}", to_universal_time(make_time<Value>(2019, 1, 2, 3, 4, 5))));
     }
   };
 }
