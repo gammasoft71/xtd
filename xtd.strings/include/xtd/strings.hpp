@@ -1696,20 +1696,20 @@ namespace xtd {
     template<typename Char>
     static const std::basic_string<Char> to_lower(const std::basic_string<Char>& str) noexcept {
       std::basic_string<Char> result;
-      for(char c : str) result.push_back(std::tolower(c));
+      for(char c : str) result.push_back(tolower(c));
       return result;
     }
     
     /// @cond
     static const std::basic_string<char16_t> to_lower(const std::basic_string<char16_t>& str) noexcept {
       std::basic_string<char16_t> result;
-      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::tolower(static_cast<char>(c))) : c);
+      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(tolower(static_cast<char>(c))) : c);
       return result;
     }
     
     static const std::basic_string<char32_t> to_lower(const std::basic_string<char32_t>& str) noexcept {
       std::basic_string<char32_t> result;
-      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::tolower(static_cast<char>(c))) : c);
+      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(tolower(static_cast<char>(c))) : c);
       return result;
     }
     
@@ -1723,20 +1723,20 @@ namespace xtd {
     template<typename Char>
     static const std::basic_string<Char> to_upper(const std::basic_string<Char>& str) noexcept {
       std::basic_string<Char> result;
-      for(char c : str) result.push_back(std::toupper(c));
+      for(char c : str) result.push_back(toupper(c));
       return result;
     }
     
     /// @cond
     static const std::basic_string<char16_t> to_upper(const std::basic_string<char16_t>& str) noexcept {
       std::basic_string<char16_t> result;
-      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(std::toupper(static_cast<char>(c))) : c);
+      for(char16_t c : str) result.push_back(c <= 0xFF ? static_cast<char16_t>(toupper(static_cast<char>(c))) : c);
       return result;
     }
     
     static const std::basic_string<char32_t> to_upper(const std::basic_string<char32_t>& str) noexcept {
       std::basic_string<char32_t> result;
-      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(std::toupper(static_cast<char>(c))) : c);
+      for(char32_t c : str) result.push_back(c <= 0xFF ? static_cast<char32_t>(toupper(static_cast<char>(c))) : c);
       return result;
     }
     
