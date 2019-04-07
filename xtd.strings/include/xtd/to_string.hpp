@@ -223,7 +223,7 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
     case 's': return xtd::strings::format("{}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}", time.tm_year + 1900, time.tm_mon+1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
     case 't': return xtd::strings::format("{:D2}:{:D2}:{:D2}", time.tm_hour, time.tm_min, time.tm_sec);
     case 'T': return xtd::strings::format("{}:{:D2}:{:D2}", time.tm_hour, time.tm_min, time.tm_sec);
-    case 'u': return xtd::strings::format("{}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}Z", time.tm_year + 1900, time.tm_mon+1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
+    case 'u': return xtd::strings::format("{}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", time.tm_year + 1900, time.tm_mon+1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
     case 'U': return xtd::strings::format("{}, {} {} {} {}:{:D2}:{:D2}", __get_weekday_name<char>(time, loc), time.tm_mday, __get_month_name<char>(time, loc), time.tm_year + 1900, time.tm_hour, time.tm_min, time.tm_sec);
     case 'v': return xtd::strings::format("{:D2}:{:D2}", time.tm_hour, time.tm_min);
     case 'V': return xtd::strings::format("{}:{:D2}", time.tm_hour, time.tm_min);
