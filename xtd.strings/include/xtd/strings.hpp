@@ -91,6 +91,8 @@ namespace xtd {
   inline std::wstring to_string(const long double& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc);
+  template<>
+  inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc);
 }
 
 template<typename Char>
@@ -273,6 +275,11 @@ inline std::wstring __format_stringer<wchar_t, long double&>(long double& value)
 
 template<>
 inline std::wstring __format_stringer<wchar_t, std::chrono::system_clock::time_point&> (std::chrono::system_clock::time_point& value) {
+  return xtd::to_string(value, L"G", std::locale());
+}
+
+template<>
+inline std::wstring __format_stringer<wchar_t, std::tm&> (tm& value) {
   return xtd::to_string(value, L"G", std::locale());
 }
 /// @endcond

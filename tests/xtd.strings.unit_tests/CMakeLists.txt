@@ -22,6 +22,7 @@ set(SOURCES
   src/string_string_format.cpp
   src/strings.cpp
   src/wstring_boolean_format.cpp
+  src/wstring_date_time_format.cpp
   src/wstring_enum_format.cpp
   src/wstring_enum_class_format.cpp
   src/wstring_fixed_point_format.cpp
