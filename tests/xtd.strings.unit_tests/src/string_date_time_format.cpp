@@ -96,27 +96,27 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
     void test_method_(format_date_time_local_with_left_alignment) {
 #if __APPLE__
-      assert::are_equal("      Wed Jan  2 03:04:05 2019", strings::format("{0, 30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal("           Wed Jan  2 03:04:05 2019", strings::format("{0, 35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #elif WIN32
-      assert::are_equal("           1/2/2019 3:04:05 AM", strings::format("{0, 30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal("                1/2/2019 3:04:05 AM", strings::format("{0, 35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("      Wed Jan  2 03:04:05 2019", strings::format("{0, 30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("    Wed 02 Jan 2019 03:04:05 AM", strings::format("{0, 35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
     void test_method_(format_date_time_local_with_left_alignment_wth_plus) {
 #if __APPLE__
-      assert::are_equal("      Wed Jan  2 03:04:05 2019", strings::format("{0,+30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal("           Wed Jan  2 03:04:05 2019", strings::format("{0,+35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #elif WIN32
-      assert::are_equal("           1/2/2019 3:04:05 AM", strings::format("{0,+30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal("                1/2/2019 3:04:05 AM", strings::format("{0,+35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("      Wed Jan  2 03:04:05 2019", strings::format("{0,+30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("    Wed 02 Jan 2019 03:04:05 AM", strings::format("{0,+35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
 
@@ -126,17 +126,17 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0,0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0,0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0,0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
     void test_method_(format_date_time_local_with_right_alignment) {
 #if __APPLE__
-      assert::are_equal("Wed Jan  2 03:04:05 2019      ", strings::format("{0,-30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal("Wed Jan  2 03:04:05 2019           ", strings::format("{0,-35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #elif WIN32
-      assert::are_equal("1/2/2019 3:04:05 AM           ", strings::format("{0,-30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      assert::are_equal("1/2/2019 3:04:05 AM                ", strings::format("{0,-35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019      ", strings::format("{0,-30}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0,-35}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
 
@@ -146,7 +146,7 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0,-0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0,-0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0,-0}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
@@ -156,7 +156,7 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0,}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0,}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0,}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
@@ -178,7 +178,7 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0:f}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0:f}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0:f}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
@@ -188,7 +188,7 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0:F}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0:F}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0:F}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
 
@@ -198,7 +198,7 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0:g}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0:g}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0:g}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
@@ -208,7 +208,7 @@ namespace unit_tests {
 #elif WIN32
       assert::are_equal("1/2/2019 3:04:05 AM", strings::format("{0:G}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #else
-      assert::are_equal("Wed Jan  2 03:04:05 2019", strings::format("{0:G}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
+      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", strings::format("{0:G}", make_time<Value>(2019, 1, 2, 3, 4, 5)));
 #endif
     }
     
