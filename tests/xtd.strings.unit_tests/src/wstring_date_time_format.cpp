@@ -305,7 +305,13 @@ namespace unit_tests {
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_time_zone_argument) {
+#if __APPLE__
       assert::are_equal(L"UTC", strings::format(L"{0:Z}", to_universal_time(make_time<Value>(2019, 1, 2, 3, 4, 5))));
+#elif WIN32
+      assert::are_equal(L"Coordinated Universal Time", strings::format(L"{0:Z}", to_universal_time(make_time<Value>(2019, 1, 2, 3, 4, 5))));
+#else
+      assert::are_equal(L"GMT", strings::format(L"{0:Z}", to_universal_time(make_time<Value>(2019, 1, 2, 3, 4, 5))));
+#endif
     }
   };
 }
