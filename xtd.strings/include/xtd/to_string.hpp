@@ -198,7 +198,7 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
   
   std::string result;
   switch (fmt[0]) {
-    case 'd': return __tm_formater<char>("%x", time, loc);
+    case 'd': return xtd::strings::format("{:D2}/{:D2}/{}", time.tm_mon + 1, time.tm_mday, time.tm_year + 1900);
     case 'D': return xtd::strings::format("{}/{:D2}/{}", time.tm_mon+1, time.tm_mday, time.tm_year + 1900);
     case 'f': return __tm_formater<char>("%Ec", time, loc);
     case 'F': return __tm_formater<char>("%c", time, loc);
@@ -229,8 +229,8 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
     case 'V': return xtd::strings::format("{}:{:D2}", time.tm_hour, time.tm_min);
     case 'y': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_year % 100);
     case 'Y': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_year + 1900);
-    case 'z': return xtd::strings::format("{}", time.tm_zone);
-    case 'Z': return xtd::strings::format("{}", time.tm_zone);
+    case 'z': 
+    case 'Z': return __tm_formater<char>("%Z", time, loc);
     default: throw std::invalid_argument("Invalid format");
   }
   throw std::invalid_argument("Invalid format");
