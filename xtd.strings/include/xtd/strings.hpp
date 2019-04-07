@@ -11,7 +11,7 @@
 #include <algorithm>
 #include <bitset>
 #include <chrono>
-#include <ctype.h>
+#include <cctype>
 #include <iomanip>
 #include <locale>
 #include <sstream>
