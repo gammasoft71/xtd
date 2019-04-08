@@ -1,6 +1,12 @@
 /// @file
 /// @brief Contains doygen main page.
 
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 /// @mainpage xtd.strings - Reference Guide Documentation
 ///
 /// @section FeaturesSection Features

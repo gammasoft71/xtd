@@ -2,6 +2,12 @@
 /// @brief Contains __binary_formater method.
 #pragma once
 
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 #include <bitset>
 #include "strings.hpp"
 

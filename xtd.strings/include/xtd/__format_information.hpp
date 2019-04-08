@@ -1,6 +1,13 @@
 /// @file
 /// @brief Contains __format_information struct.
 #pragma once
+
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 #include <string>
 
 /// @cond

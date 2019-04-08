@@ -1,6 +1,13 @@
 /// @file
 /// @brief Contains xtd::to_string methods.
 #pragma once
+
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 #include "__binary_formater.hpp"
 #include "__boolean_formater.hpp"
 #include "__character_formater.hpp"
