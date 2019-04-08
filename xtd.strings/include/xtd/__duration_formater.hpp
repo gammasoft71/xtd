@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __boolean_formater method.
+/// @brief Contains __duration_formater method.
 #pragma once
 
 /// @cond
