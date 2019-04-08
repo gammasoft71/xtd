@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::strings class.
+/// @brief Contains xtd::number_styles enum class.
 #pragma once
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
