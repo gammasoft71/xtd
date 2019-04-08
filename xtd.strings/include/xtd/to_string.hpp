@@ -199,10 +199,10 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
   switch (fmt[0]) {
     case 'd': return xtd::strings::format("{:D2}/{:D2}/{}", time.tm_mon + 1, time.tm_mday, time.tm_year + 1900);
     case 'D': return xtd::strings::format("{}/{:D2}/{}", time.tm_mon+1, time.tm_mday, time.tm_year + 1900);
-    case 'f': return __tm_formater<char>("%Ec", time, loc);
-    case 'F': return __tm_formater<char>("%c", time, loc);
-    case 'g': return __tm_formater<char>("%Ec", time, loc);
-    case 'G': return __tm_formater<char>("%c", time, loc);
+    case 'f': return __tm_formater("%Ec", time, loc);
+    case 'F': return __tm_formater("%c", time, loc);
+    case 'g': return __tm_formater("%Ec", time, loc);
+    case 'G': return __tm_formater("%c", time, loc);
     case 'h': return xtd::strings::format("{}", __get_brief_weekday_name<char>(time, loc));
     case 'H': return xtd::strings::format("{}", __get_weekday_name<char>(time, loc));
     case 'i': return xtd::strings::format("{:D2}", time.tm_mday);
@@ -229,7 +229,7 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
     case 'y': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_year % 100);
     case 'Y': return xtd::strings::format("{} {}", __get_month_name<char>(time, loc), time.tm_year + 1900);
     case 'z':
-    case 'Z': return __tm_formater<char>("%Z", time, loc);
+    case 'Z': return __tm_formater("%Z", time, loc);
     default: throw std::invalid_argument("Invalid format");
   }
   throw std::invalid_argument("Invalid format");
@@ -242,10 +242,10 @@ inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, 
   switch (fmt[0]) {
     case 'd': return xtd::strings::format(L"{:D2}/{:D2}/{}", time.tm_mon + 1, time.tm_mday, time.tm_year + 1900);
     case 'D': return xtd::strings::format(L"{}/{:D2}/{}", time.tm_mon+1, time.tm_mday, time.tm_year + 1900);
-    case 'f': return __tm_formater<wchar_t>(L"%Ec", time, loc);
-    case 'F': return __tm_formater<wchar_t>(L"%c", time, loc);
-    case 'g': return __tm_formater<wchar_t>(L"%Ec", time, loc);
-    case 'G': return __tm_formater<wchar_t>(L"%c", time, loc);
+    case 'f': return __tm_formater(L"%Ec", time, loc);
+    case 'F': return __tm_formater(L"%c", time, loc);
+    case 'g': return __tm_formater(L"%Ec", time, loc);
+    case 'G': return __tm_formater(L"%c", time, loc);
     case 'h': return xtd::strings::format(L"{}", __get_brief_weekday_name<wchar_t>(time, loc));
     case 'H': return xtd::strings::format(L"{}", __get_weekday_name<wchar_t>(time, loc));
     case 'i': return xtd::strings::format(L"{:D2}", time.tm_mday);
@@ -272,7 +272,7 @@ inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, 
     case 'y': return xtd::strings::format(L"{} {}", __get_month_name<wchar_t>(time, loc), time.tm_year % 100);
     case 'Y': return xtd::strings::format(L"{} {}", __get_month_name<wchar_t>(time, loc), time.tm_year + 1900);
     case 'z':
-    case 'Z': return __tm_formater<wchar_t>(L"%Z", time, loc);
+    case 'Z': return __tm_formater(L"%Z", time, loc);
     default: throw std::invalid_argument("Invalid format");
   }
   throw std::invalid_argument("Invalid format");
