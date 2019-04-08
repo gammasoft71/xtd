@@ -54,6 +54,8 @@ namespace xtd {
   inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc);
+  template<typename Type, typename Period = std::ratio<1>>
+  inline std::string to_string(const std::chrono::duration<Type, Period>& value, const std::string& fmt, const std::locale& loc);
 
   template<typename Value>
   inline std::wstring to_string(const Value& value, const std::wstring& fmt, const std::locale& loc);
@@ -91,6 +93,13 @@ namespace xtd {
   inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc);
+  template<typename Type, typename Period = std::ratio<1>>
+  inline std::wstring to_string(const std::chrono::duration<Type, Period>& value, const std::wstring& fmt, const std::locale& loc);
+}
+  
+template<typename Char, typename Type, typename Period = std::ratio<1>>
+std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, const std::chrono::duration<Type, Period>& value) {
+  return os << xtd::to_string(value, std::basic_string<Char> {'G'}, std::locale());
 }
 
 template<typename Char, typename Value>
