@@ -1,6 +1,13 @@
 /// @file
 /// @brief Contains __fixed_point_formater method.
 #pragma once
+
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 #include "__character_formater.hpp"
 #include "__currency_formater.hpp"
 #include "__format_stringer.hpp"

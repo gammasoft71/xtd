@@ -3,6 +3,12 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 #include <chrono>
 #include <cctype>
 #include <iomanip>

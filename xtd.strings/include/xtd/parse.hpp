@@ -2,6 +2,12 @@
 /// @brief Contains xtd::parse methods.
 #pragma once
 
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 #include "number_styles.hpp"
 #include "strings.hpp"
 #include <string>

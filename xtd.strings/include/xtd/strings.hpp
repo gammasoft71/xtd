@@ -3,6 +3,10 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
 
+/// @cond
+#define __XTD_STRINGS_INCLUDE__
+/// @endcond
+
 #include "__format.hpp"
 #include "__format_information.hpp"
 #include "__format_stringer.hpp"
@@ -1648,3 +1652,7 @@ void __extract_format_arg(std::basic_string<Char>& fmt, std::vector<__format_inf
   size_t index = 0;
   (__extract_format_arg(fmt, index, formats, args),...);
 }
+
+/// @cond
+#undef __XTD_STRINGS_INCLUDE__
+/// @endcond

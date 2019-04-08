@@ -1,6 +1,13 @@
 /// @file
 /// @brief Contains __numeric_formater method.
 #pragma once
+
+/// @cond
+#ifndef __XTD_STRINGS_INCLUDE__
+#error "Do not include this file yourself, use only #include <xtd/strings>"
+#endif
+/// @ebndcond
+
 #include "__binary_formater.hpp"
 #include "__fixed_point_formater.hpp"
 
