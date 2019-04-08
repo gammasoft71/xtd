@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::strings class.
+/// @brief Contains xtd::parse methods.
 #pragma once
 
 #include "number_styles.hpp"

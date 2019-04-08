@@ -3,7 +3,19 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.strings VERSION 0.1.1)
 set(INCLUDES
+  include/xtd/__binary_formater.hpp
+  include/xtd/__boolean_formater.hpp
+  include/xtd/__character_formater.hpp
+  include/xtd/__currency_formater.hpp
+  include/xtd/__date_time_formater.hpp
+  include/xtd/__enum_formater.hpp
+  include/xtd/__fixed_point_formater.hpp
   include/xtd/__format.hpp
+  include/xtd/__format_information.hpp
+  include/xtd/__format_stringer.hpp
+  include/xtd/__natural_formater.hpp
+  include/xtd/__numeric_formater.hpp
+  include/xtd/__string_formater.hpp
   include/xtd/istring.hpp
   include/xtd/format_page.hpp
   include/xtd/main_page.hpp
