@@ -13,6 +13,7 @@
 #include "__character_formater.hpp"
 #include "__currency_formater.hpp"
 #include "__date_time_formater.hpp"
+#include "__duration_formater.hpp"
 #include "__enum_formater.hpp"
 #include "__fixed_point_formater.hpp"
 #include "__natural_formater.hpp"
@@ -75,6 +76,9 @@ namespace xtd {
 
   template<>
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc) {return __date_time_formater(fmt, value, loc);}
+
+  template<typename Type, typename Period>
+  inline std::string to_string(const std::chrono::duration<Type, Period>& value, const std::string& fmt, const std::locale& loc) {return __duration_formater(fmt, value, loc);}
 
   template<>
   inline std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
@@ -155,7 +159,10 @@ namespace xtd {
  
   template<>
   inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc) {return __date_time_formater(fmt, value, loc);}
-  
+
+  template<typename Type, typename Period>
+  inline std::wstring to_string(const std::chrono::duration<Type, Period>& value, const std::wstring& fmt, const std::locale& loc) {return __duration_formater(fmt, value, loc);}
+
   template<>
   inline std::wstring to_string(const std::wstring& value, const std::wstring& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
   

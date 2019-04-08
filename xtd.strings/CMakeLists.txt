@@ -8,6 +8,7 @@ set(INCLUDES
   include/xtd/__character_formater.hpp
   include/xtd/__currency_formater.hpp
   include/xtd/__date_time_formater.hpp
+  include/xtd/__duration_formater.hpp
   include/xtd/__enum_formater.hpp
   include/xtd/__fixed_point_formater.hpp
   include/xtd/__format.hpp
