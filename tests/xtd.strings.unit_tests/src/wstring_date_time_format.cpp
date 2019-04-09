@@ -80,9 +80,11 @@ namespace unit_tests {
   template <typename Value>
   class test_wstring_date_time_format;
   
+#if !WIN32
   test_class_attribute<test_wstring_date_time_format<std::tm>> test_wstring_date_time_format_class_std_tm_attr {"test_wstring_date_time_format<std::tm>"};
   test_class_attribute<test_wstring_date_time_format<std::chrono::system_clock::time_point>> test_wstring_date_time_format_class_std_chrono_system_clock_time_point_attr {"test_wstring_date_time_format<std::chrono::system_clock::time_point>"};
-
+#endif
+  
   template<typename Value>
   class test_wstring_date_time_format : public test_class {
   public:
