@@ -5,7 +5,7 @@
 #ifndef __XTD_STRINGS_INCLUDE__
 #error "Do not include this file yourself, use only #include <xtd/strings>"
 #endif
-/// @ebndcond
+/// @endcond
 
 /// @page FormatPage Format Documentation
 ///
