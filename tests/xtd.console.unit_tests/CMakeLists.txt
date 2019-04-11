@@ -5,6 +5,7 @@ project(xtd.console.unit_tests)
 set(SOURCES
   src/main.cpp 
   src/console_key_info.cpp
+  src/generic_stream_output.cpp
 )
 source_group(src FILES ${SOURCES})
 

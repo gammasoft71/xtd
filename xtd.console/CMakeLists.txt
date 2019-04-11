@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.console VERSION 0.0.1)
 set(INCLUDES
+  include/xtd/__generic_stream_output.hpp
   include/xtd/__get_err_rdbuf.hpp
   include/xtd/__get_in_rdbuf.hpp
   include/xtd/__get_out_rdbuf.hpp

@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::basic_console class.
 #pragma once
+#include "__generic_stream_output.hpp"
 #include "__get_err_rdbuf.hpp"
 #include "__get_in_rdbuf.hpp"
 #include "__get_out_rdbuf.hpp"
@@ -262,6 +263,13 @@ namespace xtd {
     template<typename Arg>
     static void write(Arg&& arg) noexcept {out << arg;}
     
+    /// @cond
+    static void write(bool arg) noexcept {out << (arg ? "true" : "false");}
+    
+    template<typename Type>
+    static void write(std::initializer_list<Type>&& il) noexcept {out << il;}
+    /// @endcond
+    
     template<typename ... Args>
     static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << strings::format(fmt, std::forward<Args>(args)...);}
 
@@ -269,7 +277,14 @@ namespace xtd {
     
     template<typename Arg>
     static void write_line(Arg&& arg) noexcept {out << arg << std::endl;}
+
+    /// @cond
+    static void write_line(bool arg) noexcept {out << (arg ? "true" : "false") << std::endl;}
     
+    template<typename Type>
+    static void write_line(const std::initializer_list<Type>& il) noexcept {out << il << std::endl;}
+    /// @endcond
+
     template<typename ... Args>
     static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << strings::format(fmt, std::forward<Args>(args)...) << std::endl;}
   };
