@@ -1,10 +1,11 @@
+#include <atomic>
 #include <xtd/console>
 
 using namespace std;
-using namespace xtd;
+using namespace std::string_literals;
 
 // The main entry point for the application.
 int main() {
-  console::write_line("{0:D} 0x{0:X} 0{0:O} 0b{0:B}", 42);
-  cout << format("{} {}", 42, "test") << endl;
+  xtd::console::output_code_page(65001);
+  xtd::console::write_line("{}, {}!", "Hello", "World"s);
 }
