@@ -18,7 +18,6 @@
 #include <unordered_set>
 #include <utility>
 #include <valarray>
-#include <variant>
 #include <vector>
 
 /// @cond
