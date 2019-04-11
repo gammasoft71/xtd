@@ -261,13 +261,13 @@ namespace xtd {
     static int window_width() noexcept {return __opaque_console::window_width();}
     
     template<typename Arg>
-    static void write(Arg&& arg) noexcept {out << arg;}
+    static void write(Arg&& arg) noexcept {out << strings::format("{}",  arg);}
     
     /// @cond
     static void write(bool arg) noexcept {out << (arg ? "true" : "false");}
     
     template<typename Type>
-    static void write(std::initializer_list<Type>&& il) noexcept {out << il;}
+    static void write(std::initializer_list<Type>&& il) noexcept {out << strings::format("{}", il);}
     /// @endcond
     
     template<typename ... Args>
