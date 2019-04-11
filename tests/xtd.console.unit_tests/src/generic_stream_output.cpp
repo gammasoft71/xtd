@@ -92,6 +92,7 @@ namespace unit_tests {
       assert::are_equal_("{One, Three, Two}", result.str());
     }
     
+#if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
     void test_method_(write_optional_without_value) {
       stringstream result;
       console::set_out(result);
@@ -105,6 +106,7 @@ namespace unit_tests {
       console::write(std::optional<int>(42));
       assert::are_equal_("(42)", result.str());
     }
+#endif
     
     void test_method_(write_pair) {
       stringstream result;

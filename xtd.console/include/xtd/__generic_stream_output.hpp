@@ -7,6 +7,7 @@
 #include <optional>
 #endif
 #include <deque>
+#include <stdexcept>
 #include <forward_list>
 #include <iostream>
 #include <iomanip>
