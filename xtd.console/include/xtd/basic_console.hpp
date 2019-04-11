@@ -261,13 +261,11 @@ namespace xtd {
     static int window_width() noexcept {return __opaque_console::window_width();}
     
     template<typename Arg>
-    static void write(Arg&& arg) noexcept {out << strings::format("{}",  arg);}
+    static void write(Arg&& arg) noexcept {out << strings::format(std::basic_string<Char> {'{', '}'},  arg);}
     
     /// @cond
-    static void write(bool arg) noexcept {out << (arg ? "true" : "false");}
-    
     template<typename Type>
-    static void write(std::initializer_list<Type>&& il) noexcept {out << strings::format("{}", il);}
+    static void write(std::initializer_list<Type>&& il) noexcept {out << strings::format(std::basic_string<Char> {'{', '}'}, il);}
     /// @endcond
     
     template<typename ... Args>
@@ -279,10 +277,8 @@ namespace xtd {
     static void write_line(Arg&& arg) noexcept {out << arg << std::endl;}
 
     /// @cond
-    static void write_line(bool arg) noexcept {out << (arg ? "true" : "false") << std::endl;}
-    
     template<typename Type>
-    static void write_line(const std::initializer_list<Type>& il) noexcept {out << il << std::endl;}
+    static void write_line(const std::initializer_list<Type>& il) noexcept {out << strings::format(std::basic_string<Char> {'{', '}'}, il) << std::endl;}
     /// @endcond
 
     template<typename ... Args>
