@@ -120,11 +120,6 @@ inline std::string __format_stringer<char, int8_t&>(int8_t& value) {
 }
 
 template<>
-inline std::string __format_stringer<char, char&>(char& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
-
-template<>
 inline std::string __format_stringer<char, unsigned char&>(unsigned char& value) {
   return xtd::to_string(value, "G", std::locale());
 }

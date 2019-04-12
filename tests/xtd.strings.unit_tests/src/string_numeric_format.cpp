@@ -41,7 +41,10 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_default_argument) {
-      assert::are_equal("42", strings::format("{0}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal("*", strings::format("{0}", static_cast<Value>(42)));
+      else
+        assert::are_equal("42", strings::format("{0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_without_format_argument_separator) {
@@ -49,27 +52,45 @@ namespace unit_tests {
     }
     
     void test_method_(format_with_left_alignment) {
-      assert::are_equal("  42", strings::format("{0,4}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal("   *", strings::format("{0,4}", static_cast<Value>(42)));
+      else
+        assert::are_equal("  42", strings::format("{0,4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_left_alignment_with_plus) {
-      assert::are_equal("  42", strings::format("{0,+4}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal("   *", strings::format("{0,+4}", static_cast<Value>(42)));
+      else
+        assert::are_equal("  42", strings::format("{0,+4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_left_alignment_to_zero) {
-      assert::are_equal("42", strings::format("{0,0}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal("*", strings::format("{0,0}", static_cast<Value>(42)));
+      else
+        assert::are_equal("42", strings::format("{0,0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_right_alignment) {
-      assert::are_equal("42  ", strings::format("{0,-4}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal("*   ", strings::format("{0,-4}", static_cast<Value>(42)));
+      else
+        assert::are_equal("42  ", strings::format("{0,-4}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_right_alignment_to_zero) {
-      assert::are_equal("42", strings::format("{0,-0}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal("*", strings::format("{0,-0}", static_cast<Value>(42)));
+      else
+        assert::are_equal("42", strings::format("{0,-0}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_alignment_empty) {
-      assert::are_equal("42", strings::format("{0,}", static_cast<Value>(42)));
+      if (std::is_same<Value, char>::value)
+        assert::are_equal("*", strings::format("{0,}", static_cast<Value>(42)));
+      else
+        assert::are_equal("42", strings::format("{0,}", static_cast<Value>(42)));
     }
     
     void test_method_(format_with_alignment_invalid) {

@@ -206,6 +206,9 @@ namespace xtd {
   template<typename Value>
   inline Value parse(const std::string& str) {throw std::invalid_argument("Parse speciailisation not found");}
 
+  template<typename Value>
+  inline Value parse(const std::string& str, const std::string& fmt) {throw std::invalid_argument("Parse speciailisation not found");}
+
   template<>
   inline std::string parse<std::string>(const std::string& str) {return str;}
 
