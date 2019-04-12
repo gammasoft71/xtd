@@ -6,6 +6,7 @@
 #include "__get_in_rdbuf.hpp"
 #include "__get_out_rdbuf.hpp"
 #include "__opaque_console.hpp"
+#include "console_cancel_event_handler.hpp"
 #include <xtd/strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -34,6 +35,14 @@ namespace xtd {
     /// @include console_in_out.cpp
     static std::basic_ostream<Char> out;
     
+    /// @brief Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
+    /// @remarks This event is used in conjunction with xtd::console_cancel_event_handler and xtd::console_cancel_event_args. The cancel_key_press event enables a console application to intercept the Ctrl+C signal so the event handler can decide whether to continue executing or terminate. For more information about handling events, see Handling and Raising Events.
+    /// When the user presses either Ctrl+C or Ctrl+Break, the cancel_key_press event is fired and the application's console_cancel_event_handler event handler is executed. The event handler is passed a console_cancel_event_args object that has two useful properties:
+    /// * special_key, which allows you to determine whether the handler was invoked as a result of the user pressing Ctrl+C (the property value is console_special_key::control_c) or Ctrl+Break (the property value is console_special_key.control_break).
+    /// * Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is false, which causes program execution to terminate when the event handler exits. Changing its property to true specifies that the application should continue to execute.
+    /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to false, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application.
+    static console_cancel_event_handler cancel_key_press;
+
     /// @cond
     basic_console() = delete;
     /// @endcond
@@ -210,6 +219,24 @@ namespace xtd {
     /// @param true if output is redirected; otherwise, false.
     static bool is_out_redireted() noexcept {return out.rdbuf() != __get_out_rdbuf<Char>();}
     
+    /// @brief Gets a value indicating whether a key press is available in the input stream.
+    /// @param true if a key press is available; otherwise, false
+    /// @remarks The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available.
+    /// @remarks Use the key_available method in conjunction with only the read_key method, not the read or read_line methods
+    static bool key_available() noexcept {return  __opaque_console::has_ctrl_c_key() || __opaque_console::key_available();}
+
+    /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
+    /// @param The height of the largest possible console window measured in rows.
+    static int largest_window_height() noexcept {return __opaque_console::largest_window_height();}
+    
+    /// @brief Gets the largest possible number of console window columns, based on the current font and screen resolution.
+    /// @param The width of the largest possible console window measured in colomns.
+    static int largest_window_width() noexcept {return __opaque_console::largest_window_width();}
+    
+    /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
+    /// @param true if NUM LOCK is turned on; false if NUM LOCK is turned off.
+    static bool number_lock() noexcept {return __opaque_console::number_lock();}
+
     /// @brief Acquires the standard error stream.
     /// @return The standard error stream.
     /// @remarks This method can be used to reacquire the standard error stream after it has been changed by the set_error method.
@@ -239,6 +266,36 @@ namespace xtd {
       in >> result;
       return result;
     }
+    /// @brief Obtains the next character or function key pressed by the user. The pressed key is displayed in the console window.
+    /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
+    /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
+    static console_key_info read_key() {return read_key(false);}
+    
+    /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window.
+    /// @param intercept Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, false
+    /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
+    /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
+    static console_key_info read_key(bool intercept) {
+      if (__opaque_console::has_ctrl_c_key()) {
+        __opaque_console::has_ctrl_c_key(false);
+        return console_key_info('c', console_key::c, false, false, true);
+      }
+      
+      int key_char = 0;
+      int key_code = 0;
+      bool alt = false;
+      bool shift = false;
+      bool ctrl = false;
+      
+      out.flush();
+      __opaque_console::read_key(key_char, key_code, alt, shift, ctrl);
+      console_key_info key_info = console_key_info(key_char, static_cast<console_key>(key_code), shift, alt, ctrl);
+      
+      if (intercept == false)
+        write(Char(key_info.key_char()));
+      return key_info;
+    }
+
     
     static bool reset_color() noexcept {return __opaque_console::reset_color();}
     
@@ -252,6 +309,14 @@ namespace xtd {
     
     static std::map<int, console_special_key> signal_keys() noexcept {return __opaque_console::signal_keys();}
     
+    static std::string title() noexcept {return __opaque_console::title();}
+    
+    static bool title(const std::string& title) noexcept {return __opaque_console::title(title);}
+
+    static bool treat_control_c_as_input() noexcept {return __opaque_console::treat_control_c_as_input();}
+
+    static void treat_control_c_as_input(bool treat_control_c_as_input) noexcept {return __opaque_console::treat_control_c_as_input(treat_control_c_as_input);}
+
     static int window_height() noexcept {return __opaque_console::window_height();}
     
     static int window_left() noexcept {return __opaque_console::window_left();}
@@ -292,5 +357,7 @@ namespace xtd {
   std::basic_istream<Char> basic_console<Char>::in {__get_in_rdbuf<Char>()};
   template<class Char>
   std::basic_ostream<Char> basic_console<Char>::out {__get_out_rdbuf<Char>()};
+  template<class Char>
+  xtd::console_cancel_event_handler basic_console<Char>::cancel_key_press;
   /// @endcond
 }

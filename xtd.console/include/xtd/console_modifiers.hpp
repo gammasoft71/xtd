@@ -16,3 +16,29 @@ namespace xtd {
   };
 }
 
+/// @cond
+inline xtd::console_modifiers& operator^=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
+inline xtd::console_modifiers& operator&=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
+inline xtd::console_modifiers& operator|=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
+inline xtd::console_modifiers& operator+=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
+inline xtd::console_modifiers& operator-=(xtd::console_modifiers& lhs, xtd::console_modifiers rhs) {lhs = static_cast<xtd::console_modifiers>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
+
+inline xtd::console_modifiers operator^(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
+inline xtd::console_modifiers operator&(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) & static_cast<int>(rhs));}
+inline xtd::console_modifiers operator|(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) | static_cast<int>(rhs));}
+inline xtd::console_modifiers operator+(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) + static_cast<int>(rhs));}
+inline xtd::console_modifiers operator-(xtd::console_modifiers lhs, xtd::console_modifiers rhs) {return static_cast<xtd::console_modifiers>(static_cast<int>(lhs) - static_cast<int>(rhs));}
+
+inline xtd::console_modifiers operator~(xtd::console_modifiers lhs) {return static_cast<xtd::console_modifiers>(~static_cast<int>(lhs));}
+
+template<typename Char>
+std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, xtd::console_modifiers cm) {
+  switch (cm) {
+    case xtd::console_modifiers::alt: os << std::basic_string<Char> {'a', 'l', 't'}; break;
+    case xtd::console_modifiers::shift: os << std::basic_string<Char> {'s', 'h', 'i', 'f', 't'}; break;
+    case xtd::console_modifiers::control: os << std::basic_string<Char> {'c', 'o', 'n', 't', 'r', 'o', 'l'}; break;
+    default: os << static_cast<int>(cm); break;
+  }
+  return os;
+}
+/// @endcond

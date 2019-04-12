@@ -10,6 +10,8 @@
 #include <string>
 
 /// @cond
+struct __console_intercept_signals;
+
 namespace xtd {
   template<class Char>
   class basic_console;
@@ -18,6 +20,7 @@ namespace xtd {
 class __opaque_console final {
   template<class Char>
   friend class xtd::basic_console;
+  friend struct ::__console_intercept_signals;
   static xtd::console_color background_color() noexcept;
   static bool background_color(xtd::console_color color) noexcept;
   static bool beep(unsigned int frequency, unsigned int duration) noexcept;
@@ -35,16 +38,31 @@ class __opaque_console final {
   static void cursor_visible(bool visible) noexcept;
   static xtd::console_color foreground_color() noexcept;
   static bool foreground_color(xtd::console_color color) noexcept;
+  static bool has_ctrl_c_key() noexcept {return has_ctrl_c_key_;}
+  static void has_ctrl_c_key(bool has_ctrl_c_key) noexcept {has_ctrl_c_key_ = has_ctrl_c_key;}
   static int input_code_page() noexcept;
   static bool input_code_page(int codePage) noexcept;
+  static bool key_available() noexcept;
+  static int largest_window_height() noexcept;
+  static int largest_window_width() noexcept;
+  static bool number_lock() noexcept;
   static int output_code_page() noexcept;
   static bool output_code_page(int codePage) noexcept;
+  static void read_key(int& key_char, int& key_code, bool& alt, bool& shift, bool& ctrl) noexcept;
   static bool reset_color() noexcept;
   static bool set_cursor_position(int left, int top) noexcept;
   static std::map<int, xtd::console_special_key> signal_keys() noexcept;
+  static std::string title() noexcept;
+  static bool title(const std::string& title) noexcept;
+  static bool treat_control_c_as_input() noexcept;
+  static void treat_control_c_as_input(bool treat_control_c_as_input);
   static int window_left() noexcept;
   static int window_height() noexcept;
   static int window_top() noexcept;
   static int window_width() noexcept;
+
+private:
+  static bool has_ctrl_c_key_;
 };
+
 /// @endcond
