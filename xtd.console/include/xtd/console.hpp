@@ -7,6 +7,7 @@
 #include "__opaque_console.hpp"
 #include "background_color.hpp"
 #include "beep.hpp"
+#include "console_cancel_event_handler.hpp"
 #include "foreground_color.hpp"
 #include "format.hpp"
 #include "reset_color.hpp"

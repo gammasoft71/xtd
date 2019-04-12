@@ -1,9 +1,13 @@
 #if defined(_WIN32)
 
 #include "../include/xtd/__opaque_console.hpp"
+#include "../include/xtd/__console_intercept_signals.hpp"
 
 #include <csignal>
+#include <conio.h>
 #include <Windows.h>
+
+__console_intercept_signals __console_intercept_signals::console_intercept_signals_;
 
 namespace {
   xtd::console_color __background_color() noexcept {
@@ -20,7 +24,10 @@ namespace {
 
   xtd::console_color backColor = __background_color();
   xtd::console_color foreColor = __foreground_color();
+  bool treat_control_c_as_input = false;
 }
+
+bool __opaque_console::has_ctrl_c_key_ = false;
 
 xtd::console_color __opaque_console::background_color() noexcept {
   return __background_color();
@@ -145,6 +152,26 @@ bool __opaque_console::input_code_page(int codePage) noexcept {
   return SetConsoleCP(codePage) == TRUE;
 }
 
+bool __opaque_console::KeyAvailable() noexcept {
+  return _kbhit() != 0;
+}
+
+int __opaque_console::largest_window_height() noexcept {
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+  return csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+}
+
+int __opaque_console::largest_window_width() noexcept {
+  CONSOLE_SCREEN_BUFFER_INFO csbi;
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+  return csbi.srWindow.Left;
+}
+
+bool __opaque_console::number_lock() noexcept {
+  return (GetKeyState(VK_NUMLOCK) & 0x0001) == 0x0001;
+}
+
 int __opaque_console::output_code_page() noexcept {
   return GetConsoleOutputCP();
 }
@@ -153,6 +180,19 @@ bool __opaque_console::output_code_page(int codePage) noexcept {
   return SetConsoleOutputCP(codePage) == TRUE;
 }
 
+void __opaque_console::read_key(int& key_char, int& key_code, bool& alt, bool& shift, bool& ctrl) noexcept {
+  INPUT_RECORD input_record;
+  do {
+    DWORD nb_events_read = 0;
+    ReadConsoleInput(GetStdHandle(STD_INPUT_HANDLE), &input_record, 1, &nb_events_read);
+  } while (!(input_record.EventType == KEY_EVENT && (input_record.Event.KeyEvent.bKeyDown == 1 && input_record.Event.KeyEvent.wVirtualKeyCode != 0x10 && input_record.Event.KeyEvent.wVirtualKeyCode != 0x11 && input_record.Event.KeyEvent.wVirtualKeyCode != 0x12)));
+  
+  key_char = input_record.Event.KeyEvent.uChar.AsciiChar;
+  key_code = input_record.Event.KeyEvent.wVirtualKeyCode;
+  alt = (input_record.Event.KeyEvent.dwControlKeyState & LEFT_ALT_PRESSED) == LEFT_ALT_PRESSED || (input_record.Event.KeyEvent.dwControlKeyState & RIGHT_ALT_PRESSED) == RIGHT_ALT_PRESSED;
+  shift = (input_record.Event.KeyEvent.dwControlKeyState & SHIFT_PRESSED) == SHIFT_PRESSED;
+  ctrl = (input_record.Event.KeyEvent.dwControlKeyState & LEFT_CTRL_PRESSED) == LEFT_CTRL_PRESSED || (input_record.Event.KeyEvent.dwControlKeyState & RIGHT_CTRL_PRESSED) == RIGHT_CTRL_PRESSED;
+}
 
 bool __opaque_console::reset_color() noexcept {
   return __opaque_console::background_color(backColor) && __opaque_console::foreground_color(foreColor);
@@ -168,6 +208,24 @@ bool __opaque_console::set_cursor_position(int left, int top) noexcept {
 
 std::map<int, xtd::console_special_key> __opaque_console::signal_keys() noexcept {
   return {{SIGBREAK, xtd::console_special_key::control_break}, {SIGINT, xtd::console_special_key::control_c}};
+}
+
+std::string N__opaque_console::title() noexcept {
+  char title[MAX_PATH];
+  if (GetConsoleTitle(title, MAX_PATH) == 0) return "";
+  return title;
+}
+
+bool Native::ConsoleApi::title(const std::string& title) noexcept {
+  return SetConsoleTitle(title.c_str());
+}
+
+bool __opaque_console::treat_control_c_as_input() noexcept {
+  return ::treat_control_c_as_input;
+}
+
+void __opaque_console::treat_control_c_as_input(bool treat_control_c_as_input) {
+  ::treat_control_c_as_input = treat_control_c_as_input;
 }
 
 int __opaque_console::window_height() noexcept {
