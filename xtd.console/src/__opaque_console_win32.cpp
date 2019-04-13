@@ -152,7 +152,7 @@ bool __opaque_console::input_code_page(int codePage) noexcept {
   return SetConsoleCP(codePage) == TRUE;
 }
 
-bool __opaque_console::KeyAvailable() noexcept {
+bool __opaque_console::key_available() noexcept {
   return _kbhit() != 0;
 }
 
@@ -210,13 +210,13 @@ std::map<int, xtd::console_special_key> __opaque_console::signal_keys() noexcept
   return {{SIGBREAK, xtd::console_special_key::control_break}, {SIGINT, xtd::console_special_key::control_c}};
 }
 
-std::string N__opaque_console::title() noexcept {
+std::string __opaque_console::title() noexcept {
   char title[MAX_PATH];
   if (GetConsoleTitle(title, MAX_PATH) == 0) return "";
   return title;
 }
 
-bool Native::ConsoleApi::title(const std::string& title) noexcept {
+bool __opaque_console::title(const std::string& title) noexcept {
   return SetConsoleTitle(title.c_str());
 }
 
