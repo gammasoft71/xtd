@@ -214,10 +214,6 @@ bool __opaque_console::set_cursor_position(int left, int top) noexcept {
   return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), csbi.dwCursorPosition) == TRUE;
 }
 
-std::map<int, xtd::console_special_key> __opaque_console::signal_keys() noexcept {
-  return {};
-}
-
 std::string __opaque_console::title() noexcept {
   char title[MAX_PATH];
   if (GetConsoleTitle(title, MAX_PATH) == 0) return "";

@@ -302,8 +302,6 @@ namespace xtd {
     
     static void set_out(const std::ostream& os) noexcept  {out.rdbuf(os.rdbuf());}
     
-    static std::map<int, console_special_key> signal_keys() noexcept {return __opaque_console::signal_keys();}
-    
     static std::string title() noexcept {return __opaque_console::title();}
     
     static bool title(const std::string& title) noexcept {return __opaque_console::title(title);}

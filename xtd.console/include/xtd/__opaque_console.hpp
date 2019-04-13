@@ -49,7 +49,6 @@ class __opaque_console final {
   static void read_key(int& key_char, int& key_code, bool& alt, bool& shift, bool& ctrl) noexcept;
   static bool reset_color() noexcept;
   static bool set_cursor_position(int left, int top) noexcept;
-  static std::map<int, xtd::console_special_key> signal_keys() noexcept;
   static std::string title() noexcept;
   static bool title(const std::string& title) noexcept;
   static bool treat_control_c_as_input() noexcept;
