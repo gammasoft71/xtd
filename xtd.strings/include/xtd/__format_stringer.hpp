@@ -56,6 +56,10 @@ namespace xtd {
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc);
   template<typename Type, typename Period = std::ratio<1>>
   inline std::string to_string(const std::chrono::duration<Type, Period>& value, const std::string& fmt, const std::locale& loc);
+  template<>
+  inline std::string to_string(const char16_t& value, const std::string& fmt, const std::locale& loc);
+  template<>
+  inline std::string to_string(const char32_t& value, const std::string& fmt, const std::locale& loc);
 
   template<typename Value>
   inline std::wstring to_string(const Value& value, const std::wstring& fmt, const std::locale& loc);
@@ -186,6 +190,16 @@ inline std::string __format_stringer<char, std::chrono::system_clock::time_point
 
 template<>
 inline std::string __format_stringer<char, std::tm&> (tm& value) {
+  return xtd::to_string(value, "G", std::locale());
+}
+
+template<>
+inline std::string __format_stringer<char, char16_t&>(char16_t& value) {
+  return xtd::to_string(value, "G", std::locale());
+}
+
+template<>
+inline std::string __format_stringer<char, char32_t&>(char32_t& value) {
   return xtd::to_string(value, "G", std::locale());
 }
 

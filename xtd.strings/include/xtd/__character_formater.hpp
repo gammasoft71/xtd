@@ -14,7 +14,7 @@
 template<typename Char, typename Value>
 inline std::basic_string<Char> __character_formater(const std::basic_string<Char>& fmt, Value value, const std::locale& loc) {
   if (!std::is_same<Value, char>::value && value <= 255)
-    __format_stringer<Char>(static_cast<char>(value));
+    return __format_stringer<Char>(static_cast<char>(value));
   return __format_stringer<Char>(value);
 }
 /// @endcond
