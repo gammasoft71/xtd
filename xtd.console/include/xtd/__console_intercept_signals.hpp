@@ -2,6 +2,8 @@
 /// @brief Contains xtd::__console_intercept_signals class.
 #pragma once
 #include "console.hpp"
+#include <csignal>
+#include <cstdlib>
 
 /// @cond
 struct __console_intercept_signals {

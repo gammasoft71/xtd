@@ -9,15 +9,12 @@ int main() {
   xtd::console::output_code_page(65001);
   
   xtd::console::cancel_key_press += [&](xtd::console_cancel_event_args& e) {
-    cout << "Event handler called" << endl;
+    xtd::console::write_line("Event handler called");
     e.cancel(true);
   };
   
-  char a = 'a';
-  cout << "a = '" << a << "'" << endl;
-  
   //xtd::console::treat_control_c_as_input(true);
-  cout << "Press any key to continue" << endl;
+  xtd::console::write_line("Press escape key to quit");
   xtd::console_key_info key;
   while (key.key() != xtd::console_key::escape) {
     key = xtd::console::read_key(true);
