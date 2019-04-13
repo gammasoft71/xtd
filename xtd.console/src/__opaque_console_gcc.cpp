@@ -24,20 +24,20 @@ const int KIOCSOUND = 0x4B2F;
 
 namespace {
   /// @cond
-  struct __console_intercept_signals {
-    __console_intercept_signals() {
+  struct console_intercept_signals {
+  private:
+    console_intercept_signals() {
       for (auto signal : signal_keys_)
-        ::signal(signal.first, __console_intercept_signals::signal_handler);
+        ::signal(signal.first, console_intercept_signals::signal_handler);
     }
     
-    ~__console_intercept_signals() {
+    ~console_intercept_signals() {
       for (auto signal : signal_keys_)
         ::signal(signal.first, SIG_DFL);
     }
     
-  private:
     static void signal_handler(int signal) {
-      ::signal(signal, __console_intercept_signals::signal_handler);
+      ::signal(signal, console_intercept_signals::signal_handler);
 #if _WIN32
       if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
 #endif
@@ -46,15 +46,16 @@ namespace {
       if (console_cancel.cancel() == false)
         exit(EXIT_FAILURE);
     }
-    static __console_intercept_signals console_intercept_signals_;
+
     static std::map<int, xtd::console_special_key> signal_keys_;
+    static console_intercept_signals console_intercept_signals_;
   };
 
-  __console_intercept_signals __console_intercept_signals::console_intercept_signals_;
-  std::map<int, xtd::console_special_key> __console_intercept_signals::signal_keys_ {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
+  std::map<int, xtd::console_special_key> console_intercept_signals::signal_keys_ {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
+  console_intercept_signals console_intercept_signals::console_intercept_signals_;
 
   class terminal final {
-  public:
+  private:
     terminal() noexcept {
       termios termioAttributes;
       tcgetattr(0, &termioAttributes);
@@ -69,6 +70,7 @@ namespace {
         std::cout << "\x1b]0;\x7" << std::flush;
     }
     
+  public:
     int getch() noexcept {
       if (this->peekCharacter != -1) {
         int8_t character = this->peekCharacter;
@@ -116,11 +118,15 @@ namespace {
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
     }
     
+    static terminal terminal_;
+    
   private:
     int8_t peekCharacter {-1};
     termios backupedTermioAttributes;
-  } term;
+  };
   
+  terminal terminal::terminal_;
+
   class key_info {
   public:
     class input_list {
@@ -199,15 +205,15 @@ namespace {
       return *this;
     }
     
-    static bool key_available() {return !inputs.is_empty() || term.key_available();}
+    static bool key_available() {return !inputs.is_empty() || terminal::terminal_.key_available();}
     
     static key_info read() {
       if (!inputs.is_empty())
         return to_key_info(inputs.pop());
       
       do
-        inputs.add(term.getch());
-      while (term.key_available());
+        inputs.add(terminal::terminal_.getch());
+      while (terminal::terminal_.key_available());
       
       if (key_info::keys.find(inputs.to_string()) != key_info::keys.end()) {
         std::string str = inputs.to_string();
@@ -607,11 +613,11 @@ bool __opaque_console::clear() noexcept {
 int __opaque_console::cursor_left() noexcept {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
-  term.getch();
-  term.getch();
-  for (char c = term.getch(); c != ';'; c = term.getch());
+  terminal::terminal_.getch();
+  terminal::terminal_.getch();
+  for (char c = terminal::terminal_.getch(); c != ';'; c = terminal::terminal_.getch());
   std::string left;
-  for (char c = term.getch(); c != 'R'; c = term.getch())
+  for (char c = terminal::terminal_.getch(); c != 'R'; c = terminal::terminal_.getch())
     left.push_back(c);
   return atoi(left.c_str()) - 1;
 }
@@ -632,12 +638,12 @@ void __opaque_console::cursor_size(int size) noexcept {
 int __opaque_console::cursor_top() noexcept {
   if (!terminal::is_ansi_supported()) return 0;
   std::cout << "\x1b[6n" << std::flush;
-  term.getch();
-  term.getch();
+  terminal::terminal_.getch();
+  terminal::terminal_.getch();
   std::string top;
-  for (char c = term.getch(); c != ';'; c = term.getch())
+  for (char c = terminal::terminal_.getch(); c != ';'; c = terminal::terminal_.getch())
     top.push_back(c);
-  for (char c = term.getch(); c != 'R'; c = term.getch());
+  for (char c = terminal::terminal_.getch(); c != 'R'; c = terminal::terminal_.getch());
   return atoi(top.c_str()) - 1;
 }
 
@@ -732,7 +738,7 @@ std::string __opaque_console::title() noexcept {
     return ::title;
   
   std::string title;
-  for (char c = terminal.Getch(); term.key_available(); c = term.getch())
+  for (char c = terminal.Getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
     title.push_back(c);
   return title; */
   return ::title;
