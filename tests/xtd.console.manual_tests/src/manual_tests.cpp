@@ -14,7 +14,7 @@ int main() {
     e.cancel(true);
   };
   
-  xtd::console::treat_control_c_as_input(true);
+  //xtd::console::treat_control_c_as_input(true);
   xtd::console::write_line(xtd::console::treat_control_c_as_input());
   xtd::console::write_line("Press escape key to quit");
   xtd::console_key_info key;

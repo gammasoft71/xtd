@@ -1,7 +1,7 @@
 #if defined(_WIN32)
 
 #include "../include/xtd/__opaque_console.hpp"
-#include "../include/xtd/__console_intercept_signals.hpp"
+#include "../include/xtd/console.hpp"
 
 #include <csignal>
 #include <conio.h>
@@ -215,7 +215,7 @@ bool __opaque_console::set_cursor_position(int left, int top) noexcept {
 }
 
 std::map<int, xtd::console_special_key> __opaque_console::signal_keys() noexcept {
-  return {{SIGBREAK, xtd::console_special_key::control_break}, {SIGINT, xtd::console_special_key::control_c}};
+  return {};
 }
 
 std::string __opaque_console::title() noexcept {
