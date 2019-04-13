@@ -7,8 +7,6 @@
 #include <conio.h>
 #include <Windows.h>
 
-__console_intercept_signals __console_intercept_signals::console_intercept_signals_;
-
 namespace {
   xtd::console_color __background_color() noexcept {
     CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -22,9 +20,21 @@ namespace {
     return static_cast<xtd::console_color>(csbi.wAttributes & 0x000F);
   }
 
+  BOOL __handler_routine(DWORD ctrl_type) {
+    if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT) {
+      xtd::console_cancel_event_args console_cancel(false, ctrl_type == CTRL_C_EVENT ? xtd::console_special_key::control_c : xtd::console_special_key::control_break);
+      xtd::console::cancel_key_press(console_cancel);
+      return console_cancel.cancel() == TRUE;
+    }
+    return FALSE;
+  }
+
   xtd::console_color backColor = __background_color();
   xtd::console_color foreColor = __foreground_color();
-  bool treat_control_c_as_input = false;
+  bool treat_control_c_as_input = [&]()-> bool {
+    SetConsoleCtrlHandler(&__handler_routine, TRUE);
+    return false;
+  }();
 }
 
 xtd::console_color __opaque_console::background_color() noexcept {
@@ -219,12 +229,19 @@ bool __opaque_console::title(const std::string& title) noexcept {
 }
 
 bool __opaque_console::treat_control_c_as_input() noexcept {
-  return ::treat_control_c_as_input;
+  DWORD mode = 0;
+  GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
+  return  (mode & ENABLE_PROCESSED_INPUT) != ENABLE_PROCESSED_INPUT;
 }
 
 void __opaque_console::treat_control_c_as_input(bool treat_control_c_as_input) {
-  ::treat_control_c_as_input = treat_control_c_as_input;
-  SetConsoleCtrlHandler(nullptr, ::treat_control_c_as_input);
+  DWORD mode = 0;
+  GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
+  if (treat_control_c_as_input)
+    mode &= ~ENABLE_PROCESSED_INPUT;
+  else
+    mode |= ENABLE_PROCESSED_INPUT;
+  SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode);
 }
 
 int __opaque_console::window_height() noexcept {
