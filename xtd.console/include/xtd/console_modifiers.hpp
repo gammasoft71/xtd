@@ -1,6 +1,8 @@
 /// @file
 /// @brief Contains xtd::console_modifiers enum.
 #pragma once
+#include <string>
+#include <sstream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

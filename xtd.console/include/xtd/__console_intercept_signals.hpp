@@ -23,14 +23,13 @@ private:
   static void signal_handler(int signal) {
     static auto signalKeys = __opaque_console::signal_keys();
     ::signal(signal, __console_intercept_signals::signal_handler);
-    if (xtd::console::treat_control_c_as_input()) {
-      __opaque_console::has_ctrl_c_key(true);
-    } else {
-      xtd::console_cancel_event_args console_cancel(false, signalKeys[signal]);
-      xtd::console::cancel_key_press(console_cancel);
-      if (console_cancel.cancel() == false)
-        exit(EXIT_FAILURE);
-    }
+#if _WIN32
+    if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
+#endif
+    xtd::console_cancel_event_args console_cancel(false, signalKeys[signal]);
+    xtd::console::cancel_key_press(console_cancel);
+    if (console_cancel.cancel() == false)
+      exit(EXIT_FAILURE);
   }
   static __console_intercept_signals console_intercept_signals_;
 };

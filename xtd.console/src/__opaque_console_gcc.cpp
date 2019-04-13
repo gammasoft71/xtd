@@ -514,8 +514,6 @@ namespace {
   std::string title;
 }
 
-bool __opaque_console::has_ctrl_c_key_ = false;
-
 xtd::console_color __opaque_console::background_color() noexcept {
   return backColor;
 }

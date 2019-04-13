@@ -223,7 +223,7 @@ namespace xtd {
     /// @param true if a key press is available; otherwise, false
     /// @remarks The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available.
     /// @remarks Use the key_available method in conjunction with only the read_key method, not the read or read_line methods
-    static bool key_available() noexcept {return  __opaque_console::has_ctrl_c_key() || __opaque_console::key_available();}
+    static bool key_available() noexcept {__opaque_console::key_available();}
 
     /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
     /// @param The height of the largest possible console window measured in rows.
@@ -276,11 +276,6 @@ namespace xtd {
     /// @return ConsoleKeyInfo A ConsoleKeyInfo object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key.
     /// The ConsoleKeyInfo object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
     static console_key_info read_key(bool intercept) {
-      if (__opaque_console::has_ctrl_c_key()) {
-        __opaque_console::has_ctrl_c_key(false);
-        return console_key_info('c', console_key::c, false, false, true);
-      }
-      
       int key_char = 0;
       int key_code = 0;
       bool alt = false;

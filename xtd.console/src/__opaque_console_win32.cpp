@@ -27,8 +27,6 @@ namespace {
   bool treat_control_c_as_input = false;
 }
 
-bool __opaque_console::has_ctrl_c_key_ = false;
-
 xtd::console_color __opaque_console::background_color() noexcept {
   return __background_color();
 }
@@ -226,6 +224,7 @@ bool __opaque_console::treat_control_c_as_input() noexcept {
 
 void __opaque_console::treat_control_c_as_input(bool treat_control_c_as_input) {
   ::treat_control_c_as_input = treat_control_c_as_input;
+  SetConsoleCtrlHandler(nullptr, ::treat_control_c_as_input);
 }
 
 int __opaque_console::window_height() noexcept {
