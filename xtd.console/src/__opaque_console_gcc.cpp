@@ -1,7 +1,7 @@
 #if defined(__linux__) || defined(__APPLE__)
 
 #include "../include/xtd/__opaque_console.hpp"
-#include "../include/xtd/__console_intercept_signals.hpp"
+#include "../include/xtd/console.hpp"
 
 #include <csignal>
 #include <iostream>
@@ -22,9 +22,37 @@ const int KIOCSOUND = 0x4B2F;
 #include <linux/kd.h>
 #endif
 
-__console_intercept_signals __console_intercept_signals::console_intercept_signals_;
-
 namespace {
+  /// @cond
+  struct __console_intercept_signals {
+    __console_intercept_signals() {
+      for (auto signal : signal_keys_)
+        ::signal(signal.first, __console_intercept_signals::signal_handler);
+    }
+    
+    ~__console_intercept_signals() {
+      for (auto signal : signal_keys_)
+        ::signal(signal.first, SIG_DFL);
+    }
+    
+  private:
+    static void signal_handler(int signal) {
+      ::signal(signal, __console_intercept_signals::signal_handler);
+#if _WIN32
+      if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
+#endif
+      xtd::console_cancel_event_args console_cancel(false, signal_keys_[signal]);
+      xtd::console::cancel_key_press(console_cancel);
+      if (console_cancel.cancel() == false)
+        exit(EXIT_FAILURE);
+    }
+    static __console_intercept_signals console_intercept_signals_;
+    static std::map<int, xtd::console_special_key> signal_keys_;
+  };
+
+  __console_intercept_signals __console_intercept_signals::console_intercept_signals_;
+  std::map<int, xtd::console_special_key> __console_intercept_signals::signal_keys_ {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
+
   class terminal final {
   public:
     terminal() noexcept {
@@ -692,10 +720,6 @@ bool __opaque_console::set_cursor_position(int left, int top) noexcept {
   if (!terminal::is_ansi_supported()) return false;
   std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;
   return true;
-}
-
-std::map<int, xtd::console_special_key> __opaque_console::signal_keys() noexcept {
-  return {{SIGQUIT, xtd::console_special_key::control_backslash}, {SIGTSTP, xtd::console_special_key::control_z}, {SIGINT, xtd::console_special_key::control_c}};
 }
 
 std::string __opaque_console::title() noexcept {
