@@ -38,8 +38,6 @@ class __opaque_console final {
   static void cursor_visible(bool visible) noexcept;
   static xtd::console_color foreground_color() noexcept;
   static bool foreground_color(xtd::console_color color) noexcept;
-  static bool has_ctrl_c_key() noexcept {return has_ctrl_c_key_;}
-  static void has_ctrl_c_key(bool has_ctrl_c_key) noexcept {has_ctrl_c_key_ = has_ctrl_c_key;}
   static int input_code_page() noexcept;
   static bool input_code_page(int codePage) noexcept;
   static bool key_available() noexcept;
@@ -60,9 +58,6 @@ class __opaque_console final {
   static int window_height() noexcept;
   static int window_top() noexcept;
   static int window_width() noexcept;
-
-private:
-  static bool has_ctrl_c_key_;
 };
 
 /// @endcond
