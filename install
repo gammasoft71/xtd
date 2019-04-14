@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-export xtd_tunit_version=0.2.0
+export xtd_tunit_version=1.0.0
 scripts/install/install.sh "$@"
