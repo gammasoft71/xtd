@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::strings class.
 #pragma once
-#define _CRT_SECURE_NO_WARNINGS
 
 /// @cond
 #define __XTD_STRINGS_INCLUDE__
