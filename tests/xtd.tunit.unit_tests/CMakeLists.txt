@@ -136,6 +136,7 @@ source_group(src FILES ${SOURCES})
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if (MSVC)
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4834")
 endif ()
 

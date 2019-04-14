@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::assert class.
 #pragma once
-#define _CRT_SECURE_NO_WARNINGS
 
 #include "__demangle.hpp"
 #include "__join__items.hpp"
