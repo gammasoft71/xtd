@@ -1,5 +1,37 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.tunit) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
+![1.0.0](pictures/version_1_0_0.png) (release) April 14th 2019
+
+## Assertions, valid  tion and assumption :
+
+![added](pictures/added.png) you can create your own assertion, validation and assumption classes
+
+![fixed](pictures/fixed.png) abort
+
+![fixed](pictures/fixed.png) exception throw message
+
+## Assertions :
+
+![added](pictures/added.png) add helpers
+
+### String assert :
+
+![fixed](pictures/fixed.png) fail messages
+
+## Examples :
+
+![added](pictures/added.png) add some examples
+
+## Documentation :
+
+![added](pictures/added.png) add some documentations
+
+## Other :
+
+![fixed](pictures/fixed.png) install
+
+______________________________________________________________________________________________
+
 ![0.3.0](pictures/version_0_3_0.png) (beta) March 11th 2019
 
 ## Assertions :

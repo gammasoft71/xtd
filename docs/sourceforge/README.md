@@ -1,3 +1,35 @@
+Version 1.0.0 (release) April 14th 2019
+
+## Assertions, valid  tion and assumption :
+
+[added] you can create your own assertion, validation and assumption classes
+
+[fixed] abort
+
+[fixed] exception throw message
+
+## Assertions :
+
+[added] add helpers
+
+### String assert :
+
+[fixed] fail messages
+
+## Examples :
+
+[added] add some examples
+
+## Documentation :
+
+[added] add some documentations
+
+## Other :
+
+[fixed] install
+
+______________________________________________________________________________________________
+
 Version 0.3.0 (beta) March 11th 2019
 
 ## Assertions :
