@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::unit_test class.
 #pragma once
-#define _CRT_SECURE_NO_WARNINGS
 
 #include "event_listener.hpp"
 #include "registered_test_class.hpp"
