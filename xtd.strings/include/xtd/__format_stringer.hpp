@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains __format_stringer methods.
 #pragma once
-#define _CRT_SECURE_NO_WARNINGS
 
 /// @cond
 #ifndef __XTD_STRINGS_INCLUDE__
