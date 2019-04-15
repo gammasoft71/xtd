@@ -1,6 +1,6 @@
 Version 1.0.0 (release) April 15th 2019
 
-## Assertions, valid  tion and assumption :
+## Assertions, validation and assumption :
 
 [added] you can create your own assertion, validation and assumption classes
 

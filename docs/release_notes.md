@@ -2,7 +2,7 @@
 
 ![1.0.0](pictures/version_1_0_0.png) (release) April 15th 2019
 
-## Assertions, valid  tion and assumption :
+## Assertions, validation and assumption :
 
 ![added](pictures/added.png) you can create your own assertion, validation and assumption classes
 
