@@ -1,4 +1,4 @@
-Version 1.0.0 (release) April 14th 2019
+Version 1.0.0 (release) April 15th 2019
 
 ## Assertions, valid  tion and assumption :
 
