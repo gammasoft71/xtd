@@ -33,12 +33,11 @@ namespace unit_tests {
     }
 
     void test_method_(create_version_with_major_minor_build_and_revision) {
-      version version1 {1, 2, 3, 4};
-      version version2  = version1;
-      assert::are_equal_(1, version2.major());
-      assert::are_equal_(2, version2.minor());
-      assert::are_equal_(3, version2.build());
-      assert::are_equal_(4, version2.revision());
+      version version {1, 2, 3, 4};
+      assert::are_equal_(1, version.major());
+      assert::are_equal_(2, version.minor());
+      assert::are_equal_(3, version.build());
+      assert::are_equal_(4, version.revision());
     }
 
     void test_method_(copy_version_with_copy_operator) {
@@ -52,11 +51,12 @@ namespace unit_tests {
     }
 
     void test_method_(create_version_from_version) {
-      version version {1, 2, 3, 4};
-      assert::are_equal_(1, version.major());
-      assert::are_equal_(2, version.minor());
-      assert::are_equal_(3, version.build());
-      assert::are_equal_(4, version.revision());
+      version version1 {1, 2, 3, 4};
+      version version2  = version1;
+      assert::are_equal_(1, version2.major());
+      assert::are_equal_(2, version2.minor());
+      assert::are_equal_(3, version2.build());
+      assert::are_equal_(4, version2.revision());
     }
   };
 }
