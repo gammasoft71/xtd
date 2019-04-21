@@ -31,7 +31,7 @@ using namespace xtd;
 
 // The main entry point for the application.
 int main() {
-  cout << "Hello, World !) << endl;
+  cout << "Hello, " << environment::user_name() << " !) << endl;
 }
 ```
 
