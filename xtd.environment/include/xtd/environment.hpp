@@ -2,6 +2,8 @@
 /// @brief Contains xtd::environment class.
 #pragma once
 #include "__opaque_environment.hpp"
+#include "guid.hpp"
+//#include "platform_id.hpp"
 #include "version.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access environment.
