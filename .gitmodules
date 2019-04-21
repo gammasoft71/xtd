@@ -1,3 +1,6 @@
 [submodule "xtd.tunit"]
 	path = xtd.tunit
 	url = https://github.com/gammasoft71/xtd.tunit
+[submodule "xtd.strings"]
+	path = xtd.strings
+	url = https://github.com/gammasoft71/xtd.strings
