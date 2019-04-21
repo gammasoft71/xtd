@@ -1,8 +1,15 @@
-#include <xtd/template>
-#include <catch2/catch.hpp>
+#include <xtd/environment>
+#include <xtd/tunit>
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::tunit;
 
-TEST_CASE("GIVEN Create console_key_info WHEN default constructor THEN check key, key_char and modifiers") {
+namespace unit_tests {
+  class test_class_(test_environment) {
+  public:
+    void test_method_(create_environment) {
+      assert::are_equal_(42, 42);
+    }
+  };
 }
