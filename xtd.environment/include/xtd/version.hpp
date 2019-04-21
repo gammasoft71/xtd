@@ -18,7 +18,7 @@ namespace xtd {
     /// @endcond
     
     bool operator==(const version& v) const noexcept {return this->major_ == v.major_ && this->minor_ == v.minor_ && this->build_ == v.build_ && this->revision_ == v.revision_;}
-    bool operator!=(const version& v) const noexcept {return this->operator==(v);}
+    bool operator!=(const version& v) const noexcept {return !this->operator==(v);}
     
     int build() const noexcept {return this->build_;}
     

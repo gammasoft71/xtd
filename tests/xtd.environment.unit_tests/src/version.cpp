@@ -58,5 +58,21 @@ namespace unit_tests {
       assert::are_equal_(3, version2.build());
       assert::are_equal_(4, version2.revision());
     }
+
+    void test_method_(equality_operator) {
+      version version1 {1, 2, 3, 4};
+      version version2  = version1;
+      version version3;
+      assert::is_true_(version1 == version2);
+      assert::is_false_(version1 == version3);
+    }
+
+    void test_method_(inequality_operator) {
+      version version1 {1, 2, 3, 4};
+      version version2  = version1;
+      version version3;
+      assert::is_false_(version1 != version2);
+      assert::is_true_(version1 != version3);
+    }
   };
 }
