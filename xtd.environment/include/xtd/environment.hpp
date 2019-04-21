@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::environment class.
 #pragma once
+#include "version.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access environment.
 namespace xtd {

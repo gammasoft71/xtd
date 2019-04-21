@@ -5,6 +5,7 @@ project(xtd.environment VERSION 1.0.0)
 set(INCLUDES
   include/xtd/environment
   include/xtd/environment.hpp
+  include/xtd/version.hpp
 )
 set(SOURCES
   src/environment.cpp
