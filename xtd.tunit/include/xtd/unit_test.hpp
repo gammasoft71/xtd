@@ -247,7 +247,7 @@ namespace xtd {
 #if defined(WIN32)
         localtime_s(&tm, &time_t);
 #else
-        tm = = *std::localtime(&time_t);
+        tm = *std::localtime(&time_t);
 #endif
         std::stringstream ss;
         ss << tm.tm_year + 1900 << "-" << std::setfill('0') << std::setw(2) << tm.tm_mon << "-" << std::setfill('0') << std::setw(2) << tm.tm_mday;
