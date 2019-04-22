@@ -2,6 +2,7 @@
 /// @brief Contains xtd::environment class.
 #pragma once
 #include "__opaque_environment.hpp"
+#include "environment_variable_target.hpp"
 #include "guid.hpp"
 //#include "platform_id.hpp"
 #include "version.hpp"
@@ -54,7 +55,7 @@ namespace xtd {
     /// | system                   |                            |                                  |                            |                                  | C:\\Windows\\system32                                                                                |
     /// | program_files            |                            | /Applications                    |                            | /Applications                    | C:\\Program Files (x86)                                                                              |
     /// | my_pictures              | /home/${User}/Pictures     | /Users/${User}/Pictures          | /home/${User}/Pictures     | /Users/${User}/Pictures          | C:\\Users\\${User}\\Pictures                                                                         |
-    /// | user_profile             | /Users/${User}             | /Users/${User}                   | /Users/${User}             | /Users/${User}                   | C:\\Users\\${User}                                                                                   |
+    /// | user_profile             | /home/${User}              | /Users/${User}                   | /home/${User}              | /Users/${User}                   | C:\\Users\\${User}                                                                                   |
     /// | system_x86               |                            |                                  |                            |                                  | C:\\Windows\\SysWOW64                                                                                |
     /// | program_files_x86        |                            |                                  |                            |                                  | C:\\Program Files (x86)                                                                              |
     /// | common_program_files     |                            |                                  |                            |                                  | C:\\Program Files (x86)\\Common Files                                                                |
@@ -172,10 +173,74 @@ namespace xtd {
       /// @brief This value is recognized in Windows Vista for backward compatibility, but the special folder itself is no longer used.
       common_oem_links = 58,
       /// @brief The file system directory that acts as a staging area for files waiting to be written to a CD.
-      cd_burning = 59
+      cd_burning = 59,
+      /// @brief
+      home = 60
     };
 
-    static std::string user_name() noexcept {return __opaque_environment::get_user_name();}
+    /// @brief Specifies options to use for getting the path to a special folder.
+    /// @remarks The System.Environment.SpecialFolderOption enumeration is used to define the precise behavior of the Environment.GetFolderPath method.
+    enum class special_folder_option {
+      /// @brief The path to the folder is verified. If the folder exists, the path is returned. If the folder does not exist, an empty string is returned. This is the default behavior.
+      none = 0,
+      /// @brief The path to the folder is returned without verifying whether the path exists. If the folder is located on a network, specifying this option can reduce lag time.
+      do_not_verify = 16384,
+      /// @brief The path to the folder is created if it does not already exist.
+      create = 32768
+    };
+
+    static std::string get_environment_variable(const std::string& variable) {
+      return get_environment_variable(variable, environment_variable_target::process);
+    }
     
+    static std::string get_environment_variable(const std::string& variable, environment_variable_target target) {
+      if (target == environment_variable_target::process) {
+        char* value = getenv(variable.c_str());
+        return value == nullptr ? "" : value;
+      } else  if (target == environment_variable_target::user)
+        return ""; //return microsoft::win32::registry::get_value("HKEY_CURRENT_USER\\Environment", variable, "").to_string();
+      return ""; // return microsoft::win32::registry::get_value("HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment", variable, "").to_string();
+    }
+
+    static std::string get_folder_path(environment::special_folder folder) {
+      return get_folder_path(folder, environment::special_folder_option::none);
+    }
+    
+    static std::string get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
+      std::string path = __opaque_environment::get_know_folder_path(static_cast<int>(folder));
+      
+      //if (option == environment::special_folder_option::none)
+      //  return !System::IO::Directory::Exists(path) ? "" :  path;
+      
+      //if (!System::IO::Directory::Exists(path))
+      //  System::IO::Directory::CreateDirectory(path);
+      
+      return path;
+    }
+
+    static std::string expand_environment_variables(const std::string& name) {
+      std::string buffer = name;
+      std::string result;
+      
+      int index = xtd::strings::index_of(buffer, '%');
+      while (index != -1 && xtd::strings::index_of(buffer, '%', index + 1) != -1) {
+        result += xtd::strings::substring(buffer, 0, index);
+        buffer = xtd::strings::remove(buffer, 0, index + 1);
+        index = xtd::strings::index_of(buffer, '%');
+        if (get_environment_variable(xtd::strings::substring(buffer, 0, index)) != "")
+          result += get_environment_variable(xtd::strings::substring(buffer, 0, index));
+        else
+          result += xtd::strings::format("%{0}%", xtd::strings::substring(buffer, 0, index));
+        buffer = xtd::strings::remove(buffer, 0, index + 1);
+        index = xtd::strings::index_of(buffer, '%');
+      }
+      result += buffer;
+      return result;
+    }
+
+    static std::string new_line() noexcept {return __opaque_environment::new_line();}
+
+    static std::string user_name() noexcept {return __opaque_environment::get_user_name();}
+
   };
 }

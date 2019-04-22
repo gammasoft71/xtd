@@ -9,6 +9,7 @@
 class __opaque_environment final {
 public:
   static std::string new_line();
+  static std::string get_know_folder_path(int id);
   //static xtd::platform_id get_os_platform_id();
   static int get_os_version(int& major, int& minor, int& build, int& revision);
   static bool is_os_64_bit();

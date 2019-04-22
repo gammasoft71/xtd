@@ -6,6 +6,7 @@ set(INCLUDES
   include/xtd/__opaque_environment.hpp
   include/xtd/environment
   include/xtd/environment.hpp
+  include/xtd/environment_variable_target.hpp
   include/xtd/guid.hpp
   include/xtd/version.hpp
 )

@@ -19,6 +19,11 @@ std::string __opaque_environment::new_line() {
   return "\r\n";
 }
 
+std::string __opaque_environment::get_know_folder_path(int id) {
+  char path[MAX_PATH + 1];
+  return SHGetFolderPath(null, id, null, SHGFP_TYPE_CURRENT, path) == S_OK ? path : L"";
+}
+
 int __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) {
 #pragma warning(push)
 #pragma warning(disable : 4996)
