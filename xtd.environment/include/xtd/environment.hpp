@@ -197,9 +197,13 @@ namespace xtd {
       if (target == environment_variable_target::process) {
         char* value = getenv(variable.c_str());
         return value == nullptr ? "" : value;
-      } else  if (target == environment_variable_target::user)
+      }
+      
+      if (target == environment_variable_target::user)
         return ""; //return microsoft::win32::registry::get_value("HKEY_CURRENT_USER\\Environment", variable, "").to_string();
-      return ""; // return microsoft::win32::registry::get_value("HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment", variable, "").to_string();
+      if (target == environment_variable_target::machine)
+        return ""; // return microsoft::win32::registry::get_value("HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager\\Environment", variable, "").to_string();
+      throw std::invalid_argument("invalid environment_variable_target value");
     }
 
     static std::string get_folder_path(environment::special_folder folder) {
