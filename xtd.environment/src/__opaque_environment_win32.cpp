@@ -5,7 +5,6 @@
 #include <cstring>
 #include <windows.h>
 #include <Lmcons.h>
-#include "../../include/Switch/Undef.hpp"
 
 #include "../include/xtd/__opaque_environment.hpp"
 #include <xtd/strings>
