@@ -12,6 +12,9 @@
 #include "strings.hpp"
 #include <string>
 
+#undef max
+#undef min
+
 /// @cond
 template <typename Char>
 inline std::basic_string<Char> __parse_remove_decorations(const std::basic_string<Char>& s, xtd::number_styles styles) {
