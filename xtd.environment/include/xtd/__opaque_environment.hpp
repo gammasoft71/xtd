@@ -12,7 +12,7 @@ public:
   //static xtd::platform_id get_os_platform_id();
   static int get_os_version(int& major, int& minor, int& build, int& revision);
   static bool is_os_64_bit();
-  static std::string GetMachineName();
+  static std::string get_machine_name();
   static unsigned int get_processor_count();
   static int get_system_page_size();
   static int get_tick_count();

@@ -78,7 +78,7 @@ bool __opaque_environment::is_os_64_bit() {
   return  xtd::strings::ends_with(create_process("uname -m"), "64");
 }
 
-std::string __opaque_environment::GetMachineName() {
+std::string __opaque_environment::get_machine_name() {
   return create_process("uname -n");
 }
 

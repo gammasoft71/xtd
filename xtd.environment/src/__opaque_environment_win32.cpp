@@ -15,50 +15,50 @@ xtd::platform_id __opaque_environment::get_os_platform_id() {
 }
  */
 
-string __opaque_environment::new_line() {
+std::string __opaque_environment::new_line() {
   return "\r\n";
 }
 
 int __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) {
 #pragma warning(push)
 #pragma warning(disable : 4996)
-  OSVERSIONINFOEX versionInfo;
-  ZeroMemory(&versionInfo, sizeof(OSVERSIONINFOEX));
-  versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
-  if (GetVersionEx((LPOSVERSIONINFO)&versionInfo)) {
-    major = versionInfo.dwMajorVersion;
-    minor = versionInfo.dwMinorVersion;
-    build = versionInfo.dwBuildNumber;
-    revision = versionInfo.wServicePackMajor << 16;
+  OSVERSIONINFOEX version_info;
+  ZeroMemory(&version_info, sizeof(OSVERSIONINFOEX));
+  version_info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+  if (GetVersionEx((LPOSVERSIONINFO)&version_info)) {
+    major = version_info.dwMajorVersion;
+    minor = version_info.dwMinorVersion;
+    build = version_info.dwBuildNumber;
+    revision = version_info.wServicePackMajor << 16;
   }
 #pragma warning(pop)
   return 0;
 }
 
 bool __opaque_environment::is_os_64_bit() {
-  SYSTEM_INFO systemInfo;
-  GetNativeSystemInfo(&systemInfo);
-  return (systemInfo.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_AMD64 | PROCESSOR_ARCHITECTURE_ARM64 | PROCESSOR_ARCHITECTURE_IA64)) != 0;
+  SYSTEM_INFO system_info;
+  GetNativeSystemInfo(&system_info);
+  return (system_info.wProcessorArchitecture & (PROCESSOR_ARCHITECTURE_AMD64 | PROCESSOR_ARCHITECTURE_ARM64 | PROCESSOR_ARCHITECTURE_IA64)) != 0;
 }
 
 std::string __opaque_environment::get_machine_name() {
-  wchar machineName[MAX_COMPUTERNAME_LENGTH + 1];
+  char machine_name[MAX_COMPUTERNAME_LENGTH + 1];
   DWORD size = MAX_COMPUTERNAME_LENGTH + 1;
-  if (!GetComputerName(machineName, &size))
+  if (!GetComputerName(machine_name, &size))
     return "";
-  return machineName;
+  return machine_name;
 }
 
-int __opaque_environment::get_processor_count() {
-  SYSTEM_INFO systemInfo;
-  GetNativeSystemInfo(&systemInfo);
-  return systemInfo.dwNumberOfProcessors;
+unsigned int __opaque_environment::get_processor_count() {
+  SYSTEM_INFO system_info;
+  GetNativeSystemInfo(&system_info);
+  return system_info.dwNumberOfProcessors;
 }
 
 int __opaque_environment::get_system_page_size() {
-  SYSTEM_INFO systemInfo;
-  GetNativeSystemInfo(&systemInfo);
-  return systemInfo.dwPageSize;
+  SYSTEM_INFO system_info;
+  GetNativeSystemInfo(&system_info);
+  return system_info.dwPageSize;
 }
 
 int __opaque_environment::get_tick_count() {
@@ -67,7 +67,9 @@ int __opaque_environment::get_tick_count() {
 
 std::string __opaque_environment::get_user_domain_name() {
   char name[512];
-  strcpy_s(name, 512, getenv("USERDOMAIN"));
+  size_t count = 512;
+  _dupenv_s((char**)&name, &count, "USERDOMAIN");
+  //strcpy_s(name, 512, getenv("USERDOMAIN"));
   return name;
 }
 
