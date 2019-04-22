@@ -18,6 +18,9 @@
 #include <cctype>
 #include <vector>
 
+#undef max
+#undef min
+
 /// @cond
 template<typename Char, typename ...Args>
 void __extract_format_arg(std::basic_string<Char>& fmt, std::vector<__format_information<Char>>& format, Args&&... args);
