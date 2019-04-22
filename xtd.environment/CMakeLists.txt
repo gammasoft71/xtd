@@ -13,6 +13,7 @@ set(SOURCES
   src/__opaque_environment_gcc.cpp
   src/__opaque_environment_win32.cpp
   src/environment.cpp
+  src/guid.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})

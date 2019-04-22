@@ -4,6 +4,7 @@
 #include <regex>
 #include <vector>
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   class version final {
   public:
@@ -15,11 +16,12 @@ namespace xtd {
     /// @cond
     version(const version&) noexcept = default;
     version& operator=(const version&) noexcept = default;
-    /// @endcond
     
     bool operator==(const version& v) const noexcept {return this->major_ == v.major_ && this->minor_ == v.minor_ && this->build_ == v.build_ && this->revision_ == v.revision_;}
     bool operator!=(const version& v) const noexcept {return !this->operator==(v);}
-    
+    friend std::ostream& operator <<(std::ostream& os, const version& ver) noexcept {return os << ver.to_string();}
+    /// @endcond
+
     int build() const noexcept {return this->build_;}
     
     int major() const noexcept {return this->major_;}
@@ -71,8 +73,6 @@ namespace xtd {
         result << "." << std::to_string(this->revision_);
       return result.str();
     }
-    
-    friend std::ostream& operator <<(std::ostream& os, const version& ver) noexcept {return os << ver.to_string();}
     
   private:
     int major_ = 0;

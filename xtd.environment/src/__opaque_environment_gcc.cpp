@@ -26,7 +26,7 @@
 #endif
 
 #include "../include/xtd/__opaque_environment.hpp"
-#include <xtd/strings.hpp>
+#include <xtd/strings>
 
 namespace {
   static std::string create_process(const std::string& command) {
