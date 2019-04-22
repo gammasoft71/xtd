@@ -8,7 +8,7 @@ using namespace xtd;
 // The main entry point for the application.
 int main() {
   //cout << "Hello, World!" << endl;
-  cout << "guid = " << guid::new_guid() << endl;
+  cout << "Hello, " << environment::user_name() << "!" << endl;
 }
 
 // This code produces the following output with colors:

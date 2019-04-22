@@ -175,5 +175,7 @@ namespace xtd {
       cd_burning = 59
     };
 
+    static std::string user_name() noexcept {return __opaque_environment::get_user_name();}
+    
   };
 }
