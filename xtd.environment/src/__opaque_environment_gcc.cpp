@@ -61,7 +61,7 @@ int __opaque_environment::get_os_version(int& major, int& minor, int& build, int
 #if defined(__APPLE__)
   std::vector<std::string> numbers = xtd::strings::split(create_process("sw_vers -productVersion"), {'.', '\n'});
 #else
-  std::vector<std::string> numbers = xtd::strings::split(CreateProcess("uname -r"), {'.', '-', '\n'});
+  std::vector<std::string> numbers = xtd::strings::split(create_process("uname -r"), {'.', '-', '\n'});
 #endif
   if (numbers.size() < 1 || !xtd::strings::try_parse(numbers[0], major))
     major = 0;
