@@ -22,9 +22,6 @@ source_group(src FILES ${SOURCES})
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(PkgConfig REQUIRED)
-pkg_search_module(UUID QUIET uuid)
-
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})
 if (MSVC)
@@ -32,7 +29,15 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} xtd.strings ${UUID_LIBRARIES})
+if(MSVC)
+  target_link_libraries(${PROJECT_NAME} xtd.strings)
+elseif (APPLE)
+  target_link_libraries(${PROJECT_NAME} xtd.strings)
+elseif (ANDROID)
+  target_link_libraries(${PROJECT_NAME} xtd.strings)
+elseif (UNIX)
+  target_link_libraries(${PROJECT_NAME} xtd.strings uuid)
+endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
