@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(hello_world)
-find_package(xtd.template REQUIRED)
+find_package(xtd.environment REQUIRED)
 add_executable(${PROJECT_NAME} src/hello_world.cpp)
-target_link_libraries(${PROJECT_NAME} xtd.template)
+target_link_libraries(${PROJECT_NAME} xtd.environment)
