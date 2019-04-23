@@ -6,7 +6,7 @@ using namespace xtd;
 
 // The main entry point for the application.
 int main() {
-  cout << "Hello, " << environment::user_name() << "!") << endl;
+  cout << "Hello, " << environment::user_name() << "!" << endl;
 }
 
 // This code can produces the following output:
