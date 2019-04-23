@@ -16,7 +16,7 @@ xtd::platform_id __opaque_environment::get_os_platform_id() {
 
 std::string __opaque_environment::get_know_folder_path(int id) {
   char path[MAX_PATH + 1];
-  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? path : L"";
+  return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? path : "";
 }
 
 int __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) {
