@@ -9,14 +9,8 @@
 #include "../include/xtd/__opaque_environment.hpp"
 #include <xtd/strings>
 
-/*
 xtd::platform_id __opaque_environment::get_os_platform_id() {
-  return System::PlatformID::Win32NT;
-}
- */
-
-std::string __opaque_environment::new_line() {
-  return "\n";
+  return xtd::platform_id::win32_nt;
 }
 
 std::string __opaque_environment::get_know_folder_path(int id) {
@@ -102,6 +96,10 @@ xtd::guid __opaque_environment::new_guid() {
   UUID guid;
   UuidCreate(&guid);
   return xtd::guid(guid.Data1, guid.Data2, guid.Data3, std::vector<unsigned char>(guid.Data4, guid.Data4 + 8));
+}
+
+std::string __opaque_environment::new_line() {
+  return "\n";
 }
 
 #endif

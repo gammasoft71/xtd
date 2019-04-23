@@ -4,7 +4,7 @@
 #include "__opaque_environment.hpp"
 #include "environment_variable_target.hpp"
 #include "guid.hpp"
-//#include "platform_id.hpp"
+#include "platform_id.hpp"
 #include "version.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
