@@ -16,7 +16,7 @@ xtd::platform_id __opaque_environment::get_os_platform_id() {
  */
 
 std::string __opaque_environment::new_line() {
-  return "\r\n";
+  return "\n";
 }
 
 std::string __opaque_environment::get_know_folder_path(int id) {
