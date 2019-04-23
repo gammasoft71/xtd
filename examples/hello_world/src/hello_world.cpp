@@ -6,9 +6,9 @@ using namespace xtd;
 
 // The main entry point for the application.
 int main() {
-  cout << "Hello, World!" << endl;
+  cout << "Hello, " << environment::user_name() << "!") << endl;
 }
 
-// This code produces the following output with colors:
+// This code can produces the following output:
 //
-// Hello, World!
+// Hello, gammasoft71!
