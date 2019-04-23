@@ -126,7 +126,7 @@ namespace xtd {
     /// @remarks "{0xCA761232, 0xED42, 0x11CE, {0xBA, 0xCD, 0x00, 0xAA, 0x00, 0x57, 0xB2, 0x23}}"
     guid(const std::string& guid) {
       std::string simple = xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(guid, "0x", ""), ",", ""), "-", ""), "(", ""), ")", ""), "{", ""), "}", "");
-      for (int i = 0; i < this->data_.size(); i ++) {
+      for (size_t i = 0; i < this->data_.size(); i ++) {
         this->data_[i] = xtd::parse<unsigned char>(xtd::strings::substring(simple, 0, 2), xtd::number_styles::hex_number);
         simple = xtd::strings::remove(simple, 0, 2);
       }
@@ -192,7 +192,7 @@ namespace xtd {
       bool hexadecimal = format == "x";
       
       std::string result;
-      for (int index = 0; index < this->data_.size(); index++) {
+      for (size_t index = 0; index < this->data_.size(); index++) {
         if (hexadecimal && (index == 4 || index == 6 || (index >= 8 && index <= 15)))
           result += ",";
         if (hexadecimal && (index == 0 || index == 8))
