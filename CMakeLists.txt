@@ -9,6 +9,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # Projects
 add_subdirectory(xtd.console/xtd.console)
 add_subdirectory(xtd.delegates/xtd.delegates)
+add_subdirectory(xtd.environment/xtd.environment)
 add_subdirectory(xtd.io/xtd.io)
 add_subdirectory(xtd.properties/xtd.properties)
 add_subdirectory(xtd.strings/xtd.strings)

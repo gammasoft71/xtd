@@ -3,6 +3,7 @@
 #pragma once
 #include <xtd/console.hpp>
 #include <xtd/delegate.hpp>
+#include <xtd/environment.hpp>
 #include <xtd/io.hpp>
 #include <xtd/properties.hpp>
 #include <xtd/strings.hpp>
