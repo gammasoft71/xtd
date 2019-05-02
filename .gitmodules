@@ -4,3 +4,6 @@
 [submodule "xtd.strings"]
 	path = xtd.strings
 	url = https://github.com/gammasoft71/xtd.strings
+[submodule "xtd.io"]
+	path = xtd.io
+	url = https://github.com/gammasoft71/xtd.io

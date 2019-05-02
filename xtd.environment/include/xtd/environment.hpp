@@ -4,8 +4,23 @@
 #include "__opaque_environment.hpp"
 #include "environment_variable_target.hpp"
 #include "guid.hpp"
+#include "operating_system.hpp"
 #include "platform_id.hpp"
 #include "version.hpp"
+
+#include <map>
+#include <thread>
+#include <vector>
+
+#if defined(_WIN32)
+__declspec(dllimport) extern char** environ;
+__declspec(dllimport) extern int __argc;
+__declspec(dllimport) extern char** __argv;
+#else
+extern char** environ;
+extern int __argc;
+extern char** __argv;
+#endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -78,16 +93,13 @@ namespace xtd {
       desktop = 0,
       /// @brief The directory that contains the user's program groups.
       programs = 2,
-      /// @brief The My Documents folder.
-      /// This member is equivalent to Personal.
+      /// @brief The My Documents folder. This member is equivalent to Personal.
       my_documents = 5,
-      /// @brief The directory that serves as a common repository for documents.
-      /// This member is equivalent to MyDocuments.
+      /// @brief The directory that serves as a common repository for documents. This member is equivalent to MyDocuments.
       personal = 5,
       /// @brief The directory that serves as a common repository for the user's favorite items.
       favorites = 6,
-      /// @brief The directory that corresponds to the user's Startup program group.
-      /// The system starts these programs whenever a user logs on or starts Windows NT or later, or starts Windows 98.
+      /// @brief The directory that corresponds to the user's Startup program group. The system starts these programs whenever a user logs on or starts Windows NT or later, or starts Windows 98.
       startup = 7,
       /// @brief The directory that contains the user's most recently used documents.
       recent = 8,
@@ -99,11 +111,9 @@ namespace xtd {
       my_music = 13,
       /// @brief The file system directory that serves as a repository for videos that belong to a user.
       my_videos = 14,
-      /// @brief The directory used to physically store file objects on the desktop.
-      /// Do not confuse this directory with the desktop folder itself, which is a virtual folder.
+      /// @brief The directory used to physically store file objects on the desktop. Do not confuse this directory with the desktop folder itself, which is a virtual folder.
       desktop_directory = 16,
-      /// @brief The My Computer folder.
-      /// The MyComputer constant always yields the empty string ("") because no path is defined for the My Computer folder.
+      /// @brief The My Computer folder. The MyComputer constant always yields the empty string ("") because no path is defined for the My Computer folder.
       my_computer = 17,
       /// @brief A file system directory that contains the link objects that may exist in the My Network Places virtual folder.
       network_shortcuts = 19,
@@ -119,8 +129,7 @@ namespace xtd {
       common_startup = 24,
       /// @brief The file system directory that contains files and folders that appear on the desktop for all users. This special folder is valid only for Windows NT systems.
       common_desktop_directory = 25,
-      /// @brief The directory that serves as a common repository for application-specific data for the current roaming user.
-      /// A roaming user works on more than one computer on a network. A roaming user's profile is kept on a server on the network and is loaded onto a system when the user logs on.
+      /// @brief The directory that serves as a common repository for application-specific data for the current roaming user. A roaming user works on more than one computer on a network. A roaming user's profile is kept on a server on the network and is loaded onto a system when the user logs on.
       application_data = 26,
       /// @brief The file system directory that contains the link objects that can exist in the Printers virtual folder.
       printer_shortcuts = 27,
@@ -189,11 +198,60 @@ namespace xtd {
       create = 32768
     };
 
-    static std::string get_environment_variable(const std::string& variable) {
-      return get_environment_variable(variable, environment_variable_target::process);
-    }
+    /// @brief Gets the command line for this process.
+    /// @return A string containing command-line arguments.
+    /// @remarks This method provides access to the program name and any arguments specified on the command line when the current process was started.
+    /// @remarks The program name can include path information, but is not required to do so. Use the get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
+    /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
+    static std::string command_line() noexcept {return xtd::strings::join(" ", get_command_line_args());}
     
-    static std::string get_environment_variable(const std::string& variable, environment_variable_target target) {
+    /// @brief Gets the fully qualified path of the current working directory.
+    /// @return std::sgtring A string containing a directory path.
+    /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
+    static std::string current_directory() noexcept {return __opaque_environment::get_current_directory();}
+    
+    /// @brief Sets the fully qualified path of the current working directory.
+    /// @param directory_name A string containing a directory path.
+    static void current_directory(const std::string& directory_name) {__opaque_environment::set_current_directory(directory_name);}
+    
+    /// @brief Gets a unique identifier for the current thread.
+    /// @return A std::thread::id that represents a unique identifier for this thread.
+    static std::thread::id current_thread_id() noexcept {return std::this_thread::get_id();}
+
+    /// @brief Returns a string array containing the command-line arguments for the current process.
+    /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
+    /// @remarks The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line.
+    /// @remarks The program file name can, but is not required to, include path information.
+    /// @remarks Command line arguments are delimited by spaces. You can use double quotation marks (") to include spaces within an argument. The single quotation mark ('), however, does not provide this functionality.
+    /// @remarks If a double quotation mark follows two or an even number of backslashes, each proceeding backslash pair is replaced with one backslash and the double quotation mark is removed. If a double quotation mark follows an odd number of backslashes, including just one, each preceding pair is replaced with one backslash and the remaining backslash is removed; however, in this case the double quotation mark is not removed.
+    /// @remarks The following table shows how command line arguments can be delimited, and assumes MyApp as the current executing application.
+    /// | Input at the command line                    | Resulting command line arguments           |
+    /// |----------------------------------------------|--------------------------------------------|
+    /// | MyApp alpha beta                             | MyApp, alpha, beta                         |
+    /// | MyApp "alpha with spaces" "beta with spaces" | MyApp, alpha with spaces, beta with spaces |
+    /// | MyApp 'alpha with spaces' beta               | MyApp, 'alpha, with, spaces', beta         |
+    /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
+    /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
+    /// @remarks To obtain the command line as a single string, use the command_line method.
+    static std::vector<std::string> get_command_line_args() noexcept {return {__argv, __argv + __argc};}
+    
+    /// @brief Retrieves the value of an environment variable from the current process.
+    /// @param variable The name of the environment variable.
+    /// @return std::string The value of the environment variable specified by variable, or empty "" if the environment variable is not found.
+    /// @remarks The get_environment_variable(std::string) method retrieves an environment variable from the environment block of the current process only. It is equivalent to calling the get_environment_variable(std::string, xtd::environment_variable_target) method with a target value of xtd::environment_variable_target.process.
+    /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
+    /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
+    static std::string get_environment_variable(const std::string& variable) noexcept {return get_environment_variable(variable, environment_variable_target::process);}
+    
+    /// @brief Retrieves the value of an environment variable from the current process or from the Windows operating system registry key for the current user or local machine.
+    /// @param variable The name of an environment variable.
+    /// @param target One of the EnvironmentVariableTarget values.
+    /// @exception std::invaloid_argument target is not a valid environment_variable_target value.
+    /// @return std::string The value of the environment variable specified by the variable and target parameters, or empty "" if the environment variable is not found.
+    /// @remarks To retrieve all environment variables along with their values, call the get_environment_variables method.
+    /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
+    /// @todo Add xtd::registry and uncomment lines.
+   static std::string get_environment_variable(const std::string& variable, environment_variable_target target) {
       if (target == environment_variable_target::process) {
         char* value = getenv(variable.c_str());
         return value == nullptr ? "" : value;
@@ -206,23 +264,58 @@ namespace xtd {
       throw std::invalid_argument("invalid environment_variable_target value");
     }
 
-    static std::string get_folder_path(environment::special_folder folder) {
-      return get_folder_path(folder, environment::special_folder_option::none);
+    /// @brief Retrieves all environment variable names and their values from the current process.
+    /// @return std::map A dictionary that contains all environment variable names and their values; otherwise, an empty dictionary if no environment variables are found.
+    /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
+    static std::map<std::string, std::string>& get_environment_variables() noexcept {return get_environment_variables(environment_variable_target::process);}
+
+    /// @brief Retrieves all environment variable names and their values from the current process, or from the Windows operating system registry key for the current user or local machine.
+    /// @param target One of the environment_variable_target values.
+    /// @return std::map A dictionary that contains all environment variable names and their values from the source specified by the target parameter; otherwise, an empty dictionary if no environment variables are found.
+    /// @exception std::invaloid_argument target is not a valid environment_variable_target value.
+    /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
+    /// @todo Add xtd::registry and uncomment lines.
+    static std::map<std::string, std::string>& get_environment_variables(environment_variable_target target) {
+      if (target == environment_variable_target::process) {
+        static std::map<std::string, std::string> envs;
+        if (envs.size() == 0) {
+          for (size_t index = 0; environ[index] != nullptr; index++) {
+            std::vector<std::string> key_value = xtd::strings::split(environ[index], {'='});
+            if (key_value.size() == 2)
+              envs[key_value[0]] = key_value[1];
+          }
+        }
+        return envs;
+      }
+      
+      if(target == environment_variable_target::user || target == environment_variable_target::machine) {
+        static std::map<std::string, std::string> envs;
+        envs.clear();
+        //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
+        //for (auto name : key.get_value_names())
+        //  envs[name] = key.get_value(name).to_string();
+        return envs;
+      }
+      
+      throw std::invalid_argument("invalid environment_variable_target value");
     }
+
+    static std::string get_folder_path(environment::special_folder folder) noexcept {return get_folder_path(folder, environment::special_folder_option::none);}
     
+    /// @todo Add xtd::io::directory and uncomment lines.
     static std::string get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
       std::string path = __opaque_environment::get_know_folder_path(static_cast<int>(folder));
       
       //if (option == environment::special_folder_option::none)
-      //  return !System::IO::Directory::Exists(path) ? "" :  path;
+      //  return !xtd::io::directory::exists(path) ? "" :  path;
       
       //if (!System::IO::Directory::Exists(path))
-      //  System::IO::Directory::CreateDirectory(path);
+      //  xtd::io::directory::create_directory(path);
       
       return path;
     }
-
-    static std::string expand_environment_variables(const std::string& name) {
+    
+    static std::string expand_environment_variables(const std::string& name) noexcept {
       std::string buffer = name;
       std::string result;
       
@@ -242,9 +335,115 @@ namespace xtd {
       return result;
     }
 
+    /// @brief Determines whether the current operating system is a 64-bit operating system.
+    /// @return true if the operating system is 64-bit; otherwise, false.
+    static bool is_64_bit_operating_system() noexcept {return __opaque_environment::is_os_64_bit();}
+    
+    /// @brief Determines whether the current process is a 64-bit process.
+    /// @return true if the process is 64-bit; otherwise, false.
+    static bool is_64_bit_process() noexcept {return sizeof(size_t) == 8;}
+
+    /// @brief Gets the NetBIOS name of this local computer.
+    /// @return A string containing the name of this computer.
+    /// @remarks The name of this computer is established at system startup when the name is read from the registry. If this computer is a node in a cluster, the name of the node is returned.
+    static std::string machine_name() noexcept {return __opaque_environment::get_machine_name();}
+    
+    /// @brief Gets the newline string defined for this environment.
+    /// @return A string containing "\r\n" for non-Unix platforms, or a string containing "\n" for Unix platforms.
     static std::string new_line() noexcept {return __opaque_environment::new_line();}
 
-    static std::string user_name() noexcept {return __opaque_environment::get_user_name();}
+    /// @brief Inserts a new-line character and flushes the stream.
+    /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
+    /// @return Argument os.
+    template <class Char, class Traits>
+    static std::basic_ostream<Char, Traits>& new_line(std::basic_ostream<Char, Traits>& os) {
+      os.put(os.widen('\n'));
+      os.flush();
+      return os;
+    }
+    
+    /// @brief Gets an operating_system object that contains the current platform identifier and version number.
+    /// @return An object that contains the platform identifier and version number.
+    static xtd::operating_system os_version() noexcept {
+      static xtd::operating_system os(xtd::platform_id::unknown, xtd::version());
+      if (os.platform() == xtd::platform_id::unknown) {
+        int major, minor, build, revision;
+        __opaque_environment::get_os_version(major, minor, build, revision);
+        xtd::version version;
+        if (major != 1 && minor != -1 && build != -1 && revision != -1)
+          version = xtd::version(major, minor, build, revision);
+        else if (major != 1 && minor != -1 && build != -1)
+          version = xtd::version(major, minor, build);
+        else if (major != 1 && minor != -1)
+          version = xtd::version(major, minor);
+        os = operating_system(__opaque_environment::get_os_platform_id(), version, __opaque_environment::get_service_pack());
+      }
+      return os;
+    }
 
+    /// @brief Gets the number of processors on the current machine.
+    /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
+    static unsigned int processor_count() noexcept {return __opaque_environment::get_processor_count();}
+
+    static void set_environment_variable(const std::string& name, const std::string& value) {
+      set_environment_variable(name, value, environment_variable_target::process);
+    }
+    
+    /// @todo Add xtd::registry and uncomment lines.
+    static void set_environment_variable(const std::string& name, const std::string& value, environment_variable_target target) {
+      if (xtd::strings::is_empty(name)) throw std::invalid_argument("name is empty");
+      
+      if (target == environment_variable_target::process) {
+        if (xtd::strings::is_empty(value)) {
+          get_environment_variables().erase(name);
+          if (__opaque_environment::unset_env(name) != 0) throw std::invalid_argument("can't erase environment variable");
+        } else {
+          get_environment_variables()[name] = value;
+          if (__opaque_environment::set_env(name, value) != 0) throw std::invalid_argument("can't set environment variable");
+        }
+      } else if(target == environment_variable_target::user || target == environment_variable_target::machine) {
+        //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
+        //if (xtd::strings::is_empty(value))
+        //  key.delete_value(name);
+        //else
+        //  key.set_value(name, value);
+      } else
+        throw std::invalid_argument("invalid environment_variable_target value");
+    }
+
+    /// @brief Gets current stack trace information.
+    /// @return A string containing stack trace information. This value can be empty "".
+    /// @todo Add xtd::diagnostics and uncomment line.
+    static std::string stack_trace() noexcept {
+      return ""; // return xtd::diagnostics::stack_trace(3, true).to_string();
+    }
+    
+    /// @brief Gets the fully qualified path of the system directory.
+    /// @return A string containing a directory path.
+    /// @remarks An example of the value returned is the string "C:\Windows".
+    static std::string system_directory() noexcept {return get_folder_path(environment::special_folder::system);}
+
+    /// @brief Gets the number of bytes in the operating system's memory page.
+    /// @return The number of bytes in the system memory page.
+    static size_t system_page_size() noexcept {return __opaque_environment::get_system_page_size();}
+
+    /// @brief Gets the number of milliseconds elapsed since the system started.
+    /// @return A 32-bit unsigned integer containing the amount of time in milliseconds that has passed since the last time the computer was started.
+    static std::chrono::milliseconds tick_count() noexcept {return std::chrono::milliseconds(__opaque_environment::get_tick_count());}
+    
+    /// @brief Gets the network domain name associated with the current user.
+    /// @return The network domain name associated with the current user.
+    static std::string user_domain_name() noexcept {return __opaque_environment::get_user_domain_name();}
+    
+    /// @brief Gets a value indicating whether the current process is running in user interactive mode.
+    /// @return bool true if the current process is running in user interactive mode; otherwise, false.
+    /// @remarks The user_interactive method reports false for a Os process or a service like IIS that runs without a user interface. If this property is false, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
+    /// @remarks Return always true for now.
+    /// @todo check if process is an operating system process or service process...
+    static bool user_interactive() noexcept {return true;}
+    
+    /// @brief Gets the user name of the person who is currently logged on to the operating system.
+    /// @return The user name of the person who is logged on to the operating system.
+    static std::string user_name() noexcept {return __opaque_environment::get_user_name();}
   };
 }

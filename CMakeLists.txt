@@ -15,6 +15,9 @@ endif()
 
 # Projects
 add_subdirectory(xtd.environment)
+#add_subdirectory(xtd.diagnostics/xtd.diagnostics)
+add_subdirectory(xtd.io/xtd.io)
+#add_subdirectory(xtd.registry/xtd.registry)
 add_subdirectory(xtd.strings/xtd.strings)
 option(ENABLE_TESTS "Enable tests" OFF)
 if (ENABLE_TESTS)
