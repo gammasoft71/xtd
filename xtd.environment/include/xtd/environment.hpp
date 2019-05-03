@@ -267,8 +267,17 @@ namespace xtd {
     /// @todo Add xtd::registry and uncomment lines.
     static std::map<std::string, std::string>& get_environment_variables(environment_variable_target target);
 
+    /// @brief Gets the path to the system special folder that is identified by the specified enumeration.
+    /// @param folder One of enumeration values that identifies a system special folder.
+    /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
+    /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
     static std::string get_folder_path(environment::special_folder folder) noexcept {return get_folder_path(folder, environment::special_folder_option::none);}
     
+    /// @brief Gets the path to the system special folder that is identified by the specified enumeration, and uses a specified option for accessing special folders.
+    /// @param folder One of the enumeration values that identifies a system special folder.
+    /// @param option One of the enumeration values taht specifies options to use for accessing a special folder.
+    /// @return The path to the specified system special folder, if that folder physically exists on your computer; otherwise, an empty string ("").
+    /// @remarks This method retrieves the path to a system special folder, such as Program Files, Programs, System, or Startup, which can be used to access common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.
     /// @todo Add xtd::io::directory and uncomment lines.
     static std::string get_folder_path(environment::special_folder folder, environment::special_folder_option option) {
       std::string path = __opaque_environment::get_know_folder_path(static_cast<int>(folder));
@@ -282,6 +291,22 @@ namespace xtd {
       return path;
     }
     
+    /// @brief Returns an array of string containing the names of the logical drives on the current computer.
+    /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
+    /// @todo Add xtd::io::__opaque_io and uncomment lines.
+    static std::vector<std::string> get_logical_drives() noexcept {
+      return {}; //__opaque_io::get_drives();
+    }
+    
+    /// @brief Terminates this process and returns an exit code to the operating system.
+    /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
+    /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
+    static void exit(int exit_code) noexcept {::exit(exit_code);}
+    
+    /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
+    /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
+    /// @return A string with each environment variable replaced by its value.
+    /// @remarks Replacement only occurs for environment variables that are set. For example, suppose name is "MyENV = %MyENV%". If the environment variable, MyENV, is set to 42, this method returns "MyENV = 42". If MyENV is not set, no change occurs; this method returns "MyENV = %MyENV%".
     static std::string expand_environment_variables(const std::string& name) noexcept {
       std::string buffer = name;
       std::string result;
@@ -347,28 +372,41 @@ namespace xtd {
     /// @return The 32-bit unsigned integer that specifies the number of processors on the current machine. There is no default. If the current machine contains multiple processor groups, this property returns the number of logical processors that are available for use.
     static unsigned int processor_count() noexcept {return __opaque_environment::get_processor_count();}
 
-    static void set_environment_variable(const std::string& name, const std::string& value) {
-      set_environment_variable(name, value, environment_variable_target::process);
+    /// @brief Creates, modifies, or deletes an environment variable stored in the current process.
+    /// @param variable The name of an environment variable.
+    /// @param value A value to assign to variable.
+    /// @remarks Calling this method is equivalent to calling the set_environment_variable(std::string, std::string, environment_variable_target) overload with a value of environment_variable_target::process for the target argument.
+    /// @remarks If the value argument is not empty and the environment variable named by the variable parameter does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified. Because the environment variable is defined in the environment block of the current process only, it does not persist after the process has ended.
+    /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
+    static void set_environment_variable(const std::string& variable, const std::string& value) {
+      set_environment_variable(variable, value, environment_variable_target::process);
     }
     
+    /// @brief Creates, modifies, or deletes an environment variable stored in the current process or in the Windows operating system registry key reserved for the current user or local machine.
+    /// @param variable The name of an environment variable.
+    /// @param value A value to assign to variable.
+    /// @remarks The set_environment_variable(std::string, std::string, environment_variable_target) method lets you define an environment variable that is available to the current process (the environment_variable_target::process value). Environment variables that are unique to the current process environment block persist only until the process ends.
+    /// @remarks In addition, on Windows systems only, the set_environment_variable(std::string, std::string, environment_variable_target) method lets you define an environment variable that is available to all processes that run on a machine (the environment_variable_target::machine value) and to all processes run by a user (the environment_variable_target::user value). Per-machine and per-user environment variables are copied into the environment block of the current process.
+    /// @remarks If the value argument is not empty and the environment variable named by the variable argument does not exist, the environment variable is created and assigned the contents of value. If it does exist, its value is modified.
+    /// @remarks If value is empty and the environment variable named by variable exists, the environment variable is deleted. If variable does not exist, no error occurs even though the operation cannot be performed.
     /// @todo Add xtd::registry and uncomment lines.
-    static void set_environment_variable(const std::string& name, const std::string& value, environment_variable_target target) {
-      if (xtd::strings::is_empty(name)) throw std::invalid_argument("name is empty");
+    static void set_environment_variable(const std::string& variable, const std::string& value, environment_variable_target target) {
+      if (xtd::strings::is_empty(variable)) throw std::invalid_argument("name is empty");
       
       if (target == environment_variable_target::process) {
         if (xtd::strings::is_empty(value)) {
-          get_environment_variables().erase(name);
-          if (__opaque_environment::unset_env(name) != 0) throw std::invalid_argument("can't erase environment variable");
+          get_environment_variables().erase(variable);
+          if (__opaque_environment::unset_env(variable) != 0) throw std::invalid_argument("can't erase environment variable");
         } else {
-          get_environment_variables()[name] = value;
-          if (__opaque_environment::set_env(name, value) != 0) throw std::invalid_argument("can't set environment variable");
+          get_environment_variables()[variable] = value;
+          if (__opaque_environment::set_env(variable, value) != 0) throw std::invalid_argument("can't set environment variable");
         }
       } else if(target == environment_variable_target::user || target == environment_variable_target::machine) {
         //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
         //if (xtd::strings::is_empty(value))
-        //  key.delete_value(name);
+        //  key.delete_value(variable);
         //else
-        //  key.set_value(name, value);
+        //  key.set_value(variable, value);
       } else
         throw std::invalid_argument("invalid environment_variable_target value");
     }

@@ -20,6 +20,7 @@ int main() {
   cout << "User domain name = " << environment::user_domain_name() << environment::new_line;
   cout << "User name = " << environment::user_name() << environment::new_line;
   cout << "Tick count = " << environment::tick_count() << environment::new_line;
+  environment::exit(42);
 }
 
 // This code produces the following output with colors:
