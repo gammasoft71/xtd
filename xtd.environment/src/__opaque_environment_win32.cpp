@@ -49,7 +49,7 @@ int __opaque_environment::get_os_version(int& major, int& minor, int& build, int
   return 0;
 }
 
-std::string __opaque_environment::get_service_pack() {
+std::string __opaque_environment::get_service_pack() noexcept {
 #pragma warning(push)
 #pragma warning(disable : 4996)
   OSVERSIONINFOEX version_info;
