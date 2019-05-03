@@ -12,16 +12,6 @@
 #include <thread>
 #include <vector>
 
-#if defined(_WIN32)
-__declspec(dllimport) extern char** environ;
-__declspec(dllimport) extern int __argc;
-__declspec(dllimport) extern char** __argv;
-#else
-extern char** environ;
-extern int __argc;
-extern char** __argv;
-#endif
-
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The environment class.
@@ -233,7 +223,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the command_line method.
-    static std::vector<std::string> get_command_line_args() noexcept {return {__argv, __argv + __argc};}
+    static std::vector<std::string> get_command_line_args() noexcept;
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
@@ -275,30 +265,7 @@ namespace xtd {
     /// @exception std::invaloid_argument target is not a valid environment_variable_target value.
     /// @remarks The names and values for the environment variables are stored as key-value pairs in the returned std::map.
     /// @todo Add xtd::registry and uncomment lines.
-    static std::map<std::string, std::string>& get_environment_variables(environment_variable_target target) {
-      if (target == environment_variable_target::process) {
-        static std::map<std::string, std::string> envs;
-        if (envs.size() == 0) {
-          for (size_t index = 0; environ[index] != nullptr; index++) {
-            std::vector<std::string> key_value = xtd::strings::split(environ[index], {'='});
-            if (key_value.size() == 2)
-              envs[key_value[0]] = key_value[1];
-          }
-        }
-        return envs;
-      }
-      
-      if(target == environment_variable_target::user || target == environment_variable_target::machine) {
-        static std::map<std::string, std::string> envs;
-        envs.clear();
-        //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
-        //for (auto name : key.get_value_names())
-        //  envs[name] = key.get_value(name).to_string();
-        return envs;
-      }
-      
-      throw std::invalid_argument("invalid environment_variable_target value");
-    }
+    static std::map<std::string, std::string>& get_environment_variables(environment_variable_target target);
 
     static std::string get_folder_path(environment::special_folder folder) noexcept {return get_folder_path(folder, environment::special_folder_option::none);}
     
