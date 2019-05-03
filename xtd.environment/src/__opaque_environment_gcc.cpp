@@ -25,7 +25,7 @@
 #else
 #include <sys/sysinfo.h>
 #endif
-#include <dirent.h>
+#include <sys/param.h>
 #include <unistd.h>
 
 #include "../include/xtd/__opaque_environment.hpp"

@@ -16,6 +16,7 @@ int main() {
   cout << "Os version = " << environment::os_version() << environment::new_line;
   cout << "Processor count = " << environment::processor_count() << environment::new_line;
   cout << "System page size = " << environment::system_page_size() << environment::new_line;
+  cout << "System directory = " << environment::system_directory() << environment::new_line;
   cout << "User domain name = " << environment::user_domain_name() << environment::new_line;
   cout << "User name = " << environment::user_name() << environment::new_line;
   cout << "Tick count = " << environment::tick_count() << environment::new_line;
