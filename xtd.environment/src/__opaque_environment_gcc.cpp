@@ -16,7 +16,6 @@
 #else
 #include "../../include/Switch/System/Random.hpp"
 #endif
-
 #include <sys/time.h>
 
 #if defined(__APPLE__)
@@ -26,6 +25,7 @@
 #else
 #include <sys/sysinfo.h>
 #endif
+#include <dirent.h>
 #include <unistd.h>
 
 #include "../include/xtd/__opaque_environment.hpp"
