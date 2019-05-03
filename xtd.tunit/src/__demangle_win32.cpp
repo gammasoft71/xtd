@@ -13,7 +13,7 @@ namespace {
   }
 }
 
-std::string __demangle(const std::string& name) {
+std::string __tunit_demangle(const std::string& name) {
   std::vector<std::string> types = {"enum ", "class ", "union ", "struct "};
   std::string result = name;
   std::for_each(types.begin(), types.end(), std::bind(erase_all_sub_str, std::ref(result), std::placeholders::_1));

@@ -719,7 +719,7 @@ namespace xtd {
           statement();
           succeed(message, line_info);
         } catch (const std::exception& e) {
-          base_assert::fail("No Exception to be thrown", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
+          base_assert::fail("No Exception to be thrown", "<" + __tunit_demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
           base_assert::fail("No Exception to be thrown", "<exception>", message, line_info);
         }
@@ -1123,7 +1123,7 @@ namespace xtd {
         if (dynamic_cast<const Type*>(&value) != nullptr)
           succeed(message, line_info);
         else
-          base_assert::fail("instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
+          base_assert::fail("instance of <" + __tunit_demangle(typeid(Type).name()) + ">", "<" + __tunit_demangle(typeid(value).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that the first value is is_less than the second value.
@@ -1696,7 +1696,7 @@ namespace xtd {
         if (dynamic_cast<const Type*>(&value) == nullptr)
           succeed(message, line_info);
         else
-          base_assert::fail("not instance of <" + __demangle(typeid(Type).name()) + ">", "<" + __demangle(typeid(value).name()) + ">", message, line_info);
+          base_assert::fail("not instance of <" + __tunit_demangle(typeid(Type).name()) + ">", "<" + __tunit_demangle(typeid(value).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -2578,15 +2578,15 @@ namespace xtd {
       static void throws(const std::function<void()>& statement, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           statement();
-          base_assert::fail("<"  + __demangle(typeid(TException).name()) + ">", "<nothing>", message, line_info);
+          base_assert::fail("<"  + __tunit_demangle(typeid(TException).name()) + ">", "<nothing>", message, line_info);
         } catch (const TException&) {
           succeed(message, line_info);
         } catch (const xtd::tunit::assert_error&) {
           throw;
         } catch (const std::exception& e) {
-          base_assert::fail("<"  + __demangle(typeid(TException).name()) + ">", "<" + __demangle(typeid(e).name()) + ">", message, line_info);
+          base_assert::fail("<"  + __tunit_demangle(typeid(TException).name()) + ">", "<" + __tunit_demangle(typeid(e).name()) + ">", message, line_info);
         } catch (...) {
-          base_assert::fail("<"  + __demangle(typeid(TException).name()) + ">", "<exception>", message, line_info);
+          base_assert::fail("<"  + __tunit_demangle(typeid(TException).name()) + ">", "<exception>", message, line_info);
         }
       }
       

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "__demangle.hpp"
-#include "__join__items.hpp"
+#include "__tunit_join__items.hpp"
 #include "abort_error.hpp"
 #include "assert_error.hpp"
 #include "default_insert_basic_ostream_operator.hpp"
@@ -164,15 +164,15 @@ namespace xtd {
       static void error(const std::string& actual, const std::string& expected, const std::string& message, const xtd::tunit::line_info& line_info);
       
       template <typename TValue>
-      static std::string to_string(const TValue& value) {return __to_string(value);}
+      static std::string to_string(const TValue& value) {return __tunit_to_string(value);}
       
       template <typename TValue>
-      static std::string to_string(const TValue* value) {return __to_string(value);}
+      static std::string to_string(const TValue* value) {return __tunit_to_string(value);}
 
       template<typename TCollection>
-      static std::string join_items(const TCollection& collection) {return __join__items(collection);}
+      static std::string join_items(const TCollection& collection) {return __tunit_join__items(collection);}
       
-      static std::string join_items(const std::string& str) {return __join__items(str);}
+      static std::string join_items(const std::string& str) {return __tunit_join__items(str);}
     };
   }
 }

@@ -5,7 +5,7 @@ project(xtd.tunit VERSION 1.0.0)
 set(INCLUDES
   include/xtd/__console_color.hpp
   include/xtd/__demangle.hpp
-  include/xtd/__join__items.hpp
+  include/xtd/__tunit_join__items.hpp
   include/xtd/abort_error.hpp
   include/xtd/assert.hpp
   include/xtd/assert_error.hpp
