@@ -74,7 +74,7 @@ namespace xtd {
       static void all_items_are_instances_of(const TCollection& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
         for (auto item : collection)
           if (dynamic_cast<TExpected>(item) == nullptr) {
-            base_assert::fail("all items instance of <" + __demangle(typeid(TExpected).name()) + ">", base_assert::join_items(collection), message, line_info);
+            base_assert::fail("all items instance of <" + __tunit_demangle(typeid(TExpected).name()) + ">", base_assert::join_items(collection), message, line_info);
             return;
           }
         assert::succeed(message, line_info);
@@ -91,7 +91,7 @@ namespace xtd {
       static void all_items_are_instances_of(const std::initializer_list<TItem>& collection, const std::string& message, const xtd::tunit::line_info& line_info) {
         for (auto item : collection)
           if (dynamic_cast<TExpected>(item) == nullptr) {
-            base_assert::fail("all items instance of <" + __demangle(typeid(TExpected).name()) + ">", base_assert::join_items(collection), message, line_info);
+            base_assert::fail("all items instance of <" + __tunit_demangle(typeid(TExpected).name()) + ">", base_assert::join_items(collection), message, line_info);
             return;
           }
         assert::succeed(message, line_info);

@@ -341,7 +341,7 @@ namespace xtd {
             return;
           }
         }
-        base_assert::fail("not equal <" + __demangle(typeid(expected).name()) + ">", "<" + __demangle(typeid(expected).name()) + ">", message, line_info);
+        base_assert::fail("not equal <" + __tunit_demangle(typeid(expected).name()) + ">", "<" + __tunit_demangle(typeid(expected).name()) + ">", message, line_info);
       }
       
       /// @brief Asserts that two files are not equal.

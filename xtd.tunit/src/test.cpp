@@ -54,7 +54,7 @@ void test::run(const unit_test& unit_test, const xtd::tunit::test_class& test_cl
         unit_test.event_listener_->on_test_ignored(xtd::tunit::test_event_args(*this, test_class, unit_test));
       } catch(const std::exception& e) {
         xtd::tunit::settings::default_settings().exit_status(EXIT_FAILURE);
-        xtd::tunit::test::current_test().message_ = "Exception <" + __demangle(typeid(e).name()) + "> throws";
+        xtd::tunit::test::current_test().message_ = "Exception <" + __tunit_demangle(typeid(e).name()) + "> throws";
         xtd::tunit::test::current_test().status_ = test::test_status::failed;
         unit_test.event_listener_->on_test_failed(xtd::tunit::test_event_args(*this, test_class, unit_test));
       } catch(...) {

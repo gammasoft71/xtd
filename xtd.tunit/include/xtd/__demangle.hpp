@@ -4,5 +4,5 @@
 #include <string>
 
 /// @cond
-std::string __demangle(const std::string& name);
+std::string __tunit_demangle(const std::string& name);
 /// @endcond
