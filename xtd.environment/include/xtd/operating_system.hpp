@@ -64,22 +64,22 @@ namespace xtd {
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     /// @remarks By default, the value returned by version_string is the same as the value returned by the to_string method.
     std::string version_string() const noexcept {
-      std::string os;
+      if (!this->version_string_.empty()) return this->version_string_;
       switch (this->platform_) {
-        case xtd::platform_id::win32s: os = "Microsoft Win32S"; break;
-        case xtd::platform_id::win32_windows: os = this->version_.major() > 4 || (this->version_.major() == 4 && this->version_.minor() > 0) ? "Microsoft Windows 98" : "Microsoft Windows 95"; break;
-        case xtd::platform_id::win32_nt: os = "Microsoft Windows NT"; break;
-        case xtd::platform_id::win_ce: os = "Microsoft Windows CE"; break;
-        case xtd::platform_id::unix: os = "Unix"; break;
-        case xtd::platform_id::xbox: os = "Xbox"; break;
-        case xtd::platform_id::mac_os_x: os = "macOS"; break;
-        case xtd::platform_id::ios: os = "IOs"; break;
-        case xtd::platform_id::android: os = "Android"; break;
-        case xtd::platform_id::unknown: os = "<Unknown>"; break;
+        case xtd::platform_id::win32s: this->version_string_ = "Microsoft Win32S"; break;
+        case xtd::platform_id::win32_windows: this->version_string_ = this->version_.major() > 4 || (this->version_.major() == 4 && this->version_.minor() > 0) ? "Microsoft Windows 98" : "Microsoft Windows 95"; break;
+        case xtd::platform_id::win32_nt: this->version_string_ = "Microsoft Windows NT"; break;
+        case xtd::platform_id::win_ce: this->version_string_ = "Microsoft Windows CE"; break;
+        case xtd::platform_id::unix: this->version_string_ = "Unix"; break;
+        case xtd::platform_id::xbox: this->version_string_ = "Xbox"; break;
+        case xtd::platform_id::mac_os_x: this->version_string_ = "macOS"; break;
+        case xtd::platform_id::ios: this->version_string_ = "IOs"; break;
+        case xtd::platform_id::android: this->version_string_ = "Android"; break;
+        case xtd::platform_id::unknown: this->version_string_ = "<Unknown>"; break;
       }
-      os += " " + this->version_.to_string(3);
-      if (!this->service_pack_.empty()) os += " " + this->service_pack();
-      return os;
+      this->version_string_ += " " + this->version_.to_string(3);
+      if (!this->service_pack_.empty()) this->version_string_ += " " + this->service_pack();
+      return this->version_string_;
     }
     
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
@@ -90,5 +90,6 @@ namespace xtd {
     xtd::platform_id platform_ = xtd::platform_id::unknown;
     xtd::version version_;
     std::string service_pack_;
+    mutable std::string version_string_;
   };
 }
