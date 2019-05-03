@@ -97,13 +97,13 @@ int __opaque_environment::get_os_version(int& major, int& minor, int& build, int
   std::vector<std::string> numbers = xtd::strings::split(create_process("uname -r"), {'.', '-', '\n'});
 #endif
   if (numbers.size() < 1 || !xtd::strings::try_parse(numbers[0], major))
-    major = -1;
+    major = 0;
   if (numbers.size() < 2 || !xtd::strings::try_parse(numbers[1], minor))
-    minor = -1;
+    minor = 0;
   if (numbers.size() < 3 || !xtd::strings::try_parse(numbers[2], build))
-    build = -1;
+    build = 0;
   if (numbers.size() < 4 || !xtd::strings::try_parse(numbers[3], revision))
-    revision = -1;
+    revision = 0;
   return 0;
 }
 

@@ -63,26 +63,28 @@ namespace xtd {
     /// @brief Gets the concatenated string representation of the platform identifier, version, and service pack that are currently installed on the operating system.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     /// @remarks By default, the value returned by version_string is the same as the value returned by the to_string method.
-    std::string version_string() const noexcept {return this->to_string();}
+    std::string version_string() const noexcept {
+      std::string os;
+      switch (this->platform_) {
+        case xtd::platform_id::win32s: os = "Microsoft Win32S"; break;
+        case xtd::platform_id::win32_windows: os = this->version_.major() > 4 || (this->version_.major() == 4 && this->version_.minor() > 0) ? "Microsoft Windows 98" : "Microsoft Windows 95"; break;
+        case xtd::platform_id::win32_nt: os = "Microsoft Windows NT"; break;
+        case xtd::platform_id::win_ce: os = "Microsoft Windows CE"; break;
+        case xtd::platform_id::unix: os = "Unix"; break;
+        case xtd::platform_id::xbox: os = "Xbox"; break;
+        case xtd::platform_id::mac_os_x: os = "macOS"; break;
+        case xtd::platform_id::ios: os = "IOs"; break;
+        case xtd::platform_id::android: os = "Android"; break;
+        case xtd::platform_id::unknown: os = "<Unknown>"; break;
+      }
+      os += " " + this->version_.to_string(3);
+      if (!this->service_pack_.empty()) os += " " + this->service_pack();
+      return os;
+    }
     
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
-    std::string to_string() const noexcept {
-      std::string operating_system;
-      switch (this->platform_) {
-        case xtd::platform_id::win32s: operating_system = "Microsoft Win32S"; break;
-        case xtd::platform_id::win32_windows: operating_system = "Microsoft Windows 98"; break;
-        case xtd::platform_id::win32_nt: operating_system = "Microsoft Windows NT"; break;
-        case xtd::platform_id::win_ce: operating_system = "Microsoft Windows CE"; break;
-        case xtd::platform_id::unix: operating_system = "Unix"; break;
-        case xtd::platform_id::xbox: operating_system = "Xbox"; break;
-        case xtd::platform_id::mac_os_x: operating_system = "macOS"; break;
-        case xtd::platform_id::ios: operating_system = "IOs"; break;
-        case xtd::platform_id::android: operating_system = "Android"; break;
-        case xtd::platform_id::unknown: operating_system = "<Unknown>"; break;
-      }
-      return xtd::strings::trim(xtd::strings::format("{} {} {}", operating_system, this->version_, this->service_pack()));
-    }
+    std::string to_string() const noexcept {return this->version_string();}
     
   private:
     xtd::platform_id platform_ = xtd::platform_id::unknown;

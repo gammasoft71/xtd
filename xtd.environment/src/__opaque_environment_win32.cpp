@@ -42,7 +42,7 @@ int __opaque_environment::get_os_version(int& major, int& minor, int& build, int
     major = version_info.dwMajorVersion;
     minor = version_info.dwMinorVersion;
     build = version_info.dwBuildNumber;
-    revision = version_info.wServicePackMajor << 16;
+    revision = (version_info.wServicePackMajor << 16) | version_info.wServicePackMinor;
   }
 #pragma warning(pop)
   return 0;
