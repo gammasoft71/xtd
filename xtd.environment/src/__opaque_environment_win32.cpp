@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <direct.h>
 #include <shlobj.h>
 #include <windows.h>
 #include <Lmcons.h>
