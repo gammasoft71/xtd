@@ -50,8 +50,8 @@ public:
 };
 
 // The main entry point for the application.
-int main(int argc, char* argv[]) {
-  return xtd::tunit::console_unit_test(argv, argc).run();
+int main() {
+  return xtd::tunit::console_unit_test().run();
 }
 
 // This code can produce the following output:

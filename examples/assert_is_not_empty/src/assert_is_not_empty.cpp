@@ -25,8 +25,8 @@ namespace unit_tests {
 }
 
 // The main entry point for the application.
-int main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
+int main() {
+  return console_unit_test().run();
 }
 
 // This code produces the following output:

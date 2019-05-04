@@ -59,6 +59,7 @@ set(SOURCES
   src/base_assert.cpp
   src/test.cpp
   src/test_class.cpp
+  src/unit_test.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})
