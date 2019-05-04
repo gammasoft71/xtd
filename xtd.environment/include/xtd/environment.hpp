@@ -242,11 +242,8 @@ namespace xtd {
     /// @remarks Environment variable names are case-sensitive on Linux and macOS but are not case-sensitive on Windows.
     /// @todo Add xtd::registry and uncomment lines.
    static std::string get_environment_variable(const std::string& variable, environment_variable_target target) {
-      if (target == environment_variable_target::process) {
-        char* value = getenv(variable.c_str());
-        return value == nullptr ? "" : value;
-      }
-      
+      if (target == environment_variable_target::process)
+        return __opaque_environment::get_environment_variable(variable);
       if (target == environment_variable_target::user)
         return ""; //return microsoft::win32::registry::get_value("HKEY_CURRENT_USER\\Environment", variable, "").to_string();
       if (target == environment_variable_target::machine)

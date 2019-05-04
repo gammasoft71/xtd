@@ -16,6 +16,11 @@ std::string __opaque_environment::get_current_directory() noexcept {
   return _getcwd(path, MAX_PATH) ? path : "";
 }
 
+std::string __opaque_environment::get_environment_variable(const std::string& variable) noexcept {
+  char* value = getenv(variable.c_str());
+  return value == nullptr ? "" : value;
+}
+
 std::string __opaque_environment::get_know_folder_path(int id) noexcept {
   char path[MAX_PATH + 1];
   return SHGetFolderPath(nullptr, id, nullptr, SHGFP_TYPE_CURRENT, path) == S_OK ? path : "";

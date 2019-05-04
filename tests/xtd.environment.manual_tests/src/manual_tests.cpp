@@ -19,6 +19,8 @@ int main() {
   cout << "User domain name = " << environment::user_domain_name() << environment::new_line;
   cout << "User name = " << environment::user_name() << environment::new_line;
   cout << "Tick count = " << environment::tick_count() << environment::new_line;
+  environment::set_environment_variable("ARROW", "Oliver Queen");
+  cout << environment::expand_environment_variables("Arrow is '%ARROW%'.") << environment::new_line;
   environment::exit(42);
 }
 
