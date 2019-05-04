@@ -4,14 +4,16 @@
 __declspec(dllimport) extern char** environ;
 __declspec(dllimport) extern int __argc;
 __declspec(dllimport) extern char** __argv;
+int __environment_argc = __argc;
+char** __environment_argv = __argv;
 #else
 extern char** environ;
-extern int __argc;
-extern char** __argv;
+extern int __environment_argc;
+extern char** __environment_argv;
 #endif
 
 std::vector<std::string> xtd::environment::get_command_line_args() noexcept {
-  return {__argv, __argv + __argc};
+  return {__environment_argv, __environment_argv + __environment_argc};
 }
 
 std::map<std::string, std::string>& xtd::environment::get_environment_variables(environment_variable_target target) {

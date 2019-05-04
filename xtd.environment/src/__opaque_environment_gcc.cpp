@@ -32,8 +32,8 @@
 #include "../include/xtd/environment.hpp"
 #include <xtd/strings>
 
-int __argc;
-char**  __argv;
+int __environment_argc;
+char** __environment_argv;
 
 namespace {
   static std::string create_process(const std::string& command) {
@@ -50,8 +50,8 @@ namespace {
   }
   
   __attribute__((constructor)) void startup_program(int argc, char **argv) {
-    __argc = argc;
-    __argv = argv;
+    __environment_argc = argc;
+    __environment_argv = argv;
   }
 }
 
