@@ -124,7 +124,6 @@ private:
 class gtest_unit_test final : public unit_test {
 public:
   gtest_unit_test() : unit_test(make_unique<gtest_event_listener>()) {}
-  gtest_unit_test(char* argv[], int argc) : unit_test(make_unique<gtest_event_listener>(), argv, argc) {}
 };
 
 namespace unit_tests {
@@ -146,10 +145,10 @@ namespace unit_tests {
 }
 
 // The main entry point for the application.
-int main(int argc, char* argv[]) {
-  return gtest_unit_test(argv, argc).run();
+int main() {
+  return gtest_unit_test().run();
   // is same :
-  // return unit_test(std::make_unique<gtest_event_listener>(), argv, argc).run();
+  // return unit_test(std::make_unique<gtest_event_listener>()).run();
 }
 
 // This code can produce the following output:

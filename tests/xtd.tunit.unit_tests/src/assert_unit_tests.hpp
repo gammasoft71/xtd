@@ -48,16 +48,16 @@ namespace assert_unit_tests {
   }
   
   struct register_assert_unit_test {
-    register_assert_unit_test(const std::string& name, std::function<void(const std::string&, int, char*[])> method) : method(method), name(name) {assert_unit_tests.push_back(*this);}
+    register_assert_unit_test(const std::string& name, std::function<void(const std::string&)> method) : method(method), name(name) {assert_unit_tests.push_back(*this);}
     register_assert_unit_test(bool ignore) {if (ignore == true) ignore_test_count++;}
     register_assert_unit_test(const register_assert_unit_test&) = default;
     register_assert_unit_test& operator=(const register_assert_unit_test&) = default;
     
-    static int run_all_tests(int argc, char* argv[]) {
+    static int run_all_tests() {
       std::cout << "Start unit tests" << std::endl;
       try {
         for (auto assert_unit_test : assert_unit_tests::register_assert_unit_test::assert_unit_tests)
-          assert_unit_test.method(assert_unit_test.name, argc, argv);
+          assert_unit_test.method(assert_unit_test.name);
       }catch(...) {
         std::cout << "end unit tests" << std::endl;
         std::cout << std::endl << "FAILED TEST" << std::endl;
@@ -72,7 +72,7 @@ namespace assert_unit_tests {
       return 0;
     }
 
-    std::function<void(const std::string&, int, char*[])> method;
+    std::function<void(const std::string&)> method;
     std::string name;
     
     static std::vector<register_assert_unit_test> assert_unit_tests;
@@ -84,11 +84,11 @@ namespace assert_unit_tests {
 
 #define test_(class_name, function_name) \
   __##class_name##_##function_name##_unused() {} \
-  void class_name##_##function_name(const std::string& name, int argc, char* argv[]); \
+  void class_name##_##function_name(const std::string& name); \
   assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {std::string(#class_name) + "." + std::string(#function_name), &class_name##_##function_name}; \
- void class_name##_##function_name(const std::string& name, int argc, char* argv[])
+ void class_name##_##function_name(const std::string& name)
 
 #define ignore_test_(class_name, function_name) \
   __##class_name##_##function_name##_unused() {} \
   assert_unit_tests::register_assert_unit_test __##class_name##_##function_name##_name {true}; \
-  void class_name##_##function_name(const std::string& name, int argc, char* argv[])
+  void class_name##_##function_name(const std::string& name)
