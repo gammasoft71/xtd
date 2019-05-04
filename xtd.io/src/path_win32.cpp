@@ -2,6 +2,7 @@
 
 #include "../include/xtd/file.hpp"
 #include <string>
+#include <direct.h>
 #include <Windows.h>
 
 std::string __get_current_dirirectory() noexcept {
