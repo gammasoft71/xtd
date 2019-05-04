@@ -311,8 +311,8 @@ namespace xtd {
       std::string buffer = name;
       std::string result;
       
-      int index = xtd::strings::index_of(buffer, '%');
-      while (index != -1 && xtd::strings::index_of(buffer, '%', index + 1) != -1) {
+      size_t index = xtd::strings::index_of(buffer, '%');
+      while (index != std::string::npos && xtd::strings::index_of(buffer, '%', index + 1) != -1) {
         result += xtd::strings::substring(buffer, 0, index);
         buffer = xtd::strings::remove(buffer, 0, index + 1);
         index = xtd::strings::index_of(buffer, '%');
