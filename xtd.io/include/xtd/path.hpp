@@ -30,6 +30,9 @@ namespace xtd {
       /// @endcond
       
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
+      /// @return Char character used to separate directory levels.
+      /// @remarks This method can have the same value as directory_separator_char. alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
+      /// @remarks The value of this field is a slash ('/') on both Windows and Unix-based operating systems.
       /// @par Examples
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
@@ -37,6 +40,9 @@ namespace xtd {
       static Char alt_directory_separator_char() noexcept {return static_cast<Char>('/');}
       
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
+      /// @return char character used to separate directory levels.
+      /// @remarks This method can have the same value as directory_separator_char. alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
+      /// @remarks The value of this field is a slash ('/') on both Windows and Unix-based operating systems.
       /// @par Examples
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
@@ -177,6 +183,8 @@ namespace xtd {
       /// @endcond
       
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
+      /// @return Char Platform-specific character used to separate directory levels.
+      /// @remarks alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
       /// @par Examples
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
@@ -186,6 +194,8 @@ namespace xtd {
       }
       
       /// @brief Provides a platform-specific character used to separate directory levels in a path string that reflects a hierarchical file system organization.
+      /// @return char Platform-specific character used to separate directory levels.
+      /// @remarks alt_directory_separator_char and directory_separator_char are both valid for separating directory levels in a path string.
       /// @par Examples
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
@@ -198,6 +208,7 @@ namespace xtd {
       template<typename Char>
       static std::basic_string<Char> get_directory_name(const std::basic_string<Char>& path) {
         size_t index = path.rfind(directory_separator_char<Char>());
+        if (index == std::basic_string<Char>::npos) index = path.rfind(alt_directory_separator_char<Char>());
         if (index == std::basic_string<Char>::npos) return {};
         std::basic_string<Char> directory = path.substr(0, index);
         return directory;
@@ -211,7 +222,7 @@ namespace xtd {
       /// @brief Returns the extension of the specified path string.
       /// @param path The path string from which to get the extension.
       /// @return A System::string containing the extension of the specified path (including the ".") or System::string.Empty.
-      /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty.
+      /// @remarks If path is empty, GetExtension returns string empty. If path does not have extension information, GetExtension returns string empty ("").
       template<typename Char>
       static std::basic_string<Char> get_extension(const std::basic_string<Char>& path) {
         std::basic_string<Char> file = get_file_name(path);
@@ -224,9 +235,14 @@ namespace xtd {
       static std::basic_string<Char> get_extension(const Char* path) {return get_extension(std::basic_string<Char>(path));}
       /// @endcond
       
+      /// @brief Returns the file name and extension of the specified path string.
+      /// @param path The path string from which to obtain the file name and extension.
+      /// @return The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty ("").
+      /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
       template<typename Char>
       static std::basic_string<Char> get_file_name(const std::basic_string<Char>& path) {
         size_t index = path.rfind(directory_separator_char<Char>());
+        if (index ==std::basic_string<Char>::npos) index = path.rfind(alt_directory_separator_char<Char>());
         return (index ==std::basic_string<Char>::npos) ? path : path.substr(index + 1);
       }
       
@@ -252,17 +268,19 @@ namespace xtd {
       /// @return A string containing the fully qualified location of path, such as "C:\\MyFile.txt".
       template<typename Char>
       static std::basic_string<Char> get_full_path(const std::basic_string<Char>& path) {
-        std::basic_regex<Char> r(std::basic_string<Char>("\\") + directory_separator_char<Char>() + std::basic_string<Char>("+"));
+        std::basic_regex<Char> r(std::basic_string<Char>("(\\") + directory_separator_char<Char>() + alt_directory_separator_char<Char>() + std::basic_string<Char>(")+"));
         std::vector<std::basic_string<Char>> directories;
         for (std::sregex_token_iterator it(path.begin(), path.end(), r, -1), end; it != end; ++it)
           if (*it != "") directories.push_back(*it);
         
         std::basic_string<Char> fullPath;
         
-        if (path[0] != directory_separator_char<Char>()) fullPath = __get_current_dirirectory();
+        if (path[0] != directory_separator_char<Char>() && path[0] != alt_directory_separator_char<Char>()) fullPath = __get_current_dirirectory();
         for (auto item : directories) {
           if (item == ".." && fullPath.rfind(directory_separator_char<Char>()) != -1)
             fullPath = fullPath.substr(0, fullPath.rfind(directory_separator_char<Char>()));
+          else if (item == ".." && fullPath.rfind(alt_directory_separator_char<Char>()) != -1)
+            fullPath = fullPath.substr(0, fullPath.rfind(alt_directory_separator_char<Char>()));
           else if (item != ".") {
             std::basic_stringstream<Char> ss;
             ss << fullPath<< directory_separator_char<Char>() << item;
