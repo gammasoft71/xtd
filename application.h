@@ -6,6 +6,8 @@ namespace xtd {
   namespace forms {
     class application {
     public:
+      static void exit() {native::application_api::exit();}
+      
       static void run() {
         native::application_api::run();
       }

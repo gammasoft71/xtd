@@ -7,6 +7,7 @@ namespace native {
   public:
     static void do_events();
     static void enable_visual_style();
+    static void exit();
     static intptr_t main_form();
     static void main_form(intptr_t handle);
     static void register_idle(std::function<void()> idle);
