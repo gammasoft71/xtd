@@ -223,7 +223,7 @@ namespace xtd {
     /// @param true if a key press is available; otherwise, false
     /// @remarks The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available.
     /// @remarks Use the key_available method in conjunction with only the read_key method, not the read or read_line methods
-    static bool key_available() noexcept {__opaque_console::key_available();}
+    static bool key_available() noexcept {return __opaque_console::key_available();}
 
     /// @brief Gets the largest possible number of console window rows, based on the current font and screen resolution.
     /// @param The height of the largest possible console window measured in rows.
@@ -340,7 +340,7 @@ namespace xtd {
     /// @endcond
 
     template<typename ... Args>
-    static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << strings::format(fmt, std::forward<Args>(args)...) << std::endl;}
+    static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << strings::format(fmt, std::forward<Args>(args)...) << std::endl << std::flush;}
   };
   
   /// @cond
