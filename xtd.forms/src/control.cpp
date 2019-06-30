@@ -30,11 +30,13 @@ void xtd::forms::control::create_handle() {
 }
 
 void xtd::forms::control::on_location_changed(const xtd::event_args &e) {
+  //native::control_api::location(this->handle_, this->location_);
   this->location_changed(*this, e);
 }
 
 void xtd::forms::control::on_parent_changed(const xtd::event_args &e) {
   this->create_control();
+  //native::control_api::parent(this->handle_, this->parent_);
   //for (xtd::forms::control* control : this->controls_)
   //  control->create_control();
   this->parent_changed(*this, e);
