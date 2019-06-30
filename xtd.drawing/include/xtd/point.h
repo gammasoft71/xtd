@@ -1,5 +1,6 @@
 #pragma once
 #include <ostream>
+#include <string>
 
 namespace xtd {
   namespace drawing {
@@ -19,6 +20,15 @@ namespace xtd {
       bool operator!=(const point& value) const {return !this->operator==(value);}
       
       bool is_empty() const {return *this == point::empty;}
+
+      void offset(const point& pt) {this->offset(pt.x_, pt.y_);}
+
+      void offset(int dx, int dy) {
+        this->x_ += dx;
+        this->y_ += dy;
+      }
+
+      std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + "}";}
       
       int x() const {return x_;}
       
