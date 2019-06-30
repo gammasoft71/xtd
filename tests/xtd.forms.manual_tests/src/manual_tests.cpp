@@ -1,5 +1,4 @@
-#include "application.h"
-#include "form.h"
+#include <xtd/forms>
 
 using namespace xtd::forms;
 
@@ -10,8 +9,7 @@ public:
   }
 };
 
-int main(int argc, char* argv[]) {
-  //application::run();
-  //application::run(form());
+// The main entry point for the application.
+int main() {
   application::run(form1());
 }

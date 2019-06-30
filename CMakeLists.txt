@@ -1,23 +1,25 @@
-cmake_minimum_required(VERSION 3.0)
-project(xtd.forms.test)
+cmake_minimum_required(VERSION 3.3)
 
-set(sources
-  xtd.forms.test.cpp
-  application.h
-  control.h
-  form.h
-  native/application_api.h
-  native/control_api.h
-  native/form_api.h
-  native/application_api_universal.cpp
-  native/control_api_universal.cpp
-  native/form_api_universal.cpp
-)
+# Solution
+project(xtd.forms)
 
-find_package(wxWidgets REQUIRED)
-include(${wxWidgets_USE_FILE})
-link_libraries(${wxWidgets_LIBRARIES})
+# Options
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_executable(xtd.forms.test WIN32 MACOSX_BUNDLE ${sources})
+# Code coverage
+option(ENABLE_COVERAGE "Enable code coverage" OFF)
+if (ENABLE_COVERAGE AND UNIX)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage")
+  set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} --coverage")
+endif()
+
+# Projects
+add_subdirectory(xtd.forms)
+#add_subdirectory(xtd.delegates/xtd.delegates)
+#add_subdirectory(xtd.strings/xtd.strings)
+option(ENABLE_TESTS "Enable tests" OFF)
+if (ENABLE_TESTS)
+  enable_testing()
+  add_subdirectory(xtd.tunit/xtd.tunit)
+  add_subdirectory(tests)
+endif()
