@@ -18,8 +18,15 @@ namespace xtd {
       bool operator==(const point& value) const {return this->x_ == value.x_ && this->y_ == value.y_;}
       bool operator!=(const point& value) const {return !this->operator==(value);}
       
+      bool is_empty() const {return *this == point::empty;}
+      
       int x() const {return x_;}
+      
+      void x(int x) {this->x_ = x;}
+      
       int y() const {return y_;}
+
+      void y(int y) {this->y_ = y;}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point& point) noexcept {
