@@ -17,6 +17,7 @@ namespace xtd {
       /// @endcond
       
       bool operator==(const point& value) const {return this->x_ == value.x_ && this->y_ == value.y_;}
+      
       bool operator!=(const point& value) const {return !this->operator==(value);}
       
       bool is_empty() const {return *this == point::empty;}
