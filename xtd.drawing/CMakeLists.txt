@@ -6,11 +6,13 @@ set(INCLUDES
   include/xtd/drawing
   include/xtd/drawing.h
   include/xtd/point.h
+  include/xtd/size.h
 )
 
 set(SOURCES
   src/drawing.cpp
   src/point.cpp
+  src/size.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})

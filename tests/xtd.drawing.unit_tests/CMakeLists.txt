@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.drawing.unit_tests)
 set(SOURCES
   src/main.cpp 
-  src/point.cpp 
+  src/point.cpp
+  src/size.cpp
 )
 source_group(src FILES ${SOURCES})
 
