@@ -3,8 +3,9 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.forms.unit_tests)
 set(SOURCES
-  src/main.cpp 
+  src/control.cpp 
   src/form.cpp
+  src/main.cpp 
 )
 source_group(src FILES ${SOURCES})
 
