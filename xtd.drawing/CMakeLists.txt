@@ -4,9 +4,9 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.drawing VERSION 0.0.1)
 set(INCLUDES
   include/xtd/drawing
-  include/xtd/drawing.h
-  include/xtd/point.h
-  include/xtd/size.h
+  include/xtd/drawing.hpp
+  include/xtd/point.hpp
+  include/xtd/size.hpp
 )
 
 set(SOURCES
