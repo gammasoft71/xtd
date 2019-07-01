@@ -1,5 +1,5 @@
-#include "../include/xtd/control.h"
-#include "native/control_api.h"
+#include "../include/xtd/control.hpp"
+#include "native/control_api.hpp"
 
 const xtd::forms::control xtd::forms::control::null;
 

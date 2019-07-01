@@ -1,4 +1,4 @@
-#include "control_api.h"
+#include "control_api.hpp"
 #include <wx/control.h>
 
 intptr_t native::control_api::create(intptr_t parent, const xtd::drawing::size& size) {

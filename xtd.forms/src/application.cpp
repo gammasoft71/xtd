@@ -1,5 +1,5 @@
-#include "../include/xtd/application.h"
-#include "native/application_api.h"
+#include "../include/xtd/application.hpp"
+#include "native/application_api.hpp"
 #include <xtd/environment.hpp>
 #include <xtd/io.hpp>
 

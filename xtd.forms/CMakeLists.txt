@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.forms VERSION 0.0.1)
 set(INCLUDES
-  include/xtd/application.h
-  include/xtd/control.h
-  include/xtd/form.h
-  include/xtd/forms.h
+  include/xtd/application.hpp
+  include/xtd/control.hpp
+  include/xtd/form.hpp
+  include/xtd/forms.hpp
   include/xtd/forms
 )
 
@@ -18,12 +18,12 @@ set(SOURCES
 )
 
 set(NATIVE_SOURCES
-  src/native/application_api.h
+  src/native/application_api.hpp
   src/native/application_api_universal.cpp
+  src/native/control_api.hpp
   src/native/control_api_universal.cpp
+  src/native/form_api.hpp
   src/native/form_api_universal.cpp
-  src/native/control_api.h
-  src/native/form_api.h
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})

@@ -1,5 +1,5 @@
-#include "application_api.h"
-#include "form_api.h"
+#include "application_api.hpp"
+#include "form_api.hpp"
 #include <wx/app.h>
 #include <wx/window.h>
 
