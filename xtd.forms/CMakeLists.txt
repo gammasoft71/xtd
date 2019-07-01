@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.forms VERSION 0.0.1)
 set(INCLUDES
   include/xtd/application.hpp
+  include/xtd/application_informations.hpp
   include/xtd/control.hpp
   include/xtd/form.hpp
   include/xtd/forms.hpp
