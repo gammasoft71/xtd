@@ -38,11 +38,22 @@ void xtd::forms::control::visible(bool visible) {
   }
 }
 
+void xtd::forms::control::create_control() {
+  if (!this->handle_) {
+    this->create_handle();
+    this->on_create_control();
+  }
+}
+
 void xtd::forms::control::create_handle() {
-  this->handle_ = native::control_api::create(this->parent_->handle());
+  this->handle_ = native::control_api::create(this->parent_->handle(), this->default_size());
 }
 
 void xtd::forms::control::on_create_control() {
+  this->location_ = native::control_api::location(this->handle_);
+  this->size_ = native::control_api::size(this->handle_);
+  this->text_ = native::control_api::text(this->handle_);
+  this->visible_ = native::control_api::visible(this->handle_);
 }
 
 void xtd::forms::control::on_handle_created(const xtd::event_args &e) {
@@ -54,7 +65,7 @@ void xtd::forms::control::on_handle_destroyed(const xtd::event_args &e) {
 }
 
 void xtd::forms::control::on_location_changed(const xtd::event_args &e) {
-  //native::control_api::location(this->handle_, this->location_);
+  native::control_api::location(this->handle_, this->location_);
   this->location_changed(*this, e);
 }
 
@@ -67,7 +78,7 @@ void xtd::forms::control::on_parent_changed(const xtd::event_args &e) {
 }
 
 void xtd::forms::control::on_size_changed(const xtd::event_args &e) {
-  //native::control_api::location(this->handle_, this->location_);
+  native::control_api::size(this->handle_, this->size_);
   this->size_changed(*this, e);
 }
 

@@ -15,6 +15,8 @@ namespace xtd {
       
       virtual intptr_t handle() const {return this->handle_;}
       
+      virtual xtd::drawing::size default_size() const {return{0, 0};}
+
       virtual xtd::drawing::point location() const {return this->location_;}
       virtual void location(const xtd::drawing::point& location);
 
@@ -30,10 +32,7 @@ namespace xtd {
       virtual bool visible() const {return this->visible_;}
       virtual void visible(bool visible);
       
-      void create_control() {
-        if (!this->handle_)
-          create_handle();
-      }
+      void create_control();
       
       virtual void hide() {this->visible(false);}
 

@@ -6,7 +6,9 @@ namespace xtd {
     class form : public control {
     public:
       form();
-      
+
+      xtd::drawing::size default_size() const override {return{300, 300};}
+
       void create_handle() override;
     };
   }
