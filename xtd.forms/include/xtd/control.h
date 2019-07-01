@@ -21,13 +21,21 @@ namespace xtd {
       virtual const control& parent() const {return *this->parent_;}
       virtual void parent(const control& parent);
 
+      virtual xtd::drawing::size size() const {return this->size_;}
+      virtual void size(const xtd::drawing::size& size);
+      
       virtual const std::string& text() const {return this->text_;}
       virtual void text(const std::string& text);
-
+      
+      virtual bool visible() const {return this->visible_;}
+      virtual void visible(bool visible);
+      
       void create_control() {
         if (!this->handle_)
           create_handle();
       }
+      
+      virtual void hide() {this->visible(false);}
 
       virtual void create_handle();
       
@@ -40,17 +48,20 @@ namespace xtd {
       virtual void on_location_changed(const xtd::event_args& e);
       
       virtual void on_parent_changed(const xtd::event_args& e);
-      
+ 
+      virtual void on_size_changed(const xtd::event_args& e);
+
       virtual void on_text_changed(const xtd::event_args& e);
       
       virtual void on_visible_changed(const xtd::event_args& e);
       
-      virtual void show();
+      virtual void show() {this->visible(true);}
       
       xtd::event_handler<control> handle_created;
       xtd::event_handler<control> handle_destroyed;
       xtd::event_handler<control> location_changed;
       xtd::event_handler<control> parent_changed;
+      xtd::event_handler<control> size_changed;
       xtd::event_handler<control> text_changed;
       xtd::event_handler<control> visible_changed;
 
@@ -58,8 +69,8 @@ namespace xtd {
       intptr_t handle_ = 0;
       xtd::drawing::point location_;
       control* parent_ = const_cast<control*>(&control::null);
-      std::string text_;
       xtd::drawing::size size_;
+      std::string text_;
       bool visible_ = true;
     };
   }
