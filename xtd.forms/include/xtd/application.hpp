@@ -5,6 +5,28 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    class application_informations {
+    public:
+      static const std::string& company_name() {return instance().company_name_;}
+      static void company_name(const std::string& company_name) {instance().company_name_ = company_name;}
+      
+      static std::string product_name() {return instance().product_name_;}
+      static void product_name(const std::string& product_name) {instance().product_name_ = product_name;}
+      
+      static std::string product_version() {return instance().product_version_;}
+      static void product_version(const std::string& product_version) {instance().product_version_ = product_version;}
+
+    private:
+      static application_informations& instance() {
+        static application_informations application_informations;
+        return application_informations;
+      }
+      application_informations() = default;
+      std::string company_name_;
+      std::string product_name_;
+      std::string product_version_;
+    };
+    
     /// @brief Provides static methods and properties to manage an application, such as methods to start and stop an application, to process Windows messages, and methods to get information about an application. This class cannot be inherited.
     /// @remarks The application class has methods to start and stop applications and threads, and to process Windows messages, as follows:
     /// * run() starts an application message loop on the current thread and, optionally, makes a form visible.
@@ -38,6 +60,22 @@ namespace xtd {
       static xtd::microsoft::win32::registry_key common_app_data_registry();
        */
 
+      /// @brief Gets the company name associated with the application.
+      /// @return The company name.
+      /// @par Examples
+      /// The following code example gets this property and displays its value in a text box. The example requires that textBox1 has been placed on a form.
+      /// @code
+      /// void PrintCompanyName() {
+      ///   textBox1.Text(xtd;;strings::format("The company name is: {0}", application::company_name);
+      /// }
+      /// @endcode
+      static std::string company_name();
+
+      /// @brief Gets the path for the executable file that started the application, including the executable name.
+      /// @return The path and executable name for the executable file that started the application.<br><br>
+      /// This path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
+      static std::string executable_path();
+      
       static void do_events();
       
       static void enable_visual_styles();
