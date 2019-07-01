@@ -27,6 +27,18 @@ void xtd::forms::control::text(const std::string& text) {
 
 void xtd::forms::control::create_handle() {
   this->handle_ = native::control_api::create(this->parent_->handle());
+  this->on_handle_created(xtd::event_args::empty());
+}
+
+void xtd::forms::control::on_create_control() {
+}
+
+void xtd::forms::control::on_handle_created(const xtd::event_args &e) {
+  this->handle_created(*this, e);
+}
+
+void xtd::forms::control::on_handle_destroyed(const xtd::event_args &e) {
+  this->handle_destroyed(*this, e);
 }
 
 void xtd::forms::control::on_location_changed(const xtd::event_args &e) {

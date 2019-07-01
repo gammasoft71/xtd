@@ -31,8 +31,14 @@ namespace xtd {
 
       virtual void create_handle();
       
-      virtual void on_location_changed(const xtd::event_args& e);
+      virtual void on_create_control();
+      
+      virtual void on_handle_created(const xtd::event_args& e);
+      
+      virtual void on_handle_destroyed(const xtd::event_args& e);
 
+      virtual void on_location_changed(const xtd::event_args& e);
+      
       virtual void on_parent_changed(const xtd::event_args& e);
       
       virtual void on_text_changed(const xtd::event_args& e);
@@ -41,6 +47,8 @@ namespace xtd {
       
       virtual void show();
       
+      xtd::event_handler<control> handle_created;
+      xtd::event_handler<control> handle_destroyed;
       xtd::event_handler<control> location_changed;
       xtd::event_handler<control> parent_changed;
       xtd::event_handler<control> text_changed;
