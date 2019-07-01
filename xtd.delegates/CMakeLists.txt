@@ -14,6 +14,7 @@ set(INCLUDES
 )
 set(SOURCES
   src/delegates.cpp
+  src/event_args.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})

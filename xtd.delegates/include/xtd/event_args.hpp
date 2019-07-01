@@ -5,6 +5,6 @@ namespace xtd {
   class event_args {
   public:
     event_args() = default;
-    static event_args empty() { return event_args(); }
+    static const event_args empty;
   };
 }

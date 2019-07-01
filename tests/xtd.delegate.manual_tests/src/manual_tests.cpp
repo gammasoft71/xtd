@@ -30,5 +30,5 @@ int main() {
   };
   
   // click simulation
-  button1.click(button1, event_args::empty());
+  button1.click(button1, event_args::empty);
 }
