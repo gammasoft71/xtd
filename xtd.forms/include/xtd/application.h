@@ -6,6 +6,7 @@ namespace xtd {
     class application {
     public:
       static void do_events();
+      
       static void exit();
       
       static void run();
