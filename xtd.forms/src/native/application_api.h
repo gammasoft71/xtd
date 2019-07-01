@@ -5,6 +5,7 @@
 namespace native {
   class application_api {
   public:
+    static bool allow_quit();
     static void do_events();
     static void enable_visual_style();
     static void exit();

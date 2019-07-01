@@ -3,12 +3,16 @@
 #include <wx/app.h>
 #include <wx/window.h>
 
+bool native::application_api::allow_quit() {
+  return true;
+}
+
 void native::application_api::do_events() {
   wxYield();
 }
 
 void native::application_api::enable_visual_style() {
-  
+  wxTheApp->SetUseBestVisual(true);
 }
 
 void native::application_api::exit() {
