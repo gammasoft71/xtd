@@ -1,6 +1,6 @@
 #pragma once
-#include <xtd/point.h>
-#include <xtd/size.h>
+#include <xtd/point.hpp>
+#include <xtd/size.hpp>
 #include <cstdint>
 
 namespace native {

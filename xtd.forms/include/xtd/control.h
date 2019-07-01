@@ -2,8 +2,8 @@
 #include <string>
 #include <xtd/event_args.hpp>
 #include <xtd/event_handler.hpp>
-#include <xtd/point.h>
-#include <xtd/size.h>
+#include <xtd/point.hpp>
+#include <xtd/size.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
