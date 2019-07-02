@@ -16,7 +16,10 @@ namespace xtd {
       control() {}
       
       virtual intptr_t handle() const {return this->handle_;}
-      
+
+      virtual xtd::drawing::size client_size() const {return this->client_size_;}
+      virtual void client_size(const xtd::drawing::size& size);
+
       virtual xtd::drawing::size default_size() const {return{0, 0};}
 
       virtual xtd::drawing::point location() const {return this->location_;}
@@ -40,6 +43,8 @@ namespace xtd {
 
       virtual void create_handle();
       
+      virtual void on_client_size_changed(const xtd::event_args& e);
+      
       virtual void on_create_control();
       
       virtual void on_handle_created(const xtd::event_args& e);
@@ -58,6 +63,7 @@ namespace xtd {
       
       virtual void show() {this->visible(true);}
       
+      xtd::event_handler<control> client_size_changed;
       xtd::event_handler<control> handle_created;
       xtd::event_handler<control> handle_destroyed;
       xtd::event_handler<control> location_changed;
@@ -67,12 +73,15 @@ namespace xtd {
       xtd::event_handler<control> visible_changed;
 
     protected:
+      xtd::drawing::size client_size_;
       intptr_t handle_ = 0;
       xtd::drawing::point location_;
       control* parent_ = const_cast<control*>(&control::null);
       xtd::drawing::size size_;
       std::string text_;
       bool visible_ = true;
+      
+    private:
     };
   }
 }
