@@ -65,15 +65,8 @@ void xtd::forms::control::create_handle() {
 }
 
 void xtd::forms::control::on_create_control() {
-  this->client_size_ = native::control_api::client_size(this->handle_);
-  this->location_ = native::control_api::location(this->handle_);
-  this->size_ = native::control_api::size(this->handle_);
-  this->text_ = native::control_api::text(this->handle_);
-  this->visible_ = native::control_api::visible(this->handle_);
-  
-  native::control_api::register_client_size_changed(this->handle_, {*this, &xtd::forms::control::on_client_size_changed});
-  native::control_api::register_location_changed(this->handle_, {*this, &xtd::forms::control::on_location_changed});
-  native::control_api::register_size_changed(this->handle_, {*this, &xtd::forms::control::on_size_changed});
+  this->get_properties();
+  this->register_events();
 }
 
 void xtd::forms::control::on_client_size_changed(const xtd::event_args &e) {
@@ -113,3 +106,16 @@ void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
   this->visible_changed(*this, e);
 }
 
+void xtd::forms::control::get_properties() {
+  this->client_size_ = native::control_api::client_size(this->handle_);
+  this->location_ = native::control_api::location(this->handle_);
+  this->size_ = native::control_api::size(this->handle_);
+  this->text_ = native::control_api::text(this->handle_);
+  this->visible_ = native::control_api::visible(this->handle_);
+}
+
+void xtd::forms::control::register_events() {
+  native::control_api::register_client_size_changed(this->handle_, {*this, &xtd::forms::control::on_client_size_changed});
+  native::control_api::register_location_changed(this->handle_, {*this, &xtd::forms::control::on_location_changed});
+  native::control_api::register_size_changed(this->handle_, {*this, &xtd::forms::control::on_size_changed});
+}

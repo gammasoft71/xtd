@@ -73,6 +73,8 @@ namespace xtd {
       xtd::event_handler<control> visible_changed;
 
     protected:
+      void get_properties();
+      void register_events();
       xtd::drawing::size client_size_;
       intptr_t handle_ = 0;
       xtd::drawing::point location_;

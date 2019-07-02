@@ -30,6 +30,11 @@ std::string xtd::forms::application::executable_path() {
   return xtd::environment::get_command_line_args()[0];
 }
 
+std::string xtd::forms::application::product_name() {
+  if (!xtd::strings::is_empty(xtd::forms::application_informations::product_name())) return xtd::forms::application_informations::product_name();
+  return  xtd::io::path::get_file_name_without_extension(executable_path());
+}
+
 void xtd::forms::application::do_events() {
   native::application_api::do_events();
 }
