@@ -64,12 +64,19 @@ namespace xtd {
       virtual void show() {this->visible(true);}
       
       xtd::event_handler<control> client_size_changed;
+      
       xtd::event_handler<control> handle_created;
+      
       xtd::event_handler<control> handle_destroyed;
+      
       xtd::event_handler<control> location_changed;
+      
       xtd::event_handler<control> parent_changed;
+      
       xtd::event_handler<control> size_changed;
+      
       xtd::event_handler<control> text_changed;
+      
       xtd::event_handler<control> visible_changed;
 
     protected:
