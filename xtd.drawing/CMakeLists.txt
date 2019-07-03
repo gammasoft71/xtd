@@ -5,14 +5,19 @@ project(xtd.drawing VERSION 0.0.1)
 set(INCLUDES
   include/xtd/drawing
   include/xtd/drawing.hpp
+  include/xtd/color.hpp
+  include/xtd/known_color.hpp
   include/xtd/point.hpp
   include/xtd/size.hpp
+  include/xtd/system_colors.hpp
 )
 
 set(SOURCES
   src/drawing.cpp
+  src/color.cpp
   src/point.cpp
   src/size.cpp
+  src/system_colors.cpp
 )
 source_group(include FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})
@@ -25,8 +30,8 @@ if (MSVC)
 endif ()
 
 # Add packages
-#find_package(wxWidgets REQUIRED)
-#include(${wxWidgets_USE_FILE})
+find_package(wxWidgets REQUIRED)
+include(${wxWidgets_USE_FILE})
 
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES} ${NATIVE_SOURCES})
@@ -35,7 +40,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-#target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} xtd.strings ${wxWidgets_LIBRARIES})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
