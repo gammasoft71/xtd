@@ -1,4 +1,6 @@
 #pragma once
-#include "application.hpp"
-#include "control.hpp"
-#include "form.hpp"
+#include "forms/application.hpp"
+#include "forms/control.hpp"
+#include "forms/form.hpp"
+#include "forms/message.hpp"
+#include "forms/window_messages.hpp"

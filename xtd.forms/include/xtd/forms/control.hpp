@@ -5,6 +5,8 @@
 #include <xtd/point.hpp>
 #include <xtd/size.hpp>
 
+#include "message.hpp"
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
@@ -62,6 +64,8 @@ namespace xtd {
       virtual void on_visible_changed(const xtd::event_args& e);
       
       virtual void show() {this->visible(true);}
+      
+      virtual void wnd_proc(xtd::forms::message& message);
       
       xtd::event_handler<control> client_size_changed;
       

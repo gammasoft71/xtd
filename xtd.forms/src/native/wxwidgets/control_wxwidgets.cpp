@@ -1,5 +1,6 @@
 #include <map>
-#include "control_api.hpp"
+#include "../control_api.hpp"
+#include "ControlEvent.hpp"
 #include <wx/control.h>
 
 class Control : public wxControl {
@@ -103,4 +104,12 @@ void native::control_api::register_location_changed(intptr_t control, xtd::deleg
 
 void native::control_api::register_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback) {
   register_control_size_changed(control, callback);
+}
+
+intptr_t native::control_api::send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
+  if (hwnd == 0) return -1;
+
+  xtd::forms::message message = xtd::forms::message::create(hwnd, msg, wparam, lparam, 0);
+
+  return message.result();
 }

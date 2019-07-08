@@ -1,5 +1,5 @@
-#include "../include/xtd/control.hpp"
-#include "native/control_api.hpp"
+#include "../../../include/xtd/forms/control.hpp"
+#include "../../native/control_api.hpp"
 
 const xtd::forms::control xtd::forms::control::null;
 
@@ -104,6 +104,10 @@ void xtd::forms::control::on_text_changed(const xtd::event_args &e) {
 void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
   this->visible_ = native::control_api::visible(this->handle_);
   this->visible_changed(*this, e);
+}
+
+void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
+  
 }
 
 void xtd::forms::control::get_properties() {

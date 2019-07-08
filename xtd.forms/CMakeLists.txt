@@ -2,33 +2,48 @@ cmake_minimum_required(VERSION 3.3)
 
 # Project
 project(xtd.forms VERSION 0.0.1)
-set(INCLUDES
-  include/xtd/application.hpp
-  include/xtd/application_informations.hpp
-  include/xtd/control.hpp
-  include/xtd/form.hpp
-  include/xtd/forms.hpp
-  include/xtd/forms
+
+set(XTD_INCLUDES
+  include/xtd/xtd.forms.hpp
+  include/xtd/xtd.forms
 )
 
-set(SOURCES
-  src/application.cpp
-  src/control.cpp
-  src/form.cpp
-  src/forms.cpp
+set(XTD_FORMS_INCLUDES
+  include/xtd/forms/application.hpp
+  include/xtd/forms/application_informations.hpp
+  include/xtd/forms/control.hpp
+  include/xtd/forms/form.hpp
+  include/xtd/forms/message.hpp
+  include/xtd/forms/window_messages.hpp
+)
+
+set(XTD_FORMS_SOURCES
+  src/xtd/forms/application.cpp
+  src/xtd/forms/control.cpp
+  src/xtd/forms/form.cpp
+  src/xtd/forms/forms.cpp
+  src/xtd/forms/message.cpp
+  src/xtd/forms/window_messages.cpp
 )
 
 set(NATIVE_SOURCES
   src/native/application_api.hpp
-  src/native/application_api_universal.cpp
   src/native/control_api.hpp
-  src/native/control_api_universal.cpp
   src/native/form_api.hpp
-  src/native/form_api_universal.cpp
 )
-source_group(include FILES ${INCLUDES})
-source_group(src FILES ${SOURCES})
+
+set(NATIVE_WXWIDGETS_SOURCES
+  src/native/wxwidgets/ControlEvent.hpp
+  src/native/wxwidgets/application_wxwidgets.cpp
+  src/native/wxwidgets/control_wxwidgets.cpp
+  src/native/wxwidgets/form_wxwidgets.cpp
+)
+
+source_group(include\\xtd FILES ${XTD_INCLUDES})
+source_group(include\\xtd\\forms FILES ${XTD_FORMS_INCLUDES})
+source_group(src\\xtd\\forms FILES ${XTD_FORMS_SOURCES})
 source_group(src\\native FILES ${NATIVE_SOURCES})
+source_group(src\\native\\wxwidgets FILES ${NATIVE_WXWIDGETS_SOURCES})
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
@@ -42,7 +57,7 @@ find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES} ${NATIVE_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_SOURCES} ${NATIVE_SOURCES} ${NATIVE_WXWIDGETS_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

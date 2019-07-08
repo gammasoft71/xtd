@@ -1,5 +1,5 @@
-#include "../include/xtd/form.hpp"
-#include "native/form_api.hpp"
+#include "../../../include/xtd/forms/form.hpp"
+#include "../../native/form_api.hpp"
 
 xtd::forms::form::form() {
   native::form_api::initialize_application(); // Must be first

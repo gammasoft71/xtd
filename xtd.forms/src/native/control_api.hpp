@@ -23,5 +23,6 @@ namespace native {
     static void register_client_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback);
     static void register_location_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback);
     static void register_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback);
+    static intptr_t send_message(intptr_t hwnd, int msg, intptr_t wParam, intptr_t lParam);
   };
 }

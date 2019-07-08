@@ -1,5 +1,5 @@
 #include <iostream>
-#include <xtd/forms>
+#include <xtd/xtd.forms>
 
 using namespace xtd::forms;
 
