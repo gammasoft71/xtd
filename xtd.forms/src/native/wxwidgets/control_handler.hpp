@@ -66,7 +66,7 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
   intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
 
   // mouse events
-  if (event.GetEventType() == wxEVT_LEFT_DOWN || event.GetEventType() == wxEVT_MIDDLE_DOWN || event.GetEventType() == wxEVT_RIGHT_DOWN || event.GetEventType() == wxEVT_LEFT_UP || event.GetEventType() == wxEVT_MIDDLE_UP || event.GetEventType() == wxEVT_RIGHT_UP || event.GetEventType() == wxEVT_MOTION || event.GetEventType() == wxEVT_ENTER_WINDOW || event.GetEventType() == wxEVT_LEAVE_WINDOW || event.GetEventType() == wxEVT_LEFT_DCLICK || event.GetEventType() == wxEVT_MIDDLE_DCLICK || event.GetEventType() == wxEVT_RIGHT_DCLICK || event.GetEventType() == wxEVT_SET_FOCUS || event.GetEventType() == wxEVT_KILL_FOCUS || event.GetEventType() == wxEVT_CHILD_FOCUS || event.GetEventType() == wxEVT_MOUSEWHEEL || event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN || event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP || event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK)
+  if (event.GetEventType() == wxEVT_LEFT_DOWN || event.GetEventType() == wxEVT_MIDDLE_DOWN || event.GetEventType() == wxEVT_RIGHT_DOWN || event.GetEventType() == wxEVT_LEFT_UP || event.GetEventType() == wxEVT_MIDDLE_UP || event.GetEventType() == wxEVT_RIGHT_UP || event.GetEventType() == wxEVT_MOTION || event.GetEventType() == wxEVT_ENTER_WINDOW || event.GetEventType() == wxEVT_LEAVE_WINDOW || event.GetEventType() == wxEVT_LEFT_DCLICK || event.GetEventType() == wxEVT_MIDDLE_DCLICK || event.GetEventType() == wxEVT_RIGHT_DCLICK || event.GetEventType() == wxEVT_SET_FOCUS || event.GetEventType() == wxEVT_KILL_FOCUS || event.GetEventType() == wxEVT_CHILD_FOCUS || event.GetEventType() == wxEVT_MOUSEWHEEL || event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN || event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP || event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK /*|| event.GetEventType() == wxEVT_MAGNIFY*/)
     this->ProcessMouseEvent(event, hwnd);
 
   std::thread::id cti = std::this_thread::get_id();
@@ -104,6 +104,7 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
 
 template<typename TControl>
 inline void control_wrapper<TControl>::ProcessMouseEvent(wxEvent& event, intptr_t hwnd) {
+  wxMouseEvent& mouse_event = dynamic_cast<wxMouseEvent&>(event);
   wxMouseState mouse_state = wxGetMouseState();
   int virtual_keys = 0;
   if (mouse_state.ControlDown()) virtual_keys += MK_CONTROL;
@@ -145,7 +146,7 @@ inline void control_wrapper<TControl>::ProcessMouseEvent(wxEvent& event, intptr_
   if (event.GetEventType() == wxEVT_CHILD_FOCUS)
     event_handler_->send_message(hwnd, WM_CHILDACTIVATE, 0, 0, reinterpret_cast<intptr_t>(&event));
   if (event.GetEventType() == wxEVT_MOUSEWHEEL)
-    event_handler_->send_message(hwnd, WM_MOUSEWHEEL, virtual_keys + (((wxMouseEvent&)event).GetWheelDelta() << 16), mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+    event_handler_->send_message(hwnd, WM_MOUSEWHEEL, virtual_keys + (mouse_event.GetWheelDelta() << 16), mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
   if (event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN)
     event_handler_->send_message(hwnd, WM_XBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
   if (event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP)
