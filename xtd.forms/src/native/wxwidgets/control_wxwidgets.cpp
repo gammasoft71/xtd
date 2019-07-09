@@ -20,7 +20,8 @@ void native::control_api::def_wnd_proc(xtd::forms::message& message) {
 }
 
 void native::control_api::destroy(intptr_t control) {
-  // do nothing : wxWidgets detroys its wxControl controls
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Destroy();
 }
 
 xtd::drawing::size native::control_api::client_size(intptr_t control) {

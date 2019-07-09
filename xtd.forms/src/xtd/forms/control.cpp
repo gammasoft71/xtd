@@ -33,11 +33,15 @@ void xtd::forms::control::location(const xtd::drawing::point& location) {
 void xtd::forms::control::parent(const xtd::forms::control& parent) {
   if (this->parent_ != &parent) {
     this->parent_ = const_cast<xtd::forms::control*>(&parent);
-    this->create_control();
-    //native::control_api::parent(this->handle_, this->parent_);
-    //for (xtd::forms::control* control : this->controls_)
-    //  control->create_control();
-    this->on_parent_changed(xtd::event_args::empty);
+    if (this->parent_ == &xtd::forms::control::null) {
+      native::control_api::destroy(this->handle_);
+    } else {
+      this->create_control();
+      //native::control_api::parent(this->handle_, this->parent_);
+      //for (xtd::forms::control* control : this->controls_)
+      //  control->create_control();
+      this->on_parent_changed(xtd::event_args::empty);
+    }
   }
 }
 
