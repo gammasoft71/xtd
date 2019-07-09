@@ -7,6 +7,7 @@
 #include <xtd/point.hpp>
 #include <xtd/size.hpp>
 
+#include "mouse_event_handler.hpp"
 #include "message.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -14,6 +15,12 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     class control {
+    private:
+      enum class state {
+        empty = 0,
+        double_click_fired = 0b1,
+        mouse_entered = 0x10,
+      };
     public:
       static const control null;
       
@@ -65,9 +72,15 @@ namespace xtd {
 
       xtd::forms::control& from_handle(intptr_t handle);
 
+      virtual void on_click(const xtd::event_args& e);
+
       virtual void on_client_size_changed(const xtd::event_args& e);
-      
+
       virtual void on_create_control();
+
+      virtual void on_double_click(const xtd::event_args& e);
+      
+      virtual void on_got_focus(const xtd::event_args& e);
       
       virtual void on_handle_created(const xtd::event_args& e);
       
@@ -75,6 +88,24 @@ namespace xtd {
 
       virtual void on_location_changed(const xtd::event_args& e);
       
+      virtual void on_lost_focus(const xtd::event_args& e);
+      
+      virtual void on_mouse_click(const xtd::forms::mouse_event_args& e);
+      
+      virtual void on_mouse_double_click(const xtd::forms::mouse_event_args& e);
+
+      virtual void on_mouse_down(const xtd::forms::mouse_event_args& e);
+
+      virtual void on_mouse_enter(const xtd::event_args& e);
+      
+      virtual void on_mouse_leave(const xtd::event_args& e);
+      
+      virtual void on_mouse_move(const xtd::forms::mouse_event_args& e);
+
+      virtual void on_mouse_up(const xtd::forms::mouse_event_args& e);
+
+      virtual void on_mouse_wheel(const xtd::forms::mouse_event_args& e);
+
       virtual void on_parent_changed(const xtd::event_args& e);
  
       virtual void on_size_changed(const xtd::event_args& e);
@@ -89,13 +120,37 @@ namespace xtd {
       
       virtual void wnd_proc(xtd::forms::message& message);
       
+      xtd::event_handler<control> click;
+      
       xtd::event_handler<control> client_size_changed;
+      
+      xtd::event_handler<control> double_click;
+
+      xtd::event_handler<control> got_focus;
       
       xtd::event_handler<control> handle_created;
       
       xtd::event_handler<control> handle_destroyed;
       
       xtd::event_handler<control> location_changed;
+      
+      xtd::event_handler<control> lost_focus;
+      
+      xtd::forms::mouse_event_handler<control> mouse_click;
+      
+      xtd::forms::mouse_event_handler<control> mouse_double_click;
+      
+      xtd::forms::mouse_event_handler<control> mouse_down;
+      
+      xtd::event_handler<control> mouse_enter;
+      
+      xtd::event_handler<control> mouse_leave;
+      
+      xtd::forms::mouse_event_handler<control> mouse_move;
+      
+      xtd::forms::mouse_event_handler<control> mouse_up;
+      
+      xtd::forms::mouse_event_handler<control> mouse_wheel;
       
       xtd::event_handler<control> parent_changed;
       
@@ -105,6 +160,8 @@ namespace xtd {
       
       xtd::event_handler<control> visible_changed;
 
+      intptr_t __get_handle__() const {return this->handle_;}
+      
     protected:
       virtual void def_wnd_proc(xtd::forms::message& message);
       
@@ -117,9 +174,20 @@ namespace xtd {
       xtd::drawing::size size_;
       std::string text_;
       bool visible_ = true;
+      xtd::forms::control::state state_ = state::empty;
       
     private:
-      
+      bool get_state(xtd::forms::control::state flag) const {return ((int)this->state_ & (int)flag) == (int)flag;}
+      void set_state(xtd::forms::control::state flag, bool value) { this->state_ = value ? (xtd::forms::control::state)((int)this->state_ | (int)flag) : (xtd::forms::control::state)((int)this->state_ & ~(int)flag); }
+      void wm_kill_focus(xtd::forms::message& message);
+      void wm_mouse_down(xtd::forms::message& message);
+      void wm_mouse_double_click(xtd::forms::message& message);
+      void wm_mouse_enter(xtd::forms::message& message);
+      void wm_mouse_leave(xtd::forms::message& message);
+      void wm_mouse_up(xtd::forms::message& message);
+      void wm_mouse_move(xtd::forms::message& message);
+      void wm_set_focus(xtd::forms::message& message);
+      void wm_mouse_wheel(xtd::forms::message& message);
     };
   }
 }

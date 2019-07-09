@@ -15,23 +15,23 @@ namespace xtd {
       message& operator=(const message&) = default;
       /// @cond
       
-      intptr_t hWnd() {return this->hwnd_;}
+      intptr_t hWnd() const {return this->hwnd_;}
       void hwind(intptr_t value) {this->hwnd_ = value;}
       
-      intptr_t lparam() {return this->lparam_;}
+      intptr_t lparam() const {return this->lparam_;}
       void lparam(intptr_t value) {this->lparam_ = value;}
       
-      int msg() {return this->msg_;}
+      int msg() const {return this->msg_;}
       void msg(int value) {this->msg_ = value;}
       
-      intptr_t result() {return this->result_;}
+      intptr_t result() const {return this->result_;}
       void result(intptr_t value) {this->result_ = value;}
       
-      intptr_t wparam() {return this->wparam_;}
+      intptr_t wparam() const {return this->wparam_;}
       void wparam(intptr_t value) {this->wparam_ = value;}
       
       /// @cond
-      intptr_t handle() {return this->handle_;}
+      intptr_t handle() const {return this->handle_;}
       void handle(intptr_t value) {this->handle_ = value;}
       /// @endcond
       
