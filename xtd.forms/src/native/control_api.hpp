@@ -3,6 +3,7 @@
 #include <xtd/event_args.hpp>
 #include <xtd/point.hpp>
 #include <xtd/size.hpp>
+#include "../../include/xtd/forms/message.hpp"
 #include <cstdint>
 #include <string>
 
@@ -20,9 +21,9 @@ namespace native {
     static void text(intptr_t control, const std::string& text);
     static bool visible(intptr_t control);
     static void visible(intptr_t control, bool visible);
+    static void register_wnd_proc(intptr_t control, xtd::delegate<void(xtd::forms::message&)> wnd_proc);
+    static void unregister_wnd_proc(intptr_t control);
     static void register_client_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback);
-    static void register_location_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback);
-    static void register_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback);
-    static intptr_t send_message(intptr_t hwnd, int msg, intptr_t wParam, intptr_t lParam);
+    static intptr_t send_message(intptr_t control, intptr_t hwnd, int msg, intptr_t wParam, intptr_t lParam);
   };
 }

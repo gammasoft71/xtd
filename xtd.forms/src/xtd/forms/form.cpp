@@ -9,5 +9,6 @@ xtd::forms::form::form() {
 
 void xtd::forms::form::create_handle() {
   this->handle_ = native::form_api::create(this->default_size());
+  this->control::create_handle();
 }
 

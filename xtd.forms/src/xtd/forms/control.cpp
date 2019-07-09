@@ -1,7 +1,14 @@
 #include "../../../include/xtd/forms/control.hpp"
+#include "../../../include/xtd/forms/window_messages.hpp"
 #include "../../native/control_api.hpp"
 
 const xtd::forms::control xtd::forms::control::null;
+
+xtd::forms::control::~control() {
+  native::control_api::unregister_wnd_proc(this->handle_);
+}
+
+std::map<intptr_t, xtd::forms::control*> xtd::forms::control::handles_;
 
 void xtd::forms::control::client_size(const xtd::drawing::size& size) {
   if (this->client_size_ != size) {
@@ -61,12 +68,34 @@ void xtd::forms::control::create_control() {
 }
 
 void xtd::forms::control::create_handle() {
-  this->handle_ = native::control_api::create(this->parent_->handle(), this->default_size());
+  if (this->handle_ == 0) this->handle_ = native::control_api::create(this->parent_->handle(), this->default_size());
+  native::control_api::register_wnd_proc(this->handle_, {*this, &xtd::forms::control::wnd_proc});
+  handles_[this->handle_] = this;
+  send_message(this->handle_, WM_CREATE, 0, 0);
+  this->get_properties();
+}
+
+xtd::forms::control& xtd::forms::control::from_child_handle(intptr_t handle) {
+  try {
+    if (handles_.find(handle) != handles_.end())
+      return handles_[handle]->parent();
+    return (xtd::forms::control&)xtd::forms::control::null;
+  } catch (...) {
+    return (xtd::forms::control&)xtd::forms::control::null;
+  }
+}
+
+xtd::forms::control& xtd::forms::control::from_handle(intptr_t handle) {
+  try {
+    if (handles_.find(handle) != handles_.end())
+      return *handles_[handle];
+    return (xtd::forms::control&)xtd::forms::control::null;
+  } catch (...) {
+    return (xtd::forms::control&)xtd::forms::control::null;
+  }
 }
 
 void xtd::forms::control::on_create_control() {
-  this->get_properties();
-  this->register_events();
 }
 
 void xtd::forms::control::on_client_size_changed(const xtd::event_args &e) {
@@ -116,10 +145,4 @@ void xtd::forms::control::get_properties() {
   this->size_ = native::control_api::size(this->handle_);
   this->text_ = native::control_api::text(this->handle_);
   this->visible_ = native::control_api::visible(this->handle_);
-}
-
-void xtd::forms::control::register_events() {
-  native::control_api::register_client_size_changed(this->handle_, {*this, &xtd::forms::control::on_client_size_changed});
-  native::control_api::register_location_changed(this->handle_, {*this, &xtd::forms::control::on_location_changed});
-  native::control_api::register_size_changed(this->handle_, {*this, &xtd::forms::control::on_size_changed});
 }

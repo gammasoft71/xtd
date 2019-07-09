@@ -1,17 +1,20 @@
 #include "../form_api.hpp"
+#include "ControlEvent.hpp"
 #include <wx/app.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
 
-class Form : public wxFrame {
+class Form : public control_handler {
 public:
-  Form(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_FRAME_STYLE, const wxString& name = wxFrameNameStr) : wxFrame(parent, id, title, pos, size, style, name) {
-    this->SetBackgroundColour(this->panel->GetBackgroundColour());
+  Form(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_FRAME_STYLE) {
+    this->control_handler::create<wxFrame>(parent, id, title, pos, size, style);
+    this->panel = new wxPanel(this->control());
+    this->control()->SetBackgroundColour(this->panel->GetBackgroundColour());
     this->panel->Hide();
   }
   
 private:
-  wxPanel* panel = new wxPanel(this);
+  wxPanel* panel;
 };
 
 intptr_t native::form_api::create(const xtd::drawing::size& size) {

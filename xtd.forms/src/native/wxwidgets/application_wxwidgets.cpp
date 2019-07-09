@@ -1,4 +1,5 @@
 #include "../application_api.hpp"
+#include "ControlEvent.hpp"
 #include "../form_api.hpp"
 #include <wx/app.h>
 #include <wx/window.h>
@@ -27,7 +28,7 @@ intptr_t native::application_api::main_form() {
 void native::application_api::main_form(intptr_t form) {
   if (form == 0) return;
   if (!wxTheApp) return;
-  wxTheApp->SetTopWindow((wxWindow*)form);
+  wxTheApp->SetTopWindow(((control_handler*)form)->control());
 }
 
 void native::application_api::register_idle(std::function<void()> idle) {

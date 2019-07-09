@@ -1,4 +1,6 @@
 #pragma once
+#include <functional>
+#include <map>
 #include <string>
 #include <xtd/event_args.hpp>
 #include <xtd/event_handler.hpp>
@@ -16,7 +18,8 @@ namespace xtd {
       static const control null;
       
       control() {}
-      
+      virtual ~control();
+
       virtual intptr_t handle() const {return this->handle_;}
 
       virtual xtd::drawing::size client_size() const {return this->client_size_;}
@@ -27,7 +30,7 @@ namespace xtd {
       virtual xtd::drawing::point location() const {return this->location_;}
       virtual void location(const xtd::drawing::point& location);
 
-      virtual const control& parent() const {return *this->parent_;}
+      virtual control& parent() const {return *this->parent_;}
       virtual void parent(const control& parent);
 
       virtual xtd::drawing::size size() const {return this->size_;}
@@ -45,6 +48,10 @@ namespace xtd {
 
       virtual void create_handle();
       
+      xtd::forms::control& from_child_handle(intptr_t handle);
+
+      xtd::forms::control& from_handle(intptr_t handle);
+
       virtual void on_client_size_changed(const xtd::event_args& e);
       
       virtual void on_create_control();
@@ -85,9 +92,9 @@ namespace xtd {
 
     protected:
       void get_properties();
-      void register_events();
       xtd::drawing::size client_size_;
       intptr_t handle_ = 0;
+      static std::map<intptr_t, xtd::forms::control*> handles_;
       xtd::drawing::point location_;
       control* parent_ = const_cast<control*>(&control::null);
       xtd::drawing::size size_;
@@ -95,6 +102,7 @@ namespace xtd {
       bool visible_ = true;
       
     private:
+      
     };
   }
 }

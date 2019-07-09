@@ -3,41 +3,32 @@
 #include "ControlEvent.hpp"
 #include <wx/control.h>
 
-class Control : public wxControl {
+class Control : public control_handler {
 public:
-  Control(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : wxControl(parent, id, pos, size, style) {}
-
-  void OnSizeChanged(wxSizeEvent& event) {
-    
+  Control(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
+    this->create<wxControl>(parent, id, pos, size, style);
   }
-  
-private:
-  wxDECLARE_EVENT_TABLE();
 };
-
-wxBEGIN_EVENT_TABLE(Control, wxControl)
-  EVT_SIZE(Control::OnSizeChanged)
-wxEND_EVENT_TABLE()
 
 intptr_t native::control_api::create(intptr_t parent, const xtd::drawing::size& size) {
   if (parent == 0) return 0;
-  return (intptr_t) new Control((wxWindow*)parent, wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height()));
+  return (intptr_t) new Control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height()));
 }
 
 xtd::drawing::size native::control_api::client_size(intptr_t control) {
   if (control == 0) return {};
-  wxSize size = ((wxControl*)control)->GetClientSize();
+  wxSize size = ((control_handler*)control)->control()->GetClientSize();
   return {size.GetWidth(), size.GetHeight()};
 }
 
 void native::control_api::client_size(intptr_t control, const xtd::drawing::size& size) {
   if (control == 0) return;
-  ((wxControl*)control)->SetClientSize(size.width(), size.height());
+  ((control_handler*)control)->control()->SetClientSize(size.width(), size.height());
 }
 
 xtd::drawing::point native::control_api::location(intptr_t control) {
   if (control == 0) return {};
-  wxPoint location = ((wxControl*)control)->GetPosition();
+  wxPoint location = ((control_handler*)control)->control()->GetPosition();
   return {location.x, location.y};
 }
 
@@ -48,68 +39,47 @@ void native::control_api::location(intptr_t control, const xtd::drawing::point& 
 
 xtd::drawing::size native::control_api::size(intptr_t control) {
   if (control == 0) return {};
-  wxSize size = ((wxControl*)control)->GetSize();
+  wxSize size = ((control_handler*)control)->control()->GetSize();
   return {size.GetWidth(), size.GetHeight()};
 }
 
 void native::control_api::size(intptr_t control, const xtd::drawing::size& size) {
   if (control == 0) return;
-  ((wxControl*)control)->SetSize(size.width(), size.height());
+  ((control_handler*)control)->control()->SetSize(size.width(), size.height());
 }
 
 std::string native::control_api::text(intptr_t control) {
   if (control == 0) return {};
-  return ((wxControl*)control)->GetLabel().ToStdString();
+  return ((control_handler*)control)->control()->GetLabel().ToStdString();
 }
 
 void native::control_api::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
-  ((wxControl*)control)->SetLabel(text);
+  ((control_handler*)control)->control()->SetLabel(text);
 }
 
 bool native::control_api::visible(intptr_t control) {
   if (control == 0) return false;
-  return ((wxControl*)control)->IsShown();
+  return ((control_handler*)control)->control()->IsShown();
 }
 
 void native::control_api::visible(intptr_t control, bool visible) {
   if (control == 0) return;
   if (visible)
-    ((wxControl*)control)->Show();
+    ((control_handler*)control)->control()->Show();
   else
-    ((wxControl*)control)->Hide();
+    ((control_handler*)control)->control()->Hide();
 }
 
-namespace {
-  void register_control_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback) {
-    static std::map<intptr_t, xtd::delegate<void(const xtd::event_args&)>> callbacks;
-    callbacks[control] += callback;
-    ((wxControl*)control)->Bind(wxEVT_SIZE, [&](wxSizeEvent& event) {
-      callbacks[(intptr_t)event.GetEventObject()](xtd::event_args::empty);
-    });
-  }
+void native::control_api::register_wnd_proc(intptr_t control, xtd::delegate<void(xtd::forms::message &)> wnd_proc) {
+  ((control_handler*)control)->register_wnd_proc(wnd_proc);
 }
 
-void native::control_api::register_client_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback) {
-  register_control_size_changed(control, callback);
+void native::control_api::unregister_wnd_proc(intptr_t control) {
+  ((control_handler*)control)->unregister_wnd_proc();
 }
 
-void native::control_api::register_location_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback) {
-  static std::map<intptr_t, xtd::delegate<void(const xtd::event_args&)>> callbacks;
-  callbacks[control] += callback;
-  ((wxControl*)control)->Bind(wxEVT_MOVE, [&](wxMoveEvent& event) {
-    callbacks[(intptr_t)event.GetEventObject()](xtd::event_args::empty);
-  });
-}
-
-void native::control_api::register_size_changed(intptr_t control, xtd::delegate<void(const xtd::event_args&)> callback) {
-  register_control_size_changed(control, callback);
-}
-
-intptr_t native::control_api::send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
+intptr_t native::control_api::send_message(intptr_t control, intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
   if (hwnd == 0) return -1;
-
-  xtd::forms::message message = xtd::forms::message::create(hwnd, msg, wparam, lparam, 0);
-
-  return message.result();
+  return ((control_handler*)control)->send_message(hwnd, msg, wparam, lparam);
 }
