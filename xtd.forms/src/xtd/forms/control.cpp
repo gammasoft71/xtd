@@ -1,3 +1,5 @@
+#include <iostream>
+#include <xtd/strings>
 #include "../../../include/xtd/forms/control.hpp"
 #include "../../../include/xtd/forms/window_messages.hpp"
 #include "../../native/control_api.hpp"
@@ -15,6 +17,10 @@ void xtd::forms::control::client_size(const xtd::drawing::size& size) {
     this->client_size_ = size;
     native::control_api::client_size(this->handle_, this->client_size_);
   }
+}
+
+intptr_t xtd::forms::control::handle() const {
+  return native::control_api::handle(this->handle_);
 }
 
 void xtd::forms::control::location(const xtd::drawing::point& location) {
@@ -68,10 +74,10 @@ void xtd::forms::control::create_control() {
 }
 
 void xtd::forms::control::create_handle() {
-  if (this->handle_ == 0) this->handle_ = native::control_api::create(this->parent_->handle(), this->default_size());
+  if (this->handle_ == 0) this->handle_ = native::control_api::create(this->parent_->handle_, this->default_size());
   native::control_api::register_wnd_proc(this->handle_, {*this, &xtd::forms::control::wnd_proc});
-  handles_[this->handle_] = this;
-  send_message(this->handle_, WM_CREATE, 0, 0);
+  handles_[native::control_api::handle(this->handle_)] = this;
+  send_message(native::control_api::handle(this->handle_), WM_CREATE, 0, 0);
   this->get_properties();
 }
 
@@ -136,9 +142,22 @@ void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
 }
 
 void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
-  
+  std::cout << xtd::strings::format("receive message [{}]", message) << std::endl;
+  switch (message.msg()) {
+    case WM_MOVE: this->on_location_changed(xtd::event_args::empty); break;
+    case WM_SIZE: this->on_size_changed(xtd::event_args::empty); break;
+    default: this->def_wnd_proc(message); break;
+  }
 }
 
+intptr_t xtd::forms::control::send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
+  return native::control_api::send_message(this->handle_, hwnd, msg, wparam, lparam);
+}
+
+void xtd::forms::control::def_wnd_proc(xtd::forms::message& message) {
+  native::control_api::def_wnd_proc(message);
+  
+}
 void xtd::forms::control::get_properties() {
   this->client_size_ = native::control_api::client_size(this->handle_);
   this->location_ = native::control_api::location(this->handle_);

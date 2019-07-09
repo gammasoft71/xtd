@@ -17,16 +17,20 @@ namespace xtd {
     public:
       static const control null;
       
-      control() {}
+      control() = default;
+      
       virtual ~control();
-
-      virtual intptr_t handle() const {return this->handle_;}
 
       virtual xtd::drawing::size client_size() const {return this->client_size_;}
       virtual void client_size(const xtd::drawing::size& size);
 
       virtual xtd::drawing::size default_size() const {return{0, 0};}
 
+      virtual intptr_t handle() const;
+      
+      virtual int height() const {return this->size_.height();}
+      virtual void height(int height) {this->size({this->size_.width(), height});}
+      
       virtual xtd::drawing::point location() const {return this->location_;}
       virtual void location(const xtd::drawing::point& location);
 
@@ -41,6 +45,15 @@ namespace xtd {
       
       virtual bool visible() const {return this->visible_;}
       virtual void visible(bool visible);
+
+      virtual int width() const {return this->size_.width();}
+      virtual void width(int width) {this->size({width, this->size_.height()});}
+      
+      virtual int x() const {return this->location_.x();}
+      virtual void x(int x) {this->size({x, this->location_.y()});}
+      
+      virtual int y() const {return this->location_.y();}
+      virtual void y(int y) {this->size({this->location_.x(), y});}
       
       void create_control();
       
@@ -70,6 +83,8 @@ namespace xtd {
       
       virtual void on_visible_changed(const xtd::event_args& e);
       
+      intptr_t send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam);
+      
       virtual void show() {this->visible(true);}
       
       virtual void wnd_proc(xtd::forms::message& message);
@@ -91,6 +106,8 @@ namespace xtd {
       xtd::event_handler<control> visible_changed;
 
     protected:
+      virtual void def_wnd_proc(xtd::forms::message& message);
+      
       void get_properties();
       xtd::drawing::size client_size_;
       intptr_t handle_ = 0;

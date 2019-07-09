@@ -22,11 +22,14 @@ class form1 : public form {
 public:
   form1() {
     this->text("form1");
+    this->width(800);
+    this->height(400);
 
     control1.parent(*this);
     control1.size({100, 100});
   }
-  
+
+  /*
   void wnd_proc(xtd::forms::message& message) override {
     this->form::wnd_proc(message);
     
@@ -36,6 +39,7 @@ public:
       default: break;
     }
   }
+ */
   
 private:
   control control1;

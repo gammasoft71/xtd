@@ -23,7 +23,7 @@ xtd::microsoft::win32::registry_key xtd::forms::application::common_app_data_reg
 
 std::string xtd::forms::application::company_name() {
   if (!xtd::strings::is_empty(xtd::forms::application_informations::company_name())) return xtd::forms::application_informations::company_name();
-  return  xtd::io::path::get_file_name_without_extension(executable_path());
+  return xtd::io::path::get_file_name_without_extension(executable_path());
 }
 
 std::string xtd::forms::application::executable_path() {
@@ -32,7 +32,7 @@ std::string xtd::forms::application::executable_path() {
 
 std::string xtd::forms::application::product_name() {
   if (!xtd::strings::is_empty(xtd::forms::application_informations::product_name())) return xtd::forms::application_informations::product_name();
-  return  xtd::io::path::get_file_name_without_extension(executable_path());
+  return xtd::io::path::get_file_name_without_extension(executable_path());
 }
 
 void xtd::forms::application::do_events() {

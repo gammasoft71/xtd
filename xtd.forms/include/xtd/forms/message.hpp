@@ -44,12 +44,7 @@ namespace xtd {
       template<typename type>
       type get_lparam() { return (type)this->lparam_; }
       
-      std::string to_string() const {
-        std::stringstream result;
-        result << "msg=0x" << std::setw(4) << std::setfill('0') << std::hex << this->msg_ << " hwnd=0x" << std::hex << std::setw(2) << std::setfill('0') << this->hwnd_ << " wparam=0x" << std::hex  << std::setw(8) << std::setfill('0') << this->wparam_ << " lparam=0x" << std::hex << std::setw(8) << std::setfill('0') << this->lparam_ << " result=0x" << std::hex << std::setw(8) << std::setfill('0') << this->result_;
-      return result.str();
-      }
-      
+      std::string to_string() const;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {

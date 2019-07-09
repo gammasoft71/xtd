@@ -33,7 +33,7 @@ set(NATIVE_SOURCES
 )
 
 set(NATIVE_WXWIDGETS_SOURCES
-  src/native/wxwidgets/ControlEvent.hpp
+  src/native/wxwidgets/control_handler.hpp
   src/native/wxwidgets/application_wxwidgets.cpp
   src/native/wxwidgets/control_wxwidgets.cpp
   src/native/wxwidgets/form_wxwidgets.cpp
