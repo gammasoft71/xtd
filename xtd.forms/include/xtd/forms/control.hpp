@@ -71,7 +71,9 @@ namespace xtd {
       xtd::forms::control& from_child_handle(intptr_t handle);
 
       xtd::forms::control& from_handle(intptr_t handle);
-
+      
+      bool is_null() const;
+      
       virtual void on_click(const xtd::event_args& e);
 
       virtual void on_client_size_changed(const xtd::event_args& e);

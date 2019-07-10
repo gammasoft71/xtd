@@ -133,6 +133,10 @@ xtd::forms::control& xtd::forms::control::from_handle(intptr_t handle) {
   }
 }
 
+bool xtd::forms::control::is_null() const {
+  return this == &control::null;
+}
+
 void xtd::forms::control::on_create_control() {
 }
 
