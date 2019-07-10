@@ -32,7 +32,11 @@ namespace {
 const xtd::forms::control xtd::forms::control::null;
 
 xtd::forms::control::~control() {
-  native::control_api::unregister_wnd_proc(this->handle_);
+  if (this->handle_) {
+    native::control_api::unregister_wnd_proc(this->handle_);
+    native::control_api::del(this->handle_);
+    this->handle_ = 0;
+  }
 }
 
 std::map<intptr_t, xtd::forms::control*> xtd::forms::control::handles_;

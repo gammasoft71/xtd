@@ -24,6 +24,12 @@ void native::control_api::def_wnd_proc(xtd::forms::message& message) {
 void native::control_api::destroy(intptr_t control) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Destroy();
+  del(control);
+}
+
+void native::control_api::del(intptr_t control) {
+  if (control == 0) return;
+  delete reinterpret_cast<class control_handler*>(control);
 }
 
 xtd::drawing::size native::control_api::client_size(intptr_t control) {

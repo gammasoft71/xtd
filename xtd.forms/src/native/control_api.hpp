@@ -16,6 +16,7 @@ namespace native {
     static intptr_t create(intptr_t parent, const xtd::drawing::size& size);
     static void def_wnd_proc(xtd::forms::message& message);
     static void destroy(intptr_t control);
+    static void del(intptr_t control);
     static xtd::drawing::size client_size(intptr_t control);
     static void client_size(intptr_t control, const xtd::drawing::size& size);
     static intptr_t handle(intptr_t control);
