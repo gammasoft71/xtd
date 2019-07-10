@@ -52,6 +52,6 @@ void xtd::forms::application::run() {
 }
 
 void xtd::forms::application::run(const form& form) {
-  native::application_api::main_form(form.handle());
+  native::application_api::main_form(form.__get_handle__());
   run();
 }

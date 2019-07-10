@@ -2,7 +2,6 @@
 #include "../../native/form_api.hpp"
 
 xtd::forms::form::form() {
-  native::form_api::initialize_application(); // Must be first
   create_control();
 }
 

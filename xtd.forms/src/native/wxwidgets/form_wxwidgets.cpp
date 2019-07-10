@@ -1,3 +1,4 @@
+#include "../application_api.hpp"
 #include "../form_api.hpp"
 #include "control_handler.hpp"
 #include <wx/app.h>
@@ -21,13 +22,7 @@ namespace {
 }
 
 intptr_t native::form_api::create(const xtd::drawing::size& size) {
+  native::application_api::initialize_application(); // Must be first
   return (intptr_t) new form(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(size.width(), size.height()));
-}
-
-void native::form_api::initialize_application() {
-  if (wxTheApp) return;  
-  wxInitialize();
-  wxApp::SetInstance(new wxApp());
-  wxTheApp->CallOnInit();
 }
 
