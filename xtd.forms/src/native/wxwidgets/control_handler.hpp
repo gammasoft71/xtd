@@ -104,7 +104,7 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
 
 template<typename TControl>
 inline void control_wrapper<TControl>::ProcessMouseEvent(wxEvent& event, intptr_t hwnd) {
-  wxMouseEvent& mouse_event = dynamic_cast<wxMouseEvent&>(event);
+  wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
   wxMouseState mouse_state = wxGetMouseState();
   int virtual_keys = 0;
   if (mouse_state.ControlDown()) virtual_keys += MK_CONTROL;
