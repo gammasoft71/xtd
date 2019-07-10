@@ -16,7 +16,7 @@ public:
     button_add.text("Add");
     button_add.location({10, 150});
     button_add.mouse_click += [&](const control& sender, const mouse_event_args& e) {
-      if (&this->label1.parent() == &control::null)
+      if (this->label1.parent().is_null())
         this->label1.parent(*this);
     };
 
@@ -24,7 +24,7 @@ public:
     button_remove.text("Remove");
     button_remove.location({100, 150});
     button_remove.mouse_click += [&](const control& sender, const mouse_event_args& e) {
-      if (&this->label1.parent() != &control::null)
+      if (!this->label1.parent().is_null())
         this->label1.parent(control::null);
     };
   }
