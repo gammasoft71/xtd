@@ -63,6 +63,7 @@ private:
 template<typename TControl>
 inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
   wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
+  if (!window) return this->TControl::ProcessEvent(event);
   intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
 
   // mouse events
