@@ -14,6 +14,7 @@ void native::application_api::do_events() {
 }
 
 void native::application_api::enable_visual_style() {
+  initialize_application(); // Must be first
   wxTheApp->SetUseBestVisual(true);
 }
 

@@ -230,7 +230,7 @@ void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
 }
 
 void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
-  std::cout << xtd::strings::format("receive message [{}]", message) << std::endl;
+  //std::cout << xtd::strings::format("receive message [{}]", message) << std::endl;
   switch (message.msg()) {
     // mouse events
     case WM_LBUTTONDOWN:
@@ -312,6 +312,7 @@ void xtd::forms::control::wm_mouse_leave(xtd::forms::message& message) {
 }
 
 void xtd::forms::control::wm_mouse_up(xtd::forms::message& message) {
+  /*
   if (this->get_state(xtd::forms::control::state::double_click_fired)) {
     this->on_double_click(xtd::event_args::empty);
     this->on_mouse_double_click(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 2, 0));
@@ -319,6 +320,9 @@ void xtd::forms::control::wm_mouse_up(xtd::forms::message& message) {
     this->on_click(xtd::event_args::empty);
     this->on_mouse_click(xtd::forms::mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
   }
+   */
+  this->on_click(xtd::event_args::empty);
+  this->on_mouse_click(xtd::forms::mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
   this->def_wnd_proc(message);
   this->on_mouse_up(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
 }
