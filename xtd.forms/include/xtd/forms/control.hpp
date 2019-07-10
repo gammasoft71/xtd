@@ -166,12 +166,13 @@ namespace xtd {
       virtual void def_wnd_proc(xtd::forms::message& message);
       
       void get_properties();
-      xtd::drawing::size client_size_;
+      void set_properties();
+      xtd::drawing::size client_size_ {-1, -1};
       intptr_t handle_ = 0;
       static std::map<intptr_t, xtd::forms::control*> handles_;
-      xtd::drawing::point location_;
+      xtd::drawing::point location_ {-1, -1};
       control* parent_ = const_cast<control*>(&control::null);
-      xtd::drawing::size size_;
+      xtd::drawing::size size_ {-1, -1};
       std::string text_;
       bool visible_ = true;
       xtd::forms::control::state state_ = state::empty;

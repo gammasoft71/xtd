@@ -3,16 +3,18 @@
 #include "control_handler.hpp"
 #include <wx/control.h>
 
-class Control : public control_handler {
-public:
-  Control(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
-    this->create<wxControl>(parent, id, pos, size, style);
-  }
-};
+namespace {
+  class control : public control_handler {
+  public:
+    control(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
+      this->create<wxControl>(parent, id, pos, size, style);
+    }
+  };
+}
 
 intptr_t native::control_api::create(intptr_t parent, const xtd::drawing::size& size) {
   if (parent == 0) return 0;
-  return reinterpret_cast<intptr_t>(new Control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height())));
+  return reinterpret_cast<intptr_t>(new control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height())));
 }
 
 void native::control_api::def_wnd_proc(xtd::forms::message& message) {

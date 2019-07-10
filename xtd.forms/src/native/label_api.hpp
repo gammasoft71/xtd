@@ -3,7 +3,7 @@
 #include <cstdint>
 
 namespace native {
-  class button_api {
+  class label_api {
   public:
     static intptr_t create(intptr_t parent, const xtd::drawing::size& size);
   };

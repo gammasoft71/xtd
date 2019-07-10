@@ -59,7 +59,9 @@ void xtd::forms::control::parent(const xtd::forms::control& parent) {
   if (this->parent_ != &parent) {
     this->parent_ = const_cast<xtd::forms::control*>(&parent);
     if (this->parent_ == &xtd::forms::control::null) {
+      handles_.erase(this->handle_);
       native::control_api::destroy(this->handle_);
+      this->handle_ = 0;
     } else {
       this->create_control();
       //native::control_api::parent(this->handle_, this->parent_);
@@ -107,6 +109,7 @@ void xtd::forms::control::create_handle() {
   native::control_api::register_wnd_proc(this->handle_, {*this, &xtd::forms::control::wnd_proc});
   handles_[native::control_api::handle(this->handle_)] = this;
   send_message(native::control_api::handle(this->handle_), WM_CREATE, 0, 0);
+  this->set_properties();
   this->get_properties();
 }
 
@@ -255,12 +258,21 @@ void xtd::forms::control::def_wnd_proc(xtd::forms::message& message) {
   native::control_api::def_wnd_proc(message);
   
 }
+
 void xtd::forms::control::get_properties() {
   this->client_size_ = native::control_api::client_size(this->handle_);
   this->location_ = native::control_api::location(this->handle_);
   this->size_ = native::control_api::size(this->handle_);
   this->text_ = native::control_api::text(this->handle_);
   this->visible_ = native::control_api::visible(this->handle_);
+}
+
+void xtd::forms::control::set_properties() {
+  if (this->client_size_ != xtd::drawing::size(-1, -1)) native::control_api::client_size(this->handle_, this->client_size_);
+  if (this->location_ != xtd::drawing::point(-1, -1)) native::control_api::location(this->handle_, this->location_);
+  if (this->size_ != xtd::drawing::size(-1, -1)) native::control_api::size(this->handle_, this->size_);
+  native::control_api::text(this->handle_, this->text_);
+  native::control_api::visible(this->handle_, this->visible_);
 }
 
 void xtd::forms::control::wm_kill_focus(xtd::forms::message& message) {

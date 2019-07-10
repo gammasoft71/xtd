@@ -14,6 +14,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/button.hpp
   include/xtd/forms/control.hpp
   include/xtd/forms/form.hpp
+  include/xtd/forms/label.hpp
   include/xtd/forms/message.hpp
   include/xtd/forms/mouse_buttons.hpp
   include/xtd/forms/mouse_event_args.hpp
@@ -28,6 +29,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/control.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/forms.cpp
+  src/xtd/forms/label.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/window_messages.cpp
 )
@@ -37,6 +39,7 @@ set(NATIVE_SOURCES
   src/native/button_api.hpp
   src/native/control_api.hpp
   src/native/form_api.hpp
+  src/native/label_api.hpp
 )
 
 set(NATIVE_WXWIDGETS_SOURCES
@@ -45,6 +48,7 @@ set(NATIVE_WXWIDGETS_SOURCES
   src/native/wxwidgets/button_wxwidgets.cpp
   src/native/wxwidgets/control_wxwidgets.cpp
   src/native/wxwidgets/form_wxwidgets.cpp
+  src/native/wxwidgets/label_wxwidgets.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
