@@ -30,7 +30,7 @@ The classic first application 'Hello World'.
 src/tunit_hello_world.cpp:
 
 ```c++
-#include <xtd/io>
+#include <xtd/xtd.io>
 #include <iostream>
 #include <string>
 
