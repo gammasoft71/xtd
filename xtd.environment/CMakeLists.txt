@@ -34,13 +34,13 @@ if (MSVC)
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
 if(MSVC)
-  target_link_libraries(${PROJECT_NAME} xtd.strings rpcrt4)
+  target_link_libraries(${PROJECT_NAME} xtd.io xtd.strings rpcrt4)
 elseif (APPLE)
-  target_link_libraries(${PROJECT_NAME} xtd.strings)
+  target_link_libraries(${PROJECT_NAME} xtd.io xtd.strings)
 elseif (ANDROID)
-  target_link_libraries(${PROJECT_NAME} xtd.strings)
+  target_link_libraries(${PROJECT_NAME} xtd.io xtd.strings)
 elseif (UNIX)
-  target_link_libraries(${PROJECT_NAME} xtd.strings uuid)
+  target_link_libraries(${PROJECT_NAME} xtd.io xtd.strings uuid)
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
@@ -50,6 +50,7 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "include(CMakeFindDependencyMacro)\n"
   "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
   "\n"
+  "find_package(xtd.io REQUIRED)\n"
   "find_package(xtd.strings REQUIRED)\n"
   "\n"
   "get_filename_component(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
