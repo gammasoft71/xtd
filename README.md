@@ -23,7 +23,7 @@ The classic first application 'Hello World'.
 src/delegates_hello_world.cpp:
 
 ```c++
-#include <xtd/delegates>
+#include <xtd/xtd.delegates>
 #include <iostream>
 #include <string>
 
