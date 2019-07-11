@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.drawing VERSION 0.0.1)
 set(INCLUDES
-  include/xtd/drawing
-  include/xtd/drawing.hpp
   include/xtd/color.hpp
   include/xtd/known_color.hpp
   include/xtd/point.hpp
   include/xtd/size.hpp
   include/xtd/system_colors.hpp
+  include/xtd/xtd.drawing
+  include/xtd/xtd.drawing.hpp
 )
 
 set(SOURCES

@@ -1,5 +1,5 @@
-#include <xtd/drawing>
-#include <xtd/tunit>
+#include <xtd/xtd.drawing>
+#include <xtd/xtd.tunit>
 
 using namespace xtd::drawing;
 using namespace xtd::tunit;

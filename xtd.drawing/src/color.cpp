@@ -2,7 +2,7 @@
 #include <cmath>
 #include <map>
 #include <stdexcept>
-#include <xtd/strings>
+#include <xtd/xtd.strings>
 
 const xtd::drawing::color xtd::drawing::color::empty = xtd::drawing::color();
 
