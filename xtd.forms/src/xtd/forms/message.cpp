@@ -1,4 +1,4 @@
-#include <xtd/strings.hpp>
+#include <xtd/xtd.strings.hpp>
 #include "../include/xtd/forms/message.hpp"
 #include "../../native/control_api.hpp"
 

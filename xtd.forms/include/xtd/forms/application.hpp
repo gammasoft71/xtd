@@ -1,7 +1,7 @@
 #pragma once
 #include "application_informations.hpp"
 #include "form.hpp"
-#include <xtd/delegates>
+#include <xtd/xtd.delegates>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

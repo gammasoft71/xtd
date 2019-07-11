@@ -6,7 +6,7 @@
 #include <xtd/event_args.hpp>
 #include <xtd/point.hpp>
 #include <xtd/size.hpp>
-#include <xtd/strings.hpp>
+#include <xtd/xtd.strings.hpp>
 #include "../../include/xtd/forms/message.hpp"
 #include "../../include/xtd/forms/window_messages.hpp"
 

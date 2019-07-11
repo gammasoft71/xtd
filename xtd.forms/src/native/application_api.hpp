@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <xtd/delegates>
+#include <xtd/xtd.delegates>
 
 namespace native {
   class application_api {

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <xtd/strings>
+#include <xtd/xtd.strings>
 #include "../../../include/xtd/forms/control.hpp"
 #include "../../../include/xtd/forms/window_messages.hpp"
 #include "../../../include/xtd/forms/window_message_keys.hpp"

@@ -2,7 +2,7 @@
 
 #include <memory>
 #include <thread>
-#include <xtd/delegates>
+#include <xtd/xtd.delegates>
 #include "../../../include/xtd/forms/message.hpp"
 #include "../../../include/xtd/forms/message.hpp"
 #include "../../../include/xtd/forms/window_messages.hpp"
