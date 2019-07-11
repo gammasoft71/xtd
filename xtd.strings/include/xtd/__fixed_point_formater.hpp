@@ -4,7 +4,7 @@
 
 /// @cond
 #ifndef __XTD_STRINGS_INCLUDE__
-#error "Do not include this file yourself, use only #include <xtd/strings>"
+#error "Do not include this file yourself, use only #include <xtd/xtd.strings>"
 #endif
 /// @endcond
 
@@ -12,7 +12,7 @@
 #include "__currency_formater.hpp"
 #include "__format_stringer.hpp"
 #include "__natural_formater.hpp"
-#include "strings.hpp"
+#include "xtd.strings.hpp"
 
 /// @cond
 template<typename Char, typename Value>

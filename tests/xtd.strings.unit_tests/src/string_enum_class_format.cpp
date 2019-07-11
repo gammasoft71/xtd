@@ -1,4 +1,4 @@
-#include <xtd/strings>
+#include <xtd/xtd.strings>
 #include <xtd/tunit>
 
 using namespace std;

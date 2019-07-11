@@ -1,4 +1,4 @@
-#include "../include/xtd/strings.hpp"
+#include "../include/xtd/xtd.strings.hpp"
 
 void __strings__unsused__() {
 }

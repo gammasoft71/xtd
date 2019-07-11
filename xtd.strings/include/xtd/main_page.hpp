@@ -3,7 +3,7 @@
 
 /// @cond
 #ifndef __XTD_STRINGS_INCLUDE__
-#error "Do not include this file yourself, use only #include <xtd/strings>"
+#error "Do not include this file yourself, use only #include <xtd/xtd.strings>"
 #endif
 /// @endcond
 
@@ -26,7 +26,7 @@
 ///
 /// src/strings_hello_world.cpp:
 /// @code
-/// #include <xtd/strings>
+/// #include <xtd/xtd.strings>
 /// #include <iostream>
 ///
 /// using namespace std;
