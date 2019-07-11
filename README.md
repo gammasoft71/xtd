@@ -33,7 +33,7 @@ The classic first application 'Hello World'.
 src/string_hello_world.cpp:
 
 ```c++
-#include <xtd/strings>
+#include <xtd/xtd.strings>
 #include <iostream>
 
 using namespace std;
