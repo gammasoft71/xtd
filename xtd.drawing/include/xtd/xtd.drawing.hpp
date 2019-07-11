@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/xtd.strings>
 #include "color.hpp"
 #include "known_color.hpp"
 #include "point.hpp"
