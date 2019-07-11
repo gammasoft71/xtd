@@ -1,4 +1,3 @@
-#include <xtd/strings>
 #include <xtd/xtd.forms>
 
 using namespace xtd;
@@ -27,4 +26,3 @@ int main() {
   
   application::run(form1);
 }
-

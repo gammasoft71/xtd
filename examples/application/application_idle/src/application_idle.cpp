@@ -1,4 +1,3 @@
-#include <xtd/strings>
 #include <xtd/xtd.forms>
 
 using namespace xtd;

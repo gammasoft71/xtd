@@ -1,4 +1,3 @@
-#include <xtd/strings>
 #include <xtd/xtd.forms>
 
 using namespace xtd;
@@ -49,4 +48,3 @@ int main() {
   application::enable_visual_styles();
   application::run(examples::form1());
 }
-
