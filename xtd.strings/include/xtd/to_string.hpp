@@ -4,7 +4,7 @@
 
 /// @cond
 #ifndef __XTD_STRINGS_INCLUDE__
-#error "Do not include this file yourself, use only #include <xtd/strings>"
+#error "Do not include this file yourself, use only #include <xtd/xtd.strings>"
 #endif
 /// @endcond
 
@@ -19,7 +19,7 @@
 #include "__natural_formater.hpp"
 #include "__numeric_formater.hpp"
 #include "__string_formater.hpp"
-#include "strings.hpp"
+#include "xtd.strings.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

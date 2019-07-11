@@ -1,4 +1,2 @@
-/// @file
-/// @brief Contains xtd::strings class.
 #pragma once
-#include "strings.hpp"
+#error "include xtd.strings file instead"

@@ -4,12 +4,12 @@
 
 /// @cond
 #ifndef __XTD_STRINGS_INCLUDE__
-#error "Do not include this file yourself, use only #include <xtd/strings>"
+#error "Do not include this file yourself, use only #include <xtd/xtd.strings>"
 #endif
 /// @endcond
 
 #include <bitset>
-#include "strings.hpp"
+#include "xtd.strings.hpp"
 
 /// @cond
 template<typename Char, typename Value>

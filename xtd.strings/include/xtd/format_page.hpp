@@ -3,7 +3,7 @@
 
 /// @cond
 #ifndef __XTD_STRINGS_INCLUDE__
-#error "Do not include this file yourself, use only #include <xtd/strings>"
+#error "Do not include this file yourself, use only #include <xtd/xtd.strings>"
 #endif
 /// @endcond
 
@@ -145,7 +145,7 @@
 /// @code
 /// #include <iostream>
 /// #include <vector>
-/// #include <xtd/strings>
+/// #include <xtd/xtd.strings>
 ///
 /// int main() {
 ///   std::vector names = {"Adam", "Bridgette", "Carla", "Daniel", "Ebenezer", "Francine", "George"};

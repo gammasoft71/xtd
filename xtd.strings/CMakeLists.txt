@@ -24,9 +24,9 @@ set(INCLUDES
   include/xtd/parse.hpp
   include/xtd/string_comparison.hpp
   include/xtd/string_split_options.hpp
-  include/xtd/strings
-  include/xtd/strings.hpp
   include/xtd/to_string.hpp
+  include/xtd/xtd.strings
+  include/xtd/xtd.strings.hpp
 )
 set(SOURCES
   src/strings.cpp
