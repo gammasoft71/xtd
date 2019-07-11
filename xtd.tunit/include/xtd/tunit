@@ -1,4 +1,2 @@
-/// @file
-/// @brief Contains xtd::unit_test class.
 #pragma once
-#include "tunit.hpp"
+#error "Include xtd.tunit instead tunit"

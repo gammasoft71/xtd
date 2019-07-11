@@ -1,5 +1,5 @@
 #include "assert_unit_tests.hpp"
-#include <xtd/tunit>
+#include <xtd/xtd.tunit>
 
 namespace unit_tests {
   class test_class_(test_assert_are_same_succeed) {
