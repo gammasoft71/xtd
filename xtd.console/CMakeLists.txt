@@ -11,7 +11,6 @@ set(INCLUDES
   include/xtd/background_color.hpp
   include/xtd/basic_console.hpp
   include/xtd/beep.hpp
-  include/xtd/console
   include/xtd/console.hpp
   include/xtd/console_cancel_event_args.hpp
   include/xtd/console_cancel_event_handler.hpp
@@ -23,6 +22,8 @@ set(INCLUDES
   include/xtd/foreground_color.hpp
   include/xtd/format.hpp
   include/xtd/reset_color.hpp
+  include/xtd/xtd.console
+  include/xtd/xtd.console.hpp
 )
 set(SOURCES
   src/__opaque_console_gcc.cpp

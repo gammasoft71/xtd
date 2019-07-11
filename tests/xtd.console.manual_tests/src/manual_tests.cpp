@@ -1,5 +1,5 @@
 #include <atomic>
-#include <xtd/console>
+#include <xtd/xtd.console>
 
 using namespace std;
 using namespace std::string_literals;

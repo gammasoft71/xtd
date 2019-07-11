@@ -1,16 +1,7 @@
 /// @file
 /// @brief Contains xtd::console and xtd::wconsole typedefs.
 #pragma once
-#include "__get_err_rdbuf.hpp"
-#include "__get_in_rdbuf.hpp"
-#include "__get_out_rdbuf.hpp"
-#include "__opaque_console.hpp"
-#include "background_color.hpp"
-#include "beep.hpp"
-#include "console_cancel_event_handler.hpp"
-#include "foreground_color.hpp"
-#include "format.hpp"
-#include "reset_color.hpp"
+#include "basic_console.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
