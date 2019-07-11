@@ -16,7 +16,7 @@ namespace examples {
       };
       
       this->button2.parent(*this);
-      this->button2.text("\nbutton2\n");
+      this->button2.text("button2");
       this->button2.location({50, 100});
       this->button2.size({200, 75});
       this->button2.click += [&] (const control& sender, const event_args& e) {

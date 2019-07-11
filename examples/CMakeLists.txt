@@ -4,8 +4,13 @@ project(xtd.forms.examples)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_subdirectory(common_control)
-
 add_subdirectory(application)
-add_subdirectory(form)
-add_subdirectory(form2)
+add_subdirectory(common_control)
+add_subdirectory(components)
+add_subdirectory(containers)
+add_subdirectory(dialogs)
+add_subdirectory(events)
+add_subdirectory(hello_world)
+add_subdirectory(menus_and_toolbars)
+add_subdirectory(tests)
+add_subdirectory(others)

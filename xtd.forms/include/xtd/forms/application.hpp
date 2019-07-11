@@ -1,6 +1,7 @@
 #pragma once
 #include "application_informations.hpp"
 #include "form.hpp"
+#include <xtd/delegates>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -67,7 +68,11 @@ namespace xtd {
 
       static void run(const form& form);
       
+      static xtd::delegate<void(const xtd::event_args&)> idle;
+      
     private:
+      static void on_idle();
+
       application() = default;
       static const form* main_form;
     };

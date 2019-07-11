@@ -1,6 +1,6 @@
 #pragma once
-#include <functional>
 #include <cstdint>
+#include <xtd/delegates>
 
 namespace native {
   class application_api {
@@ -12,7 +12,7 @@ namespace native {
     static void initialize_application();
     static intptr_t main_form();
     static void main_form(intptr_t handle);
-    static void register_idle(std::function<void()> idle);
+    static void register_idle(xtd::delegate<void()> idle);
     static void run();
     static void unregister_idle();
   };

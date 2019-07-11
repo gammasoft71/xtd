@@ -1,3 +1,4 @@
+#include <xtd/strings>
 #include <xtd/xtd.forms>
 
 using namespace xtd;
@@ -37,5 +38,13 @@ private:
 
 // The main entry point for the application.
 int main() {
-  application::run(form1());
+  //application::run(form1());
+  form form1 = control::create<form>();
+
+  application::idle += [&](const xtd::event_args& e) {
+    static int counter = 0;
+    form1.text(strings::format("{}", ++counter));
+  };
+  
+  application::run(form1);
 }

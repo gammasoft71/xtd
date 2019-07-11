@@ -61,7 +61,43 @@ namespace xtd {
       
       virtual int y() const {return this->location_.y();}
       virtual void y(int y) {this->size({this->location_.x(), y});}
-      
+
+      template<typename control>
+      static control create(const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        control item;
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+
+      template<typename control>
+      static control create(const xtd::forms::control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        control item;
+        item.parent(parent);
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+
+      template<typename control>
+      static control create(const std::string& text, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        control item;
+        item.text(text);
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+
+      template<typename control>
+      static control create(const xtd::forms::control& parent, const std::string& text, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        control item;
+        item.parent(parent);
+        item.text(text);
+        item.location(location);
+        item.size(size);
+        return item;
+      }
+
       void create_control();
       
       virtual void hide() {this->visible(false);}
@@ -178,6 +214,7 @@ namespace xtd {
       std::string text_;
       bool visible_ = true;
       xtd::forms::control::state state_ = state::empty;
+      std::shared_ptr<intptr_t> instance_ = std::make_shared<intptr_t>(0);
       
     private:
       bool get_state(xtd::forms::control::state flag) const {return ((int)this->state_ & (int)flag) == (int)flag;}

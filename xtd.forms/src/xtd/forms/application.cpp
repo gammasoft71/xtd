@@ -1,7 +1,7 @@
+#include <xtd/io.hpp>
+#include <xtd/environment.hpp>
 #include "../../../include/xtd/forms/application.hpp"
 #include "../../native/application_api.hpp"
-#include <xtd/environment.hpp>
-#include <xtd/io.hpp>
 
 bool xtd::forms::application::allow_quit() {
   return native::application_api::allow_quit();
@@ -53,5 +53,12 @@ void xtd::forms::application::run() {
 
 void xtd::forms::application::run(const form& form) {
   native::application_api::main_form(form.__get_handle__());
+  native::application_api::register_idle(application::on_idle);
   run();
+}
+
+xtd::delegate<void(const xtd::event_args&)> xtd::forms::application::idle;
+
+void xtd::forms::application::on_idle() {
+  xtd::forms::application::idle(xtd::event_args::empty);
 }
