@@ -1,4 +1,4 @@
-#include <xtd/delegates>
+#include <xtd/xtd.delegates>
 #include <xtd/tunit>
 
 using namespace std;
