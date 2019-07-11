@@ -23,7 +23,7 @@ The classic first application 'Hello World'.
 src/environment_hello_world.cpp:
 
 ```c++
-#include <xtd/environment>
+#include <xtd/xtd.environment>
 #include <iostream>
 
 using namespace std;

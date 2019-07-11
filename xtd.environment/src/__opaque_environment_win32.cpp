@@ -9,7 +9,7 @@
 #include <Lmcons.h>
 
 #include "../include/xtd/__opaque_environment.hpp"
-#include <xtd/strings>
+#include <xtd/xtd.strings>
 
 std::string __opaque_environment::get_current_directory() noexcept {
   char path[MAX_PATH + 1];

@@ -30,7 +30,7 @@
 
 #include "../include/xtd/__opaque_environment.hpp"
 #include "../include/xtd/environment.hpp"
-#include <xtd/strings>
+#include <xtd/xtd.strings>
 
 int __environment_argc;
 char** __environment_argv;

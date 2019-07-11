@@ -4,13 +4,14 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.environment VERSION 1.0.0)
 set(INCLUDES
   include/xtd/__opaque_environment.hpp
-  include/xtd/environment
   include/xtd/environment.hpp
   include/xtd/environment_variable_target.hpp
   include/xtd/guid.hpp
   include/xtd/operating_system.hpp
   include/xtd/platform_id.hpp
   include/xtd/version.hpp
+  include/xtd/xtd.environment
+  include/xtd/xtd.environment.hpp
 )
 set(SOURCES
   src/__opaque_environment_gcc.cpp
