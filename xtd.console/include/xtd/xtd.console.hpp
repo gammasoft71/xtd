@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::console and xtd::wconsole typedefs.
 #pragma once
+#include <xtd/xtd.delegates>
 #include "__get_err_rdbuf.hpp"
 #include "__get_in_rdbuf.hpp"
 #include "__get_out_rdbuf.hpp"
@@ -12,3 +13,4 @@
 #include "foreground_color.hpp"
 #include "format.hpp"
 #include "reset_color.hpp"
+#include <xtd/xtd.strings>
