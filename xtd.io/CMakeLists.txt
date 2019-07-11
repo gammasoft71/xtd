@@ -5,9 +5,9 @@ project(xtd.io VERSION 0.1.0)
 set(INCLUDES
   include/xtd/file.hpp
   include/xtd/file_attributes.hpp
-  include/xtd/io
-  include/xtd/io.hpp
   include/xtd/path.hpp
+  include/xtd/xtd.io
+  include/xtd/xtd.io.hpp
 )
 set(SOURCES
   src/file_gcc.cpp
