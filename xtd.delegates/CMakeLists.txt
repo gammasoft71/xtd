@@ -5,12 +5,12 @@ project(xtd.delegates VERSION 1.0.0)
 set(INCLUDES
   include/xtd/action.hpp
   include/xtd/delegate.hpp
-  include/xtd/delegates
-  include/xtd/delegates.hpp
   include/xtd/event_args.hpp
   include/xtd/event_handler.hpp
   include/xtd/func.hpp
   include/xtd/predicate.hpp
+  include/xtd/xtd.delegates
+  include/xtd/xtd.delegates.hpp
 )
 set(SOURCES
   src/delegates.cpp
