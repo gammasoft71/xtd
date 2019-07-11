@@ -1,7 +1,6 @@
 #include <xtd/xtd>
 
 using namespace xtd;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 
 // The main entry point for the application.
@@ -10,9 +9,9 @@ int main() {
   
   button button1;
   button1.text("Click me");
-  button1.location(point(10, 10));
+  button1.location({10, 10});
   button1.click += [&](const control& sender, const event_args& e) {
-    messageBox::show("Hello, World!");
+    message_box::show("Hello, World!");
   };
   
   form form1;
