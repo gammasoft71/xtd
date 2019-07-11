@@ -50,6 +50,8 @@ set(INCLUDES
   include/xtd/tunit_event_args.hpp
   include/xtd/unit_test.hpp
   include/xtd/valid.hpp
+  include/xtd/xtd.tunit
+  include/xtd/xtd.tunit.hpp
 )
 set(SOURCES
   src/__console_color_gcc.cpp

@@ -1,5 +1,5 @@
 #include "assert_unit_tests.hpp"
-#include <xtd/tunit>
+#include <xtd/xtd.tunit>
 
 namespace unit_tests {
   class test_class_(one_test_one_test_case) {

@@ -1,5 +1,5 @@
 #define TUNIT_CONFIG_MAIN
-#include <xtd/tunit>
+#include <xtd/xtd.tunit>
 #include <string>
 
 using namespace xtd::tunit;
