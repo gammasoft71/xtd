@@ -87,7 +87,6 @@ void xtd::forms::control::text(const std::string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::control_api::text(this->handle_, this->text_);
-    this->on_text_changed(xtd::event_args::empty);
   }
 }
 
@@ -253,6 +252,7 @@ void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
 
     case WM_COMMAND: this->on_click(xtd::event_args::empty); break;
     case WM_MOVE: this->on_location_changed(xtd::event_args::empty); break;
+    case WM_SETTEXT: this->on_text_changed(xtd::event_args::empty); break;
     case WM_SIZE: this->on_size_changed(xtd::event_args::empty); break;
     default: this->def_wnd_proc(message); break;
   }
