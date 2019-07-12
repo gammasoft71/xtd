@@ -7,6 +7,7 @@ namespace native {
   public:
     static bool allow_quit();
     static void do_events();
+    static void do_idle();
     static void enable_visual_style();
     static void exit();
     static void initialize_application();

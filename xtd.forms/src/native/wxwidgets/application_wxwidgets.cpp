@@ -39,6 +39,10 @@ void native::application_api::do_events() {
   wxYield();
 }
 
+void native::application_api::do_idle() {
+  wxWakeUpIdle();
+}
+
 void native::application_api::enable_visual_style() {
   initialize_application(); // Must be first
   wxTheApp->SetUseBestVisual(true);

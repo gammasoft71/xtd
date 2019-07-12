@@ -1,3 +1,4 @@
+#include <chrono>
 #include <xtd/xtd.io.hpp>
 #include <xtd/environment.hpp>
 #include "../../../include/xtd/forms/application.hpp"
@@ -60,5 +61,12 @@ void xtd::forms::application::run(const form& form) {
 xtd::delegate<void(const xtd::event_args&)> xtd::forms::application::idle;
 
 void xtd::forms::application::on_idle() {
-  xtd::forms::application::idle(xtd::event_args::empty);
+  using namespace std::chrono_literals;
+  static std::chrono::high_resolution_clock::time_point lastIdleTime;
+  if (std::chrono::high_resolution_clock::now() - lastIdleTime >= 100ms) {
+    lastIdleTime = std::chrono::high_resolution_clock::now();
+    xtd::forms::application::idle(xtd::event_args::empty);
+  }
+  if (!xtd::forms::application::idle.is_empty())
+    native::application_api::do_idle();
 }
