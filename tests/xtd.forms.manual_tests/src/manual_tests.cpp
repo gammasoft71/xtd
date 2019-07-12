@@ -40,12 +40,10 @@ int main() {
   //application::run(form1());
   form form1;
 
-  /*
   application::idle += [&](const xtd::event_args& e) {
     static int counter = 0;
     form1.text(strings::format("{}", ++counter));
   };
-  */
   
   application::run(form1);
 }

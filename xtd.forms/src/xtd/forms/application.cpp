@@ -61,12 +61,10 @@ void xtd::forms::application::run(const form& form) {
 xtd::delegate<void(const xtd::event_args&)> xtd::forms::application::idle;
 
 void xtd::forms::application::on_idle() {
-  using namespace std::chrono_literals;
-  static std::chrono::high_resolution_clock::time_point lastIdleTime;
-  if (std::chrono::high_resolution_clock::now() - lastIdleTime >= 100ms) {
-    lastIdleTime = std::chrono::high_resolution_clock::now();
+  static std::chrono::high_resolution_clock::time_point last_idle_time;
+  if (std::chrono::high_resolution_clock::now() - last_idle_time >= std::chrono::milliseconds(100)) {
+    last_idle_time = std::chrono::high_resolution_clock::now();
     xtd::forms::application::idle(xtd::event_args::empty);
   }
-  if (!xtd::forms::application::idle.is_empty())
-    native::application_api::do_idle();
+  if (!xtd::forms::application::idle.is_empty()) native::application_api::do_idle();
 }
