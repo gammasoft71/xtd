@@ -1,6 +1,7 @@
 #pragma once
 #include <functional>
 #include <map>
+#include <memory>
 #include <string>
 #include <xtd/event_args.hpp>
 #include <xtd/event_handler.hpp>
