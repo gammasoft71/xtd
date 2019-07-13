@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/form.hpp"
+#include "../../../include/xtd/forms/window_messages.hpp"
 #include "../../native/form_api.hpp"
 
 xtd::forms::form::form() {

@@ -105,6 +105,8 @@ namespace xtd {
 
       virtual void create_handle();
       
+      virtual void destroy_handle();
+      
       static xtd::forms::control& from_child_handle(intptr_t handle);
 
       static xtd::forms::control& from_handle(intptr_t handle);
@@ -116,7 +118,7 @@ namespace xtd {
       virtual void on_client_size_changed(const xtd::event_args& e);
 
       virtual void on_create_control();
-
+      
       virtual void on_double_click(const xtd::event_args& e);
       
       virtual void on_got_focus(const xtd::event_args& e);

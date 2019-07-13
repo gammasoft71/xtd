@@ -36,6 +36,7 @@ xtd::forms::control::~control() {
     native::control_api::unregister_wnd_proc(this->handle_);
     if (this->instance_.use_count() == 1) native::control_api::del(this->handle_);
     this->handle_ = 0;
+    this->on_handle_destroyed(xtd::event_args::empty);
   }
 }
 
@@ -63,9 +64,7 @@ void xtd::forms::control::parent(const xtd::forms::control& parent) {
   if (this->parent_ != &parent) {
     this->parent_ = const_cast<xtd::forms::control*>(&parent);
     if (this->parent_ == &xtd::forms::control::null) {
-      handles_.erase(this->handle_);
-      native::control_api::destroy(this->handle_);
-      this->handle_ = 0;
+      this->destroy_handle();
     } else {
       this->create_control();
       //native::control_api::parent(this->handle_, this->parent_);
@@ -111,9 +110,17 @@ void xtd::forms::control::create_handle() {
   if (this->handle_ == 0) this->handle_ = native::control_api::create(this->parent_->handle_, this->default_size());
   native::control_api::register_wnd_proc(this->handle_, {*this, &xtd::forms::control::wnd_proc});
   handles_[native::control_api::handle(this->handle_)] = this;
-  send_message(native::control_api::handle(this->handle_), WM_CREATE, 0, 0);
+  this->send_message(native::control_api::handle(this->handle_), WM_CREATE, 0, 0);
+  this->on_handle_created(xtd::event_args::empty);
   this->set_properties();
   this->get_properties();
+}
+
+void xtd::forms::control::destroy_handle() {
+  handles_.erase(this->handle_);
+  native::control_api::destroy(this->handle_);
+  this->handle_ = 0;
+  this->on_handle_destroyed(xtd::event_args::empty);
 }
 
 xtd::forms::control& xtd::forms::control::from_child_handle(intptr_t handle) {

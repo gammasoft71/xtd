@@ -69,10 +69,9 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
   // mouse events
   if (event.GetEventType() == wxEVT_LEFT_DOWN || event.GetEventType() == wxEVT_MIDDLE_DOWN || event.GetEventType() == wxEVT_RIGHT_DOWN || event.GetEventType() == wxEVT_LEFT_UP || event.GetEventType() == wxEVT_MIDDLE_UP || event.GetEventType() == wxEVT_RIGHT_UP || event.GetEventType() == wxEVT_MOTION || event.GetEventType() == wxEVT_ENTER_WINDOW || event.GetEventType() == wxEVT_LEAVE_WINDOW || event.GetEventType() == wxEVT_LEFT_DCLICK || event.GetEventType() == wxEVT_MIDDLE_DCLICK || event.GetEventType() == wxEVT_RIGHT_DCLICK || event.GetEventType() == wxEVT_SET_FOCUS || event.GetEventType() == wxEVT_KILL_FOCUS || event.GetEventType() == wxEVT_CHILD_FOCUS || event.GetEventType() == wxEVT_MOUSEWHEEL || event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN || event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP || event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK /*|| event.GetEventType() == wxEVT_MAGNIFY*/)
     this->ProcessMouseEvent(event, hwnd);
+
   else if (event.GetEventType() == wxEVT_CLOSE_WINDOW)
     event_handler_->send_message(hwnd, WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  //else if (event.GetEventType() == wxEVT_CREATE)
-  //  event_handler_->send_message(hwnd, WM_CREATE, 0, 0, reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_DESTROY)
     event_handler_->send_message(hwnd, WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_ENABLE)
@@ -89,12 +88,16 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
     event_handler_->send_message(hwnd, WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_QUIT)
   //  event_handler_->send_message(hwnd, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
-  else if (event.GetEventType() == wxEVT_SHOW)
-    event_handler_->send_message(hwnd, WM_COMMAND, window->IsShown(), 0, reinterpret_cast<intptr_t>(&event));
-  else if (event.GetEventType() == wxEVT_SIZE)
+  else if (event.GetEventType() == wxEVT_SHOW) {
+    wxShowEvent& show_event = static_cast<wxShowEvent&>(event);
+    event_handler_->send_message(hwnd, WM_SHOWWINDOW, show_event.IsShown(), 0, reinterpret_cast<intptr_t>(&event));
+  } else if (event.GetEventType() == wxEVT_SIZE)
     event_handler_->send_message(hwnd, WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
-  else if (event.GetEventType() == wxEVT_TEXT)
-    event_handler_->send_message(hwnd, WM_SETTEXT, 0, 0, reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_TEXT) {
+    wxCStrData str_data = static_cast<wxCommandEvent&>(event).GetString().c_str();
+    const char* str = str_data.AsChar();
+    event_handler_->send_message(hwnd, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(str), reinterpret_cast<intptr_t>(&event));
+  }
   
   return this->TControl::ProcessEvent(event);
 }

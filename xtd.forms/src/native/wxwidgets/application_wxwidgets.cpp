@@ -12,6 +12,8 @@ namespace {
       if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
         wxActivateEvent& acitvate_event = static_cast<wxActivateEvent&>(event);
         send_message(0, WM_ACTIVATEAPP, acitvate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
+      //}  else if (event.GetEventType() == wxEVT_END_SESSION) {
+      //  send_message(0, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
       } else if (event.GetEventType() == wxEVT_IDLE)
         send_message(0, WM_ENTERIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
       return this->wxApp::ProcessEvent(event);
@@ -109,6 +111,7 @@ void native::application_api::run() {
   } call_on_exit;
   wxTheApp->OnRun();
   static_cast<application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
+  static_cast<application*>(wxTheApp)->send_message(0, WM_QUIT, false, 0, 0);
 }
 
 void native::application_api::unregister_wnd_proc() {
