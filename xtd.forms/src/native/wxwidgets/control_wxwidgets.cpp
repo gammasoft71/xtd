@@ -43,6 +43,16 @@ void native::control_api::client_size(intptr_t control, const xtd::drawing::size
   reinterpret_cast<control_handler*>(control)->control()->SetClientSize(size.width(), size.height());
 }
 
+bool native::control_api::enabled(intptr_t control) {
+  if (control == 0) return false;
+  return reinterpret_cast<control_handler*>(control)->control()->IsEnabled();
+}
+
+void native::control_api::enabled(intptr_t control, bool enabled) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Enable(enabled);
+}
+
 intptr_t native::control_api::handle(intptr_t control) {
   if (control == 0) return 0;
   return reinterpret_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetHandle());

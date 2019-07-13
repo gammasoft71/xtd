@@ -19,6 +19,8 @@ namespace native {
     static void del(intptr_t control);
     static xtd::drawing::size client_size(intptr_t control);
     static void client_size(intptr_t control, const xtd::drawing::size& size);
+    static bool enabled(intptr_t control);
+    static void enabled(intptr_t control, bool enabled);
     static intptr_t handle(intptr_t control);
     static xtd::drawing::point location(intptr_t control);
     static void location(intptr_t control, const xtd::drawing::point& location);

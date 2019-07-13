@@ -33,6 +33,9 @@ namespace xtd {
       virtual void client_size(const xtd::drawing::size& size);
 
       virtual xtd::drawing::size default_size() const {return{0, 0};}
+      
+      virtual bool enabled() const {return this->enabled_;}
+      virtual void enabled(bool enabled);
 
       virtual intptr_t handle() const;
       
@@ -121,6 +124,8 @@ namespace xtd {
       
       virtual void on_double_click(const xtd::event_args& e);
       
+      virtual void on_enabled_changed(const xtd::event_args& e);
+
       virtual void on_got_focus(const xtd::event_args& e);
       
       virtual void on_handle_created(const xtd::event_args& e);
@@ -173,6 +178,8 @@ namespace xtd {
       
       xtd::event_handler<control> handle_destroyed;
       
+      xtd::event_handler<control> enabled_changed;
+
       xtd::event_handler<control> location_changed;
       
       xtd::event_handler<control> lost_focus;
@@ -211,6 +218,7 @@ namespace xtd {
       xtd::drawing::size client_size_ {-1, -1};
       intptr_t handle_ = 0;
       static std::map<intptr_t, xtd::forms::control*> handles_;
+      bool enabled_ = true;
       xtd::drawing::point location_ {-1, -1};
       control* parent_ = const_cast<control*>(&control::null);
       xtd::drawing::size size_ {-1, -1};

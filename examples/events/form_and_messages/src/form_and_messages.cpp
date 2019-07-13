@@ -34,7 +34,6 @@ protected:
       case WM_COMMAND: write_line_debug_string(xtd::strings::format("WM_COMMAND [type=0x{0:X8}, control={1}]", message.wparam(), message.lparam())); break;
       case WM_CREATE: write_line_debug_string(xtd::strings::format("WM_CREATE [create_struct{}]", message.lparam())); break;
       case WM_DESTROY: write_line_debug_string("WM_DESTROY"); break;
-      case WM_ENABLE: write_line_debug_string(xtd::strings::format("WM_ENABLE [enabled={}", message.wparam())); break;
       case WM_ENTERSIZEMOVE: write_line_debug_string("WM_ENTERSIZEMOVE"); break;
       case WM_EXITSIZEMOVE: write_line_debug_string("WM_EXITSIZEMOVE"); break;
       case WM_MOVE: write_line_debug_string(xtd::strings::format("WM_MOVE [x={}, y={}]", LOWORD(message.lparam()), HIWORD(message.lparam()))); break;

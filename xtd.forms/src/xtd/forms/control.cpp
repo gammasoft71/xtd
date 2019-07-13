@@ -49,6 +49,16 @@ void xtd::forms::control::client_size(const xtd::drawing::size& size) {
   }
 }
 
+void xtd::forms::control::enabled(bool enabled) {
+  if (this->enabled_ != enabled) {
+    this->enabled_ = enabled;
+    //for (xtd::forms::control* control : this->controls_)
+    //  control->enabled(enabled);
+    native::control_api::enabled(this->handle_, this->enabled_);
+    this->on_enabled_changed(xtd::event_args::empty);
+  }
+}
+
 intptr_t xtd::forms::control::handle() const {
   return native::control_api::handle(this->handle_);
 }
@@ -161,6 +171,11 @@ void xtd::forms::control::on_client_size_changed(const xtd::event_args &e) {
 
 void xtd::forms::control::on_double_click(const xtd::event_args &e) {
   this->double_click(*this, e);
+}
+
+void xtd::forms::control::on_enabled_changed(const xtd::event_args &e) {
+  this->enabled_ = native::control_api::enabled(this->handle_);
+  this->enabled_changed(*this, e);
 }
 
 void xtd::forms::control::on_got_focus(const xtd::event_args &e) {
