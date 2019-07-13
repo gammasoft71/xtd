@@ -39,7 +39,6 @@ protected:
       case WM_EXITSIZEMOVE: write_line_debug_string("WM_EXITSIZEMOVE"); break;
       case WM_MOVE: write_line_debug_string(xtd::strings::format("WM_MOVE [x={}, y={}]", LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_NULL: write_line_debug_string("WM_NULL"); break;
-      case WM_QUIT: write_line_debug_string(xtd::strings::format("WMQUIT [exit_code={}", message.wparam())); break;
       case WM_SETTEXT: write_line_debug_string(xtd::strings::format("WM_SETTEXT [text=\"{}\"]", reinterpret_cast<char*>(message.lparam()))); break;
       case WM_SHOWWINDOW: write_line_debug_string(xtd::strings::format("WM_SHOWWINDOW [show={}]", message.wparam())); break;
       case WM_SIZE: write_line_debug_string(xtd::strings::format("WM_SIZE [type={}, width={}, heignt={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;

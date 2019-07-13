@@ -78,7 +78,6 @@ namespace xtd {
       static void wnd_proc(xtd::forms::message& message);
       static void wm_activate_app(xtd::forms::message& message);
       static void wm_enter_idle(xtd::forms::message& message);
-      static void wm_quit(xtd::forms::message& message);
 
       application() = default;
       static const form* main_form;

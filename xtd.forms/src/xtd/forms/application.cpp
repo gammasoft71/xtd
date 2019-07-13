@@ -77,7 +77,6 @@ void xtd::forms::application::wnd_proc(xtd::forms::message& message) {
   switch (message.msg()) {
     case WM_ACTIVATEAPP: wm_activate_app(message); break;
     case WM_ENTERIDLE: wm_enter_idle(message); break;
-    case WM_QUIT: wm_quit(message); break;
     default: break;
   }
 }
@@ -94,9 +93,4 @@ void xtd::forms::application::wm_enter_idle(xtd::forms::message& message) {
     xtd::forms::application::idle(xtd::event_args::empty);
   }
   if (!xtd::forms::application::idle.is_empty()) native::application_api::do_idle();
-}
-
-void xtd::forms::application::wm_quit(xtd::forms::message& message) {
-  for (std::reference_wrapper<xtd::forms::form>& form : open_forms())
-    form.get().send_message(form.get().__get_handle__(), message.msg(), message.wparam(), message.lparam());
 }
