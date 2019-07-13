@@ -229,7 +229,7 @@ void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
 }
 
 void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
-  std::cout << xtd::strings::format("receive message [{}]", message) << std::endl;
+  //std::cout << xtd::strings::format("receive message [{}]", message) << std::endl;
   switch (message.msg()) {
     // mouse events
     case WM_LBUTTONDOWN:

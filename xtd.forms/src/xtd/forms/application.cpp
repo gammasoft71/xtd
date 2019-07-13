@@ -2,6 +2,7 @@
 #include <xtd/xtd.io.hpp>
 #include <xtd/environment.hpp>
 #include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/window_messages.hpp"
 #include "../../native/application_api.hpp"
 
 bool xtd::forms::application::allow_quit() {
@@ -31,6 +32,17 @@ std::string xtd::forms::application::executable_path() {
   return xtd::environment::get_command_line_args()[0];
 }
 
+std::vector<std::reference_wrapper<xtd::forms::form>> xtd::forms::application::open_forms() {
+  std::vector<std::reference_wrapper<xtd::forms::form>> forms;
+  
+  for (intptr_t handle : native::application_api::open_forms()) {
+    xtd::forms::control& control = xtd::forms::control::from_handle(handle);
+    forms.push_back(static_cast<xtd::forms::form&>(control));
+  }
+  return forms;
+}
+
+
 std::string xtd::forms::application::product_name() {
   if (!xtd::strings::is_empty(xtd::forms::application_informations::product_name())) return xtd::forms::application_informations::product_name();
   return xtd::io::path::get_file_name_without_extension(executable_path());
@@ -54,13 +66,27 @@ void xtd::forms::application::run() {
 
 void xtd::forms::application::run(const form& form) {
   native::application_api::main_form(form.__get_handle__());
-  native::application_api::register_idle(application::on_idle);
+  native::application_api::register_wnd_proc(application::wnd_proc);
   run();
+  native::application_api::unregister_wnd_proc();
 }
 
 xtd::delegate<void(const xtd::event_args&)> xtd::forms::application::idle;
 
-void xtd::forms::application::on_idle() {
+void xtd::forms::application::wnd_proc(xtd::forms::message& message) {
+  switch (message.msg()) {
+    case WM_ACTIVATEAPP: wm_activate_app(message); break;
+    case WM_ENTERIDLE: wm_enter_idle(message); break;
+    default: break;
+  }
+}
+
+void xtd::forms::application::wm_activate_app(xtd::forms::message& message) {
+  for (std::reference_wrapper<xtd::forms::form>& form : open_forms())
+    form.get().send_message(form.get().__get_handle__(), message.msg(), message.wparam(), message.lparam());
+}
+
+void xtd::forms::application::wm_enter_idle(xtd::forms::message& message) {
   static std::chrono::high_resolution_clock::time_point last_idle_time;
   if (std::chrono::high_resolution_clock::now() - last_idle_time >= std::chrono::milliseconds(100)) {
     last_idle_time = std::chrono::high_resolution_clock::now();

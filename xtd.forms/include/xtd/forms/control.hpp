@@ -105,9 +105,9 @@ namespace xtd {
 
       virtual void create_handle();
       
-      xtd::forms::control& from_child_handle(intptr_t handle);
+      static xtd::forms::control& from_child_handle(intptr_t handle);
 
-      xtd::forms::control& from_handle(intptr_t handle);
+      static xtd::forms::control& from_handle(intptr_t handle);
       
       bool is_null() const;
       
@@ -230,5 +230,7 @@ namespace xtd {
       void wm_set_focus(xtd::forms::message& message);
       void wm_mouse_wheel(xtd::forms::message& message);
     };
+    
+    using ref_control = std::reference_wrapper<xtd::forms::control>;
   }
 }

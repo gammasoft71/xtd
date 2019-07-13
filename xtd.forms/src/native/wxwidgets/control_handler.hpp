@@ -69,35 +69,31 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
   // mouse events
   if (event.GetEventType() == wxEVT_LEFT_DOWN || event.GetEventType() == wxEVT_MIDDLE_DOWN || event.GetEventType() == wxEVT_RIGHT_DOWN || event.GetEventType() == wxEVT_LEFT_UP || event.GetEventType() == wxEVT_MIDDLE_UP || event.GetEventType() == wxEVT_RIGHT_UP || event.GetEventType() == wxEVT_MOTION || event.GetEventType() == wxEVT_ENTER_WINDOW || event.GetEventType() == wxEVT_LEAVE_WINDOW || event.GetEventType() == wxEVT_LEFT_DCLICK || event.GetEventType() == wxEVT_MIDDLE_DCLICK || event.GetEventType() == wxEVT_RIGHT_DCLICK || event.GetEventType() == wxEVT_SET_FOCUS || event.GetEventType() == wxEVT_KILL_FOCUS || event.GetEventType() == wxEVT_CHILD_FOCUS || event.GetEventType() == wxEVT_MOUSEWHEEL || event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN || event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP || event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK /*|| event.GetEventType() == wxEVT_MAGNIFY*/)
     this->ProcessMouseEvent(event, hwnd);
-
-  std::thread::id cti = std::this_thread::get_id();
-  if (event.GetEventType() == wxEVT_ACTIVATE_APP)
-    event_handler_->send_message(hwnd, WM_ACTIVATEAPP, true, reinterpret_cast<intptr_t>(&cti), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_CLOSE_WINDOW)
+  else if (event.GetEventType() == wxEVT_CLOSE_WINDOW)
     event_handler_->send_message(hwnd, WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  //if (event.GetEventType() == wxEVT_CREATE)
+  //else if (event.GetEventType() == wxEVT_CREATE)
   //  event_handler_->send_message(hwnd, WM_CREATE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_DESTROY)
+  else if (event.GetEventType() == wxEVT_DESTROY)
     event_handler_->send_message(hwnd, WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
-  //if (event.GetEventType() == wxEVT_ENABLE)
+  //else if (event.GetEventType() == wxEVT_ENABLE)
   //  event_handler_->send_message(hwnd, WM_ENABLE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_COMMAND_ENTER)
+  else if (event.GetEventType() == wxEVT_COMMAND_ENTER)
     event_handler_->send_message(hwnd, WM_COMMAND, 0, 0, reinterpret_cast<intptr_t>(&event));
-  //if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE)
+  //else if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE)
   //  event_handler_->send_message(hwnd, WM_ENTERSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  //if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE)
+  //else if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE)
   //  event_handler_->send_message(hwnd, WM_EXITSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_MOVE)
+  else if (event.GetEventType() == wxEVT_MOVE)
     event_handler_->send_message(hwnd, WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_NULL)
+  else if (event.GetEventType() == wxEVT_NULL)
     event_handler_->send_message(hwnd, WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));
-  //if (event.GetEventType() == wxEVT_QUIT)
+  //else if (event.GetEventType() == wxEVT_QUIT)
   //  event_handler_->send_message(hwnd, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_SHOW)
+  else if (event.GetEventType() == wxEVT_SHOW)
     event_handler_->send_message(hwnd, WM_COMMAND, window->IsShown(), 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_SIZE)
+  else if (event.GetEventType() == wxEVT_SIZE)
     event_handler_->send_message(hwnd, WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_TEXT)
+  else if (event.GetEventType() == wxEVT_TEXT)
     event_handler_->send_message(hwnd, WM_SETTEXT, 0, 0, reinterpret_cast<intptr_t>(&event));
   
   return this->TControl::ProcessEvent(event);

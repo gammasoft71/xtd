@@ -1,6 +1,8 @@
 #pragma once
 #include <cstdint>
+#include <vector>
 #include <xtd/xtd.delegates>
+#include "../../include/xtd/forms/message.hpp"
 
 namespace native {
   class application_api {
@@ -13,8 +15,9 @@ namespace native {
     static void initialize_application();
     static intptr_t main_form();
     static void main_form(intptr_t handle);
-    static void register_idle(xtd::delegate<void()> idle);
+    static std::vector<intptr_t> open_forms();
+    static void register_wnd_proc(xtd::delegate<void(xtd::forms::message&)> wnd_proc);
     static void run();
-    static void unregister_idle();
+    static void unregister_wnd_proc();
   };
 }

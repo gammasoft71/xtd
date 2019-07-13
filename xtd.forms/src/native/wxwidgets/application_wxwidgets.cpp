@@ -7,23 +7,33 @@ namespace {
   class application : public wxApp {
   public:
     application() = default;
-    
+
     bool ProcessEvent(wxEvent &event) override {
-      if (event.GetEventType() == wxEVT_IDLE)
-        this->idle_();
+      if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
+        wxActivateEvent& acitvate_event = static_cast<wxActivateEvent&>(event);
+        send_message(0, WM_ACTIVATEAPP, acitvate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
+      } else if (event.GetEventType() == wxEVT_IDLE)
+        send_message(0, WM_ENTERIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
       return this->wxApp::ProcessEvent(event);
     }
 
-    void register_idle(xtd::delegate<void()> idle) {
-      this->idle_ = idle;
+    void register_wnd_proc(xtd::delegate<void(xtd::forms::message&)> wnd_proc) {
+      this->wnd_proc_ = wnd_proc;
     }
     
-    void unregister_idle() {
-      //this->idle_ = xtd::delegate<void()>();
+    void unregister_wnd_proc() {
+      //this->wnd_proc_ = xtd::delegate<void(xtd::forms::message&)>();
+    }
+    
+    intptr_t send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+      if (this->wnd_proc_ == nullptr) return -1;
+      xtd::forms::message message = xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+      this->wnd_proc_(message);
+      return message.result();
     }
 
   private:
-    xtd::delegate<void()> idle_;
+    xtd::delegate<void(xtd::forms::message&)> wnd_proc_;
   };
 
   std::unique_ptr< wxInitializer> wxinitializer;
@@ -71,14 +81,26 @@ void native::application_api::main_form(intptr_t form) {
   wxTheApp->SetTopWindow(reinterpret_cast<control_handler*>(form)->control());
 }
 
-void native::application_api::register_idle(xtd::delegate<void()> idle) {
+std::vector<intptr_t> native::application_api::open_forms() {
+  std::vector<intptr_t> forms;
+  wxWindowList::compatibility_iterator node = wxTopLevelWindows.GetFirst();
+  while (node) {
+    wxWindow* window = node->GetData();
+    forms.push_back(reinterpret_cast<intptr_t>(window->GetHandle()));
+    node = node->GetNext();
+  }
+  return forms;
+}
+
+void native::application_api::register_wnd_proc(xtd::delegate<void(xtd::forms::message&)> wnd_proc) {
   initialize_application(); // Must be first
-  static_cast<application*>(wxTheApp)->register_idle(idle);
+  static_cast<application*>(wxTheApp)->register_wnd_proc(wnd_proc);
 }
 
 void native::application_api::run() {
   initialize_application(); // Must be first
   if (wxTheApp->GetTopWindow()) wxTheApp->GetTopWindow()->Show();
+  static_cast<application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
   struct call_on_exit {
     ~call_on_exit() {
       wxTheApp->OnExit();
@@ -86,9 +108,9 @@ void native::application_api::run() {
     }
   } call_on_exit;
   wxTheApp->OnRun();
+  static_cast<application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
 }
 
-void native::application_api::unregister_idle() {
-  initialize_application(); // Must be first
-
+void native::application_api::unregister_wnd_proc() {
+  static_cast<application*>(wxTheApp)->unregister_wnd_proc();
 }

@@ -1,6 +1,8 @@
 #pragma once
+#include <vector>
 #include "application_informations.hpp"
 #include "form.hpp"
+#include "message.hpp"
 #include <xtd/xtd.delegates>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -56,6 +58,8 @@ namespace xtd {
       /// This path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
       static std::string executable_path();
 
+      static std::vector<std::reference_wrapper<xtd::forms::form>> open_forms();
+      
       static std::string product_name();
 
       static void do_events();
@@ -71,7 +75,9 @@ namespace xtd {
       static xtd::delegate<void(const xtd::event_args&)> idle;
       
     private:
-      static void on_idle();
+      static void wnd_proc(xtd::forms::message& message);
+      static void wm_activate_app(xtd::forms::message& message);
+      static void wm_enter_idle(xtd::forms::message& message);
 
       application() = default;
       static const form* main_form;
