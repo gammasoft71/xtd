@@ -8,6 +8,9 @@ set(XTD_INCLUDES
 )
 set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/debug.hpp
+  include/xtd/diagnostics/trace_event_cache.hpp
+  include/xtd/diagnostics/trace_event_type.hpp
+  include/xtd/diagnostics/trace_filter.hpp
   include/xtd/diagnostics/trace_listener.hpp
   include/xtd/diagnostics/trace_options.hpp
 )
@@ -30,7 +33,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
-#target_link_libraries(${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} xtd.environment xtd.io xtd.strings)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
@@ -38,6 +41,10 @@ install(DIRECTORY include/xtd/. DESTINATION include/xtd)
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "include(CMakeFindDependencyMacro)\n"
   "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
+  "\n"
+  "find_package(xtd.environment REQUIRED)\n"
+  "find_package(xtd.io REQUIRED)\n"
+  "find_package(xtd.strings REQUIRED)\n"
   "\n"
   "get_filename_component(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
   "get_filename_component(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\" ABSOLUTE)\n"

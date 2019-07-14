@@ -1,11 +1,10 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.environment.unit_tests)
+project(xtd.diagnostics.unit_tests)
 set(SOURCES
   src/main.cpp 
-  src/environment.cpp
-  src/version.cpp
+  src/trace_listener.cpp
 )
 source_group(src FILES ${SOURCES})
 
@@ -15,7 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd.environment xtd.tunit)
+target_link_libraries(${PROJECT_NAME} xtd.diagnostics xtd.tunit)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
 
 # Tests
