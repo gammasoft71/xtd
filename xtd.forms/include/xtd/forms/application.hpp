@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include <vector>
 #include "application_informations.hpp"
 #include "form.hpp"
@@ -70,7 +71,7 @@ namespace xtd {
       
       static void run();
 
-      static void run(const form& form);
+      static void run(const xtd::forms::form& form);
       
       static xtd::delegate<void(const xtd::event_args&)> idle;
       

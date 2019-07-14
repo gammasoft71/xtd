@@ -27,6 +27,10 @@ namespace xtd {
       
       control() = default;
       
+      /// @cond
+      control(const control&) = delete;
+      /// @endcond
+      
       virtual ~control();
 
       virtual xtd::drawing::size client_size() const {return this->client_size_;}
@@ -46,7 +50,7 @@ namespace xtd {
       virtual void location(const xtd::drawing::point& location);
 
       virtual control& parent() const {return *this->parent_;}
-      virtual void parent(const control& parent);
+      virtual void parent(const xtd::forms::control& parent);
 
       virtual xtd::drawing::size size() const {return this->size_;}
       virtual void size(const xtd::drawing::size& size);
@@ -67,38 +71,38 @@ namespace xtd {
       virtual void y(int y) {this->size({this->location_.x(), y});}
 
       template<typename control>
-      static control create(const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
-        control item;
-        item.location(location);
-        item.size(size);
+      static std::unique_ptr<control> create(const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control> item = std::make_unique<control>();
+        item->location(location);
+        item->size(size);
         return item;
       }
 
       template<typename control>
-      static control create(const xtd::forms::control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
-        control item;
-        item.parent(parent);
-        item.location(location);
-        item.size(size);
+      static std::unique_ptr<control> create(const xtd::forms::control& parent, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control> item = std::make_unique<control>();
+        item->parent(parent);
+        item->location(location);
+        item->size(size);
         return item;
       }
 
       template<typename control>
-      static control create(const std::string& text, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
-        control item;
-        item.text(text);
-        item.location(location);
-        item.size(size);
+      static std::unique_ptr<control> create(const std::string& text, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control> item = std::make_unique<control>();
+        item->text(text);
+        item->location(location);
+        item->size(size);
         return item;
       }
 
       template<typename control>
-      static control create(const xtd::forms::control& parent, const std::string& text, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
-        control item;
-        item.parent(parent);
-        item.text(text);
-        item.location(location);
-        item.size(size);
+      static std::unique_ptr<control> create(const xtd::forms::control& parent, const std::string& text, const xtd::drawing::point& location = {-1, -1}, const xtd::drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control> item = std::make_unique<control>();
+        item->parent(parent);
+        item->text(text);
+        item->location(location);
+        item->size(size);
         return item;
       }
 
@@ -219,7 +223,7 @@ namespace xtd {
       bool enabled_ = true;
       intptr_t handle_ = 0;
       static std::map<intptr_t, xtd::forms::control*> handles_;
-      xtd::drawing::point location_ {-1, -1};
+      xtd::drawing::point location_ {0, 0};
       control* parent_ = const_cast<control*>(&control::null);
       xtd::drawing::size size_ {-1, -1};
       std::string text_;

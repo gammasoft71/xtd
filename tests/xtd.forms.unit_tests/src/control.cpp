@@ -14,7 +14,7 @@ namespace unit_tests {
       assert::are_equal_(xtd::drawing::size(0, 0), control.default_size());
       assert::is_true_(control.enabled());
       assert::are_equal_(0, control.handle());
-      assert::are_equal_(xtd::drawing::point(-1, -1), control.location());
+      assert::are_equal_(xtd::drawing::point(0, 0), control.location());
       assert::are_same_(control::null, control.parent());
       assert::are_equal_(xtd::drawing::size(-1, -1), control.size());
       assert::is_empty_(control.text());

@@ -8,7 +8,7 @@ using namespace xtd::tunit;
 namespace unit_tests {
   class test_class_(test_form) {
   public:
-    void test_method_(create_form) {
+    void test_method_(new_form) {
       form form;
       assert::are_equal_(xtd::drawing::size(300, 300), form.default_size());
       assert::are_not_equal_(0, form.handle());

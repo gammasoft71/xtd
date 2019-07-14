@@ -34,9 +34,9 @@ const xtd::forms::control xtd::forms::control::null;
 xtd::forms::control::~control() {
   if (this->handle_) {
     native::control_api::unregister_wnd_proc(this->handle_);
-    //if (this->instance_.use_count() == 1) native::control_api::del(this->handle_);
-    //this->handle_ = 0;
-    //this->on_handle_destroyed(xtd::event_args::empty);
+    if (this->instance_.use_count() == 1) native::control_api::del(this->handle_);
+    this->handle_ = 0;
+    this->on_handle_destroyed(xtd::event_args::empty);
     this->destroy_handle();
   }
 }

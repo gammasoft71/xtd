@@ -17,8 +17,6 @@ public:
   control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, pos, size, style), event_handler_(event_handler) {}
   control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, label, pos, size, style), event_handler_(event_handler) {}
   
-  bool Destroy() override;
-  
   bool ProcessEvent(wxEvent &event) override;
   void ProcessMouseEvent(wxEvent &event, intptr_t hwnd);
 
@@ -62,14 +60,6 @@ private:
   xtd::delegate<void(xtd::forms::message&)> wnd_proc_;
   wxWindow* control_;
 };
-
-template<typename TControl>
-inline bool control_wrapper<TControl>::Destroy() {
-  for (wxWindow* children : this->GetChildren())
-    children->Destroy();
-  this->event_handler_->clear_control();
-  return this->TControl::Destroy();
-}
 
 template<typename TControl>
 inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
