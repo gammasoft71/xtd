@@ -11,6 +11,9 @@ namespace xtd {
 
       xtd::drawing::size default_size() const override {return{300, 300};}
 
+      using control::parent;
+      void parent(const control& parent) override;
+
       void create_handle() override;
     };
   }

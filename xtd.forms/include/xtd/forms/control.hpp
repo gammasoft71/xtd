@@ -216,9 +216,9 @@ namespace xtd {
       void get_properties();
       void set_properties();
       xtd::drawing::size client_size_ {-1, -1};
+      bool enabled_ = true;
       intptr_t handle_ = 0;
       static std::map<intptr_t, xtd::forms::control*> handles_;
-      bool enabled_ = true;
       xtd::drawing::point location_ {-1, -1};
       control* parent_ = const_cast<control*>(&control::null);
       xtd::drawing::size size_ {-1, -1};

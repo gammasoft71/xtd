@@ -17,6 +17,8 @@ public:
   control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, pos, size, style), event_handler_(event_handler) {}
   control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, label, pos, size, style), event_handler_(event_handler) {}
   
+  bool Destroy() override;
+  
   bool ProcessEvent(wxEvent &event) override;
   void ProcessMouseEvent(wxEvent &event, intptr_t hwnd);
 
@@ -54,11 +56,20 @@ public:
   }
 
   wxWindow* control() const {return this->control_;}
+  void clear_control() {this->control_ = nullptr;}
 
 private:
   xtd::delegate<void(xtd::forms::message&)> wnd_proc_;
   wxWindow* control_;
 };
+
+template<typename TControl>
+inline bool control_wrapper<TControl>::Destroy() {
+  for (wxWindow* children : this->GetChildren())
+    children->Destroy();
+  this->event_handler_->clear_control();
+  return this->TControl::Destroy();
+}
 
 template<typename TControl>
 inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
@@ -71,32 +82,32 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
     this->ProcessMouseEvent(event, hwnd);
 
   else if (event.GetEventType() == wxEVT_CLOSE_WINDOW)
-    event_handler_->send_message(hwnd, WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_DESTROY)
-    event_handler_->send_message(hwnd, WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_ENABLE)
-  //  event_handler_->send_message(hwnd, WM_ENABLE, 0, 0, reinterpret_cast<intptr_t>(&event));
+  //  this->event_handler_->send_message(hwnd, WM_ENABLE, 0, 0, reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_COMMAND_ENTER)
-    event_handler_->send_message(hwnd, WM_COMMAND, 0, 0, reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_COMMAND, 0, 0, reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE)
-  //  event_handler_->send_message(hwnd, WM_ENTERSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
+  //  this->event_handler_->send_message(hwnd, WM_ENTERSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE)
-  //  event_handler_->send_message(hwnd, WM_EXITSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
+  //  this->event_handler_->send_message(hwnd, WM_EXITSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_MOVE)
-    event_handler_->send_message(hwnd, WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_NULL)
-    event_handler_->send_message(hwnd, WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_QUIT)
-  //  event_handler_->send_message(hwnd, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
+  //  this->event_handler_->send_message(hwnd, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_SHOW) {
     wxShowEvent& show_event = static_cast<wxShowEvent&>(event);
-    event_handler_->send_message(hwnd, WM_SHOWWINDOW, show_event.IsShown(), 0, reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_SHOWWINDOW, show_event.IsShown(), 0, reinterpret_cast<intptr_t>(&event));
   } else if (event.GetEventType() == wxEVT_SIZE)
-    event_handler_->send_message(hwnd, WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_TEXT) {
     wxCStrData str_data = static_cast<wxCommandEvent&>(event).GetString().c_str();
     const char* str = str_data.AsChar();
-    event_handler_->send_message(hwnd, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(str), reinterpret_cast<intptr_t>(&event));
+    this->event_handler_->send_message(hwnd, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(str), reinterpret_cast<intptr_t>(&event));
   }
   
   return this->TControl::ProcessEvent(event);

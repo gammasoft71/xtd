@@ -1,4 +1,5 @@
 #include <map>
+#include <stdexcept>
 #include "../control_api.hpp"
 #include "control_handler.hpp"
 #include <wx/control.h>
@@ -13,7 +14,7 @@ namespace {
 }
 
 intptr_t native::control_api::create(intptr_t parent, const xtd::drawing::size& size) {
-  if (parent == 0) return 0;
+  if (parent == 0) throw std::invalid_argument("parent can't be null");
   return reinterpret_cast<intptr_t>(new control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height())));
 }
 
@@ -23,6 +24,7 @@ void native::control_api::def_wnd_proc(xtd::forms::message& message) {
 
 void native::control_api::destroy(intptr_t control) {
   if (control == 0) return;
+  if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Destroy();
   del(control);
 }
@@ -105,10 +107,12 @@ void native::control_api::visible(intptr_t control, bool visible) {
 }
 
 void native::control_api::register_wnd_proc(intptr_t control, xtd::delegate<void(xtd::forms::message &)> wnd_proc) {
+  if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->register_wnd_proc(wnd_proc);
 }
 
 void native::control_api::unregister_wnd_proc(intptr_t control) {
+  if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->unregister_wnd_proc();
 }
 

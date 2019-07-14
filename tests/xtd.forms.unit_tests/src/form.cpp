@@ -10,9 +10,11 @@ namespace unit_tests {
   public:
     void test_method_(create_form) {
       form form;
-      assert::are_not_equal(0, form.handle());
-      assert::are_same(control::null, form.parent());
-      assert::is_empty(form.text());
+      assert::are_equal_(xtd::drawing::size(300, 300), form.default_size());
+      assert::are_not_equal_(0, form.handle());
+      assert::are_same_(control::null, form.parent());
+      assert::are_equal_(form.default_size(), form.size());
+      assert::is_empty_(form.text());
     }
   };
 }

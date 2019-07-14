@@ -83,12 +83,8 @@ void native::application_api::main_form(intptr_t form) {
 
 std::vector<intptr_t> native::application_api::open_forms() {
   std::vector<intptr_t> forms;
-  wxWindowList::compatibility_iterator node = wxTopLevelWindows.GetFirst();
-  while (node) {
-    wxWindow* window = node->GetData();
+  for (wxWindow* window : wxTopLevelWindows)
     forms.push_back(reinterpret_cast<intptr_t>(window->GetHandle()));
-    node = node->GetNext();
-  }
   return forms;
 }
 
