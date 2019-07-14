@@ -24,8 +24,8 @@ public:
     this->location({100, 100});
     //this->enabled(false);
     
-    this->button.parent(*this);
-    this->button.text("Click me");
+    this->button1.parent(*this);
+    this->button1.text("Click me");
   }
 
 protected:
@@ -51,7 +51,7 @@ protected:
   }
   
 private:
-  button button;
+  button button1;
 };
 
 // The main entry point for the application.
