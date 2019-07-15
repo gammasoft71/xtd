@@ -10,7 +10,7 @@ namespace xtd {
   namespace diagnostics {
     class ostream_trace_listener : public trace_listener {
     public:
-      ostream_trace_listener(const std::ostream& ostream) : trace_listener("ostream") {
+      ostream_trace_listener(const std::ostream& ostream) {
         this->ostream(ostream);
       };
       ~ostream_trace_listener() {this->flush();}
