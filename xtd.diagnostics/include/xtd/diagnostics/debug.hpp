@@ -210,6 +210,26 @@ namespace xtd {
         if (auto_flush_) flush();
 #endif
       }
+      
+      static void write_if(bool condition, const std::string& message) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (condition) write(message);
+#endif
+      }
+      
+      template<typename object>
+      static void write_if(bool condition, const object& message) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (condition) write(message);
+#endif
+      }
+      
+      template<typename object>
+      static void write_if(bool condition, const object& message, const std::string& category) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (condition) write(message, category);
+#endif
+      }
 
       static void write_line(const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
@@ -258,6 +278,26 @@ namespace xtd {
           }
         }
         if (auto_flush_) flush();
+#endif
+      }
+      
+      static void write_line_if(bool condition, const std::string& message) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (condition) write_line(message);
+#endif
+      }
+      
+      template<typename object>
+      static void write_line_if(bool condition, const object& message) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (condition) write_line(message);
+#endif
+      }
+      
+      template<typename object>
+      static void write_line_if(bool condition, const object& message, const std::string& category) {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        if (condition) write_line(message, category);
 #endif
       }
 
