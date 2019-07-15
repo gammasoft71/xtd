@@ -10,7 +10,6 @@ set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/debug.hpp
   include/xtd/diagnostics/trace_event_cache.hpp
   include/xtd/diagnostics/trace_event_type.hpp
-  include/xtd/diagnostics/trace_filter.hpp
   include/xtd/diagnostics/trace_listener.hpp
   include/xtd/diagnostics/trace_options.hpp
 )

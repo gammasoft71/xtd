@@ -1,24 +1,16 @@
 /// @file
 /// @brief Contains xtd::diagnostics::debug class.
 #pragma once
-#include <map>
 #include <memory>
 #include <string>
 #include <stdexcept>
 #include <xtd/xtd.strings>
 #include "trace_event_cache.hpp"
 #include "trace_event_type.hpp"
-#include "trace_filter.hpp"
 #include "trace_options.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Implements a hash table with the key and the value strongly typed to be strings rather than objects.
-  /// @par Examples
-  /// The following code example demonstrates several of the properties and methods of string_map.
-  /// @include string_map.cpp
-  using string_map = std::map<std::string, std::string>;
-  
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides the abstract base class for the listeners who monitor trace and debug output.
@@ -46,24 +38,6 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_listener class using the specified name as the listener.
       /// @param name The name of the trace_listener.
       explicit trace_listener(const std::string& name);
-
-      /// @brief Gets the custom trace listener attributes defined in the application configuration file.
-      /// @return A StringDictionary containing the custom attributes for the trace listener.
-      /// @remarks Classes that inherit from the trace_listener class can add custom attributes by overriding the get_supported_attributes method and returning a string array of custom attribute names. The Attributes property identifies the custom attributes that are referenced in the application's configuration file. For example, in the following configuration file excerpt the delimited_listTrace_listener custom attribute "delimiter" is referenced. In this case, the Attributes property returns a StringDictionary containing the string "delimiter".
-      const string_map& attibutes() const {return this->data_->attibutes_;}
-
-      /// @brief Gets the custom trace listener attributes defined in the application configuration file.
-      /// @return A StringDictionary containing the custom attributes for the trace listener.
-      /// @remarks Classes that inherit from the trace_listener class can add custom attributes by overriding the get_supported_attributes method and returning a string array of custom attribute names. The Attributes property identifies the custom attributes that are referenced in the application's configuration file. For example, in the following configuration file excerpt the delimited_listTrace_listener custom attribute "delimiter" is referenced. In this case, the Attributes property returns a StringDictionary containing the string "delimiter".
-      string_map& attibutes() {return this->data_->attibutes_;}
-
-      /// @brief Sets the custom trace listener attributes defined in the application configuration file.
-      /// @param attribute A StringDictionary containing the custom attributes for the trace listener.
-      /// @remarks Classes that inherit from the trace_listener class can add custom attributes by overriding the get_supported_attributes method and returning a string array of custom attribute names. The Attributes property identifies the custom attributes that are referenced in the application's configuration file. For example, in the following configuration file excerpt the delimited_listTrace_listener custom attribute "delimiter" is referenced. In this case, the Attributes property returns a StringDictionary containing the string "delimiter".
-      void attibutes(const string_map& attribute) {this->data_->attibutes_ = attribute;}
-
-      //const trace_filter& filter() const {*return this->data_->filter;}
-      //void filter(const trace_filter& filer) {this->data_->filter = &filter;}
       
       /// @brief Gets the indent level.
       /// @return unsigned int The indent level. The default is zero.
@@ -160,7 +134,7 @@ namespace xtd {
       /// @remarks The default implementation writes the eventCache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<typename object>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id, const std::vector<object>& data) {
-        this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, data));
+        this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, xtd::strings::join(", ", data)));
         this->write_event_cache(event_cache);
       }
       
@@ -268,8 +242,6 @@ namespace xtd {
       void write_event_cache(const trace_event_cache& event_cache);
       
       struct data {
-        string_map attibutes_;
-        const trace_filter* filter_;
         unsigned int indent_level_ = 0;
         unsigned int indent_size_ = 4;
         bool is_thread_safe_ = false;

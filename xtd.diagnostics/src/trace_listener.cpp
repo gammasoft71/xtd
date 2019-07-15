@@ -21,17 +21,17 @@ void xtd::diagnostics::trace_listener::trace_listener::flush() {
 }
 
 void xtd::diagnostics::trace_listener::trace_listener::trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id) {
-  //this->write_line(xtd::strings::format("{} {}: {}", source, event_type, id));
+  this->write_line(xtd::strings::format("{} {}: {}", source, event_type, id));
   this->write_event_cache(event_cache);
 }
 
 void xtd::diagnostics::trace_listener::trace_listener::trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, const xtd::diagnostics::trace_event_type& event_type, int id, const std::string& message) {
-  //this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, message));
+  this->write_line(xtd::strings::format("{} {}: {} : {}", source, event_type, id, message));
   this->write_event_cache(event_cache);
 }
 
 void xtd::diagnostics::trace_listener::trace_listener::trace_transfert(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, int id, const std::string& message, const xtd::guid& related_activity_id) {
-  //this->write_line(xtd::strings::format("{} Transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
+  this->write_line(xtd::strings::format("{} Transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
   this->write_event_cache(event_cache);
 }
 
