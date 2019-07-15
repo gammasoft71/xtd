@@ -10,7 +10,7 @@ using namespace xtd::diagnostics;
 int main() {
   //cout << "Hello, World!" << endl;
   //debug::indent();
-  debug::write_line("This is  message", "Unknown");
+  debug::write_line_if(true, "This is  message", "Unknown");
   //debug::assert(false);
 }
 
