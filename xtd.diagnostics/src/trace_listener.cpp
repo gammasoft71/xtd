@@ -31,7 +31,7 @@ void xtd::diagnostics::trace_listener::trace_listener::trace_event(const xtd::di
 }
 
 void xtd::diagnostics::trace_listener::trace_listener::trace_transfert(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, int id, const std::string& message, const xtd::guid& related_activity_id) {
-  this->write_line(xtd::strings::format("{} Transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
+  this->write_line(xtd::strings::format("{} transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
   this->write_event_cache(event_cache);
 }
 

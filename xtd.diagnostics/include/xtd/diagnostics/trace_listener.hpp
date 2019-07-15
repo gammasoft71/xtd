@@ -33,6 +33,7 @@ namespace xtd {
       /// @cond
       trace_listener(const trace_listener& tl) = default;
       trace_listener& operator=(const trace_listener& tl) = default;
+      virtual ~trace_listener() {this->flush();}
       /// @endcond
       
       /// @brief Initializes a new instance of the trace_listener class using the specified name as the listener.
@@ -230,6 +231,12 @@ namespace xtd {
 
       virtual void write_line(const std::string& message) = 0;
       
+      template<typename object>
+      trace_listener& operator<<(const object& message) {
+        this->write(message);
+        return *this;
+      }
+
     protected:
       bool need_indent() const {return this->data_->need_indent_;}
       void need_indent(bool need_indent) const {this->data_->need_indent_ = need_indent;}

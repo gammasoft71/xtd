@@ -13,12 +13,21 @@ namespace unit_tests {
       std::string result() const {return this->string_stream.str();}
       
       void close() override {}
-      
       void flush() override {}
       
-      void write(const std::string& message) override {this->string_stream << message;}
+      using trace_listener::write;
+      void write(const std::string& message) override {
+        if (this->need_indent())
+          this->write_indent();
+        this->string_stream << message;
+      }
 
-      void write_line(const std::string& message) override {this->string_stream << message << std::endl;}
+      using trace_listener::write_line;
+      void write_line(const std::string& message) override {
+        this->write(message);
+        this->string_stream << std::endl;
+        this->need_indent(true);
+      }
       
       using trace_listener::need_indent;
 
@@ -120,6 +129,63 @@ namespace unit_tests {
       trace_listener_test_implementation trace_listener;
       trace_listener.trace_event(xtd::diagnostics::trace_event_cache(), "source", xtd::diagnostics::trace_event_type::error, 1, "informations {}, {}", 42, "84");
       assert::are_equal_("source error: 1 : informations 42, 84\n", trace_listener.result());
+    }
+    
+    void test_method_(trace_transfert) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener.trace_transfert(xtd::diagnostics::trace_event_cache(), "source", 1, "message", xtd::guid(std::vector<unsigned char> {0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0, 0x01}));
+      assert::are_equal_("source transfert: 1 : message, related_activity_id=10203040-5060-7080-90a0-b0c0d0e0f001\n", trace_listener.result());
+    }
+    
+    void test_method_(write_string) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener.write("string");
+      assert::are_equal_("string", trace_listener.result());
+    }
+    
+    void test_method_(write_int) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener.write(42);
+      assert::are_equal_("42", trace_listener.result());
+    }
+    
+    void test_method_(write_line_string) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener.write_line("string");
+      assert::are_equal_("string\n", trace_listener.result());
+    }
+    
+    void test_method_(write_line_int) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener.write_line(42);
+      assert::are_equal_("42\n", trace_listener.result());
+    }
+    
+    void test_method_(write_stream_string) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener << "string";
+      assert::are_equal_("string", trace_listener.result());
+    }
+    
+    void test_method_(write_stream_int) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener << 42;
+      assert::are_equal_("42", trace_listener.result());
+    }
+    
+    void test_method_(write_string_with_one_indent_level) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener.indent_level(1);
+      trace_listener << "string";
+      assert::are_equal_("    string", trace_listener.result());
+    }
+    
+    void test_method_(write_string_with_two_indent_level) {
+      trace_listener_test_implementation trace_listener;
+      trace_listener.indent_size(8);
+      trace_listener.indent_level(2);
+      trace_listener << "string";
+      assert::are_equal_("                string", trace_listener.result());
     }
   };
 }

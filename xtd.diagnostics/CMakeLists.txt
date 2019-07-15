@@ -8,6 +8,7 @@ set(XTD_INCLUDES
 )
 set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/debug.hpp
+  include/xtd/diagnostics/default_trace_listener.hpp
   include/xtd/diagnostics/trace_event_cache.hpp
   include/xtd/diagnostics/trace_event_type.hpp
   include/xtd/diagnostics/trace_listener.hpp
@@ -15,6 +16,8 @@ set(XTD_DIAGNOSTICS_INCLUDES
 )
 set(SOURCES
   src/diagnostics.cpp
+  src/default_trace_listener_gcc.cpp
+  src/default_trace_listener_win32.cpp
   src/trace_listener.cpp
 )
 source_group(include\\xtd FILES ${XTD_INCLUDES})
