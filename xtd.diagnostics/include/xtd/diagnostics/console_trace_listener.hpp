@@ -10,12 +10,8 @@ namespace xtd {
   namespace diagnostics {
     class console_trace_listener : public ostream_trace_listener {
     public:
-      console_trace_listener() : console_trace_listener(false) {
-        this->name("console");
-      };
-      console_trace_listener(bool use_error_stream) : ostream_trace_listener(use_error_stream ? std::cerr : std::cout) {
-        this->name("console");
-      };
+      console_trace_listener() : console_trace_listener(false) {}
+      console_trace_listener(bool use_error_stream) : ostream_trace_listener(use_error_stream ? std::cerr : std::cout) {}
       
     private:
       using ostream_trace_listener::ostream;
