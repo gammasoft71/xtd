@@ -6,27 +6,29 @@ using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::tunit;
 
-enum class day_of_week {
-  sunday,
-  monday,
-  tuesday,
-  wednesday,
-  thursday,
-  friday,
-  saturday
-};
+namespace unit_tests {
+  enum class day_of_week {
+    sunday,
+    monday,
+    tuesday,
+    wednesday,
+    thursday,
+    friday,
+    saturday
+  };
 
-std::ostream& operator<<(std::ostream& os, day_of_week d) {
-  switch (d) {
-    case day_of_week::sunday: os << "sunday"; break;
-    case day_of_week::monday: os << "monday"; break;
-    case day_of_week::tuesday: os << "tuesday"; break;
-    case day_of_week::wednesday: os << "wednesday"; break;
-    case day_of_week::thursday: os << "thursday"; break;
-    case day_of_week::friday: os << "friday"; break;
-    case day_of_week::saturday: os << "saturday"; break;
+  std::ostream& operator<<(std::ostream& os, unit_tests::day_of_week d) {
+    switch (d) {
+      case unit_tests::day_of_week::sunday: os << "sunday"; break;
+      case unit_tests::day_of_week::monday: os << "monday"; break;
+      case unit_tests::day_of_week::tuesday: os << "tuesday"; break;
+      case unit_tests::day_of_week::wednesday: os << "wednesday"; break;
+      case unit_tests::day_of_week::thursday: os << "thursday"; break;
+      case unit_tests::day_of_week::friday: os << "friday"; break;
+      case unit_tests::day_of_week::saturday: os << "saturday"; break;
+    }
+    return os;
   }
-  return os;
 }
 
 namespace unit_tests {
