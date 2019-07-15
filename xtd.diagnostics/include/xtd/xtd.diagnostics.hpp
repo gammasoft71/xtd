@@ -11,4 +11,5 @@
 #include "diagnostics/trace_event_cache.hpp"
 #include "diagnostics/trace_event_type.hpp"
 #include "diagnostics/trace_listener.hpp"
+#include "diagnostics/trace_listener_collection.hpp"
 #include "diagnostics/trace_options.hpp"

@@ -31,49 +31,49 @@ namespace xtd {
       trace_listener() = default;
       
       /// @cond
-      trace_listener(const trace_listener& tl) = default;
-      trace_listener& operator=(const trace_listener& tl) = default;
+      trace_listener(const trace_listener& tl) = delete;
+      trace_listener& operator=(const trace_listener& tl) = delete;
       virtual ~trace_listener() {this->flush();}
       /// @endcond
       
       /// @brief Initializes a new instance of the trace_listener class using the specified name as the listener.
       /// @param name The name of the trace_listener.
-      explicit trace_listener(const std::string& name) {this->data_->name_ = name;}
+      explicit trace_listener(const std::string& name) {this->name_ = name;}
       
       /// @brief Gets the indent level.
       /// @return unsigned int The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      unsigned int indent_level() const {return this->data_->indent_level_;}
+      unsigned int indent_level() const {return this->indent_level_;}
 
       /// @brief Sets the indent level.
       /// @param indent_level The indent level. The default is zero.
       /// @remarks The IndentLevel property represents the number of times that the indent specified by the IndentSize property is applied. This property is stored on per-thread/per-request basis.
-      void indent_level(unsigned int indent_level) {this->data_->indent_level_ = indent_level;}
+      void indent_level(unsigned int indent_level) {this->indent_level_ = indent_level;}
       
       /// @brief Gets the number of spaces in an indent.
       /// @return unsigned int The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      unsigned int indent_size() const {return this->data_->indent_size_;}
+      unsigned int indent_size() const {return this->indent_size_;}
 
       /// @brief Sets the number of spaces in an indent.
       /// @param int32 The number of spaces in an indent. The default is four spaces.
       /// @remarks The property is stored on per-thread/per-request basis.
-      void indent_size(unsigned int indent_size) {this->data_->indent_size_ = indent_size;}
+      void indent_size(unsigned int indent_size) {this->indent_size_ = indent_size;}
 
       /// @brief Gets a value indicating whether the trace listener is thread safe.
       /// @return bool true if the trace listener is thread safe; otherwise, false. The default is false.
       /// @remarks The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is false, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is true and the value of UseGlobalLock is false. The default behavior is to use the global lock whenever writing to the listener.
-      virtual bool is_thread_safe() const {return this->data_->is_thread_safe_;}
+      virtual bool is_thread_safe() const {return this->is_thread_safe_;}
 
       /// @brief Gets or sets a name for this TraceListener.
       /// @return string A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
-      const std::string& name() const {return this->data_->name_;}
+      const std::string& name() const {return this->name_;}
 
       /// @brief Sets a name for this TraceListener.
       /// @param name A name for this TraceListener. The default is an empty string ("").
       /// @remarks The name can be used to organize and access listeners in a TraceListenerCollection collection.
-      void name(const std::string& name) {this->data_->name_ = name;}
+      void name(const std::string& name) {this->name_ = name;}
       
       /// @brief Gets the trace output options.
       /// @return trace_options A bitwise combination of the enumeration values. The default is None.
@@ -82,7 +82,7 @@ namespace xtd {
       /// * The EventLogTraceListener class, because it can cause a large volume of data to be written to the log.
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
-      const trace_options& trace_output_options() const {return this->data_->trace_output_options_;}
+      const trace_options& trace_output_options() const {return this->trace_output_options_;}
 
       /// @brief Sets the trace output options.
       /// @param trace_output_options A bitwise combination of the enumeration values. The default is None.
@@ -91,7 +91,7 @@ namespace xtd {
       /// * The EventLogTraceListener class, because it can cause a large volume of data to be written to the log.
       /// * The Write and WriteLine methods of the ConsoleTraceListener, DefaultTraceListener, and TextWriterTraceListener classes.
       /// * The Write and WriteLine methods of the TraceListener class when they are not overridden in a derived class.
-      void trace_output_options(const trace_options& trace_output_options) {this->data_->trace_output_options_ = trace_output_options;}
+      void trace_output_options(const trace_options& trace_output_options) {this->trace_output_options_ = trace_output_options;}
 
       /// @brief When overridden in a derived class, closes the output stream so it no longer receives tracing or debugging output.
       /// @remarks Use this method when the output is going to a file, such as to the TextWriterTraceListener. After a call to this method, you must reinitialize the object.
@@ -244,7 +244,7 @@ namespace xtd {
       template <typename object>
       void write(const object& o, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write(xtd::strings::format("{} : {}", o), category);
+        write(xtd::strings::format("{} : {}", o, category));
 #endif
       }
 
@@ -265,7 +265,7 @@ namespace xtd {
       template <typename object>
       void write_line(const object& o, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_line(xtd::strings::format("{} : {}", o), category);
+        write_line(xtd::strings::format("{} : {}", o, category));
 #endif
       }
 
@@ -280,49 +280,45 @@ namespace xtd {
       }
 
     protected:
-      bool need_indent() const {return this->data_->need_indent_;}
-      void need_indent(bool need_indent) const {this->data_->need_indent_ = need_indent;}
+      bool need_indent() const {return this->need_indent_;}
+      void need_indent(bool need_indent) {this->need_indent_ = need_indent;}
 
       /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.
       /// @remarks This method writes the indent and resets the NeedIndent property to false. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes.
       virtual void write_indent() {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->data_->need_indent_ = false;
-        for (int i = 0; i < this->data_->indent_level_; ++i)
-          this->write(std::string(this->data_->indent_size_, ' '));
+        this->need_indent_ = false;
+        for (int i = 0; i < this->indent_level_; ++i)
+          this->write(std::string(this->indent_size_, ' '));
 #endif
       }
 
     private:
       void write_event_cache(const trace_event_cache& event_cache) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (((int)this->data_->trace_output_options_ & (int)xtd::diagnostics::trace_options::process_id) == (int)xtd::diagnostics::trace_options::process_id)
-          this->write_line(xtd::strings::format("{0}ProcessId={1}", std::string(this->data_->indent_size_, ' '), event_cache.process_id()));
-        if (((int)this->data_->trace_output_options_ & (int)xtd::diagnostics::trace_options::logical_operation_stack) == (int)xtd::diagnostics::trace_options::logical_operation_stack)
-          this->write_line(xtd::strings::format("{0}LogicalOperationStack={1}", std::string(this->data_->indent_size_, ' '), xtd::strings::join(", ", event_cache.logical_operation_stack())));
-        if (((int)this->data_->trace_output_options_ & (int)xtd::diagnostics::trace_options::thread_id) == (int)xtd::diagnostics::trace_options::thread_id)
-          this->write_line(xtd::strings::format("{0}ThreadId={1}", std::string(this->data_->indent_size_, ' '), event_cache.thread_id()));
+        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::process_id) == (int)xtd::diagnostics::trace_options::process_id)
+          this->write_line(xtd::strings::format("{0}ProcessId={1}", std::string(this->indent_size_, ' '), event_cache.process_id()));
+        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::logical_operation_stack) == (int)xtd::diagnostics::trace_options::logical_operation_stack)
+          this->write_line(xtd::strings::format("{0}LogicalOperationStack={1}", std::string(this->indent_size_, ' '), xtd::strings::join(", ", event_cache.logical_operation_stack())));
+        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::thread_id) == (int)xtd::diagnostics::trace_options::thread_id)
+          this->write_line(xtd::strings::format("{0}ThreadId={1}", std::string(this->indent_size_, ' '), event_cache.thread_id()));
         /*
-         if (((int)this->data_->trace_output_options_ & (int)xtd::diagnostics::trace_options::date_time) == (int)xtd::diagnostics::trace_options::date_time)
-         this->write_line(xtd::strings::format("{0}DateTime={1:D}T{1:T}", std::string(this->data_->indent_size_, ' '), event_cache.date_time()));
+         if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::date_time) == (int)xtd::diagnostics::trace_options::date_time)
+         this->write_line(xtd::strings::format("{0}DateTime={1:D}T{1:T}", std::string(this->indent_size_, ' '), event_cache.date_time()));
          */
-        if (((int)this->data_->trace_output_options_ & (int)xtd::diagnostics::trace_options::timestamp) == (int)xtd::diagnostics::trace_options::timestamp)
-          this->write_line(xtd::strings::format("{0}Timestamp={1}", std::string(this->data_->indent_size_, ' '), event_cache.timestamp()));
-        if (((int)this->data_->trace_output_options_ & (int)xtd::diagnostics::trace_options::callstack) == (int)xtd::diagnostics::trace_options::callstack)
-          this->write_line(xtd::strings::format("{0}Callstack={1}", std::string(this->data_->indent_size_, ' '), event_cache.call_stack()));
+        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::timestamp) == (int)xtd::diagnostics::trace_options::timestamp)
+          this->write_line(xtd::strings::format("{0}Timestamp={1}", std::string(this->indent_size_, ' '), event_cache.timestamp()));
+        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::callstack) == (int)xtd::diagnostics::trace_options::callstack)
+          this->write_line(xtd::strings::format("{0}Callstack={1}", std::string(this->indent_size_, ' '), event_cache.call_stack()));
 #endif
       }
       
-      struct data {
-        unsigned int indent_level_ = 0;
-        unsigned int indent_size_ = 4;
-        bool is_thread_safe_ = false;
-        std::string name_;
-        bool need_indent_ = true;
-        trace_options trace_output_options_ = trace_options::none;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      unsigned int indent_level_ = 0;
+      unsigned int indent_size_ = 4;
+      bool is_thread_safe_ = false;
+      std::string name_;
+      bool need_indent_ = true;
+      trace_options trace_output_options_ = trace_options::none;
     };
   }
 }

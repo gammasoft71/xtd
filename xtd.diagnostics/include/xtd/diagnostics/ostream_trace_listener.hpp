@@ -15,14 +15,14 @@ namespace xtd {
       };
       ~ostream_trace_listener() {this->flush();}
       
-      virtual std::ostream& ostream() const {return this->data_->ostream_;}
-      virtual void ostream(const std::ostream& ostream) {this->data_->ostream_.rdbuf(ostream.rdbuf());}
+      virtual const std::ostream& ostream() const {return this->ostream_;}
+      virtual void ostream(const std::ostream& ostream) {this->ostream_.rdbuf(ostream.rdbuf());}
 
       void close() override { }
       void flush() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (this->data_->ostream_.good())
-          this->data_->ostream_ << std::flush;
+        if (this->ostream_.good())
+          this->ostream_ << std::flush;
 #endif
       }
       
@@ -31,8 +31,8 @@ namespace xtd {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (this->need_indent())
           this->write_indent();
-        if (this->data_->ostream_.good())
-          this->data_->ostream_ << message;
+        if (this->ostream_.good())
+          this->ostream_ << message;
 #endif
       }
       
@@ -46,12 +46,7 @@ namespace xtd {
       
     private:
       void write_to_output_debug(const std::string& message);
-      
-      struct data {
-        std::ostream ostream_ {nullptr};
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::ostream ostream_ {nullptr};
     };
   }
 }

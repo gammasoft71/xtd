@@ -13,13 +13,13 @@ namespace xtd {
       default_trace_listener() : trace_listener("default") {};
       ~default_trace_listener() {this->flush();}
       
-      std::string log_file_name() const {return this->data_->log_file_name_;}
-      void log_file_name(const std::string log_file_name) {this->data_->log_file_name_ = log_file_name;}
+      std::string log_file_name() const {return this->log_file_name_;}
+      void log_file_name(const std::string log_file_name) {this->log_file_name_ = log_file_name;}
 
       void close() override {}
       void flush() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (!this->data_->message_line_.empty())
+        if (!this->message_line_.empty())
           this->write_line("");
 #endif
       }
@@ -29,9 +29,9 @@ namespace xtd {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (this->need_indent())
           this->write_indent();
-        this->data_->message_line_ += message;
-        if (!this->data_->log_file_name_.empty())
-          xtd::io::file::append_all_text(this->data_->log_file_name_, message);
+        this->message_line_ += message;
+        if (!this->log_file_name_.empty())
+          xtd::io::file::append_all_text(this->log_file_name_, message);
 #endif
       }
       
@@ -39,8 +39,8 @@ namespace xtd {
       void write_line(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         this->write(message + xtd::environment::new_line());
-        this->write_to_output_debug(this->data_->message_line_);
-        this->data_->message_line_ = "";
+        this->write_to_output_debug(this->message_line_);
+        this->message_line_ = "";
         this->need_indent(true);
 #endif
       }
@@ -48,12 +48,8 @@ namespace xtd {
     private:
       void write_to_output_debug(const std::string& message);
       
-      struct data {
-        std::string log_file_name_;
-        std::string message_line_;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      std::string log_file_name_;
+      std::string message_line_;
     };
   }
 }
