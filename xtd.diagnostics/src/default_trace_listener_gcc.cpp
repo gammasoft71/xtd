@@ -8,7 +8,7 @@
 void xtd::diagnostics::default_trace_listener::write_to_output_debug(const std::string& message) {
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
 #if !defined(__APPLE__)
-  std::cerr << message.c_str() << std::flush;
+  std::cerr << message << std::flush;
 #endif
 }
 
