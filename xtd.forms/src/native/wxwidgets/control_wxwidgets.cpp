@@ -19,7 +19,10 @@ intptr_t native::control_api::create(intptr_t parent, const xtd::drawing::size& 
 }
 
 void native::control_api::def_wnd_proc(xtd::forms::message& message) {
-  // do nothing
+  switch (message.msg()) {
+  case WM_GETTEXTLENGTH: message.result(reinterpret_cast<control_handler*>(message.hwnd())->control()->GetLabel().ToStdString().size()); break;
+  case WM_GETTEXT: message.result(strlen(strncpy(reinterpret_cast<char*>(message.lparam()), reinterpret_cast<control_handler*>(message.hwnd())->control()->GetLabel().ToStdString().c_str(), message.wparam()))); break;
+  }
 }
 
 void native::control_api::destroy(intptr_t control) {
@@ -84,13 +87,17 @@ void native::control_api::size(intptr_t control, const xtd::drawing::size& size)
 
 std::string native::control_api::text(intptr_t control) {
   if (control == 0) return {};
-  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString();
+  //return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString();
+  intptr_t result = send_message(control, control, WM_GETTEXTLENGTH, 0, 0);
+  std::string text(result, 0);
+  result = send_message(control, control, WM_GETTEXT, result + 1, reinterpret_cast<intptr_t>(text.data()));
+  return text;
 }
 
 void native::control_api::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->SetLabel(text);
-  send_message(control, control, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(text.c_str()));
+  send_message(control, control, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString().c_str()));
 }
 
 bool native::control_api::visible(intptr_t control) {

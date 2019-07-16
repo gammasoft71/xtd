@@ -15,8 +15,8 @@ namespace xtd {
       message& operator=(const message&) = default;
       /// @cond
       
-      intptr_t hWnd() const {return this->hwnd_;}
-      void hwind(intptr_t value) {this->hwnd_ = value;}
+      intptr_t hwnd() const {return this->hwnd_;}
+      void hwnd(intptr_t value) {this->hwnd_ = value;}
       
       intptr_t lparam() const {return this->lparam_;}
       void lparam(intptr_t value) {this->lparam_ = value;}

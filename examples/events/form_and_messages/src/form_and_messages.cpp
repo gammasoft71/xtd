@@ -19,10 +19,12 @@ protected:
       case WM_CANCELMODE: debug::write_line("WM_CANCELMODE"); break;
       case WM_CLOSE: debug::write_line("WM_CLOSE"); break;
       case WM_COMMAND: debug::write_line(xtd::strings::format("WM_COMMAND [type=0x{0:X8}, control={1}]", message.wparam(), message.lparam())); break;
-      case WM_CREATE: debug::write_line(xtd::strings::format("WM_CREATE [create_struct{}]", message.lparam())); break;
+      case WM_CREATE: debug::write_line(xtd::strings::format("WM_CREATE [CREATESTRUCT={}]", message.lparam())); break;
       case WM_DESTROY: debug::write_line("WM_DESTROY"); break;
       case WM_ENTERSIZEMOVE: debug::write_line("WM_ENTERSIZEMOVE"); break;
       case WM_EXITSIZEMOVE: debug::write_line("WM_EXITSIZEMOVE"); break;
+      case WM_GETTEXT: debug::write_line(xtd::strings::format("WM_GETTEXT [size={0}, buffer={1}]", message.wparam(), message.lparam())); break;
+      case WM_GETTEXTLENGTH: debug::write_line("WM_GETTEXTLENGTH"); break;
       case WM_KILLFOCUS: debug::write_line("WM_KILLFOCUS"); break;
       case WM_LBUTTONDBLCLK: debug::write_line(xtd::strings::format("WM_LBUTTONDBLCLK [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_LBUTTONDOWN: debug::write_line(xtd::strings::format("WM_LBUTTONDOWN [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
@@ -34,7 +36,7 @@ protected:
       case WM_MOUSEENTER: debug::write_line("WM_MOUSEENTER"); break;
       case WM_MOUSEHWHEEL: debug::write_line(xtd::strings::format("WM_MOUSEHWHEEL [keys={}, delta={}, x={}, y={}]", LOWORD(message.wparam()), HIWORD(message.wparam()), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_MOUSELEAVE: debug::write_line("WM_MOUSELEAVE"); break;
-      //case WM_MOUSEMOVE: debug::write_line(xtd::strings::format("WM_MOUSEMOVE [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
+      case WM_MOUSEMOVE: debug::write_line(xtd::strings::format("WM_MOUSEMOVE [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_MOUSEWHEEL: debug::write_line(xtd::strings::format("WM_MOUSEWHEEL [keys={}, delta={}, x={}, y={}]", LOWORD(message.wparam()), HIWORD(message.wparam()), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_RBUTTONDBLCLK: debug::write_line(xtd::strings::format("WM_RBUTTONDBLCLK [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_RBUTTONDOWN: debug::write_line(xtd::strings::format("WM_RBUTTONDOWN [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
@@ -46,7 +48,7 @@ protected:
       case WM_XBUTTONDBLCLK: debug::write_line(xtd::strings::format("WM_XBUTTONDBLCLK [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_XBUTTONDOWN: debug::write_line(xtd::strings::format("WM_XBUTTONDOWN [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_XBUTTONUP: debug::write_line(xtd::strings::format("WM_XBUTTONUP [keys={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
-      //default: debug::write_line(xtd::strings::format("0x{:X4}", message.msg())); break;
+      default: debug::write_line(xtd::strings::format("[{}]", message)); break;
     }
   }
 };

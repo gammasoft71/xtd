@@ -68,7 +68,11 @@ inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
   intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
 
   // mouse events
-  if (event.GetEventType() == wxEVT_LEFT_DOWN || event.GetEventType() == wxEVT_MIDDLE_DOWN || event.GetEventType() == wxEVT_RIGHT_DOWN || event.GetEventType() == wxEVT_LEFT_UP || event.GetEventType() == wxEVT_MIDDLE_UP || event.GetEventType() == wxEVT_RIGHT_UP || event.GetEventType() == wxEVT_MOTION || event.GetEventType() == wxEVT_ENTER_WINDOW || event.GetEventType() == wxEVT_LEAVE_WINDOW || event.GetEventType() == wxEVT_LEFT_DCLICK || event.GetEventType() == wxEVT_MIDDLE_DCLICK || event.GetEventType() == wxEVT_RIGHT_DCLICK || event.GetEventType() == wxEVT_SET_FOCUS || event.GetEventType() == wxEVT_KILL_FOCUS || event.GetEventType() == wxEVT_CHILD_FOCUS || event.GetEventType() == wxEVT_MOUSEWHEEL || event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN || event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP || event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK /*|| event.GetEventType() == wxEVT_MAGNIFY*/)
+  //if (event.GetEventType() == wxEVT_LEFT_DOWN || event.GetEventType() == wxEVT_MIDDLE_DOWN || event.GetEventType() == wxEVT_RIGHT_DOWN || event.GetEventType() == wxEVT_LEFT_UP || event.GetEventType() == wxEVT_MIDDLE_UP || event.GetEventType() == wxEVT_RIGHT_UP || event.GetEventType() == wxEVT_MOTION || event.GetEventType() == wxEVT_ENTER_WINDOW || event.GetEventType() == wxEVT_LEAVE_WINDOW || event.GetEventType() == wxEVT_LEFT_DCLICK || event.GetEventType() == wxEVT_MIDDLE_DCLICK || event.GetEventType() == wxEVT_RIGHT_DCLICK || event.GetEventType() == wxEVT_SET_FOCUS || event.GetEventType() == wxEVT_KILL_FOCUS || event.GetEventType() == wxEVT_CHILD_FOCUS || event.GetEventType() == wxEVT_MOUSEWHEEL || event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN || event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP || event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK /*|| event.GetEventType() == wxEVT_MAGNIFY*/)
+  //  this->ProcessMouseEvent(event, hwnd);
+
+  // mouse events
+  if (event.GetEventType() >= wxEVT_LEFT_DOWN && event.GetEventType() <= wxEVT_AUX2_DCLICK /*|| event.GetEventType() == wxEVT_MAGNIFY*/)
     this->ProcessMouseEvent(event, hwnd);
 
   else if (event.GetEventType() == wxEVT_CLOSE_WINDOW)
