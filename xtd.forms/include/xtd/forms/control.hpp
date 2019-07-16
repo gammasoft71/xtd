@@ -49,6 +49,9 @@ namespace xtd {
       virtual xtd::drawing::point location() const {return this->location_;}
       virtual void location(const xtd::drawing::point& location);
 
+      virtual const std::string& name() const {return this->name_;}
+      virtual void name(const std::string& name) {this->name_ = name;}
+      
       virtual control& parent() const {return *this->parent_;}
       virtual void parent(const xtd::forms::control& parent);
 
@@ -223,6 +226,7 @@ namespace xtd {
       bool enabled_ = true;
       intptr_t handle_ = 0;
       static std::map<intptr_t, xtd::forms::control*> handles_;
+      std::string name_;
       xtd::drawing::point location_ {0, 0};
       control* parent_ = const_cast<control*>(&control::null);
       xtd::drawing::size size_ {-1, -1};

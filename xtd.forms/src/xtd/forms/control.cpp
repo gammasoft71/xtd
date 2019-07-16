@@ -1,4 +1,5 @@
 #include <iostream>
+#include <xtd/xtd.diagnostics>
 #include <xtd/xtd.strings>
 #include "../../../include/xtd/forms/control.hpp"
 #include "../../../include/xtd/forms/window_messages.hpp"
@@ -6,6 +7,8 @@
 #include "../../native/control_api.hpp"
 
 namespace {
+  bool debug_events = false;
+  
   xtd::forms::mouse_buttons message_to_mouse_buttons(const xtd::forms::message& message) {
     if (message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_LBUTTONDOWN || message.msg() == WM_LBUTTONUP)
       return xtd::forms::mouse_buttons::left;
@@ -253,7 +256,7 @@ void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
 }
 
 void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
-  //std::cout << xtd::strings::format("receive message [{}]", message) << std::endl;
+  xtd::diagnostics::debug::write_line_if(debug_events, xtd::strings::format("({}) receive message [{}]", this->name_, message));
   switch (message.msg()) {
     // mouse events
     case WM_LBUTTONDOWN:
