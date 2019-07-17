@@ -14,6 +14,11 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/button.hpp
   include/xtd/forms/control.hpp
   include/xtd/forms/form.hpp
+  include/xtd/forms/key_event_args.hpp
+  include/xtd/forms/key_event_handler.hpp
+  include/xtd/forms/key_press_event_args.hpp
+  include/xtd/forms/key_press_event_handler.hpp
+  include/xtd/forms/keys.hpp
   include/xtd/forms/label.hpp
   include/xtd/forms/message.hpp
   include/xtd/forms/mouse_buttons.hpp

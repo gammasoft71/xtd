@@ -195,6 +195,18 @@ void xtd::forms::control::on_handle_destroyed(const xtd::event_args &e) {
   this->handle_destroyed(*this, e);
 }
 
+void xtd::forms::control::on_key_down(xtd::forms::key_event_args& e) {
+  this->key_down(*this, e);
+}
+
+void xtd::forms::control::on_key_press(xtd::forms::key_press_event_args& e) {
+  this->key_press(*this, e);
+}
+
+void xtd::forms::control::on_key_up(xtd::forms::key_event_args& e) {
+  this->key_up(*this, e);
+}
+
 void xtd::forms::control::on_location_changed(const xtd::event_args &e) {
   this->location_ = native::control_api::location(this->handle_);
   this->location_changed(*this, e);
@@ -214,6 +226,10 @@ void xtd::forms::control::on_mouse_double_click(const xtd::forms::mouse_event_ar
 
 void xtd::forms::control::on_mouse_down(const xtd::forms::mouse_event_args& e) {
   this->mouse_down(*this, e);
+}
+
+void xtd::forms::control::on_mouse_horizontal_wheel(const xtd::forms::mouse_event_args& e) {
+  this->mouse_horizontal_wheel(*this, e);
 }
 
 void xtd::forms::control::on_mouse_enter(const xtd::event_args &e) {
@@ -258,6 +274,13 @@ void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
 void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
   xtd::diagnostics::debug::write_line_if(debug_events, xtd::strings::format("({}) receive message [{}]", this->name_, message));
   switch (message.msg()) {
+    // keyboard:
+    case WM_CHAR:
+    case WM_KEYDOWN:
+    case WM_KEYUP:
+    case WM_SYSCHAR:
+    case WM_SYSKEYDOWN:
+    case WM_SYSKEYUP: this->wm_key_char(message);
     // mouse events
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
@@ -272,15 +295,20 @@ void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
     case WM_RBUTTONDBLCLK:
     case WM_XBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
     case WM_MOUSEMOVE: this->wm_mouse_move(message); break;
+    case WM_MOUSEENTER: this->wm_mouse_enter(message); break;
+    case WM_MOUSELEAVE: this->wm_mouse_leave(message); break;
+    case WM_CHILDACTIVATE: this->wm_child_activate(message); break;
     case WM_SETFOCUS: this->wm_set_focus(message); break;
     case WM_KILLFOCUS: this->wm_kill_focus(message); break;
-    //case WM_CHILDACTIVATE: this->def_wnd_proc(message); break;
+    case WM_MOUSEHWHEEL:
     case WM_MOUSEWHEEL: this->wm_mouse_wheel(message); break;
-
-    case WM_COMMAND: this->on_click(xtd::event_args::empty); break;
+    // System events
+    case WM_COMMAND: this->wm_command(message); break;
+    case WM_GETTEXT: this->def_wnd_proc(message); break;
+    case WM_GETTEXTLENGTH: this->def_wnd_proc(message); break;
     case WM_MOVE: this->on_location_changed(xtd::event_args::empty); break;
     case WM_SETTEXT: this->on_text_changed(xtd::event_args::empty); break;
-    case WM_SIZE: this->on_size_changed(xtd::event_args::empty); break;
+    case WM_SIZE:  this->wm_size(message); break;
     default: this->def_wnd_proc(message); break;
   }
 }
@@ -308,6 +336,29 @@ void xtd::forms::control::set_properties() {
   if (this->size_ != xtd::drawing::size(-1, -1)) native::control_api::size(this->handle_, this->size_);
   native::control_api::text(this->handle_, this->text_);
   native::control_api::visible(this->handle_, this->visible_);
+}
+
+void xtd::forms::control::wm_child_activate(xtd::forms::message& message) {
+  this->def_wnd_proc(message);
+}
+
+void xtd::forms::control::wm_command(xtd::forms::message& message) {
+  this->def_wnd_proc(message);
+  //this->on_click(xtd::event_args::empty);
+}
+
+void xtd::forms::control::wm_key_char(xtd::forms::message& message) {
+  if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
+    key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    on_key_down(key_event_args);
+  } else if (message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) {
+    key_press_event_args key_press_event_args(static_cast<int>(message.wparam()));
+    on_key_press(key_press_event_args);
+  } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
+    key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    on_key_up(key_event_args);
+  }
+  this->def_wnd_proc(message);
 }
 
 void xtd::forms::control::wm_kill_focus(xtd::forms::message& message) {
@@ -366,5 +417,14 @@ void xtd::forms::control::wm_set_focus(xtd::forms::message& message) {
 
 void xtd::forms::control::wm_mouse_wheel(xtd::forms::message& message) {
   this->def_wnd_proc(message);
-  this->on_mouse_wheel(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+  if (message.msg() == WM_MOUSEHWHEEL)
+    this->on_mouse_horizontal_wheel(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+  else
+    this->on_mouse_wheel(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+}
+
+void xtd::forms::control::wm_size(xtd::forms::message& message) {
+  this->def_wnd_proc(message);
+  this->on_client_size_changed(xtd::event_args::empty);
+  this->on_size_changed(xtd::event_args::empty);
 }

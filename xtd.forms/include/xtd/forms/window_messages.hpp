@@ -324,7 +324,6 @@ constexpr int EN_ALIGN_RTL_EC = 0x0701;
 constexpr int EN_BEFORE_PASTE = 0x0800;
 constexpr int EN_AFTER_PASTE = 0x0801;
 
-
 inline short HIBYTE(short word) {
   return (unsigned char)((word >> 8) & 0xFF);
 }

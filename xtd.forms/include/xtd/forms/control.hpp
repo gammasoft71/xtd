@@ -3,11 +3,11 @@
 #include <map>
 #include <memory>
 #include <string>
-#include <xtd/event_args.hpp>
-#include <xtd/event_handler.hpp>
 #include <xtd/point.hpp>
 #include <xtd/size.hpp>
 
+#include "key_event_handler.hpp"
+#include "key_press_event_handler.hpp"
 #include "mouse_event_handler.hpp"
 #include "message.hpp"
 
@@ -139,6 +139,12 @@ namespace xtd {
       
       virtual void on_handle_destroyed(const xtd::event_args& e);
 
+      virtual void on_key_down(xtd::forms::key_event_args& e);
+      
+      virtual void on_key_press(xtd::forms::key_press_event_args& e);
+      
+      virtual void on_key_up(xtd::forms::key_event_args& e);
+      
       virtual void on_location_changed(const xtd::event_args& e);
       
       virtual void on_lost_focus(const xtd::event_args& e);
@@ -151,6 +157,8 @@ namespace xtd {
 
       virtual void on_mouse_enter(const xtd::event_args& e);
       
+      virtual void on_mouse_horizontal_wheel(const xtd::forms::mouse_event_args& e);
+      
       virtual void on_mouse_leave(const xtd::event_args& e);
       
       virtual void on_mouse_move(const xtd::forms::mouse_event_args& e);
@@ -158,7 +166,7 @@ namespace xtd {
       virtual void on_mouse_up(const xtd::forms::mouse_event_args& e);
 
       virtual void on_mouse_wheel(const xtd::forms::mouse_event_args& e);
-
+      
       virtual void on_parent_changed(const xtd::event_args& e);
  
       virtual void on_size_changed(const xtd::event_args& e);
@@ -187,6 +195,12 @@ namespace xtd {
       
       xtd::event_handler<control> enabled_changed;
 
+      xtd::forms::key_event_handler<control> key_down;
+      
+      xtd::forms::key_press_event_handler<control> key_press;
+      
+      xtd::forms::key_event_handler<control> key_up;
+      
       xtd::event_handler<control> location_changed;
       
       xtd::event_handler<control> lost_focus;
@@ -198,6 +212,8 @@ namespace xtd {
       xtd::forms::mouse_event_handler<control> mouse_down;
       
       xtd::event_handler<control> mouse_enter;
+      
+      xtd::forms::mouse_event_handler<control> mouse_horizontal_wheel;
       
       xtd::event_handler<control> mouse_leave;
       
@@ -238,6 +254,9 @@ namespace xtd {
     private:
       bool get_state(xtd::forms::control::state flag) const {return ((int)this->state_ & (int)flag) == (int)flag;}
       void set_state(xtd::forms::control::state flag, bool value) { this->state_ = value ? (xtd::forms::control::state)((int)this->state_ | (int)flag) : (xtd::forms::control::state)((int)this->state_ & ~(int)flag); }
+      void wm_child_activate(xtd::forms::message& message);
+      void wm_command(xtd::forms::message& message);
+      void wm_key_char(xtd::forms::message& message);
       void wm_kill_focus(xtd::forms::message& message);
       void wm_mouse_down(xtd::forms::message& message);
       void wm_mouse_double_click(xtd::forms::message& message);
@@ -247,6 +266,7 @@ namespace xtd {
       void wm_mouse_move(xtd::forms::message& message);
       void wm_set_focus(xtd::forms::message& message);
       void wm_mouse_wheel(xtd::forms::message& message);
+      void wm_size(xtd::forms::message& message);
     };
     
     using ref_control = std::reference_wrapper<xtd::forms::control>;

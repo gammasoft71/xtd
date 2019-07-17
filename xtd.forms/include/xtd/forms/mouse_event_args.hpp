@@ -16,8 +16,8 @@ namespace xtd {
       mouse_event_args(xtd::forms::mouse_buttons button, int x, int y, int clicks, int delta) : button_(button), location_({x, y}), clicks_(clicks), delta_(delta) {}
       
       /// @cond
-      mouse_event_args(const xtd::forms::mouse_event_args& mouseEventArgs) = default;
-      mouse_event_args& operator=(const xtd::forms::mouse_event_args& mouseEventArgs) = default;
+      mouse_event_args(const xtd::forms::mouse_event_args& mouse_event_args) = default;
+      mouse_event_args& operator=(const xtd::forms::mouse_event_args& mouse_event_args) = default;
       /// @endcond
       
       xtd::forms::mouse_buttons button() {return this->button_;}
@@ -37,7 +37,6 @@ namespace xtd {
       xtd::drawing::point location_;
       int clicks_ = 0;
       int delta_ = 0;
-
     };
   }
 }
