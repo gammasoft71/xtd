@@ -86,7 +86,7 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<typename Char>
-      static std::basic_string<Char> combine(const std::basic_string<Char>& path1, const std::basic_string<Char>& path2) noexcept {
+      static std::basic_string<Char> combine(const std::basic_string<Char>& path1, const std::basic_string<Char>& path2) {
         // if (path1.IndexOfAny(GetInvalidPathChars()) != -1 || path2.IndexOfAny(GetInvalidPathChars()) != -1)  return {};
         if (path2.empty()) return path1;
         if (path1.empty() || is_path_rooted(path2)) return path2;
@@ -319,7 +319,7 @@ namespace xtd {
       /// @return path is null, or an empty string if path does not contain root directory
       /// @return information.
       template<typename Char>
-      static std::basic_string<Char> get_path_root(const std::basic_string<Char>& path) noexcept {return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";}
+      static std::basic_string<Char> get_path_root(const std::basic_string<Char>& path) {return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";}
       
       /// @cond
       template<typename Char>
@@ -428,7 +428,7 @@ namespace xtd {
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
       template<typename Char>
-      static bool is_path_rooted(const std::basic_string<Char>& path) noexcept {return __get_index_path_rooted(path) != -1;}
+      static bool is_path_rooted(const std::basic_string<Char>& path) {return __get_index_path_rooted(path) != -1;}
       
       /// @cond
       template<typename Char>
@@ -474,9 +474,9 @@ namespace xtd {
       }
       
       template<typename Char>
-      static int __get_index_path_rooted(const std::basic_string<Char>& path) noexcept {
-        int index = path.find(directory_separator_char());
-        return (index == std::basic_string<Char>::npos || index == path.size() || (index != 0 && !__is_drive(path.substr(0, index + 1)))) ? -1 : index;
+      static int __get_index_path_rooted(const std::basic_string<Char>& path) {
+        size_t index = path.find(directory_separator_char());
+        return (index == std::basic_string<Char>::npos || index == path.size() || (index != 0 && !__is_drive(path.substr(0, index + 1)))) ? -1 : static_cast<int>(index);
       }
     };
   }
