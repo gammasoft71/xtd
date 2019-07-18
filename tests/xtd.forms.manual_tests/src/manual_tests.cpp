@@ -8,16 +8,16 @@ class numeric_text_box : public text_box {
 public:
   numeric_text_box() {
     this->key_down += [&](const control& sender, key_event_args& e) {
-      //debug::write_line(strings::format("key_down [key_code={}, key_data={}, key_value={}, modifiers={}]", e.key_code(), e.key_data(), e.key_value(), e.modifiers()));
+      debug::write_line(strings::format("key_down [key_code={}, key_data={}, key_value={}, modifiers={}]", e.key_code(), e.key_data(), e.key_value(), e.modifiers()));
     };
     
     this->key_press += [&](const control& sender, key_press_event_args& e) {
-      //debug::write_line(strings::format("key_press [key_char={}]", e.key_char()));
+      debug::write_line(strings::format("key_press [key_char={}]", e.key_char()));
       e.handled((!std::iscntrl(e.key_char()) && !std::isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && this->text().find('.') != std::string::npos));
     };
     
     this->key_up += [&](const control& sender, key_event_args& e) {
-      //debug::write_line(strings::format("key_up [key_code={}, key_data={}, key_value={}, modifiers={}]", e.key_code(), e.key_data(), e.key_value(), e.modifiers()));
+      debug::write_line(strings::format("key_up [key_code={}, key_data={}, key_value={}, modifiers={}]", e.key_code(), e.key_data(), e.key_value(), e.modifiers()));
     };
     
     this->text_changed += [&](const control& sender, const event_args& e) {
