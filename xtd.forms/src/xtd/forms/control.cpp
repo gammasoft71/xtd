@@ -427,8 +427,8 @@ void xtd::forms::control::wm_mouse_wheel(xtd::forms::message& message) {
 }
 
 void xtd::forms::control::wm_set_text(xtd::forms::message& message) {
-  this->text_ = reinterpret_cast<const char*>(message.lparam());
   this->def_wnd_proc(message);
+  this->text_ = reinterpret_cast<const char*>(message.lparam());
   this->on_text_changed(xtd::event_args::empty);
 }
 
