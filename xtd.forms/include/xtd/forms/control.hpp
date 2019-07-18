@@ -249,7 +249,6 @@ namespace xtd {
       std::string text_;
       bool visible_ = true;
       xtd::forms::control::state state_ = state::empty;
-      std::shared_ptr<intptr_t> instance_ = std::make_shared<intptr_t>(0);
       
     private:
       bool get_state(xtd::forms::control::state flag) const {return ((int)this->state_ & (int)flag) == (int)flag;}
@@ -264,8 +263,10 @@ namespace xtd {
       void wm_mouse_leave(xtd::forms::message& message);
       void wm_mouse_up(xtd::forms::message& message);
       void wm_mouse_move(xtd::forms::message& message);
+      void wm_move(xtd::forms::message& message);
       void wm_set_focus(xtd::forms::message& message);
       void wm_mouse_wheel(xtd::forms::message& message);
+      void wm_set_text(xtd::forms::message& message);
       void wm_size(xtd::forms::message& message);
     };
     

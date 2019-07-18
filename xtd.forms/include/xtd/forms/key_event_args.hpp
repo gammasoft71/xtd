@@ -40,7 +40,10 @@ namespace xtd {
       bool shift() const {return (this->key_data_ & keys::shift) == keys::shift;}
       
       bool suppress_key_press() const {return this->suppress_key_press_;}
-      void suppress_key_press(bool suppress_key_press) {this->suppress_key_press_ = suppress_key_press;}
+      void suppress_key_press(bool suppress_key_press) {
+        this->suppress_key_press_ = suppress_key_press;
+        if (suppress_key_press) this->handled(true);
+      }
       
 
     private:

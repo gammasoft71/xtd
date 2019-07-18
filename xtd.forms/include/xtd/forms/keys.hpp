@@ -675,10 +675,26 @@ namespace xtd {
         default: result = std::to_string(static_cast<int>(value)); break;
       }
 
-      if ((value & xtd::forms::keys::shift) == xtd::forms::keys::shift) result += ", shift";
-      if ((value & xtd::forms::keys::control) == xtd::forms::keys::control) result += ", control";
-      if ((value & xtd::forms::keys::alt) == xtd::forms::keys::alt) result += ", alt";
-      if ((value & xtd::forms::keys::command) == xtd::forms::keys::command) result += ", command";
+      if ((value & xtd::forms::keys::shift) == xtd::forms::keys::shift) {
+        if (result == "none") result = "";
+        if (result != "") result += ", ";
+        result += "shift";
+      }
+      if ((value & xtd::forms::keys::control) == xtd::forms::keys::control) {
+        if (result == "none") result = "";
+        if (result != "") result += ", ";
+        result += "control";
+      }
+      if ((value & xtd::forms::keys::alt) == xtd::forms::keys::alt) {
+        if (result == "none") result = "";
+        if (result != "") result += ", ";
+        result += "alt";
+      }
+      if ((value & xtd::forms::keys::command) == xtd::forms::keys::command) {
+        if (result == "none") result = "";
+        if (result != "") result += ", ";
+        result += "command";
+      }
       
       return os << result;
     }

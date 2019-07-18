@@ -18,11 +18,13 @@ intptr_t native::control_api::create(intptr_t parent, const xtd::drawing::size& 
   return reinterpret_cast<intptr_t>(new control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height())));
 }
 
-void native::control_api::def_wnd_proc(xtd::forms::message& message) {
+void native::control_api::def_wnd_proc(intptr_t control, xtd::forms::message& message) {
   switch (message.msg()) {
   case WM_GETTEXTLENGTH: message.result(reinterpret_cast<control_handler*>(message.hwnd())->control()->GetLabel().ToStdString().size()); break;
   case WM_GETTEXT: message.result(strlen(strncpy(reinterpret_cast<char*>(message.lparam()), reinterpret_cast<control_handler*>(message.hwnd())->control()->GetLabel().ToStdString().c_str(), message.wparam()))); break;
   }
+  if (message.handle() != 0)
+    reinterpret_cast<control_handler*>(control)->def_wnd_proc(message);
 }
 
 void native::control_api::destroy(intptr_t control) {

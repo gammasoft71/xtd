@@ -37,7 +37,7 @@ const xtd::forms::control xtd::forms::control::null;
 xtd::forms::control::~control() {
   if (this->handle_) {
     native::control_api::unregister_wnd_proc(this->handle_);
-    if (this->instance_.use_count() == 1) native::control_api::del(this->handle_);
+    native::control_api::del(this->handle_);
     this->handle_ = 0;
     this->on_handle_destroyed(xtd::event_args::empty);
     this->destroy_handle();
@@ -132,7 +132,6 @@ void xtd::forms::control::create_handle() {
 
 void xtd::forms::control::destroy_handle() {
   handles_.erase(this->handle_);
-  if (this->instance_.use_count() > 1) return;
   native::control_api::destroy(this->handle_);
   this->handle_ = 0;
   this->on_handle_destroyed(xtd::event_args::empty);
@@ -262,7 +261,6 @@ void xtd::forms::control::on_size_changed(const xtd::event_args &e) {
 }
 
 void xtd::forms::control::on_text_changed(const xtd::event_args &e) {
-  this->text_ = native::control_api::text(this->handle_);
   this->text_changed(*this, e);
 }
 
@@ -280,7 +278,7 @@ void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
     case WM_KEYUP:
     case WM_SYSCHAR:
     case WM_SYSKEYDOWN:
-    case WM_SYSKEYUP: this->wm_key_char(message);
+    case WM_SYSKEYUP: this->wm_key_char(message); break;
     // mouse events
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
@@ -304,10 +302,8 @@ void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
     case WM_MOUSEWHEEL: this->wm_mouse_wheel(message); break;
     // System events
     case WM_COMMAND: this->wm_command(message); break;
-    case WM_GETTEXT: this->def_wnd_proc(message); break;
-    case WM_GETTEXTLENGTH: this->def_wnd_proc(message); break;
-    case WM_MOVE: this->on_location_changed(xtd::event_args::empty); break;
-    case WM_SETTEXT: this->on_text_changed(xtd::event_args::empty); break;
+    case WM_MOVE: wm_move(message);  break;
+    case WM_SETTEXT: wm_set_text(message); break;
     case WM_SIZE:  this->wm_size(message); break;
     default: this->def_wnd_proc(message); break;
   }
@@ -318,8 +314,7 @@ intptr_t xtd::forms::control::send_message(intptr_t hwnd, int msg, intptr_t wpar
 }
 
 void xtd::forms::control::def_wnd_proc(xtd::forms::message& message) {
-  native::control_api::def_wnd_proc(message);
-  
+  native::control_api::def_wnd_proc(this->handle_, message);
 }
 
 void xtd::forms::control::get_properties() {
@@ -351,14 +346,17 @@ void xtd::forms::control::wm_key_char(xtd::forms::message& message) {
   if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     on_key_down(key_event_args);
+    message.result(key_event_args.suppress_key_press());
   } else if (message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) {
     key_press_event_args key_press_event_args(static_cast<int>(message.wparam()));
     on_key_press(key_press_event_args);
+    message.result(key_press_event_args.handled());
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     on_key_up(key_event_args);
-  }
-  this->def_wnd_proc(message);
+    message.result(key_event_args.handled());
+  } else
+    this->def_wnd_proc(message);
 }
 
 void xtd::forms::control::wm_kill_focus(xtd::forms::message& message) {
@@ -410,6 +408,11 @@ void xtd::forms::control::wm_mouse_move(xtd::forms::message& message) {
   this->on_mouse_move(xtd::forms::mouse_event_args(wparam_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, 0));
 }
 
+void xtd::forms::control::wm_move(xtd::forms::message& message) {
+  this->def_wnd_proc(message);
+  this->on_location_changed(xtd::event_args::empty);
+}
+
 void xtd::forms::control::wm_set_focus(xtd::forms::message& message) {
   this->def_wnd_proc(message);
   this->on_got_focus(xtd::event_args::empty);
@@ -421,6 +424,12 @@ void xtd::forms::control::wm_mouse_wheel(xtd::forms::message& message) {
     this->on_mouse_horizontal_wheel(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
   else
     this->on_mouse_wheel(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+}
+
+void xtd::forms::control::wm_set_text(xtd::forms::message& message) {
+  this->text_ = reinterpret_cast<const char*>(message.lparam());
+  this->def_wnd_proc(message);
+  this->on_text_changed(xtd::event_args::empty);
 }
 
 void xtd::forms::control::wm_size(xtd::forms::message& message) {

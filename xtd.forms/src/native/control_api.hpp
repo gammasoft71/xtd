@@ -14,7 +14,7 @@ namespace native {
   class control_api {
   public:
     static intptr_t create(intptr_t parent, const xtd::drawing::size& size);
-    static void def_wnd_proc(xtd::forms::message& message);
+    static void def_wnd_proc(intptr_t control, xtd::forms::message& message);
     static void destroy(intptr_t control);
     static void del(intptr_t control);
     static xtd::drawing::size client_size(intptr_t control);

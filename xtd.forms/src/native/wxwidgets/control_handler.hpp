@@ -21,7 +21,17 @@ public:
   control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, pos, size, style), event_handler_(event_handler) {}
   control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, label, pos, size, style), event_handler_(event_handler) {}
 
+  void def_wnd_proc(xtd::forms::message& message) {
+    reinterpret_cast<wxEvent*>(message.handle())->Skip(!message.result());
+    this->process_result_ = this->TControl::ProcessEvent(*reinterpret_cast<wxEvent*>(message.handle()));
+  }
+
 private:
+  void def_process_event(wxEvent& event) {
+    xtd::forms::message message = xtd::forms::message::create(0, 0, 0, 0, 0, reinterpret_cast<intptr_t>(&event));
+    this->def_wnd_proc(message);
+  }
+  
   bool is_clipboard_event(wxEventType event_type) const {
     static std::set<wxEventType> event_types = {wxEVT_TEXT_COPY, wxEVT_TEXT_CUT, wxEVT_TEXT_PASTE};
     return event_types.find(event_type) != event_types.end();
@@ -245,22 +255,23 @@ private:
   }
   
   bool ProcessEvent(wxEvent &event) override;
-  bool process_clipboard_event(wxEvent &event);
-  bool process_command_event(wxEvent &event);
-  bool process_cursor_event(wxEvent &event);
-  bool process_generic_command_event(wxEvent &event);
-  bool process_gesture_event(wxEvent &event);
-  bool process_help_event(wxEvent &event);
-  bool process_key_event(wxEvent &event);
-  bool process_mouse_event(wxEvent &event);
-  bool process_scroll_event(wxEvent &event);
-  bool process_scrollbar_event(wxEvent &event);
-  bool process_spin_event(wxEvent &event);
-  bool process_system_event(wxEvent &event);
-  bool process_text_event(wxEvent &event);
-  bool process_thread_event(wxEvent &event);
+  void process_clipboard_event(wxEvent &event, intptr_t hwnd);
+  void process_command_event(wxEvent &event, intptr_t hwnd);
+  void process_cursor_event(wxEvent &event, intptr_t hwnd);
+  void process_generic_command_event(wxEvent &event, intptr_t hwnd);
+  void process_gesture_event(wxEvent &event, intptr_t hwnd);
+  void process_help_event(wxEvent &event, intptr_t hwnd);
+  void process_key_event(wxEvent &event, intptr_t hwnd);
+  void process_mouse_event(wxEvent &event, intptr_t hwnd);
+  void process_scroll_event(wxEvent &event, intptr_t hwnd);
+  void process_scrollbar_event(wxEvent &event, intptr_t hwnd);
+  void process_spin_event(wxEvent &event, intptr_t hwnd);
+  void process_system_event(wxEvent &event, intptr_t hwnd);
+  void process_text_event(wxEvent &event, intptr_t hwnd);
+  void process_thread_event(wxEvent &event, intptr_t hwnd);
 
   control_handler* event_handler_;
+  bool process_result_ = true;
 };
 
 class control_handler {
@@ -270,11 +281,13 @@ public:
   template<typename control>
   void create(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
     this->control_ = new control_wrapper<control>(this, parent, id, pos, size, style);
+    this->def_wnd_proc_ = {static_cast<control_wrapper<control>&>(*this->control_), &control_wrapper<control>::def_wnd_proc};
   }
   
   template<typename control>
   void create(wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
     this->control_ = new control_wrapper<control>(this, parent, id, label, pos, size, style);
+    this->def_wnd_proc_ = {static_cast<control_wrapper<control>&>(*this->control_), &control_wrapper<control>::def_wnd_proc};
   }
 
   void register_wnd_proc(xtd::delegate<void(xtd::forms::message&)> wnd_proc) {
@@ -294,93 +307,91 @@ public:
 
   wxWindow* control() const {return this->control_;}
   void clear_control() {this->control_ = nullptr;}
+  
+  void def_wnd_proc(xtd::forms::message& message) {this->def_wnd_proc_(message);}
 
 private:
   xtd::delegate<void(xtd::forms::message&)> wnd_proc_;
+  xtd::delegate<void(xtd::forms::message&)> def_wnd_proc_;
   wxWindow* control_;
 };
 
 template<typename TControl>
 inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
-  if (is_clipboard_event(event.GetEventType())) return this->process_clipboard_event(event);
-  if (is_command_event(event.GetEventType())) return this->process_command_event(event);
-  if (is_cursor_event(event.GetEventType())) return this->process_cursor_event(event);
-  if (is_generic_command_event(event.GetEventType())) return this->process_generic_command_event(event);
-  if (is_gesture_event(event.GetEventType())) return this->process_gesture_event(event);
-  if (is_key_event(event.GetEventType())) return this->process_key_event(event);
-  if (is_mouse_event(event.GetEventType())) return this->process_mouse_event(event);
-  if (is_scroll_event(event.GetEventType())) return this->process_scroll_event(event);
-  if (is_scrollbar_event(event.GetEventType())) return this->process_scrollbar_event(event);
-  if (is_spin_event(event.GetEventType())) return this->process_spin_event(event);
-  if (is_system_event(event.GetEventType())) return this->process_system_event(event);
-  if (is_text_event(event.GetEventType())) return this->process_thread_event(event);
-  if (is_thread_event(event.GetEventType())) return this->process_thread_event(event);
-  return this->TControl::ProcessEvent(event);
-}
-
-template<typename TControl>
-inline bool control_wrapper<TControl>::process_clipboard_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
-}
-
-template<typename TControl>
-inline bool control_wrapper<TControl>::process_command_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
-}
-
-template<typename TControl>
-inline bool control_wrapper<TControl>::process_cursor_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
-}
-
-template<typename TControl>
-inline bool control_wrapper<TControl>::process_generic_command_event(wxEvent& event) {
   wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-  if (!window) return this->TControl::ProcessEvent(event);
+  if (!window) {
+    this->def_process_event(event);
+    return this->process_result_;
+  }
   intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
+
+  if (is_clipboard_event(event.GetEventType())) this->process_clipboard_event(event, hwnd);
+  else if (is_command_event(event.GetEventType())) this->process_command_event(event, hwnd);
+  else if (is_cursor_event(event.GetEventType())) this->process_cursor_event(event, hwnd);
+  else if (is_generic_command_event(event.GetEventType())) this->process_generic_command_event(event, hwnd);
+  else if (is_gesture_event(event.GetEventType())) this->process_gesture_event(event, hwnd);
+  else if (is_key_event(event.GetEventType())) this->process_key_event(event, hwnd);
+  else if (is_mouse_event(event.GetEventType())) this->process_mouse_event(event, hwnd);
+  else if (is_scroll_event(event.GetEventType())) this->process_scroll_event(event, hwnd);
+  else if (is_scrollbar_event(event.GetEventType())) this->process_scrollbar_event(event, hwnd);
+  else if (is_spin_event(event.GetEventType())) this->process_spin_event(event, hwnd);
+  else if (is_system_event(event.GetEventType())) this->process_system_event(event, hwnd);
+  else if (is_text_event(event.GetEventType())) this->process_text_event(event, hwnd);
+  else if (is_thread_event(event.GetEventType())) this->process_thread_event(event, hwnd);
+  else this->def_process_event(event);
   
+  struct post_process_event {
+    post_process_event(bool* process_result) : process_result_(process_result) {}
+    ~post_process_event() {*process_result_ = true;}
+    bool* process_result_;
+  } post_process_event(&this->process_result_);
+  
+  return this->process_result_;
+}
+
+template<typename TControl>
+inline void control_wrapper<TControl>::process_clipboard_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
+}
+
+template<typename TControl>
+inline void control_wrapper<TControl>::process_command_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
+}
+
+template<typename TControl>
+inline void control_wrapper<TControl>::process_cursor_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
+}
+
+template<typename TControl>
+inline void control_wrapper<TControl>::process_generic_command_event(wxEvent& event, intptr_t hwnd) {
   if (event.GetEventType() == wxEVT_COMMAND_ENTER)
     this->event_handler_->send_message(hwnd, WM_COMMAND, 0, 0, reinterpret_cast<intptr_t>(&event));
-  return this->TControl::ProcessEvent(event);
+  else
+    this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_help_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
+inline void control_wrapper<TControl>::process_help_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_gesture_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
+inline void control_wrapper<TControl>::process_gesture_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_key_event(wxEvent& event) {
-  wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-  if (!window) return this->TControl::ProcessEvent(event);
-  intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
-
-  if (event.GetEventType() == wxEVT_KEY_DOWN) {
-    this->event_handler_->send_message(hwnd, WM_KEYDOWN, static_cast<intptr_t>(convert_to_key_data(static_cast<wxKeyEvent&>(event))), 0, reinterpret_cast<intptr_t>(&event));
-    event.Skip();
-  }
-  if (event.GetEventType() == wxEVT_CHAR) {
-    this->event_handler_->send_message(hwnd, WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event));
-    event.Skip();
-  }
-  if (event.GetEventType() == wxEVT_KEY_UP) {
-    this->event_handler_->send_message(hwnd, WM_KEYUP, static_cast<intptr_t>(convert_to_key_data(static_cast<wxKeyEvent&>(event))), 0, reinterpret_cast<intptr_t>(&event));
-    event.Skip();
-  }
-
-  return this->TControl::ProcessEvent(event);
+inline void control_wrapper<TControl>::process_key_event(wxEvent& event, intptr_t hwnd) {
+  if (event.GetEventType() == wxEVT_KEY_DOWN) event.Skip(!this->event_handler_->send_message(hwnd, WM_KEYDOWN, static_cast<intptr_t>(convert_to_key_data(static_cast<wxKeyEvent&>(event))), 0, reinterpret_cast<intptr_t>(&event)));
+  else if (event.GetEventType() == wxEVT_CHAR) event.Skip(!this->event_handler_->send_message(hwnd, WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event)));
+  else if (event.GetEventType() == wxEVT_KEY_UP) event.Skip(!this->event_handler_->send_message(hwnd, WM_KEYUP, static_cast<intptr_t>(convert_to_key_data(static_cast<wxKeyEvent&>(event))), 0, reinterpret_cast<intptr_t>(&event)));
+  else this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_mouse_event(wxEvent& event) {
-  wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-  if (!window) return this->TControl::ProcessEvent(event);
-  intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
+inline void control_wrapper<TControl>::process_mouse_event(wxEvent& event, intptr_t hwnd) {
   wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
   wxMouseState mouse_state = wxGetMouseState();
   int virtual_keys = 0;
@@ -393,48 +404,45 @@ inline bool control_wrapper<TControl>::process_mouse_event(wxEvent& event) {
   if (mouse_state.Aux2IsDown()) virtual_keys += MK_XBUTTON2;
 
   if (event.GetEventType() == wxEVT_LEFT_DOWN) this->event_handler_->send_message(hwnd, WM_LBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_MIDDLE_DOWN) this->event_handler_->send_message(hwnd, WM_MBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_RIGHT_DOWN) this->event_handler_->send_message(hwnd, WM_RBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_LEFT_UP) this->event_handler_->send_message(hwnd, WM_LBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_MIDDLE_UP) this->event_handler_->send_message(hwnd, WM_MBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_RIGHT_UP) this->event_handler_->send_message(hwnd, WM_RBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_MOTION) this->event_handler_->send_message(hwnd, WM_MOUSEMOVE, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_ENTER_WINDOW) this->event_handler_->send_message(hwnd, WM_MOUSEENTER, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_LEAVE_WINDOW) this->event_handler_->send_message(hwnd, WM_MOUSELEAVE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_LEFT_DCLICK) this->event_handler_->send_message(hwnd, WM_LBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) this->event_handler_->send_message(hwnd, WM_MBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_RIGHT_DCLICK) this->event_handler_->send_message(hwnd, WM_RBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_SET_FOCUS) this->event_handler_->send_message(hwnd, WM_SETFOCUS, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_KILL_FOCUS) this->event_handler_->send_message(hwnd, WM_KILLFOCUS, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_CHILD_FOCUS) this->event_handler_->send_message(hwnd, WM_CHILDACTIVATE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_MOUSEWHEEL) this->event_handler_->send_message(hwnd, mouse_event.GetWheelAxis() == wxMouseWheelAxis::wxMOUSE_WHEEL_VERTICAL ? WM_MOUSEWHEEL : WM_MOUSEHWHEEL, virtual_keys + ((mouse_event.GetWheelRotation() < 0 ? -mouse_event.GetWheelDelta() : mouse_event.GetWheelDelta()) << 16), mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN) this->event_handler_->send_message(hwnd, WM_XBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP) this->event_handler_->send_message(hwnd, WM_XBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  if (event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK) this->event_handler_->send_message(hwnd, WM_XBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-  return this->TControl::ProcessEvent(event);
+  else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) this->event_handler_->send_message(hwnd, WM_MBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_RIGHT_DOWN) this->event_handler_->send_message(hwnd, WM_RBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_LEFT_UP) this->event_handler_->send_message(hwnd, WM_LBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_MIDDLE_UP) this->event_handler_->send_message(hwnd, WM_MBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_RIGHT_UP) this->event_handler_->send_message(hwnd, WM_RBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_MOTION) this->event_handler_->send_message(hwnd, WM_MOUSEMOVE, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_ENTER_WINDOW) this->event_handler_->send_message(hwnd, WM_MOUSEENTER, 0, 0, reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_LEAVE_WINDOW) this->event_handler_->send_message(hwnd, WM_MOUSELEAVE, 0, 0, reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_LEFT_DCLICK) this->event_handler_->send_message(hwnd, WM_LBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) this->event_handler_->send_message(hwnd, WM_MBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_RIGHT_DCLICK) this->event_handler_->send_message(hwnd, WM_RBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_SET_FOCUS) this->event_handler_->send_message(hwnd, WM_SETFOCUS, 0, 0, reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_KILL_FOCUS) this->event_handler_->send_message(hwnd, WM_KILLFOCUS, 0, 0, reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_CHILD_FOCUS) this->event_handler_->send_message(hwnd, WM_CHILDACTIVATE, 0, 0, reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_MOUSEWHEEL) this->event_handler_->send_message(hwnd, mouse_event.GetWheelAxis() == wxMouseWheelAxis::wxMOUSE_WHEEL_VERTICAL ? WM_MOUSEWHEEL : WM_MOUSEHWHEEL, virtual_keys + ((mouse_event.GetWheelRotation() < 0 ? -mouse_event.GetWheelDelta() : mouse_event.GetWheelDelta()) << 16), mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_AUX1_DOWN || event.GetEventType() == wxEVT_AUX2_DOWN) this->event_handler_->send_message(hwnd, WM_XBUTTONDOWN, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_AUX1_UP || event.GetEventType() == wxEVT_AUX2_UP) this->event_handler_->send_message(hwnd, WM_XBUTTONUP, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else if (event.GetEventType() == wxEVT_AUX1_DCLICK || event.GetEventType() == wxEVT_AUX2_DCLICK) this->event_handler_->send_message(hwnd, WM_XBUTTONDBLCLK, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+  else this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_scroll_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
+inline void control_wrapper<TControl>::process_scroll_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_scrollbar_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
+inline void control_wrapper<TControl>::process_scrollbar_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_spin_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
+inline void control_wrapper<TControl>::process_spin_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_system_event(wxEvent& event) {
+inline void control_wrapper<TControl>::process_system_event(wxEvent& event, intptr_t hwnd) {
   wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-  if (!window) return this->TControl::ProcessEvent(event);
-  intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
-
   if (event.GetEventType() == wxEVT_CLOSE_WINDOW) this->event_handler_->send_message(hwnd, WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_DESTROY) this->event_handler_->send_message(hwnd, WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
   else if (event.GetEventType() == wxEVT_MOVE) this->event_handler_->send_message(hwnd, WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
@@ -443,25 +451,18 @@ inline bool control_wrapper<TControl>::process_system_event(wxEvent& event) {
   else if (event.GetEventType() == wxEVT_SIZE) this->event_handler_->send_message(hwnd, WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE) this->event_handler_->send_message(hwnd, WM_ENTERSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
   //else if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE) this->event_handler_->send_message(hwnd, WM_EXITSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
-  return this->TControl::ProcessEvent(event);
+  else this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_text_event(wxEvent& event) {
-  wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-  if (!window) return this->TControl::ProcessEvent(event);
-  intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
-  
+inline void control_wrapper<TControl>::process_text_event(wxEvent& event, intptr_t hwnd) {
   if (event.GetEventType() == wxEVT_TEXT) {
-    wxCStrData str_data = static_cast<wxCommandEvent&>(event).GetString().c_str();
-    const char* str = str_data.AsChar();
-    this->event_handler_->send_message(hwnd, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(str), reinterpret_cast<intptr_t>(&event));
-  }
-  
-  return this->TControl::ProcessEvent(event);
+    this->event_handler_->send_message(hwnd, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(static_cast<wxCommandEvent&>(event).GetString().c_str().AsChar()), reinterpret_cast<intptr_t>(&event));
+  } else
+    this->def_process_event(event);
 }
 
 template<typename TControl>
-inline bool control_wrapper<TControl>::process_thread_event(wxEvent& event) {
-  return this->TControl::ProcessEvent(event);
+inline void control_wrapper<TControl>::process_thread_event(wxEvent& event, intptr_t hwnd) {
+  this->def_process_event(event);
 }
