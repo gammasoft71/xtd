@@ -676,9 +676,9 @@ namespace xtd {
       }
 
       if ((value & xtd::forms::keys::shift) == xtd::forms::keys::shift) result += ", shift";
-      if ((value & xtd::forms::keys::control) == xtd::forms::keys::shift) result += ", control";
-      if ((value & xtd::forms::keys::alt) == xtd::forms::keys::shift) result += ", alt";
-      if ((value & xtd::forms::keys::command) == xtd::forms::keys::shift) result += ", command";
+      if ((value & xtd::forms::keys::control) == xtd::forms::keys::control) result += ", control";
+      if ((value & xtd::forms::keys::alt) == xtd::forms::keys::alt) result += ", alt";
+      if ((value & xtd::forms::keys::command) == xtd::forms::keys::command) result += ", command";
       
       return os << result;
     }

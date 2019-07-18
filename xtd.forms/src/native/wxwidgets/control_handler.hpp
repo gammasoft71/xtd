@@ -234,12 +234,12 @@ private:
       case WXK_LAUNCH_APP2: key_data = xtd::forms::keys::launch_application2; break;
       default: break;
       }
+    }
 
-      if (key_event.AltDown()) key_data += xtd::forms::keys::alt;
-      if (key_event.CmdDown()) key_data += xtd::forms::keys::control;
-      if (key_event.MetaDown()) key_data += xtd::forms::keys::command;
-      if (key_event.ShiftDown()) key_data += xtd::forms::keys::shift;
-   }
+    if (key_event.AltDown()) key_data += xtd::forms::keys::alt;
+    if (key_event.CmdDown()) key_data += xtd::forms::keys::control;
+    if (key_event.MetaDown()) key_data += xtd::forms::keys::command;
+    if (key_event.ShiftDown()) key_data += xtd::forms::keys::shift;
 
     return key_data;
   }
