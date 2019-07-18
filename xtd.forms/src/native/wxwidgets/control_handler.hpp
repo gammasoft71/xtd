@@ -5,6 +5,7 @@
 #include <thread>
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
+#include "../../../include/xtd/forms/keys.hpp"
 #include "../../../include/xtd/forms/message.hpp"
 #include "../../../include/xtd/forms/message.hpp"
 #include "../../../include/xtd/forms/window_messages.hpp"
@@ -91,6 +92,158 @@ private:
     return event_types.find(event_type) != event_types.end();
   }
 
+  xtd::forms::keys convert_to_key_data(const wxKeyEvent& key_event) {
+    xtd::forms::keys key_data = xtd::forms::keys::none;
+    if (key_event.GetUnicodeKey() != WXK_NONE)
+      key_data = static_cast<xtd::forms::keys>(key_event.GetUnicodeKey());
+    else {
+      switch (key_event.GetKeyCode()) {
+      case WXK_START: key_data = xtd::forms::keys::launch_application1; break;
+      case WXK_LBUTTON: key_data = xtd::forms::keys::lbutton; break;
+      case WXK_RBUTTON: key_data = xtd::forms::keys::rbutton; break;
+      case WXK_CANCEL: key_data = xtd::forms::keys::cancel; break;
+      case WXK_MBUTTON: key_data = xtd::forms::keys::mbutton; break;
+      case WXK_CLEAR: key_data = xtd::forms::keys::clear; break;
+      case WXK_SHIFT: key_data = xtd::forms::keys::shift_key; break;
+      case WXK_ALT: key_data = xtd::forms::keys::alt; break;
+      case WXK_CONTROL: key_data = xtd::forms::keys::control_key; break;
+      case WXK_MENU: key_data = xtd::forms::keys::menu; break;
+      case WXK_PAUSE: key_data = xtd::forms::keys::pause; break;
+      case WXK_CAPITAL: key_data = xtd::forms::keys::capital; break;
+      case WXK_END: key_data = xtd::forms::keys::end; break;
+      case WXK_HOME: key_data = xtd::forms::keys::home; break;
+      case WXK_LEFT: key_data = xtd::forms::keys::left; break;
+      case WXK_UP: key_data = xtd::forms::keys::up; break;
+      case WXK_RIGHT: key_data = xtd::forms::keys::right; break;
+      case WXK_DOWN: key_data = xtd::forms::keys::down; break;
+      case WXK_SELECT: key_data = xtd::forms::keys::select; break;
+      case WXK_PRINT: key_data = xtd::forms::keys::print; break;
+      case WXK_EXECUTE: key_data = xtd::forms::keys::execute; break;
+      case WXK_SNAPSHOT: key_data = xtd::forms::keys::snapshot; break;
+      case WXK_INSERT: key_data = xtd::forms::keys::insert; break;
+      case WXK_HELP: key_data = xtd::forms::keys::help; break;
+      case WXK_NUMPAD0: key_data = xtd::forms::keys::num_pad0; break;
+      case WXK_NUMPAD1: key_data = xtd::forms::keys::num_pad1; break;
+      case WXK_NUMPAD2: key_data = xtd::forms::keys::num_pad2; break;
+      case WXK_NUMPAD3: key_data = xtd::forms::keys::num_pad3; break;
+      case WXK_NUMPAD4: key_data = xtd::forms::keys::num_pad4; break;
+      case WXK_NUMPAD5: key_data = xtd::forms::keys::num_pad5; break;
+      case WXK_NUMPAD6: key_data = xtd::forms::keys::num_pad6; break;
+      case WXK_NUMPAD7: key_data = xtd::forms::keys::num_pad7; break;
+      case WXK_NUMPAD8: key_data = xtd::forms::keys::num_pad8; break;
+      case WXK_NUMPAD9: key_data = xtd::forms::keys::num_pad9; break;
+      case WXK_MULTIPLY: key_data = xtd::forms::keys::multiply; break;
+      case WXK_ADD: key_data = xtd::forms::keys::add; break;
+      case WXK_SEPARATOR: key_data = xtd::forms::keys::separator; break;
+      case WXK_DIVIDE: key_data = xtd::forms::keys::divide; break;
+      case WXK_F1: key_data = xtd::forms::keys::f1; break;
+      case WXK_F2: key_data = xtd::forms::keys::f2; break;
+      case WXK_F3: key_data = xtd::forms::keys::f3; break;
+      case WXK_F4: key_data = xtd::forms::keys::f4; break;
+      case WXK_F5: key_data = xtd::forms::keys::f5; break;
+      case WXK_F6: key_data = xtd::forms::keys::f6; break;
+      case WXK_F7: key_data = xtd::forms::keys::f7; break;
+      case WXK_F8: key_data = xtd::forms::keys::f8; break;
+      case WXK_F9: key_data = xtd::forms::keys::f9; break;
+      case WXK_F10: key_data = xtd::forms::keys::f10; break;
+      case WXK_F11: key_data = xtd::forms::keys::f11; break;
+      case WXK_F12: key_data = xtd::forms::keys::f12; break;
+      case WXK_F13: key_data = xtd::forms::keys::f13; break;
+      case WXK_F14: key_data = xtd::forms::keys::f14; break;
+      case WXK_F15: key_data = xtd::forms::keys::f15; break;
+      case WXK_F16: key_data = xtd::forms::keys::f16; break;
+      case WXK_F17: key_data = xtd::forms::keys::f17; break;
+      case WXK_F18: key_data = xtd::forms::keys::f18; break;
+      case WXK_F19: key_data = xtd::forms::keys::f19; break;
+      case WXK_F20: key_data = xtd::forms::keys::f20; break;
+      case WXK_F21: key_data = xtd::forms::keys::f21; break;
+      case WXK_F22: key_data = xtd::forms::keys::f22; break;
+      case WXK_F23: key_data = xtd::forms::keys::f23; break;
+      case WXK_F24: key_data = xtd::forms::keys::f24; break;
+      case WXK_NUMLOCK: key_data = xtd::forms::keys::num_lock; break;
+      case WXK_SCROLL: key_data = xtd::forms::keys::scroll; break;
+      case WXK_PAGEUP: key_data = xtd::forms::keys::page_up; break;
+      case WXK_PAGEDOWN: key_data = xtd::forms::keys::page_down; break;
+        /// --> num pad special keys
+      case WXK_NUMPAD_SPACE: key_data = xtd::forms::keys::space; break;
+      case WXK_NUMPAD_TAB: key_data = xtd::forms::keys::tab; break;
+      case WXK_NUMPAD_ENTER: key_data = xtd::forms::keys::enter; break;
+      case WXK_NUMPAD_F1: key_data = xtd::forms::keys::f1; break;
+      case WXK_NUMPAD_F2: key_data = xtd::forms::keys::f2; break;
+      case WXK_NUMPAD_F3: key_data = xtd::forms::keys::f3; break;
+      case WXK_NUMPAD_F4: key_data = xtd::forms::keys::f4; break;
+      case WXK_NUMPAD_HOME: key_data = xtd::forms::keys::home; break;
+      case WXK_NUMPAD_LEFT: key_data = xtd::forms::keys::left; break;
+      case WXK_NUMPAD_UP: key_data = xtd::forms::keys::up; break;
+      case WXK_NUMPAD_RIGHT: key_data = xtd::forms::keys::right; break;
+      case WXK_NUMPAD_DOWN: key_data = xtd::forms::keys::down; break;
+      case WXK_NUMPAD_PAGEUP: key_data = xtd::forms::keys::page_up; break;
+      case WXK_NUMPAD_PAGEDOWN: key_data = xtd::forms::keys::page_down; break;
+      case WXK_NUMPAD_END: key_data = xtd::forms::keys::end; break;
+      case WXK_NUMPAD_BEGIN: key_data = xtd::forms::keys::home; break; // ???
+      case WXK_NUMPAD_INSERT: key_data = xtd::forms::keys::insert; break;
+      case WXK_NUMPAD_DELETE: key_data = xtd::forms::keys::del; break;
+      case WXK_NUMPAD_EQUAL: key_data = static_cast<xtd::forms::keys>('='); break;
+        /// <-- num pad special keys
+      case WXK_NUMPAD_MULTIPLY: key_data = xtd::forms::keys::multiply; break;
+      case WXK_NUMPAD_ADD: key_data = xtd::forms::keys::add; break;
+      case WXK_NUMPAD_SEPARATOR: key_data = xtd::forms::keys::separator; break;
+      case WXK_NUMPAD_SUBTRACT: key_data = xtd::forms::keys::subtract; break;
+      case WXK_NUMPAD_DECIMAL: key_data = xtd::forms::keys::decimal; break;
+      case WXK_NUMPAD_DIVIDE: key_data = xtd::forms::keys::divide; break;
+      case WXK_WINDOWS_LEFT: key_data = xtd::forms::keys::lwin; break;
+      case WXK_WINDOWS_RIGHT: key_data = xtd::forms::keys::rwin; break;
+      case WXK_WINDOWS_MENU: key_data = xtd::forms::keys::apps; break;
+      //case WXK_RAW_CONTROL: key_data = xtd::forms::keys::control_key; break;
+      case WXK_SPECIAL1: key_data = xtd::forms::keys::oem_semicolon; break;
+      case WXK_SPECIAL2: key_data = xtd::forms::keys::oem_plus; break;
+      case WXK_SPECIAL3: key_data = xtd::forms::keys::oem_comma; break;
+      case WXK_SPECIAL4: key_data = xtd::forms::keys::oem_minus; break;
+      case WXK_SPECIAL5: key_data = xtd::forms::keys::oem_period; break;
+      case WXK_SPECIAL6: key_data = xtd::forms::keys::oem_question; break;
+      case WXK_SPECIAL7: key_data = xtd::forms::keys::oem_tilde; break;
+      case WXK_SPECIAL8: key_data = xtd::forms::keys::oem_open_brackets; break;
+      case WXK_SPECIAL9: key_data = xtd::forms::keys::oem_pipe; break;
+      case WXK_SPECIAL10: key_data = xtd::forms::keys::oem_close_brackets; break;
+      case WXK_SPECIAL11: key_data = xtd::forms::keys::oem_quotes; break;
+      case WXK_SPECIAL12: key_data = xtd::forms::keys::oem_backslash; break;
+      case WXK_SPECIAL13: key_data = xtd::forms::keys::oem1; break;
+      case WXK_SPECIAL14: key_data = xtd::forms::keys::oem102; break;
+      case WXK_SPECIAL15: key_data = xtd::forms::keys::oem2; break;
+      case WXK_SPECIAL16: key_data = xtd::forms::keys::oem3; break;
+      case WXK_SPECIAL17: key_data = xtd::forms::keys::oem4; break;
+      case WXK_SPECIAL18: key_data = xtd::forms::keys::oem5; break;
+      case WXK_SPECIAL19: key_data = xtd::forms::keys::oem6; break;
+      case WXK_SPECIAL20: key_data = xtd::forms::keys::oem7; break;
+      case WXK_BROWSER_BACK: key_data = xtd::forms::keys::browser_back; break;
+      case WXK_BROWSER_FORWARD: key_data = xtd::forms::keys::browser_forward; break;
+      case WXK_BROWSER_REFRESH: key_data = xtd::forms::keys::browser_refresh; break;
+      case WXK_BROWSER_STOP: key_data = xtd::forms::keys::browser_stop; break;
+      case WXK_BROWSER_SEARCH: key_data = xtd::forms::keys::browser_search; break;
+      case WXK_BROWSER_FAVORITES: key_data = xtd::forms::keys::browser_favorites; break;
+      case WXK_BROWSER_HOME: key_data = xtd::forms::keys::browser_home; break;
+      case WXK_VOLUME_MUTE: key_data = xtd::forms::keys::volume_mute; break;
+      case WXK_VOLUME_DOWN: key_data = xtd::forms::keys::volume_down; break;
+      case WXK_VOLUME_UP: key_data = xtd::forms::keys::volume_up; break;
+      case WXK_MEDIA_NEXT_TRACK: key_data = xtd::forms::keys::media_next_track; break;
+      case WXK_MEDIA_PREV_TRACK: key_data = xtd::forms::keys::media_previous_track; break;
+      case WXK_MEDIA_STOP: key_data = xtd::forms::keys::media_stop; break;
+      case WXK_MEDIA_PLAY_PAUSE: key_data = xtd::forms::keys::media_play_pause; break;
+      case WXK_LAUNCH_MAIL: key_data = xtd::forms::keys::launch_mail; break;
+      case WXK_LAUNCH_APP1: key_data = xtd::forms::keys::launch_application1; break;
+      case WXK_LAUNCH_APP2: key_data = xtd::forms::keys::launch_application2; break;
+      default: break;
+      }
+
+      if (key_event.AltDown()) key_data += xtd::forms::keys::alt;
+      if (key_event.CmdDown()) key_data += xtd::forms::keys::control;
+      if (key_event.MetaDown()) key_data += xtd::forms::keys::command;
+      if (key_event.ShiftDown()) key_data += xtd::forms::keys::shift;
+   }
+
+    return key_data;
+  }
+  
   bool ProcessEvent(wxEvent &event) override;
   bool process_clipboard_event(wxEvent &event);
   bool process_command_event(wxEvent &event);
@@ -149,24 +302,6 @@ private:
 
 template<typename TControl>
 inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
-  wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-  if (!window) return this->TControl::ProcessEvent(event);
-  intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
-  
-  if (event.GetEventType() == wxEVT_KEY_DOWN) {
-    this->event_handler_->send_message(hwnd, WM_KEYDOWN, static_cast<wxKeyEvent&>(event).GetKeyCode(), 0, reinterpret_cast<intptr_t>(&event));
-    event.Skip();
-  }
-  if (event.GetEventType() == wxEVT_CHAR) {
-    this->event_handler_->send_message(hwnd, WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event));
-    event.Skip();
-  }
-  if (event.GetEventType() == wxEVT_KEY_UP) {
-    this->event_handler_->send_message(hwnd, WM_KEYUP, static_cast<wxKeyEvent&>(event).GetKeyCode(), 0, reinterpret_cast<intptr_t>(&event));
-    event.Skip();
-  }
-  
-
   if (is_clipboard_event(event.GetEventType())) return this->process_clipboard_event(event);
   if (is_command_event(event.GetEventType())) return this->process_command_event(event);
   if (is_cursor_event(event.GetEventType())) return this->process_cursor_event(event);
@@ -221,6 +356,23 @@ inline bool control_wrapper<TControl>::process_gesture_event(wxEvent& event) {
 
 template<typename TControl>
 inline bool control_wrapper<TControl>::process_key_event(wxEvent& event) {
+  wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
+  if (!window) return this->TControl::ProcessEvent(event);
+  intptr_t hwnd = reinterpret_cast<intptr_t>(window->GetHandle());
+
+  if (event.GetEventType() == wxEVT_KEY_DOWN) {
+    this->event_handler_->send_message(hwnd, WM_KEYDOWN, static_cast<intptr_t>(convert_to_key_data(static_cast<wxKeyEvent&>(event))), 0, reinterpret_cast<intptr_t>(&event));
+    event.Skip();
+  }
+  if (event.GetEventType() == wxEVT_CHAR) {
+    this->event_handler_->send_message(hwnd, WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event));
+    event.Skip();
+  }
+  if (event.GetEventType() == wxEVT_KEY_UP) {
+    this->event_handler_->send_message(hwnd, WM_KEYUP, static_cast<intptr_t>(convert_to_key_data(static_cast<wxKeyEvent&>(event))), 0, reinterpret_cast<intptr_t>(&event));
+    event.Skip();
+  }
+
   return this->TControl::ProcessEvent(event);
 }
 

@@ -255,7 +255,7 @@ namespace xtd {
       /// @brief The 4 key on the numeric keypad.
       num_pad4 = 100,
       /// @brief The 5 key on the numeric keypad.
-      numPad5 = 101,
+      num_pad5 = 101,
       /// @brief The 6 key on the numeric keypad.
       num_pad6 = 102,
       /// @brief The 7 key on the numeric keypad.
