@@ -10,7 +10,7 @@ namespace xtd {
     public:
       key_press_event_args() = default;
 
-      key_press_event_args(int key_char) : key_char_(key_char) {}
+      key_press_event_args(char32_t key_char) : key_char_(key_char) {}
 
       /// @cond
       key_press_event_args(const xtd::forms::key_press_event_args& key_press_event_args) = default;
@@ -20,10 +20,10 @@ namespace xtd {
       bool handled() const {return this->handled_;}
       void handled(bool handled) {this->handled_ = handled;}
       
-      int key_char() const {return this->key_char_;}
+      char32_t key_char() const {return this->key_char_;}
 
     private:
-      int key_char_;
+      char32_t key_char_;
       bool handled_ = false;
     };
   }
