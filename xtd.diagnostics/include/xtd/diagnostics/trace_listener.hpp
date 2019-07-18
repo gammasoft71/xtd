@@ -288,7 +288,7 @@ namespace xtd {
       virtual void write_indent() {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         this->need_indent_ = false;
-        for (int i = 0; i < this->indent_level_; ++i)
+        for (unsigned int i = 0; i < this->indent_level_; ++i)
           this->write(std::string(this->indent_size_, ' '));
 #endif
       }
