@@ -45,8 +45,6 @@ namespace examples {
       this->numeric_text_box1.value_changed += [&](const control& sender, const xtd::event_args& e) {
         xtd::diagnostics::debug::write_line(xtd::strings::format("value_changed [value={}]", this->numeric_text_box1.value()));
       };
-      
-      //this->numeric_text_box1.value_changed.xtd::event_handler<const xtd::forms::control&>::invoke(this->numeric_text_box1, xtd::event_args::empty);
     }
     
   private:
