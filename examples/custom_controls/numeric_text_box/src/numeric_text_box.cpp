@@ -1,32 +1,35 @@
 #include <xtd/xtd.forms>
 
+using namespace std;
+using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 namespace examples {
-  class numeric_text_box : public xtd::forms::text_box {
+  class numeric_text_box : public text_box {
   public:
     double value() const {
       double result = 0;
-      xtd::strings::try_parse(this->text(), result);
+      try_parse(this->text(), result);
       return result;
     }
     
-    void value(double value) {this->text(xtd::to_string(value, "G"));}
+    void value(double value) {this->text(to_string(value, "G"));}
     
-    xtd::event<numeric_text_box, xtd::event_handler<const xtd::forms::control&>> value_changed;
+    event<numeric_text_box, event_handler<const control&>> value_changed;
 
   protected:
-    void on_key_press(xtd::forms::key_press_event_args& e) override {
+    void on_key_press(key_press_event_args& e) override {
       this->text_box::on_key_press(e);
-      e.handled((!std::isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && xtd::strings::index_of(this->text(), '.') != -1));
+      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && strings::index_of(this->text(), '.') != -1));
     }
     
-    void on_text_changed(const xtd::event_args& e) override {
+    void on_text_changed(const event_args& e) override {
       this->text_box::on_text_changed(e);
       this->on_value_changed(e);
     }
     
-    void on_value_changed(const xtd::event_args& e) {
+    void on_value_changed(const event_args& e) {
       this->value_changed(*this, e);
     }
     
@@ -42,8 +45,8 @@ namespace examples {
       this->numeric_text_box1.parent(*this);
       this->numeric_text_box1.value(42);
       this->numeric_text_box1.location({10, 10});
-      this->numeric_text_box1.value_changed += [&](const control& sender, const xtd::event_args& e) {
-        xtd::diagnostics::debug::write_line(xtd::strings::format("value_changed [value={}]", this->numeric_text_box1.value()));
+      this->numeric_text_box1.value_changed += [&](const control& sender, const event_args& e) {
+        cdebug << strings::format("value_changed [value={}]", this->numeric_text_box1.value()) << endl;
       };
     }
     
