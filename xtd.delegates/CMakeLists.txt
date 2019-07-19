@@ -5,6 +5,7 @@ project(xtd.delegates VERSION 1.0.0)
 set(INCLUDES
   include/xtd/action.hpp
   include/xtd/delegate.hpp
+  include/xtd/event.hpp
   include/xtd/event_args.hpp
   include/xtd/event_handler.hpp
   include/xtd/func.hpp
