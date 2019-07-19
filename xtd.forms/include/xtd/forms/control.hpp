@@ -181,55 +181,55 @@ namespace xtd {
       
       virtual void wnd_proc(xtd::forms::message& message);
       
-      xtd::event_handler<control> click;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> click;
       
-      xtd::event_handler<control> client_size_changed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> client_size_changed;
       
-      xtd::event_handler<control> double_click;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> double_click;
 
-      xtd::event_handler<control> got_focus;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> got_focus;
       
-      xtd::event_handler<control> handle_created;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> handle_created;
       
-      xtd::event_handler<control> handle_destroyed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> handle_destroyed;
       
-      xtd::event_handler<control> enabled_changed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> enabled_changed;
 
-      xtd::forms::key_event_handler<control> key_down;
+      xtd::event<xtd::forms::control, xtd::forms::key_event_handler<control>> key_down;
       
-      xtd::forms::key_press_event_handler<control> key_press;
+      xtd::event<xtd::forms::control, xtd::forms::key_press_event_handler<control>> key_press;
       
-      xtd::forms::key_event_handler<control> key_up;
+      xtd::event<xtd::forms::control, xtd::forms::key_event_handler<control>> key_up;
       
-      xtd::event_handler<control> location_changed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> location_changed;
       
-      xtd::event_handler<control> lost_focus;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> lost_focus;
       
-      xtd::forms::mouse_event_handler<control> mouse_click;
+      xtd::event<xtd::forms::control, xtd::forms::mouse_event_handler<control>> mouse_click;
       
-      xtd::forms::mouse_event_handler<control> mouse_double_click;
+      xtd::event<xtd::forms::control, xtd::forms::mouse_event_handler<control>> mouse_double_click;
       
-      xtd::forms::mouse_event_handler<control> mouse_down;
+      xtd::event<xtd::forms::control, xtd::forms::mouse_event_handler<control>> mouse_down;
       
-      xtd::event_handler<control> mouse_enter;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> mouse_enter;
       
-      xtd::forms::mouse_event_handler<control> mouse_horizontal_wheel;
+      xtd::event<xtd::forms::control, xtd::forms::mouse_event_handler<control>> mouse_horizontal_wheel;
       
-      xtd::event_handler<control> mouse_leave;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> mouse_leave;
       
-      xtd::forms::mouse_event_handler<control> mouse_move;
+      xtd::event<xtd::forms::control, xtd::forms::mouse_event_handler<control>> mouse_move;
       
-      xtd::forms::mouse_event_handler<control> mouse_up;
+      xtd::event<xtd::forms::control, xtd::forms::mouse_event_handler<control>> mouse_up;
       
-      xtd::forms::mouse_event_handler<control> mouse_wheel;
+      xtd::event<xtd::forms::control, xtd::forms::mouse_event_handler<control>> mouse_wheel;
       
-      xtd::event_handler<control> parent_changed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> parent_changed;
       
-      xtd::event_handler<control> size_changed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> size_changed;
       
-      xtd::event_handler<control> text_changed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> text_changed;
       
-      xtd::event_handler<control> visible_changed;
+      xtd::event<xtd::forms::control, xtd::event_handler<control>> visible_changed;
 
       intptr_t __get_handle__() const {return this->handle_;}
       

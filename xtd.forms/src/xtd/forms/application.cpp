@@ -71,7 +71,7 @@ void xtd::forms::application::run(const form& form) {
   native::application_api::unregister_wnd_proc();
 }
 
-xtd::delegate<void(const xtd::event_args&)> xtd::forms::application::idle;
+xtd::event<xtd::forms::application, xtd::delegate<void(const xtd::event_args&)>> xtd::forms::application::idle;
 
 void xtd::forms::application::wnd_proc(xtd::forms::message& message) {
   switch (message.msg()) {

@@ -73,7 +73,7 @@ namespace xtd {
 
       static void run(const xtd::forms::form& form);
       
-      static xtd::delegate<void(const xtd::event_args&)> idle;
+      static xtd::event<xtd::forms::application, xtd::delegate<void(const xtd::event_args&)>> idle;
       
     private:
       static void wnd_proc(xtd::forms::message& message);
