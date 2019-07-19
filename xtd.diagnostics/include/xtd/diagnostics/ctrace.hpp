@@ -2,9 +2,15 @@
 /// @brief Contains xtd::ctrace object.
 #pragma once
 #include <iostream>
-#include "debug.hpp"
+#include "tracestreambuf.hpp"
+
+extern xtd::diagnostics::debugstreambuf __ctracestreambuf__;
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  extern std::ostream ctrace;
+#if defined(TRACE)
+  inline std::ostream ctrace(&__ctracestreambuf__);
+#else
+  inline std::ostream ctrace(nullptr);
+#endif
 }

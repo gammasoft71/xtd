@@ -12,8 +12,10 @@ namespace xtd {
     public:
       int sync() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        xtd::diagnostics::debug::write_line(this->str());
-        this->str("");
+        if (!this->str().empty()) {
+          xtd::diagnostics::debug::write_line(this->str());
+          this->str("");
+        }
 #endif
         return 0;
       }
