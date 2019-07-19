@@ -7,17 +7,24 @@ set(XTD_INCLUDES
   include/xtd/xtd.diagnostics.hpp
 )
 set(XTD_DIAGNOSTICS_INCLUDES
-  include/xtd/diagnostics/debug.hpp
   include/xtd/diagnostics/console_trace_listener.hpp
+  include/xtd/diagnostics/cdebug.hpp
+  include/xtd/diagnostics/ctrace.hpp
+  include/xtd/diagnostics/debug.hpp
+  include/xtd/diagnostics/debugstreambuf.hpp
   include/xtd/diagnostics/default_trace_listener.hpp
   include/xtd/diagnostics/ostream_trace_listener.hpp
+  include/xtd/diagnostics/trace.hpp
   include/xtd/diagnostics/trace_event_cache.hpp
   include/xtd/diagnostics/trace_event_type.hpp
   include/xtd/diagnostics/trace_listener.hpp
   include/xtd/diagnostics/trace_listener_collection.hpp
   include/xtd/diagnostics/trace_options.hpp
+  include/xtd/diagnostics/tracestreambuf.hpp
 )
 set(SOURCES
+  src/cdebug.cpp
+  src/ctrace.cpp
   src/debug.cpp
   src/diagnostics.cpp
   src/default_trace_listener_gcc.cpp

@@ -299,7 +299,7 @@ namespace xtd {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write_line(message, category);
 #endif
-      }
+      }      
 
     private:
       static void trace_event(trace_event_type trace_event_type, const std::string& message) {

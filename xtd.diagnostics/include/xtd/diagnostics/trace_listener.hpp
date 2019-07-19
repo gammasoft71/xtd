@@ -272,9 +272,9 @@ namespace xtd {
       virtual void write_line(const std::string& message) = 0;
       
       template<typename object>
-      trace_listener& operator<<(const object& message) {
+      trace_listener& operator<<(object&& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write(message);
+        this->write_line(message);
 #endif
         return *this;
       }
