@@ -51,20 +51,20 @@ namespace xtd {
     /// @brief Indicates that the allow_leading_white, allow_trailing_white, and allow_octal_specifier styles are used. This is a composite number style.
     octal_number = allow_leading_white + allow_trailing_white + allow_octal_specifier,
   };
+
+  /// @cond
+  inline xtd::number_styles& operator^=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
+  inline xtd::number_styles& operator&=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
+  inline xtd::number_styles& operator|=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
+  inline xtd::number_styles& operator+=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
+  inline xtd::number_styles& operator-=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
+  
+  inline xtd::number_styles operator^(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
+  inline xtd::number_styles operator&(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) & static_cast<int>(rhs));}
+  inline xtd::number_styles operator|(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) | static_cast<int>(rhs));}
+  inline xtd::number_styles operator+(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) + static_cast<int>(rhs));}
+  inline xtd::number_styles operator-(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) - static_cast<int>(rhs));}
+  
+  inline xtd::number_styles operator~(xtd::number_styles lhs) {return static_cast<xtd::number_styles>(~static_cast<int>(lhs));}
+  /// @endcond
 }
-
-/// @cond
-inline xtd::number_styles& operator^=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-inline xtd::number_styles& operator&=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-inline xtd::number_styles& operator|=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-inline xtd::number_styles& operator+=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-inline xtd::number_styles& operator-=(xtd::number_styles& lhs, xtd::number_styles rhs) {lhs = static_cast<xtd::number_styles>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-
-inline xtd::number_styles operator^(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-inline xtd::number_styles operator&(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-inline xtd::number_styles operator|(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-inline xtd::number_styles operator+(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-inline xtd::number_styles operator-(xtd::number_styles lhs, xtd::number_styles rhs) {return static_cast<xtd::number_styles>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-
-inline xtd::number_styles operator~(xtd::number_styles lhs) {return static_cast<xtd::number_styles>(~static_cast<int>(lhs));}
-/// @endcond

@@ -11,9 +11,9 @@
 #include "__numeric_formater.hpp"
 
 /// @cond
-template<typename Char>
-inline std::basic_string<Char> __boolean_formater(const std::basic_string<Char>& fmt, bool value, const std::locale& loc) {
-  if (fmt.empty()) return value ? std::basic_string<Char> {'t', 'r', 'u', 'e'} : std::basic_string<Char> {'f', 'a', 'l', 's', 'e'};
+template<typename char_t>
+inline std::basic_string<char_t> __boolean_formater(const std::basic_string<char_t>& fmt, bool value, const std::locale& loc) {
+  if (fmt.empty()) return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
   
   switch (fmt[0]) {
     case 'b':
@@ -25,7 +25,7 @@ inline std::basic_string<Char> __boolean_formater(const std::basic_string<Char>&
     case 'x':
     case 'X': return __numeric_formater(fmt, value ? 1 : 0, loc);
     case 'g':
-    case 'G': return value ? std::basic_string<Char> {'t', 'r', 'u', 'e'} : std::basic_string<Char> {'f', 'a', 'l', 's', 'e'};
+    case 'G': return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
     default: throw std::invalid_argument("Invalid format expression");
   }
 }

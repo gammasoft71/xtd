@@ -23,8 +23,8 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  template<typename Value>
-  inline std::string to_string(const Value& value, const std::string& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<Value>());}
+  template<typename value_t>
+  inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<value_t>());}
   
   template<>
   inline std::string to_string(const bool& value, const std::string& fmt, const std::locale& loc) {return __boolean_formater(fmt, value, loc);}
@@ -99,15 +99,15 @@ namespace xtd {
   inline std::string to_string(const char*  value, const std::string& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
   /// @endcond
   
-  template<typename Value>
-  inline std::string to_string(const Value& value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
+  template<typename value_t>
+  inline std::string to_string(const value_t& value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
 
   /// @cond
   inline std::string to_string(const char*  value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
   /// @endcond
   
-  template<typename Value>
-  inline std::wstring to_string(const Value& value, const std::wstring& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<Value>());}
+  template<typename value_t>
+  inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc) {return __to_string_enum(value, fmt, loc, std::is_enum<value_t>());}
 
   template<>
   inline std::wstring to_string(const bool& value, const std::wstring& fmt, const std::locale& loc) {return __boolean_formater(fmt, value, loc);}
@@ -182,8 +182,8 @@ namespace xtd {
   inline std::wstring to_string(const wchar_t*  value, const std::wstring& fmt, const std::locale& loc) {return __string_formater(fmt, value, loc);}
   /// @endcond
 
-  template<typename Value>
-  inline std::wstring to_string(const Value& value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
+  template<typename value_t>
+  inline std::wstring to_string(const value_t& value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
 
   /// @cond
   inline std::wstring to_string(const wchar_t*  value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}

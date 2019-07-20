@@ -15,11 +15,12 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <vector>
 
 /// @cond
 namespace xtd {
-  template<typename Value>
-  inline std::string to_string(const Value& value, const std::string& fmt, const std::locale& loc);
+  template<typename value_t>
+  inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const bool& value, const std::string& fmt, const std::locale& loc);
   template<>
@@ -54,15 +55,15 @@ namespace xtd {
   inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc);
-  template<typename Type, typename Period = std::ratio<1>>
-  inline std::string to_string(const std::chrono::duration<Type, Period>& value, const std::string& fmt, const std::locale& loc);
+  template<typename type_t, typename period_t = std::ratio<1>>
+  inline std::string to_string(const std::chrono::duration<type_t, period_t>& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const char16_t& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const char32_t& value, const std::string& fmt, const std::locale& loc);
 
-  template<typename Value>
-  inline std::wstring to_string(const Value& value, const std::wstring& fmt, const std::locale& loc);
+  template<typename value_t>
+  inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const bool& value, const std::wstring& fmt, const std::locale& loc);
   template<>
@@ -98,8 +99,8 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc);
 
-  template<typename Type, typename Period = std::ratio<1>>
-  inline std::wstring to_string(const std::chrono::duration<Type, Period>& value, const std::wstring& fmt, const std::locale& loc);
+  template<typename type_t, typename period_t = std::ratio<1>>
+  inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
   
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
@@ -136,14 +137,14 @@ namespace xtd {
   }
 }
   
-template<typename Char, typename Type, typename Period = std::ratio<1>>
-std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, const std::chrono::duration<Type, Period>& value) {
-  return os << xtd::to_string(value, std::basic_string<Char> {'G'}, std::locale());
+template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
+std::basic_ostream<char_t>& operator<<(std::basic_ostream<char_t>& os, const std::chrono::duration<type_t, period_t>& value) {
+  return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
 
-template<typename Char, typename Value>
-inline std::basic_string<Char> __format_stringer(Value value) {
-  std::basic_stringstream<Char> ss;
+template<typename char_t, typename value_t>
+inline std::basic_string<char_t> __format_stringer(value_t value) {
+  std::basic_stringstream<char_t> ss;
   ss << value;
   return ss.str();
 }

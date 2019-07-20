@@ -11,41 +11,41 @@
 #include "xtd.strings.hpp"
 
 /// @cond
-template<typename Char>
-inline std::basic_string<Char> __get_weekday_name(const std::tm& value, const std::locale& loc) {
-  std::basic_stringstream<Char> result;
+template<typename char_t>
+inline std::basic_string<char_t> __get_weekday_name(const std::tm& value, const std::locale& loc) {
+  std::basic_stringstream<char_t> result;
   result.imbue(loc);
-  result << std::put_time(&value, std::basic_string<Char>{'%', 'A'}.c_str());
+  result << std::put_time(&value, std::basic_string<char_t>{'%', 'A'}.c_str());
   return result.str();
 }
 
-template<typename Char>
-inline std::basic_string<Char> __get_brief_weekday_name(const std::tm& value, const std::locale& loc) {
-  std::basic_stringstream<Char> result;
+template<typename char_t>
+inline std::basic_string<char_t> __get_brief_weekday_name(const std::tm& value, const std::locale& loc) {
+  std::basic_stringstream<char_t> result;
   result.imbue(loc);
-  result << std::put_time(&value,std::basic_string<Char>{'%', 'a'}.c_str());
+  result << std::put_time(&value,std::basic_string<char_t>{'%', 'a'}.c_str());
   return result.str();
 }
 
-template<typename Char>
-inline std::basic_string<Char> __get_month_name(const std::tm& value, const std::locale& loc) {
-  std::basic_stringstream<Char> result;
+template<typename char_t>
+inline std::basic_string<char_t> __get_month_name(const std::tm& value, const std::locale& loc) {
+  std::basic_stringstream<char_t> result;
   result.imbue(loc);
-  result << std::put_time(&value, std::basic_string<Char>{'%', 'B'}.c_str());
+  result << std::put_time(&value, std::basic_string<char_t>{'%', 'B'}.c_str());
   return result.str();
 }
 
-template<typename Char>
-inline std::basic_string<Char> __get_brief_month_name(const std::tm& value, const std::locale& loc) {
-  std::basic_stringstream<Char> result;
+template<typename char_t>
+inline std::basic_string<char_t> __get_brief_month_name(const std::tm& value, const std::locale& loc) {
+  std::basic_stringstream<char_t> result;
   result.imbue(loc);
-  result << std::put_time(&value, std::basic_string<Char>{'%', 'b'}.c_str());
+  result << std::put_time(&value, std::basic_string<char_t>{'%', 'b'}.c_str());
   return result.str();
 }
 
-template<typename Char>
-inline std::basic_string<Char> __tm_formater(const Char* fmt, const std::tm& value, const std::locale& loc) {
-  std::basic_stringstream<Char> result;
+template<typename char_t>
+inline std::basic_string<char_t> __tm_formater(const char_t* fmt, const std::tm& value, const std::locale& loc) {
+  std::basic_stringstream<char_t> result;
   result.imbue(loc);
   result << std::put_time(&value, fmt);
   return result.str();
