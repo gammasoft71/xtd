@@ -9,7 +9,7 @@ namespace xtd {
     public:
       text_box();
 
-      xtd::drawing::size default_size() const override {return{100, 23};}
+      drawing::size default_size() const override {return{100, 23};}
 
       using control::text;
       void text(const std::string& text) override;

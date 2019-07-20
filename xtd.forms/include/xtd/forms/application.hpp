@@ -40,7 +40,7 @@ namespace xtd {
       /// @return A RegistryKey representing the registry key of the application data that is shared among all users.
       /// @remarks If the key does not exist, it is created in the following format:
       /// @remarks LocalMachine\Software\CompanyName\ProductName\ProductVersion
-      static xtd::microsoft::win32::registry_key common_app_data_registry();
+      static microsoft::win32::registry_key common_app_data_registry();
        */
 
       /// @brief Gets the company name associated with the application.
@@ -59,7 +59,7 @@ namespace xtd {
       /// This path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
       static std::string executable_path();
 
-      static std::vector<std::reference_wrapper<xtd::forms::form>> open_forms();
+      static std::vector<std::reference_wrapper<form>> open_forms();
       
       static std::string product_name();
 
@@ -71,14 +71,14 @@ namespace xtd {
       
       static void run();
 
-      static void run(const xtd::forms::form& form);
+      static void run(const form& form);
       
-      static xtd::event<xtd::forms::application, xtd::delegate<void(const xtd::event_args&)>> idle;
+      static event<application, delegate<void(const event_args&)>> idle;
       
     private:
-      static void wnd_proc(xtd::forms::message& message);
-      static void wm_activate_app(xtd::forms::message& message);
-      static void wm_enter_idle(xtd::forms::message& message);
+      static void wnd_proc(message& message);
+      static void wm_activate_app(message& message);
+      static void wm_enter_idle(message& message);
 
       application() = default;
       static const form* main_form;

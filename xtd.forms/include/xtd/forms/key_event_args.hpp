@@ -7,7 +7,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class key_event_args : public xtd::event_args {
+    class key_event_args : public event_args {
     public:
       key_event_args() = default;
 
@@ -15,8 +15,8 @@ namespace xtd {
       //key_event_args(keys key_data, int key_value) : key_data_(key_data), key_value_(key_value) {}
 
       /// @cond
-      key_event_args(const xtd::forms::key_event_args& key_event_args) = default;
-      key_event_args& operator=(const xtd::forms::key_event_args& key_event_args) = default;
+      key_event_args(const key_event_args& key_event_args) = default;
+      key_event_args& operator=(const key_event_args& key_event_args) = default;
       /// @endcond
 
       bool alt() const {return (this->key_data_ & keys::alt) == keys::alt;}
@@ -48,7 +48,6 @@ namespace xtd {
 
     private:
       keys key_data_;
-      //int key_value_;
       bool handled_ = false;
       bool suppress_key_press_ = false;
     };

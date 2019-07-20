@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <map>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -16,20 +17,31 @@ namespace xtd {
     };
     
     /// @cond
-    inline xtd::forms::mouse_buttons& operator +=(xtd::forms::mouse_buttons& lhs, xtd::forms::mouse_buttons rhs) {lhs = static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
-    inline xtd::forms::mouse_buttons& operator -=(xtd::forms::mouse_buttons& lhs, xtd::forms::mouse_buttons rhs) {lhs = static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-    inline xtd::forms::mouse_buttons& operator &=(xtd::forms::mouse_buttons& lhs, xtd::forms::mouse_buttons rhs) {lhs = static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
-    inline xtd::forms::mouse_buttons& operator |=(xtd::forms::mouse_buttons& lhs, xtd::forms::mouse_buttons rhs) {lhs = static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
-    inline xtd::forms::mouse_buttons& operator ^=(xtd::forms::mouse_buttons& lhs, xtd::forms::mouse_buttons rhs) {lhs = static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
-    inline xtd::forms::mouse_buttons operator +(xtd::forms::mouse_buttons lhs, xtd::forms::mouse_buttons rhs) {return static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) + static_cast<int>(rhs));}
-    inline xtd::forms::mouse_buttons operator -(xtd::forms::mouse_buttons lhs, xtd::forms::mouse_buttons rhs) {return static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-    inline xtd::forms::mouse_buttons operator ~(xtd::forms::mouse_buttons rhs) {return static_cast<xtd::forms::mouse_buttons>(~static_cast<int>(rhs));}
-    inline xtd::forms::mouse_buttons operator &(xtd::forms::mouse_buttons lhs, xtd::forms::mouse_buttons rhs) {return static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) & static_cast<int>(rhs));}
-    inline xtd::forms::mouse_buttons operator |(xtd::forms::mouse_buttons lhs, xtd::forms::mouse_buttons rhs) {return static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-    inline xtd::forms::mouse_buttons operator ^(xtd::forms::mouse_buttons lhs, xtd::forms::mouse_buttons rhs) {return static_cast<xtd::forms::mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
+    inline mouse_buttons& operator +=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
+    inline mouse_buttons& operator -=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
+    inline mouse_buttons& operator &=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) & static_cast<int>(rhs)); return lhs;}
+    inline mouse_buttons& operator |=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
+    inline mouse_buttons& operator ^=(mouse_buttons& lhs, mouse_buttons rhs) {lhs = static_cast<mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs)); return lhs;}
+    inline mouse_buttons operator +(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) + static_cast<int>(rhs));}
+    inline mouse_buttons operator -(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) - static_cast<int>(rhs));}
+    inline mouse_buttons operator ~(mouse_buttons rhs) {return static_cast<mouse_buttons>(~static_cast<int>(rhs));}
+    inline mouse_buttons operator &(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) & static_cast<int>(rhs));}
+    inline mouse_buttons operator |(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) | static_cast<int>(rhs));}
+    inline mouse_buttons operator ^(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
     
-    inline std::ostream& operator<<(std::ostream& os, xtd::forms::mouse_buttons value) {
-      return os << std::to_string(static_cast<int>(value));
+    inline std::ostream& operator<<(std::ostream& os, mouse_buttons value) {
+      std::map<mouse_buttons, std::string> values = {{mouse_buttons::none, "none"}, {mouse_buttons::left, "left"}, {mouse_buttons::right, "right"}, {mouse_buttons::middle, "middle"}, {mouse_buttons::x_button1, "x_button1"}, {mouse_buttons::x_button2, "x_button2"}};
+      if (values.find(value) != values.end()) return os << values[value];
+      std::string result;
+      for (auto button : values) {
+        if (static_cast<int>(button.first) == 0) continue;
+        if ((value & button.first) == button.first) {
+          if (!result.empty()) result += ", ";
+          result += button.second;
+        }
+      }
+      if (result.empty()) return os << std::to_string(static_cast<int>(value));
+      return os << result;
     }
     /// @endcond
   }

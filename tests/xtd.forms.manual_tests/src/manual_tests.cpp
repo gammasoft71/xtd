@@ -44,5 +44,6 @@ private:
 
 // The main entry point for the application.
 int main() {
+  cdebug << "mouse_button=" << mouse_buttons::none << std::endl;
   application::run(form1());
 }

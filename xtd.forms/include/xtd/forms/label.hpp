@@ -9,7 +9,7 @@ namespace xtd {
     public:
       label();
 
-      xtd::drawing::size default_size() const override {return{100, 23};}
+      drawing::size default_size() const override {return{100, 23};}
 
       void create_handle() override;
     };

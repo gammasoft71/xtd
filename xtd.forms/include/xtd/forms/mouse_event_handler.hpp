@@ -7,9 +7,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    template<typename type>
-    using mouse_event_handler = delegate<void(const type&, const xtd::forms::mouse_event_args&)>;
-    
-    
+    template<typename type_t>
+    using mouse_event_handler = delegate<void(const type_t&, const mouse_event_args&)>;
   }
 }
