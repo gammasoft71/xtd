@@ -210,7 +210,43 @@ namespace xtd {
         if (auto_flush_) flush();
 #endif
       }
+
+      template<typename ...args_t>
+      static void write(const std::string& format, args_t&&... args) {
+#if defined(TRACE)
+        for (auto listener : listeners_) {
+          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+          if (!listener->is_thread_safe() && use_global_lock_) {
+            std::lock_guard<std::mutex> lock(global_lock_);
+            listener->write(strings::format(format, args...));
+          } else {
+            listener->write(strings::format(format, args...));
+          }
+        }
+        if (auto_flush_) flush();
+#endif
+      }
       
+      /// @cond
+      template<typename ...args_t>
+      static void write(const char* format, args_t&&... args) {
+#if defined(TRACE)
+        for (auto listener : listeners_) {
+          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+          if (!listener->is_thread_safe() && use_global_lock_) {
+            std::lock_guard<std::mutex> lock(global_lock_);
+            listener->write(strings::format(format, args...));
+          } else {
+            listener->write(strings::format(format, args...));
+          }
+        }
+        if (auto_flush_) flush();
+#endif
+      }
+      /// @endcond
+
       static void write_if(bool condition, const std::string& message) {
 #if defined(TRACE)
         if (condition) write(message);
@@ -230,7 +266,7 @@ namespace xtd {
         if (condition) write(message, category);
 #endif
       }
-      
+
       static void write_line(const std::string& message) {
 #if defined(TRACE)
         for (auto listener : listeners_) {
@@ -280,7 +316,43 @@ namespace xtd {
         if (auto_flush_) flush();
 #endif
       }
+
+      template<typename ...args_t>
+      static void write_line(const std::string& format, args_t&&... args) {
+#if defined(TRACE)
+        for (auto listener : listeners_) {
+          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+          if (!listener->is_thread_safe() && use_global_lock_) {
+            std::lock_guard<std::mutex> lock(global_lock_);
+            listener->write_line(strings::format(format, args...));
+          } else {
+            listener->write_line(strings::format(format, args...));
+          }
+        }
+        if (auto_flush_) flush();
+#endif
+      }
       
+      /// @cond
+      template<typename ...args_t>
+      static void write_line(const char* format, args_t&&... args) {
+#if defined(TRACE)
+        for (auto listener : listeners_) {
+          if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
+          if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
+          if (!listener->is_thread_safe() && use_global_lock_) {
+            std::lock_guard<std::mutex> lock(global_lock_);
+            listener->write_line(strings::format(format, args...));
+          } else {
+            listener->write_line(strings::format(format, args...));
+          }
+        }
+        if (auto_flush_) flush();
+#endif
+      }
+      /// @endcond
+
       static void write_line_if(bool condition, const std::string& message) {
 #if defined(TRACE)
         if (condition) write_line(message);
@@ -300,7 +372,7 @@ namespace xtd {
         if (condition) write_line(message, category);
 #endif
       }
-      
+
     private:
       static void trace_event(trace_event_type trace_event_type, const std::string& message) {
 #if defined(TRACE)
