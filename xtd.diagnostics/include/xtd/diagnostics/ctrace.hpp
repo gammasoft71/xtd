@@ -4,7 +4,7 @@
 #include <iostream>
 #include "tracestreambuf.hpp"
 
-extern xtd::diagnostics::debugstreambuf __ctracestreambuf__;
+inline xtd::diagnostics::tracestreambuf __ctracestreambuf__;
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

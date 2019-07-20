@@ -1,13 +1,9 @@
 #include <cassert>
 
-void __assert__(bool condition) {
-  assert(condition);
-}
-
 #include "../include/xtd/diagnostics/debug.hpp"
 #include "../include/xtd/diagnostics/default_trace_listener.hpp"
 
-xtd::diagnostics::trace_listener_collection __listeners__ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
+extern xtd::diagnostics::trace_listener_collection __listeners__;
 
 bool xtd::diagnostics::debug::auto_flush_ = false;
 unsigned int xtd::diagnostics::debug::indent_level_ = 0;

@@ -1,3 +1,4 @@
+//#define TRACE 1
 #include <xtd/xtd.diagnostics>
 
 using namespace std;
