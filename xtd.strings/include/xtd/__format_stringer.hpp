@@ -12,6 +12,7 @@
 #include <cctype>
 #include <iomanip>
 #include <locale>
+#include <map>
 #include <sstream>
 #include <string>
 
@@ -96,8 +97,43 @@ namespace xtd {
   inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc);
+
   template<typename Type, typename Period = std::ratio<1>>
   inline std::wstring to_string(const std::chrono::duration<Type, Period>& value, const std::wstring& fmt, const std::locale& loc);
+  
+  template<typename type_t, typename string_t>
+  inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
+    if (values.find(value) != values.end()) return values.find(value)->second;
+    string_t result;
+    long long rest = static_cast<long long>(value);
+    for (auto item : values) {
+      if (static_cast<long long>(item.first) != 0 && (rest & static_cast<long long>(item.first)) == static_cast<long long>(item.first)) {
+        if (!result.empty()) result = ", " + result;
+        result = item.second + result;
+        rest -= static_cast<long long>(item.first);
+      }
+    }
+    if (!result.empty()) return result;
+    return std::to_string(static_cast<long long>(value));
+  }
+  
+  template<typename type_t, typename string_t>
+  inline string_t to_string(type_t value, const std::map<type_t, string_t>& values) {
+    if (values.find(value) != values.end()) return values.find(value)->second;
+    string_t result;
+    long long rest = static_cast<long long>(value);
+    std::vector<std::pair<type_t, string_t>> descending_values;
+    for (auto item : values) descending_values.insert(descending_values.begin(), item);
+    for (auto item : descending_values) {
+      if (static_cast<long long>(item.first) != 0 && (rest & static_cast<long long>(item.first)) == static_cast<long long>(item.first)) {
+        if (!result.empty()) result = ", " + result;
+        result = item.second + result;
+        rest -= static_cast<long long>(item.first);
+      }
+    }
+    if (!result.empty()) return result;
+    return std::to_string(static_cast<long long>(value));
+  }
 }
   
 template<typename Char, typename Type, typename Period = std::ratio<1>>
