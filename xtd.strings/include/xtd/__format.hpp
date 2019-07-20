@@ -12,8 +12,8 @@
 #include <string>
 
 /// @cond
-template <class Char>
-inline std::basic_string<Char> __formatf(const Char* fmt, ...) {return std::basic_string<Char>();}
+template <class char_t>
+inline std::basic_string<char_t> __formatf(const char_t* fmt, ...) {return std::basic_string<char_t>();}
 
 template <>
 inline std::basic_string<char> __formatf<char>(const char* fmt, ...) {

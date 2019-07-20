@@ -16,21 +16,21 @@
 #undef min
 
 /// @cond
-template <typename Char>
-inline std::basic_string<Char> __parse_remove_decorations(const std::basic_string<Char>& s, xtd::number_styles styles) {
-  std::basic_string<Char> str(s);
+template <typename char_t>
+inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_string<char_t>& s, xtd::number_styles styles) {
+  std::basic_string<char_t> str(s);
   if ((styles & xtd::number_styles::allow_leading_white) == xtd::number_styles::allow_leading_white) str = xtd::strings::trim_start(str);
   if ((styles & xtd::number_styles::allow_trailing_white) == xtd::number_styles::allow_trailing_white) str = xtd::strings::trim_end(str);
-  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && xtd::strings::starts_with(str, std::use_facet<std::moneypunct<Char>>(std::locale()).curr_symbol())) str = xtd::strings::remove(str, 0, std::use_facet<std::moneypunct<Char>>(std::locale()).curr_symbol().size());
-  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && xtd::strings::ends_with(str, std::use_facet<std::moneypunct<Char>>(std::locale()).curr_symbol())) str = xtd::strings::substring(str, 0, str.size() - std::use_facet<std::moneypunct<Char>>(std::locale()).curr_symbol().size());
+  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && xtd::strings::starts_with(str, std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol())) str = xtd::strings::remove(str, 0, std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
+  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && xtd::strings::ends_with(str, std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol())) str = xtd::strings::substring(str, 0, str.size() - std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (xtd::strings::starts_with(str, "0b") || xtd::strings::starts_with(str, "0B"))) str = xtd::strings::remove(str, 0, 2);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && xtd::strings::starts_with(str, '0')) str = xtd::strings::remove(str, 0, 1);
   if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (xtd::strings::starts_with(str, "0x") || xtd::strings::starts_with(str, "0X"))) str = xtd::strings::remove(str, 0, 2);
   return str;
 }
 
-template <typename Char>
-inline int __parse_remove_signs(std::basic_string<Char>& str, xtd::number_styles styles) {
+template <typename char_t>
+inline int __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styles styles) {
   int sign = 0;
   
   while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && xtd::strings::starts_with(str, "+")) {
@@ -65,45 +65,45 @@ inline int __parse_remove_signs(std::basic_string<Char>& str, xtd::number_styles
   return sign;
 }
 
-template <typename Char>
-inline void __parse_check_valid_characters(const std::basic_string<Char>& str, xtd::number_styles styles) {
-  std::basic_string<Char> valid_characters = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+template <typename char_t>
+inline void __parse_check_valid_characters(const std::basic_string<char_t>& str, xtd::number_styles styles) {
+  std::basic_string<char_t> valid_characters = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier) valid_characters = xtd::strings::remove(valid_characters, 2);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier) valid_characters = xtd::strings::remove(valid_characters, 7);
-  if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier) valid_characters += std::basic_string<Char> {'A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
-  if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) valid_characters += std::use_facet<std::numpunct<Char>>(std::locale()).decimal_point();
-  if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) valid_characters += std::use_facet<std::numpunct<Char>>(std::locale()).thousands_sep();
-  if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) valid_characters += std::basic_string<Char> {'E', 'e', '+', '-'};
+  if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier) valid_characters += std::basic_string<char_t> {'A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
+  if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) valid_characters += std::use_facet<std::numpunct<char_t>>(std::locale()).decimal_point();
+  if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) valid_characters += std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep();
+  if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) valid_characters += std::basic_string<char_t> {'E', 'e', '+', '-'};
 
   for (auto c : str) {
-    if (xtd::strings::index_of(valid_characters, c) == std::basic_string<Char>::npos)
+    if (xtd::strings::index_of(valid_characters, c) == std::basic_string<char_t>::npos)
       throw std::invalid_argument("invalid character found");
   }
   
   if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) {
-    size_t index = xtd::strings::index_of(str, std::use_facet<std::numpunct<Char>>(std::locale()).decimal_point());
-    if (index != std::basic_string<Char>::npos && xtd::strings::index_of(str, std::use_facet<std::numpunct<Char>>(std::locale()).decimal_point(), index + 1) != std::basic_string<Char>::npos)
+    size_t index = xtd::strings::index_of(str, std::use_facet<std::numpunct<char_t>>(std::locale()).decimal_point());
+    if (index != std::basic_string<char_t>::npos && xtd::strings::index_of(str, std::use_facet<std::numpunct<char_t>>(std::locale()).decimal_point(), index + 1) != std::basic_string<char_t>::npos)
       throw std::invalid_argument("invalid character found");
   }
 
   if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) {
     size_t index = 1;
-    while((index = xtd::strings::index_of(str, std::use_facet<std::numpunct<Char>>(std::locale()).thousands_sep(), index)) != std::basic_string<Char>::npos) {
-      if (str[index - 1] == std::use_facet<std::numpunct<Char>>(std::locale()).thousands_sep())
+    while((index = xtd::strings::index_of(str, std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep(), index)) != std::basic_string<char_t>::npos) {
+      if (str[index - 1] == std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep())
         throw std::invalid_argument("invalid character found");
       ++index;
     }
   }
 
   if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) {
-    size_t index = xtd::strings::index_of_any(str, std::vector<Char> {'+', '-'});
-    if (index != std::basic_string<Char>::npos && str[index - 1] != 'e' && str[index - 1] != 'E')
+    size_t index = xtd::strings::index_of_any(str, std::vector<char_t> {'+', '-'});
+    if (index != std::basic_string<char_t>::npos && str[index - 1] != 'e' && str[index - 1] != 'E')
       throw std::invalid_argument("invalid character found");
   }
 }
 
-template <typename Value, typename Char>
-inline Value __parse_floating_point(const std::basic_string<Char>& str, int sign, xtd::number_styles styles) {
+template <typename value_t, typename char_t>
+inline value_t __parse_floating_point(const std::basic_string<char_t>& str, int sign, xtd::number_styles styles) {
   long double result;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
     result = std::stold(str, nullptr);
@@ -114,12 +114,12 @@ inline Value __parse_floating_point(const std::basic_string<Char>& str, int sign
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<Value>::min() || result > std::numeric_limits<Value>::max()) throw std::out_of_range("Out of range");
-  return static_cast<Value>(result);
+  if (result < std::numeric_limits<value_t>::min() || result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
+  return static_cast<value_t>(result);
 }
 
-template <typename Value, typename Char>
-inline Value __parse_signed(const std::basic_string<Char>& str, int base, int sign, xtd::number_styles styles) {
+template <typename value_t, typename char_t>
+inline value_t __parse_signed(const std::basic_string<char_t>& str, int base, int sign, xtd::number_styles styles) {
   long long result;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
     result = std::stoll(str, nullptr, base);
@@ -130,12 +130,12 @@ inline Value __parse_signed(const std::basic_string<Char>& str, int base, int si
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<Value>::min() || result > std::numeric_limits<Value>::max()) throw std::out_of_range("Out of range");
-  return static_cast<Value>(result);
+  if (result < std::numeric_limits<value_t>::min() || result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
+  return static_cast<value_t>(result);
 }
 
-template <typename Value, typename Char>
-inline Value __parse_unsigned(const std::basic_string<Char>& str, int base, xtd::number_styles styles) {
+template <typename value_t, typename char_t>
+inline value_t __parse_unsigned(const std::basic_string<char_t>& str, int base, xtd::number_styles styles) {
   unsigned long long result = 0;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
     result = std::stoull(str, nullptr, base);
@@ -145,26 +145,26 @@ inline Value __parse_unsigned(const std::basic_string<Char>& str, int base, xtd:
     ss >> result;
   }
   
-  if (result > std::numeric_limits<Value>::max()) throw std::out_of_range("Out of range");
-  return static_cast<Value>(result);
+  if (result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
+  return static_cast<value_t>(result);
 }
 
-template <typename Value, typename Char>
-inline Value __parse_floating_point_number(const std::basic_string<Char>& s, xtd::number_styles styles) {
+template <typename value_t, typename char_t>
+inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) throw std::invalid_argument("xtd::number_styles::binary_number not supported by floating point");
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) throw std::invalid_argument("xtd::number_styles::octal_number not supported by floating point");
   if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) throw std::invalid_argument("xtd::number_styles::hex_number not supported by floating point");
 
-  std::basic_string<Char> str = __parse_remove_decorations(s, styles);
+  std::basic_string<char_t> str = __parse_remove_decorations(s, styles);
   int sign = __parse_remove_signs(str, styles);
   
   __parse_check_valid_characters(str, styles);
   
-  return __parse_floating_point<Value>(str, sign, styles);
+  return __parse_floating_point<value_t>(str, sign, styles);
 }
 
-template <typename Value, typename Char>
-inline Value __parse_number(const std::basic_string<Char>& s, xtd::number_styles styles) {
+template <typename value_t, typename char_t>
+inline value_t __parse_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
   if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (styles - xtd::number_styles::hex_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
@@ -174,17 +174,17 @@ inline Value __parse_number(const std::basic_string<Char>& s, xtd::number_styles
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) base = 8;
   if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) base = 16;
   
-  std::basic_string<Char> str = __parse_remove_decorations(s, styles);
+  std::basic_string<char_t> str = __parse_remove_decorations(s, styles);
   int sign = __parse_remove_signs(str, styles);
   
   __parse_check_valid_characters(str, styles);
   
-  if (std::is_floating_point<Value>::value || (styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) return __parse_floating_point<Value>(str, sign, styles);
-  return __parse_signed<Value>(str, base, sign, styles);
+  if (std::is_floating_point<value_t>::value || (styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) return __parse_floating_point<value_t>(str, sign, styles);
+  return __parse_signed<value_t>(str, base, sign, styles);
 }
 
-template <typename Value, typename Char>
-inline Value __parse_unsigned_number(const std::basic_string<Char>& s, xtd::number_styles styles) {
+template <typename value_t, typename char_t>
+inline value_t __parse_unsigned_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
   if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (styles - xtd::number_styles::hex_number) != xtd::number_styles::none) throw std::invalid_argument("Invalid xtd::number_styles flags");
@@ -194,29 +194,29 @@ inline Value __parse_unsigned_number(const std::basic_string<Char>& s, xtd::numb
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) base = 8;
   if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) base = 16;
   
-  std::basic_string<Char> str = __parse_remove_decorations(s, styles);
+  std::basic_string<char_t> str = __parse_remove_decorations(s, styles);
   if (__parse_remove_signs(str, styles) < 0) throw std::invalid_argument("unsigned type can't have minus sign");
   
   __parse_check_valid_characters(str, styles);
   
-  if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) return __parse_floating_point<Value>(str, 0, styles);
-  return __parse_unsigned<Value>(str, base, styles);
+  if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) return __parse_floating_point<value_t>(str, 0, styles);
+  return __parse_unsigned<value_t>(str, base, styles);
 }
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  template<typename Value>
-  inline Value parse(const std::string& str) {throw std::invalid_argument("Parse speciailisation not found");}
+  template<typename value_t>
+  inline value_t parse(const std::string& str) {throw std::invalid_argument("Parse speciailisation not found");}
 
-  template<typename Value>
-  inline Value parse(const std::string& str, const std::string& fmt) {throw std::invalid_argument("Parse speciailisation not found");}
+  template<typename value_t>
+  inline value_t parse(const std::string& str, const std::string& fmt) {throw std::invalid_argument("Parse speciailisation not found");}
 
   template<>
   inline std::string parse<std::string>(const std::string& str) {return str;}
 
-  template<typename Value>
-  inline Value parse(const std::string& str, number_styles) {throw std::invalid_argument("Parse speciailisation not found");}
+  template<typename value_t>
+  inline value_t parse(const std::string& str, number_styles) {throw std::invalid_argument("Parse speciailisation not found");}
   
   template<>
   inline int8_t parse<int8_t>(const std::string& str, number_styles styles) {return __parse_number<int8_t>(str, styles);}
@@ -302,19 +302,19 @@ namespace xtd {
   template<>
   inline long double parse<long double>(const std::string& str) {return parse<long double>(str, number_styles::fixed_point);}
 
-  template<typename Value>
-  inline Value parse(const std::wstring& str) {throw std::invalid_argument("Parse speciailisation not found");}
+  template<typename value_t>
+  inline value_t parse(const std::wstring& str) {throw std::invalid_argument("Parse speciailisation not found");}
 
-  template<typename Value>
-  inline Value parse(const std::u16string& str) {throw std::invalid_argument("Parse speciailisation not found");}
+  template<typename value_t>
+  inline value_t parse(const std::u16string& str) {throw std::invalid_argument("Parse speciailisation not found");}
 
-  template<typename Value>
-  inline Value parse(const std::u32string& str) {throw std::invalid_argument("Parse speciailisation not found");}
+  template<typename value_t>
+  inline value_t parse(const std::u32string& str) {throw std::invalid_argument("Parse speciailisation not found");}
 
-  template<typename Value, typename Char>
-  inline bool try_parse(const std::basic_string<Char>& str, Value& value) {
+  template<typename value_t, typename char_t>
+  inline bool try_parse(const std::basic_string<char_t>& str, value_t& value) {
     try {
-      value = parse<Value>(str);
+      value = parse<value_t>(str);
       return true;
     } catch(...) {
       return false;

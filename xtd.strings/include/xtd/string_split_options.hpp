@@ -14,12 +14,12 @@ namespace xtd {
     /// @brief The return value does not include array elements that contain an empty string.
     remove_empty_entries
   };
-}
 
-inline std::ostream& operator<<(std::ostream& os, xtd::string_split_options options) {
-  switch (options) {
-    case xtd::string_split_options::none: os << "none"; break;
-    case xtd::string_split_options::remove_empty_entries: os << "remove_empty_entries"; break;
+  inline std::ostream& operator<<(std::ostream& os, xtd::string_split_options options) {
+    switch (options) {
+      case xtd::string_split_options::none: os << "none"; break;
+      case xtd::string_split_options::remove_empty_entries: os << "remove_empty_entries"; break;
+    }
+    return os;
   }
-  return os;
 }
