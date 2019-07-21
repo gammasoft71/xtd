@@ -102,6 +102,24 @@ namespace xtd {
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
   
+  template<typename type_t>
+  inline std::string to_string(type_t value, const std::initializer_list<std::pair<type_t, std::string>>& il) {
+    std::map<type_t, std::string, std::greater<type_t>> values;
+    for(auto item : il) values[item.first] = item.second;
+    if (values.find(value) != values.end()) return values.find(value)->second;
+    std::string result;
+    long long rest = static_cast<long long>(value);
+    for (auto item : values) {
+      if (static_cast<long long>(item.first) != 0 && (rest & static_cast<long long>(item.first)) == static_cast<long long>(item.first)) {
+        if (!result.empty()) result = ", " + result;
+        result = item.second + result;
+        rest -= static_cast<long long>(item.first);
+      }
+    }
+    if (!result.empty()) return result;
+    return std::to_string(static_cast<long long>(value));
+  }
+
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
     if (values.find(value) != values.end()) return values.find(value)->second;
