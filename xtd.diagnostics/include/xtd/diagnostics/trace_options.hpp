@@ -1,8 +1,7 @@
 /// @file
 /// @brief Contains xtd::diagnostics::debug class.
 #pragma once
-#include <map>
-#include <string>
+#include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -33,27 +32,14 @@ namespace xtd {
     inline xtd::diagnostics::trace_options& operator|=(xtd::diagnostics::trace_options& lhs, xtd::diagnostics::trace_options rhs) {lhs = static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) | static_cast<int>(rhs)); return lhs;}
     inline xtd::diagnostics::trace_options& operator+=(xtd::diagnostics::trace_options& lhs, xtd::diagnostics::trace_options rhs) {lhs = static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) + static_cast<int>(rhs)); return lhs;}
     inline xtd::diagnostics::trace_options& operator-=(xtd::diagnostics::trace_options& lhs, xtd::diagnostics::trace_options rhs) {lhs = static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) - static_cast<int>(rhs)); return lhs;}
-    
     inline xtd::diagnostics::trace_options operator^(xtd::diagnostics::trace_options lhs, xtd::diagnostics::trace_options rhs) {return static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
     inline xtd::diagnostics::trace_options operator&(xtd::diagnostics::trace_options lhs, xtd::diagnostics::trace_options rhs) {return static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) & static_cast<int>(rhs));}
     inline xtd::diagnostics::trace_options operator|(xtd::diagnostics::trace_options lhs, xtd::diagnostics::trace_options rhs) {return static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) | static_cast<int>(rhs));}
     inline xtd::diagnostics::trace_options operator+(xtd::diagnostics::trace_options lhs, xtd::diagnostics::trace_options rhs) {return static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) + static_cast<int>(rhs));}
     inline xtd::diagnostics::trace_options operator-(xtd::diagnostics::trace_options lhs, xtd::diagnostics::trace_options rhs) {return static_cast<xtd::diagnostics::trace_options>(static_cast<int>(lhs) - static_cast<int>(rhs));}
-    
     inline xtd::diagnostics::trace_options operator~(xtd::diagnostics::trace_options lhs) {return static_cast<xtd::diagnostics::trace_options>(~static_cast<int>(lhs));}
-
-    inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::trace_options tet) {
-      switch (tet) {
-        case xtd::diagnostics::trace_options::none: os << "none"; break;
-        case xtd::diagnostics::trace_options::logical_operation_stack: os << "logical_operation_stack"; break;
-        case xtd::diagnostics::trace_options::date_time: os << "date_time"; break;
-        case xtd::diagnostics::trace_options::timestamp: os << "timestamp"; break;
-        case xtd::diagnostics::trace_options::process_id: os << "process_id"; break;
-        case xtd::diagnostics::trace_options::thread_id: os << "thread_id"; break;
-        case xtd::diagnostics::trace_options::callstack: os << "callstack"; break;
-      }
-      return os;
-    }
+    inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::trace_options value) {return os << to_string(value, {{xtd::diagnostics::trace_options::none, "none"}, {diagnostics::trace_options::logical_operation_stack, "logical_operation_stack"}, {diagnostics::trace_options::date_time, "date_time"}, {diagnostics::trace_options::timestamp, "timestamp"}, {diagnostics::trace_options::process_id, "process_id"}, {diagnostics::trace_options::thread_id, "thread_id"}, {diagnostics::trace_options::callstack, "callstack"}});}
+    inline std::wostream& operator<<(std::wostream& os, xtd::diagnostics::trace_options value) {return os << to_string(value, {{xtd::diagnostics::trace_options::none, L"none"}, {diagnostics::trace_options::logical_operation_stack, L"logical_operation_stack"}, {diagnostics::trace_options::date_time, L"date_time"}, {diagnostics::trace_options::timestamp, L"timestamp"}, {diagnostics::trace_options::process_id, L"process_id"}, {diagnostics::trace_options::thread_id, L"thread_id"}, {diagnostics::trace_options::callstack, L"callstack"}});}
     /// @endcond
   }
 }
