@@ -25,12 +25,9 @@ namespace xtd {
     inline mouse_buttons operator ~(mouse_buttons rhs) {return static_cast<mouse_buttons>(~static_cast<int>(rhs));}
     inline mouse_buttons operator &(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) & static_cast<int>(rhs));}
     inline mouse_buttons operator |(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) | static_cast<int>(rhs));}
-    inline mouse_buttons operator ^(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}
-    
-    inline std::ostream& operator<<(std::ostream& os, mouse_buttons value) {
-      static std::map<mouse_buttons, std::string, std::greater<mouse_buttons>> values = {{mouse_buttons::none, "none"}, {mouse_buttons::left, "left"}, {mouse_buttons::right, "right"}, {mouse_buttons::middle, "middle"}, {mouse_buttons::x_button1, "x_button1"}, {mouse_buttons::x_button2, "x_button2"}};
-      return os << xtd::to_string(value, values);
-    }
+    inline mouse_buttons operator ^(mouse_buttons lhs, mouse_buttons rhs) {return static_cast<mouse_buttons>(static_cast<int>(lhs) ^ static_cast<int>(rhs));}    
+    inline std::ostream& operator<<(std::ostream& os, mouse_buttons value) {return os << to_string(value, {{mouse_buttons::none, "none"}, {mouse_buttons::left, "left"}, {mouse_buttons::right, "right"}, {mouse_buttons::middle, "middle"}, {mouse_buttons::x_button1, "x_button1"}, {mouse_buttons::x_button2, "x_button2"}});}
+    inline std::wostream& operator<<(std::wostream& os, mouse_buttons value) {return os << to_string(value, {{mouse_buttons::none, L"none"}, {mouse_buttons::left, L"left"}, {mouse_buttons::right, L"right"}, {mouse_buttons::middle, L"middle"}, {mouse_buttons::x_button1, L"x_button1"}, {mouse_buttons::x_button2, L"x_button2"}});}
     /// @endcond
   }
 }
