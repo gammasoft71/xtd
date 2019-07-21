@@ -1,8 +1,7 @@
 /// @file
 /// @brief Contains xtd::console_color enum class.
 #pragma once
-#include <string>
-#include <sstream>
+#include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -43,30 +42,8 @@ namespace xtd {
     /// @brief The color white.
     white
   };
-}
 
-/// @cond
-template<typename Char>
-std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, xtd::console_color c) {
-  switch (c) {
-    case xtd::console_color::black: os << std::basic_string<Char> {'b', 'l', 'a', 'c', 'k'}; break;
-    case xtd::console_color::dark_blue: os << std::basic_string<Char> {'d', 'a', 'r', 'k', '_', 'b', 'l', 'u', 'e'}; break;
-    case xtd::console_color::dark_green: os << std::basic_string<Char> {'d', 'a', 'r', 'k', '_', 'g', 'r', 'e', 'e', 'n'}; break;
-    case xtd::console_color::dark_cyan: os << std::basic_string<Char> {'d', 'a', 'r', 'k', '_', 'c', 'y', 'a', 'n'}; break;
-    case xtd::console_color::dark_red: os << std::basic_string<Char> {'d', 'a', 'r', 'k', '_', 'r', 'e', 'd'}; break;
-    case xtd::console_color::dark_magenta: os << std::basic_string<Char> {'d', 'a', 'r', 'k', '_', 'm', 'a', 'g', 'e', 'n', 't', 'a'}; break;
-    case xtd::console_color::dark_yellow: os << std::basic_string<Char> {'d', 'a', 'r', 'k', '_', 'y', 'e', 'l', 'l', 'o', 'w'}; break;
-    case xtd::console_color::gray: os << std::basic_string<Char> {'g', 'r', 'a', 'y'}; break;
-    case xtd::console_color::dark_gray: os << std::basic_string<Char> {'d', 'a', 'r', 'k', '_', 'g', 'r', 'a', 'y'}; break;
-    case xtd::console_color::blue: os << std::basic_string<Char> {'b', 'l', 'u', 'e'}; break;
-    case xtd::console_color::green: os << std::basic_string<Char> {'g', 'r', 'e', 'e', 'n'}; break;
-    case xtd::console_color::cyan: os << std::basic_string<Char> {'c', 'y', 'a', 'n'}; break;
-    case xtd::console_color::red: os << std::basic_string<Char> {'r', 'e', 'd'}; break;
-    case xtd::console_color::magenta: os << std::basic_string<Char> {'m', 'a', 'g', 'e', 'n', 't', 'a'}; break;
-    case xtd::console_color::yellow: os << std::basic_string<Char> {'y', 'e', 'l', 'l', 'o', 'w'}; break;
-    case xtd::console_color::white: os << std::basic_string<Char> {'w', 'h', 'i', 't', 'e'}; break;
-    default: os << static_cast<int>(c); break;
-  }
-  return os;
+  /// @cond
+  inline std::ostream& operator<<(std::ostream& os, console_color value) {return os << to_string(value, {{console_color::black, "black"}, {console_color::dark_blue, "dark_blue"}, {console_color::dark_green, "dark_green"}, {console_color::dark_cyan, "dark_cyan"}, {console_color::dark_red, "dark_red"}, {console_color::dark_magenta, "dark_magenta"}, {console_color::dark_yellow, "dark_yellow"}, {console_color::gray, "gray"}, {console_color::dark_gray, "dark_gray"}, {console_color::blue, "blue"}, {console_color::green, "green"}, {console_color::cyan, "cyan"}, {console_color::red, "red"}, {console_color::magenta, "magenta"}, {console_color::yellow, "yellow"}, {console_color::white, "white"}});}
+  /// @endcond
 }
-/// @endcond

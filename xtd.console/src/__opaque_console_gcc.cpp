@@ -42,7 +42,7 @@ namespace {
       if (signal == SIGINT && xtd::console::treat_control_c_as_input()) return;
 #endif
       xtd::console_cancel_event_args console_cancel(false, signal_keys_[signal]);
-      xtd::console::cancel_key_press(console_cancel);
+      xtd::console::__internal_cancel_key_press__(console_cancel);
       if (console_cancel.cancel() == false)
         exit(EXIT_FAILURE);
     }

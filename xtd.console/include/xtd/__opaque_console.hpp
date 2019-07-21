@@ -13,12 +13,12 @@
 struct __console_intercept_signals;
 
 namespace xtd {
-  template<class Char>
+  template<class char_t>
   class basic_console;
 }
 
 class __opaque_console final {
-  template<class Char>
+  template<class char_t>
   friend class xtd::basic_console;
   friend struct ::__console_intercept_signals;
   static xtd::console_color background_color() noexcept;
