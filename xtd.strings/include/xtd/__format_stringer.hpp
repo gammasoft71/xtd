@@ -121,7 +121,7 @@ namespace xtd {
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t>& values) {
     std::map<type_t, string_t, std::greater<type_t>> descending_values;
-    for(auto item : values) descending_values[item.first] = values.second;
+    for(auto item : values) descending_values[item.first] = item.second;
     return to_string(value, descending_values);
   }
 
