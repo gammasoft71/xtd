@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::console and xtd::wconsole typedefs.
 #pragma once
-#include "__generic_stream_output.hpp"
+#include "__generic_stream_output.hpp" // must be included first
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.strings>
 #include "__get_err_rdbuf.hpp"
