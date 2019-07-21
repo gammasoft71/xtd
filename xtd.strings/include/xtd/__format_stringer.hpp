@@ -101,24 +101,6 @@ namespace xtd {
 
   template<typename type_t, typename period_t = std::ratio<1>>
   inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
-  
-  template<typename type_t>
-  inline std::string to_string(type_t value, const std::initializer_list<std::pair<type_t, std::string>>& il) {
-    std::map<type_t, std::string, std::greater<type_t>> values;
-    for(auto item : il) values[item.first] = item.second;
-    if (values.find(value) != values.end()) return values.find(value)->second;
-    std::string result;
-    long long rest = static_cast<long long>(value);
-    for (auto item : values) {
-      if (static_cast<long long>(item.first) != 0 && (rest & static_cast<long long>(item.first)) == static_cast<long long>(item.first)) {
-        if (!result.empty()) result = ", " + result;
-        result = item.second + result;
-        rest -= static_cast<long long>(item.first);
-      }
-    }
-    if (!result.empty()) return result;
-    return std::to_string(static_cast<long long>(value));
-  }
 
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
@@ -127,31 +109,34 @@ namespace xtd {
     long long rest = static_cast<long long>(value);
     for (auto item : values) {
       if (static_cast<long long>(item.first) != 0 && (rest & static_cast<long long>(item.first)) == static_cast<long long>(item.first)) {
-        if (!result.empty()) result = ", " + result;
+        if (!result.empty()) result = string_t {',', ' '} + result;
         result = item.second + result;
         rest -= static_cast<long long>(item.first);
       }
     }
     if (!result.empty()) return result;
-    return std::to_string(static_cast<long long>(value));
+    return to_string(static_cast<long long>(value), string_t {'G'}, std::locale());
   }
   
   template<typename type_t, typename string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t>& values) {
-    if (values.find(value) != values.end()) return values.find(value)->second;
-    string_t result;
-    long long rest = static_cast<long long>(value);
-    std::vector<std::pair<type_t, string_t>> descending_values;
-    for (auto item : values) descending_values.insert(descending_values.begin(), item);
-    for (auto item : descending_values) {
-      if (static_cast<long long>(item.first) != 0 && (rest & static_cast<long long>(item.first)) == static_cast<long long>(item.first)) {
-        if (!result.empty()) result = ", " + result;
-        result = item.second + result;
-        rest -= static_cast<long long>(item.first);
-      }
-    }
-    if (!result.empty()) return result;
-    return std::to_string(static_cast<long long>(value));
+    std::map<type_t, string_t, std::greater<type_t>> descending_values;
+    for(auto item : values) descending_values[item.first] = values.second;
+    return to_string(value, descending_values);
+  }
+
+  template<typename type_t>
+  inline std::string to_string(type_t value, const std::initializer_list<std::pair<type_t, std::string>>& il) {
+    std::map<type_t, std::string, std::greater<type_t>> values;
+    for(auto item : il) values[item.first] = item.second;
+    return to_string(value, values);
+  }
+
+  template<typename type_t>
+  inline std::wstring to_string(type_t value, const std::initializer_list<std::pair<type_t, std::wstring>>& il) {
+    std::map<type_t, std::wstring, std::greater<type_t>> values;
+    for(auto item : il) values[item.first] = item.second;
+    return to_string(value, values);
   }
 }
   
