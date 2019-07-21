@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-using namespace std::chrono_literals;
+using namespace xtd;
 
 enum class buttons {
   none = 0b0,
@@ -24,20 +24,14 @@ inline buttons operator ~(buttons rhs) {return static_cast<buttons>(~static_cast
 inline buttons operator &(buttons lhs, buttons rhs) {return static_cast<buttons>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
 inline buttons operator |(buttons lhs, buttons rhs) {return static_cast<buttons>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
 inline buttons operator ^(buttons lhs, buttons rhs) {return static_cast<buttons>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-
-inline std::ostream& operator<<(std::ostream& os, buttons value) {
-  return os << xtd::to_string(value, {{buttons::none, "none"}, {buttons::one, "one"}, {buttons::two, "two"}, {buttons::three, "three"}, {buttons::four, "four"}});
-}
-
-inline std::wostream& operator<<(std::wostream& os, buttons value) {
-  return os << xtd::to_string(value, {{buttons::none, L"none"}, {buttons::one, L"one"}, {buttons::two, L"two"}, {buttons::three, L"three"}, {buttons::four, L"four"}});
-}
+inline ostream& operator<<(ostream& os, buttons value) {return os << to_string(value, {{buttons::none, "none"}, {buttons::one, "one"}, {buttons::two, "two"}, {buttons::three, "three"}, {buttons::four, "four"}});}
+inline wostream& operator<<(wostream& os, buttons value) {return os << to_string(value, {{buttons::none, L"none"}, {buttons::one, L"one"}, {buttons::two, L"two"}, {buttons::three, L"three"}, {buttons::four, L"four"}});}
 
 // The main entry point for the application.
 int main() {
   //cout << "Hello, World!" << endl;
 
-  wcout << xtd::strings::format(L"buttons={}", buttons::one + buttons::three) << endl;
+  cout << strings::format("buttons={}", buttons::one + buttons::three) << endl;
 }
 
 // This code produces the following output:
