@@ -20,6 +20,6 @@ int main() {
   xtd::console_key_info key;
   while (key.key() != xtd::console_key::escape) {
     key = xtd::console::read_key(true);
-    xtd::console::write_line("(key = {0}, key_char = '{1}', modifiers {2})", key.key(), key.key_char(), key.modifiers());
+    xtd::console::write_line("key_press [key={}, key_char='{}', modifiers={}]", key.key(), key.key_char(), key.modifiers());
   }
 }
