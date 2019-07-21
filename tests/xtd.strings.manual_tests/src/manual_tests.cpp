@@ -29,11 +29,15 @@ inline std::ostream& operator<<(std::ostream& os, buttons value) {
   return os << xtd::to_string(value, {{buttons::none, "none"}, {buttons::one, "one"}, {buttons::two, "two"}, {buttons::three, "three"}, {buttons::four, "four"}});
 }
 
+inline std::wostream& operator<<(std::wostream& os, buttons value) {
+  return os << xtd::to_string(value, {{buttons::none, L"none"}, {buttons::one, L"one"}, {buttons::two, L"two"}, {buttons::three, L"three"}, {buttons::four, L"four"}});
+}
+
 // The main entry point for the application.
 int main() {
   //cout << "Hello, World!" << endl;
 
-  cout << xtd::strings::format("buttons={}", buttons::one + buttons::three) << endl;
+  wcout << xtd::strings::format(L"buttons={}", buttons::one + buttons::three) << endl;
 }
 
 // This code produces the following output:
