@@ -19,18 +19,8 @@ namespace xtd {
     /// @brief The console_modifiers::control modifier key plus the console_key Z console key.
     control_z,
   };
-}
 
-/// @cond
-template<typename Char>
-std::basic_ostream<Char>& operator<<(std::basic_ostream<Char>& os, xtd::console_special_key sk) {
-  switch (sk) {
-    case xtd::console_special_key::control_break: os << std::basic_string<Char> {'c', 'o', 'n', 't', 'r', 'o', 'l', '_', 'b', 'r', 'e', 'a', 'k'}; break;
-    case xtd::console_special_key::control_c: os << std::basic_string<Char> {'c', 'o', 'n', 't', 'r', 'o', 'l', '_', 'c'}; break;
-    case xtd::console_special_key::control_backslash: os << std::basic_string<Char> {'c', 'o', 'n', 't', 'r', 'o', 'l', '_', 'b', 'a', 'c', 'k', 's', 'l', 'a', 's', 'h'}; break;
-    case xtd::console_special_key::control_z: os << std::basic_string<Char> {'c', 'o', 'n', 't', 'r', 'o', 'l', '_', 'z'}; break;
-    default: os << static_cast<int>(sk); break;
-  }
-  return os;
+  /// @cond
+  inline std::ostream& operator<<(std::ostream& os, console_special_key value) {return os << to_string(value, {{console_special_key::control_break, "control_break"}, {console_special_key::control_c, "control_c"}, {console_special_key::control_backslash, "control_backslash"}, {console_special_key::control_z, "control_z"}});}
+  /// @endcond
 }
-/// @endcond

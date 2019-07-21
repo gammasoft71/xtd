@@ -6,18 +6,18 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent format output manipulator class.
-  /// @see xtd::basic_console<Char>::format(const std::basic_string<Char>& format, Args&& ... args) method.
+  /// @see xtd::basic_console<char_t>::format(const std::basic_string<char_t>& format, args_t&& ... args) method.
   class format final {
   public:
-    template<typename Char, typename ... Args>
-    format(const std::basic_string<Char>& format, Args&& ... args) : value_(strings::format(format, std::forward<Args>(args)...)) {}
+    template<typename char_t, typename ... args_t>
+    format(const std::basic_string<char_t>& format, args_t&& ... args) : value_(strings::format(format, std::forward<args_t>(args)...)) {}
     
-    template<typename Char, typename ... Args>
-    format(const Char* format, Args&& ... args) : value_(strings::format(format, std::forward<Args>(args)...)) {}
+    template<typename char_t, typename ... args_t>
+    format(const char_t* format, args_t&& ... args) : value_(strings::format(format, std::forward<args_t>(args)...)) {}
     
     /// @cond
-    template<typename Char>
-    friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const format& fmt) {return os << fmt.value_;}
+    template<typename char_t>
+    friend std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const format& fmt) {return os << fmt.value_;}
     /// @endcond
 
   private:

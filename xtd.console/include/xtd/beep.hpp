@@ -6,7 +6,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represent beep output manipulator class.
-  /// @see xtd::basic_console<Char>::beep(unsigned int frequency, unsigned int duration) method.
+  /// @see xtd::basic_console<char_t>::beep(unsigned int frequency, unsigned int duration) method.
   class beep final {
   public:
     beep() = default;
@@ -14,10 +14,10 @@ namespace xtd {
     beep(unsigned int frequency, unsigned int duration) : frequency_(frequency), duration_(duration) {}
     
     /// @cond
-    template<typename Char>
-    friend std::basic_ostream<Char>& operator <<(std::basic_ostream<Char>& os, const beep& b) {
-      if (os.rdbuf() == __get_out_rdbuf<Char>() || os.rdbuf() == __get_err_rdbuf<Char>())
-        basic_console<Char>::beep(b.frequency_, b.duration_);
+    template<typename char_t>
+    friend std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const beep& b) {
+      if (os.rdbuf() == __get_out_rdbuf<char_t>() || os.rdbuf() == __get_err_rdbuf<char_t>())
+        basic_console<char_t>::beep(b.frequency_, b.duration_);
       return os;
     }
     /// @endcond

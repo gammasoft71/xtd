@@ -23,7 +23,7 @@ namespace {
   BOOL __handler_routine(DWORD ctrl_type) {
     if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT) {
       xtd::console_cancel_event_args console_cancel(false, ctrl_type == CTRL_C_EVENT ? xtd::console_special_key::control_c : xtd::console_special_key::control_break);
-      xtd::console::cancel_key_press(console_cancel);
+      xtd::console::__internal_cancel_key_press__(console_cancel);
       return console_cancel.cancel() == TRUE;
     }
     return FALSE;

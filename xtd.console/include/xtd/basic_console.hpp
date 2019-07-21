@@ -2,12 +2,13 @@
 /// @brief Contains xtd::basic_console class.
 #pragma once
 #include "__generic_stream_output.hpp"
+#include <xtd/xtd.strings>
 #include "__get_err_rdbuf.hpp"
 #include "__get_in_rdbuf.hpp"
 #include "__get_out_rdbuf.hpp"
 #include "__opaque_console.hpp"
 #include "console_cancel_event_handler.hpp"
-#include <xtd/xtd.strings>
+#include <xtd/event.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,23 +18,23 @@ namespace xtd {
   /// The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the set_in and set_out methods.
   /// @include console1.cpp
   /// @include console_out.cpp
-  template<class Char>
+  template<class char_t>
   class basic_console final {
   public:    
-    /// @brief Gets the error output stream. A std::basic_ostream<Char> that represents the error output stream.
-    static std::basic_ostream<Char> error;
+    /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
+    static std::basic_ostream<char_t> error;
 
-    /// @brief Gets the standard input stream. A std::basic_istream<Char> that represents the standard input stream.
+    /// @brief Gets the standard input stream. A std::basic_istream<char_t> that represents the standard input stream.
     /// @par Example
     /// The following sample illustrates the use of the in property.
     /// @include console_in_out.cpp
-    static std::basic_istream<Char> in;
+    static std::basic_istream<char_t> in;
     
-    /// @brief Gets the standard output stream. A std::basic_ostream<Char> that represents the standard output stream.
+    /// @brief Gets the standard output stream. A std::basic_ostream<char_t> that represents the standard output stream.
     /// @par Example
     /// The following sample illustrates the use of the out property.
     /// @include console_in_out.cpp
-    static std::basic_ostream<Char> out;
+    static std::basic_ostream<char_t> out;
     
     /// @brief Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
     /// @remarks This event is used in conjunction with xtd::console_cancel_event_handler and xtd::console_cancel_event_args. The cancel_key_press event enables a console application to intercept the Ctrl+C signal so the event handler can decide whether to continue executing or terminate. For more information about handling events, see Handling and Raising Events.
@@ -41,7 +42,7 @@ namespace xtd {
     /// * special_key, which allows you to determine whether the handler was invoked as a result of the user pressing Ctrl+C (the property value is console_special_key::control_c) or Ctrl+Break (the property value is console_special_key.control_break).
     /// * Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is false, which causes program execution to terminate when the event handler exits. Changing its property to true specifies that the application should continue to execute.
     /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to false, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application.
-    static console_cancel_event_handler cancel_key_press;
+    static event<basic_console<char_t>, console_cancel_event_handler> cancel_key_press;
 
     /// @cond
     basic_console() = delete;
@@ -209,15 +210,15 @@ namespace xtd {
     
     /// @brief Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
     /// @param true if error output is redirected; otherwise, false.
-    static bool is_error_redireted() noexcept {return error.rdbuf() != __get_err_rdbuf<Char>();}
+    static bool is_error_redireted() noexcept {return error.rdbuf() != __get_err_rdbuf<char_t>();}
     
     /// @brief  Gets a value that indicates whether the input stream has been redirected from the standard input stream.
     /// @param true if input is redirected; otherwise, false.
-    static bool is_in_redireted() noexcept {return in.rdbuf() != __get_in_rdbuf<Char>();}
+    static bool is_in_redireted() noexcept {return in.rdbuf() != __get_in_rdbuf<char_t>();}
     
     /// @brief  Gets a value that indicates whether the output stream has been redirected from the standard output stream.
     /// @param true if output is redirected; otherwise, false.
-    static bool is_out_redireted() noexcept {return out.rdbuf() != __get_out_rdbuf<Char>();}
+    static bool is_out_redireted() noexcept {return out.rdbuf() != __get_out_rdbuf<char_t>();}
     
     /// @brief Gets a value indicating whether a key press is available in the input stream.
     /// @param true if a key press is available; otherwise, false
@@ -240,17 +241,17 @@ namespace xtd {
     /// @brief Acquires the standard error stream.
     /// @return The standard error stream.
     /// @remarks This method can be used to reacquire the standard error stream after it has been changed by the set_error method.
-    static std::basic_ostream<Char> open_standard_error() noexcept {return std::basic_ostream<Char>(__get_err_rdbuf<Char>());}
+    static std::basic_ostream<char_t> open_standard_error() noexcept {return std::basic_ostream<char_t>(__get_err_rdbuf<char_t>());}
     
     /// @brief Acquires the standard input stream.
     /// @return The standard input stream.
     /// @remarks This method can be used to reacquire the standard input stream after it has been changed by the set_int method.
-    static std::basic_istream<Char> open_standard_input() noexcept {return std::basic_istream<Char>(__get_in_rdbuf<Char>());}
+    static std::basic_istream<char_t> open_standard_input() noexcept {return std::basic_istream<char_t>(__get_in_rdbuf<char_t>());}
     
     /// @brief Acquires the standard output stream.
     /// @return The standard output stream.
     /// @remarks This method can be used to reacquire the standard output stream after it has been changed by the set_output method.
-    static std::basic_ostream<Char> open_standard_output() noexcept {return std::basic_ostream<Char>(__get_out_rdbuf<Char>());}
+    static std::basic_ostream<char_t> open_standard_output() noexcept {return std::basic_ostream<char_t>(__get_out_rdbuf<char_t>());}
     
     /// @brief Gets the code page the console uses to write output.
     /// @return The code page used to write console output.
@@ -261,8 +262,8 @@ namespace xtd {
     /// @return true if the code page changed; otherwise false.
     static bool output_code_page(int code_page) noexcept {return __opaque_console::output_code_page(code_page);}
     
-    static std::basic_string<Char> read_line() noexcept {
-      std::basic_string<Char> result;
+    static std::basic_string<char_t> read_line() noexcept {
+      std::basic_string<char_t> result;
       in >> result;
       return result;
     }
@@ -287,7 +288,7 @@ namespace xtd {
       console_key_info key_info = console_key_info(key_char, static_cast<console_key>(key_code), shift, alt, ctrl);
       
       if (intercept == false)
-        write(Char(key_info.key_char()));
+        write(char_t(key_info.key_char()));
       return key_info;
     }
 
@@ -318,39 +319,43 @@ namespace xtd {
     
     static int window_width() noexcept {return __opaque_console::window_width();}
     
-    template<typename Arg>
-    static void write(Arg&& arg) noexcept {out << strings::format(std::basic_string<Char> {'{', '}'},  arg);}
+    template<typename arg_t>
+    static void write(arg_t&& arg) noexcept {out << strings::format(std::basic_string<char_t> {'{', '}'},  arg);}
     
     /// @cond
-    template<typename Type>
-    static void write(std::initializer_list<Type>&& il) noexcept {out << strings::format(std::basic_string<Char> {'{', '}'}, il);}
+    template<typename type_t>
+    static void write(std::initializer_list<type_t>&& il) noexcept {out << strings::format(std::basic_string<char_t> {'{', '}'}, il);}
     /// @endcond
     
-    template<typename ... Args>
-    static void write(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << strings::format(fmt, std::forward<Args>(args)...);}
+    template<typename ... args_t>
+    static void write(const std::basic_string<char_t>& fmt, args_t&& ... args) noexcept {out << strings::format(fmt, std::forward<args_t>(args)...);}
 
     static void write_line() noexcept {out << std::endl;}
     
-    template<typename Arg>
-    static void write_line(Arg&& arg) noexcept {out << arg << std::endl;}
+    template<typename arg_t>
+    static void write_line(arg_t&& arg) noexcept {out << arg << std::endl;}
 
     /// @cond
-    template<typename Type>
-    static void write_line(const std::initializer_list<Type>& il) noexcept {out << strings::format(std::basic_string<Char> {'{', '}'}, il) << std::endl;}
+    template<typename type_t>
+    static void write_line(const std::initializer_list<type_t>& il) noexcept {out << strings::format(std::basic_string<char_t> {'{', '}'}, il) << std::endl;}
     /// @endcond
 
-    template<typename ... Args>
-    static void write_line(const std::basic_string<Char>& fmt, Args&& ... args) noexcept {out << strings::format(fmt, std::forward<Args>(args)...) << std::endl << std::flush;}
+    template<typename ... args_t>
+    static void write_line(const std::basic_string<char_t>& fmt, args_t&& ... args) noexcept {out << strings::format(fmt, std::forward<args_t>(args)...) << std::endl << std::flush;}
+    
+    /// @cond
+    static void __internal_cancel_key_press__(xtd::console_cancel_event_args& e) {cancel_key_press(e);}
+    /// @endcond
   };
   
   /// @cond
-  template<class Char>
-  std::basic_ostream<Char> basic_console<Char>::error {__get_err_rdbuf<Char>()};
-  template<class Char>
-  std::basic_istream<Char> basic_console<Char>::in {__get_in_rdbuf<Char>()};
-  template<class Char>
-  std::basic_ostream<Char> basic_console<Char>::out {__get_out_rdbuf<Char>()};
-  template<class Char>
-  xtd::console_cancel_event_handler basic_console<Char>::cancel_key_press;
+  template<class char_t>
+  std::basic_ostream<char_t> basic_console<char_t>::error {__get_err_rdbuf<char_t>()};
+  template<class char_t>
+  std::basic_istream<char_t> basic_console<char_t>::in {__get_in_rdbuf<char_t>()};
+  template<class char_t>
+  std::basic_ostream<char_t> basic_console<char_t>::out {__get_out_rdbuf<char_t>()};
+  template<class char_t>
+  event<basic_console<char_t>, xtd::console_cancel_event_handler> basic_console<char_t>::cancel_key_press;
   /// @endcond
 }

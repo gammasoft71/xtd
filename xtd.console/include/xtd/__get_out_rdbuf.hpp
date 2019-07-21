@@ -4,8 +4,8 @@
 #include <iostream>
 
 /// @cond
-template<class Char>
-inline std::basic_streambuf<Char>* __get_out_rdbuf() {return nullptr;};
+template<class char_t>
+inline std::basic_streambuf<char_t>* __get_out_rdbuf() {return nullptr;};
 
 template<>
 inline std::basic_streambuf<char>* __get_out_rdbuf<char>() {
