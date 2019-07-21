@@ -26,8 +26,7 @@ inline buttons operator |(buttons lhs, buttons rhs) {return static_cast<buttons>
 inline buttons operator ^(buttons lhs, buttons rhs) {return static_cast<buttons>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
 
 inline std::ostream& operator<<(std::ostream& os, buttons value) {
-  static std::map<buttons, std::string, std::greater<buttons>> values = {{buttons::none, "none"}, {buttons::one, "one"}, {buttons::two, "two"}, {buttons::three, "three"}, {buttons::four, "four"}};
-  return os << xtd::to_string(value, values);
+  return os << xtd::to_string(value, {{buttons::none, "none"}, {buttons::one, "one"}, {buttons::two, "two"}, {buttons::three, "three"}, {buttons::four, "four"}});
 }
 
 // The main entry point for the application.
