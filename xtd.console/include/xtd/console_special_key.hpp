@@ -22,5 +22,6 @@ namespace xtd {
 
   /// @cond
   inline std::ostream& operator<<(std::ostream& os, console_special_key value) {return os << to_string(value, {{console_special_key::control_break, "control_break"}, {console_special_key::control_c, "control_c"}, {console_special_key::control_backslash, "control_backslash"}, {console_special_key::control_z, "control_z"}});}
+  inline std::wostream& operator<<(std::wostream& os, console_special_key value) {return os << to_string(value, {{console_special_key::control_break, L"control_break"}, {console_special_key::control_c, L"control_c"}, {console_special_key::control_backslash, L"control_backslash"}, {console_special_key::control_z, L"control_z"}});}
   /// @endcond
 }
