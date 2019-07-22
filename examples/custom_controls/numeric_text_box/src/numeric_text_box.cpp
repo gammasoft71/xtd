@@ -21,7 +21,7 @@ namespace examples {
   protected:
     void on_key_press(key_press_event_args& e) override {
       this->text_box::on_key_press(e);
-      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && strings::index_of(this->text(), '.') != -1));
+      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && strings::index_of(this->text(), '.') != string::npos));
     }
     
     void on_text_changed(const event_args& e) override {
