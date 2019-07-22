@@ -18,12 +18,14 @@ set(INCLUDES
   include/xtd/__numeric_formater.hpp
   include/xtd/__string_formater.hpp
   include/xtd/istring.hpp
+  include/xtd/format.hpp
   include/xtd/format_page.hpp
   include/xtd/main_page.hpp
   include/xtd/number_styles.hpp
   include/xtd/parse.hpp
   include/xtd/string_comparison.hpp
   include/xtd/string_split_options.hpp
+  include/xtd/strings.hpp
   include/xtd/to_string.hpp
   include/xtd/xtd.strings
   include/xtd/xtd.strings.hpp
