@@ -14,7 +14,7 @@ public:
     
     this->key_press += [&](const control& sender, key_press_event_args& e) {
       cdebug << format("key_press [key_char='{}']", e.key_char()) << endl;
-      e.handled((!std::isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' && this->text().find('.') != std::string::npos));
+      e.handled((!isdigit(e.key_char()) && e.key_char() != '.') || (e.key_char() == '.' &&  strings::index_of(this->text(), '.') != string::npos));
     };
     
     this->key_up += [&](const control& sender, key_event_args& e) {
