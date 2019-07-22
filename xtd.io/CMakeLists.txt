@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.io VERSION 0.1.0)
 set(INCLUDES
+  include/xtd/cnull.hpp
   include/xtd/file.hpp
   include/xtd/file_attributes.hpp
   include/xtd/path.hpp
