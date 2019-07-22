@@ -146,18 +146,18 @@ namespace xtd {
       
       static void trace_error(const std::string& message) {trace_event(trace_event_type::error, message);}
       
-      template<typename ...objects>
-      static void trace_error(const std::string& message, const objects& ... args) {trace_event(trace_event_type::error, message, args...);}
+      template<typename ...objects_t>
+      static void trace_error(const std::string& message, const objects_t& ... args) {trace_event(trace_event_type::error, message, args...);}
       
       static void trace_information(const std::string& message) {trace_event(trace_event_type::information, message);}
       
-      template<typename ...objects>
-      static void trace_information(const std::string& message, const objects& ... args) {trace_event(trace_event_type::information, message, args...);}
+      template<typename ...objects_t>
+      static void trace_information(const std::string& message, const objects_t& ... args) {trace_event(trace_event_type::information, message, args...);}
 
       static void trace_warning(const std::string& message) {trace_event(trace_event_type::warning, message);}
       
-      template<typename ...objects>
-      static void trace_warning(const std::string& message, const objects& ... args) {trace_event(trace_event_type::warning, message, args...);}
+      template<typename ...objects_t>
+      static void trace_warning(const std::string& message, const objects_t& ... args) {trace_event(trace_event_type::warning, message, args...);}
 
       static void unindent() {if (indent_level() != 0) indent_level(indent_level() - 1);}
 
@@ -177,8 +177,8 @@ namespace xtd {
 #endif
       }
 
-      template<typename object>
-      static void write(const object& message) {
+      template<typename object_t>
+      static void write(const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         for (auto listener : listeners_) {
           if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
@@ -194,8 +194,8 @@ namespace xtd {
 #endif
       }
 
-      template<typename object>
-      static void write(const object& message, const std::string& category) {
+      template<typename object_t>
+      static void write(const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         for (auto listener : listeners_) {
           if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
@@ -253,15 +253,15 @@ namespace xtd {
 #endif
       }
       
-      template<typename object>
-      static void write_if(bool condition, const object& message) {
+      template<typename object_t>
+      static void write_if(bool condition, const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write(message);
 #endif
       }
       
-      template<typename object>
-      static void write_if(bool condition, const object& message, const std::string& category) {
+      template<typename object_t>
+      static void write_if(bool condition, const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write(message, category);
 #endif
@@ -283,8 +283,8 @@ namespace xtd {
 #endif
       }
 
-      template<typename object>
-      static void write_line(const object& message) {
+      template<typename object_t>
+      static void write_line(const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         for (auto listener : listeners_) {
           if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
@@ -300,8 +300,8 @@ namespace xtd {
 #endif
       }
 
-      template<typename object>
-      static void write_line(const object& message, const std::string& category) {
+      template<typename object_t>
+      static void write_line(const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         for (auto listener : listeners_) {
           if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
@@ -359,15 +359,15 @@ namespace xtd {
 #endif
       }
       
-      template<typename object>
-      static void write_line_if(bool condition, const object& message) {
+      template<typename object_t>
+      static void write_line_if(bool condition, const object_t& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write_line(message);
 #endif
       }
       
-      template<typename object>
-      static void write_line_if(bool condition, const object& message, const std::string& category) {
+      template<typename object_t>
+      static void write_line_if(bool condition, const object_t& message, const std::string& category) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         if (condition) write_line(message, category);
 #endif
@@ -391,8 +391,8 @@ namespace xtd {
 #endif
       }
       
-      template<typename ...objects>
-      static void trace_event(trace_event_type trace_event_type, const std::string& message, const objects& ... args) {
+      template<typename ...objects_t>
+      static void trace_event(trace_event_type trace_event_type, const std::string& message, const objects_t& ... args) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         for (auto listener : listeners_) {
           if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
