@@ -13,5 +13,4 @@
 #include "console.hpp"
 #include "console_cancel_event_handler.hpp"
 #include "foreground_color.hpp"
-#include "format.hpp"
 #include "reset_color.hpp"

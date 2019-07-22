@@ -20,7 +20,6 @@ set(INCLUDES
   include/xtd/console_modifiers.hpp
   include/xtd/console_special_key.hpp
   include/xtd/foreground_color.hpp
-  include/xtd/format.hpp
   include/xtd/reset_color.hpp
   include/xtd/xtd.console
   include/xtd/xtd.console.hpp
