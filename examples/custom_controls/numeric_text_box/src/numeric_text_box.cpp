@@ -1,8 +1,8 @@
+#define TRACE
 #include <xtd/xtd.forms>
 
 using namespace std;
 using namespace xtd;
-using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 namespace examples {
@@ -46,7 +46,7 @@ namespace examples {
       this->numeric_text_box1.value(42);
       this->numeric_text_box1.location({10, 10});
       this->numeric_text_box1.value_changed += [&](const control& sender, const event_args& e) {
-        cdebug << strings::format("value_changed [value={}]", this->numeric_text_box1.value()) << endl;
+        ctrace << format("value_changed [value={}]", this->numeric_text_box1.value()) << endl;
       };
     }
     
