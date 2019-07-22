@@ -3,9 +3,11 @@
 #include <string>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::io;
 
 int main(int argc, char* argv[]) {
-  cout << xtd::io::path::get_file_name("c:\\temp\\File.ext") << endl;
-  cout << xtd::io::path::get_file_name("/temp/File.ext") << endl;
+  auto file_path = xtd::io::path::get_temp_file_name<char>();
+  cout << file_path << endl;
+  file::remove(file_path);
 }
