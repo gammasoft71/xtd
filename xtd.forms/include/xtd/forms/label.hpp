@@ -7,7 +7,7 @@ namespace xtd {
   namespace forms {
     class label : public control {
     public:
-      label();
+      label() = default;
 
       drawing::size default_size() const override {return{100, 23};}
 
