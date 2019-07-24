@@ -7,7 +7,7 @@ namespace xtd {
   namespace forms {
     class button : public control {
     public:
-      button();
+      button() = default;
 
       drawing::size default_size() const override {return{75, 25};}
 
