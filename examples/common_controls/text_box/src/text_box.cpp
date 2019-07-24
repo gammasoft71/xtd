@@ -6,7 +6,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      this->text("text_box example");
+      this->text("Text box example");
 
       this->text_box1.parent(*this);
       this->text_box1.text("text_box");

@@ -40,7 +40,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      this->text("numeric_text_box example");
+      this->text("Numeric text box example");
       
       this->numeric_text_box1.parent(*this);
       this->numeric_text_box1.value(42);

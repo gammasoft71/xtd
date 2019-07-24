@@ -13,7 +13,7 @@ public:
   }
 
 protected:
-  void wnd_proc(xtd::forms::message& message) override {
+  void wnd_proc(message& message) override {
     this->form::wnd_proc(message);
     
     switch (message.msg()) {
