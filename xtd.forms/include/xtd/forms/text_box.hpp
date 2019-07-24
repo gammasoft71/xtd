@@ -7,7 +7,7 @@ namespace xtd {
   namespace forms {
     class text_box : public control {
     public:
-      text_box();
+      text_box() = default;
 
       drawing::size default_size() const override {return{100, 23};}
 
