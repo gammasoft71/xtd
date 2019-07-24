@@ -13,4 +13,5 @@
 #include "xtd/forms/label.hpp"
 #include "xtd/forms/message.hpp"
 #include "xtd/forms/text_box.hpp"
+#include "xtd/forms/timer.hpp"
 #include "xtd/forms/window_messages.hpp"
