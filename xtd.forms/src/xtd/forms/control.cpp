@@ -6,271 +6,276 @@
 #include "../../../include/xtd/forms/window_message_keys.hpp"
 #include "../../native/control_api.hpp"
 
+using namespace std;
+using namespace xtd;
+using namespace xtd::drawing;
+using namespace xtd::forms;
+
 namespace {
   bool debug_events = false;
   
-  xtd::forms::mouse_buttons message_to_mouse_buttons(const xtd::forms::message& message) {
+  mouse_buttons message_to_mouse_buttons(const message& message) {
     if (message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_LBUTTONDOWN || message.msg() == WM_LBUTTONUP)
-      return xtd::forms::mouse_buttons::left;
+      return mouse_buttons::left;
     else if (message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_RBUTTONDOWN || message.msg() == WM_RBUTTONUP)
-      return xtd::forms::mouse_buttons::right;
+      return mouse_buttons::right;
     else if (message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_MBUTTONDOWN || message.msg() == WM_MBUTTONUP)
-      return xtd::forms::mouse_buttons::middle;
+      return mouse_buttons::middle;
     else if (message.msg() == WM_XBUTTONDBLCLK || message.msg() == WM_XBUTTONDOWN || message.msg() == WM_XBUTTONUP)
-      return (message.wparam() & MK_XBUTTON2) == MK_XBUTTON2 ? xtd::forms::mouse_buttons::x_button2 : xtd::forms::mouse_buttons::x_button1;
-    return xtd::forms::mouse_buttons::none;
+      return (message.wparam() & MK_XBUTTON2) == MK_XBUTTON2 ? mouse_buttons::x_button2 : mouse_buttons::x_button1;
+    return mouse_buttons::none;
   }
 
-  xtd::forms::mouse_buttons wparam_to_mouse_buttons(const xtd::forms::message& message) {
+  mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)
-      return xtd::forms::mouse_buttons::left;
+      return mouse_buttons::left;
     else if ((message.wparam() & MK_RBUTTON) == MK_RBUTTON)
-      return xtd::forms::mouse_buttons::right;
+      return mouse_buttons::right;
     else if ((message.wparam() & MK_MBUTTON) == MK_MBUTTON)
-      return xtd::forms::mouse_buttons::middle;
-    return xtd::forms::mouse_buttons::none;
+      return mouse_buttons::middle;
+    return mouse_buttons::none;
   }
 }
 
-const xtd::forms::control xtd::forms::control::null;
+const control control::null;
 
-xtd::forms::control::~control() {
+control::~control() {
   if (this->handle_) {
     native::control_api::unregister_wnd_proc(this->handle_);
     native::control_api::del(this->handle_);
     this->handle_ = 0;
-    this->on_handle_destroyed(xtd::event_args::empty);
+    this->on_handle_destroyed(event_args::empty);
     this->destroy_handle();
   }
 }
 
-std::map<intptr_t, xtd::forms::control*> xtd::forms::control::handles_;
+map<intptr_t, control*> control::handles_;
 
-void xtd::forms::control::client_size(const xtd::drawing::size& size) {
+void control::client_size(const drawing::size& size) {
   if (this->client_size_ != size) {
     this->client_size_ = size;
     native::control_api::client_size(this->handle_, this->client_size_);
   }
 }
 
-void xtd::forms::control::enabled(bool enabled) {
+void control::enabled(bool enabled) {
   if (this->enabled_ != enabled) {
     this->enabled_ = enabled;
-    //for (xtd::forms::control* control : this->controls_)
+    //for (control* control : this->controls_)
     //  control->enabled(enabled);
     native::control_api::enabled(this->handle_, this->enabled_);
-    this->on_enabled_changed(xtd::event_args::empty);
+    this->on_enabled_changed(event_args::empty);
   }
 }
 
-intptr_t xtd::forms::control::handle() const {
+intptr_t control::handle() const {
   return native::control_api::handle(this->handle_);
 }
 
-void xtd::forms::control::location(const xtd::drawing::point& location) {
+void control::location(const point& location) {
   if (this->location_ != location) {
     this->location_ = location;
     native::control_api::location(this->handle_, this->location_);
   }
 }
 
-void xtd::forms::control::parent(const xtd::forms::control& parent) {
+void control::parent(const control& parent) {
   if (this->parent_ != &parent) {
-    this->parent_ = const_cast<xtd::forms::control*>(&parent);
-    if (this->parent_ == &xtd::forms::control::null) {
+    this->parent_ = const_cast<control*>(&parent);
+    if (this->parent_ == &control::null) {
       this->destroy_handle();
     } else {
       this->create_control();
       //native::control_api::parent(this->handle_, this->parent_);
-      //for (xtd::forms::control* control : this->controls_)
+      //for (control* control : this->controls_)
       //  control->create_control();
-      this->on_parent_changed(xtd::event_args::empty);
+      this->on_parent_changed(event_args::empty);
     }
   }
 }
 
-void xtd::forms::control::size(const xtd::drawing::size& size) {
+void control::size(const drawing::size& size) {
   if (this->size_ != size) {
     this->size_ = size;
     native::control_api::size(this->handle_, this->size_);
   }
 }
 
-void xtd::forms::control::text(const std::string& text) {
+void control::text(const string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::control_api::text(this->handle_, this->text_);
   }
 }
 
-void xtd::forms::control::visible(bool visible) {
+void control::visible(bool visible) {
   if (this->visible_ != visible) {
     this->visible_ = visible;
-    //for (xtd::forms::control* control : this->controls_)
+    //for (control* control : this->controls_)
     //  control->visible(visible);
     native::control_api::visible(this->handle_, this->visible_);
-    this->on_visible_changed(xtd::event_args::empty);
+    this->on_visible_changed(event_args::empty);
   }
 }
 
-void xtd::forms::control::create_control() {
+void control::create_control() {
   if (!this->handle_) {
     this->create_handle();
     this->on_create_control();
   }
 }
 
-void xtd::forms::control::create_handle() {
+void control::create_handle() {
   if (this->handle_ == 0) this->handle_ = native::control_api::create(this->parent_->handle_, this->default_size());
-  native::control_api::register_wnd_proc(this->handle_, {*this, &xtd::forms::control::wnd_proc});
+  native::control_api::register_wnd_proc(this->handle_, {*this, &control::wnd_proc});
   handles_[native::control_api::handle(this->handle_)] = this;
   this->send_message(native::control_api::handle(this->handle_), WM_CREATE, 0, 0);
-  this->on_handle_created(xtd::event_args::empty);
+  this->on_handle_created(event_args::empty);
   this->set_properties();
   this->get_properties();
 }
 
-void xtd::forms::control::destroy_handle() {
+void control::destroy_handle() {
   handles_.erase(this->handle_);
   native::control_api::destroy(this->handle_);
   this->handle_ = 0;
-  this->on_handle_destroyed(xtd::event_args::empty);
+  this->on_handle_destroyed(event_args::empty);
 }
 
-xtd::forms::control& xtd::forms::control::from_child_handle(intptr_t handle) {
+control& control::from_child_handle(intptr_t handle) {
   try {
     if (handles_.find(handle) != handles_.end())
       return handles_[handle]->parent();
-    return (xtd::forms::control&)xtd::forms::control::null;
+    return (control&)control::null;
   } catch (...) {
-    return (xtd::forms::control&)xtd::forms::control::null;
+    return (control&)control::null;
   }
 }
 
-xtd::forms::control& xtd::forms::control::from_handle(intptr_t handle) {
+control& control::from_handle(intptr_t handle) {
   try {
     if (handles_.find(handle) != handles_.end())
       return *handles_[handle];
-    return (xtd::forms::control&)xtd::forms::control::null;
+    return (control&)control::null;
   } catch (...) {
-    return (xtd::forms::control&)xtd::forms::control::null;
+    return (control&)control::null;
   }
 }
 
-bool xtd::forms::control::is_null() const {
+bool control::is_null() const {
   return this == &control::null;
 }
 
-void xtd::forms::control::on_create_control() {
+void control::on_create_control() {
 }
 
-void xtd::forms::control::on_click(const xtd::event_args &e) {
+void control::on_click(const event_args &e) {
   this->click(*this, e);
 }
 
-void xtd::forms::control::on_client_size_changed(const xtd::event_args &e) {
+void control::on_client_size_changed(const event_args &e) {
   this->client_size_ = native::control_api::client_size(this->handle_);
   this->client_size_changed(*this, e);
 }
 
-void xtd::forms::control::on_double_click(const xtd::event_args &e) {
+void control::on_double_click(const event_args &e) {
   this->double_click(*this, e);
 }
 
-void xtd::forms::control::on_enabled_changed(const xtd::event_args &e) {
+void control::on_enabled_changed(const event_args &e) {
   this->enabled_ = native::control_api::enabled(this->handle_);
   this->enabled_changed(*this, e);
 }
 
-void xtd::forms::control::on_got_focus(const xtd::event_args &e) {
+void control::on_got_focus(const event_args &e) {
   this->got_focus(*this, e);
 }
 
-void xtd::forms::control::on_handle_created(const xtd::event_args &e) {
+void control::on_handle_created(const event_args &e) {
   this->handle_created(*this, e);
 }
 
-void xtd::forms::control::on_handle_destroyed(const xtd::event_args &e) {
+void control::on_handle_destroyed(const event_args &e) {
   this->handle_destroyed(*this, e);
 }
 
-void xtd::forms::control::on_key_down(xtd::forms::key_event_args& e) {
+void control::on_key_down(key_event_args& e) {
   this->key_down(*this, e);
 }
 
-void xtd::forms::control::on_key_press(xtd::forms::key_press_event_args& e) {
+void control::on_key_press(key_press_event_args& e) {
   this->key_press(*this, e);
 }
 
-void xtd::forms::control::on_key_up(xtd::forms::key_event_args& e) {
+void control::on_key_up(key_event_args& e) {
   this->key_up(*this, e);
 }
 
-void xtd::forms::control::on_location_changed(const xtd::event_args &e) {
+void control::on_location_changed(const event_args &e) {
   this->location_ = native::control_api::location(this->handle_);
   this->location_changed(*this, e);
 }
 
-void xtd::forms::control::on_lost_focus(const xtd::event_args &e) {
+void control::on_lost_focus(const event_args &e) {
   this->lost_focus(*this, e);
 }
 
-void xtd::forms::control::on_mouse_click(const xtd::forms::mouse_event_args& e) {
+void control::on_mouse_click(const mouse_event_args& e) {
   this->mouse_click(*this, e);
 }
 
-void xtd::forms::control::on_mouse_double_click(const xtd::forms::mouse_event_args& e) {
+void control::on_mouse_double_click(const mouse_event_args& e) {
   this->mouse_double_click(*this, e);
 }
 
-void xtd::forms::control::on_mouse_down(const xtd::forms::mouse_event_args& e) {
+void control::on_mouse_down(const mouse_event_args& e) {
   this->mouse_down(*this, e);
 }
 
-void xtd::forms::control::on_mouse_horizontal_wheel(const xtd::forms::mouse_event_args& e) {
+void control::on_mouse_horizontal_wheel(const mouse_event_args& e) {
   this->mouse_horizontal_wheel(*this, e);
 }
 
-void xtd::forms::control::on_mouse_enter(const xtd::event_args &e) {
+void control::on_mouse_enter(const event_args &e) {
   this->mouse_enter(*this, e);
 }
 
-void xtd::forms::control::on_mouse_leave(const xtd::event_args &e) {
+void control::on_mouse_leave(const event_args &e) {
   this->mouse_leave(*this, e);
 }
 
-void xtd::forms::control::on_mouse_move(const xtd::forms::mouse_event_args& e) {
+void control::on_mouse_move(const mouse_event_args& e) {
   this->mouse_move(*this, e);
 }
 
-void xtd::forms::control::on_mouse_up(const xtd::forms::mouse_event_args& e) {
+void control::on_mouse_up(const mouse_event_args& e) {
   this->mouse_up(*this, e);
 }
 
-void xtd::forms::control::on_mouse_wheel(const xtd::forms::mouse_event_args& e) {
+void control::on_mouse_wheel(const mouse_event_args& e) {
   this->mouse_wheel(*this, e);
 }
 
-void xtd::forms::control::on_parent_changed(const xtd::event_args &e) {
+void control::on_parent_changed(const event_args &e) {
   this->parent_changed(*this, e);
 }
 
-void xtd::forms::control::on_size_changed(const xtd::event_args &e) {
+void control::on_size_changed(const event_args &e) {
   this->size_ = native::control_api::size(this->handle_);
   this->size_changed(*this, e);
 }
 
-void xtd::forms::control::on_text_changed(const xtd::event_args &e) {
+void control::on_text_changed(const event_args &e) {
   this->text_changed(*this, e);
 }
 
-void xtd::forms::control::on_visible_changed(const xtd::event_args &e) {
+void control::on_visible_changed(const event_args &e) {
   this->visible_ = native::control_api::visible(this->handle_);
   this->visible_changed(*this, e);
 }
 
-void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
-  xtd::diagnostics::debug::write_line_if(debug_events, xtd::strings::format("({}) receive message [{}]", this->name_, message));
+void control::wnd_proc(message& message) {
+  diagnostics::debug::write_line_if(debug_events, strings::format("({}) receive message [{}]", this->name_, message));
   switch (message.msg()) {
     // keyboard:
     case WM_CHAR:
@@ -309,15 +314,15 @@ void xtd::forms::control::wnd_proc(xtd::forms::message& message) {
   }
 }
 
-intptr_t xtd::forms::control::send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
+intptr_t control::send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
   return native::control_api::send_message(this->handle_, hwnd, msg, wparam, lparam);
 }
 
-void xtd::forms::control::def_wnd_proc(xtd::forms::message& message) {
+void control::def_wnd_proc(message& message) {
   native::control_api::def_wnd_proc(this->handle_, message);
 }
 
-void xtd::forms::control::get_properties() {
+void control::get_properties() {
   this->client_size_ = native::control_api::client_size(this->handle_);
   this->location_ = native::control_api::location(this->handle_);
   this->size_ = native::control_api::size(this->handle_);
@@ -325,24 +330,24 @@ void xtd::forms::control::get_properties() {
   this->visible_ = native::control_api::visible(this->handle_);
 }
 
-void xtd::forms::control::set_properties() {
-  if (this->client_size_ != xtd::drawing::size(-1, -1)) native::control_api::client_size(this->handle_, this->client_size_);
-  if (this->location_ != xtd::drawing::point(-1, -1)) native::control_api::location(this->handle_, this->location_);
-  if (this->size_ != xtd::drawing::size(-1, -1)) native::control_api::size(this->handle_, this->size_);
+void control::set_properties() {
+  if (this->client_size_ != drawing::size(-1, -1)) native::control_api::client_size(this->handle_, this->client_size_);
+  if (this->location_ != point(-1, -1)) native::control_api::location(this->handle_, this->location_);
+  if (this->size_ != drawing::size(-1, -1)) native::control_api::size(this->handle_, this->size_);
   native::control_api::text(this->handle_, this->text_);
   native::control_api::visible(this->handle_, this->visible_);
 }
 
-void xtd::forms::control::wm_child_activate(xtd::forms::message& message) {
+void control::wm_child_activate(message& message) {
   this->def_wnd_proc(message);
 }
 
-void xtd::forms::control::wm_command(xtd::forms::message& message) {
+void control::wm_command(message& message) {
   this->def_wnd_proc(message);
-  //this->on_click(xtd::event_args::empty);
+  //this->on_click(event_args::empty);
 }
 
-void xtd::forms::control::wm_key_char(xtd::forms::message& message) {
+void control::wm_key_char(message& message) {
   if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     on_key_down(key_event_args);
@@ -359,81 +364,81 @@ void xtd::forms::control::wm_key_char(xtd::forms::message& message) {
     this->def_wnd_proc(message);
 }
 
-void xtd::forms::control::wm_kill_focus(xtd::forms::message& message) {
+void control::wm_kill_focus(message& message) {
   this->def_wnd_proc(message);
-  this->on_got_focus(xtd::event_args::empty);
+  this->on_got_focus(event_args::empty);
 }
 
-void xtd::forms::control::wm_mouse_down(xtd::forms::message& message) {
-  this->set_state(xtd::forms::control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+void control::wm_mouse_down(message& message) {
+  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   this->def_wnd_proc(message);
-  this->on_mouse_down(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, 0));
+  this->on_mouse_down(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
 }
 
-void xtd::forms::control::wm_mouse_double_click(xtd::forms::message& message) {
-  this->set_state(xtd::forms::control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+void control::wm_mouse_double_click(message& message) {
+  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   this->def_wnd_proc(message);
-  this->on_double_click(xtd::event_args::empty);
-  this->on_mouse_double_click(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, 0));
+  this->on_double_click(event_args::empty);
+  this->on_mouse_double_click(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
 }
 
-void xtd::forms::control::wm_mouse_enter(xtd::forms::message& message) {
+void control::wm_mouse_enter(message& message) {
   this->def_wnd_proc(message);
-  this->on_mouse_enter(xtd::event_args::empty);
+  this->on_mouse_enter(event_args::empty);
 }
 
-void xtd::forms::control::wm_mouse_leave(xtd::forms::message& message) {
+void control::wm_mouse_leave(message& message) {
   this->def_wnd_proc(message);
-  this->on_mouse_leave(xtd::event_args::empty);
+  this->on_mouse_leave(event_args::empty);
 }
 
-void xtd::forms::control::wm_mouse_up(xtd::forms::message& message) {
+void control::wm_mouse_up(message& message) {
   /*
-  if (this->get_state(xtd::forms::control::state::double_click_fired)) {
-    this->on_double_click(xtd::event_args::empty);
-    this->on_mouse_double_click(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 2, 0));
+  if (this->get_state(control::state::double_click_fired)) {
+    this->on_double_click(event_args::empty);
+    this->on_mouse_double_click(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 2, 0));
   } else {
-    this->on_click(xtd::event_args::empty);
-    this->on_mouse_click(xtd::forms::mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
+    this->on_click(event_args::empty);
+    this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
   }
    */
-  this->on_click(xtd::event_args::empty);
-  this->on_mouse_click(xtd::forms::mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
+  this->on_click(event_args::empty);
+  this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
   this->def_wnd_proc(message);
-  this->on_mouse_up(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
+  this->on_mouse_up(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
 }
 
-void xtd::forms::control::wm_mouse_move(xtd::forms::message& message) {
+void control::wm_mouse_move(message& message) {
   this->def_wnd_proc(message);
-  this->on_mouse_move(xtd::forms::mouse_event_args(wparam_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, 0));
+  this->on_mouse_move(mouse_event_args(wparam_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
 }
 
-void xtd::forms::control::wm_move(xtd::forms::message& message) {
+void control::wm_move(message& message) {
   this->def_wnd_proc(message);
-  this->on_location_changed(xtd::event_args::empty);
+  this->on_location_changed(event_args::empty);
 }
 
-void xtd::forms::control::wm_set_focus(xtd::forms::message& message) {
+void control::wm_set_focus(message& message) {
   this->def_wnd_proc(message);
-  this->on_got_focus(xtd::event_args::empty);
+  this->on_got_focus(event_args::empty);
 }
 
-void xtd::forms::control::wm_mouse_wheel(xtd::forms::message& message) {
+void control::wm_mouse_wheel(message& message) {
   this->def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
-    this->on_mouse_horizontal_wheel(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+    this->on_mouse_horizontal_wheel(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
   else
-    this->on_mouse_wheel(xtd::forms::mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(xtd::forms::control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+    this->on_mouse_wheel(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
 }
 
-void xtd::forms::control::wm_set_text(xtd::forms::message& message) {
+void control::wm_set_text(message& message) {
   this->def_wnd_proc(message);
   this->text_ = reinterpret_cast<const char*>(message.lparam());
-  this->on_text_changed(xtd::event_args::empty);
+  this->on_text_changed(event_args::empty);
 }
 
-void xtd::forms::control::wm_size(xtd::forms::message& message) {
+void control::wm_size(message& message) {
   this->def_wnd_proc(message);
-  this->on_client_size_changed(xtd::event_args::empty);
-  this->on_size_changed(xtd::event_args::empty);
+  this->on_client_size_changed(event_args::empty);
+  this->on_size_changed(event_args::empty);
 }

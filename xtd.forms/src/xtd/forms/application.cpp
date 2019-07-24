@@ -7,7 +7,7 @@
 
 using namespace std;
 using namespace xtd;
-using namespace forms;
+using namespace xtd::forms;
 
 bool application::allow_quit() {
   return native::application_api::allow_quit();
