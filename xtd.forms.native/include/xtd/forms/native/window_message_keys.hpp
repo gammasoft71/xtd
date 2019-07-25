@@ -12,6 +12,8 @@ constexpr int MK_XBUTTON2 = 0x0040;
 
 constexpr int VK_NONE = 0x000000;
 constexpr int VK_LINE_FEED = 0x00000A;
+constexpr int VK_PAGEUP = 0x000021;
+constexpr int VK_PAGEDOWN = 0x000022;
 
 constexpr int VK_0 = 0x000030;
 constexpr int VK_1 = 0x000031;
