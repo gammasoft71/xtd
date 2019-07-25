@@ -1,0 +1,107 @@
+#include <xtd/forms/native/application.hpp>
+#include <xtd/forms/native/window_messages.hpp>
+#include "control_handler.hpp"
+#include <wx/app.h>
+#include <wx/window.h>
+
+using namespace std;
+using namespace xtd;
+using namespace xtd::forms::native;
+
+namespace {
+  class wx_application : public wxApp {
+  public:
+    wx_application() = default;
+
+    bool ProcessEvent(wxEvent &event) override {
+      if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
+        wxActivateEvent& acitvate_event = static_cast<wxActivateEvent&>(event);
+        send_message(0, WM_ACTIVATEAPP, acitvate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
+      } else if (event.GetEventType() == wxEVT_IDLE)
+        send_message(0, WM_ENTERIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
+      return this->wxApp::ProcessEvent(event);
+    }
+
+    void register_wnd_proc(delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)> wnd_proc) {
+      this->wnd_proc_ = wnd_proc;
+    }
+    
+    intptr_t send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+      if (this->wnd_proc_ == nullptr) return -1;
+      return this->wnd_proc_(hwnd, msg, wparam, lparam, handle);
+    }
+
+  private:
+    delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)> wnd_proc_;
+  };
+
+  unique_ptr< wxInitializer> wxinitializer;
+}
+
+bool application::allow_quit() {
+  initialize_application(); // Must be first
+  return true;
+}
+
+void application::do_events() {
+  initialize_application(); // Must be first
+  wxYield();
+}
+
+void application::do_idle() {
+  wxWakeUpIdle();
+}
+
+void application::enable_visual_style() {
+  initialize_application(); // Must be first
+  wxTheApp->SetUseBestVisual(true);
+}
+
+void application::exit() {
+  initialize_application(); // Must be first
+  wxExit();
+}
+
+void application::initialize_application() {
+  if (wxTheApp) return;
+  wxApp::SetInstance(new wx_application());
+  wxinitializer = make_unique<wxInitializer>();
+  wxTheApp->CallOnInit();
+}
+
+intptr_t application::main_form() {
+  initialize_application(); // Must be first
+  return (intptr_t)wxTheApp->GetTopWindow();
+}
+
+void application::main_form(intptr_t form) {
+  initialize_application(); // Must be first
+  if (form == 0) return;
+  wxTheApp->SetTopWindow(reinterpret_cast<control_handler*>(form)->control());
+}
+
+vector<intptr_t> application::open_forms() {
+  vector<intptr_t> forms;
+  for (wxWindow* window : wxTopLevelWindows)
+    forms.push_back(reinterpret_cast<intptr_t>(window->GetHandle()));
+  return forms;
+}
+
+void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+  initialize_application(); // Must be first
+  static_cast<wx_application*>(wxTheApp)->register_wnd_proc(wnd_proc);
+}
+
+void application::run() {
+  initialize_application(); // Must be first
+  if (wxTheApp->GetTopWindow()) wxTheApp->GetTopWindow()->Show();
+  static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
+  struct call_on_exit {
+    ~call_on_exit() {
+      wxTheApp->OnExit();
+      wxinitializer = nullptr;
+    }
+  } call_on_exit;
+  wxTheApp->OnRun();
+  static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
+}

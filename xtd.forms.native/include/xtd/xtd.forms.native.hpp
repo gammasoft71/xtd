@@ -1,0 +1,15 @@
+#pragma once
+#include <xtd/xtd.delegates>
+#include <xtd/xtd.diagnostics>
+#include <xtd/xtd.drawing>
+#include <xtd/xtd.environment>
+#include <xtd/xtd.environment>
+#include <xtd/xtd.io>
+#include <xtd/xtd.strings>
+#include "forms/native/application.hpp"
+#include "forms/native/button.hpp"
+#include "forms/native/control.hpp"
+#include "forms/native/form.hpp"
+#include "forms/native/label.hpp"
+#include "forms/native/text_box.hpp"
+#include "forms/native/timer.hpp"

@@ -88,7 +88,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.io xtd.strings ${wxWidgets_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.form.native xtd.io xtd.strings ${wxWidgets_LIBRARIES})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
@@ -101,6 +101,7 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "find_package(xtd.diagnostics REQUIRED)\n"
   "find_package(xtd.drawing REQUIRED)\n"
   "find_package(xtd.environment REQUIRED)\n"
+  "find_package(xtd.forms.native REQUIRED)\n"
   "find_package(xtd.io REQUIRED)\n"
   "find_package(xtd.strings REQUIRED)\n"
   "find_package(wxWidgets REQUIRED)\n"

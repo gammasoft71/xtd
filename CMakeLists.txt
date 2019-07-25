@@ -14,6 +14,8 @@ if (ENABLE_COVERAGE AND UNIX)
 endif()
 
 # Projects
+add_subdirectory(xtd.forms.native)
+add_subdirectory(xtd.forms.native.wxwidgets)
 add_subdirectory(xtd.forms)
 add_subdirectory(xtd.drawing/xtd.drawing)
 add_subdirectory(xtd.delegates/xtd.delegates)
