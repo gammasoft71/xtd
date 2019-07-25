@@ -3,6 +3,7 @@
 #include <wx/timer.h>
 
 using namespace xtd;
+using namespace xtd::forms::native;
 
 namespace {
   class wx_timer : public wxTimer {
@@ -18,13 +19,13 @@ namespace {
   };
 }
 
-intptr_t xtd::forms::native::timer::create(int interval, const delegate<void(const event_args&)>& tick) {
+intptr_t timer::create(int interval, const delegate<void(const event_args&)>& tick) {
   wx_timer* timer = new class wx_timer(tick);
   timer->Start(interval);
   return reinterpret_cast<intptr_t>(timer);
 }
 
-void xtd::forms::native::timer::destroy(intptr_t handle) {
+void timer::destroy(intptr_t handle) {
   if (handle == 0) return;
   wx_timer* timer = reinterpret_cast<class wx_timer*>(handle);
   timer->Stop();

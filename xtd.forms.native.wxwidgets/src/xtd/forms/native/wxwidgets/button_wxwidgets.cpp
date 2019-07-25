@@ -2,6 +2,7 @@
 #include "control_handler.hpp"
 #include <wx/button.h>
 
+using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 namespace {
@@ -13,6 +14,6 @@ namespace {
   };
 }
 
-intptr_t button::create(intptr_t parent, const xtd::drawing::size& size) {
+intptr_t button::create(intptr_t parent, const size& size) {
   return (intptr_t) new wx_button(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
 }

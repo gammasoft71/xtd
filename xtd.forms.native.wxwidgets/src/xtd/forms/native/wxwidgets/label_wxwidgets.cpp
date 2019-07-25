@@ -3,6 +3,9 @@
 #include "control_handler.hpp"
 #include <wx/stattext.h>
 
+using namespace xtd::drawing;
+using namespace xtd::forms::native;
+
 namespace {
   class wx_label : public control_handler {
   public:
@@ -12,7 +15,7 @@ namespace {
   };
 }
 
-intptr_t xtd::forms::native::label::create(intptr_t parent, const xtd::drawing::size& size) {
+intptr_t label::create(intptr_t parent, const size& size) {
   if (parent == 0) throw std::invalid_argument("parent can't be null");
-  return (intptr_t) new wx_label(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(size.width(), size.height()));
+  return (intptr_t) new wx_label(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
 }

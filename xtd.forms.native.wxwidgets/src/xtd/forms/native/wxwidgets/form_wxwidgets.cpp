@@ -6,6 +6,9 @@
 #include <wx/panel.h>
 #include <wx/settings.h>
 
+using namespace xtd::drawing;
+using namespace xtd::forms::native;
+
 namespace {
   class wx_form : public control_handler {
   public:
@@ -21,8 +24,8 @@ namespace {
   };
 }
 
-intptr_t xtd::forms::native::form::create(const xtd::drawing::size& size) {
-  xtd::forms::native::application::initialize_application(); // Must be first
-  return (intptr_t) new wx_form(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(size.width(), size.height()));
+intptr_t form::create(const size& size) {
+  application::initialize_application(); // Must be first
+  return (intptr_t) new wx_form(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
 }
 

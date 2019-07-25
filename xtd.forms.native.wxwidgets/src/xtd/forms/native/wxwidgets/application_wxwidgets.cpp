@@ -22,17 +22,11 @@ namespace {
       return this->wxApp::ProcessEvent(event);
     }
 
-    void register_wnd_proc(delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)> wnd_proc) {
-      this->wnd_proc_ = wnd_proc;
-    }
-    
     intptr_t send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-      if (this->wnd_proc_ == nullptr) return -1;
-      return this->wnd_proc_(hwnd, msg, wparam, lparam, handle);
+      return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
     }
 
-  private:
-    delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)> wnd_proc_;
+    event<wx_application, delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>> wnd_proc;
   };
 
   unique_ptr< wxInitializer> wxinitializer;
@@ -89,7 +83,7 @@ vector<intptr_t> application::open_forms() {
 
 void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   initialize_application(); // Must be first
-  static_cast<wx_application*>(wxTheApp)->register_wnd_proc(wnd_proc);
+  static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
 }
 
 void application::run() {

@@ -7,7 +7,7 @@ namespace xtd {
     namespace native {
       class label {
       public:
-        static intptr_t create(intptr_t parent, const xtd::drawing::size& size);
+        static intptr_t create(intptr_t parent, const drawing::size& size);
       };
     }
   }
