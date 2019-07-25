@@ -9,14 +9,14 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
+  src/xtd/forms/native/wxwidgets/application.cpp
+  src/xtd/forms/native/wxwidgets/button.cpp
+  src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/control_handler.hpp
-  src/xtd/forms/native/wxwidgets/application_wxwidgets.cpp
-  src/xtd/forms/native/wxwidgets/button_wxwidgets.cpp
-  src/xtd/forms/native/wxwidgets/control_wxwidgets.cpp
-  src/xtd/forms/native/wxwidgets/form_wxwidgets.cpp
-  src/xtd/forms/native/wxwidgets/label_wxwidgets.cpp
-  src/xtd/forms/native/wxwidgets/text_box_wxwidgets.cpp
-  src/xtd/forms/native/wxwidgets/timer_wxwidgets.cpp
+  src/xtd/forms/native/wxwidgets/form.cpp
+  src/xtd/forms/native/wxwidgets/label.cpp
+  src/xtd/forms/native/wxwidgets/text_box.cpp
+  src/xtd/forms/native/wxwidgets/timer.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
