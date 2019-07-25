@@ -76,6 +76,8 @@ namespace xtd {
       static event<application, delegate<void(const event_args&)>> idle;
       
     private:
+      //static void wnd_proc(message& message);
+      static int wnd_proc_(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       static void wnd_proc(message& message);
       static void wm_activate_app(message& message);
       static void wm_enter_idle(message& message);

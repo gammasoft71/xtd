@@ -5,7 +5,7 @@
 #include <thread>
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
-#include <xtd/forms/native/window_messages.hpp>
+#include <xtd/forms/window_messages.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
 #include <wx/frame.h>
 #include <wx/textctrl.h>

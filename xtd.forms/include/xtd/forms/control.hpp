@@ -254,6 +254,7 @@ namespace xtd {
     private:
       bool get_state(control::state flag) const {return ((int)this->state_ & (int)flag) == (int)flag;}
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int)this->state_ | (int)flag) : (control::state)((int)this->state_ & ~(int)flag); }
+      intptr_t wnd_proc_(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle);      
       void wm_child_activate(message& message);
       void wm_command(message& message);
       void wm_key_char(message& message);

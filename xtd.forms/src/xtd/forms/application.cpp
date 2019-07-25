@@ -1,16 +1,16 @@
 #include <chrono>
 #include <xtd/xtd.io.hpp>
 #include <xtd/environment.hpp>
+#include <xtd/forms/native/application.hpp>
+#include <xtd/forms/window_messages.hpp>
 #include "../../../include/xtd/forms/application.hpp"
-#include "../../../include/xtd/forms/window_messages.hpp"
-#include "../../native/application_api.hpp"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
 bool application::allow_quit() {
-  return native::application_api::allow_quit();
+  return native::application::allow_quit();
 }
 
 string application::common_app_data_path() {
@@ -39,7 +39,7 @@ string application::executable_path() {
 vector<reference_wrapper<form>> application::open_forms() {
   vector<reference_wrapper<form>> forms;
   
-  for (intptr_t handle : native::application_api::open_forms()) {
+  for (intptr_t handle : native::application::open_forms()) {
     control& control = control::from_handle(handle);
     forms.push_back(static_cast<form&>(control));
   }
@@ -53,29 +53,34 @@ string application::product_name() {
 }
 
 void application::do_events() {
-  native::application_api::do_events();
+  native::application::do_events();
 }
 
 void application::enable_visual_styles() {
-  native::application_api::enable_visual_style();
+  native::application::enable_visual_style();
 }
 
 void application::exit() {
-  native::application_api::exit();
+  native::application::exit();
 }
 
 void application::run() {
-  native::application_api::run();
+  native::application::run();
 }
 
 void application::run(const form& form) {
-  native::application_api::main_form(form.__get_handle__());
-  native::application_api::register_wnd_proc(application::wnd_proc);
+  native::application::main_form(form.__get_handle__());
+  native::application::register_wnd_proc(application::wnd_proc_);
   run();
-  native::application_api::unregister_wnd_proc();
 }
 
 event<application, delegate<void(const event_args&)>> application::idle;
+
+int application::wnd_proc_(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  wnd_proc(message);
+  return message.result();
+}
 
 void application::wnd_proc(message& message) {
   switch (message.msg()) {
@@ -96,5 +101,5 @@ void application::wm_enter_idle(message& message) {
     last_idle_time = chrono::high_resolution_clock::now();
     application::idle(event_args::empty);
   }
-  if (!application::idle.is_empty()) native::application_api::do_idle();
+  if (!application::idle.is_empty()) native::application::do_idle();
 }

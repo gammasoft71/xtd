@@ -26,8 +26,6 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/mouse_event_handler.hpp
   include/xtd/forms/text_box.hpp
   include/xtd/forms/timer.hpp
-  include/xtd/forms/window_messages.hpp
-  include/xtd/forms/window_message_keys.hpp
 )
 
 set(XTD_FORMS_SOURCES
@@ -35,33 +33,10 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/button.cpp
   src/xtd/forms/control.cpp
   src/xtd/forms/form.cpp
-  src/xtd/forms/forms.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
-  src/xtd/forms/window_messages.cpp
-)
-
-set(NATIVE_SOURCES
-  src/native/application_api.hpp
-  src/native/button_api.hpp
-  src/native/control_api.hpp
-  src/native/form_api.hpp
-  src/native/label_api.hpp
-  src/native/text_box_api.hpp
-  src/native/timer_api.hpp
-)
-
-set(NATIVE_WXWIDGETS_SOURCES
-  src/native/wxwidgets/control_handler.hpp
-  src/native/wxwidgets/application_wxwidgets.cpp
-  src/native/wxwidgets/button_wxwidgets.cpp
-  src/native/wxwidgets/control_wxwidgets.cpp
-  src/native/wxwidgets/form_wxwidgets.cpp
-  src/native/wxwidgets/label_wxwidgets.cpp
-  src/native/wxwidgets/text_box_wxwidgets.cpp
-  src/native/wxwidgets/timer_wxwidgets.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
@@ -82,13 +57,13 @@ find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_SOURCES} ${NATIVE_SOURCES} ${NATIVE_WXWIDGETS_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.form.native xtd.io xtd.strings ${wxWidgets_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.forms.native.wxwidgets xtd.io xtd.strings ${wxWidgets_LIBRARIES})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
@@ -101,7 +76,7 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "find_package(xtd.diagnostics REQUIRED)\n"
   "find_package(xtd.drawing REQUIRED)\n"
   "find_package(xtd.environment REQUIRED)\n"
-  "find_package(xtd.forms.native REQUIRED)\n"
+  "find_package(xtd.forms.native.wxwidgets REQUIRED)\n"
   "find_package(xtd.io REQUIRED)\n"
   "find_package(xtd.strings REQUIRED)\n"
   "find_package(wxWidgets REQUIRED)\n"

@@ -7,7 +7,7 @@
 #include <xtd/point.hpp>
 #include <xtd/size.hpp>
 #include <xtd/xtd.strings.hpp>
-#include "window_messages.hpp"
+#include "../window_messages.hpp"
 
 namespace xtd {
   namespace forms {

@@ -1,5 +1,5 @@
 #include <xtd/forms/native/application.hpp>
-#include <xtd/forms/native/window_messages.hpp>
+#include <xtd/forms/window_messages.hpp>
 #include "control_handler.hpp"
 #include <wx/app.h>
 #include <wx/window.h>

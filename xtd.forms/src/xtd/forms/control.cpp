@@ -1,10 +1,9 @@
 #include <iostream>
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.strings>
+#include <xtd/forms/native/control.hpp>
+#include <xtd/forms/native/window_message_keys.hpp>
 #include "../../../include/xtd/forms/control.hpp"
-#include "../../../include/xtd/forms/window_messages.hpp"
-#include "../../../include/xtd/forms/window_message_keys.hpp"
-#include "../../native/control_api.hpp"
 
 using namespace std;
 using namespace xtd;
@@ -41,8 +40,7 @@ const control control::null;
 
 control::~control() {
   if (this->handle_) {
-    native::control_api::unregister_wnd_proc(this->handle_);
-    native::control_api::del(this->handle_);
+    native::control::del(this->handle_);
     this->handle_ = 0;
     this->on_handle_destroyed(event_args::empty);
     this->destroy_handle();
@@ -54,7 +52,7 @@ map<intptr_t, control*> control::handles_;
 void control::client_size(const drawing::size& size) {
   if (this->client_size_ != size) {
     this->client_size_ = size;
-    native::control_api::client_size(this->handle_, this->client_size_);
+    native::control::client_size(this->handle_, this->client_size_);
   }
 }
 
@@ -63,19 +61,19 @@ void control::enabled(bool enabled) {
     this->enabled_ = enabled;
     //for (control* control : this->controls_)
     //  control->enabled(enabled);
-    native::control_api::enabled(this->handle_, this->enabled_);
+    native::control::enabled(this->handle_, this->enabled_);
     this->on_enabled_changed(event_args::empty);
   }
 }
 
 intptr_t control::handle() const {
-  return native::control_api::handle(this->handle_);
+  return native::control::handle(this->handle_);
 }
 
 void control::location(const point& location) {
   if (this->location_ != location) {
     this->location_ = location;
-    native::control_api::location(this->handle_, this->location_);
+    native::control::location(this->handle_, this->location_);
   }
 }
 
@@ -86,7 +84,7 @@ void control::parent(const control& parent) {
       this->destroy_handle();
     } else {
       this->create_control();
-      //native::control_api::parent(this->handle_, this->parent_);
+      //native::control::parent(this->handle_, this->parent_);
       //for (control* control : this->controls_)
       //  control->create_control();
       this->on_parent_changed(event_args::empty);
@@ -97,14 +95,14 @@ void control::parent(const control& parent) {
 void control::size(const drawing::size& size) {
   if (this->size_ != size) {
     this->size_ = size;
-    native::control_api::size(this->handle_, this->size_);
+    native::control::size(this->handle_, this->size_);
   }
 }
 
 void control::text(const string& text) {
   if (this->text_ != text) {
     this->text_ = text;
-    native::control_api::text(this->handle_, this->text_);
+    native::control::text(this->handle_, this->text_);
   }
 }
 
@@ -113,7 +111,7 @@ void control::visible(bool visible) {
     this->visible_ = visible;
     //for (control* control : this->controls_)
     //  control->visible(visible);
-    native::control_api::visible(this->handle_, this->visible_);
+    native::control::visible(this->handle_, this->visible_);
     this->on_visible_changed(event_args::empty);
   }
 }
@@ -126,10 +124,10 @@ void control::create_control() {
 }
 
 void control::create_handle() {
-  if (this->handle_ == 0) this->handle_ = native::control_api::create(this->parent_->handle_, this->default_size());
-  native::control_api::register_wnd_proc(this->handle_, {*this, &control::wnd_proc});
-  handles_[native::control_api::handle(this->handle_)] = this;
-  this->send_message(native::control_api::handle(this->handle_), WM_CREATE, 0, 0);
+  if (this->handle_ == 0) this->handle_ = native::control::create(this->parent_->handle_, this->default_size());
+  native::control::register_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
+  handles_[native::control::handle(this->handle_)] = this;
+  this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
   this->on_handle_created(event_args::empty);
   this->set_properties();
   this->get_properties();
@@ -137,7 +135,7 @@ void control::create_handle() {
 
 void control::destroy_handle() {
   handles_.erase(this->handle_);
-  native::control_api::destroy(this->handle_);
+  native::control::destroy(this->handle_);
   this->handle_ = 0;
   this->on_handle_destroyed(event_args::empty);
 }
@@ -174,7 +172,7 @@ void control::on_click(const event_args &e) {
 }
 
 void control::on_client_size_changed(const event_args &e) {
-  this->client_size_ = native::control_api::client_size(this->handle_);
+  this->client_size_ = native::control::client_size(this->handle_);
   this->client_size_changed(*this, e);
 }
 
@@ -183,7 +181,7 @@ void control::on_double_click(const event_args &e) {
 }
 
 void control::on_enabled_changed(const event_args &e) {
-  this->enabled_ = native::control_api::enabled(this->handle_);
+  this->enabled_ = native::control::enabled(this->handle_);
   this->enabled_changed(*this, e);
 }
 
@@ -212,7 +210,7 @@ void control::on_key_up(key_event_args& e) {
 }
 
 void control::on_location_changed(const event_args &e) {
-  this->location_ = native::control_api::location(this->handle_);
+  this->location_ = native::control::location(this->handle_);
   this->location_changed(*this, e);
 }
 
@@ -261,7 +259,7 @@ void control::on_parent_changed(const event_args &e) {
 }
 
 void control::on_size_changed(const event_args &e) {
-  this->size_ = native::control_api::size(this->handle_);
+  this->size_ = native::control::size(this->handle_);
   this->size_changed(*this, e);
 }
 
@@ -270,8 +268,14 @@ void control::on_text_changed(const event_args &e) {
 }
 
 void control::on_visible_changed(const event_args &e) {
-  this->visible_ = native::control_api::visible(this->handle_);
+  this->visible_ = native::control::visible(this->handle_);
   this->visible_changed(*this, e);
+}
+
+intptr_t control::wnd_proc_(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  wnd_proc(message);
+  return message.result();
 }
 
 void control::wnd_proc(message& message) {
@@ -315,27 +319,27 @@ void control::wnd_proc(message& message) {
 }
 
 intptr_t control::send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
-  return native::control_api::send_message(this->handle_, hwnd, msg, wparam, lparam);
+  return native::control::send_message(this->handle_, hwnd, msg, wparam, lparam);
 }
 
 void control::def_wnd_proc(message& message) {
-  native::control_api::def_wnd_proc(this->handle_, message);
+  message.result(native::control::def_wnd_proc(this->handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle() ));
 }
 
 void control::get_properties() {
-  this->client_size_ = native::control_api::client_size(this->handle_);
-  this->location_ = native::control_api::location(this->handle_);
-  this->size_ = native::control_api::size(this->handle_);
-  this->text_ = native::control_api::text(this->handle_);
-  this->visible_ = native::control_api::visible(this->handle_);
+  this->client_size_ = native::control::client_size(this->handle_);
+  this->location_ = native::control::location(this->handle_);
+  this->size_ = native::control::size(this->handle_);
+  this->text_ = native::control::text(this->handle_);
+  this->visible_ = native::control::visible(this->handle_);
 }
 
 void control::set_properties() {
-  if (this->client_size_ != drawing::size(-1, -1)) native::control_api::client_size(this->handle_, this->client_size_);
-  if (this->location_ != point(-1, -1)) native::control_api::location(this->handle_, this->location_);
-  if (this->size_ != drawing::size(-1, -1)) native::control_api::size(this->handle_, this->size_);
-  native::control_api::text(this->handle_, this->text_);
-  native::control_api::visible(this->handle_, this->visible_);
+  if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size_);
+  if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location_);
+  if (this->size_ != drawing::size(-1, -1)) native::control::size(this->handle_, this->size_);
+  native::control::text(this->handle_, this->text_);
+  native::control::visible(this->handle_, this->visible_);
 }
 
 void control::wm_child_activate(message& message) {
