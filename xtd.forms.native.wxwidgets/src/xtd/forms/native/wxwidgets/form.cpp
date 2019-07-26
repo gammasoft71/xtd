@@ -17,6 +17,9 @@ namespace {
       this->control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       this->panel = new wxPanel(this->control());
       this->panel->Hide();
+      this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
+        event.Veto();
+      });
     }
     
   private:
