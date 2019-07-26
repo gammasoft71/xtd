@@ -323,7 +323,7 @@ intptr_t control::send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t
 }
 
 void control::def_wnd_proc(message& message) {
-  message.result(native::control::def_wnd_proc(this->handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle() ));
+  message.result(native::control::def_wnd_proc(this->handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
 }
 
 void control::get_properties() {

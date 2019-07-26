@@ -24,12 +24,13 @@ namespace xtd {
         intptr_t def_wnd_proc(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
           wxEvent* event = reinterpret_cast<wxEvent*>(handle);
           event->Skip(!presult);
-          return this->TControl::ProcessEvent(*event);
+          this->process_result_ = this->TControl::ProcessEvent(*event);
+          return this->process_result_;
         }
         
       private:
         void def_process_event(wxEvent& event) {
-          this->def_wnd_proc(0, 0, 0, 0, 0, reinterpret_cast<intptr_t>(&event));
+          this->process_result_ = this->def_wnd_proc(0, 0, 0, 0, 0, reinterpret_cast<intptr_t>(&event));
         }
         
         bool is_clipboard_event(wxEventType event_type) const {
