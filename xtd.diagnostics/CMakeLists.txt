@@ -23,12 +23,11 @@ set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/tracestreambuf.hpp
 )
 set(SOURCES
-  src/cdebug.cpp
-  src/ctrace.cpp
   src/debug.cpp
   src/diagnostics.cpp
   src/default_trace_listener_gcc.cpp
   src/default_trace_listener_win32.cpp
+  src/trace.cpp
 )
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\diagnostics FILES ${XTD_DIAGNOSTICS_INCLUDES})

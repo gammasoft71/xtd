@@ -4,7 +4,7 @@
 #include <iostream>
 #include "debugstreambuf.hpp"
 
-extern xtd::diagnostics::debugstreambuf __cdebugstreambuf__;
+inline xtd::diagnostics::debugstreambuf __cdebugstreambuf__;
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
