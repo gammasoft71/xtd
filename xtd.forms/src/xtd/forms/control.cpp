@@ -356,14 +356,17 @@ void control::wm_key_char(message& message) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     on_key_down(key_event_args);
     message.result(key_event_args.suppress_key_press());
+    if (!key_event_args.handled()) this->def_wnd_proc(message);
   } else if (message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) {
     key_press_event_args key_press_event_args(static_cast<int>(message.wparam()));
     on_key_press(key_press_event_args);
     message.result(key_press_event_args.handled());
+    if (!key_press_event_args.handled()) this->def_wnd_proc(message);
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     on_key_up(key_event_args);
     message.result(key_event_args.handled());
+    if (!key_event_args.handled()) this->def_wnd_proc(message);
   } else
     this->def_wnd_proc(message);
 }
