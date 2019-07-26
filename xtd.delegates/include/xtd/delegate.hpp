@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <stdexcept>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
