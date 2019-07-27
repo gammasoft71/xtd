@@ -20,6 +20,10 @@ void form::create_handle() {
   this->control::create_handle();
 }
 
+void form::close() {
+  native::form::close(this->handle_);
+}
+
 void form::parent(const control& parent) {
   throw std::invalid_argument("Top-level control cannot be added to a control.");
 }

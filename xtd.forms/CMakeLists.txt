@@ -15,6 +15,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/cancel_event_args.hpp
   include/xtd/forms/close_reason.hpp
   include/xtd/forms/control.hpp
+  include/xtd/forms/dialog_result.hpp
   include/xtd/forms/form.hpp
   include/xtd/forms/form_closed_event_args.hpp
   include/xtd/forms/form_closed_event_handler.hpp
@@ -27,6 +28,11 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/keys.hpp
   include/xtd/forms/label.hpp
   include/xtd/forms/message.hpp
+  include/xtd/forms/message_box.hpp
+  include/xtd/forms/message_box_buttons.hpp
+  include/xtd/forms/message_box_default_button.hpp
+  include/xtd/forms/message_box_icon.hpp
+  include/xtd/forms/message_box_options.hpp
   include/xtd/forms/mouse_buttons.hpp
   include/xtd/forms/mouse_event_args.hpp
   include/xtd/forms/mouse_event_handler.hpp
@@ -41,6 +47,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/form.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/message.cpp
+  src/xtd/forms/message_box.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
 )

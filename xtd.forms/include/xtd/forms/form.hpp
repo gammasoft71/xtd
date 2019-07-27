@@ -21,7 +21,9 @@ namespace xtd {
       void parent(const control& parent) override;
 
       void create_handle() override;
-      
+
+      void close();
+
     protected:
       void on_form_closed(const form_closed_event_args& e) {this->form_closed(*this, e);}
       

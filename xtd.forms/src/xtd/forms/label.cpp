@@ -7,4 +7,3 @@ void label::create_handle() {
   this->handle_ = native::label::create(this->parent_->__get_handle__(), this->default_size());
   this->control::create_handle();
 }
-

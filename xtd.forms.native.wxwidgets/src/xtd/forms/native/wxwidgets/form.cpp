@@ -32,3 +32,7 @@ intptr_t form::create(const size& size) {
   return (intptr_t) new wx_form(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
 }
 
+void form::close(intptr_t form) {
+  reinterpret_cast<wx_form*>(form)->control()->Close();
+}
+
