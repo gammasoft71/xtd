@@ -1,5 +1,5 @@
-#include "../include/xtd/point.hpp"
-#include "../include/xtd/size.hpp"
+#include "../../../include/xtd/drawing/point.hpp"
+#include "../../../include/xtd/drawing/size.hpp"
 
 const xtd::drawing::size xtd::drawing::size::empty;
 
