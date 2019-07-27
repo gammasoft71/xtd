@@ -5,6 +5,7 @@ project(xtd.drawing)
 
 # Options
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 
 # Code coverage
 option(ENABLE_COVERAGE "Enable code coverage" OFF)
