@@ -1,67 +1,67 @@
 #include "../include/xtd/system_colors.hpp"
 
-const xtd::drawing::color xtd::drawing::system_colors::ActiveBorder = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ActiveBorder);
+const xtd::drawing::color xtd::drawing::system_colors::active_border = xtd::drawing::color::from_known_color(xtd::drawing::known_color::active_border);
 
-const xtd::drawing::color xtd::drawing::system_colors::ActiveCaption = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ActiveCaption);
+const xtd::drawing::color xtd::drawing::system_colors::active_caption = xtd::drawing::color::from_known_color(xtd::drawing::known_color::active_caption);
 
-const xtd::drawing::color xtd::drawing::system_colors::ActiveCaptionText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ActiveCaptionText);
+const xtd::drawing::color xtd::drawing::system_colors::active_caption_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::active_caption_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::AppWorkspace = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::AppWorkspace);
+const xtd::drawing::color xtd::drawing::system_colors::app_workspace = xtd::drawing::color::from_known_color(xtd::drawing::known_color::app_workspace);
 
-const xtd::drawing::color xtd::drawing::system_colors::Control = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::Control);
+const xtd::drawing::color xtd::drawing::system_colors::control = xtd::drawing::color::from_known_color(xtd::drawing::known_color::control);
 
-const xtd::drawing::color xtd::drawing::system_colors::ControlDark = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ControlDark);
+const xtd::drawing::color xtd::drawing::system_colors::control_dark = xtd::drawing::color::from_known_color(xtd::drawing::known_color::control_dark);
 
-const xtd::drawing::color xtd::drawing::system_colors::ControlDarkDark = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ControlDarkDark);
+const xtd::drawing::color xtd::drawing::system_colors::control_dark_dark = xtd::drawing::color::from_known_color(xtd::drawing::known_color::control_dark_dark);
 
-const xtd::drawing::color xtd::drawing::system_colors::ControlLight = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ControlLight);
+const xtd::drawing::color xtd::drawing::system_colors::control_light = xtd::drawing::color::from_known_color(xtd::drawing::known_color::control_light);
 
-const xtd::drawing::color xtd::drawing::system_colors::ControlLightLight = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ControlLightLight);
+const xtd::drawing::color xtd::drawing::system_colors::control_light_light = xtd::drawing::color::from_known_color(xtd::drawing::known_color::control_light_light);
 
-const xtd::drawing::color xtd::drawing::system_colors::ControlText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ControlText);
+const xtd::drawing::color xtd::drawing::system_colors::control_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::control_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::Desktop = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::Desktop);
+const xtd::drawing::color xtd::drawing::system_colors::desktop = xtd::drawing::color::from_known_color(xtd::drawing::known_color::desktop);
 
-const xtd::drawing::color xtd::drawing::system_colors::GrayText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::GrayText);
+const xtd::drawing::color xtd::drawing::system_colors::gray_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::gray_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::Highlight = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::Highlight);
+const xtd::drawing::color xtd::drawing::system_colors::highlight = xtd::drawing::color::from_known_color(xtd::drawing::known_color::highlight);
 
-const xtd::drawing::color xtd::drawing::system_colors::HighlightText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::HighlightText);
+const xtd::drawing::color xtd::drawing::system_colors::highlight_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::highlight_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::HotTrack = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::HotTrack);
+const xtd::drawing::color xtd::drawing::system_colors::hot_track = xtd::drawing::color::from_known_color(xtd::drawing::known_color::hot_track);
 
-const xtd::drawing::color xtd::drawing::system_colors::InactiveBorder = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::InactiveBorder);
+const xtd::drawing::color xtd::drawing::system_colors::inactive_border = xtd::drawing::color::from_known_color(xtd::drawing::known_color::inactive_border);
 
-const xtd::drawing::color xtd::drawing::system_colors::InactiveCaption = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::InactiveCaption);
+const xtd::drawing::color xtd::drawing::system_colors::inactive_caption = xtd::drawing::color::from_known_color(xtd::drawing::known_color::inactive_caption);
 
-const xtd::drawing::color xtd::drawing::system_colors::InactiveCaptionText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::InactiveCaptionText);
+const xtd::drawing::color xtd::drawing::system_colors::inactive_caption_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::inactive_caption_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::Info = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::Info);
+const xtd::drawing::color xtd::drawing::system_colors::info = xtd::drawing::color::from_known_color(xtd::drawing::known_color::info);
 
-const xtd::drawing::color xtd::drawing::system_colors::InfoText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::InfoText);
+const xtd::drawing::color xtd::drawing::system_colors::info_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::info_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::Menu = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::Menu);
+const xtd::drawing::color xtd::drawing::system_colors::menu = xtd::drawing::color::from_known_color(xtd::drawing::known_color::menu);
 
-const xtd::drawing::color xtd::drawing::system_colors::MenuText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::MenuText);
+const xtd::drawing::color xtd::drawing::system_colors::menu_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::menu_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::ScrollBar = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ScrollBar);
+const xtd::drawing::color xtd::drawing::system_colors::scroll_bar = xtd::drawing::color::from_known_color(xtd::drawing::known_color::scroll_bar);
 
-const xtd::drawing::color xtd::drawing::system_colors::Window = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::Window);
+const xtd::drawing::color xtd::drawing::system_colors::window = xtd::drawing::color::from_known_color(xtd::drawing::known_color::window);
 
-const xtd::drawing::color xtd::drawing::system_colors::WindowFrame = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::WindowFrame);
+const xtd::drawing::color xtd::drawing::system_colors::window_frame = xtd::drawing::color::from_known_color(xtd::drawing::known_color::window_frame);
 
-const xtd::drawing::color xtd::drawing::system_colors::WindowText = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::WindowText);
+const xtd::drawing::color xtd::drawing::system_colors::window_text = xtd::drawing::color::from_known_color(xtd::drawing::known_color::window_text);
 
-const xtd::drawing::color xtd::drawing::system_colors::ButtonFace = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ButtonFace);
+const xtd::drawing::color xtd::drawing::system_colors::button_face = xtd::drawing::color::from_known_color(xtd::drawing::known_color::button_face);
 
-const xtd::drawing::color xtd::drawing::system_colors::ButtonHighlight = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ButtonHighlight);
+const xtd::drawing::color xtd::drawing::system_colors::button_highlight = xtd::drawing::color::from_known_color(xtd::drawing::known_color::button_highlight);
 
-const xtd::drawing::color xtd::drawing::system_colors::ButtonShadow = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::ButtonShadow);
+const xtd::drawing::color xtd::drawing::system_colors::button_shadow = xtd::drawing::color::from_known_color(xtd::drawing::known_color::button_shadow);
 
-const xtd::drawing::color xtd::drawing::system_colors::GradientActiveCaption = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::GradientActiveCaption);
+const xtd::drawing::color xtd::drawing::system_colors::gradient_active_caption = xtd::drawing::color::from_known_color(xtd::drawing::known_color::gradient_active_caption);
 
-const xtd::drawing::color xtd::drawing::system_colors::GradientInactiveCaption = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::GradientInactiveCaption);
+const xtd::drawing::color xtd::drawing::system_colors::gradient_inactive_caption = xtd::drawing::color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption);
 
-const xtd::drawing::color xtd::drawing::system_colors::MenuBar = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::MenuBar);
+const xtd::drawing::color xtd::drawing::system_colors::menu_bar = xtd::drawing::color::from_known_color(xtd::drawing::known_color::menu_bar);
 
-const xtd::drawing::color xtd::drawing::system_colors::MenuHighlight = xtd::drawing::color::FromKnownColor(xtd::drawing::known_color::MenuHighlight);
+const xtd::drawing::color xtd::drawing::system_colors::menu_highlight = xtd::drawing::color::from_known_color(xtd::drawing::known_color::menu_highlight);

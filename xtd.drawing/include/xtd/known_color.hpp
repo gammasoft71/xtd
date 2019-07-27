@@ -8,57 +8,57 @@ namespace xtd {
     /// @see xtd::drawing::color
     enum class known_color {
       /// @brief The system-defined color of the active window's border.
-      ActiveBorder = 1,
+      active_border = 1,
       /// @brief The system-defined color of the background of the active window's title bar.
-      ActiveCaption,
+      active_caption,
       /// @brief The system-defined color of the text in the active window's title bar.
-      ActiveCaptionText,
+      active_caption_text,
       /// @brief The system-defined color of the application workspace. The application workspace is the area in a multiple-document view that is not being occupied by documents.
-      AppWorkspace,
+      app_workspace,
       /// @brief The system-defined face color of a 3-D element.
-      Control,
+      control,
       /// @brief The system-defined shadow color of a 3-D element. The shadow color is applied to parts of a 3-D element that face away from the light source.
-      ControlDark,
+      control_dark,
       /// @brief The system-defined color that is the dark shadow color of a 3-D element. The dark shadow color is applied to the parts of a 3-D element that are the darkest color.
-      ControlDarkDark,
+      control_dark_dark,
       /// @brief The system-defined color that is the light color of a 3-D element. The light color is applied to parts of a 3-D element that face the light source.
-      ControlLight,
+      control_light,
       /// @brief The system-defined highlight color of a 3-D element. The highlight color is applied to the parts of a 3-D element that are the lightest color.
-      ControlLightLight,
+      control_light_light,
       /// @brief The system-defined color of text in a 3-D element.
-      ControlText,
+      control_text,
       /// @brief The system-defined color of the desktop.
-      Desktop,
+      desktop,
       /// @brief The system-defined color of dimmed text. Items in a list that are disabled are displayed in dimmed text.
-      GrayText,
+      gray_text,
       /// @brief The system-defined color of the background of selected items. This includes selected menu items as well as selected text.
-      Highlight,
+      highlight,
       /// @brief The system-defined color of the text of selected items.
-      HighlightText,
+      highlight_text,
       /// @brief The system-defined color used to designate a hot-tracked item. Single-clicking a hot-tracked item executes the item.
-      HotTrack,
+      hot_track,
       /// @brief The system-defined color of an inactive window's border.
-      InactiveBorder,
+      inactive_border,
       /// @brief The system-defined color of the background of an inactive window's title bar.
-      InactiveCaption,
+      inactive_caption,
       /// @brief The system-defined color of the text in an inactive window's title bar.
-      InactiveCaptionText,
+      inactive_caption_text,
       /// @brief The system-defined color of the background of a ToolTip.
-      Info,
+      info,
       /// @brief The system-defined color of the text of a ToolTip.
-      InfoText,
+      info_text,
       /// @brief The system-defined color of a menu's background.
-      Menu,
+      menu,
       /// @brief The system-defined color of a menu's text.
-      MenuText,
+      menu_text,
       /// @brief The system-defined color of the background of a scroll bar.
-      ScrollBar,
+      scroll_bar,
       /// @brief The system-defined color of the background in the client area of a window.
-      Window,
+      window,
       /// @brief The system-defined color of a window frame.
-      WindowFrame,
+      window_frame,
       /// @brief The system-defined color of the text in the client area of a window.
-      WindowText,
+      window_text,
       /// @brief A system-defined color.
       transparent,
       /// @brief A system-defined color.
@@ -140,221 +140,221 @@ namespace xtd {
       /// @brief A system-defined color.
       deep_pink,
       /// @brief A system-defined color.
-      DeepSkyBlue,
+      deep_sky_blue,
       /// @brief A system-defined color.
-      DimGray,
+      dim_gray,
       /// @brief A system-defined color.
-      DodgerBlue,
+      dodger_blue,
       /// @brief A system-defined color.
-      Firebrick,
+      firebrick,
       /// @brief A system-defined color.
-      FloralWhite,
+      floral_white,
       /// @brief A system-defined color.
-      ForestGreen,
+      forest_green,
       /// @brief A system-defined color.
-      Fuchsia,
+      fuchsia,
       /// @brief A system-defined color.
-      Gainsboro,
+      gainsboro,
       /// @brief A system-defined color.
-      GhostWhite,
+      ghost_white,
       /// @brief A system-defined color.
-      Gold,
+      gold,
       /// @brief A system-defined color.
-      Goldenrod,
+      goldenrod,
       /// @brief A system-defined color.
-      Gray,
+      gray,
       /// @brief A system-defined color.
-      Green,
+      green,
       /// @brief A system-defined color.
-      GreenYellow,
+      green_yellow,
       /// @brief A system-defined color.
-      Honeydew,
+      honeydew,
       /// @brief A system-defined color.
-      HotPink,
+      hot_pink,
       /// @brief A system-defined color.
-      IndianRed,
+      indian_red,
       /// @brief A system-defined color.
-      Indigo,
+      indigo,
       /// @brief A system-defined color.
-      Ivory,
+      ivory,
       /// @brief A system-defined color.
-      Khaki,
+      khaki,
       /// @brief A system-defined color.
-      Lavender,
+      lavender,
       /// @brief A system-defined color.
-      LavenderBlush,
+      lavender_blush,
       /// @brief A system-defined color.
-      LawnGreen,
+      lawn_green,
       /// @brief A system-defined color.
-      LemonChiffon,
+      lemon_chiffon,
       /// @brief A system-defined color.
-      LightBlue,
+      light_blue,
       /// @brief A system-defined color.
-      LightCoral,
+      light_coral,
       /// @brief A system-defined color.
-      LightCyan,
+      light_cyan,
       /// @brief A system-defined color.
-      LightGoldenrodYellow,
+      light_goldenrod_yellow,
       /// @brief A system-defined color.
-      LightGray,
+      light_gray,
       /// @brief A system-defined color.
-      LightGreen,
+      light_green,
       /// @brief A system-defined color.
-      LightPink,
+      light_pink,
       /// @brief A system-defined color.
-      LightSalmon,
+      light_salmon,
       /// @brief A system-defined color.
-      LightSeaGreen,
+      light_sea_green,
       /// @brief A system-defined color.
-      LightSkyBlue,
+      light_sky_blue,
       /// @brief A system-defined color.
-      LightSlateGray,
+      light_slate_gray,
       /// @brief A system-defined color.
-      LightSteelBlue,
+      light_steel_blue,
       /// @brief A system-defined color.
-      LightYellow,
+      light_yellow,
       /// @brief A system-defined color.
-      Lime,
+      lime,
       /// @brief A system-defined color.
-      LimeGreen,
+      lime_green,
       /// @brief A system-defined color.
-      Linen,
+      linen,
       /// @brief A system-defined color.
-      Magenta,
+      magenta,
       /// @brief A system-defined color.
-      Maroon,
+      maroon,
       /// @brief A system-defined color.
-      MediumAquamarine,
+      medium_aquamarine,
       /// @brief A system-defined color.
-      MediumBlue,
+      medium_blue,
       /// @brief A system-defined color.
-      MediumOrchid,
+      medium_orchid,
       /// @brief A system-defined color.
-      MediumPurple,
+      medium_purple,
       /// @brief A system-defined color.
-      MediumSeaGreen,
+      medium_sea_green,
       /// @brief A system-defined color.
-      MediumSlateBlue,
+      medium_slate_blue,
       /// @brief A system-defined color.
-      MediumSpringGreen,
+      medium_spring_green,
       /// @brief A system-defined color.
-      MediumTurquoise,
+      medium_turquoise,
       /// @brief A system-defined color.
-      MediumVioletRed,
+      medium_violet_red,
       /// @brief A system-defined color.
-      MidnightBlue,
+      midnight_blue,
       /// @brief A system-defined color.
-      MintCream,
+      mint_cream,
       /// @brief A system-defined color.
-      MistyRose,
+      misty_rose,
       /// @brief A system-defined color.
-      Moccasin,
+      moccasin,
       /// @brief A system-defined color.
-      NavajoWhite,
+      navajo_white,
       /// @brief A system-defined color.
-      Navy,
+      navy,
       /// @brief A system-defined color.
-      OldLace,
+      old_lace,
       /// @brief A system-defined color.
-      Olive,
+      olive,
       /// @brief A system-defined color.
       OliveDrab,
       /// @brief A system-defined color.
-      Orange,
+      orange,
       /// @brief A system-defined color.
-      OrangeRed,
+      orange_red,
       /// @brief A system-defined color.
-      Orchid,
+      orchid,
       /// @brief A system-defined color.
-      PaleGoldenrod,
+      pale_goldenrod,
       /// @brief A system-defined color.
-      PaleGreen,
+      pale_green,
       /// @brief A system-defined color.
-      PaleTurquoise,
+      pale_turquoise,
       /// @brief A system-defined color.
-      PaleVioletRed,
+      pale_violet_red,
       /// @brief A system-defined color.
-      PapayaWhip,
+      papaya_whip,
       /// @brief A system-defined color.
-      PeachPuff,
+      peach_puff,
       /// @brief A system-defined color.
-      Peru,
+      peru,
       /// @brief A system-defined color.
-      Pink,
+      pink,
       /// @brief A system-defined color.
-      Plum,
+      plum,
       /// @brief A system-defined color.
-      PowderBlue,
+      powder_blue,
       /// @brief A system-defined color.
-      Purple,
+      purple,
       /// @brief A system-defined color.
-      Red,
+      red,
       /// @brief A system-defined color.
-      RosyBrown,
+      rosy_brown,
       /// @brief A system-defined color.
-      RoyalBlue,
+      royal_blue,
       /// @brief A system-defined color.
-      SaddleBrown,
+      saddle_brown,
       /// @brief A system-defined color.
-      Salmon,
+      salmon,
       /// @brief A system-defined color.
-      SandyBrown,
+      sandy_brown,
       /// @brief A system-defined color.
-      SeaGreen,
+      sea_green,
       /// @brief A system-defined color.
-      SeaShell,
+      sea_shell,
       /// @brief A system-defined color.
-      Sienna,
+      sienna,
       /// @brief A system-defined color.
-      Silver,
+      silver,
       /// @brief A system-defined color.
-      SkyBlue,
+      sky_blue,
       /// @brief A system-defined color.
-      SlateBlue,
+      slate_blue,
       /// @brief A system-defined color.
-      SlateGray,
+      slate_gray,
       /// @brief A system-defined color.
-      Snow,
+      snow,
       /// @brief A system-defined color.
-      SpringGreen,
+      spring_green,
       /// @brief A system-defined color.
-      SteelBlue,
+      steel_blue,
       /// @brief A system-defined color.
-      Tan,
+      tan,
       /// @brief A system-defined color.
-      Teal,
+      teal,
       /// @brief A system-defined color.
-      Thistle,
+      thistle,
       /// @brief A system-defined color.
-      Tomato,
+      tomato,
       /// @brief A system-defined color.
-      Turquoise,
+      turquoise,
       /// @brief A system-defined color.
-      Violet,
+      violet,
       /// @brief A system-defined color.
-      Wheat,
+      wheat,
       /// @brief A system-defined color.
-      White,
+      white,
       /// @brief A system-defined color.
-      WhiteSmoke,
+      white_smoke,
       /// @brief A system-defined color.
-      Yellow,
+      yellow,
       /// @brief A system-defined color.
-      YellowGreen,
+      yellow_green,
       /// @brief The system-defined face color of a 3-D element.
-      ButtonFace,
+      button_face,
       /// @brief The system-defined color that is the highlight color of a 3-D element. This color is applied to parts of a 3-D element that face the light source.
-      ButtonHighlight,
+      button_highlight,
       /// @brief The system-defined color that is the shadow color of a 3-D element. This color is applied to parts of a 3-D element that face away from the light source.
-      ButtonShadow,
+      button_shadow,
       /// @brief The system-defined color of the lightest color in the color gradient of an active window's title bar.
-      GradientActiveCaption,
+      gradient_active_caption,
       /// @brief The system-defined color of the lightest color in the color gradient of an inactive window's title bar.
-      GradientInactiveCaption,
+      gradient_inactive_caption,
       /// @brief The system-defined color of the background of a menu bar.
-      MenuBar,
+      menu_bar,
       /// @brief The system-defined color used to highlight menu items when the menu appears as a flat menu.
-      MenuHighlight
+      menu_highlight
     };
   }
 }

@@ -150,307 +150,307 @@ namespace xtd {
       static const xtd::drawing::color deep_pink;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF00BFFF. This field is constant.
-      static const xtd::drawing::color DeepSkyBlue;
+      static const xtd::drawing::color deep_sky_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF696969. This field is constant.
-      static const xtd::drawing::color DimGray;
+      static const xtd::drawing::color dim_gray;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF1E90FF. This field is constant.
-      static const xtd::drawing::color DodgerBlue;
+      static const xtd::drawing::color dodger_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFB22222. This field is constant.
-      static const xtd::drawing::color Firebrick;
+      static const xtd::drawing::color firebrick;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFAF0. This field is constant.
-      static const xtd::drawing::color FloralWhite;
+      static const xtd::drawing::color floral_white;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF228B22. This field is constant.
-      static const xtd::drawing::color ForestGreen;
+      static const xtd::drawing::color forest_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFF00FF. This field is constant.
-      static const xtd::drawing::color Fuchsia;
+      static const xtd::drawing::color fuchsia;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFDCDCDC. This field is constant.
-      static const xtd::drawing::color Gainsboro;
+      static const xtd::drawing::color gainsboro;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF8F8FF. This field is constant.
-      static const xtd::drawing::color GhostWhite;
+      static const xtd::drawing::color ghost_white;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFD700. This field is constant.
-      static const xtd::drawing::color Gold;
+      static const xtd::drawing::color gold;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFDAA520. This field is constant.
-      static const xtd::drawing::color Goldenrod;
+      static const xtd::drawing::color goldenrod;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF808080. This field is constant.
-      static const xtd::drawing::color Gray;
+      static const xtd::drawing::color gray;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF008000. This field is constant.
-      static const xtd::drawing::color Green;
+      static const xtd::drawing::color green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFADFF2F. This field is constant.
-      static const xtd::drawing::color GreenYellow;
+      static const xtd::drawing::color green_yellow;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF0FFF0. This field is constant.
-      static const xtd::drawing::color Honeydew;
+      static const xtd::drawing::color honeydew;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFF69B4. This field is constant.
-      static const xtd::drawing::color HotPink;
+      static const xtd::drawing::color hot_pink;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFCD5C5C. This field is constant.
-      static const xtd::drawing::color IndianRed;
+      static const xtd::drawing::color indian_red;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF4B0082. This field is constant.
-      static const xtd::drawing::color Indigo;
+      static const xtd::drawing::color indigo;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFF0. This field is constant.
-      static const xtd::drawing::color Ivory;
+      static const xtd::drawing::color ivory;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF0E68C. This field is constant.
-      static const xtd::drawing::color Khaki;
+      static const xtd::drawing::color khaki;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFE6E6FA. This field is constant.
-      static const xtd::drawing::color Lavender;
+      static const xtd::drawing::color lavender;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFF0F5. This field is constant.
-      static const xtd::drawing::color LavenderBlush;
+      static const xtd::drawing::color lavender_blush;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF7CFC00. This field is constant.
-      static const xtd::drawing::color LawnGreen;
+      static const xtd::drawing::color lawn_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFACD. This field is constant.
-      static const xtd::drawing::color LemonChiffon;
+      static const xtd::drawing::color lemon_chiffon;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFADD8E6. This field is constant.
-      static const xtd::drawing::color LightBlue;
+      static const xtd::drawing::color light_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF08080. This field is constant.
-      static const xtd::drawing::color LightCoral;
+      static const xtd::drawing::color light_coral;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFE0FFFF. This field is constant.
-      static const xtd::drawing::color LightCyan;
+      static const xtd::drawing::color light_cyan;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFAFAD2. This field is constant.
-      static const xtd::drawing::color LightGoldenrodYellow;
+      static const xtd::drawing::color light_goldenrod_yellow;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD3D3D3. This field is constant.
-      static const xtd::drawing::color LightGray;
+      static const xtd::drawing::color light_gray;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF90EE90. This field is constant.
-      static const xtd::drawing::color LightGreen;
+      static const xtd::drawing::color light_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFB6C1. This field is constant.
-      static const xtd::drawing::color LightPink;
+      static const xtd::drawing::color light_pink;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFA07A. This field is constant.
-      static const xtd::drawing::color LightSalmon;
+      static const xtd::drawing::color light_salmon;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF20B2AA. This field is constant.
-      static const xtd::drawing::color LightSeaGreen;
+      static const xtd::drawing::color light_sea_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF87CEFA. This field is constant.
-      static const xtd::drawing::color LightSkyBlue;
+      static const xtd::drawing::color light_sky_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF778899. This field is constant.
-      static const xtd::drawing::color LightSlateGray;
+      static const xtd::drawing::color light_slate_gray;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFB0C4DE. This field is constant.
-      static const xtd::drawing::color LightSteelBlue;
+      static const xtd::drawing::color light_steel_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFE0. This field is constant.
-      static const xtd::drawing::color LightYellow;
+      static const xtd::drawing::color light_yellow;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF00FF00. This field is constant.
-      static const xtd::drawing::color Lime;
+      static const xtd::drawing::color lime;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF32CD32. This field is constant.
-      static const xtd::drawing::color LimeGreen;
+      static const xtd::drawing::color lime_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFAF0E6. This field is constant.
-      static const xtd::drawing::color Linen;
+      static const xtd::drawing::color linen;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFF00FF. This field is constant.
-      static const xtd::drawing::color Magenta;
+      static const xtd::drawing::color magenta;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF800000. This field is constant.
-      static const xtd::drawing::color Maroon;
+      static const xtd::drawing::color maroon;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF66CDAA. This field is constant.
-      static const xtd::drawing::color MediumAquamarine;
+      static const xtd::drawing::color medium_aquamarine;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF0000CD. This field is constant.
-      static const xtd::drawing::color MediumBlue;
+      static const xtd::drawing::color medium_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFBA55D3. This field is constant.
-      static const xtd::drawing::color MediumOrchid;
+      static const xtd::drawing::color medium_orchid;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9370DB. This field is constant.
-      static const xtd::drawing::color MediumPurple;
+      static const xtd::drawing::color medium_purple;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF3CB371. This field is constant.
-      static const xtd::drawing::color MediumSeaGreen;
+      static const xtd::drawing::color medium_sea_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF7B68EE. This field is constant.
-      static const xtd::drawing::color MediumSlateBlue;
+      static const xtd::drawing::color medium_slate_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF00FA9A. This field is constant.
-      static const xtd::drawing::color MediumSpringGreen;
+      static const xtd::drawing::color medium_spring_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF48D1CC. This field is constant.
-      static const xtd::drawing::color MediumTurquoise;
+      static const xtd::drawing::color medium_turquoise;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFC71585. This field is constant.
-      static const xtd::drawing::color MediumVioletRed;
+      static const xtd::drawing::color medium_violet_red;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF191970. This field is constant.
-      static const xtd::drawing::color MidnightBlue;
+      static const xtd::drawing::color midnight_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF5FFFA. This field is constant.
-      static const xtd::drawing::color MintCream;
+      static const xtd::drawing::color mint_cream;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFE4E1. This field is constant.
-      static const xtd::drawing::color MistyRose;
+      static const xtd::drawing::color misty_rose;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFE4B5. This field is constant.
-      static const xtd::drawing::color Moccasin;
+      static const xtd::drawing::color moccasin;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFDEAD. This field is constant.
-      static const xtd::drawing::color NavajoWhite;
+      static const xtd::drawing::color navajo_white;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF000080. This field is constant.
-      static const xtd::drawing::color Navy;
+      static const xtd::drawing::color navy;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFDF5E6. This field is constant.
-      static const xtd::drawing::color OldLace;
+      static const xtd::drawing::color old_lace;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF808000. This field is constant.
-      static const xtd::drawing::color Olive;
+      static const xtd::drawing::color olive;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF6B8E23. This field is constant.
-      static const xtd::drawing::color OliveDrab;
+      static const xtd::drawing::color olive_drab;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFA500. This field is constant.
-      static const xtd::drawing::color Orange;
+      static const xtd::drawing::color orange;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFF4500. This field is constant.
-      static const xtd::drawing::color OrangeRed;
+      static const xtd::drawing::color orange_red;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFDA70D6. This field is constant.
-      static const xtd::drawing::color Orchid;
+      static const xtd::drawing::color orchid;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFEEE8AA. This field is constant.
-      static const xtd::drawing::color PaleGoldenrod;
+      static const xtd::drawing::color pale_goldenrod;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF98FB98. This field is constant.
-      static const xtd::drawing::color PaleGreen;
+      static const xtd::drawing::color pale_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFAFEEEE. This field is constant.
-      static const xtd::drawing::color PaleTurquoise;
+      static const xtd::drawing::color pale_turquoise;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFDB7093. This field is constant.
-      static const xtd::drawing::color PaleVioletRed;
+      static const xtd::drawing::color pale_violet_red;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFEFD5. This field is constant.
-      static const xtd::drawing::color PapayaWhip;
+      static const xtd::drawing::color papaya_whip;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFDAB9. This field is constant.
-      static const xtd::drawing::color PeachPuff;
+      static const xtd::drawing::color peach_puff;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFCD853F. This field is constant.
-      static const xtd::drawing::color Peru;
+      static const xtd::drawing::color peru;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFC0CB. This field is constant.
-      static const xtd::drawing::color Pink;
+      static const xtd::drawing::color pink;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFDDA0DD. This field is constant.
-      static const xtd::drawing::color Plum;
+      static const xtd::drawing::color plum;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFB0E0E6. This field is constant.
-      static const xtd::drawing::color PowderBlue;
+      static const xtd::drawing::color powder_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF800080. This field is constant.
-      static const xtd::drawing::color Purple;
+      static const xtd::drawing::color purple;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant.
-      static const xtd::drawing::color Red;
+      static const xtd::drawing::color red;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFBC8F8F. This field is constant.
-      static const xtd::drawing::color RosyBrown;
+      static const xtd::drawing::color rosy_brown;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF4169E1. This field is constant.
-      static const xtd::drawing::color RoyalBlue;
+      static const xtd::drawing::color royal_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF8B4513. This field is constant.
-      static const xtd::drawing::color SaddleBrown;
+      static const xtd::drawing::color saddle_brown;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFA8072. This field is constant.
-      static const xtd::drawing::color Salmon;
+      static const xtd::drawing::color salmon;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF4A460. This field is constant.
-      static const xtd::drawing::color SandyBrown;
+      static const xtd::drawing::color sandy_brown;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF2E8B57. This field is constant.
-      static const xtd::drawing::color SeaGreen;
+      static const xtd::drawing::color sea_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFF5EE. This field is constant.
-      static const xtd::drawing::color SeaShell;
+      static const xtd::drawing::color sea_shell;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFA0522D. This field is constant.
-      static const xtd::drawing::color Sienna;
+      static const xtd::drawing::color sienna;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFC0C0C0. This field is constant.
-      static const xtd::drawing::color Silver;
+      static const xtd::drawing::color silver;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF87CEEB. This field is constant.
-      static const xtd::drawing::color SkyBlue;
+      static const xtd::drawing::color sky_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF6A5ACD. This field is constant.
-      static const xtd::drawing::color SlateBlue;
+      static const xtd::drawing::color slate_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF708090. This field is constant.
-      static const xtd::drawing::color SlateGray;
+      static const xtd::drawing::color slate_gray;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFAFA. This field is constant.
-      static const xtd::drawing::color Snow;
+      static const xtd::drawing::color snow;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF00FF7F. This field is constant.
-      static const xtd::drawing::color SpringGreen;
+      static const xtd::drawing::color spring_green;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF4682B4. This field is constant.
-      static const xtd::drawing::color SteelBlue;
+      static const xtd::drawing::color steel_blue;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD2B48C. This field is constant.
-      static const xtd::drawing::color Tan;
+      static const xtd::drawing::color tan;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF008080. This field is constant.
-      static const xtd::drawing::color Teal;
+      static const xtd::drawing::color teal;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD8BFD8. This field is constant.
-      static const xtd::drawing::color Thistle;
+      static const xtd::drawing::color thistle;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFF6347. This field is constant.
-      static const xtd::drawing::color Tomato;
+      static const xtd::drawing::color tomato;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF40E0D0. This field is constant.
-      static const xtd::drawing::color Turquoise;
+      static const xtd::drawing::color turquoise;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFEE82EE. This field is constant.
-      static const xtd::drawing::color Violet;
+      static const xtd::drawing::color violet;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF5DEB3. This field is constant.
-      static const xtd::drawing::color Wheat;
+      static const xtd::drawing::color wheat;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
-      static const xtd::drawing::color White;
+      static const xtd::drawing::color white;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF5F5F5. This field is constant.
-      static const xtd::drawing::color WhiteSmoke;
+      static const xtd::drawing::color white_smoke;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFF00. This field is constant.
-      static const xtd::drawing::color Yellow;
+      static const xtd::drawing::color yellow;
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9ACD32. This field is constant.
-      static const xtd::drawing::color YellowGreen;
+      static const xtd::drawing::color yellow_green;
       
       /// @brief Create a new instance of class xtd::drawing::color. The default value is black.
       color() = default;
@@ -479,7 +479,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char A() const {return (unsigned char)((this->argb & 0xFF000000) >> 24);}
+      unsigned char a() const {return (unsigned char)((this->argb & 0xFF000000) >> 24);}
       
       /// @brief Gets the blue component value of this xtd::drawing::color class.
       /// @return byte The blue component value of this xtd::drawing::color.
@@ -498,7 +498,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char B() const {return (unsigned char)(this->argb & 0x000000FF);}
+      unsigned char b() const {return (unsigned char)(this->argb & 0x000000FF);}
       
       /// @brief Gets the green component value of this xtd::drawing::color class.
       /// @return byte The green component value of this xtd::drawing::color.
@@ -517,28 +517,28 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char G() const {return (unsigned char)((this->argb & 0x0000FF00) >> 8);}
+      unsigned char g() const {return (unsigned char)((this->argb & 0x0000FF00) >> 8);}
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
       /// @return bool Returns true if this color is uninitialized; otherwise, false.
-      bool IsEmpty() const {return *this == empty;}
+      bool is_empty() const {return *this == empty;}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a predefined color. Predefined colors are represented by the elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the FromName method or the FromKnownColor method; otherwise, false.
       /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the IsKnownColor property is applied to a xtd::drawing::color structure that is created by using the FromArgb method, IsKnownColor returns false, even if the ARGB value matches the ARGB value of a predefined color.
-      bool IsKnownColor() const {return this->knownColor != (xtd::drawing::known_color)0;}
+      bool is_known_color() const {return this->known_color != (xtd::drawing::known_color)0;}
        
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created by using either the FromName method or the FromKnownColor method; otherwise, false.
-      bool IsNamedColor() const {return this->knownColor != (xtd::drawing::known_color)0;}
+      bool is_named_color() const {return this->known_color != (xtd::drawing::known_color)0;}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the FromName method or the FromKnownColor method; otherwise, false.
-      bool IsSystemColor() const {return this->GetIsSystemColor();}
+      bool is_system_color() const;
       
       /// @brief Gets the name of this xtd::drawing::color.
       /// @return string The name of this xtd::drawing::color.
-      std::string Name() const {return this->GetName();}
+      std::string name() const;
       
       /// @brief Gets the red component value of this xtd::drawing::color class.
       /// @return byte The red component value of this xtd::drawing::color.
@@ -557,13 +557,13 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char R() const {return (unsigned char)((this->argb & 0x00FF0000) >> 16);}
+      unsigned char r() const {return (unsigned char)((this->argb & 0x00FF0000) >> 16);}
       
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      static xtd::drawing::color FromArgb(int argb);
+      static xtd::drawing::color from_argb(int argb);
       
       /// @brief Creates a xtd::drawing::color class from the specified xtd::drawing::color structure, but with the new specified alpha value. Although this method allows a 32-bit value to be passed for the alpha value, the value is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
@@ -571,7 +571,7 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @exception ArgumentException alpha is less than 0 or greater than 255.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      static xtd::drawing::color FromArgb(int alpha, const xtd::drawing::color& baseColor);
+      static xtd::drawing::color from_argb(int alpha, const xtd::drawing::color& baseColor);
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
@@ -581,13 +581,13 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @exception ArgumentException alpha, red, green or blue is less than 0 or greater than 255.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      static xtd::drawing::color FromArgb(int alpha, int red, int green, int blue);
+      static xtd::drawing::color from_argb(int alpha, int red, int green, int blue);
       
       /// @brief Creates a xtd::drawing::color class from the three HSV component (hue, saturation, and brightness) values.
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param saturation The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param brightness The xtd::drawing::color lightness. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
-      static xtd::drawing::color FromHsb(float hue, float saturation, float brightness);
+      static xtd::drawing::color from_hsb(float hue, float saturation, float brightness);
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
@@ -597,13 +597,13 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @exception ArgumentException alpha is less than 0 or greater than 255.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      static xtd::drawing::color FromKnownColor(xtd::drawing::known_color color);
+      static xtd::drawing::color from_known_color(xtd::drawing::known_color color);
       
       /// @brief Creates a xtd::drawing::color class from the specified name of a predefined color.
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. If the name parameter is not the valid name of a predefined color, the FromName method creates a xtd::drawing::color structure that has an ARGB value of 0 (that is, all ARGB components are 0).
-      static xtd::drawing::color FromName(const std::string& name);
+      static xtd::drawing::color from_name(const std::string& name);
       
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
       /// @return The lightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
@@ -658,7 +658,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      float GetBrightness() const;
+      float get_brightness() const;
       
       /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
       /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
@@ -713,7 +713,7 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      float GetHue() const;
+      float get_hue() const;
       
       /// @brief Gets the hue-saturation-brightness (HSB) saturation value for this xtd::drawing::color structure.
       /// @return The saturation of this xtd::drawing::color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
@@ -768,35 +768,32 @@ namespace xtd {
       ///   }
       /// }
       /// @endcode
-      float GetSaturation() const;
+      float get_saturation() const;
       
       /// @cond
-      static xtd::drawing::color Parse(const std::string& color);
+      static xtd::drawing::color parse(const std::string& color);
       /// @endcond
       
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
       /// @return int The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      int ToArgb() const;
+      int to_argb() const;
       
       /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
       /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the FromName method or the FromKnownColor method; otherwise, 0.
       /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. When the ToKnownColor method is applied to a xtd::drawing::color structure that is created by using the FromArgb method, ToKnownColor returns 0, even if the ARGB value matches the ARGB value of a predefined color. ToKnownColor also returns 0 when it is applied to a xtd::drawing::color structure that is created by using the FromName method with a string name that is not valid.
-      xtd::drawing::known_color ToKnownColor() const;
+      xtd::drawing::known_color to_known_color() const;
       
       /// @brief reates a human-readable string that represents this Size class.
       /// @return string A string that represents this Size.
-      std::string ToString() const;
+      std::string to_string() const;
       
     private:
       explicit color(int argb);
       color(int argb, const xtd::drawing::known_color& color);
       
-      bool GetIsSystemColor() const;
-      std::string GetName() const;
-      
       int argb = 0;
-      xtd::drawing::known_color knownColor = (xtd::drawing::known_color)0;
+      xtd::drawing::known_color known_color = (xtd::drawing::known_color)0;
     };
   }
 }
