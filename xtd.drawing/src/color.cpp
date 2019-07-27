@@ -1,4 +1,5 @@
 #include "../include/xtd/color.hpp"
+#include <xtd/drawing/native/system_colors.hpp>
 #include <cmath>
 #include <map>
 #include <stdexcept>
@@ -364,34 +365,32 @@ color color::from_name(const string& name) {
 
 color color::from_known_color(known_color color) {
   static map<known_color, unsigned int> known_colors {
-    /*
-    {known_color::active_border, Native::SystemColorsApi::GetActiveBorder()},
-    {known_color::active_caption, Native::SystemColorsApi::GetActiveCaption()},
-    {known_color::active_caption_text, Native::SystemColorsApi::GetActiveCaptionText()},
-    {known_color::app_workspace, Native::SystemColorsApi::GetAppWorkspace()},
-    {known_color::control, Native::SystemColorsApi::GetControl()},
-    {known_color::control_dark, Native::SystemColorsApi::GetControlDark()},
-    {known_color::control_dark_dark, Native::SystemColorsApi::GetControlDarkDark()},
-    {known_color::control_light, Native::SystemColorsApi::GetControlLight()},
-    {known_color::control_light_light, Native::SystemColorsApi::GetControlLightLight()},
-    {known_color::control_text, Native::SystemColorsApi::GetControlText()},
-    {known_color::Desktop, Native::SystemColorsApi::GetDesktop()},
-    {known_color::gray_text, Native::SystemColorsApi::GetGrayText()},
-    {known_color::highlight, Native::SystemColorsApi::GetHighlight()},
-    {known_color::highlight_text, Native::SystemColorsApi::GetHighlightText()},
-    {known_color::hot_track, Native::SystemColorsApi::GetHotTrack()},
-    {known_color::inactive_border, Native::SystemColorsApi::GetInactiveBorder()},
-    {known_color::inactive_caption, Native::SystemColorsApi::GetInactiveCaption()},
-    {known_color::inactive_caption_text, Native::SystemColorsApi::GetInactiveCaptionText()},
-    {known_color::info, Native::SystemColorsApi::GetInfo()},
-    {known_color::info_text, Native::SystemColorsApi::GetInfoText()},
-    {known_color::menu, Native::SystemColorsApi::GetMenu()},
-    {known_color::menu_text, Native::SystemColorsApi::GetMenuText()},
-    {known_color::scroll_bar, Native::SystemColorsApi::GetScrollBar()},
-    {known_color::window, Native::SystemColorsApi::GetWindow()},
-    {known_color::window_frame, Native::SystemColorsApi::GetWindowFrame()},
-    {known_color::window_text, Native::SystemColorsApi::GetWindowText()},
-     */
+    {known_color::active_border, native::system_colors::active_border()},
+    {known_color::active_caption, native::system_colors::active_caption()},
+    {known_color::active_caption_text, native::system_colors::active_caption_text()},
+    {known_color::app_workspace, native::system_colors::app_workspace()},
+    {known_color::control, native::system_colors::control()},
+    {known_color::control_dark, native::system_colors::control_dark()},
+    {known_color::control_dark_dark, native::system_colors::control_dark_dark()},
+    {known_color::control_light, native::system_colors::control_light()},
+    {known_color::control_light_light, native::system_colors::control_light_light()},
+    {known_color::control_text, native::system_colors::control_text()},
+    {known_color::desktop, native::system_colors::desktop()},
+    {known_color::gray_text, native::system_colors::gray_text()},
+    {known_color::highlight, native::system_colors::highlight()},
+    {known_color::highlight_text, native::system_colors::highlight_text()},
+    {known_color::hot_track, native::system_colors::hot_track()},
+    {known_color::inactive_border, native::system_colors::inactive_border()},
+    {known_color::inactive_caption, native::system_colors::inactive_caption()},
+    {known_color::inactive_caption_text, native::system_colors::inactive_caption_text()},
+    {known_color::info, native::system_colors::info()},
+    {known_color::info_text, native::system_colors::info_text()},
+    {known_color::menu, native::system_colors::menu()},
+    {known_color::menu_text, native::system_colors::menu_text()},
+    {known_color::scroll_bar, native::system_colors::scroll_bar()},
+    {known_color::window, native::system_colors::window()},
+    {known_color::window_frame, native::system_colors::window_frame()},
+    {known_color::window_text, native::system_colors::window_text()},
     {known_color::transparent, 0x00FFFFFF},
     {known_color::alice_blue, 0xFFF0F8FF},
     {known_color::antique_white, 0xFFFAEBD7},
@@ -533,15 +532,13 @@ color color::from_known_color(known_color color) {
     {known_color::white_smoke, 0xFFF5F5F5},
     {known_color::yellow, 0xFFFFFF00},
     {known_color::yellow_green, 0xFF9ACD32},
-    /*
-    {known_color::button_face, Native::SystemColorsApi::GetButtonFace()},
-    {known_color::button_highlight, Native::SystemColorsApi::GetButtonHighlight()},
-    {known_color::button_shadow, Native::SystemColorsApi::GetButtonFace()},
-    {known_color::gradient_active_caption, Native::SystemColorsApi::GetGradientActiveCaption()},
-    {known_color::gradient_inactive_caption, Native::SystemColorsApi::GetGradientInactiveCaption()},
-    {known_color::menu_bar, Native::SystemColorsApi::GetMenuBar()},
-    {known_color::menu_highlight, Native::SystemColorsApi::GetMenuHighlight()},
-     */
+    {known_color::button_face, native::system_colors::button_face()},
+    {known_color::button_highlight, native::system_colors::button_highlight()},
+    {known_color::button_shadow, native::system_colors::button_shadow()},
+    {known_color::gradient_active_caption, native::system_colors::gradient_active_caption()},
+    {known_color::gradient_inactive_caption, native::system_colors::gradient_inactive_caption()},
+    {known_color::menu_bar, native::system_colors::menu_bar()},
+    {known_color::menu_highlight, native::system_colors::menu_highlight()},
      };
   
   if (known_colors.find(color) == known_colors.end())
