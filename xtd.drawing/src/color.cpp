@@ -547,7 +547,7 @@ color color::from_known_color(known_color color) {
   if (known_colors.find(color) == known_colors.end())
     throw std::invalid_argument("unknown know_color");
   
-  return {(int)known_colors[color], color};
+  return drawing::color((int)known_colors[color], color);
 }
 
 float color::get_brightness() const {
