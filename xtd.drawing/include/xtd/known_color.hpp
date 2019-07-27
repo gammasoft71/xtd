@@ -258,7 +258,7 @@ namespace xtd {
       /// @brief A system-defined color.
       olive,
       /// @brief A system-defined color.
-      OliveDrab,
+      olive_drab,
       /// @brief A system-defined color.
       orange,
       /// @brief A system-defined color.

@@ -526,11 +526,11 @@ namespace xtd {
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a predefined color. Predefined colors are represented by the elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the FromName method or the FromKnownColor method; otherwise, false.
       /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the IsKnownColor property is applied to a xtd::drawing::color structure that is created by using the FromArgb method, IsKnownColor returns false, even if the ARGB value matches the ARGB value of a predefined color.
-      bool is_known_color() const {return this->known_color != (xtd::drawing::known_color)0;}
+      bool is_known_color() const {return this->known_color_ != (xtd::drawing::known_color)0;}
        
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created by using either the FromName method or the FromKnownColor method; otherwise, false.
-      bool is_named_color() const {return this->known_color != (xtd::drawing::known_color)0;}
+      bool is_named_color() const {return this->known_color_ != (xtd::drawing::known_color)0;}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the FromName method or the FromKnownColor method; otherwise, false.
@@ -793,7 +793,7 @@ namespace xtd {
       color(int argb, const xtd::drawing::known_color& color);
       
       int argb = 0;
-      xtd::drawing::known_color known_color = (xtd::drawing::known_color)0;
+      xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
     };
   }
 }
