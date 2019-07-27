@@ -6,6 +6,7 @@
 #include <xtd/xtd.environment>
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
+#include "forms/window_messages.hpp"
 #include "forms/native/application.hpp"
 #include "forms/native/button.hpp"
 #include "forms/native/control.hpp"

@@ -5,6 +5,7 @@
 #include <xtd/xtd.environment>
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
+#include <xtd/forms/window_messages.hpp>
 
 #include "xtd/forms/application.hpp"
 #include "xtd/forms/application_informations.hpp"

@@ -65,12 +65,12 @@ void application::exit() {
 }
 
 void application::run() {
+  native::application::register_wnd_proc(application::wnd_proc_);
   native::application::run();
 }
 
 void application::run(const form& form) {
-  native::application::main_form(form.__get_handle__());
-  native::application::register_wnd_proc(application::wnd_proc_);
+  if (!form.visible()) native::application::main_form(form.__get_handle__());
   run();
 }
 
