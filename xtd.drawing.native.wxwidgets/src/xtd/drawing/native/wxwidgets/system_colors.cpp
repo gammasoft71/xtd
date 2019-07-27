@@ -1,4 +1,5 @@
 #include <xtd/drawing/native/system_colors.hpp>
+#include <wx/log.h>
 #include <wx/settings.h>
 
 using namespace xtd::drawing::native;
@@ -10,133 +11,232 @@ namespace {
 }
 
 unsigned int system_colors::active_border() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVEBORDER));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVEBORDER));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::active_caption() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVECAPTION));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVECAPTION));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::active_caption_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTIONTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTIONTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::app_workspace() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_APPWORKSPACE));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_APPWORKSPACE));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::button_face() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::button_highlight() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::button_shadow() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::control() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::control_dark() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::control_dark_dark() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DDKSHADOW));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DDKSHADOW));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::control_light() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DLIGHT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DLIGHT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::control_light_light() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::control_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::desktop() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_DESKTOP));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_DESKTOP));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::gradient_active_caption() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTACTIVECAPTION));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTACTIVECAPTION));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::gradient_inactive_caption() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::gray_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRAYTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRAYTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::highlight() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::highlight_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHTTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHTTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::hot_track() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HOTLIGHT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HOTLIGHT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::inactive_border() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVEBORDER));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVEBORDER));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::inactive_caption() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTION));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTION));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::inactive_caption_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTIONTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTIONTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::info() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOBK));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOBK));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::info_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::menu() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENU));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENU));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::menu_bar() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUBAR));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUBAR));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::menu_highlight() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUHILIGHT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUHILIGHT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::menu_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::scroll_bar() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_SCROLLBAR));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_SCROLLBAR));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::window() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::window_frame() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME));
+  wxLog::EnableLogging(true);
+  return argb;
 }
 
 unsigned int system_colors::window_text() {
-  return to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT));
+  wxLog::EnableLogging(false);
+  unsigned int argb = to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT));
+  wxLog::EnableLogging(true);
+  return argb;
 }
