@@ -128,11 +128,11 @@ namespace xtd {
       /// @brief A system-defined color.
       dark_salmon,
       /// @brief A system-defined color.
-      dark_seaGreen,
+      dark_sea_green,
       /// @brief A system-defined color.
-      dark_slateBlue,
+      dark_slate_blue,
       /// @brief A system-defined color.
-      dark_slateGray,
+      dark_slate_gray,
       /// @brief A system-defined color.
       dark_turquoise,
       /// @brief A system-defined color.

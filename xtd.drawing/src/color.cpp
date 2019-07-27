@@ -78,11 +78,11 @@ const color color::dark_red = color::from_known_color(known_color::dark_red);
 
 const color color::dark_salmon = color::from_known_color(known_color::dark_salmon);
 
-const color color::dark_seaGreen = color::from_known_color(known_color::dark_seaGreen);
+const color color::dark_sea_green = color::from_known_color(known_color::dark_sea_green);
 
-const color color::dark_slateBlue = color::from_known_color(known_color::dark_slateBlue);
+const color color::dark_slate_blue = color::from_known_color(known_color::dark_slate_blue);
 
-const color color::dark_slateGray = color::from_known_color(known_color::dark_slateGray);
+const color color::dark_slate_gray = color::from_known_color(known_color::dark_slate_gray);
 
 const color color::dark_turquoise = color::from_known_color(known_color::dark_turquoise);
 
@@ -426,9 +426,9 @@ color color::from_known_color(known_color color) {
     {known_color::dark_orchid, 0xFF9932CC},
     {known_color::dark_red, 0xFF8B0000},
     {known_color::dark_salmon, 0xFFE9967A},
-    {known_color::dark_seaGreen, 0xFF8FBC8B},
-    {known_color::dark_slateBlue, 0xFF483D8B},
-    {known_color::dark_slateGray, 0xFF2F4F4F},
+    {known_color::dark_sea_green, 0xFF8FBC8B},
+    {known_color::dark_slate_blue, 0xFF483D8B},
+    {known_color::dark_slate_gray, 0xFF2F4F4F},
     {known_color::dark_turquoise, 0xFF00CED1},
     {known_color::dark_violet, 0xFF9400D3},
     {known_color::deep_pink, 0xFFFF1493},
