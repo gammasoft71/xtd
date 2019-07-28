@@ -3,6 +3,7 @@
 #include <cmath>
 #include <map>
 #include <stdexcept>
+#include <sstream>
 #include <xtd/xtd.strings>
 
 using namespace std;
@@ -310,10 +311,11 @@ string color::name() const {
   if (this->known_color_ == (known_color)0 && this->argb == 0)
     return "0";
   
-  /*
-   if (this->knownColor != (known_color)0 || this->argb == 0)
-   return Enum<>::GetName<known_color>(this->knownColor);
-   */
+  if (this->known_color_ != (known_color)0 || this->argb == 0) {
+    stringstream ss;
+    ss << this->known_color_;
+    return ss.str();
+  }
   
   return strings::format("{0:X8}", this->argb);
 }

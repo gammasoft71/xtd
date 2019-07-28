@@ -795,5 +795,8 @@ namespace xtd {
       int argb = 0;
       xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
     };
+    
+    /// @cond
+    inline std::ostream& operator<<(std::ostream& os, color value) {return os << value.to_string();}
   }
 }

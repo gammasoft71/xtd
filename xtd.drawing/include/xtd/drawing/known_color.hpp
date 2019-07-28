@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -356,5 +357,24 @@ namespace xtd {
       /// @brief The system-defined color used to highlight menu items when the menu appears as a flat menu.
       menu_highlight
     };
+    
+    /// @cond
+    inline std::ostream& operator<<(std::ostream& os, known_color value) {return os << to_string(value, {
+      {known_color::active_border, "active_border"},
+      {known_color::active_caption, "active_caption"},
+      {known_color::active_caption_text, "active_caption_text"},
+      {known_color::app_workspace, "app_workspace"},
+      {known_color::control, "control"},
+      {known_color::control_dark, "control_dark"},
+    });}
+    inline std::wostream& operator<<(std::wostream& os, known_color value) {return os << to_string(value, {
+      {known_color::active_border, L"active_border"},
+      {known_color::active_caption, L"active_caption"},
+      {known_color::active_caption_text, L"active_caption_text"},
+      {known_color::app_workspace, L"app_workspace"},
+      {known_color::control, L"control"},
+      {known_color::control_dark, L"control_dark"},
+    });}
+    /// @endcond
   }
 }
