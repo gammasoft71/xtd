@@ -366,6 +366,15 @@ namespace xtd {
       {known_color::app_workspace, "app_workspace"},
       {known_color::control, "control"},
       {known_color::control_dark, "control_dark"},
+      {known_color::control_dark_dark, "control_dark_dark"},
+      {known_color::control_light, "control_light"},
+      {known_color::control_light_light, "control_light_light"},
+      {known_color::control_text, "control_text"},
+      {known_color::desktop, "desktop"},
+      {known_color::gray_text, "gray_text"},
+      {known_color::highlight, "highlight"},
+      {known_color::highlight_text, "highlight_text"},
+      {known_color::hot_track, "hot_track"},
     });}
     inline std::wostream& operator<<(std::wostream& os, known_color value) {return os << to_string(value, {
       {known_color::active_border, L"active_border"},
@@ -374,6 +383,15 @@ namespace xtd {
       {known_color::app_workspace, L"app_workspace"},
       {known_color::control, L"control"},
       {known_color::control_dark, L"control_dark"},
+      {known_color::control_dark_dark, L"control_dark_dark"},
+      {known_color::control_light, L"control_light"},
+      {known_color::control_light_light, L"control_light_light"},
+      {known_color::control_text, L"control_text"},
+      {known_color::desktop, L"desktop"},
+      {known_color::gray_text, L"gray_text"},
+      {known_color::highlight, L"highlight"},
+      {known_color::highlight_text, L"highlight_text"},
+      {known_color::hot_track, L"hot_track"},
     });}
     /// @endcond
   }
