@@ -8,11 +8,10 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 int main() {
-  std::vector<shared_ptr<form>> forms;
+  vector<shared_ptr<form>> forms;
   known_color form_color = known_color::alice_blue;
   point location {20, 20};
 
-  
   form main_form;
   main_form.text("Main Form");
   //main_form.start_position(form_start_position::manual);
@@ -24,7 +23,7 @@ int main() {
   button.text("Create");
   button.location({10, 10});
   button.click += [&](const control& sender, const event_args& e) {
-    auto form = make_shared<forms::form>();
+    shared_ptr<form> form = make_shared<forms::form>();
     form->back_color(color::from_known_color(form_color));
     form->location(location);
     form->text(strings::format("{}", form_color));
