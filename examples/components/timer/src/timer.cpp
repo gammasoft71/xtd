@@ -1,6 +1,7 @@
 #include <xtd/xtd.forms>
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace examples {
@@ -10,6 +11,7 @@ namespace examples {
       this->label.parent(*this);
       this->label.text("0.0");
       this->label.location({10, 10});
+      this->label.fore_color(color::dodger_blue);
 
       this->button.parent(*this);
       this->button.text("Start");

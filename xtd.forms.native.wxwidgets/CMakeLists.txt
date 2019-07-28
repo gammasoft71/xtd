@@ -23,17 +23,16 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(src\\xtd\\forms\\native\\wxwidgets FILES ${XTD_FORMS_NATIVE_WXWIDGETS_SOURCES})
 
+# Add packages
+find_package(wxWidgets COMPONENTS base core html richtext xml)
+include(${wxWidgets_USE_FILE})
+
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if (MSVC)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif ()
-
-# Add packages
-#find_package(wxWidgets COMPONENTS base core html richtext xml)
-find_package(wxWidgets REQUIRED)
-include(${wxWidgets_USE_FILE})
 
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_NATIVE_WXWIDGETS_SOURCES})
