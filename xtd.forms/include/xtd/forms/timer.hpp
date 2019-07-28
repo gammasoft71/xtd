@@ -16,8 +16,8 @@ namespace xtd {
       bool enabled() const {return this->enabled_;}
       void enabled(bool enabled);
       
-      int interval() const {return this->interval_;}
-      void interval(int interval);
+      int32_t interval() const {return this->interval_;}
+      void interval(int32_t interval);
 
       void Start() {this->enabled(true);}
 
@@ -28,7 +28,7 @@ namespace xtd {
       
     private:
       bool enabled_ = false;
-      int interval_ = 100;
+      int32_t interval_ = 100;
       intptr_t handle_ = 0;
     };
   }

@@ -6,7 +6,7 @@ using namespace xtd::forms;
 
 namespace  {
   dialog_result show_message_box(intptr_t hwnd, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {
-    return static_cast<dialog_result>(native::message_box::show(hwnd, text, caption, static_cast<unsigned int>(buttons) + static_cast<unsigned int>(icon) + static_cast<unsigned int>(default_button) + static_cast<unsigned int>(options), display_help_button));
+    return static_cast<dialog_result>(native::message_box::show(hwnd, text, caption, static_cast<uint32_t>(buttons) + static_cast<uint32_t>(icon) + static_cast<uint32_t>(default_button) + static_cast<uint32_t>(options), display_help_button));
   }
 }
 

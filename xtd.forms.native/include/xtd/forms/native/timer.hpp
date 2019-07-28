@@ -8,7 +8,7 @@ namespace xtd {
     namespace native {
       class timer {
       public:
-        static intptr_t create(int interval, const delegate<void(const event_args&)>& tick);
+        static intptr_t create(int32_t interval, const delegate<void(const event_args&)>& tick);
         static void destroy(intptr_t handle);
       };
     }

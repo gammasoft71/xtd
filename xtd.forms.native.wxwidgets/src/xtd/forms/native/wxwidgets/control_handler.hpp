@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <memory>
 #include <set>
 #include <thread>
@@ -21,7 +22,7 @@ namespace xtd {
         control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, pos, size, style), event_handler_(event_handler) {}
         control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, label, pos, size, style), event_handler_(event_handler) {}
         
-        intptr_t def_wnd_proc(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
+        intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
           wxEvent* event = reinterpret_cast<wxEvent*>(handle);
           event->Skip(!presult);
           this->process_result_ = this->TControl::ProcessEvent(*event);
@@ -298,10 +299,10 @@ namespace xtd {
         wxWindow* control() const {return this->control_;}
         void clear_control() {this->control_ = nullptr;}
         
-        intptr_t call_def_wnd_proc(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return this->def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
+        intptr_t call_def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return this->def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
         
-        event<control_handler, delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>> wnd_proc;
-        event<control_handler, delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t, intptr_t)>> def_wnd_proc;
+        event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
+        event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t, intptr_t)>> def_wnd_proc;
         
       private:
         wxWindow* control_;
@@ -385,7 +386,7 @@ namespace xtd {
       inline void control_wrapper<TControl>::process_mouse_event(wxEvent& event, intptr_t hwnd) {
         wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
         wxMouseState mouse_state = wxGetMouseState();
-        int virtual_keys = 0;
+        int32_t virtual_keys = 0;
         if (mouse_state.ControlDown()) virtual_keys += MK_CONTROL;
         if (mouse_state.ShiftDown()) virtual_keys += MK_SHIFT;
         if (mouse_state.LeftIsDown()) virtual_keys += MK_LBUTTON;

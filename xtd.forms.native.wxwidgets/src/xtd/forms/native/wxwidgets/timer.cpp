@@ -19,7 +19,7 @@ namespace {
   };
 }
 
-intptr_t timer::create(int interval, const delegate<void(const event_args&)>& tick) {
+intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>& tick) {
   wx_timer* timer = new class wx_timer(tick);
   timer->Start(interval);
   return reinterpret_cast<intptr_t>(timer);

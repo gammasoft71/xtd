@@ -70,13 +70,13 @@ void application::run() {
 }
 
 void application::run(const form& form) {
-  if (!form.visible()) native::application::main_form(form.__get_handle__());
+  native::application::main_form(form.__get_handle__());
   run();
 }
 
 event<application, delegate<void(const event_args&)>> application::idle;
 
-int application::wnd_proc_(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+intptr_t application::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
   return message.result();

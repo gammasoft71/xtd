@@ -34,7 +34,7 @@ intptr_t control::create(intptr_t parent, const drawing::size& size) {
   return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, {size.width(), size.height()}));
 }
 
-intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
+intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
   switch (msg) {
     case WM_GETTEXTLENGTH: return (reinterpret_cast<control_handler*>(hwnd))->control()->GetLabel().ToStdString().size(); break;
     case WM_GETTEXT: return strlen(strncpy(reinterpret_cast<char*>(lparam), reinterpret_cast<control_handler*>(hwnd)->control()->GetLabel().ToStdString().c_str(), wparam)); break;
@@ -142,12 +142,12 @@ void control::visible(intptr_t control, bool visible) {
     reinterpret_cast<control_handler*>(control)->control()->Hide();
 }
 
-void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->wnd_proc += wnd_proc;
 }
 
-intptr_t control::send_message(intptr_t control, intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam) {
+intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
   if (hwnd == 0) return -1;
   return reinterpret_cast<control_handler*>(control)->send_message(hwnd, msg, wparam, lparam, 0);
 }

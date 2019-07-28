@@ -14,7 +14,7 @@ void timer::enabled(bool enabled) {
   }
 }
 
-void timer::interval(int interval) {
+void timer::interval(int32_t interval) {
   if (this->interval_ != interval) {
     this->interval_ = interval;
     

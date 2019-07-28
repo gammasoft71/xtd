@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include <functional>
 #include <map>
 #include <memory>
@@ -51,8 +52,8 @@ namespace xtd {
       
       virtual intptr_t handle() const;
       
-      virtual int height() const {return this->size_.height();}
-      virtual void height(int height) {this->size({this->size_.width(), height});}
+      virtual int32_t height() const {return this->size_.height();}
+      virtual void height(int32_t height) {this->size({this->size_.width(), height});}
       
       virtual drawing::point location() const {return this->location_;}
       virtual void location(const drawing::point& location);
@@ -72,14 +73,14 @@ namespace xtd {
       virtual bool visible() const {return this->visible_;}
       virtual void visible(bool visible);
 
-      virtual int width() const {return this->size_.width();}
-      virtual void width(int width) {this->size({width, this->size_.height()});}
+      virtual int32_t width() const {return this->size_.width();}
+      virtual void width(int32_t width) {this->size({width, this->size_.height()});}
       
-      virtual int x() const {return this->location_.x();}
-      virtual void x(int x) {this->size({x, this->location_.y()});}
+      virtual int32_t x() const {return this->location_.x();}
+      virtual void x(int32_t x) {this->size({x, this->location_.y()});}
       
-      virtual int y() const {return this->location_.y();}
-      virtual void y(int y) {this->size({this->location_.x(), y});}
+      virtual int32_t y() const {return this->location_.y();}
+      virtual void y(int32_t y) {this->size({this->location_.x(), y});}
 
       template<typename control_t>
       static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
@@ -187,7 +188,7 @@ namespace xtd {
       
       virtual void on_visible_changed(const event_args& e);
       
-      intptr_t send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam);
+      intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
       
       virtual void show() {this->visible(true);}
       
@@ -269,9 +270,9 @@ namespace xtd {
       control::state state_ = state::empty;
       
     private:
-      bool get_state(control::state flag) const {return ((int)this->state_ & (int)flag) == (int)flag;}
-      void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int)this->state_ | (int)flag) : (control::state)((int)this->state_ & ~(int)flag); }
-      intptr_t wnd_proc_(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle);      
+      bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
+      void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
+      intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
       void wm_command(message& message);
       void wm_key_char(message& message);

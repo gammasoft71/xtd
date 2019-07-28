@@ -1,5 +1,5 @@
 #pragma once
-
+#include <cstdint>
 #include <xtd/event_args.hpp>
 #include <xtd/drawing/point.hpp>
 #include "mouse_buttons.hpp"
@@ -12,8 +12,8 @@ namespace xtd {
     public:
       mouse_event_args() = default;
       
-      mouse_event_args(mouse_buttons button, const drawing::point& location, int clicks, int delta) : button_(button), location_(location), clicks_(clicks), delta_(delta) {}
-      mouse_event_args(mouse_buttons button, int x, int y, int clicks, int delta) : button_(button), location_({x, y}), clicks_(clicks), delta_(delta) {}
+      mouse_event_args(mouse_buttons button, const drawing::point& location, int32_t clicks, int32_t delta) : button_(button), location_(location), clicks_(clicks), delta_(delta) {}
+      mouse_event_args(mouse_buttons button, int32_t x, int32_t y, int32_t clicks, int32_t delta) : button_(button), location_({x, y}), clicks_(clicks), delta_(delta) {}
       
       /// @cond
       mouse_event_args(const mouse_event_args& mouse_event_args) = default;
@@ -24,19 +24,19 @@ namespace xtd {
       
       const drawing::point& location() {return this->location_;}
       
-      int clicks() {return this->clicks_;}
+      int32_t clicks() {return this->clicks_;}
       
-      int delta() {return this->delta_;}
+      int32_t delta() {return this->delta_;}
       
-      int x() {return this->location().x();}
+      int32_t x() {return this->location().x();}
       
-      int y() {return this->location().y();}
+      int32_t y() {return this->location().y();}
       
     private:
       mouse_buttons button_ = mouse_buttons::none;
       drawing::point location_;
-      int clicks_ = 0;
-      int delta_ = 0;
+      int32_t clicks_ = 0;
+      int32_t delta_ = 0;
     };
   }
 }

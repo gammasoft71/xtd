@@ -7,9 +7,8 @@
 using namespace xtd::forms::native;
 
 namespace {
-  int convert_to_dialog_result(int wx_result, int style) {
-    int dialog_result = IDOK;
-    
+  int32_t convert_to_dialog_result(int32_t wx_result, uint32_t style) {
+    int32_t dialog_result = IDOK;
     switch (wx_result) {
       case wxID_OK: dialog_result = (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK; break;
       case wxID_CANCEL: dialog_result = IDCANCEL; break;
@@ -17,12 +16,11 @@ namespace {
       case wxID_NO: dialog_result = (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO; break;
       default: break;
     }
-    
     return dialog_result;
   }
   
-  int convert_to_buttons(unsigned int style) {
-    int buttons = wxOK;
+  int32_t convert_to_buttons(uint32_t style) {
+    int32_t buttons = wxOK;
     if ((style & MB_OKCANCEL) == MB_OKCANCEL) buttons = wxOK | wxCANCEL;
     if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) buttons = wxYES_NO;
     if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) buttons = wxYES_NO | wxCANCEL;
@@ -31,8 +29,8 @@ namespace {
     return buttons;
   }
   
-  int convert_to_icon(unsigned int style) {
-    int icon = wxICON_NONE;
+  int32_t convert_to_icon(uint32_t style) {
+    int32_t icon = wxICON_NONE;
     if ((style & MB_ICONSTOP) == MB_ICONSTOP) icon = wxICON_STOP;
     if ((style & MB_ICONQUESTION) == MB_ICONQUESTION) icon = wxICON_QUESTION;
     if ((style & MB_ICONEXCLAMATION) == MB_ICONEXCLAMATION) icon = wxICON_EXCLAMATION;
@@ -40,19 +38,19 @@ namespace {
     return icon;
   }
   
-  int convert_to_option(unsigned int style) {
-    int option = 0;
+  int32_t convert_to_option(uint32_t style) {
+    int32_t option = 0;
     if ((style & MB_RIGHT) == MB_RIGHT) option = wxRIGHT;
     return option;
   }
 
-  void set_button_labels(wxMessageDialog&dialog, unsigned int style) {
+  void set_button_labels(wxMessageDialog&dialog, uint32_t style) {
     if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) dialog.SetYesNoCancelLabels("Abort", "Retry", wxID_IGNORE);
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) dialog.SetOKCancelLabels("Retry", wxID_CANCEL);
   }
 }
 
-int message_box::show(intptr_t hwnd, const std::string& text, const std::string& caption, unsigned int style, bool display_help_button) {
+int32_t message_box::show(intptr_t hwnd, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   wxMessageDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), text, caption, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);
   return convert_to_dialog_result(dialog.ShowModal(), style);

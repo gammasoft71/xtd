@@ -21,8 +21,8 @@ namespace xtd {
       intptr_t lparam() const {return this->lparam_;}
       void lparam(intptr_t value) {this->lparam_ = value;}
       
-      int msg() const {return this->msg_;}
-      void msg(int value) {this->msg_ = value;}
+      int32_t msg() const {return this->msg_;}
+      void msg(int32_t value) {this->msg_ = value;}
       
       intptr_t result() const {return this->result_;}
       void result(intptr_t value) {this->result_ = value;}
@@ -35,10 +35,10 @@ namespace xtd {
       void handle(intptr_t value) {this->handle_ = value;}
       /// @endcond
       
-      static message create(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t result) {return message(hwnd, msg, wparam, lparam, result);}
+      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result) {return message(hwnd, msg, wparam, lparam, result);}
       
       /// @cond
-      static message create(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return message(hwnd, msg, wparam, lparam, result, handle);}
+      static message create(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return message(hwnd, msg, wparam, lparam, result, handle);}
       /// @endcond
       
       template<typename type>
@@ -54,16 +54,16 @@ namespace xtd {
 
       
     private:
-      message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t result) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result) {counter_++;}
-      message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result), handle_(handle) {counter_++;}
+      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result) {counter_++;}
+      message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result), handle_(handle) {counter_++;}
       
       intptr_t hwnd_ = 0;
-      int msg_ = 0;
+      int32_t msg_ = 0;
       intptr_t wparam_ = 0;
       intptr_t lparam_ = 0;
       intptr_t result_ = 0;
       intptr_t handle_ = 0;
-      static int counter_;
+      static int32_t counter_;
     };
   }
 }

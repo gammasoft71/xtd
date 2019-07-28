@@ -22,11 +22,11 @@ namespace {
       return this->wxApp::ProcessEvent(event);
     }
 
-    intptr_t send_message(intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+    intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
       return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
     }
 
-    event<wx_application, delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>> wnd_proc;
+    event<wx_application, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
   };
 
   unique_ptr<wxInitializer> wxinitializer;
@@ -81,7 +81,7 @@ vector<intptr_t> application::open_forms() {
   return forms;
 }
 
-void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   initialize_application(); // Must be first
   static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
 }
