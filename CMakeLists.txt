@@ -5,6 +5,7 @@ project(xtd.forms)
 
 # Options
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 
 # Code coverage
 option(ENABLE_COVERAGE "Enable code coverage" OFF)
@@ -20,6 +21,8 @@ add_subdirectory(xtd.forms.native)
 #add_subdirectory(xtd.forms.native.win32)
 add_subdirectory(xtd.forms.native.wxwidgets)
 add_subdirectory(xtd.forms)
+add_subdirectory(xtd.drawing/xtd.drawing.native)
+add_subdirectory(xtd.drawing/xtd.drawing.native.wxwidgets)
 add_subdirectory(xtd.drawing/xtd.drawing)
 add_subdirectory(xtd.delegates/xtd.delegates)
 add_subdirectory(xtd.diagnostics/xtd.diagnostics)

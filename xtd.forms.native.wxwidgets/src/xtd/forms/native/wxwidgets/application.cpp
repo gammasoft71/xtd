@@ -29,7 +29,7 @@ namespace {
     event<wx_application, delegate<intptr_t(intptr_t, int, intptr_t, intptr_t, intptr_t)>> wnd_proc;
   };
 
-  unique_ptr< wxInitializer> wxinitializer;
+  unique_ptr<wxInitializer> wxinitializer;
 }
 
 bool application::allow_quit() {

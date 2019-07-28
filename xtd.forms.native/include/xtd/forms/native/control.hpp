@@ -4,8 +4,9 @@
 #include <string>
 #include <xtd/delegate.hpp>
 #include <xtd/event_args.hpp>
-#include <xtd/point.hpp>
-#include <xtd/size.hpp>
+#include <xtd/drawing/color.hpp>
+#include <xtd/drawing/point.hpp>
+#include <xtd/drawing/size.hpp>
 #include <xtd/xtd.strings.hpp>
 #include "../window_messages.hpp"
 
@@ -14,6 +15,8 @@ namespace xtd {
     namespace native {
       class control {
       public:
+        static drawing::color back_color(intptr_t control);
+        static void back_color(intptr_t control, const drawing::color& color);
         static intptr_t create(intptr_t parent, const drawing::size& size);
         static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle);
         static void destroy(intptr_t control);
@@ -22,6 +25,8 @@ namespace xtd {
         static void client_size(intptr_t control, const drawing::size& size);
         static bool enabled(intptr_t control);
         static void enabled(intptr_t control, bool enabled);
+        static drawing::color fore_color(intptr_t control);
+        static void fore_color(intptr_t control, const drawing::color& color);
         static intptr_t handle(intptr_t control);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);

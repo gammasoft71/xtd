@@ -49,6 +49,14 @@ control::~control() {
 
 map<intptr_t, control*> control::handles_;
 
+void control::back_color(const color& color) {
+  if (this->back_color_ != color) {
+    this->back_color_ = color;
+    native::control::back_color(this->handle_, this->back_color_);
+    this->on_back_color_changed(event_args::empty);
+  }
+}
+
 void control::client_size(const drawing::size& size) {
   if (this->client_size_ != size) {
     this->client_size_ = size;
@@ -63,6 +71,14 @@ void control::enabled(bool enabled) {
     //  control->enabled(enabled);
     native::control::enabled(this->handle_, this->enabled_);
     this->on_enabled_changed(event_args::empty);
+  }
+}
+
+void control::fore_color(const color& color) {
+  if (this->fore_color_ != color) {
+    this->fore_color_ = color;
+    native::control::fore_color(this->handle_, this->fore_color_);
+    this->on_fore_color_changed(event_args::empty);
   }
 }
 
@@ -164,6 +180,10 @@ bool control::is_null() const {
   return this == &control::null;
 }
 
+void control::on_back_color_changed(const event_args &e) {
+  this->back_color_changed(*this, e);
+}
+
 void control::on_create_control() {
 }
 
@@ -183,6 +203,10 @@ void control::on_double_click(const event_args &e) {
 void control::on_enabled_changed(const event_args &e) {
   this->enabled_ = native::control::enabled(this->handle_);
   this->enabled_changed(*this, e);
+}
+
+void control::on_fore_color_changed(const event_args &e) {
+  this->fore_color_changed(*this, e);
 }
 
 void control::on_got_focus(const event_args &e) {
@@ -327,7 +351,9 @@ void control::def_wnd_proc(message& message) {
 }
 
 void control::get_properties() {
+  this->back_color_ = native::control::back_color(this->handle_);
   this->client_size_ = native::control::client_size(this->handle_);
+  this->fore_color_ = native::control::fore_color(this->handle_);
   this->location_ = native::control::location(this->handle_);
   this->size_ = native::control::size(this->handle_);
   this->text_ = native::control::text(this->handle_);

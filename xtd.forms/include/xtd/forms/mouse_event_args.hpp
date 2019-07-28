@@ -1,7 +1,7 @@
 #pragma once
 
 #include <xtd/event_args.hpp>
-#include <xtd/point.hpp>
+#include <xtd/drawing/point.hpp>
 #include "mouse_buttons.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

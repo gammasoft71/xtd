@@ -3,8 +3,9 @@
 #include <map>
 #include <memory>
 #include <string>
-#include <xtd/point.hpp>
-#include <xtd/size.hpp>
+#include <xtd/drawing/color.hpp>
+#include <xtd/drawing/point.hpp>
+#include <xtd/drawing/size.hpp>
 
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
@@ -34,6 +35,9 @@ namespace xtd {
       
       virtual ~control();
 
+      virtual drawing::color back_color() const {return this->back_color_;}
+      virtual void back_color(const drawing::color& color);
+
       virtual drawing::size client_size() const {return this->client_size_;}
       virtual void client_size(const drawing::size& size);
 
@@ -42,6 +46,9 @@ namespace xtd {
       virtual bool enabled() const {return this->enabled_;}
       virtual void enabled(bool enabled);
 
+      virtual drawing::color fore_color() const {return this->fore_color_;}
+      virtual void fore_color(const drawing::color& color);
+      
       virtual intptr_t handle() const;
       
       virtual int height() const {return this->size_.height();}
@@ -124,6 +131,8 @@ namespace xtd {
       
       bool is_null() const;
       
+      virtual void on_back_color_changed(const event_args& e);
+
       virtual void on_click(const event_args& e);
 
       virtual void on_client_size_changed(const event_args& e);
@@ -134,6 +143,8 @@ namespace xtd {
       
       virtual void on_enabled_changed(const event_args& e);
 
+      virtual void on_fore_color_changed(const event_args& e);
+      
       virtual void on_got_focus(const event_args& e);
       
       virtual void on_handle_created(const event_args& e);
@@ -182,6 +193,8 @@ namespace xtd {
       
       virtual void wnd_proc(message& message);
       
+      event<control, event_handler<control>> back_color_changed;
+      
       event<control, event_handler<control>> click;
       
       event<control, event_handler<control>> client_size_changed;
@@ -196,6 +209,8 @@ namespace xtd {
       
       event<control, event_handler<control>> enabled_changed;
 
+      event<control, event_handler<control>> fore_color_changed;
+      
       event<control, key_event_handler<control>> key_down;
       
       event<control, key_press_event_handler<control>> key_press;
@@ -239,8 +254,10 @@ namespace xtd {
       
       void get_properties();
       void set_properties();
+      drawing::color back_color_;
       drawing::size client_size_ {-1, -1};
       bool enabled_ = true;
+      drawing::color fore_color_;
       intptr_t handle_ = 0;
       static std::map<intptr_t, control*> handles_;
       std::string name_;

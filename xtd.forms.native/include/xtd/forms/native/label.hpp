@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/size.hpp>
+#include <xtd/drawing/size.hpp>
 #include <cstdint>
 
 namespace xtd {

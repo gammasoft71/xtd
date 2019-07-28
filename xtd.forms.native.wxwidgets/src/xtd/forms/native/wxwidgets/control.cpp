@@ -18,6 +18,17 @@ namespace {
   };
 }
 
+color control::back_color(intptr_t control) {
+  if (control == 0) return color::empty;
+  wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetBackgroundColour();
+  return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+}
+
+void control::back_color(intptr_t control, const color& color) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+}
+
 intptr_t control::create(intptr_t parent, const drawing::size& size) {
   if (parent == 0) throw invalid_argument("parent can't be null");
   return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, {size.width(), size.height()}));
@@ -25,8 +36,8 @@ intptr_t control::create(intptr_t parent, const drawing::size& size) {
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
   switch (msg) {
-  case WM_GETTEXTLENGTH: return (reinterpret_cast<control_handler*>(hwnd))->control()->GetLabel().ToStdString().size(); break;
-  case WM_GETTEXT: return strlen(strncpy(reinterpret_cast<char*>(lparam), reinterpret_cast<control_handler*>(hwnd)->control()->GetLabel().ToStdString().c_str(), wparam)); break;
+    case WM_GETTEXTLENGTH: return (reinterpret_cast<control_handler*>(hwnd))->control()->GetLabel().ToStdString().size(); break;
+    case WM_GETTEXT: return strlen(strncpy(reinterpret_cast<char*>(lparam), reinterpret_cast<control_handler*>(hwnd)->control()->GetLabel().ToStdString().c_str(), wparam)); break;
   }
   if (handle != 0) return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
   return 0;
@@ -63,6 +74,17 @@ bool control::enabled(intptr_t control) {
 void control::enabled(intptr_t control, bool enabled) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Enable(enabled);
+}
+
+color control::fore_color(intptr_t control) {
+  if (control == 0) return color::empty;
+  wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetForegroundColour();
+  return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+}
+
+void control::fore_color(intptr_t control, const color& color) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
 intptr_t control::handle(intptr_t control) {
