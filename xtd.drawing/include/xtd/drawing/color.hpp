@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include <ostream>
 #include <string>
 #include "known_color.hpp"
@@ -479,7 +480,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char a() const {return (unsigned char)((this->argb & 0xFF000000) >> 24);}
+      uint8_t a() const {return (uint8_t)((this->argb & 0xFF000000) >> 24);}
       
       /// @brief Gets the blue component value of this xtd::drawing::color class.
       /// @return byte The blue component value of this xtd::drawing::color.
@@ -498,7 +499,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char b() const {return (unsigned char)(this->argb & 0x000000FF);}
+      uint8_t b() const {return (uint8_t)(this->argb & 0x000000FF);}
       
       /// @brief Gets the green component value of this xtd::drawing::color class.
       /// @return byte The green component value of this xtd::drawing::color.
@@ -517,7 +518,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char g() const {return (unsigned char)((this->argb & 0x0000FF00) >> 8);}
+      uint8_t g() const {return (uint8_t)((this->argb & 0x0000FF00) >> 8);}
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
       /// @return bool Returns true if this color is uninitialized; otherwise, false.
@@ -557,13 +558,13 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      unsigned char r() const {return (unsigned char)((this->argb & 0x00FF0000) >> 16);}
+      uint8_t r() const {return (uint8_t)((this->argb & 0x00FF0000) >> 16);}
       
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      static xtd::drawing::color from_argb(int argb);
+      static xtd::drawing::color from_argb(uint32_t argb);
       
       /// @brief Creates a xtd::drawing::color class from the specified xtd::drawing::color structure, but with the new specified alpha value. Although this method allows a 32-bit value to be passed for the alpha value, the value is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
@@ -571,7 +572,7 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @exception ArgumentException alpha is less than 0 or greater than 255.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      static xtd::drawing::color from_argb(int alpha, const xtd::drawing::color& baseColor);
+      static xtd::drawing::color from_argb(uint8_t alpha, const xtd::drawing::color& baseColor);
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
@@ -581,7 +582,7 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @exception ArgumentException alpha, red, green or blue is less than 0 or greater than 255.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      static xtd::drawing::color from_argb(int alpha, int red, int green, int blue);
+      static xtd::drawing::color from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue);
       
       /// @brief Creates a xtd::drawing::color class from the three HSV component (hue, saturation, and brightness) values.
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
@@ -777,7 +778,7 @@ namespace xtd {
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
       /// @return int The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
-      int to_argb() const;
+      uint32_t to_argb() const;
       
       /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
       /// @return xtd::drawing::known_color An element of the xtd::drawing::known_color enumeration, if the xtd::drawing::color is created from a predefined color by using either the FromName method or the FromKnownColor method; otherwise, 0.
@@ -789,10 +790,10 @@ namespace xtd {
       std::string to_string() const;
       
     private:
-      explicit color(int argb);
-      color(int argb, const xtd::drawing::known_color& color);
+      explicit color(uint32_t argb);
+      color(uint32_t argb, const xtd::drawing::known_color& color);
       
-      int argb = 0;
+      uint32_t argb = 0;
       xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
     };
     

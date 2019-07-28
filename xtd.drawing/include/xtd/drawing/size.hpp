@@ -27,7 +27,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the Size class from the specified dimensions.
       /// @param width The width component of the new Size
       /// @param height The height component of the new Size
-      size(int width, int height) : width_(width), height_(height) {}
+      size(int32_t width, int32_t height) : width_(width), height_(height) {}
 
       /// @cond
       size(const xtd::drawing::size&) = default;
@@ -43,22 +43,22 @@ namespace xtd {
       /// @brief Gets he vertical component of this Size Class.
       /// @return int The vertical component of this Size class, typically measured in pixels.
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
-      int height() const {return height_;}
+      int32_t height() const {return height_;}
       
       /// @brief Sets the vertical component of this Size Class.
       /// @return int The vertical component of this Size class, typically measured in pixels.
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
-      void height(int height) {this->height_ = height;}
+      void height(int32_t height) {this->height_ = height;}
       
       /// @brief Gets the horizontal component of this Size class.
       /// @return int The horizontal component of this Size class, typically measured in pixels.
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
-      int width() const {return width_;}
+      int32_t width() const {return width_;}
       
       /// @brief Sets the horizontal component of this Size class.
       /// @return int The horizontal component of this Size class, typically measured in pixels.
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
-      void width(int width) {this->width_ = width;}
+      void width(int32_t width) {this->width_ = width;}
 
       /// @brief Adds the width and height of one Size class to the width and height of another size class.
       /// @param size1 The first Size class to add.
@@ -88,8 +88,8 @@ namespace xtd {
       /// @endcond
       
     private:
-      int width_ = 0;
-      int height_ = 0;
+      int32_t width_ = 0;
+      int32_t height_ = 0;
     };
   }
 }

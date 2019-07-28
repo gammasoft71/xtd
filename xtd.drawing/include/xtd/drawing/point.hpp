@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include <ostream>
 #include <string>
 
@@ -16,7 +17,7 @@ namespace xtd {
       static const point empty;
       
       point() = default;
-      point(int x, int y) : x_(x), y_(y) {}
+      point(int32_t x, int32_t y) : x_(x), y_(y) {}
 
       /// @cond
       point(const point&) = default;
@@ -38,13 +39,13 @@ namespace xtd {
 
       std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + "}";}
       
-      int x() const {return x_;}
+      int32_t x() const {return x_;}
       
-      void x(int x) {this->x_ = x;}
+      void x(int32_t x) {this->x_ = x;}
       
-      int y() const {return y_;}
+      int32_t y() const {return y_;}
 
-      void y(int y) {this->y_ = y;}
+      void y(int32_t y) {this->y_ = y;}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point& point) noexcept {
@@ -53,8 +54,8 @@ namespace xtd {
       /// @endcond
       
     private:
-      int x_ = 0;
-      int y_ = 0;
+      int32_t x_ = 0;
+      int32_t y_ = 0;
     };
   }
 }
