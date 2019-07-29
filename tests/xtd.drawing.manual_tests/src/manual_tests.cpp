@@ -13,6 +13,12 @@ int main() {
   cout << format("color::blue.to_argb() = 0x{:X}", color::blue.to_argb()) << endl;
   cout << format("color::from_argb(128, color::blue) = {}", color::from_argb(128, color::blue)) << endl;
   cout << format("color::from_argb(255, 255, 0, 0) = {}", color::from_argb(255, 255, 0, 0)) << endl;
+  cout << format("ccolor::from_name(\"activeborder\") = {}", color::from_name("activeborder")) << endl;
+  cout << format("color::parse(\"active border\") = {}", color::parse("active border")) << endl;
+  cout << format("color::parse(\"color [active border]\") = {}", color::parse("color [active border]")) << endl;
+  cout << format("color::parse(\"BLUE\") = {}", color::parse("BLUE")) << endl;
+  cout << format("color::parse(\"color [blue]\") = {}", color::parse("color [blue]")) << endl;
+  cout << format("color::parse(\"color [a=255, r=0, g=80, b=0]\") = {}", color::parse("color [a=255, r=0, g=80, b=0]")) << endl;
   cout << format("system_colors::active_border = {}", system_colors::active_border) << endl;
   cout << format("system_colors::button_face.to_argb() = 0x{:X}", system_colors::button_face.to_argb()) << endl;
 }
