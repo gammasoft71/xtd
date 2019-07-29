@@ -253,8 +253,11 @@ namespace xtd {
     protected:
       virtual void def_wnd_proc(message& message);
       
-      void get_properties();
-      void set_properties();
+      virtual void get_properties();
+      virtual void set_properties();
+
+      void re_create_control();
+      
       drawing::color back_color_;
       drawing::size client_size_ {-1, -1};
       bool enabled_ = true;

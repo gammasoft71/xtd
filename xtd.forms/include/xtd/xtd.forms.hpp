@@ -9,6 +9,7 @@
 
 #include "xtd/forms/application.hpp"
 #include "xtd/forms/application_informations.hpp"
+#include "xtd/forms/border_styles.hpp"
 #include "xtd/forms/button.hpp"
 #include "xtd/forms/cancel_event_args.hpp"
 #include "xtd/forms/close_reason.hpp"
