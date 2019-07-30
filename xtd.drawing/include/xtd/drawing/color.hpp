@@ -586,6 +586,8 @@ namespace xtd {
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       static xtd::drawing::color from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue);
       
+      static xtd::drawing::color from_handle(intptr_t argb);
+      
       /// @brief Creates a xtd::drawing::color class from the three HSV component (hue, saturation, and brightness) values.
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param saturation The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
@@ -794,7 +796,6 @@ namespace xtd {
     private:
       explicit color(uint32_t argb);
       color(const color& color, const xtd::drawing::known_color& know_color);
-      static xtd::drawing::color from_handle(intptr_t argb);
 
       uint32_t argb = 0;
       intptr_t handle_ = 0;
