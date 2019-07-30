@@ -165,6 +165,11 @@ void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr
   reinterpret_cast<control_handler*>(control)->wnd_proc += wnd_proc;
 }
 
+void control::unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->wnd_proc -= wnd_proc;
+}
+
 intptr_t control::send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
   if (hwnd == 0) return -1;
   return reinterpret_cast<control_handler*>(control)->send_message(hwnd, msg, wparam, lparam, 0);

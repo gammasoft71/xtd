@@ -36,10 +36,11 @@ namespace {
   }
 }
 
-const control control::null;
+const control control::null {"null"};
 
 control::~control() {
   if (this->handle_) {
+    native::control::unregister_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
     native::control::del(this->handle_);
     this->handle_ = 0;
     this->on_handle_destroyed(event_args::empty);
@@ -52,7 +53,7 @@ map<intptr_t, control*> control::handles_;
 void control::back_color(const color& color) {
   if (this->back_color_ != color) {
     this->back_color_ = color;
-    native::control::back_color(this->handle_, this->back_color_);
+    native::control::back_color(this->handle_, this->back_color_.value());
     this->on_back_color_changed(event_args::empty);
   }
 }
@@ -77,7 +78,7 @@ void control::enabled(bool enabled) {
 void control::fore_color(const color& color) {
   if (this->fore_color_ != color) {
     this->fore_color_ = color;
-    native::control::fore_color(this->handle_, this->fore_color_);
+    native::control::fore_color(this->handle_, this->fore_color_.value());
     this->on_fore_color_changed(event_args::empty);
   }
 }
@@ -358,9 +359,7 @@ void control::re_create_control() {
 }
 
 void control::get_properties() {
-  this->back_color_ = native::control::back_color(this->handle_);
   this->client_size_ = native::control::client_size(this->handle_);
-  this->fore_color_ = native::control::fore_color(this->handle_);
   this->location_ = native::control::location(this->handle_);
   this->size_ = native::control::size(this->handle_);
   this->text_ = native::control::text(this->handle_);
@@ -368,13 +367,12 @@ void control::get_properties() {
 }
 
 void control::set_properties() {
-  native::control::back_color(this->handle_, this->back_color_);
-  if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size_);
-  native::control::fore_color(this->handle_, this->fore_color_);
-  if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location_);
-  if (this->size_ != drawing::size(-1, -1)) native::control::size(this->handle_, this->size_);
-  native::control::text(this->handle_, this->text_);
-  native::control::visible(this->handle_, this->visible_);
+  if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
+  native::control::fore_color(this->handle_, this->fore_color());
+  if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location());
+  if (this->size_ != drawing::size(-1, -1)) native::control::size(this->handle_, this->size());
+  native::control::text(this->handle_, this->text());
+  native::control::visible(this->handle_, this->visible());
 }
 
 void control::wm_child_activate(message& message) {
@@ -444,7 +442,7 @@ void control::wm_mouse_up(message& message) {
     this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
   }
    */
-  this->on_click(event_args::empty);
+  if (message_to_mouse_buttons(message) == mouse_buttons::left) this->on_click(event_args::empty);
   this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
   this->def_wnd_proc(message);
   this->on_mouse_up(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));

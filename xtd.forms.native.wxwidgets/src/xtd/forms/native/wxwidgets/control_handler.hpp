@@ -310,6 +310,10 @@ namespace xtd {
       
       template<typename TControl>
       inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
+        if (event.GetEventType() == wxEVT_DESTROY) {
+          this->def_process_event(event);
+          return this->process_result_;
+        }
         wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
         if (!window) {
           this->def_process_event(event);

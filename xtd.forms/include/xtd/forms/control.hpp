@@ -3,6 +3,7 @@
 #include <functional>
 #include <map>
 #include <memory>
+#include <optional>
 #include <string>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/system_colors.hpp>
@@ -37,18 +38,22 @@ namespace xtd {
       
       virtual ~control();
 
-      virtual drawing::color back_color() const {return this->back_color_;}
+      virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ != &control::null ? this->parent_->back_color() : default_back_color());}
       virtual void back_color(const drawing::color& color);
 
       virtual drawing::size client_size() const {return this->client_size_;}
       virtual void client_size(const drawing::size& size);
+
+      virtual drawing::color default_back_color() const {return drawing::system_colors::control;}
+
+      virtual drawing::color default_fore_color() const {return drawing::system_colors::control_text;}
 
       virtual drawing::size default_size() const {return{0, 0};}
       
       virtual bool enabled() const {return this->enabled_;}
       virtual void enabled(bool enabled);
 
-      virtual drawing::color fore_color() const {return this->fore_color_;}
+      virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ != &control::null ? this->parent_->fore_color() : default_fore_color());}
       virtual void fore_color(const drawing::color& color);
       
       virtual intptr_t handle() const;
@@ -259,10 +264,10 @@ namespace xtd {
 
       void re_create_control();
       
-      drawing::color back_color_ = drawing::system_colors::control;
+      std::optional<drawing::color> back_color_;
       drawing::size client_size_ {-1, -1};
       bool enabled_ = true;
-      drawing::color fore_color_ = drawing::system_colors::control_text;;
+      std::optional<drawing::color> fore_color_;
       intptr_t handle_ = 0;
       static std::map<intptr_t, control*> handles_;
       std::string name_;
@@ -274,6 +279,7 @@ namespace xtd {
       control::state state_ = state::empty;
       
     private:
+      explicit control(const std::string& name) : name_(name) {}
       bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);

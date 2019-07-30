@@ -11,6 +11,10 @@ namespace xtd {
     public:
       form();
 
+      drawing::color default_back_color() const override {return drawing::system_colors::window;}
+      
+      drawing::color default_fore_color() const override {return drawing::system_colors::window_text;}
+
       drawing::size default_size() const override {return{300, 300};}
       
       event<form, form_closed_event_handler<control>> form_closed;

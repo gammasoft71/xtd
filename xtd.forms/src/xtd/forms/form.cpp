@@ -7,9 +7,12 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 form::form() {
+  this->back_color_ = this->default_back_color();
+  this->fore_color_ = this->default_fore_color();
   create_control();
 }
 

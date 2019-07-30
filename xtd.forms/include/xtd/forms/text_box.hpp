@@ -7,7 +7,11 @@ namespace xtd {
   namespace forms {
     class text_box : public control {
     public:
-      text_box() = default;
+      text_box();
+
+      drawing::color default_back_color() const override {return drawing::system_colors::window;}
+      
+      drawing::color default_fore_color() const override {return drawing::system_colors::window_text;}
 
       drawing::size default_size() const override {return{100, 23};}
 

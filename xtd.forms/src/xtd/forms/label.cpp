@@ -2,6 +2,7 @@
 #include <xtd/forms/native/label.hpp>
 #include "../../../include/xtd/forms/label.hpp"
 
+using namespace xtd;
 using namespace xtd::forms;
 
 void label::auto_size(bool auto_size) {

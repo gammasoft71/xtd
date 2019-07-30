@@ -37,6 +37,7 @@ namespace xtd {
         static bool visible(intptr_t control);
         static void visible(intptr_t control, bool visible);
         static void register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
+        static void unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void register_client_size_changed(intptr_t control, delegate<void(const event_args&)> callback);
         static intptr_t send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wParam, intptr_t lParam);
         
