@@ -1,5 +1,6 @@
 #include <map>
 #include <stdexcept>
+#include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>
 #include "control_handler.hpp"
@@ -55,6 +56,9 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
 }
 
 color control::default_back_color() {
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+  return system_colors::control;
+#else
   static color default_color;
   if (default_color == color::empty) {
     native::application::initialize_application();
@@ -70,9 +74,13 @@ color control::default_back_color() {
     delete frame;
   }
   return default_color;
+#endif
 }
 
 color control::default_fore_color() {
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+  return system_colors::control_text;
+#else
   static color default_color;
   if (default_color == color::empty) {
     native::application::initialize_application();
@@ -88,6 +96,7 @@ color control::default_fore_color() {
     delete frame;
   }
   return default_color;
+#endif
 }
 
 void control::destroy(intptr_t control) {

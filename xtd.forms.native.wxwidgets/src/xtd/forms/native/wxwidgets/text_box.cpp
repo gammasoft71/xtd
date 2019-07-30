@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/text_box.hpp>
 #include "control_handler.hpp"
@@ -24,6 +25,9 @@ intptr_t text_box::create(intptr_t parent, const drawing::size& size) {
 }
 
 color text_box::default_back_color() {
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+  return system_colors::window;
+#else
   static color default_color;
   if (default_color == color::empty) {
     native::application::initialize_application();
@@ -39,9 +43,13 @@ color text_box::default_back_color() {
     delete frame;
   }
   return default_color;
+#endif
 }
 
 color text_box::default_fore_color() {
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+  return system_colors::window;
+#else
   static color default_color;
   if (default_color == color::empty) {
     native::application::initialize_application();
@@ -57,6 +65,7 @@ color text_box::default_fore_color() {
     delete frame;
   }
   return default_color;
+#endif
 }
 
 string text_box::text(intptr_t control) {
