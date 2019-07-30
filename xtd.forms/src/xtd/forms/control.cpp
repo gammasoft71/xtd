@@ -367,6 +367,7 @@ void control::get_properties() {
 }
 
 void control::set_properties() {
+  if (this->back_color() != system_colors::control) native::control::back_color(this->handle_, this->back_color());
   if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
   native::control::fore_color(this->handle_, this->fore_color());
   if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location());

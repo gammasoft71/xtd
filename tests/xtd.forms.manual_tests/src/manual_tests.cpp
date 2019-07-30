@@ -8,13 +8,13 @@ using namespace xtd::forms;
 // The main entry point for the application.
 int main() {
   form form;
-  form.back_color(color::dodger_blue);
-  form.fore_color(color::yellow);
+  //form.back_color(color::dodger_blue);
+  //form.fore_color(color::yellow);
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
 
   label label1;
-  label1.auto_size(true);
+  //label1.auto_size(true);
   label1.border_styles(forms::border_styles::fixed_single);
   label1.text("Hello");
   label1.parent(form);
@@ -27,6 +27,7 @@ int main() {
   text_box.location({10, 70});
   cdebug << format("text_box.back_color = {}", text_box.back_color()) << endl;
   cdebug << format("text_box.fore_color = {}", text_box.fore_color()) << endl;
+  cdebug << format("text_box.size = {}", text_box.size()) << endl;
 
   button button1;
   button1.parent(form);
@@ -40,6 +41,7 @@ int main() {
   };
   cdebug << format("button1.back_color = {}", button1.back_color()) << endl;
   cdebug << format("button1.fore_color = {}", button1.fore_color()) << endl;
+  cdebug << format("button1.size = {}", button1.size()) << endl;
 
   forms::button button2;
   button2.parent(form);
@@ -50,6 +52,7 @@ int main() {
   };
   cdebug << format("button2.back_color = {}", button2.back_color()) << endl;
   cdebug << format("button2.fore_color = {}", button2.fore_color()) << endl;
+  cdebug << format("button2.size = {}", button2.size()) << endl;
 
   application::run(form);
 }

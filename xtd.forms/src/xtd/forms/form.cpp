@@ -21,6 +21,7 @@ void form::create_handle() {
   this->visible_ = false;
   this->location_ = native::control::location(this->handle_);
   this->control::create_handle();
+  native::control::back_color(this->handle_, this->back_color());
 }
 
 void form::close() {

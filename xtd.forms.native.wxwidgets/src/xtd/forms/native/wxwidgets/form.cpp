@@ -35,4 +35,3 @@ intptr_t form::create(const size& size) {
 void form::close(intptr_t form) {
   reinterpret_cast<wx_form*>(form)->control()->Close();
 }
-
