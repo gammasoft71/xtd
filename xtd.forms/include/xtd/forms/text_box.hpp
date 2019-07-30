@@ -13,7 +13,7 @@ namespace xtd {
       
       drawing::color default_fore_color() const override;
       
-      drawing::size default_size() const override {return {100, 23};}
+      drawing::size default_size() const override {return {100, 25};}
 
       using control::text;
       void text(const std::string& text) override;

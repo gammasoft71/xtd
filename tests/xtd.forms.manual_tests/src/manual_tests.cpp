@@ -34,7 +34,7 @@ int main() {
   button button1;
   button1.parent(form);
   button1.location({10, 200});
-  button1.width(100);
+  button1.width(110);
   button1.text(strings::format("auto size {}", label1.auto_size() ? "OFF" : "ON"));
   button1.click += [&](const control& sender, const event_args& e) {
     label1.auto_size(!label1.auto_size());

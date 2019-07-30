@@ -9,7 +9,7 @@ namespace xtd {
     public:
       button() = default;
 
-      drawing::size default_size() const override {return {75, 23};}
+      drawing::size default_size() const override {return {75, 25};}
 
       void create_handle() override;
     };

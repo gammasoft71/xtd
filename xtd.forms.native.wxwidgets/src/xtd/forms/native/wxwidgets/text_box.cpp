@@ -3,6 +3,7 @@
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/text_box.hpp>
 #include "control_handler.hpp"
+#include <wx/button.h>
 #include <wx/textctrl.h>
 
 using namespace std;
@@ -54,7 +55,7 @@ color text_box::default_fore_color() {
   if (default_color == color::empty) {
     native::application::initialize_application();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
-    wxTextCtrl* text_box = new wxTextCtrl(frame, wxID_ANY, "");
+    wxButton* text_box = new wxButton(frame, wxID_ANY, "");
     wxColour colour = text_box->GetForegroundColour();
 #if defined (__APPLE__)
     default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
