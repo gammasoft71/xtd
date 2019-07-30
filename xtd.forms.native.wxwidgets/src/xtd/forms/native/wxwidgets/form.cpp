@@ -1,3 +1,4 @@
+#include <xtd/drawing/color.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/form.hpp>
 #include "control_handler.hpp"

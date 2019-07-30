@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/text_box.hpp>
 #include "control_handler.hpp"
 #include <wx/textctrl.h>
@@ -20,6 +21,42 @@ namespace {
 intptr_t text_box::create(intptr_t parent, const drawing::size& size) {
   if (parent == 0) throw invalid_argument("parent can't be null");
   return (intptr_t) new wx_text_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
+}
+
+color text_box::default_back_color() {
+  static color default_color;
+  if (default_color == color::empty) {
+    native::application::initialize_application();
+    wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+    wxTextCtrl* text_box = new wxTextCtrl(frame, wxID_ANY, "");
+    wxColour colour = text_box->GetBackgroundColour();
+#if defined (__APPLE__)
+    default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
+#else
+    default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+#endif
+    delete text_box;
+    delete frame;
+  }
+  return default_color;
+}
+
+color text_box::default_fore_color() {
+  static color default_color;
+  if (default_color == color::empty) {
+    native::application::initialize_application();
+    wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+    wxTextCtrl* text_box = new wxTextCtrl(frame, wxID_ANY, "");
+    wxColour colour = text_box->GetForegroundColour();
+#if defined (__APPLE__)
+    default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
+#else
+    default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+#endif
+    delete text_box;
+    delete frame;
+  }
+  return default_color;
 }
 
 string text_box::text(intptr_t control) {

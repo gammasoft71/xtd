@@ -1,7 +1,9 @@
 #include <map>
 #include <stdexcept>
+#include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>
 #include "control_handler.hpp"
+#include <wx/button.h>
 #include <wx/control.h>
 
 using namespace std;
@@ -50,6 +52,42 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
   }
   if (handle != 0) return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
   return 0;
+}
+
+color control::default_back_color() {
+  static color default_color;
+  if (default_color == color::empty) {
+    native::application::initialize_application();
+    wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+    wxButton* button = new wxButton(frame, wxID_ANY, "");
+    wxColour colour = button->GetBackgroundColour();
+#if defined (__APPLE__)
+    default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
+#else
+    default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+#endif
+    delete button;
+    delete frame;
+  }
+  return default_color;
+}
+
+color control::default_fore_color() {
+  static color default_color;
+  if (default_color == color::empty) {
+    native::application::initialize_application();
+    wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+    wxButton* button = new wxButton(frame, wxID_ANY, "");
+    wxColour colour = button->GetForegroundColour();
+#if defined (__APPLE__)
+    default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
+#else
+    default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
+#endif
+    delete button;
+    delete frame;
+  }
+  return default_color;
 }
 
 void control::destroy(intptr_t control) {

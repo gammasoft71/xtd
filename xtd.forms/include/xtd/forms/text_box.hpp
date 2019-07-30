@@ -9,11 +9,11 @@ namespace xtd {
     public:
       text_box();
 
-      drawing::color default_back_color() const override {return drawing::system_colors::window;}
+      drawing::color default_back_color() const override;
       
-      drawing::color default_fore_color() const override {return drawing::system_colors::window_text;}
-
-      drawing::size default_size() const override {return {100, 20};}
+      drawing::color default_fore_color() const override;
+      
+      drawing::size default_size() const override {return {100, 23};}
 
       using control::text;
       void text(const std::string& text) override;

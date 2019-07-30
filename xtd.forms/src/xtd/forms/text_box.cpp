@@ -12,6 +12,14 @@ text_box::text_box() {
   this->fore_color_ = this->default_fore_color();
 }
 
+color text_box::default_back_color() const {
+  return native::text_box::default_back_color();
+}
+
+color text_box::default_fore_color() const {
+  return native::text_box::default_fore_color();
+}
+
 void text_box::text(const string& text) {
   if (this->text_ != text) {
     this->text_ = text;

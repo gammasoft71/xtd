@@ -44,9 +44,9 @@ namespace xtd {
       virtual drawing::size client_size() const {return this->client_size_;}
       virtual void client_size(const drawing::size& size);
 
-      virtual drawing::color default_back_color() const {return drawing::system_colors::control;}
+      virtual drawing::color default_back_color() const;
 
-      virtual drawing::color default_fore_color() const {return drawing::system_colors::control_text;}
+      virtual drawing::color default_fore_color() const;
 
       virtual drawing::size default_size() const {return{0, 0};}
       
