@@ -14,7 +14,7 @@ namespace {
   public:
     wx_form(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_FRAME_STYLE) {
       this->control_handler::create<wxFrame>(parent, id, title, pos, size, style);
-      this->control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+      //this->control()->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       this->panel = new wxPanel(this->control());
       this->panel->Hide();
       this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {

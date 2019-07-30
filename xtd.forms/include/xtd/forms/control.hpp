@@ -5,6 +5,7 @@
 #include <memory>
 #include <string>
 #include <xtd/drawing/color.hpp>
+#include <xtd/drawing/system_colors.hpp>
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/size.hpp>
 
@@ -258,10 +259,10 @@ namespace xtd {
 
       void re_create_control();
       
-      drawing::color back_color_;
+      drawing::color back_color_ = drawing::system_colors::control;
       drawing::size client_size_ {-1, -1};
       bool enabled_ = true;
-      drawing::color fore_color_;
+      drawing::color fore_color_ = drawing::system_colors::control_text;;
       intptr_t handle_ = 0;
       static std::map<intptr_t, control*> handles_;
       std::string name_;
