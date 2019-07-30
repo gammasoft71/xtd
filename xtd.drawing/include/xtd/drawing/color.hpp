@@ -459,7 +459,7 @@ namespace xtd {
       /// @cond
       color(const xtd::drawing::color& color) = default;
       color& operator=(const xtd::drawing::color& color) = default;
-      bool operator==(const xtd::drawing::color& value) const {return this->argb == value.argb && this->handle_ == value.handle_;}
+      bool operator==(const xtd::drawing::color& value) const {return this->argb_ == value.argb_ && this->handle_ == value.handle_;}
       bool operator!=(const xtd::drawing::color& value) const {return !this->operator==(value);}
       /// @endcond
       
@@ -797,7 +797,7 @@ namespace xtd {
       explicit color(uint32_t argb);
       color(const color& color, const xtd::drawing::known_color& know_color);
 
-      uint32_t argb = 0;
+      uint32_t argb_ = 0;
       intptr_t handle_ = 0;
       xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
     };

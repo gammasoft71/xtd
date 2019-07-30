@@ -153,10 +153,10 @@ const color color::white_smoke = color::from_known_color(known_color::white_smok
 const color color::yellow = color::from_known_color(known_color::yellow);
 const color color::yellow_green = color::from_known_color(known_color::yellow_green);
 
-color::color(uint32_t argb) : argb(argb) {
+color::color(uint32_t argb) : argb_(argb) {
 }
 
-color::color(const color& color, const known_color& known_color) : argb(color.argb), handle_(color.handle_), known_color_(known_color) {
+color::color(const color& color, const known_color& known_color) : argb_(color.argb_), handle_(color.handle_), known_color_(known_color) {
 }
 
 bool color::is_system_color() const {
@@ -164,16 +164,16 @@ bool color::is_system_color() const {
 }
 
 string color::name() const {
-  if (this->known_color_ == (known_color)0 && this->argb == 0)
+  if (this->known_color_ == (known_color)0 && this->argb_ == 0 && this->handle_ == 0)
     return "0";
   
-  if (this->known_color_ != (known_color)0 || this->argb == 0) {
+  if (this->known_color_ != (known_color)0 || this->argb_ == 0) {
     stringstream ss;
     ss << this->known_color_;
     return ss.str();
   }
   
-  return strings::format("{0:X8}", this->argb);
+  return strings::format("{0:X8}", this->argb_);
 }
 
 color color::from_argb(uint32_t argb) {
@@ -184,7 +184,7 @@ color color::from_argb(uint8_t alpha, const color& baseColor) {
   if (alpha < 0 || alpha > 255)
     throw invalid_argument("alpha value must be between 0 and 255");
   
-  return color((alpha << 24) + (baseColor.argb & 0x00FFFFFF));
+  return color((alpha << 24) + (baseColor.argb_ & 0x00FFFFFF));
 }
 
 color color::from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) {
@@ -285,7 +285,7 @@ color color::parse(const string& color) {
 
 uint32_t color::to_argb() const {
   if (this->handle_) return native::system_colors::to_argb(this->handle_);
-  return this->argb;
+  return this->argb_;
 }
 
 known_color color::to_known_color() const {
@@ -293,10 +293,10 @@ known_color color::to_known_color() const {
 }
 
 string color::to_string() const {
-  if (this->known_color_ == (known_color)0 && this->argb == 0)
+  if (this->known_color_ == (known_color)0 && this->argb_ == 0 && this->handle_ == 0)
     return "color [empty]";
   
-  if (this->known_color_ != (known_color)0 || this->argb == 0)
+  if (this->known_color_ != (known_color)0 || this->argb_ == 0)
     return strings::format("color [{0}]", name());
   
   return strings::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
