@@ -13,7 +13,7 @@ uint32_t system_colors::to_argb(intptr_t color){
 #if defined(__APPLE__)
   return ::to_argb(wxColour(reinterpret_cast<WX_NSColor>(color)));
 #else
-  return reinterpret_cast<uint32_t>(color);
+  return static_cast<uint32_t>(color);
 #endif
 }
 
