@@ -457,9 +457,9 @@ namespace xtd {
       color() = default;
       
       /// @cond
-      color(const xtd::drawing::color& color);
+      color(const xtd::drawing::color& color) = default;
       color& operator=(const xtd::drawing::color& color) = default;
-      bool operator==(const xtd::drawing::color& value) const {return this->argb == value.argb;}
+      bool operator==(const xtd::drawing::color& value) const {return this->argb == value.argb && this->handle_ == value.handle_;}
       bool operator!=(const xtd::drawing::color& value) const {return !this->operator==(value);}
       /// @endcond
       
@@ -480,7 +480,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      uint8_t a() const {return (uint8_t)((this->argb & 0xFF000000) >> 24);}
+      uint8_t a() const {return (uint8_t)((this->to_argb() & 0xFF000000) >> 24);}
       
       /// @brief Gets the blue component value of this xtd::drawing::color class.
       /// @return byte The blue component value of this xtd::drawing::color.
@@ -499,7 +499,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      uint8_t b() const {return (uint8_t)(this->argb & 0x000000FF);}
+      uint8_t b() const {return (uint8_t)(this->to_argb() & 0x000000FF);}
       
       /// @brief Gets the green component value of this xtd::drawing::color class.
       /// @return byte The green component value of this xtd::drawing::color.
@@ -518,7 +518,9 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      uint8_t g() const {return (uint8_t)((this->argb & 0x0000FF00) >> 8);}
+      uint8_t g() const {return (uint8_t)((this->to_argb() & 0x0000FF00) >> 8);}
+      
+      intptr_t handle() const {return this->handle_;}
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
       /// @return bool Returns true if this color is uninitialized; otherwise, false.
@@ -558,7 +560,7 @@ namespace xtd {
       ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
       /// }
       /// @endcode
-      uint8_t r() const {return (uint8_t)((this->argb & 0x00FF0000) >> 16);}
+      uint8_t r() const {return (uint8_t)((this->to_argb() & 0x00FF0000) >> 16);}
       
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
@@ -791,9 +793,11 @@ namespace xtd {
       
     private:
       explicit color(uint32_t argb);
-      color(uint32_t argb, const xtd::drawing::known_color& color);
-      
+      color(const color& color, const xtd::drawing::known_color& know_color);
+      static xtd::drawing::color from_handle(intptr_t argb);
+
       uint32_t argb = 0;
+      intptr_t handle_ = 0;
       xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
     };
     
