@@ -10,7 +10,7 @@ namespace xtd {
     class form_closing_event_args : public cancel_event_args {
     public:
       form_closing_event_args() = default;
-      form_closing_event_args(close_reason close_reason) : close_reason_(close_reason) {};
+      form_closing_event_args(forms::close_reason close_reason) : close_reason_(close_reason) {};
 
       /// @cond
       form_closing_event_args(const form_closing_event_args& form_closing_event_args) = default;
