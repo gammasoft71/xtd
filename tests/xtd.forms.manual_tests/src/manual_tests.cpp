@@ -26,8 +26,6 @@ int main() {
 
   text_box text_box;
   text_box.parent(form);
-  text_box.back_color(color::from_argb(16, color::black));
-  text_box.fore_color(color::yellow);
   text_box.location({10, 70});
   cdebug << format("text_box.back_color = {}", text_box.back_color()) << endl;
   cdebug << format("text_box.fore_color = {}", text_box.fore_color()) << endl;
