@@ -12,6 +12,7 @@ int main() {
   //form.fore_color(color::yellow);
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
+  cdebug << format("form.size = {}", form.size()) << endl;
 
   label label1;
   //label1.auto_size(true);
@@ -21,7 +22,8 @@ int main() {
   label1.location({10, 10});
   cdebug << format("label1.back_color = {}", label1.back_color()) << endl;
   cdebug << format("label1.fore_color = {}", label1.fore_color()) << endl;
-  
+  cdebug << format("label1.size = {}", label1.size()) << endl;
+
   text_box text_box;
   text_box.parent(form);
   text_box.location({10, 70});

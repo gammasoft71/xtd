@@ -54,10 +54,13 @@ namespace xtd {
           return event_types.find(event_type) != event_types.end();
         }
         
+        /// @todo only avaible with wxWidgets 3.1.2
+        /*
         bool is_gesture_event(wxEventType event_type) const {
           static std::set<wxEventType> event_types = {wxEVT_GESTURE_PAN, wxEVT_GESTURE_ZOOM, wxEVT_GESTURE_ROTATE, wxEVT_TWO_FINGER_TAP, wxEVT_LONG_PRESS, wxEVT_PRESS_AND_TAP};
           return event_types.find(event_type) != event_types.end();
         }
+         */
         
         bool is_help_event(wxEventType event_type) const {
           static std::set<wxEventType> event_types = {wxEVT_HELP, wxEVT_DETAILED_HELP};
@@ -65,7 +68,8 @@ namespace xtd {
         }
         
         bool is_key_event(wxEventType event_type) const {
-          static std::set<wxEventType> event_types = {wxEVT_CHAR, wxEVT_CHAR_HOOK, wxEVT_NAVIGATION_KEY, wxEVT_KEY_DOWN, wxEVT_KEY_UP, wxEVT_HOTKEY, wxEVT_AFTER_CHAR};
+          /// @todo only avaible with wxWidgets 3.1.2
+          static std::set<wxEventType> event_types = {wxEVT_CHAR, wxEVT_CHAR_HOOK, wxEVT_NAVIGATION_KEY, wxEVT_KEY_DOWN, wxEVT_KEY_UP /*, wxEVT_HOTKEY*/, wxEVT_AFTER_CHAR};
           return event_types.find(event_type) != event_types.end();
         }
         
@@ -261,7 +265,8 @@ namespace xtd {
         void process_command_event(wxEvent &event, intptr_t hwnd);
         void process_cursor_event(wxEvent &event, intptr_t hwnd);
         void process_generic_command_event(wxEvent &event, intptr_t hwnd);
-        void process_gesture_event(wxEvent &event, intptr_t hwnd);
+        /// @todo only avaible with wxWidgets 3.1.2
+        //void process_gesture_event(wxEvent &event, intptr_t hwnd);
         void process_help_event(wxEvent &event, intptr_t hwnd);
         void process_key_event(wxEvent &event, intptr_t hwnd);
         void process_mouse_event(wxEvent &event, intptr_t hwnd);
@@ -325,7 +330,8 @@ namespace xtd {
         else if (is_command_event(event.GetEventType())) this->process_command_event(event, hwnd);
         else if (is_cursor_event(event.GetEventType())) this->process_cursor_event(event, hwnd);
         else if (is_generic_command_event(event.GetEventType())) this->process_generic_command_event(event, hwnd);
-        else if (is_gesture_event(event.GetEventType())) this->process_gesture_event(event, hwnd);
+        /// @todo only avaible with wxWidgets 3.1.2
+        //else if (is_gesture_event(event.GetEventType())) this->process_gesture_event(event, hwnd);
         else if (is_key_event(event.GetEventType())) this->process_key_event(event, hwnd);
         else if (is_mouse_event(event.GetEventType())) this->process_mouse_event(event, hwnd);
         else if (is_scroll_event(event.GetEventType())) this->process_scroll_event(event, hwnd);
@@ -373,10 +379,13 @@ namespace xtd {
         this->def_process_event(event);
       }
       
+      /// @todo only avaible with wxWidgets 3.1.2
+      /*
       template<typename TControl>
       inline void control_wrapper<TControl>::process_gesture_event(wxEvent& event, intptr_t hwnd) {
         this->def_process_event(event);
       }
+       */
       
       template<typename TControl>
       inline void control_wrapper<TControl>::process_key_event(wxEvent& event, intptr_t hwnd) {
