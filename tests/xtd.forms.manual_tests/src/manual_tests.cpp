@@ -49,5 +49,12 @@ int main() {
   cdebug << format("check_box3.fore_color = {}", check_box3.fore_color()) << endl;
   cdebug << format("check_box3.size = {}", check_box3.size()) << endl;
 
+  button b;
+  b.parent(form);
+  b.location({10, 200});
+  b.click += [&](const control& sender, const event_args& e) {
+    cdebug << "button click" << endl;
+  };
+  
   application::run(form);
 }
