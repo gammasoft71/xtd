@@ -38,7 +38,8 @@ void check_box::three_state(bool three_state) {
 void check_box::create_handle() {
   this->handle_ = native::check_box::create(this->parent_->__get_handle__(), this->default_size(), this->three_state_);
   this->control::create_handle();
-  if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
+  native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
+  //if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
 }
 
 void check_box::on_click(const event_args& e) {

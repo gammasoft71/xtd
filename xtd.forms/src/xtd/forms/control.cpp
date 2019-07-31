@@ -418,14 +418,14 @@ void control::wm_kill_focus(message& message) {
 }
 
 void control::wm_mouse_down(message& message) {
-  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   this->def_wnd_proc(message);
+  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   this->on_mouse_down(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
 }
 
 void control::wm_mouse_double_click(message& message) {
-  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   this->def_wnd_proc(message);
+  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   this->on_double_click(event_args::empty);
   this->on_mouse_double_click(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
 }
@@ -441,6 +441,7 @@ void control::wm_mouse_leave(message& message) {
 }
 
 void control::wm_mouse_up(message& message) {
+  this->def_wnd_proc(message);
   /*
   if (this->get_state(control::state::double_click_fired)) {
     this->on_double_click(event_args::empty);
@@ -452,7 +453,6 @@ void control::wm_mouse_up(message& message) {
    */
   if (message_to_mouse_buttons(message) == mouse_buttons::left) this->on_click(event_args::empty);
   this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
-  this->def_wnd_proc(message);
   this->on_mouse_up(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
 }
 
