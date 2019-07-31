@@ -15,12 +15,14 @@ set(XTD_FORMS_INCLUDES
 set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/application.hpp
   include/xtd/forms/native/button.hpp
+  include/xtd/forms/native/check_box.hpp
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/form.hpp
   include/xtd/forms/native/label.hpp
   include/xtd/forms/native/message_box.hpp
   include/xtd/forms/native/text_box.hpp
   include/xtd/forms/native/timer.hpp
+  include/xtd/forms/native/window_check_box.hpp
   include/xtd/forms/native/window_message_box.hpp
   include/xtd/forms/native/window_message_keys.hpp
 )

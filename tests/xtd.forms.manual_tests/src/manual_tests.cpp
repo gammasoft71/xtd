@@ -14,47 +14,40 @@ int main() {
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
 
-  label label1;
-  //label1.auto_size(true);
-  label1.border_styles(forms::border_styles::fixed_single);
-  label1.text("Hello");
-  label1.parent(form);
-  label1.location({10, 10});
-  cdebug << format("label1.back_color = {}", label1.back_color()) << endl;
-  cdebug << format("label1.fore_color = {}", label1.fore_color()) << endl;
-  cdebug << format("label1.size = {}", label1.size()) << endl;
+  check_box check_box1;
+  check_box1.parent(form);
+  check_box1.check_state(forms::check_state::unchecked);
+  check_box1.location({10, 10});
+  check_box1.text("unchecked");
+  cdebug << format("check_box1.back_color = {}", check_box1.back_color()) << endl;
+  cdebug << format("check_box1.fore_color = {}", check_box1.fore_color()) << endl;
+  cdebug << format("check_box1.size = {}", check_box1.size()) << endl;
 
-  text_box text_box;
-  text_box.parent(form);
-  text_box.location({10, 70});
-  cdebug << format("text_box.back_color = {}", text_box.back_color()) << endl;
-  cdebug << format("text_box.fore_color = {}", text_box.fore_color()) << endl;
-  cdebug << format("text_box.size = {}", text_box.size()) << endl;
+  check_box check_box2;
+  check_box2.parent(form);
+  check_box2.check_state(forms::check_state::checked);
+  check_box2.location({10, 40});
+  check_box2.text("checked");
+  cdebug << format("check_box2.back_color = {}", check_box2.back_color()) << endl;
+  cdebug << format("check_box2.fore_color = {}", check_box2.fore_color()) << endl;
+  cdebug << format("check_box2.size = {}", check_box2.size()) << endl;
 
-  button button1;
-  button1.parent(form);
-  button1.location({10, 200});
-  button1.width(110);
-  button1.text(strings::format("auto size {}", label1.auto_size() ? "OFF" : "ON"));
-  button1.click += [&](const control& sender, const event_args& e) {
-    label1.auto_size(!label1.auto_size());
-    label1.size({100, 23});
-    button1.text(strings::format("auto size {}", label1.auto_size() ? "OFF" : "ON"));
+  check_box check_box3;
+  check_box3.parent(form);
+  //check_box3.auto_check(false);
+  check_box3.three_state(true);
+  check_box3.check_state(forms::check_state::indeterminate);
+  check_box3.location({10, 70});
+  check_box3.text("indeterminate");
+  check_box3.check_changed += [&](const control& sender, const event_args& e) {
+    cdebug << format("check_box3.checked() = {}", check_box3.checked()) << endl;
   };
-  cdebug << format("button1.back_color = {}", button1.back_color()) << endl;
-  cdebug << format("button1.fore_color = {}", button1.fore_color()) << endl;
-  cdebug << format("button1.size = {}", button1.size()) << endl;
-
-  forms::button button2;
-  button2.parent(form);
-  button2.location({150, 200});
-  button2.text("text...");
-  button2.click += [&](const control& sender, const event_args& e) {
-    label1.text(label1.text() == "Hello" ? "This is a very long long text" : "Hello");
+  check_box3.check_state_changed += [&](const control& sender, const event_args& e) {
+    cdebug << format("check_box3.check_state() = {}", check_box3.check_state()) << endl;
   };
-  cdebug << format("button2.back_color = {}", button2.back_color()) << endl;
-  cdebug << format("button2.fore_color = {}", button2.fore_color()) << endl;
-  cdebug << format("button2.size = {}", button2.size()) << endl;
+  cdebug << format("check_box3.back_color = {}", check_box3.back_color()) << endl;
+  cdebug << format("check_box3.fore_color = {}", check_box3.fore_color()) << endl;
+  cdebug << format("check_box3.size = {}", check_box3.size()) << endl;
 
   application::run(form);
 }

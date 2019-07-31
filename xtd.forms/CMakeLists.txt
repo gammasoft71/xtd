@@ -14,6 +14,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/border_styles.hpp
   include/xtd/forms/button.hpp
   include/xtd/forms/cancel_event_args.hpp
+  include/xtd/forms/check_box.hpp
+  include/xtd/forms/check_state.hpp
   include/xtd/forms/close_reason.hpp
   include/xtd/forms/control.hpp
   include/xtd/forms/dialog_result.hpp
@@ -44,6 +46,7 @@ set(XTD_FORMS_INCLUDES
 set(XTD_FORMS_SOURCES
   src/xtd/forms/application.cpp
   src/xtd/forms/button.cpp
+  src/xtd/forms/check_box.cpp
   src/xtd/forms/control.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/label.cpp

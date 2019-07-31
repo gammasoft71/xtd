@@ -9,6 +9,7 @@
 #include "forms/window_messages.hpp"
 #include "forms/native/application.hpp"
 #include "forms/native/button.hpp"
+#include "forms/native/check_box.hpp"
 #include "forms/native/control.hpp"
 #include "forms/native/form.hpp"
 #include "forms/native/label.hpp"

@@ -12,6 +12,8 @@
 #include "xtd/forms/border_styles.hpp"
 #include "xtd/forms/button.hpp"
 #include "xtd/forms/cancel_event_args.hpp"
+#include "xtd/forms/check_box.hpp"
+#include "xtd/forms/check_state.hpp"
 #include "xtd/forms/close_reason.hpp"
 #include "xtd/forms/control.hpp"
 #include "xtd/forms/dialog_result.hpp"
