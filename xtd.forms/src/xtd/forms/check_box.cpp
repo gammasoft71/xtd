@@ -42,8 +42,15 @@ void check_box::create_handle() {
   //if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
 }
 
-void check_box::on_click(const event_args& e) {
-  this->control::on_click(e);
+void check_box::wnd_proc(message &message) {
+  switch (message.msg()) {
+    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    default: this->def_wnd_proc(message);
+  }
+}
+
+void check_box::wm_reflect_command(message &message) {
+  this->def_wnd_proc(message);
   if (this->auto_check_)
     this->check_state(static_cast<forms::check_state>(native::check_box::check_state(this->handle_)));
   else

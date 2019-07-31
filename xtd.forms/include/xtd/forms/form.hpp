@@ -33,6 +33,7 @@ namespace xtd {
       
     private:
       void wm_close(message& message);
+      void wm_command(message& message);
     };
   }
 }

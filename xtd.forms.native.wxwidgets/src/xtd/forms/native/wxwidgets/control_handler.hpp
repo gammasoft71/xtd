@@ -364,7 +364,8 @@ namespace xtd {
       
       template<typename TControl>
       inline void control_wrapper<TControl>::process_command_event(wxEvent& event, intptr_t hwnd) {
-        this->def_process_event(event);
+        if (event.GetEventType() == wxEVT_CHECKBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(reinterpret_cast<wxWindow*>(event.GetEventObject())->GetParent()->GetHandle()), WM_COMMAND, BN_CLICKED, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()), reinterpret_cast<intptr_t>(&event));
+        else this->def_process_event(event);
       }
       
       template<typename TControl>

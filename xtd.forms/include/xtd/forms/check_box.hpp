@@ -34,10 +34,12 @@ namespace xtd {
       virtual void on_check_changed(const event_args& e) {this->check_changed(*this, e);}
       
       virtual void on_check_state_changed(const event_args& e) {this->check_state_changed(*this, e);}
-      
-      void on_click(const event_args& e) override;
+
+      void wnd_proc(message& message) override;
 
     private:
+      void wm_reflect_command(message& message);
+      
       bool auto_check_ = true;
       bool three_state_ = 0;
       bool checked_ = false;

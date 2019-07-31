@@ -389,7 +389,7 @@ void control::wm_child_activate(message& message) {
 
 void control::wm_command(message& message) {
   this->def_wnd_proc(message);
-  //this->on_click(event_args::empty);
+  from_handle(message.lparam()).send_message(message.hwnd(), WM_REFLECT + WM_COMMAND, message.wparam(), message.lparam());
 }
 
 void control::wm_key_char(message& message) {
