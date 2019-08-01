@@ -8,6 +8,7 @@
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/drawing/point.hpp>
+//#include <xtd/drawing/rectangle.hpp>
 #include <xtd/drawing/size.hpp>
 
 #include "key_event_handler.hpp"
@@ -41,8 +42,8 @@ namespace xtd {
 
       virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ != &control::null ? this->parent_->back_color() : default_back_color());}
       virtual void back_color(const drawing::color& color);
-
-      virtual drawing::size client_size() const {return this->client_size_;}
+      
+     virtual drawing::size client_size() const {return this->client_size_;}
       virtual void client_size(const drawing::size& size);
       
       virtual control_collection controls() const;

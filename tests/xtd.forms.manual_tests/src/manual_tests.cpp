@@ -17,7 +17,7 @@ int main() {
   panel panel1;
   panel1.parent(form);
   panel1.location({10, 10});
-  panel1.border_styles(forms::border_styles::fixed_single);
+  panel1.border_style(forms::border_style::fixed_single);
   
   radio_button radio_button1;
   radio_button1.parent(panel1);
@@ -42,7 +42,7 @@ int main() {
   panel panel2;
   panel2.parent(form);
   panel2.location({10, 150});
-  panel2.border_styles(forms::border_styles::fixed_3d);
+  panel2.border_style(forms::border_style::fixed_3d);
   
   radio_button radio_button3;
   radio_button3.parent(panel2);

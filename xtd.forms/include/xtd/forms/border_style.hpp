@@ -7,7 +7,7 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies the border style for a control.
     /// @remarks Use the members of this enumeration to set the border style for controls that have a changeable border.
-    enum class border_styles {
+    enum class border_style {
       /// @brief No border.s
       none = 0,
       /// @brief A single-line border.
@@ -17,8 +17,8 @@ namespace xtd {
     };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, border_styles value) {return os << to_string(value, {{border_styles::none, "none"}, {border_styles::fixed_single, "fixed_single"}, {border_styles::fixed_3d, "fixed_3"}});}
-    inline std::wostream& operator<<(std::wostream& os, border_styles value) {return os << to_string(value, {{border_styles::none, L"none"}, {border_styles::fixed_single, L"fixed_single"}, {border_styles::fixed_3d, L"fixed_3d"}});}
+    inline std::ostream& operator<<(std::ostream& os, border_style value) {return os << to_string(value, {{border_style::none, "none"}, {border_style::fixed_single, "fixed_single"}, {border_style::fixed_3d, "fixed_3"}});}
+    inline std::wostream& operator<<(std::wostream& os, border_style value) {return os << to_string(value, {{border_style::none, L"none"}, {border_style::fixed_single, L"fixed_single"}, {border_style::fixed_3d, L"fixed_3d"}});}
     /// @endcond
   }
 }

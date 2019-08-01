@@ -11,7 +11,7 @@ set(XTD_INCLUDES
 set(XTD_FORMS_INCLUDES
   include/xtd/forms/application.hpp
   include/xtd/forms/application_informations.hpp
-  include/xtd/forms/border_styles.hpp
+  include/xtd/forms/border_style.hpp
   include/xtd/forms/button.hpp
   include/xtd/forms/cancel_event_args.hpp
   include/xtd/forms/check_box.hpp

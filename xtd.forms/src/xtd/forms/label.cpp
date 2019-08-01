@@ -13,9 +13,9 @@ void label::auto_size(bool auto_size) {
   }
 }
 
-void label::border_styles(forms::border_styles border_styles) {
-  if (this->border_styles_ != border_styles) {
-    this->border_styles_ = border_styles;
+void label::border_style(forms::border_style border_style) {
+  if (this->border_style_ != border_style) {
+    this->border_style_ = border_style;
     this->re_create_control();
   }
 }
@@ -23,8 +23,8 @@ void label::border_styles(forms::border_styles border_styles) {
 void label::create_handle() {
   native::label::styles styles = native::label::styles::none;
   if (this->auto_size_) styles += native::label::styles::auto_size;
-  if (this->border_styles_ == forms::border_styles::fixed_single) styles += native::label::styles::border_fixed_single;
-  if (this->border_styles_ == forms::border_styles::fixed_3d) styles += native::label::styles::border_fixed_3d;
+  if (this->border_style_ == forms::border_style::fixed_single) styles += native::label::styles::border_fixed_single;
+  if (this->border_style_ == forms::border_style::fixed_3d) styles += native::label::styles::border_fixed_3d;
   this->handle_ = native::label::create(this->parent_->__get_handle__(), this->default_size(), styles);
   this->control::create_handle();
 }
