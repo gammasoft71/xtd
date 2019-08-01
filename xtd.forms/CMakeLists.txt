@@ -31,6 +31,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/keys.hpp
   include/xtd/forms/label.hpp
   include/xtd/forms/message.hpp
+  include/xtd/forms/panel.hpp
   include/xtd/forms/message_box.hpp
   include/xtd/forms/message_box_buttons.hpp
   include/xtd/forms/message_box_default_button.hpp
@@ -53,6 +54,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/label.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/message_box.cpp
+  src/xtd/forms/panel.cpp
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
