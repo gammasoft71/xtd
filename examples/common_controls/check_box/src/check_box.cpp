@@ -20,18 +20,17 @@ namespace examples {
       this->check_box2.text("Checked");
 
       this->check_box3.parent(*this);
+      this->check_box3.check_state_changed += [&](const control& sender, const event_args& e) {
+        this->label1.text(strings::format("check_box3 state = {}", this->check_box3.check_state()));
+      };
       this->check_box3.check_state(forms::check_state::indeterminate);
       this->check_box3.three_state(true);
       this->check_box3.location({30, 90});
       this->check_box3.text("indeterminate");
-      this->check_box3.check_state_changed += [&](const control& sender, const event_args& e) {
-        this->label1.text(strings::format("check_box3 state = {}", this->check_box3.check_state()));
-      };
       
       this->label1.parent(*this);
       this->label1.auto_size(true);
       this->label1.location({30, 150});
-      this->label1.text(strings::format("check_box3 state = {}", this->check_box3.check_state()));
     }
     
   private:
