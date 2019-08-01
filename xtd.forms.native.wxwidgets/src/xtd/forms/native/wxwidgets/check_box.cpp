@@ -9,8 +9,8 @@ using namespace xtd::forms::native;
 namespace {
   class wx_check_box : public control_handler {
   public:
-    wx_check_box(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, bool three_state = false) {
-      this->control_handler::create<wxCheckBox>(parent, id, title, pos, size, wxCHK_3STATE | (three_state ? wxCHK_ALLOW_3RD_STATE_FOR_USER : 0));
+    wx_check_box(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, int style = 0) {
+      this->control_handler::create<wxCheckBox>(parent, id, title, pos, size, style);
     }
   };
   
@@ -34,7 +34,9 @@ namespace {
 }
 
 intptr_t check_box::create(intptr_t parent, const size& size, bool three_state) {
-  return (intptr_t) new wx_check_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, three_state);
+  int wx_style = wxCHK_3STATE;
+  if (three_state) wx_style += wxCHK_ALLOW_3RD_STATE_FOR_USER;
+  return (intptr_t) new wx_check_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, wx_style);
 }
 
 int check_box::check_state(intptr_t control) {
