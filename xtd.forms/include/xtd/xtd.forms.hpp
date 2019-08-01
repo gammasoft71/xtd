@@ -22,6 +22,7 @@
 #include "xtd/forms/form_closed_event_handler.hpp"
 #include "xtd/forms/form_closing_event_args.hpp"
 #include "xtd/forms/form_closing_event_handler.hpp"
+#include "xtd/forms/group_box.hpp"
 #include "xtd/forms/key_event_args.hpp"
 #include "xtd/forms/key_event_handler.hpp"
 #include "xtd/forms/key_press_event_args.hpp"

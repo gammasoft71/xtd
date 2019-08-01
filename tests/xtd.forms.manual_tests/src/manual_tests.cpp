@@ -8,21 +8,21 @@ using namespace xtd::forms;
 // The main entry point for the application.
 int main() {
   form form;
-  //form.back_color(color::dodger_blue);
-  //form.fore_color(color::yellow);
+  form.back_color(color::dodger_blue);
+  form.fore_color(color::yellow);
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
 
-  panel panel1;
+  group_box panel1;
   panel1.parent(form);
   panel1.location({10, 10});
-  panel1.border_style(forms::border_style::fixed_single);
-  
+  panel1.text("group_box 1");
+
   radio_button radio_button1;
   radio_button1.parent(panel1);
   radio_button1.checked(true);
-  radio_button1.location({30, 30});
+  radio_button1.location({30, 10});
   radio_button1.text("radio 1");
   cdebug << format("radio_button1.back_color = {}", radio_button1.back_color()) << endl;
   cdebug << format("radio_button1.fore_color = {}", radio_button1.fore_color()) << endl;
@@ -30,7 +30,7 @@ int main() {
   
   radio_button radio_button2;
   radio_button2.parent(panel1);
-  radio_button2.location({30, 60});
+  radio_button2.location({30, 40});
   radio_button2.text("radio 2");
   radio_button2.checked_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("radio_button2.checked() = {}", radio_button2.checked()) << endl;
@@ -39,20 +39,19 @@ int main() {
   cdebug << format("radio_button2.fore_color = {}", radio_button2.fore_color()) << endl;
   cdebug << format("radio_button2.size = {}", radio_button2.size()) << endl;
 
-  panel panel2;
+  group_box panel2;
   panel2.parent(form);
   panel2.location({10, 150});
-  panel2.border_style(forms::border_style::fixed_3d);
   
   radio_button radio_button3;
   radio_button3.parent(panel2);
   radio_button3.checked(true);
-  radio_button3.location({30, 30});
+  radio_button3.location({30, 10});
   radio_button3.text("radio 3");
   
   radio_button radio_button4;
   radio_button4.parent(panel2);
-  radio_button4.location({30, 60});
+  radio_button4.location({30, 40});
   radio_button4.text("radio 4");
   radio_button4.checked_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("radio_button4.checked() = {}", radio_button4.checked()) << endl;

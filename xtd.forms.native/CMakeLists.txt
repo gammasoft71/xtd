@@ -18,6 +18,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/check_box.hpp
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/form.hpp
+  include/xtd/forms/native/group_box.hpp
   include/xtd/forms/native/label.hpp
   include/xtd/forms/native/message_box.hpp
   include/xtd/forms/native/panel.hpp

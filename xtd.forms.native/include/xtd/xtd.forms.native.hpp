@@ -12,6 +12,7 @@
 #include "forms/native/check_box.hpp"
 #include "forms/native/control.hpp"
 #include "forms/native/form.hpp"
+#include "forms/native/group_box.hpp"
 #include "forms/native/label.hpp"
 #include "forms/native/panel.hpp"
 #include "forms/native/radio_button.hpp"

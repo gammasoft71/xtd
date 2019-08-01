@@ -24,6 +24,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/form_closed_event_handler.hpp
   include/xtd/forms/form_closing_event_args.hpp
   include/xtd/forms/form_closing_event_handler.hpp
+  include/xtd/forms/group_box.hpp
   include/xtd/forms/key_event_args.hpp
   include/xtd/forms/key_event_handler.hpp
   include/xtd/forms/key_press_event_args.hpp
@@ -51,6 +52,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/check_box.cpp
   src/xtd/forms/control.cpp
   src/xtd/forms/form.cpp
+  src/xtd/forms/group_box.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/message_box.cpp
