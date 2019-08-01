@@ -8,8 +8,8 @@ using namespace xtd::forms;
 // The main entry point for the application.
 int main() {
   form form;
-  //form.back_color(color::dodger_blue);
-  //form.fore_color(color::yellow);
+  form.back_color(color::dodger_blue);
+  form.fore_color(color::yellow);
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
