@@ -28,6 +28,7 @@ namespace xtd {
       };
       
     public:
+      using control_collection = std::vector<std::reference_wrapper<control>>;
       static const control null;
       
       control() = default;
@@ -43,6 +44,8 @@ namespace xtd {
 
       virtual drawing::size client_size() const {return this->client_size_;}
       virtual void client_size(const drawing::size& size);
+      
+      virtual control_collection controls() const;
 
       virtual drawing::color default_back_color() const;
 

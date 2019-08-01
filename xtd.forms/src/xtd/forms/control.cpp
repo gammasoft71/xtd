@@ -65,6 +65,14 @@ void control::client_size(const drawing::size& size) {
   }
 }
 
+control::control_collection control::controls() const {
+  control_collection controls;
+  for(intptr_t handle : native::control::controls(this->handle_))
+    if (&from_handle(handle) != &control::null)
+      controls.push_back(from_handle(handle));
+  return controls;
+}
+
 drawing::color control::default_back_color() const {
   return native::control::default_back_color();
 }
@@ -396,17 +404,17 @@ void control::wm_command(message& message) {
 void control::wm_key_char(message& message) {
   if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
-    on_key_down(key_event_args);
+    this->on_key_down(key_event_args);
     message.result(key_event_args.suppress_key_press());
     if (!key_event_args.handled()) this->def_wnd_proc(message);
   } else if (message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) {
     key_press_event_args key_press_event_args(static_cast<int32_t>(message.wparam()));
-    on_key_press(key_press_event_args);
+    this->on_key_press(key_press_event_args);
     message.result(key_press_event_args.handled());
     if (!key_press_event_args.handled()) this->def_wnd_proc(message);
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
-    on_key_up(key_event_args);
+    this->on_key_up(key_event_args);
     message.result(key_event_args.handled());
     if (!key_event_args.handled()) this->def_wnd_proc(message);
   } else

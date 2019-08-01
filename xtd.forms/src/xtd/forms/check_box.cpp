@@ -21,7 +21,7 @@ void check_box::check_state(forms::check_state check_state) {
     this->check_state_ = check_state;
     if (this->checked_ != (this->check_state_ != forms::check_state::unchecked)) {
       this->checked_ = this->check_state_ != forms::check_state::unchecked;
-      this->on_check_changed(event_args::empty);
+      this->on_checked_changed(event_args::empty);
     }
     native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
     this->on_check_state_changed(event_args::empty);
@@ -45,7 +45,7 @@ void check_box::create_handle() {
 void check_box::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-    default: this->def_wnd_proc(message);
+    default: this->control::wnd_proc(message);
   }
 }
 

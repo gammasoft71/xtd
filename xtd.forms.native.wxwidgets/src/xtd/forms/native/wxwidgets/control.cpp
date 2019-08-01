@@ -41,6 +41,15 @@ void control::back_color(intptr_t control, const color& color) {
   reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
+std::vector<intptr_t> control::controls(intptr_t control) {
+  if (control == 0) return {};
+  
+  std::vector<intptr_t> controls;
+  for (wxWindow* window : reinterpret_cast<control_handler*>(control)->control()->GetChildren())
+    controls.push_back(reinterpret_cast<intptr_t>(window->GetHandle()));
+  return controls;
+}
+
 intptr_t control::create(intptr_t parent, const drawing::size& size) {
   if (parent == 0) throw invalid_argument("parent can't be null");
   return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, {size.width(), size.height()}));

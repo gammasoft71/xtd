@@ -15,7 +15,7 @@ void button::create_handle() {
 void button::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-    default: this->def_wnd_proc(message);
+    default: this->control::wnd_proc(message);
   }
 }
 

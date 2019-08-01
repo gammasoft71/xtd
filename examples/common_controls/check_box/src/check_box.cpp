@@ -17,7 +17,7 @@ namespace examples {
       this->check_box2.parent(*this);
       this->check_box2.checked(true);
       this->check_box2.location({30, 60});
-      this->check_box2.text("Checked");
+      this->check_box2.text("checked");
 
       this->check_box3.parent(*this);
       this->check_box3.check_state_changed += [&](const control& sender, const event_args& e) {

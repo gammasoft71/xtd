@@ -8,53 +8,39 @@ using namespace xtd::forms;
 // The main entry point for the application.
 int main() {
   form form;
-  form.back_color(color::dodger_blue);
-  form.fore_color(color::yellow);
+  //form.back_color(color::dodger_blue);
+  //form.fore_color(color::yellow);
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
 
-  check_box check_box1;
-  check_box1.parent(form);
-  check_box1.check_state(forms::check_state::unchecked);
-  check_box1.location({10, 10});
-  check_box1.text("unchecked");
-  cdebug << format("check_box1.back_color = {}", check_box1.back_color()) << endl;
-  cdebug << format("check_box1.fore_color = {}", check_box1.fore_color()) << endl;
-  cdebug << format("check_box1.size = {}", check_box1.size()) << endl;
+  radio_button radio_button1;
+  radio_button1.parent(form);
+  radio_button1.checked(true);
+  radio_button1.location({30, 30});
+  radio_button1.text("radio 1");
+  cdebug << format("radio_button1.back_color = {}", radio_button1.back_color()) << endl;
+  cdebug << format("radio_button1.fore_color = {}", radio_button1.fore_color()) << endl;
+  cdebug << format("radio_button1.size = {}", radio_button1.size()) << endl;
 
-  check_box check_box2;
-  check_box2.parent(form);
-  check_box2.check_state(forms::check_state::checked);
-  check_box2.location({10, 40});
-  check_box2.text("checked");
-  cdebug << format("check_box2.back_color = {}", check_box2.back_color()) << endl;
-  cdebug << format("check_box2.fore_color = {}", check_box2.fore_color()) << endl;
-  cdebug << format("check_box2.size = {}", check_box2.size()) << endl;
+  radio_button radio_button2;
+  radio_button2.parent(form);
+  radio_button2.location({30, 60});
+  radio_button2.text("radio 2");
+  cdebug << format("radio_button2.back_color = {}", radio_button2.back_color()) << endl;
+  cdebug << format("radio_button2.fore_color = {}", radio_button2.fore_color()) << endl;
+  cdebug << format("radio_button2.size = {}", radio_button2.size()) << endl;
 
-  check_box check_box3;
-  check_box3.parent(form);
-  //check_box3.auto_check(false);
-  check_box3.three_state(true);
-  check_box3.check_state(forms::check_state::indeterminate);
-  check_box3.location({10, 70});
-  check_box3.text("indeterminate");
-  check_box3.check_changed += [&](const control& sender, const event_args& e) {
-    cdebug << format("check_box3.checked() = {}", check_box3.checked()) << endl;
+  radio_button radio_button3;
+  radio_button3.parent(form);
+  radio_button3.location({30, 90});
+  radio_button3.text("radio 3");
+  radio_button3.checked_changed += [&](const control& sender, const event_args& e) {
+    cdebug << format("radio_button3.checked() = {}", radio_button3.checked()) << endl;
   };
-  check_box3.check_state_changed += [&](const control& sender, const event_args& e) {
-    cdebug << format("check_box3.check_state() = {}", check_box3.check_state()) << endl;
-  };
-  cdebug << format("check_box3.back_color = {}", check_box3.back_color()) << endl;
-  cdebug << format("check_box3.fore_color = {}", check_box3.fore_color()) << endl;
-  cdebug << format("check_box3.size = {}", check_box3.size()) << endl;
+  cdebug << format("radio_button3.back_color = {}", radio_button3.back_color()) << endl;
+  cdebug << format("radio_button3.fore_color = {}", radio_button3.fore_color()) << endl;
+  cdebug << format("radio_button3.size = {}", radio_button3.size()) << endl;
 
-  button b;
-  b.parent(form);
-  b.location({10, 200});
-  b.click += [&](const control& sender, const event_args& e) {
-    cdebug << "button click" << endl;
-  };
-  
   application::run(form);
 }
