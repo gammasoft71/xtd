@@ -11,15 +11,3 @@ void button::create_handle() {
   this->control::create_handle();
   if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
 }
-
-void button::wnd_proc(message &message) {
-  switch (message.msg()) {
-    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-    default: this->control::wnd_proc(message);
-  }
-}
-
-void button::wm_reflect_command(message &message) {
-  this->def_wnd_proc(message);
-  this->control::on_click(event_args::empty);
-}

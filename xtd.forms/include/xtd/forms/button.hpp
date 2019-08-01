@@ -11,13 +11,7 @@ namespace xtd {
 
       drawing::size default_size() const override {return {75, 25};}
 
-      void create_handle() override;
-      
-    protected:
-      void wnd_proc(message& message) override;
-
-    private:
-      void wm_reflect_command(message& message);
+      void create_handle() override;      
     };
   }
 }

@@ -12,7 +12,7 @@ int main() {
   button.text("Click me");
   button.location({10, 10});
   button.width(90);
-  button.click += [&](const control& sender, const event_args& e) {
+  button.click += [](const control& sender, const event_args& e) {
     message_box::show("Hello, World!");
   };
 
