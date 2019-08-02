@@ -9,7 +9,7 @@ namespace examples {
       this->text("Label example");
 
       this->label1.parent(*this);
-      this->label1.text("label1");
+      this->label1.text("Label 1");
       this->label1.location({10, 10});
     }
     
