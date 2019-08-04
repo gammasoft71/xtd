@@ -1,8 +1,6 @@
 #include <xtd/xtd.forms>
 
-using namespace xtd::forms;
-
 int main() {
-  auto form1 = control::create<form>("form1");
-  application::run(*form1);
+  auto form1 = xtd::forms::control::create<xtd::forms::form>("form1");
+  xtd::forms::application::run(*form1);
 }
