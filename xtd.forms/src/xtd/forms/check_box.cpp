@@ -7,9 +7,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void check_box::auto_check(bool auto_check) {
-  if (this->auto_check_ != auto_check) {
+  if (this->auto_check_ != auto_check)
     this->auto_check_ = auto_check;
-  }
 }
 
 void check_box::checked(bool checked) {
