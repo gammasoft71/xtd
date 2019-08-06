@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
   //
   if ((argc == 2) && (x = atoi(argv[1])) && ((x >= 1) && (x <= 9))) {
     for (int i = 1; i <= x; i++) {
-      console::write_line("Beep number %d.", i);
+      console::write_line("Beep number {}.", i);
       console::beep();
     }
   } else
