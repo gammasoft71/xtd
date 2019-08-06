@@ -367,10 +367,10 @@ void control::def_wnd_proc(message& message) {
   message.result(native::control::def_wnd_proc(this->handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
 }
 
-void control::re_create_control() {
+void control::recreate_handle() {
   if (this->handle_ != 0) {
     this->destroy_handle();
-    this->create_control();
+    this->create_handle();
   }
 }
 
