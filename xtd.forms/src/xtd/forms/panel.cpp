@@ -8,7 +8,7 @@ using namespace xtd::forms;
 void panel::border_style(forms::border_style border_style) {
   if (this->border_style_ != border_style) {
     this->border_style_ = border_style;
-    this->re_create_control();
+    this->recreate_handle();
   }
 }
 
