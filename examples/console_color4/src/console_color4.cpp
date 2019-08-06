@@ -21,24 +21,24 @@ int main() {
   console_color current_foreground = console::foreground_color();
   
   // Display all foreground colors except the one that matches the background.
-  console::write_line("All the foreground colors except %s, the background color:", to_string(current_background));
+  console::write_line("All the foreground colors except {}, the background color:", to_string(current_background));
   for (auto color : colors) {
     if (color == current_background) continue;
     
     console::foreground_color(color);
-    console::write_line("   The foreground color is %s.", to_string(color));
+    console::write_line("   The foreground color is {}.", to_string(color));
   }
   console::write_line();
   // Restore the foreground color.
   console::foreground_color(current_foreground);
   
   // Display each background color except the one that matches the current foreground color.
-  console::write_line("All the background colors except %s, the foreground color:", to_string(current_foreground));
+  console::write_line("All the background colors except {}, the foreground color:", to_string(current_foreground));
   for (auto color : colors) {
     if (color == current_foreground) continue;
     
     console::background_color(color);
-    console::write_line("   The background color is %s.", to_string(color));
+    console::write_line("   The background color is {}.", to_string(color));
   }
 
   // Restore the original console colors.
