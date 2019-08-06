@@ -44,7 +44,6 @@ void radio_button::wm_reflect_command(message &message) {
           static_cast<radio_button&>(control.get()).checked(false);
       }
     }
-  }
-  else
+  } else
     native::radio_button::checked(this->handle_, this->checked_);
 }
