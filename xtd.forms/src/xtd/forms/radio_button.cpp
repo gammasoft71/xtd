@@ -36,7 +36,9 @@ void radio_button::wnd_proc(message &message) {
 
 void radio_button::wm_reflect_command(message &message) {
   this->def_wnd_proc(message);
-  if (this->auto_check_) {
+  if (!this->auto_check_)
+    native::radio_button::checked(this->handle_, this->checked_);
+  else {
     this->checked(native::radio_button::checked(this->handle_));
     if (this->checked_ == true && &this->parent() != &control::null) {
       for (auto control : this->parent().controls()) {
@@ -44,6 +46,5 @@ void radio_button::wm_reflect_command(message &message) {
           static_cast<radio_button&>(control.get()).checked(false);
       }
     }
-  } else
-    native::radio_button::checked(this->handle_, this->checked_);
+  }
 }
