@@ -266,7 +266,7 @@ namespace xtd {
       virtual void get_properties();
       virtual void set_properties();
 
-      void re_create_control();
+      void recreate_handle();
       
       std::optional<drawing::color> back_color_;
       drawing::size client_size_ {-1, -1};
