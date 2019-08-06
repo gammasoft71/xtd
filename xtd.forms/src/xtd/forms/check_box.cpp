@@ -30,7 +30,7 @@ void check_box::check_state(forms::check_state check_state) {
 void check_box::three_state(bool three_state) {
   if (this->three_state_ != three_state) {
     this->three_state_ = three_state;
-    this->re_create_control();
+    this->recreate_handle();
   }
 }
 
