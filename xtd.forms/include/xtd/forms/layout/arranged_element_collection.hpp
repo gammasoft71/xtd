@@ -88,14 +88,28 @@ namespace xtd {
         }
         
         iterator erase (iterator pos) {
-          iterator it = this->collection_.erase(pos);
+          iterator result = this->collection_.erase(pos);
           this->item_erased(pos - this->begin(), item);
-          return it;
+          return result;
         }
         
         iterator erase (const_iterator pos) {
-          iterator it = this->collection_.erase(pos);
+          iterator result = this->collection_.erase(pos);
           this->item_erased(pos - this->cbegin(), item);
+          return result;
+        }
+        
+        iterator erase (iterator first, iterator last) {
+          iterator result = this->end();
+          for (iterator it = first; it <= last; it++)
+            result = this->erase(it);
+          return result
+        }
+        
+        iterator erase (const_iterator first, const_iteratpr last) {
+          iterator result = this->bend();
+          for (const_iterator it = first; it <= last; it++)
+            result = this->erase(it);
           return it;
         }
 
