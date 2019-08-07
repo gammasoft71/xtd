@@ -9,11 +9,22 @@ namespace xtd {
       template<typename type_t>
       class arranged_element_collection {
       public:
+        using iterator = typename std::vector<type_t>::iterator;
+        using const_iterator = typename std::vector<type_t>::const_iterator;
+        using reverse_iterator = typename std::vector<type_t>::reverse_iterator;
+        using const_reverse_iterator = typename std::vector<type_t>::const_reverse_iterator;
+        
         arranged_element_collection() = default;
         
         /// @cond
-        arranged_element_collection(const arranged_element_collection&) = default;
-        arranged_element_collection& operator=(const arranged_element_collection&) = default;
+        arranged_element_collection(const arranged_element_collection& collection) {
+          this->push_back_range(collection);
+        }
+        arranged_element_collection& operator=(const arranged_element_collection& collection) {
+          this->clear()
+          this->push_back_range(collection);
+          return *this;
+        }
         arranged_element_collection(const std::vector<type>& collection) {
           this->push_back_range(collection);
         }
@@ -28,6 +39,11 @@ namespace xtd {
         void push_back(size_t item) {
           this->collection_.pudh_back(item);
           this->item_added(this->collection_.size() - 1, item);
+        }
+        
+        void push_back_range(const arranged_element_collection& collection) {
+          for(type_t item : collection)
+            this->push_back(item);
         }
         
         void push_back_range(const std::vector<type_t>& collection) {
