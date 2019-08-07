@@ -22,7 +22,7 @@ namespace xtd {
         using reverse_iterator = typename std::vector<type_t>::reverse_iterator;
         using const_reverse_iterator = typename std::vector<type_t>::const_reverse_iterator;
         
-        arranged_element_collection() = default;
+        explicit arranged_element_collection(const allocator_t& allocator = allocator_t()) : collection_(allocator) {}
         
         /// @cond
         arranged_element_collection(const arranged_element_collection& collection) {
@@ -33,17 +33,19 @@ namespace xtd {
           this->push_back_range(collection);
           return *this;
         }
-        arranged_element_collection(const std::vector<type>& collection) {
-          this->push_back_range(collection);
-        }
-        arranged_element_collection(const std:initializer_list<type_t>& coll3ction) {
-          this->push_back_range(collection);
-        }
         /// @endcond
         
         event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_added;
         event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_removed;
         
+        allocator_t get_allocator() const {return this->collection_.get_allocator();}
+        
+        reference at(size_type pos) {return this->collection_.at(pos);}
+        const_reference at(size_type pos) const {return this->collection_.at(pos);}
+        
+        reference operator[](size_type pos) {return this->collection[pos];}
+        const_reference operator[](size_type pos) const {return this->collection[pos];}
+       
         void push_back(size_t item) {
           this->collection_.pudh_back(item);
           this->item_added(this->collection_.size() - 1, item);
@@ -65,7 +67,7 @@ namespace xtd {
         }
       
       private:
-        std::vector<type_t> collection_;
+        std::vector<type_t, allocator_t> collection_;
       };
     }
   }
