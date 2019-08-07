@@ -6,9 +6,17 @@
 namespace xtd {
   namespace forms {
     namespace layout {
-      template<typename type_t>
+      template<typename type_t, typename allocator_t = std::allocator<type_t>>
       class arranged_element_collection {
       public:
+        using value_type = type_t;
+        using allocator_type = allocator_t;
+        using size_type = size_t;
+        using difference_type = ptrdiff_t;
+        using reference = type_t&;
+        using const_reference = const type_t&;
+        using pointer = typename std::allocator_traits<allocator_t>::pointer;
+        using const_pointer = typename std::allocator_traits<allocator_t>::const_pointer;
         using iterator = typename std::vector<type_t>::iterator;
         using const_iterator = typename std::vector<type_t>::const_iterator;
         using reverse_iterator = typename std::vector<type_t>::reverse_iterator;
