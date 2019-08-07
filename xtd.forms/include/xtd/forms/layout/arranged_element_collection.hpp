@@ -25,9 +25,7 @@ namespace xtd {
         explicit arranged_element_collection(const allocator_t& allocator = allocator_t()) : collection_(allocator) {}
         
         /// @cond
-        arranged_element_collection(const arranged_element_collection& collection) {
-          this->push_back_range(collection);
-        }
+        arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
         arranged_element_collection& operator=(const arranged_element_collection& collection) {
           this->clear()
           this->push_back_range(collection);
