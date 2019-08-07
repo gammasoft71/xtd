@@ -40,6 +40,15 @@ namespace xtd {
         
         reference at(size_type pos) {return this->collection_.at(pos);}
         const_reference at(size_type pos) const {return this->collection_.at(pos);}
+       
+        reference front() {return this->collection_.front();}
+        const_reference front() const {return this->collection_.front();}
+       
+        reference back() {return this->collection_.back();}
+        const_reference back() const {return this->collection_.back();}
+    
+        type_t* data() {return this->collection_.data();}
+        const type_t* data() const {return this->collection_.data();}
         
         reference operator[](size_type pos) {return this->collection[pos];}
         const_reference operator[](size_type pos) const {return this->collection[pos];}
