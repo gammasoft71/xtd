@@ -34,7 +34,7 @@ namespace xtd {
         /// @endcond
         
         event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_added;
-        event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_removed;
+        event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_erased;
         
         allocator_t get_allocator() const {return this->collection_.get_allocator();}
         
@@ -81,6 +81,24 @@ namespace xtd {
         
         void shrink_to_fit() {this->collection_.shrink_to_fit();}
         
+        void clear() {
+        iterator it = this->begin():
+        while it != this->end())
+          it = this->erase(it);
+        }
+        
+        iterator erase (iterator pos) {
+          iterator it = this->collection_.erase(pos);
+          this->item_erased(pos - this->begin(), item);
+          return it;
+        }
+        
+        iterator erase (const_iterator pos) {
+          iterator it = this->collection_.erase(pos);
+          this->item_erased(pos - this->cbegin(), item);
+          return it;
+        }
+
         void push_back(size_t item) {
           this->collection_.pudh_back(item);
           this->item_added(this->collection_.size() - 1, item);
