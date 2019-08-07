@@ -69,6 +69,18 @@ namespace xtd {
         const_iterator rend() const {return thsi->collection_.rend();}
         const_iterator crend() const {return thsi->collection_.crend();}
         
+        bool empty() const {return this->collection_.empty();}
+        
+        size_type size() const {return this->collection_.size();}
+        
+        size_type max_size() const {return this->collection_.max_size();}
+        
+        void reserve(size_typr size) {this->collection_.reserve(size);}
+        
+        size_type capacity() const {return this->collection_.capacity();}
+        
+        void shrink_to_fit() {this->collection_.shrink_to_fit();}
+        
         void push_back(size_t item) {
           this->collection_.pudh_back(item);
           this->item_added(this->collection_.size() - 1, item);
