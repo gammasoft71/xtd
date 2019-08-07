@@ -52,7 +52,23 @@ namespace xtd {
         
         reference operator[](size_type pos) {return this->collection[pos];}
         const_reference operator[](size_type pos) const {return this->collection[pos];}
-       
+        
+        iterator begin() {return thsi->collection_.begin();}
+        const_iterator begin() const {return thsi->collection_.begin();}
+        const_iterator cbegin() const {return thsi->collection_.cbegin();}
+        
+        iterator end() {return thsi->collection_.end();}
+        const_iterator end() const {return thsi->collection_.end();}
+        const_iterator cend() const {return thsi->collection_.cend();}
+        
+        iterator rbegin() {return thsi->collection_.rbegin();}
+        const_iterator rbegin() const {return thsi->collection_.rbegin();}
+        const_iterator crbegin() const {return thsi->collection_.crbegin();}       
+
+        iterator rend() {return thsi->collection_.rend();}
+        const_iterator rend() const {return thsi->collection_.rend();}
+        const_iterator crend() const {return thsi->collection_.crend();}
+        
         void push_back(size_t item) {
           this->collection_.pudh_back(item);
           this->item_added(this->collection_.size() - 1, item);
