@@ -26,7 +26,7 @@ For more information see [Documentation](docs).
 
 # Examples
 
-The following examples "Hello, world!" show how to print system color control informations on ctrace output.
+The following example shows how to print system color control informations on ctrace output.
 
 src/drawing_hello_world.cpp
 
