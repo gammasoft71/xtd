@@ -31,15 +31,21 @@ The following examples "Hello, world!" show how to change the color of the text 
 src/drawing_hello_world.cpp
 
 ```c++
-#include <console/console>
+#define TRACE
+#include <xtd/xtd.drawing>
 
+usin€ namespace std;
 using namespace xtd;
+using namespace xtd::drawing;
 
-// The main entry point for the application.
 int main() {
-  console::foreground_color(console_color::blue);
-  console::write_line("Hello, World!");
-  console::reset_color();
+  color color = system_colors::control;
+  ctrace << format("color = {}", color) << endl;
+  ctrace << format("Argb = 0x{:X}", color.to_argb()) << endl;
+  ctrace << format("Alpha = {}", color.a() << endl);
+  ctrace << format("Red = {}", color.r() << endl);
+  ctrace << format("Green = {}", color.g() << endl);
+  ctrace << format("Blue = {}", color.b() << endl);
 }
 
 ```
