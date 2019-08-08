@@ -39,7 +39,7 @@ The following examples "Hello, world!" show how to change the color of the text 
 src/console_hello_world_console.cpp
 
 ```c++
-#include <console/console>
+#include <xtd/xtd.console>
 
 using namespace xtd;
 
@@ -57,7 +57,7 @@ int main() {
 src/console_hello_world_console_out.cpp
 
 ```c++
-#include <console/console>
+#include <xtd/xtd.console>
 
 using namespace std;
 using namespace xtd;
@@ -74,7 +74,7 @@ int main() {
 src/console_hello_world_cout.cpp
 
 ```c++
-#include <console/console>
+#include <xtd/xtd.console>
 
 using namespace std;
 using namespace xtd;
