@@ -87,37 +87,63 @@ namespace xtd {
           it = this->erase(it);
         }
         
-        iterator erase (iterator pos) {
+        iterator insert(iterator pos, const type_t& value) {
+          iterator result = this->collection_.insert(pos, value);
+          this->item_added(pos - this->begin(), value);
+        }
+        
+        iterator insert(const_iterator pos, const type_t& value) {
+          iterator result = this->collection_.insert(pos, value);
+          this->item_added(pos - this->begin(), value);
+        }
+        
+        iterator insert(const_iterator pos, const type_t&& value) {
+          iterator result = this->collection_.insert(pos, value);
+          this->item_added(pos - this->begin(), value);
+        }
+
+        void insert_at(size_t index, const type_t& value) {this->insert(this->begin() + index, value);}
+
+        iterator erase(iterator pos) {
+          size_t index = pos - this->begin();
           iterator result = this->collection_.erase(pos);
-          this->item_erased(pos - this->begin(), item);
+          this->item_erased(index, item);
           return result;
         }
         
-        iterator erase (const_iterator pos) {
+        iterator erase(const_iterator pos) {
+          size_t index = pos - this->cbegin();
           iterator result = this->collection_.erase(pos);
-          this->item_erased(pos - this->cbegin(), item);
+          this->item_erased(index, item);
           return result;
         }
         
-        iterator erase (iterator first, iterator last) {
+        iterator erase(iterator first, iterator last) {
           iterator result = this->end();
           for (iterator it = first; it <= last; it++)
             result = this->erase(it);
           return result
         }
         
-        iterator erase (const_iterator first, const_iteratpr last) {
+        iterator erase(const_iterator first, const_iteratpr last) {
           iterator result = this->bend();
           for (const_iterator it = first; it <= last; it++)
             result = this->erase(it);
           return it;
         }
+        
+        void erase_at(size_t index) {this->erase(this->begin() + index);}
 
-        void push_back(size_t item) {
+        void push_back(const type_t& item) {
           this->collection_.pudh_back(item);
           this->item_added(this->collection_.size() - 1, item);
         }
         
+        void push_back(const type_t&& item) {
+          this->collection_.pudh_back(item);
+          this->item_added(this->collection_.size() - 1, item);
+        }
+
         void push_back_range(const arranged_element_collection& collection) {
           for(type_t item : collection)
             this->push_back(item);
