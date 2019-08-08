@@ -58,7 +58,7 @@ namespace xtd {
                                   
     private:
       screen() = default;
-      screen(int32_t bist_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, intptr_t handle, bool primary, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), handle_(handle), primary_(primary), working_area_(working_area) {}
+      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, intptr_t handle, bool primary, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), handle_(handle), primary_(primary), working_area_(working_area) {}
       
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
