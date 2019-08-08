@@ -7,6 +7,7 @@
 #include <xtd/xtd.strings>
 #include <xtd/forms/window_messages.hpp>
 
+#include "xtd/forms/layout/arranged_element_collection.hpp"
 #include "xtd/forms/application.hpp"
 #include "xtd/forms/application_informations.hpp"
 #include "xtd/forms/border_style.hpp"
