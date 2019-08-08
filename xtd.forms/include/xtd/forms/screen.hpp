@@ -1,6 +1,7 @@
 #pragma once
 #include <csdint>
 #include <vector>
+#include <xtd/drawing/rectangle.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,11 +17,12 @@ namespace xtd {
       
       static std::vector<screen> all_screens;
 
-      int32_t bits_per_seconds(! const {return this->bits_per_pixel;}
+      int32_t bits_per_pixel() const {return this->bits_per_pixel;}
                                
-  private:
-    screen() = default;
-    screen(int32_t bist_per_pixel) : bits_per_pixel_(bits_per_pixel) {}
-    int32_t bits_per_pixel_ = 0;
+    private:
+      screen() = default;
+      screen(int32_t bist_per_pixel) : bits_per_pixel_(bits_per_pixel) {}
+      int32_t bits_per_pixel_ = 0;
+    };                           
   }
 }
