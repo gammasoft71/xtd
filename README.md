@@ -15,17 +15,11 @@
 
 # Features
 
-* Console I/O charecters and wide charercters Streams.
-* Full utf-8 support.
-* Writes the text representation of the specified list of arguments to the standard output stream using the specified format information.
-* Get or set the size of the console window.
-* Get or set the position of the console window relative to the screen buffer.
-* Get or set the size of the screen buffer.
-* Get or set the position of the cursor.
-* Get or set the size of the cursor.
-* Play the sound of a beep through the console speaker.
-* Get or set the foreground and background colors.
-* Intercept and send callback to the user when the Control modifier key (Ctrl) and either the C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
+* Contains utility classes : point, size, color, ...
+* Contains font management classes : font font family, ...
+* Contains system information classes : system font, system color, ...
+* Contains painting classes : pen, brush, graphics, ...
+* Contains imaging classes . image, bitmap, ...
 * ...
 
 For more information see [Documentation](docs).
@@ -34,9 +28,7 @@ For more information see [Documentation](docs).
 
 The following examples "Hello, world!" show how to change the color of the text in three different ways.
 
-## Using xtd::console::write_line
-
-src/console_hello_world_console.cpp
+src/drawing_hello_world.cpp
 
 ```c++
 #include <console/console>
@@ -51,42 +43,6 @@ int main() {
 }
 
 ```
-
-## Using xtd::console::out character ostream
-
-src/console_hello_world_console_out.cpp
-
-```c++
-#include <console/console>
-
-using namespace std;
-using namespace xtd;
-
-// The main entry point for the application.
-int main() {
-  console::out << foreground_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
-}
-
-```
-
-## Using std::cout character ostream
-
-src/console_hello_world_cout.cpp
-
-```c++
-#include <console/console>
-
-using namespace std;
-using namespace xtd;
-
-// The main entry point for the application.
-int main() {
-  cout << foreground_color(console_color::blue) << "Hello, World!" << reset_color() << endl;
-}
-
-```
-
-Replace console class by wconsole class to use wide character wostream and wistream.
 
 For more examples see [examples](examples)
 
