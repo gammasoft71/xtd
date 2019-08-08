@@ -11,6 +11,7 @@
 //#include <xtd/drawing/rectangle.hpp>
 #include <xtd/drawing/size.hpp>
 
+#include "layout/arranged_element_collection.hpp"
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
 #include "mouse_event_handler.hpp"
@@ -28,8 +29,8 @@ namespace xtd {
         mouse_entered = 0x10,
       };
       
-    public:
-      using control_collection = std::vector<std::reference_wrapper<control>>;
+    public:f
+      using control_collection = layout::arranged_element_collection<std::reference_wrapper<control>>;
       static const control null;
       
       control() = default;
