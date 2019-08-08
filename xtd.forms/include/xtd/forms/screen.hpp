@@ -16,11 +16,19 @@ namespace xtd {
       screen& operator=(const screen&) = default;
       /// @endcond
       
-      static std::vector<screen> all_screens;
+      static std::vector<screen> all_screens();
 
       int32_t bits_per_pixel() const {return this->bits_per_pixel;}
       
       const drawing::rectangle& bounds() const {return this->bounds_;}
+      
+      const std::string& device_name() const {return this->device_name_;}
+      
+      intptr_t handle() const {return this->handle_;}
+      
+      bool primary() const {return this->primary_;}
+      
+      const drawing::rectangle& working_area() const {return this->working_area_;}
                                
     private:
       screen() = default;
