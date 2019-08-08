@@ -46,7 +46,7 @@ namespace xtd {
       
       static const drawing::rectangle& get_bounds(const drawing::point& point);
       
-     static const drawing::rectangle& get_bounds(const drawing::rectangle& rect);
+      static const drawing::rectangle& get_bounds(const drawing::rectangle& rect);
       
       static const drawing::rectangle& get_working_area(const control& control);
       
@@ -54,9 +54,8 @@ namespace xtd {
       
       static const drawing::rectangle& get_working_area(const drawing::point& point);
       
-     static const drawing::rectangle& get_working_area(const drawing::rectangle& rect);
-    
-                                
+      static const drawing::rectangle& get_working_area(const drawing::rectangle& rect);
+                                  
     private:
       screen() = default;
       screen(int32_t bist_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, intptr_t handle, bool primary, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), handle_(handle), primary_(primary), working_area_(working_area) {}
