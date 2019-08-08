@@ -54,5 +54,5 @@ For more examples see [examples](examples)
 
 # Download and install
 
-Before running examples you must download and install xtd.console. To download and install it read Downloads file.
+Before running examples you must download and install xtd.drawing. To download and install it read Downloads file.
 
