@@ -12,8 +12,8 @@ namespace xtd {
     class Screen {
     public:
       /// @cond
-      screen(const Screen&) = default;
-      screen& operator=(const Screen&) = default;
+      screen(const screen&) = default;
+      screen& operator=(const screen&) = default;
       /// @endcond
       
       static std::vector<screen> all_screens;
