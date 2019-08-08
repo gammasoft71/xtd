@@ -47,6 +47,15 @@ namespace xtd {
       static const drawing::rectangle& get_bounds(const drawing::point& point);
       
      static const drawing::rectangle& get_bounds(const drawing::rectangle& rect);
+      
+      static const drawing::rectangle& get_working_area(const control& control);
+      
+      static const drawing::rectangle& get_working_area(intptr_t handle);
+      
+      static const drawing::rectangle& get_working_area(const drawing::point& point);
+      
+     static const drawing::rectangle& get_working_area(const drawing::rectangle& rect);
+    
                                 
     private:
       screen() = default;
