@@ -28,8 +28,26 @@ namespace xtd {
       
       bool primary() const {return this->primary_;}
       
+      static const screen& primary_screen();
+      
       const drawing::rectangle& working_area() const {return this->working_area_;}
-                               
+      
+      static const screen& from_control(const control& control);
+      
+      static const screen& from_handle(ontptr_t handle);
+      
+      static const screen& from_point(const drawing::point& point);
+      
+      static const screen& from_rectangle(const drawing::rectangle& rect);
+      
+      static const drawing::rectangle& get_bounds(const control& control);
+      
+      static const drawing::rectangle& get_bounds(intptr_t handle);
+      
+      static const drawing::rectangle& get_bounds(const drawing::point& point);
+      
+     static const drawing::rectangle& get_bounds(const drawing::rectangle& rect);
+                                
     private:
       screen() = default;
       screen(int32_t bist_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, intptr_t handle, bool primary, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), handle_(handle), primary_(primary), working_area_(working_area) {}
