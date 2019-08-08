@@ -19,6 +19,8 @@ namespace xtd {
       static std::vector<screen> all_screens;
 
       int32_t bits_per_pixel() const {return this->bits_per_pixel;}
+      
+      const drawing::rectangle& bounds() const {return this->bounds_;}
                                
     private:
       screen() = default;
