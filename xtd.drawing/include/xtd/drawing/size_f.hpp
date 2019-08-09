@@ -1,3 +1,25 @@
+        /// @brief IInitializes a new instance of the Size class from the specified Point class.
+      /// @param point The Point class from which to initialize this Size class
+      explicit size(const xtd::drawing::point& point);
+
+      /// @brief Initializes a new instance of the Size class from the specified dimensions.
+      /// @param width The width component of the new Size
+      /// @param height The height component of the new Size
+      size(int32_t width, int32_t height) : width_(width), height_(height) {}
+
+      /// @cond
+      size(const xtd::drawing::size&) = default;
+      bool operator==(const xtd::drawing::size& value) const {return this->width_ == value.width_ && this->height_ == value.height_;}      
+      bool operator!=(const xtd::drawing::size& value) const {return !this->operator==(value);}
+      size& operator=(const xtd::drawing::size& size) = default;
+      size operator+(const xtd::drawing::size& size) const;
+      size operator-(const xtd::drawing::size& size) const;
+      size& operator+=(const xtd::drawing::size& size);
+      size& operator-=(const xtd::drawing::size& size);
+      /// @endcond
+      
+      /// @brief Gets he vertical component of this Size Class.
+      /// @return int The vertical component of this Size class, typically measured in pixels.
       /// @remarks The unit for the Height and Width of the Size class depend on the PageUnit and PageScale settings for the Graphics object that is used to draw.
       int32_t height() const {return height_;}
       
