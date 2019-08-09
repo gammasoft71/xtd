@@ -55,8 +55,8 @@ namespace xtd {
       void width(int32_t width) {this->width_ = width;}
       
       /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point& point) noexcept {
-        return os << point.to_string();
+      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle& rectangle) noexcept {
+        return os << rectangle.to_string();
       }
       /// @endcond
       
