@@ -8,54 +8,53 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @cond
-    struct point_f;
     struct size;
     /// @endcond
 
-    struct point {
+    struct point_f {
     public:
-      static const point empty;
+      static const point_f empty;
       
-      point() = default;
-      point(int32_t x, int32_t y) : x_(x), y_(y) {}
+      point_f() = default;
+      point_f(float x, float y) : x_(x), y_(y) {}
 
       /// @cond
-      point(const point&) = default;
-      point& operator=(const point&) = default;
+      point_f(const point_f&) = default;
+      point_f& operator=(const point_f&) = default;
       /// @endcond
       
-      bool operator==(const point& value) const {return this->x_ == value.x_ && this->y_ == value.y_;}
+      bool operator==(const point_f& value) const {return this->x_ == value.x_ && this->y_ == value.y_;}
       
-      bool operator!=(const point& value) const {return !this->operator==(value);}
+      bool operator!=(const point_f& value) const {return !this->operator==(value);}
       
       bool is_empty() const {return *this == point::empty;}
 
-      void offset(const point& pt) {this->offset(pt.x_, pt.y_);}
+      void offset(const point_f& pt) {this->offset(pt.x_, pt.y_);}
 
-      void offset(int dx, int dy) {
+      void offset(float dx, float dy) {
         this->x_ += dx;
         this->y_ += dy;
       }
 
       std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + "}";}
       
-      int32_t x() const {return x_;}
+      float x() const {return x_;}
       
-      void x(int32_t x) {this->x_ = x;}
+      void x(float x) {this->x_ = x;}
       
-      int32_t y() const {return y_;}
+      float y() const {return y_;}
 
-      void y(int32_t y) {this->y_ = y;}
+      void y(float y) {this->y_ = y;}
 
       /// @cond
-      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point& point) noexcept {
+      friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::point_f& point) noexcept {
         return os << point.to_string();
       }
       /// @endcond
       
     private:
-      int32_t x_ = 0;
-      int32_t y_ = 0;
+      float x_ = 0;
+      float y_ = 0;
     };
   }
 }
