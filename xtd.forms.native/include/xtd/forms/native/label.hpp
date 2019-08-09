@@ -14,6 +14,7 @@ namespace xtd {
           border_fixed_3d = 0b100
         };
 
+        label() = delete;
         static intptr_t create(intptr_t parent, const drawing::size& size, styles styles);
       };
 
