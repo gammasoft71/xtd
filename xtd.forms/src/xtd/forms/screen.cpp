@@ -29,3 +29,19 @@ const screen& screen::from_point(const point& point) {
 const screen& screen::from_rectangle(const rectangle& rect) {
   return from_point(rect.location());
 }
+
+const rectangle& screen::get_bounds(const control& control) {
+  return all_screens()[natives::screen::from_handle(control.__get_handle__())].bounds();
+}
+
+const rectangle& screen::get_bounds(intptr_t handle) {
+  return get_bounds(control::from_handle(handle));
+}
+
+const rectangle& screen::get_bounds(const point& point) {
+  return all_screens()[natives::screen::from_point(point)].bounds();
+}
+
+const rectangle& screen::get_bounds(const rectangle& rect) {
+  return get_bounds(rect.location());
+}
