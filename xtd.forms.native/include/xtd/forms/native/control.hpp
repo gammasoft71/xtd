@@ -16,6 +16,7 @@ namespace xtd {
     namespace native {
       class control {
       public:
+        control() = delete;
         static drawing::color back_color(intptr_t control);
         static void back_color(intptr_t control, const drawing::color& color);
         static std::vector<intptr_t> controls(intptr_t control);
