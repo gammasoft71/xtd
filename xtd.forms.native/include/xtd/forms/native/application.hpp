@@ -8,6 +8,7 @@ namespace xtd {
     namespace native {
       class application {
       public:
+        application() = delete;
         static bool allow_quit();
         static void do_events();
         static void do_idle();
