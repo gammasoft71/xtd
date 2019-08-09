@@ -15,7 +15,7 @@ int main() {
   form main_form;
   main_form.text("Main Form");
   //main_form.start_position(form_start_position::manual);
-  main_form.location({screen::all_screens()[0].working_area().width() - main_form.width() - 20, 43});
+  main_form.location({screen::primary_screen()[.working_area().width() - main_form.width() - 20, 43});
 
   button button;
   button.parent(main_form);
