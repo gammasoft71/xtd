@@ -23,7 +23,7 @@ rectangle screen::bounds(size_t index) {
 
 string screen::device_name(size_t index) {
   string device_name = wxDisplay(index).GetName();
-  return !device_name.empty ? device_name : strings::format("\\\\.\\DISPLAY{}", index + 1);
+  return device_name.empty ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
 bool screen::primary(size_t index) {
