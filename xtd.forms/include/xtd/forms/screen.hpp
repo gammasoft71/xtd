@@ -26,7 +26,12 @@ namespace xtd {
       
       bool primary() const {return this->primary_;}
       
-      static const screen& primary_screen();
+      static const screen& primary_screen() {
+        std::vector<screen> screens = all_screens();
+        for (auto& screen : screens)
+          if (screen.primary()) return item;
+        return screens[0];
+      }
       
       const drawing::rectangle& working_area() const {return this->working_area_;}
       
