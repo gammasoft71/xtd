@@ -13,3 +13,19 @@ vector<screen> screen::all_screens() {
     sscreens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::primary(index), native::screen::working_area(index)});
   return screens;
 }
+
+const screen& screen::from_control(const control& control) {
+  return all_screens()[natives::screen::from_handle(control.__get_handle__())];
+}
+
+const screen& screen::from_handle(intptr_t handle) {
+  return from_control(control::from_handle(handle));
+}
+
+const screen& screen::from_point(const point& point) {
+  return all_screens()[natives::screen::from_point(point)];
+}
+
+const screen& screen::from_rectangle(const rectangle& rect) {
+  return from_point(rect.location());
+}
