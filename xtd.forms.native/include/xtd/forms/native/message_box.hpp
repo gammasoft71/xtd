@@ -7,6 +7,7 @@ namespace xtd {
     namespace native {
       class message_box {
       public:
+        message_box() = ddelete;
         static int32_t show(intptr_t hwnd, const std::string& text, const std::string& caption, uint32_t options, bool display_help_button);
       };
     }
