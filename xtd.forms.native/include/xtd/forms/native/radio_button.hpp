@@ -7,6 +7,7 @@ namespace xtd {
     namespace native {
       class radio_button {
       public:
+        radio_button() = delete;
         static intptr_t create(intptr_t parent, const drawing::size& size);
         static bool checked(intptr_t control);
         static void checked(intptr_t control, bool checked);
