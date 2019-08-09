@@ -15,6 +15,8 @@ namespace xtd {
         static std::string device_name(size_t index);
         static bool primary(size_t index);
         static drawing::rectangle working_area(size_t index);
+        static size_t from_handle(intptr handle);
+        static size_t from_point(const drawing::point& poi t);
       };
     }
   }
