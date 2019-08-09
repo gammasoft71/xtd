@@ -45,3 +45,19 @@ const rectangle& screen::get_bounds(const point& point) {
 const rectangle& screen::get_bounds(const rectangle& rect) {
   return get_bounds(rect.location());
 }
+
+const rectangle& screen::get_working_area(const control& control) {
+  return all_screens()[natives::screen::from_handle(control.__get_handle__())].get_working_area();
+}
+
+const rectangle& screen::get_working_area(intptr_t handle) {
+  return get_working_area(control::from_handle(handle));
+}
+
+const rectangle& screen::get_working_area(const point& point) {
+  return all_screens()[natives::screen::from_point(point)].get_working_area();
+}
+
+const rectangle& screen::get_working_area(const rectangle& rect) {
+  return get_working_area(rect.location());
+}
