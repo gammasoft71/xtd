@@ -115,7 +115,7 @@ void control::destroy(intptr_t control) {
   del(control);
 }
 
-void control::del(intptr_t control) {
+void control::erase(intptr_t control) {
   if (control == 0) return;
   delete reinterpret_cast<class control_handler*>(control);
 }
