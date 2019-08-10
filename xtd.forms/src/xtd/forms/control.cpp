@@ -41,7 +41,7 @@ const control control::null {"null"};
 control::~control() {
   if (this->handle_) {
     native::control::unregister_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
-    native::control::del(this->handle_);
+    native::control::erase(this->handle_);
     this->handle_ = 0;
     this->on_handle_destroyed(event_args::empty);
     this->destroy_handle();
