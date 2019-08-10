@@ -25,7 +25,7 @@ namespace xtd {
         static drawing::color default_back_color();
         static drawing::color default_fore_color();
         static void destroy(intptr_t control);
-        static void del(intptr_t control);
+        static void erase(intptr_t control);
         static drawing::size client_size(intptr_t control);
         static void client_size(intptr_t control, const drawing::size& size);
         static bool enabled(intptr_t control);
