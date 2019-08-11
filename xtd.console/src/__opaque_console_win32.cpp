@@ -20,7 +20,7 @@ namespace {
     return static_cast<xtd::console_color>(csbi.wAttributes & 0x000F);
   }
 
-  BOOL __handler_routine(DWORD ctrl_type) {
+  BOOL WINAPI __handler_routine(DWORD ctrl_type) {
     if (ctrl_type == CTRL_C_EVENT || ctrl_type == CTRL_BREAK_EVENT) {
       xtd::console_cancel_event_args console_cancel(false, ctrl_type == CTRL_C_EVENT ? xtd::console_special_key::control_c : xtd::console_special_key::control_break);
       xtd::console::__internal_cancel_key_press__(console_cancel);
