@@ -11,13 +11,13 @@ namespace xtd {
       label() = default;
 
       bool auto_size() const {return this->auto_size_;}
-      void auto_size(bool auto_size);
+      label& auto_size(bool auto_size);
       
       forms::border_style border_style() const {return this->border_style_;}
-      void border_style(forms::border_style border_style);
+      label& border_style(forms::border_style border_style);
 
       using control::size;
-      void size(const drawing::size& size) override {
+      control& size(const drawing::size& size) override {
         if (!this->auto_size_) this->control::size(size);
       }
 
