@@ -8,7 +8,7 @@
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/drawing/point.hpp>
-//#include <xtd/drawing/rectangle.hpp>
+#include <xtd/drawing/rectangle.hpp>
 #include <xtd/drawing/size.hpp>
 
 #include "layout/arranged_element_collection.hpp"
@@ -44,7 +44,13 @@ namespace xtd {
       virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ != &control::null ? this->parent_->back_color() : default_back_color());}
       virtual control& back_color(const drawing::color& color);
       
-     virtual drawing::size client_size() const {return this->client_size_;}
+      virtual drawing::rectangle bounds() const {return {this->location_, this->size_};}
+      virtual control& bounds(const drawing::rectangle& bounds) {
+        this->location(bounds.location());
+        return this->size(bounds.size());
+      }
+      
+      virtual drawing::size client_size() const {return this->client_size_;}
       virtual control& client_size(const drawing::size& size);
       
       virtual control_collection controls() const;
