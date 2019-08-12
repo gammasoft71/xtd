@@ -50,19 +50,21 @@ control::~control() {
 
 map<intptr_t, control*> control::handles_;
 
-void control::back_color(const color& color) {
+control& control::back_color(const color& color) {
   if (this->back_color_ != color) {
     this->back_color_ = color;
     native::control::back_color(this->handle_, this->back_color_.value());
     this->on_back_color_changed(event_args::empty);
   }
+  return *this;
 }
 
-void control::client_size(const drawing::size& size) {
+control& control::client_size(const drawing::size& size) {
   if (this->client_size_ != size) {
     this->client_size_ = size;
     native::control::client_size(this->handle_, this->client_size_);
   }
+  return *this;
 }
 
 control::control_collection control::controls() const {
@@ -81,7 +83,7 @@ drawing::color control::default_fore_color() const {
   return native::control::default_fore_color();
 }
 
-void control::enabled(bool enabled) {
+control& control::enabled(bool enabled) {
   if (this->enabled_ != enabled) {
     this->enabled_ = enabled;
     //for (control* control : this->controls_)
@@ -89,28 +91,31 @@ void control::enabled(bool enabled) {
     native::control::enabled(this->handle_, this->enabled_);
     this->on_enabled_changed(event_args::empty);
   }
+  return *this;
 }
 
-void control::fore_color(const color& color) {
+control& control::fore_color(const color& color) {
   if (this->fore_color_ != color) {
     this->fore_color_ = color;
     native::control::fore_color(this->handle_, this->fore_color_.value());
     this->on_fore_color_changed(event_args::empty);
   }
+  return *this;
 }
 
 intptr_t control::handle() const {
   return native::control::handle(this->handle_);
 }
 
-void control::location(const point& location) {
+control& control::location(const point& location) {
   if (this->location_ != location) {
     this->location_ = location;
     native::control::location(this->handle_, this->location_);
   }
+  return *this;
 }
 
-void control::parent(const control& parent) {
+control& control::parent(const control& parent) {
   if (this->parent_ != &parent) {
     if (this->parent_ != &control::null)
       this->destroy_handle();
@@ -125,23 +130,26 @@ void control::parent(const control& parent) {
       this->on_parent_changed(event_args::empty);
     }
   }
+  return *this;
 }
 
-void control::size(const drawing::size& size) {
+control& control::size(const drawing::size& size) {
   if (this->size_ != size) {
     this->size_ = size;
     native::control::size(this->handle_, this->size_);
   }
+  return *this;
 }
 
-void control::text(const string& text) {
+control& control::text(const string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::control::text(this->handle_, this->text_);
   }
+  return *this;
 }
 
-void control::visible(bool visible) {
+control& control::visible(bool visible) {
   if (this->visible_ != visible) {
     this->visible_ = visible;
     //for (control* control : this->controls_)
@@ -149,6 +157,7 @@ void control::visible(bool visible) {
     native::control::visible(this->handle_, this->visible_);
     this->on_visible_changed(event_args::empty);
   }
+  return *this;
 }
 
 void control::create_control() {
