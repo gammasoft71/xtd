@@ -11,7 +11,7 @@ int main() {
   label2.text("Button 2 clicked 0 times").location({50, 230}).width(200);      
   button1.click += [&](const xtd::forms::control& sender, const xtd::event_args& e) {label1.text(xtd::strings::format("Button 1 clicked {} times", ++button1_clicked));};
   button2.click += [&](const xtd::forms::control& sender, const xtd::event_args& e) {label2.text(xtd::strings::format("Button 2 clicked {} times", ++button2_clicked));};
-  form1.text("Button 3 example");     
+  form1.text("Button 2 example");     
   form1 << button1 << button2 << label1 << label2;
   xtd::forms::application::run(form1);
 }
