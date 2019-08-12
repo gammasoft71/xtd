@@ -11,7 +11,7 @@ namespace xtd {
       panel() = default;
 
       forms::border_style border_style() const {return this->border_style_;}
-      void border_style(forms::border_style border_style);
+      panel& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return{200, 100};}
       
