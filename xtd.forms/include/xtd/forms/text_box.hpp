@@ -16,7 +16,7 @@ namespace xtd {
       drawing::size default_size() const override {return {100, 25};}
 
       using control::text;
-      void text(const std::string& text) override;
+      control& text(const std::string& text) override;
 
       void create_handle() override;
     };
