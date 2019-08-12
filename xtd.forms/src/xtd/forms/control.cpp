@@ -112,10 +112,12 @@ void control::location(const point& location) {
 
 void control::parent(const control& parent) {
   if (this->parent_ != &parent) {
-    this->parent_ = const_cast<control*>(&parent);
-    if (this->parent_ == &control::null) {
+    if (this->parent_ != &control::null)
       this->destroy_handle();
-    } else {
+    
+    this->parent_ = const_cast<control*>(&parent);
+    
+    if (this->parent_ != &control::null) {
       this->create_control();
       //native::control::parent(this->handle_, this->parent_);
       //for (control* control : this->controls_)
