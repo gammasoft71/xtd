@@ -2,7 +2,7 @@
 
 auto main()->int {
   auto button1_clicked = 0, button2_clicked = 0;
-  auto form1 = xtd::forms::control::create<xtd::forms::form>("Button 2 example");
+  auto form1 = xtd::forms::control::create<xtd::forms::form>("Button 3 example");
   auto button1 = xtd::forms::control::create<xtd::forms::button>(*form1, "Button 1", {50, 50});
   auto button2 = xtd::forms::control::create<xtd::forms::button>(*form1, "Button 2", {50, 100}, {200, 75});
   auto label1 = xtd::forms::control::create<xtd::forms::label>(*form1, "Button 1 clicked 0 times", {50, 200}, {200, 23});
