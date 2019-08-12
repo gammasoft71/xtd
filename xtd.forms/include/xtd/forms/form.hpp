@@ -18,7 +18,7 @@ namespace xtd {
       event<form, form_closing_event_handler<control>> form_closing;
 
       using control::parent;
-      void parent(const control& parent) override;
+      control& parent(const control& parent) override;
 
       void create_handle() override;
 
