@@ -6,16 +6,18 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-void check_box::auto_check(bool auto_check) {
+check_box& check_box::auto_check(bool auto_check) {
   if (this->auto_check_ != auto_check)
     this->auto_check_ = auto_check;
+  return *this;
 }
 
-void check_box::checked(bool checked) {
+check_box& check_box::checked(bool checked) {
   this->check_state(checked ? forms::check_state::checked : forms::check_state::unchecked);
+  return *this;
 }
 
-void check_box::check_state(forms::check_state check_state) {
+check_box& check_box::check_state(forms::check_state check_state) {
   if (this->check_state_ != check_state) {
     this->check_state_ = check_state;
     if (this->checked_ != (this->check_state_ != forms::check_state::unchecked)) {
@@ -25,13 +27,15 @@ void check_box::check_state(forms::check_state check_state) {
     native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
     this->on_check_state_changed(event_args::empty);
   }
+  return *this;
 }
 
-void check_box::three_state(bool three_state) {
+check_box& check_box::three_state(bool three_state) {
   if (this->three_state_ != three_state) {
     this->three_state_ = three_state;
     this->recreate_handle();
   }
+  return *this;
 }
 
 void check_box::create_handle() {
