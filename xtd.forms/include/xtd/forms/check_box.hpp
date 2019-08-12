@@ -13,16 +13,16 @@ namespace xtd {
       drawing::size default_size() const override {return {104, 24};}
 
       bool auto_check() const {return this->auto_check_;}
-      void auto_check(bool auto_check);
+      check_box& auto_check(bool auto_check);
       
       bool checked() const {return this->checked_;}
-      void checked(bool checked);
+      check_box& checked(bool checked);
       
       forms::check_state check_state() const {return this->check_state_;}
-      void check_state(forms::check_state check_state);
+      check_box& check_state(forms::check_state check_state);
       
       bool three_state() const {return this->three_state_;}
-      void three_state(bool three_state);
+      check_box& three_state(bool three_state);
       
       void create_handle() override;
       
