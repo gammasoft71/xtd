@@ -20,11 +20,12 @@ color text_box::default_fore_color() const {
   return native::text_box::default_fore_color();
 }
 
-void text_box::text(const string& text) {
+control& text_box::text(const string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::text_box::text(this->handle_, this->text_);
   }
+  return *this;
 }
 
 void text_box::create_handle() {
