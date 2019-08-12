@@ -6,18 +6,20 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-void radio_button::auto_check(bool auto_check) {
+radio_button& radio_button::auto_check(bool auto_check) {
   if (this->auto_check_ != auto_check) {
     this->auto_check_ = auto_check;
   }
+  return *this;
 }
 
-void radio_button::checked(bool checked) {
+radio_button& radio_button::checked(bool checked) {
   if (this->checked_ != checked) {
     this->checked_ = checked;
     native::radio_button::checked(this->handle_, this->checked_);
     this->on_checked_changed(event_args::empty);
   }
+  return *this;
 }
 
 void radio_button::create_handle() {
