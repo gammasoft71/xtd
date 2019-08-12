@@ -12,10 +12,10 @@ namespace xtd {
       drawing::size default_size() const override {return {104, 24};}
 
       bool auto_check() const {return this->auto_check_;}
-      void auto_check(bool auto_check);
+      radio_button& auto_check(bool auto_check);
       
       bool checked() const {return this->checked_;}
-      void checked(bool checked);
+      radio_button& checked(bool checked);
       
       void create_handle() override;
       
