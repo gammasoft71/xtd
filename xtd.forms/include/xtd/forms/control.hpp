@@ -42,10 +42,10 @@ namespace xtd {
       virtual ~control();
 
       virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ != &control::null ? this->parent_->back_color() : default_back_color());}
-      virtual void back_color(const drawing::color& color);
+      virtual control& back_color(const drawing::color& color);
       
      virtual drawing::size client_size() const {return this->client_size_;}
-      virtual void client_size(const drawing::size& size);
+      virtual control& client_size(const drawing::size& size);
       
       virtual control_collection controls() const;
 
@@ -56,42 +56,57 @@ namespace xtd {
       virtual drawing::size default_size() const {return{0, 0};}
       
       virtual bool enabled() const {return this->enabled_;}
-      virtual void enabled(bool enabled);
+      virtual control& enabled(bool enabled);
 
       virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ != &control::null ? this->parent_->fore_color() : default_fore_color());}
-      virtual void fore_color(const drawing::color& color);
+      virtual control& fore_color(const drawing::color& color);
       
       virtual intptr_t handle() const;
       
       virtual int32_t height() const {return this->size_.height();}
-      virtual void height(int32_t height) {this->size({this->size_.width(), height});}
+      virtual control& height(int32_t height) {
+        this->size({this->size_.width(), height});
+        return *this;
+      }
       
       virtual drawing::point location() const {return this->location_;}
-      virtual void location(const drawing::point& location);
+      virtual control& location(const drawing::point& location);
 
       virtual const std::string& name() const {return this->name_;}
-      virtual void name(const std::string& name) {this->name_ = name;}
+      virtual control& name(const std::string& name) {
+        this->name_ = name;
+        return*this;
+      }
       
       virtual control& parent() const {return *this->parent_;}
-      virtual void parent(const control& parent);
+      virtual control& parent(const control& parent);
 
       virtual drawing::size size() const {return this->size_;}
-      virtual void size(const drawing::size& size);
+      virtual control& size(const drawing::size& size);
       
       virtual const std::string& text() const {return this->text_;}
-      virtual void text(const std::string& text);
+      virtual control& text(const std::string& text);
       
       virtual bool visible() const {return this->visible_;}
-      virtual void visible(bool visible);
+      virtual control& visible(bool visible);
 
       virtual int32_t width() const {return this->size_.width();}
-      virtual void width(int32_t width) {this->size({width, this->size_.height()});}
+      virtual control& width(int32_t width) {
+        this->size({width, this->size_.height()});
+        return *this;
+      }
       
       virtual int32_t x() const {return this->location_.x();}
-      virtual void x(int32_t x) {this->size({x, this->location_.y()});}
+      virtual control& x(int32_t x) {
+        this->size({x, this->location_.y()});
+        return *this;
+      }
       
       virtual int32_t y() const {return this->location_.y();}
-      virtual void y(int32_t y) {this->size({this->location_.x(), y});}
+      virtual control& y(int32_t y) {
+        this->size({this->location_.x(), y});
+        return *this;
+      }
 
       template<typename control_t>
       static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
