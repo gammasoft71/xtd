@@ -107,6 +107,11 @@ namespace xtd {
         this->size({this->location_.x(), y});
         return *this;
       }
+      
+      control& operator<<(control& parent, control& child) {
+        child.parent(parent);
+        return parent;
+      }
 
       template<typename control_t>
       static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
