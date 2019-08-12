@@ -5,11 +5,12 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-void panel::border_style(forms::border_style border_style) {
+panel& panel::border_style(forms::border_style border_style) {
   if (this->border_style_ != border_style) {
     this->border_style_ = border_style;
     this->recreate_handle();
   }
+  return *this;
 }
 
 void panel::create_handle() {
