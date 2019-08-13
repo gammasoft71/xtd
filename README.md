@@ -53,7 +53,7 @@ int main() {
   
   form form1;
   form1.text("Hello World Form");
-  form.controls().push_back(button1);
+  form1.controls().push_back(button1);
   
   application::run(form1);
 }
