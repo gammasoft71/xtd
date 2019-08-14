@@ -12,7 +12,11 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/color.hpp
   include/xtd/drawing//known_color.hpp
   include/xtd/drawing//point.hpp
+  include/xtd/drawing//point_f.hpp
+  include/xtd/drawing//rectangle.hpp
+  include/xtd/drawing//rectangle_f.hpp
   include/xtd/drawing//size.hpp
+  include/xtd/drawing//size_f.hpp
   include/xtd/drawing//system_colors.hpp
 )
 
