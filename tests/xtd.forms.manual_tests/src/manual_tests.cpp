@@ -8,8 +8,8 @@ using namespace xtd::forms;
 // The main entry point for the application.
 int main() {
   form form;
-  form.back_color(color::dodger_blue);
-  form.fore_color(color::yellow);
+  //form.back_color(color::dodger_blue);
+  //form.fore_color(color::yellow);
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
@@ -55,6 +55,20 @@ int main() {
   radio_button4.text("radio 4");
   radio_button4.checked_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("radio_button4.checked() = {}", radio_button4.checked()) << endl;
+  };
+  
+  button button;
+  button.parent(form);
+  button.location({30, 120});
+  button.text("Color...");
+  button.click += [&](const control& sender, const event_args& e) {
+    if (form.back_color() == color::dodger_blue) {
+      form.back_color(system_colors::control);
+      form.fore_color(system_colors::control_text);
+    } else {
+      form.back_color(color::dodger_blue);
+      form.fore_color(color::yellow);
+    }
   };
 
   application::run(form);

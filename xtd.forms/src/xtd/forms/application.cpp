@@ -70,6 +70,7 @@ void application::run() {
 }
 
 void application::run(const form& form) {
+  const_cast<forms::form&>(form).visible(true);
   native::application::main_form(form.__get_handle__());
   run();
 }

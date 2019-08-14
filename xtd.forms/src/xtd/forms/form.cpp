@@ -13,12 +13,12 @@ using namespace xtd::forms;
 form::form() {
   this->back_color_ = this->default_back_color();
   this->fore_color_ = this->default_fore_color();
+  this->visible_ = false;
   create_control();
 }
 
 void form::create_handle() {
   this->handle_ = native::form::create(this->default_size());
-  this->visible_ = false;
   this->location_ = native::control::location(this->handle_);
   this->control::create_handle();
   native::control::back_color(this->handle_, this->back_color());

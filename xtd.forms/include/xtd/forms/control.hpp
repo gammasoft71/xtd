@@ -225,6 +225,8 @@ namespace xtd {
       
       virtual void on_visible_changed(const event_args& e);
       
+      virtual void refresh() const;
+      
       intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
       
       virtual void show() {this->visible(true);}
@@ -291,7 +293,7 @@ namespace xtd {
       virtual void def_wnd_proc(message& message);
       
       virtual void get_properties();
-      virtual void set_properties();
+      virtual void set_properties() const;
 
       void recreate_handle();
       
