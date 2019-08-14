@@ -26,10 +26,10 @@ namespace xtd {
       /// @brief Initializes a new instance of the Size class from the specified dimensions.
       /// @param width The width component of the new Size
       /// @param height The height component of the new Size
-      size(float width, float height) : width_(width), height_(height) {}
+      size_f(float width, float height) : width_(width), height_(height) {}
 
       /// @cond
-      size(const xtd::drawing::size_f&) = default;
+      size_f(const xtd::drawing::size_f&) = default;
       bool operator==(const xtd::drawing::size_f& value) const {return this->width_ == value.width_ && this->height_ == value.height_;}      
       bool operator!=(const xtd::drawing::size_f& value) const {return !this->operator==(value);}
       size_f& operator=(const xtd::drawing::size_f& size) = default;
@@ -67,7 +67,7 @@ namespace xtd {
 
       /// @brief Tests whether this Size class has width and height of 0.
       /// @return bool Returns true  when this Size class has both a width and height of 0; otherwise, false.
-      bool is_empty() const {return *this == size::empty;}
+      bool is_empty() const {return *this == size_f::empty;}
 
       /// @brief Returns the result of subtracting specified size from the specified size.
       /// @param sz1 The Size to be subtracted from.

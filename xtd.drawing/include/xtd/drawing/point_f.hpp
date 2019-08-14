@@ -27,7 +27,7 @@ namespace xtd {
       
       bool operator!=(const point_f& value) const {return !this->operator==(value);}
       
-      bool is_empty() const {return *this == point::empty;}
+      bool is_empty() const {return *this == point_f::empty;}
 
       void offset(const point_f& pt) {this->offset(pt.x_, pt.y_);}
 
