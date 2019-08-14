@@ -19,3 +19,9 @@
 [submodule "xtd.environment"]
 	path = xtd.environment
 	url = https://github.com/gammasoft71/xtd.environment
+[submodule "xtd.forms"]
+	path = xtd.forms
+	url = https://github.com/gammasoft71/xtd.forms
+[submodule "xtd.diagnostics"]
+	path = xtd.diagnostics
+	url = https://github.com/gammasoft71/xtd.diagnostics
