@@ -457,10 +457,10 @@ namespace xtd {
       color() = default;
       
       /// @cond
-      color(const xtd::drawing::color& color) = default;
-      color& operator=(const xtd::drawing::color& color) = default;
-      bool operator==(const xtd::drawing::color& value) const {return this->argb_ == value.argb_ && this->handle_ == value.handle_;}
-      bool operator!=(const xtd::drawing::color& value) const {return !this->operator==(value);}
+      color(const color& color) = default;
+      color& operator=(const color& color) = default;
+      bool operator==(const color& value) const {return this->argb_ == value.argb_ && this->handle_ == value.handle_;}
+      bool operator!=(const color& value) const {return !this->operator==(value);}
       /// @endcond
       
       /// @brief Gets the alpha component value of this xtd::drawing::color class.
