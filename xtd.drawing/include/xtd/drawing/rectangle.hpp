@@ -2,6 +2,8 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
+#include "point.hpp"
+#include "size.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,6 +19,7 @@ namespace xtd {
       
       rectangle() = default;
       rectangle(int32_t x, int32_t y, int32_t width, int32_t height) : x_(x), y_(y), width_(width), height_(height) {}
+      rectangle(const point& location, const size& size) : x_(location.x()), y_(location.y()), width_(size.width()), height_(size.height()) {}
 
       /// @cond
       rectangle(const rectangle&) = default;
