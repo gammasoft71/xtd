@@ -8,7 +8,7 @@ using namespace xtd::forms;
 label& label::auto_size(bool auto_size) {
   if (this->auto_size_ != auto_size) {
     this->auto_size_ = auto_size;
-    this->re_create_control();
+    this->recreate_handle();
     this->on_auto_size_changed(event_args::empty);
   }
   return *this;

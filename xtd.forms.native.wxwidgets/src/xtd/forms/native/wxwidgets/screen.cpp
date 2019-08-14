@@ -1,7 +1,7 @@
 #include <xtd/forms/native/screen.hpp>
-#include <xtd/wtd.strings>
+#include <xtd/xtd.strings>
 #include "control_handler.hpp"
-#include <wx/display.h
+#include <wx/display.h>
 
 using namespace std;
 using namespace xtd;
@@ -13,7 +13,7 @@ size_t screen::count() {
 }
 
 int32_t screen::bits_per_pixel(size_t index) {
-  return wxDisplay(index).GetCurrentMode().GetDeptj();
+  return wxDisplay(index).GetCurrentMode().GetDepth();
 }
 
 rectangle screen::bounds(size_t index) {
@@ -22,8 +22,8 @@ rectangle screen::bounds(size_t index) {
 }
 
 string screen::device_name(size_t index) {
-  string device_name = wxDisplay(index).GetName();
-  return device_name.empty ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
+  string device_name = wxDisplay(index).GetName().ToStdString();
+  return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
 bool screen::primary(size_t index) {
@@ -35,10 +35,10 @@ rectangle screen::working_area(size_t index) {
   return {working_area.GetX(), working_area.GetY(), working_area.GetWidth(), working_area.GetHeight()};
 }
 
-size_t screen::from_handle(intptr handle) {
+size_t screen::from_handle(intptr_t handle) {
   return wxDisplay::GetFromWindow(reinterpret_cast<control_handler*>(handle)->control());
 }
 
 size_t screen::from_point(const point& point) {
-  retrun wxDisplay::GetFromPoint(wxPoint(point.x(), point.y()));
+  return wxDisplay::GetFromPoint(wxPoint(point.x(), point.y()));
 }

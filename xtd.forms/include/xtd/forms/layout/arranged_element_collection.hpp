@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <xtd/event_args.hpp>
 #include <xtd/event_handler.hpp>
@@ -27,7 +28,7 @@ namespace xtd {
         /// @cond
         arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
         arranged_element_collection& operator=(const arranged_element_collection& collection) {
-          this->clear()
+          this->clear();
           this->push_back_range(collection);
           return *this;
         }
@@ -53,21 +54,21 @@ namespace xtd {
         reference operator[](size_type pos) {return this->collection[pos];}
         const_reference operator[](size_type pos) const {return this->collection[pos];}
         
-        iterator begin() {return thsi->collection_.begin();}
-        const_iterator begin() const {return thsi->collection_.begin();}
-        const_iterator cbegin() const {return thsi->collection_.cbegin();}
+        iterator begin() {return this->collection_.begin();}
+        const_iterator begin() const {return this->collection_.begin();}
+        const_iterator cbegin() const {return this->collection_.cbegin();}
         
-        iterator end() {return thsi->collection_.end();}
-        const_iterator end() const {return thsi->collection_.end();}
-        const_iterator cend() const {return thsi->collection_.cend();}
+        iterator end() {return this->collection_.end();}
+        const_iterator end() const {return this->collection_.end();}
+        const_iterator cend() const {return this->collection_.cend();}
         
-        iterator rbegin() {return thsi->collection_.rbegin();}
-        const_iterator rbegin() const {return thsi->collection_.rbegin();}
-        const_iterator crbegin() const {return thsi->collection_.crbegin();}       
+        iterator rbegin() {return this->collection_.rbegin();}
+        const_iterator rbegin() const {return this->collection_.rbegin();}
+        const_iterator crbegin() const {return this->collection_.crbegin();}
 
-        iterator rend() {return thsi->collection_.rend();}
-        const_iterator rend() const {return thsi->collection_.rend();}
-        const_iterator crend() const {return thsi->collection_.crend();}
+        iterator rend() {return this->collection_.rend();}
+        const_iterator rend() const {return this->collection_.rend();}
+        const_iterator crend() const {return this->collection_.crend();}
         
         bool empty() const {return this->collection_.empty();}
         
@@ -75,16 +76,16 @@ namespace xtd {
         
         size_type max_size() const {return this->collection_.max_size();}
         
-        void reserve(size_typr size) {this->collection_.reserve(size);}
+        void reserve(size_type size) {this->collection_.reserve(size);}
         
         size_type capacity() const {return this->collection_.capacity();}
         
         void shrink_to_fit() {this->collection_.shrink_to_fit();}
         
         void clear() {
-        iterator it = this->begin():
-        while it != this->end())
-          it = this->erase(it);
+          iterator it = this->begin();
+          while (it != this->end())
+            it = this->erase(it);
         }
         
         iterator insert(iterator pos, const type_t& value) {
@@ -106,6 +107,7 @@ namespace xtd {
 
         iterator erase(iterator pos) {
           size_t index = pos - this->begin();
+          type_t item = *pos;
           iterator result = this->collection_.erase(pos);
           this->item_erased(index, item);
           return result;
@@ -113,6 +115,7 @@ namespace xtd {
         
         iterator erase(const_iterator pos) {
           size_t index = pos - this->cbegin();
+          type_t item = *pos;
           iterator result = this->collection_.erase(pos);
           this->item_erased(index, item);
           return result;
@@ -122,25 +125,25 @@ namespace xtd {
           iterator result = this->end();
           for (iterator it = first; it <= last; it++)
             result = this->erase(it);
-          return result
+          return result;
         }
         
-        iterator erase(const_iterator first, const_iteratpr last) {
+        iterator erase(const_iterator first, const_iterator last) {
           iterator result = this->bend();
           for (const_iterator it = first; it <= last; it++)
             result = this->erase(it);
-          return it;
+          return result;
         }
         
         void erase_at(size_t index) {this->erase(this->begin() + index);}
 
         void push_back(const type_t& item) {
-          this->collection_.pudh_back(item);
+          this->collection_.push_back(item);
           this->item_added(this->collection_.size() - 1, item);
         }
         
         void push_back(const type_t&& item) {
-          this->collection_.pudh_back(item);
+          this->collection_.push_back(item);
           this->item_added(this->collection_.size() - 1, item);
         }
 
