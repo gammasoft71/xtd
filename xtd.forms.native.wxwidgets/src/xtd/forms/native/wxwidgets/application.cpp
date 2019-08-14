@@ -88,7 +88,6 @@ void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, i
 
 void application::run() {
   initialize_application(); // Must be first
-  if (wxTheApp->GetTopWindow()) wxTheApp->GetTopWindow()->Show();
   static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
   struct call_on_exit {
     ~call_on_exit() {

@@ -33,12 +33,13 @@ color control::back_color(intptr_t control) {
 void control::back_color(intptr_t control, const color& color) {
   if (control == 0) return;
 #if defined (__APPLE__)
-  if (color.handle()) {
+  if (color.handle())
     reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
-    return;
-  }
-#endif
+  else
+    reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+#else
   reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+#endif
 }
 
 std::vector<intptr_t> control::controls(intptr_t control) {
@@ -153,12 +154,13 @@ color control::fore_color(intptr_t control) {
 void control::fore_color(intptr_t control, const color& color) {
   if (control == 0) return;
 #if defined (__APPLE__)
-  if (color.handle()) {
+  if (color.handle())
     reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
-    return;
-  }
-#endif
+  else
+    reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+#else
   reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+#endif
 }
 
 intptr_t control::handle(intptr_t control) {
@@ -210,11 +212,13 @@ bool control::visible(intptr_t control) {
 
 void control::visible(intptr_t control, bool visible) {
   if (control == 0) return;
-  if (visible)
-   reinterpret_cast<control_handler*>(control)->control()->Show();
-  else
-    reinterpret_cast<control_handler*>(control)->control()->Hide();
+  reinterpret_cast<control_handler*>(control)->control()->Show(visible);
 }
+
+void control::refresh(intptr_t control) {
+  reinterpret_cast<control_handler*>(control)->control()->Refresh();
+}
+
 
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   if (control == 0) return;

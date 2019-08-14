@@ -54,6 +54,7 @@ control& control::back_color(const color& color) {
   if (this->back_color_ != color) {
     this->back_color_ = color;
     native::control::back_color(this->handle_, this->back_color_.value());
+    this->refresh();
     this->on_back_color_changed(event_args::empty);
   }
   return *this;
@@ -86,9 +87,8 @@ drawing::color control::default_fore_color() const {
 control& control::enabled(bool enabled) {
   if (this->enabled_ != enabled) {
     this->enabled_ = enabled;
-    //for (control* control : this->controls_)
-    //  control->enabled(enabled);
     native::control::enabled(this->handle_, this->enabled_);
+    this->refresh();
     this->on_enabled_changed(event_args::empty);
   }
   return *this;
@@ -98,6 +98,7 @@ control& control::fore_color(const color& color) {
   if (this->fore_color_ != color) {
     this->fore_color_ = color;
     native::control::fore_color(this->handle_, this->fore_color_.value());
+    this->refresh();
     this->on_fore_color_changed(event_args::empty);
   }
   return *this;
@@ -152,8 +153,6 @@ control& control::text(const string& text) {
 control& control::visible(bool visible) {
   if (this->visible_ != visible) {
     this->visible_ = visible;
-    //for (control* control : this->controls_)
-    //  control->visible(visible);
     native::control::visible(this->handle_, this->visible_);
     this->on_visible_changed(event_args::empty);
   }
@@ -173,7 +172,7 @@ void control::create_handle() {
   handles_[native::control::handle(this->handle_)] = this;
   this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
   this->on_handle_created(event_args::empty);
-  this->set_properties();
+  this->refresh();
   this->get_properties();
 }
 
@@ -324,6 +323,17 @@ void control::on_visible_changed(const event_args &e) {
   this->visible_changed(*this, e);
 }
 
+void control::refresh() const {
+  this->set_properties();
+  for (auto control : this->controls())
+    control.get().refresh();
+  native::control::refresh(this->handle_);
+}
+
+intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
+  return native::control::send_message(this->handle_, hwnd, msg, wparam, lparam);
+}
+
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
@@ -370,10 +380,6 @@ void control::wnd_proc(message& message) {
   }
 }
 
-intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
-  return native::control::send_message(this->handle_, hwnd, msg, wparam, lparam);
-}
-
 void control::def_wnd_proc(message& message) {
   message.result(native::control::def_wnd_proc(this->handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
 }
@@ -393,7 +399,7 @@ void control::get_properties() {
   this->visible_ = native::control::visible(this->handle_);
 }
 
-void control::set_properties() {
+void control::set_properties() const {
   if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
   if (this->back_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
   if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location());
