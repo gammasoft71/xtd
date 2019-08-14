@@ -19,7 +19,7 @@ namespace xtd {
       
       rectangle() = default;
       rectangle(int32_t x, int32_t y, int32_t width, int32_t height) : x_(x), y_(y), width_(width), height_(height) {}
-      rectangle(const point& location, const size& size) : x_(location.x()), y_(location.y()), width_(size.width()), height_(size.height()) {}
+      rectangle(const point& location, const drawing::size& size) : x_(location.x()), y_(location.y()), width_(size.width()), height_(size.height()) {}
 
       /// @cond
       rectangle(const rectangle&) = default;
@@ -41,6 +41,13 @@ namespace xtd {
 
       std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + ", width=" + std::to_string(this->width_) + ", height=" + std::to_string(this->height_) + "}";}
       
+      point location() const {return {this->x_, this->y_};}
+      
+      void location(const point& location) {
+        this->x_ = location.x();
+        this->y_ = location.y();
+      }
+      
       int32_t x() const {return x_;}
       
       void x(int32_t x) {this->x_ = x;}
@@ -53,6 +60,13 @@ namespace xtd {
       
       void height(int32_t height) {this->height_ = height;}
       
+      drawing::size size() const {return {this->width_, this->height_};}
+      
+      void size(const drawing::size& size) {
+        this->width_ = size.width();
+        this->height_ = size.height();
+      }
+
       int32_t width() const {return this->width_;}
       
       void width(int32_t width) {this->width_ = width;}

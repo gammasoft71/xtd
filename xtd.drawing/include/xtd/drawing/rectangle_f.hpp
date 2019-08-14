@@ -41,6 +41,13 @@ namespace xtd {
 
       std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + ", width=" + std::to_string(this->width_) + ", height=" + std::to_string(this->height_) + "}";}
       
+      point_f location() const {return {this->x_, this->y_};}
+      
+      void location(const point_f& location) {
+        this->x_ = location.x();
+        this->y_ = location.y();
+      }
+
       float x() const {return x_;}
       
       void x(float x) {this->x_ = x;}
@@ -53,6 +60,13 @@ namespace xtd {
       
       void height(int32_t height) {this->height_ = height;}
       
+      size_f size() const {return {this->width_, this->height_};}
+      
+      void size(const size_f& size) {
+        this->width_ = size.width();
+        this->height_ = size.height();
+      }
+
       float width() const {return this->width_;}
       
       void width(float width) {this->width_ = width;}
