@@ -1,15 +1,16 @@
 #pragma once
-#include <csdint>
+#include <cstdint>
 #include <string>
 #include <vector>
 #include <xtd/drawing/rectangle.hpp>
+#include "control.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a display device or multiple display devices on a single system.
-    class Screen {
+    class screen {
     public:
       /// @cond
       screen(const screen&) = default;
@@ -18,7 +19,7 @@ namespace xtd {
       
       static std::vector<screen> all_screens();
 
-      int32_t bits_per_pixel() const {return this->bits_per_pixel;}
+      int32_t bits_per_pixel() const {return this->bits_per_pixel_;}
       
       const drawing::rectangle& bounds() const {return this->bounds_;}
       
@@ -29,7 +30,7 @@ namespace xtd {
       static const screen& primary_screen() {
         std::vector<screen> screens = all_screens();
         for (auto& screen : screens)
-          if (screen.primary()) return item;
+          if (screen.primary()) return screen;
         return screens[0];
       }
       
@@ -37,7 +38,7 @@ namespace xtd {
       
       static const screen& from_control(const control& control);
       
-      static const screen& from_handle(ontptr_t handle);
+      static const screen& from_handle(intptr_t handle);
       
       static const screen& from_point(const drawing::point& point);
       

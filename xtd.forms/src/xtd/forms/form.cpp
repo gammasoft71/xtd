@@ -28,8 +28,9 @@ void form::close() {
   native::form::close(this->handle_);
 }
 
-void form::parent(const control& parent) {
+control& form::parent(const control& parent) {
   throw std::invalid_argument("Top-level control cannot be added to a control.");
+  return *this;
 }
 
 void form::wnd_proc(message &message) {

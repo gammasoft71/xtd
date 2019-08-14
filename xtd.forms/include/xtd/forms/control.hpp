@@ -29,7 +29,7 @@ namespace xtd {
         mouse_entered = 0x10,
       };
       
-    public:f
+    public:
       using control_collection = layout::arranged_element_collection<std::reference_wrapper<control>>;
       static const control null;
       
@@ -114,7 +114,7 @@ namespace xtd {
         return *this;
       }
       
-      control& operator<<(control& parent, control& child) {
+      friend control& operator<<(control& parent, control& child) {
         child.parent(parent);
         return parent;
       }

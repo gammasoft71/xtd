@@ -19,6 +19,7 @@ namespace xtd {
       using control::size;
       control& size(const drawing::size& size) override {
         if (!this->auto_size_) this->control::size(size);
+        return *this;
       }
 
       drawing::size default_size() const override {return{100, 23};}

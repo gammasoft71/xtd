@@ -42,6 +42,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/mouse_event_args.hpp
   include/xtd/forms/mouse_event_handler.hpp
   include/xtd/forms/radio_button.hpp
+  include/xtd/forms/screen.hpp
   include/xtd/forms/text_box.hpp
   include/xtd/forms/timer.hpp
 )
@@ -58,6 +59,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/message_box.cpp
   src/xtd/forms/panel.cpp
   src/xtd/forms/radio_button.cpp
+  src/xtd/forms/screen.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
 )

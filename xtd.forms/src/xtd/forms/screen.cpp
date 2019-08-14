@@ -10,12 +10,12 @@ vector<screen> screen::all_screens() {
   vector<screen> screens;
   size_t count = native::screen::count();
   for (size_t index = 0; index < count; index++)
-    sscreens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::primary(index), native::screen::working_area(index)});
+    screens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::primary(index), native::screen::working_area(index)});
   return screens;
 }
 
 const screen& screen::from_control(const control& control) {
-  return all_screens()[natives::screen::from_handle(control.__get_handle__())];
+  return all_screens()[native::screen::from_handle(control.__get_handle__())];
 }
 
 const screen& screen::from_handle(intptr_t handle) {
@@ -23,7 +23,7 @@ const screen& screen::from_handle(intptr_t handle) {
 }
 
 const screen& screen::from_point(const point& point) {
-  return all_screens()[natives::screen::from_point(point)];
+  return all_screens()[native::screen::from_point(point)];
 }
 
 const screen& screen::from_rectangle(const rectangle& rect) {
@@ -31,7 +31,7 @@ const screen& screen::from_rectangle(const rectangle& rect) {
 }
 
 const rectangle& screen::get_bounds(const control& control) {
-  return all_screens()[natives::screen::from_handle(control.__get_handle__())].bounds();
+  return all_screens()[native::screen::from_handle(control.__get_handle__())].bounds();
 }
 
 const rectangle& screen::get_bounds(intptr_t handle) {
@@ -39,7 +39,7 @@ const rectangle& screen::get_bounds(intptr_t handle) {
 }
 
 const rectangle& screen::get_bounds(const point& point) {
-  return all_screens()[natives::screen::from_point(point)].bounds();
+  return all_screens()[native::screen::from_point(point)].bounds();
 }
 
 const rectangle& screen::get_bounds(const rectangle& rect) {
@@ -47,7 +47,7 @@ const rectangle& screen::get_bounds(const rectangle& rect) {
 }
 
 const rectangle& screen::get_working_area(const control& control) {
-  return all_screens()[natives::screen::from_handle(control.__get_handle__())].get_working_area();
+  return all_screens()[native::screen::from_handle(control.__get_handle__())].working_area();
 }
 
 const rectangle& screen::get_working_area(intptr_t handle) {
@@ -55,7 +55,7 @@ const rectangle& screen::get_working_area(intptr_t handle) {
 }
 
 const rectangle& screen::get_working_area(const point& point) {
-  return all_screens()[natives::screen::from_point(point)].get_working_area();
+  return all_screens()[native::screen::from_point(point)].working_area();
 }
 
 const rectangle& screen::get_working_area(const rectangle& rect) {

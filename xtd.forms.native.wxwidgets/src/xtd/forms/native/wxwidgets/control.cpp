@@ -112,7 +112,7 @@ void control::destroy(intptr_t control) {
   if (control == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Destroy();
-  del(control);
+  erase(control);
 }
 
 void control::erase(intptr_t control) {
