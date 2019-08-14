@@ -23,7 +23,7 @@ namespace xtd {
       rectangle& operator=(const rectangle&) = default;
       /// @endcond
       
-      bool operator==(const rectangle& value) const {return this->x_ == value.x_ && this->y_ == value.y_ && this->width_ == value.width_ && this->height_ == value.height;}
+      bool operator==(const rectangle& value) const {return this->x_ == value.x_ && this->y_ == value.y_ && this->width_ == value.width_ && this->height_ == value.height_;}
       
       bool operator!=(const rectangle& value) const {return !this->operator==(value);}
       
@@ -46,11 +46,11 @@ namespace xtd {
 
       void y(int32_t y) {this->y_ = y;}
       
-      int32_t height() const {retrun this->height_;}
+      int32_t height() const {return this->height_;}
       
       void height(int32_t height) {this->height_ = height;}
       
-      int32_t width() const {retrun this->width_;}
+      int32_t width() const {return this->width_;}
       
       void width(int32_t width) {this->width_ = width;}
       
@@ -63,8 +63,8 @@ namespace xtd {
     private:
       int32_t x_ = 0;
       int32_t y_ = 0;
-      int32_t width = 0;
-      int32_t height = 0;
+      int32_t width_ = 0;
+      int32_t height_ = 0;
     };
   }
 }

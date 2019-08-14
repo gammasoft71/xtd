@@ -16,14 +16,14 @@ namespace xtd {
       static const rectangle_f empty;
       
       rectangle_f() = default;
-      rectangle(float x, float y, float width, float height) : x_(x), y_(y), width_(width), height_(height) {}
+      rectangle_f(float x, float y, float width, float height) : x_(x), y_(y), width_(width), height_(height) {}
 
       /// @cond
       rectangle_f(const rectangle_f&) = default;
       rectangle_f& operator=(const rectangle_f&) = default;
       /// @endcond
       
-      bool operator==(const rectangle_f& value) const {return this->x_ == value.x_ && this->y_ == value.y_ && this->width_ == value.width_ && this->height_ == value.height;}
+      bool operator==(const rectangle_f& value) const {return this->x_ == value.x_ && this->y_ == value.y_ && this->width_ == value.width_ && this->height_ == value.height_;}
       
       bool operator!=(const rectangle_f& value) const {return !this->operator==(value);}
       
@@ -46,11 +46,11 @@ namespace xtd {
 
       void y(float y) {this->y_ = y;}
       
-      float height() const {retrun this->height_;}
+      float height() const {return this->height_;}
       
       void height(int32_t height) {this->height_ = height;}
       
-      float width() const {retrun this->width_;}
+      float width() const {return this->width_;}
       
       void width(float width) {this->width_ = width;}
       
@@ -63,8 +63,8 @@ namespace xtd {
     private:
       float x_ = 0;
       float y_ = 0;
-      float width = 0;
-      float height = 0;
+      float width_ = 0;
+      float height_ = 0;
     };
   }
 }
