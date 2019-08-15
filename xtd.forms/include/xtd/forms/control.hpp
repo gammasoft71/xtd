@@ -316,6 +316,7 @@ namespace xtd {
       control::state state_ = state::empty;
       
     private:
+      void internal_destroy_handle(intptr_t);
       explicit control(const std::string& name) : name_(name) {}
       bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
