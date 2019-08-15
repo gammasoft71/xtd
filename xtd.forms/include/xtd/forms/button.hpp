@@ -11,7 +11,9 @@ namespace xtd {
 
       drawing::size default_size() const override {return {75, 25};}
 
-      void create_handle() override;      
+      void create_handle() override; 
+
+      void refresh() const override;
     };
   }
 }

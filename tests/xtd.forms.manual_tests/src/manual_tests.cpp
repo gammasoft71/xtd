@@ -59,6 +59,7 @@ int main() {
   
   button button;
   button.parent(form);
+  //button.back_color(color::dodger_blue);
   button.location({30, 120});
   button.text("Color...");
   button.click += [&](const control& sender, const event_args& e) {
