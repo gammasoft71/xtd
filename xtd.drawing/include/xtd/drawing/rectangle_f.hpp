@@ -58,7 +58,7 @@ namespace xtd {
       
       float height() const {return this->height_;}
       
-      void height(int32_t height) {this->height_ = height;}
+      void height(float height) {this->height_ = height;}
       
       size_f size() const {return {this->width_, this->height_};}
       
