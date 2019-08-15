@@ -19,9 +19,11 @@ intptr_t radio_button::create(intptr_t parent, const size& size) {
 }
 
 bool radio_button::checked(intptr_t control) {
+  if (control == 0) return false;
   return static_cast<wxRadioButton*>(reinterpret_cast<control_handler*>(control)->control())->GetValue();
 }
 
 void radio_button::checked(intptr_t control, bool checked) {
+  if (control == 0) return;
   static_cast<wxRadioButton*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(checked);
 }

@@ -38,6 +38,24 @@ namespace {
 
 const control control::null {"null"};
 
+control::control() {
+  this->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
+    item.get().parent_ = this;
+    if (this->handle_) {
+      item.get().create_control();
+      if (item.get().handle_) native::control::parent(item.get().handle_, this->handle_);
+      item.get().on_parent_changed(event_args::empty);
+      for (auto control : item.get().controls_)
+        control.get().create_control();
+    }
+  };
+
+  this->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
+    item.get().parent_ = const_cast<control*>(&control::null);
+    item.get().destroy_handle();
+  };
+}
+
 control::~control() {
   if (this->handle_) {
     native::control::unregister_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
@@ -68,14 +86,6 @@ control& control::client_size(const drawing::size& size) {
     native::control::client_size(this->handle_, this->client_size_);
   }
   return *this;
-}
-
-control::control_collection control::controls() const {
-  control_collection controls;
-  for(intptr_t handle : native::control::controls(this->handle_))
-    if (&from_handle(handle) != &control::null)
-      controls.push_back(from_handle(handle));
-  return controls;
 }
 
 drawing::color control::default_back_color() const {
@@ -122,18 +132,15 @@ control& control::location(const point& location) {
 
 control& control::parent(const control& parent) {
   if (this->parent_ != &parent) {
-    if (this->parent_ != &control::null)
-      this->destroy_handle();
-    
-    this->parent_ = const_cast<control*>(&parent);
-    
     if (this->parent_ != &control::null) {
-      this->create_control();
-      if (this->handle_) native::control::parent(this->handle_, this->parent_->handle_);
-      //for (control* control : this->controls_)
-      //  control->create_control();
-      this->on_parent_changed(event_args::empty);
+      for (size_t index = 0; index < this->parent_->controls().size(); index++) {
+        if (&this->parent_->controls()[index].get() == this) {
+           this->parent_->controls_.erase_at(index);
+          break;
+        }
+      }
     }
+    if (&parent != &control::null) const_cast<control&>(parent).controls_.push_back(*this);
   }
   return *this;
 }

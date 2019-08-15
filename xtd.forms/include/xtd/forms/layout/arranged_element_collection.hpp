@@ -51,8 +51,8 @@ namespace xtd {
         type_t* data() {return this->collection_.data();}
         const type_t* data() const {return this->collection_.data();}
         
-        reference operator[](size_type pos) {return this->collection[pos];}
-        const_reference operator[](size_type pos) const {return this->collection[pos];}
+        reference operator[](size_type pos) {return this->collection_[pos];}
+        const_reference operator[](size_type pos) const {return this->collection_[pos];}
         
         iterator begin() {return this->collection_.begin();}
         const_iterator begin() const {return this->collection_.begin();}
