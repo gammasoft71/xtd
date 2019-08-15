@@ -217,8 +217,12 @@ namespace xtd {
 
       virtual void on_mouse_wheel(const mouse_event_args& e);
       
+      virtual void on_parent_back_color_changed(const event_args& e);
+      
       virtual void on_parent_changed(const event_args& e);
  
+      virtual void on_parent_fore_color_changed(const event_args& e);
+      
       virtual void on_size_changed(const event_args& e);
 
       virtual void on_text_changed(const event_args& e);
