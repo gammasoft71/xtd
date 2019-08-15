@@ -6,14 +6,6 @@
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-#if defined(__APPLE__)
-constexpr int64_t border_fixed_single = wxBORDER_SUNKEN;
-constexpr int64_t border_fixed_3d = wxBORDER_SIMPLE;
-#else
-constexpr int64_t border_fixed_single = wxBORDER_SIMPLE;
-constexpr int64_t border_fixed_3d = wxBORDER_SUNKEN;
-#endif
-
 namespace {
   class wx_label : public control_handler {
   public:
@@ -27,7 +19,7 @@ intptr_t label::create(intptr_t parent, const size& size, styles styles) {
   if (parent == 0) throw std::invalid_argument("parent can't be null");
   int64_t wx_style = wxST_NO_AUTORESIZE;
   if ((styles & label::styles::auto_size) == label::styles::auto_size) wx_style &= ~wxST_NO_AUTORESIZE;
-  if ((styles & label::styles::border_fixed_single) == label::styles::border_fixed_single) wx_style |= border_fixed_single;
-  if ((styles & label::styles::border_fixed_3d) == label::styles::border_fixed_3d) wx_style |= border_fixed_3d;
+  if ((styles & label::styles::border_fixed_single) == label::styles::border_fixed_single) wx_style |= wxBORDER_SIMPLE;
+  if ((styles & label::styles::border_fixed_3d) == label::styles::border_fixed_3d) wx_style |= wxBORDER_SUNKEN;
   return (intptr_t) new wx_label(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, (styles & label::styles::auto_size) == label::styles::auto_size ? wxDefaultSize : wxSize(size.width(), size.height()), wx_style);
 }
