@@ -54,8 +54,9 @@ control& control::back_color(const color& color) {
   if (this->back_color_ != color) {
     this->back_color_ = color;
     native::control::back_color(this->handle_, this->back_color_.value());
-    this->refresh();
     this->on_back_color_changed(event_args::empty);
+    for (auto control : this->controls())
+      control.get().on_parent_back_color_changed(event_args::empty);
   }
   return *this;
 }
@@ -98,8 +99,9 @@ control& control::fore_color(const color& color) {
   if (this->fore_color_ != color) {
     this->fore_color_ = color;
     native::control::fore_color(this->handle_, this->fore_color_.value());
-    this->refresh();
     this->on_fore_color_changed(event_args::empty);
+    for (auto control : this->controls())
+      control.get().on_parent_fore_color_changed(event_args::empty);
   }
   return *this;
 }
@@ -305,8 +307,24 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
   this->mouse_wheel(*this, e);
 }
 
+void control::on_parent_back_color_changed(const event_args &e) {
+  if (!this->back_color_.has_value()) {
+    if (!environment::os_version().is_osx_platform()) native::control::back_color(this->handle_, this->back_color());
+    for (auto control : this->controls())
+      control.get().on_parent_back_color_changed(event_args::empty);
+  }
+}
+
 void control::on_parent_changed(const event_args &e) {
   this->parent_changed(*this, e);
+}
+
+void control::on_parent_fore_color_changed(const event_args &e) {
+  if (!this->fore_color_.has_value()) {
+    native::control::fore_color(this->handle_, this->fore_color());
+    for (auto control : this->controls())
+      control.get().on_parent_fore_color_changed(event_args::empty);
+  }
 }
 
 void control::on_size_changed(const event_args &e) {
@@ -324,9 +342,6 @@ void control::on_visible_changed(const event_args &e) {
 }
 
 void control::refresh() const {
-  this->set_properties();
-  for (auto control : this->controls())
-    control.get().refresh();
   native::control::refresh(this->handle_);
 }
 
