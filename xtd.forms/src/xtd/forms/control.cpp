@@ -176,7 +176,7 @@ void control::create_handle() {
   handles_[native::control::handle(this->handle_)] = this;
   this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
   this->on_handle_created(event_args::empty);
-  this->refresh();
+  this->set_properties();
   this->get_properties();
 }
 
