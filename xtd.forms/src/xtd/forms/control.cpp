@@ -57,6 +57,7 @@ control& control::back_color(const color& color) {
     this->on_back_color_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_back_color_changed(event_args::empty);
+    this->refresh();
   }
   return *this;
 }
@@ -89,8 +90,8 @@ control& control::enabled(bool enabled) {
   if (this->enabled_ != enabled) {
     this->enabled_ = enabled;
     native::control::enabled(this->handle_, this->enabled_);
-    this->refresh();
     this->on_enabled_changed(event_args::empty);
+    this->refresh();
   }
   return *this;
 }
@@ -102,6 +103,7 @@ control& control::fore_color(const color& color) {
     this->on_fore_color_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
+    this->refresh();
   }
   return *this;
 }
