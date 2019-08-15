@@ -40,9 +40,11 @@ intptr_t check_box::create(intptr_t parent, const size& size, bool three_state) 
 }
 
 int check_box::check_state(intptr_t control) {
+  if (control == 0) return false;
   return from_check_box_state(static_cast<wxCheckBox*>(reinterpret_cast<control_handler*>(control)->control())->Get3StateValue());
 }
 
 void check_box::check_state(intptr_t control, int state) {
+  if (control == 0) return;
   static_cast<wxCheckBox*>(reinterpret_cast<control_handler*>(control)->control())->Set3StateValue(to_check_box_state(state));
 }

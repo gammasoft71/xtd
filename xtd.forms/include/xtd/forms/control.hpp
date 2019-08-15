@@ -33,7 +33,7 @@ namespace xtd {
       using control_collection = layout::arranged_element_collection<std::reference_wrapper<control>>;
       static const control null;
       
-      control() = default;
+      control();
       
       /// @cond
       control(const control&) = delete;
@@ -53,8 +53,12 @@ namespace xtd {
       virtual drawing::size client_size() const {return this->client_size_;}
       virtual control& client_size(const drawing::size& size);
       
-      virtual control_collection controls() const;
-
+      virtual control_collection& controls() {return this->controls_;}
+      
+      virtual const control_collection& controls() const {return this->controls_;}
+      
+      //virtual control_collection controls() const;
+      
       virtual drawing::color default_back_color() const;
 
       virtual drawing::color default_fore_color() const;
@@ -303,6 +307,7 @@ namespace xtd {
       
       std::optional<drawing::color> back_color_;
       drawing::size client_size_ {-1, -1};
+      control_collection controls_;
       bool enabled_ = true;
       std::optional<drawing::color> fore_color_;
       intptr_t handle_ = 0;
