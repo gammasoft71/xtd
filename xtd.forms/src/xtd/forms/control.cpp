@@ -129,7 +129,7 @@ control& control::parent(const control& parent) {
     
     if (this->parent_ != &control::null) {
       this->create_control();
-      //native::control::parent(this->handle_, this->parent_);
+      if (this->handle_) native::control::parent(this->handle_, this->parent_->handle_);
       //for (control* control : this->controls_)
       //  control->create_control();
       this->on_parent_changed(event_args::empty);
@@ -174,17 +174,15 @@ void control::create_handle() {
   if (this->handle_ == 0) this->handle_ = native::control::create(this->parent_->handle_, this->default_size());
   native::control::register_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
   handles_[native::control::handle(this->handle_)] = this;
-  this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
-  this->on_handle_created(event_args::empty);
   this->set_properties();
   this->get_properties();
+  this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
+  this->on_handle_created(event_args::empty);
 }
 
 void control::destroy_handle() {
-  handles_.erase(this->handle_);
-  native::control::destroy(this->handle_);
+  this->internal_destroy_handle(this->handle_);
   this->handle_ = 0;
-  this->on_handle_destroyed(event_args::empty);
 }
 
 control& control::from_child_handle(intptr_t handle) {
@@ -311,7 +309,10 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
 
 void control::on_parent_back_color_changed(const event_args &e) {
   if (!this->back_color_.has_value()) {
-    if (!environment::os_version().is_osx_platform()) native::control::back_color(this->handle_, this->back_color());
+    if (this->back_color() == this->default_back_color())
+      this->recreate_handle();
+    else if (!environment::os_version().is_osx_platform())
+      native::control::back_color(this->handle_, this->back_color());
     for (auto control : this->controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
@@ -403,9 +404,20 @@ void control::def_wnd_proc(message& message) {
 
 void control::recreate_handle() {
   if (this->handle_ != 0) {
-    this->destroy_handle();
+    intptr_t handle = this->handle_;
+    auto controls = this->controls();
+    this->handle_ = 0;
     this->create_handle();
+    for (auto control : controls)
+      native::control::parent(control.get().handle_, this->handle_);
+    this->internal_destroy_handle(handle);
   }
+}
+
+void control::internal_destroy_handle(intptr_t handle) {
+  handles_.erase(handle);
+  native::control::destroy(handle);
+  this->on_handle_destroyed(event_args::empty);
 }
 
 void control::get_properties() {
@@ -417,7 +429,7 @@ void control::get_properties() {
 }
 
 void control::set_properties() const {
-  if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
+  if (this->client_size_ != drawing::size(-1, -1) && this->size_ == drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
   if (this->back_color_.has_value()) native::control::back_color(this->handle_, this->back_color());
   if (this->fore_color_.has_value()) native::control::fore_color(this->handle_, this->fore_color());
   if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location());

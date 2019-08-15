@@ -12,10 +12,6 @@ namespace xtd {
       drawing::size default_size() const override {return {75, 25};}
 
       void create_handle() override; 
-
-      void on_back_color_changed(const event_args& e) override;
-
-      void on_parent_back_color_changed(const event_args& e) override;
     };
   }
 }
