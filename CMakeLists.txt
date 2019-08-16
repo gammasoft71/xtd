@@ -31,7 +31,6 @@ file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
   "include(CMakeFindDependencyMacro)\n"
   "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
   "\n"
-  "find_package(xtd.strings REQUIRED)\n"
   "find_package(wxWidgets REQUIRED)\n"
   "\n"
   "get_filename_component(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
