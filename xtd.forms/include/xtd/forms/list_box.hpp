@@ -32,7 +32,7 @@ namespace xtd {
 
       using control::text;
       
-      control& text(const std::string& text) override;
+      control& text(const std::string& text) override {return this->selected_item(text);}
 
       void create_handle() override;
       
@@ -40,7 +40,9 @@ namespace xtd {
       
     protected:
       void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
-      
+
+      void on_selected_value_changed(const event_args& e) {this->control::text(this->selected_item_);}
+
       void wnd_proc(message& message) override;
       
     private:
