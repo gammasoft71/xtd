@@ -1,6 +1,6 @@
 [![environment](docs/pictures/header.png)](https://gammasoft71.wixsite.com/xtd-environment)
 
-[![Build Status](https://travis-ci.org/gammasoft71/xtd.environment.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.environment)
+[![Build Status](https://travis-ci.org/gammasoft71/xtd.diagnostics.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.diagnostics)
 [![Build status](https://ci.appveyor.com/api/projects/status/xyvw3hfkimvkyxr2?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-environment)
 [![codecov](https://codecov.io/gh/gammasoft71/xtd.environment/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.environment)
 [![Documentation](https://codedocs.xyz/gammasoft71/xtd.environment.svg)](https://codedocs.xyz/gammasoft71/xtd.environment/)
