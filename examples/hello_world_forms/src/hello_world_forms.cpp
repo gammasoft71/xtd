@@ -3,20 +3,17 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-// The main entry point for the application.
 int main() {
-  application::enable_visual_styles();
-  
-  button button1;
-  button1.text("Click me");
-  button1.location({10, 10});
-  button1.click += [&](const control& sender, const event_args& e) {
+  button button;
+  button.text("Click me");
+  button.location({10, 10});
+  button.click += [](const control& sender, const event_args& e) {
     message_box::show("Hello, World!");
   };
   
-  form form1;
-  form1.text("Hello World Form");
-  form.controls().push_back(button1);
+  form form;
+  form.text("Hello World Form");
+  form.controls().push_back(button);
   
-  application::run(form1);
+  application::run(form);
 }
