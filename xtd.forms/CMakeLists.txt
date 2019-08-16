@@ -31,6 +31,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/key_press_event_handler.hpp
   include/xtd/forms/keys.hpp
   include/xtd/forms/label.hpp
+  include/xtd/forms/list_box.hpp
   include/xtd/forms/message.hpp
   include/xtd/forms/panel.hpp
   include/xtd/forms/message_box.hpp
@@ -47,6 +48,10 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/timer.hpp
 )
 
+set(XTD_FORMS_LAYOUT_INCLUDES
+  include/xtd/forms/layout/arranged_element_collection.hpp
+)
+
 set(XTD_FORMS_SOURCES
   src/xtd/forms/application.cpp
   src/xtd/forms/button.cpp
@@ -55,6 +60,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
   src/xtd/forms/label.cpp
+  src/xtd/forms/list_box.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/message_box.cpp
   src/xtd/forms/panel.cpp
@@ -66,6 +72,7 @@ set(XTD_FORMS_SOURCES
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\forms FILES ${XTD_FORMS_INCLUDES})
+source_group(include\\xtd\\forms\\layout FILES ${XTD_FORMS_LAYOUT_INCLUDES})
 source_group(src\\xtd\\forms FILES ${XTD_FORMS_SOURCES})
 source_group(src\\native FILES ${NATIVE_SOURCES})
 source_group(src\\native\\wxwidgets FILES ${NATIVE_WXWIDGETS_SOURCES})
@@ -82,7 +89,7 @@ find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_LAYOUT_INCLUDES} ${XTD_FORMS_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
