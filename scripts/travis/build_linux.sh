@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# init and update submodule
+git submodule update --init
+
+# create build directory
 mkdir -p build/examples
 cd build
 
