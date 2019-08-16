@@ -25,3 +25,6 @@
 [submodule "xtd.diagnostics"]
 	path = xtd.diagnostics
 	url = https://github.com/gammasoft71/xtd.diagnostics
+[submodule "xtd.drawing"]
+	path = xtd.drawing
+	url = https://github.com/gammasoft71/xtd.drawing
