@@ -31,9 +31,9 @@ namespace examples {
     }
     
   private:
-    label label;
-    button button;
-    timer timer;
+    forms::label label;
+    forms::button button;
+    forms::timer timer;
     int counter = 0;
   };
 }
