@@ -8,6 +8,11 @@ addons:
     packages:
     - g++-7
     - lcov
+    - libwxgtk3.0-dev
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install wxmac   ; fi
 
 matrix:
   include:

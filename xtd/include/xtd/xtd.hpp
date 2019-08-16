@@ -1,13 +1,13 @@
 /// @file
 /// @brief Contains xtd include files.
 #pragma once
-#include <xtd/console.hpp>
-#include <xtd/delegate.hpp>
-#include <xtd/environment.hpp>
-#include <xtd/io.hpp>
-#include <xtd/properties.hpp>
-#include <xtd/strings.hpp>
-#include <xtd/tunit.hpp>
+#include <xtd/xtd.console>
+#include <xtd/xtd.delegate>
+#include <xtd/xtd.environment>
+#include <xtd/xtd.io>
+#include <xtd/xtd.properties>
+#include <xtd/xtd.strings>
+#include <xtd/xtd.tunit>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
