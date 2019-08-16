@@ -8,6 +8,7 @@ addons:
     packages:
     - g++-7
     - lcov
+    - libwxgtk3.0-dev
 
 matrix:
   include:
