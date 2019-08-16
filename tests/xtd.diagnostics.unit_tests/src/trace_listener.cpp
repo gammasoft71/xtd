@@ -164,20 +164,20 @@ namespace unit_tests {
     void test_method_(write_stream_string) {
       unit_test_trace_listener trace_listener;
       trace_listener << "string";
-      assert::are_equal_("string", trace_listener.result());
+      assert::are_equal_("string\n", trace_listener.result());
     }
     
     void test_method_(write_stream_int) {
       unit_test_trace_listener trace_listener;
       trace_listener << 42;
-      assert::are_equal_("42", trace_listener.result());
+      assert::are_equal_("42\n", trace_listener.result());
     }
     
     void test_method_(write_string_with_one_indent_level) {
       unit_test_trace_listener trace_listener;
       trace_listener.indent_level(1);
       trace_listener << "string";
-      assert::are_equal_("    string", trace_listener.result());
+      assert::are_equal_("    string\n", trace_listener.result());
     }
     
     void test_method_(write_string_with_two_indent_level) {
@@ -185,7 +185,7 @@ namespace unit_tests {
       trace_listener.indent_size(8);
       trace_listener.indent_level(2);
       trace_listener << "string";
-      assert::are_equal_("                string", trace_listener.result());
+      assert::are_equal_("                string\n", trace_listener.result());
     }
   };
 }
