@@ -18,7 +18,7 @@ namespace examples {
     }
     
   private:
-    label label;
+    forms::label label;
   };
 }
 
