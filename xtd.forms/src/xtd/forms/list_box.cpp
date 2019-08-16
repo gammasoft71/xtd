@@ -58,13 +58,9 @@ list_box& list_box::selected_item(const string& selected_item) {
     if (it != this->items_.end()) index = it - this->items_.begin();
     this->selected_index(index);
     if (index == -1) this->selected_item_= "";
-    this->control::text(this->selected_item_);
+    this->on_selected_value_changed(event_args::empty);
   }
   return *this;
-}
-
-control& list_box::text(const std::string& text) {
-  return this->selected_item(text);
 }
 
 void list_box::create_handle() {

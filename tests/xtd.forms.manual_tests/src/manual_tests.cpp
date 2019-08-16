@@ -30,7 +30,7 @@ int main() {
 
   
   list_box1.selected_index_changed += [&](const control& sender, const event_args& e) {
-    cdebug << format("list_box1.selected_index_changed = [{} : {}]", list_box1.selected_index(), list_box1.selected_item()) << endl;
+    cdebug << format("list_box1.selected_index_changed = [{} : {}]", (int)list_box1.selected_index(), list_box1.selected_item()) << endl;
   };
   
   list_box1.text_changed += [&](const control& sender, const event_args& e) {
