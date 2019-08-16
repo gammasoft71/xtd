@@ -75,7 +75,6 @@ control& control::back_color(const color& color) {
     this->on_back_color_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_back_color_changed(event_args::empty);
-    this->refresh();
   }
   return *this;
 }
@@ -101,7 +100,6 @@ control& control::enabled(bool enabled) {
     this->enabled_ = enabled;
     native::control::enabled(this->handle_, this->enabled_);
     this->on_enabled_changed(event_args::empty);
-    this->refresh();
   }
   return *this;
 }
@@ -113,7 +111,6 @@ control& control::fore_color(const color& color) {
     this->on_fore_color_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
-    this->refresh();
   }
   return *this;
 }
@@ -217,6 +214,7 @@ bool control::is_null() const {
 }
 
 void control::on_back_color_changed(const event_args &e) {
+  this->refresh();
   this->back_color_changed(*this, e);
 }
 
@@ -238,10 +236,12 @@ void control::on_double_click(const event_args &e) {
 
 void control::on_enabled_changed(const event_args &e) {
   this->enabled_ = native::control::enabled(this->handle_);
+  this->refresh();
   this->enabled_changed(*this, e);
 }
 
 void control::on_fore_color_changed(const event_args &e) {
+  this->refresh();
   this->fore_color_changed(*this, e);
 }
 
