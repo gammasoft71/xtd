@@ -21,7 +21,7 @@ public:
     };
   }
 private:
-  button button;
+  forms::button button;
 };
 
 int main() {
