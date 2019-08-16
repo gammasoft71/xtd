@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# init and update submodule
+git submodule update --init
+
+# create build directory
 mkdir -p build/examples
-pushd build
+cd build
 
 # generate and build lib
 cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DCMAKE_INSTALL_PREFIX=~/local ..
