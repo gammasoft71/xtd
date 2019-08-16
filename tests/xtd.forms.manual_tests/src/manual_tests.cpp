@@ -14,63 +14,50 @@ int main() {
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
 
-  group_box group_box1;
-  group_box1.parent(form);
-  group_box1.location({10, 10});
-  group_box1.text("group_box 1");
+  list_box list_box1;
+  list_box1.parent(form);
+  list_box1.location({10, 10});
+  list_box1.height(200);
+  
+  list_box1.items().push_back_range({"Undo", "Redo", "Cut", "Copy", "Paste", "Delete", "Select All", });
+  //list_box1.selected_index(3);
+  list_box1.selected_item("Paste");
+  
+  list_box list_box2;
+  list_box2.parent(form);
+  list_box2.location({150, 10});
+  list_box2.height(200);
 
-  radio_button radio_button1;
-  radio_button1.parent(group_box1);
-  radio_button1.checked(true);
-  radio_button1.location({30, 20});
-  radio_button1.text("radio 1");
-  cdebug << format("radio_button1.back_color = {}", radio_button1.back_color()) << endl;
-  cdebug << format("radio_button1.fore_color = {}", radio_button1.fore_color()) << endl;
-  cdebug << format("radio_button1.size = {}", radio_button1.size()) << endl;
   
-  radio_button radio_button2;
-  radio_button2.parent(group_box1);
-  radio_button2.location({30, 50});
-  radio_button2.text("radio 2");
-  radio_button2.checked_changed += [&](const control& sender, const event_args& e) {
-    cdebug << format("radio_button2.checked() = {}", radio_button2.checked()) << endl;
-  };
-  cdebug << format("radio_button2.back_color = {}", radio_button2.back_color()) << endl;
-  cdebug << format("radio_button2.fore_color = {}", radio_button2.fore_color()) << endl;
-  cdebug << format("radio_button2.size = {}", radio_button2.size()) << endl;
-
-  group_box group_box2;
-  group_box2.parent(form);
-  group_box2.location({10, 150});
-  
-  radio_button radio_button3;
-  radio_button3.parent(group_box2);
-  radio_button3.checked(true);
-  radio_button3.location({30, 20});
-  radio_button3.text("radio 3");
-  
-  radio_button radio_button4;
-  radio_button4.parent(group_box2);
-  radio_button4.location({30, 50});
-  radio_button4.text("radio 4");
-  radio_button4.checked_changed += [&](const control& sender, const event_args& e) {
-    cdebug << format("radio_button4.checked() = {}", radio_button4.checked()) << endl;
+  list_box1.selected_index_changed += [&](const control& sender, const event_args& e) {
+    cdebug << format("list_box1.selected_index_changed = [{} : {}]", list_box1.selected_index(), list_box1.selected_item()) << endl;
   };
   
-  button button;
-  button.parent(form);
-  //button.back_color(color::dodger_blue);
-  button.location({30, 120});
-  button.text("Color...");
-  button.click += [&](const control& sender, const event_args& e) {
-    if (form.back_color() == color::dodger_blue) {
-      form.back_color(system_colors::control);
-      form.fore_color(system_colors::control_text);
-    } else {
-      form.back_color(color::dodger_blue);
-      form.fore_color(color::yellow);
+  list_box1.text_changed += [&](const control& sender, const event_args& e) {
+    cdebug << format("list_box1.text_changed = {}", list_box1.text()) << endl;
+  };
+  
+  list_box1.double_click += [&](const control& sender, const event_args& e) {
+    size_t index = list_box1.selected_index();
+    if (index != -1) {
+      list_box2.items().push_back(list_box1.selected_item());
+      list_box1.items().erase_at(index);
+      list_box1.selected_index(index >= list_box1.items().size() ? list_box1.items().size() - 1 : index);
     }
   };
+
+  list_box2.double_click += [&](const control& sender, const event_args& e) {
+    size_t index = list_box2.selected_index();
+    if (index != -1) {
+      list_box1.items().push_back(list_box2.selected_item());
+      list_box2.items().erase_at(index);
+      list_box2.selected_index(index >= list_box2.items().size() ? list_box2.items().size() - 1 : index);
+    }
+  };
+
+  cdebug << format("list_box1.back_color = {}", list_box1.back_color()) << endl;
+  cdebug << format("list_box1.fore_color = {}", list_box1.fore_color()) << endl;
+  cdebug << format("list_box1.size = {}", list_box1.size()) << endl;
 
   application::run(form);
 }

@@ -366,6 +366,7 @@ namespace xtd {
       inline void control_wrapper<TControl>::process_command_event(wxEvent& event, intptr_t hwnd) {
         if (event.GetEventType() == wxEVT_BUTTON) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED,  event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_CHECKBOX) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_LISTBOX) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_RADIOBUTTON) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
         else this->def_process_event(event);
       }
