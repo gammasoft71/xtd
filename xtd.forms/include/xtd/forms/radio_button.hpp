@@ -26,9 +26,9 @@ namespace xtd {
       
       void wnd_proc(message& message) override;
 
-    private:
-      void wm_reflect_command(message& message);
+      virtual void wm_reflect_command(message& message);
       
+    private:
       bool auto_check_ = true;
       bool checked_ = false;
     };

@@ -50,15 +50,15 @@ namespace xtd {
       event<list_box, event_handler<control>> selected_index_changed;
       
     protected:
-      void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
+      virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
 
-      void on_selected_value_changed(const event_args& e) {this->control::text(this->selected_item_);}
+      virtual void on_selected_value_changed(const event_args& e) {this->control::text(this->selected_item_);}
 
       void wnd_proc(message& message) override;
       
-    private:
-      void wm_reflect_command(message& message);
+      virtual void wm_reflect_command(message& message);
       
+    private:
       string_collection items_;
       size_t selected_index_ = -1;
       std::vector<size_t> selected_indices;
