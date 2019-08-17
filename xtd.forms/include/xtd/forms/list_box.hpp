@@ -1,5 +1,6 @@
 #pragma once
 #include "layout/arranged_element_collection.hpp"
+#include "border_style.hpp"
 #include "control.hpp"
 #include "selection_mode.hpp"
 
@@ -13,6 +14,9 @@ namespace xtd {
       
       list_box();
 
+      forms::border_style border_style() const {return this->border_style_;}
+      list_box& border_style(forms::border_style border_style);
+      
       drawing::color default_back_color() const override;
       
       drawing::color default_fore_color() const override;
@@ -67,6 +71,7 @@ namespace xtd {
       void wm_mouse_double_click(message& message);
       void wm_mouse_down(message& message);
 
+      forms::border_style border_style_ = forms::border_style::fixed_3d;
       string_collection items_;
       size_t selected_index_ = -1;
       std::string selected_item_;

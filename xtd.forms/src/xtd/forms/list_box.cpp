@@ -1,5 +1,6 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/list_box.hpp>
+#include <xtd/forms/native/window_styles.hpp>
 #include <xtd/forms/native/window_list_box.hpp>
 #include "../../../include/xtd/forms/list_box.hpp"
 
@@ -26,6 +27,14 @@ list_box::list_box() {
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
+}
+
+list_box& list_box::border_style(forms::border_style border_style) {
+  if (this->border_style_ != border_style) {
+    this->border_style_ = border_style;
+    this->recreate_handle();
+  }
+  return *this;
 }
 
 color list_box::default_back_color() const {
@@ -94,7 +103,8 @@ list_box& list_box::sorted(bool sorted) {
 }
 
 void list_box::create_handle() {
-  int32_t styles = 0;
+  size_t styles = 0;
+  size_t ex_styles = 0;
   switch (this->selection_mode_) {
     case selection_mode::none: styles |= LBS_NOSEL; break;
     case selection_mode::one:  break;
@@ -103,7 +113,9 @@ void list_box::create_handle() {
     default: break;
   }
   if (this->sorted_) styles |= LBS_SORT;
-  this->handle_ = native::list_box::create(this->parent_->__get_handle__(), this->default_size(), styles);
+  if (this->border_style_ == forms::border_style::fixed_single) styles |= WS_BORDER;
+  else if (this->border_style_ == forms::border_style::fixed_3d) ex_styles |= WS_EX_CLIENTEDGE;
+  this->handle_ = native::list_box::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
   this->control::create_handle();
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::list_box::insert_item(this->handle_, index, this->items_[index]);
