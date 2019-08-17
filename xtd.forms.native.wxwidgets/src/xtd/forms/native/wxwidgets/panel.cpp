@@ -9,7 +9,7 @@ using namespace xtd::forms::native;
 namespace {
   class wx_panel : public control_handler {
   public:
-    wx_panel(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, int32_t style = 0) {
+    wx_panel(wxWindow *parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style) {
       this->control_handler::create<wxPanel>(parent, id, pos, size, style);
     }
   };

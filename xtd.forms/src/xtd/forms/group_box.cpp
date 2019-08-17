@@ -6,6 +6,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void group_box::create_handle() {
-  this->handle_ = native::group_box::create(this->parent_->__get_handle__(), this->default_size());
+  size_t styles = 0;
+  size_t ex_styles = 0;
+  this->handle_ = native::group_box::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
   this->control::create_handle();
 }

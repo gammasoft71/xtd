@@ -1,6 +1,7 @@
 #include <xtd/environment.hpp>
 #include <xtd/forms/native/radio_button.hpp>
 #include <xtd/forms/native/control.hpp>
+#include <xtd/forms/native/window_button.hpp>
 #include "../../../include/xtd/forms/radio_button.hpp"
 
 using namespace xtd;
@@ -23,7 +24,9 @@ radio_button& radio_button::checked(bool checked) {
 }
 
 void radio_button::create_handle() {
-  this->handle_ = native::radio_button::create(this->parent_->__get_handle__(), this->default_size());
+  size_t styles = 0;
+  size_t ex_styles = 0;
+  this->handle_ = native::radio_button::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
   this->control::create_handle();
   native::radio_button::checked(this->handle_, this->checked_);
   if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());

@@ -13,7 +13,7 @@ using namespace xtd::forms::native;
 namespace {
   class wx_list_box : public control_handler {
   public:
-    wx_list_box(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
+    wx_list_box(wxWindow *parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style) {
       this->control_handler::create<wxListBox>(parent, id, pos, size, 0, nullptr, style);
     }
   };

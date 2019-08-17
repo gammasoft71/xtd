@@ -1,4 +1,5 @@
 #pragma once
+#include "border_style.hpp"
 #include "control.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -9,6 +10,9 @@ namespace xtd {
     public:
       text_box();
 
+      forms::border_style border_style() const {return this->border_style_;}
+      text_box& border_style(forms::border_style border_style);
+      
       drawing::color default_back_color() const override;
       
       drawing::color default_fore_color() const override;
@@ -19,6 +23,9 @@ namespace xtd {
       control& text(const std::string& text) override;
 
       void create_handle() override;
+      
+    private:
+      forms::border_style border_style_ = forms::border_style::fixed_3d;
     };
   }
 }

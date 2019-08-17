@@ -14,15 +14,15 @@ using namespace xtd::forms::native;
 namespace {
   class wx_text_box : public control_handler {
   public:
-    wx_text_box(wxWindow *parent, wxWindowID id, const wxString& value, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize) {
-      this->control_handler::create<wxTextCtrl>(parent, id, value, pos, size);
+    wx_text_box(wxWindow *parent, wxWindowID id, const wxString& value, const wxPoint& pos, const wxSize& size, long style) {
+      this->control_handler::create<wxTextCtrl>(parent, id, value, pos, size, style);
     }
   };
 }
 
-intptr_t text_box::create(intptr_t parent, const drawing::size& size) {
+intptr_t text_box::create(intptr_t parent, const drawing::size& size, size_t styles, size_t ex_styles) {
   if (parent == 0) throw invalid_argument("parent can't be null");
-  return (intptr_t) new wx_text_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
+  return (intptr_t) new wx_text_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, control_handler::to_wx_style(styles, ex_styles));
 }
 
 color text_box::default_back_color() {
