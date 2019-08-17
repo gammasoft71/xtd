@@ -27,7 +27,6 @@ int main() {
   list_box2.parent(form);
   list_box2.location({150, 10});
   list_box2.height(200);
-  list_box2.selection_mode(forms::selection_mode::none);
   
   list_box1.selected_index_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("list_box1.selected_index_changed = [{} : {}]", (int)list_box1.selected_index(), list_box1.selected_item()) << endl;

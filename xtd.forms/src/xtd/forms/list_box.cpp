@@ -13,7 +13,7 @@ list_box::list_box() {
   this->fore_color_ = this->default_fore_color();
   this->items_.item_added += [&](size_t pos, const std::string& item) {
     native::list_box::insert_item(this->handle_, pos, item);
-
+    if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
     string selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -75,6 +75,7 @@ list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
 list_box& list_box::sorted(bool sorted) {
   if (this->sorted_ != sorted) {
     this->sorted_ = sorted;
+    if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
     this->recreate_handle();
   }
   return *this;
@@ -94,7 +95,7 @@ void list_box::create_handle() {
   this->control::create_handle();
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::list_box::insert_item(this->handle_, index, this->items_[index]);
-  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index_ = -1;
+  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);
   native::list_box::selected_index(this->handle_, this->selected_index_);
   if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
 }
