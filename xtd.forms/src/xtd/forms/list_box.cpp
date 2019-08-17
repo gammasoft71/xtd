@@ -1,5 +1,6 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/list_box.hpp>
+#include <xtd/forms/native/window_list_box.hpp>
 #include "../../../include/xtd/forms/list_box.hpp"
 
 using namespace std;
@@ -63,9 +64,39 @@ list_box& list_box::selected_item(const string& selected_item) {
   return *this;
 }
 
+list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
+  if (this->selection_mode_ != selection_mode) {
+    this->selection_mode_ = selection_mode;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
+list_box& list_box::sorted(bool sorted) {
+  if (this->sorted_ != sorted) {
+    this->sorted_ = sorted;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
 void list_box::create_handle() {
-  this->handle_ = native::list_box::create(this->parent_->__get_handle__(), this->default_size());
+  int32_t styles = 0;
+  switch (this->selection_mode_) {
+    case selection_mode::none: styles |= LBS_NOSEL; break;
+    case selection_mode::one:  break;
+    case selection_mode::multi_simple: styles |= LBS_MULTIPLESEL; break;
+    case selection_mode::multi_extended: styles |= LBS_MULTIPLESEL | LBS_EXTENDEDSEL; break;
+    default: break;
+  }
+  if (this->sorted_) styles |= LBS_SORT;
+  this->handle_ = native::list_box::create(this->parent_->__get_handle__(), this->default_size(), styles);
   this->control::create_handle();
+  for (size_t index = 0; index < this->items_.size(); ++index)
+    native::list_box::insert_item(this->handle_, index, this->items_[index]);
+  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index_ = -1;
+  native::list_box::selected_index(this->handle_, this->selected_index_);
+  if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
 }
 
 void list_box::wnd_proc(message &message) {
@@ -77,5 +108,7 @@ void list_box::wnd_proc(message &message) {
 
 void list_box::wm_reflect_command(message &message) {
   this->def_wnd_proc(message);
+  if (this->selection_mode() == forms::selection_mode::none)
+    native::list_box::selected_index(this->handle_, -1);
   this->selected_index(native::list_box::selected_index(this->handle_));
 }

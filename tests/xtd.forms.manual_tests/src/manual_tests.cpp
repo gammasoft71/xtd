@@ -19,7 +19,7 @@ int main() {
   list_box1.location({10, 10});
   list_box1.height(200);
   
-  list_box1.items().push_back_range({"Undo", "Redo", "Cut", "Copy", "Paste", "Delete", "Select All", });
+  list_box1.items().push_back_range({"Undo", "Redo", "Cut", "Copy", "Paste", "Delete", "Select All"});
   //list_box1.selected_index(3);
   list_box1.selected_item("Paste");
   
@@ -27,7 +27,7 @@ int main() {
   list_box2.parent(form);
   list_box2.location({150, 10});
   list_box2.height(200);
-
+  list_box2.selection_mode(forms::selection_mode::none);
   
   list_box1.selected_index_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("list_box1.selected_index_changed = [{} : {}]", (int)list_box1.selected_index(), list_box1.selected_item()) << endl;
@@ -53,6 +53,30 @@ int main() {
       list_box2.items().erase_at(index);
       list_box2.selected_index(index >= list_box2.items().size() ? list_box2.items().size() - 1 : index);
     }
+  };
+
+  button button_mode;
+  button_mode.parent(form);
+  button_mode.text("Mode...");
+  button_mode.location({10, 230});
+  button_mode.click += [&](const control& sender, const event_args& e) {
+    switch (list_box1.selection_mode()) {
+      case selection_mode::none: list_box1.selection_mode(selection_mode::one); break;
+      case selection_mode::one: list_box1.selection_mode(selection_mode::multi_simple); break;
+      case selection_mode::multi_simple: list_box1.selection_mode(selection_mode::multi_extended); break;
+      case selection_mode::multi_extended: list_box1.selection_mode(selection_mode::none); break;
+      default: break;
+    }
+    cdebug << format("list_box1.selection_mode = {}", list_box1.selection_mode()) << endl;
+  };
+
+  button button_sorted;
+  button_sorted.parent(form);
+  button_sorted.text("Sorted...");
+  button_sorted.location({100, 230});
+  button_sorted.click += [&](const control& sender, const event_args& e) {
+    list_box1.sorted(!list_box1.sorted());
+    button_sorted.text(list_box1.sorted() ? "Unsorted" : "Sorted");
   };
 
   cdebug << format("list_box1.back_color = {}", list_box1.back_color()) << endl;

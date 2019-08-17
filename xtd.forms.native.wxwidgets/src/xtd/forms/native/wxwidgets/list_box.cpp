@@ -1,6 +1,7 @@
 #include <stdexcept>
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/list_box.hpp>
+#include <xtd/forms/native/window_list_box.hpp>
 #include "control_handler.hpp"
 #include <wx/listbox.h>
 
@@ -10,15 +11,19 @@ using namespace xtd::forms::native;
 namespace {
   class wx_list_box : public control_handler {
   public:
-    wx_list_box(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize) {
-      this->control_handler::create<wxListBox>(parent, id, pos, size);
+    wx_list_box(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
+      this->control_handler::create<wxListBox>(parent, id, pos, size, 0, nullptr, style);
     }
   };
 }
 
-intptr_t list_box::create(intptr_t parent, const size& size) {
+intptr_t list_box::create(intptr_t parent, const size& size, int32_t styles) {
   if (parent == 0) throw std::invalid_argument("parent can't be null");
-  return (intptr_t) new wx_list_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height()));
+  long style = wxLB_SINGLE;
+  if ((styles & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) style |= wxLB_EXTENDED;
+  else if ((styles & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) style |= wxLB_MULTIPLE;
+  if ((styles & LBS_SORT) == LBS_SORT) style |= wxLB_SORT;
+  return (intptr_t) new wx_list_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height()), style);
 }
 
 color list_box::default_back_color() {
@@ -72,7 +77,10 @@ void list_box::delete_item(intptr_t control, size_t index) {
 
 void list_box::insert_item(intptr_t control, size_t index, const std::string& item) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(item, index);
+  if (!static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
+    static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(item, index);
+  else
+    static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(item);
 }
 
 size_t list_box::selected_index(intptr_t control) {

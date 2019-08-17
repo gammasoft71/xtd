@@ -19,9 +19,12 @@ namespace xtd {
       template<typename TControl>
       class control_wrapper : public TControl {
       public:
-        control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, pos, size, style), event_handler_(event_handler) {}
-        control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : TControl(parent, id, label, pos, size, style), event_handler_(event_handler) {}
-        
+        //control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style) : TControl(parent, id, pos, size, style), event_handler_(event_handler) {}
+        //control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos, const wxSize& size, long style) : TControl(parent, id, label, pos, size, style), event_handler_(event_handler) {}
+        //control_wrapper(control_handler* event_handler, wxWindow *parent, wxWindowID id, const wxPoint& pos, const wxSize& size, int n, const wxString choices[], long style) : TControl(parent, id, pos, size, n, choices, style), event_handler_(event_handler) {}
+        template<typename ...args_type>
+        control_wrapper(control_handler* event_handler, args_type&& ...args) : TControl(args...), event_handler_(event_handler) {}
+
         intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
           wxEvent* event = reinterpret_cast<wxEvent*>(handle);
           event->Skip(!presult);
@@ -291,17 +294,23 @@ namespace xtd {
         control_handler() = default;
         
         template<typename control>
-        void create(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
+        void create(wxWindow *parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style = 0) {
           this->control_ = new control_wrapper<control>(this, parent, id, pos, size, style);
           this->def_wnd_proc += {static_cast<control_wrapper<control>&>(*this->control_), &control_wrapper<control>::def_wnd_proc};
         }
         
         template<typename control>
-        void create(wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) {
+        void create(wxWindow *parent, wxWindowID id, const wxString& label, const wxPoint& pos, const wxSize& size, long style = 0) {
           this->control_ = new control_wrapper<control>(this, parent, id, label, pos, size, style);
           this->def_wnd_proc += {static_cast<control_wrapper<control>&>(*this->control_), &control_wrapper<control>::def_wnd_proc};
         }
         
+        template<typename control>
+        void create(wxWindow *parent, wxWindowID id, const wxPoint& pos, const wxSize& size, int n, const wxString choices[], long style = 0) {
+          this->control_ = new control_wrapper<control>(this, parent, id, pos, size, n, choices, style);
+          this->def_wnd_proc += {static_cast<control_wrapper<control>&>(*this->control_), &control_wrapper<control>::def_wnd_proc};
+        }
+
         intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
