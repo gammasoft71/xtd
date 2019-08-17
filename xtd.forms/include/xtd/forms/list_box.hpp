@@ -32,11 +32,16 @@ namespace xtd {
       
       virtual list_box& selected_index(size_t selected_index);
       
+      virtual std::vector<size_t> selected_indices() const;
+      
       virtual const std::string& selected_item() const {return this->selected_item_;}
       
       virtual list_box& selected_item(const std::string& selected_item);
       
+      virtual std::vector<std::string> selected_items() const;
+      
       virtual forms::selection_mode selection_mode() const {return this->selection_mode_;}
+
       virtual list_box& selection_mode(forms::selection_mode selection_mode);
 
       virtual bool sorted() const {return this->sorted_;}
@@ -59,11 +64,12 @@ namespace xtd {
       virtual void wm_reflect_command(message& message);
       
     private:
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_down(message& message);
+
       string_collection items_;
       size_t selected_index_ = -1;
-      std::vector<size_t> selected_indices;
       std::string selected_item_;
-      std::vector<std::string> selected_items_;
       forms::selection_mode selection_mode_ = forms::selection_mode::one;
       bool sorted_ = false;
     };

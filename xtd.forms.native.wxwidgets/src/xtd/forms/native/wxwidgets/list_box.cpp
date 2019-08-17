@@ -92,3 +92,14 @@ void list_box::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
   return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }
+
+std::vector<size_t> list_box::selected_indices(intptr_t control) {
+  if (control == 0) return {};
+  std::vector<size_t> indices;
+  wxArrayInt wx_indices;
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
+  for (int index : wx_indices)
+    indices.push_back(index);
+  return indices;
+    
+}
