@@ -9,6 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_INCLUDES
+  include/xtd/forms/appearance.hpp
   include/xtd/forms/application.hpp
   include/xtd/forms/application_informations.hpp
   include/xtd/forms/border_style.hpp

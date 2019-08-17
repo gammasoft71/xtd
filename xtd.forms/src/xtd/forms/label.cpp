@@ -1,5 +1,7 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/label.hpp>
+#include <xtd/forms/native/window_static.hpp>
+#include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/label.hpp"
 
 using namespace xtd;
@@ -23,10 +25,13 @@ label& label::border_style(forms::border_style border_style) {
 }
 
 void label::create_handle() {
-  native::label::styles styles = native::label::styles::none;
-  if (this->auto_size_) styles += native::label::styles::auto_size;
-  if (this->border_style_ == forms::border_style::fixed_single) styles += native::label::styles::border_fixed_single;
-  if (this->border_style_ == forms::border_style::fixed_3d) styles += native::label::styles::border_fixed_3d;
-  this->handle_ = native::label::create(this->parent_->__get_handle__(), this->default_size(), styles);
+  size_t styles = 0;
+  size_t ex_styles = 0;
+  
+  if (this->auto_size_) styles += SS_AUTOSIZE;
+  if (this->border_style_ == forms::border_style::fixed_single) styles |= WS_BORDER;
+  else if (this->border_style_ == forms::border_style::fixed_3d) ex_styles |= WS_EX_CLIENTEDGE;
+
+  this->handle_ = native::label::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
   this->control::create_handle();
 }

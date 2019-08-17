@@ -15,11 +15,8 @@ namespace {
   };
 }
 
-intptr_t label::create(intptr_t parent, const size& size, styles styles) {
+intptr_t label::create(intptr_t parent, const size& size, size_t styles, size_t ex_styles) {
   if (parent == 0) throw std::invalid_argument("parent can't be null");
-  int64_t wx_style = wxST_NO_AUTORESIZE;
-  if ((styles & label::styles::auto_size) == label::styles::auto_size) wx_style &= ~wxST_NO_AUTORESIZE;
-  if ((styles & label::styles::border_fixed_single) == label::styles::border_fixed_single) wx_style |= wxBORDER_SIMPLE;
-  if ((styles & label::styles::border_fixed_3d) == label::styles::border_fixed_3d) wx_style |= wxBORDER_SUNKEN;
-  return (intptr_t) new wx_label(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, (styles & label::styles::auto_size) == label::styles::auto_size ? wxDefaultSize : wxSize(size.width(), size.height()), wx_style);
+  bool auto_size = (styles & SS_AUTOSIZE) == SS_AUTOSIZE;
+  return (intptr_t) new wx_label(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, auto_size ? wxDefaultSize : wxSize(size.width(), size.height()), control_handler::to_wx_style(styles, ex_styles));
 }

@@ -8,7 +8,7 @@ namespace xtd {
       class check_box {
       public:
         check_box() = delete;
-        static intptr_t create(intptr_t parent, const drawing::size& size, bool three_state);
+        static intptr_t create(intptr_t parent, const drawing::size& size, size_t styles, size_t ex_styles);
         static int check_state(intptr_t control);
         static void check_state(intptr_t control, int check_state);
       };

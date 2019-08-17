@@ -7,11 +7,16 @@
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
 #include <xtd/forms/window_messages.hpp>
+#include <xtd/forms/native/window_button.hpp>
 #include <xtd/forms/native/window_list_box.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
+#include <xtd/forms/native/window_static.hpp>
 #include <xtd/forms/native/window_styles.hpp>
+#include <wx/checkbox.h>
+#include <wx/stattext.h>
 #include <wx/frame.h>
 #include <wx/textctrl.h>
+#include <wx/tglbtn.h>
 
 namespace xtd {
   namespace forms {
@@ -319,7 +324,14 @@ namespace xtd {
         
         static long to_wx_style(size_t styles, size_t ex_styles) {
           long wx_style = 0;
-          
+
+          // check box 3state
+          if ((styles & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
+          else if ((styles & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
+
+          // label auto size
+          if ((styles & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
+
           // listbox selection mode
           if ((styles & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) wx_style |= wxLB_EXTENDED;
           else if ((styles & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) wx_style |= wxLB_MULTIPLE;
@@ -398,6 +410,7 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_CHECKBOX) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_LISTBOX) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_RADIOBUTTON) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_TOGGLEBUTTON) this->event_handler_->send_message(hwnd, WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetHandle()) : 0, reinterpret_cast<intptr_t>(&event));
         else this->def_process_event(event);
       }
       

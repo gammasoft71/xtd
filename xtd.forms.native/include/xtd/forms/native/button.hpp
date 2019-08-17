@@ -8,7 +8,7 @@ namespace xtd {
       class button {
       public:
         button() = delete;
-        static intptr_t create(intptr_t parent, const drawing::size& size);
+        static intptr_t create(intptr_t parent, const drawing::size& size, size_t styles, size_t ex_styles);
       };
     }
   }

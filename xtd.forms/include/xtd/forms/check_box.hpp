@@ -1,4 +1,5 @@
 #pragma once
+#include "appearance.hpp"
 #include "check_state.hpp"
 #include "control.hpp"
 
@@ -10,27 +11,34 @@ namespace xtd {
     public:
       check_box() = default;
 
-      drawing::size default_size() const override {return {104, 24};}
+      virtual forms::appearance appearance() const {return this->appearance_;}
+      virtual check_box& appearance(forms::appearance appearance);
 
-      bool auto_check() const {return this->auto_check_;}
-      check_box& auto_check(bool auto_check);
+      virtual bool auto_check() const {return this->auto_check_;}
+      virtual check_box& auto_check(bool auto_check);
       
-      bool checked() const {return this->checked_;}
-      check_box& checked(bool checked);
+      virtual bool checked() const {return this->checked_;}
+      virtual check_box& checked(bool checked);
       
-      forms::check_state check_state() const {return this->check_state_;}
-      check_box& check_state(forms::check_state check_state);
+      virtual forms::check_state check_state() const {return this->check_state_;}
+      virtual check_box& check_state(forms::check_state check_state);
       
-      bool three_state() const {return this->three_state_;}
-      check_box& three_state(bool three_state);
+      drawing::size default_size() const override {return {104, 24};}
+      
+      virtual bool three_state() const {return this->three_state_;}
+      virtual check_box& three_state(bool three_state);
       
       void create_handle() override;
       
+      event<check_box, event_handler<control>> appearance_changed;
+      
       event<check_box, event_handler<control>> checked_changed;
- 
+      
       event<check_box, event_handler<control>> check_state_changed;
 
     protected:
+      virtual void on_appearance_changed(const event_args& e) {this->appearance_changed(*this, e);}
+      
       virtual void on_checked_changed(const event_args& e) {this->checked_changed(*this, e);}
       
       virtual void on_check_state_changed(const event_args& e) {this->check_state_changed(*this, e);}
@@ -40,6 +48,10 @@ namespace xtd {
       virtual void wm_reflect_command(message& message);
 
     private:
+      void wm_mouse_double_click(message& message);
+      void wm_mouse_down(message& message);
+
+      forms::appearance appearance_ = forms::appearance::normal;
       bool auto_check_ = true;
       bool three_state_ = 0;
       bool checked_ = false;

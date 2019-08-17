@@ -28,19 +28,34 @@ namespace examples {
       this->check_box3.location({30, 90});
       this->check_box3.text("Indeterminate");
       
+      this->check_box4.parent(*this);
+      this->check_box4.appearance(forms::appearance::button);
+      this->check_box4.auto_check(false);
+      this->check_box4.location({30, 120});
+      this->check_box4.text("Unhecked");
+      
+      this->check_box5.parent(*this);
+      this->check_box5.appearance(forms::appearance::button);
+      this->check_box5.checked(true);
+      this->check_box5.location({30, 150});
+      this->check_box5.text("Checked");
+
       this->label1.parent(*this);
       this->label1.auto_size(true);
-      this->label1.location({30, 150});
+      this->label1.location({30, 210});
     }
     
   private:
     check_box check_box1;
     check_box check_box2;
     check_box check_box3;
+    check_box check_box4;
+    check_box check_box5;
     label label1;
   };
 }
 
 int main() {
+  application::enable_visual_styles();
   application::run(examples::form1());
 }
