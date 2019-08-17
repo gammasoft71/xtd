@@ -14,6 +14,6 @@ namespace {
   };
 }
 
-intptr_t button::create(intptr_t parent, const size& size) {
+intptr_t button::create(intptr_t parent, const size& size, size_t styles, size_t ex_styles) {
   return (intptr_t) new wx_button(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
 }

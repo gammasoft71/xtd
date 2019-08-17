@@ -26,10 +26,11 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/radio_button.hpp
   include/xtd/forms/native/text_box.hpp
   include/xtd/forms/native/timer.hpp
-  include/xtd/forms/native/window_check_box.hpp
+  include/xtd/forms/native/window_button.hpp
   include/xtd/forms/native/window_list_box.hpp
   include/xtd/forms/native/window_message_box.hpp
   include/xtd/forms/native/window_message_keys.hpp
+  include/xtd/forms/native/window_static.hpp
   include/xtd/forms/native/window_styles.hpp
 )
 
