@@ -27,7 +27,7 @@ namespace xtd {
       
       bool primary() const {return this->primary_;}
       
-      static const screen& primary_screen() {
+      static screen primary_screen() {
         std::vector<screen> screens = all_screens();
         for (auto& screen : screens)
           if (screen.primary()) return screen;
@@ -36,29 +36,29 @@ namespace xtd {
       
       const drawing::rectangle& working_area() const {return this->working_area_;}
       
-      static const screen& from_control(const control& control);
+      static screen from_control(const control& control);
       
-      static const screen& from_handle(intptr_t handle);
+      static screen from_handle(intptr_t handle);
       
-      static const screen& from_point(const drawing::point& point);
+      static screen from_point(const drawing::point& point);
       
-      static const screen& from_rectangle(const drawing::rectangle& rect);
+      static screen from_rectangle(const drawing::rectangle& rect);
       
-      static const drawing::rectangle& get_bounds(const control& control);
+      static drawing::rectangle get_bounds(const control& control);
       
-      static const drawing::rectangle& get_bounds(intptr_t handle);
+      static drawing::rectangle get_bounds(intptr_t handle);
       
-      static const drawing::rectangle& get_bounds(const drawing::point& point);
+      static drawing::rectangle get_bounds(const drawing::point& point);
       
-      static const drawing::rectangle& get_bounds(const drawing::rectangle& rect);
+      static drawing::rectangle get_bounds(const drawing::rectangle& rect);
       
-      static const drawing::rectangle& get_working_area(const control& control);
+      static drawing::rectangle get_working_area(const control& control);
       
-      static const drawing::rectangle& get_working_area(intptr_t handle);
+      static drawing::rectangle get_working_area(intptr_t handle);
       
-      static const drawing::rectangle& get_working_area(const drawing::point& point);
+      static drawing::rectangle get_working_area(const drawing::point& point);
       
-      static const drawing::rectangle& get_working_area(const drawing::rectangle& rect);
+      static drawing::rectangle get_working_area(const drawing::rectangle& rect);
                                   
     private:
       screen() = default;
