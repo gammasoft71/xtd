@@ -8,14 +8,14 @@ using namespace xtd::forms::native;
 namespace {
   class wx_radio_button : public control_handler {
   public:
-    wx_radio_button(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, int style = 0) {
+    wx_radio_button(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style) {
       this->control_handler::create<wxRadioButton>(parent, id, title, pos, size, style);
     }
   };
 }
 
-intptr_t radio_button::create(intptr_t parent, const size& size) {
-  return (intptr_t) new wx_radio_button(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
+intptr_t radio_button::create(intptr_t parent, const size& size, size_t styles, size_t ex_styles) {
+  return (intptr_t) new wx_radio_button(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, control_handler::to_wx_style(styles, ex_styles));
 }
 
 bool radio_button::checked(intptr_t control) {
