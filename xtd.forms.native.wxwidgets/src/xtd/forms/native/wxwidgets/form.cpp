@@ -13,7 +13,7 @@ using namespace xtd::forms::native;
 namespace {
   class wx_form : public control_handler {
   public:
-    wx_form(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_FRAME_STYLE) {
+    wx_form(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style) {
       this->control_handler::create<wxFrame>(parent, id, title, pos, size, style);
        this->panel = new wxPanel(this->control());
       this->panel->Hide();
@@ -27,9 +27,9 @@ namespace {
   };
 }
 
-intptr_t form::create(const size& size) {
+intptr_t form::create(const size& size, size_t styles, size_t ex_styles) {
   application::initialize_application(); // Must be first
-  return (intptr_t) new wx_form(wxTheApp->GetTopWindow(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()});
+  return (intptr_t) new wx_form(wxTheApp->GetTopWindow(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, wxDEFAULT_FRAME_STYLE | control_handler::to_wx_style(styles, ex_styles));
 }
 
 void form::close(intptr_t form) {

@@ -9,7 +9,7 @@ using namespace xtd::forms::native;
 namespace {
   class wx_check_box : public control_handler {
   public:
-    wx_check_box(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, int style, bool push_like) {
+    wx_check_box(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style, bool push_like) {
       if (!push_like)
         this->control_handler::create<wxCheckBox>(parent, id, title, pos, size, style);
       else

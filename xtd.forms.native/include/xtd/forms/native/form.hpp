@@ -9,7 +9,7 @@ namespace xtd {
       public:
         form() = delete;
         static void close(intptr_t form);
-        static intptr_t create(const drawing::size& size);
+        static intptr_t create(const drawing::size& size, size_t styles, size_t ex_styles);
       };
     }
   }

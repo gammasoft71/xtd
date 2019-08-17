@@ -18,7 +18,9 @@ form::form() {
 }
 
 void form::create_handle() {
-  this->handle_ = native::form::create(this->default_size());
+  size_t styles = 0;
+  size_t ex_styles = 0;
+  this->handle_ = native::form::create(this->default_size(), styles, ex_styles);
   this->location_ = native::control::location(this->handle_);
   this->control::create_handle();
   native::control::back_color(this->handle_, this->back_color());
