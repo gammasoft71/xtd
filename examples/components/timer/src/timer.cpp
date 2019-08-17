@@ -39,6 +39,5 @@ namespace examples {
 }
 
 int main() {
-  application::enable_visual_styles();
   application::run(examples::form1());
 }

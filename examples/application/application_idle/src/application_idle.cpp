@@ -19,7 +19,6 @@ namespace examples {
   };
 }
 
-// The main entry point for the application.
 int main() {
   application::run(examples::form1());
 }

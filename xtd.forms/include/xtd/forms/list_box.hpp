@@ -1,6 +1,7 @@
 #pragma once
-#include "control.hpp"
 #include "layout/arranged_element_collection.hpp"
+#include "control.hpp"
+#include "selection_mode.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,16 +23,26 @@ namespace xtd {
 
       const string_collection& items() const {return this->items_;}
       
-      size_t selected_index() const {return this->selected_index_;}
+      const list_box& items(const string_collection& items) {
+        this->items_ = items;
+        return *this;
+      }
       
-      list_box& selected_index(size_t selected_index);
+      virtual size_t selected_index() const {return this->selected_index_;}
       
-      const std::string& selected_item() const {return this->selected_item_;}
+      virtual list_box& selected_index(size_t selected_index);
       
-      list_box& selected_item(const std::string& selected_item);
+      virtual const std::string& selected_item() const {return this->selected_item_;}
+      
+      virtual list_box& selected_item(const std::string& selected_item);
+      
+      virtual forms::selection_mode selection_mode() const {return this->selection_mode_;}
+      virtual list_box& selection_mode(forms::selection_mode selection_mode);
 
-      using control::text;
+      virtual bool sorted() const {return this->sorted_;}
+      virtual list_box& sorted(bool sorted);
       
+      using control::text;
       control& text(const std::string& text) override {return this->selected_item(text);}
 
       void create_handle() override;
@@ -50,7 +61,11 @@ namespace xtd {
       
       string_collection items_;
       size_t selected_index_ = -1;
+      std::vector<size_t> selected_indices;
       std::string selected_item_;
+      std::vector<std::string> selected_items_;
+      forms::selection_mode selection_mode_ = forms::selection_mode::one;
+      bool sorted_ = false;
     };
   }
 }

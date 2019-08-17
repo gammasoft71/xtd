@@ -9,7 +9,7 @@ namespace xtd {
       class list_box {
       public:
         list_box() = delete;
-        static intptr_t create(intptr_t parent, const drawing::size& size);
+        static intptr_t create(intptr_t parent, const drawing::size& size, int32_t styles);
         static drawing::color default_back_color();
         static drawing::color default_fore_color();
         static void delete_item(intptr_t control, size_t index);
