@@ -35,7 +35,7 @@ color list_box::default_back_color() {
   if (default_color == color::empty) {
     native::application::initialize_application();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
-    wxListBox* list_box = new wxListBox(frame, wxID_ANY, "");
+    wxListBox* list_box = new wxListBox(frame, wxID_ANY);
     wxColour colour = list_box->GetBackgroundColour();
 #if defined (__APPLE__)
     default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
@@ -57,7 +57,7 @@ color list_box::default_fore_color() {
   if (default_color == color::empty) {
     native::application::initialize_application();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
-    wxListBox* list_box = new wxListBox(frame, wxID_ANY, "");
+    wxListBox* list_box = new wxListBox(frame, wxID_ANY);
     wxColour colour = list_box->GetForegroundColour();
 #if defined (__APPLE__)
     default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
@@ -76,12 +76,11 @@ void list_box::delete_item(intptr_t control, size_t index) {
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
 }
 
-void list_box::insert_item(intptr_t control, size_t index, const std::string& item) {
-  if (control == 0) return;
+size_t list_box::insert_item(intptr_t control, size_t index, const std::string& item) {
+  if (control == 0) return -1;
   if (!static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
-    static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(item, index);
-  else
-    static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(item);
+    return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(item, index);
+  return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(item);
 }
 
 size_t list_box::selected_index(intptr_t control) {

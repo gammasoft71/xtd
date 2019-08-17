@@ -13,7 +13,7 @@ namespace xtd {
         static drawing::color default_back_color();
         static drawing::color default_fore_color();
         static void delete_item(intptr_t control, size_t index);
-        static void insert_item(intptr_t control, size_t index, const std::string& item);
+        static size_t insert_item(intptr_t control, size_t index, const std::string& item);
         static size_t selected_index(intptr_t control);
         static void selected_index(intptr_t control, size_t index);
       };

@@ -91,16 +91,19 @@ namespace xtd {
         iterator insert(iterator pos, const type_t& value) {
           iterator result = this->collection_.insert(pos, value);
           this->item_added(pos - this->begin(), value);
+          return result;
         }
         
         iterator insert(const_iterator pos, const type_t& value) {
           iterator result = this->collection_.insert(pos, value);
           this->item_added(pos - this->begin(), value);
+          return result;
         }
         
         iterator insert(const_iterator pos, const type_t&& value) {
           iterator result = this->collection_.insert(pos, value);
           this->item_added(pos - this->begin(), value);
+          return result;
         }
 
         void insert_at(size_t index, const type_t& value) {this->insert(this->begin() + index, value);}
