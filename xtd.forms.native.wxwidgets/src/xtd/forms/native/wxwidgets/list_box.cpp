@@ -6,6 +6,8 @@
 #include "control_handler.hpp"
 #include <wx/listbox.h>
 
+using namespace std;
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
@@ -18,8 +20,8 @@ namespace {
   };
 }
 
-intptr_t list_box::create(intptr_t parent, const size& size, int32_t styles) {
-  if (parent == 0) throw std::invalid_argument("parent can't be null");
+intptr_t list_box::create(intptr_t parent, const drawing::size& size, int32_t styles) {
+  if (parent == 0) throw invalid_argument("parent can't be null");
   long style = wxLB_SINGLE;
   if ((styles & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) style |= wxLB_EXTENDED;
   else if ((styles & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) style |= wxLB_MULTIPLE;
@@ -76,7 +78,7 @@ void list_box::delete_item(intptr_t control, size_t index) {
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
 }
 
-size_t list_box::insert_item(intptr_t control, size_t index, const std::string& item) {
+size_t list_box::insert_item(intptr_t control, size_t index, const string& item) {
   if (control == 0) return -1;
   if (!static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
     return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(item, index);
@@ -85,6 +87,11 @@ size_t list_box::insert_item(intptr_t control, size_t index, const std::string& 
 
 size_t list_box::selected_index(intptr_t control) {
   if (control == 0) return -1;
+  if (static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->HasMultipleSelection()) {
+    vector<size_t> indices = selected_indices(control);
+    if (indices.empty()) return -1;
+    return indices[0];
+  }
   return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
@@ -93,9 +100,9 @@ void list_box::selected_index(intptr_t control, size_t index) {
   return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }
 
-std::vector<size_t> list_box::selected_indices(intptr_t control) {
+vector<size_t> list_box::selected_indices(intptr_t control) {
   if (control == 0) return {};
-  std::vector<size_t> indices;
+  vector<size_t> indices;
   wxArrayInt wx_indices;
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
   for (int index : wx_indices)
