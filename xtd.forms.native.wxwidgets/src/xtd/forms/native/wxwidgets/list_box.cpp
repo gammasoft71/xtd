@@ -2,7 +2,6 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/list_box.hpp>
-#include <xtd/forms/native/window_list_box.hpp>
 #include "control_handler.hpp"
 #include <wx/listbox.h>
 
@@ -20,13 +19,9 @@ namespace {
   };
 }
 
-intptr_t list_box::create(intptr_t parent, const drawing::size& size, int32_t styles) {
+intptr_t list_box::create(intptr_t parent, const drawing::size& size, size_t styles, size_t ex_styles) {
   if (parent == 0) throw invalid_argument("parent can't be null");
-  long style = wxLB_SINGLE;
-  if ((styles & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) style |= wxLB_EXTENDED;
-  else if ((styles & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) style |= wxLB_MULTIPLE;
-  if ((styles & LBS_SORT) == LBS_SORT) style |= wxLB_SORT;
-  return (intptr_t) new wx_list_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height()), style);
+  return (intptr_t) new wx_list_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxDefaultPosition, wxSize(size.width(), size.height()), control_handler::to_wx_style(styles, ex_styles));
 }
 
 color list_box::default_back_color() {

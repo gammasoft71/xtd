@@ -7,7 +7,9 @@
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
 #include <xtd/forms/window_messages.hpp>
+#include <xtd/forms/native/window_list_box.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
+#include <xtd/forms/native/window_styles.hpp>
 #include <wx/frame.h>
 #include <wx/textctrl.h>
 
@@ -313,6 +315,25 @@ namespace xtd {
 
         intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
+        }
+        
+        static long to_wx_style(size_t styles, size_t ex_styles) {
+          long wx_style = 0;
+          
+          // listbox selection mode
+          if ((styles & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) wx_style |= wxLB_EXTENDED;
+          else if ((styles & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) wx_style |= wxLB_MULTIPLE;
+          else wx_style |= wxLB_SINGLE;
+
+          // listbox sort
+          if ((styles & LBS_SORT) == LBS_SORT) wx_style |= wxLB_SORT;
+
+          // border
+          if ((styles & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
+          else if ((ex_styles & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_SUNKEN;
+          else wx_style |= wxBORDER_NONE;
+          
+          return wx_style;
         }
         
         wxWindow* control() const {return this->control_;}
