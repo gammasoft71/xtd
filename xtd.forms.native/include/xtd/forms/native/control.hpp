@@ -19,7 +19,7 @@ namespace xtd {
         control() = delete;
         static drawing::color back_color(intptr_t control);
         static void back_color(intptr_t control, const drawing::color& color);
-         static intptr_t create(intptr_t parent, const drawing::size& size);
+         static intptr_t create(intptr_t parent, const drawing::size& size, size_t styles, size_t ex_styles);
         static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle);
         static drawing::color default_back_color();
         static drawing::color default_fore_color();

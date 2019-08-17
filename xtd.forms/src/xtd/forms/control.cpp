@@ -175,7 +175,9 @@ void control::create_control() {
 }
 
 void control::create_handle() {
-  if (this->handle_ == 0) this->handle_ = native::control::create(this->parent_->handle_, this->default_size());
+  size_t styles = 0;
+  size_t ex_style = 0;
+  if (this->handle_ == 0) this->handle_ = native::control::create(this->parent_->handle_, this->default_size(), styles, ex_style);
   native::control::register_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
   handles_[native::control::handle(this->handle_)] = this;
   this->set_properties();
