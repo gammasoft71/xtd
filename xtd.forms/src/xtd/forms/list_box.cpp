@@ -51,6 +51,10 @@ list_box& list_box::selected_index(size_t selected_index) {
   return *this;
 }
 
+vector<size_t> list_box::selected_indices() const {
+  return native::list_box::selected_indices(this->handle_);
+}
+
 list_box& list_box::selected_item(const string& selected_item) {
   if (this->selected_item_ != selected_item) {
     this->selected_item_ = selected_item;
@@ -62,6 +66,14 @@ list_box& list_box::selected_item(const string& selected_item) {
     this->on_selected_value_changed(event_args::empty);
   }
   return *this;
+}
+
+
+vector<string> list_box::selected_items() const {
+  vector<string> items;
+  for (size_t index : this->selected_indices())
+    items.push_back(this->items_[index]);
+  return items;
 }
 
 list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
@@ -102,14 +114,26 @@ void list_box::create_handle() {
 
 void list_box::wnd_proc(message &message) {
   switch (message.msg()) {
+    case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
+    case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
     case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
     default: this->control::wnd_proc(message);
   }
 }
 
+void list_box::wm_mouse_double_click(message &message) {
+  if (this->selection_mode() != forms::selection_mode::none)
+    this->control::wnd_proc(message);
+}
+
+void list_box::wm_mouse_down(message &message) {
+  if (this->selection_mode() != forms::selection_mode::none)
+    this->control::wnd_proc(message);
+  else
+    this->on_selected_index_changed(event_args::empty);
+}
+
 void list_box::wm_reflect_command(message &message) {
   this->def_wnd_proc(message);
-  if (this->selection_mode() == forms::selection_mode::none)
-    native::list_box::selected_index(this->handle_, -1);
   this->selected_index(native::list_box::selected_index(this->handle_));
 }
