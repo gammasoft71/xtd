@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <xtd/drawing/system_colors.hpp>
+#include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/list_box.hpp>
 #include <xtd/forms/native/window_list_box.hpp>
 #include "control_handler.hpp"

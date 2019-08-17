@@ -37,9 +37,9 @@ namespace xtd {
 
       void wnd_proc(message& message) override;
 
+      virtual void wm_reflect_command(message& message);
+
     private:
-      void wm_reflect_command(message& message);
-      
       bool auto_check_ = true;
       bool three_state_ = 0;
       bool checked_ = false;
