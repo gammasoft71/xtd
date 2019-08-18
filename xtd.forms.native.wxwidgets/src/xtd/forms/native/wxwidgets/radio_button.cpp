@@ -11,14 +11,13 @@ namespace {
   public:
     wx_radio_button(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style, bool push_like) {
       if (!push_like)
-#if defined(__WXGTK__)
-        this->control_handler::create<wxRadioButton>(parent, id, title, pos, size, style);
-#else
-      this->control_handler::create<wxRadioButton>(parent, id, title, pos, size, style | wxRB_GROUP | wxRB_SINGLE);
-#endif
-       else
+        this->control_handler::create<wxRadioButton>(parent, id, title, pos, size, style | wxRB_GROUP);
+      else
         this->control_handler::create<wxToggleButton>(parent, id, title, pos, size, 0);
+      this->hiden_radio_button = new wxRadioButton(parent, id, title, pos, size, 0);
+      this->hiden_radio_button->Show(false);
     }
+    wxRadioButton* hiden_radio_button = nullptr;
   };
 }
 
@@ -35,8 +34,12 @@ bool radio_button::checked(intptr_t control) {
 
 void radio_button::checked(intptr_t control, bool checked) {
   if (control == 0) return;
-  if (dynamic_cast<wxRadioButton*>(reinterpret_cast<control_handler*>(control)->control()) != nullptr)
+  if (dynamic_cast<wxRadioButton*>(reinterpret_cast<control_handler*>(control)->control()) != nullptr) {
+    reinterpret_cast<wx_radio_button*>(control)->hiden_radio_button->SetValue(!checked);
     static_cast<wxRadioButton*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(checked);
-  else
+  }
+  else {
+    reinterpret_cast<wx_radio_button*>(control)->hiden_radio_button->SetValue(checked);
     static_cast<wxToggleButton*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(checked);
+  }
 }
