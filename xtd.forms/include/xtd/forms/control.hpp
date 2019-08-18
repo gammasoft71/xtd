@@ -304,7 +304,22 @@ namespace xtd {
       virtual void set_properties() const;
 
       void recreate_handle();
-      
+
+      virtual void wm_command(message& message);
+      virtual void wm_key_char(message& message);
+      virtual void wm_kill_focus(message& message);
+      virtual void wm_mouse_down(message& message);
+      virtual void wm_mouse_double_click(message& message);
+      virtual void wm_mouse_enter(message& message);
+      virtual void wm_mouse_leave(message& message);
+      virtual void wm_mouse_up(message& message);
+      virtual void wm_mouse_move(message& message);
+      virtual void wm_move(message& message);
+      virtual void wm_set_focus(message& message);
+      virtual void wm_mouse_wheel(message& message);
+      virtual void wm_set_text(message& message);
+      virtual void wm_size(message& message);
+
       std::optional<drawing::color> back_color_;
       drawing::size client_size_ {-1, -1};
       control_collection controls_;
@@ -327,20 +342,6 @@ namespace xtd {
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
-      void wm_command(message& message);
-      void wm_key_char(message& message);
-      void wm_kill_focus(message& message);
-      void wm_mouse_down(message& message);
-      void wm_mouse_double_click(message& message);
-      void wm_mouse_enter(message& message);
-      void wm_mouse_leave(message& message);
-      void wm_mouse_up(message& message);
-      void wm_mouse_move(message& message);
-      void wm_move(message& message);
-      void wm_set_focus(message& message);
-      void wm_mouse_wheel(message& message);
-      void wm_set_text(message& message);
-      void wm_size(message& message);
     };
     
     using ref_control = std::reference_wrapper<control>;

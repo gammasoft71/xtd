@@ -31,9 +31,7 @@ namespace xtd {
       
       void wnd_proc(message& message) override;
       
-    private:
-      void wm_close(message& message);
-      void wm_command(message& message);
+      virtual void wm_close(message& message);
     };
   }
 }
