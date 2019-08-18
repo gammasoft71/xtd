@@ -12,6 +12,7 @@
 #include <xtd/drawing/size.hpp>
 
 #include "layout/arranged_element_collection.hpp"
+#include "create_params.hpp"
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
 #include "mouse_event_handler.hpp"
@@ -56,9 +57,7 @@ namespace xtd {
       virtual control_collection& controls() {return this->controls_;}
       
       virtual const control_collection& controls() const {return this->controls_;}
-      
-      //virtual control_collection controls() const;
-      
+
       virtual drawing::color default_back_color() const;
 
       virtual drawing::color default_fore_color() const;
@@ -296,7 +295,10 @@ namespace xtd {
       event<control, event_handler<control>> visible_changed;
 
       intptr_t __get_handle__() const {return this->handle_;}
-      
+
+    //protected:
+      virtual const forms::create_params& create_params() const {return this->create_params_;}
+
     protected:
       virtual void def_wnd_proc(message& message);
       
@@ -308,6 +310,7 @@ namespace xtd {
       std::optional<drawing::color> back_color_;
       drawing::size client_size_ {-1, -1};
       control_collection controls_;
+      forms::create_params create_params_;
       bool enabled_ = true;
       std::optional<drawing::color> fore_color_;
       intptr_t handle_ = 0;
