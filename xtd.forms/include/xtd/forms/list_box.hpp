@@ -67,10 +67,11 @@ namespace xtd {
       
       virtual void wm_reflect_command(message& message);
       
-    private:
-      void wm_mouse_double_click(message& message);
-      void wm_mouse_down(message& message);
+      void wm_mouse_double_click(message& message) override;
 
+      void wm_mouse_down(message& message) override;
+      
+    private:
       forms::border_style border_style_ = forms::border_style::fixed_3d;
       string_collection items_;
       size_t selected_index_ = -1;
