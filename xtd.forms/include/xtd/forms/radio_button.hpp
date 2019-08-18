@@ -35,6 +35,7 @@ namespace xtd {
       void wnd_proc(message& message) override;
 
     private:
+      void wm_mouse_double_click(message& message);
       void wm_mouse_up(message& message);
 
       forms::appearance appearance_ = forms::appearance::normal;
