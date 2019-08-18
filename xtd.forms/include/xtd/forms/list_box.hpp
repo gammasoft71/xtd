@@ -67,9 +67,9 @@ namespace xtd {
       
       virtual void wm_reflect_command(message& message);
       
-      void wm_mouse_double_click(message& message) override;
+      void wm_mouse_double_click(message& message);
 
-      void wm_mouse_down(message& message) override;
+      void wm_mouse_down(message& message);
       
     private:
       forms::border_style border_style_ = forms::border_style::fixed_3d;

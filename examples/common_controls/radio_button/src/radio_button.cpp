@@ -13,8 +13,9 @@ namespace examples {
       this->radio_button1.text("Radio 1");
       this->radio_button1.click += [&](const control& sender, const event_args& e) {
         // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
-        // this->radio_button1.checked(!this->radio_button1.checked());
+        this->radio_button1.checked(!this->radio_button1.checked());
       };
+    
       
       this->radio_button2.checked(true);
       this->radio_button2.location({30, 60});

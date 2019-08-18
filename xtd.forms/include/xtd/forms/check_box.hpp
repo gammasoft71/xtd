@@ -45,9 +45,9 @@ namespace xtd {
 
       void wnd_proc(message& message) override;
 
-      void wm_mouse_double_click(message& message) override;
+      void wm_mouse_double_click(message& message);
 
-      void wm_mouse_down(message& message) override;
+      void wm_mouse_down(message& message);
 
       virtual void wm_reflect_command(message& message);
 
