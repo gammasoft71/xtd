@@ -29,7 +29,7 @@ namespace {
 
 intptr_t form::create(const size& size, size_t styles, size_t ex_styles) {
   application::initialize_application(); // Must be first
-  return (intptr_t) new wx_form(wxTheApp->GetTopWindow(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, wxDEFAULT_FRAME_STYLE | control_handler::to_wx_style(styles, ex_styles));
+  return (intptr_t) new wx_form(wxTheApp->GetTopWindow(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, (control_handler::to_wx_style(styles, ex_styles) | wxDEFAULT_FRAME_STYLE) & ~wxBORDER_NONE);
 }
 
 void form::close(intptr_t form) {

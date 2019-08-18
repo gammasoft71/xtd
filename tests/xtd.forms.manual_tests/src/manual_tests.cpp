@@ -18,26 +18,26 @@ int main() {
   list_box1.parent(form);
   list_box1.location({10, 10});
   list_box1.height(200);
-  
+
   list_box1.items().push_back_range({"Undo", "Redo", "Cut", "Copy", "Paste", "Delete", "Select All"});
   //list_box1.selected_index(3);
   list_box1.selected_item("Paste");
-  
+
   list_box list_box2;
   list_box2.parent(form);
   list_box2.location({150, 10});
   list_box2.height(200);
   list_box2.border_style(forms::border_style::none);
-  
+
   list_box1.selected_index_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("list_box1.selected_index_changed = [{} : {}]", (int)list_box1.selected_index(), list_box1.selected_item()) << endl;
     cdebug << format("list_box1.selected_items = {{{}}}", strings::join(", ", list_box1.selected_items())) << endl;
   };
-  
+
   list_box1.text_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("list_box1.text_changed = {}", list_box1.text()) << endl;
   };
-  
+
   list_box1.double_click += [&](const control& sender, const event_args& e) {
     size_t index = list_box1.selected_index();
     if (index != -1) {
