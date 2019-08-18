@@ -53,13 +53,14 @@ void radio_button::create_handle() {
 
 void radio_button::wnd_proc(message &message) {
   switch (message.msg()) {
-  case WM_LBUTTONDOWN: break;
-  case WM_LBUTTONUP: this->wm_mouse_up(message); break;
-  default: this->control::wnd_proc(message);
+    case WM_LBUTTONDOWN: break;
+    case WM_LBUTTONUP: this->wm_mouse_up(message); break;
+    default: this->control::wnd_proc(message);
   }
 }
 
 void radio_button::wm_mouse_up(message &message) {
-  this->checked(true);
+  if (this->auto_check_) this->checked(true);
   this->on_click(event_args::empty);
 }
+
