@@ -439,7 +439,7 @@ void control::get_properties() {
 
 void control::set_properties() const {
   if (this->client_size_ != drawing::size(-1, -1) && this->size_ == drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
-  if (this->back_color_.has_value() || this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
+  if (this->back_color_.has_value() || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->handle_, this->back_color());
   if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
   if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location());
   if (this->size_ != drawing::size(-1, -1)) native::control::size(this->handle_, this->size());
