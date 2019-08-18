@@ -11,8 +11,12 @@ namespace {
   public:
     wx_radio_button(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style, bool push_like) {
       if (!push_like)
+#if defined(__WXGTK__)
         this->control_handler::create<wxRadioButton>(parent, id, title, pos, size, style);
-      else
+#else
+      this->control_handler::create<wxRadioButton>(parent, id, title, pos, size, style | wxRB_GROUP | wxRB_SINGLE);
+#endif
+       else
         this->control_handler::create<wxToggleButton>(parent, id, title, pos, size, 0);
     }
   };

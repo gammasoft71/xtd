@@ -60,6 +60,6 @@ void radio_button::wnd_proc(message &message) {
 }
 
 void radio_button::wm_mouse_up(message &message) {
-  if (this->auto_check_) this->checked(true);
+  this->checked(true);
   this->on_click(event_args::empty);
 }
