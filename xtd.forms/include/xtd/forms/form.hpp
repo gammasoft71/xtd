@@ -20,6 +20,9 @@ namespace xtd {
       using control::parent;
       control& parent(const control& parent) override;
 
+      using control::visible;
+      control& visible(bool visible) override;
+
       void create_handle() override;
 
       void close();

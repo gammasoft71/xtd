@@ -17,6 +17,7 @@
 #include "xtd/forms/check_state.hpp"
 #include "xtd/forms/close_reason.hpp"
 #include "xtd/forms/control.hpp"
+#include "xtd/forms/create_params.hpp"
 #include "xtd/forms/dialog_result.hpp"
 #include "xtd/forms/form.hpp"
 #include "xtd/forms/form_closed_event_args.hpp"
