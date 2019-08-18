@@ -42,6 +42,8 @@ radio_button& radio_button::checked(bool checked) {
 void radio_button::create_handle() {
   size_t styles = 0;
   size_t ex_styles = 0;
+  if (this->auto_check_) styles |= BS_AUTORADIOBUTTON;
+  else styles |= BS_RADIOBUTTON;
   if (this->appearance_ == forms::appearance::button) styles |= BS_PUSHLIKE;
   this->handle_ = native::radio_button::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
   this->control::create_handle();
