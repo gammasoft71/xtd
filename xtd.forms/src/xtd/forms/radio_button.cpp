@@ -1,4 +1,5 @@
 #include <xtd/environment.hpp>
+#include <xtd/diagnostics/cdebug.hpp>
 #include <xtd/forms/native/radio_button.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/window_button.hpp>
@@ -26,8 +27,7 @@ radio_button& radio_button::auto_check(bool auto_check) {
 radio_button& radio_button::checked(bool checked) {
   if (this->checked_ != checked) {
     this->checked_ = checked;
-    if (this->auto_check_ == false) this->recreate_handle();
-    else native::radio_button::checked(this->handle_, this->checked_);
+    native::radio_button::checked(this->handle_, this->checked_);
     this->on_checked_changed(event_args::empty);
     if (this->checked_ == true && this->auto_check_ == true && &this->parent() != &control::null) {
       for (auto control : this->parent().controls()) {
@@ -51,16 +51,15 @@ void radio_button::create_handle() {
 
 void radio_button::wnd_proc(message &message) {
   switch (message.msg()) {
-    case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
+    case WM_LBUTTONDOWN: break;
+    case WM_LBUTTONUP: this->wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
     case WM_REFLECT + WM_COMMAND: break;
     default: this->control::wnd_proc(message);
   }
-  if (this->auto_check_ == false)
-    native::radio_button::checked(this->handle_, this->checked_);
 }
 
-void radio_button::wm_mouse_down(message &message) {
+void radio_button::wm_mouse_up(message &message) {
   if (this->auto_check_) this->checked(true);
   this->on_click(event_args::empty);
 }

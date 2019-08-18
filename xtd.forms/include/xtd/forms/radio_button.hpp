@@ -36,7 +36,7 @@ namespace xtd {
 
     private:
       void wm_mouse_double_click(message& message);
-      void wm_mouse_down(message& message);
+      void wm_mouse_up(message& message);
 
       forms::appearance appearance_ = forms::appearance::normal;
       bool auto_check_ = true;
