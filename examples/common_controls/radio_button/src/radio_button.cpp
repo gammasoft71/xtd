@@ -16,7 +16,6 @@ namespace examples {
         this->radio_button1.checked(!this->radio_button1.checked());
       };
     
-      
       this->radio_button2.checked(true);
       this->radio_button2.location({30, 60});
       this->radio_button2.text("Radio 2");
