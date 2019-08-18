@@ -32,7 +32,8 @@ namespace examples {
       
       this->label1.auto_size(true);
       this->label1.location({30, 180});
-      
+      this->label1.text(strings::format("Radio 3 checked = {}", this->radio_button3.checked()));
+
       this->controls().push_back_range({this->radio_button1, this->radio_button2, this->radio_button3, this->radio_button4, this->label1});
       this->text("Radio button example");
     }
