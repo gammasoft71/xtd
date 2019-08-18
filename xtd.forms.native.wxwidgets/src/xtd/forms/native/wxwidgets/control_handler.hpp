@@ -15,6 +15,7 @@
 #include <wx/checkbox.h>
 #include <wx/stattext.h>
 #include <wx/frame.h>
+#include <wx/radiobut.h>
 #include <wx/textctrl.h>
 #include <wx/tglbtn.h>
 
@@ -316,7 +317,10 @@ namespace xtd {
           // check box 3state
           if ((styles & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
           else if ((styles & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
-
+          
+          // check box auto check
+          if ((styles & BS_AUTORADIOBUTTON) == BS_AUTORADIOBUTTON) wx_style |= wxRB_GROUP | wxRB_SINGLE;
+          
           // label auto size
           if ((styles & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
 
