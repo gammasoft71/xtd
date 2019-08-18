@@ -342,7 +342,7 @@ namespace xtd {
 
           // border
           if ((styles & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
-          else if ((ex_styles & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
+          else if ((ex_styles & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_SUNKEN;
           else wx_style |= wxBORDER_NONE;
           
           return wx_style;
