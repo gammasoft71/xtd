@@ -72,7 +72,7 @@ void check_box::on_handle_created(const event_args &e) {
 
 void check_box::wnd_proc(message &message) {
   switch (message.msg()) {
-    case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
+    case WM_LBUTTONDOWN: break;
     case WM_LBUTTONUP: this->wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
     default: this->control::wnd_proc(message);
@@ -80,19 +80,16 @@ void check_box::wnd_proc(message &message) {
 }
 
 void check_box::wm_mouse_double_click(message &message) {
-  if (this->auto_check_)
-    this->control::wnd_proc(message);
-  else
-    this->on_double_click(event_args::empty);
-}
-
-void check_box::wm_mouse_down(message &message) {
-  if (this->auto_check_) {
-    this->control::wnd_proc(message);
-  } else
-    this->on_click(event_args::empty);
+  this->on_double_click(event_args::empty);
 }
 
 void check_box::wm_mouse_up(message &message) {
-  this->check_state(static_cast<forms::check_state>(native::check_box::check_state(this->handle_)));
+  if (this->auto_check_)
+    switch (this->check_state()) {
+      case forms::check_state::unchecked: this->check_state(forms::check_state::checked); break;
+      case forms::check_state::checked: this->check_state(this->three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;
+      case forms::check_state::indeterminate: this->check_state(forms::check_state::unchecked); break;
+    }
+  this->on_click(event_args::empty);
+
 }
