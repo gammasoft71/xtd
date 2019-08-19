@@ -2,6 +2,7 @@
 #include "control_handler.hpp"
 #include <wx/button.h>
 
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 

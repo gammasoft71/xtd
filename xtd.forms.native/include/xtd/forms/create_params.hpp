@@ -44,9 +44,9 @@ namespace xtd {
         return *this;
       }
 
-      size_t height() const {return this->size_.height();}
+      int32_t height() const {return this->size_.height();}
       
-      create_params& height(size_t height) {
+      create_params& height(int32_t height) {
         this->size_.height(height);
         return *this;
       }
@@ -86,23 +86,23 @@ namespace xtd {
         return *this;
       }
 
-      size_t width() const {return this->size_.width();}
+      int32_t width() const {return this->size_.width();}
       
-      create_params& width(size_t width) {
+      create_params& width(int32_t width) {
         this->size_.width(width);
         return *this;
       }
 
-      size_t x() const {return this->location_.x();}
+      int32_t x() const {return this->location_.x();}
       
-      create_params& x(size_t x) {
+      create_params& x(int32_t x) {
         this->location_.x(x);
         return *this;
       }
       
-      size_t y() const {return this->location_.y();}
+      int32_t y() const {return this->location_.y();}
       
-      create_params& y(size_t y) {
+      create_params& y(int32_t y) {
         this->location_.y(y);
         return *this;
       }
