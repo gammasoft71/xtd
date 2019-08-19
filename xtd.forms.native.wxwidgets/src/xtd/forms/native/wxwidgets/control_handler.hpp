@@ -311,32 +311,91 @@ namespace xtd {
           return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
         
-        static long to_wx_style(size_t styles, size_t ex_styles) {
+        static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
-
-          // check box 3state
-          if ((styles & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
-          else if ((styles & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
-                    
-          // label auto size
-          if ((styles & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
-
-          // listbox selection mode
-          if ((styles & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) wx_style |= wxLB_EXTENDED;
-          else if ((styles & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) wx_style |= wxLB_MULTIPLE;
-          else if ((styles & LBS_HASSTRINGS) == LBS_HASSTRINGS) wx_style |= wxLB_SINGLE;
-
-          // listbox sort
-          if ((styles & LBS_SORT) == LBS_SORT) wx_style |= wxLB_SORT;
-
-          // border
-          if ((styles & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
-          else if ((ex_styles & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_SUNKEN;
+          
+          if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
+          else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_SUNKEN;
           else wx_style |= wxBORDER_NONE;
           
           return wx_style;
         }
+
+        static long button_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long check_box_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = wxCHK_3STATE;
+          
+          if ((style & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
+          else if ((style & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long control_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long form_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = wxDEFAULT_FRAME_STYLE;
+          
+          return wx_style; // | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long group_box_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long label_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          if ((style & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
         
+        static long list_box_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+
+          if ((style & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) wx_style |= wxLB_EXTENDED;
+          else if ((style & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) wx_style |= wxLB_MULTIPLE;
+          else if ((style & LBS_HASSTRINGS) == LBS_HASSTRINGS) wx_style |= wxLB_SINGLE;
+          
+           if ((style & LBS_SORT) == LBS_SORT) wx_style |= wxLB_SORT;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long panel_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          if ((style & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long radio_button_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = wxRB_GROUP;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long text_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          if ((style & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
         wxWindow* control() const {return this->control_;}
         void clear_control() {this->control_ = nullptr;}
         

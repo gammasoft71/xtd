@@ -12,7 +12,7 @@ namespace {
   public:
     wx_radio_button(wxWindow *parent, const wxString& title, const wxPoint& pos, const wxSize& size, long style, bool push_like) {
       if (!push_like)
-        this->control_handler::create<wxRadioButton>(parent, wxID_ANY, title, pos, size, style | wxRB_GROUP);
+        this->control_handler::create<wxRadioButton>(parent, wxID_ANY, title, pos, size, style);
       else
         this->control_handler::create<wxToggleButton>(parent, wxID_ANY, title, pos, size, 0);
       this->hiden_radio_button = new wxRadioButton(parent, wxID_ANY, title, pos, size, 0);
@@ -23,7 +23,7 @@ namespace {
 }
 
 intptr_t radio_button::create(const forms::create_params& create_params) {
-  return (intptr_t) new wx_radio_button(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::to_wx_style(create_params.style(), create_params.ex_style()), (create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE);
+  return (intptr_t) new wx_radio_button(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::radio_button_to_wx_style(create_params.style(), create_params.ex_style()), (create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE);
 }
 
 bool radio_button::checked(intptr_t control) {
