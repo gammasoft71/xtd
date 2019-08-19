@@ -8,7 +8,7 @@ namespace xtd {
   namespace forms {
     class radio_button : public control {
     public:
-      radio_button() = default;
+      radio_button();
 
       virtual forms::appearance appearance() const {return this->appearance_;}
       virtual radio_button& appearance(forms::appearance appearance);
@@ -33,6 +33,8 @@ namespace xtd {
       virtual void on_appearance_changed(const event_args& e) {this->appearance_changed(*this, e);}
       
       virtual void on_checked_changed(const event_args& e) {this->checked_changed(*this, e);}
+      
+      void on_handle_created(const event_args& e) override;
       
       void wnd_proc(message& message) override;
 

@@ -19,12 +19,8 @@ form::form() {
 }
 
 void form::create_handle() {
-  size_t styles = 0;
-  size_t ex_styles = 0;
-  this->handle_ = native::form::create(this->size_, styles, ex_styles);
-  this->location_ = native::control::location(this->handle_);
+  this->handle_ = native::form::create(this->create_params());
   this->control::create_handle();
-  native::control::back_color(this->handle_, this->back_color());
 }
 
 void form::close() {

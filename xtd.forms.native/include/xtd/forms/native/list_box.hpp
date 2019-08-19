@@ -1,7 +1,5 @@
 #pragma once
-#include <xtd/drawing/size.hpp>
-#include <cstdint>
-#include <string>
+#include "../create_params.hpp"
 #include <vector>
 
 namespace xtd {
@@ -10,7 +8,7 @@ namespace xtd {
       class list_box {
       public:
         list_box() = delete;
-        static intptr_t create(intptr_t parent, const drawing::size& size, size_t styles, size_t ex_styles);
+        static intptr_t create(const create_params& create_params);
         static drawing::color default_back_color();
         static drawing::color default_fore_color();
         static void delete_item(intptr_t control, size_t index);

@@ -15,8 +15,8 @@ using namespace xtd::forms::native;
 namespace {
   class wx_control : public control_handler {
   public:
-    wx_control(wxWindow *parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style) {
-      this->create<wxControl>(parent, id, pos, size, style);
+    wx_control(wxWindow *parent, const wxPoint& pos, const wxSize& size, long style) {
+      this->create<wxControl>(parent, wxID_ANY, pos, size, style);
     }
   };
 }
@@ -42,9 +42,8 @@ void control::back_color(intptr_t control, const color& color) {
 #endif
 }
 
-intptr_t control::create(intptr_t parent, const drawing::size& size, size_t styles, size_t ex_styles) {
-  if (parent == 0) throw invalid_argument("parent can't be null");
-  return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)parent)->control(), wxID_ANY, wxDefaultPosition, {size.width(), size.height()}, control_handler::to_wx_style(styles, ex_styles)));
+intptr_t control::create(const create_params& create_params) {
+  return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)create_params.parent())->control(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::to_wx_style(create_params.style(), create_params.ex_style())));
 }
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {

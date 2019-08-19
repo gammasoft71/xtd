@@ -170,19 +170,13 @@ control& control::visible(bool visible) {
 void control::create_control() {
   if (!this->handle_) {
     this->create_handle();
+    this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
     this->on_create_control();
   }
 }
 
 void control::create_handle() {
-  size_t styles = 0;
-  size_t ex_style = 0;
-  if (this->handle_ == 0) this->handle_ = native::control::create(this->parent_->handle_, this->default_size(), styles, ex_style);
-  native::control::register_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
-  handles_[native::control::handle(this->handle_)] = this;
-  this->set_properties();
-  this->get_properties();
-  this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
+  if (this->handle_ == 0) this->handle_ = native::control::create(this->create_params());
   this->on_handle_created(event_args::empty);
 }
 
@@ -266,6 +260,17 @@ void control::on_got_focus(const event_args &e) {
 }
 
 void control::on_handle_created(const event_args &e) {
+  native::control::register_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
+  handles_[native::control::handle(this->handle_)] = this;
+  if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
+  if ((this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->handle_, this->back_color());
+  if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
+  //native::control::visible(this->handle_, this->visible());
+
+  this->client_size_ = native::control::client_size(this->handle_);
+  this->location_ = native::control::location(this->handle_);
+  this->size_ = native::control::size(this->handle_);
+
   this->handle_created(*this, e);
 }
 
@@ -441,24 +446,6 @@ void control::internal_destroy_handle(intptr_t handle) {
   handles_.erase(handle);
   native::control::destroy(handle);
   this->on_handle_destroyed(event_args::empty);
-}
-
-void control::get_properties() {
-  this->client_size_ = native::control::client_size(this->handle_);
-  this->location_ = native::control::location(this->handle_);
-  this->size_ = native::control::size(this->handle_);
-  this->text_ = native::control::text(this->handle_);
-  this->visible_ = native::control::visible(this->handle_);
-}
-
-void control::set_properties() const {
-  if (this->client_size_ != drawing::size(-1, -1) && this->size_ == drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
-  if (this->back_color_.has_value() || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->handle_, this->back_color());
-  if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
-  if (this->location_ != point(-1, -1)) native::control::location(this->handle_, this->location());
-  if (this->size_ != drawing::size(-1, -1)) native::control::size(this->handle_, this->size());
-  native::control::text(this->handle_, this->text());
-  native::control::visible(this->handle_, this->visible());
 }
 
 void control::wm_child_activate(message& message) {

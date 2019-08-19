@@ -45,6 +45,8 @@ namespace xtd {
       
       virtual void on_check_state_changed(const event_args& e) {this->check_state_changed(*this, e);}
 
+      void on_handle_created(const event_args& e) override;
+      
       void wnd_proc(message& message) override;
 
       void wm_mouse_double_click(message& message);

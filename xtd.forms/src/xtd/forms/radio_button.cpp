@@ -8,6 +8,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+radio_button::radio_button() {
+  this->size_ = this->default_size();
+}
+
 radio_button& radio_button::appearance(forms::appearance appearance) {
   if (this->appearance_ != appearance) {
     this->appearance_ = appearance;
@@ -40,15 +44,8 @@ radio_button& radio_button::checked(bool checked) {
 }
 
 void radio_button::create_handle() {
-  size_t styles = 0;
-  size_t ex_styles = 0;
-  if (this->auto_check_) styles |= BS_AUTORADIOBUTTON;
-  else styles |= BS_RADIOBUTTON;
-  if (this->appearance_ == forms::appearance::button) styles |= BS_PUSHLIKE;
-  this->handle_ = native::radio_button::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
+  this->handle_ = native::radio_button::create(this->create_params());
   this->control::create_handle();
-  native::radio_button::checked(this->handle_, this->checked_);
-  if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
 }
 
 forms::create_params radio_button::create_params() const {
@@ -60,6 +57,11 @@ forms::create_params radio_button::create_params() const {
   if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
 
   return create_params;
+}
+
+void radio_button::on_handle_created(const event_args &e) {
+  this->control::on_handle_created(e);
+  native::radio_button::checked(this->handle_, this->checked_);
 }
 
 void radio_button::wnd_proc(message &message) {

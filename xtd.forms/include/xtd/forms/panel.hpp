@@ -8,7 +8,7 @@ namespace xtd {
   namespace forms {
     class panel : public control {
     public:
-      panel() = default;
+      panel();
 
       forms::border_style border_style() const {return this->border_style_;}
       panel& border_style(forms::border_style border_style);
