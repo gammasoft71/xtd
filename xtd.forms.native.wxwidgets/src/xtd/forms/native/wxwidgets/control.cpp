@@ -43,7 +43,7 @@ void control::back_color(intptr_t control, const color& color) {
 }
 
 intptr_t control::create(const forms::create_params& create_params) {
-  return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)create_params.parent())->control(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::to_wx_style(create_params.style(), create_params.ex_style())));
+  return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)create_params.parent())->control(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::control_to_wx_style(create_params.style(), create_params.ex_style())));
 }
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {

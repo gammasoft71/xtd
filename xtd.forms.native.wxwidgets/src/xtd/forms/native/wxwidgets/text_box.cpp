@@ -21,7 +21,7 @@ namespace {
 }
 
 intptr_t text_box::create(const forms::create_params& create_params) {
-  return (intptr_t) new wx_text_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::to_wx_style(create_params.style(), create_params.ex_style()));
+  return (intptr_t) new wx_text_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::text_to_wx_style(create_params.style(), create_params.ex_style()));
 }
 
 color text_box::default_back_color() {

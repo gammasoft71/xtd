@@ -38,7 +38,7 @@ namespace {
 }
 
 intptr_t check_box::create(const forms::create_params& create_params) {
-  return (intptr_t) new wx_check_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), wxCHK_3STATE | control_handler::to_wx_style(create_params.style(), create_params.ex_style()), (create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE);
+  return (intptr_t) new wx_check_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::check_box_to_wx_style(create_params.style(), create_params.ex_style()), (create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE);
 }
 
 int check_box::check_state(intptr_t control) {
