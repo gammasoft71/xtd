@@ -24,6 +24,7 @@ namespace examples {
 
       this->list_box_right.parent(*this);
       this->list_box_right.location({190, 20});
+      this->list_box_right.sorted(true);
       this->list_box_right.size({150, 200});
       this->list_box_right.double_click += [&](const control& sender, const event_args& e) {
         if (this->list_box_right.selected_index() != -1) {
