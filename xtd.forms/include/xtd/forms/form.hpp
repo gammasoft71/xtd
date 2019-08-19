@@ -23,8 +23,6 @@ namespace xtd {
       using control::visible;
       control& visible(bool visible) override;
 
-      void create_handle() override;
-
       void close();
 
     protected:

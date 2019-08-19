@@ -54,8 +54,6 @@ namespace xtd {
       using control::text;
       control& text(const std::string& text) override {return this->selected_item(text);}
 
-      void create_handle() override;
-      
       event<list_box, event_handler<control>> selected_index_changed;
       
     protected:

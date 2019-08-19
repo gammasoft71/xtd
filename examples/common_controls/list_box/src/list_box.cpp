@@ -17,7 +17,7 @@ namespace examples {
       this->list_box_left.double_click += [&](const control& sender, const event_args& e) {
         if (this->list_box_left.selected_index() != -1) {
           this->list_box_right.items().push_back(this->list_box_left.selected_item());
-          this->list_box_right.selected_index(this->list_box_right.items().size() - 1);
+          this->list_box_right.selected_index(0);
           this->list_box_left.items().erase_at(this->list_box_left.selected_index());
         }
       };
@@ -29,7 +29,7 @@ namespace examples {
       this->list_box_right.double_click += [&](const control& sender, const event_args& e) {
         if (this->list_box_right.selected_index() != -1) {
           this->list_box_left.items().push_back(this->list_box_right.selected_item());
-          this->list_box_left.selected_index(this->list_box_left.items().size() - 1);
+          this->list_box_left.selected_index(0);
           this->list_box_right.items().erase_at(this->list_box_right.selected_index());
         }
       };

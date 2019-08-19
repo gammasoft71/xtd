@@ -18,11 +18,6 @@ form::form() {
   this->size_ = this->default_size();
 }
 
-void form::create_handle() {
-  this->handle_ = native::form::create(this->create_params());
-  this->control::create_handle();
-}
-
 void form::close() {
   native::form::close(this->handle_);
 }
@@ -41,6 +36,7 @@ control& form::visible(bool visible) {
 forms::create_params form::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
+  create_params.class_name("FORM"); // "" for win32
   create_params.style(WS_OVERLAPPEDWINDOW);
   
   return create_params;

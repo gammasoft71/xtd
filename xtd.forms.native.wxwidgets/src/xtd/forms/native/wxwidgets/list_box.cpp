@@ -2,26 +2,12 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/list_box.hpp>
-#include "control_handler.hpp"
-#include <wx/listbox.h>
+#include "wx_list_box.hpp"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
-
-namespace {
-  class wx_list_box : public control_handler {
-  public:
-    wx_list_box(wxWindow *parent, const wxPoint& pos, const wxSize& size, long style) {
-      this->control_handler::create<wxListBox>(parent, wxID_ANY, pos, size, 0, nullptr, style);
-    }
-  };
-}
-
-intptr_t list_box::create(const forms::create_params& create_params) {
-  return (intptr_t) new wx_list_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::list_box_to_wx_style(create_params.style(), create_params.ex_style()));
-}
 
 color list_box::default_back_color() {
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1

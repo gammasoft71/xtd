@@ -7,7 +7,6 @@ namespace xtd {
       class button {
       public:
         button() = delete;
-        static intptr_t create(const create_params& create_params);
       };
     }
   }

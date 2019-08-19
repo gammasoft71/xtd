@@ -21,8 +21,6 @@ namespace xtd {
 
       using control::text;
       control& text(const std::string& text) override;
-
-      void create_handle() override;
       
     protected:
       forms::create_params create_params() const override;

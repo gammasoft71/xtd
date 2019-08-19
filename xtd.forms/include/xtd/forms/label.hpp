@@ -26,8 +26,6 @@ namespace xtd {
 
       event<label, event_handler<control>> auto_size_changed;
       
-      void create_handle() override;
-      
     protected:
       forms::create_params create_params() const override;
 

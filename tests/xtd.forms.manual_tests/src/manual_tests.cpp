@@ -62,7 +62,7 @@ int main() {
   button button_mode;
   button_mode.parent(form);
   button_mode.text("Mode...");
-  button_mode.location({10, 230});
+  button_mode.location({30, 230});
   button_mode.click += [&](const control& sender, const event_args& e) {
     switch (list_box1.selection_mode()) {
       case selection_mode::none: list_box1.selection_mode(selection_mode::one); break;
@@ -77,10 +77,10 @@ int main() {
   button button_sorted;
   button_sorted.parent(form);
   button_sorted.text("Sorted...");
-  button_sorted.location({100, 230});
+  button_sorted.location({170, 230});
   button_sorted.click += [&](const control& sender, const event_args& e) {
-    list_box1.sorted(!list_box1.sorted());
-    button_sorted.text(list_box1.sorted() ? "Unsorted" : "Sorted");
+    list_box2.sorted(!list_box2.sorted());
+    button_sorted.text(list_box2.sorted() ? "Unsorted" : "Sorted");
   };
   
   cdebug << format("list_box1.back_color = {}", list_box1.back_color()) << endl;

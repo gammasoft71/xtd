@@ -11,15 +11,10 @@ group_box::group_box() {
   this->size_ = this->default_size();
 }
 
-void group_box::create_handle() {
-  this->handle_ = native::group_box::create(this->create_params());
-  this->control::create_handle();
-}
-
 forms::create_params group_box::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("BUTTON");
+  create_params.class_name("GROUPBOX"); // "BUTTON" for win32
   create_params.style(create_params.style() | BS_GROUPBOX);
   
   return create_params;

@@ -21,8 +21,6 @@ namespace xtd {
       virtual bool checked() const {return this->checked_;}
       virtual radio_button& checked(bool checked);
       
-      void create_handle() override;
-      
       event<radio_button, event_handler<control>> appearance_changed;
 
       event<radio_button, event_handler<control>> checked_changed;

@@ -7,7 +7,6 @@ namespace xtd {
       class panel {
       public:
         panel() = delete;
-        static intptr_t create(const create_params& create_params);
       };
     }
   }

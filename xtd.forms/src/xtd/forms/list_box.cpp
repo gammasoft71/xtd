@@ -104,11 +104,6 @@ list_box& list_box::sorted(bool sorted) {
   return *this;
 }
 
-void list_box::create_handle() {
-  this->handle_ = native::list_box::create(this->create_params());
-  this->control::create_handle();
-}
-
 forms::create_params list_box::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
