@@ -4,7 +4,7 @@
 #include "control_handler.hpp"
 #include <wx/app.h>
 #include <wx/frame.h>
-#include <wx/panel.h>
+#include <wx/button.h>
 #include <wx/settings.h>
 
 using namespace xtd;
@@ -16,14 +16,15 @@ namespace {
   public:
     wx_form(wxWindow *parent, const wxString& title, const wxPoint& pos, const wxSize& size, long style) {
       this->control_handler::create<wxFrame>(parent, wxID_ANY, title, pos, size, style);
-      this->panel = new wxPanel(this->control());
-      this->control()->SetBackgroundColour(this->panel->GetBackgroundColour());
-      this->panel->Hide();
+      this->button_ = new wxButton(this->control(), wxID_ANY);
+      this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
+      this->control()->SetForegroundColour(this->button_->GetForegroundColour());
+      this->button_->Hide();
       this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {event.Veto();});
     }
     
   private:
-    wxPanel* panel;
+    wxButton* button_;
   };
 }
 
