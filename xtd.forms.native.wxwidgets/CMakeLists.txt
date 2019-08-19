@@ -24,6 +24,16 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/screen.cpp
   src/xtd/forms/native/wxwidgets/text_box.cpp
   src/xtd/forms/native/wxwidgets/timer.cpp
+  src/xtd/forms/native/wxwidgets/wx_button.hpp
+  src/xtd/forms/native/wxwidgets/wx_check_box.hpp
+  src/xtd/forms/native/wxwidgets/wx_control.hpp
+  src/xtd/forms/native/wxwidgets/wx_form.hpp
+  src/xtd/forms/native/wxwidgets/wx_group_box.hpp
+  src/xtd/forms/native/wxwidgets/wx_label.hpp
+  src/xtd/forms/native/wxwidgets/wx_list_box.hpp
+  src/xtd/forms/native/wxwidgets/wx_panel.hpp
+  src/xtd/forms/native/wxwidgets/wx_radio_button.hpp
+  src/xtd/forms/native/wxwidgets/wx_text_box.hpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

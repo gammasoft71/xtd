@@ -3,23 +3,21 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>
-#include "control_handler.hpp"
-#include <wx/button.h>
-#include <wx/control.h>
+#include "wx_button.hpp"
+#include "wx_check_box.hpp"
+#include "wx_control.hpp"
+#include "wx_form.hpp"
+#include "wx_group_box.hpp"
+#include "wx_label.hpp"
+#include "wx_list_box.hpp"
+#include "wx_panel.hpp"
+#include "wx_radio_button.hpp"
+#include "wx_text_box.hpp"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
-
-namespace {
-  class wx_control : public control_handler {
-  public:
-    wx_control(wxWindow *parent, const wxPoint& pos, const wxSize& size, long style) {
-      this->create<wxControl>(parent, wxID_ANY, pos, size, style);
-    }
-  };
-}
 
 color control::back_color(intptr_t control) {
   if (control == 0) return color::empty;
@@ -43,7 +41,17 @@ void control::back_color(intptr_t control, const color& color) {
 }
 
 intptr_t control::create(const forms::create_params& create_params) {
-  return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)create_params.parent())->control(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::control_to_wx_style(create_params.style(), create_params.ex_style())));
+  application::initialize_application(); // Must be first
+  if (create_params.class_name() == "BUTTON") return reinterpret_cast<intptr_t>(new wx_button(create_params));
+  if (create_params.class_name() == "CHECKBOX") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
+  if (create_params.class_name() == "FORM") return reinterpret_cast<intptr_t>(new wx_form(create_params));
+  if (create_params.class_name() == "GROUPBOX") return reinterpret_cast<intptr_t>(new wx_group_box(create_params));
+  if (create_params.class_name() == "STATIC") return reinterpret_cast<intptr_t>(new wx_label(create_params));
+  if (create_params.class_name() == "LISTBOX") return reinterpret_cast<intptr_t>(new wx_list_box(create_params));
+  if (create_params.class_name() == "PANEL") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
+  if (create_params.class_name() == "RADIOBUTTON") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
+  if (create_params.class_name() == "EDIT") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
+  return reinterpret_cast<intptr_t>(new wx_control(create_params));
 }
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {

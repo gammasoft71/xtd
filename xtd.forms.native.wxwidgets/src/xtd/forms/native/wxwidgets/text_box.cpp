@@ -2,27 +2,13 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/text_box.hpp>
-#include "control_handler.hpp"
+#include "wx_text_box.hpp"
 #include <wx/button.h>
-#include <wx/textctrl.h>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
-
-namespace {
-  class wx_text_box : public control_handler {
-  public:
-    wx_text_box(wxWindow *parent, const wxString& title, const wxPoint& pos, const wxSize& size, long style) {
-      this->control_handler::create<wxTextCtrl>(parent, wxID_ANY, title, pos, size, style);
-    }
-  };
-}
-
-intptr_t text_box::create(const forms::create_params& create_params) {
-  return (intptr_t) new wx_text_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::text_to_wx_style(create_params.style(), create_params.ex_style()));
-}
 
 color text_box::default_back_color() {
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1

@@ -28,8 +28,6 @@ namespace xtd {
       virtual bool three_state() const {return this->three_state_;}
       virtual check_box& three_state(bool three_state);
       
-      void create_handle() override;
-      
       event<check_box, event_handler<control>> appearance_changed;
       
       event<check_box, event_handler<control>> checked_changed;
@@ -49,9 +47,9 @@ namespace xtd {
       
       void wnd_proc(message& message) override;
 
-      void wm_mouse_double_click(message& message);
+      virtual void wm_mouse_double_click(message& message);
 
-      void wm_mouse_down(message& message);
+      virtual void wm_mouse_down(message& message);
 
       virtual void wm_reflect_command(message& message);
 

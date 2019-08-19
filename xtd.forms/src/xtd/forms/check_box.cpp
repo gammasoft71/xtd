@@ -53,15 +53,10 @@ check_box& check_box::three_state(bool three_state) {
   return *this;
 }
 
-void check_box::create_handle() {
-  this->handle_ = native::check_box::create(this->create_params());
-  this->control::create_handle();
-}
-
 forms::create_params check_box::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("BUTTON");
+  create_params.class_name("CHECKBOX"); // "BUTTON" for win32
   if (this->three_state_) create_params.style(create_params.style() | (this->auto_check_ ? BS_AUTO3STATE : BS_3STATE));
   else if (this->auto_check_) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
   else create_params.style(create_params.style() | BS_CHECKBOX);

@@ -7,7 +7,6 @@ namespace xtd {
       class label {
       public:
         label() = delete;
-        static intptr_t create(const create_params& create_params);
       };
     }
   }

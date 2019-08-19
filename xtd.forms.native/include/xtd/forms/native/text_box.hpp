@@ -8,7 +8,6 @@ namespace xtd {
       class text_box {
       public:
         text_box() = delete;
-        static intptr_t create(const create_params& create_params);
         static drawing::color default_back_color();
         static drawing::color default_fore_color();
         static std::string text(intptr_t control);

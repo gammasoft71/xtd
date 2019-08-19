@@ -43,15 +43,10 @@ radio_button& radio_button::checked(bool checked) {
   return *this;
 }
 
-void radio_button::create_handle() {
-  this->handle_ = native::radio_button::create(this->create_params());
-  this->control::create_handle();
-}
-
 forms::create_params radio_button::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("BUTTON");
+  create_params.class_name("RADIOBUTTON"); // "BUTTON" for win32
   if (this->auto_check_) create_params.style(create_params.style() | BS_AUTORADIOBUTTON);
   else create_params.style(create_params.style() | BS_RADIOBUTTON);
   if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);

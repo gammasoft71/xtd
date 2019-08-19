@@ -28,11 +28,6 @@ label& label::border_style(forms::border_style border_style) {
   return *this;
 }
 
-void label::create_handle() {
-  this->handle_ = native::label::create(this->create_params());
-  this->control::create_handle();
-}
-
 forms::create_params label::create_params() const {
   forms::create_params create_params = this->control::create_params();
   

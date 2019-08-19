@@ -1,23 +1,11 @@
 #include <xtd/forms/native/check_box.hpp>
-#include "control_handler.hpp"
-#include <wx/checkbox.h>
-#include <wx/tglbtn.h>
+#include "wx_check_box.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 namespace {
-  class wx_check_box : public control_handler {
-  public:
-    wx_check_box(wxWindow *parent, const wxString& title, const wxPoint& pos, const wxSize& size, long style, bool push_like) {
-      if (!push_like)
-        this->control_handler::create<wxCheckBox>(parent, wxID_ANY, title, pos, size, style);
-      else
-        this->control_handler::create<wxToggleButton>(parent, wxID_ANY, title, pos, size, 0);
-    }
-  };
-  
   wxCheckBoxState to_check_box_state(int value) {
     switch (value) {
       case BST_UNCHECKED: return wxCheckBoxState::wxCHK_UNCHECKED;
@@ -35,10 +23,6 @@ namespace {
       default: return BST_UNCHECKED;
     }
   }
-}
-
-intptr_t check_box::create(const forms::create_params& create_params) {
-  return (intptr_t) new wx_check_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::check_box_to_wx_style(create_params.style(), create_params.ex_style()), (create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE);
 }
 
 int check_box::check_state(intptr_t control) {
