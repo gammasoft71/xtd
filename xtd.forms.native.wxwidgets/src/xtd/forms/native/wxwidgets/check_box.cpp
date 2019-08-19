@@ -3,6 +3,7 @@
 #include <wx/checkbox.h>
 #include <wx/tglbtn.h>
 
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 

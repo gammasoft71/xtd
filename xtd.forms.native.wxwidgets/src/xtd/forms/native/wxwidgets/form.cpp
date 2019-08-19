@@ -7,6 +7,7 @@
 #include <wx/panel.h>
 #include <wx/settings.h>
 
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
@@ -16,6 +17,7 @@ namespace {
     wx_form(wxWindow *parent, const wxString& title, const wxPoint& pos, const wxSize& size, long style) {
       this->control_handler::create<wxFrame>(parent, wxID_ANY, title, pos, size, style);
       this->panel = new wxPanel(this->control());
+      this->control()->SetBackgroundColour(this->panel->GetBackgroundColour());
       this->panel->Hide();
       this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {event.Veto();});
     }
@@ -25,7 +27,7 @@ namespace {
   };
 }
 
-intptr_t form::create(const create_params& create_params) {
+intptr_t form::create(const forms::create_params& create_params) {
   application::initialize_application(); // Must be first
   return (intptr_t) new wx_form(create_params.parent() ? ((control_handler*)create_params.parent())->control() : wxTheApp->GetTopWindow(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), (control_handler::to_wx_style(create_params.style(), create_params.ex_style()) | wxDEFAULT_FRAME_STYLE) & ~wxBORDER_NONE);
 }

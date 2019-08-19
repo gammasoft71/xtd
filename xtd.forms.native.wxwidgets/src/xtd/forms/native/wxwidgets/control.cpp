@@ -42,7 +42,7 @@ void control::back_color(intptr_t control, const color& color) {
 #endif
 }
 
-intptr_t control::create(const create_params& create_params) {
+intptr_t control::create(const forms::create_params& create_params) {
   return reinterpret_cast<intptr_t>(new wx_control(((control_handler*)create_params.parent())->control(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::to_wx_style(create_params.style(), create_params.ex_style())));
 }
 
