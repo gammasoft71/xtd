@@ -50,8 +50,9 @@ namespace xtd {
       virtual void wm_mouse_double_click(message& message);
 
       virtual void wm_mouse_down(message& message);
+      
+      virtual void wm_mouse_up(message& message);
 
-      virtual void wm_reflect_command(message& message);
 
     private:
       forms::appearance appearance_ = forms::appearance::normal;

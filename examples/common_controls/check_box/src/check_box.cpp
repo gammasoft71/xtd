@@ -11,6 +11,9 @@ namespace examples {
 
       this->check_box1.parent(*this);
       this->check_box1.auto_check(false);
+      this->check_box1.click += [&](const control& sender, const event_args& e) {
+        //this->check_box1.checked(!this->check_box1.checked());
+      };
       this->check_box1.location({30, 30});
       this->check_box1.text(strings::format("{}", this->check_box1.check_state()));
 
@@ -34,6 +37,9 @@ namespace examples {
       this->check_box4.parent(*this);
       this->check_box4.appearance(forms::appearance::button);
       this->check_box4.auto_check(false);
+      this->check_box4.click += [&](const control& sender, const event_args& e) {
+        //this->check_box4.checked(!this->check_box4.checked());
+      };
       this->check_box4.location({30, 120});
       this->check_box4.text(strings::format("{}", this->check_box4.check_state()));
 
