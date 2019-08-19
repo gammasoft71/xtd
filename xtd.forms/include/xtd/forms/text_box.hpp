@@ -24,6 +24,9 @@ namespace xtd {
 
       void create_handle() override;
       
+    protected:
+      forms::create_params create_params() const override;
+
     private:
       forms::border_style border_style_ = forms::border_style::fixed_3d;
     };

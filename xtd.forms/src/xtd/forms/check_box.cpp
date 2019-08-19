@@ -2,10 +2,15 @@
 #include <xtd/forms/native/check_box.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/window_button.hpp>
+#include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/check_box.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;
+
+check_box::check_box() {
+  this->size_ = this->default_size();
+}
 
 check_box& check_box::appearance(forms::appearance appearance) {
   if (this->appearance_ != appearance) {
@@ -59,6 +64,18 @@ void check_box::create_handle() {
   this->control::create_handle();
   native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
   if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
+}
+
+forms::create_params check_box::create_params() const {
+  forms::create_params create_params = this->control::create_params();
+  
+  create_params.class_name("BUTTON");
+  if (this->three_state_) create_params.style(create_params.style() | (this->auto_check_ ? BS_AUTO3STATE : BS_3STATE));
+  else if (this->auto_check_) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
+  else create_params.style(create_params.style() | BS_CHECKBOX);
+  if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
+
+  return create_params;
 }
 
 void check_box::wnd_proc(message &message) {

@@ -3,6 +3,7 @@
 #include <xtd/xtd.strings>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
+#include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/control.hpp"
 
 using namespace std;
@@ -39,10 +40,9 @@ namespace {
 const control control::null {"null"};
 
 control::control() {
-  this->create_params_.height(this->default_size().height()).width(this->default_size().width());
+  this->size_ = this->default_size();
   this->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
     item.get().parent_ = this;
-    item.get().create_params_.parent(this->handle_);
     if (this->handle_) {
       item.get().create_control();
       if (item.get().handle_) native::control::parent(item.get().handle_, this->handle_);
@@ -122,8 +122,6 @@ intptr_t control::handle() const {
 control& control::location(const point& location) {
   if (this->location_ != location) {
     this->location_ = location;
-    this->create_params_.x(location.x());
-    this->create_params_.y(location.y());
     native::control::location(this->handle_, this->location_);
   }
   return *this;
@@ -147,8 +145,6 @@ control& control::parent(const control& parent) {
 control& control::size(const drawing::size& size) {
   if (this->size_ != size) {
     this->size_ = size;
-    this->create_params_.height(size.height());
-    this->create_params_.width(size.width());
     native::control::size(this->handle_, this->size_);
   }
   return *this;
@@ -157,7 +153,6 @@ control& control::size(const drawing::size& size) {
 control& control::text(const string& text) {
   if (this->text_ != text) {
     this->text_ = text;
-    this->create_params_.caption(text);
     native::control::text(this->handle_, this->text_);
   }
   return *this;
@@ -218,6 +213,18 @@ control& control::from_handle(intptr_t handle) {
 
 bool control::is_null() const {
   return this == &control::null;
+}
+
+forms::create_params control::create_params() const {
+  forms::create_params create_params;
+  
+  create_params.caption(this->text_);
+  create_params.style(WS_VISIBLE | WS_CHILD);
+  if (this->parent_) create_params.parent(this->parent_->handle_);
+  create_params.location(this->location_);
+  create_params.size(this->size_);
+
+  return create_params;
 }
 
 void control::on_back_color_changed(const event_args &e) {

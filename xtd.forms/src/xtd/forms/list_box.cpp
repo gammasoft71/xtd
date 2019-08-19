@@ -12,6 +12,8 @@ using namespace xtd::forms;
 list_box::list_box() {
   this->back_color_ = this->default_back_color();
   this->fore_color_ = this->default_fore_color();
+  this->size_ = this->default_size();
+
   this->items_.item_added += [&](size_t pos, const std::string& item) {
     native::list_box::insert_item(this->handle_, pos, item);
     if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
@@ -122,6 +124,18 @@ void list_box::create_handle() {
   if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);
   native::list_box::selected_index(this->handle_, this->selected_index_);
   if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
+}
+
+forms::create_params list_box::create_params() const {
+  forms::create_params create_params = this->control::create_params();
+  
+  create_params.class_name("LISTBOX");
+  create_params.style(create_params.style() | LBS_HASSTRINGS);
+  
+  if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  
+  return create_params;
 }
 
 void list_box::wnd_proc(message &message) {

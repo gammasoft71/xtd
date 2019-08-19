@@ -59,6 +59,8 @@ namespace xtd {
       event<list_box, event_handler<control>> selected_index_changed;
       
     protected:
+      forms::create_params create_params() const override;
+
       virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
 
       virtual void on_selected_value_changed(const event_args& e) {this->control::text(this->selected_item_);}

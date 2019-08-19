@@ -8,7 +8,7 @@ namespace xtd {
   namespace forms {
     class label : public control {
     public:
-      label() = default;
+      label();
 
       bool auto_size() const {return this->auto_size_;}
       label& auto_size(bool auto_size);
@@ -27,6 +27,9 @@ namespace xtd {
       event<label, event_handler<control>> auto_size_changed;
       
       void create_handle() override;
+      
+    protected:
+      forms::create_params create_params() const override;
 
       void on_auto_size_changed(const event_args& e) {this->auto_size_changed(*this, e);}
       

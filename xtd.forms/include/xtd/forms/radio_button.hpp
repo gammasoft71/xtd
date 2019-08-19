@@ -28,6 +28,8 @@ namespace xtd {
       event<radio_button, event_handler<control>> checked_changed;
 
     protected:
+      forms::create_params create_params() const override;
+
       virtual void on_appearance_changed(const event_args& e) {this->appearance_changed(*this, e);}
       
       virtual void on_checked_changed(const event_args& e) {this->checked_changed(*this, e);}

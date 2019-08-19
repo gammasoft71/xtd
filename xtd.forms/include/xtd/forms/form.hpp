@@ -28,6 +28,8 @@ namespace xtd {
       void close();
 
     protected:
+      forms::create_params create_params() const override;
+      
       void on_form_closed(const form_closed_event_args& e) {this->form_closed(*this, e);}
       
       void on_form_closing(form_closing_event_args& e) {this->form_closing(*this, e);}

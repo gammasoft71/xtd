@@ -50,3 +50,14 @@ void text_box::create_handle() {
   native::control::back_color(this->handle_, this->back_color());
   native::text_box::text(this->handle_, this->text_);
 }
+
+forms::create_params text_box::create_params() const {
+  forms::create_params create_params = this->control::create_params();
+  
+  create_params.class_name("EDIT");
+  
+  if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  
+  return create_params;
+}
