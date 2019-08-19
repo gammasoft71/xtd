@@ -10,6 +10,7 @@ int main() {
   form form;
   //form.back_color(color::dodger_blue);
   //form.fore_color(color::yellow);
+  form.text("Manual tests");
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
@@ -27,8 +28,10 @@ int main() {
   list_box2.parent(form);
   list_box2.location({150, 10});
   list_box2.height(200);
-  list_box2.border_style(forms::border_style::none);
-  
+  //list_box2.border_style(forms::border_style::none);
+  //list_box2.back_color(color::spring_green);
+  //list_box2.fore_color(color::dark_blue);
+
   list_box1.selected_index_changed += [&](const control& sender, const event_args& e) {
     cdebug << format("list_box1.selected_index_changed = [{} : {}]", (int)list_box1.selected_index(), list_box1.selected_item()) << endl;
     cdebug << format("list_box1.selected_items = {{{}}}", strings::join(", ", list_box1.selected_items())) << endl;
