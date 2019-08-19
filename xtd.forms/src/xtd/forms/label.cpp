@@ -7,6 +7,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+label::label() {
+  this->size_ = this->default_size();
+}
+
 label& label::auto_size(bool auto_size) {
   if (this->auto_size_ != auto_size) {
     this->auto_size_ = auto_size;
@@ -34,4 +38,19 @@ void label::create_handle() {
 
   this->handle_ = native::label::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
   this->control::create_handle();
+}
+
+forms::create_params label::create_params() const {
+  forms::create_params create_params = this->control::create_params();
+  
+  create_params.class_name("STATIC");
+  create_params.style(create_params.style() | SS_LEFT);
+
+  if (this->auto_size_) create_params.style(create_params.style() | SS_AUTOSIZE);
+  else create_params.style(create_params.style() | SS_LEFT);
+    
+  if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+
+  return create_params;
 }

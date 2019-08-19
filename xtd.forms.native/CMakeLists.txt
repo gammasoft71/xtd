@@ -9,6 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_INCLUDES
+  include/xtd/forms/create_params.hpp
   include/xtd/forms/window_messages.hpp
 )
 

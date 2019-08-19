@@ -8,11 +8,14 @@ namespace xtd {
   namespace forms {
     class group_box : public control {
     public:
-      group_box() = default;
+      group_box();
 
       drawing::size default_size() const override {return{200, 100};}
       
       void create_handle() override;
+      
+    protected:
+      forms::create_params create_params() const override;
     };
   }
 }

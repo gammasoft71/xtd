@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <xtd/drawing/point.hpp>
+#include <xtd/drawing/size.hpp>
 #include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -40,10 +42,17 @@ namespace xtd {
         return *this;
       }
 
-      size_t height() const {return this->height_;}
+      size_t height() const {return this->size_.height();}
       
       create_params& height(size_t height) {
-        this->height_ = height;
+        this->size_.height(height);
+        return *this;
+      }
+
+      drawing::point location() const {return this->location_;}
+      
+      create_params& location(const drawing::point location) {
+        this->location_ = location;
         return *this;
       }
 
@@ -68,28 +77,35 @@ namespace xtd {
         return *this;
       }
 
-      size_t width() const {return this->width_;}
+      drawing::size size() const {return this->size_;}
+      
+      create_params& size(const drawing::size size) {
+        this->size_ = size;
+        return *this;
+      }
+
+      size_t width() const {return this->size_.width();}
       
       create_params& width(size_t width) {
-        this->width_ = width;
+        this->size_.width(width);
         return *this;
       }
 
-      size_t x() const {return this->x_;}
+      size_t x() const {return this->location_.x();}
       
       create_params& x(size_t x) {
-        this->x_ = x;
+        this->location_.x(x);
         return *this;
       }
       
-      size_t y() const {return this->y_;}
+      size_t y() const {return this->location_.y();}
       
       create_params& y(size_t y) {
-        this->y_ = y;
+        this->location_.y(y);
         return *this;
       }
 
-      std::string to_string() const {return strings::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", this->class_name_, this->caption_, this->style_, this->ex_style_, this->x_, this->y_, this->width_, this->height_);}
+      std::string to_string() const {return strings::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", this->class_name_, this->caption_, this->style_, this->ex_style_, this->location_.x(), this->location_.y(), this->size_.width(), this->size_.height());}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}
@@ -100,13 +116,11 @@ namespace xtd {
       std::string class_name_;
       size_t class_style_ = 0;
       size_t ex_style_ = 0;
-      size_t height_ = -1;
+      drawing::point location_ = {-1, -1};
       intptr_t param_ = 0;
       intptr_t parent_ = 0;
       size_t style_ = 0;
-      size_t width_ = -1;
-      size_t x_ = -1;
-      size_t y_ = -1;
+      drawing::size size_ = {-1, -1};
     };
   }
 }

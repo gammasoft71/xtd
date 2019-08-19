@@ -9,11 +9,21 @@ using namespace xtd;
 using namespace xtd::forms;
 
 button::button() {
-  this->create_params_.class_name("Button").style(BS_PUSHBUTTON | WS_VISIBLE | WS_CHILD);
-  this->size(this->default_size());
+  this->size_ = this->default_size();
 }
 
 void button::create_handle() {
-  this->handle_ = native::button::create(this->parent_->__get_handle__(), this->default_size(), 0, 0);
+  forms::create_params create_params = this->create_params();
+  this->handle_ = native::button::create(create_params.parent(), this->default_size(), 0, 0);
   this->control::create_handle();
 }
+
+forms::create_params button::create_params() const {
+  forms::create_params create_params = this->control::create_params();
+  
+  create_params.class_name("BUTTON");
+  create_params.style(create_params.style() | BS_PUSHBUTTON);
+  
+  return create_params;
+}
+

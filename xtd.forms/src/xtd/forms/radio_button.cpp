@@ -51,6 +51,17 @@ void radio_button::create_handle() {
   if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
 }
 
+forms::create_params radio_button::create_params() const {
+  forms::create_params create_params = this->control::create_params();
+  
+  create_params.class_name("BUTTON");
+  if (this->auto_check_) create_params.style(create_params.style() | BS_AUTORADIOBUTTON);
+  else create_params.style(create_params.style() | BS_RADIOBUTTON);
+  if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
+
+  return create_params;
+}
+
 void radio_button::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_LBUTTONDOWN: break;

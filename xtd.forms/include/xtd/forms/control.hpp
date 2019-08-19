@@ -10,9 +10,9 @@
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/rectangle.hpp>
 #include <xtd/drawing/size.hpp>
+#include <xtd/forms/create_params.hpp>
 
 #include "layout/arranged_element_collection.hpp"
-#include "create_params.hpp"
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
 #include "mouse_event_handler.hpp"
@@ -172,66 +172,6 @@ namespace xtd {
       
       bool is_null() const;
       
-      virtual void on_back_color_changed(const event_args& e);
-
-      virtual void on_click(const event_args& e);
-
-      virtual void on_client_size_changed(const event_args& e);
-
-      virtual void on_create_control();
-      
-      virtual void on_double_click(const event_args& e);
-      
-      virtual void on_enabled_changed(const event_args& e);
-
-      virtual void on_fore_color_changed(const event_args& e);
-      
-      virtual void on_got_focus(const event_args& e);
-      
-      virtual void on_handle_created(const event_args& e);
-      
-      virtual void on_handle_destroyed(const event_args& e);
-
-      virtual void on_key_down(key_event_args& e);
-      
-      virtual void on_key_press(key_press_event_args& e);
-      
-      virtual void on_key_up(key_event_args& e);
-      
-      virtual void on_location_changed(const event_args& e);
-      
-      virtual void on_lost_focus(const event_args& e);
-      
-      virtual void on_mouse_click(const mouse_event_args& e);
-      
-      virtual void on_mouse_double_click(const mouse_event_args& e);
-
-      virtual void on_mouse_down(const mouse_event_args& e);
-
-      virtual void on_mouse_enter(const event_args& e);
-      
-      virtual void on_mouse_horizontal_wheel(const mouse_event_args& e);
-      
-      virtual void on_mouse_leave(const event_args& e);
-      
-      virtual void on_mouse_move(const mouse_event_args& e);
-
-      virtual void on_mouse_up(const mouse_event_args& e);
-
-      virtual void on_mouse_wheel(const mouse_event_args& e);
-      
-      virtual void on_parent_back_color_changed(const event_args& e);
-      
-      virtual void on_parent_changed(const event_args& e);
- 
-      virtual void on_parent_fore_color_changed(const event_args& e);
-      
-      virtual void on_size_changed(const event_args& e);
-
-      virtual void on_text_changed(const event_args& e);
-      
-      virtual void on_visible_changed(const event_args& e);
-      
       virtual void refresh() const;
       
       intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
@@ -296,21 +236,79 @@ namespace xtd {
 
       intptr_t __get_handle__() const {return this->handle_;}
 
-    //protected:
-      virtual const forms::create_params& create_params() const {return this->create_params_;}
-
     protected:
+      virtual forms::create_params create_params() const;
+      
       virtual void def_wnd_proc(message& message);
       
       virtual void get_properties();
       virtual void set_properties() const;
+      
+      virtual void on_back_color_changed(const event_args& e);
+      
+      virtual void on_click(const event_args& e);
+      
+      virtual void on_client_size_changed(const event_args& e);
+      
+      virtual void on_create_control();
+      
+      virtual void on_double_click(const event_args& e);
+      
+      virtual void on_enabled_changed(const event_args& e);
+      
+      virtual void on_fore_color_changed(const event_args& e);
+      
+      virtual void on_got_focus(const event_args& e);
+      
+      virtual void on_handle_created(const event_args& e);
+      
+      virtual void on_handle_destroyed(const event_args& e);
+      
+      virtual void on_key_down(key_event_args& e);
+      
+      virtual void on_key_press(key_press_event_args& e);
+      
+      virtual void on_key_up(key_event_args& e);
+      
+      virtual void on_location_changed(const event_args& e);
+      
+      virtual void on_lost_focus(const event_args& e);
+      
+      virtual void on_mouse_click(const mouse_event_args& e);
+      
+      virtual void on_mouse_double_click(const mouse_event_args& e);
+      
+      virtual void on_mouse_down(const mouse_event_args& e);
+      
+      virtual void on_mouse_enter(const event_args& e);
+      
+      virtual void on_mouse_horizontal_wheel(const mouse_event_args& e);
+      
+      virtual void on_mouse_leave(const event_args& e);
+      
+      virtual void on_mouse_move(const mouse_event_args& e);
+      
+      virtual void on_mouse_up(const mouse_event_args& e);
+      
+      virtual void on_mouse_wheel(const mouse_event_args& e);
+      
+      virtual void on_parent_back_color_changed(const event_args& e);
+      
+      virtual void on_parent_changed(const event_args& e);
+      
+      virtual void on_parent_fore_color_changed(const event_args& e);
+      
+      virtual void on_size_changed(const event_args& e);
+      
+      virtual void on_text_changed(const event_args& e);
+      
+      virtual void on_visible_changed(const event_args& e);
 
       void recreate_handle();
       
       std::optional<drawing::color> back_color_;
       drawing::size client_size_ {-1, -1};
       control_collection controls_;
-      forms::create_params create_params_;
       bool enabled_ = true;
       std::optional<drawing::color> fore_color_;
       intptr_t handle_ = 0;

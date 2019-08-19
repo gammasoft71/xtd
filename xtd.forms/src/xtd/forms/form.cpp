@@ -15,8 +15,7 @@ form::form() {
   this->visible_ = false;
   this->back_color_ = this->default_back_color();
   this->fore_color_ = this->default_fore_color();
-  this->size(this->default_size());
-  this->create_params_.class_name("").style(WS_OVERLAPPEDWINDOW);
+  this->size_ = this->default_size();
 }
 
 void form::create_handle() {
@@ -41,6 +40,14 @@ control& form::visible(bool visible) {
   if (this->handle_ == 0) this->create_control();
   this->control::visible(visible);
   return *this;
+}
+
+forms::create_params form::create_params() const {
+  forms::create_params create_params = this->control::create_params();
+  
+  create_params.style(WS_OVERLAPPEDWINDOW);
+  
+  return create_params;
 }
 
 void form::wnd_proc(message &message) {
