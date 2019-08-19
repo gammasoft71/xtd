@@ -13,13 +13,11 @@ using namespace xtd::forms::native;
 namespace {
   class wx_form : public control_handler {
   public:
-    wx_form(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style) {
-      this->control_handler::create<wxFrame>(parent, id, title, pos, size, style);
-       this->panel = new wxPanel(this->control());
+    wx_form(wxWindow *parent, const wxString& title, const wxPoint& pos, const wxSize& size, long style) {
+      this->control_handler::create<wxFrame>(parent, wxID_ANY, title, pos, size, style);
+      this->panel = new wxPanel(this->control());
       this->panel->Hide();
-      this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
-        event.Veto();
-      });
+      this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {event.Veto();});
     }
     
   private:
@@ -27,9 +25,9 @@ namespace {
   };
 }
 
-intptr_t form::create(const size& size, size_t styles, size_t ex_styles) {
+intptr_t form::create(const create_params& create_params) {
   application::initialize_application(); // Must be first
-  return (intptr_t) new wx_form(wxTheApp->GetTopWindow(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, (control_handler::to_wx_style(styles, ex_styles) | wxDEFAULT_FRAME_STYLE) & ~wxBORDER_NONE);
+  return (intptr_t) new wx_form(create_params.parent() ? ((control_handler*)create_params.parent())->control() : wxTheApp->GetTopWindow(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), (control_handler::to_wx_style(create_params.style(), create_params.ex_style()) | wxDEFAULT_FRAME_STYLE) & ~wxBORDER_NONE);
 }
 
 void form::close(intptr_t form) {

@@ -13,8 +13,7 @@ button::button() {
 }
 
 void button::create_handle() {
-  forms::create_params create_params = this->create_params();
-  this->handle_ = native::button::create(create_params.parent(), this->default_size(), 0, 0);
+  this->handle_ = native::button::create(this->create_params());
   this->control::create_handle();
 }
 

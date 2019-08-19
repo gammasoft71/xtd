@@ -1,5 +1,7 @@
 #pragma once
+#include <cstdint>
 #include <iostream>
+#include <string>
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/size.hpp>
 #include <xtd/xtd.strings>

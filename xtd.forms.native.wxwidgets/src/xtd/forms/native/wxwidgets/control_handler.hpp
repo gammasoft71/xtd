@@ -324,7 +324,7 @@ namespace xtd {
           // listbox selection mode
           if ((styles & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) wx_style |= wxLB_EXTENDED;
           else if ((styles & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) wx_style |= wxLB_MULTIPLE;
-          else wx_style |= wxLB_SINGLE;
+          else if ((styles & LBS_HASSTRINGS) == LBS_HASSTRINGS) wx_style |= wxLB_SINGLE;
 
           // listbox sort
           if ((styles & LBS_SORT) == LBS_SORT) wx_style |= wxLB_SORT;

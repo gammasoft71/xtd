@@ -125,36 +125,36 @@ namespace xtd {
       template<typename control_t>
       static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        item->location(location);
-        item->size(size);
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
-
+      
       template<typename control_t>
       static std::unique_ptr<control_t> create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->parent(parent);
-        item->location(location);
-        item->size(size);
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
-
+      
       template<typename control_t>
       static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->text(text);
-        item->location(location);
-        item->size(size);
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
-
+      
       template<typename control_t>
       static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->parent(parent);
         item->text(text);
-        item->location(location);
-        item->size(size);
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
 
@@ -241,9 +241,6 @@ namespace xtd {
       
       virtual void def_wnd_proc(message& message);
       
-      virtual void get_properties();
-      virtual void set_properties() const;
-      
       virtual void on_back_color_changed(const event_args& e);
       
       virtual void on_click(const event_args& e);
@@ -314,7 +311,7 @@ namespace xtd {
       intptr_t handle_ = 0;
       static std::map<intptr_t, control*> handles_;
       std::string name_;
-      drawing::point location_ {0, 0};
+      drawing::point location_ {-1, -1};
       control* parent_ = const_cast<control*>(&control::null);
       drawing::size size_ {-1, -1};
       std::string text_;

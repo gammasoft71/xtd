@@ -29,14 +29,7 @@ label& label::border_style(forms::border_style border_style) {
 }
 
 void label::create_handle() {
-  size_t styles = 0;
-  size_t ex_styles = 0;
-  
-  if (this->auto_size_) styles += SS_AUTOSIZE;
-  if (this->border_style_ == forms::border_style::fixed_single) styles |= WS_BORDER;
-  else if (this->border_style_ == forms::border_style::fixed_3d) ex_styles |= WS_EX_CLIENTEDGE;
-
-  this->handle_ = native::label::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
+  this->handle_ = native::label::create(this->create_params());
   this->control::create_handle();
 }
 

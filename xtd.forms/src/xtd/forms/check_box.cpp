@@ -54,16 +54,8 @@ check_box& check_box::three_state(bool three_state) {
 }
 
 void check_box::create_handle() {
-  size_t styles = 0;
-  size_t ex_styles = 0;
-  if (this->three_state_) styles |= this->auto_check_ ? BS_AUTO3STATE : BS_3STATE;
-  else if (this->auto_check_) styles |= BS_AUTOCHECKBOX;
-  else styles = BS_CHECKBOX;
-  if (this->appearance_ == forms::appearance::button) styles |= BS_PUSHLIKE;
-  this->handle_ = native::check_box::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
+  this->handle_ = native::check_box::create(this->create_params());
   this->control::create_handle();
-  native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
-  if (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color()) native::control::back_color(this->handle_, this->back_color());
 }
 
 forms::create_params check_box::create_params() const {
@@ -76,6 +68,11 @@ forms::create_params check_box::create_params() const {
   if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
 
   return create_params;
+}
+
+void check_box::on_handle_created(const event_args &e) {
+  this->control::on_handle_created(e);
+  native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
 }
 
 void check_box::wnd_proc(message &message) {

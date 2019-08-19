@@ -1,6 +1,5 @@
 #pragma once
-#include <xtd/drawing/size.hpp>
-#include <cstdint>
+#include "../create_params.hpp"
 
 namespace xtd {
   namespace forms {
@@ -9,7 +8,7 @@ namespace xtd {
       public:
         form() = delete;
         static void close(intptr_t form);
-        static intptr_t create(const drawing::size& size, size_t styles, size_t ex_styles);
+        static intptr_t create(const create_params& create_params);
       };
     }
   }

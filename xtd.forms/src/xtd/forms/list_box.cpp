@@ -105,25 +105,8 @@ list_box& list_box::sorted(bool sorted) {
 }
 
 void list_box::create_handle() {
-  size_t styles = 0;
-  size_t ex_styles = 0;
-  switch (this->selection_mode_) {
-    case selection_mode::none: styles |= LBS_NOSEL; break;
-    case selection_mode::one:  break;
-    case selection_mode::multi_simple: styles |= LBS_MULTIPLESEL; break;
-    case selection_mode::multi_extended: styles |= LBS_MULTIPLESEL | LBS_EXTENDEDSEL; break;
-    default: break;
-  }
-  if (this->sorted_) styles |= LBS_SORT;
-  if (this->border_style_ == forms::border_style::fixed_single) styles |= WS_BORDER;
-  else if (this->border_style_ == forms::border_style::fixed_3d) ex_styles |= WS_EX_CLIENTEDGE;
-  this->handle_ = native::list_box::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
+  this->handle_ = native::list_box::create(this->create_params());
   this->control::create_handle();
-  for (size_t index = 0; index < this->items_.size(); ++index)
-    native::list_box::insert_item(this->handle_, index, this->items_[index]);
-  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);
-  native::list_box::selected_index(this->handle_, this->selected_index_);
-  if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
 }
 
 forms::create_params list_box::create_params() const {
@@ -131,11 +114,30 @@ forms::create_params list_box::create_params() const {
   
   create_params.class_name("LISTBOX");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
-  
+
+  switch (this->selection_mode_) {
+    case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
+    case selection_mode::one:  break;
+    case selection_mode::multi_simple: create_params.style(create_params.style() | LBS_MULTIPLESEL); break;
+    case selection_mode::multi_extended: create_params.style(create_params.style() | LBS_MULTIPLESEL | LBS_EXTENDEDSEL); break;
+    default: break;
+  }
+
+  if (this->sorted_) create_params.style(create_params.style() | LBS_SORT);
+
   if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   
   return create_params;
+}
+
+void list_box::on_handle_created(const event_args &e) {
+  this->control::on_handle_created(e);
+  for (size_t index = 0; index < this->items_.size(); ++index)
+    native::list_box::insert_item(this->handle_, index, this->items_[index]);
+  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);
+  native::list_box::selected_index(this->handle_, this->selected_index_);
+  if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
 }
 
 void list_box::wnd_proc(message &message) {

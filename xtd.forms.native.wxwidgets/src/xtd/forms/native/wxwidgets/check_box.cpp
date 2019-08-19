@@ -9,11 +9,11 @@ using namespace xtd::forms::native;
 namespace {
   class wx_check_box : public control_handler {
   public:
-    wx_check_box(wxWindow *parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style, bool push_like) {
+    wx_check_box(wxWindow *parent, const wxString& title, const wxPoint& pos, const wxSize& size, long style, bool push_like) {
       if (!push_like)
-        this->control_handler::create<wxCheckBox>(parent, id, title, pos, size, style);
+        this->control_handler::create<wxCheckBox>(parent, wxID_ANY, title, pos, size, style);
       else
-        this->control_handler::create<wxToggleButton>(parent, id, title, pos, size, 0);
+        this->control_handler::create<wxToggleButton>(parent, wxID_ANY, title, pos, size, 0);
     }
   };
   
@@ -36,8 +36,8 @@ namespace {
   }
 }
 
-intptr_t check_box::create(intptr_t parent, const size& size, size_t styles, size_t ex_styles) {
-  return (intptr_t) new wx_check_box(reinterpret_cast<control_handler*>(parent)->control(), wxID_ANY, wxEmptyString, wxDefaultPosition, {size.width(), size.height()}, wxCHK_3STATE | control_handler::to_wx_style(styles, ex_styles), (styles & BS_PUSHLIKE) == BS_PUSHLIKE);
+intptr_t check_box::create(const forms::create_params& create_params) {
+  return (intptr_t) new wx_check_box(reinterpret_cast<control_handler*>(create_params.parent())->control(), create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), wxCHK_3STATE | control_handler::to_wx_style(create_params.style(), create_params.ex_style()), (create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE);
 }
 
 int check_box::check_state(intptr_t control) {

@@ -12,6 +12,7 @@ using namespace xtd::forms;
 text_box::text_box() {
   this->back_color_ = this->default_back_color();
   this->fore_color_ = this->default_fore_color();
+  this->size_ = this->default_size();
 }
 
 text_box& text_box::border_style(forms::border_style border_style) {
@@ -39,16 +40,8 @@ control& text_box::text(const string& text) {
 }
 
 void text_box::create_handle() {
-  size_t styles = 0;
-  size_t ex_styles = 0;
-  
-  if (this->border_style_ == forms::border_style::fixed_single) styles |= WS_BORDER;
-  else if (this->border_style_ == forms::border_style::fixed_3d) ex_styles |= WS_EX_CLIENTEDGE;
-
-  this->handle_ = native::text_box::create(this->parent_->__get_handle__(), this->default_size(), styles, ex_styles);
+  this->handle_ = native::text_box::create(this->create_params());
   this->control::create_handle();
-  native::control::back_color(this->handle_, this->back_color());
-  native::text_box::text(this->handle_, this->text_);
 }
 
 forms::create_params text_box::create_params() const {
