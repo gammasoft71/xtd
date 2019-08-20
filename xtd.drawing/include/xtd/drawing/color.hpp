@@ -10,19 +10,19 @@ namespace xtd {
   namespace drawing {
     /// @brief Represents an ARGB (alpha, red, green, blue) color.
     /// @remarks Named colors are represented by using the properties of the xtd::drawing::color structure. For more information about these colors, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">see Colors by Name</a>.
-    /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). Each of the four components is a number from 0 through 255, with 0 representing no intensity and 255 representing full intensity. The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. To determine the alpha, red, green, or blue component of a color, use the A, R, G, or B property, respectively. You can create a custom color by using one of the FromArgb methods
+    /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). Each of the four components is a number from 0 through 255, with 0 representing no intensity and 255 representing full intensity. The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. To determine the alpha, red, green, or blue component of a color, use the A, R, G, or B property, respectively. You can create a custom color by using one of the from_argb methods
     /// @par Examples
-    /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(Size to SizeF) member.<br><br>
-    /// This example is designed to be used with a Windows Form. Paste the code into the form and call the ShowPropertiesOfSlateBlue method from the form's Paint event-handling method, passing e as PaintEventArgs.
+    /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+    /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
     /// @code
-    /// void show_properties_of_slate_blue(paint_event_args& e) {
-    ///   color slate_blue = color::from_name("slate_blue");
-    ///   byte g = slate_blue.G;
-    ///   byte b = slate_blue.B;
-    ///   byte r = slate_blue.R;
-    ///   byte a = slate_blue.A;
+    /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
+    ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
+    ///   byte g = slate_blue.g();
+    ///   byte b = slate_blue.b();
+    ///   byte r = slate_blue.r();
+    ///   byte a = slate_blue.a();
     ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
-    ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::pointF(0.0F, 0.0F), this->size()));
+    ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
     /// }
     /// @endcode
     struct color {
@@ -456,13 +456,13 @@ namespace xtd {
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9ACD32. This field is constant.
       static const xtd::drawing::color yellow_green;
       
-      /// @brief Create a new instance of class xtd::drawing::color. The default value is black.
+      /// @brief Create a new instance of class xtd::drawing::color.
       color() = default;
       
       /// @cond
       color(const color& color) = default;
       color& operator=(const color& color) = default;
-      bool operator==(const color& value) const {return this->argb_ == value.argb_ && this->handle_ == value.handle_;}
+      bool operator==(const color& value) const {return this->argb_ == value.argb_ && this->handle_ == value.handle_ && this->empty_ == value.empty_;}
       bool operator!=(const color& value) const {return !this->operator==(value);}
       /// @endcond
       
@@ -470,17 +470,17 @@ namespace xtd {
       /// @return byte The alpha component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(Size to SizeF) member.<br><br>
-      /// This example is designed to be used with a Windows Form. Paste the code into the form and call the ShowPropertiesOfSlateBlue method from the form's Paint event-handling method, passing e as PaintEventArgs.
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
-      /// void ShowPropertiesOfSlateBlue(PaintEventArgs& e) {
-      ///   xtd::drawing::color slateBlue = xtd::drawing::color::FromName("SlateBlue");
-      ///   byte g = slateBlue.G;
-      ///   byte b = slateBlue.B;
-      ///   byte r = slateBlue.R;
-      ///   byte a = slateBlue.A;
-      ///   string text = String::Format("Slate blue has these ARGB values: Alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
-      ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
+      /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
+      ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
+      ///   byte g = slate_blue.g();
+      ///   byte b = slate_blue.b();
+      ///   byte r = slate_blue.r();
+      ///   byte a = slate_blue.a();
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
       uint8_t a() const {return (uint8_t)((this->to_argb() & 0xFF000000) >> 24);}
@@ -489,17 +489,17 @@ namespace xtd {
       /// @return byte The blue component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(Size to SizeF) member.<br><br>
-      /// This example is designed to be used with a Windows Form. Paste the code into the form and call the ShowPropertiesOfSlateBlue method from the form's Paint event-handling method, passing e as PaintEventArgs.
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
-      /// void ShowPropertiesOfSlateBlue(PaintEventArgs& e) {
-      ///   xtd::drawing::color slateBlue = xtd::drawing::color::FromName("SlateBlue");
-      ///   byte g = slateBlue.G;
-      ///   byte b = slateBlue.B;
-      ///   byte r = slateBlue.R;
-      ///   byte a = slateBlue.A;
-      ///   string text = String::Format("Slate blue has these ARGB values: Alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
-      ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
+      /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
+      ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
+      ///   byte g = slate_blue.g();
+      ///   byte b = slate_blue.b();
+      ///   byte r = slate_blue.r();
+      ///   byte a = slate_blue.a();
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
       uint8_t b() const {return (uint8_t)(this->to_argb() & 0x000000FF);}
@@ -508,32 +508,32 @@ namespace xtd {
       /// @return byte The green component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(Size to SizeF) member.<br><br>
-      /// This example is designed to be used with a Windows Form. Paste the code into the form and call the ShowPropertiesOfSlateBlue method from the form's Paint event-handling method, passing e as PaintEventArgs.
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
-      /// void ShowPropertiesOfSlateBlue(PaintEventArgs& e) {
-      ///   xtd::drawing::color slateBlue = xtd::drawing::color::FromName("SlateBlue");
-      ///   byte g = slateBlue.G;
-      ///   byte b = slateBlue.B;
-      ///   byte r = slateBlue.R;
-      ///   byte a = slateBlue.A;
-      ///   string text = String::Format("Slate blue has these ARGB values: Alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
-      ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
+      /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
+      ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
+      ///   byte g = slate_blue.g();
+      ///   byte b = slate_blue.b();
+      ///   byte r = slate_blue.r();
+      ///   byte a = slate_blue.a();
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
       uint8_t g() const {return (uint8_t)((this->to_argb() & 0x0000FF00) >> 8);}
       
-      /// @brief Gets the native handle for specific colors on specific operating systems.
-      /// @remarks For internal use only.
+      /// @brief Gets the native handle of this xtd::drawing::color class.
+      /// @remarks For internal use only, needed for system_colors.
       intptr_t handle() const {return this->handle_;}
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
       /// @return bool Returns true if this color is uninitialized; otherwise, false.
-      bool is_empty() const {return *this == empty;}
+      bool is_empty() const {return this->empty_;}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a predefined color. Predefined colors are represented by the elements of the xtd::drawing::known_color enumeration.
-      /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the FromName method or the FromKnownColor method; otherwise, false.
-      /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the IsKnownColor property is applied to a xtd::drawing::color structure that is created by using the FromArgb method, IsKnownColor returns false, even if the ARGB value matches the ARGB value of a predefined color.
+      /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, false.
+      /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a xtd::drawing::color structure that is created by using the from_argb method, is_known_color returns false, even if the ARGB value matches the ARGB value of a predefined color.
       bool is_known_color() const {return this->known_color_ != (xtd::drawing::known_color)0;}
        
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
@@ -546,23 +546,23 @@ namespace xtd {
       
       /// @brief Gets the name of this xtd::drawing::color.
       /// @return string The name of this xtd::drawing::color.
-      std::string name() const;
+      std::string name() const {return this->name_;}
       
       /// @brief Gets the red component value of this xtd::drawing::color class.
       /// @return byte The red component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(Size to SizeF) member.<br><br>
-      /// This example is designed to be used with a Windows Form. Paste the code into the form and call the ShowPropertiesOfSlateBlue method from the form's Paint event-handling method, passing e as PaintEventArgs.
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
-      /// void ShowPropertiesOfSlateBlue(PaintEventArgs& e) {
-      ///   xtd::drawing::color slate_blue = xtd::drawing::color::FromName("SlateBlue");
-      ///   byte g = slate_blue.G;
-      ///   byte b = slate_blue.B;
-      ///   byte r = slate_blue.R;
-      ///   byte a = slate_blue.A;
-      ///   string text = strings::format("Slate blue has these ARGB values: alpha:{}, red:{}, green: {}, blue {}", a, r, g, b);
-      ///   e.graphics().draw_string(text, font(this->font(), font_style::italic), solid_brush(slate_blue), rectangle_f(point_f(0.0f, 0.0f), this->size()));
+      /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
+      ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
+      ///   byte g = slate_blue.g();
+      ///   byte b = slate_blue.b();
+      ///   byte r = slate_blue.r();
+      ///   byte a = slate_blue.a();
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
       uint8_t r() const {return (uint8_t)((this->to_argb() & 0x00FF0000) >> 16);}
@@ -577,7 +577,6 @@ namespace xtd {
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
       /// @param baseColor The xtd::drawing::color from which to create the new xtd::drawing::color.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @exception ArgumentException alpha is less than 0 or greater than 255.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       static xtd::drawing::color from_argb(uint8_t alpha, const xtd::drawing::color& baseColor);
       
@@ -587,11 +586,22 @@ namespace xtd {
       /// @param green The green component. Valid values are 0 through 255.
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @exception ArgumentException alpha, red, green or blue is less than 0 or greater than 255.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       static xtd::drawing::color from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue);
       
-      static xtd::drawing::color from_handle(intptr_t argb);
+      /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
+      /// @param red The red component. Valid values are 0 through 255.
+      /// @param green The green component. Valid values are 0 through 255.
+      /// @param blue The blue component. Valid values are 0 through 255.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
+      static xtd::drawing::color from_argb(uint8_t red, uint8_t green, uint8_t blue);
+
+      /// @brief Creates a xtd::drawing::color class from native handle.
+      /// @param handle the handle for the new xtd::drawing::color.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      /// @remarks For internal use only.
+      static xtd::drawing::color from_handle(intptr_t handle);
       
       /// @brief Creates a xtd::drawing::color class from the three HSV component (hue, saturation, and brightness) values.
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
@@ -799,12 +809,15 @@ namespace xtd {
       std::string to_string() const;
       
     private:
-      explicit color(uint32_t argb);
+      explicit color(uint32_t argb) : argb_(argb), name_(argb ? strings::format("{:X8}", argb) : "0"), empty_(false) {}
+      explicit color(intptr_t handle)  : handle_(handle), name_(strings::format("{:X}h", handle)), empty_(false) {}
       color(const color& color, const xtd::drawing::known_color& know_color);
 
       uint32_t argb_ = 0;
       intptr_t handle_ = 0;
       xtd::drawing::known_color known_color_ = (xtd::drawing::known_color)0;
+      std::string name_ = "0";
+      bool empty_ = true;
     };
     
     /// @cond
