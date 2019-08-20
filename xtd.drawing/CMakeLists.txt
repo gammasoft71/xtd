@@ -21,9 +21,13 @@ set(XTD_DRAWING_INCLUDES
 )
 
 set(XTD_DRAWING_SOURCES
-  src/xtd/drawing/drawing.cpp
   src/xtd/drawing/color.cpp
+  src/xtd/drawing/drawing.cpp
+  src/xtd/drawing/point_f.cpp
   src/xtd/drawing/point.cpp
+  src/xtd/drawing/rectangle_f.cpp
+  src/xtd/drawing/rectangle.cpp
+  src/xtd/drawing/size_f.cpp
   src/xtd/drawing/size.cpp
   src/xtd/drawing/system_colors.cpp
 )

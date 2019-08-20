@@ -1,7 +1,6 @@
 #include <xtd/xtd.drawing>
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd::drawing;
 using namespace xtd::tunit;
 
@@ -16,7 +15,7 @@ namespace unit_tests {
       assert::are_equal(0, p.y());
     }
     
-    void test_method_(create_point_with_values) {
+    void test_method_(create_point_from_pair_of_integer) {
       point p(1, 2);
       assert::are_equal(point(1, 2), p);
       assert::are_not_equal(point::empty, p);
@@ -24,14 +23,30 @@ namespace unit_tests {
       assert::are_equal(2, p.y());
     }
     
-    void test_method_(create_point_with_copy) {
+    void test_method_(create_point_from_integer) {
+      point p(0x00020001);
+      assert::are_equal(point(1, 2), p);
+      assert::are_not_equal(point::empty, p);
+      assert::are_equal(1, p.x());
+      assert::are_equal(2, p.y());
+    }
+
+    void test_method_(create_point_from_point) {
       point p = {1, 2};
       assert::are_equal(point(1, 2), p);
       assert::are_not_equal(point::empty, p);
       assert::are_equal(1, p.x());
       assert::are_equal(2, p.y());
     }
-    
+
+    void test_method_(create_point_from_size) {
+      point p(size(1, 2));
+      assert::are_equal(point(1, 2), p);
+      assert::are_not_equal(point::empty, p);
+      assert::are_equal(1, p.x());
+      assert::are_equal(2, p.y());
+    }
+
     void test_method_(create_point_and_assign_it) {
       point p;
       p = {1, 2};

@@ -1,35 +1,37 @@
 #include "../../../include/xtd/drawing/point.hpp"
 #include "../../../include/xtd/drawing/size.hpp"
 
-const xtd::drawing::size xtd::drawing::size::empty;
+using namespace xtd::drawing;
 
-xtd::drawing::size::size(const xtd::drawing::point& point) : width_(point.x()), height_(point.y()) {
+const size size::empty;
+
+size::size(const point& point) : width_(point.x()), height_(point.y()) {
 }
 
-xtd::drawing::size xtd::drawing::size::operator+(const xtd::drawing::size& size) const {
+size size::operator+(const size& size) const {
   return {this->width_ + size.width_, this->height_ + size.height_};
 }
 
-xtd::drawing::size xtd::drawing::size::operator-(const xtd::drawing::size& size) const {
+size size::operator-(const size& size) const {
   return {this->width_ - size.width_, this->height_ - size.height_};
 }
 
-xtd::drawing::size& xtd::drawing::size::operator+=(const xtd::drawing::size& size) {
+size& size::operator+=(const size& size) {
   this->width_ += size.width_;
   this->height_ += size.height_;
   return *this;
 }
 
-xtd::drawing::size& xtd::drawing::size::operator-=(const xtd::drawing::size& size) {
+size& size::operator-=(const size& size) {
   this->width_ -= size.width_;
   this->height_ -= size.height_;
   return *this;
 }
 
-xtd::drawing::size xtd::drawing::size::add(const xtd::drawing::size& size1, const xtd::drawing::size& size2) {
+size size::add(const size& size1, const size& size2) {
   return size1 + size2;
 }
 
-xtd::drawing::size xtd::drawing::size::subtract(const xtd::drawing::size& size1, const xtd::drawing::size& size2) {
+size size::subtract(const size& size1, const size& size2) {
   return size1 - size2;
 }

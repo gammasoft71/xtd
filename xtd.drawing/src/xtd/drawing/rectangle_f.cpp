@@ -1,3 +1,5 @@
 #include "../../../include/xtd/drawing/rectangle_f.hpp"
 
-const xtd::drawing::rectangle_f xtd::drawing::rectangle_f::empty;
+using namespace xtd::drawing;
+
+const rectangle_f rectangle_f::empty;
