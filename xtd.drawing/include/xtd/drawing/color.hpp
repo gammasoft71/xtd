@@ -804,5 +804,6 @@ namespace xtd {
     
     /// @cond
     inline std::ostream& operator<<(std::ostream& os, color value) {return os << value.to_string();}
+    /// @endcond
   }
 }
