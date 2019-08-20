@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <vector>
 
+/// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
@@ -45,3 +46,4 @@ namespace xtd {
     }
   }
 }
+/// @endcond
