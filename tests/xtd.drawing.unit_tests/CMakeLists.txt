@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.drawing.unit_tests)
 set(SOURCES
+  src/color.cpp
   src/main.cpp 
   src/point.cpp
   src/size.cpp
