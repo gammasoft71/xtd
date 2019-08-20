@@ -1,3 +1,10 @@
 #include "../../../include/xtd/drawing/point.hpp"
+#include "../../../include/xtd/drawing/size.hpp"
 
-const xtd::drawing::point xtd::drawing::point::empty;
+using namespace xtd;
+using namespace xtd::drawing;
+
+const point point::empty;
+
+point::point(const size& size) : x_(size.width()), y_(size.height()) {  
+}

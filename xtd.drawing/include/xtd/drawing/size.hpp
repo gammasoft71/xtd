@@ -1,6 +1,7 @@
 #pragma once
 #include <ostream>
 #include <string>
+#include "size_f.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -8,7 +9,6 @@ namespace xtd {
   namespace drawing {
     /// @cond
     struct point;
-    struct size_f;
     /// @endcond
     
     /// @brief Stores an ordered pair of integers, which specify a height and width.
@@ -38,6 +38,7 @@ namespace xtd {
       size operator-(const xtd::drawing::size& size) const;
       size& operator+=(const xtd::drawing::size& size);
       size& operator-=(const xtd::drawing::size& size);
+      operator size_f() {return size_f(this->width_, this->height_);}
       /// @endcond
       
       /// @brief Gets he vertical component of this Size Class.
