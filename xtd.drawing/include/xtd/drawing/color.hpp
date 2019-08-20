@@ -9,7 +9,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Represents an ARGB (alpha, red, green, blue) color.
-    /// @remarks Named colors are represented by using the properties of the xtd::drawing::color structure. For more information about these colors, see Colors by Name.
+    /// @remarks Named colors are represented by using the properties of the xtd::drawing::color structure. For more information about these colors, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">see Colors by Name</a>.
     /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). Each of the four components is a number from 0 through 255, with 0 representing no intensity and 255 representing full intensity. The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. To determine the alpha, red, green, or blue component of a color, use the A, R, G, or B property, respectively. You can create a custom color by using one of the FromArgb methods
     /// @par Examples
     /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(Size to SizeF) member.<br><br>
@@ -520,6 +520,8 @@ namespace xtd {
       /// @endcode
       uint8_t g() const {return (uint8_t)((this->to_argb() & 0x0000FF00) >> 8);}
       
+      /// @brief Gets the native handle for specific colors on specific operating systems.
+      /// @remarks For internal use only.
       intptr_t handle() const {return this->handle_;}
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
@@ -551,13 +553,13 @@ namespace xtd {
       /// This example is designed to be used with a Windows Form. Paste the code into the form and call the ShowPropertiesOfSlateBlue method from the form's Paint event-handling method, passing e as PaintEventArgs.
       /// @code
       /// void ShowPropertiesOfSlateBlue(PaintEventArgs& e) {
-      ///   xtd::drawing::color slateBlue = xtd::drawing::color::FromName("SlateBlue");
-      ///   byte g = slateBlue.G;
-      ///   byte b = slateBlue.B;
-      ///   byte r = slateBlue.R;
-      ///   byte a = slateBlue.A;
-      ///   string text = String::Format("Slate blue has these ARGB values: Alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
-      ///   e.Graphics().DrawString(text, Font(this->Font, FontStyle::Italic), SolidBrush(slateBlue), RectangleF(PointF(0.0F, 0.0F), this->Size));
+      ///   xtd::drawing::color slate_blue = xtd::drawing::color::FromName("SlateBlue");
+      ///   byte g = slate_blue.G;
+      ///   byte b = slate_blue.B;
+      ///   byte r = slate_blue.R;
+      ///   byte a = slate_blue.A;
+      ///   string text = strings::format("Slate blue has these ARGB values: alpha:{}, red:{}, green: {}, blue {}", a, r, g, b);
+      ///   e.graphics().draw_string(text, font(this->font(), font_style::italic), solid_brush(slate_blue), rectangle_f(point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
       uint8_t r() const {return (uint8_t)((this->to_argb() & 0x00FF0000) >> 16);}

@@ -92,6 +92,10 @@ namespace unit_tests {
       assert::are_equal(point(3, 4), p);
     }
     
+    void test_method_(add_size) {
+      assert::are_equal(point(4, 6), point::add({1, 2}, {3, 4}));
+    }
+
     void test_method_(to_string) {
       point p(1, 2);
       assert::are_equal("{x=1, y=2}", p.to_string());
