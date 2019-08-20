@@ -372,6 +372,9 @@ namespace xtd {
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF800080. This field is constant.
       static const xtd::drawing::color purple;
       
+      /// @brief Gets a system-defined color that has an ARGB value of 0xFF663399. This field is constant.
+      static const xtd::drawing::color rebecca_purple;
+      
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant.
       static const xtd::drawing::color red;
       
