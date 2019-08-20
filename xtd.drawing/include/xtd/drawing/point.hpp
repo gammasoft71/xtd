@@ -224,6 +224,23 @@ namespace xtd {
       ///   }
       /// @endcode
       void y(int32_t y) {this->y_ = y;}
+
+      /// @brief Adds the specified size to the specified point.
+      /// @param pt The point to add.
+      /// @param sz The size to add.
+      /// @return The point that is the result of the addition operation.
+      /// @remarks The add adds the width and height of the specified size to the y and y values of the specified point.
+      /// @par Examples
+      /// The following example shows how to use the add method. To run this example, paste it into a Windows Form (xtd::formsà. Handle the form's paint event and call the add_point method from the paint event-handling method, passing e as paint_event_args.
+      /// @code
+      /// private:
+      ///   void add_point(paint_event_args& e) {
+      ///     point point1(10, 10);
+      ///     point point2 = point::add(point1, drawing::size(250,0));
+      ///     e.graphics().draw_line(pens::red, point1, point2);
+      ///   }
+      /// @endcode
+      static point add(const point& pt, const size& sz);
       
       void offset(const point& pt) {this->offset(pt.x_, pt.y_);}
 
