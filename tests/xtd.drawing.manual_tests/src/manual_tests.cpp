@@ -7,6 +7,7 @@ using namespace xtd::drawing;
 
 // The main entry point for the application.
 int main() {
+  /*
   for (known_color kc = known_color::transparent; kc < known_color::yellow_green; kc = known_color(int(kc) + 1)) {
     //if (kc != known_color::blue) continue;
     color c = color::from_known_color(kc);
@@ -34,4 +35,13 @@ int main() {
     cout << strings::format("      assert::are_equal(known_color::{}, c.to_known_color());", c.name()) << endl;
     cout << strings::format("    }}") << endl;
   }
+   */
+  //cout << format("hsl = {} {} {}", (float)color::blue.get_hue(), color::blue.get_saturation(), color::blue.get_brightness()) << endl;
+  cout << format("color = {}", color::from_argb(255, 0, 0, 255)) << endl;
+  cout << format("color = {}", color::from_argb(0, 0, 255)) << endl;
+  cout << format("color = {}", color::from_argb(0xFF0000FF)) << endl;
+  cout << format("color = {}", color::from_hsb(240, 1, 1)) << endl;
+  cout << format("color = {}", color::from_known_color(known_color::blue)) << endl;
+  cout << format("color = {}", color::from_name("blue")) << endl;
+  cout << format("color = {{hue={}, saturation={}, brightness={}}}", color::from_name("blue").get_hue(), color::from_name("blue").get_saturation(), color::from_name("blue").get_brightness()) << endl;
 }
