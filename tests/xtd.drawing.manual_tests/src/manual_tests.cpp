@@ -11,10 +11,10 @@ int main() {
     //if (kc != known_color::blue) continue;
     color c = color::from_known_color(kc);
     cout << strings::format("") << endl;
-    cout << strings::format("    void test_method_(create_from_know_color_{}) {{", c.name()) << endl;
-    cout << strings::format("      color c = color::from_known_color(known_color::{});", c.name()) << endl;
+    cout << strings::format("    void test_method_(create_from_name_{}) {{", c.name()) << endl;
+    cout << strings::format("      color c = color::from_name(\"{}\");", c.name()) << endl;
     cout << strings::format("") << endl;
-    cout << strings::format("      assert::are_equal(color::from_known_color(known_color::{}), c);", c.name()) << endl;
+    cout << strings::format("      assert::are_equal(color::from_name(\"{}\"), c);", c.name()) << endl;
     cout << strings::format("      assert::are_not_equal(color(), c);") << endl;
     cout << strings::format("      assert::are_not_equal(color::empty, c);") << endl;
     cout << strings::format("") << endl;
