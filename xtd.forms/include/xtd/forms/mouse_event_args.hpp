@@ -13,7 +13,7 @@ namespace xtd {
       mouse_event_args() = default;
       
       mouse_event_args(mouse_buttons button, const drawing::point& location, int32_t clicks, int32_t delta) : button_(button), location_(location), clicks_(clicks), delta_(delta) {}
-      mouse_event_args(mouse_buttons button, int32_t x, int32_t y, int32_t clicks, int32_t delta) : button_(button), location_({x, y}), clicks_(clicks), delta_(delta) {}
+      mouse_event_args(mouse_buttons button, int32_t x, int32_t y, int32_t clicks, int32_t delta) : button_(button), location_(x, y), clicks_(clicks), delta_(delta) {}
       
       /// @cond
       mouse_event_args(const mouse_event_args& mouse_event_args) = default;
