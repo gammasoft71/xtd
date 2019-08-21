@@ -280,12 +280,8 @@ known_color color::to_known_color() const {
 }
 
 string color::to_string() const {
-  if (this->known_color_ == (known_color)0 && this->argb_ == 0 && this->handle_ == 0)
-    return "color [empty]";
-  
-  if (this->known_color_ != (known_color)0 || this->argb_ == 0)
-    return strings::format("color [{0}]", name());
-  
+  if (this->empty_) return "color [empty]";
+  if (this->name_ != strings::format("{:X8}", this->argb_) && this->name_ != "0") return strings::format("color [{0}]", name());
   return strings::format("color [a={}, r={}, g={}, b={}]", a(), r(), g(), b());
 }
 
