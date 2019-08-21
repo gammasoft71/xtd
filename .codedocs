@@ -24,12 +24,7 @@ DOXYFILE = .doxygen.txt
 #   TAGLINKS = doxygen/doxygen CodeDocs/osg
 # Note: these repositories must already be built on CodeDocs.
 
-TAGLINKS = gammasoft71/xtd.console \
-           gammasoft71/xtd.delegates \
-           gammasoft71/xtd.io \
-           gammasoft71/xtd.properties \
-           gammasoft71/xtd.strings \
-           gammasoft71/xtd.tunit
+TAGLINKS = gammasoft71/xtd.console gammasoft71/xtd.delegates gammasoft71/xtd.diagnostics gammasoft71/xtd.io gammasoft71/xtd.properties gammasoft71/xtd.strings gammasoft71/xtd.tunit
 
 #---------------------------------------------------------------------------
 # Doxygen Configuration
