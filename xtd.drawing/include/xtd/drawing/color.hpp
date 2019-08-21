@@ -538,7 +538,7 @@ namespace xtd {
        
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created by using either the FromName method or the FromKnownColor method; otherwise, false.
-      bool is_named_color() const {return this->known_color_ != (xtd::drawing::known_color)0;}
+      bool is_named_color() const {return this->name_ != strings::format("{:X8}", this->argb_) && this->name_ != "0";}
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the FromName method or the FromKnownColor method; otherwise, false.
@@ -577,7 +577,6 @@ namespace xtd {
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
       /// @param baseColor The xtd::drawing::color from which to create the new xtd::drawing::color.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       static xtd::drawing::color from_argb(uint8_t alpha, const xtd::drawing::color& baseColor);
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
@@ -586,15 +585,42 @@ namespace xtd {
       /// @param green The green component. Valid values are 0 through 255.
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:<br><br>
+      /// * Creates three brushes, each a different color. Each Color structure that is used to create a brush is created from four component values (alpha, red, green, blue).
+      /// * Uses an imaginary triangle to position three circles.
+      /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
+      /// @code
+      /// public:
+      ///   void from_argb1(paint_event_args& e) {
+      ///     graphics& g = e.graphics();
+      ///
+      ///     // Transparent red, green, and blue brushes.
+      ///     solid_brush trns_red_brush(color::from_argb(120, 255, 0, 0));
+      ///     solid_brush trns_green_brush(color::from_argb(120, 0, 255, 0));
+      ///     solid_brush trns_blue_brush(color::from_argb(120, 0, 0, 255));
+      ///
+      ///     // Base and height of the triangle that is used to position the circles. Each vertex of the triangle is at the center of one of the 3 circles. The base is equal to the diameter of the circles.
+      ///     float tri_base = 100;
+      ///     float tri_height = std::sqrt(3 * (tri_base * tri_base) / 4);
+      ///
+      ///     // Coordinates of first circle's bounding rectangle.
+      ///     float x1 = 40;
+      ///     float y1 = 40;
+      ///
+      ///     // Fill 3 over-lapping circles. Each circle is a different color.
+      ///     g.fill_ellipse(trns_red_brush, x1, y1, 2 * tri_height, 2 * tri_height);
+      ///     g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
+      ///     g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
+      ///   }
+      /// @endcode
       static xtd::drawing::color from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue);
       
-      /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
+      /// @brief Creates a xtd::drawing::color structure from the specified 8-bit color values (red, green, and blue). The alpha value is implicitly 255 (fully opaque). Although this method allows a 32-bit value to be passed for each color component, the value of each component is limited to 8 bits.
       /// @param red The red component. Valid values are 0 through 255.
       /// @param green The green component. Valid values are 0 through 255.
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
       static xtd::drawing::color from_argb(uint8_t red, uint8_t green, uint8_t blue);
 
       /// @brief Creates a xtd::drawing::color class from native handle.
@@ -615,14 +641,27 @@ namespace xtd {
       /// @param green The green component. Valid values are 0 through 255.
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      /// @exception ArgumentException alpha is less than 0 or greater than 255.
-      /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
+      /// @exception std::invalid_argument color is not a known_color.
       static xtd::drawing::color from_known_color(xtd::drawing::known_color color);
       
       /// @brief Creates a xtd::drawing::color class from the specified name of a predefined color.
       /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. If the name parameter is not the valid name of a predefined color, the FromName method creates a xtd::drawing::color structure that has an ARGB value of 0 (that is, all ARGB components are 0).
+      /// @par Examples
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
+      /// @code
+      /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
+      ///   color slate_blue = xtd::drawing::color::from_name("slate blue");
+      ///   byte g = slate_blue.g();
+      ///   byte b = slate_blue.b();
+      ///   byte r = slate_blue.r();
+      ///   byte a = slate_blue.a();
+      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
+      /// }
+      /// @endcode
       static xtd::drawing::color from_name(const std::string& name);
       
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
@@ -792,7 +831,7 @@ namespace xtd {
       /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. When the ToKnownColor method is applied to a xtd::drawing::color structure that is created by using the FromArgb method, ToKnownColor returns 0, even if the ARGB value matches the ARGB value of a predefined color. ToKnownColor also returns 0 when it is applied to a xtd::drawing::color structure that is created by using the FromName method with a string name that is not valid.
       xtd::drawing::known_color to_known_color() const;
       
-      /// @brief reates a human-readable string that represents this Size class.
+      /// @brief reates a human-readable string that represents this color class.
       /// @return string A string that represents this Size.
       std::string to_string() const;
       
