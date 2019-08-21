@@ -16,6 +16,21 @@
 
 For more information see [Documentation](docs).
 
+# Libraries
+
+| Github                                                                                                                                                                         | Reference guide                                                      |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| [![xtd_console_logo](Docs/Pictures/xtd.console.png)](https://github.com/gammasoft71/xtd.console) [xtd.console](https://github.com/gammasoft71/xtd.console)                     | [xtd.console](https://codedocs.xyz/gammasoft71/xtd.console/)         |
+| [![xtd_delegates_logo](Docs/Pictures/xtd.delegates.png)](https://github.com/gammasoft71/xtd.delegates) [xtd.delegates](https://github.com/gammasoft71/xtd.delegates)           | [xtd.delegates](https://codedocs.xyz/gammasoft71/xtd.delegates/)     |
+| [![xtd_diagnostics_logo](Docs/Pictures/xtd.diagnostics.png)](https://github.com/gammasoft71/xtd.diagnostics) [xtd.diagnostics](https://github.com/gammasoft71/xtd.diagnostics) | [xtd.diagnostics](https://codedocs.xyz/gammasoft71/xtd.diagnostics/) |
+| [![xtd_drawing_logo](Docs/Pictures/xtd.drawing.png)](https://github.com/gammasoft71/xtd.drawing) [xtd.drawing](https://github.com/gammasoft71/xtd.drawing)                     | [xtd.drawing](https://codedocs.xyz/gammasoft71/xtd.drawing/)         |
+| [![xtd_environment_logo](Docs/Pictures/xtd.environment.png)](https://github.com/gammasoft71/xtd.environment) [xtd.environment](https://github.com/gammasoft71/xtd.environment) | [xtd.environment](https://codedocs.xyz/gammasoft71/xtd.environment/) |
+| [![xtd_forms_logo](Docs/Pictures/xtd.forms.png)](https://github.com/gammasoft71/xtd.forms) [xtd.forms](https://github.com/gammasoft71/xtd.forms)                               | [xtd.forms](https://codedocs.xyz/gammasoft71/xtd.forms/)             |
+| [![xtd_io_logo](Docs/Pictures/xtd.io.png)](https://github.com/gammasoft71/xtd.io) [xtd.io](https://github.com/gammasoft71/xtd.io)                                              | [xtd.io](https://codedocs.xyz/gammasoft71/xtd.io/)                   |
+| [![xtd_properties_logo](Docs/Pictures/xtd.properties.png)](https://github.com/gammasoft71/xtd.properties) [xtd.properties](https://github.com/gammasoft71/xtd.properties)      | [xtd.properties](https://codedocs.xyz/gammasoft71/xtd.properties/)   |
+| [![xtd_strings_logo](Docs/Pictures/xtd.strings.png)](https://github.com/gammasoft71/xtd.strings) [xtd.strings](https://github.com/gammasoft71/xtd.strings)                     | [xtd.strings](https://codedocs.xyz/gammasoft71/xtd.strings/)         |
+| [![xtd_tunit_logo](Docs/Pictures/xtd.tunit.png)](https://github.com/gammasoft71/xtd.tunit) [xtd.tunit](https://github.com/gammasoft71/xtd.tunit)                               | [xtd.tunit](https://codedocs.xyz/gammasoft71/xtd.tunit/)             |
+
 # Examples
 
 The classic first application 'Hello World'.
