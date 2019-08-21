@@ -12,7 +12,7 @@ namespace xtd {
     /// @remarks Named colors are represented by using the properties of the xtd::drawing::color structure. For more information about these colors, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">see Colors by Name</a>.
     /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). Each of the four components is a number from 0 through 255, with 0 representing no intensity and 255 representing full intensity. The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. To determine the alpha, red, green, or blue component of a color, use the A, R, G, or B property, respectively. You can create a custom color by using one of the from_argb methods
     /// @par Examples
-    /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+    /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
     /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
     /// @code
     /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -470,7 +470,7 @@ namespace xtd {
       /// @return byte The alpha component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -489,7 +489,7 @@ namespace xtd {
       /// @return byte The blue component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -508,7 +508,7 @@ namespace xtd {
       /// @return byte The green component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -552,7 +552,7 @@ namespace xtd {
       /// @return byte The red component value of this xtd::drawing::color.
       /// @remarks The color of each pixel is represented as a 32-bit number: 8 bits each for alpha, red, green, and blue (ARGB). The alpha component specifies the transparency of the color: 0 is fully transparent, and 255 is fully opaque. Likewise, an A value of 255 represents an opaque color. An A value from 1 through 254 represents a semitransparent color. The color becomes more opaque as A approaches 255.
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
@@ -586,7 +586,7 @@ namespace xtd {
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:<br><br>
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:<br>
       /// * Creates three brushes, each a different color. Each Color structure that is used to create a brush is created from four component values (alpha, red, green, blue).
       /// * Uses an imaginary triangle to position three circles.
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
@@ -649,7 +649,7 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @remarks A predefined color is also called a known color and is represented by an element of the xtd::drawing::known_color enumeration. If the name parameter is not the valid name of a predefined color, the FromName method creates a xtd::drawing::color structure that has an ARGB value of 0 (that is, all ARGB components are 0).
       /// @par Examples
-      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br><br>
+      /// The following code example demonstrates the A, R, G, and B properties of a xtd::drawing::color, and the Implicit(size to size_f) member.<br>
       /// This example is designed to be used with a Windows Form (xtd::forms). Paste the code into the form and call the show_properties_of_slate_blue method from the form's paint event-handling method, passing e as paint_event_args.
       /// @code
       /// void show_properties_of_slate_blue(xtd::forms::paint_event_args& e) {
