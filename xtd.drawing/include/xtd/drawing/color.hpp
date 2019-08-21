@@ -577,28 +577,27 @@ namespace xtd {
       /// * Uses an imaginary triangle to position three circles.
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
       /// @code
-      /// public:
-      ///   void from_argb1(paint_event_args& e) {
-      ///     graphics& g = e.graphics();
+      /// void from_argb1(paint_event_args& e) {
+      ///   graphics& g = e.graphics();
       ///
-      ///     // Transparent red, green, and blue brushes.
-      ///     solid_brush trns_red_brush(color::from_argb(0x78FF0000));
-      ///     solid_brush trns_green_brush(color::from_argb(0x7800FF00));
-      ///     solid_brush trns_blue_brush(color::from_argb(0x780000FF));
+      ///   // Transparent red, green, and blue brushes.
+      ///   solid_brush trns_red_brush(color::from_argb(0x78FF0000));
+      ///   solid_brush trns_green_brush(color::from_argb(0x7800FF00));
+      ///   solid_brush trns_blue_brush(color::from_argb(0x780000FF));
       ///
-      ///     // Base and height of the triangle that is used to position the circles. Each vertex of the triangle is at the center of one of the 3 circles. The base is equal to the diameter of the circles.
-      ///     float tri_base = 100;
-      ///     float tri_height = std::sqrt(3 * (tri_base * tri_base) / 4);
+      ///   // Base and height of the triangle that is used to position the circles. Each vertex of the triangle is at the center of one of the 3 circles. The base is equal to the diameter of the circles.
+      ///   float tri_base = 100;
+      ///   float tri_height = std::sqrt(3 * (tri_base * tri_base) / 4);
       ///
-      ///     // Coordinates of first circle's bounding rectangle.
-      ///     float x1 = 40;
-      ///     float y1 = 40;
+      ///   // Coordinates of first circle's bounding rectangle.
+      ///   float x1 = 40;
+      ///   float y1 = 40;
       ///
-      ///     // Fill 3 over-lapping circles. Each circle is a different color.
-      ///     g.fill_ellipse(trns_red_brush, x1, y1, 2 * tri_height, 2 * tri_height);
-      ///     g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
-      ///     g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
-      ///   }
+      ///   // Fill 3 over-lapping circles. Each circle is a different color.
+      ///   g.fill_ellipse(trns_red_brush, x1, y1, 2 * tri_height, 2 * tri_height);
+      ///   g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
+      ///   g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
+      /// }
       /// @endcode
       static xtd::drawing::color from_argb(uint32_t argb);
       
@@ -606,6 +605,65 @@ namespace xtd {
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
       /// @param baseColor The xtd::drawing::color from which to create the new xtd::drawing::color.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// * Creates Color structures from the three color component values (red, green, blue). Three Color structures are created, one for each primary color.
+      /// * Iterates through a range of alpha values, changing the alpha value of a color.
+      /// * During each iteration, sets the color of a brush to the modified color and paints a rectangle to show the color.
+      /// * Repeats steps 2 and 3 for each primary color.
+      /// The alpha value is never fully opaque and the rectangles overlap so you get color-combination effects.
+      /// @code
+      /// void from_argb2(paint_event_aArgs& e) {
+      ///   graphics& g = e.graphics();
+      ///
+      ///   // Opaque colors (alpha value defaults to 255 -- max value).
+      ///   color red = color::from_argb(255, 0, 0);
+      ///   color green = color::from_argb(0, 255, 0);
+      ///   color blue = color::from_argb(0, 0, 255);
+      ///
+      ///   // Solid brush initialized to red.
+      ///   solid_brush my_brush(red);
+      ///   int alpha;
+      ///
+      ///   // x coordinate of first red rectangle
+      ///   int x = 50;
+      ///
+      ///   // y coordinate of first red rectangle
+      ///   int y = 50;
+      ///
+      ///   // Fill rectangles with red, varying the alpha value from 25 to 250.
+      ///   for (alpha = 25; alpha <= 250; alpha += 25) {
+      ///     my_brush.color(color::from_argb(alpha, red));
+      ///     g.fill_rectangle(my_brush, x, y, 50, 100);
+      ///     g.fill_rectangle(my_brush, x, y + 250, 50, 50);
+      ///     x += 50;
+      ///   }
+      ///   // x coordinate of first green rectangle.
+      ///   x = 50;
+      ///
+      ///   // y coordinate of first green rectangle.
+      ///   y += 50;
+      ///
+      ///   // Fill rectangles with green, varying the alpha value from 25 to 250.
+      ///   for (alpha = 25; alpha <= 250; alpha += 25) {
+      ///     my_brush.color(color::from_argb(alpha, green));
+      ///     g.fill_rectangle(my_brush, x, y, 50, 150);
+      ///     x += 50;
+      ///   }
+      ///   // x coordinate of first blue rectangle.
+      ///   x = 50;
+      ///
+      ///   // y coordinate of first blue rectangle.
+      ///   y += 100;
+      ///
+      ///   // Fill rectangles with blue, varying the alpha value from 25 to 250.
+      ///   for (alpha = 25; alpha <= 250; alpha += 25) {
+      ///     my_brush.color(color::from_argb(alpha, blue));
+      ///     g.fill_rectangle(my_brush, x, y, 50, 150);
+      ///     x += 50;
+      ///   }
+      /// }
+      /// @endcode
       static xtd::drawing::color from_argb(uint8_t alpha, const xtd::drawing::color& baseColor);
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
@@ -620,28 +678,27 @@ namespace xtd {
       /// * Uses an imaginary triangle to position three circles.
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
       /// @code
-      /// public:
-      ///   void from_argb1(paint_event_args& e) {
-      ///     graphics& g = e.graphics();
+      /// void from_argb1(paint_event_args& e) {
+      ///   graphics& g = e.graphics();
       ///
-      ///     // Transparent red, green, and blue brushes.
-      ///     solid_brush trns_red_brush(color::from_argb(120, 255, 0, 0));
-      ///     solid_brush trns_green_brush(color::from_argb(120, 0, 255, 0));
-      ///     solid_brush trns_blue_brush(color::from_argb(120, 0, 0, 255));
+      ///   // Transparent red, green, and blue brushes.
+      ///   solid_brush trns_red_brush(color::from_argb(120, 255, 0, 0));
+      ///   solid_brush trns_green_brush(color::from_argb(120, 0, 255, 0));
+      ///   solid_brush trns_blue_brush(color::from_argb(120, 0, 0, 255));
       ///
-      ///     // Base and height of the triangle that is used to position the circles. Each vertex of the triangle is at the center of one of the 3 circles. The base is equal to the diameter of the circles.
-      ///     float tri_base = 100;
-      ///     float tri_height = std::sqrt(3 * (tri_base * tri_base) / 4);
+      ///   // Base and height of the triangle that is used to position the circles. Each vertex of the triangle is at the center of one of the 3 circles. The base is equal to the diameter of the circles.
+      ///   float tri_base = 100;
+      ///   float tri_height = std::sqrt(3 * (tri_base * tri_base) / 4);
       ///
-      ///     // Coordinates of first circle's bounding rectangle.
-      ///     float x1 = 40;
-      ///     float y1 = 40;
+      ///   // Coordinates of first circle's bounding rectangle.
+      ///   float x1 = 40;
+      ///   float y1 = 40;
       ///
-      ///     // Fill 3 over-lapping circles. Each circle is a different color.
-      ///     g.fill_ellipse(trns_red_brush, x1, y1, 2 * tri_height, 2 * tri_height);
-      ///     g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
-      ///     g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
-      ///   }
+      ///   // Fill 3 over-lapping circles. Each circle is a different color.
+      ///   g.fill_ellipse(trns_red_brush, x1, y1, 2 * tri_height, 2 * tri_height);
+      ///   g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
+      ///   g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
+      /// }
       /// @endcode
       static xtd::drawing::color from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue);
       
@@ -650,6 +707,65 @@ namespace xtd {
       /// @param green The green component. Valid values are 0 through 255.
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// * Creates Color structures from the three color component values (red, green, blue). Three Color structures are created, one for each primary color.
+      /// * Iterates through a range of alpha values, changing the alpha value of a color.
+      /// * During each iteration, sets the color of a brush to the modified color and paints a rectangle to show the color.
+      /// * Repeats steps 2 and 3 for each primary color.
+      /// The alpha value is never fully opaque and the rectangles overlap so you get color-combination effects.
+      /// @code
+      /// void from_argb2(paint_event_aArgs& e) {
+      ///   graphics& g = e.graphics();
+      ///
+      ///   // Opaque colors (alpha value defaults to 255 -- max value).
+      ///   color red = color::from_argb(255, 0, 0);
+      ///   color green = color::from_argb(0, 255, 0);
+      ///   color blue = color::from_argb(0, 0, 255);
+      ///
+      ///   // Solid brush initialized to red.
+      ///   solid_brush my_brush(red);
+      ///   int alpha;
+      ///
+      ///   // x coordinate of first red rectangle
+      ///   int x = 50;
+      ///
+      ///   // y coordinate of first red rectangle
+      ///   int y = 50;
+      ///
+      ///   // Fill rectangles with red, varying the alpha value from 25 to 250.
+      ///   for (alpha = 25; alpha <= 250; alpha += 25) {
+      ///     my_brush.color(color::from_argb(alpha, red));
+      ///     g.fill_rectangle(my_brush, x, y, 50, 100);
+      ///     g.fill_rectangle(my_brush, x, y + 250, 50, 50);
+      ///     x += 50;
+      ///   }
+      ///   // x coordinate of first green rectangle.
+      ///   x = 50;
+      ///
+      ///   // y coordinate of first green rectangle.
+      ///   y += 50;
+      ///
+      ///   // Fill rectangles with green, varying the alpha value from 25 to 250.
+      ///   for (alpha = 25; alpha <= 250; alpha += 25) {
+      ///     my_brush.color(color::from_argb(alpha, green));
+      ///     g.fill_rectangle(my_brush, x, y, 50, 150);
+      ///     x += 50;
+      ///   }
+      ///   // x coordinate of first blue rectangle.
+      ///   x = 50;
+      ///
+      ///   // y coordinate of first blue rectangle.
+      ///   y += 100;
+      ///
+      ///   // Fill rectangles with blue, varying the alpha value from 25 to 250.
+      ///   for (alpha = 25; alpha <= 250; alpha += 25) {
+      ///     my_brush.color(color::from_argb(alpha, blue));
+      ///     g.fill_rectangle(my_brush, x, y, 50, 150);
+      ///     x += 50;
+      ///   }
+      /// }
+      /// @endcode
       static xtd::drawing::color from_argb(uint8_t red, uint8_t green, uint8_t blue);
 
       /// @brief Creates a xtd::drawing::color class from native handle.
@@ -671,6 +787,53 @@ namespace xtd {
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @exception std::invalid_argument color is not a known_color.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// @code
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics& g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_brightness() == red_shade.get_brightness())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// @endcode
       static xtd::drawing::color from_known_color(xtd::drawing::known_color color);
       
       /// @brief Creates a xtd::drawing::color class from the specified name of a predefined color.
@@ -853,6 +1016,53 @@ namespace xtd {
       /// @brief Gets the 32-bit ARGB value of this xtd::drawing::color class.
       /// @return int The 32-bit ARGB value of this xtd::drawing::color.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// @code
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics& g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_brightness() == red_shade.get_brightness())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// @endcode
       uint32_t to_argb() const;
       
       /// @brief Gets the xtd::drawing::known_color value of this xtd::drawing::color class.
@@ -862,6 +1072,53 @@ namespace xtd {
       
       /// @brief reates a human-readable string that represents this color class.
       /// @return string A string that represents this Size.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
+      /// * Iterates through the xtd::drawing::known_color enumeration elements to find all known colors that have the same lightness as redShade. The iterations are terminated when 15 matches are found or the value of the loop counter is greater than the last xtd::drawing::known_color element.
+      /// * During each iteration, saves the xtd::drawing::known_color element—if it matches the criteria—in an array.
+      /// * Uses a brush to paint rectangles.
+      /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
+      /// @code
+      /// void known_color_brightness_example2(paint_event_args& e) {
+      ///   graphics& g = e.graphics();
+      ///
+      ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
+      ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
+      ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
+      ///
+      ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
+      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///
+      ///   // Number of matches found.
+      ///   int count = 0;
+      ///
+      ///   // Iterate through the xtd::drawing::known_color enums until 15 matches are found.
+      ///   for (xtd::drawing::known_color enum_value = 0; enum_value <= xtd::drawing::known_color::yellow_green && count < 15; enum_value = known_color(int(enum_value) + 1)) {
+      ///     some_color = xtd::drawing::color::from_known_color(enum_value);
+      ///     if (some_color.get_brightness() == red_shade.get_brightness())
+      ///       color_matches[count++] = enum_value;
+      ///   }
+      ///
+      ///   // Display the redShade color and its argb value.
+      ///   solid_brush  my_brush1(red_shade);
+      ///   font my_font("Arial", 12);
+      ///   int x = 20;
+      ///   int y = 20;
+      ///   some_color = red_shade;
+      ///   g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///   g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///
+      ///   // Iterate through the matches that were found and display each color that corresponds with the enum value in the array. also display the name of the xtd::drawing::known_color.
+      ///   for (int i = 0; i < count; i++) {
+      ///     y += 40;
+      ///     some_color = xtd::drawing::color::from_known_color(color_matches[i]);
+      ///     my_brush1.xtd::drawing::color = some_color;
+      ///     g.fill_rectangle(my_brush1, x, y, 100, 30);
+      ///     g.draw_string(some_color.to_string(), my_font, brushes::black, x + 120, y);
+      ///   }
+      /// }
+      /// @endcode
       std::string to_string() const;
       
     private:
