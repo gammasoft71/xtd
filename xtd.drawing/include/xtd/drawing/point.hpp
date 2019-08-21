@@ -13,7 +13,7 @@ namespace xtd {
     /// @endcond
 
     /// @brief Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional plane.
-    /// @remarks To convert a Point to a PointF, use Implicit cast operator.
+    /// @remarks To convert a point to a point_f, use Implicit cast operator.
     /// @par Examples
     ///
     /// @code
@@ -40,11 +40,11 @@ namespace xtd {
       /// @brief Represents a point that has x and y values set to zero.
       static const point empty;
       
-      /// @brief Initializes a new instance of the Point class
+      /// @brief Initializes a new instance of the point class
       /// @remarks x and y values are set to zero.
       point() = default;
       
-      /// @brief nitializes a new instance of the Point class using coordinates specified by an integer value.
+      /// @brief nitializes a new instance of the point class using coordinates specified by an integer value.
       /// @param dx A 32-bit integer that specifies the coordinates for the new point.
       /// @remarks The low-order 16 bits of the dw parameter specify the horizontal x-coordinate and the higher 16 bits specify the vertical y-coordinate for the new point.
       /// @par Examples
@@ -68,20 +68,20 @@ namespace xtd {
       /// @endcode
       explicit point(int32_t dw) : x_(dw & 0x0000FFFF), y_((dw & 0xFFFF0000)>>16) {}
 
-      /// @brief Initializes a new instance of the Point class with the specified coordinates.
+      /// @brief Initializes a new instance of the point class with the specified coordinates.
       /// @param x The horizontal position of the point.
       /// @param y The vertical position of the point.
       /// @par Examples
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
       /// void button1_Click(const control& sender, const event_args& e) {
-      ///   // Construct a new Point with integers.
+      ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
       ///   graphics form_graphics = this->create_graphics();
       ///
-      ///   // Construct another Point, this time using a Size.
+      ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
@@ -98,13 +98,13 @@ namespace xtd {
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
       /// void button1_Click(const control& sender, const event_args& e) {
-      ///   // Construct a new Point with integers.
+      ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
       ///   graphics form_graphics = this->create_graphics();
       ///
-      ///   // Construct another Point, this time using a Size.
+      ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
@@ -121,7 +121,7 @@ namespace xtd {
       operator point_f() {return point_f(this->x_, this->y_);}
       /// @endcond
       
-      /// @brief Gets a value indicating whether this Point is empty.
+      /// @brief Gets a value indicating whether this point is empty.
       /// @return true if both X and Y are 0; otherwise, false.
       bool is_empty() const {return *this == point::empty;}
 
@@ -131,13 +131,13 @@ namespace xtd {
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
       /// void button1_Click(const control& sender, const event_args& e) {
-      ///   // Construct a new Point with integers.
+      ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
       ///   graphics form_graphics = this->create_graphics();
       ///
-      ///   // Construct another Point, this time using a Size.
+      ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
@@ -154,13 +154,13 @@ namespace xtd {
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
       /// void button1_Click(const control& sender, const event_args& e) {
-      ///   // Construct a new Point with integers.
+      ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
       ///   graphics form_graphics = this->create_graphics();
       ///
-      ///   // Construct another Point, this time using a Size.
+      ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
@@ -177,13 +177,13 @@ namespace xtd {
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
       /// void button1_Click(const control& sender, const event_args& e) {
-      ///   // Construct a new Point with integers.
+      ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
       ///   graphics form_graphics = this->create_graphics();
       ///
-      ///   // Construct another Point, this time using a Size.
+      ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
@@ -200,13 +200,13 @@ namespace xtd {
       /// The following code example demonstrates how to use the Equality operator and how to construct a point from a size or two integers. It also demonstrates how to use the x and y properties. This example is designed to be used with Windows Forms (xtd.forms). Paste the code into a form that contains a button named button1, and associate the button1_click method with the button's click event.
       /// @code
       /// void button1_Click(const control& sender, const event_args& e) {
-      ///   // Construct a new Point with integers.
+      ///   // Construct a new point with integers.
       ///   point point1(100, 100);
       ///
       ///   // Create a Graphics object.
       ///   graphics form_graphics = this->create_graphics();
       ///
-      ///   // Construct another Point, this time using a Size.
+      ///   // Construct another point, this time using a Size.
       ///   point point2(size(100, 100));
       ///
       ///   // Call the equality operator to see if the points are equal, and if so print out their x and y values.
@@ -250,7 +250,7 @@ namespace xtd {
       /// @param p The point used offset this point.
       /// @remarks This method adjusts the x and y values of this point to the sum of the x and y values of this point and p.
       /// @par Examples
-      /// The following example shows how to use the Offset method. To run this example, paste it into a Windows Form. Handle the form's Paint event and call the OffsetPoint method from the Paint event-handling method, passing e as PaintEventArgs.
+      /// The following example shows how to use the Offset method. To run this example, paste it into a Windows Form. Handle the form's Paint event and call the Offsetpoint method from the Paint event-handling method, passing e as PaintEventArgs.
       /// @code
       /// void offset_point(paint_event_args& e) {
       ///   point point1(10, 10);
@@ -266,7 +266,7 @@ namespace xtd {
       /// @return The point this method converts to.
       static point round(const point_f& value);
 
-      /// @brief Returns the result of subtracting specified Size from the specified Point.
+      /// @brief Returns the result of subtracting specified Size from the specified point.
       /// @param pt The point to be subtracted from.
       /// @param sz The size to subtract from the point.
       /// @return The point that is the result of the subtraction operation.
