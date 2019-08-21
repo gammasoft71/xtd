@@ -571,6 +571,35 @@ namespace xtd {
       /// @param argb A value specifying the 32-bit ARGB value
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @remarks The byte-ordering of the 32-bit ARGB value is AARRGGBB. The most significant byte (MSB), represented by AA, is the alpha component value. The second, third, and fourth bytes, represented by RR, GG, and BB, respectively, are the color components red, green, and blue, respectively.
+      /// @par Examples
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:
+      /// * Creates three brushes, each a different color. Each Color structure that is used to create a brush is created from four component values (alpha, red, green, blue).
+      /// * Uses an imaginary triangle to position three circles.
+      /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
+      /// @code
+      /// public:
+      ///   void from_argb1(paint_event_args& e) {
+      ///     graphics& g = e.graphics();
+      ///
+      ///     // Transparent red, green, and blue brushes.
+      ///     solid_brush trns_red_brush(color::from_argb(0x78FF0000));
+      ///     solid_brush trns_green_brush(color::from_argb(0x7800FF00));
+      ///     solid_brush trns_blue_brush(color::from_argb(0x780000FF));
+      ///
+      ///     // Base and height of the triangle that is used to position the circles. Each vertex of the triangle is at the center of one of the 3 circles. The base is equal to the diameter of the circles.
+      ///     float tri_base = 100;
+      ///     float tri_height = std::sqrt(3 * (tri_base * tri_base) / 4);
+      ///
+      ///     // Coordinates of first circle's bounding rectangle.
+      ///     float x1 = 40;
+      ///     float y1 = 40;
+      ///
+      ///     // Fill 3 over-lapping circles. Each circle is a different color.
+      ///     g.fill_ellipse(trns_red_brush, x1, y1, 2 * tri_height, 2 * tri_height);
+      ///     g.fill_ellipse(trns_green_brush, x1 + tri_base / 2, y1 + tri_height, 2 * tri_height, 2 * tri_height);
+      ///     g.fill_ellipse(trns_blue_brush, x1 + tri_base, y1, 2 * tri_height, 2 * tri_height);
+      ///   }
+      /// @endcode
       static xtd::drawing::color from_argb(uint32_t argb);
       
       /// @brief Creates a xtd::drawing::color class from the specified xtd::drawing::color structure, but with the new specified alpha value. Although this method allows a 32-bit value to be passed for the alpha value, the value is limited to 8 bits.
@@ -586,7 +615,7 @@ namespace xtd {
       /// @param blue The blue component. Valid values are 0 through 255.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       /// @par Examples
-      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:<br>
+      /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgs e, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates three brushes, each a different color. Each Color structure that is used to create a brush is created from four component values (alpha, red, green, blue).
       /// * Uses an imaginary triangle to position three circles.
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
