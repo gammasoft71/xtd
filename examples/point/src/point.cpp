@@ -13,8 +13,8 @@ int main() {
   location.y(location.y() - 15);
   cout << format("location = {}", location) << endl;
   
-  //location = point(10, 10) + size(20, 50);
-  //cout << format("location = {}", location) << endl;
+  location = point(10, 10) + drawing::size(20, 50);
+  cout << format("location = {}", location) << endl;
   
   location.offset({70, 140});
   cout << format("location = {}", location) << endl;
