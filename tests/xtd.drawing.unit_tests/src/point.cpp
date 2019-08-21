@@ -96,10 +96,30 @@ namespace unit_tests {
       assert::are_equal(point(4, 6), point::add({1, 2}, {3, 4}));
     }
     
+    void test_method_(operator_plus_size) {
+      assert::are_equal(point(4, 6), point(1, 2) + size(3, 4));
+    }
+    
+    void test_method_(operator_plus_equal_size) {
+      point p(1, 2);
+      p += size(3, 4);
+      assert::are_equal(point(4, 6), p);
+    }
+
     void test_method_(subtract_size) {
       assert::are_equal(point(2, 3), point::subtract({3, 5}, {1, 2}));
     }
     
+    void test_method_(operator_minus_size) {
+      assert::are_equal(point(2, 3), point(3, 5) - size(1, 2));
+    }
+    
+    void test_method_(operator_minus_equal_size) {
+      point p(3, 5);
+      p -= size(1, 2);
+      assert::are_equal(point(2, 3), p);
+    }
+
     void test_method_(to_string) {
       point p(1, 2);
       assert::are_equal("{x=1, y=2}", p.to_string());
