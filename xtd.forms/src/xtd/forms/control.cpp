@@ -1,5 +1,6 @@
 #include <iostream>
 #include <xtd/xtd.diagnostics>
+#include <xtd/xtd.environment>
 #include <xtd/xtd.strings>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
