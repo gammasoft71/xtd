@@ -170,14 +170,19 @@ control& control::visible(bool visible) {
 
 void control::create_control() {
   if (!this->handle_) {
+    cdebug << "Create handle" << endl;
     this->create_handle();
+    cdebug << "Send message" << endl;
     this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
+    cdebug << "on create control" << endl;
     this->on_create_control();
   }
 }
 
 void control::create_handle() {
+  cdebug << "Native create handle" << endl;
   this->handle_ = native::control::create(this->create_params());
+  cdebug << "on handle created" << endl;
   this->on_handle_created(event_args::empty);
 }
 
