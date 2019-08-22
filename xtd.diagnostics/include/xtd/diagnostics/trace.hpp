@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::trace class.
 #pragma once
 #include <mutex>
-#include <xtd/xtd.environment>
 #include <xtd/xtd.io>
 #include "trace_listener_collection.hpp"
 
@@ -379,12 +378,11 @@ namespace xtd {
         for (auto listener : listeners_) {
           if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
           if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          static std::string source_name = xtd::io::path::get_file_name(xtd::environment::get_command_line_args()[0]);
           if (!listener->is_thread_safe() && use_global_lock_) {
             std::lock_guard<std::mutex> lock(global_lock_);
-            listener->trace_event(trace_event_cache(), source_name, trace_event_type, 0, message);
+            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
           } else {
-            listener->trace_event(trace_event_cache(), source_name, trace_event_type, 0, message);
+            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
           }
         }
         if (auto_flush_) flush();
@@ -397,12 +395,11 @@ namespace xtd {
         for (auto listener : listeners_) {
           if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
           if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
-          static std::string source_name = xtd::io::path::get_file_name(xtd::environment::get_command_line_args()[0]);
           if (!listener->is_thread_safe() && use_global_lock_) {
             std::lock_guard<std::mutex> lock(global_lock_);
-            listener->trace_event(trace_event_cache(), source_name, trace_event_type, 0, message, args...);
+            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message, args...);
           } else {
-            listener->trace_event(trace_event_cache(), source_name, trace_event_type, 0, message, args...);
+            listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message, args...);
           }
         }
         if (auto_flush_) flush();
@@ -416,6 +413,7 @@ namespace xtd {
       static trace_listener_collection& listeners_;
       static bool use_global_lock_;
       static std::mutex global_lock_;
+      static std::string source_name_;
     };
   }
 }
