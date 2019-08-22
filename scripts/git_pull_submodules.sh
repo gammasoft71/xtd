@@ -1,11 +1,11 @@
 #!/bin/bash
 
-declare -a submodules=("xtd.console" "xtd.delegates" "xtd.diagnostics" "xtd.drawing" "xtd.environment" "xtd.forms" "xtd.io" "xtd.properties" "xtd.strings" "xtd.tunit")
+git submodule update --init
 
-cd xtd.delegates
+declare -a submodules=("xtd.console" "xtd.delegates" "xtd.diagnostics" "xtd.drawing" "xtd.environment" "xtd.forms" "xtd.io" "xtd.properties" "xtd.strings" "xtd.tunit")
 
 for submodule in ${submodules[@]}; do
   cd $submodule
-  git pull
+  git pull origin master
   cd ..
 done
