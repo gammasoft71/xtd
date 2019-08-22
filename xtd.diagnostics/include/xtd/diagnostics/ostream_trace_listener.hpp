@@ -39,7 +39,7 @@ namespace xtd {
       using trace_listener::write_line;
       void write_line(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write(message + xtd::environment::new_line());
+        this->write(message + "\n");
          this->need_indent(true);
 #endif
       }
