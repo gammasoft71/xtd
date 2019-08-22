@@ -5,6 +5,9 @@
 ### tunit
 * xtd.tunit :
 
+### properties
+* xtd.properties : (xtd.tunit)
+
 ### core
 * xtd.delegates : (xtd.tunit)
 * xtd.io : (xtd.tunit)
