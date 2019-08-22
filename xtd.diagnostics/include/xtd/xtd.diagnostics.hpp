@@ -1,7 +1,6 @@
 /// @file
 /// @brief Contains xtd::strings class.
 #pragma once
-#include <xtd/xtd.environment>
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
 #include "diagnostics/cdebug.hpp"
