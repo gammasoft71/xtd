@@ -17,5 +17,5 @@
 
 ### winforms
 * xtd.drawing : xtd.strings (xtd.tunit)
-* xtd.forms : xtd.drawing xtd.strings (xtd.tunit)
+* xtd.forms : xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.io xtd.strings (xtd.tunit)
 
