@@ -22,6 +22,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class application;
+    class screen;
+    /// @endcond
+    
     class control {
     private:
       enum class state {
@@ -234,9 +239,9 @@ namespace xtd {
       
       event<control, event_handler<control>> visible_changed;
 
-      intptr_t __get_handle__() const {return this->handle_;}
-
     protected:
+      friend class application;
+      friend class screen;
       virtual forms::create_params create_params() const;
       
       virtual void def_wnd_proc(message& message);
