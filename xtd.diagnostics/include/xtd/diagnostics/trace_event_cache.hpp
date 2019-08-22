@@ -5,7 +5,6 @@
 #include <string>
 #include <thread>
 #include <vector>
-#include <xtd/xtd.environment>
 #include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -26,7 +25,8 @@ namespace xtd {
       /// @brief Gets the call stack for the current thread.
       /// @return string A string containing stack trace information. This value can be an empty string ("").
       /// @remarks The Callstack property gets the call stack from the StackTrace property of the Environment class. The property value lists method calls in reverse chronological order. That is, the most recent method call is described first. One line of stack trace information is listed for each method call on the stack. For more information, see StackTrace.
-      std::string call_stack() const {return xtd::environment::stack_trace();}
+       /// @todo Uncomment when stack_trace will implemented
+      std::string call_stack() const {return ""; /*stack_trace();*/}
       
       /// @brief Gets the date and time at which the event trace occurred.
       /// @return DateTime A DateTime structure whose value is a date and time expressed in Coordinated Universal Time (UTC).
