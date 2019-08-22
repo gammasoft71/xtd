@@ -222,7 +222,9 @@ namespace xtd {
       /// @param relatedActivityId A Guid object identifying a related activity.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The TraceTransfer method is used for the correlation of related traces. The TraceTransfer method calls the TraceEvent method to process the call, with the eventType level set to Transfer and the relatedActivityIdGuid as a string appended to the message.
-      virtual void trace_transfert(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, int id, const std::string& message, const xtd::guid& related_activity_id) {
+      /// @remarks activity_id_type is generaly a guid.
+      template<typename activity_id_type>
+      void trace_transfert(const xtd::diagnostics::trace_event_cache& event_cache, const std::string& source, int id, const std::string& message, const activity_id_type& related_activity_id) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         this->write_line(xtd::strings::format("{} transfert: {} : {}, related_activity_id={}", source, id, message, related_activity_id));
         this->write_event_cache(event_cache);

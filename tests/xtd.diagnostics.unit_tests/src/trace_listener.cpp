@@ -133,7 +133,7 @@ namespace unit_tests {
     
     void test_method_(trace_transfert) {
       unit_test_trace_listener trace_listener;
-      trace_listener.trace_transfert(xtd::diagnostics::trace_event_cache(), "source", 1, "message", xtd::guid(std::vector<unsigned char> {0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70, 0x80, 0x90, 0xA0, 0xB0, 0xC0, 0xD0, 0xE0, 0xF0, 0x01}));
+      trace_listener.trace_transfert(xtd::diagnostics::trace_event_cache(), "source", 1, "message", "10203040-5060-7080-90a0-b0c0d0e0f001");
       assert::are_equal_("source transfert: 1 : message, related_activity_id=10203040-5060-7080-90a0-b0c0d0e0f001\n", trace_listener.result());
     }
     
