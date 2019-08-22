@@ -176,7 +176,7 @@ void control::create_control() {
 }
 
 void control::create_handle() {
-  if (this->handle_ == 0) this->handle_ = native::control::create(this->create_params());
+  this->handle_ = native::control::create(this->create_params());
   this->on_handle_created(event_args::empty);
 }
 
@@ -214,7 +214,7 @@ forms::create_params control::create_params() const {
   
   create_params.caption(this->text_);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (this->parent_) create_params.parent(this->parent_->handle_);
+  if (this->parent_ != &control::null) create_params.parent(this->parent_->handle_);
   create_params.location(this->location_);
   create_params.size(this->size_);
 
