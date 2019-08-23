@@ -3,7 +3,7 @@
 	url = https://github.com/gammasoft71/xtd.delegates
 [submodule "xtd.diagnostics"]
 	path = xtd.diagnostics
-	url = https://github.com/gammasoft71/xtd.fiagnostics
+	url = https://github.com/gammasoft71/xtd.diagnostics
 [submodule "xtd.environment"]
 	path = xtd.environment
 	url = https://github.com/gammasoft71/xtd.environment
