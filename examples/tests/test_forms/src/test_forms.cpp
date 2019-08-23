@@ -4,6 +4,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
+  message_box::show("Invalid argument exception: Bad index value!", "Error", message_box_buttons::ok, message_box_icon::stop);
+
   form form;
   form.text("Test forms");
   
