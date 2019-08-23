@@ -24,7 +24,7 @@ namespace {
     }
 
     intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-      return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
+      return 0; //this->wnd_proc(hwnd, msg, wparam, lparam, handle);
     }
 
     event<wx_application, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
