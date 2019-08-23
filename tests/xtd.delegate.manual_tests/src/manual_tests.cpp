@@ -30,11 +30,16 @@ struct button : public control {
   virtual void on_click(const event_args& e) {this->click(*this, e);}
 };
 
+template <typename click_t>
+void add_method(button& b, click_t f) {
+  b.click += f;
+}
+
 // The main entry point for the application.
 int main() {
   button button1;
   
-  button1.text_changed += [&](const control& sender, const event_args& e)  {
+  button1.text_changed += [](const control& sender, const event_args& e)  {
     cout << "text_changed [text=" << sender.text() << "]" << endl;
   };
   
@@ -42,6 +47,8 @@ int main() {
     cout << "click" << endl;
   };
 
+  add_method(button1, [&](const control& sender, const event_args& e) {});
+  
   button1.text("button1");
   // click simulation
   button1.click_button();

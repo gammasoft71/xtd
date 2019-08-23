@@ -29,9 +29,6 @@ namespace xtd {
       this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
     }
     
-    template<typename fn_t>
-    delegate(fn_t function) noexcept { this->functions_.push_back(function); }
-
     result_t operator()() const {
       if (this->functions_.size() == 0) return result_t();
       
@@ -194,11 +191,6 @@ namespace xtd {
     }
 
     /// @cond
-    //template<typename fn_t>
-    //delegate(fn_t function) noexcept { this->functions_.push_back(function); }
-    
-    delegate(result_t (*function)(arguments_t...)) noexcept { this->functions_.push_back(function); }
-    
     template<typename object_t, typename a1_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t) const) noexcept {
       this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1)));
