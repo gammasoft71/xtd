@@ -9,34 +9,30 @@ using namespace xtd::forms::native;
 
 namespace {
   int32_t convert_to_dialog_result(int32_t wx_result, uint32_t style) {
-    int32_t dialog_result = IDOK;
     switch (wx_result) {
-      case wxID_OK: dialog_result = (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK; break;
-      case wxID_CANCEL: dialog_result = IDCANCEL; break;
-      case wxID_YES: dialog_result = (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES; break;
-      case wxID_NO: dialog_result = (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO; break;
-      default: break;
+      case wxID_OK: return (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK;
+      case wxID_CANCEL: return IDCANCEL;
+      case wxID_YES: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES;
+      case wxID_NO: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO;
     }
-    return dialog_result;
+    return IDOK;
   }
   
   int32_t convert_to_buttons(uint32_t style) {
-    int32_t buttons = wxOK;
-    if ((style & MB_OKCANCEL) == MB_OKCANCEL) buttons = wxOK | wxCANCEL;
-    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) buttons = wxYES_NO;
-    if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) buttons = wxYES_NO | wxCANCEL;
-    if ((style & MB_YESNO) == MB_YESNO) buttons = wxYES_NO;
-    if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) buttons = wxOK | wxCANCEL;
-    return buttons;
+    if ((style & MB_OKCANCEL) == MB_OKCANCEL)return wxOK | wxCANCEL;
+    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) return wxYES_NO;
+    if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) return wxYES_NO | wxCANCEL;
+    if ((style & MB_YESNO) == MB_YESNO) return wxYES_NO;
+    if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) return wxOK | wxCANCEL;
+    return wxOK;
   }
   
   int32_t convert_to_icon(uint32_t style) {
-    int32_t icon = wxICON_NONE;
-    if ((style & MB_ICONSTOP) == MB_ICONSTOP) icon = wxICON_STOP;
-    if ((style & MB_ICONQUESTION) == MB_ICONQUESTION) icon = wxICON_QUESTION;
-    if ((style & MB_ICONEXCLAMATION) == MB_ICONEXCLAMATION) icon = wxICON_EXCLAMATION;
-    if ((style & MB_ICONINFORMATION) == MB_ICONINFORMATION) icon = wxICON_INFORMATION;
-    return icon;
+    if ((style & MB_ICONSTOP) == MB_ICONSTOP) return wxICON_STOP;
+    if ((style & MB_ICONQUESTION) == MB_ICONQUESTION) return wxICON_QUESTION;
+    if ((style & MB_ICONEXCLAMATION) == MB_ICONEXCLAMATION) return wxICON_EXCLAMATION;
+    if ((style & MB_ICONINFORMATION) == MB_ICONINFORMATION) return wxICON_INFORMATION;
+    return wxICON_NONE;
   }
   
   int32_t convert_to_option(uint32_t style) {
