@@ -41,6 +41,7 @@ void control::back_color(intptr_t control, const color& color) {
 }
 
 intptr_t control::create(const forms::create_params& create_params) {
+  cdebug << "Native initialize application" << endl;
   application::initialize_application(); // Must be first
   if (create_params.class_name() == "BUTTON") return reinterpret_cast<intptr_t>(new wx_button(create_params));
   if (create_params.class_name() == "CHECKBOX") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
