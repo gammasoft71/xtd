@@ -60,11 +60,8 @@ void application::exit() {
 }
 
 void application::initialize_application() {
-  cdebug << "Native check wxApp" << std::endl;
   if (wxTheApp) return;
-  cdebug << "Native create app" << std::endl;
   wxApp::SetInstance(new wx_application());
-  cdebug << "Native create wxInitialize" << std::endl;
   wxinitializer = make_unique<wxInitializer>();
   cdebug << "Native call OnInit" << std::endl;
  wxTheApp->CallOnInit();
