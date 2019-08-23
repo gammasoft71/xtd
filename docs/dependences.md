@@ -23,4 +23,4 @@
 * xtd.forms : xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.io xtd.strings (xtd.tunit)
 
 ### xtd
-* xtd.forms : xtd.console xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.forms xtd.io xtd.strings (xtd.tunit)
+* xtd : xtd.console xtd.delegates xtd.diagnostics xtd.drawing xtd.environment xtd.forms xtd.io xtd.strings xtd.tunit
