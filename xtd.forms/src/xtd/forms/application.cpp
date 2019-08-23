@@ -65,7 +65,7 @@ void application::exit() {
 }
 
 void application::run() {
-  native::application::register_wnd_proc(application::wnd_proc_);
+  native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
   native::application::run();
 }
 
