@@ -32,16 +32,16 @@ int main() {
   //list_box2.back_color(color::spring_green);
   //list_box2.fore_color(color::dark_blue);
 
-  list_box1.selected_index_changed += [&](const control& sender, const event_args& e) {
+  list_box1.selected_index_changed += [&] {
     cdebug << format("list_box1.selected_index_changed = [{} : {}]", (int)list_box1.selected_index(), list_box1.selected_item()) << endl;
     cdebug << format("list_box1.selected_items = {{{}}}", strings::join(", ", list_box1.selected_items())) << endl;
   };
   
-  list_box1.text_changed += [&](const control& sender, const event_args& e) {
+  list_box1.text_changed += [&] {
     cdebug << format("list_box1.text_changed = {}", list_box1.text()) << endl;
   };
   
-  list_box1.double_click += [&](const control& sender, const event_args& e) {
+  list_box1.double_click += [&] {
     size_t index = list_box1.selected_index();
     if (index != -1) {
       list_box2.items().push_back(list_box1.selected_item());
@@ -50,7 +50,7 @@ int main() {
     }
   };
   
-  list_box2.double_click += [&](const control& sender, const event_args& e) {
+  list_box2.double_click += [&] {
     size_t index = list_box2.selected_index();
     if (index != -1) {
       list_box1.items().push_back(list_box2.selected_item());
@@ -63,7 +63,7 @@ int main() {
   button_mode.parent(form);
   button_mode.text("Mode...");
   button_mode.location({30, 230});
-  button_mode.click += [&](const control& sender, const event_args& e) {
+  button_mode.click += [&] {
     switch (list_box1.selection_mode()) {
       case selection_mode::none: list_box1.selection_mode(selection_mode::one); break;
       case selection_mode::one: list_box1.selection_mode(selection_mode::multi_simple); break;
@@ -78,7 +78,7 @@ int main() {
   button_sorted.parent(form);
   button_sorted.text("Sorted...");
   button_sorted.location({170, 230});
-  button_sorted.click += [&](const control& sender, const event_args& e) {
+  button_sorted.click += [&] {
     list_box2.sorted(!list_box2.sorted());
     button_sorted.text(list_box2.sorted() ? "Unsorted" : "Sorted");
   };
