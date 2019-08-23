@@ -4,6 +4,9 @@
 [submodule "xtd.delegates"]
 	path = xtd.delegates
 	url = https://github.com/gammasoft71/xtd.delegates
+[submodule "xtd.diagnostics"]
+	path = xtd.diagnostics
+	url = https://github.com/gammasoft71/xtd.fiagnostics
 [submodule "xtd.tunit"]
 	path = xtd.tunit
 	url = https://github.com/gammasoft71/xtd.tunit
