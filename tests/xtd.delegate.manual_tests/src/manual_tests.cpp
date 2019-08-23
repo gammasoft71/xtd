@@ -30,10 +30,6 @@ struct button : public control {
   virtual void on_click(const event_args& e) {this->click(*this, e);}
 };
 
-void on_click() {
-  cout << "on_click" << endl;
-}
-
 // The main entry point for the application.
 int main() {
   button button1;
