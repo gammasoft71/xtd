@@ -5,7 +5,7 @@ project(xtd.console)
 
 # Options
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-if (EXPORT_PROJECT_NAME STREQUAL "")
+if (NOT DEFINED EXPORT_PROJECT_NAME)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
 
