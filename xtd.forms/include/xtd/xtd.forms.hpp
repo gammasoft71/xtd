@@ -5,6 +5,7 @@
 #include <xtd/xtd.environment>
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
+#include <xtd/forms/create_params.hpp>
 #include <xtd/forms/window_messages.hpp>
 
 #include "xtd/forms/layout/arranged_element_collection.hpp"
