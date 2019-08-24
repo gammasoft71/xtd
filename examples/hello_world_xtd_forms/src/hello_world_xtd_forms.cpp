@@ -7,7 +7,7 @@ int main() {
   button button;
   button.text("Click me");
   button.location({10, 10});
-  button.click += [](const control& sender, const event_args& e) {
+  button.click += [] {
     message_box::show("Hello, World!");
   };
   
