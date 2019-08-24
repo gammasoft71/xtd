@@ -2,7 +2,7 @@
 
 git submodule update --init
 
-declare -a submodules=("xtd.delegates xtd.strings xtd.tunit")
+declare -a submodules=("xtd.delegates xtd.diagnostics xtd.io xtd.environment xtd.strings xtd.tunit")
 
 for submodule in ${submodules[@]}; do
   cd $submodule
