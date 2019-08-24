@@ -9,6 +9,8 @@ set(XTD_INCLUDES
 )
 
 set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
+  src/xtd/drawing/native/wxwidgets/brush.cpp
+  src/xtd/drawing/native/wxwidgets/pen.cpp
   src/xtd/drawing/native/wxwidgets/system_colors.cpp
 )
 
