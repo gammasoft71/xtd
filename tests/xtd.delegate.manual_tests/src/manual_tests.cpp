@@ -25,15 +25,10 @@ private:
 struct button : public control {
   event<button, event_handler<control>> click;
   
-  void click_button() {this->on_click(event_args::empty);}
+  void perform_click() {this->on_click(event_args::empty);}
   
   virtual void on_click(const event_args& e) {this->click(*this, e);}
 };
-
-template <typename click_t>
-void add_method(button& b, click_t f) {
-  b.click += f;
-}
 
 // The main entry point for the application.
 int main() {
@@ -44,12 +39,11 @@ int main() {
   };
   
   button1.click += []  {
-    cout << "click" << endl;
+    cout << "click on button" << endl;
   };
-
-  add_method(button1, [&](const control& sender, const event_args& e) {});
   
   button1.text("button1");
+  
   // click simulation
-  button1.click_button();
+  button1.perform_click();
 }
