@@ -6,9 +6,9 @@
 #define __XTD_STRINGS_INCLUDE__
 /// @endcond
 
-#include "__format.hpp"
-#include "__format_information.hpp"
-#include "__format_stringer.hpp"
+#include "internal/__format.hpp"
+#include "internal/__format_information.hpp"
+#include "internal/__format_stringer.hpp"
 #include "istring.hpp"
 #include "string_comparison.hpp"
 #include "string_split_options.hpp"
