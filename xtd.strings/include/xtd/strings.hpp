@@ -18,6 +18,10 @@
 #include <cctype>
 #include <vector>
 
+#if !defined(_WIN32)
+#endif
+#include <cxxabi.h>
+
 #undef max
 #undef min
 
@@ -45,6 +49,30 @@ namespace xtd {
     /// @cond
     strings() = delete;
     /// @endcond
+    
+    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    template<typename object_t>
+    static std::string full_class_name() {return demangle(typeid(object_t).name());}
+    
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
+    template<typename object_t>
+    static std::string full_class_name(const object_t& object) {return demangle(typeid(object).name());}
+    
+    /// @brief Gets the class name of the object_t.
+    /// @return The class name of the object_t.
+    /// @remarks For example, the name of the strings type is strings.
+    template<typename object_t>
+    static std::string class_name() {return get_class_name(full_class_name<object_t>());}
+    
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the strings type is strings.
+    template<typename object_t>
+    static std::string class_name(const object_t& object) {return get_class_name(full_class_name(object));}
     
     /// @brief Compares two specified String objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
@@ -1618,6 +1646,35 @@ namespace xtd {
       else if constexpr (std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, xtd::iwstring>::value) return std::forward<arg_t>(arg).c_str();
       else return std::forward<arg_t>(arg);
     }
+    
+    static std::string get_class_name(const std::string& full_name) {
+      size_t length = last_index_of(full_name, "<");
+      if (length == -1) length = full_name.length();
+      if (last_index_of(full_name, "::", 0, length) == -1) return full_name;
+      return  substring(full_name, last_index_of(full_name, "::", 0, length) + 2);
+    }
+
+#if defined(_WIN32)
+    static std::string demangle(const std::string& name) {
+      std::vector<std::string> types = {"enum ", "class ", "union ", "struct "};
+      std::string result = name;
+      for (const std::string& item : types)
+        result = replace(result, item, "");
+      return result;
+    }
+#else
+    static std::string demangle(const std::string& name) {
+      struct auto_delete_char_pointer {
+        auto_delete_char_pointer(char* value) : value_(value) {}
+        ~auto_delete_char_pointer() {free(value_);}
+        char* operator()() const {return this->value_;}
+      private:
+        char* value_;
+      };
+      int32_t status = 0;
+      return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
+    }
+#endif
   };
 }
 
