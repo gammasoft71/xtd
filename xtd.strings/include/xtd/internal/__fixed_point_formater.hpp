@@ -12,7 +12,7 @@
 #include "__currency_formater.hpp"
 #include "__format_stringer.hpp"
 #include "__natural_formater.hpp"
-#include "xtd.strings.hpp"
+#include "../xtd.strings.hpp"
 
 /// @cond
 template<typename char_t, typename value_t>

@@ -2,15 +2,8 @@
 /// @brief Contains xtd::parse methods.
 #pragma once
 
-/// @cond
-#ifndef __XTD_STRINGS_INCLUDE__
-#error "Do not include this file yourself, use only #include <xtd/xtd.strings>"
-#endif
-/// @endcond
-
 #include "number_styles.hpp"
-#include "xtd.strings.hpp"
-#include <string>
+#include "strings.hpp"
 
 #undef max
 #undef min

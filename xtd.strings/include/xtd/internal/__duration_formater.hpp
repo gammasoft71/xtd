@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include "xtd.strings.hpp"
+#include "../xtd.strings.hpp"
 #include <chrono>
 #include <ratio>
 
