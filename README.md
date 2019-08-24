@@ -14,6 +14,10 @@
 
 # Features
 
+* a collection of native C++ classes libraries, to complete std;
+* written in efficient, modern C++17;
+* and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
+
 For more information see [Documentation](docs).
 
 # Libraries
