@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# init and update submodule
+git submodule update --init
+
 mkdir -p build
 cd build
 
