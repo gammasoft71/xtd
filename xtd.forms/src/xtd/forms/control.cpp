@@ -381,6 +381,12 @@ intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intp
   return native::control::send_message(this->handle_, hwnd, msg, wparam, lparam);
 }
 
+string control::to_string() const {
+  if (!this->name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), this->name_);
+  if (!this->text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), this->text_);
+  return strings::full_class_name(*this);
+}
+
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);

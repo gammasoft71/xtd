@@ -11,6 +11,8 @@ int main() {
   //form.back_color(color::dodger_blue);
   //form.fore_color(color::yellow);
   form.text("Manual tests");
+  form.name("main form");
+  cdebug << format("form = {}", form) << endl;
   cdebug << format("form.back_color = {}", form.back_color()) << endl;
   cdebug << format("form.fore_color = {}", form.fore_color()) << endl;
   cdebug << format("form.size = {}", form.size()) << endl;
