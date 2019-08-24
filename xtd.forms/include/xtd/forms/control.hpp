@@ -183,6 +183,14 @@ namespace xtd {
       
       virtual void show() {this->visible(true);}
       
+      virtual std::string to_string() const;
+      
+      /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::control& control) noexcept {
+        return os << control.to_string();
+      }
+      /// @endcond
+      
       virtual void wnd_proc(message& message);
       
       event<control, event_handler<control>> back_color_changed;
