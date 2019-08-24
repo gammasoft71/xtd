@@ -170,7 +170,7 @@ add_executable(${PROJECT_NAME} src/hello_world_tunit.cpp)
 target_link_libraries(${PROJECT_NAME} xtd)
 ```
 
-For more examples see [examples](examples)
+For more examples see [examples](examples/README.md)
 
 # Download and install
 
