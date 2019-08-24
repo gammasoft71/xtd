@@ -67,9 +67,7 @@ src/hello_world_console.cpp:
 
 ```c++
 #include <xtd/xtd>
-#include <string>
 
-using namespace std;
 using namespace xtd;
 
 int main() {
