@@ -19,8 +19,8 @@
 #include <vector>
 
 #if !defined(_WIN32)
-#endif
 #include <cxxabi.h>
+#endif
 
 #undef max
 #undef min
