@@ -9,31 +9,43 @@ set(XTD_INCLUDES
 )
 
 set(XTD_DRAWING_INCLUDES
+  include/xtd/drawing//brush.hpp
   include/xtd/drawing/color.hpp
   include/xtd/drawing//known_color.hpp
+  include/xtd/drawing//pen.hpp
   include/xtd/drawing//point.hpp
   include/xtd/drawing//point_f.hpp
   include/xtd/drawing//rectangle.hpp
   include/xtd/drawing//rectangle_f.hpp
   include/xtd/drawing//size.hpp
   include/xtd/drawing//size_f.hpp
+  include/xtd/drawing//solid_brush.hpp
   include/xtd/drawing//system_colors.hpp
 )
 
+set(XTD_DRAWING_DRAWING2D_INCLUDES
+  include/xtd/drawing/drawing2d/pen_alignment.hpp
+  include/xtd/drawing/drawing2d/pen_type.hpp
+)
+
 set(XTD_DRAWING_SOURCES
+  src/xtd/drawing/brush.cpp
   src/xtd/drawing/color.cpp
   src/xtd/drawing/drawing.cpp
+  src/xtd/drawing/pen.cpp
   src/xtd/drawing/point_f.cpp
   src/xtd/drawing/point.cpp
   src/xtd/drawing/rectangle_f.cpp
   src/xtd/drawing/rectangle.cpp
   src/xtd/drawing/size_f.cpp
   src/xtd/drawing/size.cpp
+  src/xtd/drawing/solid_brush.cpp
   src/xtd/drawing/system_colors.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\drawing FILES ${XTD_DRAWING_INCLUDES})
+source_group(include\\xtd\\drawing\\drawing2d FILES ${XTD_DRAWING_DRAWING2D_INCLUDES})
 source_group(src\\xtd\\drawing FILES ${XTD_DRAWING_SOURCES})
 
 # Options
@@ -44,7 +56,7 @@ if (MSVC)
 endif ()
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_INCLUDES} ${XTD_DRAWING_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_INCLUDES} ${XTD_DRAWING_DRAWING2D_INCLUDES} ${XTD_DRAWING_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

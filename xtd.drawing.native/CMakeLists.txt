@@ -9,6 +9,8 @@ set(XTD_INCLUDES
 )
 
 set(XTD_DRAWING_NATIVE_INCLUDES
+  include/xtd/drawing/native/brush.hpp
+  include/xtd/drawing/native/pen.hpp
   include/xtd/drawing/native/system_colors.hpp
 )
 
