@@ -156,8 +156,8 @@ namespace unit_tests {
   };
 }
 
-int main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
+int main() {
+  return console_unit_test().run();
 }
 ```
 
