@@ -14,7 +14,7 @@ namespace examples {
       return result;
     }
     
-    void value(double value) {this->text(to_string(value, "G"));}
+    void value(double value) {this->text(xtd::to_string(value, "G"));}
     
     event<numeric_text_box, event_handler<const control&>> value_changed;
 
