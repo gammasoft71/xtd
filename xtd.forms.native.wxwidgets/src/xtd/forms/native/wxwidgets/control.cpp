@@ -13,6 +13,7 @@
 #include "wx_panel.hpp"
 #include "wx_radio_button.hpp"
 #include "wx_text_box.hpp"
+#include <wx/dcclient.h>
 
 using namespace std;
 using namespace xtd;
@@ -52,6 +53,10 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "RADIOBUTTON") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
   if (create_params.class_name() == "EDIT") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
   return reinterpret_cast<intptr_t>(new wx_control(create_params));
+}
+
+intptr_t control::create_paint_graphics(intptr_t control) {
+  return reinterpret_cast<intptr_t>(new wxPaintDC(reinterpret_cast<control_handler*>(control)->control()));
 }
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
