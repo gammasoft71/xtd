@@ -1,4 +1,5 @@
 #include <xtd/drawing/native/pen.hpp>
+#include <wx/colour.h>
 #include <wx/pen.h>
 
 using namespace xtd::drawing::native;

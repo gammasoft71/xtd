@@ -1,5 +1,6 @@
 #include <xtd/drawing/native/brush.hpp>
 #include <wx/brush.h>
+#include <wx/colour.h>
 
 using namespace xtd::drawing::native;
 
