@@ -8,8 +8,9 @@ namespace xtd {
       class pen {
       public:
         static intptr_t create();
-        static void color(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
-        static void destroy(intptr_t brush);
+        static void color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
+        static void width(intptr_t pen, float width);
+        static void destroy(intptr_t pen);
       };
     }
   }
