@@ -16,6 +16,7 @@
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
 #include "mouse_event_handler.hpp"
+#include "paint_event_handler.hpp"
 #include "message.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -239,6 +240,8 @@ namespace xtd {
       
       event<control, mouse_event_handler<control>> mouse_wheel;
       
+      event<control, paint_event_handler<control>> paint;
+      
       event<control, event_handler<control>> parent_changed;
       
       event<control, event_handler<control>> size_changed;
@@ -301,6 +304,8 @@ namespace xtd {
       virtual void on_mouse_up(const mouse_event_args& e);
       
       virtual void on_mouse_wheel(const mouse_event_args& e);
+      
+      virtual void on_paint(paint_event_args& e);
       
       virtual void on_parent_back_color_changed(const event_args& e);
       
