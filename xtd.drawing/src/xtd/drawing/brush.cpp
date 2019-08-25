@@ -5,11 +5,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 brush::brush() {
-  this->brush_ = native::brush::create();
+  this->handle_ = native::brush::create();
 }
 
 brush::brush(const brush&) {
-  this->brush_ = native::brush::create();
+  this->handle_ = native::brush::create();
 }
 
 brush& brush::operator=(const brush&) {
@@ -17,5 +17,5 @@ brush& brush::operator=(const brush&) {
 }
 
 brush::~brush() {
-  native::brush::destroy(this->brush_);
+  native::brush::destroy(this->handle_);
 }

@@ -13,11 +13,47 @@ void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   reinterpret_cast<wxDC*>(hdc)->SetBackground(default_brush);
 }
 
-intptr_t graphics::create() {
-  return reinterpret_cast<intptr_t>(new wxGCDC());
+void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
+  wxBrush default_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
+  wxPen default_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
+  reinterpret_cast<wxDC*>(hdc)->SetPen(*reinterpret_cast<wxPen*>(pen));
+  reinterpret_cast<wxDC*>(hdc)->DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(default_brush);
+  reinterpret_cast<wxDC*>(hdc)->SetPen(default_pen);
 }
 
 void graphics::destroy(intptr_t hdc) {
   if (hdc == 0 || !wxTheApp->IsMainLoopRunning()) return;
   delete reinterpret_cast<wxDC*>(hdc);
+}
+
+void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+  wxBrush default_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
+  wxPen default_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
+  reinterpret_cast<wxDC*>(hdc)->SetPen(*reinterpret_cast<wxPen*>(pen));
+  reinterpret_cast<wxDC*>(hdc)->DrawLine(x1, y1, x2, y2);
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(default_brush);
+  reinterpret_cast<wxDC*>(hdc)->SetPen(default_pen);
+}
+
+void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
+  wxBrush default_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
+  wxPen default_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
+  reinterpret_cast<wxDC*>(hdc)->SetPen(*reinterpret_cast<wxPen*>(pen));
+  reinterpret_cast<wxDC*>(hdc)->DrawRectangle(x, y, width, height);
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(default_brush);
+  reinterpret_cast<wxDC*>(hdc)->SetPen(default_pen);
+}
+
+void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
+  wxBrush default_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
+  wxPen default_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(*reinterpret_cast<wxBrush*>(brush));
+  reinterpret_cast<wxDC*>(hdc)->SetPen(*wxTRANSPARENT_PEN);
+  reinterpret_cast<wxDC*>(hdc)->DrawRectangle(x, y, width, height);
+  reinterpret_cast<wxDC*>(hdc)->SetBrush(default_brush);
+  reinterpret_cast<wxDC*>(hdc)->SetPen(default_pen);
 }

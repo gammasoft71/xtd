@@ -7,6 +7,9 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @cond
+    class graphics;
+    /// @endcond
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     struct brush {
     public:
@@ -16,7 +19,7 @@ namespace xtd {
       brush(const brush&);
       virtual ~brush();
       brush& operator=(const brush&);
-      bool operator==(const brush& value) const {return this->brush_ == value.brush_;}
+      bool operator==(const brush& value) const {return this->handle_ == value.handle_;}
       bool operator!=(const brush& value) const {return !this->operator==(value);}
       /// @endcond
       
@@ -29,11 +32,12 @@ namespace xtd {
       /// @endcond
       
     protected:
+      friend class graphics;
       brush();
       
       void set_native_brush(intptr_t brush);
 
-      intptr_t brush_ = 0;
+      intptr_t handle_ = 0;
     };
   }
 }

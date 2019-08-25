@@ -12,6 +12,9 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @cond
+    class graphics;
+    /// @endcond
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     struct pen final {
     public:
@@ -69,7 +72,8 @@ namespace xtd {
       }
 
     private:
-      intptr_t pen_ = 0;
+      friend class graphics;
+      intptr_t handle_ = 0;
       drawing2d::pen_alignment alignment_ = drawing2d::pen_alignment::center;
       drawing::color color_;
       drawing2d::pen_type type_ = drawing2d::pen_type::solid_color;
