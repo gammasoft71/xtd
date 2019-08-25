@@ -9,6 +9,7 @@ namespace xtd {
   /// @cond
   namespace forms {
     class control;
+    class screen;
   }
   /// @endcond
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
@@ -30,6 +31,7 @@ namespace xtd {
       
     private:
       friend forms::control;
+      friend forms::screen;
       graphics(intptr_t hdc) : hdc_(hdc) {}
       
       intptr_t hdc_ = 0;

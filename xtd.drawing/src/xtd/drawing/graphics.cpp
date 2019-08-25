@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 graphics::~graphics() {
-  native::graphics::destroy(this->hdc_);
+  if (this->hdc_ != 0) native::graphics::destroy(this->hdc_);
 }
 
 void graphics::clear(const color& color) {
