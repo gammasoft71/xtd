@@ -2,6 +2,7 @@
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.environment>
 #include <xtd/xtd.strings>
+#include <xtd/drawing/native/graphics.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
 #include <xtd/forms/native/window_styles.hpp>
@@ -174,6 +175,10 @@ void control::create_control() {
     this->send_message(native::control::handle(this->handle_), WM_CREATE, 0, 0);
     this->on_create_control();
   }
+}
+
+unique_ptr<graphics> control::create_graphics() {
+  return unique_ptr<graphics>(new graphics(native::control::create_graphics(this->handle_)));
 }
 
 void control::create_handle() {
@@ -554,7 +559,8 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   this->def_wnd_proc(message);
-  paint_event_args e({{0, 0}, this->client_size()});
+  graphics graphics(native::control::create_paint_graphics(this->handle_));
+  paint_event_args e({{0, 0}, this->client_size()}, graphics);
   this->on_paint(e);
 }
 

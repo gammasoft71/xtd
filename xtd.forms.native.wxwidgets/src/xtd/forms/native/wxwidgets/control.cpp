@@ -59,6 +59,10 @@ intptr_t control::create_paint_graphics(intptr_t control) {
   return reinterpret_cast<intptr_t>(new wxPaintDC(reinterpret_cast<control_handler*>(control)->control()));
 }
 
+intptr_t control::create_graphics(intptr_t control) {
+  return reinterpret_cast<intptr_t>(new wxClientDC(reinterpret_cast<control_handler*>(control)->control()));
+}
+
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
   switch (msg) {
     case WM_GETTEXTLENGTH: return (reinterpret_cast<control_handler*>(hwnd))->control()->GetLabel().ToStdString().size(); break;
