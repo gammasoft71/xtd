@@ -11,7 +11,7 @@ namespace xtd {
     class paint_event_args : public event_args {
     public:
       paint_event_args() = default;
-      paint_event_args(const drawing::rectangle& clip_rectangle) : clip_rectangle_(clip_rectangle) {};
+      paint_event_args(const drawing::rectangle& clip_rectangle, drawing::graphics& graphics) : clip_rectangle_(clip_rectangle), graphics_(&graphics) {};
 
       /// @cond
       paint_event_args(const paint_event_args& paint_event_args) = default;
@@ -19,9 +19,12 @@ namespace xtd {
       /// @endcond
 
       const drawing::rectangle& clip_rectangle() const {return this->clip_rectangle_;}
-
+      
+      drawing::graphics& graphics() const {return *this->graphics_;}
+      
     private:
       drawing::rectangle clip_rectangle_;
+      drawing::graphics* graphics_ = nullptr;
     };
   }
 }

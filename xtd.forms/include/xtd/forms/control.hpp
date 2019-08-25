@@ -170,6 +170,8 @@ namespace xtd {
 
       virtual void create_handle();
       
+      std::unique_ptr<drawing::graphics> create_graphics();
+      
       virtual void destroy_handle();
       
       static control& from_child_handle(intptr_t handle);
