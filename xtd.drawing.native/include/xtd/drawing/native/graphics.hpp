@@ -7,8 +7,8 @@ namespace xtd {
     namespace native {
       class graphics {
       public:
+        static void clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static intptr_t create_graphics();
-        static intptr_t create_paint_graphics(intptr_t control);
         static void destroy(intptr_t hdc);
       };
     }
