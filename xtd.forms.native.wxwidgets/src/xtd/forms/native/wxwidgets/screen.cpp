@@ -1,12 +1,17 @@
 #include <xtd/forms/native/screen.hpp>
 #include <xtd/xtd.strings>
 #include "control_handler.hpp"
+#include <wx/dcscreen.h>
 #include <wx/display.h>
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
+
+intptr_t screen::create_graphics() {
+  return reinterpret_cast<intptr_t>(new wxScreenDC());
+}
 
 size_t screen::count() {
   return wxDisplay::GetCount();

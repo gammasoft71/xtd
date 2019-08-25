@@ -36,6 +36,8 @@ namespace xtd {
       
       const drawing::rectangle& working_area() const {return this->working_area_;}
       
+      static drawing::graphics create_graphics();
+
       static screen from_control(const control& control);
       
       static screen from_handle(intptr_t handle);

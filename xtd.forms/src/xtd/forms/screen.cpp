@@ -14,6 +14,10 @@ vector<screen> screen::all_screens() {
   return screens;
 }
 
+graphics screen::create_graphics() {
+  return graphics(native::screen::create_graphics());
+}
+
 screen screen::from_control(const control& control) {
   return all_screens()[native::screen::from_handle(control.handle_)];
 }

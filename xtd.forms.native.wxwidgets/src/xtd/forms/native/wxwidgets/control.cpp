@@ -13,6 +13,7 @@
 #include "wx_panel.hpp"
 #include "wx_radio_button.hpp"
 #include "wx_text_box.hpp"
+#include <wx/dcmemory.h>
 #include <wx/dcclient.h>
 
 using namespace std;
@@ -60,6 +61,7 @@ intptr_t control::create_paint_graphics(intptr_t control) {
 }
 
 intptr_t control::create_graphics(intptr_t control) {
+  if (control == 0) return 0;
   return reinterpret_cast<intptr_t>(new wxClientDC(reinterpret_cast<control_handler*>(control)->control()));
 }
 
