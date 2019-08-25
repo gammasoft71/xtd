@@ -38,7 +38,7 @@ namespace xtd {
       size operator-(const xtd::drawing::size& size) const;
       size& operator+=(const xtd::drawing::size& size);
       size& operator-=(const xtd::drawing::size& size);
-      operator size_f() {return size_f(this->width_, this->height_);}
+      operator size_f() {return size_f(static_cast<float>(this->width_), static_cast<float>(this->height_));}
       /// @endcond
       
       /// @brief Gets he vertical component of this Size Class.
