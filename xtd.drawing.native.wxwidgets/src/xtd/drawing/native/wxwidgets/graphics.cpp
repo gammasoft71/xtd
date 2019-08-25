@@ -5,9 +5,10 @@
 using namespace xtd::drawing::native;
 
 void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+  wxBrush default_brush = reinterpret_cast<wxDC*>(hdc)->GetBackground();
   reinterpret_cast<wxDC*>(hdc)->SetBackground(wxBrush(wxColour(r, g, b, a)));
   reinterpret_cast<wxDC*>(hdc)->Clear();
-  
+  reinterpret_cast<wxDC*>(hdc)->SetBackground(default_brush);
 }
 
 intptr_t graphics::create() {
