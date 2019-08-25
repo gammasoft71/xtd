@@ -10,7 +10,7 @@ void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   
 }
 
-intptr_t graphics::create_graphics() {
+intptr_t graphics::create() {
   return reinterpret_cast<intptr_t>(new wxGCDC());
 }
 
