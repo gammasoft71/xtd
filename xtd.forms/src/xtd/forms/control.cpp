@@ -426,6 +426,7 @@ void control::wnd_proc(message& message) {
     case WM_MOUSEWHEEL: this->wm_mouse_wheel(message); break;
     // System events
     case WM_COMMAND: this->wm_command(message); break;
+    case WM_PAINT: this->wm_paint(message); break;
     case WM_MOVE: wm_move(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
     case WM_SIZE:  this->wm_size(message); break;
@@ -539,17 +540,22 @@ void control::wm_move(message& message) {
   this->on_location_changed(event_args::empty);
 }
 
-void control::wm_set_focus(message& message) {
-  this->def_wnd_proc(message);
-  this->on_got_focus(event_args::empty);
-}
-
 void control::wm_mouse_wheel(message& message) {
   this->def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
     this->on_mouse_horizontal_wheel(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
   else
     this->on_mouse_wheel(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+}
+
+void control::wm_paint(message& message) {
+  this->def_wnd_proc(message);
+  diagnostics::debug::write_line(strings::format("({}) receive message [{}]", this->name_, message));
+}
+
+void control::wm_set_focus(message& message) {
+  this->def_wnd_proc(message);
+  this->on_got_focus(event_args::empty);
 }
 
 void control::wm_set_text(message& message) {

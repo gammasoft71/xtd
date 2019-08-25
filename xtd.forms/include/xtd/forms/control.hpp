@@ -348,8 +348,9 @@ namespace xtd {
       void wm_mouse_up(message& message);
       void wm_mouse_move(message& message);
       void wm_move(message& message);
-      void wm_set_focus(message& message);
       void wm_mouse_wheel(message& message);
+      void wm_paint(message& message);
+      void wm_set_focus(message& message);
       void wm_set_text(message& message);
       void wm_size(message& message);
     };
