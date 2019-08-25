@@ -1,6 +1,5 @@
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
-#include <xtd/xtd.diagnostics>
 #include "control_handler.hpp"
 #include <wx/app.h>
 #include <wx/window.h>
@@ -63,9 +62,7 @@ void application::initialize_application() {
   if (wxTheApp) return;
   wxApp::SetInstance(new wx_application());
   wxinitializer = make_unique<wxInitializer>();
-  cdebug << "Native call OnInit" << std::endl;
- wxTheApp->CallOnInit();
-  cdebug << "Native end initialize application" << std::endl;
+  wxTheApp->CallOnInit();
 }
 
 intptr_t application::main_form() {

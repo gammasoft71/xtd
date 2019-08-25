@@ -34,6 +34,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/label.hpp
   include/xtd/forms/list_box.hpp
   include/xtd/forms/message.hpp
+  include/xtd/forms/paint_event_args.hpp
+  include/xtd/forms/paint_event_handler.hpp
   include/xtd/forms/panel.hpp
   include/xtd/forms/message_box.hpp
   include/xtd/forms/message_box_buttons.hpp

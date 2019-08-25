@@ -42,6 +42,8 @@
 #include "xtd/forms/mouse_buttons.hpp"
 #include "xtd/forms/mouse_event_args.hpp"
 #include "xtd/forms/mouse_event_handler.hpp"
+#include "xtd/forms/paint_event_args.hpp"
+#include "xtd/forms/paint_event_handler.hpp"
 #include "xtd/forms/panel.hpp"
 #include "xtd/forms/radio_button.hpp"
 #include "xtd/forms/screen.hpp"

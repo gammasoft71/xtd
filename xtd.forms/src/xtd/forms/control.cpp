@@ -336,6 +336,10 @@ void control::on_mouse_wheel(const mouse_event_args& e) {
   this->mouse_wheel(*this, e);
 }
 
+void control::on_paint(paint_event_args &e) {
+  this->paint(*this, e);
+}
+
 void control::on_parent_back_color_changed(const event_args &e) {
   if (!this->back_color_.has_value()) {
     if (this->back_color() == this->default_back_color())
@@ -550,7 +554,8 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   this->def_wnd_proc(message);
-  diagnostics::debug::write_line(strings::format("({}) receive message [{}]", this->name_, message));
+  paint_event_args e({{0, 0}, this->client_size()});
+  this->on_paint(e);
 }
 
 void control::wm_set_focus(message& message) {
