@@ -560,9 +560,9 @@ void control::wm_move(message& message) {
 void control::wm_mouse_wheel(message& message) {
   this->def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
-    this->on_mouse_horizontal_wheel(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+    this->on_mouse_horizontal_wheel(mouse_event_args(message_to_mouse_buttons(message), { static_cast<int32_t>(LOWORD(message.lparam())), static_cast<int32_t>(HIWORD(message.lparam()))}, this->get_state(control::state::double_click_fired) ? 2 : 1, static_cast<int32_t>(HIWORD(message.wparam()))));
   else
-    this->on_mouse_wheel(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, HIWORD(message.wparam())));
+    this->on_mouse_wheel(mouse_event_args(message_to_mouse_buttons(message), {static_cast<int32_t>(LOWORD(message.lparam())),  static_cast<int32_t>(HIWORD(message.lparam()))}, this->get_state(control::state::double_click_fired) ? 2 : 1, static_cast<int32_t>(HIWORD(message.wparam()))));
 }
 
 void control::wm_paint(message& message) {
