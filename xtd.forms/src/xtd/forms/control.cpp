@@ -118,7 +118,7 @@ control& control::fore_color(const color& color) {
 }
 
 intptr_t control::handle() const {
-  return native::control::handle(this->handle_);
+  return this->handle_;
 }
 
 control& control::location(const point& location) {
@@ -127,6 +127,10 @@ control& control::location(const point& location) {
     native::control::location(this->handle_, this->location_);
   }
   return *this;
+}
+
+intptr_t control::native_handle() const {
+  return native::control::handle(this->handle_);
 }
 
 control& control::parent(const control& parent) {
@@ -177,8 +181,8 @@ void control::create_control() {
   }
 }
 
-unique_ptr<graphics> control::create_graphics() {
-  return unique_ptr<graphics>(new graphics(native::control::create_graphics(this->handle_)));
+graphics control::create_graphics() {
+  return graphics(native::control::create_graphics(this->handle_));
 }
 
 void control::create_handle() {
@@ -209,6 +213,10 @@ control& control::from_handle(intptr_t handle) {
   } catch (...) {
     return (control&)control::null;
   }
+}
+
+bool control::is_handle_created() const {
+  return this->handle_ != 0;
 }
 
 bool control::is_null() const {

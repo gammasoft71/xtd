@@ -12,7 +12,7 @@ namespace unit_tests {
       /*
       form form;
       assert::are_equal_(xtd::drawing::size(300, 300), form.default_size());
-      assert::are_equal_(0, form.handle());
+      assert::are_equal_(0, form.native_handle());
       assert::are_same_(control::null, form.parent());
       assert::are_equal_(form.default_size(), form.size());
       assert::is_empty_(form.text());

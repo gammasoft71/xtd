@@ -47,7 +47,7 @@ namespace unit_tests {
     
     void test_method_(new_control_handle) {
       control control;
-      assert::are_equal_(0, control.handle());
+      assert::are_equal_(0, control.native_handle());
     }
     
     void test_method_(new_control_location) {
@@ -89,7 +89,7 @@ namespace unit_tests {
       control.parent(form);
       form.show();
       assert::are_equal_(drawing::size(0, 0), control.client_size());
-      assert::are_not_equal_(0, control.handle());
+      assert::are_not_equal_(0, control.native_handle());
       assert::are_equal_(xtd::drawing::point(-1, -1), control.location());
       assert::are_equal_(xtd::drawing::size(0, 0), control.size());
        */

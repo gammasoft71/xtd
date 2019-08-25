@@ -83,6 +83,8 @@ namespace xtd {
         this->size({this->size_.width(), height});
         return *this;
       }
+
+      virtual intptr_t native_handle() const;
       
       virtual drawing::point location() const {return this->location_;}
       virtual control& location(const drawing::point& location);
@@ -170,13 +172,15 @@ namespace xtd {
 
       virtual void create_handle();
       
-      std::unique_ptr<drawing::graphics> create_graphics();
-      
+      drawing::graphics create_graphics();
+
       virtual void destroy_handle();
       
       static control& from_child_handle(intptr_t handle);
 
       static control& from_handle(intptr_t handle);
+      
+      bool is_handle_created() const;
       
       bool is_null() const;
       

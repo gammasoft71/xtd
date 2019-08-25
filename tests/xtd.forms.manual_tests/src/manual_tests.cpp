@@ -11,10 +11,14 @@ int main() {
   form.text("Manual tests");
   form.name("main form");
 
+  form.show();
+  //graphics graphics = form.create_graphics();
+  //graphics.clear(color::spring_green);
+
   form.paint += [&](const control& sender, paint_event_args& e) {
     //e.graphics().clear(color::spring_green);
-    auto graphics = form.create_graphics();
-    graphics->clear(color::spring_green);
+    graphics graphics = screen::create_graphics();
+    graphics.clear(color::spring_green);
   };
   
   application::run(form);

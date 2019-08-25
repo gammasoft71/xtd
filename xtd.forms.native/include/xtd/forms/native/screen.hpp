@@ -10,6 +10,7 @@ namespace xtd {
       public:
         screen() = delete;
         static size_t count();
+        static intptr_t create_graphics();
         static int32_t bits_per_pixel(size_t index);
         static drawing::rectangle bounds(size_t index);
         static std::string device_name(size_t index);
