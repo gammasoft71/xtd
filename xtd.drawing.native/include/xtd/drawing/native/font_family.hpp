@@ -18,6 +18,10 @@ namespace xtd {
         static std::vector<std::string> installed_font_families();
         static int32_t get_cell_ascent(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
         static int32_t get_cell_descent(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
+        static int32_t get_em_height(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
+        static int32_t get_line_spacing(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
+        static std::string get_name(intptr_t font_family, int32_t language);
+        static bool is_style_avaible(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout);
       };
     }
   }
