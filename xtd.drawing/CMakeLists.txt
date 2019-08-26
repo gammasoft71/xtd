@@ -11,7 +11,7 @@ set(XTD_INCLUDES
 set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//brush.hpp
   include/xtd/drawing/color.hpp
-  include/xtd/drawing/generic_font_families.hpp
+  include/xtd/drawing/font_style.hpp
   include/xtd/drawing//graphics.hpp
   include/xtd/drawing//known_color.hpp
   include/xtd/drawing//pen.hpp
@@ -28,6 +28,10 @@ set(XTD_DRAWING_INCLUDES
 set(XTD_DRAWING_DRAWING2D_INCLUDES
   include/xtd/drawing/drawing2d/pen_alignment.hpp
   include/xtd/drawing/drawing2d/pen_type.hpp
+)
+
+set(XTD_DRAWING_TEXT_INCLUDES
+  include/xtd/drawing/text/generic_font_families.hpp
 )
 
 set(XTD_DRAWING_SOURCES
@@ -48,6 +52,7 @@ set(XTD_DRAWING_SOURCES
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\drawing FILES ${XTD_DRAWING_INCLUDES})
 source_group(include\\xtd\\drawing\\drawing2d FILES ${XTD_DRAWING_DRAWING2D_INCLUDES})
+source_group(include\\xtd\\drawing\\text FILES ${XTD_DRAWING_TEXT_INCLUDES})
 source_group(src\\xtd\\drawing FILES ${XTD_DRAWING_SOURCES})
 
 # Options
@@ -58,7 +63,7 @@ if (MSVC)
 endif ()
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_INCLUDES} ${XTD_DRAWING_DRAWING2D_INCLUDES} ${XTD_DRAWING_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_INCLUDES} ${XTD_DRAWING_DRAWING2D_INCLUDES} ${XTD_DRAWING_TEXT_INCLUDES} ${XTD_DRAWING_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

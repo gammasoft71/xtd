@@ -3,9 +3,10 @@
 
 #include "drawing/drawing2d/pen_alignment.hpp"
 #include "drawing/drawing2d/pen_type.hpp"
+#include "drawing/text/generic_font_families.hpp"
 #include "drawing/brush.hpp"
 #include "drawing/color.hpp"
-#include "drawing/generic_font_families.hpp"
+#include "drawing/font_style.hpp"
 #include "drawing/graphics.hpp"
 #include "drawing/known_color.hpp"
 #include "drawing/pen.hpp"
