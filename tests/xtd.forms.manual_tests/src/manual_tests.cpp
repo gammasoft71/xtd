@@ -23,6 +23,10 @@ int main() {
     //e.graphics().draw_string("Draw string", font("Arial", 34, font_style::regular), solid_brush(color::light_green), 20, 0, string_format);
     e.graphics().fill_rectangle(solid_brush(color::light_sea_green), 400, 70, 100, 200);
     e.graphics().draw_arc(pen(color::black, 10), 400, 70, 100, 200, 45, 270);
+    e.graphics().draw_ellipse(pen(color::red, 10), 100, 80, 200, 200);
+    e.graphics().fill_pie(solid_brush(color::green), 120, 100, 160, 160, 45, 270);
+    e.graphics().fill_pie(solid_brush(color::light_green), 120, 100, 160, 160, 270, 180);
+    e.graphics().draw_bezier(pen(color::black), 100, 100, 150, 150, 200, 100, 250, 50);
  };
   
   application::run(form);
