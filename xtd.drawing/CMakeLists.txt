@@ -11,6 +11,7 @@ set(XTD_INCLUDES
 set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//brush.hpp
   include/xtd/drawing/color.hpp
+  include/xtd/drawing/font_family.hpp
   include/xtd/drawing/font_style.hpp
   include/xtd/drawing//graphics.hpp
   include/xtd/drawing//known_color.hpp
@@ -31,12 +32,18 @@ set(XTD_DRAWING_DRAWING2D_INCLUDES
 )
 
 set(XTD_DRAWING_TEXT_INCLUDES
+  include/xtd/drawing/text/font_collection.hpp
   include/xtd/drawing/text/generic_font_families.hpp
+  include/xtd/drawing/text/hotkey_prefix.hpp
+  include/xtd/drawing/text/installed_font_collection.hpp
+  include/xtd/drawing/text/private_font_collection.hpp
+  include/xtd/drawing/text/text_rendering_hint.hpp
 )
 
 set(XTD_DRAWING_SOURCES
   src/xtd/drawing/brush.cpp
   src/xtd/drawing/color.cpp
+  src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp
   src/xtd/drawing/pen.cpp
   src/xtd/drawing/point_f.cpp
@@ -49,11 +56,17 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/system_colors.cpp
 )
 
+set(XTD_DRAWING_TEXT_SOURCES
+  src/xtd/drawing/text/installed_font_collection.cpp
+  src/xtd/drawing/text/private_font_collection.cpp
+)
+
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\drawing FILES ${XTD_DRAWING_INCLUDES})
 source_group(include\\xtd\\drawing\\drawing2d FILES ${XTD_DRAWING_DRAWING2D_INCLUDES})
 source_group(include\\xtd\\drawing\\text FILES ${XTD_DRAWING_TEXT_INCLUDES})
 source_group(src\\xtd\\drawing FILES ${XTD_DRAWING_SOURCES})
+source_group(src\\xtd\\drawing\\text FILES ${XTD_DRAWING_TEXT_SOURCES})
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
@@ -63,7 +76,7 @@ if (MSVC)
 endif ()
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_INCLUDES} ${XTD_DRAWING_DRAWING2D_INCLUDES} ${XTD_DRAWING_TEXT_INCLUDES} ${XTD_DRAWING_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_INCLUDES} ${XTD_DRAWING_DRAWING2D_INCLUDES} ${XTD_DRAWING_TEXT_INCLUDES} ${XTD_DRAWING_SOURCES} ${XTD_DRAWING_TEXT_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

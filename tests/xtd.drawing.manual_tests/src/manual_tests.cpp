@@ -6,11 +6,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 int main() {
-  solid_brush solid_brush1(color::spring_green);
-  cout << strings::format("solid_brush1 = {}", solid_brush1) << endl;
-  cout << strings::format("solid_brush1.color() = {}", solid_brush1.color()) << endl;
-
-  solid_brush solid_brush2 = solid_brush1;
-  cout << strings::format("solid_brush2 = {}", solid_brush2) << endl;
-  cout << strings::format("solid_brush2.color() = {}", solid_brush2.color()) << endl;
+  cout << format("families = {{{}}}", strings::join(", ", font_family::families())) << endl;
+  cout << format("Serif = {}", font_family::generic_serif()) << endl;
+  cout << format("Sans Serif = {}", font_family::generic_sans_serif()) << endl;
+  cout << format("Monspace = {}", font_family::generic_monospace()) << endl;
+  cout << format("arial = {}", font_family("arial")) << endl;
+  cout << format("arial.ascent = {}", font_family("arial").get_cell_ascent(font_style::regular)) << endl;
+  cout << format("arial.descent = {}", font_family("arial").get_cell_descent(font_style::regular)) << endl;
 }

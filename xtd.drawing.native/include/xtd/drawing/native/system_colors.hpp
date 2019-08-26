@@ -8,6 +8,7 @@ namespace xtd {
     namespace native {
       class system_colors {
       public:
+        system_colors() = delete;
         static uint32_t to_argb(intptr_t color);
         static intptr_t active_border();
         static intptr_t active_caption();
