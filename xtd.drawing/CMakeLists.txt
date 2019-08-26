@@ -11,6 +11,7 @@ set(XTD_INCLUDES
 set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//brush.hpp
   include/xtd/drawing/color.hpp
+  include/xtd/drawing/generic_font_families.hpp
   include/xtd/drawing//graphics.hpp
   include/xtd/drawing//known_color.hpp
   include/xtd/drawing//pen.hpp
