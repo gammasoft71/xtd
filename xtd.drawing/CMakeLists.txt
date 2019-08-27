@@ -11,9 +11,11 @@ set(XTD_INCLUDES
 set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//brush.hpp
   include/xtd/drawing/color.hpp
+  include/xtd/drawing/font.hpp
   include/xtd/drawing/font_family.hpp
   include/xtd/drawing/font_style.hpp
   include/xtd/drawing//graphics.hpp
+  include/xtd/drawing//graphics_unit.hpp
   include/xtd/drawing//known_color.hpp
   include/xtd/drawing//pen.hpp
   include/xtd/drawing//point.hpp
@@ -43,6 +45,7 @@ set(XTD_DRAWING_TEXT_INCLUDES
 set(XTD_DRAWING_SOURCES
   src/xtd/drawing/brush.cpp
   src/xtd/drawing/color.cpp
+  src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp
   src/xtd/drawing/pen.cpp

@@ -10,8 +10,8 @@ namespace xtd {
       class font_family {
       public:
         font_family() = delete;
+        static intptr_t create(const std::string& name);
         static void destroy(intptr_t font_family);
-        static intptr_t from_name(const std::string& name);
         static std::string generic_serif_name();
         static std::string generic_sans_serif_name();
         static std::string generic_monospace_name();

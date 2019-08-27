@@ -13,6 +13,7 @@
 #include "drawing/font_family.hpp"
 #include "drawing/font_style.hpp"
 #include "drawing/graphics.hpp"
+#include "drawing/graphics_unit.hpp"
 #include "drawing/known_color.hpp"
 #include "drawing/pen.hpp"
 #include "drawing/point.hpp"

@@ -6,12 +6,12 @@
 
 using namespace xtd::drawing::native;
 
-void font_family::destroy(intptr_t font_family) {
-  delete reinterpret_cast<std::string*>(font_family);
+intptr_t font_family::create(const std::string& name) {
+  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new std::string(name)) : 0;
 }
 
-intptr_t font_family::from_name(const std::string& name) {
-  return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new std::string(name)) : 0;
+void font_family::destroy(intptr_t font_family) {
+  delete reinterpret_cast<std::string*>(font_family);
 }
 
 std::string font_family::generic_serif_name() {
@@ -62,8 +62,10 @@ int32_t font_family::get_cell_ascent(intptr_t font_family, bool bold, bool itali
   wxScreenDC hdc;
   wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
   font.SetStrikethrough(strikeout);
+  wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
   wxFontMetrics metrics = hdc.GetFontMetrics();
+  hdc.SetFont(default_font);
   return metrics.ascent;
 }
 
@@ -72,8 +74,10 @@ int32_t font_family::get_cell_descent(intptr_t font_family, bool bold, bool ital
   wxScreenDC hdc;
   wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
   font.SetStrikethrough(strikeout);
+  wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
   wxFontMetrics metrics = hdc.GetFontMetrics();
+  hdc.SetFont(default_font);
   return metrics.descent;
 }
 
@@ -82,8 +86,10 @@ int32_t font_family::get_em_height(intptr_t font_family, bool bold, bool italic,
   wxScreenDC hdc;
   wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
   font.SetStrikethrough(strikeout);
+  wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
   wxFontMetrics metrics = hdc.GetFontMetrics();
+  hdc.SetFont(default_font);
   return metrics.height;
 }
 
@@ -92,8 +98,10 @@ int32_t font_family::get_line_spacing(intptr_t font_family, bool bold, bool ital
   wxScreenDC hdc;
   wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
   font.SetStrikethrough(strikeout);
+  wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
   wxFontMetrics metrics = hdc.GetFontMetrics();
+  hdc.SetFont(default_font);
   return metrics.externalLeading; // metrics.internalLeading; ?
 }
 

@@ -36,7 +36,7 @@ namespace xtd {
       font_family(const std::string& name, const text::font_collection& font_collection);
       
       /// @cond
-      font_family() = delete;
+      font_family() = default;
       ~font_family();
       font_family(const font_family&) = default;
       font_family& operator=(const font_family&) = default;
@@ -62,7 +62,7 @@ namespace xtd {
       
       /// @brief Gets the name of this font_family.
       /// @return A String that represents the name of this font_family.
-      std::string name() const {return this->data_->name_;}
+      const std::string& name() const {return this->data_->name_;}
       
       /// @brief Returns the cell ascent, in design units, of the font_family of the specified style.
       /// @param style A font_style that contains style information for the font.
@@ -107,8 +107,8 @@ namespace xtd {
 
     private:
       struct data {
-        std::string name_;
         intptr_t handle_ = 0;
+        std::string name_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };

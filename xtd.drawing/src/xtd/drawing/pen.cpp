@@ -38,26 +38,26 @@ pen::~pen() {
 }
 
 pen& pen::alignment(drawing2d::pen_alignment alignment) {
-  if (this->alignment_ != alignment) {
-    this->alignment_ = alignment;
+  if (this->data_->alignment_ != alignment) {
+    this->data_->alignment_ = alignment;
   }
   return *this;
 }
 
 std::unique_ptr<drawing::brush> pen::brush() const {
-  switch (this->type_) {
-    case drawing2d::pen_type::solid_color: return make_unique<solid_brush>(this->color_); break;
-    case drawing2d::pen_type::hatch_fill: //return make_unique<drawing2d::hatch_brush>(this->color_); break;
-    case drawing2d::pen_type::texture_fill: //return make_unique<texture_brush>(this->color_); break;
-    case drawing2d::pen_type::path_gradient: //return make_unique<drawing2d::path_gradient_brush>(this->color_); break;
-    case drawing2d::pen_type::linear_gradient: //return make_unique<drawing2d::linear_gradient_brush>(this->color_); break;
+  switch (this->data_->type_) {
+    case drawing2d::pen_type::solid_color: return make_unique<solid_brush>(this->data_->color_); break;
+    case drawing2d::pen_type::hatch_fill: //return make_unique<drawing2d::hatch_brush>(this->data_->color_); break;
+    case drawing2d::pen_type::texture_fill: //return make_unique<texture_brush>(this->data_->color_); break;
+    case drawing2d::pen_type::path_gradient: //return make_unique<drawing2d::path_gradient_brush>(this->data_->color_); break;
+    case drawing2d::pen_type::linear_gradient: //return make_unique<drawing2d::linear_gradient_brush>(this->data_->color_); break;
     default: throw std::out_of_range("pen type invalid"); break;
   }
 }
 
 pen& pen::brush(const drawing::brush& brush) {
   if (dynamic_cast<const drawing::solid_brush*>(&brush) != nullptr) {
-    this->type_ = drawing2d::pen_type::solid_color;
+    this->data_->type_ = drawing2d::pen_type::solid_color;
     this->color(static_cast<const drawing::solid_brush&>(brush).color());
   //} else if (dynamic_cast<const drawing2d::hatch_brush*>(&brush) != nullptr) {
   //  this->type_ = drawing2d::pen_type::hatch_fill;
@@ -73,23 +73,23 @@ pen& pen::brush(const drawing::brush& brush) {
 }
 
 pen& pen::color(const drawing::color& color) {
-  if (this->color_ != color) {
-    this->color_ = color;
+  if (this->data_->color_ != color) {
+    this->data_->color_ = color;
     native::pen::color(this->data_->handle_, color.a(), color.r(), color.g(), color.b());
   }
   return *this;
 }
 
 pen& pen::type(drawing2d::pen_type type) {
-  if (this->type_ != type) {
-    this->type_ = type;
+  if (this->data_->type_ != type) {
+    this->data_->type_ = type;
   }
   return *this;
 }
 
 pen& pen::width(float width) {
-  if (this->width_ != width) {
-    this->width_ = width;
+  if (this->data_->width_ != width) {
+    this->data_->width_ = width;
     native::pen::width(this->data_->handle_, width);
   }
   return *this;

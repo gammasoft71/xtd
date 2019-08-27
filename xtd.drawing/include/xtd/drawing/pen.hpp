@@ -38,14 +38,14 @@ namespace xtd {
       virtual ~pen();
       pen(const pen&) = default;
       pen& operator=(const pen&) = default;
-      bool operator==(const pen& value) const {return this->alignment_ == value.alignment_ && this->type_ == value.type_;}
+      bool operator==(const pen& value) const {return this->data_->alignment_ == value.data_->alignment_ && this->data_->type_ == value.data_->type_;}
       bool operator!=(const pen& value) const {return !this->operator==(value);}
       /// @endcond
       
       /// @brief Gets the alignment for this xtd::drawing::pen.
       /// @return A xtd::drawing2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
       /// @remarks This property determines how the xtd::drawing::pen draws closed curves and polygons. The td::drawing2d::pen_alignment enumeration specifies five values; however, only two values - td::drawing2d::pen_alignment::center and td::drawing2d::pen_alignment::inset - will change the appearance of a drawn line. td::drawing2d::pen_alignment::center is the default value for this property and specifies that the width of the pen is centered on the outline of the curve or polygon. A value of td::drawing2d::pen_alignment::inset for this property specifies that the width of the pen is inside the outline of the curve or polygon. The other three values, td::drawing2d::pen_alignment::right, td::drawing2d::pen_alignment::left, and td::drawing2d::pen_alignment::outset, will result in a pen that is centered.
-      drawing2d::pen_alignment alignment() const {return this->alignment_;}
+      drawing2d::pen_alignment alignment() const {return this->data_->alignment_;}
 
       /// @brief Sets the alignment for this xtd::drawing::pen.
       /// @param alignment A xtd::drawing2d::pen_alignment that represents the alignment for this xtd::drawing::pen.
@@ -55,13 +55,13 @@ namespace xtd {
       std::unique_ptr<drawing::brush> brush() const;
       pen& brush(const drawing::brush& brush);
       
-      const drawing::color& color() const {return this->color_;}
+      const drawing::color& color() const {return this->data_->color_;}
       pen& color(const drawing::color& color);
 
-      drawing2d::pen_type type() const {return this->type_;}
+      drawing2d::pen_type type() const {return this->data_->type_;}
       pen& type(drawing2d::pen_type type);
       
-      float width() const {return this->width_;}
+      float width() const {return this->data_->width_;}
       pen& width(float width);
       
       std::string to_string() const {return strings::full_class_name(*this);}
@@ -75,12 +75,12 @@ namespace xtd {
       friend class graphics;
       struct data {
         intptr_t handle_ = 0;
+        drawing2d::pen_alignment alignment_ = drawing2d::pen_alignment::center;
+        drawing::color color_;
+        drawing2d::pen_type type_ = drawing2d::pen_type::solid_color;
+        float width_ = 1.0f;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-      drawing2d::pen_alignment alignment_ = drawing2d::pen_alignment::center;
-      drawing::color color_;
-      drawing2d::pen_type type_ = drawing2d::pen_type::solid_color;
-      float width_ = 1.0f;
     };
   }
 }

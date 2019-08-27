@@ -578,7 +578,7 @@ namespace xtd {
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
       /// @code
       /// void from_argb1(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // Transparent red, green, and blue brushes.
       ///   solid_brush trns_red_brush(color::from_argb(0x78FF0000));
@@ -614,7 +614,7 @@ namespace xtd {
       /// The alpha value is never fully opaque and the rectangles overlap so you get color-combination effects.
       /// @code
       /// void from_argb2(paint_event_aArgs& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // Opaque colors (alpha value defaults to 255 -- max value).
       ///   color red = color::from_argb(255, 0, 0);
@@ -679,7 +679,7 @@ namespace xtd {
       /// * Paints three overlapping circles, each centered on one vertex of the triangle, using a different brush for each circle.
       /// @code
       /// void from_argb1(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // Transparent red, green, and blue brushes.
       ///   solid_brush trns_red_brush(color::from_argb(120, 255, 0, 0));
@@ -716,7 +716,7 @@ namespace xtd {
       /// The alpha value is never fully opaque and the rectangles overlap so you get color-combination effects.
       /// @code
       /// void from_argb2(paint_event_aArgs& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // Opaque colors (alpha value defaults to 255 -- max value).
       ///   color red = color::from_argb(255, 0, 0);
@@ -796,7 +796,7 @@ namespace xtd {
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
       /// @code
       /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
       ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
@@ -867,7 +867,7 @@ namespace xtd {
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
       /// @code
       /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
       ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
@@ -918,7 +918,7 @@ namespace xtd {
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
       /// @code
       /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
       ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
@@ -969,7 +969,7 @@ namespace xtd {
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
       /// @code
       /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
       ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
@@ -1025,7 +1025,7 @@ namespace xtd {
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
       /// @code
       /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
       ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
@@ -1081,7 +1081,7 @@ namespace xtd {
       /// The first rectangle is painted the color represented by redShade. Each of the other rectangles is painted a xtd::drawing::known_color that matches the hue of the redShade.
       /// @code
       /// void known_color_brightness_example2(paint_event_args& e) {
-      ///   graphics& g = e.graphics();
+      ///   graphics g = e.graphics();
       ///
       ///   // xtd::drawing::color structures. One is a variable used for temporary storage. The other is a constant used for comparisons.
       ///   xtd::drawing::color some_color = xtd::drawing::color::from_argb(0);
