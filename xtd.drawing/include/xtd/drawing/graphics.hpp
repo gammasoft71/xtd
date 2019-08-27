@@ -4,6 +4,7 @@
 #include <xtd/xtd.strings>
 #include "brush.hpp"
 #include "color.hpp"
+#include "font.hpp"
 #include "pen.hpp"
 #include "point.hpp"
 #include "point_f.hpp"
@@ -25,7 +26,11 @@ namespace xtd {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     class graphics {
     public:
+      /// @cond
       ~graphics();
+      graphics(const graphics&) = default;
+      graphics& operator=(const graphics&) = default;
+      /// @endcond
       
       void clear(const color& color);
       
@@ -96,11 +101,15 @@ namespace xtd {
       /// @endcond
       
     private:
+      friend drawing::font;
       friend forms::control;
       friend forms::screen;
-      graphics(intptr_t hdc) : hdc_(hdc) {}
-      
-      intptr_t hdc_ = 0;
+      graphics(intptr_t handle) {this->data_->handle_ = handle;}
+
+      struct data {
+        intptr_t handle_ = 0;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

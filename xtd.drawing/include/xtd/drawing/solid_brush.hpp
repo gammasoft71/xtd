@@ -15,15 +15,18 @@ namespace xtd {
       /// @cond
       solid_brush(const solid_brush&) = default;
       solid_brush& operator=(const solid_brush&) = default;
-      bool operator==(const solid_brush& value) const {return this->color_ == value.color_;}
+      bool operator==(const solid_brush& value) const {return this->data_->color_ == value.data_->color_;}
       bool operator!=(const solid_brush& value) const {return !this->operator==(value);}
       /// @endcond
       
-      const drawing::color& color() const {return this->color_;}
+      const drawing::color& color() const {return this->data_->color_;}
       solid_brush& color(const drawing::color& color);
       
     private:
-      drawing::color color_ = drawing::color::black;
+      struct data {
+        drawing::color color_ = drawing::color::black;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
