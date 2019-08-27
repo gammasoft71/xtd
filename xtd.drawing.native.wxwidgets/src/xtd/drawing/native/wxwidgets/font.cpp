@@ -3,11 +3,20 @@
 #include <wx/dcscreen.h>
 #include <wx/font.h>
 
+
+namespace {
+#if defined(__WXOSX__)
+  constexpr float device_unit_scale_correction =  4.0f / 3.0f;
+#else
+  constexpr float device_unit_scale_correction =  1.0f;
+#endif
+}
+
 using namespace xtd::drawing::native;
 
 intptr_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
-  wxFont* font = new wxFont(em_size, wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name);
-  font->SetPointSize(em_size);
+  wxFont* font = new wxFont(em_size * device_unit_scale_correction, wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name);
+  font->SetPointSize(em_size * device_unit_scale_correction);
   font->SetStrikethrough(strikeout);
   return reinterpret_cast<intptr_t>(font);
 }

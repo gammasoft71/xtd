@@ -25,6 +25,8 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//size.hpp
   include/xtd/drawing//size_f.hpp
   include/xtd/drawing//solid_brush.hpp
+  include/xtd/drawing//string_alignment.hpp
+  include/xtd/drawing//string_format.hpp
   include/xtd/drawing//system_colors.hpp
 )
 
@@ -56,6 +58,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/size_f.cpp
   src/xtd/drawing/size.cpp
   src/xtd/drawing/solid_brush.cpp
+  src/xtd/drawing/string_format.cpp
   src/xtd/drawing/system_colors.cpp
 )
 

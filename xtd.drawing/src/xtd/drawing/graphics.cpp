@@ -1,4 +1,5 @@
 #include "../../../include/xtd/drawing/graphics.hpp"
+#include "../../../include/xtd/drawing/solid_brush.hpp"
 #include <xtd/drawing/native/graphics.hpp>
 
 using namespace xtd;
@@ -30,6 +31,11 @@ void graphics::draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int
 
 void graphics::draw_rectangle(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height) {
   native::graphics::draw_rectangle(this->data_->handle_, pen.data_->handle_, x, y, width, height);
+}
+
+void graphics::draw_string(const std::string& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
+  if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
+    native::graphics::draw_string(this->data_->handle_, text, font.data_->handle_, x, y, static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
 }
 
 void graphics::fill_ellipse(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
