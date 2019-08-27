@@ -38,6 +38,11 @@ void graphics::draw_string(const std::string& text, const font& font, const brus
     native::graphics::draw_string(this->data_->handle_, text, font.data_->handle_, x, y, static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
 }
 
+void graphics::draw_string(const std::string& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
+  if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
+    native::graphics::draw_string(this->data_->handle_, text, font.data_->handle_, layout_rectangle.x(), layout_rectangle.y(), layout_rectangle.width(), layout_rectangle.height(), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+}
+
 void graphics::fill_ellipse(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   native::graphics::fill_ellipse(this->data_->handle_, brush.data_->handle_, x, y, width, height);
 }
