@@ -36,8 +36,8 @@ namespace xtd {
       /// @cond
       pen();
       virtual ~pen();
-      pen(const pen&);
-      pen& operator=(const pen&);
+      pen(const pen&) = default;
+      pen& operator=(const pen&) = default;
       bool operator==(const pen& value) const {return this->alignment_ == value.alignment_ && this->type_ == value.type_;}
       bool operator!=(const pen& value) const {return !this->operator==(value);}
       /// @endcond
@@ -73,7 +73,10 @@ namespace xtd {
 
     private:
       friend class graphics;
-      intptr_t handle_ = 0;
+      struct data {
+        intptr_t handle_ = 0;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
       drawing2d::pen_alignment alignment_ = drawing2d::pen_alignment::center;
       drawing::color color_;
       drawing2d::pen_type type_ = drawing2d::pen_type::solid_color;

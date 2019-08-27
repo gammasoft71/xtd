@@ -8,50 +8,33 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 pen::pen(const drawing::brush& brush) {
-  this->handle_ = native::pen::create();
+  this->data_->handle_ = native::pen::create();
   this->brush(brush);
 }
 
 pen::pen(const drawing::brush& brush, float width) {
-  this->handle_ = native::pen::create();
+  this->data_->handle_ = native::pen::create();
   this->brush(brush);
   this->width(width);
 }
 
 pen::pen(const drawing::color& color) {
-  this->handle_ = native::pen::create();
+  this->data_->handle_ = native::pen::create();
   this->color(color);
 }
 
 pen::pen(const drawing::color& color, float width) {
-  this->handle_ = native::pen::create();
+  this->data_->handle_ = native::pen::create();
   this->color(color);
   this->width(width);
 }
 
-pen::pen(const pen& pen) {
-  this->handle_ = native::pen::create();
-  this->alignment(pen.alignment());
-  this->color(pen.color());
-  this->type(pen.type());
-  this->width(pen.width());
-}
-
-pen& pen::operator=(const pen& pen) {
-  this->handle_ = native::pen::create();
-  this->alignment(pen.alignment());
-  this->color(pen.color());
-  this->type(pen.type());
-  this->width(pen.width());
-  return *this;
-}
-
 pen::pen() {
-  this->handle_ = native::pen::create();
+  this->data_->handle_ = native::pen::create();
 }
 
 pen::~pen() {
-  native::pen::destroy(this->handle_);
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::pen::destroy(this->data_->handle_);
 }
 
 pen& pen::alignment(drawing2d::pen_alignment alignment) {
@@ -92,7 +75,7 @@ pen& pen::brush(const drawing::brush& brush) {
 pen& pen::color(const drawing::color& color) {
   if (this->color_ != color) {
     this->color_ = color;
-    native::pen::color(this->handle_, color.a(), color.r(), color.g(), color.b());
+    native::pen::color(this->data_->handle_, color.a(), color.r(), color.g(), color.b());
   }
   return *this;
 }
@@ -107,7 +90,7 @@ pen& pen::type(drawing2d::pen_type type) {
 pen& pen::width(float width) {
   if (this->width_ != width) {
     this->width_ = width;
-    native::pen::width(this->handle_, width);
+    native::pen::width(this->data_->handle_, width);
   }
   return *this;
 }
