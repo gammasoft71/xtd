@@ -13,33 +13,33 @@ void graphics::clear(const color& color) {
 }
 
 void graphics::draw_arc(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
-  native::graphics::draw_arc(this->hdc_, pen.handle_, x, y, width, height, start_angle, sweep_angle);
+  native::graphics::draw_arc(this->hdc_, pen.data_->handle_, x, y, width, height, start_angle, sweep_angle);
 }
 
 void graphics::draw_bezier(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
-  native::graphics::draw_bezier(this->hdc_, pen.handle_, x1, y1, x2, y2, x3, y3, x4, y4);
+  native::graphics::draw_bezier(this->hdc_, pen.data_->handle_, x1, y1, x2, y2, x3, y3, x4, y4);
 }
 
 void graphics::draw_ellipse(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height) {
-  native::graphics::draw_ellipse(this->hdc_, pen.handle_, x, y, width, height);
+  native::graphics::draw_ellipse(this->hdc_, pen.data_->handle_, x, y, width, height);
 }
 
 void graphics::draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
-  native::graphics::draw_line(this->hdc_, pen.handle_, x1, y1, x2, y2);
+  native::graphics::draw_line(this->hdc_, pen.data_->handle_, x1, y1, x2, y2);
 }
 
 void graphics::draw_rectangle(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height) {
-  native::graphics::draw_rectangle(this->hdc_, pen.handle_, x, y, width, height);
+  native::graphics::draw_rectangle(this->hdc_, pen.data_->handle_, x, y, width, height);
 }
 
 void graphics::fill_ellipse(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
-  native::graphics::fill_ellipse(this->hdc_, brush.handle_, x, y, width, height);
+  native::graphics::fill_ellipse(this->hdc_, brush.data_->handle_, x, y, width, height);
 }
 
 void graphics::fill_pie(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
-  native::graphics::fill_pie(this->hdc_, brush.handle_, x, y, width, height, start_angle, sweep_angle);
+  native::graphics::fill_pie(this->hdc_, brush.data_->handle_, x, y, width, height, start_angle, sweep_angle);
 }
 
 void graphics::fill_rectangle(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
-  native::graphics::fill_rectangle(this->hdc_, brush.handle_, x, y, width, height);
+  native::graphics::fill_rectangle(this->hdc_, brush.data_->handle_, x, y, width, height);
 }

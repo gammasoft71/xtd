@@ -5,17 +5,9 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 brush::brush() {
-  this->handle_ = native::brush::create();
-}
-
-brush::brush(const brush&) {
-  this->handle_ = native::brush::create();
-}
-
-brush& brush::operator=(const brush&) {
-  return *this;
+  this->data_->handle_ = native::brush::create();
 }
 
 brush::~brush() {
-  native::brush::destroy(this->handle_);
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::brush::destroy(this->data_->handle_);
 }

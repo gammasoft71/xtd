@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <memory>
 #include <ostream>
 #include <xtd/xtd.strings>
 
@@ -16,10 +17,10 @@ namespace xtd {
       //static const brush null;
       
       /// @cond
-      brush(const brush&);
+      brush(const brush&) = default;
       virtual ~brush();
-      brush& operator=(const brush&);
-      bool operator==(const brush& value) const {return this->handle_ == value.handle_;}
+      brush& operator=(const brush&) = default;
+      bool operator==(const brush& value) const {return this->data_->handle_ == value.data_->handle_;}
       bool operator!=(const brush& value) const {return !this->operator==(value);}
       /// @endcond
       
@@ -36,8 +37,12 @@ namespace xtd {
       brush();
       
       void set_native_brush(intptr_t brush);
-
-      intptr_t handle_ = 0;
+      
+      struct data {
+        intptr_t handle_ = 0;
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
