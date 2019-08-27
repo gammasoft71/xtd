@@ -11,6 +11,7 @@
 #include "rectangle.hpp"
 #include "rectangle_f.hpp"
 #include "size.hpp"
+#include "string_format.hpp"
 #include "size_f.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -67,7 +68,9 @@ namespace xtd {
       void draw_rectangle(const pen& pen, const rectangle& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
       
       void draw_rectangle(const pen& pen, const rectangle_f& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
-      
+
+      void draw_string(const std::string& text, const font& font, const brush& brush, float x, float y, const string_format& format);
+
       void fill_ellipse(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
       
       void fill_ellipse(const brush& brush, float x, float y, float width, float height) {fill_ellipse(brush, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height));}

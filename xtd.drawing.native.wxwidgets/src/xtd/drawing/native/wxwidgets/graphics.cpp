@@ -69,6 +69,20 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
   reinterpret_cast<wxDC*>(hdc)->SetPen(current_pen);
 }
 
+void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+  wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
+  wxColour current_back_color = reinterpret_cast<wxDC*>(hdc)->GetTextBackground();
+  wxColour current_fore_color = reinterpret_cast<wxDC*>(hdc)->GetTextForeground();
+
+  reinterpret_cast<wxDC*>(hdc)->SetFont(*reinterpret_cast<wxFont*>(font));
+  reinterpret_cast<wxDC*>(hdc)->SetTextForeground(wxColour(r, g, b, a));
+  reinterpret_cast<wxDC*>(hdc)->DrawText(text, x, y);
+  
+  reinterpret_cast<wxDC*>(hdc)->SetFont(current_font);
+  reinterpret_cast<wxDC*>(hdc)->SetTextForeground(current_back_color);
+  reinterpret_cast<wxDC*>(hdc)->SetTextForeground(current_fore_color);
+}
+
 void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();

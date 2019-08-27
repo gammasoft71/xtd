@@ -23,4 +23,6 @@
 #include "drawing/size.hpp"
 #include "drawing/size_f.hpp"
 #include "drawing/solid_brush.hpp"
+#include "drawing/string_alignment.hpp"
+#include "drawing/string_format.hpp"
 #include "drawing/system_colors.hpp"

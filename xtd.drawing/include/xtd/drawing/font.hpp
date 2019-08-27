@@ -254,6 +254,7 @@ namespace xtd {
       intptr_t to_hfont() const;
       
     private:
+      friend class graphics;
       struct data {
         intptr_t handle_ = 0;
         drawing::font_family font_family_;
