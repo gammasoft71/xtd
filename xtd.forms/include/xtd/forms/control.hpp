@@ -6,7 +6,7 @@
 #include <optional>
 #include <string>
 #include <xtd/drawing/color.hpp>
-#include <xtd/drawing/system_colors.hpp>
+#include <xtd/drawing/font.hpp>
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/rectangle.hpp>
 #include <xtd/drawing/size.hpp>
@@ -67,7 +67,9 @@ namespace xtd {
       virtual drawing::color default_back_color() const;
 
       virtual drawing::color default_fore_color() const;
-
+      
+      virtual drawing::font default_font() const;
+      
       virtual drawing::size default_size() const {return{0, 0};}
       
       virtual bool enabled() const {return this->enabled_;}
@@ -75,6 +77,9 @@ namespace xtd {
 
       virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ != &control::null ? this->parent_->fore_color() : default_fore_color());}
       virtual control& fore_color(const drawing::color& color);
+      
+      virtual drawing::font font() const {return this->font_.value_or(this->parent_ != &control::null ? this->parent_->font() : default_font());}
+      virtual control& font(const drawing::font& font);
       
       virtual intptr_t handle() const;
       
@@ -218,6 +223,8 @@ namespace xtd {
 
       event<control, event_handler<control>> fore_color_changed;
       
+      event<control, event_handler<control>> font_changed;
+      
       event<control, key_event_handler<control>> key_down;
       
       event<control, key_press_event_handler<control>> key_press;
@@ -277,6 +284,8 @@ namespace xtd {
       
       virtual void on_fore_color_changed(const event_args& e);
       
+      virtual void on_font_changed(const event_args& e);
+      
       virtual void on_got_focus(const event_args& e);
       
       virtual void on_handle_created(const event_args& e);
@@ -319,6 +328,8 @@ namespace xtd {
       
       virtual void on_parent_fore_color_changed(const event_args& e);
       
+      virtual void on_parent_font_changed(const event_args& e);
+      
       virtual void on_size_changed(const event_args& e);
       
       virtual void on_text_changed(const event_args& e);
@@ -332,6 +343,7 @@ namespace xtd {
       control_collection controls_;
       bool enabled_ = true;
       std::optional<drawing::color> fore_color_;
+      std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
       static std::map<intptr_t, control*> handles_;
       std::string name_;

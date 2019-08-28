@@ -97,6 +97,10 @@ drawing::color control::default_fore_color() const {
   return native::control::default_fore_color();
 }
 
+drawing::font control::default_font() const {
+  return native::control::default_font();
+}
+
 control& control::enabled(bool enabled) {
   if (this->enabled_ != enabled) {
     this->enabled_ = enabled;
@@ -113,6 +117,17 @@ control& control::fore_color(const color& color) {
     this->on_fore_color_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
+  }
+  return *this;
+}
+
+control& control::font(const drawing::font& font) {
+  if (this->font_ != font) {
+    this->font_ = font;
+    native::control::font(this->handle_, this->font_.value());
+    this->on_font_changed(event_args::empty);
+    for (auto control : this->controls())
+      control.get().on_parent_font_changed(event_args::empty);
   }
   return *this;
 }
@@ -269,6 +284,11 @@ void control::on_fore_color_changed(const event_args &e) {
   this->fore_color_changed(*this, e);
 }
 
+void control::on_font_changed(const event_args &e) {
+  this->refresh();
+  this->font_changed(*this, e);
+}
+
 void control::on_got_focus(const event_args &e) {
   this->got_focus(*this, e);
 }
@@ -279,6 +299,7 @@ void control::on_handle_created(const event_args &e) {
   if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
   if ((this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->handle_, this->back_color());
   if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
+  if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(this->handle_, this->font());
   //native::control::visible(this->handle_, this->visible());
 
   this->client_size_ = native::control::client_size(this->handle_);
@@ -373,6 +394,14 @@ void control::on_parent_fore_color_changed(const event_args &e) {
     native::control::fore_color(this->handle_, this->fore_color());
     for (auto control : this->controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
+  }
+}
+
+void control::on_parent_font_changed(const event_args &e) {
+  if (!this->font_.has_value()) {
+    native::control::font(this->handle_, this->font());
+    for (auto control : this->controls())
+      control.get().on_parent_font_changed(event_args::empty);
   }
 }
 
