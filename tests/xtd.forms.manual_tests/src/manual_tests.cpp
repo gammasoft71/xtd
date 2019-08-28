@@ -8,23 +8,9 @@ using namespace xtd::forms;
 int main() {
   form form;
   form.text("Manual tests");
-  form.client_size({640, 480});
 
-  form.show();
   form.paint += [&](const control& sender, paint_event_args& e) {
-    e.graphics().fill_rectangle(solid_brush(color::blue), 0, 0, 640, 480);
-    e.graphics().clear(color::light_yellow);
-    e.graphics().draw_rectangle(pen(color::light_pink, 10), e.clip_rectangle());
-    e.graphics().draw_line(pen(color::light_steel_blue, 5), 20, 60, 260, 60);
-    e.graphics().fill_rectangle(solid_brush(color::light_blue), 50, 300, 400, 50);
-    e.graphics().draw_line(pen(color::red, 1), 0, 0, 1, 1);
-    e.graphics().draw_string("Draw string", font("Arial", 34, font_style::regular), solid_brush(color::light_green), 20.0f, 0.0f);
-    e.graphics().fill_rectangle(solid_brush(color::light_sea_green), 400, 70, 100, 200);
-    e.graphics().draw_arc(pen(color::black, 10), 400, 70, 100, 200, 45, 270);
-    e.graphics().draw_ellipse(pen(color::red, 10), 100, 80, 200, 200);
-    e.graphics().fill_pie(solid_brush(color::green), 120, 100, 160, 160, 45, 270);
-    e.graphics().fill_pie(solid_brush(color::light_green), 120, 100, 160, 160, 270, 180);
-    e.graphics().draw_bezier(pen(color::black), 100, 100, 150, 150, 200, 100, 250, 50);
+    e.graphics().draw_string(strings::format("{}", system_fonts::default_font), system_fonts::default_font, solid_brush(system_colors::control_text), 10, 10);
  };
   
   application::run(form);
