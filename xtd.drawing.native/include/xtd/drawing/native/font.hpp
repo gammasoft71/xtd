@@ -15,6 +15,7 @@ namespace xtd {
         static intptr_t create_from_hfont(intptr_t hfont);
         static void destroy(intptr_t font);
         static int32_t dpi();
+        static void get_information(intptr_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font);
         static float height(intptr_t font);
         static float height(intptr_t font, intptr_t hdc);
         static float height(intptr_t font, float dpi);

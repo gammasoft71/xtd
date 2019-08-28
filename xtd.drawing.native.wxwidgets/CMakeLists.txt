@@ -15,6 +15,7 @@ set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
   src/xtd/drawing/native/wxwidgets/graphics.cpp
   src/xtd/drawing/native/wxwidgets/pen.cpp
   src/xtd/drawing/native/wxwidgets/system_colors.cpp
+  src/xtd/drawing/native/wxwidgets/system_fonts.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

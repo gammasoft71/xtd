@@ -40,6 +40,18 @@ int32_t font::dpi() {
   return dpi.GetHeight();
 }
 
+void font::get_information(intptr_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
+  wxFont* wx_font = reinterpret_cast<wxFont*>(font);
+  name = wx_font->GetFaceName();
+  em_size = static_cast<float>(wx_font->GetPointSize()) / device_unit_scale_correction;
+  bold = wx_font->GetWeight() > wxFontWeight::wxFONTWEIGHT_NORMAL;
+  italic = wx_font->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL;
+  underline = wx_font->GetUnderlined();
+  strikeout = wx_font->GetStrikethrough();
+  gdi_char_set = 0;
+  gdi_vertical_font = false;
+}
+
 float font::height(intptr_t font) {
   if (!wxTheApp) return 0;
   wxScreenDC hdc;

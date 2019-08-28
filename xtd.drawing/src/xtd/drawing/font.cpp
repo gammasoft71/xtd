@@ -27,7 +27,6 @@ font::font(std::string family_name, float em_size, font_style style, graphics_un
   this->data_->gdi_char_set_ = gdi_char_set;
   this->data_->gdi_vertical_font_ = gdi_vertical_font;
   this->data_->handle_ = native::font::create(this->data_->original_font_name_, this->size_in_points(), (this->data_->style_ & font_style::bold) == font_style::bold, (this->data_->style_ & font_style::italic) == font_style::italic, (this->data_->style_ & font_style::underline) == font_style::underline, (this->data_->style_ & font_style::strikeout) == font_style::strikeout, this->data_->gdi_char_set_, this->data_->gdi_vertical_font_);
-  this->data_->height_ = static_cast<int32_t>(std::ceil(this->get_height()));
 }
 
 font::~font() {
@@ -45,6 +44,53 @@ float font::size_in_points() const {
     case graphics_unit::millimeter: return this->data_->size_ / 25.4f * native::font::dpi();
     default: return this->data_->size_;
   }
+}
+
+int32_t font::height() const {
+  return static_cast<int32_t>(std::ceil(this->get_height()));
+}
+
+font font::from_hdc(const intptr_t hdc) {
+  font font;
+  font.data_->handle_ = native::font::create_from_hdc(hdc);
+  std::string family_name;
+  bool bold = false, italic = false, underline = false, strikeout = false;
+  native::font::get_information(font.data_->handle_, family_name, font.data_->size_, bold, italic, underline, strikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
+  try {
+    font.data_->font_family_ = drawing::font_family(family_name);
+  } catch (...) {
+    font.data_->font_family_ = drawing::font_family::generic_sans_serif();
+  }
+  if (bold) font.data_->style_ |= font_style::bold;
+  if (italic) font.data_->style_ |= font_style::italic;
+  if (underline) font.data_->style_ |= font_style::underline;
+  if (strikeout) font.data_->style_ |= font_style::strikeout;
+  font.data_->original_font_name_ = family_name;
+  font.data_->is_system_font_ = true;
+  font.data_->unit_ = graphics_unit::point;
+  return font;
+}
+
+font font::from_hfont(const intptr_t hfont) {
+  font font;
+  font.data_->handle_ = native::font::create_from_hfont(hfont);
+  std::string family_name;
+  bool bold = false, italic = false, underline = false, strikeout = false;
+  native::font::get_information(font.data_->handle_, family_name, font.data_->size_, bold, italic, underline, strikeout, font.data_->gdi_char_set_, font.data_->gdi_vertical_font_);
+  try {
+    font.data_->font_family_ = drawing::font_family(family_name);
+  } catch (...) {
+    font.data_->font_family_ = drawing::font_family::generic_sans_serif();
+  }
+  if (bold) font.data_->style_ |= font_style::bold;
+  if (italic) font.data_->style_ |= font_style::italic;
+  if (underline) font.data_->style_ |= font_style::underline;
+  if (strikeout) font.data_->style_ |= font_style::strikeout;
+  font.data_->original_font_name_ = family_name;
+  font.data_->system_font_name_ = family_name;
+  font.data_->is_system_font_ = true;
+  font.data_->unit_ = graphics_unit::point;
+   return font;
 }
 
 float font::get_height() const {

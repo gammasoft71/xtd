@@ -15,6 +15,7 @@ set(XTD_DRAWING_NATIVE_INCLUDES
   include/xtd/drawing/native/graphics.hpp
   include/xtd/drawing/native/pen.hpp
   include/xtd/drawing/native/system_colors.hpp
+  include/xtd/drawing/native/system_fonts.hpp
 )
 
 set(SOURCES
