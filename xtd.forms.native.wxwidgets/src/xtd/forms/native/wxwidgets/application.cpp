@@ -1,6 +1,7 @@
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
 #include "control_handler.hpp"
+#include <wx/aboutdlg.h>
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/window.h>
@@ -65,7 +66,15 @@ void application::initialize_application() {
   wxinitializer = make_unique<wxInitializer>();
   wxTheApp->CallOnInit();
 #if __WXOSX__
-  wxMenuBar::MacSetCommonMenuBar(new wxMenuBar());
+  wxMenuBar *menubar = new wxMenuBar();
+  wxMenu* menuWindow = new wxMenu();
+  menuWindow->Append(wxID_ABOUT, "About");
+  menubar->Append(menuWindow, "Window");
+  menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
+    if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
+    else event.Skip();
+  });
+  wxMenuBar::MacSetCommonMenuBar(menubar);
 #endif
 }
 
