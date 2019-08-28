@@ -2,6 +2,7 @@
 #include <xtd/forms/window_messages.hpp>
 #include "control_handler.hpp"
 #include <wx/app.h>
+#include <wx/menu.h>
 #include <wx/window.h>
 
 using namespace std;
@@ -63,6 +64,9 @@ void application::initialize_application() {
   wxApp::SetInstance(new wx_application());
   wxinitializer = make_unique<wxInitializer>();
   wxTheApp->CallOnInit();
+#if __WXOSX__
+  wxMenuBar::MacSetCommonMenuBar(new wxMenuBar());
+#endif
 }
 
 intptr_t application::main_form() {
