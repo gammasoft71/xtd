@@ -44,7 +44,7 @@ namespace xtd {
       /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       /// @remarks The gdiCharSet parameter takes a value from the list defined in the Windows SDK header file WinGDI.h. If the familyName parameter specifies a font that is not installed on the machine running the application or is not supported, Microsoft Sans Serif will be substituted.
-      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font);
+      font(const drawing::font_family& font_family, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) : font(font_family.name(), em_size, style, unit, gdi_char_set, gdi_vertical_font) {}
       
       /// @brief nitializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
@@ -130,7 +130,10 @@ namespace xtd {
       
       /// @brief Converts this font_family to a human-readable string representation.
       /// @return The string that represents this font_family.
-      std::string to_string() const {return strings::format("[{}: ]", strings::class_name(*this));}
+      std::string to_string() const {
+        //return strings::format("[{}: ]", strings::class_name(*this));
+        return strings::format("[{}: name={}, size={}, units={}, gdi_char_set={}, gdi_vertical_font={}]", strings::class_name(*this), this->data_->font_family_.name(), this->data_->size_, (int32_t)this->data_->unit_, this->data_->gdi_char_set_, this->data_->gdi_vertical_font_);
+      }
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::font& font) noexcept {return os << font.to_string();}
@@ -184,7 +187,7 @@ namespace xtd {
       /// @remarks If the unit property of the font is set to anything other than graphics_unit::pixel, the height (in pixels) is calculated using the vertical resolution of the screen display. For example, suppose the font unit is inches and the font size is 0.3. Also suppose that for the corresponding font family, the em-height is 2048 and the line spacing is 2355. For a screen display that has a vertical resolution of 96 dots per inch, you can calculate the height as follows:
       /// @remarks 2355*(0.3/2048)*96 = 33.11719
       /// @remarks The value returned by the get_height method would be 33.11719, and the value returned by the height property would be 34. The height property is the value returned by get_height, rounded up to the nearest integer.
-      int32_t height() const;
+      int32_t height() const {return this->data_->height_;}
       
       /// @brief Gets a value indicating whether the font is a member of xtd::drawing::system_fonts.
       /// @return true if the font is a member of xtd::drawing::system_fonts; otherwise, false. The default is false.
