@@ -1,6 +1,7 @@
 #include <map>
 #include <stdexcept>
 #include <xtd/drawing/system_colors.hpp>
+#include <xtd/drawing/system_fonts.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>
 #include "wx_button.hpp"
@@ -15,6 +16,7 @@
 #include "wx_text_box.hpp"
 #include <wx/dcmemory.h>
 #include <wx/dcclient.h>
+#include <wx/font.h>
 
 using namespace std;
 using namespace xtd;
@@ -118,6 +120,10 @@ color control::default_fore_color() {
 #endif
 }
 
+font control::default_font() {
+  return system_fonts::default_font;
+}
+
 void control::destroy(intptr_t control) {
   if (control == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
@@ -170,6 +176,15 @@ void control::fore_color(intptr_t control, const color& color) {
 #else
   reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 #endif
+}
+
+drawing::font control::font(intptr_t control) {
+  return drawing::font::from_hfont(reinterpret_cast<intptr_t>(new wxFont(reinterpret_cast<control_handler*>(control)->control()->GetFont())));
+}
+
+void control::font(intptr_t control, const drawing::font& font) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
 
 intptr_t control::handle(intptr_t control) {

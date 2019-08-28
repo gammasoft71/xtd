@@ -15,6 +15,7 @@ form::form() {
   this->visible_ = false;
   this->back_color_ = this->default_back_color();
   this->fore_color_ = this->default_fore_color();
+  this->font_ = this->default_font();
   this->size_ = this->default_size();
 }
 

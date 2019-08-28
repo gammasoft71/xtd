@@ -4,6 +4,7 @@
 #include <xtd/delegate.hpp>
 #include <xtd/event_args.hpp>
 #include <xtd/drawing/color.hpp>
+#include <xtd/drawing/font.hpp>
 #include <xtd/xtd.strings.hpp>
 #include "../create_params.hpp"
 #include "../window_messages.hpp"
@@ -22,6 +23,7 @@ namespace xtd {
         static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle);
         static drawing::color default_back_color();
         static drawing::color default_fore_color();
+        static drawing::font default_font();
         static void destroy(intptr_t control);
         static void erase(intptr_t control);
         static drawing::size client_size(intptr_t control);
@@ -30,6 +32,8 @@ namespace xtd {
         static void enabled(intptr_t control, bool enabled);
         static drawing::color fore_color(intptr_t control);
         static void fore_color(intptr_t control, const drawing::color& color);
+        static drawing::font font(intptr_t control);
+        static void font(intptr_t control, const drawing::font& font);
         static intptr_t handle(intptr_t control);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);
