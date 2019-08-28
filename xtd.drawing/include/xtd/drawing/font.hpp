@@ -125,6 +125,8 @@ namespace xtd {
       /// @cond
       font(const font&) = default;
       font& operator=(const font&) = default;
+      bool operator==(const font& value) const {return this->data_->font_family_ == value.data_->font_family_ && this->data_->gdi_char_set_ == value.data_->gdi_char_set_ && this->data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && this->data_->style_ == value.data_->style_ && this->data_->size_ == value.data_->size_ && this->data_->unit_ == value.data_->unit_;}
+      bool operator!=(const font& value) const {return !this->operator==(value);}
       ~font();
       /// @endcond
       
@@ -180,6 +182,10 @@ namespace xtd {
       /// @remarks Use this property to determine if a font is compatible with native Win32 controls on non-Unicode platforms.
       /// @remarks gdi_vertical_font only returns true if this font was created from a classic GDI font definition, like a LOGFONT or HFONT.
       bool gdi_vertical_font() const {return this->data_->gdi_vertical_font_;}
+      
+      /// @brief Gets the window handle that the font is bound to.
+      /// @return An intptr_t that contains the window handle (hfont) of the font.
+      intptr_t handle() const {return this->data_->handle_;}
       
       /// @brief Gets the line spacing of this font.
       /// @return The line spacing, in pixels, of this font.
