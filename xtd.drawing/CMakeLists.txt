@@ -28,6 +28,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//string_alignment.hpp
   include/xtd/drawing//string_format.hpp
   include/xtd/drawing//system_colors.hpp
+  include/xtd/drawing//system_fonts.hpp
 )
 
 set(XTD_DRAWING_DRAWING2D_INCLUDES
@@ -60,6 +61,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/solid_brush.cpp
   src/xtd/drawing/string_format.cpp
   src/xtd/drawing/system_colors.cpp
+  src/xtd/drawing/system_fonts.cpp
 )
 
 set(XTD_DRAWING_TEXT_SOURCES
