@@ -28,7 +28,24 @@ namespace {
       return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
     }
 
-    bool OnInit() override {return true;}
+    bool OnInit() override {
+#if __WXOSX__
+      wxMenuBar* menubar = new wxMenuBar();
+      wxMenu* menuWindow = new wxMenu();
+      wxMenuItem* aboutMenuItem = new wxMenuItem(menuWindow, wxID_ANY, "About");
+      
+      menubar->Append(menuWindow, "Window");
+      menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
+        if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
+        else event.Skip();
+      });
+      
+      wxApp::s_macAboutMenuItemId = aboutMenuItem->GetId();
+      wxApp::s_macWindowMenuTitleName = "Window";
+      wxMenuBar::MacSetCommonMenuBar(menubar);
+#endif
+      return true;
+    }
     
     event<wx_application, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
   };
@@ -65,17 +82,6 @@ void application::initialize_application() {
   wxApp::SetInstance(new wx_application());
   wxinitializer = make_unique<wxInitializer>();
   wxTheApp->CallOnInit();
-#if __WXOSX__
-  wxMenuBar *menubar = new wxMenuBar();
-  wxMenu* menuWindow = new wxMenu();
-  menuWindow->Append(wxID_ABOUT, "About");
-  menubar->Append(menuWindow, "Window");
-  menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-    if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
-    else event.Skip();
-  });
-  wxMenuBar::MacSetCommonMenuBar(menubar);
-#endif
 }
 
 intptr_t application::main_form() {
