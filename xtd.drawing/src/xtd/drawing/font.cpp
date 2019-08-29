@@ -103,7 +103,9 @@ float font::get_height(const graphics& graphics) const {
 }
 
 float font::get_height(float dpi) const {
-  return native::font::height(this->data_->handle_,dpi);
+  //return native::font::height(this->data_->handle_,dpi);
+  if (this->data_->unit_ == graphics_unit::pixel) return this->get_height();
+  return this->get_height() / native::font::dpi() * dpi;
 }
 
 intptr_t font::to_hfont() const {

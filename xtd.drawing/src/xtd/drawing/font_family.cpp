@@ -39,19 +39,19 @@ std::vector<font_family> font_family::families() {
 }
 
 int32_t font_family::get_cell_ascent(font_style style) const {
-  return native::font_family::get_cell_ascent(this->data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
+  return native::font_family::get_cell_ascent(this->data_->handle_, this->get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
 int32_t font_family::get_cell_descent(font_style style) const {
-  return native::font_family::get_cell_descent(this->data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
+  return native::font_family::get_cell_descent(this->data_->handle_, this->get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
 int32_t font_family::get_em_height(font_style style) const {
-  return native::font_family::get_em_height(this->data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
+  return 2048;
 }
 
 int32_t font_family::get_line_spacing(font_style style) const {
-  return native::font_family::get_line_spacing(this->data_->handle_, (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
+  return native::font_family::get_line_spacing(this->data_->handle_, this->get_em_height(style), (style & font_style::bold) == font_style::bold, (style & font_style::italic) == font_style::italic, (style & font_style::underline) == font_style::underline, (style & font_style::strikeout) == font_style::strikeout);
 }
 
 std::string font_family::get_name(int32_t language) const {

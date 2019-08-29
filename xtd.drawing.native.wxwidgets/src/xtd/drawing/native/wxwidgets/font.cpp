@@ -74,21 +74,10 @@ float font::height(intptr_t font) {
 }
 
 float font::height(intptr_t font, intptr_t hdc) {
-  if (!wxTheApp) return 0;
+  if (!wxTheApp) return reinterpret_cast<wxFont*>(font)->GetPixelSize().GetHeight();
   wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
   reinterpret_cast<wxDC*>(hdc)->SetFont(*reinterpret_cast<wxFont*>(font));
   wxFontMetrics metrics = reinterpret_cast<wxDC*>(hdc)->GetFontMetrics();
   reinterpret_cast<wxDC*>(hdc)->SetFont(current_font);
   return static_cast<float>(metrics.height);
-}
-
-float font::height(intptr_t font, float dpi) {
-  if (!wxTheApp) return 0;
-  wxScreenDC hdc;
-  wxSize current_dpi = hdc.GetPPI();
-  wxFont current_font = hdc.GetFont();
-  hdc.SetFont(*reinterpret_cast<wxFont*>(font));
-  wxFontMetrics metrics = hdc.GetFontMetrics();
-  hdc.SetFont(current_font);
-  return static_cast<float>(metrics.height) / current_dpi.GetWidth() * dpi;
 }
