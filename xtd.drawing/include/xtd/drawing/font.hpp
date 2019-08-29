@@ -14,6 +14,7 @@ namespace xtd {
   namespace drawing {
     /// @cond
     class graphics;
+    class system_fonts;
     /// @endcond
     
     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
@@ -265,8 +266,10 @@ namespace xtd {
       intptr_t to_hfont() const;
       
     private:
-      font() = default;
       friend class graphics;
+      friend class system_fonts;
+      font() = default;
+      font(intptr_t hfont);
       struct data {
         intptr_t handle_ = 0;
         drawing::font_family font_family_;
