@@ -21,6 +21,7 @@ namespace xtd {
         static void fill_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t heigh);
         static void fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);
         static void fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height);
+        static void measure_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t& width, int32_t& height);
       };
     }
   }
