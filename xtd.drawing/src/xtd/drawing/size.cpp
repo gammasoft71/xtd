@@ -32,6 +32,18 @@ size size::add(const size& size1, const size& size2) {
   return size1 + size2;
 }
 
+size size::ceiling(const size_f& value) {
+  return {int32_t(std::ceil(value.width())), int32_t(std::ceil(value.height()))};
+}
+
+size size::round(const size_f& value) {
+  return {int32_t(std::round(value.width())), int32_t(std::round(value.height()))};
+}
+
+size size::truncate(const size_f& value) {
+  return {int32_t(std::trunc(value.width())), int32_t(std::trunc(value.height()))};
+}
+
 size size::subtract(const size& size1, const size& size2) {
   return size1 - size2;
 }

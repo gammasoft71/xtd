@@ -65,11 +65,21 @@ namespace xtd {
       /// @param size1 The first Size class to add.
       /// @param size2 The second Size class to add.
       /// @return Size A Size class that is the result of the addition operation.
-      static xtd::drawing::size add(const xtd::drawing::size& size1, const xtd::drawing::size& size2);
+      static size add(const size& size1, const size& size2);
+      
+      /// @brief Converts the specified size_f to a size by rounding the values of the size_f to the next higher integer values.
+      /// @param value The size_f to convert.
+      /// @return The size this method converts to.
+      static size ceiling(const size_f& value);
 
       /// @brief Tests whether this Size class has width and height of 0.
       /// @return bool Returns true  when this Size class has both a width and height of 0; otherwise, false.
       bool is_empty() const {return *this == size::empty;}
+
+      /// @brief Converts the specified size_f to a size object by rounding the size_f values to the nearest integer.
+      /// @param value The size_f to convert.
+      /// @return The size this method converts to.
+      static size round(const size_f& value);
 
       /// @brief Returns the result of subtracting specified size from the specified size.
       /// @param sz1 The Size to be subtracted from.
@@ -81,7 +91,12 @@ namespace xtd {
       /// @brief Creates a human-readable string that represents this size class.
       /// @return string A string that represents this size.
       std::string to_string() const {return "{width=" + std::to_string(this->width_) + ", height=" + std::to_string(this->height_) + "}";}
-      
+ 
+      /// @brief Converts the specified size_f to a size by truncating the values of the size_f.
+      /// @param value The size_f to convert.
+      /// @return The size this method converts to.
+      static size truncate(const size_f& value);
+
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::size& size) noexcept {
         return os << size.to_string();
