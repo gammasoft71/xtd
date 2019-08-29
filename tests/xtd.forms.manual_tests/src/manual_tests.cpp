@@ -8,27 +8,27 @@ using namespace xtd::forms;
 class form_test : public form {
 public:
   drawing::size compute_label_size(const label& label) const {
-    return drawing::size::round(this->create_graphics().measure_string(label.text(), label.font())) + drawing::size(4 + (label.border_style() == border_style::none ? 0 : 4), 0);
+    return drawing::size::round(this->create_graphics().measure_string(label.text(), label.font())) + drawing::size(2 + (label.border_style() == border_style::none ? 0 : 4), 1 + (label.border_style() == border_style::none ? 0 : 4));
   }
 
   form_test() {
     this->text("xtd.forms.manual_tests");
-    this->show();
     this->font(drawing::font("Arial", 34, font_style::bold | font_style::italic, graphics_unit::point));
-    this->controls().push_back_range({this->label1, this->label2});
+    this->controls().push_back(this->label1);
+    this->controls().push_back(this->label2);
 
     this->label1.auto_size(true);
     this->label1.location({0, 0});
-    this->label1.border_style(forms::border_style::none);
+    this->label1.border_style(forms::border_style::fixed_3d);
     this->label1.back_color(color::dark_green);
     this->label1.text("Hello, World!");
     cdebug << format("label1.size = {}", label1.size()) << endl;
 
     this->label2.location({0, 62});
-    this->label2.border_style(forms::border_style::none);
+    this->label2.border_style(forms::border_style::fixed_3d);
     this->label2.back_color(color::dark_green);
     this->label2.text("Hello, World!");
-    this->label2.size(compute_label_size(this->label1));
+    this->label2.size(compute_label_size(this->label2));
     cdebug << format("label2.size = {}", label2.size()) << endl;
 
     /*
