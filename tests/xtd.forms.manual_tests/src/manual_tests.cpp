@@ -5,33 +5,46 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-class form1 : public form {
+class form_test : public form {
 public:
-  form1() {
+  drawing::size compute_label_size(const label& label) const {
+    return drawing::size::round(this->create_graphics().measure_string(label.text(), label.font())) + drawing::size(4 + (label.border_style() == border_style::none ? 0 : 4), 0);
+  }
+
+  form_test() {
     this->text("xtd.forms.manual_tests");
     this->show();
-    
-    this->label.parent(*this);
-    this->label.auto_size(true);
-    this->label.location({0, 0});
-    this->label.font(drawing::font("Arial", 34, font_style::bold | font_style::italic, graphics_unit::point));
-    cdebug << format("lsize in points = {}", label.font().size_in_points()) << endl;
+    this->font(drawing::font("Arial", 34, font_style::bold | font_style::italic, graphics_unit::point));
+    this->controls().push_back_range({this->label1, this->label2});
 
-    this->label.text("Hello, World!");
-    cdebug << format("label.size = {}", label.size()) << endl;
+    this->label1.auto_size(true);
+    this->label1.location({0, 0});
+    this->label1.border_style(forms::border_style::none);
+    this->label1.back_color(color::dark_green);
+    this->label1.text("Hello, World!");
+    cdebug << format("label1.size = {}", label1.size()) << endl;
+
+    this->label2.location({0, 62});
+    this->label2.border_style(forms::border_style::none);
+    this->label2.back_color(color::dark_green);
+    this->label2.text("Hello, World!");
+    this->label2.size(compute_label_size(this->label1));
+    cdebug << format("label2.size = {}", label2.size()) << endl;
+
+    /*
     this->paint += [&](const control& sender, paint_event_args& e) {
-      //e.graphics().draw_line(pen(color::spring_green), 4, 0, 4, 300);
-      size_f size = e.graphics().measure_string(this->label.text(), this->label.font()) + size_f {5.0f, 0.0f};
-      e.graphics().draw_rectangle(pen(color::red), 0.0, 55.0, size.width(), size.height());
-      e.graphics().draw_string(this->label.text(), this->label.font(), solid_brush(system_colors::control_text), {{0.0f, 55.0f}, size});
-      cdebug << format("measure_string = {}", size) << endl;
+      drawing::size size = drawing::size::truncate(e.graphics().measure_string(this->label1.text(), this->label1.font()));
+      //e.graphics().draw_rectangle(pen(color::red), 0, 60, size.width() + 4, size.height() + 4);
+      e.graphics().draw_string(this->label1.text(), this->label1.font(), solid_brush(system_colors::control_text), {{2.0f, 62.0f}, size});
+      //cdebug << format("measure_string = {}", size) << endl;
     };
-
+     */
   }
 private:
-  label label;
+  label label1;
+  label label2;
 };
 
 int main() {
-  application::run(form1());
+  application::run(form_test());
 }
