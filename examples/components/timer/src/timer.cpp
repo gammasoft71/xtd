@@ -10,7 +10,9 @@ namespace examples {
     form1() {
       this->label.parent(*this);
       this->label.text("0.0");
+      this->label.font(drawing::font("Arial", 48, font_style::italic));
       this->label.location({10, 10});
+      this->label.size({210, 70});
       this->label.fore_color(color::dodger_blue);
 
       this->button.parent(*this);
