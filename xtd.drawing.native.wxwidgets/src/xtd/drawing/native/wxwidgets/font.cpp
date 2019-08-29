@@ -6,17 +6,31 @@
 
 namespace {
 #if defined(__WXOSX__)
-  constexpr float device_unit_scale_correction =  4.0f / 3.0f;
+  float points_to_native_font_graphics_untit(float size) {
+    float dpi = wxTheApp ? wxScreenDC().GetPPI().GetHeight() : 72.0f;
+    return size / dpi * 96.0f;  // font is in pixels and not in points
+  }
+
+  float native_font_graphics_untit_to_points(float size) {
+    float dpi = wxTheApp ? wxScreenDC().GetPPI().GetHeight() : 72.0f;
+    return size / 96.0f * dpi;  // font is in pixels and not in points
+  }
 #else
-  constexpr float device_unit_scale_correction =  1.0f;
+  float points_to_native_font_graphics_untit(float size) {
+    return size;  // font is in points
+  }
+
+  float native_font_graphics_untit_to_points(float size) {
+    return size;  // font is in points
+  }
 #endif
 }
 
 using namespace xtd::drawing::native;
 
 intptr_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
-  wxFont* font = new wxFont(em_size * device_unit_scale_correction, wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name);
-  font->SetPointSize(em_size * device_unit_scale_correction);
+  wxFont* font = new wxFont(points_to_native_font_graphics_untit(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name);
+  font->SetPointSize(points_to_native_font_graphics_untit(em_size));
   font->SetStrikethrough(strikeout);
   return reinterpret_cast<intptr_t>(font);
 }
@@ -43,7 +57,7 @@ int32_t font::dpi() {
 void font::get_information(intptr_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
   wxFont* wx_font = reinterpret_cast<wxFont*>(font);
   name = wx_font->GetFaceName();
-  em_size = static_cast<float>(wx_font->GetPointSize()) / device_unit_scale_correction;
+  em_size = native_font_graphics_untit_to_points(static_cast<float>(wx_font->GetPointSize()));
   bold = wx_font->GetWeight() > wxFontWeight::wxFONTWEIGHT_NORMAL;
   italic = wx_font->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL;
   underline = wx_font->GetUnderlined();

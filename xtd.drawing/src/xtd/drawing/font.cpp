@@ -15,6 +15,7 @@ font::font (const font& prototype, font_style style) {
 
 font::font(std::string family_name, float em_size, font_style style, graphics_unit unit, uint8_t gdi_char_set, bool gdi_vertical_font) {
   if (em_size <= 0 || em_size == std::numeric_limits<float>::infinity() || std::isnan(em_size)) throw std::invalid_argument("em_size is less than or equal to 0, evaluates to infinity, or is not a valid number.");
+  if (unit == graphics_unit::display) throw std::invalid_argument("unit can't be equal to graphics_unit::display.");
   try {
     this->data_->font_family_ = drawing::font_family(family_name);
   } catch (...) {
@@ -35,9 +36,9 @@ font::~font() {
 
 float font::size_in_points() const {
   switch (this->data_->unit_) {
-    case graphics_unit::world: return this->data_->size_ * 0.75f;
-    case graphics_unit::display: return this->data_->size_ / 75.0f * native::font::dpi();
-    case graphics_unit::pixel: return this->data_->size_ * 0.75f;
+    case graphics_unit::world:
+    case graphics_unit::display:
+    case graphics_unit::pixel: return this->data_->size_ / 96.0f * native::font::dpi();
     case graphics_unit::point: return this->data_->size_;
     case graphics_unit::inch: return this->data_->size_ * native::font::dpi();
     case graphics_unit::document: return this->data_->size_ / 300.0f * native::font::dpi();
