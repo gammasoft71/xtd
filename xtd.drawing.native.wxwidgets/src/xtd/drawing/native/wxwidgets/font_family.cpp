@@ -1,3 +1,5 @@
+#include <cmath>
+#include <xtd/drawing/native/font.hpp>
 #include <xtd/drawing/native/font_family.hpp>
 #include <wx/app.h>
 #include <wx/colour.h>
@@ -5,6 +7,18 @@
 #include <wx/dcscreen.h>
 
 using namespace xtd::drawing::native;
+
+namespace {
+#if defined(__WXOSX__)
+  float pixel_to_native_font_graphics_untit(float size) {
+    return size;  // font is in points
+  }
+#else
+  float pixel_to_native_font_graphics_untit(float size) {
+    return size / 96.0f * font::dpi();  // font is in pixels and not in points
+  }
+#endif
+}
 
 intptr_t font_family::create(const std::string& name) {
   return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new std::string(name)) : 0;
@@ -57,52 +71,40 @@ std::vector<std::string> font_family::installed_font_families() {
   return families;
 }
 
-int32_t font_family::get_cell_ascent(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
-  if (!wxTheApp) return 0;
+int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+  if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
   wxFontMetrics metrics = hdc.GetFontMetrics();
   hdc.SetFont(default_font);
-  return metrics.ascent;
+  return std::round(static_cast<double>(metrics.ascent) / metrics.height * em_height);
 }
 
-int32_t font_family::get_cell_descent(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
+int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
-  wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
   wxFontMetrics metrics = hdc.GetFontMetrics();
   hdc.SetFont(default_font);
-  return metrics.descent;
+  return std::round(static_cast<double>(metrics.descent) / metrics.height * em_height);
 }
 
-int32_t font_family::get_em_height(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
-  if (!wxTheApp) return 0;
+int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
+  if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
   wxFontMetrics metrics = hdc.GetFontMetrics();
   hdc.SetFont(default_font);
-  return metrics.height;
-}
-
-int32_t font_family::get_line_spacing(intptr_t font_family, bool bold, bool italic, bool underline, bool strikeout) {
-  if (!wxTheApp) return 0;
-  wxScreenDC hdc;
-  wxFont font(hdc.GetFont().GetPixelSize(), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, *reinterpret_cast<std::string*>(font_family));
-  font.SetStrikethrough(strikeout);
-  wxFont default_font = hdc.GetFont();
-  hdc.SetFont(font);
-  wxFontMetrics metrics = hdc.GetFontMetrics();
-  hdc.SetFont(default_font);
-  return metrics.externalLeading; // metrics.internalLeading; ?
+  return std::round(static_cast<double>(metrics.height + metrics.externalLeading) / metrics.height * em_height);
 }
 
 std::string font_family::get_name(intptr_t font_family, int32_t language) {
