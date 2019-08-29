@@ -137,7 +137,7 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   width = size.GetWidth();
   height = size.GetHeight();
 #if defined(__WXOSX__)
-  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += width * 0.02;
+  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += width * 0.04;
 #endif
 }
 
