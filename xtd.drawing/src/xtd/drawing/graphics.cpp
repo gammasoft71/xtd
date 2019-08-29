@@ -54,3 +54,10 @@ void graphics::fill_pie(const brush& brush, int32_t x, int32_t y, int32_t width,
 void graphics::fill_rectangle(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   native::graphics::fill_rectangle(this->data_->handle_, brush.data_->handle_, x, y, width, height);
 }
+
+size_f graphics::measure_string(const std::string &text, const font &font) {
+  int32_t width = 0;
+  int32_t height = 0;
+  native::graphics::measure_string(this->data_->handle_, text, font.handle(), width, height);
+  return size_f(width, height);
+}

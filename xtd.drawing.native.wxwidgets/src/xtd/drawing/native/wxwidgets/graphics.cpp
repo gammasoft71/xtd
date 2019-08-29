@@ -128,3 +128,16 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   reinterpret_cast<wxDC*>(hdc)->SetBrush(current_brush);
   reinterpret_cast<wxDC*>(hdc)->SetPen(current_pen);
 }
+
+void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
+  wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
+  reinterpret_cast<wxDC*>(hdc)->SetFont(*reinterpret_cast<wxFont*>(font));
+  wxSize size = reinterpret_cast<wxDC*>(hdc)->GetTextExtent(text);
+  reinterpret_cast<wxDC*>(hdc)->SetFont(current_font);
+  width = size.GetWidth();
+  height = size.GetHeight();
+#if defined(__WXOSX__)
+  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += width * 0.02;
+#endif
+}
+

@@ -106,6 +106,8 @@ namespace xtd {
       
       void fill_rectangle(const brush& brush, const rectangle_f& rect) {fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());}
 
+      size_f measure_string(const std::string& text, const font& font);
+      
       std::string to_string() const {return strings::full_class_name(*this);}
       
       /// @cond
