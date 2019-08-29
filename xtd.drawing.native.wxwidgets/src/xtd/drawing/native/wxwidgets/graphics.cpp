@@ -14,6 +14,7 @@ void graphics::clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
 }
 
 void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
@@ -24,6 +25,7 @@ void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_
 }
 
 void graphics::draw_bezier(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
@@ -35,6 +37,7 @@ void graphics::draw_bezier(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, i
 }
 
 void graphics::draw_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen default_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
@@ -50,6 +53,7 @@ void graphics::destroy(intptr_t hdc) {
 }
 
 void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
@@ -60,6 +64,7 @@ void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int
 }
 
 void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*wxTRANSPARENT_BRUSH);
@@ -70,6 +75,7 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
 }
 
 void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+  if (!hdc) return;
   wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
   wxColour current_back_color = reinterpret_cast<wxDC*>(hdc)->GetTextBackground();
   wxColour current_fore_color = reinterpret_cast<wxDC*>(hdc)->GetTextForeground();
@@ -84,6 +90,7 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
 }
 
 void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+  if (!hdc) return;
   wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
   wxColour current_back_color = reinterpret_cast<wxDC*>(hdc)->GetTextBackground();
   wxColour current_fore_color = reinterpret_cast<wxDC*>(hdc)->GetTextForeground();
@@ -100,6 +107,7 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
 }
 
 void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*reinterpret_cast<wxBrush*>(brush));
@@ -110,6 +118,7 @@ void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, 
 }
 
 void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*reinterpret_cast<wxBrush*>(brush));
@@ -120,6 +129,7 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int3
 }
 
 void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
+  if (!hdc) return;
   wxBrush current_brush = reinterpret_cast<wxDC*>(hdc)->GetBrush();
   wxPen current_pen = reinterpret_cast<wxDC*>(hdc)->GetPen();
   reinterpret_cast<wxDC*>(hdc)->SetBrush(*reinterpret_cast<wxBrush*>(brush));
@@ -130,6 +140,7 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
 }
 
 void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
+  if (!hdc) return;
   wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
   reinterpret_cast<wxDC*>(hdc)->SetFont(*reinterpret_cast<wxFont*>(font));
   wxSize size = reinterpret_cast<wxDC*>(hdc)->GetTextExtent(text);
