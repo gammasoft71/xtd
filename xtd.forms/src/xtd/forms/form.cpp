@@ -17,6 +17,7 @@ form::form() {
   this->fore_color_ = this->default_fore_color();
   this->font_ = this->default_font();
   this->size_ = this->default_size();
+  this->create_control();
 }
 
 void form::close() {
@@ -25,12 +26,6 @@ void form::close() {
 
 control& form::parent(const control& parent) {
   throw std::invalid_argument("Top-level control cannot be added to a control.");
-  return *this;
-}
-
-control& form::visible(bool visible) {
-  if (this->handle_ == 0) this->create_control();
-  this->control::visible(visible);
   return *this;
 }
 
