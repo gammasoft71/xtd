@@ -3,17 +3,16 @@
 #include <wx/dcscreen.h>
 #include <wx/font.h>
 
+using namespace xtd::drawing::native;
 
 namespace {
 #if defined(__WXOSX__)
   float points_to_native_font_graphics_untit(float size) {
-    float dpi = wxTheApp ? wxScreenDC().GetPPI().GetHeight() : 72.0f;
-    return size / dpi * 96.0f;  // font is in pixels and not in points
+    return size / font::dpi() * 96.0f;  // font is in pixels and not in points
   }
 
   float native_font_graphics_untit_to_points(float size) {
-    float dpi = wxTheApp ? wxScreenDC().GetPPI().GetHeight() : 72.0f;
-    return size / 96.0f * dpi;  // font is in pixels and not in points
+    return size / 96.0f * font::dpi();  // font is in pixels and not in points
   }
 #else
   float points_to_native_font_graphics_untit(float size) {
@@ -25,8 +24,6 @@ namespace {
   }
 #endif
 }
-
-using namespace xtd::drawing::native;
 
 intptr_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
   wxFont* font = new wxFont(points_to_native_font_graphics_untit(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name);
@@ -48,7 +45,7 @@ void font::destroy(intptr_t font) {
 }
 
 int32_t font::dpi() {
-  if (!wxTheApp) return 0;
+  if (!wxTheApp) return 72;
   wxScreenDC hdc;
   wxSize dpi = hdc.GetPPI();
   return dpi.GetHeight();
@@ -67,7 +64,7 @@ void font::get_information(intptr_t font, std::string& name, float& em_size, boo
 }
 
 float font::height(intptr_t font) {
-  if (!wxTheApp) return 0;
+  if (!wxTheApp) return reinterpret_cast<wxFont*>(font)->GetPixelSize().GetHeight();
   wxScreenDC hdc;
   wxFont current_font = hdc.GetFont();
   hdc.SetFont(*reinterpret_cast<wxFont*>(font));
