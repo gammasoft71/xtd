@@ -196,7 +196,7 @@ void control::create_control() {
   }
 }
 
-graphics control::create_graphics() {
+graphics control::create_graphics() const {
   return graphics(native::control::create_graphics(this->handle_));
 }
 
