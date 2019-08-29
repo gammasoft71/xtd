@@ -177,7 +177,7 @@ namespace xtd {
 
       virtual void create_handle();
       
-      drawing::graphics create_graphics();
+      drawing::graphics create_graphics() const;
 
       virtual void destroy_handle();
       
