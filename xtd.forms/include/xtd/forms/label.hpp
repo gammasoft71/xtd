@@ -25,7 +25,7 @@ namespace xtd {
       using control::text;
       control& text(const std::string& text) override {
          this->control::text(text);
-        if (this->auto_size_) this->recreate_handle();
+        if (this->auto_size_) this->force_update_size();
         return *this;
       }
       
@@ -40,7 +40,8 @@ namespace xtd {
       void on_auto_size_changed(const event_args& e) {this->auto_size_changed(*this, e);}
       
     private:
-      drawing::size mesure_string() const;
+      drawing::size measure_string() const;
+      void force_update_size() const;
       bool auto_size_ = false;
       forms::border_style border_style_ = forms::border_style::none;
     };
