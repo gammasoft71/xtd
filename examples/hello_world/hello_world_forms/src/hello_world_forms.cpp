@@ -12,7 +12,7 @@ namespace examples {
       this->label.font(drawing::font("Arial", 34, font_style::bold | font_style::italic));
       this->label.text("Hello, World!");
       this->label.location({5, 100});
-      this->label.size({290, 100});
+      this->label.auto_size(true);
       this->label.fore_color(color::green);
       
       this->text("My first application");
