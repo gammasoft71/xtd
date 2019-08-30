@@ -1,3 +1,4 @@
+#include <cmath>
 #include <xtd/drawing/native/graphics.hpp>
 #include <wx/app.h>
 #include <wx/dc.h>
@@ -149,7 +150,7 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   width = size.GetWidth();
   height = size.GetHeight();
 #if defined(__WXOSX__)
-  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += metrics.averageWidth / 2.5f;
+  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(metrics.averageWidth / 2.3f);
 #endif
 }
 
