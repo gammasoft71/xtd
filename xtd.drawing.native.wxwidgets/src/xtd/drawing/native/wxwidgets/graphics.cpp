@@ -144,11 +144,12 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   wxFont current_font = reinterpret_cast<wxDC*>(hdc)->GetFont();
   reinterpret_cast<wxDC*>(hdc)->SetFont(*reinterpret_cast<wxFont*>(font));
   wxSize size = reinterpret_cast<wxDC*>(hdc)->GetTextExtent(text);
+  wxFontMetrics metrics = reinterpret_cast<wxDC*>(hdc)->GetFontMetrics();
   reinterpret_cast<wxDC*>(hdc)->SetFont(current_font);
   width = size.GetWidth();
   height = size.GetHeight();
 #if defined(__WXOSX__)
-  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += width * 0.04;
+  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += metrics.averageWidth / 2.5f;
 #endif
 }
 
