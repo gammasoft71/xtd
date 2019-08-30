@@ -14,6 +14,7 @@ label::label() {
 label& label::auto_size(bool auto_size) {
   if (this->auto_size_ != auto_size) {
     this->auto_size_ = auto_size;
+    this->force_update_size();
     this->recreate_handle();
     this->on_auto_size_changed(event_args::empty);
   }
@@ -47,15 +48,11 @@ forms::create_params label::create_params() const {
   return create_params;
 }
 
-void label::on_handle_created(const event_args &e) {
-  this->control::on_handle_created(e);
-  if (this->auto_size_) this->force_update_size();
-}
-
 drawing::size label::measure_string() const {
   return drawing::size::ceiling(this->create_graphics().measure_string(this->text_, this->font())) + drawing::size(2 + (this->border_style_ == border_style::none ? 0 : 4), 1 + (this->border_style_ == border_style::none ? 0 : 4));
 }
 
-void label::force_update_size() const {
-  native::control::size(this->handle_, this->measure_string());
+void label::force_update_size() {
+  this->size_ = this->client_size_ = this->measure_string();
+  native::control::size(this->handle_, this->size_);
 }

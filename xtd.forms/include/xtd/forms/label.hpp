@@ -32,7 +32,6 @@ namespace xtd {
       drawing::size default_size() const override {return{100, 23};}
 
       event<label, event_handler<control>> auto_size_changed;
-      void on_handle_created(const event_args &e) override;
       
     protected:
       forms::create_params create_params() const override;
@@ -41,7 +40,7 @@ namespace xtd {
       
     private:
       drawing::size measure_string() const;
-      void force_update_size() const;
+      void force_update_size();
       bool auto_size_ = false;
       forms::border_style border_style_ = forms::border_style::none;
     };
