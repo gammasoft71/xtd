@@ -12,7 +12,7 @@ namespace examples {
       this->label.text("0.0");
       this->label.font(drawing::font("Arial", 48, font_style::italic));
       this->label.location({10, 10});
-      this->label.size({210, 70});
+      this->label.auto_size(true);
       this->label.fore_color(color::dodger_blue);
 
       this->button.parent(*this);

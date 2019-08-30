@@ -21,10 +21,18 @@ namespace xtd {
         if (!this->auto_size_) this->control::size(size);
         return *this;
       }
-
+      
+      using control::text;
+      control& text(const std::string& text) override {
+         this->control::text(text);
+        if (this->auto_size_) this->recreate_handle();
+        return *this;
+      }
+      
       drawing::size default_size() const override {return{100, 23};}
 
       event<label, event_handler<control>> auto_size_changed;
+      void on_handle_created(const event_args &e) override;
       
     protected:
       forms::create_params create_params() const override;
@@ -32,6 +40,7 @@ namespace xtd {
       void on_auto_size_changed(const event_args& e) {this->auto_size_changed(*this, e);}
       
     private:
+      drawing::size mesure_string() const;
       bool auto_size_ = false;
       forms::border_style border_style_ = forms::border_style::none;
     };
