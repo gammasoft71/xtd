@@ -35,7 +35,7 @@ forms::create_params label::create_params() const {
   create_params.style(create_params.style() | SS_LEFT);
 
   if (this->auto_size_) {
-    drawing::size size = this->mesure_string();
+    drawing::size size = this->measure_string();
     create_params.width(size.width());
     create_params.height(size.height());
   }
@@ -49,9 +49,13 @@ forms::create_params label::create_params() const {
 
 void label::on_handle_created(const event_args &e) {
   this->control::on_handle_created(e);
-  if (this->auto_size_) native::control::size(this->handle_, this->mesure_string());
+  if (this->auto_size_) this->force_update_size();
 }
 
-drawing::size label::mesure_string() const {
+drawing::size label::measure_string() const {
   return drawing::size::ceiling(this->create_graphics().measure_string(this->text_, this->font())) + drawing::size(2 + (this->border_style_ == border_style::none ? 0 : 4), 1 + (this->border_style_ == border_style::none ? 0 : 4));
+}
+
+void label::force_update_size() const {
+  native::control::size(this->handle_, this->measure_string());
 }
