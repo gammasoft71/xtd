@@ -13,14 +13,14 @@ public:
 
   form_test() {
     this->text("xtd.forms.manual_tests");
-    this->font(drawing::font(this->font(), font_style::bold | font_style::italic));
+    this->font(drawing::font("Arial", 34, font_style::bold | font_style::italic));
     this->controls().push_back(this->label1);
     this->controls().push_back(this->label2);
 
     this->label1.auto_size(true);
     this->label1.location({0, 0});
     this->label1.back_color(color::dark_green);
-    this->label1.text("Z");
+    this->label1.text("Hello, World!");
     cdebug << format("label1.size = {}", label1.size()) << endl;
 
     
