@@ -124,8 +124,8 @@ namespace xtd {
       font(const drawing::font_family& font_family, float em_size) : font(font_family, em_size, font_style::regular, graphics_unit::point, 0, false) {}
 
       /// @cond
-      font(const font&) = default;
-      font& operator=(const font&) = default;
+      font(const font& value);
+      font& operator=(const font& value);
       bool operator==(const font& value) const {return this->data_->font_family_ == value.data_->font_family_ && this->data_->gdi_char_set_ == value.data_->gdi_char_set_ && this->data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && this->data_->style_ == value.data_->style_ && this->data_->size_ == value.data_->size_ && this->data_->unit_ == value.data_->unit_;}
       bool operator!=(const font& value) const {return !this->operator==(value);}
       ~font();

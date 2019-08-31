@@ -33,6 +33,17 @@ pen::pen() {
   this->data_->handle_ = native::pen::create();
 }
 
+pen::pen(const pen& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::pen::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+}
+
+pen& pen::operator=(const pen& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::pen::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+  return *this;
+}
+
 pen::~pen() {
   if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::pen::destroy(this->data_->handle_);
 }

@@ -30,6 +30,17 @@ font_family::font_family(const std::string& name, const text::font_collection& f
   throw std::invalid_argument("name specifies a font that is not a part of specified font_collection.");
 }
 
+font_family::font_family(const font_family& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::font_family::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+}
+
+font_family& font_family::operator=(const font_family& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::font_family::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+  return *this;
+}
+
 font_family::~font_family() {
   if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::font_family::destroy(this->data_->handle_);
 }

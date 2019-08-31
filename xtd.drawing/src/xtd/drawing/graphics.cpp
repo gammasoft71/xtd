@@ -5,6 +5,17 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
+graphics::graphics(const graphics& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::graphics::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+}
+
+graphics& graphics::operator=(const graphics& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::graphics::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+  return *this;
+}
+
 graphics::~graphics() {
   if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::graphics::destroy(this->data_->handle_);
 }

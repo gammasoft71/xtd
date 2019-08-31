@@ -35,9 +35,9 @@ namespace xtd {
       
       /// @cond
       pen();
+      pen(const pen& value);
+      pen& operator=(const pen& value);
       virtual ~pen();
-      pen(const pen&) = default;
-      pen& operator=(const pen&) = default;
       bool operator==(const pen& value) const {return this->data_->alignment_ == value.data_->alignment_ && this->data_->type_ == value.data_->type_;}
       bool operator!=(const pen& value) const {return !this->operator==(value);}
       /// @endcond

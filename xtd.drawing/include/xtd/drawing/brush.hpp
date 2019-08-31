@@ -17,9 +17,9 @@ namespace xtd {
       //static const brush null;
       
       /// @cond
-      brush(const brush&) = default;
+      brush(const brush& value);
+      brush& operator=(const brush& value);
       virtual ~brush();
-      brush& operator=(const brush&) = default;
       bool operator==(const brush& value) const {return this->data_->handle_ == value.data_->handle_;}
       bool operator!=(const brush& value) const {return !this->operator==(value);}
       /// @endcond

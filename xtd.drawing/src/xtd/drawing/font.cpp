@@ -51,6 +51,17 @@ font::font(intptr_t handle) {
   this->data_->unit_ = graphics_unit::point;
 }
 
+font::font(const font& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::font::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+}
+
+font& font::operator=(const font& value) {
+  if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::font::destroy(this->data_->handle_);
+  this->data_ = value.data_;
+  return *this;
+}
+
 font::~font() {
   if (this->data_.use_count() == 1 && this->data_->handle_ != 0) native::font::destroy(this->data_->handle_);
 }
