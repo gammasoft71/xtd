@@ -10,7 +10,7 @@ namespace xtd {
     class system_fonts {
     public:
       /// @brief Gets a font that is used to display text in the title bars of windows.
-      static const xtd::drawing::font caption_font;
+      static xtd::drawing::font caption_font();
       
       /// @brief Gets the default font that applications can use for dialog boxes and forms.
       /// @remarks The following table describes the value returned by the DefaultFont property depending on the operating system and local culture.
@@ -22,26 +22,26 @@ namespace xtd {
       /// @remarks MS Shell Dlg maps to a font set in the system registry.
       /// @remarks If the above fonts are not installed, the default font is Tahoma, 8 point. If Tahoma, 8 point, is not installed, DefaultFont returns the value of the GenericSansSerif property.
       /// @remarks The Font returned by DefaultFont does not change when the user is in High Contrast mode. For a font that changes when the user is in High Contrast mode use another system font such as IconTitleFont.
-      static const xtd::drawing::font default_font;
+      static xtd::drawing::font default_font();
       
       /// @brief Gets a font that applications can use for dialog boxes and forms.
       /// @remarks If the operating system is Windows 2000 or Windows XP, the DialogFont property returns Tahoma, 8 point. Otherwise, DialogFont returns the value of the DefaultFont property. The Font returned by DialogFont does not change when the user is in High Contrast mode. For a font that changes when the user is in High Contrast mode use another system font such as IconTitleFont.
-      static const xtd::drawing::font dialog_font;
+      static xtd::drawing::font dialog_font();
       
       /// @brief Gets a font that is used for icon titles.
-      static const xtd::drawing::font icon_title_font;
+      static xtd::drawing::font icon_title_font();
       
       /// @brief Gets a font that is used for menus.
-      static const xtd::drawing::font menu_font;
+      static xtd::drawing::font menu_font();
       
       /// @brief Gets a font that is used for message boxes.
-      static const xtd::drawing::font message_box_font;
+      static xtd::drawing::font message_box_font();
       
       /// @brief Gets a font that is used to display text in the title bars of small windows, such as tool windows.
-      static const xtd::drawing::font small_caption_font;
+      static xtd::drawing::font small_caption_font();
       
       /// @brief Gets a font that is used to display text in the status bar.
-      static const xtd::drawing::font status_font;
+      static xtd::drawing::font status_font();
 
     private:
       system_fonts() = delete;
