@@ -49,8 +49,7 @@ void graphics::draw_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, in
 }
 
 void graphics::destroy(intptr_t hdc) {
-  if (hdc == 0 || !wxTheApp->IsMainLoopRunning()) return;
-  
+  if (!hdc) return;
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc);
   delete hdc_wrapper;
 }
