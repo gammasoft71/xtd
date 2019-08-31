@@ -10,103 +10,103 @@ namespace xtd {
     class system_colors {
     public:
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD4D0C8. This field is constant.
-      static const xtd::drawing::color active_border;
+      static xtd::drawing::color active_border();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF0054E3. This field is constant.
-      static const xtd::drawing::color active_caption;
+      static xtd::drawing::color active_caption();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
-      static const xtd::drawing::color active_caption_text;
+      static xtd::drawing::color active_caption_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF808080. This field is constant.
-      static const xtd::drawing::color app_workspace;
+      static xtd::drawing::color app_workspace();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFECE9D8. This field is constant.
-      static const xtd::drawing::color control;
+      static xtd::drawing::color control();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFACA899. This field is constant.
-      static const xtd::drawing::color control_dark;
+      static xtd::drawing::color control_dark();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF716F64. This field is constant.
-      static const xtd::drawing::color control_dark_dark;
+      static xtd::drawing::color control_dark_dark();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFF1EFE2. This field is constant.
-      static const xtd::drawing::color control_light;
+      static xtd::drawing::color control_light();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
-      static const xtd::drawing::color control_light_light;
+      static xtd::drawing::color control_light_light();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.
-      static const xtd::drawing::color control_text;
+      static xtd::drawing::color control_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF004E98. This field is constant.
-      static const xtd::drawing::color desktop;
+      static xtd::drawing::color desktop();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFACA899. This field is constant.
-      static const xtd::drawing::color gray_text;
+      static xtd::drawing::color gray_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF316AC5. This field is constant.
-      static const xtd::drawing::color highlight;
+      static xtd::drawing::color highlight();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
-      static const xtd::drawing::color highlight_text;
+      static xtd::drawing::color highlight_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF000080. This field is constant.
-      static const xtd::drawing::color hot_track;
+      static xtd::drawing::color hot_track();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD4D0C8. This field is constant.
-      static const xtd::drawing::color inactive_border;
+      static xtd::drawing::color inactive_border();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF7A96DF. This field is constant.
-      static const xtd::drawing::color inactive_caption;
+      static xtd::drawing::color inactive_caption();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD8E4F8. This field is constant.
-      static const xtd::drawing::color inactive_caption_text;
+      static xtd::drawing::color inactive_caption_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFE1. This field is constant.
-      static const xtd::drawing::color info;
+      static xtd::drawing::color info();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.
-      static const xtd::drawing::color info_text;
+      static xtd::drawing::color info_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
-      static const xtd::drawing::color menu;
+      static xtd::drawing::color menu();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.
-      static const xtd::drawing::color menu_text;
+      static xtd::drawing::color menu_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD4D0C8. This field is constant.
-      static const xtd::drawing::color scroll_bar;
+      static xtd::drawing::color scroll_bar();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
-      static const xtd::drawing::color window;
+      static xtd::drawing::color window();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.
-      static const xtd::drawing::color window_frame;
+      static xtd::drawing::color window_frame();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.
-      static const xtd::drawing::color window_text;
+      static xtd::drawing::color window_text();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFECE9D8. This field is constant.
-      static const xtd::drawing::color button_face;
+      static xtd::drawing::color button_face();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
-      static const xtd::drawing::color button_highlight;
+      static xtd::drawing::color button_highlight();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFACA899. This field is constant.
-      static const xtd::drawing::color button_shadow;
+      static xtd::drawing::color button_shadow();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF3D95FF. This field is constant.
-      static const xtd::drawing::color gradient_active_caption;
+      static xtd::drawing::color gradient_active_caption();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF9DB9EB. This field is constant.
-      static const xtd::drawing::color gradient_inactive_caption;
+      static xtd::drawing::color gradient_inactive_caption();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFECE9D8. This field is constant.
-      static const xtd::drawing::color menu_bar;
+      static xtd::drawing::color menu_bar();
       
       /// @brief Gets a system-defined color that has an ARGB value of 0xFF316AC5. This field is constant.
-      static const xtd::drawing::color menu_highlight;
+      static xtd::drawing::color menu_highlight();
       
     private:
       system_colors() = delete;
