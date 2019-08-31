@@ -26,6 +26,7 @@ namespace xtd {
         static drawing::font default_font();
         static void destroy(intptr_t control);
         static void erase(intptr_t control);
+        static void init();
         static drawing::size client_size(intptr_t control);
         static void client_size(intptr_t control, const drawing::size& size);
         static bool enabled(intptr_t control);

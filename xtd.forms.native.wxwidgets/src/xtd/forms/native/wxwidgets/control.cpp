@@ -143,6 +143,10 @@ void control::erase(intptr_t control) {
   delete reinterpret_cast<class control_handler*>(control);
 }
 
+void control::init() {
+  application::initialize_application(); // Must be first
+}
+
 drawing::size control::client_size(intptr_t control) {
   if (control == 0) return {};
   wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetClientSize();

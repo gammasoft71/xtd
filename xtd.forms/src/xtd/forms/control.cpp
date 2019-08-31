@@ -42,6 +42,7 @@ namespace {
 const control control::null {"null"};
 
 control::control() {
+  native::control::init();
   this->size_ = this->default_size();
   this->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
     item.get().parent_ = this;
