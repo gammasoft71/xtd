@@ -85,7 +85,7 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
 
 color control::default_back_color() {
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
-  return system_colors::control;
+  return system_colors::control();
 #else
   static color default_color;
   if (default_color == color::empty) {
@@ -107,7 +107,7 @@ color control::default_back_color() {
 
 color control::default_fore_color() {
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
-  return system_colors::control_text;
+  return system_colors::control_text();
 #else
   static color default_color;
   if (default_color == color::empty) {
