@@ -128,7 +128,7 @@ color control::default_fore_color() {
 }
 
 font control::default_font() {
-  return system_fonts::default_font;
+  return system_fonts::default_font();
 }
 
 void control::destroy(intptr_t control) {
