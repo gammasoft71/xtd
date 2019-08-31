@@ -36,10 +36,10 @@ namespace xtd {
       font_family(const std::string& name, const text::font_collection& font_collection);
       
       /// @cond
-      font_family() = default;
       ~font_family();
-      font_family(const font_family&) = default;
-      font_family& operator=(const font_family&) = default;
+      font_family(const font_family& value);
+      font_family() = default;
+      font_family& operator=(const font_family& value);
       bool operator==(const font_family& value) const {return this->data_->name_ == value.data_->name_ && this->data_->handle_ == value.data_->handle_;}
       bool operator!=(const font_family& value) const {return !this->operator==(value);}
       /// @endcond

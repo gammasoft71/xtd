@@ -29,9 +29,9 @@ namespace xtd {
     class graphics {
     public:
       /// @cond
+      graphics(const graphics& value);
+      graphics& operator=(const graphics& value);
       ~graphics();
-      graphics(const graphics&) = default;
-      graphics& operator=(const graphics&) = default;
       /// @endcond
       
       void clear(const color& color);

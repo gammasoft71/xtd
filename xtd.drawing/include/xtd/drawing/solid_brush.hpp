@@ -13,8 +13,8 @@ namespace xtd {
       solid_brush(const drawing::color& color) {this->color(color);}
 
       /// @cond
-      solid_brush(const solid_brush&) = default;
-      solid_brush& operator=(const solid_brush&) = default;
+      solid_brush(const solid_brush& value);
+      solid_brush& operator=(const solid_brush& value);
       bool operator==(const solid_brush& value) const {return this->data_->color_ == value.data_->color_;}
       bool operator!=(const solid_brush& value) const {return !this->operator==(value);}
       /// @endcond
