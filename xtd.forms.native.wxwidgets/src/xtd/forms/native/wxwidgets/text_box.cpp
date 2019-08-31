@@ -12,7 +12,7 @@ using namespace xtd::forms::native;
 
 color text_box::default_back_color() {
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
-  return system_colors::window;
+  return system_colors::window();
 #else
   static color default_color;
   if (default_color == color::empty) {
@@ -34,7 +34,7 @@ color text_box::default_back_color() {
 
 color text_box::default_fore_color() {
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
-  return system_colors::window_text;
+  return system_colors::window_text();
 #else
   static color default_color;
   if (default_color == color::empty) {
