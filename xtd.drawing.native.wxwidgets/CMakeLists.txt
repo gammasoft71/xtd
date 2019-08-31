@@ -13,6 +13,7 @@ set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
   src/xtd/drawing/native/wxwidgets/font.cpp
   src/xtd/drawing/native/wxwidgets/font_family.cpp
   src/xtd/drawing/native/wxwidgets/graphics.cpp
+  src/xtd/drawing/native/wxwidgets/hdc_wrapper.hpp
   src/xtd/drawing/native/wxwidgets/pen.cpp
   src/xtd/drawing/native/wxwidgets/system_colors.cpp
   src/xtd/drawing/native/wxwidgets/system_fonts.cpp
