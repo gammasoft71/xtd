@@ -4,6 +4,7 @@
 #include <xtd/drawing/system_fonts.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>
+#include "hdc_wrapper.hpp"
 #include "wx_button.hpp"
 #include "wx_check_box.hpp"
 #include "wx_control.hpp"
@@ -60,12 +61,17 @@ intptr_t control::create(const forms::create_params& create_params) {
 }
 
 intptr_t control::create_paint_graphics(intptr_t control) {
-  return reinterpret_cast<intptr_t>(new wxPaintDC(reinterpret_cast<control_handler*>(control)->control()));
+  xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
+  if (control == 0) hdc_wrapper->create<wxScreenDC>();
+  else  hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->control());
+  return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
 intptr_t control::create_graphics(intptr_t control) {
-  if (control == 0) return reinterpret_cast<intptr_t>(new wxScreenDC());
-  return reinterpret_cast<intptr_t>(new wxClientDC(reinterpret_cast<control_handler*>(control)->control()));
+  xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
+  if (control == 0) hdc_wrapper->create<wxScreenDC>();
+  else  hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->control());
+  return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {

@@ -1,6 +1,7 @@
 #include <xtd/forms/native/screen.hpp>
 #include <xtd/xtd.strings>
 #include "control_handler.hpp"
+#include "hdc_wrapper.hpp"
 #include <wx/dcscreen.h>
 #include <wx/display.h>
 
@@ -10,7 +11,9 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 intptr_t screen::create_graphics() {
-  return reinterpret_cast<intptr_t>(new wxScreenDC());
+  xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
+  hdc_wrapper->create<wxScreenDC>();
+  return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
 size_t screen::count() {

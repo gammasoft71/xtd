@@ -16,6 +16,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/control_handler.hpp
   src/xtd/forms/native/wxwidgets/form.cpp
   src/xtd/forms/native/wxwidgets/group_box.cpp
+  src/xtd/forms/native/wxwidgets/hdc_wrapper.hpp
   src/xtd/forms/native/wxwidgets/label.cpp
   src/xtd/forms/native/wxwidgets/list_box.cpp
   src/xtd/forms/native/wxwidgets/message_box.cpp
