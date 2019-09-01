@@ -7,16 +7,16 @@ public:
   form_test() {
     this->text("xtd.forms.manual_tests");
     
-    this->button1.parent(*this);
-    this->button1.text("Click me");
-    this->button1.location({ 10, 10 });
-    this->button1.paint += [&](const control& sender, paint_event_args& e) {
-      e.graphics().fill_rectangle(xtd::drawing::solid_brush(xtd::drawing::color::red), 0, 0, e.clip_rectangle().width(), e.clip_rectangle().height());
+    this->radio1.parent(*this);
+    this->radio1.text("radio 1");
+    this->radio1.location({ 10, 10 });
+    this->radio1.paint += [&](const control& sender, paint_event_args& e) {
+      e.graphics().draw_line(xtd::drawing::pen(xtd::drawing::color::red, 2), 0, 0, e.clip_rectangle().width(), e.clip_rectangle().height());
     };
   }
   
 private:
-  button button1;
+  radio_button radio1;
 };
 
 int main() {
