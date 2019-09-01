@@ -15,6 +15,7 @@ namespace unit_tests {
       //assert::are_equal_(system_colors::control(), control.back_color());
     }
     
+    /*
     void test_method_(new_control_client_size) {
       control control;
       assert::are_equal_(drawing::size(-1, -1), control.client_size());
@@ -79,6 +80,7 @@ namespace unit_tests {
       control control;
       //assert::throws_(std::invalid_argument, [&] {control.create_control();});
     }
+     */
     
     void test_method_(create_control_with_parent) {
       /*
