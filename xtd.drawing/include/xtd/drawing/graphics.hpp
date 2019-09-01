@@ -20,6 +20,7 @@ namespace xtd {
   /// @cond
   namespace forms {
     class control;
+    class paint_event_args;
     class screen;
   }
   /// @endcond
@@ -119,6 +120,7 @@ namespace xtd {
     private:
       friend drawing::font;
       friend forms::control;
+      friend forms::paint_event_args;
       friend forms::screen;
       graphics(intptr_t handle) {this->data_->handle_ = handle;}
 
