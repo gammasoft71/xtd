@@ -43,26 +43,27 @@ namespace xtd {
       control();
       
       /// @cond
-      control(const control&) = delete;
+      control(const control& value);
+      control& operator=(const control& value);
       /// @endcond
       
       virtual ~control();
 
-      virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ != &control::null ? this->parent_->back_color() : default_back_color());}
+      virtual drawing::color back_color() const {return this->data_->back_color_.value_or(this->data_->parent_ != &control::null ? this->data_->parent_->back_color() : default_back_color());}
       virtual control& back_color(const drawing::color& color);
       
-      virtual drawing::rectangle bounds() const {return {this->location_, this->size_};}
+      virtual drawing::rectangle bounds() const {return {this->data_->location_, this->data_->size_};}
       virtual control& bounds(const drawing::rectangle& bounds) {
         this->location(bounds.location());
         return this->size(bounds.size());
       }
       
-      virtual drawing::size client_size() const {return this->client_size_;}
+      virtual drawing::size client_size() const {return this->data_->client_size_;}
       virtual control& client_size(const drawing::size& size);
       
-      virtual control_collection& controls() {return this->controls_;}
+      virtual control_collection& controls() {return this->data_->controls_;}
       
-      virtual const control_collection& controls() const {return this->controls_;}
+      virtual const control_collection& controls() const {return this->data_->controls_;}
 
       virtual drawing::color default_back_color() const;
 
@@ -72,61 +73,61 @@ namespace xtd {
       
       virtual drawing::size default_size() const {return{0, 0};}
       
-      virtual bool enabled() const {return this->enabled_;}
+      virtual bool enabled() const {return this->data_->enabled_;}
       virtual control& enabled(bool enabled);
 
-      virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ != &control::null ? this->parent_->fore_color() : default_fore_color());}
+      virtual drawing::color fore_color() const {return this->data_->fore_color_.value_or(this->data_->parent_ != &control::null ? this->data_->parent_->fore_color() : default_fore_color());}
       virtual control& fore_color(const drawing::color& color);
       
-      virtual drawing::font font() const {return this->font_.value_or(this->parent_ != &control::null ? this->parent_->font() : default_font());}
+      virtual drawing::font font() const {return this->data_->font_.value_or(this->data_->parent_ != &control::null ? this->data_->parent_->font() : default_font());}
       virtual control& font(const drawing::font& font);
       
       virtual intptr_t handle() const;
       
-      virtual int32_t height() const {return this->size_.height();}
+      virtual int32_t height() const {return this->data_->size_.height();}
       virtual control& height(int32_t height) {
-        this->size({this->size_.width(), height});
+        this->size({this->data_->size_.width() == -1 ? 0 : this->data_->size_.width(), height});
         return *this;
       }
 
       virtual intptr_t native_handle() const;
       
-      virtual drawing::point location() const {return this->location_;}
+      virtual drawing::point location() const {return this->data_->location_;}
       virtual control& location(const drawing::point& location);
 
-      virtual const std::string& name() const {return this->name_;}
+      virtual const std::string& name() const {return this->data_->name_;}
       virtual control& name(const std::string& name) {
-        this->name_ = name;
+        this->data_->name_ = name;
         return*this;
       }
       
-      virtual control& parent() const {return *this->parent_;}
+      virtual control& parent() const {return *this->data_->parent_;}
       virtual control& parent(const control& parent);
 
-      virtual drawing::size size() const {return this->size_;}
+      virtual drawing::size size() const {return this->data_->size_;}
       virtual control& size(const drawing::size& size);
       
-      virtual const std::string& text() const {return this->text_;}
+      virtual const std::string& text() const {return this->data_->text_;}
       virtual control& text(const std::string& text);
       
-      virtual bool visible() const {return this->visible_;}
+      virtual bool visible() const {return this->data_->visible_;}
       virtual control& visible(bool visible);
 
-      virtual int32_t width() const {return this->size_.width();}
+      virtual int32_t width() const {return this->data_->size_.width();}
       virtual control& width(int32_t width) {
-        this->size({width, this->size_.height()});
+        this->size({width, this->data_->size_.height() == -1 ? 0 : this->data_->size_.height()});
         return *this;
       }
       
-      virtual int32_t x() const {return this->location_.x();}
+      virtual int32_t x() const {return this->data_->location_.x();}
       virtual control& x(int32_t x) {
-        this->size({x, this->location_.y()});
+        this->size({x, this->data_->location_.y() == -1 ? 0 : this->data_->location_.y()});
         return *this;
       }
       
-      virtual int32_t y() const {return this->location_.y();}
+      virtual int32_t y() const {return this->data_->location_.y();}
       virtual control& y(int32_t y) {
-        this->size({this->location_.x(), y});
+        this->size({this->data_->location_.x() == -1 ? 0 : this->data_->location_.x(), y});
         return *this;
       }
       
@@ -172,6 +173,8 @@ namespace xtd {
       }
 
       void create_control();
+      
+      void destroy_control();
       
       virtual void hide() {this->visible(false);}
 
@@ -338,27 +341,31 @@ namespace xtd {
 
       void recreate_handle();
       
-      std::optional<drawing::color> back_color_;
-      drawing::size client_size_ {-1, -1};
-      control_collection controls_;
-      bool enabled_ = true;
-      std::optional<drawing::color> fore_color_;
-      std::optional<drawing::font> font_;
-      intptr_t handle_ = 0;
+      struct data {
+        std::optional<drawing::color> back_color_;
+        drawing::size client_size_ {-1, -1};
+        control_collection controls_;
+        bool enabled_ = true;
+        std::optional<drawing::color> fore_color_;
+        std::optional<drawing::font> font_;
+        intptr_t handle_ = 0;
+        drawing::point location_ {-1, -1};
+        std::string name_;
+        control* parent_ = const_cast<control*>(&control::null);
+        drawing::size size_ {-1, -1};
+        control::state state_ = state::empty;
+        std::string text_;
+        bool visible_ = true;
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
       static std::map<intptr_t, control*> handles_;
-      std::string name_;
-      drawing::point location_ {-1, -1};
-      control* parent_ = const_cast<control*>(&control::null);
-      drawing::size size_ {-1, -1};
-      std::string text_;
-      bool visible_ = true;
-      control::state state_ = state::empty;
       
     private:
       void internal_destroy_handle(intptr_t);
-      explicit control(const std::string& name) : name_(name) {}
-      bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
-      void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
+      explicit control(const std::string& name) {this->data_->name_ = name;}
+      bool get_state(control::state flag) const {return ((int32_t)this->data_->state_ & (int32_t)flag) == (int32_t)flag;}
+      void set_state(control::state flag, bool value) { this->data_->state_ = value ? (control::state)((int32_t)this->data_->state_ | (int32_t)flag) : (control::state)((int32_t)this->data_->state_ & ~(int32_t)flag); }
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
       void wm_command(message& message);

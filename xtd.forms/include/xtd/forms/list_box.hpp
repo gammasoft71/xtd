@@ -14,7 +14,7 @@ namespace xtd {
       
       list_box();
 
-      forms::border_style border_style() const {return this->border_style_;}
+      forms::border_style border_style() const {return this->data_->border_style_;}
       list_box& border_style(forms::border_style border_style);
       
       drawing::color default_back_color() const override;
@@ -23,32 +23,32 @@ namespace xtd {
       
       drawing::size default_size() const override {return{120, 96};}
       
-      string_collection& items() {return this->items_;}
+      string_collection& items() {return this->data_->items_;}
 
-      const string_collection& items() const {return this->items_;}
+      const string_collection& items() const {return this->data_->items_;}
       
       const list_box& items(const string_collection& items) {
-        this->items_ = items;
+        this->data_->items_ = items;
         return *this;
       }
       
-      virtual size_t selected_index() const {return this->selected_index_;}
+      virtual size_t selected_index() const {return this->data_->selected_index_;}
       
       virtual list_box& selected_index(size_t selected_index);
       
       virtual std::vector<size_t> selected_indices() const;
       
-      virtual const std::string& selected_item() const {return this->selected_item_;}
+      virtual const std::string& selected_item() const {return this->data_->selected_item_;}
       
       virtual list_box& selected_item(const std::string& selected_item);
       
       virtual std::vector<std::string> selected_items() const;
       
-      virtual forms::selection_mode selection_mode() const {return this->selection_mode_;}
+      virtual forms::selection_mode selection_mode() const {return this->data_->selection_mode_;}
 
       virtual list_box& selection_mode(forms::selection_mode selection_mode);
 
-      virtual bool sorted() const {return this->sorted_;}
+      virtual bool sorted() const {return this->data_->sorted_;}
       virtual list_box& sorted(bool sorted);
       
       using control::text;
@@ -63,7 +63,7 @@ namespace xtd {
 
       virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
 
-      virtual void on_selected_value_changed(const event_args& e) {this->control::text(this->selected_item_);}
+      virtual void on_selected_value_changed(const event_args& e) {this->control::text(this->data_->selected_item_);}
 
       void wnd_proc(message& message) override;
       
@@ -74,12 +74,16 @@ namespace xtd {
       void wm_mouse_down(message& message);
       
     private:
-      forms::border_style border_style_ = forms::border_style::fixed_3d;
-      string_collection items_;
-      size_t selected_index_ = -1;
-      std::string selected_item_;
-      forms::selection_mode selection_mode_ = forms::selection_mode::one;
-      bool sorted_ = false;
+      struct data {
+        forms::border_style border_style_ = forms::border_style::fixed_3d;
+        string_collection items_;
+        size_t selected_index_ = -1;
+        std::string selected_item_;
+        forms::selection_mode selection_mode_ = forms::selection_mode::one;
+        bool sorted_ = false;
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

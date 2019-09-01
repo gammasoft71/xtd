@@ -10,15 +10,15 @@ namespace xtd {
     public:
       radio_button();
 
-      virtual forms::appearance appearance() const {return this->appearance_;}
+      virtual forms::appearance appearance() const {return this->data_->appearance_;}
       virtual radio_button& appearance(forms::appearance appearance);
       
       drawing::size default_size() const override {return {104, 24};}
 
-      virtual bool auto_check() const {return this->auto_check_;}
+      virtual bool auto_check() const {return this->data_->auto_check_;}
       virtual radio_button& auto_check(bool auto_check);
       
-      virtual bool checked() const {return this->checked_;}
+      virtual bool checked() const {return this->data_->checked_;}
       virtual radio_button& checked(bool checked);
       
       event<radio_button, event_handler<control>> appearance_changed;
@@ -40,9 +40,13 @@ namespace xtd {
       void wm_mouse_double_click(message& message);
       void wm_mouse_up(message& message);
 
-      forms::appearance appearance_ = forms::appearance::normal;
-      bool auto_check_ = true;
-      bool checked_ = false;
+      struct data {
+        forms::appearance appearance_ = forms::appearance::normal;
+        bool auto_check_ = true;
+        bool checked_ = false;
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

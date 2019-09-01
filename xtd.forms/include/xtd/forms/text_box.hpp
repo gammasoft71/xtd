@@ -10,7 +10,7 @@ namespace xtd {
     public:
       text_box();
 
-      forms::border_style border_style() const {return this->border_style_;}
+      forms::border_style border_style() const {return this->data_->border_style_;}
       text_box& border_style(forms::border_style border_style);
       
       drawing::color default_back_color() const override;
@@ -26,7 +26,11 @@ namespace xtd {
       forms::create_params create_params() const override;
 
     private:
-      forms::border_style border_style_ = forms::border_style::fixed_single;
+      struct data {
+        forms::border_style border_style_ = forms::border_style::fixed_single;
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
