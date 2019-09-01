@@ -597,8 +597,7 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   this->def_wnd_proc(message);
-  graphics graphics(native::control::create_paint_graphics(this->handle_));
-  paint_event_args e({{0, 0}, this->client_size()}, graphics);
+  paint_event_args e({{0, 0}, this->client_size()}, *this);
   this->on_paint(e);
 }
 
