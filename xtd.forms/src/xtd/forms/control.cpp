@@ -408,6 +408,7 @@ void control::on_parent_font_changed(const event_args &e) {
 
 void control::on_size_changed(const event_args &e) {
   this->size_ = native::control::size(this->handle_);
+  this->refresh();
   this->size_changed(*this, e);
 }
 
@@ -417,6 +418,7 @@ void control::on_text_changed(const event_args &e) {
 
 void control::on_visible_changed(const event_args &e) {
   this->visible_ = native::control::visible(this->handle_);
+  this->refresh();
   this->visible_changed(*this, e);
 }
 
