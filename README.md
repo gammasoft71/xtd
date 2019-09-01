@@ -95,7 +95,6 @@ src/hello_world_forms.cpp:
 ```c++
 #include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
