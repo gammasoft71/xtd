@@ -9,12 +9,12 @@ using namespace xtd;
 using namespace xtd::forms;
 
 check_box::check_box() {
-  this->size_ = this->default_size();
+  this->control::data_->size_ = this->default_size();
 }
 
 check_box& check_box::appearance(forms::appearance appearance) {
-  if (this->appearance_ != appearance) {
-    this->appearance_ = appearance;
+  if (this->data_->appearance_ != appearance) {
+    this->data_->appearance_ = appearance;
     this->recreate_handle();
     this->on_appearance_changed(event_args::empty);
   }
@@ -22,8 +22,8 @@ check_box& check_box::appearance(forms::appearance appearance) {
 }
 
 check_box& check_box::auto_check(bool auto_check) {
-  if (this->auto_check_ != auto_check)
-    this->auto_check_ = auto_check;
+  if (this->data_->auto_check_ != auto_check)
+    this->data_->auto_check_ = auto_check;
   return *this;
 }
 
@@ -33,21 +33,21 @@ check_box& check_box::checked(bool checked) {
 }
 
 check_box& check_box::check_state(forms::check_state check_state) {
-  if (this->check_state_ != check_state) {
-    this->check_state_ = check_state;
-    if (this->checked_ != (this->check_state_ != forms::check_state::unchecked)) {
-      this->checked_ = this->check_state_ != forms::check_state::unchecked;
+  if (this->data_->check_state_ != check_state) {
+    this->data_->check_state_ = check_state;
+    if (this->data_->checked_ != (this->data_->check_state_ != forms::check_state::unchecked)) {
+      this->data_->checked_ = this->data_->check_state_ != forms::check_state::unchecked;
       this->on_checked_changed(event_args::empty);
     }
-    native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
+    native::check_box::check_state(this->control::data_->handle_, static_cast<int32_t>(this->data_->check_state_));
     this->on_check_state_changed(event_args::empty);
   }
   return *this;
 }
 
 check_box& check_box::three_state(bool three_state) {
-  if (this->three_state_ != three_state) {
-    this->three_state_ = three_state;
+  if (this->data_->three_state_ != three_state) {
+    this->data_->three_state_ = three_state;
     this->recreate_handle();
   }
   return *this;
@@ -57,17 +57,17 @@ forms::create_params check_box::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
   create_params.class_name("CHECKBOX"); // "BUTTON" for win32
-  if (this->three_state_) create_params.style(create_params.style() | (this->auto_check_ ? BS_AUTO3STATE : BS_3STATE));
-  else if (this->auto_check_) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
+  if (this->data_->three_state_) create_params.style(create_params.style() | (this->data_->auto_check_ ? BS_AUTO3STATE : BS_3STATE));
+  else if (this->data_->auto_check_) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
   else create_params.style(create_params.style() | BS_CHECKBOX);
-  if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
+  if (this->data_->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
 
   return create_params;
 }
 
 void check_box::on_handle_created(const event_args &e) {
   this->control::on_handle_created(e);
-  native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
+  native::check_box::check_state(this->control::data_->handle_, static_cast<int32_t>(this->data_->check_state_));
 }
 
 void check_box::wnd_proc(message &message) {
@@ -84,7 +84,7 @@ void check_box::wm_mouse_double_click(message &message) {
 }
 
 void check_box::wm_mouse_up(message &message) {
-  if (this->auto_check_)
+  if (this->data_->auto_check_)
     switch (this->check_state()) {
       case forms::check_state::unchecked: this->check_state(forms::check_state::checked); break;
       case forms::check_state::checked: this->check_state(this->three_state() ? forms::check_state::indeterminate : forms::check_state::unchecked); break;

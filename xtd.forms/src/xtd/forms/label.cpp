@@ -8,12 +8,12 @@ using namespace xtd;
 using namespace xtd::forms;
 
 label::label() {
-  this->size_ = this->default_size();
+  this->control::data_->size_ = this->default_size();
 }
 
 label& label::auto_size(bool auto_size) {
-  if (this->auto_size_ != auto_size) {
-    this->auto_size_ = auto_size;
+  if (this->data_->auto_size_ != auto_size) {
+    this->data_->auto_size_ = auto_size;
     this->force_update_size();
     this->recreate_handle();
     this->on_auto_size_changed(event_args::empty);
@@ -22,8 +22,8 @@ label& label::auto_size(bool auto_size) {
 }
 
 label& label::border_style(forms::border_style border_style) {
-  if (this->border_style_ != border_style) {
-    this->border_style_ = border_style;
+  if (this->data_->border_style_ != border_style) {
+    this->data_->border_style_ = border_style;
     this->recreate_handle();
   }
   return *this;
@@ -35,24 +35,24 @@ forms::create_params label::create_params() const {
   create_params.class_name("STATIC");
   create_params.style(create_params.style() | SS_LEFT);
 
-  if (this->auto_size_) {
+  if (this->data_->auto_size_) {
     drawing::size size = this->measure_string();
     create_params.width(size.width());
     create_params.height(size.height());
   }
   else create_params.style(create_params.style() | SS_LEFT);
     
-  if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (this->data_->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (this->data_->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
   return create_params;
 }
 
 drawing::size label::measure_string() const {
-  return drawing::size::ceiling(this->create_graphics().measure_string(this->text_, this->font())) + drawing::size(2 + (this->border_style_ == border_style::none ? 0 : 4), 1 + (this->border_style_ == border_style::none ? 0 : 4));
+  return drawing::size::ceiling(this->create_graphics().measure_string(this->control::data_->text_, this->font())) + drawing::size(2 + (this->data_->border_style_ == border_style::none ? 0 : 4), 1 + (this->data_->border_style_ == border_style::none ? 0 : 4));
 }
 
 void label::force_update_size() {
-  this->size_ = this->client_size_ = this->measure_string();
-  native::control::size(this->handle_, this->size_);
+  this->control::data_->size_ = this->control::data_->client_size_ = this->measure_string();
+  native::control::size(this->control::data_->handle_, this->control::data_->size_);
 }

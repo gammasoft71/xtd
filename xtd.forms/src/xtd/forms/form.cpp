@@ -12,16 +12,16 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 form::form() {
-  this->visible_ = false;
-  this->back_color_ = this->default_back_color();
-  this->fore_color_ = this->default_fore_color();
-  this->font_ = this->default_font();
-  this->size_ = this->default_size();
+  this->control::data_->visible_ = false;
+  this->control::data_->back_color_ = this->default_back_color();
+  this->control::data_->fore_color_ = this->default_fore_color();
+  this->control::data_->font_ = this->default_font();
+  this->control::data_->size_ = this->default_size();
   this->create_control();
 }
 
 void form::close() {
-  native::form::close(this->handle_);
+  native::form::close(this->control::data_->handle_);
 }
 
 control& form::parent(const control& parent) {

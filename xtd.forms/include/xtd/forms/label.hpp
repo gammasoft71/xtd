@@ -10,22 +10,22 @@ namespace xtd {
     public:
       label();
 
-      bool auto_size() const {return this->auto_size_;}
+      bool auto_size() const {return this->data_->auto_size_;}
       label& auto_size(bool auto_size);
       
-      forms::border_style border_style() const {return this->border_style_;}
+      forms::border_style border_style() const {return this->data_->border_style_;}
       label& border_style(forms::border_style border_style);
 
       using control::size;
       control& size(const drawing::size& size) override {
-        if (!this->auto_size_) this->control::size(size);
+        if (!this->data_->auto_size_) this->control::size(size);
         return *this;
       }
       
       using control::text;
       control& text(const std::string& text) override {
          this->control::text(text);
-        if (this->auto_size_) this->force_update_size();
+        if (this->data_->auto_size_) this->force_update_size();
         return *this;
       }
       
@@ -41,8 +41,13 @@ namespace xtd {
     private:
       drawing::size measure_string() const;
       void force_update_size();
-      bool auto_size_ = false;
-      forms::border_style border_style_ = forms::border_style::none;
+      
+      struct data {
+        bool auto_size_ = false;
+        forms::border_style border_style_ = forms::border_style::none;
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

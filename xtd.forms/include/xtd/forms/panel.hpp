@@ -10,7 +10,7 @@ namespace xtd {
     public:
       panel();
 
-      forms::border_style border_style() const {return this->border_style_;}
+      forms::border_style border_style() const {return this->data_->border_style_;}
       panel& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return{200, 100};}
@@ -19,7 +19,11 @@ namespace xtd {
       forms::create_params create_params() const override;
 
     private:
-      forms::border_style border_style_ = forms::border_style::none;
+      struct data {
+        forms::border_style border_style_ = forms::border_style::none;
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

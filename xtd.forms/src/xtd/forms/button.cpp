@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 button::button() {
-  this->size_ = this->default_size();
+  this->control::data_->size_ = this->default_size();
 }
 
 forms::create_params button::create_params() const {

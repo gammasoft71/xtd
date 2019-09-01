@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 group_box::group_box() {
-  this->size_ = this->default_size();
+  this->control::data_->size_ = this->default_size();
 }
 
 forms::create_params group_box::create_params() const {
