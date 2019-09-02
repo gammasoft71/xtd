@@ -38,6 +38,7 @@ namespace xtd {
       
     public:
       using control_collection = layout::arranged_element_collection<std::reference_wrapper<control>>;
+      using control_collection2 = layout::arranged_element_collection<control>;
       static const control null;
       
       control();
@@ -360,7 +361,8 @@ namespace xtd {
       
       std::shared_ptr<data> data_ = std::make_shared<data>();
       static std::map<intptr_t, control*> handles_;
-      
+      static control_collection2 top_level_controls_;
+
     private:
       void internal_destroy_handle(intptr_t);
       explicit control(const std::string& name) {this->data_->name_ = name;}
