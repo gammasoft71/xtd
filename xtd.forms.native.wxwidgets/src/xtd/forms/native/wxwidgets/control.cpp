@@ -75,6 +75,7 @@ intptr_t control::create_graphics(intptr_t control) {
 }
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
+  if (!control) return 0;
   switch (msg) {
     case WM_GETTEXTLENGTH: return (reinterpret_cast<control_handler*>(hwnd))->control()->GetLabel().ToStdString().size(); break;
     case WM_GETTEXT: return strlen(strncpy(reinterpret_cast<char*>(lparam), reinterpret_cast<control_handler*>(hwnd)->control()->GetLabel().ToStdString().c_str(), wparam)); break;
@@ -134,7 +135,7 @@ font control::default_font() {
 void control::destroy(intptr_t control) {
   if (control == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->Destroy();
+  reinterpret_cast<control_handler*>(control)->destroy();
   erase(control);
 }
 

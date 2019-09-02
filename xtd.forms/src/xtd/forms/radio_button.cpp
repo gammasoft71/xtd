@@ -35,7 +35,7 @@ radio_button& radio_button::checked(bool checked) {
     this->on_checked_changed(event_args::empty);
     if (this->data_->checked_ == true && this->data_->auto_check_ == true && &this->parent() != &control::null) {
       for (auto control : this->parent().controls()) {
-        if (&control.get() != this && dynamic_cast<radio_button*>(&control.get()) != nullptr && static_cast<radio_button&>(control.get()).data_->auto_check_ == true)
+        if (dynamic_cast<radio_button*>(&control.get()) != nullptr && static_cast<radio_button&>(control.get()).data_ != this->data_ && static_cast<radio_button&>(control.get()).data_->auto_check_ == true)
           static_cast<radio_button&>(control.get()).checked(false);
       }
     }

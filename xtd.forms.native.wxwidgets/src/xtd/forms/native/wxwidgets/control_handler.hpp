@@ -304,11 +304,22 @@ namespace xtd {
         template<typename control_type, typename ...args_type>
         void create(args_type&& ...args) {
           this->control_ = new control_wrapper<control_type>(this, args...);
+          this->destroyed_ = false;
           this->def_wnd_proc += {static_cast<control_wrapper<control_type>&>(*this->control_), &control_wrapper<control_type>::def_wnd_proc};
+        }
+        
+        void destroy() {
+          this->destroyed_ = true;
+          this->control_->Destroy();
+          //this->def_wnd_proc -= {static_cast<control_wrapper<control_type>&>(*this->control_), &control_wrapper<control_type>::def_wnd_proc};
         }
 
         intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-          return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
+          intptr_t result = 0;
+          for (auto& fct : this->wnd_proc.functions())
+            if (!this->destroyed_) result = fct(hwnd, msg, wparam, lparam, handle);
+          return result;
+          //return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
         
         static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
@@ -406,6 +417,7 @@ namespace xtd {
         
       private:
         wxWindow* control_;
+        bool destroyed_ = false;
       };
       
       template<typename TControl>

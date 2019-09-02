@@ -41,6 +41,9 @@ namespace {
 
 const control control::null {"null"};
 
+map<intptr_t, control*> control::handles_;
+control::control_collection2 control::top_level_controls_;
+
 control::control() {
   native::control::init();
   this->data_->size_ = this->default_size();
@@ -60,21 +63,24 @@ control::control() {
 }
 
 control::control(const control& value) {
+  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
   if (this->data_.use_count() == 1) destroy_control();
   this->data_ = value.data_;
+  if (this->data_->handle_) native::control::register_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
 }
 
 control& control::operator=(const control& value) {
+  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
   if (this->data_.use_count() == 1) destroy_control();
   this->data_ = value.data_;
+  if (this->data_->handle_) native::control::register_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
   return *this;
 }
 
 control::~control() {
+  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
   if (this->data_.use_count() == 1) destroy_control();
 }
-
-map<intptr_t, control*> control::handles_;
 
 control& control::back_color(const color& color) {
   if (this->data_->back_color_ != color) {
@@ -197,6 +203,7 @@ control& control::visible(bool visible) {
 void control::create_control() {
   if (!this->data_->handle_) {
     this->create_handle();
+    if (this->data_->parent_ == &control::null) top_level_controls_.push_back(*this);
     this->send_message(native::control::handle(this->data_->handle_), WM_CREATE, 0, 0);
     this->on_create_control();
   }
@@ -204,7 +211,6 @@ void control::create_control() {
 
 void control::destroy_control() {
   if (this->data_->handle_) {
-    native::control::unregister_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
     native::control::erase(this->data_->handle_);
     this->data_->handle_ = 0;
     this->on_handle_destroyed(event_args::empty);
