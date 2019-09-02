@@ -39,7 +39,11 @@ namespace xtd {
       if (this->functions_.back() == nullptr) throw std::invalid_argument("function null");
       return this->functions_.back()();
     }
+
+    const std::vector<function_t>& functions() const {return this->functions_;}
     
+    void clear() {this->functions_.clear();}
+
     result_t invoke() const { return this->operator()(); }
     
     static delegate combine(const std::vector<delegate>& delegates) noexcept {
@@ -317,7 +321,16 @@ namespace xtd {
       if (this->functions_.back() == nullptr) throw std::invalid_argument("function null");
       return this->functions_.back()(arguments...);
     }
-
+    
+    const std::vector<no_arguments_function_t>& no_arguments_functions() const {return this->no_arguments_functions_;}
+    
+    const std::vector<function_t>& functions() const {return this->functions_;}
+    
+    void clear() {
+      this->no_arguments_functions_.clear();
+      this->functions_.clear();
+    }
+    
     /// @brief invokes the method represented by the current delegate.
     /// @param arguments The paramter list.
     /// @return result_t The return value.
