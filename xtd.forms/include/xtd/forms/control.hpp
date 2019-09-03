@@ -1,4 +1,5 @@
 #pragma once
+#include <any>
 #include <cstdint>
 #include <functional>
 #include <map>
@@ -105,6 +106,17 @@ namespace xtd {
 
       virtual drawing::size size() const {return this->data_->size_;}
       virtual control& size(const drawing::size& size);
+      
+      /// @brief Gets the object that contains data about the control.
+      /// @return A std::any that contains data about the control. The default is empty.
+      virtual std::any tag() const {return this->data_->tag_;}
+      
+      /// @brief Sets the object that contains data about the control.
+      /// @param tag A std::any that contains data about the control. The default is empty.
+      virtual control& tag(std::any tag) {
+        this->data_->tag_ = tag;
+        return*this;
+      }
       
       virtual const std::string& text() const {return this->data_->text_;}
       virtual control& text(const std::string& text);
@@ -356,6 +368,7 @@ namespace xtd {
         intptr_t parent_ = 0;
         drawing::size size_ {-1, -1};
         control::state state_ = state::empty;
+        std::any tag_;
         std::string text_;
         bool visible_ = true;
        };
