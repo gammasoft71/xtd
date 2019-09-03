@@ -199,11 +199,6 @@ void control::font(intptr_t control, const drawing::font& font) {
   reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
 
-intptr_t control::handle(intptr_t control) {
-  if (control == 0) return 0;
-  return reinterpret_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetHandle());
-}
-
 point control::location(intptr_t control) {
   if (control == 0) return {};
   wxPoint location = reinterpret_cast<control_handler*>(control)->control()->GetPosition();

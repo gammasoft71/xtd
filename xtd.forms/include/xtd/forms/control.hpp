@@ -37,8 +37,8 @@ namespace xtd {
       };
       
     public:
-      using control_collection = layout::arranged_element_collection<std::reference_wrapper<control>>;
-      using control_collection2 = layout::arranged_element_collection<control>;
+      using ref_control = std::reference_wrapper<control>;
+      using control_collection = layout::arranged_element_collection<ref_control>;
       static const control null;
       
       control();
@@ -50,7 +50,7 @@ namespace xtd {
       
       virtual ~control();
 
-      virtual drawing::color back_color() const {return this->data_->back_color_.value_or(this->data_->parent_ != &control::null ? this->data_->parent_->back_color() : default_back_color());}
+      virtual drawing::color back_color() const {return this->data_->back_color_.value_or(this->data_->parent_ ? this->parent().back_color() : default_back_color());}
       virtual control& back_color(const drawing::color& color);
       
       virtual drawing::rectangle bounds() const {return {this->data_->location_, this->data_->size_};}
@@ -77,10 +77,10 @@ namespace xtd {
       virtual bool enabled() const {return this->data_->enabled_;}
       virtual control& enabled(bool enabled);
 
-      virtual drawing::color fore_color() const {return this->data_->fore_color_.value_or(this->data_->parent_ != &control::null ? this->data_->parent_->fore_color() : default_fore_color());}
+      virtual drawing::color fore_color() const {return this->data_->fore_color_.value_or(this->data_->parent_ ? this->parent().fore_color() : default_fore_color());}
       virtual control& fore_color(const drawing::color& color);
       
-      virtual drawing::font font() const {return this->data_->font_.value_or(this->data_->parent_ != &control::null ? this->data_->parent_->font() : default_font());}
+      virtual drawing::font font() const {return this->data_->font_.value_or(this->data_->parent_ ? this->parent().font() : default_font());}
       virtual control& font(const drawing::font& font);
       
       virtual intptr_t handle() const;
@@ -91,8 +91,6 @@ namespace xtd {
         return *this;
       }
 
-      virtual intptr_t native_handle() const;
-      
       virtual drawing::point location() const {return this->data_->location_;}
       virtual control& location(const drawing::point& location);
 
@@ -102,7 +100,7 @@ namespace xtd {
         return*this;
       }
       
-      virtual control& parent() const {return *this->data_->parent_;}
+      virtual control& parent() const {return from_handle(this->data_->parent_);}
       virtual control& parent(const control& parent);
 
       virtual drawing::size size() const {return this->data_->size_;}
@@ -138,38 +136,38 @@ namespace xtd {
       }
 
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
+      static control_t create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        control_t item;
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
         return item;
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        item->parent(parent);
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
+      static control_t create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        control_t item;
+        item.parent(parent);
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
         return item;
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        item->text(text);
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
+      static control_t create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        control_t item;
+        item.text(text);
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
         return item;
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        std::unique_ptr<control_t> item = std::make_unique<control_t>();
-        item->parent(parent);
-        item->text(text);
-        if (location != drawing::point {-1, -1}) item->location(location);
-        if (size != drawing::size {-1, -1}) item->size(size);
+      static control_t create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        control_t item;
+        item.parent(parent);
+        item.text(text);
+        if (location != drawing::point {-1, -1}) item.location(location);
+        if (size != drawing::size {-1, -1}) item.size(size);
         return item;
       }
 
@@ -342,6 +340,9 @@ namespace xtd {
 
       void recreate_handle();
       
+      template<typename control_t>
+      void make_control(const control_t& value) {controls_[value.control::data_.get()] = std::make_shared<control_t>(value);}
+      
       struct data {
         std::optional<drawing::color> back_color_;
         drawing::size client_size_ {-1, -1};
@@ -352,16 +353,17 @@ namespace xtd {
         intptr_t handle_ = 0;
         drawing::point location_ {-1, -1};
         std::string name_;
-        control* parent_ = const_cast<control*>(&control::null);
+        intptr_t parent_ = 0;
         drawing::size size_ {-1, -1};
         control::state state_ = state::empty;
         std::string text_;
         bool visible_ = true;
-      };
+       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();
       static std::map<intptr_t, control*> handles_;
-      static control_collection2 top_level_controls_;
+      static control_collection top_level_controls_;
+      static std::map<control::data*, std::shared_ptr<control>> controls_;
 
     private:
       void internal_destroy_handle(intptr_t);
@@ -386,7 +388,5 @@ namespace xtd {
       void wm_set_text(message& message);
       void wm_size(message& message);
     };
-    
-    using ref_control = std::reference_wrapper<control>;
   }
 }

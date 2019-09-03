@@ -100,7 +100,7 @@ void application::main_form(intptr_t form) {
 vector<intptr_t> application::open_forms() {
   vector<intptr_t> forms;
   for (wxWindow* window : wxTopLevelWindows)
-    forms.push_back(reinterpret_cast<intptr_t>(window->GetHandle()));
+    forms.push_back(reinterpret_cast<intptr_t>(window));
   return forms;
 }
 

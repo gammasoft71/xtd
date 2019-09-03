@@ -12,6 +12,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 form::form() {
+  this->make_control(*this);
   this->control::data_->visible_ = false;
   this->control::data_->back_color_ = this->default_back_color();
   this->control::data_->fore_color_ = this->default_fore_color();

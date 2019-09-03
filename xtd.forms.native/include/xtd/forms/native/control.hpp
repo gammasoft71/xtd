@@ -35,7 +35,6 @@ namespace xtd {
         static void fore_color(intptr_t control, const drawing::color& color);
         static drawing::font font(intptr_t control);
         static void font(intptr_t control, const drawing::font& font);
-        static intptr_t handle(intptr_t control);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);
         static intptr_t parent(intptr_t control);

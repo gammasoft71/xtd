@@ -8,6 +8,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 label::label() {
+  this->make_control(*this);
   this->control::data_->size_ = this->default_size();
 }
 
