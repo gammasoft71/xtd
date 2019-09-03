@@ -9,6 +9,15 @@ public:
   form_test() {
     this->text("xtd.forms.manual_tests");
 
+    this->button1.parent(*this);
+    this->button1.back_color(drawing::color::red);
+    this->button1.text("button 1");
+    this->button1.location({10, 10});
+    this->button1.click += [&](const control& sender, const event_args& e) {
+      //message_box::show(strings::format("button = {}", sender));
+      this->button1.parent(control::null);
+    };
+
     /*
     this->radio1.parent(*this);
     this->radio1.text("radio 1");
@@ -25,15 +34,20 @@ public:
      */
 
     this->mouse_move += [] {
-      cdebug << format("mouse move") << endl;
+      //cdebug << format("mouse move") << endl;
     };
 
     this->handle_destroyed += [] {
-      cdebug << format("handle destroyed") << endl;
+      cdebug << format("handle form destroyed") << endl;
+    };
+
+    this->button1.handle_destroyed += [] {
+      cdebug << format("handle button destroyed") << endl;
     };
   }
   
 private:
+  button button1;
   //radio_button radio1;
   //radio_button radio2;
   //text_box text_box1;

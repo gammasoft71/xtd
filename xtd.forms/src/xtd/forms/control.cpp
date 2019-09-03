@@ -42,13 +42,15 @@ namespace {
 const control control::null {"null"};
 
 map<intptr_t, control*> control::handles_;
-control::control_collection2 control::top_level_controls_;
+std::map<control::data*, std::shared_ptr<control>> control::controls_;
+control::control_collection control::top_level_controls_;
 
 control::control() {
+  make_control(*this);
   native::control::init();
   this->data_->size_ = this->default_size();
   this->data_->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
-    item.get().data_->parent_ = this;
+    item.get().data_->parent_ = this->data_->handle_;
     if (this->data_->handle_) {
       item.get().create_control();
       if (item.get().data_->handle_) native::control::parent(item.get().data_->handle_, this->data_->handle_);
@@ -57,29 +59,53 @@ control::control() {
   };
 
   this->data_->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
-    item.get().data_->parent_ = const_cast<control*>(&control::null);
+    item.get().data_->parent_ = 0;
     item.get().destroy_handle();
   };
 }
 
 control::control(const control& value) {
-  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
-  if (this->data_.use_count() == 1) destroy_control();
-  this->data_ = value.data_;
-  if (this->data_->handle_) native::control::register_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
+  *this = value;
 }
 
 control& control::operator=(const control& value) {
-  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
   if (this->data_.use_count() == 1) destroy_control();
+  this->back_color_changed = value.back_color_changed;
+  this->click = value.click;
+  this->client_size_changed = value.client_size_changed;
+  this->double_click = value.double_click;
+  this->got_focus = value.got_focus;
+  this->handle_created = value.handle_created;
+  this->handle_destroyed = value.handle_destroyed;
+  this->enabled_changed = value.enabled_changed;
+  this->fore_color_changed = value.fore_color_changed;
+  this->font_changed = value.font_changed;
+  this->key_down = value.key_down;
+  this->key_press = value.key_press;
+  this->key_up = value.key_up;
+  this->location_changed = value.location_changed;
+  this->lost_focus = value.lost_focus;
+  this->mouse_click = value.mouse_click;
+  this->mouse_double_click = value.mouse_double_click;
+  this->mouse_down = value.mouse_down;
+  this->mouse_enter = value.mouse_enter;
+  this->mouse_horizontal_wheel = value.mouse_horizontal_wheel;
+  this->mouse_leave = value.mouse_leave;
+  this->mouse_move = value.mouse_move;
+  this->mouse_up = value.mouse_up;
+  this->mouse_wheel = value.mouse_wheel;
+  this->paint = value.paint;
+  this->parent_changed = value.parent_changed;
+  this->size_changed = value.size_changed;
+  this->text_changed = value.text_changed;
+  this->visible_changed = value.visible_changed;
   this->data_ = value.data_;
-  if (this->data_->handle_) native::control::register_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
   return *this;
 }
 
 control::~control() {
-  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
-  if (this->data_.use_count() == 1) destroy_control();
+  if (this->data_.use_count() == 1)
+    destroy_control();
 }
 
 control& control::back_color(const color& color) {
@@ -156,21 +182,17 @@ control& control::location(const point& location) {
   return *this;
 }
 
-intptr_t control::native_handle() const {
-  return native::control::handle(this->data_->handle_);
-}
-
 control& control::parent(const control& parent) {
-  if (this->data_->parent_ != &parent) {
-    if (this->data_->parent_ != &control::null) {
-      for (size_t index = 0; index < this->data_->parent_->controls().size(); index++) {
-        if (&this->data_->parent_->controls()[index].get() == this) {
-           this->data_->parent_->data_->controls_.erase_at(index);
+  if (&this->parent() != &parent) {
+    if (this->data_->parent_ != 0) {
+      for (size_t index = 0; index < this->parent().data_->controls_.size(); index++) {
+        if (this->parent().data_->controls_[index].get().data_.get() == this->data_.get()) {
+           this->parent().data_->controls_.erase_at(index);
           break;
         }
       }
     }
-    if (&parent != &control::null) const_cast<control&>(parent).data_->controls_.push_back(*this);
+    if (&parent != &control::null) const_cast<control&>(parent).data_->controls_.push_back(ref_control(*controls_[this->control::data_.get()]));
   }
   return *this;
 }
@@ -203,17 +225,24 @@ control& control::visible(bool visible) {
 void control::create_control() {
   if (!this->data_->handle_) {
     this->create_handle();
-    if (this->data_->parent_ == &control::null) top_level_controls_.push_back(*this);
-    this->send_message(native::control::handle(this->data_->handle_), WM_CREATE, 0, 0);
+    if (!this->data_->parent_) top_level_controls_.push_back(ref_control(*controls_[this->control::data_.get()]));
+    this->send_message(this->data_->handle_, WM_CREATE, 0, 0);
     this->on_create_control();
   }
 }
 
 void control::destroy_control() {
   if (this->data_->handle_) {
+    if (this->data_->parent_ == 0) {
+      for (size_t index = 0; index < top_level_controls_.size(); index++) {
+        if (&top_level_controls_[index].get() == this) {
+          top_level_controls_.erase_at(index);
+          break;
+        }
+      }
+    }
     native::control::erase(this->data_->handle_);
     this->data_->handle_ = 0;
-    this->on_handle_destroyed(event_args::empty);
     this->destroy_handle();
   }
 }
@@ -265,7 +294,7 @@ forms::create_params control::create_params() const {
   
   create_params.caption(this->data_->text_);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (this->data_->parent_ != &control::null) create_params.parent(this->data_->parent_->data_->handle_);
+  if (this->data_->parent_) create_params.parent(this->parent().data_->handle_);
   create_params.location(this->data_->location_);
   create_params.size(this->data_->size_);
 
@@ -316,8 +345,8 @@ void control::on_got_focus(const event_args &e) {
 }
 
 void control::on_handle_created(const event_args &e) {
-  native::control::register_wnd_proc(this->data_->handle_, {*this, &control::wnd_proc_});
-  handles_[native::control::handle(this->data_->handle_)] = this;
+  native::control::register_wnd_proc(this->data_->handle_, {*controls_[this->control::data_.get()], &control::wnd_proc_});
+  handles_[this->data_->handle_] = controls_[this->control::data_.get()].get();
   if (this->data_->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->data_->handle_, this->client_size());
   if ((this->data_->back_color_.has_value() && this->data_->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->data_->handle_, this->back_color());
   if (this->data_->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->data_->handle_, this->fore_color());
@@ -521,6 +550,7 @@ void control::recreate_handle() {
 }
 
 void control::internal_destroy_handle(intptr_t handle) {
+  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*controls_[this->control::data_.get()], &control::wnd_proc_});
   handles_.erase(handle);
   native::control::destroy(handle);
   this->on_handle_destroyed(event_args::empty);

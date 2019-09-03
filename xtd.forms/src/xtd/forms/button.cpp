@@ -9,6 +9,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 button::button() {
+  this->make_control(*this);
   this->control::data_->size_ = this->default_size();
 }
 

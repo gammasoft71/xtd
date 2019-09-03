@@ -145,11 +145,11 @@ namespace xtd {
           this->item_added(this->collection_.size() - 1, item);
         }
         
-        void push_back(const type_t&& item) {
+        void push_back(type_t&& item) {
           this->collection_.push_back(item);
           this->item_added(this->collection_.size() - 1, item);
         }
-
+        
         void push_back_range(const arranged_element_collection& collection) {
           for(type_t item : collection)
             this->push_back(item);
