@@ -10,6 +10,11 @@ namespace xtd {
     public:
       panel();
 
+      /// @cond
+      panel(const panel& value) {*this = value;}
+      panel& operator=(const panel& value);
+      /// @endcond
+
       forms::border_style border_style() const {return this->data_->border_style_;}
       panel& border_style(forms::border_style border_style);
 

@@ -9,7 +9,16 @@ using namespace xtd;
 using namespace xtd::forms;
 
 radio_button::radio_button() {
+  this->make_control(*this);
   this->control::data_->size_ = this->default_size();
+}
+
+radio_button& radio_button::operator=(const radio_button& value) {
+  this->control::operator=(value);
+  this->appearance_changed = value.appearance_changed;
+  this->checked_changed = value.checked_changed;
+  this->data_ = value.data_;
+  return *this;
 }
 
 radio_button& radio_button::appearance(forms::appearance appearance) {

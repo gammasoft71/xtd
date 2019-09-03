@@ -44,7 +44,7 @@ namespace xtd {
       control();
       
       /// @cond
-      control(const control& value);
+      control(const control& value) {*this = value;}
       control& operator=(const control& value);
       /// @endcond
       

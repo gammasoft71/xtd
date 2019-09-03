@@ -13,6 +13,12 @@ button::button() {
   this->control::data_->size_ = this->default_size();
 }
 
+button& button::operator=(const button& value) {
+  this->control::operator=(value);
+  this->data_ = value.data_;
+  return *this;
+}
+
 forms::create_params button::create_params() const {
   forms::create_params create_params = this->control::create_params();
   

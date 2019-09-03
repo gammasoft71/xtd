@@ -9,10 +9,21 @@ namespace xtd {
     public:
       button();
 
+      /// @cond
+      button(const button& value) {*this = value;}
+      button& operator=(const button& value);
+      /// @endcond
+
       drawing::size default_size() const override {return {75, 25};}
 
     protected:
       forms::create_params create_params() const override;
+
+    private:
+      struct data {
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

@@ -14,6 +14,11 @@ namespace xtd {
       
       list_box();
 
+      /// @cond
+      list_box(const list_box& value) {*this = value;}
+      list_box& operator=(const list_box& value);
+      /// @endcond
+
       forms::border_style border_style() const {return this->data_->border_style_;}
       list_box& border_style(forms::border_style border_style);
       

@@ -10,6 +10,11 @@ namespace xtd {
     public:
       label();
 
+      /// @cond
+      label(const label& value) {*this = value;}
+      label& operator=(const label& value);
+      /// @endcond
+
       bool auto_size() const {return this->data_->auto_size_;}
       label& auto_size(bool auto_size);
       

@@ -10,7 +10,6 @@ public:
     this->text("xtd.forms.manual_tests");
 
     this->button1.parent(*this);
-    this->button1.back_color(drawing::color::red);
     this->button1.text("button 1");
     this->button1.location({10, 10});
     this->button1.click += [&](const control& sender, const event_args& e) {

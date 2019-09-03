@@ -11,6 +11,11 @@ namespace xtd {
     public:
       check_box();
 
+      /// @cond
+      check_box(const check_box& value) {*this = value;}
+      check_box& operator=(const check_box& value);
+      /// @endcond
+
       virtual forms::appearance appearance() const {return this->data_->appearance_;}
       virtual check_box& appearance(forms::appearance appearance);
 

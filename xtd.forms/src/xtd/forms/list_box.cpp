@@ -10,6 +10,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 list_box::list_box() {
+  this->make_control(*this);
   this->control::data_->back_color_ = this->default_back_color();
   this->control::data_->fore_color_ = this->default_fore_color();
   this->control::data_->size_ = this->default_size();
@@ -29,6 +30,13 @@ list_box::list_box() {
     if (this->data_->selected_index_ != -1 && this->data_->selected_index_ < this->data_->items_.size()) selected_item = this->data_->items_[this->data_->selected_index_];
     this->selected_item(selected_item);
   };
+}
+
+list_box& list_box::operator=(const list_box& value) {
+  this->control::operator=(value);
+  this->selected_index_changed = value.selected_index_changed;
+  this->data_ = value.data_;
+  return *this;
 }
 
 list_box& list_box::border_style(forms::border_style border_style) {

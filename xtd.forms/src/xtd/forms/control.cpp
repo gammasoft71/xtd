@@ -64,10 +64,6 @@ control::control() {
   };
 }
 
-control::control(const control& value) {
-  *this = value;
-}
-
 control& control::operator=(const control& value) {
   if (this->data_.use_count() == 1) destroy_control();
   this->back_color_changed = value.back_color_changed;
@@ -541,11 +537,11 @@ void control::recreate_handle() {
   if (this->data_->handle_ != 0) {
     intptr_t handle = this->data_->handle_;
     auto controls = this->controls();
+    this->internal_destroy_handle(handle);
     this->data_->handle_ = 0;
     this->create_handle();
     for (auto control : controls)
       native::control::parent(control.get().data_->handle_, this->data_->handle_);
-    this->internal_destroy_handle(handle);
   }
 }
 

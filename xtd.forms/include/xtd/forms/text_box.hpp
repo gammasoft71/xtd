@@ -10,6 +10,11 @@ namespace xtd {
     public:
       text_box();
 
+      /// @cond
+      text_box(const text_box& value) {*this = value;}
+      text_box& operator=(const text_box& value);
+      /// @endcond
+
       forms::border_style border_style() const {return this->data_->border_style_;}
       text_box& border_style(forms::border_style border_style);
       

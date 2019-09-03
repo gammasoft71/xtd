@@ -7,7 +7,14 @@ using namespace xtd;
 using namespace xtd::forms;
 
 panel::panel() {
+  this->make_control(*this);
   this->control::data_->size_ = this->default_size();
+}
+
+panel& panel::operator=(const panel& value) {
+  this->control::operator=(value);
+  this->data_ = value.data_;
+  return *this;
 }
 
 panel& panel::border_style(forms::border_style border_style) {

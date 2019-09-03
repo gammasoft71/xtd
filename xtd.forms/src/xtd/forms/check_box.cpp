@@ -9,7 +9,17 @@ using namespace xtd;
 using namespace xtd::forms;
 
 check_box::check_box() {
+  this->make_control(*this);
   this->control::data_->size_ = this->default_size();
+}
+
+check_box& check_box::operator=(const check_box& value) {
+  this->control::operator=(value);
+  this->appearance_changed = value.appearance_changed;
+  this->checked_changed = value.checked_changed;
+  this->check_state_changed = value.check_state_changed;
+  this->data_ = value.data_;
+  return *this;
 }
 
 check_box& check_box::appearance(forms::appearance appearance) {

@@ -10,10 +10,21 @@ namespace xtd {
     public:
       group_box();
 
+      /// @cond
+      group_box(const group_box& value) {*this = value;}
+      group_box& operator=(const group_box& value);
+      /// @endcond
+
       drawing::size default_size() const override {return{200, 100};}
       
     protected:
       forms::create_params create_params() const override;
+
+    private:
+      struct data {
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }
