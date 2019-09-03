@@ -10,6 +10,11 @@ namespace xtd {
     public:
       radio_button();
 
+      /// @cond
+      radio_button(const radio_button& value) {*this = value;}
+      radio_button& operator=(const radio_button& value);
+      /// @endcond
+
       virtual forms::appearance appearance() const {return this->data_->appearance_;}
       virtual radio_button& appearance(forms::appearance appearance);
       

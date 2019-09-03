@@ -11,6 +11,11 @@ namespace xtd {
     public:
       form();
 
+      /// @cond
+      form(const form& value) {*this = value;}
+      form& operator=(const form& value);
+      /// @endcond
+
       drawing::size default_size() const override {return{300, 300};}
       
       event<form, form_closed_event_handler<control>> form_closed;
@@ -32,6 +37,12 @@ namespace xtd {
       void wnd_proc(message& message) override;
       
       virtual void wm_close(message& message);
+
+    private:
+      struct data {
+      };
+      
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

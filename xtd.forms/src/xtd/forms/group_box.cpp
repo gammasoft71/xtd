@@ -8,6 +8,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 group_box::group_box() {
+  this->make_control(*this);
   this->control::data_->size_ = this->default_size();
 }
 
@@ -18,4 +19,10 @@ forms::create_params group_box::create_params() const {
   create_params.style(create_params.style() | BS_GROUPBOX);
   
   return create_params;
+}
+
+group_box& group_box::operator=(const group_box& value) {
+  this->control::operator=(value);
+  this->data_ = value.data_;
+  return *this;
 }

@@ -10,9 +10,16 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 text_box::text_box() {
+  this->make_control(*this);
   this->control::data_->back_color_ = this->default_back_color();
   this->control::data_->fore_color_ = this->default_fore_color();
   this->control::data_->size_ = this->default_size();
+}
+
+text_box& text_box::operator=(const text_box& value) {
+  this->control::operator=(value);
+  this->data_ = value.data_;
+  return *this;
 }
 
 text_box& text_box::border_style(forms::border_style border_style) {

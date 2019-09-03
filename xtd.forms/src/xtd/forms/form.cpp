@@ -21,6 +21,14 @@ form::form() {
   this->create_control();
 }
 
+form& form::operator=(const form& value) {
+  this->control::operator=(value);
+  this->form_closed = value.form_closed;
+  this->form_closing = value.form_closing;
+  this->data_ = value.data_;
+  return *this;
+}
+
 void form::close() {
   native::form::close(this->control::data_->handle_);
 }

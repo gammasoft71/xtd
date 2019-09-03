@@ -12,6 +12,13 @@ label::label() {
   this->control::data_->size_ = this->default_size();
 }
 
+label& label::operator=(const label& value) {
+  this->control::operator=(value);
+  this->auto_size_changed = value.auto_size_changed;
+  this->data_ = value.data_;
+  return *this;
+}
+
 label& label::auto_size(bool auto_size) {
   if (this->data_->auto_size_ != auto_size) {
     this->data_->auto_size_ = auto_size;
