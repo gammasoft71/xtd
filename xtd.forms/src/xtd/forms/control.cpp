@@ -39,14 +39,14 @@ namespace {
   }
 }
 
-const control control::null {"null"};
+const control control::null {"null", true};
 
 map<intptr_t, control*> control::handles_;
 std::map<control::data*, std::shared_ptr<control>> control::controls_;
 control::control_collection control::top_level_controls_;
 
 control::control() {
-  make_control(*this);
+  //make_control(*this);
   native::control::init();
   this->data_->size_ = this->default_size();
   this->data_->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {

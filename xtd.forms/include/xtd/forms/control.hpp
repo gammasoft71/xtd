@@ -29,6 +29,11 @@ namespace xtd {
     class screen;
     /// @endcond
     
+    /// @brief Defines the base class for controls, which are components with visual representation.
+    /// @remarks To create your own control class, inherit from the user_control, control classes, or from the other Windows Forms provided controls. For more information about authoring custom controls, see Developing Custom Windows Forms Controls with xtd.
+    /// @remarks The control class implements very basic functionality required by classes that display information to the user. It handles user input through the keyboard and pointing devices. It handles message routing and security. It defines the bounds of a control (its position and size), although it does not implement painting. It provides a window handle (hWnd).
+    /// @remarks Windows Forms controls use ambient properties so child controls can appear like their surrounding environment. An ambient property is a control property that, if not set, is retrieved from the parent control. If the control does not have a parent, and the property is not set, the control attempts to determine the value of the ambient property through the site property. If the control is not sited, if the site does not support ambient properties, or if the property is not set on the ambient_properties, the control uses its own default values. Typically, an ambient property represents a characteristic of a control, such as back_color, that is communicated to a child control. For example, a button will have the same back_color as its parent form by default. Ambient properties provided by the control class include: cursor, font, back_color, fore_color, and right_to_left.
+    /// @remarks The majority of the controls in the xtd::forms namespace use the underlying Windows common control as a base to build on.
     class control {
     private:
       enum class state {
@@ -38,18 +43,38 @@ namespace xtd {
       };
       
     public:
+      /// @brief @member types
+      /// @{
       using ref_control = std::reference_wrapper<control>;
       using control_collection = layout::arranged_element_collection<ref_control>;
+      /// @}
+      
+      /// @brief Represent a null control. This field is const.
+      /// @remarks Use this field if you want remove control from parent.
+      /// @code
+      /// // remove button from form
+      /// button.parent(control::null);
+      /// @endcode
       static const control null;
       
+      /// @brief Initializes a new instance of the Control class with default settings.
+      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       control();
       
-      /// @cond
+      /// @brief Initializes a new instance of the control class with specific text.
+      /// @param text The text displayed by the control.
+      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value.
+       explicit control(const std::string& text) : control() {
+         this->text(text);
+       }
+      
+      /// @private
+      /// @{
       control(const control& value) {*this = value;}
       control& operator=(const control& value);
-      /// @endcond
-      
       virtual ~control();
+      /// @}
 
       virtual drawing::color back_color() const {return this->data_->back_color_.value_or(this->data_->parent_ ? this->parent().back_color() : default_back_color());}
       virtual control& back_color(const drawing::color& color);
@@ -380,7 +405,7 @@ namespace xtd {
 
     private:
       void internal_destroy_handle(intptr_t);
-      explicit control(const std::string& name) {this->data_->name_ = name;}
+      control(const std::string& name, bool) {this->data_->name_ = name;}
       bool get_state(control::state flag) const {return ((int32_t)this->data_->state_ & (int32_t)flag) == (int32_t)flag;}
       void set_state(control::state flag, bool value) { this->data_->state_ = value ? (control::state)((int32_t)this->data_->state_ | (int32_t)flag) : (control::state)((int32_t)this->data_->state_ & ~(int32_t)flag); }
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
