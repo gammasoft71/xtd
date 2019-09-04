@@ -4,12 +4,19 @@
 #include <xtd/event_handler.hpp>
 #include <xtd/event.hpp>
 
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
+      /// @brief Represents a collection of objects.
+      /// @remarks The arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
       template<typename type_t, typename allocator_t = std::allocator<type_t>>
       class arranged_element_collection {
       public:
+        /// @brief @member types
+        /// @{
         using value_type = type_t;
         using allocator_type = allocator_t;
         using size_type = size_t;
@@ -22,19 +29,25 @@ namespace xtd {
         using const_iterator = typename std::vector<type_t>::const_iterator;
         using reverse_iterator = typename std::vector<type_t>::reverse_iterator;
         using const_reverse_iterator = typename std::vector<type_t>::const_reverse_iterator;
+        /// @}
         
+        /// @biref Creats a new object arranged_element_collection
         explicit arranged_element_collection(const allocator_t& allocator = allocator_t()) : collection_(allocator) {}
         
-        /// @cond
+        /// @private
+        /// @{
         arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
         arranged_element_collection& operator=(const arranged_element_collection& collection) {
           this->clear();
           this->push_back_range(collection);
           return *this;
         }
-        /// @endcond
+        /// @}
         
+        /// @brief Occurs when an item is added to the collection.
         event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_added;
+
+        /// @brief Occurs when an item is erased from the collection.
         event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_erased;
         
         allocator_t get_allocator() const {return this->collection_.get_allocator();}
