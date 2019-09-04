@@ -61,7 +61,9 @@ namespace xtd {
     /// @remarks For example, the fully qualified name of the strings type is xtd::strings.
     template<typename object_t>
     static std::string full_class_name(const object_t& object) {return demangle(typeid(object).name());}
-    
+
+    static std::string full_class_name(const std::type_info& info) {return demangle(info.name());}
+
     /// @brief Gets the class name of the object_t.
     /// @return The class name of the object_t.
     /// @remarks For example, the name of the strings type is strings.
@@ -73,7 +75,9 @@ namespace xtd {
     /// @remarks For example, the name of the strings type is strings.
     template<typename object_t>
     static std::string class_name(const object_t& object) {return get_class_name(full_class_name(object));}
-    
+
+    static std::string class_name(const std::type_info& info) {return get_class_name(full_class_name(info));}
+
     /// @brief Compares two specified String objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first string to compare.
     /// @param str_b The second string to compare.
@@ -500,9 +504,30 @@ namespace xtd {
       result << std::put_time(date_time, fmt);
       return result.str();
     }
-    
     /// @endcond
-    
+
+    /// @brief Gets demangled string of name,.
+    /// @return The demangled string of name.
+    static std::string demangle(const std::string& name) {
+#if defined(_WIN32)
+      std::vector<std::string> types = {"enum ", "class ", "union ", "struct "};
+      std::string result = name;
+      for (const std::string& item : types)
+        result = replace(result, item, "");
+      return result;
+#else
+      struct auto_delete_char_pointer {
+        auto_delete_char_pointer(char* value) : value_(value) {}
+        ~auto_delete_char_pointer() {free(value_);}
+        char* operator()() const {return this->value_;}
+      private:
+        char* value_;
+      };
+      int32_t status = 0;
+      return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
+#endif
+    }
+
     /// @brief Represents the empty string.
     /// @remarks The value of this method is the zero-length string, "".
     template<typename char_t>
@@ -1653,28 +1678,6 @@ namespace xtd {
       if (last_index_of(full_name, "::", 0, length) == -1) return full_name;
       return  substring(full_name, last_index_of(full_name, "::", 0, length) + 2);
     }
-
-#if defined(_WIN32)
-    static std::string demangle(const std::string& name) {
-      std::vector<std::string> types = {"enum ", "class ", "union ", "struct "};
-      std::string result = name;
-      for (const std::string& item : types)
-        result = replace(result, item, "");
-      return result;
-    }
-#else
-    static std::string demangle(const std::string& name) {
-      struct auto_delete_char_pointer {
-        auto_delete_char_pointer(char* value) : value_(value) {}
-        ~auto_delete_char_pointer() {free(value_);}
-        char* operator()() const {return this->value_;}
-      private:
-        char* value_;
-      };
-      int32_t status = 0;
-      return auto_delete_char_pointer(abi::__cxa_demangle(name.c_str(), 0, 0, &status))();
-    }
-#endif
   };
 }
 
