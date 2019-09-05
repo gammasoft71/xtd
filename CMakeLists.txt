@@ -53,7 +53,26 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.environmentConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.formsConfig.cmake ${CMAKE_CONFIG})
+
+  set (CMAKE_XTD_FORMS_CONFIG
+    "include(CMakeFindDependencyMacro)\n"
+    "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
+    "\n"
+    "get_filename_component(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
+    "get_filename_component(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\" ABSOLUTE)\n"
+    "\n"
+    "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME})\n"
+    "set(${PROJECT_NAME}_FOUND TRUE)\n"
+    "\n"
+    "set(CMAKE_CXX_STANDARD 17)\n"
+    "set(CMAKE_CXX_STANDARD_REQUIRED ON)\n"
+    "if (MSVC)\n"
+    "  set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS} /utf-8\")\n"
+    "  set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup\")\n"
+    "endif ()\n"
+  )
+
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.formsConfig.cmake ${CMAKE_XTD_FORMS_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.ioConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.propertiesConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.stringsConfig.cmake ${CMAKE_CONFIG})
