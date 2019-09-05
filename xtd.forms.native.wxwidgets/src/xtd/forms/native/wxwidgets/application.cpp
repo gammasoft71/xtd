@@ -37,6 +37,7 @@ namespace {
       menubar->Append(menuWindow, "Window");
       menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
         if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
+        if (event.GetId() == wxID_EXIT) this->GetTopWindow()->Close();
         else event.Skip();
       });
       

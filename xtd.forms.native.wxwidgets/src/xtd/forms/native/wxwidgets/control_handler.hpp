@@ -317,6 +317,7 @@ namespace xtd {
 
         intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           intptr_t result = 0;
+          if (this->destroyed_) return result;
           for (auto& fct : this->wnd_proc.functions())
             if (!this->destroyed_ && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
           return result;
