@@ -33,7 +33,9 @@ namespace xtd {
       /// @endcond
       
     protected:
+      /// @cond
       friend class graphics;
+      /// @endcond
       brush();
       
       void set_native_brush(intptr_t brush);
