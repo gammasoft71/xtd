@@ -119,10 +119,33 @@ namespace xtd {
       control& operator=(const control& value);
       virtual ~control();
       /// @}
+      
+      /// @brief This property is not relevant for this class.
+      /// @return true if enabled; otherwise, false.
+      /// @remarks This property is not relevant for this class.
+      bool auto_size() const {return this->data_->auto_size_;}
 
+      /// @brief This property is not relevant for this class.
+      /// @param auto_size true if enabled; otherwise, false.
+      /// @remarks This property is not relevant for this class.
+      control& auto_size(bool auto_size);
+
+      /// @brief Gets the background color for the control.
+      /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
+      /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
+      /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
       virtual drawing::color back_color() const {return this->data_->back_color_.value_or(this->data_->parent_ ? this->parent().back_color() : default_back_color());}
+      
+      /// @brief Sets the background color for the control.
+      /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
+      /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
+      /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
+      /// @par Notes to Inheritors
+      /// When overriding the back_color property in a derived class, use the base class's back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the back_color property; you can override only one if needed.
       virtual control& back_color(const drawing::color& color);
       
+      virtual int32_t bottom() const {return this->data_->location_.y() + this->data_->size_.height();}
+
       virtual drawing::rectangle bounds() const {return {this->data_->location_, this->data_->size_};}
       virtual control& bounds(const drawing::rectangle& bounds) {
         this->location(bounds.location());
@@ -178,6 +201,8 @@ namespace xtd {
       
       virtual control& parent() const {return from_handle(this->data_->parent_);}
       virtual control& parent(const control& parent);
+
+      virtual int32_t right() const {return this->data_->location_.x() + this->data_->size_.width();}
 
       virtual drawing::size size() const {return this->data_->size_;}
       virtual control& size(const drawing::size& size);
@@ -287,7 +312,9 @@ virtual bool visible() const {return this->data_->visible_;}
       /// @endcond
       
       virtual void wnd_proc(message& message);
-      
+
+      event<control, event_handler<control>> auto_size_changed;
+
       event<control, event_handler<control>> back_color_changed;
       
       event<control, event_handler<control>> click;
@@ -352,6 +379,8 @@ virtual bool visible() const {return this->data_->visible_;}
       virtual forms::create_params create_params() const;
       
       virtual void def_wnd_proc(message& message);
+      
+      virtual void on_auto_size_changed(const event_args& e);
       
       virtual void on_back_color_changed(const event_args& e);
       
@@ -427,6 +456,7 @@ virtual bool visible() const {return this->data_->visible_;}
       ///@private
       /// @{
       struct data {
+        bool auto_size_ = false;
         std::optional<drawing::color> back_color_;
         drawing::size client_size_ {-1, -1};
         control_collection controls_;

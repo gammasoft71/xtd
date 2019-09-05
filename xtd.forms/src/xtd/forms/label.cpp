@@ -14,18 +14,7 @@ label::label() {
 
 label& label::operator=(const label& value) {
   this->control::operator=(value);
-  this->auto_size_changed = value.auto_size_changed;
   this->data_ = value.data_;
-  return *this;
-}
-
-label& label::auto_size(bool auto_size) {
-  if (this->data_->auto_size_ != auto_size) {
-    this->data_->auto_size_ = auto_size;
-    this->force_update_size();
-    this->recreate_handle();
-    this->on_auto_size_changed(event_args::empty);
-  }
   return *this;
 }
 
@@ -43,7 +32,7 @@ forms::create_params label::create_params() const {
   create_params.class_name("STATIC");
   create_params.style(create_params.style() | SS_LEFT);
 
-  if (this->data_->auto_size_) {
+  if (this->control::data_->auto_size_) {
     drawing::size size = this->measure_string();
     create_params.width(size.width());
     create_params.height(size.height());
