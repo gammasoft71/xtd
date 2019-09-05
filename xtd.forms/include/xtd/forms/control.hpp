@@ -65,9 +65,53 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value.
-       explicit control(const std::string& text) : control() {
-         this->text(text);
-       }
+      explicit control(const std::string& text) : control() {
+        this->text(text);
+      }
+      
+      /// @brief nitializes a new instance of the control class as a child control, with specific text.
+      /// @param parent The control to be the parent of the control.
+      /// @param text The text displayed by the control.
+      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
+      explicit control(const control& parent, const std::string& text) : control() {
+        this->parent(parent);
+        this->text(text);
+      }
+
+      /// @brief Initializes a new instance of the control class with specific text, size, and location.
+      /// @param text The text displayed by the control.
+      /// @param left The x position of the control, in pixels, from the left edge of the control's container. The value is assigned to the left property.
+      /// @param top The y position of the control, in pixels, from the top edge of the control's container. The value is assigned to the top property.
+      /// @param width The width of the control, in pixels. The value is assigned to the width property.
+      /// @param height The height of the control, in pixels. The value is assigned to the height property.
+      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The initial size and location of the control are determined by the left, top, width and height parameter values.
+      explicit control(const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+        this->text(text);
+        this->left(left);
+        this->top(top);
+        this->width(width);
+        this->height(height);
+      }
+      
+      /// @brief Initializes a new instance of the control class as a child control, with specific text, size, and location.
+      /// @param parent The control to be the parent of the control.
+      /// @param text The text displayed by the control.
+      /// @param left The x position of the control, in pixels, from the left edge of the control's container. The value is assigned to the left property.
+      /// @param top The y position of the control, in pixels, from the top edge of the control's container. The value is assigned to the top property.
+      /// @param width The width of the control, in pixels. The value is assigned to the width property.
+      /// @param height The height of the control, in pixels. The value is assigned to the height property.
+      /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
+      /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection. The initial size and location of the control are determined by the left, top, width and height parameter values.
+      explicit control(const control& parent, const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+        this->parent(parent);
+        this->text(text);
+        this->left(left);
+        this->top(top);
+        this->width(width);
+        this->height(height);
+      }
       
       /// @private
       /// @{
@@ -116,6 +160,12 @@ namespace xtd {
         this->size({this->data_->size_.width() == -1 ? 0 : this->data_->size_.width(), height});
         return *this;
       }
+      
+      virtual int32_t left() const {return this->data_->location_.x();}
+      virtual control& left(int32_t left) {
+        this->size({left, this->data_->location_.y() == -1 ? 0 : this->data_->location_.y()});
+        return *this;
+      }
 
       virtual drawing::point location() const {return this->data_->location_;}
       virtual control& location(const drawing::point& location);
@@ -146,24 +196,18 @@ namespace xtd {
       virtual const std::string& text() const {return this->data_->text_;}
       virtual control& text(const std::string& text);
       
-      virtual bool visible() const {return this->data_->visible_;}
+      virtual int32_t top() const {return this->data_->location_.y();}
+      virtual control& top(int32_t top) {
+        this->size({this->data_->location_.x() == -1 ? 0 : this->data_->location_.x(), top});
+        return *this;
+      }
+      
+virtual bool visible() const {return this->data_->visible_;}
       virtual control& visible(bool visible);
 
       virtual int32_t width() const {return this->data_->size_.width();}
       virtual control& width(int32_t width) {
         this->size({width, this->data_->size_.height() == -1 ? 0 : this->data_->size_.height()});
-        return *this;
-      }
-      
-      virtual int32_t x() const {return this->data_->location_.x();}
-      virtual control& x(int32_t x) {
-        this->size({x, this->data_->location_.y() == -1 ? 0 : this->data_->location_.y()});
-        return *this;
-      }
-      
-      virtual int32_t y() const {return this->data_->location_.y();}
-      virtual control& y(int32_t y) {
-        this->size({this->data_->location_.x() == -1 ? 0 : this->data_->location_.x(), y});
         return *this;
       }
       
@@ -380,6 +424,8 @@ namespace xtd {
       template<typename control_t>
       void make_control(const control_t& value) {controls_[value.control::data_.get()] = std::make_shared<control_t>(value);}
       
+      ///@private
+      /// @{
       struct data {
         std::optional<drawing::color> back_color_;
         drawing::size client_size_ {-1, -1};
@@ -402,7 +448,8 @@ namespace xtd {
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
       static std::map<control::data*, std::shared_ptr<control>> controls_;
-
+      /// @}
+      
     private:
       void internal_destroy_handle(intptr_t);
       control(const std::string& name, bool) {this->data_->name_ = name;}
