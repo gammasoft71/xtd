@@ -68,6 +68,7 @@ control& control::operator=(const control& value) {
   if (this->data_.use_count() == 1) destroy_control();
   this->back_color_changed = value.back_color_changed;
   this->click = value.click;
+  this->auto_size_changed = value.auto_size_changed;
   this->client_size_changed = value.client_size_changed;
   this->double_click = value.double_click;
   this->got_focus = value.got_focus;
@@ -102,6 +103,14 @@ control& control::operator=(const control& value) {
 control::~control() {
   if (this->data_.use_count() == 1)
     destroy_control();
+}
+
+control& control::auto_size(bool auto_size) {
+  if (this->data_->auto_size_ != auto_size) {
+    this->data_->auto_size_ = auto_size;
+    this->on_auto_size_changed(event_args::empty);
+  }
+  return *this;
 }
 
 control& control::back_color(const color& color) {
@@ -295,6 +304,10 @@ forms::create_params control::create_params() const {
   create_params.size(this->data_->size_);
 
   return create_params;
+}
+
+void control::on_auto_size_changed(const event_args& e) {
+  this->auto_size_changed(*this, e);
 }
 
 void control::on_back_color_changed(const event_args &e) {
