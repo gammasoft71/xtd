@@ -71,6 +71,10 @@ namespace xtd {
       
       void width(int32_t width) {this->width_ = width;}
       
+      static rectangle make_intersect(const rectangle& a, const rectangle& b);
+      
+      static rectangle make_union(const rectangle& a, const rectangle& b);
+
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle& rectangle) noexcept {
         return os << rectangle.to_string();
