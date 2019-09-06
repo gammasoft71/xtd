@@ -8,7 +8,7 @@ button::button() {
 }
 
 button& button::operator=(const button& value) {
-  this->control::operator=(value);
+  this->button_base::operator=(value);
   return *this;
 }
 
