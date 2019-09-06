@@ -14,7 +14,7 @@ radio_button::radio_button() {
 }
 
 radio_button& radio_button::operator=(const radio_button& value) {
-  this->control::operator=(value);
+  this->button_base::operator=(value);
   this->appearance_changed = value.appearance_changed;
   this->checked_changed = value.checked_changed;
   this->data_ = value.data_;
@@ -53,7 +53,7 @@ radio_button& radio_button::checked(bool checked) {
 }
 
 forms::create_params radio_button::create_params() const {
-  forms::create_params create_params = this->control::create_params();
+  forms::create_params create_params = this->button_base::create_params();
   
   create_params.class_name("RADIOBUTTON"); // "BUTTON" for win32
   if (this->data_->auto_check_) create_params.style(create_params.style() | BS_AUTORADIOBUTTON);
