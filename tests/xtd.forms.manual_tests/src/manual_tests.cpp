@@ -13,6 +13,7 @@ public:
     //this->back_color(drawing::color::spring_green);
 
     this->item1.parent(*this);
+    this->item1.checked(true);
     //this->item1.back_color(drawing::color::red);
     this->item1.text("This is a long text for validate auto size.");
     this->item1.location({10, 30});
@@ -25,14 +26,14 @@ public:
 
     this->item3.parent(*this);
     this->item3.auto_size(true);
-    this->item3.font(drawing::font("Arial", 23));
+    //this->item3.font(drawing::font("Arial", 23));
     //this->item3.back_color(drawing::color::red);
     this->item3.location({10, 110});
   }
   
 private:
-  check_box item1;
-  check_box item2;
+  radio_button item1;
+  radio_button item2;
   text_box item3;
 };
 

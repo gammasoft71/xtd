@@ -25,6 +25,6 @@ forms::create_params button_base::create_params() const {
 }
 
 drawing::size button_base::measure_control() const {
-  return this->control::measure_text() + drawing::size(20, 0);
+  return this->control::measure_text() + drawing::size(13, 0);
 }
 
