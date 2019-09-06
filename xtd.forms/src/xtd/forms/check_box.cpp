@@ -75,6 +75,10 @@ forms::create_params check_box::create_params() const {
   return create_params;
 }
 
+drawing::size check_box::measure_control() const {
+  return this->control::measure_text() + drawing::size(20, 0);
+}
+
 void check_box::on_handle_created(const event_args &e) {
   this->control::on_handle_created(e);
   native::check_box::check_state(this->control::data_->handle_, static_cast<int32_t>(this->data_->check_state_));

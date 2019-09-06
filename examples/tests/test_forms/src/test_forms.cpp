@@ -4,7 +4,9 @@ using namespace xtd::forms;
 
 int main() {
   form form;
-  form.text("Test forms").controls().push_back(button().parent(form).location({30, 30}).text("Click me"));
-  form.controls()[0].get().click += [] {message_box::show("Hello, World!");};
+  form.text("Test forms");
+  
+  radio_button().parent(form).location({30, 30}).back_color(xtd::drawing::color::red).text("This is a long text for validate auto size.");
+  radio_button().parent(form).location({30, 70}).back_color(xtd::drawing::color::red).auto_size(true).text("This is a long text for validate auto size.");
   application::run(form);
 }

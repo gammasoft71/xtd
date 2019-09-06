@@ -14,6 +14,9 @@
 #include <xtd/forms/create_params.hpp>
 
 #include "layout/arranged_element_collection.hpp"
+#include "auto_size_mode.hpp"
+#include "bounds_specified.hpp"
+#include "control_event_handler.hpp"
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
 #include "mouse_event_handler.hpp"
@@ -144,7 +147,11 @@ namespace xtd {
       /// When overriding the back_color property in a derived class, use the base class's back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the back_color property; you can override only one if needed.
       virtual control& back_color(const drawing::color& color);
       
-      virtual int32_t bottom() const {return this->data_->location_.y() + this->data_->size_.height();}
+      /// @brief Gets the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
+      /// @return An int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
+      /// @remarks The value of this property is equal to the sum of the top property value, and the height property value.
+      /// @remarks The bottom property is a read-only property. You can manipulate this property value by changing the value of the top or height properties or calling the set_bounds, set_bounds_core, update_bounds, or set_client_size_core methods.
+      virtual int32_t bottom() const {return this->top() + this->height();}
 
       virtual drawing::rectangle bounds() const {return {this->data_->location_, this->data_->size_};}
       virtual control& bounds(const drawing::rectangle& bounds) {
@@ -202,7 +209,7 @@ namespace xtd {
       virtual control& parent() const {return from_handle(this->data_->parent_);}
       virtual control& parent(const control& parent);
 
-      virtual int32_t right() const {return this->data_->location_.x() + this->data_->size_.width();}
+      virtual int32_t right() const {return this->left() + this->width();}
 
       virtual drawing::size size() const {return this->data_->size_;}
       virtual control& size(const drawing::size& size);
@@ -227,7 +234,7 @@ namespace xtd {
         return *this;
       }
       
-virtual bool visible() const {return this->data_->visible_;}
+      virtual bool visible() const {return this->data_->visible_;}
       virtual control& visible(bool visible);
 
       virtual int32_t width() const {return this->data_->size_.width();}
@@ -301,6 +308,12 @@ virtual bool visible() const {return this->data_->visible_;}
       
       intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
       
+      void set_auto_size_mode(auto_size_mode auto_size_mode);
+      
+      void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height) {this->set_bounds(x, y, width, height, bounds_specified::all);}
+
+      void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {this->set_bounds_core(x, y, width, height, specified);}
+
       virtual void show() {this->visible(true);}
       
       virtual std::string to_string() const;
@@ -320,6 +333,10 @@ virtual bool visible() const {return this->data_->visible_;}
       event<control, event_handler<control>> click;
       
       event<control, event_handler<control>> client_size_changed;
+      
+      event<control, control_event_handler<control>> control_added;
+      
+      event<control, control_event_handler<control>> control_removed;
       
       event<control, event_handler<control>> double_click;
 
@@ -379,6 +396,13 @@ virtual bool visible() const {return this->data_->visible_;}
       virtual forms::create_params create_params() const;
       
       virtual void def_wnd_proc(message& message);
+
+      template<typename control_t>
+      void make_control(const control_t& value) {controls_[value.control::data_.get()] = std::make_shared<control_t>(value);}
+    
+      virtual drawing::size measure_control() const;
+      
+      drawing::size measure_text() const;
       
       virtual void on_auto_size_changed(const event_args& e);
       
@@ -387,6 +411,10 @@ virtual bool visible() const {return this->data_->visible_;}
       virtual void on_click(const event_args& e);
       
       virtual void on_client_size_changed(const event_args& e);
+      
+      virtual void on_control_added(const control_event_args& e);
+      
+      virtual void on_control_removed(const control_event_args& e);
       
       virtual void on_create_control();
       
@@ -449,14 +477,21 @@ virtual bool visible() const {return this->data_->visible_;}
       virtual void on_visible_changed(const event_args& e);
 
       void recreate_handle();
+ 
+      virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+        if ((specified & bounds_specified::x) == bounds_specified::x) this->left(x);
+        if ((specified & bounds_specified::y) == bounds_specified::y) this->top(y);
+        if ((specified & bounds_specified::width) == bounds_specified::width) this->width(width);
+        if ((specified & bounds_specified::height) == bounds_specified::height) this->height(height);
+      }
       
-      template<typename control_t>
-      void make_control(const control_t& value) {controls_[value.control::data_.get()] = std::make_shared<control_t>(value);}
-      
+      virtual void set_client_size_core(int32_t width, int32_t height) {this->size({width, height});}
+
       ///@private
       /// @{
       struct data {
         bool auto_size_ = false;
+        auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
         std::optional<drawing::color> back_color_;
         drawing::size client_size_ {-1, -1};
         control_collection controls_;
@@ -482,6 +517,7 @@ virtual bool visible() const {return this->data_->visible_;}
       
     private:
       void internal_destroy_handle(intptr_t);
+      void set_auto_size_size();
       control(const std::string& name, bool) {this->data_->name_ = name;}
       bool get_state(control::state flag) const {return ((int32_t)this->data_->state_ & (int32_t)flag) == (int32_t)flag;}
       void set_state(control::state flag, bool value) { this->data_->state_ = value ? (control::state)((int32_t)this->data_->state_ | (int32_t)flag) : (control::state)((int32_t)this->data_->state_ & ~(int32_t)flag); }

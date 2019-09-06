@@ -17,33 +17,13 @@ namespace xtd {
 
       forms::border_style border_style() const {return this->data_->border_style_;}
       label& border_style(forms::border_style border_style);
-
-      using control::size;
-      control& size(const drawing::size& size) override {
-        if (!this->control::data_->auto_size_) this->control::size(size);
-        return *this;
-      }
-      
-      using control::text;
-      control& text(const std::string& text) override {
-         this->control::text(text);
-        if (this->control::data_->auto_size_) this->force_update_size();
-        return *this;
-      }
       
       drawing::size default_size() const override {return{100, 23};}
       
     protected:
       forms::create_params create_params() const override;
       
-      void on_auto_size_changed(const event_args& e) override {
-        this->force_update_size();
-        this->recreate_handle();
-      }
-
-    private:
-      drawing::size measure_string() const;
-      void force_update_size();
+      drawing::size measure_control() const override;
       
       struct data {
         forms::border_style border_style_ = forms::border_style::none;

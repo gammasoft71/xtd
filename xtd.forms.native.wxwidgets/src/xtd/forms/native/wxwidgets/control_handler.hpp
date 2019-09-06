@@ -300,6 +300,7 @@ namespace xtd {
       class control_handler {
       public:
         control_handler() = default;
+        virtual ~control_handler() {}
 
         template<typename control_type, typename ...args_type>
         void create(args_type&& ...args) {
@@ -322,6 +323,10 @@ namespace xtd {
             if (!this->destroyed_ && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
           return result;
           //return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
+        }
+        
+        virtual void SetSize(int32_t width, int32_t height) {
+          this->control_->SetSize(width, height);
         }
         
         static long common_window_style_to_wx_style(size_t style, size_t ex_style) {

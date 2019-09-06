@@ -42,6 +42,8 @@ namespace xtd {
     protected:
       forms::create_params create_params() const override;
 
+      drawing::size measure_control() const override;
+
       virtual void on_appearance_changed(const event_args& e) {this->appearance_changed(*this, e);}
       
       virtual void on_checked_changed(const event_args& e) {this->checked_changed(*this, e);}

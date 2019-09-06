@@ -12,13 +12,17 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/appearance.hpp
   include/xtd/forms/application.hpp
   include/xtd/forms/application_informations.hpp
+  include/xtd/forms/auto_size_mode.hpp
   include/xtd/forms/border_style.hpp
+  include/xtd/forms/bounds_specified.hpp
   include/xtd/forms/button.hpp
   include/xtd/forms/cancel_event_args.hpp
   include/xtd/forms/check_box.hpp
   include/xtd/forms/check_state.hpp
   include/xtd/forms/close_reason.hpp
   include/xtd/forms/control.hpp
+  include/xtd/forms/control_event_args.hpp
+  include/xtd/forms/control_event_handler.hpp
   include/xtd/forms/dialog_result.hpp
   include/xtd/forms/form.hpp
   include/xtd/forms/form_closed_event_args.hpp

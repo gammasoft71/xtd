@@ -8,12 +8,18 @@ using namespace xtd::forms;
 
 panel::panel() {
   this->make_control(*this);
+  this->control::data_->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->control::data_->size_ = this->default_size();
 }
 
 panel& panel::operator=(const panel& value) {
   this->control::operator=(value);
   this->data_ = value.data_;
+  return *this;
+}
+
+panel& panel::auto_size_mode(forms::auto_size_mode value) {
+  this->set_auto_size_mode(value);
   return *this;
 }
 
@@ -35,4 +41,11 @@ forms::create_params panel::create_params() const {
   else if (this->data_->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   
   return create_params;
+}
+
+drawing::size panel::measure_control() const {
+  drawing::rectangle bounds;
+  for (auto item : this->controls())
+    bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+  return drawing::size(bounds.location() + bounds.size());
 }

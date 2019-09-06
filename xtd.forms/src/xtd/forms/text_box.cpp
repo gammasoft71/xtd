@@ -56,3 +56,7 @@ forms::create_params text_box::create_params() const {
   
   return create_params;
 }
+
+drawing::size text_box::measure_control() const {
+  return drawing::size(this->control::data_->client_size_.width(), this->font().get_height() + 2 + (this->data_->border_style_ == border_style::none ? 0 : 4));
+}

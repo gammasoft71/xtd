@@ -11,12 +11,23 @@ namespace xtd {
       class wx_form : public control_handler {
       public:
         wx_form(const forms::create_params& create_params) {
-          this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : wxTheApp->GetTopWindow(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::form_to_wx_style(create_params.style(), create_params.ex_style()));
+          forms::create_params params = create_params;
+          if (params.width() < 75) params.width(75);
+          if (params.height() < 23) params.height(23);
+          this->control_handler::create<wxFrame>(params.parent() ? ((control_handler*)params.parent())->control() : wxTheApp->GetTopWindow(), wxID_ANY, params.caption(), wxPoint(params.x(), params.y()), wxSize(params.width(), params.height()), control_handler::form_to_wx_style(params.style(), params.ex_style()));
           this->button_ = new wxButton(this->control(), wxID_ANY);
           this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
           this->control()->SetForegroundColour(this->button_->GetForegroundColour());
           this->button_->Hide();
           this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {event.Veto();});
+        }
+        
+        void SetSize(int32_t width, int32_t height) override {
+#if defined(__WXOSX__)
+          if (width < 75) width = 75;
+          if (height < 23) height = 23;
+#endif
+          this->control()->SetSize(width, height);
         }
         
       private:

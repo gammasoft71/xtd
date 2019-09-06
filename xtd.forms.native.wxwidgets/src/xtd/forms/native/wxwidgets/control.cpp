@@ -226,7 +226,7 @@ drawing::size control::size(intptr_t control) {
 
 void control::size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetSize(size.width(), size.height());
+  reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
 string control::text(intptr_t control) {

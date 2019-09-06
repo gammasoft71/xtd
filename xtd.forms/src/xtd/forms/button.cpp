@@ -10,12 +10,18 @@ using namespace xtd::forms;
 
 button::button() {
   this->make_control(*this);
+  this->control::data_->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->control::data_->size_ = this->default_size();
 }
 
 button& button::operator=(const button& value) {
   this->control::operator=(value);
   this->data_ = value.data_;
+  return *this;
+}
+
+button& button::auto_size_mode(forms::auto_size_mode value) {
+  this->set_auto_size_mode(value);
   return *this;
 }
 
@@ -26,5 +32,9 @@ forms::create_params button::create_params() const {
   create_params.style(create_params.style() | BS_PUSHBUTTON);
   
   return create_params;
+}
+
+drawing::size button::measure_control() const {
+  return this->control::measure_text() + drawing::size(20, 0);
 }
 

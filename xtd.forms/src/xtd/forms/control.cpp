@@ -46,7 +46,7 @@ std::map<control::data*, std::shared_ptr<control>> control::controls_;
 control::control_collection control::top_level_controls_;
 
 control::control() {
-  //make_control(*this);
+  make_control(*this);
   native::control::init();
   this->data_->size_ = this->default_size();
   this->data_->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
@@ -55,12 +55,14 @@ control::control() {
       item.get().create_control();
       if (item.get().data_->handle_) native::control::parent(item.get().data_->handle_, this->data_->handle_);
       item.get().on_parent_changed(event_args::empty);
+      this->on_control_added(control_event_args(item.get()));
     }
   };
 
   this->data_->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
     item.get().data_->parent_ = 0;
     item.get().destroy_handle();
+    this->on_control_removed(control_event_args(item.get()));
   };
 }
 
@@ -301,12 +303,22 @@ forms::create_params control::create_params() const {
   create_params.style(WS_VISIBLE | WS_CHILD);
   if (this->data_->parent_) create_params.parent(this->parent().data_->handle_);
   create_params.location(this->data_->location_);
+
   create_params.size(this->data_->size_);
 
   return create_params;
 }
 
+drawing::size control::measure_control() const {
+  return this->data_->client_size_;
+}
+
+drawing::size control::measure_text() const {
+  return drawing::size::ceiling(this->create_graphics().measure_string(this->control::data_->text_, this->font())) + drawing::size(2, 1);
+}
+
 void control::on_auto_size_changed(const event_args& e) {
+  this->set_auto_size_size();
   this->auto_size_changed(*this, e);
 }
 
@@ -329,6 +341,16 @@ void control::on_client_size_changed(const event_args &e) {
   this->client_size_changed(*this, e);
 }
 
+void control::on_control_added(const control_event_args &e) {
+  if (this->control::data_->auto_size_) this->set_auto_size_size();
+  this->control_added(*this, e);
+}
+
+void control::on_control_removed(const control_event_args &e) {
+  if (this->control::data_->auto_size_) this->set_auto_size_size();
+  this->control_removed(*this, e);
+}
+
 void control::on_double_click(const event_args &e) {
   this->double_click(*this, e);
 }
@@ -345,6 +367,8 @@ void control::on_fore_color_changed(const event_args &e) {
 }
 
 void control::on_font_changed(const event_args &e) {
+  if (this->control::data_->auto_size_) this->set_auto_size_size();
+  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
   this->refresh();
   this->font_changed(*this, e);
 }
@@ -387,6 +411,7 @@ void control::on_key_up(key_event_args& e) {
 
 void control::on_location_changed(const event_args &e) {
   this->data_->location_ = native::control::location(this->data_->handle_);
+  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
   this->location_changed(*this, e);
 }
 
@@ -467,11 +492,14 @@ void control::on_parent_font_changed(const event_args &e) {
 
 void control::on_size_changed(const event_args &e) {
   this->data_->size_ = native::control::size(this->data_->handle_);
+  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
   this->refresh();
   this->size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
+  if (this->control::data_->auto_size_) this->set_auto_size_size();
+  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
   this->text_changed(*this, e);
 }
 
@@ -487,6 +515,13 @@ void control::refresh() const {
 
 intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
   return native::control::send_message(this->data_->handle_, hwnd, msg, wparam, lparam);
+}
+
+void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
+  if (this->data_->auto_size_mode_ != auto_size_mode) {
+    this->data_->auto_size_mode_ = auto_size_mode;
+    this->set_auto_size_size();
+  }
 }
 
 string control::to_string() const {
@@ -563,6 +598,15 @@ void control::internal_destroy_handle(intptr_t handle) {
   handles_.erase(handle);
   native::control::destroy(handle);
   this->on_handle_destroyed(event_args::empty);
+}
+
+void control::set_auto_size_size() {
+  drawing::size auto_size_size_ = this->measure_control();
+  if (this->control::data_->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.width() < this->control::data_->client_size_.width())
+    auto_size_size_.width(this->control::data_->client_size_.width());
+  if (this->control::data_->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.height() < this->control::data_->client_size_.height())
+    auto_size_size_.height(this->control::data_->client_size_.height());
+  this->client_size(auto_size_size_);
 }
 
 void control::wm_child_activate(message& message) {
