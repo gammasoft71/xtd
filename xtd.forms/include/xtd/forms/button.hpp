@@ -13,6 +13,12 @@ namespace xtd {
       button(const button& value) {*this = value;}
       button& operator=(const button& value);
       /// @endcond
+
+      forms::auto_size_mode auto_size_mode() const {return this->control::data_->auto_size_mode_;}
+      virtual button& auto_size_mode(forms::auto_size_mode value);
+
+    protected:
+      forms::create_params create_params() const override;
     };
   }
 }
