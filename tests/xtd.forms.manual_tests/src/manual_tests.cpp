@@ -31,8 +31,8 @@ public:
   }
   
 private:
-  radio_button item1;
-  radio_button item2;
+  button item1;
+  button item2;
   text_box item3;
 };
 
