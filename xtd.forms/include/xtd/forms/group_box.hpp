@@ -15,10 +15,15 @@ namespace xtd {
       group_box& operator=(const group_box& value);
       /// @endcond
 
+      forms::auto_size_mode auto_size_mode() const {return this->control::data_->auto_size_mode_;}
+      virtual group_box& auto_size_mode(forms::auto_size_mode value);
+      
       drawing::size default_size() const override {return{200, 100};}
       
     protected:
       forms::create_params create_params() const override;
+      
+      drawing::size measure_control() const override;
 
     private:
       struct data {

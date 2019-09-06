@@ -13,11 +13,12 @@ using namespace xtd::forms;
 
 form::form() {
   this->make_control(*this);
-  this->control::data_->visible_ = false;
+  this->control::data_->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->control::data_->back_color_ = this->default_back_color();
   this->control::data_->fore_color_ = this->default_fore_color();
   this->control::data_->font_ = this->default_font();
   this->control::data_->size_ = this->default_size();
+  this->control::data_->visible_ = false;
   this->create_control();
 }
 
@@ -26,6 +27,11 @@ form& form::operator=(const form& value) {
   this->form_closed = value.form_closed;
   this->form_closing = value.form_closing;
   this->data_ = value.data_;
+  return *this;
+}
+
+form& form::auto_size_mode(forms::auto_size_mode value) {
+  this->set_auto_size_mode(value);
   return *this;
 }
 
@@ -62,3 +68,9 @@ void form::wm_close(message &message) {
   this->on_form_closed(form_closed_event_args());
 }
 
+drawing::size form::measure_control() const {
+  drawing::rectangle bounds;
+  for (auto item : this->controls())
+    bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+  return drawing::size(bounds.location() + bounds.size());
+}

@@ -32,24 +32,12 @@ forms::create_params label::create_params() const {
   create_params.class_name("STATIC");
   create_params.style(create_params.style() | SS_LEFT);
 
-  if (this->control::data_->auto_size_) {
-    drawing::size size = this->measure_string();
-    create_params.width(size.width());
-    create_params.height(size.height());
-  }
-  else create_params.style(create_params.style() | SS_LEFT);
-    
   if (this->data_->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (this->data_->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
   return create_params;
 }
 
-drawing::size label::measure_string() const {
-  return drawing::size::ceiling(this->create_graphics().measure_string(this->control::data_->text_, this->font())) + drawing::size(2 + (this->data_->border_style_ == border_style::none ? 0 : 4), 1 + (this->data_->border_style_ == border_style::none ? 0 : 4));
-}
-
-void label::force_update_size() {
-  this->control::data_->size_ = this->control::data_->client_size_ = this->measure_string();
-  native::control::size(this->control::data_->handle_, this->control::data_->size_);
+drawing::size label::measure_control() const {
+  return this->control::measure_text() + drawing::size(this->data_->border_style_ == border_style::none ? 0 : 4, this->data_->border_style_ == border_style::none ? 0 : 4);
 }

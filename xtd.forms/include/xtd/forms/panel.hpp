@@ -15,6 +15,9 @@ namespace xtd {
       panel& operator=(const panel& value);
       /// @endcond
 
+      forms::auto_size_mode auto_size_mode() const {return this->control::data_->auto_size_mode_;}
+      virtual panel& auto_size_mode(forms::auto_size_mode value);
+      
       forms::border_style border_style() const {return this->data_->border_style_;}
       panel& border_style(forms::border_style border_style);
 
@@ -22,6 +25,8 @@ namespace xtd {
       
     protected:
       forms::create_params create_params() const override;
+      
+      drawing::size measure_control() const override;
 
     private:
       struct data {

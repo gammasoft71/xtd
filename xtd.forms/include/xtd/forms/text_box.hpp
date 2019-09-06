@@ -29,6 +29,8 @@ namespace xtd {
       
     protected:
       forms::create_params create_params() const override;
+      
+      drawing::size measure_control() const override;
 
     private:
       struct data {

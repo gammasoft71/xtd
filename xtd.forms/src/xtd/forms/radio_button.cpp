@@ -63,6 +63,10 @@ forms::create_params radio_button::create_params() const {
   return create_params;
 }
 
+drawing::size radio_button::measure_control() const {
+  return this->control::measure_text() + drawing::size(20, 0);
+}
+
 void radio_button::on_handle_created(const event_args &e) {
   this->control::on_handle_created(e);
   native::radio_button::checked(this->control::data_->handle_, this->data_->checked_);
