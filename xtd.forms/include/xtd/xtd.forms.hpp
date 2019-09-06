@@ -15,6 +15,7 @@
 #include "xtd/forms/border_style.hpp"
 #include "xtd/forms/bounds_specified.hpp"
 #include "xtd/forms/button.hpp"
+#include "xtd/forms/button_base.hpp"
 #include "xtd/forms/cancel_event_args.hpp"
 #include "xtd/forms/check_box.hpp"
 #include "xtd/forms/check_state.hpp"
