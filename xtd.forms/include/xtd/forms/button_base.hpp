@@ -51,6 +51,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the ButtonBase class.
       button_base();
 
+      /// @brief Gets the required creation parameters when the control handle is created.
+      /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
 
       drawing::size measure_control() const override;
