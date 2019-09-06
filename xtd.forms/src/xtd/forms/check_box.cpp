@@ -1,6 +1,5 @@
-#include <xtd/environment.hpp>
 #include <xtd/forms/native/check_box.hpp>
-#include <xtd/forms/native/control.hpp>
+#include <xtd/forms/window_messages.hpp>
 #include <xtd/forms/native/window_button.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/check_box.hpp"
@@ -10,11 +9,10 @@ using namespace xtd::forms;
 
 check_box::check_box() {
   this->make_control(*this);
-  this->control::data_->size_ = this->default_size();
 }
 
 check_box& check_box::operator=(const check_box& value) {
-  this->control::operator=(value);
+  this->button_base::operator=(value);
   this->appearance_changed = value.appearance_changed;
   this->checked_changed = value.checked_changed;
   this->check_state_changed = value.check_state_changed;
@@ -73,10 +71,6 @@ forms::create_params check_box::create_params() const {
   if (this->data_->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
 
   return create_params;
-}
-
-drawing::size check_box::measure_control() const {
-  return this->control::measure_text() + drawing::size(20, 0);
 }
 
 void check_box::on_handle_created(const event_args &e) {

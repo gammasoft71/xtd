@@ -31,8 +31,8 @@ public:
   }
   
 private:
-  button item1;
-  button item2;
+  check_box item1;
+  check_box item2;
   text_box item3;
 };
 

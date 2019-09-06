@@ -1,13 +1,13 @@
 #pragma once
 #include "appearance.hpp"
 #include "check_state.hpp"
-#include "control.hpp"
+#include "button_base.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class check_box : public control {
+    class check_box : public button_base {
     public:
       check_box();
 
@@ -41,8 +41,6 @@ namespace xtd {
 
     protected:
       forms::create_params create_params() const override;
-
-      drawing::size measure_control() const override;
 
       virtual void on_appearance_changed(const event_args& e) {this->appearance_changed(*this, e);}
       
