@@ -23,7 +23,7 @@
 * Easy catch control events by using event and delegates classes.
 * You can create your own controls and add your own events.
 * All controls are natives (win32 on windows, cocoa on macOS, gtk on linux).
-* If target os does not exist you can cretate your own native library to support it.
+* If target os does not exist you can create your own native library to support it.
 * ...
 
 For more information see [Documentation](docs).
