@@ -116,11 +116,11 @@ namespace xtd {
           this->value(this->data_->value_ + value);
       }
       
-      /// @remarks Advances the current position of the progress bar by the amount of the Step property.
+      /// @brief Advances the current position of the progress bar by the amount of the Step property.
       /// @remarks The perform_step method increments the value of the progress bar by the amount specified by the step property. You can use the Step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
       void perform_step() {this->increment(this->step());}
 
-      /// @breif Returns a string that represents the progress_bar control.
+      /// @brief Returns a string that represents the progress_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
       std::string to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), this->data_->minimum_, this->data_->maximum_, this->data_->value_);}
@@ -134,8 +134,8 @@ namespace xtd {
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
       
-      /// @private
       /// @{
+      /// @private
       struct data {
         size_t marquee_animation_speed_ = 100;
         int32_t maximum_ = 100;
