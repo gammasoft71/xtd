@@ -126,14 +126,6 @@ control& control::back_color(const color& color) {
   return *this;
 }
 
-control& control::client_size(const drawing::size& size) {
-  if (this->data_->client_size_ != size) {
-    this->data_->client_size_ = size;
-    native::control::client_size(this->data_->handle_, this->data_->client_size_);
-  }
-  return *this;
-}
-
 drawing::color control::default_back_color() const {
   return native::control::default_back_color();
 }
@@ -181,14 +173,6 @@ intptr_t control::handle() const {
   return this->data_->handle_;
 }
 
-control& control::location(const point& location) {
-  if (this->data_->location_ != location) {
-    this->data_->location_ = location;
-    native::control::location(this->data_->handle_, this->data_->location_);
-  }
-  return *this;
-}
-
 control& control::parent(const control& parent) {
   if (&this->parent() != &parent) {
     if (this->data_->parent_ != 0) {
@@ -200,14 +184,6 @@ control& control::parent(const control& parent) {
       }
     }
     if (&parent != &control::null) const_cast<control&>(parent).data_->controls_.push_back(ref_control(*controls_[this->control::data_.get()]));
-  }
-  return *this;
-}
-
-control& control::size(const drawing::size& size) {
-  if (this->data_->size_ != size) {
-    this->data_->size_ = size;
-    native::control::size(this->data_->handle_, this->data_->size_);
   }
   return *this;
 }
@@ -592,6 +568,25 @@ void control::recreate_handle() {
     for (auto control : controls)
       native::control::parent(control.get().data_->handle_, this->data_->handle_);
   }
+}
+
+void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+  if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
+    native::control::location(this->data_->handle_, {(specified & bounds_specified::x) == bounds_specified::x ? x : this->data_->location_.x(), (specified & bounds_specified::y) == bounds_specified::y ? y : this->data_->location_.y()});
+    this->on_location_changed(event_args::empty);
+  }
+  
+  if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
+    native::control::size(this->data_->handle_, {(specified & bounds_specified::width) == bounds_specified::width ? width : this->data_->size_.width(), (specified & bounds_specified::height) == bounds_specified::height ? height : this->data_->size_.height()});
+    this->on_client_size_changed(event_args::empty);
+    this->on_size_changed(event_args::empty);
+  }
+}
+
+void control::set_client_size_core(int32_t width, int32_t height) {
+  native::control::client_size(this->data_->handle_, this->data_->client_size_);
+  this->on_client_size_changed(event_args::empty);
+  this->on_size_changed(event_args::empty);
 }
 
 void control::internal_destroy_handle(intptr_t handle) {

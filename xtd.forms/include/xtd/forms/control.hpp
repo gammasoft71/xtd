@@ -170,10 +170,17 @@ namespace xtd {
 
       /// @brief Gets  the height and width of the client area of the control.
       /// @return A size that represents the dimensions of the client area of the control.
+      /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
       virtual const drawing::size& client_size() const {return this->data_->client_size_;}
       /// @brief Sets the height and width of the client area of the control.
       /// @param A size that represents the dimensions of the client area of the control.
-      virtual control& client_size(const drawing::size& size);
+      /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_sizeCore method to ensure that your code is executed when the client_size property is set.
+      virtual control& client_size(const drawing::size& client_size) {
+        if (this->data_->client_size_ != client_size) {
+          this->set_client_size_core(client_size.width(), client_size.height());
+        }
+        return *this;
+      }
       
       virtual control_collection& controls() {return this->data_->controls_;}
       
@@ -200,18 +207,24 @@ namespace xtd {
       
       virtual int32_t height() const {return this->data_->size_.height();}
       virtual control& height(int32_t height) {
-        this->size({this->data_->size_.width() == -1 ? 0 : this->data_->size_.width(), height});
+        if (this->data_->size_.height() != height)
+          this->set_bounds_core(0, 0, 0, height, bounds_specified::height);
         return *this;
       }
       
       virtual int32_t left() const {return this->data_->location_.x();}
       virtual control& left(int32_t left) {
-        this->size({left, this->data_->location_.y() == -1 ? 0 : this->data_->location_.y()});
+        if (this->data_->location_.x() != left)
+          this->set_bounds_core(left, 0, 0, 0, bounds_specified::x);
         return *this;
       }
 
       virtual drawing::point location() const {return this->data_->location_;}
-      virtual control& location(const drawing::point& location);
+      virtual control& location(const drawing::point& location) {
+        if (this->data_->location_ != location)
+          this->set_bounds_core(location.x(), location.y(), 0, 0, bounds_specified::location);
+        return *this;
+      }
 
       virtual const std::string& name() const {return this->data_->name_;}
       virtual control& name(const std::string& name) {
@@ -225,7 +238,11 @@ namespace xtd {
       virtual int32_t right() const {return this->left() + this->width();}
 
       virtual drawing::size size() const {return this->data_->size_;}
-      virtual control& size(const drawing::size& size);
+      virtual control& size(const drawing::size& size) {
+        if (this->data_->size_ != size)
+          this->set_bounds_core(0, 0, size.width(), size.height(), bounds_specified::size);
+        return *this;
+      }
       
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
@@ -243,16 +260,18 @@ namespace xtd {
       
       virtual int32_t top() const {return this->data_->location_.y();}
       virtual control& top(int32_t top) {
-        this->size({this->data_->location_.x() == -1 ? 0 : this->data_->location_.x(), top});
+        if (this->data_->location_.y() != top)
+          this->set_bounds_core(0, top, 0, 0, bounds_specified::y);
         return *this;
       }
-      
+
       virtual bool visible() const {return this->data_->visible_;}
       virtual control& visible(bool visible);
 
       virtual int32_t width() const {return this->data_->size_.width();}
       virtual control& width(int32_t width) {
-        this->size({width, this->data_->size_.height() == -1 ? 0 : this->data_->size_.height()});
+        if (this->data_->size_.width() != width)
+          this->set_bounds_core(0, 0, width, 0, bounds_specified::width);
         return *this;
       }
       
@@ -494,14 +513,9 @@ namespace xtd {
 
       void recreate_handle();
  
-      virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
-        if ((specified & bounds_specified::x) == bounds_specified::x) this->left(x);
-        if ((specified & bounds_specified::y) == bounds_specified::y) this->top(y);
-        if ((specified & bounds_specified::width) == bounds_specified::width) this->width(width);
-        if ((specified & bounds_specified::height) == bounds_specified::height) this->height(height);
-      }
+      virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
       
-      virtual void set_client_size_core(int32_t width, int32_t height) {this->size({width, height});}
+      virtual void set_client_size_core(int32_t width, int32_t height);
 
       ///@private
       /// @{
