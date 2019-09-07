@@ -24,6 +24,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/list_box.hpp
   include/xtd/forms/native/message_box.hpp
   include/xtd/forms/native/panel.hpp
+  include/xtd/forms/native/progress_bar.hpp
   include/xtd/forms/native/radio_button.hpp
   include/xtd/forms/native/screen.hpp
   include/xtd/forms/native/text_box.hpp
@@ -32,6 +33,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/window_list_box.hpp
   include/xtd/forms/native/window_message_box.hpp
   include/xtd/forms/native/window_message_keys.hpp
+  include/xtd/forms/native/window_progress_bar.hpp
   include/xtd/forms/native/window_static.hpp
   include/xtd/forms/native/window_styles.hpp
 )

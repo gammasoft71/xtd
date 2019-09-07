@@ -10,11 +10,13 @@
 #include <xtd/forms/native/window_button.hpp>
 #include <xtd/forms/native/window_list_box.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
+#include <xtd/forms/native/window_progress_bar.hpp>
 #include <xtd/forms/native/window_static.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include <wx/checkbox.h>
 #include <wx/stattext.h>
 #include <wx/frame.h>
+#include <wx/gauge.h>
 #include <wx/radiobut.h>
 #include <wx/textctrl.h>
 #include <wx/tglbtn.h>
@@ -393,10 +395,18 @@ namespace xtd {
         }
 
         static long panel_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = wxST_NO_AUTORESIZE;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long progress_bar_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
-          if ((style & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
-          
+          if ((style & PBS_SMOOTH) == PBS_SMOOTH) wx_style |= wxGA_SMOOTH;
+          if ((style & PBS_VERTICAL) == PBS_VERTICAL) wx_style |= wxGA_VERTICAL;
+          else wx_style |= wxGA_HORIZONTAL;
+
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
 

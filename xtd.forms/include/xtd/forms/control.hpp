@@ -206,6 +206,9 @@ namespace xtd {
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
       virtual bool created() {return this->data_->created_;}
       
+      /// @brief Gets the default background color of the control.
+      /// @return The default background color of the control. The default is control.
+      /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
       virtual drawing::color default_back_color() const;
 
       virtual drawing::color default_fore_color() const;

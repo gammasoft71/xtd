@@ -13,6 +13,7 @@
 #include "wx_label.hpp"
 #include "wx_list_box.hpp"
 #include "wx_panel.hpp"
+#include "wx_progress_bar.hpp"
 #include "wx_radio_button.hpp"
 #include "wx_text_box.hpp"
 #include <wx/dcmemory.h>
@@ -55,6 +56,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "STATIC") return reinterpret_cast<intptr_t>(new wx_label(create_params));
   if (create_params.class_name() == "LISTBOX") return reinterpret_cast<intptr_t>(new wx_list_box(create_params));
   if (create_params.class_name() == "PANEL") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
+  if (create_params.class_name() == "PROGRESSBAR") return reinterpret_cast<intptr_t>(new wx_progress_bar(create_params));
   if (create_params.class_name() == "RADIOBUTTON") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
   if (create_params.class_name() == "EDIT") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
   return reinterpret_cast<intptr_t>(new wx_control(create_params));
