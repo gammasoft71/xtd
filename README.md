@@ -43,7 +43,6 @@ int main() {
   button button1;
   button1.text("Click me");
   button1.location({10, 10});
-  button1.width(90);
   button1.click += [] {
     message_box::show("Hello, World!");
   };
