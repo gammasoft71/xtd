@@ -5,6 +5,7 @@
 #include <xtd/event_args.hpp>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>
+#include <xtd/drawing/rectangle.hpp>
 #include <xtd/xtd.strings.hpp>
 #include "../create_params.hpp"
 #include "../window_messages.hpp"
@@ -27,6 +28,7 @@ namespace xtd {
         static void destroy(intptr_t control);
         static void erase(intptr_t control);
         static void init();
+        static drawing::rectangle client_rectangle(intptr_t control);
         static drawing::size client_size(intptr_t control);
         static void client_size(intptr_t control, const drawing::size& size);
         static bool enabled(intptr_t control);

@@ -386,6 +386,7 @@ void control::on_handle_created(const event_args &e) {
   if (this->data_->font_.has_value() || this->font() != this->default_font()) native::control::font(this->data_->handle_, this->font());
   //native::control::visible(this->data_->handle_, this->visible());
 
+  this->data_->client_rectangle_ = native::control::client_rectangle(this->data_->handle_);
   this->data_->client_size_ = native::control::client_size(this->data_->handle_);
   this->data_->location_ = native::control::location(this->data_->handle_);
   this->data_->size_ = native::control::size(this->data_->handle_);
@@ -703,7 +704,7 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   this->def_wnd_proc(message);
-  paint_event_args e({{0, 0}, this->client_size()}, *this);
+  paint_event_args e(this->data_->client_rectangle_, *this);
   this->on_paint(e);
 }
 
