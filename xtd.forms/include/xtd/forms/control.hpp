@@ -193,7 +193,6 @@ namespace xtd {
       /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
       /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
       virtual control_collection& controls() {return this->data_->controls_;}
-      
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
       /// @remarks A control can act as a parent to a collection of controls. For example, when several controls are added to a form, each of the controls is a member of the control::control_collection assigned to the controls property of the form, which is derived from the control class.
