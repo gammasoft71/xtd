@@ -41,7 +41,6 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/message.hpp
   include/xtd/forms/paint_event_args.hpp
   include/xtd/forms/paint_event_handler.hpp
-  include/xtd/forms/panel.hpp
   include/xtd/forms/message_box.hpp
   include/xtd/forms/message_box_buttons.hpp
   include/xtd/forms/message_box_default_button.hpp
@@ -50,6 +49,10 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/mouse_buttons.hpp
   include/xtd/forms/mouse_event_args.hpp
   include/xtd/forms/mouse_event_handler.hpp
+  include/xtd/forms/orientation.hpp
+  include/xtd/forms/panel.hpp
+  include/xtd/forms/progress_bar.hpp
+  include/xtd/forms/progress_bar_style.hpp
   include/xtd/forms/radio_button.hpp
   include/xtd/forms/screen.hpp
   include/xtd/forms/selection_mode.hpp
@@ -75,6 +78,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/message_box.cpp
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/panel.cpp
+  src/xtd/forms/progress_bar.cpp
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/text_box.cpp
