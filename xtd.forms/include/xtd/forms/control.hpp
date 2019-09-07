@@ -46,11 +46,11 @@ namespace xtd {
       };
       
     public:
-      /// @brief @member types
-      /// @{
+      /// @brief Represents a control objects.
       using ref_control = std::reference_wrapper<control>;
+      
+      /// @brief Represents a collection of control objects.
       using control_collection = layout::arranged_element_collection<ref_control>;
-      /// @}
       
       /// @brief Represent a null control. This field is const.
       /// @remarks Use this field if you want remove control from parent.
