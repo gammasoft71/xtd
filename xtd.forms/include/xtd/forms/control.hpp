@@ -63,7 +63,6 @@ namespace xtd {
       /// @brief Initializes a new instance of the Control class with default settings.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       control();
-      
       /// @brief Initializes a new instance of the control class with specific text.
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
@@ -71,7 +70,6 @@ namespace xtd {
       explicit control(const std::string& text) : control() {
         this->text(text);
       }
-      
       /// @brief nitializes a new instance of the control class as a child control, with specific text.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
@@ -81,7 +79,6 @@ namespace xtd {
         this->parent(parent);
         this->text(text);
       }
-
       /// @brief Initializes a new instance of the control class with specific text, size, and location.
       /// @param text The text displayed by the control.
       /// @param left The x position of the control, in pixels, from the left edge of the control's container. The value is assigned to the left property.
@@ -97,7 +94,6 @@ namespace xtd {
         this->width(width);
         this->height(height);
       }
-      
       /// @brief Initializes a new instance of the control class as a child control, with specific text, size, and location.
       /// @param parent The control to be the parent of the control.
       /// @param text The text displayed by the control.
@@ -123,13 +119,13 @@ namespace xtd {
       virtual ~control();
       /// @}
       
-      /// @brief This property is not relevant for this class.
+      /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
       /// @remarks This property is not relevant for this class.
       bool auto_size() const {return this->data_->auto_size_;}
-
-      /// @brief This property is not relevant for this class.
+      /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size true if enabled; otherwise, false.
+      /// @return This control.
       /// @remarks This property is not relevant for this class.
       control& auto_size(bool auto_size);
 
@@ -138,9 +134,9 @@ namespace xtd {
       /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
       /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
       virtual drawing::color back_color() const {return this->data_->back_color_.value_or(this->data_->parent_ ? this->parent().back_color() : default_back_color());}
-      
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
+      /// @return This control.
       /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
       /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
       /// @par Notes to Inheritors
@@ -152,14 +148,31 @@ namespace xtd {
       /// @remarks The value of this property is equal to the sum of the top property value, and the height property value.
       /// @remarks The bottom property is a read-only property. You can manipulate this property value by changing the value of the top or height properties or calling the set_bounds, set_bounds_core, update_bounds, or set_client_size_core methods.
       virtual int32_t bottom() const {return this->top() + this->height();}
-
-      virtual drawing::rectangle bounds() const {return {this->data_->location_, this->data_->size_};}
-      virtual control& bounds(const drawing::rectangle& bounds) {
-        this->location(bounds.location());
-        return this->size(bounds.size());
-      }
       
-      virtual drawing::size client_size() const {return this->data_->client_size_;}
+      /// @brief Gets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
+      /// @return A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
+      /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus.
+      virtual drawing::rectangle bounds() const {return {this->data_->location_, this->data_->size_};}
+      /// @brief Sets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
+      /// @param A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
+      /// @return This control.
+      /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus. The Set_bounds_core method is called to set the bounds property. The bounds property is not always changed through its set method so you should override the set_bounds_core method to ensure that your code is executed when the bounds property is set.
+      virtual control& bounds(const drawing::rectangle& bounds) {
+        this->set_bounds_core(bounds.x(), bounds.y(), bounds.width(), bounds.height(), bounds_specified::all);
+        return *this;
+      }
+
+      /// @brief Gets the rectangle that represents the client area of the control.
+      /// @return A rectangle that represents the client area of the control.
+      /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
+      /// @remarks Because client coordinates are relative to the upper-left corner of the client area of the control, the coordinates of the upper-left corner of the rectangle returned by this property are (0,0). You can use this property to obtain the size and coordinates of the client area of the control for tasks such as drawing on the surface of the control.
+      virtual const drawing::rectangle& client_rectangle() const {return this->data_->client_rectangle_;}
+
+      /// @brief Gets  the height and width of the client area of the control.
+      /// @return A size that represents the dimensions of the client area of the control.
+      virtual const drawing::size& client_size() const {return this->data_->client_size_;}
+      /// @brief Sets the height and width of the client area of the control.
+      /// @param A size that represents the dimensions of the client area of the control.
       virtual control& client_size(const drawing::size& size);
       
       virtual control_collection& controls() {return this->data_->controls_;}
@@ -400,6 +413,9 @@ namespace xtd {
       template<typename control_t>
       void make_control(const control_t& value) {controls_[value.control::data_.get()] = std::make_shared<control_t>(value);}
     
+      /// @brief Measure this control.
+      /// @return THe Drawing::Size size of this control.
+      /// @remarks This metod is not relevant for this class.
       virtual drawing::size measure_control() const;
       
       drawing::size measure_text() const;
@@ -493,6 +509,7 @@ namespace xtd {
         bool auto_size_ = false;
         auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
         std::optional<drawing::color> back_color_;
+        drawing::rectangle client_rectangle_;
         drawing::size client_size_ {-1, -1};
         control_collection controls_;
         bool enabled_ = true;
