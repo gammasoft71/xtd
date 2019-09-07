@@ -182,10 +182,31 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the name of the company or creator of the application containing the control.
+      /// @return The company name or creator of the application containing the control.
+      virtual std::string compagny_name() const {return "Gammasoft";}
+      
+      /// @brief Gets the collection of controls contained within the control.
+      /// @return A control::control_collection representing the collection of controls contained within the control.
+      /// @remarks A control can act as a parent to a collection of controls. For example, when several controls are added to a form, each of the controls is a member of the control::control_collection assigned to the controls property of the form, which is derived from the control class.
+      /// @remarks You can manipulate the controls in the control::control_collection assigned to the controls property by using the methods available in the control::control_collection class.
+      /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
+      /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
       virtual control_collection& controls() {return this->data_->controls_;}
       
+      /// @brief Gets the collection of controls contained within the control.
+      /// @return A control::control_collection representing the collection of controls contained within the control.
+      /// @remarks A control can act as a parent to a collection of controls. For example, when several controls are added to a form, each of the controls is a member of the control::control_collection assigned to the controls property of the form, which is derived from the control class.
+      /// @remarks You can manipulate the controls in the control::control_collection assigned to the controls property by using the methods available in the control::control_collection class.
+      /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
+      /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
       virtual const control_collection& controls() const {return this->data_->controls_;}
 
+      /// @brief Gets a value indicating whether the control has been created.
+      /// @return true if the control has been created; otherwise, false.
+      /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
+      virtual bool created() {return this->data_->created_;}
+      
       virtual drawing::color default_back_color() const;
 
       virtual drawing::color default_fore_color() const;
@@ -235,6 +256,8 @@ namespace xtd {
       virtual control& parent() const {return from_handle(this->data_->parent_);}
       virtual control& parent(const control& parent);
 
+      virtual std::string product_name() const {return "xtd";}
+      
       virtual int32_t right() const {return this->left() + this->width();}
 
       virtual drawing::size size() const {return this->data_->size_;}
@@ -425,6 +448,12 @@ namespace xtd {
     protected:
       friend class application;
       friend class screen;
+      
+      /// @brief Gets the required creation parameters when the control handle is created.
+      /// @return A create_params that contains the required creation parameters when the handle to the control is created.
+      /// @remarks The create_params property should not be overridden and used to adjust the properties of your derived control. Properties such as the create_params::caption, create_params::width, and create_params::height should be set by the corresponding properties in your control such as control::text, control::width and control::height. The create_params should only be extended when you are wrapping a standard Windows control class or to set styles not provided by the forms namespace.
+      /// @par Notes for inheritors
+      /// When overriding the create_params property in a derived class, use the base class's create_params property to extend the base implementation. Otherwise, you must provide all the implementation.
       virtual forms::create_params create_params() const;
       
       virtual void def_wnd_proc(message& message);
@@ -526,6 +555,7 @@ namespace xtd {
         drawing::rectangle client_rectangle_;
         drawing::size client_size_ {-1, -1};
         control_collection controls_;
+        bool created_ = false;
         bool enabled_ = true;
         std::optional<drawing::color> fore_color_;
         std::optional<drawing::font> font_;

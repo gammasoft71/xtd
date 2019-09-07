@@ -206,6 +206,7 @@ control& control::visible(bool visible) {
 }
 
 void control::create_control() {
+  this->data_->created_ = true;
   if (!this->data_->handle_) {
     this->create_handle();
     if (!this->data_->parent_) top_level_controls_.push_back(ref_control(*controls_[this->control::data_.get()]));
@@ -215,6 +216,7 @@ void control::create_control() {
 }
 
 void control::destroy_control() {
+  this->data_->created_ = false;
   if (this->data_->handle_) {
     if (this->data_->parent_ == 0) {
       for (size_t index = 0; index < top_level_controls_.size(); index++) {
