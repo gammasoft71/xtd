@@ -36,14 +36,14 @@ namespace examples {
       this->progress_bar5.style(progress_bar_style::marquee);
       this->progress_bar5.width(200);
       
-      this->timer.interval(50);
-      this->timer.tick += [&] {
+      this->timer1.interval(50);
+      this->timer1.tick += [&] {
         if (this->progress_bar4.value() == this->progress_bar4.maximum())
           this->progress_bar4.value(this->progress_bar4.minimum());
         else
           progress_bar4.perform_step();
       };
-      this->timer.enabled(true);
+      this->timer1.enabled(true);
     }
     
   private:
@@ -52,7 +52,7 @@ namespace examples {
     progress_bar progress_bar3;
     progress_bar progress_bar4;
     progress_bar progress_bar5;
-    timer timer;
+    timer timer1;
   };
 }
 
