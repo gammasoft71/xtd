@@ -29,7 +29,7 @@ label& label::border_style(forms::border_style border_style) {
 forms::create_params label::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("STATIC");
+  create_params.class_name("label");
   create_params.style(create_params.style() | SS_LEFT);
 
   if (this->data_->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);

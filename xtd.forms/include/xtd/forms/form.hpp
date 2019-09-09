@@ -21,14 +21,14 @@ namespace xtd {
       
       drawing::size default_size() const override {return{300, 300};}
       
-      event<form, form_closed_event_handler<control>> form_closed;
-      
-      event<form, form_closing_event_handler<control>> form_closing;
-
       using control::parent;
       control& parent(const control& parent) override;
 
       void close();
+      
+      event<form, form_closed_event_handler<control>> form_closed;
+      
+      event<form, form_closing_event_handler<control>> form_closing;
 
     protected:
       forms::create_params create_params() const override;

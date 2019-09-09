@@ -15,8 +15,8 @@ namespace xtd {
       text_box& operator=(const text_box& value);
       /// @endcond
 
-      forms::border_style border_style() const {return this->data_->border_style_;}
-      text_box& border_style(forms::border_style border_style);
+      virtual forms::border_style border_style() const {return this->data_->border_style_;}
+      virtual text_box& border_style(forms::border_style border_style);
       
       drawing::color default_back_color() const override;
       

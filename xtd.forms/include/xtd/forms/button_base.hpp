@@ -32,11 +32,11 @@ namespace xtd {
       
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
-      bool auto_size() const {return this->control::auto_size();}
+      bool auto_size() const override {return this->control::auto_size();}
       
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size true if enabled; otherwise, false.
-      control& auto_size(bool auto_size) {
+      control& auto_size(bool auto_size) override {
         this->control::auto_size(auto_size);
         if (this->control::data_->auto_size_)
           this->data_->auto_ellipsis_ = false;

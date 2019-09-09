@@ -26,6 +26,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/screen.cpp
   src/xtd/forms/native/wxwidgets/text_box.cpp
   src/xtd/forms/native/wxwidgets/timer.cpp
+  src/xtd/forms/native/wxwidgets/track_bar.cpp
   src/xtd/forms/native/wxwidgets/wx_button.hpp
   src/xtd/forms/native/wxwidgets/wx_check_box.hpp
   src/xtd/forms/native/wxwidgets/wx_control.hpp
@@ -37,6 +38,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_progress_bar.hpp
   src/xtd/forms/native/wxwidgets/wx_radio_button.hpp
   src/xtd/forms/native/wxwidgets/wx_text_box.hpp
+  src/xtd/forms/native/wxwidgets/wx_track_bar.hpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

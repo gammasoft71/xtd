@@ -122,12 +122,12 @@ namespace xtd {
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
       /// @remarks This property is not relevant for this class.
-      bool auto_size() const {return this->data_->auto_size_;}
+      virtual bool auto_size() const {return this->data_->auto_size_;}
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size true if enabled; otherwise, false.
       /// @return This control.
       /// @remarks This property is not relevant for this class.
-      control& auto_size(bool auto_size);
+      virtual control& auto_size(bool auto_size);
 
       /// @brief Gets the background color for the control.
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
@@ -380,8 +380,6 @@ namespace xtd {
         return os << control.to_string();
       }
       /// @endcond
-      
-      virtual void wnd_proc(message& message);
 
       event<control, event_handler<control>> auto_size_changed;
 
@@ -544,9 +542,33 @@ namespace xtd {
 
       void recreate_handle();
  
+      /// @brief Performs the work of setting the specified bounds of this control.
+      /// @param x The new left property value of the control.
+      /// @param y The new top property value of the control.
+      /// @param width The new width property value of the control.
+      /// @param height The new height property value of the control.
+      /// @param specified A bitwise combination of the bounds_specified values.
+      /// @remarks Typically, the parameters that correspond to the bounds not included in the specified parameter are passed in with their current values. For example, the height, width, or the y or y properties of the location property can be passed in with a reference to the current instance of the control. However all values passed in are honored and applied to the control.
+      /// @remarks The specified parameter represents the elements of the controls Bounds changed by your application. For example, if you change the size of the control, the specified parameter value is the size value of bounds_specified. However, if the size is adjusted in response to the dock property being set, the pecified parameter value is the none value of bounds_specified.
+      /// @par Notes to Inheritors
+      /// When overriding set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) in a derived class, be sure to call the base class's set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method to force the bounds of the control to change. Derived classes can add size restrictions to the set_bounds_core(int32_t, int32_t, int32_t, int32_t, bounds_specified) method.
       virtual void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified);
       
+      /// @brief Sets the size of the client area of the control.
+      /// @param width The client area width, in pixels.
+      /// @param height The client area height, in pixels.
+      /// @remarks The client area starts at the (0, 0) location and extends to the (width, height) location.
+      /// @remarks Typically, you should not set the client_size of the control.
+      /// @par Notes to Inheritors
+      /// When overriding set_client_size_core(int32_t, int32_t) in a derived class, be sure to call the base class's set_client_size_core(int32_t, int32_t) method so that the client_size property is adjusted.
       virtual void set_client_size_core(int32_t width, int32_t height);
+      
+      /// @brief Processes Windows messages.
+      /// @param m The Windows Message to process.
+      /// @remarks All messages are sent to the wnd°proc method after getting filtered through the pre_process_message method.
+      /// @par Notes to Inheritors
+      /// Inheriting controls should call the base class's wnd_proc(message&) method to process any messages that they do not handle.
+      virtual void wnd_proc(message& m);
 
       ///@private
       /// @{
@@ -598,6 +620,7 @@ namespace xtd {
       void wm_move(message& message);
       void wm_mouse_wheel(message& message);
       void wm_paint(message& message);
+      void wm_scroll(message& message);
       void wm_set_focus(message& message);
       void wm_set_text(message& message);
       void wm_size(message& message);

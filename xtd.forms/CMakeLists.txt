@@ -57,7 +57,9 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/screen.hpp
   include/xtd/forms/selection_mode.hpp
   include/xtd/forms/text_box.hpp
+  include/xtd/forms/tick_style.hpp
   include/xtd/forms/timer.hpp
+  include/xtd/forms/track_bar.hpp
 )
 
 set(XTD_FORMS_LAYOUT_INCLUDES
@@ -83,6 +85,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/screen.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
+  src/xtd/forms/track_bar.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

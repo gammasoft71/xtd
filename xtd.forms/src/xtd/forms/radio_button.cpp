@@ -55,7 +55,7 @@ radio_button& radio_button::checked(bool checked) {
 forms::create_params radio_button::create_params() const {
   forms::create_params create_params = this->button_base::create_params();
   
-  create_params.class_name("RADIOBUTTON"); // "BUTTON" for win32
+  create_params.class_name("radiobutton");
   if (this->data_->auto_check_) create_params.style(create_params.style() | BS_AUTORADIOBUTTON);
   else create_params.style(create_params.style() | BS_RADIOBUTTON);
   if (this->data_->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);

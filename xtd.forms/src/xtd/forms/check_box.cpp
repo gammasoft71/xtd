@@ -64,7 +64,7 @@ check_box& check_box::three_state(bool three_state) {
 forms::create_params check_box::create_params() const {
   forms::create_params create_params = this->button_base::create_params();
   
-  create_params.class_name("CHECKBOX"); // "BUTTON" for win32
+  create_params.class_name("checkbox");
   if (this->data_->three_state_) create_params.style(create_params.style() | (this->data_->auto_check_ ? BS_AUTO3STATE : BS_3STATE));
   else if (this->data_->auto_check_) create_params.style(create_params.style() | BS_AUTOCHECKBOX);
   else create_params.style(create_params.style() | BS_CHECKBOX);

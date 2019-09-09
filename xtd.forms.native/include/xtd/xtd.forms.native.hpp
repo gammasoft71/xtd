@@ -21,3 +21,4 @@
 #include "forms/native/screen.hpp"
 #include "forms/native/text_box.hpp"
 #include "forms/native/timer.hpp"
+#include "forms/native/track_bar.hpp"
