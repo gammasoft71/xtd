@@ -26,7 +26,6 @@ namespace xtd {
         static drawing::color default_fore_color();
         static drawing::font default_font();
         static void destroy(intptr_t control);
-        static void erase(intptr_t control);
         static void init();
         static drawing::rectangle client_rectangle(intptr_t control);
         static drawing::size client_size(intptr_t control);

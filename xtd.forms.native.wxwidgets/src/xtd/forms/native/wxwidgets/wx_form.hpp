@@ -19,7 +19,12 @@ namespace xtd {
           this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
           this->control()->SetForegroundColour(this->button_->GetForegroundColour());
           this->button_->Hide();
-          this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {event.Veto();});
+          this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
+            if (!this->wnd_proc.is_empty())
+              event.Veto();
+            else
+              event.Skip();
+          });
         }
         
         void SetSize(int32_t width, int32_t height) override {

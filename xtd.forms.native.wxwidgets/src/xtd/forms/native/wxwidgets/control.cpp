@@ -139,12 +139,8 @@ font control::default_font() {
 void control::destroy(intptr_t control) {
   if (control == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
-  reinterpret_cast<control_handler*>(control)->destroy();
-  erase(control);
-}
-
-void control::erase(intptr_t control) {
-  if (control == 0) return;
+  if (wxTheApp->IsMainLoopRunning())
+    reinterpret_cast<control_handler*>(control)->destroy();
   delete reinterpret_cast<class control_handler*>(control);
 }
 

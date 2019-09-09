@@ -67,7 +67,9 @@ control::control() {
 }
 
 control& control::operator=(const control& value) {
-  if (this->data_.use_count() == 1) destroy_control();
+  if (this->data_.use_count() == 2) {
+    destroy_control();
+  }
   this->back_color_changed = value.back_color_changed;
   this->click = value.click;
   this->auto_size_changed = value.auto_size_changed;
@@ -226,8 +228,6 @@ void control::destroy_control() {
         }
       }
     }
-    native::control::erase(this->data_->handle_);
-    this->data_->handle_ = 0;
     this->destroy_handle();
   }
 }
