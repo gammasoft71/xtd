@@ -27,7 +27,7 @@ group_box& group_box::auto_size_mode(forms::auto_size_mode value) {
 forms::create_params group_box::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("GROUPBOX"); // "BUTTON" for win32
+  create_params.class_name("groupbox");
   create_params.style(create_params.style() | BS_GROUPBOX);
   
   return create_params;

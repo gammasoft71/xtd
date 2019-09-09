@@ -16,6 +16,7 @@
 #include "wx_progress_bar.hpp"
 #include "wx_radio_button.hpp"
 #include "wx_text_box.hpp"
+#include "wx_track_bar.hpp"
 #include <wx/dcmemory.h>
 #include <wx/dcclient.h>
 #include <wx/dcscreen.h>
@@ -49,16 +50,17 @@ void control::back_color(intptr_t control, const color& color) {
 
 intptr_t control::create(const forms::create_params& create_params) {
   application::initialize_application(); // Must be first
-  if (create_params.class_name() == "BUTTON") return reinterpret_cast<intptr_t>(new wx_button(create_params));
-  if (create_params.class_name() == "CHECKBOX") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
-  if (create_params.class_name() == "FORM") return reinterpret_cast<intptr_t>(new wx_form(create_params));
-  if (create_params.class_name() == "GROUPBOX") return reinterpret_cast<intptr_t>(new wx_group_box(create_params));
-  if (create_params.class_name() == "STATIC") return reinterpret_cast<intptr_t>(new wx_label(create_params));
-  if (create_params.class_name() == "LISTBOX") return reinterpret_cast<intptr_t>(new wx_list_box(create_params));
-  if (create_params.class_name() == "PANEL") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
-  if (create_params.class_name() == "PROGRESSBAR") return reinterpret_cast<intptr_t>(new wx_progress_bar(create_params));
-  if (create_params.class_name() == "RADIOBUTTON") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
-  if (create_params.class_name() == "EDIT") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
+  if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
+  if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
+  if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
+  if (create_params.class_name() == "groupbox") return reinterpret_cast<intptr_t>(new wx_group_box(create_params));
+  if (create_params.class_name() == "label") return reinterpret_cast<intptr_t>(new wx_label(create_params));
+  if (create_params.class_name() == "listbox") return reinterpret_cast<intptr_t>(new wx_list_box(create_params));
+  if (create_params.class_name() == "panel") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
+  if (create_params.class_name() == "progressbar") return reinterpret_cast<intptr_t>(new wx_progress_bar(create_params));
+  if (create_params.class_name() == "radiobutton") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
+  if (create_params.class_name() == "textbox") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
+  if (create_params.class_name() == "trackbar") return reinterpret_cast<intptr_t>(new wx_track_bar(create_params));
   return reinterpret_cast<intptr_t>(new wx_control(create_params));
 }
 

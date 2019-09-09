@@ -11,13 +11,16 @@
 #include <xtd/forms/native/window_list_box.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
 #include <xtd/forms/native/window_progress_bar.hpp>
+#include <xtd/forms/native/window_scroll_bar.hpp>
 #include <xtd/forms/native/window_static.hpp>
 #include <xtd/forms/native/window_styles.hpp>
+#include <xtd/forms/native/window_track_bar.hpp>
 #include <wx/checkbox.h>
 #include <wx/stattext.h>
 #include <wx/frame.h>
 #include <wx/gauge.h>
 #include <wx/radiobut.h>
+#include <wx/slider.h>
 #include <wx/textctrl.h>
 #include <wx/tglbtn.h>
 
@@ -424,6 +427,27 @@ namespace xtd {
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
 
+        static long track_bar_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          if ((style & TBS_VERT) == TBS_VERT) wx_style |= wxSL_VERTICAL | wxSL_INVERSE;
+          else wx_style |= wxSL_HORIZONTAL;
+          
+          if ((style & TBS_BOTH) == TBS_BOTH) wx_style |= wxSL_BOTH;
+          else if ((style & TBS_NOTICKS) != TBS_NOTICKS) {
+            wx_style |= wxSL_AUTOTICKS;
+            if ((style & TBS_VERT) == TBS_VERT) {
+              if ((style & TBS_LEFT) == TBS_LEFT) wx_style |= wxSL_LEFT;
+              else wx_style |= wxSL_RIGHT;
+            } else {
+              if ((style & TBS_TOP) == TBS_TOP) wx_style |= wxSL_TOP;
+              else wx_style |= wxSL_BOTTOM;
+            }
+          }
+
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
+        
         wxWindow* control() const {return this->control_;}
         void clear_control() {this->control_ = nullptr;}
         
@@ -486,6 +510,7 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_CHECKBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_LISTBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_RADIOBUTTON) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_SLIDER) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), (this->event_handler_->control()->GetWindowStyle() & wxSL_VERTICAL) == wxSL_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBPOSITION, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_TOGGLEBUTTON) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else this->def_process_event(event);
       }

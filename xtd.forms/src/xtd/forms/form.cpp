@@ -47,7 +47,7 @@ control& form::parent(const control& parent) {
 forms::create_params form::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("FORM"); // "" for win32
+  create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
   
   return create_params;

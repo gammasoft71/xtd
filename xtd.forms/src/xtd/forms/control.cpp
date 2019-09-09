@@ -389,7 +389,7 @@ void control::on_key_up(key_event_args& e) {
 }
 
 void control::on_location_changed(const event_args &e) {
-  this->data_->location_ = native::control::location(this->data_->handle_);
+  if (this->data_->handle_ != 0) this->data_->location_ = native::control::location(this->data_->handle_);
   if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
   this->location_changed(*this, e);
 }
@@ -470,7 +470,7 @@ void control::on_parent_font_changed(const event_args &e) {
 }
 
 void control::on_size_changed(const event_args &e) {
-  this->data_->size_ = native::control::size(this->data_->handle_);
+  if (this->data_->handle_ != 0) this->data_->size_ = native::control::size(this->data_->handle_);
   if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
   this->refresh();
   this->size_changed(*this, e);
@@ -552,6 +552,8 @@ void control::wnd_proc(message& message) {
     case WM_MOVE: wm_move(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
     case WM_SIZE:  this->wm_size(message); break;
+    case WM_HSCROLL:
+    case WM_VSCROLL: this->wm_scroll(message); break;
     default: this->def_wnd_proc(message); break;
   }
 }
@@ -573,20 +575,35 @@ void control::recreate_handle() {
 }
 
 void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+  if ((specified & bounds_specified::x) == bounds_specified::x) this->data_->location_.x(x);
+  if ((specified & bounds_specified::y) == bounds_specified::y) this->data_->location_.y(y);
+  if ((specified & bounds_specified::width) == bounds_specified::width) this->data_->size_.width(width);
+  if ((specified & bounds_specified::height) == bounds_specified::height) this->data_->size_.height(height);
+
+  if (this->control::data_->auto_size_) this->data_->size_ = this->measure_control();
+
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
-    native::control::location(this->data_->handle_, {(specified & bounds_specified::x) == bounds_specified::x ? x : this->data_->location_.x(), (specified & bounds_specified::y) == bounds_specified::y ? y : this->data_->location_.y()});
+    native::control::location(this->data_->handle_, this->data_->location_);
     this->on_location_changed(event_args::empty);
   }
   
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
-    native::control::size(this->data_->handle_, {(specified & bounds_specified::width) == bounds_specified::width ? width : this->data_->size_.width(), (specified & bounds_specified::height) == bounds_specified::height ? height : this->data_->size_.height()});
+    native::control::size(this->data_->handle_, this->data_->size_);
     this->on_client_size_changed(event_args::empty);
     this->on_size_changed(event_args::empty);
   }
 }
 
 void control::set_client_size_core(int32_t width, int32_t height) {
+  this->data_->client_size_.width(width);
+  this->data_->client_size_.height(height);
+  
   native::control::client_size(this->data_->handle_, this->data_->client_size_);
+  if (this->control::data_->auto_size_) {
+    this->data_->size_ = native::control::size(this->data_->handle_);
+    this->data_->size_ = this->measure_control();
+    native::control::size(this->data_->handle_, this->data_->size_);
+  }
   this->on_client_size_changed(event_args::empty);
   this->on_size_changed(event_args::empty);
 }
@@ -614,7 +631,7 @@ void control::wm_child_activate(message& message) {
 void control::wm_command(message& message) {
   this->def_wnd_proc(message);
   if (message.lparam() != 0)
-    from_handle(message.lparam()).send_message(message.hwnd(), WM_REFLECT + WM_COMMAND, message.wparam(), message.lparam());
+    from_handle(message.lparam()).send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
 void control::wm_key_char(message& message) {
@@ -703,6 +720,12 @@ void control::wm_paint(message& message) {
   this->def_wnd_proc(message);
   paint_event_args e(this->data_->client_rectangle_, *this);
   this->on_paint(e);
+}
+
+void control::wm_scroll(message& message) {
+  this->def_wnd_proc(message);
+  if (message.lparam() != 0)
+    from_handle(message.lparam()).send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
 void control::wm_set_focus(message& message) {

@@ -3,11 +3,12 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-class form_test : public form {
+class form1 : public form {
 public:
-  form_test() {
-    this->text("xtd.forms.manual_tests");
-
+  form1() {
+    this->client_size({300, 300});
+    this->text("Track bar example");
+    
     this->progress_bar1.location({100, 50});
     this->progress_bar1.maximum(200);
     this->progress_bar1.orientation(forms::orientation::vertical);
@@ -21,12 +22,12 @@ public:
     this->track_bar1.maximum(200);
     this->track_bar1.orientation(forms::orientation::vertical);
     this->track_bar1.parent(*this);
-    this->track_bar1.value_changed += [&] {
+    this->track_bar1.value_changed += [&](const control& sender, const event_args& e) {
       this->progress_bar1.value(this->track_bar1.value());
       this->label1.text(strings::format("{}", this->track_bar1.value()));
     };
     this->track_bar1.value(100);
-    this->track_bar1.tick_style(forms::tick_style::bottom_right);
+    this->track_bar1.tick_style(forms::tick_style::none);
     this->track_bar1.size({45, 200});
   }
   
@@ -37,5 +38,5 @@ private:
 };
 
 int main() {
-  application::run(form_test());
+  application::run(form1());
 }

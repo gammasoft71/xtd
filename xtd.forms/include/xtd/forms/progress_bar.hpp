@@ -36,72 +36,72 @@ namespace xtd {
       /// @return The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @remarks A marquee-style progress indicator does not display progress; instead it indicates that an operation is occurring by moving the progress block across the progress bar.
       /// @remarks Since the marquee animation speed is a time period, setting the value to a higher number results in a slower speed and a lower number results in a faster speed.
-      size_t marquee_animation_speed() {return this->data_->marquee_animation_speed_;}
+      virtual size_t marquee_animation_speed() {return this->data_->marquee_animation_speed_;}
       /// @brief Sets the time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @param marquee_animation_speed The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
       /// @remarks A marquee-style progress indicator does not display progress; instead it indicates that an operation is occurring by moving the progress block across the progress bar.
       /// @remarks Since the marquee animation speed is a time period, setting the value to a higher number results in a slower speed and a lower number results in a faster speed.
-      progress_bar& marquee_animation_speed(size_t marquee_animation_speed);
+      virtual progress_bar& marquee_animation_speed(size_t marquee_animation_speed);
       
       /// @brief Gets the maximum value of the range of the control.
       /// @return The maximum value of the range. The default is 100.
       /// @remarks This property specifies the upper limit of the value property. When the value of the maximum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the maximum property, the progress bar is completely filled.
       /// @remarks You can use this property to specify a value to which the value property must be set (by setting the value property or using the increment or perform_step methods) to indicate that an operation is complete. For example, you can set the value of the maximum property to the total number of files in a file copy operation. Each time a file is copied, the value property can be increased by 1 until the total number of files is copied. At that point, the progress bar would be completely filled.
-      int32_t maximum() {return this->data_->maximum_;}
+      virtual int32_t maximum() {return this->data_->maximum_;}
       /// @brief Sets the maximum value of the range of the control.
       /// @param maximum The maximum value of the range. The default is 100.
       /// @remarks This property specifies the upper limit of the value property. When the value of the maximum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the maximum property, the progress bar is completely filled.
       /// @remarks You can use this property to specify a value to which the value property must be set (by setting the value property or using the increment or perform_step methods) to indicate that an operation is complete. For example, you can set the value of the maximum property to the total number of files in a file copy operation. Each time a file is copied, the value property can be increased by 1 until the total number of files is copied. At that point, the progress bar would be completely filled.
-      progress_bar& maximum(int32_t maximum);
+      virtual progress_bar& maximum(int32_t maximum);
       
       /// @brief Gets the minimum value of the range of the control.
       /// @return The minimum value of the range. The default is 0.
       /// @remarks This property specifies the lower limit of the value property. When the value of the minimum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the minimum property, the progress bar is empty. To change the value of the progress bar, use the step property with the perform_step method, use the increment method, or set the value of the value property directly.
-      int32_t minimum() {return this->data_->minimum_;}
+      virtual int32_t minimum() {return this->data_->minimum_;}
       /// @brief Sets the minimum value of the range of the control.
       /// @param minimum The minimum value of the range. The default is 0.
       /// @remarks This property specifies the lower limit of the value property. When the value of the minimum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the minimum property, the progress bar is empty. To change the value of the progress bar, use the step property with the perform_step method, use the increment method, or set the value of the value property directly.
-      progress_bar& minimum(int32_t minimum);
+      virtual progress_bar& minimum(int32_t minimum);
       
       /// @brief Gets a value indicating the horizontal or vertical orientation of the progress bar.
       /// @return One of the orientation values.
       /// @remarks When the orientation property is set to orientation::horizontal, the progress moves from left to right as the value increases. When the orientation property is set to orientation::vertical, the progress moves from bottom to top as the value increases.
-      forms::orientation orientation() const {return this->data_->orientation_;}
+      virtual forms::orientation orientation() const {return this->data_->orientation_;}
       /// @brief Sets a value indicating the horizontal or vertical orientation of the progress bar.
       /// @param orientation One of the orientation values.
       /// @remarks When the orientation property is set to orientation::horizontal, the progress moves from left to right as the value increases. When the orientation property is set to orientation::vertical, the progress moves from bottom to top as the value increases.
-      progress_bar& orientation(forms::orientation orientation);
+      virtual progress_bar& orientation(forms::orientation orientation);
       
       /// @brief Gets the amount by which a call to the PerformStep() method increases the current position of the progress bar.
       /// @return The amount by which to increment the progress bar with each call to the perform_step() method. The default is 10.
       /// @remarks You can use the step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
-      int32_t step() {return this->data_->step_;}
+      virtual int32_t step() {return this->data_->step_;}
       /// @brief Sets the amount by which a call to the PerformStep() method increases the current position of the progress bar.
       /// @param step The amount by which to increment the progress bar with each call to the perform_step() method. The default is 10.
       /// @remarks You can use the step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
-      progress_bar& step(int32_t step);
+      virtual progress_bar& step(int32_t step);
       
       /// @brief Gets the manner in which progress should be indicated on the progress bar.
       /// @return One of the progress_bar_style values. The default is blocks
       /// @remarks You can use the marquee style when you need to indicate progress is being made, without indicating the quantity of progress. The marquee style is honored only when visual styles are enabled. The continuous style is honored when visual styles are not enabled.
-      progress_bar_style style() const {return this->data_->style_;}
+      virtual progress_bar_style style() const {return this->data_->style_;}
       /// @brief Sets the manner in which progress should be indicated on the progress bar.
       /// @param style One of the progress_bar_style values. The default is blocks
       /// @remarks You can use the marquee style when you need to indicate progress is being made, without indicating the quantity of progress. The marquee style is honored only when visual styles are enabled. The continuous style is honored when visual styles are not enabled.
-      progress_bar& style(progress_bar_style style);
+      virtual progress_bar& style(progress_bar_style style);
       
       /// @brief Gets the current position of the progress bar.
       /// @return The position within the range of the progress bar. The default is 0.
       /// @remarks If the value specified is greater than the value of the maximum property, the value property is set to maximum.
       /// @remarks If the value specified is less than the value of the minimum property, the value property is set to minimum.
       /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
-      int32_t value() {return this->data_->value_;}
+      virtual int32_t value() {return this->data_->value_;}
       /// @brief Sets the current position of the progress bar.
       /// @param value The position within the range of the progress bar. The default is 0.
       /// @remarks If the value specified is greater than the value of the maximum property, the value property is set to maximum.
       /// @remarks If the value specified is less than the value of the minimum property, the value property is set to minimum.
       /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
-      progress_bar& value(int32_t value);
+      virtual progress_bar& value(int32_t value);
 
       /// @brief Advances the current position of the progress bar by the specified amount.
       /// @param value The amount by which to increment the progress bar's current position.

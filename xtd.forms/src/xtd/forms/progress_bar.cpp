@@ -84,7 +84,7 @@ progress_bar& progress_bar::value(int32_t value) {
 forms::create_params progress_bar::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("PROGRESSBAR"); // "msctls_progress32" for win32
+  create_params.class_name("progressbar");
   
   if (this->data_->style_ == forms::progress_bar_style::continuous) create_params.style(create_params.style() | PBS_SMOOTH);
   if (this->data_->orientation_ == forms::orientation::vertical) create_params.style(create_params.style() | PBS_VERTICAL);

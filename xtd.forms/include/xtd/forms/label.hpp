@@ -15,8 +15,8 @@ namespace xtd {
       label& operator=(const label& value);
       /// @endcond
 
-      forms::border_style border_style() const {return this->data_->border_style_;}
-      label& border_style(forms::border_style border_style);
+      virtual forms::border_style border_style() const {return this->data_->border_style_;}
+      virtual label& border_style(forms::border_style border_style);
       
       drawing::size default_size() const override {return{100, 23};}
       

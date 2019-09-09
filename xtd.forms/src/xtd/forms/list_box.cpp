@@ -115,7 +115,7 @@ list_box& list_box::sorted(bool sorted) {
 forms::create_params list_box::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("LISTBOX");
+  create_params.class_name("listbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
 
   switch (this->data_->selection_mode_) {

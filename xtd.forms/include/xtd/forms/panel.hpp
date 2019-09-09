@@ -15,11 +15,11 @@ namespace xtd {
       panel& operator=(const panel& value);
       /// @endcond
 
-      forms::auto_size_mode auto_size_mode() const {return this->control::data_->auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return this->control::data_->auto_size_mode_;}
       virtual panel& auto_size_mode(forms::auto_size_mode value);
       
-      forms::border_style border_style() const {return this->data_->border_style_;}
-      panel& border_style(forms::border_style border_style);
+      virtual forms::border_style border_style() const {return this->data_->border_style_;}
+      virtual panel& border_style(forms::border_style border_style);
 
       drawing::size default_size() const override {return{200, 100};}
       
