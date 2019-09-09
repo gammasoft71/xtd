@@ -10,6 +10,7 @@ namespace xtd {
     class timer {
     public:
       timer() = default;
+      ~timer() {this->enabled(false);}
       
       event<timer, event_handler<timer>> tick;
 

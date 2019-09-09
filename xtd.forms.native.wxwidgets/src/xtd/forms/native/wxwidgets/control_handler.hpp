@@ -324,8 +324,12 @@ namespace xtd {
         intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           intptr_t result = 0;
           if (this->destroyed_) return result;
-          for (auto& fct : this->wnd_proc.functions())
-            if (!this->destroyed_ && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
+          if (this->wnd_proc.is_empty())
+            result = this->call_def_wnd_proc(0, 0, 0, 0, 0, handle);
+          else {
+            for (auto& fct : this->wnd_proc.functions())
+              if (!this->destroyed_ && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
+          }
           return result;
           //return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
