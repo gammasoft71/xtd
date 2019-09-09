@@ -6,6 +6,8 @@ namespace xtd {
   class event : protected handler_t {
     friend object_t;
   public:
+    bool is_empty() const noexcept { return this->handler_t::is_empty(); }
+
     handler_t& operator+=(const handler_t& handler) noexcept {
       return this->handler_t::operator+=(handler);
     }
