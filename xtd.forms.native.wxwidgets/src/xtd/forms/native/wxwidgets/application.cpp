@@ -40,12 +40,12 @@ unique_ptr<wxInitializer> __wx_initializer__;
 int32_t __mainloop_runnning__ = 0; // 0 : started, 1 : running, 2 : stop
 
 bool application::allow_quit() {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
   return true;
 }
 
 void application::do_events() {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
   wxYield();
 }
 
@@ -54,16 +54,25 @@ void application::do_idle() {
 }
 
 void application::enable_visual_style() {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
   wxTheApp->SetUseBestVisual(true);
 }
 
+void application::end_application() {
+  if (wxTheApp) {
+    wxTheApp->OnExit();
+    __wx_initializer__ = nullptr;
+    delete wxTheApp;
+    wxApp::SetInstance(nullptr);
+  }
+}
+
 void application::exit() {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
   wxExit();
 }
 
-void application::initialize_application() {
+void application::start_application() {
   if (wxTheApp) return;
   wxApp::SetInstance(new wx_application());
   __wx_initializer__ = make_unique<wxInitializer>();
@@ -71,12 +80,12 @@ void application::initialize_application() {
 }
 
 intptr_t application::main_form() {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
   return (intptr_t)wxTheApp->GetTopWindow();
 }
 
 void application::main_form(intptr_t form) {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
   if (form == 0) return;
   wxTheApp->SetTopWindow(reinterpret_cast<control_handler*>(form)->control());
 }
@@ -89,12 +98,12 @@ vector<intptr_t> application::open_forms() {
 }
 
 void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
   static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
 }
 
 void application::run() {
-  initialize_application(); // Must be first
+  start_application(); // Must be first
 #if __WXOSX__
   wxMenuBar* menubar = new wxMenuBar();
   wxMenu* menuWindow = new wxMenu();
@@ -116,10 +125,7 @@ void application::run() {
   static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
   struct call_on_exit {
     ~call_on_exit() {
-      wxTheApp->OnExit();
-      __wx_initializer__ = nullptr;
-      delete wxTheApp;
-      wxApp::SetInstance(nullptr);
+      end_application();
     }
   } call_on_exit;
   __mainloop_runnning__ = 1;

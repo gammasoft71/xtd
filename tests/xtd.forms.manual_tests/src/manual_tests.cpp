@@ -52,6 +52,14 @@ control_t create(const std::string& text) {
   return ctrl;
 }
 
+class app {
+public:
+  app() {application::start_application();}
+  ~app() {application::end_application();}
+  
+  void run() {application::run();}
+};
+
 int main() {
   /*
    form f;
@@ -67,6 +75,7 @@ int main() {
   //xtd::cdebug << xtd::format("w = 0x{:X}", (intptr_t)&w1) << std::endl;
   //xtd::cdebug << xtd::format("w.handle = 0x{:X}", (intptr_t)w1.handle()) << std::endl;
   
+  app app;
   auto w = std::make_shared<win>();
   w.reset();
   
@@ -76,5 +85,5 @@ int main() {
   xtd::cdebug << xtd::format("w.handle = 0x{:X}", (intptr_t)w2.handle()) << std::endl;
   w2.visible(true);
   application::main_form(w2.handle());
-  //application::run();
+  //app.run();
 }

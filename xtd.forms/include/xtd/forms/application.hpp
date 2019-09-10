@@ -68,12 +68,16 @@ namespace xtd {
       
       static void enable_visual_styles();
 
+      static void end();
+
       static void exit();
-      
+
       static void run();
 
       static void run(const form& form);
       
+      static void start();
+
       static event<application, delegate<void(const event_args&)>> idle;
       
     private:

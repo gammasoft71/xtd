@@ -60,6 +60,10 @@ void application::enable_visual_styles() {
   native::application::enable_visual_style();
 }
 
+void application::end() {
+  native::application::end_application();
+}
+
 void application::exit() {
   native::application::exit();
 }
@@ -73,6 +77,10 @@ void application::run(const form& form) {
   const_cast<forms::form&>(form).visible(true);
   native::application::main_form(form.control::data_->handle_);
   run();
+}
+
+void application::start() {
+  native::application::start_application();
 }
 
 event<application, delegate<void(const event_args&)>> application::idle;

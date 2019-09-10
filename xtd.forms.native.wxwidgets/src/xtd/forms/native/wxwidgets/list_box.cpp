@@ -15,7 +15,7 @@ color list_box::default_back_color() {
 #else
   static color default_color;
   if (default_color == color::empty) {
-    native::application::initialize_application();
+    native::application::start_application();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxListBox* list_box = new wxListBox(frame, wxID_ANY);
     wxColour colour = list_box->GetBackgroundColour();
@@ -37,7 +37,7 @@ color list_box::default_fore_color() {
 #else
   static color default_color;
   if (default_color == color::empty) {
-    native::application::initialize_application();
+    native::application::start_application();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxListBox* list_box = new wxListBox(frame, wxID_ANY);
     wxColour colour = list_box->GetForegroundColour();
