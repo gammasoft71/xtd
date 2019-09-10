@@ -27,10 +27,13 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+extern unique_ptr<wxInitializer> __wx_initializer__;
+extern int32_t __mainloop_runnning__;
+
 color control::back_color(intptr_t control) {
   if (control == 0) return color::empty;
   wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetBackgroundColour();
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
   return color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #endif
   return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
@@ -38,7 +41,7 @@ color control::back_color(intptr_t control) {
 
 void control::back_color(intptr_t control, const color& color) {
   if (control == 0) return;
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
   if (color.handle())
     reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
   else
@@ -98,7 +101,7 @@ color control::default_back_color() {
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxButton* button = new wxButton(frame, wxID_ANY, "");
     wxColour colour = button->GetBackgroundColour();
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
     default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #else
     default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
@@ -120,7 +123,7 @@ color control::default_fore_color() {
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxButton* button = new wxButton(frame, wxID_ANY, "");
     wxColour colour = button->GetForegroundColour();
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
     default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #else
     default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
@@ -139,8 +142,19 @@ font control::default_font() {
 void control::destroy(intptr_t control) {
   if (control == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
-  if (wxTheApp->IsMainLoopRunning())
+  if (wxTheApp) {
     reinterpret_cast<control_handler*>(control)->destroy();
+    if (!wxTheApp->IsMainLoopRunning()) {
+      delete reinterpret_cast<control_handler*>(control)->control();
+#if !defined (__WXOSX__)
+      wxTheApp->OnExit();
+      __wx_initializer__ = nullptr;
+      delete wxTheApp;
+      wxApp::SetInstance(nullptr);
+      application::initialize_application();
+#endif
+    }
+  }
   delete reinterpret_cast<class control_handler*>(control);
 }
 
@@ -178,7 +192,7 @@ void control::enabled(intptr_t control, bool enabled) {
 color control::fore_color(intptr_t control) {
   if (control == 0) return color::empty;
   wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetForegroundColour();
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
   return color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #endif
   return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
@@ -186,7 +200,7 @@ color control::fore_color(intptr_t control) {
 
 void control::fore_color(intptr_t control, const color& color) {
   if (control == 0) return;
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
   if (color.handle())
     reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
   else

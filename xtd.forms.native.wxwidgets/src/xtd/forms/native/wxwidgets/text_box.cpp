@@ -20,7 +20,7 @@ color text_box::default_back_color() {
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxTextCtrl* text_box = new wxTextCtrl(frame, wxID_ANY, "");
     wxColour colour = text_box->GetBackgroundColour();
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
     default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #else
     default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
@@ -42,7 +42,7 @@ color text_box::default_fore_color() {
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxButton* text_box = new wxButton(frame, wxID_ANY, "");
     wxColour colour = text_box->GetForegroundColour();
-#if defined (__APPLE__)
+#if defined (__WXOSX__)
     default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #else
     default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
