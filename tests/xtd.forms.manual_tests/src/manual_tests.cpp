@@ -15,32 +15,36 @@ public:
     cp.location({100, 100});
     cp.size({300, 300});
     cp.caption("win");
-    this->handle_ = control::create(cp);
+    this->data_->handle_ = control::create(cp);
   }
   
   win(const win&) = default;
   //win& operator=(const win&) = default;
   
   virtual ~win() {
-    control::destroy(this->handle_);
+    if (this->data_.use_count() == 1)
+      control::destroy(this->data_->handle_);
   }
   
-  intptr_t handle() const { return this->handle_; }
+  intptr_t handle() const { return this->data_->handle_; }
   
-  std::string text() const { return control::text(this->handle_); }
+  std::string text() const { return control::text(this->data_->handle_); }
   win& text(const std::string& text) {
-    control::text(this->handle_, text);
+    control::text(this->data_->handle_, text);
     return *this;
   }
   
-  bool visible() const { return control::visible(this->handle_); }
+  bool visible() const { return control::visible(this->data_->handle_); }
   win& visible(bool visible) {
-    control::visible(this->handle_, visible);
+    control::visible(this->data_->handle_, visible);
     return *this;
   }
   
 private:
-  intptr_t handle_;
+  struct data {
+    intptr_t handle_;
+  };
+  std::shared_ptr<data> data_ = std::make_shared<data>();
 };
 
 template <typename control_t>
@@ -72,7 +76,8 @@ int main() {
   //xtd::cdebug << xtd::format("w.handle = 0x{:X}", (intptr_t)w1.handle()) << std::endl;
   
   application::start_application();
-  auto w = std::make_shared<win>();
+  //auto w1 = std::make_shared<win>();
+  //w1.reset();
   
   win w2 = create<win>("form2");
   w2.visible(true);
