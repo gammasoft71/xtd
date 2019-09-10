@@ -39,9 +39,11 @@ namespace xtd {
         control_wrapper(control_handler* event_handler, args_type&& ...args) : TControl(args...), event_handler_(event_handler) {}
 
         intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
-          wxEvent* event = reinterpret_cast<wxEvent*>(handle);
-          event->Skip(!presult);
-          this->process_result_ = this->TControl::ProcessEvent(*event);
+          if (handle != 0) {
+            wxEvent* event = reinterpret_cast<wxEvent*>(handle);
+            event->Skip(!presult);
+            this->process_result_ = this->TControl::ProcessEvent(*event);
+          }
           return this->process_result_;
         }
         
