@@ -22,8 +22,10 @@ namespace xtd {
           this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
             if (!this->wnd_proc.is_empty())
               event.Veto();
-            else
+            else {
+              if (wxTheApp->GetTopWindow() == this->control()) wxTheApp->ExitMainLoop();
               event.Skip();
+            }
           });
         }
         
