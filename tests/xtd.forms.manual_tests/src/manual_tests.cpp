@@ -44,21 +44,17 @@ private:
 };
 
 template <typename control_t>
-control_t create(const std::string& text) {
+control_t create() {
   control_t ctrl;
-  
-  ctrl.text(text);
-  
   return ctrl;
 }
 
-class app {
-public:
-  app() {application::start_application();}
-  ~app() {application::end_application();}
-  
-  void run() {application::run();}
-};
+template <typename control_t>
+control_t create(const std::string& text) {
+  control_t ctrl;
+  ctrl.text(text);
+  return ctrl;
+}
 
 int main() {
   /*
@@ -75,15 +71,12 @@ int main() {
   //xtd::cdebug << xtd::format("w = 0x{:X}", (intptr_t)&w1) << std::endl;
   //xtd::cdebug << xtd::format("w.handle = 0x{:X}", (intptr_t)w1.handle()) << std::endl;
   
-  app app;
+  application::start_application();
   auto w = std::make_shared<win>();
-  w.reset();
   
-  win w2;
-  //w2.text("form2");
-  xtd::cdebug << xtd::format("w = 0x{:X}", (intptr_t)&w2) << std::endl;
-  xtd::cdebug << xtd::format("w.handle = 0x{:X}", (intptr_t)w2.handle()) << std::endl;
+  win w2 = create<win>("form2");
   w2.visible(true);
   application::main_form(w2.handle());
-  //app.run();
+  application::run();
+  application::end_application();
 }
