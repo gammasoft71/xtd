@@ -52,7 +52,7 @@ void control::back_color(intptr_t control, const color& color) {
 }
 
 intptr_t control::create(const forms::create_params& create_params) {
-  application::initialize_application(); // Must be first
+  application::start_application(); // Must be first
   if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
   if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
   if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
@@ -97,7 +97,7 @@ color control::default_back_color() {
 #else
   static color default_color;
   if (default_color == color::empty) {
-    native::application::initialize_application();
+    native::application::start_application();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxButton* button = new wxButton(frame, wxID_ANY, "");
     wxColour colour = button->GetBackgroundColour();
@@ -119,7 +119,7 @@ color control::default_fore_color() {
 #else
   static color default_color;
   if (default_color == color::empty) {
-    native::application::initialize_application();
+    native::application::start_application();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxButton* button = new wxButton(frame, wxID_ANY, "");
     wxColour colour = button->GetForegroundColour();
@@ -151,7 +151,7 @@ void control::destroy(intptr_t control) {
       __wx_initializer__ = nullptr;
       delete wxTheApp;
       wxApp::SetInstance(nullptr);
-      application::initialize_application();
+      application::start_application();
 #endif
     }
   }
@@ -159,7 +159,7 @@ void control::destroy(intptr_t control) {
 }
 
 void control::init() {
-  application::initialize_application(); // Must be first
+  application::start_application(); // Must be first
 }
 
 drawing::rectangle control::client_rectangle(intptr_t control) {

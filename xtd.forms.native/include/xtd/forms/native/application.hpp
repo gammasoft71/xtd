@@ -13,8 +13,9 @@ namespace xtd {
         static void do_events();
         static void do_idle();
         static void enable_visual_style();
+        static void end_application();
         static void exit();
-        static void initialize_application();
+        static void start_application();
         static intptr_t main_form();
         static void main_form(intptr_t handle);
         static std::vector<intptr_t> open_forms();
