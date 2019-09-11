@@ -109,8 +109,8 @@ control& control::operator=(const control& value) {
 
 control::~control() {
   if (this->data_.use_count() == 2) {
-    destroy_control();
     controls_.erase(this->data_.get());
+    destroy_control();
   }
 }
 
