@@ -27,7 +27,7 @@ namespace {
       return (message.wparam() & MK_XBUTTON2) == MK_XBUTTON2 ? mouse_buttons::x_button2 : mouse_buttons::x_button1;
     return mouse_buttons::none;
   }
-
+  
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)
       return mouse_buttons::left;
@@ -58,7 +58,7 @@ control::control() {
       this->on_control_added(control_event_args(item.get()));
     }
   };
-
+  
   this->data_->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
     item.get().data_->parent_ = 0;
     item.get().destroy_handle();
@@ -67,12 +67,10 @@ control::control() {
 }
 
 control& control::operator=(const control& value) {
-  if (this->data_->handle_) {
-    //this->destroy_handle();
+  if (this->data_->handle_)
     this->destroy_control();
-  }
   controls_.erase(this->data_.get());
-
+  
   this->back_color_changed = value.back_color_changed;
   this->click = value.click;
   this->auto_size_changed = value.auto_size_changed;
@@ -185,7 +183,7 @@ control& control::parent(const control& parent) {
     if (this->data_->parent_ != 0) {
       for (size_t index = 0; index < this->parent().data_->controls_.size(); index++) {
         if (this->parent().data_->controls_[index].get().data_.get() == this->data_.get()) {
-           this->parent().data_->controls_.erase_at(index);
+          this->parent().data_->controls_.erase_at(index);
           break;
         }
       }
@@ -225,9 +223,16 @@ void control::create_control() {
 void control::destroy_control() {
   this->data_->created_ = false;
   if (this->data_->handle_) {
-    if (this->data_->parent_ == 0) {
+    if (this->data_->parent_ != 0) {
+      for (size_t index = 0; index < this->parent().data_->controls_.size(); index++) {
+        if (this->parent().data_->controls_[index].get().data_->handle_ == this->data_->handle_) {
+          this->parent().data_->controls_.erase_at(index);
+          break;
+        }
+      }
+    } else {
       for (size_t index = 0; index < top_level_controls_.size(); index++) {
-        if (&top_level_controls_[index].get() == this) {
+        if (top_level_controls_[index].get().data_->handle_ == this->data_->handle_) {
           top_level_controls_.erase_at(index);
           break;
         }
@@ -286,9 +291,9 @@ forms::create_params control::create_params() const {
   create_params.style(WS_VISIBLE | WS_CHILD);
   if (this->data_->parent_) create_params.parent(this->parent().data_->handle_);
   create_params.location(this->data_->location_);
-
+  
   create_params.size(this->data_->size_);
-
+  
   return create_params;
 }
 
@@ -368,12 +373,12 @@ void control::on_handle_created(const event_args &e) {
   if (this->data_->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->data_->handle_, this->fore_color());
   if (this->data_->font_.has_value() || this->font() != this->default_font()) native::control::font(this->data_->handle_, this->font());
   //native::control::visible(this->data_->handle_, this->visible());
-
+  
   this->data_->client_rectangle_ = native::control::client_rectangle(this->data_->handle_);
   this->data_->client_size_ = native::control::client_size(this->data_->handle_);
   this->data_->location_ = native::control::location(this->data_->handle_);
   this->data_->size_ = native::control::size(this->data_->handle_);
-
+  
   this->handle_created(*this, e);
 }
 
@@ -523,14 +528,14 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 void control::wnd_proc(message& message) {
   diagnostics::debug::write_line_if(debug_events, strings::format("({}) receive message [{}]", this->data_->name_, message));
   switch (message.msg()) {
-    // keyboard:
+      // keyboard:
     case WM_CHAR:
     case WM_KEYDOWN:
     case WM_KEYUP:
     case WM_SYSCHAR:
     case WM_SYSKEYDOWN:
     case WM_SYSKEYUP: this->wm_key_char(message); break;
-    // mouse events
+      // mouse events
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
     case WM_RBUTTONDOWN:
@@ -551,7 +556,7 @@ void control::wnd_proc(message& message) {
     case WM_KILLFOCUS: this->wm_kill_focus(message); break;
     case WM_MOUSEHWHEEL:
     case WM_MOUSEWHEEL: this->wm_mouse_wheel(message); break;
-    // System events
+      // System events
     case WM_COMMAND: this->wm_command(message); break;
     case WM_PAINT: this->wm_paint(message); break;
     case WM_MOVE: wm_move(message);  break;
@@ -584,9 +589,9 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   if ((specified & bounds_specified::y) == bounds_specified::y) this->data_->location_.y(y);
   if ((specified & bounds_specified::width) == bounds_specified::width) this->data_->size_.width(width);
   if ((specified & bounds_specified::height) == bounds_specified::height) this->data_->size_.height(height);
-
+  
   if (this->control::data_->auto_size_) this->data_->size_ = this->measure_control();
-
+  
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
     native::control::location(this->data_->handle_, this->data_->location_);
     this->on_location_changed(event_args::empty);
@@ -690,13 +695,13 @@ void control::wm_mouse_leave(message& message) {
 void control::wm_mouse_up(message& message) {
   this->def_wnd_proc(message);
   /*
-  if (this->get_state(control::state::double_click_fired)) {
-    this->on_double_click(event_args::empty);
-    this->on_mouse_double_click(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 2, 0));
-  } else {
-    this->on_click(event_args::empty);
-    this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
-  }
+   if (this->get_state(control::state::double_click_fired)) {
+   this->on_double_click(event_args::empty);
+   this->on_mouse_double_click(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 2, 0));
+   } else {
+   this->on_click(event_args::empty);
+   this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
+   }
    */
   if (message_to_mouse_buttons(message) == mouse_buttons::left) this->on_click(event_args::empty);
   this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
@@ -749,3 +754,4 @@ void control::wm_size(message& message) {
   this->on_client_size_changed(event_args::empty);
   this->on_size_changed(event_args::empty);
 }
+
