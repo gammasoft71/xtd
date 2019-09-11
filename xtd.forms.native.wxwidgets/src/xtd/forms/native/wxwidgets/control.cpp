@@ -145,7 +145,6 @@ void control::destroy(intptr_t control) {
   if (wxTheApp) {
     reinterpret_cast<control_handler*>(control)->destroy();
     if (!wxTheApp->IsMainLoopRunning()) {
-      delete reinterpret_cast<control_handler*>(control)->control();
 #if !defined (__WXOSX__)
       wxTheApp->OnExit();
       __wx_initializer__ = nullptr;

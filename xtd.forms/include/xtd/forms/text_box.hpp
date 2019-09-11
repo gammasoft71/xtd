@@ -11,7 +11,7 @@ namespace xtd {
       text_box();
 
       /// @cond
-      text_box(const text_box& value) {*this = value;}
+      text_box(const text_box& value) = default;
       text_box& operator=(const text_box& value);
       /// @endcond
 

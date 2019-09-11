@@ -12,7 +12,7 @@ namespace xtd {
     class button_base : public control {
     public:
       /// @cond
-      button_base(const button_base& value) {*this = value;}
+      button_base(const button_base& value) = default;
       button_base& operator=(const button_base& value);
       /// @endcond
       

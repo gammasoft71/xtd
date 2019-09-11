@@ -11,7 +11,7 @@ namespace xtd {
       radio_button();
 
       /// @cond
-      radio_button(const radio_button& value) {*this = value;}
+      radio_button(const radio_button& value) = default;
       radio_button& operator=(const radio_button& value);
       /// @endcond
 
