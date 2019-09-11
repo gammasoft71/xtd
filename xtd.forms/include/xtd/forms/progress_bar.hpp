@@ -24,7 +24,7 @@ namespace xtd {
       progress_bar();
 
       /// @cond
-      progress_bar(const progress_bar& value) {*this = value;}
+      progress_bar(const progress_bar& value) = default;
       progress_bar& operator=(const progress_bar& value);
       /// @endcond
 

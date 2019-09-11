@@ -11,7 +11,7 @@ namespace xtd {
       group_box();
 
       /// @cond
-      group_box(const group_box& value) {*this = value;}
+      group_box(const group_box& value) = default;
       group_box& operator=(const group_box& value);
       /// @endcond
 

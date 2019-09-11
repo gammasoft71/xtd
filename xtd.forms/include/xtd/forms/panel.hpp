@@ -11,7 +11,7 @@ namespace xtd {
       panel();
 
       /// @cond
-      panel(const panel& value) {*this = value;}
+      panel(const panel& value) = default;
       panel& operator=(const panel& value);
       /// @endcond
 

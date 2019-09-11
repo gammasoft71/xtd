@@ -1,3 +1,34 @@
+#include <xtd/xtd.forms>
+
+using namespace std;
+using namespace xtd;
+using namespace xtd::forms;
+
+int main() {
+  form f;
+  cdebug << format("f.data_ = 0x{:X}, handle = 0x{:X}", (intptr_t)f.control::data_.get(), f.handle()) << endl;
+  //f = control::create<form>("Hello, World!");
+  //cdebug << format("f.data_ = 0x{:X}, handle = 0x{:X}", (intptr_t)f.control::data_.get(), f.handle()) << endl;
+
+  button b;
+  cdebug << format("b.data_ = 0x{:X}, handle = 0x{:X}", (intptr_t)b.control::data_.get(), b.handle()) << endl;
+  b = control::create<button>(f, "Click me", {10, 10});
+  cdebug << format("b.data_ = 0x{:X}, handle = 0x{:X}", (intptr_t)b.control::data_.get(), b.handle()) << endl;
+
+  cdebug << "------------------------------------------------" << endl;
+  for(auto item : control::controls_) {
+    cdebug << format("control::controls[0x{:X}] = {}", (intptr_t)item.first, *item.second) << endl;
+  }
+  
+  cdebug << "------------------------------------------------" << endl;
+  for(auto item : control::handles_) {
+    cdebug << format("control::handles[0x{:X}] = {}", item.first, *item.second) << endl;
+  }
+  
+  application::run(f);
+}
+
+/*
 //#include <xtd/xtd.forms>
 #include <xtd/diagnostics/cdebug.hpp>
 #include <xtd/forms/native/application.hpp>
@@ -61,23 +92,9 @@ control_t create(const std::string& text) {
 }
 
 int main() {
-  /*
-   form f;
-   {
-   form g;
-   g.text("Hello, World!");
-   f = g;
-   }
-   application::run(f);
-   */
-  
-  //auto w1 = create<win>("form1");
-  //xtd::cdebug << xtd::format("w = 0x{:X}", (intptr_t)&w1) << std::endl;
-  //xtd::cdebug << xtd::format("w.handle = 0x{:X}", (intptr_t)w1.handle()) << std::endl;
-  
   application::start_application();
-  //auto w1 = std::make_shared<win>();
-  //w1.reset();
+  auto w1 = std::make_shared<win>();
+  w1.reset();
   
   win w2 = create<win>("form2");
   w2.visible(true);
@@ -85,3 +102,4 @@ int main() {
   application::run();
   application::end_application();
 }
+*/

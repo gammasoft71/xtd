@@ -15,7 +15,7 @@ namespace xtd {
       list_box();
 
       /// @cond
-      list_box(const list_box& value) {*this = value;}
+      list_box(const list_box& value) = default;
       list_box& operator=(const list_box& value);
       /// @endcond
 

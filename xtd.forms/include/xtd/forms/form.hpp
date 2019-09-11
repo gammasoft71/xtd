@@ -12,7 +12,7 @@ namespace xtd {
       form();
 
       /// @cond
-      form(const form& value) {*this = value;}
+      form(const form& value) = default;
       form& operator=(const form& value);
       /// @endcond
 

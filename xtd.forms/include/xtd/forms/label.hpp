@@ -11,7 +11,7 @@ namespace xtd {
       label();
 
       /// @cond
-      label(const label& value) {*this = value;}
+      label(const label& value) = default;
       label& operator=(const label& value);
       /// @endcond
 

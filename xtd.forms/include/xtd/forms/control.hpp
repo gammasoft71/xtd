@@ -114,7 +114,7 @@ namespace xtd {
       
       /// @private
       /// @{
-      control(const control& value) {*this = value;}
+      control(const control& value) = default; //{*this = value;}
       control& operator=(const control& value);
       virtual ~control();
       /// @}
@@ -445,7 +445,8 @@ namespace xtd {
       
       event<control, event_handler<control>> visible_changed;
 
-    protected:
+#pragma message("uncomment protected declaration")
+    //protected:
       friend class application;
       friend class screen;
       

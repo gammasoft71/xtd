@@ -10,7 +10,7 @@ namespace xtd {
       button();
 
       /// @cond
-      button(const button& value) {*this = value;}
+      button(const button& value) = default;
       button& operator=(const button& value);
       /// @endcond
 

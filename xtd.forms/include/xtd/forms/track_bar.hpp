@@ -21,7 +21,7 @@ namespace xtd {
       track_bar();
 
       /// @cond
-      track_bar(const track_bar& value) {*this = value;}
+      track_bar(const track_bar& value) = default;
       track_bar& operator=(const track_bar& value);
       /// @endcond
 

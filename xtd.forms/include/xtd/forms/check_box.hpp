@@ -12,7 +12,7 @@ namespace xtd {
       check_box();
 
       /// @cond
-      check_box(const check_box& value) {*this = value;}
+      check_box(const check_box& value) = default;
       check_box& operator=(const check_box& value);
       /// @endcond
 
