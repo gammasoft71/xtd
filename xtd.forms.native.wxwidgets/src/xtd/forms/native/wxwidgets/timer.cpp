@@ -10,8 +10,10 @@ namespace {
   public:
     wx_timer(const delegate<void(const event_args&)>& tick) : tick_(tick) {
       this->Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-        this->tick_(event_args::empty);
-      });
+        if (event.GetTimer().GetId() == this->GetId())
+          this->tick_(event_args::empty);
+        event.StopPropagation();
+        });
     }
     
   private:
@@ -26,7 +28,6 @@ intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>
 }
 
 void timer::destroy(intptr_t handle) {
-  if (handle == 0) return;
   wx_timer* timer = reinterpret_cast<class wx_timer*>(handle);
   timer->Stop();
   delete timer;
