@@ -19,8 +19,8 @@ void timer::interval(int32_t interval) {
     this->interval_ = interval;
     
     if (this->enabled_ == true) {
-      this->Stop();
-      this->Start();
+      this->stop();
+      this->start();
     }
   }
 }

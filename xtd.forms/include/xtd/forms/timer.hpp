@@ -10,7 +10,7 @@ namespace xtd {
     class timer {
     public:
       timer() = default;
-      ~timer() {this->enabled(false);}
+      ~timer() {this->stop();}
       
       event<timer, event_handler<timer>> tick;
 
@@ -20,9 +20,9 @@ namespace xtd {
       int32_t interval() const {return this->interval_;}
       void interval(int32_t interval);
 
-      void Start() {this->enabled(true);}
+      void start() {this->enabled(true);}
 
-      void Stop() {this->enabled(false);}
+      void stop() {this->enabled(false);}
 
     protected:
       void on_tick(const event_args& e) {this->tick(*this, e);}
