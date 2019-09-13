@@ -9,6 +9,8 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+bool application::message_loop_ = false;
+
 bool application::allow_quit() {
   return native::application::allow_quit();
 }
@@ -34,6 +36,10 @@ string application::company_name() {
 
 string application::executable_path() {
   return environment::get_command_line_args()[0];
+}
+
+bool application::message_loop() {
+  return  message_loop_;
 }
 
 vector<reference_wrapper<form>> application::open_forms() {
@@ -70,7 +76,9 @@ void application::exit() {
 
 void application::run() {
   native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
+  message_loop_ = true;
   native::application::run();
+  message_loop_ = false;
 }
 
 void application::run(const form& form) {

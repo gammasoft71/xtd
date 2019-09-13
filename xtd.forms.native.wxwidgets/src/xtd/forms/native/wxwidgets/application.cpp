@@ -46,7 +46,7 @@ bool application::allow_quit() {
 
 void application::do_events() {
   start_application(); // Must be first
-  wxYield();
+  wxTheApp->Yield();
 }
 
 void application::do_idle() {
