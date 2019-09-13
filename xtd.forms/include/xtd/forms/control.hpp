@@ -364,7 +364,7 @@ namespace xtd {
       
       virtual void refresh() const;
       
-      intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam);
+      intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const;
       
       void set_auto_size_mode(auto_size_mode auto_size_mode);
       
