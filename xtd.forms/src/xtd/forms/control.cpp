@@ -502,7 +502,7 @@ void control::refresh() const {
   native::control::refresh(this->data_->handle_);
 }
 
-intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) {
+intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const {
   return native::control::send_message(this->data_->handle_, hwnd, msg, wparam, lparam);
 }
 
