@@ -60,6 +60,8 @@ namespace xtd {
       /// This path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
       static std::string executable_path();
 
+      static bool message_loop();
+      
       static std::vector<std::reference_wrapper<form>> open_forms();
       
       static std::string product_name();
@@ -89,6 +91,7 @@ namespace xtd {
 
       application() = default;
       static const form* main_form;
+      static bool message_loop_;
     };
   }
 }

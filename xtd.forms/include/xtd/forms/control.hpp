@@ -17,6 +17,7 @@
 #include "auto_size_mode.hpp"
 #include "bounds_specified.hpp"
 #include "control_event_handler.hpp"
+#include "iwin32_window.hpp"
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
 #include "mouse_event_handler.hpp"
@@ -37,7 +38,7 @@ namespace xtd {
     /// @remarks The control class implements very basic functionality required by classes that display information to the user. It handles user input through the keyboard and pointing devices. It handles message routing and security. It defines the bounds of a control (its position and size), although it does not implement painting. It provides a window handle (hWnd).
     /// @remarks Windows Forms controls use ambient properties so child controls can appear like their surrounding environment. An ambient property is a control property that, if not set, is retrieved from the parent control. If the control does not have a parent, and the property is not set, the control attempts to determine the value of the ambient property through the site property. If the control is not sited, if the site does not support ambient properties, or if the property is not set on the ambient_properties, the control uses its own default values. Typically, an ambient property represents a characteristic of a control, such as back_color, that is communicated to a child control. For example, a button will have the same back_color as its parent form by default. Ambient properties provided by the control class include: cursor, font, back_color, fore_color, and right_to_left.
     /// @remarks The majority of the controls in the xtd::forms namespace use the underlying Windows common control as a base to build on.
-    class control {
+    class control : public iwin32_window {
     private:
       enum class state {
         empty = 0,
@@ -226,7 +227,7 @@ namespace xtd {
       virtual drawing::font font() const {return this->data_->font_.value_or(this->data_->parent_ ? this->parent().font() : default_font());}
       virtual control& font(const drawing::font& font);
       
-      virtual intptr_t handle() const;
+      intptr_t handle() const override;
       
       virtual int32_t height() const {return this->data_->size_.height();}
       virtual control& height(int32_t height) {

@@ -4,6 +4,7 @@
 #include <xtd/forms/native/form.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include <xtd/forms/window_messages.hpp>
+#include "../../../include/xtd/forms/application.hpp"
 #include "../../../include/xtd/forms/form.hpp"
 
 using namespace std;
@@ -35,13 +36,36 @@ form& form::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
-void form::close() {
-  native::form::close(this->control::data_->handle_);
+form& form::dialog_result(forms::dialog_result dialog_result) {
+  if (this->data_->dialog_result_ != dialog_result)
+    this->data_->dialog_result_ = dialog_result;
+  return *this;
 }
 
 control& form::parent(const control& parent) {
   throw std::invalid_argument("Top-level control cannot be added to a control.");
   return *this;
+}
+
+void form::close() {
+  native::form::close(this->control::data_->handle_);
+}
+
+forms::dialog_result form::show_dialog() {
+  this->data_->is_dialog_shown_ = true;
+  this->show();
+  if (application::message_loop())
+    return static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_));
+  application::run(*this);
+  return this->data_->dialog_result_;
+}
+
+forms::dialog_result form::show_dialog(const iwin32_window& owner) {
+  this->data_->is_dialog_shown_ = true;
+  if (application::message_loop())
+    return static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_, owner.handle()));
+  application::run(*this);
+  return this->data_->dialog_result_;
 }
 
 forms::create_params form::create_params() const {
@@ -62,10 +86,14 @@ void form::wnd_proc(message &message) {
 
 void form::wm_close(message &message) {
   this->def_wnd_proc(message);
+  this->data_->dialog_result_ = forms::dialog_result::cancel;
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
-  if (event_args.cancel() != true) this->destroy_handle();
-  this->on_form_closed(form_closed_event_args());
+  if (event_args.cancel() != true) {
+    this->on_form_closed(form_closed_event_args());
+    if (this->data_->is_dialog_shown_) native::form::end_dialog(this->control::data_->handle_, static_cast<int32_t>(this->data_->dialog_result_));
+    this->destroy_handle();
+  }
 }
 
 drawing::size form::measure_control() const {

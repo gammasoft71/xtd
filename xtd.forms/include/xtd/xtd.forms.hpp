@@ -27,6 +27,7 @@
 #include "xtd/forms/create_params.hpp"
 #include "xtd/forms/dialog_result.hpp"
 #include "xtd/forms/form.hpp"
+#include "xtd/forms/form_start_position.hpp"
 #include "xtd/forms/form_closed_event_args.hpp"
 #include "xtd/forms/form_closed_event_handler.hpp"
 #include "xtd/forms/form_closing_event_args.hpp"

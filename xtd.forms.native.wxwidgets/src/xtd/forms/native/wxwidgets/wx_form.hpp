@@ -11,10 +11,11 @@ namespace xtd {
       class wx_form : public control_handler {
       public:
         wx_form(const forms::create_params& create_params) {
-          forms::create_params params = create_params;
-          if (params.width() < 75) params.width(75);
-          if (params.height() < 23) params.height(23);
-          this->control_handler::create<wxFrame>(params.parent() ? ((control_handler*)params.parent())->control() : wxTheApp->GetTopWindow(), wxID_ANY, params.caption(), wxPoint(params.x(), params.y()), wxSize(params.width(), params.height()), control_handler::form_to_wx_style(params.style(), params.ex_style()));
+          wxPoint location = wxPoint(create_params.x(), create_params.y());
+          wxSize size = wxSize(create_params.width(), create_params.height());
+          if (size.GetWidth() > -1 && size.GetWidth() < 75) size.SetWidth(75);
+          if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
+          this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : wxTheApp->GetTopWindow(), wxID_ANY, create_params.caption(), location, size, control_handler::form_to_wx_style(create_params.style(), create_params.ex_style()));
           this->button_ = new wxButton(this->control(), wxID_ANY);
           this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
           this->control()->SetForegroundColour(this->button_->GetForegroundColour());
