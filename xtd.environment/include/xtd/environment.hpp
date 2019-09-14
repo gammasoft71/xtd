@@ -2,6 +2,7 @@
 /// @brief Contains xtd::environment class.
 #pragma once
 #include <map>
+#include <cstdlib>
 #include <thread>
 #include <vector>
 
@@ -301,7 +302,7 @@ namespace xtd {
     /// @brief Terminates this process and returns an exit code to the operating system.
     /// @param exit_code The exit code to return to the operating system. Use 0 (zero) to indicate that the process completed successfully.
     /// @remarks For the exit_code parameter, use a non-zero number to indicate an error. In your application, you can define your own error codes in an enumeration, and return the appropriate error code based on the scenario. For example, return a value of 1 to indicate that the required file is not present, and a value of 2 to indicate that the file is in the wrong format.
-    static void exit(int exit_code) noexcept {::exit(exit_code);}
+    static void exit(int exit_code) noexcept {::_Exit(exit_code);}
     
     /// @brief Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.
     /// @param name A string containing the names of zero or more environment variables. Each environment variable is quoted with the percent sign character (%).
