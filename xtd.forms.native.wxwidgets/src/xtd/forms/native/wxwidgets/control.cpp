@@ -27,7 +27,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-extern unique_ptr<wxInitializer> __wx_initializer__;
 extern int32_t __mainloop_runnning__;
 
 color control::back_color(intptr_t control) {
@@ -144,15 +143,13 @@ void control::destroy(intptr_t control) {
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   if (wxTheApp) {
     reinterpret_cast<control_handler*>(control)->destroy();
-    if (!wxTheApp->IsMainLoopRunning()) {
 #if !defined (__WXOSX__)
-      wxTheApp->OnExit();
-      __wx_initializer__ = nullptr;
-      delete wxTheApp;
-      wxApp::SetInstance(nullptr);
-      application::start_application();
+    wxTheApp->wxEvtHandler::ProcessPendingEvents();
+    //if (!wxTheApp->IsMainLoopRunning()) {
+      //application::end_application();
+      //application::start_application();
+    //}
 #endif
-    }
   }
   delete reinterpret_cast<class control_handler*>(control);
 }

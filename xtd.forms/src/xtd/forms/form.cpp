@@ -52,19 +52,17 @@ void form::close() {
 }
 
 forms::dialog_result form::show_dialog() {
-  this->data_->is_dialog_shown_ = true;
-  this->show();
-  if (application::message_loop())
-    return static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_));
-  application::run(*this);
-  return this->data_->dialog_result_;
+  return show_dialog(application::open_forms()[0].get());
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   this->data_->is_dialog_shown_ = true;
+  this->show();
+  if (this->control::data_->parent_) this->control::data_->parent_ = owner.handle();
   if (application::message_loop())
     return static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_, owner.handle()));
   application::run(*this);
+  this->data_->is_dialog_shown_ = false;
   return this->data_->dialog_result_;
 }
 
@@ -90,8 +88,10 @@ void form::wm_close(message &message) {
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
-    this->on_form_closed(form_closed_event_args());
-    if (this->data_->is_dialog_shown_) native::form::end_dialog(this->control::data_->handle_, static_cast<int32_t>(this->data_->dialog_result_));
+    if (this->data_->is_dialog_shown_) {
+      native::form::end_dialog(this->control::data_->handle_, static_cast<int32_t>(this->data_->dialog_result_));
+      this->data_->is_dialog_shown_ = false;
+    }
     this->destroy_handle();
   }
 }

@@ -44,14 +44,20 @@ bool application::message_loop() {
 
 vector<reference_wrapper<form>> application::open_forms() {
   vector<reference_wrapper<form>> forms;
+  for (auto control : control::top_level_controls_)
+    forms.push_back(static_cast<form&>(control.get()));
+  return forms;
+
+  /*
+  vector<reference_wrapper<form>> forms;
   
   for (intptr_t handle : native::application::open_forms()) {
     control& control = control::from_handle(handle);
     forms.push_back(static_cast<form&>(control));
   }
   return forms;
+   */
 }
-
 
 string application::product_name() {
   if (!strings::is_empty(application_informations::product_name())) return application_informations::product_name();
@@ -71,7 +77,23 @@ void application::end() {
 }
 
 void application::exit() {
-  native::application::exit();
+  bool cancel_exit = false;
+  for (auto f : application::open_forms()) {
+    form_closing_event_args e;
+    f.get().on_form_closing(e);
+    if (e.cancel()) {
+      cancel_exit = true;
+      break;
+    }
+  }
+  
+  if (!cancel_exit) {
+    for (auto f : application::open_forms()) {
+      form_closed_event_args e;
+      f.get().on_form_closed(e);
+    }
+    native::application::exit();
+  }
 }
 
 void application::run() {
@@ -82,8 +104,8 @@ void application::run() {
 }
 
 void application::run(const form& form) {
-  const_cast<forms::form&>(form).visible(true);
   native::application::main_form(form.control::data_->handle_);
+  const_cast<forms::form&>(form).show();
   run();
 }
 
