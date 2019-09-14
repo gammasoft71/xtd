@@ -20,6 +20,14 @@ namespace xtd {
           this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
           this->control()->SetForegroundColour(this->button_->GetForegroundColour());
           this->button_->Hide();
+          this->control()->Bind(wxEVT_ACTIVATE, [&](wxActivateEvent& event) {
+            if (!this->control()->IsEnabled())
+              event.StopPropagation();
+          });
+          this->control()->Bind(wxEVT_SET_FOCUS, [&](wxFocusEvent& event) {
+            if (!this->control()->IsEnabled())
+              event.StopPropagation();
+          });
           this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
             if (!this->wnd_proc.is_empty())
               event.Veto();
