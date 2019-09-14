@@ -39,5 +39,6 @@ int32_t form::show_dialog(intptr_t form, intptr_t owner) {
 }
 
 void form::end_dialog(intptr_t form, int32_t result) {
-  dialog_event_loops[form]->ScheduleExit(result);
+  if (dialog_event_loops.find(form) != dialog_event_loops.end())
+    dialog_event_loops[form]->ScheduleExit(result);
 }

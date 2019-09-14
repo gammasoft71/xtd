@@ -28,16 +28,9 @@ namespace {
       return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
     }
     
-    bool OnInit() override {
-      return true;
-    }
-    
     event<wx_application, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
   };
 }
-
-unique_ptr<wxInitializer> __wx_initializer__;
-int32_t __mainloop_runnning__ = 0; // 0 : started, 1 : running, 2 : stop
 
 bool application::allow_quit() {
   start_application(); // Must be first
@@ -61,22 +54,41 @@ void application::enable_visual_style() {
 void application::end_application() {
   if (wxTheApp) {
     wxTheApp->OnExit();
-    __wx_initializer__ = nullptr;
+    wxEntryCleanup();
     delete wxTheApp;
     wxApp::SetInstance(nullptr);
   }
 }
 
 void application::exit() {
-  start_application(); // Must be first
-  wxExit();
+  if (wxTheApp)
+    wxTheApp->Exit();
 }
 
 void application::start_application() {
   if (wxTheApp) return;
   wxApp::SetInstance(new wx_application());
-  __wx_initializer__ = make_unique<wxInitializer>();
+  int argc = 0;
+  wxEntryStart(argc, (wxChar**)NULL);
   wxTheApp->CallOnInit();
+#if __WXOSX__
+  wxMenuBar* menubar = new wxMenuBar();
+  wxMenu* menuWindow = new wxMenu();
+  wxMenuItem* aboutMenuItem = new wxMenuItem(menuWindow, wxID_ANY, "About");
+  
+  menubar->Append(menuWindow, "Window");
+  menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
+    if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
+    if (event.GetId() == wxID_EXIT) wxTheApp->GetTopWindow()->Close();
+    else event.Skip();
+  });
+  
+  wxApp::s_macAboutMenuItemId = aboutMenuItem->GetId();
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+  wxApp::s_macWindowMenuTitleName = "Window";
+#endif
+  wxMenuBar::MacSetCommonMenuBar(menubar);
+#endif
 }
 
 intptr_t application::main_form() {
@@ -104,32 +116,10 @@ void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, i
 
 void application::run() {
   start_application(); // Must be first
-#if __WXOSX__
-  wxMenuBar* menubar = new wxMenuBar();
-  wxMenu* menuWindow = new wxMenu();
-  wxMenuItem* aboutMenuItem = new wxMenuItem(menuWindow, wxID_ANY, "About");
-  
-  menubar->Append(menuWindow, "Window");
-  menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-    if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
-    if (event.GetId() == wxID_EXIT) wxTheApp->GetTopWindow()->Close();
-    else event.Skip();
-  });
-  
-  wxApp::s_macAboutMenuItemId = aboutMenuItem->GetId();
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
-  wxApp::s_macWindowMenuTitleName = "Window";
-#endif
-  wxMenuBar::MacSetCommonMenuBar(menubar);
-#endif
+  struct uninitializer {
+    ~uninitializer() {application::end_application();}
+  } uninitializer;
   static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
-  struct call_on_exit {
-    ~call_on_exit() {
-      end_application();
-    }
-  } call_on_exit;
-  __mainloop_runnning__ = 1;
   wxTheApp->OnRun();
-  __mainloop_runnning__ = 2;
   static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
 }
