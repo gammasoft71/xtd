@@ -59,11 +59,15 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   this->data_->is_dialog_shown_ = true;
   this->show();
   if (this->control::data_->parent_) this->control::data_->parent_ = owner.handle();
+  native::control::enabled(owner.handle(), false);
+  forms::dialog_result result = this->data_->dialog_result_;
   if (application::message_loop())
-    return static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_, owner.handle()));
-  application::run(*this);
+    result = static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_, owner.handle()));
+  else
+    application::run(*this);
   this->data_->is_dialog_shown_ = false;
-  return this->data_->dialog_result_;
+  native::control::enabled(owner.handle(), true);
+  return result;
 }
 
 forms::create_params form::create_params() const {
@@ -76,9 +80,11 @@ forms::create_params form::create_params() const {
 }
 
 void form::wnd_proc(message &message) {
-  switch (message.msg()) {
-    case WM_CLOSE: this->wm_close(message); break;
-    default: this->control::wnd_proc(message); break;
+  if (this->enabled()) {
+    switch (message.msg()) {
+      case WM_CLOSE: this->wm_close(message); break;
+      default: this->control::wnd_proc(message); break;
+    }
   }
 }
 
@@ -88,11 +94,10 @@ void form::wm_close(message &message) {
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
-    if (this->data_->is_dialog_shown_) {
+    if (this->data_->is_dialog_shown_)
       native::form::end_dialog(this->control::data_->handle_, static_cast<int32_t>(this->data_->dialog_result_));
-      this->data_->is_dialog_shown_ = false;
-    }
-    this->destroy_handle();
+    else
+      this->destroy_handle();
   }
 }
 
