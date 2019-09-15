@@ -78,7 +78,6 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   this->parent_ = owner.handle();
   this->recreate_handle();
   this->show();
-  native::control::enabled(owner.handle(), false);
   forms::dialog_result result = this->dialog_result_ = forms::dialog_result::none;
   if (application::message_loop())
     result = static_cast<forms::dialog_result>(native::form::show_dialog(this->handle_));
@@ -88,7 +87,6 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   this->parent_ = current_parent;
   this->hide();
   this->recreate_handle();
-  native::control::enabled(owner.handle(), true);
   return result;
 }
 
