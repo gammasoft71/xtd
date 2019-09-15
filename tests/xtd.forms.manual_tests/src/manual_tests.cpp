@@ -7,15 +7,14 @@ using namespace xtd::forms;
 
 int main() {
   auto form1 = control::create<form>("form1");
-  auto button1 = control::create<button>(form1, "dialog", {10, 10});
+  auto button1 = control::create<button>(form1, "Dialog", {10, 10});
   button1.click += [&] {
     auto dialog = control::create<form>("dialog", {200, 400});
     auto button_ok = control::create<button>(dialog, "OK", {10, 10});
-    cdebug << format("button_ok[0x{:X}] = {}", button_ok.handle(), button_ok) << endl;
-    cdebug << format("button_ok.parent[0x{:X} = {}", button_ok.parent().handle(), button_ok.parent()) << endl;
-    cdebug << format("button_ok.top_level_control[0x{:X}] = {}", button_ok.top_level_control().handle(), button_ok.top_level_control()) << endl;
-    button_ok.dialog_result(forms::dialog_result::oK);
-    
+    button_ok.dialog_result(forms::dialog_result::ok);
+    auto button_cancel = control::create<button>(dialog, "Cancel", {100, 10});
+    button_cancel.dialog_result(forms::dialog_result::cancel);
+
     cdebug << format("dialog_result = {}", dialog.show_dialog()) << endl;
   };
   application::run(form1);
