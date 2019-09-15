@@ -5,13 +5,19 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class wx_timer : public wxTimer {
+      class wx_timer {
       public:
-        wx_timer(delegate<void(const event_args&)> tick) : wxTimer(), tick_(tick) {}
+        wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
+          this->timer_.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
+            this->tick_(event_args::empty);
+          });
+        }
+        
+        wxTimer& timer() {return this->timer_;}
         
       private:
-        void Notify() override {this->tick_(event_args::empty);}
         delegate<void(const event_args&)> tick_;
+        wxTimer timer_;
       };
     }
   }
