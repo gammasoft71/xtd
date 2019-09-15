@@ -38,6 +38,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_progress_bar.hpp
   src/xtd/forms/native/wxwidgets/wx_radio_button.hpp
   src/xtd/forms/native/wxwidgets/wx_text_box.hpp
+  src/xtd/forms/native/wxwidgets/wx_timer.hpp
   src/xtd/forms/native/wxwidgets/wx_track_bar.hpp
 )
 

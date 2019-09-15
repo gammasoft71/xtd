@@ -1,25 +1,9 @@
 #include <stdexcept>
 #include <xtd/forms/native/timer.hpp>
-#include <wx/timer.h>
+#include "wx_timer.hpp"
 
 using namespace xtd;
 using namespace xtd::forms::native;
-
-namespace {
-  class wx_timer : public wxTimer {
-  public:
-    wx_timer(const delegate<void(const event_args&)>& tick) : tick_(tick) {
-      this->Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-        if (event.GetTimer().GetId() == this->GetId())
-          this->tick_(event_args::empty);
-        event.StopPropagation();
-        });
-    }
-    
-  private:
-    delegate<void(const event_args&)> tick_;
-  };
-}
 
 intptr_t timer::create(int32_t interval, const delegate<void(const event_args&)>& tick) {
   wx_timer* timer = new class wx_timer(tick);

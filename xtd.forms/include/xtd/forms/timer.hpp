@@ -29,7 +29,7 @@ namespace xtd {
       void stop() {this->enabled(false);}
 
     protected:
-      void on_tick(const event_args& e) {this->tick(*this, e);}
+      void on_tick(const event_args& e);
       
     private:
       bool enabled_ = false;
