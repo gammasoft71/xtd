@@ -43,88 +43,44 @@ namespace {
 const control control::null {"null", true};
 
 map<intptr_t, control*> control::handles_;
-std::map<control::data*, std::shared_ptr<control>> control::controls_;
 control::control_collection control::top_level_controls_;
 
 control::control() {
-  make_control(*this);
   native::control::init();
-  this->data_->size_ = this->default_size();
-  this->data_->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
-    item.get().data_->parent_ = this->data_->handle_;
-    if (this->data_->handle_) {
+  this->size_ = this->default_size();
+  this->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
+    item.get().parent_ = this->handle_;
+    if (this->handle_) {
       item.get().create_control();
-      if (item.get().data_->handle_) native::control::parent(item.get().data_->handle_, this->data_->handle_);
+      if (item.get().handle_) native::control::parent(item.get().handle_, this->handle_);
       item.get().on_parent_changed(event_args::empty);
       this->on_control_added(control_event_args(item.get()));
     }
   };
   
-  this->data_->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
-    item.get().data_->parent_ = 0;
+  this->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
+    item.get().parent_ = 0;
     item.get().destroy_handle();
     this->on_control_removed(control_event_args(item.get()));
   };
 }
 
-control& control::operator=(const control& value) {
-  if (this->data_->handle_)
-    this->destroy_control();
-  controls_.erase(this->data_.get());
-  
-  this->back_color_changed = value.back_color_changed;
-  this->click = value.click;
-  this->auto_size_changed = value.auto_size_changed;
-  this->client_size_changed = value.client_size_changed;
-  this->double_click = value.double_click;
-  this->got_focus = value.got_focus;
-  this->handle_created = value.handle_created;
-  this->handle_destroyed = value.handle_destroyed;
-  this->enabled_changed = value.enabled_changed;
-  this->fore_color_changed = value.fore_color_changed;
-  this->font_changed = value.font_changed;
-  this->key_down = value.key_down;
-  this->key_press = value.key_press;
-  this->key_up = value.key_up;
-  this->location_changed = value.location_changed;
-  this->lost_focus = value.lost_focus;
-  this->mouse_click = value.mouse_click;
-  this->mouse_double_click = value.mouse_double_click;
-  this->mouse_down = value.mouse_down;
-  this->mouse_enter = value.mouse_enter;
-  this->mouse_horizontal_wheel = value.mouse_horizontal_wheel;
-  this->mouse_leave = value.mouse_leave;
-  this->mouse_move = value.mouse_move;
-  this->mouse_up = value.mouse_up;
-  this->mouse_wheel = value.mouse_wheel;
-  this->paint = value.paint;
-  this->parent_changed = value.parent_changed;
-  this->size_changed = value.size_changed;
-  this->text_changed = value.text_changed;
-  this->visible_changed = value.visible_changed;
-  this->data_ = value.data_;
-  return *this;
-}
-
 control::~control() {
-  if (this->data_.use_count() == 2) {
-    controls_.erase(this->data_.get());
-    destroy_control();
-  }
+  destroy_control();
 }
 
 control& control::auto_size(bool auto_size) {
-  if (this->data_->auto_size_ != auto_size) {
-    this->data_->auto_size_ = auto_size;
+  if (this->auto_size_ != auto_size) {
+    this->auto_size_ = auto_size;
     this->on_auto_size_changed(event_args::empty);
   }
   return *this;
 }
 
 control& control::back_color(const color& color) {
-  if (this->data_->back_color_ != color) {
-    this->data_->back_color_ = color;
-    native::control::back_color(this->data_->handle_, this->data_->back_color_.value());
+  if (this->back_color_ != color) {
+    this->back_color_ = color;
+    native::control::back_color(this->handle_, this->back_color_.value());
     this->on_back_color_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_back_color_changed(event_args::empty);
@@ -145,18 +101,18 @@ drawing::font control::default_font() const {
 }
 
 control& control::enabled(bool enabled) {
-  if (this->data_->enabled_ != enabled) {
-    this->data_->enabled_ = enabled;
-    native::control::enabled(this->data_->handle_, this->data_->enabled_);
+  if (this->enabled_ != enabled) {
+    this->enabled_ = enabled;
+    native::control::enabled(this->handle_, this->enabled_);
     this->on_enabled_changed(event_args::empty);
   }
   return *this;
 }
 
 control& control::fore_color(const color& color) {
-  if (this->data_->fore_color_ != color) {
-    this->data_->fore_color_ = color;
-    native::control::fore_color(this->data_->handle_, this->data_->fore_color_.value());
+  if (this->fore_color_ != color) {
+    this->fore_color_ = color;
+    native::control::fore_color(this->handle_, this->fore_color_.value());
     this->on_fore_color_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
@@ -165,9 +121,9 @@ control& control::fore_color(const color& color) {
 }
 
 control& control::font(const drawing::font& font) {
-  if (this->data_->font_ != font) {
-    this->data_->font_ = font;
-    native::control::font(this->data_->handle_, this->data_->font_.value());
+  if (this->font_ != font) {
+    this->font_ = font;
+    native::control::font(this->handle_, this->font_.value());
     this->on_font_changed(event_args::empty);
     for (auto control : this->controls())
       control.get().on_parent_font_changed(event_args::empty);
@@ -176,72 +132,72 @@ control& control::font(const drawing::font& font) {
 }
 
 intptr_t control::handle() const {
-  return this->data_->handle_;
+  return this->handle_;
 }
 
 control& control::parent(const control& parent) {
   if (&this->parent() != &parent) {
-    if (this->data_->parent_ != 0) {
-      for (size_t index = 0; index < this->parent().data_->controls_.size(); index++) {
-        if (this->parent().data_->controls_[index].get().data_.get() == this->data_.get()) {
-          this->parent().data_->controls_.erase_at(index);
+    if (this->parent_ != 0) {
+      for (size_t index = 0; index < this->parent().controls_.size(); index++) {
+        if (&this->parent().controls_[index].get() == this) {
+          this->parent().controls_.erase_at(index);
           break;
         }
       }
     }
-    if (&parent != &control::null) const_cast<control&>(parent).data_->controls_.push_back(ref_control(*controls_[this->control::data_.get()]));
+    if (&parent != &control::null) const_cast<control&>(parent).controls_.push_back(ref_control(*this));
   }
   return *this;
 }
 
 control& control::text(const string& text) {
-  if (this->data_->text_ != text) {
-    this->data_->text_ = text;
-    native::control::text(this->data_->handle_, this->data_->text_);
+  if (this->text_ != text) {
+    this->text_ = text;
+    native::control::text(this->handle_, this->text_);
   }
   return *this;
 }
 
 control& control::top_level_control() const {
   control* top_level_control = const_cast<control*>(this);
-  while (dynamic_cast<form*>(top_level_control) == nullptr && top_level_control->data_->parent_ != 0) {
+  while (dynamic_cast<form*>(top_level_control) == nullptr && top_level_control->parent_ != 0) {
     top_level_control = &top_level_control->parent();
   }
   return *top_level_control;
 }
 
 control& control::visible(bool visible) {
-  if (this->data_->visible_ != visible) {
-    this->data_->visible_ = visible;
-    native::control::visible(this->data_->handle_, this->data_->visible_);
+  if (this->visible_ != visible) {
+    this->visible_ = visible;
+    native::control::visible(this->handle_, this->visible_);
     this->on_visible_changed(event_args::empty);
   }
   return *this;
 }
 
 void control::create_control() {
-  this->data_->created_ = true;
-  if (!this->data_->handle_) {
+  this->created_ = true;
+  if (!this->handle_) {
     this->create_handle();
-    if (!this->data_->parent_) top_level_controls_.push_back(ref_control(*controls_[this->control::data_.get()]));
-    this->send_message(this->data_->handle_, WM_CREATE, 0, 0);
+    if (!this->parent_) top_level_controls_.push_back(ref_control(*this));
+    this->send_message(this->handle_, WM_CREATE, 0, 0);
     this->on_create_control();
   }
 }
 
 void control::destroy_control() {
-  this->data_->created_ = false;
-  if (this->data_->handle_) {
-    if (this->data_->parent_ != 0) {
-      for (size_t index = 0; index < this->parent().data_->controls_.size(); index++) {
-        if (this->parent().data_->controls_[index].get().data_->handle_ == this->data_->handle_) {
-          this->parent().data_->controls_.erase_at(index);
+  this->created_ = false;
+  if (this->handle_) {
+    if (this->parent_ != 0) {
+      for (size_t index = 0; index < this->parent().controls_.size(); index++) {
+        if (this->parent().controls_[index].get().handle_ == this->handle_) {
+          this->parent().controls_.erase_at(index);
           break;
         }
       }
     } else {
       for (size_t index = 0; index < top_level_controls_.size(); index++) {
-        if (top_level_controls_[index].get().data_->handle_ == this->data_->handle_) {
+        if (top_level_controls_[index].get().handle_ == this->handle_) {
           top_level_controls_.erase_at(index);
           break;
         }
@@ -252,17 +208,17 @@ void control::destroy_control() {
 }
 
 graphics control::create_graphics() const {
-  return graphics(native::control::create_graphics(this->data_->handle_));
+  return graphics(native::control::create_graphics(this->handle_));
 }
 
 void control::create_handle() {
-  this->data_->handle_ = native::control::create(this->create_params());
+  this->handle_ = native::control::create(this->create_params());
   this->on_handle_created(event_args::empty);
 }
 
 void control::destroy_handle() {
-  this->internal_destroy_handle(this->data_->handle_);
-  this->data_->handle_ = 0;
+  this->internal_destroy_handle(this->handle_);
+  this->handle_ = 0;
 }
 
 control& control::from_child_handle(intptr_t handle) {
@@ -286,7 +242,7 @@ control& control::from_handle(intptr_t handle) {
 }
 
 bool control::is_handle_created() const {
-  return this->data_->handle_ != 0;
+  return this->handle_ != 0;
 }
 
 bool control::is_null() const {
@@ -296,22 +252,22 @@ bool control::is_null() const {
 forms::create_params control::create_params() const {
   forms::create_params create_params;
   
-  create_params.caption(this->data_->text_);
+  create_params.caption(this->text_);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (this->data_->parent_) create_params.parent(this->parent().data_->handle_);
-  create_params.location(this->data_->location_);
+  if (this->parent_) create_params.parent(this->parent().handle_);
+  create_params.location(this->location_);
   
-  create_params.size(this->data_->size_);
+  create_params.size(this->size_);
   
   return create_params;
 }
 
 drawing::size control::measure_control() const {
-  return this->data_->client_size_;
+  return this->client_size_;
 }
 
 drawing::size control::measure_text() const {
-  return drawing::size::ceiling(this->create_graphics().measure_string(this->control::data_->text_, this->font())) + drawing::size(2, 1);
+  return drawing::size::ceiling(this->create_graphics().measure_string(this->text_, this->font())) + drawing::size(2, 1);
 }
 
 void control::on_auto_size_changed(const event_args& e) {
@@ -325,7 +281,7 @@ void control::on_back_color_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
-  for (auto control : this->data_->controls_)
+  for (auto control : this->controls_)
     control.get().create_control();
 }
 
@@ -334,17 +290,17 @@ void control::on_click(const event_args &e) {
 }
 
 void control::on_client_size_changed(const event_args &e) {
-  this->data_->client_size_ = native::control::client_size(this->data_->handle_);
+  this->client_size_ = native::control::client_size(this->handle_);
   this->client_size_changed(*this, e);
 }
 
 void control::on_control_added(const control_event_args &e) {
-  if (this->control::data_->auto_size_) this->set_auto_size_size();
+  if (this->auto_size_) this->set_auto_size_size();
   this->control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  if (this->control::data_->auto_size_) this->set_auto_size_size();
+  if (this->auto_size_) this->set_auto_size_size();
   this->control_removed(*this, e);
 }
 
@@ -353,7 +309,7 @@ void control::on_double_click(const event_args &e) {
 }
 
 void control::on_enabled_changed(const event_args &e) {
-  this->data_->enabled_ = native::control::enabled(this->data_->handle_);
+  this->enabled_ = native::control::enabled(this->handle_);
   this->refresh();
   this->enabled_changed(*this, e);
 }
@@ -364,8 +320,8 @@ void control::on_fore_color_changed(const event_args &e) {
 }
 
 void control::on_font_changed(const event_args &e) {
-  if (this->control::data_->auto_size_) this->set_auto_size_size();
-  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
+  if (this->auto_size_) this->set_auto_size_size();
+  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
   this->refresh();
   this->font_changed(*this, e);
 }
@@ -375,18 +331,18 @@ void control::on_got_focus(const event_args &e) {
 }
 
 void control::on_handle_created(const event_args &e) {
-  native::control::register_wnd_proc(this->data_->handle_, {*controls_[this->control::data_.get()], &control::wnd_proc_});
-  handles_[this->data_->handle_] = controls_[this->control::data_.get()].get();
-  if (this->data_->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->data_->handle_, this->client_size());
-  if ((this->data_->back_color_.has_value() && this->data_->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->data_->handle_, this->back_color());
-  if (this->data_->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->data_->handle_, this->fore_color());
-  if (this->data_->font_.has_value() || this->font() != this->default_font()) native::control::font(this->data_->handle_, this->font());
-  native::control::visible(this->data_->handle_, this->visible());
+  native::control::register_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
+  handles_[this->handle_] = this;
+  if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
+  if ((this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->handle_, this->back_color());
+  if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
+  if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(this->handle_, this->font());
+  native::control::visible(this->handle_, this->visible());
   
-  this->data_->client_rectangle_ = native::control::client_rectangle(this->data_->handle_);
-  this->data_->client_size_ = native::control::client_size(this->data_->handle_);
-  this->data_->location_ = native::control::location(this->data_->handle_);
-  this->data_->size_ = native::control::size(this->data_->handle_);
+  this->client_rectangle_ = native::control::client_rectangle(this->handle_);
+  this->client_size_ = native::control::client_size(this->handle_);
+  this->location_ = native::control::location(this->handle_);
+  this->size_ = native::control::size(this->handle_);
   
   this->handle_created(*this, e);
 }
@@ -408,8 +364,8 @@ void control::on_key_up(key_event_args& e) {
 }
 
 void control::on_location_changed(const event_args &e) {
-  if (this->data_->handle_ != 0) this->data_->location_ = native::control::location(this->data_->handle_);
-  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
+  if (this->handle_ != 0) this->location_ = native::control::location(this->handle_);
+  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
   this->location_changed(*this, e);
 }
 
@@ -458,11 +414,11 @@ void control::on_paint(paint_event_args &e) {
 }
 
 void control::on_parent_back_color_changed(const event_args &e) {
-  if (!this->data_->back_color_.has_value()) {
+  if (!this->back_color_.has_value()) {
     if (this->back_color() == this->default_back_color())
       this->recreate_handle();
     else if (!environment::os_version().is_osx_platform())
-      native::control::back_color(this->data_->handle_, this->back_color());
+      native::control::back_color(this->handle_, this->back_color());
     for (auto control : this->controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
@@ -473,58 +429,58 @@ void control::on_parent_changed(const event_args &e) {
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
-  if (!this->data_->fore_color_.has_value()) {
-    native::control::fore_color(this->data_->handle_, this->fore_color());
+  if (!this->fore_color_.has_value()) {
+    native::control::fore_color(this->handle_, this->fore_color());
     for (auto control : this->controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
   }
 }
 
 void control::on_parent_font_changed(const event_args &e) {
-  if (!this->data_->font_.has_value()) {
-    native::control::font(this->data_->handle_, this->font());
+  if (!this->font_.has_value()) {
+    native::control::font(this->handle_, this->font());
     for (auto control : this->controls())
       control.get().on_parent_font_changed(event_args::empty);
   }
 }
 
 void control::on_size_changed(const event_args &e) {
-  if (this->data_->handle_ != 0) this->data_->size_ = native::control::size(this->data_->handle_);
-  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
+  if (this->handle_ != 0) this->size_ = native::control::size(this->handle_);
+  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
   this->refresh();
   this->size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
-  if (this->control::data_->auto_size_) this->set_auto_size_size();
-  if (this->data_->parent_ && this->parent().control::data_->auto_size_) this->parent().set_auto_size_size();
+  if (this->auto_size_) this->set_auto_size_size();
+  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
   this->text_changed(*this, e);
 }
 
 void control::on_visible_changed(const event_args &e) {
-  this->data_->visible_ = native::control::visible(this->data_->handle_);
+  this->visible_ = native::control::visible(this->handle_);
   this->refresh();
   this->visible_changed(*this, e);
 }
 
 void control::refresh() const {
-  native::control::refresh(this->data_->handle_);
+  native::control::refresh(this->handle_);
 }
 
 intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const {
-  return native::control::send_message(this->data_->handle_, hwnd, msg, wparam, lparam);
+  return native::control::send_message(this->handle_, hwnd, msg, wparam, lparam);
 }
 
 void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
-  if (this->data_->auto_size_mode_ != auto_size_mode) {
-    this->data_->auto_size_mode_ = auto_size_mode;
+  if (this->auto_size_mode_ != auto_size_mode) {
+    this->auto_size_mode_ = auto_size_mode;
     this->set_auto_size_size();
   }
 }
 
 string control::to_string() const {
-  if (!this->data_->name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), this->data_->name_);
-  if (!this->data_->text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), this->data_->text_);
+  if (!this->name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), this->name_);
+  if (!this->text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), this->text_);
   return strings::full_class_name(*this);
 }
 
@@ -535,7 +491,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 }
 
 void control::wnd_proc(message& message) {
-  diagnostics::debug::write_line_if(debug_events, strings::format("({}) receive message [{}]", this->data_->name_, message));
+  diagnostics::debug::write_line_if(debug_events, strings::format("({}) receive message [{}]", this->name_, message));
   switch (message.msg()) {
       // keyboard:
     case WM_CHAR:
@@ -578,57 +534,57 @@ void control::wnd_proc(message& message) {
 }
 
 void control::def_wnd_proc(message& message) {
-  message.result(native::control::def_wnd_proc(this->data_->handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
+  message.result(native::control::def_wnd_proc(this->handle_, message.hwnd(), message.msg(),message.wparam(), message.lparam(), message.result(), message.handle()));
 }
 
 void control::recreate_handle() {
-  if (this->data_->handle_ != 0) {
-    intptr_t handle = this->data_->handle_;
+  if (this->handle_ != 0) {
+    intptr_t handle = this->handle_;
     auto controls = this->controls();
     this->internal_destroy_handle(handle);
-    this->data_->handle_ = 0;
+    this->handle_ = 0;
     this->create_handle();
     for (auto control : controls)
-      native::control::parent(control.get().data_->handle_, this->data_->handle_);
+      native::control::parent(control.get().handle_, this->handle_);
   }
 }
 
 void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
-  if ((specified & bounds_specified::x) == bounds_specified::x) this->data_->location_.x(x);
-  if ((specified & bounds_specified::y) == bounds_specified::y) this->data_->location_.y(y);
-  if ((specified & bounds_specified::width) == bounds_specified::width) this->data_->size_.width(width);
-  if ((specified & bounds_specified::height) == bounds_specified::height) this->data_->size_.height(height);
+  if ((specified & bounds_specified::x) == bounds_specified::x) this->location_.x(x);
+  if ((specified & bounds_specified::y) == bounds_specified::y) this->location_.y(y);
+  if ((specified & bounds_specified::width) == bounds_specified::width) this->size_.width(width);
+  if ((specified & bounds_specified::height) == bounds_specified::height) this->size_.height(height);
   
-  if (this->control::data_->auto_size_) this->data_->size_ = this->measure_control();
+  if (this->auto_size_) this->size_ = this->measure_control();
   
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
-    native::control::location(this->data_->handle_, this->data_->location_);
+    native::control::location(this->handle_, this->location_);
     this->on_location_changed(event_args::empty);
   }
   
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
-    native::control::size(this->data_->handle_, this->data_->size_);
+    native::control::size(this->handle_, this->size_);
     this->on_client_size_changed(event_args::empty);
     this->on_size_changed(event_args::empty);
   }
 }
 
 void control::set_client_size_core(int32_t width, int32_t height) {
-  this->data_->client_size_.width(width);
-  this->data_->client_size_.height(height);
+  this->client_size_.width(width);
+  this->client_size_.height(height);
   
-  native::control::client_size(this->data_->handle_, this->data_->client_size_);
-  if (this->control::data_->auto_size_) {
-    this->data_->size_ = native::control::size(this->data_->handle_);
-    this->data_->size_ = this->measure_control();
-    native::control::size(this->data_->handle_, this->data_->size_);
+  native::control::client_size(this->handle_, this->client_size_);
+  if (this->auto_size_) {
+    this->size_ = native::control::size(this->handle_);
+    this->size_ = this->measure_control();
+    native::control::size(this->handle_, this->size_);
   }
   this->on_client_size_changed(event_args::empty);
   this->on_size_changed(event_args::empty);
 }
 
 void control::internal_destroy_handle(intptr_t handle) {
-  if (this->data_->handle_) native::control::unregister_wnd_proc(this->data_->handle_, {*controls_[this->control::data_.get()], &control::wnd_proc_});
+  if (this->handle_) native::control::unregister_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
   handles_.erase(handle);
   native::control::destroy(handle);
   this->on_handle_destroyed(event_args::empty);
@@ -636,10 +592,10 @@ void control::internal_destroy_handle(intptr_t handle) {
 
 void control::set_auto_size_size() {
   drawing::size auto_size_size_ = this->measure_control();
-  if (this->control::data_->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.width() < this->control::data_->client_size_.width())
-    auto_size_size_.width(this->control::data_->client_size_.width());
-  if (this->control::data_->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.height() < this->control::data_->client_size_.height())
-    auto_size_size_.height(this->control::data_->client_size_.height());
+  if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.width() < this->client_size_.width())
+    auto_size_size_.width(this->client_size_.width());
+  if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.height() < this->client_size_.height())
+    auto_size_size_.height(this->client_size_.height());
   this->client_size(auto_size_size_);
 }
 
@@ -737,7 +693,7 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   this->def_wnd_proc(message);
-  paint_event_args e(this->data_->client_rectangle_, *this);
+  paint_event_args e(this->client_rectangle_, *this);
   this->on_paint(e);
 }
 
@@ -754,7 +710,7 @@ void control::wm_set_focus(message& message) {
 
 void control::wm_set_text(message& message) {
   this->def_wnd_proc(message);
-  this->data_->text_ = reinterpret_cast<const char*>(message.lparam());
+  this->text_ = reinterpret_cast<const char*>(message.lparam());
   this->on_text_changed(event_args::empty);
 }
 

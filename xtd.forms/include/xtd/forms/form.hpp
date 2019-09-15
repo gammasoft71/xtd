@@ -21,20 +21,15 @@ namespace xtd {
     public:
       form();
 
-      /// @cond
-      form(const form& value) = default;
-      form& operator=(const form& value);
-      /// @endcond
-
-      forms::auto_size_mode auto_size_mode() const {return this->control::data_->auto_size_mode_;}
+      forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
       virtual form& auto_size_mode(forms::auto_size_mode value);
       
       drawing::size default_size() const override {return{300, 300};}
       
-      forms::dialog_result dialog_result() const {return this->data_->dialog_result_;}
+      forms::dialog_result dialog_result() const {return this->dialog_result_;}
       form& dialog_result(forms::dialog_result dialog_result);
 
-      bool modal() const {return this->data_->modal_;}
+      bool modal() const {return this->modal_;}
       
       using control::parent;
       control& parent(const control& parent) override;
@@ -65,14 +60,9 @@ namespace xtd {
       
       virtual void wm_close(message& message);
 
-    private:
-      struct data {
-        forms::dialog_result dialog_result_ = forms::dialog_result::none;
-        bool modal_ = false;
-        form_start_position start_position_ = form_start_position::windows_default_location;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      forms::dialog_result dialog_result_ = forms::dialog_result::none;
+      bool modal_ = false;
+      form_start_position start_position_ = form_start_position::windows_default_location;
     };
   }
 }

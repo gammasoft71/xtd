@@ -10,23 +10,18 @@ namespace xtd {
     /// @remarks To have the derived button control display an image, set the Image property or the image_list and image_index properties. The image can be aligned on the button control by setting the image_align property. Likewise, to align the text displayed on the button control, set the text_align property.
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     class button_base : public control {
-    public:
-      /// @cond
-      button_base(const button_base& value) : control(value) {this->data_ = value.data_;}
-      button_base& operator=(const button_base& value);
-      /// @endcond
-      
+    public:      
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @return true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
-      bool auto_ellipsis() const {return this->data_->auto_ellipsis_;}
+      bool auto_ellipsis() const {return this->auto_ellipsis_;}
       
       /// @brief Sets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
       /// @param true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
       virtual button_base& auto_ellipsis(bool auto_ellipsis) {
-        if (this->data_->auto_ellipsis_ != auto_ellipsis)
-          this->data_->auto_ellipsis_ = auto_ellipsis;
+        if (this->auto_ellipsis_ != auto_ellipsis)
+          this->auto_ellipsis_ = auto_ellipsis;
         return *this;
       }
       
@@ -38,8 +33,8 @@ namespace xtd {
       /// @param auto_size true if enabled; otherwise, false.
       control& auto_size(bool auto_size) override {
         this->control::auto_size(auto_size);
-        if (this->control::data_->auto_size_)
-          this->data_->auto_ellipsis_ = false;
+        if (this->auto_size_)
+          this->auto_ellipsis_ = false;
         return *this;
       }
 
@@ -62,11 +57,7 @@ namespace xtd {
       
     protected:
       /// @cond
-      struct data {
-        bool auto_ellipsis_ = false;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      bool auto_ellipsis_ = false;
       /// @endcond
     };
   }

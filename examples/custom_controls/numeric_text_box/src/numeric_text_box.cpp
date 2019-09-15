@@ -8,15 +8,7 @@ using namespace xtd::forms;
 namespace examples {
   class numeric_text_box : public text_box {
   public:
-    numeric_text_box() { this->make_control(*this);}
-
-    numeric_text_box(const text_box& value) {*this = value;}
-
-    numeric_text_box& operator=(const numeric_text_box& value) {
-      this->text_box::operator=(value);
-      this->value_changed = value.value_changed;
-      return *this;
-    }
+    numeric_text_box() = default;
 
     double value() const {
       double result = 0;

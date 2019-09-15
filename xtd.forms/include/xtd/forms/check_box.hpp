@@ -9,28 +9,23 @@ namespace xtd {
   namespace forms {
     class check_box : public button_base {
     public:
-      check_box();
+      check_box() = default;
 
-      /// @cond
-      check_box(const check_box& value) = default;
-      check_box& operator=(const check_box& value);
-      /// @endcond
-
-      virtual forms::appearance appearance() const {return this->data_->appearance_;}
+      virtual forms::appearance appearance() const {return this->appearance_;}
       virtual check_box& appearance(forms::appearance appearance);
 
-      virtual bool auto_check() const {return this->data_->auto_check_;}
+      virtual bool auto_check() const {return this->auto_check_;}
       virtual check_box& auto_check(bool auto_check);
       
-      virtual bool checked() const {return this->data_->checked_;}
+      virtual bool checked() const {return this->checked_;}
       virtual check_box& checked(bool checked);
       
-      virtual forms::check_state check_state() const {return this->data_->check_state_;}
+      virtual forms::check_state check_state() const {return this->check_state_;}
       virtual check_box& check_state(forms::check_state check_state);
       
       drawing::size default_size() const override {return {104, 24};}
       
-      virtual bool three_state() const {return this->data_->three_state_;}
+      virtual bool three_state() const {return this->three_state_;}
       virtual check_box& three_state(bool three_state);
       
       event<check_box, event_handler<control>> appearance_changed;
@@ -58,16 +53,11 @@ namespace xtd {
 
       virtual void wm_mouse_up(message& message);
 
-    private:
-      struct data {
-        forms::appearance appearance_ = forms::appearance::normal;
-        bool auto_check_ = true;
-        bool three_state_ = 0;
-        bool checked_ = false;
-        forms::check_state check_state_ = forms::check_state::unchecked;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      forms::appearance appearance_ = forms::appearance::normal;
+      bool auto_check_ = true;
+      bool three_state_ = 0;
+      bool checked_ = false;
+      forms::check_state check_state_ = forms::check_state::unchecked;
     };
   }
 }

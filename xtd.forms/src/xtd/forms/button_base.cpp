@@ -5,15 +5,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 button_base::button_base() {
-  this->make_control(*this);
-  this->control::data_->auto_size_mode_ = forms::auto_size_mode::grow_only;
-  this->control::data_->size_ = this->default_size();
-}
-
-button_base& button_base::operator=(const button_base& value) {
-  this->control::operator=(value);
-  this->data_ = value.data_;
-  return *this;
+  this->auto_size_mode_ = forms::auto_size_mode::grow_only;
+  this->size_ = this->default_size();
 }
 
 forms::create_params button_base::create_params() const {
