@@ -47,12 +47,12 @@ namespace examples {
     }
     
   private:
+    timer timer1;
     progress_bar progress_bar1;
     progress_bar progress_bar2;
     progress_bar progress_bar3;
     progress_bar progress_bar4;
     progress_bar progress_bar5;
-    timer timer1;
   };
 }
 
