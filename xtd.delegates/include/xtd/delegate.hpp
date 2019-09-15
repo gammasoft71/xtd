@@ -17,68 +17,61 @@ namespace xtd {
     using function_t = std::function <result_t()>;
     
     delegate() = default;
-    delegate(const delegate& delegate) {
-      this->data_ = delegate.data_;
-    }
-    
-    delegate& operator=(const delegate& delegate) {
-      this->data_ = delegate.data_;
-      return *this;
-    }
-    delegate(const function_t& function) noexcept { this->data_->functions_.push_back(function); }
+    delegate(const delegate& delegate) noexcept : functions_(delegate.functions_) {}
+    delegate(const function_t& function) noexcept { this->functions_.push_back(function); }
     
     template<typename object_t>
     delegate(const object_t& object, result_t(object_t::*member)() const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
     }
     
     template<typename object_t>
     delegate(const object_t& object, result_t(object_t::*member)()) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
     }
     
     result_t operator()() const {
-      if (this->data_->functions_.size() == 0) return result_t();
+      if (this->functions_.size() == 0) return result_t();
       
-      for (size_t i = 0; i < this->data_->functions_.size() - 1; i++) {
-        if (this->data_->functions_[i] == nullptr) throw std::invalid_argument("function null");
-        this->data_->functions_[i]();
+      for (size_t i = 0; i < this->functions_.size() - 1; i++) {
+        if (this->functions_[i] == nullptr) throw std::invalid_argument("function null");
+        this->functions_[i]();
       }
-      if (this->data_->functions_.back() == nullptr) throw std::invalid_argument("function null");
-      return this->data_->functions_.back()();
+      if (this->functions_.back() == nullptr) throw std::invalid_argument("function null");
+      return this->functions_.back()();
     }
 
-    const std::vector<function_t>& functions() const {return this->data_->functions_;}
+    const std::vector<function_t>& functions() const {return this->functions_;}
     
-    void clear() {this->data_->functions_.clear();}
+    void clear() {this->functions_.clear();}
 
     result_t invoke() const { return this->operator()(); }
     
     static delegate combine(const std::vector<delegate>& delegates) noexcept {
       delegate result;
       for (const delegate& delegate : delegates) {
-        for (const function_t& function : delegate.data_->functions_)
-          result.data_->functions_.push_back(function);
+        for (const function_t& function : delegate.functions_)
+          result.functions_.push_back(function);
       }
       return result;
     }
     
     static delegate combine(const delegate& a, const delegate& b) noexcept {
       delegate result =  a;
-      for (const function_t& function : b.data_->functions_)
-        result.data_->functions_.push_back(function);
+      for (const function_t& function : b.functions_)
+        result.functions_.push_back(function);
       return result;
     }
     
-    bool is_empty() const noexcept { return this->data_->functions_.size() == 0; }
+    bool is_empty() const noexcept { return this->functions_.size() == 0; }
     
     static delegate remove(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
-      for (const function_t& function : value.data_->functions_) {
-        if (find(result.data_->functions_.begin(), result.data_->functions_.end(), function) != result.data_->functions_.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions_.rbegin(); iterator != result.data_->functions_.rend(); ++iterator) {
+      for (const function_t& function : value.functions_) {
+        if (find(result.functions_.begin(), result.functions_.end(), function) != result.functions_.end()) {
+          for (typename std::vector<function_t>::reverse_iterator iterator = result.functions_.rbegin(); iterator != result.functions_.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
-              result.data_->functions_.erase((iterator + 1).base());
+              result.functions_.erase((iterator + 1).base());
               break;
             }
           }
@@ -89,11 +82,11 @@ namespace xtd {
     
     static delegate remove_all(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
-      for (const function_t& function : value.data_->functions_) {
-        if (find(result.data_->functions_.begin(), result.data_->functions_.end(), function) != result.data_->functions_.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions_.rbegin(); iterator != result.data_->functions_.rend(); ++iterator) {
+      for (const function_t& function : value.functions_) {
+        if (find(result.functions_.begin(), result.functions_.end(), function) != result.functions_.end()) {
+          for (typename std::vector<function_t>::reverse_iterator iterator = result.functions_.rbegin(); iterator != result.functions_.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
-              result.data_->functions_.erase((iterator + 1).base());
+              result.functions_.erase((iterator + 1).base());
             }
           }
         }
@@ -102,11 +95,11 @@ namespace xtd {
     }
     
     bool operator ==(const delegate& delegate) const noexcept {
-      if (this->data_->functions_.size() != delegate.functions_.size())
+      if (this->functions_.size() != delegate.functions_.size())
         return false;
       
-      for (size_t i = 0; i < this->data_->functions_.size(); i++)
-        if (!are_equals(this->data_->functions_[i], delegate.functions_[i]))
+      for (size_t i = 0; i < this->functions_.size(); i++)
+        if (!are_equals(this->functions_[i], delegate.functions_[i]))
           return false;
       
       return true;
@@ -115,7 +108,7 @@ namespace xtd {
     bool operator !=(const delegate& delegate) const { return !this->operator==(delegate); }
     
     delegate& operator=(const function_t& function) noexcept {
-      this->data_->functions_.push_back(function);
+      this->functions_.push_back(function);
       return *this;
     }
     
@@ -157,11 +150,7 @@ namespace xtd {
       return end;
     }
     
-    struct data {
-      std::vector<function_t> functions_;
-    };
-    
-    std::shared_ptr<data> data_ = std::make_shared<data>();
+    std::vector<function_t> functions_;
   };
   /// @endcond
   
@@ -180,21 +169,14 @@ namespace xtd {
 
     /// @brief Initializes a delegate that invokes the specified delegate instance.
     /// @param delegate The delegate instance.
-    delegate(const delegate& delegate) {this->data_ = delegate.data_;}
-    
-    /// @cond
-    delegate& operator=(const delegate& delegate) {
-      this->data_ = delegate.data_;
-      return *this;
-    }
-    /// @endcond
+    delegate(const delegate& delegate) noexcept : no_arguments_functions_(delegate.no_arguments_functions_), functions_(delegate.functions_) {}
 
     /// @brief Initializes a delegate that invokes the specified instance method.
     /// @param function the method instance.
-    delegate(const function_t& function) noexcept { this->data_->functions_.push_back(function); }
+    delegate(const function_t& function) noexcept { this->functions_.push_back(function); }
 
     /// @cond
-    delegate(const no_arguments_function_t& function) noexcept { this->data_->no_arguments_functions_.push_back(function); }
+    delegate(const no_arguments_function_t& function) noexcept { this->no_arguments_functions_.push_back(function); }
     /// @endcond
 
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
@@ -202,7 +184,7 @@ namespace xtd {
     /// @param function the method instance.
     template<typename object_t>
     delegate(const object_t& object, result_t(object_t::*member)() const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
     }
 
     /// @brief Initializes a delegate that invokes the specified instance method on the specified class instance.
@@ -210,108 +192,108 @@ namespace xtd {
     /// @param function the method instance.
     template<typename object_t>
     delegate(const object_t& object, result_t(object_t::*member)()) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object))));
     }
 
     /// @cond
     template<typename object_t, typename a1_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1)));
     }
 
     template<typename object_t, typename a1_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t) const) {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5)) {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t) const) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
     }
 
     template<typename object_t, typename a1_t, typename a2_t, typename a3_t, typename a4_t, typename A5, typename a6_t, typename a7_t, typename a8_t, typename a9_t, typename a10_t>
     delegate(const object_t& object, result_t(object_t::*member)(a1_t, a2_t, a3_t, a4_t, A5, a6_t, a7_t, a8_t, a9_t, a10_t)) noexcept {
-      this->data_->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
+      this->functions_.push_back(function_t(std::bind(member, const_cast<object_t*>(&object), std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4, std::placeholders::_5, std::placeholders::_6, std::placeholders::_7, std::placeholders::_8, std::placeholders::_9, std::placeholders::_10)));
     }
     /// @endcond
 
@@ -319,35 +301,35 @@ namespace xtd {
     /// @param arguments The paramter list.
     /// @return result_t The return value.
     result_t operator()(arguments_t... arguments) const {
-      if (this->data_->no_arguments_functions_.size() == 0 && this->data_->functions_.size() == 0) return result_t();
+      if (this->no_arguments_functions_.size() == 0 && this->functions_.size() == 0) return result_t();
 
-      if (this->data_->no_arguments_functions_.size()) {
-        for (size_t i = 0; i < this->data_->no_arguments_functions_.size() - (this->data_->functions_.size() == 0 ? 1 : 0); i++) {
-          if (this->data_->no_arguments_functions_[i] == nullptr) throw std::invalid_argument("function null");
-          this->data_->no_arguments_functions_[i]();
+      if (this->no_arguments_functions_.size()) {
+        for (size_t i = 0; i < this->no_arguments_functions_.size() - (this->functions_.size() == 0 ? 1 : 0); i++) {
+          if (this->no_arguments_functions_[i] == nullptr) throw std::invalid_argument("function null");
+          this->no_arguments_functions_[i]();
         }
         
-        if (this->data_->functions_.size() == 0) {
-          if (this->data_->no_arguments_functions_.back() == nullptr) throw std::invalid_argument("function null");
-          return this->data_->no_arguments_functions_.back()();
+        if (this->functions_.size() == 0) {
+          if (this->no_arguments_functions_.back() == nullptr) throw std::invalid_argument("function null");
+          return this->no_arguments_functions_.back()();
         }
       }
 
-      for (size_t i = 0; i < this->data_->functions_.size() - 1; i++) {
-        if (this->data_->functions_[i] == nullptr) throw std::invalid_argument("function null");
-        this->data_->functions_[i](arguments...);
+      for (size_t i = 0; i < this->functions_.size() - 1; i++) {
+        if (this->functions_[i] == nullptr) throw std::invalid_argument("function null");
+        this->functions_[i](arguments...);
       }
-      if (this->data_->functions_.back() == nullptr) throw std::invalid_argument("function null");
-      return this->data_->functions_.back()(arguments...);
+      if (this->functions_.back() == nullptr) throw std::invalid_argument("function null");
+      return this->functions_.back()(arguments...);
     }
     
-    const std::vector<no_arguments_function_t>& no_arguments_functions() const {return this->data_->no_arguments_functions_;}
+    const std::vector<no_arguments_function_t>& no_arguments_functions() const {return this->no_arguments_functions_;}
     
-    const std::vector<function_t>& functions() const {return this->data_->functions_;}
+    const std::vector<function_t>& functions() const {return this->functions_;}
     
     void clear() {
-      this->data_->no_arguments_functions_.clear();
-      this->data_->functions_.clear();
+      this->no_arguments_functions_.clear();
+      this->functions_.clear();
     }
     
     /// @brief invokes the method represented by the current delegate.
@@ -363,10 +345,10 @@ namespace xtd {
     static delegate combine(const std::vector<delegate>& delegates) noexcept {
       delegate result;
       for (const delegate& delegate : delegates) {
-        for (const no_arguments_function_t& function : delegate.data_->no_arguments_functions_)
-          result.data_->no_arguments_functions_.push_back(function);
-        for (const function_t& function : delegate.data_->functions_)
-          result.data_->functions_.push_back(function);
+        for (const no_arguments_function_t& function : delegate.no_arguments_functions_)
+          result.no_arguments_functions_.push_back(function);
+        for (const function_t& function : delegate.functions_)
+          result.functions_.push_back(function);
       }
       return result;
     }
@@ -378,16 +360,16 @@ namespace xtd {
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
     static delegate combine(const delegate& a, const delegate& b) noexcept {
       delegate result =  a;
-      for (const no_arguments_function_t& function : b.data_->no_arguments_functions_)
-        result.data_->no_arguments_functions_.push_back(function);
-      for (const function_t& function : b.data_->functions_)
-        result.data_->functions_.push_back(function);
+      for (const no_arguments_function_t& function : b.no_arguments_functions_)
+        result.no_arguments_functions_.push_back(function);
+      for (const function_t& function : b.functions_)
+        result.functions_.push_back(function);
       return result;
     }
 
     /// @brief Return if the delegate is empty.
     /// @return bool Return true if delegate is empty; otherwhise false.
-    bool is_empty() const noexcept { return this->data_->functions_.size() == 0 && this->data_->no_arguments_functions_.size() == 0; }
+    bool is_empty() const noexcept { return this->functions_.size() == 0 && this->no_arguments_functions_.size() == 0; }
 
     /// @brief removes the last occurrence of the invocation list of a delegate from the invocation list of another delegate.
     /// @param source The delegate from which to remove the invocation list of value.
@@ -396,22 +378,22 @@ namespace xtd {
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, the last occurrence is removed.
     static delegate remove(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
-      for (const no_arguments_function_t& function : value.data_->no_arguments_functions_) {
-        if (find(result.data_->no_arguments_functions_.begin(), result.data_->no_arguments_functions_.end(), function) != result.data_->no_arguments_functions_.end()) {
-          for (typename std::vector<no_arguments_function_t>::reverse_iterator iterator = result.data_->no_arguments_functions_.rbegin(); iterator != result.data_->no_arguments_functions_.rend(); ++iterator) {
+      for (const no_arguments_function_t& function : value.no_arguments_functions_) {
+        if (find(result.no_arguments_functions_.begin(), result.no_arguments_functions_.end(), function) != result.no_arguments_functions_.end()) {
+          for (typename std::vector<no_arguments_function_t>::reverse_iterator iterator = result.no_arguments_functions_.rbegin(); iterator != result.no_arguments_functions_.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
-              result.data_->no_arguments_functions_.erase((iterator + 1).base());
+              result.no_arguments_functions_.erase((iterator + 1).base());
               break;
             }
           }
         }
       }
 
-      for (const function_t& function : value.data_->functions_) {
-        if (find(result.data_->functions_.begin(), result.data_->functions_.end(), function) != result.data_->functions_.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions_.rbegin(); iterator != result.data_->functions_.rend(); ++iterator) {
+      for (const function_t& function : value.functions_) {
+        if (find(result.functions_.begin(), result.functions_.end(), function) != result.functions_.end()) {
+          for (typename std::vector<function_t>::reverse_iterator iterator = result.functions_.rbegin(); iterator != result.functions_.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
-              result.data_->functions_.erase((iterator + 1).base());
+              result.functions_.erase((iterator + 1).base());
               break;
             }
           }
@@ -427,21 +409,21 @@ namespace xtd {
     /// @remarks If the invocation list of value matches a contiguous set of elements in the invocation list of source, then the invocation list of value is said to occur within the invocation list of source. If the invocation list of value occurs more than once in the invocation list of source, all occurrences are removed.
     static delegate remove_all(const delegate& source, const delegate& value) noexcept {
       delegate result = source;
-      for (const no_arguments_function_t& function : value.data_->no_arguments_functions_) {
-        if (find(result.data_->no_arguments_functions_.begin(), result.data_->no_arguments_functions_.end(), function) != result.data_->no_arguments_functions_.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->no_arguments_functions_.rbegin(); iterator != result.data_->no_arguments_functions_.rend(); ++iterator) {
+      for (const no_arguments_function_t& function : value.no_arguments_functions_) {
+        if (find(result.no_arguments_functions_.begin(), result.no_arguments_functions_.end(), function) != result.no_arguments_functions_.end()) {
+          for (typename std::vector<function_t>::reverse_iterator iterator = result.no_arguments_functions_.rbegin(); iterator != result.no_arguments_functions_.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
-              result.data_->no_arguments_functions_.erase((iterator + 1).base());
+              result.no_arguments_functions_.erase((iterator + 1).base());
             }
           }
         }
       }
       
       for (const function_t& function : value.functions_) {
-        if (find(result.functions_.begin(), result.data_->functions_.end(), function) != result.data_->functions_.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions_.rbegin(); iterator != result.data_->functions_.rend(); ++iterator) {
+        if (find(result.functions_.begin(), result.functions_.end(), function) != result.functions_.end()) {
+          for (typename std::vector<function_t>::reverse_iterator iterator = result.functions_.rbegin(); iterator != result.functions_.rend(); ++iterator) {
             if (are_equals(*iterator, function)) {
-              result.data_->functions_.erase((iterator + 1).base());
+              result.functions_.erase((iterator + 1).base());
             }
           }
         }
@@ -453,15 +435,15 @@ namespace xtd {
     /// @param value The delegateType to compare.
     /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
     bool operator==(const delegate& delegate) const noexcept {
-      if (this->data_->functions_.size() != delegate.functions_.size() || this->data_->no_arguments_functions_.size() != delegate.no_arguments_functions_.size())
+      if (this->functions_.size() != delegate.functions_.size() || this->no_arguments_functions_.size() != delegate.no_arguments_functions_.size())
         return false;
 
-      for (size_t i = 0; i < this->data_->no_arguments_functions_.size(); i++)
-        if (!are_equals(this->data_->no_arguments_functions_[i], delegate.no_arguments_functions_[i]))
+      for (size_t i = 0; i < this->no_arguments_functions_.size(); i++)
+        if (!are_equals(this->no_arguments_functions_[i], delegate.no_arguments_functions_[i]))
           return false;
 
-      for (size_t i = 0; i < this->data_->functions_.size(); i++)
-        if (!are_equals(this->data_->functions_[i], delegate.functions_[i]))
+      for (size_t i = 0; i < this->functions_.size(); i++)
+        if (!are_equals(this->functions_[i], delegate.functions_[i]))
           return false;
 
       return true;
@@ -473,12 +455,12 @@ namespace xtd {
     bool operator!=(const delegate& delegate) const { return !this->operator==(delegate); }
 
     delegate& operator=(const function_t& function) noexcept {
-      this->data_->functions_.push_back(function);
+      this->functions_.push_back(function);
       return *this;
     }
     
     delegate& operator=(const no_arguments_function_t& function) noexcept {
-      this->data_->no_arguments_functions_.push_back(function);
+      this->no_arguments_functions_.push_back(function);
       return *this;
     }
     
@@ -547,11 +529,7 @@ namespace xtd {
       return end;
     }
     
-    struct data {
-      std::vector<no_arguments_function_t> no_arguments_functions_;
-      std::vector<function_t> functions_;
-    };
-    
-    std::shared_ptr<data> data_ = std::make_shared<data>();
+    std::vector<no_arguments_function_t> no_arguments_functions_;
+    std::vector<function_t> functions_;
   };
 }
