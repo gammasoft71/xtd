@@ -544,8 +544,10 @@ void control::recreate_handle() {
     this->internal_destroy_handle(handle);
     this->handle_ = 0;
     this->create_handle();
-    for (auto control : controls)
+    for (auto control : controls) {
+      control.get().parent_ = this->handle_;
       native::control::parent(control.get().handle_, this->handle_);
+    }
   }
 }
 
