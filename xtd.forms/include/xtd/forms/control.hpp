@@ -113,12 +113,11 @@ namespace xtd {
         this->height(height);
       }
       
-      /// @private
-      /// @{
+      /// @cond
       control(control&&) = default;
       control(const control&) = delete;
       virtual ~control();
-      /// @}
+      /// @endcond
       
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
@@ -309,39 +308,39 @@ namespace xtd {
       }
 
       template<typename control_t>
-      static control_t&& create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static control_t create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         control_t item;
         if (location != drawing::point {-1, -1}) item.location(location);
         if (size != drawing::size {-1, -1}) item.size(size);
-        return std::move(item);
+        return item;
       }
       
       template<typename control_t>
-      static control_t&& create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static control_t create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         control_t item;
         item.parent(parent);
         if (location != drawing::point {-1, -1}) item.location(location);
         if (size != drawing::size {-1, -1}) item.size(size);
-        return std::move(item);
+        return item;
       }
       
       template<typename control_t>
-      static control_t&& create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static control_t create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         control_t item;
         item.text(text);
         if (location != drawing::point {-1, -1}) item.location(location);
         if (size != drawing::size {-1, -1}) item.size(size);
-        return std::move(item);
+        return item;
       }
       
       template<typename control_t>
-      static control_t&& create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static control_t create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
         control_t item;
         item.parent(parent);
         item.text(text);
         if (location != drawing::point {-1, -1}) item.location(location);
         if (size != drawing::size {-1, -1}) item.size(size);
-        return std::move(item);
+        return item;
       }
 
       void create_control();
