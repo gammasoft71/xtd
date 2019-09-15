@@ -86,6 +86,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
     application::run(*this);
   this->modal_ = false;
   this->parent_ = current_parent;
+  this->hide();
   this->recreate_handle();
   native::control::enabled(owner.handle(), true);
   return result;
