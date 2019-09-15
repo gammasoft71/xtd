@@ -10,12 +10,7 @@ namespace xtd {
     public:
       text_box();
 
-      /// @cond
-      text_box(const text_box& value) = default;
-      text_box& operator=(const text_box& value);
-      /// @endcond
-
-      virtual forms::border_style border_style() const {return this->data_->border_style_;}
+      virtual forms::border_style border_style() const {return this->border_style_;}
       virtual text_box& border_style(forms::border_style border_style);
       
       drawing::color default_back_color() const override;
@@ -32,12 +27,7 @@ namespace xtd {
       
       drawing::size measure_control() const override;
 
-    private:
-      struct data {
-        forms::border_style border_style_ = forms::border_style::fixed_single;
-      };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      forms::border_style border_style_ = forms::border_style::fixed_single;
     };
   }
 }

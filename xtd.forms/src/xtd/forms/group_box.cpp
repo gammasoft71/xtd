@@ -8,15 +8,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 group_box::group_box() {
-  this->make_control(*this);
-  this->control::data_->auto_size_mode_ = forms::auto_size_mode::grow_only;
-  this->control::data_->size_ = this->default_size();
-}
-
-group_box& group_box::operator=(const group_box& value) {
-  this->control::operator=(value);
-  this->data_ = value.data_;
-  return *this;
+  this->auto_size_mode_ = forms::auto_size_mode::grow_only;
+  this->size_ = this->default_size();
 }
 
 group_box& group_box::auto_size_mode(forms::auto_size_mode value) {

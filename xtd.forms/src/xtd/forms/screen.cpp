@@ -19,7 +19,7 @@ graphics screen::create_graphics() {
 }
 
 screen screen::from_control(const control& control) {
-  return all_screens()[native::screen::from_handle(control.data_->handle_)];
+  return all_screens()[native::screen::from_handle(control.handle_)];
 }
 
 screen screen::from_handle(intptr_t handle) {
@@ -35,7 +35,7 @@ screen screen::from_rectangle(const rectangle& rect) {
 }
 
  rectangle screen::get_bounds(const control& control) {
-  return all_screens()[native::screen::from_handle(control.data_->handle_)].bounds();
+  return all_screens()[native::screen::from_handle(control.handle_)].bounds();
 }
 
 rectangle screen::get_bounds(intptr_t handle) {
@@ -51,7 +51,7 @@ rectangle screen::get_bounds(const rectangle& rect) {
 }
 
 rectangle screen::get_working_area(const control& control) {
-  return all_screens()[native::screen::from_handle(control.data_->handle_)].working_area();
+  return all_screens()[native::screen::from_handle(control.handle_)].working_area();
 }
 
 rectangle screen::get_working_area(intptr_t handle) {

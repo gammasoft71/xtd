@@ -116,15 +116,14 @@ namespace xtd {
       /// @private
       /// @{
       control(control&&) = default;
-      control(const control& value) {*this = value;}
-      control& operator=(const control& value);
+      control(const control&) = delete;
       virtual ~control();
       /// @}
       
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
       /// @remarks This property is not relevant for this class.
-      virtual bool auto_size() const {return this->data_->auto_size_;}
+      virtual bool auto_size() const {return this->auto_size_;}
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size true if enabled; otherwise, false.
       /// @return This control.
@@ -135,7 +134,7 @@ namespace xtd {
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
       /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
       /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
-      virtual drawing::color back_color() const {return this->data_->back_color_.value_or(this->data_->parent_ ? this->parent().back_color() : default_back_color());}
+      virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ ? this->parent().back_color() : default_back_color());}
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
       /// @return This control.
@@ -154,7 +153,7 @@ namespace xtd {
       /// @brief Gets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
       /// @return A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
       /// @remarks The bounds of the control include the nonclient elements such as scroll bars, borders, title bars, and menus.
-      virtual drawing::rectangle bounds() const {return {this->data_->location_, this->data_->size_};}
+      virtual drawing::rectangle bounds() const {return {this->location_, this->size_};}
       /// @brief Sets the size and location of the control including its nonclient elements, in pixels, relative to the parent control.
       /// @param A rectangle in pixels relative to the parent control that represents the size and location of the control including its nonclient elements.
       /// @return This control.
@@ -168,17 +167,17 @@ namespace xtd {
       /// @return A rectangle that represents the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
       /// @remarks Because client coordinates are relative to the upper-left corner of the client area of the control, the coordinates of the upper-left corner of the rectangle returned by this property are (0,0). You can use this property to obtain the size and coordinates of the client area of the control for tasks such as drawing on the surface of the control.
-      virtual const drawing::rectangle& client_rectangle() const {return this->data_->client_rectangle_;}
+      virtual const drawing::rectangle& client_rectangle() const {return this->client_rectangle_;}
 
       /// @brief Gets  the height and width of the client area of the control.
       /// @return A size that represents the dimensions of the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus.
-      virtual const drawing::size& client_size() const {return this->data_->client_size_;}
+      virtual const drawing::size& client_size() const {return this->client_size_;}
       /// @brief Sets the height and width of the client area of the control.
       /// @param A size that represents the dimensions of the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_sizeCore method to ensure that your code is executed when the client_size property is set.
       virtual control& client_size(const drawing::size& client_size) {
-        if (this->data_->client_size_ != client_size) {
+        if (this->client_size_ != client_size) {
           this->set_client_size_core(client_size.width(), client_size.height());
         }
         return *this;
@@ -194,19 +193,19 @@ namespace xtd {
       /// @remarks You can manipulate the controls in the control::control_collection assigned to the controls property by using the methods available in the control::control_collection class.
       /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
       /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
-      virtual control_collection& controls() {return this->data_->controls_;}
+      virtual control_collection& controls() {return this->controls_;}
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
       /// @remarks A control can act as a parent to a collection of controls. For example, when several controls are added to a form, each of the controls is a member of the control::control_collection assigned to the controls property of the form, which is derived from the control class.
       /// @remarks You can manipulate the controls in the control::control_collection assigned to the controls property by using the methods available in the control::control_collection class.
       /// @remarks When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. Doing so will increase the performance of applications with many controls.
       /// @remarks Use the controls property to iterate through all controls of a form, including nested controls. Use the get_next_control method to retrieve the previous or next child control in the tab order. Use the active_control property to get or set the active control of a container control.
-      virtual const control_collection& controls() const {return this->data_->controls_;}
+      virtual const control_collection& controls() const {return this->controls_;}
 
       /// @brief Gets a value indicating whether the control has been created.
       /// @return true if the control has been created; otherwise, false.
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
-      virtual bool created() {return this->data_->created_;}
+      virtual bool created() {return this->created_;}
       
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
@@ -219,87 +218,87 @@ namespace xtd {
       
       virtual drawing::size default_size() const {return{0, 0};}
       
-      virtual bool enabled() const {return this->data_->enabled_;}
+      virtual bool enabled() const {return this->enabled_;}
       virtual control& enabled(bool enabled);
 
-      virtual drawing::color fore_color() const {return this->data_->fore_color_.value_or(this->data_->parent_ ? this->parent().fore_color() : default_fore_color());}
+      virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ ? this->parent().fore_color() : default_fore_color());}
       virtual control& fore_color(const drawing::color& color);
       
-      virtual drawing::font font() const {return this->data_->font_.value_or(this->data_->parent_ ? this->parent().font() : default_font());}
+      virtual drawing::font font() const {return this->font_.value_or(this->parent_ ? this->parent().font() : default_font());}
       virtual control& font(const drawing::font& font);
       
       intptr_t handle() const override;
       
-      virtual int32_t height() const {return this->data_->size_.height();}
+      virtual int32_t height() const {return this->size_.height();}
       virtual control& height(int32_t height) {
-        if (this->data_->size_.height() != height)
+        if (this->size_.height() != height)
           this->set_bounds_core(0, 0, 0, height, bounds_specified::height);
         return *this;
       }
       
-      virtual int32_t left() const {return this->data_->location_.x();}
+      virtual int32_t left() const {return this->location_.x();}
       virtual control& left(int32_t left) {
-        if (this->data_->location_.x() != left)
+        if (this->location_.x() != left)
           this->set_bounds_core(left, 0, 0, 0, bounds_specified::x);
         return *this;
       }
 
-      virtual drawing::point location() const {return this->data_->location_;}
+      virtual drawing::point location() const {return this->location_;}
       virtual control& location(const drawing::point& location) {
-        if (this->data_->location_ != location)
+        if (this->location_ != location)
           this->set_bounds_core(location.x(), location.y(), 0, 0, bounds_specified::location);
         return *this;
       }
 
-      virtual const std::string& name() const {return this->data_->name_;}
+      virtual const std::string& name() const {return this->name_;}
       virtual control& name(const std::string& name) {
-        this->data_->name_ = name;
+        this->name_ = name;
         return*this;
       }
       
-      virtual control& parent() const {return from_handle(this->data_->parent_);}
+      virtual control& parent() const {return from_handle(this->parent_);}
       virtual control& parent(const control& parent);
 
       virtual std::string product_name() const {return "xtd";}
       
       virtual int32_t right() const {return this->left() + this->width();}
 
-      virtual drawing::size size() const {return this->data_->size_;}
+      virtual drawing::size size() const {return this->size_;}
       virtual control& size(const drawing::size& size) {
-        if (this->data_->size_ != size)
+        if (this->size_ != size)
           this->set_bounds_core(0, 0, size.width(), size.height(), bounds_specified::size);
         return *this;
       }
       
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
-      virtual std::any tag() const {return this->data_->tag_;}
+      virtual std::any tag() const {return this->tag_;}
       
       /// @brief Sets the object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
       virtual control& tag(std::any tag) {
-        this->data_->tag_ = tag;
+        this->tag_ = tag;
         return*this;
       }
       
-      virtual const std::string& text() const {return this->data_->text_;}
+      virtual const std::string& text() const {return this->text_;}
       virtual control& text(const std::string& text);
       
-      virtual int32_t top() const {return this->data_->location_.y();}
+      virtual int32_t top() const {return this->location_.y();}
       virtual control& top(int32_t top) {
-        if (this->data_->location_.y() != top)
+        if (this->location_.y() != top)
           this->set_bounds_core(0, top, 0, 0, bounds_specified::y);
         return *this;
       }
       
       virtual control& top_level_control() const;
 
-      virtual bool visible() const {return this->data_->visible_;}
+      virtual bool visible() const {return this->visible_;}
       virtual control& visible(bool visible);
 
-      virtual int32_t width() const {return this->data_->size_.width();}
+      virtual int32_t width() const {return this->size_.width();}
       virtual control& width(int32_t width) {
-        if (this->data_->size_.width() != width)
+        if (this->size_.width() != width)
           this->set_bounds_core(0, 0, width, 0, bounds_specified::width);
         return *this;
       }
@@ -462,9 +461,6 @@ namespace xtd {
       
       virtual void def_wnd_proc(message& message);
 
-      template<typename control_t>
-      void make_control(const control_t& value) {controls_[value.control::data_.get()] = std::make_shared<control_t>(value);}
-    
       /// @brief Measure this control.
       /// @return THe Drawing::Size size of this control.
       /// @remarks This metod is not relevant for this class.
@@ -574,42 +570,36 @@ namespace xtd {
       /// Inheriting controls should call the base class's wnd_proc(message&) method to process any messages that they do not handle.
       virtual void wnd_proc(message& m);
 
-      ///@private
-      /// @{
-      struct data {
-        bool auto_size_ = false;
-        auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
-        std::optional<drawing::color> back_color_;
-        drawing::rectangle client_rectangle_;
-        drawing::size client_size_ {-1, -1};
-        control_collection controls_;
-        bool created_ = false;
-        bool enabled_ = true;
-        std::optional<drawing::color> fore_color_;
-        std::optional<drawing::font> font_;
-        intptr_t handle_ = 0;
-        drawing::point location_ {-1, -1};
-        std::string name_;
-        intptr_t parent_ = 0;
-        drawing::size size_ {-1, -1};
-        control::state state_ = state::empty;
-        std::any tag_;
-        std::string text_;
-        bool visible_ = true;
-       };
-      
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      /// @cond
+      bool auto_size_ = false;
+      auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
+      std::optional<drawing::color> back_color_;
+      drawing::rectangle client_rectangle_;
+      drawing::size client_size_ {-1, -1};
+      control_collection controls_;
+      bool created_ = false;
+      bool enabled_ = true;
+      std::optional<drawing::color> fore_color_;
+      std::optional<drawing::font> font_;
+      intptr_t handle_ = 0;
+      drawing::point location_ {-1, -1};
+      std::string name_;
+      intptr_t parent_ = 0;
+      drawing::size size_ {-1, -1};
+      control::state state_ = state::empty;
+      std::any tag_;
+      std::string text_;
+      bool visible_ = true;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
-      static std::map<control::data*, std::shared_ptr<control>> controls_;
-      /// @}
+      /// @endcond
       
     private:
       void internal_destroy_handle(intptr_t);
       void set_auto_size_size();
-      control(const std::string& name, bool) {this->data_->name_ = name;}
-      bool get_state(control::state flag) const {return ((int32_t)this->data_->state_ & (int32_t)flag) == (int32_t)flag;}
-      void set_state(control::state flag, bool value) { this->data_->state_ = value ? (control::state)((int32_t)this->data_->state_ | (int32_t)flag) : (control::state)((int32_t)this->data_->state_ & ~(int32_t)flag); }
+      control(const std::string& name, bool) {this->name_ = name;}
+      bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
+      void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
       void wm_command(message& message);

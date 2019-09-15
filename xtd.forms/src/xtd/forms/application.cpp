@@ -104,7 +104,7 @@ void application::run() {
 }
 
 void application::run(const form& form) {
-  native::application::main_form(form.control::data_->handle_);
+  native::application::main_form(form.handle_);
   const_cast<forms::form&>(form).show();
   run();
 }
@@ -131,7 +131,7 @@ void application::wnd_proc(message& message) {
 
 void application::wm_activate_app(message& message) {
   for (reference_wrapper<form>& form : open_forms())
-    form.get().send_message(form.get().control::data_->handle_, message.msg(), message.wparam(), message.lparam());
+    form.get().send_message(form.get().handle_, message.msg(), message.wparam(), message.lparam());
 }
 
 void application::wm_enter_idle(message& message) {

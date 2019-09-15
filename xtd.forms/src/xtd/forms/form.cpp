@@ -13,22 +13,13 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 form::form() {
-  this->make_control(*this);
-  this->control::data_->auto_size_mode_ = forms::auto_size_mode::grow_only;
-  this->control::data_->back_color_ = this->default_back_color();
-  this->control::data_->fore_color_ = this->default_fore_color();
-  this->control::data_->font_ = this->default_font();
-  this->control::data_->size_ = this->default_size();
-  this->control::data_->visible_ = false;
+  this->auto_size_mode_ = forms::auto_size_mode::grow_only;
+  this->back_color_ = this->default_back_color();
+  this->fore_color_ = this->default_fore_color();
+  this->font_ = this->default_font();
+  this->size_ = this->default_size();
+  this->visible_ = false;
   this->create_control();
-}
-
-form& form::operator=(const form& value) {
-  this->control::operator=(value);
-  this->form_closed = value.form_closed;
-  this->form_closing = value.form_closing;
-  this->data_ = value.data_;
-  return *this;
 }
 
 form& form::auto_size_mode(forms::auto_size_mode value) {
@@ -37,8 +28,8 @@ form& form::auto_size_mode(forms::auto_size_mode value) {
 }
 
 form& form::dialog_result(forms::dialog_result dialog_result) {
-  if (this->data_->dialog_result_ != dialog_result)
-    this->data_->dialog_result_ = dialog_result;
+  if (this->dialog_result_ != dialog_result)
+    this->dialog_result_ = dialog_result;
   return *this;
 }
 
@@ -48,7 +39,7 @@ control& form::parent(const control& parent) {
 }
 
 void form::close() {
-  native::form::close(this->control::data_->handle_);
+  native::form::close(this->handle_);
 }
 
 forms::dialog_result form::show_dialog() {
@@ -56,18 +47,18 @@ forms::dialog_result form::show_dialog() {
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
-  intptr_t parent_old = this->control::data_->parent_;
-  this->data_->modal_ = true;
-  this->control::data_->parent_ = owner.handle();
+  intptr_t parent_old = this->parent_;
+  this->modal_ = true;
+  this->parent_ = owner.handle();
   this->recreate_handle();
   native::control::enabled(owner.handle(), false);
-  forms::dialog_result result = this->data_->dialog_result_;
+  forms::dialog_result result = this->dialog_result_;
   if (application::message_loop())
-    result = static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_));
+    result = static_cast<forms::dialog_result>(native::form::show_dialog(this->handle_));
   else
     application::run(*this);
-  this->data_->modal_ = false;
-  this->control::data_->parent_ = parent_old;
+  this->modal_ = false;
+  this->parent_ = parent_old;
   this->recreate_handle();
   native::control::enabled(owner.handle(), true);
   return result;
@@ -78,7 +69,7 @@ forms::create_params form::create_params() const {
 
   create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
-  if (this->data_->modal_) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
+  if (this->modal_) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
   
   return create_params;
 }
@@ -97,10 +88,10 @@ void form::wm_close(message &message) {
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
-    if (this->data_->modal_) {
-      if (this->data_->dialog_result_ == forms::dialog_result::none)
-        this->data_->dialog_result_ = forms::dialog_result::cancel;
-      native::form::end_dialog(this->control::data_->handle_, static_cast<int32_t>(this->data_->dialog_result_));
+    if (this->modal_) {
+      if (this->dialog_result_ == forms::dialog_result::none)
+        this->dialog_result_ = forms::dialog_result::cancel;
+      native::form::end_dialog(this->handle_, static_cast<int32_t>(this->dialog_result_));
     } else
       this->destroy_handle();
   }
