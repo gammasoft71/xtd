@@ -24,3 +24,7 @@ void timer::interval(int32_t interval) {
     }
   }
 }
+
+void timer::on_tick(const event_args& e) {
+  this->tick(*this, e);
+}

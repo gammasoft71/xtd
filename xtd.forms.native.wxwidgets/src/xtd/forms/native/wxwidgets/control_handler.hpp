@@ -22,6 +22,7 @@
 #include <wx/radiobut.h>
 #include <wx/slider.h>
 #include <wx/textctrl.h>
+#include <wx/timer.h>
 #include <wx/tglbtn.h>
 
 namespace xtd {
@@ -472,6 +473,10 @@ namespace xtd {
         if (event.GetEventType() == wxEVT_DESTROY) {
           this->def_process_event(event);
           return this->process_result_;
+        }
+        if (event.GetEventType() == wxEVT_TIMER) {
+          this->def_process_event(event);
+          return false;
         }
         wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
         if (!window) {
