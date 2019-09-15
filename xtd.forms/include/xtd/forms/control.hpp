@@ -308,38 +308,38 @@ namespace xtd {
       }
 
       template<typename control_t>
-      static control_t create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        control_t item;
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
+      static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control_t> item = std::make_unique<control_t>();
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
       
       template<typename control_t>
-      static control_t create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        control_t item;
-        item.parent(parent);
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
+      static std::unique_ptr<control_t> create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control_t> item = std::make_unique<control_t>();
+        item->parent(parent);
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
       
       template<typename control_t>
-      static control_t create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        control_t item;
-        item.text(text);
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
+      static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control_t> item = std::make_unique<control_t>();
+        item->text(text);
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
       
       template<typename control_t>
-      static control_t create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
-        control_t item;
-        item.parent(parent);
-        item.text(text);
-        if (location != drawing::point {-1, -1}) item.location(location);
-        if (size != drawing::size {-1, -1}) item.size(size);
+      static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+        std::unique_ptr<control_t> item = std::make_unique<control_t>();
+        item->parent(parent);
+        item->text(text);
+        if (location != drawing::point {-1, -1}) item->location(location);
+        if (size != drawing::size {-1, -1}) item->size(size);
         return item;
       }
 
