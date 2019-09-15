@@ -55,12 +55,12 @@ form& form::start_position(form_start_position start_position) {
 }
 
 control& form::visible(bool visible) {
-  this->control::visible(visible);
   if (!this->previous_screeen_) {
     this->client_size_ = {-1, -1};
     this->previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
     this->recreate_handle();
   }
+  this->control::visible(visible);
   return *this;
 }
 
@@ -97,7 +97,7 @@ forms::create_params form::create_params() const {
   create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
   if (this->modal_) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
-  if (this->visible_ == true) {
+  if (this->previous_screeen_) {
     switch (this->start_position_) {
       case form_start_position::manual:
         create_params.location(this->location());
