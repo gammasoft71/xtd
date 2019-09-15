@@ -34,6 +34,8 @@ namespace xtd {
       forms::dialog_result dialog_result() const {return this->data_->dialog_result_;}
       form& dialog_result(forms::dialog_result dialog_result);
 
+      bool modal() const {return this->data_->modal_;}
+      
       using control::parent;
       control& parent(const control& parent) override;
 
@@ -53,6 +55,8 @@ namespace xtd {
    
       drawing::size measure_control() const override;
 
+      void on_handle_created(const event_args &e) override;
+      
       void on_form_closed(const form_closed_event_args& e) {this->form_closed(*this, e);}
       
       void on_form_closing(form_closing_event_args& e) {this->form_closing(*this, e);}
@@ -64,7 +68,7 @@ namespace xtd {
     private:
       struct data {
         forms::dialog_result dialog_result_ = forms::dialog_result::none;
-        bool is_dialog_shown_ = false;
+        bool modal_ = false;
         form_start_position start_position_ = form_start_position::windows_default_location;
       };
       

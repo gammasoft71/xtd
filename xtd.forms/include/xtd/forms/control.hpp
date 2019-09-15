@@ -115,7 +115,8 @@ namespace xtd {
       
       /// @private
       /// @{
-      control(const control& value) = default; //{*this = value;}
+      control(control&&) = default;
+      control(const control& value) {*this = value;}
       control& operator=(const control& value);
       virtual ~control();
       /// @}
@@ -290,6 +291,8 @@ namespace xtd {
           this->set_bounds_core(0, top, 0, 0, bounds_specified::y);
         return *this;
       }
+      
+      virtual control& top_level_control() const;
 
       virtual bool visible() const {return this->data_->visible_;}
       virtual control& visible(bool visible);
@@ -446,8 +449,7 @@ namespace xtd {
       
       event<control, event_handler<control>> visible_changed;
 
-#pragma message("uncomment protected declaration")
-    //protected:
+    protected:
       friend class application;
       friend class screen;
       

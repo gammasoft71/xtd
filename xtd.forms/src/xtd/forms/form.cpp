@@ -56,25 +56,29 @@ forms::dialog_result form::show_dialog() {
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
-  this->data_->is_dialog_shown_ = true;
-  this->show();
-  if (this->control::data_->parent_) this->control::data_->parent_ = owner.handle();
+  intptr_t parent_old = this->control::data_->parent_;
+  this->data_->modal_ = true;
+  this->control::data_->parent_ = owner.handle();
+  this->recreate_handle();
   native::control::enabled(owner.handle(), false);
   forms::dialog_result result = this->data_->dialog_result_;
   if (application::message_loop())
-    result = static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_, owner.handle()));
+    result = static_cast<forms::dialog_result>(native::form::show_dialog(this->control::data_->handle_));
   else
     application::run(*this);
-  this->data_->is_dialog_shown_ = false;
+  this->data_->modal_ = false;
+  this->control::data_->parent_ = parent_old;
+  this->recreate_handle();
   native::control::enabled(owner.handle(), true);
   return result;
 }
 
 forms::create_params form::create_params() const {
   forms::create_params create_params = this->control::create_params();
-  
+
   create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
+  if (this->data_->modal_) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
   
   return create_params;
 }
@@ -90,13 +94,14 @@ void form::wnd_proc(message &message) {
 
 void form::wm_close(message &message) {
   this->def_wnd_proc(message);
-  this->data_->dialog_result_ = forms::dialog_result::cancel;
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
-    if (this->data_->is_dialog_shown_)
+    if (this->data_->modal_) {
+      if (this->data_->dialog_result_ == forms::dialog_result::none)
+        this->data_->dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(this->control::data_->handle_, static_cast<int32_t>(this->data_->dialog_result_));
-    else
+    } else
       this->destroy_handle();
   }
 }
@@ -106,4 +111,8 @@ drawing::size form::measure_control() const {
   for (auto item : this->controls())
     bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
+}
+
+void form::on_handle_created(const event_args &e) {
+  this->control::on_handle_created(e);
 }

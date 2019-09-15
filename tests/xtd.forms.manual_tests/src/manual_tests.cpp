@@ -17,7 +17,18 @@ int main() {
   button1.click += [&] {
     form dialog;
     dialog.text("dialog");
-    dialog.show_dialog();
+    dialog.location({200, 400});
+    
+    button button_ok;
+    button_ok.parent(dialog);
+    button_ok.text("OK");
+    button_ok.location({10, 10});
+    cdebug << format("button_ok[0x{:X}] = {}", button_ok.handle(), button_ok) << endl;
+    cdebug << format("button_ok.parent[0x{:X} = {}", button_ok.parent().handle(), button_ok.parent()) << endl;
+    cdebug << format("button_ok.top_level_control[0x{:X}] = {}", button_ok.top_level_control().handle(), button_ok.top_level_control()) << endl;
+    button_ok.dialog_result(forms::dialog_result::oK);
+    
+    cdebug << format("dialog_result = {}", dialog.show_dialog()) << endl;
   };
   application::run(form1);
 }
