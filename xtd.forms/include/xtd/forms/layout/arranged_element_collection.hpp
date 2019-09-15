@@ -34,15 +34,14 @@ namespace xtd {
         /// @biref Creats a new object arranged_element_collection
         explicit arranged_element_collection(const allocator_t& allocator = allocator_t()) : collection_(allocator) {}
         
-        /// @private
-        /// @{
+        /// @cond
         arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
         arranged_element_collection& operator=(const arranged_element_collection& collection) {
           this->clear();
           this->push_back_range(collection);
           return *this;
         }
-        /// @}
+        /// @endcond
         
         /// @brief Occurs when an item is added to the collection.
         event<arranged_element_collection, delegate<void(size_t, type_t item)>> item_added;
