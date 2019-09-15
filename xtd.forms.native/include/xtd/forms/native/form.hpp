@@ -9,7 +9,6 @@ namespace xtd {
         form() = delete;
         static void close(intptr_t form);
         static int32_t show_dialog(intptr_t form);
-        static int32_t show_dialog(intptr_t form, intptr_t owner);
         static void end_dialog(intptr_t form, int32_t result);
       };
     }

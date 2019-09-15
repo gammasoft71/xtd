@@ -7,6 +7,7 @@
 #include <xtd/forms/native/window_message_keys.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/control.hpp"
+#include "../../../include/xtd/forms/form.hpp"
 
 using namespace std;
 using namespace xtd;
@@ -201,6 +202,14 @@ control& control::text(const string& text) {
   return *this;
 }
 
+control& control::top_level_control() const {
+  control* top_level_control = const_cast<control*>(this);
+  while (dynamic_cast<form*>(top_level_control) == nullptr && top_level_control->data_->parent_ != 0) {
+    top_level_control = &top_level_control->parent();
+  }
+  return *top_level_control;
+}
+
 control& control::visible(bool visible) {
   if (this->data_->visible_ != visible) {
     this->data_->visible_ = visible;
@@ -372,7 +381,7 @@ void control::on_handle_created(const event_args &e) {
   if ((this->data_->back_color_.has_value() && this->data_->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->data_->handle_, this->back_color());
   if (this->data_->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->data_->handle_, this->fore_color());
   if (this->data_->font_.has_value() || this->font() != this->default_font()) native::control::font(this->data_->handle_, this->font());
-  //native::control::visible(this->data_->handle_, this->visible());
+  native::control::visible(this->data_->handle_, this->visible());
   
   this->data_->client_rectangle_ = native::control::client_rectangle(this->data_->handle_);
   this->data_->client_size_ = native::control::client_size(this->data_->handle_);

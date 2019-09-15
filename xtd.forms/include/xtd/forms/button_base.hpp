@@ -12,7 +12,7 @@ namespace xtd {
     class button_base : public control {
     public:
       /// @cond
-      button_base(const button_base& value) = default;
+      button_base(const button_base& value) : control(value) {this->data_ = value.data_;}
       button_base& operator=(const button_base& value);
       /// @endcond
       
@@ -60,12 +60,14 @@ namespace xtd {
       /// @remarks This method is used when auto_size is true.
       drawing::size measure_control() const override;
       
-    private:
+    protected:
+      /// @cond
       struct data {
         bool auto_ellipsis_ = false;
       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();
+      /// @endcond
     };
   }
 }
