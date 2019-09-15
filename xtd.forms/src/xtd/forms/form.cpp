@@ -6,11 +6,21 @@
 #include <xtd/forms/window_messages.hpp>
 #include "../../../include/xtd/forms/application.hpp"
 #include "../../../include/xtd/forms/form.hpp"
+#include "../../../include/xtd/forms/screen.hpp"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+
+namespace {
+  /// @todo Read default_location and next_location from registry...
+  static int32_t default_location = 20;
+  static bool next_location = true; // Strangely, on Windows the first location is used 2 times; this boolean simumate it.
+  //static microsoft::win32::registry_key key = microsoft::win32::registry::current_user().create_sub_key("Software").create_sub_key("Gammasoft71").create_sub_key("xtd").create_sub_key(environment::version().to_string()).create_sub_key("forms");
+  //static int32_t default_location = static_cast<int32_t>(key.get_value("DefaultFormLocation", 20));
+  //static bool next_location = static_cast<int32_t>(key.get_value("NextFormLocation", 1))); // Strangely, on Windows the first location is used 2 times; this boolean simumate it.
+}
 
 form::form() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
@@ -38,6 +48,22 @@ control& form::parent(const control& parent) {
   return *this;
 }
 
+form& form::start_position(form_start_position start_position) {
+  if (this->start_position_ != start_position)
+    this->start_position_ = start_position;
+  return *this;
+}
+
+control& form::visible(bool visible) {
+  this->control::visible(visible);
+  if (!this->previous_screeen_) {
+    this->client_size_ = {-1, -1};
+    this->previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+    this->recreate_handle();
+  }
+  return *this;
+}
+
 void form::close() {
   native::form::close(this->handle_);
 }
@@ -47,18 +73,19 @@ forms::dialog_result form::show_dialog() {
 }
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
-  intptr_t parent_old = this->parent_;
+  intptr_t current_parent = this->parent_;
   this->modal_ = true;
   this->parent_ = owner.handle();
   this->recreate_handle();
+  this->show();
   native::control::enabled(owner.handle(), false);
-  forms::dialog_result result = this->dialog_result_;
+  forms::dialog_result result = this->dialog_result_ = forms::dialog_result::none;
   if (application::message_loop())
     result = static_cast<forms::dialog_result>(native::form::show_dialog(this->handle_));
   else
     application::run(*this);
   this->modal_ = false;
-  this->parent_ = parent_old;
+  this->parent_ = current_parent;
   this->recreate_handle();
   native::control::enabled(owner.handle(), true);
   return result;
@@ -70,7 +97,39 @@ forms::create_params form::create_params() const {
   create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
   if (this->modal_) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
-  
+  if (this->visible_ == true) {
+    switch (this->start_position_) {
+      case form_start_position::manual:
+        create_params.location(this->location());
+        create_params.size(this->size());
+        break;
+      case form_start_position::center_screen:
+        create_params.location({(this->previous_screeen_->working_area().width() - this->width()) / 2, (this->previous_screeen_->working_area().height() - this->height()) / 2});
+        create_params.size(this->size());
+        break;
+      case form_start_position::windows_default_location:
+        create_params.location({default_location, default_location});
+        create_params.size(this->size());
+        break;
+      case form_start_position::windows_default_bounds:
+        create_params.location({default_location, default_location});
+        create_params.size({this->previous_screeen_->working_area().width() / 4 * 3, this->previous_screeen_->working_area().height() / 4 * 3});
+        break;
+      case form_start_position::center_parent:
+        if (this->parent_ == 0)
+          create_params.location({(this->previous_screeen_->working_area().width() - this->width()) / 2, (this->previous_screeen_->working_area().height() - this->height()) / 2});
+        else
+          create_params.location({default_location, default_location});
+        create_params.size(this->size());
+        break;
+    }
+    
+    if (this->start_position_ == form_start_position::windows_default_location || this->start_position_ == form_start_position::windows_default_bounds || (this->start_position_ == form_start_position::center_parent && !this->parent_)) {
+      next_location = !(next_location == true && default_location == 20);
+      if (next_location) default_location = default_location < 180 ? default_location + 20 : 20;
+    }
+  }
+
   return create_params;
 }
 

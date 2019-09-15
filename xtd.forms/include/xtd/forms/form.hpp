@@ -4,6 +4,7 @@
 #include "form_start_position.hpp"
 #include "control.hpp"
 #include "dialog_result.hpp"
+#include "screen.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -21,19 +22,25 @@ namespace xtd {
     public:
       form();
 
-      forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
       virtual form& auto_size_mode(forms::auto_size_mode value);
       
       drawing::size default_size() const override {return{300, 300};}
       
-      forms::dialog_result dialog_result() const {return this->dialog_result_;}
-      form& dialog_result(forms::dialog_result dialog_result);
+      virtual forms::dialog_result dialog_result() const {return this->dialog_result_;}
+      virtual form& dialog_result(forms::dialog_result dialog_result);
 
       bool modal() const {return this->modal_;}
       
       using control::parent;
       control& parent(const control& parent) override;
+      
+      virtual form_start_position start_position() const {return this->start_position_;}
+      virtual form& start_position(form_start_position start_position);
 
+      using control::visible;
+      control& visible(bool visible) override;
+      
       void close();
       
       forms::dialog_result show_dialog();
@@ -62,6 +69,7 @@ namespace xtd {
 
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       bool modal_ = false;
+      std::shared_ptr<screen> previous_screeen_;
       form_start_position start_position_ = form_start_position::windows_default_location;
     };
   }
