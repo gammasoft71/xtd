@@ -32,7 +32,7 @@ namespace xtd {
       /// @brief Nothing is returned from the dialog box. This means that the modal dialog continues running.
       none = 0,
       /// @brief The dialog box return value is OK (usually sent from a button labeled OK).
-      oK = 1,
+      ok = 1,
       /// @brief The dialog box return value is Cancel (usually sent from a button labeled Cancel).
       cancel = 2,
       /// @brief The dialog box return value is Abort (usually sent from a button labeled Abort).
@@ -48,8 +48,8 @@ namespace xtd {
     };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, dialog_result value) {return os << to_string(value, {{dialog_result::none, "none"}, {dialog_result::oK, "oK"}, {dialog_result::cancel, "cancel"}, {dialog_result::abort, "abort"}, {dialog_result::retry, "retry"}, {dialog_result::ignore, "ignore"}, {dialog_result::yes, "yes"}, {dialog_result::no, "no"}});}
-    inline std::wostream& operator<<(std::wostream& os, dialog_result value) {return os << to_string(value, {{dialog_result::none, L"none"}, {dialog_result::oK, L"oK"}, {dialog_result::cancel, L"cancel"}, {dialog_result::abort, L"abort"}, {dialog_result::retry, L"retry"}, {dialog_result::ignore, L"ignore"}, {dialog_result::yes, L"yes"}, {dialog_result::no, L"no"}});}
+    inline std::ostream& operator<<(std::ostream& os, dialog_result value) {return os << to_string(value, {{dialog_result::none, "none"}, {dialog_result::ok, "ok"}, {dialog_result::cancel, "cancel"}, {dialog_result::abort, "abort"}, {dialog_result::retry, "retry"}, {dialog_result::ignore, "ignore"}, {dialog_result::yes, "yes"}, {dialog_result::no, "no"}});}
+    inline std::wostream& operator<<(std::wostream& os, dialog_result value) {return os << to_string(value, {{dialog_result::none, L"none"}, {dialog_result::ok, L"ok"}, {dialog_result::cancel, L"cancel"}, {dialog_result::abort, L"abort"}, {dialog_result::retry, L"retry"}, {dialog_result::ignore, L"ignore"}, {dialog_result::yes, L"yes"}, {dialog_result::no, L"no"}});}
     /// @endcond
   }
 }
