@@ -116,8 +116,8 @@ forms::create_params form::create_params() const {
         create_params.size({this->previous_screeen_->working_area().width() / 4 * 3, this->previous_screeen_->working_area().height() / 4 * 3});
         break;
       case form_start_position::center_parent:
-        if (this->parent_ == 0)
-          create_params.location({(this->previous_screeen_->working_area().width() - this->width()) / 2, (this->previous_screeen_->working_area().height() - this->height()) / 2});
+        if (this->parent_ != 0)
+          create_params.location({this->parent().left() + (this->parent().width() - this->width()) / 2, this->parent().top() + (this->parent().height() - this->height()) / 2});
         else
           create_params.location({default_location, default_location});
         create_params.size(this->size());
