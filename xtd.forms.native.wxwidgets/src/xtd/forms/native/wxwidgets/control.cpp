@@ -141,16 +141,7 @@ font control::default_font() {
 void control::destroy(intptr_t control) {
   if (control == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
-  if (wxTheApp) {
-    reinterpret_cast<control_handler*>(control)->destroy();
-#if !defined (__WXOSX__)
-    wxTheApp->wxEvtHandler::ProcessPendingEvents();
-    //if (!wxTheApp->IsMainLoopRunning()) {
-      //application::end_application();
-      //application::start_application();
-    //}
-#endif
-  }
+  if (wxTheApp) reinterpret_cast<control_handler*>(control)->destroy();
   delete reinterpret_cast<class control_handler*>(control);
 }
 
