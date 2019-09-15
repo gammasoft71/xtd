@@ -1,9 +1,7 @@
 #include "../../../include/xtd/forms/button.hpp"
 #include "../../../include/xtd/forms/form.hpp"
-#include <xtd/diagnostics/cdebug.hpp>
 #include <xtd/forms/native/window_button.hpp>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
