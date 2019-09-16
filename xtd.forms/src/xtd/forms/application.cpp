@@ -104,8 +104,12 @@ void application::run() {
 }
 
 void application::run(const form& form) {
+  run(const_cast<forms::form&>(form));
+}
+
+void application::run(form& form) {
   native::application::main_form(form.handle_);
-  const_cast<forms::form&>(form).show();
+  form.show();
   run();
 }
 
