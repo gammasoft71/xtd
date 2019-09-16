@@ -32,7 +32,7 @@ namespace xtd {
       /// @brief Sets the value returned to the parent form when the button is clicked.
       /// @param dialog_result One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
-      ibutton_control& dialog_result(forms::dialog_result dialog_result) override;
+      control& dialog_result(forms::dialog_result dialog_result) override;
 
       /// @brief Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly.
       /// @param value true if the control should behave as a default button; otherwise false.
