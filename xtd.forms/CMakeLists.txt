@@ -21,6 +21,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/check_box.hpp
   include/xtd/forms/check_state.hpp
   include/xtd/forms/close_reason.hpp
+  include/xtd/forms/common_dialog.hpp
+  include/xtd/forms/container_control.hpp
   include/xtd/forms/control.hpp
   include/xtd/forms/control_event_args.hpp
   include/xtd/forms/control_event_handler.hpp
@@ -41,6 +43,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/keys.hpp
   include/xtd/forms/label.hpp
   include/xtd/forms/list_box.hpp
+  include/xtd/forms/list_control.hpp
+  include/xtd/forms/menu.hpp
   include/xtd/forms/message.hpp
   include/xtd/forms/paint_event_args.hpp
   include/xtd/forms/paint_event_handler.hpp
@@ -57,12 +61,16 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/progress_bar.hpp
   include/xtd/forms/progress_bar_style.hpp
   include/xtd/forms/radio_button.hpp
+  include/xtd/forms/scroll_bar.hpp
+  include/xtd/forms/scrollable_control.hpp
   include/xtd/forms/screen.hpp
   include/xtd/forms/selection_mode.hpp
+  include/xtd/forms/text_box_base.hpp
   include/xtd/forms/text_box.hpp
   include/xtd/forms/tick_style.hpp
   include/xtd/forms/timer.hpp
   include/xtd/forms/track_bar.hpp
+  include/xtd/forms/up_down_base.hpp
 )
 
 set(XTD_FORMS_LAYOUT_INCLUDES

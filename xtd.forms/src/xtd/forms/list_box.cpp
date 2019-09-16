@@ -105,7 +105,7 @@ list_box& list_box::sorted(bool sorted) {
 }
 
 forms::create_params list_box::create_params() const {
-  forms::create_params create_params = this->control::create_params();
+  forms::create_params create_params = this->list_control::create_params();
   
   create_params.class_name("listbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
@@ -127,7 +127,7 @@ forms::create_params list_box::create_params() const {
 }
 
 void list_box::on_handle_created(const event_args &e) {
-  this->control::on_handle_created(e);
+  this->list_control::on_handle_created(e);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::list_box::insert_item(this->handle_, index, this->items_[index]);
   if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);
@@ -140,18 +140,18 @@ void list_box::wnd_proc(message &message) {
     case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
     case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
     case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-    default: this->control::wnd_proc(message);
+    default: this->list_control::wnd_proc(message);
   }
 }
 
 void list_box::wm_mouse_double_click(message &message) {
   if (this->selection_mode() != forms::selection_mode::none)
-    this->control::wnd_proc(message);
+    this->list_control::wnd_proc(message);
 }
 
 void list_box::wm_mouse_down(message &message) {
   if (this->selection_mode() != forms::selection_mode::none)
-    this->control::wnd_proc(message);
+    this->list_control::wnd_proc(message);
   else
     this->on_selected_index_changed(event_args::empty);
 }

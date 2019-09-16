@@ -59,11 +59,11 @@ forms::create_params radio_button::create_params() const {
 }
 
 drawing::size radio_button::measure_control() const {
-  return this->control::measure_text() + drawing::size(20, 0);
+  return this->button_base::measure_text() + drawing::size(20, 0);
 }
 
 void radio_button::on_handle_created(const event_args &e) {
-  this->control::on_handle_created(e);
+  this->button_base::on_handle_created(e);
   native::radio_button::checked(this->handle_, this->checked_);
 }
 
@@ -72,7 +72,7 @@ void radio_button::wnd_proc(message &message) {
     case WM_LBUTTONDOWN: break;
     case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
     case WM_LBUTTONUP: this->wm_mouse_up(message); break;
-    default: this->control::wnd_proc(message);
+    default: this->button_base::wnd_proc(message);
   }
 }
 

@@ -40,7 +40,7 @@ control& text_box::text(const string& text) {
 }
 
 forms::create_params text_box::create_params() const {
-  forms::create_params create_params = this->control::create_params();
+  forms::create_params create_params = this->text_box_base::create_params();
   
   create_params.class_name("textbox");
   
