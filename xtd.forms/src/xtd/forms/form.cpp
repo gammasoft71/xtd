@@ -62,7 +62,7 @@ control& form::visible(bool visible) {
     this->previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
     this->recreate_handle();
   }
-  this->control::visible(visible);
+  this->container_control::visible(visible);
   return *this;
 }
 
@@ -93,7 +93,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 }
 
 forms::create_params form::create_params() const {
-  forms::create_params create_params = this->control::create_params();
+  forms::create_params create_params = this->container_control::create_params();
 
   create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
@@ -138,7 +138,7 @@ void form::wnd_proc(message &message) {
   if (this->enabled()) {
     switch (message.msg()) {
       case WM_CLOSE: this->wm_close(message); break;
-      default: this->control::wnd_proc(message); break;
+      default: this->container_control::wnd_proc(message); break;
     }
   }
 }
@@ -165,5 +165,5 @@ drawing::size form::measure_control() const {
 }
 
 void form::on_handle_created(const event_args &e) {
-  this->control::on_handle_created(e);
+  this->container_control::on_handle_created(e);
 }

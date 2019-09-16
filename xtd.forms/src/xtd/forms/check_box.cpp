@@ -65,11 +65,11 @@ forms::create_params check_box::create_params() const {
 }
 
 drawing::size check_box::measure_control() const {
-  return this->control::measure_text() + drawing::size(20, 0);
+  return this->button_base::measure_text() + drawing::size(20, 0);
 }
 
 void check_box::on_handle_created(const event_args &e) {
-  this->control::on_handle_created(e);
+  this->button_base::on_handle_created(e);
   native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
 }
 
@@ -78,7 +78,7 @@ void check_box::wnd_proc(message &message) {
     case WM_LBUTTONDOWN: break;
     case WM_LBUTTONUP: this->wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
-    default: this->control::wnd_proc(message);
+    default: this->button_base::wnd_proc(message);
   }
 }
 

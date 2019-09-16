@@ -2,7 +2,7 @@
 #include "form_closed_event_handler.hpp"
 #include "form_closing_event_handler.hpp"
 #include "form_start_position.hpp"
-#include "control.hpp"
+#include "container_control.hpp"
 #include "dialog_result.hpp"
 #include "ibutton_control.hpp"
 #include "screen.hpp"
@@ -22,7 +22,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of form control.
     /// @include form.cpp
-    class form : public control {
+    class form : public container_control {
     public:
       /// @brief Initializes a new instance of the Form class.
       /// @remarks The default size of a form is 300 pixels in height and 300 pixels in width.
@@ -38,13 +38,13 @@ namespace xtd {
 
       bool modal() const {return this->modal_;}
       
-      using control::parent;
+      using container_control::parent;
       control& parent(const control& parent) override;
       
       virtual form_start_position start_position() const {return this->start_position_;}
       virtual form& start_position(form_start_position start_position);
 
-      using control::visible;
+      using container_control::visible;
       control& visible(bool visible) override;
       
       void close();

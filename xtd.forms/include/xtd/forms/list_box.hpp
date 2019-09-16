@@ -1,14 +1,14 @@
 #pragma once
 #include "layout/arranged_element_collection.hpp"
 #include "border_style.hpp"
-#include "control.hpp"
+#include "list_control.hpp"
 #include "selection_mode.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class list_box : public control {
+    class list_box : public list_control {
     public:
       using string_collection = layout::arranged_element_collection<std::string>;
       
@@ -51,7 +51,7 @@ namespace xtd {
       virtual bool sorted() const {return this->sorted_;}
       virtual list_box& sorted(bool sorted);
       
-      using control::text;
+      using list_control::text;
       control& text(const std::string& text) override {return this->selected_item(text);}
 
       event<list_box, event_handler<control>> selected_index_changed;
@@ -63,7 +63,7 @@ namespace xtd {
 
       virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
 
-      virtual void on_selected_value_changed(const event_args& e) {this->control::text(this->selected_item_);}
+      virtual void on_selected_value_changed(const event_args& e) {this->list_control::text(this->selected_item_);}
 
       void wnd_proc(message& message) override;
       
