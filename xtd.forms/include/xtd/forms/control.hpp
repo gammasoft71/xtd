@@ -464,7 +464,7 @@ namespace xtd {
       virtual void def_wnd_proc(message& message);
 
       /// @brief Measure this control.
-      /// @return THe Drawing::Size size of this control.
+      /// @return The drawing::size size of this control.
       /// @remarks This metod is not relevant for this class.
       virtual drawing::size measure_control() const;
       

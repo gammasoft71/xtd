@@ -43,6 +43,10 @@ radio_button& radio_button::checked(bool checked) {
   return *this;
 }
 
+void radio_button::perform_click() {
+  this->on_click(event_args::empty);
+}
+
 forms::create_params radio_button::create_params() const {
   forms::create_params create_params = this->button_base::create_params();
   
