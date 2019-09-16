@@ -13,10 +13,11 @@ namespace examples {
       this->radio_button1.auto_check(false);
       this->radio_button1.checked(true);
       this->radio_button1.location({30, 30});
+      this->radio_button1.font(drawing::font(this->font(), drawing::font_style::italic));
       this->radio_button1.text("Radio 1");
       this->radio_button1.click += [&](const control& sender, const event_args& e) {
         // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
-        this->radio_button1.checked(!this->radio_button1.checked());
+        //this->radio_button1.checked(!this->radio_button1.checked());
       };
     
       this->radio_button2.location({30, 60});
@@ -35,16 +36,17 @@ namespace examples {
       
       this->radio_button5.auto_check(false);
       this->radio_button5.appearance(appearance::button);
+      this->radio_button5.checked(true);
+      this->radio_button5.font(drawing::font(this->font(), drawing::font_style::italic));
       this->radio_button5.location({30, 150});
       this->radio_button5.text("Radio 5");
       this->radio_button5.click += [&](const control& sender, const event_args& e) {
-        // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
-        this->radio_button5.checked(!this->radio_button5.checked());
+        // Uncomments next line to check / uncheck radio button 5 (auto_check is false...)
+        //this->radio_button5.checked(!this->radio_button5.checked());
       };
 
       this->label1.auto_size(true);
       this->label1.location({30, 180});
-      this->label1.text(strings::format("Radio 3 checked = {}", this->radio_button3.checked()));
     }
     
   private:
