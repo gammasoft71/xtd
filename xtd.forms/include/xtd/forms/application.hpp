@@ -78,6 +78,10 @@ namespace xtd {
 
       static void run(const form& form);
       
+      /// @cond
+      static void run(form& form);
+      /// @endcond
+      
       static void start();
 
       static event<application, delegate<void(const event_args&)>> idle;
