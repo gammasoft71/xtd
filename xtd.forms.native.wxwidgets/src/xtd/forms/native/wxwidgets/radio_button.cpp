@@ -14,12 +14,11 @@ bool radio_button::checked(intptr_t control) {
 
 void radio_button::checked(intptr_t control, bool checked) {
   if (control == 0) return;
-  control_handler* ctrl = reinterpret_cast<control_handler*>(control);
-  if (dynamic_cast<wxRadioButton*>(ctrl->control()) != nullptr) {
-    reinterpret_cast<wx_radio_button*>(control)->hiden_radio_button->SetValue(!checked);
-    static_cast<wxRadioButton*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(checked);
+  wx_radio_button* radio_button = reinterpret_cast<wx_radio_button*>(control);
+  if (dynamic_cast<wxRadioButton*>(radio_button->control()) != nullptr) {
+    radio_button->hiden_radio_button->SetValue(!checked);
+    static_cast<wxRadioButton*>(radio_button->control())->SetValue(checked);
   } else {
-    reinterpret_cast<wx_radio_button*>(control)->hiden_radio_button->SetValue(checked);
-    static_cast<wxToggleButton*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(checked);
+    static_cast<wxToggleButton*>(radio_button->control())->SetValue(checked);
   }
 }

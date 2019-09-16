@@ -222,7 +222,7 @@ intptr_t control::parent(intptr_t control) {
 }
 
 void control::parent(intptr_t control, intptr_t parent) {
-  reinterpret_cast<control_handler*>(control)->control()->Reparent(reinterpret_cast<control_handler*>(parent)->control());
+  reinterpret_cast<control_handler*>(control)->Reparent(reinterpret_cast<control_handler*>(parent)->control());
 }
 
 drawing::size control::size(intptr_t control) {

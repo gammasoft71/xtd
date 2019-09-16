@@ -1,6 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
+#include <wx/panel.h>
 #include <wx/radiobut.h>
 #include <wx/tglbtn.h>
 #include "control_handler.hpp"
@@ -8,7 +9,6 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class wx_radio_button : public control_handler {
       public:
         wx_radio_button(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
@@ -19,6 +19,12 @@ namespace xtd {
           this->hiden_radio_button = new wxRadioButton(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
           this->hiden_radio_button->Show(false);
         }
+        
+        virtual void Reparent(wxWindowBase* parent) {
+          this->control_handler::Reparent(parent);
+          this->hiden_radio_button->Reparent(parent);
+        }
+
         wxRadioButton* hiden_radio_button = nullptr;
       };
     }
