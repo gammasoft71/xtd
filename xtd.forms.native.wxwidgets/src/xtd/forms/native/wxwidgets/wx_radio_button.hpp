@@ -9,6 +9,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class wx_radio_button : public control_handler {        
       public:
         wx_radio_button(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
