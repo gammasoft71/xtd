@@ -10,13 +10,13 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates how to display a MessageBox with the options supported by this overload of Show. After verifying that a string variable, ServerName, is empty, the example displays a MessageBox, offering the user the option to cancel the operation. If the Show method's return value evaluates to Yes, the form that displayed the MessageBox is closed.
     /// @code
-    /// void validateUserEntry5() {
+    /// void validate_user_entry() {
     ///   // Checks the value of the text.
-    ///   if (serverName.text().size() == 0) {
+    ///   if (server_name.text().size() == 0) {
     ///     // Initializes the variables to pass to the MessageBox.Show method.
     ///     string message = "You did not enter a server name. Cancel this operation?";
     ///     string caption = "No Server Name Specified";
-    ///     messageB_box_buttons buttons = message_box_buttons::yes_no;
+    ///     message_box_buttons buttons = message_box_buttons::yes_no;
     ///     dialog_result result;
     ///
     ///     // Displays the MessageBox.
