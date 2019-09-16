@@ -1,3 +1,4 @@
+#include <random>
 #include <stdexcept>
 #include <xtd/xtd.diagnostics>
 #include <xtd/forms/native/control.hpp>
@@ -15,7 +16,8 @@ using namespace xtd::forms;
 
 namespace {
   /// @todo Read default_location and next_location from registry...
-  static int32_t default_location = 20;
+  static std::random_device rand;
+  static int32_t default_location = std::uniform_int_distribution<int32_t> {2, 18}(rand) * 10; // 20;
   static bool next_location = true; // Strangely, on Windows the first location is used 2 times; this boolean simumate it.
   //static microsoft::win32::registry_key key = microsoft::win32::registry::current_user().create_sub_key("Software").create_sub_key("Gammasoft71").create_sub_key("xtd").create_sub_key(environment::version().to_string()).create_sub_key("forms");
   //static int32_t default_location = static_cast<int32_t>(key.get_value("DefaultFormLocation", 20));
