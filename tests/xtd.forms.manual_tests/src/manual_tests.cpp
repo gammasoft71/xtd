@@ -15,7 +15,8 @@ int main() {
   
     auto button_ok = control::create<button>(*dialog, "OK", {10, 10});
     button_ok->dialog_result(forms::dialog_result::ok);
-    
+    button_ok->notify_default(true);
+
     auto button_cancel = control::create<button>(*dialog, "Cancel", {100, 10});
     button_cancel->dialog_result(forms::dialog_result::cancel);
     
