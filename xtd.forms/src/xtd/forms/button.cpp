@@ -10,7 +10,7 @@ button& button::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
-button& button::dialog_result(forms::dialog_result dialog_result) {
+ibutton_control& button::dialog_result(forms::dialog_result dialog_result) {
   if (this->dialog_result_ != dialog_result)
     this->dialog_result_ = dialog_result;
   return *this;
