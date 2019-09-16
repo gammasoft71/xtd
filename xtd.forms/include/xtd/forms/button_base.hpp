@@ -51,7 +51,7 @@ namespace xtd {
       forms::create_params create_params() const override;
 
       /// @brief Measure this control.
-      /// @return THe Drawing::Size size of this control.
+      /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is true.
       drawing::size measure_control() const override;
       
