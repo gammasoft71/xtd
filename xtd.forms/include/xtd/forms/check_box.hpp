@@ -9,7 +9,7 @@ namespace xtd {
   namespace forms {
     class check_box : public button_base {
     public:
-      check_box() = default;
+      check_box();
 
       virtual forms::appearance appearance() const {return this->appearance_;}
       virtual check_box& appearance(forms::appearance appearance);

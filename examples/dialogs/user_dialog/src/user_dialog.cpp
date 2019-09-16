@@ -48,8 +48,8 @@ public:
     this->input_text.location({10, 50});
     this->input_text.text("User input text");
     
-    this->button_dialog.text("Dialog...");
     this->button_dialog.location({10, 10});
+    this->button_dialog.text("Dialog...");
     this->button_dialog.click += [&] {
       user_input_dialog dialog;
       dialog.input_text(this->input_text.text());
