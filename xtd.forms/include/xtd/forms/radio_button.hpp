@@ -8,7 +8,7 @@ namespace xtd {
   namespace forms {
     class radio_button : public button_base {
     public:
-      radio_button() = default;
+      radio_button();
 
       virtual forms::appearance appearance() const {return this->appearance_;}
       virtual radio_button& appearance(forms::appearance appearance);

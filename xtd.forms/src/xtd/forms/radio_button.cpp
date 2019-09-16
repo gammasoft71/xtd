@@ -8,6 +8,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+radio_button::radio_button() {
+  this->size_ = this->default_size();
+}
+
 radio_button& radio_button::appearance(forms::appearance appearance) {
   if (this->appearance_ != appearance) {
     this->appearance_ = appearance;

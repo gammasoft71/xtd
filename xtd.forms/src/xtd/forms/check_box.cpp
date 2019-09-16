@@ -7,6 +7,10 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+check_box::check_box() {
+  this->size_ = this->default_size();
+}
+
 check_box& check_box::appearance(forms::appearance appearance) {
   if (this->appearance_ != appearance) {
     this->appearance_ = appearance;
