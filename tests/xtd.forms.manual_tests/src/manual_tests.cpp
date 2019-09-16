@@ -1,27 +1,62 @@
 #include <xtd/xtd.forms>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-int main() {
-  auto form1 = control::create<form>("form1", {20, 20}, {800, 450});
-  form1->start_position(form_start_position::center_screen);
-  
-  auto button1 = control::create<button>(*form1, "Dialog", {10, 10});
-  button1->click += [&] {
-    auto dialog = control::create<form>("dialog");
-    dialog->client_size({200, 50});
-    dialog->start_position(form_start_position::center_parent);
+namespace examples {
+  class form1 : public form {
+  public:
+    form1() {
+      this->text("Radio button example");
+      this->controls().push_back_range({this->radio_button1, this->radio_button2, this->radio_button3, this->radio_button4, this->radio_button5, this->label1});
+      
+      this->radio_button1.auto_check(false);
+      this->radio_button1.checked(true);
+      this->radio_button1.location({30, 30});
+      this->radio_button1.text("Radio 1");
+      this->radio_button1.click += [&](const control& sender, const event_args& e) {
+        // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
+        this->radio_button1.checked(!this->radio_button1.checked());
+      };
+      
+      this->radio_button2.location({30, 60});
+      this->radio_button2.text("Radio 2");
+      
+      this->radio_button3.checked_changed += [&](const control& sender, const event_args& e) {
+        this->label1.text(strings::format("Radio 3 checked = {}", this->radio_button3.checked()));
+      };
+      this->radio_button3.checked(true);
+      this->radio_button3.location({30, 90});
+      this->radio_button3.text("Radio 3");
+      
+      this->radio_button4.appearance(appearance::button);
+      this->radio_button4.location({30, 120});
+      this->radio_button4.text("Radio 4");
+      
+      this->radio_button5.auto_check(false);
+      this->radio_button5.appearance(appearance::button);
+      this->radio_button5.location({30, 150});
+      this->radio_button5.text("Radio 5");
+      this->radio_button5.click += [&](const control& sender, const event_args& e) {
+        // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
+        this->radio_button5.checked(!this->radio_button5.checked());
+      };
+      
+      this->label1.auto_size(true);
+      this->label1.location({30, 180});
+      this->label1.text(strings::format("Radio 3 checked = {}", this->radio_button3.checked()));
+    }
     
-    auto button_ok = control::create<button>(*dialog, "OK", {10, 10});
-    button_ok->dialog_result(forms::dialog_result::ok);
-    button_ok->notify_default(true);
-
-    auto button_cancel = control::create<button>(*dialog, "Cancel", {110, 10});
-    button_cancel->dialog_result(forms::dialog_result::cancel);
-    
-    cdebug << format("dialog_result = {}", dialog->show_dialog()) << endl;
+  private:
+    radio_button radio_button1;
+    radio_button radio_button2;
+    radio_button radio_button3;
+    radio_button radio_button4;
+    radio_button radio_button5;
+    label label1;
   };
-  application::run(*form1);
+}
+
+int main() {
+  application::run(examples::form1());
 }

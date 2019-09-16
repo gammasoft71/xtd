@@ -40,7 +40,7 @@ namespace xtd {
           if (width < 75) width = 75;
           if (height < 23) height = 23;
 #endif
-          this->control()->SetSize(width, height);
+          this->control_handler::SetSize(width, height);
         }
 
         bool modal() const {return this->modal_;}

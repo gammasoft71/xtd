@@ -337,6 +337,10 @@ namespace xtd {
           //return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
         }
         
+        virtual void Reparent(wxWindowBase* parent) {
+          this->control_->Reparent(parent);
+        }
+        
         virtual void SetSize(int32_t width, int32_t height) {
           this->control_->SetSize(width, height);
         }
