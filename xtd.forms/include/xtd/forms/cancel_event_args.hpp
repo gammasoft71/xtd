@@ -9,7 +9,6 @@ namespace xtd {
     class cancel_event_args : public event_args {
     public:
       cancel_event_args() = default;
-      virtual ~cancel_event_args() = default;
 
       /// @cond
       cancel_event_args(const cancel_event_args& cancel_event_args) = default;
