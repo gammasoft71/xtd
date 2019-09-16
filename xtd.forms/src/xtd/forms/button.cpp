@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/button.hpp"
 #include "../../../include/xtd/forms/form.hpp"
+#include <xtd/forms/native/button.hpp>
 #include <xtd/forms/native/window_button.hpp>
 
 using namespace xtd;
@@ -14,6 +15,14 @@ ibutton_control& button::dialog_result(forms::dialog_result dialog_result) {
   if (this->dialog_result_ != dialog_result)
     this->dialog_result_ = dialog_result;
   return *this;
+}
+
+void button::notify_default(bool value) {
+  native::button::default_button(this->handle_, value);
+}
+
+void button::perform_click() {
+  this->on_click(event_args::empty);
 }
 
 forms::create_params button::create_params() const {
