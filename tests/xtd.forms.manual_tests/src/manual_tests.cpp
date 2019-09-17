@@ -5,6 +5,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
+  cdebug << format("application::executable_path = {}", application::executable_path()) << endl;
+  cdebug << format("application::startup_path    = {}", application::startup_path()) << endl;
   auto form1 = control::create<form>("form1", {20, 20}, {800, 450});
   form1->start_position(form_start_position::center_screen);
   
