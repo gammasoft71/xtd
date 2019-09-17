@@ -39,7 +39,7 @@ bool application::allow_quit() {
 
 void application::do_events() {
   start_application(); // Must be first
-  wxTheApp->Yield();
+  wxTheApp->ProcessPendingEvents();
 }
 
 void application::do_idle() {

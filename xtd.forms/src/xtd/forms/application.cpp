@@ -9,6 +9,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+bool application::use_visual_styles_ = false;
 bool application::message_loop_ = false;
 
 bool application::allow_quit() {
@@ -16,11 +17,10 @@ bool application::allow_quit() {
 }
 
 string application::common_app_data_path() {
-  //string common_app_data_path = io::combine(environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version());
-  //if (!io:directory::exists(common_app_data_path))
+  string common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
+  //if (!io::directory::exists(common_app_data_path))
   //  io::directory::create_directory(common_app_data_path);
-  //return commonApp_data_path;
-  return "";
+  return common_app_data_path;
 }
 
 /*
@@ -31,7 +31,7 @@ microsoft::win32::registry_key application::common_app_data_registry() {
 
 string application::company_name() {
   if (!strings::is_empty(application_informations::company_name())) return application_informations::company_name();
-  return io::path::get_file_name_without_extension(executable_path());
+  return product_name();
 }
 
 string application::executable_path() {
@@ -42,8 +42,8 @@ bool application::message_loop() {
   return  message_loop_;
 }
 
-vector<reference_wrapper<form>> application::open_forms() {
-  vector<reference_wrapper<form>> forms;
+const form_collection application::open_forms() {
+  form_collection forms;
   for (auto control : control::top_level_controls_)
     forms.push_back(static_cast<form&>(control.get()));
   return forms;
@@ -64,11 +64,38 @@ string application::product_name() {
   return io::path::get_file_name_without_extension(executable_path());
 }
 
+string application::product_version() {
+  if (!strings::is_empty(application_informations::product_version())) return application_informations::product_version();
+  return "0.0.0.0";
+}
+
+string application::startup_path() {
+  return io::path::get_directory_name(environment::get_command_line_args()[0]);
+}
+
+string application::user_app_data_path() {
+  string user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
+  //if (!io::directory::exists(user_app_data_path))
+  //  io::directory::create_directory(user_app_data_path);
+  return user_app_data_path;
+}
+
+/*
+ microsoft::win32::registry_key application::user_app_data_registry() {
+   return microsoft::win32::registry::current_user().create_sub_key("Software").create_sub_key(company_name()).create_sub_key(product_name()).create_sub_key(product_version());
+ }
+ */
+
+bool application::use_visual_styles() {
+  return application::use_visual_styles_;
+}
+
 void application::do_events() {
   native::application::do_events();
 }
 
 void application::enable_visual_styles() {
+  application::use_visual_styles_ = true;
   native::application::enable_visual_style();
 }
 
@@ -98,9 +125,9 @@ void application::exit() {
 
 void application::run() {
   native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
-  message_loop_ = true;
+  application::message_loop_ = true;
   native::application::run();
-  message_loop_ = false;
+  application::message_loop_ = false;
 }
 
 void application::run(const form& form) {
@@ -134,7 +161,7 @@ void application::wnd_proc(message& message) {
 }
 
 void application::wm_activate_app(message& message) {
-  for (reference_wrapper<form>& form : open_forms())
+  for (const reference_wrapper<form>& form : open_forms())
     form.get().send_message(form.get().handle_, message.msg(), message.wparam(), message.lparam());
 }
 
