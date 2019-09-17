@@ -5,25 +5,25 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
-  cdebug << format("application::executable_path = {}", application::executable_path()) << endl;
-  cdebug << format("application::startup_path    = {}", application::startup_path()) << endl;
-  auto form1 = control::create<form>("form1", {20, 20}, {800, 450});
-  form1->start_position(form_start_position::center_screen);
-  
-  auto button1 = control::create<button>(*form1, "Dialog", {10, 10});
-  button1->click += [&] {
-    auto dialog = control::create<form>("dialog");
-    dialog->client_size({200, 50});
-    dialog->start_position(form_start_position::center_parent);
-    
-    auto button_ok = control::create<button>(*dialog, "OK", {10, 10});
-    button_ok->dialog_result(forms::dialog_result::ok);
-    button_ok->notify_default(true);
-
-    auto button_cancel = control::create<button>(*dialog, "Cancel", {110, 10});
-    button_cancel->dialog_result(forms::dialog_result::cancel);
-    
-    cdebug << format("dialog_result = {}", dialog->show_dialog()) << endl;
+  auto form1 = control::create<form>("form1");
+  form1->show();
+  form1->form_closing += [&](const control& sender, form_closing_event_args& e) {
+    e.cancel(message_box::show("form1", "Close ?", message_box_buttons::yes_no) == dialog_result::no);
   };
-  application::run(*form1);
+  auto form2 = control::create<form>("form2");
+  form2->show();
+  auto button1 = control::create<button>(*form1, "main", {10, 10});
+  auto button2 = control::create<button>(*form2, "main", {10, 10});
+  application_context context;
+  button1->click += [&] {
+    context.main_form(*form1);
+    button1->enabled(&context.main_form() != form1.get());
+    button2->enabled(&context.main_form() != form2.get());
+  };
+  button2->click += [&] {
+    context.main_form(*form2);
+    button1->enabled(&context.main_form() != form1.get());
+    button2->enabled(&context.main_form() != form2.get());
+  };
+  application::run(context);
 }

@@ -2,8 +2,8 @@
 #include <cstdint>
 #include <memory>
 #include <vector>
+#include "application_context.hpp"
 #include "application_informations.hpp"
-#include "form.hpp"
 #include "message.hpp"
 #include <xtd/xtd.delegates>
 
@@ -58,11 +58,14 @@ namespace xtd {
       /// @endcode
       static std::string company_name();
 
+      /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
+      /// @return The executable name and executable name for the executable file that started the application.<br><br>
+      static std::string executable_name();
+      
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
-      /// This path will be different depending on whether the Windows Forms application is deployed using ClickOnce. ClickOnce applications are stored in a per-user application cache in the C:\Documents and Settings\username directory. For more information, see Accessing Local and Remote Data in ClickOnce Applications.
       static std::string executable_path();
-
+      
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return true if a message loop exists; otherwise, false.
        static bool message_loop();
@@ -117,24 +120,49 @@ namespace xtd {
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, nnable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       static void enable_visual_styles();
 
-      static void end();
-
+      /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
+      /// @remarks The exit method stops all running message loops on all threads and closes all windows of the application. This method does not necessarily force the application to exit. The exit method is typically called from within a message loop, and forces Run to return. To exit a message loop for the current thread only, call exit_thread.
+      /// @remarks Exit raises the following events and performs the associated conditional actions:
+      /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to true.
+      /// * If one of more of the handlers cancels the event, then exit returns without further action. Otherwise, a form_closed event is raised for every open form, then all running message loops and forms are closed.
       static void exit();
-
+      
+      /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
+      /// @param e Returns whether any Form within the application cancelled the exit.
+      /// @remarks The exit method stops all running message loops on all threads and closes all windows of the application. This method does not necessarily force the application to exit. The exit method is typically called from within a message loop, and forces Run to return. To exit a message loop for the current thread only, call exit_thread.
+      /// @remarks Exit raises the following events and performs the associated conditional actions:
+      /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to true.
+      /// * If one of more of the handlers cancels the event, then exit returns without further action. Otherwise, a form_closed event is raised for every open form, then all running message loops and forms are closed.
+      static void exit(cancel_event_args& e);
+      
+      /// @brief Exits the message loop on the current thread and closes all windows on the thread.
+      /// @remarks Use this method to exit the message loop of the current thread. This method causes the call to run for the current thread to return. To exit the entire application, call exit.
+      static void exit_thread();
+      
+      /// @brief Raises the Idle event
+      /// @param e The event_args objects to pass to the idle event.
+      static void raise_idle(const event_args& e);
+      
+      /// @brief Shuts down the application and starts a new instance immediately.
+      /// @remarks Applications are restarted in the context in which they were initially run.
+      /// @remarks If your application was originally supplied command-line options when it first executed, restart will launch the application again with the same options.
+      static void restart();
+      
       static void run();
 
       static void run(const form& form);
       
-      /// @cond
-      static void run(form& form);
-      /// @endcond
+      static void run(application_context& context);
       
+      /// @cond
+      static void end();
       static void start();
+      /// @endcond
 
       static event<application, delegate<void(const event_args&)>> idle;
       
     private:
-      //static void wnd_proc(message& message);
+      static void on_app_thread_exit(const application_context& sender, const event_args& e);
       static intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       static void wnd_proc(message& message);
       static void wm_activate_app(message& message);

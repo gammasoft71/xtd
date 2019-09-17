@@ -45,8 +45,37 @@ namespace xtd {
     private:
       enum class state {
         empty = 0,
-        double_click_fired = 0b1,
-        mouse_entered = 0x10,
+        created = 0x00000001,
+        visble = 0x00000002,
+        enabled = 0x00000004,
+        tab_stop = 0x00000008,
+        recreate = 0x00000010,
+        modal = 0x00000020,
+        allow_drop = 0x00000040,
+        drop_target = 0x00000080,
+        no_zorder = 0x00000100,
+        layout_deferred = 0x00000200,
+        use_wait_cursor = 0x00000400,
+        destroyed = 0x00000800,
+        destroying = 0x00001000,
+        mouse_enter_pending = 0x00002000,
+        tracking_mouse_event = 0x00004000,
+        STATE_THREADMARSHALLPENDING = 0x00008000,
+        size_locked_by_os = 0x00010000,
+        causes_validation = 0x00020000,
+        creating_handle = 0x00040000,
+        top_level = 0x00080000,
+        is_aaccessible = 0x00100000,
+        own_ctl_brush = 0x00200000,
+        exception_while_painting = 0x00400000,
+        layout_sis_dirty = 0x00800000,
+        checked_host = 0x01000000,
+        hosted_in_dialog = 0x02000000,
+        double_click_fired = 0x04000000,
+        mouse_pressed = 0x08000000,
+        validation_cancelled = 0x10000000,
+        parent_recreating = 0x20000000,
+        mirrored = 0x40000000,
       };
       
     public:
@@ -263,6 +292,8 @@ namespace xtd {
 
       virtual std::string product_name() const {return "xtd";}
       
+      bool recreating_handle() const {return this->get_state(state::recreate);}
+      
       virtual int32_t right() const {return this->left() + this->width();}
 
       virtual drawing::size size() const {return this->size_;}
@@ -274,10 +305,14 @@ namespace xtd {
       
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
+      /// @remarks Any type of class can be assigned to this property.
+      /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
       virtual std::any tag() const {return this->tag_;}
       
       /// @brief Sets the object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
+      /// @remarks Any type of class can be assigned to this property.
+      /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
       virtual control& tag(std::any tag) {
         this->tag_ = tag;
         return*this;

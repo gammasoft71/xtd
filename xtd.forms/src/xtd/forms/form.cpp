@@ -144,13 +144,13 @@ void form::wnd_proc(message &message) {
 }
 
 void form::wm_close(message &message) {
-  this->def_wnd_proc(message);
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
-    if (!this->modal_)
-      this->destroy_handle();
-    else {
+    if (!this->modal_) {
+      this->def_wnd_proc(message);
+      this->destroy_control();
+    } else {
       if (this->dialog_result_ == forms::dialog_result::none) this->dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(this->handle_, static_cast<int32_t>(this->dialog_result_));
     }

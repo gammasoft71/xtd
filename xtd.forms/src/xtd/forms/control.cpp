@@ -539,6 +539,7 @@ void control::def_wnd_proc(message& message) {
 
 void control::recreate_handle() {
   if (this->handle_ != 0) {
+    this->set_state(state::recreate, true);
     intptr_t handle = this->handle_;
     auto controls = this->controls();
     this->internal_destroy_handle(handle);
@@ -548,6 +549,7 @@ void control::recreate_handle() {
       control.get().parent_ = this->handle_;
       native::control::parent(control.get().handle_, this->handle_);
     }
+    this->set_state(state::recreate, false);
   }
 }
 

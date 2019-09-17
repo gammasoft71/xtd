@@ -18,21 +18,13 @@ namespace xtd {
           if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
           this->modal_ = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW;
           if (this->modal_)
-            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : wxTheApp->GetTopWindow(), wxID_ANY, create_params.caption(), location, size, control_handler::form_to_wx_style(create_params.style(), create_params.ex_style()));
+            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption(), location, size, control_handler::form_to_wx_style(create_params.style(), create_params.ex_style()));
           else
-            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : wxTheApp->GetTopWindow(), wxID_ANY, create_params.caption(), location, size, control_handler::form_to_wx_style(create_params.style(), create_params.ex_style()));
+            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption(), location, size, control_handler::form_to_wx_style(create_params.style(), create_params.ex_style()));
           this->button_ = new wxButton(this->control(), wxID_ANY);
           this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
           this->control()->SetForegroundColour(this->button_->GetForegroundColour());
           this->button_->Hide();
-          this->control()->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
-            if (!this->wnd_proc.is_empty())
-              event.Veto();
-            else {
-              if (wxTheApp->GetTopWindow() == this->control()) wxTheApp->ExitMainLoop();
-              event.Skip();
-            }
-          });
         }
         
         void SetSize(int32_t width, int32_t height) override {

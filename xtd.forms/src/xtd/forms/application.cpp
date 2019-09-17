@@ -1,6 +1,8 @@
 #include <chrono>
+#include <unistd.h>
 #include <xtd/xtd.io.hpp>
 #include <xtd/environment.hpp>
+#include <xtd/diagnostics/cdebug.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
 #include "../../../include/xtd/forms/application.hpp"
@@ -8,6 +10,10 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
+
+namespace {
+  bool restart_asked = false;
+}
 
 bool application::use_visual_styles_ = false;
 bool application::message_loop_ = false;
@@ -32,6 +38,10 @@ microsoft::win32::registry_key application::common_app_data_registry() {
 string application::company_name() {
   if (!strings::is_empty(application_informations::company_name())) return application_informations::company_name();
   return product_name();
+}
+
+string application::executable_name() {
+  return io::path::get_file_name(application::executable_path());
 }
 
 string application::executable_path() {
@@ -104,6 +114,11 @@ void application::end() {
 }
 
 void application::exit() {
+  cancel_event_args e;
+  application::exit(e);
+}
+
+void application::exit(cancel_event_args& e) {
   bool cancel_exit = false;
   for (auto f : application::open_forms()) {
     form_closing_event_args e;
@@ -114,6 +129,7 @@ void application::exit() {
     }
   }
   
+  e.cancel(cancel_exit);
   if (!cancel_exit) {
     for (auto f : application::open_forms()) {
       form_closed_event_args e;
@@ -123,21 +139,58 @@ void application::exit() {
   }
 }
 
+void application::exit_thread() {
+  native::application::exit();
+}
+
+void application::raise_idle(const event_args &e) {
+  application::idle(e);
+}
+
+void application::restart() {
+  restart_asked = false;
+  cancel_event_args e;
+  application::exit(e);
+  if (!e.cancel())
+    restart_asked = true;
+
+}
+
 void application::run() {
-  native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
-  application::message_loop_ = true;
-  native::application::run();
-  application::message_loop_ = false;
+  application_context context;
+  application::run(context);
 }
 
 void application::run(const form& form) {
-  run(const_cast<forms::form&>(form));
+  application_context context(form);
+  application::run(context);
 }
 
-void application::run(form& form) {
-  native::application::main_form(form.handle_);
-  form.show();
-  run();
+void application::run(application_context& context) {
+  try {
+    if (context.main_form_ != nullptr) context.main_form().show();
+    context.thread_exit += application::on_app_thread_exit;
+    native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
+    application::message_loop_ = true;
+    native::application::run();
+    application::message_loop_ = false;
+  } catch(std::exception& exception) {
+    /// @todo add exception message...
+    cdebug << format("exception ({}) throws : {}", strings::full_class_name(exception), exception.what()) << endl;
+  } catch(...) {
+    /// @todo add exception message...
+    cdebug << "exception (unknown) throws : ..." << endl;
+  }
+  if (restart_asked) {
+    std::vector<std::string> command_line_args = environment::get_command_line_args();
+    char** argv = new char*[command_line_args.size() + 1];
+    for(int index = 0; index <command_line_args.size(); index++)
+      argv[index] = command_line_args[index].data();
+    argv[command_line_args.size()] = 0;
+    execv(argv[0], argv);
+    delete [] argv;
+    _Exit(0);
+  }
 }
 
 void application::start() {
@@ -145,6 +198,10 @@ void application::start() {
 }
 
 event<application, delegate<void(const event_args&)>> application::idle;
+
+void application::on_app_thread_exit(const application_context& sender, const event_args& e) {
+  application::exit_thread();
+}
 
 intptr_t application::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
