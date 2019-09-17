@@ -616,7 +616,7 @@ namespace xtd {
       template<typename TControl>
       inline void control_wrapper<TControl>::process_system_event(wxEvent& event) {
         wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-        if (event.GetEventType() == wxEVT_CLOSE_WINDOW) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
+        if (event.GetEventType() == wxEVT_CLOSE_WINDOW) static_cast<wxCloseEvent&>(event).Veto(this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_DESTROY) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MOVE) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_NULL) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));

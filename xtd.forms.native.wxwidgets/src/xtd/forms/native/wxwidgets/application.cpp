@@ -62,7 +62,7 @@ void application::end_application() {
 
 void application::exit() {
   if (wxTheApp)
-    wxTheApp->Exit();
+    wxTheApp->ExitMainLoop();
 }
 
 void application::start_application() {
@@ -71,6 +71,7 @@ void application::start_application() {
   int argc = 0;
   wxEntryStart(argc, (wxChar**)NULL);
   wxTheApp->CallOnInit();
+  wxTheApp->SetExitOnFrameDelete(false);
 #if __WXOSX__
   wxMenuBar* menubar = new wxMenuBar();
   wxMenu* menuWindow = new wxMenu();
@@ -79,8 +80,12 @@ void application::start_application() {
   menubar->Append(menuWindow, "Window");
   menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
     if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
-    if (event.GetId() == wxID_EXIT) wxTheApp->GetTopWindow()->Close();
-    else event.Skip();
+    if (event.GetId() == wxID_EXIT) {
+      bool cancel_close = false;
+      for (wxWindow* window : wxTopLevelWindows)
+        cancel_close = !window->Close();
+      if (!cancel_close || wxTopLevelWindows.size() == 0) wxTheApp->ExitMainLoop();
+    } else event.Skip();
   });
   
   wxApp::s_macAboutMenuItemId = aboutMenuItem->GetId();
@@ -94,12 +99,6 @@ void application::start_application() {
 intptr_t application::main_form() {
   start_application(); // Must be first
   return (intptr_t)wxTheApp->GetTopWindow();
-}
-
-void application::main_form(intptr_t form) {
-  start_application(); // Must be first
-  if (form == 0) return;
-  wxTheApp->SetTopWindow(reinterpret_cast<control_handler*>(form)->control());
 }
 
 vector<intptr_t> application::open_forms() {
