@@ -3,6 +3,7 @@
 #include <xtd/forms/native/message_box.hpp>
 #include <xtd/forms/native/window_message_box.hpp>
 #include "control_handler.hpp"
+#include <wx/app.h>
 #include <wx/msgdlg.h>
 
 using namespace xtd::forms::native;
@@ -48,7 +49,7 @@ namespace {
 }
 
 int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
-  native::application::start_application();
+  native::application::start(); // Must be first
   wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), text, caption, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);
   return convert_to_dialog_result(dialog.ShowModal(), style);

@@ -1,5 +1,4 @@
 #include <chrono>
-#include <unistd.h>
 #include <xtd/xtd.io.hpp>
 #include <xtd/environment.hpp>
 #include <xtd/diagnostics/cdebug.hpp>
@@ -10,10 +9,6 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
-
-namespace {
-  bool restart_asked = false;
-}
 
 bool application::use_visual_styles_ = false;
 bool application::message_loop_ = false;
@@ -110,7 +105,7 @@ void application::enable_visual_styles() {
 }
 
 void application::end() {
-  native::application::end_application();
+  native::application::end();
 }
 
 void application::exit() {
@@ -148,12 +143,10 @@ void application::raise_idle(const event_args &e) {
 }
 
 void application::restart() {
-  restart_asked = false;
   cancel_event_args e;
   application::exit(e);
   if (!e.cancel())
-    restart_asked = true;
-
+    native::application::restart();
 }
 
 void application::run() {
@@ -181,20 +174,10 @@ void application::run(application_context& context) {
     /// @todo add exception message...
     cdebug << "exception (unknown) throws : ..." << endl;
   }
-  if (restart_asked) {
-    std::vector<std::string> command_line_args = environment::get_command_line_args();
-    char** argv = new char*[command_line_args.size() + 1];
-    for(int index = 0; index <command_line_args.size(); index++)
-      argv[index] = command_line_args[index].data();
-    argv[command_line_args.size()] = 0;
-    execv(argv[0], argv);
-    delete [] argv;
-    _Exit(0);
-  }
 }
 
 void application::start() {
-  native::application::start_application();
+  native::application::start();
 }
 
 event<application, delegate<void(const event_args&)>> application::idle;
