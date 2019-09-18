@@ -333,7 +333,7 @@ void control::on_got_focus(const event_args &e) {
 void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
   handles_[this->handle_] = this;
-  if (this->client_size_ != drawing::size(-1, -1)) native::control::client_size(this->handle_, this->client_size());
+  if (this->get_state(state::client_size_setted)) native::control::client_size(this->handle_, this->client_size());
   if ((this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->handle_, this->back_color());
   if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
   if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(this->handle_, this->font());
