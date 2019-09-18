@@ -52,7 +52,6 @@ control::control() {
     item.get().parent_ = this->handle_;
     if (this->handle_) {
       item.get().create_control();
-      if (item.get().handle_) native::control::parent(item.get().handle_, this->handle_);
       item.get().on_parent_changed(event_args::empty);
       this->on_control_added(control_event_args(item.get()));
     }
