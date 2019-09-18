@@ -76,7 +76,7 @@ forms::dialog_result form::show_dialog() {
 
 forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   intptr_t current_parent = this->parent_;
-  this->modal_ = true;
+  this->set_state(state::modal, true);
   this->parent_ = owner.handle();
   this->recreate_handle();
   this->show();
@@ -85,7 +85,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
     result = static_cast<forms::dialog_result>(native::form::show_dialog(this->handle_));
   else
     application::run(*this);
-  this->modal_ = false;
+  this->set_state(state::modal, false);
   this->parent_ = current_parent;
   this->hide();
   this->recreate_handle();
@@ -97,7 +97,7 @@ forms::create_params form::create_params() const {
 
   create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
-  if (this->modal_) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
+  if (this->get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
   if (this->previous_screeen_) {
     switch (this->start_position_) {
       case form_start_position::manual:
@@ -135,11 +135,9 @@ forms::create_params form::create_params() const {
 }
 
 void form::wnd_proc(message &message) {
-  if (this->enabled()) {
-    switch (message.msg()) {
-      case WM_CLOSE: this->wm_close(message); break;
-      default: this->container_control::wnd_proc(message); break;
-    }
+  switch (message.msg()) {
+    case WM_CLOSE: this->wm_close(message); break;
+    default: this->container_control::wnd_proc(message); break;
   }
 }
 
@@ -147,7 +145,7 @@ void form::wm_close(message &message) {
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
-    if (!this->modal_) {
+    if (!this->get_state(state::modal)) {
       this->def_wnd_proc(message);
       this->destroy_control();
     } else {
