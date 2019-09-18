@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
-  message_box::show("Starting app...", environment::command_line());
+  message_box::show(environment::command_line(), "Starting app...");
   auto form1 = control::create<form>("form1");
   form1->show();
   form1->form_closing += [&](const control& sender, form_closing_event_args& e) {
