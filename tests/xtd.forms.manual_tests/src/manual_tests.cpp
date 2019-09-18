@@ -5,11 +5,11 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
-  message_box::show(environment::command_line(), "Starting app...");
+  message_box::show(environment::command_line(), "Starting app...", message_box_buttons::ok);
   auto form1 = control::create<form>("form1");
   form1->show();
   form1->form_closing += [&](const control& sender, form_closing_event_args& e) {
-    e.cancel(message_box::show("Close ?", "manual_tests", message_box_buttons::yes_no) == dialog_result::no);
+    e.cancel(message_box::show("Close ?", "manual_tests", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
   };
   auto form2 = control::create<form>("form2");
   form2->show();

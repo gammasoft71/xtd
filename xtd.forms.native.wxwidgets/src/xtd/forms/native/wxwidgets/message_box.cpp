@@ -8,6 +8,11 @@
 
 using namespace xtd::forms::native;
 
+#if defined(_WIN32)
+int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool displayHelpButton) {
+  return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
+}
+#else
 namespace {
   int32_t convert_to_dialog_result(int32_t wx_result, uint32_t style) {
     switch (wx_result) {
@@ -41,8 +46,8 @@ namespace {
     if ((style & MB_RIGHT) == MB_RIGHT) option = wxRIGHT;
     return option;
   }
-
-  void set_button_labels(wxMessageDialog&dialog, uint32_t style) {
+  
+  void set_button_labels(wxMessageDialog& dialog, uint32_t style) {
     if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) dialog.SetYesNoCancelLabels("Abort", "Retry", wxID_IGNORE);
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) dialog.SetOKCancelLabels("Retry", wxID_CANCEL);
   }
@@ -54,3 +59,4 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
   set_button_labels(dialog, style);
   return convert_to_dialog_result(dialog.ShowModal(), style);
 }
+#endif
