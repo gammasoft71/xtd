@@ -23,6 +23,7 @@ int main() {
   };
   button2->click += [&] {
     context.main_form(*form2);
+    application::restart();
     button1->enabled(&context.main_form() != form1.get());
     button2->enabled(&context.main_form() != form2.get());
   };
