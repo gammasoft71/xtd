@@ -212,14 +212,6 @@ void control::location(intptr_t control, const point& location) {
   reinterpret_cast<control_handler*>(control)->control()->SetPosition({location.x(), location.y()});
 }
 
-intptr_t control::parent(intptr_t control) {
-  return reinterpret_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetParent());
-}
-
-void control::parent(intptr_t control, intptr_t parent) {
-  reinterpret_cast<control_handler*>(control)->Reparent(reinterpret_cast<control_handler*>(parent)->control());
-}
-
 drawing::size control::size(intptr_t control) {
   if (control == 0) return {};
   wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
