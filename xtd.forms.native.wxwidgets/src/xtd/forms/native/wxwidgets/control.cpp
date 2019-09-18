@@ -81,13 +81,8 @@ intptr_t control::create_graphics(intptr_t control) {
 }
 
 intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
-  if (!control) return 0;
-  switch (msg) {
-    case WM_GETTEXTLENGTH: return (reinterpret_cast<control_handler*>(hwnd))->control()->GetLabel().ToStdString().size(); break;
-    case WM_GETTEXT: return strlen(strncpy(reinterpret_cast<char*>(lparam), reinterpret_cast<control_handler*>(hwnd)->control()->GetLabel().ToStdString().c_str(), wparam)); break;
-  }
-  if (handle != 0) return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
-  return 0;
+  if (!control || handle == 0) return 0;
+  return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
 
 color control::default_back_color() {
@@ -238,17 +233,12 @@ void control::size(intptr_t control, const drawing::size& size) {
 
 string control::text(intptr_t control) {
   if (control == 0) return {};
-  //return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString();
-  intptr_t result = send_message(control, control, WM_GETTEXTLENGTH, 0, 0);
-  string text(result, 0);
-  result = send_message(control, control, WM_GETTEXT, result + 1, reinterpret_cast<intptr_t>(text.data()));
-  return text;
+  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString();
 }
 
 void control::text(intptr_t control, const string& text) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->SetLabel(text);
-  send_message(control, control, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString().c_str()));
 }
 
 bool control::visible(intptr_t control) {
