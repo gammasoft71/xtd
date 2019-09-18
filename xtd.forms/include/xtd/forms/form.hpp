@@ -36,7 +36,7 @@ namespace xtd {
       virtual forms::dialog_result dialog_result() const {return this->dialog_result_;}
       virtual form& dialog_result(forms::dialog_result dialog_result);
 
-      bool modal() const {return this->modal_;}
+      bool modal() const {return this->get_state(state::modal);}
       
       using container_control::parent;
       control& parent(const control& parent) override;
@@ -74,7 +74,6 @@ namespace xtd {
       virtual void wm_close(message& message);
 
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
-      bool modal_ = false;
       std::shared_ptr<screen> previous_screeen_;
       form_start_position start_position_ = form_start_position::windows_default_location;
     };
