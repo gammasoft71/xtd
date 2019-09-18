@@ -42,7 +42,8 @@ namespace xtd {
     /// The following code example demonstrate the use of control control.
     /// @include control.cpp
     class control : public iwin32_window {
-    private:
+    protected:
+      /// @cond
       enum class state {
         empty = 0,
         created = 0x00000001,
@@ -77,6 +78,7 @@ namespace xtd {
         parent_recreating = 0x20000000,
         mirrored = 0x40000000,
       };
+      /// @endcond
       
     public:
       /// @brief Represents a control objects.
@@ -608,6 +610,9 @@ namespace xtd {
       virtual void wnd_proc(message& m);
 
       /// @cond
+      bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
+      void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
+
       bool auto_size_ = false;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
@@ -635,8 +640,6 @@ namespace xtd {
       void internal_destroy_handle(intptr_t);
       void set_auto_size_size();
       control(const std::string& name, bool) {this->name_ = name;}
-      bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
-      void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
       void wm_command(message& message);
