@@ -245,7 +245,9 @@ void control::visible(intptr_t control, bool visible) {
 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->Refresh();
+  
+  if (!reinterpret_cast<control_handler*>(control)->control()->IsBeingDeleted())
+    reinterpret_cast<control_handler*>(control)->control()->Refresh();
 }
 
 

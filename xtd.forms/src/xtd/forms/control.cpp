@@ -138,13 +138,13 @@ control& control::parent(const control& parent) {
   if (&this->parent() != &parent) {
     if (this->parent_ != 0) {
       for (size_t index = 0; index < this->parent().controls_.size(); index++) {
-        if (&this->parent().controls_[index].get() == this) {
+        if (this->parent().controls_[index].get().handle_ == this->handle_) {
           this->parent().controls_.erase_at(index);
           break;
         }
       }
     }
-    if (&parent != &control::null) const_cast<control&>(parent).controls_.push_back(ref_control(*this));
+    if (parent.handle_) const_cast<control&>(parent).controls_.push_back(ref_control(*this));
   }
   return *this;
 }
@@ -224,9 +224,9 @@ control& control::from_child_handle(intptr_t handle) {
   try {
     if (handles_.find(handle) != handles_.end())
       return handles_[handle]->parent();
-    return (control&)control::null;
+    return const_cast<control&>(control::null);
   } catch (...) {
-    return (control&)control::null;
+    return const_cast<control&>(control::null);
   }
 }
 
@@ -234,9 +234,9 @@ control& control::from_handle(intptr_t handle) {
   try {
     if (handles_.find(handle) != handles_.end())
       return *handles_[handle];
-    return (control&)control::null;
+    return const_cast<control&>(control::null);
   } catch (...) {
-    return (control&)control::null;
+    return const_cast<control&>(control::null);
   }
 }
 
@@ -300,6 +300,7 @@ void control::on_control_added(const control_event_args &e) {
 
 void control::on_control_removed(const control_event_args &e) {
   if (this->auto_size_) this->set_auto_size_size();
+  this->refresh();
   this->control_removed(*this, e);
 }
 
@@ -539,15 +540,18 @@ void control::def_wnd_proc(message& message) {
 void control::recreate_handle() {
   if (this->handle_ != 0) {
     this->set_state(state::recreate, true);
-    intptr_t handle = this->handle_;
-    auto controls = this->controls();
-    this->internal_destroy_handle(handle);
+    for (auto control : this->controls()) control.get().set_state(state::parent_recreating, true);
+
+    intptr_t old_handle = this->handle_;
     this->handle_ = 0;
     this->create_handle();
-    for (auto control : controls) {
+    for (auto control : this->controls()) {
       control.get().parent_ = this->handle_;
       control.get().recreate_handle();
     }
+    this->internal_destroy_handle(old_handle);
+    
+    for (auto control : this->controls()) control.get().set_state(state::parent_recreating, false);
     this->set_state(state::recreate, false);
   }
 }
@@ -587,7 +591,7 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 }
 
 void control::internal_destroy_handle(intptr_t handle) {
-  if (this->handle_) native::control::unregister_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
+  if (this->handle_) native::control::unregister_wnd_proc(handle, {*this, &control::wnd_proc_});
   handles_.erase(handle);
   native::control::destroy(handle);
   this->on_handle_destroyed(event_args::empty);
