@@ -62,5 +62,4 @@ string text_box::text(intptr_t control) {
 void text_box::text(intptr_t control, const string& text) {
   if (control == 0) return;
   static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(text);
-  //send_message(control, control, WM_SETTEXT, 0, reinterpret_cast<intptr_t>(reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString().c_str()));
 }
