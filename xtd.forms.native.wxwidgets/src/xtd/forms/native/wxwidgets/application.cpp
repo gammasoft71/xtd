@@ -1,4 +1,4 @@
-#if !defined(__WXMSW__)
+#if !defined(_WIN32)
 #include <unistd.h>
 #endif
 #include <xtd/environment.hpp>
