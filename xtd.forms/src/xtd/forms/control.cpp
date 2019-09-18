@@ -547,7 +547,7 @@ void control::recreate_handle() {
     this->create_handle();
     for (auto control : controls) {
       control.get().parent_ = this->handle_;
-      native::control::parent(control.get().handle_, this->handle_);
+      control.get().recreate_handle();
     }
     this->set_state(state::recreate, false);
   }

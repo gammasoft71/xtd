@@ -38,8 +38,6 @@ namespace xtd {
         static void font(intptr_t control, const drawing::font& font);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);
-        static intptr_t parent(intptr_t control);
-        static void parent(intptr_t control,intptr_t parent);
         static drawing::size size(intptr_t control);
         static void size(intptr_t control, const drawing::size& size);
         static std::string text(intptr_t control);
