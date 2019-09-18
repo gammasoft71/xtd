@@ -81,10 +81,12 @@ void application::start_application() {
   menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
     if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
     if (event.GetId() == wxID_EXIT) {
-      bool cancel_close = false;
-      for (wxWindow* window : wxTopLevelWindows)
-        cancel_close = !window->Close();
-      if (!cancel_close || wxTopLevelWindows.size() == 0) wxTheApp->ExitMainLoop();
+      bool cancel_quit = false;
+      for (wxWindow* window : wxTopLevelWindows) {
+        cancel_quit = !window->Close();
+        if (cancel_quit) break;
+      }
+      if (!cancel_quit) wxTheApp->ExitMainLoop();
     } else event.Skip();
   });
   
