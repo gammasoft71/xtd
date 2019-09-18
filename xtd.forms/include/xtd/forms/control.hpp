@@ -61,7 +61,8 @@ namespace xtd {
         destroying = 0x00001000,
         mouse_enter_pending = 0x00002000,
         tracking_mouse_event = 0x00004000,
-        STATE_THREADMARSHALLPENDING = 0x00008000,
+        //thread_marshall_pending = 0x00008000,
+        client_size_setted = 0x00008000,
         size_locked_by_os = 0x00010000,
         causes_validation = 0x00020000,
         creating_handle = 0x00040000,
@@ -210,7 +211,8 @@ namespace xtd {
       /// @param A size that represents the dimensions of the client area of the control.
       /// @remarks The client area of a control is the bounds of the control, minus the nonclient elements such as scroll bars, borders, title bars, and menus. The set_client_size_core method is called to set the client_size property. The client_size property is not always changed through its set method so you should override the set_client_sizeCore method to ensure that your code is executed when the client_size property is set.
       virtual control& client_size(const drawing::size& client_size) {
-        if (this->client_size_ != client_size) {
+        if (!this->get_state(state::client_size_setted) || this->client_size_ != client_size) {
+          this->set_state(state::client_size_setted, true);
           this->set_client_size_core(client_size.width(), client_size.height());
         }
         return *this;
@@ -300,8 +302,10 @@ namespace xtd {
 
       virtual drawing::size size() const {return this->size_;}
       virtual control& size(const drawing::size& size) {
-        if (this->size_ != size)
+        if (this->get_state(state::client_size_setted) || this->size_ != size) {
+          this->set_state(state::client_size_setted, false);
           this->set_bounds_core(0, 0, size.width(), size.height(), bounds_specified::size);
+        }
         return *this;
       }
       
@@ -617,17 +621,17 @@ namespace xtd {
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
       drawing::rectangle client_rectangle_;
-      drawing::size client_size_ {-1, -1};
+      drawing::size client_size_ {0, 0};
       control_collection controls_;
       bool created_ = false;
       bool enabled_ = true;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
-      drawing::point location_ {-1, -1};
+      drawing::point location_ {0, 0};
       std::string name_;
       intptr_t parent_ = 0;
-      drawing::size size_ {-1, -1};
+      drawing::size size_ {0, 0};
       control::state state_ = state::empty;
       std::any tag_;
       std::string text_;
