@@ -478,15 +478,6 @@ namespace xtd {
           this->def_process_event(event);
           return this->process_result_;
         }
-        if (event.GetEventType() == wxEVT_TIMER) {
-          this->def_process_event(event);
-          return false;
-        }
-        wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-        if (!window) {
-          this->def_process_event(event);
-          return this->process_result_;
-        }
         
         if (is_clipboard_event(event.GetEventType())) this->process_clipboard_event(event);
         else if (is_command_event(event.GetEventType())) this->process_command_event(event);
