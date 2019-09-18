@@ -96,7 +96,7 @@ color control::default_back_color() {
 #else
   static color default_color;
   if (default_color == color::empty) {
-    native::application::start_application();
+    native::application::start();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxButton* button = new wxButton(frame, wxID_ANY, "");
     wxColour colour = button->GetBackgroundColour();
@@ -118,7 +118,7 @@ color control::default_fore_color() {
 #else
   static color default_color;
   if (default_color == color::empty) {
-    native::application::start_application();
+    native::application::start();
     wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
     wxButton* button = new wxButton(frame, wxID_ANY, "");
     wxColour colour = button->GetForegroundColour();
