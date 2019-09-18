@@ -51,7 +51,7 @@ void control::back_color(intptr_t control, const color& color) {
 }
 
 intptr_t control::create(const forms::create_params& create_params) {
-  application::start_application(); // Must be first
+  application::start(); // Must be first
   if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
   if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
   if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
@@ -146,7 +146,7 @@ void control::destroy(intptr_t control) {
 }
 
 void control::init() {
-  application::start_application(); // Must be first
+  application::start(); // Must be first
 }
 
 drawing::rectangle control::client_rectangle(intptr_t control) {

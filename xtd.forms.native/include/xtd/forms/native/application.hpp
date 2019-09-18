@@ -13,11 +13,11 @@ namespace xtd {
         static void do_events();
         static void do_idle();
         static void enable_visual_style();
-        static void end_application();
+        static void end();
         static void exit();
-        static void start_application();
+        static void start();
+        static void restart();
         static intptr_t main_form();
-        static std::vector<intptr_t> open_forms();
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void run();
       };
