@@ -86,13 +86,14 @@ void application::restart() {
 }
 
 void application::run() {
-  start(); // Must be first
-  struct uninitializer {
-    ~uninitializer() {application::end();}
-  } uninitializer;
-  static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
-  wxTheApp->OnRun();
-  static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
+  start(); { // Must be first
+    struct uninitializer {
+      ~uninitializer() {end();}
+    } uninitializer;
+    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
+    wxTheApp->OnRun();
+    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
+  }
   if (restart_asked) {
     std::vector<std::string> command_line_args = environment::get_command_line_args();
     char** argv = new char*[command_line_args.size() + 1];
@@ -109,7 +110,7 @@ void application::start() {
   if (wxTheApp) return;
   wxApp::SetInstance(new wx_application());
   int argc = 0;
-  wxEntryStart(argc, (wxChar**)NULL);
+  wxEntryStart(argc, (wxChar**)nullptr);
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
 #if __WXOSX__
