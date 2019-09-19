@@ -240,7 +240,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether the control has been created.
       /// @return true if the control has been created; otherwise, false.
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
-      virtual bool created() {return this->created_;}
+      virtual bool created() {return this->get_state(state::created);}
       
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
@@ -623,7 +623,6 @@ namespace xtd {
       drawing::rectangle client_rectangle_;
       drawing::size client_size_ {0, 0};
       control_collection controls_;
-      bool created_ = false;
       bool enabled_ = true;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
