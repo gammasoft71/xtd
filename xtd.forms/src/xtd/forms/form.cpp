@@ -30,7 +30,8 @@ form::form() {
   this->fore_color_ = this->default_fore_color();
   this->font_ = this->default_font();
   this->size_ = this->default_size();
-  this->visible_ = false;
+  this->set_state(state::visible, false);
+  this->set_state(state::top_level, true);
   this->create_control();
 }
 

@@ -14,12 +14,19 @@ int main() {
   auto list_box_numbers = control::create<list_box>(*panel_left, "list_box_numbers", {10, 10}, {150, 250});
   list_box_numbers->items().push_back_range({"One", "two", "Three", "Four", "Five", "Six", "Seven"});
   
+  auto check = control::create<check_box>(*panel_left, "check", {10, 270});
+  
   auto panel_right = control::create<panel>(*form_main, "panel_right", {450, 10}, {340, 430});
   panel_right->border_style(forms::border_style::fixed_single);
   
   auto button_move = control::create<button>(*form_main, "Move", {365, 50});
   button_move->click += [&] {
     list_box_numbers->parent(list_box_numbers->parent().handle() == panel_left->handle() ? *panel_right : *panel_left);
+  };
+  
+  auto button_enable = control::create<button>(*form_main, "Enable", {365, 100});
+  button_enable->click += [&] {
+    panel_left->enabled(!panel_left->enabled());
   };
   
   application::run(*form_main);

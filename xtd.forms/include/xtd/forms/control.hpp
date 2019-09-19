@@ -46,38 +46,47 @@ namespace xtd {
       /// @cond
       enum class state {
         empty = 0,
-        created = 0x00000001,
-        visble = 0x00000002,
-        enabled = 0x00000004,
-        tab_stop = 0x00000008,
-        recreate = 0x00000010,
-        modal = 0x00000020,
-        allow_drop = 0x00000040,
-        drop_target = 0x00000080,
-        no_zorder = 0x00000100,
-        layout_deferred = 0x00000200,
-        use_wait_cursor = 0x00000400,
-        destroyed = 0x00000800,
-        destroying = 0x00001000,
-        mouse_enter_pending = 0x00002000,
-        tracking_mouse_event = 0x00004000,
-        //thread_marshall_pending = 0x00008000,
-        client_size_setted = 0x00008000,
-        size_locked_by_os = 0x00010000,
-        causes_validation = 0x00020000,
-        creating_handle = 0x00040000,
-        top_level = 0x00080000,
-        is_aaccessible = 0x00100000,
-        own_ctl_brush = 0x00200000,
-        exception_while_painting = 0x00400000,
-        layout_sis_dirty = 0x00800000,
-        checked_host = 0x01000000,
-        hosted_in_dialog = 0x02000000,
-        double_click_fired = 0x04000000,
-        mouse_pressed = 0x08000000,
-        validation_cancelled = 0x10000000,
-        parent_recreating = 0x20000000,
-        mirrored = 0x40000000,
+        creating = 0b1,
+        created = 0b10,
+        destroying = 0b100,
+        destroyed = 0b1000,
+        creating_handle = 0b10000,
+        recreate = 0b100000,
+        parent_recreating = 0b1000000,
+
+        client_size_setted = 0b10000000,
+        modal = 0b100000000,
+        top_level = 0b1000000000,
+        visible = 0b10000000000,
+        enabled = 0b100000000000,
+        auto_size = 0b1000000000000,
+        tab_stop = 0b10000000000000,
+        allow_drop = 0b100000000000000,
+        drop_target = 0b1000000000000000,
+
+        double_click_fired = 0b10000000000000000,
+        /*
+        layout_deferred = 0,
+        mouse_enter_pending = 0,
+        tracking_mouse_event = 0,
+        mouse_pressed = 0,
+        use_wait_cursor = 0,
+         */
+
+         /*
+        is_aaccessible = 0,
+        no_zorder = 0,
+        size_locked_by_os = 0,
+        causes_validation = 0,
+        thread_marshall_pending = 0,
+        own_ctl_brush = 0,
+        exception_while_painting = 0,
+        layout_sis_dirty = 0,
+        checked_host = 0,
+        hosted_in_dialog = 0,
+        validation_cancelled = 0,
+        mirrored = 0,
+         */
       };
       /// @endcond
       
@@ -157,7 +166,7 @@ namespace xtd {
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
       /// @remarks This property is not relevant for this class.
-      virtual bool auto_size() const {return this->auto_size_;}
+      virtual bool auto_size() const {return this->get_state(state::auto_size);}
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
       /// @param auto_size true if enabled; otherwise, false.
       /// @return This control.
@@ -253,7 +262,7 @@ namespace xtd {
       
       virtual drawing::size default_size() const {return{0, 0};}
       
-      virtual bool enabled() const {return this->enabled_;}
+      virtual bool enabled() const {return this->get_state(state::enabled);}
       virtual control& enabled(bool enabled);
 
       virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ ? this->parent().fore_color() : default_fore_color());}
@@ -336,7 +345,7 @@ namespace xtd {
       
       virtual control& top_level_control() const;
 
-      virtual bool visible() const {return this->visible_;}
+      virtual bool visible() const {return this->get_state(state::visible);}
       virtual control& visible(bool visible);
 
       virtual int32_t width() const {return this->size_.width();}
@@ -617,13 +626,11 @@ namespace xtd {
       bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
 
-      bool auto_size_ = false;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
       drawing::rectangle client_rectangle_;
       drawing::size client_size_ {0, 0};
       control_collection controls_;
-      bool enabled_ = true;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
@@ -634,7 +641,6 @@ namespace xtd {
       control::state state_ = state::empty;
       std::any tag_;
       std::string text_;
-      bool visible_ = true;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
       /// @endcond

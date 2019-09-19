@@ -47,6 +47,8 @@ control::control_collection control::top_level_controls_;
 
 control::control() {
   native::control::init();
+  this->set_state(state::enabled, true);
+  this->set_state(state::visible, true);
   this->size_ = this->default_size();
   this->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
     item.get().parent_ = this->handle_;
@@ -59,7 +61,7 @@ control::control() {
   
   this->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
     item.get().parent_ = 0;
-    item.get().destroy_handle();
+    item.get().destroy_control();
     this->on_control_removed(control_event_args(item.get()));
   };
 }
@@ -69,8 +71,8 @@ control::~control() {
 }
 
 control& control::auto_size(bool auto_size) {
-  if (this->auto_size_ != auto_size) {
-    this->auto_size_ = auto_size;
+  if (this->get_state(state::auto_size) != auto_size) {
+    this->set_state(state::auto_size, auto_size);
     this->on_auto_size_changed(event_args::empty);
   }
   return *this;
@@ -100,9 +102,9 @@ drawing::font control::default_font() const {
 }
 
 control& control::enabled(bool enabled) {
-  if (this->enabled_ != enabled) {
-    this->enabled_ = enabled;
-    native::control::enabled(this->handle_, this->enabled_);
+  if (this->get_state(state::enabled) != enabled) {
+    this->set_state(state::enabled, enabled);
+    native::control::enabled(this->handle_, this->get_state(state::enabled));
     this->on_enabled_changed(event_args::empty);
   }
   return *this;
@@ -160,51 +162,59 @@ control& control::text(const string& text) {
 
 control& control::top_level_control() const {
   control* top_level_control = const_cast<control*>(this);
-  while (dynamic_cast<form*>(top_level_control) == nullptr && top_level_control->parent_ != 0) {
+  while (!top_level_control->get_state(state::top_level) && top_level_control->parent_ != 0) {
     top_level_control = &top_level_control->parent();
   }
+  if (!top_level_control->get_state(state::top_level)) return const_cast<control&>(control::null);
   return *top_level_control;
 }
 
 control& control::visible(bool visible) {
-  if (this->visible_ != visible) {
-    this->visible_ = visible;
-    native::control::visible(this->handle_, this->visible_);
+  if (this->get_state(state::visible) != visible) {
+    this->set_state(state::visible, visible);
+    native::control::visible(this->handle_, this->get_state(state::visible));
     this->on_visible_changed(event_args::empty);
   }
   return *this;
 }
 
 void control::create_control() {
-  this->set_state(state::created, true);
-  if (!this->handle_) {
+  if (!this->get_state(state::destroying) && !this->get_state(state::creating) && !this->get_state(state::created)) {
+    this->set_state(state::destroyed, false);
+    this->set_state(state::creating, true);
     this->create_handle();
     if (!this->parent_) top_level_controls_.push_back(ref_control(*this));
     this->send_message(this->handle_, WM_CREATE, 0, 0);
     this->on_create_control();
+    this->set_state(state::creating, false);
+    this->set_state(state::created, true);
   }
 }
 
 void control::destroy_control() {
-  this->set_state(state::created, false);
-  this->set_state(state::destroyed, true);
-  if (this->handle_) {
-    if (this->parent_ != 0) {
-      for (size_t index = 0; index < this->parent().controls_.size(); index++) {
-        if (this->parent().controls_[index].get().handle_ == this->handle_) {
-          this->parent().controls_.erase_at(index);
-          break;
+  if (this->get_state(state::created)) {
+    this->set_state(state::created, false);
+    this->set_state(state::destroying, true);
+    if (this->handle_) {
+      if (this->parent_ != 0) {
+        for (size_t index = 0; index < this->parent().controls_.size(); index++) {
+          if (this->parent().controls_[index].get().handle_ == this->handle_) {
+            this->parent().controls_.erase_at(index);
+            break;
+          }
+        }
+      } else {
+        for (size_t index = 0; index < top_level_controls_.size(); index++) {
+          if (top_level_controls_[index].get().handle_ == this->handle_) {
+            top_level_controls_.erase_at(index);
+            break;
+          }
         }
       }
-    } else {
-      for (size_t index = 0; index < top_level_controls_.size(); index++) {
-        if (top_level_controls_[index].get().handle_ == this->handle_) {
-          top_level_controls_.erase_at(index);
-          break;
-        }
-      }
+      this->destroy_handle();
     }
-    this->destroy_handle();
+    this->set_state(state::destroying, false);
+    this->set_state(state::destroyed, true);
   }
 }
 
@@ -213,8 +223,10 @@ graphics control::create_graphics() const {
 }
 
 void control::create_handle() {
+  this->set_state(state::creating_handle, true);
   this->handle_ = native::control::create(this->create_params());
   this->on_handle_created(event_args::empty);
+  this->set_state(state::creating_handle, false);
 }
 
 void control::destroy_handle() {
@@ -282,6 +294,7 @@ void control::on_back_color_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
+  if (!this->get_state(state::top_level)) this->enabled(this->parent().enabled());
   for (auto control : this->controls_)
     control.get().create_control();
 }
@@ -296,13 +309,13 @@ void control::on_client_size_changed(const event_args &e) {
 }
 
 void control::on_control_added(const control_event_args &e) {
-  if (this->auto_size_) this->set_auto_size_size();
+  if (this->get_state(state::auto_size)) this->set_auto_size_size();
   this->control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  if (this->auto_size_) this->set_auto_size_size();
-  if (!this->get_state(state::destroyed)) this->refresh();
+  if (this->get_state(state::auto_size)) this->set_auto_size_size();
+  if (this->get_state(state::created)) this->refresh();
   this->control_removed(*this, e);
 }
 
@@ -311,7 +324,7 @@ void control::on_double_click(const event_args &e) {
 }
 
 void control::on_enabled_changed(const event_args &e) {
-  this->enabled_ = native::control::enabled(this->handle_);
+  this->set_state(state::enabled, native::control::enabled(this->handle_));
   this->refresh();
   this->enabled_changed(*this, e);
 }
@@ -322,8 +335,8 @@ void control::on_fore_color_changed(const event_args &e) {
 }
 
 void control::on_font_changed(const event_args &e) {
-  if (this->auto_size_) this->set_auto_size_size();
-  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
+  if (this->get_state(state::auto_size)) this->set_auto_size_size();
+  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
   this->refresh();
   this->font_changed(*this, e);
 }
@@ -367,7 +380,7 @@ void control::on_key_up(key_event_args& e) {
 
 void control::on_location_changed(const event_args &e) {
   if (this->handle_ != 0) this->location_ = native::control::location(this->handle_);
-  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
+  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
   this->location_changed(*this, e);
 }
 
@@ -448,19 +461,19 @@ void control::on_parent_font_changed(const event_args &e) {
 
 void control::on_size_changed(const event_args &e) {
   if (this->handle_ != 0) this->size_ = native::control::size(this->handle_);
-  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
+  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
   this->refresh();
   this->size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
-  if (this->auto_size_) this->set_auto_size_size();
-  if (this->parent_ && this->parent().auto_size_) this->parent().set_auto_size_size();
+  if (this->get_state(state::auto_size)) this->set_auto_size_size();
+  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
   this->text_changed(*this, e);
 }
 
 void control::on_visible_changed(const event_args &e) {
-  this->visible_ = native::control::visible(this->handle_);
+  this->set_state(state::visible, native::control::visible(this->handle_));
   this->refresh();
   this->visible_changed(*this, e);
 }
@@ -564,7 +577,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   if ((specified & bounds_specified::width) == bounds_specified::width) this->size_.width(width);
   if ((specified & bounds_specified::height) == bounds_specified::height) this->size_.height(height);
   
-  if (this->auto_size_) this->size_ = this->measure_control();
+  if (this->get_state(state::auto_size)) this->size_ = this->measure_control();
   
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
     native::control::location(this->handle_, this->location_);
@@ -583,7 +596,7 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   this->client_size_.height(height);
   
   native::control::client_size(this->handle_, this->client_size_);
-  if (this->auto_size_) {
+  if (this->get_state(state::auto_size)) {
     this->size_ = native::control::size(this->handle_);
     this->size_ = this->measure_control();
     native::control::size(this->handle_, this->size_);
