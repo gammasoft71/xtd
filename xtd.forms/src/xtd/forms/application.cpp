@@ -154,11 +154,6 @@ void application::run() {
   application::run(context);
 }
 
-void application::run(const form& form) {
-  application_context context(form);
-  application::run(context);
-}
-
 void application::run(application_context& context) {
   try {
     if (context.main_form_ != nullptr) context.main_form().show();
@@ -174,6 +169,11 @@ void application::run(application_context& context) {
     /// @todo add exception message...
     cdebug << "exception (unknown) throws : ..." << endl;
   }
+}
+
+void application::run(const form& form) {
+  application_context context(form);
+  application::run(context);
 }
 
 void application::start() {

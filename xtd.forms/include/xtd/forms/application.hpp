@@ -148,12 +148,16 @@ namespace xtd {
       /// @remarks If your application was originally supplied command-line options when it first executed, restart will launch the application again with the same options.
       static void restart();
       
+      /// @brief Begins running a standard application message loop on the current thread, without a form.
+      /// @remarks In a Win32-based or windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop.
+      /// @remarks Most windows forms developers will not need to use this version of the method. You should use the run(const form&) overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the run(application_context&) overload, which supports supplying an application_context object for better control over the lifetime of the application.
       static void run();
 
-      static void run(const form& form);
-      
+      /// @brief Begins running a standard application message loop on the current thread, with an application_context.
       static void run(application_context& context);
       
+      static void run(const form& form);
+
       /// @cond
       static void end();
       static void start();
