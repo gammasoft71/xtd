@@ -33,7 +33,7 @@ namespace xtd {
       /// @param auto_size true if enabled; otherwise, false.
       control& auto_size(bool auto_size) override {
         this->control::auto_size(auto_size);
-        if (this->auto_size_)
+        if (this->get_state(state::auto_size))
           this->auto_ellipsis_ = false;
         return *this;
       }

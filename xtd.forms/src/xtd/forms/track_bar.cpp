@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 track_bar::track_bar() {
-  this->auto_size_ = true;
+  this->set_state(state::auto_size, true);
   this->size_ = this->default_size();
 }
 
