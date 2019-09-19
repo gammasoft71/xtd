@@ -48,9 +48,18 @@ namespace xtd {
       
       void on_click(const event_args& e) override;
 
+      /// @brief Processes Windows messages.
+      /// @param m The Windows Message to process.
+      /// @remarks All messages are sent to the wnd°proc method after getting filtered through the pre_process_message method.
+      void wnd_proc(message& message) override;
+      
       /// @cond
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       /// @endcond
+
+    private:
+      void wm_click(message& message);
+      void wm_mouse_up(message& message);
    };
   }
 }
