@@ -47,6 +47,8 @@ namespace xtd {
       using container_control::visible;
       control& visible(bool visible) override;
       
+      void activate();
+      
       void close();
       
       forms::dialog_result show_dialog();

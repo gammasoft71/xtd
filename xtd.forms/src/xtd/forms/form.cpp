@@ -66,6 +66,10 @@ control& form::visible(bool visible) {
   return *this;
 }
 
+void form::activate() {
+  native::form::activate(this->handle_);
+}
+
 void form::close() {
   native::form::close(this->handle_);
 }
