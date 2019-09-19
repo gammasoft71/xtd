@@ -143,7 +143,7 @@ control& control::text(const string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::control::text(this->handle_, this->text_);
-    this->on_auto_size_changed(event_args::empty);
+    this->on_text_changed(event_args::empty);
   }
   return *this;
 }
