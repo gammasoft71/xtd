@@ -1,12 +1,13 @@
 #include <xtd/xtd.strings>
 #include <xtd/xtd.tunit>
 
-#include <time.h>
 #if defined (WIN32)
 #define _CRT_SECURE_NO_WARNINGS
+#include <time.h>
 static time_t __make_local_date_time(struct tm *tm) noexcept {return mktime(tm);}
 static time_t __make_utc_date_time(struct tm *tm) noexcept {return _mkgmtime(tm);}
 #else
+#include <time.h>
 static time_t __make_local_date_time(struct tm *tm) noexcept {return mktime(tm);}
 static time_t __make_utc_date_time(struct tm *tm) noexcept {return timegm(tm);}
 #endif
