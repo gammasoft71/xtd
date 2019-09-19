@@ -13,6 +13,7 @@
 
 /// @cond
 std::string __get_current_dirirectory() noexcept;
+std::string __get_temp_path() noexcept;
 bool __is_windows_os() noexcept;
 /// @endcond
 
@@ -390,14 +391,7 @@ namespace xtd {
       /// * The Windows directory.
       template<typename Char>
       static std::basic_string<Char> get_temp_path() noexcept {
-        if (__is_windows_os()) {
-          if (getenv("TMP") != nullptr)  return getenv("TMP");
-          if (getenv("TEMP") != nullptr) return getenv("TEMP");
-          if (getenv("USERPROFILE") != nullptr) return getenv("USERPROFILE");
-          return getenv("WINDIR");
-        }
-        if (getenv("TMPDIR") != nullptr) return getenv("TMPDIR");
-        return "/tmp/";
+        return __get_temp_path();
       }
       
       /// @brief Returns the path of the current user's temporary folder.

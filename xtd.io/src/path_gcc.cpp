@@ -14,4 +14,9 @@ bool __is_windows_os() noexcept {
   return false;
 }
 
+std::string __get_temp_path() noexcept {
+  if (getenv("TMPDIR") != nullptr) return getenv("TMPDIR");
+  return "/tmp/";
+}
+
 #endif
