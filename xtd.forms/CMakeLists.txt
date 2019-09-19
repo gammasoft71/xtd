@@ -110,9 +110,6 @@ source_group(src\\native\\wxwidgets FILES ${NATIVE_WXWIDGETS_SOURCES})
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif ()
 
 # Add packages
 find_package(wxWidgets REQUIRED)

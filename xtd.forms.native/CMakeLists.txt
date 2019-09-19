@@ -58,9 +58,6 @@ source_group(src\\xtd\\forms\native FILES ${XTD_FORMS_NATIVE_SOURCES})
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif ()
 
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_NATIVE_INCLUDES} ${SOURCES} ${XTD_FORMS_NATIVE_SOURCES})
