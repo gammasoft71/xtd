@@ -667,15 +667,6 @@ void control::wm_mouse_leave(message& message) {
 
 void control::wm_mouse_up(message& message) {
   this->def_wnd_proc(message);
-  /*
-   if (this->get_state(control::state::double_click_fired)) {
-   this->on_double_click(event_args::empty);
-   this->on_mouse_double_click(mouse_event_args(message_to_mouse_buttons(message), {LOWORD(message.lparam()), HIWORD(message.lparam())}, 2, 0));
-   } else {
-   this->on_click(event_args::empty);
-   this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{LOWORD(message.lparam()), HIWORD(message.lparam())}, 1, 0));
-   }
-   */
   if (message_to_mouse_buttons(message) == mouse_buttons::left) this->on_click(event_args::empty);
   this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
   this->on_mouse_up(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
