@@ -176,7 +176,7 @@ control& control::visible(bool visible) {
 }
 
 void control::create_control() {
-  this->created_ = true;
+  this->set_state(state::created, true);
   if (!this->handle_) {
     this->create_handle();
     if (!this->parent_) top_level_controls_.push_back(ref_control(*this));
@@ -186,7 +186,8 @@ void control::create_control() {
 }
 
 void control::destroy_control() {
-  this->created_ = false;
+  this->set_state(state::created, false);
+  this->set_state(state::destroyed, true);
   if (this->handle_) {
     if (this->parent_ != 0) {
       for (size_t index = 0; index < this->parent().controls_.size(); index++) {
@@ -301,7 +302,7 @@ void control::on_control_added(const control_event_args &e) {
 
 void control::on_control_removed(const control_event_args &e) {
   if (this->auto_size_) this->set_auto_size_size();
-  this->refresh();
+  if (!this->get_state(state::destroyed)) this->refresh();
   this->control_removed(*this, e);
 }
 
