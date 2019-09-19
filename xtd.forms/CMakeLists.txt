@@ -90,6 +90,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/list_box.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/message_box.cpp
+  src/xtd/forms/mouse_event_args.cpp
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/panel.cpp
   src/xtd/forms/progress_bar.cpp

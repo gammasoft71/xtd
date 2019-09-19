@@ -2,12 +2,18 @@
 #include <cstdint>
 #include <xtd/event_args.hpp>
 #include <xtd/drawing/point.hpp>
+#include "message.hpp"
 #include "mouse_buttons.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @cond
+    class button;
+    class control;
+    /// @endcond
+    
     class mouse_event_args : public event_args {
     public:
       mouse_event_args() = default;
@@ -33,6 +39,9 @@ namespace xtd {
       int32_t y() {return this->location().y();}
       
     private:
+      friend class button;
+      friend class control;
+      static mouse_event_args create(const message& message, bool double_click_fired = false, int32_t delta = 0);
       mouse_buttons button_ = mouse_buttons::none;
       drawing::point location_;
       int32_t clicks_ = 0;

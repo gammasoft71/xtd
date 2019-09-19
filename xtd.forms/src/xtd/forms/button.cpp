@@ -2,25 +2,10 @@
 #include "../../../include/xtd/forms/form.hpp"
 #include <xtd/forms/native/button.hpp>
 #include <xtd/forms/native/window_button.hpp>
-#include <xtd/forms/native/window_message_keys.hpp>
 #include <xtd/forms/window_messages.hpp>
 
 using namespace xtd;
 using namespace xtd::forms;
-
-namespace {
-  mouse_buttons message_to_mouse_buttons(const message& message) {
-    if (message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_LBUTTONDOWN || message.msg() == WM_LBUTTONUP)
-      return mouse_buttons::left;
-    else if (message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_RBUTTONDOWN || message.msg() == WM_RBUTTONUP)
-      return mouse_buttons::right;
-    else if (message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_MBUTTONDOWN || message.msg() == WM_MBUTTONUP)
-      return mouse_buttons::middle;
-    else if (message.msg() == WM_XBUTTONDBLCLK || message.msg() == WM_XBUTTONDOWN || message.msg() == WM_XBUTTONUP)
-      return (message.wparam() & MK_XBUTTON2) == MK_XBUTTON2 ? mouse_buttons::x_button2 : mouse_buttons::x_button1;
-    return mouse_buttons::none;
-  }
-}
 
 button& button::auto_size_mode(forms::auto_size_mode value) {
   this->set_auto_size_mode(value);
@@ -75,6 +60,7 @@ void button::wm_click(message& message) {
 
 void button::wm_mouse_up(message& message) {
   this->def_wnd_proc(message);
-  this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
-  this->on_mouse_up(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
+  mouse_event_args e = mouse_event_args::create(message);
+  this->on_mouse_click(e);
+  this->on_mouse_up(e);
 }

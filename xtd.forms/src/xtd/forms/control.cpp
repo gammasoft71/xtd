@@ -17,18 +17,6 @@ using namespace xtd::forms;
 namespace {
   bool debug_events = false;
   
-  mouse_buttons message_to_mouse_buttons(const message& message) {
-    if (message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_LBUTTONDOWN || message.msg() == WM_LBUTTONUP)
-      return mouse_buttons::left;
-    else if (message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_RBUTTONDOWN || message.msg() == WM_RBUTTONUP)
-      return mouse_buttons::right;
-    else if (message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_MBUTTONDOWN || message.msg() == WM_MBUTTONUP)
-      return mouse_buttons::middle;
-    else if (message.msg() == WM_XBUTTONDBLCLK || message.msg() == WM_XBUTTONDOWN || message.msg() == WM_XBUTTONUP)
-      return (message.wparam() & MK_XBUTTON2) == MK_XBUTTON2 ? mouse_buttons::x_button2 : mouse_buttons::x_button1;
-    return mouse_buttons::none;
-  }
-  
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)
       return mouse_buttons::left;
@@ -315,7 +303,14 @@ void control::on_control_added(const control_event_args &e) {
 
 void control::on_control_removed(const control_event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
-  if (this->get_state(state::created)) this->refresh();
+  
+  bool can_refresh = this->get_state(state::created);
+  control* ctrl = this;
+  while (can_refresh && !ctrl->get_state(state::top_level)) {
+    ctrl = &ctrl->parent();
+    can_refresh = ctrl->get_state(state::created);
+  }
+  if (can_refresh) this->refresh();
   this->control_removed(*this, e);
 }
 
@@ -659,14 +654,14 @@ void control::wm_kill_focus(message& message) {
 void control::wm_mouse_down(message& message) {
   this->def_wnd_proc(message);
   this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
-  this->on_mouse_down(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
+  this->on_mouse_down(mouse_event_args::create(message, this->get_state(state::double_click_fired)));
 }
 
 void control::wm_mouse_double_click(message& message) {
   this->def_wnd_proc(message);
   this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
   this->on_double_click(event_args::empty);
-  this->on_mouse_double_click(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
+  this->on_mouse_double_click(mouse_event_args::create(message, this->get_state(state::double_click_fired)));
 }
 
 void control::wm_mouse_enter(message& message) {
@@ -681,9 +676,10 @@ void control::wm_mouse_leave(message& message) {
 
 void control::wm_mouse_up(message& message) {
   this->def_wnd_proc(message);
-  if (message_to_mouse_buttons(message) == mouse_buttons::left) this->on_click(event_args::empty);
-  this->on_mouse_click(mouse_event_args(message_to_mouse_buttons(message),{(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
-  this->on_mouse_up(mouse_event_args(message_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, 1, 0));
+  mouse_event_args e = mouse_event_args::create(message);
+  if (e.button() == mouse_buttons::left) this->on_click(event_args::empty);
+  this->on_mouse_click(e);
+  this->on_mouse_up(e);
 }
 
 void control::wm_mouse_move(message& message) {
@@ -699,9 +695,9 @@ void control::wm_move(message& message) {
 void control::wm_mouse_wheel(message& message) {
   this->def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
-    this->on_mouse_horizontal_wheel(mouse_event_args(message_to_mouse_buttons(message), { static_cast<int32_t>(LOWORD(message.lparam())), static_cast<int32_t>(HIWORD(message.lparam()))}, this->get_state(control::state::double_click_fired) ? 2 : 1, static_cast<int32_t>(HIWORD(message.wparam()))));
+    this->on_mouse_horizontal_wheel(mouse_event_args::create(message, this->get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
   else
-    this->on_mouse_wheel(mouse_event_args(message_to_mouse_buttons(message), {static_cast<int32_t>(LOWORD(message.lparam())),  static_cast<int32_t>(HIWORD(message.lparam()))}, this->get_state(control::state::double_click_fired) ? 2 : 1, static_cast<int32_t>(HIWORD(message.wparam()))));
+    this->on_mouse_wheel(mouse_event_args::create(message, this->get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
 }
 
 void control::wm_paint(message& message) {
