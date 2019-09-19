@@ -13,9 +13,6 @@ source_group(src FILES ${SOURCES})
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif ()
 
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
