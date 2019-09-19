@@ -58,7 +58,6 @@ form& form::start_position(form_start_position start_position) {
 
 control& form::visible(bool visible) {
   if (!this->previous_screeen_) {
-    this->client_size_ = {-1, -1};
     this->previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
     this->recreate_handle();
   }
