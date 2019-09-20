@@ -28,6 +28,8 @@ namespace xtd {
       /// @remarks The default size of a form is 300 pixels in height and 300 pixels in width.
       form();
 
+      static std::optional<std::reference_wrapper<form>> active_form() {return active_form_;}
+      
       virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
       virtual form& auto_size_mode(forms::auto_size_mode value);
       
@@ -55,6 +57,9 @@ namespace xtd {
       
       forms::dialog_result show_dialog(const iwin32_window& owner);
       
+      event<form, event_handler<control>> activated;
+      event<form, event_handler<control>> deactivate;
+
       event<form, form_closed_event_handler<control>> form_closed;
       
       event<form, form_closing_event_handler<control>> form_closing;
@@ -65,16 +70,23 @@ namespace xtd {
    
       drawing::size measure_control() const override;
 
-      void on_handle_created(const event_args &e) override;
+      virtual void on_activated(const event_args& e) {this->activated(*this, e);}
       
+      virtual void on_deactivate(const event_args& e) {this->deactivate(*this, e);}
+      
+      void on_handle_created(const event_args &e) override;
+
       void on_form_closed(const form_closed_event_args& e) {this->form_closed(*this, e);}
       
       void on_form_closing(form_closing_event_args& e) {this->form_closing(*this, e);}
       
       void wnd_proc(message& message) override;
       
+      virtual void wm_activate(message& message);
+      
       virtual void wm_close(message& message);
-
+      
+      static std::optional<std::reference_wrapper<form>> active_form_;
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       std::shared_ptr<screen> previous_screeen_;
       form_start_position start_position_ = form_start_position::windows_default_location;
