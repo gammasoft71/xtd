@@ -23,7 +23,7 @@ screen screen::from_control(const control& control) {
 }
 
 screen screen::from_handle(intptr_t handle) {
-  return from_control(control::from_handle(handle));
+  return from_control(control::from_handle(handle).value().get());
 }
 
 screen screen::from_point(const point& point) {
@@ -39,7 +39,7 @@ screen screen::from_rectangle(const rectangle& rect) {
 }
 
 rectangle screen::get_bounds(intptr_t handle) {
-  return get_bounds(control::from_handle(handle));
+  return get_bounds(control::from_handle(handle).value().get());
 }
 
 rectangle screen::get_bounds(const point& point) {
@@ -55,7 +55,7 @@ rectangle screen::get_working_area(const control& control) {
 }
 
 rectangle screen::get_working_area(intptr_t handle) {
-  return get_working_area(control::from_handle(handle));
+  return get_working_area(control::from_handle(handle).value().get());
 }
 
 rectangle screen::get_working_area(const point& point) {

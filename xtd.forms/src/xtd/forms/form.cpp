@@ -124,7 +124,7 @@ forms::create_params form::create_params() const {
         break;
       case form_start_position::center_parent:
         if (this->parent_ != 0)
-          create_params.location({this->parent().left() + (this->parent().width() - this->width()) / 2, this->parent().top() + (this->parent().height() - this->height()) / 2});
+          create_params.location({this->parent().value().get().left() + (this->parent().value().get().width() - this->width()) / 2, this->parent().value().get().top() + (this->parent().value().get().height() - this->height()) / 2});
         else
           create_params.location({default_location, default_location});
         create_params.size(this->size());

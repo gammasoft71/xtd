@@ -28,8 +28,6 @@ namespace {
   }
 }
 
-const control control::null {"null", true};
-
 map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
@@ -55,7 +53,7 @@ control::control() {
 }
 
 control::~control() {
-  destroy_control();
+  this->destroy_control();
 }
 
 control& control::auto_size(bool auto_size) {
@@ -125,18 +123,18 @@ intptr_t control::handle() const {
 }
 
 control& control::parent(const control& parent) {
-  if (&this->parent() != &parent) {
+  if (parent.handle_ != this->parent_) {
     this->parent(nullptr);
-    if (parent.handle_) const_cast<control&>(parent).controls_.push_back(ref_control(*this));
+    if (parent.handle_) const_cast<control&>(parent).controls_.push_back(*this);
   }
   return *this;
 }
 
 control& control::parent(nullptr_t) {
   if (this->parent_ != 0) {
-    for (size_t index = 0; index < this->parent().controls_.size(); index++) {
-      if (this->parent().controls_[index].get().handle_ == this->handle_) {
-        this->parent().controls_.erase_at(index);
+    for (size_t index = 0; index < this->parent().value().get().controls_.size(); index++) {
+      if (this->parent().value().get().controls_[index].get().handle_ == this->handle_) {
+        this->parent().value().get().controls_.erase_at(index);
         break;
       }
     }
@@ -153,13 +151,12 @@ control& control::text(const string& text) {
   return *this;
 }
 
-control& control::top_level_control() const {
-  control* top_level_control = const_cast<control*>(this);
-  while (!top_level_control->get_state(state::top_level) && top_level_control->parent_ != 0) {
-    top_level_control = &top_level_control->parent();
-  }
-  if (!top_level_control->get_state(state::top_level)) return const_cast<control&>(control::null);
-  return *top_level_control;
+std::optional<std::reference_wrapper<control>> control::top_level_control() const {
+  std::optional<std::reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
+  while (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level))
+    top_level_control = top_level_control.value().get().parent();
+  if (top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) top_level_control.reset();
+  return top_level_control;
 }
 
 control& control::visible(bool visible) {
@@ -176,7 +173,7 @@ void control::create_control() {
     this->set_state(state::destroyed, false);
     this->set_state(state::creating, true);
     this->create_handle();
-    if (!this->parent_) top_level_controls_.push_back(ref_control(*this));
+    if (!this->parent_) top_level_controls_.push_back(control_ref(*this));
     this->send_message(this->handle_, WM_CREATE, 0, 0);
     this->on_create_control();
     this->set_state(state::creating, false);
@@ -189,14 +186,12 @@ void control::destroy_control() {
     this->set_state(state::created, false);
     this->set_state(state::destroying, true);
     if (this->handle_) {
-      if (this->parent_ != 0) {
-        for (size_t index = 0; index < this->parent().controls_.size(); index++) {
-          if (this->parent().controls_[index].get().handle_ == this->handle_) {
-            this->parent().controls_.erase_at(index);
-            break;
-          }
-        }
-      } else {
+      for(control_ref child : this->controls_)
+        child.get().destroy_control();
+      
+      if (this->parent_ != 0 && this->parent().has_value() && !this->parent().value().get().get_state(state::destroying))
+        this->parent(nullptr);
+      else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle_ == this->handle_) {
             top_level_controls_.erase_at(index);
@@ -227,23 +222,23 @@ void control::destroy_handle() {
   this->handle_ = 0;
 }
 
-control& control::from_child_handle(intptr_t handle) {
+std::optional<std::reference_wrapper<control>> control::from_child_handle(intptr_t handle) {
   try {
     if (handles_.find(handle) != handles_.end())
       return handles_[handle]->parent();
-    return const_cast<control&>(control::null);
+    return std::optional<std::reference_wrapper<control>>();
   } catch (...) {
-    return const_cast<control&>(control::null);
+    return std::optional<std::reference_wrapper<control>>();
   }
 }
 
-control& control::from_handle(intptr_t handle) {
+std::optional<std::reference_wrapper<control>> control::from_handle(intptr_t handle) {
   try {
     if (handles_.find(handle) != handles_.end())
       return *handles_[handle];
-    return const_cast<control&>(control::null);
+    return std::optional<std::reference_wrapper<control>>();
   } catch (...) {
-    return const_cast<control&>(control::null);
+    return std::optional<std::reference_wrapper<control>>();
   }
 }
 
@@ -251,16 +246,12 @@ bool control::is_handle_created() const {
   return this->handle_ != 0;
 }
 
-bool control::is_null() const {
-  return this == &control::null;
-}
-
 forms::create_params control::create_params() const {
   forms::create_params create_params;
   
   create_params.caption(this->text_);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (this->parent_) create_params.parent(this->parent().handle_);
+  if (this->parent_) create_params.parent(this->parent().value().get().handle_);
   create_params.location(this->location_);
   
   create_params.size(this->size_);
@@ -287,7 +278,7 @@ void control::on_back_color_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
-  if (!this->get_state(state::top_level)) this->enabled(this->parent().enabled());
+  if (!this->get_state(state::top_level)) this->enabled(this->parent().value().get().enabled());
   for (auto control : this->controls_)
     control.get().create_control();
 }
@@ -310,10 +301,10 @@ void control::on_control_removed(const control_event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
   
   bool can_refresh = this->get_state(state::created);
-  control* ctrl = this;
-  while (can_refresh && !ctrl->get_state(state::top_level)) {
-    ctrl = &ctrl->parent();
-    can_refresh = ctrl->get_state(state::created);
+  control_ref ctrl = *this;
+  while (can_refresh && !ctrl.get().get_state(state::top_level)) {
+    ctrl = ctrl.get().parent().value();
+    can_refresh = ctrl.get().get_state(state::created);
   }
   if (can_refresh) this->refresh();
   this->control_removed(*this, e);
@@ -336,7 +327,7 @@ void control::on_fore_color_changed(const event_args &e) {
 
 void control::on_font_changed(const event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
-  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->refresh();
   this->font_changed(*this, e);
 }
@@ -380,7 +371,7 @@ void control::on_key_up(key_event_args& e) {
 
 void control::on_location_changed(const event_args &e) {
   if (this->handle_ != 0) this->location_ = native::control::location(this->handle_);
-  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->location_changed(*this, e);
 }
 
@@ -461,14 +452,14 @@ void control::on_parent_font_changed(const event_args &e) {
 
 void control::on_size_changed(const event_args &e) {
   if (this->handle_ != 0) this->size_ = native::control::size(this->handle_);
-  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->refresh();
   this->size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
-  if (this->parent_ && this->parent().get_state(state::auto_size)) this->parent().set_auto_size_size();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->text_changed(*this, e);
 }
 
@@ -628,7 +619,7 @@ void control::wm_child_activate(message& message) {
 void control::wm_command(message& message) {
   this->def_wnd_proc(message);
   if (message.lparam() != 0)
-    from_handle(message.lparam()).send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+    from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
 void control::wm_key_char(message& message) {
@@ -714,7 +705,7 @@ void control::wm_paint(message& message) {
 void control::wm_scroll(message& message) {
   this->def_wnd_proc(message);
   if (message.lparam() != 0)
-    from_handle(message.lparam()).send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+    from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
 void control::wm_set_focus(message& message) {

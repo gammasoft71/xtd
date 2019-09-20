@@ -36,9 +36,9 @@ forms::create_params button::create_params() const {
 
 void button::on_click(const event_args& e) {
   this->button_base::on_click(e);
-  if (this->dialog_result_ != forms::dialog_result::none &&  dynamic_cast<form*>(&this->top_level_control()) != nullptr && static_cast<form&>(this->top_level_control()).modal()) {
-    static_cast<form&>(this->top_level_control()).dialog_result(this->dialog_result());
-    static_cast<form&>(this->top_level_control()).close();
+  if (this->dialog_result_ != forms::dialog_result::none &&  this->top_level_control().has_value() && static_cast<form&>(this->top_level_control().value().get()).modal()) {
+    static_cast<form&>(this->top_level_control().value().get()).dialog_result(this->dialog_result());
+    static_cast<form&>(this->top_level_control().value().get()).close();
   }
 }
 

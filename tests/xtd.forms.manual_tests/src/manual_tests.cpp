@@ -21,7 +21,7 @@ int main() {
   
   auto button_move = control::create<button>(*form_main, "Move", {365, 50});
   button_move->click += [&] {
-    list_box_numbers->parent(list_box_numbers->parent().handle() == panel_left->handle() ? *panel_right : *panel_left);
+    list_box_numbers->parent(list_box_numbers->parent().value().get().handle() == panel_left->handle() ? *panel_right : *panel_left);
   };
   
   auto button_enable = control::create<button>(*form_main, "Enable", {365, 100});
