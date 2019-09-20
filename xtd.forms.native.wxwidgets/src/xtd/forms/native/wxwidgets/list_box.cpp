@@ -9,14 +9,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-color list_box::default_back_color() {
-  return system_colors::window();
-}
-
-color list_box::default_fore_color() {
-  return system_colors::window_text();
-}
-
 void list_box::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);

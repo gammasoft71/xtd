@@ -13,9 +13,9 @@ namespace xtd {
       virtual forms::border_style border_style() const {return this->border_style_;}
       virtual text_box& border_style(forms::border_style border_style);
       
-      drawing::color default_back_color() const override;
+      drawing::color default_back_color() const override {return drawing::system_colors::window();}
       
-      drawing::color default_fore_color() const override;
+      drawing::color default_fore_color() const override {return drawing::system_colors::window_text();}
       
       drawing::size default_size() const override {return {100, 23};}
 

@@ -11,6 +11,7 @@
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/rectangle.hpp>
 #include <xtd/drawing/size.hpp>
+#include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/create_params.hpp>
 
 #include "layout/arranged_element_collection.hpp"
@@ -246,9 +247,9 @@ namespace xtd {
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      virtual drawing::color default_back_color() const;
+      virtual drawing::color default_back_color() const {return drawing::system_colors::control();}
 
-      virtual drawing::color default_fore_color() const;
+      virtual drawing::color default_fore_color() const {return drawing::system_colors::control_text();}
       
       virtual drawing::font default_font() const;
       

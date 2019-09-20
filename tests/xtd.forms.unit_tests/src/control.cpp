@@ -25,11 +25,16 @@ namespace unit_tests {
       assert::is_zero_(control.bottom());
     }
 
+    void test_method_(new_control_client_bounds) {
+      control control;
+      assert::are_equal_(drawing::rectangle(0, 0, 0, 0), control.bounds());
+    }
+
     void test_method_(new_control_client_size) {
       control control;
       assert::are_equal_(drawing::size(0, 0), control.client_size());
     }
-    
+
     void test_method_(new_control_default_back_color) {
       control control;
       assert::are_equal_(system_colors::control(), control.default_back_color());
