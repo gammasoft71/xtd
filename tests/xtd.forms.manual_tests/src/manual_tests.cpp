@@ -21,10 +21,15 @@ int main() {
   
   auto button_move = control::create<button>(*form_main, "Move", {365, 50});
   button_move->click += [&] {
-    list_box_numbers->parent(list_box_numbers->parent().value().get().handle() == panel_left->handle() ? *panel_right : *panel_left);
+    list_box_numbers->parent(list_box_numbers->parent().value().get() == *panel_left ? *panel_right : *panel_left);
   };
   
-  auto button_enable = control::create<button>(*form_main, "Enable", {365, 100});
+  auto button_remove = control::create<button>(*form_main, "Remove", {365, 100});
+  button_remove->click += [&] {
+    list_box_numbers->parent(nullptr);
+  };
+
+  auto button_enable = control::create<button>(*form_main, "Enable", {365, 150});
   button_enable->click += [&] {
     panel_left->enabled(!panel_left->enabled());
   };
