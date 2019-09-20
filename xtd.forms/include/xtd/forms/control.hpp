@@ -91,19 +91,11 @@ namespace xtd {
       /// @endcond
       
     public:
-      /// @brief Represents a control objects.
-      using ref_control = std::reference_wrapper<control>;
+      /// @brief Represents a control reference.
+      using control_ref = std::reference_wrapper<control>;
       
-      /// @brief Represents a collection of control objects.
-      using control_collection = layout::arranged_element_collection<ref_control>;
-      
-      /// @brief Represent a null control. This field is const.
-      /// @remarks Use this field if you want remove control from parent.
-      /// @code
-      /// // remove button from form
-      /// button.parent(control::null);
-      /// @endcode
-      static const control null;
+      /// @brief Represents a collection of control references.
+      using control_collection = layout::arranged_element_collection<control_ref>;
       
       /// @brief Initializes a new instance of the Control class with default settings.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
@@ -177,7 +169,7 @@ namespace xtd {
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
       /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
       /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
-      virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ ? this->parent().back_color() : default_back_color());}
+      virtual drawing::color back_color() const {return this->back_color_.value_or(this->parent_ ? this->parent().value().get().back_color() : default_back_color());}
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
       /// @return This control.
@@ -265,10 +257,10 @@ namespace xtd {
       virtual bool enabled() const {return this->get_state(state::enabled);}
       virtual control& enabled(bool enabled);
 
-      virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ ? this->parent().fore_color() : default_fore_color());}
+      virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ ? this->parent().value().get().fore_color() : default_fore_color());}
       virtual control& fore_color(const drawing::color& color);
       
-      virtual drawing::font font() const {return this->font_.value_or(this->parent_ ? this->parent().font() : default_font());}
+      virtual drawing::font font() const {return this->font_.value_or(this->parent_ ? this->parent().value().get().font() : default_font());}
       virtual control& font(const drawing::font& font);
       
       intptr_t handle() const override;
@@ -300,7 +292,7 @@ namespace xtd {
         return*this;
       }
       
-      virtual control& parent() const {return from_handle(this->parent_);}
+      virtual std::optional<control_ref> parent() const {return from_handle(this->parent_);}
       virtual control& parent(const control& parent);
       virtual control& parent(nullptr_t);
 
@@ -344,7 +336,7 @@ namespace xtd {
         return *this;
       }
       
-      virtual control& top_level_control() const;
+      virtual std::optional<control_ref> top_level_control() const;
 
       virtual bool visible() const {return this->get_state(state::visible);}
       virtual control& visible(bool visible);
@@ -409,13 +401,11 @@ namespace xtd {
 
       virtual void destroy_handle();
       
-      static control& from_child_handle(intptr_t handle);
+      static std::optional<control_ref> from_child_handle(intptr_t handle);
 
-      static control& from_handle(intptr_t handle);
+      static std::optional<control_ref> from_handle(intptr_t handle);
       
       bool is_handle_created() const;
-      
-      bool is_null() const;
       
       virtual void refresh() const;
       
