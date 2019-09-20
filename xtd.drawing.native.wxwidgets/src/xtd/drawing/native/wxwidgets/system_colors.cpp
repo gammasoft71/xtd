@@ -1,6 +1,12 @@
 #include <xtd/drawing/native/system_colors.hpp>
 #include <wx/settings.h>
 
+#include <cstdint>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/textctrl.h>
+
 using namespace xtd::drawing::native;
 
 namespace {
@@ -74,10 +80,26 @@ intptr_t system_colors::button_shadow() {
 }
 
 intptr_t system_colors::control() {
-#if defined(__WXOSX__)
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).OSXGetNSColor());
-#else
+#  else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+#  endif
+#else
+  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+  wxButton* button = new wxButton(frame, wxID_ANY, "");
+  wxColour colour = button->GetBackgroundColour();
+  intptr_t default_color = 0;
+#if defined (__WXOSX__)
+  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
+#else
+  default_color = ::to_argb(colour);
+#endif
+  delete button;
+  delete frame;
+  return default_color;
 #endif
 }
 
@@ -114,10 +136,26 @@ intptr_t system_colors::control_light_light() {
 }
 
 intptr_t system_colors::control_text() {
-#if defined(__WXOSX__)
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT).OSXGetNSColor());
-#else
+#  else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT));
+#  endif
+#else
+  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+  wxButton* button = new wxButton(frame, wxID_ANY, "");
+  wxColour colour = button->GetForegroundColour();
+  intptr_t default_color = 0;
+#if defined (__WXOSX__)
+  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
+#else
+  default_color = ::to_argb(colour);
+#endif
+  delete button;
+  delete frame;
+  return default_color;
 #endif
 }
 
@@ -266,17 +304,49 @@ intptr_t system_colors::window() {
 }
 
 intptr_t system_colors::window_frame() {
-#if defined(__WXOSX__)
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME).OSXGetNSColor());
-#else
+#  else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME));
+#  endif
+#else
+  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+  wxTextCtrl* text = new wxTextCtrl(frame, wxID_ANY, "");
+  wxColour colour = text->GetBackgroundColour();
+  intptr_t default_color = 0;
+#if defined (__WXOSX__)
+  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
+#else
+  default_color = ::to_argb(colour);
+#endif
+  delete text;
+  delete frame;
+  return default_color;
 #endif
 }
 
 intptr_t system_colors::window_text() {
-#if defined(__WXOSX__)
+#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT).OSXGetNSColor());
-#else
+#  else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT));
+#  endif
+#else
+  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
+  wxTextCtrl* text = new wxTextCtrl(frame, wxID_ANY, "");
+  wxColour colour = text->GetForegroundColour();
+  intptr_t default_color = 0;
+#if defined (__WXOSX__)
+  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
+#else
+  default_color = ::to_argb(colour);
+#endif
+  delete text;
+  delete frame;
+  return default_color;
 #endif
 }
