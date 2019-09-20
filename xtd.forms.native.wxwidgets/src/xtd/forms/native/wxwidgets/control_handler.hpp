@@ -627,7 +627,7 @@ namespace xtd {
       template<typename TControl>
       inline void control_wrapper<TControl>::process_text_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_TEXT) {
-          this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SETTEXT, 0, reinterpret_cast<intptr_t>(static_cast<wxCommandEvent&>(event).GetString().c_str().AsChar()), reinterpret_cast<intptr_t>(&event));
+          if (event.GetEventObject() == this) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SETTEXT, 0, reinterpret_cast<intptr_t>(static_cast<wxCommandEvent&>(event).GetString().c_str().AsChar()), reinterpret_cast<intptr_t>(&event));
         } else
           this->def_process_event(event);
       }
