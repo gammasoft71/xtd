@@ -91,12 +91,7 @@ intptr_t system_colors::control() {
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxButton* button = new wxButton(frame, wxID_ANY, "");
   wxColour colour = button->GetBackgroundColour();
-  intptr_t default_color = 0;
-#if defined (__WXOSX__)
-  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
-#else
-  default_color = ::to_argb(colour);
-#endif
+  intptr_t default_color = ::to_argb(colour);
   delete button;
   delete frame;
   return default_color;
@@ -147,12 +142,7 @@ intptr_t system_colors::control_text() {
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxButton* button = new wxButton(frame, wxID_ANY, "");
   wxColour colour = button->GetForegroundColour();
-  intptr_t default_color = 0;
-//#if defined (__WXOSX__)
-//  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
-//#else
-  default_color = ::to_argb(colour);
-//#endif
+  intptr_t default_color = ::to_argb(colour);
   delete button;
   delete frame;
   return default_color;
@@ -296,34 +286,29 @@ intptr_t system_colors::scroll_bar() {
 }
 
 intptr_t system_colors::window() {
-#if defined(__WXOSX__)
-  return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW).OSXGetNSColor());
-#else
-  return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
-#endif
-}
-
-intptr_t system_colors::window_frame() {
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
 #  if defined(__WXOSX__)
-  return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME).OSXGetNSColor());
+  return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW).OSXGetNSColor());
 #  else
-  return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME));
+  return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 #  endif
 #else
   if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxTextCtrl* text = new wxTextCtrl(frame, wxID_ANY, "");
   wxColour colour = text->GetBackgroundColour();
-  intptr_t default_color = 0;
-#if defined (__WXOSX__)
-  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
-#else
-  default_color = ::to_argb(colour);
-#endif
+  intptr_t default_color = ::to_argb(colour);
   delete text;
   delete frame;
   return default_color;
+#endif
+}
+
+intptr_t system_colors::window_frame() {
+#if defined(__WXOSX__)
+  return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME).OSXGetNSColor());
+#else
+  return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME));
 #endif
 }
 
@@ -339,12 +324,7 @@ intptr_t system_colors::window_text() {
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxTextCtrl* text = new wxTextCtrl(frame, wxID_ANY, "");
   wxColour colour = text->GetForegroundColour();
-  intptr_t default_color = 0;
-#if defined (__WXOSX__)
-  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
-#else
-  default_color = ::to_argb(colour);
-#endif
+  intptr_t default_color = ::to_argb(colour);
   delete text;
   delete frame;
   return default_color;
