@@ -126,15 +126,20 @@ intptr_t control::handle() const {
 
 control& control::parent(const control& parent) {
   if (&this->parent() != &parent) {
-    if (this->parent_ != 0) {
-      for (size_t index = 0; index < this->parent().controls_.size(); index++) {
-        if (this->parent().controls_[index].get().handle_ == this->handle_) {
-          this->parent().controls_.erase_at(index);
-          break;
-        }
+    this->parent(nullptr);
+    if (parent.handle_) const_cast<control&>(parent).controls_.push_back(ref_control(*this));
+  }
+  return *this;
+}
+
+control& control::parent(nullptr_t) {
+  if (this->parent_ != 0) {
+    for (size_t index = 0; index < this->parent().controls_.size(); index++) {
+      if (this->parent().controls_[index].get().handle_ == this->handle_) {
+        this->parent().controls_.erase_at(index);
+        break;
       }
     }
-    if (parent.handle_) const_cast<control&>(parent).controls_.push_back(ref_control(*this));
   }
   return *this;
 }
