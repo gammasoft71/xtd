@@ -51,7 +51,7 @@ void control::back_color(intptr_t control, const color& color) {
 }
 
 intptr_t control::create(const forms::create_params& create_params) {
-  application::start(); // Must be first
+  application::initialize(); // Must be first
   if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
   if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
   if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
@@ -86,47 +86,11 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
 }
 
 color control::default_back_color() {
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
   return system_colors::control();
-#else
-  static color default_color;
-  if (default_color == color::empty) {
-    native::application::start();
-    wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
-    wxButton* button = new wxButton(frame, wxID_ANY, "");
-    wxColour colour = button->GetBackgroundColour();
-#if defined (__WXOSX__)
-    default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
-#else
-    default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
-#endif
-    delete button;
-    delete frame;
-  }
-  return default_color;
-#endif
 }
 
 color control::default_fore_color() {
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
   return system_colors::control_text();
-#else
-  static color default_color;
-  if (default_color == color::empty) {
-    native::application::start();
-    wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
-    wxButton* button = new wxButton(frame, wxID_ANY, "");
-    wxColour colour = button->GetForegroundColour();
-#if defined (__WXOSX__)
-    default_color = color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
-#else
-    default_color = color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
-#endif
-    delete button;
-    delete frame;
-  }
-  return default_color;
-#endif
 }
 
 font control::default_font() {
@@ -141,7 +105,7 @@ void control::destroy(intptr_t control) {
 }
 
 void control::init() {
-  application::start(); // Must be first
+  application::initialize(); // Must be first
 }
 
 drawing::rectangle control::client_rectangle(intptr_t control) {
