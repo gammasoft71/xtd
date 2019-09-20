@@ -1,7 +1,7 @@
 #include <chrono>
 #include <xtd/xtd.io.hpp>
 #include <xtd/environment.hpp>
-#include <xtd/diagnostics/cdebug.hpp>
+#include <xtd/xtd.diagnostics>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
 #include "../../../include/xtd/forms/application.hpp"

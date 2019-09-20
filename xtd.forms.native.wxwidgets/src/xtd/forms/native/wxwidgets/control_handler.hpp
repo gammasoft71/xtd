@@ -16,6 +16,7 @@
 #include <xtd/forms/native/window_styles.hpp>
 #include <xtd/forms/native/window_track_bar.hpp>
 #include <wx/checkbox.h>
+#include <wx/event.h>
 #include <wx/stattext.h>
 #include <wx/frame.h>
 #include <wx/gauge.h>
@@ -611,6 +612,7 @@ namespace xtd {
           bool can_close = this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
           if (!can_close) static_cast<wxCloseEvent&>(event).Veto(!can_close); // this redendent test is needed on macos when right click on app desktop and choose quit.
         }
+        else if (event.GetEventType() == wxEVT_ACTIVATE) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_ACTIVATE, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), static_cast<wxActivateEvent&>(event).GetActive() ? (static_cast<wxActivateEvent&>(event).GetActivationReason() == wxActivateEvent::Reason::Reason_Mouse ? WA_CLICKACTIVE : WA_ACTIVE) : WA_INACTIVE, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_DESTROY) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MOVE) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_NULL) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));

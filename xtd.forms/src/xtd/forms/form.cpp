@@ -24,6 +24,8 @@ namespace {
   //static bool next_location = static_cast<int32_t>(key.get_value("NextFormLocation", 1))); // Strangely, on Windows the first location is used 2 times; this boolean simumate it.
 }
 
+std::optional<std::reference_wrapper<form>> form::active_form_;
+
 form::form() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->back_color_ = this->default_back_color();
@@ -140,8 +142,19 @@ forms::create_params form::create_params() const {
 
 void form::wnd_proc(message &message) {
   switch (message.msg()) {
+    case WM_ACTIVATE: this->wm_activate(message); break;
     case WM_CLOSE: this->wm_close(message); break;
     default: this->container_control::wnd_proc(message); break;
+  }
+}
+
+void form::wm_activate(message &message) {
+  if (message.lparam() == WA_INACTIVE && active_form_.has_value() && &active_form_.value().get() == this) {
+    active_form_.reset();
+    this->on_deactivate(event_args::empty);
+  } else {
+    active_form_ = *this;
+    this->on_activated(event_args::empty);
   }
 }
 

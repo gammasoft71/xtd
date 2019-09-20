@@ -297,6 +297,9 @@ constexpr int32_t WM_REFLECT = WM_USER + 0x1C00;
 // NOTE: Messages available for use by applications.
 constexpr int32_t WM_APP = 0x8000;
 
+constexpr int32_t WA_INACTIVE = 0;
+constexpr int32_t WA_ACTIVE = 1;
+constexpr int32_t WA_CLICKACTIVE = 2;
 
 constexpr int32_t BN_CLICKED = 0;
 constexpr int32_t BN_PAINT = 1;

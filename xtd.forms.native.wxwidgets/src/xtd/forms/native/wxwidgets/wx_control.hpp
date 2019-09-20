@@ -1,7 +1,6 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/xtd.diagnostics>
 #include <wx/control.h>
 #include "control_handler.hpp"
 

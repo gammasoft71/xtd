@@ -1,5 +1,4 @@
 #include <xtd/environment.hpp>
-#include <xtd/diagnostics/cdebug.hpp>
 #include <xtd/forms/native/radio_button.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/window_button.hpp>
