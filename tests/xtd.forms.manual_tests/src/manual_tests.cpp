@@ -26,7 +26,8 @@ int main() {
   
   auto button_remove = control::create<button>(*form_main, "Remove", {365, 100});
   button_remove->click += [&] {
-    list_box_numbers->parent(nullptr);
+    //list_box_numbers->parent(nullptr);
+    message_box::show("Hello");
   };
 
   auto button_enable = control::create<button>(*form_main, "Enable", {365, 150});
@@ -37,5 +38,14 @@ int main() {
   cdebug << format("form_main.back_color = {}", form_main->back_color()) << endl;
   cdebug << format("form_main.fore_color = {}", form_main->fore_color()) << endl;
 
+  application::application_exit += [&] {
+    cdebug << format("Application exit") << endl;
+  };
+  
+  application::enter_thread_modal += [&] {
+    cdebug << format("enter thread modal") << endl;
+  };
+  
   application::run(*form_main);
+  cdebug << format("Application exitied") << endl;
 }

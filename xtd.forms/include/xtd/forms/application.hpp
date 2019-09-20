@@ -5,6 +5,7 @@
 #include "application_context.hpp"
 #include "application_informations.hpp"
 #include "message.hpp"
+#include "message_box.hpp"
 #include <xtd/xtd.delegates>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -154,23 +155,79 @@ namespace xtd {
       static void run();
 
       /// @brief Begins running a standard application message loop on the current thread, with an application_context.
+      /// @param context An ApplicationContext in which the application is run.
+      /// @remarks The message loop runs until Exit or exit_thread is called or the thread_exit event is raised on the context object.
       static void run(application_context& context);
       
-      static void run(const form& form);
+      /// @brief Begins running a standard application message loop on the current thread, and makes the specified form visible.
+      /// @param main_form A form that represents the form to make visible.
+      /// @remarks Typically, the main function of an application calls this method and passes to it the main window of the application.
+      /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls exit_thread to clean up the application.
+      static void run(const form& main_form);
+
+      /*
+      /// @brief Instructs the application how to respond to unhandled exceptions.
+      /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
+      /// @remarks It is often not feasible to catch all of the exceptions thrown by windows forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
+      /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
+      /// @remarks To catch exceptions that occur in threads not created and owned by windows forms, use the unhandled_exception event handler.
+      static void set_unhandled_exception_mode (unhandled_exception_mode mode);
+       */
+
+      /*
+      /// @brief Instructs the application how to respond to unhandled exceptions, optionally applying thread-specific behavior.
+      /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
+      /// @param thread_scope true to set the thread exception mode; otherwise, false.
+      /// @remarks It is often not feasible to catch all of the exceptions thrown by windows forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
+      /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
+      /// @remarks When threadScope is true, the thread exception mode is set. The thread exception mode overrides the application exception mode if mode is not set to automatic.
+      /// @remarks When threadScope is false, the application exception mode is set. The application exception mode is used for all threads that have the automatic mode. Setting the application exception mode does not affect the setting of the current thread.
+      /// @remarks To catch exceptions that occur in threads not created and owned by windows forms, use the unhandled_exception event handler.
+      static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
+       */
 
       /// @cond
       static void cleanup();
       static void initialize();
       /// @endcond
 
+      /// @brief Occurs when the application is about to shut down.
+      /// @remarks You must attach the event handlers to the application_exit event to perform unhandled, required tasks before the application stops running. You can close files opened by this application, or dispose of objects that garbage collection did not reclaim.
+      static event<application, delegate<void(const event_args&)>> application_exit;
+
+      /// @brief Occurs when the application is about to enter a modal state.
+      static event<application, delegate<void(const event_args&)>> enter_thread_modal;
+
+      /// @brief Occurs when the application finishes processing and is about to enter the idle state.
+      /// @remarks If you have tasks that you must perform before the thread becomes idle, attach them to this event.
       static event<application, delegate<void(const event_args&)>> idle;
+
+      /// @brief Occurs when the application is about to leave a modal state.
+      static event<application, delegate<void(const event_args&)>> leave_thread_modal;
       
+      /*
+      /// @brief Occurs when an untrapped thread exception is thrown.
+      /// @remarks This event allows your windows forms application to handle otherwise unhandled exceptions that occur in windows forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block.
+      /// @param You can change whether this callback is used for unhandled windows forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by windows forms, use the unhandled_exception event handler.
+      /// @note To guarantee that no activations of this event are missed, you must attach a handler before you call application::run.
+      static event<threading::thread_exception_event_handler> thread_exception;
+       */
+
+      /// @brief Occurs when a thread is about to shut down. When the main thread for an application is about to be shut down, this event is raised first, followed by an application_exit event.
+      /// @remarks You must attach the event handlers to the thread_exit event to perform any unhandled, required tasks before the thread stops running. Close files opened by this thread, or dispose of objects that the garbage collector did not reclaim.
+      static event<application, delegate<void(const event_args&)>> thread_exit;
+
     private:
+      friend class form;
+      friend class message_box;
       static void on_app_thread_exit(const application_context& sender, const event_args& e);
+      static void raise_enter_thread_modal(const event_args& e);
+      static void raise_leave_thread_modal(const event_args& e);
       static intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       static void wnd_proc(message& message);
       static void wm_activate_app(message& message);
       static void wm_enter_idle(message& message);
+      static void wm_quit(message& message);
 
       application() = default;
       static const form* main_form;
