@@ -425,6 +425,9 @@ namespace xtd {
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::control& control) noexcept {
         return os << control.to_string();
       }
+      
+      bool operator==(const control& value) const {return this == &value;}
+      bool operator!=(const control& value) const {return !this->operator==(value);}
       /// @endcond
 
       event<control, event_handler<control>> auto_size_changed;
