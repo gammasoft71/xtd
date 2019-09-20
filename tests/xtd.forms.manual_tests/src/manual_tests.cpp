@@ -34,5 +34,8 @@ int main() {
     panel_left->enabled(!panel_left->enabled());
   };
   
+  cdebug << format("form_main.back_color = {}", form_main->back_color()) << endl;
+  cdebug << format("form_main.fore_color = {}", form_main->fore_color()) << endl;
+
   application::run(*form_main);
 }

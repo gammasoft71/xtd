@@ -75,14 +75,6 @@ control& control::back_color(const color& color) {
   return *this;
 }
 
-drawing::color control::default_back_color() const {
-  return native::control::default_back_color();
-}
-
-drawing::color control::default_fore_color() const {
-  return native::control::default_fore_color();
-}
-
 drawing::font control::default_font() const {
   return native::control::default_font();
 }

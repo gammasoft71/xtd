@@ -85,14 +85,6 @@ intptr_t control::def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, int
   return reinterpret_cast<control_handler*>(control)->call_def_wnd_proc(hwnd, msg, wparam, lparam, presult, handle);
 }
 
-color control::default_back_color() {
-  return system_colors::control();
-}
-
-color control::default_fore_color() {
-  return system_colors::control_text();
-}
-
 font control::default_font() {
   return system_fonts::default_font();
 }

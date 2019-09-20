@@ -8,8 +8,6 @@ namespace xtd {
       class list_box {
       public:
         list_box() = delete;
-        static drawing::color default_back_color();
-        static drawing::color default_fore_color();
         static void delete_item(intptr_t control, size_t index);
         static size_t insert_item(intptr_t control, size_t index, const std::string& item);
         static size_t selected_index(intptr_t control);

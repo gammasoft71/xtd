@@ -39,14 +39,6 @@ list_box& list_box::border_style(forms::border_style border_style) {
   return *this;
 }
 
-color list_box::default_back_color() const {
-  return native::list_box::default_back_color();
-}
-
-color list_box::default_fore_color() const {
-  return native::list_box::default_fore_color();
-}
-
 list_box& list_box::selected_index(size_t selected_index) {
   if (this->selected_index_ != selected_index) {
     if (selected_index != -1 && selected_index > this->items_.size()) throw invalid_argument("out of range index");
