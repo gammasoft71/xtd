@@ -270,7 +270,6 @@ void control::on_back_color_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
-  if (!this->get_state(state::top_level)) this->enabled(this->parent().value().get().enabled());
   for (auto control : this->controls_)
     control.get().create_control();
 }
