@@ -39,25 +39,11 @@ namespace {
 }
 
 bool application::allow_quit() {
-  start(); // Must be first
+  initialize(); // Must be first
   return true;
 }
 
-void application::do_events() {
-  start(); // Must be first
-  wxTheApp->ProcessPendingEvents();
-}
-
-void application::do_idle() {
-  wxWakeUpIdle();
-}
-
-void application::enable_visual_style() {
-  start(); // Must be first
-  wxTheApp->SetUseBestVisual(true);
-}
-
-void application::end() {
+void application::cleanup() {
   if (wxTheApp) {
     wxTheApp->OnExit();
     wxEntryCleanup();
@@ -66,47 +52,26 @@ void application::end() {
   }
 }
 
+void application::do_events() {
+  initialize(); // Must be first
+  wxTheApp->ProcessPendingEvents();
+}
+
+void application::do_idle() {
+  wxWakeUpIdle();
+}
+
+void application::enable_visual_style() {
+  initialize(); // Must be first
+  wxTheApp->SetUseBestVisual(true);
+}
+
 void application::exit() {
   if (wxTheApp)
     wxTheApp->ExitMainLoop();
 }
 
-intptr_t application::main_form() {
-  start(); // Must be first
-  return (intptr_t)wxTheApp->GetTopWindow();
-}
-
-void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
-  start(); // Must be first
-  static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
-}
-
-void application::restart() {
-  restart_asked = true;
-}
-
-void application::run() {
-  start(); { // Must be first
-    struct uninitializer {
-      ~uninitializer() {end();}
-    } uninitializer;
-    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
-    wxTheApp->OnRun();
-    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
-  }
-  if (restart_asked) {
-    std::vector<std::string> command_line_args = environment::get_command_line_args();
-    char** argv = new char*[command_line_args.size() + 1];
-    for(int index = 0; index <command_line_args.size(); index++)
-      argv[index] = command_line_args[index].data();
-    argv[command_line_args.size()] = 0;
-    execv(argv[0], argv);
-    delete [] argv;
-    _Exit(0);
-  }
-}
-
-void application::start() {
+void application::initialize() {
   if (wxTheApp) return;
   wxApp::SetInstance(new wx_application());
   int argc = 0;
@@ -138,3 +103,39 @@ void application::start() {
   wxMenuBar::MacSetCommonMenuBar(menubar);
 #endif
 }
+
+intptr_t application::main_form() {
+  initialize(); // Must be first
+  return (intptr_t)wxTheApp->GetTopWindow();
+}
+
+void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
+  initialize(); // Must be first
+  static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;
+}
+
+void application::restart() {
+  restart_asked = true;
+}
+
+void application::run() {
+  initialize(); { // Must be first
+    struct uninitializer {
+      ~uninitializer() {cleanup();}
+    } uninitializer;
+    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
+    wxTheApp->OnRun();
+    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
+  }
+  if (restart_asked) {
+    std::vector<std::string> command_line_args = environment::get_command_line_args();
+    char** argv = new char*[command_line_args.size() + 1];
+    for(int index = 0; index <command_line_args.size(); index++)
+      argv[index] = command_line_args[index].data();
+    argv[command_line_args.size()] = 0;
+    execv(argv[0], argv);
+    delete [] argv;
+    _Exit(0);
+  }
+}
+

@@ -10,12 +10,12 @@ namespace xtd {
       public:
         application() = delete;
         static bool allow_quit();
+        static void cleanup();
         static void do_events();
         static void do_idle();
         static void enable_visual_style();
-        static void end();
         static void exit();
-        static void start();
+        static void initialize();
         static void restart();
         static intptr_t main_form();
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);

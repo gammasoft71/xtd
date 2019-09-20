@@ -95,6 +95,10 @@ bool application::use_visual_styles() {
   return application::use_visual_styles_;
 }
 
+void application::cleanup() {
+  native::application::cleanup();
+}
+
 void application::do_events() {
   native::application::do_events();
 }
@@ -102,10 +106,6 @@ void application::do_events() {
 void application::enable_visual_styles() {
   application::use_visual_styles_ = true;
   native::application::enable_visual_style();
-}
-
-void application::end() {
-  native::application::end();
 }
 
 void application::exit() {
@@ -136,6 +136,10 @@ void application::exit(cancel_event_args& e) {
 
 void application::exit_thread() {
   native::application::exit();
+}
+
+void application::initialize() {
+  native::application::initialize();
 }
 
 void application::raise_idle(const event_args &e) {
@@ -174,10 +178,6 @@ void application::run(application_context& context) {
 void application::run(const form& form) {
   application_context context(form);
   application::run(context);
-}
-
-void application::start() {
-  native::application::start();
 }
 
 event<application, delegate<void(const event_args&)>> application::idle;
