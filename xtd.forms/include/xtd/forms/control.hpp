@@ -302,6 +302,7 @@ namespace xtd {
       
       virtual control& parent() const {return from_handle(this->parent_);}
       virtual control& parent(const control& parent);
+      virtual control& parent(nullptr_t);
 
       virtual std::string product_name() const {return "xtd";}
       
