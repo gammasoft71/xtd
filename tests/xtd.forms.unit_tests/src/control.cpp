@@ -11,24 +11,18 @@ namespace unit_tests {
   class test_class_(test_control) {
   public:
     void test_method_(new_control_back_color) {
-      /*
       control control;
       assert::are_equal_(system_colors::control(), control.back_color());
-       */
     }
     
     void test_method_(new_control_client_size) {
-      /*
       control control;
-      assert::are_equal_(drawing::size(-1, -1), control.client_size());
-       */
+      assert::are_equal_(drawing::size(0, 0), control.client_size());
     }
     
     void test_method_(new_control_default_back_color) {
-      /*
       control control;
       assert::are_equal_(system_colors::control(), control.default_back_color());
-       */
     }
     
     void test_method_(new_control_default_fore_color) {
