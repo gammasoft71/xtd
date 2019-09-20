@@ -25,6 +25,8 @@ namespace {
         send_message(0, WM_ACTIVATEAPP, acitvate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
       } else if (event.GetEventType() == wxEVT_IDLE)
         send_message(0, WM_ENTERIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
+      //else if (event.GetEventType() == wxEVT_END_SESSION)
+      //  send_message(0, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
       return this->wxApp::ProcessEvent(event);
     }
     
@@ -126,6 +128,7 @@ void application::run() {
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
     wxTheApp->OnRun();
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
+    static_cast<wx_application*>(wxTheApp)->send_message(0, WM_QUIT, 0, 0, 0);
   }
   if (restart_asked) {
     std::vector<std::string> command_line_args = environment::get_command_line_args();

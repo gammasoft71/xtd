@@ -87,9 +87,11 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   this->recreate_handle();
   this->show();
   forms::dialog_result result = this->dialog_result_ = forms::dialog_result::none;
-  if (application::message_loop())
+  if (application::message_loop()) {
+    application::raise_enter_thread_modal(event_args::empty);
     result = static_cast<forms::dialog_result>(native::form::show_dialog(this->handle_));
-  else
+    application::raise_leave_thread_modal(event_args::empty);
+  } else
     application::run(*this);
   this->set_state(state::modal, false);
   this->parent_ = current_parent;

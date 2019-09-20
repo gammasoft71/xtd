@@ -13,6 +13,13 @@ using namespace xtd::forms;
 bool application::use_visual_styles_ = false;
 bool application::message_loop_ = false;
 
+event<application, delegate<void(const event_args&)>> application::application_exit;
+event<application, delegate<void(const event_args&)>> application::enter_thread_modal;
+event<application, delegate<void(const event_args&)>> application::idle;
+event<application, delegate<void(const event_args&)>> application::leave_thread_modal;
+//event<threading::thread_exception_event_handler> application::thread_exception;
+event<application, delegate<void(const event_args&)>> application::thread_exit;
+
 bool application::allow_quit() {
   return native::application::allow_quit();
 }
@@ -180,10 +187,16 @@ void application::run(const form& form) {
   application::run(context);
 }
 
-event<application, delegate<void(const event_args&)>> application::idle;
-
 void application::on_app_thread_exit(const application_context& sender, const event_args& e) {
   application::exit_thread();
+}
+
+void application::raise_enter_thread_modal(const event_args &e) {
+  application::enter_thread_modal(e);
+}
+
+void application::raise_leave_thread_modal(const event_args &e) {
+  application::leave_thread_modal(e);
 }
 
 intptr_t application::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
@@ -196,6 +209,7 @@ void application::wnd_proc(message& message) {
   switch (message.msg()) {
     case WM_ACTIVATEAPP: wm_activate_app(message); break;
     case WM_ENTERIDLE: wm_enter_idle(message); break;
+    case WM_QUIT: wm_quit(message); break;
     default: break;
   }
 }
@@ -212,4 +226,9 @@ void application::wm_enter_idle(message& message) {
     application::idle(event_args::empty);
   }
   if (!application::idle.is_empty()) native::application::do_idle();
+}
+
+void application::wm_quit(message& message) {
+  application::thread_exit(event_args::empty);
+  application::application_exit(event_args::empty);
 }
