@@ -148,11 +148,11 @@ intptr_t system_colors::control_text() {
   wxButton* button = new wxButton(frame, wxID_ANY, "");
   wxColour colour = button->GetForegroundColour();
   intptr_t default_color = 0;
-#if defined (__WXOSX__)
-  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
-#else
+//#if defined (__WXOSX__)
+//  default_color = reinterpret_cast<intptr_t>(colour.OSXGetNSColor());
+//#else
   default_color = ::to_argb(colour);
-#endif
+//#endif
   delete button;
   delete frame;
   return default_color;
