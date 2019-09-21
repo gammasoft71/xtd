@@ -18,7 +18,7 @@ namespace xtd {
       directory_assume() = delete;
       /// @endcond
       
-#if defined(__cpp_lib_filesystem)
+#if defined(__cpp_lib_filesystem) && !defined(__APPLE__)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.

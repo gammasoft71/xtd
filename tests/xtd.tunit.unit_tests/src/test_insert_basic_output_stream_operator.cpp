@@ -245,14 +245,14 @@ namespace unit_tests {
   }
 
   void test_(test_insert_basic_output_stream_operator, test_multiset) {
-    std::multiset s = {1, 2, 3, 4};
+    std::multiset<int> s = {1, 2, 3, 4};
     std::stringstream ss;
     ss << s;
     assert_value_("{1, 2, 3, 4}", ss.str());
   }
   
   void test_(test_insert_basic_output_stream_operator, test_multiset_with_const_char_pointer) {
-    std::multiset s = {"1", "2", "3", "4"};
+    std::multiset<const char*> s = {"1", "2", "3", "4"};
     std::stringstream ss;
     ss << s;
     assert_value_("{\"1\", \"2\", \"3\", \"4\"}", ss.str());
