@@ -36,6 +36,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/form_start_position.hpp
   include/xtd/forms/group_box.hpp
   include/xtd/forms/ibutton_control.hpp
+  include/xtd/forms/imessage_filter.hpp
   include/xtd/forms/iwin32_window.hpp
   include/xtd/forms/key_event_args.hpp
   include/xtd/forms/key_event_handler.hpp
@@ -54,6 +55,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/message_box_default_button.hpp
   include/xtd/forms/message_box_icon.hpp
   include/xtd/forms/message_box_options.hpp
+  include/xtd/forms/message_loop_callback.hpp
   include/xtd/forms/mouse_buttons.hpp
   include/xtd/forms/mouse_event_args.hpp
   include/xtd/forms/mouse_event_handler.hpp

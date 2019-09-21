@@ -4,8 +4,10 @@
 #include <vector>
 #include "application_context.hpp"
 #include "application_informations.hpp"
+#include "imessage_filter.hpp"
 #include "message.hpp"
 #include "message_box.hpp"
+#include "message_loop_callback.hpp"
 #include <xtd/xtd.delegates>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -110,6 +112,11 @@ namespace xtd {
       /// @remarks The visual styles can be enabled by calling enable_visual_styles().
       static bool use_visual_styles();
 
+      /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
+      /// @param The implementation of the imessage_filter interface you want to install.
+      /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
+      static void add_message_filter(const imessage_filter& value);
+      
       /// @brief Processes all Windows messages currently in the message queue.
       /// @remarks When you run a Windows form, it creates the new form, which then waits for events to handle. Each time the form handles an event, it processes all the code associated with that event. All other events wait in the queue. While your code handles the event, your application does not respond. For example, the window does not repaint if another window is dragged on top.
       /// @remarks If you call do_events in your code, your application can handle the other events. For example, if you have a form that adds data to a list_box and add do_events to your code, your form repaints when another window is dragged over it. If you remove do_events from your code, your form will not repaint until the click event handler of the button is finished executing.
@@ -144,6 +151,16 @@ namespace xtd {
       /// @param e The event_args objects to pass to the idle event.
       static void raise_idle(const event_args& e);
       
+      /// @cond Registers a callback for checking whether the message loop is running in hosted environments.
+      /// @param callback The method to call when Windows Forms needs to check if the hosting environment is still sending messages.
+      /// @remarks This method is used when hosting Windows Forms in another environment. In hosted environments, the message_loop property will always return false if Windows Forms is not processing messages. Use this callback to tell Windows Forms if the hosting environment is still processing messages.
+      static void register_message_loop_callback(message_loop_callback callback);
+      
+      /// @cond Removes a message filter from the message pump of the application.
+      /// @param value The implementation of the imessage_filter to remove from the application.
+      /// @remarks You can remove a message filter when you no longer want to capture Windows messages before they are dispatched.
+      static void remove_message_filter(const imessage_filter& value);
+
       /// @brief Shuts down the application and starts a new instance immediately.
       /// @remarks Applications are restarted in the context in which they were initially run.
       /// @remarks If your application was originally supplied command-line options when it first executed, restart will launch the application again with the same options.

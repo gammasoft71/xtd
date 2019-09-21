@@ -25,6 +25,7 @@
 #include <wx/textctrl.h>
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
+#include "wx_application.hpp"
 
 namespace xtd {
   namespace forms {
@@ -40,10 +41,10 @@ namespace xtd {
         template<typename ...args_type>
         control_wrapper(control_handler* event_handler, args_type&& ...args) : TControl(args...), event_handler_(event_handler) {}
 
-        intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle) {
+        intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {
           if (handle != 0) {
             wxEvent* event = reinterpret_cast<wxEvent*>(handle);
-            event->Skip(!presult);
+            event->Skip(!result);
             this->process_result_ = this->TControl::ProcessEvent(*event);
           }
           return this->process_result_;
@@ -326,16 +327,15 @@ namespace xtd {
         }
 
         intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-          intptr_t result = 0;
-          if (this->destroyed_) return result;
-          if (this->wnd_proc.is_empty())
-            result = this->call_def_wnd_proc(0, 0, 0, 0, 0, handle);
-          else {
-            for (auto& fct : this->wnd_proc.functions())
-              if (!this->destroyed_ && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
-          }
-          return result;
+          if (this->destroyed_) return 0;
+          if (wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return this->call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
+          if (this->wnd_proc.is_empty()) return this->call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
+
           //return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
+          intptr_t result = 0;
+          for (auto& fct : this->wnd_proc.functions())
+            if (!this->destroyed_ && fct != nullptr) result = fct(hwnd, msg, wparam, lparam, handle);
+          return result;
         }
         
         virtual void Reparent(wxWindowBase* parent) {

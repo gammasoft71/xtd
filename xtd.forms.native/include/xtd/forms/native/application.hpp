@@ -18,6 +18,7 @@ namespace xtd {
         static void initialize();
         static void restart();
         static intptr_t main_form();
+        static void register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter);
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void run();
       };
