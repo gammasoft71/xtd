@@ -168,6 +168,11 @@ void control::location(intptr_t control, const point& location) {
   reinterpret_cast<control_handler*>(control)->control()->SetPosition({location.x(), location.y()});
 }
 
+void control::resume_layout(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Thaw();
+}
+
 drawing::size control::size(intptr_t control) {
   if (control == 0) return {};
   wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
@@ -177,6 +182,11 @@ drawing::size control::size(intptr_t control) {
 void control::size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
+}
+
+void control::suspend_layout(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
 string control::text(intptr_t control) {
