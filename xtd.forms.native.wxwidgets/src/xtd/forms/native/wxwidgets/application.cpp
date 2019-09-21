@@ -5,38 +5,15 @@
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
 #include "control_handler.hpp"
-#include <wx/aboutdlg.h>
-#include <wx/app.h>
-#include <wx/menu.h>
-#include <wx/window.h>
+#include "wx_application.hpp"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms::native;
 
-namespace {
-  class wx_application : public wxApp {
-  public:
-    wx_application() = default;
-    
-    bool ProcessEvent(wxEvent &event) override {
-      if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
-        wxActivateEvent& acitvate_event = static_cast<wxActivateEvent&>(event);
-        send_message(0, WM_ACTIVATEAPP, acitvate_event.GetActive(), 0, reinterpret_cast<intptr_t>(&event));
-      } else if (event.GetEventType() == wxEVT_IDLE)
-        send_message(0, WM_ENTERIDLE, 0, 0, reinterpret_cast<intptr_t>(&event));
-      //else if (event.GetEventType() == wxEVT_END_SESSION)
-      //  send_message(0, WM_QUIT, 0, 0, reinterpret_cast<intptr_t>(&event));
-      return this->wxApp::ProcessEvent(event);
-    }
-    
-    intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-      return this->wnd_proc(hwnd, msg, wparam, lparam, handle);
-    }
-    
-    event<wx_application, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
-  };
+event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
 
+namespace {
   bool restart_asked = false;
 }
 
@@ -109,6 +86,11 @@ void application::initialize() {
 intptr_t application::main_form() {
   initialize(); // Must be first
   return (intptr_t)wxTheApp->GetTopWindow();
+}
+
+void application::register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
+  initialize(); // Must be first
+  static_cast<wx_application*>(wxTheApp)->message_filter_proc += message_filter_proc;
 }
 
 void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {

@@ -10,6 +10,24 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+namespace {
+  using message_filter_ref = std::reference_wrapper<imessage_filter>;
+  using message_filter_collection = std::vector<message_filter_ref>;
+  
+  static message_filter_collection message_filters;
+  
+  bool message_filter_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+    bool block = false;
+  
+    for (message_filter_ref message_filter : message_filters) {
+      block = message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle));
+      if (block == true) break;
+    }
+    
+    return block;
+  }
+}
+
 bool application::use_visual_styles_ = false;
 bool application::message_loop_ = false;
 
@@ -102,6 +120,10 @@ bool application::use_visual_styles() {
   return application::use_visual_styles_;
 }
 
+void application::add_message_filter(const imessage_filter& value) {
+  message_filters.push_back(const_cast<imessage_filter&>(value));
+}
+
 void application::cleanup() {
   native::application::cleanup();
 }
@@ -153,6 +175,18 @@ void application::raise_idle(const event_args &e) {
   application::idle(e);
 }
 
+void application::register_message_loop_callback(message_loop_callback callback) {
+}
+
+void application::remove_message_filter(const imessage_filter& value) {
+  for(message_filter_collection::iterator iterator = message_filters.begin(); iterator != message_filters.end(); ++iterator) {
+    if (&iterator->get() == &value) {
+      message_filters.erase(iterator);
+      break;
+    }
+  }
+}
+
 void application::restart() {
   cancel_event_args e;
   application::exit(e);
@@ -169,6 +203,7 @@ void application::run(application_context& context) {
   try {
     if (context.main_form_ != nullptr) context.main_form().show();
     context.thread_exit += application::on_app_thread_exit;
+    native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
     native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
     application::message_loop_ = true;
     native::application::run();

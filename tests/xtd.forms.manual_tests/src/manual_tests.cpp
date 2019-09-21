@@ -4,6 +4,20 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+class my_message_filter : public imessage_filter {
+public:
+  explicit my_message_filter(const control& value) : control_(const_cast<control&>(value)) {}
+  
+  bool pre_filter_message(const message& m) const override {
+    if (m.msg() == WM_REFLECT + WM_COMMAND && m.lparam() == control_.get().handle())
+      return true;
+    return false;
+  }
+  
+private:
+  std::reference_wrapper<control> control_;
+};
+
 int main() {
   auto form_main = control::create<form>("Form main");
   form_main->client_size({800, 450});
@@ -46,6 +60,9 @@ int main() {
     cdebug << format("enter thread modal") << endl;
   };
   
+  my_message_filter message_filer(*button_remove);
+  application::add_message_filter(message_filer);
+  application::remove_message_filter(message_filer);
   application::run(*form_main);
   cdebug << format("Application exitied") << endl;
 }
