@@ -18,8 +18,6 @@ namespace xtd {
       
       /// @cond
       tunit_event_args(const tunit_event_args&) = default;
-      tunit_event_args& operator=(const tunit_event_args&) = default;
-      virtual ~tunit_event_args() = default;
       /// @endcond
       
       /// @brief Gets current unit test.

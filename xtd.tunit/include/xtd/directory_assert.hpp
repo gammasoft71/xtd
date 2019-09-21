@@ -3,7 +3,7 @@
 #pragma once
 #include "assert.hpp"
 #include <sys/stat.h>
-#if defined(__cpp_lib_filesystem)
+#if defined(__cpp_lib_filesystem) && !defined(__APPLE__)
 #include <filesystem>
 #endif
 
@@ -21,7 +21,7 @@ namespace xtd {
       directory_assert() = delete;
       /// @endcond
       
-#if defined(__cpp_lib_filesystem)
+#if defined(__cpp_lib_filesystem) && !defined(__APPLE__)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
