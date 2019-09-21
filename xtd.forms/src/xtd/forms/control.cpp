@@ -56,6 +56,15 @@ control::~control() {
   this->destroy_control();
 }
 
+control& control::anchor(anchor_styles anchor) {
+  if (this->anchor_ != anchor) {
+    this->anchor_ = anchor;
+    this->set_state(state::docked, false);
+    this->on_layout(event_args::empty);
+  }
+  return *this;
+}
+
 control& control::auto_size(bool auto_size) {
   if (this->get_state(state::auto_size) != auto_size) {
     this->set_state(state::auto_size, auto_size);
@@ -77,6 +86,15 @@ control& control::back_color(const color& color) {
 
 drawing::font control::default_font() const {
   return native::control::default_font();
+}
+
+control& control::dock(dock_style dock) {
+  if (this->dock_ != dock) {
+    this->dock_ = dock;
+    this->set_state(state::docked, true);
+    this->on_dock_changed(event_args::empty);
+  }
+  return *this;
 }
 
 control& control::enabled(bool enabled) {
@@ -178,6 +196,7 @@ void control::destroy_control() {
     this->set_state(state::created, false);
     this->set_state(state::destroying, true);
     if (this->handle_) {
+      this->suspend_layout();
       for(control_ref child : this->controls_)
         child.get().destroy_control();
       
@@ -261,6 +280,7 @@ drawing::size control::measure_text() const {
 
 void control::on_auto_size_changed(const event_args& e) {
   this->set_auto_size_size();
+  this->on_layout(e);
   this->auto_size_changed(*this, e);
 }
 
@@ -272,6 +292,7 @@ void control::on_back_color_changed(const event_args &e) {
 void control::on_create_control() {
   for (auto control : this->controls_)
     control.get().create_control();
+  this->on_layout(event_args::empty);
 }
 
 void control::on_click(const event_args &e) {
@@ -279,26 +300,25 @@ void control::on_click(const event_args &e) {
 }
 
 void control::on_client_size_changed(const event_args &e) {
-  this->client_size_ = native::control::client_size(this->handle_);
+  this->on_layout(e);
   this->client_size_changed(*this, e);
 }
 
 void control::on_control_added(const control_event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
+  this->on_layout(event_args::empty);
   this->control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  if (this->get_state(state::auto_size)) this->set_auto_size_size();
-  
-  bool can_refresh = this->get_state(state::created);
-  control_ref ctrl = *this;
-  while (can_refresh && !ctrl.get().get_state(state::top_level)) {
-    ctrl = ctrl.get().parent().value();
-    can_refresh = ctrl.get().get_state(state::created);
-  }
-  if (can_refresh) this->refresh();
+  if (this->get_state(state::auto_size)) this->set_auto_size_size();  
+  this->on_layout(event_args::empty);
   this->control_removed(*this, e);
+}
+
+void control::on_dock_changed(const event_args &e) {
+  this->on_layout(e);
+  this->dock_changed(*this, e);
 }
 
 void control::on_double_click(const event_args &e) {
@@ -358,10 +378,14 @@ void control::on_key_press(key_press_event_args& e) {
 
 void control::on_key_up(key_event_args& e) {
   this->key_up(*this, e);
-}
+  }
 
-void control::on_location_changed(const event_args &e) {
-  if (this->handle_ != 0) this->location_ = native::control::location(this->handle_);
+  void control::on_layout(const event_args &e) {
+    do_layout();
+    this->layout(*this, e);
+  }
+
+  void control::on_location_changed(const event_args &e) {
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->location_changed(*this, e);
 }
@@ -442,15 +466,15 @@ void control::on_parent_font_changed(const event_args &e) {
 }
 
 void control::on_size_changed(const event_args &e) {
-  if (this->handle_ != 0) this->size_ = native::control::size(this->handle_);
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
-  this->refresh();
+  this->on_layout(e);
   this->size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
+  this->on_layout(event_args::empty);
   this->text_changed(*this, e);
 }
 
@@ -464,6 +488,12 @@ void control::refresh() const {
   native::control::refresh(this->handle_);
 }
 
+void control::resume_layout(bool perform_layout) {
+  this->set_state(state::layout_deferred, false);
+  native::control::resume_layout(this->handle_);
+  if (perform_layout) this->on_layout(event_args::empty);
+}
+
 intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const {
   return native::control::send_message(this->handle_, hwnd, msg, wparam, lparam);
 }
@@ -473,6 +503,11 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
     this->auto_size_mode_ = auto_size_mode;
     this->set_auto_size_size();
   }
+}
+
+void control::suspend_layout() {
+  if (this->get_state(state::created)) native::control::suspend_layout(this->handle_);
+  this->set_state(state::layout_deferred, true);
 }
 
 string control::to_string() const {
@@ -587,6 +622,17 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   this->on_size_changed(event_args::empty);
 }
 
+void control::do_layout() {
+  if (this->get_state(state::layout_deferred)) return;
+  if (this->get_state(state::docked)) {
+    
+  } else {
+    
+  }
+  cdebug << format("Do layout on control {}", *this) << endl;
+  this->refresh();
+}
+
 void control::internal_destroy_handle(intptr_t handle) {
   if (this->handle_) native::control::unregister_wnd_proc(handle, {*this, &control::wnd_proc_});
   handles_.erase(handle);
@@ -676,7 +722,10 @@ void control::wm_mouse_move(message& message) {
 
 void control::wm_move(message& message) {
   this->def_wnd_proc(message);
-  this->on_location_changed(event_args::empty);
+  if (this->location_ != native::control::location(this->handle_)) {
+    this->location_ = native::control::location(this->handle_);
+    this->on_location_changed(event_args::empty);
+  }
 }
 
 void control::wm_mouse_wheel(message& message) {
@@ -706,13 +755,22 @@ void control::wm_set_focus(message& message) {
 
 void control::wm_set_text(message& message) {
   this->def_wnd_proc(message);
-  this->text_ = reinterpret_cast<const char*>(message.lparam());
-  this->on_text_changed(event_args::empty);
+  if (this->text_ != reinterpret_cast<const char*>(message.lparam())) {
+    this->text_ = reinterpret_cast<const char*>(message.lparam());
+    this->on_text_changed(event_args::empty);
+  }
 }
 
 void control::wm_size(message& message) {
   this->def_wnd_proc(message);
-  this->on_client_size_changed(event_args::empty);
-  this->on_size_changed(event_args::empty);
+  if (this->get_state(state::client_size_setted) && this->client_size_ != native::control::client_size(this->handle_)) {
+    this->client_size_ = native::control::client_size(this->handle_);
+    this->on_client_size_changed(event_args::empty);
+    this->on_size_changed(event_args::empty);
+  } else {
+    this->size_ = native::control::size(this->handle_);
+    this->on_client_size_changed(event_args::empty);
+    this->on_size_changed(event_args::empty);
+  }
 }
 

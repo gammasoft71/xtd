@@ -15,9 +15,11 @@
 #include <xtd/forms/create_params.hpp>
 
 #include "layout/arranged_element_collection.hpp"
+#include "anchor_styles.hpp"
 #include "auto_size_mode.hpp"
 #include "bounds_specified.hpp"
 #include "control_event_handler.hpp"
+#include "dock_style.hpp"
 #include "iwin32_window.hpp"
 #include "key_event_handler.hpp"
 #include "key_press_event_handler.hpp"
@@ -65,9 +67,11 @@ namespace xtd {
         allow_drop = 0b100000000000000,
         drop_target = 0b1000000000000000,
 
-        double_click_fired = 0b10000000000000000,
+        layout_deferred = 0b10000000000000000,
+        docked = 0b100000000000000000,
+
+        double_click_fired = 0b1000000000000000000,
         /*
-        layout_deferred = 0,
         mouse_enter_pending = 0,
         tracking_mouse_event = 0,
         mouse_pressed = 0,
@@ -95,7 +99,7 @@ namespace xtd {
       /// @brief Represents a control reference.
       using control_ref = std::reference_wrapper<control>;
       
-      /// @brief Represents a collection of control references.
+      /// @brief Represents a collection of controls.
       using control_collection = layout::arranged_element_collection<control_ref>;
       
       /// @brief Initializes a new instance of the Control class with default settings.
@@ -155,6 +159,23 @@ namespace xtd {
       control(const control&) = delete;
       virtual ~control();
       /// @endcond
+      
+      /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
+      /// @return A bitwise combination of the anchor_styles values. The default is top and left.
+      /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
+      /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
+      /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
+      /// @par Notes to Ineritors
+      /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
+      virtual anchor_styles anchor() const {return this->anchor_;}
+      /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
+      /// @param anchor A bitwise combination of the anchor_styles values. The default is top and left.
+      /// @remarks Use the anchor property to define how a control is automatically resized as its parent control is resized. Anchoring a control to its parent control ensures that the anchored edges remain in the same position relative to the edges of the parent control when the parent control is resized.
+      /// @remarks You can anchor a control to one or more edges of its container. For example, if you have a form with a button whose anchor property value is set to top and bottom, the button is stretched to maintain the anchored distance to the top and bottom edges of the form as the height of the form is increased.
+      /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
+      /// @par Notes to Ineritors
+      /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
+      virtual control& anchor(anchor_styles anchor);
       
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
@@ -255,6 +276,17 @@ namespace xtd {
       
       virtual drawing::size default_size() const {return{0, 0};}
       
+      /// @brief Gets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
+      /// @return One of the dock_style values. The default is none.
+      /// @remarks Use the dock property to define how a control is automatically resized as its parent control is resized. For example, setting dock to dock_style::left causes the control to align itself with the left edges of its parent control and to resize as the parent control is resized. Controls are docked in their Z-order, which is the visual layering of controls on a form along the form's Z-axis (depth).
+      /// @remarks A control can be docked to one edge of its parent container or can be docked to all edges and fill the parent container.
+      /// @remarks Setting the margin property on a docked control has no effect on the distance of the control from the edges of its container.
+      /// @note The anchor and dock properties are mutually exclusive. Only one can be set at a time, and the last one set takes precedence.
+      /// @par Notes to Inheritors
+      /// When overriding the dock property in a derived class, use the base class's dock property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set methods of the dock property; you can override only one if needed.
+      virtual dock_style dock() const {return this->dock_;}
+      virtual control& dock(dock_style dock);
+
       virtual bool enabled() const {return this->get_state(state::enabled);}
       virtual control& enabled(bool enabled);
 
@@ -410,6 +442,20 @@ namespace xtd {
       
       virtual void refresh() const;
       
+      /// @brief Resumes usual layout logic.
+      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
+      void resume_layou() {this->resume_layout(true);}
+      
+      /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
+      /// @param perform_layout true to execute pending layout requests; otherwise, false.
+      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to true, an immediate layout occurs if there are any pending layout requests.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
+      /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
+      void resume_layout(bool perform_layout);
+      
       intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const;
       
       void set_auto_size_mode(auto_size_mode auto_size_mode);
@@ -419,6 +465,13 @@ namespace xtd {
       void set_bounds(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {this->set_bounds_core(x, y, width, height, specified);}
 
       virtual void show() {this->visible(true);}
+      
+      /// @brief Temporarily suspends the layout logic for the control.
+      /// @remarks The layout logic of the control is suspended until the resume_layout method is called.
+      /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
+      /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
+      /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
+      void suspend_layout();
       
       virtual std::string to_string() const;
       
@@ -443,6 +496,8 @@ namespace xtd {
       
       event<control, control_event_handler<control>> control_removed;
       
+      event<control, event_handler<control>> dock_changed;
+        
       event<control, event_handler<control>> double_click;
 
       event<control, event_handler<control>> got_focus;
@@ -462,6 +517,10 @@ namespace xtd {
       event<control, key_press_event_handler<control>> key_press;
       
       event<control, key_event_handler<control>> key_up;
+      
+      /// @brief Occurs when a control should reposition its child controls.
+      /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
+      event<control, event_handler<control>> layout;
       
       event<control, event_handler<control>> location_changed;
       
@@ -529,8 +588,10 @@ namespace xtd {
       
       virtual void on_create_control();
       
+      virtual void on_dock_changed(const event_args& e);
+        
       virtual void on_double_click(const event_args& e);
-      
+
       virtual void on_enabled_changed(const event_args& e);
       
       virtual void on_fore_color_changed(const event_args& e);
@@ -548,7 +609,9 @@ namespace xtd {
       virtual void on_key_press(key_press_event_args& e);
       
       virtual void on_key_up(key_event_args& e);
-      
+
+      virtual void on_layout(const event_args& e);
+
       virtual void on_location_changed(const event_args& e);
       
       virtual void on_lost_focus(const event_args& e);
@@ -621,11 +684,13 @@ namespace xtd {
       bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
 
+      anchor_styles anchor_ = anchor_styles::top | anchor_styles::left;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
       drawing::rectangle client_rectangle_;
       drawing::size client_size_ {0, 0};
       control_collection controls_;
+      dock_style dock_ = dock_style::none;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
@@ -641,6 +706,7 @@ namespace xtd {
       /// @endcond
       
     private:
+      void do_layout();
       void internal_destroy_handle(intptr_t);
       void set_auto_size_size();
       control(const std::string& name, bool) {this->name_ = name;}

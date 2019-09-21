@@ -9,6 +9,7 @@
 #include <xtd/forms/window_messages.hpp>
 
 #include "xtd/forms/layout/arranged_element_collection.hpp"
+#include "xtd/forms/anchor_styles.hpp"
 #include "xtd/forms/appearance.hpp"
 #include "xtd/forms/application.hpp"
 #include "xtd/forms/application_informations.hpp"
@@ -26,6 +27,7 @@
 #include "xtd/forms/control.hpp"
 #include "xtd/forms/control_event_args.hpp"
 #include "xtd/forms/control_event_handler.hpp"
+#include "xtd/forms/dock_style.hpp"
 #include "xtd/forms/dialog_result.hpp"
 #include "xtd/forms/form.hpp"
 #include "xtd/forms/form_closed_event_args.hpp"
@@ -52,6 +54,7 @@
 #include "xtd/forms/message_box_default_button.hpp"
 #include "xtd/forms/message_box_icon.hpp"
 #include "xtd/forms/message_box_options.hpp"
+#include "xtd/forms/message_loop_callback.hpp"
 #include "xtd/forms/mouse_buttons.hpp"
 #include "xtd/forms/mouse_event_args.hpp"
 #include "xtd/forms/mouse_event_handler.hpp"

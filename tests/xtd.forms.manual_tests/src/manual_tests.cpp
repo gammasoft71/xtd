@@ -41,7 +41,8 @@ int main() {
   auto button_remove = control::create<button>(*form_main, "Remove", {365, 100});
   button_remove->click += [&] {
     //list_box_numbers->parent(nullptr);
-    message_box::show("Hello");
+    //message_box::show("Hello");
+    application::exit_thread();
   };
 
   auto button_enable = control::create<button>(*form_main, "Enable", {365, 150});

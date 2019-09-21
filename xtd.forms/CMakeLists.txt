@@ -9,6 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_INCLUDES
+  include/xtd/forms/anchor_styles.hpp
   include/xtd/forms/appearance.hpp
   include/xtd/forms/application.hpp
   include/xtd/forms/application_context.hpp
@@ -28,6 +29,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/control_event_args.hpp
   include/xtd/forms/control_event_handler.hpp
   include/xtd/forms/dialog_result.hpp
+  include/xtd/forms/dock_style.hpp
   include/xtd/forms/form.hpp
   include/xtd/forms/form_closed_event_args.hpp
   include/xtd/forms/form_closed_event_handler.hpp
