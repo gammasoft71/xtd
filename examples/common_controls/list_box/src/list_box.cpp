@@ -11,8 +11,9 @@ namespace examples {
       this->text("List box example");
       this->client_size({360, 240});
 
-      this->list_box_left.parent(*this);
+      this->list_box_left.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
       this->list_box_left.location({20, 20});
+      this->list_box_left.parent(*this);
       this->list_box_left.size({150, 200});
       this->list_box_left.double_click += [&](const control& sender, const event_args& e) {
         if (this->list_box_left.selected_index() != -1) {
@@ -22,8 +23,9 @@ namespace examples {
         }
       };
 
-      this->list_box_right.parent(*this);
+      this->list_box_right.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       this->list_box_right.location({190, 20});
+      this->list_box_right.parent(*this);
       this->list_box_right.sorted(true);
       this->list_box_right.size({150, 200});
       this->list_box_right.double_click += [&](const control& sender, const event_args& e) {
