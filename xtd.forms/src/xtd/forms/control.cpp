@@ -622,11 +622,11 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 }
 
 void control::do_layout() {
-  static bool do_layout = false;
-
   if (!this->parent().has_value()) return;
   if (this->get_state(state::layout_deferred)) return;
 
+  // this method can not be reentrant
+  static bool do_layout = false;
   if (do_layout == true) return;
   do_layout = true;
 
