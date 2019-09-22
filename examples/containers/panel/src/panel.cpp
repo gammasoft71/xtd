@@ -10,11 +10,13 @@ public:
     this->location({200, 200});
     this->client_size({640, 480});
     
+    panel1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
     panel1.parent(*this);
     panel1.border_style(forms::border_style::fixed_single);
     panel1.location({10, 10});
     panel1.size({305, 460});
 
+    panel2.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
     panel2.parent(*this);
     panel2.border_style(forms::border_style::fixed_3d);
     panel2.location({325, 10});
