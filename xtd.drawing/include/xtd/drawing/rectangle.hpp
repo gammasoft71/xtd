@@ -30,17 +30,12 @@ namespace xtd {
       
       bool operator!=(const rectangle& value) const {return !this->operator==(value);}
       
-      bool is_empty() const {return *this == rectangle::empty;}
-
-      void offset(const rectangle& pt) {this->offset(pt.x_, pt.y_);}
-
-      void offset(int32_t dx, int32_t dy) {
-        this->x_ += dx;
-        this->y_ += dy;
-      }
-
-      std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + ", width=" + std::to_string(this->width_) + ", height=" + std::to_string(this->height_) + "}";}
+      int32_t bottom() const {return this->y_ + this->height_;}
       
+      int32_t left() const {return this->x_;}
+
+      void left(int32_t left) {this->x_ = left;}
+
       point location() const {return {this->x_, this->y_};}
       
       void location(const point& location) {
@@ -48,14 +43,20 @@ namespace xtd {
         this->y_ = location.y();
       }
       
-      int32_t x() const {return x_;}
+      int32_t right() const {return this->x_ + this->width_;}
+      
+      int32_t top() const {return this->y_;}
+      
+      void top(int32_t top) {this->y_ = top;}
+      
+      int32_t x() const {return this->x_;}
       
       void x(int32_t x) {this->x_ = x;}
       
-      int32_t y() const {return y_;}
+      int32_t y() const {return this->y_;}
 
       void y(int32_t y) {this->y_ = y;}
-      
+
       int32_t height() const {return this->height_;}
       
       void height(int32_t height) {this->height_ = height;}
@@ -71,9 +72,20 @@ namespace xtd {
       
       void width(int32_t width) {this->width_ = width;}
       
+      bool is_empty() const {return *this == rectangle::empty;}
+
       static rectangle make_intersect(const rectangle& a, const rectangle& b);
       
       static rectangle make_union(const rectangle& a, const rectangle& b);
+      
+      void offset(const rectangle& pt) {this->offset(pt.x_, pt.y_);}
+
+      void offset(int32_t dx, int32_t dy) {
+        this->x_ += dx;
+        this->y_ += dy;
+      }
+
+      std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + ", width=" + std::to_string(this->width_) + ", height=" + std::to_string(this->height_) + "}";}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::rectangle& rectangle) noexcept {
