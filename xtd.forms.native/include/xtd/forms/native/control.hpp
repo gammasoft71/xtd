@@ -36,10 +36,10 @@ namespace xtd {
         static void font(intptr_t control, const drawing::font& font);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);
-        static void resume_layout(intptr_t control);
+        static void resume_drawing(intptr_t control);
         static drawing::size size(intptr_t control);
         static void size(intptr_t control, const drawing::size& size);
-        static void suspend_layout(intptr_t control);
+        static void suspend_drawing(intptr_t control);
         static std::string text(intptr_t control);
         static void text(intptr_t control, const std::string& text);
         static bool visible(intptr_t control);

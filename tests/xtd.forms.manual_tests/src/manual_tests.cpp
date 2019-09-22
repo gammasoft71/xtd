@@ -4,20 +4,6 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-class my_message_filter : public imessage_filter {
-public:
-  explicit my_message_filter(const control& value) : control_(const_cast<control&>(value)) {}
-  
-  bool pre_filter_message(const message& m) const override {
-    if (m.msg() == WM_REFLECT + WM_COMMAND && m.lparam() == control_.get().handle())
-      return true;
-    return false;
-  }
-  
-private:
-  std::reference_wrapper<control> control_;
-};
-
 int main() {
   auto form_main = control::create<form>("Form main");
   form_main->client_size({800, 450});
@@ -32,6 +18,7 @@ int main() {
   
   auto panel_right = control::create<panel>(*form_main, "panel_right", {450, 10}, {340, 430});
   panel_right->border_style(forms::border_style::fixed_single);
+  panel_right->anchor(anchor_styles::bottom | anchor_styles::right);
   
   auto button_move = control::create<button>(*form_main, "Move", {365, 50});
   button_move->click += [&] {
@@ -49,21 +36,6 @@ int main() {
   button_enable->click += [&] {
     panel_left->enabled(!panel_left->enabled());
   };
-  
-  cdebug << format("form_main.back_color = {}", form_main->back_color()) << endl;
-  cdebug << format("form_main.fore_color = {}", form_main->fore_color()) << endl;
 
-  application::application_exit += [&] {
-    cdebug << format("Application exit") << endl;
-  };
-  
-  application::enter_thread_modal += [&] {
-    cdebug << format("enter thread modal") << endl;
-  };
-  
-  my_message_filter message_filer(*button_remove);
-  application::add_message_filter(message_filer);
-  application::remove_message_filter(message_filer);
   application::run(*form_main);
-  cdebug << format("Application exitied") << endl;
 }

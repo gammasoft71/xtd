@@ -439,14 +439,18 @@ namespace xtd {
       static std::optional<control_ref> from_handle(intptr_t handle);
       
       bool is_handle_created() const;
-      
+
+      /// @brief Forces the control to apply layout logic to all its child controls.
+      /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
+      void perform_layout();
+
       virtual void refresh() const;
       
       /// @brief Resumes usual layout logic.
       /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests.
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
-      void resume_layou() {this->resume_layout(true);}
+      void resume_layout() {this->resume_layout(true);}
       
       /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
       /// @param perform_layout true to execute pending layout requests; otherwise, false.
@@ -454,7 +458,10 @@ namespace xtd {
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
       /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
-      void resume_layout(bool perform_layout);
+      void resume_layout(bool perform_layout) {
+        this->set_state(state::layout_deferred, false);
+        if (perform_layout) this->perform_layout();
+      }
       
       intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const;
       
@@ -471,7 +478,9 @@ namespace xtd {
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
       /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
-      void suspend_layout();
+      void suspend_layout() {
+        this->set_state(state::layout_deferred, true);
+      }
       
       virtual std::string to_string() const;
       
@@ -688,16 +697,17 @@ namespace xtd {
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
       drawing::rectangle client_rectangle_;
-      drawing::size client_size_ {0, 0};
+      drawing::size client_size_;
       control_collection controls_;
       dock_style dock_ = dock_style::none;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
-      drawing::point location_ {0, 0};
+      drawing::point location_;
       std::string name_;
       intptr_t parent_ = 0;
-      drawing::size size_ {0, 0};
+      drawing::size parent_size_;
+      drawing::size size_;
       control::state state_ = state::empty;
       std::any tag_;
       std::string text_;
@@ -708,6 +718,7 @@ namespace xtd {
     private:
       void do_layout();
       void internal_destroy_handle(intptr_t);
+      void on_parent_size_changed(const control& sender, const event_args& e);
       void set_auto_size_size();
       control(const std::string& name, bool) {this->name_ = name;}
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
