@@ -179,6 +179,7 @@ control& control::visible(bool visible) {
 }
 
 void control::create_control() {
+  this->suspend_layout();
   if (!this->get_state(state::destroying) && !this->get_state(state::creating) && !this->get_state(state::created)) {
     this->set_state(state::destroyed, false);
     this->set_state(state::creating, true);
@@ -188,15 +189,16 @@ void control::create_control() {
     this->on_create_control();
     this->set_state(state::creating, false);
     this->set_state(state::created, true);
+    this->resume_layout();
   }
 }
 
 void control::destroy_control() {
   if (this->get_state(state::created)) {
+    this->suspend_layout();
     this->set_state(state::created, false);
     this->set_state(state::destroying, true);
     if (this->handle_) {
-      this->suspend_layout();
       for(control_ref child : this->controls_)
         child.get().destroy_control();
       
@@ -307,12 +309,14 @@ void control::on_client_size_changed(const event_args &e) {
 void control::on_control_added(const control_event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
   this->on_layout(event_args::empty);
+  this->size_changed += {e.control(), &control::on_parent_size_changed};
   this->control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  if (this->get_state(state::auto_size)) this->set_auto_size_size();  
+  if (this->get_state(state::auto_size)) this->set_auto_size_size();
   this->on_layout(event_args::empty);
+  this->size_changed -= {e.control(), &control::on_parent_size_changed};
   this->control_removed(*this, e);
 }
 
@@ -446,6 +450,7 @@ void control::on_parent_back_color_changed(const event_args &e) {
 }
 
 void control::on_parent_changed(const event_args &e) {
+  if (this->parent().has_value()) this->parent_size_ = this->parent().value().get().size();
   this->parent_changed(*this, e);
 }
 
@@ -484,14 +489,13 @@ void control::on_visible_changed(const event_args &e) {
   this->visible_changed(*this, e);
 }
 
-void control::refresh() const {
-  native::control::refresh(this->handle_);
+void control::perform_layout() {
+  if (!this->get_state(state::layout_deferred))
+    on_layout(event_args::empty);
 }
 
-void control::resume_layout(bool perform_layout) {
-  this->set_state(state::layout_deferred, false);
-  native::control::resume_layout(this->handle_);
-  if (perform_layout) this->on_layout(event_args::empty);
+void control::refresh() const {
+  native::control::refresh(this->handle_);
 }
 
 intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam) const {
@@ -503,11 +507,6 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
     this->auto_size_mode_ = auto_size_mode;
     this->set_auto_size_size();
   }
-}
-
-void control::suspend_layout() {
-  if (this->get_state(state::created)) native::control::suspend_layout(this->handle_);
-  this->set_state(state::layout_deferred, true);
 }
 
 string control::to_string() const {
@@ -623,14 +622,39 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 }
 
 void control::do_layout() {
+  static bool do_layout = false;
+
+  if (!this->parent().has_value()) return;
   if (this->get_state(state::layout_deferred)) return;
+
+  if (do_layout == true) return;
+  do_layout = true;
+
   if (this->get_state(state::docked)) {
     
   } else {
-    
+    point diff = this->parent().value().get().size() - this->parent_size_;
+
+    if ((this->anchor_ & anchor_styles::left) == anchor_styles::left && (this->anchor_ & anchor_styles::right) != anchor_styles::right)
+      this->left(this->left());
+    else if ((this->anchor_ & anchor_styles::left) == anchor_styles::left && (this->anchor_ & anchor_styles::right) == anchor_styles::right)
+      this->width(this->width() + diff.x());
+    else if ((this->anchor_ & anchor_styles::left) != anchor_styles::left && (this->anchor_ & anchor_styles::right) == anchor_styles::right)
+      this->left(this->left() + diff.x());
+    else
+      this->left(this->left() + (diff.x() / 2));
+
+    if ((this->anchor_ & anchor_styles::top) == anchor_styles::top && (this->anchor_ & anchor_styles::bottom) != anchor_styles::bottom)
+      this->top(this->top());
+    else if ((this->anchor_ & anchor_styles::top) == anchor_styles::top && (this->anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
+      this->height(this->height() + diff.y());
+    else if ((this->anchor_ & anchor_styles::top) != anchor_styles::top && (this->anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
+      this->top(this->top() + diff.y());
+    else
+      this->top(this->top() + (diff.y() / 2));
   }
-  cdebug << format("Do layout on control {}", *this) << endl;
   this->refresh();
+  do_layout = false;
 }
 
 void control::internal_destroy_handle(intptr_t handle) {
@@ -638,6 +662,13 @@ void control::internal_destroy_handle(intptr_t handle) {
   handles_.erase(handle);
   native::control::destroy(handle);
   this->on_handle_destroyed(event_args::empty);
+}
+
+void control::on_parent_size_changed(const control& sender, const event_args& e) {
+  if (!this->get_state(state::layout_deferred)) {
+    this->on_layout(event_args::empty);
+    this->parent_size_ = this->parent().value().get().size();
+  }
 }
 
 void control::set_auto_size_size() {
@@ -766,6 +797,7 @@ void control::wm_size(message& message) {
   if (this->get_state(state::client_size_setted) && this->client_size_ != native::control::client_size(this->handle_)) {
     this->client_size_ = native::control::client_size(this->handle_);
     this->on_client_size_changed(event_args::empty);
+    this->size_ = native::control::size(this->handle_);
     this->on_size_changed(event_args::empty);
   } else {
     this->size_ = native::control::size(this->handle_);
