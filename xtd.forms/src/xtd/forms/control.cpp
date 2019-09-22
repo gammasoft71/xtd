@@ -1,4 +1,5 @@
 #include <iostream>
+#include <set>
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.environment>
 #include <xtd/xtd.strings>
@@ -321,6 +322,7 @@ void control::on_control_removed(const control_event_args &e) {
 }
 
 void control::on_dock_changed(const event_args &e) {
+  if (this->parent().has_value()) this->parent().value().get().on_layout(e);
   this->on_layout(e);
   this->dock_changed(*this, e);
 }
@@ -472,6 +474,7 @@ void control::on_parent_font_changed(const event_args &e) {
 
 void control::on_size_changed(const event_args &e) {
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
+  this->client_rectangle_ = native::control::client_rectangle(this->handle_);
   this->on_layout(e);
   this->size_changed(*this, e);
 }
@@ -622,17 +625,55 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 }
 
 void control::do_layout() {
-  if (!this->parent().has_value()) return;
   if (this->get_state(state::layout_deferred)) return;
 
   // this method can not be reentrant
-  static bool do_layout = false;
-  if (do_layout == true) return;
-  do_layout = true;
+  static std::set<intptr_t> do_layouts;
+  if (do_layouts.find(this->handle_) != do_layouts.end())
+    return;
+  do_layouts.insert(this->handle_);
+  
+  bool docked = false;
+  for(control_ref control : this->controls_) {
+    docked = control.get().get_state(state::docked);
+    if (docked) break;
+  }
 
-  if (this->get_state(state::docked)) {
-    
-  } else {
+  if (docked) {
+    drawing::rectangle docking_rect = this->client_rectangle();
+    for(control_collection::reverse_iterator iterator = this->controls_.rbegin(); iterator != this->controls_.rend(); ++iterator) {
+      if (iterator->get().dock() == dock_style::top) {
+        iterator->get().top(docking_rect.top());
+        iterator->get().left(docking_rect.left());
+        iterator->get().width(docking_rect.width());
+        docking_rect.top(docking_rect.top() + iterator->get().height());
+        docking_rect.height(docking_rect.height() - iterator->get().height());
+      } else if (iterator->get().dock() == dock_style::bottom) {
+        iterator->get().top(docking_rect.bottom() - iterator->get().height());
+        iterator->get().left(docking_rect.left());
+        iterator->get().width(docking_rect.width());
+        docking_rect.height(docking_rect.height() - iterator->get().height());
+      } else if (iterator->get().dock() == dock_style::left) {
+        iterator->get().top(docking_rect.top());
+        iterator->get().left(docking_rect.left());
+        iterator->get().height(docking_rect.height());
+        docking_rect.left(docking_rect.left() + iterator->get().width());
+        docking_rect.width(docking_rect.width() - iterator->get().width());
+      } else if (iterator->get().dock() == dock_style::right) {
+        iterator->get().top(docking_rect.top());
+        iterator->get().left(docking_rect.right() - iterator->get().width());
+        iterator->get().height(docking_rect.height());
+        docking_rect.width(docking_rect.width() - iterator->get().width());
+      } else if (iterator->get().dock() == dock_style::fill) {
+        iterator->get().top(docking_rect.top());
+        iterator->get().left(docking_rect.left());
+        iterator->get().height(docking_rect.height());
+        iterator->get().width(docking_rect.width());
+      }
+    }
+  }
+  
+  if (this->parent().has_value()) {
     point diff = this->parent().value().get().size() - this->parent_size_;
 
     if ((this->anchor_ & anchor_styles::left) == anchor_styles::left && (this->anchor_ & anchor_styles::right) != anchor_styles::right)
@@ -653,8 +694,9 @@ void control::do_layout() {
     else
       this->top(this->top() + (diff.y() / 2));
   }
+
   this->refresh();
-  do_layout = false;
+  do_layouts.erase(this->handle_);
 }
 
 void control::internal_destroy_handle(intptr_t handle) {
@@ -794,14 +836,12 @@ void control::wm_set_text(message& message) {
 
 void control::wm_size(message& message) {
   this->def_wnd_proc(message);
-  if (this->get_state(state::client_size_setted) && this->client_size_ != native::control::client_size(this->handle_)) {
+  if (this->client_size_ != native::control::client_size(this->handle_)) {
     this->client_size_ = native::control::client_size(this->handle_);
     this->on_client_size_changed(event_args::empty);
+  }
+  if (this->size_ != native::control::size(this->handle_)) {
     this->size_ = native::control::size(this->handle_);
-    this->on_size_changed(event_args::empty);
-  } else {
-    this->size_ = native::control::size(this->handle_);
-    this->on_client_size_changed(event_args::empty);
     this->on_size_changed(event_args::empty);
   }
 }

@@ -74,13 +74,13 @@ namespace xtd {
         const_iterator end() const {return this->collection_.end();}
         const_iterator cend() const {return this->collection_.cend();}
         
-        iterator rbegin() {return this->collection_.rbegin();}
-        const_iterator rbegin() const {return this->collection_.rbegin();}
-        const_iterator crbegin() const {return this->collection_.crbegin();}
+        reverse_iterator rbegin() {return this->collection_.rbegin();}
+        const_reverse_iterator rbegin() const {return this->collection_.rbegin();}
+        const_reverse_iterator crbegin() const {return this->collection_.crbegin();}
 
-        iterator rend() {return this->collection_.rend();}
-        const_iterator rend() const {return this->collection_.rend();}
-        const_iterator crend() const {return this->collection_.crend();}
+        reverse_iterator rend() {return this->collection_.rend();}
+        const_reverse_iterator rend() const {return this->collection_.rend();}
+        const_reverse_iterator crend() const {return this->collection_.crend();}
         
         bool empty() const {return this->collection_.empty();}
         
