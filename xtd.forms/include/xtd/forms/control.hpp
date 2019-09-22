@@ -19,6 +19,7 @@
 #include "auto_size_mode.hpp"
 #include "bounds_specified.hpp"
 #include "control_event_handler.hpp"
+#include "control_styles.hpp"
 #include "dock_style.hpp"
 #include "iwin32_window.hpp"
 #include "key_event_handler.hpp"
@@ -177,6 +178,10 @@ namespace xtd {
       /// When overriding the anchor property in a derived class, use the base class's anchor property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the anchor property; you can override only one if needed.
       virtual control& anchor(anchor_styles anchor);
       
+      /// @brief Gets where this control is scrolled to in scroll_control_into_view(control).
+      /// @return A point specifying the scroll location. The default is the upper-left corner of the control.
+      virtual drawing::point auto_scroll_point() const {return this->auto_scroll_point_;}
+      
       /// @brief Gets a value that indicates whether the control resizes based on its contents.
       /// @return true if enabled; otherwise, false.
       /// @remarks This property is not relevant for this class.
@@ -219,6 +224,28 @@ namespace xtd {
         this->set_bounds_core(bounds.x(), bounds.y(), bounds.width(), bounds.height(), bounds_specified::all);
         return *this;
       }
+      
+      /// @brief Gets a value indicating whether the control can receive focus.
+      /// @brief true if the control can receive focus; otherwise, false.
+      /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
+      virtual bool can_focus() const;
+      
+      /// @brief Gets a value indicating whether the control can be selected.
+      /// @return true if the control can be selected; otherwise, false.s
+      /// @remarks This property returns true if the electable value of control_styles is set to true, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled.
+      /// @remarks The Windows Forms controls in the following list are not selectable and will return a value of false for the can_select property. controls derived from these controls are also not selectable.
+      /// * panel
+      /// * group_box
+      /// * picture_box
+      /// * progress_bar
+      /// * splitter
+      /// * label
+      /// * link_label (when there is no link present in the control)
+      virtual bool can_select() const {return this->enabled() &&  this->visible() && this->get_style(control_styles::selectable);}
+      
+      /// @brief Determines if events can be raised on the control.
+      /// @return true if the control ican raise events; otherwise, false.
+      virtual bool can_raise_events() const {return this->can_raise_events_;}
 
       /// @brief Gets the rectangle that represents the client area of the control.
       /// @return A rectangle that represents the client area of the control.
@@ -274,7 +301,7 @@ namespace xtd {
       
       virtual drawing::font default_font() const;
       
-      virtual drawing::size default_size() const {return{0, 0};}
+      virtual drawing::size default_size() const {return {0, 0};}
       
       /// @brief Gets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @return One of the dock_style values. The default is none.
@@ -327,7 +354,7 @@ namespace xtd {
       
       virtual std::optional<control_ref> parent() const {return from_handle(this->parent_);}
       virtual control& parent(const control& parent);
-      virtual control& parent(nullptr_t);
+      virtual control& parent(std::nullptr_t);
 
       virtual std::string product_name() const {return "xtd";}
       
@@ -426,8 +453,6 @@ namespace xtd {
       
       void destroy_control();
       
-      virtual void hide() {this->visible(false);}
-
       virtual void create_handle();
       
       drawing::graphics create_graphics() const;
@@ -438,6 +463,8 @@ namespace xtd {
 
       static std::optional<control_ref> from_handle(intptr_t handle);
       
+      virtual void hide() {this->visible(false);}
+
       bool is_handle_created() const;
 
       /// @brief Forces the control to apply layout logic to all its child controls.
@@ -576,6 +603,12 @@ namespace xtd {
       
       virtual void def_wnd_proc(message& message);
 
+      /// @brief Retrieves the value of the specified control style bit for the control.
+      /// @param flag The control_styles bit to return the value from.
+      /// @return true if the specified control style bit is set to true; otherwise, false.
+      /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
+      bool get_style(control_styles flag) const {return ((int32_t)this->style_ & (int32_t)flag) == (int32_t)flag;}
+
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
       /// @remarks This metod is not relevant for this class.
@@ -681,7 +714,14 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding set_client_size_core(int32_t, int32_t) in a derived class, be sure to call the base class's set_client_size_core(int32_t, int32_t) method so that the client_size property is adjusted.
       virtual void set_client_size_core(int32_t width, int32_t height);
-      
+        
+      /// @brief Sets a specified control_styles flag to either true or false.
+      /// @param flag The control_styles bit to set.
+      /// @param value true to apply the specified style to the control; otherwise, false.
+      /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit (or bits) and the bool value to set the bit(s) to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
+      /// @warning Setting the control style bits can substantially change the behavior of the control. Review the control_styles enumeration documentation to understand the effects of changing the control style bits before calling the set_style method.
+      void set_style(control_styles flag, bool value) {this->style_ = value ? (control_styles)((int32_t)this->style_ | (int32_t)flag) : (control_styles)((int32_t)this->style_ & ~(int32_t)flag);}
+
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd°proc method after getting filtered through the pre_process_message method.
@@ -694,8 +734,11 @@ namespace xtd {
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
 
       anchor_styles anchor_ = anchor_styles::top | anchor_styles::left;
+      drawing::point auto_scroll_point_;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
+      bool can_focus_ = false;
+      bool can_raise_events_ = true;
       drawing::rectangle client_rectangle_;
       drawing::size client_size_;
       control_collection controls_;
@@ -709,6 +752,7 @@ namespace xtd {
       drawing::size parent_size_;
       drawing::size size_;
       control::state state_ = state::empty;
+      control_styles style_ = control_styles::none;
       std::any tag_;
       std::string text_;
       static std::map<intptr_t, control*> handles_;

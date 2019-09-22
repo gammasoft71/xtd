@@ -36,6 +36,7 @@ control::control() {
   native::control::init();
   this->set_state(state::enabled, true);
   this->set_state(state::visible, true);
+  this->set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
   this->size_ = this->default_size();
   this->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
     item.get().parent_ = this->handle_;
@@ -83,6 +84,19 @@ control& control::back_color(const color& color) {
       control.get().on_parent_back_color_changed(event_args::empty);
   }
   return *this;
+}
+
+bool control::can_focus() const {
+  bool visible_and_enebled = this->handle_ && this->get_state(state::visible) && this->get_state(state::enabled);
+
+  std::optional<std::reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
+  while (visible_and_enebled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
+    top_level_control = top_level_control.value().get().parent();
+    if (top_level_control.has_value()) visible_and_enebled = top_level_control.value().get().get_state(state::visible) && this->get_state(state::enabled);
+  }
+  
+  if (!visible_and_enebled) return false;
+  return this->can_focus_;
 }
 
 drawing::font control::default_font() const {
@@ -284,12 +298,12 @@ drawing::size control::measure_text() const {
 void control::on_auto_size_changed(const event_args& e) {
   this->set_auto_size_size();
   this->on_layout(e);
-  this->auto_size_changed(*this, e);
+  if (this->can_raise_events()) this->auto_size_changed(*this, e);
 }
 
 void control::on_back_color_changed(const event_args &e) {
   this->refresh();
-  this->back_color_changed(*this, e);
+  if (this->can_raise_events()) this->back_color_changed(*this, e);
 }
 
 void control::on_create_control() {
@@ -299,58 +313,58 @@ void control::on_create_control() {
 }
 
 void control::on_click(const event_args &e) {
-  this->click(*this, e);
+  if (this->can_raise_events()) this->click(*this, e);
 }
 
 void control::on_client_size_changed(const event_args &e) {
   this->on_layout(e);
-  this->client_size_changed(*this, e);
+  if (this->can_raise_events()) this->client_size_changed(*this, e);
 }
 
 void control::on_control_added(const control_event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
   this->on_layout(event_args::empty);
   this->size_changed += {e.control(), &control::on_parent_size_changed};
-  this->control_added(*this, e);
+  if (this->can_raise_events()) this->control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
   this->on_layout(event_args::empty);
   this->size_changed -= {e.control(), &control::on_parent_size_changed};
-  this->control_removed(*this, e);
+  if (this->can_raise_events()) this->control_removed(*this, e);
 }
 
 void control::on_dock_changed(const event_args &e) {
   if (this->parent().has_value()) this->parent().value().get().on_layout(e);
   this->on_layout(e);
-  this->dock_changed(*this, e);
+  if (this->can_raise_events()) this->dock_changed(*this, e);
 }
 
 void control::on_double_click(const event_args &e) {
-  this->double_click(*this, e);
+  if (this->can_raise_events()) this->double_click(*this, e);
 }
 
 void control::on_enabled_changed(const event_args &e) {
   this->set_state(state::enabled, native::control::enabled(this->handle_));
   this->refresh();
-  this->enabled_changed(*this, e);
+  if (this->can_raise_events()) this->enabled_changed(*this, e);
 }
 
 void control::on_fore_color_changed(const event_args &e) {
   this->refresh();
-  this->fore_color_changed(*this, e);
+  if (this->can_raise_events()) this->fore_color_changed(*this, e);
 }
 
 void control::on_font_changed(const event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->refresh();
-  this->font_changed(*this, e);
+  if (this->can_raise_events()) this->font_changed(*this, e);
 }
 
 void control::on_got_focus(const event_args &e) {
-  this->got_focus(*this, e);
+  if (this->can_raise_events()) this->got_focus(*this, e);
 }
 
 void control::on_handle_created(const event_args &e) {
@@ -367,77 +381,77 @@ void control::on_handle_created(const event_args &e) {
   this->location_ = native::control::location(this->handle_);
   this->size_ = native::control::size(this->handle_);
   
-  this->handle_created(*this, e);
+  if (this->can_raise_events()) this->handle_created(*this, e);
 }
 
 void control::on_handle_destroyed(const event_args &e) {
-  this->handle_destroyed(*this, e);
+  if (this->can_raise_events()) this->handle_destroyed(*this, e);
 }
 
 void control::on_key_down(key_event_args& e) {
-  this->key_down(*this, e);
+  if (this->can_raise_events()) this->key_down(*this, e);
 }
 
 void control::on_key_press(key_press_event_args& e) {
-  this->key_press(*this, e);
+  if (this->can_raise_events()) this->key_press(*this, e);
 }
 
 void control::on_key_up(key_event_args& e) {
-  this->key_up(*this, e);
-  }
+  if (this->can_raise_events()) this->key_up(*this, e);
+}
 
-  void control::on_layout(const event_args &e) {
-    do_layout();
-    this->layout(*this, e);
-  }
+void control::on_layout(const event_args &e) {
+  do_layout();
+  if (this->can_raise_events()) this->layout(*this, e);
+}
 
-  void control::on_location_changed(const event_args &e) {
+void control::on_location_changed(const event_args &e) {
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
-  this->location_changed(*this, e);
+  if (this->can_raise_events()) this->location_changed(*this, e);
 }
 
 void control::on_lost_focus(const event_args &e) {
-  this->lost_focus(*this, e);
+  if (this->can_raise_events()) this->lost_focus(*this, e);
 }
 
 void control::on_mouse_click(const mouse_event_args& e) {
-  this->mouse_click(*this, e);
+  if (this->can_raise_events()) this->mouse_click(*this, e);
 }
 
 void control::on_mouse_double_click(const mouse_event_args& e) {
-  this->mouse_double_click(*this, e);
+  if (this->can_raise_events()) this->mouse_double_click(*this, e);
 }
 
 void control::on_mouse_down(const mouse_event_args& e) {
-  this->mouse_down(*this, e);
+  if (this->can_raise_events()) this->mouse_down(*this, e);
 }
 
 void control::on_mouse_horizontal_wheel(const mouse_event_args& e) {
-  this->mouse_horizontal_wheel(*this, e);
+  if (this->can_raise_events()) this->mouse_horizontal_wheel(*this, e);
 }
 
 void control::on_mouse_enter(const event_args &e) {
-  this->mouse_enter(*this, e);
+  if (this->can_raise_events()) this->mouse_enter(*this, e);
 }
 
 void control::on_mouse_leave(const event_args &e) {
-  this->mouse_leave(*this, e);
+  if (this->can_raise_events()) this->mouse_leave(*this, e);
 }
 
 void control::on_mouse_move(const mouse_event_args& e) {
-  this->mouse_move(*this, e);
+  if (this->can_raise_events()) this->mouse_move(*this, e);
 }
 
 void control::on_mouse_up(const mouse_event_args& e) {
-  this->mouse_up(*this, e);
+  if (this->can_raise_events()) this->mouse_up(*this, e);
 }
 
 void control::on_mouse_wheel(const mouse_event_args& e) {
-  this->mouse_wheel(*this, e);
+  if (this->can_raise_events()) this->mouse_wheel(*this, e);
 }
 
 void control::on_paint(paint_event_args &e) {
-  this->paint(*this, e);
+  if (this->can_raise_events()) this->paint(*this, e);
 }
 
 void control::on_parent_back_color_changed(const event_args &e) {
@@ -453,7 +467,7 @@ void control::on_parent_back_color_changed(const event_args &e) {
 
 void control::on_parent_changed(const event_args &e) {
   if (this->parent().has_value()) this->parent_size_ = this->parent().value().get().size();
-  this->parent_changed(*this, e);
+  if (this->can_raise_events()) this->parent_changed(*this, e);
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
@@ -476,20 +490,20 @@ void control::on_size_changed(const event_args &e) {
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->client_rectangle_ = native::control::client_rectangle(this->handle_);
   this->on_layout(e);
-  this->size_changed(*this, e);
+  if (this->can_raise_events()) this->size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
   if (this->get_state(state::auto_size)) this->set_auto_size_size();
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->on_layout(event_args::empty);
-  this->text_changed(*this, e);
+  if (this->can_raise_events()) this->text_changed(*this, e);
 }
 
 void control::on_visible_changed(const event_args &e) {
   this->set_state(state::visible, native::control::visible(this->handle_));
   this->refresh();
-  this->visible_changed(*this, e);
+  if (this->can_raise_events()) this->visible_changed(*this, e);
 }
 
 void control::perform_layout() {
