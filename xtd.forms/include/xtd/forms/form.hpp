@@ -46,6 +46,17 @@ namespace xtd {
       virtual form_start_position start_position() const {return this->start_position_;}
       virtual form& start_position(form_start_position start_position);
 
+      /// @brief Gets a value indicating whether to display the form as a top-level window.
+      /// @return true to display the form as a top-level window; otherwise, false. The default is true.
+      /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
+      /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
+      virtual bool top_level() const {return this->get_state(state::top_level);}
+      /// @brief Sets a value indicating whether to display the form as a top-level window.
+      /// @return true to display the form as a top-level window; otherwise, false. The default is true.
+      /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
+      /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
+      virtual form& top_level(bool top_level);
+      
       using container_control::visible;
       control& visible(bool visible) override;
       
