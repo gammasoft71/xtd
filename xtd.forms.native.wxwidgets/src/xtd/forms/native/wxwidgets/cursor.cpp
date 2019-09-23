@@ -3,14 +3,19 @@
 #include <wx/cursor.h>
 #include <wx/window.h>
 
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 intptr_t cursor::create() {
   return reinterpret_cast<intptr_t>(new wxCursor());
-}
+  }
 
-void cursor::destroy(intptr_t cursor) {
+  intptr_t cursor::copy(intptr_t cursor) {
+    return reinterpret_cast<intptr_t>(new wxCursor(*reinterpret_cast<wxCursor*>(cursor)));
+  }
+
+  void cursor::destroy(intptr_t cursor) {
   if (cursor == 0) return;
   delete reinterpret_cast<wxCursor*>(cursor);
 }
@@ -43,6 +48,10 @@ void cursor::position(const point& position) {
   }
 }
 #endif
+
+drawing::size cursor::size(intptr_t cursor) {
+  return {32, 32};
+}
 
 #if !defined __APPLE__
 void cursor::show() {
