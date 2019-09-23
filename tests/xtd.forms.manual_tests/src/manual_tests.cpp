@@ -78,11 +78,11 @@ public:
   
 private:
   std::vector<cursor_name_pair> cursor_name_pairs = {{cursors::app_starting(), "Application Starting"}, {cursors::arrow(), "Arrow"}, {cursors::close_hand(), "Close hand"}, {cursors::contextual_menu(), "Contextual menu"}, {cursors::cross(), "Cross"}, {cursors::default_cursor(), "Default cursor"}, {cursors::disappearing_item(), "Disappearing item"}, {cursors::drag_copy(), "Drag copy"}, {cursors::drag_link(), "Drag link"}, {cursors::hand(), "Hand"}, {cursors::help(), "Help"}, {cursors::hsplit(), "Horizontal split"}, {cursors::ibeam(), "I beam"}, {cursors::no(), "No"}, {cursors::no_move_2d(), "No move 2d"}, {cursors::no_move_horiz(), "No move horizontal"}, {cursors::no_move_vert(), "No move vertical"}, {cursors::open_hand(), "Open hand"}, {cursors::pan_east(), "Pan east"}, {cursors::pan_ne(), "Pan north east"}, {cursors::pan_north(), "Pan north"}, {cursors::pan_nw(), "Pan north west"}, {cursors::pan_south(), "Pan south"}, {cursors::pan_sw(), "Pan south west"}, {cursors::pan_west(), "Pan West"}, {cursors::size_all(), "Size all"}, {cursors::size_nesw(), "Size north-east south-west"}, {cursors::size_ns(), "Size north south"}, {cursors::size_nwse(), "Size north-west south-east"}, {cursors::up_arrow(), "Up arrow"}, {cursors::vibeam(), "Vertical I beam"}, {cursors::vsplit(), "Vertical split"}, {cursors::wait_cursor(), "Wait cursor"}};
+  timer timer_show_cursor;
   list_box list_box_cursors;
   panel panel_test_zone;
   button button_show_hide;
   button button_move_up_left;
-  timer timer_show_cursor;
   const int cursor_hidden_duration = 3;
 };
 
