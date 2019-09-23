@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <memory>
 #include <xtd/drawing/point.hpp>
+#include <xtd/drawing/size.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,7 +24,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the Cursor class from the specified Windows handle.
       /// @param handle An IntPtr that represents the Windows handle of the cursor to create.
       /// @remarks You must free the cursor handle when you are done with it.
-      explicit cursor(intptr_t handle) : cursor(handle, false) {}
+      explicit cursor(intptr_t handle) : cursor(handle, false, "") {}
       
       /// @cond
       cursor(const cursor& value) = default;
@@ -49,6 +50,10 @@ namespace xtd {
       /// @remarks The position property is identical to the control::mouse_position property.
       static void position(const drawing::point& position);
 
+      /// @brief Gets the size of the cursor object.
+      /// @return A size that represents the width and height of the cursor.
+      drawing::size size() const {return this->data_->size_;}
+      
       /// @brief Gets the object that contains data about the control.
       /// @return A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
@@ -57,34 +62,42 @@ namespace xtd {
       /// @brief Sets the object that contains data about the control.
       /// @param tag A std::any that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      void tag(std::any tag) {
-        this->data_->tag_ = tag;
-      }
+      void tag(std::any tag) {this->data_->tag_ = tag;}
       
-      static bool visible() {return visible_;}
-      static void visible(bool visible);
+      /// @remarks Copies the handle of this cursor.
+      /// @return An intptr_t that represents the cursor's handle.
+      /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
+      intptr_t copy_handle() const;
       
-      static void hide() {visible(false);}
+      /// @brief Hides the cursor.
+      /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
+      static void hide();
       
-      static void show() {visible(true);}
+      /// @brief Displays the cursor.
+      /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
+      static void show();
+      
+      std::string to_string() const;
       
       /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}
       bool operator==(const cursor& value) const {return this->data_ == value.data_;}
       bool operator!=(const cursor& value) const {return !this->operator==(value);}
       /// @endcond
 
     private:
       friend class cursors;
-      cursor(intptr_t handle, bool destroyable);
+      cursor(intptr_t handle, bool destroyable, const std::string& name);
 
       struct data {
         intptr_t handle_ = 0;
         bool destroyable_ = true;
         drawing::point hot_spot_;
+        std::string name_;
+        drawing::size size_;
         std::any tag_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
-      static bool visible_;
     };
   }
 }

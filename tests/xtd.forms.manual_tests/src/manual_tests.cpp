@@ -33,6 +33,7 @@ public:
     this->list_box_cursors.selected_index(5);
     this->list_box_cursors.click += [this] {
       this->panel_test_zone.cursor(this->cursor_name_pairs[this->list_box_cursors.selected_index()].cursor());
+      cdebug << format("cursor = {}", this->panel_test_zone.cursor()) << endl;
     };
 
     this->panel_test_zone.parent(*this);
@@ -54,7 +55,7 @@ public:
      this->button_show_hide.location({305, 200});
      this->button_show_hide.text("Hide");
      this->button_show_hide.click += [&] {
-       forms::cursor::visible(false);
+       forms::cursor::hide();
        this->button_show_hide.enabled(false);
        this->button_show_hide.text(strings::format("Show in {}s", this->cursor_hidden_duration));
        this->timer_show_cursor.enabled(true);

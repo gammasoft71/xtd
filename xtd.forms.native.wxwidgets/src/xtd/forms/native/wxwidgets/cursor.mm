@@ -5,7 +5,7 @@
 using namespace xtd::forms::native;
 
 void cursor::hide() {
-  CGDisplayHideCursor(kCGDirectMainDisplay);
+  [NSCursor hide];
 }
 
 void cursor::position(const drawing::point& position) {
@@ -13,6 +13,6 @@ void cursor::position(const drawing::point& position) {
 }
 
 void cursor::show() {
-  CGDisplayShowCursor(kCGDirectMainDisplay);
+  [NSCursor unhide];
 }
 #endif
