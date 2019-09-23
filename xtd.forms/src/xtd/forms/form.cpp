@@ -15,13 +15,10 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
-  /// @todo Read default_location and next_location from registry...
+/*
   static std::random_device rand;
-  static int32_t default_location = std::uniform_int_distribution<int32_t> {2, 18}(rand) * 10; // 20;
-  static bool next_location = true; // Strangely, on Windows the first location is used 2 times; this boolean simumate it.
-  //static microsoft::win32::registry_key key = microsoft::win32::registry::current_user().create_sub_key("Software").create_sub_key("Gammasoft71").create_sub_key("xtd").create_sub_key(environment::version().to_string()).create_sub_key("forms");
-  //static int32_t default_location = static_cast<int32_t>(key.get_value("DefaultFormLocation", 20));
-  //static bool next_location = static_cast<int32_t>(key.get_value("NextFormLocation", 1))); // Strangely, on Windows the first location is used 2 times; this boolean simumate it.
+  static int32_t default_location = std::uniform_int_distribution<int32_t> {4, 20}(rand) * 10; // 40;
+ */
 }
 
 std::optional<std::reference_wrapper<form>> form::active_form_;
@@ -110,6 +107,11 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 
 forms::create_params form::create_params() const {
   forms::create_params create_params = this->container_control::create_params();
+  static int32_t default_location = 0;
+  if (default_location == 0) {
+    std::random_device rand;
+    default_location = std::uniform_int_distribution<int32_t> {4, 20}(rand) * 10;
+  }
 
   create_params.class_name("form");
   create_params.style(WS_OVERLAPPEDWINDOW);
@@ -119,6 +121,7 @@ forms::create_params form::create_params() const {
       case form_start_position::manual:
         create_params.location(this->location());
         create_params.size(this->size());
+        if (application::open_forms().size() == 1) default_location = 40;
         break;
       case form_start_position::center_screen:
         create_params.location({(this->previous_screeen_->working_area().width() - this->width()) / 2, (this->previous_screeen_->working_area().height() - this->height()) / 2});
@@ -142,8 +145,7 @@ forms::create_params form::create_params() const {
     }
     
     if (this->start_position_ == form_start_position::windows_default_location || this->start_position_ == form_start_position::windows_default_bounds || (this->start_position_ == form_start_position::center_parent && !this->parent_)) {
-      next_location = !(next_location == true && default_location == 20);
-      if (next_location) default_location = default_location < 180 ? default_location + 20 : 20;
+      default_location = default_location < 200 ? default_location + 20 : 40;
     }
   }
 
