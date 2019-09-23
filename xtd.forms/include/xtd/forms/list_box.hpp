@@ -73,6 +73,8 @@ namespace xtd {
 
       void wm_mouse_down(message& message);
       
+      void wm_mouse_up(message& message);
+      
       forms::border_style border_style_ = forms::border_style::fixed_3d;
       string_collection items_;
       size_t selected_index_ = -1;
