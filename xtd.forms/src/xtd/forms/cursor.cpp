@@ -6,6 +6,12 @@ using namespace xtd::forms;
 
 bool cursor::visible_ = true;
 
+cursor::cursor(intptr_t handle, bool destroyable) {
+  this->data_->handle_ = handle;
+  this->data_->destroyable_ = destroyable;
+  this->data_->hot_spot_ = native::cursor::hot_spot(this->data_->handle_);
+}
+
 cursor::cursor() {
   this->data_->handle_ = native::cursor::create();
   this->data_->hot_spot_ = native::cursor::hot_spot(this->data_->handle_);
@@ -20,7 +26,7 @@ point cursor::position() {
   return native::cursor::position();
 }
 
-void cursor::position(const drawing::point& position) {
+void cursor::position(const point& position) {
   native::cursor::position(position);
 }
 

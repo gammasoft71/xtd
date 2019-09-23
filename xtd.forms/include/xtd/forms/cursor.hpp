@@ -22,10 +22,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the Cursor class from the specified Windows handle.
       /// @param handle An IntPtr that represents the Windows handle of the cursor to create.
       /// @remarks You must free the cursor handle when you are done with it.
-      cursor(intptr_t handle) {
-        this->data_->handle_ = handle;
-        this->data_->destroyable_ = false;
-      }
+      explicit cursor(intptr_t handle) : cursor(handle, false) {}
       
       /// @cond
       cursor(const cursor& value) = default;
@@ -77,11 +74,9 @@ namespace xtd {
 
     private:
       friend class cursors;
-      cursor(intptr_t handle, bool destroyable) {
-        this->data_->handle_ = handle;
-        this->data_->destroyable_ = destroyable;
-      }
-     struct data {
+      cursor(intptr_t handle, bool destroyable);
+
+      struct data {
         intptr_t handle_ = 0;
         bool destroyable_ = true;
         drawing::point hot_spot_;

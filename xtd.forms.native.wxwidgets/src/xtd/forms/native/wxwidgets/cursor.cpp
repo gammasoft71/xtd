@@ -22,8 +22,11 @@ void cursor::hide() {
 
 point cursor::hot_spot(intptr_t cursor) {
   if (cursor == 0) return {};
-  wxPoint hot_spot = reinterpret_cast<wxCursor*>(cursor)->GetHotSpot();
-  return {hot_spot.x, hot_spot.y};
+  #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+    wxPoint hot_spot = reinterpret_cast<wxCursor*>(cursor)->GetHotSpot();
+    return {hot_spot.x, hot_spot.y};
+  #endif
+  return {};
 }
 
 point cursor::position() {
@@ -32,7 +35,7 @@ point cursor::position() {
 }
 
 #if !defined __APPLE__
-void cursor::position(const drawing::point& position) {
+void cursor::position(const point& position) {
   wxWindow* window = wxGetActiveWindow();
   if (window) {
     wxPoint clientPosition = window->ScreenToClient(wxPoint(position.x(), position.y()));
