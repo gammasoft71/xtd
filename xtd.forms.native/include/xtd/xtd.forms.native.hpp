@@ -12,6 +12,8 @@
 #include "forms/native/button.hpp"
 #include "forms/native/check_box.hpp"
 #include "forms/native/control.hpp"
+#include "forms/native/cursor.hpp"
+#include "forms/native/cursors.hpp"
 #include "forms/native/form.hpp"
 #include "forms/native/group_box.hpp"
 #include "forms/native/label.hpp"

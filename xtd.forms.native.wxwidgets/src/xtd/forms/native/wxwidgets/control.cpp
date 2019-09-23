@@ -117,6 +117,11 @@ void control::client_size(intptr_t control, const drawing::size& size) {
   reinterpret_cast<control_handler*>(control)->control()->SetClientSize(size.width(), size.height());
 }
 
+void control::cursor(intptr_t control, intptr_t cursor) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->SetCursor(*reinterpret_cast<wxCursor*>(cursor));
+}
+
 bool control::enabled(intptr_t control) {
   if (control == 0) return false;
   return reinterpret_cast<control_handler*>(control)->control()->IsEnabled();

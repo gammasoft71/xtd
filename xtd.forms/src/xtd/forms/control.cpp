@@ -99,6 +99,17 @@ bool control::can_focus() const {
   return this->can_focus_;
 }
 
+control& control::cursor(const forms::cursor &cursor) {
+  if (this->cursor_ != cursor) {
+    this->cursor_ = cursor;
+    native::control::cursor(this->handle_, this->cursor_.value().handle());
+    this->on_cursor_changed(event_args::empty);
+    for (auto control : this->controls())
+      control.get().on_parent_cursor_changed(event_args::empty);
+  }
+  return *this;
+}
+
 drawing::font control::default_font() const {
   return native::control::default_font();
 }
@@ -335,6 +346,10 @@ void control::on_control_removed(const control_event_args &e) {
   if (this->can_raise_events()) this->control_removed(*this, e);
 }
 
+void control::on_cursor_changed(const event_args &e) {
+  if (this->can_raise_events()) this->cursor_changed(*this, e);
+}
+
 void control::on_dock_changed(const event_args &e) {
   if (this->parent().has_value()) this->parent().value().get().on_layout(e);
   this->on_layout(e);
@@ -372,6 +387,7 @@ void control::on_handle_created(const event_args &e) {
   handles_[this->handle_] = this;
   if (this->get_state(state::client_size_setted)) native::control::client_size(this->handle_, this->client_size());
   if ((this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(this->handle_, this->back_color());
+  if (this->cursor_.has_value() && this->cursor_.value() != this->default_cursor()) native::control::cursor(this->handle_, this->cursor().handle());
   if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
   if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(this->handle_, this->font());
   native::control::visible(this->handle_, this->visible());
@@ -468,6 +484,9 @@ void control::on_parent_back_color_changed(const event_args &e) {
 void control::on_parent_changed(const event_args &e) {
   if (this->parent().has_value()) this->parent_size_ = this->parent().value().get().size();
   if (this->can_raise_events()) this->parent_changed(*this, e);
+}
+
+void control::on_parent_cursor_changed(const event_args &e) {
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {

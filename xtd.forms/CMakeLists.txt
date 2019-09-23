@@ -29,6 +29,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/control_event_args.hpp
   include/xtd/forms/control_event_handler.hpp
   include/xtd/forms/control_styles.hpp
+  include/xtd/forms/cursor.hpp
+  include/xtd/forms/cursors.hpp
   include/xtd/forms/dialog_result.hpp
   include/xtd/forms/dock_style.hpp
   include/xtd/forms/form.hpp
@@ -89,6 +91,8 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/button_base.cpp
   src/xtd/forms/check_box.cpp
   src/xtd/forms/control.cpp
+  src/xtd/forms/cursor.cpp
+  src/xtd/forms/cursors.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
   src/xtd/forms/label.cpp

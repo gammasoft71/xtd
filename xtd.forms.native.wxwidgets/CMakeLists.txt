@@ -13,6 +13,9 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/button.cpp
   src/xtd/forms/native/wxwidgets/check_box.cpp
   src/xtd/forms/native/wxwidgets/control.cpp
+  src/xtd/forms/native/wxwidgets/cursor.cpp
+  src/xtd/forms/native/wxwidgets/cursor.mm
+  src/xtd/forms/native/wxwidgets/cursors.cpp
   src/xtd/forms/native/wxwidgets/control_handler.hpp
   src/xtd/forms/native/wxwidgets/form.cpp
   src/xtd/forms/native/wxwidgets/group_box.cpp
