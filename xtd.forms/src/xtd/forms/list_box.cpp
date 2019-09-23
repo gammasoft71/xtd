@@ -21,7 +21,7 @@ list_box::list_box() {
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
-  
+
   this->items_.item_erased += [&](size_t pos, const std::string& item) {
     native::list_box::delete_item(this->handle_, pos);
 
@@ -65,7 +65,7 @@ list_box& list_box::selected_item(const string& selected_item) {
     size_t index = -1;
     if (it != this->items_.end()) index = it - this->items_.begin();
     this->selected_index(index);
-    if (index == -1) this->selected_item_= "";
+    if (index == -1) this->selected_item_ = "";
     this->on_selected_value_changed(event_args::empty);
   }
   return *this;
@@ -98,27 +98,27 @@ list_box& list_box::sorted(bool sorted) {
 
 forms::create_params list_box::create_params() const {
   forms::create_params create_params = this->list_control::create_params();
-  
+
   create_params.class_name("listbox");
   create_params.style(create_params.style() | LBS_HASSTRINGS);
 
   switch (this->selection_mode_) {
-    case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
-    case selection_mode::one:  break;
-    case selection_mode::multi_simple: create_params.style(create_params.style() | LBS_MULTIPLESEL); break;
-    case selection_mode::multi_extended: create_params.style(create_params.style() | LBS_MULTIPLESEL | LBS_EXTENDEDSEL); break;
-    default: break;
+  case selection_mode::none: create_params.style(create_params.style() | LBS_NOSEL); break;
+  case selection_mode::one:  break;
+  case selection_mode::multi_simple: create_params.style(create_params.style() | LBS_MULTIPLESEL); break;
+  case selection_mode::multi_extended: create_params.style(create_params.style() | LBS_MULTIPLESEL | LBS_EXTENDEDSEL); break;
+  default: break;
   }
 
   if (this->sorted_) create_params.style(create_params.style() | LBS_SORT);
 
   if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  
+
   return create_params;
 }
 
-void list_box::on_handle_created(const event_args &e) {
+void list_box::on_handle_created(const event_args& e) {
   this->list_control::on_handle_created(e);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::list_box::insert_item(this->handle_, index, this->items_[index]);
@@ -127,28 +127,34 @@ void list_box::on_handle_created(const event_args &e) {
   if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
 }
 
-void list_box::wnd_proc(message &message) {
+void list_box::wnd_proc(message& message) {
   switch (message.msg()) {
-    case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
-    case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
-    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
-    default: this->list_control::wnd_proc(message);
+  case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
+  case WM_LBUTTONUP: this->wm_mouse_up(message); break;
+  case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
+  case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+  default: this->list_control::wnd_proc(message);
   }
 }
 
-void list_box::wm_mouse_double_click(message &message) {
+void list_box::wm_mouse_double_click(message& message) {
   if (this->selection_mode() != forms::selection_mode::none)
     this->list_control::wnd_proc(message);
 }
 
-void list_box::wm_mouse_down(message &message) {
+void list_box::wm_mouse_down(message& message) {
   if (this->selection_mode() != forms::selection_mode::none)
     this->list_control::wnd_proc(message);
-  else
-    this->on_selected_index_changed(event_args::empty);
 }
 
-void list_box::wm_reflect_command(message &message) {
+void list_box::wm_mouse_up(message& message) {
+  this->selected_index(native::list_box::selected_index(this->handle_));
+  if (this->selection_mode() != forms::selection_mode::none)
+    this->list_control::wnd_proc(message);
+}
+
+void list_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
   this->selected_index(native::list_box::selected_index(this->handle_));
+  this->on_selected_index_changed(event_args::empty);
 }
