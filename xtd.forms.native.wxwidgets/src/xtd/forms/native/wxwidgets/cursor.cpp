@@ -3,6 +3,10 @@
 #include <wx/cursor.h>
 #include <wx/window.h>
 
+#if defined(__WXMSW__)
+#include <Windows.h>
+#endif
+
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
@@ -20,7 +24,13 @@ intptr_t cursor::create() {
   delete reinterpret_cast<wxCursor*>(cursor);
 }
 
-#if !defined __APPLE__
+
+#if defined __APPLE__
+#elif defined (__WXMSW__)
+void cursor::hide() {
+  ShowCursor(FALSE);
+}
+#else
 void cursor::hide() {
 }
 #endif
@@ -39,7 +49,12 @@ point cursor::position() {
   return {position.x, position.y};
 }
 
-#if !defined __APPLE__
+#if defined __APPLE__
+#elif defined (__WXMSW__)
+void cursor::position(const point& position) {
+  SetCursorPos(position.x(), position.y());
+}
+#else
 void cursor::position(const point& position) {
   wxWindow* window = wxGetActiveWindow();
   if (window) {
@@ -53,7 +68,12 @@ drawing::size cursor::size(intptr_t cursor) {
   return {32, 32};
 }
 
-#if !defined __APPLE__
+#if defined __APPLE__
+#elif defined (__WXMSW__)
+void cursor::show() {
+  ShowCursor(TRUE);
+}
+#else
 void cursor::show() {
 }
 #endif
