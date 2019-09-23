@@ -138,6 +138,7 @@ void list_box::wnd_proc(message& message) {
 }
 
 void list_box::wm_mouse_double_click(message& message) {
+  this->selected_index(native::list_box::selected_index(this->handle_));
   if (this->selection_mode() != forms::selection_mode::none)
     this->list_control::wnd_proc(message);
 }
