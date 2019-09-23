@@ -28,6 +28,7 @@ namespace xtd {
         static drawing::rectangle client_rectangle(intptr_t control);
         static drawing::size client_size(intptr_t control);
         static void client_size(intptr_t control, const drawing::size& size);
+        static void cursor(intptr_t control, intptr_t cursor);
         static bool enabled(intptr_t control);
         static void enabled(intptr_t control, bool enabled);
         static drawing::color fore_color(intptr_t control);

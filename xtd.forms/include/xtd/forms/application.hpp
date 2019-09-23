@@ -167,8 +167,8 @@ namespace xtd {
       static void restart();
       
       /// @brief Begins running a standard application message loop on the current thread, without a form.
-      /// @remarks In a Win32-based or windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop.
-      /// @remarks Most windows forms developers will not need to use this version of the method. You should use the run(const form&) overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the run(application_context&) overload, which supports supplying an application_context object for better control over the lifetime of the application.
+      /// @remarks In a Win32-based or Windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows Forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop.
+      /// @remarks Most Windows Forms developers will not need to use this version of the method. You should use the run(const form&) overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the run(application_context&) overload, which supports supplying an application_context object for better control over the lifetime of the application.
       static void run();
 
       /// @brief Begins running a standard application message loop on the current thread, with an application_context.
@@ -185,9 +185,9 @@ namespace xtd {
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
-      /// @remarks It is often not feasible to catch all of the exceptions thrown by windows forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
+      /// @remarks It is often not feasible to catch all of the exceptions thrown by Windows Forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
       /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
-      /// @remarks To catch exceptions that occur in threads not created and owned by windows forms, use the unhandled_exception event handler.
+      /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       static void set_unhandled_exception_mode (unhandled_exception_mode mode);
        */
 
@@ -195,11 +195,11 @@ namespace xtd {
       /// @brief Instructs the application how to respond to unhandled exceptions, optionally applying thread-specific behavior.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
       /// @param thread_scope true to set the thread exception mode; otherwise, false.
-      /// @remarks It is often not feasible to catch all of the exceptions thrown by windows forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
+      /// @remarks It is often not feasible to catch all of the exceptions thrown by Windows Forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
       /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
       /// @remarks When threadScope is true, the thread exception mode is set. The thread exception mode overrides the application exception mode if mode is not set to automatic.
       /// @remarks When threadScope is false, the application exception mode is set. The application exception mode is used for all threads that have the automatic mode. Setting the application exception mode does not affect the setting of the current thread.
-      /// @remarks To catch exceptions that occur in threads not created and owned by windows forms, use the unhandled_exception event handler.
+      /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
        */
 
@@ -224,8 +224,8 @@ namespace xtd {
       
       /*
       /// @brief Occurs when an untrapped thread exception is thrown.
-      /// @remarks This event allows your windows forms application to handle otherwise unhandled exceptions that occur in windows forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block.
-      /// @param You can change whether this callback is used for unhandled windows forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by windows forms, use the unhandled_exception event handler.
+      /// @remarks This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block.
+      /// @param You can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       /// @note To guarantee that no activations of this event are missed, you must attach a handler before you call application::run.
       static event<threading::thread_exception_event_handler> thread_exception;
        */

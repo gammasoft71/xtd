@@ -20,6 +20,7 @@
 #include "bounds_specified.hpp"
 #include "control_event_handler.hpp"
 #include "control_styles.hpp"
+#include "cursors.hpp"
 #include "dock_style.hpp"
 #include "iwin32_window.hpp"
 #include "key_event_handler.hpp"
@@ -292,10 +293,15 @@ namespace xtd {
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
       virtual bool created() {return this->get_state(state::created);}
       
+      virtual forms::cursor cursor() const {return this->cursor_.value_or(this->parent_ ? this->parent().value().get().cursor() : default_cursor());}
+      virtual control& cursor(const forms::cursor& cursor);
+
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
       virtual drawing::color default_back_color() const {return drawing::system_colors::control();}
+
+      virtual forms::cursor default_cursor() const {return cursors::default_cursor();}
 
       virtual drawing::color default_fore_color() const {return drawing::system_colors::control_text();}
       
@@ -414,38 +420,46 @@ namespace xtd {
       }
 
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         if (location != drawing::point {-1, -1}) item->location(location);
         if (size != drawing::size {-1, -1}) item->size(size);
+        if (back_color != drawing::color::empty) item->back_color(back_color);
+        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
         return item;
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static std::unique_ptr<control_t> create(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->parent(parent);
         if (location != drawing::point {-1, -1}) item->location(location);
         if (size != drawing::size {-1, -1}) item->size(size);
+        if (back_color != drawing::color::empty) item->back_color(back_color);
+        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
         return item;
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->text(text);
         if (location != drawing::point {-1, -1}) item->location(location);
         if (size != drawing::size {-1, -1}) item->size(size);
+        if (back_color != drawing::color::empty) item->back_color(back_color);
+        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
         return item;
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}) {
+      static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->parent(parent);
         item->text(text);
         if (location != drawing::point {-1, -1}) item->location(location);
         if (size != drawing::size {-1, -1}) item->size(size);
+        if (back_color != drawing::color::empty) item->back_color(back_color);
+        if (fore_color != drawing::color::empty) item->fore_color(fore_color);
         return item;
       }
 
@@ -527,7 +541,9 @@ namespace xtd {
       event<control, event_handler<control>> click;
       
       event<control, event_handler<control>> client_size_changed;
-      
+        
+      event<control, event_handler<control>> cursor_changed;
+
       event<control, control_event_handler<control>> control_added;
       
       event<control, control_event_handler<control>> control_removed;
@@ -630,6 +646,8 @@ namespace xtd {
       
       virtual void on_create_control();
       
+      virtual void on_cursor_changed(const event_args& e);
+
       virtual void on_dock_changed(const event_args& e);
         
       virtual void on_double_click(const event_args& e);
@@ -679,7 +697,9 @@ namespace xtd {
       virtual void on_paint(paint_event_args& e);
       
       virtual void on_parent_back_color_changed(const event_args& e);
-      
+        
+      virtual void on_parent_cursor_changed(const event_args& e);
+
       virtual void on_parent_changed(const event_args& e);
       
       virtual void on_parent_fore_color_changed(const event_args& e);
@@ -742,6 +762,7 @@ namespace xtd {
       drawing::rectangle client_rectangle_;
       drawing::size client_size_;
       control_collection controls_;
+      std::optional<forms::cursor> cursor_;
       dock_style dock_ = dock_style::none;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;

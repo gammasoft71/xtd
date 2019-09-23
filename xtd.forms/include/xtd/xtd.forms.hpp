@@ -27,6 +27,8 @@
 #include "xtd/forms/control.hpp"
 #include "xtd/forms/control_event_args.hpp"
 #include "xtd/forms/control_event_handler.hpp"
+#include "xtd/forms/cursor.hpp"
+#include "xtd/forms/cursors.hpp"
 #include "xtd/forms/dock_style.hpp"
 #include "xtd/forms/dialog_result.hpp"
 #include "xtd/forms/form.hpp"
