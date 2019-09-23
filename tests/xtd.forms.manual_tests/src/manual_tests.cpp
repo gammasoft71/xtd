@@ -23,8 +23,6 @@ class form1 : public form {
 public:
   form1() {
     this->text("Cursor example");
-    this->start_position(form_start_position::manual);
-    this->location({200, 200});
     this->client_size({400, 240});
 
     this->list_box_cursors.parent(*this);
