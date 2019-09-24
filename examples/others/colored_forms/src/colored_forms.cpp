@@ -11,13 +11,13 @@ int main() {
   vector<shared_ptr<form>> forms;
   known_color form_color = known_color::alice_blue;
 
-  form main_form;
-  main_form.text("Main Form");
-  main_form.start_position(form_start_position::manual);
-  main_form.location({screen::primary_screen().working_area().width() - main_form.width() - 40, 40});
+  form form_main;
+  form_main.text("Main Form");
+  form_main.start_position(form_start_position::manual);
+  form_main.location({screen::primary_screen().working_area().width() - form_main.width() - 40, 40});
 
   button button;
-  button.parent(main_form);
+  button.parent(form_main);
   button.text("Create");
   button.location({10, 10});
   button.click += [&](const control& sender, const event_args& e) {
@@ -27,7 +27,8 @@ int main() {
     form->visible(true);
     forms.push_back(form);
     form_color = form_color != known_color::yellow_green ? (known_color)((int)form_color + 1) : known_color::alice_blue;
+    form_main.activate();
   };
   
-  application::run(main_form);
+  application::run(form_main);
 }

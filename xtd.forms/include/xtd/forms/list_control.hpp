@@ -29,7 +29,7 @@ namespace xtd {
         
         virtual std::any tag() const {return this->tag_;}
         virtual void tag(const std::any& tag) {this->tag_ = tag;}
-
+        
       private:
         std::string value_;
         std::any tag_;
@@ -39,6 +39,10 @@ namespace xtd {
       
     protected:
       list_control() = default;
+  
+      /// @brief Gets a value indicating whether the list enables selection of list items.
+      /// @return true if the list enables list item selection; otherwise, false. The default is true.
+      virtual bool allow_selection() {return true;}
     };
   }
 }
