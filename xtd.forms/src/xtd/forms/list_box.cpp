@@ -139,27 +139,27 @@ void list_box::wnd_proc(message& message) {
 
 void list_box::wm_mouse_double_click(message& message) {
   this->selected_index(native::list_box::selected_index(this->handle_));
-  this->selected_item_ = this->items_[this->selected_index_];
-  if (this->selection_mode() != forms::selection_mode::none)
+  this->selected_item(this->items_[this->selected_index_]);
+  if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
 
 void list_box::wm_mouse_down(message& message) {
-  if (this->selection_mode() != forms::selection_mode::none)
+  this->selected_index(native::list_box::selected_index(this->handle_));
+  this->selected_item(this->items_[this->selected_index_]);
+  if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
 
 void list_box::wm_mouse_up(message& message) {
   this->selected_index(native::list_box::selected_index(this->handle_));
-  this->selected_item_ = this->items_[this->selected_index_];
-  if (this->selection_mode() != forms::selection_mode::none)
+  this->selected_item(this->items_[this->selected_index_]);
+  if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
 
 void list_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
   this->selected_index(native::list_box::selected_index(this->handle_));
-  this->selected_item_ = this->items_[this->selected_index_];
-  this->on_selected_index_changed(event_args::empty);
-  this->on_selected_value_changed(event_args::empty);
+  this->selected_item(this->items_[this->selected_index_]);
 }

@@ -58,6 +58,8 @@ namespace xtd {
       event<list_box, event_handler<control>> selected_index_changed;
       
     protected:
+      bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
+
       forms::create_params create_params() const override;
 
       void on_handle_created(const event_args& e) override;
