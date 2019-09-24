@@ -145,8 +145,6 @@ void list_box::wm_mouse_double_click(message& message) {
 }
 
 void list_box::wm_mouse_down(message& message) {
-  this->selected_index(native::list_box::selected_index(this->handle_));
-  if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
