@@ -14,7 +14,6 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/check_box.cpp
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp
-  src/xtd/forms/native/wxwidgets/cursor.mm
   src/xtd/forms/native/wxwidgets/cursors.cpp
   src/xtd/forms/native/wxwidgets/control_handler.hpp
   src/xtd/forms/native/wxwidgets/form.cpp
@@ -45,6 +44,12 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_timer.hpp
   src/xtd/forms/native/wxwidgets/wx_track_bar.hpp
 )
+
+if (APPLE)
+  set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES ${XTD_FORMS_NATIVE_WXWIDGETS_SOURCES}
+    src/xtd/forms/native/wxwidgets/cursor.mm
+  )
+endif()
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(src\\xtd\\forms\\native\\wxwidgets FILES ${XTD_FORMS_NATIVE_WXWIDGETS_SOURCES})
