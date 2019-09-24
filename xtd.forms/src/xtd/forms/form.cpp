@@ -14,13 +14,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace {
-/*
-  static std::random_device rand;
-  static int32_t default_location = std::uniform_int_distribution<int32_t> {4, 20}(rand) * 10; // 40;
- */
-}
-
 std::optional<std::reference_wrapper<form>> form::active_form_;
 
 form::form() {
