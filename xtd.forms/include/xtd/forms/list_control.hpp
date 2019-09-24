@@ -11,6 +11,10 @@ namespace xtd {
       public:
         item() = default;
         item(const std::string& value) : value_(value) {}
+        template<typename object_t>
+        item(const object_t& tag) : tag_(tag) {
+          this->value_ = strings::format("{}", tag);
+        }
         item(const std::string& value, const std::any& tag) : value_(value), tag_(tag) {}
         /// @cond
         item(const char* value) : value_(value) {}
