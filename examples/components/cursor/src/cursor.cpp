@@ -5,21 +5,6 @@ using namespace xtd;
 using namespace xtd::forms;
 
 class form1 : public form {
-  class cursor_name_pair {
-  public:
-    cursor_name_pair() {}
-    cursor_name_pair(const forms::cursor& cursor, const string& name) : cursor_(cursor), name_(name)  {}
-    
-    forms::cursor cursor() const {return this->cursor_;}
-    string name() const {return this->name_;}
-    
-    friend std::ostream& operator<<(std::ostream& os, const cursor_name_pair& value) noexcept {return os << value.name();}
-
-  private:
-    forms::cursor cursor_ = cursors::default_cursor();
-    string name_ = "Default";
-  };
-
 public:
   form1() {
     this->text("Cursor example");
@@ -30,11 +15,10 @@ public:
     this->list_box_cursors.parent(*this);
     this->list_box_cursors.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
     this->list_box_cursors.bounds({20, 20, 150, 200});
-    for(auto cursor_name_pair : this->cursor_name_pairs)
-      this->list_box_cursors.items().push_back(cursor_name_pair.name());
+    this->list_box_cursors.items().push_back_range({{"Application Starting", cursors::app_starting()}, {"Arrow", cursors::arrow()}, {"Close hand", cursors::close_hand()}, {"Contextual menu", cursors::contextual_menu()}, {"Cross", cursors::cross()}, {"Default cursor", cursors::default_cursor()}, {"Disappearing item", cursors::disappearing_item()}, {"Drag copy", cursors::drag_copy()}, {"Drag link", cursors::drag_link()}, {"Hand", cursors::hand()}, {"Help", cursors::help()}, {"Horizontal split", cursors::hsplit()}, {"I beam", cursors::ibeam()}, {"No", cursors::no()}, {"No move 2d", cursors::no_move_2d()}, {"No move horizontal", cursors::no_move_horiz()}, {"No move vertical", cursors::no_move_vert()}, {"Open hand", cursors::open_hand()}, {"Pan east", cursors::pan_east()}, {"Pan north east", cursors::pan_ne()}, {"Pan north", cursors::pan_north()}, {"Pan north west", cursors::pan_nw()}, {"Pan south", cursors::pan_south()}, {"Pan south west", cursors::pan_sw()}, {"Pan West", cursors::pan_west()}, {"Size all", cursors::size_all()}, {"Size north-east south-west", cursors::size_nesw()}, {"Size north south", cursors::size_ns()}, {"Size north-west south-east", cursors::size_nwse()}, {"Up arrow", cursors::up_arrow()}, {"Vertical I beam", cursors::vibeam()}, {"Vertical split", cursors::vsplit()}, {"Wait cursor", cursors::wait_cursor()}});
     this->list_box_cursors.selected_index(5);
-    this->list_box_cursors.click += [this] {
-      this->test_zone.cursor(this->cursor_name_pairs[this->list_box_cursors.selected_index()].cursor());
+    this->list_box_cursors.selected_index_changed += [this] {
+      this->test_zone.cursor(any_cast<forms::cursor>(this->list_box_cursors.selected_item().tag()));
     };
 
     this->test_zone.parent(*this);
@@ -45,7 +29,6 @@ public:
   }
   
 private:
-  std::vector<cursor_name_pair> cursor_name_pairs = {{cursors::app_starting(), "Application Starting"}, {cursors::arrow(), "Arrow"}, {cursors::close_hand(), "Close hand"}, {cursors::contextual_menu(), "Contextual menu"}, {cursors::cross(), "Cross"}, {cursors::default_cursor(), "Default cursor"}, {cursors::disappearing_item(), "Disappearing item"}, {cursors::drag_copy(), "Drag copy"}, {cursors::drag_link(), "Drag link"}, {cursors::hand(), "Hand"}, {cursors::help(), "Help"}, {cursors::hsplit(), "Horizontal split"}, {cursors::ibeam(), "I beam"}, {cursors::no(), "No"}, {cursors::no_move_2d(), "No move 2d"}, {cursors::no_move_horiz(), "No move horizontal"}, {cursors::no_move_vert(), "No move vertical"}, {cursors::open_hand(), "Open hand"}, {cursors::pan_east(), "Pan east"}, {cursors::pan_ne(), "Pan north east"}, {cursors::pan_north(), "Pan north"}, {cursors::pan_nw(), "Pan north west"}, {cursors::pan_south(), "Pan south"}, {cursors::pan_sw(), "Pan south west"}, {cursors::pan_west(), "Pan West"}, {cursors::size_all(), "Size all"}, {cursors::size_nesw(), "Size north-east south-west"}, {cursors::size_ns(), "Size north south"}, {cursors::size_nwse(), "Size north-west south-east"}, {cursors::up_arrow(), "Up arrow"}, {cursors::vibeam(), "Vertical I beam"}, {cursors::vsplit(), "Vertical split"}, {cursors::wait_cursor(), "Wait cursor"}};
   list_box list_box_cursors;
   panel test_zone;
 };

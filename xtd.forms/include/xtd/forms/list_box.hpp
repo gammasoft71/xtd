@@ -10,7 +10,33 @@ namespace xtd {
   namespace forms {
     class list_box : public list_control {
     public:
-      using string_collection = layout::arranged_element_collection<std::string>;
+      class list_box_item {
+      public:
+        list_box_item() = default;
+        list_box_item(const char* value) : value_(value) {}
+        list_box_item(const std::string& value) : value_(value) {}
+        list_box_item(const std::string& value, const std::any& tag) : value_(value), tag_(tag) {}
+        list_box_item(const list_box_item& value) : value_(value.value_), tag_(value.tag_) {}
+        
+        std::string value() const {return this->value_;}
+        void value(const std::string& value) {this->value_ = value;}
+        
+        std::any tag() const {return this->tag_;}
+        void tag(const std::any& tag) {this->tag_ = tag;}
+
+        bool operator==(const list_box_item& value) const {return this->value_ == value.value_;}
+        bool operator!=(const list_box_item& value) const {return !this->operator==(value);}
+        bool operator<(const list_box_item& value) const {return this->value_ < value.value_;}
+        bool operator<=(const list_box_item& value) const {return this->value_ <= value.value_;}
+        bool operator>(const list_box_item& value) const {return this->value_ > value.value_;}
+        bool operator>=(const list_box_item& value) const {return this->value_ >= value.value_;}
+
+      private:
+        std::string value_;
+        std::any tag_;
+      };
+      
+      using list_box_item_collection = layout::arranged_element_collection<list_box_item>;
       
       list_box();
 
@@ -23,11 +49,11 @@ namespace xtd {
       
       drawing::size default_size() const override {return{120, 96};}
       
-      string_collection& items() {return this->items_;}
+      list_box_item_collection& items() {return this->items_;}
 
-      const string_collection& items() const {return this->items_;}
+      const list_box_item_collection& items() const {return this->items_;}
       
-      const list_box& items(const string_collection& items) {
+      const list_box& items(const list_box_item_collection& items) {
         this->items_ = items;
         return *this;
       }
@@ -38,11 +64,11 @@ namespace xtd {
       
       virtual std::vector<size_t> selected_indices() const;
       
-      virtual const std::string& selected_item() const {return this->selected_item_;}
+      virtual const list_box_item& selected_item() const {return this->selected_item_;}
       
-      virtual list_box& selected_item(const std::string& selected_item);
+      virtual list_box& selected_item(const list_box_item& selected_item);
       
-      virtual std::vector<std::string> selected_items() const;
+      virtual std::vector<list_box_item> selected_items() const;
       
       virtual forms::selection_mode selection_mode() const {return this->selection_mode_;}
 
@@ -52,7 +78,10 @@ namespace xtd {
       virtual list_box& sorted(bool sorted);
       
       using list_control::text;
-      control& text(const std::string& text) override {return this->selected_item(text);}
+      control& text(const std::string& text) override {
+        this->selected_item_.value(text);
+        return *this;
+      }
 
       event<list_box, event_handler<control>> selected_index_changed;
       
@@ -63,7 +92,7 @@ namespace xtd {
 
       virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
 
-      virtual void on_selected_value_changed(const event_args& e) {this->list_control::text(this->selected_item_);}
+      virtual void on_selected_value_changed(const event_args& e) {this->list_control::text(this->selected_item_.value());}
 
       void wnd_proc(message& message) override;
       
@@ -76,9 +105,9 @@ namespace xtd {
       void wm_mouse_up(message& message);
       
       forms::border_style border_style_ = forms::border_style::fixed_3d;
-      string_collection items_;
+      list_box_item_collection items_;
       size_t selected_index_ = -1;
-      std::string selected_item_;
+      list_box_item selected_item_;
       forms::selection_mode selection_mode_ = forms::selection_mode::one;
       bool sorted_ = false;
     };
