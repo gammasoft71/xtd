@@ -14,11 +14,11 @@ void list_box::delete_item(intptr_t control, size_t index) {
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
 }
 
-size_t list_box::insert_item(intptr_t control, size_t index, const string& item) {
+size_t list_box::insert_item(intptr_t control, size_t index, const string& value) {
   if (control == 0) return -1;
   if (!static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
-    return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(item, index);
-  return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(item);
+    return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
+  return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(value);
 }
 
 size_t list_box::selected_index(intptr_t control) {
