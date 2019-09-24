@@ -7,6 +7,35 @@ namespace xtd {
   namespace forms {
     class list_control : public control {
     public:      
+      class item {
+      public:
+        item() = default;
+        item(const std::string& value) : value_(value) {}
+        item(const std::string& value, const std::any& tag) : value_(value), tag_(tag) {}
+        /// @cond
+        item(const char* value) : value_(value) {}
+        item(const item& value) = default;
+        virtual ~item() = default;
+        bool operator==(const item& value) const {return this->value_ == value.value_;}
+        bool operator!=(const item& value) const {return !this->operator==(value);}
+        bool operator<(const item& value) const {return this->value_ < value.value_;}
+        bool operator<=(const item& value) const {return this->value_ <= value.value_;}
+        bool operator>(const item& value) const {return this->value_ > value.value_;}
+        bool operator>=(const item& value) const {return this->value_ >= value.value_;}
+        /// @endcond
+        
+        virtual std::string value() const {return this->value_;}
+        virtual void value(const std::string& value) {this->value_ = value;}
+        
+        virtual std::any tag() const {return this->tag_;}
+        virtual void tag(const std::any& tag) {this->tag_ = tag;}
+
+      private:
+        std::string value_;
+        std::any tag_;
+      };
+      
+      using item_collection = layout::arranged_element_collection<item>;
       
     protected:
       list_control() = default;

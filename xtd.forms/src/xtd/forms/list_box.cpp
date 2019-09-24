@@ -14,18 +14,18 @@ list_box::list_box() {
   this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
 
-  this->items_.item_added += [&](size_t pos, const list_box_item& item) {
+  this->items_.item_added += [&](size_t pos, const item& item) {
     native::list_box::insert_item(this->handle_, pos, item.value());
     if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
-    list_box_item selected_item;
+    list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 
-  this->items_.item_erased += [&](size_t pos, const list_box_item& item) {
+  this->items_.item_erased += [&](size_t pos, const item& item) {
     native::list_box::delete_item(this->handle_, pos);
 
-    list_box_item selected_item;
+    list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
@@ -45,7 +45,7 @@ list_box& list_box::selected_index(size_t selected_index) {
     this->selected_index_ = selected_index;
     native::list_box::selected_index(this->handle_, this->selected_index_);
 
-    list_box_item selected_item;
+    item selected_item;
     if (this->selected_index_ != -1) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
 
@@ -58,7 +58,7 @@ vector<size_t> list_box::selected_indices() const {
   return native::list_box::selected_indices(this->handle_);
 }
 
-list_box& list_box::selected_item(const list_box_item& selected_item) {
+list_box& list_box::selected_item(const item& selected_item) {
   if (this->selected_item_ != selected_item) {
     this->selected_item_ = selected_item;
     auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
@@ -72,8 +72,8 @@ list_box& list_box::selected_item(const list_box_item& selected_item) {
 }
 
 
-vector<list_box::list_box_item> list_box::selected_items() const {
-  vector<list_box_item> items;
+vector<list_box::item> list_box::selected_items() const {
+  vector<item> items;
   for (size_t index : this->selected_indices())
     items.push_back(this->items_[index]);
   return items;
