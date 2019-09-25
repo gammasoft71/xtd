@@ -23,6 +23,7 @@
 #include "xtd/forms/check_state.hpp"
 #include "xtd/forms/checked_list_box.hpp"
 #include "xtd/forms/close_reason.hpp"
+#include "xtd/forms/combo_box.hpp"
 #include "xtd/forms/common_dialog.hpp"
 #include "xtd/forms/container_control.hpp"
 #include "xtd/forms/control.hpp"
