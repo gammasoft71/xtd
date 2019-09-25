@@ -31,11 +31,9 @@ namespace xtd {
         bool operator>=(const item& value) const {return this->value_ >= value.value_;}
         /// @endcond
         
-        virtual std::string value() const {return this->value_;}
-        virtual void value(const std::string& value) {this->value_ = value;}
+        virtual const std::string& value() const {return this->value_;}
         
         virtual std::any tag() const {return this->tag_;}
-        virtual void tag(const std::any& tag) {this->tag_ = tag;}
         
         std::string to_string() const {return this->value_;}
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}

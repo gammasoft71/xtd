@@ -40,7 +40,7 @@ checked_list_box::checked_list_box() {
       std::sort(this->items_.begin(), this->items_.end());
       update_disabled = false;
     }
-    list_box::item selected_item;
+    checked_list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
@@ -78,12 +78,27 @@ list_box& checked_list_box::selected_item(const item& selected_item) {
   return *this;
 }
 
-
 vector<checked_list_box::item> checked_list_box::selected_items() const {
   vector<item> items;
   for (size_t index : this->selected_indices())
     items.push_back(this->items_[index]);
   return items;
+}
+
+bool checked_list_box::get_item_checked(size_t index) const {
+  return this->items()[index].checked();
+}
+
+const std::string& checked_list_box::get_item_text(size_t index) const {
+  return this->items()[index].value();
+}
+
+void checked_list_box::set_item_checked(size_t index, bool checked) {
+  this->items()[index] = {this->items()[index].value(), checked, this->items()[index].tag()};
+}
+
+void checked_list_box::set_item_text(size_t index, const std::string& text) {
+  this->items()[index] = {text, this->items()[index].checked(), this->items()[index].tag()};
 }
 
 forms::create_params checked_list_box::create_params() const {
@@ -122,23 +137,33 @@ void checked_list_box::on_selected_value_changed(const event_args& e) {
   this->list_box::on_selected_value_changed(e);
 }
 
+void checked_list_box::wnd_proc(message& message) {
+  switch (message.msg()) {
+  case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
+  case WM_LBUTTONUP: this->wm_mouse_up(message); break;
+  case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
+  case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+  default: this->list_box::wnd_proc(message);
+  }
+}
+
 void checked_list_box::wm_mouse_double_click(message& message) {
   this->selected_index(native::checked_list_box::selected_index(this->handle_));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
-    this->list_box::wnd_proc(message);
+    this->list_control::wnd_proc(message);
 }
 
 void checked_list_box::wm_mouse_down(message& message) {
   if (this->allow_selection())
-    this->list_box::wnd_proc(message);
+    this->list_control::wnd_proc(message);
 }
 
 void checked_list_box::wm_mouse_up(message& message) {
   this->selected_index(native::checked_list_box::selected_index(this->handle_));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
-    this->list_box::wnd_proc(message);
+    this->list_control::wnd_proc(message);
 }
 
 void checked_list_box::wm_reflect_command(message& message) {

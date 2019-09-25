@@ -24,7 +24,7 @@ namespace xtd {
           item_t& operator=(const item_t& value) {
             this->type_t::operator=(value);
             if (parent != nullptr) {
-              parent->item_updated(pos, *this);
+              parent->item_updated(pos, static_cast<const type_t&>(*this));
               //parent = nullptr;
             }
             return *this;
@@ -67,13 +67,13 @@ namespace xtd {
         /// @endcond
         
         /// @brief Occurs when an item is added to the collection.
-        event<arranged_element_collection, delegate<void(size_t, value_type item)>> item_added;
+        event<arranged_element_collection, delegate<void(size_t, const type_t& item)>> item_added;
 
         /// @brief Occurs when an item is updated in the collection.
-        event<arranged_element_collection, delegate<void(size_t, value_type item)>> item_updated;
+        event<arranged_element_collection, delegate<void(size_t, const type_t& item)>> item_updated;
 
         /// @brief Occurs when an item is erased from the collection.
-        event<arranged_element_collection, delegate<void(size_t, value_type item)>> item_erased;
+        event<arranged_element_collection, delegate<void(size_t, const type_t& item)>> item_erased;
         
         allocator_t get_allocator() const {return this->collection_.get_allocator();}
         
