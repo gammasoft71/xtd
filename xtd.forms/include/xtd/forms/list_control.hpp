@@ -5,8 +5,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Provides a common implementation of members for the list_box and combo_box classes.
+    /// @remarks The list_control class provides implementations of common elements for the list_box and combo_box controls.
+    /// @remarks The following properties are of primary concern to users of a data-bound list_box or combo_box: data_source, display_member, selected_value, and value_member properties.
     class list_control : public control {
-    public:      
+    public:
       class item {
       public:
         item() = default;
@@ -34,19 +37,49 @@ namespace xtd {
         virtual std::any tag() const {return this->tag_;}
         virtual void tag(const std::any& tag) {this->tag_ = tag;}
         
+        std::string to_string() const {return this->value_;}
+        friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
+        
       private:
         std::string value_;
         std::any tag_;
       };
-      
+   
       using item_collection = layout::arranged_element_collection<item>;
-      
+
+      /// @brief Gets the zero-based index of the currently selected item.
+      /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      virtual size_t selected_index() const {return this->selected_index_;}
+      /// @brief When overridden in a derived class, Sets the zero-based index of the currently selected item.
+      /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
+      virtual list_control& selected_index(size_t selected_index) = 0;
+
+      virtual std::string value_member() const {return this->value_member_;}
+      virtual list_control& value_member(const std::string& value_member);
+                  
+      event<list_control, event_handler<control>> selected_index_changed;
+
+      event<list_control, event_handler<control>> selected_value_changed;
+
+      event<list_control, event_handler<control>> value_member_changed;
+
     protected:
       list_control() = default;
   
       /// @brief Gets a value indicating whether the list enables selection of list items.
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
       virtual bool allow_selection() {return true;}
+      
+      virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
+
+      virtual void on_selected_value_changed(const event_args& e) {this->selected_value_changed(*this, e);}
+
+      virtual void on_value_member_changed(const event_args& e) {this->value_member_changed(*this, e);}
+
+      /// @cond
+      size_t selected_index_ = -1;
+      std::string value_member_;
+      /// @endcond;
     };
   }
 }

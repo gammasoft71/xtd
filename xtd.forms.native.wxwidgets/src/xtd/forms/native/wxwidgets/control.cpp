@@ -7,6 +7,7 @@
 #include "hdc_wrapper.hpp"
 #include "wx_button.hpp"
 #include "wx_check_box.hpp"
+#include "wx_checked_list_box.hpp"
 #include "wx_control.hpp"
 #include "wx_form.hpp"
 #include "wx_group_box.hpp"
@@ -54,6 +55,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   application::initialize(); // Must be first
   if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
   if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
+  if (create_params.class_name() == "checkedlistbox") return reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params));
   if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
   if (create_params.class_name() == "groupbox") return reinterpret_cast<intptr_t>(new wx_group_box(create_params));
   if (create_params.class_name() == "label") return reinterpret_cast<intptr_t>(new wx_label(create_params));

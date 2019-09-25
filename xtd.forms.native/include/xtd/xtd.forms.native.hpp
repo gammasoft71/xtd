@@ -11,6 +11,7 @@
 #include "forms/native/application.hpp"
 #include "forms/native/button.hpp"
 #include "forms/native/check_box.hpp"
+#include "forms/native/checked_list_box.hpp"
 #include "forms/native/control.hpp"
 #include "forms/native/cursor.hpp"
 #include "forms/native/cursors.hpp"
