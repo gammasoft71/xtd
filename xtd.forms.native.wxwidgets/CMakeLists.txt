@@ -12,6 +12,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/application.cpp
   src/xtd/forms/native/wxwidgets/button.cpp
   src/xtd/forms/native/wxwidgets/check_box.cpp
+  src/xtd/forms/native/wxwidgets/checked_list_box.cpp
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp
   src/xtd/forms/native/wxwidgets/cursors.cpp
@@ -32,6 +33,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_application.hpp
   src/xtd/forms/native/wxwidgets/wx_button.hpp
   src/xtd/forms/native/wxwidgets/wx_check_box.hpp
+  src/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp
   src/xtd/forms/native/wxwidgets/wx_control.hpp
   src/xtd/forms/native/wxwidgets/wx_form.hpp
   src/xtd/forms/native/wxwidgets/wx_group_box.hpp

@@ -17,6 +17,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/application.hpp
   include/xtd/forms/native/button.hpp
   include/xtd/forms/native/check_box.hpp
+  include/xtd/forms/native/checked_list_box.hpp
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/cursor.hpp
   include/xtd/forms/native/cursors.hpp

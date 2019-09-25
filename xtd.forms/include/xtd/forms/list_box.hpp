@@ -9,17 +9,17 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     class list_box : public list_control {
-    public:
+    public:      
       list_box();
 
-      forms::border_style border_style() const {return this->border_style_;}
-      list_box& border_style(forms::border_style border_style);
+      virtual forms::border_style border_style() const {return this->border_style_;}
+      virtual list_box& border_style(forms::border_style border_style);
       
-      drawing::color default_back_color() const override {return drawing::system_colors::window();}
+      virtual drawing::color default_back_color() const override {return drawing::system_colors::window();}
       
-      drawing::color default_fore_color() const override {return drawing::system_colors::window_text();}
+      virtual drawing::color default_fore_color() const override {return drawing::system_colors::window_text();}
       
-      drawing::size default_size() const override {return{120, 96};}
+      virtual drawing::size default_size() const override {return{120, 96};}
       
       item_collection& items() {return this->items_;}
 
@@ -30,17 +30,16 @@ namespace xtd {
         return *this;
       }
       
-      virtual size_t selected_index() const {return this->selected_index_;}
-      
-      virtual list_box& selected_index(size_t selected_index);
+      using list_control::selected_index;
+      list_control& selected_index(size_t selected_index) override;
       
       virtual std::vector<size_t> selected_indices() const;
+
+      const item& selected_item() const {return this->selected_item_;}
       
-      virtual const item& selected_item() const {return this->selected_item_;}
+      list_box& selected_item(const item& selected_item);
       
-      virtual list_box& selected_item(const item& selected_item);
-      
-      virtual std::vector<item> selected_items() const;
+      std::vector<item> selected_items() const;
       
       virtual forms::selection_mode selection_mode() const {return this->selection_mode_;}
 
@@ -50,12 +49,8 @@ namespace xtd {
       virtual list_box& sorted(bool sorted);
       
       using list_control::text;
-      control& text(const std::string& text) override {
-        this->selected_item_.value(text);
-        return *this;
-      }
+      control& text(const std::string& text) override {return *this;}
 
-      event<list_box, event_handler<control>> selected_index_changed;
       
     protected:
       bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
@@ -64,23 +59,20 @@ namespace xtd {
 
       void on_handle_created(const event_args& e) override;
 
-      virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
-
-      virtual void on_selected_value_changed(const event_args& e) {this->list_control::text(this->selected_item_.value());}
+      void on_selected_value_changed(const event_args& e) override;
 
       void wnd_proc(message& message) override;
       
       virtual void wm_reflect_command(message& message);
       
-      void wm_mouse_double_click(message& message);
+      virtual void wm_mouse_double_click(message& message);
 
-      void wm_mouse_down(message& message);
+      virtual void wm_mouse_down(message& message);
       
-      void wm_mouse_up(message& message);
+      virtual void wm_mouse_up(message& message);
       
       forms::border_style border_style_ = forms::border_style::fixed_3d;
       item_collection items_;
-      size_t selected_index_ = -1;
       item selected_item_;
       forms::selection_mode selection_mode_ = forms::selection_mode::one;
       bool sorted_ = false;
