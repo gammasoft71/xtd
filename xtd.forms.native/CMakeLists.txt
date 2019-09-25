@@ -18,6 +18,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/button.hpp
   include/xtd/forms/native/check_box.hpp
   include/xtd/forms/native/checked_list_box.hpp
+  include/xtd/forms/native/combo_box.hpp
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/cursor.hpp
   include/xtd/forms/native/cursors.hpp
@@ -34,6 +35,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/timer.hpp
   include/xtd/forms/native/track_bar.hpp
   include/xtd/forms/native/window_button.hpp
+  include/xtd/forms/native/window_combo_box.hpp
   include/xtd/forms/native/window_list_box.hpp
   include/xtd/forms/native/window_message_box.hpp
   include/xtd/forms/native/window_message_keys.hpp
