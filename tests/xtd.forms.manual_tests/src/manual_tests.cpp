@@ -41,8 +41,9 @@ int main() {
   button1.location({20, 240});
   button1.text("Add");
   button1.click += [&] {
-    list_box1.items()[2] = "1 Item 3"s;
-    list_box1.items()[2].tag(42);
+    //list_box1.items()[2] = {list_box1.items()[2].value(), !list_box1.items()[2].checked()};
+    list_box1.set_item_text(2, "42");
+    list_box1.set_item_checked(2, !list_box1.get_item_checked(2));
   };
   
   application::run(form1);

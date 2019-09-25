@@ -30,7 +30,6 @@ namespace xtd {
         /// @endcond
 
         virtual bool checked() const {return this->checked_;}
-        virtual void checked(bool checked) {this->checked_ = checked;}
         
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
 
@@ -64,9 +63,17 @@ namespace xtd {
       
       using list_box::text;
       control& text(const std::string& text) override {
-        this->selected_item_.value(text);
+        this->selected_item_ = {text};
         return *this;
       }
+      
+      bool get_item_checked(size_t index) const;
+
+      const std::string& get_item_text(size_t index) const;
+
+      void set_item_checked(size_t index, bool checked);
+
+      void set_item_text(size_t index, const std::string& text);
 
     protected:
       bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
@@ -77,6 +84,8 @@ namespace xtd {
 
       void on_selected_value_changed(const event_args& e) override;
 
+      void wnd_proc(message& message) override;
+      
       void wm_reflect_command(message& message) override;
       
       void wm_mouse_double_click(message& message) override;

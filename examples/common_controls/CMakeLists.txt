@@ -4,6 +4,7 @@ project(xtd.forms.common_controls.examples)
 
 add_subdirectory(button)
 add_subdirectory(check_box)
+add_subdirectory(checked_list_box)
 add_subdirectory(control)
 add_subdirectory(label)
 add_subdirectory(list_box)
