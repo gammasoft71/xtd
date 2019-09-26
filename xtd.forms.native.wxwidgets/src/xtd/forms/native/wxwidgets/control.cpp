@@ -179,7 +179,7 @@ void control::init() {
 drawing::rectangle control::client_rectangle(intptr_t control) {
   if (control == 0) return {};
   wxRect rect = reinterpret_cast<control_handler*>(control)->control()->GetClientRect();
-  return {rect.GetX(), rect.GetY(), rect.GetWidth(), rect.GetHeight()};
+  return {{rect.GetX(), rect.GetY()}, client_size(control)};
 }
 
 drawing::size control::client_size(intptr_t control) {
