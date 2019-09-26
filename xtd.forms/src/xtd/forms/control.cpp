@@ -482,7 +482,7 @@ void control::on_parent_back_color_changed(const event_args &e) {
 }
 
 void control::on_parent_changed(const event_args &e) {
-  if (this->parent().has_value()) this->parent_size_ = this->parent().value().get().size();
+  if (this->parent().has_value()) this->parent_size_ = this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size();
   if (this->can_raise_events()) this->parent_changed(*this, e);
 }
 
@@ -707,7 +707,7 @@ void control::do_layout() {
   }
   
   if (this->parent().has_value()) {
-    point diff = this->parent().value().get().size() - this->parent_size_;
+    point diff = (this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size()) - this->parent_size_;
 
     if ((this->anchor_ & anchor_styles::left) == anchor_styles::left && (this->anchor_ & anchor_styles::right) != anchor_styles::right)
       this->left(this->left());
@@ -742,7 +742,7 @@ void control::internal_destroy_handle(intptr_t handle) {
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
   if (!this->get_state(state::layout_deferred)) {
     this->on_layout(event_args::empty);
-    this->parent_size_ = this->parent().value().get().size();
+    this->parent_size_ = this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size();
   }
 }
 

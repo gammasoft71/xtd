@@ -24,6 +24,77 @@
 #include <wx/dcclient.h>
 #include <wx/dcscreen.h>
 #include <wx/font.h>
+#include <wx/settings.h>
+
+namespace {
+#if defined (__WXGTK__)
+  static bool is_window_manager_ready = false;
+
+  bool wait_window_manager() {
+    if (wxTopLevelWindows.size() == 0) return false;
+    static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
+    while (value == -1) {
+      value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, wxTopLevelWindows[0]);
+      wxYield();
+    }
+    is_window_manager_ready = true;
+    return true;
+  }
+
+  wxSize GetFrameDecorationsize(wxFrame& frame) {
+    wxSize size;
+
+    if (frame.GetMenuBar() != nullptr)
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_MENU_Y, &frame));
+
+    return size;
+  }
+
+  wxSize GetDecorationsize(wxTopLevelWindow& topLevelWindow) {
+    wxSize size;
+
+    if (topLevelWindow.HasFlag(wxRESIZE_BORDER)) {
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_BORDER_Y, &topLevelWindow) * 2);
+      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_BORDER_X, &topLevelWindow) * 2);
+    }
+
+    if (topLevelWindow.HasFlag(wxCAPTION))
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, &topLevelWindow));
+
+    if (topLevelWindow.HasFlag(wxALWAYS_SHOW_SB)) {
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_HSCROLL_Y, &topLevelWindow));
+      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_VSCROLL_X, &topLevelWindow));
+    }
+
+    if (dynamic_cast<wxFrame*>(&topLevelWindow) != nullptr)
+      size += GetFrameDecorationsize(static_cast<wxFrame&>(topLevelWindow));
+
+    return size;
+  }
+
+  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
+    return topLevelWindow.GetSize() - GetDecorationsize(topLevelWindow);
+  }
+
+  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
+    topLevelWindow.SetSize(size + GetDecorationsize(topLevelWindow));
+  }
+#else
+  static bool is_window_manager_ready = true;
+
+  bool wait_window_manager() {
+    return true;
+  }
+
+  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
+    return topLevelWindow.GetClientSize();
+  }
+
+  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
+    topLevelWindow.SetClientSize(size);
+  }
+#endif
+}
 
 using namespace std;
 using namespace xtd;
@@ -113,13 +184,22 @@ drawing::rectangle control::client_rectangle(intptr_t control) {
 
 drawing::size control::client_size(intptr_t control) {
   if (control == 0) return {};
-  wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetClientSize();
+
+  wxSize size;
+  if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
+    size = GetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
+  else
+    size = reinterpret_cast<control_handler*>(control)->control()->GetClientSize();
   return {size.GetWidth(), size.GetHeight()};
 }
 
 void control::client_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetClientSize(size.width(), size.height());
+
+  if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
+    SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {size.width(), size.height()});
+  else
+    reinterpret_cast<control_handler*>(control)->control()->SetClientSize(size.width(), size.height());
 }
 
 void control::cursor(intptr_t control, intptr_t cursor) {
@@ -217,11 +297,14 @@ bool control::visible(intptr_t control) {
 void control::visible(intptr_t control, bool visible) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Show(visible);
+
+  if (!is_window_manager_ready && visible == true && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
+    wait_window_manager();
 }
 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
-  
+
   if (!reinterpret_cast<control_handler*>(control)->control()->IsBeingDeleted())
     reinterpret_cast<control_handler*>(control)->control()->Refresh();
 }
