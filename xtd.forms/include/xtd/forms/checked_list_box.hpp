@@ -13,8 +13,6 @@ namespace xtd {
         item(const std::string& value) : list_box::item(value) {}
         item(const std::string& value, bool checked) : list_box::item(value), checked_(checked) {}
         template<typename object_t>
-        item(const object_t& tag) : list_box::item(tag) {}
-        template<typename object_t>
         item(const object_t& tag, bool checked) : list_box::item(tag), checked_(checked) {}
         item(const std::string& value, const std::any& tag) : list_box::item(value, tag) {}
         item(const std::string& value, bool checked, const std::any& tag) : list_box::item(value, tag), checked_(checked) {}
