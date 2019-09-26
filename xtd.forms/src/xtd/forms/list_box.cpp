@@ -81,12 +81,12 @@ list_box& list_box::selected_item(const item& selected_item) {
     else {
       size_t index = it - this->items_.begin();
       this->selected_index(index);
+      this->selected_item_ = selected_item;
       this->on_selected_value_changed(event_args::empty);
     }
   }
   return *this;
 }
-
 
 vector<list_box::item> list_box::selected_items() const {
   vector<item> items;
