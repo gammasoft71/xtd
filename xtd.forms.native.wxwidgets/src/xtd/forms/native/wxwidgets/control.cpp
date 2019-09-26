@@ -20,6 +20,7 @@
 #include "wx_radio_button.hpp"
 #include "wx_text_box.hpp"
 #include "wx_track_bar.hpp"
+#include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
 #include <wx/dcclient.h>
 #include <wx/dcscreen.h>
@@ -146,6 +147,16 @@ intptr_t control::create_paint_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
   else  hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->control());
+  return reinterpret_cast<intptr_t>(hdc_wrapper);
+}
+
+intptr_t control::create_double_buffered_paint_graphics(intptr_t control) {
+  xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
+  wxColour back_color = reinterpret_cast<control_handler*>(control)->control()->GetBackgroundColour();
+  reinterpret_cast<control_handler*>(control)->control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
+  reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(back_color);
+  if (control == 0) hdc_wrapper->create<wxScreenDC>();
+  else  hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
