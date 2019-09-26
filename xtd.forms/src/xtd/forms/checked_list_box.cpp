@@ -67,13 +67,15 @@ vector<size_t> checked_list_box::selected_indices() const {
 
 list_box& checked_list_box::selected_item(const item& selected_item) {
   if (this->selected_item_ != selected_item) {
-    this->selected_item_ = selected_item;
     auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
-    size_t index = -1;
-    if (it != this->items_.end()) index = it - this->items_.begin();
-    this->selected_index(index);
-    if (index == -1) this->selected_item_ = "";
-    this->on_selected_value_changed(event_args::empty);
+    if (it == this->items_.end())
+      this->selected_item_ = this->selected_index() != -1 ? this->items()[this->selected_index()] : "";
+    else {
+      size_t index = it - this->items_.begin();
+      this->selected_index(index);
+      this->selected_item_ = selected_item;
+      this->on_selected_value_changed(event_args::empty);
+    }
   }
   return *this;
 }
