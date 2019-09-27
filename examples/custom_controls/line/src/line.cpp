@@ -1,4 +1,3 @@
-#define TRACE
 #include <xtd/xtd.forms>
 
 using namespace std;
