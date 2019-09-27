@@ -18,9 +18,6 @@ source_group(src\\xtd\\forms\\native\\cocoa FILES ${XTD_FORMS_NATIVE_COCOA_SOURC
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif ()
 
 # Add packages
 #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa")
