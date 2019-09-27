@@ -126,7 +126,7 @@ forms::create_params checked_list_box::create_params() const {
 }
 
 void checked_list_box::on_handle_created(const event_args& e) {
-  this->list_box::on_handle_created(e);
+  this->list_control::on_handle_created(e);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::checked_list_box::insert_item(this->handle_, index, this->items_[index].value(), this->items_[index].checked());
   if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);
