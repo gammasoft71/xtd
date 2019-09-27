@@ -18,9 +18,10 @@ endif ()
 
 # Projects
 add_subdirectory(xtd.forms.native)
-#add_subdirectory(xtd.forms.native.cocoa)
-#add_subdirectory(xtd.forms.native.gtk3)
-#add_subdirectory(xtd.forms.native.win32)
+add_subdirectory(xtd.forms.native.cocoa)
+add_subdirectory(xtd.forms.native.gtk3)
+add_subdirectory(xtd.forms.native.qt5)
+add_subdirectory(xtd.forms.native.win32)
 add_subdirectory(xtd.forms.native.wxwidgets)
 add_subdirectory(xtd.forms)
 if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
