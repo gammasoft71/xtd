@@ -79,3 +79,4 @@
 #include "xtd/forms/timer.hpp"
 #include "xtd/forms/track_bar.hpp"
 #include "xtd/forms/up_down_base.hpp"
+#include "xtd/forms/user_control.hpp"

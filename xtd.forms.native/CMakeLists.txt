@@ -34,6 +34,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/text_box.hpp
   include/xtd/forms/native/timer.hpp
   include/xtd/forms/native/track_bar.hpp
+  include/xtd/forms/native/user_control.hpp
   include/xtd/forms/native/window_button.hpp
   include/xtd/forms/native/window_combo_box.hpp
   include/xtd/forms/native/window_list_box.hpp
