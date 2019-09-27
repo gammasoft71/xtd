@@ -22,9 +22,6 @@ if (MSVC)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif ()
 
-# Add packages
-#add win32 package.
-
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_NATIVE_WIN32_SOURCES})
 if (MSVC)
@@ -32,7 +29,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} xtd.forms.native ${wxWidgets_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} xtd.forms.native)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
