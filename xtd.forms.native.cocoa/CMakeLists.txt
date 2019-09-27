@@ -9,7 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_NATIVE_COCOA_SOURCES
-  src/xtd/forms/native/cocoa/application.cpp
+  src/xtd/forms/native/cocoa/forms.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
