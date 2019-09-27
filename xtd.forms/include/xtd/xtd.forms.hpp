@@ -19,6 +19,7 @@
 #include "xtd/forms/button.hpp"
 #include "xtd/forms/button_base.hpp"
 #include "xtd/forms/cancel_event_args.hpp"
+#include "xtd/forms/cancel_event_handler.hpp"
 #include "xtd/forms/check_box.hpp"
 #include "xtd/forms/check_state.hpp"
 #include "xtd/forms/checked_list_box.hpp"

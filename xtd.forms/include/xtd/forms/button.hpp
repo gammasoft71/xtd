@@ -22,7 +22,11 @@ namespace xtd {
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
       button() = default;
 
+      /// @brief Gets the mode by which the button automatically resizes itself.
+      /// @return One of the AutoSizeMode values. The default value is grow_only.
       virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
+      /// @brief Sets the mode by which the button automatically resizes itself.
+      /// @param value One of the AutoSizeMode values. The default value is growonly.
       virtual button& auto_size_mode(forms::auto_size_mode value);
 
       /// @brief Gets the value returned to the parent form when the button is clicked.
@@ -44,8 +48,13 @@ namespace xtd {
       void perform_click() override;
 
     protected:
+      /// @brief Gets a create_params on the base class when creating a window.
+      /// @return A create_params object on the base class when creating a window.
+      /// @remarks Inheriting classes can override this property to add extra functionality, but must first call the create_params constructor on the base class to verify that the control continues to work correctly.
       forms::create_params create_params() const override;
       
+      /// @brief Raises the Click event.
+      /// @param e An event_args that contains the event data.
       void on_click(const event_args& e) override;
 
       /// @brief Processes Windows messages.
