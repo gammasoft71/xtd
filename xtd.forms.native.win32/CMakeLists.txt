@@ -9,7 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_NATIVE_WIN32_SOURCES
-  src/xtd/forms/native/win32/application.cpp
+  src/xtd/forms/native/win32/forms.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
