@@ -18,6 +18,7 @@
 #include "anchor_styles.hpp"
 #include "auto_size_mode.hpp"
 #include "bounds_specified.hpp"
+#include "component.hpp"
 #include "control_event_handler.hpp"
 #include "control_styles.hpp"
 #include "cursors.hpp"
@@ -46,7 +47,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of control control.
     /// @include control.cpp
-    class control : public iwin32_window {
+    class control : public component, public iwin32_window {
     protected:
       /// @cond
       enum class state {
@@ -159,7 +160,7 @@ namespace xtd {
       /// @cond
       control(control&&) = default;
       control(const control&) = delete;
-      virtual ~control();
+      ~control();
       /// @endcond
       
       /// @brief Gets the edges of the container to which a control is bound and determines how a control is resized with its parent.
@@ -246,7 +247,7 @@ namespace xtd {
       
       /// @brief Determines if events can be raised on the control.
       /// @return true if the control ican raise events; otherwise, false.
-      virtual bool can_raise_events() const {return this->can_raise_events_;}
+      bool can_raise_events() const override {return this->can_raise_events_;}
 
       /// @brief Gets the rectangle that represents the client area of the control.
       /// @return A rectangle that represents the client area of the control.
