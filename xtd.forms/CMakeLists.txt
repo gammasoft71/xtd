@@ -81,6 +81,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/timer.hpp
   include/xtd/forms/track_bar.hpp
   include/xtd/forms/up_down_base.hpp
+  include/xtd/forms/user_control.hpp
 )
 
 set(XTD_FORMS_LAYOUT_INCLUDES
@@ -113,6 +114,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/track_bar.cpp
+  src/xtd/forms/user_control.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

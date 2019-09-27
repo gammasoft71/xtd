@@ -26,3 +26,4 @@
 #include "forms/native/text_box.hpp"
 #include "forms/native/timer.hpp"
 #include "forms/native/track_bar.hpp"
+#include "forms/native/user_control.hpp"

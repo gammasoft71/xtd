@@ -31,6 +31,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/text_box.cpp
   src/xtd/forms/native/wxwidgets/timer.cpp
   src/xtd/forms/native/wxwidgets/track_bar.cpp
+  src/xtd/forms/native/wxwidgets/user_control.cpp
   src/xtd/forms/native/wxwidgets/wx_application.hpp
   src/xtd/forms/native/wxwidgets/wx_button.hpp
   src/xtd/forms/native/wxwidgets/wx_check_box.hpp
@@ -47,6 +48,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_text_box.hpp
   src/xtd/forms/native/wxwidgets/wx_timer.hpp
   src/xtd/forms/native/wxwidgets/wx_track_bar.hpp
+  src/xtd/forms/native/wxwidgets/wx_user_control.hpp
 )
 
 if (APPLE)

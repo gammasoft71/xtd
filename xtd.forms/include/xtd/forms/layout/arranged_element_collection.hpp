@@ -18,9 +18,10 @@ namespace xtd {
       public:
         class item_t :public type_t {
         public:
+          item_t() = default;
           template <typename ...args_t>
           item_t(args_t&& ...args) : type_t(args...) {}
-          
+
           item_t& operator=(const item_t& value) {
             this->type_t::operator=(value);
             if (parent != nullptr) {
