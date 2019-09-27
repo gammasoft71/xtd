@@ -11,7 +11,7 @@ namespace examples {
       this->text("Control example");
 
       this->control1.parent(*this);
-      //this->control1.curosr(cursors::hand);
+      this->control1.cursor(cursors::hand());
       this->control1.back_color(color::spring_green);
       this->control1.location({50, 50});
       this->control1.size({100, 50});
