@@ -18,9 +18,6 @@ source_group(src\\xtd\\forms\\native\\gtk3 FILES ${XTD_FORMS_NATIVE_GTK3_SOURCES
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif ()
 
 # Add packages
 #add gtk3 package.
@@ -32,7 +29,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} xtd.forms.native ${wxWidgets_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} xtd.forms.native)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
