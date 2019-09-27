@@ -18,6 +18,10 @@ endif ()
 
 # Projects
 add_subdirectory(xtd.drawing.native)
+add_subdirectory(xtd.drawing.native.cocoa)
+add_subdirectory(xtd.drawing.native.gtk3)
+add_subdirectory(xtd.drawing.native.qt5)
+add_subdirectory(xtd.drawing.native.win32)
 add_subdirectory(xtd.drawing.native.wxwidgets)
 add_subdirectory(xtd.drawing)
 if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
