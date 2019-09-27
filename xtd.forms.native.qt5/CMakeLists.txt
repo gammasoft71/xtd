@@ -9,7 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_NATIVE_QT5_SOURCES
-  src/xtd/forms/native/qt5/application.cpp
+  src/xtd/forms/native/qt5/forms.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
