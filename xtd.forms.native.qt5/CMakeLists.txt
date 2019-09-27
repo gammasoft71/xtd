@@ -23,7 +23,7 @@ if (MSVC)
 endif ()
 
 # Add packages
-#add cocoa package.
+#find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_NATIVE_QT5_SOURCES})
@@ -32,7 +32,8 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} xtd.forms.native ${wxWidgets_LIBRARIES})
+#target_link_libraries(${PROJECT_NAME} xtd.forms.native Qt5::Widgets)
+target_link_libraries(${PROJECT_NAME} xtd.forms.native)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
