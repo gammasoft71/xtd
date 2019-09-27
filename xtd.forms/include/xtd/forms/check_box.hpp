@@ -1,7 +1,8 @@
 #pragma once
 #include "appearance.hpp"
-#include "check_state.hpp"
 #include "button_base.hpp"
+#include "check_state.hpp"
+#include "content_alignment.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -34,7 +35,13 @@ namespace xtd {
       /// @remarks If appearance value is set to normal, the check_box has a typical appearance. If the value is set to button, the check_box appears like a toggle button, which can be toggled to an up or down state.
       virtual check_box& appearance(forms::appearance appearance);
 
+      /// @brief Gets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
+      /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
       virtual bool auto_check() const {return this->auto_check_;}
+      /// @brief Sets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
+      /// @param auto_check true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
       virtual check_box& auto_check(bool auto_check);
       
       virtual bool checked() const {return this->checked_;}
