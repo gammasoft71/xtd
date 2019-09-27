@@ -27,6 +27,7 @@
 #include "xtd/forms/combo_box.hpp"
 #include "xtd/forms/common_dialog.hpp"
 #include "xtd/forms/container_control.hpp"
+#include "xtd/forms/content_alignment.hpp"
 #include "xtd/forms/control.hpp"
 #include "xtd/forms/control_event_args.hpp"
 #include "xtd/forms/control_event_handler.hpp"
