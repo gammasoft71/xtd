@@ -7,7 +7,8 @@ namespace xtd {
   namespace forms {
     class text_box_base : public control {
     public:      
-      
+      forms::cursor default_cursor() const override {return forms::cursors::ibeam();}
+
     protected:
       text_box_base() = default;
     };
