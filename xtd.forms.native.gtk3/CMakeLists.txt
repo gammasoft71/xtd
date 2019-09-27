@@ -9,7 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_NATIVE_GTK3_SOURCES
-  src/xtd/forms/native/gtk3/application.cpp
+  src/xtd/forms/native/gtk3/forms.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
