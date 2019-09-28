@@ -44,6 +44,9 @@ namespace xtd {
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
       virtual check_box& auto_check(bool auto_check);
       
+      virtual content_alignment check_align() const {return this->check_align_;}
+      virtual check_box& check_align(content_alignment check_align);
+      
       virtual bool checked() const {return this->checked_;}
       virtual check_box& checked(bool checked);
       
@@ -83,6 +86,7 @@ namespace xtd {
       bool auto_check_ = true;
       bool three_state_ = 0;
       bool checked_ = false;
+      content_alignment check_align_ = content_alignment::middle_left;
       forms::check_state check_state_ = forms::check_state::unchecked;
       /// @endcond
     };

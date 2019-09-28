@@ -1,45 +1,25 @@
 #include <xtd/xtd.forms>
 
 using namespace std;
-using namespace std::string_literals;
 using namespace xtd;
 using namespace xtd::forms;
 
-
 int main() {
   form form1;
-  
-  combo_box list_box1;
-  list_box1.parent(form1);
-  list_box1.location({20, 20});
-  //list_box1.sorted(true);
 
-  list_box1.items().push_back("Item 1");
-  list_box1.items().push_back("Item 3");
-  list_box1.items().push_back("Item 2");
+  check_box check_box1;
+  check_box1.parent(form1);
+  check_box1.location({20, 20});
+  check_box1.three_state(true);
+  check_box1.text("check box 1");
 
-  list_box1.value_member("Hello");
-  
-  list_box1.selected_index(1);
-  
-  list_box1.selected_item("Item 4");
-  
-  list_box1.items()[0] = "My Item 1";
-  
-  list_box1.text("New text");
-  
-  cdebug << format("list_box1.selected_index = {}", list_box1.selected_index()) << endl;
-  cdebug << format("list_box1.selected_item = {}", list_box1.selected_item()) << endl;
-  cdebug << format("list_box1.value_member = {}", list_box1.value_member()) << endl;
-  cdebug << format("list_box1.text = {}", list_box1.text()) << endl;
-
-  button button1;
-  button1.parent(form1);
-  button1.location({20, 240});
-  button1.text("Add");
-  button1.click += [&] {
-    //list_box1.items()[2] = {list_box1.items()[2].value(), !list_box1.items()[2].checked()};
-    list_box1.items()[2] = "42";
+  combo_box combo_box1;
+  combo_box1.parent(form1);
+  combo_box1.location({20, 60});
+  combo_box1.items().push_back_range({{"top_left", content_alignment::top_left}, {"top_center", content_alignment::top_center}, {"top_right", content_alignment::top_right}, {"middle_left", content_alignment::middle_left}, {"middle_center", content_alignment::middle_center}, {"middle_right", content_alignment::middle_right}, {"bottom_left", content_alignment::bottom_left}, {"bottom_center", content_alignment::bottom_center}, {"bottom_right", content_alignment::bottom_right}});
+  combo_box1.selected_index(3);
+  combo_box1.selected_index_changed += [&] {
+    check_box1.check_align(any_cast<content_alignment>(combo_box1.selected_item().tag()));
   };
   
   application::run(form1);

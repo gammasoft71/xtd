@@ -376,7 +376,15 @@ namespace xtd {
           
           if ((style & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
           else if ((style & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
+
+          if ((style & BS_TOP) == BS_TOP) wx_style |= wxALIGN_TOP;
+          else if ((style & BS_VCENTER) == BS_VCENTER) wx_style |= wxALIGN_CENTER_VERTICAL;
+          else if ((style & BS_BOTTOM) == BS_BOTTOM) wx_style |= wxALIGN_BOTTOM;
           
+          if ((style & BS_LEFT) == BS_LEFT) wx_style |= wxALIGN_LEFT;
+          else if ((style & BS_CENTER) == BS_CENTER) wx_style |= wxALIGN_CENTER_HORIZONTAL;
+          else if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxALIGN_RIGHT;
+
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
 
@@ -437,6 +445,10 @@ namespace xtd {
         static long radio_button_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxRB_GROUP;
           
+          if ((style & BS_TOP) == BS_TOP) wx_style |= wxALIGN_TOP;
+          if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxALIGN_RIGHT;
+          if ((style & BS_BOTTOM) == BS_BOTTOM) wx_style |= wxALIGN_BOTTOM;
+
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
 
@@ -525,6 +537,7 @@ namespace xtd {
         if (event.GetEventType() == wxEVT_BUTTON) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED,  event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_CHECKBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_CHECKLISTBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_COMBOBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_LISTBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_RADIOBUTTON) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SLIDER) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), (this->event_handler_->control()->GetWindowStyle() & wxSL_VERTICAL) == wxSL_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBPOSITION, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
