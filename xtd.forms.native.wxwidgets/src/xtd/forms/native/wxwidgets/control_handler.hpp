@@ -342,6 +342,29 @@ namespace xtd {
         virtual void SetSize(int32_t width, int32_t height) {
           this->control_->SetSize(width, height);
         }
+
+        static long button_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          if ((style & BS_TOP) == BS_TOP) wx_style |= wxBU_TOP;
+          else if ((style & BS_BOTTOM) == BS_BOTTOM) wx_style |= wxBU_BOTTOM;
+
+          if ((style & BS_LEFT) == BS_LEFT) wx_style |= wxBU_LEFT;
+          else if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxBU_RIGHT;
+
+          return wx_style; // | common_window_style_to_wx_style(style, ex_style);
+        }
+
+        static long check_box_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = wxCHK_3STATE;
+          
+          if ((style & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
+          else if ((style & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
+
+          if ((style & BS_RIGHTBUTTON) == BS_RIGHTBUTTON) wx_style |= wxALIGN_RIGHT;
+
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
+        }
         
         static long combo_box_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
@@ -363,29 +386,6 @@ namespace xtd {
           else wx_style |= wxBORDER_NONE;
           
           return wx_style;
-        }
-
-        static long button_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
-          
-          return wx_style; // | common_window_style_to_wx_style(style, ex_style);
-        }
-
-        static long check_box_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = wxCHK_3STATE;
-          
-          if ((style & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
-          else if ((style & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
-
-          if ((style & BS_TOP) == BS_TOP) wx_style |= wxALIGN_TOP;
-          else if ((style & BS_VCENTER) == BS_VCENTER) wx_style |= wxALIGN_CENTER_VERTICAL;
-          else if ((style & BS_BOTTOM) == BS_BOTTOM) wx_style |= wxALIGN_BOTTOM;
-          
-          if ((style & BS_LEFT) == BS_LEFT) wx_style |= wxALIGN_LEFT;
-          else if ((style & BS_CENTER) == BS_CENTER) wx_style |= wxALIGN_CENTER_HORIZONTAL;
-          else if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxALIGN_RIGHT;
-
-          return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
 
         static long control_to_wx_style(size_t style, size_t ex_style) {
@@ -444,10 +444,8 @@ namespace xtd {
 
         static long radio_button_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxRB_GROUP;
-          
-          if ((style & BS_TOP) == BS_TOP) wx_style |= wxALIGN_TOP;
-          if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxALIGN_RIGHT;
-          if ((style & BS_BOTTOM) == BS_BOTTOM) wx_style |= wxALIGN_BOTTOM;
+                    
+          if ((style & BS_RIGHTBUTTON) == BS_RIGHTBUTTON) wx_style |= wxALIGN_RIGHT;
 
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }

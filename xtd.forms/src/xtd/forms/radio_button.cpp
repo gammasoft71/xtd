@@ -42,6 +42,14 @@ radio_button& radio_button::checked(bool checked) {
   return *this;
 }
 
+radio_button& radio_button::check_align(content_alignment check_align) {
+  if (this->check_align_ != check_align) {
+    this->check_align_ = check_align;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
 void radio_button::perform_click() {
   this->on_click(event_args::empty);
 }
@@ -54,6 +62,13 @@ forms::create_params radio_button::create_params() const {
   else create_params.style(create_params.style() | BS_RADIOBUTTON);
   if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
 
+  switch (this->check_align_) {
+    case content_alignment::top_right:
+    case content_alignment::middle_right:
+    case content_alignment::bottom_right: create_params.style(create_params.style() | BS_RIGHTBUTTON); break;
+    default: break;
+  }
+  
   return create_params;
 }
 

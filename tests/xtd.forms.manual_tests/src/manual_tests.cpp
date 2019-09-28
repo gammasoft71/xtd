@@ -10,8 +10,7 @@ int main() {
   check_box check_box1;
   check_box1.parent(form1);
   check_box1.location({20, 20});
-  check_box1.three_state(true);
-  check_box1.text("check box 1");
+  check_box1.text("radio 1");
 
   combo_box combo_box1;
   combo_box1.parent(form1);

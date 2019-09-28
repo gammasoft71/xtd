@@ -1,5 +1,6 @@
 #pragma once
 #include "control.hpp"
+#include "content_alignment.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -42,6 +43,13 @@ namespace xtd {
       /// @return The default Size of the control.
       drawing::size default_size() const override {return {75, 25};}
       
+      /// @brief Gets the alignment of the text on the button control.
+      /// @return One of the content_alignment values. The default is middle_center.
+      virtual content_alignment text_align() const {return this->text_align_;}
+      /// @brief Gets the alignment of the text on the button control.
+      /// @param text_align One of the content_alignment values. The default is middle_center.
+      virtual button_base& text_align(content_alignment text_align);
+
     protected:
       /// @brief Initializes a new instance of the ButtonBase class.
       button_base();
@@ -58,6 +66,7 @@ namespace xtd {
     protected:
       /// @cond
       bool auto_ellipsis_ = false;
+      content_alignment text_align_ = content_alignment::middle_left;
       /// @endcond
     };
   }
