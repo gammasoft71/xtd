@@ -47,6 +47,13 @@ namespace xtd {
       /// @param checked true if the check box is checked; otherwise, false.
       virtual radio_button& checked(bool checked);
       
+      /// @brief Gets the horizontal and vertical alignment of the check mark on a check_box control.
+      /// @return One of the content_alignment values. The default value is middle_left.
+      virtual content_alignment check_align() const {return this->check_align_;}
+      /// @brief Sets the horizontal and vertical alignment of the check mark on a check_box control.
+      /// @param check_align One of the content_alignment values. The default value is middle_left.
+      virtual radio_button& check_align(content_alignment check_align);
+
       /// @brief Gets the default size of the control.
       /// @return Returns a size with a width of 104 and a height of 24.
       drawing::size default_size() const override {return {104, 24};}
@@ -103,6 +110,7 @@ namespace xtd {
       forms::appearance appearance_ = forms::appearance::normal;
       bool auto_check_ = true;
       bool checked_ = false;
+      content_alignment check_align_ = content_alignment::middle_left;
       /// @endcond
     };
   }

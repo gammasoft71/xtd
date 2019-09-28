@@ -26,16 +26,16 @@ check_box& check_box::auto_check(bool auto_check) {
   return *this;
 }
 
+check_box& check_box::checked(bool checked) {
+  this->check_state(checked ? forms::check_state::checked : forms::check_state::unchecked);
+  return *this;
+}
+
 check_box& check_box::check_align(content_alignment check_align) {
   if (this->check_align_ != check_align) {
     this->check_align_ = check_align;
     this->recreate_handle();
   }
-  return *this;
-}
-
-check_box& check_box::checked(bool checked) {
-  this->check_state(checked ? forms::check_state::checked : forms::check_state::unchecked);
   return *this;
 }
 
@@ -70,15 +70,9 @@ forms::create_params check_box::create_params() const {
   if (this->appearance_ == forms::appearance::button) create_params.style(create_params.style() | BS_PUSHLIKE);
 
   switch (this->check_align_) {
-    case content_alignment::top_left: create_params.style(create_params.style() | BS_TOP | BS_LEFT); break;
-    case content_alignment::top_center: create_params.style(create_params.style() | BS_TOP | BS_CENTER); break;
-    case content_alignment::top_right: create_params.style(create_params.style() | BS_TOP | BS_RIGHT); break;
-    case content_alignment::middle_left: create_params.style(create_params.style() | BS_VCENTER | BS_LEFT); break;
-    case content_alignment::middle_center: create_params.style(create_params.style() | BS_VCENTER | BS_CENTER); break;
-    case content_alignment::middle_right: create_params.style(create_params.style() | BS_VCENTER | BS_RIGHT); break;
-    case content_alignment::bottom_left: create_params.style(create_params.style() | BS_BOTTOM | BS_LEFT); break;
-    case content_alignment::bottom_center: create_params.style(create_params.style() | BS_BOTTOM | BS_CENTER); break;
-    case content_alignment::bottom_right: create_params.style(create_params.style() | BS_BOTTOM | BS_RIGHT); break;
+    case content_alignment::top_right:
+    case content_alignment::middle_right:
+    case content_alignment::bottom_right: create_params.style(create_params.style() | BS_RIGHTBUTTON); break;
     default: break;
   }
   
