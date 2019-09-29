@@ -9,12 +9,12 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void checked_list_box::checked(intptr_t control, size_t index, bool checked) {
+void checked_list_box::check_state(intptr_t control, size_t index, int check_state) {
   if (control == 0) return;
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(index, checked);
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(index, check_state != 0);
 }
 
-bool checked_list_box::checked(intptr_t control, size_t index) {
+int checked_list_box::check_state(intptr_t control, size_t index) {
   if (control == 0) return false;
   return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsChecked(index);
 }

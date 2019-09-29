@@ -1,37 +1,32 @@
 #include <xtd/xtd.forms>
 
+using namespace std;
 using namespace xtd;
-using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("Combo box example");
+      text("Checked list box example");
+      client_size({200, 240});
+
+      checked_list_box1.parent(*this);
+      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+      checked_list_box1.location({20, 20});
+      checked_list_box1.size({160, 200});
+
+      for (int index = 1; index <= 20; ++index)
+        checked_list_box1.items().push_back({strings::format("Item {}", index), index % 2 != 0});
+      checked_list_box1.selected_index(0);
       
-      combo_box1.location({10, 10});
-      combo_box1.items().push_back_range({"Item1", "Item2", "Item3"});
-      combo_box1.selected_index(0);
-      combo_box1.parent(*this);
-      
-      combo_box2.location({10, 50});
-      combo_box2.drop_down_style(combo_box_style::drop_down_list);
-      combo_box2.items().push_back_range({"Item1", "Item2", "Item3"});
-      combo_box2.selected_index(1);
-      combo_box2.parent(*this);
-      
-      combo_box3.location({10, 90});
-      combo_box3.drop_down_style(combo_box_style::simple);
-      combo_box3.items().push_back_range({"Item1", "Item2", "Item3"});
-      combo_box3.selected_index(2);
-      combo_box3.parent(*this);
+      checked_list_box1.item_check += [this](const control& sender, item_check_event_args& e) {
+        cdebug << format("selected items = {{{}}}", strings::join(", ", checked_list_box1.checked_items())) << endl;
+      };
     }
     
   private:
-    combo_box combo_box1;
-    combo_box combo_box2;
-    combo_box combo_box3;
+    checked_list_box checked_list_box1;
   };
 }
 

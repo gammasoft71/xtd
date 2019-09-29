@@ -8,8 +8,8 @@ namespace xtd {
       class checked_list_box {
       public:
         checked_list_box() = delete;
-        static void checked(intptr_t control, size_t index, bool checked);
-        static bool checked(intptr_t control, size_t index);
+        static void check_state(intptr_t control, size_t index, int check_state);
+        static int check_state(intptr_t control, size_t index);
         static void delete_item(intptr_t control, size_t index);
         static void insert_item(intptr_t control, size_t index, const std::string& value, bool checked);
         static size_t selected_index(intptr_t control);

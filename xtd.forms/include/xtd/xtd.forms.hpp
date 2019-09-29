@@ -45,6 +45,8 @@
 #include "xtd/forms/group_box.hpp"
 #include "xtd/forms/ibutton_control.hpp"
 #include "xtd/forms/imessage_filter.hpp"
+#include "xtd/forms/item_check_event_args.hpp"
+#include "xtd/forms/item_check_event_handler.hpp"
 #include "xtd/forms/iwin32_window.hpp"
 #include "xtd/forms/key_event_args.hpp"
 #include "xtd/forms/key_event_handler.hpp"

@@ -1,4 +1,5 @@
 #pragma once
+#include "item_check_event_handler.hpp"
 #include "list_box.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,11 +18,11 @@ namespace xtd {
       public:
         item() = default;
         item(const std::string& value) : list_box::item(value) {}
-        item(const std::string& value, bool checked) : list_box::item(value), checked_(checked) {}
-        template<typename object_t>
-        item(const object_t& tag, bool checked) : list_box::item(tag), checked_(checked) {}
+        item(const std::string& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const std::string& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {}
         item(const std::string& value, const std::any& tag) : list_box::item(value, tag) {}
-        item(const std::string& value, bool checked, const std::any& tag) : list_box::item(value, tag), checked_(checked) {}
+        item(const std::string& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const std::string& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
         /// @cond
         item(const char* value) : list_box::item(value) {}
         item(const item& value) = default;
@@ -33,23 +34,32 @@ namespace xtd {
         bool operator>=(const item& value) const {return this->list_box::item::operator>=(value);}
         /// @endcond
 
-        virtual bool checked() const {return this->checked_;}
+        virtual bool checked() const {return this->check_state_ != forms::check_state::unchecked;}
+        
+        virtual forms::check_state check_state() const {return this->check_state_;}
         
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
 
       private:
-        bool checked_ = false;
+        forms::check_state check_state_ = forms::check_state::unchecked;
       };
       
       /// @brief Represents the collection of items in a checked_list_box.
       using object_collection = layout::arranged_element_collection<item>;
 
+      /// @brief Encapsulates the collection of indexes of checked items (including items in an indeterminate state)
       using checked_index_collection = std::vector<size_t>;
 
+      /// @brief Encapsulates the collection of checked items, including items in an indeterminate state, in a checked_list_box control.
       using checked_item_collection = std::vector<item>;
 
+      /// @brief Initializes a new instance of the checked_list_box class.
+      /// @remarks By default, checked_list_box uses set_style and the resize_redraw value of control_styles to specify that the control is redrawn when resized.
       checked_list_box();
     
+      /// @brief Collection of checked indexes in this checked_list_box.
+      /// @return The checked_list_box::checked_index_collection collection for the checked_list_box.
+      /// @remarks The collection of checked indexes is a subset of the indexes into the collection of all items in the checked_list_box control. These indexes specify items in a checked or indeterminate state.
       checked_index_collection checked_indices() const;
       
       checked_item_collection checked_items() const;
@@ -81,14 +91,18 @@ namespace xtd {
       }
       
       bool get_item_checked(size_t index) const;
+      
+      forms::check_state get_item_check_state(size_t index) const;
 
       const std::string& get_item_text(size_t index) const;
 
       void set_item_checked(size_t index, bool checked);
 
+      void set_item_check_state(size_t index, forms::check_state check_state);
+
       void set_item_text(size_t index, const std::string& text);
       
-      event<checked_list_box, event_handler<control>> item_check;
+      event<checked_list_box, item_check_event_handler<control>> item_check;
 
     protected:
       bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
@@ -97,7 +111,7 @@ namespace xtd {
 
       void on_handle_created(const event_args& e) override;
       
-      virtual void on_item_check(const event_args& e) {this->item_check(*this, e);}
+      virtual void on_item_check(item_check_event_args& e) {this->item_check(*this, e);}
       
       void on_selected_value_changed(const event_args& e) override;
 
