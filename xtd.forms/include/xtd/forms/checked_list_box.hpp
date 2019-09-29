@@ -42,17 +42,23 @@ namespace xtd {
       };
       
       /// @brief Represents the collection of items in a checked_list_box.
-      using onject_collection = layout::arranged_element_collection<item>;
+      using object_collection = layout::arranged_element_collection<item>;
 
-      using checked_item_collection = layout::arranged_element_collection<item>;
+      using checked_index_collection = std::vector<size_t>;
+
+      using checked_item_collection = std::vector<item>;
 
       checked_list_box();
     
-      onject_collection& items() {return this->items_;}
-
-      const onject_collection& items() const {return this->items_;}
+      checked_index_collection checked_indices() const;
       
-      const list_box& items(const onject_collection& items) {
+      checked_item_collection checked_items() const;
+      
+      object_collection& items() {return this->items_;}
+
+      const object_collection& items() const {return this->items_;}
+      
+      const list_box& items(const object_collection& items) {
         this->items_ = items;
         return *this;
       }
@@ -81,6 +87,8 @@ namespace xtd {
       void set_item_checked(size_t index, bool checked);
 
       void set_item_text(size_t index, const std::string& text);
+      
+      event<checked_list_box, event_handler<control>> item_check;
 
     protected:
       bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
@@ -88,7 +96,9 @@ namespace xtd {
       forms::create_params create_params() const override;
 
       void on_handle_created(const event_args& e) override;
-
+      
+      virtual void on_item_check(const event_args& e) {this->item_check(*this, e);}
+      
       void on_selected_value_changed(const event_args& e) override;
 
       void wnd_proc(message& message) override;
@@ -101,7 +111,7 @@ namespace xtd {
       
       void wm_mouse_up(message& message) override;
       
-      onject_collection items_;
+      object_collection items_;
       item selected_item_;
     };
   }

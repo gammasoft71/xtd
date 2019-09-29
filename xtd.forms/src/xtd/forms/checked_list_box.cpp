@@ -46,6 +46,20 @@ checked_list_box::checked_list_box() {
   };
 }
 
+checked_list_box::checked_index_collection checked_list_box::checked_indices() const {
+  checked_index_collection indices;
+  for(size_t index = 0; index < this->items_.size(); index++)
+    if (this->items_[index].checked()) indices.push_back(index);
+  return indices;
+}
+ 
+checked_list_box::checked_item_collection checked_list_box::checked_items() const {
+  checked_item_collection items;
+  for(checked_list_box::item item : this->items_)
+    if (item.checked()) items.push_back(item);
+  return items;
+}
+
 list_control& checked_list_box::selected_index(size_t selected_index) {
   if (this->selected_index_ != selected_index) {
     if (selected_index != -1 && selected_index > this->items_.size()) throw invalid_argument("out of range index");
@@ -96,7 +110,10 @@ const std::string& checked_list_box::get_item_text(size_t index) const {
 }
 
 void checked_list_box::set_item_checked(size_t index, bool checked) {
-  this->items()[index] = {this->items()[index].value(), checked, this->items()[index].tag()};
+  if (this->items()[index].checked() != checked) {
+    this->items()[index] = {this->items()[index].value(), checked, this->items()[index].tag()};
+    this->on_item_check(event_args::empty);
+  }
 }
 
 void checked_list_box::set_item_text(size_t index, const std::string& text) {
@@ -170,6 +187,12 @@ void checked_list_box::wm_mouse_up(message& message) {
 
 void checked_list_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
-  this->selected_index(native::checked_list_box::selected_index(this->handle_));
+  size_t selected_index = native::checked_list_box::selected_index(this->handle_);
+  if (selected_index != -1) {
+    bool checked = native::checked_list_box::checked(this->handle_, selected_index);
+    if (this->items_[selected_index].checked() != checked)
+      this->set_item_checked(selected_index, checked);
+  }
+  this->selected_index(selected_index);
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
 }
