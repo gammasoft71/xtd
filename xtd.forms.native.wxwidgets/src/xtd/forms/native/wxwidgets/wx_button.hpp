@@ -17,11 +17,15 @@ namespace xtd {
         static long button_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
-          if ((style & BS_TOP) == BS_TOP) wx_style |= wxBU_TOP;
-          if ((style & BS_BOTTOM) == BS_BOTTOM) wx_style |= wxBU_BOTTOM;
-          if ((style & BS_LEFT) == BS_LEFT) wx_style |= wxBU_LEFT;
-          if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxBU_RIGHT;
-
+          if ((style & BS_VCENTER) != BS_VCENTER) {
+            if ((style & BS_TOP) == BS_TOP) wx_style |= wxBU_TOP;
+            else if ((style & BS_BOTTOM) == BS_BOTTOM) wx_style |= wxBU_BOTTOM;
+          }
+          if ((style & BS_CENTER) != BS_CENTER) {
+            if ((style & BS_LEFT) == BS_LEFT) wx_style |= wxBU_LEFT;
+            else if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxBU_RIGHT;
+          }
+          
           return wx_style; // | common_window_style_to_wx_style(style, ex_style);
         }
       };
