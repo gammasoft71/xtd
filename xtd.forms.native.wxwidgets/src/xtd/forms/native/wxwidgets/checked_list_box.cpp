@@ -14,6 +14,11 @@ void checked_list_box::checked(intptr_t control, size_t index, bool checked) {
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(index, checked);
 }
 
+bool checked_list_box::checked(intptr_t control, size_t index) {
+  if (control == 0) return false;
+  return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsChecked(index);
+}
+
 void checked_list_box::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);

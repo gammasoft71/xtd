@@ -1,5 +1,6 @@
 #include <xtd/xtd.forms>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -15,9 +16,13 @@ namespace examples {
       checked_list_box1.location({20, 20});
       checked_list_box1.size({160, 200});
 
-      for (int index = 1; index <= 50; ++index)
+      for (int index = 1; index <= 20; ++index)
         checked_list_box1.items().push_back({strings::format("Item {}", index), index % 2 != 0});
       checked_list_box1.selected_index(0);
+      
+      checked_list_box1.item_check += [this] {
+        cdebug << format("selected items = {{{}}}", strings::join(", ", checked_list_box1.checked_items())) << endl;
+      };
     }
     
   private:
