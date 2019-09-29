@@ -45,6 +45,9 @@ namespace xtd {
       using list_control::text;
       control& text(const std::string& text) override {return *this;}
       
+      void begin_update();
+      void end_update();
+
       event<combo_box, event_handler<control>> drop_down_style_changed;
       
     protected:

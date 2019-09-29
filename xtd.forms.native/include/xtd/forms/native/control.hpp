@@ -18,7 +18,6 @@ namespace xtd {
         control() = delete;
         static drawing::color back_color(intptr_t control);
         static void back_color(intptr_t control, const drawing::color& color);
-        static void begin_update(intptr_t control);
         static intptr_t create(const create_params& create_params);
         static intptr_t create_graphics(intptr_t control);
         static intptr_t create_paint_graphics(intptr_t control);
@@ -33,7 +32,6 @@ namespace xtd {
         static void cursor(intptr_t control, intptr_t cursor);
         static bool enabled(intptr_t control);
         static void enabled(intptr_t control, bool enabled);
-        static void end_update(intptr_t control);
         static drawing::color fore_color(intptr_t control);
         static void fore_color(intptr_t control, const drawing::color& color);
         static drawing::font font(intptr_t control);

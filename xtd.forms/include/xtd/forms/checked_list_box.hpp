@@ -89,7 +89,10 @@ namespace xtd {
         this->selected_item_ = {text};
         return *this;
       }
-      
+  
+      void begin_update();
+      void end_update();
+
       bool get_item_checked(size_t index) const;
       
       forms::check_state get_item_check_state(size_t index) const;

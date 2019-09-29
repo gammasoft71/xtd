@@ -9,24 +9,28 @@ namespace examples {
   public:
     form1() {
       text("Checked list box example");
-      client_size({200, 240});
+      client_size({200, 280});
 
-      checked_list_box1.parent(*this);
-      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-      checked_list_box1.location({20, 20});
-      checked_list_box1.size({160, 200});
+      list_box1.parent(*this);
+      list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+      list_box1.location({20, 20});
+      list_box1.size({160, 200});
 
-      for (int index = 1; index <= 20; ++index)
-        checked_list_box1.items().push_back({strings::format("Item {}", index), index % 2 != 0});
-      checked_list_box1.selected_index(0);
-      
-      checked_list_box1.item_check += [this](const control& sender, item_check_event_args& e) {
-        cdebug << format("selected items = {{{}}}", strings::join(", ", checked_list_box1.checked_items())) << endl;
+      button_add.parent(*this);
+      button_add.location({20, 240});
+      button_add.text("Add...");
+      button_add.click += [this] {
+        list_box1.begin_update();
+        for (size_t index = 0; index < 10000; index++) {
+          list_box1.items().push_back(strings::format("Item {}", index));
+        }
+        list_box1.end_update();
       };
     }
     
   private:
-    checked_list_box checked_list_box1;
+    list_box list_box1;
+    button button_add;
   };
 }
 

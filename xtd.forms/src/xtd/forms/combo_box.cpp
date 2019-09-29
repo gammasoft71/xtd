@@ -96,6 +96,14 @@ combo_box& combo_box::sorted(bool sorted) {
   return *this;
 }
 
+void combo_box::begin_update() {
+  native::combo_box::begin_update(this->handle_);
+}
+
+void combo_box::end_update() {
+  native::combo_box::end_update(this->handle_);
+}
+
 forms::create_params combo_box::create_params() const {
   forms::create_params create_params = this->list_control::create_params();
 
