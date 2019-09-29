@@ -13,8 +13,11 @@ namespace xtd {
     class create_params {
     public:
       create_params() = default;
+      
+      /// @cond
       create_params(const create_params&) = default;
       create_params& operator=(create_params&) = default;
+      /// @endcond
       
       const std::string& caption() const {return this->caption_;}
       

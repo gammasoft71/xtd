@@ -6,9 +6,9 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    this->text("Panel example");
-    this->location({200, 200});
-    this->client_size({640, 480});
+    text("Panel example");
+    location({200, 200});
+    client_size({640, 480});
     
     panel1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
     panel1.parent(*this);

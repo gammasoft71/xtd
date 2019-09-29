@@ -8,15 +8,15 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      this->text("Control example");
+      text("Control example");
 
-      this->control1.parent(*this);
-      this->control1.cursor(cursors::hand());
-      this->control1.back_color(color::spring_green);
-      this->control1.location({50, 50});
-      this->control1.size({100, 50});
-      this->control1.click += [&](const control& sender, const event_args& e) {
-        this->control1.back_color(this->control1.back_color() == color::spring_green ? color::orange_red : color::spring_green);
+      control1.parent(*this);
+      control1.cursor(cursors::hand());
+      control1.back_color(color::spring_green);
+      control1.location({50, 50});
+      control1.size({100, 50});
+      control1.click += [this](const control& sender, const event_args& e) {
+        control1.back_color(control1.back_color() == color::spring_green ? color::orange_red : color::spring_green);
       };
     }
     

@@ -12,7 +12,7 @@ namespace examples {
     
   private:
     void on_application_idle(const event_args& e) {
-      this->text(strings::format("{}", ++this->counter));
+      text(strings::format("{}", ++counter));
     }
     
     int counter = 0;

@@ -13,6 +13,8 @@ combo_box::combo_box() {
   this->back_color_ = this->default_back_color();
   this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
+  this->drop_down_width_ = this->default_size().width();
+  this->drop_down_height_ = this->font().get_height() * 9;
 
   this->items_.item_added += [&](size_t pos, const item& item) {
     native::combo_box::insert_item(this->handle_, pos, item.value());
@@ -44,6 +46,15 @@ combo_box::combo_box() {
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
+}
+
+combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
+  if (this->drop_down_style_ != drop_down_style) {
+    this->drop_down_style_ = drop_down_style;
+    this->recreate_handle();
+    this->on_drop_down_style_changed(event_args::empty);
+  }
+  return *this;
 }
 
 list_control& combo_box::selected_index(size_t selected_index) {
@@ -91,8 +102,18 @@ forms::create_params combo_box::create_params() const {
   create_params.class_name("combobox");
 
   if (this->sorted_) create_params.style(create_params.style() | CBS_SORT);
-
+  
+  switch (this->drop_down_style_) {
+    case combo_box_style::drop_down_list: create_params.style(create_params.style() | CBS_DROPDOWNLIST); break;
+    case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
+    case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
+  }
+  
   return create_params;
+}
+
+void combo_box::on_drop_down_style_changed(const event_args& e) {
+  this->drop_down_style_changed(*this, e);
 }
 
 void combo_box::on_handle_created(const event_args& e) {

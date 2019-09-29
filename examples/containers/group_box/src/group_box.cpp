@@ -6,9 +6,9 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    this->text("Group box example");
-    this->location({200, 200});
-    this->client_size({640, 480});
+    text("Group box example");
+    location({200, 200});
+    client_size({640, 480});
     
     group_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);
     group_box1.parent(*this);
