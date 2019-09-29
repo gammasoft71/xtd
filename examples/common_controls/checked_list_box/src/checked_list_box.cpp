@@ -20,8 +20,8 @@ namespace examples {
         checked_list_box1.items().push_back({strings::format("Item {}", index), index % 2 != 0});
       checked_list_box1.selected_index(0);
       
-      checked_list_box1.item_check += [this] {
-        cdebug << format("selected items = {{{}}}", strings::join(", ", checked_list_box1.checked_items())) << endl;
+      checked_list_box1.item_check += [](const control& sender, item_check_event_args& e) {
+        cdebug << format("item_check, index={}, new_value={}, current_value={}", e.index(), e.new_value(), e.current_value()) << endl;
       };
     }
     

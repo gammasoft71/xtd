@@ -105,6 +105,10 @@ bool checked_list_box::get_item_checked(size_t index) const {
   return this->items()[index].checked();
 }
 
+forms::check_state checked_list_box::get_item_check_state(size_t index) const {
+  return this->items()[index].check_state();
+}
+
 const std::string& checked_list_box::get_item_text(size_t index) const {
   return this->items()[index].value();
 }
@@ -112,7 +116,12 @@ const std::string& checked_list_box::get_item_text(size_t index) const {
 void checked_list_box::set_item_checked(size_t index, bool checked) {
   if (this->items()[index].checked() != checked) {
     this->items()[index] = {this->items()[index].value(), checked, this->items()[index].tag()};
-    this->on_item_check(event_args::empty);
+  }
+}
+
+void checked_list_box::set_item_check_state(size_t index, forms::check_state check_state) {
+  if (this->items()[index].check_state() != check_state) {
+    this->items()[index] = {this->items()[index].value(), check_state, this->items()[index].tag()};
   }
 }
 
@@ -189,9 +198,13 @@ void checked_list_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
   size_t selected_index = native::checked_list_box::selected_index(this->handle_);
   if (selected_index != -1) {
-    bool checked = native::checked_list_box::checked(this->handle_, selected_index);
-    if (this->items_[selected_index].checked() != checked)
-      this->set_item_checked(selected_index, checked);
+    forms::check_state check_state = static_cast<forms::check_state>(native::checked_list_box::check_state(this->handle_, selected_index));
+    if (this->items_[selected_index].check_state() != check_state) {
+      item_check_event_args item_check_event_args(selected_index, check_state, this->items_[selected_index].check_state());
+      this->on_item_check(item_check_event_args);
+      if (item_check_event_args.new_value() != check_state) native::checked_list_box::check_state(this->handle_, selected_index, static_cast<int>(item_check_event_args.new_value()));
+      this->set_item_check_state(selected_index, item_check_event_args.new_value());
+    }
   }
   this->selected_index(selected_index);
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
