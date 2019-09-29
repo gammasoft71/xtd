@@ -11,7 +11,15 @@ namespace xtd {
       public:
         wx_label(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxStaticText>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), control_handler::label_to_wx_style(create_params.style(), create_params.ex_style()));
+          this->control_handler::create<wxStaticText>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), label_to_wx_style(create_params.style(), create_params.ex_style()));
+        }
+        
+        static long label_to_wx_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+          
+          if ((style & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
+          
+          return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
       };
     }
