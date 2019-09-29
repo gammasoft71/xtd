@@ -9,7 +9,10 @@ namespace xtd {
       public:
         wx_timer(delegate<void(const event_args&)> tick) : tick_(tick) {
           this->timer_.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-            this->tick_(event_args::empty);
+            try {
+              this->tick_(event_args::empty);
+            } catch(...) {
+            }
           });
         }
         
