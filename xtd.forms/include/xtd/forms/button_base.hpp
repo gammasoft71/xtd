@@ -66,7 +66,7 @@ namespace xtd {
     protected:
       /// @cond
       bool auto_ellipsis_ = false;
-      content_alignment text_align_ = content_alignment::middle_left;
+      content_alignment text_align_ = content_alignment::middle_center;
       /// @endcond
     };
   }
