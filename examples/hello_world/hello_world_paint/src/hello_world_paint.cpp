@@ -9,39 +9,39 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      this->text("Wiggly");
-      this->client_size({330, 130});
-      this->controls().push_back_range({this->panel, this->text_box});
+      text("Wiggly");
+      client_size({330, 130});
+      controls().push_back_range({panel, text_box});
 
-      this->panel.bounds({20, 20, 290, 60});
-      this->panel.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
-      this->panel.back_color(system_colors::window());
-      this->panel.font(drawing::font(this->panel.font().name(), 22.0f));
-      this->panel.paint += {*this, &form1::on_panel_paint};
+      panel.bounds({20, 20, 290, 60});
+      panel.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
+      panel.back_color(system_colors::window());
+      panel.font(drawing::font(panel.font().name(), 22.0f));
+      panel.paint += {*this, &form1::on_panel_paint};
       
-      this->text_box.location({20, 90});
-      this->text_box.text("Hello, World!");
-      this->text_box.width(290);
-      this->text_box.anchor(anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+      text_box.location({20, 90});
+      text_box.text("Hello, World!");
+      text_box.width(290);
+      text_box.anchor(anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
 
-      this->timer.interval(60);
-      this->timer.tick += {*this, &form1::on_timer};
-      this->timer.enabled(true);
+      timer.interval(60);
+      timer.tick += {*this, &form1::on_timer};
+      timer.enabled(true);
     }
     
   private:
     void on_panel_paint(const control& sender, paint_event_args& e) {
-      point pos((e.clip_rectangle().size().width() - (int)e.graphics().measure_string(this->text_box.text(), this->panel.font()).width()) / 2, (e.clip_rectangle().size().height() - (int)e.graphics().measure_string(this->text_box.text(), this->panel.font()).height()) / 2);
-      for (int i = 0; i < this->text_box.text().length(); i++) {
-        int index = (this->step + i) % sin.size();
-        e.graphics().draw_string(strings::format("{}", this->text_box.text()[i]), this->panel.font(), solid_brush(color::from_hsb((float)(15 - index) * 16 / 255 * 360, 1.0f, 0.75f)), point(pos.x(), pos.y() + sin[index] * (e.clip_rectangle().height() - this->panel.font().height()) / 400));
-        pos.x(pos.x() + (int)e.graphics().measure_string(strings::format("{}", this->text_box.text()[i]), this->panel.font()).width());
+      point pos((e.clip_rectangle().size().width() - (int)e.graphics().measure_string(text_box.text(), panel.font()).width()) / 2, (e.clip_rectangle().size().height() - (int)e.graphics().measure_string(text_box.text(), panel.font()).height()) / 2);
+      for (int i = 0; i < text_box.text().length(); i++) {
+        int index = (step + i) % sin.size();
+        e.graphics().draw_string(strings::format("{}", text_box.text()[i]), panel.font(), solid_brush(color::from_hsb((float)(15 - index) * 16 / 255 * 360, 1.0f, 0.75f)), point(pos.x(), pos.y() + sin[index] * (e.clip_rectangle().height() - panel.font().height()) / 400));
+        pos.x(pos.x() + (int)e.graphics().measure_string(strings::format("{}", text_box.text()[i]), panel.font()).width());
       }
     }
     
     void on_timer() {
-      this->step++;
-      this->refresh();
+      step++;
+      refresh();
     }
     
     forms::panel panel;

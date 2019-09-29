@@ -126,6 +126,11 @@ void control::back_color(intptr_t control, const color& color) {
 #endif
 }
 
+void control::begin_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Freeze();
+}
+
 intptr_t control::create(const forms::create_params& create_params) {
   application::initialize(); // Must be first
   if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
@@ -230,6 +235,11 @@ void control::enabled(intptr_t control, bool enabled) {
   reinterpret_cast<control_handler*>(control)->control()->Enable(enabled);
 }
 
+void control::end_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Thaw();
+}
+
 color control::fore_color(intptr_t control) {
   if (control == 0) return color::empty;
   wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetForegroundColour();
@@ -271,11 +281,6 @@ void control::location(intptr_t control, const point& location) {
   reinterpret_cast<control_handler*>(control)->control()->SetPosition({location.x(), location.y()});
 }
 
-void control::resume_drawing(intptr_t control) {
-  if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->Thaw();
-}
-
 drawing::size control::size(intptr_t control) {
   if (control == 0) return {};
   wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
@@ -285,11 +290,6 @@ drawing::size control::size(intptr_t control) {
 void control::size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
-}
-
-void control::suspend_drawing(intptr_t control) {
-  if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->Freeze();
 }
 
 string control::text(intptr_t control) {

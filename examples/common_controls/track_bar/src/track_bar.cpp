@@ -6,29 +6,29 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    this->client_size({300, 300});
-    this->text("Track bar example");
+    client_size({300, 300});
+    text("Track bar example");
     
-    this->progress_bar1.location({100, 50});
-    this->progress_bar1.maximum(200);
-    this->progress_bar1.orientation(forms::orientation::vertical);
-    this->progress_bar1.parent(*this);
-    this->progress_bar1.size({23, 200});
+    progress_bar1.location({100, 50});
+    progress_bar1.maximum(200);
+    progress_bar1.orientation(forms::orientation::vertical);
+    progress_bar1.parent(*this);
+    progress_bar1.size({23, 200});
     
-    this->label1.location({150, 50});
-    this->label1.parent(*this);
+    label1.location({150, 50});
+    label1.parent(*this);
 
-    this->track_bar1.location({50, 50});
-    this->track_bar1.maximum(200);
-    this->track_bar1.orientation(forms::orientation::vertical);
-    this->track_bar1.parent(*this);
-    this->track_bar1.value_changed += [&](const control& sender, const event_args& e) {
-      this->progress_bar1.value(this->track_bar1.value());
-      this->label1.text(strings::format("{}", this->track_bar1.value()));
+    track_bar1.location({50, 50});
+    track_bar1.maximum(200);
+    track_bar1.orientation(forms::orientation::vertical);
+    track_bar1.parent(*this);
+    track_bar1.value_changed += [this](const control& sender, const event_args& e) {
+      progress_bar1.value(track_bar1.value());
+      label1.text(strings::format("{}", track_bar1.value()));
     };
-    this->track_bar1.value(100);
-    this->track_bar1.tick_style(forms::tick_style::none);
-    this->track_bar1.size({45, 200});
+    track_bar1.value(100);
+    track_bar1.tick_style(forms::tick_style::none);
+    track_bar1.size({45, 200});
   }
   
 private:

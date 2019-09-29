@@ -8,13 +8,13 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    this->text("Form and Messages");
-    this->location({100, 100});
+    text("Form and Messages");
+    location({100, 100});
   }
 
 protected:
   void wnd_proc(message& message) override {
-    this->form::wnd_proc(message);
+    form::wnd_proc(message);
     
     switch (message.msg()) {
       case WM_ACTIVATEAPP: ctrace << format("WM_ACTIVATEAPP [activate={}, threat={}]", static_cast<bool>(message.wparam()), message.lparam()) << endl; break;

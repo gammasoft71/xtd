@@ -8,11 +8,11 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      this->text("Paint example");
-      this->location({100, 100});
-      this->client_size({640, 480});
+      text("Paint example");
+      location({100, 100});
+      client_size({640, 480});
       
-      this->paint += [&](const control& sender, paint_event_args& e) {
+      paint += [](const control& sender, paint_event_args& e) {
         e.graphics().fill_rectangle(solid_brush(color::blue), 0, 0, 640, 480);
         e.graphics().clear(color::light_yellow);
         e.graphics().draw_rectangle(pen(color::light_pink, 10), e.clip_rectangle());
