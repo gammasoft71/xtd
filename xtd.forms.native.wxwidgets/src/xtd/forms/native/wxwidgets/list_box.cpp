@@ -9,9 +9,19 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+void list_box::begin_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Freeze();
+}
+
 void list_box::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
+}
+
+void list_box::end_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
 size_t list_box::insert_item(intptr_t control, size_t index, const string& value) {

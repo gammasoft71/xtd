@@ -47,6 +47,9 @@ namespace xtd {
       using list_control::text;
       control& text(const std::string& text) override {return *this;}
 
+      void begin_update();
+      void end_update();
+      
     protected:
       bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}
 

@@ -112,6 +112,14 @@ list_box& list_box::sorted(bool sorted) {
   return *this;
 }
 
+void list_box::begin_update() {
+  native::list_box::begin_update(this->handle_);
+}
+
+void list_box::end_update() {
+  native::list_box::end_update(this->handle_);
+}
+
 forms::create_params list_box::create_params() const {
   forms::create_params create_params = this->list_control::create_params();
 

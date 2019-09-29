@@ -9,6 +9,11 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+void checked_list_box::begin_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Freeze();
+}
+
 void checked_list_box::check_state(intptr_t control, size_t index, int check_state) {
   if (control == 0) return;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(index, check_state != 0);
@@ -22,6 +27,11 @@ int checked_list_box::check_state(intptr_t control, size_t index) {
 void checked_list_box::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
+}
+
+void checked_list_box::end_update(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
 void checked_list_box::insert_item(intptr_t control, size_t index, const string& value, bool checked) {

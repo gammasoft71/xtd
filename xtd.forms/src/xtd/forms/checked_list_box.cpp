@@ -101,6 +101,14 @@ vector<checked_list_box::item> checked_list_box::selected_items() const {
   return items;
 }
 
+void checked_list_box::begin_update() {
+  native::checked_list_box::begin_update(this->handle_);
+}
+
+void checked_list_box::end_update() {
+  native::checked_list_box::end_update(this->handle_);
+}
+
 bool checked_list_box::get_item_checked(size_t index) const {
   return this->items()[index].checked();
 }
