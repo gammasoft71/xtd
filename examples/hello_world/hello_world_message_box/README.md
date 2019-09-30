@@ -4,7 +4,7 @@ The classic first application 'Hello World' with xtd::forms::application, xtd::f
 
 # Sources
 
-[hello_world_message_box.hpp](hello_world_message_box.hpp)
+[hello_world_message_box.cpp](hello_world_message_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
