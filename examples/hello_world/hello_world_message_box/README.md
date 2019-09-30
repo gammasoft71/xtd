@@ -28,8 +28,8 @@ macOS :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_message_box_md.png)
 
-Gnome :
+Linux Gnome :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_message_box_g.png)
 
-![Screenshot](../../../docs/Pictures/examples/hello_world_message_boxgd.png)
+![Screenshot](../../../docs/Pictures/examples/hello_world_message_box_gd.png)
