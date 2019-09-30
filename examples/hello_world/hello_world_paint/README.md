@@ -4,7 +4,7 @@ The classic first application "Hello, Wrold!" with GDI+ drawing objects.
 
 # Sources
 
-[hello_world_message_paint.cpp](hello_world_message_paint.cpp)
+[hello_world_message_paint.cpp](hello_world_paint.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,16 @@ xtd run
 
 Windows :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_pain_w.png)
+![Screenshot](../../../docs/pictures/examples/hello_world_paint_w.png)
 
 macOS :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_paint_m.png)
+![Screenshot](../../../docs/pictures/examples/hello_world_paint_m.png)
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_paint_md.png)
+![Screenshot](../../../docs/pictures/examples/hello_world_paint_md.png)
 
 Gnome :
 
-![Screenshot](../../../docs/pictures/examples/hello_world_message_paint_g.png)
+![Screenshot](../../../docs/pictures/examples/hello_world_paint_g.png)
 
-![Screenshot](../../../docs/Pictures/examples/hello_world_message_paint_gd.png)
+![Screenshot](../../../docs/Pictures/examples/hello_world_paint_gd.png)

@@ -1,6 +1,6 @@
 # hello_world_forms
 
-The classic first application 'Hello World'.
+The classic first application "Hello, World!" with xtd::forms::label control.
 
 # Sources
 
