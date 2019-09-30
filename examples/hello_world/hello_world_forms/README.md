@@ -1,12 +1,12 @@
-# HelloWorldForm
+# hello_world_forms
 
 The classic first application 'Hello World'.
 
 # Sources
 
-[CMakeLists.txt](CMakeLists.txt)
+[hello_world_form.hpp](hello_world_forms.hpp)
 
-[hello_world_form.hpp](hello_world_form.hpp)
+[CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
 
@@ -26,14 +26,10 @@ macOS :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_m.png)
 
-macOS (Dark) :
-
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_md.png)
 
 Gnome :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_g.png)
-
-Gnome (Dark) :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_gd.png)
