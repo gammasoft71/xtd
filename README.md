@@ -56,7 +56,7 @@ int main() {
 
 ```
 
-For more examples see [examples](examples)
+For more examples see [examples](examples/README.md)
 
 # Download and install
 
