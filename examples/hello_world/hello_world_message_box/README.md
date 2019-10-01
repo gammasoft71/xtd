@@ -1,6 +1,6 @@
 # hello_world_message_box
 
-The classic first application "Hello, World!" with xtd::forms::message_box control.
+The classic first application "Hello, World!" with  [xtd::forms::message_box](../../../xtd.forms/include/xtd/forms/message_box.hpp) control.
 
 # Sources
 
