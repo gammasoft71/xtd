@@ -101,6 +101,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/check_box.cpp
   src/xtd/forms/checked_list_box.cpp
   src/xtd/forms/combo_box.cpp
+  src/xtd/forms/container_control.cpp
   src/xtd/forms/control.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp

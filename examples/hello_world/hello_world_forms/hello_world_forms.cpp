@@ -8,15 +8,16 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      label.parent(*this);
-      label.font(drawing::font("Arial", 34, font_style::bold | font_style::italic));
-      label.text("Hello, World!");
-      label.location({5, 100});
-      label.auto_size(true);
-      label.fore_color(color::green);
-      
       text("My first application");
       client_size({300, 300});
+      controls().push_back(label);
+
+      label.anchor(anchor_styles::left | anchor_styles::right);
+      label.bounds({0, 100, 300, 52});
+      label.font(drawing::font(label.font().font_family(), 32, font_style::bold | font_style::italic));
+      label.fore_color(color::green);
+      label.text("Hello, World!");
+      label.text_align(content_alignment::top_center);
     }
     
   private:

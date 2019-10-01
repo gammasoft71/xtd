@@ -63,6 +63,8 @@ control& form::visible(bool visible) {
     this->recreate_handle();
   }
   this->container_control::visible(visible);
+  if (active_form().has_value() && active_form().value().get().handle_ == this->handle_ && this->active_control_.has_value())
+    this->active_control_.value().get().focus();
   return *this;
 }
 
@@ -185,4 +187,5 @@ drawing::size form::measure_control() const {
 
 void form::on_handle_created(const event_args &e) {
   this->container_control::on_handle_created(e);
+  
 }

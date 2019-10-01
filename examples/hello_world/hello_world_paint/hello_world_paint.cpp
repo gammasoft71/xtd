@@ -23,7 +23,8 @@ namespace examples {
       text_box.text("Hello, World!");
       text_box.width(290);
       text_box.anchor(anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-
+      text_box.focus();
+      
       timer.interval(60);
       timer.tick += {*this, &form1::on_timer};
       timer.enabled(true);

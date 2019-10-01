@@ -230,6 +230,11 @@ void control::enabled(intptr_t control, bool enabled) {
   reinterpret_cast<control_handler*>(control)->control()->Enable(enabled);
 }
 
+void control ::focus(intptr_t control) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->SetFocus();
+}
+
 color control::fore_color(intptr_t control) {
   if (control == 0) return color::empty;
   wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetForegroundColour();

@@ -261,6 +261,13 @@ void control::destroy_handle() {
   this->handle_ = 0;
 }
 
+bool control::focus() {
+  if (!this->handle_ || !this->can_focus_) return false;
+  native::control::focus(this->handle_);
+  this->focused_ = true;
+  return true;
+}
+
 std::optional<std::reference_wrapper<control>> control::from_child_handle(intptr_t handle) {
   try {
     if (handles_.find(handle) != handles_.end())
@@ -379,6 +386,7 @@ void control::on_font_changed(const event_args &e) {
 }
 
 void control::on_got_focus(const event_args &e) {
+  this->focused_ = true;
   if (this->can_raise_events()) this->got_focus(*this, e);
 }
 
@@ -391,12 +399,13 @@ void control::on_handle_created(const event_args &e) {
   if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
   if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(this->handle_, this->font());
   native::control::visible(this->handle_, this->visible());
-  
+  if (this->focused()) native::control::focus(this->handle_);
+
   this->client_rectangle_ = native::control::client_rectangle(this->handle_);
   this->client_size_ = native::control::client_size(this->handle_);
   this->location_ = native::control::location(this->handle_);
   this->size_ = native::control::size(this->handle_);
-  
+
   if (this->can_raise_events()) this->handle_created(*this, e);
 }
 
@@ -427,6 +436,7 @@ void control::on_location_changed(const event_args &e) {
 }
 
 void control::on_lost_focus(const event_args &e) {
+  this->focused_ = false;
   if (this->can_raise_events()) this->lost_focus(*this, e);
 }
 
@@ -522,6 +532,10 @@ void control::on_text_changed(const event_args &e) {
 void control::on_visible_changed(const event_args &e) {
   this->set_state(state::visible, native::control::visible(this->handle_));
   this->refresh();
+  if (this->focused())
+    this->focus();
+  for (auto item : this->controls_)
+    if (item.get().focused()) item.get().focus();
   if (this->can_raise_events()) this->visible_changed(*this, e);
 }
 
@@ -787,7 +801,7 @@ void control::wm_key_char(message& message) {
 
 void control::wm_kill_focus(message& message) {
   this->def_wnd_proc(message);
-  this->on_got_focus(event_args::empty);
+  this->on_lost_focus(event_args::empty);
 }
 
 void control::wm_mouse_down(message& message) {

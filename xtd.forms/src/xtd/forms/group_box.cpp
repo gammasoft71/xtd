@@ -9,6 +9,7 @@ using namespace xtd::forms;
 
 group_box::group_box() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
+  this->can_focus_ = false;
   this->size_ = this->default_size();
 }
 

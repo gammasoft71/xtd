@@ -32,6 +32,8 @@ namespace xtd {
         static void cursor(intptr_t control, intptr_t cursor);
         static bool enabled(intptr_t control);
         static void enabled(intptr_t control, bool enabled);
+        static void focus(intptr_t control);
+        static bool focused(intptr_t control);
         static drawing::color fore_color(intptr_t control);
         static void fore_color(intptr_t control, const drawing::color& color);
         static drawing::font font(intptr_t control);

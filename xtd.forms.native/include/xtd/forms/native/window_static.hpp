@@ -35,4 +35,3 @@ constexpr size_t SS_PATHELLIPSIS = 0x00008000;
 constexpr size_t SS_WORDELLIPSIS = 0x0000C000;
 constexpr size_t SS_ELLIPSISMASK = 0x0000C000;
 #endif
-constexpr size_t SS_AUTOSIZE = 0x00010000;
