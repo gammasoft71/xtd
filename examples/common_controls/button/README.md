@@ -1,6 +1,6 @@
 # button
 
-demonstrates the use of xtd::forms::button control.
+demonstrates the use of [xtd::forms::button](../../../xtd.forms/include/xtd/forms/button.hpp) control.
 
 # Sources
 
