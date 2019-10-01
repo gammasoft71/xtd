@@ -15,7 +15,7 @@
 
 ## Common Controls
 
-* [Button](common_controls/button/README.md) represents a Windows button control.
+* [Button](common_controls/button/README.md) represents a Windows [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
 * [Check box](common_controls/check_box/README.md) represents a Windows check box control.
 * [Checked list box](common_control/check_list_box/README) represents a Windows control to display a list of check box items.
 * [Combo box](common_control/combo_box/README) represents a Windows combo box control.
