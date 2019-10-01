@@ -18,17 +18,17 @@ xtd run
 
 # Output
 
-Windows :
+## Windows :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_w.png)
 
-macOS :
+## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_m.png)
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_md.png)
 
-Gnome :
+## Gnome :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_form_g.png)
 
