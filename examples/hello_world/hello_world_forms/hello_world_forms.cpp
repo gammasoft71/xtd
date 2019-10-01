@@ -12,12 +12,11 @@ namespace examples {
       client_size({300, 300});
       controls().push_back(label);
 
-      label.anchor(anchor_styles::left | anchor_styles::right);
-      label.bounds({0, 100, 300, 52});
+      label.auto_size(true);
       label.font(drawing::font(label.font().font_family(), 32, font_style::bold | font_style::italic));
       label.fore_color(color::green);
+      label.location({5, 100});
       label.text("Hello, World!");
-      label.text_align(content_alignment::top_center);
     }
     
   private:
