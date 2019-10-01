@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::check_box](../../../xtd.forms/include/xtd/f
 
 # Sources
 
-[button.cpp](check_box.cpp)
+[check_box.cpp](check_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
