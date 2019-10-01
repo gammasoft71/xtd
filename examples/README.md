@@ -11,6 +11,7 @@
 ## Application
 
 * [Application](application/application/README.md) shows how to create an application with xtd::forms::application class.
+* [Application context](application/application_context/README.md) shows how to create an application with xtd::forms::application class with xtd::forms::application_context class.
 
 ## Common Controls
 
