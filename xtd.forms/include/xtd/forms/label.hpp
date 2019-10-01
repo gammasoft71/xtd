@@ -29,7 +29,7 @@ namespace xtd {
       drawing::size measure_control() const override;
       
       forms::border_style border_style_ = forms::border_style::none;
-      content_alignment text_align_ = content_alignment::middle_center;
+      content_alignment text_align_ = content_alignment::top_left;
     };
   }
 }
