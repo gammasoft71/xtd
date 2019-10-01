@@ -1,6 +1,6 @@
 # application
 
-Shows how to create an application with xtd::forms::application class.
+Shows how to create an application with  [xtd::forms::application](../../../xtd.forms/include/xtd/forms/application.hpp) class.
 
 # Sources
 
