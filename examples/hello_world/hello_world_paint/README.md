@@ -32,4 +32,4 @@ Gnome :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_paint_g.png)
 
-![Screenshot](../../../docs/Pictures/examples/hello_world_paint_gd.png)
+![Screenshot](../../../docs/pictures/examples/hello_world_paint_gd.png)
