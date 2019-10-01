@@ -10,7 +10,7 @@
 
 ## Application
 
-* [Application](application/Application/README.md) shows how to create an application with xtd::forms::application class.
+* [Application](application/application/README.md) shows how to create an application with xtd::forms::application class.
 
 ## Common Controls
 
