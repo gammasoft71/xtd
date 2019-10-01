@@ -28,6 +28,11 @@
 #include <wx/font.h>
 #include <wx/settings.h>
 
+#if defined(__WXOSX__)
+void __set_button_bezel_style__(wxButton* control, size_t height);
+#endif
+
+
 namespace {
 #if defined (__WXGTK__)
   static bool is_window_manager_ready = false;
@@ -203,6 +208,7 @@ drawing::size control::client_size(intptr_t control) {
     size = GetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
   else
     size = reinterpret_cast<control_handler*>(control)->control()->GetClientSize();
+
   return {size.GetWidth(), size.GetHeight()};
 }
 
@@ -213,6 +219,11 @@ void control::client_size(intptr_t control, const drawing::size& size) {
     SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {size.width(), size.height()});
   else
     reinterpret_cast<control_handler*>(control)->control()->SetClientSize(size.width(), size.height());
+  
+  #if defined(__WXOSX__)
+  if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()))
+    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), size.height());
+  #endif
 }
 
 void control::cursor(intptr_t control, intptr_t cursor) {
@@ -285,6 +296,11 @@ drawing::size control::size(intptr_t control) {
 void control::size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
+  
+  #if defined(__WXOSX__)
+  if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()))
+    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), size.height());
+  #endif
 }
 
 string control::text(intptr_t control) {

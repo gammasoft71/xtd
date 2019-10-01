@@ -4,6 +4,10 @@
 #include <wx/button.h>
 #include "control_handler.hpp"
 
+#if defined(__WXOSX__)
+void __set_button_bezel_style__(wxButton* control, size_t height);
+#endif
+
 namespace xtd {
   namespace forms {
     namespace native {
@@ -12,6 +16,9 @@ namespace xtd {
         wx_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           this->control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), button_to_wx_style(create_params.style(), create_params.ex_style()));
+          #if defined(__WXOSX__)
+          __set_button_bezel_style__((wxButton*)this->control(), create_params.size().height());
+          #endif
         }
         
         static long button_to_wx_style(size_t style, size_t ex_style) {
