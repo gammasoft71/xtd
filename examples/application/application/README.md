@@ -1,6 +1,6 @@
 # application
 
-Shows how to create an application with xtd::forms::application class.l.
+Shows how to create an application with xtd::forms::application class.
 
 # Sources
 
