@@ -1,6 +1,6 @@
 # xtd.forms (Winforms) Examples
 
-[This folder](.) contains all examples used by xtd.forms Docmentation and more.
+[This folder](.) contains all examples used by [xtd::forms](../xtd.forms)Docmentation and more.
 
 ## Hello World
 
