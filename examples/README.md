@@ -4,14 +4,14 @@
 
 ## Hello World
 
-* [Hello World](hello_world/hello_world_forms/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) control.
-* [Hello World with message_box](hello_world/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../xtd.forms/include/xtd/forms/message_box.hpp) control.
-* [Hello World with paint event](hello_world/hello_world_paint/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects.
+* [hello_world_forms](hello_world/hello_world_forms/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) control.
+* [hello_world_message_box](hello_world/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../xtd.forms/include/xtd/forms/message_box.hpp) control.
+* [hello_world_paint](hello_world/hello_world_paint/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects.
 
 ## Application
 
-* [Application](application/application/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class.
-* [Application context](application/application_context/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../xtd.forms/include/xtd/forms/application_context.hpp) class.
+* [application](application/application/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class.
+* [application_context](application/application_context/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../xtd.forms/include/xtd/forms/application_context.hpp) class.
 
 ## Common Controls
 
