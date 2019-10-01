@@ -150,7 +150,7 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(current_font);
   width = size.GetWidth();
   height = size.GetHeight();
-#if defined(__WXOSX__)
+#if defined(__WXOSX__) || defined(__WXGTK__)
   if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(metrics.averageWidth / 2.3f);
 #endif
 }
