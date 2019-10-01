@@ -16,11 +16,14 @@ namespace examples {
       };
       
       text_box2.parent(*this);
+      text_box2.focus();
       text_box2.location({10, 50});
       text_box2.text("text box");
       text_box2.text_changed += [this](const control& sender, const xtd::event_args& e) {
         text_box1.text(text_box2.text());
       };
+      
+      active_control(text_box2);
     }
     
   private:

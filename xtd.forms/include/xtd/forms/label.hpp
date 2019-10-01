@@ -1,6 +1,7 @@
 #pragma once
 #include "control.hpp"
 #include "border_style.hpp"
+#include "content_alignment.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,12 +16,20 @@ namespace xtd {
       
       drawing::size default_size() const override {return{100, 23};}
       
+      /// @brief Gets the alignment of the text on the button control.
+      /// @return One of the content_alignment values. The default is middle_center.
+      virtual content_alignment text_align() const {return this->text_align_;}
+      /// @brief Gets the alignment of the text on the button control.
+      /// @param text_align One of the content_alignment values. The default is middle_center.
+      virtual label& text_align(content_alignment text_align);
+
     protected:
       forms::create_params create_params() const override;
       
       drawing::size measure_control() const override;
       
       forms::border_style border_style_ = forms::border_style::none;
+      content_alignment text_align_ = content_alignment::middle_center;
     };
   }
 }

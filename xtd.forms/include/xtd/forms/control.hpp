@@ -37,8 +37,12 @@ namespace xtd {
     /// @cond
     class application;
     class screen;
+    class control;
     /// @endcond
     
+    /// @brief Represents a control reference.
+    using control_ref = std::reference_wrapper<control>;
+
     /// @brief Defines the base class for controls, which are components with visual representation.
     /// @remarks To create your own control class, inherit from the user_control, control classes, or from the other Windows Forms provided controls. For more information about authoring custom controls, see Developing Custom Windows Forms Controls with xtd.
     /// @remarks The control class implements very basic functionality required by classes that display information to the user. It handles user input through the keyboard and pointing devices. It handles message routing and security. It defines the bounds of a control (its position and size), although it does not implement painting. It provides a window handle (hWnd).
@@ -99,9 +103,6 @@ namespace xtd {
       /// @endcond
       
     public:
-      /// @brief Represents a control reference.
-      using control_ref = std::reference_wrapper<control>;
-      
       /// @brief Represents a collection of controls.
       using control_collection = layout::arranged_element_collection<control_ref>;
       
@@ -324,6 +325,7 @@ namespace xtd {
       virtual bool enabled() const {return this->get_state(state::enabled);}
       virtual control& enabled(bool enabled);
 
+      virtual bool focused() const {return this->focused_;}
       virtual drawing::color fore_color() const {return this->fore_color_.value_or(this->parent_ ? this->parent().value().get().fore_color() : default_fore_color());}
       virtual control& fore_color(const drawing::color& color);
       
@@ -473,6 +475,8 @@ namespace xtd {
       drawing::graphics create_graphics() const;
 
       virtual void destroy_handle();
+      
+      bool focus();
       
       static std::optional<control_ref> from_child_handle(intptr_t handle);
 
@@ -758,13 +762,14 @@ namespace xtd {
       drawing::point auto_scroll_point_;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
       std::optional<drawing::color> back_color_;
-      bool can_focus_ = false;
+      bool can_focus_ = true;
       bool can_raise_events_ = true;
       drawing::rectangle client_rectangle_;
       drawing::size client_size_;
       control_collection controls_;
       std::optional<forms::cursor> cursor_;
       dock_style dock_ = dock_style::none;
+      bool focused_ = false;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;

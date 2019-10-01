@@ -4,36 +4,38 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-namespace examples {
+namespace manual_test {
   class form1 : public form {
   public:
     form1() {
-      text("Checked list box example");
-      client_size({200, 280});
+      text("Manual test");
+      controls().push_back_range({text_box1, text_box2, button1});
 
-      list_box1.parent(*this);
-      list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
-      list_box1.location({20, 20});
-      list_box1.size({160, 200});
-
-      button_add.parent(*this);
-      button_add.location({20, 240});
-      button_add.text("Add...");
-      button_add.click += [this] {
-        list_box1.begin_update();
-        for (size_t index = 0; index < 10000; index++) {
-          list_box1.items().push_back(strings::format("Item {}", index));
-        }
-        list_box1.end_update();
+      text_box1.location({20, 20});
+      
+      text_box2.location({20, 60});
+      text_box2.got_focus += [] {
+        cdebug << "got focus" << endl;
       };
+      text_box2.lost_focus += [] {
+        cdebug << "lost focus" << endl;
+      };
+
+      button1.location({20, 100});
+      button1.click += [this] {
+        active_control(text_box2);
+      };
+      
+      active_control(text_box2);
     }
     
   private:
-    list_box list_box1;
-    button button_add;
+    text_box text_box1;
+    text_box text_box2;
+    button button1;
   };
 }
 
 int main() {
-  application::run(examples::form1());
+  application::run(manual_test::form1());
 }

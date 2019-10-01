@@ -17,8 +17,6 @@ namespace xtd {
         static long text_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
-          if ((style & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
-          
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
       };

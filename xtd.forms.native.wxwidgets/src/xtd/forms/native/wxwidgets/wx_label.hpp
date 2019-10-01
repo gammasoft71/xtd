@@ -15,10 +15,12 @@ namespace xtd {
         }
         
         static long label_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
-          
-          if ((style & SS_AUTOSIZE) != SS_AUTOSIZE) wx_style |= wxST_NO_AUTORESIZE;
-          
+          long wx_style = wxST_NO_AUTORESIZE;
+
+          if ((style & SS_CENTER) == SS_CENTER) wx_style |= wxALIGN_CENTRE_HORIZONTAL;
+          else if ((style & SS_RIGHT) == SS_RIGHT) wx_style |= wxALIGN_RIGHT;
+          else wx_style |= wxALIGN_LEFT;
+
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }
       };

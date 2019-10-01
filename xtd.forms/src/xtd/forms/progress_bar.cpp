@@ -6,6 +6,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 progress_bar::progress_bar() {
+  this->can_focus_ = false;
   this->size_ = this->default_size();
 }
 
