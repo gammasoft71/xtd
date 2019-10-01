@@ -16,14 +16,14 @@
 ## Common Controls
 
 * [button](common_controls/button/README.md) represents a Windows [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
-* [check_box](common_controls/check_box/README.md) represents a Windows check box control.
-* [checked_list_box](common_controls/checked_list_box/README.md) represents a Windows control to display a list of check box items.
-* [combo_box](common_controls/combo_box/README.md) represents a Windows combo box control.
-* [control](common_controls/control/README.md) refines the base class for controls, which are components with visual representation.
+* [check_box](common_controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
+* [checked_list_box](common_controls/checked_list_box/README.md) represents a Windows control to display a list of check_box.
+* [combo_box](common_controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../xtd.forms/include/xtd/forms/combo_box.hpp)control.
+* [control](common_controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * **domain_up_down** represents a Windows spin box (also known as an up-down control) that displays string values.
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
-* [label](common_controls/label/README.md) represents a standard Windows label.
+* [label](common_controls/label/README.md) represents a standard Windows [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp).
 * **link_label** represents a Windows label control that can display hyperlinks.
 * [list_box](common_controls/list_box/README.md) represents a Windows control to display a list of items.
 * **list_view** represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
@@ -32,13 +32,13 @@
 * **notify_icon** specifies a component that creates an icon in the notification area. This class cannot be inherited.
 * **numeric_up_down** represents a Windows spin box (also known as an up-down control) that displays numeric values.
 * **picture_box** represents a Windows picture box control for displaying an image.
-* [progress_bar](common_controls/progress_bar/README.md) eepresents a Windows progress bar control.
-* [radio_button](common_controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other RadioButton controls.
+* [progress_bar](common_controls/progress_bar/README.md) eepresents a Windows [xtd::forms::progress_bar](../xtd.forms/include/xtd/forms/progress_bar.hpp) control.
+* [radio_button](common_controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) controls.
 * **rich_text_box** represents a Windows rich text box control.
 * **splitter** represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
-* [text_box](common_controls/text_box/README.md) represents a Windows text box control.
+* [text_box](common_controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../xtd.forms/include/xtd/forms/text_box.hpp) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
-* [track_bar](common_controls/track_bar/README.md) represents a standard Windows track bar.
+* [track_bar](common_controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../xtd.forms/include/xtd/forms/track_bar.hpp).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * **vscroll_bar** represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
