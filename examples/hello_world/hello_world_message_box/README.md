@@ -18,17 +18,17 @@ xtd run
 
 # Output
 
-Windows :
+## Windows :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_message_box_w.png)
 
-macOS :
+## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_message_box_m.png)
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_message_box_md.png)
 
-Linux Gnome :
+## Linux Gnome :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_message_box_g.png)
 
