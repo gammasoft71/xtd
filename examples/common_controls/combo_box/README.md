@@ -1,10 +1,10 @@
-# checked_list_box
+# combo_box
 
-demonstrates the use of [xtd::forms::checked_list_box](../../../xtd.forms/include/xtd/forms/checked_list_box.hpp) control.
+demonstrates the use of [xtd::forms::combo_box](../../../xtd.forms/include/xtd/forms/combo_box.hpp) control.
 
 # Sources
 
-[checked_list_box.cpp](checked_list_box.cpp)
+[combo_box.cpp](combo_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,16 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/checked_list_box_w.png)
+![Screenshot](../../../docs/pictures/examples/combo_box_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/checked_list_box_m.png)
+![Screenshot](../../../docs/pictures/examples/combo_box_m.png)
 
-![Screenshot](../../../docs/pictures/examples/checked_list_box_md.png)
+![Screenshot](../../../docs/pictures/examples/combo_box_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/checked_list_box_g.png)
+![Screenshot](../../../docs/pictures/examples/combo_box_g.png)
 
-![Screenshot](../../../docs/pictures/examples/checked_list_box_gd.png)
+![Screenshot](../../../docs/pictures/examples/combo_box_gd.png)
