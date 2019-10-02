@@ -18,16 +18,16 @@ namespace xtd {
           if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
           this->modal_ = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW;
           if (this->modal_)
-            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption(), location, size, form_to_wx_style(create_params.style(), create_params.ex_style()));
+            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style()));
           else
-            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption(), location, size, form_to_wx_style(create_params.style(), create_params.ex_style()));
+            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style()));
           this->button_ = new wxButton(this->control(), wxID_ANY);
           this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
           this->control()->SetForegroundColour(this->button_->GetForegroundColour());
           this->button_->Hide();
         }
 
-        static long form_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxDEFAULT_FRAME_STYLE;
           
           return wx_style; // | common_window_style_to_wx_style(style, ex_style);

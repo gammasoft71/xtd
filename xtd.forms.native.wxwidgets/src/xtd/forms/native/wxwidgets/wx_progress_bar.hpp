@@ -1,6 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
+#include <xtd/forms/native/window_progress_bar.hpp>
 #include <wx/gauge.h>
 #include <wx/timer.h>
 #include "control_handler.hpp"
@@ -12,7 +13,7 @@ namespace xtd {
       public:
         wx_progress_bar(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxGauge>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, 100, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), progress_bar_to_wx_style(create_params.style(), create_params.ex_style()));
+          this->control_handler::create<wxGauge>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, 100, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
           
           this->timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
             if (event.GetTimer().GetId() == this->timer_marquee.GetId() && !static_cast<wxGauge*>(this->control())->IsBeingDeleted())
@@ -29,7 +30,7 @@ namespace xtd {
           else this->timer_marquee.Stop();
         }
         
-        static long progress_bar_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
           if ((style & PBS_SMOOTH) == PBS_SMOOTH) wx_style |= wxGA_SMOOTH;
