@@ -1,6 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
+#include <xtd/forms/native/window_button.hpp>
 #include <wx/checkbox.h>
 #include <wx/tglbtn.h>
 #include "control_handler.hpp"
@@ -15,10 +16,10 @@ namespace xtd {
           if ((create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE)
             this->control_handler::create<wxToggleButton>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
           else
-            this->control_handler::create<wxCheckBox>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), check_box_to_wx_style(create_params.style(), create_params.ex_style()));
+            this->control_handler::create<wxCheckBox>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
         }
         
-        static long check_box_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = wxCHK_3STATE;
           
           if ((style & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;

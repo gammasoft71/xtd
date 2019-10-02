@@ -7,15 +7,9 @@
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
 #include <xtd/forms/window_messages.hpp>
-#include <xtd/forms/native/window_button.hpp>
-#include <xtd/forms/native/window_combo_box.hpp>
-#include <xtd/forms/native/window_list_box.hpp>
 #include <xtd/forms/native/window_message_keys.hpp>
-#include <xtd/forms/native/window_progress_bar.hpp>
 #include <xtd/forms/native/window_scroll_bar.hpp>
-#include <xtd/forms/native/window_static.hpp>
 #include <xtd/forms/native/window_styles.hpp>
-#include <xtd/forms/native/window_track_bar.hpp>
 #include <wx/checkbox.h>
 #include <wx/event.h>
 #include <wx/stattext.h>

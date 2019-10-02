@@ -1,6 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
+#include <xtd/forms/native/window_combo_box.hpp>
 #include <wx/combobox.h>
 #include "control_handler.hpp"
 
@@ -11,10 +12,10 @@ namespace xtd {
       public:
         wx_combo_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxComboBox>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0, nullptr, combo_box_to_wx_style(create_params.style(), create_params.ex_style()));
+          this->control_handler::create<wxComboBox>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0, nullptr, style_to_wx_style(create_params.style(), create_params.ex_style()));
         }
         
-        static long combo_box_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
 
           if ((style & CBS_SORT) == CBS_SORT) wx_style |= wxCB_SORT;
