@@ -73,6 +73,7 @@
 ## Components
 
 * **BackgroundWorker** executes an operation on a separate thread.
+* [cursor](components/cursor/README.md) represents the image used to paint the mouse pointer.
 * **DirectoryEntry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
 * **DirectorySearcher** performs queries against Active Directory Domain Services.
 * **ErrorProvider** provides a user interface for indicating that a control on a form has an error associated with it.
@@ -83,9 +84,10 @@
 * **MessageQueue** provides access to a queue on a Message Queuing server.
 * **PerformanceCounter** represents a Windows NT performance counter component.
 * **Process** provides access to local and remote processes and enables you to start and stop local system processes.
+* [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
 * **SerialPort** represents a serial port resource.
 * **ServiceControler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
-* [Timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
+* [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 
 ## Printing
 
