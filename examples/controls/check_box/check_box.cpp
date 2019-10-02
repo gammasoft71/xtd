@@ -24,6 +24,7 @@ namespace examples {
       check_box2.checked(true);
       check_box2.location({30, 60});
 
+      check_box3.auto_size(true);
       check_box3.check_state_changed += [this](const control& sender, const event_args& e) {
         check_box3.text(strings::format("{}", check_box3.check_state()));
       };
