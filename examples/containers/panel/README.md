@@ -1,6 +1,6 @@
 # panel
 
-demonstrates the use of [xtd::panels::panel](../../../xtd.panels/include/xtd/forms/panel.hpp) container.
+demonstrates the use of [xtd::forms::panel](../../../xtd.forms/include/xtd/forms/panel.hpp) container.
 
 # Sources
 
