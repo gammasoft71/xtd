@@ -1,6 +1,6 @@
 # track_bar
 
-demonstrates the use of [xtd::forms::track_bar](../../../xtd.forms/include/xtd/forms/track_bar.hpp) track_bar.
+demonstrates the use of [xtd::forms::track_bar](../../../xtd.forms/include/xtd/forms/track_bar.hpp) control.
 
 # Sources
 

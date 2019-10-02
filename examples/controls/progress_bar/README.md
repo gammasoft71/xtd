@@ -1,6 +1,6 @@
 # progress_bar
 
-demonstrates the use of [xtd::forms::progress_bar](../../../xtd.forms/include/xtd/forms/progress_bar.hpp) progress_bar.
+demonstrates the use of [xtd::forms::progress_bar](../../../xtd.forms/include/xtd/forms/progress_bar.hpp) control.
 
 # Sources
 
