@@ -13,32 +13,32 @@
 * [application](application/application/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class.
 * [application_context](application/application_context/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../xtd.forms/include/xtd/forms/application_context.hpp) class.
 
-## Common Controls
+## Controls
 
-* [button](common_controls/button/README.md) represents a Windows [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
-* [check_box](common_controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
-* [checked_list_box](common_controls/checked_list_box/README.md) represents a Windows control to display a list of check_box.
-* [combo_box](common_controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../xtd.forms/include/xtd/forms/combo_box.hpp)control.
-* [control](common_controls/control/README.md) defines the base class for controls, which are components with visual representation.
+* [button](controls/button/README.md) represents a Windows [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
+* [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
+* [checked_list_box](controls/checked_list_box/README.md) represents a Windows control to display a list of check_box.
+* [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../xtd.forms/include/xtd/forms/combo_box.hpp)control.
+* [control](controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * **domain_up_down** represents a Windows spin box (also known as an up-down control) that displays string values.
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
-* [label](common_controls/label/README.md) represents a standard Windows [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp).
+* [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp).
 * **link_label** represents a Windows label control that can display hyperlinks.
-* [list_box](common_controls/list_box/README.md) represents a Windows control to display a list of items.
+* [list_box](controls/list_box/README.md) represents a Windows control to display a list of items.
 * **list_view** represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
 * **masked_text_box** uses a mask to distinguish between proper and improper user input.
 * **month_calendar** specifies values for navigating among accessible objects.
 * **notify_icon** specifies a component that creates an icon in the notification area. This class cannot be inherited.
 * **numeric_up_down** represents a Windows spin box (also known as an up-down control) that displays numeric values.
 * **picture_box** represents a Windows picture box control for displaying an image.
-* [progress_bar](common_controls/progress_bar/README.md) eepresents a Windows [xtd::forms::progress_bar](../xtd.forms/include/xtd/forms/progress_bar.hpp) control.
-* [radio_button](common_controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) controls.
+* [progress_bar](controls/progress_bar/README.md) eepresents a Windows [xtd::forms::progress_bar](../xtd.forms/include/xtd/forms/progress_bar.hpp) control.
+* [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) controls.
 * **rich_text_box** represents a Windows rich text box control.
 * **splitter** represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
-* [text_box](common_controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../xtd.forms/include/xtd/forms/text_box.hpp) control.
+* [text_box](controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../xtd.forms/include/xtd/forms/text_box.hpp) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
-* [track_bar](common_controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../xtd.forms/include/xtd/forms/track_bar.hpp).
+* [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../xtd.forms/include/xtd/forms/track_bar.hpp).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * **vscroll_bar** represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
@@ -84,7 +84,7 @@
 * **Process** provides access to local and remote processes and enables you to start and stop local system processes.
 * **SerialPort** represents a serial port resource.
 * **ServiceControler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
-* [Timer](./TimerForm/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
+* [Timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 
 ## Printing
 
@@ -94,35 +94,35 @@
 * **PrintPreviewControl** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
 * **PrintPreviewDialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
 
-## Dialogs
+## Common Dialogs
 
-* [ColorDialog](./ColorDialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [FolderBrowserDialog](./FolderBrowserDialog/README.md) prompts the user to select a folder. This class cannot be inherited.
-* [FontDialog](./FontDialog/README.md) prompts the user to choose a font from among those installed on the local computer.
-* [MessageBox](./MessageBox/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
-* [OpenFileDialog](./OpenFileDialog/README.md) displays a standard dialog box that prompts the user to open a file.
-* [SaveFileDialog](./SaveFileDialog/README.md) prompts the user to select a location for saving a file.
+* [ColorDialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [FolderBrowserDialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder. This class cannot be inherited.
+* [FontDialog](common_dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
+* [MessageBox](common_dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [OpenFileDialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
+* [SaveFileDialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
 ## Events
 
-* [ApplicationIdle](./ApplicationIdle/README.md) shows how to create an Application with Application class and Idle event.
-* [MouseEvent](./MouseEvent/README.md) demonstrates the use of some mouse events.
-* [EnableChangedEvent](./EnableChangedEvent/README.md) demonstrates the use of System::Windows::Forms::Control::EnableChaned event.
-* [FontChangedEvent](./FontChangedEvent/README.md) demonstrates the use of System::Windows::Forms::Control::FontChaned event.
-* [FormClick](./FormClick/README.md) demonstrates the use of System::Windows::Forms::Form control and Click event.
-* [WndProc](./WndProc/README.md) demonstrates the use of System::Windows::Forms::Control::WndProc method.
+* [ApplicationIdle](events/application_idle/README.md) shows how to create an Application with Application class and Idle event.
+* [MouseEvent](events/mouse_event/README.md) demonstrates the use of some mouse events.
+* [EnableChangedEvent](events/enable_changed_event/README.md) demonstrates the use of System::Windows::Forms::Control::EnableChaned event.
+* [FontChangedEvent](events/font_changed_event/README.md) demonstrates the use of System::Windows::Forms::Control::FontChaned event.
+* [FormClick](events/form_click/README.md) demonstrates the use of System::Windows::Forms::Form control and Click event.
+* [WndProc](events/wnd_proc/README.md) demonstrates the use of System::Windows::Forms::Control::WndProc method.
 
-## Other
+## Others
 
-* [Button2](./Button2/README.md) demonstrates the use of System::Windows::Forms::Button control.
-* [ColoredForms](./ColoredForms/README.md) demonstrates the use of System::Windows::Forms::Form control and System::Drawing::Color class.
-* [ColoredTabPages](./ColoredTabPages/README.md) demonstrates the use of System::Windows::Forms::TabControl and colored System::Windows::Forms::TabPage controls.
-* [DataFormatsGetFormat](./DataFormatsGetFormat/README.md) demonstrates the use of System::Windows::Forms::DataFormats::GetFormat method.
-* [GroupBoxAndCheckBox](./GroupBoxAndCheckBox/README.md) demonstrates the use of System::Windows::Forms::GroupBox and System::Windows::Forms::CheckBox controls.
-* [GroupBoxAndRadioButton](./GroupBoxAndRadioButton/README.md) demonstrates the use of System::Windows::Forms::GroupBox and System::Windows::Forms::RadioButton controls.
-* [LabelsAndUnicodeText](./LabelsAndUnicodeText/README.md) demonstrates the use of System::Windows::Forms::Label control and Unicode text.
-* [Lines](./Lines/README.md) demonstrates the use of System::Windows::Forms::Label control to draw simple lines.
-* [SomeControls](./SomeControls/README.md) demonstrates the use of some controls.
-* [StopwatchForm](./StopwatchForm/README.md) demonstrates the use of Stopwatch class, Label and Button controls.
-* [SystemSound](./SystemSound/README.md) demonstrates the use of System::Media::SystemSound component.
+* [Button2](others/button2/README.md) demonstrates the use of System::Windows::Forms::Button control.
+* [ColoredForms](others/colored_forms/README.md) demonstrates the use of System::Windows::Forms::Form control and System::Drawing::Color class.
+* [ColoredTabPages](others/colored_tab_pages/README.md) demonstrates the use of System::Windows::Forms::TabControl and colored System::Windows::Forms::TabPage controls.
+* [DataFormatsGetFormat](others/data_formats_get_format/README.md) demonstrates the use of System::Windows::Forms::DataFormats::GetFormat method.
+* [GroupBoxAndCheckBox](others/group_box_and_check_box/README.md) demonstrates the use of System::Windows::Forms::GroupBox and System::Windows::Forms::CheckBox controls.
+* [GroupBoxAndRadioButton](others/group_box_and_radio_button/README.md) demonstrates the use of System::Windows::Forms::GroupBox and System::Windows::Forms::RadioButton controls.
+* [LabelsAndUnicodeText](others/labels_and_unicode_text/README.md) demonstrates the use of System::Windows::Forms::Label control and Unicode text.
+* [Lines](others/lines/README.md) demonstrates the use of System::Windows::Forms::Label control to draw simple lines.
+* [SomeControls](others/some_controls/README.md) demonstrates the use of some controls.
+* [StopwatchForm](others/stopwatch_form/README.md) demonstrates the use of Stopwatch class, Label and Button controls.
+* [SystemSound](others/system_sound/README.md) demonstrates the use of System::Media::SystemSound component.
 * [All](.) You can see all examples here. 
