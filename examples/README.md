@@ -40,6 +40,7 @@
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
 * [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../xtd.forms/include/xtd/forms/track_bar.hpp).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
+* [user_control](controls/user_control/README.md) defines the base class for user controls.
 * **vscroll_bar** represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
 
