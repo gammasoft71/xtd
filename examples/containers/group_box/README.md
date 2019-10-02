@@ -1,6 +1,6 @@
 # group_box
 
-demonstrates the use of [xtd::group_boxs::group_box](../../../xtd.group_boxs/include/xtd/group_boxs/group_box.hpp) container.
+demonstrates the use of [xtd::group_boxs::group_box](../../../xtd.group_boxs/include/xtd/forms/group_box.hpp) container.
 
 # Sources
 
