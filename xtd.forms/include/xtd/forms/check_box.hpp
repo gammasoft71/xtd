@@ -81,7 +81,7 @@ namespace xtd {
       
       /// @brief Gets the default size of the control.
       /// @return The default size.
-      drawing::size default_size() const override {return {104, 24};}
+      drawing::size default_size() const override {return {104, 25};}
       
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
       /// @return true if the check_box is able to display three check states; otherwise, false. The default value is false.

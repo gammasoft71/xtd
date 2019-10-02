@@ -56,7 +56,7 @@ namespace xtd {
 
       /// @brief Gets the default size of the control.
       /// @return Returns a size with a width of 104 and a height of 24.
-      drawing::size default_size() const override {return {104, 24};}
+      drawing::size default_size() const override {return {104, 25};}
 
       /// @brief Generates a click event for the control, simulating a click by a user.
       void perform_click();

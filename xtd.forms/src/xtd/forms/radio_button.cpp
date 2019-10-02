@@ -73,7 +73,7 @@ forms::create_params radio_button::create_params() const {
 }
 
 drawing::size radio_button::measure_control() const {
-  return this->button_base::measure_text() + drawing::size(20, 0);
+  return this->button_base::measure_text() + drawing::size(24, 0);
 }
 
 void radio_button::on_handle_created(const event_args &e) {

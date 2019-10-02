@@ -80,7 +80,7 @@ forms::create_params check_box::create_params() const {
 }
 
 drawing::size check_box::measure_control() const {
-  return this->button_base::measure_text() + drawing::size(20, 0);
+  return this->button_base::measure_text() + drawing::size(24, 0);
 }
 
 void check_box::on_handle_created(const event_args &e) {
