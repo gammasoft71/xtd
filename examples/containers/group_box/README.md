@@ -1,0 +1,35 @@
+# group_box
+
+demonstrates the use of [xtd::group_boxs::group_box](../../../xtd.group_boxs/include/xtd/group_boxs/group_box.hpp) container.
+
+# Sources
+
+[group_box.cpp](group_box.cpp)
+
+[CMakeLists.txt](CMakeLists.txt)
+
+# Build and run
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtd run
+```
+
+# Output
+
+## Windows :
+
+![Screenshot](../../../docs/pictures/examples/group_box_w.png)
+
+## macOS :
+
+![Screenshot](../../../docs/pictures/examples/group_box_m.png)
+
+![Screenshot](../../../docs/pictures/examples/group_box_md.png)
+
+## Gnome :
+
+![Screenshot](../../../docs/pictures/examples/group_box_g.png)
+
+![Screenshot](../../../docs/pictures/examples/group_box_gd.png)
