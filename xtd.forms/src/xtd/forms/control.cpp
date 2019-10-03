@@ -188,8 +188,9 @@ control& control::text(const string& text) {
   return *this;
 }
 
-control& control::text(const wstring& text) {
-  return this->text(std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(text.c_str()));
+control& control::text(const wstring& wtext) {
+  std::string text = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(wtext.c_str());
+  return this->text(text);
 }
 
 std::optional<std::reference_wrapper<control>> control::top_level_control() const {
