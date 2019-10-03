@@ -9,29 +9,21 @@ namespace manual_test {
   public:
     form1() {
       text("Manual test");
-      controls().push_back_range({text_box1, text_box2, button1});
+      controls().push_back(button1);
 
-      text_box1.location({20, 20});
-      
-      text_box2.location({20, 60});
-      text_box2.got_focus += [] {
-        cdebug << "got focus" << endl;
-      };
-      text_box2.lost_focus += [] {
-        cdebug << "lost focus" << endl;
-      };
-
-      button1.location({20, 100});
+      button1.location({10, 10});
+      button1.text("Color...");
       button1.click += [this] {
-        active_control(text_box2);
+        color_dialog color_dialog;
+        color_dialog.alpha_color(false);
+        color_dialog.color(this->back_color());
+        forms::dialog_result dialog_result = color_dialog.show_dialog();
+        if (dialog_result == forms::dialog_result::ok)
+          this->back_color(color_dialog.color());
       };
-      
-      active_control(text_box2);
     }
     
   private:
-    text_box text_box1;
-    text_box text_box2;
     button button1;
   };
 }
