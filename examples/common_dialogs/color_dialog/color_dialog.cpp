@@ -14,8 +14,7 @@ public:
     button1.click += [this] {
       color_dialog color_dialog;
       color_dialog.color(this->back_color());
-      forms::dialog_result dialog_result = color_dialog.show_dialog();
-      if (dialog_result == forms::dialog_result::ok)
+      if (color_dialog.show_dialog() == forms::dialog_result::ok)
         this->back_color(color_dialog.color());
     };
   }
