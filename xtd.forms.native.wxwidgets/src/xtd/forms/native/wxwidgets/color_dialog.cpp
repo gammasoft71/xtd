@@ -2,6 +2,7 @@
 #include <xtd/forms/window_color_dialog.hpp>
 #include <wx/colordlg.h>
 
+using namespace xtd;
 using namespace xtd::forms::native;
 
 bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options) {

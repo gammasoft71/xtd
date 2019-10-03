@@ -1,5 +1,7 @@
 #pragma once
 #include <cstdint>
+#include <optional>
+#include <vector>
 #include <xtd/drawing/color.hpp>
 
 namespace xtd {
