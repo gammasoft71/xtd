@@ -10,6 +10,9 @@ namespace xtd {
     /// @brief Represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
     /// @remarks The inherited member show_dialog must be invoked to create this specific common dialog box. hook_proc can be overridden to implement specific dialog box hook functionality. Use color to retrieve the color selected by the user.
     /// @remarks When you create an instance of color_dialog, some of the read/write properties are set to initial values. For a list of these values, see the color_dialog constructor.
+    /// @par Example
+    /// The following code example demonstrate the use of color_dialog dialog.
+    /// @include color_dialog.cpp
     class color_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the color_dialog class.
