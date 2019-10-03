@@ -13,6 +13,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/button.cpp
   src/xtd/forms/native/wxwidgets/check_box.cpp
   src/xtd/forms/native/wxwidgets/checked_list_box.cpp
+  src/xtd/forms/native/wxwidgets/color_dialog.cpp
   src/xtd/forms/native/wxwidgets/combo_box.cpp
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp

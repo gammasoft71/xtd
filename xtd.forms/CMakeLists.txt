@@ -25,6 +25,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/check_state.hpp
   include/xtd/forms/checked_list_box.hpp
   include/xtd/forms/close_reason.hpp
+  include/xtd/forms/color_dialog.hpp
   include/xtd/forms/combo_box.hpp
   include/xtd/forms/combo_box_style.hpp
   include/xtd/forms/common_dialog.hpp
@@ -46,6 +47,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/form_closing_event_handler.hpp
   include/xtd/forms/form_start_position.hpp
   include/xtd/forms/group_box.hpp
+  include/xtd/forms/help_event_args.hpp
+  include/xtd/forms/help_event_handler.hpp
   include/xtd/forms/ibutton_control.hpp
   include/xtd/forms/imessage_filter.hpp
   include/xtd/forms/item_check_event_args.hpp
@@ -100,6 +103,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/button_base.cpp
   src/xtd/forms/check_box.cpp
   src/xtd/forms/checked_list_box.cpp
+  src/xtd/forms/color_dialog.cpp
   src/xtd/forms/combo_box.cpp
   src/xtd/forms/container_control.cpp
   src/xtd/forms/control.cpp

@@ -10,6 +10,7 @@ set(XTD_INCLUDES
 
 set(XTD_FORMS_INCLUDES
   include/xtd/forms/create_params.hpp
+  include/xtd/forms/window_color_dialog.hpp
   include/xtd/forms/window_messages.hpp
 )
 
@@ -18,6 +19,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/button.hpp
   include/xtd/forms/native/check_box.hpp
   include/xtd/forms/native/checked_list_box.hpp
+  include/xtd/forms/native/color_dialog.hpp
   include/xtd/forms/native/combo_box.hpp
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/cursor.hpp
