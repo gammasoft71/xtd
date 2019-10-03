@@ -10,7 +10,15 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
+  /// @cond
+  namespace forms {
+    namespace native {
+      class font_dialog;
+    }
+  }
+  /// @endcond
+  
+/// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @cond
     class graphics;
@@ -268,6 +276,7 @@ namespace xtd {
     private:
       friend class graphics;
       friend class system_fonts;
+      friend class xtd::forms::native::font_dialog;
       font() = default;
       font(intptr_t hfont);
       struct data {
