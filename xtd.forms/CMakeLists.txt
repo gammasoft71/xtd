@@ -40,6 +40,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/cursors.hpp
   include/xtd/forms/dialog_result.hpp
   include/xtd/forms/dock_style.hpp
+  include/xtd/forms/font_dialog.hpp
   include/xtd/forms/form.hpp
   include/xtd/forms/form_closed_event_args.hpp
   include/xtd/forms/form_closed_event_handler.hpp
@@ -109,6 +110,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/control.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
+  src/xtd/forms/font_dialog.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
   src/xtd/forms/label.cpp
