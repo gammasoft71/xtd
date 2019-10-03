@@ -1,3 +1,4 @@
+#include <codecvt>
 #include <map>
 #include <stdexcept>
 #include <xtd/drawing/system_colors.hpp>
@@ -310,7 +311,7 @@ string control::text(intptr_t control) {
 
 void control::text(intptr_t control, const string& text) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetLabel(text);
+  reinterpret_cast<control_handler*>(control)->control()->SetLabel(std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(text.c_str()));
 }
 
 bool control::visible(intptr_t control) {
