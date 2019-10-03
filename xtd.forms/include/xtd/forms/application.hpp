@@ -26,7 +26,7 @@ namespace xtd {
     /// * add_message_filter() adds a message filter to the application message pump to monitor Windows messages.
     /// @remarks You cannot create an instance of this class.
     /// @par Example
-    /// The following code example demonstrate the use of Application class.
+    /// The following code example demonstrate the use of application class.
     /// @include application.cpp
     class application {
     public:
