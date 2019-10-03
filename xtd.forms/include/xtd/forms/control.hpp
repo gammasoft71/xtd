@@ -397,7 +397,8 @@ namespace xtd {
       
       virtual const std::string& text() const {return this->text_;}
       virtual control& text(const std::string& text);
-      
+      virtual control& text(const std::wstring& text);
+
       virtual int32_t top() const {return this->location_.y();}
       virtual control& top(int32_t top) {
         if (this->location_.y() != top)

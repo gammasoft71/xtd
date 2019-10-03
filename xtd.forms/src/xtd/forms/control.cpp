@@ -1,3 +1,4 @@
+#include <codecvt>
 #include <iostream>
 #include <set>
 #include <xtd/xtd.diagnostics>
@@ -185,6 +186,10 @@ control& control::text(const string& text) {
     this->on_text_changed(event_args::empty);
   }
   return *this;
+}
+
+control& control::text(const wstring& text) {
+  return this->text(std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(text.c_str()));
 }
 
 std::optional<std::reference_wrapper<control>> control::top_level_control() const {
