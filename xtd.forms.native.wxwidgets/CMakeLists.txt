@@ -19,6 +19,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/cursor.cpp
   src/xtd/forms/native/wxwidgets/cursors.cpp
   src/xtd/forms/native/wxwidgets/control_handler.hpp
+  src/xtd/forms/native/wxwidgets/font_dialog.cpp
   src/xtd/forms/native/wxwidgets/form.cpp
   src/xtd/forms/native/wxwidgets/group_box.cpp
   src/xtd/forms/native/wxwidgets/hdc_wrapper.hpp
