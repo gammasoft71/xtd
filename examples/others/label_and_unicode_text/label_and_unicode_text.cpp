@@ -128,7 +128,7 @@ public:
     labelRussianText.width(220);
 
     text("labels and Unicode text example");
-    client_size({380, 350});
+    client_size({400, 350});
   }
 
 private:
