@@ -56,76 +56,79 @@
 
 ## Menus and Toolbars
 
-* **ContextMenuStrip** represents a shortcut menu.
-* **MenuStrip** provides a menu system for a form.
-* **StatusStrip** represents a Windows status bar control.
-* **ToolStrip** provides a container for Windows toolbar objects.
-* **ToolStripContainer** provides panels on each side of the form and a central panel that can hold one or more controls.
+* **context_menu_strip** represents a shortcut menu.
+* **menu_strip** provides a menu system for a form.
+* **status_strip** represents a Windows status bar control.
+* **tool_strip** provides a container for Windows toolbar objects.
+* **tool_strip_container** provides panels on each side of the form and a central panel that can hold one or more controls.
 
 ## Datas
 
-* **BindingNavigator** represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
-* **BindingSource** encapsulates the data source for a form.
-* **Chart** 
-* **DataGridView** displays data in a customizable grid.
-* **DataSet** 
+* **binding_navigator** represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
+* **binding_source** encapsulates the data source for a form.
+* **chart** 
+* **data_grid_view** displays data in a customizable grid.
+* **data_set** 
 
 ## Components
 
-* **BackgroundWorker** executes an operation on a separate thread.
+* **background_worker** executes an operation on a separate thread.
 * [cursor](components/cursor/README.md) represents the image used to paint the mouse pointer.
-* **DirectoryEntry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
-* **DirectorySearcher** performs queries against Active Directory Domain Services.
-* **ErrorProvider** provides a user interface for indicating that a control on a form has an error associated with it.
-* **EventLog** provides interaction with Windows event logs.
-* **FileSystemWatcher** listens to the file system change notifications and raises events when a directory, or file in a directory, changes.
-* **HelpProvider** provides pop-up or online Help for controls.
-* **ImageList** provides methods to manage a collection of Image objects. This class cannot be inherited.
-* **MessageQueue** provides access to a queue on a Message Queuing server.
-* **PerformanceCounter** represents a Windows NT performance counter component.
-* **Process** provides access to local and remote processes and enables you to start and stop local system processes.
+* **directory_entry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
+* **directory_searcher** performs queries against Active Directory Domain Services.
+* **error_provider** provides a user interface for indicating that a control on a form has an error associated with it.
+* **event_log** provides interaction with Windows event logs.
+* **file_system_watcher** listens to the file system change notifications and raises events when a directory, or file in a directory, changes.
+* **help_provider** provides pop-up or online Help for controls.
+* **image_list** provides methods to manage a collection of Image objects. This class cannot be inherited.
+* **message_queue** provides access to a queue on a Message Queuing server.
+* **performance_counter** represents a Windows NT performance counter component.
+* **process** provides access to local and remote processes and enables you to start and stop local system processes.
 * [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
-* **SerialPort** represents a serial port resource.
-* **ServiceControler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
+* **serial_port** represents a serial port resource.
+* **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 
 ## Printing
 
-* **PageSetupDialog** enables users to change page-related print settings, including margins and paper orientation. This class cannot be inherited.
-* **PrintDialog** lets users select a printer and choose which sections of the document to print from a Windows Forms application.
-* **PrintDocument** defines a reusable object that sends output to a printer, when printing from a Windows Forms application.
-* **PrintPreviewControl** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
-* **PrintPreviewDialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
+* **page_setup_dialog** enables users to change page-related print settings, including margins and paper orientation. This class cannot be inherited.
+* **print_dialog** lets users select a printer and choose which sections of the document to print from a Windows Forms application.
+* **print_document** defines a reusable object that sends output to a printer, when printing from a Windows Forms application.
+* **print_preview_control** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
+* **print_preview_dialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
 
 ## Common Dialogs
 
-* [ColorDialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [FolderBrowserDialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder. This class cannot be inherited.
-* [FontDialog](common_dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
-* [MessageBox](common_dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
-* [OpenFileDialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
-* [SaveFileDialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
+* [color_dialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [folder_browser_dialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder. This class cannot be inherited.
+* [font_dialog](common_dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
+* [message_box](common_dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [open_file_dialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
+* [save_file_dialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
 ## Events
 
-* [ApplicationIdle](events/application_idle/README.md) shows how to create an Application with Application class and Idle event.
-* [MouseEvent](events/mouse_event/README.md) demonstrates the use of some mouse events.
-* [EnableChangedEvent](events/enable_changed_event/README.md) demonstrates the use of System::Windows::Forms::Control::EnableChaned event.
-* [FontChangedEvent](events/font_changed_event/README.md) demonstrates the use of System::Windows::Forms::Control::FontChaned event.
-* [FormClick](events/form_click/README.md) demonstrates the use of System::Windows::Forms::Form control and Click event.
-* [WndProc](events/wnd_proc/README.md) demonstrates the use of System::Windows::Forms::Control::WndProc method.
+* [application_idle](events/application_idle/README.md) shows how to create an Application with Application class and Idle event.
+* [mouse_event](events/mouse_event/README.md) demonstrates the use of some mouse events.
+* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of xtd::forms::Control::EnableChaned event.
+* [font_changed_event](events/font_changed_event/README.md) demonstrates the use of xtd::forms::Control::FontChaned event.
+* [form_click](events/form_click/README.md) demonstrates the use of xtd::forms::Form control and Click event.
+* [wnd_proc](events/wnd_proc/README.md) demonstrates the use of xtd::forms::Control::WndProc method.
+
+## Custom Controls
+* [lines](custom_controls/lines/README.md) demonstrates the use of xtd::forms::Label control to draw simple lines.
+* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the use of xtd::forms::Label control to draw simple lines.
 
 ## Others
 
-* [Button2](others/button2/README.md) demonstrates the use of System::Windows::Forms::Button control.
-* [ColoredForms](others/colored_forms/README.md) demonstrates the use of System::Windows::Forms::Form control and System::Drawing::Color class.
-* [ColoredTabPages](others/colored_tab_pages/README.md) demonstrates the use of System::Windows::Forms::TabControl and colored System::Windows::Forms::TabPage controls.
-* [DataFormatsGetFormat](others/data_formats_get_format/README.md) demonstrates the use of System::Windows::Forms::DataFormats::GetFormat method.
-* [GroupBoxAndCheckBox](others/group_box_and_check_box/README.md) demonstrates the use of System::Windows::Forms::GroupBox and System::Windows::Forms::CheckBox controls.
-* [GroupBoxAndRadioButton](others/group_box_and_radio_button/README.md) demonstrates the use of System::Windows::Forms::GroupBox and System::Windows::Forms::RadioButton controls.
-* [LabelsAndUnicodeText](others/labels_and_unicode_text/README.md) demonstrates the use of System::Windows::Forms::Label control and Unicode text.
-* [Lines](others/lines/README.md) demonstrates the use of System::Windows::Forms::Label control to draw simple lines.
-* [SomeControls](others/some_controls/README.md) demonstrates the use of some controls.
-* [StopwatchForm](others/stopwatch_form/README.md) demonstrates the use of Stopwatch class, Label and Button controls.
-* [SystemSound](others/system_sound/README.md) demonstrates the use of System::Media::SystemSound component.
+* [button2](others/button2/README.md) demonstrates the use of xtd::forms::Button control.
+* [colored_forms](others/colored_forms/README.md) demonstrates the use of xtd::forms::Form control and xtd::drawing::color class.
+* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::TabControl and colored xtd::forms::TabPage controls.
+* [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of xtd::forms::DataFormats::GetFormat method.
+* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of xtd::forms::GroupBox and xtd::forms::CheckBox controls.
+* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of xtd::forms::GroupBox and xtd::forms::RadioButton controls.
+* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of xtd::forms::Label control and Unicode text.
+* [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
+* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of Stopwatch class, Label and Button controls.
+* [system_sound](others/system_sound/README.md) demonstrates the use of System::Media::SystemSound component.
 * [All](.) You can see all examples here. 
