@@ -38,7 +38,6 @@ namespace manual_test {
       L"\U0001F428");
       
       ustring info = "My info \U0001F428";
-      wstring info2 = info.wstr();
       cdebug << info << endl;
     }
     
