@@ -17,12 +17,12 @@ namespace xtd {
       class item : public list_box::item {
       public:
         item() = default;
-        item(const std::string& value) : list_box::item(value) {}
-        item(const std::string& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
-        item(const std::string& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {}
-        item(const std::string& value, const std::any& tag) : list_box::item(value, tag) {}
-        item(const std::string& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
-        item(const std::string& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
+        item(const ustring& value) : list_box::item(value) {}
+        item(const ustring& value, bool checked) : list_box::item(value), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const ustring& value, forms::check_state check_state) : list_box::item(value), check_state_(check_state) {}
+        item(const ustring& value, const std::any& tag) : list_box::item(value, tag) {}
+        item(const ustring& value, bool checked, const std::any& tag) : list_box::item(value, tag), check_state_(checked ? forms::check_state::checked : forms::check_state::unchecked) {}
+        item(const ustring& value, forms::check_state check_state, const std::any& tag) : list_box::item(value, tag), check_state_(check_state) {}
         /// @cond
         item(const char* value) : list_box::item(value) {}
         item(const item& value) = default;
@@ -97,13 +97,13 @@ namespace xtd {
       
       forms::check_state get_item_check_state(size_t index) const;
 
-      const std::string& get_item_text(size_t index) const;
+      const ustring& get_item_text(size_t index) const;
 
       void set_item_checked(size_t index, bool checked);
 
       void set_item_check_state(size_t index, forms::check_state check_state);
 
-      void set_item_text(size_t index, const std::string& text);
+      void set_item_text(size_t index, const ustring& text);
       
       event<checked_list_box, item_check_event_handler<control>> item_check;
 

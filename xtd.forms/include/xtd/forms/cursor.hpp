@@ -77,7 +77,7 @@ namespace xtd {
       /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
       static void show();
       
-      std::string to_string() const;
+      ustring to_string() const;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const cursor& value) noexcept {return os << value.to_string();}
@@ -87,13 +87,13 @@ namespace xtd {
 
     private:
       friend class cursors;
-      cursor(intptr_t handle, bool destroyable, const std::string& name);
+      cursor(intptr_t handle, bool destroyable, const ustring& name);
 
       struct data {
         intptr_t handle_ = 0;
         bool destroyable_ = true;
         drawing::point hot_spot_;
-        std::string name_;
+        ustring name_;
         drawing::size size_;
         std::any tag_;
       };

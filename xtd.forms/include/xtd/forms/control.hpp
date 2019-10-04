@@ -113,7 +113,7 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value.
-      explicit control(const std::string& text) : control() {
+      explicit control(const ustring& text) : control() {
         this->text(text);
       }
       /// @brief nitializes a new instance of the control class as a child control, with specific text.
@@ -121,7 +121,7 @@ namespace xtd {
       /// @param text The text displayed by the control.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection.
-      explicit control(const control& parent, const std::string& text) : control() {
+      explicit control(const control& parent, const ustring& text) : control() {
         this->parent(parent);
         this->text(text);
       }
@@ -133,7 +133,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The initial size and location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      explicit control(const ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->text(text);
         this->left(left);
         this->top(top);
@@ -149,7 +149,7 @@ namespace xtd {
       /// @param height The height of the control, in pixels. The value is assigned to the height property.
       /// @remarks The control class is the base class for all controls used in a Windows Forms application. Because this class is not typically used to create an instance of the class, this constructor is typically not called directly but is instead called by a derived class.
       /// @remarks This version of the control constructor sets the initial text property value to the text parameter value. The constructor also adds the control to the parent control's control::control_collection. The initial size and location of the control are determined by the left, top, width and height parameter values.
-      explicit control(const control& parent, const std::string& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
+      explicit control(const control& parent, const ustring& text, int32_t left, int32_t top, int32_t width, int32_t height) : control() {
         this->parent(parent);
         this->text(text);
         this->left(left);
@@ -273,7 +273,7 @@ namespace xtd {
       
       /// @brief Gets the name of the company or creator of the application containing the control.
       /// @return The company name or creator of the application containing the control.
-      virtual std::string compagny_name() const {return "Gammasoft";}
+      virtual ustring compagny_name() const {return "Gammasoft";}
       
       /// @brief Gets the collection of controls contained within the control.
       /// @return A control::control_collection representing the collection of controls contained within the control.
@@ -355,8 +355,8 @@ namespace xtd {
         return *this;
       }
 
-      virtual const std::string& name() const {return this->name_;}
-      virtual control& name(const std::string& name) {
+      virtual const ustring& name() const {return this->name_;}
+      virtual control& name(const ustring& name) {
         this->name_ = name;
         return*this;
       }
@@ -365,7 +365,7 @@ namespace xtd {
       virtual control& parent(const control& parent);
       virtual control& parent(std::nullptr_t);
 
-      virtual std::string product_name() const {return "xtd";}
+      virtual ustring product_name() const {return "xtd";}
       
       bool recreating_handle() const {return this->get_state(state::recreate);}
       
@@ -444,7 +444,7 @@ namespace xtd {
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+      static std::unique_ptr<control_t> create(const ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->text(text);
         if (location != drawing::point {-1, -1}) item->location(location);
@@ -455,7 +455,7 @@ namespace xtd {
       }
       
       template<typename control_t>
-      static std::unique_ptr<control_t> create(const control& parent, const std::string& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
+      static std::unique_ptr<control_t> create(const control& parent, const ustring& text, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {
         std::unique_ptr<control_t> item = std::make_unique<control_t>();
         item->parent(parent);
         item->text(text);
@@ -528,7 +528,7 @@ namespace xtd {
         this->set_state(state::layout_deferred, true);
       }
       
-      virtual std::string to_string() const;
+      virtual ustring to_string() const;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::control& control) noexcept {
@@ -774,7 +774,7 @@ namespace xtd {
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
       drawing::point location_;
-      std::string name_;
+      ustring name_;
       intptr_t parent_ = 0;
       drawing::size parent_size_;
       drawing::size size_;
@@ -791,7 +791,7 @@ namespace xtd {
       void internal_destroy_handle(intptr_t);
       void on_parent_size_changed(const control& sender, const event_args& e);
       void set_auto_size_size();
-      control(const std::string& name, bool) {this->name_ = name;}
+      control(const ustring& name, bool) {this->name_ = name;}
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);
       void wm_command(message& message);

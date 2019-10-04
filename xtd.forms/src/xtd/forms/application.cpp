@@ -42,8 +42,8 @@ bool application::allow_quit() {
   return native::application::allow_quit();
 }
 
-string application::common_app_data_path() {
-  string common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
+ustring application::common_app_data_path() {
+  ustring common_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::common_application_data), company_name(), product_name(), product_version()});
   //if (!io::directory::exists(common_app_data_path))
   //  io::directory::create_directory(common_app_data_path);
   return common_app_data_path;
@@ -55,16 +55,16 @@ microsoft::win32::registry_key application::common_app_data_registry() {
 }
  */
 
-string application::company_name() {
+ustring application::company_name() {
   if (!strings::is_empty(application_informations::company_name())) return application_informations::company_name();
   return product_name();
 }
 
-string application::executable_name() {
+ustring application::executable_name() {
   return io::path::get_file_name(application::executable_path());
 }
 
-string application::executable_path() {
+ustring application::executable_path() {
   return environment::get_command_line_args()[0];
 }
 
@@ -89,22 +89,22 @@ const form_collection application::open_forms() {
    */
 }
 
-string application::product_name() {
+ustring application::product_name() {
   if (!strings::is_empty(application_informations::product_name())) return application_informations::product_name();
   return io::path::get_file_name_without_extension(executable_path());
 }
 
-string application::product_version() {
+ustring application::product_version() {
   if (!strings::is_empty(application_informations::product_version())) return application_informations::product_version();
   return "0.0.0.0";
 }
 
-string application::startup_path() {
+ustring application::startup_path() {
   return io::path::get_directory_name(environment::get_command_line_args()[0]);
 }
 
-string application::user_app_data_path() {
-  string user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
+ustring application::user_app_data_path() {
+  ustring user_app_data_path = io::path::combine({environment::get_folder_path(environment::special_folder::application_data), company_name(), product_name(), product_version()});
   //if (!io::directory::exists(user_app_data_path))
   //  io::directory::create_directory(user_app_data_path);
   return user_app_data_path;
