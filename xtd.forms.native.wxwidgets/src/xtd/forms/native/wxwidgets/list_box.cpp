@@ -24,7 +24,7 @@ void list_box::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-size_t list_box::insert_item(intptr_t control, size_t index, const string& value) {
+size_t list_box::insert_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return -1;
   if (!static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
     return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);

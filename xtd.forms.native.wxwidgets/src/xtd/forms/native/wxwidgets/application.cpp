@@ -113,7 +113,7 @@ void application::run() {
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_QUIT, 0, 0, 0);
   }
   if (restart_asked) {
-    std::vector<std::string> command_line_args = environment::get_command_line_args();
+    std::vector<string> command_line_args = environment::get_command_line_args();
     char** argv = new char*[command_line_args.size() + 1];
     for(int index = 0; index <command_line_args.size(); index++)
       argv[index] = command_line_args[index].data();

@@ -8,8 +8,8 @@ namespace xtd {
       class text_box {
       public:
         text_box() = delete;
-        static std::string text(intptr_t control);
-        static void text(intptr_t control, const std::string& text);
+        static ustring text(intptr_t control);
+        static void text(intptr_t control, const ustring& text);
       };
     }
   }

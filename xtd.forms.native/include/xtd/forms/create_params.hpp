@@ -19,16 +19,16 @@ namespace xtd {
       create_params& operator=(create_params&) = default;
       /// @endcond
       
-      const std::string& caption() const {return this->caption_;}
+      const ustring& caption() const {return this->caption_;}
       
-      create_params& caption(const std::string& caption) {
+      create_params& caption(const ustring& caption) {
         this->caption_ = caption;
         return *this;
       }
       
-      const std::string& class_name() const {return this->class_name_;}
+      const ustring& class_name() const {return this->class_name_;}
       
-      create_params& class_name(const std::string& class_name) {
+      create_params& class_name(const ustring& class_name) {
         this->class_name_ = class_name;
         return *this;
       }
@@ -110,15 +110,15 @@ namespace xtd {
         return *this;
       }
 
-      std::string to_string() const {return strings::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", this->class_name_, this->caption_, this->style_, this->ex_style_, this->location_.x(), this->location_.y(), this->size_.width(), this->size_.height());}
+      ustring to_string() const {return strings::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", this->class_name_, this->caption_, this->style_, this->ex_style_, this->location_.x(), this->location_.y(), this->size_.width(), this->size_.height());}
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const create_params& create_params) noexcept {return os << create_params.to_string();}
       /// @endcond
 
     private:
-      std::string caption_;
-      std::string class_name_;
+      ustring caption_;
+      ustring class_name_;
       size_t class_style_ = 0;
       size_t ex_style_ = 0;
       drawing::point location_ = {-1, -1};

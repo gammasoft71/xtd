@@ -34,7 +34,7 @@ void checked_list_box::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void checked_list_box::insert_item(intptr_t control, size_t index, const string& value, bool checked) {
+void checked_list_box::insert_item(intptr_t control, size_t index, const ustring& value, bool checked) {
   if (control == 0) return;
   size_t real_index = -1;
   if (!static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())

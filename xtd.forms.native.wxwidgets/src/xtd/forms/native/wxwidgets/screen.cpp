@@ -34,9 +34,9 @@ rectangle screen::bounds(size_t index) {
   return {bounds.GetX(), bounds.GetY(), bounds.GetWidth(), bounds.GetHeight()};
 }
 
-string screen::device_name(size_t index) {
+ustring screen::device_name(size_t index) {
   application::initialize();
-  string device_name = wxDisplay(index).GetName().ToStdString();
+  ustring device_name = wxDisplay(index).GetName().ToStdWstring();
   return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
