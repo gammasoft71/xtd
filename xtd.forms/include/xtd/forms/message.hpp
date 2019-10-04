@@ -44,7 +44,7 @@ namespace xtd {
       template<typename type>
       type get_lparam() { return (type)this->lparam_; }
       
-      std::string to_string() const;
+      ustring to_string() const;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::message& message) noexcept {

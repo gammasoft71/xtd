@@ -64,7 +64,7 @@ namespace xtd {
       /// @brief Returns a string that represents the progress_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.
-      std::string to_string() const override {return strings::format("{}, checked: {}", strings::full_class_name(*this), this->checked_);}
+      ustring to_string() const override {return strings::format("{}, checked: {}", strings::full_class_name(*this), this->checked_);}
 
       /// @brief Occurs when the appearance property value changes.
       event<radio_button, event_handler<control>> appearance_changed;

@@ -117,7 +117,7 @@ forms::check_state checked_list_box::get_item_check_state(size_t index) const {
   return this->items()[index].check_state();
 }
 
-const std::string& checked_list_box::get_item_text(size_t index) const {
+const ustring& checked_list_box::get_item_text(size_t index) const {
   return this->items()[index].value();
 }
 
@@ -133,7 +133,7 @@ void checked_list_box::set_item_check_state(size_t index, forms::check_state che
   }
 }
 
-void checked_list_box::set_item_text(size_t index, const std::string& text) {
+void checked_list_box::set_item_text(size_t index, const ustring& text) {
   this->items()[index] = {text, this->items()[index].checked(), this->items()[index].tag()};
 }
 

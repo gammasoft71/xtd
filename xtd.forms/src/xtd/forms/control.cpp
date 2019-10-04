@@ -560,7 +560,7 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
   }
 }
 
-string control::to_string() const {
+ustring control::to_string() const {
   if (!this->name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), this->name_);
   if (!this->text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), this->text_);
   return strings::full_class_name(*this);

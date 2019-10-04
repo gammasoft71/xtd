@@ -7,14 +7,14 @@ namespace xtd {
   namespace forms {
     class application_informations {
     public:
-      static const std::string& company_name() {return instance().company_name_;}
-      static void company_name(const std::string& company_name) {instance().company_name_ = company_name;}
+      static const ustring& company_name() {return instance().company_name_;}
+      static void company_name(const ustring& company_name) {instance().company_name_ = company_name;}
       
-      static std::string product_name() {return instance().product_name_;}
-      static void product_name(const std::string& product_name) {instance().product_name_ = product_name;}
+      static ustring product_name() {return instance().product_name_;}
+      static void product_name(const ustring& product_name) {instance().product_name_ = product_name;}
       
-      static std::string product_version() {return instance().product_version_;}
-      static void product_version(const std::string& product_version) {instance().product_version_ = product_version;}
+      static ustring product_version() {return instance().product_version_;}
+      static void product_version(const ustring& product_version) {instance().product_version_ = product_version;}
 
     private:
       static application_informations& instance() {
@@ -22,9 +22,9 @@ namespace xtd {
         return application_informations;
       }
       application_informations() = default;
-      std::string company_name_;
-      std::string product_name_;
-      std::string product_version_;
+      ustring company_name_;
+      ustring product_name_;
+      ustring product_version_;
     };
   }
 }

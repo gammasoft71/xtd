@@ -13,8 +13,8 @@ namespace xtd {
       class item {
       public:
         item() = default;
-        item(const std::string& value) : value_(value) {}
-        item(const std::string& value, const std::any& tag) : value_(value), tag_(tag) {}
+        item(const ustring& value) : value_(value) {}
+        item(const ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
         /// @cond
         item(const char* value) : value_(value) {}
         item(const item& value) = default;
@@ -27,15 +27,15 @@ namespace xtd {
         bool operator>=(const item& value) const {return this->value_ >= value.value_;}
         /// @endcond
         
-        virtual const std::string& value() const {return this->value_;}
+        virtual const ustring& value() const {return this->value_;}
         
         virtual std::any tag() const {return this->tag_;}
         
-        std::string to_string() const {return this->value_;}
+        ustring to_string() const {return this->value_;}
         friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
         
       private:
-        std::string value_;
+        ustring value_;
         std::any tag_;
       };
    
@@ -52,8 +52,8 @@ namespace xtd {
       /// @param selected_index A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       virtual list_control& selected_index(size_t selected_index) = 0;
 
-      virtual std::string value_member() const {return this->value_member_;}
-      virtual list_control& value_member(const std::string& value_member);
+      virtual ustring value_member() const {return this->value_member_;}
+      virtual list_control& value_member(const ustring& value_member);
                   
       event<list_control, event_handler<control>> selected_index_changed;
 
@@ -76,7 +76,7 @@ namespace xtd {
 
       /// @cond
       size_t selected_index_ = -1;
-      std::string value_member_;
+      ustring value_member_;
       /// @endcond;
     };
   }

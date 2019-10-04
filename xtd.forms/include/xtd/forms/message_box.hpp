@@ -15,33 +15,33 @@ namespace xtd {
     
     class message_box {
     public:
-      static dialog_result show(const control& owner, const std::string& text);
+      static dialog_result show(const control& owner, const ustring& text);
       
-      static dialog_result show(const control& owner, const std::string& text, const std::string& caption);
+      static dialog_result show(const control& owner, const ustring& text, const ustring& caption);
       
-      static dialog_result show(const control& owner, const std::string& text, const std::string& caption, message_box_buttons buttons);
+      static dialog_result show(const control& owner, const ustring& text, const ustring& caption, message_box_buttons buttons);
 
-      static dialog_result show(const control& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon);
+      static dialog_result show(const control& owner, const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon);
 
-      static dialog_result show(const control& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
+      static dialog_result show(const control& owner, const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
 
-      static dialog_result show(const control& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
+      static dialog_result show(const control& owner, const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
 
-      static dialog_result show(const control& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
+      static dialog_result show(const control& owner, const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
 
-      static dialog_result show(const std::string& text);
+      static dialog_result show(const ustring& text);
       
-      static dialog_result show(const std::string& text, const std::string& caption);
+      static dialog_result show(const ustring& text, const ustring& caption);
       
-      static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons);
+      static dialog_result show(const ustring& text, const ustring& caption, message_box_buttons buttons);
 
-      static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon);
+      static dialog_result show(const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon);
 
-      static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
+      static dialog_result show(const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
 
-      static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
+      static dialog_result show(const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
 
-      static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
+      static dialog_result show(const ustring& text, const ustring& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
 
     private:
       message_box() = delete;

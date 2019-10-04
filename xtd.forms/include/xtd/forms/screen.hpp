@@ -23,7 +23,7 @@ namespace xtd {
       
       const drawing::rectangle& bounds() const {return this->bounds_;}
       
-      const std::string& device_name() const {return this->device_name_;}
+      const ustring& device_name() const {return this->device_name_;}
       
       bool primary() const {return this->primary_;}
       
@@ -64,11 +64,11 @@ namespace xtd {
                                   
     private:
       screen() = default;
-      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const std::string& device_name, bool primary, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), primary_(primary), working_area_(working_area) {}
+      screen(int32_t bits_per_pixel, const drawing::rectangle& bounds, const ustring& device_name, bool primary, const drawing::rectangle& working_area) : bits_per_pixel_(bits_per_pixel), bounds_(bounds), device_name_(device_name), primary_(primary), working_area_(working_area) {}
       
       int32_t bits_per_pixel_ = 0;
       drawing::rectangle bounds_;
-      std::string device_name_;
+      ustring device_name_;
       bool primary_ = false;
       drawing::rectangle working_area_;
     };                           
