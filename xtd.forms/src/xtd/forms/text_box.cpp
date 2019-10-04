@@ -23,10 +23,10 @@ text_box& text_box::border_style(forms::border_style border_style) {
   return *this;
 }
 
-control& text_box::text(const string& text) {
+control& text_box::text(const ustring& text) {
   if (this->text_ != text) {
     this->text_ = text;
-    native::text_box::text(this->handle_, this->text_);
+    native::text_box::text(this->handle_, this->text_.c_str());
   }
   return *this;
 }

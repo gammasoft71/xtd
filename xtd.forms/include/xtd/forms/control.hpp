@@ -395,9 +395,8 @@ namespace xtd {
         return*this;
       }
       
-      virtual const std::string& text() const {return this->text_;}
-      virtual control& text(const std::string& text);
-      virtual control& text(const std::wstring& text);
+      virtual const ustring& text() const {return this->text_;}
+      virtual control& text(const ustring& text);
 
       virtual int32_t top() const {return this->location_.y();}
       virtual control& top(int32_t top) {
@@ -782,7 +781,7 @@ namespace xtd {
       control::state state_ = state::empty;
       control_styles style_ = control_styles::none;
       std::any tag_;
-      std::string text_;
+      ustring text_;
       static std::map<intptr_t, control*> handles_;
       static control_collection top_level_controls_;
       /// @endcond
