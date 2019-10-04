@@ -71,14 +71,14 @@ namespace xtd {
     const char_t& operator[](size_t pos) {return this->std::basic_string<char_t, char_traits_t, allocator_t>::operator[](pos);}
     const char_t& operator[](size_t pos) const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::operator[](pos);}
 
-    const char_t& front() {this->std::basic_string<char_t, char_traits_t, allocator_t>::front();}
-    const char_t& front() const {this->std::basic_string<char_t, char_traits_t, allocator_t>::front();}
+    const char_t& front() {return this->std::basic_string<char_t, char_traits_t, allocator_t>::front();}
+    const char_t& front() const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::front();}
     
-    const char_t& back() {this->std::basic_string<char_t, char_traits_t, allocator_t>::back();}
-    const char_t& back() const {this->std::basic_string<char_t, char_traits_t, allocator_t>::back();}
+    const char_t& back() {return this->std::basic_string<char_t, char_traits_t, allocator_t>::back();}
+    const char_t& back() const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::back();}
     
-    const char_t* data() {this->std::basic_string<char_t, char_traits_t, allocator_t>::data();}
-    const char_t* data() const {this->std::basic_string<char_t, char_traits_t, allocator_t>::data();}
+    const char_t* data() {return this->std::basic_string<char_t, char_traits_t, allocator_t>::data();}
+    const char_t* data() const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::data();}
     
     const char_t* c_str() {return this->std::basic_string<char_t, char_traits_t, allocator_t>::c_str();}
     const char_t* c_str() const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::c_str();}

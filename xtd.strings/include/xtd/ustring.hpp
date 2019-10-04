@@ -3,6 +3,7 @@
 #pragma once
 
 #include <codecvt>
+#include <locale>
 #include <string>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -120,14 +121,14 @@ namespace xtd {
     const char& operator[](size_t pos) {return this->std::basic_string<char, char_traits_t, allocator_t>::operator[](pos);}
     const char& operator[](size_t pos) const {return this->std::basic_string<char, char_traits_t, allocator_t>::operator[](pos);}
 
-    const char& front() {this->std::basic_string<char, char_traits_t, allocator_t>::front();}
-    const char& front() const {this->std::basic_string<char, char_traits_t, allocator_t>::front();}
+    const char& front() {return this->std::basic_string<char, char_traits_t, allocator_t>::front();}
+    const char& front() const {return this->std::basic_string<char, char_traits_t, allocator_t>::front();}
     
-    const char& back() {this->std::basic_string<char, char_traits_t, allocator_t>::back();}
-    const char& back() const {this->std::basic_string<char, char_traits_t, allocator_t>::back();}
+    const char& back() {return this->std::basic_string<char, char_traits_t, allocator_t>::back();}
+    const char& back() const {return this->std::basic_string<char, char_traits_t, allocator_t>::back();}
     
-    const char* data() {this->std::basic_string<char, char_traits_t, allocator_t>::data();}
-    const char* data() const {this->std::basic_string<char, char_traits_t, allocator_t>::data();}
+    const char* data() {return this->std::basic_string<char, char_traits_t, allocator_t>::data();}
+    const char* data() const {return this->std::basic_string<char, char_traits_t, allocator_t>::data();}
     
     const char* c_str() {return this->std::basic_string<char, char_traits_t, allocator_t>::c_str();}
     const char* c_str() const {return this->std::basic_string<char, char_traits_t, allocator_t>::c_str();}
