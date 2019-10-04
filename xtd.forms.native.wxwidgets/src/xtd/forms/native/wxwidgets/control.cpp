@@ -304,9 +304,9 @@ void control::size(intptr_t control, const drawing::size& size) {
   #endif
 }
 
-string control::text(intptr_t control) {
+ustring control::text(intptr_t control) {
   if (control == 0) return {};
-  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString();
+  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdWstring();
 }
 
 void control::text(intptr_t control, const ustring& text) {

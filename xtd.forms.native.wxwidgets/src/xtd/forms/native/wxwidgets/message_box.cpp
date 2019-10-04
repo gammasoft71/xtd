@@ -9,7 +9,7 @@
 using namespace xtd::forms::native;
 
 #if defined(_WIN32)
-int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool displayHelpButton) {
+int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
   return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 }
 #else
@@ -53,7 +53,7 @@ namespace {
   }
 }
 
-int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
+int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
   native::application::initialize(); // Must be first
   wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), text, caption, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);

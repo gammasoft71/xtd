@@ -10,12 +10,12 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-string text_box::text(intptr_t control) {
+ustring text_box::text(intptr_t control) {
   if (control == 0) return {};
-  return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().ToStdString();
+  return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().ToStdWstring();
 }
 
-void text_box::text(intptr_t control, const string& text) {
+void text_box::text(intptr_t control, const ustring& text) {
   if (control == 0) return;
   static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(text);
 }

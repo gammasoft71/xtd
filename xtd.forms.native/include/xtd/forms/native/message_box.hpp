@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <string>
+#include <xtd/ustring.hpp>
 
 namespace xtd {
   namespace forms {
@@ -8,7 +8,7 @@ namespace xtd {
       class message_box {
       public:
         message_box() = delete;
-        static int32_t show(intptr_t hwnd, const std::string& text, const std::string& caption, uint32_t options, bool display_help_button);
+        static int32_t show(intptr_t hwnd, const ustring& text, const ustring& caption, uint32_t options, bool display_help_button);
       };
     }
   }
