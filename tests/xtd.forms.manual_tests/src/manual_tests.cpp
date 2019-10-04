@@ -36,6 +36,10 @@ namespace manual_test {
       L"\u4ea0\u4ea1\u4ea2\u4ea3\u4ea4\u4ea5\u4ea6\u4ea7\u4ea8\u4ea9\u4eaa\u4eab\u4eac\u4ead\u4eae\u4eaf\n"
       L"\u4eb0\u4eb1\u4eb2\u4eb3\u4eb4\u4eb5\u4eb6\u4eb7\u4eb8\u4eb9\u4eba\u4ebb\u4ebc\u4ebd\u4ebe\u4ebf\n"
       L"\U0001F428");
+      
+      ustring info = "My info \U0001F428";
+      wstring info2 = info.wstr();
+      cdebug << info << endl;
     }
     
   private:
