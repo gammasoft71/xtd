@@ -201,36 +201,20 @@ namespace xtd {
   };
   
   namespace string_literals {
-    inline std::basic_string<char> operator "" _s( const char* str, size_t len ) {
+    inline std::basic_string<char> operator "" _is( const char* str, size_t len ) {
       return std::basic_string<char>(str, len);
     }
     
-    inline std::basic_string<wchar_t> operator "" _s( const wchar_t* str, size_t len ) {
+    inline std::basic_string<wchar_t> operator "" _is( const wchar_t* str, size_t len ) {
       return std::basic_string<wchar_t>(str, len);
     }
     
-    inline std::basic_string<char16_t> operator "" _s( const char16_t* str, size_t len ) {
+    inline std::basic_string<char16_t> operator "" _is( const char16_t* str, size_t len ) {
       return std::basic_string<char16_t>(str, len);
     }
     
-    inline std::basic_string<char32_t> operator "" _s( const char32_t* str, size_t len ) {
+    inline std::basic_string<char32_t> operator "" _is( const char32_t* str, size_t len ) {
       return std::basic_string<char32_t>(str, len);
-    }
-
-    inline immutable_basic_string<char> operator "" _is( const char* str, size_t len ) {
-      return immutable_basic_string<char>(str, len);
-    }
-    
-    inline immutable_basic_string<wchar_t> operator "" _is( const wchar_t* str, size_t len ) {
-      return immutable_basic_string<wchar_t>(str, len);
-    }
-    
-    inline immutable_basic_string<char16_t> operator "" _is( const char16_t* str, size_t len ) {
-      return immutable_basic_string<char16_t>(str, len);
-    }
-    
-    inline immutable_basic_string<char32_t> operator "" _is( const char32_t* str, size_t len ) {
-      return immutable_basic_string<char32_t>(str, len);
     }
   }
 
