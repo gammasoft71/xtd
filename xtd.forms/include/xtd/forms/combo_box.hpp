@@ -43,7 +43,7 @@ namespace xtd {
       virtual combo_box& sorted(bool sorted);
       
       using list_control::text;
-      control& text(const std::string& text) override {return *this;}
+      control& text(const ustring& text) override {return *this;}
       
       void begin_update();
       void end_update();

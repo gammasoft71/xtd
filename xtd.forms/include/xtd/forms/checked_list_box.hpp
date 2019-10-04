@@ -85,7 +85,7 @@ namespace xtd {
       std::vector<item> selected_items() const;
       
       using list_box::text;
-      control& text(const std::string& text) override {
+      control& text(const ustring& text) override {
         this->selected_item_ = {text};
         return *this;
       }

@@ -309,10 +309,9 @@ string control::text(intptr_t control) {
   return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString();
 }
 
-void control::text(intptr_t control, const string& text) {
+void control::text(intptr_t control, const ustring& text) {
   if (control == 0) return;
-  std::wstring wtext = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(text.c_str());
-  reinterpret_cast<control_handler*>(control)->control()->SetLabel(wtext);
+  reinterpret_cast<control_handler*>(control)->control()->SetLabel(text.wc_str());
 }
 
 bool control::visible(intptr_t control) {

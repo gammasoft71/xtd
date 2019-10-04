@@ -179,18 +179,13 @@ control& control::parent(nullptr_t) {
   return *this;
 }
 
-control& control::text(const string& text) {
+control& control::text(const ustring& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::control::text(this->handle_, this->text_);
     this->on_text_changed(event_args::empty);
   }
   return *this;
-}
-
-control& control::text(const wstring& wtext) {
-  std::string text = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(wtext.c_str());
-  return this->text(text);
 }
 
 std::optional<std::reference_wrapper<control>> control::top_level_control() const {

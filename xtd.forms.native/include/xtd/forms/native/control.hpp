@@ -43,7 +43,7 @@ namespace xtd {
         static drawing::size size(intptr_t control);
         static void size(intptr_t control, const drawing::size& size);
         static std::string text(intptr_t control);
-        static void text(intptr_t control, const std::string& text);
+        static void text(intptr_t control, const ustring& text);
         static bool visible(intptr_t control);
         static void visible(intptr_t control, bool visible);
         static void register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
