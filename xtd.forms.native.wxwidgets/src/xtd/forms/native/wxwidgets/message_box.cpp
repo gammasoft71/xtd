@@ -6,6 +6,7 @@
 #include <wx/app.h>
 #include <wx/msgdlg.h>
 
+using namespace xtd;
 using namespace xtd::forms::native;
 
 #if defined(_WIN32)
