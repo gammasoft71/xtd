@@ -67,9 +67,12 @@ namespace xtd {
     universal_basic_string(const wchar_t* str) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(str)) {}
     universal_basic_string(const wchar_t* str, const allocator_t& a) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(str), a) {}
     
+#pragma warning(push)
+#pragma warning(suppress:4996)
     universal_basic_string(const wchar_t* str, size_t n) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(str), n) {}
     universal_basic_string(const wchar_t* str, size_t n, const allocator_t& a) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(str), n, a) {}
-    
+#pragma warning(pop)
+
     universal_basic_string(std::initializer_list<wchar_t> il) : universal_basic_string(std::wstring(il)) {}
     universal_basic_string(std::initializer_list<wchar_t> il, const allocator_t& a) : universal_basic_string(std::wstring(il), a) {}
 
@@ -79,9 +82,12 @@ namespace xtd {
     universal_basic_string(const char16_t* str) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char16_t>,char16_t>().to_bytes(str)) {}
     universal_basic_string(const char16_t* str, const allocator_t& a) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char16_t>, char16_t>().to_bytes(str), a) {}
     
+#pragma warning(push)
+#pragma warning(suppress:4996)
     universal_basic_string(const char16_t* str, size_t n) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char16_t>,char16_t>().to_bytes(str), n) {}
     universal_basic_string(const char16_t* str, size_t n, const allocator_t& a) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char16_t>, char16_t>().to_bytes(str), n, a) {}
-    
+#pragma warning(pop)
+
     universal_basic_string(std::initializer_list<char16_t> il) : universal_basic_string(std::u16string(il)) {}
     universal_basic_string(std::initializer_list<char16_t> il, const allocator_t& a) : universal_basic_string(std::u16string(il), a) {}
 
@@ -91,9 +97,12 @@ namespace xtd {
     universal_basic_string(const char32_t* str) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char32_t>,char32_t>().to_bytes(str)) {}
     universal_basic_string(const char32_t* str, const allocator_t& a) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t>().to_bytes(str), a) {}
     
+#pragma warning(push)
+#pragma warning(suppress:4996)
     universal_basic_string(const char32_t* str, size_t n) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char32_t>,char32_t>().to_bytes(str), n) {}
     universal_basic_string(const char32_t* str, size_t n, const allocator_t& a) noexcept : std::basic_string<char, char_traits_t, allocator_t>(std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t>().to_bytes(str), n, a) {}
-    
+#pragma warning(pop)
+
     universal_basic_string(std::initializer_list<char32_t> il) : universal_basic_string(std::u32string(il)) {}
     universal_basic_string(std::initializer_list<char32_t> il, const allocator_t& a) : universal_basic_string(std::u32string(il), a) {}
 
