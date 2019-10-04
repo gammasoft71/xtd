@@ -11,6 +11,7 @@ set(XTD_INCLUDES
   include/xtd/string_split_options.hpp
   include/xtd/strings.hpp
   include/xtd/to_string.hpp
+  include/xtd/ustring.hpp
   include/xtd/xtd.strings
   include/xtd/xtd.strings.hpp
 )
@@ -36,6 +37,7 @@ set(XTD_INTERNAL_INCLUDES
 )
 set(XTD_SOURCES
   src/xtd/strings.cpp
+  src/xtd/ustrings.cpp
 )
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\docs FILES ${XTD_DOCS_INCLUDES})
