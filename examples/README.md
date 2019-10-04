@@ -116,7 +116,7 @@
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of xtd::forms::Control::WndProc method.
 
 ## Custom Controls
-* [lines](custom_controls/lines/README.md) demonstrates the use of xtd::forms::Label control to draw simple lines.
+* [line](custom_controls/line/README.md) demonstrates the use of xtd::forms::Label control to draw simple lines.
 * [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the use of xtd::forms::Label control to draw simple lines.
 
 ## Others
