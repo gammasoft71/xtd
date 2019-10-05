@@ -30,6 +30,8 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/progress_bar.cpp
   src/xtd/forms/native/wxwidgets/radio_button.cpp
   src/xtd/forms/native/wxwidgets/screen.cpp
+  src/xtd/forms/native/wxwidgets/tab_control.cpp
+  src/xtd/forms/native/wxwidgets/tab_page.cpp
   src/xtd/forms/native/wxwidgets/text_box.cpp
   src/xtd/forms/native/wxwidgets/timer.cpp
   src/xtd/forms/native/wxwidgets/track_bar.cpp
@@ -47,6 +49,8 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_panel.hpp
   src/xtd/forms/native/wxwidgets/wx_progress_bar.hpp
   src/xtd/forms/native/wxwidgets/wx_radio_button.hpp
+  src/xtd/forms/native/wxwidgets/wx_tab_control.hpp
+  src/xtd/forms/native/wxwidgets/wx_tab_page.hpp
   src/xtd/forms/native/wxwidgets/wx_text_box.hpp
   src/xtd/forms/native/wxwidgets/wx_timer.hpp
   src/xtd/forms/native/wxwidgets/wx_track_bar.hpp

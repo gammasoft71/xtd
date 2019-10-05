@@ -326,8 +326,10 @@ void control::on_back_color_changed(const event_args &e) {
 }
 
 void control::on_create_control() {
-  for (auto control : this->controls_)
+  for (auto control : this->controls_) {
+    control.get().parent_ = this->handle_;
     control.get().create_control();
+  }
   this->on_layout(event_args::empty);
 }
 

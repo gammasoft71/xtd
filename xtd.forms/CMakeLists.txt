@@ -85,6 +85,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/scrollable_control.hpp
   include/xtd/forms/screen.hpp
   include/xtd/forms/selection_mode.hpp
+  include/xtd/forms/tab_control.hpp
+  include/xtd/forms/tab_page.hpp
   include/xtd/forms/text_box_base.hpp
   include/xtd/forms/text_box.hpp
   include/xtd/forms/tick_style.hpp
@@ -124,6 +126,8 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/progress_bar.cpp
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/screen.cpp
+  src/xtd/forms/tab_control.cpp
+  src/xtd/forms/tab_page.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/track_bar.cpp
