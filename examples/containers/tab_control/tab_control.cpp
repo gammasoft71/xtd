@@ -15,7 +15,6 @@ public:
     
     tab_page1.parent(tab_control1);
     tab_page1.text("Tab page 1");
-    tab_page1.back_color(xtd::drawing::system_colors::window());
     
     tab_page2.parent(tab_control1);
     tab_page2.text("Tab page 2");
