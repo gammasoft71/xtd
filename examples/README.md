@@ -51,7 +51,7 @@
 * [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
 * [panel](containers/panel/README.md) used to group collections of controls.
 * **split_container** represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
-*  **tab_control** manages a related set of tab pages.
+* [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 
 ## Menus and Toolbars
@@ -123,7 +123,7 @@
 
 * [button2](others/button2/README.md) demonstrates the use of xtd::forms::button control.
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of xtd::forms::form control and xtd::drawing::color class.
-* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::tab_page and colored xtd::forms::TabPage controls.
+* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::tab_page and colored xtd::forms::tab_page controls.
 * [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of xtd::forms::data_formats::get_format method.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::check_box controls.
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::radio_button controls.
