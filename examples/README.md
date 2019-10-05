@@ -113,6 +113,7 @@
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of xtd::forms::Control::EnableChaned event.
 * [font_changed_event](events/font_changed_event/README.md) demonstrates the use of xtd::forms::Control::FontChaned event.
 * [form_click](events/form_click/README.md) demonstrates the use of xtd::forms::Form control and Click event.
+* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [form](../../../xtd.forms/include/xtd/forms/form.hpp).
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of xtd::forms::Control::WndProc method.
 
 ## Custom Controls
