@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 
 #ifndef LBS_NOSEL
 constexpr size_t LBS_NOTIFY = 0x0001;

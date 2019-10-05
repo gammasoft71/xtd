@@ -2,7 +2,7 @@
 #include <codecvt>
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/forms/native/window_static.hpp>
+#include <xtd/forms/native/static_styles.hpp>
 #include <wx/stattext.h>
 #include "control_handler.hpp"
 

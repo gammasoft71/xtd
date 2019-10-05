@@ -1,7 +1,7 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/list_box.hpp>
 #include <xtd/forms/native/window_styles.hpp>
-#include <xtd/forms/native/window_list_box.hpp>
+#include <xtd/forms/native/list_box_styles.hpp>
 #include "../../../include/xtd/forms/list_box.hpp"
 
 using namespace std;

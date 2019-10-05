@@ -1,7 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/forms/native/window_track_bar.hpp>
+#include <xtd/forms/native/track_bar_styles.hpp>
 #include <wx/slider.h>
 #include "control_handler.hpp"
 

@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 
 #ifndef IDOK
 constexpr size_t IDOK = 1;

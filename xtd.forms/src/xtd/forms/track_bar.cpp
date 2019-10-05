@@ -1,6 +1,6 @@
 #include <xtd/forms/native/track_bar.hpp>
 #include <xtd/forms/window_messages.hpp>
-#include <xtd/forms/native/window_track_bar.hpp>
+#include <xtd/forms/native/track_bar_styles.hpp>
 #include "../../../include/xtd/forms/track_bar.hpp"
 
 using namespace xtd;

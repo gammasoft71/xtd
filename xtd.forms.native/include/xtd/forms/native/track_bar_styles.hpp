@@ -1,7 +1,7 @@
 #pragma once
+#include <cstddef>
 
 #ifndef TBS_AUTOTICKS
-// Track Bar Control Constants
 constexpr size_t TBS_AUTOTICKS = 0x0001;
 constexpr size_t TBS_VERT = 0x0002;
 constexpr size_t TBS_HORZ = 0x0000;

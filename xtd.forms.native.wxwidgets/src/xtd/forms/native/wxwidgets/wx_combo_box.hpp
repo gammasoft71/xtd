@@ -1,7 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/forms/native/window_combo_box.hpp>
+#include <xtd/forms/native/combo_box_styles.hpp>
 #include <wx/combobox.h>
 #include "control_handler.hpp"
 

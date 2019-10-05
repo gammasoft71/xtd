@@ -7,8 +7,9 @@
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
 #include <xtd/forms/window_messages.hpp>
-#include <xtd/forms/native/window_message_keys.hpp>
-#include <xtd/forms/native/window_scroll_bar.hpp>
+#include <xtd/forms/native/message_keys.hpp>
+#include <xtd/forms/native/scroll_bar_styles.hpp>
+#include <xtd/forms/native/virtual_keys.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include <wx/checkbox.h>
 #include <wx/event.h>

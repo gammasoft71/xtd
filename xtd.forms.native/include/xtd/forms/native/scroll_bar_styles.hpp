@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 
 #ifndef SB_HORZ
 // Scroll Bar Control Constants

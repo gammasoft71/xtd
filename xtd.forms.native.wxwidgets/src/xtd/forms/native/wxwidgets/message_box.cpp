@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/message_box.hpp>
-#include <xtd/forms/native/window_message_box.hpp>
+#include <xtd/forms/native/message_box_styles.hpp>
 #include "control_handler.hpp"
 #include <wx/app.h>
 #include <wx/msgdlg.h>

@@ -1,7 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/forms/native/window_list_box.hpp>
+#include <xtd/forms/native/list_box_styles.hpp>
 #include <wx/listbox.h>
 #include "control_handler.hpp"
 

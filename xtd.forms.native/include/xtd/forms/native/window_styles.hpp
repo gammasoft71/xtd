@@ -1,7 +1,7 @@
 #pragma once
+#include <cstddef>
 
 #ifndef WS_OVERLAPPED
-// Window Styles
 constexpr size_t WS_OVERLAPPED = 0x00000000;
 constexpr size_t WS_POPUP = 0x80000000;
 constexpr size_t WS_CHILD = 0x40000000;

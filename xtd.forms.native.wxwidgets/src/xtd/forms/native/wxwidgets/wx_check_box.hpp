@@ -1,7 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/forms/native/window_button.hpp>
+#include <xtd/forms/native/button_styles.hpp>
 #include <wx/checkbox.h>
 #include <wx/tglbtn.h>
 #include "control_handler.hpp"
