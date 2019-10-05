@@ -1,10 +1,10 @@
-# colored_tab_pages
+# docked_panels
 
-demonstrates the use of [xtd::forms::tab_page](../../../xtd.forms/include/xtd/forms/tab_page.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::panel](../../../xtd.forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_styles](../../../xtd.forms/include/xtd/forms/dock_styles.hpp).
 
 # Sources
 
-[colored_tab_pages.cpp](colored_tab_pages.cpp)
+[docked_panels.cpp](docked_panels.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,16 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_w.png)
+![Screenshot](../../../docs/pictures/examples/docked_panels_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_m.png)
+![Screenshot](../../../docs/pictures/examples/docked_panels_m.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_md.png)
+![Screenshot](../../../docs/pictures/examples/docked_panels_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_g.png)
+![Screenshot](../../../docs/pictures/examples/docked_panels_g.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_pages_gd.png)
+![Screenshot](../../../docs/pictures/examples/docked_panels_gd.png)
