@@ -108,7 +108,7 @@
 
 ## Events
 
-* [application_idle](events/application_idle/README.md) shows how to create an Application with Application class and Idle event.
+* [application_idle](events/application_idle/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class and [idle](../xtd.forms/include/xtd/forms/application.hpp) event.
 * [mouse_event](events/mouse_event/README.md) demonstrates the use of some mouse events.
 * [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of xtd::forms::Control::EnableChaned event.
 * [font_changed_event](events/font_changed_event/README.md) demonstrates the use of xtd::forms::Control::FontChaned event.
