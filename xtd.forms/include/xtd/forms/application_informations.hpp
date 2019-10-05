@@ -5,15 +5,28 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
+    /// @brief Specifies the application informations.
     class application_informations {
     public:
+      /// @brief Gets the company name associated with the application.
+      /// @return The company name.
       static const ustring& company_name() {return instance().company_name_;}
+      /// @brief Sets the company name associated with the application.
+      /// @param company_name The company name.
       static void company_name(const ustring& company_name) {instance().company_name_ = company_name;}
       
+      /// @brief Gets the product name associated with the application.
+      /// @return The product name.
       static ustring product_name() {return instance().product_name_;}
+      /// @brief Sets the product name associated with the application.
+      /// @param product_name The product name.
       static void product_name(const ustring& product_name) {instance().product_name_ = product_name;}
       
+      /// @brief Gets the product version associated with the application.
+      /// @return The product version.
       static ustring product_version() {return instance().product_version_;}
+      /// @brief Sets the product version associated with the application.
+      /// @param product_version The product version.
       static void product_version(const ustring& product_version) {instance().product_version_ = product_version;}
 
     private:
