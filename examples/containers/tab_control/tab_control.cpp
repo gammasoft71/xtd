@@ -15,13 +15,12 @@ public:
     
     tab_page1.parent(tab_control1);
     tab_page1.text("Tab page 1");
-    tab_page1.back_color(xtd::drawing::color::red);
+    
     tab_page2.parent(tab_control1);
     tab_page2.text("Tab page 2");
-    tab_page2.back_color(xtd::drawing::color::yellow);
+    
     tab_page3.parent(tab_control1);
     tab_page3.text("Tab page 3");
-    tab_page3.back_color(xtd::drawing::color::blue);
   }
   
 private:
