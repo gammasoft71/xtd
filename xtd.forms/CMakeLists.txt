@@ -85,6 +85,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/scrollable_control.hpp
   include/xtd/forms/screen.hpp
   include/xtd/forms/selection_mode.hpp
+  include/xtd/forms/tab_alignment.hpp
   include/xtd/forms/tab_control.hpp
   include/xtd/forms/tab_page.hpp
   include/xtd/forms/text_box_base.hpp

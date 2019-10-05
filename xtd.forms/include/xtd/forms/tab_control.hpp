@@ -1,6 +1,6 @@
 #pragma once
 #include "control.hpp"
-#include "border_style.hpp"
+#include "tab_alignment.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -9,6 +9,9 @@ namespace xtd {
     class tab_control : public control {
     public:
       tab_control();
+      
+      virtual tab_alignment alignment() const {return this->alignment_;}
+      virtual tab_control& alignment(tab_alignment alignment);
 
       drawing::size default_size() const override {return{200, 100};}
       
@@ -16,6 +19,10 @@ namespace xtd {
       forms::create_params create_params() const override;
       
       drawing::size measure_control() const override;
+      
+      /// @cond
+      tab_alignment alignment_ = tab_alignment::top;
+      /// @endcond
     };
   }
 }
