@@ -121,14 +121,14 @@
 
 ## Others
 
-* [button2](others/button2/README.md) demonstrates the use of xtd::forms::Button control.
-* [colored_forms](others/colored_forms/README.md) demonstrates the use of xtd::forms::Form control and xtd::drawing::color class.
-* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::TabControl and colored xtd::forms::TabPage controls.
-* [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of xtd::forms::DataFormats::GetFormat method.
-* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of xtd::forms::GroupBox and xtd::forms::CheckBox controls.
-* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of xtd::forms::GroupBox and xtd::forms::RadioButton controls.
-* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of xtd::forms::Label control and Unicode text.
+* [button2](others/button2/README.md) demonstrates the use of xtd::forms::button control.
+* [colored_forms](others/colored_forms/README.md) demonstrates the use of xtd::forms::form control and xtd::drawing::color class.
+* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::tab_page and colored xtd::forms::TabPage controls.
+* [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of xtd::forms::data_formats::get_format method.
+* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::check_box controls.
+* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::radio_button controls.
+* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of xtd::forms::label control and Unicode text.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
-* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of Stopwatch class, Label and Button controls.
-* [system_sound](others/system_sound/README.md) demonstrates the use of System::Media::SystemSound component.
+* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, Label and button controls.
+* [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [All](.) You can see all examples here. 
