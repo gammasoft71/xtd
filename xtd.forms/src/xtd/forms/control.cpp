@@ -752,8 +752,8 @@ void control::do_layout() {
 void control::internal_destroy_handle(intptr_t handle) {
   if (this->handle_) native::control::unregister_wnd_proc(handle, {*this, &control::wnd_proc_});
   handles_.erase(handle);
-  native::control::destroy(handle);
   this->on_handle_destroyed(event_args::empty);
+  native::control::destroy(handle);
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
