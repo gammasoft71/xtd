@@ -122,7 +122,9 @@
 
 ## Others
 
-* [button2](others/button2/README.md) demonstrates the use of xtd::forms::button control.
+* [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
+* [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
+* [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of xtd::forms::form control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::tab_page and colored xtd::forms::tab_page controls.
 * [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of xtd::forms::data_formats::get_format method.
