@@ -19,6 +19,8 @@
 #include "wx_panel.hpp"
 #include "wx_progress_bar.hpp"
 #include "wx_radio_button.hpp"
+#include "wx_tab_control.hpp"
+#include "wx_tab_page.hpp"
 #include "wx_text_box.hpp"
 #include "wx_track_bar.hpp"
 #include "wx_user_control.hpp"
@@ -145,6 +147,8 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "panel") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
   if (create_params.class_name() == "progressbar") return reinterpret_cast<intptr_t>(new wx_progress_bar(create_params));
   if (create_params.class_name() == "radiobutton") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
+  if (create_params.class_name() == "tabcontrol") return reinterpret_cast<intptr_t>(new wx_tab_control(create_params));
+  if (create_params.class_name() == "tabpage") return reinterpret_cast<intptr_t>(new wx_tab_page(create_params));
   if (create_params.class_name() == "textbox") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
   if (create_params.class_name() == "trackbar") return reinterpret_cast<intptr_t>(new wx_track_bar(create_params));
   if (create_params.class_name() == "usercontrol") return reinterpret_cast<intptr_t>(new wx_user_control(create_params));
