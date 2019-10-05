@@ -1,10 +1,10 @@
-# colored_tab_forms
+# colored_forms
 
 demonstrates the use of [xtd::forms::form](../../../xtd.forms/include/xtd/forms/form.hpp) control with unicode text.
 
 # Sources
 
-[colored_tab_forms.cpp](colored_tab_forms.cpp)
+[colored_forms.cpp](colored_forms.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,16 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_forms_w.png)
+![Screenshot](../../../docs/pictures/examples/colored_forms_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_forms_m.png)
+![Screenshot](../../../docs/pictures/examples/colored_forms_m.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_forms_md.png)
+![Screenshot](../../../docs/pictures/examples/colored_forms_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_forms_g.png)
+![Screenshot](../../../docs/pictures/examples/colored_forms_g.png)
 
-![Screenshot](../../../docs/pictures/examples/colored_tab_forms_gd.png)
+![Screenshot](../../../docs/pictures/examples/colored_forms_gd.png)
