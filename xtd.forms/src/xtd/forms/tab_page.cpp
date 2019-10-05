@@ -25,7 +25,15 @@ void tab_page::on_handle_created(const event_args &e) {
 }
 
 void tab_page::on_handle_destroyed(const event_args &e) {
-  this->panel::on_handle_destroyed(e);
-  //if (this->parent().has_value() && dynamic_cast<tab_control*>(&this->parent().value().get()) != nullptr)
-  //  native::tab_control::instert_item(this->parent_, this->parent().value().get().controls().size(), this->handle_, this->text_);
+  /*
+  if (this->parent().has_value() && dynamic_cast<tab_control*>(&this->parent().value().get()) != nullptr) {
+    for (size_t index = 0; index < this->parent().value().get().controls().size(); index++) {
+      if (this->parent().value().get().controls()[index].get().handle() == this->handle_) {
+        native::tab_control::delete_item(this->parent_, index);
+        break;
+      }
+    }
+    this->panel::on_handle_destroyed(e);
+  }
+   */
 }
