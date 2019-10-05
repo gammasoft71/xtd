@@ -1,7 +1,7 @@
 #pragma once
+#include <cstddef>
 
 #ifndef BST_UNCHECKED
-// Button Control Styles
 constexpr size_t BS_PUSHBUTTON = 0x00000000;
 constexpr size_t BS_DEFPUSHBUTTON = 0x00000001;
 constexpr size_t BS_CHECKBOX = 0x00000002;
@@ -39,3 +39,4 @@ constexpr size_t BST_INDETERMINATE = 0x0002;
 constexpr size_t BST_PUSHED = 0x0004;
 constexpr size_t BST_FOCUS = 0x0008;
 #endif
+

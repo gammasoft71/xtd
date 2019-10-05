@@ -18,10 +18,12 @@ set(XTD_FORMS_INCLUDES
 set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/application.hpp
   include/xtd/forms/native/button.hpp
+  include/xtd/forms/native/button_styles.hpp
   include/xtd/forms/native/check_box.hpp
   include/xtd/forms/native/checked_list_box.hpp
   include/xtd/forms/native/color_dialog.hpp
   include/xtd/forms/native/combo_box.hpp
+  include/xtd/forms/native/combo_box_styles.hpp
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/cursor.hpp
   include/xtd/forms/native/cursors.hpp
@@ -30,28 +32,27 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/group_box.hpp
   include/xtd/forms/native/label.hpp
   include/xtd/forms/native/list_box.hpp
+  include/xtd/forms/native/list_box_styles.hpp
   include/xtd/forms/native/message_box.hpp
+  include/xtd/forms/native/message_box_styles.hpp
+  include/xtd/forms/native/message_keys.hpp
   include/xtd/forms/native/panel.hpp
   include/xtd/forms/native/progress_bar.hpp
+  include/xtd/forms/native/progress_bar_styles.hpp
   include/xtd/forms/native/radio_button.hpp
   include/xtd/forms/native/screen.hpp
+  include/xtd/forms/native/scroll_bar_styles.hpp
+  include/xtd/forms/native/static_styles.hpp
   include/xtd/forms/native/tab_control.hpp
   include/xtd/forms/native/tab_control_styles.hpp
   include/xtd/forms/native/tab_page.hpp
   include/xtd/forms/native/text_box.hpp
   include/xtd/forms/native/timer.hpp
   include/xtd/forms/native/track_bar.hpp
+  include/xtd/forms/native/track_bar_styles.hpp
   include/xtd/forms/native/user_control.hpp
-  include/xtd/forms/native/window_button.hpp
-  include/xtd/forms/native/window_combo_box.hpp
-  include/xtd/forms/native/window_list_box.hpp
-  include/xtd/forms/native/window_message_box.hpp
-  include/xtd/forms/native/window_message_keys.hpp
-  include/xtd/forms/native/window_progress_bar.hpp
-  include/xtd/forms/native/window_scroll_bar.hpp
-  include/xtd/forms/native/window_static.hpp
+  include/xtd/forms/native/virtual_keys.hpp
   include/xtd/forms/native/window_styles.hpp
-  include/xtd/forms/native/window_track_bar.hpp
 )
 
 set(SOURCES

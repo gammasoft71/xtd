@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 
 #ifndef TCS_SCROLLOPPOSITE
 constexpr size_t TCS_SCROLLOPPOSITE = 0x0001; // assumes multiline tab

@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 
 #ifndef CBS_SIMPLE
 constexpr size_t CBS_SIMPLE = 0x0001L;

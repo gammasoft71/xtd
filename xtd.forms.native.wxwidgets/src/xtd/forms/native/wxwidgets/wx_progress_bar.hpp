@@ -1,7 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/forms/native/window_progress_bar.hpp>
+#include <xtd/forms/native/progress_bar_styles.hpp>
 #include <wx/gauge.h>
 #include <wx/timer.h>
 #include "control_handler.hpp"

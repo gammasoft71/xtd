@@ -1,7 +1,7 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/combo_box.hpp>
 #include <xtd/forms/native/window_styles.hpp>
-#include <xtd/forms/native/window_combo_box.hpp>
+#include <xtd/forms/native/combo_box_styles.hpp>
 #include "../../../include/xtd/forms/combo_box.hpp"
 
 using namespace std;

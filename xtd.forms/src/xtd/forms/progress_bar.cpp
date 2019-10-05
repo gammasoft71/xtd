@@ -1,5 +1,5 @@
 #include <xtd/forms/native/progress_bar.hpp>
-#include <xtd/forms/native/window_progress_bar.hpp>
+#include <xtd/forms/native/progress_bar_styles.hpp>
 #include "../../../include/xtd/forms/progress_bar.hpp"
 
 using namespace xtd;

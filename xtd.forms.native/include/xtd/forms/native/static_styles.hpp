@@ -1,7 +1,7 @@
 #pragma once
+#include <cstddef>
 
 #ifndef SS_LEFT
-// Static Control Constants
 constexpr size_t SS_LEFT = 0x00000000;
 constexpr size_t SS_CENTER = 0x00000001;
 constexpr size_t SS_RIGHT = 0x00000002;

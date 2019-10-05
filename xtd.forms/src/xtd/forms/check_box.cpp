@@ -1,6 +1,6 @@
+#include <xtd/forms/native/button_styles.hpp>
 #include <xtd/forms/native/check_box.hpp>
 #include <xtd/forms/window_messages.hpp>
-#include <xtd/forms/native/window_button.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/check_box.hpp"
 

@@ -1,6 +1,6 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/label.hpp>
-#include <xtd/forms/native/window_static.hpp>
+#include <xtd/forms/native/static_styles.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/label.hpp"
 

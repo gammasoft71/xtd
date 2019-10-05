@@ -6,7 +6,7 @@
 #include <xtd/xtd.strings>
 #include <xtd/drawing/native/graphics.hpp>
 #include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/window_message_keys.hpp>
+#include <xtd/forms/native/message_keys.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/control.hpp"
 #include "../../../include/xtd/forms/form.hpp"
