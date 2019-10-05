@@ -12,9 +12,6 @@ namespace xtd {
     /// @remarks You do not typically inherit directly from the container_control class. form, user_control, and up_down_base classes inherit from container_control.
     class container_control : public scrollable_control {
     public:
-    /// @brief Initializes a new instance of the ContainerControl class.
-    container_control() = default;
-    
       /// @brief Gets the active control on the container control.
     /// @return The control that is currently active on the container_control.
     std::optional<control_ref> active_control() const {return this->active_control_;}
@@ -26,8 +23,12 @@ namespace xtd {
     void active_control(std::nullptr_t) {this->active_control_.reset();}
 
     protected:
+      /// @brief Initializes a new instance of the ContainerControl class.
       container_control() = default;
+
+      /// @cond
       std::optional<control_ref> active_control_;
+      /// @endcond
     };
   }
 }
