@@ -16,11 +16,44 @@ public:
     group_box2.parent(*this);
     group_box2.bounds({155, 10, 135, 140});
     group_box2.text("Group 2");
+    
+    check_box1.location({10, 15});
+    check_box1.parent(group_box1);
+    check_box1.text("check 1");
+    
+    check_box2.checked(true);
+    check_box2.location({10, 45});
+    check_box2.parent(group_box1);
+    check_box2.text("check 2");
+
+    check_box3.location({10, 75});
+    check_box3.parent(group_box1);
+    check_box3.text("check 3");
+
+    check_box4.location({10, 15});
+    check_box4.parent(group_box2);
+    check_box4.text("check 4");
+
+    check_box5.location({10, 45});
+    check_box5.parent(group_box2);
+    check_box5.text("check 5");
+
+    check_box6.checked(true);
+    check_box6.location({10, 75});
+    check_box6.parent(group_box2);
+    check_box6.text("check 6");
   }
   
 private:
   group_box group_box1;
   group_box group_box2;
+  
+  check_box check_box1;
+  check_box check_box2;
+  check_box check_box3;
+  check_box check_box4;
+  check_box check_box5;
+  check_box check_box6;
 };
 
 int main() {
