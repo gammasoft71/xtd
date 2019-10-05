@@ -128,7 +128,7 @@
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of xtd::forms::form control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::tab_page and colored xtd::forms::tab_page controls.
 * [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of xtd::forms::data_formats::get_format method.
-* [docked_panels](others/docked_paels/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::check_box controls.
+* [docked_panels](others/docked_panels/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::check_box controls.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::check_box controls.
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::radio_button controls.
 * [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of xtd::forms::label control and Unicode text.
