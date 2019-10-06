@@ -17,7 +17,7 @@
 
 * [button](controls/button/README.md) represents a Windows [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
 * [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
-* [checked_list_box](controls/checked_list_box/README.md) represents a Windows control to display a list of check_box.
+* [checked_list_box](controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
 * [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../xtd.forms/include/xtd/forms/combo_box.hpp)control.
 * [control](controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
