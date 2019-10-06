@@ -34,7 +34,7 @@ namespace xtd {
             else if ((style & BS_RIGHT) == BS_RIGHT) wx_style |= wxBU_RIGHT;
           }
           
-          return wx_style; // | common_window_style_to_wx_style(style, ex_style);
+          return wx_style;
         }
       };
     }

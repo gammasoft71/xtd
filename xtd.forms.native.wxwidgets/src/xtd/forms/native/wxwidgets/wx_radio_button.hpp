@@ -27,7 +27,7 @@ namespace xtd {
                     
           if ((style & BS_RIGHTBUTTON) == BS_RIGHTBUTTON) wx_style |= wxALIGN_RIGHT;
 
-          return wx_style | common_window_style_to_wx_style(style, ex_style);
+          return wx_style;
         }
 
         wxRadioButton* hiden_radio_button = nullptr;
