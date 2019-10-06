@@ -24,7 +24,7 @@ namespace xtd {
           else if ((style & CBS_DROPDOWN) == CBS_DROPDOWN) wx_style |= wxCB_DROPDOWN;
           else if ((style & CBS_SIMPLE) == CBS_SIMPLE) wx_style |= wxCB_SIMPLE;
 
-          return wx_style | common_window_style_to_wx_style(style, ex_style);
+          return wx_style;
         }
       };
     }

@@ -33,7 +33,7 @@ namespace xtd {
             }
           }
 
-          return wx_style | common_window_style_to_wx_style(style, ex_style);
+          return wx_style;
         }
       };
     }

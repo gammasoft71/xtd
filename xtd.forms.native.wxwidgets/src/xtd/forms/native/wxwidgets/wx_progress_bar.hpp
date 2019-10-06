@@ -37,7 +37,7 @@ namespace xtd {
           if ((style & PBS_VERTICAL) == PBS_VERTICAL) wx_style |= wxGA_VERTICAL;
           else wx_style |= wxGA_HORIZONTAL;
 
-          return wx_style | common_window_style_to_wx_style(style, ex_style);
+          return wx_style;
         }
 
         int32_t minimum_ = 0;

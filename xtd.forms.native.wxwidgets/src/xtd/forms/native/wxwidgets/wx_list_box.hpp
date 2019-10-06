@@ -18,13 +18,17 @@ namespace xtd {
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
 
+          if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_DEFAULT;
+          else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
+          else wx_style |= wxBORDER_NONE;
+
           if ((style & LBS_EXTENDEDSEL) == LBS_EXTENDEDSEL) wx_style |= wxLB_EXTENDED;
           else if ((style & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) wx_style |= wxLB_MULTIPLE;
           else if ((style & LBS_HASSTRINGS) == LBS_HASSTRINGS) wx_style |= wxLB_SINGLE;
           
            if ((style & LBS_SORT) == LBS_SORT) wx_style |= wxLB_SORT;
           
-          return wx_style | common_window_style_to_wx_style(style, ex_style);
+          return wx_style;
         }
       };
     }
