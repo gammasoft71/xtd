@@ -100,7 +100,7 @@
 ## Common Dialogs
 
 * [color_dialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [folder_browser_dialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder. This class cannot be inherited.
+* [folder_browser_dialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
 * [font_dialog](common_dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
 * [message_box](common_dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
 * [open_file_dialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
@@ -110,29 +110,29 @@
 
 * [application_idle](events/application_idle/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class and [idle](../xtd.forms/include/xtd/forms/application.hpp) event.
 * [mouse_event](events/mouse_event/README.md) demonstrates the use of some mouse events.
-* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of xtd::forms::Control::EnableChaned event.
-* [font_changed_event](events/font_changed_event/README.md) demonstrates the use of xtd::forms::Control::FontChaned event.
-* [form_click](events/form_click/README.md) demonstrates the use of xtd::forms::Form control and Click event.
-* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [form](../../../xtd.forms/include/xtd/forms/form.hpp).
-* [wnd_proc](events/wnd_proc/README.md) demonstrates the use of xtd::forms::Control::WndProc method.
+* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changedl](../xtd.forms/include/xtd/forms/control.hpp) event.
+* [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../xtd.forms/include/xtd/forms/control.hpp) event.
+* [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../xtd.forms/include/xtd/forms/form.hpp) control and [click](../xtd.forms/include/xtd/forms/control.hpp) event.
+* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../xtd.forms/include/xtd/forms/form.hpp).
+* [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../xtd.forms/include/xtd/forms/control.hpp) method.
 
 ## Custom Controls
-* [line](custom_controls/line/README.md) demonstrates the use of xtd::forms::Label control to draw simple lines.
-* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the use of xtd::forms::Label control to draw simple lines.
+* [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../xtd.forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
+* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../xtd.forms/include/xtd/forms/text_box.hpp) control.
 
 ## Others
 
 * [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
 * [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
 * [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
-* [colored_forms](others/colored_forms/README.md) demonstrates the use of xtd::forms::form control and xtd::drawing::color class.
-* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of xtd::forms::tab_page and colored xtd::forms::tab_page controls.
-* [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of xtd::forms::data_formats::get_format method.
-* [docked_panels](others/docked_panels/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::check_box controls.
-* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::check_box controls.
-* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of xtd::forms::group_box and xtd::forms::radio_button controls.
-* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of xtd::forms::label control and Unicode text.
+* [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../xtd.forms/include/xtd/forms/form.hpp) control and xtd::drawing::color class.
+* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../xtd.forms/include/xtd/forms/tab_control.hpp) and colored [xtd::forms::tab_page](../xtd.forms/include/xtd/forms/tab_page.hpp) controls.
+* [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of [xtd::forms::data_format::get_format](../xtd.forms/include/xtd/forms/data_format.hpp): method.
+* [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../xtd.forms/include/xtd/forms/panel.hpp) container with [xtd::forms::docked_style](../xtd.forms/include/xtd/forms/docked_style.hpp).
+* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/button.hpp) container and [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
+* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) control.
+* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) control and Unicode text.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
-* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, Label and button controls.
+* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) and [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) controls.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [All](.) You can see all examples here. 
