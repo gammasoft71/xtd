@@ -127,7 +127,6 @@
 * [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../xtd.forms/include/xtd/forms/form.hpp) control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../xtd.forms/include/xtd/forms/tab_control.hpp) and colored [xtd::forms::tab_page](../xtd.forms/include/xtd/forms/tab_page.hpp) controls.
-* [data_formats_get_format](others/data_formats_get_format/README.md) demonstrates the use of [xtd::forms::data_format::get_format](../xtd.forms/include/xtd/forms/data_format.hpp): method.
 * [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../xtd.forms/include/xtd/forms/panel.hpp) container with [xtd::forms::docked_style](../xtd.forms/include/xtd/forms/docked_style.hpp).
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/button.hpp) container and [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) control.
