@@ -11,6 +11,21 @@ The guidelines in this chapter lay out a simple method for using case that, when
 html_tag
 ```
 
+**√ DO** To differenciate members form accessors or metods, end members by _.
+
+
+```c++
+namespace xtd {
+  class my_class {
+  public:
+    int value() const {return value_;}
+  
+  private:
+    int value_ = 42;
+  };
+}
+```
+
 A special case is made for two-letter acronyms in which both letters are not separed, as shown in the following identifier:
 
 ```c++
@@ -23,7 +38,7 @@ iostream
 namespace xtd {
   class thread {
     ...
-  }
+  };
 }
 ```
 
@@ -33,7 +48,7 @@ namespace xtd {
 namespace system {
   class thread {
     ...
-  }
+  };
 }
 ```
 
