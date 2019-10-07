@@ -1,5 +1,9 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.forms) | [Project](https://sourceforge.net/projects/formspro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
+# Notes 
+
+xtd.forms is under development.
+
 # Status information
 
 ![progressina](pictures/progress_ina.png) Not applicable
@@ -19,10 +23,6 @@
 | Name      | Status                                  |
 |-----------|-----------------------------------------|
 | xtd.forms | ![progress100](pictures/progress50.png) |
-
-# Remarks 
-
-xtd.forms is under development.
 
 ______________________________________________________________________________________________
 
