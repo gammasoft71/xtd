@@ -133,8 +133,8 @@ These are compound words written as a single word, such as endpoint. For the pur
 | separate_word | Not          |
 |---------------|--------------|
 | bit_flag      | bitflag      |
-| callback      | callBack     |
-| canceled      | Cancelled    |
+| callback      | call_back    |
+| canceled      | cancelled    |
 | do_not        | don't        |
 | email         | e-mail       |
 | endpoint      | end-point    |
