@@ -26,8 +26,8 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 
 ## Libraries dependency
 
-xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets) backend supported is [wxWidgets](https://www.wxwidgets.org/).
-See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) for your system.
+xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets) backend is supported.
+See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
 
 In the future xtd.forms will use win32 api on Windows, cocoa on macOS and gtk+ 3 on linux. Other backend like qt will be ported too.
 
