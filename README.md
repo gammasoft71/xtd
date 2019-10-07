@@ -13,21 +13,15 @@
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
 
-# Remarks
+# Notes
 
 xtd.forms is under development.
 
 # Features
 
-* Contains common controls like label, button, check box, rich text box, tree view, ...
-* Contains containers like form, group box, panel, tab control, ...
-* Contains menu and toolbar.
-* Contains components like timer, cursors, sounds, ..
-* Contains various dialogs like message box, open file dialog, color dialog, font dialog, ...
+* Contains common controls, containers, menu, toolbar, components, various dialogs, ...
 * Easy catch control events by using event and delegates classes.
-* You can create your own controls and add your own events.
-* All controls are natives (win32 on windows, cocoa on macOS, gtk on linux).
-* If target os does not exist you can create your own native library to support it.
+* All controls are natives (win32 on windows, cocoa on macOS, gtk+3 on linux).
 * ...
 
 For more information see [xtd.forms website](https://gammasoft71.wixsite.com/gammasoft) (or [markdown documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.forms/).
@@ -65,4 +59,3 @@ For more examples see [examples](examples/README.md)
 # Download and install
 
 Before running examples you must download and install xtd.forms. To download and install it read [downloads](docs/downloads.md) file.
-
