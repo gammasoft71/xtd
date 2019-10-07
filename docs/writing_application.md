@@ -140,8 +140,11 @@ The following code example demonstrates how to associate the event with the meth
 button1.click += {*this, &form1::button1_click};
 ```
 
-7. Compile and run the application as described in the previous tutorial.
+7. Compile and run the application.
 
+```shell
+xtd run
+```
 
 ## Example
 
