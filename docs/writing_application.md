@@ -155,29 +155,27 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace form_with_button {
-  class form1 : public form {  
-  public:
-    form1() {
-      button1.size({40, 40});
-      button1.location({30, 30});
-      button1.text("Click\nme");
-      controls().push_back(button1);
-      button1.click += {*this, &form1::button1_click};
-    }
+class form1 : public form {  
+public:
+  form1() {
+    button1.size({40, 40});
+    button1.location({30, 30});
+    button1.text("Click\nme");
+    controls().push_back(button1);
+    button1.click += {*this, &form1::button1_click};
+  }
 
-  private:
-    void button1_click(const control& sender, const event_args& e) {
-      message_box::show("Hello World");
-    }
+private:
+  void button1_click(const control& sender, const event_args& e) {
+    message_box::show("Hello World");
+  }
 
-    button button1;
-  };
-}
+  button button1;
+};
 
 int main() {
   application::enable_visual_styles();
-  application::run(form_with_button::form1());
+  application::run(form1());
 }
 
 ```
