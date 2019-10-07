@@ -26,7 +26,7 @@
 * If target os does not exist you can create your own native library to support it.
 * ...
 
-For more information see [Documentation](docs).
+For more information see [Documentation](docs/home.md).
 
 # Examples
 
