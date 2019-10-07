@@ -6,7 +6,7 @@
 
 * [Installation](downloads.md) provide download and install documentation.
 * [C++ and system](c++.md) provide C++, libraries dependency, Operating System and compilers documentation.
-* [Examples](../examples) provide some examples.
+* [Examples](../examples/README.md) provide some examples.
 
 ## See also
 
