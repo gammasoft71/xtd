@@ -109,6 +109,7 @@ The following code example demonstrates how to declare the button control.
 ```c++
   private:
     button button1;
+
   public:
     Form1() {
       button1.size({40, 40});
@@ -166,11 +167,11 @@ public:
   }
 
 private:
-  void button1_click(const control& sender, const event_args& e) {
+  button button1;
+
+void button1_click(const control& sender, const event_args& e) {
     message_box::show("Hello World");
   }
-
-  button button1;
 };
 
 int main() {
