@@ -13,6 +13,9 @@
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
 
+# Remarks
+
+xtd.forms is currently in development mode.
 
 # Features
 
@@ -28,10 +31,6 @@
 * ...
 
 For more information see [xtd.forms website](https://gammasoft71.wixsite.com/gammasoft) (or [markdown documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.forms/).
-
-# Remarks
-
-xtd.forms is currently in development mode.
 
 # Examples
 
