@@ -32,7 +32,7 @@ For more information see [Documentation](docs/home.md).
 
 The following examples "Hello, world!" show how use form and button control, catch event click and show a message box.
 
-src/forms_hello_world.cpp
+forms_hello_world.cpp
 
 ```c++
 #include <xtd/xtd.forms>
