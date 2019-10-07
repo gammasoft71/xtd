@@ -60,5 +60,5 @@ For more examples see [examples](examples/README.md)
 
 # Download and install
 
-Before running examples you must download and install xtd.forms. To download and install it read Downloads file.
+Before running examples you must download and install xtd.forms. To download and install it read [downloads](docs/downloads.md) file.
 
