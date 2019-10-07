@@ -75,9 +75,9 @@ root
 
 For each library the hierarchy is identical :
 
-**root/xtd_library_name/include** folder contains include files for Switch.LibraryName library.
+**root/xtd_library_name/include** folder contains include files for xtd_library_name library.
 
-**root/xtd_library_name/include/namespace1/namespace2/...** folder contains include files for Switch.LibraryName library organized by namespaces.
+**root/xtd_library_name/include/namespace1/namespace2/...** folder contains include files for xtd_library_name library organized by namespaces.
 
 **root/xtd_library_name/src** folder contains source files for xtd_library_name library.
 
@@ -87,7 +87,7 @@ For each library the hierarchy is identical :
 
 For example, the **root/src/xtd_forms** folder contains xtd.forms library source files and the **root/src/xtd_forms_native_win32** folder contains xtd.forms.native.win32 library source files.
 
-For exemple, the **root/tests/Switch.Core.UnitTests** contains Switch.Core library unit tests and the **root/tests/Switch.system.Drawing.ManualTets** folder contains Switch.System.Drawing manual tests.
+For exemple, the **root/tests/xtd_forms_unit_tests** contains xtd_forms library unit tests.
 
 For example, if a xtd.forms library header file contains :
 
