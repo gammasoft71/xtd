@@ -14,6 +14,13 @@ Or clone latest development version on [GitHub](https://github.com/gammasoft71/x
 git clone https://github.com/gammasoft71/xtd.forms .
 ```
 
+# Libraries dependency
+
+xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets/README.md) backend is supported.
+See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
+
+In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../xtd.forms.native.cocoa/README.md) on macOS and [xtd.form.native.gtk3](../xtd.forms.native.gtk3/README.md) on linux. Other backend like [xtd.form.native.qt5](../xtd.forms.native.qt5/README.md) will be ported too.
+
 # Installation
 
 ## Windows 7 SP1 or later
@@ -96,7 +103,7 @@ cd /home/YourName/YourProject
 ./install.sh
 ```
 
-4. Create as many unit tests as you want with xtd.forms.
+4. Create as many applications as you want with xtd.forms.
 
 ______________________________________________________________________________________________
 
