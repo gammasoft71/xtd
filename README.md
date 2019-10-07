@@ -29,6 +29,10 @@
 
 For more information see [xtd.forms website](https://gammasoft71.wixsite.com/gammasoft) (or [markdown documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.forms/).
 
+# Remarks
+
+xtd.forms is currently in development mode.
+
 # Examples
 
 The following examples "Hello, world!" show how use form and button control, catch event click and show a message box.
