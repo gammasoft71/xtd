@@ -40,6 +40,13 @@ target_link_libraries(${PROJECT_NAME} xtd.forms)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd.forms/hello_world")
 ```
 
+## Build and run
+
+Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
+
+```shell
+xtd run
+```
 
 ## Output
 
