@@ -139,6 +139,13 @@ The following code example demonstrates how to associate the event with the meth
 button1.click += event_handler<control>(*this, &form1::button1_click);
 ```
 
+#### Remarks:
+You can simply write :
+
+```c++
+button1.click += {*this, &form1::button1_click};
+```
+
 7. Compile and run the application as described in the previous tutorial.
 
 
@@ -162,7 +169,7 @@ public:
     button1.location({30, 30});
     button1.text("Click\nme");
     controls().push_back(button1);
-    button1.click += event_handler<control>(*this, &form1::button1_click);
+    button1.click += {*this, &form1::button1_click};
   }
 
 private:
