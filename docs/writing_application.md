@@ -115,7 +115,7 @@ The following code example demonstrates how to declare the button control.
       button1.location({30, 30});
       button1.text("Click\nme)";
       controls().push_back(button1);
-      button1.click += event_handler(*this, &form1::button1_click);
+      button1.click += {*this, &form1::button1_click};
     }
 ```
 
@@ -136,7 +136,7 @@ The following code example demonstrates how to handle the button control's click
 The following code example demonstrates how to associate the event with the method.
 
 ```c++
-button1.click += event_handler(*this, &form1::button1_click);
+button1.click += {*this, &form1::button1_click};
 ```
 
 7. Compile and run the application as described in the previous tutorial.
@@ -161,9 +161,9 @@ namespace form_with_button {
     form1() {
       button1.size({40, 40});
       button1.location({30, 30});
-      button1.text{"Click\nme"};
+      button1.text("Click\nme");
       controls().push_back(button1);
-      button1.click += event_handler(*this, &form1::button1_click);
+      button1.click += {*this, &form1::button1_click};
     }
 
   private:
