@@ -4,7 +4,7 @@
 
 PROJECT_NAME           = "xtd.forms - Reference Guide"
 PROJECT_NUMBER         = 0.1.0
-PROJECT_BRIEF          = "Modern c++17 library containing classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system."
+PROJECT_BRIEF          = "Modern c++17 library containing classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and Linux like Ubuntu operating system."
 PROJECT_LOGO           = docs/pictures/forms_doxygen.png
 OUTPUT_DIRECTORY       =
 ALWAYS_DETAILED_SEC    = YES
@@ -72,7 +72,7 @@ QCH_FILE               =
 GENERATE_ECLIPSEHELP   = NO
 DISABLE_INDEX          = NO
 GENERATE_TREEVIEW      = YES
-ENUM_VALUES_PER_LINE   = 4
+ENUM_VALUES_PER_LINE   = 1
 TREEVIEW_WIDTH         = 250
 EXT_LINKS_IN_WINDOW    = NO
 FORMULA_FONTSIZE       = 10
