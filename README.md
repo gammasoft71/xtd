@@ -15,7 +15,7 @@
 
 # Remarks
 
-xtd.forms is currently in development mode.
+xtd.forms is under development.
 
 # Features
 
