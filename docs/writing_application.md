@@ -169,7 +169,7 @@ public:
 private:
   button button1;
 
-void button1_click(const control& sender, const event_args& e) {
+  void button1_click(const control& sender, const event_args& e) {
     message_box::show("Hello World");
   }
 };
