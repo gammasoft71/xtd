@@ -29,7 +29,7 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets) backend is supported.
 See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
 
-In the future xtd.forms will use win32 api on Windows, cocoa on macOS and gtk+ 3 on linux. Other backend like qt will be ported too.
+In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) api on Windows, [xtd.form.native.cocoa](../xtd.forms.native.cocoa/README.md) on macOS and [xtd.form.native.gtk3](../xtd.forms.native.gtk3/README.md) on linux. Other backend like [xtd.form.native.qt5](../xtd.forms.native.qt5/README.md) will be ported too.
 
 ## Compilers
 
