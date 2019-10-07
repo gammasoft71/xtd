@@ -1,4 +1,4 @@
-# docked_panels
+# docked_panel
 
 demonstrates the use of [xtd::forms::panel](../../../xtd.forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../../../xtd.forms/include/xtd/forms/dock_style.hpp).
 
