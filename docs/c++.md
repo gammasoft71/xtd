@@ -22,14 +22,14 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 * Windows 7 32 or 64 bits or later
 * macOS X 10.13.6 or later
 * Linux (compatible with g++7)
-* Probably others (if a compatible C++17 compiler is supported and if xtd.form.native library is ported)
+* Probably others (if a compatible C++17 compiler is supported and if [xtd.form.native](../xtd.forms.native) library is ported)
 
 ## Libraries dependency
 
-xtd.forms is currently in development mode and the only one backend supported is wxWidgets.
+xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets) backend supported is [wxWidgets](https://www.wxwidgets.org/).
 See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) for your system.
 
-In the future xtd.forms will use win32 api on Windos, cocoa on macOS and gtk+ 3 on linux. Other backend like qt will be ported too.
+In the future xtd.forms will use win32 api on Windows, cocoa on macOS and gtk+ 3 on linux. Other backend like qt will be ported too.
 
 ## Compilers
 
