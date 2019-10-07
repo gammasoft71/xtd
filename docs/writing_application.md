@@ -111,10 +111,10 @@ The following code example demonstrates how to declare the button control.
     button button1;
   public:
     Form1() {
-      button1.location({30, 30});
       button1.size({40, 40});
-      button1.text("Click\nme)";
-      button1.parent(*this);
+      button1.location({30, 30});
+      button1.text("Click\nme");
+      controls().push_back(button1);
       button1.click += {*this, &form1::button1_click};
     }
 ```
@@ -158,10 +158,10 @@ using namespace xtd::forms;
 class form1 : public form {  
 public:
   form1() {
-    button1.location({30, 30});
     button1.size({40, 40});
+    button1.location({30, 30});
     button1.text("Click\nme");
-    button1.parent(*this);
+    controls().push_back(button1);
     button1.click += {*this, &form1::button1_click};
   }
 
