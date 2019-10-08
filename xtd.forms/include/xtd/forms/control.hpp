@@ -717,7 +717,7 @@ namespace xtd {
       
       virtual void on_visible_changed(const event_args& e);
 
-      void recreate_handle();
+      virtual void recreate_handle();
  
       /// @brief Performs the work of setting the specified bounds of this control.
       /// @param x The new left property value of the control.

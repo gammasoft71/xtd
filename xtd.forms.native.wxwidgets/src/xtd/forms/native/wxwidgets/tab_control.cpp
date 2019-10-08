@@ -10,14 +10,14 @@ void tab_control::add_item(intptr_t control, intptr_t page, const ustring& text)
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->AddPage(reinterpret_cast<control_handler*>(page)->control(), text);
 }
 
-void tab_control::instert_item(intptr_t control, size_t index, intptr_t page, const ustring& text) {
+void tab_control::insert_item(intptr_t control, size_t index, intptr_t page, const ustring& text) {
   if (control == 0 || page == 0) return;
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->InsertPage(index, reinterpret_cast<control_handler*>(page)->control(), text);
 }
 
 void tab_control::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
-  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->DeletePage(index);
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->RemovePage(index);
 }
 
 size_t tab_control::selected_index(intptr_t control) {
