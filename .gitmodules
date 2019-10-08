@@ -1,4 +1,4 @@
-[submodule "xtd.console"]
+[submodule "xtd_console"]
 	path = xtd_console
 	url = https://github.com/gammasoft71/xtd_console
 [submodule "xtd.delegates"]
