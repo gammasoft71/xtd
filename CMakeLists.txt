@@ -11,7 +11,7 @@ if (NOT DEFINED EXPORT_PROJECT_NAME)
 endif ()
 
 # Projects
-add_subdirectory(xtd.console)
+add_subdirectory(xtd_console)
 add_subdirectory(xtd.delegates)
 add_subdirectory(xtd.diagnostics)
 add_subdirectory(xtd.drawing)
