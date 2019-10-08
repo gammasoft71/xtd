@@ -20,7 +20,7 @@ add_subdirectory(xtd.forms)
 add_subdirectory(xtd.io)
 add_subdirectory(xtd.properties)
 add_subdirectory(xtd.strings)
-add_subdirectory(xtd.tunit)
+add_subdirectory(xtd_tunit)
 add_subdirectory(xtd)
 
 # Tests projects
