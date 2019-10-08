@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cmath>
 #include <xtd/drawing/native/font.hpp>
 #include <xtd/drawing/native/font_family.hpp>
