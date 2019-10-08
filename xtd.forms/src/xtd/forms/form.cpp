@@ -28,6 +28,18 @@ form::form() {
   this->create_control();
 }
 
+form& form::accept_button(const ibutton_control& accept_button) {
+  if (!this->accept_button_.has_value() || &this->accept_button_.value().get() != &accept_button) {
+    this->accept_button_ = const_cast<ibutton_control&>(accept_button);
+  }
+  return *this;
+}
+
+form& form::accept_button(nullptr_t) {
+  
+  return *this;
+}
+
 form& form::auto_size_mode(forms::auto_size_mode value) {
   this->set_auto_size_mode(value);
   return *this;
@@ -187,5 +199,6 @@ drawing::size form::measure_control() const {
 
 void form::on_handle_created(const event_args &e) {
   this->container_control::on_handle_created(e);
-  
+  if (this->accept_button_.has_value())
+    native::form::default_control(this->handle_, dynamic_cast<control&>(this->accept_button_.value().get()).handle());
 }

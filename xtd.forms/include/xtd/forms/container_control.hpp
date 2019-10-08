@@ -13,14 +13,14 @@ namespace xtd {
     class container_control : public scrollable_control {
     public:
       /// @brief Gets the active control on the container control.
-    /// @return The control that is currently active on the container_control.
-    std::optional<control_ref> active_control() const {return this->active_control_;}
-    /// @brief Sets the active control on the container control.
-    /// @param active_control The control that is currently active on the container_control.
+      /// @return The control that is currently active on the container_control.
+      std::optional<control_ref> active_control() const {return this->active_control_;}
+      /// @brief Sets the active control on the container control.
+      /// @param active_control The control that is currently active on the container_control.
       void active_control(const control& active_control);
-    /// @brief Resets the active control on the container control.
-    /// @param nullptr.
-    void active_control(std::nullptr_t) {this->active_control_.reset();}
+      /// @brief Resets the active control on the container control.
+      /// @param nullptr.
+      void active_control(std::nullptr_t) {this->active_control_.reset();}
 
     protected:
       /// @brief Initializes a new instance of the ContainerControl class.
