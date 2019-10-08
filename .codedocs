@@ -29,7 +29,7 @@ TAGLINKS = gammasoft71/xtd.console/ \
            gammasoft71/xtd.io/ \
            gammasoft71/xtd.properties/ \
            gammasoft71/xtd.strings/ \
-           gammasoft71/xtd.tunit/
+           gammasoft71/xtd_tunit/
 
 #---------------------------------------------------------------------------
 # Doxygen Configuration
