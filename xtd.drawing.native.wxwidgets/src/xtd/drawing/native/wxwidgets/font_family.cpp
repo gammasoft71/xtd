@@ -21,6 +21,7 @@ namespace {
 }
 
 intptr_t font_family::create(const std::string& name) {
+  if (name == ".AppleSystemUIFont") return reinterpret_cast<intptr_t>(new std::string(name));
   return wxFontEnumerator::IsValidFacename(name) ? reinterpret_cast<intptr_t>(new std::string(name)) : 0;
 }
 
@@ -68,6 +69,7 @@ std::vector<std::string> font_family::installed_font_families() {
   std::vector<std::string> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
     families.push_back(name.ToStdString());
+  std::sort(families.begin(), families.end());
   return families;
 }
 
