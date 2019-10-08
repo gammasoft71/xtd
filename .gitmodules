@@ -2,7 +2,7 @@
 	path = xtd_console
 	url = https://github.com/gammasoft71/xtd_console
 [submodule "xtd_delegates"]
-	path = xtd.delegates
+	path = xtd_delegates
 	url = https://github.com/gammasoft71/xtd_delegates
 [submodule "xtd_diagnostics"]
 	path = xtd.diagnostics
