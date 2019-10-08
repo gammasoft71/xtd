@@ -12,7 +12,7 @@ endif ()
 
 # Projects
 add_subdirectory(xtd_console)
-add_subdirectory(xtd.delegates)
+add_subdirectory(xtd_delegates)
 add_subdirectory(xtd.diagnostics)
 add_subdirectory(xtd.drawing)
 add_subdirectory(xtd.environment)
