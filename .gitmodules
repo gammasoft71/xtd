@@ -5,7 +5,7 @@
 	path = xtd_delegates
 	url = https://github.com/gammasoft71/xtd_delegates
 [submodule "xtd_diagnostics"]
-	path = xtd_diagnostics
+	path = xtd.diagnostics
 	url = https://github.com/gammasoft71/xtd_diagnostics
 [submodule "xtd_drawing"]
 	path = xtd.drawing
