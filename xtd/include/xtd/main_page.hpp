@@ -55,7 +55,7 @@
 ///   button button1;
 ///   button1.text("Click me");
 ///   button1.location(point(10, 10));
-///   button1.click += [&](const control& sender, const event_args& e) {
+///   button1.click += [&] {
 ///     messageBox::show("Hello, World!");
 ///   };
 ///
