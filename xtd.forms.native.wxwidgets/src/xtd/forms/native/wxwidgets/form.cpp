@@ -9,17 +9,21 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void form::activate(intptr_t form) {
-  reinterpret_cast<wx_form*>(form)->control()->Raise();
+  reinterpret_cast<control_handler*>(form)->control()->Raise();
 }
 
 void form::close(intptr_t form) {
-  reinterpret_cast<wx_form*>(form)->control()->Close();
+  reinterpret_cast<control_handler*>(form)->control()->Close();
+}
+
+void form::default_control(intptr_t form, intptr_t default_control) {
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetDefaultItem(reinterpret_cast<control_handler*>(default_control)->control());
 }
 
 int32_t form::show_dialog(intptr_t form) {
-  return static_cast<wxDialog*>(reinterpret_cast<wx_form*>(form)->control())->ShowModal();
+  return static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->ShowModal();
 }
 
 void form::end_dialog(intptr_t form, int32_t result) {
-  static_cast<wxDialog*>(reinterpret_cast<wx_form*>(form)->control())->EndModal(result);
+  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->EndModal(result);
 }

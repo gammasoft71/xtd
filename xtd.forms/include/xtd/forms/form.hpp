@@ -28,6 +28,10 @@ namespace xtd {
       /// @remarks The default size of a form is 300 pixels in height and 300 pixels in width.
       form();
 
+      std::optional<std::reference_wrapper<ibutton_control>> accept_button() const {return accept_button_;}
+      form& accept_button(const ibutton_control& accept_button);
+      form& accept_button(nullptr_t);
+
       static std::optional<std::reference_wrapper<form>> active_form() {return active_form_;}
       
       virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
@@ -97,6 +101,7 @@ namespace xtd {
       
       virtual void wm_close(message& message);
       
+      std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       std::shared_ptr<screen> previous_screeen_;
