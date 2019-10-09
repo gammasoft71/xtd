@@ -2,7 +2,7 @@
 
 # Notes
 
-xtd is under development.
+[xtd is under development](development_status.md).
 
 ______________________________________________________________________________________________
 
