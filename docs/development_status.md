@@ -20,18 +20,18 @@ xtd is under development.
 
 # xtd libraries
 
-| Name            | Status                                   |
-|-----------------|------------------------------------------|
-| xtd.tunit       | ![progress100](pictures/progress100.png) |
-| xtd.properties  | ![progress100](pictures/progress100.png) |
-| xtd.delegates   | ![progress100](pictures/progress100.png) |
-| xtd.diagnostics | ![progress100](pictures/progress50.png)  |
-| xtd.io          | ![progress100](pictures/progress75.png)  |
-| xtd.strings     | ![progress100](pictures/progress75.png)  |
-| xtd.system      | ![progress100](pictures/progress50.png)  |
-| xtd.console     | ![progress100](pictures/progress100.png) |
-| xtd.drawing     | ![progress100](pictures/progress50.png)  |
-| xtd.forms     | ![progress100](pictures/progress50.png)  |
+| Name                                                                                                     | Status                                   |
+|----------------------------------------------------------------------------------------------------------|------------------------------------------|
+| [xtd.tunit](https://github.com/gammasoft71/xtd_tunit/tree/master/docs/development_status.md)             | ![progress100](pictures/progress100.png) |
+| [xtd.properties](https://github.com/gammasoft71/xtd_properties/tree/master/docs/development_status.md)   | ![progress100](pictures/progress100.png) |
+| [xtd.delegates](https://github.com/gammasoft71/xtd_delegates/tree/master/docs/development_status.md)     | ![progress100](pictures/progress100.png) |
+| [xtd.diagnostics](https://github.com/gammasoft71/xtd_diagnostics/tree/master/docs/development_status.md) | ![progress100](pictures/progress75.png)  |
+| [xtd.io](https://github.com/gammasoft71/xtd_io/tree/master/docs/development_status.md)                   | ![progress100](pictures/progress75.png)  |
+| [xtd.strings](https://github.com/gammasoft71/xtd_strings/tree/master/docs/development_status.md)         | ![progress100](pictures/progress75.png)  |
+| [xtd.system](https://github.com/gammasoft71/xtd_system/tree/master/docs/development_status.md)           | ![progress100](pictures/progress50.png)  |
+| [xtd.console](https://github.com/gammasoft71/xtd_console/tree/master/docs/development_status.md)         | ![progress100](pictures/progress100.png) |
+| [xtd.drawing](https://github.com/gammasoft71/xtd_drawing/tree/master/docs/development_status.md)         | ![progress100](pictures/progress50.png)  |
+| [xtd.forms](https://github.com/gammasoft71/xtd_forms/tree/master/docs/development_status.md)             | ![progress100](pictures/progress50.png)  |
 
 ______________________________________________________________________________________________
 
