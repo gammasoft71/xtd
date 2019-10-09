@@ -58,6 +58,7 @@ The xtd.console library is modern c++17 library to manage console application on
 ## xtd.forms
 
 The xrd.drawing library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
+
 The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system.
 
 |                                                                                              | Libraries                                             | Examples                                                                        | Reference guide                                               |
