@@ -6,7 +6,7 @@ You can download latest stable version on [SourceForge](https://sourceforge.net/
 
 [![Downloadxtd](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/xtdpro/files/latest/download)
 
-# Clone the latest xtd.forms commit
+# Clone the latest xtd commit
 
 Or clone latest development version on [GitHub](https://github.com/gammasoft71/xtd).
 
