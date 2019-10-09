@@ -11,7 +11,7 @@ You can download latest stable version on [SourceForge](https://sourceforge.net/
 Or clone latest development version on [GitHub](https://github.com/gammasoft71/xtd.tunit).
 
 ```shell
-git clone https://github.com/gammasoft71/xtd.tunit .
+git clone https://github.com/gammasoft71/xtd.tunit.git
 ```
 
 # Installation
