@@ -6,7 +6,7 @@
 
 * [Create comsole applicaiton](#createconsole-application)
 * [Create Windows Form application](#create-windows-form-application)
-* [Create unittests](#create-unittests)
+* [Create unittests application](#create-unittests)
 
 This tutorial describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
 
@@ -18,7 +18,7 @@ This [tutorial](https://github.com/gammasoft71/xtd_console/tree/master/docs/writ
 
 This [tutorial](https://github.com/gammasoft71/xtd_forms/tree/master/docs/writing_applications.md) describe the basic steps that you must complete to create and run a Windows Forms application from the command line.
 
-## Create unittests
+## Create unittests application
 
 This [tutorial](https://github.com/gammasoft71/xtd_tunit/tree/master/docs/writing_tests.md) describe the basic steps that you must complete to create and run a unitests application from the command line.
 
