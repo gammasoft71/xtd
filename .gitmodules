@@ -1,30 +1,30 @@
-[submodule "xtd_console"]
+[submodule "src/xtd_console"]
 	path = src/xtd_console
 	url = https://github.com/gammasoft71/xtd_console
-[submodule "xtd_delegates"]
+[submodule "src/xtd_delegates"]
 	path = src/xtd_delegates
 	url = https://github.com/gammasoft71/xtd_delegates
-[submodule "xtd_diagnostics"]
+[submodule "src/xtd_diagnostics"]
 	path = src/xtd_diagnostics
 	url = https://github.com/gammasoft71/xtd_diagnostics
-[submodule "xtd_drawing"]
+[submodule "src/xtd_drawing"]
 	path = src/xtd_drawing
 	url = https://github.com/gammasoft71/xtd_drawing
-[submodule "xtd_forms"]
+[submodule "src/xtd_forms"]
 	path = src/xtd_forms
 	url = https://github.com/gammasoft71/xtd_forms
-[submodule "xtd_io"]
+[submodule "src/xtd_io"]
 	path = src/xtd_io
 	url = https://github.com/gammasoft71/xtd_io
-[submodule "xtd_properties"]
+[submodule "src/xtd_properties"]
 	path = src/xtd_properties
 	url = https://github.com/gammasoft71/xtd_properties
-[submodule "xtd_strings"]
+[submodule "src/xtd_strings"]
 	path = src/xtd_strings
 	url = https://github.com/gammasoft71/xtd_strings
-[submodule "xtd_system"]
+[submodule "src/xtd_system"]
 	path = src/xtd_system
 	url = https://github.com/gammasoft71/xtd_system
-[submodule "xtd_tunit"]
+[submodule "src/xtd_tunit"]
 	path = src/xtd_tunit
 	url = https://github.com/gammasoft71/xtd_tunit
