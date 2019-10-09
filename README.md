@@ -31,7 +31,7 @@ The classic first application 'Hello World'.
 
 ## Console
 
-src/hello_world_console.cpp:
+hello_world_console.cpp:
 
 ```c++
 #include <xtd/xtd>
@@ -52,13 +52,13 @@ cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_console)
 find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} src/hello_world_console.cpp)
+add_executable(${PROJECT_NAME} hello_world_console.cpp)
 target_link_libraries(${PROJECT_NAME} xtd)
 ```
 
 ## Forms
 
-src/hello_world_forms.cpp:
+hello_world_forms.cpp:
 
 ```c++
 #include <xtd/xtd>
@@ -88,13 +88,13 @@ cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_forms)
 find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE src/hello_world_forms.cpp)
+add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE hello_world_forms.cpp)
 target_link_libraries(${PROJECT_NAME} xtd)
 ```
 
 ## Unit tests
 
-src/hello_world_tunit.cpp:
+hello_world_tunit.cpp:
 
 ```c++
 #include <xtd/xtd>
@@ -133,7 +133,7 @@ cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_tunit)
 find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} src/hello_world_tunit.cpp)
+add_executable(${PROJECT_NAME} hello_world_tunit.cpp)
 target_link_libraries(${PROJECT_NAME} xtd)
 ```
 
