@@ -18,7 +18,7 @@
 * written in efficient, modern C++17;
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
-For more information see [xtd.forms website](https://gammasoft71.wixsite.com/gammasoft) (or [markdown documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
+For more information see [xtd website](https://gammasoft71.wixsite.com/gammasoft) (or [markdown documentations](docs/home.md)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/).
 
 # Examples
 
