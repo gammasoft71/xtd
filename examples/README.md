@@ -30,4 +30,4 @@
 
 [xtd.drawing](https://github.com/gammasoft71/xtd.drawing/tree/master/examples) contains xtd.drawing library examples.
 
-[xtd.forms](https://github.com/gammasoft71/xtd.forms/tree/master/examples) contains xtd.forms library examples.
+[xtd.forms](https://github.com/gammasoft71/xtd.forms/tree/master/examples/README.md) contains xtd.forms library examples.
