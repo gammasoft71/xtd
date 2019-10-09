@@ -21,17 +21,23 @@ xtd is composed of several libraries grouped by theme :
 
 ## xtd.tunit
 
+The xtd.tunit library is a unit-testing framework for modern C++17. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
+ 
 |                                                                                                               | Libraries                                             | Examples                                                                        | Reference guide                                             |
 |---------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------|
 | [![xtd_tunit_logo](pictures/xtd.tunit.png)](https://gammasoft71.wixsite.com/xtd-tunit)                        | [xtd.tunit](https://github.com/gammasoft71/xtd_tunit) | [examples](https://github.com/gammasoft71/xtd_tunit/tree/master/examples)       | [codedocs.xyz](https://codedocs.xyz/gammasoft71/xtd_tunit/) |
 
 ## xtd.properties
 
+The xtd.properties is another c#-like property accessor for C++11 and above.
+
 |                                                                                                               | Libraries                                                       | Examples                                                                        | Reference guide                                                  |
 |---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------|---------------------------------------------------------------------------------|------------------------------------------------------------------|
 | [![xtd_properties_logo](pictures/xtd.properties.png)](https://gammasoft71.wixsite.com/xtd-properties)         | [xtd.properties](https://github.com/gammasoft71/xtd_properties) | [examples](https://github.com/gammasoft71/xtd_properties/tree/master/examples)  | [codedocs.xyz](https://codedocs.xyz/gammasoft71/xtd_properties/) |
 
 ## xtd.system
+
+The xtd.core, xtd.delegates, xtd.diagnostics, xtd.io and xtd.strings libraries are modern C++17 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 
 |                                                                                                               | Libraries                                                         | Examples                                                                        | Reference guide                                                   |
 |---------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------|
@@ -43,11 +49,16 @@ xtd is composed of several libraries grouped by theme :
 
 ## xtd.console
 
+The xtd.console library is modern c++17 library to manage console application on Windows, macOS and Linux.
+
 |                                                                                              | Libraries                                             | Examples                                                                        | Reference guide                                               |
 |----------------------------------------------------------------------------------------------|-------------------------------------------------------|---------------------------------------------------------------------------------|---------------------------------------------------------------|
-| [![xtd_console_logo](pictures/xtd.console.png)](https://gammasoft71.wixsite.com/xtd-console) | [xtd.console](https://github.com/gammasoft71/xtd_console) | [examples](https://github.com/gammasoft71/xtd_console/tree/master/examples)     | [codedocs.xyz](https://codedocs.xyz/gammasoft71/xtd_console/) |
+| [![xtd_console_logo](pictures/xtd.console.png)](https://gammasoft71.wixsite.com/xtd-console) | [xtd.console](https://github.com/gammasoft71/xtd_console) | [examples](https://github.com/gammasoft71/xtd_console/tree/master/examples) | [codedocs.xyz](https://codedocs.xyz/gammasoft71/xtd_console/) |
 
 ## xtd.forms
+
+The xrd.drawing library contains types that support basic GDI+ graphics functionality. Child namespaces support advanced two-dimensional and vector graphics functionality, advanced imaging functionality, and print-related and typographical services. A child namespace also contains types that extend design-time user-interface logic and drawing.
+The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system.
 
 |                                                                                              | Libraries                                             | Examples                                                                        | Reference guide                                               |
 |----------------------------------------------------------------------------------------------|-------------------------------------------------------|---------------------------------------------------------------------------------|---------------------------------------------------------------|
