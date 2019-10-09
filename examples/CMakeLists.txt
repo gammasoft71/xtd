@@ -26,15 +26,15 @@ if (ADD_XT_TUNIT)
 endif()
   
 if (ADD_XT_CONSOLE)
-  add_subdirectory(../xtd.console/examples ${CMAKE_BINARY_DIR}/xtd.console/build)
+  add_subdirectory(../xtd_console/examples ${CMAKE_BINARY_DIR}/xtd_console/build)
 endif()
   
   if (ADD_XT_DELEGATES)
-add_subdirectory(../xtd.delegates/examples ${CMAKE_BINARY_DIR}/xtd.delegates/build)
+add_subdirectory(../xtd_delegates/examples ${CMAKE_BINARY_DIR}/xtd_delegates/build)
 endif()
   
 if (ADD_XT_DIAGNOSTICS)
-  add_subdirectory(../xtd.diagnostics/examples ${CMAKE_BINARY_DIR}/xtd.diagnostics/build)
+  add_subdirectory(../xtd_diagnostics/examples ${CMAKE_BINARY_DIR}/xtd_diagnostics/build)
 endif()
   
 if (ADD_XT_DRAWING)
@@ -62,6 +62,6 @@ if (ADD_XT_STRINGS)
 endif()
   
 if (ADD_XT_TUNIT)
-  add_subdirectory(../xtd.tunit/examples ${CMAKE_BINARY_DIR}/xtd.tunit/build)
+  add_subdirectory(../xtd_tunit/examples ${CMAKE_BINARY_DIR}/xtd_tunit/build)
 endif()
   
