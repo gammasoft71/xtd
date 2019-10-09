@@ -2,7 +2,7 @@
 
 # Contact
 
-[![Mail](pictures/mail256x256.png)](mailto:gammasoft71@gmail.com)
+[![Mail](pictures/mail.png)](mailto:gammasoft71@gmail.com)
 
 To contact Gammasoft please send a mail to [gammasoft71@gmail.com](mailto:gammasoft71@gmail.com)
 
