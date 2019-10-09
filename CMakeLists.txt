@@ -21,7 +21,7 @@ add_subdirectory(xtd.io)
 add_subdirectory(xtd.properties)
 add_subdirectory(xtd.strings)
 add_subdirectory(xtd_tunit)
-add_subdirectory(xtd)
+add_subdirectory(src)
 
 # Tests projects
 option(ENABLE_TESTS "Enable tests" OFF)
