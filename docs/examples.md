@@ -27,7 +27,7 @@ cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_console)
 find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} src/hello_world_console.cpp)
+add_executable(${PROJECT_NAME} hello_world_console.cpp)
 target_link_libraries(${PROJECT_NAME} xtd)
 ```
 
@@ -151,7 +151,7 @@ cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_tunit)
 find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} src/hello_world_tunit.cpp)
+add_executable(${PROJECT_NAME} hello_world_tunit.cpp)
 target_link_libraries(${PROJECT_NAME} xtd)
 ```
 
