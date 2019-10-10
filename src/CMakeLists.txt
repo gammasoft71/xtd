@@ -5,6 +5,6 @@ project(src)
 
 # Projects
 add_subdirectory(xtd_delegates)
-if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+if (IS_MAIN_PROJECT)
   add_subdirectory(xtd_tunit)
 endif ()

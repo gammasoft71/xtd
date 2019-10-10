@@ -5,7 +5,9 @@ project(xtd.delegates)
 
 # Options
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set(IS_MAIN_PROJECT OFF)
 if (NOT DEFINED EXPORT_PROJECT_NAME)
+  set(IS_MAIN_PROJECT ON)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
 
@@ -27,7 +29,7 @@ if (ENABLE_TESTS)
 endif ()
 
 # install
-if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+if (IS_MAIN_PROJECT)
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
     "include(CMakeFindDependencyMacro)\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
