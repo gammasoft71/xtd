@@ -17,10 +17,7 @@ if (ENABLE_COVERAGE AND UNIX)
 endif()
 
 # Projects
-add_subdirectory(xtd.delegates)
-if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-  add_subdirectory(xtd.tunit)
-endif ()
+add_subdirectory(src)
 
 # Tests projects
 option(ENABLE_TESTS "Enable tests" OFF)
