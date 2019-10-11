@@ -194,7 +194,7 @@ forms::create_params form::create_params() const {
   if (this->minimize_box_) create_params.style(create_params.style() | WS_MINIMIZEBOX);
   if (this->help_button_ && !this->maximize_box_ && !this->minimize_box_) create_params.ex_style(create_params.ex_style() | WS_EX_CONTEXTHELP);
 
-  if (this->close_box_) create_params.class_style(create_params.class_style() | CS_NOCLOSE);
+  if (!this->close_box_) create_params.class_style(create_params.class_style() | CS_NOCLOSE);
 
   if (this->show_in_taskbar_) create_params.ex_style(create_params.ex_style() | WS_EX_APPWINDOW);
 
