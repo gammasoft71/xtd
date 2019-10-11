@@ -1,6 +1,7 @@
 #include <random>
 #include <stdexcept>
 #include <xtd/xtd.diagnostics>
+#include <xtd/forms/native/class_styles.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/form.hpp>
 #include <xtd/forms/native/window_styles.hpp>
@@ -45,9 +46,57 @@ form& form::auto_size_mode(forms::auto_size_mode value) {
   return *this;
 }
 
-form& form::dialog_result(forms::dialog_result dialog_result) {
-  if (this->dialog_result_ != dialog_result)
-    this->dialog_result_ = dialog_result;
+form& form::close_box(bool value) {
+  if (this->close_box_ != value) {
+    this->close_box_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
+form& form::control_box(bool value) {
+  if (this->control_box_ != value) {
+    this->control_box_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
+form& form::dialog_result(forms::dialog_result value) {
+  if (this->dialog_result_ != value)
+    this->dialog_result_ = value;
+  return *this;
+}
+
+form& form::form_border_style(forms::form_border_style value) {
+  if (this->form_border_style_ != value) {
+    this->form_border_style_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
+form& form::help_button(bool value) {
+  if (this->help_button_ != value) {
+    this->help_button_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
+form& form::maximize_box(bool value) {
+  if (this->maximize_box_ != value) {
+    this->maximize_box_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
+form& form::minimize_box(bool value) {
+  if (this->minimize_box_ != value) {
+    this->minimize_box_ = value;
+    this->recreate_handle();
+  }
   return *this;
 }
 
@@ -120,8 +169,39 @@ forms::create_params form::create_params() const {
   }
 
   create_params.class_name("form");
-  create_params.style(WS_OVERLAPPEDWINDOW);
+  
+  switch (this->form_border_style_) {
+    case forms::form_border_style::none: break;
+    case forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
+    case forms::form_border_style::sizable: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); break;
+    case forms::form_border_style::fixed_3d: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE); break;
+    case forms::form_border_style::fixed_dialog: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME); break;
+    case forms::form_border_style::fixed_tool_window: create_params.style(create_params.style() | WS_BORDER); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
+    case forms::form_border_style::sizable_tool_window: create_params.style(create_params.style() | WS_BORDER | WS_THICKFRAME); create_params.ex_style(create_params.ex_style() | WS_EX_TOOLWINDOW); break;
+    default: break;
+  }
+
+  switch (this->window_state_) {
+    case form_window_state::maximized: create_params.style(create_params.style() | WS_MAXIMIZE); break;
+    case form_window_state::minimized: create_params.style(create_params.style() | WS_MINIMIZE); break;
+    default: break;
+  }
+
+  if (this->form_border_style_ != form_border_style::none) create_params.style(create_params.style() | WS_CAPTION);
+
+  if (this->control_box_) create_params.style(create_params.style() | WS_SYSMENU);
+  if (this->maximize_box_) create_params.style(create_params.style() | WS_MAXIMIZEBOX);
+  if (this->minimize_box_) create_params.style(create_params.style() | WS_MINIMIZEBOX);
+  if (this->help_button_ && !this->maximize_box_ && !this->minimize_box_) create_params.ex_style(create_params.ex_style() | WS_EX_CONTEXTHELP);
+
+  if (this->close_box_) create_params.class_style(create_params.class_style() | CS_NOCLOSE);
+
+  if (this->show_in_taskbar_) create_params.ex_style(create_params.ex_style() | WS_EX_APPWINDOW);
+
+  if (!this->show_icon_ && (this->form_border_style_ == forms::form_border_style::sizable || this->form_border_style_ == forms::form_border_style::fixed_3d || this->form_border_style_ == forms::form_border_style::fixed_single)) create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
+  
   if (this->get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
+  
   if (this->previous_screeen_) {
     switch (this->start_position_) {
       case form_start_position::manual:
