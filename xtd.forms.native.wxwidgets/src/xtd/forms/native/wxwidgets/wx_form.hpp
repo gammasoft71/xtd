@@ -30,8 +30,6 @@ namespace xtd {
         }
 
         static long style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
-          // long wx_style = wxSYSTEM_MENU | wxRESIZE_BORDER | wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxCLOSE_BOX | wxCAPTION | wxCLIP_CHILDREN;
-          // long wx_style = wxCAPTION | wxSYSTEM_MENU | wxCLOSE_BOX;
           long wx_style = 0;
 
           if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) wx_style |= wxMAXIMIZE_BOX;
