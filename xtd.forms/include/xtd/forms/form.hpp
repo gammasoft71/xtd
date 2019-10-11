@@ -1,7 +1,9 @@
 #pragma once
+#include "form_border_style.hpp"
 #include "form_closed_event_handler.hpp"
 #include "form_closing_event_handler.hpp"
 #include "form_start_position.hpp"
+#include "form_window_state.hpp"
 #include "container_control.hpp"
 #include "dialog_result.hpp"
 #include "ibutton_control.hpp"
@@ -29,7 +31,7 @@ namespace xtd {
       form();
 
       std::optional<std::reference_wrapper<ibutton_control>> accept_button() const {return accept_button_;}
-      form& accept_button(const ibutton_control& accept_button);
+      form& accept_button(const ibutton_control& value);
       form& accept_button(nullptr_t);
 
       static std::optional<std::reference_wrapper<form>> active_form() {return active_form_;}
@@ -37,18 +39,36 @@ namespace xtd {
       virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
       virtual form& auto_size_mode(forms::auto_size_mode value);
       
+      virtual bool close_box() const {return this->close_box_;}
+      virtual form& close_box(bool value);
+      
+      virtual bool control_box() const {return this->control_box_;}
+      virtual form& control_box(bool value);
+
       drawing::size default_size() const override {return{300, 300};}
       
       virtual forms::dialog_result dialog_result() const {return this->dialog_result_;}
-      virtual form& dialog_result(forms::dialog_result dialog_result);
+      virtual form& dialog_result(forms::dialog_result value);
+      
+      virtual forms::form_border_style form_border_style() const {return this->form_border_style_;}
+      virtual form& form_border_style(forms::form_border_style value);
+
+      virtual bool help_button() const {return this->help_button_;}
+      virtual form& help_button(bool value);
+      
+      virtual bool maximize_box() const {return this->maximize_box_;}
+      virtual form& maximize_box(bool value);
+      
+      virtual bool minimize_box() const {return this->minimize_box_;}
+      virtual form& minimize_box(bool value);
 
       bool modal() const {return this->get_state(state::modal);}
       
       using container_control::parent;
-      control& parent(const control& parent) override;
+      control& parent(const control& value) override;
       
       virtual form_start_position start_position() const {return this->start_position_;}
-      virtual form& start_position(form_start_position start_position);
+      virtual form& start_position(form_start_position value);
 
       /// @brief Gets a value indicating whether to display the form as a top-level window.
       /// @return true to display the form as a top-level window; otherwise, false. The default is true.
@@ -103,9 +123,18 @@ namespace xtd {
       
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;
+      bool close_box_ = true;
+      bool control_box_ = true;
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
+      forms::form_border_style form_border_style_ = form_border_style::sizable;
+      bool help_button_ = true;
+      bool maximize_box_ = true;
+      bool minimize_box_ = true;
       std::shared_ptr<screen> previous_screeen_;
+      bool show_icon_ = true;
+      bool show_in_taskbar_ = true;
       form_start_position start_position_ = form_start_position::windows_default_location;
+      form_window_state window_state_ = form_window_state::normal;
     };
   }
 }

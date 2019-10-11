@@ -42,11 +42,13 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/dock_style.hpp
   include/xtd/forms/font_dialog.hpp
   include/xtd/forms/form.hpp
+  include/xtd/forms/form_border_style.hpp
   include/xtd/forms/form_closed_event_args.hpp
   include/xtd/forms/form_closed_event_handler.hpp
   include/xtd/forms/form_closing_event_args.hpp
   include/xtd/forms/form_closing_event_handler.hpp
   include/xtd/forms/form_start_position.hpp
+  include/xtd/forms/form_window_state.hpp
   include/xtd/forms/group_box.hpp
   include/xtd/forms/help_event_args.hpp
   include/xtd/forms/help_event_handler.hpp

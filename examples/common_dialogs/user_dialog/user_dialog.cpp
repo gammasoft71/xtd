@@ -8,6 +8,9 @@ class user_input_dialog : public form {
 public:
   user_input_dialog() {
     client_size({200, 80});
+    form_border_style(forms::form_border_style::fixed_dialog);
+    minimize_box(false);
+    maximize_box(false);
     start_position(form_start_position::center_parent);
     text("Input dialog");
     controls().push_back_range({input, button_ok, button_cancel});
@@ -22,6 +25,8 @@ public:
     button_cancel.dialog_result(forms::dialog_result::cancel);
     button_cancel.location({110, 50});
     button_cancel.text("Cancel");
+    
+    active_control(input);
   }
   
   virtual std::string input_text() const {return input.text();}
