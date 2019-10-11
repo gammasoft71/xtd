@@ -16,6 +16,14 @@ void form::close(intptr_t form) {
   reinterpret_cast<control_handler*>(form)->control()->Close();
 }
 
+void form::maximize(intptr_t form, bool maximize) {
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
+}
+
+void form::minimize(intptr_t form, bool minimize) {
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Iconize(minimize);
+}
+
 void form::default_control(intptr_t form, intptr_t default_control) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetDefaultItem(reinterpret_cast<control_handler*>(default_control)->control());
 }

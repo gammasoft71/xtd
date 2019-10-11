@@ -126,6 +126,28 @@ control& form::visible(bool visible) {
   this->container_control::visible(visible);
   if (active_form().has_value() && active_form().value().get().handle_ == this->handle_ && this->active_control_.has_value())
     this->active_control_.value().get().focus();
+
+  switch (this->window_state_) {
+    case form_window_state::normal: native::form::maximize(this->handle_, false); native::form::minimize(this->handle_, false); break;
+    case form_window_state::maximized: native::form::maximize(this->handle_, true); break;
+    case form_window_state::minimized: native::form::minimize(this->handle_, true); break;
+    default: break;
+  }
+  return *this;
+}
+
+form& form::window_state(form_window_state value) {
+  if (this->window_state_ != value) {
+    this->window_state_ = value;
+    if (this->is_handle_created()) {
+      switch (this->window_state_) {
+        case form_window_state::normal: native::form::maximize(this->handle_, false); native::form::minimize(this->handle_, false); break;
+        case form_window_state::maximized: native::form::maximize(this->handle_, true); break;
+        case form_window_state::minimized: native::form::minimize(this->handle_, true); break;
+        default: break;
+      }
+    }
+  }
   return *this;
 }
 

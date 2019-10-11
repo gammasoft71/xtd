@@ -84,6 +84,9 @@ namespace xtd {
       using container_control::visible;
       control& visible(bool visible) override;
       
+      virtual form_window_state window_state() const {return this->window_state_;}
+      virtual form& window_state(form_window_state value);
+      
       void activate();
       
       void close();

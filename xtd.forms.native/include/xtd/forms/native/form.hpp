@@ -10,6 +10,8 @@ namespace xtd {
         static void activate(intptr_t form);
         static void close(intptr_t form);
         static void default_control(intptr_t form, intptr_t default_control);
+        static void maximize(intptr_t form, bool maximize);
+        static void minimize(intptr_t form, bool minimize);
         static int32_t show_dialog(intptr_t form);
         static void end_dialog(intptr_t form, int32_t result);
       };
