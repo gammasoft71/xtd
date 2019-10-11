@@ -48,7 +48,7 @@ namespace xtd {
           if ((ex_style & WS_EX_TOOLWINDOW) == WS_EX_TOOLWINDOW) wx_style |= wxFRAME_TOOL_WINDOW;
           if ((ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) wx_style &= ~(wxRESIZE_BORDER|wxSYSTEM_MENU);
 
-          if ((class_style & CS_NOCLOSE) == CS_NOCLOSE) wx_style |= wxCLOSE_BOX;
+          if ((class_style & CS_NOCLOSE) != CS_NOCLOSE) wx_style |= wxCLOSE_BOX;
 
           return wx_style;
         }
