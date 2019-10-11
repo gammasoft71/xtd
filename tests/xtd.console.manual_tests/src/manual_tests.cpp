@@ -7,5 +7,5 @@ using namespace std::string_literals;
 
 // The main entry point for the application.
 int main() {
-  cout << xtd::strings::format("{}, {}!", "Hello", "World"s) << endl;
+  cout << format("{}, {}!", "Hello", "World"s) << endl;
 }
