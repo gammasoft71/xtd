@@ -39,8 +39,8 @@ namespace xtd {
           if ((style & WS_CAPTION) == WS_CAPTION) wx_style |= wxCAPTION;
           if ((style & WS_CLIPCHILDREN) == WS_CLIPCHILDREN) wx_style |= wxCLIP_CHILDREN;
 
-          if ((style & WS_MAXIMIZE) == WS_MAXIMIZE) wx_style |= wxMAXIMIZE;
-          if ((style & WS_MINIMIZE) == WS_MINIMIZE) wx_style |= wxMINIMIZE;
+          //if ((style & WS_MAXIMIZE) == WS_MAXIMIZE) wx_style |= wxMAXIMIZE;
+          //if ((style & WS_MINIMIZE) == WS_MINIMIZE) wx_style |= wxMINIMIZE;
 
           if ((ex_style & WS_EX_APPWINDOW) != WS_EX_APPWINDOW) wx_style |= wxFRAME_NO_TASKBAR;
           if ((ex_style & WS_EX_TOOLWINDOW) == WS_EX_TOOLWINDOW) wx_style |= wxFRAME_TOOL_WINDOW;
