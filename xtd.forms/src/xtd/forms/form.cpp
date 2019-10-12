@@ -139,11 +139,15 @@ control& form::visible(bool visible) {
 form& form::window_state(form_window_state value) {
   if (this->window_state_ != value) {
     this->window_state_ = value;
-    switch (this->window_state_) {
-      case form_window_state::normal: native::form::maximize(this->handle_, false); native::form::minimize(this->handle_, false); break;
-      case form_window_state::maximized: native::form::maximize(this->handle_, true); break;
-      case form_window_state::minimized: native::form::minimize(this->handle_, true); break;
-      default: break;
+    if (!this->previous_screeen_) {
+      this->recreate_handle();
+    } else {
+      switch (this->window_state_) {
+        case form_window_state::normal: native::form::maximize(this->handle_, false); native::form::minimize(this->handle_, false); break;
+        case form_window_state::maximized: native::form::maximize(this->handle_, true); break;
+        case form_window_state::minimized: native::form::minimize(this->handle_, true); break;
+        default: break;
+      }
     }
   }
   return *this;
