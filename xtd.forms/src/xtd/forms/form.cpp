@@ -119,7 +119,9 @@ form& form::top_level(bool top_level) {
 }
 
 control& form::visible(bool visible) {
+  std::optional<forms::form_window_state> current_window_state;
   if (!this->previous_screeen_) {
+    current_window_state = this->window_state_;
     this->previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
     this->recreate_handle();
   }
@@ -127,11 +129,15 @@ control& form::visible(bool visible) {
   if (active_form().has_value() && active_form().value().get().handle_ == this->handle_ && this->active_control_.has_value())
     this->active_control_.value().get().focus();
 
+  if (current_window_state.has_value())
+    this->window_state(current_window_state.value());
   this->internal_set_window_state();
   return *this;
 }
 
 form& form::window_state(form_window_state value) {
+  if (this->window_state_ == form_window_state::full_screen && value != form_window_state::normal) return *this;
+  if (this->window_state_ == form_window_state::maximized && value == form_window_state::full_screen) return *this;
   if (this->window_state_ != value) {
     this->window_state_ = value;
     this->internal_set_window_state();
@@ -293,12 +299,22 @@ void form::on_handle_created(const event_args &e) {
     native::form::default_control(this->handle_, dynamic_cast<control&>(this->accept_button_.value().get()).handle());
 }
 
+void form::on_resize(const event_args& e) {
+  if (native::form::minimize(this->handle_))
+    this->window_state(forms::form_window_state::minimized);
+  else if (native::form::maximize(this->handle_))
+    this->window_state(forms::form_window_state::maximized);
+  else if (this->window_state_ != form_window_state::full_screen)
+    this->window_state(forms::form_window_state::normal);
+  this->container_control::on_resize(e);
+}
+
 void form::internal_set_window_state() {
   if (!this->previous_screeen_)
     this->recreate_handle();
   else {
     switch (this->window_state_) {
-      case form_window_state::normal: native::form::maximize(this->handle_, false); native::form::minimize(this->handle_, false); native::form::full_screen(this->handle_, false); break;
+      case form_window_state::normal: native::form::full_screen(this->handle_, false); native::form::maximize(this->handle_, false); native::form::minimize(this->handle_, false); break;
       case form_window_state::maximized: native::form::maximize(this->handle_, true); break;
       case form_window_state::minimized: native::form::minimize(this->handle_, true); break;
       case form_window_state::full_screen: native::form::full_screen(this->handle_, true); break;

@@ -505,6 +505,7 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_NULL) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_NULL, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_PAINT) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_PAINT, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SHOW) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SHOWWINDOW, static_cast<wxShowEvent&>(event).IsShown(), 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_ICONIZE) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SIZE) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SIZE, 0, window->GetSize().GetWidth() + (window->GetSize().GetHeight() << 16), reinterpret_cast<intptr_t>(&event));
         //else if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_ENTERSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));
         //else if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_EXITSIZEMOVE, 0, 0, reinterpret_cast<intptr_t>(&event));

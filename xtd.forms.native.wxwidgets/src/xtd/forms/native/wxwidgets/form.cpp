@@ -23,9 +23,19 @@ void form::full_screen(intptr_t form, bool full_screen) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(full_screen);
 }
 
+bool form::maximize(intptr_t form) {
+  if (form == 0) return false;
+  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsMaximized();
+}
+
 void form::maximize(intptr_t form, bool maximize) {
   if (form == 0) return;
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
+    static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
+}
+
+bool form::minimize(intptr_t form) {
+  if (form == 0) return false;
+  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsIconized();
 }
 
 void form::minimize(intptr_t form, bool minimize) {

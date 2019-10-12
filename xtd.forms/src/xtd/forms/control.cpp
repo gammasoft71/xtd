@@ -401,6 +401,7 @@ void control::on_handle_created(const event_args &e) {
   if (this->cursor_.has_value() && this->cursor_.value() != this->default_cursor()) native::control::cursor(this->handle_, this->cursor().handle());
   if (this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(this->handle_, this->fore_color());
   if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(this->handle_, this->font());
+  native::control::enabled(this->handle_, this->enabled());
   native::control::visible(this->handle_, this->visible());
   if (this->focused()) native::control::focus(this->handle_);
 
@@ -516,9 +517,13 @@ void control::on_parent_font_changed(const event_args &e) {
     for (auto control : this->controls())
       control.get().on_parent_font_changed(event_args::empty);
   }
-}
+  }
 
-void control::on_size_changed(const event_args &e) {
+  void control::on_resize(const event_args &e) {
+    if (this->can_raise_events()) this->resize(*this, e);
+  }
+
+  void control::on_size_changed(const event_args &e) {
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
   this->client_rectangle_ = native::control::client_rectangle(this->handle_);
   this->on_layout(e);
@@ -894,5 +899,6 @@ void control::wm_size(message& message) {
     this->size_ = native::control::size(this->handle_);
     this->on_size_changed(event_args::empty);
   }
+  this->on_resize(event_args::empty);
 }
 

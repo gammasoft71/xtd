@@ -605,8 +605,10 @@ namespace xtd {
       
       event<control, event_handler<control>> parent_changed;
       
+      event<control, event_handler<control>> resize;
+        
       event<control, event_handler<control>> size_changed;
-      
+
       event<control, event_handler<control>> text_changed;
       
       event<control, event_handler<control>> visible_changed;
@@ -711,8 +713,10 @@ namespace xtd {
       
       virtual void on_parent_font_changed(const event_args& e);
       
+      virtual void on_resize(const event_args& e);
+        
       virtual void on_size_changed(const event_args& e);
-      
+
       virtual void on_text_changed(const event_args& e);
       
       virtual void on_visible_changed(const event_args& e);
