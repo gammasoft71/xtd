@@ -9,7 +9,7 @@ public:
     text("Tab control example");
     controls().push_back(tab_control1);
     client_size({390, 270});
-    //window_state(form_window_state::minimized);
+    window_state(form_window_state::minimized);
 
     tab_control1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
     tab_control1.location({10, 10});
