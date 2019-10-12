@@ -138,6 +138,9 @@ namespace xtd {
       bool show_in_taskbar_ = true;
       form_start_position start_position_ = form_start_position::windows_default_location;
       form_window_state window_state_ = form_window_state::normal;
+      
+    private:
+      void internal_set_window_state();
     };
   }
 }
