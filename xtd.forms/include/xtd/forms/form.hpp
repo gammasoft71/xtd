@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 #include "form_border_style.hpp"
 #include "form_closed_event_handler.hpp"
 #include "form_closing_event_handler.hpp"
