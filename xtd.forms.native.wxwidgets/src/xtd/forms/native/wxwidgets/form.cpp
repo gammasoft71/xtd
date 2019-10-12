@@ -18,6 +18,11 @@ void form::close(intptr_t form) {
   reinterpret_cast<control_handler*>(form)->control()->Close();
 }
 
+void form::full_screen(intptr_t form, bool full_screen) {
+  if (form == 0) return;
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(full_screen);
+}
+
 void form::maximize(intptr_t form, bool maximize) {
   if (form == 0) return;
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
