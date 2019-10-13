@@ -1,6 +1,7 @@
 #include <xtd/xtd.strings.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/message_keys.hpp>
+#include "../include/xtd/forms/control.hpp"
 #include "../include/xtd/forms/mouse_event_args.hpp"
 
 using namespace std;
@@ -21,5 +22,8 @@ namespace {
 }
 
 mouse_event_args mouse_event_args::create(const message& message, bool double_click_fired, int32_t delta) {
-  return mouse_event_args(message_to_mouse_buttons(message),{(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, double_click_fired  ? 2 : 1, delta);
+  drawing::point location((int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam()));
+  if (forms::control::from_handle(message.hwnd()).has_value())
+    location = forms::control::from_handle(message.hwnd()).value().get().point_to_client(location);
+  return mouse_event_args(message_to_mouse_buttons(message), location, double_click_fired  ? 2 : 1, delta);
 }

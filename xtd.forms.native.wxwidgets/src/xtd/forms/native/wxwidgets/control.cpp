@@ -292,6 +292,18 @@ void control::location(intptr_t control, const point& location) {
   reinterpret_cast<control_handler*>(control)->control()->SetPosition({location.x(), location.y()});
 }
 
+drawing::point control::point_to_screen(intptr_t control, const drawing::point& p) {
+  if (control == 0) return p;
+  wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ClientToScreen(wxPoint(p.x(), p.y()));
+  return {result.x, result.y};
+}
+
+drawing::point control::point_to_client(intptr_t control, const drawing::point& p) {
+  if (control == 0) return p;
+  wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ScreenToClient(wxPoint(p.x(), p.y()));
+  return {result.x, result.y};
+}
+
 drawing::size control::size(intptr_t control) {
   if (control == 0) return {};
   wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
