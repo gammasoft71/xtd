@@ -9,7 +9,7 @@ namespace xtd {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     struct solid_brush : public brush {
     public:
-      solid_brush() = default;
+      solid_brush();
       solid_brush(const drawing::color& color) {this->color(color);}
 
       /// @cond
@@ -24,7 +24,7 @@ namespace xtd {
       
     private:
       struct data {
-        drawing::color color_ = drawing::color::black;
+        drawing::color color_;
       };
       std::shared_ptr<data> data_ = std::make_shared<data>();
     };
