@@ -552,6 +552,14 @@ void control::perform_layout() {
     on_layout(event_args::empty);
 }
 
+drawing::point control::point_to_client(const xtd::drawing::point &p) {
+  return native::control::point_to_client(this->handle_, p);
+}
+
+drawing::point control::point_to_screen(const xtd::drawing::point &p) {
+  return native::control::point_to_screen(this->handle_, p);
+}
+
 void control::refresh() const {
   native::control::refresh(this->handle_);
 }
@@ -845,7 +853,7 @@ void control::wm_mouse_up(message& message) {
 
 void control::wm_mouse_move(message& message) {
   this->def_wnd_proc(message);
-  this->on_mouse_move(mouse_event_args(wparam_to_mouse_buttons(message), {(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}, this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
+  this->on_mouse_move(mouse_event_args(wparam_to_mouse_buttons(message), this->point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
 }
 
 void control::wm_move(message& message) {

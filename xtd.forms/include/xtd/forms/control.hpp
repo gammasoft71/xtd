@@ -489,6 +489,10 @@ namespace xtd {
       /// @brief Forces the control to apply layout logic to all its child controls.
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
       void perform_layout();
+      
+      xtd::drawing::point point_to_client(const xtd::drawing::point& p);
+      
+      xtd::drawing::point point_to_screen(const xtd::drawing::point& p);
 
       virtual void refresh() const;
       

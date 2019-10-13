@@ -40,6 +40,8 @@ namespace xtd {
         static void font(intptr_t control, const drawing::font& font);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);
+        static drawing::point point_to_client(intptr_t control, const drawing::point& p);
+        static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
         static drawing::size size(intptr_t control);
         static void size(intptr_t control, const drawing::size& size);
         static ustring text(intptr_t control);
