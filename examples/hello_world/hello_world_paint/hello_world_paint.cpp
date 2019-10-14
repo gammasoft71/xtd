@@ -13,7 +13,7 @@ namespace examples {
       timer.interval(60);
       timer.tick += [this]{
         step++;
-        invalidate(false);
+        invalidate();
       };
       timer.enabled(true);
     }
@@ -43,7 +43,7 @@ namespace examples {
       
       text_box.location({20, 90});
       text_box.text_changed += [this] {
-        wiggly.text(text_box.text());
+        this->wiggly.text(text_box.text());
       };
       text_box.text("Hello, World!");
       text_box.width(290);
