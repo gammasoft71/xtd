@@ -50,7 +50,7 @@ namespace examples {
       panel_painting.parent(*this);
       panel_painting.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       panel_painting.border_style(forms::border_style::fixed_single);
-      panel_painting.back_color(color::white);
+      panel_painting.back_color(color::white_smoke);
       panel_painting.location({10, 82});
       panel_painting.size({620, 388});
 
@@ -69,8 +69,7 @@ namespace examples {
       panel_painting.paint += [this](const control& sender, paint_event_args& e) {
         for (int y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (int x = 0; x < panel_painting.client_size().width(); x += zoom)
-            if (!pixels[x / zoom][y / zoom].is_empty())
-              e.graphics().fill_rectangle(solid_brush(pixels[x/zoom][y/zoom]), x, y, zoom, zoom);
+            e.graphics().fill_rectangle(solid_brush(pixels[x / zoom][y / zoom].is_empty() ? panel_painting.back_color() : pixels[x/zoom][y/zoom]), x, y, zoom, zoom);
         if (zoom > 3) {
           for (int index = 0; index < panel_painting.client_size().width(); index += zoom)
             e.graphics().fill_rectangle(solid_brush(color::light_blue), index, 0, 1, panel_painting.client_size().height());
