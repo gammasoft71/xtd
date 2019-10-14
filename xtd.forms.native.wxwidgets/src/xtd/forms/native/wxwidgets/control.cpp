@@ -346,10 +346,8 @@ void control::visible(intptr_t control, bool visible) {
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool invalidate_children) {
   if (control == 0) return;
 
-  if (!reinterpret_cast<control_handler*>(control)->control()->IsBeingDeleted()) {
-    wxRect wx_rect(rect.left(), rect.top(), rect.width(), rect.height());
-    reinterpret_cast<control_handler*>(control)->control()->Refresh(invalidate_children, &wx_rect);
-  }
+  if (!reinterpret_cast<control_handler*>(control)->control()->IsBeingDeleted())
+    reinterpret_cast<control_handler*>(control)->control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), invalidate_children);
 }
 
 void control::refresh(intptr_t control) {
