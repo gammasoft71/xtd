@@ -9,17 +9,13 @@ namespace examples {
   class pixel {
   public:
     pixel(const xtd::drawing::point& location, const xtd::drawing::color& color) : loc(location), col(color) {}
-
     const xtd::drawing::color color() const {return col;}
-
     const xtd::drawing::point location() const {return loc;}
 
   private:
     xtd::drawing::point loc;
-    xtd::drawing::color col = xtd::drawing::color::black;
+    xtd::drawing::color col;
   };
-
-  using pixel_collection = std::vector<pixel>;
 
   class form1 : public form {
   public:
@@ -30,16 +26,17 @@ namespace examples {
       panel_colors_container.parent(*this);
       panel_colors_container.border_style(forms::border_style::fixed_single);
       panel_colors_container.location({10, 10});
-      panel_colors_container.size({512, 32});
+      panel_colors_container.client_size({512, 32});
       
-      for (size_t index = 0; index < panel_colors.size(); ++index) {
-        panel_colors[index].parent(panel_colors_container);
-        panel_colors[index].width(32);
-        panel_colors[index].dock(dock_style::left);
-        panel_colors[index].back_color(colors[index]);
-        panel_colors[index].click += {*this, &form1::choose_current_color};
+      for (color color : {color::dark_magenta, color::dark_cyan, color::brown, color::dark_blue, color::dark_green, color::dark_red, color::gray, color::dark_gray, color::magenta, color::cyan, color::yellow, color::blue, color::green, color::red, color::white, color::black}) {
+        shared_ptr<panel> panel_color = control::create<panel>(panel_colors_container, {0, 0}, {32, 32}, color);
+        panel_color->dock(dock_style::left);
+        panel_color->click += {*this, &form1::choose_current_color};
+        panel_colors.push_back(panel_color);
       }
-           
+      current_color = panel_colors[panel_colors.size() - 1]->back_color();
+      panel_colors[panel_colors.size() - 1]->border_style(forms::border_style::fixed_single);
+
       button_clear.parent(*this);
       button_clear.text("Clear");
       button_clear.location({542, 15});
@@ -57,43 +54,42 @@ namespace examples {
       
       panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          xtd::drawing::point location = {e.location().x() / 10 * 10, e.location().y() / 10 * 10};
-          this->pixels.push_back({location, current_color});
+          this->pixels.push_back({drawing::point(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width), current_color});
           panel_painting.refresh();
         }
       };
       
       panel_painting.mouse_move += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          xtd::drawing::point location = {e.location().x() / 10 * 10, e.location().y() / 10 * 10};
-          this->pixels.push_back({location, current_color});
+          this->pixels.push_back({drawing::point(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width), current_color});
           panel_painting.refresh();
         }
       };
 
       panel_painting.paint += [this](const control& sender, paint_event_args& e) {
-        for (int index = 0; index < panel_painting.client_size().width(); index += 10)
-          e.graphics().fill_rectangle(solid_brush(color::light_gray), index, 0, 1, panel_painting.client_size().height());
-        for (int index = 0; index < panel_painting.client_size().height(); index += 10)
-          e.graphics().fill_rectangle(solid_brush(color::light_gray), 0, index, panel_painting.client_size().width(), 1);
-        for (auto pixel : pixels) {
-          e.graphics().fill_rectangle(solid_brush(pixel.color()), pixel.location().x(), pixel.location().y(), 10, 10);
-        };
+        for (auto pixel : pixels)
+          e.graphics().fill_rectangle(solid_brush(pixel.color()), pixel.location().x(), pixel.location().y(), line_width, line_width);
+        for (int index = 0; index < panel_painting.client_size().width(); index += line_width)
+          e.graphics().fill_rectangle(solid_brush(color::light_blue), index, 0, 1, panel_painting.client_size().height());
+        for (int index = 0; index < panel_painting.client_size().height(); index += line_width)
+          e.graphics().fill_rectangle(solid_brush(color::light_blue), 0, index, panel_painting.client_size().width(), 1);
       };
     }
   
   private:
     void choose_current_color(const control& sender, const event_args& e) {
+      for (auto panel : panel_colors)
+        panel->border_style(panel->handle() != sender.handle() ? forms::border_style::none : forms::border_style::fixed_single);
       current_color = sender.back_color();
     };
 
-    vector<color> colors = {color::dark_magenta, color::dark_cyan, color::brown, color::dark_blue, color::dark_green, color::dark_red, color::gray, color::dark_gray, color::magenta, color::cyan, color::yellow, color::blue, color::green, color::red, color::white, color::black};
+    size_t line_width = 20;
     panel panel_colors_container;
-    vector<panel> panel_colors {colors.size()};
+    vector<shared_ptr<panel>> panel_colors;
     button button_clear;
     panel panel_painting;
-    pixel_collection pixels;
-    drawing::color current_color = drawing::color::black;
+    vector<pixel> pixels;
+    drawing::color current_color;
   };
 }
 
