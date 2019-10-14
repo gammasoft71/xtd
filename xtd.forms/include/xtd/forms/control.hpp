@@ -483,6 +483,10 @@ namespace xtd {
       static std::optional<control_ref> from_handle(intptr_t handle);
       
       virtual void hide() {this->visible(false);}
+      
+      virtual void invalidate() const {this->invalidate(this->client_rectangle(), true);}
+
+      virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
 
       bool is_handle_created() const;
 
@@ -533,6 +537,8 @@ namespace xtd {
       }
       
       virtual ustring to_string() const;
+      
+      virtual void update() const;
       
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::forms::control& control) noexcept {

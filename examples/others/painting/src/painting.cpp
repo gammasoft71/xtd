@@ -54,15 +54,15 @@ namespace examples {
       
       panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          this->pixels.push_back({drawing::point(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width), current_color});
-          panel_painting.refresh();
+          this->pixels.push_back({point(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width), current_color});
+          panel_painting.invalidate(rectangle(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width, line_width, line_width), false);
         }
       };
       
       panel_painting.mouse_move += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          this->pixels.push_back({drawing::point(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width), current_color});
-          panel_painting.refresh();
+          this->pixels.push_back({point(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width), current_color});
+          panel_painting.invalidate(rectangle(e.location().x() / line_width * line_width, e.location().y() / line_width * line_width, line_width, line_width), false);
         }
       };
 
