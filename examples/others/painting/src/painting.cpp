@@ -49,6 +49,7 @@ namespace examples {
       };
       
       panel_painting.parent(*this);
+      panel_painting.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       panel_painting.border_style(forms::border_style::fixed_single);
       panel_painting.back_color(color::white);
       panel_painting.location({10, 52});
@@ -56,19 +57,25 @@ namespace examples {
       
       panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          this->pixels.push_back({e.location(), current_color});
+          xtd::drawing::point location = {e.location().x() / 10 * 10, e.location().y() / 10 * 10};
+          this->pixels.push_back({location, current_color});
           panel_painting.refresh();
         }
       };
       
       panel_painting.mouse_move += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          this->pixels.push_back({e.location(), current_color});
+          xtd::drawing::point location = {e.location().x() / 10 * 10, e.location().y() / 10 * 10};
+          this->pixels.push_back({location, current_color});
           panel_painting.refresh();
         }
       };
 
       panel_painting.paint += [this](const control& sender, paint_event_args& e) {
+        for (int index = 0; index < panel_painting.client_size().width(); index += 10)
+          e.graphics().fill_rectangle(solid_brush(color::light_gray), index, 0, 1, panel_painting.client_size().height());
+        for (int index = 0; index < panel_painting.client_size().height(); index += 10)
+          e.graphics().fill_rectangle(solid_brush(color::light_gray), 0, index, panel_painting.client_size().width(), 1);
         for (auto pixel : pixels) {
           e.graphics().fill_rectangle(solid_brush(pixel.color()), pixel.location().x(), pixel.location().y(), 10, 10);
         };
