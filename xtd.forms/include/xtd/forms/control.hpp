@@ -484,9 +484,9 @@ namespace xtd {
       
       virtual void hide() {this->visible(false);}
       
-      virtual void invalidate() const {this->invalidate(this->client_rectangle(), true);}
+      virtual void invalidate() const {this->invalidate({{0, 0}, this->client_size()}, true);}
 
-      virtual void invalidate(bool invalidate_children) const {this->invalidate(this->client_rectangle(), invalidate_children);}
+      virtual void invalidate(bool invalidate_children) const {this->invalidate({{0, 0}, this->client_size()}, invalidate_children);}
 
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
 
