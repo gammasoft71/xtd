@@ -289,6 +289,10 @@ std::optional<std::reference_wrapper<control>> control::from_handle(intptr_t han
   }
 }
 
+void control::invalidate(const drawing::rectangle& rect, bool invalidate_children) const {
+  native::control::invalidate(this->handle_, rect, invalidate_children);
+}
+
 bool control::is_handle_created() const {
   return this->handle_ != 0;
 }
@@ -579,6 +583,10 @@ ustring control::to_string() const {
   if (!this->name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), this->name_);
   if (!this->text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), this->text_);
   return strings::full_class_name(*this);
+}
+
+void control::update() const {
+  native::control::update(this->handle_);
 }
 
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {

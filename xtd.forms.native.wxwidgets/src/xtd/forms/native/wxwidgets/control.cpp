@@ -343,6 +343,15 @@ void control::visible(intptr_t control, bool visible) {
     wait_window_manager();
 }
 
+void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool invalidate_children) {
+  if (control == 0) return;
+
+  if (!reinterpret_cast<control_handler*>(control)->control()->IsBeingDeleted()) {
+    wxRect wx_rect(rect.left(), rect.top(), rect.width(), rect.height());
+    reinterpret_cast<control_handler*>(control)->control()->Refresh(invalidate_children, &wx_rect);
+  }
+}
+
 void control::refresh(intptr_t control) {
   if (control == 0) return;
 
@@ -350,6 +359,12 @@ void control::refresh(intptr_t control) {
     reinterpret_cast<control_handler*>(control)->control()->Refresh();
 }
 
+void control::update(intptr_t control) {
+  if (control == 0) return;
+
+  if (!reinterpret_cast<control_handler*>(control)->control()->IsBeingDeleted())
+    reinterpret_cast<control_handler*>(control)->control()->Update();
+}
 
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   if (control == 0) return;

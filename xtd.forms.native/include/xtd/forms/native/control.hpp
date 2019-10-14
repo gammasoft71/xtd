@@ -40,18 +40,20 @@ namespace xtd {
         static void font(intptr_t control, const drawing::font& font);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);
-        static drawing::point point_to_client(intptr_t control, const drawing::point& p);
-        static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
         static drawing::size size(intptr_t control);
         static void size(intptr_t control, const drawing::size& size);
         static ustring text(intptr_t control);
         static void text(intptr_t control, const ustring& text);
         static bool visible(intptr_t control);
         static void visible(intptr_t control, bool visible);
+        static drawing::point point_to_client(intptr_t control, const drawing::point& p);
+        static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
+        static void invalidate(intptr_t control, const drawing::rectangle& rect, bool invalidate_children);
         static void register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void register_client_size_changed(intptr_t control, delegate<void(const event_args&)> callback);
         static void refresh(intptr_t control);
+        static void update(intptr_t control);
         static intptr_t send_message(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wParam, intptr_t lParam);
         
         // For debug...
