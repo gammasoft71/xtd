@@ -83,7 +83,7 @@ namespace examples {
       current_color = sender.back_color();
     };
 
-    size_t line_width = 20;
+    int line_width = 20;
     panel panel_colors_container;
     vector<shared_ptr<panel>> panel_colors;
     button button_clear;
