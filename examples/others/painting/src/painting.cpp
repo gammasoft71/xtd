@@ -39,12 +39,12 @@ namespace examples {
       track_bar_zoom.location({10, 40});
       track_bar_zoom.minimum(1);
       track_bar_zoom.maximum(50);
+      track_bar_zoom.tick_style(forms::tick_style::none);
       track_bar_zoom.value(zoom);
       track_bar_zoom.value_changed += [this] {
         zoom = track_bar_zoom.value();
         panel_painting.invalidate();
       };
-      track_bar_zoom.tick_style(forms::tick_style::none);
       track_bar_zoom.width(client_size().width() - 20);
 
       panel_painting.parent(*this);
@@ -55,13 +55,8 @@ namespace examples {
       panel_painting.size({620, 388});
 
       panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
-        if (e.button() == mouse_buttons::left) {
-          pixels[e.location().x()/zoom][e.location().y()/zoom] = current_color;
-          panel_painting.invalidate(rectangle(e.location().x() / zoom * zoom, e.location().y() / zoom * zoom, zoom, zoom), false);
-        } else if (e.button() == mouse_buttons::right) {
-          pixels[e.location().x()/zoom][e.location().y()/zoom] = color::empty;
-          panel_painting.invalidate(rectangle(e.location().x() / zoom * zoom, e.location().y() / zoom * zoom, zoom, zoom), false);
-        }
+        pixels[e.location().x()/zoom][e.location().y()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
+        panel_painting.invalidate(rectangle(e.location().x() / zoom * zoom, e.location().y() / zoom * zoom, zoom, zoom), false);
       };
       
       panel_painting.mouse_move += [this](const control& sender, const mouse_event_args& e) {
