@@ -486,6 +486,8 @@ namespace xtd {
       
       virtual void invalidate() const {this->invalidate(this->client_rectangle(), true);}
 
+      virtual void invalidate(bool invalidate_children) const {this->invalidate(this->client_rectangle(), invalidate_children);}
+
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
 
       bool is_handle_created() const;
