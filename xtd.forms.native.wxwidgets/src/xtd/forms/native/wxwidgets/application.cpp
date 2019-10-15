@@ -52,6 +52,7 @@ void application::exit() {
 
 void application::initialize() {
   if (wxTheApp) return;
+  wxDISABLE_DEBUG_SUPPORT();
   wxApp::SetInstance(new wx_application());
   int argc = 0;
   wxEntryStart(argc, (wxChar**)nullptr);
