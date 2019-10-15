@@ -163,7 +163,8 @@ control& control::parent(const control& parent) {
   if (parent.handle_ != this->parent_) {
     this->parent(nullptr);
     if (parent.handle_) const_cast<control&>(parent).controls_.push_back(*this);
-  }
+  } else if (parent.handle_ == 0 && this->parent_ == 0)
+    const_cast<control&>(parent).controls_.push_back(*this);
   return *this;
 }
 
