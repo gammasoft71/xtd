@@ -31,21 +31,21 @@ namespace examples {
       button_clear.location({542, 15});
       button_clear.click += [this] {
         pixels = {columns, vector<drawing::color>(rows)};
-        panel_painting.invalidate();
+        panel_painting.invalidate(false);
       };
       
       track_bar_zoom.parent(*this);
+      track_bar_zoom.auto_size(false);
       track_bar_zoom.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
-      track_bar_zoom.location({10, 40});
-      track_bar_zoom.minimum(1);
-      track_bar_zoom.maximum(50);
+      track_bar_zoom.location({10, 50});
+      track_bar_zoom.set_range(1, 50);
       track_bar_zoom.tick_style(forms::tick_style::none);
       track_bar_zoom.value(zoom);
       track_bar_zoom.value_changed += [this] {
         zoom = track_bar_zoom.value();
-        panel_painting.invalidate();
+        panel_painting.invalidate(false);
       };
-      track_bar_zoom.width(client_size().width() - 20);
+      track_bar_zoom.size({client_size().width() - 20, 25});
 
       panel_painting.parent(*this);
       panel_painting.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
@@ -55,26 +55,26 @@ namespace examples {
       panel_painting.size({620, 388});
 
       panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
-        pixels[e.location().x()/zoom][e.location().y()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
-        panel_painting.invalidate(rectangle(e.location().x() / zoom * zoom, e.location().y() / zoom * zoom, zoom, zoom), false);
+        pixels[e.x()/zoom][e.y()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
+        panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom), false);
       };
       
       panel_painting.mouse_move += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          pixels[e.location().x()/zoom][e.location().y()/zoom] = current_color;
-          panel_painting.invalidate(rectangle(e.location().x() / zoom * zoom, e.location().y() / zoom * zoom, zoom, zoom), false);
+          pixels[e.x()/zoom][e.y()/zoom] = current_color;
+          panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom), false);
         }
       };
 
       panel_painting.paint += [this](const control& sender, paint_event_args& e) {
         for (int y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (int x = 0; x < panel_painting.client_size().width(); x += zoom)
-            e.graphics().fill_rectangle(solid_brush(pixels[x / zoom][y / zoom].is_empty() ? panel_painting.back_color() : pixels[x/zoom][y/zoom]), x, y, zoom, zoom);
+            e.graphics().fill_rectangle(solid_brush(pixels[x/zoom][y/zoom].is_empty() ? panel_painting.back_color() : pixels[x/zoom][y/zoom]), x, y, zoom, zoom);
         if (zoom > 3) {
           for (int index = 0; index < panel_painting.client_size().width(); index += zoom)
-            e.graphics().fill_rectangle(solid_brush(color::light_blue), index, 0, 1, panel_painting.client_size().height());
+            e.graphics().draw_line(pen(color::light_blue, 1), index, 0, index, panel_painting.client_size().height());
           for (int index = 0; index < panel_painting.client_size().height(); index += zoom)
-            e.graphics().fill_rectangle(solid_brush(color::light_blue), 0, index, panel_painting.client_size().width(), 1);
+            e.graphics().draw_line(pen(color::light_blue, 1), 0, index, panel_painting.client_size().width(), index);
         }
       };
     }
@@ -84,18 +84,19 @@ namespace examples {
       for (auto panel : panel_colors)
         panel->border_style(panel->handle() != sender.handle() ? forms::border_style::none : forms::border_style::fixed_single);
       current_color = sender.back_color();
-    };
+    }
 
     static constexpr int columns = 2000;
     static constexpr int rows = 1000;
     int zoom = 20;
+    drawing::color current_color;
+    vector<vector<drawing::color>> pixels {columns, vector<drawing::color>(rows)};
+
     panel panel_colors_container;
     vector<shared_ptr<panel>> panel_colors;
     button button_clear;
     panel panel_painting;
     track_bar track_bar_zoom;
-    vector<vector<drawing::color>> pixels {columns, vector<drawing::color>(rows)};
-    drawing::color current_color;
   };
 }
 
