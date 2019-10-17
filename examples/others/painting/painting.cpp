@@ -51,7 +51,6 @@ namespace examples {
       panel_painting.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       panel_painting.back_color(color::white_smoke);
       panel_painting.border_style(forms::border_style::fixed_single);
-      panel_painting.back_color(color::white_smoke);
       panel_painting.location({10, 82});
       panel_painting.size({620, 388});
 
