@@ -31,7 +31,7 @@ namespace examples {
       button_clear.location({542, 15});
       button_clear.click += [this] {
         pixels = {columns, vector<drawing::color>(rows)};
-        panel_painting.invalidate(false);
+        panel_painting.invalidate();
       };
       
       track_bar_zoom.parent(*this);
@@ -43,37 +43,35 @@ namespace examples {
       track_bar_zoom.value(zoom);
       track_bar_zoom.value_changed += [this] {
         zoom = track_bar_zoom.value();
-        panel_painting.invalidate(false);
+        panel_painting.invalidate();
       };
       track_bar_zoom.size({client_size().width() - 20, 25});
 
       panel_painting.parent(*this);
       panel_painting.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+      panel_painting.back_color(color::white_smoke);
       panel_painting.border_style(forms::border_style::fixed_single);
       panel_painting.back_color(color::white_smoke);
       panel_painting.location({10, 82});
       panel_painting.size({620, 388});
 
       panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
-        pixels[e.y()/zoom][e.x()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
-        xtd::drawing::graphics graphics = panel_painting.create_graphics();
-        if (pixels[e.y()/zoom][e.x()/zoom] == current_color)
-          graphics.fill_rectangle(solid_brush(pixels[e.y()/zoom][e.x()/zoom]), e.x(), e.y(), zoom, zoom);
-        panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom), false);
+        pixels[e.x()/zoom][e.y()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
+        panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
       };
       
       panel_painting.mouse_move += [this](const control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          pixels[e.y()/zoom][e.x()/zoom] = current_color;
-          panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom), false);
+          pixels[e.x()/zoom][e.y()/zoom] = current_color;
+          panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
 
       panel_painting.paint += [this](const control& sender, paint_event_args& e) {
         for (int y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (int x = 0; x < panel_painting.client_size().width(); x += zoom)
-            if (!pixels[y/zoom][x/zoom].is_empty())
-              e.graphics().fill_rectangle(solid_brush(pixels[y/zoom][x/zoom]), x, y, zoom, zoom);
+            if (!pixels[x/zoom][y/zoom].is_empty())
+              e.graphics().fill_rectangle(solid_brush(pixels[x/zoom][y/zoom]), x, y, zoom, zoom);
         if (zoom > 3) {
           for (int index = 0; index < panel_painting.client_size().width(); index += zoom)
             e.graphics().draw_line(pen(color::light_blue, 1), index, 0, index, panel_painting.client_size().height());
