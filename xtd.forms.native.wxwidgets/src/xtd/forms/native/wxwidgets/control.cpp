@@ -136,28 +136,23 @@ void control::back_color(intptr_t control, const color& color) {
 
 intptr_t control::create(const forms::create_params& create_params) {
   application::initialize(); // Must be first
-  control_handler* control = nullptr;
-  if (create_params.class_name() == "button") control = new wx_button(create_params);
-  else if (create_params.class_name() == "checkbox") control = new wx_check_box(create_params);
-  else if (create_params.class_name() == "checkedlistbox") control = new wx_checked_list_box(create_params);
-  else if (create_params.class_name() == "combobox") control = new wx_combo_box(create_params);
-  else if (create_params.class_name() == "form") control = new wx_form(create_params);
-  else if (create_params.class_name() == "groupbox") control = new wx_group_box(create_params);
-  else if (create_params.class_name() == "label") control = new wx_label(create_params);
-  else if (create_params.class_name() == "listbox") control = new wx_list_box(create_params);
-  else if (create_params.class_name() == "panel") control = new wx_panel(create_params);
-  else if (create_params.class_name() == "progressbar") control = new wx_progress_bar(create_params);
-  else if (create_params.class_name() == "radiobutton") control = new wx_radio_button(create_params);
-  else if (create_params.class_name() == "tabcontrol") control = new wx_tab_control(create_params);
-  else if (create_params.class_name() == "tabpage") control = new wx_tab_page(create_params);
-  else if (create_params.class_name() == "textbox") control = new wx_text_box(create_params);
-  else if (create_params.class_name() == "trackbar") control = new wx_track_bar(create_params);
-  else if (create_params.class_name() == "usercontrol") control = new wx_user_control(create_params);
-  else control = new wx_control(create_params);
-
-  //control->control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_COLOUR);
-  
-  return reinterpret_cast<intptr_t>(control);
+  if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
+  if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
+  if (create_params.class_name() == "checkedlistbox") return reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params));
+  if (create_params.class_name() == "combobox") return reinterpret_cast<intptr_t>(new wx_combo_box(create_params));
+  if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
+  if (create_params.class_name() == "groupbox") return reinterpret_cast<intptr_t>(new wx_group_box(create_params));
+  if (create_params.class_name() == "label") return reinterpret_cast<intptr_t>(new wx_label(create_params));
+  if (create_params.class_name() == "listbox") return reinterpret_cast<intptr_t>(new wx_list_box(create_params));
+  if (create_params.class_name() == "panel") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
+  if (create_params.class_name() == "progressbar") return reinterpret_cast<intptr_t>(new wx_progress_bar(create_params));
+  if (create_params.class_name() == "radiobutton") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
+  if (create_params.class_name() == "tabcontrol") return reinterpret_cast<intptr_t>(new wx_tab_control(create_params));
+  if (create_params.class_name() == "tabpage") return reinterpret_cast<intptr_t>(new wx_tab_page(create_params));
+  if (create_params.class_name() == "textbox") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
+  if (create_params.class_name() == "trackbar") return reinterpret_cast<intptr_t>(new wx_track_bar(create_params));
+  if (create_params.class_name() == "usercontrol") return reinterpret_cast<intptr_t>(new wx_user_control(create_params));
+  return reinterpret_cast<intptr_t>(new wx_control(create_params));
 }
 
 intptr_t control::create_paint_graphics(intptr_t control) {
