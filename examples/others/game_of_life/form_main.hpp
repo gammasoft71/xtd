@@ -16,14 +16,14 @@ namespace game_of_life {
       button_run_.text("Run");
       button_run_.location({10, 10});
       button_run_.click += [this] {
-        timer_evolve_.enabled(!timer_evolve_.enabled());
-        button_run_.text(timer_evolve_.enabled() ? "Stop" : "Run");
+        timer_run_.enabled(!timer_run_.enabled());
+        button_run_.text(timer_run_.enabled() ? "Stop" : "Run");
       };
 
       button_next_.parent(*this);
       button_next_.text("Next");
       button_next_.location({100, 10});
-      button_next_.click += {*this, & form_main::evolve};
+      button_next_.click += {*this, & form_main::next};
 
       button_clear_.parent(*this);
       button_clear_.text("Clear");
@@ -86,7 +86,7 @@ namespace game_of_life {
       track_bar_speed_.value(speed_);
       track_bar_speed_.value_changed += [this] {
         speed_ = track_bar_speed_.value();
-        timer_evolve_.interval(1000 / speed_);
+        timer_run_.interval(1000 / speed_);
         label_speed_.text(xtd::strings::format("Speed : {}", speed_));
       };
       track_bar_speed_.size({200, 25});
@@ -98,14 +98,14 @@ namespace game_of_life {
       panel_grid_.size({695, 395});
 
       panel_grid_.mouse_down += [this](const control& sender, const xtd::forms::mouse_event_args& e) {
-        current_state_ = grid_.cells()[e.location().x() / zoom_][e.location().y() / zoom_] == cell::alive ? cell::dead : cell::alive;
-        grid_.cells()[e.location().x() / zoom_][e.location().y() / zoom_] = current_state_;
+        current_state_ = grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] == cell::alive ? cell::dead : cell::alive;
+        grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
         panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
       };
 
       panel_grid_.mouse_move += [this](const control& sender, const xtd::forms::mouse_event_args& e) {
         if (e.button() == xtd::forms::mouse_buttons::left) {
-          grid_.cells()[e.location().x() / zoom_][e.location().y() / zoom_] = current_state_;
+          grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
           panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
         }
       };
@@ -114,7 +114,7 @@ namespace game_of_life {
         if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width() && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height())
           for (int y = 0; y < panel_grid_.client_size().height(); y += zoom_)
             for (int x = 0; x < panel_grid_.client_size().width(); x += zoom_)
-              e.graphics().fill_rectangle(xtd::drawing::solid_brush(grid_.cells()[x / zoom_][y / zoom_] == cell::dead ? dead_color_ : alive_color_), x, y, zoom_, zoom_);
+              e.graphics().fill_rectangle(xtd::drawing::solid_brush(grid_.cells()[offset_y_ + y / zoom_][offset_x_ + x / zoom_] == cell::dead ? dead_color_ : alive_color_), x, y, zoom_, zoom_);
         if (zoom_ > 3) {
           for (int index = 0; index < panel_grid_.client_size().width(); index += zoom_)
             e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), index, 0, 1, panel_grid_.client_size().height());
@@ -134,11 +134,11 @@ namespace game_of_life {
         }
       };
 
-      timer_evolve_.interval(1000 / speed_);
-      timer_evolve_.tick += {*this, &form_main::evolve};
+      timer_run_.interval(1000 / speed_);
+      timer_run_.tick += {*this, &form_main::next};
 
       grid_.status_changed += [this](const grid& sender, const state_event_args& e) {
-        panel_grid_.invalidate(xtd::drawing::rectangle(e.x() * zoom_, e.y() * zoom_, zoom_, zoom_), false);
+        panel_grid_.invalidate(xtd::drawing::rectangle((e.x() - offset_x_) * zoom_, (e.y() - offset_y_) * zoom_, zoom_, zoom_), false);
       };
     }
 
@@ -152,9 +152,9 @@ namespace game_of_life {
 
     void nothing() {}
 
-    void evolve() {
+    void next() {
       label_iterations_.text(xtd::strings::format("Iterations : {}", ++iterations_));
-      grid_.evolve();
+      grid_.next();
     }
 
     void random() {
@@ -165,7 +165,7 @@ namespace game_of_life {
       for (int counter = 0; counter < max; counter++) {
         int x = std::uniform_int_distribution<int>(0, max_x)(rand);
         int y = std::uniform_int_distribution<int>(0, max_y)(rand);
-        grid_.cells()[x][y] = cell::alive;
+        grid_.cells()[offset_y_ + y][offset_x_ + x] = cell::alive;
         panel_grid_.invalidate(xtd::drawing::rectangle(x * zoom_, y * zoom_, zoom_, zoom_), false);
       }
     }
@@ -185,7 +185,7 @@ namespace game_of_life {
       for (xtd::ustring line : figure) {
         int x = start_x;
         for (char cell : line) {
-          grid_.cells()[x][y] = cell != ' ' ? cell::alive : cell::dead;
+          grid_.cells()[offset_y_ + y][offset_x_ + x] = cell != ' ' ? cell::alive : cell::dead;
           panel_grid_.invalidate(xtd::drawing::rectangle(x * zoom_, y * zoom_, zoom_, zoom_), false);
           x++;
         }
@@ -206,6 +206,14 @@ namespace game_of_life {
     void small_exploder() { fill_figure({ " * ", "***", "* *", " * " }); }
     void toad() { fill_figure({ " ***", "*** " }); }
     void tumbler() { fill_figure({ " ** ** ", " ** ** ", "  * *  ", "* * * *", "* * * *", "**   **" }); }
+    
+    cell current_state_ = cell::dead;
+    grid grid_;
+    int iterations_ = 0;
+    int zoom_ = 15;
+    int speed_ = 25;
+    int offset_x_ = 200;
+    int offset_y_ = 200;
 
     xtd::forms::button button_run_;
     xtd::forms::button button_next_;
@@ -217,15 +225,9 @@ namespace game_of_life {
     xtd::forms::label label_speed_;
     xtd::forms::track_bar track_bar_speed_;
     xtd::forms::panel panel_grid_;
-    xtd::forms::timer timer_evolve_;
+    xtd::forms::timer timer_run_;
     xtd::drawing::color line_color_ = xtd::drawing::system_colors::window_text();
     xtd::drawing::color dead_color_ = xtd::drawing::system_colors::window();
     xtd::drawing::color alive_color_ = xtd::drawing::system_colors::window_text();
-
-    cell current_state_ = cell::dead;
-    grid grid_;
-    int iterations_ = 0;
-    int zoom_ = 15;
-    int speed_ = 25;
   };
 }
