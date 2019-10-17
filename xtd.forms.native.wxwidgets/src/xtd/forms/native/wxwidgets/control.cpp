@@ -155,7 +155,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   else if (create_params.class_name() == "usercontrol") control = new wx_user_control(create_params);
   else control = new wx_control(create_params);
 
-  control->control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_COLOUR);
+  control->control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
   
   return reinterpret_cast<intptr_t>(control);
 }
