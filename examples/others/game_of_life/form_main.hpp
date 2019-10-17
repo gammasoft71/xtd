@@ -1,6 +1,5 @@
 
 #pragma once
-#include <chrono>
 #include <random>
 #include <xtd/xtd.forms>
 #include "grid.hpp"
@@ -18,7 +17,6 @@ namespace game_of_life {
       button_run_.location({10, 10});
       button_run_.click += [this] {
         timer_run_.enabled(!timer_run_.enabled());
-        start_time_ = std::chrono::high_resolution_clock::now();
         button_run_.text(timer_run_.enabled() ? "Stop" : "Run");
       };
 
@@ -95,6 +93,7 @@ namespace game_of_life {
 
       panel_grid_.parent(*this);
       panel_grid_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
+      panel_grid_.back_color(empty_color_);
       panel_grid_.border_style(xtd::forms::border_style::fixed_single);
       panel_grid_.location({10, 75});
       panel_grid_.size({695, 395});
@@ -116,7 +115,8 @@ namespace game_of_life {
         if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width() && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height())
           for (int y = 0; y < panel_grid_.client_size().height(); y += zoom_)
             for (int x = 0; x < panel_grid_.client_size().width(); x += zoom_)
-              e.graphics().fill_rectangle(xtd::drawing::solid_brush(grid_.cells()[offset_y_ + y / zoom_][offset_x_ + x / zoom_] == cell::empty ? dead_color_ : alive_color_), x, y, zoom_, zoom_);
+              if (grid_.cells()[offset_y_ + y / zoom_][offset_x_ + x / zoom_] != cell::empty)
+                e.graphics().fill_rectangle(xtd::drawing::solid_brush(populated_color_), x, y, zoom_, zoom_);
         if (zoom_ > 3) {
           for (int index = 0; index < panel_grid_.client_size().width(); index += zoom_)
             e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), index, 0, 1, panel_grid_.client_size().height());
@@ -157,11 +157,6 @@ namespace game_of_life {
     void next() {
       grid_.next();
       label_iterations_.text(xtd::strings::format("Iterations : {}", ++iterations_));
-      if (timer_run_.enabled()) {
-        std::chrono::milliseconds elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start_time_);
-        int fps = static_cast<int>(static_cast<double>(iterations_) / elapsed.count() * 1000);
-        xtd::cdebug << xtd::format("fps : {}", fps) << std::endl;
-      }
     }
 
     void random() {
@@ -221,7 +216,6 @@ namespace game_of_life {
     int speed_ = 25;
     int offset_x_ = 200;
     int offset_y_ = 200;
-    std::chrono::high_resolution_clock::time_point start_time_;
 
     xtd::forms::button button_run_;
     xtd::forms::button button_next_;
@@ -235,7 +229,7 @@ namespace game_of_life {
     xtd::forms::panel panel_grid_;
     xtd::forms::timer timer_run_;
     xtd::drawing::color line_color_ = xtd::drawing::system_colors::window_text();
-    xtd::drawing::color dead_color_ = xtd::drawing::system_colors::window();
-    xtd::drawing::color alive_color_ = xtd::drawing::system_colors::window_text();
+    xtd::drawing::color empty_color_ = xtd::drawing::system_colors::window();
+    xtd::drawing::color populated_color_ = xtd::drawing::system_colors::window_text();
   };
 }

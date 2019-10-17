@@ -9,8 +9,8 @@ namespace game_of_life {
   
   class grid {
   public:
-    static constexpr int columns = 700; // 5200
-    static constexpr int rows = 700; // 4100
+    static constexpr int columns = 1000; //5200;
+    static constexpr int rows = 800; //4100;
 
     grid() = default;
 
