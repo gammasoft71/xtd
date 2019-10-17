@@ -69,7 +69,8 @@ namespace examples {
       panel_painting.paint += [this](const control& sender, paint_event_args& e) {
         for (int y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (int x = 0; x < panel_painting.client_size().width(); x += zoom)
-            e.graphics().fill_rectangle(solid_brush(pixels[y/zoom][x/zoom].is_empty() ? panel_painting.back_color() : pixels[y/zoom][x/zoom]), x, y, zoom, zoom);
+            if (!pixels[y/zoom][x/zoom].is_empty())
+              e.graphics().fill_rectangle(solid_brush(pixels[y/zoom][x/zoom]), x, y, zoom, zoom);
         if (zoom > 3) {
           for (int index = 0; index < panel_painting.client_size().width(); index += zoom)
             e.graphics().draw_line(pen(color::light_blue, 1), index, 0, index, panel_painting.client_size().height());
