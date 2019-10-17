@@ -56,6 +56,9 @@ namespace examples {
 
       panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
         pixels[e.y()/zoom][e.x()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
+        xtd::drawing::graphics graphics = panel_painting.create_graphics();
+        if (pixels[e.y()/zoom][e.x()/zoom] == current_color)
+          graphics.fill_rectangle(solid_brush(pixels[e.y()/zoom][e.x()/zoom]), e.x(), e.y(), zoom, zoom);
         panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom), false);
       };
       
