@@ -4,9 +4,9 @@
 #include "cell.hpp"
 
 namespace game_of_life {
-  class state_event_args : public xtd::event_args {
+  class cell_event_args : public xtd::event_args {
   public:
-    state_event_args(const game_of_life::cell& cell, int x, int y) : cell_(&cell), x_(x), y_(y) {}
+    cell_event_args(const game_of_life::cell& cell, int x, int y) : cell_(&cell), x_(x), y_(y) {}
 
     const game_of_life::cell& cell() const {return *cell_;}
     int x() const {return x_;}

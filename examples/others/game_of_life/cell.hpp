@@ -4,7 +4,7 @@
 
 namespace game_of_life {
   enum class cell {
-    dead = 0,
-    alive,
+    empty = 0,
+    populated,
   };
 }
