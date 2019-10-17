@@ -1,5 +1,6 @@
 
 #pragma once
+#include <chrono>
 #include <random>
 #include <xtd/xtd.forms>
 #include "grid.hpp"
@@ -17,6 +18,7 @@ namespace game_of_life {
       button_run_.location({10, 10});
       button_run_.click += [this] {
         timer_run_.enabled(!timer_run_.enabled());
+        start_time_ = std::chrono::high_resolution_clock::now();
         button_run_.text(timer_run_.enabled() ? "Stop" : "Run");
       };
 
@@ -153,8 +155,13 @@ namespace game_of_life {
     void nothing() {}
 
     void next() {
+      //grid_.next();
       label_iterations_.text(xtd::strings::format("Iterations : {}", ++iterations_));
-      grid_.next();
+      if (timer_run_.enabled()) {
+        std::chrono::milliseconds elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start_time_);
+        int fps = static_cast<int>(static_cast<double>(iterations_) / elapsed.count() * 1000);
+        xtd::cdebug << xtd::format("fps : {}", fps) << std::endl;
+      }
     }
 
     void random() {
@@ -214,6 +221,7 @@ namespace game_of_life {
     int speed_ = 25;
     int offset_x_ = 200;
     int offset_y_ = 200;
+    std::chrono::high_resolution_clock::time_point start_time_;
 
     xtd::forms::button button_run_;
     xtd::forms::button button_next_;
