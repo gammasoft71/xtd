@@ -32,7 +32,7 @@ namespace game_of_life {
 
       combo_box_figures_.parent(*this);
       combo_box_figures_.drop_down_style(xtd::forms::combo_box_style::drop_down_list);
-      combo_box_figures_.items().push_back_range({{"Figure", figure_delegate(*this, &form_main::nothing)}, {"Random cells", figure_delegate(*this, &form_main::random)}, {"Blinker", figure_delegate(*this, &form_main::blinker)}, {"Toad", figure_delegate(*this, &form_main::toad)}, {"beacon", figure_delegate(*this, &form_main::beacon)}, {"Pulsar", figure_delegate(*this, &form_main::pulsar)}, {"Penta-decathlon", figure_delegate(*this, &form_main::penta_decathlon)}, {"Glider", figure_delegate(*this, &form_main::glider)}, {"Small exploder", figure_delegate(*this, &form_main::small_exploder)}, {"Exploder", figure_delegate(*this, &form_main::exploder)}, {"Lightweight spaceship", figure_delegate(*this, &form_main::lightweight_spaceship)}, {"Middleweight spaceship", figure_delegate(*this, &form_main::middleweight_spaceship)}, {"Heavyweight spaceship", figure_delegate(*this, &form_main::heavyweight_spaceship)}, {"Tumbler", figure_delegate(*this, &form_main::tumbler)}, {"Gosper glider gun", figure_delegate(*this, &form_main::gosper_glider_gun)}});
+      combo_box_figures_.items().push_back_range({{"Figure", figure_delegate(*this, &form_main::nothing)}, {"Random cells", figure_delegate(*this, &form_main::random)}, {"Blinker", figure_delegate(*this, &form_main::blinker)}, {"Toad", figure_delegate(*this, &form_main::toad)}, {"beacon", figure_delegate(*this, &form_main::beacon)}, {"galaxy", figure_delegate(*this, &form_main::galaxy)}, {"Pulsar", figure_delegate(*this, &form_main::pulsar)}, {"Penta-decathlon", figure_delegate(*this, &form_main::penta_decathlon)}, {"Glider", figure_delegate(*this, &form_main::glider)}, {"Small exploder", figure_delegate(*this, &form_main::small_exploder)}, {"Exploder", figure_delegate(*this, &form_main::exploder)}, {"Lightweight spaceship", figure_delegate(*this, &form_main::lightweight_spaceship)}, {"Middleweight spaceship", figure_delegate(*this, &form_main::middleweight_spaceship)}, {"Heavyweight spaceship", figure_delegate(*this, &form_main::heavyweight_spaceship)}, {"Tumbler", figure_delegate(*this, &form_main::tumbler)}, {"Gosper glider gun", figure_delegate(*this, &form_main::gosper_glider_gun)}});
       combo_box_figures_.location({280, 11});
       combo_box_figures_.selected_index(0);
       combo_box_figures_.width(200);
@@ -195,19 +195,152 @@ namespace game_of_life {
       }
     }
 
-    void beacon() { fill_figure({ "**  ", "*   ", "   *", "  **" }); }
-    void blinker() { fill_figure({ "*", "*", "*" }); }
-    void exploder() { fill_figure({ "* * *", "*   *", "*   *", "*   *", "* * *" }); }
-    void glider() { fill_figure({ " * ", "  *", "***" }); }
-    void gosper_glider_gun() { fill_figure({ "                       **         **  ", "                      * *         **  ", "**       **           **              ", "**      * *                           ", "        **      **                    ", "                * *                   ", "                *                     ", "                                   ** ", "                                   * *", "                                   *  ", "                                      ", "                                      ", "                        ***           ", "                        *             ", "                         *            " }); }
-    void heavyweight_spaceship() { fill_figure({ "  **   ", "*    * ", "      *", "*     *", " ******" }); }
-    void lightweight_spaceship() { fill_figure({ "*  * ", "    *", "*   *", " ****" }); }
-    void middleweight_spaceship() { fill_figure({ "  *   ", "*   * ", "     *", "*    *", " *****" }); }
-    void penta_decathlon() { fill_figure({ "*", "*", "*", "*", "*", "*", "*", "*", "*", "*" }); }
-    void pulsar() { fill_figure({ "  ***   ***  ", "             ", "*    * *    *", "*    * *    *", "*    * *    *", "  ***   ***  ", "             ", "  ***   ***  ", "*    * *    *", "*    * *    *", "*    * *    *", "             ", "  ***   ***  " }); }
-    void small_exploder() { fill_figure({ " * ", "***", "* *", " * " }); }
-    void toad() { fill_figure({ " ***", "*** " }); }
-    void tumbler() { fill_figure({ " ** ** ", " ** ** ", "  * *  ", "* * * *", "* * * *", "**   **" }); }
+    void beacon() {
+      fill_figure({
+        "**  ",
+        "*   ",
+        "   *",
+        "  **"
+      });
+    }
+    
+    void blinker() {
+      fill_figure({
+        "*",
+        "*",
+        "*"
+      });
+    }
+    
+    void exploder() {
+      fill_figure({
+        "* * *",
+        "*   *",
+        "*   *",
+        "*   *",
+        "* * *"
+      });
+    }
+    
+    void galaxy() {
+      fill_figure({
+        "****** **",
+        "****** **",
+        "       **",
+        "**     **",
+        "**     **",
+        "**     **",
+        "**       ",
+        "** ******",
+        "** ******",
+      });
+    }
+    void glider() {
+      fill_figure(
+      {
+        " * ",
+        "  *",
+        "***"
+      });
+    }
+    
+    void gosper_glider_gun() {
+      fill_figure({
+        "                       **         **  ",
+        "                      * *         **  ",
+        "**       **           **              ",
+        "**      * *                           ",
+        "        **      **                    ",
+        "                * *                   ",
+        "                *                     ",
+        "                                   ** ",
+        "                                   * *",
+        "                                   *  ",
+        "                                      ",
+        "                                      ",
+        "                        ***           ",
+        "                        *             ",
+        "                         *            "
+      });
+    }
+    void heavyweight_spaceship() {
+      fill_figure({
+        "  **   ",
+        "*    * ",
+        "      *",
+        "*     *",
+        " ******"
+      });
+    }
+    
+    void lightweight_spaceship() {
+      fill_figure({
+        "*  * ",
+        "    *",
+        "*   *",
+        " ****"
+      });
+    }
+    
+    void middleweight_spaceship() {
+      fill_figure({
+        "  *   ",
+        "*   * ",
+        "     *",
+        "*    *",
+        " *****"
+      });
+    }
+    
+    void penta_decathlon() {
+      fill_figure({
+        "**********"
+      });
+    }
+    void pulsar() {
+      fill_figure({
+        "  ***   ***  ",
+        "             ",
+        "*    * *    *",
+        "*    * *    *",
+        "*    * *    *",
+        "  ***   ***  ",
+        "             ",
+        "  ***   ***  ",
+        "*    * *    *",
+        "*    * *    *",
+        "*    * *    *",
+        "             ",
+        "  ***   ***  "
+      });
+    }
+    
+    void small_exploder() {
+      fill_figure({
+        " * ",
+        "***",
+        "* *",
+        " * "
+      });
+    }
+    
+    void toad() {
+      fill_figure({
+        " ***",
+        "*** "
+      });
+    }
+    
+    void tumbler() {
+      fill_figure({
+        " ** ** ",
+        " ** ** ",
+        "  * *  ",
+        "* * * *",
+        "* * * *",
+        "**   **"
+      });
+    }
     
     cell current_state_ = cell::empty;
     grid grid_;
