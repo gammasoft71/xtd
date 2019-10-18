@@ -314,7 +314,7 @@ void form::internal_set_window_state() {
     this->recreate_handle();
   else {
     switch (this->window_state_) {
-      case form_window_state::normal: native::form::full_screen(this->handle_, false); native::form::maximize(this->handle_, false); native::form::minimize(this->handle_, false); break;
+      case form_window_state::normal: native::form::restore(this->handle_); break;
       case form_window_state::maximized: native::form::maximize(this->handle_, true); break;
       case form_window_state::minimized: native::form::minimize(this->handle_, true); break;
       case form_window_state::full_screen: native::form::full_screen(this->handle_, true); break;

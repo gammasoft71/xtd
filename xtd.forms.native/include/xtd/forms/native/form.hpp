@@ -15,6 +15,7 @@ namespace xtd {
         static void maximize(intptr_t form, bool maximize);
         static bool minimize(intptr_t form);
         static void minimize(intptr_t form, bool minimize);
+        static void restore(intptr_t form);
         static int32_t show_dialog(intptr_t form);
         static void end_dialog(intptr_t form, int32_t result);
       };

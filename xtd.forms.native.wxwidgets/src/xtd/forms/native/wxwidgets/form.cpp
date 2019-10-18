@@ -47,6 +47,16 @@ void form::default_control(intptr_t form, intptr_t default_control) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetDefaultItem(reinterpret_cast<control_handler*>(default_control)->control());
 }
 
+void form::restore(intptr_t form) {
+  if (form == 0) return;
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Restore();
+#if defined(__WXGTK__)
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(false);
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(false);
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Iconize(false)
+#endif
+}
+
 int32_t form::show_dialog(intptr_t form) {
   if (form == 0) return 0;
   return static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->ShowModal();
