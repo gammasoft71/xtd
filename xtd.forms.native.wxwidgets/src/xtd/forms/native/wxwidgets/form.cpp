@@ -1,5 +1,7 @@
 #include <xtd/forms/native/application.hpp>
+#include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/form.hpp>
+#include <xtd/forms/native/screen.hpp>
 #include "wx_form.hpp"
 #include <wx/apptrait.h>
 
@@ -24,7 +26,13 @@ void form::full_screen(intptr_t form, bool full_screen) {
 
 bool form::maximize(intptr_t form) {
   if (form == 0) return false;
+#if defined(__WXGTK__)
+    xtd::drawing::size form_size = control::size(form);
+    xtd::drawing::size screen_size = screen::working_area(screen::from_handle(form)).size();
+    return form_size.width() == screen_size.width() && form_size.height() == screen_size.height();
+#else
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsMaximized();
+#endif
 }
 
 void form::maximize(intptr_t form, bool maximize) {
@@ -34,6 +42,7 @@ void form::maximize(intptr_t form, bool maximize) {
 
 bool form::minimize(intptr_t form) {
   if (form == 0) return false;
+  
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsIconized();
 }
 
