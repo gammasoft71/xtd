@@ -137,7 +137,7 @@ control& form::visible(bool visible) {
 
 form& form::window_state(form_window_state value) {
   if (this->window_state_ == form_window_state::full_screen && value != form_window_state::normal) return *this;
-  if (this->window_state_ == form_window_state::maximized && value == form_window_state::full_screen) return *this;
+  if (this->window_state_ != form_window_state::normal && value == form_window_state::full_screen) return *this;
   if (this->window_state_ != value) {
     this->window_state_ = value;
     this->internal_set_window_state();
