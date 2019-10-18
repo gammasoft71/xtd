@@ -15,33 +15,37 @@ public:
 
       cdebug << format("resize: {}, {}", size(), window_state()) << std::endl;
     };
-    client_size({365, 200});
+    client_size({410, 200});
     window_state(form_window_state::maximized);
     
     button_full_screen.parent(*this);
     button_full_screen.location({10, 10});
-    button_full_screen.text("FullScreen");
+    button_full_screen.text("Full screen");
+    button_full_screen.width(90);
     button_full_screen.click += [&] {
       window_state(form_window_state::full_screen);
     };
 
     button_maximize.parent(*this);
-    button_maximize.location({100, 10});
+    button_maximize.location({110, 10});
     button_maximize.text("Maximize");
+    button_maximize.width(90);
     button_maximize.click += [&] {
       window_state(form_window_state::maximized);
     };
     
     button_normal.parent(*this);
-    button_normal.location({190, 10});
+    button_normal.location({210, 10});
     button_normal.text("Normal");
+    button_normal.width(90);
     button_normal.click += [&] {
       window_state(form_window_state::normal);
     };
 
     button_minimize.parent(*this);
-    button_minimize.location({280, 10});
+    button_minimize.location({310, 10});
     button_minimize.text("Minimize");
+    button_minimize.width(90);
     button_minimize.click += [&] {
       window_state(form_window_state::minimized);
     };

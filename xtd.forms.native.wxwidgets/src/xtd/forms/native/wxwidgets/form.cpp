@@ -58,9 +58,9 @@ void form::default_control(intptr_t form, intptr_t default_control) {
 
 void form::restore(intptr_t form) {
   if (form == 0) return;
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(false);
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Restore();
 #if defined(__WXGTK__)
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(false);
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(false);
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Iconize(false);
 #endif
