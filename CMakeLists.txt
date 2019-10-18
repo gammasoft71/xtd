@@ -18,11 +18,43 @@ endif ()
 
 # Projects
 add_subdirectory(xtd.forms.native)
-add_subdirectory(xtd.forms.native.cocoa)
-add_subdirectory(xtd.forms.native.gtk3)
-add_subdirectory(xtd.forms.native.qt5)
-add_subdirectory(xtd.forms.native.win32)
-add_subdirectory(xtd.forms.native.wxwidgets)
+
+option(XTD_COCOA "Use Apple AppKit libraries as native drawing and forms libraries" OFF)
+if (XTD_COCOA)
+  add_subdirectory(xtd.forms.native.cocoa)
+  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.cocoa)
+endif ()
+
+option(XTD_FLTK "Use FLTK as native drawing and forms libraries" OFF)
+if (XTD_FLTK)
+  add_subdirectory(xtd.forms.native.fltk)
+  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.fltk)
+endif ()
+
+option(XTD_GTK "Use Gtk+3 as native drawing and forms libraries" OFF)
+if (XTD_GTK)
+  add_subdirectory(xtd.forms.native.gtk3)
+  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.gtk3)
+endif ()
+
+option(XTD_FORMS_QT5 "Use Qt as native drawing and forms libraries" OFF)
+if (XTD_FORMS_QT5)
+  add_subdirectory(xtd.forms.native.qt5)
+  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.fltk)
+endif ()
+
+option(XTD_WIN32 "Use Microsoft Win32 api as native drawing and forms libraries" OFF)
+if (XTD_WIN32)
+  add_subdirectory(xtd.forms.native.win32)
+  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.win32)
+endif ()
+
+option(XTD_WXWIDGETS "Use wxWidgets as native drawing and forms libraries" ON)
+if (XTD_WXWIDGETS)
+  add_subdirectory(xtd.forms.native.wxwidgets)
+  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.wxwidgets)
+endif ()
+
 add_subdirectory(xtd.forms)
 if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   add_subdirectory(xtd.delegates)
