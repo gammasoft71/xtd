@@ -301,11 +301,11 @@ void form::on_handle_created(const event_args &e) {
 
 void form::on_resize(const event_args& e) {
   if (native::form::minimize(this->handle_))
-    this->window_state(forms::form_window_state::minimized);
+    this->window_state_ = forms::form_window_state::minimized;
   else if (native::form::maximize(this->handle_))
-    this->window_state(forms::form_window_state::maximized);
+    this->window_state_ = forms::form_window_state::maximized;
   else if (this->window_state_ != form_window_state::full_screen)
-    this->window_state(forms::form_window_state::normal);
+    this->window_state_ = forms::form_window_state::normal;
   this->container_control::on_resize(e);
 }
 
