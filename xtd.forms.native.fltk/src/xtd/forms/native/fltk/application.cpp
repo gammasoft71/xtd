@@ -22,12 +22,9 @@ namespace {
   fltk_visual_style visual_style = fltk_visual_style::gtk;
   bool restart_asked = false;
 
-
-int fltk_handler(int event) {
-  if (event == FL_SHORTCUT && Fl::event_key() == FL_Escape)
-    return 1;
-  return 0;
-}
+  int fltk_handler(int event) {
+    return event == FL_SHORTCUT && Fl::event_key() == FL_Escape;
+  }
 }
 
 bool application::allow_quit() {
@@ -64,11 +61,6 @@ void application::exit() {
 void application::initialize() {
 }
 
-intptr_t application::main_form() {
-  initialize(); // Must be first
-  return 0;
-}
-
 void application::register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
   initialize(); // Must be first
 }
@@ -99,4 +91,3 @@ void application::run() {
     _Exit(0);
   }
 }
-

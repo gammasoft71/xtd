@@ -84,11 +84,6 @@ void application::initialize() {
 #endif
 }
 
-intptr_t application::main_form() {
-  initialize(); // Must be first
-  return (intptr_t)wxTheApp->GetTopWindow();
-}
-
 void application::register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
   initialize(); // Must be first
   static_cast<wx_application*>(wxTheApp)->message_filter_proc += message_filter_proc;
