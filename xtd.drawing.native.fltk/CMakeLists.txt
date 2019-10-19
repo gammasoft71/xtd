@@ -9,7 +9,11 @@ set(XTD_INCLUDES
 )
 
 set(XTD_DRAWING_NATIVE_FLTK_SOURCES
+  src/xtd/drawing/native/fltk/brush.cpp
   src/xtd/drawing/native/fltk/drawing.cpp
+  src/xtd/drawing/native/fltk/font_family.cpp
+  src/xtd/drawing/native/fltk/font.cpp
+  src/xtd/drawing/native/fltk/pen.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
@@ -24,7 +28,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_NATIVE_INCLUDES} ${XTD_DRAWING_NATIVE_GTK3_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_NATIVE_INCLUDES} ${XTD_DRAWING_NATIVE_FLTK_SOURCES})
 if (MSVC)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4996")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")

@@ -31,10 +31,16 @@ void font_family::destroy(intptr_t font_family) {
 }
 
 std::string font_family::generic_serif_name() {
+  /*
+  wxFontInfo font_info;
+  font_info.Family(wxFONTFAMILY_ROMAN);
+  wxFont font(font_info);
+  return font.GetFaceName().ToStdString();
+   */
 #if defined(__WXMSW__)
   return "Times New Roman";
 #elif defined(__WXOSX__)
-  return "Times";
+  return "Times New Roman";
 #elif defined(__WXGTK__)
   return "Serif";
 #else
@@ -43,10 +49,16 @@ std::string font_family::generic_serif_name() {
 }
 
 std::string font_family::generic_sans_serif_name() {
+  /*
+  wxFontInfo font_info;
+  font_info.Family(wxFONTFAMILY_SWISS);
+  wxFont font(font_info);
+  return font.GetFaceName().ToStdString();
+   */
 #if defined(__WXMSW__)
   return "Microsoft Sans Serif";
 #elif defined(__WXOSX__)
-  return "Helvetica";
+  return "Arial";
 #elif defined(__WXGTK__)
   return "Sans";
 #else
@@ -55,6 +67,12 @@ std::string font_family::generic_sans_serif_name() {
 }
 
 std::string font_family::generic_monospace_name() {
+  /*
+  wxFontInfo font_info;
+  font_info.Family(wxFONTFAMILY_TELETYPE);
+  wxFont font(font_info);
+  return font.GetFaceName().ToStdString();
+   */
 #if defined(__WXMSW__)
   return "Courier New";
 #elif defined(__WXOSX__)
