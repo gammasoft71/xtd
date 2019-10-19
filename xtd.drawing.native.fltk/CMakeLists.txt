@@ -8,12 +8,12 @@ set(XTD_INCLUDES
   include/xtd/xtd.drawing.native.fltk
 )
 
-set(XTD_DRAWING_NATIVE_GTK3_SOURCES
+set(XTD_DRAWING_NATIVE_FLTK_SOURCES
   src/xtd/drawing/native/fltk/drawing.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
-source_group(src\\xtd\\drawing\\native\\gtk3 FILES ${XTD_DRAWING_NATIVE_GTK3_SOURCES})
+source_group(src\\xtd\\drawing\\native\\fltk FILES ${XTD_DRAWING_NATIVE_FLTK_SOURCES})
 
 # Add packages
 find_package(FLTK REQUIRED)
