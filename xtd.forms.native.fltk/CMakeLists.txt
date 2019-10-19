@@ -10,7 +10,26 @@ set(XTD_INCLUDES
 
 set(XTD_FORMS_NATIVE_FLTK_SOURCES
   src/xtd/forms/native/fltk/application.cpp
+  src/xtd/forms/native/fltk/control.cpp
   src/xtd/forms/native/fltk/forms.cpp
+  src/xtd/forms/native/fltk/control_handler.hpp
+  src/xtd/forms/native/fltk/fl_button.hpp
+  src/xtd/forms/native/fltk/fl_check_box.hpp
+  src/xtd/forms/native/fltk/fl_checked_list_box.hpp
+  src/xtd/forms/native/fltk/fl_combo_box.hpp
+  src/xtd/forms/native/fltk/fl_control.hpp
+  src/xtd/forms/native/fltk/fl_form.hpp
+  src/xtd/forms/native/fltk/fl_group_box.hpp
+  src/xtd/forms/native/fltk/fl_label.hpp
+  src/xtd/forms/native/fltk/fl_list_box.hpp
+  src/xtd/forms/native/fltk/fl_panel.hpp
+  src/xtd/forms/native/fltk/fl_progress_bar.hpp
+  src/xtd/forms/native/fltk/fl_radio_button.hpp
+  src/xtd/forms/native/fltk/fl_tab_control.hpp
+  src/xtd/forms/native/fltk/fl_tab_page.hpp
+  src/xtd/forms/native/fltk/fl_text_box.hpp
+  src/xtd/forms/native/fltk/fl_track_bar.hpp
+  src/xtd/forms/native/fltk/fl_user_control.hpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

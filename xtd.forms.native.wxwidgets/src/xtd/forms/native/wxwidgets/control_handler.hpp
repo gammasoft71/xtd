@@ -28,17 +28,17 @@ namespace xtd {
     namespace native {
       class control_handler;
       
-      template<typename TControl>
-      class control_wrapper : public TControl {
+      template<typename control_t>
+      class control_wrapper : public control_t {
       public:
        template<typename ...args_type>
-        control_wrapper(control_handler* event_handler, args_type&& ...args) : TControl(args...), event_handler_(event_handler) {}
+        control_wrapper(control_handler* event_handler, args_type&& ...args) : control_t(args...), event_handler_(event_handler) {}
 
         intptr_t def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {
           if (handle != 0) {
             wxEvent* event = reinterpret_cast<wxEvent*>(handle);
             event->Skip(!result);
-            this->process_result_ = this->TControl::ProcessEvent(*event);
+            this->process_result_ = this->control_t::ProcessEvent(*event);
           }
           return this->process_result_;
         }
@@ -358,8 +358,8 @@ namespace xtd {
         bool destroyed_ = false;
       };
       
-      template<typename TControl>
-      inline bool control_wrapper<TControl>::ProcessEvent(wxEvent& event) {
+      template<typename control_t>
+      inline bool control_wrapper<control_t>::ProcessEvent(wxEvent& event) {
         if (event.GetEventType() == wxEVT_DESTROY) {
           this->def_process_event(event);
           return this->process_result_;
@@ -391,13 +391,13 @@ namespace xtd {
         return this->process_result_;
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_clipboard_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_clipboard_event(wxEvent& event) {
         this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_command_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_command_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_BUTTON) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED,  event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_CHECKBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_CHECKLISTBOX) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
@@ -409,30 +409,30 @@ namespace xtd {
         else this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_cursor_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_cursor_event(wxEvent& event) {
         this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_generic_command_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_generic_command_event(wxEvent& event) {
         this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_help_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_help_event(wxEvent& event) {
         this->def_process_event(event);
       }
       
 #if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_gesture_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_gesture_event(wxEvent& event) {
         this->def_process_event(event);
       }
 #endif
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_key_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_key_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_KEY_DOWN) event.Skip(!this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_CHAR) event.Skip(!this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_KEY_UP) event.Skip(!this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
@@ -442,8 +442,8 @@ namespace xtd {
         else this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_mouse_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_mouse_event(wxEvent& event) {
         wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
         wxMouseState mouse_state = wxGetMouseState();
         int32_t virtual_keys = 0;
@@ -477,23 +477,23 @@ namespace xtd {
         else this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_scroll_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_scroll_event(wxEvent& event) {
         this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_scrollbar_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_scrollbar_event(wxEvent& event) {
         this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_spin_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_spin_event(wxEvent& event) {
         this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_system_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_system_event(wxEvent& event) {
         wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
         if (event.GetEventType() == wxEVT_CLOSE_WINDOW) {
           bool can_close = this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
@@ -513,16 +513,16 @@ namespace xtd {
         else this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_text_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_text_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_TEXT) {
           if (event.GetEventObject() == this) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SETTEXT, 0, reinterpret_cast<intptr_t>(static_cast<wxCommandEvent&>(event).GetString().c_str().AsChar()), reinterpret_cast<intptr_t>(&event));
         } else
           this->def_process_event(event);
       }
       
-      template<typename TControl>
-      inline void control_wrapper<TControl>::process_thread_event(wxEvent& event) {
+      template<typename control_t>
+      inline void control_wrapper<control_t>::process_thread_event(wxEvent& event) {
         this->def_process_event(event);
       }
     }
