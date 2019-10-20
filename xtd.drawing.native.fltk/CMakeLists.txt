@@ -13,7 +13,12 @@ set(XTD_DRAWING_NATIVE_FLTK_SOURCES
   src/xtd/drawing/native/fltk/drawing.cpp
   src/xtd/drawing/native/fltk/font_family.cpp
   src/xtd/drawing/native/fltk/font.cpp
+  src/xtd/drawing/native/fltk/graphics.cpp
   src/xtd/drawing/native/fltk/pen.cpp
+  src/xtd/drawing/native/fltk/fl_brush.hpp
+  src/xtd/drawing/native/fltk/fl_dc.hpp
+  src/xtd/drawing/native/fltk/fl_font.hpp
+  src/xtd/drawing/native/fltk/fl_pen.hpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

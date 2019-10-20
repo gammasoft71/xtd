@@ -1,8 +1,8 @@
 #include <map>
 #include <xtd/drawing/native/font.hpp>
 #include <xtd/xtd.strings>
+#include "fl_font.hpp"
 #include <FL/Fl.H>
-#include <FL/fl_draw.H>
 
 using namespace xtd::drawing::native;
 
@@ -37,27 +37,22 @@ namespace {
     }
     return fonts;
   }
-
-  struct fl_font_tuple {
-    Fl_Font font_ = 0;
-    Fl_Fontsize size_ = 0;
-  };
 }
 
 intptr_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
-  return reinterpret_cast<intptr_t>(new fl_font_tuple {fonts()[name], points_to_native_font_graphics_untit(em_size)});
+  return reinterpret_cast<intptr_t>(new xtd::drawing::native::fl_font(fonts()[name], points_to_native_font_graphics_untit(em_size)));
 }
 
 intptr_t font::create_from_hdc(intptr_t hdc) {
-  return reinterpret_cast<intptr_t>(new fl_font_tuple {fl_font(), fl_size()});
+  return reinterpret_cast<intptr_t>(new xtd::drawing::native::fl_font(::fl_font(), fl_size()));
 }
 
 intptr_t font::create_from_hfont(intptr_t hfont) {
-  return reinterpret_cast<intptr_t>(new fl_font_tuple {*reinterpret_cast<fl_font_tuple*>(hfont)});
+  return reinterpret_cast<intptr_t>(new xtd::drawing::native::fl_font(*reinterpret_cast<xtd::drawing::native::fl_font*>(hfont)));
 }
 
 void font::destroy(intptr_t font) {
-  delete reinterpret_cast<fl_font_tuple*>(font);
+  delete reinterpret_cast<xtd::drawing::native::fl_font*>(font);
 }
 
 int32_t font::dpi() {
@@ -67,10 +62,10 @@ int32_t font::dpi() {
 }
 
 void font::get_information(intptr_t font, std::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, uint8_t& gdi_char_set, bool& gdi_vertical_font) {
-  fl_font_tuple* fl_font = reinterpret_cast<fl_font_tuple*>(font);
-  std::string font_name = Fl::get_font_name(fl_font->font_);
+  xtd::drawing::native::fl_font* fl_font = reinterpret_cast<xtd::drawing::native::fl_font*>(font);
+  std::string font_name = Fl::get_font_name(fl_font->font());
   name = xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(font_name, " Italic", ""), " italic", ""), " Bold", ""), " bold", "");
-  em_size = native_font_graphics_untit_to_points(static_cast<float>(fl_font->size_));
+  em_size = native_font_graphics_untit_to_points(static_cast<float>(fl_font->size()));
   bold = xtd::strings::index_of(font_name, " Bold") != -1 || xtd::strings::index_of(font_name, " bold") != -1;
   italic = xtd::strings::index_of(font_name, " Italic") != -1 || xtd::strings::index_of(font_name, " italic") != -1;
   underline = false;
@@ -80,11 +75,11 @@ void font::get_information(intptr_t font, std::string& name, float& em_size, boo
 }
 
 float font::height(intptr_t font) {
-  fl_font_tuple* fl_font = reinterpret_cast<fl_font_tuple*>(font);
-  return fl_height(fl_font->font_, fl_font->size_);
+  xtd::drawing::native::fl_font* fl_font = reinterpret_cast<xtd::drawing::native::fl_font*>(font);
+  return fl_height(fl_font->font(), fl_font->size());
 }
 
 float font::height(intptr_t font, intptr_t hdc) {
-  fl_font_tuple* fl_font = reinterpret_cast<fl_font_tuple*>(font);
-  return fl_height(fl_font->font_, fl_font->size_);
+  xtd::drawing::native::fl_font* fl_font = reinterpret_cast<xtd::drawing::native::fl_font*>(font);
+  return fl_height(fl_font->font(), fl_font->size());
 }
