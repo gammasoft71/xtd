@@ -38,7 +38,7 @@ color control::back_color(intptr_t control) {
 void control::back_color(intptr_t control, const color& color) {
   if (control == 0) return;
   
-  reinterpret_cast<control_handler*>(control)->control()->color(fl_rgb_color(uchar((color.r() & 0x00FF0000)>>16), uchar((color.g() & 0x0000FF00)>>8), uchar(color.b() & 0x000000FF)));
+  reinterpret_cast<control_handler*>(control)->control()->color(fl_rgb_color(color.r(), color.g(), color.b()));
 }
 
 intptr_t control::create(const forms::create_params& create_params) {
@@ -139,7 +139,7 @@ color control::fore_color(intptr_t control) {
 
 void control::fore_color(intptr_t control, const color& color) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->labelcolor(fl_rgb_color(uchar((color.r() & 0x00FF0000)>>16), uchar((color.g() & 0x0000FF00)>>8), uchar(color.b() & 0x000000FF)));
+  reinterpret_cast<control_handler*>(control)->control()->labelcolor(fl_rgb_color(color.r(), color.g(), color.b()));
 }
 
 drawing::font control::font(intptr_t control) {
