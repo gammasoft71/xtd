@@ -71,7 +71,4 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
 void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
   if (!hdc) return;
   reinterpret_cast<fl_dc*>(hdc)->measure_string(text, reinterpret_cast<class fl_font*>(font)->font(), reinterpret_cast<class fl_font*>(font)->size(), width, height);
-//#if defined(__WXOSX__) || defined(__WXGTK__)
-//  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(metrics.averageWidth / 2.3f);
-//#endif
 }
