@@ -1,9 +1,9 @@
 #include <cmath>
 #include <xtd/drawing/native/graphics.hpp>
-#include "fl_brush.hpp"
-#include "fl_dc.hpp"
-#include "fl_font.hpp"
-#include "fl_pen.hpp"
+#include "../../../../../include/xtd/drawing/native/fl_brush.hpp"
+#include "../../../../../include/xtd/drawing/native/fl_dc.hpp"
+#include "../../../../../include/xtd/drawing/native/fl_font.hpp"
+#include "../../../../../include/xtd/drawing/native/fl_pen.hpp"
 
 using namespace xtd::drawing::native;
 

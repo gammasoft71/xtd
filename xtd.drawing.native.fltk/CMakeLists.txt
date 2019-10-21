@@ -8,6 +8,13 @@ set(XTD_INCLUDES
   include/xtd/xtd.drawing.native.fltk
 )
 
+set(XTD_DRAWING_NATIVE_INCLUDES
+  include/xtd/drawing/native/fl_brush.hpp
+  include/xtd/drawing/native/fl_dc.hpp
+  include/xtd/drawing/native/fl_font.hpp
+  include/xtd/drawing/native/fl_pen.hpp
+)
+
 set(XTD_DRAWING_NATIVE_FLTK_SOURCES
   src/xtd/drawing/native/fltk/brush.cpp
   src/xtd/drawing/native/fltk/drawing.cpp
@@ -17,13 +24,10 @@ set(XTD_DRAWING_NATIVE_FLTK_SOURCES
   src/xtd/drawing/native/fltk/pen.cpp
   src/xtd/drawing/native/fltk/system_colors.cpp
   src/xtd/drawing/native/fltk/system_fonts.cpp
-  src/xtd/drawing/native/fltk/fl_brush.hpp
-  src/xtd/drawing/native/fltk/fl_dc.hpp
-  src/xtd/drawing/native/fltk/fl_font.hpp
-  src/xtd/drawing/native/fltk/fl_pen.hpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
+source_group(include\\xtd\\drawing\\native FILES ${XTD_DRAWING_NATIVE_INCLUDES})
 source_group(src\\xtd\\drawing\\native\\fltk FILES ${XTD_DRAWING_NATIVE_FLTK_SOURCES})
 
 # Add packages

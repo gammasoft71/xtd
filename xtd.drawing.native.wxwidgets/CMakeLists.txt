@@ -8,18 +8,22 @@ set(XTD_INCLUDES
   include/xtd/xtd.drawing.native.wxwidgets
 )
 
+set(XTD_DRAWING_NATIVE_INCLUDES
+  include/xtd/drawing/native/hdc_wrapper.hpp
+)
+
 set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
   src/xtd/drawing/native/wxwidgets/brush.cpp
   src/xtd/drawing/native/wxwidgets/font.cpp
   src/xtd/drawing/native/wxwidgets/font_family.cpp
   src/xtd/drawing/native/wxwidgets/graphics.cpp
-  src/xtd/drawing/native/wxwidgets/hdc_wrapper.hpp
   src/xtd/drawing/native/wxwidgets/pen.cpp
   src/xtd/drawing/native/wxwidgets/system_colors.cpp
   src/xtd/drawing/native/wxwidgets/system_fonts.cpp
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
+source_group(include\\xtd\\drawing\\native FILES ${XTD_DRAWING_NATIVE_INCLUDES})
 source_group(src\\xtd\\drawing\\native\\wxwidgets FILES ${XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES})
 
 # Add packages
