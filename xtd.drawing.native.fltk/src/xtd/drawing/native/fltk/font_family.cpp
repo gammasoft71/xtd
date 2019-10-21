@@ -5,12 +5,12 @@
 #include <xtd/drawing/native/font.hpp>
 #include <xtd/drawing/native/font_family.hpp>
 #include <FL/Fl.H>
-#include <FL/fl_draw.H>
+#include "../../../../../include/xtd/drawing/native/fl_dc.hpp"
+#include "../../../../../include/xtd/drawing/native/fl_font.hpp"
 
 using namespace xtd::drawing::native;
 
 namespace {
-/*
 #if defined(__WXOSX__)
   float pixel_to_native_font_graphics_untit(float size) {
     return size;  // font is in points
@@ -20,7 +20,6 @@ namespace {
     return size / 96.0f * font::dpi();  // font is in pixels and not in points
   }
 #endif
- */
   const std::set<std::string>& families() {
     static std::set<std::string> families;
     if (families.size() == 0) {
@@ -61,11 +60,15 @@ std::vector<std::string> font_family::installed_font_families() {
 }
 
 int32_t font_family::get_cell_ascent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
-  return 0;
+  fl_screen_dc screen_dc;
+  fl_font font(font_family, em_height);
+  return screen_dc.ascent(font.font(), pixel_to_native_font_graphics_untit(font.size()));
 }
 
 int32_t font_family::get_cell_descent(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {
-  return fl_descent();
+  fl_screen_dc screen_dc;
+  fl_font font(font_family, em_height);
+  return screen_dc.descent(font.font(), pixel_to_native_font_graphics_untit(font.size()));
 }
 
 int32_t font_family::get_line_spacing(intptr_t font_family, int32_t em_height, bool bold, bool italic, bool underline, bool strikeout) {

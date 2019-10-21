@@ -30,8 +30,20 @@ namespace xtd::drawing::native {
   public:
     virtual ~fl_dc() {}
 
+    int32_t ascent(Fl_Font font, Fl_Fontsize font_size) {
+      context c;
+      fl_font(font, font_size);
+      return font_size - fl_descent();
+    }
+
     void clear(Fl_Color color) {
       fl_draw_box(Fl_Boxtype::FL_FLAT_BOX, x_, y_, w_, h_, color);
+    }
+    
+    int32_t descent(Fl_Font font, Fl_Fontsize font_size) {
+      context c;
+      fl_font(font, font_size);
+      return fl_descent();
     }
 
     void draw_arc(Fl_Color color, int thick, int style, int32_t x, int32_t y, int32_t w, int32_t h, int32_t start_angle, int32_t sweep_angle) {
@@ -69,19 +81,19 @@ namespace xtd::drawing::native {
       fl_rect(x_ + x, y_ + y, w, h);
     }
 
-    void draw_string(const std::string& text, int32_t x, int32_t y, Fl_Font font, Fl_Fontsize font_Size, Fl_Color color) {
+    void draw_string(const std::string& text, int32_t x, int32_t y, Fl_Font font, Fl_Fontsize font_size, Fl_Color color) {
       context c;
       fl_color(color);
-      fl_font(font, font_Size);
-      fl_draw(text.c_str(), x_ + x, y_ + y + font_Size);
+      fl_font(font, font_size);
+      fl_draw(text.c_str(), x_ + x, y_ + y + font_size);
     }
     
-    void draw_string(const std::string& text, int32_t x1, int32_t y1, int32_t x2, int32_t y2, Fl_Font font, Fl_Fontsize font_Size, Fl_Color color) {
+    void draw_string(const std::string& text, int32_t x1, int32_t y1, int32_t x2, int32_t y2, Fl_Font font, Fl_Fontsize font_size, Fl_Color color) {
       context c;
       fl_push_clip(x_ + x1, y_ + y2, x_ + x2, y_ + y2);
       fl_color(color);
-      fl_font(font, font_Size);
-      fl_draw(text.c_str(), x_ + x1, y_ + y1 + font_Size);
+      fl_font(font, font_size);
+      fl_draw(text.c_str(), x_ + x1, y_ + y1 + font_size);
       fl_pop_clip();
     }
     
@@ -101,9 +113,9 @@ namespace xtd::drawing::native {
       fl_draw_box(Fl_Boxtype::FL_FLAT_BOX, x_ + x, y_ + x, w, h, color);
     }
     
-    void measure_string(const std::string& text, Fl_Font font, Fl_Fontsize font_Size, int32_t& width, int32_t& height) {
+    void measure_string(const std::string& text, Fl_Font font, Fl_Fontsize font_size, int32_t& width, int32_t& height) {
       context c;
-      fl_font(font, font_Size);
+      fl_font(font, font_size);
       fl_measure(text.c_str(), width, height);
     }
 
