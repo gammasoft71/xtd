@@ -3,9 +3,9 @@
 #include <stdexcept>
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/drawing/system_fonts.hpp>
+#include <xtd/drawing/native/hdc_wrapper.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>
-#include "hdc_wrapper.hpp"
 #include "wx_button.hpp"
 #include "wx_check_box.hpp"
 #include "wx_combo_box.hpp"
