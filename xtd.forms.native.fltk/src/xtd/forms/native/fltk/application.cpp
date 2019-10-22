@@ -5,6 +5,7 @@
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
 #include <FL/Fl.H>
+#include <FL/Fl_Window.H>
 #include <FL/Fl_File_Icon.H>
 
 using namespace std;
@@ -12,15 +13,8 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 namespace {
-  enum class fltk_visual_style {
-    none,
-    gtk,
-    gleam,
-    plastic
-  };
-  
-  fltk_visual_style visual_style = fltk_visual_style::gtk;
   bool restart_asked = false;
+  bool initialized = false;
 
   int fltk_handler(int event) {
     return event == FL_SHORTCUT && Fl::event_key() == FL_Escape;
@@ -33,6 +27,10 @@ bool application::allow_quit() {
 }
 
 void application::cleanup() {
+  if (initialized == true) {
+    Fl::remove_handler(&fltk_handler);
+    initialized = false;
+  }
 }
 
 void application::do_events() {
@@ -45,13 +43,6 @@ void application::do_idle() {
 
 void application::enable_visual_style() {
   initialize(); // Must be first
-  switch (visual_style) {
-    case fltk_visual_style::none : Fl::scheme("none"); break;
-    case fltk_visual_style::gtk : Fl::scheme("gtk+"); break;
-    case fltk_visual_style::gleam : Fl::scheme("gleam"); break;
-    case fltk_visual_style::plastic : Fl::scheme("plastic"); break;
-    default:  Fl::scheme("none"); break;
-  }
 }
 
 void application::exit() {
@@ -59,6 +50,18 @@ void application::exit() {
 }
 
 void application::initialize() {
+  if (initialized == false) {
+    Fl::get_system_colors();
+    Fl_File_Icon::load_system_icons();
+    Fl::add_handler(&fltk_handler);
+    Fl::scheme(nullptr);
+
+    // This hack is used to to prevent run method to exit when last form is closed...
+    static Fl_Window form_hidden(1000, 10000, 0, 0, nullptr);
+    form_hidden.show();
+
+    initialized = true;
+  }
 }
 
 void application::register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter_proc) {
@@ -75,9 +78,7 @@ void application::restart() {
 
 void application::run() {
   initialize(); // Must be first
-
-  Fl_File_Icon::load_system_icons();
-  Fl::add_handler(&fltk_handler);
+  
   Fl::run();
   
   if (restart_asked) {
