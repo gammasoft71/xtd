@@ -11,11 +11,6 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms::native;
 
-#if defined(_WIN32)
-int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
-  return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
-}
-#else
 namespace {
   int32_t result_for_ok_cancel(int32_t result) {
     switch (result) {
@@ -106,4 +101,3 @@ int32_t message_box::show(intptr_t control, const ustring& text, const ustring& 
   fl_message_icon()->labelcolor(fl_rgb_color(0, 0, 255));
   return convert_to_dialog_result(result, style);
 }
-#endif
