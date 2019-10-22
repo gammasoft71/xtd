@@ -13,7 +13,7 @@ namespace examples {
       check_box1.auto_check(false);
       check_box1.click += [&](const control& sender, const event_args& e) {
         //check_box1.checked(!check_box1.checked());
-        //check_box1.text(strings::format("{}", check_box1.check_state()));
+        check_box1.text(strings::format("{}", check_box1.check_state()));
       };
       check_box1.location({30, 30});
       check_box1.text(strings::format("{}", check_box1.check_state()));
@@ -43,7 +43,7 @@ namespace examples {
       check_box5.auto_check(false);
       check_box5.click += [&](const control& sender, const event_args& e) {
         //check_box5.checked(!check_box5.checked());
-        //check_box5.text(strings::format("{}", check_box5.check_state()));
+        check_box5.text(strings::format("{}", check_box5.check_state()));
       };
       check_box5.location({30, 150});
       check_box5.text(strings::format("{}", check_box5.check_state()));

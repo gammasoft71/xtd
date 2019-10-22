@@ -42,6 +42,7 @@ namespace xtd {
         fl_progress_bar(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           this->control_handler::create<Fl_Progress_Bar>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
+          reinterpret_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
         }
       };
     }
