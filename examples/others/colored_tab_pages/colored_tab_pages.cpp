@@ -14,6 +14,7 @@ public:
     tab_control_colored.controls().push_back_range({tab_page_red, tab_page_green, tab_page_blue, tab_page_yellow});
     tab_control_colored.location({10, 10});
     tab_control_colored.size({370, 250});
+    tab_control_colored.alignment(tab_alignment::bottom);
 
     tab_page_red.text("Red");
     tab_page_red.back_color(drawing::color::red);

@@ -54,11 +54,12 @@ void application::initialize() {
     Fl::get_system_colors();
     Fl_File_Icon::load_system_icons();
     Fl::add_handler(&fltk_handler);
-    Fl::scheme(nullptr);
+    //Fl::scheme(nullptr);
+    Fl::scheme("gtk+");
 
     // This hack is used to to prevent run method to exit when last form is closed...
-    static Fl_Window form_hidden(1000, 10000, 0, 0, nullptr);
-    form_hidden.show();
+    //static Fl_Window form_hidden(1000, 10000, 0, 0, nullptr);
+    //form_hidden.show();
 
     initialized = true;
   }

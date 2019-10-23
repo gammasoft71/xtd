@@ -8,7 +8,7 @@
 
 class Fl_Form : public Fl_Window {
 public:
-  Fl_Form(int x, int y, int w, int h , const char* l) : Fl_Window(x, y, w, h, l) {
+  Fl_Form(int x, int y, int w, int h , const char* l = 0) : Fl_Window(x, y, w, h, l) {
     resiable_control_.hide();
     resizable(resiable_control_);
   }
@@ -23,7 +23,8 @@ namespace xtd {
       class fl_form : public control_handler {
       public:
         fl_form(const xtd::forms::create_params& create_params) {
-          this->control_handler::create<Fl_Form>(create_params.x(), create_params.y(), create_params.width(), create_params.height(), create_params.caption().c_str());
+          this->control_handler::create<Fl_Form>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
+          this->control()->copy_label(create_params.caption().c_str());
           reinterpret_cast<Fl_Group*>(this->control())->end();
         }
       };

@@ -86,6 +86,8 @@ namespace xtd {
     
       template<typename control_t>
       inline int32_t control_wrapper<control_t>::handle(int32_t event) {
+        return this->control_t::handle(event);
+        /*
         bool intercepted_event = this->control_t::handle(event) != 0;
         if (this->w() != this->width_ || this->h() != this->height_) {
           this->width_ = this->w();
@@ -124,6 +126,7 @@ namespace xtd {
         }
 
         return intercepted_event;
+        */
       }
     }
   }

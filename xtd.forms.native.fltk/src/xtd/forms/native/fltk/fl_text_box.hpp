@@ -4,6 +4,7 @@
 #include <xtd/forms/native/button_styles.hpp>
 #include "control_handler.hpp"
 #include <FL/Fl_Input.H>
+#include <FL/Fl_Group.H>
 
 namespace xtd {
   namespace forms {

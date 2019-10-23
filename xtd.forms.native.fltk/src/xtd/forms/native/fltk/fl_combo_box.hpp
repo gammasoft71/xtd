@@ -14,9 +14,10 @@ namespace xtd {
         fl_combo_box(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           if ((create_params.style() & CBS_SIMPLE) == CBS_SIMPLE)
-            this->control_handler::create<Fl_Choice>(create_params.x(), create_params.y(), create_params.width(), create_params.height(), create_params.caption().c_str());
+            this->control_handler::create<Fl_Choice>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
           else
-          this->control_handler::create<Fl_Input_Choice>(create_params.x(), create_params.y(), create_params.width(), create_params.height(), create_params.caption().c_str());
+            this->control_handler::create<Fl_Input_Choice>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
+          this->control()->copy_label(create_params.caption().c_str());
           reinterpret_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
         }
       };

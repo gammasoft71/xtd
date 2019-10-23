@@ -3,11 +3,10 @@
 #include <xtd/forms/create_params.hpp>
 #include <xtd/forms/native/button_styles.hpp>
 #include "control_handler.hpp"
+#include "fl_radio_button.hpp"
 #include <FL/Fl_Check_Button.H>
 #include <FL/Fl_Group.H>
 
-static constexpr int FL_UNCHECKED = 0;
-static constexpr int FL_CHECKED = 1;
 static constexpr int FL_INDETERMINATE = 2;
 
 class Fl_Check_Box : public Fl_Check_Button {
@@ -31,15 +30,19 @@ public:
       align(FL_ALIGN_CENTER|FL_ALIGN_INSIDE);
     } else {
       color(FL_BACKGROUND_COLOR);
-      color2(FL_FOREGROUND_COLOR);
+      selection_color(FL_FOREGROUND_COLOR);
       align(FL_ALIGN_LEFT|FL_ALIGN_INSIDE);
     }
   }
 
   int state() const {return state_;}
   void state(int state) {
-    state_ = state > 2 ? 2 : state;
-    value(state != 0);
+    if (this->state_ != state) {
+      state_ = state > 2 ? 2 : state;
+      value(state != 0);
+      set_changed();
+      if (when() & FL_WHEN_CHANGED) this->do_callback();
+    }
   }
 
   int handle (int event) override {
@@ -47,9 +50,7 @@ public:
     if (event == FL_RELEASE || (event == FL_KEYBOARD && Fl::focus() == this && Fl::event_key() == ' ' && !(Fl::event_state() & (FL_SHIFT | FL_CTRL | FL_ALT | FL_META)))) {
       if (autocheck_) {
         state(state() < (three_state() ? FL_INDETERMINATE : FL_CHECKED) ? state() + 1 : 0);
-        set_changed();
         redraw();
-        if (when() & FL_WHEN_CHANGED) this->do_callback();
       }
       if (when() & FL_WHEN_RELEASE) this->do_callback();
       return true;
@@ -82,7 +83,8 @@ namespace xtd {
       public:
         fl_check_box(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<Fl_Check_Box>(create_params.x(), create_params.y(), create_params.width(), create_params.height(), create_params.caption().c_str());
+          this->control_handler::create<Fl_Check_Box>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
+          this->control()->copy_label(create_params.caption().c_str());
           reinterpret_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
         }
       };

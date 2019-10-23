@@ -1,6 +1,6 @@
 #include <stdexcept>
-#include <xtd/forms/native/user_control.hpp>
-#include "wx_user_control.hpp"
+#include <xtd/forms/native/panel.hpp>
+#include "fl_panel.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

@@ -3,35 +3,63 @@
 #include <xtd/forms/create_params.hpp>
 #include <xtd/forms/native/button_styles.hpp>
 #include "control_handler.hpp"
+#include <FL/Fl.H>
+#include <FL/Fl_Group.H>
 #include <FL/Fl_Progress.H>
 
 class Fl_Progress_Bar : public Fl_Progress {
 public:
-  Fl_Progress_Bar(int x, int y, int w, int h) : Fl_Progress(x, y, w, h) {}
-  
-  void marquee(bool m) {
-    this->m = m;
-    if (this->m) Fl::add_timeout(0.2, OnMarqueeTimerTick, this);
+  Fl_Progress_Bar(int x, int y, int w, int h) : Fl_Progress(x, y, w, h) {
+    selection_color(FL_SELECTION_COLOR);
   }
-  bool marquee() const {return this->m;}
   
+  void animation_speed(int animation_speed) {this->animation_speed_ = animation_speed;}
+  int animation_speed() const {return animation_speed_;}
+
+  void marquee(bool marquee) {
+    this->marquee_ = marquee;
+    if (this->marquee_) Fl::add_timeout((double)this->animation_speed_ / 1000, on_marquee_timer_tick, this);
+  }
+  bool marquee() const {return this->marquee_;}
+  
+  int marquee_width() const {return this->marquee_width_;}
+  void marquee_width(int marquee_width) {this->marquee_width_ = marquee_width;}
+
   void draw() override {
     this->Fl_Progress::draw();
-    if (this->marquee()) {
-      draw_box(FL_FLAT_BOX, this->x()+2, this->y() + 2, this->w() - 4, this->h() - 4, this->color());
-      draw_box(FL_FLAT_BOX, this->x()+2 + marquee_pos, this->y() + 2, (this->w() - 4) / 10, this->h() - 4, this->selection_color());
+    if (this->marquee_) {
+      draw_box(FL_DOWN_BOX, this->x(), this->y(), this->w(), this->h(), this->color());
+      draw_box(FL_FLAT_BOX, this->x() + Fl::box_dw(this->box()) / 2 + marquee_pos_ - 1, this->y() + Fl::box_dh(this->box()) / 2 - 1, this->marquee_width_ - Fl::box_dw(this->box()) + 2, this->h() - Fl::box_dh(this->box()) + 2, this->selection_color());
     }
   }
   
 private:
-  static void OnMarqueeTimerTick(void* progress) {
-    ((Fl_Progress_Bar*)progress)->marquee_pos = ((Fl_Progress_Bar*)progress)->marquee_pos < (((Fl_Progress_Bar*)progress)->w() - ((((Fl_Progress_Bar*)progress)->w() - 4) / 10)) ? ((Fl_Progress_Bar*)progress)->marquee_pos + ((((Fl_Progress_Bar*)progress)->w() - 4) / 10) : 0;
+  static void on_marquee_timer_tick(void* progress) {
+    if (((Fl_Progress_Bar*)progress)->right_) {
+      if (((Fl_Progress_Bar*)progress)->marquee_pos_ < (((Fl_Progress_Bar*)progress)->w() - (2 * Fl::box_dw(((Fl_Progress_Bar*)progress)->box()))) - ((Fl_Progress_Bar*)progress)->marquee_width_)
+        ((Fl_Progress_Bar*)progress)->marquee_pos_ = ((Fl_Progress_Bar*)progress)->marquee_pos_ + ((Fl_Progress_Bar*)progress)->marquee_width_;
+      else {
+        ((Fl_Progress_Bar*)progress)->right_ = false;
+        ((Fl_Progress_Bar*)progress)->marquee_pos_ = ((Fl_Progress_Bar*)progress)->marquee_pos_ - ((Fl_Progress_Bar*)progress)->marquee_width_;
+      }
+    } else {
+      if (((Fl_Progress_Bar*)progress)->marquee_pos_ > 0)
+        ((Fl_Progress_Bar*)progress)->marquee_pos_ = ((Fl_Progress_Bar*)progress)->marquee_pos_ - ((Fl_Progress_Bar*)progress)->marquee_width_;
+      else {
+        ((Fl_Progress_Bar*)progress)->right_ = true;
+        ((Fl_Progress_Bar*)progress)->marquee_pos_ = ((Fl_Progress_Bar*)progress)->marquee_pos_ + ((Fl_Progress_Bar*)progress)->marquee_width_;
+      }
+    }
+
     ((Fl_Progress_Bar*)progress)->redraw();
-    if (((Fl_Progress_Bar*)progress)->marquee()) Fl::repeat_timeout(0.2, OnMarqueeTimerTick, progress);
+    if (((Fl_Progress_Bar*)progress)->marquee()) Fl::repeat_timeout((double)((Fl_Progress_Bar*)progress)->animation_speed_ / 1000, on_marquee_timer_tick, progress);
   }
   
-  bool m= false;
-  int marquee_pos = 0;
+  int animation_speed_ = 200;
+  bool marquee_ = false;
+  int marquee_pos_ = 0;
+  int marquee_width_ = 40;
+  bool right_ = true;
 };
 
 namespace xtd {
