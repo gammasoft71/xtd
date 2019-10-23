@@ -16,15 +16,9 @@ set(XTD_FORMS_NATIVE_FLTK_SOURCES
   src/xtd/forms/native/fltk/control.cpp
   src/xtd/forms/native/fltk/color_dialog.cpp
   src/xtd/forms/native/fltk/combo_box.cpp
+  src/xtd/forms/native/fltk/control_handler.hpp
   src/xtd/forms/native/fltk/cursor.cpp
   src/xtd/forms/native/fltk/cursors.cpp
-  src/xtd/forms/native/fltk/font_dialog.cpp
-  src/xtd/forms/native/fltk/form.cpp
-  src/xtd/forms/native/fltk/group_box.cpp
-  src/xtd/forms/native/fltk/label.cpp
-  src/xtd/forms/native/fltk/list_box.cpp
-  src/xtd/forms/native/fltk/message_box.cpp
-  src/xtd/forms/native/fltk/control_handler.hpp
   src/xtd/forms/native/fltk/fl_button.hpp
   src/xtd/forms/native/fltk/fl_check_box.hpp
   src/xtd/forms/native/fltk/fl_checked_list_box.hpp
@@ -41,8 +35,25 @@ set(XTD_FORMS_NATIVE_FLTK_SOURCES
   src/xtd/forms/native/fltk/fl_tab_control.hpp
   src/xtd/forms/native/fltk/fl_tab_page.hpp
   src/xtd/forms/native/fltk/fl_text_box.hpp
+  src/xtd/forms/native/fltk/fl_timer.hpp
   src/xtd/forms/native/fltk/fl_track_bar.hpp
   src/xtd/forms/native/fltk/fl_user_control.hpp
+  src/xtd/forms/native/fltk/font_dialog.cpp
+  src/xtd/forms/native/fltk/form.cpp
+  src/xtd/forms/native/fltk/group_box.cpp
+  src/xtd/forms/native/fltk/label.cpp
+  src/xtd/forms/native/fltk/list_box.cpp
+  src/xtd/forms/native/fltk/message_box.cpp
+  src/xtd/forms/native/fltk/panel.cpp
+  src/xtd/forms/native/fltk/progress_bar.cpp
+  src/xtd/forms/native/fltk/radio_button.cpp
+  src/xtd/forms/native/fltk/screen.cpp
+  src/xtd/forms/native/fltk/tab_control.cpp
+  src/xtd/forms/native/fltk/tab_page.cpp
+  src/xtd/forms/native/fltk/text_box.cpp
+  src/xtd/forms/native/fltk/timer.cpp
+  src/xtd/forms/native/fltk/track_bar.cpp
+  src/xtd/forms/native/fltk/user_control.cpp
 )
 
 if (APPLE)

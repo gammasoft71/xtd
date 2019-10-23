@@ -2,7 +2,7 @@
 
 # xtd.forms is ...
 
-Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
+Modern c++17 library containing classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and Linux like Ubuntu operating system.
 
 # Features
 

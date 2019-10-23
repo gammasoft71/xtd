@@ -3,6 +3,7 @@
 #include <xtd/forms/create_params.hpp>
 #include <xtd/forms/native/button_styles.hpp>
 #include "control_handler.hpp"
+#include <FL/Fl_Group.H>
 #include <FL/Fl_Slider.H>
 
 namespace xtd {
