@@ -20,6 +20,7 @@ public:
     rb1.parent(*this);
     rb1.text("Radio 1");
     rb1.location({10, 10});
+    rb1.checked(true);
     
     rb2.parent(*this);
     rb2.text("Radio 2");
