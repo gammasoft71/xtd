@@ -17,7 +17,6 @@ set(XTD_DRAWING_NATIVE_INCLUDES
 
 set(XTD_DRAWING_NATIVE_FLTK_SOURCES
   src/xtd/drawing/native/fltk/brush.cpp
-  src/xtd/drawing/native/fltk/drawing.cpp
   src/xtd/drawing/native/fltk/font_family.cpp
   src/xtd/drawing/native/fltk/font.cpp
   src/xtd/drawing/native/fltk/graphics.cpp

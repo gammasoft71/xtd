@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include <FL/fl_draw.H>
 #include <FL/Fl_Widget.H>
 
