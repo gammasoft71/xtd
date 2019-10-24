@@ -1,4 +1,4 @@
-#include "../include/xtd/xtd.environment"
+#include "../include/xtd/xtd.core"
 
 #if defined(_WIN32)
 __declspec(dllimport) extern char** environ;
