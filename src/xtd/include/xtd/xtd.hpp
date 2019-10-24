@@ -5,7 +5,7 @@
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.drawing>
-#include <xtd/xtd.environment>
+#include <xtd/xtd.core>
 #include <xtd/xtd.forms>
 #include <xtd/xtd.io>
 #include <xtd/xtd.properties>
