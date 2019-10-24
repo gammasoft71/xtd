@@ -43,6 +43,7 @@ void application::do_idle() {
 
 void application::enable_visual_style() {
   initialize(); // Must be first
+  if (Fl::scheme() == nullptr) Fl::scheme("gtk+");
 }
 
 void application::exit() {
@@ -51,11 +52,11 @@ void application::exit() {
 
 void application::initialize() {
   if (initialized == false) {
+    FL_NORMAL_SIZE = 12;
     Fl::get_system_colors();
     Fl_File_Icon::load_system_icons();
     Fl::add_handler(&fltk_handler);
-    //Fl::scheme(nullptr);
-    Fl::scheme("gtk+");
+    Fl::scheme(nullptr);
 
     // This hack is used to to prevent run method to exit when last form is closed...
     //static Fl_Window form_hidden(1000, 10000, 0, 0, nullptr);

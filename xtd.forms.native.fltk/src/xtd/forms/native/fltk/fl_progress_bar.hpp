@@ -1,7 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
-#include <xtd/forms/native/button_styles.hpp>
+#include <xtd/forms/native/progress_bar_styles.hpp>
 #include "control_handler.hpp"
 #include <FL/Fl.H>
 #include <FL/Fl_Group.H>
@@ -11,6 +11,11 @@ class Fl_Progress_Bar : public Fl_Progress {
 public:
   Fl_Progress_Bar(int x, int y, int w, int h) : Fl_Progress(x, y, w, h) {
     selection_color(FL_SELECTION_COLOR);
+  }
+  
+  ~Fl_Progress_Bar() {
+    if (this->marquee_)
+      Fl::remove_timeout(on_marquee_timer_tick);
   }
   
   void animation_speed(int animation_speed) {this->animation_speed_ = animation_speed;}
@@ -70,7 +75,8 @@ namespace xtd {
         fl_progress_bar(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           this->control_handler::create<Fl_Progress_Bar>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
-          reinterpret_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
+          static_cast<Fl_Progress_Bar*>(this->control())->marquee((create_params.style() & PBS_MARQUEE) == PBS_MARQUEE);
+          static_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
         }
       };
     }

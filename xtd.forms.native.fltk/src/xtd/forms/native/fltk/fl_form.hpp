@@ -25,7 +25,7 @@ namespace xtd {
         fl_form(const xtd::forms::create_params& create_params) {
           this->control_handler::create<Fl_Form>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
           this->control()->copy_label(create_params.caption().c_str());
-          reinterpret_cast<Fl_Group*>(this->control())->end();
+          static_cast<Fl_Group*>(this->control())->end();
         }
       };
     }

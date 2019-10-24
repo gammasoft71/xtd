@@ -9,7 +9,7 @@ public:
     client_size({300, 300});
     text("Track bar example");
     
-    progress_bar1.location({100, 50});
+    progress_bar1.location({80, 50});
     progress_bar1.maximum(200);
     progress_bar1.orientation(forms::orientation::vertical);
     progress_bar1.parent(*this);

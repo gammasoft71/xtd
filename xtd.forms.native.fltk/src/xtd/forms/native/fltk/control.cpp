@@ -148,7 +148,7 @@ drawing::font control::font(intptr_t control) {
 
 void control::font(intptr_t control, const drawing::font& font) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->labelfont(static_cast<Fl_Font>(font.handle()));
+  //reinterpret_cast<control_handler*>(control)->control()->labelfont(static_cast<Fl_Font>(font.handle()));
 }
 
 point control::location(intptr_t control) {

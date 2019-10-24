@@ -18,7 +18,7 @@ namespace xtd {
           else
             this->control_handler::create<Fl_Input_Choice>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
           this->control()->copy_label(create_params.caption().c_str());
-          reinterpret_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
+          static_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
         }
       };
     }

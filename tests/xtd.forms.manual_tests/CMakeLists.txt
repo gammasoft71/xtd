@@ -7,6 +7,10 @@ set(SOURCES
 )
 source_group(src FILES ${SOURCES})
 
+# Add packages
+find_package(FLTK REQUIRED)
+include_directories(${FLTK_INCLUDE_DIR})
+
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,5 +20,5 @@ endif ()
 
 # Target
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd.forms)
+target_link_libraries(${PROJECT_NAME} xtd.forms ${FLTK_LIBRARIES})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
