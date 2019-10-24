@@ -7,8 +7,8 @@
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Radio_Round_Button.H>
 
-static constexpr int FL_UNCHECKED = 0;
-static constexpr int FL_CHECKED = 1;
+static constexpr int FL_RADIO_UNCHECKED = 0;
+static constexpr int FL_RADIO_CHECKED = 1;
 
 class Fl_Radio_Toggle_Button : public Fl_Radio_Round_Button {
 public:
@@ -47,11 +47,11 @@ public:
     if (event == FL_PUSH || event == FL_DRAG) return true;
     if (event == FL_RELEASE || (event == FL_KEYBOARD && Fl::focus() == this && Fl::event_key() == ' ' && !(Fl::event_state() & (FL_SHIFT | FL_CTRL | FL_ALT | FL_META)))) {
       if (auto_check_) {
-        state(FL_CHECKED);
+        state(FL_RADIO_CHECKED);
         if (this->parent()) {
           for ( int index = 0; index < this->parent()->children(); index++) {
             if (this->parent()->child(index) != this && dynamic_cast<Fl_Radio_Toggle_Button*>(this->parent()->child(index)) && static_cast<Fl_Radio_Toggle_Button*>(this->parent()->child(index))->auto_check())
-              static_cast<Fl_Radio_Toggle_Button*>(this->parent()->child(index))->state(FL_UNCHECKED);
+              static_cast<Fl_Radio_Toggle_Button*>(this->parent()->child(index))->state(FL_RADIO_UNCHECKED);
           }
         }
         
@@ -74,7 +74,7 @@ private:
   using Fl_Radio_Round_Button::value;
   bool auto_check_ = true;
   bool toggle_button_ = false;
-  int state_ = FL_UNCHECKED;
+  int state_ = FL_RADIO_UNCHECKED;
 };
 
 namespace xtd {
@@ -85,8 +85,9 @@ namespace xtd {
         fl_radio_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           this->control_handler::create<Fl_Radio_Round_Button>(create_params.x(), create_params.y(), create_params.width(), create_params.height());
+          static_cast<Fl_Radio_Toggle_Button*>(this->control())->toggle_button((create_params.style() & BS_PUSHLIKE) == BS_PUSHLIKE);
           this->control()->copy_label(create_params.caption().c_str());
-          reinterpret_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
+          static_cast<Fl_Group*>(reinterpret_cast<control_handler*>(create_params.parent())->control())->add(this->control());
         }
       };
     }
