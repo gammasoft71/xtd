@@ -5,7 +5,9 @@ project(xtd.diagnostics)
 
 # Options
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set(IS_MAIN_PROJECT OFF)
 if (NOT DEFINED EXPORT_PROJECT_NAME)
+  set(IS_MAIN_PROJECT ON)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
 
@@ -17,12 +19,7 @@ if (ENABLE_COVERAGE AND UNIX)
 endif ()
 
 # Projects
-add_subdirectory(xtd.diagnostics)
-if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-  add_subdirectory(xtd.io)
-  add_subdirectory(xtd.strings)
-  add_subdirectory(xtd.tunit)
-endif ()
+add_subdirectory(src)
 
 # Tests projects
 option(ENABLE_TESTS "Enable tests" OFF)
