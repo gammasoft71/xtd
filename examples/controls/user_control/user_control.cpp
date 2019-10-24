@@ -16,7 +16,7 @@ namespace examples {
 
   class operation : public user_control {
   public:
-    operation() = default;
+    operation() {this->size_ = default_size();}
     
     operation_status status() const {return status_;}
     void status(operation_status status) {
@@ -87,7 +87,7 @@ namespace examples {
     
   private:
     void on_operation_click(control& sender, const event_args& e) {
-      class operation& operation = static_cast<class operation&>(sender);
+      examples::operation& operation = static_cast<examples::operation&>(sender);
       switch (operation.status()) {
         case operation_status::none: operation.status(operation_status::running); break;
         case operation_status::running: operation.status(operation_status::succeed); break;
