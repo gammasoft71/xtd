@@ -42,7 +42,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.delegatesConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.environmentConfig.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.coreConfig.cmake ${CMAKE_CONFIG})
 
   set (CMAKE_XTD_FORMS_CONFIG
     "include(CMakeFindDependencyMacro)\n"
@@ -73,7 +73,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.delegatesConfig.cmake DESTINATION cmake)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake DESTINATION cmake)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.environmentConfig.cmake DESTINATION cmake)
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.coreConfig.cmake DESTINATION cmake)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.formsConfig.cmake DESTINATION cmake)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.ioConfig.cmake DESTINATION cmake)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.propertiesConfig.cmake DESTINATION cmake)
