@@ -72,7 +72,7 @@ namespace game_of_life {
       return neighbors;
     }
 
-    xtd::event<grid, cell_event_handler<grid>> cell_changed;
+    xtd::event<grid, cell_event_handler<grid&>> cell_changed;
 
   private:
     void on_status_changed(const cell_event_args& e) {cell_changed(*this, e);}
