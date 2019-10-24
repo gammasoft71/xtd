@@ -14,7 +14,7 @@ struct control {
     }
   }
   
-  event<control, event_handler<control>> text_changed;
+  event<control, event_handler<control&>> text_changed;
   
   void on_text_changed(const event_args& e) {this->text_changed(*this, e);}
   
@@ -23,7 +23,7 @@ private:
 };
 
 struct button : public control {
-  event<button, event_handler<control>> click;
+  event<button, event_handler<control&>> click;
   
   void perform_click() {this->on_click(event_args::empty);}
   
@@ -33,7 +33,7 @@ struct button : public control {
 int main() {
   button button1;
   
-  button1.text_changed += [](const control& sender, const event_args& e)  {
+  button1.text_changed += [](control& sender, const event_args& e)  {
     cout << "text_changed [text=" << sender.text() << "]" << endl;
   };
   
