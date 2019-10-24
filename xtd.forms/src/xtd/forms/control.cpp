@@ -2,7 +2,7 @@
 #include <iostream>
 #include <set>
 #include <xtd/xtd.diagnostics>
-#include <xtd/xtd.environment>
+#include <xtd/xtd.core>
 #include <xtd/xtd.strings>
 #include <xtd/drawing/native/graphics.hpp>
 #include <xtd/forms/native/control.hpp>
