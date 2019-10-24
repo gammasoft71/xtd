@@ -139,7 +139,7 @@ namespace game_of_life {
       timer_run_.interval(1000 / speed_);
       timer_run_.tick += {*this, &form_main::next};
 
-      grid_.cell_changed += [this](const grid& sender, const cell_event_args& e) {
+      grid_.cell_changed += [this](grid& sender, const cell_event_args& e) {
         panel_grid_.invalidate(xtd::drawing::rectangle((e.x() - offset_x_) * zoom_, (e.y() - offset_y_) * zoom_, zoom_, zoom_), false);
       };
     }
