@@ -15,7 +15,7 @@ namespace examples {
       list_box_left.location({20, 20});
       list_box_left.parent(*this);
       list_box_left.size({150, 200});
-      list_box_left.double_click += [this](const control& sender, const event_args& e) {
+      list_box_left.double_click += [this](control& sender, const event_args& e) {
         if (list_box_left.selected_index() != -1) {
           list_box_right.items().push_back(list_box_left.selected_item());
           list_box_right.selected_index(0);
@@ -28,7 +28,7 @@ namespace examples {
       list_box_right.parent(*this);
       list_box_right.sorted(true);
       list_box_right.size({150, 200});
-      list_box_right.double_click += [this](const control& sender, const event_args& e) {
+      list_box_right.double_click += [this](control& sender, const event_args& e) {
         if (list_box_right.selected_index() != -1) {
           list_box_left.items().push_back(list_box_right.selected_item());
           list_box_left.selected_index(0);

@@ -17,7 +17,7 @@ namespace xtd {
       timer(const timer&)= delete;
       /// @endcond
       
-      event<timer, event_handler<timer>> tick;
+      event<timer, event_handler<timer&>> tick;
 
       bool enabled() const {return this->enabled_;}
       void enabled(bool enabled);

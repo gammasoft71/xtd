@@ -96,12 +96,12 @@ namespace xtd {
       
       forms::dialog_result show_dialog(const iwin32_window& owner);
       
-      event<form, event_handler<control>> activated;
-      event<form, event_handler<control>> deactivate;
+      event<form, event_handler<control&>> activated;
+      event<form, event_handler<control&>> deactivate;
 
-      event<form, form_closed_event_handler<control>> form_closed;
+      event<form, form_closed_event_handler<control&>> form_closed;
       
-      event<form, form_closing_event_handler<control>> form_closing;
+      event<form, form_closing_event_handler<control&>> form_closing;
 
     protected:
       friend class application;

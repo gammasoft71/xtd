@@ -22,7 +22,7 @@ public:
     track_bar1.maximum(200);
     track_bar1.orientation(forms::orientation::vertical);
     track_bar1.parent(*this);
-    track_bar1.value_changed += [this](const control& sender, const event_args& e) {
+    track_bar1.value_changed += [this](control& sender, const event_args& e) {
       progress_bar1.value(track_bar1.value());
       label1.text(strings::format("{}", track_bar1.value()));
     };

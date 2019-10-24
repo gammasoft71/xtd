@@ -48,7 +48,7 @@ namespace xtd {
       void begin_update();
       void end_update();
 
-      event<combo_box, event_handler<control>> drop_down_style_changed;
+      event<combo_box, event_handler<control&>> drop_down_style_changed;
       
     protected:
       /// @remarks Gets the required creation parameters when the control handle is created.

@@ -98,20 +98,20 @@ namespace game_of_life {
       panel_grid_.location({10, 75});
       panel_grid_.size({695, 395});
 
-      panel_grid_.mouse_down += [this](const control& sender, const xtd::forms::mouse_event_args& e) {
+      panel_grid_.mouse_down += [this](control& sender, const xtd::forms::mouse_event_args& e) {
         current_state_ = grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] == cell::populated ? cell::empty : cell::populated;
         grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
         panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
       };
 
-      panel_grid_.mouse_move += [this](const control& sender, const xtd::forms::mouse_event_args& e) {
+      panel_grid_.mouse_move += [this](control& sender, const xtd::forms::mouse_event_args& e) {
         if (e.button() == xtd::forms::mouse_buttons::left) {
           grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
           panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
         }
       };
 
-      panel_grid_.paint += [this](const control& sender, xtd::forms::paint_event_args& e) {
+      panel_grid_.paint += [this](control& sender, xtd::forms::paint_event_args& e) {
         if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width() && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height())
           for (int y = 0; y < panel_grid_.client_size().height(); y += zoom_)
             for (int x = 0; x < panel_grid_.client_size().width(); x += zoom_)

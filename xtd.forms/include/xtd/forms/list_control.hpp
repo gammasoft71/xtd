@@ -55,11 +55,11 @@ namespace xtd {
       virtual ustring value_member() const {return this->value_member_;}
       virtual list_control& value_member(const ustring& value_member);
                   
-      event<list_control, event_handler<control>> selected_index_changed;
+      event<list_control, event_handler<control&>> selected_index_changed;
 
-      event<list_control, event_handler<control>> selected_value_changed;
+      event<list_control, event_handler<control&>> selected_value_changed;
 
-      event<list_control, event_handler<control>> value_member_changed;
+      event<list_control, event_handler<control&>> value_member_changed;
 
     protected:
       list_control() = default;

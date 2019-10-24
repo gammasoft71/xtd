@@ -18,7 +18,7 @@ namespace examples {
     
     void value(double value) {text(xtd::to_string(value, "G"));}
     
-    event<numeric_text_box, event_handler<const control&>> value_changed;
+    event<numeric_text_box, event_handler<control&>> value_changed;
 
   protected:
     void on_key_press(key_press_event_args& e) override {
@@ -47,7 +47,7 @@ namespace examples {
       numeric_text_box1.parent(*this);
       numeric_text_box1.value(42);
       numeric_text_box1.location({10, 10});
-      numeric_text_box1.value_changed += [this](const control& sender, const event_args& e) {
+      numeric_text_box1.value_changed += [this](control& sender, const event_args& e) {
         ctrace << format("value_changed [value={}]", numeric_text_box1.value()) << endl;
       };
     }

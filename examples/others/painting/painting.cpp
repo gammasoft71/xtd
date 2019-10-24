@@ -54,19 +54,19 @@ namespace examples {
       panel_painting.location({10, 82});
       panel_painting.size({620, 388});
 
-      panel_painting.mouse_down += [this](const control& sender, const mouse_event_args& e) {
+      panel_painting.mouse_down += [this](control& sender, const mouse_event_args& e) {
         pixels[e.x()/zoom][e.y()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
         panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
       };
       
-      panel_painting.mouse_move += [this](const control& sender, const mouse_event_args& e) {
+      panel_painting.mouse_move += [this](control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
           pixels[e.x()/zoom][e.y()/zoom] = current_color;
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
 
-      panel_painting.paint += [this](const control& sender, paint_event_args& e) {
+      panel_painting.paint += [this](control& sender, paint_event_args& e) {
         for (int y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (int x = 0; x < panel_painting.client_size().width(); x += zoom)
             if (!pixels[x/zoom][y/zoom].is_empty())
@@ -81,7 +81,7 @@ namespace examples {
     }
   
   private:
-    void choose_current_color(const control& sender, const event_args& e) {
+    void choose_current_color(control& sender, const event_args& e) {
       for (auto panel : panel_colors)
         panel->border_style(panel->handle() != sender.handle() ? forms::border_style::none : forms::border_style::fixed_single);
       current_color = sender.back_color();

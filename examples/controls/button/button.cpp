@@ -12,7 +12,7 @@ namespace examples {
       button1.parent(*this);
       button1.text("Button 1");
       button1.location({50, 50});
-      button1.click += [this](const control& sender, const event_args& e) {
+      button1.click += [this](control& sender, const event_args& e) {
         label1.text(strings::format("Button 1 clicked {} times", ++button1_clicked));
       };
       
@@ -20,7 +20,7 @@ namespace examples {
       button2.text("Button 2");
       button2.location({50, 100});
       button2.size({200, 75});
-      button2.click += [this](const control& sender, const event_args& e) {
+      button2.click += [this](control& sender, const event_args& e) {
         label2.text(strings::format("Button 2 clicked {} times", ++button2_clicked));
       };
       

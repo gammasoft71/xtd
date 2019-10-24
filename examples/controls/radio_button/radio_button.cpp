@@ -15,7 +15,7 @@ namespace examples {
       radio_button1.location({30, 30});
       radio_button1.font(drawing::font(font(), drawing::font_style::italic));
       radio_button1.text("Radio 1");
-      radio_button1.click += [&](const control& sender, const event_args& e) {
+      radio_button1.click += [&](control& sender, const event_args& e) {
         // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
         //radio_button1.checked(!radio_button1.checked());
       };
@@ -23,7 +23,7 @@ namespace examples {
       radio_button2.location({30, 60});
       radio_button2.text("Radio 2");
       
-      radio_button3.checked_changed += [this](const control& sender, const event_args& e) {
+      radio_button3.checked_changed += [this](control& sender, const event_args& e) {
         label1.text(strings::format("Radio 3 checked = {}", radio_button3.checked()));
       };
       radio_button3.checked(true);
@@ -40,7 +40,7 @@ namespace examples {
       radio_button5.font(drawing::font(font(), drawing::font_style::italic));
       radio_button5.location({30, 150});
       radio_button5.text("Radio 5");
-      radio_button5.click += [&](const control& sender, const event_args& e) {
+      radio_button5.click += [&](control& sender, const event_args& e) {
         // Uncomments next line to check / uncheck radio button 5 (auto_check is false...)
         //radio_button5.checked(!radio_button5.checked());
       };

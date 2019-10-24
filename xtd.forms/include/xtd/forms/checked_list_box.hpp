@@ -105,7 +105,7 @@ namespace xtd {
 
       void set_item_text(size_t index, const ustring& text);
       
-      event<checked_list_box, item_check_event_handler<control>> item_check;
+      event<checked_list_box, item_check_event_handler<control&>> item_check;
 
     protected:
       bool allow_selection() override {return this->selection_mode_ != forms::selection_mode::none;}

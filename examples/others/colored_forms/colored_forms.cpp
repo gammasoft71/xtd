@@ -20,7 +20,7 @@ int main() {
   button.parent(form_main);
   button.text("Create");
   button.location({10, 10});
-  button.click += [&](const control& sender, const event_args& e) {
+  button.click += [&](control& sender, const event_args& e) {
     auto form = make_shared<forms::form>();
     form->back_color(color::from_known_color(form_color));
     form->text(strings::format("{}", form_color));

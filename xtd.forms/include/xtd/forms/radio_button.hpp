@@ -67,10 +67,10 @@ namespace xtd {
       ustring to_string() const override {return strings::format("{}, checked: {}", strings::full_class_name(*this), this->checked_);}
 
       /// @brief Occurs when the appearance property value changes.
-      event<radio_button, event_handler<control>> appearance_changed;
+      event<radio_button, event_handler<control&>> appearance_changed;
 
       /// @brief Occurs when the value of the checked property changes.
-      event<radio_button, event_handler<control>> checked_changed;
+      event<radio_button, event_handler<control&>> checked_changed;
 
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.

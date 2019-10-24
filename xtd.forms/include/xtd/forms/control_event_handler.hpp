@@ -12,6 +12,6 @@ namespace xtd {
     /// @param e A control_event_args that contains the event data.
     /// @remarks When you create a control_event_args delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate.
     template<typename type_t>
-    using control_event_handler = delegate<void(const type_t& sender, const control_event_args& e)>;
+    using control_event_handler = delegate<void(type_t sender, const control_event_args& e)>;
   }
 }

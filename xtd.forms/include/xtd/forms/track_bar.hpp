@@ -110,10 +110,10 @@ namespace xtd {
       ustring to_string() const override {return strings::format("{}, minimum: {}, maximum: {}, value: {}", strings::full_class_name(*this), this->minimum_, this->maximum_, this->value_);}
       
       /// @brief Occurs when either a mouse or keyboard action moves the scroll box.
-      event<track_bar, event_handler<control>> scroll;
+      event<track_bar, event_handler<control&>> scroll;
 
       /// @brief Occurs when the value property of a track bar changes, either by movement of the scroll box or by manipulation in code.
-      event<track_bar, event_handler<control>> value_changed;
+      event<track_bar, event_handler<control&>> value_changed;
       
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.
