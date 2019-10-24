@@ -5,7 +5,9 @@ project(xtd.forms)
 
 # Options
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set(IS_MAIN_PROJECT OFF)
 if (NOT DEFINED EXPORT_PROJECT_NAME)
+  set(IS_MAIN_PROJECT ON)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
 
@@ -17,59 +19,7 @@ if (ENABLE_COVERAGE AND UNIX)
 endif ()
 
 # Projects
-add_subdirectory(xtd.forms.native)
-
-if (APPLE)
-  option(XTD_COCOA "Use Apple AppKit libraries as native drawing and forms libraries (not implemented yet)" OFF)
-  if (XTD_COCOA)
-    add_subdirectory(xtd.forms.native.cocoa)
-    set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.cocoa)
-  endif ()
-endif ()
-
-option(XTD_FLTK "Use FLTK as native drawing and forms libraries (not implemented yet)" OFF)
-if (XTD_FLTK)
-  add_subdirectory(xtd.forms.native.fltk)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.fltk)
-endif ()
-
-option(XTD_GTK "Use Gtk+3 as native drawing and forms libraries (not implemented yet)" OFF)
-if (XTD_GTK)
-  add_subdirectory(xtd.forms.native.gtk3)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.gtk3)
-endif ()
-
-option(XTD_QT5 "Use Qt as native drawing and forms libraries (not implemented yet)" OFF)
-if (XTD_QT5)
-  add_subdirectory(xtd.forms.native.qt5)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.fltk)
-endif ()
-
-if (MSVC)
-  option(XTD_WIN32 "Use Microsoft Win32 api as native drawing and forms libraries (not implemented yet)" OFF)
-  if (XTD_WIN32)
-    add_subdirectory(xtd.forms.native.win32)
-    set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.win32)
-  endif ()
-endif ()
-
-option(XTD_WXWIDGETS "Use wxWidgets as native drawing and forms libraries" ON)
-if (XTD_WXWIDGETS)
-  add_subdirectory(xtd.forms.native.wxwidgets)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.wxwidgets)
-endif ()
-
-if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-  add_subdirectory(xtd.delegates)
-  add_subdirectory(xtd.diagnostics)
-  add_subdirectory(xtd.environment)
-  add_subdirectory(xtd.drawing)
-  add_subdirectory(xtd.io)
-  add_subdirectory(xtd.strings)
-  add_subdirectory(xtd.tunit)
-endif ()
-
-add_subdirectory(xtd.forms)
+add_subdirectory(src)
 
 # Tests projects
 option(ENABLE_TESTS "Enable tests" OFF)
