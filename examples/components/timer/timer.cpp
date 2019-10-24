@@ -18,7 +18,7 @@ namespace examples {
       button1.parent(*this);
       button1.text("Start");
       button1.location({10, 90});
-      button1.click += [this](const control& sender, const event_args& e) {
+      button1.click += [this](control& sender, const event_args& e) {
         timer1.enabled(!timer1.enabled());
         button1.text(timer1.enabled() ? "Stop": "Start");
       };

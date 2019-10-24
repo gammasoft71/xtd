@@ -45,7 +45,7 @@ namespace xtd {
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {return run_dialog(owner.handle()) ? dialog_result::ok : dialog_result::cancel;}
       
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
-      event<common_dialog, help_event_handler<component>> help_request;
+      event<common_dialog, help_event_handler<component&>> help_request;
 
     protected:
       /// @brief Raises the help_request event.

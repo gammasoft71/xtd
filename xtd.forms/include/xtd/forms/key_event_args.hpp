@@ -45,7 +45,6 @@ namespace xtd {
         if (suppress_key_press) this->handled(true);
       }
       
-
     private:
       keys key_data_;
       bool handled_ = false;

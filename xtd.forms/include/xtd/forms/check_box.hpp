@@ -93,13 +93,13 @@ namespace xtd {
       virtual check_box& three_state(bool three_state);
       
       /// @brief Occurs when the value of the appearance property changes.
-      event<check_box, event_handler<control>> appearance_changed;
+      event<check_box, event_handler<control&>> appearance_changed;
       
       /// @brief Occurs when the value of the checked property changes.
-      event<check_box, event_handler<control>> checked_changed;
+      event<check_box, event_handler<control&>> checked_changed;
       
       /// @brief Occurs when the value of the check_state property changes.
-      event<check_box, event_handler<control>> check_state_changed;
+      event<check_box, event_handler<control&>> check_state_changed;
 
     protected:
       /// @brief Gets the required creation parameters when the control handle is created.

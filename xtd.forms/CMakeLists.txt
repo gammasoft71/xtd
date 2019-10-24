@@ -148,10 +148,6 @@ source_group(src\\native\\wxwidgets FILES ${NATIVE_WXWIDGETS_SOURCES})
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Add packages
-find_package(wxWidgets REQUIRED)
-include(${wxWidgets_USE_FILE})
-
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_LAYOUT_INCLUDES} ${XTD_FORMS_SOURCES})
 if (MSVC)

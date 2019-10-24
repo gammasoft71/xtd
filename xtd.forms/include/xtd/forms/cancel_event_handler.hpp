@@ -12,6 +12,6 @@ namespace xtd {
     /// @param e A cancel_event_args that contains the event data.
     /// @remarks When you create a cancel_event_handler delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event-handler method is called whenever the event occurs, unless you remove the delegate.
     template<typename type_t>
-    using cancel_event_handler = delegate<void(const type_t& sender, cancel_event_args& e)>;
+    using cancel_event_handler = delegate<void(type_t sender, cancel_event_args& e)>;
   }
 }

@@ -553,79 +553,79 @@ namespace xtd {
       bool operator!=(const control& value) const {return !this->operator==(value);}
       /// @endcond
 
-      event<control, event_handler<control>> auto_size_changed;
+      event<control, event_handler<control&>> auto_size_changed;
 
-      event<control, event_handler<control>> back_color_changed;
+      event<control, event_handler<control&>> back_color_changed;
       
-      event<control, event_handler<control>> click;
+      event<control, event_handler<control&>> click;
       
-      event<control, event_handler<control>> client_size_changed;
+      event<control, event_handler<control&>> client_size_changed;
         
-      event<control, event_handler<control>> cursor_changed;
+      event<control, event_handler<control&>> cursor_changed;
 
-      event<control, control_event_handler<control>> control_added;
+      event<control, control_event_handler<control&>> control_added;
       
-      event<control, control_event_handler<control>> control_removed;
+      event<control, control_event_handler<control&>> control_removed;
       
-      event<control, event_handler<control>> dock_changed;
+      event<control, event_handler<control&>> dock_changed;
         
-      event<control, event_handler<control>> double_click;
+      event<control, event_handler<control&>> double_click;
 
-      event<control, event_handler<control>> got_focus;
+      event<control, event_handler<control&>> got_focus;
       
-      event<control, event_handler<control>> handle_created;
+      event<control, event_handler<control&>> handle_created;
       
-      event<control, event_handler<control>> handle_destroyed;
+      event<control, event_handler<control&>> handle_destroyed;
       
-      event<control, event_handler<control>> enabled_changed;
+      event<control, event_handler<control&>> enabled_changed;
 
-      event<control, event_handler<control>> fore_color_changed;
+      event<control, event_handler<control&>> fore_color_changed;
       
-      event<control, event_handler<control>> font_changed;
+      event<control, event_handler<control&>> font_changed;
       
-      event<control, key_event_handler<control>> key_down;
+      event<control, key_event_handler<control&>> key_down;
       
-      event<control, key_press_event_handler<control>> key_press;
+      event<control, key_press_event_handler<control&>> key_press;
       
-      event<control, key_event_handler<control>> key_up;
+      event<control, key_event_handler<control&>> key_up;
       
       /// @brief Occurs when a control should reposition its child controls.
       /// @remarks The layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a layout event.
-      event<control, event_handler<control>> layout;
+      event<control, event_handler<control&>> layout;
       
-      event<control, event_handler<control>> location_changed;
+      event<control, event_handler<control&>> location_changed;
       
-      event<control, event_handler<control>> lost_focus;
+      event<control, event_handler<control&>> lost_focus;
       
-      event<control, mouse_event_handler<control>> mouse_click;
+      event<control, mouse_event_handler<control&>> mouse_click;
       
-      event<control, mouse_event_handler<control>> mouse_double_click;
+      event<control, mouse_event_handler<control&>> mouse_double_click;
       
-      event<control, mouse_event_handler<control>> mouse_down;
+      event<control, mouse_event_handler<control&>> mouse_down;
       
-      event<control, event_handler<control>> mouse_enter;
+      event<control, event_handler<control&>> mouse_enter;
       
-      event<control, mouse_event_handler<control>> mouse_horizontal_wheel;
+      event<control, mouse_event_handler<control&>> mouse_horizontal_wheel;
       
-      event<control, event_handler<control>> mouse_leave;
+      event<control, event_handler<control&>> mouse_leave;
       
-      event<control, mouse_event_handler<control>> mouse_move;
+      event<control, mouse_event_handler<control&>> mouse_move;
       
-      event<control, mouse_event_handler<control>> mouse_up;
+      event<control, mouse_event_handler<control&>> mouse_up;
       
-      event<control, mouse_event_handler<control>> mouse_wheel;
+      event<control, mouse_event_handler<control&>> mouse_wheel;
       
-      event<control, paint_event_handler<control>> paint;
+      event<control, paint_event_handler<control&>> paint;
       
-      event<control, event_handler<control>> parent_changed;
+      event<control, event_handler<control&>> parent_changed;
       
-      event<control, event_handler<control>> resize;
+      event<control, event_handler<control&>> resize;
         
-      event<control, event_handler<control>> size_changed;
+      event<control, event_handler<control&>> size_changed;
 
-      event<control, event_handler<control>> text_changed;
+      event<control, event_handler<control&>> text_changed;
       
-      event<control, event_handler<control>> visible_changed;
+      event<control, event_handler<control&>> visible_changed;
 
     protected:
       friend class application;
