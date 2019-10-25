@@ -67,7 +67,7 @@ source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(src\\xtd\\forms\\native\\wxwidgets FILES ${XTD_FORMS_NATIVE_WXWIDGETS_SOURCES})
 
 # Add packages
-find_package(wxWidgets COMPONENTS base core html richtext xml)
+find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 # Options
