@@ -27,7 +27,7 @@ source_group(include\\xtd\\drawing\\native FILES ${XTD_DRAWING_NATIVE_INCLUDES})
 source_group(src\\xtd\\drawing\\native\\wxwidgets FILES ${XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES})
 
 # Add packages
-find_package(wxWidgets COMPONENTS base core)
+find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 # Options
