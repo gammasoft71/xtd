@@ -44,12 +44,12 @@ void graphics::draw_rectangle(const pen& pen, int32_t x, int32_t y, int32_t widt
   native::graphics::draw_rectangle(this->data_->handle_, pen.data_->handle_, x, y, width, height);
 }
 
-void graphics::draw_string(const std::string& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
+void graphics::draw_string(const ustring& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
     native::graphics::draw_string(this->data_->handle_, text, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
 }
 
-void graphics::draw_string(const std::string& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
+void graphics::draw_string(const ustring& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
     native::graphics::draw_string(this->data_->handle_, text, font.data_->handle_, static_cast<int32_t>(layout_rectangle.x()), static_cast<int32_t>(layout_rectangle.y()), static_cast<int32_t>(layout_rectangle.width()), static_cast<int32_t>(layout_rectangle.height()), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
 }
@@ -66,7 +66,7 @@ void graphics::fill_rectangle(const brush& brush, int32_t x, int32_t y, int32_t 
   native::graphics::fill_rectangle(this->data_->handle_, brush.data_->handle_, x, y, width, height);
 }
 
-size_f graphics::measure_string(const std::string &text, const font &font) {
+size_f graphics::measure_string(const ustring &text, const font &font) {
   int32_t width = 0;
   int32_t height = 0;
   native::graphics::measure_string(this->data_->handle_, text, font.handle(), width, height);

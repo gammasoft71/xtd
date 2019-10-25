@@ -71,17 +71,17 @@ namespace xtd {
       
       void draw_rectangle(const pen& pen, const rectangle_f& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
 
-      void draw_string(const std::string& text, const font& font, const brush& brush, float x, float y, const string_format& format);
+      void draw_string(const ustring& text, const font& font, const brush& brush, float x, float y, const string_format& format);
       
-      void draw_string(const std::string& text, const font& font, const brush& brush, float x, float y) {draw_string(text, font, brush, x, y, string_format());}
+      void draw_string(const ustring& text, const font& font, const brush& brush, float x, float y) {draw_string(text, font, brush, x, y, string_format());}
       
-      void draw_string(const std::string& text, const font& font, const brush& brush, const point_f& point, const string_format& format) {draw_string(text, font, brush, point.x(), point.y(), format);}
+      void draw_string(const ustring& text, const font& font, const brush& brush, const point_f& point, const string_format& format) {draw_string(text, font, brush, point.x(), point.y(), format);}
       
-      void draw_string(const std::string& text, const font& font, const brush& brush, const point_f& point) {draw_string(text, font, brush, point.x(), point.y(), string_format());}
+      void draw_string(const ustring& text, const font& font, const brush& brush, const point_f& point) {draw_string(text, font, brush, point.x(), point.y(), string_format());}
       
-      void draw_string(const std::string& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format);
+      void draw_string(const ustring& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format);
       
-      void draw_string(const std::string& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle) {draw_string(text, font, brush, layout_rectangle, string_format());}
+      void draw_string(const ustring& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle) {draw_string(text, font, brush, layout_rectangle, string_format());}
 
       void fill_ellipse(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height);
       
@@ -107,7 +107,7 @@ namespace xtd {
       
       void fill_rectangle(const brush& brush, const rectangle_f& rect) {fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());}
 
-      size_f measure_string(const std::string& text, const font& font);
+      size_f measure_string(const ustring& text, const font& font);
       
       std::string to_string() const {return strings::full_class_name(*this);}
       

@@ -76,7 +76,7 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(current_pen);
 }
 
-void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   wxFont current_font = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFont();
   wxColour current_back_color = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetTextBackground();
@@ -91,7 +91,7 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetTextForeground(current_fore_color);
 }
 
-void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   wxFont current_font = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFont();
   wxColour current_back_color = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetTextBackground();
@@ -141,11 +141,11 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(current_pen);
 }
 
-void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
+void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, int32_t &width, int32_t &height) {
   if (!hdc) return;
   wxFont current_font = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFont();
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
-  wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetTextExtent(text);
+  wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetTextExtent(text.wstr());
   wxFontMetrics metrics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFontMetrics();
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(current_font);
   width = size.GetWidth();
