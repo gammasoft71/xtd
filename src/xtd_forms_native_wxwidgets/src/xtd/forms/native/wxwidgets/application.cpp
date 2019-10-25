@@ -6,6 +6,7 @@
 #include <xtd/forms/window_messages.hpp>
 #include "control_handler.hpp"
 #include "wx_application.hpp"
+#include <wx/aboutdlg.h>
 
 using namespace std;
 using namespace xtd;
