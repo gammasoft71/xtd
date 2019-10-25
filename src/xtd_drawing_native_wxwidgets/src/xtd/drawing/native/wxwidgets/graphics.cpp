@@ -85,7 +85,7 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int
   
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetTextForeground(wxColour(r, g, b, a));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText(text, x, y);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText(text.wstr(), x, y);
   
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(current_font);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetTextForeground(current_back_color);
@@ -101,7 +101,7 @@ void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetClippingRegion(x, y, w, h);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetTextForeground(wxColour(r, g, b, a));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText(text, x, y);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText(text.wstr(), x, y);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DestroyClippingRegion();
   
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(current_font);
