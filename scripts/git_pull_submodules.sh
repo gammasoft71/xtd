@@ -2,10 +2,10 @@
 
 git submodule update --init
 
-declare -a submodules=("xtd.io xtd.strings xtd.tunit")
+declare -a submodules=("xtd_io xtd_strings xtd_tunit")
 
 for submodule in ${submodules[@]}; do
-  cd $submodule
+  cd src/$submodule
   git pull origin master
-  cd ..
+  cd ../..
 done
