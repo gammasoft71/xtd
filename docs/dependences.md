@@ -19,7 +19,7 @@
 * xtd.console : xtd.delegate xtd.diagnostics xtd.core xtd.io xtd.strings (xtd.tunit)
 
 ### winforms
-* xtd.drawing : xtd.strings (xtd.tunit)
+* xtd.drawing : xtd.core xtd.strings (xtd.tunit)
 * xtd.forms : xtd.delegates xtd.diagnostics xtd.drawing xtd.core xtd.io xtd.strings (xtd.tunit)
 
 ### xtd
