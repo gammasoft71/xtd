@@ -30,7 +30,7 @@ ARN_LOGFILE           = doxygen_warnings.txt
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 
-INPUT                  = xtd.forms/include
+INPUT                  = src/xtd_forms/include
 RECURSIVE              = YES
 EXCLUDE_PATTERNS       = __*.*
 EXAMPLE_PATH           = examples
