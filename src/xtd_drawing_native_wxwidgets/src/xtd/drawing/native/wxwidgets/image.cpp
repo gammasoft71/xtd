@@ -10,18 +10,18 @@
 using namespace xtd::drawing::native;
 
 namespace {
-  class StdInputStreamAdapter : public wxInputStream {
-  public:
+ class StdInputStreamAdapter : public wxInputStream {
+ public:
     StdInputStreamAdapter(std::istream& stream): stream_{stream} {}
 
   protected:
     bool IsSeekable()  const override {return true;}
     
-    size_t OnSysRead(void *buffer, size_t bufsize) override {
+    size_t OnSysRead(void* buffer, size_t size) override {
       stream_.peek();
       if (stream_.fail() || stream_.bad()) m_lasterror = wxSTREAM_READ_ERROR;
       else if (stream_.eof()) m_lasterror = wxSTREAM_EOF;
-      else return stream_.readsome(static_cast<std::istream::char_type *>(buffer), bufsize);
+      else return stream_.readsome(static_cast<std::istream::char_type *>(buffer), size);
       return 0;
     }
     
@@ -39,6 +39,13 @@ namespace {
   private:
     std::istream &stream_;
   };
+
+  void init_image_handlers() {
+    static bool first_run = true;
+    if (!first_run) return;
+    wxInitAllImageHandlers();
+    first_run = false;
+  }
 }
 
 void image::color_palette(intptr_t image, std::vector<argb>& entries, int32_t& flags) {
@@ -54,18 +61,18 @@ void image::color_palette(intptr_t image, std::vector<argb>& entries, int32_t& f
 }
 
 intptr_t image::create(std::istream& stream) {
-  wxInitAllImageHandlers();
+  init_image_handlers();
   StdInputStreamAdapter std_stream(stream);
   return reinterpret_cast<intptr_t>(new wxImage(std_stream));
 }
 
 intptr_t image::create(const char* const* bits) {
-  wxInitAllImageHandlers();
+  init_image_handlers();
   return reinterpret_cast<intptr_t>(new wxImage(bits));
 }
 
 intptr_t image::create(int32_t width, int32_t height) {
-  wxInitAllImageHandlers();
+  init_image_handlers();
   return reinterpret_cast<intptr_t>(new wxImage(width, height));
 }
 
