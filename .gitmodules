@@ -4,3 +4,6 @@
 [submodule "src/xtd_tunit"]
 	path = src/xtd_tunit
 	url = https://github.com/gammasoft71/xtd_tunit
+[submodule "src/xtd_core"]
+	path = src/xtd_core
+	url = https://github.com/gammasoft71/xtd_core
