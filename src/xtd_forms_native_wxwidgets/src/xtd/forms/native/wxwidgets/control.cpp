@@ -17,6 +17,7 @@
 #include "wx_label.hpp"
 #include "wx_list_box.hpp"
 #include "wx_panel.hpp"
+#include "wx_picture_box.hpp"
 #include "wx_progress_bar.hpp"
 #include "wx_radio_button.hpp"
 #include "wx_tab_control.hpp"
@@ -145,6 +146,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "label") return reinterpret_cast<intptr_t>(new wx_label(create_params));
   if (create_params.class_name() == "listbox") return reinterpret_cast<intptr_t>(new wx_list_box(create_params));
   if (create_params.class_name() == "panel") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
+  if (create_params.class_name() == "picturebox") return reinterpret_cast<intptr_t>(new wx_picture_box(create_params));
   if (create_params.class_name() == "progressbar") return reinterpret_cast<intptr_t>(new wx_progress_bar(create_params));
   if (create_params.class_name() == "radiobutton") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
   if (create_params.class_name() == "tabcontrol") return reinterpret_cast<intptr_t>(new wx_tab_control(create_params));
