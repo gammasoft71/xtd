@@ -48,6 +48,7 @@ endif ()
 
 add_subdirectory(xtd_drawing)
 if (IS_MAIN_PROJECT)
+  add_subdirectory(xtd_core)
   add_subdirectory(xtd_strings)
   add_subdirectory(xtd_tunit)
 endif ()

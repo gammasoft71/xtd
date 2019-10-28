@@ -35,6 +35,8 @@ namespace xtd {
       ~graphics();
       /// @endcond
       
+      intptr_t handle() const {return this->data_->handle_;}
+      
       void clear(const color& color);
       
       void draw_arc(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);

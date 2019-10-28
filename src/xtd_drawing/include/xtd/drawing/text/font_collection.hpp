@@ -11,6 +11,9 @@ namespace xtd {
     namespace text {
       /// @brief Provides a base class for installed and private font collections.
       /// @remarks The xtd::drawing::text::font_collection allows you to get a list of the font families contained in the collection with its families property. For additional information on fonts and text, including example code, see Using fonts and text.
+      /// @par Library
+      /// xtd.drawing
+      /// @ingroup xtd_drawing
       class font_collection {
       public:
         /// @brief Gets the array of FontFamily objects associated with this FontCollection.
