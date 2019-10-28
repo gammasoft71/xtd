@@ -9,6 +9,9 @@ namespace xtd {
     namespace drawing2d {
       /// @brief Specifies the type of fill a xtd::drawing::pen object uses to fill lines.
       /// @remarks The pen type is determined by the brush property of the xtd::drawing::pen object.
+      /// @par Library
+      /// xtd.drawing
+      /// @ingroup xtd_drawing
       enum class pen_type {
         /// @brief Specifies a solid fill.
         solid_color = 0,
