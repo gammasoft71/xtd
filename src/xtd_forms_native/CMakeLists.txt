@@ -38,6 +38,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/message_box_styles.hpp
   include/xtd/forms/native/message_keys.hpp
   include/xtd/forms/native/panel.hpp
+  include/xtd/forms/native/picture_box.hpp
   include/xtd/forms/native/progress_bar.hpp
   include/xtd/forms/native/progress_bar_styles.hpp
   include/xtd/forms/native/radio_button.hpp

@@ -79,6 +79,7 @@
 #include "xtd/forms/paint_event_args.hpp"
 #include "xtd/forms/paint_event_handler.hpp"
 #include "xtd/forms/panel.hpp"
+#include "xtd/forms/picture_box.hpp"
 #include "xtd/forms/progress_bar.hpp"
 #include "xtd/forms/progress_bar_style.hpp"
 #include "xtd/forms/radio_button.hpp"
