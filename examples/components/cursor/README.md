@@ -1,6 +1,6 @@
 # cursor
 
-demonstrates the use of [xtd::forms::cursor](../../../xtd.forms/include/xtd/forms/cursor.hpp) component.
+demonstrates the use of [xtd::forms::cursor](../../../src/xtd_forms/include/xtd/forms/cursor.hpp) component.
 
 # Sources
 

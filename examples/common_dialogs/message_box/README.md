@@ -1,6 +1,6 @@
 # message_box
 
-demonstrates the use of [xtd::forms::message_box](../../../xtd.forms/include/xtd/forms/message_box.hpp) dialog.
+demonstrates the use of [xtd::forms::message_box](../../../src/xtd_forms/include/xtd/forms/message_box.hpp) dialog.
 
 # Sources
 

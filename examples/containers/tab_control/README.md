@@ -1,6 +1,6 @@
 # tab_control
 
-demonstrates the use of [xtd::forms::tab_control](../../../xtd.forms/include/xtd/forms/tab_control.hpp) container.
+demonstrates the use of [xtd::forms::tab_control](../../../src/xtd_forms/include/xtd/forms/tab_control.hpp) container.
 
 # Sources
 
