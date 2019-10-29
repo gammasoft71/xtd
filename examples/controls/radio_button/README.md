@@ -1,6 +1,6 @@
 # radio_button
 
-demonstrates the use of [xtd::forms::radio_button](../../../xtd.forms/include/xtd/forms/radio_button.hpp) control.
+demonstrates the use of [xtd::forms::radio_button](../../../src/xtd_forms/include/xtd/forms/radio_button.hpp) control.
 
 # Sources
 

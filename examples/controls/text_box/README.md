@@ -1,6 +1,6 @@
 # text_box
 
-demonstrates the use of [xtd::forms::text_box](../../../xtd.forms/include/xtd/forms/text_box.hpp) control.
+demonstrates the use of [xtd::forms::text_box](../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
 # Sources
 

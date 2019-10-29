@@ -1,6 +1,6 @@
 # check_box
 
-demonstrates the use of [xtd::forms::check_box](../../../xtd.forms/include/xtd/forms/check_box.hpp) control.
+demonstrates the use of [xtd::forms::check_box](../../../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
 
 # Sources
 

@@ -1,6 +1,6 @@
 # checked_list_box
 
-demonstrates the use of [xtd::forms::checked_list_box](../../../xtd.forms/include/xtd/forms/checked_list_box.hpp) control.
+demonstrates the use of [xtd::forms::checked_list_box](../../../src/xtd_forms/include/xtd/forms/checked_list_box.hpp) control.
 
 # Sources
 

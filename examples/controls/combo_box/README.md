@@ -1,6 +1,6 @@
 # combo_box
 
-demonstrates the use of [xtd::forms::combo_box](../../../xtd.forms/include/xtd/forms/combo_box.hpp) control.
+demonstrates the use of [xtd::forms::combo_box](../../../src/xtd_forms/include/xtd/forms/combo_box.hpp) control.
 
 # Sources
 
