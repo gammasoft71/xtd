@@ -1,6 +1,6 @@
 # label
 
-demonstrates the use of [xtd::forms::label](../../../xtd.forms/include/xtd/forms/label.hpp) control.
+demonstrates the use of [xtd::forms::label](../../../src/xtd_forms/include/xtd/forms/label.hpp) control.
 
 # Sources
 
