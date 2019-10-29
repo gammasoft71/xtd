@@ -19,3 +19,10 @@ int main() {
   location.offset({70, 140});
   cout << format("location = {}", location) << endl;
 }
+
+// This code produces the following output:
+//
+// location = {x=10, y=235}
+// location = {x=30, y=220}
+// location = {x=30, y=60}
+// location = {x=100, y=200}
