@@ -27,10 +27,6 @@ namespace xtd {
           else if ((style & SS_RIGHT) == SS_RIGHT) wx_style |= wxALIGN_RIGHT;
           else wx_style |= wxALIGN_LEFT;
 
-          if ((style & SS_VCENTER) == SS_VCENTER) wx_style |= wxALIGN_CENTRE_VERTICAL;
-          else if ((style & SS_RIGHT) == SS_BOTTOM) wx_style |= wxALIGN_BOTTOM;
-          else wx_style |= wxALIGN_TOP;
-
           return wx_style;
         }
       };
