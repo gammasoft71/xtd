@@ -1,6 +1,6 @@
 # line
 
-demonstrates how to create a custom control with [xtd::forms::user_control](../../../xtd.forms/include/xtd/forms/user_control.hpp) control.
+demonstrates how to create a custom control with [xtd::forms::user_control](../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control.
 
 # Sources
 
