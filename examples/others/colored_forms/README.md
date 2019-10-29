@@ -1,6 +1,6 @@
 # colored_forms
 
-demonstrates the use of [xtd::forms::form](../../../xtd.forms/include/xtd/forms/form.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp) control with unicode text.
 
 # Sources
 

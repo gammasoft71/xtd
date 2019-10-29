@@ -4,3 +4,4 @@ project(xtd.forms.events.examples)
 
 add_subdirectory(application_idle)
 add_subdirectory(form_and_messages)
+add_subdirectory(form_paint)

@@ -1,6 +1,6 @@
 # colored_tab_pages
 
-demonstrates the use of [xtd::forms::tab_page](../../../xtd.forms/include/xtd/forms/tab_page.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::tab_page](../../../src/xtd_forms/include/xtd/forms/tab_page.hpp) control with unicode text.
 
 # Sources
 

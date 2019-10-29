@@ -1,6 +1,6 @@
 # labels_and_unicode_text
 
-demonstrates the use of [xtd::forms::label](../../../xtd.forms/include/xtd/forms/label.hpp) control with unicode text.
+demonstrates the use of [xtd::forms::label](../../../src/xtd_forms/include/xtd/forms/label.hpp) control with unicode text.
 
 # Sources
 
