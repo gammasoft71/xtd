@@ -1,6 +1,6 @@
 # numeric_text_box
 
-demonstrates how to create a custom control with [xtd::forms::text_box](../../../xtd.forms/include/xtd/forms/text_box.hpp) control.
+demonstrates how to create a custom control with [xtd::forms::text_box](../../../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
 # Sources
 
