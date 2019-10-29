@@ -1,29 +1,29 @@
-# xtd.forms (Winforms) Examples
+# xtd_forms (Winforms) Examples
 
-[This folder](.) contains all examples used by [xtd::forms](../xtd.forms) docmentation and more.
+[This folder](.) contains all examples used by [xtd::forms](../src/xtd_forms) docmentation and more.
 
 ## Hello World
 
-* [hello_world_forms](hello_world/hello_world_forms/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) control.
-* [hello_world_message_box](hello_world/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../xtd.forms/include/xtd/forms/message_box.hpp) control.
+* [hello_world_forms](hello_world/hello_world_forms/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control.
+* [hello_world_message_box](hello_world/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
 * [hello_world_paint](hello_world/hello_world_paint/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects.
 
 ## Application
 
-* [application](application/application/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class.
-* [application_context](application/application_context/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../xtd.forms/include/xtd/forms/application_context.hpp) class.
+* [application](application/application/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class.
+* [application_context](application/application_context/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../src/xtd_forms/include/xtd/forms/application_context.hpp) class.
 
 ## Controls
 
-* [button](controls/button/README.md) represents a Windows [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
-* [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
+* [button](controls/button/README.md) represents a Windows [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
+* [check_box](controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
 * [checked_list_box](controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
-* [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../xtd.forms/include/xtd/forms/combo_box.hpp)control.
+* [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../src/xtd_forms/include/xtd/forms/combo_box.hpp)control.
 * [control](controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * **domain_up_down** represents a Windows spin box (also known as an up-down control) that displays string values.
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
-* [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp).
+* [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp).
 * **link_label** represents a Windows label control that can display hyperlinks.
 * [list_box](controls/list_box/README.md) represents a Windows control to display a list of items.
 * **list_view** represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
@@ -32,13 +32,13 @@
 * **notify_icon** specifies a component that creates an icon in the notification area. This class cannot be inherited.
 * **numeric_up_down** represents a Windows spin box (also known as an up-down control) that displays numeric values.
 * [picture_box](controls/picture_box/README.md) represents a Windows picture box control for displaying an image.
-* [progress_bar](controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](../xtd.forms/include/xtd/forms/progress_bar.hpp) control.
-* [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) controls.
+* [progress_bar](controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](../src/xtd_forms/include/xtd/forms/progress_bar.hpp) control.
+* [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) controls.
 * **rich_text_box** represents a Windows rich text box control.
 * **splitter** represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
-* [text_box](controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../xtd.forms/include/xtd/forms/text_box.hpp) control.
+* [text_box](controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
-* [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../xtd.forms/include/xtd/forms/track_bar.hpp).
+* [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * [user_control](controls/user_control/README.md) defines the base class for user controls.
 * **vscroll_bar** represents a standard Windows vertical scroll bar.
@@ -105,35 +105,36 @@
 * [message_box](common_dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
 * [open_file_dialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
 * [save_file_dialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
+* [user_dialog](common_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) as dialog.
 
 ## Events
 
-* [application_idle](events/application_idle/README.md) shows how to create an application with [xtd::forms::application](../xtd.forms/include/xtd/forms/application.hpp) class and [idle](../xtd.forms/include/xtd/forms/application.hpp) event.
+* [application_idle](events/application_idle/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class and [idle](../src/xtd_forms/include/xtd/forms/application.hpp) event.
 * [mouse_event](events/mouse_event/README.md) demonstrates the use of some mouse events.
-* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changedl](../xtd.forms/include/xtd/forms/control.hpp) event.
-* [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../xtd.forms/include/xtd/forms/control.hpp) event.
-* [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../xtd.forms/include/xtd/forms/form.hpp) control and [click](../xtd.forms/include/xtd/forms/control.hpp) event.
-* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../xtd.forms/include/xtd/forms/form.hpp).
-* [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../xtd.forms/include/xtd/forms/control.hpp) method.
+* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changedl](../src/xtd_forms/include/xtd/forms/control.hpp) event.
+* [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../src/xtd_forms/include/xtd/forms/control.hpp) event.
+* [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../src/xtd_forms/include/xtd/forms/form.hpp) control and [click](../src/xtd_forms/include/xtd/forms/control.hpp) event.
+* [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
+* [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../src/xtd_forms/include/xtd/forms/control.hpp) method.
 
 ## Custom Controls
-* [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../xtd.forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
-* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../xtd.forms/include/xtd/forms/text_box.hpp) control.
+* [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
+* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
 ## Others
 
-* [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
-* [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
-* [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) control.
-* [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../xtd.forms/include/xtd/forms/form.hpp) control and xtd::drawing::color class.
-* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../xtd.forms/include/xtd/forms/tab_control.hpp) and colored [xtd::forms::tab_page](../xtd.forms/include/xtd/forms/tab_page.hpp) controls.
-* [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../xtd.forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../xtd.forms/include/xtd/forms/dock_style.hpp).
+* [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
+* [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
+* [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
+* [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../src/xtd_forms/include/xtd/forms/form.hpp) control and xtd::drawing::color class.
+* [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../src/xtd_forms/include/xtd/forms/tab_control.hpp) and colored [xtd::forms::tab_page](../src/xtd_forms/include/xtd/forms/tab_page.hpp) controls.
+* [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../src/xtd_forms/include/xtd/forms/dock_style.hpp).
 * [game_of_life](others/game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
-* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/button.hpp) container and [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
-* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) control.
-* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) control and Unicode text.
-* [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../xtd.forms/include/xtd/forms/track_bar.hpp) and [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) controls with mouse_down, mouse_move and paint events..
+* [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../src/xtd_forms/include/xtd/forms/button.hpp) container and [xtd::forms::check_box](../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
+* [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../src/xtd_forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) control.
+* [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control and Unicode text.
+* [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp) and [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) controls with mouse_down, mouse_move and paint events..
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
-* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) and [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) controls.
+* [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) and [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) controls.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [All](.) You can see all examples here. 
