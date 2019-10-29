@@ -128,9 +128,11 @@
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../xtd.forms/include/xtd/forms/form.hpp) control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../xtd.forms/include/xtd/forms/tab_control.hpp) and colored [xtd::forms::tab_page](../xtd.forms/include/xtd/forms/tab_page.hpp) controls.
 * [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../xtd.forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../xtd.forms/include/xtd/forms/dock_style.hpp).
+* [game_of_life](others/game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/button.hpp) container and [xtd::forms::check_box](../xtd.forms/include/xtd/forms/check_box.hpp) control.
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../xtd.forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../xtd.forms/include/xtd/forms/radio_button.hpp) control.
 * [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) control and Unicode text.
+* [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../xtd.forms/include/xtd/forms/track_bar.hpp) and [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) controls with mouse_down, mouse_move and paint events..
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../xtd.forms/include/xtd/forms/label.hpp) and [xtd::forms::button](../xtd.forms/include/xtd/forms/button.hpp) controls.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
