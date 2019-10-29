@@ -1,6 +1,6 @@
 # color_dialog
 
-demonstrates the use of [xtd::forms::color_dialog](../../../xtd.forms/include/xtd/forms/color_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::color_dialog](../../../src/xtd_forms/include/xtd/forms/color_dialog.hpp) dialog.
 
 # Sources
 

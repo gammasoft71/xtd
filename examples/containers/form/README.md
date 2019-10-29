@@ -1,6 +1,6 @@
 # form
 
-demonstrates the use of [xtd::forms::form](../../../xtd.forms/include/xtd/forms/form.hpp) container.
+demonstrates the use of [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp) container.
 
 # Sources
 
