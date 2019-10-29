@@ -131,7 +131,7 @@
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../src/xtd_forms/include/xtd/forms/tab_control.hpp) and colored [xtd::forms::tab_page](../src/xtd_forms/include/xtd/forms/tab_page.hpp) controls.
 * [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../src/xtd_forms/include/xtd/forms/dock_style.hpp).
 * [form2](others/form2/README.md) represents a window or dialog box that makes up an application's user interface.
-* [form_window_state](others/form2/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp) window state.
+* [form_window_state](others/form_window_state/README.md) demonstrates the use of [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp) window state.
 * [game_of_life](others/game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../src/xtd_forms/include/xtd/forms/button.hpp) container and [xtd::forms::check_box](../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../src/xtd_forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) control.
