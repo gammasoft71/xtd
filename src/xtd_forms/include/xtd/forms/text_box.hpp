@@ -17,7 +17,7 @@ namespace xtd {
       
       drawing::color default_fore_color() const override {return drawing::system_colors::window_text();}
       
-      drawing::size default_size() const override {return {100, 23};}
+      drawing::size default_size() const override {return {100, 32};}
 
       using text_box_base::text;
       control& text(const ustring& text) override;
