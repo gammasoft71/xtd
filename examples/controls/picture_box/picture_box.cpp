@@ -12,7 +12,7 @@ namespace examples {
       client_size({300, 300});
 
       picture_box1.parent(*this);
-      picture_box1.border_style(border_style::fixed_3d);
+      picture_box1.border_style(border_style::fixed_single);
       picture_box1.location({20, 20});
       picture_box1.size({260, 260});
       picture_box1.image(bitmap(logo_xpm));
