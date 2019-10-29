@@ -14,11 +14,14 @@ public:
     form_border_style(forms::form_border_style::fixed_single);
     maximize_box(false);
     
-    watch.parent(*this);
-    watch.border_style(forms::border_style::fixed_3d);
-    watch.bounds({20, 10, 235, 50});
-    watch.back_color(drawing::color::light_green);
-    watch.fore_color(drawing::color::dark_green);
+    watch_panel.parent(*this);
+    watch_panel.border_style(forms::border_style::fixed_3d);
+    watch_panel.bounds({20, 10, 235, 50});
+    watch_panel.back_color(drawing::color::light_green);
+    watch_panel.fore_color(drawing::color::dark_green);
+
+    watch.parent(watch_panel);
+    watch.dock(dock_style::fill);
     watch.font(drawing::font(drawing::font_family::generic_monospace(), 22));
     watch.text_align(content_alignment::middle_center);
     watch.text("00:00:00.000");
@@ -86,6 +89,7 @@ private:
   chrono::milliseconds duration {0};
   bool running = false;
   
+  panel watch_panel;
   label watch;
   button start_stop;
   button pause_resume;
