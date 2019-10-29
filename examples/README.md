@@ -115,6 +115,7 @@
 * [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../src/xtd_forms/include/xtd/forms/control.hpp) event.
 * [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../src/xtd_forms/include/xtd/forms/form.hpp) control and [click](../src/xtd_forms/include/xtd/forms/control.hpp) event.
 * [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
+* [form_apaint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../src/xtd_forms/include/xtd/forms/control.hpp) method.
 
 ## Custom Controls

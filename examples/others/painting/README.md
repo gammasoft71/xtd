@@ -1,6 +1,6 @@
 # painting
 
-demonstrates the use of [xtd::forms::form](../../../xtd.forms/include/xtd/forms/form.hpp), [xtd::forms::panel](../../../xtd.forms/include/xtd/forms/panel.hpp), [xtd::forms::track_bar](../../../xtd.forms/include/xtd/forms/track_bar.hpp) and  [xtd::forms::button](../../../xtd.forms/include/xtd/forms/button.hpp)  controls with mouse_down, mouse_move and paint events.
+demonstrates the use of [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp), [xtd::forms::panel](../../../src/xtd_forms/include/xtd/forms/panel.hpp), [xtd::forms::track_bar](../../../src/xtd_forms/include/xtd/forms/track_bar.hpp) and  [xtd::forms::button](../../../src/xtd_forms/include/xtd/forms/button.hpp)  controls with mouse_down, mouse_move and paint events.
 
 # Sources
 

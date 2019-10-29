@@ -1,6 +1,6 @@
 # application_idle
 
-demonstrates the use of [idle](../../../xtd.forms/include/xtd/forms/application.hpp) event.
+demonstrates the use of [idle](../../../src/xtd_forms/include/xtd/forms/application.hpp) event.
 
 # Sources
 

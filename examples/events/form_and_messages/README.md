@@ -1,6 +1,6 @@
 # form_and_messages
 
-demonstrates some events received by [form](../../../xtd.forms/include/xtd/forms/form.hpp).
+demonstrates some events received by [form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
 
 # Sources
 
