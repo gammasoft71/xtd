@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/xtd.diagnostics.hpp>
 #include <xtd/forms/create_params.hpp>
 #include <xtd/forms/native/class_styles.hpp>
 #include <xtd/forms/native/window_styles.hpp>
@@ -44,10 +45,13 @@ namespace xtd {
 
           if ((ex_style & WS_EX_APPWINDOW) != WS_EX_APPWINDOW) wx_style |= wxFRAME_NO_TASKBAR;
           if ((ex_style & WS_EX_TOOLWINDOW) == WS_EX_TOOLWINDOW) wx_style |= wxFRAME_TOOL_WINDOW;
-          if ((ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) wx_style &= ~(wxRESIZE_BORDER|wxSYSTEM_MENU);
-
+          //if ((ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) wx_style &= ~(wxRESIZE_BORDER|wxSYSTEM_MENU);
+          if ((ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) wx_style &= ~wxRESIZE_BORDER;
+          
           if ((class_style & CS_NOCLOSE) != CS_NOCLOSE) wx_style |= wxCLOSE_BOX;
 
+          cdebug << format("wx_style = 0x{:X}", wx_style) << std::endl;
+          
           return wx_style;
         }
 
