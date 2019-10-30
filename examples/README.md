@@ -121,7 +121,7 @@
 ## Custom Controls
 * [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
 * [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
-* [numeric_text_box](custom_controls/switch_button/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
+* [switch_button](custom_controls/switch_button/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
 ## Others
 
