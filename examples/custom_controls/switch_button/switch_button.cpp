@@ -2,19 +2,20 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
-class switch_button : public xtd::forms::user_control {
+class switch_button : public user_control {
 public:
   switch_button() {
     this->size_ = this->default_size();
-    this->border_style_ = xtd::forms::border_style::fixed_3d;
+    this->border_style_ = border_style::fixed_3d;
   }
   
-  virtual bool auto_checked() const {return this->auto_checked_;}
-  virtual switch_button& auto_checked(bool auto_checked) {
-    if (this->auto_checked_ != auto_checked)
-      this->auto_checked_ = auto_checked;
+  virtual bool auto_check() const {return this->auto_check_;}
+  virtual switch_button& auto_check(bool auto_check) {
+    if (this->auto_check_ != auto_check)
+      this->auto_check_ = auto_check;
     return *this;
   }
   
@@ -23,43 +24,43 @@ public:
     if (this->checked_ != checked) {
       this->checked_ = checked;
       this->invalidate();
-      this->on_checked_changed(xtd::event_args::empty);
+      this->on_checked_changed(event_args::empty);
     }
     return *this;
   }
 
-  xtd::event<switch_button, xtd::event_handler<xtd::forms::control&>> checked_changed;
+  event<switch_button, event_handler<control&>> checked_changed;
 
 protected:
-  xtd::drawing::size default_size() const override {return {75, 25};}
+  drawing::size default_size() const override {return {75, 25};}
   
-  virtual void on_checked_changed(const xtd::event_args& e) {checked_changed(*this, e);}
+  virtual void on_checked_changed(const event_args& e) {checked_changed(*this, e);}
 
-  void on_click(const xtd::event_args& e) override {
-    this->xtd::forms::user_control::on_click(e);
-    if (auto_checked_) this->checked(!this->checked());
+  void on_click(const event_args& e) override {
+    this->user_control::on_click(e);
+    if (auto_check_) this->checked(!this->checked());
   }
   
-  void on_paint(xtd::forms::paint_event_args& e) override {
-    this->xtd::forms::user_control::on_paint(e);
+  void on_paint(paint_event_args& e) override {
+    this->user_control::on_paint(e);
 
-    xtd::drawing::color back_color = this->checked_ ? xtd::drawing::system_colors::menu_highlight() : xtd::drawing::system_colors::gray_text();
-    xtd::drawing::color fore_color = this->checked_ ? xtd::drawing::color::white : xtd::drawing::color::black;
+    color back_color = this->checked_ ? system_colors::menu_highlight() : system_colors::gray_text();
+    color fore_color = this->checked_ ? color::white : color::black;
 
-    xtd::drawing::size_f slider_size((this->width() - 12) / 2, this->height() - 10);
-    xtd::drawing::point_f slider_location(this->checked_ ? xtd::drawing::point_f(this->width() / 2.0, 3.0) : xtd::drawing::point_f(3.0, 3.0));
+    size_f slider_size((this->width() - 12) / 2, this->height() - 10);
+    point_f slider_location(this->checked_ ? point_f(this->width() / 2.0, 3.0) : point_f(3.0, 3.0));
 
-    xtd::ustring text = this->checked_ ? "ON" : "OFF";
-    xtd::drawing::size_f string_size = e.graphics().measure_string(text, this->font());
-    xtd::drawing::point_f string_location(this->checked_ ? xtd::drawing::point_f((this->width() / 2 - string_size.width()) / 2 - 2, (this->height() - string_size.height()) / 2 - 2) : xtd::drawing::point_f(this->width() / 2 + (this->width() / 2 - string_size.width()) / 2 - 2, (this->height() - string_size.height()) / 2 - 2));
+    ustring text = this->checked_ ? "ON" : "OFF";
+    size_f string_size = e.graphics().measure_string(text, this->font());
+    point_f string_location(this->checked_ ? point_f((this->width() / 2 - string_size.width()) / 2 - 2, (this->height() - string_size.height()) / 2 - 2) : point_f(this->width() / 2 + (this->width() / 2 - string_size.width()) / 2 - 2, (this->height() - string_size.height()) / 2 - 2));
 
     e.graphics().clear(back_color);
-    e.graphics().fill_rectangle(xtd::drawing::solid_brush(xtd::drawing::system_colors::control()), {slider_location, slider_size});
-    e.graphics().draw_string(text, this->font(), xtd::drawing::solid_brush(fore_color), string_location);
+    e.graphics().fill_rectangle(solid_brush(system_colors::control()), {slider_location, slider_size});
+    e.graphics().draw_string(text, this->font(), solid_brush(fore_color), string_location);
   }
   
 private:
-  bool auto_checked_ = true;
+  bool auto_check_ = true;
   bool checked_ = false;
 };
 
@@ -67,16 +68,22 @@ int main() {
   form form;
   form.text("Switch button example");
   
+  label label1;
+  label1.parent(form);
+  label1.location({10, 90});
+  label1.auto_size(true);
+  label1.text("switch: OFF");
+
   switch_button switch_button1;
   switch_button1.parent(form);
   switch_button1.location({10, 10});
-  switch_button1.checked_changed += [](control& sender, const event_args& e) {
-    cdebug << format("switch: {}", static_cast<switch_button&>(sender).checked() ? "ON" : "OFF") << endl;
+  switch_button1.checked_changed += [&](control& sender, const event_args& e) {
+    label1.text(strings::format("switch: {}", static_cast<switch_button&>(sender).checked() ? "ON" : "OFF"));
   };
 
   switch_button switch_button2;
   switch_button2.parent(form);
-  switch_button2.auto_checked(false);
+  switch_button2.auto_check(false);
   switch_button2.checked(true);
   switch_button2.location({10, 50});
   switch_button2.click += [](control& sender, const event_args& e) {
