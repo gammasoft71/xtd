@@ -4,7 +4,7 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-class switch_button : public xtd::forms::panel {
+class switch_button : public xtd::forms::user_control {
 public:
   switch_button() {
     this->size_ = this->default_size();
