@@ -31,14 +31,11 @@ void to_ppm(const xtd::ustring& filename, const color& transparent_color = color
 
 int main() {
   //to_ppm("/Users/yves/Desktop/test.png");
-  bitmap img = bitmap(logo_xpm);
+  //bitmap img = bitmap(logo_xpm);
   //to_ppm("/Users/yves/Desktop/logo.ppm", img, color::magenta);
-  cout << format("flags = {}", static_cast<imaging::image_flags>(img.flags())) << endl;
-  //cout << format("frmae dimension list = {}", strings::join(", ", img.pixel_format())) << endl;
-  cout << format("handle = 0x{:X}", img.handle()) << endl;
-  cout << format("horizontal resolution = {}", img.horizontal_resolution()) << endl;
-  cout << format("physical dimension = {}", img.physical_dimension()) << endl;
-  cout << format("raw format = {}", img.raw_format()) << endl;
-  cout << format("vertcal resolution = {}", img.vertical_resolution()) << endl;
-  cout << format("size = {}", img.size()) << endl;
+  cout << format("color = {}", color::lighter(color::lighter(color::from_argb(128, 128, 128)))) << endl;
+  cout << format("color = {}", color::lighter(color::from_argb(128, 128, 128))) << endl;
+  cout << format("color = {}", color::from_argb(128, 128, 128)) << endl;
+  cout << format("color = {}", color::darker(color::from_argb(128, 128, 128))) << endl;
+  cout << format("color = {}", color::darker(color::darker(color::from_argb(128, 128, 128)))) << endl;
 }
