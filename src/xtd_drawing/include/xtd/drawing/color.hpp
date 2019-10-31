@@ -567,6 +567,28 @@ namespace xtd {
       /// @endcode
       uint8_t r() const {return (uint8_t)((this->to_argb() & 0x00FF0000) >> 16);}
       
+      /// @brief Returns the weighted average color between the two given colors.
+      /// @param color1 The first color.
+      /// @param color2 The second color.
+      /// @param weight The weighting factor
+      /// @return The average color.
+      /// @remarks The alpha, red, green and blue values are averages using the following formula:
+      /// @code
+      /// color = color1 * weight + color2 * (1 - weight);
+      /// @endcode
+      /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
+      static color average(const color& color1, const color& color2, double weight) {return from_argb(color1.a() * weight + color2.a() * (1 - weight), color1.r() * weight + color2.r() * (1 - weight), color1.g() * weight + color2.g() * (1 - weight), color1.b() * weight + color2.b() * (1 - weight));}
+      
+      /// @brief Returns a darker version of the specified color.
+      /// @param color The color to dark.
+      /// @return the darker color result.
+      static color darker(const color& color) {return color::average(color, drawing::color::black, .67);}
+      
+      /// @brief Returns a lighter version of the specified color.
+      /// @param color The color to light.
+      /// @return the lighter color result.
+      static color lighter(const color& color) {return color::average(color, drawing::color::white, .67);}
+      
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
