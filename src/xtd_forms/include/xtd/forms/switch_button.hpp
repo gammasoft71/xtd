@@ -60,8 +60,8 @@ namespace xtd {
           slider_color = drawing::color::average(slider_color, button_back_color, .33);
         }
 
-        drawing::size_f slider_size((width() - 6) / 2, height() - 6);
-        drawing::point_f slider_location(checked_ ? drawing::point_f(width() / 2.0, 3.0) : drawing::point_f(3.0, 3.0));
+        drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
+        drawing::point_f slider_location(checked_ ? drawing::point_f(width() / 2.0f, 3.0f) : drawing::point_f(3.0f, 3.0f));
 
         ustring text = checked_ ? "ON" : "OFF";
         drawing::size_f string_size = e.graphics().measure_string(text, font());
