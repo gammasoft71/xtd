@@ -44,7 +44,7 @@ protected:
     user_control::on_paint(e);
 
     color button_back_color = checked_ ? system_colors::menu_highlight() : system_colors::gray_text();
-    color text_color = checked_ ? color::white : color::black;
+    color text_color = checked_ ? fore_color() : color::average(fore_color(), button_back_color, .33);
 
     size_f slider_size((width() - 6) / 2, height() - 6);
     point_f slider_location(checked_ ? point_f(width() / 2.0, 3.0) : point_f(3.0, 3.0));
