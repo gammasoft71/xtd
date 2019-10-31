@@ -4,9 +4,7 @@ namespace xtd {
   namespace forms {
     class switch_button : public control {
     public:
-      switch_button() {
-        size_ = default_size();
-      }
+      switch_button() {size_ = default_size();}
       
       virtual bool auto_check() const {return auto_check_;}
       virtual switch_button& auto_check(bool auto_check) {
@@ -34,12 +32,11 @@ namespace xtd {
       
       virtual void on_checked_changed(const event_args& e) {checked_changed(*this, e);}
 
-      void on_click(const event_args& e) override {
-        control::on_click(e);
+      void on_mouse_down(const mouse_event_args& e) override {
+        control::on_mouse_down(e);
         if (auto_check_) checked(!checked());
       }
       
-      /*
       void on_handle_created(const event_args& e) override {
         control::on_handle_created(e);
         invalidate();
@@ -48,7 +45,7 @@ namespace xtd {
       void on_resize(const event_args& e) override {
         control::on_resize(e);
         invalidate();
-      }*/
+      }
 
       void on_paint(paint_event_args& e) override {
         control::on_paint(e);
