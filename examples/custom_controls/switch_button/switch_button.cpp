@@ -9,7 +9,7 @@ class switch_button : public user_control {
 public:
   switch_button() {
     this->size_ = this->default_size();
-    this->border_style_ = border_style::fixed_3d;
+    //this->border_style_ = border_style::fixed_single;
   }
   
   virtual bool auto_check() const {return this->auto_check_;}
@@ -47,16 +47,17 @@ protected:
     color back_color = this->checked_ ? system_colors::menu_highlight() : system_colors::gray_text();
     color fore_color = this->checked_ ? color::white : color::black;
 
-    size_f slider_size((this->width() - 12) / 2, this->height() - 10);
+    size_f slider_size((this->width() - 6) / 2, this->height() - 6);
     point_f slider_location(this->checked_ ? point_f(this->width() / 2.0, 3.0) : point_f(3.0, 3.0));
 
     ustring text = this->checked_ ? "ON" : "OFF";
     size_f string_size = e.graphics().measure_string(text, this->font());
-    point_f string_location(this->checked_ ? point_f((this->width() / 2 - string_size.width()) / 2 - 2, (this->height() - string_size.height()) / 2 - 2) : point_f(this->width() / 2 + (this->width() / 2 - string_size.width()) / 2 - 2, (this->height() - string_size.height()) / 2 - 2));
+    point_f string_location(this->checked_ ? point_f((this->width() / 2 - string_size.width()) / 2, (this->height() - string_size.height()) / 2) : point_f(this->width() / 2 + (this->width() / 2 - string_size.width()) / 2, (this->height() - string_size.height()) / 2));
 
     e.graphics().clear(back_color);
-    e.graphics().fill_rectangle(solid_brush(system_colors::control()), {slider_location, slider_size});
     e.graphics().draw_string(text, this->font(), solid_brush(fore_color), string_location);
+    e.graphics().draw_rectangle(pen(system_colors::control_text()), e.clip_rectangle());
+    e.graphics().fill_rectangle(solid_brush(system_colors::control()), {slider_location, slider_size});
   }
   
 private:
