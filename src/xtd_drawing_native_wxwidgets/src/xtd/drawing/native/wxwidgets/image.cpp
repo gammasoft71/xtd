@@ -101,7 +101,7 @@ float image::horizontal_resolution(intptr_t image) {
   return horizontal_resolution;
 }
 
-void image::physical_dimension(intptr_t image, size_t& width, size_t& height) {
+void image::physical_dimension(intptr_t image, int32_t& width, int32_t& height) {
   width = reinterpret_cast<wxImage*>(image)->GetWidth();
   height = reinterpret_cast<wxImage*>(image)->GetHeight();
 }
@@ -160,7 +160,7 @@ size_t image::raw_format(intptr_t image) {
   return IFM_UNKNOWN;
 }
 
-void image::size(intptr_t image, size_t& width, size_t& height) {
+void image::size(intptr_t image, int32_t& width, int32_t& height) {
   width = reinterpret_cast<wxImage*>(image)->GetWidth();
   height = reinterpret_cast<wxImage*>(image)->GetHeight();
 }
@@ -176,7 +176,7 @@ float image::vertical_resolution(intptr_t image) {
   return vertical_resolution;
 }
 
-void image::get_pixel(intptr_t image, size_t x, size_t y, argb& color) {
+void image::get_pixel(intptr_t image, int32_t x, int32_t y, argb& color) {
   if (reinterpret_cast<wxImage*>(image)->IsTransparent(x, y, 1))
     color.a = color.r = color.g = color.b = 0;
   else {
