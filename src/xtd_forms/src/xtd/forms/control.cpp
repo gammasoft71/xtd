@@ -305,7 +305,6 @@ forms::create_params control::create_params() const {
   create_params.style(WS_VISIBLE | WS_CHILD);
   if (this->parent_) create_params.parent(this->parent().value().get().handle_);
   create_params.location(this->location_);
-  
   create_params.size(this->size_);
   
   return create_params;
