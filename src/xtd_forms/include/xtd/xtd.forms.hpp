@@ -87,6 +87,7 @@
 #include "xtd/forms/scroll_bar.hpp"
 #include "xtd/forms/scrollable_control.hpp"
 #include "xtd/forms/selection_mode.hpp"
+#include "xtd/forms/switch_button.hpp"
 #include "xtd/forms/tab_control.hpp"
 #include "xtd/forms/tab_page.hpp"
 #include "xtd/forms/text_box.hpp"

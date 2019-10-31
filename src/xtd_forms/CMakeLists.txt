@@ -99,6 +99,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/track_bar.hpp
   include/xtd/forms/up_down_base.hpp
   include/xtd/forms/user_control.hpp
+  include/xtd/forms/switch_button.hpp
 )
 
 set(XTD_FORMS_LAYOUT_INCLUDES

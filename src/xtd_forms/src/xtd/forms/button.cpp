@@ -29,6 +29,8 @@ void button::perform_click() {
 forms::create_params button::create_params() const {
   forms::create_params create_params = this->button_base::create_params();
   
+  create_params.class_name("button");
+  
   create_params.style(create_params.style() | BS_PUSHBUTTON);
   
   return create_params;

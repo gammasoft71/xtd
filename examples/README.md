@@ -36,6 +36,7 @@
 * [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) controls.
 * **rich_text_box** represents a Windows rich text box control.
 * **splitter** represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
+* [switch_button](controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
 * [text_box](controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
 * [track_bar](controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp).
@@ -121,7 +122,6 @@
 ## Custom Controls
 * [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
 * [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
-* [switch_button](custom_controls/switch_button/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
 ## Others
 

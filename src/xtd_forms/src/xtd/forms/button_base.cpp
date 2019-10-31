@@ -19,8 +19,6 @@ button_base& button_base::text_align(content_alignment text_align) {
 forms::create_params button_base::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
-  create_params.class_name("button");
-  
   switch (this->text_align_) {
     case content_alignment::top_left: create_params.style(create_params.style() | BS_TOP | BS_LEFT); break;
     case content_alignment::top_center: create_params.style(create_params.style() | BS_TOP | BS_CENTER); break;
