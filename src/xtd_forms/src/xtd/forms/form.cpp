@@ -186,6 +186,8 @@ forms::create_params form::create_params() const {
 
   create_params.class_name("form");
   
+  create_params.style(create_params.style() | WS_CLIPCHILDREN);
+  
   switch (this->form_border_style_) {
     case forms::form_border_style::none: break;
     case forms::form_border_style::fixed_single: create_params.style(create_params.style() | WS_BORDER); break;
@@ -217,6 +219,14 @@ forms::create_params form::create_params() const {
   if (!this->show_icon_ && (this->form_border_style_ == forms::form_border_style::sizable || this->form_border_style_ == forms::form_border_style::fixed_3d || this->form_border_style_ == forms::form_border_style::fixed_single)) create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
   
   if (this->get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
+  
+  if (this->auto_scroll_) {
+    create_params.style(create_params.style() | WS_HSCROLL | WS_VSCROLL);
+    create_params.style(create_params.ex_style() | WS_EX_AUTOSCROLL);
+  } else {
+    if (this->hscroll_) create_params.style(create_params.style() | WS_HSCROLL);
+    if (this->vscroll_) create_params.style(create_params.style() | WS_VSCROLL);
+  }
   
   if (this->previous_screeen_) {
     switch (this->start_position_) {

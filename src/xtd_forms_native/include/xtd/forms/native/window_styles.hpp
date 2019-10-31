@@ -72,4 +72,5 @@ constexpr size_t WS_EX_LAYOUTRTL = 0x00400000; // Right to left mirroring
 constexpr size_t WS_EX_COMPOSITED = 0x02000000;
 constexpr size_t WS_EX_NOACTIVATE = 0x08000000;
 #endif
+constexpr size_t WS_EX_AUTOSCROLL = 0x40000000;
 constexpr size_t WS_EX_MODALWINDOW = 0x80000000;

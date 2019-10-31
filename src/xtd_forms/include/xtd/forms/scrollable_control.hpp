@@ -6,10 +6,42 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     class scrollable_control : public control {
-    public:      
+    public:
+      virtual bool auto_scroll() const {return this->auto_scroll_;}
+      virtual scrollable_control& auto_scroll(bool auto_scroll) {
+        if (this->auto_scroll_ != auto_scroll) {
+          this->auto_scroll_ = auto_scroll;
+          this->recreate_handle();
+        }
+        return *this;
+      }
       
+      virtual bool hscroll() const {return this->hscroll_;}
+      virtual scrollable_control& hscroll(bool hscroll) {
+        if (this->hscroll_ != hscroll) {
+          this->hscroll_ = hscroll;
+          this->recreate_handle();
+        }
+        return *this;
+      }
+      
+      virtual bool vscroll() const {return this->vscroll_;}
+      virtual scrollable_control& vscroll(bool vscroll) {
+        if (this->vscroll_ != vscroll) {
+          this->vscroll_ = vscroll;
+          this->recreate_handle();
+        }
+        return *this;
+      }
+
     protected:
       scrollable_control() = default;
+      
+      /// @cond
+      bool auto_scroll_ = false;
+      bool hscroll_ = false;
+      bool vscroll_ = false;
+      /// @endcond
     };
   }
 }
