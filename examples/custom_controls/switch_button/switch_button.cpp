@@ -45,6 +45,7 @@ protected:
 
     color back_color = this->checked_ ? system_colors::menu_highlight() : system_colors::gray_text();
     color fore_color = this->checked_ ? color::white : color::black;
+    color slider_color = system_colors::control();
 
     size_f slider_size((this->width() - 6) / 2, this->height() - 6);
     point_f slider_location(this->checked_ ? point_f(this->width() / 2.0, 3.0) : point_f(3.0, 3.0));
@@ -60,11 +61,11 @@ protected:
     e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
     e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
     
-    e.graphics().fill_rectangle(solid_brush(system_colors::control()), {slider_location, slider_size});
-    e.graphics().draw_line(pen(color::lighter(system_colors::control())), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
-    e.graphics().draw_line(pen(color::lighter(system_colors::control())), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
-    e.graphics().draw_line(pen(color::darker(system_colors::control())), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
-    e.graphics().draw_line(pen(color::darker(system_colors::control())), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+    e.graphics().fill_rectangle(solid_brush(slider_color), {slider_location, slider_size});
+    e.graphics().draw_line(pen(color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
+    e.graphics().draw_line(pen(color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
+    e.graphics().draw_line(pen(color::darker(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+    e.graphics().draw_line(pen(color::darker(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
   }
   
 private:
