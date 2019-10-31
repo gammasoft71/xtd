@@ -4,4 +4,3 @@ project(xtd.forms.custon_control.examples)
 
 add_subdirectory(line)
 add_subdirectory(numeric_text_box)
-add_subdirectory(switch_button)
