@@ -8,22 +8,22 @@ using namespace xtd::forms;
 class switch_button : public user_control {
 public:
   switch_button() {
-    this->size_ = this->default_size();
+    size_ = default_size();
   }
   
-  virtual bool auto_check() const {return this->auto_check_;}
+  virtual bool auto_check() const {return auto_check_;}
   virtual switch_button& auto_check(bool auto_check) {
-    if (this->auto_check_ != auto_check)
-      this->auto_check_ = auto_check;
+    if (auto_check_ != auto_check)
+      auto_check_ = auto_check;
     return *this;
   }
   
-  virtual bool checked() const {return this->checked_;}
+  virtual bool checked() const {return checked_;}
   virtual switch_button& checked(bool checked) {
-    if (this->checked_ != checked) {
-      this->checked_ = checked;
-      this->invalidate();
-      this->on_checked_changed(event_args::empty);
+    if (checked_ != checked) {
+      checked_ = checked;
+      invalidate();
+      on_checked_changed(event_args::empty);
     }
     return *this;
   }
@@ -36,36 +36,35 @@ protected:
   virtual void on_checked_changed(const event_args& e) {checked_changed(*this, e);}
 
   void on_click(const event_args& e) override {
-    this->user_control::on_click(e);
-    if (auto_check_) this->checked(!this->checked());
+    user_control::on_click(e);
+    if (auto_check_) checked(!checked());
   }
   
   void on_paint(paint_event_args& e) override {
-    this->user_control::on_paint(e);
+    user_control::on_paint(e);
 
-    color back_color = this->checked_ ? system_colors::menu_highlight() : system_colors::gray_text();
-    color fore_color = this->checked_ ? color::white : color::black;
-    color slider_color = system_colors::control();
+    color button_back_color = checked_ ? system_colors::menu_highlight() : system_colors::gray_text();
+    color text_color = checked_ ? color::white : color::black;
 
-    size_f slider_size((this->width() - 6) / 2, this->height() - 6);
-    point_f slider_location(this->checked_ ? point_f(this->width() / 2.0, 3.0) : point_f(3.0, 3.0));
+    size_f slider_size((width() - 6) / 2, height() - 6);
+    point_f slider_location(checked_ ? point_f(width() / 2.0, 3.0) : point_f(3.0, 3.0));
 
-    ustring text = this->checked_ ? "ON" : "OFF";
-    size_f string_size = e.graphics().measure_string(text, this->font());
-    point_f string_location(this->checked_ ? point_f((this->width() / 2 - string_size.width()) / 2, (this->height() - string_size.height()) / 2) : point_f(this->width() / 2 + (this->width() / 2 - string_size.width()) / 2, (this->height() - string_size.height()) / 2));
+    ustring text = checked_ ? "ON" : "OFF";
+    size_f string_size = e.graphics().measure_string(text, font());
+    point_f string_location(checked_ ? point_f((width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2) : point_f(width() / 2 + (width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2));
 
-    e.graphics().clear(back_color);
-    e.graphics().draw_string(text, this->font(), solid_brush(fore_color), string_location);
-    e.graphics().draw_line(pen(color::darker(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());
-    e.graphics().draw_line(pen(color::darker(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
-    e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
-    e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
+    e.graphics().clear(button_back_color);
+    e.graphics().draw_string(text, font(), solid_brush(text_color), string_location);
+    e.graphics().draw_line(pen(color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());
+    e.graphics().draw_line(pen(color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
+    e.graphics().draw_line(pen(color::lighter(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
+    e.graphics().draw_line(pen(color::lighter(button_back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
     
-    e.graphics().fill_rectangle(solid_brush(slider_color), {slider_location, slider_size});
-    e.graphics().draw_line(pen(color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
-    e.graphics().draw_line(pen(color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
-    e.graphics().draw_line(pen(color::darker(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
-    e.graphics().draw_line(pen(color::darker(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+    e.graphics().fill_rectangle(solid_brush(back_color()), {slider_location, slider_size});
+    e.graphics().draw_line(pen(color::lighter(back_color())), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
+    e.graphics().draw_line(pen(color::lighter(back_color())), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
+    e.graphics().draw_line(pen(color::darker(back_color())), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+    e.graphics().draw_line(pen(color::darker(back_color())), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
   }
   
 private:
