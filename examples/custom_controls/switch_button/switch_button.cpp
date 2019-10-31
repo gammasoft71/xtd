@@ -9,7 +9,6 @@ class switch_button : public user_control {
 public:
   switch_button() {
     this->size_ = this->default_size();
-    //this->border_style_ = border_style::fixed_single;
   }
   
   virtual bool auto_check() const {return this->auto_check_;}
@@ -56,8 +55,15 @@ protected:
 
     e.graphics().clear(back_color);
     e.graphics().draw_string(text, this->font(), solid_brush(fore_color), string_location);
-    e.graphics().draw_rectangle(pen(system_colors::control_text()), e.clip_rectangle());
+    e.graphics().draw_line(pen(color::darker(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());
+    e.graphics().draw_line(pen(color::darker(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
+    e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
+    e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
     e.graphics().fill_rectangle(solid_brush(system_colors::control()), {slider_location, slider_size});
+    e.graphics().draw_line(pen(color::lighter(system_colors::control())), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
+    e.graphics().draw_line(pen(color::lighter(system_colors::control())), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
+    e.graphics().draw_line(pen(color::darker(system_colors::control())), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+    e.graphics().draw_line(pen(color::darker(system_colors::control())), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
   }
   
 private:
