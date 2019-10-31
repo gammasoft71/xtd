@@ -53,7 +53,7 @@ void image::update_properties() {
   
   size_t physical_width, physical_height;
   native::image::physical_dimension(this->data_->handle_, physical_width, physical_height);
-  this->data_->physical_dimension_ = drawing::size_f(physical_width, physical_height);
+  this->data_->physical_dimension_ = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
   
   this->data_->property_id_list_ = native::image::property_id_list(this->data_->handle_);
   
@@ -104,7 +104,7 @@ void image::update_properties() {
   
   size_t width, height;
   native::image::size(this->data_->handle_, width, height);
-  this->data_->size_ = drawing::size(width, height);
+  this->data_->size_ = drawing::size(static_cast<float>(width), static_cast<float>(height));
 
   this->data_->vertical_resolution_ = native::image::vertical_resolution(this->data_->handle_);
 }
