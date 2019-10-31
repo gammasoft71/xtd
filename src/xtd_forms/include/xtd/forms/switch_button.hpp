@@ -1,10 +1,10 @@
-#include "control.hpp"
+#include "button_base.hpp"
 
 namespace xtd {
   namespace forms {
-    class switch_button : public control {
+    class switch_button : public button_base {
     public:
-      switch_button() {size_ = default_size();}
+      switch_button() = default;
       
       virtual bool auto_check() const {return auto_check_;}
       virtual switch_button& auto_check(bool auto_check) {
@@ -26,29 +26,25 @@ namespace xtd {
       event<switch_button, event_handler<control&>> checked_changed;
 
     protected:
-      /// @brief Gets the default size of the control.
-      /// @return The default Size of the control.
-      drawing::size default_size() const override {return {75, 25};}
-      
       virtual void on_checked_changed(const event_args& e) {checked_changed(*this, e);}
 
       void on_mouse_down(const mouse_event_args& e) override {
-        control::on_mouse_down(e);
+        button_base::on_mouse_down(e);
         if (auto_check_) checked(!checked());
       }
       
       void on_handle_created(const event_args& e) override {
-        control::on_handle_created(e);
+        button_base::on_handle_created(e);
         invalidate();
       }
       
       void on_resize(const event_args& e) override {
-        control::on_resize(e);
+        button_base::on_resize(e);
         invalidate();
       }
 
       void on_paint(paint_event_args& e) override {
-        control::on_paint(e);
+        button_base::on_paint(e);
 
         drawing::color button_back_color = checked_ ? drawing::system_colors::menu_highlight() : drawing::system_colors::gray_text();
         drawing::color text_color = checked_ ? fore_color() : drawing::color::average(fore_color(), button_back_color, .33);
