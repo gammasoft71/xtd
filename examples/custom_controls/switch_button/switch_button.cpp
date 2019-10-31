@@ -59,6 +59,7 @@ protected:
     e.graphics().draw_line(pen(color::darker(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
     e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
     e.graphics().draw_line(pen(color::lighter(back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
+    
     e.graphics().fill_rectangle(solid_brush(system_colors::control()), {slider_location, slider_size});
     e.graphics().draw_line(pen(color::lighter(system_colors::control())), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
     e.graphics().draw_line(pen(color::lighter(system_colors::control())), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
