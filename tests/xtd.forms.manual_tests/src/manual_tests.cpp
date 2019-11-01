@@ -17,7 +17,7 @@ int main() {
   
   label label;
   label.parent(form);
-  label.text("File = ");
+  label.text("Path = ");
   label.auto_size(true);
   label.location({10, 50});
   
@@ -31,7 +31,7 @@ int main() {
     ofd.initial_directory(environment::get_folder_path(environment::special_folder::my_documents));
     ofd.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
     if (ofd.show_dialog() == dialog_result::ok) {
-      label.text(strings::format("File = {}", ofd.file_name()));
+      label.text(strings::format("Path = {}", ofd.file_name()));
     }
   };
 

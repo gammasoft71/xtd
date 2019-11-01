@@ -153,6 +153,15 @@ namespace {
 
     return view;
   }
+
+  std::vector<std::pair<std::string, std::vector<std::string>>> split_filter(const std::string& filter) {
+    std::vector<std::string> filter_patterns = strings::split(filter, {'|'});
+    std::vector<std::pair<std::string, std::vector<std::string>>> filters;
+    if (filter_patterns.size() % 2 != 0) throw std::invalid_argument("Filter bad format");
+    for (int32_t index = 0; index < filter_patterns.size(); index += 2)
+      filters.push_back({filter_patterns[index], strings::split(filter_patterns[index + 1], {';'})});
+    return filters;
+  }
 }
 
 bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
@@ -166,14 +175,8 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ust
   [openPanel setDirectoryURL:[NSURL fileURLWithPath:[NSString stringWithUTF8String:initial_directory.c_str()]]];
   [openPanel setNameFieldStringValue:[NSString stringWithUTF8String:file_name.c_str()]];
   
-  std::vector<std::string> filter_patterns = strings::split(filter.str(), {'|'});
-  std::vector<std::pair<std::string, std::vector<std::string>>> filters;
-  if (filter_patterns.size() % 2 != 0) throw std::invalid_argument("Filter bad format");
-  for (int32_t index = 0; index < filter_patterns.size(); index += 2)
-    filters.push_back({filter_patterns[index], strings::split(filter_patterns[index + 1], {';'})});
-  
-  if (filter_patterns.size() != 0)
-    [openPanel setAccessoryView:CreateFilterViewForFileDialog(openPanel, filters, filter_index - 1)];
+  std::vector<std::pair<std::string, std::vector<std::string>>> filters = split_filter(filter);
+  if (filters.size() != 0) [openPanel setAccessoryView:CreateFilterViewForFileDialog(openPanel, filters, filter_index - 1)];
 
   NSModalResponse response = [openPanel runModal];
   IgnoreMessages();
