@@ -40,6 +40,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/cursors.hpp
   include/xtd/forms/dialog_result.hpp
   include/xtd/forms/dock_style.hpp
+  include/xtd/forms/file_dialog.hpp
   include/xtd/forms/font_dialog.hpp
   include/xtd/forms/form.hpp
   include/xtd/forms/form_border_style.hpp
@@ -76,6 +77,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/mouse_buttons.hpp
   include/xtd/forms/mouse_event_args.hpp
   include/xtd/forms/mouse_event_handler.hpp
+  include/xtd/forms/open_file_dialog.hpp
   include/xtd/forms/orientation.hpp
   include/xtd/forms/paint_event_args.hpp
   include/xtd/forms/paint_event_handler.hpp
@@ -85,6 +87,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/progress_bar.hpp
   include/xtd/forms/progress_bar_style.hpp
   include/xtd/forms/radio_button.hpp
+  include/xtd/forms/save_file_dialog.hpp
   include/xtd/forms/scroll_bar.hpp
   include/xtd/forms/scrollable_control.hpp
   include/xtd/forms/screen.hpp
@@ -118,6 +121,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/control.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
+  src/xtd/forms/file_dialog.cpp
   src/xtd/forms/font_dialog.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
@@ -127,11 +131,13 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/message.cpp
   src/xtd/forms/message_box.cpp
   src/xtd/forms/mouse_event_args.cpp
+  src/xtd/forms/open_file_dialog.cpp
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/panel.cpp
   src/xtd/forms/picture_box.cpp
   src/xtd/forms/progress_bar.cpp
   src/xtd/forms/radio_button.cpp
+  src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp
