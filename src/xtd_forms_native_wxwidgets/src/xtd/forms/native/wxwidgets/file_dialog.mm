@@ -197,26 +197,22 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ust
 }
 
 bool file_dialog::run_save_dialog(intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
-  /*
   NSSavePanel* savePanel = [[[NSSavePanel alloc] init] autorelease];
-  [savePanel setMessage:[NSString stringWithUTF8String:saveFileDialog.Title().c_str()]];
+  [savePanel setMessage:[NSString stringWithUTF8String:title.c_str()]];
   [savePanel setCanCreateDirectories:YES];
-  [savePanel setShowsHiddenFiles:saveFileDialog.ShowHiddenFiles()];
-  [savePanel setDirectoryURL:[NSURL fileURLWithPath:[NSString stringWithUTF8String:saveFileDialog.InitialDirectory().c_str()]]];
-  [savePanel setNameFieldStringValue:[NSString stringWithUTF8String:saveFileDialog.FileName().c_str()]];
-  if (saveFileDialog.__get_filters__().Count != 0)
-    [savePanel setAccessoryView:CreateFilterViewForFileDialog(savePanel, saveFileDialog.__get_filters__(), saveFileDialog.FilterIndex - 1)];
+  [savePanel setShowsHiddenFiles:(options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN];
+  [savePanel setDirectoryURL:[NSURL fileURLWithPath:[NSString stringWithUTF8String:initial_directory.c_str()]]];
+  [savePanel setNameFieldStringValue:[NSString stringWithUTF8String:file_name.c_str()]];
+  std::vector<std::pair<std::string, std::vector<std::string>>> filters = split_filter(filter);
+  if (filters.size() != 0) [savePanel setAccessoryView:CreateFilterViewForFileDialog(savePanel, filters, filter_index - 1)];
 
   NSModalResponse response = [savePanel runModal];
   IgnoreMessages();
-  if (!MakeKeyWindow(hwnd))
-    MakeDefaultKeyWindow();
+  MakeKeyWindow(hwnd);
   if (response == NSModalResponseCancel) return false;
 
-  saveFileDialog.FileName = [[[savePanel URL] path] UTF8String];
+  file_name = [[[savePanel URL] path] UTF8String];
   return true;
-   */
-  return false;
 }
 
 #endif

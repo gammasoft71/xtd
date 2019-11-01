@@ -26,12 +26,12 @@ int main() {
   button.text("Click me");
   button.location({10, 10});
   button.click += [&] {
-    open_file_dialog ofd;
-    ofd.title("Open file");
-    ofd.initial_directory(environment::get_folder_path(environment::special_folder::my_documents));
-    ofd.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
-    if (ofd.show_dialog() == dialog_result::ok) {
-      label.text(strings::format("Path = {}", ofd.file_name()));
+    save_file_dialog sfd;
+    sfd.title("Save file");
+    sfd.initial_directory(environment::get_folder_path(environment::special_folder::my_documents));
+    sfd.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
+    if (sfd.show_dialog() == dialog_result::ok) {
+      label.text(strings::format("Path = {}", sfd.file_name()));
     }
   };
 
