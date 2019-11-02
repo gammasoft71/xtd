@@ -167,6 +167,16 @@ namespace xtd {
       
       bool run_dialog (intptr_t hwnd_owner) override;
       
+      ustring to_string() const {
+        return strings::format("{}: title: {}, filename: {}", strings::full_class_name(*this), title_, file_name_);
+      }
+
+      /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::file_dialog& dialog) noexcept {
+        return os << dialog.to_string();
+      }
+      /// @endcond
+
     protected:
       /// @cond
       bool get_option(size_t flag) const {return (this->options_ & flag) == flag;}
