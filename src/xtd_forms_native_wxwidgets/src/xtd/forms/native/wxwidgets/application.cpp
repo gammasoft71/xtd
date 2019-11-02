@@ -78,7 +78,7 @@ void application::initialize() {
   });
   
   wxApp::s_macAboutMenuItemId = aboutMenuItem->GetId();
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
   wxApp::s_macWindowMenuTitleName = "Window";
 #endif
   wxMenuBar::MacSetCommonMenuBar(menubar);
