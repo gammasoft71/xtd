@@ -7,7 +7,7 @@ using namespace xtd::forms::native;
 
 bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optional<std::vector<int32_t>>& custom_colors, size_t options) {
   wxColourData color_data;
-#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
+#if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
   color_data.SetChooseAlpha((options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
 #endif
   color_data.SetChooseFull((options & CC_FULLOPEN) == CC_FULLOPEN);
