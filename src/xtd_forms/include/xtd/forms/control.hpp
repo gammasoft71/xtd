@@ -311,6 +311,8 @@ namespace xtd {
       
       virtual drawing::size default_size() const {return {0, 0};}
       
+      virtual drawing::rectangle display_rectangle() const {return this->client_rectangle_;}
+      
       /// @brief Gets or sets which control borders are docked to its parent control and determines how a control is resized with its parent.
       /// @return One of the dock_style values. The default is none.
       /// @remarks Use the dock property to define how a control is automatically resized as its parent control is resized. For example, setting dock to dock_style::left causes the control to align itself with the left edges of its parent control and to resize as the parent control is resized. Controls are docked in their Z-order, which is the visual layering of controls on a form along the form's Z-axis (depth).

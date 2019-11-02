@@ -415,6 +415,9 @@ void control::on_handle_created(const event_args &e) {
   this->size_ = native::control::size(this->handle_);
 
   if (this->can_raise_events()) this->handle_created(*this, e);
+  
+  if (this->parent().has_value()) this->parent().value().get().on_layout(event_args::empty);
+  this->on_layout(event_args::empty);
 }
 
 void control::on_handle_destroyed(const event_args &e) {
@@ -672,12 +675,16 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
     native::control::location(this->handle_, this->location_);
     this->on_location_changed(event_args::empty);
+    if (this->parent().has_value()) this->parent().value().get().on_layout(event_args::empty);
+    this->on_layout(event_args::empty);
   }
   
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
     native::control::size(this->handle_, this->size_);
     this->on_client_size_changed(event_args::empty);
     this->on_size_changed(event_args::empty);
+    if (this->parent().has_value()) this->parent().value().get().on_layout(event_args::empty);
+    this->on_layout(event_args::empty);
   }
 }
 

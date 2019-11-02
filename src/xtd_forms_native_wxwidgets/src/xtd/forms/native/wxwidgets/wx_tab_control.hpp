@@ -17,7 +17,7 @@ namespace xtd {
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = wxHSCROLL | wxVSCROLL;
+          long wx_style = 0;
 
           if ((style & TCS_VERTICAL) != TCS_VERTICAL) {
             if ((style & TCS_BOTTOM) == TCS_BOTTOM) wx_style |= wxNB_BOTTOM;
