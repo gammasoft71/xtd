@@ -68,7 +68,7 @@ namespace xtd {
           return event_types.find(event_type) != event_types.end();
         }
         
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
         bool is_gesture_event(wxEventType event_type) const {
           static std::set<wxEventType> event_types = {wxEVT_GESTURE_PAN, wxEVT_GESTURE_ZOOM, wxEVT_GESTURE_ROTATE, wxEVT_TWO_FINGER_TAP, wxEVT_LONG_PRESS, wxEVT_PRESS_AND_TAP};
           return event_types.find(event_type) != event_types.end();
@@ -82,7 +82,7 @@ namespace xtd {
         
         bool is_key_event(wxEventType event_type) const {
           static std::set<wxEventType> event_types = {wxEVT_CHAR, wxEVT_CHAR_HOOK, wxEVT_NAVIGATION_KEY, wxEVT_KEY_DOWN, wxEVT_KEY_UP,
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
             wxEVT_HOTKEY,
 #endif
             wxEVT_AFTER_CHAR};
@@ -247,7 +247,7 @@ namespace xtd {
               case WXK_SPECIAL18: key_data = VK_OEM_ATTN; break;
               case WXK_SPECIAL19: key_data = VK_OEM_FINISH; break;
               case WXK_SPECIAL20: key_data = VK_OEM_COPY; break;
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
               case WXK_BROWSER_BACK: key_data = VK_BROWSER_BACK; break;
               case WXK_BROWSER_FORWARD: key_data = VK_BROWSER_FORWARD; break;
               case WXK_BROWSER_REFRESH: key_data = VK_BROWSER_REFRESH; break;
@@ -283,7 +283,7 @@ namespace xtd {
         void process_command_event(wxEvent &event);
         void process_cursor_event(wxEvent &event);
         void process_generic_command_event(wxEvent &event);
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
         void process_gesture_event(wxEvent &event);
 #endif
         void process_help_event(wxEvent &event);
@@ -369,7 +369,7 @@ namespace xtd {
         else if (is_command_event(event.GetEventType())) this->process_command_event(event);
         else if (is_cursor_event(event.GetEventType())) this->process_cursor_event(event);
         else if (is_generic_command_event(event.GetEventType())) this->process_generic_command_event(event);
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
         else if (is_gesture_event(event.GetEventType())) this->process_gesture_event(event);
 #endif
         else if (is_key_event(event.GetEventType())) this->process_key_event(event);
@@ -424,7 +424,7 @@ namespace xtd {
         this->def_process_event(event);
       }
       
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
       template<typename control_t>
       inline void control_wrapper<control_t>::process_gesture_event(wxEvent& event) {
         this->def_process_event(event);
@@ -436,7 +436,7 @@ namespace xtd {
         if (event.GetEventType() == wxEVT_KEY_DOWN) event.Skip(!this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_CHAR) event.Skip(!this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_KEY_UP) event.Skip(!this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
         else if (event.GetEventType() == wxEVT_HOTKEY) this->def_process_event(event);
 #endif
         else this->def_process_event(event);
