@@ -30,7 +30,7 @@ namespace examples {
       button_clear.text("Clear");
       button_clear.location({542, 15});
       button_clear.click += [this] {
-        pixels = {columns, vector<drawing::color>(rows)};
+        picture = bitmap(picture_width, picture_height);
         panel_painting.invalidate();
       };
       
@@ -55,13 +55,13 @@ namespace examples {
       panel_painting.size({620, 388});
 
       panel_painting.mouse_down += [this](control& sender, const mouse_event_args& e) {
-        pixels[e.x()/zoom][e.y()/zoom] = e.button() == mouse_buttons::left ? current_color : color::empty;
+        picture.set_pixel(e.x()/zoom, e.y()/zoom, e.button() == mouse_buttons::left ? current_color : color::empty);
         panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
       };
       
       panel_painting.mouse_move += [this](control& sender, const mouse_event_args& e) {
         if (e.button() == mouse_buttons::left) {
-          pixels[e.x()/zoom][e.y()/zoom] = current_color;
+          picture.set_pixel(e.x()/zoom, e.y()/zoom, current_color);
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
@@ -69,8 +69,8 @@ namespace examples {
       panel_painting.paint += [this](control& sender, paint_event_args& e) {
         for (int y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (int x = 0; x < panel_painting.client_size().width(); x += zoom)
-            if (!pixels[x/zoom][y/zoom].is_empty())
-              e.graphics().fill_rectangle(solid_brush(pixels[x/zoom][y/zoom]), x, y, zoom, zoom);
+            if (!picture.get_pixel(x/zoom, y/zoom).is_empty())
+              e.graphics().fill_rectangle(solid_brush(picture.get_pixel(x/zoom, y/zoom)), x, y, zoom, zoom);
         if (zoom > 3) {
           for (int index = 0; index < panel_painting.client_size().width(); index += zoom)
             e.graphics().draw_line(pen(color::light_blue, 1), index, 0, index, panel_painting.client_size().height());
@@ -87,11 +87,11 @@ namespace examples {
       current_color = sender.back_color();
     }
 
-    static constexpr int columns = 2000;
-    static constexpr int rows = 1000;
+    static constexpr int picture_width = 2000;
+    static constexpr int picture_height = 1000;
     int zoom = 20;
     drawing::color current_color;
-    vector<vector<drawing::color>> pixels {columns, vector<drawing::color>(rows)};
+    bitmap picture {picture_width, picture_height};
 
     panel panel_colors_container;
     vector<shared_ptr<panel>> panel_colors;
