@@ -6,8 +6,8 @@
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
 #include "forms/create_params.hpp"
-#include "forms/window_color_dialog.hpp"
-#include "forms/window_font_dialog.hpp"
+#include "forms/color_dialog_flags.hpp"
+#include "forms/font_dialog_flags.hpp"
 #include "forms/window_messages.hpp"
 #include "forms/native/application.hpp"
 #include "forms/native/button.hpp"

@@ -6,21 +6,20 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("Open file dialog example");
+    text("Folder browser dialog example");
     controls().push_back(button1);
 
     button1.location({10, 10});
-    button1.text("Open...");
+    button1.text("Folder...");
     button1.click += [this] {
-      open_file_dialog dialog;
-      dialog.initial_directory(environment::get_folder_path(environment::special_folder::desktop));
-      dialog.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
+      folder_browser_dialog dialog;
+      dialog.root_folder(environment::special_folder::desktop);
       if (dialog.show_dialog() == forms::dialog_result::ok)
-        label1.text(strings::format("File = {}", dialog.file_name()));
+        label1.text(strings::format("Path = {}", dialog.selected_path()));
     };
 
     label1.parent(*this);
-    label1.text("File = ");
+    label1.text("Path = ");
     label1.auto_size(true);
     label1.location({10, 40});
   }

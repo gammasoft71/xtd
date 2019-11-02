@@ -2,7 +2,7 @@
 #include <xtd/xtd.strings>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/file_dialog.hpp>
-#include <xtd/forms/window_file_dialog.hpp>
+#include <xtd/forms/file_dialog_flags.hpp>
 #include <utility>
 #include <vector>
 #import <Cocoa/Cocoa.h>
