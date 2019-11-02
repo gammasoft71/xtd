@@ -80,7 +80,7 @@ intptr_t system_colors::button_shadow() {
 }
 
 intptr_t system_colors::control() {
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).OSXGetNSColor());
 #  else
@@ -131,7 +131,7 @@ intptr_t system_colors::control_light_light() {
 }
 
 intptr_t system_colors::control_text() {
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT).OSXGetNSColor());
 #  else
@@ -286,7 +286,7 @@ intptr_t system_colors::scroll_bar() {
 }
 
 intptr_t system_colors::window() {
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW).OSXGetNSColor());
 #  else
@@ -313,7 +313,7 @@ intptr_t system_colors::window_frame() {
 }
 
 intptr_t system_colors::window_text() {
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
+#if wxMAJOR_VERSION >= 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT).OSXGetNSColor());
 #  else
