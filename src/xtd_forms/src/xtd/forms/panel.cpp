@@ -52,10 +52,7 @@ drawing::size panel::measure_control() const {
   return drawing::size(bounds.location() + bounds.size());
 }
 
-void panel::on_handle_created(const event_args &e) {
-  this->scrollable_control::on_handle_created(e);
-  if (auto_scroll_) {
-    native::panel::virtual_size(this->handle_, measure_control());
-  }
+void panel::on_layout(const event_args& e) {
+  this->scrollable_control::on_layout(e);
+  if (auto_scroll_) native::panel::virtual_size(this->handle_, display_rectangle().size());
 }
-

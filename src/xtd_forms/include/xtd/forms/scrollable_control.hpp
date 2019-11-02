@@ -16,6 +16,8 @@ namespace xtd {
         return *this;
       }
       
+      drawing::rectangle display_rectangle() const override {return display_rectangle_;}
+      
       virtual bool hscroll() const {return this->hscroll_;}
       virtual scrollable_control& hscroll(bool hscroll) {
         if (this->hscroll_ != hscroll) {
@@ -36,11 +38,21 @@ namespace xtd {
 
     protected:
       scrollable_control() = default;
-      
+
+      void on_layout(const event_args& e) override {
+        this->control::on_layout(e);
+        if (auto_scroll_) {
+          display_rectangle_ = client_rectangle_;
+          for (auto item : this->controls())
+            display_rectangle_ = drawing::rectangle::make_union(display_rectangle_, item.get().bounds());
+        }
+      }
+
       /// @cond
       bool auto_scroll_ = false;
       bool hscroll_ = false;
       bool vscroll_ = false;
+      drawing::rectangle display_rectangle_;
       /// @endcond
     };
   }

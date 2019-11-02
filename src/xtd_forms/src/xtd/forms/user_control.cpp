@@ -50,3 +50,8 @@ drawing::size user_control::measure_control() const {
     bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
 }
+
+void user_control::on_layout(const event_args& e) {
+  this->scrollable_control::on_layout(e);
+  if (auto_scroll_) native::user_control::virtual_size(this->handle_, display_rectangle().size());
+}
