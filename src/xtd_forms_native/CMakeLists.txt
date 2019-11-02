@@ -10,9 +10,10 @@ set(XTD_INCLUDES
 
 set(XTD_FORMS_INCLUDES
   include/xtd/forms/create_params.hpp
-  include/xtd/forms/window_color_dialog.hpp
-  include/xtd/forms/window_file_dialog.hpp
-  include/xtd/forms/window_font_dialog.hpp
+  include/xtd/forms/color_dialog_flags.hpp
+  include/xtd/forms/file_dialog_flags.hpp
+  include/xtd/forms/folder_browser_dialog_flags.hpp
+  include/xtd/forms/font_dialog_flags.hpp
   include/xtd/forms/window_messages.hpp
 )
 
@@ -30,6 +31,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/cursor.hpp
   include/xtd/forms/native/cursors.hpp
   include/xtd/forms/native/file_dialog.hpp
+  include/xtd/forms/native/folder_browser_dialog.hpp
   include/xtd/forms/native/font_dialog.hpp
   include/xtd/forms/native/form.hpp
   include/xtd/forms/native/group_box.hpp

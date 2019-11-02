@@ -32,6 +32,7 @@ public:
 private:
   switch_button switch_button1;
   switch_button switch_button2;
+  switch_button switch_button3;
   label label1;
 };
 

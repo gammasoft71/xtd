@@ -1,7 +1,7 @@
 #pragma once
 #include "common_dialog.hpp"
 #include <vector>
-#include <xtd/forms/window_file_dialog.hpp>
+#include <xtd/forms/file_dialog_flags.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

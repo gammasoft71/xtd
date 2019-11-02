@@ -1,5 +1,5 @@
 #include <xtd/forms/native/file_dialog.hpp>
-#include <xtd/forms/window_file_dialog.hpp>
+#include <xtd/forms/file_dialog_flags.hpp>
 #include <wx/filedlg.h>
 
 using namespace xtd;

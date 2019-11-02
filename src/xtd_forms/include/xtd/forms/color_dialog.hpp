@@ -1,6 +1,6 @@
 #pragma once
 #include <xtd/drawing/color.hpp>
-#include <xtd/forms/window_color_dialog.hpp>
+#include <xtd/forms/color_dialog_flags.hpp>
 #include "common_dialog.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
