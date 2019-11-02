@@ -87,8 +87,8 @@ namespace examples {
       current_color = sender.back_color();
     }
 
-    static constexpr int picture_width = 2000;
-    static constexpr int picture_height = 1000;
+    static constexpr int picture_width = 5000;
+    static constexpr int picture_height = 5000;
     int zoom = 20;
     drawing::color current_color;
     bitmap picture {picture_width, picture_height};
