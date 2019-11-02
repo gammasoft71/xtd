@@ -20,6 +20,8 @@ namespace xtd {
       bitmap(int32_t width, int32_t height) : xtd::drawing::image(width, height) {}
       
       drawing::color get_pixel(int32_t x, int32_t y) const;
+      
+      void set_pixel(int32_t x, int32_t y, const drawing::color& color);
     };
   }
 }

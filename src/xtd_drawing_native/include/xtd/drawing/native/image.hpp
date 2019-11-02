@@ -35,6 +35,7 @@ namespace xtd {
         static void size(intptr_t image, int32_t& width, int32_t& height);
         static float vertical_resolution(intptr_t image);
         static void get_pixel(intptr_t image, int32_t x, int32_t y, argb& color);
+        static void set_pixel(intptr_t image, int32_t x, int32_t y, const argb& color);
       };
     }
   }
