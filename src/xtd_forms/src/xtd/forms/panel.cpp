@@ -51,3 +51,11 @@ drawing::size panel::measure_control() const {
     bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
 }
+
+void panel::on_handle_created(const event_args &e) {
+  this->scrollable_control::on_handle_created(e);
+  if (auto_scroll_) {
+    native::panel::virtual_size(this->handle_, measure_control());
+  }
+}
+

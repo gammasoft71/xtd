@@ -70,6 +70,7 @@ drawing::size picture_box::measure_control() const {
   /// @todo add locatoin
   return size;
 }
+
 void picture_box::on_handle_created(const event_args &e) {
   this->control::on_handle_created(e);
   if (this->image_.has_value())

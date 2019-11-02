@@ -7,6 +7,7 @@ namespace xtd {
       class panel {
       public:
         panel() = delete;
+        static void virtual_size(intptr_t control, const drawing::size& size);
       };
     }
   }
