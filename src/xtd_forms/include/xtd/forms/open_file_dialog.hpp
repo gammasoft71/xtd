@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/file.hpp>
 #include "file_dialog.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -9,6 +10,8 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the common_dialog class.
       open_file_dialog() = default;
+      
+      std::ifstream open_file() const {return io::file::open_read(file_name_);}
       
     private:
       bool run_file_dialog(intptr_t hwnd_owner) override;
