@@ -73,7 +73,9 @@ intptr_t image::create(const char* const* bits) {
 
 intptr_t image::create(int32_t width, int32_t height) {
   init_image_handlers();
-  return reinterpret_cast<intptr_t>(new wxImage(width, height));
+  wxImage* result = new wxImage(width, height);
+  result->SetAlpha();
+  return reinterpret_cast<intptr_t>(result);
 }
 
 void image::destroy(intptr_t image) {
