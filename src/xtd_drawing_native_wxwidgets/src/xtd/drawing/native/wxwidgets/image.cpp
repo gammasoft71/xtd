@@ -186,3 +186,8 @@ void image::get_pixel(intptr_t image, int32_t x, int32_t y, argb& color) {
     color.b = reinterpret_cast<wxImage*>(image)->GetBlue(x, y);
   }
 }
+
+void image::set_pixel(intptr_t image, int32_t x, int32_t y, const argb& color) {
+  if (reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, color.a);
+  reinterpret_cast<wxImage*>(image)->SetRGB(x, y, color.r, color.g, color.b);
+}
