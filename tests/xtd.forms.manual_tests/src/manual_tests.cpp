@@ -13,12 +13,10 @@ int main() {
   panel1.parent(form1);
   panel1.dock(dock_style::fill);
 
-  label label1;
-  label1.border_style(forms::border_style::fixed_single);
-  label1.parent(panel1);
-  label1.text("text");
-  label1.back_color(drawing::color::spring_green);
-  label1.location({350, 350});
+  panel panel2;
+  panel2.parent(panel1);
+  panel2.back_color(drawing::color::spring_green);
+  panel2.location({350, 350});
   
   cdebug << format("display_rectangle = {}", panel1.display_rectangle()) << std::endl;
   
