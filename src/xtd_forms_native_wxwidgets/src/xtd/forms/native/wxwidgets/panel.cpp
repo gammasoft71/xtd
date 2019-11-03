@@ -12,7 +12,7 @@ void panel::virtual_size(intptr_t control, const drawing::size& size) {
 #if defined(__WXOSX__)
   int32_t offset_x = -9;
 #else
-  int32_t offset_x = -10;
+  int32_t offset_x = -9;
 #endif
   int32_t offset_y = -10;
 
