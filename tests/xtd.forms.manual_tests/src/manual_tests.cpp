@@ -12,6 +12,7 @@ public:
     switch_button1.parent(*this);
     switch_button1.location({10, 10});
     //switch_button1.width(100);
+    //switch_button1.height(26);
     switch_button1.rounded(true);
   }
   

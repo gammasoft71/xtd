@@ -38,10 +38,6 @@ namespace xtd {
           this->auto_ellipsis_ = false;
         return *this;
       }
-
-      /// @brief Gets the default size of the control.
-      /// @return The default Size of the control.
-      drawing::size default_size() const override {return {75, 25};}
       
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
@@ -57,6 +53,10 @@ namespace xtd {
       /// @brief Gets the required creation parameters when the control handle is created.
       /// @return A create_params that contains the required creation parameters when the handle to the control is created.
       forms::create_params create_params() const override;
+      
+      /// @brief Gets the default size of the control.
+      /// @return The default Size of the control.
+      drawing::size default_size() const override {return {75, 25};}
 
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
