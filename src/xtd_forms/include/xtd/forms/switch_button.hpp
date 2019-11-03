@@ -71,7 +71,7 @@ namespace xtd {
 
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2, 0, e.clip_rectangle().height(), e.clip_rectangle().height(), 90, 180);
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2, 0, e.clip_rectangle().height(), e.clip_rectangle().height(), 270, 180);
-          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), e.clip_rectangle().height() / 2 + offset / 2, 0, e.clip_rectangle().width() - e.clip_rectangle().height() - offset + 1 - (e.clip_rectangle().width() - e.clip_rectangle().height()) % 2, e.clip_rectangle().height());
+          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), e.clip_rectangle().height() / 2 + offset / 2, 0, e.clip_rectangle().width() - e.clip_rectangle().height() - offset + 1 + (e.clip_rectangle().width() - e.clip_rectangle().height()) % 2, e.clip_rectangle().height());
           e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), e.clip_rectangle().height() - 4, e.clip_rectangle().height() - 4);
         } else {
           drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
