@@ -66,13 +66,13 @@ namespace xtd {
         }
 
         if (rounded_) {
-          int32_t offset = (e.clip_rectangle().width() - e.clip_rectangle().height()) / 2;
-          drawing::point slider_location(checked_ ? drawing::point(e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2 + 2, 2) : drawing::point(offset / 2 + 2, 2));
+          float offset = (e.clip_rectangle().width() - e.clip_rectangle().height()) / 2;
+          drawing::point_f slider_location(checked_ ? drawing::point_f(e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2.0f + 2.0f, 2.0f) : drawing::point(offset / 2.0f + 2.0f, 2.0f));
 
-          e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2, 0, e.clip_rectangle().height(), e.clip_rectangle().height(), 90, 180);
-          e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2, 0, e.clip_rectangle().height(), e.clip_rectangle().height(), 270, 180);
-          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), e.clip_rectangle().height() / 2 + offset / 2, 0, e.clip_rectangle().width() - e.clip_rectangle().height() - offset + 1 + (e.clip_rectangle().width() - e.clip_rectangle().height()) % 2, e.clip_rectangle().height());
-          e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), e.clip_rectangle().height() - 4, e.clip_rectangle().height() - 4);
+          e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().height()), static_cast<float>(e.clip_rectangle().height()), 90.0f, 180.0f);
+          e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().height()), static_cast<float>(e.clip_rectangle().height()), 270.0f, 180.0f);
+          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), e.clip_rectangle().height() / 2.0f + offset / 2.0f - 1, .0f, static_cast<float>(e.clip_rectangle().width() - e.clip_rectangle().height()) - offset, static_cast<float>(e.clip_rectangle().height()));
+          e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), static_cast<float>(e.clip_rectangle().height() - 4), static_cast<float>(e.clip_rectangle().height() - 4));
         } else {
           drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
           drawing::point_f slider_location(checked_ ? drawing::point_f(width() / 2.0f, 3.0f) : drawing::point_f(3.0f, 3.0f));
