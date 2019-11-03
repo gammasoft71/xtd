@@ -66,8 +66,8 @@ namespace xtd {
         }
 
         if (rounded_) {
-          float offset = (e.clip_rectangle().width() - e.clip_rectangle().height()) / 2;
-          drawing::point_f slider_location(checked_ ? drawing::point_f(e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2.0f + 2.0f, 2.0f) : drawing::point(offset / 2.0f + 2.0f, 2.0f));
+          float offset = (e.clip_rectangle().width() - e.clip_rectangle().height()) / 2.0f;
+          drawing::point_f slider_location(checked_ ? drawing::point_f(e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2.0f + 2.0f, 2.0f) : drawing::point_f(offset / 2.0f + 2.0f, 2.0f));
 
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().height()), static_cast<float>(e.clip_rectangle().height()), 90.0f, 180.0f);
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().height()), static_cast<float>(e.clip_rectangle().height()), 270.0f, 180.0f);
