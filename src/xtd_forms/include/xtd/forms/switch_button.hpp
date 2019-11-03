@@ -13,6 +13,15 @@ namespace xtd {
         return *this;
       }
       
+      virtual bool rounded() const {return rounded_;}
+      virtual switch_button& rounded(bool value) {
+        if (rounded_ != value) {
+          rounded_ = value;
+          invalidate();
+        }
+        return *this;
+      }
+      
       virtual bool checked() const {return checked_;}
       virtual switch_button& checked(bool checked) {
         if (checked_ != checked) {
@@ -56,28 +65,39 @@ namespace xtd {
           slider_color = drawing::color::average(slider_color, button_back_color, .33);
         }
 
-        drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
-        drawing::point_f slider_location(checked_ ? drawing::point_f(width() / 2.0f, 3.0f) : drawing::point_f(3.0f, 3.0f));
+        if (rounded_) {
+          int32_t offset_round = (e.clip_rectangle().width() - e.clip_rectangle().height()) / 2;
+          drawing::point slider_location_round(checked_ ? drawing::point(e.clip_rectangle().width() - e.clip_rectangle().height() - offset_round / 2, .0f) : drawing::point(offset_round / 2, 0));
 
-        ustring text = checked_ ? "ON" : "OFF";
-        drawing::size_f string_size = e.graphics().measure_string(text, font());
-        drawing::point_f string_location(checked_ ? drawing::point_f((width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2) : drawing::point_f(width() / 2 + (width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2));
+          e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset_round / 2, 0, e.clip_rectangle().height(), e.clip_rectangle().height(), 90, 180);
+          e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - e.clip_rectangle().height() - offset_round / 2, 0, e.clip_rectangle().height(), e.clip_rectangle().height(), 270, 180);
+          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), e.clip_rectangle().height() / 2 + offset_round / 2, 0, e.clip_rectangle().width() - e.clip_rectangle().height() - offset_round + 1 - (e.clip_rectangle().width() - e.clip_rectangle().height()) % 2, e.clip_rectangle().height());
+          e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location_round.x(), slider_location_round.y(), e.clip_rectangle().height(), e.clip_rectangle().height());
+        } else {
+          drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
+          drawing::point_f slider_location(checked_ ? drawing::point_f(width() / 2.0f, 3.0f) : drawing::point_f(3.0f, 3.0f));
 
-        e.graphics().clear(button_back_color);
-        e.graphics().draw_string(text, font(), drawing::solid_brush(text_color), string_location);
-        e.graphics().draw_line(drawing::pen(drawing::color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());
-        e.graphics().draw_line(drawing::pen(drawing::color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
-        e.graphics().draw_line(drawing::pen(drawing::color::lighter(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
-        e.graphics().draw_line(drawing::pen(drawing::color::lighter(button_back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
-        
-        e.graphics().fill_rectangle(drawing::solid_brush(slider_color), {slider_location, slider_size});
-        e.graphics().draw_line(drawing::pen(drawing::color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
-        e.graphics().draw_line(drawing::pen(drawing::color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
-        e.graphics().draw_line(drawing::pen(drawing::color::darker(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
-        e.graphics().draw_line(drawing::pen(drawing::color::darker(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+          ustring text = checked_ ? "ON" : "OFF";
+          drawing::size_f string_size = e.graphics().measure_string(text, font());
+          drawing::point_f string_location(checked_ ? drawing::point_f((width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2) : drawing::point_f(width() / 2 + (width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2));
+
+          e.graphics().clear(button_back_color);
+          e.graphics().draw_string(text, font(), drawing::solid_brush(text_color), string_location);
+          e.graphics().draw_line(drawing::pen(drawing::color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());
+          e.graphics().draw_line(drawing::pen(drawing::color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
+          e.graphics().draw_line(drawing::pen(drawing::color::lighter(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
+          e.graphics().draw_line(drawing::pen(drawing::color::lighter(button_back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
+          
+          e.graphics().fill_rectangle(drawing::solid_brush(slider_color), {slider_location, slider_size});
+          e.graphics().draw_line(drawing::pen(drawing::color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
+          e.graphics().draw_line(drawing::pen(drawing::color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
+          e.graphics().draw_line(drawing::pen(drawing::color::darker(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+          e.graphics().draw_line(drawing::pen(drawing::color::darker(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+        }
       }
       
     private:
+      bool rounded_ = false;
       bool auto_check_ = true;
       bool checked_ = false;
     };
