@@ -10,7 +10,7 @@ void panel::virtual_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
 
   int32_t offset_x = -9;
-  int32_t offset_y = -10;
+  int32_t offset_y = -9;
   
   static_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->control())->SetVirtualSize(wxSize(size.width() + offset_x, size.height() + offset_y));
   static_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollRate(10, 10);
