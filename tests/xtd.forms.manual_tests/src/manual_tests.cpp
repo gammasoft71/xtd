@@ -14,6 +14,7 @@ int main() {
   panel1.dock(dock_style::fill);
 
   label label1;
+  label1.border_style(forms::border_style::fixed_single);
   label1.parent(panel1);
   label1.text("text");
   label1.back_color(drawing::color::spring_green);
