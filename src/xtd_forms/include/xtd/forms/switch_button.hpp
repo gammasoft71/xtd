@@ -71,6 +71,7 @@ namespace xtd {
 
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().height()), static_cast<float>(e.clip_rectangle().height()), 90.0f, 180.0f);
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().height()), static_cast<float>(e.clip_rectangle().height()), 270.0f, 180.0f);
+          e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - e.clip_rectangle().height() - offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().height()), static_cast<float>(e.clip_rectangle().height()), 270.0f, 180.0f);
           e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), e.clip_rectangle().height() / 2.0f + offset / 2.0f - 1, .0f, static_cast<float>(e.clip_rectangle().width() - e.clip_rectangle().height()) - offset + 0.5f, static_cast<float>(e.clip_rectangle().height()));
           e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), static_cast<float>(e.clip_rectangle().height() - 4), static_cast<float>(e.clip_rectangle().height() - 4));
         } else {
