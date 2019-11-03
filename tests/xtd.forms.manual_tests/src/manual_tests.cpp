@@ -15,12 +15,14 @@ int main() {
   tab_page page1;
   page1.text("Page 1");
   page1.auto_scroll(true);
+  page1.auto_scroll_margin({0, -10});
   page1.parent(tab_control1);
   
-  button button;
-  button.parent(page1);
-  button.text("Click me");
-  button.location({350, 350});
+  label label1;
+  label1.parent(page1);
+  label1.text("text");
+  label1.back_color(drawing::color::spring_green);
+  label1.location({350, 350});
    
   application::run(form1);
 }

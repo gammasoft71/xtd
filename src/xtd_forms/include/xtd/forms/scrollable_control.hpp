@@ -15,7 +15,16 @@ namespace xtd {
         }
         return *this;
       }
-      
+
+      drawing::size auto_scroll_margin() const {return auto_scroll_margin_;}
+      scrollable_control& auto_scroll_margin(const drawing::size& value) {
+        if (auto_scroll_margin_ != value) {
+          auto_scroll_margin_ = value;
+          on_layout(event_args::empty);
+        }
+        return *this;
+      }
+
       drawing::rectangle display_rectangle() const override {return display_rectangle_;}
       
       virtual bool hscroll() const {return this->hscroll_;}
@@ -45,6 +54,8 @@ namespace xtd {
           display_rectangle_ = client_rectangle_;
           for (auto item : this->controls())
             display_rectangle_ = drawing::rectangle::make_union(display_rectangle_, item.get().bounds());
+          display_rectangle_.width(display_rectangle_.width() + auto_scroll_margin_.width());
+          display_rectangle_.height(display_rectangle_.height() + auto_scroll_margin_.height());
         }
       }
 
@@ -53,6 +64,7 @@ namespace xtd {
       bool hscroll_ = false;
       bool vscroll_ = false;
       drawing::rectangle display_rectangle_;
+      drawing::size auto_scroll_margin_;
       /// @endcond
     };
   }
