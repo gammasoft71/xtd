@@ -1,25 +1,25 @@
 #include <xtd/xtd.forms>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
-class form1 : public form {
-public:
-  form1() {
-    text("Switch button example");
-
-    switch_button1.parent(*this);
-    switch_button1.location({10, 10});
-    //switch_button1.width(100);
-    //switch_button1.height(26);
-    switch_button1.rounded(true);
-  }
-  
-private:
-  switch_button switch_button1;
-};
-
 int main() {
-  application::run(form1());
+  form form1;
+  form1.text("Manual tests");
+  form1.client_size({300, 300});
+
+  panel panel1;
+  panel1.auto_scroll(true);
+  panel1.parent(form1);
+  panel1.dock(dock_style::fill);
+
+  label label1;
+  label1.parent(panel1);
+  label1.text("text");
+  label1.back_color(drawing::color::spring_green);
+  label1.location({350, 350});
+  
+  cdebug << format("display_rectangle = {}", panel1.display_rectangle()) << std::endl;
+  
+  application::run(form1);
 }
