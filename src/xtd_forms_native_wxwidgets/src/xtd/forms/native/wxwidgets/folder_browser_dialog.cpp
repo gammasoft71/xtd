@@ -2,6 +2,7 @@
 #include <xtd/forms/native/folder_browser_dialog.hpp>
 #include <xtd/forms/folder_browser_dialog_flags.hpp>
 #include <wx/dirdlg.h>
+#include <wx/filefn.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;
