@@ -15,7 +15,6 @@ int main() {
   tab_page page1;
   page1.text("Page 1");
   page1.auto_scroll(true);
-  page1.auto_scroll_margin({0, -10});
   page1.parent(tab_control1);
   
   label label1;
