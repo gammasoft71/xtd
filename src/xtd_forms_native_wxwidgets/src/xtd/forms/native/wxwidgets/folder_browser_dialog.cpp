@@ -7,19 +7,7 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-#if !defined(__WXWIN32__)
-bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
-  ustring path = environment::get_folder_path(root_folder);
-  if (!selected_path.empty() && wxDirExists(selected_path.str())) path = selected_path;
-
-  long wx_style = wxDD_DEFAULT_STYLE;
-  
-  wxDirDialog dialog(reinterpret_cast<wxWindow*>(hwnd), description.str(), path.str(), wx_style);
-  if (dialog.ShowModal() != wxID_OK) return false;
-  selected_path = dialog.GetPath().ToStdString();
-  return true;
-}
-#else
+#if defined(__WXMSW__)
 #include <windows.h>
 #include <CommCtrl.h>
 #include <ShlObj.h>
@@ -43,6 +31,18 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
   SHGetPathFromIDList(result, path);
 
   selected_path = path;
+  return true;
+}
+#else
+bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
+  ustring path = environment::get_folder_path(root_folder);
+  if (!selected_path.empty() && wxDirExists(selected_path.str())) path = selected_path;
+
+  long wx_style = wxDD_DEFAULT_STYLE;
+  
+  wxDirDialog dialog(reinterpret_cast<wxWindow*>(hwnd), description.str(), path.str(), wx_style);
+  if (dialog.ShowModal() != wxID_OK) return false;
+  selected_path = dialog.GetPath().ToStdString();
   return true;
 }
 #endif
