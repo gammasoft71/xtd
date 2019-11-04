@@ -1,10 +1,10 @@
-# form2
+# auto_scroll
 
-represents a window or dialog box that makes up an application's user interface.
+demonstrates the use of [xtd::forms::panel](../../../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms/scrollable_control::auto_scroll](../../../src/xtd_forms/include/xtd/forms/scrollable_control.hpp).
 
 # Sources
 
-[form2.cpp](form2.cpp)
+[auto_scroll.cpp](auto_scroll.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,16 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/form2_w.png)
+![Screenshot](../../../docs/pictures/examples/auto_scroll_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/form2_m.png)
+![Screenshot](../../../docs/pictures/examples/auto_scroll_m.png)
 
-![Screenshot](../../../docs/pictures/examples/form2_md.png)
+![Screenshot](../../../docs/pictures/examples/auto_scroll_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/form2_g.png)
+![Screenshot](../../../docs/pictures/examples/auto_scroll_g.png)
 
-![Screenshot](../../../docs/pictures/examples/form2_gd.png)
+![Screenshot](../../../docs/pictures/examples/auto_scroll_gd.png)
