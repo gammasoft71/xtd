@@ -7,22 +7,17 @@ using namespace xtd::forms;
 int main() {
   form form_main;
   form_main.text("Manual tests");
-    
-  panel panel_main;
-  panel_main.parent(form_main);
-  panel_main.auto_scroll(true);
-  panel_main.dock(dock_style::fill);
+  form_main.back_color(color::spring_green);
 
-  int panel_count = (int)known_color::yellow_green - (int)known_color::alice_blue;
-  known_color panel_color = (known_color)((int)known_color::alice_blue + panel_count - 1);
-  std::vector<panel> panels(panel_count);
-  for (panel& panel : panels) {
-    panel.parent(panel_main);
-    panel.back_color(color::from_known_color(panel_color));
-    panel.height(30);
-    panel.dock(dock_style::top);
-    panel_color = (known_color)((int)panel_color - 1);
-  }
+  combo_box combo_box1;
+  combo_box1.location({10, 10});
+  combo_box1.drop_down_style(combo_box_style::simple);
+  combo_box1.height(120);
+  combo_box1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
+  combo_box1.selected_index(2);
+  combo_box1.parent(form_main);
 
+  cdebug << format("height = {}", combo_box1.height()) << std::endl;
+  
   application::run(form_main);
 }
