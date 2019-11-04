@@ -87,6 +87,12 @@ combo_box& combo_box::selected_item(const item& selected_item) {
   return *this;
 }
 
+control& combo_box::size(const drawing::size& size) {
+  list_control::size(size);
+  recreate_handle();
+  return *this;
+}
+
 combo_box& combo_box::sorted(bool sorted) {
   if (this->sorted_ != sorted) {
     this->sorted_ = sorted;
