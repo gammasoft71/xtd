@@ -50,7 +50,7 @@ void graphics::draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetBrush(*wxTRANSPARENT_BRUSH);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(*reinterpret_cast<wxPen*>(pen));
 #if defined(__WXGTK__)
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipticArc(x - 1, y - 1, width, height, start_angle, start_angle + sweep_angle);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipticArc(x - 1, y - 1, width + 1, height + 1, start_angle, start_angle + sweep_angle);
 #else
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
 #endif
@@ -71,7 +71,7 @@ void graphics::draw_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, in
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetBrush(*wxTRANSPARENT_BRUSH);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(*reinterpret_cast<wxPen*>(pen));
 #if defined(__WXGTK__)
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipse(x - 1, y - 1, width, height);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipse(x - 1, y - 1, width + 1, height + 1);
 #else
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipse(x, y, width, height);
 #endif
@@ -123,7 +123,7 @@ void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetBrush(*reinterpret_cast<wxBrush*>(brush));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(*wxTRANSPARENT_PEN);
 #if defined(__WXGTK__)
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipse(x - 1, y - 1, width, height);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipse(x - 1, y - 1, width + 1, height + 1);
 #else
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipse(x, y, width, height);
 #endif
@@ -135,7 +135,7 @@ void graphics::fill_pie(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int3
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetBrush(*reinterpret_cast<wxBrush*>(brush));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(*wxTRANSPARENT_PEN);
 #if defined(__WXGTK__)
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipticArc(x - 1, y - 1, width, height, start_angle, start_angle + sweep_angle);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipticArc(x - 1, y - 1, width + 1, height + 1, start_angle, start_angle + sweep_angle);
 #else
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawEllipticArc(x, y, width, height, start_angle, start_angle + sweep_angle);
 #endif
