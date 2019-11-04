@@ -10,9 +10,5 @@ void panel::virtual_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
 
   reinterpret_cast<control_handler*>(control)->control()->SetVirtualSize(wxSize(size.width(), size.height()));
-  if (dynamic_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->control())) {
-    wxSize client_size = reinterpret_cast<control_handler*>(control)->control()->GetClientSize();
-    //static_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollRate(10, 10);
-    static_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollRate(client_size.GetWidth(), client_size.GetHeight());
-  }
+  if (dynamic_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->control())) static_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->control())->SetScrollRate(10, 10);
 }
