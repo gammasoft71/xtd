@@ -233,6 +233,7 @@ namespace xtd {
     universal_basic_string operator=(const char* str) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(str);}
     universal_basic_string operator=(const wchar_t* str) {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::assign(str);}
     universal_basic_string operator=(const std::initializer_list<char>& il) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(il);}
+    universal_basic_string operator=(const std::initializer_list<wchar_t>& il) {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::assign(il);}
     template<typename T>
     universal_basic_string operator=(const T& t) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(t);}
 
