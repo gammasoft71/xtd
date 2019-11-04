@@ -13,12 +13,17 @@ int main() {
   //panel1.auto_scroll_margin({10, 10});
   panel1.parent(form1);
   panel1.dock(dock_style::fill);
-
+  
   panel panel2;
   panel2.parent(panel1);
-  panel2.back_color(drawing::color::spring_green);
-  panel2.location({350, 350});
+  panel2.back_color(drawing::color::red);
+  panel2.location({10, 10});
   
+  panel panel3;
+  panel3.parent(panel1);
+  panel3.back_color(drawing::color::spring_green);
+  panel3.location({350, 350});
+
   cdebug << format("display_rectangle = {}", panel1.display_rectangle()) << std::endl;
   
   application::run(form1);
