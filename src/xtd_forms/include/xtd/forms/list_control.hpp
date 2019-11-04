@@ -41,10 +41,6 @@ namespace xtd {
    
       using item_collection = layout::arranged_element_collection<item>;
 
-      virtual drawing::color default_back_color() const override {return drawing::system_colors::window();}
-      
-      virtual drawing::color default_fore_color() const override {return drawing::system_colors::window_text();}
-      
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
       virtual size_t selected_index() const {return this->selected_index_;}
@@ -62,11 +58,15 @@ namespace xtd {
       event<list_control, event_handler<control&>> value_member_changed;
 
     protected:
-      list_control() = default;
+      list_control();
   
       /// @brief Gets a value indicating whether the list enables selection of list items.
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
       virtual bool allow_selection() {return true;}
+      
+      virtual drawing::color default_back_color() const override {return drawing::system_colors::window();}
+      
+      virtual drawing::color default_fore_color() const override {return drawing::system_colors::window_text();}
       
       virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
 
