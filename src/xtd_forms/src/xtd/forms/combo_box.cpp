@@ -87,12 +87,6 @@ combo_box& combo_box::selected_item(const item& selected_item) {
   return *this;
 }
 
-control& combo_box::size(const drawing::size& size) {
-  list_control::size(size);
-  recreate_handle();
-  return *this;
-}
-
 combo_box& combo_box::sorted(bool sorted) {
   if (this->sorted_ != sorted) {
     this->sorted_ = sorted;
@@ -141,6 +135,20 @@ void combo_box::on_handle_created(const event_args& e) {
 void combo_box::on_selected_value_changed(const event_args& e) {
   this->list_control::text(this->selected_item_.value());
   this->list_control::on_selected_value_changed(e);
+}
+
+void combo_box::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
+  drawing::size current_size = size_;
+  list_control::set_bounds_core(x, y, width, height, specified);
+  if (size_ != current_size)
+    recreate_handle();
+}
+
+void combo_box::set_client_size_core(int32_t width, int32_t height) {
+  drawing::size current_size = size_;
+  list_control::set_client_size_core(width, height);
+  if (size_ != current_size)
+    recreate_handle();
 }
 
 void combo_box::wnd_proc(message& message) {
