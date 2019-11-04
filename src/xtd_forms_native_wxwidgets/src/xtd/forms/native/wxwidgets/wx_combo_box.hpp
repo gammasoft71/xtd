@@ -12,7 +12,12 @@ namespace xtd {
       public:
         wx_combo_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxComboBox>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0, nullptr, style_to_wx_style(create_params.style(), create_params.ex_style()));
+#if defined(__WXMSW__)
+          int32_t height = (create_params.style() & CBS_SIMPLE) != CBS_SIMPLE && create_params.height() != 23 ? 23 : create_params.height();
+#else
+          int32_t height = 23;
+#endif
+          this->control_handler::create<wxComboBox>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), 0, nullptr, style_to_wx_style(create_params.style(), create_params.ex_style()));
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
