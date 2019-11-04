@@ -20,7 +20,7 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
 
   browser_info.hwndOwner = reinterpret_cast<wxWindow*>(hwnd)->GetHandle();
   PIDLIST_ABSOLUTE root_path;
-  if (root_folder != environment::special_folder::desktop && ustring(SHParseDisplayName(environment::get_folder_path(root_folder)).wc_str(), nullptr, &root_path, SFGAO_FILESYSTEM, nullptr) == S_OK)
+  if (root_folder != environment::special_folder::desktop && SHParseDisplayName(ustring(environment::get_folder_path(root_folder)).wc_str(), nullptr, &root_path, SFGAO_FILESYSTEM, nullptr) == S_OK)
     browser_info.pidlRoot = root_path;
   browser_info.lParam = reinterpret_cast<LPARAM>(selected_path.wc_str());
   browser_info.lpszTitle = description.wc_str();
