@@ -7,7 +7,8 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options_) {
+#if !defined(__WXWIN32__)
+bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
   ustring path = environment::get_folder_path(root_folder);
   if (!selected_path.empty() && wxDirExists(selected_path.str())) path = selected_path;
 
@@ -18,3 +19,30 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
   selected_path = dialog.GetPath().ToStdString();
   return true;
 }
+#else
+#include <windows.h>
+#include <CommCtrl.h>
+#include <ShlObj.h>
+
+bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description, environment::special_folder root_folder, ustring& selected_path, size_t options) {
+  CoInitializeEx(null, COINIT_APARTMENTTHREADED);
+
+  BROWSEINFO browser_info;
+  ZeroMemory(&browser_info, sizeof(browser_info));
+
+  browser_info.hwndOwner = reinterpret_cast<wxWindow*>(hwnd)->GetHandle();
+  PIDLIST_ABSOLUTE root_path;
+  if (root_folder != environment::special_folder::desktop && SHParseDisplayName(environment::get_folder_path(root_folder).w_str(), nullptr, &root_path, SFGAO_FILESYSTEM, nullptr) == S_OK)
+    browser_info.pidlRoot = root_path;
+  browser_info.lParam = reinterpret_cast<LPARAM>(selected_path().w_str());
+  browser_info.lpszTitle = description.w_str();
+  browser_info.ulFlags = options;
+
+  if (!SHBrowseForFolder(&browser_info)) return false;
+  wchar_t path[MAX_PATH];
+  SHGetPathFromIDList(result, path);
+
+  selected_path = path;
+  return true;
+}
+#endif
