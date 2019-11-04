@@ -9,7 +9,7 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-#if defined(_WIN32)
+#if defined(__WXMSW__)
 int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
   return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 }
