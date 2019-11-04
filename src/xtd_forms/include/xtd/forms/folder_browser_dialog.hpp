@@ -51,7 +51,7 @@ namespace xtd {
       ustring description_;
       environment::special_folder root_folder_ = environment::special_folder::desktop;
       ustring selected_path_;
-      size_t options_ = BIF_USENEWUI;
+      size_t options_ =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
     };
   }
 }
