@@ -33,7 +33,7 @@ forms::create_params panel::create_params() const {
   
   if (this->auto_scroll_) {
     create_params.style(create_params.style() | WS_HSCROLL | WS_VSCROLL);
-    create_params.style(create_params.ex_style() | WS_EX_AUTOSCROLL);
+    create_params.ex_style(create_params.ex_style() | WS_EX_AUTOSCROLL);
   } else {
     if (this->hscroll_) create_params.style(create_params.style() | WS_HSCROLL);
     if (this->vscroll_) create_params.style(create_params.style() | WS_VSCROLL);

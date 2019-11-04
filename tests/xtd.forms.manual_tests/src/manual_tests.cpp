@@ -1,30 +1,28 @@
 #include <xtd/xtd.forms>
 
 using namespace xtd;
+using namespace xtd::drawing;
 using namespace xtd::forms;
 
 int main() {
-  form form1;
-  form1.text("Manual tests");
-  form1.client_size({300, 300});
+  form form_main;
+  form_main.text("Manual tests");
+    
+  panel panel_main;
+  panel_main.parent(form_main);
+  panel_main.auto_scroll(true);
+  panel_main.dock(dock_style::fill);
 
-  panel panel1;
-  panel1.auto_scroll(true);
-  //panel1.auto_scroll_margin({10, 10});
-  panel1.parent(form1);
-  panel1.dock(dock_style::fill);
-  
-  panel panel2;
-  panel2.parent(panel1);
-  panel2.back_color(drawing::color::red);
-  panel2.location({10, 10});
-  
-  panel panel3;
-  panel3.parent(panel1);
-  panel3.back_color(drawing::color::spring_green);
-  panel3.location({350, 350});
+  int panel_count = (int)known_color::yellow_green - (int)known_color::alice_blue;
+  known_color panel_color = (known_color)((int)known_color::alice_blue + panel_count - 1);
+  std::vector<panel> panels(panel_count);
+  for (panel& panel : panels) {
+    panel.parent(panel_main);
+    panel.back_color(color::from_known_color(panel_color));
+    panel.height(30);
+    panel.dock(dock_style::top);
+    panel_color = (known_color)((int)panel_color - 1);
+  }
 
-  cdebug << format("display_rectangle = {}", panel1.display_rectangle()) << std::endl;
-  
-  application::run(form1);
+  application::run(form_main);
 }
