@@ -229,21 +229,26 @@ namespace xtd {
 
     universal_basic_string operator=(const universal_basic_string& str) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(str);}
     universal_basic_string operator=(char ch) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(ch);}
+    universal_basic_string operator=(wchar_t ch) {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::assign(ch);}
     universal_basic_string operator=(const char* str) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(str);}
+    universal_basic_string operator=(const wchar_t* str) {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::assign(str);}
     universal_basic_string operator=(const std::initializer_list<char>& il) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(il);}
     template<typename T>
     universal_basic_string operator=(const T& t) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(t);}
 
     universal_basic_string operator+(const universal_basic_string& str) const {return this->std::basic_string<char, char_traits_t, allocator_t>::operator+(str);;}
     universal_basic_string operator+(char ch) const {return this->std::basic_string<char, char_traits_t, allocator_t>::operator+(ch);}
+    universal_basic_string operator+(wchar_t ch) const {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::operator+(ch);}
     universal_basic_string operator+(const char* str) const {return this->std::basic_string<char, char_traits_t, allocator_t>::operator+(str);}
+    universal_basic_string operator+(const wchar_t* str) const {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::operator+(str);}
     universal_basic_string operator+(const std::initializer_list<char>& il) const {return this->std::basic_string<char, char_traits_t, allocator_t>::operator+(il);}
     template<typename T>
     universal_basic_string operator+(const T& t) const {this->std::basic_string<char, char_traits_t, allocator_t>::operator+=(t); return *this;}
 
     universal_basic_string& operator+=(const universal_basic_string& str) {this->std::basic_string<char, char_traits_t, allocator_t>::operator+=(str); return *this;}
     universal_basic_string& operator+=(char ch) {this->std::basic_string<char, char_traits_t, allocator_t>::operator+=(ch); return *this;}
-    universal_basic_string& operator+=(const char* str) {this->std::basic_string<char, char_traits_t, allocator_t>::operator+=(str); return *this;}
+    universal_basic_string& operator+=(wchar_t ch) {this->std::basic_string<wchar_t, char_traits_t, allocator_t>::operator+=(ch); return *this;}
+    universal_basic_string& operator+=(const wchar_t* str) {this->std::basic_string<wchar_t, char_traits_t, allocator_t>::operator+=(str); return *this;}
     universal_basic_string& operator+=(const std::initializer_list<char>& il) {this->std::basic_string<char, char_traits_t, allocator_t>::operator+=(il); return *this;}
     template<typename T>
     universal_basic_string& operator+=(const T& t) {this->std::basic_string<char, char_traits_t, allocator_t>::operator+=(t); return *this;}
