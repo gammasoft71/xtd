@@ -42,9 +42,6 @@ namespace xtd {
       virtual bool sorted() const {return this->sorted_;}
       virtual combo_box& sorted(bool sorted);
       
-      using list_control::size;
-      control& size(const drawing::size& size) override;
-      
       using list_control::text;
       control& text(const ustring& text) override {return *this;}
       
@@ -64,6 +61,10 @@ namespace xtd {
 
       void on_selected_value_changed(const event_args& e) override;
 
+      void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override;
+
+      void set_client_size_core(int32_t width, int32_t height) override;
+      
       void wnd_proc(message& message) override;
       
       virtual void wm_reflect_command(message& message);
@@ -80,6 +81,7 @@ namespace xtd {
       item_collection items_;
       item selected_item_;
       bool sorted_ = false;
+      bool user_set_size_ = false;
     };
   }
 }
