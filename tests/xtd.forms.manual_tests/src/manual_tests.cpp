@@ -10,6 +10,7 @@ int main() {
 
   panel panel1;
   panel1.auto_scroll(true);
+  //panel1.auto_scroll_margin({10, 10});
   panel1.parent(form1);
   panel1.dock(dock_style::fill);
 
