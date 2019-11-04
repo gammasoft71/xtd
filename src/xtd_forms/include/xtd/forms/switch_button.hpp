@@ -72,7 +72,7 @@ namespace xtd {
 
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), offset / 2.0f, .0f, static_cast<float>(height), static_cast<float>(height), 90.0f, 180.0f);
           e.graphics().fill_pie(drawing::solid_brush(button_back_color), e.clip_rectangle().width() - height - offset / 2.0f - 0.5f, .0f, static_cast<float>(height), static_cast<float>(height), 270.0f, 180.0f);
-          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), height / 2.0f + offset / 2.0f - 1, .0f, static_cast<float>(e.clip_rectangle().width() - height) - offset + 1.0f, static_cast<float>(height));
+          e.graphics().fill_rectangle(drawing::solid_brush(button_back_color), height / 2.0f + offset / 2.0f, .0f, static_cast<float>(e.clip_rectangle().width() - height) - offset, static_cast<float>(height));
           e.graphics().fill_ellipse(drawing::solid_brush(slider_color), slider_location.x(), slider_location.y(), static_cast<float>(height - 4), static_cast<float>(height - 4));
         } else {
           drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
