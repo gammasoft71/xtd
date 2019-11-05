@@ -48,6 +48,8 @@ namespace xtd {
     protected:
       scrollable_control() = default;
 
+      forms::create_params create_params() const override;
+
       void on_layout(const event_args& e) override {
         this->control::on_layout(e);
         if (auto_scroll_) {

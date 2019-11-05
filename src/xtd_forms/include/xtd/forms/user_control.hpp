@@ -21,8 +21,6 @@ namespace xtd {
     protected:
       forms::create_params create_params() const override;
       
-      drawing::size measure_control() const override;
-      
       void on_layout(const event_args& e) override;
 
       forms::border_style border_style_ = forms::border_style::none;

@@ -1,4 +1,5 @@
 #pragma once
+#include "border_style.hpp"
 #include "container_control.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -8,8 +9,15 @@ namespace xtd {
     class up_down_base : public container_control {
     public:      
       
+      virtual forms::border_style border_style() const {return border_style_;}
+      virtual up_down_base& border_style(forms::border_style value);
+
     protected:
-      up_down_base() = default;
+      up_down_base();
+
+      forms::create_params create_params() const override;
+
+      forms::border_style border_style_;
     };
   }
 }
