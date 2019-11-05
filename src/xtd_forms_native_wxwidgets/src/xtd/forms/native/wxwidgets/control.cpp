@@ -12,6 +12,7 @@
 #include "wx_checked_list_box.hpp"
 #include "wx_combo_box.hpp"
 #include "wx_control.hpp"
+#include "wx_domain_up_down.hpp"
 #include "wx_form.hpp"
 #include "wx_group_box.hpp"
 #include "wx_label.hpp"
@@ -142,6 +143,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
   if (create_params.class_name() == "checkedlistbox") return reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params));
   if (create_params.class_name() == "combobox") return reinterpret_cast<intptr_t>(new wx_combo_box(create_params));
+  if (create_params.class_name() == "domainupdown") return reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params));
   if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
   if (create_params.class_name() == "groupbox") return reinterpret_cast<intptr_t>(new wx_group_box(create_params));
   if (create_params.class_name() == "label") return reinterpret_cast<intptr_t>(new wx_label(create_params));

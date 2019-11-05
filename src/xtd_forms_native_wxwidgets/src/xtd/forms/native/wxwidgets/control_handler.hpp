@@ -520,7 +520,7 @@ namespace xtd {
       template<typename control_t>
       inline void control_wrapper<control_t>::process_text_event(wxEvent& event) {
         if (event.GetEventType() == wxEVT_TEXT) {
-          if (event.GetEventObject() == this) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SETTEXT, 0, reinterpret_cast<intptr_t>(static_cast<wxCommandEvent&>(event).GetString().c_str().AsChar()), reinterpret_cast<intptr_t>(&event));
+          if (event.GetId() == this->GetId()) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), WM_SETTEXT, 0, reinterpret_cast<intptr_t>(static_cast<wxCommandEvent&>(event).GetString().c_str().AsChar()), reinterpret_cast<intptr_t>(&event));
         } else
           this->def_process_event(event);
       }
