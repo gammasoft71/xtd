@@ -331,6 +331,10 @@ namespace xtd {
           return result;
         }
         
+        virtual void SetClientSize(int32_t width, int32_t height) {
+          this->control_->SetClientSize(width, height);
+        }
+        
         virtual void SetSize(int32_t width, int32_t height) {
           this->control_->SetSize(width, height);
         }
