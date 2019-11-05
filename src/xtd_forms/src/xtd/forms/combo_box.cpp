@@ -116,6 +116,9 @@ forms::create_params combo_box::create_params() const {
     case combo_box_style::drop_down: create_params.style(create_params.style() | CBS_DROPDOWN); break;
     case combo_box_style::simple: create_params.style(create_params.style() | CBS_SIMPLE); break;
   }
+
+  if (this->drop_down_style_ == combo_box_style::simple && this->size_.height() == this->default_size().height())
+    create_params.height(create_params.height() + this->drop_down_height_);
   
   return create_params;
 }
