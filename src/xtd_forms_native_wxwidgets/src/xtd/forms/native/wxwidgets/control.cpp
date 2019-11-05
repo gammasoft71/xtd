@@ -225,7 +225,7 @@ void control::client_size(intptr_t control, const drawing::size& size) {
   if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
     SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {size.width(), size.height()});
   else
-    reinterpret_cast<control_handler*>(control)->control()->SetClientSize(size.width(), size.height());
+    reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
   
   #if defined(__WXOSX__)
   if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()))
