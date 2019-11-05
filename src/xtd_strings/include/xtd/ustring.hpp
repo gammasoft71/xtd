@@ -227,15 +227,14 @@ namespace xtd {
     const_iterator rend() const {this->std::basic_string<char, char_traits_t, allocator_t>::rend();}
     const_iterator crend() const {this->std::basic_string<char, char_traits_t, allocator_t>::crend();}
 
-    universal_basic_string operator=(const universal_basic_string& str) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(str);}
-    universal_basic_string operator=(char ch) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(ch);}
-    universal_basic_string operator=(wchar_t ch) {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::assign(ch);}
-    universal_basic_string operator=(const char* str) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(str);}
-    universal_basic_string operator=(const wchar_t* str) {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::assign(str);}
-    universal_basic_string operator=(const std::initializer_list<char>& il) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(il);}
-    universal_basic_string operator=(const std::initializer_list<wchar_t>& il) {return this->std::basic_string<wchar_t, char_traits_t, allocator_t>::assign(il);}
+    universal_basic_string& operator=(const universal_basic_string& str) {this->std::basic_string<char, char_traits_t, allocator_t>::assign(str); return *this;}
+    universal_basic_string& operator=(char ch) {this->std::basic_string<char, char_traits_t, allocator_t>::assign(ch); return *this;}
+    universal_basic_string& operator=(const char* str) {*this = universal_basic_string(str); return *this;}
+    universal_basic_string& operator=(const wchar_t* str) {*this = universal_basic_string(str); return *this;}
+    universal_basic_string& operator=(const std::initializer_list<char>& il) {*this = universal_basic_string(str); return *this;}
+    universal_basic_string& operator=(const std::initializer_list<wchar_t>& il) {*this = universal_basic_string(str); return *this;}
     template<typename T>
-    universal_basic_string operator=(const T& t) {return this->std::basic_string<char, char_traits_t, allocator_t>::assign(t);}
+    universal_basic_string& operator=(const T& t) {this->std::basic_string<char, char_traits_t, allocator_t>::assign(t); return *this;}
 
     universal_basic_string operator+(const universal_basic_string& str) const {return this->std::basic_string<char, char_traits_t, allocator_t>::operator+(str);;}
     universal_basic_string operator+(char ch) const {return this->std::basic_string<char, char_traits_t, allocator_t>::operator+(ch);}
