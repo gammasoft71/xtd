@@ -25,7 +25,6 @@ namespace examples {
       combo_box3.drop_down_style(combo_box_style::simple);
       combo_box3.items().push_back_range({"Item1", "Item2", "Item3", "Item4"});
       combo_box3.selected_index(2);
-      combo_box3.height(120);
       combo_box3.parent(*this);
     }
     
