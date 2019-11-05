@@ -1,4 +1,4 @@
-#if defined(__APPLE__)
+#if defined(__WXOSX__)
 #include <xtd/xtd.strings>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/file_dialog.hpp>
