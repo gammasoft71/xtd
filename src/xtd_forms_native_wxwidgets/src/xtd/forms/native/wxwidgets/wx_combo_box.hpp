@@ -13,7 +13,7 @@ namespace xtd {
         wx_combo_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
 #if defined(__WXMSW__)
-          int32_t height = (create_params.style() & CBS_SIMPLE) == CBS_SIMPLE) ? 165 : 23;
+          int32_t height = (create_params.style() & CBS_SIMPLE) == CBS_SIMPLE ? 165 : 23;
 #elif defined(__WXGTK__)
           int32_t height = 32;
 #else
