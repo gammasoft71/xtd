@@ -30,7 +30,7 @@
 * **masked_text_box** uses a mask to distinguish between proper and improper user input.
 * **month_calendar** specifies values for navigating among accessible objects.
 * **notify_icon** specifies a component that creates an icon in the notification area. This class cannot be inherited.
-* **numeric_up_down** represents a Windows spin box (also known as an up-down control) that displays numeric values.
+* [numeric_up_down](controls/numeric_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays numeric values.
 * [picture_box](controls/picture_box/README.md) represents a Windows picture box control for displaying an image.
 * [progress_bar](controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](../src/xtd_forms/include/xtd/forms/progress_bar.hpp) control.
 * [radio_button](controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) controls.

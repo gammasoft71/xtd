@@ -27,6 +27,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/label.cpp
   src/xtd/forms/native/wxwidgets/list_box.cpp
   src/xtd/forms/native/wxwidgets/message_box.cpp
+  src/xtd/forms/native/wxwidgets/numeric_up_down.cpp
   src/xtd/forms/native/wxwidgets/panel.cpp
   src/xtd/forms/native/wxwidgets/picture_box.cpp
   src/xtd/forms/native/wxwidgets/progress_bar.cpp
@@ -48,6 +49,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_group_box.hpp
   src/xtd/forms/native/wxwidgets/wx_label.hpp
   src/xtd/forms/native/wxwidgets/wx_list_box.hpp
+  src/xtd/forms/native/wxwidgets/wx_numeric_up_down.hpp
   src/xtd/forms/native/wxwidgets/wx_panel.hpp
   src/xtd/forms/native/wxwidgets/wx_picture_box.hpp
   src/xtd/forms/native/wxwidgets/wx_progress_bar.hpp

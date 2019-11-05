@@ -78,6 +78,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/mouse_buttons.hpp
   include/xtd/forms/mouse_event_args.hpp
   include/xtd/forms/mouse_event_handler.hpp
+  include/xtd/forms/numeric_up_down.hpp
   include/xtd/forms/open_file_dialog.hpp
   include/xtd/forms/orientation.hpp
   include/xtd/forms/paint_event_args.hpp
@@ -133,6 +134,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/message.cpp
   src/xtd/forms/message_box.cpp
   src/xtd/forms/mouse_event_args.cpp
+  src/xtd/forms/numeric_up_down.cpp
   src/xtd/forms/open_file_dialog.cpp
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/panel.cpp
@@ -141,11 +143,13 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
+  src/xtd/forms/scrollable_control.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/track_bar.cpp
+  src/xtd/forms/up_down_base.cpp
   src/xtd/forms/user_control.cpp
 )
 

@@ -25,6 +25,8 @@ namespace xtd {
     protected:
       /// @brief Initializes a new instance of the ContainerControl class.
       container_control() = default;
+      
+      drawing::size measure_control() const override;
 
       /// @cond
       std::optional<control_ref> active_control_;

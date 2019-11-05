@@ -41,6 +41,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/message_box.hpp
   include/xtd/forms/native/message_box_styles.hpp
   include/xtd/forms/native/message_keys.hpp
+  include/xtd/forms/native/numeric_up_down.hpp
   include/xtd/forms/native/panel.hpp
   include/xtd/forms/native/picture_box.hpp
   include/xtd/forms/native/progress_bar.hpp
@@ -56,6 +57,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/timer.hpp
   include/xtd/forms/native/track_bar.hpp
   include/xtd/forms/native/track_bar_styles.hpp
+  include/xtd/forms/native/up_down_styles.hpp
   include/xtd/forms/native/user_control.hpp
   include/xtd/forms/native/virtual_keys.hpp
   include/xtd/forms/native/window_styles.hpp
