@@ -14,6 +14,8 @@ namespace xtd {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
 #if defined(__WXMSW__)
           int32_t height = (create_params.style() & CBS_SIMPLE) != CBS_SIMPLE && create_params.height() != 23 ? 23 : create_params.height();
+#elif defined(__WXGTK__)
+          int32_t height = 32;
 #else
           int32_t height = 23;
 #endif

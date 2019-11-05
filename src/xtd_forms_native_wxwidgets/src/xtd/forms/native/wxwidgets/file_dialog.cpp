@@ -5,7 +5,7 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-#if !defined(__APPLE__)
+#if !defined(__WXOSX__)
 bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
   long wx_style = wxFD_OPEN;
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
