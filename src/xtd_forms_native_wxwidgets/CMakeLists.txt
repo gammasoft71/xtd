@@ -19,6 +19,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/cursor.cpp
   src/xtd/forms/native/wxwidgets/cursors.cpp
   src/xtd/forms/native/wxwidgets/control_handler.hpp
+  src/xtd/forms/native/wxwidgets/domain_up_down.cpp
   src/xtd/forms/native/wxwidgets/file_dialog.cpp
   src/xtd/forms/native/wxwidgets/folder_browser_dialog.cpp
   src/xtd/forms/native/wxwidgets/font_dialog.cpp
@@ -45,6 +46,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp
   src/xtd/forms/native/wxwidgets/wx_combo_box.hpp
   src/xtd/forms/native/wxwidgets/wx_control.hpp
+  src/xtd/forms/native/wxwidgets/wx_domain_up_down.hpp
   src/xtd/forms/native/wxwidgets/wx_form.hpp
   src/xtd/forms/native/wxwidgets/wx_group_box.hpp
   src/xtd/forms/native/wxwidgets/wx_label.hpp

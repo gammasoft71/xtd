@@ -30,6 +30,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/cursor.hpp
   include/xtd/forms/native/cursors.hpp
+  include/xtd/forms/native/domain_up_down.hpp
   include/xtd/forms/native/file_dialog.hpp
   include/xtd/forms/native/folder_browser_dialog.hpp
   include/xtd/forms/native/font_dialog.hpp

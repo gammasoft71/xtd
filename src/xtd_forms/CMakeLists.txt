@@ -40,6 +40,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/cursors.hpp
   include/xtd/forms/dialog_result.hpp
   include/xtd/forms/dock_style.hpp
+  include/xtd/forms/domain_up_down.hpp
   include/xtd/forms/file_dialog.hpp
   include/xtd/forms/folder_browser_dialog.hpp
   include/xtd/forms/font_dialog.hpp
@@ -123,6 +124,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/control.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
+  src/xtd/forms/domain_up_down.cpp
   src/xtd/forms/file_dialog.cpp
   src/xtd/forms/folder_browser_dialog.cpp
   src/xtd/forms/font_dialog.cpp

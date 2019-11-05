@@ -11,23 +11,17 @@ int main() {
   label label1;
   label1.location({80, 150});
   label1.parent(form_main);
-  label1.text("value = 50");
+  label1.text("value = ");
 
-  numeric_up_down numeric_up_down1;
-  numeric_up_down1.location({80, 50});
-  numeric_up_down1.value(50);
-  numeric_up_down1.parent(form_main);
-  numeric_up_down1.value_changed +=[&] {
-    label1.text(strings::format("value = {}", numeric_up_down1.value()));
+  domain_up_down domain_up_down1;
+  domain_up_down1.location({80, 50});
+  domain_up_down1.parent(form_main);
+  domain_up_down1.items().push_back_range({"item 1", "item2", "item 3", "item 4"});
+  domain_up_down1.value_changed +=[&] {
+    label1.text(strings::format("value = {}", domain_up_down1.text()));
   };
-  
-  numeric_up_down numeric_up_down2;
-  numeric_up_down2.location({80, 100});
-  numeric_up_down2.decimal_place(2);
-  numeric_up_down2.increment(.01);
-  numeric_up_down2.minimum(10.0);
-  numeric_up_down2.maximum(11.0);
-  numeric_up_down2.parent(form_main);
+  domain_up_down1.text("item 6");
+  //domain_up_down1.selected_index(1);
   
   application::run(form_main);
 }
