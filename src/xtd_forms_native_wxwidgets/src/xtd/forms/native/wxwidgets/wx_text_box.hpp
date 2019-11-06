@@ -16,7 +16,6 @@ namespace xtd {
 #if defined(__WXGTK__)
           if (height < 32) height = 32;
 #endif
-
           this->control_handler::create<wxTextCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption().wstr(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style()));
         }
         
