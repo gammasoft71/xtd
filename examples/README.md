@@ -21,7 +21,7 @@
 * [combo_box](controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../src/xtd_forms/include/xtd/forms/combo_box.hpp)control.
 * [control](controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
-* **domain_up_down** represents a Windows spin box (also known as an up-down control) that displays string values.
+* [domain_up_down](controls/domain_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays string values.
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
 * [label](controls/label/README.md) represents a standard Windows [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp).
 * **link_label** represents a Windows label control that can display hyperlinks.

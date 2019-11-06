@@ -48,7 +48,7 @@ domain_up_down& domain_up_down::selected_index(size_t selected_index) {
     if (this->selected_index_ != -1) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
 
-    this->on_selected_index_changed(event_args::empty);
+    this->on_text_changed(event_args::empty);
   }
   return *this;
 }
@@ -86,11 +86,18 @@ void domain_up_down::on_handle_created(const event_args &e) {
 }
 
 void domain_up_down::on_text_changed(const event_args& e) {
-  up_down_base::on_text_changed(e);
   text_ = native::control::text(handle_);
-  on_value_changed(event_args::empty);
+  if (selected_index_ != native::domain_up_down::selected_index(handle_)) {
+    selected_index_ = native::domain_up_down::selected_index(handle_);
+    if (selected_index_ == -1)
+      selected_item_ = "";
+    else
+      selected_item_ = items_[selected_index_];
+    on_selected_item_changed(event_args::empty);
+  }
+  up_down_base::on_text_changed(e);
 }
 
-void domain_up_down::on_value_changed(const event_args& e) {
-  if (this->can_raise_events()) value_changed(*this, e);
+void domain_up_down::on_selected_item_changed(const event_args& e) {
+  if (this->can_raise_events()) selected_item_changed(*this, e);
 }

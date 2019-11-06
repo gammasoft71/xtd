@@ -65,6 +65,7 @@ numeric_up_down& numeric_up_down::value(double value) {
     else
       value_ = value;
     native::numeric_up_down::value(handle_, value_);
+    on_text_changed(event_args::empty);
   }
   return *this;
 }
