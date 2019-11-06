@@ -61,9 +61,7 @@ namespace xtd {
 
       forms::create_params create_params() const override;
       
-      event<domain_up_down, event_handler<control&>> selected_index_changed;
-
-      event<domain_up_down, event_handler<control&>> selected_value_changed;
+      event<domain_up_down, event_handler<control&>> selected_item_changed;
 
       event<domain_up_down, event_handler<control&>> value_changed;
       
@@ -78,11 +76,9 @@ namespace xtd {
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
       
-      virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
+      virtual void on_selected_item_changed(const event_args& e);
 
       void on_text_changed(const event_args& e) override;
-      
-      virtual void on_value_changed(const event_args& e);
       
       item_collection items_;
       size_t selected_index_ = -1;
