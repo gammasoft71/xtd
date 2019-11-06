@@ -17,7 +17,7 @@ namespace xtd {
 
       forms::create_params create_params() const override;
 
-      forms::border_style border_style_;
+      forms::border_style border_style_ = forms::border_style::fixed_single;
     };
   }
 }

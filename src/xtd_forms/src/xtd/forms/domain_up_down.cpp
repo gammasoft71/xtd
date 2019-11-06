@@ -1,5 +1,6 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/domain_up_down.hpp>
+#include <xtd/forms/native/up_down_styles.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/domain_up_down.hpp"
 
@@ -68,11 +69,21 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
   return *this;
 }
 
+domain_up_down& domain_up_down::wrapped(bool value) {
+  if (this->wrapped_ != value) {
+    this->wrapped_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
 forms::create_params domain_up_down::create_params() const {
   forms::create_params create_params = up_down_base::create_params();
   
   create_params.class_name("domainupdown");
   
+  if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
+
   return create_params;
 }
 

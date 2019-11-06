@@ -23,6 +23,9 @@ namespace xtd {
 
       virtual double value() {return value_;}
       virtual numeric_up_down& value(double value);
+      
+      virtual bool wrapped() {return wrapped_;}
+      virtual numeric_up_down& wrapped(bool value);
 
       event<numeric_up_down, event_handler<control&>> value_changed;
       
@@ -48,6 +51,7 @@ namespace xtd {
       double maximum_ = 100.0;
       double minimum_ = 0.0;
       double value_ = 0.0;
+      bool wrapped_ = false;
     };
   }
 }

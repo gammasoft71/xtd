@@ -59,6 +59,9 @@ namespace xtd {
       
       domain_up_down& selected_item(const item& selected_item);
 
+      virtual bool wrapped() {return wrapped_;}
+      virtual domain_up_down& wrapped(bool value);
+      
       forms::create_params create_params() const override;
       
       event<domain_up_down, event_handler<control&>> selected_item_changed;
@@ -83,6 +86,7 @@ namespace xtd {
       item_collection items_;
       size_t selected_index_ = -1;
       item selected_item_;
+      bool wrapped_ = false;
     };
   }
 }
