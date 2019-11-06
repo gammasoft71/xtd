@@ -17,7 +17,7 @@ public:
     if (size == wxDefaultSize) SetSize(120, textBox->GetSize().GetHeight());
 
     textBox->SetPosition(wxPoint(0, 0));
-    textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth() + 2, 0));
+    textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
     textBox->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
       event.SetId(this->GetId());
       this->GetEventHandler()->ProcessEvent(event);
@@ -34,7 +34,7 @@ public:
     });
 
     Bind(wxEVT_SIZE, [&](wxEvent& ev) {
-      textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth() + 2, 0));
+      textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
       upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), (GetSize().GetHeight() - upDown->GetSize().GetHeight()) / 2));
     });
   }
