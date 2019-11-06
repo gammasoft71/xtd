@@ -21,7 +21,7 @@ namespace xtd {
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = wxST_NO_AUTORESIZE;
+          long wx_style = 0;
 
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;

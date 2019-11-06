@@ -104,6 +104,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/timer.hpp
   include/xtd/forms/track_bar.hpp
   include/xtd/forms/up_down_base.hpp
+  include/xtd/forms/up_down_button.hpp
   include/xtd/forms/user_control.hpp
   include/xtd/forms/switch_button.hpp
 )
@@ -152,6 +153,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/timer.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
+  src/xtd/forms/up_down_button.cpp
   src/xtd/forms/user_control.cpp
 )
 

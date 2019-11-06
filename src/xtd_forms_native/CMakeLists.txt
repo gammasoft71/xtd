@@ -58,6 +58,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/timer.hpp
   include/xtd/forms/native/track_bar.hpp
   include/xtd/forms/native/track_bar_styles.hpp
+  include/xtd/forms/native/up_down_button.hpp
   include/xtd/forms/native/up_down_styles.hpp
   include/xtd/forms/native/user_control.hpp
   include/xtd/forms/native/virtual_keys.hpp

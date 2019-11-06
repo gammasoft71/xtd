@@ -26,6 +26,7 @@
 #include "wx_tab_page.hpp"
 #include "wx_text_box.hpp"
 #include "wx_track_bar.hpp"
+#include "wx_up_down_button.hpp"
 #include "wx_user_control.hpp"
 #include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
@@ -157,6 +158,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "tabpage") return reinterpret_cast<intptr_t>(new wx_tab_page(create_params));
   if (create_params.class_name() == "textbox") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
   if (create_params.class_name() == "trackbar") return reinterpret_cast<intptr_t>(new wx_track_bar(create_params));
+  if (create_params.class_name() == "updownbutton") return reinterpret_cast<intptr_t>(new wx_up_down_button(create_params));
   if (create_params.class_name() == "usercontrol") return reinterpret_cast<intptr_t>(new wx_user_control(create_params));
   return reinterpret_cast<intptr_t>(new wx_control(create_params));
 }
