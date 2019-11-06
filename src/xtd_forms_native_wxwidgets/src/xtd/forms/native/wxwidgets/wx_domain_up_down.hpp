@@ -82,7 +82,7 @@ namespace xtd {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           int32_t height = create_params.height();
 #if defined(__WXGTK__)
-          if (height < 34) height = 34;
+          if (height < 32) height = 32;
 #endif
           this->control_handler::create<wxDomainSpinCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style()));
         }
