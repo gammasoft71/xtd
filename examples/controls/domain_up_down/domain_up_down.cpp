@@ -7,7 +7,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("Numeric up down example");
+      text("Domain up down example");
 
       domain_up_down1.parent(*this);
       domain_up_down1.location({10, 10});
