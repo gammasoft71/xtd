@@ -488,12 +488,16 @@ namespace xtd {
       
       template<typename control_t>
       inline void control_wrapper<control_t>::process_scrollbar_event(wxEvent& event) {
-        this->def_process_event(event);
+        if (event.GetEventType() == wxEVT_SCROLL_LINEDOWN) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), (this->event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEDOWN, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_SCROLL_LINEUP) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), (this->event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else this->def_process_event(event);
       }
       
       template<typename control_t>
       inline void control_wrapper<control_t>::process_spin_event(wxEvent& event) {
-        this->def_process_event(event);
+        if (event.GetEventType() == wxEVT_SPIN_DOWN) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), (this->event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEDOWN, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_SPIN_UP) this->event_handler_->send_message(reinterpret_cast<intptr_t>(this->event_handler_), (this->event_handler_->control()->GetWindowStyle() & wxSP_VERTICAL) == wxSP_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_LINEUP, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else this->def_process_event(event);
       }
       
       template<typename control_t>
