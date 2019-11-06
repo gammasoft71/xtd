@@ -11,7 +11,7 @@ namespace examples {
 
       numeric_up_down1.parent(*this);
       numeric_up_down1.location({80, 50});
-      numeric_up_down1.value_changed +=[&] {
+      numeric_up_down1.value_changed += [this] {
         label1.text(strings::format("value = {}", numeric_up_down1.value()));
       };
       numeric_up_down1.value(50);
