@@ -13,7 +13,10 @@
 
 class wxDomainSpinCtrl : public wxPanel {
 public:
-  wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0) : wxPanel(parent, winid, pos, size) {
+  wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long textBoxStyle = 0, long spinStyle = 0) : wxPanel(parent, winid, pos, size) {
+    textBox = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, textBoxStyle);
+    upDown = new wxSpinButton(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, spinStyle);
+
     if (size == wxDefaultSize) SetSize(120, textBox->GetSize().GetHeight());
 
     textBox->SetPosition(wxPoint(0, 0));
@@ -67,8 +70,8 @@ private:
     if (index != -1) textBox->SetValue(items[index]);
   }
 
-  wxTextCtrl* textBox = new wxTextCtrl(this, wxID_ANY);
-  wxSpinButton* upDown = new wxSpinButton(this, wxID_ANY);
+  wxTextCtrl* textBox;
+  wxSpinButton* upDown;
   wxArrayString items;
   size_t index = -1;
 };
@@ -84,15 +87,23 @@ namespace xtd {
 #if defined(__WXGTK__)
           if (height < 32) height = 32;
 #endif
-          this->control_handler::create<wxDomainSpinCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          this->control_handler::create<wxDomainSpinCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_text_box_style(create_params.style(), create_params.ex_style()), style_to_wx_spin_style(create_params.style(), create_params.ex_style()));
         }
         
-        static long style_to_wx_style(size_t style, size_t ex_style) {
+        static long style_to_wx_text_box_style(size_t style, size_t ex_style) {
           long wx_style = 0;
-
-          if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_SIMPLE;
+          
+          if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_DEFAULT;
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
           else wx_style |= wxBORDER_NONE;
+
+          return wx_style;
+        }
+        
+        static long style_to_wx_spin_style(size_t style, size_t ex_style) {
+          long wx_style = 0;
+
+          if ((style & UDS_WRAP) == UDS_WRAP) wx_style |= wxSP_WRAP;
 
           return wx_style;
         }

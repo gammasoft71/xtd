@@ -1,5 +1,6 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/numeric_up_down.hpp>
+#include <xtd/forms/native/up_down_styles.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/numeric_up_down.hpp"
 
@@ -16,6 +17,8 @@ forms::create_params numeric_up_down::create_params() const {
   forms::create_params create_params = up_down_base::create_params();
   
   create_params.class_name("numericupdown");
+  
+  if (wrapped_) create_params.style(create_params.style() | UDS_WRAP);
   
   return create_params;
 }
@@ -66,6 +69,14 @@ numeric_up_down& numeric_up_down::value(double value) {
       value_ = value;
     native::numeric_up_down::value(handle_, value_);
     on_text_changed(event_args::empty);
+  }
+  return *this;
+}
+
+numeric_up_down& numeric_up_down::wrapped(bool value) {
+  if (this->wrapped_ != value) {
+    this->wrapped_ = value;
+    this->recreate_handle();
   }
   return *this;
 }
