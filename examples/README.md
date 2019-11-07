@@ -112,6 +112,10 @@
 * [open_file_dialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
 * [save_file_dialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
+## Other Dialogs
+
+* **find_replace_dialog** represents a find replace dialog box.
+
 ## Custom Controls
 * [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
 * [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
