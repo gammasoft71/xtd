@@ -11,7 +11,11 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const ustring& description
   ustring path = environment::get_folder_path(root_folder);
   if (!selected_path.empty() && wxDirExists(selected_path.str())) path = selected_path;
 
+#if defined (__WXMSW__)
+  long wx_style = wxDEFAULT_DIALOG_STYLE;
+#else
   long wx_style = wxDD_DEFAULT_STYLE;
+#endif
   
   wxDirDialog dialog(reinterpret_cast<wxWindow*>(hwnd), description.str(), path.str(), wx_style);
   if (dialog.ShowModal() != wxID_OK) return false;
