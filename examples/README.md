@@ -47,8 +47,8 @@
 * **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 
 ## Other Controls
-* [switch_button](common_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
-* [up_down_button](common_controls/up_down_button/README.md) represents a Windows spin button.
+* [switch_button](other_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
+* [up_down_button](other_controls/up_down_button/README.md) represents a Windows spin button.
 
 ## Containers
 
