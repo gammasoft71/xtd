@@ -103,14 +103,14 @@
 * **print_preview_control** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
 * **print_preview_dialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
 
-## Dialogs
+## Common Dialogs
 
-* [color_dialog](dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
-* [folder_browser_dialog](dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
-* [font_dialog](dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
-* [message_box](dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
-* [open_file_dialog](dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
-* [save_file_dialog](dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
+* [color_dialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
+* [folder_browser_dialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
+* [font_dialog](common_dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.
+* [message_box](common_dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
+* [open_file_dialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
+* [save_file_dialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
 ## Custom Controls
 * [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
