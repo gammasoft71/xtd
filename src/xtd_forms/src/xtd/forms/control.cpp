@@ -259,7 +259,10 @@ void control::create_handle() {
 }
 
 void control::destroy_handle() {
-  this->internal_destroy_handle(this->handle_);
+  if (this->handle_) native::control::unregister_wnd_proc(this->handle_, {*this, &control::wnd_proc_});
+  handles_.erase(this->handle_);
+  this->on_handle_destroyed(event_args::empty);
+  native::control::destroy(this->handle_);
   this->handle_ = 0;
 }
 
@@ -657,8 +660,11 @@ void control::recreate_handle() {
       control.get().parent_ = this->handle_;
       control.get().recreate_handle();
     }
-    this->internal_destroy_handle(old_handle);
-    
+    intptr_t new_handle = this->handle_;
+    this->handle_ = old_handle;
+    this->destroy_handle();
+    this->handle_ = new_handle;
+
     for (auto control : this->controls()) control.get().set_state(state::parent_recreating, false);
     this->set_state(state::recreate, false);
   }
@@ -775,13 +781,6 @@ void control::do_layout() {
 
   this->refresh();
   do_layouts.erase(this->handle_);
-}
-
-void control::internal_destroy_handle(intptr_t handle) {
-  if (this->handle_) native::control::unregister_wnd_proc(handle, {*this, &control::wnd_proc_});
-  handles_.erase(handle);
-  this->on_handle_destroyed(event_args::empty);
-  native::control::destroy(handle);
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
