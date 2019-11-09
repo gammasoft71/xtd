@@ -22,7 +22,7 @@ namespace xtd {
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
-          long wx_style = 0;
+          long wx_style = wxTAB_TRAVERSAL;
           
           if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
           if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
