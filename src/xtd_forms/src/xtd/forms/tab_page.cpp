@@ -26,3 +26,13 @@ control& tab_page::text(const ustring& text) {
   }
   return *this;
 }
+
+void tab_page::create_handle() {
+  panel::create_handle();
+  native::tab_control::add_item(this->parent().value().get().handle(), this->handle_, this->text_);
+}
+
+void tab_page::destroy_handle() {
+  native::tab_control::delete_item(this->parent().value().get().handle(), this->handle_);
+  panel::destroy_handle();
+}
