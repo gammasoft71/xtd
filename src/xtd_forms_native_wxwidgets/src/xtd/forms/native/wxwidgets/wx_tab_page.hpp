@@ -19,9 +19,9 @@ namespace xtd {
             this->control_handler::create<wxScrolled<wxPanel>>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, style_to_wx_style(create_params.style(), create_params.ex_style()));
           else
             this->control_handler::create<wxPanel>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, style_to_wx_style(create_params.style(), create_params.ex_style()));
-          int32_t index = static_cast<wxNotebookBase*>(this->control()->GetParent())->GetSelection();
-          static_cast<wxNotebookBase*>(this->control()->GetParent())->AddPage(this->control(), create_params.caption().wstr(), true);
-          if (index != -1) static_cast<wxNotebookBase*>(this->control()->GetParent())->SetSelection(index);
+          //int32_t index = static_cast<wxNotebookBase*>(this->control()->GetParent())->GetSelection();
+          //static_cast<wxNotebookBase*>(this->control()->GetParent())->AddPage(this->control(), create_params.caption().wstr(), true);
+          //if (index != -1) static_cast<wxNotebookBase*>(this->control()->GetParent())->SetSelection(index);
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
