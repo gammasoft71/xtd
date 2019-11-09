@@ -198,11 +198,13 @@ font control::default_font() {
 
 void control::destroy(intptr_t control) {
   if (control == 0) return;
+  /// @todo Fix destroy_handle on recreate with old parent and remove the following line
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control()->GetParent() &&  dynamic_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())) {
     int index = static_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())->FindPage(reinterpret_cast<control_handler*>(control)->control());
     if (index >= 0) static_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())->RemovePage(index);
   }
+  /// end todo
   if (wxTheApp) reinterpret_cast<control_handler*>(control)->destroy();
   delete reinterpret_cast<class control_handler*>(control);
 }
