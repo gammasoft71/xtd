@@ -18,40 +18,11 @@ forms::create_params tab_page::create_params() const {
   return create_params;
 }
 
-void tab_page::on_handle_created(const event_args &e) {
-  this->panel::on_handle_created(e);
-  if (this->get_state(control::state::recreate)) return;
-  if (this->parent().has_value() && dynamic_cast<tab_control*>(&this->parent().value().get()) != nullptr)
-    native::tab_control::insert_item(this->parent_, this->controls().size(), this->handle_, this->text_);
-}
-
-void tab_page::on_handle_destroyed(const event_args &e) {
-  this->panel::on_handle_destroyed(e);
-  if (this->get_state(control::state::recreate)) return;
-  /*
-  if (this->parent().has_value() && dynamic_cast<tab_control*>(&this->parent().value().get()) != nullptr) {
-    for (size_t index = 0; index < this->parent().value().get().controls().size(); index++) {
-      if (this->parent().value().get().controls()[index].get().handle() == this->handle_) {
-        native::tab_control::delete_item(this->parent_, index);
-        break;
-      }
-    }
+control& tab_page::text(const ustring& text) {
+  if (this->text_ != text) {
+    this->text_ = text;
+    if (this->parent().has_value())
+    static_cast<tab_control&>(this->parent().value().get()).recreate_handle();
   }
-   */
-}
-
-void tab_page::recreate_handle() {
-  size_t page_index = -1;
-  if (this->parent().has_value() && dynamic_cast<tab_control*>(&this->parent().value().get()) != nullptr) {
-    for (size_t index = 0; index < this->parent().value().get().controls().size(); index++) {
-      if (this->parent().value().get().controls()[index].get().handle() == this->handle_) {
-        page_index = index;
-        break;
-      }
-    }
-  }
-
-  //if (page_index != -1) native::tab_control::delete_item(this->parent_, page_index);
-  this->panel::recreate_handle();
-  if (page_index != -1) native::tab_control::insert_item(this->parent_, page_index, this->handle_, this->text_);
+  return *this;
 }
