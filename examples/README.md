@@ -50,6 +50,10 @@
 * [switch_button](other_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
 * [up_down_button](other_controls/up_down_button/README.md) represents a Windows spin button.
 
+## Custom Controls
+* [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
+* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
+
 ## Containers
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
@@ -115,10 +119,6 @@
 ## Other Dialogs
 
 * **find_replace_dialog** represents a find replace dialog box.
-
-## Custom Controls
-* [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
-* [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
 ## Custom Dialogs
 * [user_dialog](custom_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) as dialog.
