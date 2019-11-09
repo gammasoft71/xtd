@@ -9,11 +9,11 @@ namespace xtd {
     public:
       tab_page();
 
+      using panel::text;
+      control& text(const ustring& text) override;
+
     protected:
       forms::create_params create_params() const override;
-      void on_handle_created(const event_args &e) override;
-      void on_handle_destroyed(const event_args &e) override;
-      void recreate_handle() override;
     };
   }
 }
