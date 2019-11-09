@@ -808,7 +808,6 @@ namespace xtd {
       
     private:
       void do_layout();
-      void internal_destroy_handle(intptr_t);
       void on_parent_size_changed(const control& sender, const event_args& e);
       void set_auto_size_size();
       control(const ustring& name, bool) {this->name_ = name;}
