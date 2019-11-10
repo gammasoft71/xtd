@@ -47,7 +47,7 @@ public:
     label_icons.location({10, 118});
     label_icons.parent(*this);
 
-    combo_box_icons.items().push_back_range({{"none", message_box_icon::none}, {"hand", message_box_icon::hand}, {"stop", message_box_icon::stop}, {"error", message_box_icon::error}, {"question", message_box_icon::question}, {"exclamation", message_box_icon::exclamation}, {"warning", message_box_icon::warning}, {"asterick", message_box_icon::asterisk}, {"information", message_box_icon::information}});
+    combo_box_icons.items().push_back_range({{"none", message_box_icon::none}, {"hand", message_box_icon::hand}, {"stop", message_box_icon::stop}, {"error", message_box_icon::error}, {"question", message_box_icon::question}, {"exclamation", message_box_icon::exclamation}, {"warning", message_box_icon::warning}, {"asterisk", message_box_icon::asterisk}, {"information", message_box_icon::information}});
     combo_box_icons.drop_down_style(combo_box_style::drop_down_list);
     combo_box_icons.selected_index(0);
     combo_box_icons.location({90, 115});
