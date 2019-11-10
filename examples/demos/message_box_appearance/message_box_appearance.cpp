@@ -59,12 +59,12 @@ public:
     button_try_it.height(30);
     button_try_it.parent(*this);
     button_try_it.click += [this] {
-      label_dialog_result.text("dialog_result = ");
-      enum dialog_result result = message_box::show(*this, text_message.text(), text_caption.text(), any_cast<message_box_buttons>(combo_box_buttons.selected_item().tag()), any_cast<message_box_icon>(combo_box_icons.selected_item().tag()));
-      label_dialog_result.text(strings::format("dialog_result = {}", result));
+      label_dialog_result.text("result = ");
+      forms::dialog_result result = message_box::show(*this, text_message.text(), text_caption.text(), any_cast<message_box_buttons>(combo_box_buttons.selected_item().tag()), any_cast<message_box_icon>(combo_box_icons.selected_item().tag()));
+      label_dialog_result.text(strings::format("result = {}", result));
     };
 
-    label_dialog_result.text("dialog_result = ");
+    label_dialog_result.text("result = ");
     label_dialog_result.auto_size(true);
     label_dialog_result.location({90, 156});
     label_dialog_result.parent(*this);

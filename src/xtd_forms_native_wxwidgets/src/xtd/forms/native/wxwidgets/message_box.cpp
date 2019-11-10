@@ -9,16 +9,16 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
+#if defined(__WXMSW__)
+int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
+  return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
+}
+#elif !defined(__WXOSX__)
 namespace {
   constexpr int32_t MB_BUTTONS_MASK = 0x7;
   constexpr int32_t MB_ICON_MASK = 0x70;
 }
 
-#if defined(__WXMSW__)
-int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
-  return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
-}
-#else
 namespace {
   int32_t convert_to_dialog_result(int32_t wx_result, uint32_t style) {
     switch (wx_result) {
