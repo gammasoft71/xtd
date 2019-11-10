@@ -9,6 +9,11 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
+namespace {
+  constexpr int32_t MB_BUTTONS_MASK = 0x7;
+  constexpr int32_t MB_ICON_MASK = 0x70;
+}
+
 #if defined(__WXMSW__)
 int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
   return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
@@ -17,28 +22,28 @@ int32_t message_box::show(intptr_t control, const ustring& text, const ustring& 
 namespace {
   int32_t convert_to_dialog_result(int32_t wx_result, uint32_t style) {
     switch (wx_result) {
-      case wxID_OK: return (style & MB_RETRYCANCEL) == MB_RETRYCANCEL ? IDRETRY : IDOK;
-      case wxID_CANCEL: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDIGNORE : IDCANCEL;
-      case wxID_YES: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES;
-      case wxID_NO: return (style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO;
+      case wxID_OK: return (style & MB_BUTTONS_MASK) == MB_RETRYCANCEL ? IDRETRY : IDOK;
+      case wxID_CANCEL: return (style & MB_BUTTONS_MASK) == MB_ABORTRETRYIGNORE ? IDIGNORE : IDCANCEL;
+      case wxID_YES: return (style & MB_BUTTONS_MASK) == MB_ABORTRETRYIGNORE ? IDABORT : IDYES;
+      case wxID_NO: return (style & MB_BUTTONS_MASK) == MB_ABORTRETRYIGNORE ? IDRETRY : IDNO;
     }
     return IDOK;
   }
   
   int32_t convert_to_buttons(uint32_t style) {
-    if ((style & MB_OKCANCEL) == MB_OKCANCEL)return wxOK | wxCANCEL;
-    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) return wxYES_NO | wxCANCEL;
-    if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) return wxYES_NO | wxCANCEL;
-    if ((style & MB_YESNO) == MB_YESNO) return wxYES_NO;
-    if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) return wxOK | wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_RETRYCANCEL) return wxOK | wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_YESNOCANCEL) return wxYES_NO | wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_YESNO) return wxYES_NO;
+    if ((style & MB_BUTTONS_MASK) == MB_ABORTRETRYIGNORE) return wxYES_NO | wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_OKCANCEL)return wxOK | wxCANCEL;
     return wxOK;
   }
   
   int32_t convert_to_icon(uint32_t style) {
-    if ((style & MB_ICONSTOP) == MB_ICONSTOP) return wxICON_STOP;
-    if ((style & MB_ICONQUESTION) == MB_ICONQUESTION) return wxICON_QUESTION;
-    if ((style & MB_ICONEXCLAMATION) == MB_ICONEXCLAMATION) return wxICON_EXCLAMATION;
-    if ((style & MB_ICONINFORMATION) == MB_ICONINFORMATION) return wxICON_INFORMATION;
+    if ((style & MB_ICON_MASK) == MB_ICONINFORMATION) return wxICON_INFORMATION;
+    if ((style & MB_ICON_MASK) == MB_ICONEXCLAMATION) return wxICON_EXCLAMATION;
+    if ((style & MB_ICON_MASK) == MB_ICONQUESTION) return wxICON_QUESTION;
+    if ((style & MB_ICON_MASK) == MB_ICONSTOP) return wxICON_STOP;
     return wxICON_NONE;
   }
   
@@ -49,9 +54,9 @@ namespace {
   }
   
   void set_button_labels(wxMessageDialog& dialog, uint32_t style) {
-    if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) dialog.SetYesNoCancelLabels("Abort", "Retry", "Ignore");
-    else if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) dialog.SetYesNoCancelLabels("Yes", "No", wxID_CANCEL);
-    else if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) dialog.SetOKCancelLabels("Retry", wxID_CANCEL);
+    if ((style & MB_BUTTONS_MASK) == MB_RETRYCANCEL) dialog.SetOKCancelLabels("Retry", wxID_CANCEL);
+    if ((style & MB_BUTTONS_MASK) == MB_YESNOCANCEL) dialog.SetYesNoCancelLabels("Yes", "No", wxID_CANCEL);
+    if ((style & MB_BUTTONS_MASK) == MB_ABORTRETRYIGNORE) dialog.SetYesNoCancelLabels("Abort", "Retry", "Ignore");
   }
 }
 
