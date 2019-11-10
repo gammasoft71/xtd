@@ -56,6 +56,7 @@ public:
 
     button_try_it.text("Try it");
     button_try_it.location({10, 150});
+    button_try_it.height(30);
     button_try_it.parent(*this);
     button_try_it.click += [this] {
       label_dialog_result.text("dialog_result = ");
@@ -65,7 +66,7 @@ public:
 
     label_dialog_result.text("dialog_result = ");
     label_dialog_result.auto_size(true);
-    label_dialog_result.location({90, 154});
+    label_dialog_result.location({90, 156});
     label_dialog_result.parent(*this);
   }
   
