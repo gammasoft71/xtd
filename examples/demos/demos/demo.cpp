@@ -130,7 +130,7 @@ int main() {
   tab_page_lists.text("Lists");
   
   list_box list_box_items;
-  list_box_items.items().push_back_range({"Item 1", "Item 2", "Item 3"});
+  list_box_items.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
   list_box_items.location({10, 10});
   list_box_items.parent(tab_page_lists);
   list_box_items.selected_index(1);
@@ -138,14 +138,14 @@ int main() {
   
   list_box list_box_disabled;
   list_box_disabled.enabled(false);
-  list_box_disabled.items().push_back_range({"Item 1", "Item 2", "Item 3"});
+  list_box_disabled.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
   list_box_disabled.location({220, 10});
   list_box_disabled.parent(tab_page_lists);
   list_box_disabled.selected_index(1);
   list_box_disabled.size({200, 300});
   
   checked_list_box checked_list_box_items;
-  checked_list_box_items.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}});
+  checked_list_box_items.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}, {"Item 4", false}, {"Item 5", true}, {"Item 6", true}, {"Item 7", false}, {"Item 8", false}, {"Item 9", true}, {"Item 10", true}});
   checked_list_box_items.location({10, 320});
   checked_list_box_items.parent(tab_page_lists);
   checked_list_box_items.selected_index(2);
@@ -153,14 +153,14 @@ int main() {
   
   checked_list_box checked_list_box_disabled;
   checked_list_box_disabled.enabled(false);
-  checked_list_box_disabled.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}});
+  checked_list_box_disabled.items().push_back_range({{"Item 1", true}, {"Item 2", true}, {"Item 3", false}, {"Item 4", false}, {"Item 5", true}, {"Item 6", true}, {"Item 7", false}, {"Item 8", false}, {"Item 9", true}, {"Item 10", true}});
   checked_list_box_disabled.location({220, 320});
   checked_list_box_disabled.parent(tab_page_lists);
   checked_list_box_disabled.selected_index(2);
   checked_list_box_disabled.size({200, 300});
   
   combo_box combo_box_drop_down;
-  combo_box_drop_down.items().push_back_range({"Item 1", "Item 2", "Item 3"});
+  combo_box_drop_down.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
   combo_box_drop_down.location({10, 630});
   combo_box_drop_down.parent(tab_page_lists);
   combo_box_drop_down.selected_index(2);
@@ -168,7 +168,7 @@ int main() {
   
   combo_box combo_box_drop_down_list;
   combo_box_drop_down_list.drop_down_style(combo_box_style::drop_down_list);
-  combo_box_drop_down_list.items().push_back_range({"Item 1", "Item 2", "Item 3"});
+  combo_box_drop_down_list.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
   combo_box_drop_down_list.location({220, 630});
   combo_box_drop_down_list.parent(tab_page_lists);
   combo_box_drop_down_list.selected_index(2);
@@ -176,7 +176,7 @@ int main() {
 
   combo_box combo_box_simple;
   combo_box_simple.drop_down_style(combo_box_style::simple);
-  combo_box_simple.items().push_back_range({"Item 1", "Item 2", "Item 3"});
+  combo_box_simple.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
   combo_box_simple.location({430, 630});
   combo_box_simple.parent(tab_page_lists);
   combo_box_simple.selected_index(2);
