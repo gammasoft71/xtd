@@ -24,6 +24,7 @@ namespace xtd {
             this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           else
             this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+          this->control()->SetMinSize({75, 23});
           this->button_ = new wxButton(this->control(), wxID_ANY);
           this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
           this->control()->SetForegroundColour(this->button_->GetForegroundColour());
