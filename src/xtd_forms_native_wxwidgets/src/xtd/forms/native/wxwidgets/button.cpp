@@ -19,21 +19,11 @@ void button::default_button(intptr_t control, bool default_button) {
 
 void button::image(intptr_t control, const drawing::image& image) {
   if (control == 0 || image.handle() == 0) return;
-  wxPoint location = reinterpret_cast<control_handler*>(control)->control()->GetPosition();
-  wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
   static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmapLabel(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
-  reinterpret_cast<control_handler*>(control)->control()->SetPosition(location);
-  reinterpret_cast<control_handler*>(control)->control()->SetSize(size);
-#if defined(__WXOSX__)
-    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x, location.y, size.GetWidth(), size.GetHeight());
-#endif
 }
 
 void button::image_align(intptr_t control, uint32_t align) {
   if (control == 0) return;
-
-  wxPoint location = reinterpret_cast<control_handler*>(control)->control()->GetPosition();
-  wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
   switch (align) {
     case CA_TOP_LEFT: static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmapPosition(wxLEFT); break;
     case CA_TOP_CENTER: static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmapPosition(wxTOP); break;
@@ -45,9 +35,4 @@ void button::image_align(intptr_t control, uint32_t align) {
     case CA_BOTTOM_CENTER: static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmapPosition(wxBOTTOM); break;
     case CA_BOTTOM_RIGHT: static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmapPosition(wxDirection::wxRIGHT); break;
   }
-  reinterpret_cast<control_handler*>(control)->control()->SetPosition(location);
-  reinterpret_cast<control_handler*>(control)->control()->SetSize(size);
-#if defined(__WXOSX__)
-  __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x, location.y, size.GetWidth(), size.GetHeight());
-#endif
 }
