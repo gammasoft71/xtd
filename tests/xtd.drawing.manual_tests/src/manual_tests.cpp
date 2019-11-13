@@ -38,4 +38,5 @@ int main() {
   cout << format("color = {}", color::from_argb(128, 128, 128)) << endl;
   cout << format("color = {}", color::darker(color::from_argb(128, 128, 128))) << endl;
   cout << format("color = {}", color::darker(color::darker(color::from_argb(128, 128, 128)))) << endl;
+  image img = image::empty;
 }

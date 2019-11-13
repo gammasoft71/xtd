@@ -7,6 +7,8 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
+image image::empty;
+
 image::image(const ustring &filename) {
   std::fstream stream(filename, std::ios::in);
   this->data_->handle_ = native::image::create(stream);

@@ -26,6 +26,8 @@ namespace xtd {
       image(const image& image) = default;
       image& operator=(const image& image) = default;
       virtual ~image();
+      bool operator==(const image& image) const {return data_->handle_ == image.data_->handle_;}
+      bool operator!=(const image& image) const {return !operator==(image);}
       /// @endcond
       
       /// @brief Gets attribute flags for the pixel data of this Image.
@@ -126,7 +128,10 @@ namespace xtd {
 
       static image from_data(const char* const* bits) {return image(bits);}
 
+      static image empty;
+      
     protected:
+      image() = default;
       explicit image(const ustring& fileName);
       explicit image(std::istream& stream);
       explicit image(const char* const* bits);
