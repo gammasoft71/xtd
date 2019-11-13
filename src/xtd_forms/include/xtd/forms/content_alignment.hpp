@@ -8,23 +8,23 @@ namespace xtd {
     /// @brief Specifies alignment of content on the drawing surface.
     enum class content_alignment {
       /// @brief Content is vertically aligned at the top, and horizontally aligned on the left.
-      top_left = 1,
+      top_left = 0b1,
       /// @brief Content is vertically aligned at the top, and horizontally aligned at the center.
-      top_center = 2,
+      top_center = 0b10,
       /// @brief Content is vertically aligned at the top, and horizontally aligned on the right.
-      top_right = 4,
+      top_right = 0b100,
       /// @brief Content is vertically aligned in the middle, and horizontally aligned on the left.
-      middle_left = 16,
+      middle_left = 0b10000,
       /// @brief Content is vertically aligned at the middle, and horizontally aligned at the center.
-      middle_center = 32,
+      middle_center = 0b100000,
       /// @brief Content is vertically aligned at the middle, and horizontally aligned on the right.
-      middle_right = 64,
+      middle_right = 0b1000000,
       /// @brief Content is vertically aligned in the bottom, and horizontally aligned on the left.
-      bottom_left = 256,
+      bottom_left = 0b100000000,
       /// @brief Content is vertically aligned at the bottom, and horizontally aligned at the center.
-      bottom_center = 512,
+      bottom_center = 0b1000000000,
       /// @brief Content is vertically aligned at the bottom, and horizontally aligned on the right.
-      bottom_right = 1024,
+      bottom_right = 0b10000000000,
     };
 
     /// @cond

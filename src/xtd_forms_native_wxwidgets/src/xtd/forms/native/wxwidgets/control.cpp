@@ -36,7 +36,7 @@
 #include <wx/settings.h>
 
 #if defined(__WXOSX__)
-void __set_button_bezel_style__(wxButton* control, size_t height);
+void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height);
 #endif
 
 
@@ -240,8 +240,10 @@ void control::client_size(intptr_t control, const drawing::size& size) {
     reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
   
   #if defined(__WXOSX__)
-  if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()))
-    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), size.height());
+  if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())) {
+    wxPoint location = reinterpret_cast<control_handler*>(control)->control()->GetPosition();
+    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x, location.y, size.width(), size.height());
+  }
   #endif
 }
 
@@ -304,6 +306,13 @@ point control::location(intptr_t control) {
 void control::location(intptr_t control, const point& location) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->SetPosition({location.x(), location.y()});
+  
+  #if defined(__WXOSX__)
+  if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())) {
+    wxSize size = reinterpret_cast<control_handler*>(control)->control()->GetSize();
+    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x(), location.y(), size.GetWidth(), size.GetHeight());
+  }
+  #endif
 }
 
 drawing::point control::point_to_screen(intptr_t control, const drawing::point& p) {
@@ -329,8 +338,10 @@ void control::size(intptr_t control, const drawing::size& size) {
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
   
   #if defined(__WXOSX__)
-  if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()))
-    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), size.height());
+  if (dynamic_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())) {
+    wxPoint location = reinterpret_cast<control_handler*>(control)->control()->GetPosition();
+    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x, location.y, size.width(), size.height());
+  }
   #endif
 }
 

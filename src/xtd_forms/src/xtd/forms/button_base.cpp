@@ -9,10 +9,25 @@ button_base::button_base() {
   this->size_ = this->default_size();
 }
 
+button_base& button_base::image(const drawing::image& value) {
+  if (this->image_ != value)
+    this->image_ = value;
+  return *this;
+}
+
+button_base& button_base::image_align(content_alignment value) {
+  if (this->image_align_ != value) {
+    this->image_align_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
 button_base& button_base::text_align(content_alignment text_align) {
-  if (this->text_align_ != text_align)
+  if (this->text_align_ != text_align) {
     this->text_align_ = text_align;
     this->recreate_handle();
+  }
   return *this;
 }
 

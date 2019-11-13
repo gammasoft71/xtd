@@ -5,8 +5,15 @@
 
 using namespace xtd::forms::native;
 
-void __set_button_bezel_style__(wxButton* control, size_t height) {
+void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height) {
   NSButton* button = (NSButton*)control->GetHandle();
-  [button setBezelStyle: height <= 32 ? NSBezelStyleRounded : NSBezelStyleSmallSquare];
+  [button setWantsLayer:YES];
+  if (height >= 20 && height <= 25)
+    [button setBezelStyle: NSBezelStyleRounded];
+  else {
+    [button setBezelStyle: NSBezelStyleRegularSquare];
+    [button setFrameOrigin:NSMakePoint(x, y-1)];
+    [button setFrameSize:NSMakeSize(width, height)];
+  }
 }
 #endif

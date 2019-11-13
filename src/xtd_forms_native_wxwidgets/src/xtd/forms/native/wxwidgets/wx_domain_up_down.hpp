@@ -22,8 +22,7 @@ public:
     textBox->SetPosition(wxPoint(0, 0));
     textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth(), 0));
     textBox->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
-      event.SetId(this->GetId());
-      this->GetEventHandler()->ProcessEvent(event);
+      wxPostEvent(this, wxCommandEvent(wxEVT_TEXT, GetId()));
     });
 
     upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), 0));
