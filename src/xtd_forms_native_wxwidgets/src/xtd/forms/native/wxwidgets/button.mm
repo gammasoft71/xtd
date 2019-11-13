@@ -12,7 +12,7 @@ void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t
     [button setBezelStyle: NSBezelStyleRounded];
   else {
     [button setBezelStyle: NSBezelStyleRegularSquare];
-    [button setFrameOrigin:NSMakePoint(x, y-1)];
+    [button setFrameOrigin:NSMakePoint(x, y)];
     [button setFrameSize:NSMakeSize(width, height)];
   }
 }
