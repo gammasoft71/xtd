@@ -2,6 +2,7 @@
 #include "../../../include/xtd/forms/form.hpp"
 #include <xtd/forms/native/button.hpp>
 #include <xtd/forms/native/button_styles.hpp>
+#include <xtd/forms/native/control.hpp>
 #include <xtd/forms/window_messages.hpp>
 
 using namespace xtd;
@@ -16,6 +17,12 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
   if (this->dialog_result_ != dialog_result)
     this->dialog_result_ = dialog_result;
   return *this;
+}
+
+button_base& button::image(const drawing::image& value) {
+  if (this->image_ != value)
+    native::button::image(handle_, value);
+  return button_base::image(value);
 }
 
 void button::notify_default(bool value) {
@@ -41,6 +48,14 @@ void button::on_click(const event_args& e) {
   if (this->dialog_result_ != forms::dialog_result::none &&  this->top_level_control().has_value() && static_cast<form&>(this->top_level_control().value().get()).modal()) {
     static_cast<form&>(this->top_level_control().value().get()).dialog_result(this->dialog_result());
     static_cast<form&>(this->top_level_control().value().get()).close();
+  }
+}
+
+void button::on_handle_created(const event_args& e) {
+  button_base::on_handle_created(e);
+  if (image_ != drawing::image::empty) {
+    native::button::image(handle_, image_);
+    native::button::image_align(handle_, static_cast<uint32_t>(image_align_));
   }
 }
 

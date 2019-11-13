@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/drawing/image.hpp>
 #include "control.hpp"
 #include "content_alignment.hpp"
 
@@ -39,12 +40,22 @@ namespace xtd {
         return *this;
       }
       
+      virtual const drawing::image& image() const {return image_;}
+      virtual button_base& image(const drawing::image& value);
+      
+      /// @brief Gets the alignment of the image on the button control.
+      /// @return One of the content_alignment values. The default is middle_center.
+      virtual content_alignment image_align() const {return image_align_;}
+      /// @brief Gets the alignment of the image on the button control.
+      /// @param value One of the content_alignment values. The default is middle_center.
+      virtual button_base& image_align(content_alignment value);
+
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
-      virtual content_alignment text_align() const {return this->text_align_;}
+      virtual content_alignment text_align() const {return text_align_;}
       /// @brief Gets the alignment of the text on the button control.
-      /// @param text_align One of the content_alignment values. The default is middle_center.
-      virtual button_base& text_align(content_alignment text_align);
+      /// @param value One of the content_alignment values. The default is middle_center.
+      virtual button_base& text_align(content_alignment value);
 
     protected:
       /// @brief Initializes a new instance of the ButtonBase class.
@@ -66,6 +77,8 @@ namespace xtd {
     protected:
       /// @cond
       bool auto_ellipsis_ = false;
+      drawing::image image_ = drawing::image::empty;
+      content_alignment image_align_ = content_alignment::middle_center;
       content_alignment text_align_ = content_alignment::middle_center;
       /// @endcond
     };

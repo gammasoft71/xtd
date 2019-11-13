@@ -43,6 +43,9 @@ namespace xtd {
       /// @remarks This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border.
       void notify_default(bool value) override;
 
+      using button_base::image;
+      button_base& image(const drawing::image& value) override;
+      
       /// @brief Generates a click event for the control.
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       void perform_click() override;
@@ -57,6 +60,8 @@ namespace xtd {
       /// @param e An event_args that contains the event data.
       void on_click(const event_args& e) override;
 
+      void on_handle_created(const event_args& e) override;
+      
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd°proc method after getting filtered through the pre_process_message method.

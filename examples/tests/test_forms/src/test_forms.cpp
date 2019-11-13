@@ -6,9 +6,8 @@ using namespace xtd::forms;
 using namespace std::literals;
 
 int main() {
-  form form_main;
-  form_main.client_size({1280, 850});
-  form_main.text("Test Gui");
+  form form;
+  form.text("Test Gui");
 
-  application::run(form_main);
+  application::run(form);
 }

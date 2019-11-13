@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.forms.others.examples)
 
 add_subdirectory(auto_scroll)
+add_subdirectory(bitmap_button)
 add_subdirectory(button2)
 add_subdirectory(button3)
 add_subdirectory(button4)
