@@ -24,7 +24,9 @@ void button::image(intptr_t control, const drawing::image& image) {
   static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetBitmapLabel(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
   reinterpret_cast<control_handler*>(control)->control()->SetPosition(location);
   reinterpret_cast<control_handler*>(control)->control()->SetSize(size);
-  __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x, location.y, size.GetWidth(), size.GetHeight());
+#if defined(__WXOSX__)
+    __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x, location.y, size.GetWidth(), size.GetHeight());
+#endif
 }
 
 void button::image_align(intptr_t control, uint32_t align) {
@@ -45,5 +47,7 @@ void button::image_align(intptr_t control, uint32_t align) {
   }
   reinterpret_cast<control_handler*>(control)->control()->SetPosition(location);
   reinterpret_cast<control_handler*>(control)->control()->SetSize(size);
+#if defined(__WXOSX__)
   __set_button_bezel_style__(static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control()), location.x, location.y, size.GetWidth(), size.GetHeight());
+#endif
 }
