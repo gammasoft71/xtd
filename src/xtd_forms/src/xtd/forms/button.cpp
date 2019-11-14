@@ -56,6 +56,9 @@ void button::on_handle_created(const event_args& e) {
   if (image_ != drawing::image::empty) {
     native::button::image(handle_, image_);
     native::button::image_align(handle_, static_cast<uint32_t>(image_align_));
+    native::control::text(handle_, text_);
+    native::control::location(handle_, location_);
+    native::control::size(handle_, size_);
   }
 }
 

@@ -1,5 +1,7 @@
 #include <xtd/xtd.forms>
-#include "Gammasoft-32x32.xpm"
+#include "gammasoft_16x16.xpm"
+#include "gammasoft_32x32.xpm"
+#include "gammasoft_64x64.xpm"
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -9,23 +11,34 @@ class form1 : public form {
 public:
   form1() {
     text("Bitmap button example");
-
-    bitmap_button1.parent(*this);
-    bitmap_button1.location({50, 50});
-    bitmap_button1.size({40, 40});
-    bitmap_button1.image(image::from_data(gammasoft_32x32));
+    controls().push_back_range({button1, button2, button3, button4});
     
-    bitmap_button2.parent(*this);
-    bitmap_button2.location({100, 50});
-    bitmap_button2.size({140, 40});
-    bitmap_button2.image(image::from_data(gammasoft_32x32));
-    bitmap_button2.image_align(content_alignment::middle_left);
-    bitmap_button2.text("Gammasoft");
+    button1.location({50, 50});
+    button1.width(100);
+    button1.text("Gammasoft");
+
+    button2.location({50, 80});
+    button2.width(120);
+    button2.image(image::from_data(gammasoft_16x16));
+    button2.image_align(content_alignment::middle_left);
+    button2.text("Gammasoft");
+    
+    button3.location({50, 110});
+    button3.size({140, 40});
+    button3.image(image::from_data(gammasoft_32x32));
+    button3.image_align(content_alignment::middle_left);
+    button3.text("Gammasoft");
+    
+    button4.location({50, 150});
+    button4.size({70, 70});
+    button4.image(image::from_data(gammasoft_64x64));
   }
   
 private:
-  button bitmap_button1;
-  button bitmap_button2;
+  button button1;
+  button button2;
+  button button3;
+  button button4;
 };
 
 int main() {
