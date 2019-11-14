@@ -29,7 +29,7 @@ public:
     button3.image_align(content_alignment::middle_left);
     button3.text("Gammasoft");
     
-    button4.location({50, 150});
+    button4.location({50, 155});
     button4.size({70, 70});
     button4.image(image::from_data(gammasoft_64x64));
   }
