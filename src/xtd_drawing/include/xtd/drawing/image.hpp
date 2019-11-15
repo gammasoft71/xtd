@@ -2,8 +2,7 @@
 #include <any>
 #include <cstdint>
 #include <memory>
-#include <ostream>
-#include <vector>
+#include <iostream>
 #include <xtd/ustring.hpp>
 #include "imaging/color_palette.hpp"
 #include "imaging/frame_dimension.hpp"
@@ -126,6 +125,8 @@ namespace xtd {
       /// @return The Image this method creates.
       static image from_file(const ustring& filename) {return image(filename);}
 
+      static image from_stream(std::istream& stream) {return image(stream);}
+
       static image from_data(const char* const* bits) {return image(bits);}
 
       static image empty;
@@ -136,6 +137,7 @@ namespace xtd {
       explicit image(std::istream& stream);
       explicit image(const char* const* bits);
       image(int32_t width, int32_t height);
+      image(const image& image, int32_t width, int32_t height);
       void update_properties();
 
       struct data {
