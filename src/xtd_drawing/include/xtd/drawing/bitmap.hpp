@@ -11,6 +11,8 @@ namespace xtd {
     public:
       explicit bitmap(const image& image) : xtd::drawing::image(image) {}
 
+      bitmap(const image& image, const drawing::size& size) : xtd::drawing::image(image, size.width(), size.height()) {}
+
       explicit bitmap(const ustring& filename) : xtd::drawing::image(filename) {}
 
       explicit bitmap(std::istream& stream) : xtd::drawing::image(stream) {}

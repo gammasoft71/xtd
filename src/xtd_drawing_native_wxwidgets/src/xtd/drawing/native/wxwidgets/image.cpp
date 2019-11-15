@@ -2,6 +2,7 @@
 #include <xtd/drawing/native/frame_dimension.hpp>
 #include <xtd/drawing/native/image_flags.hpp>
 #include <xtd/drawing/native/image_format.hpp>
+#include <xtd/xtd.io>
 #include <xtd/xtd.strings>
 #include <wx/image.h>
 #include <wx/palette.h>
@@ -60,6 +61,11 @@ void image::color_palette(intptr_t image, std::vector<argb>& entries, int32_t& f
   flags = 0;
 }
 
+intptr_t image::create(const ustring& filename) {
+  init_image_handlers();
+  return reinterpret_cast<intptr_t>(new wxImage(filename));
+}
+
 intptr_t image::create(std::istream& stream) {
   init_image_handlers();
   StdInputStreamAdapter std_stream(stream);
@@ -75,6 +81,13 @@ intptr_t image::create(int32_t width, int32_t height) {
   init_image_handlers();
   wxImage* result = new wxImage(width, height);
   result->SetAlpha();
+  return reinterpret_cast<intptr_t>(result);
+}
+
+intptr_t image::create(intptr_t image, int32_t width, int32_t height) {
+  if (image == 0) return 0;
+  wxImage* result = new wxImage(*reinterpret_cast<wxImage*>(image));
+  result->Rescale(width, height);
   return reinterpret_cast<intptr_t>(result);
 }
 

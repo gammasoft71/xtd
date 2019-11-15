@@ -10,8 +10,7 @@ using namespace xtd::drawing;
 image image::empty;
 
 image::image(const ustring &filename) {
-  std::fstream stream(filename, std::ios::in);
-  this->data_->handle_ = native::image::create(stream);
+  this->data_->handle_ = native::image::create(filename);
   this->update_properties();
 }
 
@@ -28,6 +27,11 @@ image::image(const char* const* bits) {
 
 image::image(int32_t width, int32_t height) {
   this->data_->handle_ = native::image::create(width, height);
+  this->update_properties();
+}
+
+image::image(const image& image, int32_t width, int32_t height) {
+  this->data_->handle_ = native::image::create(image.handle(), width, height);
   this->update_properties();
 }
 
