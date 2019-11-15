@@ -10,14 +10,35 @@ button_base::button_base() {
 }
 
 button_base& button_base::image(const drawing::image& value) {
-  if (this->image_ != value)
+  if (this->image_ != value) {
     this->image_ = value;
+    this->image_list_ = forms::image_list();
+    this->image_index_ = -1;
+  }
   return *this;
 }
 
 button_base& button_base::image_align(content_alignment value) {
   if (this->image_align_ != value) {
     this->image_align_ = value;
+    this->recreate_handle();
+  }
+  return *this;
+}
+
+button_base& button_base::image_index(int32_t value) {
+ if (this->image_index_ != value) {
+   if (value < -1 || value >= image_list_.images().size()) throw std::invalid_argument("Index out of range");
+   this->image_index_ = value;
+   this->recreate_handle();
+ }
+  return *this;
+}
+
+button_base& button_base::image_list(const forms::image_list& value) {
+  if (this->image_list_ != value) {
+    this->image_list_ = value;
+    this->image_ = drawing::image::empty;
     this->recreate_handle();
   }
   return *this;

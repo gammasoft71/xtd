@@ -2,6 +2,7 @@
 #include <xtd/drawing/image.hpp>
 #include "control.hpp"
 #include "content_alignment.hpp"
+#include "image_list.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -49,6 +50,12 @@ namespace xtd {
       /// @brief Gets the alignment of the image on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& image_align(content_alignment value);
+      
+      virtual int32_t image_index() const {return image_index_;}
+      virtual button_base& image_index(int32_t value);
+
+      virtual const forms::image_list& image_list() const {return image_list_;}
+      virtual button_base& image_list(const forms::image_list& value);
 
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
@@ -78,6 +85,8 @@ namespace xtd {
       /// @cond
       bool auto_ellipsis_ = false;
       drawing::image image_ = drawing::image::empty;
+      forms::image_list image_list_;
+      int32_t image_index_ = -1;
       content_alignment image_align_ = content_alignment::middle_center;
       content_alignment text_align_ = content_alignment::middle_center;
       /// @endcond

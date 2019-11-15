@@ -13,7 +13,13 @@ namespace xtd {
       using image_collection = layout::arranged_element_collection<drawing::image>;
 
       image_list();
+      /// @cond
       ~image_list();
+      image_list(const image_list&) = default;
+      image_list& operator=(const image_list&) = default;
+      bool operator==(const image_list& value) const {return images_ == value.images_;}
+      bool operator!=(const image_list& value) const {return !operator==(value);}
+      /// @endcond
 
       intptr_t handle() const {return handle_;}
       
@@ -30,8 +36,8 @@ namespace xtd {
 
     private:
       intptr_t handle_ = 0;
-      image_collection images_;
       drawing::size image_size_ {16, 16};
+      image_collection images_;
       std::any tag_;
     };
   }
