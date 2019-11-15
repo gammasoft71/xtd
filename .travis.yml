@@ -9,6 +9,7 @@ addons:
     - g++-7
     - lcov
     - libwxgtk3.0-dev
+    - llibgtk2.0-dev
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
