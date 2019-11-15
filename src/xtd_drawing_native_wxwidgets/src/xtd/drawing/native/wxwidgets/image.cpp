@@ -8,6 +8,7 @@
 #include <wx/palette.h>
 #include <wx/stream.h>
 
+using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
