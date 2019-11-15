@@ -65,6 +65,8 @@ namespace xtd {
           this->push_back_range(collection);
           return *this;
         }
+        bool operator==(const arranged_element_collection& value) const {return collection_ == value.collection_;}
+        bool operator!=(const arranged_element_collection& value) const {return !operator==(value);}
         /// @endcond
         
         /// @brief Occurs when an item is added to the collection.
