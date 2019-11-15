@@ -25,7 +25,7 @@ namespace xtd {
           item_t& operator=(const item_t& value) {
             this->type_t::operator=(value);
             if (parent != nullptr) {
-              parent->item_updated(pos, static_cast<const type_t&>(*this));
+              parent->item_updated(pos, static_cast<type_t&>(*this));
               //parent = nullptr;
             }
             return *this;
@@ -68,13 +68,13 @@ namespace xtd {
         /// @endcond
         
         /// @brief Occurs when an item is added to the collection.
-        event<arranged_element_collection, delegate<void(size_t, const type_t& item)>> item_added;
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
 
         /// @brief Occurs when an item is updated in the collection.
-        event<arranged_element_collection, delegate<void(size_t, const type_t& item)>> item_updated;
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
 
         /// @brief Occurs when an item is erased from the collection.
-        event<arranged_element_collection, delegate<void(size_t, const type_t& item)>> item_erased;
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_erased;
         
         allocator_t get_allocator() const {return this->collection_.get_allocator();}
         
@@ -137,19 +137,19 @@ namespace xtd {
         
         iterator insert(iterator pos, const value_type& value) {
           iterator result = this->collection_.insert(pos, value);
-          this->item_added(pos - this->begin(), value);
+          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type& value) {
           iterator result = this->collection_.insert(pos, value);
-          this->item_added(pos - this->begin(), value);
+          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type&& value) {
           iterator result = this->collection_.insert(pos, value);
-          this->item_added(pos - this->begin(), value);
+          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
           return result;
         }
 
@@ -189,12 +189,12 @@ namespace xtd {
 
         void push_back(const value_type& item) {
           this->collection_.push_back(item);
-          this->item_added(this->collection_.size() - 1, item);
+          this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
         }
         
         void push_back(value_type&& item) {
           this->collection_.push_back(item);
-          this->item_added(this->collection_.size() - 1, item);
+          this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
         }
         
         void push_back_range(const arranged_element_collection& collection) {

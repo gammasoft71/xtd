@@ -1,5 +1,7 @@
 #pragma once
 #include <any>
+#include "application.hpp"
+#include "form.hpp"
 #include "component.hpp"
 #include "dialog_result.hpp"
 #include "help_event_handler.hpp"
@@ -36,13 +38,23 @@ namespace xtd {
       /// @brief Runs a common dialog box with a default owner.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks This method implements run_dialog.
-      xtd::forms::dialog_result show_dialog() {return run_dialog(0) ? dialog_result::ok : dialog_result::cancel;}
+      xtd::forms::dialog_result show_dialog() {
+        auto form = form::active_form();
+        dialog_result result = run_dialog(0) ? dialog_result::ok : dialog_result::cancel;
+        if (form.has_value()) form.value().get().activate();
+        return result;
+      }
       
       /// @brief Runs a common dialog box with the specified owner.
       /// @param owner Any object that implements iwn32_window that represents the top-level window that will own the modal dialog box.
       /// @return ok the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks This version of the show_dialog method allows you to specify a specific form or control that will own the dialog box that is shown. If you use the version of this method that has no parameters, the dialog box being shown would be owned automatically by the currently active window of your application.
-      xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {return run_dialog(owner.handle()) ? dialog_result::ok : dialog_result::cancel;}
+      xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {
+        auto form = form::active_form();
+        dialog_result result = run_dialog(owner.handle()) ? dialog_result::ok : dialog_result::cancel;
+        if (form.has_value()) form.value().get().activate();
+        return result;
+      }
       
       /// @brief Occurs when the user clicks the Help button on a common dialog box.
       event<common_dialog, help_event_handler<component&>> help_request;

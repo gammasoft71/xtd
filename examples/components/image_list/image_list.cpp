@@ -60,7 +60,7 @@ namespace example {
       open_file_dialog ofd;
       ofd.multi_select(true);
       ofd.filter("All Image Files|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.xpm|Bitmap Files|*.bmp|Gif Files|*.gif|Jpeg Files|*.jpg;*.jpeg|Png Files|*.png|Tiff Files|*.tif;*.tiff|xpm Files|*.xpm");
-      if (ofd.show_dialog(*this) == dialog_result::ok) {
+      if (ofd.show_dialog() == dialog_result::ok) {
         image_list.images().clear();
         for (const auto& file : ofd.file_names())
           image_list.images().push_back(drawing::image::from_file(file));

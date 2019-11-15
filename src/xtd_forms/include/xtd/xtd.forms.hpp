@@ -55,6 +55,7 @@
 #include "xtd/forms/help_event_args.hpp"
 #include "xtd/forms/help_event_handler.hpp"
 #include "xtd/forms/ibutton_control.hpp"
+#include "xtd/forms/image_list.hpp"
 #include "xtd/forms/imessage_filter.hpp"
 #include "xtd/forms/item_check_event_args.hpp"
 #include "xtd/forms/item_check_event_handler.hpp"
