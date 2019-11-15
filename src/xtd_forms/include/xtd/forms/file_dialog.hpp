@@ -114,6 +114,13 @@ namespace xtd {
         initial_directory_ = value;
         return *this;
       }
+      
+      virtual bool multi_select() const {return get_option(OFN_ALLOWMULTISELECT);}
+      virtual file_dialog& multi_select(bool value) {
+        set_option(OFN_ALLOWMULTISELECT, value);
+        return *this;
+      }
+      
       /// @return Gets values to initialize the file_dialog.
       /// @return A bitwise combination of internal values that initializes the file_dialog.
       /// @return The options property corresponds to the flags used to initialize a color dialog box using Win32. Use the properties of the file_dialog class to get and set the options.

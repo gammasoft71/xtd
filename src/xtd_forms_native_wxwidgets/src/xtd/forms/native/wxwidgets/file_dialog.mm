@@ -14,11 +14,6 @@ using namespace xtd::forms::native;
 namespace {
   static bool PatternCompare(const std::string& fileName, const std::vector<std::string>& patterns);
   
-  static bool MakeKeyWindow(intptr_t handle) {
-    [(NSWindow*)handle makeKeyWindow];
-    return true;
-  }
-
   static void IgnoreMessages() {
     @autoreleasepool {
       NSEvent *ignoredEvent;
@@ -180,7 +175,6 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ust
 
   NSModalResponse response = [openPanel runModal];
   IgnoreMessages();
-  MakeKeyWindow(hwnd);
   if (response == NSModalResponseCancel) return false;
 
   if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT)
@@ -208,7 +202,6 @@ bool file_dialog::run_save_dialog(intptr_t hwnd, const ustring& default_ext, ust
 
   NSModalResponse response = [savePanel runModal];
   IgnoreMessages();
-  MakeKeyWindow(hwnd);
   if (response == NSModalResponseCancel) return false;
 
   file_name = [[[savePanel URL] path] UTF8String];

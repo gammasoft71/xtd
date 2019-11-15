@@ -249,7 +249,6 @@ namespace xtd {
       static void wm_quit(message& message);
 
       application() = default;
-      static const form* main_form;
       static bool use_visual_styles_;
       static bool message_loop_;
     };

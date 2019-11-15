@@ -37,6 +37,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/font_dialog.hpp
   include/xtd/forms/native/form.hpp
   include/xtd/forms/native/group_box.hpp
+  include/xtd/forms/native/image_list.hpp
   include/xtd/forms/native/label.hpp
   include/xtd/forms/native/list_box.hpp
   include/xtd/forms/native/list_box_styles.hpp
@@ -78,7 +79,7 @@ source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\forms FILES ${XTD_FORMS_INCLUDES})
 source_group(include\\xtd\\forms\\native FILES ${XTD_FORMS_NATIVE_INCLUDES})
 source_group(src FILES ${SOURCES})
-source_group(src\\xtd\\forms\native FILES ${XTD_FORMS_NATIVE_SOURCES})
+source_group(src\\xtd\\forms\\native FILES ${XTD_FORMS_NATIVE_SOURCES})
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

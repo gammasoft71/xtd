@@ -56,6 +56,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/help_event_args.hpp
   include/xtd/forms/help_event_handler.hpp
   include/xtd/forms/ibutton_control.hpp
+  include/xtd/forms/image_list.hpp
   include/xtd/forms/imessage_filter.hpp
   include/xtd/forms/item_check_event_args.hpp
   include/xtd/forms/item_check_event_handler.hpp
@@ -131,6 +132,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/font_dialog.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
+  src/xtd/forms/image_list.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/list_box.cpp
   src/xtd/forms/list_control.cpp
