@@ -50,7 +50,7 @@ namespace example {
         button_previous.enabled(current_image_index > 0);
         button_next.enabled(current_image_index < image_list.images().size() - 1);
       };
-
+      
       show();
       load_images();
     }
