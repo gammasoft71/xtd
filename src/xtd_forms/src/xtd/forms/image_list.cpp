@@ -24,6 +24,7 @@ image_list::image_list() {
 }
 
 image_list::~image_list() {
+  images().clear();
   if (handle_) native::image_list::destroy(handle_);
 }
 
