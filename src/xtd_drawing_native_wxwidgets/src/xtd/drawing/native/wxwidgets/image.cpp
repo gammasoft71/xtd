@@ -81,7 +81,7 @@ intptr_t image::create(const char* const* bits) {
 intptr_t image::create(int32_t width, int32_t height) {
   init_image_handlers();
   wxImage* result = new wxImage(width, height);
-  result->InitAlpha();
+  result->SetAlpha();
   for (int y = 0; y < height; y++)
   for (int x = 0; x < width; x++)
     result->SetAlpha(x, y, 0);
