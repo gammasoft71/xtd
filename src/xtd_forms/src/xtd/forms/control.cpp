@@ -712,10 +712,10 @@ void control::do_layout() {
   if (this->get_state(state::layout_deferred)) return;
 
   // this method can not be reentrant
-  static std::set<intptr_t> do_layouts;
-  if (do_layouts.find(this->handle_) != do_layouts.end())
+  static std::set<control*> do_layouts;
+  if (do_layouts.find(this) != do_layouts.end())
     return;
-  do_layouts.insert(this->handle_);
+  do_layouts.insert(this);
   
   bool docked = false;
   for(control_ref control : this->controls_) {
@@ -780,7 +780,7 @@ void control::do_layout() {
   }
 
   this->refresh();
-  do_layouts.erase(this->handle_);
+  do_layouts.erase(this);
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
