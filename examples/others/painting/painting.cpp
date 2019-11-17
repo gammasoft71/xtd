@@ -25,42 +25,85 @@ namespace examples {
       }
       current_color = panel_colors[panel_colors.size() - 1]->back_color();
       panel_colors[panel_colors.size() - 1]->border_style(forms::border_style::fixed_single);
-
+      
       button_clear.parent(*this);
       button_clear.text("Clear");
-      button_clear.location({542, 15});
+      button_clear.location({542, 13});
       button_clear.click += [this] {
-        picture = bitmap(picture_width, picture_height);
+        picture = bitmap(picture.width(), picture.height());
         panel_painting.invalidate();
       };
       
+      button_open.parent(*this);
+      button_open.text("Open...");
+      button_open.location({542, 47});
+      button_open.click += [this] {
+        open_file_dialog ofd;
+        if (ofd.show_dialog() == forms::dialog_result::ok) {
+          bitmap new_picture(ofd.file_name());
+          if (new_picture.width() > 128 || new_picture.height() > 128)
+            message_box::show(*this, "Image width and heignt must be lesser than 128 x 128", "Open image", message_box_buttons::ok, message_box_icon::error);
+          else {
+            picture = new_picture;
+            panel_painting.size({picture.width() * zoom, picture.height() * zoom});
+            panel_painting.invalidate();
+          }
+        }
+      };
+
+      label_zoom.parent(*this);
+      label_zoom.auto_size(false);
+      label_zoom.anchor(anchor_styles::top | anchor_styles::left);
+      label_zoom.location({10, 60});
+      label_zoom.text("Zoom");
+
       track_bar_zoom.parent(*this);
       track_bar_zoom.auto_size(false);
-      track_bar_zoom.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
-      track_bar_zoom.location({10, 50});
+      track_bar_zoom.anchor(anchor_styles::top | anchor_styles::left);
+      track_bar_zoom.location({60, 55});
       track_bar_zoom.set_range(1, 50);
       track_bar_zoom.tick_style(forms::tick_style::none);
       track_bar_zoom.value(zoom);
       track_bar_zoom.value_changed += [this] {
         zoom = track_bar_zoom.value();
+        numeric_up_down_zoom.value(zoom);
+        panel_painting.size({picture.width() * zoom, picture.height() * zoom});
         panel_painting.invalidate();
       };
-      track_bar_zoom.size({client_size().width() - 20, 25});
+      track_bar_zoom.size({390, 25});
+      
+      numeric_up_down_zoom.parent(*this);
+      numeric_up_down_zoom.location({470, 55});
+      numeric_up_down_zoom.set_range(1, 50);
+      numeric_up_down_zoom.value(zoom);
+      numeric_up_down_zoom.value_changed += [this] {
+        zoom = numeric_up_down_zoom.value();
+        track_bar_zoom.value(zoom);
+        panel_painting.size({picture.width() * zoom, picture.height() * zoom});
+        panel_painting.invalidate();
+      };
+      numeric_up_down_zoom.width(52);
 
-      panel_painting.parent(*this);
-      panel_painting.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+      panel_main.parent(*this);
+      panel_main.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
+      panel_main.auto_scroll(true);
+      panel_main.border_style(forms::border_style::fixed_single);
+      panel_main.location({10, 90});
+      panel_main.size({620, 380});
+      
+      panel_painting.parent(panel_main);
       panel_painting.back_color(color::white_smoke);
-      panel_painting.border_style(forms::border_style::fixed_single);
-      panel_painting.location({10, 82});
-      panel_painting.size({620, 388});
+      panel_painting.size({picture.width() * zoom, picture.height() * zoom});
 
       panel_painting.mouse_down += [this](control& sender, const mouse_event_args& e) {
-        picture.set_pixel(e.x()/zoom, e.y()/zoom, e.button() == mouse_buttons::left ? current_color : color::empty);
-        panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
+        if (e.x()/zoom < picture.width() && e.y()/zoom < picture.height()) {
+          picture.set_pixel(e.x()/zoom, e.y()/zoom, e.button() == mouse_buttons::left ? current_color : color::empty);
+          panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
+        }
       };
       
       panel_painting.mouse_move += [this](control& sender, const mouse_event_args& e) {
-        if (e.button() == mouse_buttons::left) {
+        if (e.button() == mouse_buttons::left && e.x()/zoom < picture.width() && e.y()/zoom < picture.height()) {
           picture.set_pixel(e.x()/zoom, e.y()/zoom, current_color);
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
@@ -87,17 +130,19 @@ namespace examples {
       current_color = sender.back_color();
     }
 
-    static constexpr int picture_width = 5000;
-    static constexpr int picture_height = 5000;
     int zoom = 20;
     drawing::color current_color;
-    bitmap picture {picture_width, picture_height};
+    bitmap picture {32, 32};
 
     panel panel_colors_container;
     vector<shared_ptr<panel>> panel_colors;
     button button_clear;
+    button button_open;
+    panel panel_main;
     panel panel_painting;
+    label label_zoom;
     track_bar track_bar_zoom;
+    numeric_up_down numeric_up_down_zoom;
   };
 }
 
