@@ -42,7 +42,7 @@ namespace examples {
         if (ofd.show_dialog() == forms::dialog_result::ok) {
           bitmap new_picture(ofd.file_name());
           if (new_picture.width() > 128 || new_picture.height() > 128)
-            message_box::show(*this, "Image width and heignt must be lesser than 128 x 128", "Open image", message_box_buttons::ok, message_box_icon::error);
+            message_box::show(*this, "The size of the image must be less than or equal to 128 x 128 pixels.", "Painting example", message_box_buttons::ok, message_box_icon::error);
           else {
             picture = new_picture;
             panel_painting.size({picture.width() * zoom, picture.height() * zoom});
