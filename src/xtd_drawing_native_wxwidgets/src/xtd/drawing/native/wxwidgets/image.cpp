@@ -4,6 +4,7 @@
 #include <xtd/drawing/native/image_format.hpp>
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
+#include <atomic>
 #include <wx/image.h>
 #include <wx/palette.h>
 #include <wx/stream.h>
@@ -42,11 +43,18 @@ namespace {
     std::istream &stream_;
   };
 
-  void init_image_handlers() {
-    static bool first_run = true;
-    if (!first_run) return;
-    wxInitAllImageHandlers();
-    first_run = false;
+  static std::atomic<uint32_t> count_image_handler = 0;
+
+  static void init_image_handlers() {
+    if (count_image_handler == 0)
+      wxInitAllImageHandlers();
+    ++count_image_handler;
+  }
+    
+  static void clean_image_handlers() {
+    --count_image_handler;
+    if (count_image_handler == 0)
+      wxImage::CleanUpHandlers();
   }
 }
 
@@ -90,13 +98,16 @@ intptr_t image::create(int32_t width, int32_t height) {
 
 intptr_t image::create(intptr_t image, int32_t width, int32_t height) {
   if (image == 0) return 0;
+  init_image_handlers();
   wxImage* result = new wxImage(*reinterpret_cast<wxImage*>(image));
   result->Rescale(width, height);
   return reinterpret_cast<intptr_t>(result);
 }
 
 void image::destroy(intptr_t image) {
+  reinterpret_cast<wxImage*>(image)->Destroy();
   delete reinterpret_cast<wxImage*>(image);
+  clean_image_handlers();
 }
 
 size_t image::flags(intptr_t image) {
