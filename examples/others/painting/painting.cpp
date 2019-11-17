@@ -96,14 +96,14 @@ namespace examples {
       panel_painting.size({picture.width() * zoom, picture.height() * zoom});
 
       panel_painting.mouse_down += [this](control& sender, const mouse_event_args& e) {
-        if (e.x()/zoom < picture.width() && e.y()/zoom < picture.height()) {
+        if (e.x()/zoom >= 0 && e.x()/zoom < picture.width() && e.y()/zoom >= 0 && e.y()/zoom < picture.height()) {
           picture.set_pixel(e.x()/zoom, e.y()/zoom, e.button() == mouse_buttons::left ? current_color : color::empty);
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
       
       panel_painting.mouse_move += [this](control& sender, const mouse_event_args& e) {
-        if (e.button() == mouse_buttons::left && e.x()/zoom < picture.width() && e.y()/zoom < picture.height()) {
+        if (e.button() == mouse_buttons::left && e.x()/zoom >= 0 && e.x()/zoom < picture.width() && e.y()/zoom >= 0 && e.y()/zoom < picture.height()) {
           picture.set_pixel(e.x()/zoom, e.y()/zoom, current_color);
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
