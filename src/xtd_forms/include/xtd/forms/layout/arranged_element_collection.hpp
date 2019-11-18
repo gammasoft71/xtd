@@ -16,7 +16,7 @@ namespace xtd {
       template<typename type_t, typename allocator_t = std::allocator<type_t>>
       class arranged_element_collection {
       public:
-        class item_t :public type_t {
+        class item_t : public type_t {
         public:
           item_t() = default;
           template <typename ...args_t>
@@ -33,7 +33,7 @@ namespace xtd {
           
           operator type_t() {return *this;}
           
-          friend std::ostream& operator<<(std::ostream& os, const item_t& value) {return os << value.to_string();}
+          friend std::ostream& operator<<(std::ostream& os, const item_t& value) {return os << static_cast<const type_t&>(value);}
           
           size_t pos;
           arranged_element_collection* parent = nullptr;
@@ -138,24 +138,30 @@ namespace xtd {
         }
         
         iterator insert(iterator pos, const value_type& value) {
+          size_t index = pos - this->begin();
           iterator result = this->collection_.insert(pos, value);
-          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
+          this->item_added(index, this->collection_[index]);
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type& value) {
+          size_t index = pos - this->begin();
           iterator result = this->collection_.insert(pos, value);
-          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
+          this->item_added(index, this->collection_[index]);
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type&& value) {
+          size_t index = pos - this->begin();
           iterator result = this->collection_.insert(pos, value);
-          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
+          this->item_added(index, this->collection_[index]);
           return result;
         }
 
-        void insert_at(size_t index, const value_type& value) {this->insert(this->begin() + index, value);}
+        void insert_at(size_t index, const value_type& value) {
+          if (index > size()) throw std::invalid_argument("index out of range");
+          this->insert(this->begin() + index, value);
+        }
 
         iterator erase(iterator pos) {
           size_t index = pos - this->begin();
@@ -166,7 +172,7 @@ namespace xtd {
         }
         
         iterator erase(const_iterator pos) {
-          size_t index = pos - this->cbegin();
+          size_t index = pos - this->begin();
           value_type item = *pos;
           iterator result = this->collection_.erase(pos);
           this->item_erased(index, item);
@@ -187,7 +193,10 @@ namespace xtd {
           return result;
         }
         
-        void erase_at(size_t index) {this->erase(this->begin() + index);}
+        void erase_at(size_t index) {
+          if (index > size()) throw std::invalid_argument("index out of range");
+          this->erase(this->begin() + index);
+        }
 
         void push_back(const value_type& item) {
           this->collection_.push_back(item);
