@@ -1,5 +1,7 @@
 #include <list>
 #include <xtd/forms/native/image_list.hpp>
+#include <wx/image.h>
+#include <wx/bitmap.h>
 #include <wx/imaglist.h>
 
 using namespace xtd;
@@ -25,7 +27,7 @@ void image_list::insert_item(intptr_t image_list, size_t pos, const drawing::ima
     reinterpret_cast<wxImageList*>(image_list)->Add(*reinterpret_cast<wxImage*>(image.handle()));
   else {
     std::list<wxBitmap> bitmaps;
-    for (int index = reinterpret_cast<wxImageList*>(image_list)->GetImageCount() - 1; index >= pos; index--) {
+    for (int index = reinterpret_cast<wxImageList*>(image_list)->GetImageCount() - 1; index > pos; index--) {
       bitmaps.push_front(reinterpret_cast<wxImageList*>(image_list)->GetBitmap(index));
       reinterpret_cast<wxImageList*>(image_list)->Remove(index);
     }
@@ -34,4 +36,9 @@ void image_list::insert_item(intptr_t image_list, size_t pos, const drawing::ima
       reinterpret_cast<wxImageList*>(image_list)->Add(bitmap);
     }
   }
+}
+
+void image_list::update_item(intptr_t image_list, size_t pos, const drawing::image& image) {
+  if (image_list == 0) return;
+  reinterpret_cast<wxImageList*>(image_list)->Replace(pos, wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
 }
