@@ -58,10 +58,6 @@ namespace xtd {
         /// @biref Creats a new object arranged_element_collection
         explicit arranged_element_collection(const allocator_t& allocator = allocator_t()) : collection_(allocator) {}
         
-        ~arranged_element_collection() {
-          clear();
-        }
-        
         /// @cond
         arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
         arranged_element_collection& operator=(const arranged_element_collection& collection) {
