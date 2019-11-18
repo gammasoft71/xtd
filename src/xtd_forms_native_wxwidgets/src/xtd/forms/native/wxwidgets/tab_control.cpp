@@ -10,10 +10,35 @@ void tab_control::add_item(intptr_t control, intptr_t page, const ustring& text)
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->AddPage(reinterpret_cast<control_handler*>(page)->control(), text);
 }
 
+void tab_control::delete_item(intptr_t control, size_t index) {
+  if (control == 0) return;
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->RemovePage(index);
+}
+
 void tab_control::delete_item(intptr_t control, intptr_t page) {
   if (control == 0 || page == 0) return;
-  int index = static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->FindPage(reinterpret_cast<control_handler*>(page)->control());
-  if (index != -1) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->RemovePage(index);
+  size_t index = static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->FindPage(reinterpret_cast<control_handler*>(page)->control());
+  if (index != -1) delete_item(control, index);
+}
+
+void tab_control::image_list(intptr_t control, intptr_t image_list) {
+  if (control == 0) return;
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetImageList(reinterpret_cast<wxImageList*>(image_list));
+}
+
+void tab_control::insert_item(intptr_t control, size_t index, intptr_t page) {
+  if (control == 0 || page == 0) return;
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->InsertPage(index, reinterpret_cast<control_handler*>(page)->control(), wxEmptyString);
+}
+
+void tab_control::page_image_index(intptr_t control, size_t index, size_t image_index) {
+  if (control == 0) return;
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetPageImage(index, image_index);
+}
+
+void tab_control::page_text(intptr_t control, size_t index, const ustring& text) {
+  if (control == 0) return;
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetPageText(index, text);
 }
 
 size_t tab_control::selected_index(intptr_t control) {
@@ -24,4 +49,10 @@ size_t tab_control::selected_index(intptr_t control) {
 void tab_control::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
+}
+
+void tab_control::update_item(intptr_t control, size_t index, intptr_t page) {
+  if (control == 0 || page == 0) return;
+  delete_item(control, index);
+  insert_item(control, index, page);
 }

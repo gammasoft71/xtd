@@ -26,3 +26,9 @@ void domain_up_down::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedIndex(index);
 }
+
+void domain_up_down::update_item(intptr_t control, size_t index, const ustring& value) {
+  if (control == 0) return;
+  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems()[index] = value;
+  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
+}
