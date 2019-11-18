@@ -35,8 +35,7 @@ combo_box::combo_box() {
   this->items_.item_updated += [&](size_t pos, const item& item) {
     static bool update_disabled = false;
     if (update_disabled) return;
-    native::combo_box::delete_item(this->handle_, pos);
-    native::combo_box::insert_item(this->handle_, pos, item.value());
+    native::combo_box::update_item(this->handle_, pos, item.value());
     if (this->sorted_) {
       update_disabled = true;
       std::sort(this->items_.begin(), this->items_.end());

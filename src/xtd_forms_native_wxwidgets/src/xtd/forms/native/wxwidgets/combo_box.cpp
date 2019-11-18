@@ -41,3 +41,8 @@ void combo_box::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
   return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }
+
+void combo_box::update_item(intptr_t control, size_t index, const ustring& value) {
+  if (control == 0) return;
+  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
+}
