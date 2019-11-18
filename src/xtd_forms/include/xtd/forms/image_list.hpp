@@ -17,28 +17,31 @@ namespace xtd {
       ~image_list();
       image_list(const image_list&) = default;
       image_list& operator=(const image_list&) = default;
-      bool operator==(const image_list& value) const {return images_ == value.images_;}
+      bool operator==(const image_list& value) const {return data_->images_ == value.data_->images_;}
       bool operator!=(const image_list& value) const {return !operator==(value);}
       /// @endcond
 
-      intptr_t handle() const {return handle_;}
+      intptr_t handle() const {return data_->handle_;}
       
-      bool handle_created() const {return handle_ != 0;}
+      bool handle_created() const {return data_->handle_ != 0;}
       
-      image_collection& images() {return images_;}
-      const image_collection& images() const {return images_;}
+      image_collection& images() {return data_->images_;}
+      const image_collection& images() const {return data_->images_;}
       
-      const drawing::size image_size() const {return image_size_;}
+      const drawing::size image_size() const {return data_->image_size_;}
       void image_size(const drawing::size& value);
       
-      std::any tag() const {return tag_;}
-      void tag(std::any& tag) {tag_ = tag;}
+      std::any tag() const {return data_->tag_;}
+      void tag(std::any& tag) {data_->tag_ = tag;}
 
     private:
-      intptr_t handle_ = 0;
-      drawing::size image_size_ {16, 16};
-      image_collection images_;
-      std::any tag_;
+      struct data {
+        intptr_t handle_ = 0;
+        drawing::size image_size_ {16, 16};
+        image_collection images_;
+        std::any tag_;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

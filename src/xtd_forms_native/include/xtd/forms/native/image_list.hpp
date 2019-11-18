@@ -12,6 +12,7 @@ namespace xtd {
         static void delete_item(intptr_t image_list, size_t pos);
         static void destroy(intptr_t image_list);
         static void insert_item(intptr_t image_list, size_t pos, const drawing::image& image);
+        static void update_item(intptr_t image_list, size_t pos, const drawing::image& image);
       };
     }
   }
