@@ -69,3 +69,9 @@ vector<size_t> checked_list_box::selected_indices(intptr_t control) {
   return indices;
     
 }
+
+void checked_list_box::update_item(intptr_t control, size_t index, const ustring& value, bool checked) {
+  if (control == 0) return;
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(index, checked);
+}

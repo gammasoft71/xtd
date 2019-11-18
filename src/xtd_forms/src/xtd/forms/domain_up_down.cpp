@@ -31,8 +31,7 @@ domain_up_down::domain_up_down() {
   this->items_.item_updated += [&](size_t pos, const item& item) {
     static bool update_disabled = false;
     if (update_disabled) return;
-    native::domain_up_down::delete_item(this->handle_, pos);
-    native::domain_up_down::insert_item(this->handle_, pos, item.value());
+    native::domain_up_down::update_item(this->handle_, pos, item.value());
     domain_up_down::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);

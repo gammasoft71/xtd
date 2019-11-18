@@ -17,6 +17,7 @@ namespace xtd {
         static size_t selected_index(intptr_t control);
         static void selected_index(intptr_t control, size_t index);
         static std::vector<size_t> selected_indices(intptr_t control);
+        static void update_item(intptr_t control, size_t index, const ustring& value, bool checked);
       };
     }
   }
