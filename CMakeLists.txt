@@ -63,6 +63,7 @@ option(XTD_WXWIDGETS "Use wxWidgets as native drawing and forms libraries" ON)
 if (XTD_WXWIDGETS)
   add_subdirectory(src/xtd_forms_native_wxwidgets)
   set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.wxwidgets)
+  add_definitions(-D__XTD_FORMS_NATIVE_WXWIDGETS__)
 endif ()
 
 if (IS_MAIN_PROJECT)
