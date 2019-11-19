@@ -25,19 +25,14 @@ namespace xtd {
         public:
           item_t() = default;
           template <typename ...args_t>
-          item_t(args_t&& ...args) : type_t(args...) {}
+          item_t(args_t&& ...args) : type_t(args...) {
+            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(*this));
+          }
 
           item_t& operator=(const item_t& value) {
+            if (value.parent) parent = value.parent;
             if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(const_cast<item_t&>(value)));
             this->type_t::operator=(value);
-            if (value.parent) parent = value.parent;
-            return *this;
-          }
-          
-          item_t& operator=(item_t& value) {
-            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(value));
-            this->type_t::operator=(value);
-            if (value.parent) parent = value.parent;
             return *this;
           }
           
