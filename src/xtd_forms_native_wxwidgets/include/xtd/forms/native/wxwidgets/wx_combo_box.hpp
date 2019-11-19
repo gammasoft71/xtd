@@ -25,7 +25,8 @@ namespace xtd {
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
 
-          if ((style & CBS_SORT) == CBS_SORT) wx_style |= wxCB_SORT;
+          // Do not use wxwidgets sort
+          //if ((style & CBS_SORT) == CBS_SORT) wx_style |= wxCB_SORT;
           
           if ((style & CBS_DROPDOWNLIST) == CBS_DROPDOWNLIST) wx_style |= wxCB_READONLY;
           else if ((style & CBS_DROPDOWN) == CBS_DROPDOWN) wx_style |= wxCB_DROPDOWN;

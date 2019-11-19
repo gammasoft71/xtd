@@ -16,7 +16,7 @@ list_box::list_box() {
 
   this->items_.item_added += [this](size_t index, const item& item) {
     native::list_box::insert_item(this->handle_, index, item.value());
-    if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
+    //if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
     list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -30,14 +30,7 @@ list_box::list_box() {
   };
   
   this->items_.item_updated += [this](size_t index, const item& item) {
-    static bool update_disabled = false;
-    if (update_disabled) return;
     native::list_box::update_item(this->handle_, index, item.value());
-    if (this->sorted_) {
-      update_disabled = true;
-      std::sort(this->items_.begin(), this->items_.end());
-      update_disabled = false;
-    }
     list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -104,8 +97,7 @@ list_box& list_box::selection_mode(forms::selection_mode selection_mode) {
 list_box& list_box::sorted(bool sorted) {
   if (this->sorted_ != sorted) {
     this->sorted_ = sorted;
-    if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
-    this->recreate_handle();
+    items_.sorted(sorted_);
   }
   return *this;
 }
@@ -132,7 +124,8 @@ forms::create_params list_box::create_params() const {
   default: break;
   }
 
-  if (this->sorted_) create_params.style(create_params.style() | LBS_SORT);
+  // Do not use native control sort
+  //if (this->sorted_) create_params.style(create_params.style() | LBS_SORT);
 
   if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
@@ -142,6 +135,7 @@ forms::create_params list_box::create_params() const {
 
 void list_box::on_handle_created(const event_args& e) {
   this->list_control::on_handle_created(e);
+  items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::list_box::insert_item(this->handle_, index, this->items_[index].value());
   if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);

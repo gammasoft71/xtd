@@ -16,7 +16,6 @@ checked_list_box::checked_list_box() {
 
   this->items_.item_added += [&](size_t pos, const item& item) {
     native::checked_list_box::insert_item(this->handle_, pos, item.value(), item.checked());
-    if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
     checked_list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -31,14 +30,7 @@ checked_list_box::checked_list_box() {
   };
   
   this->items_.item_updated += [&](size_t pos, const item& item) {
-    static bool update_disabled = false;
-    if (update_disabled) return;
     native::checked_list_box::update_item(this->handle_, pos, item.value(), item.checked());
-    if (this->sorted_) {
-      update_disabled = true;
-      std::sort(this->items_.begin(), this->items_.end());
-      update_disabled = false;
-    }
     checked_list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -150,7 +142,8 @@ forms::create_params checked_list_box::create_params() const {
   default: break;
   }
 
-  if (this->sorted_) create_params.style(create_params.style() | LBS_SORT);
+  // Do not use native control sort
+  //if (this->sorted_) create_params.style(create_params.style() | LBS_SORT);
 
   if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
@@ -160,6 +153,7 @@ forms::create_params checked_list_box::create_params() const {
 
 void checked_list_box::on_handle_created(const event_args& e) {
   this->list_control::on_handle_created(e);
+  items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::checked_list_box::insert_item(this->handle_, index, this->items_[index].value(), this->items_[index].checked());
   if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);

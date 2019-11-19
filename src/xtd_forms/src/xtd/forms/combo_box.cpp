@@ -18,7 +18,6 @@ combo_box::combo_box() {
 
   this->items_.item_added += [&](size_t pos, const item& item) {
     native::combo_box::insert_item(this->handle_, pos, item.value());
-    if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
     combo_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -33,14 +32,7 @@ combo_box::combo_box() {
   };
   
   this->items_.item_updated += [&](size_t pos, const item& item) {
-    static bool update_disabled = false;
-    if (update_disabled) return;
     native::combo_box::update_item(this->handle_, pos, item.value());
-    if (this->sorted_) {
-      update_disabled = true;
-      std::sort(this->items_.begin(), this->items_.end());
-      update_disabled = false;
-    }
     combo_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -89,8 +81,7 @@ combo_box& combo_box::selected_item(const item& selected_item) {
 combo_box& combo_box::sorted(bool sorted) {
   if (this->sorted_ != sorted) {
     this->sorted_ = sorted;
-    if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
-    this->recreate_handle();
+    items_.sorted(sorted_);
   }
   return *this;
 }
@@ -108,7 +99,8 @@ forms::create_params combo_box::create_params() const {
 
   create_params.class_name("combobox");
 
-  if (this->sorted_) create_params.style(create_params.style() | CBS_SORT);
+  // Do not use native control sort
+  //if (this->sorted_) create_params.style(create_params.style() | CBS_SORT);
   
   switch (this->drop_down_style_) {
     case combo_box_style::drop_down_list: create_params.style(create_params.style() | CBS_DROPDOWNLIST); break;
@@ -128,6 +120,7 @@ void combo_box::on_drop_down_style_changed(const event_args& e) {
 
 void combo_box::on_handle_created(const event_args& e) {
   this->list_control::on_handle_created(e);
+  items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::combo_box::insert_item(this->handle_, index, this->items_[index].value());
   native::combo_box::selected_index(this->handle_, this->selected_index_);
