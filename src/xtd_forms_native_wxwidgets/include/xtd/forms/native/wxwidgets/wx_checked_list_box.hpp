@@ -26,7 +26,8 @@ namespace xtd {
           else if ((style & LBS_MULTIPLESEL) == LBS_MULTIPLESEL) wx_style |= wxLB_MULTIPLE;
           else if ((style & LBS_HASSTRINGS) == LBS_HASSTRINGS) wx_style |= wxLB_SINGLE;
           
-           if ((style & LBS_SORT) == LBS_SORT) wx_style |= wxLB_SORT;
+           // Do not use wxwidgets sort
+           //if ((style & LBS_SORT) == LBS_SORT) wx_style |= wxLB_SORT;
           
           return wx_style | common_window_style_to_wx_style(style, ex_style);
         }

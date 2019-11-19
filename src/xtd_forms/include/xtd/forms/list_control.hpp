@@ -12,6 +12,13 @@ namespace xtd {
     public:
       class item {
       public:
+        struct sorter {
+          template<typename type_t>
+          void operator()(type_t first, type_t last) {
+            std::sort(first, last);
+          }
+        };
+
         item() = default;
         item(const ustring& value) : value_(value) {}
         item(const ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
@@ -39,7 +46,7 @@ namespace xtd {
         std::any tag_;
       };
    
-      using item_collection = layout::arranged_element_collection<item>;
+      using item_collection = layout::arranged_element_collection<item, std::allocator<item>, item::sorter>;
 
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.

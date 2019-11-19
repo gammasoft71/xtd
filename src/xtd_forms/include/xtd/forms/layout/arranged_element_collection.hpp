@@ -11,9 +11,15 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
-      /// @brief Represents a collection of objects.
+      struct sorter_none {
+        template<typename type_t>
+        void operator()(type_t first, type_t last) {
+        }
+      };
+  
+    /// @brief Represents a collection of objects.
       /// @remarks The arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
-      template<typename type_t, typename allocator_t = std::allocator<type_t>>
+      template<typename type_t, typename allocator_t = std::allocator<type_t>, typename sorter_t = sorter_none>
       class arranged_element_collection {
       public:
         class item_t : public type_t {
@@ -23,7 +29,7 @@ namespace xtd {
           item_t(args_t&& ...args) : type_t(args...) {}
 
           item_t& operator=(const item_t& value) {
-            if (parent != nullptr && !parent->inserting && !parent->erasing) parent->item_updated(pos, static_cast<type_t&>(const_cast<item_t&>(value)));
+            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(const_cast<item_t&>(value)));
             this->type_t::operator=(value);
             if (value.parent) parent = value.parent;
             return *this;
@@ -129,6 +135,14 @@ namespace xtd {
         
         void shrink_to_fit() {this->collection_.shrink_to_fit();}
         
+        bool sorted() const {return sorted_;}
+        void sorted(bool value) {
+          if (sorted_ != value) {
+            sorted_ = value;
+            if (sorted_) sort();
+          }
+        }
+        
         void clear() {
           iterator it = this->begin();
           while (it != this->end())
@@ -156,34 +170,37 @@ namespace xtd {
 
         iterator insert(iterator pos, const value_type& value) {
           size_t index = pos - this->begin();
-          inserting = true;
+          inserting_ = true;
           iterator result = this->collection_.insert(pos, value);
-          inserting = false;
+          inserting_ = false;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
           this->item_added(index, this->collection_[index]);
+          if (sorted_) sort();
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type& value) {
           size_t index = pos - this->begin();
-          inserting = true;
+          inserting_ = true;
           iterator result = this->collection_.insert(pos, value);
-          inserting = false;
+          inserting_ = false;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
           this->item_added(index, this->collection_[index]);
+          if (sorted_) sort();
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type&& value) {
           size_t index = pos - this->begin();
-          inserting = true;
+          inserting_ = true;
           iterator result = this->collection_.insert(pos, value);
-          inserting = false;
+          inserting_ = false;
           (*this)[index].parent = this;
           (*this)[index].pos = index;
           this->item_added(index, this->collection_[index]);
+          if (sorted_) sort();
           return result;
         }
 
@@ -194,17 +211,17 @@ namespace xtd {
 
         iterator erase(iterator pos) {
           this->item_erased(pos - this->begin(), *pos);
-          erasing = true;
+          erasing_ = true;
           iterator result = this->collection_.erase(pos);
-          erasing = false;
+          erasing_ = false;
           return result;
         }
         
         iterator erase(const_iterator pos) {
           this->item_erased(pos - this->begin(), *pos);
-          erasing = true;
+          erasing_ = true;
           iterator result = this->collection_.erase(pos);
-          erasing = false;
+          erasing_ = false;
           return result;
         }
         
@@ -232,6 +249,7 @@ namespace xtd {
           (*this)[this->collection_.size() - 1].parent = this;
           (*this)[this->collection_.size() - 1].pos = this->collection_.size() - 1;
           this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
+          if (sorted_) sort();
         }
         
         void push_back(value_type&& item) {
@@ -239,6 +257,7 @@ namespace xtd {
           (*this)[this->collection_.size() - 1].parent = this;
           (*this)[this->collection_.size() - 1].pos = this->collection_.size() - 1;
           this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
+          if (sorted_) sort();
         }
         
         void push_back_range(const arranged_element_collection& collection) {
@@ -255,11 +274,18 @@ namespace xtd {
           for(value_type item : collection)
             this->push_back(item);
         }
+        
+        void sort() {
+          //std::sort(begin(), end());
+          sorter_t sorter;
+          sorter(begin(), end());
+        }
       
       private:
         std::vector<value_type, allocator_type> collection_;
-        bool inserting = false;
-        bool erasing = false;
+        bool inserting_ = false;
+        bool erasing_ = false;
+        bool sorted_ = false;
       };
     }
   }
