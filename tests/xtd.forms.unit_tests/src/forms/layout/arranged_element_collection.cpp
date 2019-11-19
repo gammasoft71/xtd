@@ -493,7 +493,13 @@ namespace unit_tests {
       assert::are_equal_("d", items[3]);
       assert::are_equal_(1, erased_control_check);
     }
-    
+        
+    void test_method_(erase_at_item_width_bad_index) {
+      arranged_element_collection<ustring> items;
+      items.push_back_range({"a", "b", "c"});
+      assert::throws_(invalid_argument, [&] {items.erase_at(-1);});
+    }
+
     void test_method_(update_item) {
       arranged_element_collection<ustring> items;
       items.push_back_range({"a", "b", "c", "d", "e"});
