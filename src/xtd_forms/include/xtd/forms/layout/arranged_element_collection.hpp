@@ -23,11 +23,9 @@ namespace xtd {
           item_t(args_t&& ...args) : type_t(args...) {}
 
           item_t& operator=(const item_t& value) {
+            if (parent != nullptr && !parent->inserting && !parent->erasing) parent->item_updated(pos, static_cast<type_t&>(const_cast<item_t&>(value)));
             this->type_t::operator=(value);
-            if (parent != nullptr) {
-              parent->item_updated(pos, static_cast<type_t&>(*this));
-              //parent = nullptr;
-            }
+            if (value.parent) parent = value.parent;
             return *this;
           }
           
@@ -82,7 +80,7 @@ namespace xtd {
         
         reference at(size_type pos) {
           this->collection_[pos].pos = pos;
-          this->collection_[pos].parent = this;
+          //this->collection_[pos].parent = this;
           return this->collection_.at(pos);
         }
         const_reference at(size_type pos) const {return this->collection_.at(pos);}
@@ -98,7 +96,7 @@ namespace xtd {
         
         reference operator[](size_type pos) {
           this->collection_[pos].pos = pos;
-          this->collection_[pos].parent = this;
+          //this->collection_[pos].parent = this;
           return this->collection_[pos];
         }
         const_reference operator[](size_type pos) const {return this->collection_[pos];}
@@ -137,23 +135,54 @@ namespace xtd {
             it = this->erase(it);
         }
         
+        /*
+        iterator insert(iterator pos, const value_type& value) {
+          const_cast<value_type&>(value).parent = this;
+          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
+          return this->collection_.insert(pos, value);
+        }
+        
+        iterator insert(const_iterator pos, const value_type& value) {
+          const_cast<value_type&>(value).parent = this;
+          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
+          return this->collection_.insert(pos, value);
+        }
+        
+        iterator insert(const_iterator pos, const value_type&& value) {
+          const_cast<value_type&>(value).parent = this;
+          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
+          return this->collection_.insert(pos, value);
+        }*/
+
         iterator insert(iterator pos, const value_type& value) {
           size_t index = pos - this->begin();
+          inserting = true;
           iterator result = this->collection_.insert(pos, value);
+          inserting = false;
+          (*this)[index].parent = this;
+          (*this)[index].pos = index;
           this->item_added(index, this->collection_[index]);
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type& value) {
           size_t index = pos - this->begin();
+          inserting = true;
           iterator result = this->collection_.insert(pos, value);
+          inserting = false;
+          (*this)[index].parent = this;
+          (*this)[index].pos = index;
           this->item_added(index, this->collection_[index]);
           return result;
         }
         
         iterator insert(const_iterator pos, const value_type&& value) {
           size_t index = pos - this->begin();
+          inserting = true;
           iterator result = this->collection_.insert(pos, value);
+          inserting = false;
+          (*this)[index].parent = this;
+          (*this)[index].pos = index;
           this->item_added(index, this->collection_[index]);
           return result;
         }
@@ -164,18 +193,18 @@ namespace xtd {
         }
 
         iterator erase(iterator pos) {
-          size_t index = pos - this->begin();
-          value_type item = *pos;
+          this->item_erased(pos - this->begin(), *pos);
+          erasing = true;
           iterator result = this->collection_.erase(pos);
-          this->item_erased(index, item);
+          erasing = false;
           return result;
         }
         
         iterator erase(const_iterator pos) {
-          size_t index = pos - this->begin();
-          value_type item = *pos;
+          this->item_erased(pos - this->begin(), *pos);
+          erasing = true;
           iterator result = this->collection_.erase(pos);
-          this->item_erased(index, item);
+          erasing = false;
           return result;
         }
         
@@ -200,11 +229,15 @@ namespace xtd {
 
         void push_back(const value_type& item) {
           this->collection_.push_back(item);
+          (*this)[this->collection_.size() - 1].parent = this;
+          (*this)[this->collection_.size() - 1].pos = this->collection_.size() - 1;
           this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
         }
         
         void push_back(value_type&& item) {
           this->collection_.push_back(item);
+          (*this)[this->collection_.size() - 1].parent = this;
+          (*this)[this->collection_.size() - 1].pos = this->collection_.size() - 1;
           this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
         }
         
@@ -225,6 +258,8 @@ namespace xtd {
       
       private:
         std::vector<value_type, allocator_type> collection_;
+        bool inserting = false;
+        bool erasing = false;
       };
     }
   }

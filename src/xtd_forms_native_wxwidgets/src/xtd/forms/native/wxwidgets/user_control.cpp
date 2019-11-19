@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include <xtd/forms/native/user_control.hpp>
-#include "wx_user_control.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

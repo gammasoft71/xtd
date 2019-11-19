@@ -7,8 +7,8 @@
 #include <xtd/environment.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
-#include "control_handler.hpp"
-#include "wx_application.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.hpp"
 #include <wx/aboutdlg.h>
 
 using namespace std;

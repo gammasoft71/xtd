@@ -2,7 +2,7 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/text_box.hpp>
-#include "wx_text_box.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_text_box.hpp"
 
 using namespace std;
 using namespace xtd;

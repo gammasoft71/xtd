@@ -1,5 +1,5 @@
 #include <xtd/forms/native/track_bar.hpp>
-#include "wx_track_bar.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_track_bar.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

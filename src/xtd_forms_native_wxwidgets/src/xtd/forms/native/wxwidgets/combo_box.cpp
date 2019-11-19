@@ -2,7 +2,7 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/combo_box.hpp>
-#include "wx_combo_box.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.hpp"
 
 using namespace std;
 using namespace xtd;
@@ -26,10 +26,7 @@ void combo_box::end_update(intptr_t control) {
 
 void combo_box::insert_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  if (!static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
-    static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
-  else
-    static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(value);
+  static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
 }
 
 size_t combo_box::selected_index(intptr_t control) {

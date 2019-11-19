@@ -1,5 +1,5 @@
 #include <xtd/forms/native/numeric_up_down.hpp>
-#include "wx_numeric_up_down.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_numeric_up_down.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

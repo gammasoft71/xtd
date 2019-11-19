@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include <xtd/forms/native/timer.hpp>
-#include "wx_timer.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer.hpp"
 
 using namespace xtd;
 using namespace xtd::forms::native;

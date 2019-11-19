@@ -6,6 +6,31 @@ project(xtd.forms.native.wxwidgets VERSION 0.0.1)
 set(XTD_INCLUDES
   include/xtd/xtd.forms.native.wxwidgets.hpp
   include/xtd/xtd.forms.native.wxwidgets
+  include/xtd/forms/native/wxwidgets/control_handler.hpp
+  include/xtd/forms/native/wxwidgets/hdc_wrapper.hpp
+  include/xtd/forms/native/wxwidgets/wx_application.hpp
+  include/xtd/forms/native/wxwidgets/wx_button.hpp
+  include/xtd/forms/native/wxwidgets/wx_check_box.hpp
+  include/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp
+  include/xtd/forms/native/wxwidgets/wx_combo_box.hpp
+  include/xtd/forms/native/wxwidgets/wx_control.hpp
+  include/xtd/forms/native/wxwidgets/wx_domain_up_down.hpp
+  include/xtd/forms/native/wxwidgets/wx_form.hpp
+  include/xtd/forms/native/wxwidgets/wx_group_box.hpp
+  include/xtd/forms/native/wxwidgets/wx_label.hpp
+  include/xtd/forms/native/wxwidgets/wx_list_box.hpp
+  include/xtd/forms/native/wxwidgets/wx_numeric_up_down.hpp
+  include/xtd/forms/native/wxwidgets/wx_panel.hpp
+  include/xtd/forms/native/wxwidgets/wx_picture_box.hpp
+  include/xtd/forms/native/wxwidgets/wx_progress_bar.hpp
+  include/xtd/forms/native/wxwidgets/wx_radio_button.hpp
+  include/xtd/forms/native/wxwidgets/wx_tab_control.hpp
+  include/xtd/forms/native/wxwidgets/wx_tab_page.hpp
+  include/xtd/forms/native/wxwidgets/wx_text_box.hpp
+  include/xtd/forms/native/wxwidgets/wx_timer.hpp
+  include/xtd/forms/native/wxwidgets/wx_track_bar.hpp
+  include/xtd/forms/native/wxwidgets/wx_up_down_button.hpp
+  include/xtd/forms/native/wxwidgets/wx_user_control.hpp
 )
 
 set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
@@ -18,7 +43,6 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp
   src/xtd/forms/native/wxwidgets/cursors.cpp
-  src/xtd/forms/native/wxwidgets/control_handler.hpp
   src/xtd/forms/native/wxwidgets/domain_up_down.cpp
   src/xtd/forms/native/wxwidgets/file_dialog.cpp
   src/xtd/forms/native/wxwidgets/folder_browser_dialog.cpp
@@ -42,29 +66,6 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/track_bar.cpp
   src/xtd/forms/native/wxwidgets/up_down_button.cpp
   src/xtd/forms/native/wxwidgets/user_control.cpp
-  src/xtd/forms/native/wxwidgets/wx_application.hpp
-  src/xtd/forms/native/wxwidgets/wx_button.hpp
-  src/xtd/forms/native/wxwidgets/wx_check_box.hpp
-  src/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp
-  src/xtd/forms/native/wxwidgets/wx_combo_box.hpp
-  src/xtd/forms/native/wxwidgets/wx_control.hpp
-  src/xtd/forms/native/wxwidgets/wx_domain_up_down.hpp
-  src/xtd/forms/native/wxwidgets/wx_form.hpp
-  src/xtd/forms/native/wxwidgets/wx_group_box.hpp
-  src/xtd/forms/native/wxwidgets/wx_label.hpp
-  src/xtd/forms/native/wxwidgets/wx_list_box.hpp
-  src/xtd/forms/native/wxwidgets/wx_numeric_up_down.hpp
-  src/xtd/forms/native/wxwidgets/wx_panel.hpp
-  src/xtd/forms/native/wxwidgets/wx_picture_box.hpp
-  src/xtd/forms/native/wxwidgets/wx_progress_bar.hpp
-  src/xtd/forms/native/wxwidgets/wx_radio_button.hpp
-  src/xtd/forms/native/wxwidgets/wx_tab_control.hpp
-  src/xtd/forms/native/wxwidgets/wx_tab_page.hpp
-  src/xtd/forms/native/wxwidgets/wx_text_box.hpp
-  src/xtd/forms/native/wxwidgets/wx_timer.hpp
-  src/xtd/forms/native/wxwidgets/wx_track_bar.hpp
-  src/xtd/forms/native/wxwidgets/wx_up_down_button.hpp
-  src/xtd/forms/native/wxwidgets/wx_user_control.hpp
 )
 
 if (APPLE)
