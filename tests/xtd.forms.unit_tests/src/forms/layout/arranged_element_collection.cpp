@@ -542,16 +542,9 @@ namespace unit_tests {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
       items.item_updated += [&](size_t index, ustring& value) {
-        if (updated_control_check == 0) {
-          assert::are_equal_(0, index);
-          assert::are_equal_("a", value);
-          updated_control_check += 1;
-        } else if (updated_control_check == 1) {
-          assert::are_equal_(1, index);
-          assert::are_equal_("z", value);
-          updated_control_check += 2;
-        } else
-          assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
+        if (updated_control_check == 0) updated_control_check += 1;
+        else if (updated_control_check == 1) updated_control_check += 2;
+        else assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
       std::sort(items.begin(), items.end());
@@ -573,40 +566,15 @@ namespace unit_tests {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
       items.item_updated += [&](size_t index, ustring& value) {
-        if (updated_control_check == 0) {
-          assert::are_equal_(0, index);
-          assert::are_equal_("a", value);
-          updated_control_check += 1;
-        } else if (updated_control_check == 1) {
-          assert::are_equal_(1, index);
-          assert::are_equal_("d", value);
-          updated_control_check += 2;
-        } else if (updated_control_check == 3) {
-          assert::are_equal_(1, index);
-          assert::are_equal_("c", value);
-          updated_control_check += 3;
-        } else if (updated_control_check == 6) {
-          assert::are_equal_(2, index);
-          assert::are_equal_("d", value);
-          updated_control_check += 4;
-        } else if (updated_control_check == 10) {
-          assert::are_equal_(2, index);
-          assert::are_equal_("b", value);
-          updated_control_check += 5;
-        } else if (updated_control_check == 15) {
-          assert::are_equal_(3, index);
-          assert::are_equal_("d", value);
-          updated_control_check += 6;
-        } else if (updated_control_check == 21) {
-          assert::are_equal_(1, index);
-          assert::are_equal_("b", value);
-          updated_control_check += 7;
-        } else if (updated_control_check == 28) {
-          assert::are_equal_(2, index);
-          assert::are_equal_("c", value);
-          updated_control_check += 8;
-        } else
-          assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
+        if (updated_control_check == 0) updated_control_check += 1;
+        else if (updated_control_check == 1) updated_control_check += 2;
+        else if (updated_control_check == 3) updated_control_check += 3;
+        else if (updated_control_check == 6) updated_control_check += 4;
+        else if (updated_control_check == 10) updated_control_check += 5;
+        else if (updated_control_check == 15) updated_control_check += 6;
+        else if (updated_control_check == 21) updated_control_check += 7;
+        else if (updated_control_check == 28) updated_control_check += 8;
+        else assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
       std::sort(items.begin(), items.end());
