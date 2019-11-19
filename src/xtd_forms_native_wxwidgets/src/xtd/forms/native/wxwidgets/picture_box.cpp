@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include <xtd/forms/native/picture_box.hpp>
-#include "wx_picture_box.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_picture_box.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;

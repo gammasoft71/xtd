@@ -2,7 +2,7 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/checked_list_box.hpp>
-#include "wx_checked_list_box.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp"
 
 using namespace std;
 using namespace xtd;
@@ -36,12 +36,8 @@ void checked_list_box::end_update(intptr_t control) {
 
 void checked_list_box::insert_item(intptr_t control, size_t index, const ustring& value, bool checked) {
   if (control == 0) return;
-  size_t real_index = -1;
-  if (!static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
-    real_index = static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
-  else
-    real_index = static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(value);
-  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(real_index, checked);
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(index, checked);
 }
 
 size_t checked_list_box::selected_index(intptr_t control) {

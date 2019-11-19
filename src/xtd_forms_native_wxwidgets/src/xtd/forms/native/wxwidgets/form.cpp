@@ -2,7 +2,7 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/form.hpp>
 #include <xtd/forms/native/screen.hpp>
-#include "wx_form.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.hpp"
 #include <wx/apptrait.h>
 
 using namespace xtd;
