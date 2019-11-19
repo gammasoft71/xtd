@@ -57,6 +57,8 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
 
 void list_box::update_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
-  //wxTheApp->ProcessPendingEvents();
+  
+  //static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
 }
