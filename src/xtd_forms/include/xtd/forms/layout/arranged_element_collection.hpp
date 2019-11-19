@@ -25,9 +25,7 @@ namespace xtd {
         public:
           item_t() = default;
           template <typename ...args_t>
-          item_t(args_t&& ...args) : type_t(args...) {
-            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(*this));
-          }
+          item_t(args_t&& ...args) : type_t(args...) {}
 
           item_t& operator=(const item_t& value) {
             if (value.parent) parent = value.parent;
@@ -87,7 +85,7 @@ namespace xtd {
         
         reference at(size_type pos) {
           this->collection_[pos].pos = pos;
-          //this->collection_[pos].parent = this;
+          this->collection_[pos].parent = this;
           return this->collection_.at(pos);
         }
         const_reference at(size_type pos) const {return this->collection_.at(pos);}
@@ -103,7 +101,7 @@ namespace xtd {
         
         reference operator[](size_type pos) {
           this->collection_[pos].pos = pos;
-          //this->collection_[pos].parent = this;
+          this->collection_[pos].parent = this;
           return this->collection_[pos];
         }
         const_reference operator[](size_type pos) const {return this->collection_[pos];}
