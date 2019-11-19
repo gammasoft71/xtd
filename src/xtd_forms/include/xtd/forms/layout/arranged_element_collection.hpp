@@ -13,8 +13,7 @@ namespace xtd {
     namespace layout {
       struct sorter_none {
         template<typename type_t>
-        void operator()(type_t first, type_t last) {
-        }
+        void operator()(type_t first, type_t last) {}
       };
   
     /// @brief Represents a collection of objects.
@@ -30,6 +29,13 @@ namespace xtd {
 
           item_t& operator=(const item_t& value) {
             if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(const_cast<item_t&>(value)));
+            this->type_t::operator=(value);
+            if (value.parent) parent = value.parent;
+            return *this;
+          }
+          
+          item_t& operator=(item_t& value) {
+            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(value));
             this->type_t::operator=(value);
             if (value.parent) parent = value.parent;
             return *this;
