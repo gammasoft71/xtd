@@ -2,7 +2,7 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/list_box.hpp>
-#include "wx_list_box.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_list_box.hpp"
 
 using namespace std;
 using namespace xtd;
@@ -26,10 +26,7 @@ void list_box::end_update(intptr_t control) {
 
 void list_box::insert_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  if (!static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->IsSorted())
     static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
-  else
-    static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Append(value);
 }
 
 size_t list_box::selected_index(intptr_t control) {

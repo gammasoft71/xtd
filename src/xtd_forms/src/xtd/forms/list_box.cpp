@@ -14,27 +14,25 @@ list_box::list_box() {
   this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
 
-  this->items_.item_added += [&](size_t pos, const item& item) {
-    native::list_box::insert_item(this->handle_, pos, item.value());
+  this->items_.item_added += [this](size_t index, const item& item) {
+    native::list_box::insert_item(this->handle_, index, item.value());
     if (this->sorted_) std::sort(this->items_.begin(), this->items_.end());
     list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 
-  this->items_.item_erased += [&](size_t pos, const item& item) {
-    native::list_box::delete_item(this->handle_, pos);
-
+  this->items_.item_erased += [this](size_t index, const item& item) {
+    native::list_box::delete_item(this->handle_, index);
     list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
   
-  this->items_.item_updated += [&](size_t pos, const item& item) {
+  this->items_.item_updated += [this](size_t index, const item& item) {
     static bool update_disabled = false;
     if (update_disabled) return;
-    native::list_box::delete_item(this->handle_, pos);
-    native::list_box::insert_item(this->handle_, pos, item.value());
+    native::list_box::update_item(this->handle_, index, item.value());
     if (this->sorted_) {
       update_disabled = true;
       std::sort(this->items_.begin(), this->items_.end());
