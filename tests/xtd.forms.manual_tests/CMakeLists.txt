@@ -16,5 +16,5 @@ endif ()
 
 # Target
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd.forms)
+target_link_libraries(${PROJECT_NAME} xtd.forms ${XTD_FORMS_NATIVE_LIBRARY} ${XTD_NATIVE_LIBRARY})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
