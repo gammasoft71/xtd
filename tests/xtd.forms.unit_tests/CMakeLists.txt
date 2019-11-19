@@ -7,6 +7,7 @@ set(SOURCES
   src/main.cpp 
 )
 set(FORMS_SOURCES
+  src/forms/button.cpp 
   src/forms/control.cpp 
   src/forms/form.cpp
 )
