@@ -533,7 +533,6 @@ namespace unit_tests {
     void test_method_(using_std_sort_two_items) {
       arranged_element_collection<ustring> items;
       items.push_back_range({"z", "a"});
-      size_t updated_control_check = 0;
 
       items.item_added += [&](size_t index, ustring& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
@@ -542,22 +541,18 @@ namespace unit_tests {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
       items.item_updated += [&](size_t index, ustring& value) {
-        if (updated_control_check == 0) updated_control_check += 1;
-        else if (updated_control_check == 1) updated_control_check += 2;
-        else assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
+        assert::succeed(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
       std::sort(items.begin(), items.end());
       
       assert::are_equal_("a", items[0]);
       assert::are_equal_("z", items[1]);
-      assert::are_equal_(3, updated_control_check);
     }
     
     void test_method_(using_std_sort_four_items) {
       arranged_element_collection<ustring> items;
       items.push_back_range({"d", "a", "c", "b"});
-      size_t updated_control_check = 0;
 
       items.item_added += [&](size_t index, ustring& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
@@ -566,15 +561,7 @@ namespace unit_tests {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
       items.item_updated += [&](size_t index, ustring& value) {
-        if (updated_control_check == 0) updated_control_check += 1;
-        else if (updated_control_check == 1) updated_control_check += 2;
-        else if (updated_control_check == 3) updated_control_check += 3;
-        else if (updated_control_check == 6) updated_control_check += 4;
-        else if (updated_control_check == 10) updated_control_check += 5;
-        else if (updated_control_check == 15) updated_control_check += 6;
-        else if (updated_control_check == 21) updated_control_check += 7;
-        else if (updated_control_check == 28) updated_control_check += 8;
-        else assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
+        assert::succeed(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
       std::sort(items.begin(), items.end());
@@ -583,7 +570,6 @@ namespace unit_tests {
       assert::are_equal_("b", items[1]);
       assert::are_equal_("c", items[2]);
       assert::are_equal_("d", items[3]);
-      assert::are_equal_(36, updated_control_check);
     }
     
     void test_method_(using_std_swap) {
