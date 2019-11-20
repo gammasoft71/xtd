@@ -24,6 +24,8 @@ namespace xtd {
         class item_t : public type_t {
         public:
           item_t() = default;
+          item_t(const item_t&) = default;
+          item_t(item_t&&) = default;
           template <typename ...args_t>
           item_t(args_t&& ...args) : type_t(args...) {}
 
@@ -34,11 +36,18 @@ namespace xtd {
             return *this;
           }
           
+          item_t& operator=(item_t&& value) {
+            if (value.parent) parent = value.parent;
+            if (parent != nullptr && !parent->inserting_ && !parent->erasing_) parent->item_updated(pos, static_cast<type_t&>(value));
+            this->type_t::operator=(value);
+            return *this;
+          }
+
           operator type_t() {return *this;}
           
           friend std::ostream& operator<<(std::ostream& os, const item_t& value) {return os << static_cast<const type_t&>(value);}
           
-          size_t pos;
+          size_t pos = -1;
           arranged_element_collection* parent = nullptr;
         };
         
@@ -147,25 +156,6 @@ namespace xtd {
           while (it != this->end())
             it = this->erase(it);
         }
-        
-        /*
-        iterator insert(iterator pos, const value_type& value) {
-          const_cast<value_type&>(value).parent = this;
-          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
-          return this->collection_.insert(pos, value);
-        }
-        
-        iterator insert(const_iterator pos, const value_type& value) {
-          const_cast<value_type&>(value).parent = this;
-          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
-          return this->collection_.insert(pos, value);
-        }
-        
-        iterator insert(const_iterator pos, const value_type&& value) {
-          const_cast<value_type&>(value).parent = this;
-          this->item_added(pos - this->begin(), this->collection_[pos - this->begin()]);
-          return this->collection_.insert(pos, value);
-        }*/
 
         iterator insert(iterator pos, const value_type& value) {
           size_t index = pos - this->begin();
