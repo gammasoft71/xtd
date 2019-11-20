@@ -49,7 +49,7 @@ list_box& list_box::border_style(forms::border_style border_style) {
 }
 
 list_control& list_box::selected_index(size_t selected_index) {
-  if (selected_index >= items_.size()) throw std::invalid_argument("selected_index out of range.");
+  //if (selected_index >= items_.size()) throw std::invalid_argument("selected_index out of range.");
   if (this->selected_index_ != selected_index) {
     if (selected_index != -1 && selected_index > this->items_.size()) throw invalid_argument("out of range index");
     this->selected_index_ = selected_index;
