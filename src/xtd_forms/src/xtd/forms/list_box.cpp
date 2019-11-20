@@ -1,4 +1,3 @@
-#include <xtd/diagnostics/cdebug.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/list_box.hpp>
 #include <xtd/forms/native/window_styles.hpp>
@@ -16,7 +15,6 @@ list_box::list_box() {
   this->size_ = this->default_size();
 
   this->items_.item_added += [this](size_t index, const item& item) {
-    cdebug << format("lb added : 0x{:X} -  {} - {}", handle_, index, item) << std::endl;
     native::list_box::insert_item(this->handle_, index, item.value());
     list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
@@ -24,7 +22,6 @@ list_box::list_box() {
   };
 
   this->items_.item_erased += [this](size_t index, const item& item) {
-    cdebug << format("lb erased : 0x{:X} -  {} - {}", handle_, index, item) << std::endl;
     native::list_box::delete_item(this->handle_, index);
     list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
@@ -32,7 +29,6 @@ list_box::list_box() {
   };
   
   this->items_.item_updated += [this](size_t index, const item& item) {
-    cdebug << format("lb updted : 0x{:X} -  {} - {}", handle_, index, item) << std::endl;
     native::list_box::update_item(this->handle_, index, item.value());
     list_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
