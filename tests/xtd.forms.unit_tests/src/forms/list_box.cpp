@@ -121,5 +121,22 @@ namespace unit_tests {
       assert::are_equal_("d", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(3));
 #endif
     }
+    
+    void test_method_(empty_list_box_selection_index_with_bad_index) {
+      form form;
+      list_box list_box;
+      list_box.parent(form);
+      
+      assert::throws_(std::invalid_argument, [&]{list_box.selected_index(0);});
+    }
+    
+    void test_method_(selection_index_with_bad_index) {
+      form form;
+      list_box list_box;
+      list_box.parent(form);      
+      list_box.items().push_back_range({"d", "a", "c", "b"});
+
+      assert::throws_(std::invalid_argument, [&]{list_box.selected_index(4);});
+    }
   };
 }
