@@ -25,6 +25,9 @@ namespace xtd {
         /// @cond
         item(const char* value) : value_(value) {}
         item(const item& value) = default;
+        item(item&& value) = default;
+        item& operator=(const item& value) = default;
+        item& operator=(item&& value) = default;
         virtual ~item() = default;
         bool operator==(const item& value) const {return this->value_ == value.value_;}
         bool operator!=(const item& value) const {return !this->operator==(value);}
