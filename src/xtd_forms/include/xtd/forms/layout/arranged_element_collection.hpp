@@ -16,9 +16,9 @@ namespace xtd {
         void operator()(type_t first, type_t last) {}
       };
   
-    /// @brief Represents a collection of objects.
+      /// @brief Represents a collection of objects.
       /// @remarks The arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
-      template<typename type_t, typename allocator_t = std::allocator<type_t>, typename sorter_t = sorter_none>
+      template<typename type_t, typename sorter_t = sorter_none>
       class arranged_element_collection {
       public:
         class item_t : public type_t {
@@ -68,7 +68,7 @@ namespace xtd {
         /// @}
         
         /// @biref Creats a new object arranged_element_collection
-        explicit arranged_element_collection(const allocator_t& allocator = allocator_t()) : collection_(allocator) {}
+        explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}
         
         /// @cond
         arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
@@ -90,7 +90,7 @@ namespace xtd {
         /// @brief Occurs when an item is erased from the collection.
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_erased;
         
-        allocator_t get_allocator() const {return this->collection_.get_allocator();}
+        allocator_type get_allocator() const {return this->collection_.get_allocator();}
         
         reference at(size_type pos) {
           this->collection_[pos].pos = pos;

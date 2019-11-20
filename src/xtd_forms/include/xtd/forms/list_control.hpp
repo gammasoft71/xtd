@@ -46,7 +46,7 @@ namespace xtd {
         std::any tag_;
       };
    
-      using item_collection = layout::arranged_element_collection<item, std::allocator<item>, item::sorter>;
+      using item_collection = layout::arranged_element_collection<item, item::sorter>;
 
       /// @brief Gets the zero-based index of the currently selected item.
       /// @return A zero-based index of the currently selected item. A value of negative one (-1) is returned if no item is selected.
