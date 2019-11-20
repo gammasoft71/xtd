@@ -51,8 +51,7 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
   for (int index : wx_indices)
     indices.push_back(index);
-  return indices;
-    
+  return indices;    
 }
 
 void list_box::update_item(intptr_t control, size_t index, const ustring& value) {
