@@ -26,7 +26,7 @@ void list_box::end_update(intptr_t control) {
 
 void list_box::insert_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-    static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
 }
 
 size_t list_box::selected_index(intptr_t control) {
@@ -51,15 +51,10 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
   for (int index : wx_indices)
     indices.push_back(index);
-  return indices;    
+  return indices;
 }
 
 void list_box::update_item(intptr_t control, size_t index, const ustring& value) {
   if (control == 0) return;
-  
-  //static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
-
-  //wxTheApp->ProcessPendingEvents();
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
 }
