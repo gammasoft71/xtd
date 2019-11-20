@@ -235,17 +235,19 @@ namespace xtd {
 
         void push_back(const value_type& item) {
           this->collection_.push_back(item);
-          (*this)[this->collection_.size() - 1].parent = this;
-          (*this)[this->collection_.size() - 1].pos = this->collection_.size() - 1;
-          this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
+          size_t index = this->collection_.size() - 1;
+          (*this)[index].parent = this;
+          (*this)[index].pos = index;
+          this->item_added(index, this->collection_[index]);
           if (sorted_) sort();
         }
         
         void push_back(value_type&& item) {
           this->collection_.push_back(item);
-          (*this)[this->collection_.size() - 1].parent = this;
-          (*this)[this->collection_.size() - 1].pos = this->collection_.size() - 1;
-          this->item_added(this->collection_.size() - 1, this->collection_[this->collection_.size() - 1]);
+          size_t index = this->collection_.size() - 1;
+          (*this)[index].parent = this;
+          (*this)[index].pos = index;
+          this->item_added(index, this->collection_[index]);
           if (sorted_) sort();
         }
         
