@@ -61,4 +61,6 @@ void list_box::update_item(intptr_t control, size_t index, const ustring& value)
   //static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
+
+  //wxTheApp->ProcessPendingEvents();
 }

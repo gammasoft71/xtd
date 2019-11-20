@@ -21,18 +21,12 @@ int main() {
   cdebug << format("after create handle = 0x{:X}", lb.handle()) << std::endl;
 
   lb.sorted(true);
-  lb.items().push_back("A");
+  lb.items().push_back_range({"D", "A", "C", "B"});
   lb.selected_index(0);
-  //lb.items().insert_at(0, "Z");
-  //lb.items().insert_at(0, "B");
-  lb.items().push_back_range({"G", "F", "D"});
-  
+
   cdebug << format("handle = 0x{:X}", lb.handle()) << std::endl;
   for (size_t index = 0; index < static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(lb.handle())->control())->GetCount(); index++)
     cdebug << format("  {} - {}", index, static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(lb.handle())->control())->GetString(index)) << std::endl;
-
-  lb.items().erase_at(0);
-  lb.selected_index(0);
 
   cdebug << format("handle = 0x{:X}", lb.handle()) << std::endl;
   for (size_t index = 0; index < static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(lb.handle())->control())->GetCount(); index++)

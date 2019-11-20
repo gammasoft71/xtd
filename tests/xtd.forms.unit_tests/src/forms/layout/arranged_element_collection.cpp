@@ -572,6 +572,36 @@ namespace unit_tests {
       assert::are_equal_("d", items[3]);
     }
     
+    void test_method_(using_std_sort_Twelve_items_with_duplicates) {
+      arranged_element_collection<ustring> items;
+      items.push_back_range({"d", "a", "c", "b", "g", "i", "b", "h", "f", "j", "f", "k"});
+
+      items.item_added += [&](size_t index, ustring& value) {
+        assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
+      };
+      items.item_erased += [&](size_t index, ustring& value) {
+        assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
+      };
+      items.item_updated += [&](size_t index, ustring& value) {
+        assert::succeed(strings::format("updated index = {}, value = {}", index, value), line_info_);
+      };
+
+      std::sort(items.begin(), items.end());
+      
+      assert::are_equal_("a", items[0]);
+      assert::are_equal_("b", items[1]);
+      assert::are_equal_("b", items[2]);
+      assert::are_equal_("c", items[3]);
+      assert::are_equal_("d", items[4]);
+      assert::are_equal_("f", items[5]);
+      assert::are_equal_("f", items[6]);
+      assert::are_equal_("g", items[7]);
+      assert::are_equal_("h", items[8]);
+      assert::are_equal_("i", items[9]);
+      assert::are_equal_("j", items[10]);
+      assert::are_equal_("k", items[11]);
+    }
+
     void test_method_(using_std_swap) {
       arranged_element_collection<ustring> items;
       items.push_back_range({"z", "a"});
