@@ -13,6 +13,9 @@ namespace xtd {
         static int32_t arrange_starting_position();
         static int32_t boot_mode();
         static xtd::drawing::size border_3d_size();
+        static int32_t border_multiplier_factor();
+        static xtd::drawing::size border_size();
+        static xtd::drawing::size caption_button_size();
       };
     }
   }
