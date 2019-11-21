@@ -67,7 +67,7 @@ namespace unit_tests {
 
     void test_method_(caption_button_size) {
 #if defined(_WIN32)
-      assert::are_equal_(size(GetSystemMetrics(SM_CXSIZE), GetSystemMetrics(SM_CYSIZE)), system_information::border_size());
+      assert::are_equal_(size(GetSystemMetrics(SM_CXSIZE), GetSystemMetrics(SM_CYSIZE)), system_information::caption_button_size());
 #else
       assert::are_equal_(size(16, 16), system_information::caption_button_size());
 #endif
