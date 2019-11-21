@@ -3,6 +3,7 @@
 #endif
 #include <xtd/forms/native/arranged_direction_window.hpp>
 #include <xtd/forms/native/system_information.hpp>
+#include <wx/settings.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;
@@ -20,17 +21,25 @@ int32_t system_information::arrange_direction() {
 }
 
 int32_t system_information::arrange_starting_position() {
-  #if defined(__WXMSW__)
+#if defined(__WXMSW__)
     return GetSystemMetrics(SM_ARRANGE) & (ARW_BOTTOMLEFT | ARW_BOTTOMRIGHT | ARW_HIDE |ARW_TOPLEFT | ARW_TOPRIGHT);
-  #else
+#else
     return ARW_HIDE;
-  #endif
+#endif
 }
 
 int32_t system_information::boot_mode() {
-  #if defined(__WXMSW__)
+#if defined(__WXMSW__)
     return GetSystemMetrics(SM_CLEANBOOT);
-  #else
+#else
     return 0; // mode : 0 = Normal, 1 = Fail Safeand 2 = Fail safe with network.
-  #endif
+#endif
+}
+
+xtd::drawing::size system_information::border_3d_size() {
+#if defined(__WXMSW__)
+  return {wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_EDGE_X), wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_EDGE_Y)};
+#else
+  return {0, 0};
+#endif
 }

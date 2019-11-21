@@ -19,3 +19,7 @@ xtd::forms::arrange_starting_position system_information::arrange_starting_posit
 xtd::forms::boot_mode system_information::boot_mode() {
   return static_cast<xtd::forms::boot_mode>(native::system_information::boot_mode());
 }
+
+xtd::drawing::size system_information::border_3d_size() {
+  return native::system_information::border_3d_size();
+}
