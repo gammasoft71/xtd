@@ -1,9 +1,9 @@
+#include <wx/settings.h>
 #if defined(__WXMSW__)
 #include <Windows.h>
 #endif
 #include <xtd/forms/native/arranged_direction_window.hpp>
 #include <xtd/forms/native/system_information.hpp>
-#include <wx/settings.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;
@@ -41,5 +41,31 @@ xtd::drawing::size system_information::border_3d_size() {
   return {wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_EDGE_X), wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_EDGE_Y)};
 #else
   return {0, 0};
+#endif
+}
+
+int32_t system_information::border_multiplier_factor() {
+#if defined(__WXMSW__)
+    int32_t value;
+    SystemParametersInfo(SPI_GETBORDER, 0, &value, 0);
+    return value;
+#else
+  return 1;
+#endif
+}
+
+xtd::drawing::size system_information::border_size() {
+#if defined(__WXMSW__)
+  return {wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_BORDER_X), wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_BORDER_Y)};
+#else
+  return {0, 0};
+#endif
+}
+
+xtd::drawing::size system_information::caption_button_size() {
+#if defined(__WXMSW__)
+  return {GetSystemMetrics(SM_CXSIZE), GetSystemMetrics(SM_CYSIZE)};
+#else
+  return {16, 16};
 #endif
 }

@@ -23,3 +23,15 @@ xtd::forms::boot_mode system_information::boot_mode() {
 xtd::drawing::size system_information::border_3d_size() {
   return native::system_information::border_3d_size();
 }
+
+int32_t system_information::border_multiplier_factor() {
+  return native::system_information::border_multiplier_factor();
+}
+
+xtd::drawing::size system_information::border_size() {
+  return native::system_information::border_size();
+}
+
+xtd::drawing::size system_information::caption_button_size() {
+  return native::system_information::caption_button_size();
+}
