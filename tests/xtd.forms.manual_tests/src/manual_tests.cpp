@@ -12,28 +12,11 @@ int main() {
   form form_main;
   form_main.text("Manual tests");
 
-  list_box lb;
-  lb.parent(form_main);
-  lb.dock(dock_style::fill);
-
-  cdebug << format("before create handle = 0x{:X}", lb.handle()) << std::endl;
-  form_main.show();
-  cdebug << format("after create handle = 0x{:X}", lb.handle()) << std::endl;
-
-  lb.sorted(true);
-  lb.items().push_back_range({"D", "A", "C", "B"});
-  lb.selected_index(0);
-
-  cdebug << format("handle = 0x{:X}", lb.handle()) << std::endl;
-  for (size_t index = 0; index < static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(lb.handle())->control())->GetCount(); index++)
-    cdebug << format("  {} - {}", index, static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(lb.handle())->control())->GetString(index)) << std::endl;
-
-  cdebug << format("handle = 0x{:X}", lb.handle()) << std::endl;
-  for (size_t index = 0; index < static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(lb.handle())->control())->GetCount(); index++)
-    cdebug << format("  {} - {}", index, static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(lb.handle())->control())->GetString(index)) << std::endl;
-
-  for (auto& item : lb.items())
-    cdebug << item << std::endl;
+  panel panel;
+  panel.parent(form_main);
+  panel.location({299 - (2 * system_information::border_3d_size().width()), 0});
+  panel.size({1, 300});
+  panel.back_color(color::spring_green);
   
   application::run(form_main);
 }

@@ -1,7 +1,5 @@
 #pragma once
-#include <any>
-#include <xtd/drawing/image.hpp>
-#include "component.hpp"
+#include <xtd/drawing/size.hpp>
 #include "arrange_direction.hpp"
 #include "arrange_starting_position.hpp"
 #include "boot_mode.hpp"
@@ -37,9 +35,16 @@ namespace xtd {
       static xtd::forms::arrange_starting_position arrange_starting_position();
 
       /// @brief Gets a BootMode value that indicates the boot mode the system was started in.
-      /// @return BootMode One of the BootMode values that indicates the boot mode the system was started in.
-      /// @remarks The BootMode property indicates whether the operating system was started in a normal or safe boot mode.
+      /// @return boot_mode One of the boot_mode values that indicates the boot mode the system was started in.
+      /// @remarks The boot_mode property indicates whether the operating system was started in a normal or safe boot mode.
       static xtd::forms::boot_mode boot_mode();
+
+      /// @brief Gets the thickness, in pixels, of a three-dimensional (3-D) style window or system control border.
+      /// @return System::Drawing::Size A Size that indicates the width, in pixels, of a 3-D style vertical border, and the height, in pixels, of a 3-D style horizontal border.
+      /// @remarks The Border3DSize property indicates the thickness, in pixels, of a three-dimensional (3-D) style system control border.
+      /// @remarks The Width property of the Border3DSize property indicates the width of a vertical 3-D border. The Height property of the Border3DSize property indicates the height of a horizontal 3-D border.
+      /// @remarks The BorderSize property indicates the thickness of a window or system control border that is not a 3-D style border.
+      static xtd::drawing::size border_3d_size();
     };
   }
 }
