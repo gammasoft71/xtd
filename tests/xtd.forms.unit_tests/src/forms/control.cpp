@@ -92,7 +92,7 @@ namespace unit_tests {
     
     void test_method_(create_control_without_parent) {
       control control;
-      //assert::throws_(std::invalid_argument, [&] {control.create_control();});
+      assert::throws_(std::invalid_argument, [&] {control.create_control();});
     }
     
     void test_method_(create_control_with_parent) {
@@ -130,6 +130,14 @@ namespace unit_tests {
       control.parent(form);
       assert::is_true(control.parent().has_value());
       assert::are_equal_(form, control.parent().value().get());
+    }
+    
+    void test_method_(change_parent_back_color) {
+      form form;
+      control control;
+      control.parent(form);
+      form.back_color(color::spring_green);
+      assert::are_equal_(form.back_color(), control.back_color());
     }
   };
 }

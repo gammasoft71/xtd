@@ -59,6 +59,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/progress_bar.cpp
   src/xtd/forms/native/wxwidgets/radio_button.cpp
   src/xtd/forms/native/wxwidgets/screen.cpp
+  src/xtd/forms/native/wxwidgets/system_information.cpp
   src/xtd/forms/native/wxwidgets/tab_control.cpp
   src/xtd/forms/native/wxwidgets/tab_page.cpp
   src/xtd/forms/native/wxwidgets/text_box.cpp

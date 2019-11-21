@@ -19,6 +19,7 @@ set(XTD_FORMS_INCLUDES
 
 set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/application.hpp
+  include/xtd/forms/native/arranged_direction_window.hpp
   include/xtd/forms/native/button.hpp
   include/xtd/forms/native/button_styles.hpp
   include/xtd/forms/native/check_box.hpp
@@ -53,6 +54,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/screen.hpp
   include/xtd/forms/native/scroll_bar_styles.hpp
   include/xtd/forms/native/static_styles.hpp
+  include/xtd/forms/native/system_information.hpp
   include/xtd/forms/native/tab_control.hpp
   include/xtd/forms/native/tab_control_styles.hpp
   include/xtd/forms/native/tab_page.hpp

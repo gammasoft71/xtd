@@ -11,6 +11,7 @@ set(FORMS_SOURCES
   src/forms/control.cpp 
   src/forms/form.cpp
   src/forms/list_box.cpp
+  src/forms/system_information.cpp
 )
 set(FORMS_LAYOUT_SOURCES
   src/forms/layout/arranged_element_collection.cpp 
