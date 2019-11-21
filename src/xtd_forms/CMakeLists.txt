@@ -14,7 +14,10 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/application.hpp
   include/xtd/forms/application_context.hpp
   include/xtd/forms/application_informations.hpp
+  include/xtd/forms/arrange_direction.hpp
+  include/xtd/forms/arrange_starting_position.hpp
   include/xtd/forms/auto_size_mode.hpp
+  include/xtd/forms/boot_mode.hpp
   include/xtd/forms/border_style.hpp
   include/xtd/forms/bounds_specified.hpp
   include/xtd/forms/button.hpp
@@ -96,6 +99,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/scrollable_control.hpp
   include/xtd/forms/screen.hpp
   include/xtd/forms/selection_mode.hpp
+  include/xtd/forms/switch_button.hpp
+  include/xtd/forms/system_information.hpp
   include/xtd/forms/tab_alignment.hpp
   include/xtd/forms/tab_control.hpp
   include/xtd/forms/tab_page.hpp
@@ -149,6 +154,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/scrollable_control.cpp
+  src/xtd/forms/system_information.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp
   src/xtd/forms/text_box.cpp
