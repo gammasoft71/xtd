@@ -72,5 +72,38 @@ namespace unit_tests {
       assert::are_equal_(size(16, 16), system_information::caption_button_size());
 #endif
     }
+
+    void test_method_(caption_height) {
+#if defined(_WIN32)
+      assert::are_equal_(GetSystemMetrics(SM_CYCAPTION), system_information::caption_height());
+#elif defined (__APPLE__)
+      form form;
+      assert::are_equal_(form.size().height() - form.client_size().height(), system_information::caption_height());
+#else
+      assert::are_equal_(1, system_information::caption_height());
+#endif
+    }
+
+    void test_method_(caret_blink_time) {
+#if defined(_WIN32)
+      assert::are_equal_(GetCaretBlinkTime(), system_information::border_multiplier_factor());
+#else
+      assert::are_equal_(530, system_information::caret_blink_time());
+#endif
+    }
+
+    void test_method_(caret_width) {
+#if defined(_WIN32)
+      int32_t caret_width = 0;
+      SystemParametersInfo(SPI_GETCARETWIDTH, 0, &caret_width, 0);
+      assert::are_equal_(caret_width, system_information::caret_width());
+#else
+      assert::are_equal_(1, system_information::caret_width());
+#endif
+    }
+
+    void test_method_(computer_name) {
+      assert::are_equal_(xtd::environment::machine_name(), system_information::computer_name());
+    }
   };
 }

@@ -62,6 +62,25 @@ namespace xtd {
       /// @remarks The CaptionButtonSize property indicates the standard dimensions of a button in the title bar of a window.
       /// @remarks The value of this property can be used to ensure that a button is properly sized to fit within the title bar of a window. Window caption buttons should be sized less than or equal to the standard dimensions for window caption buttons to ensure that they can be displayed in view correctly.
       static xtd::drawing::size caption_button_size();
+
+      /// @brief Gets the height, in pixels, of the standard title bar area of a window.
+      /// @return The height, in pixels, of the standard title bar area of a window.
+      /// @remarks The caption_height property indicates the height of the standard window title bar area, in pixels.
+      static int32_t caption_height();
+
+      /// @brief Gets the caret blink time
+      /// @return The caret blink time.
+      static int32_t caret_blink_time();
+
+      /// @brief Gets the width, in pixels, of the caret in edit controls.
+      /// @return The width, in pixels, of the caret in edit controls.
+      static int32_t caret_width();
+
+      /// @brief Gets the NetBIOS computer name of the local computer.
+      /// @return The name of this computer.
+      /// @remarks The ComputerName property retrieves the NetBIOS name of the local computer. This is accomplished with a call into the native System Information function GetComputerName. This name is established at system startup_, when the system reads it from the registry. If the local computer is a node in a cluster, ComputerName returns the name of the cluster virtual server.
+      /// @remarks You can use the ComputerName method to determine the name of the computer that is displayed to other users on a network.
+      static ustring computer_name();
     };
   }
 }
