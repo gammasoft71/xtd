@@ -86,7 +86,7 @@ namespace unit_tests {
 
     void test_method_(caret_blink_time) {
 #if defined(_WIN32)
-      assert::are_equal_(GetCaretBlinkTime(), system_information::border_multiplier_factor());
+      assert::are_equal_(GetCaretBlinkTime(), system_information::caret_blink_time());
 #else
       assert::are_equal_(530, system_information::caret_blink_time());
 #endif
