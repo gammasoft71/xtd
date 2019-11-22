@@ -142,7 +142,7 @@ namespace unit_tests {
 
     void test_method_(double_click_time) {
 #if defined(_WIN32)
-      assert::are_equal_(GetSystemMetrics(wxSYS_DCLICK_MSEC), system_information::double_click_time());
+      assert::are_equal_(GetDoubleClickTime(), system_information::double_click_time());
 #elif (__APPLE__)
       assert::are_equal_(get_double_click_time(), system_information::double_click_time());
 #else
