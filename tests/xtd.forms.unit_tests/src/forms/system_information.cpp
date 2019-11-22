@@ -110,7 +110,7 @@ namespace unit_tests {
 
     void test_method_(cursor_size) {
 #if defined(_WIN32)
-      assert::are_equal_(size(GetSystemMetrics(wxSYS_CURSOR_X), GetSystemMetrics(wxSYS_CURSOR_Y)), system_information::cursor_size());
+      assert::are_equal_(size(GetSystemMetrics(SM_CXCURSOR), GetSystemMetrics(SM_CYCURSOR)), system_information::cursor_size());
 #else
       assert::are_equal_(size(32, 32), system_information::cursor_size());
 #endif
@@ -134,7 +134,7 @@ namespace unit_tests {
 
     void test_method_(double_click_size) {
 #if defined(_WIN32)
-      assert::are_equal_(size(GetSystemMetrics(wxSYS_DCLICK_X), GetSystemMetrics(wxSYS_DCLICK_Y)), system_information::double_click_size());
+      assert::are_equal_(size(GetSystemMetrics(SM_CXDOUBLECLK), GetSystemMetrics(SM_CYDOUBLECLK)), system_information::double_click_size());
 #else
       assert::are_equal_(size(4, 4), system_information::double_click_size());
 #endif
