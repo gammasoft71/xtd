@@ -13,6 +13,12 @@ set(FORMS_SOURCES
   src/forms/list_box.cpp
   src/forms/system_information.cpp
 )
+if (APPLE)
+set(FORMS_SOURCES ${FORMS_SOURCES}
+  src/forms/get_double_click_time.h 
+  src/forms/get_double_click_time.mm 
+)
+endif()
 set(FORMS_LAYOUT_SOURCES
   src/forms/layout/arranged_element_collection.cpp 
 )

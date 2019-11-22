@@ -1,5 +1,7 @@
 #if defined(_WIN32)
 #include <Windows.h>
+#elif defined(__APPLE__)
+#include "get_double_click_time.h"
 #endif
 #include <xtd/xtd.forms>
 #include <xtd/xtd.tunit>
@@ -104,6 +106,94 @@ namespace unit_tests {
 
     void test_method_(computer_name) {
       assert::are_equal_(xtd::environment::machine_name(), system_information::computer_name());
+    }
+
+    void test_method_(cursor_size) {
+#if defined(_WIN32)
+      assert::are_equal_(size(GetSystemMetrics(wxSYS_CURSOR_X), GetSystemMetrics(wxSYS_CURSOR_Y)), system_information::cursor_size());
+#else
+      assert::are_equal_(size(32, 32), system_information::cursor_size());
+#endif
+    }
+
+    void test_method_(dbcs_enabled) {
+#if defined(_WIN32)
+      assert::are_equal_(GetSystemMetrics(SM_DBCSENABLED), system_information::dbcs_enabled());
+#else
+      assert::is_false_(system_information::dbcs_enabled());
+#endif
+    }
+
+    void test_method_(debug_os) {
+#if defined(_WIN32)
+      assert::are_equal_(GetSystemMetrics(SM_DEBUG), system_information::debug_os());
+#else
+      assert::is_false_(system_information::debug_os());
+#endif
+    }
+
+    void test_method_(double_click_size) {
+#if defined(_WIN32)
+      assert::are_equal_(size(GetSystemMetrics(wxSYS_DCLICK_X), GetSystemMetrics(wxSYS_DCLICK_Y)), system_information::double_click_size());
+#else
+      assert::are_equal_(size(4, 4), system_information::double_click_size());
+#endif
+    }
+
+    void test_method_(double_click_time) {
+#if defined(_WIN32)
+      assert::are_equal_(GetSystemMetrics(wxSYS_DCLICK_MSEC), system_information::double_click_time());
+#elif (__APPLE__)
+      assert::are_equal_(get_double_click_time(), system_information::double_click_time());
+#else
+      assert::are_equal_(500, system_information::double_click_time());
+#endif
+    }
+
+    void test_method_(drag_full_windows) {
+#if defined(_WIN32)
+      int32_t drag_full_windows = 0;
+      SystemParametersInfo(SPI_GETCARETWIDTH, 0, &drag_full_windows, 0);
+      assert::are_equal_(drag_full_windows, system_information::drag_full_windows());
+#else
+      assert::is_true_(system_information::drag_full_windows());
+#endif
+    }
+
+    void test_method_(drag_size) {
+#if defined(_WIN32)
+      assert::are_equal_(size(GetSystemMetrics(SM_CXDRAG), GetSystemMetrics(SM_CYDRAG)), system_information::drag_size());
+#else
+      assert::are_equal_(size(4, 4), system_information::drag_size());
+#endif
+    }
+
+    void test_method_(fixed_frame_border_size) {
+#if defined(_WIN32)
+      assert::are_equal_(size(GetSystemMetrics(SM_CXFRAME), GetSystemMetrics(SM_CYFRAME)), system_information::fixed_frame_border_size());
+#else
+      assert::are_equal_(size(0, 0), system_information::fixed_frame_border_size());
+#endif
+    }
+
+    void test_method_(font_smoothing_contrast) {
+#if defined(_WIN32)
+      int32_t font_smoothing_contrast = 0;
+      SystemParametersInfo(SPI_GETFONTSMOOTHINGCONTRAST, 0, &font_smoothing_contrast, 0);
+      assert::are_equal_(font_smoothing_contrast, system_information::font_smoothing_contrast());
+#else
+      assert::are_equal_(1200, system_information::font_smoothing_contrast());
+#endif
+    }
+
+    void test_method_(font_smoothing_type) {
+#if defined(_WIN32)
+      int32_t font_smoothing_type = 0;
+      SystemParametersInfo(SPI_GETFONTSMOOTHINGTYPE, 0, &font_smoothing_type, 0);
+      assert::are_equal_(font_smoothing_type, system_information::font_smoothing_type());
+#else
+      assert::are_equal_(2, system_information::font_smoothing_type());
+#endif
     }
   };
 }

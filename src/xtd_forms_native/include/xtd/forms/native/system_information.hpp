@@ -22,6 +22,16 @@ namespace xtd {
         static int32_t caret_blink_time();
         static int32_t caret_width();
         static ustring computer_name();
+        static xtd::drawing::size cursor_size();
+        static bool dbcs_enabled();
+        static bool debug_os();
+        static xtd::drawing::size double_click_size();
+        static int32_t double_click_time();
+        static bool drag_full_windows();
+        static xtd::drawing::size drag_size();
+        static xtd::drawing::size fixed_frame_border_size();
+        static int32_t font_smoothing_contrast();
+        static int32_t font_smoothing_type();
       };
     }
   }
