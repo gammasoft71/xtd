@@ -51,3 +51,43 @@ int32_t system_information::caret_width() {
 ustring system_information::computer_name() {
   return native::system_information::computer_name();
 }
+
+xtd::drawing::size system_information::cursor_size() {
+  return native::system_information::cursor_size();
+}
+
+bool system_information::dbcs_enabled() {
+  return native::system_information::dbcs_enabled();
+}
+
+bool system_information::debug_os() {
+  return native::system_information::dbcs_enabled();
+}
+
+xtd::drawing::size system_information::double_click_size() {
+  return native::system_information::double_click_size();
+}
+
+int32_t system_information::double_click_time() {
+  return native::system_information::double_click_time();
+}
+
+bool system_information::drag_full_windows() {
+  return native::system_information::drag_full_windows();
+}
+
+xtd::drawing::size system_information::drag_size() {
+  return native::system_information::drag_size();
+}
+
+xtd::drawing::size system_information::fixed_frame_border_size() {
+  return native::system_information::fixed_frame_border_size();
+}
+
+int32_t system_information::font_smoothing_contrast() {
+  return native::system_information::font_smoothing_contrast();
+}
+
+int32_t system_information::font_smoothing_type() {
+  return native::system_information::font_smoothing_type();
+}

@@ -79,8 +79,58 @@ namespace xtd {
       /// @brief Gets the NetBIOS computer name of the local computer.
       /// @return The name of this computer.
       /// @remarks The ComputerName property retrieves the NetBIOS name of the local computer. This is accomplished with a call into the native System Information function GetComputerName. This name is established at system startup_, when the system reads it from the registry. If the local computer is a node in a cluster, ComputerName returns the name of the cluster virtual server.
-      /// @remarks You can use the ComputerName method to determine the name of the computer that is displayed to other users on a network.
+      /// @remarks You can use the computer_name method to determine the name of the computer that is displayed to other users on a network.
       static ustring computer_name();
+
+      /// @brief Gets the maximum size, in pixels, that a cursor can occupy.
+      /// @return A Size that indicates the maximum dimensions of a cursor in pixels.
+      /// @remarks The system cannot create cursors of other sizes.
+      static xtd::drawing::size cursor_size();
+
+      /// @brief Gets a value indicating whether the operating system is capable of handling double-byte character set (DBCS) characters.
+      /// @return true if the operating system supports DBCS; otherwise, false.
+      /// @remarks The dbcs_enabled property indicates whether the current operating system supports DBCS.
+      static bool dbcs_enabled();
+
+      /// @brief Gets a value indicating whether the debug version of USER.EXE is installed.
+      /// @return true if the debugging version of USER.EXE is installed; otherwise, false.
+      static bool debug_os();
+
+      /// @brief Gets the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
+      /// @return A Size that indicates the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
+      /// @remarks The double_click_size property indicates the size of a rectangular area centered around the point at which the last click occurred. To cause a double-click, a second click must occur within the area of the rectangle before the double-click time elapses.
+      static xtd::drawing::size double_click_size();
+
+      /// @brief Gets the maximum number of milliseconds that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
+      /// @return The maximum amount of time, in milliseconds, that can elapse between a first click and a second click for the OS to consider the mouse action a double-click.
+      /// @remarks A double-click is a series of two clicks of the mouse button, the second occurring within a specified length of time after, and within a specified distance from, the first. The double-click time is the maximum number of milliseconds that can elapse between the first and second click of a double-click.
+      /// @remarks The double_click_time property indicates the maximum number of milliseconds that can elapse before a second click for the second click to cause a double-click.
+      static int32_t double_click_time();
+
+      /// @brief Gets a value indicating whether the user has enabled full window drag.
+      /// @return true if the user has enabled full window drag; otherwise, false.
+      /// @remarks When this property is true, the content of a window is refreshed during a window move or resize drag, using the current position and size as they are updated.
+      static bool drag_full_windows();
+
+      /// @brief Gets the width and height of a rectangle centered on the point the mouse button was pressed, within which a drag operation will not begin.
+      /// @return A Size that specifies the area of a rectangle, in pixels, centered on the point the mouse button was pressed, within which a drag operation will not begin.
+      /// @remarks The drag_size property indicates the size, in pixels, of a rectangle centered around the point at which the mouse button was pressed. Windows uses the rectangle as a boundary within which it does not start a drag operation.
+      /// @remarks A user can hold a mouse button down and move the mouse within this area before a drag operation begins, which enables the user to click and release the mouse button easily without unintentionally starting a drag operation.
+      static xtd::drawing::size drag_size();
+
+      /// @brief Gets the thickness, in pixels, of the frame border of a window that has a caption and is not resizable.
+      /// @return A Size that specifies the thickness, in pixels, of a fixed sized window border.
+      /// @remarks The fixed_frame_border_size property indicates the thickness of the frame, in pixels, around the perimeter of a window that has a caption but is not sizable.
+      /// @remarks The Width property of fixed_frame_border_size is the height of the horizontal border and the Height property of fixed_frame_border_size is the width of the vertical border.
+      static xtd::drawing::size fixed_frame_border_size();
+
+      /// @brief Gets the font smoothing contrast value used in ClearType smoothing.
+      /// @return The ClearType font smoothing contrast value.
+      static int32_t font_smoothing_contrast();
+
+      /// @brief Gets the current type of font smoothing.
+      /// @return A value that indicates the current type of font smoothing.
+      static int32_t font_smoothing_type();
     };
   }
 }
