@@ -1,4 +1,5 @@
 #include <wx/settings.h>
+#include <wx/frame.h>
 #if defined(__WXMSW__)
 #include <Windows.h>
 #endif
@@ -68,4 +69,40 @@ xtd::drawing::size system_information::caption_button_size() {
 #else
   return {16, 16};
 #endif
+}
+
+int32_t system_information::caption_height() {
+#if defined(__WXMSW__)
+  return wxSystemSettings::GetMetric(wxSystemMetric::wxSYS_EDGE_X);
+#elif defined(__WXOSX__)
+  // return 22;
+  wxFrame* frame = new wxFrame(nullptr, wxID_ANY, wxEmptyString);
+  int height = frame->GetSize().GetHeight() - frame->GetClientSize().GetHeight();
+  frame->Destroy();
+  return height;
+#else
+  return 1;
+#endif
+}
+
+int32_t system_information::caret_blink_time() {
+#if defined(__WXMSW__)
+    return GetCaretBlinkTime();
+#else
+  return 530;
+#endif
+}
+
+int32_t system_information::caret_width() {
+#if defined(__WXMSW__)
+    int32_t value;
+    SystemParametersInfo(SPI_GETCARETWIDTH, 0, &value, 0);
+    return value;
+#else
+  return 1;
+#endif
+}
+
+ustring system_information::computer_name() {
+  return xtd::environment::machine_name();;
 }

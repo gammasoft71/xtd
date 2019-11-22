@@ -35,3 +35,19 @@ xtd::drawing::size system_information::border_size() {
 xtd::drawing::size system_information::caption_button_size() {
   return native::system_information::caption_button_size();
 }
+
+int32_t system_information::caption_height() {
+  return native::system_information::caption_height();
+}
+
+int32_t system_information::caret_blink_time() {
+  return native::system_information::caret_blink_time();
+}
+
+int32_t system_information::caret_width() {
+  return native::system_information::caret_width();
+}
+
+ustring system_information::computer_name() {
+  return native::system_information::computer_name();
+}
