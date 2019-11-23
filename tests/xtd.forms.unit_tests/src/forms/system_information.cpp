@@ -146,7 +146,7 @@ namespace unit_tests {
 #elif (__APPLE__)
       assert::are_equal_(get_double_click_time(), system_information::double_click_time());
 #else
-      assert::are_equal_(500, system_information::double_click_time());
+      assert::are_equal_(400, system_information::double_click_time());
 #endif
     }
 
