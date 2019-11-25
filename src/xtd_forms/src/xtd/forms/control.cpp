@@ -17,6 +17,18 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
+  class reentrant_layout {
+  public:
+    explicit reentrant_layout(control* do_layout) : do_layout_(do_layout) {do_layouts.insert(do_layout_);}
+    ~reentrant_layout() {do_layouts.erase(do_layout_);}
+    static bool is_reentrant(control* do_laout) {return do_layouts.find(do_laout) != do_layouts.end(); }
+  private:
+    control* do_layout_ = nullptr;
+    static std::set<control*> do_layouts;
+  };
+
+  std::set<control*> reentrant_layout::do_layouts;
+
   bool debug_events = false;
   
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
@@ -322,7 +334,6 @@ drawing::size control::measure_text() const {
 }
 
 void control::on_auto_size_changed(const event_args& e) {
-  this->set_auto_size_size();
   this->on_layout(e);
   if (this->can_raise_events()) this->auto_size_changed(*this, e);
 }
@@ -350,14 +361,12 @@ void control::on_client_size_changed(const event_args &e) {
 }
 
 void control::on_control_added(const control_event_args &e) {
-  if (this->get_state(state::auto_size)) this->set_auto_size_size();
   this->on_layout(event_args::empty);
   this->size_changed += {e.control(), &control::on_parent_size_changed};
   if (this->can_raise_events()) this->control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  if (this->get_state(state::auto_size)) this->set_auto_size_size();
   this->on_layout(event_args::empty);
   this->size_changed -= {e.control(), &control::on_parent_size_changed};
   if (this->can_raise_events()) this->control_removed(*this, e);
@@ -389,9 +398,8 @@ void control::on_fore_color_changed(const event_args &e) {
 }
 
 void control::on_font_changed(const event_args &e) {
-  if (this->get_state(state::auto_size)) this->set_auto_size_size();
-  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
-  this->refresh();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().on_layout(event_args::empty);
+  this->on_layout(event_args::empty);
   if (this->can_raise_events()) this->font_changed(*this, e);
 }
 
@@ -445,7 +453,7 @@ void control::on_layout(const event_args &e) {
 }
 
 void control::on_location_changed(const event_args &e) {
-  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().on_layout(event_args::empty);
   if (this->can_raise_events()) this->location_changed(*this, e);
 }
 
@@ -534,15 +542,14 @@ void control::on_parent_font_changed(const event_args &e) {
   }
 
   void control::on_size_changed(const event_args &e) {
-  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().on_layout(event_args::empty);
   this->client_rectangle_ = native::control::client_rectangle(this->handle_);
   this->on_layout(e);
   if (this->can_raise_events()) this->size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
-  if (this->get_state(state::auto_size)) this->set_auto_size_size();
-  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().set_auto_size_size();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().on_layout(event_args::empty);
   this->on_layout(event_args::empty);
   if (this->can_raise_events()) this->text_changed(*this, e);
 }
@@ -581,7 +588,7 @@ intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intp
 void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
   if (this->auto_size_mode_ != auto_size_mode) {
     this->auto_size_mode_ = auto_size_mode;
-    this->set_auto_size_size();
+    this->on_layout(event_args::empty);
   }
 }
 
@@ -676,8 +683,6 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   if ((specified & bounds_specified::width) == bounds_specified::width) this->size_.width(width);
   if ((specified & bounds_specified::height) == bounds_specified::height) this->size_.height(height);
   
-  if (this->get_state(state::auto_size)) this->size_ = this->measure_control();
-  
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
     native::control::location(this->handle_, this->location_);
     this->on_location_changed(event_args::empty);
@@ -699,24 +704,29 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   this->client_size_.height(height);
   
   native::control::client_size(this->handle_, this->client_size_);
-  if (this->get_state(state::auto_size)) {
-    this->size_ = native::control::size(this->handle_);
-    this->size_ = this->measure_control();
-    native::control::size(this->handle_, this->size_);
-  }
   this->on_client_size_changed(event_args::empty);
   this->on_size_changed(event_args::empty);
 }
 
 void control::do_layout() {
-  if (this->get_state(state::layout_deferred)) return;
-
-  // this method can not be reentrant
-  static std::set<control*> do_layouts;
-  if (do_layouts.find(this) != do_layouts.end())
-    return;
-  do_layouts.insert(this);
+  if (this->get_state(state::layout_deferred)|| reentrant_layout::is_reentrant(this)) return;
+  reentrant_layout reentrant_laout(this);
   
+  this->do_layout_childs_with_dock_style();
+  this->do_layout_with_anchor_styles();
+  this->do_layout_with_auto_size_mode();
+
+  this->refresh();
+}
+
+void control::on_parent_size_changed(const control& sender, const event_args& e) {
+  if (!this->get_state(state::layout_deferred)) {
+    this->on_layout(event_args::empty);
+    this->parent_size_ = this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size();
+  }
+}
+
+void control::do_layout_childs_with_dock_style() {
   bool docked = false;
   for(control_ref control : this->controls_) {
     docked = control.get().get_state(state::docked);
@@ -756,7 +766,9 @@ void control::do_layout() {
       }
     }
   }
-  
+}
+
+void control::do_layout_with_anchor_styles() {
   if (this->parent().has_value()) {
     point diff = (this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size()) - this->parent_size_;
 
@@ -779,24 +791,17 @@ void control::do_layout() {
       this->top(this->top() + (diff.y() / 2));
   }
 
-  this->refresh();
-  do_layouts.erase(this);
 }
 
-void control::on_parent_size_changed(const control& sender, const event_args& e) {
-  if (!this->get_state(state::layout_deferred)) {
-    this->on_layout(event_args::empty);
-    this->parent_size_ = this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size();
+void control::do_layout_with_auto_size_mode() {
+  if (this->get_state(state::auto_size)) {
+    drawing::size auto_size_size_ = this->measure_control();
+    if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.width() < this->client_size_.width())
+      auto_size_size_.width(this->client_size_.width());
+    if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.height() < this->client_size_.height())
+      auto_size_size_.height(this->client_size_.height());
+    this->client_size(auto_size_size_);
   }
-}
-
-void control::set_auto_size_size() {
-  drawing::size auto_size_size_ = this->measure_control();
-  if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.width() < this->client_size_.width())
-    auto_size_size_.width(this->client_size_.width());
-  if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.height() < this->client_size_.height())
-    auto_size_size_.height(this->client_size_.height());
-  this->client_size(auto_size_size_);
 }
 
 void control::wm_child_activate(message& message) {

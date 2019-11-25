@@ -809,7 +809,9 @@ namespace xtd {
     private:
       void do_layout();
       void on_parent_size_changed(const control& sender, const event_args& e);
-      void set_auto_size_size();
+      void do_layout_childs_with_dock_style();
+      void do_layout_with_auto_size_mode();
+      void do_layout_with_anchor_styles();
       control(const ustring& name, bool) {this->name_ = name;}
       intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);
       void wm_child_activate(message& message);

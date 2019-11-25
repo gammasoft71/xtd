@@ -226,7 +226,7 @@ drawing::size control::client_size(intptr_t control) {
   if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
     size = GetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
   else
-    size = reinterpret_cast<control_handler*>(control)->control()->GetClientSize();
+    size = reinterpret_cast<control_handler*>(control)->GetClientSize();
 
   return {size.GetWidth(), size.GetHeight()};
 }
@@ -234,9 +234,15 @@ drawing::size control::client_size(intptr_t control) {
 void control::client_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
 
-  if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
-    SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {size.width(), size.height()});
-  else
+  if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())) {
+    int width = size.width();
+    int height = size.height();
+    #if defined(__WXOSX__)
+    if (width < 75) width = 75;
+    if (height < 23) height = 23;
+    #endif
+    SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {width, height});
+  }else
     reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
   
   #if defined(__WXOSX__)

@@ -50,6 +50,11 @@ namespace xtd {
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       void perform_click() override;
 
+      /// @brief Measure this control.
+      /// @return The drawing::size size of this control.
+      /// @remarks This method is used when auto_size is true.
+      drawing::size measure_control() const override;
+      
     protected:
       /// @brief Gets a create_params on the base class when creating a window.
       /// @return A create_params object on the base class when creating a window.

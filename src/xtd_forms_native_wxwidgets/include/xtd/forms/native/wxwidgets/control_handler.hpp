@@ -331,6 +331,10 @@ namespace xtd {
           return result;
         }
         
+        virtual wxSize GetClientSize() const {
+          return this->control_->GetClientSize();
+        }
+        
         virtual void SetClientSize(int32_t width, int32_t height) {
           this->control_->SetClientSize(width, height);
         }
