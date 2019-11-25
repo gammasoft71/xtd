@@ -84,3 +84,9 @@ void button::wm_mouse_up(message& message) {
   this->on_mouse_click(e);
   this->on_mouse_up(e);
 }
+
+drawing::size button::measure_control() const {
+  drawing::size size = button_base::measure_control();
+  if (size.height() < default_size().height()) size.height(default_size().height());
+  return size;
+}

@@ -11,12 +11,13 @@ using namespace xtd::forms;
 int main() {
   form form_main;
   form_main.text("Manual tests");
+  form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+  form_main.auto_size(true);
 
-  panel panel;
-  panel.parent(form_main);
-  panel.location({299 - (2 * system_information::border_3d_size().width()), 0});
-  panel.size({1, 300});
-  panel.back_color(color::spring_green);
-  
+  checked_list_box lb;
+  lb.parent(form_main);
+  lb.auto_size(true);
+  lb.items().push_back_range({"1", "2", "3"});
+
   application::run(form_main);
 }

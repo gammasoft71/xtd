@@ -36,6 +36,14 @@ namespace xtd {
           
           return wx_style;
         }
+        
+        wxSize GetClientSize() const override {
+          return control()->GetSize();
+        }
+        
+        void SetClientSize(int32_t width, int32_t height) override {
+          control()->SetSize(width, height);
+        }
       };
     }
   }
