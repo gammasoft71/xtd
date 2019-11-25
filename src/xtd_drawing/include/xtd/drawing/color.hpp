@@ -462,7 +462,7 @@ namespace xtd {
       /// @cond
       color(const color& color) = default;
       color& operator=(const color& color) = default;
-      bool operator==(const color& value) const {return this->argb_ == value.argb_ && this->handle_ == value.handle_ && this->empty_ == value.empty_;}
+      bool operator==(const color& value) const {return this->argb_ == value.argb_ && this->handle_ == value.handle_ && this->name_ == value.name_ && this->empty_ == value.empty_;}
       bool operator!=(const color& value) const {return !this->operator==(value);}
       /// @endcond
       
