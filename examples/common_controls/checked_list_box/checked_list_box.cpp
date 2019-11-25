@@ -16,7 +16,7 @@ namespace examples {
       checked_list_box1.location({20, 20});
       checked_list_box1.size({160, 200});
 
-      for (int index = 1; index <= 20; ++index)
+      for (int index = 1; index <= 10; ++index)
         checked_list_box1.items().push_back({strings::format("Item {}", index), index % 2 != 0});
       checked_list_box1.selected_index(0);
       

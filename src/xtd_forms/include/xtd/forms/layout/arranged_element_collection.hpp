@@ -266,6 +266,12 @@ namespace xtd {
             this->push_back(item);
         }
         
+        template<typename collection_t>
+        void push_back_range(collection_t collection) {
+          for(const auto& item : collection)
+            this->push_back(value_type(item));
+        }
+
         void sort() {
           //std::sort(begin(), end());
           sorter_t sorter;
