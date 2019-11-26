@@ -5,41 +5,38 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace examples {
-  class color_chooser : public user_control {
-    class color_panel : public user_control {
+  class color_chooser final : public user_control {
+    class color_panel final : public user_control {
     public:
       color_panel() {
-        size_ = default_size();
-        color(color_);
-      }
-
-      void on_handle_created(const event_args& e) override {
-        user_control::on_handle_created(e);
+        size({200, 30});
+        color(drawing::color::empty);
       }
 
       void on_paint(paint_event_args& e) override {
         e.graphics().clear(back_color());
         e.graphics().fill_rectangle(solid_brush(color_), 0, 0, 100, e.clip_rectangle().height());
         e.graphics().draw_string(color_.name(), font(), solid_brush(fore_color()), 120, (e.clip_rectangle().height() - e.graphics().measure_string(color_.name(), font()).height()) / 2);
+        user_control::on_paint(e);
       }
       
       const drawing::color& color() const {return color_;}
-      void color(const drawing::color& color) {
-        color_ = color;
-        invalidate();
+      void color(const drawing::color& value) {
+        if (color_ != value) {
+          color_ = value;
+          invalidate();
+        }
       }
-      
-      drawing::size default_size() const override {return {200, 30};}
 
     private:
-      drawing::color color_ = drawing::color::empty;
+      drawing::color color_;
     };
 
   public:
     color_chooser() {
       border_style(forms::border_style::fixed_3d);
-      back_color_ = system_colors::window();
-      fore_color_ = system_colors::window_text();
+      back_color(system_colors::window());
+      fore_color(system_colors::window_text());
       auto_scroll(true);
 
       for (drawing::known_color known_color = drawing::known_color::menu_highlight; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
@@ -55,15 +52,15 @@ namespace examples {
       }
     }
 
-    virtual size_t selected_index() const {return this->selected_index_;}
-    virtual void selected_index(size_t value) {
+    size_t selected_index() const {return this->selected_index_;}
+    void selected_index(size_t value) {
       if (selected_index_ != value) {
         selected_index_ = value;
         on_selected_index_changed(event_args::empty);
       }
     }
 
-    virtual const drawing::color& selected_color() const {return this->selected_color_;}
+    const drawing::color& selected_color() const {return this->selected_color_;}
     void selected_color(const drawing::color& value) {
       if (selected_color_ != value) {
         selected_color_ = value;
@@ -72,12 +69,9 @@ namespace examples {
     }
 
     event<color_chooser, event_handler<control&>> selected_index_changed;
-
     event<color_chooser, event_handler<control&>> selected_color_changed;
 
-    event<color_chooser, event_handler<control&>> value_member_changed;
-
-  protected:
+  private:
     void on_selected_index_changed(const event_args& e) {
       if (previous_selected_index_ != -1) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(back_color());
       if (selected_index_ != -1) {
@@ -97,7 +91,6 @@ namespace examples {
       selected_color_changed(*this, e);
     }
     
-  private:
     int previous_selected_index_ = -1;
     int selected_index_ = -1;
     drawing::color selected_color_ = drawing::color::empty;
@@ -107,7 +100,8 @@ namespace examples {
   class color_editor : public user_control {
   public:
     color_editor() {
-      size_ = {300, 400};
+      border_style(forms::border_style::fixed_3d);
+      size({300, 400});
 
       label_alpha.parent(*this);
       label_alpha.location({10, 15});
@@ -273,7 +267,6 @@ namespace examples {
       editor.parent(*this);
       editor.location({330, 10});
       editor.size({300, 400});
-      editor.border_style(forms::border_style::fixed_3d);
       editor.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
 
       colors.selected_index(0);
