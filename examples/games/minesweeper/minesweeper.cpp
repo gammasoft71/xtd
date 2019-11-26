@@ -44,10 +44,30 @@ namespace minesweeper {
     
   protected:
     drawing::size default_size() const override {return {30, 30};}
-    
+
     void on_mouse_down(const mouse_event_args& e) override {
+      mouse_button_left_pressed_ = (mouse_buttons() & forms::mouse_buttons::left) == forms::mouse_buttons::left;
+      invalidate();
+    }
+    
+    void on_mouse_enter(const event_args& e) override {
+      mouse_button_left_pressed_ = (mouse_buttons() & forms::mouse_buttons::left) == forms::mouse_buttons::left;
+      invalidate();
+    }
+    
+    void on_mouse_leave(const event_args& e) override {
+      mouse_button_left_pressed_ = false;
+      invalidate();
+    }
+
+    void on_mouse_move(const mouse_event_args& e) override {
+      mouse_button_left_pressed_ = (mouse_buttons() & forms::mouse_buttons::left) == forms::mouse_buttons::left;
+    }
+
+    void on_mouse_up(const mouse_event_args& e) override {
       user_control::on_mouse_down(e);
       if (e.button() == mouse_buttons::left) {
+        mouse_button_left_pressed_ = false;
         if (state_ == cell_state::unchecked) {
          state_ = cell_state::checked;
           invalidate();
@@ -59,7 +79,10 @@ namespace minesweeper {
     
     void on_paint(paint_event_args& e) override {
       static std::map<cell_state, delegate<void(paint_event_args&)>> draw_state {{cell_state::unchecked, {*this, &cell::do_draw_unchecked}}, {cell_state::checked, {*this, &cell::do_draw_checked}}, {cell_state::flag, {*this, &cell::do_draw_flag}}, {cell_state::question, {*this, &cell::do_draw_question}}, {cell_state::mine, {*this, &cell::do_draw_mine}}, {cell_state::exploded_mine, {*this, &cell::do_draw_exploded_mine}}};
-      draw_state[state_](e);
+      if (state_ == cell_state::unchecked && mouse_button_left_pressed_)
+        draw_border_checked(e);
+      else
+        draw_state[state_](e);
       user_control::on_paint(e);
     }
     
@@ -117,6 +140,7 @@ namespace minesweeper {
     cell_state state_ = cell_state::unchecked;
     bool has_mine_ = false;
     int neighbors_ = 0;
+    bool mouse_button_left_pressed_ = false;
   };
 
   class form_main : public form {
