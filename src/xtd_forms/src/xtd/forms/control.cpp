@@ -42,6 +42,7 @@ namespace {
   }
 }
 
+forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
@@ -842,7 +843,9 @@ void control::wm_kill_focus(message& message) {
 void control::wm_mouse_down(message& message) {
   this->def_wnd_proc(message);
   this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
-  this->on_mouse_down(mouse_event_args::create(message, this->get_state(state::double_click_fired)));
+  mouse_event_args e = mouse_event_args::create(message, this->get_state(state::double_click_fired));
+  mouse_buttons_ |= e.button();
+  this->on_mouse_down(e);
 }
 
 void control::wm_mouse_double_click(message& message) {
@@ -865,7 +868,8 @@ void control::wm_mouse_leave(message& message) {
 void control::wm_mouse_up(message& message) {
   this->def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
-  if (e.button() == mouse_buttons::left) this->on_click(event_args::empty);
+  mouse_buttons_ &= ~e.button();
+if (e.button() == mouse_buttons::left) this->on_click(event_args::empty);
   this->on_mouse_click(e);
   this->on_mouse_up(e);
 }
