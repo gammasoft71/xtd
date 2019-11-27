@@ -36,6 +36,10 @@ void graphics::draw_ellipse(const pen& pen, int32_t x, int32_t y, int32_t width,
   native::graphics::draw_ellipse(this->data_->handle_, pen.data_->handle_, x, y, width, height);
 }
 
+void graphics::draw_image(const image& image, int32_t x, int32_t y) {
+  native::graphics::draw_image(this->data_->handle_, image.handle(), x, y);
+}
+
 void graphics::draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
   native::graphics::draw_line(this->data_->handle_, pen.data_->handle_, x1, y1, x2, y2);
 }
