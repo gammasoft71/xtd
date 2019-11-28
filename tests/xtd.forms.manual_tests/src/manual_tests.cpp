@@ -374,8 +374,8 @@ int main() {
   label.style(lcd_style::seven_segments);
   //label.show_background_digit(false);
   //label.back_color(color::black);
-  label.back_color(color::from_argb(16, color::lime));
-  label.fore_color(color::lime);
+  label.back_color(color::from_argb(16, color::red));
+  label.fore_color(color::red);
 
   application::run(form_main);
 }
