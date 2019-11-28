@@ -314,13 +314,23 @@ namespace xtd {
       }
       
       void draw_segment_left_bottom(drawing::graphics& graphics, const drawing::color& color, const drawing::point& location, const drawing::size& size, int32_t thickness) {
-        for (int32_t offset = 0; offset < thickness; offset++)
-          graphics.draw_line(drawing::pen(color), location.x() + 1 + offset, location.y() + size.height() / 2 + 1 + offset, location.x() + 1 + offset, location.y() + size.height() - 3 - offset);
+        if (style_ == lcd_style::standard) {
+          for (int32_t offset = 0; offset < thickness; offset++)
+            graphics.draw_line(drawing::pen(color), location.x() + 1 + offset, location.y() + size.height() / 2 + 1 + offset, location.x() + 1 + offset, location.y() + size.height() - 3 - offset);
+        } else if (style_ == lcd_style::seven_segments) {
+          for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
+            graphics.draw_line(drawing::pen(color), location.x() + 1 + thickness / 2 + offset, location.y() + size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), location.x() + 1 + thickness / 2 + offset, location.y()  + size.height() - 3 - thickness / 2 - abs(offset));
+        }
       }
       
       void draw_segment_right_bottom(drawing::graphics& graphics, const drawing::color& color, const drawing::point& location, const drawing::size& size, int32_t thickness) {
-        for (int32_t offset = 0; offset < thickness; offset++)
-          graphics.draw_line(drawing::pen(color), location.x() + size.width() - 2 - offset, location.y() + size.height() / 2 + 1 + offset,  location.x() + size.width() - 2 - offset, location.y() + size.height() - 3 - offset);
+        if (style_ == lcd_style::standard) {
+          for (int32_t offset = 0; offset < thickness; offset++)
+            graphics.draw_line(drawing::pen(color), location.x() + size.width() - 2 - offset, location.y() + size.height() / 2 + 1 + offset,  location.x() + size.width() - 2 - offset, location.y() + size.height() - 3 - offset);
+        } else if (style_ == lcd_style::seven_segments) {
+          for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
+            graphics.draw_line(drawing::pen(color), location.x() + size.width() - 2 - thickness / 2 - offset, location.y() + size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), location.x() + size.width() - 2 - thickness / 2 - offset, location.y()  + size.height() - 3 - thickness / 2 - abs(offset));
+        }
       }
 
       void draw_segment_bottom(drawing::graphics& graphics, const drawing::color& color, const drawing::point& location, const drawing::size& size, int32_t thickness) {
