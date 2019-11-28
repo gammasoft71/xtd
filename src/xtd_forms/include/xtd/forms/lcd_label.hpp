@@ -46,7 +46,7 @@ namespace xtd {
       
       using control::text;
       control& text(const ustring& value) override {
-        static ustring valid_characters = " -.0123456789aAbBcCdDeEfFgGhHijJIlLoOpPqQrRtTuUyY";
+        static ustring valid_characters = " -.:0123456789aAbBcCdDeEfFgGhHijJIlLoOpPqQrRtTuUyY";
         if (text_ != value) {
           for(const auto& c : value)
             if (strings::index_of(valid_characters, c) == -1) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", valid_characters));
@@ -68,6 +68,7 @@ namespace xtd {
             case ' ' : draw_space(e, offset_location, lcd_digit_size, thickness); break;
             case '-' : draw_minus(e, offset_location, lcd_digit_size, thickness); break;
             case '.' : draw_point(e, offset_location, lcd_digit_size, thickness); break;
+            case ':' : draw_colon(e, offset_location, lcd_digit_size, thickness); break;
             case '0' : draw_zero(e, offset_location, lcd_digit_size, thickness); break;
             case '1' : draw_one(e, offset_location, lcd_digit_size, thickness); break;
             case '2' : draw_two(e, offset_location, lcd_digit_size, thickness); break;
@@ -151,6 +152,20 @@ namespace xtd {
         }
       }
       
+      void draw_colon(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        if (style_ == lcd_style::standard) {
+          for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
+            graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 2 + offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() / 2 + offset);
+          for (int32_t offset = 0; offset < thickness; offset++) {
+            graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() - 2 - offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() - 2 - offset);
+          }
+        } else if (style_ == lcd_style::seven_segments) {
+          graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 2 - thickness / 2, thickness, thickness);
+          graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() - 1 - thickness, thickness, thickness);
+        }
+      }
+
       void draw_zero(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
         draw_segment_top(graphics, fore_color(), location, size, thickness);
