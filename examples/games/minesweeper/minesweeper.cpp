@@ -1,6 +1,4 @@
 #include <xtd/xtd.forms>
-#include "resources/flag_16x16.xpm"
-#include "resources/mine_16x16.xpm"
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -166,6 +164,8 @@ namespace minesweeper {
       e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), e.clip_rectangle().width() - 1, 0, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
     }
     
+    #include "resources/flag_16x16.xpm"
+    #include "resources/mine_16x16.xpm"
     cell_state state_ = cell_state::unchecked;
     bool has_mine_ = false;
     int neighbors_ = 0;
@@ -185,8 +185,16 @@ namespace minesweeper {
       game_panel.parent(*this);
       game_panel.auto_size(true);
       game_panel.top(40);
-      change_level(level::beginer);
+      change_level(level::intermediate);
       status_panel.width(client_size().width());
+      mine_count_label.parent(status_panel);
+      mine_count_label.location({4, 4});
+      //mine_count_label.border_style(forms::border_style::fixed_3d);
+      mine_count_label.auto_size(true);
+      mine_count_label.text("000");
+      font(drawing::font(font_family::generic_monospace(), 20));
+      mine_count_label.back_color(color::black);
+      mine_count_label.fore_color(color::red);
       start_game.parent(status_panel);
       start_game.size({32, 32});
       start_game.location({status_panel.size().width() / 2 - 16, 4});
@@ -295,6 +303,8 @@ namespace minesweeper {
     }
 
     panel status_panel;
+    label mine_count_label;
+    label stopwatch_label;
     button start_game;
     panel game_panel;
     grid_size grid_size_;
@@ -303,7 +313,6 @@ namespace minesweeper {
     level level_ = level::beginer;
     bool game_over_ = false;
     int mine_checked_count_ = 0;
-    int mine_flaged_count_ = 0;
   };
 }
 
