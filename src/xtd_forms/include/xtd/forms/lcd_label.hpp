@@ -63,7 +63,7 @@ namespace xtd {
         drawing::size lcd_digit_size((height() - 3) / 2 + 2, height());
         int32_t thickness = lcd_digit_size.width() / 5;
         for(char value: text()) {
-          if (show_background_digit_) draw_background_digit(e, offset_location, lcd_digit_size, thickness);
+          if (show_background_digit_ && value != '.' && value != ':') draw_background_digit(e, offset_location, lcd_digit_size, thickness);
           switch(value) {
             case ' ' : draw_space(e, offset_location, lcd_digit_size, thickness); break;
             case '-' : draw_minus(e, offset_location, lcd_digit_size, thickness); break;
@@ -155,10 +155,9 @@ namespace xtd {
       void draw_colon(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
         if (style_ == lcd_style::standard) {
-          for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 2 + offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() / 2 + offset);
           for (int32_t offset = 0; offset < thickness; offset++) {
-            graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() - 2 - offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() - 2 - offset);
+            graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 3 - thickness / 2 + offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() / 3 - thickness / 2 + offset);
+            graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() /3 * 2 - thickness / 2 + offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() / 3 * 2 - thickness / 2 + offset);
           }
         } else if (style_ == lcd_style::seven_segments) {
           graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 2 - thickness / 2, thickness, thickness);
