@@ -16,7 +16,7 @@ int main() {
   label.parent(form_main);
   label.location({10, 10});
   label.dock(dock_style::fill);
-  label.text("1234567890ABCDEF -.");
+  label.text("1234567890.:");
   //label.style(lcd_style::seven_segments);
   //label.show_background_digit(false);
   //label.back_color(color::black);
