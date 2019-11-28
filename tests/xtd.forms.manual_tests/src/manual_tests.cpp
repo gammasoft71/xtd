@@ -127,8 +127,12 @@ namespace xtd {
 
       void draw_point(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
-        for (int32_t offset = 0; offset < thickness; offset++)
-          graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() - 2 - offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() - 2 - offset);
+        if (style_ == lcd_style::standard) {
+          for (int32_t offset = 0; offset < thickness; offset++)
+            graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() - 2 - offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() - 2 - offset);
+        } else if (style_ == lcd_style::seven_segments) {
+          graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() - 1 - thickness, thickness, thickness);
+        }
       }
 
       void draw_zero(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
