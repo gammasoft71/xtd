@@ -54,7 +54,7 @@ namespace xtd {
 
       using control::text;
       control& text(const ustring& value) override {
-        static ustring valid_characters = " -.0123456789aAbBcCdDeEfFgGhHijJIlLoOpPqQrRsStTuUyY";
+        static ustring valid_characters = " -.0123456789aAbBcCdDeEfFgGhHijJIlLoOpPqQrRtTuUyY";
         if (text_ != value) {
           for(const auto& c : value)
             if (strings::index_of(valid_characters, c) == -1) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", valid_characters));
@@ -99,25 +99,23 @@ namespace xtd {
             case 'f' :
             case 'F' : draw_shift_f(e, offset_location, lcd_digit_size, thickness); break;
             case 'g' :
-            case 'G' : draw_nine(e, offset_location, lcd_digit_size, thickness); break;
+            case 'G' : draw_shift_g(e, offset_location, lcd_digit_size, thickness); break;
             case 'h' : draw_h(e, offset_location, lcd_digit_size, thickness); break;
             case 'H' : draw_shift_h(e, offset_location, lcd_digit_size, thickness); break;
-            case 'i' : draw_i(e, offset_location, lcd_digit_size, thickness); break;
-            case 'I' : draw_one(e, offset_location, lcd_digit_size, thickness); break;
+            case 'i' :
+            case 'I' : draw_i(e, offset_location, lcd_digit_size, thickness); break;
             case 'j' :
             case 'J' : draw_shift_j(e, offset_location, lcd_digit_size, thickness); break;
-            case 'l' : draw_l(e, offset_location, lcd_digit_size, thickness); break;
+            case 'l' :
             case 'L' : draw_shift_l(e, offset_location, lcd_digit_size, thickness); break;
-            case 'o' : draw_o(e, offset_location, lcd_digit_size, thickness); break;
-            case 'O' : draw_zero(e, offset_location, lcd_digit_size, thickness); break;
+            case 'o' :
+            case 'O' : draw_o(e, offset_location, lcd_digit_size, thickness); break;
             case 'p' :
             case 'P' : draw_shift_p(e, offset_location, lcd_digit_size, thickness); break;
             case 'q' :
             case 'Q' : draw_q(e, offset_location, lcd_digit_size, thickness); break;
             case 'r' :
             case 'R' : draw_r(e, offset_location, lcd_digit_size, thickness); break;
-            case 's' :
-            case 'S' : draw_shift_s(e, offset_location, lcd_digit_size, thickness); break;
             case 't' :
             case 'T' : draw_t(e, offset_location, lcd_digit_size, thickness); break;
             case 'u' : draw_u(e, offset_location, lcd_digit_size, thickness); break;
@@ -320,6 +318,15 @@ namespace xtd {
         draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
       }
 
+      void draw_shift_g(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
       void draw_h(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
         draw_segment_left_top(graphics, fore_color(), location, size, thickness);
@@ -347,12 +354,6 @@ namespace xtd {
         draw_segment_right_top(graphics, fore_color(), location, size, thickness);
         draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
         draw_segment_bottom(graphics, fore_color(), location, size, thickness);
-      }
-
-      void draw_l(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
-        drawing::graphics graphics = e.graphics();
-        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
-        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
       }
       
       void draw_shift_l(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
@@ -530,7 +531,7 @@ int main() {
   label.location({10, 10});
   label.size({965, 25});
   //label.dock(dock_style::fill);
-  label.text(" -.0123456789aAbBcCdDeEfFgGhHiIjJlLoOpPqQrRsStTuUyY");
+  label.text(" -.0123456789aAbBcCdDeEfFgGhHiIjJlLoOpPqQrRtTuUyY");
   //label.style(lcd_style::seven_segments);
   //label.digit_spacing(8);
   //label.show_background_digit(false);
