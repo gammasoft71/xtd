@@ -123,7 +123,7 @@ namespace xtd {
             case 'u' : draw_u(e, offset_location, lcd_digit_size, thickness); break;
             case 'U' : draw_shift_u(e, offset_location, lcd_digit_size, thickness); break;
             case 'y' :
-            case 'Y' : draw_four(e, offset_location, lcd_digit_size, thickness); break;
+            case 'Y' : draw_shift_y(e, offset_location, lcd_digit_size, thickness); break;
             default: break;
           }
           offset_location += drawing::size(lcd_digit_size.width() - 2 + digit_spacing_, 0);
@@ -427,6 +427,15 @@ namespace xtd {
         draw_segment_bottom(graphics, fore_color(), location, size, thickness);
       }
 
+      void draw_shift_y(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
       void draw_segment_top(drawing::graphics& graphics, const drawing::color& color, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         if (style_ == lcd_style::standard) {
           for (int32_t offset = 0; offset < thickness; offset++)
@@ -522,8 +531,8 @@ int main() {
   label.size({965, 25});
   //label.dock(dock_style::fill);
   label.text(" -.0123456789aAbBcCdDeEfFgGhHiIjJlLoOpPqQrRsStTuUyY");
-  label.style(lcd_style::seven_segments);
-  label.digit_spacing(8);
+  //label.style(lcd_style::seven_segments);
+  //label.digit_spacing(8);
   //label.show_background_digit(false);
   //label.back_color(color::black);
   label.back_color(color::from_argb(16, color::green));
