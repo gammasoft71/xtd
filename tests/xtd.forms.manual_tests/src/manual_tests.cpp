@@ -17,7 +17,7 @@ int main() {
   label.location({10, 10});
   label.dock(dock_style::fill);
   label.text("1234567890.:");
-  //label.style(lcd_style::seven_segments);
+  label.style(lcd_style::seven_segments);
   //label.show_background_digit(false);
   //label.back_color(color::black);
   label.back_color(color::from_argb(16, color::lime));

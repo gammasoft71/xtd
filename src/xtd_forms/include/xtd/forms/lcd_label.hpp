@@ -160,8 +160,8 @@ namespace xtd {
             graphics.draw_line(drawing::pen(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() /3 * 2 - thickness / 2 + offset, location.x() + size.width() / 2 + thickness / 2, location.y() + size.height() / 3 * 2 - thickness / 2 + offset);
           }
         } else if (style_ == lcd_style::seven_segments) {
-          graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 2 - thickness / 2, thickness, thickness);
-          graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() - 1 - thickness, thickness, thickness);
+          graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 3 - thickness / 2, thickness, thickness);
+          graphics.fill_ellipse(drawing::solid_brush(fore_color()), location.x() + size.width() / 2 - thickness / 2, location.y() + size.height() / 3 * 2 - thickness / 2, thickness, thickness);
         }
       }
 
