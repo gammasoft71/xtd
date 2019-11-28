@@ -54,7 +54,7 @@ namespace xtd {
 
       using control::text;
       control& text(const ustring& value) override {
-        static ustring valid_characters = " -.0123456789aAbBcCdDeEfF";
+        static ustring valid_characters = " -.0123456789aAbBcCdDeEfFgGhHijJIlLoOpPqQrRsStTuUyY";
         if (text_ != value) {
           for(const auto& c : value)
             if (strings::index_of(valid_characters, c) == -1) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", valid_characters));
@@ -87,17 +87,43 @@ namespace xtd {
             case '8' : draw_eight(e, offset_location, lcd_digit_size, thickness); break;
             case '9' : draw_nine(e, offset_location, lcd_digit_size, thickness); break;
             case 'a' :
-            case 'A' : draw_a(e, offset_location, lcd_digit_size, thickness); break;
+            case 'A' : draw_shift_a(e, offset_location, lcd_digit_size, thickness); break;
             case 'b' :
             case 'B' : draw_b(e, offset_location, lcd_digit_size, thickness); break;
-            case 'c' :
-            case 'C' : draw_c(e, offset_location, lcd_digit_size, thickness); break;
+            case 'c' : draw_c(e, offset_location, lcd_digit_size, thickness); break;
+            case 'C' : draw_shift_c(e, offset_location, lcd_digit_size, thickness); break;
             case 'd' :
             case 'D' : draw_d(e, offset_location, lcd_digit_size, thickness); break;
-            case 'e' :
-            case 'E' : draw_e(e, offset_location, lcd_digit_size, thickness); break;
+            case 'e' : draw_e(e, offset_location, lcd_digit_size, thickness); break;
+            case 'E' : draw_shift_e(e, offset_location, lcd_digit_size, thickness); break;
             case 'f' :
-            case 'F' : draw_f(e, offset_location, lcd_digit_size, thickness); break;
+            case 'F' : draw_shift_f(e, offset_location, lcd_digit_size, thickness); break;
+            case 'g' :
+            case 'G' : draw_nine(e, offset_location, lcd_digit_size, thickness); break;
+            case 'h' : draw_h(e, offset_location, lcd_digit_size, thickness); break;
+            case 'H' : draw_shift_h(e, offset_location, lcd_digit_size, thickness); break;
+            case 'i' : draw_i(e, offset_location, lcd_digit_size, thickness); break;
+            case 'I' : draw_one(e, offset_location, lcd_digit_size, thickness); break;
+            case 'j' :
+            case 'J' : draw_shift_j(e, offset_location, lcd_digit_size, thickness); break;
+            case 'l' : draw_l(e, offset_location, lcd_digit_size, thickness); break;
+            case 'L' : draw_shift_l(e, offset_location, lcd_digit_size, thickness); break;
+            case 'o' : draw_o(e, offset_location, lcd_digit_size, thickness); break;
+            case 'O' : draw_zero(e, offset_location, lcd_digit_size, thickness); break;
+            case 'p' :
+            case 'P' : draw_shift_p(e, offset_location, lcd_digit_size, thickness); break;
+            case 'q' :
+            case 'Q' : draw_q(e, offset_location, lcd_digit_size, thickness); break;
+            case 'r' :
+            case 'R' : draw_r(e, offset_location, lcd_digit_size, thickness); break;
+            case 's' :
+            case 'S' : draw_shift_s(e, offset_location, lcd_digit_size, thickness); break;
+            case 't' :
+            case 'T' : draw_t(e, offset_location, lcd_digit_size, thickness); break;
+            case 'u' : draw_u(e, offset_location, lcd_digit_size, thickness); break;
+            case 'U' : draw_shift_u(e, offset_location, lcd_digit_size, thickness); break;
+            case 'y' :
+            case 'Y' : draw_four(e, offset_location, lcd_digit_size, thickness); break;
             default: break;
           }
           offset_location += drawing::size(lcd_digit_size.width() - 2 + digit_spacing_, 0);
@@ -224,7 +250,7 @@ namespace xtd {
         draw_segment_bottom(graphics, fore_color(), location, size, thickness);
       }
 
-      void draw_a(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+      void draw_shift_a(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
         draw_segment_top(graphics, fore_color(), location, size, thickness);
         draw_segment_left_top(graphics, fore_color(), location, size, thickness);
@@ -245,6 +271,13 @@ namespace xtd {
 
       void draw_c(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_shift_c(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
         draw_segment_top(graphics, fore_color(), location, size, thickness);
         draw_segment_left_top(graphics, fore_color(), location, size, thickness);
         draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
@@ -264,17 +297,134 @@ namespace xtd {
         drawing::graphics graphics = e.graphics();
         draw_segment_top(graphics, fore_color(), location, size, thickness);
         draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_top(graphics, fore_color(), location, size, thickness);
         draw_segment_middle(graphics, fore_color(), location, size, thickness);
         draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
         draw_segment_bottom(graphics, fore_color(), location, size, thickness);
       }
 
-      void draw_f(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+      void draw_shift_e(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
         draw_segment_top(graphics, fore_color(), location, size, thickness);
         draw_segment_left_top(graphics, fore_color(), location, size, thickness);
         draw_segment_middle(graphics, fore_color(), location, size, thickness);
         draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_shift_f(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_h(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_shift_h(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_i(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_shift_j(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_right_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_l(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+      }
+      
+      void draw_shift_l(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+ 
+      void draw_o(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_shift_p(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_q(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_r(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_shift_s(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_t(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_middle(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_u(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
+      }
+
+      void draw_shift_u(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
+        drawing::graphics graphics = e.graphics();
+        draw_segment_left_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_top(graphics, fore_color(), location, size, thickness);
+        draw_segment_left_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_right_bottom(graphics, fore_color(), location, size, thickness);
+        draw_segment_bottom(graphics, fore_color(), location, size, thickness);
       }
 
       void draw_segment_top(drawing::graphics& graphics, const drawing::color& color, const drawing::point& location, const drawing::size& size, int32_t thickness) {
@@ -369,13 +519,15 @@ int main() {
   lcd_label label;
   label.parent(form_main);
   label.location({10, 10});
-  label.dock(dock_style::fill);
-  label.text("1234567890ABCDEF -.");
+  label.size({965, 25});
+  //label.dock(dock_style::fill);
+  label.text(" -.0123456789aAbBcCdDeEfFgGhHiIjJlLoOpPqQrRsStTuUyY");
   label.style(lcd_style::seven_segments);
+  label.digit_spacing(8);
   //label.show_background_digit(false);
   //label.back_color(color::black);
-  label.back_color(color::from_argb(16, color::red));
-  label.fore_color(color::red);
+  label.back_color(color::from_argb(16, color::green));
+  label.fore_color(color::green);
 
   application::run(form_main);
 }
