@@ -49,13 +49,14 @@ namespace xtd {
         static ustring valid_characters = " -.:0123456789aAbBcCdDeEfFgGhHijJIlLoOpPqQrRtTuUyY";
         static ustring previous_text;
         if (text_ != value) {
-          for(const auto& c : value) {
-            if (strings::index_of(valid_characters, c) == -1) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", valid_characters));
-          }
-          control::text(value);
+          //control::text(value);
+          text_ = value;
+          this->on_text_changed(event_args::empty);
           for (int index = 0; index < text_.size(); index++) {
-            if (previous_text.size() <= index || previous_text[index] != text_[index])
+            if (strings::index_of(valid_characters, text_[index]) == -1) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", valid_characters));
+            if (previous_text.size() <= index || previous_text[index] != text_[index]) {
               invalidate(drawing::rectangle(((height() - 3) / 2 + digit_spacing_) * index, 0, ((height() - 3) / 2 + digit_spacing_) * (index + 1), height()));
+            }
           }
           previous_text = text_;
         }
