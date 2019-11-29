@@ -21,6 +21,9 @@ int main() {
   //label.show_background_digit(false);
   label.back_color(color::from_argb(16, color::lime));
   label.fore_color(color::lime);
-  
+
+  //label.back_color(color::white);
+  //label.fore_color(color::blue);
+
   application::run(form_main);
 }

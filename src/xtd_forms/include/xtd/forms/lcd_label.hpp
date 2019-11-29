@@ -129,13 +129,18 @@ namespace xtd {
     private:
       void draw_background_digit(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();
-        draw_segment_top(graphics, drawing::color::from_argb(background_digit_transparency_, fore_color()), location, size, thickness);
-        draw_segment_left_top(graphics, drawing::color::from_argb(background_digit_transparency_, fore_color()), location, size, thickness);
-        draw_segment_right_top(graphics, drawing::color::from_argb(background_digit_transparency_, fore_color()), location, size, thickness);
-        draw_segment_middle(graphics, drawing::color::from_argb(background_digit_transparency_, fore_color()), location, size, thickness);
-        draw_segment_left_bottom(graphics, drawing::color::from_argb(background_digit_transparency_, fore_color()), location, size, thickness);
-        draw_segment_right_bottom(graphics, drawing::color::from_argb(background_digit_transparency_, fore_color()), location, size, thickness);
-        draw_segment_bottom(graphics, drawing::color::from_argb(background_digit_transparency_, fore_color()), location, size, thickness);
+        drawing::color background_digit_color;
+        if (environment::os_version().is_osx_platform())
+          background_digit_color = drawing::color::from_argb(background_digit_transparency_, fore_color());
+        else
+          background_digit_color = drawing::color::average(fore_color(), back_color(), (double)background_digit_transparency_ / 255);
+        draw_segment_top(graphics, background_digit_color, location, size, thickness);
+        draw_segment_left_top(graphics, background_digit_color, location, size, thickness);
+        draw_segment_right_top(graphics, background_digit_color, location, size, thickness);
+        draw_segment_middle(graphics, background_digit_color, location, size, thickness);
+        draw_segment_left_bottom(graphics, background_digit_color, location, size, thickness);
+        draw_segment_right_bottom(graphics, background_digit_color, location, size, thickness);
+        draw_segment_bottom(graphics, background_digit_color, location, size, thickness);
       }
       
       void draw_space(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
