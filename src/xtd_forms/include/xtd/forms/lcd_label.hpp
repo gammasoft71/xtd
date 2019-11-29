@@ -61,7 +61,8 @@ namespace xtd {
       void on_paint(paint_event_args& e) override {
         drawing::point offset_location;
         drawing::size lcd_digit_size((height() - 3) / 2 + 2, height());
-        int32_t thickness = lcd_digit_size.width() / 5;
+        int32_t thickness = lcd_digit_size.height() / 8;
+        thickness -= thickness % 2 ? 0 : 1;
         for(char value: text()) {
           if (show_background_digit_ && value != '.' && value != ':') draw_background_digit(e, offset_location, lcd_digit_size, thickness);
           switch(value) {
@@ -120,7 +121,11 @@ namespace xtd {
           offset_location += drawing::size(lcd_digit_size.width() - 2 + digit_spacing_, 0);
         }
       }
-      
+
+      drawing::size measure_control() const override {
+        return drawing::size(((height() - 3) / 2 + digit_spacing_) * text_.size(), height());
+      }
+
     private:
       void draw_background_digit(paint_event_args& e, const drawing::point& location, const drawing::size& size, int32_t thickness) {
         drawing::graphics graphics = e.graphics();

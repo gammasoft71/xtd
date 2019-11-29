@@ -1,10 +1,10 @@
-# docked_panels
+# colors
 
-demonstrates the use of [xtd::forms::panel](../../../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../../../src/xtd_forms/include/xtd/forms/dock_style.hpp).
+demonstrates the use of [xtd::forms::user_control](../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control with xtd::drawing::color.
 
 # Sources
 
-[docked_panels.cpp](docked_panels.cpp)
+[colors.cpp](colors.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,16 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/docked_panels_w.png)
+![Screenshot](../../../docs/pictures/examples/colors_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/docked_panels_m.png)
+![Screenshot](../../../docs/pictures/examples/colors_m.png)
 
-![Screenshot](../../../docs/pictures/examples/docked_panels_md.png)
+![Screenshot](../../../docs/pictures/examples/colors_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/docked_panels_g.png)
+![Screenshot](../../../docs/pictures/examples/colors_g.png)
 
-![Screenshot](../../../docs/pictures/examples/docked_panels_gd.png)
+![Screenshot](../../../docs/pictures/examples/colors_gd.png)
