@@ -19,7 +19,6 @@ int main() {
   label.text("1234567890.:");
   label.style(lcd_style::seven_segments);
   //label.show_background_digit(false);
-  //label.back_color(color::black);
   label.back_color(color::from_argb(16, color::lime));
   label.fore_color(color::lime);
   
