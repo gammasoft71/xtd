@@ -57,6 +57,7 @@ namespace xtd {
             if (previous_text.size() <= index || previous_text[index] != text_[index])
               invalidate(drawing::rectangle(((height() - 3) / 2 + digit_spacing_) * index, 0, ((height() - 3) / 2 + digit_spacing_) * (index + 1), height()));
           }
+          previous_text = text_;
         }
         return *this;
       }
@@ -128,7 +129,7 @@ namespace xtd {
       }
 
       drawing::size measure_control() const override {
-        return drawing::size(((height() - 3) / 2 + digit_spacing_) * text_.size(), height());
+        return drawing::size(((height() - 3) / 2 + digit_spacing_) * static_cast<int32_t>(text_.size()), height());
       }
 
     private:
