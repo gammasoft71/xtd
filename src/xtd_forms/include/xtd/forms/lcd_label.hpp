@@ -50,8 +50,10 @@ namespace xtd {
         if (text_ != value) {
           for (auto& c : value)
             if (strings::index_of(valid_characters, c) == -1) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", valid_characters));
+          control::text(value);
+          invalidate();
         }
-        return control::text(value);
+        return *this;
       }
       
     protected:
@@ -59,7 +61,7 @@ namespace xtd {
 
       void on_handle_created(const event_args& e) override {
         control::on_handle_created(e);
-        refresh();
+        invalidate();
       }
 
       void on_paint(paint_event_args& e) override {
