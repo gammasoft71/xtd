@@ -180,19 +180,18 @@ namespace minesweeper {
       text("Minesweeper");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      //back_color(color::silver);
-      //fore_color(color::black);
+      back_color(color::silver);
+      fore_color(color::black);
       
       status_panel.parent(*this);
-      status_panel.height(40);
+      status_panel.height(60);
       game_panel.parent(*this);
-      game_panel.auto_size(true);
-      game_panel.top(40);
+      game_panel.location({0, 60});
       change_level(level::intermediate);
       status_panel.width(client_size().width());
 
       mine_count_label.parent(status_panel);
-      mine_count_label.location({7, 7});
+      mine_count_label.location({22, 22});
       mine_count_label.auto_size(true);
       mine_count_label.back_color(color::black);
       mine_count_label.fore_color(color::red);
@@ -201,12 +200,12 @@ namespace minesweeper {
       stopwatch_label.auto_size(true);
       stopwatch_label.back_color(color::black);
       stopwatch_label.fore_color(color::red);
-      stopwatch_label.location({status_panel.width() - stopwatch_label.width() - 7, 7});
+      stopwatch_label.location({status_panel.width() - stopwatch_label.width() - 22, 22});
 
       start_game.parent(status_panel);
-      start_game.image(image::from_data(smiley1_16x16));
-      start_game.size({32, 32});
-      start_game.location({status_panel.size().width() / 2 - 16, 4});
+      start_game.image(bitmap(image::from_data(smiley1_32x32), {24, 24}));
+      start_game.size({36, 36});
+      start_game.location({status_panel.size().width() / 2 - 18, 17});
       start_game.click += [this]{
         new_game();
       };
@@ -223,14 +222,16 @@ namespace minesweeper {
       cells_.clear();
       grid_size_ = std::map<minesweeper::level, grid_size> {{minesweeper::level::beginer, {9, 9}}, {minesweeper::level::intermediate, {16, 16}}, {minesweeper::level::expert, {30, 16}}} [level_];
       mine_count_ = std::map<minesweeper::level, int> {{minesweeper::level::beginer, 10}, {minesweeper::level::intermediate, 40}, {minesweeper::level::expert, 99}} [level_];
-    
+
+      game_panel.size({30 + grid_size_.width() * cell().width(),30 + grid_size_.height() * cell().height()});
+
       cells_ = row_cell(grid_size_.width(), column_cell(grid_size_.height()));
       for (int y = 0; y < grid_size_.height(); y++) {
         for (int x = 0; x < grid_size_.width(); x++) {
           cells_[x][y] = std::make_shared<cell>();
           cells_[x][y]->parent(game_panel);
           cells_[x][y]->cell_location({x, y});
-          cells_[x][y]->location({x * cells_[x][y]->size().width(), y * cells_[x][y]->size().height()});
+          cells_[x][y]->location({15 + x * cells_[x][y]->size().width(), 15 + y * cells_[x][y]->size().height()});
           cells_[x][y]->mouse_up += [this](control& sender, const mouse_event_args& e) {
             if (game_over_) return;
             minesweeper::cell& cell = static_cast<minesweeper::cell&>(sender);
@@ -244,7 +245,7 @@ namespace minesweeper {
                   if (grid_size_.width() * grid_size_.height() - checked_cell_count_ == mine_count_) {
                     stopwatch.enabled(false);
                     game_over_ = true;
-                    start_game.image(image::from_data(smiley3_16x16));
+                    start_game.image(bitmap(image::from_data(smiley3_16x16), {24, 24}));
                     for (int index1 = 0; index1 < grid_size_.height(); index1++)
                       for (int index2 = 0; index2 <grid_size_.width(); index2++)
                         if (cells_[index2][index1]->has_mine())
@@ -254,7 +255,7 @@ namespace minesweeper {
                 } else {
                   stopwatch.enabled(false);
                   game_over_ = true;
-                  start_game.image(image::from_data(smiley2_16x16));
+                  start_game.image(bitmap(image::from_data(smiley2_16x16), {24, 24}));
                   for (int index1 = 0; index1 < grid_size_.height(); index1++) {
                     for (int index2 = 0; index2 <grid_size_.width(); index2++) {
                       if (cells_[index2][index1]->state() == cell_state::flag && !cells_[index2][index1]->has_mine())
@@ -307,7 +308,7 @@ namespace minesweeper {
       }
       mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
       stopwatch_label.text("000");
-      start_game.image(image::from_data(smiley1_16x16));
+      start_game.image(bitmap(image::from_data(smiley1_32x32), {24, 24}));
     }
     
     void check_neighbors(const point& cell_location) {
@@ -338,7 +339,7 @@ namespace minesweeper {
       return cells_[cell_location.x()][cell_location.y()]->neighbors();
     }
 
-    #include "resources/smiley1_16x16.xpm"
+    #include "resources/smiley1_32x32.xpm"
     #include "resources/smiley2_16x16.xpm"
     #include "resources/smiley3_16x16.xpm"
     panel status_panel;
