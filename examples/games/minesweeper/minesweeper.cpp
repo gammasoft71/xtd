@@ -160,8 +160,8 @@ namespace minesweeper {
     void draw_border_checked(paint_event_args& e) {
       e.graphics().draw_line(pen(color::darker(back_color())), 0, 0, e.clip_rectangle().width(), 0);
       e.graphics().draw_line(pen(color::darker(back_color())), 0, 0, 0, e.clip_rectangle().height());
-      e.graphics().draw_line(pen(color::lighter(back_color())), 0, e.clip_rectangle().height() - 1, e.clip_rectangle().width(), e.clip_rectangle().height() - 1);
-      e.graphics().draw_line(pen(color::lighter(back_color())), e.clip_rectangle().width() - 1, 0, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
+      e.graphics().draw_line(pen(color::lighter(back_color())), 1, e.clip_rectangle().height() - 1, e.clip_rectangle().width(), e.clip_rectangle().height() - 1);
+      e.graphics().draw_line(pen(color::lighter(back_color())), e.clip_rectangle().width() - 1, 1, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
     }
     
     #include "resources/flag_16x16.xpm"
@@ -181,8 +181,8 @@ namespace minesweeper {
       text("Minesweeper");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      //back_color(color::silver);
-      //fore_color(color::black);
+      back_color(color::silver);
+      fore_color(color::black);
       
       status_panel.parent(*this);
       status_panel.height(60);
