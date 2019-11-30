@@ -177,7 +177,6 @@ intptr_t control::create_double_buffered_paint_graphics(intptr_t control) {
   //reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(back_color);
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
   else  hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->control());
-  //else  hdc_wrapper->create<wxBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
