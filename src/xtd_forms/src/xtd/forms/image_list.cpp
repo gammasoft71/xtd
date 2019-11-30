@@ -23,8 +23,10 @@ image_list::image_list() {
 }
 
 image_list::~image_list() {
-  images().clear();
-  native::image_list::destroy(data_->handle_);
+  if (data_.use_count() == 1) {
+    images().clear();
+    native::image_list::destroy(data_->handle_);
+  }
 }
 
 void image_list::image_size(const drawing::size& value) {
