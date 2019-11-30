@@ -110,6 +110,7 @@ namespace examples {
       };
 
       panel_painting.paint += [this](control& sender, paint_event_args& e) {
+        e.graphics().clear(panel_painting.back_color());
         for (int y = 0; y < panel_painting.client_size().height(); y += zoom)
           for (int x = 0; x < panel_painting.client_size().width(); x += zoom)
             if (picture.get_pixel(x/zoom, y/zoom) != color::from_argb(0, 0, 0, 0))
