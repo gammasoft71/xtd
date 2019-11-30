@@ -112,6 +112,7 @@ namespace game_of_life {
       };
 
       panel_grid_.paint += [this](control& sender, xtd::forms::paint_event_args& e) {
+        e.graphics().clear(back_color());
         if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width() && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height())
           for (int y = 0; y < panel_grid_.client_size().height(); y += zoom_)
             for (int x = 0; x < panel_grid_.client_size().width(); x += zoom_)

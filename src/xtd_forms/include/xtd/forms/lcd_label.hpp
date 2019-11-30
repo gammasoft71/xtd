@@ -63,6 +63,7 @@ namespace xtd {
       }
 
       void on_paint(paint_event_args& e) override {
+        e.graphics().clear(back_color());
         drawing::point offset_location;
         drawing::size lcd_digit_size((height() - 3) / 2 + 2, height());
         int32_t thickness = lcd_digit_size.height() / 8;
