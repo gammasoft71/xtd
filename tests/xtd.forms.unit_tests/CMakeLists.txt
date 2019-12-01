@@ -11,6 +11,7 @@ set(FORMS_SOURCES
   src/forms/check_box.cpp 
   src/forms/control.cpp 
   src/forms/form.cpp
+  src/forms/lcd_label.cpp
   src/forms/list_box.cpp
   src/forms/system_information.cpp
 )
