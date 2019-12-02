@@ -91,7 +91,7 @@
 * **event_log** provides interaction with Windows event logs.
 * **file_system_watcher** listens to the file system change notifications and raises events when a directory, or file in a directory, changes.
 * **help_provider** provides pop-up or online Help for controls.
-* **image_list** provides methods to manage a collection of Image objects. This class cannot be inherited.
+* [image_list](components/image_list/README.md) provides methods to manage a collection of Image objects. This class cannot be inherited.
 * **message_queue** provides access to a queue on a Message Queuing server.
 * **performance_counter** represents a Windows NT performance counter component.
 * **process** provides access to local and remote processes and enables you to start and stop local system processes.
