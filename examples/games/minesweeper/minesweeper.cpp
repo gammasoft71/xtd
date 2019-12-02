@@ -70,7 +70,6 @@ namespace minesweeper {
 
   protected:
     void on_paint(paint_event_args& e) override {
-      e.graphics().clear(back_color());
       std::map<cell_state, delegate<void(paint_event_args&)>> draw_state {{cell_state::unchecked, {*this, &cell::do_draw_unchecked}}, {cell_state::checked, {*this, &cell::do_draw_checked}}, {cell_state::flag, {*this, &cell::do_draw_flag}}, {cell_state::question, {*this, &cell::do_draw_question}}, {cell_state::mine, {*this, &cell::do_draw_mine}}, {cell_state::exploded_mine, {*this, &cell::do_draw_exploded_mine}}, {cell_state::error, {*this, &cell::do_draw_error}}};
       draw_state[state_](e);
       user_control::on_paint(e);
@@ -181,8 +180,8 @@ namespace minesweeper {
       text("Minesweeper");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      back_color(color::silver);
-      fore_color(color::black);
+      //back_color(color::silver);
+      //fore_color(color::black);
       
       status_panel.parent(*this);
       status_panel.height(60);

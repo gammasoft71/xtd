@@ -20,7 +20,6 @@ namespace examples {
 
   protected:
     void on_paint(paint_event_args& e) override {
-      e.graphics().clear(back_color());
       point pos((e.clip_rectangle().size().width() - (int)e.graphics().measure_string(text(), font()).width()) / 2, (e.clip_rectangle().size().height() - (int)e.graphics().measure_string(text(), font()).height()) / 2);
       for (int i = 0; i < text().length(); i++) {
         int index = (step + i) % sin.size();
