@@ -608,7 +608,7 @@ namespace xtd {
 
       drawing::size measure_control() const override {
         if (digits_.size() == 0) return {0, size_.height()};
-        return drawing::size((digits_[0]->width() - 2 + digit_spacing_) * digits_.size() - digit_spacing_ + 2, size_.height());
+        return drawing::size((digits_[0]->width() - 2 + digit_spacing_) * static_cast<int32_t>(digits_.size()) - digit_spacing_ + 2, size_.height());
       }
 
     private:
