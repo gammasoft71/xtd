@@ -566,8 +566,13 @@ namespace xtd {
           if (value.size() < digits_.size())
             digits_.erase(digits_.begin() + value.size(), digits_.end());
           if (value.size() > digits_.size())
-            for (size_t index = digits_.size(); index < value.size(); index++)
+            for (size_t index = digits_.size(); index < value.size(); index++) {
               digits_.push_back(control::create<digit>(*this));
+              digits_[digits_.size() - 1]->click += [this] {on_click(event_args::empty);};
+              digits_[digits_.size() - 1]->mouse_down += [this](control& sender, const mouse_event_args& e) {on_mouse_down(mouse_event_args(e.button(), e.location() + drawing::size(sender.location()), e.clicks(), e.delta()));};
+              digits_[digits_.size() - 1]->mouse_move += [this](control& sender, const mouse_event_args& e) {on_mouse_move(mouse_event_args(e.button(), e.location() + drawing::size(sender.location()), e.clicks(), e.delta()));};
+              digits_[digits_.size() - 1]->mouse_up += [this](control& sender, const mouse_event_args& e) {on_mouse_up(mouse_event_args(e.button(), e.location() + drawing::size(sender.location()), e.clicks(), e.delta()));};
+            }
           for (size_t index = 0; index < value.size(); index++)
             digits_[index]->character(value[index]);
           set_digits_params();
