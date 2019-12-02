@@ -10,8 +10,8 @@ namespace xtd {
           size_ = default_size();
         }
         
-        uint8_t background_digit_transparency() const {return background_digit_transparency_;}
-        digit& background_digit_transparency(uint8_t value) {
+        double background_digit_transparency() const {return background_digit_transparency_;}
+        digit& background_digit_transparency(double value) {
           if (background_digit_transparency_ != value) {
             background_digit_transparency_ = value;
             invalidate();
@@ -118,9 +118,9 @@ namespace xtd {
           drawing::graphics graphics = e.graphics();
           drawing::color background_digit_color;
           if (environment::os_version().is_osx_platform())
-            background_digit_color = drawing::color::from_argb(background_digit_transparency_, fore_color());
+            background_digit_color = drawing::color::from_argb(static_cast<uint8_t>(background_digit_transparency_ * 255), fore_color());
           else
-            background_digit_color = drawing::color::average(fore_color(), back_color(), (double)background_digit_transparency_ / 255);
+            background_digit_color = drawing::color::average(fore_color(), back_color(), background_digit_transparency_);
           draw_segment_top(graphics, background_digit_color, size, thickness);
           draw_segment_left_top(graphics, background_digit_color, size, thickness);
           draw_segment_right_top(graphics, background_digit_color, size, thickness);
@@ -513,7 +513,7 @@ namespace xtd {
       private:
         char character_ = ' ';
         bool show_background_digit_ = true;
-        uint8_t background_digit_transparency_ = 32;
+        double background_digit_transparency_ = 0.10;
         lcd_style style_ = lcd_style::standard;
       };
 
@@ -523,8 +523,9 @@ namespace xtd {
         size_ = default_size();
       }
       
-      uint8_t background_digit_transparency() const {return background_digit_transparency_;}
-      lcd_label& background_digit_transparency(uint8_t value) {
+      double background_digit_transparency() const {return background_digit_transparency_;}
+      lcd_label& background_digit_transparency(double value) {
+        if (value < 0.0 && value > 1.0) throw std::invalid_argument("value must be between 0.0 and 1.0.");
         if (background_digit_transparency_ != value) {
           background_digit_transparency_ = value;
           set_digits_params();
@@ -618,7 +619,7 @@ namespace xtd {
 
     private:
       bool show_background_digit_ = true;
-      uint8_t background_digit_transparency_ = 32;
+      double background_digit_transparency_ = 0.10;
       uint32_t digit_spacing_ = 4;
       lcd_style style_ = lcd_style::standard;
       std::vector<std::shared_ptr<digit>> digits_;

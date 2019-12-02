@@ -21,8 +21,8 @@ int main() {
   label.height(503);
   label.auto_size(true);
   label.style(lcd_style::seven_segments);
-  label.back_color(color::average(color::lime, color::black, 16.0 / 255));
-  label.fore_color(color::lime);
+  label.fore_color(color::blue);
+  label.back_color(color::average(label.fore_color(), color::black, 0.05));
   label.text("  0.0");
 
   timer.tick += [&] {
