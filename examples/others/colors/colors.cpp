@@ -14,7 +14,6 @@ namespace examples {
       }
 
       void on_paint(paint_event_args& e) override {
-        e.graphics().clear(back_color());
         e.graphics().fill_rectangle(solid_brush(color_), 0, 0, 100, e.clip_rectangle().height());
         e.graphics().draw_string(color_.name(), font(), solid_brush(fore_color()), 120, (e.clip_rectangle().height() - e.graphics().measure_string(color_.name(), font()).height()) / 2);
         user_control::on_paint(e);

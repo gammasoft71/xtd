@@ -61,7 +61,7 @@ namespace xtd {
         drawing::size default_size() const override {return {13, 25};}
 
         void on_paint(paint_event_args& e) override {
-          e.graphics().clear(back_color());
+          //e.graphics().clear(back_color());
           drawing::size lcd_digit_size((height() - 3) / 2 + 2, height());
           int32_t thickness = lcd_digit_size.height() / 8;
           thickness -= thickness % 2 ? 0 : 1;
