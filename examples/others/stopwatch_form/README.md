@@ -1,4 +1,4 @@
-# stop_watch_form
+# stopwatch_form
 
 demonstrates the use of [xtd::forms::button](../../../src/xtd_forms/include/xtd/forms/button.hpp), [xtd::forms::label](../../../src/xtd_forms/include/xtd/forms/button.hpp) controls and  [xtd::forms::timer](../../../src/xtd_forms/include/xtd/forms/timer.hpp) component.
 
@@ -20,16 +20,16 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/stop_watch_form_w.png)
+![Screenshot](../../../docs/pictures/examples/stopwatch_form_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/stop_watch_form_m.png)
+![Screenshot](../../../docs/pictures/examples/stopwatch_form_m.png)
 
-![Screenshot](../../../docs/pictures/examples/stop_watch_form_md.png)
+![Screenshot](../../../docs/pictures/examples/stopwatch_form_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/stop_watch_form_g.png)
+![Screenshot](../../../docs/pictures/examples/stopwatch_form_g.png)
 
-![Screenshot](../../../docs/pictures/examples/stop_watch_form_gd.png)
+![Screenshot](../../../docs/pictures/examples/stopwatch_form_gd.png)
