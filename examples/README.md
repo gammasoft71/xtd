@@ -138,6 +138,7 @@
 ## Others
 
 * [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms/scrollable_control::auto_scroll](../src/xtd_forms/include/xtd/forms/scrollable_control.hpp).
+* [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control and xtd::drawing::image].
 * [button2](others/button2/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
 * [button3](others/button3/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
 * [button4](others/button4/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
