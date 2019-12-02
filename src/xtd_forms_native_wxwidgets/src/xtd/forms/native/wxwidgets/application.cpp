@@ -1,9 +1,9 @@
 #if !defined(_WIN32)
 #include <unistd.h>
 #endif
-#if defined(__WXGTK__)
-#include <gtk/gtk.h>
-#endif
+//#if defined(__WXGTK__)
+//#include <gtk/gtk.h>
+//#endif
 #include <xtd/environment.hpp>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/window_messages.hpp>
@@ -85,8 +85,8 @@ void application::initialize() {
   wxApp::s_macWindowMenuTitleName = "Window";
 #endif
   wxMenuBar::MacSetCommonMenuBar(menubar);
-#elif defined(__WXGTK__)
-  gtk_settings_set_long_property(gtk_settings_get_default(), "gtk-button-images", 1, "ButtonImage");
+//#elif defined(__WXGTK__)
+//  gtk_settings_set_long_property(gtk_settings_get_default(), "gtk-button-images", 1, "ButtonImage");
 #endif
 }
 
