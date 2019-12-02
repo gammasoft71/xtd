@@ -869,7 +869,7 @@ void control::wm_mouse_up(message& message) {
   this->def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
-if (e.button() == mouse_buttons::left) this->on_click(event_args::empty);
+  if (e.button() == mouse_buttons::left) this->on_click(event_args::empty);
   this->on_mouse_click(e);
   this->on_mouse_up(e);
 }
