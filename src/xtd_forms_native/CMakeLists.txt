@@ -28,6 +28,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/color_dialog.hpp
   include/xtd/forms/native/combo_box.hpp
   include/xtd/forms/native/combo_box_styles.hpp
+  include/xtd/forms/native/context_menu.hpp
   include/xtd/forms/native/content_alignment.hpp
   include/xtd/forms/native/control.hpp
   include/xtd/forms/native/cursor.hpp
@@ -42,6 +43,9 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/label.hpp
   include/xtd/forms/native/list_box.hpp
   include/xtd/forms/native/list_box_styles.hpp
+  include/xtd/forms/native/main_menu.hpp
+  include/xtd/forms/native/menu.hpp
+  include/xtd/forms/native/menu_item.hpp
   include/xtd/forms/native/message_box.hpp
   include/xtd/forms/native/message_box_styles.hpp
   include/xtd/forms/native/message_keys.hpp

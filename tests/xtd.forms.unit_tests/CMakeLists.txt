@@ -13,6 +13,7 @@ set(FORMS_SOURCES
   src/forms/form.cpp
   src/forms/lcd_label.cpp
   src/forms/list_box.cpp
+  src/forms/main_menu.cpp
   src/forms/system_information.cpp
 )
 if (APPLE)

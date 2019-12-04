@@ -92,6 +92,20 @@ form& form::maximize_box(bool value) {
   return *this;
 }
 
+form& form::menu(const forms::main_menu& value) {
+  if (!menu_.has_value() || &menu_.value() != &value) {
+    menu_ = value;
+  }
+  return *this;
+}
+
+form& form::menu(nullptr_t) {
+  if (menu_.has_value()) {
+    menu_.reset();
+  }
+  return *this;
+}
+
 form& form::minimize_box(bool value) {
   if (this->minimize_box_ != value) {
     this->minimize_box_ = value;
@@ -147,6 +161,12 @@ form& form::window_state(form_window_state value) {
 
 void form::activate() {
   native::form::activate(this->handle_);
+}
+
+void form::center_to_screen() {
+  screen screen = screen::from_control(*this);
+  left((screen.working_area().width() - width()) / 2);
+  top((screen.working_area().height() - height()) / 2);
 }
 
 void form::close() {
