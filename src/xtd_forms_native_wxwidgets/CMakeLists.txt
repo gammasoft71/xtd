@@ -40,6 +40,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/checked_list_box.cpp
   src/xtd/forms/native/wxwidgets/color_dialog.cpp
   src/xtd/forms/native/wxwidgets/combo_box.cpp
+  src/xtd/forms/native/wxwidgets/context_menu.cpp
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp
   src/xtd/forms/native/wxwidgets/cursors.cpp
@@ -52,6 +53,9 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/image_list.cpp
   src/xtd/forms/native/wxwidgets/label.cpp
   src/xtd/forms/native/wxwidgets/list_box.cpp
+  src/xtd/forms/native/wxwidgets/main_menu.cpp
+  src/xtd/forms/native/wxwidgets/menu.cpp
+  src/xtd/forms/native/wxwidgets/menu_item.cpp
   src/xtd/forms/native/wxwidgets/message_box.cpp
   src/xtd/forms/native/wxwidgets/numeric_up_down.cpp
   src/xtd/forms/native/wxwidgets/panel.cpp

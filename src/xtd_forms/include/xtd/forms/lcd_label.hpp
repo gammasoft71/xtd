@@ -117,10 +117,7 @@ namespace xtd {
         void draw_background_digit(paint_event_args& e, const drawing::size& size, int32_t thickness) {
           drawing::graphics graphics = e.graphics();
           drawing::color background_digit_color;
-          if (environment::os_version().is_osx_platform())
-            background_digit_color = drawing::color::from_argb(static_cast<uint8_t>(background_digit_transparency_ * 255), fore_color());
-          else
-            background_digit_color = drawing::color::average(fore_color(), back_color(), background_digit_transparency_);
+          background_digit_color = drawing::color::average(fore_color(), back_color(), background_digit_transparency_);
           draw_segment_top(graphics, background_digit_color, size, thickness);
           draw_segment_left_top(graphics, background_digit_color, size, thickness);
           draw_segment_right_top(graphics, background_digit_color, size, thickness);

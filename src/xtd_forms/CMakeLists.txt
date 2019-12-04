@@ -35,6 +35,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/component.hpp
   include/xtd/forms/container_control.hpp
   include/xtd/forms/content_alignment.hpp
+  include/xtd/forms/context_menu.hpp
   include/xtd/forms/control.hpp
   include/xtd/forms/control_event_args.hpp
   include/xtd/forms/control_event_handler.hpp
@@ -74,7 +75,9 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/lcd_style.hpp
   include/xtd/forms/list_box.hpp
   include/xtd/forms/list_control.hpp
+  include/xtd/forms/main_menu.hpp
   include/xtd/forms/menu.hpp
+  include/xtd/forms/menu_item.hpp
   include/xtd/forms/message.hpp
   include/xtd/forms/message_box.hpp
   include/xtd/forms/message_box_buttons.hpp
@@ -130,6 +133,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/color_dialog.cpp
   src/xtd/forms/combo_box.cpp
   src/xtd/forms/container_control.cpp
+  src/xtd/forms/context_menu.cpp
   src/xtd/forms/control.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
@@ -143,6 +147,9 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/label.cpp
   src/xtd/forms/list_box.cpp
   src/xtd/forms/list_control.cpp
+  src/xtd/forms/main_menu.cpp
+  src/xtd/forms/menu.cpp
+  src/xtd/forms/menu_item.cpp
   src/xtd/forms/message.cpp
   src/xtd/forms/message_box.cpp
   src/xtd/forms/mouse_event_args.cpp

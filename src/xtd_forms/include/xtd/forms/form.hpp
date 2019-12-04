@@ -8,6 +8,7 @@
 #include "container_control.hpp"
 #include "dialog_result.hpp"
 #include "ibutton_control.hpp"
+#include "main_menu.hpp"
 #include "screen.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -60,6 +61,10 @@ namespace xtd {
       virtual bool maximize_box() const {return this->maximize_box_;}
       virtual form& maximize_box(bool value);
       
+      virtual std::optional<forms::main_menu> menu() const {return menu_;}
+      virtual form& menu(const forms::main_menu& value);
+      virtual form& menu(nullptr_t);
+
       virtual bool minimize_box() const {return this->minimize_box_;}
       virtual form& minimize_box(bool value);
 
@@ -89,6 +94,8 @@ namespace xtd {
       virtual form& window_state(form_window_state value);
       
       void activate();
+      
+      void center_to_screen();
       
       void close();
       
@@ -135,6 +142,7 @@ namespace xtd {
       forms::form_border_style form_border_style_ = form_border_style::sizable;
       bool help_button_ = true;
       bool maximize_box_ = true;
+      std::optional<forms::main_menu> menu_;
       bool minimize_box_ = true;
       std::shared_ptr<screen> previous_screeen_;
       bool show_icon_ = true;
