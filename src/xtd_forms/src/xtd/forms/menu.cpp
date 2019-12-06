@@ -14,7 +14,7 @@ menu::menu() {
 
 menu::menu(const menu_item_collection& items) {
   data_ = std::make_shared<data>();
-  data_->mdi_list_item_ = std::make_unique<menu_item>();
+  //data_->mdi_list_item_ = std::make_unique<menu_item>();
   menu_items(items);
 }
 
