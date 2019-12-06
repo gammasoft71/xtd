@@ -95,6 +95,7 @@ form& form::maximize_box(bool value) {
 form& form::menu(const forms::main_menu& value) {
   if (!menu_.has_value() || &menu_.value() != &value) {
     menu_ = value;
+    native::form::menu(handle_, menu_.value().handle());
   }
   return *this;
 }
@@ -102,6 +103,7 @@ form& form::menu(const forms::main_menu& value) {
 form& form::menu(nullptr_t) {
   if (menu_.has_value()) {
     menu_.reset();
+    native::form::menu(handle_, 0);
   }
   return *this;
 }
@@ -313,6 +315,8 @@ void form::wm_close(message &message) {
       if (this->dialog_result_ == forms::dialog_result::none) this->dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(this->handle_, static_cast<int32_t>(this->dialog_result_));
     }
+    form_closed_event_args close_event_args;
+    on_form_closed(close_event_args);
   }
 }
 

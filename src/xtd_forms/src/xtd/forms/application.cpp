@@ -255,12 +255,17 @@ void application::wm_activate_app(message& message) {
 }
 
 void application::wm_enter_idle(message& message) {
+  std::lock_guard<std::mutex> lock(control::mutex_invokers);
+  if (control::invokers.size() != 0) {
+    control::invokers.front().first(control::invokers.front().second);
+    control::invokers.pop_front();
+  }
   static chrono::high_resolution_clock::time_point last_idle_time;
   if (chrono::high_resolution_clock::now() - last_idle_time >= chrono::milliseconds(100)) {
     last_idle_time = chrono::high_resolution_clock::now();
     application::idle(event_args::empty);
   }
-  if (!application::idle.is_empty()) native::application::do_idle();
+  if (!application::idle.is_empty() || control::invokers.size() != 0) native::application::do_idle();
 }
 
 void application::wm_quit(message& message) {

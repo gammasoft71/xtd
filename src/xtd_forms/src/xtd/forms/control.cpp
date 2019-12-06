@@ -45,6 +45,8 @@ namespace {
 forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
+std::mutex control::mutex_invokers;
+std::list<std::pair<delegate<void(std::vector<std::any>)>, std::vector<std::any>>> control::invokers;
 
 control::control() {
   native::control::init();
@@ -312,6 +314,11 @@ void control::invalidate(const drawing::rectangle& rect, bool invalidate_childre
 
 bool control::is_handle_created() const {
   return this->handle_ != 0;
+}
+
+void control::invoke(delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args) {
+  std::lock_guard<std::mutex> lock(mutex_invokers);
+  invokers.push_back({invoker, args});
 }
 
 forms::create_params control::create_params() const {

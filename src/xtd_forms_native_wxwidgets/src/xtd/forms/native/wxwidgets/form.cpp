@@ -40,6 +40,13 @@ void form::maximize(intptr_t form, bool maximize) {
     static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
 }
 
+void form::menu(intptr_t form, intptr_t menu) {
+  if (form == 0) return;
+  
+  if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
+  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(reinterpret_cast<wxMenuBar*>(menu));
+}
+
 bool form::minimize(intptr_t form) {
   if (form == 0) return false;
   
