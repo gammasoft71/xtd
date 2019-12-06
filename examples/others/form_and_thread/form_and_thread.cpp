@@ -22,6 +22,7 @@ int main() {
       int counter = 0;
       int user_thread_id = index;
       while (!closed) {
+        /// call invoke to update ui in the main thread.
         list_box.invoke([&] {
           list_box.items().push_back(strings::format("thread: {}, counter: {}", user_thread_id, ++counter));
         });
