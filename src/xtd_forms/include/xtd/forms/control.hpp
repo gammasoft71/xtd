@@ -2,8 +2,10 @@
 #include <any>
 #include <cstdint>
 #include <functional>
+#include <list>
 #include <map>
 #include <memory>
+#include <mutex>
 #include <optional>
 #include <string>
 #include <xtd/drawing/color.hpp>
@@ -496,6 +498,18 @@ namespace xtd {
       
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
 
+      void invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
+      
+      void invoke(delegate<void()> value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
+
+      /// @cond
+      template<typename delegate_t>
+      void invoke(delegate_t value, const std::vector<std::any>& args) {invoke(delegate<void(std::vector<std::any>)>(value), args);}
+      
+      template<typename delegate_t>
+      void invoke(delegate_t value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      /// @endcond
+
       bool is_handle_created() const;
 
       /// @brief Forces the control to apply layout logic to all its child controls.
@@ -810,6 +824,8 @@ namespace xtd {
       /// @endcond
       
     private:
+      static std::mutex mutex_invokers;
+      static std::list<std::pair<delegate<void(std::vector<std::any>)>, std::vector<std::any>>> invokers;
       void do_layout();
       void on_parent_size_changed(const control& sender, const event_args& e);
       void do_layout_childs_with_dock_style();
