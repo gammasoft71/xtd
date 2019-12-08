@@ -8,6 +8,7 @@
 #include <mutex>
 #include <optional>
 #include <string>
+#include <thread>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>
 #include <xtd/drawing/point.hpp>
@@ -56,6 +57,13 @@ namespace xtd {
     class control : public component, public iwin32_window {
     protected:
       /// @cond
+      struct invoker {
+        delegate<void(std::vector<std::any>)> invoker;
+        std::thread::id thread_id;
+        std::shared_ptr<std::condition_variable> condition_variable_treated;
+        std::vector<std::any> args;
+      };
+      
       enum class state {
         empty = 0,
         creating = 0b1,
@@ -824,8 +832,8 @@ namespace xtd {
       /// @endcond
       
     private:
-      static std::mutex mutex_invokers;
-      static std::list<std::pair<delegate<void(std::vector<std::any>)>, std::vector<std::any>>> invokers;
+      static std::mutex mutex_invokers_access;
+      static std::list<invoker> invokers;
       void do_layout();
       void on_parent_size_changed(const control& sender, const event_args& e);
       void do_layout_childs_with_dock_style();
