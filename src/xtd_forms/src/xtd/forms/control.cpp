@@ -45,8 +45,8 @@ namespace {
 forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
-std::mutex control::mutex_invokers;
-std::list<std::pair<delegate<void(std::vector<std::any>)>, std::vector<std::any>>> control::invokers;
+std::mutex control::mutex_invokers_access;
+std::list<control::invoker> control::invokers;
 
 control::control() {
   native::control::init();
@@ -317,8 +317,14 @@ bool control::is_handle_created() const {
 }
 
 void control::invoke(delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args) {
-  std::lock_guard<std::mutex> lock(mutex_invokers);
-  invokers.push_back({invoker, args});
+  std::shared_ptr<std::condition_variable> condition_variable_treated = std::make_shared<std::condition_variable>();
+  /*lock*/ {
+    std::lock_guard<std::mutex> lock(mutex_invokers_access);
+    invokers.push_back({invoker, std::this_thread::get_id(), condition_variable_treated, args});
+  }
+  std::mutex mutex_treated;
+  std::unique_lock<std::mutex> lock_treated(mutex_treated);
+  condition_variable_treated->wait(lock_treated);
 }
 
 forms::create_params control::create_params() const {
