@@ -5,30 +5,26 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
-  bool closed = false;
   form form_main;
   form_main.text("Form and thread example");
-  form_main.form_closed += [&] {
-    closed = true;
-  };
-  
+
   list_box list_box;
   list_box.parent(form_main);
   list_box.dock(dock_style::fill);
   
   std::vector<std::thread> threads(environment::processor_count());
   for (int index = 0; index < threads.size(); index++) {
-    threads[index] = std::thread([&] {
+    threads[index] = std::thread([&](int user_thread_id) {
       int counter = 0;
-      int user_thread_id = index;
-      while (!closed) {
-        /// call invoke to update ui in the main thread.
+      while (true) {
+        /// call invoke method to update ui in the main thread.
         list_box.invoke([&] {
           list_box.items().push_back(strings::format("thread: {}, counter: {}", user_thread_id, ++counter));
+          list_box.selected_index(list_box.items().size() - 1);
         });
         std::this_thread::yield();
       }
-    });
+    }, index);
     threads[index].detach();
   }
   
