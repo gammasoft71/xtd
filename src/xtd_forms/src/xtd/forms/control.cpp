@@ -8,6 +8,7 @@
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/message_keys.hpp>
 #include <xtd/forms/native/window_styles.hpp>
+#include "../../../include/xtd/forms/application.hpp"
 #include "../../../include/xtd/forms/control.hpp"
 #include "../../../include/xtd/forms/form.hpp"
 
@@ -317,6 +318,7 @@ bool control::is_handle_created() const {
 }
 
 void control::invoke(delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args) {
+  if (!application::message_loop()) return;
   std::shared_ptr<std::condition_variable> condition_variable_invoked = std::make_shared<std::condition_variable>();
   /*lock*/ {
     std::lock_guard<std::mutex> lock(mutex_invokers_access);
