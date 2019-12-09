@@ -59,9 +59,9 @@ namespace xtd {
     protected:
       /// @cond
       struct invoker {
-        delegate<void(std::vector<std::any>)> invoker;
+        delegate<void(std::vector<std::any>)> invoke;
         std::thread::id thread_id;
-        std::shared_ptr<std::condition_variable> condition_variable_treated;
+        std::shared_ptr<std::condition_variable> condition_variable_invoked;
         std::vector<std::any> args;
       };
       
