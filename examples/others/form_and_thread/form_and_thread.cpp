@@ -1,6 +1,7 @@
 #include <thread>
 #include <xtd/xtd.forms>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -17,12 +18,13 @@ int main() {
     threads[index] = std::thread([&](int user_thread_id) {
       int counter = 0;
       while (true) {
+        /// simulate work...
+        std::this_thread::sleep_for(500ms);
         /// call invoke method to update ui in the main thread.
         list_box.invoke([&] {
           list_box.items().push_back(strings::format("thread: {}, counter: {}", user_thread_id, ++counter));
           list_box.selected_index(list_box.items().size() - 1);
         });
-        std::this_thread::yield();
       }
     }, index);
     threads[index].detach();
