@@ -257,9 +257,9 @@ void application::wm_activate_app(message& message) {
 void application::wm_enter_idle(message& message) {
   std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
   while (control::invokers.size()) {
-    control::invokers.front().invoker(control::invokers.front().args);
+    control::invokers.front().invoke(control::invokers.front().args);
     std::this_thread::yield();
-    control::invokers.front().condition_variable_treated->notify_one();
+    control::invokers.front().condition_variable_invoked->notify_one();
     control::invokers.pop_front();
   }
 

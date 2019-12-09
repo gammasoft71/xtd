@@ -317,14 +317,14 @@ bool control::is_handle_created() const {
 }
 
 void control::invoke(delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args) {
-  std::shared_ptr<std::condition_variable> condition_variable_treated = std::make_shared<std::condition_variable>();
+  std::shared_ptr<std::condition_variable> condition_variable_invoked = std::make_shared<std::condition_variable>();
   /*lock*/ {
     std::lock_guard<std::mutex> lock(mutex_invokers_access);
-    invokers.push_back({invoker, std::this_thread::get_id(), condition_variable_treated, args});
+    invokers.push_back({invoker, std::this_thread::get_id(), condition_variable_invoked, args});
   }
-  std::mutex mutex_treated;
-  std::unique_lock<std::mutex> lock_treated(mutex_treated);
-  condition_variable_treated->wait(lock_treated);
+  std::mutex mutex_invoked;
+  std::unique_lock<std::mutex> lock_invoked(mutex_invoked);
+  condition_variable_invoked->wait(lock_invoked);
 }
 
 forms::create_params control::create_params() const {
@@ -945,4 +945,3 @@ void control::wm_size(message& message) {
   }
   this->on_resize(event_args::empty);
 }
-
