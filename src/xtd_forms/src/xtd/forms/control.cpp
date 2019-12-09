@@ -621,6 +621,17 @@ void control::update() const {
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
+  
+  if (application::message_loop()) {
+    std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
+    if (control::invokers.size()) {
+      control::invokers.front().invoke(control::invokers.front().args);
+      std::this_thread::yield();
+      control::invokers.front().condition_variable_invoked->notify_one();
+      control::invokers.pop_front();
+    }
+  }
+
   return message.result();
 }
 
