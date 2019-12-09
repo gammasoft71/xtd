@@ -254,12 +254,14 @@ void application::wnd_proc(message& message) {
     default: break;
   }
 
-  std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
-  if (application::message_loop_ && control::invokers.size()) {
-    control::invokers.front().invoke(control::invokers.front().args);
-    std::this_thread::yield();
-    control::invokers.front().condition_variable_invoked->notify_one();
-    control::invokers.pop_front();
+  if (application::message_loop()) {
+    std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
+    if (control::invokers.size()) {
+      control::invokers.front().invoke(control::invokers.front().args);
+      std::this_thread::yield();
+      control::invokers.front().condition_variable_invoked->notify_one();
+      control::invokers.pop_front();
+    }
   }
 }
 
