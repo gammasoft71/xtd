@@ -13,7 +13,7 @@ int main() {
 
   form form_main;
   form_main.text("Manual tests");
-  form_main.menu(menu);
+  //form_main.menu(menu);
 
   application::run(form_main);
 }
