@@ -9,8 +9,9 @@ intptr_t main_menu::create() {
   return reinterpret_cast<intptr_t>(new wxMenuBar());
 }
 
-
 void main_menu::destroy(intptr_t main_menu) {
   if (!main_menu) return;
-  delete reinterpret_cast<wxMenuBar*>(main_menu);
+  if (!reinterpret_cast<wxMenuBar*>(main_menu)->GetParent())
+    reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
+  //delete reinterpret_cast<wxMenuBar*>(main_menu);
 }
