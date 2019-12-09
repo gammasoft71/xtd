@@ -619,9 +619,6 @@ void control::update() const {
 }
 
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
-  wnd_proc(message);
-  
   if (application::message_loop()) {
     std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
     if (control::invokers.size()) {
@@ -632,6 +629,8 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
     }
   }
 
+  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  wnd_proc(message);
   return message.result();
 }
 
