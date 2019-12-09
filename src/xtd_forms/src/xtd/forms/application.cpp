@@ -241,16 +241,6 @@ void application::raise_leave_thread_modal(const event_args &e) {
 }
 
 intptr_t application::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-  if (application::message_loop()) {
-    std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
-    if (control::invokers.size()) {
-      control::invokers.front().invoke(control::invokers.front().args);
-      std::this_thread::yield();
-      control::invokers.front().condition_variable_invoked->notify_one();
-      control::invokers.pop_front();
-    }
-  }
-
   message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
   wnd_proc(message);
   return message.result();
@@ -262,6 +252,16 @@ void application::wnd_proc(message& message) {
     case WM_ENTERIDLE: wm_enter_idle(message); break;
     case WM_QUIT: wm_quit(message); break;
     default: break;
+  }
+
+  if (application::message_loop()) {
+    std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
+    if (control::invokers.size()) {
+      control::invokers.front().invoke(control::invokers.front().args);
+      std::this_thread::yield();
+      control::invokers.front().condition_variable_invoked->notify_one();
+      control::invokers.pop_front();
+    }
   }
 }
 
