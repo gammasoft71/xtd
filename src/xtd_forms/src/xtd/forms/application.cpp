@@ -208,6 +208,12 @@ void application::run(application_context& context) {
     application::message_loop_ = true;
     native::application::run();
     application::message_loop_ = false;
+    std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
+    while (control::invokers.size()) {
+      control::invokers.front().condition_variable_invoked->notify_one();
+      control::invokers.pop_front();
+    }
+
   } catch(std::exception& exception) {
     /// @todo add exception message...
     cdebug << format("exception ({}) throws : {}", strings::full_class_name(exception), exception.what()) << endl;

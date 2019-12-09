@@ -6,8 +6,13 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
+  bool closed = false;
+  
   form form_main;
   form_main.text("Form and thread example");
+  form_main.form_closed += [&] {
+    closed = true;
+  };
 
   list_box list_box;
   list_box.parent(form_main);
@@ -17,7 +22,7 @@ int main() {
   for (int index = 0; index < threads.size(); index++) {
     threads[index] = std::thread([&](int user_thread_id) {
       int counter = 0;
-      while (true) {
+      while (!closed) {
         /// simulate work...
         std::this_thread::sleep_for(500ms);
         /// call invoke method to update ui in the main thread.
@@ -27,8 +32,9 @@ int main() {
         });
       }
     }, index);
-    threads[index].detach();
   }
   
   application::run(form_main);
+  for (int index = 0; index < threads.size(); index++)
+    threads[index].join();
 }
