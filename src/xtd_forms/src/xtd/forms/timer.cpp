@@ -1,10 +1,12 @@
 #include <xtd/forms/native/timer.hpp>
+#include "../../../include/xtd/forms/application.hpp"
 #include "../../../include/xtd/forms/timer.hpp"
 
 using namespace xtd;
 using namespace xtd::forms;
 
 void timer::enabled(bool enabled) {
+  if (!application::message_loop()) return;
   if (this->enabled_ != enabled) {
     this->enabled_ = enabled;
     if (this->enabled_ == true)
@@ -15,6 +17,7 @@ void timer::enabled(bool enabled) {
 }
 
 void timer::interval(int32_t interval) {
+  if (!application::message_loop()) return;
   if (this->interval_ != interval) {
     this->interval_ = interval;
     
