@@ -48,9 +48,28 @@ map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 std::mutex control::mutex_invokers_access;
 std::list<control::invoker> control::invokers;
+timer control::timer_invoke;
 
 control::control() {
   native::control::init();
+  
+  static bool first_call = true;
+  if (first_call) {
+    timer_invoke.interval(20);
+    timer_invoke.enabled(true);
+    timer_invoke.tick += [] {
+      if (application::message_loop() && control::invokers.size()) {
+        std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
+        while (control::invokers.size()) {
+          control::invokers.front().invoke(control::invokers.front().args);
+          std::this_thread::yield();
+          control::invokers.front().condition_variable_invoked->notify_one();
+          control::invokers.pop_front();
+        }
+      }
+    };
+    first_call = false;
+  }
   this->set_state(state::enabled, true);
   this->set_state(state::visible, true);
   this->set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);

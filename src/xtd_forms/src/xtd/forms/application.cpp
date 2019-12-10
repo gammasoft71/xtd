@@ -253,16 +253,6 @@ void application::wnd_proc(message& message) {
     case WM_QUIT: wm_quit(message); break;
     default: break;
   }
-
-  if (application::message_loop()) {
-    std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
-    if (control::invokers.size()) {
-      control::invokers.front().invoke(control::invokers.front().args);
-      std::this_thread::yield();
-      control::invokers.front().condition_variable_invoked->notify_one();
-      control::invokers.pop_front();
-    }
-  }
 }
 
 void application::wm_activate_app(message& message) {
