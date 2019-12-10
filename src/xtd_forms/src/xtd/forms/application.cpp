@@ -206,7 +206,22 @@ void application::run(application_context& context) {
     native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
     native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
     application::message_loop_ = true;
+    control::timer_invoke = std::make_shared<timer>();
+    control::timer_invoke->interval(20);
+    control::timer_invoke->enabled(true);
+    control::timer_invoke->tick += [] {
+    if (application::message_loop() && control::invokers.size()) {
+        std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
+        while (control::invokers.size()) {
+          control::invokers.front().invoke(control::invokers.front().args);
+          std::this_thread::yield();
+          control::invokers.front().condition_variable_invoked->notify_one();
+          control::invokers.pop_front();
+        }
+      }
+    };
     native::application::run();
+    control::timer_invoke.reset();
     application::message_loop_ = false;
     std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
     while (control::invokers.size()) {
