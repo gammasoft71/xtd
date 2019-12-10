@@ -836,7 +836,7 @@ namespace xtd {
     private:
       static std::mutex mutex_invokers_access;
       static std::list<invoker> invokers;
-      static timer timer_invoke;
+      static std::shared_ptr<timer> timer_invoke;
       void do_layout();
       void on_parent_size_changed(const control& sender, const event_args& e);
       void do_layout_childs_with_dock_style();

@@ -48,7 +48,7 @@ map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 std::mutex control::mutex_invokers_access;
 std::list<control::invoker> control::invokers;
-timer control::timer_invoke;
+std::shared_ptr<timer> control::timer_invoke;
 
 control::control() {
   native::control::init();
@@ -626,24 +626,6 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 }
 
 void control::wnd_proc(message& message) {
-  static bool first_call = true;
-  if (first_call && application::message_loop()) {
-    timer_invoke.interval(20);
-    timer_invoke.enabled(true);
-    timer_invoke.tick += [] {
-      if (application::message_loop() && control::invokers.size()) {
-        std::lock_guard<std::mutex> lock(control::mutex_invokers_access);
-        while (control::invokers.size()) {
-          control::invokers.front().invoke(control::invokers.front().args);
-          std::this_thread::yield();
-          control::invokers.front().condition_variable_invoked->notify_one();
-          control::invokers.pop_front();
-        }
-      }
-    };
-    first_call = false;
-  }
-  
   diagnostics::debug::write_line_if(debug_events, strings::format("({}) receive message [{}]", this->name_, message));
   switch (message.msg()) {
       // keyboard:
