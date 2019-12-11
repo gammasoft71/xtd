@@ -9,7 +9,9 @@ void container_control::active_control(const control& active_control) {
 
 drawing::size container_control::measure_control() const {
   drawing::rectangle bounds;
-  for (auto item : this->controls())
-    bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+  for (auto item : this->controls()) {
+    if (item.get().visible())
+      bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+  }
   return drawing::size(bounds.location() + bounds.size());
 }

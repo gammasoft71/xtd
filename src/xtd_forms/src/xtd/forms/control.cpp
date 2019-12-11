@@ -573,11 +573,11 @@ void control::on_text_changed(const event_args &e) {
 
 void control::on_visible_changed(const event_args &e) {
   this->set_state(state::visible, native::control::visible(this->handle_));
-  this->refresh();
   if (this->focused())
     this->focus();
   for (auto item : this->controls_)
     if (item.get().focused()) item.get().focus();
+  if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().on_layout(event_args::empty);
   if (this->can_raise_events()) this->visible_changed(*this, e);
 }
 

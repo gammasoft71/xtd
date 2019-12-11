@@ -320,13 +320,6 @@ void form::wm_close(message &message) {
   }
 }
 
-drawing::size form::measure_control() const {
-  drawing::rectangle bounds;
-  for (auto item : this->controls())
-    bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
-  return drawing::size(bounds.location() + bounds.size());
-}
-
 void form::on_handle_created(const event_args &e) {
   this->container_control::on_handle_created(e);
   if (this->accept_button_.has_value())

@@ -118,6 +118,11 @@ namespace xtd {
       /// @remarks The perform_step method increments the value of the progress bar by the amount specified by the step property. You can use the Step property to specify the amount that each completed task in an operation changes the value of the progress bar. For example, if you are copying a group of files, you might want to set the value of the step property to 1 and the value of the maximum property to the total number of files to copy. When each file is copied, you can call the perform_step method to increment the progress bar by the value of the step property. If you want to have more flexible control of the value of the progress bar, you can use the increment method or set the value of the value property directly.
       void perform_step() {this->increment(this->step());}
 
+      void set_range(int min_value, int max_value) {
+        this->minimum(min_value);
+        this->maximum(min_value > max_value ? min_value : max_value);
+      }
+
       /// @brief Returns a string that represents the progress_bar control.
       /// @return A string that represents the current progress_bar.
       /// @remarks The return string includes the type and the values for the minimum, maximum, and value properties.

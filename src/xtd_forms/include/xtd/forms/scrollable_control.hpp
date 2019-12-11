@@ -54,8 +54,10 @@ namespace xtd {
         this->control::on_layout(e);
         if (auto_scroll_) {
           display_rectangle_ = client_rectangle_;
-          for (auto item : this->controls())
-            display_rectangle_ = drawing::rectangle::make_union(display_rectangle_, item.get().bounds());
+          for (auto item : this->controls()) {
+            if (item.get().visible())
+              display_rectangle_ = drawing::rectangle::make_union(display_rectangle_, item.get().bounds());
+          }
           display_rectangle_.width(display_rectangle_.width() + auto_scroll_margin_.width());
           display_rectangle_.height(display_rectangle_.height() + auto_scroll_margin_.height());
         }

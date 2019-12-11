@@ -39,8 +39,10 @@ forms::create_params panel::create_params() const {
 
 drawing::size panel::measure_control() const {
   drawing::rectangle bounds;
-  for (auto item : this->controls())
-    bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+  for (auto item : this->controls()) {
+    if (item.get().visible())
+      bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+  }
   return drawing::size(bounds.location() + bounds.size());
 }
 
