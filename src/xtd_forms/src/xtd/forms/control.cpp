@@ -733,7 +733,7 @@ void control::do_layout() {
   this->do_layout_with_anchor_styles();
   this->do_layout_with_auto_size_mode();
 
-  //this->refresh();
+  this->refresh();
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
