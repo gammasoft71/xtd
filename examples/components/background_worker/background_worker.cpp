@@ -43,7 +43,7 @@ namespace examples {
       
       status.location({10, 80});
       status.auto_size(true);
-      status.text("Status : ");
+      status.text("Status :");
 
       worker.worker_supports_cancellation(true);
       worker.worker_reports_progress(true);
@@ -64,10 +64,7 @@ namespace examples {
         button_run.enabled(true);
         button_cancel.enabled(false);
         progress.value(0);
-        if (e.cancel())
-          status.text("Status : canceled");
-        else
-          status.text("Status : completed");
+        status.text(strings::format("Status : {}", e.cancel() ? "canceled" : "completed"));
       };
     }
     
