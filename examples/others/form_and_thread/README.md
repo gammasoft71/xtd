@@ -1,6 +1,6 @@
 # form_and_thread
 
-represents a window or dialog box that makes up an application's user interface.
+demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../src/xtd_forms/include/xtd/forms/form.hpp) method.
 
 # Sources
 
