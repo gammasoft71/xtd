@@ -17,6 +17,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/arrange_direction.hpp
   include/xtd/forms/arrange_starting_position.hpp
   include/xtd/forms/auto_size_mode.hpp
+  include/xtd/forms/background_worker.hpp
   include/xtd/forms/boot_mode.hpp
   include/xtd/forms/border_style.hpp
   include/xtd/forms/bounds_specified.hpp
@@ -43,6 +44,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/cursor.hpp
   include/xtd/forms/cursors.hpp
   include/xtd/forms/dialog_result.hpp
+  include/xtd/forms/do_work_event_args.hpp
+  include/xtd/forms/do_work_event_handler.hpp
   include/xtd/forms/dock_style.hpp
   include/xtd/forms/domain_up_down.hpp
   include/xtd/forms/file_dialog.hpp
@@ -98,7 +101,11 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/picture_box_size_mode.hpp
   include/xtd/forms/progress_bar.hpp
   include/xtd/forms/progress_bar_style.hpp
+  include/xtd/forms/progress_changed_event_args.hpp
+  include/xtd/forms/progress_changed_event_handler.hpp
   include/xtd/forms/radio_button.hpp
+  include/xtd/forms/run_worker_completed_event_args.hpp
+  include/xtd/forms/run_worker_completed_event_handler.hpp
   include/xtd/forms/save_file_dialog.hpp
   include/xtd/forms/scroll_bar.hpp
   include/xtd/forms/scrollable_control.hpp
@@ -126,6 +133,7 @@ set(XTD_FORMS_LAYOUT_INCLUDES
 
 set(XTD_FORMS_SOURCES
   src/xtd/forms/application.cpp
+  src/xtd/forms/background_worker.cpp
   src/xtd/forms/button.cpp
   src/xtd/forms/button_base.cpp
   src/xtd/forms/check_box.cpp

@@ -114,8 +114,6 @@ namespace xtd {
       friend class application;
       forms::create_params create_params() const override;
    
-      drawing::size measure_control() const override;
-
       virtual void on_activated(const event_args& e) {this->activated(*this, e);}
       
       virtual void on_deactivate(const event_args& e) {this->deactivate(*this, e);}
