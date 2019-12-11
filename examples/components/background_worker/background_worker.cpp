@@ -52,7 +52,7 @@ namespace examples {
           if (worker.cancellation_pending()) break; // stop work...
           std::this_thread::sleep_for(100ms); // simulate work...
           worker.report_progress(progress);
-          cdebug << format("progres s {} / 100", progress) << std::endl;
+          cdebug << format("progress {} / 100", progress) << std::endl;
         }
       };
       
