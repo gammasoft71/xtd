@@ -83,7 +83,7 @@
 
 ## Components
 
-* [background_worker](component/background_worker/README.md) executes an operation on a separate thread.
+* [background_worker](components/background_worker/README.md) executes an operation on a separate thread.
 * [cursor](components/cursor/README.md) represents the image used to paint the mouse pointer.
 * **directory_entry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
 * **directory_searcher** performs queries against Active Directory Domain Services.
