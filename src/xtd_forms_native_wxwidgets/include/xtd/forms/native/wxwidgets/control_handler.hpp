@@ -331,6 +331,10 @@ namespace xtd {
           return result;
         }
         
+        virtual void SetPosition(const wxPoint& pt) {
+          this->control_->SetPosition(pt);
+        }
+
         virtual wxSize GetClientSize() const {
           return this->control_->GetClientSize();
         }
