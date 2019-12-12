@@ -37,12 +37,29 @@ namespace xtd {
           return wx_style;
         }
         
+        virtual void SetPosition(const wxPoint& pt) override {
+          control_handler::SetPosition(pt);
+          
+#if defined(__WXOSX__)
+          wxSize size = control()->GetSize();
+          __set_button_bezel_style__((wxButton*)control(), pt.x, pt.y, size.GetWidth(), size.GetHeight());
+#endif
+        }
+
         wxSize GetClientSize() const override {
           return control()->GetSize();
         }
         
         void SetClientSize(int32_t width, int32_t height) override {
-          control()->SetSize(width, height);
+          SetSize(width, height);
+        }
+
+        void SetSize(int32_t width, int32_t height) override {
+          control_handler::SetSize(width, height);
+#if defined(__WXOSX__)
+          wxPoint location = control()->GetPosition();
+          __set_button_bezel_style__((wxButton*)control(), location.x, location.y, width, height);
+#endif
         }
       };
     }
