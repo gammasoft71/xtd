@@ -20,6 +20,7 @@ public:
 
     track_bar1.location({50, 50});
     track_bar1.maximum(200);
+    track_bar1.auto_size(false);
     track_bar1.orientation(forms::orientation::vertical);
     track_bar1.parent(*this);
     track_bar1.value_changed += [this](control& sender, const event_args& e) {
@@ -28,7 +29,7 @@ public:
     };
     track_bar1.value(100);
     track_bar1.tick_style(forms::tick_style::none);
-    track_bar1.size({45, 200});
+    track_bar1.size({25, 200});
   }
   
 private:
