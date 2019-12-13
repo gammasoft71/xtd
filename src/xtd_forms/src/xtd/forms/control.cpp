@@ -374,6 +374,7 @@ void control::on_click(const event_args &e) {
 
 void control::on_client_size_changed(const event_args &e) {
   this->on_layout(e);
+  this->refresh();
   if (this->can_raise_events()) this->client_size_changed(*this, e);
 }
 
@@ -562,6 +563,7 @@ void control::on_parent_font_changed(const event_args &e) {
   if (this->parent_ && this->parent().value().get().get_state(state::auto_size)) this->parent().value().get().on_layout(event_args::empty);
   this->client_rectangle_ = native::control::client_rectangle(this->handle_);
   this->on_layout(e);
+  this->refresh();
   if (this->can_raise_events()) this->size_changed(*this, e);
 }
 
@@ -732,8 +734,6 @@ void control::do_layout() {
   this->do_layout_childs_with_dock_style();
   this->do_layout_with_anchor_styles();
   this->do_layout_with_auto_size_mode();
-
-  this->refresh();
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
