@@ -1,5 +1,6 @@
 #pragma once
 #include "control.hpp"
+#include "system_information.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -54,6 +55,8 @@ namespace xtd {
         this->control::on_layout(e);
         if (auto_scroll_) {
           display_rectangle_ = client_rectangle_;
+          display_rectangle_.height(display_rectangle_.height() - system_information::horizontal_scroll_bar_height());
+          display_rectangle_.width(display_rectangle_.width() - system_information::vertical_scroll_bar_width());
           for (auto item : this->controls()) {
             if (item.get().visible())
               display_rectangle_ = drawing::rectangle::make_union(display_rectangle_, item.get().bounds());

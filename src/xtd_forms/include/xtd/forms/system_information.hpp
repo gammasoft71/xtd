@@ -157,7 +157,7 @@ namespace xtd {
 
       /// @brief Gets the width, in pixels, of the arrow bitmap on the horizontal scroll bar.
       /// @return The width, in pixels, of the arrow bitmap on the horizontal scroll bar.
-      static int32_t horizontal_Scroll_bar_arrow_width();
+      static int32_t horizontal_scroll_bar_arrow_width();
 
       /// @brief Gets the default height, in pixels, of the horizontal scroll bar.
       /// @return The default height, in pixels, of the horizontal scroll bar.
@@ -427,6 +427,9 @@ namespace xtd {
       /// @remarks The network property indicates whether the system has a currently established network connection.
       /// @note This property always returns true on all platforms.
       static bool network();
+      
+      static int32_t vertical_scroll_bar_width();
+
     };
   }
 }
