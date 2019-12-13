@@ -77,9 +77,9 @@ namespace xtd {
           
           if ((class_style & CS_NOCLOSE) != CS_NOCLOSE) wx_style |= wxCLOSE_BOX;
 
-          if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
-          if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
-          if (((style & WS_HSCROLL) == WS_HSCROLL || (style & WS_VSCROLL) == WS_VSCROLL) && (ex_style & WS_EX_AUTOSCROLL) != WS_EX_AUTOSCROLL) wx_style |= wxALWAYS_SHOW_SB;
+          //if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
+          //if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
+          //if (((style & WS_HSCROLL) == WS_HSCROLL || (style & WS_VSCROLL) == WS_VSCROLL) && (ex_style & WS_EX_AUTOSCROLL) != WS_EX_AUTOSCROLL) wx_style |= wxALWAYS_SHOW_SB;
 
           //cdebug << format("wx_style = 0x{:X}", wx_style) << std::endl;
           
