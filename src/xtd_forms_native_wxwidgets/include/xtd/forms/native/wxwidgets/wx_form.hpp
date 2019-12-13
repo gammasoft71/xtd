@@ -14,6 +14,34 @@
 namespace xtd {
   namespace forms {
     namespace native {
+      class wxMainPanel : public wxScrolled<wxPanel> {
+      public:
+        wxMainPanel(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxScrolledWindowStyle, const wxString& name = wxPanelNameStr) : wxScrolled<wxPanel>(parent, winid, pos, size, style, name) {}
+      protected:
+        bool ProcessEvent(wxEvent &event) override {
+          bool result = wxPanel::ProcessEvent(event);
+          if (event.GetEventType() == wxEVT_LEFT_DOWN) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_RIGHT_DOWN) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_LEFT_UP) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_UP) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_RIGHT_UP) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_MOTION) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_ENTER_WINDOW) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_LEAVE_WINDOW) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_LEFT_DCLICK) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_RIGHT_DCLICK) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_SET_FOCUS) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_KILL_FOCUS) wxPostEvent(GetParent(), event);
+          //else if (event.GetEventType() == wxEVT_CHILD_FOCUS) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_MOUSEWHEEL) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_AUX1_DOWN) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_AUX1_UP) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_AUX1_DCLICK) wxPostEvent(GetParent(), event);
+          return result;
+        }
+      };
       class wx_form : public control_handler {
       public:
         wx_form(const forms::create_params& create_params) {
@@ -27,27 +55,7 @@ namespace xtd {
           else
             this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           this->control()->SetMinSize({75, 23});
-          this->panel_ = new wxScrolled<wxPanel>(this->control());
-          
-          panel_->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_MIDDLE_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_RIGHT_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_LEFT_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_MIDDLE_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_RIGHT_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_MOTION, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_ENTER_WINDOW, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_LEAVE_WINDOW, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_LEFT_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_MIDDLE_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_RIGHT_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_SET_FOCUS, [&](wxFocusEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_KILL_FOCUS, [&](wxFocusEvent& event) {wxPostEvent(control(), event);});
-          //panel_->Bind(wxEVT_CHILD_FOCUS, [&](wxChildFocusEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_MOUSEWHEEL, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_AUX1_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_AUX1_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
-          panel_->Bind(wxEVT_AUX1_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          this->panel_ = new wxMainPanel(this->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, wxScrolledWindowStyle | wxTAB_TRAVERSAL);
         }
 
         static long style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
@@ -108,7 +116,7 @@ namespace xtd {
         bool modal() const {return this->modal_;}
         
       private:
-        wxScrolled<wxPanel>* panel_;
+        wxMainPanel* panel_;
         bool modal_ = false;
       };
     }
