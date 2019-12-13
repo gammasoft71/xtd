@@ -91,3 +91,11 @@ int32_t system_information::font_smoothing_contrast() {
 int32_t system_information::font_smoothing_type() {
   return native::system_information::font_smoothing_type();
 }
+
+int32_t system_information::horizontal_scroll_bar_height() {
+  return 15;
+}
+
+int32_t system_information::vertical_scroll_bar_width() {
+  return 15;
+}
