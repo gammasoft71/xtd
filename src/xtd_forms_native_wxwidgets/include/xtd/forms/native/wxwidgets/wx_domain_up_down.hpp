@@ -86,7 +86,7 @@ namespace xtd {
 #if defined(__WXGTK__)
           if (height < 32) height = 32;
 #endif
-          this->control_handler::create<wxDomainSpinCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_text_box_style(create_params.style(), create_params.ex_style()), style_to_wx_spin_style(create_params.style(), create_params.ex_style()));
+          this->control_handler::create<wxDomainSpinCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), height), style_to_wx_text_box_style(create_params.style(), create_params.ex_style()), style_to_wx_spin_style(create_params.style(), create_params.ex_style()));
         }
         
         static long style_to_wx_text_box_style(size_t style, size_t ex_style) {

@@ -125,11 +125,11 @@ void control::back_color(intptr_t control, const color& color) {
   if (control == 0) return;
 #if defined (__WXOSX__)
   if (color.handle())
-    reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
+    reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
   else
-    reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+    reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 #else
-  reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+  reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 #endif
 }
 
@@ -243,7 +243,7 @@ void control::client_size(intptr_t control, const drawing::size& size) {
 
 void control::cursor(intptr_t control, intptr_t cursor) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetCursor(*reinterpret_cast<wxCursor*>(cursor));
+  reinterpret_cast<control_handler*>(control)->SetCursor(*reinterpret_cast<wxCursor*>(cursor));
 }
 
 bool control::enabled(intptr_t control) {

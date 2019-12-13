@@ -82,3 +82,10 @@ void form::end_dialog(intptr_t form, int32_t result) {
   if (form == 0) return;
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->EndModal(result);
 }
+
+void form::virtual_size(intptr_t control, const drawing::size& size) {
+  if (control == 0) return;
+  
+  reinterpret_cast<control_handler*>(control)->container()->SetVirtualSize(wxSize(size.width(), size.height()));
+  if (dynamic_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->container())) static_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->container())->SetScrollRate(10, 10);
+}

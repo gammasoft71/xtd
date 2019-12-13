@@ -16,7 +16,7 @@ namespace xtd {
       public:
         wx_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent())->control(), wxID_ANY, create_params.caption().wstr(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          this->control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, create_params.caption().wstr(), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
           #if defined(__WXOSX__)
           __set_button_bezel_style__((wxButton*)this->control(), create_params.location().x(), create_params.location().y(), create_params.size().width(), create_params.size().height());
           #endif

@@ -8,10 +8,7 @@ namespace examples {
   public:
     form1() {
       text("Check box example");
-      controls().push_back(panel1);
-
-      panel1.dock(dock_style::fill);
-      panel1.controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});
+      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});
 
       check_box1.auto_check(false);
       check_box1.click += [&](control& sender, const event_args& e) {
@@ -53,7 +50,6 @@ namespace examples {
     }
     
   private:
-    panel panel1;
     check_box check_box1;
     check_box check_box2;
     check_box check_box3;
