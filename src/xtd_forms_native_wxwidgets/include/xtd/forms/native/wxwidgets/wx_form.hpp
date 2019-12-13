@@ -51,14 +51,14 @@ namespace xtd {
           if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
           this->modal_ = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW;
           if (this->modal_)
-            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           else
-            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           this->control()->SetMinSize({75, 23});
-          this->panel_ = new wxMainPanel(this->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, wxScrolledWindowStyle | wxTAB_TRAVERSAL);
+          this->panel_ = new wxMainPanel(this->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
         }
 
-        static long style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
+        static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
           long wx_style = wxTAB_TRAVERSAL;
 
           if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) wx_style |= wxMAXIMIZE_BOX;
@@ -82,6 +82,16 @@ namespace xtd {
           //if (((style & WS_HSCROLL) == WS_HSCROLL || (style & WS_VSCROLL) == WS_VSCROLL) && (ex_style & WS_EX_AUTOSCROLL) != WS_EX_AUTOSCROLL) wx_style |= wxALWAYS_SHOW_SB;
 
           //cdebug << format("wx_style = 0x{:X}", wx_style) << std::endl;
+          
+          return wx_style;
+        }
+
+        static long panel_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
+          long wx_style = wxTAB_TRAVERSAL;
+          
+          if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
+          if ((style & WS_VSCROLL) == WS_VSCROLL) wx_style |= wxVSCROLL;
+          if (((style & WS_HSCROLL) == WS_HSCROLL || (style & WS_VSCROLL) == WS_VSCROLL) && (ex_style & WS_EX_AUTOSCROLL) != WS_EX_AUTOSCROLL) wx_style |= wxALWAYS_SHOW_SB;
           
           return wx_style;
         }
