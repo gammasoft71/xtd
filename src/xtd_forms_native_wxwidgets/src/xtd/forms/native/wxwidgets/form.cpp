@@ -87,5 +87,5 @@ void form::virtual_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
   
   reinterpret_cast<control_handler*>(control)->container()->SetVirtualSize(wxSize(size.width(), size.height()));
-  if (dynamic_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->container())) static_cast<wxScrolled<wxPanel>*>(reinterpret_cast<control_handler*>(control)->container())->SetScrollRate(10, 10);
+  if (dynamic_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->container())) static_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->container())->SetScrollRate(10, 10);
 }
