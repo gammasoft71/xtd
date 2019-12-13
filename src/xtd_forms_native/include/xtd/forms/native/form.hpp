@@ -19,6 +19,7 @@ namespace xtd {
         static void restore(intptr_t form);
         static int32_t show_dialog(intptr_t form);
         static void end_dialog(intptr_t form, int32_t result);
+        static void virtual_size(intptr_t control, const drawing::size& size);
       };
     }
   }

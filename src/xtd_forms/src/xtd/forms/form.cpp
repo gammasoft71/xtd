@@ -326,6 +326,11 @@ void form::on_handle_created(const event_args &e) {
     native::form::default_control(this->handle_, dynamic_cast<control&>(this->accept_button_.value().get()).handle());
 }
 
+void form::on_layout(const event_args& e) {
+  this->scrollable_control::on_layout(e);
+  if (auto_scroll_) native::form::virtual_size(this->handle_, display_rectangle().size());
+}
+
 void form::on_resize(const event_args& e) {
   if (native::form::minimize(this->handle_))
     this->window_state_ = forms::form_window_state::minimized;

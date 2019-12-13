@@ -5,8 +5,10 @@
 #include <xtd/forms/native/window_styles.hpp>
 #include <wx/app.h>
 #include <wx/dialog.h>
+#include <wx/event.h>
 #include <wx/frame.h>
-#include <wx/button.h>
+#include <wx/panel.h>
+#include <wx/scrolwin.h>
 #include "control_handler.hpp"
 
 namespace xtd {
@@ -21,14 +23,31 @@ namespace xtd {
           if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
           this->modal_ = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW;
           if (this->modal_)
-            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           else
-            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->control() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           this->control()->SetMinSize({75, 23});
-          this->button_ = new wxButton(this->control(), wxID_ANY);
-          this->control()->SetBackgroundColour(this->button_->GetBackgroundColour());
-          this->control()->SetForegroundColour(this->button_->GetForegroundColour());
-          this->button_->Hide();
+          this->panel_ = new wxScrolled<wxPanel>(this->control());
+          
+          panel_->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_MIDDLE_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_RIGHT_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_LEFT_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_MIDDLE_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_RIGHT_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_MOTION, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_ENTER_WINDOW, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_LEAVE_WINDOW, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_LEFT_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_MIDDLE_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_RIGHT_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_SET_FOCUS, [&](wxFocusEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_KILL_FOCUS, [&](wxFocusEvent& event) {wxPostEvent(control(), event);});
+          //panel_->Bind(wxEVT_CHILD_FOCUS, [&](wxChildFocusEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_MOUSEWHEEL, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_AUX1_DOWN, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_AUX1_UP, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
+          panel_->Bind(wxEVT_AUX1_DCLICK, [&](wxMouseEvent& event) {wxPostEvent(control(), event);});
         }
 
         static long style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
@@ -59,6 +78,25 @@ namespace xtd {
           return wx_style;
         }
 
+        wxWindow* container() const override {
+          return panel_;
+        }
+        
+        void SetBackgroundColour(const wxColour &colour) override {
+          control_handler::SetBackgroundColour(colour);
+          panel_->SetBackgroundColour(colour);
+        }
+        
+        void SetCursor(const wxCursor &cursor) override {
+          control_handler::SetCursor(cursor);
+          panel_->SetCursor(cursor);
+        }
+        
+        void SetForegroundColour(const wxColour &colour) override {
+          control_handler::SetForegroundColour(colour);
+          panel_->SetForegroundColour(colour);
+        }
+
         void SetSize(int32_t width, int32_t height) override {
 #if defined(__WXOSX__)
           if (width < 75) width = 75;
@@ -70,7 +108,7 @@ namespace xtd {
         bool modal() const {return this->modal_;}
         
       private:
-        wxButton* button_;
+        wxScrolled<wxPanel>* panel_;
         bool modal_ = false;
       };
     }
