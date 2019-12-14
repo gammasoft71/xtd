@@ -14,10 +14,12 @@ int main() {
   tab_control_main.location({10, 10});
   tab_control_main.parent(form_main);
   tab_control_main.size(form_main.client_size() - size(20, 20));
+  tab_control_main.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
   
   tab_page tab_page_controls;
   tab_page_controls.parent(tab_control_main);
   tab_page_controls.text("Controls");
+  tab_page_controls.auto_scroll(true);
 
   label label_one;
   label_one.location({10, 10});
@@ -124,11 +126,13 @@ int main() {
   tab_page tab_page_texts;
   tab_page_texts.parent(tab_control_main);
   tab_page_texts.text("Texts");
-  
+  tab_page_texts.auto_scroll(true);
+
   tab_page tab_page_lists;
   tab_page_lists.parent(tab_control_main);
   tab_page_lists.text("Lists");
-  
+  tab_page_lists.auto_scroll(true);
+
   list_box list_box_items;
   list_box_items.items().push_back_range({"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
   list_box_items.location({10, 10});
@@ -185,11 +189,13 @@ int main() {
   tab_page tab_page_pickers;
   tab_page_pickers.parent(tab_control_main);
   tab_page_pickers.text("Pickers");
+  tab_page_pickers.auto_scroll(true);
 
   tab_page tab_page_containers;
   tab_page_containers.parent(tab_control_main);
   tab_page_containers.text("Containers");
-  
+  tab_page_containers.auto_scroll(true);
+
   group_box group_box1;
   group_box1.location({10, 10});
   group_box1.parent(tab_page_containers);
@@ -281,7 +287,8 @@ int main() {
   tab_page tab_page_dialogs;
   tab_page_dialogs.parent(tab_control_main);
   tab_page_dialogs.text("Dialogs");
-  
+  tab_page_dialogs.auto_scroll(true);
+
   panel panel_color;
   panel_color.location({10, 10});
   panel_color.back_color(system_colors::window());
