@@ -12,7 +12,6 @@ namespace xtd {
       using panel::text;
       control& text(const ustring& text) override;
 
-      void create_handle() override;
       void destroy_handle() override;
 
     protected:
