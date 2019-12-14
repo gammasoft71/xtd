@@ -20,11 +20,15 @@ forms::create_params tab_page::create_params() const {
 
 control& tab_page::text(const ustring& text) {
   if (this->text_ != text) {
-    this->text_ = text;
-    if (this->parent().has_value())
-    static_cast<tab_control&>(this->parent().value().get()).recreate_handle();
+    if (this->parent().has_value()) {
+      for (size_t index = 0; index < this->parent().value().get().controls().size(); index++) {
+        if (this->parent().value().get().controls()[index].get().handle() == this->handle()) {
+          native::tab_control::page_text(parent_, index, text);
+        }
+      }
+    }
   }
-  return *this;
+  return control::text(text);
 }
 
 void tab_page::create_handle() {
