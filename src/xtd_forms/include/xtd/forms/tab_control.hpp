@@ -13,7 +13,10 @@ namespace xtd {
     class tab_control : public control {
     public:
       tab_control();
-      
+
+      virtual control_collection& pages() {return this->controls();}
+      virtual const control_collection& pages() const {return this->controls();}
+
       virtual tab_alignment alignment() const {return this->alignment_;}
       virtual tab_control& alignment(tab_alignment alignment);
 
@@ -21,9 +24,11 @@ namespace xtd {
       
     protected:
       forms::create_params create_params() const override;
-      
+
       drawing::size measure_control() const override;
-      
+
+      void recreate_handle() override;
+
       /// @cond
       friend class tab_page;
       tab_alignment alignment_ = tab_alignment::top;

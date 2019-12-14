@@ -10,6 +10,15 @@ using namespace xtd::forms;
 tab_control::tab_control() {
   this->can_focus_ = false;
   this->size_ = this->default_size();
+  this->controls_.item_added += [this](size_t index, std::reference_wrapper<control> item) {
+    native::tab_control::insert_item(handle_, index, item.get().handle());
+    native::tab_control::page_text(handle_, index, item.get().text());
+  };
+  
+  /* tab_page is removed by tab_page::destroy_handle() method.
+  this->controls_.item_erased += [this](size_t index, std::reference_wrapper<control> item) {
+    native::tab_control::delete_item(handle_, index);
+  };*/
 }
 
 tab_control& tab_control::alignment(tab_alignment alignment) {
@@ -41,4 +50,13 @@ drawing::size tab_control::measure_control() const {
   for (auto item : this->controls())
     if (item.get().visible()) bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
+}
+
+void tab_control::recreate_handle() {
+  control::recreate_handle();
+
+  for (int index = 0; index < controls().size(); index++) {
+    native::tab_control::insert_item(handle_, index, controls()[index].get().handle());
+    native::tab_control::page_text(handle_, index, controls()[index].get().text());
+  }
 }
