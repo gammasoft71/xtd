@@ -87,7 +87,7 @@ std::string font_family::generic_monospace_name() {
 std::vector<std::string> font_family::installed_font_families() {
   std::vector<std::string> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())
-    families.push_back(name.ToStdString());
+    if (name[0] != '@') families.push_back(name.ToStdString());
   std::sort(families.begin(), families.end());
   return families;
 }
