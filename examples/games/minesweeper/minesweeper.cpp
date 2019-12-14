@@ -180,8 +180,8 @@ namespace minesweeper {
       text("Minesweeper");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      back_color(color::silver);
-      fore_color(color::black);
+      //back_color(color::silver);
+      //fore_color(color::black);
       
       status_panel.parent(*this);
       status_panel.height(60);
