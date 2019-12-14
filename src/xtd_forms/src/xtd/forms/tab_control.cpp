@@ -39,7 +39,6 @@ forms::create_params tab_control::create_params() const {
 drawing::size tab_control::measure_control() const {
   drawing::rectangle bounds;
   for (auto item : this->controls())
-    if (item.get().visible())
-      bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
+    if (item.get().visible()) bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
 }
