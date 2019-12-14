@@ -62,6 +62,7 @@ void button::on_handle_created(const event_args& e) {
   }
 }
 
+/*
 void button::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_REFLECT + WM_COMMAND: wm_click(message); break;
@@ -84,6 +85,7 @@ void button::wm_mouse_up(message& message) {
   this->on_mouse_click(e);
   this->on_mouse_up(e);
 }
+ */
 
 drawing::size button::measure_control() const {
   drawing::size size = button_base::measure_control();
