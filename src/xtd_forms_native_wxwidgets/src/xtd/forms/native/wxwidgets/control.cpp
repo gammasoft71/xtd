@@ -231,12 +231,10 @@ void control::client_size(intptr_t control, const drawing::size& size) {
 
   if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())) {
     int width = size.width();
-    int height = size.height();
     #if defined(__WXOSX__)
     if (width < 75) width = 75;
-    if (height < 23) height = 23;
     #endif
-    SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {width, height});
+    SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {width, size.height()});
   }else
     reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
 }
