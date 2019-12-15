@@ -11,7 +11,6 @@ namespace examples {
   public:
     form1() {
       text("Background worker example");
-      //client_size({300, 105});
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       controls().push_back_range({panel_command, progress});
