@@ -9,18 +9,30 @@ namespace examples {
   public:
     form1() {
       text("Picture box example");
-      client_size({300, 300});
+      client_size({300, 345});
+
+      combo_box1.parent(*this);
+      combo_box1.location({20, 20});
+      combo_box1.width(260);
+      combo_box1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
+      combo_box1.items().push_back_range({{"normal", picture_box_size_mode::normal}, {"stretch_image", picture_box_size_mode::stretch_image}, {"auto_size", picture_box_size_mode::auto_size}, {"center_image", picture_box_size_mode::center_image}, {"zoom", picture_box_size_mode::zoom}});
+      combo_box1.selected_index(0);
+      combo_box1.drop_down_style(combo_box_style::drop_down_list);
+      combo_box1.selected_value_changed += [this] {
+        picture_box1.size_mode(std::any_cast<picture_box_size_mode>(combo_box1.selected_item().tag()));
+      };
 
       picture_box1.parent(*this);
       picture_box1.border_style(border_style::fixed_single);
-      picture_box1.location({20, 20});
+      picture_box1.location({20, 65});
       picture_box1.size({260, 260});
       picture_box1.image(bitmap(logo_xpm));
-      picture_box1.size_mode(picture_box_size_mode::zoom);
+      picture_box1.size_mode(std::any_cast<picture_box_size_mode>(combo_box1.selected_item().tag()));
       picture_box1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
     }
     
   private:
+    combo_box combo_box1;
     picture_box picture_box1;
   };
 }
