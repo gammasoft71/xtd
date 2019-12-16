@@ -8,6 +8,7 @@
 #include <xtd/forms/native/control.hpp>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_choice.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.hpp"
@@ -138,6 +139,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
   if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
   if (create_params.class_name() == "checkedlistbox") return reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params));
+  if (create_params.class_name() == "choice") return reinterpret_cast<intptr_t>(new wx_choice(create_params));
   if (create_params.class_name() == "combobox") return reinterpret_cast<intptr_t>(new wx_combo_box(create_params));
   if (create_params.class_name() == "domainupdown") return reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params));
   if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));

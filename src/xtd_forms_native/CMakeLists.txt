@@ -24,6 +24,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/button_styles.hpp
   include/xtd/forms/native/check_box.hpp
   include/xtd/forms/native/checked_list_box.hpp
+  include/xtd/forms/native/choice.hpp
   include/xtd/forms/native/class_styles.hpp
   include/xtd/forms/native/color_dialog.hpp
   include/xtd/forms/native/combo_box.hpp
