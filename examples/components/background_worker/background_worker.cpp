@@ -15,7 +15,6 @@ namespace examples {
       auto_size(true);
       controls().push_back_range({panel_command, progress});
       form_closed += [this] {
-        button_cancel.enabled(true);
         if (worker.is_busy())
           worker.cancel_async();
       };
@@ -55,7 +54,6 @@ namespace examples {
 
       progress.location({10, 10});
       progress.width(280);
-      progress.set_range(0, 150);
       
       list_progress.location({10, 45});
       list_progress.size({280, 100});
