@@ -18,6 +18,7 @@
 * [button](common_controls/button/README.md) represents a Windows [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control.
 * [check_box](common_controls/check_box/README.md) represents a Windows [xtd::forms::check_box](../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
 * [checked_list_box](common_controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
+* [choice](common_controls/choice/README.md) represents a [xtd::forms::choice](../src/xtd_forms/include/xtd/forms/choice.hpp) control.
 * [combo_box](common_controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../src/xtd_forms/include/xtd/forms/combo_box.hpp)control.
 * [control](common_controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * [domain_up_down](common_controls/domain_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays string values.
@@ -39,6 +40,7 @@
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
 * [track_bar](common_controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
+* [up_down_button](common_controls/up_down_button/README.md) represents a Windows spin button.
 * [user_control](common_controls/user_control/README.md) defines the base class for user controls.
 * **vscroll_bar** represents a standard Windows vertical scroll bar.
 * **web_browser** enables the user to navigate Web pages inside your form.
@@ -47,10 +49,8 @@
 * **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 
 ## Other Controls
-* [choice](other_controls/choice/README.md) represents a [xtd::forms::choice](../src/xtd_forms/include/xtd/forms/choice.hpp) control.
 * [lcd_label](other_controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [switch_button](other_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
-* [up_down_button](other_controls/up_down_button/README.md) represents a Windows spin button.
 
 ## Custom Controls
 * [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
