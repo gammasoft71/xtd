@@ -6,7 +6,6 @@ demonstrates the use of [xtd::forms::choice](../../../src/xtd_forms/include/xtd/
 
 [choice.cpp](choice.cpp)
 
-
 [CMakeLists.txt](CMakeLists.txt)
 
 # Build and run
