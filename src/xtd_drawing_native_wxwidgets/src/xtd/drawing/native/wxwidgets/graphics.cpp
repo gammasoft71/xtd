@@ -159,7 +159,7 @@ void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, 
   if (!hdc) return;
   graphics_context gc(hdc);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
-  wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetTextExtent(text.wstr());
+  wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetMultiLineTextExtent(text.wstr());
   wxFontMetrics metrics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFontMetrics();
   width = size.GetWidth();
   height = size.GetHeight();
