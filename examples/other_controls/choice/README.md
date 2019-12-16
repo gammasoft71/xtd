@@ -8,8 +8,6 @@ demonstrates the use of [xtd::forms::choice](../../../src/xtd_forms/include/xtd/
 
 [CMakeLists.txt](CMakeLists.txt)
 
-[logo.xpm](logo.xpm)
-
 # Build and run
 
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
