@@ -21,6 +21,7 @@ int main() {
   label.dock(dock_style::fill);
   label.fore_color(color::blue);
   label.back_color(color::average(label.fore_color(), color::black, 0.05));
+  label.segment_style(forms::segment_style::mixed);
   label.text("  0.0");
 
   timer.tick += [&] {
