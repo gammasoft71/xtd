@@ -129,7 +129,7 @@ int main() {
   seven_segment_display ssd;
   ssd.parent(form_main);
   ssd.location({10, 10});
-  ssd.height(250);
+  ssd.dock(dock_style::fill);
   ssd.segment_style(forms::segment_style::mixed);
   ssd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g);
   ssd.fore_color(drawing::color::red);
