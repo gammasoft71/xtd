@@ -117,18 +117,19 @@ int main() {
   ssd1.dock(dock_style::fill);
   //ssd1.width(300);
   ssd1.value(forms::segments::a);
-  ssd1.segment_style(segment_style::modern);
+  //ssd1.segment_style(segment_style::modern);
   form_main.back_color(drawing::color::average(ssd1.fore_color(), drawing::color::black, 0.20));
 
   timer t;
-  t.interval(200);
+  t.interval(250);
   t.enabled(true);
   t.tick += [&] {
     //ssd1.value((ssd1.value() < forms::segments(0b1111111)) ? forms::segments(ssd1.value() + (forms::segments)1) : forms::segments::none);
     //ssd1.value((ssd1.value() < forms::segments::g) ? forms::segments((int)ssd1.value() << 1) : forms::segments::a);
-    static std::vector<segments> chaser = {segments::a, segments::b, segments::g, segments::e, segments::d, segments::c, segments::g, segments::f};
+    static std::vector<segments> chaser = {segments::a, segments::b, segments::g, segments::e, segments::d, segments::c, segments::g, segments::f, segments::dp, segments::pc};
     static int index = 0;
-    ssd1.value(chaser[index = index < chaser.size() - 1 ? (index + 1) : 0]);
+    ssd1.value(chaser[++index % 8]);
+    ssd1.segment_style(segment_style((index / 8) % 2));
   };
   
   /*

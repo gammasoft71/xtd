@@ -24,6 +24,7 @@ public:
 
     lcd_label1.location({10, 50});
     lcd_label1.parent(*this);
+    lcd_label1.segment_style(segment_style::modern);
     lcd_label1.auto_size(true);
   }
   

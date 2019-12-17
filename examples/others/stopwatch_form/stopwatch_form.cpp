@@ -23,7 +23,6 @@ public:
     watch.parent(watch_panel);
     watch.location({10, 7});
     watch.size({214, 32});
-    watch.style(lcd_style::seven_segments);
     watch.text("00:00:00.000");
     
     start_stop.parent(*this);
