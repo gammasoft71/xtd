@@ -109,13 +109,12 @@ int main() {
     progress.show_dialog();
   };
    */
-  
+
+  /*
   lcd_label label;
   label.parent(form_main);
   label.auto_size(true);
   label.text(lcd_label::valid_characters());
-  label.fore_color(drawing::color::blue);
-  label.back_color(drawing::color::average(label.fore_color(), drawing::color::black, 0.3));
 
   form_main.close_box(false);
   form_main.form_border_style(forms::form_border_style::none);
@@ -125,6 +124,15 @@ int main() {
   form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   form_main.auto_size(true);
   form_main.start_position(form_start_position::center_screen);
+   */
+  
+  seven_segment_display ssd;
+  ssd.parent(form_main);
+  ssd.location({10, 10});
+  ssd.height(250);
+  ssd.segment_style(forms::segment_style::mixed);
+  ssd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g);
+  ssd.fore_color(drawing::color::red);
 
   application::run(form_main);
 }
