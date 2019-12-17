@@ -58,7 +58,7 @@ int main() {
   
   form form_main;
   form_main.text("Manual tests");
-  form_main.client_size({300, 300});
+  //form_main.client_size({300, 300});
   //form_main.menu(menu);
 
   /*
@@ -110,38 +110,21 @@ int main() {
   };
    */
   
-  seven_segment_display ssd1;
-  ssd1.parent(form_main);
-  ssd1.location({10, 10});
-  ssd1.fore_color(drawing::color::red);
-  ssd1.dock(dock_style::fill);
-  //ssd1.width(300);
-  ssd1.value(forms::segments::a);
-  //ssd1.segment_style(segment_style::modern);
-  form_main.back_color(drawing::color::average(ssd1.fore_color(), drawing::color::black, 0.20));
-
-  timer t;
-  t.interval(250);
-  t.enabled(true);
-  t.tick += [&] {
-    //ssd1.value((ssd1.value() < forms::segments(0b1111111)) ? forms::segments(ssd1.value() + (forms::segments)1) : forms::segments::none);
-    //ssd1.value((ssd1.value() < forms::segments::g) ? forms::segments((int)ssd1.value() << 1) : forms::segments::a);
-    static std::vector<segments> chaser = {segments::a, segments::b, segments::g, segments::e, segments::d, segments::c, segments::g, segments::f, segments::dp, segments::pc};
-    static int index = 0;
-    ssd1.value(chaser[++index % 8]);
-    ssd1.segment_style(segment_style((index / 8) % 2));
-  };
-  
-  /*
-  form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
-  form_main.auto_size(true);
-  
   lcd_label label;
   label.parent(form_main);
-  label.location({10, 10});
   label.auto_size(true);
   label.text(lcd_label::valid_characters());
-   */
+  label.fore_color(drawing::color::blue);
+  label.back_color(drawing::color::average(label.fore_color(), drawing::color::black, 0.3));
+
+  form_main.close_box(false);
+  form_main.form_border_style(forms::form_border_style::none);
+  form_main.control_box(false);
+  form_main.minimize_box(false);
+  form_main.maximize_box(false);
+  form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+  form_main.auto_size(true);
+  form_main.start_position(form_start_position::center_screen);
 
   application::run(form_main);
 }
