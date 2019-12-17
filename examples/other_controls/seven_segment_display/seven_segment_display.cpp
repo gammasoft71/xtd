@@ -16,8 +16,8 @@ public:
     timer1.interval(300);
     timer1.enabled(true);
     timer1.tick += [&] {
-      seven_segment_display1.value(chaser[counter % chaser.size()]);
-      seven_segment_display1.segment_style(segment_style((counter++ / chaser.size()) % 6));
+      seven_segment_display1.segment_style(segment_styles[(counter / chaser.size()) % segment_styles.size()]);
+      seven_segment_display1.value(chaser[counter++ % chaser.size()]);
     };
     
     back_color(color::average(seven_segment_display1.fore_color(), color::black, 0.20));
@@ -30,6 +30,7 @@ public:
 private:
   int counter = 0;
   std::vector<segments> chaser = {segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g, segments::none, segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g, segments::none, segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g, segments::a, segments::b, segments::g, segments::e, segments::d, segments::c, segments::g, segments::f, segments::dp, segments::pc};
+  std::vector<segment_style> segment_styles = {segment_style::standard, segment_style::modern, segment_style::mixed, segment_style::expand, segment_style::design, segment_style::stick};
   seven_segment_display seven_segment_display1;
   timer timer1;
 };
