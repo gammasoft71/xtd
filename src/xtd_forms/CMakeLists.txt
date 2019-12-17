@@ -76,7 +76,6 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/keys.hpp
   include/xtd/forms/label.hpp
   include/xtd/forms/lcd_label.hpp
-  include/xtd/forms/lcd_style.hpp
   include/xtd/forms/list_box.hpp
   include/xtd/forms/list_control.hpp
   include/xtd/forms/main_menu.hpp
@@ -112,6 +111,9 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/scrollable_control.hpp
   include/xtd/forms/screen.hpp
   include/xtd/forms/selection_mode.hpp
+  include/xtd/forms/segment_style.hpp
+  include/xtd/forms/segments.hpp
+  include/xtd/forms/seven_segment_display.hpp
   include/xtd/forms/switch_button.hpp
   include/xtd/forms/system_information.hpp
   include/xtd/forms/tab_alignment.hpp
@@ -125,7 +127,6 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/up_down_base.hpp
   include/xtd/forms/up_down_button.hpp
   include/xtd/forms/user_control.hpp
-  include/xtd/forms/switch_button.hpp
 )
 
 set(XTD_FORMS_LAYOUT_INCLUDES

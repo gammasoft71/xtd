@@ -5,14 +5,15 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-  enum class lcd_style {
+  enum class segment_style {
     standard,
-    seven_segments,
+    modern,
+    mixed,
   };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::standard, "standard"}, {lcd_style::seven_segments, "seven_segments"}});}
-    inline std::wostream& operator<<(std::wostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::standard, L"standard"}, {lcd_style::seven_segments, L"seven_segments"}});}
+    inline std::ostream& operator<<(std::ostream& os, segment_style value) {return os << to_string(value, {{segment_style::standard, "standard"}, {segment_style::modern, "modern"}, {segment_style::mixed, "mixed"}});}
+    inline std::wostream& operator<<(std::wostream& os, segment_style value) {return os << to_string(value, {{segment_style::standard, L"standard"}, {segment_style::modern, L"modern"}, {segment_style::mixed, L"mixed"}});}
     /// @endcond
   }
 }
