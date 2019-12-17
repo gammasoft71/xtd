@@ -17,7 +17,7 @@ public:
     timer1.enabled(true);
     timer1.tick += [&] {
       seven_segment_display1.value(chaser[counter % chaser.size()]);
-      seven_segment_display1.segment_style(segment_style((counter++ / chaser.size()) % 3));
+      seven_segment_display1.segment_style(segment_style((counter++ / chaser.size()) % 6));
     };
     
     back_color(color::average(seven_segment_display1.fore_color(), color::black, 0.20));
