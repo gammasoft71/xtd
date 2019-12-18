@@ -30,8 +30,16 @@ namespace xtd {
         return *this;
       }
       
-      forms::segments value() const {return value_;}
+      double tilt() const {return tilt_;}
+      seven_segment_display& tilt(double tilt) {
+        if (tilt_ != tilt) {
+          tilt_ = tilt;
+          invalidate();
+        }
+        return *this;
+      }
       
+      forms::segments value() const {return value_;}
       seven_segment_display& value(forms::segments segments) {
         if (value_ != segments) {
           value_ = segments;
@@ -77,20 +85,23 @@ namespace xtd {
       }
     
       void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override {
-        if ((specified & bounds_specified::width) == forms::bounds_specified::width) {
+        if ((specified & bounds_specified::width) == forms::bounds_specified::width && (specified & bounds_specified::height) != forms::bounds_specified::height) {
           height = (width - 2) * 2 + 3;
           specified |= bounds_specified::height;
         }
         if ((specified & bounds_specified::height) == forms::bounds_specified::height) {
           width = (height - 3) / 2 + 2;
+          width += width * tilt_;
           specified |= bounds_specified::width;
         }
         control::set_bounds_core(x, y, width, height, specified);
       }
             
       void set_client_size_core(int32_t width, int32_t height) override {
-        if (client_size_.height() != height)
+        if (client_size_.height() != height) {
           width = (height - 3) / 2 + 2;
+          width += width * tilt_;
+        }
         if (client_size_.width() != width)
           height = (width - 2) * 2 + 3;
         control::set_client_size_core(width, height);
@@ -112,66 +123,66 @@ namespace xtd {
       void draw_segment_a(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.width() - 3 - thickness / 2 - abs(offset), 1 + thickness / 2 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, tilt_ * size.width() + size.width() - 3 - thickness / 2 - abs(offset), 1 + thickness / 2 + offset);
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + offset, 1 + offset, size.width() - 3 - offset, 1 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 2 + offset, 1 + offset, tilt_ * size.width() + size.width() - 3 - offset, 1 + offset);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + offset, 1 + offset, size.width() - 3 - offset, 1 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 2 + offset, 1 + offset, tilt_ * size.width() + size.width() - 3 - offset, 1 + offset);
         } else if (segment_style_ == segment_style::expand) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + offset, 1 + offset, size.width() - 3 - offset, 1 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 2 + offset, 1 + offset, tilt_ * size.width() + size.width() - 3 - offset, 1 + offset);
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness, 1 + offset, size.width() - 3 - thickness, 1 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 2 + thickness, 1 + offset, tilt_ * size.width() + size.width() - 3 - thickness, 1 + offset);
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness, 1 + offset, size.width() - 3 - thickness, 1 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 2 + thickness, 1 + offset, tilt_ * size.width() + size.width() - 3 - thickness, 1 + offset);
         }
       }
       
       void draw_segment_b(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, 2 + thickness / 2 + abs(offset), size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - abs(offset));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + size.width() - 2 - thickness / 2 - offset, 2 + thickness / 2 + abs(offset), tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - abs(offset));
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - offset, 2 + offset, size.width() - 2 - offset, size.height() / 2 - 1 - offset / 2);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + size.width() - 2 - offset, 2 + offset, tilt_ * size.width() / 2 + size.width() - 2 - offset, size.height() / 2 - 1 - offset / 2);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, 2 + offset + thickness / 2, size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - abs(offset));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + size.width() - 2 - thickness / 2 - offset, 2 + offset + thickness / 2, tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - abs(offset));
         } else if (segment_style_ == segment_style::expand) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, 2 + offset + thickness / 2, size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + size.width() - 2 - thickness / 2 - offset, 2 + offset + thickness / 2, tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, 1, size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + size.width() - 2 - thickness / 2 - offset, 1, tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, 1, size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + size.width() - 2 - thickness / 2 - offset, 1, tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1);
         }
       }
       
       void draw_segment_c(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), size.width() - 2 - thickness / 2 - offset, size.height() - 3 - thickness / 2 - abs(offset));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), size.width() - 2 - thickness / 2 - offset, size.height() - 3 - thickness / 2 - abs(offset));
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - offset, size.height() / 2 + 1 + offset / 2,  size.width() - 2 - offset, size.height() - 3 - offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + size.width() - 2 - offset, size.height() / 2 + 1 + offset / 2,  size.width() - 2 - offset, size.height() - 3 - offset);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), size.width() - 2 - thickness / 2 - offset, size.height() - 3 - thickness / 2 - offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), size.width() - 2 - thickness / 2 - offset, size.height() - 3 - thickness / 2 - offset);
         } else if (segment_style_ == segment_style::expand) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), size.width() - 2 - thickness / 2 - offset, size.height() - 3 - thickness / 2 - offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), size.width() - 2 - thickness / 2 - offset, size.height() - 3 - thickness / 2 - offset);
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), size.width() - 2 - thickness / 2 - offset, size.height() - 2);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), size.width() - 2 - thickness / 2 - offset, size.height() - 2);
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1, size.width() - 2 - thickness / 2 - offset, size.height() - 2);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1, size.width() - 2 - thickness / 2 - offset, size.height() - 2);
         }
       }
       
@@ -200,66 +211,66 @@ namespace xtd {
       void draw_segment_e(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.height() - 3 - thickness / 2 - abs(offset));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.height() - 3 - thickness / 2 - abs(offset));
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + offset, size.height() / 2 + 1 + offset / 2, 1 + offset, size.height() - 3 - offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 1 + offset, size.height() / 2 + 1 + offset / 2, 1 + offset, size.height() - 3 - offset);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.height() - 3 - thickness / 2 - offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.height() - 3 - thickness / 2 - offset);
         } else if (segment_style_ == segment_style::expand) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), 1 + thickness / 2 + offset, size.height() - 3 - thickness / 2 - offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), 1 + thickness / 2 + offset, size.height() - 3 - thickness / 2 - offset);
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), 1 + thickness / 2 + offset, size.height() - 2);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + (offset > 0 ? offset : 0), 1 + thickness / 2 + offset, size.height() - 2);
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, size.height() / 2 + 1, 1 + thickness / 2 + offset, size.height() - 2);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 + 1, 1 + thickness / 2 + offset, size.height() - 2);
         }
       }
 
       void draw_segment_f(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.height() / 2 - 1 - abs(offset));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 1 + thickness / 2 + offset, 2 + thickness / 2 + abs(offset), tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 - 1 - abs(offset));
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = 0; offset < thickness; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + offset, 2 + offset, 1 + offset, size.height() / 2 - 1 - offset / 2);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 1 + offset, 2 + offset, tilt_ * size.width() / 2 + 1 + offset, size.height() / 2 - 1 - offset / 2);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, 2 + thickness / 2 + offset, 1 + thickness / 2 + offset, size.height() / 2 - 1 - abs(offset));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 1 + thickness / 2 + offset, 2 + thickness / 2 + offset, tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 - 1 - abs(offset));
         } else if (segment_style_ == segment_style::expand) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, 2 + thickness / 2 + offset, 1 + thickness / 2 + offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 1 + thickness / 2 + offset, 2 + thickness / 2 + offset, tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, 1, 1 + thickness / 2 + offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 1 + thickness / 2 + offset, 1, tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 - 1 - (offset > 0 ? offset : 0));
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, 1, 1 + thickness / 2 + offset, size.height() / 2 - 1);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() + 1 + thickness / 2 + offset, 1, tilt_ * size.width() / 2 + 1 + thickness / 2 + offset, size.height() / 2 - 1);
         }
       }
 
       void draw_segment_g(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, tilt_ * size.width() / 2 + size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
         } else if (segment_style_ == segment_style::modern) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + abs(2 * offset), size.height() / 2 + offset, size.width() - 3 - abs(2 * offset), size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 2 + abs(2 * offset), size.height() / 2 + offset, tilt_ * size.width() / 2 + size.width() - 3 - abs(2 * offset), size.height() / 2 + offset);
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, tilt_ * size.width() / 2 + size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
         } else if (segment_style_ == segment_style::expand) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, tilt_ * size.width() / 2 + size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
         } else if (segment_style_ == segment_style::design) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, tilt_ * size.width() / 2 + size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
         } else if (segment_style_ == segment_style::stick) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
-            graphics.draw_line(drawing::pen(color), 2 + thickness, size.height() / 2 + offset, size.width() - 3 - thickness, size.height() / 2 + offset);
+            graphics.draw_line(drawing::pen(color), tilt_ * size.width() / 2 + 2 + thickness, size.height() / 2 + offset, tilt_ * size.width() / 2 + size.width() - 3 - thickness, size.height() / 2 + offset);
         }
       }
 
@@ -310,7 +321,8 @@ namespace xtd {
     private:
       forms::segments value_ = forms::segments::none;
       bool show_background_digit_ = true;
-      double background_digit_transparency_ = 0.10;
+      double background_digit_transparency_ = 0.1;
+      double tilt_ = 0.0;
       forms::segment_style segment_style_ = forms::segment_style::standard;
     };
   }
