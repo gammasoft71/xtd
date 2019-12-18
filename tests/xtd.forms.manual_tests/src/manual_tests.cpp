@@ -115,7 +115,7 @@ int main() {
   label.location({10, 10});
   label.height(100);
   label.auto_size(true);
-  label.lcd_style(forms::lcd_style::seven_segment_display);
+  label.lcd_style(forms::lcd_style::nine_segment_display);
   label.segment_style(forms::segment_style::standard);
   label.text(lcd_label::valid_characters());
 
