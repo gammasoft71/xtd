@@ -91,6 +91,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/mouse_buttons.hpp
   include/xtd/forms/mouse_event_args.hpp
   include/xtd/forms/mouse_event_handler.hpp
+  include/xtd/forms/nine_segment_display.hpp
   include/xtd/forms/numeric_up_down.hpp
   include/xtd/forms/open_file_dialog.hpp
   include/xtd/forms/orientation.hpp

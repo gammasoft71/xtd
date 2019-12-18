@@ -126,13 +126,13 @@ int main() {
   form_main.start_position(form_start_position::center_screen);
    */
   
-  seven_segment_display ssd;
-  ssd.parent(form_main);
-  ssd.location({10, 10});
-  ssd.dock(dock_style::fill);
-  ssd.segment_style(forms::segment_style::standard);
-  ssd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g);
-  ssd.fore_color(drawing::color::red);
+  nine_segment_display nsd;
+  nsd.parent(form_main);
+  nsd.location({10, 10});
+  nsd.dock(dock_style::fill);
+  nsd.segment_style(forms::segment_style::standard);
+  //nsd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i);
+  nsd.fore_color(drawing::color::red);
   //ssd.back_color(drawing::color::black);
 
   application::run(form_main);
