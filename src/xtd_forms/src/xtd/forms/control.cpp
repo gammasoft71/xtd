@@ -728,9 +728,10 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 }
 
 void control::do_layout() {
-  if (this->get_state(state::layout_deferred)|| reentrant_layout::is_reentrant(this)) return;
+  if (this->get_state(state::layout_deferred) || reentrant_layout::is_reentrant(this)) return;
   reentrant_layout reentrant_laout(this);
   
+  //if (this->parent_) this->parent().value().get().on_layout(event_args::empty);
   this->do_layout_childs_with_dock_style();
   this->do_layout_with_anchor_styles();
   this->do_layout_with_auto_size_mode();
@@ -754,32 +755,26 @@ void control::do_layout_childs_with_dock_style() {
     drawing::rectangle docking_rect = this->client_rectangle();
     for(control_collection::reverse_iterator iterator = this->controls_.rbegin(); iterator != this->controls_.rend(); ++iterator) {
       if (iterator->get().dock() == dock_style::top) {
-        iterator->get().top(docking_rect.top());
-        iterator->get().left(docking_rect.left());
+        iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().width(docking_rect.width());
         docking_rect.top(docking_rect.top() + iterator->get().height());
         docking_rect.height(docking_rect.height() - iterator->get().height());
       } else if (iterator->get().dock() == dock_style::bottom) {
-        iterator->get().top(docking_rect.bottom() - iterator->get().height());
-        iterator->get().left(docking_rect.left());
+        iterator->get().location({docking_rect.left(), docking_rect.bottom() - iterator->get().height()});
         iterator->get().width(docking_rect.width());
         docking_rect.height(docking_rect.height() - iterator->get().height());
       } else if (iterator->get().dock() == dock_style::left) {
-        iterator->get().top(docking_rect.top());
-        iterator->get().left(docking_rect.left());
+        iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.left(docking_rect.left() + iterator->get().width());
         docking_rect.width(docking_rect.width() - iterator->get().width());
       } else if (iterator->get().dock() == dock_style::right) {
-        iterator->get().top(docking_rect.top());
-        iterator->get().left(docking_rect.right() - iterator->get().width());
+        iterator->get().location({docking_rect.right() - iterator->get().width(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.width(docking_rect.width() - iterator->get().width());
       } else if (iterator->get().dock() == dock_style::fill) {
-        iterator->get().top(docking_rect.top());
-        iterator->get().left(docking_rect.left());
-        iterator->get().height(docking_rect.height());
-        iterator->get().width(docking_rect.width());
+        iterator->get().location({docking_rect.left(), docking_rect.top()});
+        iterator->get().size({docking_rect.width(), docking_rect.height()});
       }
     }
   }
