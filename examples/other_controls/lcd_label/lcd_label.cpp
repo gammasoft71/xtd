@@ -17,9 +17,6 @@ public:
     numeric_up_down1.value_changed += [this] {
       lcd_label1.text(strings::format("{,11:F2}", numeric_up_down1.value()));
     };
-    numeric_up_down1.key_up += [this] {
-      lcd_label1.text(strings::format("{,11:F2}", numeric_up_down1.value()));
-    };
     numeric_up_down1.value(12345678.90);
 
     lcd_label1.location({10, 50});
