@@ -25,6 +25,30 @@ namespace xtd {
       f = 0b100000,
       /// @brief The g segment.
       g = 0b1000000,
+      /// @brief The h segment.
+      h = 0b10000000,
+      /// @brief The i segment.
+      i = 0b100000000,
+      /// @brief The j segment.
+      j = 0b1000000000,
+      /// @brief The k segment.
+      k = 0b10000000000,
+      /// @brief The l segment.
+      l = 0b100000000000,
+      /// @brief The m segment.
+      m = 0b1000000000000,
+      /// @brief The a1 segment.
+      a1 = a,
+      /// @brief The a2 segment.
+      a2 = 0b10000000000000,
+      /// @brief The d1 segment.
+      d1 = d,
+      /// @brief The d2 segment.
+      d2 = 0b100000000000000,
+      /// @brief The g1 segment.
+      g1 = g,
+      /// @brief The g2 segment.
+      g2 = 0b1000000000000000,
 
       /// @brief The dp segment (dot point).
       dp = 0b10000000000000000,
@@ -44,8 +68,8 @@ namespace xtd {
     inline segments operator &(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) & static_cast<long long>(rhs));}
     inline segments operator |(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) | static_cast<long long>(rhs));}
     inline segments operator ^(segments lhs, segments rhs) {return static_cast<segments>(static_cast<long long>(lhs) ^ static_cast<long long>(rhs));}
-    inline std::ostream& operator<<(std::ostream& os, segments value) {return os << to_string(value, {{segments::none, "none"}, {segments::a, "a"}, {segments::b, "b"}, {segments::c, "c"}, {segments::d, "d"}, {segments::e, "e"}, {segments::f, "f"}, {segments::g, "g"}, {segments::dp, "dp"}, {segments::pc, "pc"}});}
-    inline std::wostream& operator<<(std::wostream& os, segments value) {return os << to_string(value, {{segments::none, L"none"}, {segments::a, L"a"}, {segments::b, L"b"}, {segments::c, L"c"}, {segments::d, L"d"}, {segments::e, L"e"}, {segments::f, L"f"}, {segments::g, L"g"}, {segments::dp, L"dp"}, {segments::pc, L"pc"}});}
+    inline std::ostream& operator<<(std::ostream& os, segments value) {return os << to_string(value, {{segments::none, "none"}, {segments::a, "a"}, {segments::b, "b"}, {segments::c, "c"}, {segments::d, "d"}, {segments::e, "e"}, {segments::f, "f"}, {segments::g, "g"}, {segments::h, "h"}, {segments::i, "i"}, {segments::j, "j"}, {segments::k, "k"}, {segments::l, "l"}, {segments::m, "m"}, {segments::a2, "a2"}, {segments::d2, "d2"}, {segments::g2, "g2"}, {segments::dp, "dp"}, {segments::pc, "pc"}});}
+    inline std::wostream& operator<<(std::wostream& os, segments value) {return os << to_string(value, {{segments::none, L"none"}, {segments::a, L"a"}, {segments::b, L"b"}, {segments::c, L"c"}, {segments::d, L"d"}, {segments::e, L"e"}, {segments::f, L"f"}, {segments::g, L"g"}, {segments::h, L"h"}, {segments::i, L"i"}, {segments::j, L"j"}, {segments::k, L"k"}, {segments::l, L"l"}, {segments::m, L"m"}, {segments::a2, L"a2"}, {segments::d2, L"d2"}, {segments::g2, L"g2"}, {segments::dp, L"dp"}, {segments::pc, L"pc"}});}
     /// @endcond
   }
 }
