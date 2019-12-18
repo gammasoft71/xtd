@@ -57,7 +57,7 @@ namespace xtd {
         return *this;
       }
       
-      virtual int32_t thickness() const {return thickness_.value_or(size_.height() < 10 ? 1 : (size_.height() / 10 - ((size_.height() / 10) % 2 ? 0 : 1)));}
+      virtual int32_t thickness() const {return thickness_.value_or(size_.height() < 10 ? 1 : (size_.height() / 10 + ((size_.height() / 10) % 2 ? 0 : 1)));}
       virtual seven_segment_display& thickness(int32_t value) {
         if (!thickness_.has_value() || thickness_.value() != value) {
           thickness_ = value;

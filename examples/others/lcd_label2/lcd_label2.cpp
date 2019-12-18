@@ -14,7 +14,7 @@ int main() {
   form_main.text("Lcd label example 2");
   form_main.start_position(form_start_position::center_screen);
   form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
-  form_main.client_size({1270, 503});
+  form_main.client_size({1456, 503});
 
   lcd_label label;
   label.parent(form_main);
