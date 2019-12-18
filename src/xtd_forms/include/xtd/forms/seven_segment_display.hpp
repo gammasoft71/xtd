@@ -57,7 +57,7 @@ namespace xtd {
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
         drawing::size lcd_digit_size((height() - 3) / 2 + 2, height());
-        int32_t thickness = lcd_digit_size.height() / 8;
+        int32_t thickness = lcd_digit_size.height() / 12;
         thickness -= thickness % 2 ? 0 : 1;
         if (show_background_digit_ && value_ != forms::segments::dp && value_ != forms::segments::pc) draw_background_digit(graphics, lcd_digit_size, thickness);
         if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(graphics, fore_color(), lcd_digit_size, thickness);

@@ -76,6 +76,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/keys.hpp
   include/xtd/forms/label.hpp
   include/xtd/forms/lcd_label.hpp
+  include/xtd/forms/lcd_style.hpp
   include/xtd/forms/list_box.hpp
   include/xtd/forms/list_control.hpp
   include/xtd/forms/main_menu.hpp

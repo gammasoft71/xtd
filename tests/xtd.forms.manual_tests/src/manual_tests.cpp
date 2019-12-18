@@ -110,22 +110,20 @@ int main() {
   };
    */
 
-  /*
   lcd_label label;
   label.parent(form_main);
+  label.location({10, 10});
+  label.height(100);
   label.auto_size(true);
+  label.lcd_style(forms::lcd_style::seven_segment_display);
+  label.segment_style(forms::segment_style::standard);
   label.text(lcd_label::valid_characters());
 
-  form_main.close_box(false);
-  form_main.form_border_style(forms::form_border_style::none);
-  form_main.control_box(false);
-  form_main.minimize_box(false);
-  form_main.maximize_box(false);
-  form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
-  form_main.auto_size(true);
+  form_main.client_size({500, label.height() + 40});
+  form_main.auto_scroll(true);
   form_main.start_position(form_start_position::center_screen);
-   */
   
+  /*
   nine_segment_display nsd;
   nsd.parent(form_main);
   nsd.location({10, 10});
@@ -134,6 +132,7 @@ int main() {
   //nsd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i);
   nsd.fore_color(drawing::color::red);
   //ssd.back_color(drawing::color::black);
+   */
 
   application::run(form_main);
 }
