@@ -130,9 +130,11 @@ int main() {
   ssd.parent(form_main);
   ssd.location({10, 10});
   ssd.dock(dock_style::fill);
-  ssd.segment_style(forms::segment_style::modern);
+  ssd.segment_style(forms::segment_style::standard);
+  ssd.tilt(0.5);
   ssd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g);
   ssd.fore_color(drawing::color::red);
+  //ssd.back_color(drawing::color::black);
 
   application::run(form_main);
 }
