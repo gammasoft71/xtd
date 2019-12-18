@@ -30,14 +30,6 @@ namespace xtd {
         return *this;
       }
       
-      using control::height;
-      control& height(int value) override {
-        if (size_.height() != value) {
-          control::size({(value - 3) / 2 + 2, value});
-        }
-        return *this;
-      }
-      
       forms::segments value() const {return value_;}
       
       seven_segment_display& value(forms::segments segments) {
@@ -83,8 +75,28 @@ namespace xtd {
       drawing::size measure_control() const override {
         return drawing::size((height() - 3) / 2 + 2, height());
       }
-      
-    //private:
+    
+      void set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) override {
+        if ((specified & bounds_specified::width) == forms::bounds_specified::width) {
+          height = (width - 2) * 2 + 3;
+          specified |= bounds_specified::height;
+        }
+        if ((specified & bounds_specified::height) == forms::bounds_specified::height) {
+          width = (height - 3) / 2 + 2;
+          specified |= bounds_specified::width;
+        }
+        control::set_bounds_core(x, y, width, height, specified);
+      }
+            
+      void set_client_size_core(int32_t width, int32_t height) override {
+        if (client_size_.height() != height)
+          width = (height - 3) / 2 + 2;
+        if (client_size_.width() != width)
+          height = (width - 2) * 2 + 3;
+        control::set_client_size_core(width, height);
+      }
+
+    private:
       void draw_background_digit(drawing::graphics& graphics, const drawing::size& size, int32_t thickness) {
         drawing::color background_digit_color;
         background_digit_color = drawing::color::average(fore_color(), back_color(), background_digit_transparency_);
