@@ -22,7 +22,9 @@ int main() {
   lcd_label label;
   label.parent(form_main);
   label.height(403);
+  label.digit_spacing(4);
   label.auto_size(true);
+  
   label.fore_color(color::lime);
   label.back_color(color::average(label.fore_color(), color::black, 0.20));
   label.segment_style(segment_style::modern);

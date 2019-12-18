@@ -9,7 +9,7 @@ namespace xtd {
       nine_segment_display() = default;
 
       using seven_segment_display::thickness;
-      int32_t thickness() const override {return thickness_.value_or(size_.height() < 20 ? 1 : (size_.height() / 20 - ((size_.height() / 20) % 2 ? 0 : 1)));}
+      int32_t thickness() const override {return thickness_.value_or(size_.height() < 20 ? 1 : (size_.height() / 20 + ((size_.height() / 20) % 2 ? 0 : 1)));}
 
     protected:
       void on_paint(paint_event_args& e) override {
