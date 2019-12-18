@@ -12,8 +12,8 @@ namespace xtd {
         size_ = default_size();
       }
       
-      double background_digit_transparency() const {return background_digit_transparency_;}
-      seven_segment_display& background_digit_transparency(double value) {
+      virtual double background_digit_transparency() const {return background_digit_transparency_;}
+      virtual seven_segment_display& background_digit_transparency(double value) {
         if (background_digit_transparency_ != value) {
           background_digit_transparency_ = value;
           invalidate();
@@ -21,8 +21,8 @@ namespace xtd {
         return *this;
       }
       
-      bool show_background_digit() const {return show_background_digit_;}
-      seven_segment_display& show_background_digit(bool value) {
+      virtual bool show_background_digit() const {return show_background_digit_;}
+      virtual seven_segment_display& show_background_digit(bool value) {
         if (show_background_digit_ != value) {
           show_background_digit_ = value;
           invalidate();
@@ -30,8 +30,8 @@ namespace xtd {
         return *this;
       }
       
-      forms::segments value() const {return value_;}
-      seven_segment_display& value(forms::segments segments) {
+      virtual forms::segments value() const {return value_;}
+      virtual seven_segment_display& value(forms::segments segments) {
         if (value_ != segments) {
           value_ = segments;
           invalidate();
@@ -39,8 +39,8 @@ namespace xtd {
         return *this;
       }
       
-      forms::segment_style segment_style() const {return segment_style_;}
-      seven_segment_display& segment_style(forms::segment_style value) {
+      virtual forms::segment_style segment_style() const {return segment_style_;}
+      virtual seven_segment_display& segment_style(forms::segment_style value) {
         if (segment_style_ != value) {
           segment_style_ = value;
           invalidate();
@@ -48,11 +48,12 @@ namespace xtd {
         return *this;
       }
 
-      bool get_segments(forms::segments segment) const {return (value_ & segment) == segment;}
-      void set_segments(forms::segments segment, bool value) { value_ = value ? (value_ | segment) : (value_ & ~segment); }
+      virtual bool get_segments(forms::segments segment) const {return (value_ & segment) == segment;}
+      virtual void set_segments(forms::segments segment, bool value) { value_ = value ? (value_ | segment) : (value_ & ~segment); }
 
     protected:
       drawing::size default_size() const override {return {13, 25};}
+      
 
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
@@ -95,8 +96,7 @@ namespace xtd {
         control::set_client_size_core(width, height);
       }
 
-    private:
-      void draw_background_digit(drawing::graphics& graphics, const drawing::size& size, int32_t thickness) {
+      virtual void draw_background_digit(drawing::graphics& graphics, const drawing::size& size, int32_t thickness) {
         drawing::color background_digit_color;
         background_digit_color = drawing::color::average(fore_color(), back_color(), background_digit_transparency_);
         draw_segment_a(graphics, background_digit_color, size, thickness);
@@ -108,7 +108,7 @@ namespace xtd {
         draw_segment_g(graphics, background_digit_color, size, thickness);
       }
 
-      void draw_segment_a(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_segment_a(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
             graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.width() - 3 - thickness / 2 - abs(offset), 1 + thickness / 2 + offset);
@@ -130,7 +130,7 @@ namespace xtd {
         }
       }
       
-      void draw_segment_b(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_segment_b(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
             graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, 2 + thickness / 2 + abs(offset), size.width() - 2 - thickness / 2 - offset, size.height() / 2 - 1 - abs(offset));
@@ -152,7 +152,7 @@ namespace xtd {
         }
       }
       
-      void draw_segment_c(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_segment_c(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
             graphics.draw_line(drawing::pen(color), size.width() - 2 - thickness / 2 - offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), size.width() - 2 - thickness / 2 - offset, size.height() - 3 - thickness / 2 - abs(offset));
@@ -174,7 +174,7 @@ namespace xtd {
         }
       }
       
-      void draw_segment_d(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_segment_d(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
             graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), size.height() - 2 - thickness / 2 - offset, size.width() - 3 - thickness / 2 - abs(offset), size.height() - 2 - thickness / 2 - offset);
@@ -196,7 +196,7 @@ namespace xtd {
         }
       }
 
-      void draw_segment_e(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_segment_e(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
             graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, size.height() / 2 + 1 - thickness / 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.height() - 3 - thickness / 2 - abs(offset));
@@ -218,7 +218,7 @@ namespace xtd {
         }
       }
 
-      void draw_segment_f(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_segment_f(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
             graphics.draw_line(drawing::pen(color), 1 + thickness / 2 + offset, 2 + thickness / 2 + abs(offset), 1 + thickness / 2 + offset, size.height() / 2 - 1 - abs(offset));
@@ -240,7 +240,7 @@ namespace xtd {
         }
       }
 
-      void draw_segment_g(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_segment_g(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           for (int32_t offset = -thickness / 2; offset < thickness - thickness / 2; offset++)
             graphics.draw_line(drawing::pen(color), 2 + thickness / 2 + abs(offset), size.height() / 2 + offset, size.width() - 3 - thickness / 2 - abs(offset), size.height() / 2 + offset);
@@ -262,7 +262,7 @@ namespace xtd {
         }
       }
 
-      void draw_dp(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_dp(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           graphics.fill_ellipse(drawing::solid_brush(color), size.width() / 2 - thickness / 2, size.height() - 1 - thickness, thickness, thickness);
         } else if (segment_style_ == segment_style::modern) {
@@ -280,7 +280,7 @@ namespace xtd {
         }
       }
       
-      void draw_pc(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
+      virtual void draw_pc(drawing::graphics& graphics, const drawing::color& color, const drawing::size& size, int32_t thickness) {
         if (segment_style_ == segment_style::standard) {
           graphics.fill_ellipse(drawing::solid_brush(color), size.width() / 2 - thickness / 2, size.height() / 3 - thickness / 2, thickness, thickness);
           graphics.fill_ellipse(drawing::solid_brush(color), size.width() / 2 - thickness / 2, size.height() / 3 * 2 - thickness / 2, thickness, thickness);
@@ -306,11 +306,12 @@ namespace xtd {
         }
       }
 
-    private:
+      /// @cond
       forms::segments value_ = forms::segments::none;
       bool show_background_digit_ = true;
       double background_digit_transparency_ = 0.1;
       forms::segment_style segment_style_ = forms::segment_style::standard;
+      /// @endcond
     };
   }
 }
