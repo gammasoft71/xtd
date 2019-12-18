@@ -113,13 +113,14 @@ int main() {
   lcd_label label;
   label.parent(form_main);
   label.location({10, 10});
-  label.height(100);
+  label.height(190);
   label.auto_size(true);
   label.lcd_style(forms::lcd_style::nine_segment_display);
-  label.segment_style(forms::segment_style::standard);
+  //label.segment_style(forms::segment_style::standard);
   label.text(lcd_label::valid_characters());
+  //label.thickness(5);
 
-  form_main.client_size({500, label.height() + 40});
+  form_main.client_size({1000, label.height() + 40});
   form_main.auto_scroll(true);
   form_main.start_position(form_start_position::center_screen);
   

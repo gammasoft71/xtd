@@ -12,11 +12,13 @@ namespace xtd {
 
         virtual wchar_t get_character() const = 0;
         virtual ustring get_valid_characters() const = 0;
+        virtual int32_t get_thickness() const = 0;
 
         virtual void set_background_digit_transparency(double value) = 0;
         virtual void set_character(wchar_t value) = 0;
         virtual void set_segment_style(forms::segment_style value) = 0;
         virtual void set_show_background_digit(bool value) = 0;
+        virtual void set_thickness(int32_t value) = 0;
       };
 
       class seven_segment_display_digit : public seven_segment_display, public idigit {
@@ -25,6 +27,7 @@ namespace xtd {
 
         wchar_t get_character() const override {return character_;}
         ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjLlNnOoPpQqRrSsTtUuYy=-_°\"'[]| .,:";}
+        int32_t get_thickness() const override {return seven_segment_display::thickness();}
 
         void set_background_digit_transparency(double value) override {seven_segment_display::background_digit_transparency(value);}
         void set_character(wchar_t value) override {
@@ -37,6 +40,7 @@ namespace xtd {
         }
         void set_segment_style(forms::segment_style value) override {seven_segment_display::segment_style(value);}
         void set_show_background_digit(bool value) override {seven_segment_display::show_background_digit(value);}
+        void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
 
       private:
         wchar_t character_ = ' ';
@@ -48,7 +52,8 @@ namespace xtd {
         
         wchar_t get_character() const override {return character_;}
         ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjLlNnOoPpQqRrSsTtUuYy=-_°\"'[]| .,:";}
-        
+        int32_t get_thickness() const override {return nine_segment_display::thickness();}
+
         void set_background_digit_transparency(double value) override {nine_segment_display::background_digit_transparency(value);}
         void set_character(wchar_t value) override {
           static std::map<wchar_t, forms::segments> characters {{'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'1', forms::segments::b | forms::segments::c}, {'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::i}, {'3', forms::segments::a  | forms::segments::g| forms::segments::h | forms::segments::i}, {'4', forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'5', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'6', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g | forms::segments::h}, {'7', forms::segments::a | forms::segments::e | forms::segments::h}, {'8', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'9', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g | forms::segments::i}, {'A', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'a', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'B', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'b', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'C', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {'c', forms::segments::d | forms::segments::e | forms::segments::g}, {'D', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'d', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'E', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'e', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'F', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'f', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'G', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'g', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'H', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'h', forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'I', forms::segments::b | forms::segments::c}, {'i', forms::segments::c}, {'J', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'j', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'L', forms::segments::d | forms::segments::e | forms::segments::f}, {'l', forms::segments::d | forms::segments::e}, {'N', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f}, {'n', forms::segments::c | forms::segments::e | forms::segments::g}, {'O', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'o', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'P', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'p', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'Q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'R', forms::segments::a | forms::segments::e | forms::segments::f}, {'r', forms::segments::e | forms::segments::g}, {'S', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'s', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'T', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'t', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'U', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'u', forms::segments::c | forms::segments::d | forms::segments::e}, {'Y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'=', forms::segments::d | forms::segments::g}, {'-', forms::segments::g}, {'_', forms::segments::d}, {L'°', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g}, {'"', forms::segments::b | forms::segments::f}, {'\'', forms::segments::f}, {'[', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {']', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d}, {'|', forms::segments::b | forms::segments::c}, {' ', forms::segments::none}, {'.', forms::segments::dp}, {',', forms::segments::dp}, {':', forms::segments::pc}};
@@ -60,7 +65,8 @@ namespace xtd {
         }
         void set_segment_style(forms::segment_style value) override {nine_segment_display::segment_style(value);}
         void set_show_background_digit(bool value) override {nine_segment_display::show_background_digit(value);}
-        
+        void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
+
       private:
         wchar_t character_ = ' ';
       };
@@ -119,6 +125,15 @@ namespace xtd {
         }
         return *this;
       }
+      
+      int32_t thickness() const {return thickness_.value_or(digits_.size() ? digits_[0]->get_thickness() : 0);}
+      lcd_label& thickness(int32_t value) {
+        if (thickness_ != value) {
+          thickness_ = value;
+          set_digits_params();
+        }
+        return *this;
+      }
 
       using control::text;
       control& text(const ustring& value) override {
@@ -155,11 +170,12 @@ namespace xtd {
       void set_digits_params() {
         int32_t offset_left = 0;
         for (auto& digit : digits_) {
+          dynamic_cast<control*>(digit.get())->height(size_.height());
+          dynamic_cast<control*>(digit.get())->left(offset_left);
           digit->set_background_digit_transparency(background_digit_transparency_);
           digit->set_show_background_digit(show_background_digit_);
           digit->set_segment_style(segment_style_);
-          dynamic_cast<control*>(digit.get())->height(size_.height());
-          dynamic_cast<control*>(digit.get())->left(offset_left);
+          digit->set_thickness(thickness());
           offset_left += dynamic_cast<control*>(digit.get())->width() - 2 + digit_spacing_;
         }
       }
@@ -191,6 +207,7 @@ namespace xtd {
       forms::lcd_style lcd_style_ = forms::lcd_style::seven_segment_display;
       forms::segment_style segment_style_ = forms::segment_style::standard;
       std::vector<std::shared_ptr<idigit>> digits_;
+      std::optional<int32_t> thickness_;
     };
   }
 }
