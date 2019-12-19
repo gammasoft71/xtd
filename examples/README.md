@@ -50,7 +50,10 @@
 
 ## Other Controls
 * [lcd_label](other_controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+* [fourteen_segment_display](other_controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../src/xtd_forms/include/xtd/forms/fourteen_segment_display.hpp) control.
+* [nine_segment_display](other_controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](../src/xtd_forms/include/xtd/forms/nine_segment_display.hpp) control.
 * [seven_segment_display](other_controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../src/xtd_forms/include/xtd/forms/seven_segment_display.hpp) control.
+* [sixteen_segment_display](other_controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](../src/xtd_forms/include/xtd/forms/sixteen_segment_display.hpp) control.
 * [switch_button](other_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
 
 ## Custom Controls
