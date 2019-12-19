@@ -9,14 +9,14 @@ namespace xtd {
     standard,
     modern,
     mixed,
-    expand,
+    expanded,
     design,
     stick,
   };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, segment_style value) {return os << to_string(value, {{segment_style::standard, "standard"}, {segment_style::modern, "modern"}, {segment_style::mixed, "mixed"}, {segment_style::expand, "expand"}, {segment_style::design, "design"}, {segment_style::stick, "stick"}});}
-    inline std::wostream& operator<<(std::wostream& os, segment_style value) {return os << to_string(value, {{segment_style::standard, L"standard"}, {segment_style::modern, L"modern"}, {segment_style::mixed, L"mixed"}, {segment_style::expand, L"expand"}, {segment_style::design, L"design"}, {segment_style::stick, L"stick"}});}
+    inline std::ostream& operator<<(std::ostream& os, segment_style value) {return os << to_string(value, {{segment_style::standard, "standard"}, {segment_style::modern, "modern"}, {segment_style::mixed, "mixed"}, {segment_style::expanded, "expanded"}, {segment_style::design, "design"}, {segment_style::stick, "stick"}});}
+    inline std::wostream& operator<<(std::wostream& os, segment_style value) {return os << to_string(value, {{segment_style::standard, L"standard"}, {segment_style::modern, L"modern"}, {segment_style::mixed, L"mixed"}, {segment_style::expanded, L"expanded"}, {segment_style::design, L"design"}, {segment_style::stick, L"stick"}});}
     /// @endcond
   }
 }

@@ -47,7 +47,7 @@ namespace xtd {
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
             graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), size_.height() / 2 + offset, size_.width() / 2 - 1 - abs(offset), size_.height() / 2 + offset);
-        } else if (segment_style_ == segment_style::expand) {
+        } else if (segment_style_ == segment_style::expanded) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
             graphics.draw_line(drawing::pen(color), 2 + thickness() / 2 + abs(offset), size_.height() / 2 + offset, size_.width() /2 - 1 - abs(offset), size_.height() / 2 + offset);
         } else if (segment_style_ == segment_style::design) {
@@ -69,7 +69,7 @@ namespace xtd {
         } else if (segment_style_ == segment_style::mixed) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
             graphics.draw_line(drawing::pen(color), size_.width() / 2 + 1 + abs(offset), size_.height() / 2 + offset, size_.width() - 3 - thickness() / 2 - abs(offset), size_.height() / 2 + offset);
-        } else if (segment_style_ == segment_style::expand) {
+        } else if (segment_style_ == segment_style::expanded) {
           for (int32_t offset = -thickness() / 2; offset < thickness() - thickness() / 2; offset++)
             graphics.draw_line(drawing::pen(color), size_.width() / 2 + 1 + abs(offset), size_.height() / 2 + offset, size_.width() - 3 - thickness() / 2 - abs(offset), size_.height() / 2 + offset);
         } else if (segment_style_ == segment_style::design) {

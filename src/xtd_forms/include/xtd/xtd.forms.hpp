@@ -113,6 +113,7 @@
 #include "xtd/forms/segment_style.hpp"
 #include "xtd/forms/segments.hpp"
 #include "xtd/forms/seven_segment_display.hpp"
+#include "xtd/forms/sixteen_segment_display.hpp"
 #include "xtd/forms/switch_button.hpp"
 #include "xtd/forms/system_information.hpp"
 #include "xtd/forms/tab_control.hpp"

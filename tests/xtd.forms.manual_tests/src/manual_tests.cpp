@@ -116,7 +116,7 @@ int main() {
   label.location({10, 10});
   label.height(190);
   label.auto_size(true);
-  label.lcd_style(forms::lcd_style::nine_segment_display);
+  label.lcd_style(forms::lcd_style::seven_segment_display);
   label.segment_style(forms::segment_style::standard);
   label.text(label.valid_characters());
 
@@ -125,14 +125,14 @@ int main() {
   form_main.start_position(form_start_position::center_screen);
    */
   
-  fourteen_segment_display fsd;
-  fsd.parent(form_main);
-  fsd.location({10, 10});
-  fsd.dock(dock_style::fill);
-  fsd.segment_style(forms::segment_style::expand);
-  fsd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m);
-  fsd.fore_color(drawing::color::red);
-  //fsd.back_color(drawing::color::black);
+  sixteen_segment_display ssd;
+  ssd.parent(form_main);
+  ssd.location({10, 10});
+  ssd.dock(dock_style::fill);
+  ssd.segment_style(forms::segment_style::stick);
+  ssd.value(segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m);
+  ssd.fore_color(drawing::color::red);
+  //ssd.back_color(drawing::color::black);
 
   application::run(form_main);
 }
