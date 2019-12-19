@@ -110,6 +110,7 @@ int main() {
   };
    */
 
+  /*
   lcd_label label;
   label.parent(form_main);
   label.location({10, 10});
@@ -118,22 +119,20 @@ int main() {
   label.lcd_style(forms::lcd_style::nine_segment_display);
   label.segment_style(forms::segment_style::standard);
   label.text(label.valid_characters());
-  //label.thickness(5);
 
   form_main.client_size({1000, label.height() + 40});
   form_main.auto_scroll(true);
   form_main.start_position(form_start_position::center_screen);
-  
-  /*
-  nine_segment_display nsd;
-  nsd.parent(form_main);
-  nsd.location({10, 10});
-  nsd.dock(dock_style::fill);
-  nsd.segment_style(forms::segment_style::standard);
-  //nsd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g|segments::h|segments::i);
-  nsd.fore_color(drawing::color::red);
-  //ssd.back_color(drawing::color::black);
    */
+  
+  fourteen_segment_display fsd;
+  fsd.parent(form_main);
+  fsd.location({10, 10});
+  fsd.dock(dock_style::fill);
+  fsd.segment_style(forms::segment_style::expand);
+  fsd.value(segments::a|segments::b|segments::c|segments::d|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m);
+  fsd.fore_color(drawing::color::red);
+  //fsd.back_color(drawing::color::black);
 
   application::run(form_main);
 }

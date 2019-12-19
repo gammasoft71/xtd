@@ -60,6 +60,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/form_closing_event_handler.hpp
   include/xtd/forms/form_start_position.hpp
   include/xtd/forms/form_window_state.hpp
+  include/xtd/forms/fourteen_segment_display.hpp
   include/xtd/forms/group_box.hpp
   include/xtd/forms/help_event_args.hpp
   include/xtd/forms/help_event_handler.hpp
