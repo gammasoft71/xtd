@@ -110,7 +110,6 @@ int main() {
   };
    */
 
-  /*
   lcd_label label1;
   label1.parent(form_main);
   label1.fore_color(drawing::color::red);
@@ -118,15 +117,16 @@ int main() {
   label1.location({10, 10});
   label1.height(190);
   label1.auto_size(true);
-  label1.lcd_style(forms::lcd_style::seven_segment_display);
-  label1.segment_style(forms::segment_style::standard);
+  label1.lcd_style(forms::lcd_style::dot_matrix_display);
+  label1.digit_spacing(0);
+  //label1.segment_style(forms::segment_style::standard);
   label1.text(label1.valid_characters());
 
   form_main.client_size({1200, 230});
   form_main.auto_scroll(true);
   form_main.start_position(form_start_position::center_screen);
-   */
  
+  /*
   dot_matrix_display dmd;
   dmd.parent(form_main);
   dmd.location({10, 10});
@@ -134,8 +134,8 @@ int main() {
   dmd.dot_matrix_style(dot_matrix_style::standard);
   dmd.fore_color(drawing::color::lime);
   dmd.dots({{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}});
-  
   form_main.back_color(drawing::color::average(dmd.fore_color(), drawing::color::black, 0.1));
+   */
 
   application::run(form_main);
 }

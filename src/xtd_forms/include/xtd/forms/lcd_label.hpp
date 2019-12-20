@@ -1,4 +1,5 @@
 #include "control.hpp"
+#include "dot_matrix_display.hpp"
 #include "lcd_style.hpp"
 #include "nine_segment_display.hpp"
 #include "seven_segment_display.hpp"
@@ -21,6 +22,65 @@ namespace xtd {
         virtual void set_segment_style(forms::segment_style value) = 0;
         virtual void set_show_background_digit(bool value) = 0;
         virtual void set_thickness(int32_t value) = 0;
+      };
+
+      class dot_matrix_display_digit : public dot_matrix_display, public idigit {
+      public:
+        dot_matrix_display_digit() = default;
+        
+        wchar_t get_character() const override {return character_;}
+        //ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz=+-*\\_°\"'[]()| .,:";}
+        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIOQRSTU| .,:;!";}
+        int32_t get_thickness() const override {return dot_matrix_display::thickness();}
+        
+        void set_background_digit_transparency(double value) override {dot_matrix_display::background_dot_transparency(value);}
+        void set_character(wchar_t value) override {
+          static std::map<wchar_t, dot_matrix_display::dot_collection> characters {
+            {'0', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {4, 2}, {5, 2}, {1, 3}, {3, 3}, {5, 3}, {1, 4}, {2, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'1', {{3, 0}, {2, 1}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
+            {'2', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {5, 2}, {4, 3}, {3, 4}, {2, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
+            {'3', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 1}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 4}, {5, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}}},
+            {'4', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {5, 4}, {5, 5}, {5, 6}}},
+            {'5', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {1, 1}, {1, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 4}, {5, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}}},
+            {'6', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {1, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'7', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {5, 1}, {5, 2}, {4, 3}, {4, 4}, {3, 5}, {3, 6}}},
+            {'8', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {2, 3}, {3, 3}, {4, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'9', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {2, 3}, {3, 3}, {4, 3}, {5, 4}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'A', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
+            {'B', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}}},
+            {'C', {{2, 0}, {3, 0}, {4, 0}, {5, 0}, {1, 1}, {1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
+            {'D', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}}},
+            {'E', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {1, 1}, {1, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {1, 4}, {1, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
+            {'F', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {1, 1}, {1, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {1, 4}, {1, 5}, {1, 6}}},
+            {'G', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {1, 2}, {1, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'H', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
+            {'I', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
+            {'O', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'Q', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {4, 5}, {2, 6}, {3, 6}, {5, 6}}},
+            {'R', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
+            {'S', {{2, 0}, {3, 0}, {4, 0}, {5, 0}, {1, 1}, {1, 2}, {2, 3}, {3, 3}, {4, 3}, {5, 4}, {5, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}}},
+            {'T', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
+            {'U', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'|', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
+            {' ', {}},
+            {'.', {{3, 6}}},
+            {',', {{3, 5}, {2, 6}}},
+            {':', {{3, 1}, {3, 5}}},
+            {';', {{3, 2}, {3, 5}, {2, 6}}},
+            {'!', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 6}}},
+          };
+          if (character_ != value) {
+            if (characters.find(value) == characters.end()) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", get_valid_characters()));
+            character_ = value;
+            dot_matrix_display::dots(characters[value]);
+          }
+        }
+        void set_segment_style(forms::segment_style value) override {}
+        void set_show_background_digit(bool value) override {dot_matrix_display::show_background_dot(value);}
+        void set_thickness(int32_t value) override {dot_matrix_display::thickness(value);}
+        
+      private:
+        wchar_t character_ = ' ';
       };
 
       class seven_segment_display_digit : public seven_segment_display, public idigit {
@@ -363,6 +423,7 @@ namespace xtd {
                 case lcd_style::nine_segment_display: digits_.push_back(std::make_shared<nine_segment_display_digit>()); break;
                 case lcd_style::fourteen_segment_display: digits_.push_back(std::make_shared<fourteen_segment_display_digit>()); break;
                 case lcd_style::sixteen_segment_display: digits_.push_back(std::make_shared<sixteen_segment_display_digit>()); break;
+                case lcd_style::dot_matrix_display: digits_.push_back(std::make_shared<dot_matrix_display_digit>()); break;
                 default: throw std::invalid_argument("lcd_style invalid");
               }
               dynamic_cast<control*>(digits_[digits_.size() - 1].get())->parent(*this);
@@ -385,6 +446,7 @@ namespace xtd {
           case lcd_style::nine_segment_display: return std::make_shared<nine_segment_display_digit>()->get_valid_characters();
           case lcd_style::fourteen_segment_display: return std::make_shared<fourteen_segment_display_digit>()->get_valid_characters();
           case lcd_style::sixteen_segment_display: return std::make_shared<sixteen_segment_display_digit>()->get_valid_characters();
+          case lcd_style::dot_matrix_display: return std::make_shared<dot_matrix_display_digit>()->get_valid_characters();
           default: throw std::invalid_argument("lcd_style invalid");
         }
       }
