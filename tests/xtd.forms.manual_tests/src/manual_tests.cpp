@@ -112,7 +112,7 @@ int main() {
 
   lcd_label label1;
   label1.parent(form_main);
-  label1.fore_color(drawing::color::red);
+  label1.fore_color(drawing::color::yellow);
   label1.back_color(drawing::color::average(label1.fore_color(), drawing::color::black, 0.10));
   label1.location({10, 10});
   label1.height(190);
