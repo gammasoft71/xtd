@@ -50,6 +50,7 @@
 
 ## Other Controls
 * [lcd_label](other_controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+* [dot_matrix_display](other_controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../src/xtd_forms/include/xtd/forms/dot_matrix_display.hpp) control.
 * [fourteen_segment_display](other_controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../src/xtd_forms/include/xtd/forms/fourteen_segment_display.hpp) control.
 * [nine_segment_display](other_controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](../src/xtd_forms/include/xtd/forms/nine_segment_display.hpp) control.
 * [seven_segment_display](other_controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../src/xtd_forms/include/xtd/forms/seven_segment_display.hpp) control.
