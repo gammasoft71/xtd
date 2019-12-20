@@ -10,6 +10,7 @@ namespace xtd {
     class dot_matrix_display : public control {
     public:
       using dot = drawing::point;
+      using dot_collection =  std::vector<dot>;
 
       dot_matrix_display() {
         size_ = default_size();
@@ -44,12 +45,12 @@ namespace xtd {
         }
       }
       
-      virtual void dots(const std::vector<dot>& dots) {
+      virtual void dots(const dot_collection& dots) {
         set_all_dots(false);
         this->dots(dots, true);
       }
       
-      virtual void dots(const std::vector<dot>& dots, bool on) {
+      virtual void dots(const dot_collection& dots, bool on) {
         for (auto dot : dots)
           this->set_dot(dot, on);
       }

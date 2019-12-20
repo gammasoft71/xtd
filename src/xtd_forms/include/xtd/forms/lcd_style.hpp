@@ -10,11 +10,12 @@ namespace xtd {
     nine_segment_display,
     fourteen_segment_display,
     sixteen_segment_display,
+    dot_matrix_display,
   };
 
     /// @cond
-    inline std::ostream& operator<<(std::ostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::seven_segment_display, "seven_segment_display"}, {lcd_style::nine_segment_display, "nine_segment_display"}, {lcd_style::fourteen_segment_display, "fourteen_segment_display"}, {lcd_style::sixteen_segment_display, "sixteen_segment_display"}});}
-    inline std::wostream& operator<<(std::wostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::seven_segment_display, L"seven_segment_display"}, {lcd_style::nine_segment_display, L"nine_segment_display"}, {lcd_style::fourteen_segment_display, L"fourteen_segment_display"}, {lcd_style::sixteen_segment_display, L"sixteen_segment_display"}});}
+    inline std::ostream& operator<<(std::ostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::seven_segment_display, "seven_segment_display"}, {lcd_style::nine_segment_display, "nine_segment_display"}, {lcd_style::fourteen_segment_display, "fourteen_segment_display"}, {lcd_style::sixteen_segment_display, "sixteen_segment_display"}, {lcd_style::dot_matrix_display, "dot_matrix_display"}});}
+    inline std::wostream& operator<<(std::wostream& os, lcd_style value) {return os << to_string(value, {{lcd_style::seven_segment_display, L"seven_segment_display"}, {lcd_style::nine_segment_display, L"nine_segment_display"}, {lcd_style::fourteen_segment_display, L"fourteen_segment_display"}, {lcd_style::sixteen_segment_display, L"sixteen_segment_display"}, {lcd_style::dot_matrix_display, L"dot_matrix_display"}});}
     /// @endcond
   }
 }
