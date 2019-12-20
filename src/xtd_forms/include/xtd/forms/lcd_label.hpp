@@ -29,8 +29,8 @@ namespace xtd {
         dot_matrix_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        //ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz=+-*\\_°\"'[]()| .,:";}
-        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIOQRSTU| .,:;!";}
+        //ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz=+-*/\\_°\"'[]()| .,:";}
+        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZilx=+-*/\\()| .,:;!";}
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
         void set_background_digit_transparency(double value) override {dot_matrix_display::background_dot_transparency(value);}
@@ -55,12 +55,34 @@ namespace xtd {
             {'G', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {1, 2}, {1, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
             {'H', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
             {'I', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
+            {'J', {{3, 0}, {4, 0}, {5, 0}, {5, 1}, {5, 2}, {5, 3}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'K', {{1, 0}, {5, 0}, {1, 1}, {4, 1}, {1, 2}, {3, 2}, {1, 3}, {2, 3}, {1, 4}, {3, 4}, {1, 5}, {4, 5}, {1, 6}, {5, 6}}},
+            {'L', {{1, 0}, {1, 1}, {1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
+            {'M', {{1, 0}, {5, 0}, {1, 1}, {2, 1}, {4, 1}, {5, 1}, {1, 2}, {3, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
+            {'N', {{1, 0}, {5, 0}, {1, 1}, {2, 1}, {5, 1}, {1, 2}, {3, 2}, {5, 2}, {1, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
             {'O', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'P', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {1, 4}, {1, 5}, {1, 6}}},
             {'Q', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {4, 5}, {2, 6}, {3, 6}, {5, 6}}},
             {'R', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
             {'S', {{2, 0}, {3, 0}, {4, 0}, {5, 0}, {1, 1}, {1, 2}, {2, 3}, {3, 3}, {4, 3}, {5, 4}, {5, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}}},
             {'T', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
             {'U', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {2, 6}, {3, 6}, {4, 6}}},
+            {'V', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {2, 3}, {4, 3}, {2, 4}, {4, 4}, {3, 5}, {3, 6}}},
+            {'W', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {1, 2}, {3, 2}, {5, 2}, {1, 3}, {3, 3}, {5, 3}, {1, 4}, {3, 4}, {5, 4}, {1, 5}, {2, 5}, {4, 5}, {5, 5}, {1, 6}, {5, 6}}},
+            {'X', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {2, 2}, {4, 2}, {3, 3}, {2, 4}, {4, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}}},
+            {'Y', {{1, 0}, {5, 0}, {1, 1}, {5, 1}, {2, 2}, {4, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
+            {'Z', {{1, 0}, {2, 0}, {3, 0}, {4, 0}, {5, 0}, {5, 1}, {4, 2}, {3, 3}, {2, 4}, {1, 5}, {1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
+            {'i', {{3, 0}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
+            {'x', {{1, 2}, {5, 2}, {2, 3}, {4, 3}, {3, 4}, {2, 5}, {4, 5}, {1, 6}, {5, 6}}},
+            {'=', {{1, 2}, {2, 2}, {3, 2}, {4, 2}, {5, 2}, {1, 4}, {2, 4}, {3, 4}, {4, 4}, {5, 4}}},
+            {'+', {{3, 1}, {3, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {3, 4}, {3, 5}}},
+            {'-', {{1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}}},
+            {'*', {{3, 0}, {1, 1}, {3, 1}, {5, 1}, {2, 2}, {3, 2}, {4, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {2, 4}, {3, 4}, {4, 4}, {1, 5}, {3, 5}, {5, 5}, {3, 6}}},
+            {'/', {{5, 1}, {4, 2}, {3, 3}, {2, 4}, {1, 5}}},
+            {'\\', {{1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}}},
+            {'l', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {4, 6}}},
+            {')', {{2, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {2, 6}}},
+            {'(', {{4, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {4, 6}}},
             {'|', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
             {' ', {}},
             {'.', {{3, 6}}},
@@ -83,62 +105,12 @@ namespace xtd {
         wchar_t character_ = ' ';
       };
 
-      class seven_segment_display_digit : public seven_segment_display, public idigit {
-      public:
-        seven_segment_display_digit() = default;
-
-        wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjLlNnOoPpQqRrSsTtUuYy=-_°\"'[]| .,:";}
-        int32_t get_thickness() const override {return seven_segment_display::thickness();}
-
-        void set_background_digit_transparency(double value) override {seven_segment_display::background_segment_transparency(value);}
-        void set_character(wchar_t value) override {
-          static std::map<wchar_t, forms::segments> characters {{'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'1', forms::segments::b | forms::segments::c}, {'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::g}, {'3', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::g}, {'4', forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'5', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'6', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'7', forms::segments::a | forms::segments::b | forms::segments::c}, {'8', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'9', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'A', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'a', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'B', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'b', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'C', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {'c', forms::segments::d | forms::segments::e | forms::segments::g}, {'D', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'d', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'E', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'e', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'F', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'f', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'G', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'g', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'H', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'h', forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'I', forms::segments::b | forms::segments::c}, {'i', forms::segments::c}, {'J', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'j', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'L', forms::segments::d | forms::segments::e | forms::segments::f}, {'l', forms::segments::d | forms::segments::e}, {'N', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f}, {'n', forms::segments::c | forms::segments::e | forms::segments::g}, {'O', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'o', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'P', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'p', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'Q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'R', forms::segments::a | forms::segments::e | forms::segments::f}, {'r', forms::segments::e | forms::segments::g}, {'S', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'s', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'T', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'t', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'U', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'u', forms::segments::c | forms::segments::d | forms::segments::e}, {'Y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'=', forms::segments::d | forms::segments::g}, {'-', forms::segments::g}, {'_', forms::segments::d}, {L'°', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g}, {'"', forms::segments::b | forms::segments::f}, {'\'', forms::segments::f}, {'[', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {']', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d}, {'|', forms::segments::b | forms::segments::c}, {' ', forms::segments::none}, {'.', forms::segments::dp}, {',', forms::segments::dp}, {':', forms::segments::pc}};
-          if (character_ != value) {
-            if (characters.find(value) == characters.end()) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", get_valid_characters()));
-            character_ = value;
-            seven_segment_display::value(characters[value]);
-          }
-        }
-        void set_segment_style(forms::segment_style value) override {seven_segment_display::segment_style(value);}
-        void set_show_background_digit(bool value) override {seven_segment_display::show_background_segment(value);}
-        void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
-
-      private:
-        wchar_t character_ = ' ';
-      };
-
-      class nine_segment_display_digit : public nine_segment_display, public idigit {
-      public:
-        nine_segment_display_digit() = default;
-        
-        wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjLlNnOoPpQqRrSsTtUuYy=-_°\"'[]| .,:";}
-        int32_t get_thickness() const override {return nine_segment_display::thickness();}
-
-        void set_background_digit_transparency(double value) override {nine_segment_display::background_segment_transparency(value);}
-        void set_character(wchar_t value) override {
-          static std::map<wchar_t, forms::segments> characters {{'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'1', forms::segments::b | forms::segments::c}, {'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::i}, {'3', forms::segments::a | forms::segments::g | forms::segments::h | forms::segments::i}, {'4', forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'5', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'6', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g | forms::segments::h}, {'7', forms::segments::a | forms::segments::e | forms::segments::h}, {'8', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'9', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g | forms::segments::i}, {'A', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'a', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'B', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'b', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'C', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {'c', forms::segments::d | forms::segments::e | forms::segments::g}, {'D', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'d', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'E', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'e', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'F', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'f', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'G', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'g', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'H', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'h', forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'I', forms::segments::b | forms::segments::c}, {'i', forms::segments::c}, {'J', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'j', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'L', forms::segments::d | forms::segments::e | forms::segments::f}, {'l', forms::segments::d | forms::segments::e}, {'N', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f}, {'n', forms::segments::c | forms::segments::e | forms::segments::g}, {'O', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'o', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'P', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'p', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'Q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'R', forms::segments::a | forms::segments::e | forms::segments::f}, {'r', forms::segments::e | forms::segments::g}, {'S', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'s', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'T', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'t', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'U', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'u', forms::segments::c | forms::segments::d | forms::segments::e}, {'Y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'=', forms::segments::d | forms::segments::g}, {'-', forms::segments::g}, {'_', forms::segments::d}, {L'°', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g}, {'"', forms::segments::b | forms::segments::f}, {'\'', forms::segments::f}, {'[', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {']', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d}, {'|', forms::segments::b | forms::segments::c}, {' ', forms::segments::none}, {'.', forms::segments::dp}, {',', forms::segments::dp}, {':', forms::segments::pc}};
-          if (character_ != value) {
-            if (characters.find(value) == characters.end()) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", get_valid_characters()));
-            character_ = value;
-            nine_segment_display::value(characters[value]);
-          }
-        }
-        void set_segment_style(forms::segment_style value) override {nine_segment_display::segment_style(value);}
-        void set_show_background_digit(bool value) override {nine_segment_display::show_background_segment(value);}
-        void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
-
-      private:
-        wchar_t character_ = ' ';
-      };
-
       class fourteen_segment_display_digit : public fourteen_segment_display, public idigit {
       public:
         fourteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz=+-*\\_°\"'[]()| .,:";}
+        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return fourteen_segment_display::thickness();}
         
         void set_background_digit_transparency(double value) override {fourteen_segment_display::background_segment_transparency(value);}
@@ -210,6 +182,7 @@ namespace xtd {
             {'+', forms::segments::g1 | forms::segments::g2 | forms::segments::i | forms::segments::l},
             {'-', forms::segments::g1 | forms::segments::g2},
             {'*', forms::segments::g1 | forms::segments::g2 | forms::segments::h | forms::segments::i | forms::segments::j | forms::segments::k | forms::segments::l | forms::segments::m},
+            {'/', forms::segments::j | forms::segments::k},
             {'\\', forms::segments::h | forms::segments::m},
             {'_', forms::segments::d},
             {L'°', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g1 | forms::segments::g2},
@@ -239,12 +212,62 @@ namespace xtd {
         wchar_t character_ = ' ';
       };
 
+      class nine_segment_display_digit : public nine_segment_display, public idigit {
+      public:
+        nine_segment_display_digit() = default;
+        
+        wchar_t get_character() const override {return character_;}
+        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        int32_t get_thickness() const override {return nine_segment_display::thickness();}
+        
+        void set_background_digit_transparency(double value) override {nine_segment_display::background_segment_transparency(value);}
+        void set_character(wchar_t value) override {
+          static std::map<wchar_t, forms::segments> characters {{'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'1', forms::segments::b | forms::segments::c}, {'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::i}, {'3', forms::segments::a | forms::segments::g | forms::segments::h | forms::segments::i}, {'4', forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'5', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'6', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g | forms::segments::h}, {'7', forms::segments::a | forms::segments::e | forms::segments::h}, {'8', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'9', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g | forms::segments::i}, {'A', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'a', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'B', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'b', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'C', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {'c', forms::segments::d | forms::segments::e | forms::segments::g}, {'D', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'d', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'E', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'e', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'F', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'f', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'G', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'g', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'H', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'h', forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'I', forms::segments::b | forms::segments::c}, {'i', forms::segments::c}, {'J', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'j', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'L', forms::segments::d | forms::segments::e | forms::segments::f}, {'l', forms::segments::d | forms::segments::e}, {'N', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f}, {'n', forms::segments::c | forms::segments::e | forms::segments::g}, {'O', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'o', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'P', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'p', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'Q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'R', forms::segments::a | forms::segments::e | forms::segments::f}, {'r', forms::segments::e | forms::segments::g}, {'S', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'s', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'T', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'t', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'U', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'u', forms::segments::c | forms::segments::d | forms::segments::e}, {'Y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'=', forms::segments::d | forms::segments::g}, {'-', forms::segments::g}, {'_', forms::segments::d}, {L'°', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g}, {'"', forms::segments::b | forms::segments::f}, {'\'', forms::segments::f}, {'[', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {']', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d}, {'|', forms::segments::b | forms::segments::c}, {' ', forms::segments::none}, {'.', forms::segments::dp}, {',', forms::segments::dp}, {':', forms::segments::pc}};
+          if (character_ != value) {
+            if (characters.find(value) == characters.end()) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", get_valid_characters()));
+            character_ = value;
+            nine_segment_display::value(characters[value]);
+          }
+        }
+        void set_segment_style(forms::segment_style value) override {nine_segment_display::segment_style(value);}
+        void set_show_background_digit(bool value) override {nine_segment_display::show_background_segment(value);}
+        void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
+        
+      private:
+        wchar_t character_ = ' ';
+      };
+
+      class seven_segment_display_digit : public seven_segment_display, public idigit {
+      public:
+        seven_segment_display_digit() = default;
+
+        wchar_t get_character() const override {return character_;}
+        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        int32_t get_thickness() const override {return seven_segment_display::thickness();}
+
+        void set_background_digit_transparency(double value) override {seven_segment_display::background_segment_transparency(value);}
+        void set_character(wchar_t value) override {
+          static std::map<wchar_t, forms::segments> characters {{'0', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'1', forms::segments::b | forms::segments::c}, {'2', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::g}, {'3', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::g}, {'4', forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'5', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'6', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'7', forms::segments::a | forms::segments::b | forms::segments::c}, {'8', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'9', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'A', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'a', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'B', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'b', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'C', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {'c', forms::segments::d | forms::segments::e | forms::segments::g}, {'D', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'d', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'E', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'e', forms::segments::a | forms::segments::b | forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'F', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'f', forms::segments::a | forms::segments::e | forms::segments::f | forms::segments::g}, {'G', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'g', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'H', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'h', forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g}, {'I', forms::segments::b | forms::segments::c}, {'i', forms::segments::c}, {'J', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'j', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e}, {'L', forms::segments::d | forms::segments::e | forms::segments::f}, {'l', forms::segments::d | forms::segments::e}, {'N', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f}, {'n', forms::segments::c | forms::segments::e | forms::segments::g}, {'O', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'o', forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::g}, {'P', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'p', forms::segments::a | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g}, {'Q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'q', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g}, {'R', forms::segments::a | forms::segments::e | forms::segments::f}, {'r', forms::segments::e | forms::segments::g}, {'S', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'s', forms::segments::a | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'T', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'t', forms::segments::d | forms::segments::e | forms::segments::f | forms::segments::g}, {'U', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::e | forms::segments::f}, {'u', forms::segments::c | forms::segments::d | forms::segments::e}, {'Y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'y', forms::segments::b | forms::segments::c | forms::segments::d | forms::segments::f | forms::segments::g}, {'=', forms::segments::d | forms::segments::g}, {'-', forms::segments::g}, {'_', forms::segments::d}, {L'°', forms::segments::a | forms::segments::b | forms::segments::f | forms::segments::g}, {'"', forms::segments::b | forms::segments::f}, {'\'', forms::segments::f}, {'[', forms::segments::a | forms::segments::d | forms::segments::e | forms::segments::f}, {']', forms::segments::a | forms::segments::b | forms::segments::c | forms::segments::d}, {'|', forms::segments::b | forms::segments::c}, {' ', forms::segments::none}, {'.', forms::segments::dp}, {',', forms::segments::dp}, {':', forms::segments::pc}};
+          if (character_ != value) {
+            if (characters.find(value) == characters.end()) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", get_valid_characters()));
+            character_ = value;
+            seven_segment_display::value(characters[value]);
+          }
+        }
+        void set_segment_style(forms::segment_style value) override {seven_segment_display::segment_style(value);}
+        void set_show_background_digit(bool value) override {seven_segment_display::show_background_segment(value);}
+        void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
+
+      private:
+        wchar_t character_ = ' ';
+      };
+
       class sixteen_segment_display_digit : public sixteen_segment_display, public idigit {
       public:
         sixteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz=+-*\\_°\"'[]()| .,:";}
+        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return sixteen_segment_display::thickness();}
         
         void set_background_digit_transparency(double value) override {sixteen_segment_display::background_segment_transparency(value);}
@@ -261,61 +284,62 @@ namespace xtd {
             {'8', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1 | segments::g2},
             {'9', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::f | forms::segments::g1 | forms::segments::g2},
             {'A', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2},
-            {'a', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
             {'B', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d  | forms::segments::g2 | forms::segments::i | forms::segments::l},
-            {'b', forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::m},
             {'C', forms::segments::a1 | forms::segments::a2 | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f},
-            {'c', forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
             {'D', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d  | forms::segments::i | forms::segments::l},
-            {'d', forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | segments::g2 | segments::k},
             {'E', forms::segments::a1 | forms::segments::a2 | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2},
-            {'e', forms::segments::a1 | forms::segments::a2 | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1},
             {'F', forms::segments::a1 | forms::segments::a2 | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2},
-            {'f', forms::segments::a1 | forms::segments::a2 | forms::segments::e | forms::segments::f | forms::segments::g1},
             {'G', forms::segments::a1 | forms::segments::a2 | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g2},
-            {'g', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::h | forms::segments::g2},
             {'H', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2},
-            {'h', forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2},
             {'I', forms::segments::a1 | forms::segments::a2 | forms::segments::d1 | forms::segments::d2 | forms::segments::i | forms::segments::l},
-            {'i', forms::segments::l},
             {'J', forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e},
-            {'j', forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2},
             {'K', forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::j | forms::segments::m},
-            {'k', forms::segments::i | forms::segments::l | forms::segments::j | forms::segments::m},
             {'L', forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f},
-            {'l', forms::segments::i | forms::segments::l},
             {'M', forms::segments::b| forms::segments::c| forms::segments::e| forms::segments::f| forms::segments::h| forms::segments::j},
-            {'m', forms::segments::c| forms::segments::e| forms::segments::g1| forms::segments::g2| forms::segments::l},
             {'N', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::h | forms::segments::m},
-            {'n', forms::segments::e | forms::segments::g1 | forms::segments::m},
             {'O', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f},
-            {'o', forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
             {'P', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2},
-            {'p', forms::segments::a1 | forms::segments::a2 | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::j},
             {'Q', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::m},
             {'q', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::f | forms::segments::g1 | forms::segments::g2 | forms::segments::m},
             {'R', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2 | forms::segments::m},
-            {'r', forms::segments::e | forms::segments::g},
             {'S', forms::segments::a1 | forms::segments::a2 | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::g2 | forms::segments::h},
-            {'s', forms::segments::a1 | forms::segments::a2 | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::g2 | forms::segments::h},
             {'T', forms::segments::a1 | forms::segments::a2 | forms::segments::i | forms::segments::l},
-            {'t', forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1},
             {'U', forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f},
-            {'u', forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e},
             {'V', forms::segments::e | forms::segments::f | forms::segments::j | forms::segments::k},
-            {'v', forms::segments::e | forms::segments::k},
             {'W', forms::segments::b | forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::k | forms::segments::m},
-            {'w', forms::segments::c | forms::segments::e | forms::segments::k | forms::segments::m},
             {'X', forms::segments::h | forms::segments::j | forms::segments::k | forms::segments::m},
-            {'x', forms::segments::h | forms::segments::j | forms::segments::k | forms::segments::m},
             {'Y', forms::segments::h | forms::segments::j | forms::segments::l},
-            {'y', forms::segments::b | forms::segments::c | forms::segments::d2 | forms::segments::g2 | forms::segments::i},
             {'Z', forms::segments::a1 | forms::segments::a2 | forms::segments::d1 | forms::segments::d2 | forms::segments::j | forms::segments::k},
+            {'a', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
+            {'b', forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::m},
+            {'c', forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
+            {'d', forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | segments::g2 | segments::k},
+            {'e', forms::segments::a1 | forms::segments::a2 | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1},
+            {'f', forms::segments::a1 | forms::segments::a2 | forms::segments::e | forms::segments::f | forms::segments::g1},
+            {'g', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::h | forms::segments::g2},
+            {'h', forms::segments::c | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::g2},
+            {'i', forms::segments::l},
+            {'j', forms::segments::b | forms::segments::c | forms::segments::d1 | forms::segments::d2},
+            {'k', forms::segments::i | forms::segments::l | forms::segments::j | forms::segments::m},
+            {'l', forms::segments::i | forms::segments::l},
+            {'m', forms::segments::c| forms::segments::e| forms::segments::g1| forms::segments::g2| forms::segments::l},
+            {'n', forms::segments::e | forms::segments::g1 | forms::segments::m},
+            {'o', forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::g1 | forms::segments::g2},
+            {'p', forms::segments::a1 | forms::segments::a2 | forms::segments::e | forms::segments::f | forms::segments::g1 | forms::segments::j},
+            {'r', forms::segments::e | forms::segments::g},
+            {'s', forms::segments::a1 | forms::segments::a2 | forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::g2 | forms::segments::h},
+            {'t', forms::segments::d1 | forms::segments::d2 | forms::segments::e | forms::segments::f | forms::segments::g1},
+            {'u', forms::segments::c | forms::segments::d1 | forms::segments::d2 | forms::segments::e},
+            {'v', forms::segments::e | forms::segments::k},
+            {'w', forms::segments::c | forms::segments::e | forms::segments::k | forms::segments::m},
+            {'x', forms::segments::h | forms::segments::j | forms::segments::k | forms::segments::m},
+            {'y', forms::segments::b | forms::segments::c | forms::segments::d2 | forms::segments::g2 | forms::segments::i},
             {'z', forms::segments::g1 | forms::segments::d1 | forms::segments::k},
             {'=', forms::segments::d1 | forms::segments::d2 | forms::segments::g1 | forms::segments::g2},
             {'+', forms::segments::g1 | forms::segments::g2 | forms::segments::i | forms::segments::l},
             {'-', forms::segments::g1 | forms::segments::g2},
             {'*', forms::segments::g1 | forms::segments::g2 | forms::segments::h | forms::segments::i | forms::segments::j | forms::segments::k | forms::segments::l | forms::segments::m},
+            {'/', forms::segments::j | forms::segments::k},
             {'\\', forms::segments::h | forms::segments::m},
             {'_', forms::segments::d1 | forms::segments::d2},
             {L'°', forms::segments::a1 | forms::segments::a2 | forms::segments::b | forms::segments::f | forms::segments::g1 | forms::segments::g2},
