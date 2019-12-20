@@ -23,10 +23,10 @@ namespace xtd {
  
       void draw_background_digit(drawing::graphics& graphics) override {
         fourteen_segment_display::draw_background_digit(graphics);
-        draw_segment_a1(graphics, background_digit_color());
-        draw_segment_a2(graphics, background_digit_color());
-        draw_segment_d1(graphics, background_digit_color());
-        draw_segment_d2(graphics, background_digit_color());
+        draw_segment_a1(graphics, background_segment_color());
+        draw_segment_a2(graphics, background_segment_color());
+        draw_segment_d1(graphics, background_segment_color());
+        draw_segment_d2(graphics, background_segment_color());
       }
 
       virtual void draw_segment_a1(drawing::graphics& graphics, const drawing::color& color) {
