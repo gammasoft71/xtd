@@ -21,8 +21,8 @@ namespace xtd {
  
       void draw_background_digit(drawing::graphics& graphics) override {
         seven_segment_display::draw_background_digit(graphics);
-        draw_segment_h(graphics, background_digit_color());
-        draw_segment_i(graphics, background_digit_color());
+        draw_segment_h(graphics, background_segment_color());
+        draw_segment_i(graphics, background_segment_color());
       }
 
       virtual void draw_segment_h(drawing::graphics& graphics, const drawing::color& color) {

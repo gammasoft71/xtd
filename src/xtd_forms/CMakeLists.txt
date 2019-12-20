@@ -49,6 +49,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/do_work_event_handler.hpp
   include/xtd/forms/dock_style.hpp
   include/xtd/forms/domain_up_down.hpp
+  include/xtd/forms/dot_matrix_display.hpp
+  include/xtd/forms/dot_matrix_style.hpp
   include/xtd/forms/file_dialog.hpp
   include/xtd/forms/folder_browser_dialog.hpp
   include/xtd/forms/font_dialog.hpp

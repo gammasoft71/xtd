@@ -110,61 +110,32 @@ int main() {
   };
    */
 
+  /*
   lcd_label label1;
   label1.parent(form_main);
   label1.fore_color(drawing::color::red);
+  label1.back_color(drawing::color::average(label1.fore_color(), drawing::color::black, 0.10));
   label1.location({10, 10});
   label1.height(190);
   label1.auto_size(true);
   label1.lcd_style(forms::lcd_style::seven_segment_display);
   label1.segment_style(forms::segment_style::standard);
   label1.text(label1.valid_characters());
-  
-  lcd_label label2;
-  label2.parent(form_main);
-  label2.fore_color(drawing::color::lime);
-  label2.location({10, 210});
-  label2.height(190);
-  label2.auto_size(true);
-  label2.lcd_style(forms::lcd_style::nine_segment_display);
-  label2.segment_style(forms::segment_style::mixed);
-  label2.text(label2.valid_characters());
-  
-  lcd_label label3;
-  label3.parent(form_main);
-  label3.fore_color(drawing::color::blue);
-  label3.location({10, 410});
-  label3.height(190);
-  label3.auto_size(true);
-  label3.lcd_style(forms::lcd_style::fourteen_segment_display);
-  label3.segment_style(forms::segment_style::modern);
-  label3.text(label3.valid_characters());
-  
-  lcd_label label4;
-  label4.parent(form_main);
-  label4.fore_color(drawing::color::yellow);
-  label4.location({10, 610});
-  label4.height(190);
-  label4.auto_size(true);
-  label4.lcd_style(forms::lcd_style::sixteen_segment_display);
-  label4.segment_style(forms::segment_style::expanded);
-  label4.text(label4.valid_characters());
 
-  form_main.back_color(drawing::color::black);
-  form_main.client_size({1000, 820});
+  form_main.client_size({1200, 230});
   form_main.auto_scroll(true);
   form_main.start_position(form_start_position::center_screen);
- 
-  /*
-  sixteen_segment_display ssd;
-  ssd.parent(form_main);
-  ssd.location({10, 10});
-  ssd.dock(dock_style::fill);
-  ssd.segment_style(forms::segment_style::stick);
-  ssd.value(segments::a1|segments::a2|segments::b|segments::c|segments::d1|segments::d2|segments::e|segments::f|segments::g1|segments::g2|segments::h|segments::i|segments::j|segments::k|segments::l|segments::m);
-  ssd.fore_color(drawing::color::red);
-  //ssd.back_color(drawing::color::black);
    */
+ 
+  dot_matrix_display dmd;
+  dmd.parent(form_main);
+  dmd.location({10, 10});
+  dmd.dock(dock_style::fill);
+  dmd.dot_matrix_style(dot_matrix_style::standard);
+  dmd.fore_color(drawing::color::lime);
+  dmd.dots({{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {1, 2}, {5, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {1, 4}, {5, 4}, {1, 5}, {5, 5}, {1, 6}, {5, 6}});
+  
+  form_main.back_color(drawing::color::average(dmd.fore_color(), drawing::color::black, 0.1));
 
   application::run(form_main);
 }
