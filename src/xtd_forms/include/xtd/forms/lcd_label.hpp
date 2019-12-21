@@ -29,7 +29,7 @@ namespace xtd {
         dot_matrix_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[](){}| .,:;!?";}
+        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$";}
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
         void set_background_digit_transparency(double value) override {dot_matrix_display::background_dot_transparency(value);}
@@ -102,6 +102,7 @@ namespace xtd {
             {'-', {{1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}}},
             {'*', {{3, 0}, {1, 1}, {3, 1}, {5, 1}, {2, 2}, {3, 2}, {4, 2}, {1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}, {2, 4}, {3, 4}, {4, 4}, {1, 5}, {3, 5}, {5, 5}, {3, 6}}},
             {'/', {{5, 1}, {4, 2}, {3, 3}, {2, 4}, {1, 5}}},
+            {'%', {{1, 0}, {2, 0}, {1, 1}, {2, 1}, {5, 1}, {4, 2}, {3, 3}, {2, 4}, {1, 5}, {4, 5}, {5, 5}, {4, 6}, {5, 6}}},
             {'\\', {{1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}}},
             {'_', {{1, 6}, {2, 6}, {3, 6}, {4, 6}, {5, 6}}},
             {L'°', {{2, 0}, {3, 0}, {1, 1}, {4, 1}, {1, 2}, {4, 2}, {2, 3}, {3, 3}}},
@@ -113,6 +114,8 @@ namespace xtd {
             {')', {{2, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {2, 6}}},
             {'{', {{4, 0}, {5, 0}, {3, 1}, {3, 2}, {2, 3}, {3, 4}, {3, 5}, {4, 6}, {5, 6}}},
             {'}', {{1, 0}, {2, 0}, {3, 1}, {3, 2}, {4, 3}, {3, 4}, {3, 5}, {1, 6}, {2, 6}}},
+            {'<', {{4, 1}, {3, 2}, {2, 3}, {3, 4}, {4, 5}}},
+            {'>', {{2, 1}, {3, 2}, {4, 3}, {3, 4}, {2, 5}}},
             {'|', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, {3, 6}}},
             {' ', {}},
             {'.', {{3, 6}}},
@@ -121,6 +124,8 @@ namespace xtd {
             {';', {{3, 2}, {3, 5}, {2, 6}}},
             {'!', {{3, 0}, {3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 6}}},
             {'?', {{2, 0}, {3, 0}, {4, 0}, {1, 1}, {5, 1}, {5, 2}, {4, 3}, {3, 4}, {3, 6}}},
+            {'&', {{2, 0}, {3, 0}, {1, 1}, {4, 1}, {1, 2}, {4, 2}, {2, 3}, {3, 3}, {5, 3}, {1, 4}, {4, 4}, {1, 5}, {4, 5}, {2, 6}, {3, 6}, {5, 6}}},
+            {'$', {{3, 0}, {2, 1}, {3, 1}, {4, 1}, {5, 1}, {1, 2}, {3, 2}, {2, 3}, {3, 3}, {4, 3}, {3, 4}, {5, 4}, {1, 5}, {2, 5}, {3, 5}, {4, 5}, {3, 6}}},
           };
           if (character_ != value) {
             if (characters.find(value) == characters.end()) throw std::invalid_argument(strings::format("Only characters : \"{}\" are valid", get_valid_characters()));
