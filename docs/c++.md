@@ -1,4 +1,4 @@
-| [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.forms) | [Project](https://sourceforge.net/projects/formspro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
+| [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd_forms) | [Project](https://sourceforge.net/projects/formspro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
 # C++17
 
@@ -22,14 +22,14 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 * Windows 7 32 or 64 bits or later
 * macOS X 10.13.6 or later
 * Linux (compatible with g++7)
-* Probably others (if a compatible C++17 compiler is supported and if [xtd.form.native](../xtd.forms.native) library is ported)
+* Probably others (if a compatible C++17 compiler is supported and if [xtd.form.native](../src/xtd_forms_native) library is ported)
 
 ## Libraries dependency
 
-xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets/README.md) backend is supported.
+xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../src/xtd_forms_native_wxwidgets/README.md) backend is supported.
 See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
 
-In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../xtd.forms.native.cocoa/README.md) on macOS and [xtd.form.native.gtk3](../xtd.forms.native.gtk3/README.md) on linux. Other backend like [xtd.form.native.qt5](../xtd.forms.native.qt5/README.md) will be ported too.
+In the future xtd.forms will use [xtd.form.native.win32](../src/xtd_forms_native_win32/README.md) on Windows, [xtd.form.native.cocoa](../src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.form.native.gtk3](../src/xtd_forms_native_gtk3/README.md) on linux. Other backend like [xtd.form.native.qt5](../src/xtd_forms_native_qt5/README.md) will be ported too.
 
 ## Compilers
 
