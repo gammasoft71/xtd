@@ -1,4 +1,24 @@
-| [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd.forms) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
+| [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd_forms) | [Project](https://sourceforge.net/projects/tunitpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
+
+# Note
+
+xtd.forms is under development.
+For now, the following procedure is the only way to download and install:
+ 
+1. Install wxWidgets backend :
+  
+   The only [xtd.form.native.wxwidgets](../src/xtd_forms_native_wxwidgets/README.md) backend is supported.
+   See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
+
+2. Clone github repository :
+
+   ```shell
+    git clone https://github.com/gammasoft71/xtd_forms.git
+    ```
+3. build source and install it (on windows you must launch visual studio as administrator to install xtd.form)
+
+4. See [examples](https://github.com/gammasoft71/xtd_forms/blob/master/examples/README.md), [documentation](https://github.com/gammasoft71/xtd_forms/blob/master/docs/home.md) and [Reference guide](https://codedocs.xyz/gammasoft71/xtd.forms/).
+    
 
 # Download the latest stable xtd.forms version
 
@@ -11,15 +31,15 @@ You can download latest stable version on [SourceForge](https://sourceforge.net/
 Or clone latest development version on [GitHub](https://github.com/gammasoft71/xtd.forms).
 
 ```shell
-git clone https://github.com/gammasoft71/xtd.forms.git
+git clone https://github.com/gammasoft71/xtd_forms.git
 ```
 
 # Libraries dependency
 
-xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets/README.md) backend is supported.
+xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../src/xtd_forms_native_wxwidgets/README.md) backend is supported.
 See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
 
-In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../xtd.forms.native.cocoa/README.md) on macOS and [xtd.form.native.gtk3](../xtd.forms.native.gtk3/README.md) on linux. Other backend like [xtd.form.native.qt5](../xtd.forms.native.qt5/README.md) will be ported too.
+In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.form.native.gtk3](../src/xtd_forms_native_gtk3/README.md) on linux. Other backend like [xtd.form.native.qt5](../src/xtd_forms_native_qt5/README.md) will be ported too.
 
 # Installation
 
