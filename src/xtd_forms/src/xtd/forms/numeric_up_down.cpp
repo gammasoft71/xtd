@@ -68,7 +68,7 @@ numeric_up_down& numeric_up_down::value(double value) {
     else
       value_ = value;
     native::numeric_up_down::value(handle_, value_);
-    on_text_changed(event_args::empty);
+    on_value_changed(event_args::empty);
   }
   return *this;
 }
@@ -90,12 +90,22 @@ void numeric_up_down::on_handle_created(const event_args &e) {
   native::numeric_up_down::value(handle_, value_);
 }
 
-void numeric_up_down::on_text_changed(const event_args& e) {
-  value_ = native::numeric_up_down::value(handle_);
-  up_down_base::on_text_changed(e);
-  on_value_changed(event_args::empty);
-}
-
 void numeric_up_down::on_value_changed(const event_args& e) {
   if (this->can_raise_events()) value_changed(*this, e);
+}
+
+
+void numeric_up_down::wnd_proc(message &message) {
+  switch (message.msg()) {
+    case WM_COMMAND: this->wm_command(message); break;
+    default: up_down_base::wnd_proc(message);
+  }
+}
+
+void numeric_up_down::wm_command(message& message) {
+  this->def_wnd_proc(message);
+  if (value_ != native::numeric_up_down::value(handle_)) {
+    value_ = native::numeric_up_down::value(handle_);
+    on_value_changed(event_args::empty);
+  }
 }

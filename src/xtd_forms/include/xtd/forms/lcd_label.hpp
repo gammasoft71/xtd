@@ -555,7 +555,7 @@ namespace xtd {
         return *this;
       }
 
-      int32_t digit_spacing() const {return digit_spacing_.value_or(thickness());}
+      int32_t digit_spacing() const {return digit_spacing_.value_or(lcd_style_ == lcd_style::dot_matrix_display ? 0 : thickness());}
       lcd_label& digit_spacing(int32_t value) {
         if (value < 0) throw std::invalid_argument("value must be positive");
         if (digit_spacing_ != value) {
@@ -586,7 +586,7 @@ namespace xtd {
         return *this;
       }
       
-      int32_t thickness() const {return thickness_.value_or(digits_.size() ? digits_[0]->get_thickness() : 0);}
+      int32_t thickness() const {return thickness_.value_or(digits_.size() ? digits_[0]->get_thickness() : 1);}
       lcd_label& thickness(int32_t value) {
         if (thickness_ != value) {
           thickness_ = value;
@@ -647,7 +647,7 @@ namespace xtd {
           digit->set_background_digit_transparency(background_digit_transparency_);
           digit->set_show_background_digit(show_background_digit_);
           digit->set_segment_style(segment_style_);
-          digit->set_thickness(thickness());
+          if (thickness_.has_value()) digit->set_thickness(thickness());
           offset_left += dynamic_cast<control*>(digit.get())->width() - 2 + digit_spacing();
         }
       }

@@ -327,6 +327,8 @@ constexpr int32_t EN_ALIGN_RTL_EC = 0x0701;
 constexpr int32_t EN_BEFORE_PASTE = 0x0800;
 constexpr int32_t EN_AFTER_PASTE = 0x0801;
 
+constexpr int32_t UDN_DELTAPOS = -722;
+
 inline int16_t HIBYTE(int16_t word) {
   return int8_t((word >> 8) & 0xFF);
 }

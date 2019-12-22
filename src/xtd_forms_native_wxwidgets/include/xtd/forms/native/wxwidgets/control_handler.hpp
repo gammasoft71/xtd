@@ -19,6 +19,7 @@
 #include <wx/gauge.h>
 #include <wx/radiobut.h>
 #include <wx/slider.h>
+#include <wx/spinctrl.h>
 #include <wx/textctrl.h>
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
@@ -45,6 +46,15 @@ namespace xtd {
         }
         
       private:
+        static std::string to_string(const wxEventType& eventType) {
+          static std::map<wxEventType, std::string> eventTypes {{wxEVT_NULL, "EVT_NULL"}, {wxEVT_BUTTON, "wxEVT_BUTTON"}, {wxEVT_CHECKBOX, "wxEVT_CHECKBOX"}, {wxEVT_CHOICE, "wxEVT_CHOICE"}, {wxEVT_LISTBOX, "wxEVT_LISTBOX"}, {wxEVT_LISTBOX_DCLICK, "wxEVT_LISTBOX_DCLICK"}, {wxEVT_CHECKLISTBOX, "wxEVT_CHECKLISTBOX"}, {wxEVT_MENU, "wxEVT_MENU"}, {wxEVT_SLIDER, "wxEVT_SLIDER"}, {wxEVT_RADIOBOX, "wxEVT_RADIOBOX"}, {wxEVT_RADIOBUTTON, "wxEVT_RADIOBUTTON"}, {wxEVT_SCROLLBAR, "wxEVT_SCROLLBAR"}, {wxEVT_VLBOX, "wxEVT_VLBOX"}, {wxEVT_COMBOBOX, "wxEVT_COMBOBOX"}, {wxEVT_TOOL_RCLICKED, "wxEVT_TOOL_RCLICKED"}, {wxEVT_TOOL_DROPDOWN, "wxEVT_TOOL_DROPDOWN"}, {wxEVT_TOOL_ENTER, "wxEVT_TOOL_ENTER"}, {wxEVT_COMBOBOX_DROPDOWN, "wxEVT_COMBOBOX_DROPDOWN"}, {wxEVT_COMBOBOX_CLOSEUP, "wxEVT_COMBOBOX_CLOSEUP"}, {wxEVT_THREAD, "wxEVT_THREAD"}, {wxEVT_ASYNC_METHOD_CALL, "wxEVT_ASYNC_METHOD_CALL"}, {wxEVT_LEFT_DOWN, "wxEVT_LEFT_DOWN"}, {wxEVT_LEFT_UP, "wxEVT_LEFT_UP"}, {wxEVT_MIDDLE_DOWN, "wxEVT_MIDDLE_DOWN"}, {wxEVT_MIDDLE_UP, "wxEVT_MIDDLE_UP"}, {wxEVT_RIGHT_DOWN, "wxEVT_RIGHT_DOWN"}, {wxEVT_RIGHT_UP, "wxEVT_RIGHT_UP"}, {wxEVT_MOTION, "wxEVT_MOTION"}, {wxEVT_ENTER_WINDOW, "wxEVT_ENTER_WINDOW"}, {wxEVT_LEAVE_WINDOW, "wxEVT_LEAVE_WINDOW"}, {wxEVT_LEFT_DCLICK, "wxEVT_LEFT_DCLICK"}, {wxEVT_MIDDLE_DCLICK, "wxEVT_MIDDLE_DCLICK"}, {wxEVT_RIGHT_DCLICK, "wxEVT_RIGHT_DCLICK"}, {wxEVT_SET_FOCUS, "wxEVT_SET_FOCUS"}, {wxEVT_KILL_FOCUS, "wxEVT_KILL_FOCUS"}, {wxEVT_CHILD_FOCUS, "wxEVT_CHILD_FOCUS"}, {wxEVT_MOUSEWHEEL, "wxEVT_MOUSEWHEEL"}, {wxEVT_AUX1_DOWN, "wxEVT_AUX1_DOWN"}, {wxEVT_AUX1_UP, "wxEVT_AUX1_UP"}, {wxEVT_AUX1_DCLICK, "wxEVT_AUX1_DCLICK"}, {wxEVT_AUX2_DOWN, "wxEVT_AUX2_DOWN"}, {wxEVT_AUX2_UP, "wxEVT_AUX2_UP"}, {wxEVT_AUX2_DCLICK, "wxEVT_AUX2_DCLICK"}, {wxEVT_MAGNIFY, "wxEVT_MAGNIFY"}, {wxEVT_CHAR, "wxEVT_CHAR"}, {wxEVT_CHAR_HOOK, "wxEVT_CHAR_HOOK"}, {wxEVT_NAVIGATION_KEY, "wxEVT_NAVIGATION_KEY"}, {wxEVT_KEY_DOWN, "wxEVT_KEY_DOWN"}, {wxEVT_KEY_UP, "wxEVT_KEY_UP"}, {wxEVT_HOTKEY, "wxEVT_HOTKEY"}, {wxEVT_AFTER_CHAR, "wxEVT_AFTER_CHAR"}, {wxEVT_SET_CURSOR, "wxEVT_SET_CURSOR"}, {wxEVT_SCROLL_TOP, "wxEVT_SCROLL_TOP"}, {wxEVT_SCROLL_BOTTOM, "wxEVT_SCROLL_BOTTOM"}, {wxEVT_SCROLL_LINEUP, "wxEVT_SCROLL_LINEUP"}, {wxEVT_SCROLL_LINEDOWN, "wxEVT_SCROLL_LINEDOWN"}, {wxEVT_SCROLL_PAGEUP, "wxEVT_SCROLL_PAGEUP"}, {wxEVT_SCROLL_PAGEDOWN, "wxEVT_SCROLL_PAGEDOWN"}, {wxEVT_SCROLL_THUMBTRACK, "wxEVT_SCROLL_THUMBTRACK"}, {wxEVT_SCROLL_THUMBRELEASE, "wxEVT_SCROLL_THUMBRELEASE"}, {wxEVT_SCROLL_CHANGED, "wxEVT_SCROLL_CHANGED"}, {wxEVT_SPIN_UP, "wxEVT_SPIN_UP"}, {wxEVT_SPIN_DOWN, "wxEVT_SPIN_DOWN"}, {wxEVT_SPIN, "wxEVT_SPIN"}, {wxEVT_SCROLLWIN_TOP, "wxEVT_SCROLLWIN_TOP"}, {wxEVT_SCROLLWIN_BOTTOM, "wxEVT_SCROLLWIN_BOTTOM"}, {wxEVT_SCROLLWIN_LINEUP, "wxEVT_SCROLLWIN_LINEUP"}, {wxEVT_SCROLLWIN_LINEDOWN, "wxEVT_SCROLLWIN_LINEDOWN"}, {wxEVT_SCROLLWIN_PAGEUP, "wxEVT_SCROLLWIN_PAGEUP"}, {wxEVT_SCROLLWIN_PAGEDOWN, "wxEVT_SCROLLWIN_PAGEDOWN"}, {wxEVT_SCROLLWIN_THUMBTRACK, "wxEVT_SCROLLWIN_THUMBTRACK"}, {wxEVT_SCROLLWIN_THUMBRELEASE, "wxEVT_SCROLLWIN_THUMBRELEASE"}, {wxEVT_SCROLL_CHANGED, "wxEVT_SCROLL_CHANGED"}, {wxEVT_GESTURE_PAN, "wxEVT_GESTURE_PAN"}, {wxEVT_GESTURE_ZOOM, "wxEVT_GESTURE_ZOOM"}, {wxEVT_GESTURE_ROTATE, "wxEVT_GESTURE_ROTATE"}, {wxEVT_TWO_FINGER_TAP, "wxEVT_TWO_FINGER_TAP"}, {wxEVT_LONG_PRESS, "wxEVT_LONG_PRESS"}, {wxEVT_PRESS_AND_TAP, "wxEVT_PRESS_AND_TAP"}, {wxEVT_SIZE, "wxEVT_SIZE"}, {wxEVT_MOVE, "wxEVT_MOVE"}, {wxEVT_CLOSE_WINDOW, "wxEVT_CLOSE_WINDOW"}, {wxEVT_END_SESSION, "wxEVT_END_SESSION"}, {wxEVT_QUERY_END_SESSION, "wxEVT_QUERY_END_SESSION"}, {wxEVT_ACTIVATE_APP, "wxEVT_ACTIVATE_APP"}, {wxEVT_ACTIVATE, "wxEVT_ACTIVATE"}, {wxEVT_CREATE, "wxEVT_CREATE"}, {wxEVT_DESTROY, "wxEVT_DESTROY"}, {wxEVT_SHOW, "wxEVT_SHOW"}, {wxEVT_ICONIZE, "wxEVT_ICONIZE"}, {wxEVT_MAXIMIZE, "wxEVT_MAXIMIZE"}, {wxEVT_MOUSE_CAPTURE_CHANGED, "wxEVT_MOUSE_CAPTURE_CHANGED"}, {wxEVT_MOUSE_CAPTURE_LOST, "wxEVT_MOUSE_CAPTURE_LOST"}, {wxEVT_PAINT, "wxEVT_PAINT"}, {wxEVT_ERASE_BACKGROUND, "wxEVT_ERASE_BACKGROUND"}, {wxEVT_NC_PAINT, "wxEVT_NC_PAINT"}, {wxEVT_MENU_OPEN, "wxEVT_MENU_OPEN"}, {wxEVT_MENU_CLOSE, "wxEVT_MENU_CLOSE"}, {wxEVT_MENU_HIGHLIGHT, "wxEVT_MENU_HIGHLIGHT"}, {wxEVT_CONTEXT_MENU, "wxEVT_CONTEXT_MENU"}, {wxEVT_SYS_COLOUR_CHANGED, "wxEVT_SYS_COLOUR_CHANGED"}, {wxEVT_DISPLAY_CHANGED, "wxEVT_DISPLAY_CHANGED"}, {wxEVT_QUERY_NEW_PALETTE, "wxEVT_QUERY_NEW_PALETTE"}, {wxEVT_PALETTE_CHANGED, "wxEVT_PALETTE_CHANGED"}, {wxEVT_JOY_BUTTON_DOWN, "wxEVT_JOY_BUTTON_DOWN"}, {wxEVT_JOY_BUTTON_UP, "wxEVT_JOY_BUTTON_UP"}, {wxEVT_JOY_MOVE, "wxEVT_JOY_MOVE"}, {wxEVT_JOY_ZMOVE, "wxEVT_JOY_ZMOVE"}, {wxEVT_DROP_FILES, "wxEVT_DROP_FILES"}, {wxEVT_INIT_DIALOG, "wxEVT_INIT_DIALOG"}, {wxEVT_IDLE, "wxEVT_IDLE"}, {wxEVT_UPDATE_UI, "wxEVT_UPDATE_UI"}, {wxEVT_SIZING, "wxEVT_SIZING"}, {wxEVT_MOVING, "wxEVT_MOVING"}, {wxEVT_MOVE_START, "wxEVT_MOVE_START"}, {wxEVT_MOVE_END, "wxEVT_MOVE_END"}, {wxEVT_HIBERNATE, "wxEVT_HIBERNATE"}, {wxEVT_TEXT_COPY, "wxEVT_TEXT_COPY"}, {wxEVT_TEXT_CUT, "wxEVT_TEXT_CUT"}, {wxEVT_TEXT_PASTE, "wxEVT_TEXT_PASTE"}, {wxEVT_COMMAND_LEFT_CLICK, "wxEVT_COMMAND_LEFT_CLICK"}, {wxEVT_COMMAND_LEFT_DCLICK, "wxEVT_COMMAND_LEFT_DCLICK"}, {wxEVT_COMMAND_RIGHT_CLICK, "wxEVT_COMMAND_RIGHT_CLICK"}, {wxEVT_COMMAND_RIGHT_DCLICK, "wxEVT_COMMAND_RIGHT_DCLICK"}, {wxEVT_COMMAND_SET_FOCUS, "wxEVT_COMMAND_SET_FOCUS"}, {wxEVT_COMMAND_KILL_FOCUS, "wxEVT_COMMAND_KILL_FOCUS"}, {wxEVT_COMMAND_ENTER, "wxEVT_COMMAND_ENTER"}, {wxEVT_HELP, "wxEVT_HELP"}, {wxEVT_DETAILED_HELP, "wxEVT_DETAILED_HELP"},};
+          return strings::format("{} (0x{:X})", eventTypes.find(eventType) == eventTypes.end() ? "<Unknown>" : eventTypes[eventType], eventType);
+        }
+
+        static std::string to_string(const wxEvent& event) {
+          return strings::format("{} {{type={}, id={}}}", strings::full_class_name(event), to_string(event.GetEventType()), event.GetId());
+        }
+
         void def_process_event(wxEvent& event) {
           process_result_ = def_wnd_proc(0, 0, 0, 0, 0, reinterpret_cast<intptr_t>(&event));
         }
@@ -55,7 +65,7 @@ namespace xtd {
         }
         
         bool is_command_event(wxEventType event_type) const {
-          static std::set<wxEventType> event_types = {wxEVT_BUTTON, wxEVT_CHECKBOX, wxEVT_CHOICE, wxEVT_LISTBOX, wxEVT_LISTBOX_DCLICK, wxEVT_CHECKLISTBOX, wxEVT_MENU, wxEVT_SLIDER, wxEVT_RADIOBOX, wxEVT_RADIOBUTTON, wxEVT_SCROLLBAR, wxEVT_VLBOX, wxEVT_COMBOBOX, wxEVT_TOOL_RCLICKED, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_COMBOBOX_DROPDOWN, wxEVT_COMBOBOX_CLOSEUP};
+          static std::set<wxEventType> event_types = {wxEVT_BUTTON, wxEVT_CHECKBOX, wxEVT_CHOICE, wxEVT_LISTBOX, wxEVT_LISTBOX_DCLICK, wxEVT_CHECKLISTBOX, wxEVT_MENU, wxEVT_SLIDER, wxEVT_SPINCTRLDOUBLE, wxEVT_RADIOBOX, wxEVT_RADIOBUTTON, wxEVT_SCROLLBAR, wxEVT_VLBOX, wxEVT_COMBOBOX, wxEVT_TOOL_RCLICKED, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_COMBOBOX_DROPDOWN, wxEVT_COMBOBOX_CLOSEUP};
           return event_types.find(event_type) != event_types.end();
         }
         
@@ -387,6 +397,7 @@ namespace xtd {
       
       template<typename control_t>
       inline bool control_wrapper<control_t>::ProcessEvent(wxEvent& event) {
+        //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, strings::format("control_wrapper<{}>::ProcessEvent {}", strings::full_class_name<control_t>(), to_string(event)));
         if (event.GetEventType() == wxEVT_DESTROY) {
           def_process_event(event);
           return process_result_;
@@ -433,6 +444,7 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_LISTBOX) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_RADIOBUTTON) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SLIDER) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSL_VERTICAL) == wxSL_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBPOSITION, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_SPINCTRLDOUBLE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, UDN_DELTAPOS, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_TOGGLEBUTTON) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else def_process_event(event);
       }

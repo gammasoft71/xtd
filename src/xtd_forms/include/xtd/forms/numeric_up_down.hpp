@@ -56,9 +56,12 @@ namespace xtd {
       /// @param e A EventArgs that contains the event data.
       void on_handle_created(const event_args& e) override;
 
-      void on_text_changed(const event_args& e) override;
-      
       virtual void on_value_changed(const event_args& e);
+
+      /// @cond
+      void wnd_proc(message& message) override;
+      void wm_command(message& message);
+      /// @endcond
 
       int32_t decimal_place_ = 0;
       double increment_ = 1.0;
