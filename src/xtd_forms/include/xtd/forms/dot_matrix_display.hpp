@@ -36,15 +36,24 @@ namespace xtd {
 
       virtual const std::vector<std::vector<bool>>& dots() const {return dots_;}
 
-      virtual int32_t dot_count() const {return dot_count_;}
-      virtual void dot_count(int32_t dot_count) {
-        if (dot_count_ != dot_count) {
-          dot_count_ = dot_count;
-          dots_ = std::vector<std::vector<bool>>(dot_count_, std::vector<bool>(dot_count_, false));
+      virtual int32_t dot_height() const {return dot_height_;}
+      virtual void dot_height(int32_t value) {
+        if (dot_height_ != value) {
+          dot_height_ = value;
+          dots_ = std::vector<std::vector<bool>>(dot_width_, std::vector<bool>(dot_height_, false));
           invalidate();
         }
       }
-      
+
+      virtual int32_t dot_width() const {return dot_width_;}
+      virtual void dot_width(int32_t value) {
+        if (dot_width_ != value) {
+          dot_width_ = value;
+          dots_ = std::vector<std::vector<bool>>(dot_width_, std::vector<bool>(dot_height_, false));
+          invalidate();
+        }
+      }
+
       virtual void dots(const dot_collection& dots) {
         set_all_dots(false);
         this->dots(dots, true);
@@ -73,7 +82,7 @@ namespace xtd {
         return *this;
       }
 
-      virtual int32_t thickness() const {return thickness_.value_or(size_.height() < (dot_count_ * 2) ? 1 : (size_.height() - dot_count_) / dot_count_);}
+      virtual int32_t thickness() const {return thickness_.value_or(size_.height() < (dot_height_ * 2) ? 1 : (size_.height() - dot_height_) / dot_height_);}
       virtual dot_matrix_display& thickness(int32_t value) {
         if (!thickness_.has_value() || thickness_.value() != value) {
           thickness_ = value;
@@ -147,8 +156,9 @@ namespace xtd {
       }
 
       /// @cond
-      int32_t dot_count_ = 7;
-      std::vector<std::vector<bool>> dots_ = std::vector<std::vector<bool>>(dot_count_, std::vector<bool>(dot_count_, false));
+      int32_t dot_height_ = 7;
+      int32_t dot_width_ = 7;
+      std::vector<std::vector<bool>> dots_ = std::vector<std::vector<bool>>(dot_width_, std::vector<bool>(dot_height_, false));
       bool show_background_dot_ = true;
       std::optional<drawing::color> background_dot_color_;
       double background_dot_transparency_ = 0.05;
