@@ -12,7 +12,7 @@ namespace examples {
       
       test_zone.parent(*this);
       test_zone.location({10, 50});
-      test_zone.back_color(color::blue);
+      test_zone.back_color(color::red);
       test_zone.border_style(border_style::fixed_3d);
 
       color_picker.parent(*this);

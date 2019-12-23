@@ -9,7 +9,7 @@ namespace examples {
   public:
     form_lcd_label() {
       auto_scroll(true);
-      client_size({500, 200});
+      client_size({700, 350});
       choice_lcd_style.location({10, 10});
       choice_lcd_style.items().push_back_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
       choice_lcd_style.selected_value_changed += [this] {
@@ -39,18 +39,28 @@ namespace examples {
         label.fore_color(color_picker_up_down_fore_color.color());
       };
       
+      check_box_show_digit_background.location({500, 10});
+      check_box_show_digit_background.parent(*this);
+      check_box_show_digit_background.auto_size(true);
+      check_box_show_digit_background.checked(true);
+      check_box_show_digit_background.text("Show background digit");
+      check_box_show_digit_background.checked_changed += [this] {
+        label.show_background_digit(check_box_show_digit_background.checked());
+      };
+      
       label.location({10, 45});
       label.text(label.valid_characters());
       label.auto_size(true);
 
       text("LCD label example");
-      controls().push_back_range({choice_lcd_style, choice_segment_style, numeric_up_down_height, color_picker_up_down_fore_color, label});
+      controls().push_back_range({choice_lcd_style, choice_segment_style, numeric_up_down_height, color_picker_up_down_fore_color, check_box_show_digit_background, label});
     }
   private:
     choice choice_lcd_style;
     choice choice_segment_style;
     numeric_up_down numeric_up_down_height;
     color_picker color_picker_up_down_fore_color;
+    check_box check_box_show_digit_background;
     lcd_label label;
   };
 }
