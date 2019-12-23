@@ -1,5 +1,6 @@
 #include <xtd/xtd.forms>
 
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -23,7 +24,7 @@ namespace examples {
     }
     
   private:
-    color_picker color_picker;
+    forms::color_picker color_picker;
     panel test_zone;
   };
 }
