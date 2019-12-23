@@ -1,6 +1,7 @@
 #if defined(__APPLE__)
 #include <xtd/forms/native/button.hpp>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_color_picker.hpp"
 #include <Quartz/Quartz.h>
 
 using namespace xtd::forms::native;

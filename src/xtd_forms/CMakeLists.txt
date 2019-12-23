@@ -31,6 +31,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/choice.hpp
   include/xtd/forms/close_reason.hpp
   include/xtd/forms/color_dialog.hpp
+  include/xtd/forms/color_picker.hpp
   include/xtd/forms/combo_box.hpp
   include/xtd/forms/combo_box_style.hpp
   include/xtd/forms/common_dialog.hpp
@@ -148,6 +149,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/checked_list_box.cpp
   src/xtd/forms/choice.cpp
   src/xtd/forms/color_dialog.cpp
+  src/xtd/forms/color_picker.cpp
   src/xtd/forms/combo_box.cpp
   src/xtd/forms/container_control.cpp
   src/xtd/forms/context_menu.cpp

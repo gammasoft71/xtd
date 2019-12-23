@@ -27,6 +27,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/choice.hpp
   include/xtd/forms/native/class_styles.hpp
   include/xtd/forms/native/color_dialog.hpp
+  include/xtd/forms/native/color_picker.hpp
   include/xtd/forms/native/combo_box.hpp
   include/xtd/forms/native/combo_box_styles.hpp
   include/xtd/forms/native/context_menu.hpp

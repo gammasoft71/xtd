@@ -37,6 +37,7 @@ namespace examples {
       label.text(label.valid_characters());
       label.auto_size(true);
 
+      text("LCD label example");
       controls().push_back_range({choice_lcd_style, choice_segment_style, numeric_up_down_height, label});
     }
   private:

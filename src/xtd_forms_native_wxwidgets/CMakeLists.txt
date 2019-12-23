@@ -13,6 +13,7 @@ set(XTD_INCLUDES
   include/xtd/forms/native/wxwidgets/wx_check_box.hpp
   include/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp
   include/xtd/forms/native/wxwidgets/wx_choice.hpp
+  include/xtd/forms/native/wxwidgets/wx_color_picker.hpp
   include/xtd/forms/native/wxwidgets/wx_combo_box.hpp
   include/xtd/forms/native/wxwidgets/wx_control.hpp
   include/xtd/forms/native/wxwidgets/wx_domain_up_down.hpp
@@ -41,6 +42,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/checked_list_box.cpp
   src/xtd/forms/native/wxwidgets/choice.cpp
   src/xtd/forms/native/wxwidgets/color_dialog.cpp
+  src/xtd/forms/native/wxwidgets/color_picker.cpp
   src/xtd/forms/native/wxwidgets/combo_box.cpp
   src/xtd/forms/native/wxwidgets/context_menu.cpp
   src/xtd/forms/native/wxwidgets/control.cpp

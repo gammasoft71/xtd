@@ -31,6 +31,7 @@
 #include "xtd/forms/choice.hpp"
 #include "xtd/forms/close_reason.hpp"
 #include "xtd/forms/color_dialog.hpp"
+#include "xtd/forms/color_picker.hpp"
 #include "xtd/forms/combo_box.hpp"
 #include "xtd/forms/combo_box_style.hpp"
 #include "xtd/forms/common_dialog.hpp"
