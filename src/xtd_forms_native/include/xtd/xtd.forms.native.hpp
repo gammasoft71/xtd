@@ -15,6 +15,7 @@
 #include "forms/native/checked_list_box.hpp"
 #include "forms/native/choice.hpp"
 #include "forms/native/color_dialog.hpp"
+#include "forms/native/color_picker.hpp"
 #include "forms/native/combo_box.hpp"
 #include "forms/native/content_alignment.hpp"
 #include "forms/native/control.hpp"
