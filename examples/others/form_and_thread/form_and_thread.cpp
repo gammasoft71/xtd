@@ -1,4 +1,3 @@
-#include <thread>
 #include <xtd/xtd.forms>
 
 using namespace std::literals;
@@ -18,7 +17,7 @@ int main() {
   list_box.parent(form_main);
   list_box.dock(dock_style::fill);
   
-  std::vector<std::thread> threads(environment::processor_count());
+  std::vector<std::thread> threads(std::thread::hardware_concurrency());
   for (int index = 0; index < threads.size(); index++) {
     threads[index] = std::thread([&](int user_thread_id) {
       int counter = 0;
