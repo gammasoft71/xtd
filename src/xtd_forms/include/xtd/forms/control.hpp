@@ -59,11 +59,6 @@ namespace xtd {
     class control : public component, public iwin32_window {
     protected:
       /// @cond
-      struct invoker {
-        delegate<void(std::vector<std::any>)> invoke;
-        std::vector<std::any> args;
-      };
-      
       enum class state {
         empty = 0,
         creating = 0b1,
@@ -114,7 +109,8 @@ namespace xtd {
       
     public:
       class async_result_invoke {
-        async_result_invoke(const async_result_invoke&) = default;
+      public:
+        async_result_invoke(const async_result_invoke& rh) = default;
         async_result_invoke& operator=(const async_result_invoke&) = default;
         
         std::condition_variable& async_condition_variable() {return *async_condition_variable_;}
@@ -123,6 +119,8 @@ namespace xtd {
         async_result_invoke() = default;
         friend class control;
         std::shared_ptr<std::condition_variable> async_condition_variable_ = std::make_shared<std::condition_variable>();
+        std::shared_ptr<std::mutex> async_mutex_ = std::make_shared<std::mutex>();
+        std::shared_ptr<bool> async_ready_ = std::make_shared<bool>(false);
       };
       /// @brief Represents a collection of controls.
       using control_collection = layout::arranged_element_collection<control_ref>;

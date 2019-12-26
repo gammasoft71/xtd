@@ -37,6 +37,7 @@ void application::cleanup() {
 
 void application::do_events() {
   initialize(); // Must be first
+
   wxTheApp->ProcessPendingEvents();
 }
 

@@ -21,7 +21,7 @@ public:
         int counter = 0;
         while (!closed) {
           /// simulate work...
-          //std::this_thread::sleep_for(20ms);
+          std::this_thread::sleep_for(20ms);
           counter++;
           /// call invoke method to update ui in the main thread.
           list_box.invoke([=] {
@@ -36,7 +36,8 @@ public:
 private:
   xtd::forms::list_box list_box;
   bool closed = false;
-  std::vector<std::thread> threads {std::thread::hardware_concurrency()};
+  //std::vector<std::thread> threads {std::thread::hardware_concurrency()};
+  std::vector<std::thread> threads {1};
 };
 
 int main() {
