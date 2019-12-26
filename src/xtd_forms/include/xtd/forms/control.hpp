@@ -61,8 +61,6 @@ namespace xtd {
       /// @cond
       struct invoker {
         delegate<void(std::vector<std::any>)> invoke;
-        std::thread::id thread_id;
-        std::shared_ptr<std::condition_variable> condition_variable_invoked;
         std::vector<std::any> args;
       };
       
@@ -115,6 +113,17 @@ namespace xtd {
       /// @endcond
       
     public:
+      class async_result_invoke {
+        async_result_invoke(const async_result_invoke&) = default;
+        async_result_invoke& operator=(const async_result_invoke&) = default;
+        
+        std::condition_variable& async_condition_variable() {return *async_condition_variable_;}
+        
+      private:
+        async_result_invoke() = default;
+        friend class control;
+        std::shared_ptr<std::condition_variable> async_condition_variable_ = std::make_shared<std::condition_variable>();
+      };
       /// @brief Represents a collection of controls.
       using control_collection = layout::arranged_element_collection<control_ref>;
       
@@ -508,7 +517,21 @@ namespace xtd {
       
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
 
-      void invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
+      async_result_invoke begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args);
+      
+      async_result_invoke begin_invoke(delegate<void()> value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      
+      void end_invoke(async_result_invoke async);
+      
+      /// @cond
+      template<typename delegate_t>
+      async_result_invoke begin_invoke(delegate_t value, const std::vector<std::any>& args) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), args);}
+      
+      template<typename delegate_t>
+      async_result_invoke begin_invoke(delegate_t value) {return begin_invoke(delegate<void(std::vector<std::any>)>(value), {});}
+      /// @endcond
+
+      void invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {end_invoke(begin_invoke(value, args));}
       
       void invoke(delegate<void()> value) {invoke(delegate<void(std::vector<std::any>)>(value), {});}
 
@@ -834,9 +857,8 @@ namespace xtd {
       /// @endcond
       
     private:
-      static std::mutex mutex_invokers_access;
-      static std::list<invoker> invokers;
-      static std::shared_ptr<timer> timer_invoke;
+      std::unique_ptr<std::mutex> mutex_invokers_access = std::make_unique<std::mutex>();
+      std::list<std::tuple<delegate<void(std::vector<std::any>)>, std::vector<std::any>>> invokers;
       void do_layout_parent();
       void do_layout();
       void on_parent_size_changed(const control& sender, const event_args& e);

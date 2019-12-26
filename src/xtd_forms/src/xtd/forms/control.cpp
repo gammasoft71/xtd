@@ -46,9 +46,6 @@ namespace {
 forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
-std::mutex control::mutex_invokers_access;
-std::list<control::invoker> control::invokers;
-std::shared_ptr<timer> control::timer_invoke;
 
 control::control() {
   native::control::init();
@@ -318,16 +315,16 @@ bool control::is_handle_created() const {
   return this->handle_ != 0;
 }
 
-void control::invoke(delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args) {
-  if (!application::message_loop()) return;
-  std::shared_ptr<std::condition_variable> condition_variable_invoked = std::make_shared<std::condition_variable>();
-  /*lock*/ {
-    std::lock_guard<std::mutex> lock(mutex_invokers_access);
-    invokers.push_back({invoker, std::this_thread::get_id(), condition_variable_invoked, args});
-  }
+control::async_result_invoke control::begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {
+  async_result_invoke async;
+  native::control::invoke(handle_, value, args, async.async_condition_variable_);
+  return async;
+}
+
+void control::end_invoke(async_result_invoke async) {
   std::mutex mutex_invoked;
   std::unique_lock<std::mutex> lock_invoked(mutex_invoked);
-  condition_variable_invoked->wait(lock_invoked);
+  async.async_condition_variable().wait(lock_invoked);
 }
 
 forms::create_params control::create_params() const {
