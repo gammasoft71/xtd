@@ -109,19 +109,19 @@ int main() {
     progress.show_dialog();
   };
    */
-  
-  panel test_zone;
-  test_zone.location({10, 50});
-  test_zone.parent(form_main);
-  test_zone.border_style(forms::border_style::fixed_3d);
-  
-  color_picker cp;
-  cp.location({10, 10});
-  cp.parent(form_main);
-  cp.color(test_zone.back_color());
-  cp.color_changed += [&] {
-    test_zone.back_color(cp.color());
-  };
 
+  button btn;
+  btn.parent(form_main);
+  btn.click += [&] {
+    for (int i = 0; i < 2; i++) {
+      btn.invoke([] {
+        static int counter = 0;
+        cdebug << format("time {}, counter {}", std::chrono::system_clock::now().time_since_epoch(), ++counter) << std::endl;
+      });
+      std::this_thread::sleep_for(std::chrono::milliseconds(5));
+    }
+  };
+  
+  
   application::run(form_main);
 }

@@ -1,4 +1,5 @@
 #include <codecvt>
+#include <chrono>
 #include <map>
 #include <stdexcept>
 #include <xtd/drawing/system_colors.hpp>
@@ -37,7 +38,12 @@
 #include <wx/font.h>
 #include <wx/settings.h>
 
+using namespace std::literals;
+using namespace std::chrono;
+
 namespace {
+  std::mutex invoke_time_points_access;
+  std::map<intptr_t, system_clock::duration> invoke_time_points;
 #if defined (__WXGTK__)
   static bool is_window_manager_ready = false;
 
@@ -292,6 +298,15 @@ void control::font(intptr_t control, const drawing::font& font) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
+
+void control::invoke(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::condition_variable> invoke_condition_variable) {
+  if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
+    invoker(args);
+    invoke_condition_variable->notify_all();
+  });
+  std::this_thread::yield();
+ }
 
 point control::location(intptr_t control) {
   if (control == 0) return {};
