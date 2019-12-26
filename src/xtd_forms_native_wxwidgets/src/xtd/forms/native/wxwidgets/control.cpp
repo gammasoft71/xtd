@@ -299,13 +299,13 @@ void control::font(intptr_t control, const drawing::font& font) {
   reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
 
-void control::invoke(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::condition_variable> invoke_condition_variable) {
+void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::condition_variable> invoke_condition_variable, std::shared_ptr<bool> invoked) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
     invoker(args);
     invoke_condition_variable->notify_all();
+    *invoked = true;
   });
-  std::this_thread::yield();
  }
 
 point control::location(intptr_t control) {

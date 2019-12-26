@@ -40,7 +40,7 @@ namespace xtd {
         static void fore_color(intptr_t control, const drawing::color& color);
         static drawing::font font(intptr_t control);
         static void font(intptr_t control, const drawing::font& font);
-        static void invoke(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::condition_variable>);
+        static void invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::condition_variable> invoke_condition_variable, std::shared_ptr<bool> invoked);
         static drawing::point location(intptr_t control);
         static void location(intptr_t control, const drawing::point& location);
         static drawing::size size(intptr_t control);
