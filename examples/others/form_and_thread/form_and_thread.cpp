@@ -21,7 +21,7 @@ public:
         int counter = 0;
         while (!closed) {
           /// simulate work...
-          std::this_thread::sleep_for(20ms);
+          std::this_thread::sleep_for(5ms);
           counter++;
           /// call invoke method to update ui in the main thread.
           list_box.invoke([=] {
