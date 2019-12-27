@@ -299,14 +299,13 @@ void control::font(intptr_t control, const drawing::font& font) {
   reinterpret_cast<control_handler*>(control)->control()->SetFont(*reinterpret_cast<wxFont*>(font.handle()));
 }
 
-void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::mutex> invoke_mutex) {
+void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::mutex> invoked) {
   if (control == 0 || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) {
-    invoke_mutex->unlock();
+    invoked->unlock();
   } else {
     reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
       invoker(args);
-      //cdebug << "Notify invoke end" << std::endl;
-      invoke_mutex->unlock();
+      invoked->unlock();
     });
   }
  }

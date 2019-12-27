@@ -35,24 +35,22 @@ public:
     label_buttons.location({10, 83});
     label_buttons.parent(*this);
 
-    combo_box_buttons.items().push_back_range({{"ok", message_box_buttons::ok}, {"ok_cancel", message_box_buttons::ok_cancel}, {"abort_retry_ignore", message_box_buttons::abort_retry_ignore}, {"yes_no_cancel", message_box_buttons::yes_no_cancel}, {"yes_no", message_box_buttons::yes_no}, {"retry_cancel", message_box_buttons::retry_cancel}});
-    combo_box_buttons.drop_down_style(combo_box_style::drop_down_list);
-    combo_box_buttons.selected_index(0);
-    combo_box_buttons.location({90, 80});
-    combo_box_buttons.parent(*this);
-    combo_box_buttons.width(200);
+    choice_buttons.items().push_back_range({{"ok", message_box_buttons::ok}, {"ok_cancel", message_box_buttons::ok_cancel}, {"abort_retry_ignore", message_box_buttons::abort_retry_ignore}, {"yes_no_cancel", message_box_buttons::yes_no_cancel}, {"yes_no", message_box_buttons::yes_no}, {"retry_cancel", message_box_buttons::retry_cancel}});
+    choice_buttons.selected_index(0);
+    choice_buttons.location({90, 80});
+    choice_buttons.parent(*this);
+    choice_buttons.width(200);
     
     label_icons.text("Icons : ");
     label_icons.auto_size(true);
     label_icons.location({10, 118});
     label_icons.parent(*this);
 
-    combo_box_icons.items().push_back_range({{"none", message_box_icon::none}, {"hand", message_box_icon::hand}, {"stop", message_box_icon::stop}, {"error", message_box_icon::error}, {"question", message_box_icon::question}, {"exclamation", message_box_icon::exclamation}, {"warning", message_box_icon::warning}, {"asterisk", message_box_icon::asterisk}, {"information", message_box_icon::information}});
-    combo_box_icons.drop_down_style(combo_box_style::drop_down_list);
-    combo_box_icons.selected_index(0);
-    combo_box_icons.location({90, 115});
-    combo_box_icons.parent(*this);
-    combo_box_icons.width(200);
+    choice_icons.items().push_back_range({{"none", message_box_icon::none}, {"hand", message_box_icon::hand}, {"stop", message_box_icon::stop}, {"error", message_box_icon::error}, {"question", message_box_icon::question}, {"exclamation", message_box_icon::exclamation}, {"warning", message_box_icon::warning}, {"asterisk", message_box_icon::asterisk}, {"information", message_box_icon::information}});
+    choice_icons.selected_index(0);
+    choice_icons.location({90, 115});
+    choice_icons.parent(*this);
+    choice_icons.width(200);
 
     button_try_it.text("Try it");
     button_try_it.location({10, 150});
@@ -60,7 +58,7 @@ public:
     button_try_it.parent(*this);
     button_try_it.click += [this] {
       label_dialog_result.text("result = ");
-      forms::dialog_result result = message_box::show(*this, text_message.text(), text_caption.text(), any_cast<message_box_buttons>(combo_box_buttons.selected_item().tag()), any_cast<message_box_icon>(combo_box_icons.selected_item().tag()));
+      forms::dialog_result result = message_box::show(*this, text_message.text(), text_caption.text(), any_cast<message_box_buttons>(choice_buttons.selected_item().tag()), any_cast<message_box_icon>(choice_icons.selected_item().tag()));
       label_dialog_result.text(strings::format("result = {}", result));
     };
 
@@ -76,9 +74,9 @@ private:
   label label_message;
   text_box text_message;
   label label_buttons;
-  combo_box combo_box_buttons;
+  choice choice_buttons;
   label label_icons;
-  combo_box combo_box_icons;
+  choice choice_icons;
   button button_try_it;
   label label_dialog_result;
 };

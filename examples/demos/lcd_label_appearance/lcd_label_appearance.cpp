@@ -16,13 +16,25 @@ namespace examples {
         label.text("");
         label.lcd_style(std::any_cast<lcd_style>(choice_lcd_style.selected_item().tag()));
         label.text(label.valid_characters());
+        choice_segment_style.items().clear();
+        if (choice_lcd_style.selected_item().value() == "Dot matrix display") {
+          choice_segment_style.items().push_back_range({{"Standard", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
+          choice_segment_style.selected_index(0);
+          //choice_segment_style.selected_index(static_cast<int>(label.dot_matrix_style()));
+        } else {
+          choice_segment_style.items().push_back_range({{"Standard", segment_style::standard}, {"Modern", segment_style::modern}, {"Mixed", segment_style::mixed}, {"expanded", segment_style::expanded}, {"Design", segment_style::design}, {"Stick", segment_style::stick}});
+          choice_segment_style.selected_index(static_cast<int>(label.segment_style()));
+        }
       };
       choice_lcd_style.selected_index(0);
 
       choice_segment_style.location({140, 10});
-      choice_segment_style.items().push_back_range({{"Standard", segment_style::standard}, {"Modern", segment_style::modern}, {"Mixed", segment_style::mixed}, {"expanded", segment_style::expanded}, {"Design", segment_style::design}, {"Stick", segment_style::stick}});
       choice_segment_style.selected_value_changed += [this] {
-        label.segment_style(std::any_cast<forms::segment_style>(choice_segment_style.selected_item().tag()));
+        std::any style = choice_segment_style.selected_item().tag();
+        if (std::any_cast<dot_matrix_style>(&style)) {
+          //label.dot_matrix_style(std::any_cast<forms::dot_matrix_style>(choice_segment_style.selected_item().tag()));
+        } else
+          label.segment_style(std::any_cast<forms::segment_style>(choice_segment_style.selected_item().tag()));
       };
       choice_segment_style.selected_index(0);
 
