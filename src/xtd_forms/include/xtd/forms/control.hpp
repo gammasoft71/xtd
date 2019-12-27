@@ -3,13 +3,13 @@
 #include <condition_variable>
 #include <cstdint>
 #include <functional>
-#include <list>
 #include <map>
 #include <memory>
 #include <mutex>
 #include <optional>
 #include <string>
 #include <thread>
+#include <vector>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>
 #include <xtd/drawing/point.hpp>
@@ -854,8 +854,6 @@ namespace xtd {
       /// @endcond
       
     private:
-      std::unique_ptr<std::mutex> mutex_invokers_access = std::make_unique<std::mutex>();
-      std::list<std::tuple<delegate<void(std::vector<std::any>)>, std::vector<std::any>>> invokers;
       void do_layout_parent();
       void do_layout();
       void on_parent_size_changed(const control& sender, const event_args& e);
