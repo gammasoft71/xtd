@@ -15,24 +15,24 @@ choice::choice() {
 
   this->items_.item_added += [&](size_t pos, const item& item) {
     native::choice::insert_item(this->handle_, pos, item.value());
-    choice::item selected_item;
-    if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
-    this->selected_item(selected_item);
+    size_t selected_index = -1;
+    if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_index = this->selected_index_;
+    this->selected_index(selected_index);
   };
 
   this->items_.item_erased += [&](size_t pos, const item& item) {
     native::choice::delete_item(this->handle_, pos);
 
-    choice::item selected_item;
-    if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
-    this->selected_item(selected_item);
+    size_t selected_index = -1;
+    if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_index = this->selected_index_;
+    this->selected_index(selected_index);
   };
   
   this->items_.item_updated += [&](size_t pos, const item& item) {
     native::choice::update_item(this->handle_, pos, item.value());
-    choice::item selected_item;
-    if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
-    this->selected_item(selected_item);
+    size_t selected_index = -1;
+    if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_index = this->selected_index_;
+    this->selected_index(selected_index);
   };
 }
 
