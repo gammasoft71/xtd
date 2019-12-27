@@ -36,8 +36,7 @@ public:
 private:
   xtd::forms::list_box list_box;
   bool closed = false;
-  //std::vector<std::thread> threads {std::thread::hardware_concurrency()};
-  std::vector<std::thread> threads {1};
+  std::vector<std::thread> threads {std::thread::hardware_concurrency()};
 };
 
 int main() {
