@@ -7,7 +7,7 @@ class progress_dialog : public form {
 public:
   progress_dialog() {
     client_size({300, 50});
-    progress_bar_.dock(dock_style::fill);
+    //progress_bar_.dock(dock_style::fill);
   }
   
   /// @brief Gets the maximum value of the range of the control.
@@ -98,28 +98,16 @@ int main() {
    button btn;
    btn.parent(form_main);
    btn.click += [&] {
-   progress_dialog progress;
-   progress.form_border_style(forms::form_border_style::none);
-   progress.parent(form_main);
-   progress.close_box(false);
-   progress.minimize_box(false);
-   progress.maximize_box(false);
-   progress.show_dialog();
-   };
-   */
-  
-  button btn;
-  btn.parent(form_main);
-  btn.click += [&] {
-    for (int i = 0; i < 2; i++) {
-      btn.invoke([] {
-        static int counter = 0;
-        cdebug << format("time {}, counter {}", std::chrono::system_clock::now().time_since_epoch(), ++counter) << std::endl;
-      });
-      std::this_thread::sleep_for(std::chrono::milliseconds(5));
-    }
+     progress_dialog progress;
+     progress.form_border_style(forms::form_border_style::none);
+     progress.parent(form_main);
+     progress.close_box(false);
+     progress.minimize_box(false);
+     progress.maximize_box(false);
+     progress.control_box(false);
+     progress.show_dialog();
   };
-  
+   */
   
   application::run(form_main);
 }
