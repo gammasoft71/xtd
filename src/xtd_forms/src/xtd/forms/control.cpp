@@ -317,14 +317,17 @@ bool control::is_handle_created() const {
 
 control::async_result_invoke control::begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {
   async_result_invoke async;
-  native::control::invoke_in_control_thread(handle_, value, args, async.async_condition_variable_, async.async_ready_);
+  async.async_mutex().lock();
+  //cdebug << "start invoke" << std::endl;
+  native::control::invoke_in_control_thread(handle_, value, args, async.async_mutex_);
   return async;
 }
 
 void control::end_invoke(async_result_invoke async) {
-  std::unique_lock<std::mutex> lock(*async.async_mutex_);
-  async.async_condition_variable_->wait(lock, [&] {return async.async_ready_;
-  });
+  if (!async.async_mutex_->std::mutex::try_lock()) {
+    //application::do_events();
+    std::this_thread::sleep_for(10ms);
+  }
 }
 
 forms::create_params control::create_params() const {
