@@ -20,6 +20,7 @@ namespace xtd {
         virtual void set_background_digit_transparency(double value) = 0;
         virtual void set_character(wchar_t value) = 0;
         virtual void set_segment_style(forms::segment_style value) = 0;
+        virtual void set_dot_matrix_style(forms::dot_matrix_style value) = 0;
         virtual void set_show_background_digit(bool value) = 0;
         virtual void set_thickness(int32_t value) = 0;
       };
@@ -135,6 +136,7 @@ namespace xtd {
           }
         }
         void set_segment_style(forms::segment_style value) override {}
+        void set_dot_matrix_style(forms::dot_matrix_style value) override {dot_matrix_display::dot_matrix_style(value);}
         void set_show_background_digit(bool value) override {dot_matrix_display::show_background_dot(value);}
         void set_thickness(int32_t value) override {dot_matrix_display::thickness(value);}
         
@@ -242,6 +244,7 @@ namespace xtd {
           }
         }
         void set_segment_style(forms::segment_style value) override {fourteen_segment_display::segment_style(value);}
+        void set_dot_matrix_style(forms::dot_matrix_style value) override {}
         void set_show_background_digit(bool value) override {fourteen_segment_display::show_background_segment(value);}
         void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
         
@@ -329,6 +332,7 @@ namespace xtd {
           }
         }
         void set_segment_style(forms::segment_style value) override {nine_segment_display::segment_style(value);}
+        void set_dot_matrix_style(forms::dot_matrix_style value) override {}
         void set_show_background_digit(bool value) override {nine_segment_display::show_background_segment(value);}
         void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
         
@@ -416,6 +420,7 @@ namespace xtd {
           }
         }
         void set_segment_style(forms::segment_style value) override {seven_segment_display::segment_style(value);}
+        void set_dot_matrix_style(forms::dot_matrix_style value) override {}
         void set_show_background_digit(bool value) override {seven_segment_display::show_background_segment(value);}
         void set_thickness(int32_t value) override {seven_segment_display::thickness(value);}
 
@@ -523,6 +528,7 @@ namespace xtd {
           }
         }
         void set_segment_style(forms::segment_style value) override {sixteen_segment_display::segment_style(value);}
+        void set_dot_matrix_style(forms::dot_matrix_style value) override {}
         void set_show_background_digit(bool value) override {sixteen_segment_display::show_background_segment(value);}
         void set_thickness(int32_t value) override {sixteen_segment_display::thickness(value);}
         
@@ -586,6 +592,16 @@ namespace xtd {
         return *this;
       }
       
+      forms::dot_matrix_style dot_matrix_style() const {return dot_matrix_style_;}
+      lcd_label& dot_matrix_style(forms::dot_matrix_style value) {
+        if (dot_matrix_style_ != value) {
+          dot_matrix_style_ = value;
+          for (auto& digit : digits_)
+            digit->set_dot_matrix_style(value);
+        }
+        return *this;
+      }
+
       int32_t thickness() const {return thickness_.value_or(digits_.size() ? digits_[0]->get_thickness() : 1);}
       lcd_label& thickness(int32_t value) {
         if (thickness_ != value) {
@@ -647,6 +663,7 @@ namespace xtd {
           digit->set_background_digit_transparency(background_digit_transparency_);
           digit->set_show_background_digit(show_background_digit_);
           digit->set_segment_style(segment_style_);
+          digit->set_dot_matrix_style(dot_matrix_style_);
           if (thickness_.has_value()) digit->set_thickness(thickness());
           offset_left += dynamic_cast<control*>(digit.get())->width() - 2 + digit_spacing();
         }
@@ -674,10 +691,11 @@ namespace xtd {
 
     private:
       bool show_background_digit_ = true;
-      double background_digit_transparency_ = 0.10;
+      double background_digit_transparency_ = 0.05;
       std::optional<int32_t> digit_spacing_;
       forms::lcd_style lcd_style_ = forms::lcd_style::seven_segment_display;
       forms::segment_style segment_style_ = forms::segment_style::standard;
+      forms::dot_matrix_style dot_matrix_style_ = forms::dot_matrix_style::standard;
       std::vector<std::shared_ptr<idigit>> digits_;
       std::optional<int32_t> thickness_;
     };
