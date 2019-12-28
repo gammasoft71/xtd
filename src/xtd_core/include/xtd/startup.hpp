@@ -1,27 +1,25 @@
 #pragma once
-#include <string>
-#include <vector>
 #include "environment.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-/// @brief Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the Main procedure that should run when the application starts.
+/// @brief Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.
 /// @par Library
-/// Switch.Core
-/// @param main_class The class that contains the static Main method.
+/// xtd.core
+/// @param main_class The class that contains the static main method.
 /// @par Examples
-/// This example show a Main method without arguments and without return code
-/// @include Main1.cpp
+/// This example show a main method without arguments and without return code
+/// @include main1.cpp
 /// @par
-/// This example show a Main method with a return code without arguments
-/// @include Main2.cpp
+/// This example show a main method with a return code without arguments
+/// @include main2.cpp
 /// @par
-/// This example show a Main method with argument and without return code
-/// @include Main3.cpp
+/// This example show a main method with argument and without return code
+/// @include main3.cpp
 /// @par
-/// This example show a Main method with argument and return code
-/// @include Main4.cpp
-/// @ingroup Keywords
+/// This example show a main method with argument and return code
+/// @include main4.cpp
+/// @ingroup keywords
 #define startup_(main_class) \
   int main(int argc, char* argv[]) {\
     struct startup {\
