@@ -6,8 +6,16 @@ using namespace xtd::forms;
 class progress_dialog : public form {
 public:
   progress_dialog() {
-    client_size({300, 50});
-    //progress_bar_.dock(dock_style::fill);
+    client_size({350, 50});
+    start_position(form_start_position::center_parent);
+    minimize_box(false);
+    maximize_box(false);
+    control_box(false);
+    progress_bar_.parent(*this);
+    button_cancel_.parent(*this);
+    button_cancel_.text("Cancel");
+    button_cancel_.dialog_result(forms::dialog_result::cancel);
+    do_layout();
   }
   
   /// @brief Gets the maximum value of the range of the control.
@@ -29,9 +37,57 @@ public:
   /// @param minimum The minimum value of the range. The default is 0.
   /// @remarks This property specifies the lower limit of the value property. When the value of the minimum property is changed, the progress_bar control is redrawn to reflect the new range of the control. When the value of the value property is equal to the value of the minimum property, the progress bar is empty. To change the value of the progress bar, use the step property with the perform_step method, use the increment method, or set the value of the value property directly.
   virtual progress_dialog& minimum(int32_t minimum) {progress_bar_.minimum(minimum); return *this;}
+
+  /// @brief Gets the current position of the progress bar.
+  /// @return The position within the range of the progress bar. The default is 0.
+  /// @remarks If the value specified is greater than the value of the maximum property, the value property is set to maximum.
+  /// @remarks If the value specified is less than the value of the minimum property, the value property is set to minimum.
+  /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
+  virtual int32_t value() {return progress_bar_.value();}
+  /// @brief Sets the current position of the progress bar.
+  /// @param value The position within the range of the progress bar. The default is 0.
+  /// @remarks If the value specified is greater than the value of the maximum property, the value property is set to maximum.
+  /// @remarks If the value specified is less than the value of the minimum property, the value property is set to minimum.
+  /// @remarks The minimum and maximum values of the value property are specified by the minimum and maximum properties. This property enables you to increment or decrement the value of the progress bar directly. To perform consistent increases in the value of the progress_bar control you can use the step property with the perform_step method. To increase the progress bar value by varying amounts, use the increment method.
+  virtual progress_dialog& value(int32_t value) {progress_bar_.value(value); return *this;}
+
+  /// @brief Gets the manner in which progress should be indicated on the progress bar.
+  /// @return One of the progress_bar_style values. The default is blocks
+  /// @remarks You can use the marquee style when you need to indicate progress is being made, without indicating the quantity of progress. The marquee style is honored only when visual styles are enabled. The continuous style is honored when visual styles are not enabled.
+  virtual progress_bar_style style() const {return progress_bar_.style();}
+  /// @brief Sets the manner in which progress should be indicated on the progress bar.
+  /// @param style One of the progress_bar_style values. The default is blocks
+  /// @remarks You can use the marquee style when you need to indicate progress is being made, without indicating the quantity of progress. The marquee style is honored only when visual styles are enabled. The continuous style is honored when visual styles are not enabled.
+  virtual progress_dialog& style(progress_bar_style style) {progress_bar_.style(style); return *this;}
+
+  virtual bool cancel_button() const {return cancel_button_;}
+  virtual progress_dialog& cancel_button(bool value) {
+    if (cancel_button_ != value) {
+      cancel_button_ = value;
+      do_layout();
+    }
+    return *this;
+  }
   
 protected:
+  void on_resize(const event_args& e) override {
+    do_layout();
+    form::on_resize(e);
+  }
+  
+  virtual void do_layout() {
+    form_border_style(text_.empty() ? forms::form_border_style::none : forms::form_border_style::fixed_dialog);
+    progress_bar_.location({10, (client_size_.height() - progress_bar_.height()) / 2});
+    progress_bar_.width(cancel_button_ ? client_size_.width() - 30 - button_cancel_.width()  : client_size_.width() - 20);
+    
+    close_box(cancel_button_);
+    button_cancel_.visible(cancel_button_);
+    button_cancel_.location({client_size_.width() - button_cancel_.width() - 10, (client_size_.height() - button_cancel_.height()) / 2});
+  }
+  
   progress_bar progress_bar_;
+  button button_cancel_;
+  bool cancel_button_ = false;
 };
 
 class my_panel : public panel {
@@ -94,20 +150,19 @@ int main() {
    form_main.resume_layout();
    */
   
-  /*
    button btn;
    btn.parent(form_main);
+   btn.text("Click me");
    btn.click += [&] {
      progress_dialog progress;
-     progress.form_border_style(forms::form_border_style::none);
-     progress.parent(form_main);
-     progress.close_box(false);
-     progress.minimize_box(false);
-     progress.maximize_box(false);
-     progress.control_box(false);
+     progress.cancel_button(true);
+     progress.style(progress_bar_style::marquee);
+     progress.text("Progress");
+     progress.maximize_box(true);
+     progress.minimize_box(true);
+     progress.form_border_style(forms::form_border_style::sizable);
      progress.show_dialog();
   };
-   */
   
   application::run(form_main);
 }
