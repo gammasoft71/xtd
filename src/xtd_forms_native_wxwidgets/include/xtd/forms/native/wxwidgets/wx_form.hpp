@@ -20,6 +20,7 @@ namespace xtd {
       protected:
         bool ProcessEvent(wxEvent &event) override {
           bool result = wxPanel::ProcessEvent(event);
+          if (!GetParent()->IsShown()) return result;
           if (event.GetEventType() == wxEVT_LEFT_DOWN) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_RIGHT_DOWN) wxPostEvent(GetParent(), event);
