@@ -212,6 +212,10 @@ namespace xtd {
     /// @return A std::thread::id that represents a unique identifier for this thread.
     static std::thread::id current_thread_id() noexcept {return std::this_thread::get_id();}
 
+    static int exit_code() noexcept;
+    
+    static void exit_code(int value) noexcept;
+    
     /// @brief Returns a string array containing the command-line arguments for the current process.
     /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
     /// @remarks The first element in the array contains the file name of the executing program. If the file name is not available, the first element is equal to string empty "". The remaining elements contain any additional tokens entered on the command line.

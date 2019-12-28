@@ -8,4 +8,5 @@
 #include "guid.hpp"
 #include "operating_system.hpp"
 #include "platform_id.hpp"
+#include "startup.hpp"
 #include "version.hpp"

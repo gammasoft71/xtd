@@ -11,6 +11,11 @@ extern char** environ;
 extern int __environment_argc;
 extern char** __environment_argv;
 #endif
+int __exit_code = 0;
+
+int xtd::environment::exit_code() noexcept {return __exit_code;}
+
+void xtd::environment::exit_code(int value) noexcept {__exit_code = value;}
 
 std::vector<std::string> xtd::environment::get_command_line_args() noexcept {
   return {__environment_argv, __environment_argv + __environment_argc};

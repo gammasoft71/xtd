@@ -9,6 +9,7 @@ set(INCLUDES
   include/xtd/guid.hpp
   include/xtd/operating_system.hpp
   include/xtd/platform_id.hpp
+  include/xtd/startup.hpp
   include/xtd/version.hpp
   include/xtd/xtd.core
   include/xtd/xtd.core.hpp
