@@ -322,7 +322,7 @@ namespace xtd {
       forms::segments value_ = forms::segments::none;
       bool show_background_segment_ = true;
       std::optional<drawing::color> background_segment_color_;
-      double background_segment_transparency_ = 0.1;
+      double background_segment_transparency_ = 0.05;
       forms::segment_style segment_style_ = forms::segment_style::standard;
       std::optional<int32_t> thickness_;
       /// @endcond
