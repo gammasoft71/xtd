@@ -832,7 +832,7 @@ namespace xtd {
         else
           base_assert::fail("collection <empty>", base_assert::join_items(s), message, line_info);
       }
-      /// @endocnd
+      /// @endcond
       
       /// @brief Asserts that ta condition is false.
       /// @param condition The condition to check is false.
