@@ -12,6 +12,7 @@
 #include "environment_variable_target.hpp"
 #include "guid.hpp"
 #include "interface.hpp"
+#include "object.hpp"
 #include "operating_system.hpp"
 #include "platform_id.hpp"
 #include "startup.hpp"

@@ -5,6 +5,7 @@ project(xtd.core.unit_tests)
 set(SOURCES
   src/main.cpp 
   src/environment.cpp
+  src/object.cpp
   src/version.cpp
 )
 source_group(src FILES ${SOURCES})
