@@ -8,14 +8,15 @@ namespace xtd {
   /// xtd.core
   /// @par Examples
   /// @code
-  /// // mo is released automatically after the end closure }.
-  /// using_(auto values = {1, 2, 3, 4, 5}) {
+  /// // values is released automatically after the end closure }.
+  /// block_scope_(auto values = {1, 2, 3, 4, 5}) {
   ///   cout << strings::join(", ", values) << endl;
   /// }
   /// @endcode
-  /// @remarks same as @block_scope_
+  /// @remarks same as @using_
+  ///  @see @using_
   /// @ingroup keywords
-  #define using_(...) \
-    for (bool __xtd_using__ = true; __xtd_using__; __xtd_using__ = false)\
-      for (__VA_ARGS__; __xtd_using__; __xtd_using__ = false)
+  #define block_scope_(...) \
+    for (bool __xtd_block_scope__ = true; __xtd_block_scope__; __xtd_block_scope__ = false)\
+      for (__VA_ARGS__; __xtd_block_scope__; __xtd_block_scope__ = false)
 }

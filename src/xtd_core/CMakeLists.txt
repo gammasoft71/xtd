@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.core VERSION 1.0.0)
 set(INCLUDES
   include/xtd/__opaque_environment.hpp
+  include/xtd/block_scope.hpp
   include/xtd/environment.hpp
   include/xtd/environment_variable_target.hpp
   include/xtd/guid.hpp
@@ -11,6 +12,7 @@ set(INCLUDES
   include/xtd/operating_system.hpp
   include/xtd/platform_id.hpp
   include/xtd/startup.hpp
+  include/xtd/static.hpp
   include/xtd/using.hpp
   include/xtd/version.hpp
   include/xtd/xtd.core

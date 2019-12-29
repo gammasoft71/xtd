@@ -20,7 +20,7 @@ namespace xtd {
   ///   std:string to_string() const override {return "foo";}
   /// };
   /// @endcode
-  struct core_export_ interface {
+  struct interface {
     /// @cond
   public:
     virtual ~interface() = default;
@@ -41,10 +41,10 @@ namespace xtd {
   /// public:
   ///   Foo() = default;
   ///
-  ///   std::string to_string() const override {return "foo";}
+  ///   std:::string to_string() const override {return "foo";}
   /// };
   /// @endcode
   /// @ingroup keywords
   #define interface_ \
-    : public Interface
+    : public xtd::interface
 }
