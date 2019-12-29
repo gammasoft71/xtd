@@ -7,9 +7,11 @@ set(INCLUDES
   include/xtd/environment.hpp
   include/xtd/environment_variable_target.hpp
   include/xtd/guid.hpp
+  include/xtd/interface.hpp
   include/xtd/operating_system.hpp
   include/xtd/platform_id.hpp
   include/xtd/startup.hpp
+  include/xtd/using.hpp
   include/xtd/version.hpp
   include/xtd/xtd.core
   include/xtd/xtd.core.hpp

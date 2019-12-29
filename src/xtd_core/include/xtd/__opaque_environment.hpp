@@ -8,12 +8,12 @@
 /// @cond
 namespace xtd {
   class environment;
-  class guid;
+  struct guid;
 }
 
 class __opaque_environment final {
   friend class xtd::environment;
-  friend class xtd::guid;
+  friend struct xtd::guid;
   
   static std::string get_current_directory() noexcept;
   static std::string get_environment_variable(const std::string& variable) noexcept;
