@@ -9,6 +9,7 @@
 #include "__opaque_console.hpp"
 #include "console_cancel_event_handler.hpp"
 #include <xtd/event.hpp>
+#include <xtd/static.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,7 +20,7 @@ namespace xtd {
   /// @include console1.cpp
   /// @include console_out.cpp
   template<class char_t>
-  class basic_console final {
+  class basic_console static_ {
   public:    
     /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
     static std::basic_ostream<char_t> error;
@@ -44,10 +45,6 @@ namespace xtd {
     /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to false, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application.
     static event<basic_console<char_t>, console_cancel_event_handler> cancel_key_press;
 
-    /// @cond
-    basic_console() = delete;
-    /// @endcond
-    
     /// @brief Gets the background color of the console.
     /// @return the background console_color.
     /// @remarks A get operation for a Windows-based application, in which a console does not exist, returns console_color.Black.
