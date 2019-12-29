@@ -11,6 +11,8 @@
 #include "environment.hpp"
 #include "environment_variable_target.hpp"
 #include "guid.hpp"
+#include "icomparable.hpp"
+#include "iequatable.hpp"
 #include "interface.hpp"
 #include "object.hpp"
 #include "operating_system.hpp"

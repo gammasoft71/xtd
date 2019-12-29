@@ -1,12 +1,14 @@
 #pragma once
 #include <vector>
-#include <xtd/object.hpp>
+#include "icomparable.hpp"
+#include "iequatable.hpp"
+#include "object.hpp"
 #include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents a globally unique identifier (GUID). A GUID is a 128-bit integer (16 bytes) that can be used across all computers and networks wherever a unique identifier is required. Such an identifier has a very low probability of being duplicated.
-  struct guid final : public object {
+  struct guid final : public object, public icomparable<guid>, public iequatable<guid> {
   public:
     /// @brief Initializes a new instance of the Guid structure.
     guid() = default;
@@ -14,17 +16,24 @@ namespace xtd {
     /// @brief Initializes a new instance of the Guid structure by using the specified array of bytes.
     /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
     /// @exception std::invalid_argument bytes is not 16 bytes long.
-    explicit guid(const std::vector<unsigned char>& data) : data_(data) {
+    explicit guid(const std::vector<uint8_t>& data) : data_(data) {
       if (data.size() != 16) throw std::invalid_argument("vector size must be 16");
     }
     
+    /// @brief Initializes a new instance of the Guid structure by using the specified array of bytes.
+    /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
+    /// @exception std::invalid_argument bytes is not 16 bytes long.
+    explicit guid(const std::initializer_list<uint8_t>& data) : data_(data) {
+      if (data.size() != 16) throw std::invalid_argument("vector size must be 16");
+    }
+
     /// @brief Initializes a new instance of the Guid structure by using the specified integers and byte array.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
     /// @param c The next 2 bytes of the GUID.
     /// @param d The remaining 8 bytes of the GUID.
     /// @exception std::invalid_argument bytes is not 8 bytes long.
-    explicit guid(int a, int b, int c, const std::vector<unsigned char>& d) {
+    explicit guid(int a, int b, int c, const std::vector<uint8_t>& d) {
       if (d.size() != 8) throw std::invalid_argument("vector size must be 8");
       
       this->data_[0] = (a & 0xFF000000) >> 24;
@@ -52,7 +61,7 @@ namespace xtd {
     /// @param i The next byte of the GUID.
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
-    guid(int a, short b, short c, unsigned char d, unsigned char e, unsigned char f, unsigned char g, unsigned char h, unsigned char i, unsigned char j, unsigned char k) noexcept {
+    guid(int a, short b, short c, uint8_t d, uint8_t e, uint8_t f, uint8_t g, uint8_t h, uint8_t i, uint8_t j, uint8_t k) noexcept {
       this->data_[0] = (a & 0xFF000000) >> 24;
       this->data_[1] = (a & 0x00FF0000) >> 16;
       this->data_[2] = (a & 0x0000FF00) >> 8;
@@ -71,7 +80,7 @@ namespace xtd {
       this->data_[15] = k;
     }
     
-    /// @brief Initializes a new instance of the Guid structure by using the specified unsigned integers and bytes.
+    /// @brief Initializes a new instance of the Guid structure by using the specified uint32_tegers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
     /// @param c The next 2 bytes of the GUID.
@@ -83,7 +92,7 @@ namespace xtd {
     /// @param i The next byte of the GUID.
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
-    guid(unsigned int a, unsigned short b, unsigned short c, unsigned char d, unsigned char e, unsigned char f, unsigned char g, unsigned char h, unsigned char i, unsigned char j, unsigned char k) noexcept {
+    guid(uint32_t a, uint16_t b, uint16_t c, uint8_t d, uint8_t e, uint8_t f, uint8_t g, uint8_t h, uint8_t i, uint8_t j, uint8_t k) noexcept {
       this->data_[0] = (a & 0xFF000000) >> 24;
       this->data_[1] = (a & 0x00FF0000) >> 16;
       this->data_[2] = (a & 0x0000FF00) >> 8;
@@ -128,7 +137,7 @@ namespace xtd {
     guid(const std::string& guid) {
       std::string simple = xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(guid, "0x", ""), ",", ""), "-", ""), "(", ""), ")", ""), "{", ""), "}", "");
       for (size_t i = 0; i < this->data_.size(); i ++) {
-        this->data_[i] = xtd::parse<unsigned char>(xtd::strings::substring(simple, 0, 2), xtd::number_styles::hex_number);
+        this->data_[i] = xtd::parse<uint8_t>(xtd::strings::substring(simple, 0, 2), xtd::number_styles::hex_number);
         simple = xtd::strings::remove(simple, 0, 2);
       }
     }
@@ -138,10 +147,39 @@ namespace xtd {
     guid& operator=(const guid&) = default;
     friend std::ostream& operator <<(std::ostream& os, const guid& guid) noexcept {return os << guid.to_string();}
     /// @endcond
+    /// @brief Compares the current instance with another object of the same type.
+    /// @param obj An object to compare with this instance.
+    /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+    /// The return value has these meanings:
+    /// | Value             | Condition                          |
+    /// |-------------------|------------------------------------|
+    /// | Less than zero    | This instance is less than obj.    |
+    /// | Zero              | This instance is equal to obj.     |
+    /// | Greater than zero | This instance is greater than obj. |
+    virtual int32_t compare_to(const object& obj) const override {
+      if (!dynamic_cast<const guid*>(&obj)) return 1;
+      return compare_to(static_cast<const guid&>(obj));
+    }
+    
+    /// @brief Compares the current instance with another object of the same type.
+    /// @param obj An object to compare with this instance.
+    /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+    /// The return value has these meanings:
+    /// | Value             | Condition                          |
+    /// |-------------------|------------------------------------|
+    /// | Less than zero    | This instance is less than obj.    |
+    /// | Zero              | This instance is equal to obj.     |
+    /// | Greater than zero | This instance is greater than obj. |
+    virtual int32_t compare_to(const guid& value) const override {
+      for (size_t i = 0; i < data_.size(); i++)
+        if (data_[i] > value.data_[i]) return 1;
+        else if (data_[i] < value.data_[i]) return -1;
+      return 0;
+    }
 
     bool equals(const object& g) const noexcept override {return dynamic_cast<const guid*>(&g) && equals(static_cast<const guid&>(g));}
     
-    bool equals(const guid& g) const noexcept {
+    bool equals(const guid& g) const noexcept override {
       for (size_t index = 0; index < 16; index++)
         if (this->data_[index] != g.data_[index]) return false;
       return true;
@@ -155,7 +193,7 @@ namespace xtd {
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return Array<Byte> A 16-element byte array.
-    const std::vector<unsigned char>& to_byte_array() const noexcept {return this->data_;}
+    const std::vector<uint8_t>& to_byte_array() const noexcept {return this->data_;}
 
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return string The value of this Guid, formatted by using the "D" format specifier as follows:
@@ -218,9 +256,9 @@ namespace xtd {
     /// @brief Get A read-only instance of the Guid structure whose value is all zeros.
     /// @return Guid A read-only instance of the Guid structure whose value is all zeros.
     /// @remarks You can compare a GUID with the value of the Guid.Empty field to determine whether a GUID is non-zero. The following example uses the Equality operator to compare two GUID values with Guid.Empty to determine whether they consist exclusively of zeros.
-    static guid empty();
+    static const guid empty;
 
   private:
-    std::vector<unsigned char> data_ = std::vector<unsigned char>(16);
+    std::vector<uint8_t> data_ = std::vector<uint8_t>(16);
   };
 }

@@ -8,6 +8,8 @@ set(INCLUDES
   include/xtd/environment.hpp
   include/xtd/environment_variable_target.hpp
   include/xtd/guid.hpp
+  include/xtd/icomparable.hpp
+  include/xtd/iequatable.hpp
   include/xtd/interface.hpp
   include/xtd/object.hpp
   include/xtd/operating_system.hpp
