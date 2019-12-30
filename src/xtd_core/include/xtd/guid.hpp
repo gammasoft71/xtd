@@ -262,8 +262,10 @@ namespace xtd {
     std::vector<uint8_t> data_ = std::vector<uint8_t>(16);
   };
 
+  /// @cond
   template<>
   inline std::string to_string(const guid& value, const std::string& fmt, const std::locale& loc) {
     return value.to_string(fmt);
   }
+  /// @endcond
 }
