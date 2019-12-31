@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
+#include <string>
 #include <xtd/environment.hpp>
-#include <xtd/ustring.hpp>
 #include <xtd/drawing/size.hpp>
 
 namespace xtd {
@@ -21,7 +21,7 @@ namespace xtd {
         static int32_t caption_height();
         static int32_t caret_blink_time();
         static int32_t caret_width();
-        static ustring computer_name();
+        static std::string computer_name();
         static xtd::drawing::size cursor_size();
         static bool dbcs_enabled();
         static bool debug_os();

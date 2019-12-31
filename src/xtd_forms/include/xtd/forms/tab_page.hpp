@@ -10,7 +10,7 @@ namespace xtd {
       tab_page();
 
       using panel::text;
-      control& text(const ustring& text) override;
+      control& text(const std::string& text) override;
 
       void destroy_handle() override;
 

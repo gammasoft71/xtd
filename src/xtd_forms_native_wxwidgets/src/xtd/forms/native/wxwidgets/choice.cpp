@@ -24,9 +24,9 @@ void choice::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void choice::insert_item(intptr_t control, size_t index, const ustring& value) {
+void choice::insert_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
+  static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->Insert({value.c_str(), wxMBConvUTF8()}, index);
 }
 
 size_t choice::selected_index(intptr_t control) {
@@ -39,7 +39,7 @@ void choice::selected_index(intptr_t control, size_t index) {
   return static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }
 
-void choice::update_item(intptr_t control, size_t index, const ustring& value) {
+void choice::update_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
+  static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, {value.c_str(), wxMBConvUTF8()});
 }

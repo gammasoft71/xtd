@@ -24,9 +24,9 @@ void list_box::end_update(intptr_t control) {
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
 }
 
-void list_box::insert_item(intptr_t control, size_t index, const ustring& value) {
+void list_box::insert_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(value, index);
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert({value.c_str(), wxMBConvUTF8()}, index);
 }
 
 size_t list_box::selected_index(intptr_t control) {
@@ -54,7 +54,7 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
   return indices;
 }
 
-void list_box::update_item(intptr_t control, size_t index, const ustring& value) {
+void list_box::update_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, value);
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, {value.c_str(), wxMBConvUTF8()});
 }

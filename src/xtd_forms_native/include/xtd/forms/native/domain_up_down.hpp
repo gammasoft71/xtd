@@ -8,10 +8,10 @@ namespace xtd {
       public:
         domain_up_down() = delete;
         static void delete_item(intptr_t control, size_t pos);
-        static void insert_item(intptr_t control, size_t pos, const ustring& value);
+        static void insert_item(intptr_t control, size_t pos, const std::string& value);
         static size_t selected_index(intptr_t control);
         static void selected_index(intptr_t control, size_t index);
-        static void update_item(intptr_t control, size_t pos, const ustring& value);
+        static void update_item(intptr_t control, size_t pos, const std::string& value);
       };
     }
   }

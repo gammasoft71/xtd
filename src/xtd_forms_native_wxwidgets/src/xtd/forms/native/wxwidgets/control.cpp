@@ -344,14 +344,14 @@ void control::size(intptr_t control, const drawing::size& size) {
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
-ustring control::text(intptr_t control) {
+std::string control::text(intptr_t control) {
   if (control == 0) return {};
-  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdWstring();
+  return reinterpret_cast<control_handler*>(control)->control()->GetLabel().ToStdString(wxMBConvUTF8());
 }
 
-void control::text(intptr_t control, const ustring& text) {
+void control::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->SetLabel(text.wstr());
+  reinterpret_cast<control_handler*>(control)->control()->SetLabel({text.c_str(), wxMBConvUTF8()});
 }
 
 bool control::visible(intptr_t control) {

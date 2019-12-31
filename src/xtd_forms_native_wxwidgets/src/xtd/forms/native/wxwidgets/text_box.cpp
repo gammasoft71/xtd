@@ -9,12 +9,12 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-ustring text_box::text(intptr_t control) {
+std::string text_box::text(intptr_t control) {
   if (control == 0) return {};
-  return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().ToStdWstring();
+  return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().ToStdString(wxMBConvUTF8());
 }
 
-void text_box::text(intptr_t control, const ustring& text) {
+void text_box::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
-  static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(text);
+  static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue({text.c_str(), wxMBConvUTF8()});
 }

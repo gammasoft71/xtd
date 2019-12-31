@@ -20,7 +20,7 @@ namespace xtd {
       drawing::size default_size() const override {return {100, 21};}
 
       using text_box_base::text;
-      control& text(const ustring& text) override;
+      control& text(const std::string& text) override;
       
     protected:
       forms::create_params create_params() const override;

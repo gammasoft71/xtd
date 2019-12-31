@@ -78,7 +78,7 @@ namespace xtd {
           drawing::size_f slider_size(static_cast<float>((e.clip_rectangle().width() - 6) / 2), static_cast<float>(e.clip_rectangle().height() - 6));
           drawing::point_f slider_location(checked_ ? drawing::point_f(width() / 2.0f, 3.0f) : drawing::point_f(3.0f, 3.0f));
 
-          ustring text = checked_ ? "ON" : "OFF";
+          std::string text = checked_ ? "ON" : "OFF";
           drawing::size_f string_size = e.graphics().measure_string(text, font());
           drawing::point_f string_location(checked_ ? drawing::point_f((width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2) : drawing::point_f(width() / 2 + (width() / 2 - string_size.width()) / 2, (height() - string_size.height()) / 2));
 

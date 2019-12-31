@@ -77,8 +77,8 @@ namespace xtd {
         return *this;
       }
       
-      virtual const ustring& default_ext() const {return default_ext_;}
-      virtual file_dialog& default_ext(const ustring& value) {
+      virtual const std::string& default_ext() const {return default_ext_;}
+      virtual file_dialog& default_ext(const std::string& value) {
         default_ext_ = value;
         return *this;
       }
@@ -89,16 +89,16 @@ namespace xtd {
         return *this;
       }
       
-      virtual const ustring& file_name() const {return file_name_;}
-      virtual file_dialog& file_name(const ustring& value) {
+      virtual const std::string& file_name() const {return file_name_;}
+      virtual file_dialog& file_name(const std::string& value) {
         file_name_ = value;
         return *this;
       }
 
-      virtual const std::vector<ustring> file_names() const {return file_names_;}
+      virtual const std::vector<std::string> file_names() const {return file_names_;}
 
-      virtual const ustring& filter() const {return filter_;}
-      virtual file_dialog& filter(const ustring& value) {
+      virtual const std::string& filter() const {return filter_;}
+      virtual file_dialog& filter(const std::string& value) {
         filter_ = value;
         return *this;
       }
@@ -109,8 +109,8 @@ namespace xtd {
         return *this;
       }
 
-      virtual const ustring& initial_directory() const {return initial_directory_;}
-      virtual file_dialog& initial_directory(const ustring& value) {
+      virtual const std::string& initial_directory() const {return initial_directory_;}
+      virtual file_dialog& initial_directory(const std::string& value) {
         initial_directory_ = value;
         return *this;
       }
@@ -156,8 +156,8 @@ namespace xtd {
         return *this;
       }
       
-      virtual const ustring& title() const {return title_;}
-      virtual file_dialog& title(const ustring& value) {
+      virtual const std::string& title() const {return title_;}
+      virtual file_dialog& title(const std::string& value) {
         title_ = value;
         return *this;
       }
@@ -174,7 +174,7 @@ namespace xtd {
       
       bool run_dialog (intptr_t hwnd_owner) override;
       
-      ustring to_string() const {
+      std::string to_string() const {
         return strings::format("{}: title: {}, filename: {}", strings::full_class_name(*this), title_, file_name_);
       }
 
@@ -190,15 +190,15 @@ namespace xtd {
       void set_option(size_t flag, bool value) {this->options_ = value ? this->options_ | flag : this->options_ & ~flag;}
 
       bool auto_upgrade_enabled_ = true;
-      ustring default_ext_ = "";
-      ustring file_name_ = "";
-      std::vector<ustring> file_names_;
-      ustring filter_ = "";
+      std::string default_ext_ = "";
+      std::string file_name_ = "";
+      std::vector<std::string> file_names_;
+      std::string filter_ = "";
       size_t filter_index_ = 1;
-      ustring initial_directory_ = "";
+      std::string initial_directory_ = "";
       size_t options_ = OFN_HIDEREADONLY | OFN_PATHMUSTEXIST | OFN_ADDEXTENSION;
       bool support_multi_dotted_extensions_ = true;
-      ustring title_ = "";
+      std::string title_ = "";
       /// @endcond
       
     private:

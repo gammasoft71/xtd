@@ -51,7 +51,7 @@ std::optional<main_menu> menu::get_main_menu() const {
   return {};
 }
 
-ustring menu::to_string() const {
+std::string menu::to_string() const {
   return strings::format("{}, items.size(): {}", strings::full_class_name(*this), data_->menu_items_.size());
 }
 

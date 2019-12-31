@@ -159,7 +159,7 @@ namespace {
   }
 }
 
-bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
+bool file_dialog::run_open_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
   NSOpenPanel* openPanel = [[[NSOpenPanel alloc] init] autorelease];
   [openPanel setMessage:[NSString stringWithUTF8String:title.c_str()]];
   [openPanel setCanChooseFiles:YES];
@@ -181,7 +181,7 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ust
     file_name = [[(NSURL*)[[openPanel URLs] objectAtIndex:0] path] UTF8String];
   else{
     NSArray *urls = [openPanel URLs];
-    std::vector<ustring> fileNames((int32_t)[urls count]);
+    std::vector<std::string> fileNames((int32_t)[urls count]);
     for (int32_t index = 0; index < (int32_t)[urls count]; index++)
       fileNames[index] = [[(NSURL*)[urls objectAtIndex:index] path] UTF8String];
     file_name = fileNames[0];
@@ -190,7 +190,7 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ust
   return true;
 }
 
-bool file_dialog::run_save_dialog(intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
+bool file_dialog::run_save_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
   NSSavePanel* savePanel = [[[NSSavePanel alloc] init] autorelease];
   [savePanel setMessage:[NSString stringWithUTF8String:title.c_str()]];
   [savePanel setCanCreateDirectories:YES];

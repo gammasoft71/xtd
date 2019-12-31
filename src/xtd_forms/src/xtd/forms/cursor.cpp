@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-cursor::cursor(intptr_t handle, bool destroyable, const ustring& name) {
+cursor::cursor(intptr_t handle, bool destroyable, const std::string& name) {
   this->data_->handle_ = handle;
   this->data_->destroyable_ = destroyable;
   this->data_->name_ = name;
@@ -44,6 +44,6 @@ void cursor::show() {
   native::cursor::show();
 }
 
-ustring cursor::to_string() const {
+std::string cursor::to_string() const {
   return strings::format("[cursor: {}]", this->data_->name_ != "" ? this->data_->name_ : strings::full_class_name(*this));
 }

@@ -5,9 +5,9 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-void tab_control::add_item(intptr_t control, intptr_t page, const ustring& text) {
+void tab_control::add_item(intptr_t control, intptr_t page, const std::string& text) {
   if (control == 0 || page == 0) return;
-  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->AddPage(reinterpret_cast<control_handler*>(page)->control(), text);
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->AddPage(reinterpret_cast<control_handler*>(page)->control(), {text.c_str(), wxMBConvUTF8()});
 }
 
 void tab_control::delete_item(intptr_t control, size_t index) {
@@ -36,9 +36,9 @@ void tab_control::page_image_index(intptr_t control, size_t index, size_t image_
   static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetPageImage(index, image_index);
 }
 
-void tab_control::page_text(intptr_t control, size_t index, const ustring& text) {
+void tab_control::page_text(intptr_t control, size_t index, const std::string& text) {
   if (control == 0) return;
-  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetPageText(index, text);
+  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetPageText(index, {text.c_str(), wxMBConvUTF8()});
 }
 
 size_t tab_control::selected_index(intptr_t control) {
