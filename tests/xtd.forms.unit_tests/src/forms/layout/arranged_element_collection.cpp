@@ -12,14 +12,14 @@ namespace unit_tests {
   class test_class_(test_arranged_element_collection) {
   public:
     void test_method_(new_collection) {
-      arranged_element_collection<ustring> items;
-      items.item_added += [&](size_t index, ustring& value) {
+      arranged_element_collection<std::string> items;
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
       
@@ -27,9 +27,9 @@ namespace unit_tests {
     }
     
     void test_method_(push_back_item) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -37,10 +37,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
       
@@ -53,9 +53,9 @@ namespace unit_tests {
     }
     
     void test_method_(push_back_items) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -71,10 +71,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
       
@@ -91,9 +91,9 @@ namespace unit_tests {
     }
     
     void test_method_(push_back_range_item) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
          if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -101,10 +101,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -117,9 +117,9 @@ namespace unit_tests {
     }
     
     void test_method_(push_back_range_items) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -135,10 +135,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -153,9 +153,9 @@ namespace unit_tests {
     }
     
     void test_method_(insert_item) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
          if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -175,10 +175,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -197,9 +197,9 @@ namespace unit_tests {
     }
       
     void test_method_(insert_item_in_first) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -211,10 +211,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -227,9 +227,9 @@ namespace unit_tests {
     }
         
     void test_method_(insert_item_in_last) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -241,10 +241,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -257,9 +257,9 @@ namespace unit_tests {
     }
 
     void test_method_(insert_at_item) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
          if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -279,10 +279,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -301,15 +301,15 @@ namespace unit_tests {
     }
         
     void test_method_(insert_at_item_width_bad_index) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c"});
       assert::throws_(invalid_argument, [&] {items.insert_at(-1, "z");});
     }
       
     void test_method_(insert_at_item_in_first) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -321,10 +321,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -337,9 +337,9 @@ namespace unit_tests {
     }
         
     void test_method_(insert_at_item_in_last) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t added_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         if (added_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -351,10 +351,10 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -367,13 +367,13 @@ namespace unit_tests {
     }
     
     void test_method_(erase_item) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c", "d", "e"});
       size_t erased_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal_(1, index);
           assert::are_equal_("b", value);
@@ -381,7 +381,7 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -395,13 +395,13 @@ namespace unit_tests {
     }
       
     void test_method_(erase_all_items) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c", "d", "e"});
       size_t erased_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal_(1, index);
           assert::are_equal_("b", value);
@@ -425,7 +425,7 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -440,13 +440,13 @@ namespace unit_tests {
     }
       
     void test_method_(erase_item_first) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t erased_control_check = 0;
       items.push_back_range({"a", "b", "c", "d", "e"});
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -454,7 +454,7 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -468,13 +468,13 @@ namespace unit_tests {
     }
       
     void test_method_(erase_item_last) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       size_t erased_control_check = 0;
       items.push_back_range({"a", "b", "c", "d", "e"});
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         if (erased_control_check == 0) {
           assert::are_equal_(4, index);
           assert::are_equal_("e", value);
@@ -482,7 +482,7 @@ namespace unit_tests {
         } else
           assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::fail(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -496,22 +496,22 @@ namespace unit_tests {
     }
         
     void test_method_(erase_at_item_width_bad_index) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c"});
       assert::throws_(invalid_argument, [&] {items.erase_at(-1);});
     }
 
     void test_method_(update_item) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c", "d", "e"});
       size_t updated_control_check = 0;
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         if (updated_control_check == 0) {
           assert::are_equal_(1, index);
           assert::are_equal_("z", value);
@@ -531,16 +531,16 @@ namespace unit_tests {
     }
 
     void test_method_(using_std_sort_two_items) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"z", "a"});
 
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::succeed(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -551,16 +551,16 @@ namespace unit_tests {
     }
     
     void test_method_(using_std_sort_four_items) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"d", "a", "c", "b"});
 
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::succeed(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -573,16 +573,16 @@ namespace unit_tests {
     }
     
     void test_method_(using_std_sort_Twelve_items_with_duplicates) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"d", "a", "c", "b", "g", "i", "b", "h", "f", "j", "f", "k"});
 
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         assert::succeed(strings::format("updated index = {}, value = {}", index, value), line_info_);
       };
 
@@ -603,17 +603,17 @@ namespace unit_tests {
     }
 
     void test_method_(using_std_swap) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"z", "a"});
       size_t updated_control_check = 0;
 
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         if (updated_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
@@ -634,17 +634,17 @@ namespace unit_tests {
     }
     
     void test_method_(using_std_double_swap) {
-      arranged_element_collection<ustring> items;
+      arranged_element_collection<std::string> items;
       items.push_back_range({"z", "a"});
       size_t updated_control_check = 0;
 
-      items.item_added += [&](size_t index, ustring& value) {
+      items.item_added += [&](size_t index, std::string& value) {
         assert::fail(strings::format("added index = {}, value = {}", index, value), line_info_);
       };
-      items.item_erased += [&](size_t index, ustring& value) {
+      items.item_erased += [&](size_t index, std::string& value) {
         assert::fail(strings::format("erased index = {}, value = {}", index, value), line_info_);
       };
-      items.item_updated += [&](size_t index, ustring& value) {
+      items.item_updated += [&](size_t index, std::string& value) {
         if (updated_control_check == 0) {
           assert::are_equal_(0, index);
           assert::are_equal_("a", value);
