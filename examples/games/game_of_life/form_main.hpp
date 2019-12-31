@@ -29,15 +29,14 @@ namespace game_of_life {
       button_clear_.location({190, 10});
       button_clear_.click += {*this, & form_main::clear};
       
-      combo_box_figures_.parent(*this);
-      combo_box_figures_.drop_down_style(xtd::forms::combo_box_style::drop_down_list);
-      combo_box_figures_.items().push_back_range({{"Figure", figure_delegate(*this, &form_main::nothing)}, {"Random cells", figure_delegate(*this, &form_main::random)}, {"Blinker", figure_delegate(*this, &form_main::blinker)}, {"Toad", figure_delegate(*this, &form_main::toad)}, {"beacon", figure_delegate(*this, &form_main::beacon)}, {"galaxy", figure_delegate(*this, &form_main::galaxy)}, {"Pulsar", figure_delegate(*this, &form_main::pulsar)}, {"Penta-decathlon", figure_delegate(*this, &form_main::penta_decathlon)}, {"Glider", figure_delegate(*this, &form_main::glider)}, {"Small exploder", figure_delegate(*this, &form_main::small_exploder)}, {"Exploder", figure_delegate(*this, &form_main::exploder)}, {"Lightweight spaceship", figure_delegate(*this, &form_main::lightweight_spaceship)}, {"Middleweight spaceship", figure_delegate(*this, &form_main::middleweight_spaceship)}, {"Heavyweight spaceship", figure_delegate(*this, &form_main::heavyweight_spaceship)}, {"Tumbler", figure_delegate(*this, &form_main::tumbler)}, {"Gosper glider gun", figure_delegate(*this, &form_main::gosper_glider_gun)}});
-      combo_box_figures_.location({280, 11});
-      combo_box_figures_.selected_index(0);
-      combo_box_figures_.width(200);
-      combo_box_figures_.selected_index_changed += [this] {
-        std::any_cast<figure_delegate>(combo_box_figures_.items()[combo_box_figures_.selected_index()].tag())();
-        combo_box_figures_.selected_index(0);
+      choice_figures_.parent(*this);
+      choice_figures_.items().push_back_range({{"Figure", figure_delegate(*this, &form_main::nothing)}, {"Random cells", figure_delegate(*this, &form_main::random)}, {"Blinker", figure_delegate(*this, &form_main::blinker)}, {"Toad", figure_delegate(*this, &form_main::toad)}, {"beacon", figure_delegate(*this, &form_main::beacon)}, {"galaxy", figure_delegate(*this, &form_main::galaxy)}, {"Pulsar", figure_delegate(*this, &form_main::pulsar)}, {"Penta-decathlon", figure_delegate(*this, &form_main::penta_decathlon)}, {"Glider", figure_delegate(*this, &form_main::glider)}, {"Small exploder", figure_delegate(*this, &form_main::small_exploder)}, {"Exploder", figure_delegate(*this, &form_main::exploder)}, {"Lightweight spaceship", figure_delegate(*this, &form_main::lightweight_spaceship)}, {"Middleweight spaceship", figure_delegate(*this, &form_main::middleweight_spaceship)}, {"Heavyweight spaceship", figure_delegate(*this, &form_main::heavyweight_spaceship)}, {"Tumbler", figure_delegate(*this, &form_main::tumbler)}, {"Gosper glider gun", figure_delegate(*this, &form_main::gosper_glider_gun)}});
+      choice_figures_.location({280, 11});
+      choice_figures_.selected_index(0);
+      choice_figures_.width(200);
+      choice_figures_.selected_index_changed += [this] {
+        std::any_cast<figure_delegate>(choice_figures_.items()[choice_figures_.selected_index()].tag())();
+        choice_figures_.selected_index(0);
       };
       
       label_iterations_.parent(*this);
@@ -172,10 +171,10 @@ namespace game_of_life {
       }
     }
     
-    void fill_figure(const std::vector<xtd::ustring>& figure) {
+    void fill_figure(const std::vector<std::string>& figure) {
       int height = static_cast<int>(figure.size());
       int width = 0;
-      for (xtd::ustring line : figure)
+      for (std::string line : figure)
         if (line.length() > width) width = static_cast<int>(line.length());
       
       int start_x = (panel_grid_.client_size().width() / zoom_ / 2) - (width / 2);
@@ -184,7 +183,7 @@ namespace game_of_life {
       if (start_x < 5) start_x = 5;
       if (y < 5) y = 5;
       
-      for (xtd::ustring line : figure) {
+      for (std::string line : figure) {
         int x = start_x;
         for (char cell : line) {
           grid_.cells()[offset_y_ + y][offset_x_ + x] = cell != ' ' ? cell::populated : cell::empty;
@@ -352,7 +351,7 @@ namespace game_of_life {
     xtd::forms::button button_run_;
     xtd::forms::button button_next_;
     xtd::forms::button button_clear_;
-    xtd::forms::combo_box combo_box_figures_;
+    xtd::forms::choice choice_figures_;
     xtd::forms::label label_iterations_;
     xtd::forms::label label_zoom_;
     xtd::forms::track_bar track_bar_zoom_;
