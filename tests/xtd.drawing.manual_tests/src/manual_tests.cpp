@@ -7,8 +7,8 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 
-void to_ppm(const xtd::ustring& filename, const xtd::drawing::bitmap& bitmap, const color& transparent_color = color::white) {
-  std::vector<xtd::ustring> lines;
+void to_ppm(const std::string& filename, const xtd::drawing::bitmap& bitmap, const color& transparent_color = color::white) {
+  std::vector<std::string> lines;
   lines.push_back("P3");
   lines.push_back("# Ppm.ppm");
   lines.push_back(xtd::strings::format("{} {}", bitmap.width(), bitmap.height()));
@@ -25,7 +25,7 @@ void to_ppm(const xtd::ustring& filename, const xtd::drawing::bitmap& bitmap, co
   xtd::io::file::write_all_lines(filename, lines);
 }
 
-void to_ppm(const xtd::ustring& filename, const color& transparent_color = color::white) {
+void to_ppm(const std::string& filename, const color& transparent_color = color::white) {
   to_ppm(xtd::io::path::combine(xtd::io::path::get_directory_name(filename), xtd::strings::format("{}{}", xtd::io::path::get_file_name_without_extension(filename), ".ppm")), bitmap(filename), transparent_color);
 }
 
