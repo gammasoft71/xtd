@@ -105,21 +105,21 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawRectangle(x, y, width, height);
 }
 
-void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   graphics_context gc(hdc);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetTextForeground(wxColour(r, g, b, a));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText(text.wstr(), x, y);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText({text.c_str(), wxMBConvUTF8()}, x, y);
 }
 
-void graphics::draw_string(intptr_t hdc, const ustring& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   graphics_context gc(hdc);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetClippingRegion(x, y, w, h);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetTextForeground(wxColour(r, g, b, a));
-  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText(text.wstr(), x, y);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawText({text.c_str(), wxMBConvUTF8()}, x, y);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DestroyClippingRegion();
 }
 
@@ -155,11 +155,11 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawRectangle(x, y, width, height);
 }
 
-void graphics::measure_string(intptr_t hdc, const ustring &text, intptr_t font, int32_t &width, int32_t &height) {
+void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
   if (!hdc) return;
   graphics_context gc(hdc);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
-  wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetMultiLineTextExtent(text.wstr());
+  wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetMultiLineTextExtent({text.c_str(), wxMBConvUTF8()});
   wxFontMetrics metrics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFontMetrics();
   width = size.GetWidth();
   height = size.GetHeight();

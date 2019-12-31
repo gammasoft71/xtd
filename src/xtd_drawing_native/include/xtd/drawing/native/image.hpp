@@ -1,8 +1,8 @@
 #pragma once
 #include <cstdint>
 #include <istream>
+#include <string>
 #include <vector>
-#include <xtd/ustring.hpp>
 #include "argb.hpp"
 
 /// @cond
@@ -20,7 +20,7 @@ namespace xtd {
         
         image() = delete;
         static void color_palette(intptr_t image, std::vector<argb>& entries, int32_t& flags);
-        static intptr_t create(const ustring& filename);
+        static intptr_t create(const std::string& filename);
         static intptr_t create(std::istream& stream);
         static intptr_t create(const char* const* bits);
         static intptr_t create(int32_t width, int32_t height);

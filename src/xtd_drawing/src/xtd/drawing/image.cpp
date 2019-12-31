@@ -9,7 +9,7 @@ using namespace xtd::drawing;
 
 image image::empty;
 
-image::image(const ustring &filename) {
+image::image(const std::string &filename) {
   this->data_->handle_ = native::image::create(filename);
   this->update_properties();
 }
