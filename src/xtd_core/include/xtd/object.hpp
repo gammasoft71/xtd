@@ -1,11 +1,12 @@
 #pragma once
 #include <cstdint>
+#include <memory>
 #include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-class type;
+  class type;
   /// @endcond
 
   /// @brief Supports all classes in the xtd class hierarchy and provides low-level services to derived classes.
