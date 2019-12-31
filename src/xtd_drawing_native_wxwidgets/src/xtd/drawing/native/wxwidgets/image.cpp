@@ -70,9 +70,9 @@ void image::color_palette(intptr_t image, std::vector<argb>& entries, int32_t& f
   flags = 0;
 }
 
-intptr_t image::create(const ustring& filename) {
+intptr_t image::create(const std::string& filename) {
   init_image_handlers();
-  return reinterpret_cast<intptr_t>(new wxImage(filename));
+  return reinterpret_cast<intptr_t>(new wxImage({filename.c_str(), wxMBConvUTF8()}));
 }
 
 intptr_t image::create(std::istream& stream) {

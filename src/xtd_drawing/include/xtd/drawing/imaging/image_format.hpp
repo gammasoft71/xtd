@@ -1,8 +1,8 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
+#include <string>
 #include <xtd/guid.hpp>
-#include <xtd/ustring.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -173,7 +173,7 @@ namespace xtd {
         /// @return An image_format object that indicates the bitmap image format.
         static image_format tga() {return image_format(xtd::guid("b96b3ccd-0728-11d3-9d7b-0000f81ef32e"));}
 
-        virtual ustring to_string() const {return strings::format("[image_format: {}]", this->guid_);}
+        virtual std::string to_string() const {return strings::format("[image_format: {}]", this->guid_);}
         
         /// @cond
         friend std::ostream& operator<<(std::ostream& os, const xtd::drawing::imaging::image_format& image_format) noexcept {

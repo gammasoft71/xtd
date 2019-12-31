@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <memory>
 #include <iostream>
-#include <xtd/ustring.hpp>
+#include <string>
 #include "imaging/color_palette.hpp"
 #include "imaging/frame_dimension.hpp"
 #include "imaging/image_flags.hpp"
@@ -123,7 +123,7 @@ namespace xtd {
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The Image this method creates.
-      static image from_file(const ustring& filename) {return image(filename);}
+      static image from_file(const std::string& filename) {return image(filename);}
 
       static image from_stream(std::istream& stream) {return image(stream);}
 
@@ -133,7 +133,7 @@ namespace xtd {
       
     protected:
       image() = default;
-      explicit image(const ustring& fileName);
+      explicit image(const std::string& fileName);
       explicit image(std::istream& stream);
       explicit image(const char* const* bits);
       image(int32_t width, int32_t height);
