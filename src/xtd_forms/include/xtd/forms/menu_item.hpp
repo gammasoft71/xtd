@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/ustring.hpp>
+#include <string>
 #include "menu.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -9,13 +9,13 @@ namespace xtd {
     class menu_item : public menu {
     public:      
       menu_item() : menu(menu::menu_item_collection {}) {};
-      menu_item(const ustring& text) : menu(menu::menu_item_collection {}), text_(text) {}
+      menu_item(const std::string& text) : menu(menu::menu_item_collection {}), text_(text) {}
 
     protected:
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
 
-      ustring text_;
+      std::string text_;
     };
   }
 }

@@ -23,7 +23,7 @@ text_box& text_box::border_style(forms::border_style border_style) {
   return *this;
 }
 
-control& text_box::text(const ustring& text) {
+control& text_box::text(const std::string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::text_box::text(this->handle_, this->text_.c_str());

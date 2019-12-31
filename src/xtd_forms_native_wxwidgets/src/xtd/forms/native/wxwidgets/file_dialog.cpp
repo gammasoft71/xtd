@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 #if !defined(__WXOSX__)
-bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
+bool file_dialog::run_open_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
   long wx_style = wxFD_OPEN;
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
   if ((options & OFN_NODEREFERENCELINKS) == OFN_NODEREFERENCELINKS) wx_style |= wxFD_NO_FOLLOW;
@@ -18,21 +18,21 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const ustring& default_ext, ust
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION > 1) || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION == 1 && wxRELEASE_NUMBER >= 3)
   if ((options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN) wx_style |= wxFD_SHOW_HIDDEN;
 #endif
-  wxFileDialog dialog(reinterpret_cast<wxWindow*>(hwnd), title.wstr(), initial_directory.wstr(), file_name.wstr(), filter, wx_style);
+  wxFileDialog dialog(reinterpret_cast<wxWindow*>(hwnd), {title.c_str(), wxMBConvUTF8()}, {initial_directory.c_str(), wxMBConvUTF8()}, {file_name.c_str(), wxMBConvUTF8()}, {filter.c_str(), wxMBConvUTF8()}, wx_style);
   if (dialog.ShowModal() != wxID_OK) return false;
   if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT) {
     file_name = dialog.GetPath();
   } else {
     wxArrayString files;
     dialog.GetFilenames(files);
-    file_name = files[0].ToStdString();
+    file_name = files[0].ToStdString(wxMBConvUTF8());
     for (wxString file : files)
-      file_names.push_back(file.ToStdString());
+      file_names.push_back(file.ToStdString(wxMBConvUTF8()));
   }
   return true;
 }
 
-bool file_dialog::run_save_dialog(intptr_t hwnd, const ustring& default_ext, ustring& file_name, std::vector<ustring>& file_names, const ustring& filter, size_t filter_index, const ustring& initial_directory, size_t options, bool support_multi_dotted_extensions, const ustring& title) {
+bool file_dialog::run_save_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
   long wx_style = wxFD_SAVE;
   if ((options & OFN_OVERWRITEPROMPT) == OFN_OVERWRITEPROMPT) wx_style |= wxFD_OVERWRITE_PROMPT;
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
@@ -43,7 +43,7 @@ bool file_dialog::run_save_dialog(intptr_t hwnd, const ustring& default_ext, ust
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION > 1) || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION == 1 && wxRELEASE_NUMBER >= 3)
   if ((options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN) wx_style |= wxFD_SHOW_HIDDEN;
 #endif
-  wxFileDialog dialog(reinterpret_cast<wxWindow*>(hwnd), title.wstr(), initial_directory.wstr(), file_name.wstr(), filter, wx_style);
+  wxFileDialog dialog(reinterpret_cast<wxWindow*>(hwnd), {title.c_str(), wxMBConvUTF8()}, {initial_directory.c_str(), wxMBConvUTF8()}, {file_name.c_str(), wxMBConvUTF8()}, {filter.c_str(), wxMBConvUTF8()}, wx_style);
   if (dialog.ShowModal() != wxID_OK) return false;
   file_name = dialog.GetPath();
   return true;

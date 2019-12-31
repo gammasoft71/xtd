@@ -17,8 +17,8 @@ namespace xtd {
         return *this;
       }
       
-      const ustring& description() const {return description_;}
-      folder_browser_dialog& description(const ustring& value) {
+      const std::string& description() const {return description_;}
+      folder_browser_dialog& description(const std::string& value) {
         description_ = value;
         return *this;
       }
@@ -29,8 +29,8 @@ namespace xtd {
         return *this;
       }
 
-      const ustring& selected_path() const {return selected_path_;}
-      folder_browser_dialog& selected_path(const ustring& value) {
+      const std::string& selected_path() const {return selected_path_;}
+      folder_browser_dialog& selected_path(const std::string& value) {
         selected_path_ = value;
         return *this;
       }
@@ -48,9 +48,9 @@ namespace xtd {
       bool get_option(size_t flag) const {return (this->options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {this->options_ = value ? this->options_ | flag : this->options_ & ~flag;}
 
-      ustring description_;
+      std::string description_;
       environment::special_folder root_folder_ = environment::special_folder::desktop;
-      ustring selected_path_;
+      std::string selected_path_;
       size_t options_ =  BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE;
     };
   }

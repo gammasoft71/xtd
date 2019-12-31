@@ -194,7 +194,7 @@ control& control::parent(nullptr_t) {
   return *this;
 }
 
-control& control::text(const ustring& text) {
+control& control::text(const std::string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::control::text(this->handle_, this->text_);
@@ -611,7 +611,7 @@ void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
   }
 }
 
-ustring control::to_string() const {
+std::string control::to_string() const {
   if (!this->name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), this->name_);
   if (!this->text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), this->text_);
   return strings::full_class_name(*this);

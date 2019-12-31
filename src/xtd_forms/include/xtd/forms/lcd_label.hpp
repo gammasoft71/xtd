@@ -1,3 +1,4 @@
+#include <codecvt>
 #include "control.hpp"
 #include "dot_matrix_display.hpp"
 #include "lcd_style.hpp"
@@ -14,7 +15,7 @@ namespace xtd {
         ~idigit() = default;
 
         virtual wchar_t get_character() const = 0;
-        virtual ustring get_valid_characters() const = 0;
+        virtual std::string get_valid_characters() const = 0;
         virtual int32_t get_thickness() const = 0;
 
         virtual void set_background_digit_transparency(double value) = 0;
@@ -30,7 +31,7 @@ namespace xtd {
         dot_matrix_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
+        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/%\\_°\"'[](){}<>| .,:;!?&$€";}
         int32_t get_thickness() const override {return dot_matrix_display::thickness();}
         
         void set_background_digit_transparency(double value) override {dot_matrix_display::background_dot_transparency(value);}
@@ -149,7 +150,7 @@ namespace xtd {
         fourteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
+        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return fourteen_segment_display::thickness();}
         
         void set_background_digit_transparency(double value) override {fourteen_segment_display::background_segment_transparency(value);}
@@ -257,7 +258,7 @@ namespace xtd {
         nine_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return nine_segment_display::thickness();}
         
         void set_background_digit_transparency(double value) override {nine_segment_display::background_segment_transparency(value);}
@@ -345,7 +346,7 @@ namespace xtd {
         seven_segment_display_digit() = default;
 
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
+        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJLNOPQRSTUYabcdefghijlnopqrstuy=-_°\"'[]| .,:";}
         int32_t get_thickness() const override {return seven_segment_display::thickness();}
 
         void set_background_digit_transparency(double value) override {seven_segment_display::background_segment_transparency(value);}
@@ -433,7 +434,7 @@ namespace xtd {
         sixteen_segment_display_digit() = default;
         
         wchar_t get_character() const override {return character_;}
-        ustring get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
+        std::string get_valid_characters() const override {return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz=+-*/\\_°\"'[]()| .,:";}
         int32_t get_thickness() const override {return sixteen_segment_display::thickness();}
         
         void set_background_digit_transparency(double value) override {sixteen_segment_display::background_segment_transparency(value);}
@@ -575,7 +576,7 @@ namespace xtd {
       lcd_label& lcd_style(forms::lcd_style value) {
         if (lcd_style_ != value) {
           lcd_style_ = value;
-          ustring current_text = text();
+          std::string current_text = text();
           text("");
           text(current_text);
         }
@@ -612,9 +613,9 @@ namespace xtd {
       }
 
       using control::text;
-      control& text(const ustring& value) override {
+      control& text(const std::string& value) override {
         if (text_ != value) {
-          std::wstring str = value.wstr();
+          std::wstring str = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(value.c_str());
           if (str.size() < digits_.size())
             digits_.erase(digits_.begin() + value.size(), digits_.end());
           if (str.size() > digits_.size())
@@ -641,7 +642,7 @@ namespace xtd {
         return *this;
       }
       
-      ustring valid_characters() {
+      std::string valid_characters() {
         switch (lcd_style_) {
           case lcd_style::seven_segment_display: return std::make_shared<seven_segment_display_digit>()->get_valid_characters();
           case lcd_style::nine_segment_display: return std::make_shared<nine_segment_display_digit>()->get_valid_characters();

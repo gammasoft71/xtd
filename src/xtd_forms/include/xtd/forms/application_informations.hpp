@@ -10,24 +10,24 @@ namespace xtd {
     public:
       /// @brief Gets the company name associated with the application.
       /// @return The company name.
-      static const ustring& company_name() {return instance().company_name_;}
+      static const std::string& company_name() {return instance().company_name_;}
       /// @brief Sets the company name associated with the application.
       /// @param company_name The company name.
-      static void company_name(const ustring& company_name) {instance().company_name_ = company_name;}
+      static void company_name(const std::string& company_name) {instance().company_name_ = company_name;}
       
       /// @brief Gets the product name associated with the application.
       /// @return The product name.
-      static ustring product_name() {return instance().product_name_;}
+      static std::string product_name() {return instance().product_name_;}
       /// @brief Sets the product name associated with the application.
       /// @param product_name The product name.
-      static void product_name(const ustring& product_name) {instance().product_name_ = product_name;}
+      static void product_name(const std::string& product_name) {instance().product_name_ = product_name;}
       
       /// @brief Gets the product version associated with the application.
       /// @return The product version.
-      static ustring product_version() {return instance().product_version_;}
+      static std::string product_version() {return instance().product_version_;}
       /// @brief Sets the product version associated with the application.
       /// @param product_version The product version.
-      static void product_version(const ustring& product_version) {instance().product_version_ = product_version;}
+      static void product_version(const std::string& product_version) {instance().product_version_ = product_version;}
 
     private:
       static application_informations& instance() {
@@ -35,9 +35,9 @@ namespace xtd {
         return application_informations;
       }
       application_informations() = default;
-      ustring company_name_;
-      ustring product_name_;
-      ustring product_version_;
+      std::string company_name_;
+      std::string product_name_;
+      std::string product_version_;
     };
   }
 }

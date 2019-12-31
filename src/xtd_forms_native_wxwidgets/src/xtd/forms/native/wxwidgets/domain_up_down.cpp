@@ -11,9 +11,9 @@ void domain_up_down::delete_item(intptr_t control, size_t index) {
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }
 
-void domain_up_down::insert_item(intptr_t control, size_t index, const ustring& value) {
+void domain_up_down::insert_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems().Insert(value, index);
+  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems().Insert({value.c_str(), wxMBConvUTF8()}, index);
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }
 
@@ -27,8 +27,8 @@ void domain_up_down::selected_index(intptr_t control, size_t index) {
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedIndex(index);
 }
 
-void domain_up_down::update_item(intptr_t control, size_t index, const ustring& value) {
+void domain_up_down::update_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems()[index] = value;
+  static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetItems()[index] = {value.c_str(), wxMBConvUTF8()};
   static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->updateSpin();
 }

@@ -10,8 +10,9 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 #if defined(__WXMSW__)
-int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
-  return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
+int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool displayHelpButton) {
+  //return MessageBoxA(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), text.c_str(), caption.c_str(), style + (displayHelpButton ? 0x00004000L : 0));
+  return MessageBoxW(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(text.c_str()).c_str(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(caption.c_str()).c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 }
 #elif !defined(__WXOSX__)
 namespace {
@@ -60,9 +61,9 @@ namespace {
   }
 }
 
-int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool display_help_button) {
+int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   native::application::initialize(); // Must be first
-  wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), text, caption, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
+  wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {text.c_str(), wxMBConvUTF8()}, {caption.c_str(), wxMBConvUTF8()}, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);
   return convert_to_dialog_result(dialog.ShowModal(), style);
 }

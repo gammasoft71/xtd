@@ -18,7 +18,7 @@ forms::create_params tab_page::create_params() const {
   return create_params;
 }
 
-control& tab_page::text(const ustring& text) {
+control& tab_page::text(const std::string& text) {
   if (this->text_ != text) {
     if (this->parent().has_value()) {
       for (size_t index = 0; index < this->parent().value().get().controls().size(); index++) {

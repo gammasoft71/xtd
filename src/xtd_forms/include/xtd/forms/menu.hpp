@@ -1,7 +1,7 @@
 #pragma once
 #include <any>
 #include <optional>
-#include <xtd/ustring.hpp>
+#include <string>
 #include "component.hpp"
 #include "layout/arranged_element_collection.hpp"
 
@@ -58,12 +58,12 @@ namespace xtd {
       /// @brief Gets the name of the menu.
       /// @return A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      const ustring& name() const {return data_->name_;}
+      const std::string& name() const {return data_->name_;}
 
       /// @brief Sets the name of the menu.
       /// @param value A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
-      menu& name(const ustring& value) {
+      menu& name(const std::string& value) {
         data_->name_ = value;
         return *this;
       }
@@ -96,7 +96,7 @@ namespace xtd {
       /// @brief Returns a string that represents the menu control.
       /// @return A string that represents the current menu.
       /// @remarks The to_string method returns a string that includes the type and the number of items in the menu_items property of the control.
-      ustring to_string() const;
+      std::string to_string() const;
       
       /// @brief Specifies that the find_menu_item(int32_t, intptr_t) method should search for a handle.
       static constexpr const int find_handle = 0;
@@ -136,7 +136,7 @@ namespace xtd {
         intptr_t handle_ = 0;
         menu_item_collection menu_items_;
         std::unique_ptr<menu_item> mdi_list_item_;
-        ustring name_;
+        std::string name_;
         std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;
       };

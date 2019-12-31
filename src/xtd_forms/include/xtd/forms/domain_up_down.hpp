@@ -10,8 +10,8 @@ namespace xtd {
        class item {
        public:
          item() = default;
-         item(const ustring& value) : value_(value) {}
-         item(const ustring& value, const std::any& tag) : value_(value), tag_(tag) {}
+         item(const std::string& value) : value_(value) {}
+         item(const std::string& value, const std::any& tag) : value_(value), tag_(tag) {}
          /// @cond
          item(const char* value) : value_(value) {}
          item(const item& value) = default;
@@ -24,15 +24,15 @@ namespace xtd {
          bool operator>=(const item& value) const {return this->value_ >= value.value_;}
          /// @endcond
          
-         virtual const ustring& value() const {return this->value_;}
+         virtual const std::string& value() const {return this->value_;}
          
          virtual std::any tag() const {return this->tag_;}
          
-         ustring to_string() const {return this->value_;}
+         std::string to_string() const {return this->value_;}
          friend std::ostream& operator<<(std::ostream& os, const item& value) {return os << value.to_string();}
          
        private:
-         ustring value_;
+         std::string value_;
          std::any tag_;
        };
       

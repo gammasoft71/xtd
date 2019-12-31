@@ -52,9 +52,9 @@ namespace xtd {
           if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
           this->modal_ = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW;
           if (this->modal_)
-            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           else
-            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, create_params.caption().wstr(), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
           this->control()->SetMinSize({75, 23});
           this->panel_ = new wxMainPanel(this->control(), wxID_ANY, wxDefaultPosition, wxDefaultSize, panel_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
         }

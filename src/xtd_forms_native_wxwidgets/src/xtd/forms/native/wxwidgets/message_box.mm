@@ -106,7 +106,7 @@ namespace {
   }
 }
 
-int32_t message_box::show(intptr_t control, const ustring& text, const ustring& caption, uint32_t style, bool displayHelpButton) {
+int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool displayHelpButton) {
   @autoreleasepool {
     NSAlert *alert = [[NSAlert alloc] init];
     add_buttons(style, alert);
