@@ -126,8 +126,8 @@ namespace xtd {
       }
 
       virtual void draw_dot(drawing::graphics& graphics, const drawing::color& color,const dot& dot) {
-        int32_t y = (width() - dots_.size())  / dots_.size();
-        int32_t x = (height() - dots_[dot.y()].size()) / dots_[dot.y()].size();
+        int32_t y = (width() - static_cast<int32_t>(dots_.size()))  / static_cast<int32_t>(dots_.size());
+        int32_t x = (height() - static_cast<int32_t>(dots_[dot.y()].size())) / static_cast<int32_t>(dots_[dot.y()].size());
         if (dot_matrix_style_ == dot_matrix_style::standard)
           graphics.fill_pie(drawing::solid_brush(color), (1 + x) * dot.x(), (1 + y) * dot.y(), thickness(), thickness(), 0, 360);
         else if (dot_matrix_style_ == dot_matrix_style::square)
