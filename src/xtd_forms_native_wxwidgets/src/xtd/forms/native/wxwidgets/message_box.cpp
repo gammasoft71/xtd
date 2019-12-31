@@ -1,3 +1,4 @@
+#include <codecvt>
 #include <stdexcept>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/message_box.hpp>
