@@ -1,6 +1,7 @@
 #include <ctime>
 #include <xtd/xtd.forms>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -32,7 +33,7 @@ int main() {
   label.text(strings::format("{:t}", std::chrono::system_clock::now()));
   
   timer.tick += [&] {
-    ustring time_str = strings::format(show_seconds ? "{:t}" : "{:v}", std::chrono::system_clock::now());
+    std::string time_str = strings::format(show_seconds ? "{:t}" : "{:v}", std::chrono::system_clock::now());
     time_t time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     if (!show_seconds && std::localtime(&time)->tm_sec % 2) time_str = strings::replace(time_str, ':', ' ');
     label.text(time_str);

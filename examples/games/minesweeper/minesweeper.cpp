@@ -90,7 +90,7 @@ namespace minesweeper {
       if (neighbors_ == 2) text_color = color::green;
       if (neighbors_ == 1) text_color = color::blue;
       if (neighbors_ != 0) {
-        ustring text = std::to_string(neighbors_);
+        std::string text = std::to_string(neighbors_);
         int x = (e.clip_rectangle().width() - e.graphics().measure_string(text, font()).width()) / 2;
         int y = (e.clip_rectangle().height() - e.graphics().measure_string(text, font()).height()) / 2;
         e.graphics().draw_string(text, font(), solid_brush(color::lighter(color::lighter(text_color))), x - 1, y - 1);
