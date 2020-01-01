@@ -33,18 +33,18 @@ public:
     text("Send messages to form");
     location({100, 100});
     client_size({300, 300});
-    controls().push_back_range({button, list_box});
+    controls().push_back_range({button_send, list_box_messages});
     
     notifier.something_ready += [&] {
       static int counter = 0;
-      list_box.items().push_back(strings::format("Something ready notified {} times", ++counter));
-      list_box.selected_index(list_box.items().size() - 1);
+      list_box_messages.items().push_back(strings::format("Something ready notified {} times", ++counter));
+      list_box_messages.selected_index(list_box_messages.items().size() - 1);
     };
     
-    button.auto_size(true);
-    button.location({10, 10});
-    button.text("Send async notify something ready");
-    button.click += [this] {
+    button_send.auto_size(true);
+    button_send.location({10, 10});
+    button_send.text("Send async notify something ready");
+    button_send.click += [this] {
       thread async_thread([this] {
         this_thread::sleep_for(2s);
         notifier.notify_something_ready();
@@ -52,13 +52,13 @@ public:
       async_thread.detach();
     };
     
-    list_box.location({10, 50});
-    list_box.size({280, 240});
+    list_box_messages.location({10, 50});
+    list_box_messages.size({280, 240});
   }
   
 protected:
-  forms::button button;
-  forms::list_box list_box;
+  button button_send;
+  list_box list_box_messages;
   something_ready_notifier notifier;
 };
 
