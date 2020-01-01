@@ -25,9 +25,9 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const std::string& default_ext,
   } else {
     wxArrayString files;
     dialog.GetFilenames(files);
-    file_name = files[0].ToStdString(wxMBConvUTF8());
+    file_name = files[0].utf8_str().data();
     for (wxString file : files)
-      file_names.push_back(file.ToStdString(wxMBConvUTF8()));
+      file_names.push_back(file.utf8_str().data());
   }
   return true;
 }

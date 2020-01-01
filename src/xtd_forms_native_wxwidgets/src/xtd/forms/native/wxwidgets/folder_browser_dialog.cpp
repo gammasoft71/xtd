@@ -15,6 +15,6 @@ bool folder_browser_dialog::run_dialog(intptr_t hwnd, const std::string& descrip
   
   wxDirDialog dialog(reinterpret_cast<wxWindow*>(hwnd), {description.c_str(), wxMBConvUTF8()}, {path.c_str(), wxMBConvUTF8()}, wx_style);
   if (dialog.ShowModal() != wxID_OK) return false;
-  selected_path = dialog.GetPath().ToStdString(wxMBConvUTF8());
+  selected_path = dialog.GetPath().utf8_str().data();
   return true;
 }

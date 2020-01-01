@@ -36,7 +36,7 @@ rectangle screen::bounds(size_t index) {
 
 std::string screen::device_name(size_t index) {
   application::initialize();
-  std::string device_name = wxDisplay(index).GetName().ToStdString(wxMBConvUTF8());
+  std::string device_name = wxDisplay(index).GetName().utf8_str().data();
   return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 

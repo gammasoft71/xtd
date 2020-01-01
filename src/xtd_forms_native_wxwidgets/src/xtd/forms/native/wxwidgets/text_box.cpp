@@ -11,7 +11,7 @@ using namespace xtd::forms::native;
 
 std::string text_box::text(intptr_t control) {
   if (control == 0) return {};
-  return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().ToStdString(wxMBConvUTF8());
+  return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetValue().utf8_str().data();
 }
 
 void text_box::text(intptr_t control, const std::string& text) {
