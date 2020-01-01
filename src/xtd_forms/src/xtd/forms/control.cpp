@@ -728,7 +728,7 @@ void control::set_client_size_core(int32_t width, int32_t height) {
 void control::do_layout_parent() {
   if (!this->parent_) return;
   control* parent = &this->parent().value().get();
-  if (dynamic_cast<scrollable_control*>(parent) || parent->get_state(state::auto_size))
+  if (parent->get_state(state::auto_size))
     parent->on_layout(event_args::empty);
 }
 
