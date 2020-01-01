@@ -1,4 +1,3 @@
-#define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING 1
 #include <codecvt>
 #include "control.hpp"
 #include "dot_matrix_display.hpp"
@@ -616,7 +615,10 @@ namespace xtd {
       using control::text;
       control& text(const std::string& value) override {
         if (text_ != value) {
+#pragma warning(push)
+#pragma warning(suppress:4996)
           std::wstring str = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(value.c_str());
+#pragma warning(pop)
           if (str.size() < digits_.size())
             digits_.erase(digits_.begin() + value.size(), digits_.end());
           if (str.size() > digits_.size())
