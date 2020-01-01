@@ -118,7 +118,7 @@ namespace unit_tests {
 
     void test_method_(dbcs_enabled) {
 #if defined(_WIN32)
-      assert::are_equal_(GetSystemMetrics(SM_DBCSENABLED), system_information::dbcs_enabled());
+      assert::are_equal_(GetSystemMetrics(SM_DBCSENABLED) != 0, system_information::dbcs_enabled());
 #else
       assert::is_false_(system_information::dbcs_enabled());
 #endif
@@ -126,7 +126,7 @@ namespace unit_tests {
 
     void test_method_(debug_os) {
 #if defined(_WIN32)
-      assert::are_equal_(GetSystemMetrics(SM_DEBUG), system_information::debug_os());
+      assert::are_equal_(GetSystemMetrics(SM_DEBUG) != 0, system_information::debug_os());
 #else
       assert::is_false_(system_information::debug_os());
 #endif
@@ -154,7 +154,7 @@ namespace unit_tests {
 #if defined(_WIN32)
       int32_t drag_full_windows = 0;
       SystemParametersInfo(SPI_GETCARETWIDTH, 0, &drag_full_windows, 0);
-      assert::are_equal_(drag_full_windows, system_information::drag_full_windows());
+      assert::are_equal_(drag_full_windows != 0, system_information::drag_full_windows());
 #else
       assert::is_true_(system_information::drag_full_windows());
 #endif
