@@ -11,7 +11,7 @@ public:
 
     button1.location({10, 10});
     button1.text("Color...");
-    button1.click += [this] {
+    button1.click += [&] {
       color_dialog color_dialog;
       color_dialog.color(this->back_color());
       if (color_dialog.show_dialog() == forms::dialog_result::ok)

@@ -11,7 +11,7 @@ namespace examples {
     numeric_text_box() = default;
 
     double value() const {
-      double result = 0;
+      auto result = .0;
       try_parse(text(), result);
       return result;
     }
@@ -47,7 +47,7 @@ namespace examples {
       numeric_text_box1.parent(*this);
       numeric_text_box1.value(42);
       numeric_text_box1.location({10, 10});
-      numeric_text_box1.value_changed += [this](control& sender, const event_args& e) {
+      numeric_text_box1.value_changed += [&] {
         ctrace << format("value_changed [value={}]", numeric_text_box1.value()) << endl;
       };
     }

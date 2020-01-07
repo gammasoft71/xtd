@@ -22,7 +22,7 @@ public:
     
     back_color(color::average(dot_matrix_display1.fore_color(), color::black, 0.20));
     text("Dot matrix display example");
-    resize += [this] {
+    resize += [&] {
       dot_matrix_display1.left((client_size().width() - dot_matrix_display1.width()) / 2);
     };
   }

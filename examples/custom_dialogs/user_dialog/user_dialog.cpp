@@ -55,7 +55,7 @@ public:
     
     button_dialog.location({10, 10});
     button_dialog.text("Dialog...");
-    button_dialog.click += [this] {
+    button_dialog.click += [&] {
       user_input_dialog dialog;
       dialog.input_text(input_text.text());
       if (dialog.show_dialog() == forms::dialog_result::ok)

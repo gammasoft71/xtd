@@ -14,7 +14,7 @@ namespace examples {
       combo_box1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       combo_box1.selected_index(0);
       combo_box1.parent(*this);
-      combo_box1.selected_index_changed += [this] {
+      combo_box1.selected_index_changed += [&] {
         combo_box2.selected_index(combo_box1.selected_index());
         combo_box3.selected_index(combo_box1.selected_index());
       };
@@ -24,7 +24,7 @@ namespace examples {
       combo_box2.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       combo_box2.selected_index(0);
       combo_box2.parent(*this);
-      combo_box2.selected_index_changed += [this] {
+      combo_box2.selected_index_changed += [&] {
         combo_box1.selected_index(combo_box2.selected_index());
         combo_box3.selected_index(combo_box2.selected_index());
       };
@@ -34,7 +34,7 @@ namespace examples {
       combo_box3.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       combo_box3.selected_index(0);
       combo_box3.parent(*this);
-      combo_box3.selected_index_changed += [this] {
+      combo_box3.selected_index_changed += [&] {
         combo_box1.selected_index(combo_box3.selected_index());
         combo_box2.selected_index(combo_box3.selected_index());
       };

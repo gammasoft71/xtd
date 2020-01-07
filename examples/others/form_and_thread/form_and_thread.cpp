@@ -7,24 +7,24 @@ class form_thread : public form {
 public:
   form_thread() {
     text("Form and thread example");
-    form_closed += [this] {
+    form_closed += [&] {
       closed = true;
-      for (int index = 0; index < threads.size(); index++)
+      for (auto index = 0; index < threads.size(); index++)
         threads[index].join();
     };
 
     list_box.parent(*this);
     list_box.dock(dock_style::fill);
     
-    for (int index = 0; index < threads.size(); index++) {
+    for (auto index = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int user_thread_id) {
-        int counter = 0;
+        auto counter = 0;
         while (!closed) {
           /// simulate work...
           std::this_thread::sleep_for(5ms);
           counter++;
           /// call invoke method to update ui in the main thread.
-          list_box.invoke([=] {
+          list_box.invoke([&] {
             list_box.items().push_back(xtd::strings::format("thread: {}, counter: {:d}", user_thread_id, counter));
             list_box.selected_index(list_box.items().size() - 1);
           });

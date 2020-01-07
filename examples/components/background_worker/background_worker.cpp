@@ -14,7 +14,7 @@ namespace examples {
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       controls().push_back_range({panel_command, progress});
-      form_closed += [this] {
+      form_closed += [&] {
         if (worker.is_busy())
           worker.cancel_async();
       };
@@ -31,7 +31,7 @@ namespace examples {
 
       button_run.location({10, 10});
       button_run.text("Run");
-      button_run.click += [this] {
+      button_run.click += [&] {
         panel_progress.visible(true);
         button_cancel.enabled(true);
         button_run.enabled(false);
@@ -43,7 +43,7 @@ namespace examples {
       button_cancel.location({215, 10});
       button_cancel.text("Cancel");
       button_cancel.enabled(false);
-      button_cancel.click += [this] {
+      button_cancel.click += [&] {
         button_cancel.enabled(false);
         worker.cancel_async();
       };
@@ -60,20 +60,20 @@ namespace examples {
       
       worker.worker_supports_cancellation(true);
       worker.worker_reports_progress(true);
-      worker.do_work += [this](component& sender, do_work_event_args& e){
-        for (int step = 1; step <= progress.maximum(); step++) {
+      worker.do_work += [&] {
+        for (auto step = 1; step <= progress.maximum(); step++) {
           if (worker.cancellation_pending()) break; // stop work...
           std::this_thread::sleep_for(100ms); // simulate work...
           worker.report_progress(step, strings::format("step {} / {}", step, progress.maximum()));
         }
       };
       
-      worker.progress_changed += [this](component& sender, const progress_changed_event_args& e) {
+      worker.progress_changed += [&](component& sender, const progress_changed_event_args& e) {
         progress.value(e.progress_percentage());
         list_progress.items().push_back(std::any_cast<std::string>(e.user_state()));
       };
       
-      worker.run_worker_completed += [this](component& sender, const run_worker_completed_event_args& e){
+      worker.run_worker_completed += [&](component& sender, const run_worker_completed_event_args& e){
         panel_progress.visible(false);
         button_run.enabled(true);
         button_cancel.enabled(false);

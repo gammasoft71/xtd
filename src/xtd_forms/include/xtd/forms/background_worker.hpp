@@ -1,7 +1,7 @@
 #pragma once
 #include <thread>
 #include "component.hpp"
-#include "control.hpp"
+#include "form.hpp"
 #include "do_work_event_handler.hpp"
 #include "progress_changed_event_handler.hpp"
 #include "run_worker_completed_event_handler.hpp"
@@ -71,7 +71,7 @@ namespace xtd {
       bool worker_reports_progress_ = false;
       bool worker_supports_cancellation_ = false;
       progress_changed_event_args e_ {0, std::any()};
-      control invoker_;
+      std::unique_ptr<form> invoker_;
       std::thread thread_;
     };
   }

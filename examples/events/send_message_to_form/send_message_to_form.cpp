@@ -36,7 +36,7 @@ public:
     controls().push_back_range({button_send, list_box_messages});
     
     notifier.something_ready += [&] {
-      static int counter = 0;
+      static auto counter = 0;
       list_box_messages.items().push_back(strings::format("Something ready notified {} times", ++counter));
       list_box_messages.selected_index(list_box_messages.items().size() - 1);
     };
@@ -44,8 +44,8 @@ public:
     button_send.auto_size(true);
     button_send.location({10, 10});
     button_send.text("Send async notify something ready");
-    button_send.click += [this] {
-      thread async_thread([this] {
+    button_send.click += [&] {
+      thread async_thread([&] {
         this_thread::sleep_for(2s);
         notifier.notify_something_ready();
       });

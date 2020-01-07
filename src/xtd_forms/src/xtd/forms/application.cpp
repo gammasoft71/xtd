@@ -201,11 +201,11 @@ void application::run() {
 
 void application::run(application_context& context) {
   try {
-    if (context.main_form_ != nullptr) context.main_form().show();
     context.thread_exit += application::on_app_thread_exit;
     native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
     native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
     application::message_loop_ = true;
+    if (context.main_form_ != nullptr) context.main_form().show();
     native::application::run();
     application::message_loop_ = false;
   } catch(std::exception& exception) {

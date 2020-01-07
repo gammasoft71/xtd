@@ -23,7 +23,7 @@ public:
     track_bar1.auto_size(false);
     track_bar1.orientation(forms::orientation::vertical);
     track_bar1.parent(*this);
-    track_bar1.value_changed += [this](control& sender, const event_args& e) {
+    track_bar1.value_changed += [&] {
       progress_bar1.value(track_bar1.value());
       label1.text(strings::format("{}", track_bar1.value()));
     };

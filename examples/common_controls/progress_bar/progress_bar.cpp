@@ -37,11 +37,8 @@ namespace examples {
       progress_bar5.width(200);
       
       timer1.interval(50);
-      timer1.tick += [this] {
-        if (progress_bar4.value() == progress_bar4.maximum())
-          progress_bar4.value(progress_bar4.minimum());
-        else
-          progress_bar4.perform_step();
+      timer1.tick += [&] {
+        progress_bar4.value(progress_bar4.value() < progress_bar4.maximum() ? progress_bar4.value() + 1 : progress_bar4.minimum());
       };
       timer1.enabled(true);
     }

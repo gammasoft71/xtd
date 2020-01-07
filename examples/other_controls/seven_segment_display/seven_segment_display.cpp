@@ -22,7 +22,7 @@ public:
     
     back_color(color::average(seven_segment_display1.fore_color(), color::black, 0.20));
     text("Seven segment display example");
-    resize += [this] {
+    resize += [&] {
       seven_segment_display1.left((client_size().width() - seven_segment_display1.width()) / 2);
     };
   }
