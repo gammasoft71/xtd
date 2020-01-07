@@ -138,7 +138,6 @@ control& form::visible(bool visible) {
   std::optional<forms::form_window_state> current_window_state;
   if (!this->previous_screeen_) {
     current_window_state = this->window_state_;
-    if (!this->handle_) this->create_control();
     this->previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
     this->recreate_handle();
   }
@@ -304,7 +303,6 @@ void form::wm_close(message &message) {
     if (!this->get_state(state::modal)) {
       this->def_wnd_proc(message);
       this->destroy_control();
-      this->previous_screeen_ = nullptr;
     } else {
       if (this->dialog_result_ == forms::dialog_result::none) this->dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(this->handle_, static_cast<int32_t>(this->dialog_result_));
