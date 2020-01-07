@@ -11,7 +11,7 @@ public:
 
     button1.location({10, 10});
     button1.text("Open...");
-    button1.click += [this] {
+    button1.click += [&] {
       open_file_dialog dialog;
       dialog.initial_directory(environment::get_folder_path(environment::special_folder::desktop));
       dialog.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");

@@ -16,7 +16,7 @@ public:
     button.parent(*this);
     button.text("Close");
     button.location({10, 10});
-    button.click += [this](control& sender, const event_args& e) {
+    button.click += [&] {
       close();
     };
   }

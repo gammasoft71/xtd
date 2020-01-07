@@ -18,7 +18,7 @@ namespace examples {
       color_picker.parent(*this);
       color_picker.color(test_zone.back_color());
       color_picker.location({10, 10});
-      color_picker.color_changed += [this] {
+      color_picker.color_changed += [&] {
         test_zone.back_color(color_picker.color());
       };
     }

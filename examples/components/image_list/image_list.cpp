@@ -10,7 +10,7 @@ namespace example {
     form1() {
       text("Image list example");
       client_size({300, 250});
-      click += [this] {
+      click += [&] {
         load_images();
       };
 
@@ -21,7 +21,7 @@ namespace example {
       picture.border_style(forms::border_style::fixed_3d);
       picture.bounds({75, 25, 152, 152});
       picture.size_mode(picture_box_size_mode::center_image);
-      picture.click += [this] {
+      picture.click += [&] {
         load_images();
       };
 
@@ -29,7 +29,7 @@ namespace example {
       button_previous.text("<");
       button_previous.location({73, 200});
       button_previous.enabled(false);
-      button_previous.click += [this] {
+      button_previous.click += [&] {
         if (current_image_index > 0) {
           current_image_index--;
           picture.image(image_list.images()[current_image_index]);
@@ -42,7 +42,7 @@ namespace example {
       button_next.text(">");
       button_next.location({152, 200});
       button_next.enabled(false);
-      button_next.click += [this] {
+      button_next.click += [&] {
         if (current_image_index < image_list.images().size()) {
           current_image_index++;
           picture.image(image_list.images()[current_image_index]);
@@ -62,7 +62,7 @@ namespace example {
       ofd.filter("All Image Files|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.xpm|Bitmap Files|*.bmp|Gif Files|*.gif|Jpeg Files|*.jpg;*.jpeg|Png Files|*.png|Tiff Files|*.tif;*.tiff|xpm Files|*.xpm");
       if (ofd.show_dialog() == dialog_result::ok) {
         image_list.images().clear();
-        for (const auto& file : ofd.file_names())
+        for (auto file : ofd.file_names())
           image_list.images().push_back(drawing::image::from_file(file));
         current_image_index = 0;
         picture.image(image_list.images()[0]);

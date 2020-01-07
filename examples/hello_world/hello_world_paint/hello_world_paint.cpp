@@ -11,7 +11,7 @@ namespace examples {
     wiggly() {
       back_color(system_colors::window());
       timer.interval(60);
-      timer.tick += [this]{
+      timer.tick += [&] {
         step++;
         invalidate();
       };
@@ -20,11 +20,11 @@ namespace examples {
 
   protected:
     void on_paint(paint_event_args& e) override {
-      point pos((e.clip_rectangle().size().width() - (int)e.graphics().measure_string(text(), font()).width()) / 2, (e.clip_rectangle().size().height() - (int)e.graphics().measure_string(text(), font()).height()) / 2);
-      for (int i = 0; i < text().length(); i++) {
-        int index = (step + i) % sin.size();
-        e.graphics().draw_string(strings::format("{}", text()[i]), font(), solid_brush(color::from_hsb((float)(15 - index) * 16 / 255 * 360, 1.0f, 0.75f)), point(pos.x(), pos.y() + sin[index] * (e.clip_rectangle().height() - font().height()) / 400));
-        pos.x(pos.x() + (int)e.graphics().measure_string(strings::format("{}", text()[i]), font()).width());
+      point pos((e.clip_rectangle().size().width() - static_cast<int>(e.graphics().measure_string(text(), font()).width())) / 2, (e.clip_rectangle().size().height() - static_cast<int>(e.graphics().measure_string(text(), font()).height())) / 2);
+      for (auto i = 0; i < text().length(); i++) {
+        auto index = (step + i) % sin.size();
+        e.graphics().draw_string(strings::format("{}", text()[i]), font(), solid_brush(color::from_hsb(static_cast<float>(15 - index) * 16 / 255 * 360, 1.0f, 0.75f)), point(pos.x(), pos.y() + sin[index] * (e.clip_rectangle().height() - font().height()) / 400));
+        pos.x(pos.x() + static_cast<int>(e.graphics().measure_string(strings::format("{}", text()[i]), font()).width()));
       }
     }
     
@@ -42,7 +42,7 @@ namespace examples {
       controls().push_back_range({wiggly, text_box});
       
       text_box.location({20, 90});
-      text_box.text_changed += [this] {
+      text_box.text_changed += [&] {
         this->wiggly.text(text_box.text());
       };
       text_box.text("Hello, World!");

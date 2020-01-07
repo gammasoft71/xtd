@@ -11,23 +11,23 @@ public:
     
     switch_button1.parent(*this);
     switch_button1.location({50, 30});
-    switch_button1.checked_changed += [this](control& sender, const event_args& e) {
-      label1.text(strings::format("switch: {}", static_cast<switch_button&>(sender).checked() ? "ON" : "OFF"));
+    switch_button1.checked_changed += [&] {
+      label1.text(strings::format("switch: {}", switch_button1.checked() ? "ON" : "OFF"));
     };
 
     switch_button2.parent(*this);
     switch_button2.auto_check(false);
     switch_button2.checked(true);
     switch_button2.location({50, 70});
-    switch_button2.click += [](control& sender, const event_args& e) {
-      //static_cast<switch_button&>(sender).checked(!static_cast<switch_button&>(sender).checked());
+    switch_button2.click += [&] {
+      //switch_button2.checked(!switch_button2.checked());
     };
     
     switch_button3.parent(*this);
     switch_button3.location({170, 30});
     switch_button3.rounded(true);
-    switch_button3.checked_changed += [this](control& sender, const event_args& e) {
-      label2.text(strings::format("switch: {}", static_cast<switch_button&>(sender).checked() ? "ON" : "OFF"));
+    switch_button3.checked_changed += [&] {
+      label2.text(strings::format("switch: {}", switch_button3.checked() ? "ON" : "OFF"));
     };
 
     switch_button4.parent(*this);
@@ -35,8 +35,8 @@ public:
     switch_button4.checked(true);
     switch_button4.location({170, 70});
     switch_button4.rounded(true);
-    switch_button4.click += [](control& sender, const event_args& e) {
-      //static_cast<switch_button&>(sender).checked(!static_cast<switch_button&>(sender).checked());
+    switch_button4.click += [&] {
+      //switch_button4.checked(!switch_button4.checked());
     };
 
     label1.parent(*this);

@@ -18,13 +18,13 @@ namespace examples {
       button1.parent(*this);
       button1.text("Start");
       button1.location({10, 90});
-      button1.click += [this](control& sender, const event_args& e) {
+      button1.click += [&](control& sender, const event_args& e) {
         timer1.enabled(!timer1.enabled());
         button1.text(timer1.enabled() ? "Stop": "Start");
       };
 
       timer1.interval(100);
-      timer1.tick += [this](forms::timer& sender, const event_args& e) {
+      timer1.tick += [&](forms::timer& sender, const event_args& e) {
         label1.text(strings::format("{:F1}", ++counter / 10.0));
       };
 

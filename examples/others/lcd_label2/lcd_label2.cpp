@@ -5,7 +5,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 int main() {
-  int counter = 0;
+  auto counter = 0;
   
   timer timer;
   timer.interval(100);

@@ -21,7 +21,7 @@ namespace examples {
       button.parent(*this);
       button.text("Close");
       button.location({10, 10});
-      button.click += [this] {
+      button.click += [&] {
         close();
       };
     }

@@ -27,8 +27,8 @@ namespace game_of_life {
       };
       std::vector<updated_cell> updated_cells;
       
-      for (int y = 0; y < columns; y++) {
-        for (int x = 0; x < rows; x++) {
+      for (auto y = 0; y < columns; y++) {
+        for (auto x = 0; x < rows; x++) {
           int neighbors = get_neighbors(x, y);
           if (cells_[y][x] == cell::populated && (neighbors <= 1 || neighbors >= 4)) {
             updated_cells.push_back({x, y, cell::empty});
@@ -45,7 +45,7 @@ namespace game_of_life {
     }
     
     int get_neighbors(int x, int y) const {
-      int neighbors = 0;
+      auto neighbors = 0;
 
       if ((x - 1) >= 0 && cells_[y][x - 1] == cell::populated)
         neighbors++;

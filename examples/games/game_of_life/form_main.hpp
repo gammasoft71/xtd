@@ -14,7 +14,7 @@ namespace game_of_life {
       button_run_.parent(*this);
       button_run_.text("Run");
       button_run_.location({10, 10});
-      button_run_.click += [this] {
+      button_run_.click += [&] {
         timer_run_.enabled(!timer_run_.enabled());
         button_run_.text(timer_run_.enabled() ? "Stop" : "Run");
       };
@@ -34,7 +34,7 @@ namespace game_of_life {
       choice_figures_.location({280, 11});
       choice_figures_.selected_index(0);
       choice_figures_.width(200);
-      choice_figures_.selected_index_changed += [this] {
+      choice_figures_.selected_index_changed += [&] {
         std::any_cast<figure_delegate>(choice_figures_.items()[choice_figures_.selected_index()].tag())();
         choice_figures_.selected_index(0);
       };
@@ -58,7 +58,7 @@ namespace game_of_life {
       track_bar_zoom_.maximum(50);
       track_bar_zoom_.tick_style(xtd::forms::tick_style::none);
       track_bar_zoom_.value(zoom_);
-      track_bar_zoom_.value_changed += [this] {
+      track_bar_zoom_.value_changed += [&] {
         if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width())
           track_bar_zoom_.value(panel_grid_.client_size().width() / grid::columns + 1);
         if ((track_bar_zoom_.value() * grid::rows) < panel_grid_.client_size().height())
@@ -82,7 +82,7 @@ namespace game_of_life {
       track_bar_speed_.maximum(100);
       track_bar_speed_.tick_style(xtd::forms::tick_style::none);
       track_bar_speed_.value(speed_);
-      track_bar_speed_.value_changed += [this] {
+      track_bar_speed_.value_changed += [&] {
         speed_ = track_bar_speed_.value();
         timer_run_.interval(1000 / speed_);
         label_speed_.text(xtd::strings::format("Speed : {}", speed_));
@@ -96,35 +96,35 @@ namespace game_of_life {
       panel_grid_.location({10, 75});
       panel_grid_.size({695, 395});
       
-      panel_grid_.mouse_down += [this](control& sender, const xtd::forms::mouse_event_args& e) {
+      panel_grid_.mouse_down += [&](control& sender, const xtd::forms::mouse_event_args& e) {
         current_state_ = grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] == cell::populated ? cell::empty : cell::populated;
         grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
         panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
       };
       
-      panel_grid_.mouse_move += [this](control& sender, const xtd::forms::mouse_event_args& e) {
+      panel_grid_.mouse_move += [&](control& sender, const xtd::forms::mouse_event_args& e) {
         if (e.button() == xtd::forms::mouse_buttons::left) {
           grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
           panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
         }
       };
       
-      panel_grid_.paint += [this](control& sender, xtd::forms::paint_event_args& e) {
+      panel_grid_.paint += [&](control& sender, xtd::forms::paint_event_args& e) {
         e.graphics().clear(back_color());
         if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width() && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height())
-          for (int y = 0; y < panel_grid_.client_size().height(); y += zoom_)
-            for (int x = 0; x < panel_grid_.client_size().width(); x += zoom_)
+          for (auto y = 0; y < panel_grid_.client_size().height(); y += zoom_)
+            for (auto x = 0; x < panel_grid_.client_size().width(); x += zoom_)
               if (grid_.cells()[offset_y_ + y / zoom_][offset_x_ + x / zoom_] != cell::empty)
                 e.graphics().fill_rectangle(xtd::drawing::solid_brush(populated_color_), x, y, zoom_, zoom_);
         if (zoom_ > 3) {
-          for (int index = 0; index < panel_grid_.client_size().width(); index += zoom_)
+          for (auto index = 0; index < panel_grid_.client_size().width(); index += zoom_)
             e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), index, 0, 1, panel_grid_.client_size().height());
-          for (int index = 0; index < panel_grid_.client_size().height(); index += zoom_)
+          for (auto index = 0; index < panel_grid_.client_size().height(); index += zoom_)
             e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), 0, index, panel_grid_.client_size().width(), 1);
         }
       };
       
-      panel_grid_.resize += [this] {
+      panel_grid_.resize += [&] {
         if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width()) {
           zoom_ = panel_grid_.client_size().width() / grid::columns + 1;
           track_bar_zoom_.value(zoom_);
@@ -138,7 +138,7 @@ namespace game_of_life {
       timer_run_.interval(1000 / speed_);
       timer_run_.tick += {*this, &form_main::next};
       
-      grid_.cell_changed += [this](grid& sender, const cell_event_args& e) {
+      grid_.cell_changed += [&](grid& sender, const cell_event_args& e) {
         panel_grid_.invalidate(xtd::drawing::rectangle((e.x() - offset_x_) * zoom_, (e.y() - offset_y_) * zoom_, zoom_, zoom_), false);
       };
     }
@@ -160,32 +160,32 @@ namespace game_of_life {
     
     void random() {
       std::random_device rand;
-      int max = std::uniform_int_distribution<int>{ 50, 200 }(rand);
-      int max_x = panel_grid_.client_size().width() / zoom_;
-      int max_y = panel_grid_.client_size().height() / zoom_;
-      for (int counter = 0; counter < max; counter++) {
-        int x = std::uniform_int_distribution<int>(0, max_x)(rand);
-        int y = std::uniform_int_distribution<int>(0, max_y)(rand);
+      auto max = std::uniform_int_distribution<int>{ 50, 200 }(rand);
+      auto max_x = panel_grid_.client_size().width() / zoom_;
+      auto max_y = panel_grid_.client_size().height() / zoom_;
+      for (auto counter = 0; counter < max; counter++) {
+        auto x = std::uniform_int_distribution<int>(0, max_x)(rand);
+        auto y = std::uniform_int_distribution<int>(0, max_y)(rand);
         grid_.cells()[offset_y_ + y][offset_x_ + x] = cell::populated;
         panel_grid_.invalidate(xtd::drawing::rectangle(x * zoom_, y * zoom_, zoom_, zoom_), false);
       }
     }
     
     void fill_figure(const std::vector<std::string>& figure) {
-      int height = static_cast<int>(figure.size());
-      int width = 0;
-      for (std::string line : figure)
+      auto height = static_cast<int>(figure.size());
+      auto width = 0;
+      for (auto line : figure)
         if (line.length() > width) width = static_cast<int>(line.length());
       
-      int start_x = (panel_grid_.client_size().width() / zoom_ / 2) - (width / 2);
-      int y = (panel_grid_.client_size().height() / zoom_ / 2) - (height / 2);
+      auto start_x = (panel_grid_.client_size().width() / zoom_ / 2) - (width / 2);
+      auto y = (panel_grid_.client_size().height() / zoom_ / 2) - (height / 2);
       
       if (start_x < 5) start_x = 5;
       if (y < 5) y = 5;
       
-      for (std::string line : figure) {
-        int x = start_x;
-        for (char cell : line) {
+      for (auto line : figure) {
+        auto x = start_x;
+        for (auto cell : line) {
           grid_.cells()[offset_y_ + y][offset_x_ + x] = cell != ' ' ? cell::populated : cell::empty;
           panel_grid_.invalidate(xtd::drawing::rectangle(x * zoom_, y * zoom_, zoom_, zoom_), false);
           x++;

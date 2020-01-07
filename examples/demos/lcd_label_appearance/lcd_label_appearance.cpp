@@ -12,7 +12,7 @@ namespace examples {
       client_size({700, 350});
       choice_lcd_style.location({10, 10});
       choice_lcd_style.items().push_back_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
-      choice_lcd_style.selected_value_changed += [this] {
+      choice_lcd_style.selected_value_changed += [&] {
         lcd_label_label.text("");
         lcd_label_label.lcd_style(std::any_cast<lcd_style>(choice_lcd_style.selected_item().tag()));
         lcd_label_label.text(lcd_label_label.valid_characters());
@@ -28,8 +28,8 @@ namespace examples {
       choice_lcd_style.selected_index(0);
 
       choice_segment_style.location({140, 10});
-      choice_segment_style.selected_value_changed += [this] {
-        std::any style = choice_segment_style.selected_item().tag();
+      choice_segment_style.selected_value_changed += [&] {
+        auto style = choice_segment_style.selected_item().tag();
         if (std::any_cast<dot_matrix_style>(&style))
           lcd_label_label.dot_matrix_style(std::any_cast<forms::dot_matrix_style>(choice_segment_style.selected_item().tag()));
         else
@@ -39,14 +39,14 @@ namespace examples {
 
       numeric_up_down_height.location({270, 10});
       numeric_up_down_height.set_range(1, 400);
-      numeric_up_down_height.value_changed += [this] {
+      numeric_up_down_height.value_changed += [&] {
         lcd_label_label.height(numeric_up_down_height.value());
       };
       numeric_up_down_height.value(25);
       
       color_picker_up_down_fore_color.location({390, 10});
       color_picker_up_down_fore_color.color(lcd_label_label.fore_color());
-      color_picker_up_down_fore_color.color_changed += [this] {
+      color_picker_up_down_fore_color.color_changed += [&] {
         lcd_label_label.fore_color(color_picker_up_down_fore_color.color());
       };
       
@@ -55,7 +55,7 @@ namespace examples {
       check_box_show_digit_background.auto_size(true);
       check_box_show_digit_background.checked(true);
       check_box_show_digit_background.text("Show background digit");
-      check_box_show_digit_background.checked_changed += [this] {
+      check_box_show_digit_background.checked_changed += [&] {
         lcd_label_label.show_background_digit(check_box_show_digit_background.checked());
       };
       
