@@ -16,7 +16,7 @@ public:
       about_dialog.name("About dialog");
       about_dialog.version("1.0");
       about_dialog.long_version("1.0.0");
-      about_dialog.copyright(u8"Copyright \u00A9 2019 Gammasoft71.\nAll rights reserved.");
+      about_dialog.copyright(u8"Copyright \u00A9 2019 Gammasoft.\nAll rights reserved.");
       about_dialog.show();
     };
   }
