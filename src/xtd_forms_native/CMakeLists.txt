@@ -18,6 +18,7 @@ set(XTD_FORMS_INCLUDES
 )
 
 set(XTD_FORMS_NATIVE_INCLUDES
+  include/xtd/forms/native/about_dialog.hpp
   include/xtd/forms/native/application.hpp
   include/xtd/forms/native/arranged_direction_window.hpp
   include/xtd/forms/native/button.hpp

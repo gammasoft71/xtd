@@ -9,6 +9,7 @@
 #include <xtd/forms/window_messages.hpp>
 
 #include "xtd/forms/layout/arranged_element_collection.hpp"
+#include "xtd/forms/about_dialog.hpp"
 #include "xtd/forms/anchor_styles.hpp"
 #include "xtd/forms/appearance.hpp"
 #include "xtd/forms/application.hpp"

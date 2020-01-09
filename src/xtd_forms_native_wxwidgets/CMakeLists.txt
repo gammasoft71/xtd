@@ -36,6 +36,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
+  src/xtd/forms/native/wxwidgets/about_dialog.cpp
   src/xtd/forms/native/wxwidgets/application.cpp
   src/xtd/forms/native/wxwidgets/button.cpp
   src/xtd/forms/native/wxwidgets/check_box.cpp
