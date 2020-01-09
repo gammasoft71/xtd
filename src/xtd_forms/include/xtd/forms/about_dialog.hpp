@@ -5,12 +5,10 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
-    /// @remarks The inherited member show_dialog must be invoked to create this specific common dialog box. hook_proc can be overridden to implement specific dialog box hook functionality. Use color to retrieve the color selected by the user.
-    /// @remarks When you create an instance of color_dialog, some of the read/write properties are set to initial values. For a list of these values, see the color_dialog constructor.
+    /// @brief Represents a common dialog box that displays about box.
     /// @par Example
-    /// The following code example demonstrate the use of color_dialog dialog.
-    /// @include color_dialog.cpp
+    /// The following code example demonstrate the use of about_dialog dialog.
+    /// @include about_dialog.cpp
     class about_dialog : public common_dialog {
     public:
       /// @brief Initializes a new instance of the about_dialog class.
@@ -71,7 +69,7 @@ namespace xtd {
         return *this;
       }
 
-      /// @brief Resets all options to their default values, the last selected color to black, and the custom colors to their default values.
+      /// @brief Resets all properties to empty string.
       void reset() override;
       
       /// @brief Runs about dialog box.
