@@ -77,6 +77,7 @@ namespace xtd {
           this->push_back_range(collection);
           return *this;
         }
+        arranged_element_collection(arranged_element_collection&&) = default;
         bool operator==(const arranged_element_collection& value) const {return collection_ == value.collection_;}
         bool operator!=(const arranged_element_collection& value) const {return !operator==(value);}
         /// @endcond
