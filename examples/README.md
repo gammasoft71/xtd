@@ -117,6 +117,7 @@
 
 ## Common Dialogs
 
+* [about_dialog](common_dialogs/about_dialog/README.md) represents a common dialog box that displays about box.
 * [color_dialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
 * [folder_browser_dialog](common_dialogs/folder_browser_dialog/README.md) prompts the user to select a folder.
 * [font_dialog](common_dialogs/font_dialog/README.md) prompts the user to choose a font from among those installed on the local computer.

@@ -9,6 +9,7 @@ set(XTD_INCLUDES
 )
 
 set(XTD_FORMS_INCLUDES
+  include/xtd/forms/about_dialog.hpp
   include/xtd/forms/anchor_styles.hpp
   include/xtd/forms/appearance.hpp
   include/xtd/forms/application.hpp
@@ -141,6 +142,7 @@ set(XTD_FORMS_LAYOUT_INCLUDES
 )
 
 set(XTD_FORMS_SOURCES
+  src/xtd/forms/about_dialog.cpp
   src/xtd/forms/application.cpp
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/button.cpp

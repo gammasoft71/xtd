@@ -15,13 +15,20 @@ namespace xtd {
       /// @param company_name The company name.
       static void company_name(const std::string& company_name) {instance().company_name_ = company_name;}
       
+      /// @brief Gets the product description associated with the application.
+      /// @return The product description.
+      static std::string product_description() {return instance().product_description_;}
+      /// @brief Sets the product description associated with the application.
+      /// @param product_name The product description.
+      static void product_description(const std::string& product_description) {instance().product_description_ = product_description;}
+      
       /// @brief Gets the product name associated with the application.
       /// @return The product name.
       static std::string product_name() {return instance().product_name_;}
       /// @brief Sets the product name associated with the application.
       /// @param product_name The product name.
       static void product_name(const std::string& product_name) {instance().product_name_ = product_name;}
-      
+
       /// @brief Gets the product version associated with the application.
       /// @return The product version.
       static std::string product_version() {return instance().product_version_;}
@@ -36,6 +43,7 @@ namespace xtd {
       }
       application_informations() = default;
       std::string company_name_;
+      std::string product_description_;
       std::string product_name_;
       std::string product_version_;
     };
