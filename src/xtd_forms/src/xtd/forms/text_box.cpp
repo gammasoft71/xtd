@@ -59,6 +59,7 @@ forms::create_params text_box::create_params() const {
 
   if (multiline_) create_params.style(create_params.style() | ES_MULTILINE);
   if (use_system_password_char_) create_params.style(create_params.style() | ES_PASSWORD);
+  if (read_only_) create_params.style(create_params.style() | ES_READONLY);
 
   return create_params;
 }
