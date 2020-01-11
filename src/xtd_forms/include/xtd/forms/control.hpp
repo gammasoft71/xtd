@@ -177,7 +177,7 @@ namespace xtd {
       }
       
       /// @cond
-      control(control&&) = default;
+      control(control&&) = delete;
       control(const control&) = delete;
       ~control();
       /// @endcond
