@@ -9,8 +9,22 @@ namespace xtd {
     public:      
       forms::cursor default_cursor() const override {return forms::cursors::ibeam();}
 
+      virtual bool read_only() const {return read_only_;}
+      virtual text_box_base& read_only(bool value) {
+        if (read_only_ != value) {
+          read_only_ = value;
+          recreate_handle();
+          on_read_only_changed(event_args::empty);
+        }
+        return *this;
+      }
+      
+      event<text_box_base, event_handler<control&>> read_only_changed;
+      
     protected:
       text_box_base() = default;
+      virtual void on_read_only_changed(const event_args& e) {if (can_raise_events()) read_only_changed(*this, e);}
+      bool read_only_ = false;
     };
   }
 }
