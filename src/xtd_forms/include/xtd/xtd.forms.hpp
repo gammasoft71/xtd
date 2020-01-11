@@ -53,6 +53,7 @@
 #include "xtd/forms/dot_matrix_style.hpp"
 #include "xtd/forms/folder_browser_dialog.hpp"
 #include "xtd/forms/font_dialog.hpp"
+#include "xtd/forms/font_picker.hpp"
 #include "xtd/forms/form.hpp"
 #include "xtd/forms/form_border_style.hpp"
 #include "xtd/forms/form_closed_event_args.hpp"

@@ -40,6 +40,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/file_dialog.hpp
   include/xtd/forms/native/folder_browser_dialog.hpp
   include/xtd/forms/native/font_dialog.hpp
+  include/xtd/forms/native/font_picker.hpp
   include/xtd/forms/native/form.hpp
   include/xtd/forms/native/group_box.hpp
   include/xtd/forms/native/image_list.hpp
