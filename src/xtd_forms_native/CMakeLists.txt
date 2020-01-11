@@ -66,6 +66,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/tab_control_styles.hpp
   include/xtd/forms/native/tab_page.hpp
   include/xtd/forms/native/text_box.hpp
+  include/xtd/forms/native/text_box_styles.hpp
   include/xtd/forms/native/timer.hpp
   include/xtd/forms/native/track_bar.hpp
   include/xtd/forms/native/track_bar_styles.hpp

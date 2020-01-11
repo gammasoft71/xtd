@@ -1,6 +1,7 @@
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/text_box.hpp>
+#include <xtd/forms/native/text_box_styles.hpp>
 #include <xtd/forms/native/window_styles.hpp>
 #include "../../../include/xtd/forms/text_box.hpp"
 
@@ -23,10 +24,27 @@ text_box& text_box::border_style(forms::border_style border_style) {
   return *this;
 }
 
+text_box& text_box::multiline(bool value) {
+  if (this->multiline_ != value) {
+    this->multiline_ = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
+text_box& text_box::use_system_password_char(bool value) {
+  if (use_system_password_char_ != value) {
+    use_system_password_char_ = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 control& text_box::text(const std::string& text) {
   if (this->text_ != text) {
     this->text_ = text;
     native::text_box::text(this->handle_, this->text_.c_str());
+    on_text_changed(event_args::empty);
   }
   return *this;
 }
@@ -38,7 +56,10 @@ forms::create_params text_box::create_params() const {
   
   if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  
+
+  if (multiline_) create_params.style(create_params.style() | ES_MULTILINE);
+  if (use_system_password_char_) create_params.style(create_params.style() | ES_PASSWORD);
+
   return create_params;
 }
 
