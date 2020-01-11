@@ -1,10 +1,10 @@
-# font_dialog
+# font_picker
 
-demonstrates the use of [xtd::forms::font_dialog](../../../src/xtd_forms/include/xtd/forms/font_dialog.hpp) dialog.
+demonstrates the use of [xtd::forms::font_picker](../../../src/xtd_forms/include/xtd/forms/font_picker.hpp) dialog.
 
 # Sources
 
-[font_dialog.cpp](font_dialog.cpp)
+[font_picker.cpp](font_picker.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,16 +20,16 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_w.png)
+![Screenshot](../../../docs/pictures/examples/font_picker_w.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_m.png)
+![Screenshot](../../../docs/pictures/examples/font_picker_m.png)
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_md.png)
+![Screenshot](../../../docs/pictures/examples/font_picker_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_g.png)
+![Screenshot](../../../docs/pictures/examples/font_picker_g.png)
 
-![Screenshot](../../../docs/pictures/examples/font_dialog_gd.png)
+![Screenshot](../../../docs/pictures/examples/font_picker_gd.png)
