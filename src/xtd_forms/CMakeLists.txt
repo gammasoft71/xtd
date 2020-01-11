@@ -56,6 +56,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/file_dialog.hpp
   include/xtd/forms/folder_browser_dialog.hpp
   include/xtd/forms/font_dialog.hpp
+  include/xtd/forms/font_picker.hpp
   include/xtd/forms/form.hpp
   include/xtd/forms/form_border_style.hpp
   include/xtd/forms/form_closed_event_args.hpp
@@ -162,6 +163,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/file_dialog.cpp
   src/xtd/forms/folder_browser_dialog.cpp
   src/xtd/forms/font_dialog.cpp
+  src/xtd/forms/font_picker.cpp
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
   src/xtd/forms/image_list.cpp
