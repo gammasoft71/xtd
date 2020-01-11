@@ -19,8 +19,14 @@ namespace xtd {
       
       drawing::size default_size() const override {return {100, 21};}
 
+      virtual bool multiline() const {return multiline_;}
+      virtual text_box& multiline(bool value);
+      
       using text_box_base::text;
       control& text(const std::string& text) override;
+      
+      virtual bool use_system_password_char() const {return use_system_password_char_;}
+      virtual text_box& use_system_password_char(bool value);
       
     protected:
       forms::create_params create_params() const override;
@@ -28,6 +34,8 @@ namespace xtd {
       drawing::size measure_control() const override;
 
       forms::border_style border_style_ = forms::border_style::fixed_single;
+      bool multiline_ = false;
+      bool use_system_password_char_ = false;
     };
   }
 }

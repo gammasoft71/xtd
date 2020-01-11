@@ -1,6 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include <xtd/forms/create_params.hpp>
+#include <xtd/forms/native/text_box_styles.hpp>
 #include <wx/textctrl.h>
 #include "control_handler.hpp"
 
@@ -25,6 +26,9 @@ namespace xtd {
           if ((style & WS_BORDER) == WS_BORDER) wx_style |= wxBORDER_DEFAULT;
           else if ((ex_style & WS_EX_CLIENTEDGE) == WS_EX_CLIENTEDGE) wx_style |= wxBORDER_THEME;
           else wx_style |= wxBORDER_NONE;
+          
+          if ((style & ES_MULTILINE) == ES_MULTILINE) wx_style |= wxTE_MULTILINE;
+          if ((style & ES_PASSWORD) == ES_PASSWORD) wx_style |= wxTE_PASSWORD;
 
           return wx_style;
         }
