@@ -6,7 +6,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("Font dialog test");
+    text("Font dialog example");
     client_size({400, 400});
     controls().push_back_range({button1, label1});
     
