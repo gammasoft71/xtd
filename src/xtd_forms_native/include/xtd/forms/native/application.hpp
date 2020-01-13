@@ -1,14 +1,14 @@
 #pragma once
 #include <cstdint>
 #include <vector>
+#include <xtd/static.hpp>
 #include <xtd/xtd.delegates>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class application {
+      class application static_ {
       public:
-        application() = delete;
         static bool allow_quit();
         static void cleanup();
         static void do_events();

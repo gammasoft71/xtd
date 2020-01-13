@@ -1,13 +1,13 @@
 #pragma once
 #include "../create_params.hpp"
 #include <vector>
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class checked_list_box {
+      class checked_list_box static_ {
       public:
-        checked_list_box() = delete;
         static void begin_update(intptr_t control);
         static void check_state(intptr_t control, size_t index, int check_state);
         static int check_state(intptr_t control, size_t index);

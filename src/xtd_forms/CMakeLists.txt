@@ -46,6 +46,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/control_styles.hpp
   include/xtd/forms/cursor.hpp
   include/xtd/forms/cursors.hpp
+  include/xtd/forms/date_time_picker.hpp
+  include/xtd/forms/date_time_picker_format.hpp
   include/xtd/forms/dialog_result.hpp
   include/xtd/forms/do_work_event_args.hpp
   include/xtd/forms/do_work_event_handler.hpp
@@ -159,6 +161,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/control.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
+  src/xtd/forms/date_time_picker.cpp
   src/xtd/forms/domain_up_down.cpp
   src/xtd/forms/file_dialog.cpp
   src/xtd/forms/folder_browser_dialog.cpp

@@ -4,6 +4,7 @@
 #include "message_box_default_button.hpp"
 #include "message_box_icon.hpp"
 #include "message_box_options.hpp"
+#include <xtd/static.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,7 +14,7 @@ namespace xtd {
     class control;
     /// @endcond
     
-    class message_box {
+    class message_box static_ {
     public:
       static dialog_result show(const control& owner, const std::string& text);
       
@@ -42,9 +43,6 @@ namespace xtd {
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
 
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
-
-    private:
-      message_box() = delete;
     };
   }
 }

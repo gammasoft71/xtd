@@ -1,15 +1,15 @@
 #pragma once
 #include <cstdint>
 #include <string>
+#include <xtd/static.hpp>
 #include <xtd/environment.hpp>
 #include <xtd/drawing/size.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class system_information {
+      class system_information static_ {
       public:
-        system_information() = delete;
         static int32_t active_window_tracking_delay();
         static int32_t arrange_direction();
         static int32_t arrange_starting_position();

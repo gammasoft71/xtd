@@ -6,6 +6,7 @@
 #include <vector>
 #include <xtd/delegate.hpp>
 #include <xtd/event_args.hpp>
+#include <xtd/static.hpp>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>
 #include <xtd/drawing/rectangle.hpp>
@@ -16,9 +17,8 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class control {
+      class control static_ {
       public:
-        control() = delete;
         static drawing::color back_color(intptr_t control);
         static void back_color(intptr_t control, const drawing::color& color);
         static intptr_t create(const create_params& create_params);

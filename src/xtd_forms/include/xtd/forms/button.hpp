@@ -69,7 +69,7 @@ namespace xtd {
       
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
-      /// @remarks All messages are sent to the wnd°proc method after getting filtered through the pre_process_message method.
+      /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       //void wnd_proc(message& message) override;
       
       /// @cond

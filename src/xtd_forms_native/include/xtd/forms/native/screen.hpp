@@ -1,14 +1,14 @@
 #include <cstdio>
 #include <string>
+#include <xtd/static.hpp>
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/rectangle.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class screen {
+      class screen static_ {
       public:
-        screen() = delete;
         static size_t count();
         static intptr_t create_graphics();
         static int32_t bits_per_pixel(size_t index);

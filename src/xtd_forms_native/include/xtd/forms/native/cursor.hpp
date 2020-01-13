@@ -1,14 +1,14 @@
 #pragma once
 #include <cstdint>
+#include <xtd/static.hpp>
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/size.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class cursor {
+      class cursor static_ {
       public:
-        cursor() = delete;
         static intptr_t create();
         static intptr_t copy(intptr_t cursor);
         static void destroy(intptr_t cursor);

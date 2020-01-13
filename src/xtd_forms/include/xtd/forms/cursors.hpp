@@ -1,12 +1,13 @@
 #pragma once
 #include "cursor.hpp"
+#include <xtd/static.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Provides a collection of Cursor objects for use by a Windows Forms application.
-    class cursors {
+    class cursors static_ {
     public:
       /// @brief Gets the cursor that appears when an application starts.
       /// @return The cursor that represents the cursor that appears when an application starts.
@@ -147,9 +148,6 @@ namespace xtd {
       /// @brief Gets the wait cursor, typically an hourglass shape.
       /// @return The cursor that represents the wait cursor.
       static cursor wait_cursor();
-
-    private:
-      cursors() = delete;
     };
   }
 }
