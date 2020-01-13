@@ -8,10 +8,8 @@ namespace xtd {
     namespace native {
       class date_time_picker static_ {
       public:
-        static void max_date(intptr_t control, const std::tm& date_time);
-        static void min_date(intptr_t control, const std::tm& date_time);
-        static std::tm value(intptr_t control);
-        static void value(intptr_t control, const std::tm& date_time);
+        static std::chrono::system_clock::time_point value(intptr_t control);
+        static void value(intptr_t control, std::chrono::system_clock::time_point date_time);
       };
     }
   }

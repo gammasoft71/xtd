@@ -20,26 +20,28 @@ control& date_time_picker::format(date_time_picker_format format) {
   return *this;
 }
 
-control& date_time_picker::max_date(const std::tm& max_date) {
-  if (max_date_.tm_sec != max_date.tm_sec || max_date_.tm_min != max_date.tm_min || max_date_.tm_hour != max_date.tm_hour || max_date_.tm_mday != max_date.tm_mday || max_date_.tm_mon != max_date.tm_mon || max_date_.tm_year != max_date.tm_year) {
+control& date_time_picker::max_date(std::chrono::system_clock::time_point max_date) {
+  if (max_date_ != max_date) {
     max_date_ = max_date;
-    //native::date_time_picker::max_date(handle_, max_date_);
-    //value(native::date_time_picker::value(handle_));
+    if (max_date_ < min_date_) min_date_ = max_date_;
+   value(value_);
   }
   return *this;
 }
 
-control& date_time_picker::min_date(const std::tm& min_date) {
-  if (min_date_.tm_sec != min_date.tm_sec || min_date_.tm_min != min_date.tm_min || min_date_.tm_hour != min_date.tm_hour || min_date_.tm_mday != min_date.tm_mday || min_date_.tm_mon != min_date.tm_mon || min_date_.tm_year != min_date.tm_year) {
+control& date_time_picker::min_date(std::chrono::system_clock::time_point min_date) {
+  if (min_date_ != min_date) {
     min_date_ = min_date;
-    //native::date_time_picker::min_date(handle_, min_date_);
-    //value(native::date_time_picker::value(handle_));
+    if (max_date_ < min_date_) max_date_ = min_date_;
+    value(value_);
   }
   return *this;
 }
 
-control& date_time_picker::value(const std::tm& value) {
-  if (value_.tm_sec != value.tm_sec || value_.tm_min != value.tm_min || value_.tm_hour != value.tm_hour || value_.tm_mday != value.tm_mday || value_.tm_mon != value.tm_mon || value_.tm_year != value.tm_year) {
+control& date_time_picker::value(std::chrono::system_clock::time_point value) {
+  if (value_ != value) {
+    if (value < min_date_) value = min_date_;
+    if (value > max_date_) value = max_date_;
     value_ = value;
     native::date_time_picker::value(handle_, value_);
     on_value_changed(event_args::empty);
@@ -77,12 +79,6 @@ void date_time_picker::wnd_proc(message &message) {
 
 void date_time_picker::wm_click(message& message) {
   def_wnd_proc(message);
-  auto new_value = native::date_time_picker::value(handle_);
-  if (mktime(&new_value) < mktime(&min_date_))
-    native::date_time_picker::value(handle_, min_date_);
-  else if (mktime(&new_value) >= mktime(&max_date_))
-    native::date_time_picker::value(handle_, max_date_);
-  else
-    native::date_time_picker::value(handle_, value_);
+  value(native::date_time_picker::value(handle_));
   on_value_changed(event_args::empty);
 }

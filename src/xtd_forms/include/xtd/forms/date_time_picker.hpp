@@ -1,5 +1,5 @@
 #pragma once
-#include <ctime>
+#include <chrono>
 #include "control.hpp"
 #include "date_time_picker_format.hpp"
 
@@ -14,14 +14,29 @@ namespace xtd {
       virtual date_time_picker_format format() const {return format_;}
       virtual control& format(date_time_picker_format format);
       
-      virtual std::tm max_date() const {return max_date_;}
-      virtual control& max_date(const std::tm& max_date);
-      
-      virtual std::tm min_date() const {return max_date_;}
-      virtual control& min_date(const std::tm& min_date);
-      
-      virtual std::tm value() const {return value_;}
-      virtual control& value(const std::tm& value);
+      virtual std::chrono::system_clock::time_point max_date() const {return max_date_;}
+      virtual control& max_date(std::chrono::system_clock::time_point max_date);
+      virtual control& max_date(time_t max_date) {return this->max_date(std::chrono::system_clock::from_time_t(max_date));}
+      virtual control& max_date(const std::tm& max_date) {
+        std::tm internal_max_date = max_date;
+        return this->max_date(mktime(&internal_max_date));
+      }
+
+      virtual std::chrono::system_clock::time_point min_date() const {return max_date_;}
+      virtual control& min_date(std::chrono::system_clock::time_point min_date);
+      virtual control& min_date(time_t min_date) {return this->min_date(std::chrono::system_clock::from_time_t(min_date));}
+      virtual control& min_date(const std::tm& min_date) {
+        std::tm internal_min_date = min_date;
+        return this->min_date(mktime(&internal_min_date));
+      }
+
+      virtual std::chrono::system_clock::time_point value() const {return value_;}
+      virtual control& value(std::chrono::system_clock::time_point value);
+      virtual control& value(time_t value) {return this->value(std::chrono::system_clock::from_time_t(value));}
+      virtual control& value(const std::tm& value) {
+        std::tm internal_value = value;
+        return this->value(mktime(&internal_value));
+      }
 
       drawing::size default_size() const override {return{100, 25};}
       
@@ -42,9 +57,9 @@ namespace xtd {
     private:
       void wm_click(message& message);
       date_time_picker_format format_ = date_time_picker_format::long_format;
-      std::tm max_date_ {23, 59, 59, 31, 11, 8098, 0, 0, 0, 0, nullptr};
-      std::tm min_date_ {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, nullptr};
-      std::tm value_ {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, nullptr};
+      std::chrono::system_clock::time_point max_date_ = std::chrono::system_clock::time_point::max();
+      std::chrono::system_clock::time_point min_date_ = std::chrono::system_clock::time_point::min();
+      std::chrono::system_clock::time_point value_ = std::chrono::system_clock::now();
     };
   }
 }
