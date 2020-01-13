@@ -1,14 +1,14 @@
 #pragma once
 #include <cstdint>
 #include <vector>
+#include <xtd/static.hpp>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class system_colors {
+      class system_colors static_ {
       public:
-        system_colors() = delete;
         static uint32_t to_argb(intptr_t color);
         static intptr_t active_border();
         static intptr_t active_caption();
