@@ -47,7 +47,7 @@
 
 ## Picker Controls
 * [color_picker](picker_controls/color_picker/README.md) represents a Windows control that allows the user to select and display a color.
-* **date_time_picker** represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
+* [date_time_picker](picker_controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * [font_picker](picker_controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
 
 ## Other Controls
