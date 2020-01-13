@@ -4,12 +4,13 @@
 #include <string>
 #include <vector>
 #include "argb.hpp"
+#include <xtd/static.hpp>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class image {
+      class image static_ {
       public:
         struct property_item {
           int32_t id = 0;
@@ -18,7 +19,6 @@ namespace xtd {
           std::vector<uint8_t> value;
         };
         
-        image() = delete;
         static void color_palette(intptr_t image, std::vector<argb>& entries, int32_t& flags);
         static intptr_t create(const std::string& filename);
         static intptr_t create(std::istream& stream);

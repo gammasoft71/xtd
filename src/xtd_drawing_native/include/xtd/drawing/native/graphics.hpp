@@ -1,14 +1,14 @@
 #pragma once
 #include <cstdint>
 #include <string>
+#include <xtd/static.hpp>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class graphics {
+      class graphics static_ {
       public:
-        graphics() = delete;
         static void clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void destroy(intptr_t hdc);
         static void draw_arc(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t start_angle, int32_t sweep_angle);

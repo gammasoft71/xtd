@@ -2,14 +2,14 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include <xtd/static.hpp>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class font_family {
+      class font_family static_ {
       public:
-        font_family() = delete;
         static intptr_t create(const std::string& name);
         static void destroy(intptr_t font_family);
         static std::string generic_serif_name();

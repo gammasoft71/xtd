@@ -1,14 +1,14 @@
 #pragma once
 #include <cstdint>
 #include <vector>
+#include <xtd/static.hpp>
 
 /// @cond
 namespace xtd {
   namespace drawing {
     namespace native {
-      class system_fonts {
+      class system_fonts static_ {
       public:
-        system_fonts() = delete;
         static intptr_t caption_font();
         static intptr_t default_font();
         static intptr_t dialog_font();
