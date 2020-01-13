@@ -1,12 +1,12 @@
 #pragma once
 #include "../create_params.hpp"
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class form {
+      class form static_ {
       public:
-        form() = delete;
         static void activate(intptr_t form);
         static void close(intptr_t form);
         static void default_control(intptr_t form, intptr_t default_control);

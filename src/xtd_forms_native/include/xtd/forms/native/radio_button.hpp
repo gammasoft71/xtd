@@ -1,12 +1,12 @@
 #pragma once
 #include "../create_params.hpp"
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class radio_button {
+      class radio_button static_ {
       public:
-        radio_button() = delete;
         static bool checked(intptr_t control);
         static void checked(intptr_t control, bool checked);
       };

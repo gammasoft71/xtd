@@ -1,12 +1,12 @@
 #pragma once
 #include "../create_params.hpp"
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class track_bar {
+      class track_bar static_ {
       public:
-        track_bar() = delete;
         static void large_change(intptr_t control, int32_t large_change);
         static void maximum(intptr_t control, int32_t maximum);
         static void minimum(intptr_t control, int32_t minimum);

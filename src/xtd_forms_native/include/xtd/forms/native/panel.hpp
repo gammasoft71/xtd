@@ -1,12 +1,12 @@
 #pragma once
 #include "../create_params.hpp"
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class panel {
+      class panel static_ {
       public:
-        panel() = delete;
         static void virtual_size(intptr_t control, const drawing::size& size);
       };
     }

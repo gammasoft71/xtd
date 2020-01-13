@@ -2,13 +2,13 @@
 #include <cstdint>
 #include <string>
 #include "../create_params.hpp"
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class tab_control {
+      class tab_control static_ {
       public:
-        tab_control() = delete;
         static void add_item(intptr_t control, intptr_t page, const std::string& text);
         static void delete_item(intptr_t control, size_t index);
         static void delete_item(intptr_t control, intptr_t page);

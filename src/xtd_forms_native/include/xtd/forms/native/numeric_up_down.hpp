@@ -1,12 +1,12 @@
 #pragma once
 #include "../create_params.hpp"
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class numeric_up_down {
+      class numeric_up_down static_ {
       public:
-        numeric_up_down() = delete;
         static void decimal_place(intptr_t control, int32_t decimal_place);
         static void increment(intptr_t control, double increment);
         static void maximum(intptr_t control, double maximum);

@@ -1,13 +1,13 @@
 #pragma once
 #include "../create_params.hpp"
 #include <vector>
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class choice {
+      class choice static_ {
       public:
-        choice() = delete;
         static void begin_update(intptr_t control);
         static void delete_item(intptr_t control, size_t index);
         static void end_update(intptr_t control);

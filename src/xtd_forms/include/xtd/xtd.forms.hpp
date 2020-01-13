@@ -44,6 +44,7 @@
 #include "xtd/forms/control_event_handler.hpp"
 #include "xtd/forms/cursor.hpp"
 #include "xtd/forms/cursors.hpp"
+#include "xtd/forms/date_time_picker.hpp"
 #include "xtd/forms/dialog_result.hpp"
 #include "xtd/forms/do_work_event_args.hpp"
 #include "xtd/forms/do_work_event_handler.hpp"

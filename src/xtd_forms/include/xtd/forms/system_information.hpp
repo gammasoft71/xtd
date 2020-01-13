@@ -4,6 +4,7 @@
 #include "arrange_direction.hpp"
 #include "arrange_starting_position.hpp"
 #include "boot_mode.hpp"
+#include <xtd/static.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,10 +16,9 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks The system_information class provides static properties that can be used to get information about the current system environment. The class provides access to information such as Windows display element sizes, operating system settings, network availability, and the capabilities of hardware installed on the system. This class cannot be instantiated.
     /// @remarks For more information about system-wide parameters, see "SystemParametersInfo" in the Platform SDK documentation at http://msdn.microsoft.com.
-    class system_information final {
+    class system_information static_ {
     public:
       /// @cond
-      system_information() = delete;
       /// @endcond
 
       /// @brief Gets the active window tracking delay.

@@ -1,13 +1,12 @@
 #pragma once
 #include "../create_params.hpp"
+#include <xtd/static.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class context_menu {
+      class context_menu static_ {
       public:
-        context_menu() = delete;
-
         static intptr_t create();
         static void destroy(intptr_t context_menu);
       };

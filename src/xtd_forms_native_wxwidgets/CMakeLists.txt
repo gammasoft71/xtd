@@ -16,6 +16,7 @@ set(XTD_INCLUDES
   include/xtd/forms/native/wxwidgets/wx_color_picker.hpp
   include/xtd/forms/native/wxwidgets/wx_combo_box.hpp
   include/xtd/forms/native/wxwidgets/wx_control.hpp
+  include/xtd/forms/native/wxwidgets/wx_date_time_picker.hpp
   include/xtd/forms/native/wxwidgets/wx_domain_up_down.hpp
   include/xtd/forms/native/wxwidgets/wx_font_picker.hpp
   include/xtd/forms/native/wxwidgets/wx_form.hpp
@@ -50,6 +51,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp
   src/xtd/forms/native/wxwidgets/cursors.cpp
+  src/xtd/forms/native/wxwidgets/date_time_picker.cpp
   src/xtd/forms/native/wxwidgets/domain_up_down.cpp
   src/xtd/forms/native/wxwidgets/file_dialog.cpp
   src/xtd/forms/native/wxwidgets/folder_browser_dialog.cpp

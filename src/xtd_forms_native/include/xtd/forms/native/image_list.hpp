@@ -1,13 +1,13 @@
 #pragma once
+#include <xtd/static.hpp>
 #include <xtd/drawing/image.hpp>
 #include <xtd/drawing/size.hpp>
 
 namespace xtd {
   namespace forms {
     namespace native {
-      class image_list {
+      class image_list static_ {
       public:
-        image_list() = delete;
         static intptr_t create(const drawing::size& image_size);
         static void delete_item(intptr_t image_list, size_t pos);
         static void destroy(intptr_t image_list);
