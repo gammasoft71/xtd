@@ -1,5 +1,4 @@
 #pragma once
-#include "environment.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,8 +15,6 @@ namespace xtd {
   /// @endcode
   class static_class {
     static_class() = delete;
-    static_class(const static_class&) = delete;
-    static_class& operator=(const static_class&) = delete;
   };
 
   /// @brief This keyword is use to represent a static class. A static class can't be instancied (constructors are deleted).

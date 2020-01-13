@@ -14,17 +14,14 @@
 #include "guid.hpp"
 #include "operating_system.hpp"
 #include "platform_id.hpp"
+#include "static.hpp"
 #include "version.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The environment class.
-  class environment final {
+  class environment static_ {
   public:
-    /// @cond
-    environment() = delete;
-    /// @endcond
- 
     /// @enum special_folder
     /// @brief Specifies enumerated constants used to retrieve directory paths to system special folders.
     /// @remarks The system special folders are folders such as Program Files, Programs, System, or Startup, which contain common information. Special folders are set by default by the system, or explicitly by the user, when installing a version of Windows.

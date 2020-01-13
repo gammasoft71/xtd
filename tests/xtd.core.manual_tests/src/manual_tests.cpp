@@ -1,4 +1,6 @@
 #include <xtd/xtd.core>
+#include <chrono>
+#include <ctime>
 #include <iostream>
 
 using namespace std;
