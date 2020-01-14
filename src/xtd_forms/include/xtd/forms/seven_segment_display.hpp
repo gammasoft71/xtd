@@ -75,6 +75,7 @@ namespace xtd {
 
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
+        graphics.clear(back_color());
         if (show_background_segment_ && value_ != forms::segments::dp && value_ != forms::segments::pc) draw_background_digit(graphics);
         if ((value_ & forms::segments::dp) == forms::segments::dp) draw_dp(graphics, fore_color());
         if ((value_ & forms::segments::pc) == forms::segments::pc) draw_pc(graphics, fore_color());

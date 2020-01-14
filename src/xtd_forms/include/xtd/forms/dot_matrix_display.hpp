@@ -109,6 +109,7 @@ namespace xtd {
 
       void on_paint(paint_event_args& e) override {
         drawing::graphics graphics = e.graphics();
+        graphics.clear(back_color());
         if (show_background_dot_) draw_background_dot(graphics);
         for (int32_t x = 0; x < dots_.size(); x++)
           for (int32_t y = 0; y < dots_[x].size(); y++)
