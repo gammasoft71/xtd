@@ -14,6 +14,7 @@ namespace xtd {
 
       dot_matrix_display() {
         auto_size(true);
+        double_buffered(true);
         size_ = default_size();
       }
 
