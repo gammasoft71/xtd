@@ -9,6 +9,7 @@ namespace xtd {
     class seven_segment_display : public control {
     public:
       seven_segment_display() {
+        double_buffered(true);
         size_ = default_size();
       }
 
