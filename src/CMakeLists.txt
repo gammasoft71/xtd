@@ -4,6 +4,14 @@ cmake_minimum_required(VERSION 3.3)
 project(src)
 
 # Projects
+
+if (IS_MAIN_PROJECT)
+  add_subdirectory(xtd_core)
+  add_subdirectory(xtd_io)
+  add_subdirectory(xtd_strings)
+  add_subdirectory(xtd_tunit)
+endif ()
+
 add_subdirectory(xtd_drawing_native)
 
 if (APPLE)
@@ -47,9 +55,3 @@ if (XTD_WXWIDGETS)
 endif ()
 
 add_subdirectory(xtd_drawing)
-if (IS_MAIN_PROJECT)
-  add_subdirectory(xtd_core)
-  add_subdirectory(xtd_io)
-  add_subdirectory(xtd_strings)
-  add_subdirectory(xtd_tunit)
-endif ()
