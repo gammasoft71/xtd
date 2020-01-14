@@ -15,7 +15,7 @@ namespace xtd {
     class paint_event_args : public event_args {
     public:
       paint_event_args() = default;
-      paint_event_args(const drawing::rectangle& clip_rectangle, control& control) : clip_rectangle_(clip_rectangle), control_(&control) {};
+      paint_event_args(const drawing::rectangle& clip_rectangle, control& control, bool double_buffered) : clip_rectangle_(clip_rectangle), control_(&control), double_buffered_(double_buffered) {};
 
       /// @cond
       paint_event_args(const paint_event_args& paint_event_args) = default;
@@ -29,6 +29,7 @@ namespace xtd {
     private:
       drawing::rectangle clip_rectangle_;
       control* control_;
+      bool double_buffered_ = false;
     };
   }
 }

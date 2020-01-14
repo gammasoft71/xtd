@@ -913,7 +913,7 @@ void control::wm_mouse_wheel(message& message) {
 
 void control::wm_paint(message& message) {
   this->def_wnd_proc(message);
-  paint_event_args e(this->client_rectangle_, *this);
+  paint_event_args e(this->client_rectangle_, *this, get_state(state::double_buffered));
   this->on_paint(e);
 }
 

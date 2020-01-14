@@ -83,6 +83,7 @@ namespace xtd {
         docked = 0b100000000000000000,
 
         double_click_fired = 0b1000000000000000000,
+        double_buffered = 0b10000000000000000000,
         /*
         mouse_enter_pending = 0,
         tracking_mouse_event = 0,
@@ -91,7 +92,7 @@ namespace xtd {
          */
 
          /*
-        is_aaccessible = 0,
+        is_accessible = 0,
         no_zorder = 0,
         size_locked_by_os = 0,
         causes_validation = 0,
@@ -342,6 +343,12 @@ namespace xtd {
       virtual dock_style dock() const {return this->dock_;}
       virtual control& dock(dock_style dock);
 
+      virtual bool double_buffered() const {return get_state(state::double_buffered);}
+      virtual control& double_buffered(bool double_buffered) {
+        set_state(state::double_buffered, double_buffered);
+        return *this;
+      }
+      
       virtual bool enabled() const {return this->get_state(state::enabled);}
       virtual control& enabled(bool enabled);
 
