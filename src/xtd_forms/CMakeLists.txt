@@ -116,6 +116,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/progress_changed_event_args.hpp
   include/xtd/forms/progress_changed_event_handler.hpp
   include/xtd/forms/radio_button.hpp
+  include/xtd/forms/radio_buttons.hpp
   include/xtd/forms/run_worker_completed_event_args.hpp
   include/xtd/forms/run_worker_completed_event_handler.hpp
   include/xtd/forms/save_file_dialog.hpp

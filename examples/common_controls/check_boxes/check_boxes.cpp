@@ -9,9 +9,5 @@ int main() {
   auto check_box_italic = check_boxes::italic(*group_box_font, {20, 50});
   auto check_box_underline = check_boxes::underline(*group_box_font, {20, 80});
   auto check_box_strikeout = check_boxes::strikeout(*group_box_font, {20, 110});
-  auto panel_test = control::create<panel>(*form_main, "", {10, 200}, {250, 50});
-
-  *form_main << *group_box_font;
-  *group_box_font << *check_box_bold << *check_box_italic << *check_box_underline << *check_box_strikeout;
   application::run(*form_main);
 }

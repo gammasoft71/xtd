@@ -17,6 +17,8 @@ namespace xtd {
       static const std::string actual_size;
       /// @brief Gets a system-defined text that has a string value of "Add". This field is constant.
       static const std::string add;
+      /// @brief Gets a system-defined text that has a string value of "Alignment". This field is constant.
+      static const std::string alignment;
       /// @brief Gets a system-defined text that has a string value of "Align Left". This field is constant.
       static const std::string align_left;
       /// @brief Gets a system-defined text that has a string value of "Align Right". This field is constant.
