@@ -8,7 +8,5 @@ int main() {
   auto button_zoom_in = buttons::zoom_in(*form_main, {110, 10}, {90, 25});
   auto button_zoom_out = buttons::zoom_out(*form_main, {210, 10}, {90, 25});
   auto button_zoom_to_fit = buttons::zoom_to_fit(*form_main, {310, 10}, {90, 25});
-
-  *form_main << *button_actual_size << *button_zoom_in << *button_zoom_out << *button_zoom_to_fit;
   application::run(*form_main);
 }

@@ -69,6 +69,21 @@ namespace xtd {
       /// @param fore_core The check_box foreground color.
       /// @return The created check_box.
       static std::unique_ptr<check_box> add(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(parent, texts::add, location, size, back_color, fore_color);}
+      /// @brief Create a system-defined check_box that represent alignment check_box.
+      /// @param location The check_box location in pixels.
+      /// @param size The check_box size in pixels.
+      /// @param back_color The check_box background color.
+      /// @param fore_core The check_box foreground color.
+      /// @return The created check_box.
+      static std::unique_ptr<check_box> alignment(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(texts::alignment, location, size, back_color, fore_color);}
+      /// @brief Create a system-defined check_box that represent alignment check_box.
+      /// @param parent The control that contains the check_box.
+      /// @param location The check_box location in pixels.
+      /// @param size The check_box size in pixels.
+      /// @param back_color The check_box background color.
+      /// @param fore_core The check_box foreground color.
+      /// @return The created check_box.
+      static std::unique_ptr<check_box> alignment(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<check_box>(parent, texts::alignment, location, size, back_color, fore_color);}
       /// @brief Create a system-defined check_box that represent align left check_box.
       /// @param location The check_box location in pixels.
       /// @param size The check_box size in pixels.

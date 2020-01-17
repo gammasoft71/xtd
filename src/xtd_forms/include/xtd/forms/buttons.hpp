@@ -69,6 +69,21 @@ namespace xtd {
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> add(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::add, location, size, back_color, fore_color);}
+      /// @brief Create a system-defined button that represent alignment button.
+      /// @param location The button location in pixels.
+      /// @param size The button size in pixels.
+      /// @param back_color The button background color.
+      /// @param fore_core The button foreground color.
+      /// @return The created button.
+      static std::unique_ptr<button> alignment(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(texts::alignment, location, size, back_color, fore_color);}
+      /// @brief Create a system-defined button that represent alignment button.
+      /// @param parent The control that contains the button.
+      /// @param location The button location in pixels.
+      /// @param size The button size in pixels.
+      /// @param back_color The button background color.
+      /// @param fore_core The button foreground color.
+      /// @return The created button.
+      static std::unique_ptr<button> alignment(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::alignment, location, size, back_color, fore_color);}
       /// @brief Create a system-defined button that represent align left button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.

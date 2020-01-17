@@ -1,6 +1,6 @@
 # check_boxes
 
-demonstrates the use of [xtd::forms::check_boxes](../../../src/xtd_forms/include/xtd/forms/check_boxes.hpp) button object collection.
+demonstrates the use of [xtd::forms::check_boxes](../../../src/xtd_forms/include/xtd/forms/check_boxes.hpp) check_box object collection.
 
 # Sources
 

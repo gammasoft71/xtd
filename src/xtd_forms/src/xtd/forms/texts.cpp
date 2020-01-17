@@ -6,6 +6,7 @@ const std::string texts::abort = "&Abort";
 const std::string texts::about = "&About";
 const std::string texts::actual_size = "&Actual Size";
 const std::string texts::add = "Add";
+const std::string texts::alignment = "Alignment";
 const std::string texts::align_left = "Align Left";
 const std::string texts::align_right = "Align Right";
 const std::string texts::apply = "&Apply";
