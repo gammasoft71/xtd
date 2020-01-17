@@ -28,6 +28,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/cancel_event_args.hpp
   include/xtd/forms/cancel_event_handler.hpp
   include/xtd/forms/check_box.hpp
+  include/xtd/forms/check_boxes.hpp
   include/xtd/forms/check_state.hpp
   include/xtd/forms/checked_list_box.hpp
   include/xtd/forms/choice.hpp

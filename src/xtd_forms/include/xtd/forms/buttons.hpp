@@ -1029,21 +1029,21 @@ namespace xtd {
       /// @param fore_core The button foreground color.
       /// @return The created button.
       static std::unique_ptr<button> stop(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::stop, location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent strikethrough button.
+      /// @brief Create a system-defined button that represent strikeout button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param back_color The button background color.
       /// @param fore_core The button foreground color.
       /// @return The created button.
-      static std::unique_ptr<button> strikethrough(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(texts::strikethrough, location, size, back_color, fore_color);}
-      /// @brief Create a system-defined button that represent strikethrough button.
+      static std::unique_ptr<button> strikeout(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(texts::strikeout, location, size, back_color, fore_color);}
+      /// @brief Create a system-defined button that represent strikeout button.
       /// @param parent The control that contains the button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
       /// @param back_color The button background color.
       /// @param fore_core The button foreground color.
       /// @return The created button.
-      static std::unique_ptr<button> strikethrough(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::strikethrough, location, size, back_color, fore_color);}
+      static std::unique_ptr<button> strikeout(const control& parent, const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {return control::create<button>(parent, texts::strikeout, location, size, back_color, fore_color);}
       /// @brief Create a system-defined button that represent tools button.
       /// @param location The button location in pixels.
       /// @param size The button size in pixels.
