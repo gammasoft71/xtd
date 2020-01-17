@@ -24,6 +24,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/bounds_specified.hpp
   include/xtd/forms/button.hpp
   include/xtd/forms/button_base.hpp
+  include/xtd/forms/buttons.hpp
   include/xtd/forms/cancel_event_args.hpp
   include/xtd/forms/cancel_event_handler.hpp
   include/xtd/forms/check_box.hpp
