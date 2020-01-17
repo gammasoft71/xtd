@@ -9,6 +9,8 @@ namespace xtd {
     /// @brief Provides a collection of string objects for use by a Windows Forms application.
     class texts static_ {
     public:
+      /// @brief Gets a system-defined text that has a string value of "&Abort". This field is constant.
+      static const std::string abort;
       /// @brief Gets a system-defined text that has a string value of "&About". This field is constant.
       static const std::string about;
       /// @brief Gets a system-defined text that has a string value of "&Actual Size". This field is constant.
@@ -79,6 +81,8 @@ namespace xtd {
       static const std::string help;
       /// @brief Gets a system-defined text that has a string value of "&Home". This field is constant.
       static const std::string home;
+      /// @brief Gets a system-defined text that has a string value of "&Ignore". This field is constant.
+      static const std::string ignore;
       /// @brief Gets a system-defined text that has a string value of "Indent". This field is constant.
       static const std::string indent;
       /// @brief Gets a system-defined text that has a string value of "&Index". This field is constant.
@@ -96,7 +100,7 @@ namespace xtd {
       /// @brief Gets a system-defined text that has a string value of "&Network". This field is constant.
       static const std::string network;
       /// @brief Gets a system-defined text that has a string value of "&New". This field is constant.
-      static const std::string new_text;
+      static const std::string new_;
       /// @brief Gets a system-defined text that has a string value of "&No". This field is constant.
       static const std::string no;
       /// @brief Gets a system-defined text that has a string value of "&OK". This field is constant.
@@ -125,6 +129,8 @@ namespace xtd {
       static const std::string remove;
       /// @brief Gets a system-defined text that has a string value of "Rep&lace". This field is constant.
       static const std::string replace;
+      /// @brief Gets a system-defined text that has a string value of "&Retry". This field is constant.
+      static const std::string retry;
       /// @brief Gets a system-defined text that has a string value of "Revert to Saved". This field is constant.
       static const std::string revert_to_saved;
       /// @brief Gets a system-defined text that has a string value of "&Save". This field is constant.
@@ -136,7 +142,7 @@ namespace xtd {
       /// @brief Gets a system-defined text that has a string value of "Select &All". This field is constant.
       static const std::string select_all;
       /// @brief Gets a system-defined text that has a string value of "&Spell Check". This field is constant.
-      static const std::string speel_check;
+      static const std::string spell_check;
       /// @brief Gets a system-defined text that has a string value of "&Stop". This field is constant.
       static const std::string stop;
       /// @brief Gets a system-defined text that has a string value of "&Strikethrough". This field is constant.
