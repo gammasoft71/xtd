@@ -145,8 +145,8 @@ namespace xtd {
       static const std::string spell_check;
       /// @brief Gets a system-defined text that has a string value of "&Stop". This field is constant.
       static const std::string stop;
-      /// @brief Gets a system-defined text that has a string value of "&Strikethrough". This field is constant.
-      static const std::string strikethrough;
+      /// @brief Gets a system-defined text that has a string value of "&Strikeout". This field is constant.
+      static const std::string strikeout;
       /// @brief Gets a system-defined text that has a string value of "&Tools". This field is constant.
       static const std::string tools;
       /// @brief Gets a system-defined text that has a string value of "&Top". This field is constant.
