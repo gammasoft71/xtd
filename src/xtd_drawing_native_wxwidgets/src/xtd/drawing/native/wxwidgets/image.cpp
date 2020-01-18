@@ -24,8 +24,7 @@ namespace {
       stream_.peek();
       if (stream_.fail() || stream_.bad()) m_lasterror = wxSTREAM_READ_ERROR;
       else if (stream_.eof()) m_lasterror = wxSTREAM_EOF;
-      else return stream_.readsome(static_cast<std::istream::char_type *>(buffer), size);
-      return 0;
+      return stream_.readsome(static_cast<std::istream::char_type *>(buffer), size);
     }
     
     wxFileOffset OnSysSeek(wxFileOffset pos, wxSeekMode mode) override {
@@ -42,6 +41,33 @@ namespace {
   private:
     std::istream &stream_;
   };
+
+class StdOutputStreamAdapter : public wxOutputStream {
+public:
+  StdOutputStreamAdapter(std::ostream& stream): stream_{stream} {}
+  
+protected:
+  bool IsSeekable()  const override {return false;}
+  
+  size_t OnSysWrite(const void* buffer, size_t size) override {
+    if (stream_.fail() || stream_.bad()) m_lasterror = wxSTREAM_WRITE_ERROR;
+    stream_.write(static_cast<const std::ostream::char_type *>(buffer), size);
+    return size;
+  }
+  
+private:
+  std::ostream &stream_;
+};
+
+  wxBitmapType to_bitmap_type(size_t raw_format) {
+    static std::map<size_t, wxBitmapType> raw_formats {{IFM_BMP, wxBITMAP_TYPE_BMP}, {IFM_MEMORY_BMP, wxBITMAP_TYPE_BMP_RESOURCE}, {IFM_ICO, wxBITMAP_TYPE_ICO}, {IFM_MEMORY_ICO, wxBITMAP_TYPE_ICO_RESOURCE}, {IFM_CUR, wxBITMAP_TYPE_CUR}, {IFM_MEMORY_CUR, wxBITMAP_TYPE_CUR_RESOURCE}, {IFM_XBM, wxBITMAP_TYPE_XBM}, {IFM_MEMORY_XBM, wxBITMAP_TYPE_XBM_DATA}, {IFM_XPM, wxBITMAP_TYPE_XPM}, {IFM_MEMORY_XPM, wxBITMAP_TYPE_XPM_DATA}, {IFM_TIFF, wxBITMAP_TYPE_TIFF}, {IFM_MEMORY_TIFF, wxBITMAP_TYPE_TIFF_RESOURCE}, {IFM_GIF, wxBITMAP_TYPE_GIF}, {IFM_MEMORY_GIF, wxBITMAP_TYPE_GIF_RESOURCE}, {IFM_PNG, wxBITMAP_TYPE_PNG}, {IFM_MEMORY_PNG, wxBITMAP_TYPE_PNG_RESOURCE}, {IFM_JPEG, wxBITMAP_TYPE_JPEG}, {IFM_MEMORY_JPEG, wxBITMAP_TYPE_JPEG_RESOURCE}, {IFM_PNM, wxBITMAP_TYPE_PNM}, {IFM_MEMORY_PNM, wxBITMAP_TYPE_PNM_RESOURCE}, {IFM_PCX, wxBITMAP_TYPE_PCX}, {IFM_MEMORY_PCX, wxBITMAP_TYPE_PCX_RESOURCE}, {IFM_PICT, wxBITMAP_TYPE_PICT}, {IFM_MEMORY_PICT, wxBITMAP_TYPE_PICT_RESOURCE}, {IFM_ICON, wxBITMAP_TYPE_ICON}, {IFM_MEMORY_ICON, wxBITMAP_TYPE_ICON_RESOURCE}, {IFM_ANI, wxBITMAP_TYPE_ANI}, {IFM_IIF, wxBITMAP_TYPE_IFF}, {IFM_TGA, wxBITMAP_TYPE_TGA}, {IFM_MACCUR, wxBITMAP_TYPE_MACCURSOR}, {IFM_MEMORY_MACCUR, wxBITMAP_TYPE_MACCURSOR_RESOURCE}};
+    return raw_formats.find(raw_format) == raw_formats.end() ? wxBitmapType::wxBITMAP_TYPE_ANY : raw_formats[raw_format];
+  }
+
+  size_t to_raw_format(wxBitmapType bitmap_type) {
+    static std::map<wxBitmapType, size_t> bitmap_types {{wxBITMAP_TYPE_BMP, IFM_BMP}, {wxBITMAP_TYPE_BMP_RESOURCE, IFM_MEMORY_BMP}, {wxBITMAP_TYPE_ICO, IFM_ICO}, {wxBITMAP_TYPE_ICO_RESOURCE, IFM_MEMORY_ICO}, {wxBITMAP_TYPE_CUR, IFM_CUR}, {wxBITMAP_TYPE_CUR_RESOURCE, IFM_MEMORY_CUR}, {wxBITMAP_TYPE_XBM, IFM_XBM}, {wxBITMAP_TYPE_XBM_DATA, IFM_MEMORY_XBM}, {wxBITMAP_TYPE_XPM, IFM_XPM}, {wxBITMAP_TYPE_XPM_DATA, IFM_MEMORY_XPM}, {wxBITMAP_TYPE_TIFF, IFM_TIFF}, {wxBITMAP_TYPE_TIFF_RESOURCE, IFM_MEMORY_TIFF}, {wxBITMAP_TYPE_GIF, IFM_GIF}, {wxBITMAP_TYPE_GIF_RESOURCE, IFM_MEMORY_GIF}, {wxBITMAP_TYPE_PNG, IFM_PNG}, {wxBITMAP_TYPE_PNG_RESOURCE, IFM_MEMORY_PNG}, {wxBITMAP_TYPE_JPEG, IFM_JPEG}, {wxBITMAP_TYPE_JPEG_RESOURCE, IFM_MEMORY_JPEG}, {wxBITMAP_TYPE_PNM, IFM_PNM}, {wxBITMAP_TYPE_PNM_RESOURCE, IFM_MEMORY_PNM}, {wxBITMAP_TYPE_PCX, IFM_PCX}, {wxBITMAP_TYPE_PCX_RESOURCE, IFM_MEMORY_PCX}, {wxBITMAP_TYPE_PICT, IFM_PICT}, {wxBITMAP_TYPE_PICT_RESOURCE, IFM_MEMORY_PICT}, {wxBITMAP_TYPE_ICON, IFM_ICON}, {wxBITMAP_TYPE_ICON_RESOURCE, IFM_MEMORY_ICON}, {wxBITMAP_TYPE_ANI, IFM_ANI}, {wxBITMAP_TYPE_IFF, IFM_IIF}, {wxBITMAP_TYPE_TGA, IFM_TGA}, {wxBITMAP_TYPE_MACCURSOR, IFM_MACCUR}, {wxBITMAP_TYPE_MACCURSOR_RESOURCE, IFM_MEMORY_MACCUR}};
+    return bitmap_types.find(bitmap_type) == bitmap_types.end() ? IFM_UNKNOWN : bitmap_types[bitmap_type];
+  }
 
   static std::atomic<uint32_t> count_image_handler = 0;
 
@@ -152,42 +178,7 @@ std::vector<image::property_item> image::property_items(intptr_t image) {
 }
 
 size_t image::raw_format(intptr_t image) {
-  wxBitmapType type = reinterpret_cast<wxImage*>(image)->GetType();
-  switch (type) {
-    case wxBITMAP_TYPE_BMP: return IFM_BMP;
-    case wxBITMAP_TYPE_BMP_RESOURCE: return IFM_MEMORY_BMP;
-    case wxBITMAP_TYPE_ICO: return IFM_ICO;
-    case wxBITMAP_TYPE_ICO_RESOURCE:  return IFM_MEMORY_ICO;
-    case wxBITMAP_TYPE_CUR: return IFM_CUR;
-    case wxBITMAP_TYPE_CUR_RESOURCE: return IFM_MEMORY_CUR;
-    case wxBITMAP_TYPE_XBM: return IFM_XBM;
-    case wxBITMAP_TYPE_XBM_DATA: return IFM_MEMORY_XBM;
-    case wxBITMAP_TYPE_XPM: return IFM_XPM;
-    case wxBITMAP_TYPE_XPM_DATA: return IFM_MEMORY_XPM;
-    case wxBITMAP_TYPE_TIFF: return IFM_TIFF;
-    case wxBITMAP_TYPE_TIFF_RESOURCE: return IFM_MEMORY_TIFF;
-    case wxBITMAP_TYPE_GIF: return IFM_GIF;
-    case wxBITMAP_TYPE_GIF_RESOURCE: return IFM_MEMORY_GIF;
-    case wxBITMAP_TYPE_PNG: return IFM_PNG;
-    case wxBITMAP_TYPE_PNG_RESOURCE: return IFM_MEMORY_PNG;
-    case wxBITMAP_TYPE_JPEG: return IFM_JPEG;
-    case wxBITMAP_TYPE_JPEG_RESOURCE: return IFM_MEMORY_JPEG;
-    case wxBITMAP_TYPE_PNM: return IFM_PNM;
-    case wxBITMAP_TYPE_PNM_RESOURCE: return IFM_MEMORY_PNM;
-    case wxBITMAP_TYPE_PCX: return IFM_PCX;
-    case wxBITMAP_TYPE_PCX_RESOURCE: return IFM_MEMORY_PCX;
-    case wxBITMAP_TYPE_PICT: return IFM_PICT;
-    case wxBITMAP_TYPE_PICT_RESOURCE: return IFM_MEMORY_PICT;
-    case wxBITMAP_TYPE_ICON: return IFM_ICON;
-    case wxBITMAP_TYPE_ICON_RESOURCE: return IFM_MEMORY_ICON;
-    case wxBITMAP_TYPE_ANI: return IFM_ANI;
-    case wxBITMAP_TYPE_IFF: return IFM_IIF;
-    case wxBITMAP_TYPE_TGA: return IFM_TGA;
-    case wxBITMAP_TYPE_MACCURSOR: return IFM_MACCUR;
-    case wxBITMAP_TYPE_MACCURSOR_RESOURCE: return IFM_MEMORY_MACCUR;
-    default: return IFM_UNKNOWN;
-  }
-  return IFM_UNKNOWN;
+  return to_raw_format(reinterpret_cast<wxImage*>(image)->GetType());
 }
 
 void image::size(intptr_t image, int32_t& width, int32_t& height) {
@@ -220,4 +211,17 @@ void image::get_pixel(intptr_t image, int32_t x, int32_t y, argb& color) {
 void image::set_pixel(intptr_t image, int32_t x, int32_t y, const argb& color) {
   if (reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->SetAlpha(x, y, color.a);
   reinterpret_cast<wxImage*>(image)->SetRGB(x, y, color.r, color.g, color.b);
+}
+
+void image::save(intptr_t image, const std::string& filename) {
+  reinterpret_cast<wxImage*>(image)->SaveFile({filename.c_str(), wxMBConvUTF8()});
+}
+
+void image::save(intptr_t image, const std::string& filename, size_t raw_format) {
+  reinterpret_cast<wxImage*>(image)->SaveFile({filename.c_str(), wxMBConvUTF8()}, to_bitmap_type(raw_format));
+}
+
+void image::save(intptr_t image, std::ostream& stream, size_t raw_format) {
+  StdOutputStreamAdapter output_stream(stream);
+  reinterpret_cast<wxImage*>(image)->SaveFile(output_stream, to_bitmap_type(raw_format));
 }

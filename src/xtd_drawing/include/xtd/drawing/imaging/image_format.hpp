@@ -31,6 +31,10 @@ namespace xtd {
         image_format& operator=(const image_format&) = default;
         bool operator==(const image_format& value) const {return this->guid_ == value.guid_;}
         bool operator!=(const image_format& value) const {return !this->operator==(value);}
+        bool operator<(const image_format& value) const {return this->guid_ < value.guid_;}
+        bool operator<=(const image_format& value) const {return this->guid_ <= value.guid_;}
+        bool operator>(const image_format& value) const {return this->guid_ > value.guid_;}
+        bool operator>=(const image_format& value) const {return this->guid_ >= value.guid_;}
         /// @endcond
         
         /// @brief Gets a guid structure that represents this image_format object.
