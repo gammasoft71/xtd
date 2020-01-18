@@ -38,6 +38,9 @@ namespace xtd {
         static float vertical_resolution(intptr_t image);
         static void get_pixel(intptr_t image, int32_t x, int32_t y, argb& color);
         static void set_pixel(intptr_t image, int32_t x, int32_t y, const argb& color);
+        static void save(intptr_t image, const std::string& filename);
+        static void save(intptr_t image, const std::string& filename, size_t raw_format);
+        static void save(intptr_t image, std::ostream& stream, size_t raw_format);
       };
     }
   }

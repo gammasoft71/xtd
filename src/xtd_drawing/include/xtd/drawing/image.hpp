@@ -128,6 +128,10 @@ namespace xtd {
       static image from_stream(std::istream& stream) {return image(stream);}
 
       static image from_data(const char* const* bits) {return image(bits);}
+      
+      void save(const std::string& filename) const;
+      void save(const std::string& filename, const imaging::image_format& format) const;
+      void save(std::ostream& stream, const imaging::image_format& format) const;
 
       static image empty;
       

@@ -9,6 +9,18 @@ using namespace xtd::drawing;
 
 image image::empty;
 
+namespace {
+  xtd::drawing::imaging::image_format to_image_format(size_t raw_fomat) {
+    static std::map<size_t, xtd::drawing::imaging::image_format> raw_formats {{IFM_BMP, imaging::image_format::bmp()}, {IFM_EMF, imaging::image_format::emf()}, {IFM_EXIF, imaging::image_format::exif()}, {IFM_GIF, imaging::image_format::gif()}, {IFM_ICO, imaging::image_format::ico()}, {IFM_JPEG, imaging::image_format::jpeg()}, {IFM_MEMORY_BMP, imaging::image_format::memory_bmp()}, {IFM_PNG, imaging::image_format::png()}, {IFM_TIFF, imaging::image_format::tiff()}, {IFM_WMF, imaging::image_format::wmf()}, {IFM_MEMORY_GIF, imaging::image_format::memory_gif()}, {IFM_MEMORY_ICO, imaging::image_format::memory_ico()}, {IFM_MEMORY_JPEG, imaging::image_format::memory_jpeg()}, {IFM_MEMORY_PNG, imaging::image_format::memory_png()}, {IFM_MEMORY_TIFF, imaging::image_format::memory_tiff()}, {IFM_CUR, imaging::image_format::cur()}, {IFM_MEMORY_CUR, imaging::image_format::memory_cur()}, {IFM_XBM, imaging::image_format::xbm()}, {IFM_MEMORY_XBM, imaging::image_format::memory_xbm()}, {IFM_XPM, imaging::image_format::xpm()}, {IFM_MEMORY_XPM, imaging::image_format::memory_xpm()}, {IFM_PNM, imaging::image_format::pnm()}, {IFM_MEMORY_PNM, imaging::image_format::memory_pnm()}, {IFM_PCX, imaging::image_format::pcx()}, {IFM_MEMORY_PCX, imaging::image_format::memory_pcx()}, {IFM_PICT, imaging::image_format::pict()}, {IFM_MEMORY_PICT, imaging::image_format::memory_pict()}, {IFM_ICON, imaging::image_format::icon()}, {IFM_MEMORY_ICON, imaging::image_format::memory_icon()}, {IFM_MACCUR, imaging::image_format::cursor()}, {IFM_MEMORY_MACCUR, imaging::image_format::memory_cursor()}, {IFM_ANI, imaging::image_format::ani()}, {IFM_IIF, imaging::image_format::iif()}, {IFM_TGA, imaging::image_format::tga()}};
+    return raw_formats.find(raw_fomat) == raw_formats.end() ? xtd::drawing::imaging::image_format() : raw_formats[raw_fomat];
+  }
+  
+  size_t to_raw_format(xtd::drawing::imaging::image_format image_format) {
+    static std::map<xtd::drawing::imaging::image_format, size_t> image_formats {{imaging::image_format::bmp(), IFM_BMP}, {imaging::image_format::emf(), IFM_EMF}, {imaging::image_format::exif(), IFM_EXIF}, {imaging::image_format::gif(), IFM_GIF}, {imaging::image_format::ico(), IFM_ICO}, {imaging::image_format::jpeg(), IFM_JPEG}, {imaging::image_format::memory_bmp(), IFM_MEMORY_BMP}, {imaging::image_format::png(), IFM_PNG}, {imaging::image_format::tiff(), IFM_TIFF}, {imaging::image_format::wmf(), IFM_WMF}, {imaging::image_format::memory_gif(), IFM_MEMORY_GIF}, {imaging::image_format::memory_ico(), IFM_MEMORY_ICO}, {imaging::image_format::memory_jpeg(), IFM_MEMORY_JPEG}, {imaging::image_format::memory_png(), IFM_MEMORY_PNG}, {imaging::image_format::memory_tiff(), IFM_MEMORY_TIFF}, {imaging::image_format::cur(), IFM_CUR}, {imaging::image_format::memory_cur(), IFM_MEMORY_CUR}, {imaging::image_format::xbm(), IFM_XBM}, {imaging::image_format::memory_xbm(), IFM_MEMORY_XBM}, {imaging::image_format::xpm(), IFM_XPM}, {imaging::image_format::memory_xpm(), IFM_MEMORY_XPM}, {imaging::image_format::pnm(), IFM_PNM}, {imaging::image_format::memory_pnm(), IFM_MEMORY_PNM}, {imaging::image_format::pcx(), IFM_PCX}, {imaging::image_format::memory_pcx(), IFM_MEMORY_PCX}, {imaging::image_format::pict(), IFM_PICT}, {imaging::image_format::memory_pict(), IFM_MEMORY_PICT}, {imaging::image_format::icon(), IFM_ICON}, {imaging::image_format::memory_icon(), IFM_MEMORY_ICON}, {imaging::image_format::cursor(), IFM_MACCUR}, {imaging::image_format::memory_cursor(), IFM_MEMORY_MACCUR}, {imaging::image_format::ani(), IFM_ANI}, {imaging::image_format::iif(), IFM_IIF}, {imaging::image_format::tga(), IFM_TGA}};
+    return image_formats.find(image_format) == image_formats.end() ? IFM_UNKNOWN : image_formats[image_format];
+  }
+}
+
 image::image(const std::string &filename) {
   this->data_->handle_ = native::image::create(filename);
   this->update_properties();
@@ -71,46 +83,23 @@ void image::update_properties() {
     this->data_->property_ityems_.push_back(item);
   }
 
-  switch (native::image::raw_format(this->data_->handle_)) {
-    case IFM_BMP: this->data_->raw_format_ = imaging::image_format::bmp(); break;
-    case IFM_EMF: this->data_->raw_format_ = imaging::image_format::emf(); break;
-    case IFM_EXIF: this->data_->raw_format_ = imaging::image_format::exif(); break;
-    case IFM_GIF: this->data_->raw_format_ = imaging::image_format::gif(); break;
-    case IFM_ICO: this->data_->raw_format_ = imaging::image_format::ico(); break;
-    case IFM_JPEG: this->data_->raw_format_ = imaging::image_format::jpeg(); break;
-    case IFM_MEMORY_BMP: this->data_->raw_format_ = imaging::image_format::memory_bmp(); break;
-    case IFM_PNG: this->data_->raw_format_ = imaging::image_format::png(); break;
-    case IFM_TIFF: this->data_->raw_format_ = imaging::image_format::tiff(); break;
-    case IFM_WMF: this->data_->raw_format_ = imaging::image_format::wmf(); break;
-    case IFM_MEMORY_GIF: this->data_->raw_format_ = imaging::image_format::memory_gif(); break;
-    case IFM_MEMORY_ICO: this->data_->raw_format_ = imaging::image_format::memory_ico(); break;
-    case IFM_MEMORY_JPEG: imaging::image_format::memory_jpeg(); break;
-    case IFM_MEMORY_PNG: imaging::image_format::memory_png(); break;
-    case IFM_MEMORY_TIFF: this->data_->raw_format_ = imaging::image_format::memory_tiff(); break;
-    case IFM_CUR: this->data_->raw_format_ = imaging::image_format::cur(); break;
-    case IFM_MEMORY_CUR: this->data_->raw_format_ = imaging::image_format::memory_cur(); break;
-    case IFM_XBM: this->data_->raw_format_ = imaging::image_format::xbm(); break;
-    case IFM_MEMORY_XBM: this->data_->raw_format_ = imaging::image_format::memory_xbm(); break;
-    case IFM_XPM: this->data_->raw_format_ = imaging::image_format::xpm(); break;
-    case IFM_MEMORY_XPM: this->data_->raw_format_ = imaging::image_format::memory_xpm(); break;
-    case IFM_PNM: this->data_->raw_format_ = imaging::image_format::pnm(); break;
-    case IFM_MEMORY_PNM: this->data_->raw_format_ = imaging::image_format::memory_pnm(); break;
-    case IFM_PCX: this->data_->raw_format_ = imaging::image_format::pcx(); break;
-    case IFM_MEMORY_PCX: this->data_->raw_format_ = imaging::image_format::memory_pcx(); break;
-    case IFM_PICT: this->data_->raw_format_ = imaging::image_format::pict(); break;
-    case IFM_MEMORY_PICT: this->data_->raw_format_ = imaging::image_format::memory_pict(); break;
-    case IFM_ICON: this->data_->raw_format_ = imaging::image_format::icon(); break;
-    case IFM_MEMORY_ICON: this->data_->raw_format_ = imaging::image_format::memory_icon(); break;
-    case IFM_MACCUR: this->data_->raw_format_ = imaging::image_format::cursor(); break;
-    case IFM_MEMORY_MACCUR: this->data_->raw_format_ = imaging::image_format::memory_cursor(); break;
-    case IFM_ANI: this->data_->raw_format_ = imaging::image_format::ani(); break;
-    case IFM_IIF: this->data_->raw_format_ = imaging::image_format::iif(); break;
-    case IFM_TGA: this->data_->raw_format_ = imaging::image_format::tga(); break;
-  }
+  data_->raw_format_ = to_image_format(native::image::raw_format(this->data_->handle_));
   
   int32_t width, height;
   native::image::size(this->data_->handle_, width, height);
   this->data_->size_ = drawing::size(width, height);
 
   this->data_->vertical_resolution_ = native::image::vertical_resolution(this->data_->handle_);
+}
+
+void image::save(const std::string& filename) const {
+  native::image::save(data_->handle_, filename);
+}
+
+void image::save(const std::string& filename, const imaging::image_format& format) const {
+  native::image::save(data_->handle_, filename, to_raw_format(format));
+}
+
+void image::save(std::ostream& stream, const imaging::image_format& format) const {
+  native::image::save(data_->handle_, stream, to_raw_format(format));
 }
