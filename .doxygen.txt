@@ -54,10 +54,10 @@ IGNORE_PREFIX          =
 #---------------------------------------------------------------------------
 
 HTML_OUTPUT            = ReferenceGuide
-HTML_HEADER            = 
-HTML_FOOTER            = 
+HTML_HEADER            = "docs/doxygen/html_header.html"
+HTML_FOOTER            = "docs/doxygen/html_footer.html"
 HTML_STYLESHEET        = 
-HTML_EXTRA_STYLESHEET  = 
+HTML_EXTRA_STYLESHEET  = "docs/doxygen/custom.css" "docs/doxygen/custom_dark_theme.css"
 HTML_EXTRA_FILES       = 
 HTML_COLORSTYLE_HUE    = 220
 HTML_COLORSTYLE_SAT    = 100
@@ -125,7 +125,7 @@ EXPAND_ONLY_PREDEF     = YES
 SEARCH_INCLUDES        = YES
 INCLUDE_PATH           = 
 INCLUDE_FILE_PATTERNS  = 
-PREDEFINED             = 
+PREDEFINED             = "static_=final : public xtd::static"
 EXPAND_AS_DEFINED      = 
 SKIP_FUNCTION_MACROS   = YES
 
