@@ -4,7 +4,7 @@ using namespace xtd::forms;
 
 int main() {
   button button;
-  button.text("Click me");
+  button.text("&Click me");
   button.location({10, 10});
   button.click += [] {
     message_box::show("Hello, World!");
