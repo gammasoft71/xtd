@@ -85,6 +85,8 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/apply_256x256.xpm
   src/xtd/drawing/resources/archive_256x256.xpm
   src/xtd/drawing/resources/audio_disk_256x256.xpm
+  src/xtd/drawing/resources/back_256x256.xpm
+  src/xtd/drawing/resources/left_256x256.xpm
   src/xtd/drawing/resources/gammasoft_256x256.xpm
 )
 

@@ -19,8 +19,12 @@ namespace xtd {
       static const image archive_256x256;
       /// @brief Gets a system-defined image that represent audio disk image. This field is constant.
       static const image audio_disk_256x256;
+      /// @brief Gets a system-defined image that represent back image. This field is constant.
+      static const image back_256x256;
       /// @brief Gets a system-defined image that represent gammasoft image. This field is constant.
       static const image gammasoft_256x256;
+      /// @brief Gets a system-defined image that represent left image. This field is constant.
+      static const image left_256x256;
     };
   }
 }
