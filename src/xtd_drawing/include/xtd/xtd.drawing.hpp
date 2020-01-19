@@ -22,6 +22,7 @@
 #include "drawing/graphics.hpp"
 #include "drawing/graphics_unit.hpp"
 #include "drawing/image.hpp"
+#include "drawing/images.hpp"
 #include "drawing/known_color.hpp"
 #include "drawing/pen.hpp"
 #include "drawing/point.hpp"
