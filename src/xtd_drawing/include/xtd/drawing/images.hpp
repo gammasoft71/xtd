@@ -37,6 +37,10 @@ namespace xtd {
       static const image copy2_256x256;
       /// @brief Gets a system-defined image that represent cut image. This field is constant.
       static const image cut_256x256;
+      /// @brief Gets a system-defined image that represent down image. This field is constant.
+      static const image down_256x256;
+      /// @brief Gets a system-defined image that represent down image. This field is constant.
+      static const image down2_256x256;
       /// @brief Gets a system-defined image that represent gammasoft image. This field is constant.
       static const image gammasoft_256x256;
       /// @brief Gets a system-defined image that represent left image. This field is constant.
