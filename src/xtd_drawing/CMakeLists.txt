@@ -80,8 +80,10 @@ set(XTD_DRAWING_SOURCES
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
-  src/xtd/drawing/text/installed_font_collection.cpp
-  src/xtd/drawing/text/private_font_collection.cpp
+  src/xtd/drawing/resources/about_256x256.xpm
+  src/xtd/drawing/resources/add_256x256.xpm
+  src/xtd/drawing/resources/apply_256x256.xpm
+  src/xtd/drawing/resources/gammasoft_256x256.xpm
 )
 
 set(XTD_DRAWING_TEXT_SOURCES
