@@ -1,5 +1,5 @@
 /* XPM */
-static constexpr const char* gammasoft_32x32[] = {
+static constexpr const char* gammasoft_32x32_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 240 2 ",
 "   c None",
