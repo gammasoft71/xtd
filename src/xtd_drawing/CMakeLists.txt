@@ -88,16 +88,68 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/back_256x256.xpm
   src/xtd/drawing/resources/burn_disk_256x256.xpm
   src/xtd/drawing/resources/calendar_256x256.xpm
-  src/xtd/drawing/resources/cancel_256x256.xpm
   src/xtd/drawing/resources/cancel2_256x256.xpm
+  src/xtd/drawing/resources/cancel_256x256.xpm
   src/xtd/drawing/resources/cdrom_256x256.xpm
-  src/xtd/drawing/resources/copy_256x256.xpm
   src/xtd/drawing/resources/copy2_256x256.xpm
+  src/xtd/drawing/resources/copy_256x256.xpm
   src/xtd/drawing/resources/cut_256x256.xpm
-  src/xtd/drawing/resources/down_256x256.xpm
   src/xtd/drawing/resources/down2_256x256.xpm
-  src/xtd/drawing/resources/left_256x256.xpm
+  src/xtd/drawing/resources/down_256x256.xpm
+  src/xtd/drawing/resources/download_256x256.xpm
+  src/xtd/drawing/resources/dvd_disk_256x256.xpm
+  src/xtd/drawing/resources/earth_256x256.xpm
+  src/xtd/drawing/resources/edit_256x256.xpm
+  src/xtd/drawing/resources/favorite_256x256.xpm
+  src/xtd/drawing/resources/find_256x256.xpm
+  src/xtd/drawing/resources/flash_disk_256x256.xpm
+  src/xtd/drawing/resources/folder_256x256.xpm
+  src/xtd/drawing/resources/forward_256x256.xpm
   src/xtd/drawing/resources/gammasoft_256x256.xpm
+  src/xtd/drawing/resources/hard_disk_256x256.xpm
+  src/xtd/drawing/resources/help_256x256.xpm
+  src/xtd/drawing/resources/information_256x256.xpm
+  src/xtd/drawing/resources/key_256x256.xpm
+  src/xtd/drawing/resources/left2_256x256.xpm
+  src/xtd/drawing/resources/left_256x256.xpm
+  src/xtd/drawing/resources/mail_256x256.xpm
+  src/xtd/drawing/resources/mail_forward_256x256.xpm
+  src/xtd/drawing/resources/mail_send_256x256.xpm
+  src/xtd/drawing/resources/mulimedia_stop_256x256.xpm
+  src/xtd/drawing/resources/multimedia_pause_256x256.xpm
+  src/xtd/drawing/resources/multimedia_play_256x256.xpm
+  src/xtd/drawing/resources/negative_256x256.xpm
+  src/xtd/drawing/resources/new_256x256.xpm
+  src/xtd/drawing/resources/next_256x256.xpm
+  src/xtd/drawing/resources/open_256x256.xpm
+  src/xtd/drawing/resources/paste_256x256.xpm
+  src/xtd/drawing/resources/picture_256x256.xpm
+  src/xtd/drawing/resources/positive_256x256.xpm
+  src/xtd/drawing/resources/presentation_256x256.xpm
+  src/xtd/drawing/resources/preview_256x256.xpm
+  src/xtd/drawing/resources/previous_256x256.xpm
+  src/xtd/drawing/resources/print_256x256.xpm
+  src/xtd/drawing/resources/properties_256x256.xpm
+  src/xtd/drawing/resources/quit_256x256.xpm
+  src/xtd/drawing/resources/redo_256x256.xpm
+  src/xtd/drawing/resources/refresh_256x256.xpm
+  src/xtd/drawing/resources/remove_256x256.xpm
+  src/xtd/drawing/resources/rename_256x256.xpm
+  src/xtd/drawing/resources/right2_256x256.xpm
+  src/xtd/drawing/resources/right_256x256.xpm
+  src/xtd/drawing/resources/save_256x256.xpm
+  src/xtd/drawing/resources/search_256x256.xpm
+  src/xtd/drawing/resources/settings_256x256.xpm
+  src/xtd/drawing/resources/stop_256x256.xpm
+  src/xtd/drawing/resources/synchronize_256x256.xpm
+  src/xtd/drawing/resources/text_document_256x256.xpm
+  src/xtd/drawing/resources/undo_256x256.xpm
+  src/xtd/drawing/resources/up2_256x256.xpm
+  src/xtd/drawing/resources/up_256x256.xpm
+  src/xtd/drawing/resources/upload_256x256.xpm
+  src/xtd/drawing/resources/user_256x256.xpm
+  src/xtd/drawing/resources/zoom_in_256x256.xpm
+  src/xtd/drawing/resources/zoom_out_256x256.xpm
 )
 
 set(XTD_DRAWING_TEXT_SOURCES
