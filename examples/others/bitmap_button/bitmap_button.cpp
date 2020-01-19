@@ -19,19 +19,19 @@ public:
 
     button2.location({50, 80});
     button2.width(120);
-    button2.image(image::from_data(gammasoft_16x16));
+    button2.image(image::from_data(gammasoft_16x16_xpm));
     button2.image_align(content_alignment::middle_left);
     button2.text("Gammasoft");
     
     button3.location({50, 110});
     button3.size({140, 40});
-    button3.image(image::from_data(gammasoft_32x32));
+    button3.image(image::from_data(gammasoft_32x32_xpm));
     button3.image_align(content_alignment::middle_left);
     button3.text("Gammasoft");
     
     button4.location({50, 155});
     button4.size({70, 70});
-    button4.image(image::from_data(gammasoft_64x64));
+    button4.image(image::from_data(gammasoft_64x64_xpm));
   }
   
 private:
