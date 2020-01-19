@@ -94,6 +94,8 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/copy_256x256.xpm
   src/xtd/drawing/resources/copy2_256x256.xpm
   src/xtd/drawing/resources/cut_256x256.xpm
+  src/xtd/drawing/resources/down_256x256.xpm
+  src/xtd/drawing/resources/down2_256x256.xpm
   src/xtd/drawing/resources/left_256x256.xpm
   src/xtd/drawing/resources/gammasoft_256x256.xpm
 )

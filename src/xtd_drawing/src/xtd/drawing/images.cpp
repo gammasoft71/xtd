@@ -13,6 +13,8 @@
 #include "resources/copy_256x256.xpm"
 #include "resources/copy2_256x256.xpm"
 #include "resources/cut_256x256.xpm"
+#include "resources/down_256x256.xpm"
+#include "resources/down2_256x256.xpm"
 #include "resources/gammasoft_256x256.xpm"
 #include "resources/left_256x256.xpm"
 
@@ -33,5 +35,7 @@ const image images::cdrom_256x256 = image::from_data(cdrom_256x256_xpm);
 const image images::copy_256x256 = image::from_data(copy_256x256_xpm);
 const image images::copy2_256x256 = image::from_data(copy2_256x256_xpm);
 const image images::cut_256x256 = image::from_data(cut_256x256_xpm);
+const image images::down_256x256 = image::from_data(down_256x256_xpm);
+const image images::down2_256x256 = image::from_data(down2_256x256_xpm);
 const image images::gammasoft_256x256 = image::from_data(gammasoft_256x256_xpm);
 const image images::left_256x256 = image::from_data(left_256x256_xpm);
