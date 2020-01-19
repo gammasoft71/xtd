@@ -86,6 +86,14 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/archive_256x256.xpm
   src/xtd/drawing/resources/audio_disk_256x256.xpm
   src/xtd/drawing/resources/back_256x256.xpm
+  src/xtd/drawing/resources/burn_disk_256x256.xpm
+  src/xtd/drawing/resources/calendar_256x256.xpm
+  src/xtd/drawing/resources/cancel_256x256.xpm
+  src/xtd/drawing/resources/cancel2_256x256.xpm
+  src/xtd/drawing/resources/cdrom_256x256.xpm
+  src/xtd/drawing/resources/copy_256x256.xpm
+  src/xtd/drawing/resources/copy2_256x256.xpm
+  src/xtd/drawing/resources/cut_256x256.xpm
   src/xtd/drawing/resources/left_256x256.xpm
   src/xtd/drawing/resources/gammasoft_256x256.xpm
 )
