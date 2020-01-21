@@ -80,6 +80,77 @@ set(XTD_DRAWING_SOURCES
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
+  src/xtd/drawing/resources/about_128x128.xpm
+  src/xtd/drawing/resources/add_128x128.xpm
+  src/xtd/drawing/resources/apply_128x128.xpm
+  src/xtd/drawing/resources/archive_128x128.xpm
+  src/xtd/drawing/resources/audio_disk_128x128.xpm
+  src/xtd/drawing/resources/back_128x128.xpm
+  src/xtd/drawing/resources/burn_disk_128x128.xpm
+  src/xtd/drawing/resources/calendar_128x128.xpm
+  src/xtd/drawing/resources/cancel2_128x128.xpm
+  src/xtd/drawing/resources/cancel_128x128.xpm
+  src/xtd/drawing/resources/compact_disk_128x128.xpm
+  src/xtd/drawing/resources/copy2_128x128.xpm
+  src/xtd/drawing/resources/copy_128x128.xpm
+  src/xtd/drawing/resources/cut_128x128.xpm
+  src/xtd/drawing/resources/delete_128x128.xpm
+  src/xtd/drawing/resources/down2_128x128.xpm
+  src/xtd/drawing/resources/down_128x128.xpm
+  src/xtd/drawing/resources/download_128x128.xpm
+  src/xtd/drawing/resources/dvd_disk_128x128.xpm
+  src/xtd/drawing/resources/earth_128x128.xpm
+  src/xtd/drawing/resources/edit_128x128.xpm
+  src/xtd/drawing/resources/favorite_128x128.xpm
+  src/xtd/drawing/resources/find_128x128.xpm
+  src/xtd/drawing/resources/flash_disk_128x128.xpm
+  src/xtd/drawing/resources/folder_128x128.xpm
+  src/xtd/drawing/resources/forward_128x128.xpm
+  src/xtd/drawing/resources/gammasoft_128x128.xpm
+  src/xtd/drawing/resources/hard_disk_128x128.xpm
+  src/xtd/drawing/resources/help_128x128.xpm
+  src/xtd/drawing/resources/information_128x128.xpm
+  src/xtd/drawing/resources/key_128x128.xpm
+  src/xtd/drawing/resources/left2_128x128.xpm
+  src/xtd/drawing/resources/left_128x128.xpm
+  src/xtd/drawing/resources/mail_128x128.xpm
+  src/xtd/drawing/resources/mail_forward_128x128.xpm
+  src/xtd/drawing/resources/mail_send_128x128.xpm
+  src/xtd/drawing/resources/multimedia_pause_128x128.xpm
+  src/xtd/drawing/resources/multimedia_play_128x128.xpm
+  src/xtd/drawing/resources/multimedia_stop_128x128.xpm
+  src/xtd/drawing/resources/negative_128x128.xpm
+  src/xtd/drawing/resources/new_128x128.xpm
+  src/xtd/drawing/resources/next_128x128.xpm
+  src/xtd/drawing/resources/open_128x128.xpm
+  src/xtd/drawing/resources/paste_128x128.xpm
+  src/xtd/drawing/resources/picture_128x128.xpm
+  src/xtd/drawing/resources/positive_128x128.xpm
+  src/xtd/drawing/resources/presentation_128x128.xpm
+  src/xtd/drawing/resources/preview_128x128.xpm
+  src/xtd/drawing/resources/previous_128x128.xpm
+  src/xtd/drawing/resources/print_128x128.xpm
+  src/xtd/drawing/resources/properties_128x128.xpm
+  src/xtd/drawing/resources/quit_128x128.xpm
+  src/xtd/drawing/resources/redo_128x128.xpm
+  src/xtd/drawing/resources/refresh_128x128.xpm
+  src/xtd/drawing/resources/remove_128x128.xpm
+  src/xtd/drawing/resources/rename_128x128.xpm
+  src/xtd/drawing/resources/right2_128x128.xpm
+  src/xtd/drawing/resources/right_128x128.xpm
+  src/xtd/drawing/resources/save_128x128.xpm
+  src/xtd/drawing/resources/search_128x128.xpm
+  src/xtd/drawing/resources/settings_128x128.xpm
+  src/xtd/drawing/resources/stop_128x128.xpm
+  src/xtd/drawing/resources/synchronize_128x128.xpm
+  src/xtd/drawing/resources/text_document_128x128.xpm
+  src/xtd/drawing/resources/undo_128x128.xpm
+  src/xtd/drawing/resources/up2_128x128.xpm
+  src/xtd/drawing/resources/up_128x128.xpm
+  src/xtd/drawing/resources/upload_128x128.xpm
+  src/xtd/drawing/resources/user_128x128.xpm
+  src/xtd/drawing/resources/zoom_in_128x128.xpm
+  src/xtd/drawing/resources/zoom_out_128x128.xpm
   src/xtd/drawing/resources/about_256x256.xpm
   src/xtd/drawing/resources/add_256x256.xpm
   src/xtd/drawing/resources/apply_256x256.xpm
