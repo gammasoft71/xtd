@@ -216,7 +216,6 @@ const image images::upload_128x128 = image::from_data(upload_128x128_xpm);
 const image images::user_128x128 = image::from_data(user_128x128_xpm);
 const image images::zoom_in_128x128 = image::from_data(zoom_in_128x128_xpm);
 const image images::zoom_out_128x128 = image::from_data(zoom_out_128x128_xpm);
-
 const image images::about_256x256 = image::from_data(about_256x256_xpm);
 const image images::add_256x256 = image::from_data(add_256x256_xpm);
 const image images::apply_256x256 = image::from_data(apply_256x256_xpm);
