@@ -80,6 +80,77 @@ set(XTD_DRAWING_SOURCES
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
+  src/xtd/drawing/resources/about_64x64.xpm
+  src/xtd/drawing/resources/add_64x64.xpm
+  src/xtd/drawing/resources/apply_64x64.xpm
+  src/xtd/drawing/resources/archive_64x64.xpm
+  src/xtd/drawing/resources/audio_disk_64x64.xpm
+  src/xtd/drawing/resources/back_64x64.xpm
+  src/xtd/drawing/resources/burn_disk_64x64.xpm
+  src/xtd/drawing/resources/calendar_64x64.xpm
+  src/xtd/drawing/resources/cancel2_64x64.xpm
+  src/xtd/drawing/resources/cancel_64x64.xpm
+  src/xtd/drawing/resources/compact_disk_64x64.xpm
+  src/xtd/drawing/resources/copy2_64x64.xpm
+  src/xtd/drawing/resources/copy_64x64.xpm
+  src/xtd/drawing/resources/cut_64x64.xpm
+  src/xtd/drawing/resources/delete_64x64.xpm
+  src/xtd/drawing/resources/down2_64x64.xpm
+  src/xtd/drawing/resources/down_64x64.xpm
+  src/xtd/drawing/resources/download_64x64.xpm
+  src/xtd/drawing/resources/dvd_disk_64x64.xpm
+  src/xtd/drawing/resources/earth_64x64.xpm
+  src/xtd/drawing/resources/edit_64x64.xpm
+  src/xtd/drawing/resources/favorite_64x64.xpm
+  src/xtd/drawing/resources/find_64x64.xpm
+  src/xtd/drawing/resources/flash_disk_64x64.xpm
+  src/xtd/drawing/resources/folder_64x64.xpm
+  src/xtd/drawing/resources/forward_64x64.xpm
+  src/xtd/drawing/resources/gammasoft_64x64.xpm
+  src/xtd/drawing/resources/hard_disk_64x64.xpm
+  src/xtd/drawing/resources/help_64x64.xpm
+  src/xtd/drawing/resources/information_64x64.xpm
+  src/xtd/drawing/resources/key_64x64.xpm
+  src/xtd/drawing/resources/left2_64x64.xpm
+  src/xtd/drawing/resources/left_64x64.xpm
+  src/xtd/drawing/resources/mail_64x64.xpm
+  src/xtd/drawing/resources/mail_forward_64x64.xpm
+  src/xtd/drawing/resources/mail_send_64x64.xpm
+  src/xtd/drawing/resources/multimedia_pause_64x64.xpm
+  src/xtd/drawing/resources/multimedia_play_64x64.xpm
+  src/xtd/drawing/resources/multimedia_stop_64x64.xpm
+  src/xtd/drawing/resources/negative_64x64.xpm
+  src/xtd/drawing/resources/new_64x64.xpm
+  src/xtd/drawing/resources/next_64x64.xpm
+  src/xtd/drawing/resources/open_64x64.xpm
+  src/xtd/drawing/resources/paste_64x64.xpm
+  src/xtd/drawing/resources/picture_64x64.xpm
+  src/xtd/drawing/resources/positive_64x64.xpm
+  src/xtd/drawing/resources/presentation_64x64.xpm
+  src/xtd/drawing/resources/preview_64x64.xpm
+  src/xtd/drawing/resources/previous_64x64.xpm
+  src/xtd/drawing/resources/print_64x64.xpm
+  src/xtd/drawing/resources/properties_64x64.xpm
+  src/xtd/drawing/resources/quit_64x64.xpm
+  src/xtd/drawing/resources/redo_64x64.xpm
+  src/xtd/drawing/resources/refresh_64x64.xpm
+  src/xtd/drawing/resources/remove_64x64.xpm
+  src/xtd/drawing/resources/rename_64x64.xpm
+  src/xtd/drawing/resources/right2_64x64.xpm
+  src/xtd/drawing/resources/right_64x64.xpm
+  src/xtd/drawing/resources/save_64x64.xpm
+  src/xtd/drawing/resources/search_64x64.xpm
+  src/xtd/drawing/resources/settings_64x64.xpm
+  src/xtd/drawing/resources/stop_64x64.xpm
+  src/xtd/drawing/resources/synchronize_64x64.xpm
+  src/xtd/drawing/resources/text_document_64x64.xpm
+  src/xtd/drawing/resources/undo_64x64.xpm
+  src/xtd/drawing/resources/up2_64x64.xpm
+  src/xtd/drawing/resources/up_64x64.xpm
+  src/xtd/drawing/resources/upload_64x64.xpm
+  src/xtd/drawing/resources/user_64x64.xpm
+  src/xtd/drawing/resources/zoom_in_64x64.xpm
+  src/xtd/drawing/resources/zoom_out_64x64.xpm
   src/xtd/drawing/resources/about_128x128.xpm
   src/xtd/drawing/resources/add_128x128.xpm
   src/xtd/drawing/resources/apply_128x128.xpm
