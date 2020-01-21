@@ -1,5 +1,5 @@
 /* XPM */
-static const char *text_ocument_256x256_xpm[] = {
+static const char *text_document_256x256_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "256 256 201 2 ",
 "   c gray38",
