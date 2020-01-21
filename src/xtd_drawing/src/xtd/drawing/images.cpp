@@ -7,14 +7,15 @@
 #include "resources/back_256x256.xpm"
 #include "resources/burn_disk_256x256.xpm"
 #include "resources/calendar_256x256.xpm"
-#include "resources/cancel_256x256.xpm"
 #include "resources/cancel2_256x256.xpm"
-#include "resources/cdrom_256x256.xpm"
-#include "resources/copy_256x256.xpm"
+#include "resources/cancel_256x256.xpm"
+#include "resources/compact_disk_256x256.xpm"
 #include "resources/copy2_256x256.xpm"
+#include "resources/copy_256x256.xpm"
 #include "resources/cut_256x256.xpm"
-#include "resources/down_256x256.xpm"
+#include "resources/delete_256x256.xpm"
 #include "resources/down2_256x256.xpm"
+#include "resources/down_256x256.xpm"
 #include "resources/download_256x256.xpm"
 #include "resources/dvd_disk_256x256.xpm"
 #include "resources/earth_256x256.xpm"
@@ -34,9 +35,9 @@
 #include "resources/mail_256x256.xpm"
 #include "resources/mail_forward_256x256.xpm"
 #include "resources/mail_send_256x256.xpm"
-#include "resources/mulimedia_stop_256x256.xpm"
 #include "resources/multimedia_pause_256x256.xpm"
 #include "resources/multimedia_play_256x256.xpm"
+#include "resources/multimedia_stop_256x256.xpm"
 #include "resources/negative_256x256.xpm"
 #include "resources/new_256x256.xpm"
 #include "resources/next_256x256.xpm"
@@ -83,10 +84,11 @@ const image images::burn_disk_256x256 = image::from_data(burn_disk_256x256_xpm);
 const image images::calendar_256x256 = image::from_data(calendar_256x256_xpm);
 const image images::cancel2_256x256 = image::from_data(cancel2_256x256_xpm);
 const image images::cancel_256x256 = image::from_data(cancel_256x256_xpm);
-const image images::cdrom_256x256 = image::from_data(cdrom_256x256_xpm);
+const image images::compact_disk_256x256 = image::from_data(compact_disk_256x256_xpm);
 const image images::copy2_256x256 = image::from_data(copy2_256x256_xpm);
 const image images::copy_256x256 = image::from_data(copy_256x256_xpm);
 const image images::cut_256x256 = image::from_data(cut_256x256_xpm);
+const image images::delete_256x256 = image::from_data(delete_256x256_xpm);
 const image images::down2_256x256 = image::from_data(down2_256x256_xpm);
 const image images::down_256x256 = image::from_data(down_256x256_xpm);
 const image images::download_256x256 = image::from_data(download_256x256_xpm);
@@ -108,9 +110,9 @@ const image images::left_256x256 = image::from_data(left_256x256_xpm);
 const image images::mail_256x256 = image::from_data(mail_256x256_xpm);
 const image images::mail_forward_256x256 = image::from_data(mail_forward_256x256_xpm);
 const image images::mail_send_256x256 = image::from_data(mail_send_256x256_xpm);
-const image images::mulimedia_stop_256x256 = image::from_data(mulimedia_stop_256x256_xpm);
 const image images::multimedia_pause_256x256 = image::from_data(multimedia_pause_256x256_xpm);
 const image images::multimedia_play_256x256 = image::from_data(multimedia_play_256x256_xpm);
+const image images::multimedia_stop_256x256 = image::from_data(multimedia_stop_256x256_xpm);
 const image images::negative_256x256 = image::from_data(negative_256x256_xpm);
 const image images::new_256x256 = image::from_data(new_256x256_xpm);
 const image images::next_256x256 = image::from_data(next_256x256_xpm);
