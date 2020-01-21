@@ -90,10 +90,11 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/calendar_256x256.xpm
   src/xtd/drawing/resources/cancel2_256x256.xpm
   src/xtd/drawing/resources/cancel_256x256.xpm
-  src/xtd/drawing/resources/cdrom_256x256.xpm
+  src/xtd/drawing/resources/compact_disk_256x256.xpm
   src/xtd/drawing/resources/copy2_256x256.xpm
   src/xtd/drawing/resources/copy_256x256.xpm
   src/xtd/drawing/resources/cut_256x256.xpm
+  src/xtd/drawing/resources/delete_256x256.xpm
   src/xtd/drawing/resources/down2_256x256.xpm
   src/xtd/drawing/resources/down_256x256.xpm
   src/xtd/drawing/resources/download_256x256.xpm
@@ -115,9 +116,9 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/mail_256x256.xpm
   src/xtd/drawing/resources/mail_forward_256x256.xpm
   src/xtd/drawing/resources/mail_send_256x256.xpm
-  src/xtd/drawing/resources/mulimedia_stop_256x256.xpm
   src/xtd/drawing/resources/multimedia_pause_256x256.xpm
   src/xtd/drawing/resources/multimedia_play_256x256.xpm
+  src/xtd/drawing/resources/multimedia_stop_256x256.xpm
   src/xtd/drawing/resources/negative_256x256.xpm
   src/xtd/drawing/resources/new_256x256.xpm
   src/xtd/drawing/resources/next_256x256.xpm

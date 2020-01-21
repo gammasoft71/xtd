@@ -29,14 +29,16 @@ namespace xtd {
       static const image cancel2_256x256;
       /// @brief Gets a system-defined image that represent cancel image (size 256 x 256). This field is constant.
       static const image cancel_256x256;
-      /// @brief Gets a system-defined image that represent cdrom image (size 256 x 256). This field is constant.
-      static const image cdrom_256x256;
+      /// @brief Gets a system-defined image that represent compact disk image (size 256 x 256). This field is constant.
+      static const image compact_disk_256x256;
       /// @brief Gets a system-defined image that represent copy2 image (size 256 x 256). This field is constant.
       static const image copy2_256x256;
       /// @brief Gets a system-defined image that represent copy image (size 256 x 256). This field is constant.
       static const image copy_256x256;
       /// @brief Gets a system-defined image that represent cut image (size 256 x 256). This field is constant.
       static const image cut_256x256;
+      /// @brief Gets a system-defined image that represent delete image (size 256 x 256). This field is constant.
+      static const image delete_256x256;
       /// @brief Gets a system-defined image that represent down2 image (size 256 x 256). This field is constant.
       static const image down2_256x256;
       /// @brief Gets a system-defined image that represent down image (size 256 x 256). This field is constant.
@@ -79,12 +81,12 @@ namespace xtd {
       static const image mail_forward_256x256;
       /// @brief Gets a system-defined image that represent mail send image (size 256 x 256). This field is constant.
       static const image mail_send_256x256;
-      /// @brief Gets a system-defined image that represent multimedia stop image (size 256 x 256). This field is constant.
-      static const image mulimedia_stop_256x256;
       /// @brief Gets a system-defined image that represent multimedia pause image (size 256 x 256). This field is constant.
       static const image multimedia_pause_256x256;
       /// @brief Gets a system-defined image that represent multimedia play image (size 256 x 256). This field is constant.
       static const image multimedia_play_256x256;
+      /// @brief Gets a system-defined image that represent multimedia stop image (size 256 x 256). This field is constant.
+      static const image multimedia_stop_256x256;
       /// @brief Gets a system-defined image that represent negative image (size 256 x 256). This field is constant.
       static const image negative_256x256;
       /// @brief Gets a system-defined image that represent new image (size 256 x 256). This field is constant.
