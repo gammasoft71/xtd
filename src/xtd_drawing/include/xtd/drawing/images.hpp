@@ -9,6 +9,149 @@ namespace xtd {
   /// @brief Provides a collection of image objects for use by a Windows Forms application.
     class images static_ {
     public:
+      /// @brief Gets a system-defined image that represent about image (size 32 x 32). This field is constant.
+      static const image about_32x32;
+      /// @brief Gets a system-defined image that represent add image (size 32 x 32). This field is constant.
+      static const image add_32x32;
+      /// @brief Gets a system-defined image that represent apply image (size 32 x 32). This field is constant.
+      static const image apply_32x32;
+      /// @brief Gets a system-defined image that represent archive image (size 32 x 32). This field is constant.
+      static const image archive_32x32;
+      /// @brief Gets a system-defined image that represent audio disk image (size 32 x 32). This field is constant.
+      static const image audio_disk_32x32;
+      /// @brief Gets a system-defined image that represent back image (size 32 x 32). This field is constant.
+      static const image back_32x32;
+      /// @brief Gets a system-defined image that represent burn disk image (size 32 x 32). This field is constant.
+      static const image burn_disk_32x32;
+      /// @brief Gets a system-defined image that represent calendar image (size 32 x 32). This field is constant.
+      static const image calendar_32x32;
+      /// @brief Gets a system-defined image that represent cancel2 image (size 32 x 32). This field is constant.
+      static const image cancel2_32x32;
+      /// @brief Gets a system-defined image that represent cancel image (size 32 x 32). This field is constant.
+      static const image cancel_32x32;
+      /// @brief Gets a system-defined image that represent compact disk image (size 32 x 32). This field is constant.
+      static const image compact_disk_32x32;
+      /// @brief Gets a system-defined image that represent copy2 image (size 32 x 32). This field is constant.
+      static const image copy2_32x32;
+      /// @brief Gets a system-defined image that represent copy image (size 32 x 32). This field is constant.
+      static const image copy_32x32;
+      /// @brief Gets a system-defined image that represent cut image (size 32 x 32). This field is constant.
+      static const image cut_32x32;
+      /// @brief Gets a system-defined image that represent delete image (size 32 x 32). This field is constant.
+      static const image delete_32x32;
+      /// @brief Gets a system-defined image that represent down2 image (size 32 x 32). This field is constant.
+      static const image down2_32x32;
+      /// @brief Gets a system-defined image that represent down image (size 32 x 32). This field is constant.
+      static const image down_32x32;
+      /// @brief Gets a system-defined image that represent dwonload image (size 32 x 32). This field is constant.
+      static const image download_32x32;
+      /// @brief Gets a system-defined image that represent dvd disk image (size 32 x 32). This field is constant.
+      static const image dvd_disk_32x32;
+      /// @brief Gets a system-defined image that represent earth image (size 32 x 32). This field is constant.
+      static const image earth_32x32;
+      /// @brief Gets a system-defined image that represent edit image (size 32 x 32). This field is constant.
+      static const image edit_32x32;
+      /// @brief Gets a system-defined image that represent favorite image (size 32 x 32). This field is constant.
+      static const image favorites_32x32;
+      /// @brief Gets a system-defined image that represent find image (size 32 x 32). This field is constant.
+      static const image find_32x32;
+      /// @brief Gets a system-defined image that represent flash disk image (size 32 x 32). This field is constant.
+      static const image flash_disk_32x32;
+      /// @brief Gets a system-defined image that represent folder image (size 32 x 32). This field is constant.
+      static const image folder_32x32;
+      /// @brief Gets a system-defined image that represent forward image (size 32 x 32). This field is constant.
+      static const image forward_32x32;
+      /// @brief Gets a system-defined image that represent gammasoft image (size 32 x 32). This field is constant.
+      static const image gammasoft_32x32;
+      /// @brief Gets a system-defined image that represent hard disk image (size 32 x 32). This field is constant.
+      static const image hard_disk_32x32;
+      /// @brief Gets a system-defined image that represent help image (size 32 x 32). This field is constant.
+      static const image help_32x32;
+      /// @brief Gets a system-defined image that represent information image (size 32 x 32). This field is constant.
+      static const image information_32x32;
+      /// @brief Gets a system-defined image that represent key image (size 32 x 32). This field is constant.
+      static const image key_32x32;
+      /// @brief Gets a system-defined image that represent left2 image (size 32 x 32). This field is constant.
+      static const image left2_32x32;
+      /// @brief Gets a system-defined image that represent left image (size 32 x 32). This field is constant.
+      static const image left_32x32;
+      /// @brief Gets a system-defined image that represent mail image (size 32 x 32). This field is constant.
+      static const image mail_32x32;
+      /// @brief Gets a system-defined image that represent mail forward image (size 32 x 32). This field is constant.
+      static const image mail_forward_32x32;
+      /// @brief Gets a system-defined image that represent mail send image (size 32 x 32). This field is constant.
+      static const image mail_send_32x32;
+      /// @brief Gets a system-defined image that represent multimedia pause image (size 32 x 32). This field is constant.
+      static const image multimedia_pause_32x32;
+      /// @brief Gets a system-defined image that represent multimedia play image (size 32 x 32). This field is constant.
+      static const image multimedia_play_32x32;
+      /// @brief Gets a system-defined image that represent multimedia stop image (size 32 x 32). This field is constant.
+      static const image multimedia_stop_32x32;
+      /// @brief Gets a system-defined image that represent negative image (size 32 x 32). This field is constant.
+      static const image negative_32x32;
+      /// @brief Gets a system-defined image that represent new image (size 32 x 32). This field is constant.
+      static const image new_32x32;
+      /// @brief Gets a system-defined image that represent next image (size 32 x 32). This field is constant.
+      static const image next_32x32;
+      /// @brief Gets a system-defined image that represent open image (size 32 x 32). This field is constant.
+      static const image open_32x32;
+      /// @brief Gets a system-defined image that represent paste image (size 32 x 32). This field is constant.
+      static const image paste_32x32;
+      /// @brief Gets a system-defined image that represent picture image (size 32 x 32). This field is constant.
+      static const image picture_32x32;
+      /// @brief Gets a system-defined image that represent positive image (size 32 x 32). This field is constant.
+      static const image positive_32x32;
+      /// @brief Gets a system-defined image that represent presentation image (size 32 x 32). This field is constant.
+      static const image presentation_32x32;
+      /// @brief Gets a system-defined image that represent preview image (size 32 x 32). This field is constant.
+      static const image preview_32x32;
+      /// @brief Gets a system-defined image that represent previous image (size 32 x 32). This field is constant.
+      static const image previous_32x32;
+      /// @brief Gets a system-defined image that represent print image (size 32 x 32). This field is constant.
+      static const image print_32x32;
+      /// @brief Gets a system-defined image that represent properties image (size 32 x 32). This field is constant.
+      static const image properties_32x32;
+      /// @brief Gets a system-defined image that represent quit image (size 32 x 32). This field is constant.
+      static const image quit_32x32;
+      /// @brief Gets a system-defined image that represent redo image (size 32 x 32). This field is constant.
+      static const image redo_32x32;
+      /// @brief Gets a system-defined image that represent refresh image (size 32 x 32). This field is constant.
+      static const image refresh_32x32;
+      /// @brief Gets a system-defined image that represent remove image (size 32 x 32). This field is constant.
+      static const image remove_32x32;
+      /// @brief Gets a system-defined image that represent rename image (size 32 x 32). This field is constant.
+      static const image rename_32x32;
+      /// @brief Gets a system-defined image that represent right2 image (size 32 x 32). This field is constant.
+      static const image right2_32x32;
+      /// @brief Gets a system-defined image that represent right image (size 32 x 32). This field is constant.
+      static const image right_32x32;
+      /// @brief Gets a system-defined image that represent save image (size 32 x 32). This field is constant.
+      static const image save_32x32;
+      /// @brief Gets a system-defined image that represent search image (size 32 x 32). This field is constant.
+      static const image search_32x32;
+      /// @brief Gets a system-defined image that represent settings image (size 32 x 32). This field is constant.
+      static const image settings_32x32;
+      /// @brief Gets a system-defined image that represent stop image (size 32 x 32). This field is constant.
+      static const image stop_32x32;
+      /// @brief Gets a system-defined image that represent synchronise image (size 32 x 32). This field is constant.
+      static const image synchronize_32x32;
+      /// @brief Gets a system-defined image that represent text document image (size 32 x 32). This field is constant.
+      static const image text_document_32x32;
+      /// @brief Gets a system-defined image that represent undo image (size 32 x 32). This field is constant.
+      static const image undo_32x32;
+      /// @brief Gets a system-defined image that represent up2 image (size 32 x 32). This field is constant.
+      static const image up2_32x32;
+      /// @brief Gets a system-defined image that represent up image (size 32 x 32). This field is constant.
+      static const image up_32x32;
+      /// @brief Gets a system-defined image that represent upload image (size 32 x 32). This field is constant.
+      static const image upload_32x32;
+      /// @brief Gets a system-defined image that represent user image (size 32 x 32). This field is constant.
+      static const image user_32x32;
+      /// @brief Gets a system-defined image that represent zoom in image (size 32 x 32). This field is constant.
+      static const image zoom_in_32x32;
+      /// @brief Gets a system-defined image that represent zoom out image (size 32 x 32). This field is constant.
+      static const image zoom_out_32x32;
+      
       /// @brief Gets a system-defined image that represent about image (size 48 x 48). This field is constant.
       static const image about_48x48;
       /// @brief Gets a system-defined image that represent add image (size 48 x 48). This field is constant.
