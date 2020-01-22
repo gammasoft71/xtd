@@ -65,6 +65,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp
   src/xtd/drawing/image.cpp
+  src/xtd/drawing/images_24x24.cpp
   src/xtd/drawing/images_32x32.cpp
   src/xtd/drawing/images_48x48.cpp
   src/xtd/drawing/images_64x64.cpp
@@ -84,6 +85,77 @@ set(XTD_DRAWING_SOURCES
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
+  src/xtd/drawing/resources/about_24x24.xpm
+  src/xtd/drawing/resources/add_24x24.xpm
+  src/xtd/drawing/resources/apply_24x24.xpm
+  src/xtd/drawing/resources/archive_24x24.xpm
+  src/xtd/drawing/resources/audio_disk_24x24.xpm
+  src/xtd/drawing/resources/back_24x24.xpm
+  src/xtd/drawing/resources/burn_disk_24x24.xpm
+  src/xtd/drawing/resources/calendar_24x24.xpm
+  src/xtd/drawing/resources/cancel2_24x24.xpm
+  src/xtd/drawing/resources/cancel_24x24.xpm
+  src/xtd/drawing/resources/compact_disk_24x24.xpm
+  src/xtd/drawing/resources/copy2_24x24.xpm
+  src/xtd/drawing/resources/copy_24x24.xpm
+  src/xtd/drawing/resources/cut_24x24.xpm
+  src/xtd/drawing/resources/delete_24x24.xpm
+  src/xtd/drawing/resources/down2_24x24.xpm
+  src/xtd/drawing/resources/down_24x24.xpm
+  src/xtd/drawing/resources/download_24x24.xpm
+  src/xtd/drawing/resources/dvd_disk_24x24.xpm
+  src/xtd/drawing/resources/earth_24x24.xpm
+  src/xtd/drawing/resources/edit_24x24.xpm
+  src/xtd/drawing/resources/favorites_24x24.xpm
+  src/xtd/drawing/resources/find_24x24.xpm
+  src/xtd/drawing/resources/flash_disk_24x24.xpm
+  src/xtd/drawing/resources/folder_24x24.xpm
+  src/xtd/drawing/resources/forward_24x24.xpm
+  src/xtd/drawing/resources/gammasoft_24x24.xpm
+  src/xtd/drawing/resources/hard_disk_24x24.xpm
+  src/xtd/drawing/resources/help_24x24.xpm
+  src/xtd/drawing/resources/information_24x24.xpm
+  src/xtd/drawing/resources/key_24x24.xpm
+  src/xtd/drawing/resources/left2_24x24.xpm
+  src/xtd/drawing/resources/left_24x24.xpm
+  src/xtd/drawing/resources/mail_24x24.xpm
+  src/xtd/drawing/resources/mail_forward_24x24.xpm
+  src/xtd/drawing/resources/mail_send_24x24.xpm
+  src/xtd/drawing/resources/multimedia_pause_24x24.xpm
+  src/xtd/drawing/resources/multimedia_play_24x24.xpm
+  src/xtd/drawing/resources/multimedia_stop_24x24.xpm
+  src/xtd/drawing/resources/negative_24x24.xpm
+  src/xtd/drawing/resources/new_24x24.xpm
+  src/xtd/drawing/resources/next_24x24.xpm
+  src/xtd/drawing/resources/open_24x24.xpm
+  src/xtd/drawing/resources/paste_24x24.xpm
+  src/xtd/drawing/resources/picture_24x24.xpm
+  src/xtd/drawing/resources/positive_24x24.xpm
+  src/xtd/drawing/resources/presentation_24x24.xpm
+  src/xtd/drawing/resources/preview_24x24.xpm
+  src/xtd/drawing/resources/previous_24x24.xpm
+  src/xtd/drawing/resources/print_24x24.xpm
+  src/xtd/drawing/resources/properties_24x24.xpm
+  src/xtd/drawing/resources/quit_24x24.xpm
+  src/xtd/drawing/resources/redo_24x24.xpm
+  src/xtd/drawing/resources/refresh_24x24.xpm
+  src/xtd/drawing/resources/remove_24x24.xpm
+  src/xtd/drawing/resources/rename_24x24.xpm
+  src/xtd/drawing/resources/right2_24x24.xpm
+  src/xtd/drawing/resources/right_24x24.xpm
+  src/xtd/drawing/resources/save_24x24.xpm
+  src/xtd/drawing/resources/search_24x24.xpm
+  src/xtd/drawing/resources/settings_24x24.xpm
+  src/xtd/drawing/resources/stop_24x24.xpm
+  src/xtd/drawing/resources/synchronize_24x24.xpm
+  src/xtd/drawing/resources/text_document_24x24.xpm
+  src/xtd/drawing/resources/undo_24x24.xpm
+  src/xtd/drawing/resources/up2_24x24.xpm
+  src/xtd/drawing/resources/up_24x24.xpm
+  src/xtd/drawing/resources/upload_24x24.xpm
+  src/xtd/drawing/resources/user_24x24.xpm
+  src/xtd/drawing/resources/zoom_in_24x24.xpm
+  src/xtd/drawing/resources/zoom_out_24x24.xpm
   src/xtd/drawing/resources/about_32x32.xpm
   src/xtd/drawing/resources/add_32x32.xpm
   src/xtd/drawing/resources/apply_32x32.xpm
