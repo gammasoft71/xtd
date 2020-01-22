@@ -1,5 +1,5 @@
 /* XPM */
-static const char *favorite_128x128_xpm[] = {
+static const char *favorites_128x128_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "128 128 244 2 ",
 "   c #BA2D00",
