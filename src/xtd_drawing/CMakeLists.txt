@@ -80,6 +80,77 @@ set(XTD_DRAWING_SOURCES
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
+  src/xtd/drawing/resources/about_32x32.xpm
+  src/xtd/drawing/resources/add_32x32.xpm
+  src/xtd/drawing/resources/apply_32x32.xpm
+  src/xtd/drawing/resources/archive_32x32.xpm
+  src/xtd/drawing/resources/audio_disk_32x32.xpm
+  src/xtd/drawing/resources/back_32x32.xpm
+  src/xtd/drawing/resources/burn_disk_32x32.xpm
+  src/xtd/drawing/resources/calendar_32x32.xpm
+  src/xtd/drawing/resources/cancel2_32x32.xpm
+  src/xtd/drawing/resources/cancel_32x32.xpm
+  src/xtd/drawing/resources/compact_disk_32x32.xpm
+  src/xtd/drawing/resources/copy2_32x32.xpm
+  src/xtd/drawing/resources/copy_32x32.xpm
+  src/xtd/drawing/resources/cut_32x32.xpm
+  src/xtd/drawing/resources/delete_32x32.xpm
+  src/xtd/drawing/resources/down2_32x32.xpm
+  src/xtd/drawing/resources/down_32x32.xpm
+  src/xtd/drawing/resources/download_32x32.xpm
+  src/xtd/drawing/resources/dvd_disk_32x32.xpm
+  src/xtd/drawing/resources/earth_32x32.xpm
+  src/xtd/drawing/resources/edit_32x32.xpm
+  src/xtd/drawing/resources/favorites_32x32.xpm
+  src/xtd/drawing/resources/find_32x32.xpm
+  src/xtd/drawing/resources/flash_disk_32x32.xpm
+  src/xtd/drawing/resources/folder_32x32.xpm
+  src/xtd/drawing/resources/forward_32x32.xpm
+  src/xtd/drawing/resources/gammasoft_32x32.xpm
+  src/xtd/drawing/resources/hard_disk_32x32.xpm
+  src/xtd/drawing/resources/help_32x32.xpm
+  src/xtd/drawing/resources/information_32x32.xpm
+  src/xtd/drawing/resources/key_32x32.xpm
+  src/xtd/drawing/resources/left2_32x32.xpm
+  src/xtd/drawing/resources/left_32x32.xpm
+  src/xtd/drawing/resources/mail_32x32.xpm
+  src/xtd/drawing/resources/mail_forward_32x32.xpm
+  src/xtd/drawing/resources/mail_send_32x32.xpm
+  src/xtd/drawing/resources/multimedia_pause_32x32.xpm
+  src/xtd/drawing/resources/multimedia_play_32x32.xpm
+  src/xtd/drawing/resources/multimedia_stop_32x32.xpm
+  src/xtd/drawing/resources/negative_32x32.xpm
+  src/xtd/drawing/resources/new_32x32.xpm
+  src/xtd/drawing/resources/next_32x32.xpm
+  src/xtd/drawing/resources/open_32x32.xpm
+  src/xtd/drawing/resources/paste_32x32.xpm
+  src/xtd/drawing/resources/picture_32x32.xpm
+  src/xtd/drawing/resources/positive_32x32.xpm
+  src/xtd/drawing/resources/presentation_32x32.xpm
+  src/xtd/drawing/resources/preview_32x32.xpm
+  src/xtd/drawing/resources/previous_32x32.xpm
+  src/xtd/drawing/resources/print_32x32.xpm
+  src/xtd/drawing/resources/properties_32x32.xpm
+  src/xtd/drawing/resources/quit_32x32.xpm
+  src/xtd/drawing/resources/redo_32x32.xpm
+  src/xtd/drawing/resources/refresh_32x32.xpm
+  src/xtd/drawing/resources/remove_32x32.xpm
+  src/xtd/drawing/resources/rename_32x32.xpm
+  src/xtd/drawing/resources/right2_32x32.xpm
+  src/xtd/drawing/resources/right_32x32.xpm
+  src/xtd/drawing/resources/save_32x32.xpm
+  src/xtd/drawing/resources/search_32x32.xpm
+  src/xtd/drawing/resources/settings_32x32.xpm
+  src/xtd/drawing/resources/stop_32x32.xpm
+  src/xtd/drawing/resources/synchronize_32x32.xpm
+  src/xtd/drawing/resources/text_document_32x32.xpm
+  src/xtd/drawing/resources/undo_32x32.xpm
+  src/xtd/drawing/resources/up2_32x32.xpm
+  src/xtd/drawing/resources/up_32x32.xpm
+  src/xtd/drawing/resources/upload_32x32.xpm
+  src/xtd/drawing/resources/user_32x32.xpm
+  src/xtd/drawing/resources/zoom_in_32x32.xpm
+  src/xtd/drawing/resources/zoom_out_32x32.xpm
   src/xtd/drawing/resources/about_48x48.xpm
   src/xtd/drawing/resources/add_48x48.xpm
   src/xtd/drawing/resources/apply_48x48.xpm
