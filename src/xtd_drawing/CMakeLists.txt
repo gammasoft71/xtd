@@ -80,6 +80,77 @@ set(XTD_DRAWING_SOURCES
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
+  src/xtd/drawing/resources/about_48x48.xpm
+  src/xtd/drawing/resources/add_48x48.xpm
+  src/xtd/drawing/resources/apply_48x48.xpm
+  src/xtd/drawing/resources/archive_48x48.xpm
+  src/xtd/drawing/resources/audio_disk_48x48.xpm
+  src/xtd/drawing/resources/back_48x48.xpm
+  src/xtd/drawing/resources/burn_disk_48x48.xpm
+  src/xtd/drawing/resources/calendar_48x48.xpm
+  src/xtd/drawing/resources/cancel2_48x48.xpm
+  src/xtd/drawing/resources/cancel_48x48.xpm
+  src/xtd/drawing/resources/compact_disk_48x48.xpm
+  src/xtd/drawing/resources/copy2_48x48.xpm
+  src/xtd/drawing/resources/copy_48x48.xpm
+  src/xtd/drawing/resources/cut_48x48.xpm
+  src/xtd/drawing/resources/delete_48x48.xpm
+  src/xtd/drawing/resources/down2_48x48.xpm
+  src/xtd/drawing/resources/down_48x48.xpm
+  src/xtd/drawing/resources/download_48x48.xpm
+  src/xtd/drawing/resources/dvd_disk_48x48.xpm
+  src/xtd/drawing/resources/earth_48x48.xpm
+  src/xtd/drawing/resources/edit_48x48.xpm
+  src/xtd/drawing/resources/favorites_48x48.xpm
+  src/xtd/drawing/resources/find_48x48.xpm
+  src/xtd/drawing/resources/flash_disk_48x48.xpm
+  src/xtd/drawing/resources/folder_48x48.xpm
+  src/xtd/drawing/resources/forward_48x48.xpm
+  src/xtd/drawing/resources/gammasoft_48x48.xpm
+  src/xtd/drawing/resources/hard_disk_48x48.xpm
+  src/xtd/drawing/resources/help_48x48.xpm
+  src/xtd/drawing/resources/information_48x48.xpm
+  src/xtd/drawing/resources/key_48x48.xpm
+  src/xtd/drawing/resources/left2_48x48.xpm
+  src/xtd/drawing/resources/left_48x48.xpm
+  src/xtd/drawing/resources/mail_48x48.xpm
+  src/xtd/drawing/resources/mail_forward_48x48.xpm
+  src/xtd/drawing/resources/mail_send_48x48.xpm
+  src/xtd/drawing/resources/multimedia_pause_48x48.xpm
+  src/xtd/drawing/resources/multimedia_play_48x48.xpm
+  src/xtd/drawing/resources/multimedia_stop_48x48.xpm
+  src/xtd/drawing/resources/negative_48x48.xpm
+  src/xtd/drawing/resources/new_48x48.xpm
+  src/xtd/drawing/resources/next_48x48.xpm
+  src/xtd/drawing/resources/open_48x48.xpm
+  src/xtd/drawing/resources/paste_48x48.xpm
+  src/xtd/drawing/resources/picture_48x48.xpm
+  src/xtd/drawing/resources/positive_48x48.xpm
+  src/xtd/drawing/resources/presentation_48x48.xpm
+  src/xtd/drawing/resources/preview_48x48.xpm
+  src/xtd/drawing/resources/previous_48x48.xpm
+  src/xtd/drawing/resources/print_48x48.xpm
+  src/xtd/drawing/resources/properties_48x48.xpm
+  src/xtd/drawing/resources/quit_48x48.xpm
+  src/xtd/drawing/resources/redo_48x48.xpm
+  src/xtd/drawing/resources/refresh_48x48.xpm
+  src/xtd/drawing/resources/remove_48x48.xpm
+  src/xtd/drawing/resources/rename_48x48.xpm
+  src/xtd/drawing/resources/right2_48x48.xpm
+  src/xtd/drawing/resources/right_48x48.xpm
+  src/xtd/drawing/resources/save_48x48.xpm
+  src/xtd/drawing/resources/search_48x48.xpm
+  src/xtd/drawing/resources/settings_48x48.xpm
+  src/xtd/drawing/resources/stop_48x48.xpm
+  src/xtd/drawing/resources/synchronize_48x48.xpm
+  src/xtd/drawing/resources/text_document_48x48.xpm
+  src/xtd/drawing/resources/undo_48x48.xpm
+  src/xtd/drawing/resources/up2_48x48.xpm
+  src/xtd/drawing/resources/up_48x48.xpm
+  src/xtd/drawing/resources/upload_48x48.xpm
+  src/xtd/drawing/resources/user_48x48.xpm
+  src/xtd/drawing/resources/zoom_in_48x48.xpm
+  src/xtd/drawing/resources/zoom_out_48x48.xpm
   src/xtd/drawing/resources/about_64x64.xpm
   src/xtd/drawing/resources/add_64x64.xpm
   src/xtd/drawing/resources/apply_64x64.xpm
@@ -101,7 +172,7 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/dvd_disk_64x64.xpm
   src/xtd/drawing/resources/earth_64x64.xpm
   src/xtd/drawing/resources/edit_64x64.xpm
-  src/xtd/drawing/resources/favorite_64x64.xpm
+  src/xtd/drawing/resources/favorites_64x64.xpm
   src/xtd/drawing/resources/find_64x64.xpm
   src/xtd/drawing/resources/flash_disk_64x64.xpm
   src/xtd/drawing/resources/folder_64x64.xpm
@@ -172,7 +243,7 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/dvd_disk_128x128.xpm
   src/xtd/drawing/resources/earth_128x128.xpm
   src/xtd/drawing/resources/edit_128x128.xpm
-  src/xtd/drawing/resources/favorite_128x128.xpm
+  src/xtd/drawing/resources/favorites_128x128.xpm
   src/xtd/drawing/resources/find_128x128.xpm
   src/xtd/drawing/resources/flash_disk_128x128.xpm
   src/xtd/drawing/resources/folder_128x128.xpm
@@ -243,7 +314,7 @@ set(XTD_DRAWING_RESOURCES_SOURCES
   src/xtd/drawing/resources/dvd_disk_256x256.xpm
   src/xtd/drawing/resources/earth_256x256.xpm
   src/xtd/drawing/resources/edit_256x256.xpm
-  src/xtd/drawing/resources/favorite_256x256.xpm
+  src/xtd/drawing/resources/favorites_256x256.xpm
   src/xtd/drawing/resources/find_256x256.xpm
   src/xtd/drawing/resources/flash_disk_256x256.xpm
   src/xtd/drawing/resources/folder_256x256.xpm
