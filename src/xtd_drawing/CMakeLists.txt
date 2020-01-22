@@ -65,6 +65,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp
   src/xtd/drawing/image.cpp
+  src/xtd/drawing/images_16x16.cpp
   src/xtd/drawing/images_24x24.cpp
   src/xtd/drawing/images_32x32.cpp
   src/xtd/drawing/images_48x48.cpp
@@ -85,6 +86,77 @@ set(XTD_DRAWING_SOURCES
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
+  src/xtd/drawing/resources/about_16x16.xpm
+  src/xtd/drawing/resources/add_16x16.xpm
+  src/xtd/drawing/resources/apply_16x16.xpm
+  src/xtd/drawing/resources/archive_16x16.xpm
+  src/xtd/drawing/resources/audio_disk_16x16.xpm
+  src/xtd/drawing/resources/back_16x16.xpm
+  src/xtd/drawing/resources/burn_disk_16x16.xpm
+  src/xtd/drawing/resources/calendar_16x16.xpm
+  src/xtd/drawing/resources/cancel2_16x16.xpm
+  src/xtd/drawing/resources/cancel_16x16.xpm
+  src/xtd/drawing/resources/compact_disk_16x16.xpm
+  src/xtd/drawing/resources/copy2_16x16.xpm
+  src/xtd/drawing/resources/copy_16x16.xpm
+  src/xtd/drawing/resources/cut_16x16.xpm
+  src/xtd/drawing/resources/delete_16x16.xpm
+  src/xtd/drawing/resources/down2_16x16.xpm
+  src/xtd/drawing/resources/down_16x16.xpm
+  src/xtd/drawing/resources/download_16x16.xpm
+  src/xtd/drawing/resources/dvd_disk_16x16.xpm
+  src/xtd/drawing/resources/earth_16x16.xpm
+  src/xtd/drawing/resources/edit_16x16.xpm
+  src/xtd/drawing/resources/favorites_16x16.xpm
+  src/xtd/drawing/resources/find_16x16.xpm
+  src/xtd/drawing/resources/flash_disk_16x16.xpm
+  src/xtd/drawing/resources/folder_16x16.xpm
+  src/xtd/drawing/resources/forward_16x16.xpm
+  src/xtd/drawing/resources/gammasoft_16x16.xpm
+  src/xtd/drawing/resources/hard_disk_16x16.xpm
+  src/xtd/drawing/resources/help_16x16.xpm
+  src/xtd/drawing/resources/information_16x16.xpm
+  src/xtd/drawing/resources/key_16x16.xpm
+  src/xtd/drawing/resources/left2_16x16.xpm
+  src/xtd/drawing/resources/left_16x16.xpm
+  src/xtd/drawing/resources/mail_16x16.xpm
+  src/xtd/drawing/resources/mail_forward_16x16.xpm
+  src/xtd/drawing/resources/mail_send_16x16.xpm
+  src/xtd/drawing/resources/multimedia_pause_16x16.xpm
+  src/xtd/drawing/resources/multimedia_play_16x16.xpm
+  src/xtd/drawing/resources/multimedia_stop_16x16.xpm
+  src/xtd/drawing/resources/negative_16x16.xpm
+  src/xtd/drawing/resources/new_16x16.xpm
+  src/xtd/drawing/resources/next_16x16.xpm
+  src/xtd/drawing/resources/open_16x16.xpm
+  src/xtd/drawing/resources/paste_16x16.xpm
+  src/xtd/drawing/resources/picture_16x16.xpm
+  src/xtd/drawing/resources/positive_16x16.xpm
+  src/xtd/drawing/resources/presentation_16x16.xpm
+  src/xtd/drawing/resources/preview_16x16.xpm
+  src/xtd/drawing/resources/previous_16x16.xpm
+  src/xtd/drawing/resources/print_16x16.xpm
+  src/xtd/drawing/resources/properties_16x16.xpm
+  src/xtd/drawing/resources/quit_16x16.xpm
+  src/xtd/drawing/resources/redo_16x16.xpm
+  src/xtd/drawing/resources/refresh_16x16.xpm
+  src/xtd/drawing/resources/remove_16x16.xpm
+  src/xtd/drawing/resources/rename_16x16.xpm
+  src/xtd/drawing/resources/right2_16x16.xpm
+  src/xtd/drawing/resources/right_16x16.xpm
+  src/xtd/drawing/resources/save_16x16.xpm
+  src/xtd/drawing/resources/search_16x16.xpm
+  src/xtd/drawing/resources/settings_16x16.xpm
+  src/xtd/drawing/resources/stop_16x16.xpm
+  src/xtd/drawing/resources/synchronize_16x16.xpm
+  src/xtd/drawing/resources/text_document_16x16.xpm
+  src/xtd/drawing/resources/undo_16x16.xpm
+  src/xtd/drawing/resources/up2_16x16.xpm
+  src/xtd/drawing/resources/up_16x16.xpm
+  src/xtd/drawing/resources/upload_16x16.xpm
+  src/xtd/drawing/resources/user_16x16.xpm
+  src/xtd/drawing/resources/zoom_in_16x16.xpm
+  src/xtd/drawing/resources/zoom_out_16x16.xpm
   src/xtd/drawing/resources/about_24x24.xpm
   src/xtd/drawing/resources/add_24x24.xpm
   src/xtd/drawing/resources/apply_24x24.xpm
