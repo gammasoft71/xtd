@@ -65,7 +65,11 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp
   src/xtd/drawing/image.cpp
-  src/xtd/drawing/images.cpp
+  src/xtd/drawing/images_32x32.cpp
+  src/xtd/drawing/images_48x48.cpp
+  src/xtd/drawing/images_64x64.cpp
+  src/xtd/drawing/images_128x128.cpp
+  src/xtd/drawing/images_256x256.cpp
   src/xtd/drawing/pen.cpp
   src/xtd/drawing/point_f.cpp
   src/xtd/drawing/point.cpp
