@@ -74,74 +74,286 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-const image images::about_48x48 = image::from_data(about_48x48_xpm);
-const image images::add_48x48 = image::from_data(add_48x48_xpm);
-const image images::apply_48x48 = image::from_data(apply_48x48_xpm);
-const image images::archive_48x48 = image::from_data(archive_48x48_xpm);
-const image images::audio_disk_48x48 = image::from_data(audio_disk_48x48_xpm);
-const image images::back_48x48 = image::from_data(back_48x48_xpm);
-const image images::burn_disk_48x48 = image::from_data(burn_disk_48x48_xpm);
-const image images::calendar_48x48 = image::from_data(calendar_48x48_xpm);
-const image images::cancel2_48x48 = image::from_data(cancel2_48x48_xpm);
-const image images::cancel_48x48 = image::from_data(cancel_48x48_xpm);
-const image images::compact_disk_48x48 = image::from_data(compact_disk_48x48_xpm);
-const image images::copy2_48x48 = image::from_data(copy2_48x48_xpm);
-const image images::copy_48x48 = image::from_data(copy_48x48_xpm);
-const image images::cut_48x48 = image::from_data(cut_48x48_xpm);
-const image images::delete_48x48 = image::from_data(delete_48x48_xpm);
-const image images::down2_48x48 = image::from_data(down2_48x48_xpm);
-const image images::down_48x48 = image::from_data(down_48x48_xpm);
-const image images::download_48x48 = image::from_data(download_48x48_xpm);
-const image images::dvd_disk_48x48 = image::from_data(dvd_disk_48x48_xpm);
-const image images::earth_48x48 = image::from_data(earth_48x48_xpm);
-const image images::edit_48x48 = image::from_data(edit_48x48_xpm);
-const image images::favorites_48x48 = image::from_data(favorites_48x48_xpm);
-const image images::find_48x48 = image::from_data(find_48x48_xpm);
-const image images::flash_disk_48x48 = image::from_data(flash_disk_48x48_xpm);
-const image images::folder_48x48 = image::from_data(folder_48x48_xpm);
-const image images::forward_48x48 = image::from_data(forward_48x48_xpm);
-const image images::gammasoft_48x48 = image::from_data(gammasoft_48x48_xpm);
-const image images::hard_disk_48x48 = image::from_data(hard_disk_48x48_xpm);
-const image images::help_48x48 = image::from_data(help_48x48_xpm);
-const image images::information_48x48 = image::from_data(information_48x48_xpm);
-const image images::key_48x48 = image::from_data(key_48x48_xpm);
-const image images::left2_48x48 = image::from_data(left2_48x48_xpm);
-const image images::left_48x48 = image::from_data(left_48x48_xpm);
-const image images::mail_48x48 = image::from_data(mail_48x48_xpm);
-const image images::mail_forward_48x48 = image::from_data(mail_forward_48x48_xpm);
-const image images::mail_send_48x48 = image::from_data(mail_send_48x48_xpm);
-const image images::multimedia_pause_48x48 = image::from_data(multimedia_pause_48x48_xpm);
-const image images::multimedia_play_48x48 = image::from_data(multimedia_play_48x48_xpm);
-const image images::multimedia_stop_48x48 = image::from_data(multimedia_stop_48x48_xpm);
-const image images::negative_48x48 = image::from_data(negative_48x48_xpm);
-const image images::new_48x48 = image::from_data(new_48x48_xpm);
-const image images::next_48x48 = image::from_data(next_48x48_xpm);
-const image images::open_48x48 = image::from_data(open_48x48_xpm);
-const image images::paste_48x48 = image::from_data(paste_48x48_xpm);
-const image images::picture_48x48 = image::from_data(picture_48x48_xpm);
-const image images::positive_48x48 = image::from_data(positive_48x48_xpm);
-const image images::presentation_48x48 = image::from_data(presentation_48x48_xpm);
-const image images::preview_48x48 = image::from_data(previous_48x48_xpm);
-const image images::previous_48x48 = image::from_data(previous_48x48_xpm);
-const image images::print_48x48 = image::from_data(print_48x48_xpm);
-const image images::properties_48x48 = image::from_data(properties_48x48_xpm);
-const image images::quit_48x48 = image::from_data(quit_48x48_xpm);
-const image images::redo_48x48 = image::from_data(redo_48x48_xpm);
-const image images::refresh_48x48 = image::from_data(refresh_48x48_xpm);
-const image images::remove_48x48 = image::from_data(remove_48x48_xpm);
-const image images::rename_48x48 = image::from_data(rename_48x48_xpm);
-const image images::right2_48x48 = image::from_data(right2_48x48_xpm);
-const image images::right_48x48 = image::from_data(right_48x48_xpm);
-const image images::save_48x48 = image::from_data(save_48x48_xpm);
-const image images::search_48x48 = image::from_data(search_48x48_xpm);
-const image images::settings_48x48 = image::from_data(settings_48x48_xpm);
-const image images::stop_48x48 = image::from_data(stop_48x48_xpm);
-const image images::synchronize_48x48 = image::from_data(synchronize_48x48_xpm);
-const image images::text_document_48x48 = image::from_data(text_document_48x48_xpm);
-const image images::undo_48x48 = image::from_data(undo_48x48_xpm);
-const image images::up2_48x48 = image::from_data(up2_48x48_xpm);
-const image images::up_48x48 = image::from_data(up_48x48_xpm);
-const image images::upload_48x48 = image::from_data(upload_48x48_xpm);
-const image images::user_48x48 = image::from_data(user_48x48_xpm);
-const image images::zoom_in_48x48 = image::from_data(zoom_in_48x48_xpm);
-const image images::zoom_out_48x48 = image::from_data(zoom_out_48x48_xpm);
+image images::about_48x48() {
+  return image::from_data(about_48x48_xpm);
+}
+
+image images::add_48x48() {
+  return image::from_data(add_48x48_xpm);
+}
+
+image images::apply_48x48() {
+  return image::from_data(apply_48x48_xpm);
+}
+
+image images::archive_48x48() {
+  return image::from_data(archive_48x48_xpm);
+}
+
+image images::audio_disk_48x48() {
+  return image::from_data(audio_disk_48x48_xpm);
+}
+
+image images::back_48x48() {
+  return image::from_data(back_48x48_xpm);
+}
+
+image images::burn_disk_48x48() {
+  return image::from_data(burn_disk_48x48_xpm);
+}
+
+image images::calendar_48x48() {
+  return image::from_data(calendar_48x48_xpm);
+}
+
+image images::cancel2_48x48() {
+  return image::from_data(cancel2_48x48_xpm);
+}
+
+image images::cancel_48x48() {
+  return image::from_data(cancel_48x48_xpm);
+}
+
+image images::compact_disk_48x48() {
+  return image::from_data(compact_disk_48x48_xpm);
+}
+
+image images::copy2_48x48() {
+  return image::from_data(copy2_48x48_xpm);
+}
+
+image images::copy_48x48() {
+  return image::from_data(copy_48x48_xpm);
+}
+
+image images::cut_48x48() {
+  return image::from_data(cut_48x48_xpm);
+}
+
+image images::delete_48x48() {
+  return image::from_data(delete_48x48_xpm);
+}
+
+image images::down2_48x48() {
+  return image::from_data(down2_48x48_xpm);
+}
+
+image images::down_48x48() {
+  return image::from_data(down_48x48_xpm);
+}
+
+image images::download_48x48() {
+  return image::from_data(download_48x48_xpm);
+}
+
+image images::dvd_disk_48x48() {
+  return image::from_data(dvd_disk_48x48_xpm);
+}
+
+image images::earth_48x48() {
+  return image::from_data(earth_48x48_xpm);
+}
+
+image images::edit_48x48() {
+  return image::from_data(edit_48x48_xpm);
+}
+
+image images::favorites_48x48() {
+  return image::from_data(favorites_48x48_xpm);
+}
+
+image images::find_48x48() {
+  return image::from_data(find_48x48_xpm);
+}
+
+image images::flash_disk_48x48() {
+  return image::from_data(flash_disk_48x48_xpm);
+}
+
+image images::folder_48x48() {
+  return image::from_data(folder_48x48_xpm);
+}
+
+image images::forward_48x48() {
+  return image::from_data(forward_48x48_xpm);
+}
+
+image images::gammasoft_48x48() {
+  return image::from_data(gammasoft_48x48_xpm);
+}
+
+image images::hard_disk_48x48() {
+  return image::from_data(hard_disk_48x48_xpm);
+}
+
+image images::help_48x48() {
+  return image::from_data(help_48x48_xpm);
+}
+
+image images::information_48x48() {
+  return image::from_data(information_48x48_xpm);
+}
+
+image images::key_48x48() {
+  return image::from_data(key_48x48_xpm);
+}
+
+image images::left2_48x48() {
+  return image::from_data(left2_48x48_xpm);
+}
+
+image images::left_48x48() {
+  return image::from_data(left_48x48_xpm);
+}
+
+image images::mail_48x48() {
+  return image::from_data(mail_48x48_xpm);
+}
+
+image images::mail_forward_48x48() {
+  return image::from_data(mail_forward_48x48_xpm);
+}
+
+image images::mail_send_48x48() {
+  return image::from_data(mail_send_48x48_xpm);
+}
+
+image images::multimedia_pause_48x48() {
+  return image::from_data(multimedia_pause_48x48_xpm);
+}
+
+image images::multimedia_play_48x48() {
+  return image::from_data(multimedia_play_48x48_xpm);
+}
+
+image images::multimedia_stop_48x48() {
+  return image::from_data(multimedia_stop_48x48_xpm);
+}
+
+image images::negative_48x48() {
+  return image::from_data(negative_48x48_xpm);
+}
+
+image images::new_48x48() {
+  return image::from_data(new_48x48_xpm);
+}
+
+image images::next_48x48() {
+  return image::from_data(next_48x48_xpm);
+}
+
+image images::open_48x48() {
+  return image::from_data(open_48x48_xpm);
+}
+
+image images::paste_48x48() {
+  return image::from_data(paste_48x48_xpm);
+}
+
+image images::picture_48x48() {
+  return image::from_data(picture_48x48_xpm);
+}
+
+image images::positive_48x48() {
+  return image::from_data(positive_48x48_xpm);
+}
+
+image images::presentation_48x48() {
+  return image::from_data(presentation_48x48_xpm);
+}
+
+image images::preview_48x48() {
+  return image::from_data(preview_48x48_xpm);
+}
+
+image images::previous_48x48() {
+  return image::from_data(previous_48x48_xpm);
+}
+
+image images::print_48x48() {
+  return image::from_data(print_48x48_xpm);
+}
+
+image images::properties_48x48() {
+  return image::from_data(properties_48x48_xpm);
+}
+
+image images::quit_48x48() {
+  return image::from_data(quit_48x48_xpm);
+}
+
+image images::redo_48x48() {
+  return image::from_data(redo_48x48_xpm);
+}
+
+image images::refresh_48x48() {
+  return image::from_data(refresh_48x48_xpm);
+}
+
+image images::remove_48x48() {
+  return image::from_data(remove_48x48_xpm);
+}
+
+image images::rename_48x48() {
+  return image::from_data(rename_48x48_xpm);
+}
+
+image images::right2_48x48() {
+  return image::from_data(right2_48x48_xpm);
+}
+
+image images::right_48x48() {
+  return image::from_data(right_48x48_xpm);
+}
+
+image images::save_48x48() {
+  return image::from_data(save_48x48_xpm);
+}
+
+image images::search_48x48() {
+  return image::from_data(search_48x48_xpm);
+}
+
+image images::settings_48x48() {
+  return image::from_data(settings_48x48_xpm);
+}
+
+image images::stop_48x48() {
+  return image::from_data(stop_48x48_xpm);
+}
+
+image images::synchronize_48x48() {
+  return image::from_data(synchronize_48x48_xpm);
+}
+
+image images::text_document_48x48() {
+  return image::from_data(text_document_48x48_xpm);
+}
+
+image images::undo_48x48() {
+  return image::from_data(undo_48x48_xpm);
+}
+
+image images::up2_48x48() {
+  return image::from_data(up2_48x48_xpm);
+}
+
+image images::up_48x48() {
+  return image::from_data(up_48x48_xpm);
+}
+
+image images::upload_48x48() {
+  return image::from_data(upload_48x48_xpm);
+}
+
+image images::user_48x48() {
+  return image::from_data(user_48x48_xpm);
+}
+
+image images::zoom_in_48x48() {
+  return image::from_data(zoom_in_48x48_xpm);
+}
+
+image images::zoom_out_48x48() {
+  return image::from_data(zoom_out_48x48_xpm);
+}
