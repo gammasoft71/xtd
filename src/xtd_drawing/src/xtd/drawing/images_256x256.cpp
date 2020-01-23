@@ -74,74 +74,286 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-const image images::about_256x256 = image::from_data(about_256x256_xpm);
-const image images::add_256x256 = image::from_data(add_256x256_xpm);
-const image images::apply_256x256 = image::from_data(apply_256x256_xpm);
-const image images::archive_256x256 = image::from_data(archive_256x256_xpm);
-const image images::audio_disk_256x256 = image::from_data(audio_disk_256x256_xpm);
-const image images::back_256x256 = image::from_data(back_256x256_xpm);
-const image images::burn_disk_256x256 = image::from_data(burn_disk_256x256_xpm);
-const image images::calendar_256x256 = image::from_data(calendar_256x256_xpm);
-const image images::cancel2_256x256 = image::from_data(cancel2_256x256_xpm);
-const image images::cancel_256x256 = image::from_data(cancel_256x256_xpm);
-const image images::compact_disk_256x256 = image::from_data(compact_disk_256x256_xpm);
-const image images::copy2_256x256 = image::from_data(copy2_256x256_xpm);
-const image images::copy_256x256 = image::from_data(copy_256x256_xpm);
-const image images::cut_256x256 = image::from_data(cut_256x256_xpm);
-const image images::delete_256x256 = image::from_data(delete_256x256_xpm);
-const image images::down2_256x256 = image::from_data(down2_256x256_xpm);
-const image images::down_256x256 = image::from_data(down_256x256_xpm);
-const image images::download_256x256 = image::from_data(download_256x256_xpm);
-const image images::dvd_disk_256x256 = image::from_data(dvd_disk_256x256_xpm);
-const image images::earth_256x256 = image::from_data(earth_256x256_xpm);
-const image images::edit_256x256 = image::from_data(edit_256x256_xpm);
-const image images::favorites_256x256 = image::from_data(favorites_256x256_xpm);
-const image images::find_256x256 = image::from_data(find_256x256_xpm);
-const image images::flash_disk_256x256 = image::from_data(flash_disk_256x256_xpm);
-const image images::folder_256x256 = image::from_data(folder_256x256_xpm);
-const image images::forward_256x256 = image::from_data(forward_256x256_xpm);
-const image images::gammasoft_256x256 = image::from_data(gammasoft_256x256_xpm);
-const image images::hard_disk_256x256 = image::from_data(hard_disk_256x256_xpm);
-const image images::help_256x256 = image::from_data(help_256x256_xpm);
-const image images::information_256x256 = image::from_data(information_256x256_xpm);
-const image images::key_256x256 = image::from_data(key_256x256_xpm);
-const image images::left2_256x256 = image::from_data(left2_256x256_xpm);
-const image images::left_256x256 = image::from_data(left_256x256_xpm);
-const image images::mail_256x256 = image::from_data(mail_256x256_xpm);
-const image images::mail_forward_256x256 = image::from_data(mail_forward_256x256_xpm);
-const image images::mail_send_256x256 = image::from_data(mail_send_256x256_xpm);
-const image images::multimedia_pause_256x256 = image::from_data(multimedia_pause_256x256_xpm);
-const image images::multimedia_play_256x256 = image::from_data(multimedia_play_256x256_xpm);
-const image images::multimedia_stop_256x256 = image::from_data(multimedia_stop_256x256_xpm);
-const image images::negative_256x256 = image::from_data(negative_256x256_xpm);
-const image images::new_256x256 = image::from_data(new_256x256_xpm);
-const image images::next_256x256 = image::from_data(next_256x256_xpm);
-const image images::open_256x256 = image::from_data(open_256x256_xpm);
-const image images::paste_256x256 = image::from_data(paste_256x256_xpm);
-const image images::picture_256x256 = image::from_data(picture_256x256_xpm);
-const image images::positive_256x256 = image::from_data(positive_256x256_xpm);
-const image images::presentation_256x256 = image::from_data(presentation_256x256_xpm);
-const image images::preview_256x256 = image::from_data(previous_256x256_xpm);
-const image images::previous_256x256 = image::from_data(previous_256x256_xpm);
-const image images::print_256x256 = image::from_data(print_256x256_xpm);
-const image images::properties_256x256 = image::from_data(properties_256x256_xpm);
-const image images::quit_256x256 = image::from_data(quit_256x256_xpm);
-const image images::redo_256x256 = image::from_data(redo_256x256_xpm);
-const image images::refresh_256x256 = image::from_data(refresh_256x256_xpm);
-const image images::remove_256x256 = image::from_data(remove_256x256_xpm);
-const image images::rename_256x256 = image::from_data(rename_256x256_xpm);
-const image images::right2_256x256 = image::from_data(right2_256x256_xpm);
-const image images::right_256x256 = image::from_data(right_256x256_xpm);
-const image images::save_256x256 = image::from_data(save_256x256_xpm);
-const image images::search_256x256 = image::from_data(search_256x256_xpm);
-const image images::settings_256x256 = image::from_data(settings_256x256_xpm);
-const image images::stop_256x256 = image::from_data(stop_256x256_xpm);
-const image images::synchronize_256x256 = image::from_data(synchronize_256x256_xpm);
-const image images::text_document_256x256 = image::from_data(text_document_256x256_xpm);
-const image images::undo_256x256 = image::from_data(undo_256x256_xpm);
-const image images::up2_256x256 = image::from_data(up2_256x256_xpm);
-const image images::up_256x256 = image::from_data(up_256x256_xpm);
-const image images::upload_256x256 = image::from_data(upload_256x256_xpm);
-const image images::user_256x256 = image::from_data(user_256x256_xpm);
-const image images::zoom_in_256x256 = image::from_data(zoom_in_256x256_xpm);
-const image images::zoom_out_256x256 = image::from_data(zoom_out_256x256_xpm);
+image images::about_256x256() {
+  return image::from_data(about_256x256_xpm);
+}
+
+image images::add_256x256() {
+  return image::from_data(add_256x256_xpm);
+}
+
+image images::apply_256x256() {
+  return image::from_data(apply_256x256_xpm);
+}
+
+image images::archive_256x256() {
+  return image::from_data(archive_256x256_xpm);
+}
+
+image images::audio_disk_256x256() {
+  return image::from_data(audio_disk_256x256_xpm);
+}
+
+image images::back_256x256() {
+  return image::from_data(back_256x256_xpm);
+}
+
+image images::burn_disk_256x256() {
+  return image::from_data(burn_disk_256x256_xpm);
+}
+
+image images::calendar_256x256() {
+  return image::from_data(calendar_256x256_xpm);
+}
+
+image images::cancel2_256x256() {
+  return image::from_data(cancel2_256x256_xpm);
+}
+
+image images::cancel_256x256() {
+  return image::from_data(cancel_256x256_xpm);
+}
+
+image images::compact_disk_256x256() {
+  return image::from_data(compact_disk_256x256_xpm);
+}
+
+image images::copy2_256x256() {
+  return image::from_data(copy2_256x256_xpm);
+}
+
+image images::copy_256x256() {
+  return image::from_data(copy_256x256_xpm);
+}
+
+image images::cut_256x256() {
+  return image::from_data(cut_256x256_xpm);
+}
+
+image images::delete_256x256() {
+  return image::from_data(delete_256x256_xpm);
+}
+
+image images::down2_256x256() {
+  return image::from_data(down2_256x256_xpm);
+}
+
+image images::down_256x256() {
+  return image::from_data(down_256x256_xpm);
+}
+
+image images::download_256x256() {
+  return image::from_data(download_256x256_xpm);
+}
+
+image images::dvd_disk_256x256() {
+  return image::from_data(dvd_disk_256x256_xpm);
+}
+
+image images::earth_256x256() {
+  return image::from_data(earth_256x256_xpm);
+}
+
+image images::edit_256x256() {
+  return image::from_data(edit_256x256_xpm);
+}
+
+image images::favorites_256x256() {
+  return image::from_data(favorites_256x256_xpm);
+}
+
+image images::find_256x256() {
+  return image::from_data(find_256x256_xpm);
+}
+
+image images::flash_disk_256x256() {
+  return image::from_data(flash_disk_256x256_xpm);
+}
+
+image images::folder_256x256() {
+  return image::from_data(folder_256x256_xpm);
+}
+
+image images::forward_256x256() {
+  return image::from_data(forward_256x256_xpm);
+}
+
+image images::gammasoft_256x256() {
+  return image::from_data(gammasoft_256x256_xpm);
+}
+
+image images::hard_disk_256x256() {
+  return image::from_data(hard_disk_256x256_xpm);
+}
+
+image images::help_256x256() {
+  return image::from_data(help_256x256_xpm);
+}
+
+image images::information_256x256() {
+  return image::from_data(information_256x256_xpm);
+}
+
+image images::key_256x256() {
+  return image::from_data(key_256x256_xpm);
+}
+
+image images::left2_256x256() {
+  return image::from_data(left2_256x256_xpm);
+}
+
+image images::left_256x256() {
+  return image::from_data(left_256x256_xpm);
+}
+
+image images::mail_256x256() {
+  return image::from_data(mail_256x256_xpm);
+}
+
+image images::mail_forward_256x256() {
+  return image::from_data(mail_forward_256x256_xpm);
+}
+
+image images::mail_send_256x256() {
+  return image::from_data(mail_send_256x256_xpm);
+}
+
+image images::multimedia_pause_256x256() {
+  return image::from_data(multimedia_pause_256x256_xpm);
+}
+
+image images::multimedia_play_256x256() {
+  return image::from_data(multimedia_play_256x256_xpm);
+}
+
+image images::multimedia_stop_256x256() {
+  return image::from_data(multimedia_stop_256x256_xpm);
+}
+
+image images::negative_256x256() {
+  return image::from_data(negative_256x256_xpm);
+}
+
+image images::new_256x256() {
+  return image::from_data(new_256x256_xpm);
+}
+
+image images::next_256x256() {
+  return image::from_data(next_256x256_xpm);
+}
+
+image images::open_256x256() {
+  return image::from_data(open_256x256_xpm);
+}
+
+image images::paste_256x256() {
+  return image::from_data(paste_256x256_xpm);
+}
+
+image images::picture_256x256() {
+  return image::from_data(picture_256x256_xpm);
+}
+
+image images::positive_256x256() {
+  return image::from_data(positive_256x256_xpm);
+}
+
+image images::presentation_256x256() {
+  return image::from_data(presentation_256x256_xpm);
+}
+
+image images::preview_256x256() {
+  return image::from_data(preview_256x256_xpm);
+}
+
+image images::previous_256x256() {
+  return image::from_data(previous_256x256_xpm);
+}
+
+image images::print_256x256() {
+  return image::from_data(print_256x256_xpm);
+}
+
+image images::properties_256x256() {
+  return image::from_data(properties_256x256_xpm);
+}
+
+image images::quit_256x256() {
+  return image::from_data(quit_256x256_xpm);
+}
+
+image images::redo_256x256() {
+  return image::from_data(redo_256x256_xpm);
+}
+
+image images::refresh_256x256() {
+  return image::from_data(refresh_256x256_xpm);
+}
+
+image images::remove_256x256() {
+  return image::from_data(remove_256x256_xpm);
+}
+
+image images::rename_256x256() {
+  return image::from_data(rename_256x256_xpm);
+}
+
+image images::right2_256x256() {
+  return image::from_data(right2_256x256_xpm);
+}
+
+image images::right_256x256() {
+  return image::from_data(right_256x256_xpm);
+}
+
+image images::save_256x256() {
+  return image::from_data(save_256x256_xpm);
+}
+
+image images::search_256x256() {
+  return image::from_data(search_256x256_xpm);
+}
+
+image images::settings_256x256() {
+  return image::from_data(settings_256x256_xpm);
+}
+
+image images::stop_256x256() {
+  return image::from_data(stop_256x256_xpm);
+}
+
+image images::synchronize_256x256() {
+  return image::from_data(synchronize_256x256_xpm);
+}
+
+image images::text_document_256x256() {
+  return image::from_data(text_document_256x256_xpm);
+}
+
+image images::undo_256x256() {
+  return image::from_data(undo_256x256_xpm);
+}
+
+image images::up2_256x256() {
+  return image::from_data(up2_256x256_xpm);
+}
+
+image images::up_256x256() {
+  return image::from_data(up_256x256_xpm);
+}
+
+image images::upload_256x256() {
+  return image::from_data(upload_256x256_xpm);
+}
+
+image images::user_256x256() {
+  return image::from_data(user_256x256_xpm);
+}
+
+image images::zoom_in_256x256() {
+  return image::from_data(zoom_in_256x256_xpm);
+}
+
+image images::zoom_out_256x256() {
+  return image::from_data(zoom_out_256x256_xpm);
+}
