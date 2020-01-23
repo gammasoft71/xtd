@@ -2,6 +2,7 @@
 #include "button_base.hpp"
 #include "dialog_result.hpp"
 #include "ibutton_control.hpp"
+#include "timer.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,9 +19,41 @@ namespace xtd {
     /// @include button.cpp
     class button : public ibutton_control, public button_base {
     public:
-      /// @brief Initializes a new instance of the Button class.
+      /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
-      button() = default;
+      button() {
+        auto_repeat_timer_.tick += [&] {
+          auto_repeat_timer_.enabled(false);
+          if (enabled()) {
+            perform_click();
+            auto_repeat_timer_.interval(auto_repeat_interval_);
+            auto_repeat_timer_.enabled(auto_repeat_);
+          }
+        };
+      }
+      
+      bool auto_repeat() const {return auto_repeat_;}
+      button& auto_repeat(bool auto_repeat) {
+        if (auto_repeat_ != auto_repeat) {
+          auto_repeat_ = auto_repeat;
+          if (!auto_repeat_) auto_repeat_timer_.enabled(false);
+        }
+        return *this;
+      }
+      
+      int32_t auto_repeat_initial_delay() const {return auto_repeat_initial_delay_;}
+      button& auto_repeat_initial_delay(int32_t auto_repeat_initial_delay) {
+        if (auto_repeat_initial_delay_ != auto_repeat_initial_delay)
+          auto_repeat_initial_delay_ = auto_repeat_initial_delay;
+        return *this;
+      }
+      
+      int32_t auto_repeat_interval() const {return auto_repeat_interval_;}
+      button& auto_repeat_interval(int32_t auto_repeat_interval) {
+        if (auto_repeat_interval_ != auto_repeat_interval)
+          auto_repeat_interval_ = auto_repeat_interval;
+        return *this;
+      }
 
       /// @brief Gets the mode by which the button automatically resizes itself.
       /// @return One of the AutoSizeMode values. The default value is grow_only.
@@ -66,12 +99,23 @@ namespace xtd {
       void on_click(const event_args& e) override;
 
       void on_handle_created(const event_args& e) override;
+
+      void on_mouse_down(const mouse_event_args& e) override {
+        button_base::on_mouse_down(e);
+        auto_repeat_timer_.interval(auto_repeat_initial_delay_);
+        auto_repeat_timer_.enabled(auto_repeat_);
+      }
+      
+      void on_mouse_up(const mouse_event_args& e) override {
+        button_base::on_mouse_up(e);
+        auto_repeat_timer_.enabled(false);
+      }
       
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
       //void wnd_proc(message& message) override;
-      
+
       /// @cond
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       /// @endcond
@@ -79,6 +123,10 @@ namespace xtd {
     private:
       //void wm_click(message& message);
       //void wm_mouse_up(message& message);
+      bool auto_repeat_ = false;
+      timer auto_repeat_timer_;
+      int32_t auto_repeat_initial_delay_ = 400;
+      int32_t auto_repeat_interval_ = 50;
    };
   }
 }
