@@ -26,6 +26,7 @@ namespace example {
       };
 
       button_previous.parent(*this);
+      button_previous.auto_repeat(true);
       button_previous.text("&<");
       button_previous.location({73, 200});
       button_previous.enabled(false);
@@ -39,6 +40,7 @@ namespace example {
       };
       
       button_next.parent(*this);
+      button_next.auto_repeat(true);
       button_next.text("&>");
       button_next.location({152, 200});
       button_next.enabled(false);
