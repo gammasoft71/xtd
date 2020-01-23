@@ -41,10 +41,10 @@ namespace xtd {
         return *this;
       }
       
-      int32_t auto_repeat_initial_delay() const {return auto_repeat_initial_delay_;}
-      button& auto_repeat_initial_delay(int32_t auto_repeat_initial_delay) {
-        if (auto_repeat_initial_delay_ != auto_repeat_initial_delay)
-          auto_repeat_initial_delay_ = auto_repeat_initial_delay;
+      int32_t auto_repeat_delay() const {return auto_repeat_delay_;}
+      button& auto_repeat_delay(int32_t auto_repeat_delay) {
+        if (auto_repeat_delay_ != auto_repeat_delay)
+          auto_repeat_delay_ = auto_repeat_delay;
         return *this;
       }
       
@@ -102,7 +102,7 @@ namespace xtd {
 
       void on_mouse_down(const mouse_event_args& e) override {
         button_base::on_mouse_down(e);
-        auto_repeat_timer_.interval(auto_repeat_initial_delay_);
+        auto_repeat_timer_.interval(auto_repeat_delay_);
         auto_repeat_timer_.enabled(auto_repeat_);
       }
       
@@ -125,8 +125,8 @@ namespace xtd {
       //void wm_mouse_up(message& message);
       bool auto_repeat_ = false;
       timer auto_repeat_timer_;
-      int32_t auto_repeat_initial_delay_ = 400;
-      int32_t auto_repeat_interval_ = 50;
+      int32_t auto_repeat_delay_ = 300;
+      int32_t auto_repeat_interval_ = 100;
    };
   }
 }

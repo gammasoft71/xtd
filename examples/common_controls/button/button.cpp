@@ -19,6 +19,7 @@ namespace examples {
       button2.parent(*this);
       button2.text("Button 2");
       button2.location({50, 100});
+      button2.auto_repeat(true);
       button2.size({200, 75});
       button2.click += [&] {
         label2.text(strings::format("Button 2 clicked {} times", ++button2_clicked));
