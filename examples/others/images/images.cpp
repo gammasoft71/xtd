@@ -11,7 +11,7 @@ namespace example {
     form1() {
       text("Images example");
       client_size({430, 450});
-      *this << choice_size << picture << button_previous << button_next;
+      controls().push_back_range({choice_size, picture, button_previous, button_next});
 
       choice_size.bounds({75, 25, 280, 25});
       choice_size.items().push_back_range({"16 x 16 pixels", "24 x 24 pixels", "32 x 32 pixels", "48 x 48 pixels", "64 x 64 pixels", "128 x 128 pixels", "256 x 256 pixels"});
