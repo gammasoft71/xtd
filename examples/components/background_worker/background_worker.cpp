@@ -71,6 +71,7 @@ namespace examples {
       worker.progress_changed += [&](component& sender, const progress_changed_event_args& e) {
         progress.value(e.progress_percentage());
         list_progress.items().push_back(std::any_cast<std::string>(e.user_state()));
+        list_progress.selected_index(list_progress.items().size() - 1);
       };
       
       worker.run_worker_completed += [&](component& sender, const run_worker_completed_event_args& e){
