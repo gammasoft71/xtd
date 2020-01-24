@@ -13,8 +13,8 @@ public:
         threads[index].join();
     };
 
-    list_box.parent(*this);
-    list_box.dock(dock_style::fill);
+    messages.parent(*this);
+    messages.dock(dock_style::fill);
     
     for (auto index = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int user_thread_id) {
@@ -24,9 +24,9 @@ public:
           std::this_thread::sleep_for(20ms);
           counter++;
           /// call invoke method to update ui in the main thread.
-          list_box.begin_invoke([&] {
-            list_box.items().push_back(xtd::strings::format("thread: {}, counter: {:d}", user_thread_id, counter));
-            list_box.selected_index(list_box.items().size() - 1);
+          messages.begin_invoke([&] {
+            messages.items().push_back(xtd::strings::format("thread: {}, counter: {:d}", user_thread_id, counter));
+            messages.selected_index(messages.items().size() - 1);
           });
         }
       }, index);
@@ -34,7 +34,7 @@ public:
   }
 
 private:
-  xtd::forms::list_box list_box;
+  xtd::forms::list_box messages;
   bool closed = false;
   std::vector<std::thread> threads {std::thread::hardware_concurrency()};
 };

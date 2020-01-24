@@ -5,7 +5,7 @@
 #include <functional>
 #include <map>
 #include <memory>
-#include <mutex>
+#include <shared_mutex>
 #include <optional>
 #include <string>
 #include <thread>
@@ -114,12 +114,12 @@ namespace xtd {
         async_result_invoke(const async_result_invoke&) = default;
         async_result_invoke(async_result_invoke&&) = default;
         
-        std::mutex& async_mutex() {return *async_mutex_;}
+        std::shared_mutex& async_mutex() {return *async_mutex_;}
         
       private:
         async_result_invoke() = default;
         friend class control;
-        std::shared_ptr<std::mutex> async_mutex_ = std::make_shared<std::mutex>();
+        std::shared_ptr<std::shared_mutex> async_mutex_ = std::make_shared<std::shared_mutex>();
       };
       
       /// @brief Represents a collection of controls.
