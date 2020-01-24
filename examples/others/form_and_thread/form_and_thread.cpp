@@ -18,13 +18,13 @@ public:
     
     for (auto index = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int user_thread_id) {
-        auto counter = 0;
+        static auto counter = 0;
         while (!closed) {
           /// simulate work...
-          std::this_thread::sleep_for(5ms);
+          std::this_thread::sleep_for(20ms);
           counter++;
           /// call invoke method to update ui in the main thread.
-          list_box.invoke([&] {
+          list_box.begin_invoke([&] {
             list_box.items().push_back(xtd::strings::format("thread: {}, counter: {:d}", user_thread_id, counter));
             list_box.selected_index(list_box.items().size() - 1);
           });

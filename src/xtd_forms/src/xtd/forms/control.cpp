@@ -316,16 +316,16 @@ bool control::is_handle_created() const {
 }
 
 control::async_result_invoke control::begin_invoke(delegate<void(std::vector<std::any>)> value, const std::vector<std::any>& args) {
+  while (!xtd::forms::application::message_loop) std::this_thread::sleep_for(10ms);
   async_result_invoke async;
   async.async_mutex().lock();
   native::control::invoke_in_control_thread(handle_, value, args, async.async_mutex_);
+  std::this_thread::yield();
   return async;
 }
 
 void control::end_invoke(async_result_invoke async) {
-  if (!async.async_mutex_->std::mutex::try_lock()) {
-    std::this_thread::sleep_for(10ms);
-  }
+  async.async_mutex().lock();
 }
 
 forms::create_params control::create_params() const {

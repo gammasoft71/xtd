@@ -304,11 +304,12 @@ void control::font(intptr_t control, const drawing::font& font) {
 }
 
 void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::mutex> invoked) {
-  if (control == 0 || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) {
+  if (control == 0 || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) {
     invoked->unlock();
   } else {
     reinterpret_cast<control_handler*>(control)->control()->CallAfter([=] {
       invoker(args);
+      static auto cpt = 0;
       invoked->unlock();
     });
   }
