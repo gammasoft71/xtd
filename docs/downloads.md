@@ -7,17 +7,57 @@ For now, the following procedure is the only way to download and install:
  
 1. Install wxWidgets backend :
   
-   The only [xtd.form.native.wxwidgets](../src/xtd_forms_native_wxwidgets/README.md) backend is supported.
+   The only [xtd.form.native.wxwidgets](../src/xtd_forms_native_wxwidgets/README.md) backend is supported now.
    See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
 
 2. Clone github repository :
 
    ```shell
-    git clone https://github.com/gammasoft71/xtd_forms.git
-    ```
-3. build source and install it (on windows you must launch visual studio as administrator to install xtd.form)
+   git clone https://github.com/gammasoft71/xtd_forms.git
+   ```
 
-4. See [examples](https://github.com/gammasoft71/xtd_forms/blob/master/examples/README.md), [documentation](https://github.com/gammasoft71/xtd_forms/blob/master/docs/home.md) and [Reference guide](https://codedocs.xyz/gammasoft71/xtd.forms/).
+3. Update submodule :
+
+   ```shell
+   git submodule update
+   ```
+
+4. Generate cmake project (See [cmake](https://www.cmake.com) to generate your project)
+
+  * On Windows:
+    ```shell
+    mkdir build
+    cd build
+    cmake -G "Visual Studio 16 2019" ..
+    ```
+
+  * On linux:
+    ```shell
+    mkdir build
+    cd build
+    cmake -G "Unix Makefiles" ..
+    ```
+
+  * On macOS:
+    ```shell
+    mkdir build
+    cd build
+    cmake -G "Xcode" ..
+    ```
+
+5. build source and install it with your favorite ide (on windows you must launch visual studio as administrator to install xtd.form) or with command line :
+  
+  * On Windows
+    ```
+    cmake --build . --config Debug --target install
+    ```
+  
+  * On linux and macos
+    ```
+    cmake --build . --target install -- -j 8
+    ```
+
+6. See [examples](https://github.com/gammasoft71/xtd_forms/blob/master/examples/README.md), [documentation](https://github.com/gammasoft71/xtd_forms/blob/master/docs/home.md) and [Reference guide](https://codedocs.xyz/gammasoft71/xtd.forms/).
     
 
 # Download the latest stable xtd.forms version
