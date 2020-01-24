@@ -21,7 +21,7 @@ public:
         static auto counter = 0;
         while (!closed) {
           /// simulate work...
-          std::this_thread::sleep_for(20ms);
+          std::this_thread::sleep_for(50ms);
           counter++;
           /// call invoke method to update ui in the main thread.
           messages.begin_invoke([&] {
