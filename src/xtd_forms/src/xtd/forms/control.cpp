@@ -325,7 +325,7 @@ control::async_result_invoke control::begin_invoke(delegate<void(std::vector<std
 }
 
 void control::end_invoke(async_result_invoke async) {
-  async.async_mutex().lock();
+  std::lock_guard<std::shared_mutex> lock(async.async_mutex());
 }
 
 forms::create_params control::create_params() const {
