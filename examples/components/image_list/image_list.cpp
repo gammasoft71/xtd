@@ -10,47 +10,39 @@ namespace example {
     form1() {
       text("Image list example");
       client_size({300, 250});
+      controls().push_back_range({picture, button_previous, button_next});
       click += [&] {
         load_images();
       };
 
-      image_list.image_size({128, 128});
+      pictures.image_size({128, 128});
       
-      picture.parent(*this);
       picture.back_color(system_colors::window());
       picture.border_style(forms::border_style::fixed_3d);
-      picture.bounds({75, 25, 152, 152});
+      picture.bounds({75, 25, 150, 150});
       picture.size_mode(picture_box_size_mode::center_image);
       picture.click += [&] {
         load_images();
       };
 
-      button_previous.parent(*this);
       button_previous.auto_repeat(true);
       button_previous.text("&<");
-      button_previous.location({73, 200});
+      button_previous.location({75, 200});
       button_previous.enabled(false);
       button_previous.click += [&] {
-        if (current_image_index > 0) {
-          current_image_index--;
-          picture.image(image_list.images()[current_image_index]);
-        }
+        if (current_image_index > 0) picture.image(pictures.images()[--current_image_index]);
         button_previous.enabled(current_image_index > 0);
-        button_next.enabled(current_image_index < image_list.images().size() - 1);
+        button_next.enabled(current_image_index < pictures.images().size() - 1);
       };
       
-      button_next.parent(*this);
       button_next.auto_repeat(true);
       button_next.text("&>");
-      button_next.location({152, 200});
+      button_next.location({150, 200});
       button_next.enabled(false);
       button_next.click += [&] {
-        if (current_image_index < image_list.images().size()) {
-          current_image_index++;
-          picture.image(image_list.images()[current_image_index]);
-        }
+        if (current_image_index < pictures.images().size()) picture.image(pictures.images()[++current_image_index]);
         button_previous.enabled(current_image_index > 0);
-        button_next.enabled(current_image_index < image_list.images().size() - 1);
+        button_next.enabled(current_image_index < pictures.images().size() - 1);
       };
       
       show();
@@ -63,19 +55,18 @@ namespace example {
       ofd.multi_select(true);
       ofd.filter("All Image Files|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.xpm|Bitmap Files|*.bmp|Gif Files|*.gif|Jpeg Files|*.jpg;*.jpeg|Png Files|*.png|Tiff Files|*.tif;*.tiff|xpm Files|*.xpm");
       if (ofd.show_dialog() == dialog_result::ok) {
-        image_list.images().clear();
+        pictures.images().clear();
         for (auto file : ofd.file_names())
-          image_list.images().push_back(drawing::image::from_file(file));
+          pictures.images().push_back(drawing::image::from_file(file));
         current_image_index = 0;
-        picture.image(image_list.images()[0]);
-        button_previous.enabled(false);
-        button_next.enabled(image_list.images().size() > 1);
+        picture.image(pictures.images()[current_image_index]);
+        button_previous.enabled(current_image_index > 0);
+        button_next.enabled(current_image_index < pictures.images().size() - 1);
       }
     }
 
-    forms::image_list image_list;
     int current_image_index = 0;
-
+    image_list pictures;
     picture_box picture;
     button button_previous;
     button button_next;
