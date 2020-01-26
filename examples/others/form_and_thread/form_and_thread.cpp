@@ -18,7 +18,7 @@ public:
     
     for (auto index = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int user_thread_id) {
-        static auto counter = 0;
+        auto counter = 0;
         while (!closed) {
           /// simulate work...
           std::this_thread::sleep_for(50ms);
