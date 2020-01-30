@@ -29,6 +29,7 @@ namespace {
 }
 
 bool application::use_visual_styles_ = false;
+bool application::use_wait_cursor_ = false;
 bool application::message_loop_ = false;
 
 event<application, delegate<void(const event_args&)>> application::application_exit;
@@ -117,7 +118,18 @@ std::string application::user_app_data_path() {
  */
 
 bool application::use_visual_styles() {
-  return application::use_visual_styles_;
+  return use_visual_styles_;
+}
+
+bool application::use_wait_cursor() {
+  return use_wait_cursor_;
+}
+
+void application::use_wait_cursor(bool use_wait_cursor) {
+  if (use_wait_cursor_ != use_wait_cursor) {
+    use_wait_cursor_ = use_wait_cursor;
+    native::application::use_wait_cursor(use_wait_cursor_);
+  }
 }
 
 void application::add_message_filter(const imessage_filter& value) {
