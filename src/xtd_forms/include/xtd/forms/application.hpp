@@ -111,7 +111,17 @@ namespace xtd {
       /// @return true if visual styles are enabled; otherwise, false.
       /// @remarks The visual styles can be enabled by calling enable_visual_styles().
       static bool use_visual_styles();
-
+      
+      /// @brief Gets whether the wait cursor is used for all open forms of the application.
+      /// @return true is the wait cursor is used for all open forms; otherwise, false.
+      /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
+      static bool use_wait_cursor();
+      
+      /// @brief Sets whether the wait cursor is used for all open forms of the application.
+      /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
+      /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
+      static void use_wait_cursor(bool use_wait_cursor);
+      
       /// @brief Adds a message filter to monitor Windows messages as they are routed to their destinations.
       /// @param The implementation of the imessage_filter interface you want to install.
       /// @remarks Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread.
@@ -250,6 +260,7 @@ namespace xtd {
 
       application() = default;
       static bool use_visual_styles_;
+      static bool use_wait_cursor_;
       static bool message_loop_;
     };
   }
