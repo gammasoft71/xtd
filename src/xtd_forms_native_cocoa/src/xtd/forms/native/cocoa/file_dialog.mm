@@ -135,7 +135,7 @@ namespace {
 
     NSBox* box = [[[NSBox alloc] initWithFrame:NSMakeRect(0, 3, 140, 20 )] autorelease];
     [box setBorderType:NSNoBorder];
-    [box setTitle:@"Filter:"];
+    [box setTitle:@"File type:"];
     [box setTitleFont:[NSFont controlContentFontOfSize:NSControlSizeRegular]];
     [box sizeToFit];
     NSPoint boxLocation = [box frame].origin;
