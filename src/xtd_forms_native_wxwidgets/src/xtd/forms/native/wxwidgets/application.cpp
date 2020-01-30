@@ -10,6 +10,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.hpp"
 #include <wx/aboutdlg.h>
+#include <wx/sysopt.h>
 
 using namespace std;
 using namespace xtd;
@@ -58,6 +59,7 @@ void application::exit() {
 void application::initialize() {
   if (wxTheApp) return;
   wxDISABLE_DEBUG_SUPPORT();
+  wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
   wxApp::SetInstance(new wx_application());
   int argc = 0;
   wxEntryStart(argc, (wxChar**)nullptr);
