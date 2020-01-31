@@ -13,7 +13,7 @@ progress_bar::progress_bar() {
 progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_speed) {
   if (this->marquee_animation_speed_ != marquee_animation_speed) {
     this->marquee_animation_speed_ = marquee_animation_speed;
-    native::progress_bar::marquee(this->handle_, this->style_ == progress_bar_style::marquee, this->marquee_animation_speed_);
+    native::progress_bar::marquee(handle(), this->style_ == progress_bar_style::marquee, this->marquee_animation_speed_);
   }
   return *this;
 }
@@ -21,7 +21,7 @@ progress_bar& progress_bar::marquee_animation_speed(size_t marquee_animation_spe
 progress_bar& progress_bar::maximum(int32_t maximum) {
   if (this->maximum_ != maximum) {
     this->maximum_ = maximum;
-    native::progress_bar::maximum(this->handle_, this->maximum_);
+    native::progress_bar::maximum(handle(), this->maximum_);
     if (this->minimum_ > maximum) this->minimum(maximum);
     if (this->value_ > maximum) this->value(maximum);
   }
@@ -31,7 +31,7 @@ progress_bar& progress_bar::maximum(int32_t maximum) {
 progress_bar& progress_bar::minimum(int32_t minimum) {
   if (this->minimum_ != minimum) {
     this->minimum_ = minimum;
-    native::progress_bar::minimum(this->handle_, this->minimum_);
+    native::progress_bar::minimum(handle(), this->minimum_);
     if (this->maximum_ < minimum) this->maximum(minimum);
     if (this->value_ < minimum) this->value(minimum);
   }
@@ -55,7 +55,7 @@ progress_bar& progress_bar::step(int32_t step) {
 progress_bar& progress_bar::style(progress_bar_style style) {
   if (this->style_ != style) {
     this->style_ = style;
-    native::progress_bar::marquee(this->handle_, this->style_ == progress_bar_style::marquee, this->marquee_animation_speed_);
+    native::progress_bar::marquee(handle(), this->style_ == progress_bar_style::marquee, this->marquee_animation_speed_);
     if (this->style_ != progress_bar_style::marquee)
       this->recreate_handle();
   }
@@ -70,7 +70,7 @@ progress_bar& progress_bar::value(int32_t value) {
       this->value_ = this->minimum_;
     else
       this->value_ = value;
-    native::progress_bar::value(this->handle_, this->value_);
+    native::progress_bar::value(handle(), this->value_);
   }
   return *this;
 }
@@ -88,8 +88,8 @@ forms::create_params progress_bar::create_params() const {
 
 void progress_bar::on_handle_created(const event_args &e) {
   this->control::on_handle_created(e);
-  native::progress_bar::maximum(this->handle_, this->maximum_);
-  native::progress_bar::minimum(this->handle_, this->minimum_);
-  native::progress_bar::value(this->handle_, this->value_);
-  native::progress_bar::marquee(this->handle_, this->style_ == progress_bar_style::marquee, this->marquee_animation_speed_);
+  native::progress_bar::maximum(handle(), this->maximum_);
+  native::progress_bar::minimum(handle(), this->minimum_);
+  native::progress_bar::value(handle(), this->value_);
+  native::progress_bar::marquee(handle(), this->style_ == progress_bar_style::marquee, this->marquee_animation_speed_);
 }

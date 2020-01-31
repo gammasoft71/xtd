@@ -12,16 +12,25 @@ public:
     form_closing += [](const control& sender, form_closing_event_args& e) {
       e.cancel(message_box::show("Are you sure you want exit?", "Close Form", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
     };
-    
-    button.parent(*this);
-    button.text("Close");
-    button.location({10, 10});
-    button.click += [&] {
+
+    button_close.parent(*this);
+    button_close.text("Close");
+    button_close.location({10, 10});
+    button_close.click += [&] {
       close();
     };
+    
+    button_exit.parent(*this);
+    button_exit.text("Exit");
+    button_exit.location({100, 10});
+    button_exit.click += [&] {
+      application::exit();
+    };
   }
+  
 private:
-  forms::button button;
+  forms::button button_close;
+  forms::button button_exit;
 };
 
 int main() {

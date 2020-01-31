@@ -43,6 +43,13 @@ void form::maximize(intptr_t form, bool maximize) {
 void form::menu(intptr_t form, intptr_t menu) {
   if (form == 0) return;
   
+#if defined(__WXOSX__)
+  if (menu != 0) {
+    if (reinterpret_cast<wxMenuBar*>(menu)->FindMenu("Window") == wxNOT_FOUND) reinterpret_cast<wxMenuBar*>(menu)->Append(new wxMenu(), "&Window");
+    if (reinterpret_cast<wxMenuBar*>(menu)->FindMenu("Help") == wxNOT_FOUND) reinterpret_cast<wxMenuBar*>(menu)->Append(new wxMenu(), "&Help");
+  }
+#endif
+
   if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(reinterpret_cast<wxMenuBar*>(menu));
 }

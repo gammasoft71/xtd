@@ -5,26 +5,26 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void timer::enabled(bool enabled) {
-  if (this->enabled_ != enabled) {
-    this->enabled_ = enabled;
-    if (this->enabled_ == true)
-      this->handle_ = native::timer::create(this->interval_, {*this, &timer::on_tick});
+  if (data_->enabled_ != enabled) {
+    data_->enabled_ = enabled;
+    if (data_->enabled_ == true)
+      data_->handle_ = native::timer::create(data_->interval_, {*this, &timer::on_tick});
     else
-      native::timer::destroy(this->handle_);
+      native::timer::destroy(data_->handle_);
   }
 }
 
 void timer::interval(int32_t interval) {
-  if (this->interval_ != interval) {
-    this->interval_ = interval;
+  if (data_->interval_ != interval) {
+    data_->interval_ = interval;
     
-    if (this->enabled_ == true) {
-      this->stop();
-      this->start();
+    if (data_->enabled_ == true) {
+      stop();
+      start();
     }
   }
 }
 
 void timer::on_tick(const event_args& e) {
-  this->tick(*this, e);
+  tick(*this, e);
 }

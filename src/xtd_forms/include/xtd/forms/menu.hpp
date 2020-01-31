@@ -132,10 +132,16 @@ namespace xtd {
       virtual void destroy_menu_handle(intptr_t handle) = 0;
 
       /// @cond
+      virtual void create_menu();
+      virtual void destroy_menu();
+      void recreate_menu();
+
       struct data {
         intptr_t handle_ = 0;
+        std::optional<std::reference_wrapper<menu>> context_menu_;
         menu_item_collection menu_items_;
         std::unique_ptr<menu_item> mdi_list_item_;
+        std::optional<std::reference_wrapper<menu>> main_menu_;
         std::string name_;
         std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;

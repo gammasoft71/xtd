@@ -21,12 +21,12 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
 
 button_base& button::image(const drawing::image& value) {
   if (this->image_ != value)
-    native::button::image(handle_, value);
+    native::button::image(handle(), value);
   return button_base::image(value);
 }
 
 void button::notify_default(bool value) {
-  native::button::default_button(this->handle_, value);
+  native::button::default_button(handle(), value);
 }
 
 void button::perform_click() {
@@ -54,11 +54,11 @@ void button::on_click(const event_args& e) {
 void button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
-    native::button::image(handle_, image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
-    native::button::image_align(handle_, static_cast<uint32_t>(image_align_));
-    if (image_align_ != content_alignment::middle_center) native::control::text(handle_, text_);
-    native::control::location(handle_, location_);
-    native::control::size(handle_, size_);
+    native::button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
+    native::button::image_align(handle(), static_cast<uint32_t>(image_align_));
+    if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
+    native::control::location(handle(), location_);
+    native::control::size(handle(), size_);
   }
 }
 

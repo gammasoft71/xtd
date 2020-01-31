@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <memory>
 #include <xtd/event.hpp>
 #include <xtd/event_handler.hpp>
 #include "component.hpp"
@@ -13,29 +14,28 @@ namespace xtd {
       timer() = default;
       ~timer() {this->stop();}
       
-      /// @cond
-      timer(const timer&)= delete;
-      /// @endcond
-      
       event<timer, event_handler<timer&>> tick;
 
-      bool enabled() const {return this->enabled_;}
+      bool enabled() const {return data_->enabled_;}
       void enabled(bool enabled);
       
-      int32_t interval() const {return this->interval_;}
+      int32_t interval() const {return data_->interval_;}
       void interval(int32_t interval);
 
-      void start() {this->enabled(true);}
+      void start() {enabled(true);}
 
-      void stop() {this->enabled(false);}
+      void stop() {enabled(false);}
 
     protected:
       void on_tick(const event_args& e);
       
     private:
-      bool enabled_ = false;
-      int32_t interval_ = 100;
-      intptr_t handle_ = 0;
+      struct data {
+        bool enabled_ = false;
+        int32_t interval_ = 100;
+        intptr_t handle_ = 0;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

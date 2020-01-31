@@ -46,7 +46,7 @@ check_box& check_box::check_state(forms::check_state check_state) {
       this->checked_ = this->check_state_ != forms::check_state::unchecked;
       this->on_checked_changed(event_args::empty);
     }
-    native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
+    native::check_box::check_state(handle(), static_cast<int32_t>(this->check_state_));
     this->on_check_state_changed(event_args::empty);
   }
   return *this;
@@ -85,7 +85,7 @@ drawing::size check_box::measure_control() const {
 
 void check_box::on_handle_created(const event_args &e) {
   this->button_base::on_handle_created(e);
-  native::check_box::check_state(this->handle_, static_cast<int32_t>(this->check_state_));
+  native::check_box::check_state(data_->handle_, static_cast<int32_t>(this->check_state_));
 }
 
 void check_box::wnd_proc(message &message) {

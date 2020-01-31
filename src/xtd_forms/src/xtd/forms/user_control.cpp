@@ -38,5 +38,5 @@ forms::create_params user_control::create_params() const {
 
 void user_control::on_layout(const event_args& e) {
   this->scrollable_control::on_layout(e);
-  if (auto_scroll_) native::user_control::virtual_size(this->handle_, display_rectangle().size());
+  if (auto_scroll_) native::user_control::virtual_size(handle(), display_rectangle().size());
 }

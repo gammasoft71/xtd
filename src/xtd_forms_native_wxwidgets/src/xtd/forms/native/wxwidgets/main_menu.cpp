@@ -1,4 +1,5 @@
 #include <xtd/forms/native/main_menu.hpp>
+#include <wx/app.h>
 #include <wx/menu.h>
 
 using namespace xtd;
@@ -11,7 +12,5 @@ intptr_t main_menu::create() {
 
 void main_menu::destroy(intptr_t main_menu) {
   if (!main_menu) return;
-  if (!reinterpret_cast<wxMenuBar*>(main_menu)->GetParent())
-    reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
-  //delete reinterpret_cast<wxMenuBar*>(main_menu);
+  if (wxTheApp) reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
 }

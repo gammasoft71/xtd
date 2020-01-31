@@ -17,14 +17,14 @@ combo_box::combo_box() {
   this->drop_down_height_ = static_cast<int32_t>(this->font().get_height()) * 9;
 
   this->items_.item_added += [&](size_t pos, const item& item) {
-    native::combo_box::insert_item(this->handle_, pos, item.value());
+    native::combo_box::insert_item(handle(), pos, item.value());
     combo_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 
   this->items_.item_erased += [&](size_t pos, const item& item) {
-    native::combo_box::delete_item(this->handle_, pos);
+    native::combo_box::delete_item(handle(), pos);
 
     combo_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
@@ -32,7 +32,7 @@ combo_box::combo_box() {
   };
   
   this->items_.item_updated += [&](size_t pos, const item& item) {
-    native::combo_box::update_item(this->handle_, pos, item.value());
+    native::combo_box::update_item(handle(), pos, item.value());
     combo_box::item selected_item;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
@@ -52,7 +52,7 @@ list_control& combo_box::selected_index(size_t selected_index) {
   if (this->selected_index_ != selected_index) {
     if (selected_index != -1 && selected_index > this->items_.size()) throw invalid_argument("out of range index");
     this->selected_index_ = selected_index;
-    native::combo_box::selected_index(this->handle_, this->selected_index_);
+    native::combo_box::selected_index(handle(), this->selected_index_);
 
     item selected_item;
     if (this->selected_index_ != -1) selected_item = this->items_[this->selected_index_];
@@ -87,11 +87,11 @@ combo_box& combo_box::sorted(bool sorted) {
 }
 
 void combo_box::begin_update() {
-  native::combo_box::begin_update(this->handle_);
+  native::combo_box::begin_update(handle());
 }
 
 void combo_box::end_update() {
-  native::combo_box::end_update(this->handle_);
+  native::combo_box::end_update(handle());
 }
 
 forms::create_params combo_box::create_params() const {
@@ -122,8 +122,8 @@ void combo_box::on_handle_created(const event_args& e) {
   this->list_control::on_handle_created(e);
   items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
-    native::combo_box::insert_item(this->handle_, index, this->items_[index].value());
-  native::combo_box::selected_index(this->handle_, this->selected_index_);
+    native::combo_box::insert_item(handle(), index, this->items_[index].value());
+  native::combo_box::selected_index(handle(), this->selected_index_);
   if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
 }
 
@@ -157,7 +157,7 @@ void combo_box::wnd_proc(message& message) {
 }
 
 void combo_box::wm_mouse_double_click(message& message) {
-  this->selected_index(native::combo_box::selected_index(this->handle_));
+  this->selected_index(native::combo_box::selected_index(handle()));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
@@ -169,7 +169,7 @@ void combo_box::wm_mouse_down(message& message) {
 }
 
 void combo_box::wm_mouse_up(message& message) {
-  this->selected_index(native::combo_box::selected_index(this->handle_));
+  this->selected_index(native::combo_box::selected_index(handle()));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
@@ -177,6 +177,6 @@ void combo_box::wm_mouse_up(message& message) {
 
 void combo_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
-  this->selected_index(native::combo_box::selected_index(this->handle_));
+  this->selected_index(native::combo_box::selected_index(handle()));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
 }

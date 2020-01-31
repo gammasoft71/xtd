@@ -43,7 +43,7 @@ text_box& text_box::use_system_password_char(bool value) {
 control& text_box::text(const std::string& text) {
   if (this->text_ != text) {
     this->text_ = text;
-    native::text_box::text(this->handle_, this->text_.c_str());
+    native::text_box::text(handle(), this->text_.c_str());
     on_text_changed(event_args::empty);
   }
   return *this;
