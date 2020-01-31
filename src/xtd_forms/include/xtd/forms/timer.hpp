@@ -12,7 +12,12 @@ namespace xtd {
     class timer final : public component {
     public:
       timer() = default;
+
+      /// @cond
+      timer(timer&&) = delete;
+      timer(const timer&) = delete;
       ~timer() {this->stop();}
+      /// @endcond
       
       event<timer, event_handler<timer&>> tick;
 
