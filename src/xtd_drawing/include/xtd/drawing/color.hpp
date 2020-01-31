@@ -21,7 +21,7 @@ namespace xtd {
     ///   byte b = slate_blue.b();
     ///   byte r = slate_blue.r();
     ///   byte a = slate_blue.a();
-    ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+    ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
     ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
     /// }
     /// @endcode
@@ -498,7 +498,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
@@ -517,7 +517,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
@@ -561,7 +561,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
@@ -872,7 +872,7 @@ namespace xtd {
       ///   byte b = slate_blue.b();
       ///   byte r = slate_blue.r();
       ///   byte a = slate_blue.a();
-      ///   string text = xtd::string::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
+      ///   string text = xtd::strings::format("Slate blue has these ARGB values: alpha:{0}, red:{1}, green: {2}, blue {3}", a, r, g, b);
       ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
       /// }
       /// @endcode
