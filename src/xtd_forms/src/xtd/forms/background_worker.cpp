@@ -12,10 +12,8 @@ background_worker::~background_worker() {
 }
 
 void background_worker::cancel_async() {
-  if (worker_supports_cancellation_) {
+  if (worker_supports_cancellation_)
     cancellation_pending_ = true;
-    if (thread_.joinable()) thread_.join();
-  }
 }
 
 void background_worker::report_progress(int32_t percent_progress) {
