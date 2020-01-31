@@ -66,3 +66,20 @@ void menu::merge_menu(const menu& menu_src) {
   if (data_.get() == menu_src.data_.get()) throw std::invalid_argument("It was attempted to merge the menu with itself");
   data_->menu_items_.push_back_range(menu_src.data_->menu_items_);
 }
+
+void menu::create_menu() {
+  data_->handle_ = create_menu_handle();
+  for(auto menu_item : data_->menu_items_)
+    create_menu();
+}
+
+void menu::destroy_menu() {
+  for(auto menu_item : data_->menu_items_)
+    destroy_menu();
+  destroy_menu_handle(data_->handle_);
+}
+
+void menu::recreate_menu() {
+  destroy_menu();
+  create_menu();
+}

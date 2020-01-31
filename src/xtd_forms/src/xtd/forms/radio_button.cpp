@@ -30,7 +30,7 @@ radio_button& radio_button::auto_check(bool auto_check) {
 radio_button& radio_button::checked(bool checked) {
   if (this->checked_ != checked) {
     this->checked_ = checked;
-    native::radio_button::checked(this->handle_, this->checked_);
+    native::radio_button::checked(handle(), this->checked_);
     this->on_checked_changed(event_args::empty);
     if (this->checked_ == true && this->auto_check_ == true && this->parent_) {
       for (auto control : this->parent().value().get().controls()) {
@@ -78,7 +78,7 @@ drawing::size radio_button::measure_control() const {
 
 void radio_button::on_handle_created(const event_args &e) {
   this->button_base::on_handle_created(e);
-  native::radio_button::checked(this->handle_, this->checked_);
+  native::radio_button::checked(handle(), this->checked_);
 }
 
 void radio_button::wnd_proc(message &message) {

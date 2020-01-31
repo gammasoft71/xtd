@@ -22,7 +22,7 @@ control& tab_page::text(const std::string& text) {
   if (this->text_ != text) {
     if (this->parent().has_value()) {
       for (size_t index = 0; index < this->parent().value().get().controls().size(); index++) {
-        if (this->parent().value().get().controls()[index].get().handle() == this->handle()) {
+        if (this->parent().value().get().controls()[index].get().handle() == handle()) {
           native::tab_control::page_text(parent_, index, text);
         }
       }
@@ -32,6 +32,6 @@ control& tab_page::text(const std::string& text) {
 }
 
 void tab_page::destroy_handle() {
-  if (this->parent().has_value()) native::tab_control::delete_item(this->parent().value().get().handle(), this->handle_);
+  if (this->parent().has_value()) native::tab_control::delete_item(this->parent().value().get().handle(), handle());
   panel::destroy_handle();
 }

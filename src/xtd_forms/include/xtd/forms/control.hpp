@@ -178,8 +178,8 @@ namespace xtd {
       }
       
       /// @cond
-      control(control&&) = delete;
-      control(const control&) = delete;
+      //control(control&&) = delete;
+      //control(const control&) = delete;
       ~control();
       /// @endcond
       
@@ -831,6 +831,11 @@ namespace xtd {
       bool get_state(control::state flag) const {return ((int32_t)this->state_ & (int32_t)flag) == (int32_t)flag;}
       void set_state(control::state flag, bool value) { this->state_ = value ? (control::state)((int32_t)this->state_ | (int32_t)flag) : (control::state)((int32_t)this->state_ & ~(int32_t)flag); }
 
+      struct data {
+        intptr_t handle_ = 0;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
+        
       anchor_styles anchor_ = anchor_styles::top | anchor_styles::left;
       drawing::point auto_scroll_point_;
       auto_size_mode auto_size_mode_ = auto_size_mode::grow_and_shrink;
@@ -845,7 +850,6 @@ namespace xtd {
       bool focused_ = false;
       std::optional<drawing::color> fore_color_;
       std::optional<drawing::font> font_;
-      intptr_t handle_ = 0;
       drawing::point location_;
       static forms::mouse_buttons mouse_buttons_;
       std::string name_;

@@ -14,14 +14,14 @@ choice::choice() {
   this->size_ = this->default_size();
 
   this->items_.item_added += [&](size_t pos, const item& item) {
-    native::choice::insert_item(this->handle_, pos, item.value());
+    native::choice::insert_item(handle(), pos, item.value());
     size_t selected_index = -1;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_index = this->selected_index_;
     this->selected_index(selected_index);
   };
 
   this->items_.item_erased += [&](size_t pos, const item& item) {
-    native::choice::delete_item(this->handle_, pos);
+    native::choice::delete_item(handle(), pos);
 
     size_t selected_index = -1;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_index = this->selected_index_;
@@ -29,7 +29,7 @@ choice::choice() {
   };
   
   this->items_.item_updated += [&](size_t pos, const item& item) {
-    native::choice::update_item(this->handle_, pos, item.value());
+    native::choice::update_item(handle(), pos, item.value());
     size_t selected_index = -1;
     if (this->selected_index_ != -1 && this->selected_index_ < this->items_.size()) selected_index = this->selected_index_;
     this->selected_index(selected_index);
@@ -40,7 +40,7 @@ list_control& choice::selected_index(size_t selected_index) {
   if (this->selected_index_ != selected_index) {
     if (selected_index != -1 && selected_index > this->items_.size()) throw invalid_argument("out of range index");
     this->selected_index_ = selected_index;
-    native::choice::selected_index(this->handle_, this->selected_index_);
+    native::choice::selected_index(handle(), this->selected_index_);
 
     item selected_item;
     if (this->selected_index_ != -1) selected_item = this->items_[this->selected_index_];
@@ -75,11 +75,11 @@ choice& choice::sorted(bool sorted) {
 }
 
 void choice::begin_update() {
-  native::choice::begin_update(this->handle_);
+  native::choice::begin_update(handle());
 }
 
 void choice::end_update() {
-  native::choice::end_update(this->handle_);
+  native::choice::end_update(handle());
 }
 
 forms::create_params choice::create_params() const {
@@ -97,8 +97,8 @@ void choice::on_handle_created(const event_args& e) {
   this->list_control::on_handle_created(e);
   items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
-    native::choice::insert_item(this->handle_, index, this->items_[index].value());
-  native::choice::selected_index(this->handle_, this->selected_index_);
+    native::choice::insert_item(handle(), index, this->items_[index].value());
+  native::choice::selected_index(handle(), this->selected_index_);
   if (this->selected_index_ != -1) this->selected_item_ = this->items_[this->selected_index_];
 }
 
@@ -132,7 +132,7 @@ void choice::wnd_proc(message& message) {
 }
 
 void choice::wm_mouse_double_click(message& message) {
-  this->selected_index(native::choice::selected_index(this->handle_));
+  this->selected_index(native::choice::selected_index(handle()));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
@@ -144,7 +144,7 @@ void choice::wm_mouse_down(message& message) {
 }
 
 void choice::wm_mouse_up(message& message) {
-  this->selected_index(native::choice::selected_index(this->handle_));
+  this->selected_index(native::choice::selected_index(handle()));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
@@ -152,6 +152,6 @@ void choice::wm_mouse_up(message& message) {
 
 void choice::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
-  this->selected_index(native::choice::selected_index(this->handle_));
+  this->selected_index(native::choice::selected_index(handle()));
   if (this->selected_index_ != -1) this->selected_item(this->items_[this->selected_index_]);
 }

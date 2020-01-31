@@ -95,7 +95,7 @@ form& form::maximize_box(bool value) {
 form& form::menu(const forms::main_menu& value) {
   if (!menu_.has_value() || &menu_.value() != &value) {
     menu_ = value;
-    native::form::menu(handle_, menu_.value().handle());
+    native::form::menu(handle(), menu_.value().handle());
   }
   return *this;
 }
@@ -103,7 +103,7 @@ form& form::menu(const forms::main_menu& value) {
 form& form::menu(nullptr_t) {
   if (menu_.has_value()) {
     menu_.reset();
-    native::form::menu(handle_, 0);
+    native::form::menu(handle(), 0);
   }
   return *this;
 }
@@ -142,7 +142,7 @@ control& form::visible(bool visible) {
     this->recreate_handle();
   }
   this->container_control::visible(visible);
-  if (active_form().has_value() && active_form().value().get().handle_ == this->handle_ && this->active_control_.has_value())
+  if (active_form().has_value() && active_form().value().get().handle() == this->handle() && this->active_control_.has_value())
     this->active_control_.value().get().focus();
 
   if (current_window_state.has_value())
@@ -162,7 +162,7 @@ form& form::window_state(form_window_state value) {
 }
 
 void form::activate() {
-  native::form::activate(this->handle_);
+  native::form::activate(this->handle());
 }
 
 void form::center_to_screen() {
@@ -172,7 +172,7 @@ void form::center_to_screen() {
 }
 
 void form::close() {
-  native::form::close(this->handle_);
+  native::form::close(this->handle());
 }
 
 forms::dialog_result form::show_dialog() {
@@ -189,7 +189,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
     this->recreate_handle();
   }
   application::raise_enter_thread_modal(event_args::empty);
-  result = static_cast<forms::dialog_result>(native::form::show_dialog(this->handle_));
+  result = static_cast<forms::dialog_result>(native::form::show_dialog(this->handle()));
   application::raise_leave_thread_modal(event_args::empty);
   this->set_state(state::modal, false);
   this->parent_ = current_parent;
@@ -305,7 +305,7 @@ void form::wm_close(message &message) {
       this->destroy_control();
     } else {
       if (this->dialog_result_ == forms::dialog_result::none) this->dialog_result_ = forms::dialog_result::cancel;
-      native::form::end_dialog(this->handle_, static_cast<int32_t>(this->dialog_result_));
+      native::form::end_dialog(this->handle(), static_cast<int32_t>(this->dialog_result_));
     }
     form_closed_event_args close_event_args;
     on_form_closed(close_event_args);
@@ -314,19 +314,24 @@ void form::wm_close(message &message) {
 
 void form::on_handle_created(const event_args &e) {
   this->container_control::on_handle_created(e);
-  if (this->accept_button_.has_value())
-    native::form::default_control(this->handle_, dynamic_cast<control&>(this->accept_button_.value().get()).handle());
+  if (this->accept_button_.has_value()) native::form::default_control(this->handle(), dynamic_cast<control&>(this->accept_button_.value().get()).handle());
+  if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
+}
+
+void form::on_handle_destroyed(const event_args &e) {
+  this->container_control::on_handle_destroyed(e);
+  native::form::menu(handle(), 0);
 }
 
 void form::on_layout(const event_args& e) {
   this->scrollable_control::on_layout(e);
-  if (auto_scroll_) native::form::virtual_size(this->handle_, display_rectangle().size());
+  if (auto_scroll_) native::form::virtual_size(this->handle(), display_rectangle().size());
 }
 
 void form::on_resize(const event_args& e) {
-  if (native::form::minimize(this->handle_))
+  if (native::form::minimize(this->handle()))
     this->window_state_ = forms::form_window_state::minimized;
-  else if (native::form::maximize(this->handle_))
+  else if (native::form::maximize(this->handle()))
     this->window_state_ = forms::form_window_state::maximized;
   else if (this->window_state_ != form_window_state::full_screen)
     this->window_state_ = forms::form_window_state::normal;
@@ -338,10 +343,10 @@ void form::internal_set_window_state() {
     this->recreate_handle();
   else {
     switch (this->window_state_) {
-      case form_window_state::normal: native::form::restore(this->handle_); break;
-      case form_window_state::maximized: native::form::maximize(this->handle_, true); break;
-      case form_window_state::minimized: native::form::minimize(this->handle_, true); break;
-      case form_window_state::full_screen: native::form::full_screen(this->handle_, true); break;
+      case form_window_state::normal: native::form::restore(this->handle()); break;
+      case form_window_state::maximized: native::form::maximize(this->handle(), true); break;
+      case form_window_state::minimized: native::form::minimize(this->handle(), true); break;
+      case form_window_state::full_screen: native::form::full_screen(this->handle(), true); break;
       default: break;
     }
   }

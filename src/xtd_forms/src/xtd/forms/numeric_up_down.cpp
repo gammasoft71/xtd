@@ -26,7 +26,7 @@ forms::create_params numeric_up_down::create_params() const {
 numeric_up_down& numeric_up_down::decimal_place(int32_t value) {
   if (decimal_place_ != value) {
     decimal_place_ = value;
-    native::numeric_up_down::decimal_place(handle_, decimal_place_);
+    native::numeric_up_down::decimal_place(handle(), decimal_place_);
   }
   return *this;
 }
@@ -34,7 +34,7 @@ numeric_up_down& numeric_up_down::decimal_place(int32_t value) {
 numeric_up_down& numeric_up_down::increment(double value) {
   if (increment_ != value) {
     increment_ = value;
-    native::numeric_up_down::increment(handle_, increment_);
+    native::numeric_up_down::increment(handle(), increment_);
   }
   return *this;
 }
@@ -42,7 +42,7 @@ numeric_up_down& numeric_up_down::increment(double value) {
 numeric_up_down& numeric_up_down::maximum(double value) {
   if (maximum_ != value) {
     maximum_ = value;
-    native::numeric_up_down::maximum(handle_, maximum_);
+    native::numeric_up_down::maximum(handle(), maximum_);
     if (minimum_ > value) minimum(value);
     if (value_ > value) this->value(value);
   }
@@ -52,7 +52,7 @@ numeric_up_down& numeric_up_down::maximum(double value) {
 numeric_up_down& numeric_up_down::minimum(double value) {
   if (minimum_ != value) {
     minimum_ = value;
-    native::numeric_up_down::minimum(handle_, minimum_);
+    native::numeric_up_down::minimum(handle(), minimum_);
     if (maximum_ < value) maximum(value);
     if (value_ < value) this->value(value);
   }
@@ -67,7 +67,7 @@ numeric_up_down& numeric_up_down::value(double value) {
       value_ = minimum_;
     else
       value_ = value;
-    native::numeric_up_down::value(handle_, value_);
+    native::numeric_up_down::value(handle(), value_);
     on_value_changed(event_args::empty);
   }
   return *this;
@@ -83,11 +83,11 @@ numeric_up_down& numeric_up_down::wrapped(bool value) {
 
 void numeric_up_down::on_handle_created(const event_args &e) {
   this->scrollable_control::on_handle_created(e);
-  native::numeric_up_down::decimal_place(handle_, decimal_place_);
-  native::numeric_up_down::increment(handle_, increment_);
-  native::numeric_up_down::maximum(handle_, maximum_);
-  native::numeric_up_down::minimum(handle_, minimum_);
-  native::numeric_up_down::value(handle_, value_);
+  native::numeric_up_down::decimal_place(handle(), decimal_place_);
+  native::numeric_up_down::increment(handle(), increment_);
+  native::numeric_up_down::maximum(handle(), maximum_);
+  native::numeric_up_down::minimum(handle(), minimum_);
+  native::numeric_up_down::value(handle(), value_);
 }
 
 void numeric_up_down::on_value_changed(const event_args& e) {
@@ -104,8 +104,8 @@ void numeric_up_down::wnd_proc(message &message) {
 
 void numeric_up_down::wm_command(message& message) {
   this->def_wnd_proc(message);
-  if (value_ != native::numeric_up_down::value(handle_)) {
-    value_ = native::numeric_up_down::value(handle_);
+  if (value_ != native::numeric_up_down::value(handle())) {
+    value_ = native::numeric_up_down::value(handle());
     on_value_changed(event_args::empty);
   }
 }

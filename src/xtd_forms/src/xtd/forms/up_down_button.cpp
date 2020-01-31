@@ -26,7 +26,7 @@ forms::create_params up_down_button::create_params() const {
 up_down_button& up_down_button::maximum(int32_t value) {
   if (maximum_ != value) {
     maximum_ = value;
-    native::up_down_button::maximum(handle_, maximum_);
+    native::up_down_button::maximum(handle(), maximum_);
     if (minimum_ > value) minimum(value);
     if (value_ > value) this->value(value);
   }
@@ -36,7 +36,7 @@ up_down_button& up_down_button::maximum(int32_t value) {
 up_down_button& up_down_button::minimum(int32_t value) {
   if (minimum_ != value) {
     minimum_ = value;
-    native::up_down_button::minimum(handle_, minimum_);
+    native::up_down_button::minimum(handle(), minimum_);
     if (maximum_ < value) maximum(value);
     if (value_ < value) this->value(value);
   }
@@ -67,7 +67,7 @@ up_down_button& up_down_button::value(int32_t value) {
       value_ = minimum_;
     else
       value_ = value;
-    native::up_down_button::value(handle_, value_);
+    native::up_down_button::value(handle(), value_);
     on_value_changed(event_args::empty);
   }
   return *this;
@@ -75,9 +75,9 @@ up_down_button& up_down_button::value(int32_t value) {
 
 void up_down_button::on_handle_created(const event_args &e) {
   this->button_base::on_handle_created(e);
-  native::up_down_button::maximum(handle_, maximum_);
-  native::up_down_button::minimum(handle_, minimum_);
-  native::up_down_button::value(handle_, value_);
+  native::up_down_button::maximum(handle(), maximum_);
+  native::up_down_button::minimum(handle(), minimum_);
+  native::up_down_button::value(handle(), value_);
 }
 
 void up_down_button::on_scroll(const event_args& e) {

@@ -1,4 +1,5 @@
 #include <xtd/forms/native/main_menu.hpp>
+#include "../../../include/xtd/forms/menu_item.hpp"
 #include "../../../include/xtd/forms/main_menu.hpp"
 
 using namespace xtd;
@@ -6,6 +7,20 @@ using namespace xtd::forms;
 
 main_menu::main_menu() {
   data_->handle_ = create_menu_handle();
+  data_->menu_items_.item_added += [&](size_t, std::reference_wrapper<menu_item> item) {
+    item.get().data_->parent_ = *this;
+    item.get().data_->parent_ = *this;
+    item.get().create_menu();
+  };
+
+  data_->menu_items_.item_updated += [&](size_t, std::reference_wrapper<menu_item> item) {
+    
+  };
+
+  data_->menu_items_.item_erased += [&](size_t, std::reference_wrapper<menu_item> item) {
+    item.get().data_->parent_.reset();
+    item.get().destroy_menu();
+  };
 }
 
 main_menu::~main_menu() {

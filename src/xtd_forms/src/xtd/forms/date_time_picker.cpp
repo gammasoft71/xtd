@@ -43,7 +43,7 @@ control& date_time_picker::value(std::chrono::system_clock::time_point value) {
     if (value < min_date_) value = min_date_;
     if (value > max_date_) value = max_date_;
     value_ = value;
-    native::date_time_picker::value(handle_, value_);
+    native::date_time_picker::value(handle(), value_);
     on_value_changed(event_args::empty);
   }
   return *this;
@@ -63,7 +63,7 @@ forms::create_params date_time_picker::create_params() const {
 
 void date_time_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::date_time_picker::value(handle_, value_);
+  native::date_time_picker::value(handle(), value_);
 }
 
 void date_time_picker::on_value_changed(const event_args& e) {
@@ -79,6 +79,6 @@ void date_time_picker::wnd_proc(message &message) {
 
 void date_time_picker::wm_click(message& message) {
   def_wnd_proc(message);
-  value(native::date_time_picker::value(handle_));
+  value(native::date_time_picker::value(handle()));
   on_value_changed(event_args::empty);
 }

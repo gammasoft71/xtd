@@ -23,7 +23,7 @@ picture_box& picture_box::border_style(forms::border_style border_style) {
 picture_box& picture_box::image(const drawing::image& image) {
   if (!this->image_.has_value() || this->image_.value().handle() != image.handle()) {
     this->image_ = image;
-    native::picture_box::image(this->handle_, this->image_.value());
+    native::picture_box::image(this->handle(), this->image_.value());
   }
   return *this;
 }
@@ -31,7 +31,7 @@ picture_box& picture_box::image(const drawing::image& image) {
 picture_box& picture_box::image(nullptr_t) {
   if (this->image_.has_value()) {
     this->image_.reset();
-    native::picture_box::clear(this->handle_);
+    native::picture_box::clear(this->handle());
   }
   return *this;
 }
@@ -74,6 +74,6 @@ drawing::size picture_box::measure_control() const {
 void picture_box::on_handle_created(const event_args &e) {
   this->control::on_handle_created(e);
   if (this->image_.has_value())
-    native::picture_box::image(this->handle_, this->image_.value());
+    native::picture_box::image(this->handle(), this->image_.value());
 }
 

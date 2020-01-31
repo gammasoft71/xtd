@@ -15,7 +15,7 @@ color_picker::color_picker() {
 void color_picker::color(const drawing::color& value) {
   if (color_ != value) {
     color_ = value;
-    native::color_picker::color(handle_, color_);
+    native::color_picker::color(handle(), color_);
     on_color_changed(event_args::empty);
   }
 }
@@ -28,7 +28,7 @@ forms::create_params color_picker::create_params() const {
 
 void color_picker::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
-  native::color_picker::color(handle_, color_);
+  native::color_picker::color(handle(), color_);
 }
 
 void color_picker::on_color_changed(const event_args &e) {
@@ -44,6 +44,6 @@ void color_picker::wnd_proc(message &message) {
 
 void color_picker::wm_click(message& message) {
   def_wnd_proc(message);
-  color_ = native::color_picker::color(handle_);
+  color_ = native::color_picker::color(handle());
   on_color_changed(event_args::empty);
 }
