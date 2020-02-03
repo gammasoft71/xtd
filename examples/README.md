@@ -165,12 +165,19 @@
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../src/xtd_forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) control.
 * [images](others/images/README.md) demonstrates the use of xtd::drawing::images class.
 * [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control and Unicode text.
+* [lcd_label_with_dot_matrix](others/lcd_label_with_dot_matrix/README.md) representsthe use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+* [lcd_label_with_fourteen_segment](others/lcd_label_with_fourteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+* [lcd_label_with_nine_segment](others/lcd_label_with_nine_segment/README.md) representsthe use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+* [lcd_label_with_seven_segment](others/lcd_label_with_seven_segment/README.md) representsthe use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
+* [lcd_label_with_sixteen_segment](others/lcd_label_with_sixteen_segment/README.md) representsthe use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [lcd_label2](others/lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp) and [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) controls with mouse_down, mouse_move and paint events..
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) and [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) controls.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
+* [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
+* [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * [texts](others/texts/README.md) demonstrates the use of [xtd::forms::texts](../src/xtd_forms/include/xtd/forms/texts.hpp) strings.
 * [All](.) You can see all examples here. 
 
