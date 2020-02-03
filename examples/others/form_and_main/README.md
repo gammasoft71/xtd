@@ -1,6 +1,6 @@
 # form_and_main
 
-represents a window or dialog box that makes up an application's user interface.
+demonstrates how to use startup_ keyword.
 
 # Sources
 
