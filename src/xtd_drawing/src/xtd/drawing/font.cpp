@@ -7,6 +7,19 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
+font::font(const font& prototype, float em_size) {
+  *this->data_ = *prototype.data_;
+  this->data_->size_ = em_size;
+  this->data_->handle_ = native::font::create(this->data_->original_font_name_, this->size_in_points(), (this->data_->style_ & font_style::bold) == font_style::bold, (this->data_->style_ & font_style::italic) == font_style::italic, (this->data_->style_ & font_style::underline) == font_style::underline, (this->data_->style_ & font_style::strikeout) == font_style::strikeout, this->data_->gdi_char_set_, this->data_->gdi_vertical_font_);
+}
+
+font::font(const font& prototype, float em_size, font_style style) {
+  *this->data_ = *prototype.data_;
+  this->data_->size_ = em_size;
+  this->data_->style_ = style;
+  this->data_->handle_ = native::font::create(this->data_->original_font_name_, this->size_in_points(), (this->data_->style_ & font_style::bold) == font_style::bold, (this->data_->style_ & font_style::italic) == font_style::italic, (this->data_->style_ & font_style::underline) == font_style::underline, (this->data_->style_ & font_style::strikeout) == font_style::strikeout, this->data_->gdi_char_set_, this->data_->gdi_vertical_font_);
+}
+
 font::font(const font& prototype, font_style style) {
   *this->data_ = *prototype.data_;
   this->data_->style_ = style;

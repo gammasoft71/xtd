@@ -28,6 +28,17 @@ namespace xtd {
     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
     class font final {
     public:
+      /// @brief Initializes a new Font that uses the specified existing xtd::drawing::font and size.
+      /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
+      /// @param em_size The em-size of the new font in the units specified by the unit parameter.
+      font (const font& prototype, float em_size);
+      
+      /// @brief Initializes a new Font that uses the specified existing xtd::drawing::font, size and  font_style enumeration.
+      /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
+      /// @param em_size The em-size of the new font in the units specified by the unit parameter.
+      /// @param style The font_style to apply to the new xtd::drawing::font. Multiple values of the font_style enumeration can be combined with the OR operator.
+      font (const font& prototype, float em_size, font_style style);
+      
       /// @brief Initializes a new Font that uses the specified existing xtd::drawing::font and font_style enumeration.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param style The font_style to apply to the new xtd::drawing::font. Multiple values of the font_style enumeration can be combined with the OR operator.
