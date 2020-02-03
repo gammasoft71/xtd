@@ -101,7 +101,7 @@ namespace minesweeper {
     
     void do_draw_flag(paint_event_args& e) {
       draw_border_unchecked(e);
-      image flag = image::from_data(flag_16x16);
+      static image flag = bitmap(image::from_data(flag_256x256), {16, 16});
       auto x = (e.clip_rectangle().width() - flag.width()) / 2;
       auto y = (e.clip_rectangle().height() - flag.height()) / 2;
       e.graphics().draw_image(flag, x, y);
@@ -116,7 +116,7 @@ namespace minesweeper {
     
     void do_draw_mine(paint_event_args& e) {
       draw_border_checked(e);
-      image mine = image::from_data(mine_16x16);
+      static image mine = bitmap(image::from_data(mine_256x256), {16, 16});
       auto x = (e.clip_rectangle().width() - mine.width()) / 2;
       auto y = (e.clip_rectangle().height() - mine.height()) / 2;
       e.graphics().draw_image(mine, x, y);
@@ -125,7 +125,7 @@ namespace minesweeper {
     void do_draw_exploded_mine(paint_event_args& e) {
       e.graphics().clear(color::red);
       draw_border_checked(e);
-      image mine = image::from_data(mine_16x16);
+      static image mine = bitmap(image::from_data(mine_256x256), {16, 16});
       auto x = (e.clip_rectangle().width() - mine.width()) / 2;
       auto y = (e.clip_rectangle().height() - mine.height()) / 2;
       e.graphics().draw_image(mine, x, y);
@@ -133,7 +133,7 @@ namespace minesweeper {
 
     void do_draw_error(paint_event_args& e) {
       draw_border_checked(e);
-      image mine = image::from_data(mine_16x16);
+      static image mine = bitmap(image::from_data(mine_256x256), {16, 16});
       auto x = (e.clip_rectangle().width() - mine.width()) / 2;
       auto y = (e.clip_rectangle().height() - mine.height()) / 2;
       e.graphics().draw_image(mine, x, y);
@@ -163,8 +163,8 @@ namespace minesweeper {
       e.graphics().draw_line(pen(color::lighter(back_color())), e.clip_rectangle().width() - 1, 1, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
     }
     
-    #include "resources/flag_16x16.xpm"
-    #include "resources/mine_16x16.xpm"
+    #include "resources/flag.xpm"
+    #include "resources/mine.xpm"
     cell_state state_ = cell_state::unchecked;
     bool has_mine_ = false;
     int neighbors_ = 0;
@@ -180,8 +180,9 @@ namespace minesweeper {
       text("Minesweeper");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      //back_color(color::silver);
-      //fore_color(color::black);
+      
+      back_color(color::silver);
+      fore_color(color::black);
       
       status_panel.parent(*this);
       status_panel.height(60);
@@ -203,7 +204,7 @@ namespace minesweeper {
       stopwatch_label.location({status_panel.width() - stopwatch_label.width() - 22, 22});
 
       start_game.parent(status_panel);
-      start_game.image(bitmap(image::from_data(smiley1_32x32), {24, 24}));
+      start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
       start_game.size({36, 36});
       start_game.location({status_panel.size().width() / 2 - 18, 17});
       start_game.click += [&] {
@@ -237,6 +238,8 @@ namespace minesweeper {
             minesweeper::cell& cell = static_cast<minesweeper::cell&>(sender);
             stopwatch.enabled(true);
             if (e.button() == mouse_buttons::left) {
+              start_game.image(bitmap(image::from_data(smiley4_120x120), {24, 24}));
+              application::do_events();
               if (cell.state() == cell_state::question) cell.state(cell_state::unchecked);
               if (cell.state() == cell_state::unchecked) {
                 if (!cell.has_mine()) {
@@ -245,17 +248,18 @@ namespace minesweeper {
                   if (grid_size_.width() * grid_size_.height() - checked_cell_count_ == mine_count_) {
                     stopwatch.enabled(false);
                     game_over_ = true;
-                    start_game.image(bitmap(image::from_data(smiley3_16x16), {24, 24}));
+                    start_game.image(bitmap(image::from_data(smiley3_120x120), {24, 24}));
                     for (int index1 = 0; index1 < grid_size_.height(); index1++)
                       for (int index2 = 0; index2 <grid_size_.width(); index2++)
                         if (cells_[index2][index1]->has_mine())
                           cells_[index2][index1]->state(cell_state::mine);
                     message_box::show(*this, "You win!");
-                  }
+                  } else
+                    start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
                 } else {
                   stopwatch.enabled(false);
                   game_over_ = true;
-                  start_game.image(bitmap(image::from_data(smiley2_16x16), {24, 24}));
+                  start_game.image(bitmap(image::from_data(smiley2_120x120), {24, 24}));
                   for (int index1 = 0; index1 < grid_size_.height(); index1++) {
                     for (int index2 = 0; index2 <grid_size_.width(); index2++) {
                       if (cells_[index2][index1]->state() == cell_state::flag && !cells_[index2][index1]->has_mine())
@@ -308,7 +312,7 @@ namespace minesweeper {
       }
       mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
       stopwatch_label.text("000");
-      start_game.image(bitmap(image::from_data(smiley1_32x32), {24, 24}));
+      start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
     }
     
     void check_neighbors(const point& cell_location) {
@@ -339,9 +343,10 @@ namespace minesweeper {
       return cells_[cell_location.x()][cell_location.y()]->neighbors();
     }
 
-    #include "resources/smiley1_32x32.xpm"
-    #include "resources/smiley2_16x16.xpm"
-    #include "resources/smiley3_16x16.xpm"
+    #include "resources/smiley1.xpm"
+    #include "resources/smiley2.xpm"
+    #include "resources/smiley3.xpm"
+    #include "resources/smiley4.xpm"
     panel status_panel;
     lcd_label mine_count_label;
     lcd_label stopwatch_label;
