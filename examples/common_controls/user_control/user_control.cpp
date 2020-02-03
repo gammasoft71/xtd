@@ -32,9 +32,9 @@ namespace examples {
       e.graphics().fill_rectangle(solid_brush(system_colors::control()), 1, 1, 28, 28);
       switch (this->status()) {
         case operation_status::none: break;
-        case operation_status::running: e.graphics().draw_string(u8"☞", drawing::font(default_font().name(), 18, font_style::italic), solid_brush(color::medium_purple), 0, 0); break;
-        case operation_status::succeed: e.graphics().draw_string(u8"√", drawing::font(default_font().name(), 18, font_style::italic), solid_brush(color::green), 2, 0); break;
-        case operation_status::failed: e.graphics().draw_string(u8"X", drawing::font(default_font().name(), 18, font_style::italic), solid_brush(color::red), 5, 0); break;
+        case operation_status::running: e.graphics().draw_string(u8"☞", drawing::font(default_font(), 18, font_style::italic), solid_brush(color::medium_purple), 0, 0); break;
+        case operation_status::succeed: e.graphics().draw_string(u8"√", drawing::font(default_font(), 18, font_style::italic), solid_brush(color::green), 2, 0); break;
+        case operation_status::failed: e.graphics().draw_string(u8"X", drawing::font(default_font(), 18, font_style::italic), solid_brush(color::red), 5, 0); break;
       }
       e.graphics().draw_line(pen(color::dark_gray), point(1, 1), point(28, 1));
       e.graphics().draw_line(pen(color::dark_gray), point(1, 1), point(1, 28));
