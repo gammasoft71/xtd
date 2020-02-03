@@ -25,7 +25,7 @@ namespace minesweeper {
   class cell : public user_control {
   public:
     cell() {
-      font(drawing::font(font().name(), 16));
+      font(drawing::font(font(), 16));
       size({30, 30});
      };
 
