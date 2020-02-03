@@ -154,13 +154,16 @@
 * [clock](others/clock/README.md) demonstrates the use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [colored_forms](others/colored_forms/README.md) demonstrates the use of [xtd::forms::form](../src/xtd_forms/include/xtd/forms/form.hpp) control and xtd::drawing::color class.
 * [colored_tab_pages](others/colored_tab_pages/README.md) demonstrates the use of [xtd::forms::tab_control](../src/xtd_forms/include/xtd/forms/tab_control.hpp) and colored [xtd::forms::tab_page](../src/xtd_forms/include/xtd/forms/tab_page.hpp) controls.
+* [colors](others/colors/README.md) demonstrates the use of [xtd::forms::user_control](../../../src/xtd_forms/include/xtd/forms/user_control.hpp) control with xtd::drawing::color.
 * [docked_panels](others/docked_panels/README.md) demonstrates the use of [xtd::forms::panel](../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms::dock_style](../src/xtd_forms/include/xtd/forms/dock_style.hpp).
 * [font_family](others/font_family/README.md) demonstrates the use of xtd::drawing::font_family class.
-* [form2](others/form2/README.md) represents a window or dialog box that makes up an application's user interface.
+* [form_and_main](others/form_and_main/README.md) demonstrates how to use startup_ keyword.
 * [form_and_thread](others/form_and_thread/README.md) demonstrates how a thread can update ui with [xtd::forms::control::invoke](../../../src/xtd_forms/include/xtd/forms/form.hpp) method.
 * [form_window_state](others/form_window_state/README.md) demonstrates the use of [xtd::forms::form](../src/xtd_forms/include/xtd/forms/form.hpp) window state.
+* [form2](others/form2/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box_and_check_box](others/group_box_and_check_box/README.md) demonstrates the use of [xtd::forms::group_box](../src/xtd_forms/include/xtd/forms/button.hpp) container and [xtd::forms::check_box](../src/xtd_forms/include/xtd/forms/check_box.hpp) control.
 * [group_box_and_radio_button](others/group_box_and_radio_button/README.md) demonstrates the use of [xtd::forms::group_box](../src/xtd_forms/include/xtd/forms/group_box.hpp) container and [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) control.
+* [images](others/images/README.md) demonstrates the use of xtd::drawing::images class.
 * [labels_and_unicode_text](others/labels_and_unicode_text/README.md) demonstrates the use of [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control and Unicode text.
 * [lcd_label2](others/lcd_label2/README.md) representsthe use of [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [painting](others/painting/README.md) demonstrates the use of xtd::forms::form, xtd::forms::panel, [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp) and [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) controls with mouse_down, mouse_move and paint events..
