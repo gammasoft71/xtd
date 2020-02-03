@@ -46,6 +46,8 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/control_event_args.hpp
   include/xtd/forms/control_event_handler.hpp
   include/xtd/forms/control_styles.hpp
+  include/xtd/forms/countries.hpp
+  include/xtd/forms/country.hpp
   include/xtd/forms/cursor.hpp
   include/xtd/forms/cursors.hpp
   include/xtd/forms/date_time_picker.hpp
@@ -164,6 +166,8 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/container_control.cpp
   src/xtd/forms/context_menu.cpp
   src/xtd/forms/control.cpp
+  src/xtd/forms/countries.cpp
+  src/xtd/forms/country.cpp
   src/xtd/forms/cursor.cpp
   src/xtd/forms/cursors.cpp
   src/xtd/forms/date_time_picker.cpp

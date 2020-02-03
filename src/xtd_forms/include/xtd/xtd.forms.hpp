@@ -44,6 +44,8 @@
 #include "xtd/forms/control.hpp"
 #include "xtd/forms/control_event_args.hpp"
 #include "xtd/forms/control_event_handler.hpp"
+#include "xtd/forms/countries.hpp"
+#include "xtd/forms/country.hpp"
 #include "xtd/forms/cursor.hpp"
 #include "xtd/forms/cursors.hpp"
 #include "xtd/forms/date_time_picker.hpp"
