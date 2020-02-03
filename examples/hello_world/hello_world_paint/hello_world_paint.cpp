@@ -52,7 +52,7 @@ namespace examples {
       
       wiggly.bounds({20, 20, 290, 60});
       wiggly.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
-      wiggly.font(drawing::font(wiggly.font().name(), 22.0f));
+      wiggly.font(drawing::font(wiggly.font(), 22.0f));
       wiggly.text(text_box.text());
     }
     
