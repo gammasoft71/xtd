@@ -56,10 +56,10 @@ const country countries::congo() {return country(u8"Congo", "CG", "COG", 178);}
 const country countries::democratic_republic_of_the_congo() {return country(u8"Congo, Democratic Republic of the", "CD", "COD", 180);}
 const country countries::cook_islands() {return country(u8"Cook Islands", "CK", "COK", 184);}
 const country countries::costa_rica() {return country(u8"Costa Rica", "CR", "CRI", 188);}
-const country countries::côte_d_ivoire() {return country(u8"Côte d'Ivoire", "CI", "CIV", 384);}
+const country countries::cote_d_ivoire() {return country(u8"Côte d'Ivoire", "CI", "CIV", 384);}
 const country countries::croatia() {return country(u8"Croatia", "HR", "HRV", 191);}
 const country countries::cuba() {return country(u8"Cuba", "CU", "CUB", 192);}
-const country countries::curaçao() {return country(u8"Curaçao", "CW", "CUW", 531);}
+const country countries::curacao() {return country(u8"Curaçao", "CW", "CUW", 531);}
 const country countries::cyprus() {return country(u8"Cyprus", "CY", "CYP", 196);}
 const country countries::czechia() {return country(u8"Czechia", "CZ", "CZE", 203);}
 const country countries::denmark() {return country(u8"Denmark", "DK", "DNK", 208);}
@@ -183,11 +183,11 @@ const country countries::poland() {return country(u8"Poland", "PL", "POL", 616);
 const country countries::portugal() {return country(u8"Portugal", "PT", "PRT", 620);}
 const country countries::puerto_rico() {return country(u8"Puerto Rico", "PR", "PRI", 630);}
 const country countries::qatar() {return country(u8"Qatar", "QA", "QAT", 634);}
-const country countries::réunion() {return country(u8"Réunion", "RE", "REU", 638);}
+const country countries::reunion() {return country(u8"Réunion", "RE", "REU", 638);}
 const country countries::romania() {return country(u8"Romania", "RO", "ROU", 642);}
 const country countries::russian_federation() {return country(u8"Russian Federation", "RU", "RUS", 643);}
 const country countries::rwanda() {return country(u8"Rwanda", "RW", "RWA", 646);}
-const country countries::saint_barthélemy() {return country(u8"Saint Barthélemy", "BL", "BLM", 652);}
+const country countries::saint_barthelemy() {return country(u8"Saint Barthélemy", "BL", "BLM", 652);}
 const country countries::saint_helena_ascension_and_tristan_da_cunha() {return country(u8"Saint Helena, Ascension and Tristan da Cunha", "SH", "SHN", 654);}
 const country countries::saint_kitts_and_nevis() {return country(u8"Saint Kitts and Nevis", "KN", "KNA", 659);}
 const country countries::saint_lucia() {return country(u8"Saint Lucia", "LC", "LCA", 662);}

@@ -61,10 +61,10 @@ namespace xtd {
       static const country democratic_republic_of_the_congo();
       static const country cook_islands();
       static const country costa_rica();
-      static const country côte_d_ivoire();
+      static const country cote_d_ivoire();
       static const country croatia();
       static const country cuba();
-      static const country curaçao();
+      static const country curacao();
       static const country cyprus();
       static const country czechia();
       static const country denmark();
@@ -188,11 +188,11 @@ namespace xtd {
       static const country portugal();
       static const country puerto_rico();
       static const country qatar();
-      static const country réunion();
+      static const country reunion();
       static const country romania();
       static const country russian_federation();
       static const country rwanda();
-      static const country saint_barthélemy();
+      static const country saint_barthelemy();
       static const country saint_helena_ascension_and_tristan_da_cunha();
       static const country saint_kitts_and_nevis();
       static const country saint_lucia();
