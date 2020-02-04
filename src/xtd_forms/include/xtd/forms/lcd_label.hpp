@@ -615,6 +615,7 @@ namespace xtd {
       using control::text;
       control& text(const std::string& value) override {
         if (text_ != value) {
+          suspend_layout();
 #pragma warning(push)
 #pragma warning(suppress:4996)
           std::wstring str = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(value.c_str());
@@ -641,6 +642,7 @@ namespace xtd {
             digits_[index]->set_character(str[index]);
           set_digits_params();
           control::text(value);
+          resume_layout();
         }
         return *this;
       }
