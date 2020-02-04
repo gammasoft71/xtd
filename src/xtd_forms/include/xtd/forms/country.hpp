@@ -14,21 +14,33 @@ namespace xtd {
     class country {
     public:
       country() = default;
+      /// @cond
+      virtual ~country() = default;
+      bool operator==(const country& value) const {return name_ == value.name_ && alpha_2_code_ == value.alpha_2_code_ && alpha_3_code_ == value.alpha_3_code_ && numeric_code_ == value.numeric_code_;}
+      bool operator!=(const country& value) const {return !operator==(value);}
+      /// @endcond
       
       static const country empty();
       
-      const std::string name() const {return name_;}
-      const std::string alpha_2_code() const {return alpha_2_code_;}
-      const std::string alpha_3_code() const {return alpha_3_code_;}
-      const int numeric_code() const {return numeric_code_;}
-      const std::string text_flag() const {return text_flag_;}
-      const xtd::drawing::image flag() const {return flag_;}
+      virtual const std::string name() const {return name_;}
+      virtual const std::string alpha_2_code() const {return alpha_2_code_;}
+      virtual const std::string alpha_3_code() const {return alpha_3_code_;}
+      virtual const int numeric_code() const {return numeric_code_;}
+      virtual const std::string text_flag() const {return text_flag_;}
+      virtual const xtd::drawing::image flag() const {return flag_;}
       
       static country from_name(const std::string& name);
       static country from_alpha_2_code(const std::string& alpha_2_code);
       static country from_alpha_3_code(const std::string& alpha_3_code);
       static country from_numeric_code(int numeric_code);
+
+      virtual std::string to_string() const;
       
+      /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::country& country) noexcept {
+        return os << country.to_string();
+      }
+
     private:
       friend class countries;
       
