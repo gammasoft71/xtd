@@ -240,7 +240,7 @@ namespace minesweeper {
         e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), e.clip_rectangle().width() - 1 - offset, offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1 - offset);
       };
 
-      change_level(level::beginer);
+      change_level(level::intermediate);
       status_panel.width(client_size().width());
 
       mine_count_label.parent(status_panel);
@@ -280,6 +280,7 @@ namespace minesweeper {
 
       game_panel.size({30 + grid_size_.width() * cell().width(),30 + grid_size_.height() * cell().height()});
 
+      suspend_layout();
       cells_ = row_cell(grid_size_.width(), column_cell(grid_size_.height()));
       for (auto y = 0; y < grid_size_.height(); y++) {
         for (auto x = 0; x < grid_size_.width(); x++) {
@@ -300,6 +301,7 @@ namespace minesweeper {
                   check_neighbors(cell.cell_location());
                   cdebug << format("total cells = {}, mine to found = {}, mine uncheck = {}", grid_size_.width() * grid_size_.height(), mine_count_, grid_size_.width() * grid_size_.height() - checked_cell_count_) << std::endl;
                   if (grid_size_.width() * grid_size_.height() - checked_cell_count_ == mine_count_) {
+                    suspend_layout();
                     stopwatch.enabled(false);
                     game_over_ = true;
                     start_game.image(bitmap(image::from_data(smiley3_120x120), {24, 24}));
@@ -308,10 +310,12 @@ namespace minesweeper {
                         if (cells_[index2][index1]->state() != cell_state::flag && cells_[index2][index1]->has_mine())
                           cells_[index2][index1]->state(cell_state::mine);
                     mine_count_label.text("000");
+                    resume_layout();
                     message_box::show(*this, "You win!");
                   } else
                     start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
                 } else {
+                  suspend_layout();
                   stopwatch.enabled(false);
                   game_over_ = true;
                   start_game.image(bitmap(image::from_data(smiley2_120x120), {24, 24}));
@@ -324,6 +328,7 @@ namespace minesweeper {
                     }
                   }
                   cell.state(cell_state::exploded_mine);
+                  resume_layout();
                   message_box::show(*this, "BOOOooomm!");
                 }
               }
@@ -341,10 +346,12 @@ namespace minesweeper {
           };
         }
       }
+      resume_layout();
       new_game();
     }
 
     void new_game() {
+      suspend_layout();
       game_over_ = false;
       stopwatch.enabled(false);
       checked_cell_count_ = 0;
@@ -368,6 +375,7 @@ namespace minesweeper {
       mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
       stopwatch_label.text("000");
       start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
+      resume_layout();
     }
     
     void check_neighbors(const point& cell_location) {
