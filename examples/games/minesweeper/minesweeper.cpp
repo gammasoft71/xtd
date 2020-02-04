@@ -240,7 +240,7 @@ namespace minesweeper {
         e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), e.clip_rectangle().width() - 1 - offset, offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1 - offset);
       };
 
-      change_level(level::intermediate);
+      change_level(level::beginer);
       status_panel.width(client_size().width());
 
       mine_count_label.parent(status_panel);
@@ -305,8 +305,9 @@ namespace minesweeper {
                     start_game.image(bitmap(image::from_data(smiley3_120x120), {24, 24}));
                     for (int index1 = 0; index1 < grid_size_.height(); index1++)
                       for (int index2 = 0; index2 <grid_size_.width(); index2++)
-                        if (cells_[index2][index1]->has_mine())
+                        if (cells_[index2][index1]->state() != cell_state::flag && cells_[index2][index1]->has_mine())
                           cells_[index2][index1]->state(cell_state::mine);
+                    mine_count_label.text("000");
                     message_box::show(*this, "You win!");
                   } else
                     start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
