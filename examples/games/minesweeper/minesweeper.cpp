@@ -116,7 +116,7 @@ namespace minesweeper {
     
     void do_draw_mine(paint_event_args& e) {
       draw_border_checked(e);
-      static image mine = bitmap(image::from_data(mine_256x256), {16, 16});
+      static image mine = bitmap(image::from_data(mine_300x300), {16, 16});
       auto x = (e.clip_rectangle().width() - mine.width()) / 2;
       auto y = (e.clip_rectangle().height() - mine.height()) / 2;
       e.graphics().draw_image(mine, x, y);
@@ -125,7 +125,7 @@ namespace minesweeper {
     void do_draw_exploded_mine(paint_event_args& e) {
       e.graphics().clear(color::red);
       draw_border_checked(e);
-      static image mine = bitmap(image::from_data(mine_256x256), {16, 16});
+      static image mine = bitmap(image::from_data(mine_300x300), {16, 16});
       auto x = (e.clip_rectangle().width() - mine.width()) / 2;
       auto y = (e.clip_rectangle().height() - mine.height()) / 2;
       e.graphics().draw_image(mine, x, y);
@@ -133,7 +133,7 @@ namespace minesweeper {
 
     void do_draw_error(paint_event_args& e) {
       draw_border_checked(e);
-      static image mine = bitmap(image::from_data(mine_256x256), {16, 16});
+      static image mine = bitmap(image::from_data(mine_300x300), {16, 16});
       auto x = (e.clip_rectangle().width() - mine.width()) / 2;
       auto y = (e.clip_rectangle().height() - mine.height()) / 2;
       e.graphics().draw_image(mine, x, y);
