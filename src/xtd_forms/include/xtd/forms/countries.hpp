@@ -256,6 +256,8 @@ namespace xtd {
       static const country yemen();
       static const country zambia();
       static const country zimbabwe();
+      
+      static const std::vector<country>& get_countries();
     };
   }
 }

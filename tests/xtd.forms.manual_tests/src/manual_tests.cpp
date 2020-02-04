@@ -1,5 +1,6 @@
 #include <xtd/xtd.forms>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
