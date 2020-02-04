@@ -47,10 +47,8 @@ namespace minesweeper {
 
     int neighbors() const {return neighbors_;}
     void neighbors(int value) {
-      if (neighbors_ != value) {
+      if (neighbors_ != value)
         neighbors_ = value;
-        invalidate();
-      }
     }
 
     cell_state state() const {return state_;}
@@ -62,10 +60,12 @@ namespace minesweeper {
     }
     
     void clear() {
-      state_ = cell_state::unchecked;
       has_mine_ = false;
       neighbors_ = 0;
-      invalidate();
+      if (state_ != cell_state::unchecked) {
+        state_ = cell_state::unchecked;
+        invalidate();
+      }
     }
 
   protected:
