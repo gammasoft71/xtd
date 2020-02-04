@@ -259,8 +259,8 @@ namespace minesweeper {
 
       start_game.parent(status_panel);
       start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
-      start_game.size({38, 38});
-      start_game.location({status_panel.size().width() / 2 - 18, 17});
+      start_game.size({42, 38});
+      start_game.location({status_panel.size().width() / 2 - 21, 17});
       start_game.click += [&] {
         new_game();
       };
