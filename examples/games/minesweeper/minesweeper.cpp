@@ -181,13 +181,65 @@ namespace minesweeper {
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       
-      back_color(color::silver);
-      fore_color(color::black);
+      //back_color(color::silver);
+      //fore_color(color::black);
       
       status_panel.parent(*this);
       status_panel.height(60);
+      status_panel.paint += [&](control& sender, paint_event_args& e) {
+        e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), 0, 0, e.clip_rectangle().width(), 0);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), 0, 1, e.clip_rectangle().width(), 1);
+        e.graphics().draw_line(pen(color::lighter(back_color())), 1, 2, e.clip_rectangle().width(), 2);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), 0, 0, 0, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), 1, 1, 1, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::lighter(back_color())), 2, 2, 2, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::darker(back_color())), e.clip_rectangle().width() - 3, 2, e.clip_rectangle().width() - 3, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), e.clip_rectangle().width() - 2, 1, e.clip_rectangle().width() - 2, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), e.clip_rectangle().width() - 1, 0, e.clip_rectangle().width() - 1, e.clip_rectangle().height());
+        
+        auto offset = 12;
+        e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), offset, offset, e.clip_rectangle().width() - 1 - offset, offset);
+        e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), offset, 1 + offset, e.clip_rectangle().width() - 1 - offset, 1 + offset);
+        e.graphics().draw_line(pen(color::darker(back_color())), 1 + offset, 2 + offset, e.clip_rectangle().width() - 1 - offset, 2 + offset);
+        e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), offset, offset, offset, e.clip_rectangle().height() - 1);
+        e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), 1 + offset, 1 + offset, 1 + offset, e.clip_rectangle().height() - 1);
+        e.graphics().draw_line(pen(color::darker(back_color())), 2 + offset, 2 + offset, 2 + offset, e.clip_rectangle().height() - 1);
+        e.graphics().draw_line(pen(color::lighter(back_color())), 2 + offset, e.clip_rectangle().height() - 3, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 3);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), 1 + offset, e.clip_rectangle().height() - 2, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 2);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), offset, e.clip_rectangle().height() - 1, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1);
+        e.graphics().draw_line(pen(color::lighter(back_color())), e.clip_rectangle().width() - 3 - offset, 2 + offset, e.clip_rectangle().width() - 3 - offset, e.clip_rectangle().height() - 3);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), e.clip_rectangle().width() - 2 - offset, 1 + offset, e.clip_rectangle().width() - 2 - offset, e.clip_rectangle().height() - 2);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), e.clip_rectangle().width() - 1 - offset, offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1);
+      };
+      
       game_panel.parent(*this);
       game_panel.location({0, 60});
+      game_panel.paint += [&](control& sender, paint_event_args& e) {
+        e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), 0, 0, 0, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), 1, 0, 1, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::lighter(back_color())), 2, 0, 2, e.clip_rectangle().height());
+        e.graphics().draw_line(pen(color::darker(back_color())), 2, e.clip_rectangle().height() - 3, e.clip_rectangle().width(), e.clip_rectangle().height() - 3);
+        e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), 1, e.clip_rectangle().height() - 2, e.clip_rectangle().width(), e.clip_rectangle().height() - 2);
+        e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), 0, e.clip_rectangle().height() - 1, e.clip_rectangle().width(), e.clip_rectangle().height() - 1);
+        e.graphics().draw_line(pen(color::darker(back_color())), e.clip_rectangle().width() - 3, 0, e.clip_rectangle().width() - 3, e.clip_rectangle().height() - 3);
+        e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), e.clip_rectangle().width() - 2, 0, e.clip_rectangle().width() - 2, e.clip_rectangle().height() - 2);
+        e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), e.clip_rectangle().width() - 1, 0, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
+        
+        auto offset = 12;
+        e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), offset, offset, e.clip_rectangle().width() - 1 - offset, offset);
+        e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), offset, 1 + offset, e.clip_rectangle().width() - 1 - offset, 1 + offset);
+        e.graphics().draw_line(pen(color::darker(back_color())), 1 + offset, 2 + offset, e.clip_rectangle().width() - 1 - offset, 2 + offset);
+        e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), offset, offset, offset, e.clip_rectangle().height() - 1 - offset);
+        e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), 1 + offset, 1 + offset, 1 + offset, e.clip_rectangle().height() - 1 - offset);
+        e.graphics().draw_line(pen(color::darker(back_color())), 2 + offset, 2 + offset, 2 + offset, e.clip_rectangle().height() - 1 - offset);
+        e.graphics().draw_line(pen(color::lighter(back_color())), 2 + offset, e.clip_rectangle().height() - 3 - offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 3 - offset);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), 1 + offset, e.clip_rectangle().height() - 2 - offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 2 - offset);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), offset, e.clip_rectangle().height() - 1 - offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1 - offset);
+        e.graphics().draw_line(pen(color::lighter(back_color())), e.clip_rectangle().width() - 3 - offset, 2 + offset, e.clip_rectangle().width() - 3 - offset, e.clip_rectangle().height() - 3 - offset);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), e.clip_rectangle().width() - 2 - offset, 1 + offset, e.clip_rectangle().width() - 2 - offset, e.clip_rectangle().height() - 2 - offset);
+        e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), e.clip_rectangle().width() - 1 - offset, offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1 - offset);
+      };
+
       change_level(level::intermediate);
       status_panel.width(client_size().width());
 
@@ -204,7 +256,7 @@ namespace minesweeper {
       stopwatch_label.location({status_panel.width() - stopwatch_label.width() - 22, 22});
 
       start_game.parent(status_panel);
-      start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
+      start_game.image(bitmap(image::from_data(smiley1_120x120), {16, 16}));
       start_game.size({36, 36});
       start_game.location({status_panel.size().width() / 2 - 18, 17});
       start_game.click += [&] {
@@ -238,7 +290,7 @@ namespace minesweeper {
             minesweeper::cell& cell = static_cast<minesweeper::cell&>(sender);
             stopwatch.enabled(true);
             if (e.button() == mouse_buttons::left) {
-              start_game.image(bitmap(image::from_data(smiley4_120x120), {24, 24}));
+              start_game.image(bitmap(image::from_data(smiley4_120x120), {16, 16}));
               application::do_events();
               if (cell.state() == cell_state::question) cell.state(cell_state::unchecked);
               if (cell.state() == cell_state::unchecked) {
@@ -248,23 +300,23 @@ namespace minesweeper {
                   if (grid_size_.width() * grid_size_.height() - checked_cell_count_ == mine_count_) {
                     stopwatch.enabled(false);
                     game_over_ = true;
-                    start_game.image(bitmap(image::from_data(smiley3_120x120), {24, 24}));
+                    start_game.image(bitmap(image::from_data(smiley3_120x120), {16, 16}));
                     for (int index1 = 0; index1 < grid_size_.height(); index1++)
                       for (int index2 = 0; index2 <grid_size_.width(); index2++)
                         if (cells_[index2][index1]->has_mine())
                           cells_[index2][index1]->state(cell_state::mine);
                     message_box::show(*this, "You win!");
                   } else
-                    start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
+                    start_game.image(bitmap(image::from_data(smiley1_120x120), {16, 16}));
                 } else {
                   stopwatch.enabled(false);
                   game_over_ = true;
-                  start_game.image(bitmap(image::from_data(smiley2_120x120), {24, 24}));
+                  start_game.image(bitmap(image::from_data(smiley2_120x120), {16, 16}));
                   for (int index1 = 0; index1 < grid_size_.height(); index1++) {
                     for (int index2 = 0; index2 <grid_size_.width(); index2++) {
                       if (cells_[index2][index1]->state() == cell_state::flag && !cells_[index2][index1]->has_mine())
                         cells_[index2][index1]->state(cell_state::error);
-                      if (cells_[index2][index1]->has_mine())
+                      if (cells_[index2][index1]->state() != cell_state::flag && cells_[index2][index1]->has_mine())
                         cells_[index2][index1]->state(cell_state::mine);
                     }
                   }
@@ -312,7 +364,7 @@ namespace minesweeper {
       }
       mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
       stopwatch_label.text("000");
-      start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
+      start_game.image(bitmap(image::from_data(smiley1_120x120), {16, 16}));
     }
     
     void check_neighbors(const point& cell_location) {
