@@ -244,20 +244,22 @@ namespace minesweeper {
       status_panel.width(client_size().width());
 
       mine_count_label.parent(status_panel);
-      mine_count_label.location({22, 22});
+      mine_count_label.location({17, 17});
+      mine_count_label.height(38);
       mine_count_label.auto_size(true);
       mine_count_label.back_color(color::black);
       mine_count_label.fore_color(color::red);
 
       stopwatch_label.parent(status_panel);
+      stopwatch_label.height(38);
       stopwatch_label.auto_size(true);
       stopwatch_label.back_color(color::black);
       stopwatch_label.fore_color(color::red);
-      stopwatch_label.location({status_panel.width() - stopwatch_label.width() - 22, 22});
+      stopwatch_label.location({status_panel.width() - stopwatch_label.width() - 18, 17});
 
       start_game.parent(status_panel);
-      start_game.image(bitmap(image::from_data(smiley1_120x120), {16, 16}));
-      start_game.size({36, 36});
+      start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
+      start_game.size({38, 38});
       start_game.location({status_panel.size().width() / 2 - 18, 17});
       start_game.click += [&] {
         new_game();
@@ -290,7 +292,7 @@ namespace minesweeper {
             minesweeper::cell& cell = static_cast<minesweeper::cell&>(sender);
             stopwatch.enabled(true);
             if (e.button() == mouse_buttons::left) {
-              start_game.image(bitmap(image::from_data(smiley4_120x120), {16, 16}));
+              start_game.image(bitmap(image::from_data(smiley4_120x120), {24, 24}));
               application::do_events();
               if (cell.state() == cell_state::question) cell.state(cell_state::unchecked);
               if (cell.state() == cell_state::unchecked) {
@@ -300,18 +302,18 @@ namespace minesweeper {
                   if (grid_size_.width() * grid_size_.height() - checked_cell_count_ == mine_count_) {
                     stopwatch.enabled(false);
                     game_over_ = true;
-                    start_game.image(bitmap(image::from_data(smiley3_120x120), {16, 16}));
+                    start_game.image(bitmap(image::from_data(smiley3_120x120), {24, 24}));
                     for (int index1 = 0; index1 < grid_size_.height(); index1++)
                       for (int index2 = 0; index2 <grid_size_.width(); index2++)
                         if (cells_[index2][index1]->has_mine())
                           cells_[index2][index1]->state(cell_state::mine);
                     message_box::show(*this, "You win!");
                   } else
-                    start_game.image(bitmap(image::from_data(smiley1_120x120), {16, 16}));
+                    start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
                 } else {
                   stopwatch.enabled(false);
                   game_over_ = true;
-                  start_game.image(bitmap(image::from_data(smiley2_120x120), {16, 16}));
+                  start_game.image(bitmap(image::from_data(smiley2_120x120), {24, 24}));
                   for (int index1 = 0; index1 < grid_size_.height(); index1++) {
                     for (int index2 = 0; index2 <grid_size_.width(); index2++) {
                       if (cells_[index2][index1]->state() == cell_state::flag && !cells_[index2][index1]->has_mine())
@@ -364,7 +366,7 @@ namespace minesweeper {
       }
       mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
       stopwatch_label.text("000");
-      start_game.image(bitmap(image::from_data(smiley1_120x120), {16, 16}));
+      start_game.image(bitmap(image::from_data(smiley1_120x120), {24, 24}));
     }
     
     void check_neighbors(const point& cell_location) {
