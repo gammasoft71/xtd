@@ -206,6 +206,11 @@ const xtd::forms::emoticon xtd::forms::emoticons::heavy_large_circle = {"heavy l
 const xtd::forms::emoticon xtd::forms::emoticons::wavy_dash = {"wavy dash", {0x00003030, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::part_alternation_mark = {"part alternation mark", {0x0000303D, 0x0000FE0F}};
 
+/// 3200-32FF Enclosed CJK Letters and Months
+
+const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_congratulation = {"circled ideograph congratulation", {0x00003297, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_secret = {"circled ideograph secret", {0x00003299, 0x0000FE0F}};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -220,6 +225,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     arrow_pointing_rightwards_then_curving_upwards, arrow_pointing_rightwards_then_curving_downwards,
     leftwards_black_arrow, upwards_black_arrow, downwards_black_arrow, black_large_square, white_large_square, white_medium_star, heavy_large_circle,
     wavy_dash, part_alternation_mark,
+    circled_ideograph_congratulation, circled_ideograph_secret,
   };
   return emoticons;
 }
