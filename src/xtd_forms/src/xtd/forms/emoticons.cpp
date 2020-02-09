@@ -201,6 +201,11 @@ const xtd::forms::emoticon xtd::forms::emoticons::white_large_square = {"white l
 const xtd::forms::emoticon xtd::forms::emoticons::white_medium_star = {"white medium star", 0x00002B50};
 const xtd::forms::emoticon xtd::forms::emoticons::heavy_large_circle = {"heavy large circle", 0x00002B55};
 
+/// 3000-303F CJK Symbols and Punctuation
+
+const xtd::forms::emoticon xtd::forms::emoticons::wavy_dash = {"wavy dash", {0x00003030, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::part_alternation_mark = {"part alternation mark", {0x0000303D, 0x0000FE0F}};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -214,6 +219,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     black_scissors, white_heavy_check_mark, airplane, envelope, raised_fist, raised_hand, victory_hand, writing_hand, pencil, black_nib, heavy_check_mark, heavy_multiplication_x, latin_cross, star_of_david, sparkles, eight_spoked_asterisk, eight_pointed_black_star, snowflake, sparkle, cross_mark, negative_squared_cross_mark, black_question_mark_ornament, white_question_mark_ornament, white_exclamation_mark_ornament, heavy_exclamation_mark_symbol, heavy_heart_exclamation_mark_ornament, black_heart_symbol, heavy_plus_sign, heavy_minus_sign, heavy_division_sign, black_rightwards_arrow, curly_loop, double_curly_loop,
     arrow_pointing_rightwards_then_curving_upwards, arrow_pointing_rightwards_then_curving_downwards,
     leftwards_black_arrow, upwards_black_arrow, downwards_black_arrow, black_large_square, white_large_square, white_medium_star, heavy_large_circle,
+    wavy_dash, part_alternation_mark,
   };
   return emoticons;
 }
