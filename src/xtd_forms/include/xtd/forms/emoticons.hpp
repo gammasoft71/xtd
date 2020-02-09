@@ -86,6 +86,10 @@ namespace xtd {
       static const xtd::forms::emoticon black_square_for_stop;
       /// @brief Gets a system-defined emoticon that has a string value of 0x000023FA. This field is constant.
       static const xtd::forms::emoticon black_circle_for_record;
+      /// 2460-24FF Enclosed Alphanumerics
+      
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000024C2, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon circled_latin_capital_letter_m;
 
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
