@@ -15,12 +15,13 @@ int main() {
 
   auto emoticon_label = control::create<label>(*main_form, "", {160, 30});
   emoticon_label->auto_size(true).font({main_form->font(), 128});
-  emoticon_label->text(emoticon("test", {0x1F486, 0x1F3FD, 0x200D, 0x2640, 0xFE0F}).to_string());
 
   emoticons_list_box->selected_value_changed += [&] {
     emoticon_label->text(any_cast<emoticon>(emoticons_list_box->selected_item().tag()).to_string());
   };
-  //emoticons_list_box->selected_index(0);
-  
+  emoticons_list_box->selected_index(0);
+
+  //emoticon_label->text(emoticon("test", {0x1F486, 0x1F3FD, 0x200D, 0x2640, 0xFE0F}).to_string());
+
   application::run(*main_form);
 }
