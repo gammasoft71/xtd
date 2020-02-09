@@ -186,6 +186,11 @@ const xtd::forms::emoticon xtd::forms::emoticons::black_rightwards_arrow = {"bla
 const xtd::forms::emoticon xtd::forms::emoticons::curly_loop = {"curly loop", 0x000027B0};
 const xtd::forms::emoticon xtd::forms::emoticons::double_curly_loop = {"double curly loop", 0x000027BF};
 
+/// 2900-297F Supplemental Arrows-B
+
+const xtd::forms::emoticon xtd::forms::emoticons::arrow_pointing_rightwards_then_curving_upwards = {"arrow pointing rightwards then curving upwards", {0x00002934, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::arrow_pointing_rightwards_then_curving_downwards = {"arrow pointing rightwards then curving downwards", {0x00002935, 0x0000FE0F}};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -197,6 +202,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     black_small_square, white_small_square, black_right_pointing_triangle, black_left_pointing_triangle, white_medium_square, black_medium_square, white_medium_small_square, black_medium_small_square,
     black_sun_with_rays, cloud, umbrella, snowman, comet, black_telephone, ballot_box_with_check, umbrella_with_rain_drops, hot_beverage, shamrock, white_up_pointing_index, skull_and_crossbones, radioactive_sign, biohazard_sign, orthodox_cross, star_and_crescent, peace_symbol, yin_yang, wheel_of_dharma, white_frowning_face, white_smiling_face, female_sign, male_sign, aries, taurus, gemini, cancer, leo, virgo, libra, scorpius, sagittarius, capricorn, aquarius, pisces, black_chess_pawn, black_spade_suit, black_club_suit, black_heart_suit, black_diamond_suit, hot_springs, black_universal_recycling_symbol, permanent_paper_sign, wheelchair_symbol, hammer_and_pick, anchor, crossed_swords, staff_of_aesculapius, scales, alembic, gear, atom_symbol, fleur_de_lis, warning_sign, high_voltage_sign, medium_white_circle, medium_black_circle, coffin, funeral_urn, soccer_ball, baseball, snowman_without_snow, sun_behind_cloud, thunder_cloud_and_rain, ophiuchus, pick, helmet_with_white_cross, chains, no_entry, shinto_shrine, church, mountain, umbrella_on_ground, fountain, flag_in_hole, ferry, sailboat, skier, ice_skate, person_with_ball, tent, fuel_pump,
     black_scissors, white_heavy_check_mark, airplane, envelope, raised_fist, raised_hand, victory_hand, writing_hand, pencil, black_nib, heavy_check_mark, heavy_multiplication_x, latin_cross, star_of_david, sparkles, eight_spoked_asterisk, eight_pointed_black_star, snowflake, sparkle, cross_mark, negative_squared_cross_mark, black_question_mark_ornament, white_question_mark_ornament, white_exclamation_mark_ornament, heavy_exclamation_mark_symbol, heavy_heart_exclamation_mark_ornament, black_heart_symbol, heavy_plus_sign, heavy_minus_sign, heavy_division_sign, black_rightwards_arrow, curly_loop, double_curly_loop,
+    arrow_pointing_rightwards_then_curving_upwards, arrow_pointing_rightwards_then_curving_downwards,
   };
   return emoticons;
 }

@@ -346,6 +346,13 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of 0x000027BF. This field is constant.
       static const xtd::forms::emoticon double_curly_loop;
 
+      /// 2900-297F Supplemental Arrows-B
+      
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00002934, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon arrow_pointing_rightwards_then_curving_upwards;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00002935, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon arrow_pointing_rightwards_then_curving_downwards;
+
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
