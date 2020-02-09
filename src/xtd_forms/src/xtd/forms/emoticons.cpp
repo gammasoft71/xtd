@@ -50,6 +50,10 @@ const xtd::forms::emoticon xtd::forms::emoticons::double_vertical_bar = {"double
 const xtd::forms::emoticon xtd::forms::emoticons::black_square_for_stop = {"black square for stop", 0x000023F9};
 const xtd::forms::emoticon xtd::forms::emoticons::black_circle_for_record = {"black circle for record", 0x000023FA};
 
+/// 2460-24FF Enclosed Alphanumerics
+
+const xtd::forms::emoticon xtd::forms::emoticons::circled_latin_capital_letter_m = {"circled latin capital letter m", {0x000024C2, 0x0000FE0F}};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -57,6 +61,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     trade_mark_sign, information_source,
     left_right_arrow, up_down_arrow, north_west_arrow, north_east_arrow, south_east_arrow, south_west_arrow, leftwards_arrow_with_hook, rightwards_arrow_with_hook,
     watch, hourglass, keyboard, eject_symbol, black_right_pointing_double_triangle, black_left_pointing_double_triangle, black_up_pointing_double_triangle, black_down_pointing_double_triangle, black_right_pointing_double_triangle_with_vertical_bar, black_left_pointing_double_triangle_with_vertical_bar, black_right_pointing_triangle_with_double_vertical_bar, alarm_clock, stopwatch, timer_clock, hourglass_with_flowing_sand, double_vertical_bar, black_square_for_stop, black_circle_for_record,
+    circled_latin_capital_letter_m,
   };
   return emoticons;
 }
