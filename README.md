@@ -24,7 +24,7 @@ xtd.forms is under development.
 * All controls are natives (win32 on windows, cocoa on macOS, gtk+3 on linux).
 * ...
 
-For more information see [documentations](docs/home.md) ([website](https://gammasoft71.wixsite.com/gammasoft)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd.forms/).
+For more information see [documentations](docs/home.md) ([website](https://gammasoft71.wixsite.com/gammasoft)) and [Reference Guide](https://codedocs.xyz/gammasoft71/xtd_forms/).
 
 # Examples
 
