@@ -1,0 +1,160 @@
+Grinning Face
+U+1F600
+Grinning Face with Smiling Eyes
+U+1F601
+Face with Tears of Joy
+U+1F602
+Smiling Face with Open Mouth
+U+1F603
+Smiling Face with Open Mouth and Smiling Eyes
+U+1F604
+Smiling Face with Open Mouth and Cold Sweat
+U+1F605
+Smiling Face with Open Mouth and Tightly-Closed Eyes
+U+1F606
+Smiling Face with Halo
+U+1F607
+Smiling Face with Horns
+U+1F608
+Winking Face
+U+1F609
+Smiling Face with Smiling Eyes
+U+1F60A
+Face Savouring Delicious Food
+U+1F60B
+Relieved Face
+U+1F60C
+Smiling Face with Heart-Shaped Eyes
+U+1F60D
+Smiling Face with Sunglasses
+U+1F60E
+Smirking Face
+U+1F60F
+Neutral Face
+U+1F610
+Expressionless Face
+U+1F611
+Unamused Face
+U+1F612
+Face with Cold Sweat
+U+1F613
+Pensive Face
+U+1F614
+Confused Face
+U+1F615
+Confounded Face
+U+1F616
+Kissing Face
+U+1F617
+Face Throwing a Kiss
+U+1F618
+Kissing Face with Smiling Eyes
+U+1F619
+Kissing Face with Closed Eyes
+U+1F61A
+Face with Stuck-Out Tongue
+U+1F61B
+Face with Stuck-Out Tongue and Winking Eye
+U+1F61C
+Face with Stuck-Out Tongue and Tightly-Closed Eyes
+U+1F61D
+Disappointed Face
+U+1F61E
+Worried Face
+U+1F61F
+Angry Face
+U+1F620
+Pouting Face
+U+1F621
+Crying Face
+U+1F622
+Persevering Face
+U+1F623
+Face with Look of Triumph
+U+1F624
+Disappointed But Relieved Face
+U+1F625
+Frowning Face with Open Mouth
+U+1F626
+Anguished Face
+U+1F627
+Fearful Face
+U+1F628
+Weary Face
+U+1F629
+Sleepy Face
+U+1F62A
+Tired Face
+U+1F62B
+Grimacing Face
+U+1F62C
+Loudly Crying Face
+U+1F62D
+Face with Open Mouth
+U+1F62E
+Hushed Face
+U+1F62F
+Face with Open Mouth and Cold Sweat
+U+1F630
+Face Screaming In Fear
+U+1F631
+Astonished Face
+U+1F632
+Flushed Face
+U+1F633
+Sleeping Face
+U+1F634
+Dizzy Face
+U+1F635
+Face Without Mouth
+U+1F636
+Face with Medical Mask
+U+1F637
+Grinning Cat Face with Smiling Eyes
+U+1F638
+Cat Face with Tears of Joy
+U+1F639
+Smiling Cat Face with Open Mouth
+U+1F63A
+Smiling Cat Face with Heart-Shaped Eyes
+U+1F63B
+Cat Face with Wry Smile
+U+1F63C
+Kissing Cat Face with Closed Eyes
+U+1F63D
+Pouting Cat Face
+U+1F63E
+Crying Cat Face
+U+1F63F
+Weary Cat Face
+U+1F640
+Slightly Frowning Face
+U+1F641
+Slightly Smiling Face
+U+1F642
+Upside-Down Face
+U+1F643
+Face With Rolling Eyes
+U+1F644
+Face With No Good Gesture
+U+1F645
+Face With Ok Gesture
+U+1F646
+Person Bowing Deeply
+U+1F647
+See-No-Evil Monkey
+U+1F648
+Hear-No-Evil Monkey
+U+1F649
+Speak-No-Evil Monkey
+U+1F64A
+Happy Person Raising One Hand
+U+1F64B
+Person Raising Both Hands In Celebration
+U+1F64C
+Person Frowning
+U+1F64D
+Person with Pouting Face
+U+1F64E
+Person with Folded Hands
+U+1F64F

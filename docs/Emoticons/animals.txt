@@ -1,0 +1,226 @@
+See-No-Evil Monkey
+U+1F648
+Hear-No-Evil Monkey
+U+1F649
+Speak-No-Evil Monkey
+U+1F64A
+Monkey Face
+U+1F435
+Monkey
+U+1F412
+Gorilla
+U+1F98D
+Dog Face
+U+1F436
+Dog
+U+1F415
+Poodle
+U+1F429
+Wolf Face
+U+1F43A
+Fox Face
+U+1F98A
+Raccoon
+U+1F99D
+Cat Face
+U+1F431
+Grinning Cat Face with Smiling Eyes
+U+1F638
+Cat Face with Tears of Joy
+U+1F639
+Smiling Cat Face with Open Mouth
+U+1F63A
+Smiling Cat Face with Heart-Shaped Eyes
+U+1F63B
+Cat Face with Wry Smile
+U+1F63C
+Kissing Cat Face with Closed Eyes
+U+1F63D
+Pouting Cat Face
+U+1F63E
+Crying Cat Face
+U+1F63F
+Weary Cat Face
+U+1F640
+Cat
+U+1F408
+Lion Face
+U+1F981
+Tiger Face
+U+1F42F
+Tiger
+U+1F405
+Leopard
+U+1F406
+Horse Face
+U+1F434
+Horse
+U+1F40E
+Unicorn Face
+U+1F984
+Zebra Face
+U+1F993
+Deer
+U+1F98C
+Cow Face
+U+1F42E
+Ox
+U+1F402
+Water Buffalo
+U+1F403
+Cow
+U+1F404
+Pig Face
+U+1F437
+Pig
+U+1F416
+Boar
+U+1F417
+Pig Nose
+U+1F43D
+Ram
+U+1F40F
+Sheep
+U+1F411
+Goat
+U+1F410
+Dromedary Camel
+U+1F42A
+Bactrian Camel
+U+1F42B
+Llama
+U+1F999
+Giraffe Face
+U+1F992
+Elephant
+U+1F418
+Rhinoceros
+U+1F98F
+Hippopotamus
+U+1F99B
+Mouse Face
+U+1F42D
+Mouse
+U+1F401
+Rat
+U+1F400
+Hamster Face
+U+1F439
+Rabbit Face
+U+1F430
+Rabbit
+U+1F407
+Chipmunk
+U+1F43F
+Hedgehog
+U+1F994
+Bat
+U+1F987
+Bear Face
+U+1F43B
+Koala
+U+1F428
+Panda Face
+U+1F43C
+Kangaroo
+U+1F998
+Badger
+U+1F9A1
+Paw Prints
+U+1F43E
+Turkey
+U+1F983
+Chicken
+U+1F414
+Rooster
+U+1F413
+Hatching Chick
+U+1F423
+Baby Chick
+U+1F424
+Front-Facing Baby Chick
+U+1F425
+Bird
+U+1F426
+Penguin
+U+1F427
+Dove of Peace
+U+1F54A
+Eagle
+U+1F985
+Duck
+U+1F986
+Swan
+U+1F9A2
+Owl
+U+1F989
+Peacock
+U+1F99A
+Parrot
+U+1F99C
+Frog Face
+U+1F438
+Crocodile
+U+1F40A
+Turtle
+U+1F422
+Lizard
+U+1F98E
+Snake
+U+1F40D
+Dragon Face
+U+1F432
+Dragon
+U+1F409
+Sauropod
+U+1F995
+T-Rex
+U+1F996
+Spouting Whale
+U+1F433
+Whale
+U+1F40B
+Dolphin
+U+1F42C
+Fish
+U+1F41F
+Tropical Fish
+U+1F420
+Blowfish
+U+1F421
+Shark
+U+1F988
+Octopus
+U+1F419
+Spiral Shell
+U+1F41A
+Snail
+U+1F40C
+Butterfly
+U+1F98B
+Bug
+U+1F41B
+Ant
+U+1F41C
+Honeybee
+U+1F41D
+Lady Beetle
+U+1F41E
+Cricket
+U+1F997
+Spider
+U+1F577
+Spider Web
+U+1F578
+Scorpion
+U+1F982
+Mosquito
+U+1F99F
+Crab
+U+1F980
+Lobster
+U+1F99E
+Shrimp
+U+1F990
+Squid
+U+1F991

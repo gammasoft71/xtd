@@ -1,0 +1,24 @@
+Lage Orange Circle
+U+1F7E0
+Lage Yellow Circle
+U+1F7E1
+Lage Green Circle
+U+1F7E2
+Lage Purple Circle
+U+1F7E3
+Lage Brown Circle
+U+1F7E4
+Lage Red Square
+U+1F7E5
+Lage BLue Square
+U+1F7E6
+Lage Orange Square
+U+1F7E7
+Lage Yellow Square
+U+1F7E8
+Lage Green Square
+U+1F7E9
+Lage Purple Square
+U+1F7E1
+Lage Brown Square
+U+1F7EB

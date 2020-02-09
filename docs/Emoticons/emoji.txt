@@ -1,0 +1,298 @@
+Rocket
+U+1F680
+White Smiling Face
+U+263A
+White Frowning Face
+U+2639
+Black Smiling Face
+U+263B
+Grinning Face
+U+1F600
+Grinning Face with Smiling Eyes
+U+1F601
+Face with Tears of Joy
+U+1F602
+Smiling Face with Horns
+U+1F608
+Winking Face
+U+1F609
+Smiling Face with Smiling Eyes
+U+1F60A
+Smiling Face with Open Mouth
+U+1F603
+Smiling Face with Open Mouth and Smiling Eyes
+U+1F604
+Smiling Face with Open Mouth and Cold Sweat
+U+1F605
+Smiling Face with Open Mouth and Tightly-Closed Eyes
+U+1F606
+Smiling Face with Halo
+U+1F607
+Face Savouring Delicious Food
+U+1F60B
+Relieved Face
+U+1F60C
+Smiling Face with Heart-Shaped Eyes
+U+1F60D
+Smiling Face with Sunglasses
+U+1F60E
+Smirking Face
+U+1F60F
+Neutral Face
+U+1F610
+Expressionless Face
+U+1F611
+Unamused Face
+U+1F612
+Face with Cold Sweat
+U+1F613
+Pensive Face
+U+1F614
+Confused Face
+U+1F615
+Confounded Face
+U+1F616
+Kissing Face
+U+1F617
+Face Throwing a Kiss
+U+1F618
+Kissing Face with Smiling Eyes
+U+1F619
+Kissing Face with Closed Eyes
+U+1F61A
+Face with Stuck-Out Tongue
+U+1F61B
+Face with Stuck-Out Tongue and Winking Eye
+U+1F61C
+Face with Stuck-Out Tongue and Tightly-Closed Eyes
+U+1F61D
+Disappointed Face
+U+1F61E
+Worried Face
+U+1F61F
+Angry Face
+U+1F620
+Pouting Face
+U+1F621
+Crying Face
+U+1F622
+Persevering Face
+U+1F623
+Face with Look of Triumph
+U+1F624
+Disappointed But Relieved Face
+U+1F625
+Frowning Face with Open Mouth
+U+1F626
+Anguished Face
+U+1F627
+Fearful Face
+U+1F628
+Weary Face
+U+1F629
+Sleepy Face
+U+1F62A
+Tired Face
+U+1F62B
+Grimacing Face
+U+1F62C
+Loudly Crying Face
+U+1F62D
+Face with Open Mouth
+U+1F62E
+Hushed Face
+U+1F62F
+Face with Open Mouth and Cold Sweat
+U+1F630
+Face Screaming In Fear
+U+1F631
+Astonished Face
+U+1F632
+Flushed Face
+U+1F633
+Sleeping Face
+U+1F634
+Dizzy Face
+U+1F635
+Face Without Mouth
+U+1F636
+Face with Medical Mask
+U+1F637
+Grinning Cat Face with Smiling Eyes
+U+1F638
+Cat Face with Tears of Joy
+U+1F639
+Smiling Cat Face with Open Mouth
+U+1F63A
+Smiling Cat Face with Heart-Shaped Eyes
+U+1F63B
+Cat Face with Wry Smile
+U+1F63C
+Kissing Cat Face with Closed Eyes
+U+1F63D
+Pouting Cat Face
+U+1F63E
+Crying Cat Face
+U+1F63F
+Weary Cat Face
+U+1F640
+Face With No Good Gesture
+U+1F645
+Face With Ok Gesture
+U+1F646
+Person Bowing Deeply
+U+1F647
+See-No-Evil Monkey
+U+1F648
+Hear-No-Evil Monkey
+U+1F649
+Speak-No-Evil Monkey
+U+1F64A
+Happy Person Raising One Hand
+U+1F64B
+Person Raising Both Hands In Celebration
+U+1F64C
+Person Frowning
+U+1F64D
+Person with Pouting Face
+U+1F64E
+Person with Folded Hands
+U+1F64F
+Helicopter
+U+1F681
+Steam Locomotive
+U+1F682
+Railway Car
+U+1F683
+High-Speed Train
+U+1F684
+High-Speed Train with Bullet Nose
+U+1F685
+Train
+U+1F686
+Metro
+U+1F687
+Light Rail
+U+1F688
+Station
+U+1F689
+Tram
+U+1F68A
+Tram Car
+U+1F68B
+Bus
+U+1F68C
+Oncoming Bus
+U+1F68D
+Trolleybus
+U+1F68E
+Bus Stop
+U+1F68F
+Minibus
+U+1F690
+Ambulance
+U+1F691
+Fire Engine
+U+1F692
+Police Car
+U+1F693
+Oncoming Police Car
+U+1F694
+Taxi
+U+1F695
+Oncoming Taxi
+U+1F696
+Automobile
+U+1F697
+Oncoming Automobile
+U+1F698
+Recreational Vehicle
+U+1F699
+Delivery Truck
+U+1F69A
+Articulated Lorry
+U+1F69B
+Tractor
+U+1F69C
+Monorail
+U+1F69D
+Mountain Railway
+U+1F69E
+Suspension Railway
+U+1F69F
+Mountain Cableway
+U+1F6A0
+Aerial Tramway
+U+1F6A1
+Ship
+U+1F6A2
+Rowboat
+U+1F6A3
+Speedboat
+U+1F6A4
+Horizontal Traffic Light
+U+1F6A5
+Vertical Traffic Light
+U+1F6A6
+Construction Sign
+U+1F6A7
+Police Cars Revolving Light
+U+1F6A8
+Triangular Flag On Post
+U+1F6A9
+Door
+U+1F6AA
+No Entry Sign
+U+1F6AB
+Smoking Symbol
+U+1F6AC
+No Smoking Symbol
+U+1F6AD
+Put Litter In Its Place Symbol
+U+1F6AE
+Do Not Litter Symbol
+U+1F6AF
+Potable Water Symbol
+U+1F6B0
+Non-Potable Water Symbol
+U+1F6B1
+Bicycle
+U+1F6B2
+No Bicycles
+U+1F6B3
+Bicyclist
+U+1F6B4
+Mountain Bicyclist
+U+1F6B5
+Pedestrian
+U+1F6B6
+No Pedestrians
+U+1F6B7
+Children Crossing
+U+1F6B8
+Mens Symbol
+U+1F6B9
+Womens Symbol
+U+1F6BA
+Restroom
+U+1F6BB
+Baby Symbol
+U+1F6BC
+Toilet
+U+1F6BD
+Water Closet
+U+1F6BE
+Shower
+U+1F6BF
+Bath
+U+1F6C0
+Bathtub
+U+1F6C1
+Passport Control
+U+1F6C2
+Customs
+U+1F6C3
+Baggage Claim
+U+1F6C4
+Left Luggage
+U+1F6C5
