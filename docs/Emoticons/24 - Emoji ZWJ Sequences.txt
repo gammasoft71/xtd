@@ -1,6 +1,5 @@
 Eye in Speech Bubble
-U+1F441 U+1F5E8
-
+U+1F441 U+200D U+1F5E8
 Person: Red Hair
 U+1F9D1 U+200D U+1F9B0
 Person: Light Skin Tone, Red Hair
@@ -49,7 +48,6 @@ Person: Medium-Dark Skin Tone, Bald
 U+1F9D1 U+1F3FE U+200D U+1F9B2
 Person: Dark Skin Tone, Bald
 U+1F9D1 U+1F3FF U+200D U+1F9B2
-
 Man: Red Hair
 U+1F468 U+200D U+1F9B0
 Man: Light Skin Tone, Red Hair
@@ -98,7 +96,6 @@ Man: Medium-Dark Skin Tone, Bald
 U+1F468 U+1F3FE U+200D U+1F9B2
 Man: Dark Skin Tone, Bald
 U+1F468 U+1F3FF U+200D U+1F9B2
-
 Woman: Red Hair
 U+1F469 U+200D U+1F9B0
 Woman: Light Skin Tone, Red Hair
@@ -147,7 +144,6 @@ Woman: Medium-Dark Skin Tone, Bald
 U+1F469 U+1F3FE U+200D U+1F9B2
 Woman: Dark Skin Tone, Bald
 U+1F469 U+1F3FF U+200D U+1F9B2
-
 Person: Blond Hair
 U+1F471
 Person: Light Skin Tone, Blond Hair
@@ -184,7 +180,6 @@ Woman: Medium-Dark Skin Tone, Blond Hair
 U+1F471 U+1F3FE U+200D U+2640 U+FE0F
 Woman: Dark Skin Tone, Blond Hair
 U+1F471 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Frowning: Light Skin Tone
 U+1F64D U+1F3FB
 Person Frowning: Medium-Light Skin Tone
@@ -219,7 +214,6 @@ Woman Frowning: Medium-Dark Skin Tone
 U+1F64D U+1F3FE U+200D U+2640 U+FE0F
 Woman Frowning: Dark Skin Tone
 U+1F64D U+1F3FF U+200D U+2640 U+FE0F
-
 Person Pouting
 U+1F64E
 Person Pouting: Light Skin Tone
@@ -256,7 +250,6 @@ Woman Pouting: Medium-Dark Skin Tone
 U+1F64E U+1F3FE U+200D U+2640 U+FE0F
 Woman Pouting: Dark Skin Tone
 U+1F64E U+1F3FF U+200D U+2640 U+FE0F
-
 Person Gesturing No
 U+1F645
 Person Gesturing No: Light Skin Tone
@@ -293,7 +286,6 @@ Woman Gesturing No: Medium-Dark Skin Tone
 U+1F645 U+1F3FE U+200D U+2640 U+FE0F
 Woman Gesturing No: Dark Skin Tone
 U+1F645 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Gesturing OK
 U+1F646
 Person Gesturing OK: Light Skin Tone
@@ -330,7 +322,6 @@ Woman Gesturing OK: Medium-Dark Skin Tone
 U+1F646 U+1F3FE U+200D U+2640 U+FE0F
 Woman Gesturing OK: Dark Skin Tone
 U+1F646 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Tipping Hand
 U+1F481
 Person Tipping Hand: Light Skin Tone
@@ -367,7 +358,6 @@ Woman Tipping Hand: Medium-Dark Skin Tone
 U+1F481 U+1F3FE U+200D U+2640 U+FE0F
 Woman Tipping Hand: Dark Skin Tone
 U+1F481 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Raising Hand
 U+1F64B
 Person Raising Hand: Light Skin Tone
@@ -404,7 +394,6 @@ Woman Raising Hand: Medium-Dark Skin Tone
 U+1F64B U+1F3FE U+200D U+2640 U+FE0F
 Woman Raising Hand: Dark Skin Tone
 U+1F64B U+1F3FF U+200D U+2640 U+FE0F
-
 Person Bowing: Light Skin Tone
 U+1F647 U+1F3FB
 Person Bowing: Medium-Light Skin Tone
@@ -439,7 +428,6 @@ Woman Bowing: Medium-Dark Skin Tone
 U+1F647 U+1F3FE U+200D U+2640 U+FE0F
 Woman Bowing: Dark Skin Tone
 U+1F647 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Facepalming
 U+1F926
 Person Facepalming: Light Skin Tone
@@ -476,7 +464,6 @@ Woman Facepalming: Medium-Dark Skin Tone
 U+1F926 U+1F3FE U+200D U+2640 U+FE0F
 Woman Facepalming: Dark Skin Tone
 U+1F926 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Shrugging
 U+1F937
 Person Shrugging: Light Skin Tone
@@ -513,7 +500,6 @@ Woman Shrugging: Medium-Dark Skin Tone
 U+1F937 U+1F3FE U+200D U+2640 U+FE0F
 Woman Shrugging: Dark Skin Tone
 U+1F937 U+1F3FF U+200D U+2640 U+FE0F
-
 Health Worker
 U+1F9D1 U+200D U+2695 U+FE0F
 Health Worker: Light Skin Tone
@@ -550,7 +536,6 @@ Woman Health Worker: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+2695 U+FE0F
 Woman Health Worker: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+2695 U+FE0F
-
 Student
 U+1F9D1 U+200D U+1F393
 Student: Light Skin Tone
@@ -587,7 +572,6 @@ Woman Student: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F393
 Woman Student: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F393
-
 Teacher
 U+1F9D1 U+200D U+1F3EB
 Teacher: Light Skin Tone
@@ -624,7 +608,6 @@ Woman Teacher: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F3EB
 Woman Teacher: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F3EB
-
 Farmer
 U+1F9D1 U+200D U+1F33E
 Farmer: Light Skin Tone
@@ -661,7 +644,6 @@ Woman Farmer: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F33E
 Woman Farmer: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F33E
-
 Cook
 U+1F9D1 U+200D U+1F373
 Cook: Light Skin Tone
@@ -698,7 +680,6 @@ Woman Cook: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F373
 Woman Cook: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F373
-
 Mechanic
 U+1F9D1 U+200D U+1F527
 Mechanic: Light Skin Tone
@@ -735,7 +716,6 @@ Woman Mechanic: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F527
 Woman Mechanic: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F527
-
 Factory Worker
 U+1F9D1 U+200D U+1F3ED
 Factory Worker: Light Skin Tone
@@ -772,7 +752,6 @@ Woman Factory Worker: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F3ED
 Woman Factory Worker: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F3ED
-
 Office Worker
 U+1F9D1 U+200D U+1F4BC
 Office Worker: Light Skin Tone
@@ -809,7 +788,6 @@ Woman Office Worker: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F4BC
 Woman Office Worker: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F4BC
-
 Scientist
 U+1F9D1 U+200D U+1F52C
 Scientist: Light Skin Tone
@@ -846,7 +824,6 @@ Woman Scientist: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F52C
 Woman Scientist: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F52C
-
 Technologist
 U+1F9D1 U+200D U+1F4BB
 Technologist: Light Skin Tone
@@ -883,7 +860,6 @@ Woman Technologist: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F4BB
 Woman Technologist: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F4BB
-
 Singer
 U+1F9D1 U+200D U+1F3A4
 Singer: Light Skin Tone
@@ -920,7 +896,6 @@ Woman Singer: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F3A4
 Woman Singer: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F3A4
-
 Artist
 U+1F9D1 U+200D U+1F3A8
 Artist: Light Skin Tone
@@ -957,7 +932,6 @@ Woman Artist: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F3A8
 Woman Artist: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F3A8
-
 Pilot
 U+1F9D1 U+200D U+2708 U+FE0F
 Pilot: Light Skin Tone
@@ -994,7 +968,6 @@ Woman Pilot: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+2708 U+FE0F
 Woman Pilot: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+2708 U+FE0F
-
 Astronaut
 U+1F9D1 U+200D U+1F680
 Astronaut: Light Skin Tone
@@ -1031,7 +1004,6 @@ Woman Astronaut: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F680
 Woman Astronaut: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F680
-
 Firefighter
 U+1F9D1 U+200D U+1F692
 Firefighter: Light Skin Tone
@@ -1068,7 +1040,6 @@ Woman Firefighter: Medium-Dark Skin Tone
 U+1F469 U+1F3FE U+200D U+1F692
 Woman Firefighter: Dark Skin Tone
 U+1F469 U+1F3FF U+200D U+1F692
-
 Police Officer: Light Skin Tone
 U+1F46E U+1F3FB
 Police Officer: Medium-Light Skin Tone
@@ -1103,7 +1074,6 @@ Woman Police Officer: Medium-Dark Skin Tone
 U+1F46E U+1F3FE U+200D U+2640 U+FE0F
 Woman Police Officer: Dark Skin Tone
 U+1F46E U+1F3FF U+200D U+2640 U+FE0F
-
 Detective
 U+1F575 U+FE0F
 Detective: Light Skin Tone
@@ -1140,7 +1110,6 @@ Woman Detective: Medium-Dark Skin Tone
 U+1F575 U+FE0F U+1F3FE U+200D U+2640 U+FE0F
 Woman Detective: Dark Skin Tone
 U+1F575 U+FE0F U+1F3FF U+200D U+2640 U+FE0F
-
 Contruction Worker: Light Skin Tone
 U+1F477 U+1F3FB
 Contruction Worker: Medium-Light Skin Tone
@@ -1175,7 +1144,6 @@ Woman Contruction Worker: Medium-Dark Skin Tone
 U+1F477 U+1F3FE U+200D U+2640 U+FE0F
 Woman Contruction Worker: Dark Skin Tone
 U+1F477 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Wearing Turban
 U+1F473
 Person Wearing Turban: Light Skin Tone
@@ -1212,7 +1180,6 @@ Woman Wearing Turban: Medium-Dark Skin Tone
 U+1F473 U+1F3FE U+200D U+2640 U+FE0F
 Woman Wearing Turban: Dark Skin Tone
 U+1F473 U+1F3FF U+200D U+2640 U+FE0F
-
 Person Getting Massage
 U+1F486
 Person Getting Massage: Light Skin Tone
