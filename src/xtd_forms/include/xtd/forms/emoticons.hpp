@@ -353,6 +353,23 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of {0x00002935, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon arrow_pointing_rightwards_then_curving_downwards;
 
+      /// 2B00-2BFF Miscellaneous Symbols And Arrows
+      
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00002B05, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon leftwards_black_arrow;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00002B06, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon upwards_black_arrow;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00002B07, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon downwards_black_arrow;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x00002B1B. This field is constant.
+      static const xtd::forms::emoticon black_large_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x00002B1C. This field is constant.
+      static const xtd::forms::emoticon white_large_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x00002B50. This field is constant.
+      static const xtd::forms::emoticon white_medium_star;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x00002B55. This field is constant.
+      static const xtd::forms::emoticon heavy_large_circle;
+      
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
