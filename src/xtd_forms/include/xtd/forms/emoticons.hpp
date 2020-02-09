@@ -1899,6 +1899,201 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of 0x0001F64F. This field is constant.
       static const xtd::forms::emoticon person_with_folded_hands;
       
+      /// 1F680-1F6FF Transport And Map Symbols
+      
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F680. This field is constant.
+      static const xtd::forms::emoticon rocket;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F681. This field is constant.
+      static const xtd::forms::emoticon helicopter;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F682. This field is constant.
+      static const xtd::forms::emoticon steam_locomotive;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F683. This field is constant.
+      static const xtd::forms::emoticon railway_car;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F684. This field is constant.
+      static const xtd::forms::emoticon high_speed_train;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F685. This field is constant.
+      static const xtd::forms::emoticon high_speed_train_with_bullet_nose;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F686. This field is constant.
+      static const xtd::forms::emoticon train;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F687. This field is constant.
+      static const xtd::forms::emoticon metro;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F688. This field is constant.
+      static const xtd::forms::emoticon light_rail;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F689. This field is constant.
+      static const xtd::forms::emoticon station;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F68A. This field is constant.
+      static const xtd::forms::emoticon tram;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F68B. This field is constant.
+      static const xtd::forms::emoticon tram_car;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F68C. This field is constant.
+      static const xtd::forms::emoticon bus;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F68D. This field is constant.
+      static const xtd::forms::emoticon oncoming_bus;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F68E. This field is constant.
+      static const xtd::forms::emoticon trolleybus;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F68F. This field is constant.
+      static const xtd::forms::emoticon bus_stop;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F690. This field is constant.
+      static const xtd::forms::emoticon minibus;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F691. This field is constant.
+      static const xtd::forms::emoticon ambulance;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F692. This field is constant.
+      static const xtd::forms::emoticon fire_engine;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F693. This field is constant.
+      static const xtd::forms::emoticon police_car;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F694. This field is constant.
+      static const xtd::forms::emoticon oncoming_police_car;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F695. This field is constant.
+      static const xtd::forms::emoticon taxi;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F696. This field is constant.
+      static const xtd::forms::emoticon oncoming_taxi;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F697. This field is constant.
+      static const xtd::forms::emoticon automobile;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F698. This field is constant.
+      static const xtd::forms::emoticon oncoming_automobile;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F699. This field is constant.
+      static const xtd::forms::emoticon recreational_vehicle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F69A. This field is constant.
+      static const xtd::forms::emoticon delivery_truck;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F69B. This field is constant.
+      static const xtd::forms::emoticon articulated_lorry;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F69C. This field is constant.
+      static const xtd::forms::emoticon tractor;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F69D. This field is constant.
+      static const xtd::forms::emoticon monorail;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F69E. This field is constant.
+      static const xtd::forms::emoticon mountain_railway;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F69F. This field is constant.
+      static const xtd::forms::emoticon suspension_railway;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A0. This field is constant.
+      static const xtd::forms::emoticon mountain_cableway;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A1. This field is constant.
+      static const xtd::forms::emoticon aerial_tramway;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A2. This field is constant.
+      static const xtd::forms::emoticon ship;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A3. This field is constant.
+      static const xtd::forms::emoticon rowboat;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A4. This field is constant.
+      static const xtd::forms::emoticon speedboat;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A5. This field is constant.
+      static const xtd::forms::emoticon horizontal_traffic_light;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A6. This field is constant.
+      static const xtd::forms::emoticon vertical_traffic_light;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A7. This field is constant.
+      static const xtd::forms::emoticon construction_sign;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A8. This field is constant.
+      static const xtd::forms::emoticon police_cars_revolving_light;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6A9. This field is constant.
+      static const xtd::forms::emoticon triangular_flag_on_post;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6AA. This field is constant.
+      static const xtd::forms::emoticon door;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6AB. This field is constant.
+      static const xtd::forms::emoticon no_entry_sign;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6AC. This field is constant.
+      static const xtd::forms::emoticon smoking_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6AD. This field is constant.
+      static const xtd::forms::emoticon no_smoking_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6AE. This field is constant.
+      static const xtd::forms::emoticon put_litter_in_its_place_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6AF. This field is constant.
+      static const xtd::forms::emoticon do_not_litter_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B0. This field is constant.
+      static const xtd::forms::emoticon potable_water_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B1. This field is constant.
+      static const xtd::forms::emoticon non_potable_water_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B2. This field is constant.
+      static const xtd::forms::emoticon bicycle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B3. This field is constant.
+      static const xtd::forms::emoticon no_bicycles;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B4. This field is constant.
+      static const xtd::forms::emoticon bicyclist;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B5. This field is constant.
+      static const xtd::forms::emoticon mountain_bicyclist;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B6. This field is constant.
+      static const xtd::forms::emoticon pedestrian;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B7. This field is constant.
+      static const xtd::forms::emoticon no_pedestrians;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B8. This field is constant.
+      static const xtd::forms::emoticon children_crossing;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6B9. This field is constant.
+      static const xtd::forms::emoticon mens_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6BA. This field is constant.
+      static const xtd::forms::emoticon womens_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6BB. This field is constant.
+      static const xtd::forms::emoticon restroom;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6BC. This field is constant.
+      static const xtd::forms::emoticon baby_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6BD. This field is constant.
+      static const xtd::forms::emoticon toilet;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6BE. This field is constant.
+      static const xtd::forms::emoticon water_closet;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6BF. This field is constant.
+      static const xtd::forms::emoticon shower;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6C0. This field is constant.
+      static const xtd::forms::emoticon bath;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6C1. This field is constant.
+      static const xtd::forms::emoticon bathtub;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6C2. This field is constant.
+      static const xtd::forms::emoticon passport_control;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6C3. This field is constant.
+      static const xtd::forms::emoticon customs;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6C4. This field is constant.
+      static const xtd::forms::emoticon baggage_claim;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6C5. This field is constant.
+      static const xtd::forms::emoticon left_luggage;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6CB. This field is constant.
+      static const xtd::forms::emoticon couch_and_lamp;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6CC. This field is constant.
+      static const xtd::forms::emoticon sleeping_accommodation;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6CD. This field is constant.
+      static const xtd::forms::emoticon shopping_bags;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6CE. This field is constant.
+      static const xtd::forms::emoticon bellhop_bell;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6CF. This field is constant.
+      static const xtd::forms::emoticon bed;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6D0. This field is constant.
+      static const xtd::forms::emoticon place_of_worship;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6D1. This field is constant.
+      static const xtd::forms::emoticon octagonal_sign;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6D2. This field is constant.
+      static const xtd::forms::emoticon shopping_trolley;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6E0. This field is constant.
+      static const xtd::forms::emoticon hammer_and_wrench;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6E1. This field is constant.
+      static const xtd::forms::emoticon shield;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6E2. This field is constant.
+      static const xtd::forms::emoticon oil_drum;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6E3. This field is constant.
+      static const xtd::forms::emoticon motorway;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6E4. This field is constant.
+      static const xtd::forms::emoticon railway_track;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6E5. This field is constant.
+      static const xtd::forms::emoticon motor_boat;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6E9. This field is constant.
+      static const xtd::forms::emoticon small_airplane;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6EB. This field is constant.
+      static const xtd::forms::emoticon airplane_departure;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6EC. This field is constant.
+      static const xtd::forms::emoticon airplane_arriving;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F0. This field is constant.
+      static const xtd::forms::emoticon satellite;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F3. This field is constant.
+      static const xtd::forms::emoticon passenger_ship;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F4. This field is constant.
+      static const xtd::forms::emoticon scooter;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F5. This field is constant.
+      static const xtd::forms::emoticon motor_scooter;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F6. This field is constant.
+      static const xtd::forms::emoticon canoe;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F7. This field is constant.
+      static const xtd::forms::emoticon sled;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F8. This field is constant.
+      static const xtd::forms::emoticon flying_saucer;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6F9. This field is constant.
+      static const xtd::forms::emoticon skateboard;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6FA. This field is constant.
+      static const xtd::forms::emoticon auto_rrickshaw;
+      
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
