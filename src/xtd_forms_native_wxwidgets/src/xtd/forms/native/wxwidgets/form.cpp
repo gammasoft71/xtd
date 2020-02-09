@@ -50,7 +50,7 @@ void form::menu(intptr_t form, intptr_t menu) {
   }
 #endif
 
-  if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
+  if (menu && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(reinterpret_cast<wxMenuBar*>(menu));
 }
 
