@@ -56,6 +56,8 @@
 #include "xtd/forms/domain_up_down.hpp"
 #include "xtd/forms/dot_matrix_display.hpp"
 #include "xtd/forms/dot_matrix_style.hpp"
+#include "xtd/forms/emoticon.hpp"
+#include "xtd/forms/emoticons.hpp"
 #include "xtd/forms/folder_browser_dialog.hpp"
 #include "xtd/forms/font_dialog.hpp"
 #include "xtd/forms/font_picker.hpp"
