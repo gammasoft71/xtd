@@ -1,4 +1,4 @@
 Trade Mark Sign
-U+2122
+U+2122 U+FE0F
 Information Source
-U+2139
+U+2139 U+FE0F
