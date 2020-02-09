@@ -16,5 +16,12 @@ int main() {
   form form_main;
   form_main.text("Manual tests");
   form_main.menu(menu);
+  
+  button button;
+  button.parent(form_main);
+  button.click += [&] {
+    form form;
+    form.show_dialog();
+  };
   application::run(form_main);
 }
