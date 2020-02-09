@@ -219,9 +219,26 @@ const xtd::forms::emoticon xtd::forms::emoticons::mahjong_tile_red_dragon = {"ma
 
 const xtd::forms::emoticon xtd::forms::emoticons::playing_card_black_joker = {"playing card black joker", 0x0001F0CF};
 
+/// 1F100-1F1FF Enclosed Alphanumeric Supplement
+
+const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_latin_capital_letter_a = {"negative squared latin capital letter a", {0x0001F170, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_latin_capital_letter_b = {"negative squared latin capital letter b", {0x0001F171, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_latin_capital_letter_o = {"negative squared latin capital letter o", {0x0001F17E, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_latin_capital_letter_p = {"negative squared latin capital letter p", {0x0001F17F, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_ab = {"negative squared ab", 0x0001F18E};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cl = {"squared cl", 0x0001F191};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cool = {"squared cool", 0x0001F192};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_free = {"squared free", 0x0001F193};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_id = {"squared id", 0x0001F194};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_new = {"squared new", 0x0001F195};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_ng = {"squared ng", 0x0001F196};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_ok = {"squared ok", 0x0001F197};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_sos = {"squared sos", 0x0001F198};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_up_with_exclamation_mark = {"squared up with exclamation mark", 0x0001F199};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_vs = {"squared vs", 0x0001F19A};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
-    /*
     copyright_sign, registered_sign,
     double_exclamation_mark, exclamation_question_mark,
     trade_mark_sign, information_source,
@@ -236,8 +253,8 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     wavy_dash, part_alternation_mark,
     circled_ideograph_congratulation, circled_ideograph_secret,
     mahjong_tile_red_dragon,
-     */
     playing_card_black_joker,
+    negative_squared_latin_capital_letter_a, negative_squared_latin_capital_letter_b, negative_squared_latin_capital_letter_o, negative_squared_latin_capital_letter_p, negative_squared_ab, squared_cl, squared_cool, squared_free, squared_id, squared_new, squared_ng, squared_ok, squared_sos, squared_up_with_exclamation_mark, squared_vs,
   };
   return emoticons;
 }

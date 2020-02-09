@@ -393,6 +393,39 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of 0x0001F0CF. This field is constant.
       static const xtd::forms::emoticon playing_card_black_joker;
 
+      /// 1F100-1F1FF Enclosed Alphanumeric Supplement
+      
+      /// @brief Gets a system-defined emoticon that has a string value of {0x0001F170, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon negative_squared_latin_capital_letter_a;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x0001F171, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon negative_squared_latin_capital_letter_b;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x0001F17E, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon negative_squared_latin_capital_letter_o;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x0001F17F, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon negative_squared_latin_capital_letter_p;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F18E. This field is constant.
+      static const xtd::forms::emoticon negative_squared_ab;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F191. This field is constant.
+      static const xtd::forms::emoticon squared_cl;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F192. This field is constant.
+      static const xtd::forms::emoticon squared_cool;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F193. This field is constant.
+      static const xtd::forms::emoticon squared_free;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F194. This field is constant.
+      static const xtd::forms::emoticon squared_id;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F195. This field is constant.
+      static const xtd::forms::emoticon squared_new;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F196. This field is constant.
+      static const xtd::forms::emoticon squared_ng;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F197. This field is constant.
+      static const xtd::forms::emoticon squared_ok;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F198. This field is constant.
+      static const xtd::forms::emoticon squared_sos;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F199. This field is constant.
+      static const xtd::forms::emoticon squared_up_with_exclamation_mark;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F19A. This field is constant.
+      static const xtd::forms::emoticon squared_vs;
+      
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
