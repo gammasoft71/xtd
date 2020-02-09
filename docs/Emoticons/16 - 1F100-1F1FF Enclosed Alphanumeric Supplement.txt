@@ -1,11 +1,11 @@
 Negative Squared Latin Capital Letter A
-U+1F170
+U+1F170 U+FE0F
 Negative Squared Latin Capital Letter B
-U+1F171
+U+1F171 U+FE0F
 Negative Squared Latin Capital Letter O
-U+1F17E
+U+1F17E U+FE0F
 Negative Squared Latin Capital Letter P
-U+1F17F
+U+1F17F U+FE0F
 Negative Squared Ab
 U+1F18E
 Squared Cl
