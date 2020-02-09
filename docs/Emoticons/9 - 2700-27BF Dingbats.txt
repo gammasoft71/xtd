@@ -1,0 +1,66 @@
+Black Scissors
+U+2702
+White Heavy Check Mark
+U+2705
+Airplane
+U+2708
+Envelope
+U+2709
+Raised Fist
+U+270A
+Raised Hand
+U+270B
+Victory Hand
+U+270C
+Writing Hand
+U+270D
+Pencil
+U+270F
+Black Nib
+U+2712
+Heavy Check Mark
+U+2714
+Heavy Multiplication X
+U+2716
+Latin Cross
+U+271D
+Star of David
+U+2721
+Sparkles
+U+2728
+Eight Spoked Asterisk
+U+2733
+Eight Pointed Black Star
+U+2734
+Snowflake
+U+2744
+Sparkle
+U+2747
+Cross Mark
+U+274C
+Negative Squared Cross Mark
+U+274E
+Black Question Mark Ornament
+U+2753
+White Question Mark Ornament
+U+2754
+White Exclamation Mark Ornament
+U+2755
+Heavy Exclamation Mark Symbol
+U+2757
+Heavy Heart Exclamation Mark Ornament
+U+2763
+Black Heart Symbol
+U+2764
+Heavy Plus Sign
+U+2795
+Heavy Minus Sign
+U+2796
+Heavy Division Sign
+U+2797
+Black Rightwards Arrow
+U+27A1
+Curly Loop
+U+27B0
+Double Curly Loop
+U+27BF

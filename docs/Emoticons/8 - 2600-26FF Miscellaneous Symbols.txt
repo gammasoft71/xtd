@@ -1,0 +1,164 @@
+Black Sun with Rays
+U+2600
+Cloud
+U+2601
+Umbrella
+U+2602
+Snowman
+U+2603
+Comet
+U+2604
+Black Telephone
+U+260E
+Ballot Box with Check
+U+2611
+Umbrella with Rain Drops
+U+2614
+Hot Beverage
+U+2615
+Shamrock
+U+2618
+White Up Pointing Index
+U+261D
+Skull and Crossbones
+U+2620
+Radioactive Sign
+U+2622
+Biohazard Sign
+U+2623
+Orthodox Cross
+U+2626
+Star and Crescent
+U+262A
+Peace Symbol
+U+262E
+Yin Yang
+U+262F
+Wheel of Dharma
+U+2638
+White Frowning Face
+U+2639
+White Smiling Face
+U+263A
+Female Sign
+U+2640
+Male Sign
+U+2642
+Aries
+U+2648
+Taurus
+U+2649
+Gemini
+U+264A
+Cancer
+U+264B
+Leo
+U+264C
+Virgo
+U+264D
+Libra
+U+264E
+Scorpius
+U+264F
+Sagittarius
+U+2650
+Capricorn
+U+2651
+Aquarius
+U+2652
+Pisces
+U+2653
+Black Chess Pawn
+U+265F
+Black Spade Suit
+U+2660
+Black Club Suit
+U+2663
+Black Heart Suit
+U+2665
+Black Diamond Suit
+U+2666
+Hot Springs
+U+2668
+Black Universal Recycling Symbol
+U+267B
+Permanent Paper Sign
+U+267E
+Wheelchair Symbol
+U+267F
+Hammer and Pick
+U+2692
+Anchor
+U+2693
+Crossed Swords
+U+2694
+Staff of Aesculapius
+U+2695
+Scales
+U+2696
+Alembic
+U+2697
+Gear
+U+2699
+Atom Symbol
+U+269B
+Fleur-De-Lis
+U+269C
+Warning Sign
+U+26A0
+High Voltage Sign
+U+26A1
+Medium White Circle
+U+26AA
+Medium Black Circle
+U+26AB
+Coffin
+U+26B0
+Funeral Urn
+U+26B1
+Soccer Ball
+U+26BD
+Baseball
+U+26BE
+Snowman Without Snow
+U+26C4
+Sun Behind Cloud
+U+26C5
+Thunder Cloud and Rain
+U+26C8
+Ophiuchus
+U+26CE
+Pick
+U+26CF
+Helmet with White Cross
+U+26D1
+Chains
+U+26D3
+No Entry
+U+26D4
+Shinto Shrine
+U+26E9
+Church
+U+26EA
+Mountain
+U+26F0
+Umbrella On Ground
+U+26F1
+Fountain
+U+26F2
+Flag In Hole
+U+26F3
+Ferry
+U+26F4
+Sailboat
+U+26F5
+Skier
+U+26F7
+Ice Skate
+U+26F8
+Person with Ball
+U+26F9
+Tent
+U+26FA
+Fuel Pump
+U+26FD

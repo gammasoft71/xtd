@@ -1,0 +1,404 @@
+White Heart
+U+1F90D
+BRown Heart
+U+1F90E
+Pinching Hand
+U+1F90F
+Zipper-Mouth Face
+U+1F910
+Money-Mouth Face
+U+1F911
+Face With Thermometer
+U+1F912
+Nerd Face
+U+1F913
+Thinking Face
+U+1F914
+Face With Head-Bandage
+U+1F915
+Robot Face
+U+1F916
+Hugging Face
+U+1F917
+Sign of the Horns
+U+1F918
+Call Me Hand
+U+1F919
+Raised Back of Hand
+U+1F91A
+Left-Facing Fist
+U+1F91B
+Right-Facing Fist
+U+1F91C
+Handshake
+U+1F91D
+Hand with Index and Middle Fingers Crossed
+U+1F91E
+I Love You Hand Sign
+U+1F91F
+Face with Cowboy Hat
+U+1F920
+Clown Face
+U+1F921
+Nauseated Face
+U+1F922
+Rolling On The Floor Laughing
+U+1F923
+Drooling Face
+U+1F924
+Lying Face
+U+1F925
+Face Palm
+U+1F926
+Sneezing Face
+U+1F927
+Face With One Eyebrow Raised
+U+1F928
+Grinning Face With Star Eyes
+U+1F929
+Grinning Face With One Large And One Small Eye
+U+1F92A
+Face With Finger Covering Closed Lips
+U+1F92B
+Serious Face With Symbols Covering Mouth
+U+1F92C
+Smiling Face With Smiling Eyes And Hand Covering Mouth
+U+1F92D
+Face With Open Mouth Vomiting
+U+1F92E
+Shocked Face With Exploding Head
+U+1F92F
+Pregnant Woman
+U+1F930
+Breast-Feeding
+U+1F931
+Palms Up Together
+U+1F932
+Selfie
+U+1F933
+Prince
+U+1F934
+Man In Tuxedo
+U+1F935
+Mother Christmas
+U+1F936
+Shrug
+U+1F937
+Person Doing Cartwheel
+U+1F938
+Juggling
+U+1F939
+Fencer
+U+1F93A
+Wrestlers
+U+1F93C
+Water Polo
+U+1F93D
+Handball
+U+1F93E
+Wilted Flower
+U+1F940
+Drum with Drumsticks
+U+1F941
+Clinking Glasses
+U+1F942
+Tumbler Glass
+U+1F943
+Spoon
+U+1F944
+Goal Net
+U+1F945
+First Place Medal
+U+1F947
+Second Place Medal
+U+1F948
+Third Place Medal
+U+1F949
+Boxing Glove
+U+1F94A
+Martial Arts Uniform
+U+1F94B
+Curling Stone
+U+1F94C
+Lacrosse Stick and Ball
+U+1F94D
+Softball
+U+1F94E
+Flying Disc
+U+1F94F
+Croissant
+U+1F950
+Avocado
+U+1F951
+Cucumber
+U+1F952
+Bacon
+U+1F953
+Potato
+U+1F954
+Carrot
+U+1F955
+Baguette Bread
+U+1F956
+Green Salad
+U+1F957
+Shallow Pan of Food
+U+1F958
+Stuffed Flatbread
+U+1F959
+Egg
+U+1F95A
+Glass of Milk
+U+1F95B
+Peanuts
+U+1F95C
+Kiwifruit
+U+1F95D
+Pancakes
+U+1F95E
+Dumpling
+U+1F95F
+Fortune Cookie
+U+1F960
+Takeout Box
+U+1F961
+Chopsticks
+U+1F962
+Bowl With Spoon
+U+1F963
+Cup With Straw
+U+1F964
+Coconut
+U+1F965
+Broccoli
+U+1F966
+Pie
+U+1F967
+Pretzel
+U+1F968
+Cut Of Meat
+U+1F969
+Sandwich
+U+1F96A
+Canned Food
+U+1F96B
+Leafy Green
+U+1F96C
+Mango
+U+1F96D
+Moon Cake
+U+1F96E
+Bagel
+U+1F96F
+Smiling Face with Smiling Eyes and Three Hearts
+U+1F970
+Face with Party Horn and Party Hat
+U+1F973
+Face with Uneven Eyes and Wavy Mouth
+U+1F974
+Overheated Face
+U+1F975
+Freezing Face
+U+1F976
+Face with Pleading Eyes
+U+1F97A
+Lab Coat
+U+1F97C
+Goggles
+U+1F97D
+Hiking Boot
+U+1F97E
+Flat Shoe
+U+1F97F
+Crab
+U+1F980
+Lion Face
+U+1F981
+Scorpion
+U+1F982
+Turkey
+U+1F983
+Unicorn Face
+U+1F984
+Eagle
+U+1F985
+Duck
+U+1F986
+Bat
+U+1F987
+Shark
+U+1F988
+Owl
+U+1F989
+Fox Face
+U+1F98A
+Butterfly
+U+1F98B
+Deer
+U+1F98C
+Gorilla
+U+1F98D
+Lizard
+U+1F98E
+Rhinoceros
+U+1F98F
+Shrimp
+U+1F990
+Squid
+U+1F991
+Giraffe Face
+U+1F992
+Zebra Face
+U+1F993
+Hedgehog
+U+1F994
+Sauropod
+U+1F995
+T-Rex
+U+1F996
+Cricket
+U+1F997
+Kangaroo
+U+1F998
+Llama
+U+1F999
+Peacock
+U+1F99A
+Hippopotamus
+U+1F99B
+Parrot
+U+1F99C
+Raccoon
+U+1F99D
+Lobster
+U+1F99E
+Mosquito
+U+1F99F
+Microbe
+U+1F9A0
+Badger
+U+1F9A1
+Swan
+U+1F9A2
+Emoji CompOnent Red Hair
+U+1F9B0
+Emoji CompOnent Curly Hair
+U+1F9B1
+Emoji CompOnent Bald
+U+1F9B2
+Emoji CompOnent White Hair
+U+1F9B3
+Bone
+U+1F9B4
+Leg
+U+1F9B5
+Foot
+U+1F9B6
+Tooth
+U+1F9B7
+Superhero
+U+1F9B8
+Supervillain
+U+1F9B9
+Cheese Wedge
+U+1F9C0
+Cupcake
+U+1F9C1
+Salt Shaker
+U+1F9C2
+Face With Monocle
+U+1F9D0
+Adult
+U+1F9D1
+Child
+U+1F9D2
+Older Adult
+U+1F9D3
+Bearded Person
+U+1F9D4
+Person With Headscarf
+U+1F9D5
+Person In Steamy Room
+U+1F9D6
+Person Climbing
+U+1F9D7
+Person In Lotus Position
+U+1F9D8
+Mage
+U+1F9D9
+Fairy
+U+1F9DA
+Vampire
+U+1F9DB
+Merperson
+U+1F9DC
+Elf
+U+1F9DD
+Genie
+U+1F9DE
+Zombie
+U+1F9DF
+Brain
+U+1F9E0
+Orange Heart
+U+1F9E1
+Billed Cap
+U+1F9E2
+Scarf
+U+1F9E3
+Gloves
+U+1F9E4
+Coat
+U+1F9E5
+Socks
+U+1F9E6
+Red Gift Envelope
+U+1F9E7
+Firecracker
+U+1F9E8
+Jigsaw Puzzle Piece
+U+1F9E9
+Test Tube
+U+1F9EA
+Petri Dish
+U+1F9EB
+Dna Double Helix
+U+1F9EC
+Compass
+U+1F9ED
+Abacus
+U+1F9EE
+Fire Extinguisher
+U+1F9EF
+Toolbox
+U+1F9F0
+Brick
+U+1F9F1
+Magnet
+U+1F9F2
+Luggage
+U+1F9F3
+Lotion Bottle
+U+1F9F4
+Spool of Thread
+U+1F9F5
+Ball of Yarn
+U+1F9F6
+Safety Pin
+U+1F9F7
+Teddy Bear
+U+1F9F8
+Broom
+U+1F9F9
+Basket
+U+1F9FA
+Roll of Paper
+U+1F9FB
+Bar of Soap
+U+1F9FC
+Sponge
+U+1F9FD
+Receipt
+U+1F9FE
+Nazar Amulet
+U+1F9FF
