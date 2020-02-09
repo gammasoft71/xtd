@@ -2094,6 +2094,33 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of 0x0001F6FA. This field is constant.
       static const xtd::forms::emoticon auto_rrickshaw;
       
+      /// 1F780-1F7FF Geometric Shapes Extended
+      
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E0. This field is constant.
+      static const xtd::forms::emoticon large_orange_circle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E1. This field is constant.
+      static const xtd::forms::emoticon large_yellow_circle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E2. This field is constant.
+      static const xtd::forms::emoticon large_green_circle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E3. This field is constant.
+      static const xtd::forms::emoticon large_purple_circle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E4. This field is constant.
+      static const xtd::forms::emoticon large_brown_circle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E5. This field is constant.
+      static const xtd::forms::emoticon large_red_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E6. This field is constant.
+      static const xtd::forms::emoticon large_blue_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E7. This field is constant.
+      static const xtd::forms::emoticon large_orange_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E8. This field is constant.
+      static const xtd::forms::emoticon large_yellow_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E9. This field is constant.
+      static const xtd::forms::emoticon large_green_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7E1. This field is constant.
+      static const xtd::forms::emoticon large_purple_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F7EB. This field is constant.
+      static const xtd::forms::emoticon large_brown_square;
+      
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }

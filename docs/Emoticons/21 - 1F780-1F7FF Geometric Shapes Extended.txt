@@ -1,0 +1,24 @@
+Large Orange Circle
+U+1F7E0
+Large Yellow Circle
+U+1F7E1
+Large Green Circle
+U+1F7E2
+Large Purple Circle
+U+1F7E3
+Large Brown Circle
+U+1F7E4
+Large Red Square
+U+1F7E5
+Large BLue Square
+U+1F7E6
+Large Orange Square
+U+1F7E7
+Large Yellow Square
+U+1F7E8
+Large Green Square
+U+1F7E9
+Large Purple Square
+U+1F7E1
+Large Brown Square
+U+1F7EB
