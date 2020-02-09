@@ -48,6 +48,45 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of {0x000021AA, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon rightwards_arrow_with_hook;
 
+      /// 2300-23FF Miscellaneous Technical
+      
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0000231A. This field is constant.
+      static const xtd::forms::emoticon watch;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0000231B. This field is constant.
+      static const xtd::forms::emoticon hourglass;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x00002328. This field is constant.
+      static const xtd::forms::emoticon keyboard;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000023CF, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon eject_symbol;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023E9. This field is constant.
+      static const xtd::forms::emoticon black_right_pointing_double_triangle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023EA. This field is constant.
+      static const xtd::forms::emoticon black_left_pointing_double_triangle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023EB. This field is constant.
+      static const xtd::forms::emoticon black_up_pointing_double_triangle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023EC. This field is constant.
+      static const xtd::forms::emoticon black_down_pointing_double_triangle;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023ED. This field is constant.
+      static const xtd::forms::emoticon black_right_pointing_double_triangle_with_vertical_bar;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023EE. This field is constant.
+      static const xtd::forms::emoticon black_left_pointing_double_triangle_with_vertical_bar;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023EF. This field is constant.
+      static const xtd::forms::emoticon black_right_pointing_triangle_with_double_vertical_bar;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023F0. This field is constant.
+      static const xtd::forms::emoticon alarm_clock;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023F1. This field is constant.
+      static const xtd::forms::emoticon stopwatch;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023F2. This field is constant.
+      static const xtd::forms::emoticon timer_clock;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023F3. This field is constant.
+      static const xtd::forms::emoticon hourglass_with_flowing_sand;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023F8. This field is constant.
+      static const xtd::forms::emoticon double_vertical_bar;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023F9. This field is constant.
+      static const xtd::forms::emoticon black_square_for_stop;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000023FA. This field is constant.
+      static const xtd::forms::emoticon black_circle_for_record;
+
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }

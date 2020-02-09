@@ -5,7 +5,7 @@ U+231B
 Keyboard
 U+2328
 Eject Symbol
-U+23CF
+U+23CF U+FE0F
 Black Right-Pointing Double Triangle
 U+23E9
 Black Left-Pointing Double Triangle
