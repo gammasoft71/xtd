@@ -1297,6 +1297,25 @@ const xtd::forms::emoticon xtd::forms::emoticons::sponge = {"sponge", 0x0001F9FD
 const xtd::forms::emoticon xtd::forms::emoticons::receipt = {"receipt", 0x0001F9FE};
 const xtd::forms::emoticon xtd::forms::emoticons::nazar_amulet = {"nazar amulet", 0x0001F9FF};
 
+/// 1FA70-1F7FF Symbols and Pictographs Extended-A
+
+const xtd::forms::emoticon xtd::forms::emoticons::ballet_shoes = {"ballet shoes", 0x0001FA70};
+const xtd::forms::emoticon xtd::forms::emoticons::one_piece_swinsuit = {"one-piece swinsuit", 0x0001FA71};
+const xtd::forms::emoticon xtd::forms::emoticons::briefs = {"briefs", 0x0001FA72};
+const xtd::forms::emoticon xtd::forms::emoticons::shorts = {"shorts", 0x0001FA73};
+const xtd::forms::emoticon xtd::forms::emoticons::drop_of_blood = {"drop of blood", 0x0001FA78};
+const xtd::forms::emoticon xtd::forms::emoticons::adhesive_bandage = {"adhesive bandage", 0x0001FA79};
+const xtd::forms::emoticon xtd::forms::emoticons::stethoscope = {"stethoscope", 0x0001FA7A};
+const xtd::forms::emoticon xtd::forms::emoticons::yo_yo = {"yo-yo", 0x0001FA80};
+const xtd::forms::emoticon xtd::forms::emoticons::kite = {"kite", 0x0001FA81};
+const xtd::forms::emoticon xtd::forms::emoticons::parachute = {"parachute", 0x0001FA82};
+const xtd::forms::emoticon xtd::forms::emoticons::ringed_planet = {"ringed planet", 0x0001FA90};
+const xtd::forms::emoticon xtd::forms::emoticons::chair = {"chair", 0x0001FA91};
+const xtd::forms::emoticon xtd::forms::emoticons::razor = {"razor", 0x0001FA92};
+const xtd::forms::emoticon xtd::forms::emoticons::axe = {"axe", 0x0001FA93};
+const xtd::forms::emoticon xtd::forms::emoticons::diya_lamp = {"diya lamp", 0x0001FA94};
+const xtd::forms::emoticon xtd::forms::emoticons::banjo = {"banjo", 0x0001FA95};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -1321,6 +1340,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     rocket, helicopter, steam_locomotive, railway_car, high_speed_train, high_speed_train_with_bullet_nose, train, metro, light_rail, station, tram, tram_car, bus, oncoming_bus, trolleybus, bus_stop, minibus, ambulance, fire_engine, police_car, oncoming_police_car, taxi, oncoming_taxi, automobile, oncoming_automobile, recreational_vehicle, delivery_truck, articulated_lorry, tractor, monorail, mountain_railway, suspension_railway, mountain_cableway, aerial_tramway, ship, rowboat, speedboat, horizontal_traffic_light, vertical_traffic_light, construction_sign, police_cars_revolving_light, triangular_flag_on_post, door, no_entry_sign, smoking_symbol, no_smoking_symbol, put_litter_in_its_place_symbol, do_not_litter_symbol, potable_water_symbol, non_potable_water_symbol, bicycle, no_bicycles, bicyclist, mountain_bicyclist, pedestrian, no_pedestrians, children_crossing, mens_symbol, womens_symbol, restroom, baby_symbol, toilet, water_closet, shower, bath, bathtub, passport_control, customs, baggage_claim, left_luggage, couch_and_lamp, sleeping_accommodation, shopping_bags, bellhop_bell, bed, place_of_worship, octagonal_sign, shopping_trolley, hammer_and_wrench, shield, oil_drum, motorway, railway_track, motor_boat, small_airplane, airplane_departure, airplane_arriving, satellite, passenger_ship, scooter, motor_scooter, canoe, sled, flying_saucer, skateboard, auto_rrickshaw,
     large_orange_circle, large_yellow_circle, large_green_circle, large_purple_circle, large_brown_circle, large_red_square, large_blue_square, large_orange_square, large_yellow_square, large_green_square, large_purple_square, large_brown_square,
     white_heart, brown_heart, pinching_hand, zipper_mouth_face, money_mouth_face, face_with_thermometer, nerd_face, thinking_face, face_with_head_bandage, robot_face, hugging_face, sign_of_the_horns, call_me_hand, raised_back_of_hand, left_facing_fist, right_facing_fist, handshake, hand_with_index_and_middle_fingers_crossed, i_love_you_hand_sign, face_with_cowboy_hat, clown_face, nauseated_face, rolling_on_the_floor_laughing, drooling_face, lying_face, face_palm, sneezing_face, face_with_one_eyebrow_raised, grinning_face_with_star_eyes, grinning_face_with_one_large_and_one_small_eye, face_with_finger_covering_closed_lips, serious_face_with_symbols_covering_mouth, smiling_face_with_smiling_eyes_and_hand_covering_mouth, face_with_open_mouth_vomiting, shocked_face_with_exploding_head, pregnant_woman, breast_feeding, palms_up_together, selfie, prince, man_in_tuxedo, mother_christmas, shrug, person_doing_cartwheel, juggling, fencer, wrestlers, water_polo, handball, wilted_flower, drum_with_drumsticks, clinking_glasses, tumbler_glass, spoon, goal_net, first_place_medal, second_place_medal, third_place_medal, boxing_glove, martial_arts_uniform, curling_stone, lacrosse_stick_and_ball, softball, flying_disc, croissant, avocado, cucumber, bacon, potato, carrot, baguette_bread, green_salad, shallow_pan_of_food, stuffed_flatbread, egg, glass_of_milk, peanuts, kiwifruit, pancakes, dumpling, fortune_cookie, takeout_box, chopsticks, bowl_with_spoon, cup_with_straw, coconut, broccoli, pie, pretzel, cut_of_meat, sandwich, canned_food, leafy_green, mango, moon_cake, bagel, smiling_face_with_smiling_eyes_and_three_hearts, face_with_party_horn_and_party_hat, face_with_uneven_eyes_and_wavy_mouth, overheated_face, freezing_face, face_with_pleading_eyes, lab_coat, goggles, hiking_boot, flat_shoe, crab, lion_face, scorpion, turkey, unicorn_face, eagle, duck, bat, shark, owl, fox_face, butterfly, deer, gorilla, lizard, rhinoceros, shrimp, squid, giraffe_face, zebra_face, hedgehog, sauropod, t_rex, cricket, kangaroo, llama, peacock, hippopotamus, parrot, raccoon, lobster, mosquito, microbe, badger, swan, emoji_component_red_hair, emoji_component_curly_hair, emoji_component_bald, emoji_component_white_hair, bone, leg, foot, tooth, superhero, supervillain, cheese_wedge, cupcake, salt_shaker, face_with_monocle, adult, child, older_adult, bearded_person, person_with_headscarf, person_in_steamy_room, person_climbing, person_in_lotus_position, mage, fairy, vampire, merperson, elf, genie, zombie, brain, orange_heart, billed_cap, scarf, gloves, coat, socks, red_gift_envelope, firecracker, jigsaw_puzzle_piece, test_tube, petri_dish, dna_double_helix, compass, abacus, fire_extinguisher, toolbox, brick, magnet, luggage, lotion_bottle, spool_of_thread, ball_of_yarn, safety_pin, teddy_bear, broom, basket, roll_of_paper, bar_of_soap, sponge, receipt, nazar_amulet,
+    ballet_shoes, one_piece_swinsuit, briefs, shorts, drop_of_blood, adhesive_bandage, stethoscope, yo_yo, kite, parachute, ringed_planet, chair, razor, axe, diya_lamp, banjo,
   };
   return emoticons;
 }
