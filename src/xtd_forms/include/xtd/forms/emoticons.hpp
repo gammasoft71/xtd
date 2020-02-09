@@ -91,6 +91,25 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of {0x000024C2, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon circled_latin_capital_letter_m;
 
+      /// 25A0 25FF Geometric Shapes
+      
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000025AA, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon black_small_square;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000025AB, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon white_small_square;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000025B6, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon black_right_pointing_triangle;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000025C0, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon black_left_pointing_triangle;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000025FB, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon white_medium_square;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x000025FC, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon black_medium_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000025FD. This field is constant.
+      static const xtd::forms::emoticon white_medium_small_square;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x000025FE. This field is constant.
+      static const xtd::forms::emoticon black_medium_small_square;
+
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
