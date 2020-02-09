@@ -13,10 +13,16 @@ const xtd::forms::emoticon xtd::forms::emoticons::zero_width_joiner = {"zero wid
 const xtd::forms::emoticon xtd::forms::emoticons::double_exclamation_mark = {"double exclamation mark", {0x0000203C, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::exclamation_question_mark = {"exclamation question mark", {0x00002049, 0x0000FE0F}};
 
+/// 2100-214F Letterlike Symbols
+
+const xtd::forms::emoticon xtd::forms::emoticons::trade_mark_sign = {"trade mark sign", {0x00002122, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::information_source = {"information source", {0x00002139, 0x0000FE0F}};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
     double_exclamation_mark, exclamation_question_mark,
+    trade_mark_sign, information_source,
   };
   return emoticons;
 }

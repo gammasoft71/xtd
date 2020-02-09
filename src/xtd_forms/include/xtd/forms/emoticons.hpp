@@ -23,6 +23,13 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of {0x00002049, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon exclamation_question_mark;
 
+      /// 2100-214F Letterlike Symbols
+      
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00002122, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon trade_mark_sign;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00002139, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon information_source;
+
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
