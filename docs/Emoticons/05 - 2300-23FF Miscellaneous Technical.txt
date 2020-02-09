@@ -2,7 +2,7 @@ Watch
 U+231A
 Hourglass
 U+231B
-Keyboard
+Keyboard U+FE0F
 U+2328
 Eject Symbol
 U+23CF U+FE0F
