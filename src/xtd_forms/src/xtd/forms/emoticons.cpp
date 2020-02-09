@@ -54,6 +54,17 @@ const xtd::forms::emoticon xtd::forms::emoticons::black_circle_for_record = {"bl
 
 const xtd::forms::emoticon xtd::forms::emoticons::circled_latin_capital_letter_m = {"circled latin capital letter m", {0x000024C2, 0x0000FE0F}};
 
+/// 25A0 25FF Geometric Shapes
+
+const xtd::forms::emoticon xtd::forms::emoticons::black_small_square = {"black small square", {0x000025AA, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::white_small_square = {"white small square", {0x000025AB, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::black_right_pointing_triangle = {"black right-pointing triangle", {0x000025B6, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::black_left_pointing_triangle = {"black left-pointing triangle", {0x000025C0, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::white_medium_square = {"white medium square", {0x000025FB, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::black_medium_square = {"black medium square", {0x000025FC, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::white_medium_small_square = {"white medium small square", 0x000025FD};
+const xtd::forms::emoticon xtd::forms::emoticons::black_medium_small_square = {"black medium small square", 0x000025FE};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -62,6 +73,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     left_right_arrow, up_down_arrow, north_west_arrow, north_east_arrow, south_east_arrow, south_west_arrow, leftwards_arrow_with_hook, rightwards_arrow_with_hook,
     watch, hourglass, keyboard, eject_symbol, black_right_pointing_double_triangle, black_left_pointing_double_triangle, black_up_pointing_double_triangle, black_down_pointing_double_triangle, black_right_pointing_double_triangle_with_vertical_bar, black_left_pointing_double_triangle_with_vertical_bar, black_right_pointing_triangle_with_double_vertical_bar, alarm_clock, stopwatch, timer_clock, hourglass_with_flowing_sand, double_vertical_bar, black_square_for_stop, black_circle_for_record,
     circled_latin_capital_letter_m,
+    black_small_square, white_small_square, black_right_pointing_triangle, black_left_pointing_triangle, white_medium_square, black_medium_square, white_medium_small_square, black_medium_small_square,
   };
   return emoticons;
 }
