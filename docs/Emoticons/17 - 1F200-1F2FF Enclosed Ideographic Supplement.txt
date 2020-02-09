@@ -1,7 +1,7 @@
 Squared Katakana Koko
 U+1F201
 Squared Katakana Sa
-U+1F202
+U+1F202 U+FE0F
 Squared Cjk Unified Ideograph-7121
 U+1F21A
 Squared Cjk Unified Ideograph-6307
@@ -17,7 +17,7 @@ U+1F235
 Squared Cjk Unified Ideograph-6709
 U+1F236
 Squared Cjk Unified Ideograph-6708
-U+1F237
+U+1F237 U+FE0F
 Squared Cjk Unified Ideograph-7533
 U+1F238
 Squared Cjk Unified Ideograph-5272

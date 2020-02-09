@@ -426,6 +426,39 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of 0x0001F19A. This field is constant.
       static const xtd::forms::emoticon squared_vs;
       
+      /// 1F200-1F2FF Enclosed Ideographic Supplement
+      
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F201. This field is constant.
+      static const xtd::forms::emoticon squared_katakana_koko;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x0001F202, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon squared_katakana_sa;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F21A. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_7121;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F22F. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_6307;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F232. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_7981;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F233. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_7a7a;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F234. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_5408;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F235. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_6e80;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F236. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_6709;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x0001F237, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_6708;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F238. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_7533;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F239. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_5272;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F23A. This field is constant.
+      static const xtd::forms::emoticon squared_cjk_unified_ideograph_55b6;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F250. This field is constant.
+      static const xtd::forms::emoticon circled_ideograph_advantage;
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F251. This field is constant.
+      static const xtd::forms::emoticon circled_ideograph_accept;
+      
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
