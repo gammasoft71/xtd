@@ -383,6 +383,11 @@ namespace xtd {
       /// @brief Gets a system-defined emoticon that has a string value of {0x00003299, 0x0000FE0F}. This field is constant.
       static const xtd::forms::emoticon circled_ideograph_secret;
 
+      /// 1F000-1F02F Mahjong Tiles
+      
+      /// @brief Gets a system-defined emoticon that has a string value of 0x0001F004. This field is constant.
+      static const xtd::forms::emoticon mahjong_tile_red_dragon;
+      
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }

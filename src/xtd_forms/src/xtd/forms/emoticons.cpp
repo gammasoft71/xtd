@@ -211,8 +211,13 @@ const xtd::forms::emoticon xtd::forms::emoticons::part_alternation_mark = {"part
 const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_congratulation = {"circled ideograph congratulation", {0x00003297, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_secret = {"circled ideograph secret", {0x00003299, 0x0000FE0F}};
 
+/// 1F000-1F02F Mahjong Tiles
+
+const xtd::forms::emoticon xtd::forms::emoticons::mahjong_tile_red_dragon = {"mahjong tile red dragon", 0x0001F004};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
+    /*
     copyright_sign, registered_sign,
     double_exclamation_mark, exclamation_question_mark,
     trade_mark_sign, information_source,
@@ -226,6 +231,8 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     leftwards_black_arrow, upwards_black_arrow, downwards_black_arrow, black_large_square, white_large_square, white_medium_star, heavy_large_circle,
     wavy_dash, part_alternation_mark,
     circled_ideograph_congratulation, circled_ideograph_secret,
+     */
+    mahjong_tile_red_dragon,
   };
   return emoticons;
 }
