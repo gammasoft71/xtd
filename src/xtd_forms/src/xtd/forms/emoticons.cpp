@@ -150,6 +150,42 @@ const xtd::forms::emoticon xtd::forms::emoticons::person_with_ball = {"person wi
 const xtd::forms::emoticon xtd::forms::emoticons::tent = {"tent", 0x000026FA};
 const xtd::forms::emoticon xtd::forms::emoticons::fuel_pump = {"fuel pump", 0x000026FD};
 
+/// 2700-27BF Dingbats
+
+const xtd::forms::emoticon xtd::forms::emoticons::black_scissors = {"black scissors", {0x00002702, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::white_heavy_check_mark = {"white heavy check mark", 0x00002705};
+const xtd::forms::emoticon xtd::forms::emoticons::airplane = {"airplane", {0x00002708, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::envelope = {"envelope", {0x00002709, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::raised_fist = {"raised fist", 0x0000270A};
+const xtd::forms::emoticon xtd::forms::emoticons::raised_hand = {"raised hand", 0x0000270B};
+const xtd::forms::emoticon xtd::forms::emoticons::victory_hand = {"victory hand", {0x0000270C, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::writing_hand = {"writing hand", {0x0000270D, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::pencil = {"pencil", {0x0000270F, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::black_nib = {"black nib", {0x00002712, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::heavy_check_mark = {"heavy check mark", {0x00002714, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::heavy_multiplication_x = {"heavy multiplication x", {0x00002716, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::latin_cross = {"latin cross", {0x0000271D, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::star_of_david = {"star of david", {0x00002721, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::sparkles = {"sparkles", 0x00002728};
+const xtd::forms::emoticon xtd::forms::emoticons::eight_spoked_asterisk = {"eight spoked asterisk", {0x00002733, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::eight_pointed_black_star = {"eight pointed black star", {0x00002734, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::snowflake = {"snowflake", {0x00002744, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::sparkle = {"sparkle", {0x00002747, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::cross_mark = {"cross mark", 0x0000274C};
+const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_cross_mark = {"negative squared cross mark", 0x0000274E};
+const xtd::forms::emoticon xtd::forms::emoticons::black_question_mark_ornament = {"black question mark ornament", 0x00002753};
+const xtd::forms::emoticon xtd::forms::emoticons::white_question_mark_ornament = {"white question mark ornament", {0x00002754, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::white_exclamation_mark_ornament = {"white exclamation mark ornament", {0x00002755, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::heavy_exclamation_mark_symbol = {"heavy exclamation mark symbol", 0x00002757};
+const xtd::forms::emoticon xtd::forms::emoticons::heavy_heart_exclamation_mark_ornament = {"heavy heart exclamation mark ornament", {0x00002763, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::black_heart_symbol = {"black heart symbol", {0x00002764, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::heavy_plus_sign = {"heavy plus sign", 0x00002795};
+const xtd::forms::emoticon xtd::forms::emoticons::heavy_minus_sign = {"heavy minus sign", 0x00002796};
+const xtd::forms::emoticon xtd::forms::emoticons::heavy_division_sign = {"heavy division sign", 0x00002797};
+const xtd::forms::emoticon xtd::forms::emoticons::black_rightwards_arrow = {"black rightwards arrow", {0x000027A1, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::curly_loop = {"curly loop", 0x000027B0};
+const xtd::forms::emoticon xtd::forms::emoticons::double_curly_loop = {"double curly loop", 0x000027BF};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -160,6 +196,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     circled_latin_capital_letter_m,
     black_small_square, white_small_square, black_right_pointing_triangle, black_left_pointing_triangle, white_medium_square, black_medium_square, white_medium_small_square, black_medium_small_square,
     black_sun_with_rays, cloud, umbrella, snowman, comet, black_telephone, ballot_box_with_check, umbrella_with_rain_drops, hot_beverage, shamrock, white_up_pointing_index, skull_and_crossbones, radioactive_sign, biohazard_sign, orthodox_cross, star_and_crescent, peace_symbol, yin_yang, wheel_of_dharma, white_frowning_face, white_smiling_face, female_sign, male_sign, aries, taurus, gemini, cancer, leo, virgo, libra, scorpius, sagittarius, capricorn, aquarius, pisces, black_chess_pawn, black_spade_suit, black_club_suit, black_heart_suit, black_diamond_suit, hot_springs, black_universal_recycling_symbol, permanent_paper_sign, wheelchair_symbol, hammer_and_pick, anchor, crossed_swords, staff_of_aesculapius, scales, alembic, gear, atom_symbol, fleur_de_lis, warning_sign, high_voltage_sign, medium_white_circle, medium_black_circle, coffin, funeral_urn, soccer_ball, baseball, snowman_without_snow, sun_behind_cloud, thunder_cloud_and_rain, ophiuchus, pick, helmet_with_white_cross, chains, no_entry, shinto_shrine, church, mountain, umbrella_on_ground, fountain, flag_in_hole, ferry, sailboat, skier, ice_skate, person_with_ball, tent, fuel_pump,
+    black_scissors, white_heavy_check_mark, airplane, envelope, raised_fist, raised_hand, victory_hand, writing_hand, pencil, black_nib, heavy_check_mark, heavy_multiplication_x, latin_cross, star_of_david, sparkles, eight_spoked_asterisk, eight_pointed_black_star, snowflake, sparkle, cross_mark, negative_squared_cross_mark, black_question_mark_ornament, white_question_mark_ornament, white_exclamation_mark_ornament, heavy_exclamation_mark_symbol, heavy_heart_exclamation_mark_ornament, black_heart_symbol, heavy_plus_sign, heavy_minus_sign, heavy_division_sign, black_rightwards_arrow, curly_loop, double_curly_loop,
   };
   return emoticons;
 }
