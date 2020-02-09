@@ -369,7 +369,14 @@ namespace xtd {
       static const xtd::forms::emoticon white_medium_star;
       /// @brief Gets a system-defined emoticon that has a string value of 0x00002B55. This field is constant.
       static const xtd::forms::emoticon heavy_large_circle;
+
+      /// 3000-303F CJK Symbols and Punctuation
       
+      /// @brief Gets a system-defined emoticon that has a string value of {0x00003030, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon wavy_dash;
+      /// @brief Gets a system-defined emoticon that has a string value of {0x0000303D, 0x0000FE0F}. This field is constant.
+      static const xtd::forms::emoticon part_alternation_mark;
+
       static const std::vector<xtd::forms::emoticon>& get_emoticons();
     };
   }
