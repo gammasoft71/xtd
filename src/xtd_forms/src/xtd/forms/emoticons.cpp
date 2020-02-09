@@ -237,6 +237,24 @@ const xtd::forms::emoticon xtd::forms::emoticons::squared_sos = {"squared sos", 
 const xtd::forms::emoticon xtd::forms::emoticons::squared_up_with_exclamation_mark = {"squared up with exclamation mark", 0x0001F199};
 const xtd::forms::emoticon xtd::forms::emoticons::squared_vs = {"squared vs", 0x0001F19A};
 
+/// 1F200-1F2FF Enclosed Ideographic Supplement
+
+const xtd::forms::emoticon xtd::forms::emoticons::squared_katakana_koko = {"squared katakana koko", 0x0001F201};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_katakana_sa = {"squared katakana sa", {0x0001F202, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_7121 = {"squared cjk unified ideograph-7121", 0x0001F21A};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_6307 = {"squared cjk unified ideograph-6307", 0x0001F22F};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_7981 = {"squared cjk unified ideograph-7981", 0x0001F232};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_7a7a = {"squared cjk unified ideograph-7a7a", 0x0001F233};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_5408 = {"squared cjk unified ideograph-5408", 0x0001F234};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_6e80 = {"squared cjk unified ideograph-6e80", 0x0001F235};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_6709 = {"squared cjk unified ideograph-6709", 0x0001F236};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_6708 = {"squared cjk unified ideograph-6708", {0x0001F237, 0x0000FE0F}};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_7533 = {"squared cjk unified ideograph-7533", 0x0001F238};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_5272 = {"squared cjk unified ideograph-5272", 0x0001F239};
+const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_55b6 = {"squared cjk unified ideograph-55b6", 0x0001F23A};
+const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_advantage = {"circled ideograph advantage", 0x0001F250};
+const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_accept = {"circled ideograph accept", 0x0001F251};
+
 const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
   static std::vector<xtd::forms::emoticon> emoticons {
     copyright_sign, registered_sign,
@@ -255,6 +273,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     mahjong_tile_red_dragon,
     playing_card_black_joker,
     negative_squared_latin_capital_letter_a, negative_squared_latin_capital_letter_b, negative_squared_latin_capital_letter_o, negative_squared_latin_capital_letter_p, negative_squared_ab, squared_cl, squared_cool, squared_free, squared_id, squared_new, squared_ng, squared_ok, squared_sos, squared_up_with_exclamation_mark, squared_vs,
+    squared_katakana_koko, squared_katakana_sa, squared_cjk_unified_ideograph_7121, squared_cjk_unified_ideograph_6307, squared_cjk_unified_ideograph_7981, squared_cjk_unified_ideograph_7a7a, squared_cjk_unified_ideograph_5408, squared_cjk_unified_ideograph_6e80, squared_cjk_unified_ideograph_6709, squared_cjk_unified_ideograph_6708, squared_cjk_unified_ideograph_7533, squared_cjk_unified_ideograph_5272, squared_cjk_unified_ideograph_55b6, circled_ideograph_advantage, circled_ideograph_accept,
   };
   return emoticons;
 }
