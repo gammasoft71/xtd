@@ -14,7 +14,7 @@ namespace examples {
 
       label.auto_size(true);
       label.font(drawing::font(label.font(), 48));
-      label.location({5, 100});
+      label.location({5, 90});
       label.text(emoticons::waving_hand_sign + ", " + emoticons::earth_globe_americas + emoticons::heavy_exclamation_mark_symbol);
     }
     
