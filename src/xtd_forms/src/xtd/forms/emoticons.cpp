@@ -7,18 +7,18 @@ using namespace xtd::forms;
 const xtd::forms::emoticon xtd::forms::emoticons::copyright_sign = {"copyright sign", {0x000000A9, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::registered_sign = {"registered sign", {0x000000AE, 0x0000FE0F}};
 
-/// 2000-206F - General Punctuation
+// 2000-206F - General Punctuation
 
 const xtd::forms::emoticon xtd::forms::emoticons::zero_width_joiner = {"zero width joiner", 0x0000200D};
 const xtd::forms::emoticon xtd::forms::emoticons::double_exclamation_mark = {"double exclamation mark", {0x0000203C, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::exclamation_question_mark = {"exclamation question mark", {0x00002049, 0x0000FE0F}};
 
-/// 2100-214F Letterlike Symbols
+// 2100-214F Letterlike Symbols
 
 const xtd::forms::emoticon xtd::forms::emoticons::trade_mark_sign = {"trade mark sign", {0x00002122, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::information_source = {"information source", {0x00002139, 0x0000FE0F}};
 
-/// 2190-21FF Arrows
+// 2190-21FF Arrows
 
 const xtd::forms::emoticon xtd::forms::emoticons::left_right_arrow = {"left right arrow", {0x00002194, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::up_down_arrow = {"up down arrow", {0x00002195, 0x0000FE0F}};
@@ -29,7 +29,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::south_west_arrow = {"south wes
 const xtd::forms::emoticon xtd::forms::emoticons::leftwards_arrow_with_hook = {"leftwards arrow with hook", {0x000021A9, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::rightwards_arrow_with_hook = {"rightwards arrow with hook", {0x000021AA, 0x0000FE0F}};
 
-/// 2300-23FF Miscellaneous Technical
+// 2300-23FF Miscellaneous Technical
 
 const xtd::forms::emoticon xtd::forms::emoticons::watch = {"watch", 0x0000231A};
 const xtd::forms::emoticon xtd::forms::emoticons::hourglass = {"hourglass", 0x0000231B};
@@ -50,11 +50,11 @@ const xtd::forms::emoticon xtd::forms::emoticons::double_vertical_bar = {"double
 const xtd::forms::emoticon xtd::forms::emoticons::black_square_for_stop = {"black square for stop", 0x000023F9};
 const xtd::forms::emoticon xtd::forms::emoticons::black_circle_for_record = {"black circle for record", 0x000023FA};
 
-/// 2460-24FF Enclosed Alphanumerics
+// 2460-24FF Enclosed Alphanumerics
 
 const xtd::forms::emoticon xtd::forms::emoticons::circled_latin_capital_letter_m = {"circled latin capital letter m", {0x000024C2, 0x0000FE0F}};
 
-/// 25A0 25FF Geometric Shapes
+// 25A0 25FF Geometric Shapes
 
 const xtd::forms::emoticon xtd::forms::emoticons::black_small_square = {"black small square", {0x000025AA, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::white_small_square = {"white small square", {0x000025AB, 0x0000FE0F}};
@@ -65,7 +65,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::black_medium_square = {"black 
 const xtd::forms::emoticon xtd::forms::emoticons::white_medium_small_square = {"white medium small square", 0x000025FD};
 const xtd::forms::emoticon xtd::forms::emoticons::black_medium_small_square = {"black medium small square", 0x000025FE};
 
-/// 2600-26FF Miscellaneous Symbols
+// 2600-26FF Miscellaneous Symbols
 
 const xtd::forms::emoticon xtd::forms::emoticons::black_sun_with_rays = {"black sun with rays", {0x00002600, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::cloud = {"cloud", {0x00002601, 0x0000FE0F}};
@@ -150,7 +150,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::person_with_ball = {"person wi
 const xtd::forms::emoticon xtd::forms::emoticons::tent = {"tent", 0x000026FA};
 const xtd::forms::emoticon xtd::forms::emoticons::fuel_pump = {"fuel pump", 0x000026FD};
 
-/// 2700-27BF Dingbats
+// 2700-27BF Dingbats
 
 const xtd::forms::emoticon xtd::forms::emoticons::black_scissors = {"black scissors", {0x00002702, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::white_heavy_check_mark = {"white heavy check mark", 0x00002705};
@@ -186,12 +186,12 @@ const xtd::forms::emoticon xtd::forms::emoticons::black_rightwards_arrow = {"bla
 const xtd::forms::emoticon xtd::forms::emoticons::curly_loop = {"curly loop", 0x000027B0};
 const xtd::forms::emoticon xtd::forms::emoticons::double_curly_loop = {"double curly loop", 0x000027BF};
 
-/// 2900-297F Supplemental Arrows-B
+// 2900-297F Supplemental Arrows-B
 
 const xtd::forms::emoticon xtd::forms::emoticons::arrow_pointing_rightwards_then_curving_upwards = {"arrow pointing rightwards then curving upwards", {0x00002934, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::arrow_pointing_rightwards_then_curving_downwards = {"arrow pointing rightwards then curving downwards", {0x00002935, 0x0000FE0F}};
 
-/// 2B00-2BFF Miscellaneous Symbols And Arrows
+// 2B00-2BFF Miscellaneous Symbols And Arrows
 
 const xtd::forms::emoticon xtd::forms::emoticons::leftwards_black_arrow = {"leftwards black arrow", {0x00002B05, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::upwards_black_arrow = {"upwards black arrow", {0x00002B06, 0x0000FE0F}};
@@ -201,25 +201,29 @@ const xtd::forms::emoticon xtd::forms::emoticons::white_large_square = {"white l
 const xtd::forms::emoticon xtd::forms::emoticons::white_medium_star = {"white medium star", 0x00002B50};
 const xtd::forms::emoticon xtd::forms::emoticons::heavy_large_circle = {"heavy large circle", 0x00002B55};
 
-/// 3000-303F CJK Symbols and Punctuation
+// 3000-303F CJK Symbols and Punctuation
 
 const xtd::forms::emoticon xtd::forms::emoticons::wavy_dash = {"wavy dash", {0x00003030, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::part_alternation_mark = {"part alternation mark", {0x0000303D, 0x0000FE0F}};
 
-/// 3200-32FF Enclosed CJK Letters and Months
+// 3200-32FF Enclosed CJK Letters and Months
 
 const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_congratulation = {"circled ideograph congratulation", {0x00003297, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_secret = {"circled ideograph secret", {0x00003299, 0x0000FE0F}};
 
-/// 1F000-1F02F Mahjong Tiles
+// FE00-FE0F Variation Selectors
+
+const xtd::forms::emoticon xtd::forms::emoticons::variation_selector_16 = {"variation selector-16", 0x0000FE0F};
+
+// 1F000-1F02F Mahjong Tiles
 
 const xtd::forms::emoticon xtd::forms::emoticons::mahjong_tile_red_dragon = {"mahjong tile red dragon", 0x0001F004};
 
-/// 1F0A0-1F0FF Playing Cards
+// 1F0A0-1F0FF Playing Cards
 
 const xtd::forms::emoticon xtd::forms::emoticons::playing_card_black_joker = {"playing card black joker", 0x0001F0CF};
 
-/// 1F100-1F1FF Enclosed Alphanumeric Supplement
+// 1F100-1F1FF Enclosed Alphanumeric Supplement
 
 const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_latin_capital_letter_a = {"negative squared latin capital letter a", {0x0001F170, 0x0000FE0F}};
 const xtd::forms::emoticon xtd::forms::emoticons::negative_squared_latin_capital_letter_b = {"negative squared latin capital letter b", {0x0001F171, 0x0000FE0F}};
@@ -237,7 +241,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::squared_sos = {"squared sos", 
 const xtd::forms::emoticon xtd::forms::emoticons::squared_up_with_exclamation_mark = {"squared up with exclamation mark", 0x0001F199};
 const xtd::forms::emoticon xtd::forms::emoticons::squared_vs = {"squared vs", 0x0001F19A};
 
-/// 1F200-1F2FF Enclosed Ideographic Supplement
+// 1F200-1F2FF Enclosed Ideographic Supplement
 
 const xtd::forms::emoticon xtd::forms::emoticons::squared_katakana_koko = {"squared katakana koko", 0x0001F201};
 const xtd::forms::emoticon xtd::forms::emoticons::squared_katakana_sa = {"squared katakana sa", {0x0001F202, 0x0000FE0F}};
@@ -255,7 +259,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::squared_cjk_unified_ideograph_
 const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_advantage = {"circled ideograph advantage", 0x0001F250};
 const xtd::forms::emoticon xtd::forms::emoticons::circled_ideograph_accept = {"circled ideograph accept", 0x0001F251};
 
-/// 1F300-1F5FF symbols_and_pictographs
+// 1F300-1F5FF symbols_and_pictographs
 
 const xtd::forms::emoticon xtd::forms::emoticons::cyclone = {"cyclone", 0x0001F300};
 const xtd::forms::emoticon xtd::forms::emoticons::foggy = {"foggy", 0x0001F301};
@@ -895,7 +899,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::statue_of_liberty = {"statue o
 const xtd::forms::emoticon xtd::forms::emoticons::silhouette_of_japan = {"silhouette of japan", 0x0001F5FE};
 const xtd::forms::emoticon xtd::forms::emoticons::moyai = {"moyai", 0x0001F5FF};
 
-/// 1F600-1F64F Emoticons (Emoji)
+// 1F600-1F64F Emoticons (Emoji)
 
 const xtd::forms::emoticon xtd::forms::emoticons::grinning_face = {"grinning face", 0x0001F600};
 const xtd::forms::emoticon xtd::forms::emoticons::grinning_face_with_smiling_eyes = {"grinning face with smiling eyes", 0x0001F601};
@@ -978,7 +982,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::person_frowning = {"person fro
 const xtd::forms::emoticon xtd::forms::emoticons::person_with_pouting_face = {"person with pouting face", 0x0001F64E};
 const xtd::forms::emoticon xtd::forms::emoticons::person_with_folded_hands = {"person with folded hands", 0x0001F64F};
 
-/// 1F680-1F6FF Transport And Map Symbols
+// 1F680-1F6FF Transport And Map Symbols
 
 const xtd::forms::emoticon xtd::forms::emoticons::rocket = {"rocket", 0x0001F680};
 const xtd::forms::emoticon xtd::forms::emoticons::helicopter = {"helicopter", 0x0001F681};
@@ -1077,7 +1081,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::flying_saucer = {"flying sauce
 const xtd::forms::emoticon xtd::forms::emoticons::skateboard = {"skateboard", 0x0001F6F9};
 const xtd::forms::emoticon xtd::forms::emoticons::auto_rrickshaw = {"auto rrickshaw", 0x0001F6FA};
 
-/// 1F780-1F7FF Geometric Shapes Extended
+// 1F780-1F7FF Geometric Shapes Extended
 
 const xtd::forms::emoticon xtd::forms::emoticons::large_orange_circle = {"large orange circle", 0x0001F7E0};
 const xtd::forms::emoticon xtd::forms::emoticons::large_yellow_circle = {"large yellow circle", 0x0001F7E1};
@@ -1092,7 +1096,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::large_green_square = {"large g
 const xtd::forms::emoticon xtd::forms::emoticons::large_purple_square = {"large purple square", 0x0001F7E1};
 const xtd::forms::emoticon xtd::forms::emoticons::large_brown_square = {"large brown square", 0x0001F7EB};
 
-/// 1F900-1F9FF Supplemental Symbols and Pictographs
+// 1F900-1F9FF Supplemental Symbols and Pictographs
 
 const xtd::forms::emoticon xtd::forms::emoticons::white_heart = {"white heart", 0x0001F90D};
 const xtd::forms::emoticon xtd::forms::emoticons::brown_heart = {"brown heart", 0x0001F90E};
@@ -1297,7 +1301,7 @@ const xtd::forms::emoticon xtd::forms::emoticons::sponge = {"sponge", 0x0001F9FD
 const xtd::forms::emoticon xtd::forms::emoticons::receipt = {"receipt", 0x0001F9FE};
 const xtd::forms::emoticon xtd::forms::emoticons::nazar_amulet = {"nazar amulet", 0x0001F9FF};
 
-/// 1FA70-1F7FF Symbols and Pictographs Extended-A
+// 1FA70-1F7FF Symbols and Pictographs Extended-A
 
 const xtd::forms::emoticon xtd::forms::emoticons::ballet_shoes = {"ballet shoes", 0x0001FA70};
 const xtd::forms::emoticon xtd::forms::emoticons::one_piece_swinsuit = {"one-piece swinsuit", 0x0001FA71};

@@ -18,42 +18,42 @@ namespace xtd {
       
       emoticon(const std::string& name, char32_t codepoint) : name_(name), codepoints_({codepoint}) {}
       
-      emoticon(const std::string& name, std::initializer_list<char> codepoints) : name_(name) {
+      emoticon(std::initializer_list<char32_t> codepoints) : codepoints_(codepoints) {}
+      
+      emoticon(const std::vector<char32_t>& codepoints) : codepoints_(codepoints) {}
+      
+      emoticon(char32_t codepoint) : codepoints_({codepoint}) {}
+      
+      template<typename type_t>
+      emoticon(const std::string& name, std::initializer_list<type_t> codepoints) : name_(name) {
         for(auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       
-      emoticon(const std::string& name, const std::vector<char>& codepoints) : name_(name) {
+      template<typename type_t>
+      emoticon(const std::string& name, const std::vector<type_t>& codepoints) : name_(name) {
         for(auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       
-      emoticon(const std::string& name, char codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
+      template<typename type_t>
+      emoticon(const std::string& name, type_t codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
       
-      emoticon(const std::string& name, std::initializer_list<char16_t> codepoints) : name_(name) {
+      template<typename type_t>
+      emoticon(std::initializer_list<type_t> codepoints) {
         for(auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
       
-      emoticon(const std::string& name, const std::vector<char16_t>& codepoints) : name_(name) {
+      template<typename type_t>
+      emoticon(const std::vector<type_t>& codepoints) {
         for(auto codepoint : codepoints)
           codepoints_.push_back(static_cast<char32_t>(codepoint));
       }
-      
-      emoticon(const std::string& name, char16_t codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
-      
-      emoticon(const std::string& name, std::initializer_list<int32_t> codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
-          codepoints_.push_back(static_cast<char32_t>(codepoint));
-      }
-      
-      emoticon(const std::string& name, const std::vector<int32_t>& codepoints) : name_(name) {
-        for(auto codepoint : codepoints)
-          codepoints_.push_back(static_cast<char32_t>(codepoint));
-      }
-      
-      emoticon(const std::string& name, int32_t codepoint) : name_(name), codepoints_({static_cast<char32_t>(codepoint)}) {}
-      
+
+      template<typename type_t>
+      emoticon(type_t codepoint) : codepoints_({static_cast<char32_t>(codepoint)}) {}
+
       /// @cond
       emoticon() = default;
       emoticon(const emoticon&) = default;
