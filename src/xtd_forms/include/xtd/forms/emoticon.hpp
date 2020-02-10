@@ -97,3 +97,25 @@ namespace xtd {
     };
   }
 }
+
+/// @cond
+inline std::string operator+(const xtd::forms::emoticon& value_a, const xtd::forms::emoticon& value_b) {
+  return value_a.to_string() + value_b.to_string();
+}
+
+inline std::string operator+(const xtd::forms::emoticon& value_a, const char* value_b) {
+  return value_a.to_string() + value_b;
+}
+
+inline std::string operator+(const xtd::forms::emoticon& value_a, const std::string& value_b) {
+  return value_a.to_string() + value_b;
+}
+
+inline std::string operator+(const std::string& value_a, const xtd::forms::emoticon& value_b) {
+  return value_a + value_b.to_string();
+}
+
+inline std::string operator+(const char* value_a, const xtd::forms::emoticon& value_b) {
+  return value_a + value_b.to_string();
+}
+/// @endcond
