@@ -23,7 +23,7 @@ string to_value(const string& value) {
 }
 
 void generate_header_file(const std::string& filename) {
-  cout << format("      /// {}", xtd::strings::remove(path::get_file_name_without_extension(filename), 0, 5)) << endl;
+  cout << format("      // {}", xtd::strings::remove(path::get_file_name_without_extension(filename), 0, 5)) << endl;
   cout << endl;
 
   auto lines = file::read_all_lines(filename);
@@ -35,7 +35,7 @@ void generate_header_file(const std::string& filename) {
 }
 
 void generate_source_file(const std::string& filename) {
-  cout << format("/// {}", xtd::strings::remove(path::get_file_name_without_extension(filename), 0, 5)) << endl;
+  cout << format("// {}", xtd::strings::remove(path::get_file_name_without_extension(filename), 0, 5)) << endl;
   cout << endl;
   
   auto lines = file::read_all_lines(filename);
@@ -98,20 +98,23 @@ int main() {
   // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/11 - 2B00-2BFF Miscellaneous Symbols And Arrows.txt";
   // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/12 - 3000-303F CJK Symbols and Punctuation.txt";
   // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/13 - 3200-32FF Enclosed CJK Letters and Months.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/14 - 1F000-1F02F Mahjong Tiles.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/15 - 1F0A0-1F0FF Playing Cards.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/16 - 1F100-1F1FF Enclosed Alphanumeric Supplement.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/17 - 1F200-1F2FF Enclosed Ideographic Supplement.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/18 - 1F300-1F5FF symbols_and_pictographs.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/19 - 1F600-1F64F Emoticons (Emoji).txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/20 - 1F680-1F6FF Transport And Map Symbols.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/21 - 1F780-1F7FF Geometric Shapes Extended.txt";
-  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/22 - 1F900-1F9FF Supplemental Symbols and Pictographs.txt";
-  //auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/23 - 1FA70-1F7FF Symbols and Pictographs Extended-A.txt";
-  auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/24 - Emoji ZWJ Sequences.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/14 - FE00-FE0F Variation Selectors.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/15 - 1F000-1F02F Mahjong Tiles.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/16 - 1F0A0-1F0FF Playing Cards.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/17 - 1F100-1F1FF Enclosed Alphanumeric Supplement.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/18 - 1F200-1F2FF Enclosed Ideographic Supplement.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/19 - 1F300-1F5FF symbols_and_pictographs.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/20 - 1F600-1F64F Emoticons (Emoji).txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/21 - 1F680-1F6FF Transport And Map Symbols.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/22 - 1F780-1F7FF Geometric Shapes Extended.txt";
+  // auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/23 - 1F900-1F9FF Supplemental Symbols and Pictographs.txt";
+  //auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/24 - 1FA70-1F7FF Symbols and Pictographs Extended-A.txt";
+  //auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/25 - Emoji ZWJ Sequences.txt";
 
-  generate_header_file(filename);
-  //generate_source_file(filename);
+  auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/14 - FE00-FE0F Variation Selectors.txt";
+
+  //generate_header_file(filename);
+  generate_source_file(filename);
   //generate_vector_items(filename);
   
   //auto filename = "/Users/yves/Projects/xtd/src/xtd_forms/docs/Emoticons/25 - Country Flags.txt";
