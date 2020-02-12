@@ -65,7 +65,7 @@ class ienumerable {
 ```c++
 class control {
 public:
-  virtual ustring to_string() const;
+  virtual std::string to_string() const;
 };
 ```
 
@@ -100,7 +100,7 @@ enum class values {
 ```c++
 class convert {
 public:
-  static int to_int32(const ustring& value);
+  static int to_int32(const std::string& value);
 };
 ```
 
