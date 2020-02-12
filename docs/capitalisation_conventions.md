@@ -74,7 +74,7 @@ public:
 ```c++
 class list_control : control {
 public:
-  xtd::event<button, xtd::event_handler<control>> event<list_control, event_handler<control>> selected_index_changed;
+  event<list_control, event_handler<control&>> selected_index_changed;
 };
 ```
 
