@@ -11,9 +11,6 @@ namespace example {
       text("Image list example");
       client_size({300, 250});
       controls().push_back_range({picture, button_previous, button_next});
-      click += [&] {
-        load_images();
-      };
 
       pictures.image_size({128, 128});
       
@@ -52,7 +49,7 @@ namespace example {
   private:
     void load_images() {
       open_file_dialog ofd;
-      ofd.multi_select(true);
+      ofd.multiselect(true);
       ofd.filter("All Image Files|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.xpm|Bitmap Files|*.bmp|Gif Files|*.gif|Jpeg Files|*.jpg;*.jpeg|Png Files|*.png|Tiff Files|*.tif;*.tiff|xpm Files|*.xpm");
       if (ofd.show_dialog() == dialog_result::ok) {
         pictures.images().clear();
