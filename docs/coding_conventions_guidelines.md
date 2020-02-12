@@ -203,22 +203,22 @@ public:
   my_control(const my_control&) = defuult;
   my_control& my_control& operator=(const my_control& my_control);
   
-  const ustring base_name() const {return this->base_name_;;}  
+  const std::string base_name() const {return this->base_name_;;}  
   intptr_t handle() const {return this->handle_;}
   
   xtd::event<my_control, event_handler<xtd::forms::control>> name_changed;
   
-  xtd::ustring to_string() const override {return this->name_generator();}
+  std::string to_string() const override {return this->name_generator();}
 
 protected:
-  virtual ustring name_generator() const {return this->base_name_;}
+  virtual std::string name_generator() const {return this->base_name_;}
 
   intptr_t handle_ = 0;
   
 private:
   my_control(intptr_t handle);
 
-  xtd::ustring base_name_ = "BaseName";
+  std::string base_name_ = "BaseName";
 };
 ```
 
@@ -297,11 +297,11 @@ class MyClass {
 /// @param name A string that contains the name.
 /// @remarks The name must be begin by a uppercase; otherwise std::invalid_argument throws.
 /// @exception std::invalid_argument name not started by uppercase.
-void my_func(const ustring& name) {
+void my_func(const std::sstring& name) {
 };
 ```
 
-This example of doxygen documented class (Object.hpp) shows somes doxygen commands:
+This example of doxygen documented class (application_context.hpp) shows somes doxygen commands:
 
 ```c++
 #pragma once
