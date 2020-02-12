@@ -258,11 +258,11 @@ math() = delete;
 
 ## Global methods
 
-**X DO NOT** Use glabal methods. All methods are in class. If necessary creates container class like xtd::forms:cursors to group static methods. 
+**X DO NOT** Use global methods. All methods are in class. If necessary creates container class like xtd::forms:cursors to group static methods. 
 
-## Gloabal variables
+## global variables
 
-**X DO NOT** Use glabal variables. All variables are in class. If necessary a global or static variable can create in a source files (.cpp) but it can't visible in the header file (.hpp). 
+**X DO NOT** Use global variables. All variables are in class. If necessary a global or static variable can create in a source files (.cpp) but it can't visible in the header file (.hpp). 
 
 **√ DO** Uses [factory_method](factory_method.md), [builder](builder.md) or [singleton](singleton.md) patterns to create unique object.
 
