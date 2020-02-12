@@ -2,6 +2,7 @@
 #include <xtd/forms/file_dialog_flags.hpp>
 #include <wx/filedlg.h>
 
+using namespace std::literals;
 using namespace xtd;
 using namespace xtd::forms::native;
 
@@ -21,13 +22,19 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const std::string& default_ext,
   dialog.SetFilterIndex(filter_index - 1);
   if (dialog.ShowModal() != wxID_OK) return false;
   if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT) {
-    file_name = dialog.GetPath();
+    file_name = dialog.GetPath().utf8_str().data();
   } else {
     wxArrayString files;
     dialog.GetFilenames(files);
+#if defined(__APPLE__)
+    file_name = dialog.GetPath() + files[0].utf8_str().data();
+    for (wxString file : files)
+      file_names.push_back(dialog.GetDirectory().utf8_str().data() + "/"s + file.utf8_str().data());
+#else
     file_name = files[0].utf8_str().data();
     for (wxString file : files)
       file_names.push_back(file.utf8_str().data());
+#endif
   }
   return true;
 }
