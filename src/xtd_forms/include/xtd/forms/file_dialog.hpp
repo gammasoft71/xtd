@@ -115,8 +115,8 @@ namespace xtd {
         return *this;
       }
       
-      virtual bool multi_select() const {return get_option(OFN_ALLOWMULTISELECT);}
-      virtual file_dialog& multi_select(bool value) {
+      virtual bool multiselect() const {return get_option(OFN_ALLOWMULTISELECT);}
+      virtual file_dialog& multiselect(bool value) {
         set_option(OFN_ALLOWMULTISELECT, value);
         return *this;
       }
