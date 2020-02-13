@@ -14,7 +14,7 @@ int __get_file_attributes(const char*path);
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::IO namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
+  /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of std::basic_ftream objects.
     class file {
