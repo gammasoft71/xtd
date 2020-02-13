@@ -21,7 +21,7 @@ bool __is_windows_os() noexcept;
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::IO namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
+  /// @brief The xtd::io namespace contains types that allow reading and writing to files and data streams, and types that provide basic file and directory support.
   namespace io {
     /// @brief Performs operations on std::basic_string instances that contain file or directory path information. These operations are performed in a cross-platform manner.
     class path {
