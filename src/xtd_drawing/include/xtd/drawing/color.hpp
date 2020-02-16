@@ -1159,4 +1159,9 @@ namespace xtd {
     inline std::ostream& operator<<(std::ostream& os, color value) {return os << value.to_string();}
     /// @endcond
   }
+
+  template<>
+  inline drawing::color parse<drawing::color>(const std::string& str) {
+    return drawing::color::parse(str);
+  }
 }

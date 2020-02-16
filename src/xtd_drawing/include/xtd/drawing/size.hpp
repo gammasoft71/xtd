@@ -108,4 +108,10 @@ namespace xtd {
       int32_t height_ = 0;
     };
   }
+
+  template<>
+  inline drawing::size parse<drawing::size>(const std::string& str) {
+    auto values = xtd::strings::split(xtd::strings::replace(xtd::strings::replace(xtd::strings::replace(str, "}", ""), " height=", ""), "{width=", ""), {','});
+    return {xtd::parse<int32_t>(values[0]), xtd::parse<int32_t>(values[1])};
+  }
 }
