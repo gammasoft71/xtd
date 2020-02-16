@@ -130,6 +130,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/selection_mode.hpp
   include/xtd/forms/segment_style.hpp
   include/xtd/forms/segments.hpp
+  include/xtd/forms/settings.hpp
   include/xtd/forms/seven_segment_display.hpp
   include/xtd/forms/shortcut.hpp
   include/xtd/forms/sixteen_segment_display.hpp
@@ -202,6 +203,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/scrollable_control.cpp
+  src/xtd/forms/settings.cpp
   src/xtd/forms/system_information.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp
