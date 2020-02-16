@@ -438,7 +438,7 @@ float color::get_saturation() const {
 color color::parse(const string& color) {
    try {
      vector<string> argb = strings::split(strings::replace(strings::replace(strings::replace(strings::replace(strings::replace(color, "color [a=", ""), " r=", ""), " g=", ""), "b=", ""), "]", ""), {','});
-     return color::from_argb(strings::parse<uint8_t>(argb[0]), strings::parse<uint8_t>(argb[1]), strings::parse<uint8_t>(argb[2]), strings::parse<uint8_t>(argb[3]));
+     return color::from_argb(strings::parse<uint8_t>(argb.at(0)), strings::parse<uint8_t>(argb.at(1)), strings::parse<uint8_t>(argb.at(2)), strings::parse<uint8_t>(argb.at(3)));
    } catch(...) {
      return color::from_name(strings::replace(strings::replace(color, "]", ""), "color [", ""));
    }
