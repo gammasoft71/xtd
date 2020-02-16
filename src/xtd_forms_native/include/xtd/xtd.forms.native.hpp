@@ -32,6 +32,7 @@
 #include "forms/native/progress_bar.hpp"
 #include "forms/native/radio_button.hpp"
 #include "forms/native/screen.hpp"
+#include "forms/native/settings.hpp"
 #include "forms/native/tab_control.hpp"
 #include "forms/native/tab_page.hpp"
 #include "forms/native/text_box.hpp"

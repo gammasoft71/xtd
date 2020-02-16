@@ -9,9 +9,9 @@ using namespace xtd::forms::native;
 color color_picker::color(intptr_t control) {
   if (!control) return {};
   wxColour colour = static_cast<wxColourPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetColour();
-#if defined (__WXOSX__)
-  return color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
-#endif
+//#if defined (__WXOSX__)
+//  return color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
+//#endif
   return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
 }
 
