@@ -5,19 +5,20 @@ namespace test_forms {
     class settings : public xtd::forms::component {
     public:
       settings() : settings(true) {}
+      
       static settings& default_settings() {
         static settings default_settings;
         return default_settings;
       }
       
       xtd::drawing::color back_color() const {return back_color_;}
-      void back_color(const xtd::drawing::color& back_color) {back_color_ = back_color;}
+      void back_color(const xtd::drawing::color& value) {back_color_ = value;}
       
       xtd::drawing::point location() const {return location_;}
-      void location(const xtd::drawing::point& location) {location_ = location;}
+      void location(const xtd::drawing::point& value) {location_ = value;}
       
       xtd::drawing::size size() const {return size_;}
-      void size(const xtd::drawing::size& size) {size_ = size;}
+      void size(const xtd::drawing::size& value) {size_ = value;}
 
       std::string text() const {return "Settings2 example";}
 
