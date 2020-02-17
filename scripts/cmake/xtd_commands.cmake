@@ -1900,16 +1900,16 @@ if (MSVC)
 endif ()
 
 # add external packages
-if(NOT APPLE AND NOT ANDROID AND NOT CMAKE_HOST_SOLARIS AND UNIX)
-  find_package(PkgConfig REQUIRED)
-  pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
-  include_directories(${GTKMM_INCLUDE_DIRS})
-  link_directories(${GTKMM_LIBRARY_DIRS})
-  
-  pkg_check_modules(GSOUND REQUIRED gsound)
-  include_directories(${GSOUND_INCLUDE_DIRS})
-  link_directories(${GSOUND_LIBRARY_DIRS})
-endif ()
+#if(NOT APPLE AND NOT ANDROID AND NOT CMAKE_HOST_SOLARIS AND UNIX)
+#  find_package(PkgConfig REQUIRED)
+#  pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
+#  include_directories(${GTKMM_INCLUDE_DIRS})
+#  link_directories(${GTKMM_LIBRARY_DIRS})
+#  
+#  pkg_check_modules(GSOUND REQUIRED gsound)
+#  include_directories(${GSOUND_INCLUDE_DIRS})
+#  link_directories(${GSOUND_LIBRARY_DIRS})
+#endif ()
 
 ################################################################################
 # Reference Guide Generator
