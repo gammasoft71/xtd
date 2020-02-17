@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 
 # Projects
 add_projects(
+  application_properties
   console_application
   gui_application
   test_application
