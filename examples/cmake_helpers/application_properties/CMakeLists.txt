@@ -6,7 +6,7 @@ find_package(xtd REQUIRED)
 
 # Projects
 add_projects(
-  #application_default_namespace
+  application_default_namespace
   application_display
   application_icon
   application_name

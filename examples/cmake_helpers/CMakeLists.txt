@@ -7,6 +7,8 @@ find_package(xtd REQUIRED)
 # Projects
 add_projects(
   application_properties
+  assembly_informations
+  build_options
   console_application
   gui_application
   test_application
