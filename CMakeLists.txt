@@ -24,6 +24,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   set (CMAKE_CONFIG
     "include(CMakeFindDependencyMacro)\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
+    "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_commands.cmake\")\n"
     "\n"
     "get_filename_component(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\" ABSOLUTE)\n"
     "get_filename_component(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\" ABSOLUTE)\n"
@@ -43,6 +44,8 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.coreConfig.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${CMAKE_CONFIG})
+  install(FILES src/xtd_core/scripts/cmake/xtd_commands.cmake DESTINATION cmake)
 
   set (CMAKE_XTD_FORMS_CONFIG
     "include(CMakeFindDependencyMacro)\n"

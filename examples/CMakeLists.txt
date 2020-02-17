@@ -24,6 +24,8 @@ endif()
 if (ADD_XTD_TUNIT)
   add_subdirectory(hello_world_xtd_tunit)
 endif()
+
+add_subdirectory(cmake_helpers)
   
 if (ADD_XTD_CONSOLE)
   add_subdirectory(../src/xtd_console/examples ${CMAKE_BINARY_DIR}/xtd_console/build)
