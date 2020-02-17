@@ -1663,7 +1663,7 @@ macro(write_resources_file_source)
     elseif ("${EXTENSION}" STREQUAL ".wav")
       file(APPEND ${RESOURCES_FILE_SOURCE}
         "const xtd::forms::sound& ${APPLICATION_DEFAULT_NAMESPACE}:properties::resources::${NAME}() {\n"
-        "    throw std::bad_function_call("not yet implemented");\n"
+        "    throw std::bad_function_call(\"not yet implemented\");\n"
         "  }\n"
         "\n"
       )
@@ -1715,7 +1715,7 @@ macro(write_settings_file_header)
     "\n"
     "namespace ${APPLICATION_DEFAULT_NAMESPACE}::Properties {\n"
     "  class Settings : public xtd::forms::component {\n"
-    "  public:"\n"
+    "  public:\n"
     "    Settings() : settings(true) {}\n"
     "\n"
     "    static ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
@@ -1765,9 +1765,9 @@ macro(write_settings_file_header)
 
   file(APPEND ${SETTINGS_FILE_HEADER}
     "    void reset() {\n"
-    "      settings_.reset();
-    "      *this = settings(false);
-    "      reload();
+    "      settings_.reset();\n"
+    "      *this = settings(false);\n"
+    "      reload();\n"
     "    }\n"
     "\n"
   )
