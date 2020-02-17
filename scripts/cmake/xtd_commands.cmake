@@ -18,7 +18,7 @@
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_name("my_exe")
+##  application_default_namespace("my_namespace")
 ##  target_type(CONSOLE_APPLICATION)
 ## @endcode
 macro(application_default_namespace DEFAULT_NAMESPACE)
@@ -152,7 +152,7 @@ endmacro()
 ##  find_package(xtd REQUIRED)
 ##  add_sources(my_project.cpp)
 ##
-##  application_no_register()
+##  application_registered(OFF)
 ##  target_type(GUI_APPLICATION)
 ## @endcode
 macro(application_registered REGISTERED)
@@ -183,7 +183,7 @@ endmacro()
 ## @endcode
 macro(application_startup ...)
   print("Add application startup [\"${ARGV0}\" ${ARGV1}]...")
-  set(STARTUP_FILE properties/Startup.cpp)
+  set(STARTUP_FILE properties/startup.cpp)
   if (${ARGC} EQUAL 2)
     set(MAIN_FILE ${ARGV1})
     string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}/" "" MAIN_FILE ${MAIN_FILE})
@@ -197,7 +197,7 @@ macro(application_startup ...)
     "// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.\n"
     "\n"
     "${INCLUDE_FILE}"
-    "#include <xtd/xtd_core>\n"
+    "#include <xtd/xtd.core>\n"
     "\n"
     "startup_(${ARGV0});\n"
     "#pragma endregion\n"
@@ -1829,7 +1829,7 @@ set(APPLICATION_NAME ${PROJECT_NAME})
 ## @brief Contains boolean that specify if application is registered or not on the system.
 ##  * ON Registered
 ##  * OFF Not registered
-## @see application_no_register
+## @see application_registered
 set(APPLICATION_REGISTERED ON)
 
 # @brief Contains build type (Debug or Release)
