@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.3)
 
 project(xtd.examples)
 
+option(ADD_XTD_CMAKE_HELPERS "Add xtd CMake Helpers example" ON)
 option(ADD_XTD_CONSOLE "Add xtd.console example" ON)
 option(ADD_XTD_CORE "Add xtd.core example" ON)
 option(ADD_XTD_DELEGATES "Add xtd.delegates example" ON)
@@ -12,6 +13,10 @@ option(ADD_XTD_IO "Add xtd.io example" ON)
 option(ADD_XTD_PROPERTIES "Add xtd.properties example" ON)
 option(ADD_XTD_STRINGS "Add xtd.strings example" ON)
 option(ADD_XTD_TUNIT "Add xtd.tunit example" ON)
+
+if (ADD_XTD_CMAKE_HELPERS)
+  add_subdirectory(cmake_helpers)
+endif()
 
 if (ADD_XTD_CONSOLE)
   add_subdirectory(hello_world_xtd_console)
@@ -24,8 +29,6 @@ endif()
 if (ADD_XTD_TUNIT)
   add_subdirectory(hello_world_xtd_tunit)
 endif()
-
-add_subdirectory(cmake_helpers)
   
 if (ADD_XTD_CONSOLE)
   add_subdirectory(../src/xtd_console/examples ${CMAKE_BINARY_DIR}/xtd_console/build)
