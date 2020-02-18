@@ -26,9 +26,9 @@ int main() {
 cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_console)
-find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} hello_world_console.cpp)
-target_link_libraries(${PROJECT_NAME} xtd)
+find_package(xtd.forms REQUIRED)
+add_sources(hello_world_console.cpp)
+target_type(CONSOLE_APPLICATION)
 ```
 
 ### Build and run
@@ -74,13 +74,12 @@ int main() {
 ### CMakeLists.txt:
 
 ```cmake
-make_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_message_box)
 find_package(xtd.forms REQUIRED)
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE hello_world_message_box.cpp)
-target_link_libraries(${PROJECT_NAME} xtd.forms)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd.forms/hello_world")
+add_sources(hello_world_message_box.cpp)
+target_type(GUI_APPLICATION)
 ```
 
 ### Build and run
@@ -150,9 +149,9 @@ int main() {
 cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_tunit)
-find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} hello_world_tunit.cpp)
-target_link_libraries(${PROJECT_NAME} xtd)
+find_package(xtd.forms REQUIRED)
+add_sources(hello_world_tunit.cpp)
+target_type(TEST_APPLICATION)
 ```
 
 ### Build and run
