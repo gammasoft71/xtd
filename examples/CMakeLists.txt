@@ -1,25 +1,26 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.forms.examples)
+find_package(xtd REQUIRED)
 
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-add_subdirectory(hello_world)
-add_subdirectory(application)
-add_subdirectory(common_controls)
-add_subdirectory(picker_controls)
-add_subdirectory(custom_controls)
-add_subdirectory(other_controls)
-add_subdirectory(containers)
-add_subdirectory(menus_and_toolbars)
-add_subdirectory(datas)
-add_subdirectory(components)
-add_subdirectory(printing)
-add_subdirectory(common_dialogs)
-add_subdirectory(other_dialogs)
-add_subdirectory(custom_dialogs)
-add_subdirectory(events)
-add_subdirectory(others)
-add_subdirectory(tests)
-add_subdirectory(demos)
-add_subdirectory(games)
+add_projects(
+  hello_world
+  applications
+  common_controls
+  picker_controls
+  custom_controls
+  other_controls
+  containers
+  menus_and_toolbars
+  datas
+  components
+  printing
+  common_dialogs
+  other_dialogs
+  custom_dialogs
+  events
+  others
+  tests
+  demos
+  games
+)
