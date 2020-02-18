@@ -8,7 +8,7 @@ demonstrates the use of [xtd::forms::picture_box](../../../src/xtd_forms/include
 
 [CMakeLists.txt](CMakeLists.txt)
 
-[resources/logo.xpm](resources/logo.xpm)
+[resources/logo.png](resources/logo.png)
 
 # Build and run
 
