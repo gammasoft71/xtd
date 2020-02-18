@@ -21,6 +21,7 @@
 #include "drawing/font_style.hpp"
 #include "drawing/graphics.hpp"
 #include "drawing/graphics_unit.hpp"
+#include "drawing/icon.hpp"
 #include "drawing/image.hpp"
 #include "drawing/images.hpp"
 #include "drawing/known_color.hpp"

@@ -87,7 +87,7 @@ intptr_t system_colors::control() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
 #  endif
 #else
-  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  if (!wxTheApp) throw std::invalid_argument("Application::initialize() must be call before");
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxButton* button = new wxButton(frame, wxID_ANY, "");
   wxColour colour = button->GetBackgroundColour();
@@ -138,7 +138,7 @@ intptr_t system_colors::control_text() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT));
 #  endif
 #else
-  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  if (!wxTheApp) throw std::invalid_argument("Application::initialize() must be call before");
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxButton* button = new wxButton(frame, wxID_ANY, "");
   wxColour colour = button->GetForegroundColour();
@@ -293,7 +293,7 @@ intptr_t system_colors::window() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 #  endif
 #else
-  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  if (!wxTheApp) throw std::invalid_argument("Application::initialize() must be call before");
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxTextCtrl* text = new wxTextCtrl(frame, wxID_ANY, "");
   wxColour colour = text->GetBackgroundColour();
@@ -320,7 +320,7 @@ intptr_t system_colors::window_text() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT));
 #  endif
 #else
-  if (!wxTheApp) throw (std::invalid_argument("Application::initialize() must be call before"));
+  if (!wxTheApp) throw std::invalid_argument("Application::initialize() must be call before");
   wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "");
   wxTextCtrl* text = new wxTextCtrl(frame, wxID_ANY, "");
   wxColour colour = text->GetForegroundColour();
