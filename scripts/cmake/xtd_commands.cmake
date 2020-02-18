@@ -573,9 +573,8 @@ endmacro()
 ##  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project_3)
 ## @endcode
 macro(build_output_directory OUTPUT_DIRECTORY)
-  file(TO_CMAKE_PATH "${OUTPUT_DIRECTORY}" ${OUTPUT_DIRECTORY})
-  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
-  set(BUILD_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
+  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${OUTPUT_DIRECTORY}")
+  set(BUILD_OUTPUT_DIRECTORY "${OUTPUT_DIRECTORY}")
 endmacro()
 
 ################################################################################
@@ -1855,9 +1854,9 @@ endif ()
 
 ## @brief The path to user home.
 if (MSVC)
-  set(USER_DIRECTORY $ENV{HOMEPATH})
+  set(USER_DIRECTORY "$ENV{HOMEPATH}")
 else ()
-  set(USER_DIRECTORY $ENV{HOME})
+  set(USER_DIRECTORY "$ENV{HOME}")
 endif ()
 
 if (NOT INSTALL_NAME)
