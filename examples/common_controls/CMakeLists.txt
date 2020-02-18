@@ -1,24 +1,26 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.forms.common_controls.examples)
+find_package(xtd REQUIRED)
 
-add_subdirectory(button)
-add_subdirectory(buttons)
-add_subdirectory(check_box)
-add_subdirectory(check_boxes)
-add_subdirectory(checked_list_box)
-add_subdirectory(choice)
-add_subdirectory(combo_box)
-add_subdirectory(control)
-add_subdirectory(domain_up_down)
-add_subdirectory(label)
-add_subdirectory(list_box)
-add_subdirectory(numeric_up_down)
-add_subdirectory(picture_box)
-add_subdirectory(progress_bar)
-add_subdirectory(radio_button)
-add_subdirectory(radio_buttons)
-add_subdirectory(text_box)
-add_subdirectory(track_bar)
-add_subdirectory(up_down_button)
-add_subdirectory(user_control)
+add_projects(button
+  buttons
+  check_box
+  check_boxes
+  checked_list_box
+  choice
+  combo_box
+  control
+  domain_up_down
+  label
+  list_box
+  numeric_up_down
+  picture_box
+  progress_bar
+  radio_button
+  radio_buttons
+  text_box
+  track_bar
+  up_down_button
+  user_control
+)

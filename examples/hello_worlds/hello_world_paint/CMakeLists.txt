@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(button)
+project(hello_world_paint)
 find_package(xtd.forms REQUIRED)
-add_sources(src/button.cpp)
+add_sources(src/hello_world_paint.cpp)
 target_type(GUI_APPLICATION)
