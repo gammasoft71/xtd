@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::combo_box](../../../src/xtd_forms/include/x
 
 # Sources
 
-[combo_box.cpp](combo_box.cpp)
+[src/combo_box.cpp](src/combo_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

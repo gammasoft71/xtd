@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::domain_up_down](../../../src/xtd_forms/incl
 
 # Sources
 
-[domain_up_down.cpp](domain_up_down.cpp)
+[src/domain_up_down.cpp](src/domain_up_down.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
