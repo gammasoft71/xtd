@@ -4,10 +4,10 @@
 
 ## Hello World
 
-* [hello_world_emoticons](hello_world/hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticons](../src/xtd_forms/include/xtd/forms/emoticons.hpp) component.
-* [hello_world_forms](hello_world/hello_world_forms/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control.
-* [hello_world_message_box](hello_world/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
-* [hello_world_paint](hello_world/hello_world_paint/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects.
+* [hello_world_emoticons](hello_worlds/hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticons](../src/xtd_forms/include/xtd/forms/emoticons.hpp) component.
+* [hello_world_forms](hello_worlds/hello_world_forms/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control.
+* [hello_world_message_box](hello_worlds/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
+* [hello_world_paint](hello_worlds/hello_world_paint/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects.
 
 ## Application
 
