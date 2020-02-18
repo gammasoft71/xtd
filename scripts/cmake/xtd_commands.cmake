@@ -1855,6 +1855,7 @@ endif ()
 ## @brief The path to user home.
 if (MSVC)
   set(USER_DIRECTORY "$ENV{HOMEPATH}")
+  string(REPLACE "\\" "/" USER_DIRECTORY ${USER_DIRECTORY})
 else ()
   set(USER_DIRECTORY "$ENV{HOME}")
 endif ()
