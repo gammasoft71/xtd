@@ -51,9 +51,9 @@ CMakeLists.txt:
 cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_console)
-find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} hello_world_console.cpp)
-target_link_libraries(${PROJECT_NAME} xtd)
+find_package(xtd.forms REQUIRED)
+add_sources(hello_world_console.cpp)
+target_type(CONSOLE_APPLICATION)
 ```
 
 ## Forms
@@ -86,10 +86,10 @@ CMakeLists.txt:
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_forms)
-find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE hello_world_forms.cpp)
-target_link_libraries(${PROJECT_NAME} xtd)
+project(hello_world_message_box)
+find_package(xtd.forms REQUIRED)
+add_sources(hello_world_message_box.cpp)
+target_type(GUI_APPLICATION)
 ```
 
 ## Unit tests
@@ -132,9 +132,9 @@ CMakeLists.txt:
 cmake_minimum_required(VERSION 3.3)
 
 project(hello_world_tunit)
-find_package(xtd REQUIRED)
-add_executable(${PROJECT_NAME} hello_world_tunit.cpp)
-target_link_libraries(${PROJECT_NAME} xtd)
+find_package(xtd.forms REQUIRED)
+add_sources(hello_world_tunit.cpp)
+target_type(TEST_APPLICATION)
 ```
 
 For more examples see [examples](examples/README.md)
