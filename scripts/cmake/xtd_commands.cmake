@@ -573,7 +573,7 @@ endmacro()
 ##  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project_3)
 ## @endcode
 macro(build_output_directory OUTPUT_DIRECTORY)
-  file(TO_CMAKE_PATH OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
+  file(TO_CMAKE_PATH "${OUTPUT_DIRECTORY}" ${OUTPUT_DIRECTORY})
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
   set(BUILD_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
 endmacro()
