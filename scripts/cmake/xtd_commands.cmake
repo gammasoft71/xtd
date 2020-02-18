@@ -573,6 +573,7 @@ endmacro()
 ##  add_projects(tests/test_lib_project1 tests/test_lib_project2 tests/test_lib_project_3)
 ## @endcode
 macro(build_output_directory OUTPUT_DIRECTORY)
+  format_path(${OUTPUT_DIRECTORY})
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
   set(BUILD_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
 endmacro()
@@ -1176,6 +1177,12 @@ endmacro()
 
 ################################################################################
 # Internal commands
+
+## @brief Auto define a grouping for source files in IDE project generation from directory.
+## @remarks Internal use only.
+macro(format_path STRING_PATH)
+  string(REPLACE "\\" "/" STRING_PATH ${STRING_PATH})
+endmacro()
 
 ## @brief Auto define a grouping for source files in IDE project generation from directory.
 ## @remarks Internal use only.
