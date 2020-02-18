@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::list_box](../../../src/xtd_forms/include/xt
 
 # Sources
 
-[list_box.cpp](list_box.cpp)
+[src/list_box.cpp](src/list_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

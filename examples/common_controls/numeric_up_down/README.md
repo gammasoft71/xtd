@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::numeric_up_down](../../../src/xtd_forms/inc
 
 # Sources
 
-[numeric_up_down.cpp](numeric_up_down.cpp)
+[src/numeric_up_down.cpp](src/numeric_up_down.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

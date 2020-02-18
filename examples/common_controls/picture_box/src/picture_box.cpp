@@ -1,10 +1,10 @@
 #include <xtd/xtd.forms>
-#include "logo.xpm"
+#include "../properties/resources.hpp"
 
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-namespace examples {
+namespace picture_box {
   class form1 : public form {
   public:
     form1() {
@@ -25,17 +25,17 @@ namespace examples {
       picture_box1.border_style(border_style::fixed_single);
       picture_box1.location({20, 65});
       picture_box1.size({260, 260});
-      picture_box1.image(bitmap(logo_xpm));
+      picture_box1.image(properties::resources::logo());
       picture_box1.size_mode(std::any_cast<picture_box_size_mode>(choice1.selected_item().tag()));
       picture_box1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
     }
     
   private:
     choice choice1;
-    picture_box picture_box1;
+    xtd::forms::picture_box picture_box1;
   };
 }
 
 int main() {
-  application::run(examples::form1());
+  application::run(::picture_box::form1());
 }
