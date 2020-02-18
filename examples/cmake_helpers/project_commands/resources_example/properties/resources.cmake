@@ -1,0 +1,6 @@
+resource(gammasoft resources/gammasoft.png)
+resource(information resources/information.txt)
+resource(readme resources/readme.md)
+resource(sound resources/sound.wav)
+resource(xtd resources/xtd.gif)
+resource(xtd_forms resources/xtd_forms.ico)
