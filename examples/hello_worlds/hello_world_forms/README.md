@@ -4,7 +4,7 @@ The classic first application "Hello, World!" with  [xtd::forms::label](../../..
 
 # Sources
 
-[hello_world_form.cpp](hello_world_forms.cpp)
+[src/hello_world_form.cpp](src/hello_world_forms.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
