@@ -30,7 +30,7 @@ For more information see [documentations](docs/home.md) ([website](https://gamma
 
 The following examples "Hello, world!" show how use form and button control, catch event click and show a message box.
 
-forms_hello_world.cpp
+hello_world_message_box.cpp
 
 ```c++
 #include <xtd/xtd.forms>
@@ -52,6 +52,17 @@ int main() {
   application::run(form1);
 }
 
+```
+
+CMakeLists.txt:
+
+```cmake
+cmake_minimum_required(VERSION 3.3)
+
+project(hello_world_message_box)
+find_package(xtd.forms REQUIRED)
+add_sources(hello_world_message_box.cpp)
+target_type(GUI_APPLICATION)
 ```
 
 For more examples see [examples](examples/README.md)
