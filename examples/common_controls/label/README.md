@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::label](../../../src/xtd_forms/include/xtd/f
 
 # Sources
 
-[label.cpp](label.cpp)
+[src/label.cpp](src/label.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

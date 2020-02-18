@@ -4,11 +4,11 @@ demonstrates the use of [xtd::forms::picture_box](../../../src/xtd_forms/include
 
 # Sources
 
-[picture_box.cpp](picture_box.cpp)
+[src/picture_box.cpp](src/picture_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
-[logo.xpm](logo.xpm)
+[resources/logo.xpm](resources/logo.xpm)
 
 # Build and run
 
