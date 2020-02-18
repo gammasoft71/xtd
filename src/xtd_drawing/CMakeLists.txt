@@ -17,6 +17,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/font_style.hpp
   include/xtd/drawing/graphics.hpp
   include/xtd/drawing/graphics_unit.hpp
+  include/xtd/drawing/icon.hpp
   include/xtd/drawing/image.hpp
   include/xtd/drawing/images.hpp
   include/xtd/drawing/known_color.hpp
