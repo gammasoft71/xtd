@@ -11,8 +11,8 @@
 
 ## Application
 
-* [application](application/application/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class.
-* [application_context](application/application_context/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../src/xtd_forms/include/xtd/forms/application_context.hpp) class.
+* [application](applications/application/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class.
+* [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../src/xtd_forms/include/xtd/forms/application_context.hpp) class.
 
 ## Common Controls
 
