@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::choice](../../../src/xtd_forms/include/xtd/
 
 # Sources
 
-[choice.cpp](choice.cpp)
+[src/choice.cpp](src/choice.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
