@@ -1387,6 +1387,12 @@ macro(write_linux_application_informations_file)
     set(ICON "Icon=terminal\n")
   endif ()
   
+  if ("${ASSEMBLY_TITLE}" STREQUAL "")
+    set(NAME "${APPLICATION_NAME}")
+  else ()  
+    set(NAME "${ASSEMBLY_TITLE}")
+  endif ()
+  
   file(WRITE ${APPLICATION_INFORMATIONS_FILE}
     "[Desktop Entry]\n"
     "Type=Application\n"
@@ -1394,7 +1400,7 @@ macro(write_linux_application_informations_file)
     "Comment=${ASSEMBLY_DESCRIPTION}\n"
     "Exec=${RUNTIME_OUTPUT_DIRECTORY}/${APPLICATION_NAME}\n"
     "${ICON}"
-    "Name=${ASSEMBLY_TITLE}\n"
+    "Name=${NAME}\n"
     "NoDisplay=${NO_DISPLAY}\n"
     "Terminal=${TERMINAL}\n"
     "Version=${VERSION}\n"
