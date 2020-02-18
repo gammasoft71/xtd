@@ -4,7 +4,7 @@ The classic first application "Hello, World!" with  [xtd::forms::emoticon](../..
 
 # Sources
 
-[hello_world_emoticons.cpp](hello_world_emoticons.cpp)
+[src/hello_world_emoticons.cpp](src/hello_world_emoticons.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
