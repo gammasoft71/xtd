@@ -1724,7 +1724,7 @@ macro(write_settings_file_header)
     "namespace ${APPLICATION_DEFAULT_NAMESPACE}::properties {\n"
     "  class settings : public xtd::forms::component {\n"
     "  public:\n"
-    "    settings() : settings(true) {}\n"
+    "    settings() : ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings(true) {}\n"
     "\n"
     "    static ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
     "      static ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings default_settings;\n"
