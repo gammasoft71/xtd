@@ -6,7 +6,7 @@ using namespace xtd::forms;
 int main() {
   auto main_form = control::create<form>("Settings example");
 
-  auto colored_panel = control::create<panel>(*main_form, "", {10, 100}, {200, 100});
+  auto colored_panel = control::create<panel>(*main_form, "", {10, 100});
 
   auto color_chooser = control::create<color_picker>(*main_form, "", {10, 10}, {75, 25});
   color_chooser->color_changed += [&] {
