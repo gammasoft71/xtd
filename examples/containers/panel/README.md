@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::panel](../../../src/xtd_forms/include/xtd/f
 
 # Sources
 
-[panel.cpp](panel.cpp)
+[src/panel.cpp](src/panel.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

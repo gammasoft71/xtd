@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::tab_control](../../../src/xtd_forms/include
 
 # Sources
 
-[tab_control.cpp](tab_control.cpp)
+[src/tab_control.cpp](src/tab_control.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
