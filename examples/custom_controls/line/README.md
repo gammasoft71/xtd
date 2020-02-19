@@ -4,7 +4,7 @@ demonstrates how to create a custom control with [xtd::forms::user_control](../.
 
 # Sources
 
-[line.cpp](line.cpp)
+[src/line.cpp](src/line.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
