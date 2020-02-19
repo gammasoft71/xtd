@@ -28,5 +28,6 @@ CMakeSettings.json
 examples/cmake_helpers/application_properties/application_startup/properties/startup.cpp
 examples/cmake_helpers/project_commands/resources_example/properties/resources.hpp
 examples/cmake_helpers/project_commands/resources_example/properties/resources.cpp
+examples/cmake_helpers/project_commands/settings_example/settings/settings.hpp
 examples/common_controls/picture_box/properties/resources.cpp
 examples/common_controls/picture_box/properties/resources.hpp
