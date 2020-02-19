@@ -4,7 +4,7 @@ demonstrates how to use [xtd::forms::lcd_label](../../../src/xtd_forms/include/x
 
 # Sources
 
-[lcd_label.cpp](lcd_label.cpp)
+[src/lcd_label.cpp](src/lcd_label.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
