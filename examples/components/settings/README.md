@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::settings](../../../src/xtd_forms/include/xt
 
 # Sources
 
-[settings.cpp](settings.cpp)
+[src/settings.cpp](src/settings.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

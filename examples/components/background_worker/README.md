@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::background_worker](../../../src/xtd_forms/i
 
 # Sources
 
-[background_worker.cpp](background_worker.cpp)
+[src/background_worker.cpp](src/background_worker.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

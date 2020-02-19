@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::screen](../../../src/xtd_forms/include/xtd/
 
 # Sources
 
-[screen.cpp](screen.cpp)
+[src/screen.cpp](src/screen.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
