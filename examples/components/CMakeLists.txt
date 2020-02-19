@@ -8,7 +8,7 @@ add_projects(
   cursor
   image_list
   screen
-  settings
-  settings2
+  settings_example
+  settings_example2
   timer
 )
