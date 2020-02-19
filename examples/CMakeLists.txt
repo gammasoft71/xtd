@@ -13,7 +13,7 @@ add_projects(
   containers
   menus_and_toolbars
   datas
-  #components
+  components
   #printing
   #common_dialogs
   #other_dialogs

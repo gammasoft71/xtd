@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::timer](../../../src/xtd_forms/include/xtd/f
 
 # Sources
 
-[timer.cpp](timer.cpp)
+[src/timer.cpp](src/timer.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

@@ -1,10 +1,10 @@
-# settings
+# settings2
 
 demonstrates the use of [xtd::forms::settings](../../../src/xtd_forms/include/xtd/forms/settings.hpp) component.
 
 # Sources
 
-[settings.cpp](settings.cpp)
+[src/settings2.cpp](src/settings2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
