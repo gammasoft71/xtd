@@ -9,7 +9,7 @@ add_projects(
   common_controls
   picker_controls
   custom_controls
-  #other_controls
+  other_controls
   #containers
   #menus_and_toolbars
   #datas
