@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::radio_buttons](../../../src/xtd_forms/inclu
 
 # Sources
 
-[radio_buttons.cpp](radio_buttons.cpp)
+[src/radio_buttons.cpp](src/radio_buttons.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::track_bar](../../../src/xtd_forms/include/x
 
 # Sources
 
-[track_bar.cpp](track_bar.cpp)
+[src/track_bar.cpp](src/track_bar.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

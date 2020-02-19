@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::progress_bar](../../../src/xtd_forms/includ
 
 # Sources
 
-[progress_bar.cpp](progress_bar.cpp)
+[src/progress_bar.cpp](src/progress_bar.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

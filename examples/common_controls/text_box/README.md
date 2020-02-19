@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::text_box](../../../src/xtd_forms/include/xt
 
 # Sources
 
-[text_box.cpp](text_box.cpp)
+[src/text_box.cpp](src/text_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
