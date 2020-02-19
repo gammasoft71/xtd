@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::date_time_picker](../../../src/xtd_forms/in
 
 # Sources
 
-[date_time_picker.cpp](date_time_picker.cpp)
+[src/date_time_picker.cpp](src/date_time_picker.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

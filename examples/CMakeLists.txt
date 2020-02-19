@@ -7,7 +7,7 @@ add_projects(
   hello_worlds
   applications
   common_controls
-  #picker_controls
+  picker_controls
   #custom_controls
   #other_controls
   #containers
