@@ -4,7 +4,7 @@ demonstrates how to create a custom control with [xtd::forms::text_box](../../..
 
 # Sources
 
-[numeric_text_box.cpp](numeric_text_box.cpp)
+[src/numeric_text_box.cpp](src/numeric_text_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
