@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::font_picker](../../../src/xtd_forms/include
 
 # Sources
 
-[font_picker.cpp](font_picker.cpp)
+[src/font_picker.cpp](src/font_picker.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

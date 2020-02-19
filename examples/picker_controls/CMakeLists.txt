@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.forms.picker.controls.examples)
+find_package(xtd.forms REQUIRED)
 
-add_subdirectory(color_picker)
-add_subdirectory(date_time_picker)
-add_subdirectory(font_picker)
+add_projects(
+  color_picker
+  date_time_picker
+  font_picker
+)

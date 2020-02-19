@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::color_picker](../../../src/xtd_forms/includ
 
 # Sources
 
-[color_picker.cpp](color_picker.cpp)
+[src/color_picker.cpp](src/color_picker.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
