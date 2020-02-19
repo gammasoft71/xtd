@@ -4,7 +4,7 @@ demonstrates how to use [xtd::forms::dot_matrix_display](../../../src/xtd_forms/
 
 # Sources
 
-[dot_matrix_display.cpp](dot_matrix_display.cpp)
+[src/dot_matrix_display.cpp](src/dot_matrix_display.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
