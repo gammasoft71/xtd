@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::up_down_button](../../../src/xtd_forms/incl
 
 # Sources
 
-[up_down_button.cpp](up_down_button.cpp)
+[src/up_down_button.cpp](src/up_down_button.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
