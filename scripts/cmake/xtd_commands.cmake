@@ -1721,10 +1721,10 @@ macro(write_settings_file_header)
     "\n"
     "#include <xtd/xtd>\n"
     "\n"
-    "namespace ${APPLICATION_DEFAULT_NAMESPACE}::Properties {\n"
-    "  class Settings : public xtd::forms::component {\n"
+    "namespace ${APPLICATION_DEFAULT_NAMESPACE}::properties {\n"
+    "  class settings : public xtd::forms::component {\n"
     "  public:\n"
-    "    Settings() : settings(true) {}\n"
+    "    settings() : settings(true) {}\n"
     "\n"
     "    static ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings& default_settings() {\n"
     "      static ::${APPLICATION_DEFAULT_NAMESPACE}::properties::settings default_settings;\n"
@@ -1737,8 +1737,8 @@ macro(write_settings_file_header)
     foreach(SETTING ${PROJECT_USER_SETTINGS})
       split_setting(${SETTING} NAME TYPE VALUE)
       file(APPEND ${SETTINGS_FILE_HEADER}
-        "    ${TYPE}> ${NAME}() {return ${NAME}_;},\n"
-        "    void ${NAME}(${TYPE}> value) {${NAME}_ = value;},\n"
+        "    ${TYPE} ${NAME}() const {return ${NAME}_;}\n"
+        "    void ${NAME}(${TYPE} value) {${NAME}_ = value;}\n"
         "\n"
       )
     endforeach()
@@ -1762,7 +1762,7 @@ macro(write_settings_file_header)
   if (PROJECT_USER_SETTINGS)
     foreach(SETTING ${PROJECT_USER_SETTINGS})
       split_setting(${SETTING} NAME TYPE VALUE)
-      file(APPEND ${SETTINGS_FILE_SOURCE} "      ${NAME}_ = settings_.read(\"${NAME}\", ${NAME}_);\n")
+      file(APPEND ${SETTINGS_FILE_HEADER} "      ${NAME}_ = settings_.read(\"${NAME}\", ${NAME}_);\n")
     endforeach()
   endif ()
 
@@ -1787,9 +1787,9 @@ macro(write_settings_file_header)
   if (PROJECT_USER_SETTINGS)
     foreach(SETTING ${PROJECT_USER_SETTINGS})
       split_setting(${SETTING} NAME TYPE VALUE)
-      file(APPEND ${SETTINGS_FILE_SOURCE} "      settings_.write(\"${NAME}\", ${NAME}_);\n")
+      file(APPEND ${SETTINGS_FILE_HEADER} "      settings_.write(\"${NAME}\", ${NAME}_);\n")
     endforeach()
-  file(APPEND ${SETTINGS_FILE_HEADER} "      settings_.save();\n")
+    file(APPEND ${SETTINGS_FILE_HEADER} "      settings_.save();\n")
   endif ()
 
   file(APPEND ${SETTINGS_FILE_HEADER}
@@ -1799,7 +1799,7 @@ macro(write_settings_file_header)
 
   file(APPEND ${SETTINGS_FILE_HEADER}
     "  private:\n"
-    "    Settings(bool load) {if (load) reload();}\n"
+    "    settings(bool load) {if (load) reload();}\n"
     "    xtd::forms::settings settings_;\n"
   )
 
