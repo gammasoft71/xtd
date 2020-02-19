@@ -11,8 +11,8 @@ add_projects(
   custom_controls
   other_controls
   containers
-  #menus_and_toolbars
-  #datas
+  menus_and_toolbars
+  datas
   #components
   #printing
   #common_dialogs
