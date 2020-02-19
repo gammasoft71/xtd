@@ -4,7 +4,7 @@ demonstrates how to use [xtd::forms::switch_button](../../../src/xtd_forms/inclu
 
 # Sources
 
-[switch_button.cpp](switch_button.cpp)
+[src/switch_button.cpp](src/switch_button.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

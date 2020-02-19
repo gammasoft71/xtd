@@ -4,7 +4,7 @@ demonstrates how to use [xtd::forms::sixteen_segment_display](../../../src/xtd_f
 
 # Sources
 
-[sixteen_segment_display.cpp](sixteen_segment_display.cpp)
+[src/sixteen_segment_display.cpp](src/sixteen_segment_display.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
