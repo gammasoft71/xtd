@@ -10,7 +10,7 @@ add_projects(
   picker_controls
   custom_controls
   other_controls
-  #containers
+  containers
   #menus_and_toolbars
   #datas
   #components
