@@ -1,4 +1,4 @@
-# xtd_forms (Winforms) Examples
+# xtd_forms (Winforms) examples
 
 [This folder](.) contains all examples used by [xtd::forms](../src/xtd_forms) docmentation and more.
 
