@@ -29,6 +29,11 @@ namespace xtd {
       drawing::color get_pixel(int32_t x, int32_t y) const;
       
       void set_pixel(int32_t x, int32_t y, const drawing::color& color);
+
+      static bitmap empty;
+      
+    private:
+      bitmap() = default;
     };
   }
 }
