@@ -4,7 +4,7 @@ demonstrates some events received by [form](../../../src/xtd_forms/include/xtd/f
 
 # Sources
 
-[form_and_messages.cpp](form_and_messages.cpp)
+[src/form_and_messages.cpp](src/form_and_messages.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

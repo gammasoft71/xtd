@@ -16,9 +16,9 @@ add_projects(
   components
   printing
   common_dialogs
-  #other_dialogs
-  #custom_dialogs
-  #events
+  other_dialogs
+  custom_dialogs
+  events
   #others
   tests
   #demos

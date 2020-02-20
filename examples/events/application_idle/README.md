@@ -4,7 +4,7 @@ demonstrates the use of [idle](../../../src/xtd_forms/include/xtd/forms/applicat
 
 # Sources
 
-[application_idle.cpp](application_idle.cpp)
+[src/application_idle.cpp](src/application_idle.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

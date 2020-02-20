@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.forms.events.examples)
+find_package(xtd.forms REQUIRED)
 
-add_subdirectory(application_idle)
-add_subdirectory(form_and_messages)
-add_subdirectory(form_paint)
-add_subdirectory(send_message_to_form)
+add_projects(
+  application_idle
+  form_and_messages
+  form_paint
+  send_message_to_form
+)

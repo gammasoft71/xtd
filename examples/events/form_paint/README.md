@@ -4,7 +4,7 @@ demonstrates paint event with [form](../../../src/xtd_forms/include/xtd/forms/fo
 
 # Sources
 
-[form_paint.cpp](form_paint.cpp)
+[src/form_paint.cpp](src/form_paint.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
