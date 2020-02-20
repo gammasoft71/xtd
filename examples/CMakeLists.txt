@@ -21,6 +21,6 @@ add_projects(
   events
   #others
   tests
-  #demos
+  demos
   #games
 )
