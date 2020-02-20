@@ -36,4 +36,4 @@ Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
 
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.
