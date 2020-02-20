@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::message_box](../../../src/xtd_forms/include
 
 # Sources
 
-[message_box.cpp](message_box.cpp)
+[src/message_box.cpp](src/message_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

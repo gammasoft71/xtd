@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::font_dialog](../../../src/xtd_forms/include
 
 # Sources
 
-[font_dialog.cpp](font_dialog.cpp)
+[src/font_dialog.cpp](src/font_dialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

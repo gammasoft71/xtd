@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::color_dialog](../../../src/xtd_forms/includ
 
 # Sources
 
-[color_dialog.cpp](color_dialog.cpp)
+[src/color_dialog.cpp](src/color_dialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

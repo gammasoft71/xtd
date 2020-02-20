@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::folder_browser_dialog](../../../src/xtd_for
 
 # Sources
 
-[folder_browser_dialog.cpp](folder_browser_dialog.cpp)
+[src/folder_browser_dialog.cpp](src/folder_browser_dialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
