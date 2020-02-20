@@ -4,9 +4,9 @@ using namespace xtd;
 using namespace xtd::forms;
 
 int main() {
-  cdebug << format("install path = {}", __CMAKE_INSTALL_PREFIX__) << std::endl;
-  cdebug << format("xtd include path = {}", __XTD_INCLUDE_PATH__) << std::endl;
-  cdebug << format("xtd lib path = {}", __XTD_LIB_PATH__) << std::endl;
   auto main_form = control::create<form>("Test Gui");
+  auto picture = control::create<picture_box>(*main_form);
+  picture->size_mode(picture_box_size_mode::zoom).dock(dock_style::fill);
+  picture->image(properties::resources::xtd_console());
   application::run(*main_form);
 }
