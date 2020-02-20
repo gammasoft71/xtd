@@ -163,8 +163,8 @@ namespace minesweeper {
       e.graphics().draw_line(pen(color::lighter(back_color())), e.clip_rectangle().width() - 1, 1, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
     }
     
-    #include "resources/flag.xpm"
-    #include "resources/mine.xpm"
+    #include "../resources/flag.xpm"
+    #include "../resources/mine.xpm"
     cell_state state_ = cell_state::unchecked;
     bool has_mine_ = false;
     int neighbors_ = 0;
@@ -401,10 +401,10 @@ namespace minesweeper {
       return cells_[cell_location.x()][cell_location.y()]->neighbors();
     }
 
-    #include "resources/smiley1.xpm"
-    #include "resources/smiley2.xpm"
-    #include "resources/smiley3.xpm"
-    #include "resources/smiley4.xpm"
+    #include "../resources/smiley1.xpm"
+    #include "../resources/smiley2.xpm"
+    #include "../resources/smiley3.xpm"
+    #include "../resources/smiley4.xpm"
     panel status_panel;
     lcd_label mine_count_label;
     lcd_label stopwatch_label;

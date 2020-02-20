@@ -22,5 +22,5 @@ add_projects(
   #others
   tests
   demos
-  #games
+  games
 )
