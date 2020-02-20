@@ -20,7 +20,7 @@ add_projects(
   #custom_dialogs
   #events
   #others
-  #tests
+  tests
   #demos
   #games
 )
