@@ -269,8 +269,8 @@ macro(target_type TYPE)
   if (NOT ${VERSION} STREQUAL "*")
     set(PROJECT_VERSION "${VERSION}")
   endif ()
-  remove_definitions(-DSWITCH_ASSEMBLY_VERSION)
-  add_definitions(-DSWITCH_ASSEMBLY_VERSION="${PROJECT_VERSION}")
+  remove_definitions(-DXTD_ASSEMBLY_VERSION)
+  add_definitions(-D__XTD_ASSEMBLY_VERSION__="${PROJECT_VERSION}")
   
   write_application_informations_file()
   write_assembly_informations()
@@ -1894,10 +1894,10 @@ set(CMAKE_DEBUG_POSTFIX d)
 enable_testing()
 
 # add ASSEMBLY_VERSION definition
-#if (NOT PROJECT_VERSION AND SWITCH_VERSION)
-#  set(PROJECT_VERSION ${SWITCH_VERSION})
-#  remove_definitions(-DSWITCH_APPLICATION_VERSION)
-#  add_definitions(-DSWITCH_APPLICATION_VERSION="${PROJECT_VERSION}")
+#if (NOT PROJECT_VERSION AND XTD_VERSION)
+#  set(PROJECT_VERSION ${XTD_VERSION})
+#  remove_definitions(-DXTD_APPLICATION_VERSION)
+#  add_definitions(-D__XTD_APPLICATION_VERSION__="${PROJECT_VERSION}")
 #endif ()
 
 # add compile and link flags
@@ -1907,6 +1907,8 @@ if (MSVC)
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 endif ()
+
+add_definitions(-D__CMAKE_INSTALL_PREFIX__="${CMAKE_INSTALL_PREFIX}")
 
 # add external packages
 #if(NOT APPLE AND NOT ANDROID AND NOT CMAKE_HOST_SOLARIS AND UNIX)
