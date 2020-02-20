@@ -1,4 +1,4 @@
-# xtd.forms "Hello, World!" Examples
+# xtd.forms "Hello, World!" examples
 
 [This folder](..) contains all examples used by xtd.forms Docmentation and more.
 
