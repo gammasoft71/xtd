@@ -1,4 +1,4 @@
-# xtd.forms (Winforms) Examples
+# xtd.forms Application Examples
 
 [This folder](..) contains all examples used by xtd.forms Docmentation and more.
 
