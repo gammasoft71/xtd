@@ -4,6 +4,8 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
+bitmap bitmap::empty;
+
 drawing::color bitmap::get_pixel(int32_t x, int32_t y) const {
   native::argb color;
   native::image::get_pixel(this->handle(), x, y, color);
