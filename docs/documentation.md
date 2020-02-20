@@ -12,4 +12,4 @@ This section contains the xtd.tunit documentation. ​
 
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.

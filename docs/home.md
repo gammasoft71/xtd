@@ -44,4 +44,4 @@ Modern c++17 library to add string utilities on Windows, macOS, Linux, iOS and a
 
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.
