@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <exception>
 #include <xtd/xtd>
 
 namespace picture_box::properties {
@@ -13,7 +14,10 @@ namespace picture_box::properties {
   class resources static_ {
   public:
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
-    static const xtd::drawing::bitmap& logo();
+    static const xtd::drawing::bitmap& logo() {
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "", "resources", "logo.png"));
+      return bitmap;
+    }
 
   };
 }
