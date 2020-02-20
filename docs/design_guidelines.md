@@ -24,5 +24,5 @@ Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition, by K
 
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.
 
