@@ -105,6 +105,7 @@
 * **performance_counter** represents a Windows NT performance counter component.
 * **process** provides access to local and remote processes and enables you to start and stop local system processes.
 * [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
+* [settings](components/settings/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
 * **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
