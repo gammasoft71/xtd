@@ -31,4 +31,4 @@ Modern c++17 library containing classes for creating Windows-based applications 
 
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.
