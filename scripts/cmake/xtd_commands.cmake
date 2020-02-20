@@ -1544,7 +1544,9 @@ macro(write_resources_file_header)
   set(RESOURCES_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/resources.hpp)
 
   if (APPLE AND "${APPLICATION_TYPE}" STREQUAL "GUI_APPLICATION")
-    set(PREFIX_PATH "..")
+    set(PREFIX_RESOURCE_PATH "\"..\", \"Resources\"")
+  else()
+    set(PREFIX_RESOURCE_PATH "\"resources\"")
   endif ()
 
   file(WRITE ${RESOURCES_FILE_HEADER}
@@ -1575,7 +1577,7 @@ macro(write_resources_file_header)
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::bitmap.\n"
         "    static const xtd::drawing::bitmap& ${NAME}() {\n"
-        "      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), \"${PREFIX_PATH}\", \"resources\", \"${FILENAME}\"));\n"
+        "      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return bitmap;\n"
         "    }\n"
         "\n"
@@ -1584,7 +1586,7 @@ macro(write_resources_file_header)
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::icon.\n"
         "    static const xtd::drawing::icon& ${NAME}() {\n"
-        "      static xtd::drawing::icon icon(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), \"${PREFIX_PATH}\", \"resources\", \"${FILENAME}\"));\n"
+        "      static xtd::drawing::icon icon(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return icon;\n"
         "    }\n"
         "\n"
@@ -1593,7 +1595,7 @@ macro(write_resources_file_header)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type std::string.\n"
         "    static const std::string& ${NAME}() {\n"
-        "      static std::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), \"${PREFIX_PATH}\", \"resources\", \"${FILENAME}\"));\n"
+        "      static std::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
         "\n"
@@ -1610,7 +1612,7 @@ macro(write_resources_file_header)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type std::string.\n"
         "    static const std::string& ${NAME}() {\n"
-        "      static std::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), \"${PREFIX_PATH}\", \"resources\", \"${FILENAME}\"));\n"
+        "      static std::string text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), ${PREFIX_RESOURCE_PATH}, \"${FILENAME}\"));\n"
         "      return text;\n"
         "    }\n"
         "\n"
