@@ -10,7 +10,7 @@
 namespace settings_example::properties {
   class settings : public xtd::forms::component {
   public:
-    settings() : settings(true) {}
+    settings() : ::settings_example::properties::settings(true) {}
 
     static ::settings_example::properties::settings& default_settings() {
       static ::settings_example::properties::settings default_settings;

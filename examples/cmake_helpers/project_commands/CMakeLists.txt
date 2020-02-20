@@ -6,6 +6,6 @@ find_package(xtd REQUIRED)
 
 # Projects
 add_projects(
-  resources_example
-  settings_example
+  resources_command
+  settings_command
 )
