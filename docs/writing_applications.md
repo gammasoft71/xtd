@@ -28,4 +28,4 @@ This [tutorial](https://github.com/gammasoft71/xtd_tunit/tree/master/docs/writin
 
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.

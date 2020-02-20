@@ -81,4 +81,4 @@ The xtd.forms library contains classes for creating Windows-based applications t
 
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.

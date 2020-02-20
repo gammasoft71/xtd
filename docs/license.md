@@ -25,4 +25,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ______________________________________________________________________________________________
 
-© 2019 Gammasoft.
+© 2020 Gammasoft.
