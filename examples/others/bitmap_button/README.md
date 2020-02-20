@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::button](../../../src/xtd_forms/include/xtd/
 
 # Sources
 
-[bitmap_button.cpp](bitmap_button.cpp)
+[src/bitmap_button.cpp](src/bitmap_button.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
