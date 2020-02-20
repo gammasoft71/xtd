@@ -1,6 +1,6 @@
 # xtd.forms "Hello, World!" examples
 
-[This folder](..) contains all examples used by xtd.forms Docmentation and more.
+[This folder](..) contains all examples used by [xtd::forms](../../src/xtd_forms) docmentation and more.
 
 ## Hello World
 
