@@ -1,4 +1,4 @@
-# xtd.forms Application Examples
+# xtd.forms Application examples
 
 [This folder](..) contains all examples used by xtd.forms Docmentation and more.
 
