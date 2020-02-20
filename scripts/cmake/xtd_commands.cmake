@@ -1909,6 +1909,12 @@ if (MSVC)
 endif ()
 
 add_definitions(-D__CMAKE_INSTALL_PREFIX__="${CMAKE_INSTALL_PREFIX}")
+if (MSVC)
+  set(__XTD_ADD__ "xtd/")
+endif()
+
+add_definitions(-D__XTD_INCLUDE_PATH__="${CMAKE_INSTALL_PREFIX}${__XTD_ADD__}/include")
+add_definitions(-D__XTD_LIB_PATH__="${CMAKE_INSTALL_PREFIX}${__XTD_ADD__}/lib")
 
 # add external packages
 #if(NOT APPLE AND NOT ANDROID AND NOT CMAKE_HOST_SOLARIS AND UNIX)
