@@ -2,14 +2,14 @@
 
 [This folder](.) contains all examples used by [xtd::forms](../src/xtd_forms) docmentation and more.
 
-## Hello World
+## [Hello World](hello_world_examples/README.md)
 
 * [hello_world_emoticons](hello_world_examples/hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticons](../src/xtd_forms/include/xtd/forms/emoticons.hpp) component.
 * [hello_world_forms](hello_world_examples/hello_world_forms/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control.
 * [hello_world_message_box](hello_world_examples/hello_world_message_box/README.md) The classic first application "Hello, World!" with [xtd::forms::message_box](../src/xtd_forms/include/xtd/forms/message_box.hpp) control.
 * [hello_world_paint](hello_world_examples/hello_world_paint/README.md) The classic first application "Hello, Wrold!" with GDI+ drawing objects.
 
-## Application
+## [Application](applications/README.md)
 
 * [application](applications/application/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class.
 * [application_context](applications/application_context/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class with [xtd::forms::application_context](../src/xtd_forms/include/xtd/forms/application_context.hpp) class.
@@ -118,7 +118,7 @@
 * **print_preview_control** represents the raw preview part of print previewing from a Windows Forms application, without any dialog boxes or buttons. Most PrintPreviewControl objects are found on PrintPreviewDialog objects, but they do not have to be.
 * **print_preview_dialog** represents a dialog box form that contains a PrintPreviewControl for printing from a Windows Forms application.
 
-## Common Dialogs
+## [Common Dialogs](common_dialogs/README.md)
 
 * [about_dialog](common_dialogs/about_dialog/README.md) represents a common dialog box that displays about box.
 * [color_dialog](common_dialogs/color_dialog/README.md) represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.
