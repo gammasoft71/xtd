@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.forms.common.dialogs.examples)
+find_package(xtd.forms REQUIRED)
 
-add_subdirectory(about_dialog)
-add_subdirectory(color_dialog)
-add_subdirectory(folder_browser_dialog)
-add_subdirectory(font_dialog)
-add_subdirectory(message_box)
-add_subdirectory(open_file_dialog)
-add_subdirectory(save_file_dialog)
+add_projects(
+  about_dialog
+  color_dialog
+  folder_browser_dialog
+  font_dialog
+  message_box
+  open_file_dialog
+  save_file_dialog
+)

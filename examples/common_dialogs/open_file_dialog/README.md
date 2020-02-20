@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::open_file_dialog](../../../src/xtd_forms/in
 
 # Sources
 
-[open_file_dialog.cpp](open_file_dialog.cpp)
+[src/open_file_dialog.cpp](src/open_file_dialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

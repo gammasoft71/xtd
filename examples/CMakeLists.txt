@@ -4,7 +4,7 @@ project(xtd.forms.examples)
 find_package(xtd.forms REQUIRED)
 
 add_projects(
-  hello_worlds
+  hello_world_examples
   applications
   common_controls
   picker_controls
@@ -15,7 +15,7 @@ add_projects(
   datas
   components
   printing
-  #common_dialogs
+  common_dialogs
   #other_dialogs
   #custom_dialogs
   #events
