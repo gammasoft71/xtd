@@ -19,7 +19,7 @@ add_projects(
   other_dialogs
   custom_dialogs
   events
-  #others
+  others
   tests
   demos
   games

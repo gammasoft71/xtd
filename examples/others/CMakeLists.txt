@@ -1,37 +1,40 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(xtd.forms.others.examples)
+project(others)
+find_package(xtd.forms REQUIRED)
 
-add_subdirectory(auto_scroll)
-add_subdirectory(bitmap_button)
-add_subdirectory(button2)
-add_subdirectory(button3)
-add_subdirectory(button4)
-add_subdirectory(clock)
-add_subdirectory(colored_forms)
-add_subdirectory(colored_tab_pages)
-add_subdirectory(colors)
-add_subdirectory(countries)
-add_subdirectory(docked_panels)
-add_subdirectory(emoticons)
-add_subdirectory(font_family)
-add_subdirectory(form2)
-add_subdirectory(form_and_main)
-add_subdirectory(form_and_thread)
-add_subdirectory(form_window_state)
-add_subdirectory(group_box_and_check_box)
-add_subdirectory(group_box_and_radio_button)
-add_subdirectory(images)
-add_subdirectory(labels_and_unicode_text)
-add_subdirectory(lcd_label2)
-add_subdirectory(lcd_label_with_dot_matrix)
-add_subdirectory(lcd_label_with_fourteen_segment)
-add_subdirectory(lcd_label_with_nine_segment)
-add_subdirectory(lcd_label_with_seven_segment)
-add_subdirectory(lcd_label_with_sixteen_segment)
-add_subdirectory(painting)
-add_subdirectory(smileys)
-add_subdirectory(stopwatch_form)
-add_subdirectory(text_box_multiline)
-add_subdirectory(text_box_password)
-add_subdirectory(texts)
+add_projects(
+  auto_scroll
+  bitmap_button
+  button2
+  button3
+  button4
+  clock
+  colored_forms
+  colored_tab_pages
+  colors
+  countries
+  docked_panels
+  emoticons
+  font_family
+  form2
+  form_and_main
+  form_and_thread
+  form_window_state
+  group_box_and_check_box
+  group_box_and_radio_button
+  images
+  labels_and_unicode_text
+  lcd_label2
+  lcd_label_with_dot_matrix
+  lcd_label_with_fourteen_segment
+  lcd_label_with_nine_segment
+  lcd_label_with_seven_segment
+  lcd_label_with_sixteen_segment
+  painting
+  smileys
+  stopwatch_form
+  text_box_multiline
+  text_box_password
+  texts
+)

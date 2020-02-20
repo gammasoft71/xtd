@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::panel](../../../src/xtd_forms/include/xtd/f
 
 # Sources
 
-[auto_scroll.cpp](auto_scroll.cpp)
+[src/auto_scroll.cpp](src/auto_scroll.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
