@@ -1,4 +1,4 @@
-# xtd_forms common dialog Examples
+# xtd_forms common dialog examples
 
 [This folder](..) contains all examples used by [xtd::forms](../src/xtd_forms) docmentation and more.
 
