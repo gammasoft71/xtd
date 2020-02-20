@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.forms.common_controls.examples)
-find_package(xtd REQUIRED)
+find_package(xtd.forms REQUIRED)
 
 add_projects(
   button
