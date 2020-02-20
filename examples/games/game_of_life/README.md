@@ -27,17 +27,17 @@ Game speed is regulated by the speed track bar and the size of the cells with th
 
 # Sources
 
-[cell.hpp](cell.hpp)
+[src/cell.hpp](src/cell.hpp)
 
-[cell_event_args.hpp](cell_event_args.hpp)
+[src/cell_event_args.hpp](src/cell_event_args.hpp)
 
-[cell_event_handler.hpp](cell_event_handler.hpp)
+[src/cell_event_handler.hpp](src/cell_event_handler.hpp)
 
-[grid.hpp](grid.hpp)
+[src/grid.hpp](src/grid.hpp)
 
-[form_main.hpp](form_main.hpp)
+[src/form_main.hpp](src/form_main.hpp)
 
-[game_of_life.cpp](game_of_life.cpp)
+[src/game_of_life.cpp](src/game_of_life.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
