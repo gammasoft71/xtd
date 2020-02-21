@@ -4,7 +4,7 @@ demonstrates how to use startup_ keyword.
 
 # Sources
 
-[form_and_main.cpp](form_and_main.cpp)
+[src/form_and_main.cpp](src/form_and_main.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

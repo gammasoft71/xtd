@@ -4,7 +4,7 @@ demonstrates how a thread can update ui with [xtd::forms::control::invoke](../..
 
 # Sources
 
-[form_and_thread.cpp](form_and_thread.cpp)
+[src/form_and_thread.cpp](src/form_and_thread.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
