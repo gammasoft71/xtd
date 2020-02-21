@@ -13,6 +13,8 @@ namespace xtd {
 
       bitmap(const image& image, const drawing::size& size) : xtd::drawing::image(image, size.width(), size.height()) {}
 
+      bitmap(const image& image, const rectangle& rect) : xtd::drawing::image(image, rect) {}
+
       explicit bitmap(const std::string& filename) : xtd::drawing::image(filename) {}
 
       explicit bitmap(std::istream& stream) : xtd::drawing::image(stream) {}
@@ -20,6 +22,8 @@ namespace xtd {
       explicit bitmap(const char* const* bits) : xtd::drawing::image(bits) {}
       
       bitmap(int32_t width, int32_t height) : xtd::drawing::image(width, height) {}
+      
+      bitmap clone(const rectangle& rect) {return bitmap(*this, rect);}
 
       /// @cond
       bitmap(const bitmap& bitmap) = default;

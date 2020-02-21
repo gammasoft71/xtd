@@ -25,6 +25,7 @@ namespace xtd {
         static intptr_t create(const char* const* bits);
         static intptr_t create(int32_t width, int32_t height);
         static intptr_t create(intptr_t image, int32_t width, int32_t height);
+        static intptr_t create(intptr_t image, int32_t left, int32_t top, int32_t width, int32_t height);
         static void destroy(intptr_t image);
         static size_t flags(intptr_t image);
         static size_t frame_resolutions(intptr_t image);

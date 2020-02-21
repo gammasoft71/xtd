@@ -130,6 +130,13 @@ intptr_t image::create(intptr_t image, int32_t width, int32_t height) {
   return reinterpret_cast<intptr_t>(result);
 }
 
+intptr_t image::create(intptr_t image, int32_t left, int32_t top, int32_t width, int32_t height) {
+  if (image == 0) return 0;
+  init_image_handlers();
+  wxImage* result = new wxImage(reinterpret_cast<wxImage*>(image)->GetSubImage({left, top, width, height}));
+  return reinterpret_cast<intptr_t>(result);
+}
+
 void image::destroy(intptr_t image) {
   reinterpret_cast<wxImage*>(image)->Destroy();
   delete reinterpret_cast<wxImage*>(image);

@@ -47,6 +47,11 @@ image::image(const image& image, int32_t width, int32_t height) {
   this->update_properties();
 }
 
+image::image(const image& image, const rectangle& rect) {
+  this->data_->handle_ = native::image::create(image.handle(), rect.left(), rect.top(), rect.width(), rect.height());
+  this->update_properties();
+}
+
 image::~image() {
   if (this->data_.use_count() == 1 && this->data_->handle_)
     native::image::destroy(this->data_->handle_);
