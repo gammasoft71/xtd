@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::user_control](../../../src/xtd_forms/includ
 
 # Sources
 
-[colors.cpp](colors.cpp)
+[src/colors.cpp](src/colors.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

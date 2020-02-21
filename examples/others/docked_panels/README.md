@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::panel](../../../src/xtd_forms/include/xtd/f
 
 # Sources
 
-[docked_panels.cpp](docked_panels.cpp)
+[src/docked_panels.cpp](src/docked_panels.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
