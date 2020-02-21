@@ -10,6 +10,7 @@
 #include "imaging/image_format.hpp"
 #include "imaging/pixel_format.hpp"
 #include "imaging/property_item.hpp"
+#include "rectangle.hpp"
 #include "size.hpp"
 #include "size_f.hpp"
 
@@ -142,6 +143,7 @@ namespace xtd {
       explicit image(const char* const* bits);
       image(int32_t width, int32_t height);
       image(const image& image, int32_t width, int32_t height);
+      image(const image& image, const rectangle& rect);
       void update_properties();
 
       struct data {
