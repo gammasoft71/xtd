@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::tab_page](../../../src/xtd_forms/include/xt
 
 # Sources
 
-[colored_tab_pages.cpp](colored_tab_pages.cpp)
+[src/colored_tab_pages.cpp](src/colored_tab_pages.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
