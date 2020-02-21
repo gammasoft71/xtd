@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::group_box](../../../src/xtd_forms/include/x
 
 # Sources
 
-[group_box_and_radio_button.cpp](group_box_and_radio_button.cpp)
+[src/group_box_and_radio_button.cpp](src/group_box_and_radio_button.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
