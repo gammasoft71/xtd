@@ -4,7 +4,7 @@ demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](../../../src/xtd
 
 # Sources
 
-[lcd_label_with_dot_matrix.cpp](lcd_label_with_dot_matrix.cpp)
+[src/lcd_label_with_dot_matrix.cpp](src/lcd_label_with_dot_matrix.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

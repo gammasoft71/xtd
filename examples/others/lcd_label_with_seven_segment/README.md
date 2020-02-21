@@ -4,7 +4,7 @@ demonstrates how to use [xtd::forms::lcd_label_with_seven_segment](../../../src/
 
 # Sources
 
-[lcd_label_with_seven_segment.cpp](lcd_label_with_seven_segment.cpp)
+[src/lcd_label_with_seven_segment.cpp](src/lcd_label_with_seven_segment.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

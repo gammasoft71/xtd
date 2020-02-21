@@ -4,7 +4,7 @@ demonstrates how to use [xtd::forms::lcd_label_with_fourtenn_segment](../../../s
 
 # Sources
 
-[lcd_label_with_fourteen_segment.cpp](lcd_label_with_fourteen_segment.cpp)
+[src/lcd_label_with_fourteen_segment.cpp](src/lcd_label_with_fourteen_segment.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
