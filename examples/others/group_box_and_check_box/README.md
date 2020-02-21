@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::group_box](../../../src/xtd_forms/include/x
 
 # Sources
 
-[group_box_and_check_box.cpp](group_box_and_check_box.cpp)
+[src/group_box_and_check_box.cpp](src/group_box_and_check_box.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

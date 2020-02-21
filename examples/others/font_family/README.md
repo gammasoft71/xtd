@@ -4,7 +4,7 @@ demonstrates the use of xtd::drawing::font_family class.
 
 # Sources
 
-[font_family.cpp](font_family.cpp)
+[src/font_family.cpp](src/font_family.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
