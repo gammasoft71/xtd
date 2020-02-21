@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::emoticons](../../../src/xtd_forms/include/x
 
 # Sources
 
-[emoticons.cpp](emoticons.cpp)
+[src/emoticons.cpp](src/emoticons.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

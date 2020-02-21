@@ -4,7 +4,7 @@ demonstrates the use of [xtd::forms::text_box_password](../../../src/xtd_forms/i
 
 # Sources
 
-[text_box_password.cpp](text_box_password.cpp)
+[src/text_box_password.cpp](src/text_box_password.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
