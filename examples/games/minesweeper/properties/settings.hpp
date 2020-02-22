@@ -89,10 +89,10 @@ namespace minesweeper::properties {
     settings(bool load) {if (load) reload();}
     xtd::forms::settings settings_;
     bool original_color_ {true};
-    int level_ {3};
-    int custom_height_ {10};
-    int custom_width_ {20};
-    int custom_mines_ {50};
+    int level_ {0};
+    int custom_height_ {16};
+    int custom_width_ {30};
+    int custom_mines_ {99};
     int beginner_high_scores_value_ {999};
     std::string beginner_high_scores_names_ {"Anonymous"};
     int intermediate_high_scores_value_ {999};
