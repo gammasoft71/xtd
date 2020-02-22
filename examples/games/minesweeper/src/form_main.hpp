@@ -112,11 +112,11 @@ namespace minesweeper {
     }
     
   private:
-    void change_level(level level) {
+    void change_level(level l) {
       using namespace xtd;
       using namespace xtd::drawing;
       using namespace xtd::forms;
-      level_ = level;
+      level_ = l;
       cells_.clear();
       grid_size_ = std::map<minesweeper::level, grid_size> {{minesweeper::level::beginner, {9, 9}}, {minesweeper::level::intermediate, {16, 16}}, {minesweeper::level::expert, {30, 16}}, {minesweeper::level::custom, {properties::settings::default_settings().custom_width(), properties::settings::default_settings().custom_height()}}} [level_];
       mine_count_ = std::map<minesweeper::level, int> {{minesweeper::level::beginner, 10}, {minesweeper::level::intermediate, 40}, {minesweeper::level::expert, 99}, {minesweeper::level::custom, properties::settings::default_settings().custom_mines()}} [level_];
@@ -151,7 +151,15 @@ namespace minesweeper {
                         if (cells_[index2][index1]->state() != cell_state::flag && cells_[index2][index1]->has_mine())
                           cells_[index2][index1]->state(cell_state::mine);
                     mine_count_label.text("000");
-                    message_box::show(*this, "You win!");
+                    if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}}[level_]) {
+                      /// @todo show dialog to enter gamer name and high score dialog
+                      std::string gamer_name = std::map<level, std::string> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}}[level_];
+                      std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_value}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_value}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_value}}};
+                      std::map<level, delegate<void(std::string)>> set_settings_high_scores_names {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_name}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_name}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_name}}};
+                      set_settings_high_scores_values[level_](stopwatch_count_);
+                      set_settings_high_scores_names[level_](gamer_name);
+                      properties::settings::default_settings().save();
+                    }
                   } else
                     start_game.image(bitmap(properties::resources::smiley1(), {24, 24}));
                 } else {
@@ -173,10 +181,10 @@ namespace minesweeper {
               if (cell.state() == cell_state::unchecked) {
                 cell.state(cell_state::flag);
                 ++flagged_mine_count_;
-              } else if (cell.state() == cell_state::flag) {
+              } else if (cell.state() == cell_state::flag && properties::settings::default_settings().marks()) {
                 cell.state(cell_state::question);
                 --flagged_mine_count_;
-              } else if (cell.state() == cell_state::question) cell.state(cell_state::unchecked);
+              } else if (cell.state() == cell_state::flag || cell.state() == cell_state::question) cell.state(cell_state::unchecked);
               if ((mine_count_ - flagged_mine_count_) >= 0 && (mine_count_ - flagged_mine_count_) <= 999) mine_count_label.text(strings::format("{:D3}", mine_count_ - flagged_mine_count_));
               else if (mine_count_ - flagged_mine_count_ >= -99) mine_count_label.text(strings::format("{:D2}", mine_count_ - flagged_mine_count_));
             }
