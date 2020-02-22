@@ -9,7 +9,7 @@ setting(original_color bool USER "true")
 # "1" : minesweeper::level::intermediate
 # "2" : minesweeper::level::expert
 # "3" : minesweeper::level::custom
-setting(level int USER "3")
+setting(level int USER "0")
 
 setting(custom_height int USER "16")
 setting(custom_width int USER "30")
