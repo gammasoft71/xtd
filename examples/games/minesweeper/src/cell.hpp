@@ -80,7 +80,7 @@ namespace minesweeper {
         std::string text = std::to_string(neighbors_);
         auto x = (e.clip_rectangle().width() - e.graphics().measure_string(text, font()).width()) / 2;
         auto y = (e.clip_rectangle().height() - e.graphics().measure_string(text, font()).height()) / 2;
-        if (back_color().is_dark()) {
+        if (back_color().get_brightness() < 0.5f) {
           e.graphics().draw_string(text, font(), solid_brush(color::lighter(color::lighter(text_color))), x - 1, y - 1);
           e.graphics().draw_string(text, font(), solid_brush(color::darker(color::darker(text_color))), x + 1, y + 1);
         }
