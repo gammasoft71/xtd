@@ -6,4 +6,5 @@ find_package(xtd.forms REQUIRED)
 add_projects(
   application
   application_context
+  application_icon
 )
