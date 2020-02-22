@@ -295,6 +295,12 @@ namespace xtd {
   template<>
   inline long double parse<long double>(const std::string& str) {return parse<long double>(str, number_styles::fixed_point);}
 
+  template<>
+  inline bool parse<bool>(const std::string& str) {
+    if (xtd::strings::trim(xtd::strings::to_lower(str)) != "true" && xtd::strings::trim(xtd::strings::to_lower(str)) != "1" && xtd::strings::trim(xtd::strings::to_lower(str)) != "false" && xtd::strings::trim(xtd::strings::to_lower(str)) != "0")  throw std::invalid_argument("Invalid string format");
+    return xtd::strings::trim(xtd::strings::to_lower(str)) == "true" || xtd::strings::trim(xtd::strings::to_lower(str)) == "1";
+  }
+
   template<typename value_t>
   inline value_t parse(const std::wstring& str) {throw std::invalid_argument("Parse speciailisation not found");}
 
