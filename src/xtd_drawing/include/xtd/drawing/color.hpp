@@ -526,6 +526,8 @@ namespace xtd {
       /// @brief Gets the native handle of this xtd::drawing::color class.
       /// @remarks For internal use only, needed for system_colors.
       intptr_t handle() const {return this->handle_;}
+
+      bool is_dark() const {return (static_cast<int32_t>(r()) + g() + b()) < 382;}
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
       /// @return bool Returns true if this color is uninitialized; otherwise, false.
@@ -535,7 +537,9 @@ namespace xtd {
       /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, false.
       /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a xtd::drawing::color structure that is created by using the from_argb method, is_known_color returns false, even if the ARGB value matches the ARGB value of a predefined color.
       bool is_known_color() const {return this->known_color_ != (xtd::drawing::known_color)0;}
-       
+
+      bool is_light() const {return !is_dark();}
+
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
       /// @return bool Returns true if this xtd::drawing::color was created by using either the FromName method or the FromKnownColor method; otherwise, false.
       bool is_named_color() const {return this->name_ != strings::format("{:X8}", this->argb_) && this->name_ != "0";}
