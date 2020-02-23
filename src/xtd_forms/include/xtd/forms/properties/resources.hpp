@@ -1,4 +1,5 @@
 #pragma once
+#include <filesystem>
 #include "../control.hpp"
 
 #if !defined(__XTD_FORMS_RESOURCES_PATH__)
@@ -14,28 +15,28 @@ namespace xtd {
     public:
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& gammasoft() {
-        if (!std::filesystem::exists(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "gammasoft.png"))) return xtd::drawing::bitmap::empty;
+        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"gammasoft.png")) return xtd::drawing::bitmap::empty;
         static xtd::drawing::bitmap bitmap(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "gammasoft.png"));
         return bitmap;
       }
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& xtd() {
-        if (!std::filesystem::exists(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "xtd.png"))) return xtd::drawing::bitmap::empty;
+        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd.png")) return xtd::drawing::bitmap::empty;
         static xtd::drawing::bitmap bitmap(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "xtd.png"));
         return bitmap;
       }
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& xtd_console() {
-        if (!std::filesystem::exists(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "xtd_console.png"))) return xtd::drawing::bitmap::empty;
+        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd_console.png")) return xtd::drawing::bitmap::empty;
         static xtd::drawing::bitmap bitmap(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "xtd_console.png"));
         return bitmap;
       }
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& xtd_forms() {
-        if (!std::filesystem::exists(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "xtd_forms.png"))) return xtd::drawing::bitmap::empty;
+        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd_forms.png")) return xtd::drawing::bitmap::empty;
         static xtd::drawing::bitmap bitmap(xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "pictures", "xtd_forms.png"));
         return bitmap;
       }
