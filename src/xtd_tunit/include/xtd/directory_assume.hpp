@@ -18,7 +18,7 @@ namespace xtd {
       directory_assume() = delete;
       /// @endcond
       
-#if defined(__cpp_lib_filesystem) && !defined(__APPLE__)
+#if defined(__cpp_lib_filesystem)
       /// @brief Asserts that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -87,7 +87,6 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_);// test throws an abort_error exception.
       /// @endcode
-      template<typename Char>
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual) {are_not_equal(expected, actual, "", line_info());}
       
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
@@ -101,7 +100,6 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_);// test throws an abort_error exception.
       /// @endcode
-      template<typename Char>
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const xtd::tunit::line_info& line_info) {are_not_equal(expected, actual, "", line_info);}
       
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
@@ -115,7 +113,6 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_);// test throws an abort_error exception.
       /// @endcode
-      template<typename Char>
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message) {are_not_equal(expected, actual, message, line_info());}
       
       /// @brief Asserts that two std::filesystem::directory_entry are not equal.
@@ -130,7 +127,6 @@ namespace xtd {
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_); // test ok.
       /// xtd::tunit::file_assert::are_not_equal(d1, d2, "User message...", line_info_);// test throws an abort_error exception.
       /// @endcode
-      template<typename Char>
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::tunit::line_info& line_info) {
         try {
           directory_assert::are_not_equal(expected, actual, message, line_info);
