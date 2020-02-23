@@ -60,10 +60,16 @@ forms::create_params text_box::create_params() const {
   if (multiline_) create_params.style(create_params.style() | ES_MULTILINE);
   if (use_system_password_char_) create_params.style(create_params.style() | ES_PASSWORD);
   if (read_only_) create_params.style(create_params.style() | ES_READONLY);
+  if (!word_wrap_) create_params.style(create_params.style() | ES_AUTOHSCROLL);
 
   return create_params;
 }
 
 drawing::size text_box::measure_control() const {
   return drawing::size(this->client_size_.width(), static_cast<int32_t>(this->font().get_height()) + 2 + (this->border_style_ == border_style::none ? 0 : 4));
+}
+
+void text_box::select(size_t start, size_t length) {
+  text_box_base::select(start, length);  
+  native::text_box::select(handle_, selection_start_, selection_length_);
 }

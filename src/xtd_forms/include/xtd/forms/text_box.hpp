@@ -28,6 +28,8 @@ namespace xtd {
       virtual bool use_system_password_char() const {return use_system_password_char_;}
       virtual text_box& use_system_password_char(bool value);
       
+      void select(size_t start, size_t length) override;
+
     protected:
       forms::create_params create_params() const override;
       
