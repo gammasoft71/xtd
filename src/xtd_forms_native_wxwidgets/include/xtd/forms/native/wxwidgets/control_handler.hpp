@@ -172,7 +172,12 @@ namespace xtd {
               case WXK_CLEAR: key_data = VK_CLEAR; break;
               case WXK_SHIFT: key_data = VK_SHIFT; break;
               case WXK_ALT: key_data = VK_MENU; break;
+#if defined(__WXOSX__)
+              case WXK_RAW_CONTROL: key_data = VK_CONTROL; break;
+              case WXK_CONTROL: key_data = VK_COMMAND; break;
+#else
               case WXK_CONTROL: key_data = VK_CONTROL; break;
+#endif
               case WXK_MENU: key_data = VK_MENU; break;
               case WXK_PAUSE: key_data = VK_PAUSE; break;
               case WXK_CAPITAL: key_data = VK_CAPITAL; break;
@@ -303,12 +308,28 @@ namespace xtd {
               default: break;
             }
           }
-          
+          /*
           if (key_event.AltDown()) key_data += VK_ALT_MODIFIER;
-          if (key_event.CmdDown()) key_data += VK_CONTROL_MODIFIER;
-          if (key_event.MetaDown()) key_data += VK_COMMAND_MODIFIER;
+#if defined(__WXOSX__)
+          if (key_event.CmdDown()) key_data += VK_COMMAND_MODIFIER;
+          if (key_event.RawControlDown()) key_data += VK_CONTROL_MODIFIER;
+#else
+          if (key_event.ControlDown()) key_data += VK_CONTROL_MODIFIER;
+#endif
+          if (key_event.MetaDown()) key_data += VK_META_MODIFIER;
           if (key_event.ShiftDown()) key_data += VK_SHIFT_MODIFIER;
-          
+           */
+
+          if ((key_event.GetModifiers() & wxMOD_ALT) == wxMOD_ALT) key_data += VK_ALT_MODIFIER;
+ #if defined(__WXOSX__)
+          if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_COMMAND_MODIFIER;
+          if ((key_event.GetModifiers() & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) key_data += VK_CONTROL_MODIFIER;
+#else
+          if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_CONTROL_MODIFIER;
+#endif
+          if ((key_event.GetModifiers() & wxMOD_META) == wxMOD_META) key_data += VK_META_MODIFIER;
+          if ((key_event.GetModifiers() & wxMOD_SHIFT) == wxMOD_SHIFT) key_data += VK_SHIFT_MODIFIER;
+
           return key_data;
         }
         

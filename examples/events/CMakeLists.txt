@@ -7,5 +7,6 @@ add_projects(
   application_idle
   form_and_messages
   form_paint
+  key_events
   send_message_to_form
 )
