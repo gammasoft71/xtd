@@ -382,6 +382,8 @@ namespace xtd {
         return *this;
       }
 
+      static forms::keys modifier_keys() {return modifier_keys_;}
+      
       static forms::mouse_buttons mouse_buttons() {return mouse_buttons_;}
       
       virtual const std::string& name() const {return this->name_;}
@@ -847,6 +849,7 @@ namespace xtd {
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
       drawing::point location_;
+      static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
       std::string name_;
       intptr_t parent_ = 0;

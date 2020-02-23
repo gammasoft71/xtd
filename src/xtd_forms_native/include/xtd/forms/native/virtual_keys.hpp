@@ -52,6 +52,7 @@ constexpr size_t VK_SHIFT_MODIFIER = 0x00010000;
 constexpr size_t VK_CONTROL_MODIFIER = 0x00020000;
 constexpr size_t VK_ALT_MODIFIER = 0x00040000;
 constexpr size_t VK_COMMAND_MODIFIER = 0x00080000;
+constexpr size_t VK_META_MODIFIER = 0x00100000;
 
 #ifndef VK_LBUTTON
 constexpr size_t VK_LBUTTON = 0x000001;

@@ -43,6 +43,7 @@ namespace {
   }
 }
 
+forms::keys control::modifier_keys_ = forms::keys::none;
 forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
@@ -835,6 +836,7 @@ void control::wm_command(message& message) {
 void control::wm_key_char(message& message) {
   if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    modifier_keys_ = key_event_args.modifiers();
     this->on_key_down(key_event_args);
     message.result(key_event_args.suppress_key_press());
     if (!key_event_args.handled()) this->def_wnd_proc(message);
@@ -845,6 +847,7 @@ void control::wm_key_char(message& message) {
     if (!key_press_event_args.handled()) this->def_wnd_proc(message);
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    modifier_keys_ = key_event_args.modifiers();
     this->on_key_up(key_event_args);
     message.result(key_event_args.handled());
     if (!key_event_args.handled()) this->def_wnd_proc(message);
