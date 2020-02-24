@@ -1,6 +1,7 @@
 #pragma once
 #include "cell.hpp"
 #include "level.hpp"
+#include "input_name_dialog.hpp"
 #include "../properties/settings.hpp"
 #include <xtd/xtd.forms>
 
@@ -13,6 +14,8 @@ namespace minesweeper {
     form_main() {
       using namespace xtd;
       using namespace xtd::drawing;
+      using namespace xtd::forms;
+
       text("Minesweeper");
       auto_size_mode(xtd::forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
@@ -22,6 +25,25 @@ namespace minesweeper {
         fore_color(color::black);
       }
       
+      /// @todo Create menu...
+      main_menu.menu_items().push_back("&Game");
+      main_menu.menu_items()[0].menu_items().push_back("&New games");
+      main_menu.menu_items()[0].menu_items().push_back("-");
+      main_menu.menu_items()[0].menu_items().push_back("&Beginner");
+      main_menu.menu_items()[0].menu_items().push_back("&Intermediate");
+      main_menu.menu_items()[0].menu_items().push_back("&Expert");
+      main_menu.menu_items()[0].menu_items().push_back("&Custom...");
+      main_menu.menu_items()[0].menu_items().push_back("-");
+      main_menu.menu_items()[0].menu_items().push_back("&Marks [?]");
+      main_menu.menu_items()[0].menu_items().push_back(texts::color);
+      main_menu.menu_items()[0].menu_items().push_back("-");
+      main_menu.menu_items()[0].menu_items().push_back("Best &Times...");
+      main_menu.menu_items()[0].menu_items().push_back("-");
+      main_menu.menu_items()[0].menu_items().push_back(texts::quit);
+      main_menu.menu_items().push_back(texts::help);
+      main_menu.menu_items()[1].menu_items().push_back(texts::about);
+      menu(main_menu);
+
       status_panel.parent(*this);
       status_panel.height(60);
       status_panel.paint += [&](xtd::forms::control& sender, xtd::forms::paint_event_args& e) {
@@ -152,13 +174,20 @@ namespace minesweeper {
                           cells_[index2][index1]->state(cell_state::mine);
                     mine_count_label.text("000");
                     if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}}[level_]) {
-                      /// @todo show dialog to enter gamer name and high score dialog
                       std::string gamer_name = std::map<level, std::string> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}}[level_];
+                      input_name_dialog dialog;
+                      dialog.gammer_name(gamer_name);
+                      dialog.level(level_);
+                      if (dialog.show_dialog(*this) == dialog_result::ok)
+                        gamer_name = dialog.gammer_name();
+                      
                       std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_value}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_value}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_value}}};
                       std::map<level, delegate<void(std::string)>> set_settings_high_scores_names {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_name}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_name}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_name}}};
                       set_settings_high_scores_values[level_](stopwatch_count_);
                       set_settings_high_scores_names[level_](gamer_name);
                       properties::settings::default_settings().save();
+                      
+                      /// @todo show best times
                     }
                   } else
                     start_game.image(bitmap(properties::resources::smiley1(), {24, 24}));
@@ -198,6 +227,7 @@ namespace minesweeper {
     void new_game() {
       using namespace xtd;
       using namespace xtd::drawing;
+      game_panel.visible(false);
       suspend_layout();
       game_over_ = false;
       stopwatch.enabled(false);
@@ -223,6 +253,7 @@ namespace minesweeper {
       stopwatch_label.text("000");
       start_game.image(bitmap(properties::resources::smiley1(), {24, 24}));
       resume_layout();
+      game_panel.visible(true);
     }
     
     void check_neighbors(const xtd::drawing::point& cell_location) {
@@ -253,6 +284,7 @@ namespace minesweeper {
       return cells_[cell_location.x()][cell_location.y()]->neighbors();
     }
 
+    xtd::forms::main_menu main_menu;
     xtd::forms::panel status_panel;
     xtd::forms::lcd_label mine_count_label;
     xtd::forms::lcd_label stopwatch_label;
