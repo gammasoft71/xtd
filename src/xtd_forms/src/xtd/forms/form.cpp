@@ -37,7 +37,19 @@ form& form::accept_button(const ibutton_control& accept_button) {
 }
 
 form& form::accept_button(nullptr_t) {
-  
+  this->accept_button_.reset();
+  return *this;
+}
+
+form& form::cancel_button(const ibutton_control& cancel_button) {
+  if (!this->cancel_button_.has_value() || &this->cancel_button_.value().get() != &cancel_button) {
+    this->cancel_button_ = const_cast<ibutton_control&>(cancel_button);
+  }
+  return *this;
+}
+
+form& form::cancel_button(nullptr_t) {
+  this->cancel_button_.reset();
   return *this;
 }
 
@@ -277,6 +289,7 @@ forms::create_params form::create_params() const {
 void form::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_ACTIVATE: this->wm_activate(message); break;
+    case WM_KEYUP: this->wm_key_up(message); break;
     case WM_CLOSE: this->wm_close(message); break;
     default: this->container_control::wnd_proc(message); break;
   }
@@ -305,6 +318,18 @@ void form::wm_close(message &message) {
     }
     form_closed_event_args close_event_args;
     on_form_closed(close_event_args);
+  }
+}
+
+void form::wm_key_up(message &message) {
+  key_event_args key_event_args(static_cast<keys>(message.wparam()));
+  if (key_event_args.key_data() == keys::enter && accept_button_.has_value()) {
+    accept_button_.value().get().perform_click();
+    cdebug << "accept_button::perform_click" << endl;
+  }
+  if (key_event_args.key_data() == keys::escape && cancel_button_.has_value()) {
+    cancel_button_.value().get().perform_click();
+    cdebug << "cancel_button::perform_click" << endl;
   }
 }
 
