@@ -1558,7 +1558,7 @@ macro(write_resources_file_header)
     "#pragma once\n"
     "\n"
     "#include <exception>\n"
-    "#include <xtd/xtd>\n"
+    "#include <xtd/xtd.forms>\n"
     "\n"
     "namespace ${APPLICATION_DEFAULT_NAMESPACE}::properties {\n"
     "  /// @brief A strongly-typed resource class, for looking up localized strings, etc.\n"
