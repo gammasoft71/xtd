@@ -8,32 +8,65 @@ namespace minesweeper {
   public:
     high_scores_dialog() {
       using namespace xtd::forms;
-      start_position(form_start_position::center_parent).minimize_box(false).maximize_box(false).close_box(false).control_box(false).form_border_style(xtd::forms::form_border_style::none).client_size({360, 200});
+      start_position(form_start_position::center_parent);
+      minimize_box(false);
+      maximize_box(false);
+      close_box(false);
+      control_box(false);
+      form_border_style(xtd::forms::form_border_style::none);
+      client_size({360, 200});
+      accept_button(ok_button_);
+      controls().push_back_range({title_, beginner_level_label_, intermediate_level_label_, expert_level_label_, beginner_score_label_, intermediate_score_label_, expert_score_label_, beginner_name_label_, intermediate_name_label_, expert_name_label_, reset_scores_button_, ok_button_});
 
-      title_.text_align(content_alignment::middle_center).location({10, 15}).width(340).text("Fastest Mine Sweepers");
+      title_.text_align(content_alignment::middle_center);
+      title_.location({10, 15});
+      title_.width(340);
+      title_.text("Fastest Mine Sweepers");
 
-      beginner_level_label_.location({10, 55}).auto_size(true).text("Beginner");
-      intermediate_level_label_.location({10, 85}).auto_size(true).text("Intermediate");
-      expert_level_label_.location({10, 115}).auto_size(true).text("Expert");
+      beginner_level_label_.location({10, 55});
+      beginner_level_label_.auto_size(true);
+      beginner_level_label_.text("Beginner");
+      
+      intermediate_level_label_.location({10, 85});
+      intermediate_level_label_.auto_size(true);
+      intermediate_level_label_.text("Intermediate");
+      
+      expert_level_label_.location({10, 115});
+      expert_level_label_.auto_size(true);
+      expert_level_label_.text("Expert");
 
-      beginner_score_label_.location({130, 55}).auto_size(true);
-      intermediate_score_label_.location({130, 85}).auto_size(true);
-      expert_score_label_.location({130, 115}).auto_size(true);
+      beginner_score_label_.location({130, 55});
+      beginner_score_label_.auto_size(true);
+      
+      intermediate_score_label_.location({130, 85});
+      intermediate_score_label_.auto_size(true);
+      
+      expert_score_label_.location({130, 115});
+      expert_score_label_.auto_size(true);
 
-      beginner_name_label_.location({250, 55}).auto_size(true);
-      intermediate_name_label_.location({250, 85}).auto_size(true);
-      expert_name_label_.location({250, 115}).auto_size(true);
+      beginner_name_label_.location({250, 55});
+      beginner_name_label_.auto_size(true);
+      
+      intermediate_name_label_.location({250, 85});
+      intermediate_name_label_.auto_size(true);
+      
+      expert_name_label_.location({250, 115});
+      expert_name_label_.auto_size(true);
 
-      reset_scores_button_.location({70, 150}).width(100).text("&Reset Scores").click += [&] {
+      reset_scores_button_.location({70, 150});
+      reset_scores_button_.width(100);
+      reset_scores_button_.text("&Reset Scores");
+      reset_scores_button_.click += [&] {
         properties::settings::default_settings().reset();
         read_and_update_settings();
       };
 
-      ok_button_.dialog_result(dialog_result::ok).location({190, 150}).width(100).text(xtd::forms::texts::ok);
-
-      controls().push_back_range({title_, beginner_level_label_, intermediate_level_label_, expert_level_label_, beginner_score_label_, intermediate_score_label_, expert_score_label_, beginner_name_label_, intermediate_name_label_, expert_name_label_, reset_scores_button_, ok_button_});
+      ok_button_.location({190, 150});
+      ok_button_.width(100);
+      ok_button_.text(xtd::forms::texts::ok);
+      ok_button_.dialog_result(dialog_result::ok);
       accept_button(ok_button_);
-      
+
       read_and_update_settings();
     }
     
