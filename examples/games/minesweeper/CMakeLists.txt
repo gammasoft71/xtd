@@ -7,6 +7,7 @@ add_sources(
   src/cell_state.hpp
   src/cell.hpp
   src/form_main.hpp
+  src/high_scores_dialog.hpp
   src/input_name_dialog.hpp
   src/level.hpp
   src/minesweeper.cpp

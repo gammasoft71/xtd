@@ -1,6 +1,7 @@
 #pragma once
 #include "cell.hpp"
 #include "level.hpp"
+#include "high_scores_dialog.hpp"
 #include "input_name_dialog.hpp"
 #include "../properties/settings.hpp"
 #include <xtd/xtd.forms>
@@ -131,6 +132,10 @@ namespace minesweeper {
       stopwatch.tick += [&] {
         if (stopwatch_count_ < 999) stopwatch_label.text(strings::format("{:D3}", ++stopwatch_count_));
       };
+      
+      show();
+      minesweeper::high_scores_dialog high_scores_dialog;
+      high_scores_dialog.show_dialog(*this);
     }
     
   private:
@@ -175,11 +180,11 @@ namespace minesweeper {
                     mine_count_label.text("000");
                     if (level_ != level::custom && stopwatch_count_ < std::map<level, int> {{level::beginner, properties::settings::default_settings().beginner_high_scores_value()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_value()}, {level::expert, properties::settings::default_settings().expert_high_scores_value()}}[level_]) {
                       std::string gamer_name = std::map<level, std::string> {{level::beginner, properties::settings::default_settings().beginner_high_scores_name()}, {level::intermediate, properties::settings::default_settings().intermediate_high_scores_name()}, {level::expert, properties::settings::default_settings().expert_high_scores_name()}}[level_];
-                      input_name_dialog dialog;
-                      dialog.gammer_name(gamer_name);
-                      dialog.level(level_);
-                      if (dialog.show_dialog(*this) == dialog_result::ok)
-                        gamer_name = dialog.gammer_name();
+                      minesweeper::input_name_dialog input_name_dialog;
+                      input_name_dialog.gammer_name(gamer_name);
+                      input_name_dialog.level(level_);
+                      if (input_name_dialog.show_dialog(*this) == dialog_result::ok)
+                        gamer_name = input_name_dialog.gammer_name();
                       
                       std::map<level, delegate<void(int)>> set_settings_high_scores_values {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_value}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_value}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_value}}};
                       std::map<level, delegate<void(std::string)>> set_settings_high_scores_names {{level::beginner, {properties::settings::default_settings(), &properties::settings::beginner_high_scores_name}}, {level::intermediate, {properties::settings::default_settings(), &properties::settings::intermediate_high_scores_name}}, {level::expert, {properties::settings::default_settings(), &properties::settings::expert_high_scores_name}}};
@@ -187,7 +192,9 @@ namespace minesweeper {
                       set_settings_high_scores_names[level_](gamer_name);
                       properties::settings::default_settings().save();
                       
-                      /// @todo show best times
+                      show();
+                      minesweeper::high_scores_dialog high_scores_dialog;
+                      high_scores_dialog.show_dialog(*this);
                     }
                   } else
                     start_game.image(bitmap(properties::resources::smiley1(), {24, 24}));
