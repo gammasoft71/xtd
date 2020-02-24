@@ -206,7 +206,7 @@ font control::default_font() {
 }
 
 void control::destroy(intptr_t control) {
-  if (control == 0) return;
+  if (control == 0 || !wxTheApp) return;
   /// @todo Fix destroy_handle on recreate with old parent and remove the following line
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
   if (reinterpret_cast<control_handler*>(control)->control()->GetParent() &&  dynamic_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())) {
