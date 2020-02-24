@@ -1,10 +1,5 @@
 #pragma once
-#include <filesystem>
 #include "../control.hpp"
-
-#if !defined(__XTD_FORMS_RESOURCES_PATH__)
-#  define __XTD_FORMS_RESOURCES_PATH__ ""
-#endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -15,32 +10,38 @@ namespace xtd {
     public:
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& gammasoft() {
-        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"gammasoft.png")) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap((std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"gammasoft.png").string());
+        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "gammasoft.png"))) return xtd::drawing::bitmap::empty;
+        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "gammasoft.png"));
         return bitmap;
       }
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& xtd() {
-        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd.png")) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap((std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd.png").string());
+        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd.png"))) return xtd::drawing::bitmap::empty;
+        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd.png"));
         return bitmap;
       }
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& xtd_console() {
-        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd_console.png")) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap((std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd_console.png").string());
+        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_console.png"))) return xtd::drawing::bitmap::empty;
+        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_console.png"));
         return bitmap;
       }
       
       /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
       static const xtd::drawing::bitmap& xtd_forms() {
-        if (!std::filesystem::exists(std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd_forms.png")) return xtd::drawing::bitmap::empty;
-        static xtd::drawing::bitmap bitmap((std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__)/"pictures"/"xtd_forms.png").string());
+        if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_forms.png"))) return xtd::drawing::bitmap::empty;
+        static xtd::drawing::bitmap bitmap(xtd::io::path::combine(forms_resource_path_, "pictures", "xtd_forms.png"));
         return bitmap;
       }
 
+    private:
+#if defined(__XTD_FORMS_RESOURCES_PATH__)
+      static constexpr const char* forms_resource_path_ = __XTD_FORMS_RESOURCES_PATH__;
+#else
+      static constexpr const char* forms_resource_path_ = "";
+#endif
     };
   }
 }
