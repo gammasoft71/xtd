@@ -35,7 +35,11 @@ namespace xtd {
       std::optional<std::reference_wrapper<ibutton_control>> accept_button() const {return accept_button_;}
       form& accept_button(const ibutton_control& value);
       form& accept_button(nullptr_t);
-
+      
+      std::optional<std::reference_wrapper<ibutton_control>> cancel_button() const {return cancel_button_;}
+      form& cancel_button(const ibutton_control& value);
+      form& cancel_button(nullptr_t);
+      
       static std::optional<std::reference_wrapper<form>> active_form() {return active_form_;}
       
       virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
@@ -99,9 +103,9 @@ namespace xtd {
       
       void close();
       
-      forms::dialog_result show_dialog();
+      virtual forms::dialog_result show_dialog();
       
-      forms::dialog_result show_dialog(const iwin32_window& owner);
+      virtual forms::dialog_result show_dialog(const iwin32_window& owner);
       
       event<form, event_handler<control&>> activated;
       event<form, event_handler<control&>> deactivate;
@@ -136,7 +140,10 @@ namespace xtd {
       
       virtual void wm_close(message& message);
       
+      virtual void wm_key_up(message& message);
+      
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
+      std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;
       static std::optional<std::reference_wrapper<form>> active_form_;
       bool close_box_ = true;
       bool control_box_ = true;
