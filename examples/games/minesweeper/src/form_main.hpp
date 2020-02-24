@@ -134,10 +134,6 @@ namespace minesweeper {
       stopwatch.tick += [&] {
         if (stopwatch_count_ < 999) stopwatch_label.text(strings::format("{:D3}", ++stopwatch_count_));
       };
-      
-      show();
-      minesweeper::high_scores_dialog high_scores_dialog;
-      high_scores_dialog.show_dialog(*this);
     }
     
   private:
