@@ -27,6 +27,7 @@ namespace minesweeper {
       }
       
       /// @todo Create menu...
+      /*
       main_menu.menu_items().push_back("&Game");
       main_menu.menu_items()[0].menu_items().push_back("&New games");
       main_menu.menu_items()[0].menu_items().push_back("-");
@@ -44,6 +45,7 @@ namespace minesweeper {
       main_menu.menu_items().push_back(texts::help);
       main_menu.menu_items()[1].menu_items().push_back(texts::about);
       menu(main_menu);
+       */
 
       status_panel.parent(*this);
       status_panel.height(60);
