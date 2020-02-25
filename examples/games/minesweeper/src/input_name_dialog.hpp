@@ -1,11 +1,13 @@
 #pragma once
 #include "level.hpp"
+#include "../properties/settings.hpp"
 #include <xtd/xtd.forms>
 
 namespace minesweeper {
   class input_name_dialog : public xtd::forms::form {
   public:
     input_name_dialog() {
+      using namespace xtd::drawing;
       using namespace xtd::forms;
       start_position(form_start_position::center_parent);
       minimize_box(false);
@@ -14,6 +16,12 @@ namespace minesweeper {
       control_box(false);
       form_border_style(xtd::forms::form_border_style::none);
       client_size({200, 160});
+      
+      if (properties::settings::default_settings().original_color()) {
+        back_color(color::silver);
+        fore_color(color::black);
+        name_text_box_.fore_color(color::black);
+      }
       
       message_label_.parent(*this);
       message_label_.location({10, 10});
