@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(settings_comand)
+project(settings_command)
 find_package(xtd REQUIRED)
 
 # Sources

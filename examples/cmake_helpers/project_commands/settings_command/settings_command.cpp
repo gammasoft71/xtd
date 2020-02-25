@@ -15,20 +15,20 @@ int main() {
 
   auto save_button = control::create<button>(*main_form, "&Save", {100, 10});
   save_button->click += [&] {
-    settings_example::properties::settings::default_settings().color(colored_panel->back_color());
-    settings_example::properties::settings::default_settings().save();
+    settings_command::properties::settings::default_settings().color(colored_panel->back_color());
+    settings_command::properties::settings::default_settings().save();
   };
   
   auto reload_button = control::create<button>(*main_form, "&Reload", {10, 50});
   reload_button->click += [&] {
-    settings_example::properties::settings::default_settings().reload();
-    colored_panel->back_color(settings_example::properties::settings::default_settings().color());
-    color_chooser->color(settings_example::properties::settings::default_settings().color());
+    settings_command::properties::settings::default_settings().reload();
+    colored_panel->back_color(settings_command::properties::settings::default_settings().color());
+    color_chooser->color(settings_command::properties::settings::default_settings().color());
   };
   
   auto reset_button = control::create<button>(*main_form, "Rese&t", {100, 50});
   reset_button->click += [&] {
-    settings_example::properties::settings::default_settings().reset();
+    settings_command::properties::settings::default_settings().reset();
     reload_button->perform_click();
   };
 
