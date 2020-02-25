@@ -190,7 +190,6 @@ namespace minesweeper {
                       set_settings_high_scores_names[level_](gamer_name);
                       properties::settings::default_settings().save();
                       
-                      show();
                       minesweeper::high_scores_dialog high_scores_dialog;
                       high_scores_dialog.show_dialog(*this);
                     }

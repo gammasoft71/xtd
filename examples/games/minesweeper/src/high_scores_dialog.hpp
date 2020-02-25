@@ -7,6 +7,7 @@ namespace minesweeper {
   class high_scores_dialog : public xtd::forms::form {
   public:
     high_scores_dialog() {
+      using namespace xtd::drawing;
       using namespace xtd::forms;
       start_position(form_start_position::center_parent);
       minimize_box(false);
@@ -18,6 +19,11 @@ namespace minesweeper {
       accept_button(ok_button_);
       controls().push_back_range({title_, beginner_level_label_, intermediate_level_label_, expert_level_label_, beginner_score_label_, intermediate_score_label_, expert_score_label_, beginner_name_label_, intermediate_name_label_, expert_name_label_, reset_scores_button_, ok_button_});
 
+      if (properties::settings::default_settings().original_color()) {
+        back_color(color::silver);
+        fore_color(color::black);
+      }
+      
       title_.text_align(content_alignment::middle_center);
       title_.location({10, 15});
       title_.width(340);
