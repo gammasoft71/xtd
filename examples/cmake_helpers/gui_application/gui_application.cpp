@@ -4,7 +4,7 @@ using namespace xtd::forms;
 
 int main() {
   auto main_form = control::create<form>("Gui application");
-  auto information_label = control::create<label>(*main_form, "This console application was generate by \nxtd cmake helpers.\nSee CMakeLists.txt file.\n", {10, 10});
-  information_label->auto_size(true);
+  auto information_label = control::create<label>(*main_form, "\nThis console application was generate by \nxtd cmake helpers.\n\nSee CMakeLists.txt file.", {10, 10});
+  information_label->text_align(content_alignment::top_center).dock(dock_style::fill);
   application::run(*main_form);
 }
