@@ -1558,7 +1558,7 @@ macro(write_resources_file_header)
     "#pragma once\n"
     "\n"
     "#include <exception>\n"
-    "#include <xtd/xtd.forms>\n"
+    "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
     "\n"
     "namespace ${APPLICATION_DEFAULT_NAMESPACE}::properties {\n"
     "  /// @brief A strongly-typed resource class, for looking up localized strings, etc.\n"
@@ -1658,7 +1658,7 @@ macro(write_settings_file_header)
     "\n"
     "#pragma once\n"
     "\n"
-    "#include <xtd/xtd>\n"
+    "#include <${XTD_PROJECT_INCLUDE_FILE}>\n"
     "\n"
     "namespace ${APPLICATION_DEFAULT_NAMESPACE}::properties {\n"
     "  class settings : public xtd::forms::component {\n"
@@ -1848,6 +1848,9 @@ if (MSVC)
 endif ()
 
 add_definitions(-D__CMAKE_INSTALL_PREFIX__="${CMAKE_INSTALL_PREFIX}")
+if (NOT XTD_PROJECT_INCLUDE_FILE)
+  set(XTD_PROJECT_INCLUDE_FILE "xtd/xtd")
+endif ()
 
 if (NOT "${xtd_DIR}" STREQUAL "xtd_DIR-NOTFOUND")
   get_filename_component(XTD_PATH_BASE "${xtd_DIR}" DIRECTORY)
