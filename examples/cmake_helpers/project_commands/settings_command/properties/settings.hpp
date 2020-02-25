@@ -7,13 +7,13 @@
 
 #include <xtd/xtd>
 
-namespace settings_example::properties {
+namespace settings_command::properties {
   class settings : public xtd::forms::component {
   public:
-    settings() : ::settings_example::properties::settings(true) {}
+    settings() : ::settings_command::properties::settings(true) {}
 
-    static ::settings_example::properties::settings& default_settings() {
-      static ::settings_example::properties::settings default_settings;
+    static ::settings_command::properties::settings& default_settings() {
+      static ::settings_command::properties::settings default_settings;
       return default_settings;
     }
 
