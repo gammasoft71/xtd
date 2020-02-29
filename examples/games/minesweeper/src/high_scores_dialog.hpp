@@ -63,7 +63,14 @@ namespace minesweeper {
       reset_scores_button_.width(100);
       reset_scores_button_.text("&Reset Scores");
       reset_scores_button_.click += [&] {
-        properties::settings::default_settings().reset();
+        properties::settings empty;
+        properties::settings::default_settings().beginner_high_scores_name(empty.beginner_high_scores_name());
+        properties::settings::default_settings().beginner_high_scores_value(empty.beginner_high_scores_value());
+        properties::settings::default_settings().beginner_high_scores_name(empty.intermediate_high_scores_name());
+        properties::settings::default_settings().beginner_high_scores_value(empty.intermediate_high_scores_value());
+        properties::settings::default_settings().beginner_high_scores_name(empty.expert_high_scores_name());
+        properties::settings::default_settings().beginner_high_scores_value(empty.expert_high_scores_value());
+        properties::settings::default_settings().save();
         read_and_update_settings();
       };
 
