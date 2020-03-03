@@ -13,7 +13,7 @@ Shows how to create an application with  [xtd::forms::application](../../../src/
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output
