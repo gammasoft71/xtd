@@ -7,3 +7,6 @@
 [submodule "src/xtd_io"]
 	path = src/xtd_io
 	url = https://github.com/gammasoft71/xtd_io
+[submodule "src/xtd_delegates"]
+	path = src/xtd_delegates
+	url = https://github.com/gammasoft71/xtd_delegates
