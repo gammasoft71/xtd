@@ -3,13 +3,18 @@ cmake_minimum_required(VERSION 3.3)
 #Project
 project(xtdc)
 set(SOURCES
-  src/xtd.cpp
+  src/project_language.hpp
+  src/project_management.hpp
+  src/project_sdk.hpp
+  src/project_type.hpp
+  src/xtdc.cpp
 )
 source_group(src FILES ${SOURCES})
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_definitions(-D__XTD_FORMS_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
