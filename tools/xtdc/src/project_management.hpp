@@ -17,24 +17,8 @@
 
 namespace xtdc_command {
   class project_management {
-    struct change_current_directory {
-      change_current_directory(const std::string& current_directory) {xtd::environment::current_directory(current_directory);}
-      ~change_current_directory() {xtd::environment::current_directory(previous_current_directoy_);}
-    private:
-      std::string previous_current_directoy_ = xtd::environment::current_directory();
-    };
-    
   public:
-    project_management() {}
-    //explicit project_management(const std::string& name) : name_(name) {}
-    //project_management(const std::string& name, project_type type) : name_(name), type_(type) {}
     project_management(const std::string& name, const std::filesystem::path& output) : name_(name), output_(output) {}
-    project_management(const std::string& name, project_type type, project_sdk sdk, project_language language, const std::filesystem::path& output) : name_(name), type_(type), sdk_(sdk), language_(language), output_(output) {
-      auto sdks = get_valid_sdks(type);
-      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) throw std::invalid_argument("sdk not valid with type");
-      auto languages = get_valid_languages(sdk);
-      if (std::find(languages.begin(), languages.end(), language) == languages.end()) throw std::invalid_argument("language not valid with sdk");
-    }
 
     static std::vector<project_sdk> get_valid_sdks(project_type type) {
       switch (type) {
@@ -64,25 +48,28 @@ namespace xtdc_command {
       throw std::invalid_argument("sdk is not project_sdk valid value");
     }
     
-    std::string create() {
-      if (is_path_already_exist_and_not_empty(output_)) return xtd::strings::format("Path \"{0}\" already exists and not empty! CreateNewProject aborted.", output_);
+    std::string create(project_type type, project_sdk sdk, project_language language) {
+      if (std::find(get_valid_sdks(type).begin(), get_valid_sdks(type).end(), sdk) == get_valid_sdks(type).end()) return "The sdk param not valid with type param! Create project aborted.";
+      if (std::find(get_valid_languages(sdk).begin(), get_valid_languages(sdk).end(), language) == get_valid_languages(sdk).end()) return "The language param not valid with sdk param! Create project aborted.";
+      if (is_path_already_exist_and_not_empty(output_)) return xtd::strings::format("Path {0} already exists and not empty! Create project aborted.", output_);
       std::filesystem::create_directories(std::filesystem::path {output_}/"build");
-      std::map<project_type, xtd::action<>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type_]();
+      std::map<project_type, xtd::action<project_sdk, project_language>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](sdk, language);
       generate();
       return xtd::strings::format("Project {}{} created", name_, xtd::environment::os_version().is_windows_platform() ? ".sln" : xtd::environment::os_version().is_osx_platform() ? ".xcodeproj" : " makefile");
     }
 
     std::string build(bool release) {
+      if (!is_path_already_exist_and_not_empty(output_)) return xtd::strings::format("Path {0} does not exists or is empty! Build project aborted.", output_);
       generate();
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
         system(xtd::strings::format("cmake --build {} --config {}", build_path(), release ? "Release" : "Debug").c_str());
       else
         system(xtd::strings::format("cmake --build {}", build_path()/(release ? "Release" : "Debug")).c_str());
-      builded_ = true;
       return xtd::strings::format("Project {0} builded", name_);
     }
 
     std::string clean(bool release) {
+      if (!is_path_already_exist_and_not_empty(output_)) return xtd::strings::format("Path {0} does not exists or is empty! Clean project aborted.", output_);
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
         std::filesystem::remove_all( build_path());
       else
@@ -92,6 +79,7 @@ namespace xtdc_command {
     }
 
     std::string open(bool release) {
+      if (!is_path_already_exist_and_not_empty(output_)) return xtd::strings::format("Path {0} does not exists or is empty! Open project aborted.", output_);
       generate();
       if (xtd::environment::os_version().is_windows_platform())
         system(xtd::strings::format("explorer {}.sln", build_path()/name_).c_str());
@@ -99,42 +87,34 @@ namespace xtdc_command {
         system(xtd::strings::format("open {}.xcodeproj", build_path()/name_).c_str());
       else
         system(xtd::strings::format("xdg-open {}.cbp", build_path()/(release ? "Release" : "Debug")/name_).c_str());
-      opened_ = true;
       return xtd::strings::format("Project {0} opened", name_);
     }
 
-    std::string to_string() const {return xtd::strings::format("{{name=\"{}\", type={}, sdk={}, language={}, output=\"{}\"}}", name_, to_string(type_), to_string(sdk_), to_string(language_), output_);}
-
   private:
     std::filesystem::path build_path() const {return output_ / "build";}
-    void create_blank_solution() {
+    void create_blank_solution(project_sdk sdk, project_language language) {
       //std::cout << "(create_blank_solution) Generate " << to_string() << std::endl << std::endl;
       create_doxygen_txt();
       create_blank_solution_cmakelists_txt();
     }
     
-    void create_console() {
-      std::cout << "(create_console) Generate " << to_string() << std::endl << std::endl;
+    void create_console(project_sdk sdk, project_language language) {
       create_doxygen_txt();
     }
     
-    void create_gui() {
-      std::cout << "(create_gui) Generate " << to_string() << std::endl << std::endl;
+    void create_gui(project_sdk sdk, project_language language) {
       create_doxygen_txt();
     }
     
-    void create_shared_library() {
-      std::cout << "(create_shared_library) Generate " << to_string() << std::endl << std::endl;
+    void create_shared_library(project_sdk sdk, project_language language) {
       create_doxygen_txt();
     }
     
-    void create_static_library() {
-      std::cout << "(create_static_library) Generate " << to_string() << std::endl << std::endl;
+    void create_static_library(project_sdk sdk, project_language language) {
       create_doxygen_txt();
     }
     
-    void create_unit_test_application() {
-      std::cout << "(create_unit_test_application) Generate " << to_string() << std::endl << std::endl;
+    void create_unit_test_application(project_sdk sdk, project_language language) {
       create_doxygen_txt();
     }
     
@@ -350,7 +330,6 @@ namespace xtdc_command {
         system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", output_, build_path()/"Debug").c_str());
         system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", output_, build_path()/"Release").c_str());
       }
-      generated_ = true;
     }
 
     bool is_path_already_exist_and_not_empty(const std::string& path) {
@@ -360,16 +339,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static std::string to_string(project_type type) {return std::map<xtdc_command::project_type, std::string> {{xtdc_command::project_type::blank_solution, "blank_solution"}, {xtdc_command::project_type::gui, "gui"}, {xtdc_command::project_type::console, "console"}, {xtdc_command::project_type::shared_library, "shared_library"}, {xtdc_command::project_type::static_library, "static_library"}, {xtdc_command::project_type::unit_test_application, "unit_test_application"}}[type];}
-    static std::string to_string(project_sdk sdk) {return std::map<xtdc_command::project_sdk, std::string> {{xtdc_command::project_sdk::none, "none"}, {xtdc_command::project_sdk::xtd, "xtd"}, {xtdc_command::project_sdk::win32, "win32"}, {xtdc_command::project_sdk::gtk, "gtk"}, {xtdc_command::project_sdk::cocoa, "cocoa"}, {xtdc_command::project_sdk::gtkmm, "gtkmm"}, {xtdc_command::project_sdk::wxwidgets, "wxwidgets"}, {xtdc_command::project_sdk::qt5, "qt5"}, {xtdc_command::project_sdk::gtest, "gtest"}, {xtdc_command::project_sdk::catch2, "catch2"}}[sdk];}
-    static std::string to_string(project_language language) {return std::map<xtdc_command::project_language, std::string> {{xtdc_command::project_language::cpp, "cpp"}, {xtdc_command::project_language::c, "c"}, {xtdc_command::project_language::objectivec, "objectivec"}}[language];}
     std::string name_ {std::filesystem::path(xtd::environment::current_directory()).stem().string()};
-    project_type type_ {project_type::gui};
-    project_sdk sdk_ {project_sdk::xtd};
-    project_language language_ {project_language::cpp};
     std::filesystem::path output_ {xtd::environment::current_directory()};
-    bool generated_ = false;
-    bool builded_ = false;
-    bool opened_ = false;
   };
 }
