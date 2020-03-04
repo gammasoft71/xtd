@@ -2,6 +2,7 @@
 
 #include <xtd/xtd.core>
 #include <chrono>
+#include <filesystem>
 #include <iostream>
 
 #if !defined(WIN32)
@@ -68,7 +69,7 @@ namespace xtdc_command {
         else if (command_args[0] == "web")
           return web(command_args);
         else {
-          if (io::file::exists(command_args[0])) {
+          if (std::filesystem::exists({command_args[0]})) {
             //diagnostics::process::start(command_args[0]);
           } else {
             set_foreground_color_red();
@@ -98,6 +99,7 @@ namespace xtdc_command {
                              "\n"
                              "SDK commands:\n"
                              "  new              Initialize projects.\n"
+                             "  add              Add new projects to solution.\n"
                              "  run              Compiles and immediately executes a project.\n"
                              "  build            Builds a project.\n"
                              "  install          Install a project.\n"
@@ -151,14 +153,15 @@ namespace xtdc_command {
       "  --force             Forces content to be generated even if it would change existing files.\n"
       "\n"
       "\n"
-      "Templates                                     Short Name    SDK/Language\n"
-      "-----------------------------------------------------------------------------------------\n"
-      "Console Application                           console       [xtd], c++, c, objective-c\n"
-      "Graphic User Interface Application            gui           [xtd], win32, gtk, cocoa, gtkmm, wxwidgets, qt5\n"
-      "Static library                                staticlib     [xtd], c++, c, objective-c\n"
-      "Shared library                                sharedlib     [xtd], c++, c, objective-c\n"
-      "Unit Test Project                             test          [xtd], gtest, catch2\n"
-      "Solution File                                 sln\n"
+      "Templates                              Short Name    SDK/Language              \n"
+      "-------------------------------------------------------------------------------\n"
+      "Console Application                    console       [xtd], c++, c, objective-c\n"
+      "Graphic User Interface Application     gui           [xtd], win32, gtk, cocoa, \n"
+      "                                                     gtkmm, wxwidgets, qt5     \n"
+      "Static library                         staticlib     [xtd], c++, c, objective-c\n"
+      "Shared library                         sharedlib     [xtd], c++, c, objective-c\n"
+      "Unit Test Project                      test          [xtd], gtest, catch2      \n"
+      "Solution File                          sln           [xtd]                     \n"
       "\n"
       "\n"
       "Exemples:\n"
@@ -269,7 +272,7 @@ namespace xtdc_command {
         xtdc_command::project_type project_type = types[type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"xtd", xtdc_command::project_sdk::xtd}, {"win32", xtdc_command::project_sdk::win32}, {"gtk", xtdc_command::project_sdk::gtk}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"qt5", xtdc_command::project_sdk::qt5}, {"gtest", xtdc_command::project_sdk::gtest}, {"catch2", xtdc_command::project_sdk::catch2}}[sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
-        string project_name = io::path::get_file_name_without_extension(output);
+        string project_name = filesystem::path(output).stem();
 
         if (sdk == "xtd") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "win32") project_language = xtdc_command::project_language::cpp;
@@ -282,7 +285,7 @@ namespace xtdc_command {
         else if (sdk == "c") project_language = xtdc_command::project_language::c;
         else if (sdk == "objectivec") project_language = xtdc_command::project_language::objectivec;
 
-        project_management project(project_name, project_type, project_sdk, project_language, io::path::get_full_path(output));
+        project_management project(project_name, project_type, project_sdk, project_language, filesystem::absolute(filesystem::path(output)));
         cout << project.create() << endl;
         cout << project.generate() << endl;
       }
@@ -298,6 +301,7 @@ namespace xtdc_command {
     }
     
     static int help(const vector<string>& args) {
+      cout << get_help() << endl;
       return 0;
     }
     
