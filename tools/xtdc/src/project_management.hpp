@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdlib>
 #include <iostream>
 #include <filesystem>
 #include <map>
@@ -16,11 +17,19 @@
 
 namespace xtdc_command {
   class project_management {
+    struct change_current_directory {
+      change_current_directory(const std::string& current_directory) {xtd::environment::current_directory(current_directory);}
+      ~change_current_directory() {xtd::environment::current_directory(previous_current_directoy_);}
+    private:
+      std::string previous_current_directoy_ = xtd::environment::current_directory();
+    };
+    
   public:
     project_management() {}
-    explicit project_management(const std::string& name) : name_(name) {}
-    project_management(const std::string& name, project_type type) : name_(name), type_(type) {}
-    project_management(const std::string& name, project_type type, project_sdk sdk, project_language language, const std::string& output) : name_(name), type_(type), sdk_(sdk), language_(language), output_(output) {
+    //explicit project_management(const std::string& name) : name_(name) {}
+    //project_management(const std::string& name, project_type type) : name_(name), type_(type) {}
+    project_management(const std::string& name, const std::filesystem::path& output) : name_(name), output_(output) {}
+    project_management(const std::string& name, project_type type, project_sdk sdk, project_language language, const std::filesystem::path& output) : name_(name), type_(type), sdk_(sdk), language_(language), output_(output) {
       auto sdks = get_valid_sdks(type);
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) throw std::invalid_argument("sdk not valid with type");
       auto languages = get_valid_languages(sdk);
@@ -57,38 +66,41 @@ namespace xtdc_command {
     
     std::string create() {
       if (is_path_already_exist_and_not_empty(output_)) return xtd::strings::format("Path \"{0}\" already exists and not empty! CreateNewProject aborted.", output_);
-      if (!std::filesystem::exists(std::filesystem::path {output_}/"build")) std::filesystem::create_directories(std::filesystem::path {output_}/"build");
+      std::filesystem::create_directories(std::filesystem::path {output_}/"build");
       std::map<project_type, xtd::action<>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type_]();
-      return xtd::strings::format("The {} {} project is created in {}", name_, to_string(type_), output_);
+      generate();
+      return xtd::strings::format("Project {}{} created", name_, xtd::environment::os_version().is_windows_platform() ? ".sln" : xtd::environment::os_version().is_osx_platform() ? ".xcodeproj" : " makefile");
     }
-    
-    std::string generate() {
-      if (!std::filesystem::exists(build_path())) std::filesystem::create_directories(build_path());
-          /*
-      System::Environment::CurrentDirectory = string::Format("{0}{1}", this->drive, System::IO::Path::Combine(this->path, "build"));
-      if (System::Environment::OSVersion().IsWindowsFamilly) {
-        System::Diagnostics::Process process = System::Diagnostics::Process::Start("cmake", "..");
-        process.WaitForExit();
-        this->generated = true;
-        return string::Format("Project {0}.sln generated", this->name);
-      } else if (System::Environment::OSVersion().IsAppleFamilly) {
-        System::Diagnostics::Process process = System::Diagnostics::Process::Start("cmake", ".. -DCMAKE_CXX_COMPILER=clang++ -G \"Xcode\"");
-        process.WaitForExit();
-        this->generated = true;
-        return string::Format("Project {0}.xcodeproj generated", this->name);
-      }
-      System::IO::Directory::CreateDirectory(string::Format("{0}{1}", this->drive, System::IO::Path::Combine(this->path, "build", "Debug")));
-      System::Environment::CurrentDirectory = string::Format("{0}{1}", this->drive, System::IO::Path::Combine(this->path, "build", "Debug"));
-      System::Diagnostics::Process process = System::Diagnostics::Process::Start("cmake", "../.. -DCMAKE_CXX_COMPILER=clang++ -G \"CodeBlocks - Unix Makefiles\"");
-      process.WaitForExit();
-      System::IO::Directory::CreateDirectory(string::Format("{0}{1}", this->drive, System::IO::Path::Combine(this->path, "build", "Release")));
-      System::Environment::CurrentDirectory = string::Format("{0}{1}", this->drive, System::IO::Path::Combine(this->path, "build", "Release"));
-      process = System::Diagnostics::Process::Start("cmake", "../.. -DCMAKE_CXX_COMPILER=clang++ -G \"CodeBlocks - Unix Makefiles\"");
-      process.WaitForExit();
-      this->generated = true;
-      return string::Format("Project {0} makefile generated", this->name);
-           */
-      return xtd::strings::format("Project {}generated", name_);
+
+    std::string build(bool release) {
+      generate();
+      if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
+        system(xtd::strings::format("cmake --build {} --config {}", build_path(), release ? "Release" : "Debug").c_str());
+      else
+        system(xtd::strings::format("cmake --build {}", build_path()/(release ? "Release" : "Debug")).c_str());
+      builded_ = true;
+      return xtd::strings::format("Project {0} builded", name_);
+    }
+
+    std::string clean(bool release) {
+      if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
+        std::filesystem::remove_all( build_path());
+      else
+        std::filesystem::remove_all( build_path()/(release ? "Release" : "Debug"));
+      generate();
+      return xtd::strings::format("Project {0} cleaned", name_);
+    }
+
+    std::string open(bool release) {
+      generate();
+      if (xtd::environment::os_version().is_windows_platform())
+        system(xtd::strings::format("explorer {}.sln", build_path()/name_).c_str());
+      if (xtd::environment::os_version().is_osx_platform())
+        system(xtd::strings::format("open {}.xcodeproj", build_path()/name_).c_str());
+      else
+        system(xtd::strings::format("xdg-open {}.cbp", build_path()/(release ? "Release" : "Debug")/name_).c_str());
+      opened_ = true;
+      return xtd::strings::format("Project {0} opened", name_);
     }
 
     std::string to_string() const {return xtd::strings::format("{{name=\"{}\", type={}, sdk={}, language={}, output=\"{}\"}}", name_, to_string(type_), to_string(sdk_), to_string(language_), output_);}
@@ -96,7 +108,7 @@ namespace xtdc_command {
   private:
     std::filesystem::path build_path() const {return output_ / "build";}
     void create_blank_solution() {
-      std::cout << "(create_blank_solution) Generate " << to_string() << std::endl << std::endl;
+      //std::cout << "(create_blank_solution) Generate " << to_string() << std::endl << std::endl;
       create_doxygen_txt();
       create_blank_solution_cmakelists_txt();
     }
@@ -325,7 +337,22 @@ namespace xtdc_command {
       };
       xtd::io::file::write_all_lines(output_/"CMakeLists.txt", lines);
     }
-    
+        
+    void generate() {
+      std::filesystem::create_directories(build_path());
+      if (xtd::environment::os_version().is_windows_platform() && !std::filesystem::exists(build_path()/xtd::strings::format("{}.sln", name_)))
+        system(xtd::strings::format("cmake -S {} -B {}", output_, build_path()).c_str());
+      else if (xtd::environment::os_version().is_osx_platform() && !std::filesystem::exists(build_path()/xtd::strings::format("{}.xcodeproj", name_)))
+        system(xtd::strings::format("cmake -S {} -B {} -G \"Xcode\"", output_, build_path()).c_str());
+      else if (xtd::environment::os_version().is_linux_platform() && (!std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name_)) || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name_)))) {
+        std::filesystem::create_directories(build_path()/"Debug");
+        std::filesystem::create_directories(build_path()/"Release");
+        system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", output_, build_path()/"Debug").c_str());
+        system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", output_, build_path()/"Release").c_str());
+      }
+      generated_ = true;
+    }
+
     bool is_path_already_exist_and_not_empty(const std::string& path) {
       if (!std::filesystem::exists({output_})) return false;
       if (std::filesystem::is_empty({output_})) return false;
@@ -341,5 +368,8 @@ namespace xtdc_command {
     project_sdk sdk_ {project_sdk::xtd};
     project_language language_ {project_language::cpp};
     std::filesystem::path output_ {xtd::environment::current_directory()};
+    bool generated_ = false;
+    bool builded_ = false;
+    bool opened_ = false;
   };
 }
