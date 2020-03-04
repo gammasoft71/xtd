@@ -287,16 +287,53 @@ namespace xtdc_command {
 
         project_management project(project_name, project_type, project_sdk, project_language, filesystem::absolute(filesystem::path(output)));
         cout << project.create() << endl;
-        cout << project.generate() << endl;
       }
       return 0;
     }
     
     static int build(const vector<string>& args) {
+      bool show_help = false;
+      std::string invalid_option;
+      bool release = false;
+      std::string output;
+      if (!process_build_arguments(args, show_help, release, output, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_build_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_build_help() << endl;
+      else {
+        if (output.empty()) output = environment::current_directory();
+        project_management project(filesystem::path(output).stem(), filesystem::absolute(filesystem::path(output)));
+        cout << project.build(release) << endl;
+      }
       return 0;
     }
     
     static int clean(const vector<string>& args) {
+      bool show_help = false;
+      std::string invalid_option;
+      bool release = false;
+      std::string output;
+      if (!process_clean_arguments(args, show_help, release, output, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_clean_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_clean_help() << endl;
+      else {
+        if (output.empty()) output = environment::current_directory();
+        project_management project(filesystem::path(output).stem(), filesystem::absolute(filesystem::path(output)));
+        cout << project.clean(release) << endl;
+      }
       return 0;
     }
     
@@ -310,6 +347,25 @@ namespace xtdc_command {
     }
     
     static int open(const vector<string>& args) {
+      bool show_help = false;
+      string invalid_option;
+      bool release = false;
+      string output;
+      if (!process_open_arguments(args, show_help, release, output, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_open_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_open_help() << endl;
+      else {
+        if (output.empty()) output = environment::current_directory();
+        project_management project(filesystem::path(output).stem(), filesystem::absolute(filesystem::path(output)));
+        cout << project.open(release) << endl;
+      }
       return 0;
     }
     
@@ -361,10 +417,14 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_build_arguments(const vector<string>& args, bool& show_help, string& output, string& invalid_option) {
+    static bool process_build_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
         else if (args[i] == "-o" || args[i] == "--output") {
           if (i+1 >= args.size()) return false;
           output = args[++i];
@@ -376,10 +436,14 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_clean_arguments(const vector<string>& args, bool& show_help, string& output, string& invalid_option) {
+    static bool process_clean_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
         else if (args[i] == "-o" || args[i] == "--output") {
           if (i+1 >= args.size()) return false;
           output = args[++i];
@@ -391,10 +455,14 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_install_arguments(const vector<string>& args, bool& show_help, string& output, string& invalid_option) {
+    static bool process_install_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
         else if (args[i] == "-o" || args[i] == "--output") {
           if (i+1 >= args.size()) return false;
           output = args[++i];
@@ -406,10 +474,14 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_launch_arguments(const vector<string>& args, bool& show_help, string& output, string& invalid_option) {
+    static bool process_open_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
         else if (args[i] == "-o" || args[i] == "--output") {
           if (i+1 >= args.size()) return false;
           output = args[++i];
@@ -441,10 +513,16 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_run_arguments(const vector<string>& args, bool& show_help, string& output, string& invalid_option) {
+    static bool process_run_arguments(const vector<string>& args, bool& show_help, bool& release, string& target, string& output, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
+        else if (args[i] == "-t" || args[i] == "--target")
+          target = args[++i];
         else if (args[i] == "-o" || args[i] == "--output") {
           if (i+1 >= args.size()) return false;
           output = args[++i];
@@ -456,10 +534,14 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_test_arguments(const vector<string>& args, bool& show_help, string& output, string& invalid_option) {
+    static bool process_test_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
         else if (args[i] == "-o" || args[i] == "--output") {
           if (i+1 >= args.size()) return false;
           output = args[++i];
@@ -471,10 +553,14 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_uninstall_arguments(const vector<string>& args, bool& show_help, string& output, string& invalid_option) {
+    static bool process_uninstall_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-d" || args[i] == "--debug")
+          release = false;
+        else if (args[i] == "-r" || args[i] == "--release")
+          release = true;
         else if (args[i] == "-o" || args[i] == "--output") {
           if (i+1 >= args.size()) return false;
           output = args[++i];
