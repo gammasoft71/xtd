@@ -285,8 +285,8 @@ namespace xtdc_command {
         else if (sdk == "c") project_language = xtdc_command::project_language::c;
         else if (sdk == "objectivec") project_language = xtdc_command::project_language::objectivec;
 
-        project_management project(project_name, project_type, project_sdk, project_language, filesystem::absolute(filesystem::path(output)));
-        cout << project.create() << endl;
+        project_management project(project_name, filesystem::absolute(filesystem::path(output)));
+        cout << project.create(project_type, project_sdk, project_language) << endl;
       }
       return 0;
     }
