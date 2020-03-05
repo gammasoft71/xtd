@@ -1,3 +1,8 @@
+// to debug on macos add following environment variables in project settings :
+// * CC = /usr/bin/clang
+// * CXX = /usr/bin/clang++
+// * PATH = path that contains cmake binaries (current path of your bash or zsh terminal).
+
 #include "project_management.hpp"
 
 #include <xtd/xtd.core>
@@ -125,7 +130,21 @@ namespace xtdc_command {
     }
     
     static string get_build_help() noexcept {
-      return "Usage: build [options]\n";
+      return "Usage: build [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -d, --debug         build debug config.\n"
+      "  -r, --release       build release config.\n"
+      "  -t, --target        build a specified target project.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc build\n"
+      "    xtdc build -p my_app\n"
+      "    xtdc build -p my_app -t my_lib\n"
+      "    xtdc build --help\n";
     }
     
     static string get_clean_help() noexcept {
@@ -146,8 +165,8 @@ namespace xtdc_command {
       "Options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -l, --list          Lists templates containing the specified name. If no name is specified, lists all templates.\n"
-      "  -n, --name          The name for the output being created. If no name is specified, the name of the current directory is used.\n"
-      "  -o, --output        Location to place the generated output.\n"
+      "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.\n"
+      "  -p, --path          Location to place the generated output.\n"
       "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".\n"
       "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.\n"
       "  --force             Forces content to be generated even if it would change existing files.\n"
@@ -165,9 +184,9 @@ namespace xtdc_command {
       "\n"
       "\n"
       "Exemples:\n"
-      "    switch new console\n"
-      "    switch new gui -o my_app\n"
-      "    switch new --help\n";
+      "    xtdc new console\n"
+      "    xtdc new gui -p my_app\n"
+      "    xtdc new --help\n";
     }
     
     static string get_run_help() noexcept {
@@ -223,7 +242,7 @@ namespace xtdc_command {
 #if defined(WIN32)
       return true;
 #else
-      static std::string terminal = getenv("TERM") == nullptr ? "" : getenv("TERM");
+      static string terminal = getenv("TERM") == nullptr ? "" : getenv("TERM");
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
 #endif
     }
@@ -234,8 +253,9 @@ namespace xtdc_command {
       string invalid_option;
       string type;
       string sdk;
-      string output;
-      if (!process_new_arguments(args, show_help, show_list, type, output, sdk, invalid_option)) {
+      string name;
+      string path;
+      if (!process_new_arguments(args, show_help, show_list, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
@@ -252,7 +272,8 @@ namespace xtdc_command {
         
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
-        if (output.empty()) output = environment::current_directory();
+        if (path.empty()) path = environment::current_directory();
+        if (name.empty()) name = filesystem::path(path).stem();
         if (types.find(type) == types.end()) {
           set_foreground_color_red();
           cout << format("No templates matched the input template type: {0}.", type) << endl;
@@ -272,7 +293,6 @@ namespace xtdc_command {
         xtdc_command::project_type project_type = types[type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"xtd", xtdc_command::project_sdk::xtd}, {"win32", xtdc_command::project_sdk::win32}, {"gtk", xtdc_command::project_sdk::gtk}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"qt5", xtdc_command::project_sdk::qt5}, {"gtest", xtdc_command::project_sdk::gtest}, {"catch2", xtdc_command::project_sdk::catch2}}[sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
-        string project_name = filesystem::path(output).stem();
 
         if (sdk == "xtd") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "win32") project_language = xtdc_command::project_language::cpp;
@@ -285,18 +305,19 @@ namespace xtdc_command {
         else if (sdk == "c") project_language = xtdc_command::project_language::c;
         else if (sdk == "objectivec") project_language = xtdc_command::project_language::objectivec;
 
-        project_management project(project_name, filesystem::absolute(filesystem::path(output)));
-        cout << project.create(project_type, project_sdk, project_language) << endl;
+        project_management project(filesystem::absolute(filesystem::path(path)));
+        cout << project.create(name, project_type, project_sdk, project_language) << endl;
       }
       return 0;
     }
     
     static int build(const vector<string>& args) {
       bool show_help = false;
-      std::string invalid_option;
+      string invalid_option;
       bool release = false;
-      std::string output;
-      if (!process_build_arguments(args, show_help, release, output, invalid_option)) {
+      string target;
+      string path;
+      if (!process_build_arguments(args, show_help, release, target, path, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
@@ -307,8 +328,8 @@ namespace xtdc_command {
       if (show_help)
         cout << get_build_help() << endl;
       else {
-        if (output.empty()) output = environment::current_directory();
-        project_management project(filesystem::path(output).stem(), filesystem::absolute(filesystem::path(output)));
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
         cout << project.build(release) << endl;
       }
       return 0;
@@ -316,10 +337,10 @@ namespace xtdc_command {
     
     static int clean(const vector<string>& args) {
       bool show_help = false;
-      std::string invalid_option;
+      string invalid_option;
       bool release = false;
-      std::string output;
-      if (!process_clean_arguments(args, show_help, release, output, invalid_option)) {
+      string path;
+      if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
@@ -330,8 +351,8 @@ namespace xtdc_command {
       if (show_help)
         cout << get_clean_help() << endl;
       else {
-        if (output.empty()) output = environment::current_directory();
-        project_management project(filesystem::path(output).stem(), filesystem::absolute(filesystem::path(output)));
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
         cout << project.clean(release) << endl;
       }
       return 0;
@@ -350,8 +371,8 @@ namespace xtdc_command {
       bool show_help = false;
       string invalid_option;
       bool release = false;
-      string output;
-      if (!process_open_arguments(args, show_help, release, output, invalid_option)) {
+      string path;
+      if (!process_open_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
@@ -362,8 +383,8 @@ namespace xtdc_command {
       if (show_help)
         cout << get_open_help() << endl;
       else {
-        if (output.empty()) output = environment::current_directory();
-        project_management project(filesystem::path(output).stem(), filesystem::absolute(filesystem::path(output)));
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
         cout << project.open(release) << endl;
       }
       return 0;
@@ -417,7 +438,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_build_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
+    static bool process_build_arguments(const vector<string>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -425,9 +446,11 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-o" || args[i] == "--output") {
+        else if (args[i] == "-t" || args[i] == "--target")
+          target = args[++i];
+        else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
@@ -436,7 +459,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_clean_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
+    static bool process_clean_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -444,9 +467,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-o" || args[i] == "--output") {
+        else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
@@ -455,7 +478,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_install_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
+    static bool process_install_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -463,9 +486,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-o" || args[i] == "--output") {
+        else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
@@ -474,7 +497,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_open_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
+    static bool process_open_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -482,9 +505,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-o" || args[i] == "--output") {
+        else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
@@ -493,15 +516,18 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_new_arguments(const vector<string>& args, bool& show_help, bool& show_list, string& type, string& output, string& sdk, string& invalid_option) {
+    static bool process_new_arguments(const vector<string>& args, bool& show_help, bool& show_list, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (!strings::starts_with(args[i], '-')) {
           type = args[i];
-        } else if (args[i] == "-o" || args[i] == "--output") {
+        } else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
+        } else if (args[i] == "-n" || args[i] == "--name") {
+          if (i+1 >= args.size()) return false;
+          name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
           if (i+1 >= args.size()) return false;
           sdk = args[++i];
@@ -513,7 +539,7 @@ namespace xtdc_command {
       return true;
     }
 
-    static bool process_run_arguments(const vector<string>& args, bool& show_help, bool& release, string& target, string& output, string& invalid_option) {
+    static bool process_run_arguments(const vector<string>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -523,9 +549,9 @@ namespace xtdc_command {
           release = true;
         else if (args[i] == "-t" || args[i] == "--target")
           target = args[++i];
-        else if (args[i] == "-o" || args[i] == "--output") {
+        else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
@@ -534,7 +560,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_test_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
+    static bool process_test_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -542,9 +568,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-o" || args[i] == "--output") {
+        else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
@@ -553,7 +579,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_uninstall_arguments(const vector<string>& args, bool& show_help, bool& release, string& output, string& invalid_option) {
+    static bool process_uninstall_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -561,9 +587,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-o" || args[i] == "--output") {
+        else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
-          output = args[++i];
+          path = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
