@@ -65,13 +65,15 @@ namespace xtdc_command {
       return xtd::strings::format("Project {} created", path_);
     }
 
-    std::string build(bool release) {
+    std::string build(const std::string& target, bool release) {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Build project aborted.", path_);
       generate();
+      std::string target_param;
+      if (!target.empty()) target_param = xtd::strings::format(" --target {}", target);
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
-        system(xtd::strings::format("cmake --build {} --config {}", build_path(), release ? "Release" : "Debug").c_str());
+        system(xtd::strings::format("cmake --build {} --config {}{}", build_path(), (release ? "Release" : "Debug"), target_param).c_str());
       else
-        system(xtd::strings::format("cmake --build {}", build_path()/(release ? "Release" : "Debug")).c_str());
+        system(xtd::strings::format("cmake --build {}{}", (build_path()/(release ? "Release" : "Debug"), target_param)).c_str());
       return xtd::strings::format("Project {0} builded", path_);
     }
 
@@ -97,8 +99,17 @@ namespace xtdc_command {
       return xtd::strings::format("Project {0} opened", get_name());
     }
 
+    std::string run(const std::string& target, bool release) {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Rn project aborted.", path_);
+      build(target, release);
+      auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
+      if (target_path.empty()) return "The target does not exist! Run project aborted.";
+      system(target_path.c_str());
+      return "";
+    }
+
   private:
-    std::string get_name() const {
+    std::string& get_name() const {
       static std::string name;
       if (name.empty()) {
         for (const auto& line : get_system_information()) {
@@ -111,16 +122,44 @@ namespace xtdc_command {
       return name;
     }
     
+    std::string get_target_path(const std::string& target, bool release) const {
+      for (const auto& line : get_system_information()) {
+        if (xtd::strings::starts_with(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target))) {
+          if (xtd::environment::os_version().is_windows_platform())
+            return (std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target).string();
+          else if (xtd::environment::os_version().is_osx_platform()) {
+            if (std::filesystem::exists(std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target))
+              return (std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target).string();
+            else
+              return xtd::strings::format("open {}.app", std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target);
+          } else if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
+            return (std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/target).string();
+        }
+      }
+      return "";
+    }
+    
+    std::string get_first_target_path(bool release) const {
+      for (const auto& line : get_system_information()) {
+        auto index = xtd::strings::index_of(line, "_BINARY_DIR:STATIC=");
+        if (index != -1) {
+          auto target = xtd::strings::substring(line, 0, index);
+          return xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), "");
+        }
+      }
+      return "";
+    }
+    
     std::vector<std::string>& get_system_information() const {
-      static std::vector<std::string> si;
-      if (si.size() == 0) {
+      static std::vector<std::string> system_information;
+      if (system_information.size() == 0) {
         change_current_directory system_information_directory {build_path()};
         auto file_info = xtd::io::path::get_temp_file_name();
         system(xtd::strings::format("cmake --system-information {}", file_info).c_str());
-        si = xtd::io::file::read_all_lines(file_info);
+        system_information = xtd::io::file::read_all_lines(file_info);
         xtd::io::file::remove(file_info);
       }
-      return si;
+      return system_information;
     }
     
     std::filesystem::path build_path() const {return path_/"build";}
@@ -353,16 +392,18 @@ namespace xtdc_command {
     void generate() {generate("");}
 
     void generate(std::string name) {
-      if (name.empty()) name = get_name();
+      bool first_generation = !std::filesystem::exists(build_path());
       std::filesystem::create_directories(build_path());
-      if (xtd::environment::os_version().is_windows_platform() && !std::filesystem::exists(build_path()/xtd::strings::format("{}.sln", name)))
+      if (!first_generation && name.empty()) name = get_name();
+      if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.sln", name))))
         system(xtd::strings::format("cmake -S {} -B {}", path_, build_path()).c_str());
-      else if (xtd::environment::os_version().is_osx_platform() && !std::filesystem::exists(build_path()/xtd::strings::format("{}.xcodeproj", name)))
+      else if (xtd::environment::os_version().is_osx_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.xcodeproj", name))))
         system(xtd::strings::format("cmake -S {} -B {} -G \"Xcode\"", path_, build_path()).c_str());
-      else if (xtd::environment::os_version().is_linux_platform() && (!std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name)) || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name)))) {
+      else if (xtd::environment::os_version().is_linux_platform() && (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name)))) {
         std::filesystem::create_directories(build_path()/"Debug");
-        std::filesystem::create_directories(build_path()/"Release");
         system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug").c_str());
+      } else if (xtd::environment::os_version().is_linux_platform() && (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name)))) {
+        std::filesystem::create_directories(build_path()/"Release");
         system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release").c_str());
       }
     }
