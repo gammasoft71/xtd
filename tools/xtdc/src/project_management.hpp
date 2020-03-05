@@ -123,30 +123,29 @@ namespace xtdc_command {
     }
     
     std::string get_target_path(const std::string& target, bool release) const {
-      for (const auto& line : get_system_information()) {
-        if (xtd::strings::starts_with(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target))) {
-          if (xtd::environment::os_version().is_windows_platform())
-            return (std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target).string();
-          else if (xtd::environment::os_version().is_osx_platform()) {
-            if (std::filesystem::exists(std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target))
-              return (std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target).string();
-            else
-              return xtd::strings::format("open {}.app", std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/(release ? "Release" : "Debug")/target);
-          } else if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
-            return (std::filesystem::path(xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), ""))/target).string();
-        }
-      }
+      for (const auto& line : get_system_information())
+        if (xtd::strings::starts_with(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target)))
+          return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), "")}, target, release);
       return "";
     }
     
     std::string get_first_target_path(bool release) const {
-      for (const auto& line : get_system_information()) {
-        auto index = xtd::strings::index_of(line, "_BINARY_DIR:STATIC=");
-        if (index != -1) {
-          auto target = xtd::strings::substring(line, 0, index);
-          return xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), "");
-        }
-      }
+      for (const auto& line : get_system_information())
+        if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != -1)
+          return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC="))), "")}, xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")), release);
+      return "";
+    }
+    
+    std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
+      if (xtd::environment::os_version().is_windows_platform())
+        return (path/(release ? "Release" : "Debug")/target).string();
+      else if (xtd::environment::os_version().is_osx_platform()) {
+        if (std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
+          return (path/(release ? "Release" : "Debug")/target).string();
+        else
+          return xtd::strings::format("open {}.app", path/(release ? "Release" : "Debug")/target);
+      } else if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
+        return (path/target).string();
       return "";
     }
     
