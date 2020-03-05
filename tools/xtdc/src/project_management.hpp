@@ -31,7 +31,7 @@ namespace xtdc_command {
       switch (type) {
         case project_type::blank_solution: return {project_sdk::xtd};
         case project_type::console: return {project_sdk::none, project_sdk::xtd};
-        case project_type::gui: return {project_sdk::xtd, project_sdk::win32, project_sdk::gtk, project_sdk::cocoa, project_sdk::gtkmm, project_sdk::wxwidgets, project_sdk::qt5};
+        case project_type::gui: return {project_sdk::xtd, project_sdk::win32, project_sdk::gtk, project_sdk::cocoa, project_sdk::gtkmm, project_sdk::wxwidgets, project_sdk::qt5, project_sdk::winforms, project_sdk::wpf};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd};
         case project_type::unit_test_application: return {project_sdk::xtd, project_sdk::gtest, project_sdk::catch2};
@@ -49,6 +49,8 @@ namespace xtdc_command {
         case project_sdk::gtkmm: return {project_language::cpp};
         case project_sdk::wxwidgets: return {project_language::cpp};
         case project_sdk::qt5: return {project_language::cpp};
+        case project_sdk::winforms: return {project_language::csharp};
+        case project_sdk::wpf: return {project_language::csharp};
         case project_sdk::gtest: return {project_language::c, project_language::cpp};
         case project_sdk::catch2: return {project_language::c, project_language::cpp};
       }
@@ -178,7 +180,7 @@ namespace xtdc_command {
       if (sdk == project_sdk::xtd)
         create_console_xtd(name, sdk, language);
       else
-        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_console_c}}, {project_language::cpp, {*this, &project_management::create_console_cpp}}, {project_language::objectivec, {*this, &project_management::create_console_objectivec}}}[language](name, sdk, language);
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_console_c}}, {project_language::cpp, {*this, &project_management::create_console_cpp}}, {project_language::csharp, {*this, &project_management::create_console_csharp}}, {project_language::objectivec, {*this, &project_management::create_console_objectivec}}}[language](name, sdk, language);
     }
 
     void create_console_c(const std::string& name, project_sdk sdk, project_language language) const {
@@ -293,6 +295,9 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
     }
 
+    void create_console_csharp(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
     void create_console_objectivec(const std::string& name, project_sdk sdk, project_language language) const {
     }
 
