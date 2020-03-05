@@ -55,7 +55,7 @@ namespace xtdc_command {
       throw std::invalid_argument("sdk is not project_sdk valid value");
     }
     
-    std::string create(const std::string& name, project_type type, project_sdk sdk, project_language language) {
+    std::string create(const std::string& name, project_type type, project_sdk sdk, project_language language) const {
       if (std::find(get_valid_sdks(type).begin(), get_valid_sdks(type).end(), sdk) == get_valid_sdks(type).end()) return "The sdk param not valid with type param! Create project aborted.";
       if (std::find(get_valid_languages(sdk).begin(), get_valid_languages(sdk).end(), language) == get_valid_languages(sdk).end()) return "The language param not valid with sdk param! Create project aborted.";
       if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} already exists and not empty! Create project aborted.", path_);
@@ -65,7 +65,7 @@ namespace xtdc_command {
       return xtd::strings::format("Project {} created", path_);
     }
 
-    std::string build(const std::string& target, bool release) {
+    std::string build(const std::string& target, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Build project aborted.", path_);
       generate();
       std::string target_param;
@@ -77,7 +77,7 @@ namespace xtdc_command {
       return xtd::strings::format("Project {0} builded", path_);
     }
 
-    std::string clean(bool release) {
+    std::string clean(bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Clean project aborted.", path_);
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
         std::filesystem::remove_all( build_path());
@@ -87,7 +87,7 @@ namespace xtdc_command {
       return xtd::strings::format("Project {0} cleaned", path_);
     }
 
-    std::string open(bool release) {
+    std::string open(bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Open project aborted.", path_);
       generate();
       if (xtd::environment::os_version().is_windows_platform())
@@ -99,13 +99,22 @@ namespace xtdc_command {
       return xtd::strings::format("Project {0} opened", get_name());
     }
 
-    std::string run(const std::string& target, bool release) {
+    std::string run(const std::string& target, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Rn project aborted.", path_);
       build(target, release);
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
       system(target_path.c_str());
       return "";
+    }
+    
+    std::vector<std::string>& targets() const {
+      static std::vector<std::string> targets;
+      if (targets.size() == 0)
+        for (const auto& line : get_system_information())
+          if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != -1)
+            targets.push_back(xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")));
+      return targets;
     }
 
   private:
@@ -168,27 +177,27 @@ namespace xtdc_command {
       create_blank_solution_cmakelists_txt(name);
     }
     
-    void create_console(const std::string& name, project_sdk sdk, project_language language) {
+    void create_console(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
     }
     
-    void create_gui(const std::string& name, project_sdk sdk, project_language language) {
+    void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
     }
     
-    void create_shared_library(const std::string& name, project_sdk sdk, project_language language) {
+    void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
     }
     
-    void create_static_library(const std::string& name, project_sdk sdk, project_language language) {
+    void create_static_library(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
     }
     
-    void create_unit_test_application(const std::string& name, project_sdk sdk, project_language language) {
+    void create_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
     }
     
-    void create_doxygen_txt(const std::string& name) {
+    void create_doxygen_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "#---------------------------------------------------------------------------\n",
         "# Project related configuration options\n",
@@ -374,7 +383,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/".doxygen.txt", lines);
    }
     
-    void create_blank_solution_cmakelists_txt(const std::string& name) {
+    void create_blank_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -388,9 +397,9 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
 
-    void generate() {generate("");}
+    void generate() const {generate("");}
 
-    void generate(std::string name) {
+    void generate(std::string name) const {
       bool first_generation = !std::filesystem::exists(build_path());
       std::filesystem::create_directories(build_path());
       if (!first_generation && name.empty()) name = get_name();
@@ -407,7 +416,7 @@ namespace xtdc_command {
       }
     }
 
-    bool is_path_already_exist_and_not_empty(const std::string& path) {
+    bool is_path_already_exist_and_not_empty(const std::string& path) const {
       if (!std::filesystem::exists({path_})) return false;
       if (std::filesystem::is_empty({path_})) return false;
       if (xtd::environment::os_version().is_osx_platform() && std::count_if(std::filesystem::directory_iterator({path_}), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
