@@ -35,36 +35,7 @@ namespace xtdc_command {
         return -1;
       }
       
-      if (show_version)
-        cout << get_version() << endl;
-      else if (show_help)
-        cout << get_help() << endl;
-      else if (show_info)
-        cout << get_info() << endl;
-      else {
-        if (command_args[0] == "new") return new_project(command_args);
-        //else if (command_args[0] == "add") return add(command_args);
-        else if (command_args[0] == "build") return build(command_args);
-        else if (command_args[0] == "clean") return clean(command_args);
-        else if (command_args[0] == "help") return help(command_args);
-        //else if (command_args[0] == "install") return install(command_args);
-        else if (command_args[0] == "open") return open(command_args);
-        else if (command_args[0] == "run") return run(command_args);
-        else if (command_args[0] == "targets") return targets(command_args);
-        //else if (command_args[0] == "test") return test(command_args);
-        //else if (command_args[0] == "uninstall") return uninstall(command_args);
-        //else if (command_args[0] == "documentations" || command_args[0] == "documentation") return documentations(command_args);
-        //else if (command_args[0] == "examples") return examples(command_args);
-        //else if (command_args[0] == "guide") return guide(command_args);
-        //else if (command_args[0] == "web") return web(command_args);
-        else {
-          set_foreground_color_red();
-          cout << format("No option found matching command \"xtdc {0}\"", command_args[0]) << endl;
-          reset_color();
-          return -1;
-        }
-      }
-      return 0;
+      return run_commands(show_help, show_info, show_version, invalid_option, command_args);
     }
     
   private:
@@ -710,6 +681,39 @@ namespace xtdc_command {
         std::cout << "\033[49m\033[39m";
     }
 
+    static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<string>& command_args) {
+      if (show_version)
+        cout << get_version() << endl;
+      else if (show_help)
+        cout << get_help() << endl;
+      else if (show_info)
+        cout << get_info() << endl;
+      else {
+        if (command_args[0] == "new") return new_project(command_args);
+        //else if (command_args[0] == "add") return add(command_args);
+        else if (command_args[0] == "build") return build(command_args);
+        else if (command_args[0] == "clean") return clean(command_args);
+        else if (command_args[0] == "help") return help(command_args);
+        //else if (command_args[0] == "install") return install(command_args);
+        else if (command_args[0] == "open") return open(command_args);
+        else if (command_args[0] == "run") return run(command_args);
+        else if (command_args[0] == "targets") return targets(command_args);
+        //else if (command_args[0] == "test") return test(command_args);
+        //else if (command_args[0] == "uninstall") return uninstall(command_args);
+        //else if (command_args[0] == "documentations" || command_args[0] == "documentation") return documentations(command_args);
+        //else if (command_args[0] == "examples") return examples(command_args);
+        //else if (command_args[0] == "guide") return guide(command_args);
+        //else if (command_args[0] == "web") return web(command_args);
+        else {
+          set_foreground_color_red();
+          cout << format("No option found matching command \"xtdc {0}\"", command_args[0]) << endl;
+          reset_color();
+          return -1;
+        }
+      }
+      return 0;
+    }
+    
     static void set_foreground_color_red() noexcept {
       if (is_ansi_supported())
         std::cout << "\033[31m";
