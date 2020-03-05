@@ -146,14 +146,11 @@ namespace xtdc_command {
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
-      if (xtd::environment::os_version().is_windows_platform())
+      if ((xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform()) && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
         return (path/(release ? "Release" : "Debug")/target).string();
-      else if (xtd::environment::os_version().is_osx_platform()) {
-        if (std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
-          return (path/(release ? "Release" : "Debug")/target).string();
-        else
-          return xtd::strings::format("open {}.app", path/(release ? "Release" : "Debug")/target);
-      } else if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
+      else if (xtd::environment::os_version().is_osx_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)))
+        return xtd::strings::format("open {}", path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target));
+      else if (xtd::environment::os_version().is_linux_platform() && std::filesystem::exists(path/target))
         return (path/target).string();
       return "";
     }
