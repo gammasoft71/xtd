@@ -330,7 +330,7 @@ namespace xtdc_command {
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.build(release) << endl;
+        cout << project.build(target, release) << endl;
       }
       return 0;
     }
@@ -391,6 +391,26 @@ namespace xtdc_command {
     }
     
     static int run(const vector<string>& args) {
+      bool show_help = false;
+      string invalid_option;
+      bool release = false;
+      string target;
+      string path;
+      if (!process_run_arguments(args, show_help, release, target, path, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_run_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_run_help() << endl;
+      else {
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
+        cout << project.run(target, release) << endl;
+      }
       return 0;
     }
     
