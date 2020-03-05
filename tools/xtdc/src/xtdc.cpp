@@ -1,8 +1,3 @@
-// to debug on macos add following environment variables in project settings :
-// * CC = /usr/bin/clang
-// * CXX = /usr/bin/clang++
-// * PATH = path that contains cmake binaries (current path of your bash or zsh terminal).
-
 #include "project_management.hpp"
 
 #include <xtd/xtd.core>
