@@ -47,41 +47,25 @@ namespace xtdc_command {
       else if (show_info)
         cout << get_info() << endl;
       else {
-        if (command_args[0] == "new")
-          return new_project(command_args);
-        else if (command_args[0] == "build")
-          return build(command_args);
-        else if (command_args[0] == "clean")
-          return clean(command_args);
-        else if (command_args[0] == "help")
-          return help(command_args);
-        else if (command_args[0] == "install")
-          return install(command_args);
-        else if (command_args[0] == "open")
-          return open(command_args);
-        else if (command_args[0] == "run")
-          return run(command_args);
-        else if (command_args[0] == "test")
-          return test(command_args);
-        else if (command_args[0] == "uninstall")
-          return uninstall(command_args);
-        else if (command_args[0] == "documentations" || command_args[0] == "documentation")
-          return documentations(command_args);
-        else if (command_args[0] == "examples")
-          return examples(command_args);
-        else if (command_args[0] == "guide")
-          return guide(command_args);
-        else if (command_args[0] == "web")
-          return web(command_args);
+        if (command_args[0] == "new") return new_project(command_args);
+        //else if (command_args[0] == "add") return add(command_args);
+        else if (command_args[0] == "build") return build(command_args);
+        else if (command_args[0] == "clean") return clean(command_args);
+        else if (command_args[0] == "help") return help(command_args);
+        //else if (command_args[0] == "install") return install(command_args);
+        else if (command_args[0] == "open") return open(command_args);
+        else if (command_args[0] == "run") return run(command_args);
+        //else if (command_args[0] == "test") return test(command_args);
+        //else if (command_args[0] == "uninstall") return uninstall(command_args);
+        //else if (command_args[0] == "documentations" || command_args[0] == "documentation") return documentations(command_args);
+        //else if (command_args[0] == "examples") return examples(command_args);
+        //else if (command_args[0] == "guide") return guide(command_args);
+        //else if (command_args[0] == "web") return web(command_args);
         else {
-          if (std::filesystem::exists({command_args[0]})) {
-            //diagnostics::process::start(command_args[0]);
-          } else {
-            set_foreground_color_red();
-            cout << format("No executable found matching command \"xtdc-{0}\"", command_args[0]) << endl;
-            reset_color();
-            return -1;
-          }
+          set_foreground_color_red();
+          cout << format("No option found matching command \"xtdc {0}\"", command_args[0]) << endl;
+          reset_color();
+          return -1;
         }
       }
       return 0;
@@ -96,26 +80,25 @@ namespace xtdc_command {
 
     static string get_help() noexcept {
       return strings::format("xtdc Command Line Tools ({0})\n"
-                             "Usage: xtdc [runtime-options] [path-to-application]\n"
-                             "Usage: xtdc [sdk-options] [command] [arguments] [command-options]\n"
+                             "Usage: xtdc [options] [command] [arguments] [command-options]\n"
                              "\n"
                              "path-to-application:\n"
                              "  The path to an application file to execute.\n"
                              "\n"
                              "SDK commands:\n"
                              "  new              Initialize projects.\n"
-                             "  add              Add new projects to solution.\n"
+//                             "  add              Add new projects to solution.\n"
                              "  run              Compiles and immediately executes a project.\n"
                              "  build            Builds a project.\n"
-                             "  install          Install a project.\n"
+//                             "  install          Install a project.\n"
                              "  clean            Clean build output(s).\n"
                              "  open             Open a project in default ide.\n"
-                             "  test             Runs unit tests using the test runner specified in the project.\n"
-                             "  uninstall        Uninstall a project.\n"
-                             "  documentations   Open documentations.\n"
-                             "  examples         Open xtd examples.\n"
-                             "  guide            Open xtd reference guide.\n"
-                             "  web              Open xtd website.\n"
+//                             "  test             Runs unit tests using the test runner specified in the project.\n"
+//                             "  uninstall        Uninstall a project.\n"
+//                             "  documentations   Open documentations.\n"
+//                             "  examples         Open xtd examples.\n"
+//                             "  guide            Open xtd reference guide.\n"
+//                             "  web              Open xtd website.\n"
                              "  help             Show help.\n"
                              "\n"
                              "Common options:\n"
@@ -124,9 +107,9 @@ namespace xtdc_command {
                              "\n"
                              "Run 'xtdc COMMAND --help' for more information on a command.\n"
                              "\n"
-                             "sdk-options:\n"
-                             "  --version        Display Swicth version in use.\n"
-                             "  --info           Display Switch information.\n", get_version_number());
+                             "options:\n"
+                             "  --version        Display xtdc version in use.\n"
+                             "  --info           Display xtdc information.\n", get_version_number());
     }
     
     static string get_build_help() noexcept {
@@ -142,13 +125,25 @@ namespace xtdc_command {
       "\n"
       "Exemples:\n"
       "    xtdc build\n"
-      "    xtdc build -p my_app\n"
-      "    xtdc build -p my_app -t my_lib\n"
+      "    xtdc build -p my_apps\n"
+      "    xtdc build -p my_apps -t my_app1\n"
       "    xtdc build --help\n";
     }
     
     static string get_clean_help() noexcept {
-      return "Usage: clean [options]\n";
+      return "Usage: clean [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -d, --debug         clean debug config.\n"
+      "  -r, --release       clean release config.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc clean\n"
+      "    xtdc clean -p my_app\n"
+      "    xtdc clean --help\n";
     }
     
     static string get_install_help() noexcept {
@@ -156,7 +151,19 @@ namespace xtdc_command {
     }
     
     static string get_open_help() noexcept {
-      return "Usage: open [options]\n";
+      return "Usage: open [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -d, --debug         open debug config.\n"
+      "  -r, --release       open release config.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc open\n"
+      "    xtdc open -p my_app\n"
+      "    xtdc open --help\n";
     }
     
     static string get_new_help() noexcept {
@@ -190,7 +197,21 @@ namespace xtdc_command {
     }
     
     static string get_run_help() noexcept {
-      return "Usage: run [options]\n";
+      return "Usage: run [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -d, --debug         run debug config.\n"
+      "  -r, --release       run release config.\n"
+      "  -t, --target        run a specified target project.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc run\n"
+      "    xtdc run -p my_apps\n"
+      "    xtdc run -p my_apps -t my_app1\n"
+      "    xtdc run --help\n";
     }
     
     static string get_test_help() noexcept {
@@ -285,7 +306,7 @@ namespace xtdc_command {
           cout << format("Error: Invalid parameter(s):\n"
                          "--sdk {0}\n"
                          "'{0}' is not a valid value for --sdk (SDK/Language).\n"
-                         "Run switch new --help for usage information.", sdk) << endl;
+                         "Run xtdc new --help for usage information.", sdk) << endl;
           reset_color();
           return -1;
         }
@@ -308,6 +329,10 @@ namespace xtdc_command {
         project_management project(filesystem::absolute(filesystem::path(path)));
         cout << project.create(name, project_type, project_sdk, project_language) << endl;
       }
+      return 0;
+    }
+    
+    static int add(const vector<string>& args) {
       return 0;
     }
     
