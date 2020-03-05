@@ -50,6 +50,7 @@ namespace xtdc_command {
         //else if (command_args[0] == "install") return install(command_args);
         else if (command_args[0] == "open") return open(command_args);
         else if (command_args[0] == "run") return run(command_args);
+        else if (command_args[0] == "targets") return targets(command_args);
         //else if (command_args[0] == "test") return test(command_args);
         //else if (command_args[0] == "uninstall") return uninstall(command_args);
         //else if (command_args[0] == "documentations" || command_args[0] == "documentation") return documentations(command_args);
@@ -88,6 +89,7 @@ namespace xtdc_command {
 //                             "  install          Install a project.\n"
                              "  clean            Clean build output(s).\n"
                              "  open             Open a project in default ide.\n"
+                             "  targets          List project targets.\n"
 //                             "  test             Runs unit tests using the test runner specified in the project.\n"
 //                             "  uninstall        Uninstall a project.\n"
 //                             "  documentations   Open documentations.\n"
@@ -200,7 +202,7 @@ namespace xtdc_command {
       "    xtdc new gui -p my_app\n"
       "    xtdc new --help\n";
     }
-    
+
     static string get_run_help() noexcept {
       return "Compiles and immediately executes a project.\n"
       "Usage: run [options]\n"
@@ -220,6 +222,21 @@ namespace xtdc_command {
       "    xtdc run --help\n";
     }
     
+    static string get_targets_help() noexcept {
+      return "List project targets.\n"
+      "Usage: clean [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc list\n"
+      "    xtdc list -p my_app\n"
+      "    xtdc list --help\n";
+    }
+
     static string get_test_help() noexcept {
       return "Runs unit tests using the test runner specified in the project.\n"
       "Usage: test [options]\n";
@@ -399,7 +416,7 @@ namespace xtdc_command {
     static int install(const vector<string>& args) {
       return 0;
     }
-    
+
     static int open(const vector<string>& args) {
       bool show_help = false;
       string invalid_option;
@@ -447,6 +464,28 @@ namespace xtdc_command {
       return 0;
     }
     
+    static int targets(const vector<string>& args) {
+      bool show_help = false;
+      string invalid_option;
+      string path;
+      if (!process_targets_arguments(args, show_help, path, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_targets_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_targets_help() << endl;
+      else {
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
+        cout << xtd::strings::join(", ", project.targets()) << endl;
+      }
+      return 0;
+    }
+
     static int test(const vector<string>& args) {
       return 0;
     }
@@ -549,7 +588,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_open_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -613,6 +652,21 @@ namespace xtdc_command {
       return true;
     }
     
+    static bool process_targets_arguments(const vector<string>& args, bool& show_help, string& path, string& invalid_option) {
+      for (size_t i = 1; i < args.size(); i += 1) {
+        if (args[i] == "-h" || args[i] == "--help")
+          show_help = true;
+        else if (args[i] == "-p" || args[i] == "--path") {
+          if (i+1 >= args.size()) return false;
+          path = args[++i];
+        } else if (strings::starts_with(args[i], '-')) {
+          invalid_option = args[i];;
+          return false;
+        }
+      }
+      return true;
+    }
+
     static bool process_test_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
