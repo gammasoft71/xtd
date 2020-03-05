@@ -86,8 +86,8 @@ namespace xtdc_command {
                              "  The path to an application file to execute.\n"
                              "\n"
                              "SDK commands:\n"
-                             "  new              Initialize projects.\n"
-//                             "  add              Add new projects to solution.\n"
+                             "  new              Initialize project.\n"
+//                             "  add              Add new project to project.\n"
                              "  run              Compiles and immediately executes a project.\n"
                              "  build            Builds a project.\n"
 //                             "  install          Install a project.\n"
@@ -112,8 +112,14 @@ namespace xtdc_command {
                              "  --info           Display xtdc information.\n", get_version_number());
     }
     
+    static string get_add_help() noexcept {
+      return "Add new project to project.\n"
+      "Usage: add [options]\n";
+    }
+
     static string get_build_help() noexcept {
-      return "Usage: build [options]\n"
+      return "Builds a project.\n"
+      "Usage: build [options]\n"
       "\n"
       "Options:\n"
       "  -h, --help          Displays help for this command.\n"
@@ -131,7 +137,8 @@ namespace xtdc_command {
     }
     
     static string get_clean_help() noexcept {
-      return "Usage: clean [options]\n"
+      return "Clean build output(s).\n"
+      "Usage: clean [options]\n"
       "\n"
       "Options:\n"
       "  -h, --help          Displays help for this command.\n"
@@ -147,11 +154,13 @@ namespace xtdc_command {
     }
     
     static string get_install_help() noexcept {
-      return "Usage: install [options]\n";
+      return "Install a project.\n"
+      "Usage: install [options]\n";
     }
     
     static string get_open_help() noexcept {
-      return "Usage: open [options]\n"
+      return "Open a project in default ide.\n"
+      "Usage: open [options]\n"
       "\n"
       "Options:\n"
       "  -h, --help          Displays help for this command.\n"
@@ -167,7 +176,8 @@ namespace xtdc_command {
     }
     
     static string get_new_help() noexcept {
-      return "Usage: new template_short_name [options]\n"
+      return "Initialize project.\n"
+      "Usage: new template_short_name [options]\n"
       "\n"
       "Options:\n"
       "  -h, --help          Displays help for this command.\n"
@@ -197,7 +207,8 @@ namespace xtdc_command {
     }
     
     static string get_run_help() noexcept {
-      return "Usage: run [options]\n"
+      return "Compiles and immediately executes a project.\n"
+      "Usage: run [options]\n"
       "\n"
       "Options:\n"
       "  -h, --help          Displays help for this command.\n"
@@ -215,11 +226,13 @@ namespace xtdc_command {
     }
     
     static string get_test_help() noexcept {
-      return "Usage: test [options]\n";
+      return "Runs unit tests using the test runner specified in the project.\n"
+      "Usage: test [options]\n";
     }
     
     static string get_uninstall_help() noexcept {
-      return "Usage: uninstall [options]\n";
+      return "Uninstall a project.\n"
+      "Usage: uninstall [options]\n";
     }
     
 
