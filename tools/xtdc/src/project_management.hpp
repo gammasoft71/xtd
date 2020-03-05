@@ -178,7 +178,7 @@ namespace xtdc_command {
       if (sdk == project_sdk::xtd)
         create_console_xtd(name, sdk, language);
       else
-        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_console_c}}, {project_language::objectivec, {*this, &project_management::create_console_objectivec}}}[language](name, sdk, language);
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_console_c}}, {project_language::cpp, {*this, &project_management::create_console_cpp}}, {project_language::objectivec, {*this, &project_management::create_console_objectivec}}}[language](name, sdk, language);
     }
 
     void create_console_c(const std::string& name, project_sdk sdk, project_language language) const {
@@ -237,8 +237,62 @@ namespace xtdc_command {
     }
 
     void create_console_cpp(const std::string& name, project_sdk sdk, project_language language) const {
+      create_console_cpp_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_cpp_console_cmakelists_txt(name);
+      create_cpp_console_source(name);
     }
     
+    void create_console_cpp_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "",
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_cpp_console_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.cpp", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_cpp_console_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include <iostream>",
+        "",
+        "using namespace std;",
+        "",
+        "// The main entry point for the application.",
+        "int main(int argc, char* argv[]) {",
+        "  cout << \"Hello, World!\" << endl;",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+
     void create_console_objectivec(const std::string& name, project_sdk sdk, project_language language) const {
     }
 
