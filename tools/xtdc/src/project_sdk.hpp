@@ -10,6 +10,8 @@ namespace xtdc_command {
     gtkmm,
     wxwidgets,
     qt5,
+    winforms,
+    wpf,
     gtest,
     catch2,
   };
