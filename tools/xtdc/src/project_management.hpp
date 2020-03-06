@@ -108,7 +108,13 @@ namespace xtdc_command {
       build(target, release);
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
-      system(target_path.c_str());
+      //system(target_path.c_str());
+      if (xtd::environment::os_version().is_windows_platform())
+        system(xtd::strings::format("explorer {}", target_path.c_str()).c_str());
+      if (xtd::environment::os_version().is_osx_platform())
+        system(target_path.c_str());
+      else
+        system(xtd::strings::format("xdg-open {}", target_path.c_str()).c_str());
       return "";
     }
     
