@@ -170,11 +170,26 @@ namespace xtdc_command {
     }
     
     std::filesystem::path build_path() const {return path_/"build";}
+    
     void create_blank_solution(const std::string& name, project_sdk sdk, project_language language) {
       create_doxygen_txt(name);
       create_blank_solution_cmakelists_txt(name);
     }
     
+    void create_blank_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "",
+        "# Install",
+        "install_package()"
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+
     void create_console(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
       if (sdk == project_sdk::xtd)
@@ -296,8 +311,59 @@ namespace xtdc_command {
     }
 
     void create_console_csharp(const std::string& name, project_sdk sdk, project_language language) const {
+      create_console_csharp_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_csharp_console_cmakelists_txt(name);
+      create_csharp_console_source(name);
     }
     
+    void create_console_csharp_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "",
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_csharp_console_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0 LANGUAGES CSharp)", name),
+        "include(CSharpUtilities)",
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.cs", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_csharp_console_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "using System;",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  class Program {",
+        "    static void Main(string[] args) {",
+        "      Console.WriteLine(\"Hello, World!\");",
+        "    }",
+        "  }",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cs", name), lines);
+    }
+
     void create_console_objectivec(const std::string& name, project_sdk sdk, project_language language) const {
     }
 
@@ -505,20 +571,6 @@ namespace xtdc_command {
       };
       xtd::io::file::write_all_lines(path_/".doxygen.txt", lines);
    }
-    
-    void create_blank_solution_cmakelists_txt(const std::string& name) const {
-      std::vector<std::string> lines {
-        "cmake_minimum_required(VERSION 3.3)",
-        "",
-        "# Solution",
-        xtd::strings::format("project({0})", name),
-        "find_package(xtd REQUIRED)",
-        "",
-        "# Install",
-        "install_package()"
-      };
-      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
-    }
 
     void generate() const {generate("");}
 
