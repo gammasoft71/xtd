@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::bit_converter class.
+/// @brief Contains xtd::bit_converter class.
 #pragma once
 
 #include <cstdint>
