@@ -58,8 +58,10 @@ namespace xtdc_command {
     }
     
     std::string create(const std::string& name, project_type type, project_sdk sdk, project_language language) const {
-      if (std::find(get_valid_sdks(type).begin(), get_valid_sdks(type).end(), sdk) == get_valid_sdks(type).end()) return "The sdk param not valid with type param! Create project aborted.";
-      if (std::find(get_valid_languages(sdk).begin(), get_valid_languages(sdk).end(), language) == get_valid_languages(sdk).end()) return "The language param not valid with sdk param! Create project aborted.";
+      auto sdks = get_valid_sdks(type);
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Create project aborted.";
+      auto languages = get_valid_languages(sdk);
+      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
       if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} already exists and not empty! Create project aborted.", path_);
       std::filesystem::create_directories(std::filesystem::path {path_}/"build");
       std::map<project_type, xtd::action<const std::string&, project_sdk, project_language>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language);
