@@ -164,11 +164,11 @@ namespace xtdc_command {
     std::vector<std::string>& get_system_information() const {
       static std::vector<std::string> system_information;
       if (system_information.size() == 0) {
-        change_current_directory system_information_directory {build_path().string()};
-        auto file_info = xtd::io::path::get_temp_file_name();
-        system(xtd::strings::format("cmake --system-information {}", file_info).c_str());
-        system_information = xtd::io::file::read_all_lines(file_info);
-        xtd::io::file::remove(file_info);
+        if (!std::filesystem::exists(build_path()/"xtd_si.txt")) {
+          change_current_directory system_information_directory {build_path().string()};
+          system(xtd::strings::format("cmake --system-information xtd_si.txt").c_str());
+        }
+        system_information = xtd::io::file::read_all_lines(build_path()/"xtd_si.txt");
       }
       return system_information;
     }
