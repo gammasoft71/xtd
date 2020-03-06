@@ -354,6 +354,7 @@ namespace xtdc_command {
         "",
         xtd::strings::format("namespace {} {{", name),
         "  class Program {",
+        "    // The main entry point for the application.",
         "    static void Main(string[] args) {",
         "      Console.WriteLine(\"Hello, World!\");",
         "    }",
@@ -365,6 +366,57 @@ namespace xtdc_command {
     }
 
     void create_console_objectivec(const std::string& name, project_sdk sdk, project_language language) const {
+      create_console_objectivec_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_objectivec_console_cmakelists_txt(name);
+      create_objectivec_console_source(name);
+    }
+    
+    void create_console_objectivec_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "",
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_objectivec_console_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "include(CSharpUtilities)",
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.m", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_objectivec_console_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#import <Foundation/Foundation.h>",
+        "",
+        "// The main entry point for the application.",
+        "int main(int argc, const char * argv[]) {",
+        "  @autoreleasepool {",
+        "    NSLog(@\"Hello, World!\");",
+        "  }",
+        "  return 0;",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.m", name), lines);
     }
 
     void create_console_xtd(const std::string& name, project_sdk sdk, project_language language) const {
