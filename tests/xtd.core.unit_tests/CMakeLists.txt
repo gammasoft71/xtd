@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.core.unit_tests)
 set(SOURCES
   src/main.cpp 
+  src/bit_converter.cpp
+  src/bytes_assert.hpp
   src/environment.cpp
   src/guid.cpp
   src/object.cpp
