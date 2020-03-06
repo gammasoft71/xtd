@@ -75,7 +75,7 @@ namespace xtdc_command {
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
         system(xtd::strings::format("cmake --build {} --config {}{}", build_path(), (release ? "Release" : "Debug"), target_param).c_str());
       else
-        system(xtd::strings::format("cmake --build {}{}", (build_path()/(release ? "Release" : "Debug"), target_param)).c_str());
+        system(xtd::strings::format("cmake --build {}{}", build_path()/(release ? "Release" : "Debug"), target_param).c_str());
       return xtd::strings::format("Project {0} builded", path_);
     }
 
