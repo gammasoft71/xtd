@@ -160,7 +160,7 @@ namespace xtdc_command {
     std::vector<std::string>& get_system_information() const {
       static std::vector<std::string> system_information;
       if (system_information.size() == 0) {
-        change_current_directory system_information_directory {build_path()};
+        change_current_directory system_information_directory {build_path().string()};
         auto file_info = xtd::io::path::get_temp_file_name();
         system(xtd::strings::format("cmake --system-information {}", file_info).c_str());
         system_information = xtd::io::file::read_all_lines(file_info);
@@ -643,10 +643,10 @@ namespace xtdc_command {
       }
     }
 
-    bool is_path_already_exist_and_not_empty(const std::string& path) const {
+    bool is_path_already_exist_and_not_empty(const std::filesystem::path& path) const {
       if (!std::filesystem::exists({path_})) return false;
       if (std::filesystem::is_empty({path_})) return false;
-      if (xtd::environment::os_version().is_osx_platform() && std::count_if(std::filesystem::directory_iterator({path_}), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
+      if (xtd::environment::os_version().is_osx_platform() && std::count_if(std::filesystem::directory_iterator(path_), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
       return true;
     }
     
