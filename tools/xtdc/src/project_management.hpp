@@ -110,7 +110,7 @@ namespace xtdc_command {
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
       //system(target_path.c_str());
       if (xtd::environment::os_version().is_windows_platform())
-        system(xtd::strings::format("start {}", target_path.c_str()).c_str());
+        system(xtd::strings::format("start \"{}\" {}", target, target_path.c_str()).c_str());
       else if (xtd::environment::os_version().is_osx_platform())
         system(target_path.c_str());
       else
