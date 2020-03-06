@@ -290,7 +290,7 @@ namespace xtdc_command {
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
         if (path.empty()) path = environment::current_directory();
-        if (name.empty()) name = filesystem::path(path).stem();
+        if (name.empty()) name = filesystem::path(path).stem().string();
         if (types.find(type) == types.end()) {
           set_foreground_color_red();
           cout << format("No templates matched the input template type: {0}.", type) << endl;
