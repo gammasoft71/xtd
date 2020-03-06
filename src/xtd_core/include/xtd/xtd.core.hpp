@@ -7,6 +7,7 @@
 
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
+#include "bit_converter.hpp"
 #include "block_scope.hpp"
 #include "environment.hpp"
 #include "environment_variable_target.hpp"

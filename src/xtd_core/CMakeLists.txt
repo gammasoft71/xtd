@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.core VERSION 1.0.0)
 set(INCLUDES
   include/xtd/__opaque_environment.hpp
+  include/xtd/bit_converter.hpp
   include/xtd/block_scope.hpp
   include/xtd/environment.hpp
   include/xtd/environment_variable_target.hpp
@@ -24,6 +25,7 @@ set(INCLUDES
 set(SOURCES
   src/__opaque_environment_gcc.cpp
   src/__opaque_environment_win32.cpp
+  src/bit_converter.cpp
   src/environment.cpp
   src/guid.cpp
 )
