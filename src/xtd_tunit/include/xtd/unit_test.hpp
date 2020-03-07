@@ -18,7 +18,7 @@ namespace xtd {
   namespace tunit {
     /// @cond
     template <typename TestClass>
-    struct test_class_attribute;
+    class test_class_attribute;
     /// @endcond
 
     /// @brief The template class.
@@ -202,9 +202,9 @@ namespace xtd {
 
     private:
       template <typename TestClass>
-      friend struct xtd::tunit::test_class_attribute;
-      friend struct xtd::tunit::test_class;
-      friend struct xtd::tunit::test;
+      friend class xtd::tunit::test_class_attribute;
+      friend class xtd::tunit::test_class;
+      friend class xtd::tunit::test;
       friend class xtd::tunit::base_assert;
 
       static void add(const xtd::tunit::registered_test_class& test_class) {test_classes().push_back(test_class);}
