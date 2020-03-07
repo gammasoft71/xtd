@@ -108,13 +108,7 @@ namespace xtdc_command {
       build(target, release);
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
-      //system(target_path.c_str());
-      if (xtd::environment::os_version().is_windows_platform())
-        system(xtd::strings::format("start \"{}\" {}", target, target_path.c_str()).c_str());
-      else if (xtd::environment::os_version().is_osx_platform())
-        system(target_path.c_str());
-      else
-        system(xtd::strings::format("xdg-open {}", target_path.c_str()).c_str());
+      system(target_path.c_str());
       return "";
     }
     
@@ -156,15 +150,37 @@ namespace xtdc_command {
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
-      if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
+      if (xtd::environment::os_version().is_windows_platform() && is_windows_gui_app(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
+        return xtd::strings::format("start {}", path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target));
+      else if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
         return (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)).string();
-      if (xtd::environment::os_version().is_osx_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
-        return (path/(release ? "Release" : "Debug")/target).string();
       else if (xtd::environment::os_version().is_osx_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)))
         return xtd::strings::format("open {}", path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target));
+      else if (xtd::environment::os_version().is_osx_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
+        return (path/(release ? "Release" : "Debug")/target).string();
+      else if (xtd::environment::os_version().is_linux_platform() && is_linux_gui_app(path, target))
+        return xtd::strings::format("xdg-open {}", path/target);
       else if (xtd::environment::os_version().is_linux_platform() && std::filesystem::exists(path/target))
         return (path/target).string();
       return "";
+    }
+    
+    bool is_windows_gui_app(const std::filesystem::path& app_path) const {
+      if (!std::filesystem::exists(app_path)) return false;
+      auto bytes = xtd::io::file::read_all_bytes(app_path);
+      // read pe format : https://docs.microsoft.com/en-us/windows/win32/debug/pe-format?redirectedfrom=MSDN#machine_type
+      if (bytes[0] != 'M' || bytes[1] != 'Z') return false;
+      // ...nexts
+      return true;
+    }
+    
+    bool is_linux_gui_app(const std::filesystem::path& path, const std::filesystem::path& target) const {
+      if (!std::filesystem::exists(path/target)) return false;
+      //read ~/.local/share/applications/application_name.desktop file : Terminal=YES...
+      auto lines = xtd::io::file::read_all_lines(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home))/".local"/"share"/"applications"/xtd::strings::format("{}.desktop", target));
+      for (auto line : lines)
+        if (xtd::strings::to_lower(line) == "terminael=true") return false;
+      return true;
     }
     
     std::vector<std::string>& get_system_information() const {
