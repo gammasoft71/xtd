@@ -516,7 +516,8 @@ namespace xtd {
         result = replace(result, item, "");
       return result;
 #else
-      struct auto_delete_char_pointer {
+      class auto_delete_char_pointer {
+      public:
         auto_delete_char_pointer(char* value) : value_(value) {}
         ~auto_delete_char_pointer() {free(value_);}
         char* operator()() const {return this->value_;}
