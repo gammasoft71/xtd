@@ -21,7 +21,7 @@ namespace xtd {
   ///   std:string to_string() const override {return "foo";}
   /// };
   /// @endcode
-  struct interface {
+  class interface {
     /// @cond
   public:
     virtual ~interface() = default;
