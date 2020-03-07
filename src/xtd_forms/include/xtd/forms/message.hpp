@@ -7,7 +7,7 @@
 
 namespace xtd {
   namespace forms {
-    struct message {
+    class message {
     public:
       /// @cond
       message() = default;
