@@ -340,10 +340,11 @@ namespace xtdc_command {
     static int build(const vector<string>& args) {
       bool show_help = false;
       string invalid_option;
+      bool clean_first = false;
       bool release = false;
       string target;
       string path;
-      if (!process_build_arguments(args, show_help, release, target, path, invalid_option)) {
+      if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
@@ -356,7 +357,7 @@ namespace xtdc_command {
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.build(target, release) << endl;
+        cout << project.build(target, clean_first, release) << endl;
       }
       return 0;
     }
@@ -506,10 +507,12 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_build_arguments(const vector<string>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
+    static bool process_build_arguments(const vector<string>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
+        else if (args[i] == "-c" || args[i] == "--clean-first")
+          clean_first = true;
         else if (args[i] == "-d" || args[i] == "--debug")
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
