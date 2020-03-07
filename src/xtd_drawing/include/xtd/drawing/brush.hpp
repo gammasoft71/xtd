@@ -12,7 +12,7 @@ namespace xtd {
     class graphics;
     /// @endcond
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
-    struct brush {
+    class brush {
     public:
       //static const brush null;
       
