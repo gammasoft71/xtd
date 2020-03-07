@@ -14,12 +14,12 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @cond
-    struct test_class;
+    class test_class;
     class unit_test;
     class valid;
     /// @endcond
     
-    struct test final {
+    class test final {
       enum class test_status {
         not_started,
         ignored,
@@ -67,7 +67,7 @@ namespace xtd {
     private:
       friend class xtd::tunit::assert;
       friend class xtd::tunit::base_assert;
-      friend struct xtd::tunit::test_class;
+      friend class xtd::tunit::test_class;
       friend class xtd::tunit::valid;
       static test& current_test() {return *current_test_;}
       static const test_class& current_test_class() {return *current_test_class_;}
