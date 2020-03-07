@@ -12,7 +12,8 @@ namespace xtd {
     public:
       class item {
       public:
-        struct sorter {
+        class sorter {
+        public:
           template<typename type_t>
           void operator()(type_t first, type_t last) {
             std::sort(first, last);
