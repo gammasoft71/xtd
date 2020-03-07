@@ -4,7 +4,7 @@
 #include "../include/xtd/__demangle.hpp"
 
 std::string __tunit_demangle(const std::string& name) {
-  struct auto_delete_char_pointer {
+  class auto_delete_char_pointer {
   public:
     auto_delete_char_pointer(char* value) : value(value) {}
     ~auto_delete_char_pointer() {free(value);}
