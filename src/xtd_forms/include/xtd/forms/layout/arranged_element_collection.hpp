@@ -11,7 +11,8 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
-      struct sorter_none {
+      class sorter_none {
+      public:
         template<typename type_t>
         void operator()(type_t first, type_t last) {}
       };
