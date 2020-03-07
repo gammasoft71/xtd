@@ -6,7 +6,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      struct hdc_wrapper {
+      class hdc_wrapper {
         hdc_wrapper() = default;
         template<typename hdc_t, typename ...args_type>
         void create(args_type&& ...args) {this->hdc_ = new hdc_t(args...);}
