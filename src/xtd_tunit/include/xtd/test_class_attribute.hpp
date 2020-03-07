@@ -10,7 +10,7 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     template <typename TestClass>
-    struct test_class_attribute final {
+    class test_class_attribute final {
     public:
       explicit test_class_attribute(const std::string& name) noexcept {xtd::tunit::unit_test::add({name, std::make_shared<TestClass>()});}
     };
