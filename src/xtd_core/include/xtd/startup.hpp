@@ -22,7 +22,8 @@ namespace xtd {
   /// @ingroup keywords
   #define startup_(main_class) \
     int main(int argc, char* argv[]) {\
-      struct startup {\
+      class startup {\
+      public:\
         startup() = delete; \
         static int run(void (*main_function)(), const std::vector<std::string>& args) {main_function(); return xtd::environment::exit_code();}\
         static int run(int (*main_function)(), const std::vector<std::string>& args) {return main_function();}\
