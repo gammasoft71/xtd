@@ -25,7 +25,7 @@ namespace xtd {
     ///   e.graphics().draw_string(text, xtd::drawing::font(this->font(), xtd::drawing::font_style::italic), xtd::drawing::solid_brush(slate_blue), xtd::drawing::rectangle_f(xtd::drawing::point_f(0.0f, 0.0f), this->size()));
     /// }
     /// @endcode
-    struct color {
+    class color {
     public:
       /// @brief Represents a color that is null.
       static const xtd::drawing::color empty;
