@@ -15,12 +15,12 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @cond
-    struct registered_test_class;
-    struct test;
+    class registered_test_class;
+    class test;
     class unit_test;
     /// @endcond
     
-    struct test_class {
+    class test_class {
     public:
       /// @cond
       test_class() = default;
@@ -87,14 +87,14 @@ namespace xtd {
       void add_test_method(const xtd::tunit::test& test) noexcept {this->tests_.push_back(test);}
       
     private:
-      friend struct xtd::tunit::test;
+      friend class xtd::tunit::test;
       friend class xtd::tunit::unit_test;
-      friend struct xtd::tunit::class_initialize_attribute;
-      friend struct xtd::tunit::class_cleanup_attribute;
-      friend struct xtd::tunit::registered_test_class;
-      friend struct xtd::tunit::test_initialize_attribute;
-      friend struct xtd::tunit::test_cleanup_attribute;
-      friend struct xtd::tunit::test_method_attribute;
+      friend class xtd::tunit::class_initialize_attribute;
+      friend class xtd::tunit::class_cleanup_attribute;
+      friend class xtd::tunit::registered_test_class;
+      friend class xtd::tunit::test_initialize_attribute;
+      friend class xtd::tunit::test_cleanup_attribute;
+      friend class xtd::tunit::test_method_attribute;
       
       const xtd::tunit::test& class_cleanup() const noexcept {return this->class_cleanup_;}
       const xtd::tunit::test& class_initialize() const noexcept {return this->class_initialize_;}
