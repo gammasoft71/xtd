@@ -97,7 +97,8 @@ void application::restart() {
 
 void application::run() {
   initialize(); { // Must be first
-    struct uninitializer {
+    class uninitializer {
+    public:
       ~uninitializer() {cleanup();}
     } uninitializer;
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
