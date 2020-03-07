@@ -464,7 +464,8 @@ namespace xtd {
         else if (is_thread_event(event.GetEventType())) process_thread_event(event);
         else def_process_event(event);
         
-        struct post_process_event {
+        class post_process_event {
+        public:
           post_process_event(bool* process_result) : process_result_(process_result) {}
           ~post_process_event() {*process_result_ = true;}
           bool* process_result_;
