@@ -16,7 +16,7 @@ namespace xtd {
     class graphics;
     /// @endcond
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
-    struct pen final {
+    class pen final {
     public:
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
