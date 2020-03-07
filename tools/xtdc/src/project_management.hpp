@@ -17,7 +17,8 @@
 
 namespace xtdc_command {
   class project_management {
-    struct change_current_directory {
+    class change_current_directory {
+    public:
       change_current_directory(const std::string& current_directory) {xtd::environment::current_directory(current_directory);}
       ~change_current_directory() {xtd::environment::current_directory(previous_current_directoy_);}
     private:
