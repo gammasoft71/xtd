@@ -69,15 +69,13 @@ namespace xtdc_command {
       return xtd::strings::format("Project {} created", path_);
     }
 
-    std::string build(const std::string& target, bool release) const {
+    std::string build(const std::string& target, bool clean_first, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Build project aborted.", path_);
       generate();
-      std::string target_param;
-      if (!target.empty()) target_param = xtd::strings::format(" --target {}", target);
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
-        system(xtd::strings::format("cmake --build {} --config {}{}", build_path(), (release ? "Release" : "Debug"), target_param).c_str());
+        system(xtd::strings::format("cmake --build {} --parallel --config {}{}{}", build_path(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "").c_str());
       else
-        system(xtd::strings::format("cmake --build {}{}", build_path()/(release ? "Release" : "Debug"), target_param).c_str());
+        system(xtd::strings::format("cmake --build {}{()}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "").c_str());
       return xtd::strings::format("Project {0} builded", path_);
     }
 
@@ -105,7 +103,7 @@ namespace xtdc_command {
 
     std::string run(const std::string& target, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Rn project aborted.", path_);
-      build(target, release);
+      build(target, false, release);
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
       system(target_path.c_str());
