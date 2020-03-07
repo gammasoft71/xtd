@@ -8,7 +8,7 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @brief This attribute is use to add cleaup class method to class test attribute.
-    struct class_cleanup_attribute {
+    class class_cleanup_attribute {
     public:
       /// @brief Creates new instance of class_cleanup_attribute attribute.
       /// @param name Name of attribute
@@ -33,8 +33,9 @@ namespace xtd {
 /// @ingroup tunit
 #define class_cleanup_(method_name) \
   __##method_name##_static() {} \
-  struct __class_cleanup_attribute : public xtd::tunit::class_cleanup_attribute { \
-  template<typename test_class> __class_cleanup_attribute(test_class& test) : class_cleanup_attribute(#method_name, test, &method_name, {__func__, __FILE__, __LINE__}) {__##method_name##_static();} \
+  class __class_cleanup_attribute : public xtd::tunit::class_cleanup_attribute { \
+  public:\
+    template<typename test_class> __class_cleanup_attribute(test_class& test) : class_cleanup_attribute(#method_name, test, &method_name, {__func__, __FILE__, __LINE__}) {__##method_name##_static();} \
   } __class_cleanup_attribute {*this}; \
   static void method_name()
 
