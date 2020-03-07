@@ -47,7 +47,8 @@ namespace assert_unit_tests {
     }
   }
   
-  struct register_assert_unit_test {
+  class register_assert_unit_test {
+  public:
     register_assert_unit_test(const std::string& name, std::function<void(const std::string&)> method) : method(method), name(name) {assert_unit_tests.push_back(*this);}
     register_assert_unit_test(bool ignore) {if (ignore == true) ignore_test_count++;}
     register_assert_unit_test(const register_assert_unit_test&) = default;
