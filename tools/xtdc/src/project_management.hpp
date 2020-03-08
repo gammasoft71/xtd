@@ -95,11 +95,11 @@ namespace xtdc_command {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Open project aborted.", path_);
       generate();
       if (xtd::environment::os_version().is_windows_platform())
-        system(xtd::strings::format("explorer {}.sln", build_path()/get_name()).c_str());
-      if (xtd::environment::os_version().is_osx_platform())
-        system(xtd::strings::format("open {}.xcodeproj", build_path()/get_name()).c_str());
+        system(xtd::strings::format("explorer {}.sln", (build_path()/get_name()).string()).c_str());
+      else if (xtd::environment::os_version().is_osx_platform())
+        system(xtd::strings::format("open {}.xcodeproj", (build_path()/get_name()).string()).c_str());
       else
-        system(xtd::strings::format("xdg-open {}.cbp", build_path()/(release ? "Release" : "Debug")/get_name()).c_str());
+        system(xtd::strings::format("xdg-open {}.cbp", (build_path()/(release ? "Release" : "Debug")/get_name()).string()).c_str());
       return xtd::strings::format("Project {0} opened", get_name());
     }
 
