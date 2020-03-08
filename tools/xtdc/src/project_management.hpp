@@ -77,7 +77,7 @@ namespace xtdc_command {
       if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
         system(xtd::strings::format("cmake --build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "").c_str());
       else
-        system(xtd::strings::format("cmake --build {}{()}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "").c_str());
+        system(xtd::strings::format("cmake --build {}{}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "").c_str());
       return xtd::strings::format("Project {0} builded", path_);
     }
 
@@ -104,7 +104,7 @@ namespace xtdc_command {
     }
 
     std::string run(const std::string& target, bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Rn project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Rn project aborted.", path_);
       build(target, false, release);
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       if (target_path.empty()) return "The target does not exist! Run project aborted.";
@@ -140,14 +140,14 @@ namespace xtdc_command {
       for (const auto& line : get_system_information())
         if (xtd::strings::starts_with(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target)))
           return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), "")}, target, release);
-      return "";
+      return build_path()/(release ? "RElease" : "Debug")/target;
     }
     
     std::string get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
         if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != -1)
           return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC="))), "")}, xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")), release);
-      return path_.filename();
+      return build_path()/(release ? "RElease" : "Debug")/path_.filename();
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
