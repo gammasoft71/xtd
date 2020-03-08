@@ -99,7 +99,7 @@ namespace xtdc_command {
       else if (xtd::environment::os_version().is_osx_platform())
         system(xtd::strings::format("open {}.xcodeproj", (build_path()/get_name()).string()).c_str());
       else
-        system(xtd::strings::format("xdg-open {}.cbp", (build_path()/(release ? "Release" : "Debug")/get_name()).string()).c_str());
+        system(xtd::strings::format("xdg-open {}.cbp>nul", (build_path()/(release ? "Release" : "Debug")/get_name()).string()).c_str());
       return xtd::strings::format("Project {0} opened", get_name());
     }
 
@@ -132,6 +132,7 @@ namespace xtdc_command {
           }
         }
       }
+      if (name.empty()) name = path_.filename();
       return name;
     }
     
@@ -501,6 +502,34 @@ namespace xtdc_command {
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
+      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_gui_cocoa}}, {project_sdk::gtk, {*this, &project_management::create_gui_gtk}}, {project_sdk::gtkmm, {*this, &project_management::create_gui_gtkmm}}, {project_sdk::qt5, {*this, &project_management::create_gui_qt5}}, {project_sdk::win32, {*this, &project_management::create_gui_win32}}, {project_sdk::winforms, {*this, &project_management::create_gui_winforms}}, {project_sdk::wpf, {*this, &project_management::create_gui_wpf}}, {project_sdk::xtd, {*this, &project_management::create_gui_xtd}}}[sdk](name, sdk, language);
+    }
+    
+    void create_gui_cocoa(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_gtk(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_gtkmm(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_qt5(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_win32(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_winforms(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_wpf(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_wxwidgets(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gui_xtd(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
