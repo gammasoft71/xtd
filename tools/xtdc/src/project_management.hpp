@@ -207,6 +207,8 @@ namespace xtdc_command {
         "# Solution",
         xtd::strings::format("project({0})", name),
         "find_package(xtd REQUIRED)",
+        "add_projects(",
+        ")",
         "",
         "# Install",
         "install_package()"
@@ -235,7 +237,6 @@ namespace xtdc_command {
         "",
         "# Solution",
         xtd::strings::format("project({0})", name),
-        "",
         xtd::strings::format("add_subdirectory({0})", name)
       };
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
@@ -290,7 +291,6 @@ namespace xtdc_command {
         "",
         "# Solution",
         xtd::strings::format("project({0})", name),
-        "",
         xtd::strings::format("add_subdirectory({0})", name)
       };
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
@@ -347,7 +347,6 @@ namespace xtdc_command {
         "",
         "# Solution",
         xtd::strings::format("project({0})", name),
-        "",
         xtd::strings::format("add_subdirectory({0})", name)
       };
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
@@ -402,7 +401,6 @@ namespace xtdc_command {
         "",
         "# Solution",
         xtd::strings::format("project({0})", name),
-        "",
         xtd::strings::format("add_subdirectory({0})", name)
       };
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
@@ -444,8 +442,63 @@ namespace xtdc_command {
     }
 
     void create_console_xtd(const std::string& name, project_sdk sdk, project_language language) const {
+      create_console_xtd_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_xtd_console_cmakelists_txt(name);
+      create_xtd_console_source(name);
     }
     
+    void create_console_xtd_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_projects(",
+        xtd::strings::format("  {0}", name),
+        ")",
+        "",
+        "# Install",
+        "install_package()"
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_console_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_sources(",
+        xtd::strings::format("  src/{0}.cpp", name),
+        ")",
+        "target_type(CONSOLE_APPLICATION)",
+        "",
+        "# Install",
+        "install_component()",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_console_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include <xtd/xtd.console>",
+        "",
+        "using namespace xtd;",
+        "",
+        "// The main entry point for the application.",
+        "int main(int argc, char* argv[]) {",
+        "  console::write_line(\"Hello, World!\");",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
     }
