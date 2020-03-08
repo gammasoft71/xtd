@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <xtd/bit_converter.hpp>
 #include <xtd/environment.hpp>
 #include <xtd/action.hpp>
 #include <xtd/file.hpp>
@@ -169,8 +170,8 @@ namespace xtdc_command {
       auto bytes = xtd::io::file::read_all_bytes(app_path);
       // read pe format : https://docs.microsoft.com/en-us/windows/win32/debug/pe-format?redirectedfrom=MSDN#machine_type
       if (bytes[0] != 'M' || bytes[1] != 'Z') return false;
-      // ...nexts
-      return true;
+      auto subsystem_offset = xtd::bit_converter::to_uint16(bytes, 0x3C) + 92;
+      return xtd::bit_converter::to_uint16(bytes, subsystem_offset) == 2;
     }
     
     bool is_linux_gui_app(const std::filesystem::path& path, const std::filesystem::path& target) const {
