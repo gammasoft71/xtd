@@ -35,13 +35,13 @@ namespace guid_command {
     
   private:
     static string get_error() {
-      return "guid : invalid params\n"
-      "Try 'guid --help' for more information.";
+      return "guidgen : invalid params\n"
+      "Try 'guidgen --help' for more information.";
     }
     
     static string get_usage() {
       return "Usage\n"
-      "  guid [--format Format] [--count Count]\n"
+      "  guidgen [--format Format] [--count Count]\n"
       "\n"
       "-f, --format : Indicates how to format the value of this Guid. The format parameter can be :\n"
       "                 N : 32 digits.\n"
@@ -55,7 +55,7 @@ namespace guid_command {
     }
     
     static string get_version() {
-      return strings::format("gui version {}, © {:L} by Gammasoft", /*environment::version()*/ version(1, 0, 0), chrono::system_clock::now());
+      return strings::format("guidgen version {}, © {:L} by Gammasoft", /*environment::version()*/ version(1, 0, 0), chrono::system_clock::now());
     }
 
     static bool process_arguments(const vector<string>& args, string& format, int& count, bool& show_version, bool& show_help) {
