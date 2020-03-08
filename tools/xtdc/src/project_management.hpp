@@ -147,7 +147,7 @@ namespace xtdc_command {
       for (const auto& line : get_system_information())
         if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != -1)
           return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC="))), "")}, xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")), release);
-      return "";
+      return path_.filename();
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
