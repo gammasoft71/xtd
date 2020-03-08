@@ -168,19 +168,17 @@ namespace xtdc_command {
     bool is_windows_gui_app(const std::filesystem::path& app_path) const {
       if (!std::filesystem::exists(app_path)) return false;
       auto bytes = xtd::io::file::read_all_bytes(app_path);
-      // read pe format : https://docs.microsoft.com/en-us/windows/win32/debug/pe-format?redirectedfrom=MSDN#machine_type
+      // read PE Format : https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
       if (bytes[0] != 'M' || bytes[1] != 'Z') return false;
-      auto subsystem_offset = xtd::bit_converter::to_uint16(bytes, 0x3C) + 92;
-      return xtd::bit_converter::to_uint16(bytes, subsystem_offset) == 2;
+      return xtd::bit_converter::to_uint16(bytes, xtd::bit_converter::to_uint16(bytes, 0x3C) + 92) == 2;
     }
     
     bool is_linux_gui_app(const std::filesystem::path& path, const std::filesystem::path& target) const {
       if (!std::filesystem::exists(path/target)) return false;
-      //read ~/.local/share/applications/application_name.desktop file : Terminal=YES...
       auto lines = xtd::io::file::read_all_lines(std::filesystem::path(xtd::environment::get_folder_path(xtd::environment::special_folder::home))/".local"/"share"/"applications"/xtd::strings::format("{}.desktop", target));
       for (auto line : lines)
-        if (xtd::strings::to_lower(line) == "terminael=true") return false;
-      return true;
+        if (xtd::strings::to_lower(line) == "terminael=false") return true;
+      return false;
     }
     
     std::vector<std::string>& get_system_information() const {
