@@ -43,7 +43,7 @@ namespace xtdc_command {
     
     static std::vector<project_language> get_valid_languages(project_sdk sdk) {
       switch (sdk) {
-        case project_sdk::none: return {project_language::cpp, project_language::c, project_language::objectivec};
+        case project_sdk::none: return {project_language::cpp, project_language::c, project_language::objectivec, project_language::csharp};
         case project_sdk::xtd: return {project_language::cpp};
         case project_sdk::win32: return {project_language::c, project_language::cpp};
         case project_sdk::gtk: return {project_language::c, project_language::cpp};
@@ -269,9 +269,17 @@ namespace xtdc_command {
 
     void create_c_console_source(const std::string& name) const {
       std::vector<std::string> lines {
+        "/**",
+        " * @file",
+        " * @brief Contains main method.",
+        " */",
         "#include <stdio.h>",
         "",
-        "// The main entry point for the application.",
+        "/**",
+        " * @brief The main entry point for the application.",
+        " * @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        " * @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        " */",
         "int main(int argc, char* argv[]) {",
         "  printf(\"Hello, World!\\n\");",
         "}"
@@ -323,11 +331,15 @@ namespace xtdc_command {
     
     void create_cpp_console_source(const std::string& name) const {
       std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains main method.",
         "#include <iostream>",
         "",
         "using namespace std;",
         "",
-        "// The main entry point for the application.",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
         "int main(int argc, char* argv[]) {",
         "  cout << \"Hello, World!\" << endl;",
         "}"
@@ -375,11 +387,14 @@ namespace xtdc_command {
     
     void create_csharp_console_source(const std::string& name) const {
       std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains Program class.",
         "using System;",
         "",
         xtd::strings::format("namespace {} {{", name),
         "  class Program {",
-        "    // The main entry point for the application.",
+        "    /// @brief The main entry point for the application.",
+        "    /// @param args An array of string that represent the arguments passed to the program from the execution environment.",
         "    static void Main(string[] args) {",
         "      Console.WriteLine(\"Hello, World!\");",
         "    }",
@@ -429,9 +444,13 @@ namespace xtdc_command {
     
     void create_objectivec_console_source(const std::string& name) const {
       std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains main method.",
         "#import <Foundation/Foundation.h>",
         "",
-        "// The main entry point for the application.",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
         "int main(int argc, const char * argv[]) {",
         "  @autoreleasepool {",
         "    NSLog(@\"Hello, World!\");",
@@ -511,8 +530,90 @@ namespace xtdc_command {
     }
     
     void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_cocoa_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_cocoa_gui_cmakelists_txt(name);
+      create_cocoa_gui_source(name);
     }
     
+    void create_cocoa_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_cocoa_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "include(CSharpUtilities)",
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.m", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")",
+        "set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})",
+        xtd::strings::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", std::chrono::system_clock::now()),
+        xtd::strings::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name),
+        xtd::strings::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name),
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_cocoa_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains main method.",
+        "#import <Cocoa/Cocoa.h>",
+        "",
+        "/// @brief Represents the main NSWindow",
+        "@interface Window1 : NSWindow {",
+        "}",
+        "    /// @brief Initializes a new instance of the Window1 class.",
+        "- (instancetype)init;",
+        "- (BOOL)windowShouldClose:(id)sender;",
+        "@end",
+        "",
+        "@implementation Window1",
+        "- (instancetype)init {",
+        "  [super initWithContentRect:NSMakeRect(100, 500, 800, 450) styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable backing:NSBackingStoreBuffered defer:NO];",
+        "  [self setTitle:@\"Form1\"];",
+        "  [self setIsVisible:YES];",
+        "  return self;",
+        "}",
+        "",
+        "- (BOOL)windowShouldClose:(id)sender {",
+        "   [NSApp terminate:sender];",
+        "   return NO;",
+        "}",
+        "@end",
+        "",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "int main(int argc, char* argv[]) {",
+        "  [NSApplication sharedApplication];",
+        "  [[[[Window1 alloc] init] autorelease] makeMainWindow];",
+        "  [NSApp run];",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.m", name), lines);
+    }
+
     void create_gtk_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
@@ -589,12 +690,11 @@ namespace xtdc_command {
         "  /// @brief Represents the main form",
         "  class form1 : public form {",
         "  public:",
-        "    /// @cond",
+        "    /// @brief Initializes a new instance of the form1 class.",
         "    form1() {",
         "      text(\"form1\");",
         "      client_size({800, 450});",
         "    }",
-        "    /// @endcond",
         "  };",
         "}",
         "",
