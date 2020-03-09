@@ -221,19 +221,19 @@ namespace xtdc_command {
     void create_console(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
       if (sdk == project_sdk::xtd)
-        create_console_xtd(name, sdk, language);
+        create_xtd_console(name, sdk, language);
       else
-        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_console_c}}, {project_language::cpp, {*this, &project_management::create_console_cpp}}, {project_language::csharp, {*this, &project_management::create_console_csharp}}, {project_language::objectivec, {*this, &project_management::create_console_objectivec}}}[language](name, sdk, language);
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_c_console}}, {project_language::cpp, {*this, &project_management::create_cpp_console}}, {project_language::csharp, {*this, &project_management::create_csharp_console}}, {project_language::objectivec, {*this, &project_management::create_objectivec_console}}}[language](name, sdk, language);
     }
 
-    void create_console_c(const std::string& name, project_sdk sdk, project_language language) const {
-      create_console_c_solution_cmakelists_txt(name);
+    void create_c_console(const std::string& name, project_sdk sdk, project_language language) const {
+      create_c_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_c_console_cmakelists_txt(name);
       create_c_console_source(name);
     }
     
-    void create_console_c_solution_cmakelists_txt(const std::string& name) const {
+    void create_c_console_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -280,14 +280,14 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.c", name), lines);
     }
 
-    void create_console_cpp(const std::string& name, project_sdk sdk, project_language language) const {
-      create_console_cpp_solution_cmakelists_txt(name);
+    void create_cpp_console(const std::string& name, project_sdk sdk, project_language language) const {
+      create_cpp_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_cpp_console_cmakelists_txt(name);
       create_cpp_console_source(name);
     }
     
-    void create_console_cpp_solution_cmakelists_txt(const std::string& name) const {
+    void create_cpp_console_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -336,14 +336,14 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
     }
 
-    void create_console_csharp(const std::string& name, project_sdk sdk, project_language language) const {
-      create_console_csharp_solution_cmakelists_txt(name);
+    void create_csharp_console(const std::string& name, project_sdk sdk, project_language language) const {
+      create_csharp_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_csharp_console_cmakelists_txt(name);
       create_csharp_console_source(name);
     }
     
-    void create_console_csharp_solution_cmakelists_txt(const std::string& name) const {
+    void create_csharp_console_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -390,14 +390,14 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cs", name), lines);
     }
 
-    void create_console_objectivec(const std::string& name, project_sdk sdk, project_language language) const {
-      create_console_objectivec_solution_cmakelists_txt(name);
+    void create_objectivec_console(const std::string& name, project_sdk sdk, project_language language) const {
+      create_objectivec_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_objectivec_console_cmakelists_txt(name);
       create_objectivec_console_source(name);
     }
     
-    void create_console_objectivec_solution_cmakelists_txt(const std::string& name) const {
+    void create_objectivec_console_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -443,14 +443,14 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.m", name), lines);
     }
 
-    void create_console_xtd(const std::string& name, project_sdk sdk, project_language language) const {
-      create_console_xtd_solution_cmakelists_txt(name);
+    void create_xtd_console(const std::string& name, project_sdk sdk, project_language language) const {
+      create_xtd_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_xtd_console_cmakelists_txt(name);
       create_xtd_console_source(name);
     }
     
-    void create_console_xtd_solution_cmakelists_txt(const std::string& name) const {
+    void create_xtd_console_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -488,11 +488,15 @@ namespace xtdc_command {
     
     void create_xtd_console_source(const std::string& name) const {
       std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains main method.",
         "#include <xtd/xtd.console>",
         "",
         "using namespace xtd;",
         "",
-        "// The main entry point for the application.",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
         "int main(int argc, char* argv[]) {",
         "  console::write_line(\"Hello, World!\");",
         "}"
@@ -503,34 +507,34 @@ namespace xtdc_command {
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
-      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_gui_cocoa}}, {project_sdk::gtk, {*this, &project_management::create_gui_gtk}}, {project_sdk::gtkmm, {*this, &project_management::create_gui_gtkmm}}, {project_sdk::qt5, {*this, &project_management::create_gui_qt5}}, {project_sdk::win32, {*this, &project_management::create_gui_win32}}, {project_sdk::winforms, {*this, &project_management::create_gui_winforms}}, {project_sdk::wpf, {*this, &project_management::create_gui_wpf}}, {project_sdk::xtd, {*this, &project_management::create_gui_xtd}}}[sdk](name, sdk, language);
+      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::gtk, {*this, &project_management::create_gtk_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
     }
     
-    void create_gui_cocoa(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_gtk(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_gtk_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_gtkmm(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_qt5(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_win32(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_win32_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_winforms(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_winforms_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_wpf(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_wpf_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_wxwidgets(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
-    void create_gui_xtd(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_xtd_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_xtd_gui_cmakelists_txt(name);
@@ -575,22 +579,28 @@ namespace xtdc_command {
     
     void create_xtd_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains form1 class.",
         "#include <xtd/xtd.forms>",
         "",
-        "using namespace xtd;",
         "using namespace xtd::forms;",
         "",
         xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represents the main form",
         "  class form1 : public form {",
         "  public:",
+        "    /// @cond",
         "    form1() {",
         "      text(\"form1\");",
         "      client_size({800, 450});",
         "    }",
+        "    /// @endcond",
         "  };",
         "}",
         "",
-        "// The main entry point for the application.",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
         "int main(int argc, char* argv[]) {",
         xtd::strings::format("  application::run({}::form1());", name),
         "}"
