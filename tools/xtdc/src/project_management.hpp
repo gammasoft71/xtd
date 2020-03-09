@@ -33,7 +33,7 @@ namespace xtdc_command {
       switch (type) {
         case project_type::blank_solution: return {project_sdk::xtd};
         case project_type::console: return {project_sdk::none, project_sdk::xtd};
-        case project_type::gui: return {project_sdk::xtd, project_sdk::win32, project_sdk::gtk, project_sdk::cocoa, project_sdk::gtkmm, project_sdk::wxwidgets, project_sdk::qt5, project_sdk::winforms, project_sdk::wpf};
+        case project_type::gui: return {project_sdk::xtd, project_sdk::win32, project_sdk::gtk2, project_sdk::gtk3, project_sdk::cocoa, project_sdk::gtkmm, project_sdk::wxwidgets, project_sdk::qt5, project_sdk::winforms, project_sdk::wpf};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd};
         case project_type::unit_test_application: return {project_sdk::xtd, project_sdk::gtest, project_sdk::catch2};
@@ -46,7 +46,8 @@ namespace xtdc_command {
         case project_sdk::none: return {project_language::cpp, project_language::c, project_language::objectivec, project_language::csharp};
         case project_sdk::xtd: return {project_language::cpp};
         case project_sdk::win32: return {project_language::c, project_language::cpp};
-        case project_sdk::gtk: return {project_language::c, project_language::cpp};
+        case project_sdk::gtk2: return {project_language::c, project_language::cpp};
+        case project_sdk::gtk3: return {project_language::c, project_language::cpp};
         case project_sdk::cocoa: return {project_language::objectivec};
         case project_sdk::gtkmm: return {project_language::cpp};
         case project_sdk::wxwidgets: return {project_language::cpp};
@@ -65,6 +66,7 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
       if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} already exists and not empty! Create project aborted.", path_);
+      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
       std::filesystem::create_directories(std::filesystem::path {path_}/"build");
       std::map<project_type, xtd::action<const std::string&, project_sdk, project_language>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language);
       generate(name);
@@ -429,7 +431,6 @@ namespace xtdc_command {
         "",
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
-        "include(CSharpUtilities)",
         "set(SOURCES",
         xtd::strings::format("  src/{0}.m", name),
         ")",
@@ -526,7 +527,7 @@ namespace xtdc_command {
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
-      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::gtk, {*this, &project_management::create_gtk_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
+      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
     }
     
     void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -553,7 +554,6 @@ namespace xtdc_command {
         "",
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
-        "include(CSharpUtilities)",
         "set(SOURCES",
         xtd::strings::format("  src/{0}.m", name),
         ")",
@@ -582,7 +582,7 @@ namespace xtdc_command {
         "/// @brief Represents the main NSWindow",
         "@interface Window1 : NSWindow {",
         "}",
-        "    /// @brief Initializes a new instance of the Window1 class.",
+        " /// @brief Initializes a new instance of the Window1 class.",
         "- (instancetype)init;",
         "- (BOOL)windowShouldClose:(id)sender;",
         "@end",
@@ -614,15 +614,313 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.m", name), lines);
     }
 
-    void create_gtk_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_gtk2_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_gtk2_gui_cmakelists_txt(name);
+      create_gtk2_gui_source(name);
     }
     
+    void create_gtk2_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtk2_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.cpp", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "find_package(PkgConfig)",
+        "pkg_check_modules(GTK gtk+-2.0)",
+        "include_directories(${GTK_INCLUDE_DIRS})",
+        "link_directories(${GTK_LIBRARY_DIRS})",
+        "link_libraries(${GTK_LIBRARIES})",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtk2_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains main funcxtion.",
+        "#include <gtk/gtk.h>",
+        "",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "int main(int argc, char* argv[]) {",
+        "  gtk_init(&argc, &argv);",
+        "",
+        "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
+        "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
+        "  gtk_window_move(GTK_WINDOW(window1), 100, 100);",
+        "  gtk_window_resize(GTK_WINDOW(window1), 800, 450);",
+        "  g_signal_connect (window1, \"destroy\", G_CALLBACK(+[](GtkWidget* widget, gpointer data) {",
+        "    gtk_main_quit();",
+        "  }), nullptr);",
+        "  gtk_widget_show(window1);",
+        "  gtk_main();",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+
+    void create_gtk3_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_gtk3_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_gtk3_gui_cmakelists_txt(name);
+      create_gtk3_gui_source(name);
+    }
+    
+    void create_gtk3_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtk3_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.cpp", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "find_package(PkgConfig)",
+        "pkg_check_modules(GTK gtk+-3.0)",
+        "include_directories(${GTK_INCLUDE_DIRS})",
+        "link_directories(${GTK_LIBRARY_DIRS})",
+        "link_libraries(${GTK_LIBRARIES})",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtk3_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains main funcxtion.",
+        "#include <gtk/gtk.h>",
+        "",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "int main(int argc, char* argv[]) {",
+        "  gtk_init(&argc, &argv);",
+        "",
+        "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
+        "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
+        "  gtk_window_move(GTK_WINDOW(window1), 100, 100);",
+        "  gtk_window_resize(GTK_WINDOW(window1), 800, 450);",
+        "  g_signal_connect (window1, \"destroy\", G_CALLBACK(+[](GtkWidget* widget, gpointer data) {",
+        "    gtk_main_quit();",
+        "  }), nullptr);",
+        "  gtk_widget_show(window1);",
+        "  gtk_main();",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+
     void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_gtkmm_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_gtkmm_gui_cmakelists_txt(name);
+      create_gtkmm_gui_source(name);
     }
     
+    void create_gtkmm_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtkmm_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.cpp", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "find_package(PkgConfig)",
+        "pkg_check_modules(GTKMM gtkmm-3.0)",
+        "include_directories(${GTKMM_INCLUDE_DIRS})",
+        "link_directories(${GTKMM_LIBRARY_DIRS})",
+        "link_libraries(${GTKMM_LIBRARIES})",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtkmm_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains Window1 class.",
+        "#include <gtkmm.h>",
+        "",
+        "using namespace Gtk;",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represent the main window",
+        "  class Window1 : public Window {",
+        "  public:",
+        "    /// @brief Initializes a new instance of the Window1 class.",
+        "    Window1() {",
+        "      scrolledWindow.add(fixed);",
+        "",
+        "      set_title(\"Window1\");",
+        "      move(100, 100);",
+        "      resize(800, 450);",
+        "      add(scrolledWindow);",
+        "    }",
+        "",
+        "  private:",
+        "    ScrolledWindow scrolledWindow;",
+        "    Fixed fixed;",
+        "  };",
+        "}",
+        "",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "int main(int argc, char* argv[]) {",
+        "  auto application = Application::create(argc, argv);",
+        xtd::strings::format("  {}::Window1 window1;", name),
+        "  window1.show_all();",
+        "  return application->run(window1);",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+
     void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_qt5_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_qt5_gui_cmakelists_txt(name);
+      create_qt5_gui_source(name);
     }
     
+    void create_qt5_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_qt5_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.cpp", name),
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "find_package(Qt5 COMPONENTS Widgets REQUIRED)",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
+        "target_link_libraries(${PROJECT_NAME} Qt5::Widgets)"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_qt5_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains Window1 class.",
+        "#include <QApplication>",
+        "#include <QMainWindow>",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represent the main window",
+        "  class Window1 : public QMainWindow {",
+        "  public:",
+        "    /// @brief Initializes a new instance of the Window1 class.",
+        "    Window1() {",
+        "      setWindowTitle(\"Window1\");",
+        "      move(100, 100);",
+        "      resize(800, 450);",
+        "    }",
+        "  };",
+        "}",
+        "",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "int main(int argc, char* argv[]) {",
+        "  QApplication application(argc, argv);",
+        xtd::strings::format("  {}::Window1 window1;", name),
+        "  window1.show();",
+        "  return application.exec();",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+
     void create_win32_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     

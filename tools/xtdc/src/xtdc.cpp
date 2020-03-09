@@ -157,15 +157,15 @@ namespace xtdc_command {
       "  --force             Forces content to be generated even if it would change existing files.\n"
       "\n"
       "\n"
-      "Templates               Short Name     SDK/Language                    \n"
-      "-----------------------------------------------------------------------\n"
-      "Console Application     console        [xtd], c++, c, c#, objective-c  \n"
-      "GUI Application         gui            [xtd], win32, gtk, cocoa, gtkmm,\n"
-      "                                       wxwidgets, qt5, winforms, wpf   \n"
-      "Static library          staticlib      [xtd], c++, c, c#, objective-c  \n"
-      "Shared library          sharedlib      [xtd], c++, c, c#, objective-c  \n"
-      "Unit Test Project       test           [xtd], gtest, catch2            \n"
-      "Solution File           sln            [xtd]                           \n"
+      "Templates               Short Name     SDK/Language                        \n"
+      "---------------------------------------------------------------------------\n"
+      "Console Application     console        [xtd], c++, c, c#, objective-c      \n"
+      "GUI Application         gui            [xtd], win32, gtk+2, gtk+3, cocoa,  \n"
+      "                                       gtkmm, wxwidgets, qt5, winforms, wpf\n"
+      "Static library          staticlib      [xtd], c++, c, c#, objective-c      \n"
+      "Shared library          sharedlib      [xtd], c++, c, c#, objective-c      \n"
+      "Unit Test Project       test           [xtd], gtest, catch2                \n"
+      "Solution File           sln            [xtd]                               \n"
       "\n"
       "\n"
       "Exemples:\n"
@@ -285,7 +285,7 @@ namespace xtdc_command {
         cout << get_new_help() << endl;
       else {
         static map<string, project_type> types = {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}};
-        static map<project_type, vector<string>> sdk_languages = {{project_type::console, {"xtd", "c++", "cpp", "c", "c#", "cs", "csharp", "objective-c", "objectivec"}}, {project_type::gui, {"xtd", "win32", "gtk", "cocoa", "gtkmm", "wxwidgets", "qt5", "winforms", "wpf"}}, {project_type::static_library, {"xtd", "c++", "cpp", "c", "cs", "c#", "csharp", "objective-c", "objectivec"}}, {project_type::shared_library, {"xtd", "c++", "cpp", "c", "c#", "cs", "csharp", "objective-c", "objectivec"}}, {project_type::unit_test_application, {"xtd", "gtest", "catch2"}}, {project_type::blank_solution, {"xtd"}}};
+        static map<project_type, vector<string>> sdk_languages = {{project_type::console, {"xtd", "c++", "cpp", "c", "c#", "cs", "csharp", "objective-c", "objectivec"}}, {project_type::gui, {"xtd", "win32", "gtk+2", "gtk+3", "cocoa", "gtkmm", "wxwidgets", "qt5", "winforms", "wpf"}}, {project_type::static_library, {"xtd", "c++", "cpp", "c", "cs", "c#", "csharp", "objective-c", "objectivec"}}, {project_type::shared_library, {"xtd", "c++", "cpp", "c", "c#", "cs", "csharp", "objective-c", "objectivec"}}, {project_type::unit_test_application, {"xtd", "gtest", "catch2"}}, {project_type::blank_solution, {"xtd"}}};
         
         if (type.empty()) type = "gui";
         if (sdk.empty()) sdk = "xtd";
@@ -308,13 +308,14 @@ namespace xtdc_command {
         }
         
         xtdc_command::project_type project_type = types[type];
-        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"xtd", xtdc_command::project_sdk::xtd}, {"win32", xtdc_command::project_sdk::win32}, {"gtk", xtdc_command::project_sdk::gtk}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"qt5", xtdc_command::project_sdk::qt5}, {"gtest", xtdc_command::project_sdk::gtest}, {"catch2", xtdc_command::project_sdk::catch2}}[sdk];
+        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"xtd", xtdc_command::project_sdk::xtd}, {"win32", xtdc_command::project_sdk::win32}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"qt5", xtdc_command::project_sdk::qt5}, {"gtest", xtdc_command::project_sdk::gtest}, {"catch2", xtdc_command::project_sdk::catch2}}[sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
 
         if (sdk == "xtd") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "win32") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "cocoa") project_language = xtdc_command::project_language::objectivec;
-        else if (sdk == "gtk") project_language = xtdc_command::project_language::cpp;
+        else if (sdk == "gtk+2") project_language = xtdc_command::project_language::cpp;
+        else if (sdk == "gtk+3") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "gtkmm") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "wxwidgets") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "qt5") project_language = xtdc_command::project_language::cpp;
