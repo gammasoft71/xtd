@@ -195,7 +195,8 @@ namespace xtdc_command {
     }
     
     std::filesystem::path build_path() const {return path_/"build";}
-    
+    std::filesystem::path working_dir() const {return path_/"build";}
+
     void create_blank_solution(const std::string& name, project_sdk sdk, project_language language) {
       create_doxygen_txt(name);
       create_blank_solution_cmakelists_txt(name);
@@ -530,8 +531,74 @@ namespace xtdc_command {
     }
     
     void create_gui_xtd(const std::string& name, project_sdk sdk, project_language language) const {
+      create_xtd_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_xtd_gui_cmakelists_txt(name);
+      create_xtd_gui_source(name);
+   }
+    
+    void create_xtd_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_projects(",
+        xtd::strings::format("  {0}", name),
+        ")",
+        "",
+        "# Install",
+        "install_package()"
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
+    void create_xtd_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_sources(",
+        xtd::strings::format("  src/{0}.cpp", name),
+        ")",
+        "target_type(GUI_APPLICATION)",
+        "",
+        "# Install",
+        "install_component()",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include <xtd/xtd.forms>",
+        "",
+        "using namespace xtd;",
+        "using namespace xtd::forms;",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  class form1 : public form {",
+        "  public:",
+        "    form1() {",
+        "      text(\"form1\");",
+        "      client_size({800, 450});",
+        "    }",
+        "  };",
+        "}",
+        "",
+        "// The main entry point for the application.",
+        "int main(int argc, char* argv[]) {",
+        xtd::strings::format("  application::run({}::form1());", name),
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
     }
