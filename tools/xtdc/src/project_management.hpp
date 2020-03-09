@@ -980,9 +980,11 @@ namespace xtdc_command {
     
     void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_xtd_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"properties");
+      create_xtd_gui_application_properties(name);
       std::filesystem::create_directories(path_/name/"src");
       create_xtd_gui_cmakelists_txt(name);
-      create_xtd_gui_source(name);
+      create_xtd_gui_include(name);
    }
     
     void create_xtd_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -1002,6 +1004,16 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
+    void create_xtd_gui_application_properties(const std::string& name) const {
+      std::vector<std::string> lines{
+        xtd::strings::format("application_default_namespace(\"{}\")", name),
+        xtd::strings::format("application_name(\"{}\")", name),
+        xtd::strings::format("application_startup(\"{0}::form1\" src/{0}.hpp)", name),
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
+    }
+
     void create_xtd_gui_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
@@ -1010,7 +1022,7 @@ namespace xtdc_command {
         xtd::strings::format("project({0})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
-        xtd::strings::format("  src/{0}.cpp", name),
+        xtd::strings::format("  src/{0}.hpp", name),
         ")",
         "target_type(GUI_APPLICATION)",
         "",
@@ -1021,35 +1033,33 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
     }
     
-    void create_xtd_gui_source(const std::string& name) const {
+    void create_xtd_gui_include(const std::string& name) const {
       std::vector<std::string> lines {
+        "#pragma once",
         "/// @file",
         "/// @brief Contains form1 class.",
         "#include <xtd/xtd.forms>",
         "",
-        "using namespace xtd::forms;",
-        "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represents the main form",
-        "  class form1 : public form {",
+        "  class form1 : public xtd::forms::form {",
         "  public:",
         "    /// @brief Initializes a new instance of the form1 class.",
         "    form1() {",
         "      text(\"form1\");",
         "      client_size({800, 450});",
         "    }",
-        "  };",
-        "}",
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
-        "int main(int argc, char* argv[]) {",
-        xtd::strings::format("  application::run({}::form1());", name),
+        "    /// @brief The main entry point for the application.",
+        "    /// @param args An array of string that represent the arguments passed to the program from the execution environment.",
+        "    static void main(const std::vector<std::string>& args) {",
+        "      xtd::forms::application::run(form1());",
+        "    }",
+        "  };",
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
     }
 
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
