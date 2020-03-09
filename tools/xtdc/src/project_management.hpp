@@ -380,6 +380,9 @@ namespace xtdc_command {
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
+        "# Options",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})"
       };
@@ -435,6 +438,9 @@ namespace xtdc_command {
         xtd::strings::format("  src/{0}.m", name),
         ")",
         "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})"
@@ -565,6 +571,7 @@ namespace xtdc_command {
         xtd::strings::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", std::chrono::system_clock::now()),
         xtd::strings::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name),
         xtd::strings::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name),
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})"
@@ -639,7 +646,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.cpp", name),
+        xtd::strings::format("  src/{0}.c", name),
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -649,8 +656,9 @@ namespace xtdc_command {
         "link_libraries(${GTK_LIBRARIES})",
         "",
         "# Options",
-        "set(CMAKE_CXX_STANDARD 17)",
-        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})"
@@ -661,29 +669,30 @@ namespace xtdc_command {
     
     void create_gtk2_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains main funcxtion.",
+        "/**",
+        " * @file",
+        " * @brief Contains main funcxtion.",
+        " */",
         "#include <gtk/gtk.h>",
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "/**",
+        " * @brief The main entry point for the application.",
+        " * @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        " * @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        " */",
         "int main(int argc, char* argv[]) {",
         "  gtk_init(&argc, &argv);",
-        "",
         "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
         "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
         "  gtk_window_move(GTK_WINDOW(window1), 100, 100);",
         "  gtk_window_resize(GTK_WINDOW(window1), 800, 450);",
-        "  g_signal_connect (window1, \"destroy\", G_CALLBACK(+[](GtkWidget* widget, gpointer data) {",
-        "    gtk_main_quit();",
-        "  }), nullptr);",
+        "  g_signal_connect (window1, \"destroy\", gtk_main_quit, NULL);",
         "  gtk_widget_show(window1);",
         "  gtk_main();",
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.c", name), lines);
     }
 
     void create_gtk3_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -711,7 +720,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.cpp", name),
+        xtd::strings::format("  src/{0}.c", name),
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -721,8 +730,9 @@ namespace xtdc_command {
         "link_libraries(${GTK_LIBRARIES})",
         "",
         "# Options",
-        "set(CMAKE_CXX_STANDARD 17)",
-        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})"
@@ -733,29 +743,30 @@ namespace xtdc_command {
     
     void create_gtk3_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains main funcxtion.",
+        "/**",
+        " * @file",
+        " * @brief Contains main funcxtion.",
+        " */",
         "#include <gtk/gtk.h>",
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "/**",
+        " * @brief The main entry point for the application.",
+        " * @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        " * @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        " */",
         "int main(int argc, char* argv[]) {",
         "  gtk_init(&argc, &argv);",
-        "",
         "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
         "  gtk_window_set_title(GTK_WINDOW(window1), \"Window1\");",
         "  gtk_window_move(GTK_WINDOW(window1), 100, 100);",
         "  gtk_window_resize(GTK_WINDOW(window1), 800, 450);",
-        "  g_signal_connect (window1, \"destroy\", G_CALLBACK(+[](GtkWidget* widget, gpointer data) {",
-        "    gtk_main_quit();",
-        "  }), nullptr);",
+        "  g_signal_connect (window1, \"destroy\", gtk_main_quit, NULL);",
         "  gtk_widget_show(window1);",
         "  gtk_main();",
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.c", name), lines);
     }
 
     void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -795,6 +806,7 @@ namespace xtdc_command {
         "# Options",
         "set(CMAKE_CXX_STANDARD 17)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})"
@@ -849,7 +861,9 @@ namespace xtdc_command {
       create_qt5_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_qt5_gui_cmakelists_txt(name);
+      create_qt5_gui_include(name);
       create_qt5_gui_source(name);
+      create_qt5_gui_main(name);
     }
     
     void create_qt5_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -870,7 +884,9 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
+        xtd::strings::format("  src/{0}.hpp", name),
         xtd::strings::format("  src/{0}.cpp", name),
+        "  src/main.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(Qt5 COMPONENTS Widgets REQUIRED)",
@@ -878,6 +894,7 @@ namespace xtdc_command {
         "# Options",
         "set(CMAKE_CXX_STANDARD 17)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
@@ -887,38 +904,66 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
     }
     
-    void create_qt5_gui_source(const std::string& name) const {
+    void create_qt5_gui_include(const std::string& name) const {
       std::vector<std::string> lines {
+        "#pragma once",
         "/// @file",
         "/// @brief Contains Window1 class.",
-        "#include <QApplication>",
         "#include <QMainWindow>",
         "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public QMainWindow {",
+        "    // Q_OBJECT",
         "  public:",
         "    /// @brief Initializes a new instance of the Window1 class.",
-        "    Window1() {",
-        "      setWindowTitle(\"Window1\");",
-        "      move(100, 100);",
-        "      resize(800, 450);",
-        "    }",
+        "    Window1();",
         "  };",
-        "}",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+    }
+    
+    void create_qt5_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains Window1 class.",
+        xtd::strings::format("#include \"{}.hpp\"", name),
+        "",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "Window1::Window1() {",
+        "  setWindowTitle(\"Window1\");",
+        "  move(100, 100);",
+        "  resize(800, 450);",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+    
+    void create_qt5_gui_main(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains main function.",
+        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include <QApplication>",
+        "",
+        xtd::strings::format("using namespace {};", name),
         "",
         "/// @brief The main entry point for the application.",
         "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
         "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
         "int main(int argc, char* argv[]) {",
         "  QApplication application(argc, argv);",
-        xtd::strings::format("  {}::Window1 window1;", name),
+        "  Window1 window1;",
         "  window1.show();",
         "  return application.exec();",
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
     }
 
     void create_win32_gui(const std::string& name, project_sdk sdk, project_language language) const {
