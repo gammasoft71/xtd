@@ -101,7 +101,7 @@ namespace xtdc_command {
       else if (xtd::environment::os_version().is_osx_platform())
         system(xtd::strings::format("open {}.xcodeproj", (build_path()/get_name()).string()).c_str());
       else
-        system(xtd::strings::format("xdg-open {}.cbp>nul", (build_path()/(release ? "Release" : "Debug")/get_name()).string()).c_str());
+        system(xtd::strings::format("xdg-open {}.cbp > /dev/null 2>&1", (build_path()/(release ? "Release" : "Debug")/get_name()).string()).c_str());
       return xtd::strings::format("Project {0} opened", get_name());
     }
 
