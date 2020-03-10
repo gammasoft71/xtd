@@ -135,7 +135,7 @@ namespace xtdc_command {
           }
         }
       }
-      if (name.empty()) name = path_.filename();
+      if (name.empty()) name = path_.filename().string();
       return name;
     }
     
