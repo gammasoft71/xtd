@@ -143,14 +143,14 @@ namespace xtdc_command {
       for (const auto& line : get_system_information())
         if (xtd::strings::starts_with(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target)))
           return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", target), "")}, target, release);
-      return build_path()/(release ? "RElease" : "Debug")/target/target;
+      return (build_path()/(release ? "RElease" : "Debug")/target/target).string();
     }
     
     std::string get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
         if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != -1)
           return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC="))), "")}, xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")), release);
-      return build_path()/(release ? "RElease" : "Debug")/path_.filename()/path_.filename();
+      return (build_path()/(release ? "RElease" : "Debug")/path_.filename()/path_.filename()).string();
     }
     
     std::string make_platform_target_path(const std::filesystem::path& path, const std::string& target, bool release) const {
