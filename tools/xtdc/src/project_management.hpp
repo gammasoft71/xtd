@@ -773,7 +773,9 @@ namespace xtdc_command {
       create_gtkmm_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_gtkmm_gui_cmakelists_txt(name);
+      create_gtkmm_gui_include(name);
       create_gtkmm_gui_source(name);
+      create_gtkmm_gui_main(name);
     }
     
     void create_gtkmm_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -794,7 +796,9 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
+        xtd::strings::format("  src/{0}.hpp", name),
         xtd::strings::format("  src/{0}.cpp", name),
+        "  src/main.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -815,33 +819,55 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
     }
     
-    void create_gtkmm_gui_source(const std::string& name) const {
+    void create_gtkmm_gui_include(const std::string& name) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
         "#include <gtkmm.h>",
         "",
-        "using namespace Gtk;",
-        "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
-        "  class Window1 : public Window {",
+        "  class Window1 : public Gtk::Window {",
         "  public:",
         "    /// @brief Initializes a new instance of the Window1 class.",
-        "    Window1() {",
-        "      scrolledWindow.add(fixed);",
-        "",
-        "      set_title(\"Window1\");",
-        "      move(100, 100);",
-        "      resize(800, 450);",
-        "      add(scrolledWindow);",
-        "    }",
+        "    Window1();",
         "",
         "  private:",
-        "    ScrolledWindow scrolledWindow;",
-        "    Fixed fixed;",
+        "    Gtk::ScrolledWindow scrolledWindow;",
+        "    Gtk::Fixed fixed;",
         "  };",
         "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+    }
+    
+    void create_gtkmm_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("#include \"{}.hpp\"", name),
+        "",
+        "using namespace Gtk;",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "Window1::Window1() {",
+        "  scrolledWindow.add(fixed);",
+        "",
+        "  set_title(\"Window1\");",
+        "  move(100, 100);",
+        "  resize(800, 450);",
+        "  add(scrolledWindow);",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+    
+    void create_gtkmm_gui_main(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("#include \"{}.hpp\"", name),
+        "",
+        "using namespace Gtk;",
+        xtd::strings::format("using namespace {};", name),
         "",
         "/// @brief The main entry point for the application.",
         "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
@@ -854,7 +880,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
     }
 
     void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -914,7 +940,9 @@ namespace xtdc_command {
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public QMainWindow {",
+        "    // Uncomment the following line when you use signals ans slots.",
         "    // Q_OBJECT",
+        "",
         "  public:",
         "    /// @brief Initializes a new instance of the Window1 class.",
         "    Window1();",
@@ -927,8 +955,6 @@ namespace xtdc_command {
     
     void create_qt5_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains Window1 class.",
         xtd::strings::format("#include \"{}.hpp\"", name),
         "",
         xtd::strings::format("using namespace {};", name),
@@ -945,8 +971,6 @@ namespace xtdc_command {
     
     void create_qt5_gui_main(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains main function.",
         xtd::strings::format("#include \"{}.hpp\"", name),
         "#include <QApplication>",
         "",
@@ -985,6 +1009,7 @@ namespace xtdc_command {
       std::filesystem::create_directories(path_/name/"src");
       create_xtd_gui_cmakelists_txt(name);
       create_xtd_gui_include(name);
+      create_xtd_gui_source(name);
    }
     
     void create_xtd_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -1023,6 +1048,7 @@ namespace xtdc_command {
         "find_package(xtd REQUIRED)",
         "add_sources(",
         xtd::strings::format("  src/{0}.hpp", name),
+        xtd::strings::format("  src/{0}.cpp", name),
         ")",
         "target_type(GUI_APPLICATION)",
         "",
@@ -1045,21 +1071,35 @@ namespace xtdc_command {
         "  class form1 : public xtd::forms::form {",
         "  public:",
         "    /// @brief Initializes a new instance of the form1 class.",
-        "    form1() {",
-        "      text(\"form1\");",
-        "      client_size({800, 450});",
-        "    }",
+        "    form1();",
         "",
         "    /// @brief The main entry point for the application.",
-        "    /// @param args An array of string that represent the arguments passed to the program from the execution environment.",
-        "    static void main(const std::vector<std::string>& args) {",
-        "      xtd::forms::application::run(form1());",
-        "    }",
+        "    static void main();",
         "  };",
         "}"
       };
       
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+    }
+    
+    void create_xtd_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("#include\"{}.hpp\"", name),
+        "",
+        "using namespace xtd::forms;",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "form1::form1() {",
+        "  text(\"form1\");",
+        "  client_size({800, 450});",
+        "}",
+        "",
+        "void form1::main() {",
+        "  application::run(form1());",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
     }
 
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
