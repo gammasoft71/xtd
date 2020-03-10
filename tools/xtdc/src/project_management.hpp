@@ -362,7 +362,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0 LANGUAGES CSharp)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
         "  src/Program.cs",
@@ -422,7 +422,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Program.m",
         ")",
@@ -575,7 +575,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.m",
@@ -678,7 +678,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.cpp",
@@ -776,7 +776,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/program.c",
         ")",
@@ -842,7 +842,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/program.c",
         ")",
@@ -910,7 +910,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.cpp",
@@ -1015,7 +1015,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Window1.h",
         "  src/Window1.cpp",
@@ -1096,8 +1096,78 @@ namespace xtdc_command {
     }
 
     void create_win32_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_win32_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_win32_gui_cmakelists_txt(name);
+      create_win32_gui_source(name);
     }
     
+    void create_win32_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_win32_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
+        "set(SOURCES",
+        "  src/Program.c",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD_REQUIRED ON)",
+        "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup\")",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "add_definitions(-DUNICODE)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_win32_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#pragma comment(linker,\"\\\"/manifestdependency:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\\\"\")",
+        "",
+        "#include <Windows.h>",
+        "",
+        "HWND form = NULL;",
+        "WNDPROC defWndProc = NULL;",
+        "",
+        "LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {",
+        "  if (message == WM_CLOSE) PostQuitMessage(0);",
+        "  return CallWindowProc(defWndProc, hwnd, message, wParam, lParam);",
+        "}",
+        "",
+        "int main(int argc, char* argv[]) {",
+        "  form = CreateWindowEx(0, WC_DIALOG, L\"\", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 300, 300, NULL, NULL, NULL, NULL);",
+        "",
+        "  defWndProc = (WNDPROC)SetWindowLongPtr(form, GWLP_WNDPROC, (LONG_PTR)WndProc);",
+        "  ShowWindow(form, SW_SHOW);",
+        "",
+        "  MSG message = { 0 };",
+        "  while (GetMessage(&message, NULL, 0, 0))",
+        "    DispatchMessage(&message);",
+        "  return (int)message.wParam;",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.c", lines);
+    }
+
     void create_winforms_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
@@ -1130,7 +1200,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
         "  src/Frame1.h",
         "  src/Frame1.cpp",
@@ -1287,7 +1357,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains form1 class.",
         "#pragma once",
-        "#include <xtd/xtd.forms>",
+        "#include <xtd/forms/form.hpp>",
         "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represents the main form",
@@ -1307,7 +1377,8 @@ namespace xtdc_command {
     
     void create_xtd_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "#include\"form1.h\"",
+        "#include \"form1.h\"",
+        "#include <xtd/forms/application.hpp>",
         "",
         "using namespace xtd::forms;",
         xtd::strings::format("using namespace {};", name),
