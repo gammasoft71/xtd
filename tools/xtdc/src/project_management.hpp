@@ -471,9 +471,11 @@ namespace xtdc_command {
 
     void create_xtd_console(const std::string& name, project_sdk sdk, project_language language) const {
       create_xtd_console_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"properties");
+      create_xtd_console_application_properties(name);
       std::filesystem::create_directories(path_/name/"src");
       create_xtd_console_cmakelists_txt(name);
-      create_xtd_console_source(name);
+      create_xtd_console_include(name);
     }
     
     void create_xtd_console_solution_cmakelists_txt(const std::string& name) const {
@@ -493,6 +495,16 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
+    void create_xtd_console_application_properties(const std::string& name) const {
+      std::vector<std::string> lines{
+        xtd::strings::format("application_default_namespace(\"{}\")", name),
+        xtd::strings::format("application_name(\"{}\")", name),
+        xtd::strings::format("application_startup(\"{0}::Program\" src/{0}.hpp)", name),
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
+    }
+
     void create_xtd_console_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
@@ -501,7 +513,7 @@ namespace xtdc_command {
         xtd::strings::format("project({0})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
-        xtd::strings::format("  src/{0}.cpp", name),
+        xtd::strings::format("  src/{0}.hpp", name),
         ")",
         "target_type(CONSOLE_APPLICATION)",
         "",
@@ -512,23 +524,25 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
     }
     
-    void create_xtd_console_source(const std::string& name) const {
+    void create_xtd_console_include(const std::string& name) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains main method.",
         "#include <xtd/xtd.console>",
         "",
-        "using namespace xtd;",
-        "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
-        "int main(int argc, char* argv[]) {",
-        "  console::write_line(\"Hello, World!\");",
-        "}"
+        xtd::strings::format("namespace {} {{", name),
+        "  class Program {",
+        "  public:",
+        "    /// @brief The main entry point for the application.",
+        "    /// @param args An array of string that represent the arguments passed to the program from the execution environment.",
+        "    static void main(const std::vector<std::string>& args) {",
+        "      xtd::console::write_line(\"Hello, World!\");",
+        "    }",
+        "  };",
+        "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
     }
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
