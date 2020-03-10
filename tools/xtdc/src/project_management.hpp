@@ -330,7 +330,7 @@ namespace xtdc_command {
         "",
         "using namespace std;",
         "",
-        "/// The main entry point for the application.",
+        "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  cout << \"Hello, World!\" << endl;",
         "}"
@@ -547,7 +547,7 @@ namespace xtdc_command {
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
-      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::fltk, {*this, &project_management::create_fltk_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
+      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::fltk, {*this, &project_management::create_fltk_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::wxwidgets, {*this, &project_management::create_wxwidgets_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
     }
     
     void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -703,9 +703,9 @@ namespace xtdc_command {
     
     void create_fltk_gui_include(const std::string& name) const {
       std::vector<std::string> lines {
-        "#pragma once",
         "/// @file",
         "/// @brief Contains Window1 class.",
+        "#pragma once",
         "#include <FL/Fl_Window.H>",
         "",
         xtd::strings::format("namespace {} {{", name),
@@ -978,7 +978,7 @@ namespace xtdc_command {
         "using namespace Gtk;",
         xtd::strings::format("using namespace {};", name),
         "",
-        "/// The main entry point for the application.",
+        "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  auto application = Application::create(argc, argv);",
         xtd::strings::format("  {}::Window1 window1;", name),
@@ -1039,9 +1039,9 @@ namespace xtdc_command {
     
     void create_qt5_gui_include(const std::string& name) const {
       std::vector<std::string> lines {
-        "#pragma once",
         "/// @file",
         "/// @brief Contains Window1 class.",
+        "#pragma once",
         "#include <QMainWindow>",
         "",
         xtd::strings::format("namespace {} {{", name),
@@ -1083,7 +1083,7 @@ namespace xtdc_command {
         "",
         xtd::strings::format("using namespace {};", name),
         "",
-        "/// The main entry point for the application.",
+        "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  QApplication application(argc, argv);",
         "  Window1 window1;",
@@ -1105,8 +1105,126 @@ namespace xtdc_command {
     }
     
     void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_wxwidgets_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_wxwidgets_gui_cmakelists_txt(name);
+      create_wxwidgets_gui_include(name);
+      create_wxwidgets_gui_source(name);
+      create_wxwidgets_gui_application_include(name);
+      create_wxwidgets_gui_application_source(name);
     }
     
+    void create_wxwidgets_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_wxwidgets_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "set(SOURCES",
+        "  src/Frame1.h",
+        "  src/Frame1.cpp",
+        "  src/Application.h",
+        "  src/Application.cpp",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "find_package(wxWidgets REQUIRED)",
+        "include(${wxWidgets_USE_FILE})",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
+        "target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_wxwidgets_gui_include(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains Frame1 class.",
+        "#pragma once",
+        "#include <wx/frame.h>",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represent the main window",
+        "  class Frame1 : public wxFrame {",
+        "  public:",
+        "    /// @brief Initializes a new instance of the Frame1 class.",
+        "    Frame1();",
+        "  };",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Frame1.h", lines);
+    }
+    
+    void create_wxwidgets_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include \"Frame1.h\"",
+        "",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "Frame1::Frame1() : wxFrame(nullptr, wxID_ANY, \"Frame1\", wxDefaultPosition, {800, 450}) {",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Frame1.cpp", lines);
+    }
+    
+    void create_wxwidgets_gui_application_include(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains Application class.",
+        "#pragma once",
+        "#include <wx/app.h>",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represent the application",
+        "  class Application : public wxApp {",
+        "    bool OnInit() override;",
+        "  };",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Application.h", lines);
+    }
+    
+    void create_wxwidgets_gui_application_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include \"Application.h\"",
+        "#include \"Frame1.h\"",
+        "",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "bool Application::OnInit() {",
+        "  auto frame = new Frame1();",
+        "  frame->Show();",
+        "  return true;",
+        "}",
+        "",
+        "// The main entry point for the application.",
+        "wxIMPLEMENT_APP(Application);",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Application.cpp", lines);
+    }
+
     void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_xtd_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"properties");
@@ -1166,9 +1284,9 @@ namespace xtdc_command {
     
     void create_xtd_gui_include(const std::string& name) const {
       std::vector<std::string> lines {
-        "#pragma once",
         "/// @file",
         "/// @brief Contains form1 class.",
+        "#pragma once",
         "#include <xtd/xtd.forms>",
         "",
         xtd::strings::format("namespace {} {{", name),
