@@ -310,7 +310,7 @@ namespace xtdc_command {
         }
         
         xtdc_command::project_type project_type = types[type];
-        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
+        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
 
         if (sdk == "xtd") project_language = xtdc_command::project_language::cpp;
@@ -321,6 +321,8 @@ namespace xtdc_command {
         else if (sdk == "gtkmm") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "qt5") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "win32") project_language = xtdc_command::project_language::cpp;
+        else if (sdk == "winforms") project_language = xtdc_command::project_language::csharp;
+        else if (sdk == "wpf") project_language = xtdc_command::project_language::csharp;
         else if (sdk == "wxwidgets") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "c++") project_language = xtdc_command::project_language::cpp;
         else if (sdk == "cpp") project_language = xtdc_command::project_language::cpp;
