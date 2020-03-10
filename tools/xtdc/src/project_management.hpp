@@ -254,7 +254,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.c", name),
+        "  src/program.c",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -272,23 +272,15 @@ namespace xtdc_command {
 
     void create_c_console_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/**",
-        " * @file",
-        " * @brief Contains main method.",
-        " */",
         "#include <stdio.h>",
         "",
-        "/**",
-        " * @brief The main entry point for the application.",
-        " * @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        " * @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
-        " */",
+        "/* The main entry point for the application. */",
         "int main(int argc, char* argv[]) {",
         "  printf(\"Hello, World!\\n\");",
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.c", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
     }
 
     void create_cpp_console(const std::string& name, project_sdk sdk, project_language language) const {
@@ -316,7 +308,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.cpp", name),
+        "  src/program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -334,21 +326,17 @@ namespace xtdc_command {
     
     void create_cpp_console_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains main method.",
         "#include <iostream>",
         "",
         "using namespace std;",
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  cout << \"Hello, World!\" << endl;",
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"program.cpp", lines);
     }
 
     void create_csharp_console(const std::string& name, project_sdk sdk, project_language language) const {
@@ -377,7 +365,7 @@ namespace xtdc_command {
         xtd::strings::format("project({0}  VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.cs", name),
+        "  src/Program.cs",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -398,9 +386,9 @@ namespace xtdc_command {
         "using System;",
         "",
         xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represents the main class",
         "  class Program {",
-        "    /// @brief The main entry point for the application.",
-        "    /// @param args An array of string that represent the arguments passed to the program from the execution environment.",
+        "    // The main entry point for the application.",
         "    static void Main(string[] args) {",
         "      Console.WriteLine(\"Hello, World!\");",
         "    }",
@@ -408,7 +396,7 @@ namespace xtdc_command {
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cs", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cs", lines);
     }
 
     void create_objectivec_console(const std::string& name, project_sdk sdk, project_language language) const {
@@ -436,7 +424,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.m", name),
+        "  src/Program.m",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -452,13 +440,9 @@ namespace xtdc_command {
     
     void create_objectivec_console_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains main method.",
         "#import <Foundation/Foundation.h>",
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "// The main entry point for the application.",
         "int main(int argc, const char * argv[]) {",
         "  @autoreleasepool {",
         "    NSLog(@\"Hello, World!\");",
@@ -467,7 +451,7 @@ namespace xtdc_command {
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.m", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.m", lines);
     }
 
     void create_xtd_console(const std::string& name, project_sdk sdk, project_language language) const {
@@ -477,6 +461,7 @@ namespace xtdc_command {
       std::filesystem::create_directories(path_/name/"src");
       create_xtd_console_cmakelists_txt(name);
       create_xtd_console_include(name);
+      create_xtd_console_source(name);
     }
     
     void create_xtd_console_solution_cmakelists_txt(const std::string& name) const {
@@ -500,7 +485,7 @@ namespace xtdc_command {
       std::vector<std::string> lines{
         xtd::strings::format("application_default_namespace(\"{}\")", name),
         xtd::strings::format("application_name(\"{}\")", name),
-        xtd::strings::format("application_startup(\"{0}::program\" src/{0}.hpp)", name),
+        xtd::strings::format("application_startup(\"{}::program\" src/program.h)", name),
       };
       
       xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
@@ -514,7 +499,8 @@ namespace xtdc_command {
         xtd::strings::format("project({0})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
-        xtd::strings::format("  src/{0}.hpp", name),
+        "  src/program.h",
+        "  src/program.cpp",
         ")",
         "target_type(CONSOLE_APPLICATION)",
         "",
@@ -532,18 +518,31 @@ namespace xtdc_command {
         "#include <xtd/xtd.console>",
         "",
         xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represents the main class",
         "  class program {",
         "  public:",
-        "    /// @brief The main entry point for the application.",
-        "    /// @param args An array of string that represent the arguments passed to the program from the execution environment.",
-        "    static void main(const std::vector<std::string>& args) {",
-        "      xtd::console::write_line(\"Hello, World!\");",
-        "    }",
+        "    // The main entry point for the application.",
+        "    static void main(const std::vector<std::string>& args);",
         "  };",
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"program.h", lines);
+    }
+    
+    void create_xtd_console_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include \"program.h\"",
+        "",
+        "using namespace xtd;",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "void program::main(const std::vector<std::string>& args) {",
+        "  console::write_line(\"Hello, World!\");",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"program.cpp", lines);
     }
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -555,7 +554,9 @@ namespace xtdc_command {
       create_cocoa_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
       create_cocoa_gui_cmakelists_txt(name);
+      create_cocoa_gui_include(name);
       create_cocoa_gui_source(name);
+      create_cocoa_gui_main(name);
     }
     
     void create_cocoa_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -576,7 +577,9 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.m", name),
+        "  src/Window1.h",
+        "  src/Window1.m",
+        "  src/Program.m",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
@@ -595,10 +598,10 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
     }
     
-    void create_cocoa_gui_source(const std::string& name) const {
+    void create_cocoa_gui_include(const std::string& name) const {
       std::vector<std::string> lines {
         "/// @file",
-        "/// @brief Contains main method.",
+        "/// @brief Contains Window1 class.",
         "#import <Cocoa/Cocoa.h>",
         "",
         "/// @brief Represents the main NSWindow",
@@ -608,6 +611,14 @@ namespace xtdc_command {
         "- (instancetype)init;",
         "- (BOOL)windowShouldClose:(id)sender;",
         "@end",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.h", lines);
+    }
+    
+    void create_cocoa_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#import \"Window1.h\"",
         "",
         "@implementation Window1",
         "- (instancetype)init {",
@@ -622,10 +633,16 @@ namespace xtdc_command {
         "   return NO;",
         "}",
         "@end",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.m", lines);
+    }
+    
+    void create_cocoa_gui_main(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#import \"Window1.h\"",
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  [NSApplication sharedApplication];",
         "  [[[[Window1 alloc] init] autorelease] makeMainWindow];",
@@ -633,7 +650,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.m", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.m", lines);
     }
 
     void create_fltk_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -663,9 +680,9 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.hpp", name),
-        xtd::strings::format("  src/{0}.cpp", name),
-        "  src/main.cpp",
+        "  src/Window1.h",
+        "  src/Window1.cpp",
+        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(FLTK REQUIRED)",
@@ -701,42 +718,39 @@ namespace xtdc_command {
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.h", lines);
     }
     
     void create_fltk_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include \"Window1.h\"",
         "",
         xtd::strings::format("using namespace {};", name),
         "",
-        "Window1::Window1() : Fl_Window(200, 100, 800, 450, \"Window1\") {",
-        "  resizable(this);",
+        "Window1::Window1() : Fl_Window(100, 100, 800, 450, \"Window1\") {",
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.cpp", lines);
     }
     
     void create_fltk_gui_main(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include \"Window1.h\"",
         "#include <FL/Fl.H>",
         "",
         xtd::strings::format("using namespace {};", name),
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
+        "  Fl::add_handler([](int event)->int {return event == FL_SHORTCUT && Fl::event_key() == FL_Escape;});",
         "  Window1 window;",
         "  window.show(argc, argv);",
-        "  Fl::add_handler([](int event)->int {return event == FL_SHORTCUT && Fl::event_key() == FL_Escape;});",
         "  return Fl::run();",
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
     void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -764,7 +778,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.c", name),
+        "  src/program.c",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -787,17 +801,9 @@ namespace xtdc_command {
     
     void create_gtk2_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/**",
-        " * @file",
-        " * @brief Contains main funcxtion.",
-        " */",
         "#include <gtk/gtk.h>",
         "",
-        "/**",
-        " * @brief The main entry point for the application.",
-        " * @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        " * @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
-        " */",
+        "/* The main entry point for the application. */",
         "int main(int argc, char* argv[]) {",
         "  gtk_init(&argc, &argv);",
         "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
@@ -810,7 +816,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.c", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
     }
 
     void create_gtk3_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -838,7 +844,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.c", name),
+        "  src/program.c",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -861,17 +867,9 @@ namespace xtdc_command {
     
     void create_gtk3_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        "/**",
-        " * @file",
-        " * @brief Contains main funcxtion.",
-        " */",
         "#include <gtk/gtk.h>",
         "",
-        "/**",
-        " * @brief The main entry point for the application.",
-        " * @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        " * @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
-        " */",
+        "/* The main entry point for the application. */",
         "int main(int argc, char* argv[]) {",
         "  gtk_init(&argc, &argv);",
         "  GtkWidget* window1 = gtk_window_new(GTK_WINDOW_TOPLEVEL);",
@@ -884,7 +882,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.c", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
     }
 
     void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -914,9 +912,9 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.hpp", name),
-        xtd::strings::format("  src/{0}.cpp", name),
-        "  src/main.cpp",
+        "  src/Window1.h",
+        "  src/Window1.cpp",
+        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(PkgConfig)",
@@ -949,31 +947,24 @@ namespace xtdc_command {
         "  public:",
         "    /// @brief Initializes a new instance of the Window1 class.",
         "    Window1();",
-        "",
-        "  private:",
-        "    Gtk::ScrolledWindow scrolledWindow;",
-        "    Gtk::Fixed fixed;",
         "  };",
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.h", lines);
     }
     
     void create_gtkmm_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include \"Window1.h\"",
         "",
         "using namespace Gtk;",
         xtd::strings::format("using namespace {};", name),
         "",
         "Window1::Window1() {",
-        "  scrolledWindow.add(fixed);",
-        "",
         "  set_title(\"Window1\");",
         "  move(100, 100);",
         "  resize(800, 450);",
-        "  add(scrolledWindow);",
         "}",
       };
       
@@ -982,14 +973,12 @@ namespace xtdc_command {
     
     void create_gtkmm_gui_main(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include \"Window1.h\"",
         "",
         "using namespace Gtk;",
         xtd::strings::format("using namespace {};", name),
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  auto application = Application::create(argc, argv);",
         xtd::strings::format("  {}::Window1 window1;", name),
@@ -998,7 +987,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
     void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -1028,9 +1017,9 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({0}  VERSION 1.0.0)", name),
         "set(SOURCES",
-        xtd::strings::format("  src/{0}.hpp", name),
-        xtd::strings::format("  src/{0}.cpp", name),
-        "  src/main.cpp",
+        "  src/Window1.h",
+        "  src/Window1.cpp",
+        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(Qt5 COMPONENTS Widgets REQUIRED)",
@@ -1068,12 +1057,12 @@ namespace xtdc_command {
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.h", lines);
     }
     
     void create_qt5_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include \"Window1.h\"",
         "",
         xtd::strings::format("using namespace {};", name),
         "",
@@ -1084,19 +1073,17 @@ namespace xtdc_command {
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.cpp", lines);
     }
     
     void create_qt5_gui_main(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include \"Window1.h\"",
         "#include <QApplication>",
         "",
         xtd::strings::format("using namespace {};", name),
         "",
-        "/// @brief The main entry point for the application.",
-        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
-        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  QApplication application(argc, argv);",
         "  Window1 window1;",
@@ -1105,7 +1092,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
     void create_win32_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -1151,7 +1138,7 @@ namespace xtdc_command {
       std::vector<std::string> lines{
         xtd::strings::format("application_default_namespace(\"{}\")", name),
         xtd::strings::format("application_name(\"{}\")", name),
-        xtd::strings::format("application_startup(\"{0}::form1\" src/{0}.hpp)", name),
+        xtd::strings::format("application_startup(\"{0}::form1\" src/form1.h)", name),
       };
       
       xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
@@ -1165,8 +1152,8 @@ namespace xtdc_command {
         xtd::strings::format("project({0})", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
-        xtd::strings::format("  src/{0}.hpp", name),
-        xtd::strings::format("  src/{0}.cpp", name),
+        "  src/form1.h",
+        "  src/form1.cpp",
         ")",
         "target_type(GUI_APPLICATION)",
         "",
@@ -1191,18 +1178,18 @@ namespace xtdc_command {
         "    /// @brief Initializes a new instance of the form1 class.",
         "    form1();",
         "",
-        "    /// @brief The main entry point for the application.",
+        "    // The main entry point for the application.",
         "    static void main();",
         "  };",
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"form1.h", lines);
     }
     
     void create_xtd_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
-        xtd::strings::format("#include\"{}.hpp\"", name),
+        "#include\"form1.h\"",
         "",
         "using namespace xtd::forms;",
         xtd::strings::format("using namespace {};", name),
@@ -1217,7 +1204,7 @@ namespace xtdc_command {
         "}"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"form1.cpp", lines);
     }
 
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
