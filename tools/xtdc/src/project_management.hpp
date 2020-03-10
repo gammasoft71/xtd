@@ -1169,8 +1169,81 @@ namespace xtdc_command {
     }
 
     void create_winforms_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_winforms_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_winforms_gui_cmakelists_txt(name);
+      create_winforms_gui_source(name);
     }
     
+    void create_winforms_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_winforms_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0} VERSION 1.0.0 LANGUAGES CSharp)", name),
+        "include(CSharpUtilities)",
+        "set(SOURCES",
+        "  src/Program.cs",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 ${SOURCES})",
+        "set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DOTNET_REFERENCES",
+        "  Microsoft.CSharp",
+        "  System",
+        "  System.Drawing",
+        "  System.Windows.Forms",
+        ")"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_winforms_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains Form1 class.",
+        "using System;",
+        "using System.Drawing;",
+        "using System.Windows.forms;",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represents the Form1 class",
+        "  class Form1 : Fom {",
+        "    /// @brief Initializes a new instance of the Form1 class.",
+        "    public Form1() {",
+        "      Text = \"Form1\";",
+        "      ClientSize = new Size(800, 450);",
+        "    }",
+        "",
+        "    // The main entry point for the application.",
+        "    [STAThread]",
+        "    static void Main(string[] args) {",
+        "      Application.EnableVisualStyle();",
+        "      Application.Run(new Form1());",
+        "    }",
+        "  }",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cs", lines);
+    }
+
     void create_wpf_gui(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
