@@ -3,17 +3,18 @@
 namespace xtdc_command {
   enum class project_sdk {
     none,
-    xtd,
-    win32,
+    catch2,
+    cocoa,
+    fltk,
+    gtest,
     gtk2,
     gtk3,
-    cocoa,
     gtkmm,
-    wxwidgets,
     qt5,
+    win32,
     winforms,
     wpf,
-    gtest,
-    catch2,
+    wxwidgets,
+    xtd,
   };
 }

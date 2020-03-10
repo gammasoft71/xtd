@@ -33,10 +33,10 @@ namespace xtdc_command {
       switch (type) {
         case project_type::blank_solution: return {project_sdk::xtd};
         case project_type::console: return {project_sdk::none, project_sdk::xtd};
-        case project_type::gui: return {project_sdk::xtd, project_sdk::win32, project_sdk::gtk2, project_sdk::gtk3, project_sdk::cocoa, project_sdk::gtkmm, project_sdk::wxwidgets, project_sdk::qt5, project_sdk::winforms, project_sdk::wpf};
+        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk2, project_sdk::gtk3, project_sdk::gtkmm, project_sdk::qt5, project_sdk::win32, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd};
-        case project_type::unit_test_application: return {project_sdk::xtd, project_sdk::gtest, project_sdk::catch2};
+        case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd};
       }
       throw std::invalid_argument("type is not project_type valid value");
     }
@@ -44,18 +44,19 @@ namespace xtdc_command {
     static std::vector<project_language> get_valid_languages(project_sdk sdk) {
       switch (sdk) {
         case project_sdk::none: return {project_language::cpp, project_language::c, project_language::objectivec, project_language::csharp};
-        case project_sdk::xtd: return {project_language::cpp};
-        case project_sdk::win32: return {project_language::c, project_language::cpp};
+        case project_sdk::catch2: return {project_language::c, project_language::cpp};
+        case project_sdk::cocoa: return {project_language::objectivec};
+        case project_sdk::fltk: return {project_language::cpp};
+        case project_sdk::gtest: return {project_language::c, project_language::cpp};
         case project_sdk::gtk2: return {project_language::c, project_language::cpp};
         case project_sdk::gtk3: return {project_language::c, project_language::cpp};
-        case project_sdk::cocoa: return {project_language::objectivec};
         case project_sdk::gtkmm: return {project_language::cpp};
-        case project_sdk::wxwidgets: return {project_language::cpp};
         case project_sdk::qt5: return {project_language::cpp};
+        case project_sdk::win32: return {project_language::c, project_language::cpp};
         case project_sdk::winforms: return {project_language::csharp};
         case project_sdk::wpf: return {project_language::csharp};
-        case project_sdk::gtest: return {project_language::c, project_language::cpp};
-        case project_sdk::catch2: return {project_language::c, project_language::cpp};
+        case project_sdk::wxwidgets: return {project_language::cpp};
+        case project_sdk::xtd: return {project_language::cpp};
       }
       throw std::invalid_argument("sdk is not project_sdk valid value");
     }
@@ -547,7 +548,7 @@ namespace xtdc_command {
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
-      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
+      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::fltk, {*this, &project_management::create_fltk_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
     }
     
     void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language) const {
@@ -633,6 +634,109 @@ namespace xtdc_command {
       };
       
       xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.m", name), lines);
+    }
+
+    void create_fltk_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_fltk_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_fltk_gui_cmakelists_txt(name);
+      create_fltk_gui_include(name);
+      create_fltk_gui_source(name);
+      create_fltk_gui_main(name);
+    }
+    
+    void create_fltk_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_fltk_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0}  VERSION 1.0.0)", name),
+        "set(SOURCES",
+        xtd::strings::format("  src/{0}.hpp", name),
+        xtd::strings::format("  src/{0}.cpp", name),
+        "  src/main.cpp",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "find_package(FLTK REQUIRED)",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
+        "target_include_directories(${PROJECT_NAME} PRIVATE ${FLTK_INCLUDE_DIR})",
+        "target_link_libraries(${PROJECT_NAME} ${FLTK_LIBRARIES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_fltk_gui_include(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#pragma once",
+        "/// @file",
+        "/// @brief Contains Window1 class.",
+        "#include <FL/Fl_Window.H>",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represent the main window",
+        "  class Window1 : public Fl_Window {",
+        "  public:",
+        "    /// @brief Initializes a new instance of the Window1 class.",
+        "    Window1();",
+        "  };",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.hpp", name), lines);
+    }
+    
+    void create_fltk_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("#include \"{}.hpp\"", name),
+        "",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "Window1::Window1() : Fl_Window(200, 100, 800, 450, \"Window1\") {",
+        "  resizable(this);",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{0}.cpp", name), lines);
+    }
+    
+    void create_fltk_gui_main(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("#include \"{}.hpp\"", name),
+        "#include <FL/Fl.H>",
+        "",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "/// @brief The main entry point for the application.",
+        "/// @param argc Size of array of char* that represent the arguments passed to the program from the execution environment.",
+        "/// @param argv An array of char* that represent the arguments passed to the program from the execution environment.",
+        "int main(int argc, char* argv[]) {",
+        "  Window1 window;",
+        "  window.show(argc, argv);",
+        "  Fl::add_handler([](int event)->int {return event == FL_SHORTCUT && Fl::event_key() == FL_Escape;});",
+        "  return Fl::run();",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
     }
 
     void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language) const {
