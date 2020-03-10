@@ -499,7 +499,7 @@ namespace xtdc_command {
       std::vector<std::string> lines{
         xtd::strings::format("application_default_namespace(\"{}\")", name),
         xtd::strings::format("application_name(\"{}\")", name),
-        xtd::strings::format("application_startup(\"{0}::Program\" src/{0}.hpp)", name),
+        xtd::strings::format("application_startup(\"{0}::program\" src/{0}.hpp)", name),
       };
       
       xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
@@ -527,11 +527,11 @@ namespace xtdc_command {
     void create_xtd_console_include(const std::string& name) const {
       std::vector<std::string> lines {
         "/// @file",
-        "/// @brief Contains main method.",
+        "/// @brief Contains program class.",
         "#include <xtd/xtd.console>",
         "",
         xtd::strings::format("namespace {} {{", name),
-        "  class Program {",
+        "  class program {",
         "  public:",
         "    /// @brief The main entry point for the application.",
         "    /// @param args An array of string that represent the arguments passed to the program from the execution environment.",
