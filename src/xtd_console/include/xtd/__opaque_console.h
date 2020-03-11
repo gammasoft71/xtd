@@ -1,9 +1,9 @@
 /// @file
 /// @brief Contains xtd::__opaque_console class.
 #pragma once
-#include "console_color.hpp"
-#include "console_key_info.hpp"
-#include "console_special_key.hpp"
+#include "console_color.h"
+#include "console_key_info.h"
+#include "console_special_key.h"
 
 #include <iostream>
 #include <map>

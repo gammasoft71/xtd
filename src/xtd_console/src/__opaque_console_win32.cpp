@@ -1,7 +1,7 @@
 #if defined(_WIN32)
 
-#include "../include/xtd/__opaque_console.hpp"
-#include "../include/xtd/console.hpp"
+#include "../include/xtd/__opaque_console.h"
+#include "../include/xtd/console.h"
 
 #include <csignal>
 #include <conio.h>

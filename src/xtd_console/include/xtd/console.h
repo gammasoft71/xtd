@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::console and xtd::wconsole typedefs.
 #pragma once
-#include "basic_console.hpp"
+#include "basic_console.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

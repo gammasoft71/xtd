@@ -1,13 +1,13 @@
 /// @file
 /// @brief Contains xtd::basic_console class.
 #pragma once
-#include "__generic_stream_output.hpp"
+#include "__generic_stream_output.h"
 #include <xtd/xtd.strings>
-#include "__get_err_rdbuf.hpp"
-#include "__get_in_rdbuf.hpp"
-#include "__get_out_rdbuf.hpp"
-#include "__opaque_console.hpp"
-#include "console_cancel_event_handler.hpp"
+#include "__get_err_rdbuf.h"
+#include "__get_in_rdbuf.h"
+#include "__get_out_rdbuf.h"
+#include "__opaque_console.h"
+#include "console_cancel_event_handler.h"
 #include <xtd/event.h>
 #include <xtd/static.h>
 
