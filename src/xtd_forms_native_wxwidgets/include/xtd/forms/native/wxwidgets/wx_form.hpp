@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/xtd.diagnostics.hpp>
+#include <xtd/xtd.diagnostics>
 #include <xtd/forms/create_params.hpp>
 #include <xtd/forms/native/class_styles.hpp>
 #include <xtd/forms/native/window_styles.hpp>
