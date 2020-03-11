@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd VERSION 0.0.1)
 set(INCLUDES
   include/xtd/xtd
-  include/xtd/xtd.hpp
+  include/xtd/xtd.h
 )
 set(SOURCES
   src/xtd.cpp
