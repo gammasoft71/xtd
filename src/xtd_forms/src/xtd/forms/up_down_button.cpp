@@ -1,9 +1,9 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/up_down_button.hpp>
-#include <xtd/forms/native/up_down_styles.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include <xtd/forms/native/scroll_bar_styles.hpp>
-#include "../../../include/xtd/forms/up_down_button.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/up_down_button.h>
+#include <xtd/forms/native/up_down_styles.h>
+#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/scroll_bar_styles.h>
+#include "../../../include/xtd/forms/up_down_button.h"
 
 using namespace xtd;
 using namespace xtd::forms;

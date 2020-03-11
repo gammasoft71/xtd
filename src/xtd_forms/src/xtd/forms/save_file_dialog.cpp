@@ -1,5 +1,5 @@
-#include <xtd/forms/native/file_dialog.hpp>
-#include "../../../include/xtd/forms/save_file_dialog.hpp"
+#include <xtd/forms/native/file_dialog.h>
+#include "../../../include/xtd/forms/save_file_dialog.h"
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -1,9 +1,9 @@
-#include "../../../include/xtd/forms/button.hpp"
-#include "../../../include/xtd/forms/form.hpp"
-#include <xtd/forms/native/button.hpp>
-#include <xtd/forms/native/button_styles.hpp>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/window_messages.hpp>
+#include "../../../include/xtd/forms/button.h"
+#include "../../../include/xtd/forms/form.h"
+#include <xtd/forms/native/button.h>
+#include <xtd/forms/native/button_styles.h>
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/window_messages.h>
 
 using namespace xtd;
 using namespace xtd::forms;

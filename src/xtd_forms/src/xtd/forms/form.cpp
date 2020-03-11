@@ -1,14 +1,14 @@
 #include <random>
 #include <stdexcept>
 #include <xtd/xtd.diagnostics>
-#include <xtd/forms/native/class_styles.hpp>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/form.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include <xtd/forms/window_messages.hpp>
-#include "../../../include/xtd/forms/application.hpp"
-#include "../../../include/xtd/forms/form.hpp"
-#include "../../../include/xtd/forms/screen.hpp"
+#include <xtd/forms/native/class_styles.h>
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/form.h>
+#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/window_messages.h>
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/form.h"
+#include "../../../include/xtd/forms/screen.h"
 
 using namespace std;
 using namespace xtd;

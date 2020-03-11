@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/background_worker.hpp"
-#include "../../../include/xtd/forms/application.hpp"
+#include "../../../include/xtd/forms/background_worker.h"
+#include "../../../include/xtd/forms/application.h"
 
 using namespace xtd;
 using namespace xtd::forms;

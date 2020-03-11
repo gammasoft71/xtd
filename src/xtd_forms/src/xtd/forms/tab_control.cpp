@@ -1,8 +1,8 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/tab_control.hpp>
-#include <xtd/forms/native/tab_control_styles.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/tab_control.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/tab_control.h>
+#include <xtd/forms/native/tab_control_styles.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/tab_control.h"
 
 using namespace xtd;
 using namespace xtd::forms;

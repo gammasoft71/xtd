@@ -1,6 +1,6 @@
-#include <xtd/forms/native/progress_bar.hpp>
-#include <xtd/forms/native/progress_bar_styles.hpp>
-#include "../../../include/xtd/forms/progress_bar.hpp"
+#include <xtd/forms/native/progress_bar.h>
+#include <xtd/forms/native/progress_bar_styles.h>
+#include "../../../include/xtd/forms/progress_bar.h"
 
 using namespace xtd;
 using namespace xtd::forms;

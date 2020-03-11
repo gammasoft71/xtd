@@ -1,8 +1,8 @@
 #include <stdexcept>
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/native/choice.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_choice.hpp"
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/native/choice.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_choice.h"
 
 using namespace std;
 using namespace xtd;

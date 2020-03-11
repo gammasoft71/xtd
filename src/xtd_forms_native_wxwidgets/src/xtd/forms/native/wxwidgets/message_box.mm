@@ -1,8 +1,8 @@
 #if defined(__WXOSX__)
 #include <xtd/xtd.strings>
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/native/message_box.hpp>
-#include <xtd/forms/native/message_box_styles.hpp>
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/native/message_box.h>
+#include <xtd/forms/native/message_box_styles.h>
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 

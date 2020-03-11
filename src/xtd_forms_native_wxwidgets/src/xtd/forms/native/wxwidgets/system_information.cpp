@@ -3,8 +3,8 @@
 #if defined(__WXMSW__)
 #include <Windows.h>
 #endif
-#include <xtd/forms/native/arranged_direction_window.hpp>
-#include <xtd/forms/native/system_information.hpp>
+#include <xtd/forms/native/arranged_direction_window.h>
+#include <xtd/forms/native/system_information.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

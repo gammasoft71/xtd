@@ -1,6 +1,6 @@
 #include <xtd/strings.h>
-#include <xtd/forms/native/control.hpp>
-#include "../include/xtd/forms/message.hpp"
+#include <xtd/forms/native/control.h>
+#include "../include/xtd/forms/message.h"
 
 using namespace xtd;
 using namespace xtd::forms;

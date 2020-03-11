@@ -1,5 +1,5 @@
-#include <xtd/forms/native/cursor.hpp>
-#include "../../../include/xtd/forms/cursor.hpp"
+#include <xtd/forms/native/cursor.h>
+#include "../../../include/xtd/forms/cursor.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

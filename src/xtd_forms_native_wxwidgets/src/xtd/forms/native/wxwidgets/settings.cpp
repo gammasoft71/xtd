@@ -1,8 +1,8 @@
 #if !defined(_WIN32)
 #include <unistd.h>
 #endif
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/native/settings.hpp>
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/native/settings.h>
 #include <wx/config.h>
 
 using namespace std;

@@ -1,7 +1,7 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/user_control.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/user_control.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/user_control.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/user_control.h"
 
 using namespace xtd;
 using namespace xtd::forms;

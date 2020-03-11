@@ -1,9 +1,9 @@
 #include <xtd/drawing/system_colors.h>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/text_box.hpp>
-#include <xtd/forms/native/text_box_styles.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/text_box.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/text_box.h>
+#include <xtd/forms/native/text_box_styles.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/text_box.h"
 
 using namespace std;
 using namespace xtd;

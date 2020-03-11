@@ -1,5 +1,5 @@
-#include <xtd/forms/native/file_dialog.hpp>
-#include <xtd/forms/file_dialog_flags.hpp>
+#include <xtd/forms/native/file_dialog.h>
+#include <xtd/forms/file_dialog_flags.h>
 #include <wx/filedlg.h>
 
 using namespace std::literals;

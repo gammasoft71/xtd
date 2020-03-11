@@ -1,8 +1,8 @@
 #include <xtd/strings.h>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/message_keys.hpp>
-#include "../include/xtd/forms/control.hpp"
-#include "../include/xtd/forms/mouse_event_args.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/message_keys.h>
+#include "../include/xtd/forms/control.h"
+#include "../include/xtd/forms/mouse_event_args.h"
 
 using namespace std;
 using namespace xtd::forms;

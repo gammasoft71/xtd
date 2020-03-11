@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include <xtd/forms/native/cursor.hpp>
+#include <xtd/forms/native/cursor.h>
 #include <wx/cursor.h>
 #include <wx/window.h>
 

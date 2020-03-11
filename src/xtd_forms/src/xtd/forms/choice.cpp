@@ -1,7 +1,7 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/choice.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/choice.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/choice.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/choice.h"
 
 using namespace std;
 using namespace xtd;

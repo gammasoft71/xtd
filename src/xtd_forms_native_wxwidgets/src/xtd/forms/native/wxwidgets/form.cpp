@@ -1,8 +1,8 @@
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/form.hpp>
-#include <xtd/forms/native/screen.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.hpp"
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/form.h>
+#include <xtd/forms/native/screen.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_form.h"
 #include <wx/apptrait.h>
 
 using namespace xtd;

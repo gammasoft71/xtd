@@ -1,5 +1,5 @@
-#include <xtd/forms/native/about_dialog.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
+#include <xtd/forms/native/about_dialog.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <wx/aboutdlg.h>
 
 using namespace xtd;

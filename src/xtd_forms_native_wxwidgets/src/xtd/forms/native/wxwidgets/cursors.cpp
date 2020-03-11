@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include <xtd/forms/native/cursors.hpp>
+#include <xtd/forms/native/cursors.h>
 #include <wx/cursor.h>
 
 using namespace xtd::forms::native;

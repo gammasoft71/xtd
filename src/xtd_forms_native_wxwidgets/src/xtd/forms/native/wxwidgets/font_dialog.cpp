@@ -1,5 +1,5 @@
-#include <xtd/forms/native/font_dialog.hpp>
-#include <xtd/forms/font_dialog_flags.hpp>
+#include <xtd/forms/native/font_dialog.h>
+#include <xtd/forms/font_dialog_flags.h>
 #include <wx/fontdlg.h>
 
 using namespace xtd;

@@ -1,5 +1,5 @@
-#include <xtd/forms/native/system_information.hpp>
-#include "../../../include/xtd/forms/system_information.hpp"
+#include <xtd/forms/native/system_information.h>
+#include "../../../include/xtd/forms/system_information.h"
 
 using namespace xtd;
 using namespace xtd::forms;

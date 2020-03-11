@@ -1,5 +1,5 @@
-#include <xtd/forms/native/tab_control.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.hpp"
+#include <xtd/forms/native/tab_control.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_tab_control.h"
 
 using namespace xtd;
 using namespace xtd::drawing;
