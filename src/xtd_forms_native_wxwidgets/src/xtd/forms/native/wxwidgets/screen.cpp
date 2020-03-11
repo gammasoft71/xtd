@@ -1,4 +1,4 @@
-#include <xtd/drawing/native/hdc_wrapper.hpp>
+#include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/screen.hpp>
 #include <xtd/xtd.strings>

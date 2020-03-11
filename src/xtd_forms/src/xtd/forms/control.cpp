@@ -4,7 +4,7 @@
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.core>
 #include <xtd/xtd.strings>
-#include <xtd/drawing/native/graphics.hpp>
+#include <xtd/drawing/native/graphics.h>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/message_keys.hpp>
 #include <xtd/forms/native/window_styles.hpp>
