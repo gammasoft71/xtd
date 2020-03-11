@@ -1250,6 +1250,7 @@ namespace xtdc_command {
       create_wpf_gui_cmakelists_txt(name);
       create_wpf_gui_source(name);
       create_wpf_gui_windows1_xaml(name);
+      create_wpf_gui_application_config(name);
       create_wpf_gui_application_source(name);
       create_wpf_gui_application_xaml(name);
     }
@@ -1273,6 +1274,7 @@ namespace xtdc_command {
         xtd::strings::format("project({0} VERSION 1.0.0 LANGUAGES CSharp)", name),
         "include(CSharpUtilities)",
         "set(SOURCES",
+        "  src/App.config",
         "  src/App.xaml",
         "  src/App.xaml.cs",
         "  src/Windows1.xaml",
@@ -1308,9 +1310,9 @@ namespace xtdc_command {
         "  public partial class Window1 : Window {",
         "    public Window1() {",
         "      InitializeComponent();",
-        "    )",
-        "  )",
-        ")",
+        "    }",
+        "  }",
+        "}",
       };
       xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml.cs", lines);
     }
@@ -1334,18 +1336,30 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml", lines);
     }
     
+    void create_wpf_gui_application_config(const std::string& name) const {
+      std::vector<std::string> lines {
+        "<?xml version=\"1.0\" encoding=\"utf-8\" ?>",
+        "<configuration>",
+        "    <startup> ",
+        "        <supportedRuntime version=\"v4.0\" sku=\".NETFramework,Version=v4.7.2\" />",
+        "    </startup>",
+        "</configuration>",
+      };
+      xtd::io::file::write_all_lines(path_/name/"src"/"App.config", lines);
+    }
+    
     void create_wpf_gui_application_source(const std::string& name) const {
       std::vector<std::string> lines {
         "using System.Windows;",
         "",
         xtd::strings::format("namespace {} {{", name),
         "  public partial class App : Application {",
-        "  )",
-        ")",
+        "  }",
+        "}",
       };
       xtd::io::file::write_all_lines(path_/name/"src"/"App.xaml.cs", lines);
     }
-    
+
     void create_wpf_gui_application_xaml(const std::string& name) const {
       std::vector<std::string> lines {
         xtd::strings::format("<Application x:Class=\"{}.App\"", name),
