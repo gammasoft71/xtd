@@ -5,7 +5,7 @@ project(xtd.core.unit_tests)
 set(SOURCES
   src/main.cpp 
   src/bit_converter.cpp
-  src/bytes_assert.hpp
+  src/bytes_assert.h
   src/environment.cpp
   src/guid.cpp
   src/object.cpp

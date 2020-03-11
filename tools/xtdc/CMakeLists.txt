@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.3)
 #Project
 project(xtdc)
 set(SOURCES
-  src/project_language.hpp
-  src/project_management.hpp
-  src/project_sdk.hpp
-  src/project_type.hpp
+  src/project_language.h
+  src/project_management.h
+  src/project_sdk.h
+  src/project_type.h
   src/xtdc.cpp
 )
 source_group(src FILES ${SOURCES})

@@ -12,9 +12,9 @@
 #include <xtd/io/path.h>
 #include <xtd/strings.h>
 
-#include "project_language.hpp"
-#include "project_sdk.hpp"
-#include "project_type.hpp"
+#include "project_language.h"
+#include "project_sdk.h"
+#include "project_type.h"
 
 namespace xtdc_command {
   class project_management {
@@ -1412,7 +1412,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains form1 class.",
         "#pragma once",
-        "#include <xtd/forms/form.hpp>",
+        "#include <xtd/forms/form.h>",
         "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represents the main form",
@@ -1433,7 +1433,7 @@ namespace xtdc_command {
     void create_xtd_gui_source(const std::string& name) const {
       std::vector<std::string> lines {
         "#include \"form1.h\"",
-        "#include <xtd/forms/application.hpp>",
+        "#include <xtd/forms/application.h>",
         "",
         "using namespace xtd::forms;",
         xtd::strings::format("using namespace {};", name),
