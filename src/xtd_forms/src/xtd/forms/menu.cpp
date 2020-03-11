@@ -1,4 +1,4 @@
-#include <xtd/strings.hpp>
+#include <xtd/strings.h>
 #include "../../../include/xtd/forms/menu.hpp"
 #include "../../../include/xtd/forms/context_menu.hpp"
 #include "../../../include/xtd/forms/main_menu.hpp"
