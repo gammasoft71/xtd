@@ -6,23 +6,23 @@
 #define __XTD_STRINGS_INCLUDE__
 /// @endcond
 
-#include "internal/__binary_formater.hpp"
-#include "internal/__boolean_formater.hpp"
-#include "internal/__character_formater.hpp"
-#include "internal/__currency_formater.hpp"
-#include "internal/__date_time_formater.hpp"
-#include "internal/__duration_formater.hpp"
-#include "internal/__enum_formater.hpp"
-#include "internal/__fixed_point_formater.hpp"
-#include "internal/__natural_formater.hpp"
-#include "internal/__numeric_formater.hpp"
-#include "internal/__string_formater.hpp"
+#include "internal/__binary_formater.h"
+#include "internal/__boolean_formater.h"
+#include "internal/__character_formater.h"
+#include "internal/__currency_formater.h"
+#include "internal/__date_time_formater.h"
+#include "internal/__duration_formater.h"
+#include "internal/__enum_formater.h"
+#include "internal/__fixed_point_formater.h"
+#include "internal/__natural_formater.h"
+#include "internal/__numeric_formater.h"
+#include "internal/__string_formater.h"
 
 /// @cond
 #undef __XTD_STRINGS_INCLUDE__
 /// @endcond
 
-#include "xtd.strings.hpp"
+#include "xtd.strings.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

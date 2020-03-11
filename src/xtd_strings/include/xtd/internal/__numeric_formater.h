@@ -8,8 +8,8 @@
 #endif
 /// @endcond
 
-#include "__binary_formater.hpp"
-#include "__fixed_point_formater.hpp"
+#include "__binary_formater.h"
+#include "__fixed_point_formater.h"
 
 /// @cond
 template<typename char_t, typename value_t>

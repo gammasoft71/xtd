@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include "__binary_formater.hpp"
+#include "__binary_formater.h"
 
 #include <cmath>
 #include <locale>
