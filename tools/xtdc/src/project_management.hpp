@@ -10,7 +10,7 @@
 #include <xtd/action.hpp>
 #include <xtd/file.hpp>
 #include <xtd/path.hpp>
-#include <xtd/strings.hpp>
+#include <xtd/strings.h>
 
 #include "project_language.hpp"
 #include "project_sdk.hpp"
