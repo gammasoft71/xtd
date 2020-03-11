@@ -1253,8 +1253,7 @@ namespace xtdc_command {
       create_wxwidgets_gui_cmakelists_txt(name);
       create_wxwidgets_gui_include(name);
       create_wxwidgets_gui_source(name);
-      create_wxwidgets_gui_application_include(name);
-      create_wxwidgets_gui_application_source(name);
+      create_wxwidgets_gui_main(name);
     }
     
     void create_wxwidgets_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -1277,8 +1276,7 @@ namespace xtdc_command {
         "set(SOURCES",
         "  src/Frame1.h",
         "  src/Frame1.cpp",
-        "  src/Application.h",
-        "  src/Application.cpp",
+        "  src/Program.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
         "find_package(wxWidgets REQUIRED)",
@@ -1330,42 +1328,26 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Frame1.cpp", lines);
     }
     
-    void create_wxwidgets_gui_application_include(const std::string& name) const {
+    void create_wxwidgets_gui_main(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains Application class.",
-        "#pragma once",
+        "#include \"Frame1.h\"",
         "#include <wx/app.h>",
         "",
         xtd::strings::format("namespace {} {{", name),
-        "  /// @brief Represent the application",
+        "  // Represent the application",
         "  class Application : public wxApp {",
-        "    bool OnInit() override;",
+        "    bool OnInit() override {",
+        "      (new Frame1())->Show();",
+        "      return true;",
+        "    }",
         "  };",
-        "}"
-      };
-      
-      xtd::io::file::write_all_lines(path_/name/"src"/"Application.h", lines);
-    }
-    
-    void create_wxwidgets_gui_application_source(const std::string& name) const {
-      std::vector<std::string> lines {
-        "#include \"Application.h\"",
-        "#include \"Frame1.h\"",
-        "",
-        xtd::strings::format("using namespace {};", name),
-        "",
-        "bool Application::OnInit() {",
-        "  auto frame = new Frame1();",
-        "  frame->Show();",
-        "  return true;",
         "}",
         "",
         "// The main entry point for the application.",
-        "wxIMPLEMENT_APP(Application);",
+        xtd::strings::format("wxIMPLEMENT_APP({}::Application);", name),
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Application.cpp", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
     void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language) const {
