@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <xtd/drawing/system_colors.hpp>
 #include <xtd/drawing/system_fonts.hpp>
-#include <xtd/drawing/native/hdc_wrapper.hpp>
+#include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.hpp"
