@@ -197,7 +197,7 @@ macro(application_startup ...)
     "// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.\n"
     "\n"
     "${INCLUDE_FILE}"
-    "#include <xtd/xtd.core>\n"
+    "#include <xtd/startup.h>\n"
     "\n"
     "startup_(${ARGV0});\n"
     "#pragma endregion\n"
