@@ -1,6 +1,6 @@
 #if defined(_WIN32)
 
-#include "../include/xtd/__demangle.hpp"
+#include "../include/xtd/__demangle.h"
 #include <algorithm>
 #include <functional>
 #include <vector>

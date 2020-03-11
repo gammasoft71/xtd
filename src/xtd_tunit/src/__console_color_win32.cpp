@@ -1,6 +1,6 @@
 #if defined(_WIN32)
 
-#include "../include/xtd/__console_color.hpp"
+#include "../include/xtd/__console_color.h"
 #include <Windows.h>
 
 namespace {

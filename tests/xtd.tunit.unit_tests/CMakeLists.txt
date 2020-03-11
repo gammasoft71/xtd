@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.tunit.unit_tests)
 set(SOURCES
-  src/assert_unit_tests.hpp
+  src/assert_unit_tests.h
   src/main.cpp
   src/one_test_one_test_case.cpp
   src/one_test_two_test_cases.cpp
@@ -128,7 +128,7 @@ set(SOURCES
   src/test_string_assert_are_equal_ignoring_case_wstring_failed.cpp
   src/test_string_assert_are_equal_ignoring_case_wstring_succeed.cpp
   src/two_tests_five_test_cases.cpp
-  src/unit_tests_event_listener.hpp
+  src/unit_tests_event_listener.h
 )
 source_group(src FILES ${SOURCES})
 
