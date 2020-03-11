@@ -10,7 +10,7 @@
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>
 #include <xtd/drawing/rectangle.hpp>
-#include <xtd/xtd.strings.hpp>
+#include <xtd/strings.h>
 #include "../create_params.hpp"
 #include "../window_messages.hpp"
 

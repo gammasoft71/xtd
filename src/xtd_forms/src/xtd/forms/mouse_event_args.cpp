@@ -1,4 +1,4 @@
-#include <xtd/xtd.strings.hpp>
+#include <xtd/strings.h>
 #include <xtd/forms/native/control.hpp>
 #include <xtd/forms/native/message_keys.hpp>
 #include "../include/xtd/forms/control.hpp"
