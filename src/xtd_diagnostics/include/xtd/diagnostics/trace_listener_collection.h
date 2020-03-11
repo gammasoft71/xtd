@@ -3,7 +3,7 @@
 #pragma once
 #include <memory>
 #include <vector>
-#include "trace_listener.hpp"
+#include "trace_listener.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

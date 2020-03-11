@@ -2,7 +2,7 @@
 /// @brief Contains xtd::ctrace object.
 #pragma once
 #include <iostream>
-#include "tracestreambuf.hpp"
+#include "tracestreambuf.h"
 
 inline xtd::diagnostics::tracestreambuf __ctracestreambuf__;
 

@@ -1,8 +1,8 @@
 #include <cassert>
 void __assert__(bool condition) {assert(condition);}
 
-#include "../include/xtd/diagnostics/trace.hpp"
-#include "../include/xtd/diagnostics/default_trace_listener.hpp"
+#include "../include/xtd/diagnostics/trace.h"
+#include "../include/xtd/diagnostics/default_trace_listener.h"
 
 #if defined(_WIN32)
 __declspec(dllimport) extern int __argc;

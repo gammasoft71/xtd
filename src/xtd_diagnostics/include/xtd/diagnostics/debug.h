@@ -3,7 +3,7 @@
 #pragma once
 #include <mutex>
 #include <xtd/xtd.io>
-#include "trace_listener_collection.hpp"
+#include "trace_listener_collection.h"
 
 /// @cond
 #undef assert

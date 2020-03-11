@@ -1,7 +1,7 @@
 #include <cassert>
 
-#include "../include/xtd/diagnostics/debug.hpp"
-#include "../include/xtd/diagnostics/default_trace_listener.hpp"
+#include "../include/xtd/diagnostics/debug.h"
+#include "../include/xtd/diagnostics/default_trace_listener.h"
 
 #if defined(_WIN32)
 __declspec(dllimport) extern int __argc;

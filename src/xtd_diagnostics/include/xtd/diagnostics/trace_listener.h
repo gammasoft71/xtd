@@ -5,9 +5,9 @@
 #include <string>
 #include <stdexcept>
 #include <xtd/xtd.strings>
-#include "trace_event_cache.hpp"
-#include "trace_event_type.hpp"
-#include "trace_options.hpp"
+#include "trace_event_cache.h"
+#include "trace_event_type.h"
+#include "trace_options.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

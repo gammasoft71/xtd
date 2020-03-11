@@ -4,23 +4,23 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.diagnostics VERSION 1.0.0)
 set(XTD_INCLUDES
   include/xtd/xtd.diagnostics
-  include/xtd/xtd.diagnostics.hpp
+  include/xtd/xtd.diagnostics.h
 )
 set(XTD_DIAGNOSTICS_INCLUDES
-  include/xtd/diagnostics/console_trace_listener.hpp
-  include/xtd/diagnostics/cdebug.hpp
-  include/xtd/diagnostics/ctrace.hpp
-  include/xtd/diagnostics/debug.hpp
-  include/xtd/diagnostics/debugstreambuf.hpp
-  include/xtd/diagnostics/default_trace_listener.hpp
-  include/xtd/diagnostics/ostream_trace_listener.hpp
-  include/xtd/diagnostics/trace.hpp
-  include/xtd/diagnostics/trace_event_cache.hpp
-  include/xtd/diagnostics/trace_event_type.hpp
-  include/xtd/diagnostics/trace_listener.hpp
-  include/xtd/diagnostics/trace_listener_collection.hpp
-  include/xtd/diagnostics/trace_options.hpp
-  include/xtd/diagnostics/tracestreambuf.hpp
+  include/xtd/diagnostics/console_trace_listener.h
+  include/xtd/diagnostics/cdebug.h
+  include/xtd/diagnostics/ctrace.h
+  include/xtd/diagnostics/debug.h
+  include/xtd/diagnostics/debugstreambuf.h
+  include/xtd/diagnostics/default_trace_listener.h
+  include/xtd/diagnostics/ostream_trace_listener.h
+  include/xtd/diagnostics/trace.h
+  include/xtd/diagnostics/trace_event_cache.h
+  include/xtd/diagnostics/trace_event_type.h
+  include/xtd/diagnostics/trace_listener.h
+  include/xtd/diagnostics/trace_listener_collection.h
+  include/xtd/diagnostics/trace_options.h
+  include/xtd/diagnostics/tracestreambuf.h
 )
 set(SOURCES
   src/debug.cpp

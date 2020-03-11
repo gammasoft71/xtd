@@ -2,7 +2,7 @@
 /// @brief Contains xtd::cdebug object.
 #pragma once
 #include <iostream>
-#include "debugstreambuf.hpp"
+#include "debugstreambuf.h"
 
 inline xtd::diagnostics::debugstreambuf __cdebugstreambuf__;
 

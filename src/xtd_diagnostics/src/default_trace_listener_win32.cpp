@@ -1,4 +1,4 @@
-#include "../include/xtd/diagnostics/default_trace_listener.hpp"
+#include "../include/xtd/diagnostics/default_trace_listener.h"
 
 #if defined(_WIN32)
 #include <windows.h>
