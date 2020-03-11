@@ -3,24 +3,24 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.core VERSION 1.0.0)
 set(INCLUDES
-  include/xtd/__opaque_environment.hpp
-  include/xtd/bit_converter.hpp
-  include/xtd/block_scope.hpp
-  include/xtd/environment.hpp
-  include/xtd/environment_variable_target.hpp
-  include/xtd/guid.hpp
-  include/xtd/icomparable.hpp
-  include/xtd/iequatable.hpp
-  include/xtd/interface.hpp
-  include/xtd/object.hpp
-  include/xtd/operating_system.hpp
-  include/xtd/platform_id.hpp
-  include/xtd/startup.hpp
-  include/xtd/static.hpp
-  include/xtd/using.hpp
-  include/xtd/version.hpp
+  include/xtd/__opaque_environment.h
+  include/xtd/bit_converter.h
+  include/xtd/block_scope.h
+  include/xtd/environment.h
+  include/xtd/environment_variable_target.h
+  include/xtd/guid.h
+  include/xtd/icomparable.h
+  include/xtd/iequatable.h
+  include/xtd/interface.h
+  include/xtd/object.h
+  include/xtd/operating_system.h
+  include/xtd/platform_id.h
+  include/xtd/startup.h
+  include/xtd/static.h
+  include/xtd/using.h
+  include/xtd/version.h
   include/xtd/xtd.core
-  include/xtd/xtd.core.hpp
+  include/xtd/xtd.core.h
 )
 set(SOURCES
   src/__opaque_environment_gcc.cpp
@@ -29,7 +29,7 @@ set(SOURCES
   src/environment.cpp
   src/guid.cpp
 )
-source_group(include FILES ${INCLUDES})
+source_group(include\\xtd FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})
 
 # Options

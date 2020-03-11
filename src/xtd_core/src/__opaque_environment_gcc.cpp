@@ -13,8 +13,6 @@
 #include <time.h>
 #if !defined(__ANDROID__)
 #include <uuid/uuid.h>
-#else
-#include "../../include/Switch/System/Random.hpp"
 #endif
 #include <sys/time.h>
 
@@ -28,8 +26,8 @@
 #include <sys/param.h>
 #include <unistd.h>
 
-#include "../include/xtd/__opaque_environment.hpp"
-#include "../include/xtd/environment.hpp"
+#include "../include/xtd/__opaque_environment.h"
+#include "../include/xtd/environment.h"
 #include <xtd/xtd.strings>
 
 int __environment_argc;

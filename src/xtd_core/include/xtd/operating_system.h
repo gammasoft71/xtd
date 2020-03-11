@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "platform_id.hpp"
-#include "version.hpp"
+#include "platform_id.h"
+#include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

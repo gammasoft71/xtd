@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <vector>
 
-#include "static.hpp"
+#include "static.h"
 #include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

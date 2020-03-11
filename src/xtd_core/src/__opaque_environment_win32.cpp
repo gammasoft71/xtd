@@ -8,7 +8,7 @@
 #include <windows.h>
 #include <Lmcons.h>
 
-#include "../include/xtd/__opaque_environment.hpp"
+#include "../include/xtd/__opaque_environment.h"
 #include <xtd/xtd.strings>
 
 std::string __opaque_environment::get_current_directory() noexcept {

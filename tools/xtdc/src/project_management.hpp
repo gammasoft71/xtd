@@ -5,8 +5,8 @@
 #include <map>
 #include <string>
 #include <vector>
-#include <xtd/bit_converter.hpp>
-#include <xtd/environment.hpp>
+#include <xtd/bit_converter.h>
+#include <xtd/environment.h>
 #include <xtd/action.h>
 #include <xtd/io/file.h>
 #include <xtd/io/path.h>

@@ -9,13 +9,13 @@
 //#include <xtd/io>
 #include <xtd/xtd.strings>
 
-#include "__opaque_environment.hpp"
-#include "environment_variable_target.hpp"
-#include "guid.hpp"
-#include "operating_system.hpp"
-#include "platform_id.hpp"
-#include "static.hpp"
-#include "version.hpp"
+#include "__opaque_environment.h"
+#include "environment_variable_target.h"
+#include "guid.h"
+#include "operating_system.h"
+#include "platform_id.h"
+#include "static.h"
+#include "version.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

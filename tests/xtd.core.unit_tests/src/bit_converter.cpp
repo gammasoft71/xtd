@@ -1,6 +1,6 @@
 #include "bytes_assert.hpp"
-#include <xtd/bit_converter.hpp>
-#include <xtd/using.hpp>
+#include <xtd/bit_converter.h>
+#include <xtd/using.h>
 
 #include <cfloat>
 #include <cmath>

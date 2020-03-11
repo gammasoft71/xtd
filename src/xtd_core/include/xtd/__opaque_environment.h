@@ -1,9 +1,9 @@
 /// @file
 /// @brief Contains xtd::environment class.
 #pragma once
-#include "guid.hpp"
-#include "platform_id.hpp"
-#include "version.hpp"
+#include "guid.h"
+#include "platform_id.h"
+#include "version.h"
 
 /// @cond
 namespace xtd {

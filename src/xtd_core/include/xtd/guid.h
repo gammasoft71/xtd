@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
-#include "icomparable.hpp"
-#include "iequatable.hpp"
-#include "object.hpp"
+#include "icomparable.h"
+#include "iequatable.h"
+#include "object.h"
 #include <xtd/xtd.strings>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
