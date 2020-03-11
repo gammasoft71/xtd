@@ -3,33 +3,33 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.console VERSION 0.0.1)
 set(INCLUDES
-  include/xtd/__generic_stream_output.hpp
-  include/xtd/__get_err_rdbuf.hpp
-  include/xtd/__get_in_rdbuf.hpp
-  include/xtd/__get_out_rdbuf.hpp
-  include/xtd/__opaque_console.hpp
-  include/xtd/background_color.hpp
-  include/xtd/basic_console.hpp
-  include/xtd/beep.hpp
-  include/xtd/console.hpp
-  include/xtd/console_cancel_event_args.hpp
-  include/xtd/console_cancel_event_handler.hpp
-  include/xtd/console_color.hpp
-  include/xtd/console_key.hpp
-  include/xtd/console_key_info.hpp
-  include/xtd/console_modifiers.hpp
-  include/xtd/console_special_key.hpp
-  include/xtd/foreground_color.hpp
-  include/xtd/reset_color.hpp
+  include/xtd/__generic_stream_output.h
+  include/xtd/__get_err_rdbuf.h
+  include/xtd/__get_in_rdbuf.h
+  include/xtd/__get_out_rdbuf.h
+  include/xtd/__opaque_console.h
+  include/xtd/background_color.h
+  include/xtd/basic_console.h
+  include/xtd/beep.h
+  include/xtd/console.h
+  include/xtd/console_cancel_event_args.h
+  include/xtd/console_cancel_event_handler.h
+  include/xtd/console_color.h
+  include/xtd/console_key.h
+  include/xtd/console_key_info.h
+  include/xtd/console_modifiers.h
+  include/xtd/console_special_key.h
+  include/xtd/foreground_color.h
+  include/xtd/reset_color.h
   include/xtd/xtd.console
-  include/xtd/xtd.console.hpp
+  include/xtd/xtd.console.h
 )
 set(SOURCES
   src/__opaque_console_gcc.cpp
   src/__opaque_console_win32.cpp
   src/console.cpp
 )
-source_group(include FILES ${INCLUDES})
+source_group(include\\xtd FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})
 
 # Options

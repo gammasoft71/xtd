@@ -3,8 +3,8 @@
 #pragma once
 
 #include <iostream>
-#include "console_key.hpp"
-#include "console_modifiers.hpp"
+#include "console_key.h"
+#include "console_modifiers.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

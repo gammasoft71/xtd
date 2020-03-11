@@ -2,7 +2,7 @@
 /// @brief Contains xtd::beep class.
 #pragma once
 #include <xtd/event_args.h>
-#include "console_special_key.hpp"
+#include "console_special_key.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
