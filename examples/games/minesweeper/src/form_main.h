@@ -1,9 +1,9 @@
 #pragma once
-#include "cell.hpp"
-#include "level.hpp"
-#include "high_scores_dialog.hpp"
-#include "input_name_dialog.hpp"
-#include "../properties/settings.hpp"
+#include "cell.h"
+#include "level.h"
+#include "high_scores_dialog.h"
+#include "input_name_dialog.h"
+#include "../properties/settings.h"
 #include <xtd/xtd.forms>
 
 namespace minesweeper {

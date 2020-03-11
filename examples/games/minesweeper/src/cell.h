@@ -1,6 +1,6 @@
 #pragma once
-#include "cell_state.hpp"
-#include "../properties/resources.hpp"
+#include "cell_state.h"
+#include "../properties/resources.h"
 #include <xtd/xtd.forms>
 
 namespace minesweeper {

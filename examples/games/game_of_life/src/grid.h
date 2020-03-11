@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include <xtd/event.hpp>
-#include "cell_event_handler.hpp"
+#include <xtd/event.h>
+#include "cell_event_handler.h"
 
 namespace game_of_life {
   using cell_row_collection = std::vector<cell>;
