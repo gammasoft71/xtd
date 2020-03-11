@@ -1315,20 +1315,20 @@ namespace xtdc_command {
     void create_wpf_gui_windows1_xaml(const std::string& name) const {
       std::vector<std::string> lines {
         xtd::strings::format("<Window x:Class=\"{}.Window1\"", name),
-        "    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
-        "    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
-        "    xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"",
-        "    xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"",
-        xtd::strings::format("    xmlns:local=\"clr-namespace:{}\"", name),
-        "    mc:Ignorable=\"d\"",
-        "    Title=\"Window1\" Height=\"450\" Width=\"800\">",
+        "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
+        "        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
+        "        xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"",
+        "        xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"",
+        xtd::strings::format("        xmlns:local=\"clr-namespace:{}\"", name),
+        "        mc:Ignorable=\"d\"",
+        "        Title=\"Window1\" Height=\"450\" Width=\"800\">",
         "    <Grid>",
         "",
         "    </Grid>",
         "</Window>",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Windows.xaml", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml", lines);
     }
     
     void create_wpf_gui_application_source(const std::string& name) const {
@@ -1340,23 +1340,23 @@ namespace xtdc_command {
         "  )",
         ")",
       };
-      xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml.cs", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"App.xaml.cs", lines);
     }
     
     void create_wpf_gui_application_xaml(const std::string& name) const {
       std::vector<std::string> lines {
         xtd::strings::format("<Application x:Class=\"{}.App\"", name),
-        "    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
-        "    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
+        "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
+        "        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
         xtd::strings::format("    xmlns:local=\"clr-namespace:{}\"", name),
-        "    StartupUri=\"Window1.xaml\">",
-        "  <Application.Resources>",
+        "        StartupUri=\"Window1.xaml\">",
+        "    <Application.Resources>",
         "",
         "    </Application.Resources>",
         "</Application>",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Windows.xaml", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"App.xaml", lines);
     }
 
     void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language) const {
