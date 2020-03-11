@@ -8,7 +8,7 @@
 #endif
 /// @endcond
 
-#include "__numeric_formater.hpp"
+#include "__numeric_formater.h"
 
 /// @cond
 template<typename char_t, typename value_t>

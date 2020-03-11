@@ -2,8 +2,8 @@
 /// @brief Contains xtd::parse methods.
 #pragma once
 
-#include "number_styles.hpp"
-#include "strings.hpp"
+#include "number_styles.h"
+#include "strings.h"
 
 #undef max
 #undef min

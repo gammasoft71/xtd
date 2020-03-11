@@ -3,36 +3,36 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.strings VERSION 0.1.1)
 set(XTD_INCLUDES
-  include/xtd/istring.hpp
-  include/xtd/format.hpp
-  include/xtd/number_styles.hpp
-  include/xtd/parse.hpp
-  include/xtd/string_comparison.hpp
-  include/xtd/string_split_options.hpp
-  include/xtd/strings.hpp
-  include/xtd/to_string.hpp
+  include/xtd/istring.h
+  include/xtd/format.h
+  include/xtd/number_styles.h
+  include/xtd/parse.h
+  include/xtd/string_comparison.h
+  include/xtd/string_split_options.h
+  include/xtd/strings.h
+  include/xtd/to_string.h
   include/xtd/xtd.strings
-  include/xtd/xtd.strings.hpp
+  include/xtd/xtd.strings.h
 )
 set(XTD_DOCS_INCLUDES
-  include/xtd/docs/format_page.hpp
-  include/xtd/docs/main_page.hpp
+  include/xtd/docs/format_page.h
+  include/xtd/docs/main_page.h
 )
 set(XTD_INTERNAL_INCLUDES
-  include/xtd/internal/__binary_formater.hpp
-  include/xtd/internal/__boolean_formater.hpp
-  include/xtd/internal/__character_formater.hpp
-  include/xtd/internal/__currency_formater.hpp
-  include/xtd/internal/__date_time_formater.hpp
-  include/xtd/internal/__duration_formater.hpp
-  include/xtd/internal/__enum_formater.hpp
-  include/xtd/internal/__fixed_point_formater.hpp
-  include/xtd/internal/__format.hpp
-  include/xtd/internal/__format_information.hpp
-  include/xtd/internal/__format_stringer.hpp
-  include/xtd/internal/__natural_formater.hpp
-  include/xtd/internal/__numeric_formater.hpp
-  include/xtd/internal/__string_formater.hpp
+  include/xtd/internal/__binary_formater.h
+  include/xtd/internal/__boolean_formater.h
+  include/xtd/internal/__character_formater.h
+  include/xtd/internal/__currency_formater.h
+  include/xtd/internal/__date_time_formater.h
+  include/xtd/internal/__duration_formater.h
+  include/xtd/internal/__enum_formater.h
+  include/xtd/internal/__fixed_point_formater.h
+  include/xtd/internal/__format.h
+  include/xtd/internal/__format_information.h
+  include/xtd/internal/__format_stringer.h
+  include/xtd/internal/__natural_formater.h
+  include/xtd/internal/__numeric_formater.h
+  include/xtd/internal/__string_formater.h
 )
 set(XTD_SOURCES
   src/xtd/strings.cpp

@@ -8,11 +8,11 @@
 #endif
 /// @endcond
 
-#include "__character_formater.hpp"
-#include "__currency_formater.hpp"
-#include "__format_stringer.hpp"
-#include "__natural_formater.hpp"
-#include "../xtd.strings.hpp"
+#include "__character_formater.h"
+#include "__currency_formater.h"
+#include "__format_stringer.h"
+#include "__natural_formater.h"
+#include "../xtd.strings.h"
 
 /// @cond
 template<typename char_t, typename value_t>

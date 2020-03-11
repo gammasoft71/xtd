@@ -1,4 +1,4 @@
 /// @file
 /// @brief Contains xtd::strings class.
 #pragma once
-#include "xtd.strings.hpp"
+#include "xtd.strings.h"

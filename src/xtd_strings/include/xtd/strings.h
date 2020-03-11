@@ -6,12 +6,12 @@
 #define __XTD_STRINGS_INCLUDE__
 /// @endcond
 
-#include "internal/__format.hpp"
-#include "internal/__format_information.hpp"
-#include "internal/__format_stringer.hpp"
-#include "istring.hpp"
-#include "string_comparison.hpp"
-#include "string_split_options.hpp"
+#include "internal/__format.h"
+#include "internal/__format_information.h"
+#include "internal/__format_stringer.h"
+#include "istring.h"
+#include "string_comparison.h"
+#include "string_split_options.h"
 
 #include <algorithm>
 #include <bitset>
@@ -1682,8 +1682,8 @@ namespace xtd {
   };
 }
 
-#include "parse.hpp"
-#include "to_string.hpp"
+#include "parse.h"
+#include "to_string.h"
 
 template<typename char_t, typename arg_t>
 void __extract_format_arg(std::basic_string<char_t>& fmt, size_t& index, std::vector<__format_information<char_t>>& formats, arg_t&& arg) {

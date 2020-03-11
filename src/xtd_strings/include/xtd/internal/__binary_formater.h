@@ -9,7 +9,7 @@
 /// @endcond
 
 #include <bitset>
-#include "../xtd.strings.hpp"
+#include "../xtd.strings.h"
 
 /// @cond
 template<typename char_t, typename Value>
