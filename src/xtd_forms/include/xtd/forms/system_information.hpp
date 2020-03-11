@@ -4,7 +4,7 @@
 #include "arrange_direction.hpp"
 #include "arrange_starting_position.hpp"
 #include "boot_mode.hpp"
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

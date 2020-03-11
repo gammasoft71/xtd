@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 namespace xtd {
   namespace forms {

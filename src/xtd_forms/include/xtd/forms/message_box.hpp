@@ -4,7 +4,7 @@
 #include "message_box_default_button.hpp"
 #include "message_box_icon.hpp"
 #include "message_box_options.hpp"
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

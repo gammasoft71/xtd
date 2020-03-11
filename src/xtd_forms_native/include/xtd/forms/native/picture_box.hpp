@@ -1,7 +1,7 @@
 #pragma once
 #include <xtd/drawing/image.hpp>
 #include "../create_params.hpp"
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 namespace xtd {
   namespace forms {

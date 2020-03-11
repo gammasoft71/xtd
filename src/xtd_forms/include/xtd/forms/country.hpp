@@ -1,7 +1,7 @@
 #pragma once
 #include "component.hpp"
 #include <string>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/bitmap.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

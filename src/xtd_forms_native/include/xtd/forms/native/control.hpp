@@ -6,7 +6,7 @@
 #include <vector>
 #include <xtd/delegate.h>
 #include <xtd/event_args.h>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>
 #include <xtd/drawing/rectangle.hpp>

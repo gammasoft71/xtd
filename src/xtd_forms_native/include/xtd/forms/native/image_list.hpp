@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/image.hpp>
 #include <xtd/drawing/size.hpp>
 

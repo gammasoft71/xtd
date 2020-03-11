@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <xtd/delegate.h>
 #include <xtd/event_args.h>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 namespace xtd {
   namespace forms {

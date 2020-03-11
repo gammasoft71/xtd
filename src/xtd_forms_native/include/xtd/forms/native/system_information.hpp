@@ -1,8 +1,8 @@
 #pragma once
 #include <cstdint>
 #include <string>
-#include <xtd/static.hpp>
-#include <xtd/environment.hpp>
+#include <xtd/static.h>
+#include <xtd/environment.h>
 #include <xtd/drawing/size.hpp>
 
 namespace xtd {
