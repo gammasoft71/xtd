@@ -1,4 +1,4 @@
-#include <xtd/drawing/native/brush.hpp>
+#include <xtd/drawing/native/brush.h>
 #include <wx/brush.h>
 #include <wx/colour.h>
 

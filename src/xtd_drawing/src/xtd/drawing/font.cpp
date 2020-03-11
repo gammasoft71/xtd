@@ -2,7 +2,7 @@
 #include <limits>
 #include "../../../include/xtd/drawing/font.hpp"
 #include "../../../include/xtd/drawing/graphics.hpp"
-#include <xtd/drawing/native/font.hpp>
+#include <xtd/drawing/native/font.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

@@ -3,7 +3,7 @@
 #include <istream>
 #include <string>
 #include <vector>
-#include "argb.hpp"
+#include "argb.h"
 #include <xtd/static.h>
 
 /// @cond

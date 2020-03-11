@@ -1,6 +1,6 @@
 #include "../../../include/xtd/drawing/graphics.hpp"
 #include "../../../include/xtd/drawing/solid_brush.hpp"
-#include <xtd/drawing/native/graphics.hpp>
+#include <xtd/drawing/native/graphics.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

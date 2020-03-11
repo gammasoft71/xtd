@@ -1,5 +1,5 @@
 #include "../../../include/xtd/drawing/bitmap.hpp"
-#include <xtd/drawing/native/image.hpp>
+#include <xtd/drawing/native/image.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

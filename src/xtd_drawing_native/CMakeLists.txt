@@ -4,23 +4,23 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.drawing.native VERSION 0.0.1)
 
 set(XTD_INCLUDES
-  include/xtd/xtd.drawing.native.hpp
+  include/xtd/xtd.drawing.native.h
   include/xtd/xtd.drawing.native
 )
 
 set(XTD_DRAWING_NATIVE_INCLUDES
-  include/xtd/drawing/native/argb.hpp
-  include/xtd/drawing/native/brush.hpp
-  include/xtd/drawing/native/font.hpp
-  include/xtd/drawing/native/font_family.hpp
-  include/xtd/drawing/native/frame_dimension.hpp
-  include/xtd/drawing/native/graphics.hpp
-  include/xtd/drawing/native/image.hpp
-  include/xtd/drawing/native/image_flags.hpp
-  include/xtd/drawing/native/image_format.hpp
-  include/xtd/drawing/native/pen.hpp
-  include/xtd/drawing/native/system_colors.hpp
-  include/xtd/drawing/native/system_fonts.hpp
+  include/xtd/drawing/native/argb.h
+  include/xtd/drawing/native/brush.h
+  include/xtd/drawing/native/font.h
+  include/xtd/drawing/native/font_family.h
+  include/xtd/drawing/native/frame_dimension.h
+  include/xtd/drawing/native/graphics.h
+  include/xtd/drawing/native/image.h
+  include/xtd/drawing/native/image_flags.h
+  include/xtd/drawing/native/image_format.h
+  include/xtd/drawing/native/pen.h
+  include/xtd/drawing/native/system_colors.h
+  include/xtd/drawing/native/system_fonts.h
 )
 
 set(SOURCES

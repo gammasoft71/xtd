@@ -1,8 +1,8 @@
 #include "../../../include/xtd/drawing/image.hpp"
 #include <fstream>
-#include <xtd/drawing/native/image.hpp>
-#include <xtd/drawing/native/image_format.hpp>
-#include <xtd/drawing/native/frame_dimension.hpp>
+#include <xtd/drawing/native/image.h>
+#include <xtd/drawing/native/image_format.h>
+#include <xtd/drawing/native/frame_dimension.h>
 
 using namespace xtd;
 using namespace xtd::drawing;
