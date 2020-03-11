@@ -1245,8 +1245,120 @@ namespace xtdc_command {
     }
 
     void create_wpf_gui(const std::string& name, project_sdk sdk, project_language language) const {
+      create_wpf_gui_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_wpf_gui_cmakelists_txt(name);
+      create_wpf_gui_source(name);
+      create_wpf_gui_windows1_xaml(name);
+      create_wpf_gui_application_source(name);
+      create_wpf_gui_application_xaml(name);
     }
     
+    void create_wpf_gui_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_wpf_gui_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0} VERSION 1.0.0 LANGUAGES CSharp)", name),
+        "include(CSharpUtilities)",
+        "set(SOURCES",
+        "  src/Program.cs",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} WIN32 ${SOURCES})",
+        "set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DOTNET_REFERENCES",
+        "  Microsoft.CSharp",
+        "  PresentationCore",
+        "  PresentationFramework",
+        "  System",
+        "  System.Xaml",
+        "  System.Xml",
+        "  System.Xml.Linq",
+        "  WindowsBase",
+        ")"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_wpf_gui_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "using System.Windows;",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  public partial class Window1 : Window {",
+        "    public Window1() {",
+        "      InitializeComponent();",
+        "    )",
+        "  )",
+        ")",
+      };
+      xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml.cs", lines);
+    }
+      
+    void create_wpf_gui_windows1_xaml(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("<Window x:Class=\"{}.Window1\"", name),
+        "    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
+        "    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
+        "    xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"",
+        "    xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"",
+        xtd::strings::format("    xmlns:local=\"clr-namespace:{}\"", name),
+        "    mc:Ignorable=\"d\"",
+        "    Title=\"Window1\" Height=\"450\" Width=\"800\">",
+        "    <Grid>",
+        "",
+        "    </Grid>",
+        "</Window>",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Windows.xaml", lines);
+    }
+    
+    void create_wpf_gui_application_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "using System.Windows;",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  public partial class App : Application {",
+        "  )",
+        ")",
+      };
+      xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml.cs", lines);
+    }
+    
+    void create_wpf_gui_application_xaml(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("<Application x:Class=\"{}.App\"", name),
+        "    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
+        "    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
+        xtd::strings::format("    xmlns:local=\"clr-namespace:{}\"", name),
+        "    StartupUri=\"Window1.xaml\">",
+        "  <Application.Resources>",
+        "",
+        "    </Application.Resources>",
+        "</Application>",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Windows.xaml", lines);
+    }
+
     void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language) const {
       create_wxwidgets_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
