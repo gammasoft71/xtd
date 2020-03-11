@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
-#include <xtd/guid.hpp>
+#include <xtd/guid.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

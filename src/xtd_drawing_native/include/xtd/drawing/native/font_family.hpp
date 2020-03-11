@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 /// @cond
 namespace xtd {

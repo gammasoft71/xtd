@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "argb.hpp"
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 /// @cond
 namespace xtd {
