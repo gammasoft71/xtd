@@ -2,7 +2,7 @@
 
 #include <unistd.h>
 #include <map>
-#include "../include/xtd/__console_color.hpp"
+#include "../include/xtd/__console_color.h"
 
 namespace {
   bool is_ansi_supported() noexcept {

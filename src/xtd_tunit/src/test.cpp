@@ -1,5 +1,5 @@
-#include "../include/xtd/test.hpp"
-#include "../include/xtd/unit_test.hpp"
+#include "../include/xtd/test.h"
+#include "../include/xtd/unit_test.h"
 #include <exception>
 
 using namespace xtd::tunit;

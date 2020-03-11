@@ -1,5 +1,5 @@
-#include "../include/xtd/test_class.hpp"
-#include "../include/xtd/unit_test.hpp"
+#include "../include/xtd/test_class.h"
+#include "../include/xtd/unit_test.h"
 
 using namespace xtd::tunit;
 
