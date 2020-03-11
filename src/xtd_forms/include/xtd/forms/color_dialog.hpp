@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/drawing/color.hpp>
+#include <xtd/drawing/color.h>
 #include <xtd/forms/color_dialog_flags.hpp>
 #include "common_dialog.hpp"
 

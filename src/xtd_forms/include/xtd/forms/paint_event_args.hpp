@@ -1,8 +1,8 @@
 #pragma once
 
 #include <xtd/event_args.h>
-#include <xtd/drawing/graphics.hpp>
-#include <xtd/drawing/rectangle.hpp>
+#include <xtd/drawing/graphics.h>
+#include <xtd/drawing/rectangle.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

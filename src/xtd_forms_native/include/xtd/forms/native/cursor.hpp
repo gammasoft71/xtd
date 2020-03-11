@@ -1,8 +1,8 @@
 #pragma once
 #include <cstdint>
 #include <xtd/static.h>
-#include <xtd/drawing/point.hpp>
-#include <xtd/drawing/size.hpp>
+#include <xtd/drawing/point.h>
+#include <xtd/drawing/size.h>
 
 namespace xtd {
   namespace forms {

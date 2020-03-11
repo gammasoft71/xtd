@@ -3,7 +3,7 @@
 #include <string>
 #include <xtd/static.h>
 #include <xtd/environment.h>
-#include <xtd/drawing/size.hpp>
+#include <xtd/drawing/size.h>
 
 namespace xtd {
   namespace forms {

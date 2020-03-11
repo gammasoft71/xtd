@@ -3,7 +3,7 @@
 #include "control.hpp"
 #include "border_style.hpp"
 #include "picture_box_size_mode.hpp"
-#include <xtd/drawing/image.hpp>
+#include <xtd/drawing/image.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

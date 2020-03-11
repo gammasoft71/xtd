@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
-#include <xtd/drawing/rectangle.hpp>
+#include <xtd/drawing/rectangle.h>
 #include "control.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

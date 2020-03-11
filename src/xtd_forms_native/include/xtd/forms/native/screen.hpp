@@ -1,8 +1,8 @@
 #include <cstdio>
 #include <string>
 #include <xtd/static.h>
-#include <xtd/drawing/point.hpp>
-#include <xtd/drawing/rectangle.hpp>
+#include <xtd/drawing/point.h>
+#include <xtd/drawing/rectangle.h>
 
 namespace xtd {
   namespace forms {

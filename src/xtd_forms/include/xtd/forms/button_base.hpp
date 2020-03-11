@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/drawing/image.hpp>
+#include <xtd/drawing/image.h>
 #include "control.hpp"
 #include "content_alignment.hpp"
 #include "image_list.hpp"

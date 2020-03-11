@@ -2,8 +2,8 @@
 #include <chrono>
 #include <map>
 #include <stdexcept>
-#include <xtd/drawing/system_colors.hpp>
-#include <xtd/drawing/system_fonts.hpp>
+#include <xtd/drawing/system_colors.h>
+#include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/control.hpp>

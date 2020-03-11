@@ -7,9 +7,9 @@
 #include <xtd/delegate.h>
 #include <xtd/event_args.h>
 #include <xtd/static.h>
-#include <xtd/drawing/color.hpp>
-#include <xtd/drawing/font.hpp>
-#include <xtd/drawing/rectangle.hpp>
+#include <xtd/drawing/color.h>
+#include <xtd/drawing/font.h>
+#include <xtd/drawing/rectangle.h>
 #include <xtd/strings.h>
 #include "../create_params.hpp"
 #include "../window_messages.hpp"
