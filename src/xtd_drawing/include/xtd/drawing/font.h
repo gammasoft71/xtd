@@ -5,8 +5,8 @@
 #include <stdexcept>
 #include <vector>
 #include <xtd/xtd.strings>
-#include "font_family.hpp"
-#include "graphics_unit.hpp"
+#include "font_family.h"
+#include "graphics_unit.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

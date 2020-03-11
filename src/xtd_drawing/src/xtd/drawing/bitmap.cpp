@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/bitmap.hpp"
+#include "../../../include/xtd/drawing/bitmap.h"
 #include <xtd/drawing/native/image.h>
 
 using namespace xtd;

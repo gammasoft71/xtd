@@ -5,57 +5,57 @@ project(xtd.drawing VERSION 0.0.1)
 
 set(XTD_INCLUDES
   include/xtd/xtd.drawing
-  include/xtd/xtd.drawing.hpp
+  include/xtd/xtd.drawing.h
 )
 
 set(XTD_DRAWING_INCLUDES
-  include/xtd/drawing//bitmap.hpp
-  include/xtd/drawing//brush.hpp
-  include/xtd/drawing/color.hpp
-  include/xtd/drawing/font.hpp
-  include/xtd/drawing/font_family.hpp
-  include/xtd/drawing/font_style.hpp
-  include/xtd/drawing/graphics.hpp
-  include/xtd/drawing/graphics_unit.hpp
-  include/xtd/drawing/icon.hpp
-  include/xtd/drawing/image.hpp
-  include/xtd/drawing/images.hpp
-  include/xtd/drawing/known_color.hpp
-  include/xtd/drawing/pen.hpp
-  include/xtd/drawing/point.hpp
-  include/xtd/drawing/point_f.hpp
-  include/xtd/drawing/rectangle.hpp
-  include/xtd/drawing/rectangle_f.hpp
-  include/xtd/drawing/size.hpp
-  include/xtd/drawing/size_f.hpp
-  include/xtd/drawing/solid_brush.hpp
-  include/xtd/drawing/string_alignment.hpp
-  include/xtd/drawing/string_format.hpp
-  include/xtd/drawing/system_colors.hpp
-  include/xtd/drawing/system_fonts.hpp
+  include/xtd/drawing//bitmap.h
+  include/xtd/drawing//brush.h
+  include/xtd/drawing/color.h
+  include/xtd/drawing/font.h
+  include/xtd/drawing/font_family.h
+  include/xtd/drawing/font_style.h
+  include/xtd/drawing/graphics.h
+  include/xtd/drawing/graphics_unit.h
+  include/xtd/drawing/icon.h
+  include/xtd/drawing/image.h
+  include/xtd/drawing/images.h
+  include/xtd/drawing/known_color.h
+  include/xtd/drawing/pen.h
+  include/xtd/drawing/point.h
+  include/xtd/drawing/point_f.h
+  include/xtd/drawing/rectangle.h
+  include/xtd/drawing/rectangle_f.h
+  include/xtd/drawing/size.h
+  include/xtd/drawing/size_f.h
+  include/xtd/drawing/solid_brush.h
+  include/xtd/drawing/string_alignment.h
+  include/xtd/drawing/string_format.h
+  include/xtd/drawing/system_colors.h
+  include/xtd/drawing/system_fonts.h
 )
 
 set(XTD_DRAWING_DRAWING2D_INCLUDES
-  include/xtd/drawing/drawing2d/pen_alignment.hpp
-  include/xtd/drawing/drawing2d/pen_type.hpp
+  include/xtd/drawing/drawing2d/pen_alignment.h
+  include/xtd/drawing/drawing2d/pen_type.h
 )
 
 set(XTD_DRAWING_IMAGING_INCLUDES
-  include/xtd/drawing/imaging/color_palette.hpp
-  include/xtd/drawing/imaging/frame_dimension.hpp
-  include/xtd/drawing/imaging/image_flags.hpp
-  include/xtd/drawing/imaging/image_format.hpp
-  include/xtd/drawing/imaging/pixel_format.hpp
-  include/xtd/drawing/imaging/property_item.hpp
+  include/xtd/drawing/imaging/color_palette.h
+  include/xtd/drawing/imaging/frame_dimension.h
+  include/xtd/drawing/imaging/image_flags.h
+  include/xtd/drawing/imaging/image_format.h
+  include/xtd/drawing/imaging/pixel_format.h
+  include/xtd/drawing/imaging/property_item.h
 )
 
 set(XTD_DRAWING_TEXT_INCLUDES
-  include/xtd/drawing/text/font_collection.hpp
-  include/xtd/drawing/text/generic_font_families.hpp
-  include/xtd/drawing/text/hotkey_prefix.hpp
-  include/xtd/drawing/text/installed_font_collection.hpp
-  include/xtd/drawing/text/private_font_collection.hpp
-  include/xtd/drawing/text/text_rendering_hint.hpp
+  include/xtd/drawing/text/font_collection.h
+  include/xtd/drawing/text/generic_font_families.h
+  include/xtd/drawing/text/hotkey_prefix.h
+  include/xtd/drawing/text/installed_font_collection.h
+  include/xtd/drawing/text/private_font_collection.h
+  include/xtd/drawing/text/text_rendering_hint.h
 )
 
 set(XTD_DRAWING_SOURCES

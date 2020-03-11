@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/images.hpp"
+#include "../../../include/xtd/drawing/images.h"
 #include "resources/about_256x256.xpm"
 #include "resources/add_256x256.xpm"
 #include "resources/apply_256x256.xpm"

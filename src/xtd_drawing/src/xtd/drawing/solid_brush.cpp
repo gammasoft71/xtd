@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/solid_brush.hpp"
+#include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/drawing/native/brush.h>
 
 using namespace xtd;

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/images.hpp"
+#include "../../../include/xtd/drawing/images.h"
 #include "resources/about_128x128.xpm"
 #include "resources/add_128x128.xpm"
 #include "resources/apply_128x128.xpm"

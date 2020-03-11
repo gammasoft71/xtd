@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/images.hpp"
+#include "../../../include/xtd/drawing/images.h"
 #include "resources/about_16x16.xpm"
 #include "resources/add_16x16.xpm"
 #include "resources/apply_16x16.xpm"

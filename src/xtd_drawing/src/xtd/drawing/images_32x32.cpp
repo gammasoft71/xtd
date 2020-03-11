@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/images.hpp"
+#include "../../../include/xtd/drawing/images.h"
 #include "resources/about_32x32.xpm"
 #include "resources/add_32x32.xpm"
 #include "resources/apply_32x32.xpm"

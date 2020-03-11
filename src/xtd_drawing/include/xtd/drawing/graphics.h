@@ -3,18 +3,18 @@
 #include <limits>
 #include <ostream>
 #include <xtd/xtd.strings>
-#include "brush.hpp"
-#include "color.hpp"
-#include "font.hpp"
-#include "image.hpp"
-#include "pen.hpp"
-#include "point.hpp"
-#include "point_f.hpp"
-#include "rectangle.hpp"
-#include "rectangle_f.hpp"
-#include "size.hpp"
-#include "string_format.hpp"
-#include "size_f.hpp"
+#include "brush.h"
+#include "color.h"
+#include "font.h"
+#include "image.h"
+#include "pen.h"
+#include "point.h"
+#include "point_f.h"
+#include "rectangle.h"
+#include "rectangle_f.h"
+#include "size.h"
+#include "string_format.h"
+#include "size_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

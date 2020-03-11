@@ -1,5 +1,5 @@
 #include <cmath>
-#include "../../../include/xtd/drawing/rectangle.hpp"
+#include "../../../include/xtd/drawing/rectangle.h"
 
 using namespace xtd::drawing;
 

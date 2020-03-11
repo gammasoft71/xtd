@@ -4,15 +4,15 @@
 #include <memory>
 #include <iostream>
 #include <string>
-#include "imaging/color_palette.hpp"
-#include "imaging/frame_dimension.hpp"
-#include "imaging/image_flags.hpp"
-#include "imaging/image_format.hpp"
-#include "imaging/pixel_format.hpp"
-#include "imaging/property_item.hpp"
-#include "rectangle.hpp"
-#include "size.hpp"
-#include "size_f.hpp"
+#include "imaging/color_palette.h"
+#include "imaging/frame_dimension.h"
+#include "imaging/image_flags.h"
+#include "imaging/image_format.h"
+#include "imaging/pixel_format.h"
+#include "imaging/property_item.h"
+#include "rectangle.h"
+#include "size.h"
+#include "size_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

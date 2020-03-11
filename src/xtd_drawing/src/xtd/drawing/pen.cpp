@@ -1,6 +1,6 @@
 #include <stdexcept>
-#include "../../../include/xtd/drawing/pen.hpp"
-#include "../../../include/xtd/drawing/solid_brush.hpp"
+#include "../../../include/xtd/drawing/pen.h"
+#include "../../../include/xtd/drawing/solid_brush.h"
 #include <xtd/drawing/native/pen.h>
 
 using namespace std;

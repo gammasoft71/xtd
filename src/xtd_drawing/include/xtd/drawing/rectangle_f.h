@@ -2,8 +2,8 @@
 #include <cstdint>
 #include <ostream>
 #include <string>
-#include "point_f.hpp"
-#include "size_f.hpp"
+#include "point_f.h"
+#include "size_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
