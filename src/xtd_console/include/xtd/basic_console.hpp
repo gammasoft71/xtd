@@ -8,7 +8,7 @@
 #include "__get_out_rdbuf.hpp"
 #include "__opaque_console.hpp"
 #include "console_cancel_event_handler.hpp"
-#include <xtd/event.hpp>
+#include <xtd/event.h>
 #include <xtd/static.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
