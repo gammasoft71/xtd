@@ -2,7 +2,7 @@
 /// @brief Contains xtd::io::file class.
 #pragma once
 
-#include "file_attributes.hpp"
+#include "file_attributes.h"
 #include <cstdio>
 #include <fstream>
 #include <string>
