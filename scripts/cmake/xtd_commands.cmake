@@ -809,7 +809,7 @@ endmacro()
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
 ##  add_include_directory(include)
-##  add_sources(my_project.cpp include/my_project/my_project.hpp)
+##  add_sources(my_project.cpp include/my_project/my_project.h)
 ##
 ##  target_type(STATIC_LIBRARY)
 ## @endcode
@@ -914,7 +914,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file.hpp file.cpp)
+##  add_sources(file.h file.cpp)
 ##  resource(image1 resources/image1.png)
 ##  resource(image2 resources/image2.bmp)
 ##  resource(animation1 animations/ani1.gif)
@@ -952,7 +952,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file.hpp file.cpp)
+##  add_sources(file.h file.cpp)
 ##  resource_string(caption "\"Form examples\"" "Caption of main Form.")
 ##  resource_string(button_close_text "\"Close\"" "Text of close button.")
 ##
@@ -986,7 +986,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file.hpp file.cpp)
+##  add_sources(file.h file.cpp)
 ##  setting(name string APPLICATION "\"Settings example\"")
 ##  setting(back_color xtd::drawing::color USER "xtd::drawing::color::spring_green")
 ##
@@ -1023,7 +1023,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_sources(file1.hpp file2.hpp options/file3.hpp)
+##  add_sources(file1.h file2.h options/file3.h)
 ##  add_sources(file1.cpp file2.cpp options/file3.cpp)
 ##  
 ##  target_type(CONSOLE_APPLICATION)
@@ -1100,7 +1100,7 @@ macro(write_assembly_informations)
       "// Remarks : If this file was manually created, you need re-run cmake generator after creating\n"
       "//           or modifying any parameter bellow.\n"
       "\n"
-      "#include <xtd/assembly_info.hpp>\n"
+      "#include <xtd/assembly_info.h>\n"
       "\n"
       "// Information about this assembly is defined by the following attributes.\n"
       "// Change them to the values specific to your project.\n"
@@ -1130,7 +1130,7 @@ macro(write_assembly_informations)
   endif ()
 endmacro()
 
-## @brief Write resources files. Typically  properties/resources.hpp and properties/resources.cpp
+## @brief Write resources files. Typically  properties/resources.h and properties/resources.cpp
 ## @remarks Internal use only.
 macro(write_resources_files)
   if (PROJECT_RESOURCES OR PROJECT_RESOURCE_STRINGS)
@@ -1138,7 +1138,7 @@ macro(write_resources_files)
   endif ()
 endmacro()
 
-## @brief Write resources files. Typically  properties/resources.hpp and properties/resources.cpp
+## @brief Write resources files. Typically  properties/resources.h and properties/resources.cpp
 ## @remarks Internal use only.
 macro(write_settings_files)
   if (PROJECT_APPLICATION_SETTINGS OR PROJECT_USER_SETTINGS)
@@ -1540,10 +1540,10 @@ macro(write_project_config_cmake)
   )
 endmacro()
 
-## @brief Write resources file header. Typically properties/resources.hpp
+## @brief Write resources file header. Typically properties/resources.h
 ## @remarks Internal use only.
 macro(write_resources_file_header)
-  set(RESOURCES_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/resources.hpp)
+  set(RESOURCES_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/resources.h)
 
   if (APPLE AND "${APPLICATION_TYPE}" STREQUAL "GUI_APPLICATION")
     set(PREFIX_RESOURCE_PATH "\"..\", \"Resources\"")
@@ -1647,10 +1647,10 @@ macro(write_resources_file_header)
   set(PROJECT_SOURCES "${PROJECT_SOURCES};${RESOURCES_FILE_HEADER}")
 endmacro()
 
-## @brief Write resources file header. Typically properties/settings.hpp
+## @brief Write resources file header. Typically properties/settings.h
 ## @remarks Internal use only.
 macro(write_settings_file_header)
-  set(SETTINGS_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/settings.hpp)
+  set(SETTINGS_FILE_HEADER ${CMAKE_CURRENT_SOURCE_DIR}/properties/settings.h)
 
   file(WRITE ${SETTINGS_FILE_HEADER}
     "#pragma region xtd generated code\n"
