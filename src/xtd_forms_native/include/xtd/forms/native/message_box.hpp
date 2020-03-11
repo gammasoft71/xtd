@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <string>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 namespace xtd {
   namespace forms {

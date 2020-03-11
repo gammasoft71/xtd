@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>
 

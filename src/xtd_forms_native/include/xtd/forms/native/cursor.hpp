@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/size.hpp>
 

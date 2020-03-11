@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <optional>
 #include <vector>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/color.hpp>
 
 namespace xtd {

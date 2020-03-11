@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <string>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/point.hpp>
 #include <xtd/drawing/rectangle.hpp>
 

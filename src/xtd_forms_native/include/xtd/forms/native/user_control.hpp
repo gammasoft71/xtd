@@ -1,6 +1,6 @@
 #pragma once
 #include "../create_params.hpp"
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 namespace xtd {
   namespace forms {

@@ -1,6 +1,6 @@
 #pragma once
 #include "component.hpp"
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <ostream>
 #include <string>
 #include <vector>

@@ -1,8 +1,8 @@
 #pragma once
 #include <cstdint>
 #include <string>
-#include <xtd/environment.hpp>
-#include <xtd/static.hpp>
+#include <xtd/environment.h>
+#include <xtd/static.h>
 
 namespace xtd {
   namespace forms {

@@ -1,6 +1,6 @@
 #pragma once
 #include "../create_params.hpp"
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 #include <xtd/drawing/image.hpp>
 
 namespace xtd {
