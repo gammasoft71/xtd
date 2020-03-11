@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include <xtd/drawing/system_colors.hpp>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/native/application.hpp>
 #include <xtd/forms/native/combo_box.hpp>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.hpp"

@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <xtd/event_args.h>
-#include <xtd/drawing/point.hpp>
+#include <xtd/drawing/point.h>
 #include "message.hpp"
 #include "mouse_buttons.hpp"
 

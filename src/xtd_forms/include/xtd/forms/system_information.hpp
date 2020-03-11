@@ -1,6 +1,6 @@
 #pragma once
-#include <xtd/drawing/font.hpp>
-#include <xtd/drawing/size.hpp>
+#include <xtd/drawing/font.h>
+#include <xtd/drawing/size.h>
 #include "arrange_direction.hpp"
 #include "arrange_starting_position.hpp"
 #include "boot_mode.hpp"

@@ -1,8 +1,8 @@
 #pragma once
-#include <xtd/drawing/color.hpp>
-#include <xtd/drawing/font.hpp>
-#include <xtd/drawing/system_colors.hpp>
-#include <xtd/drawing/system_fonts.hpp>
+#include <xtd/drawing/color.h>
+#include <xtd/drawing/font.h>
+#include <xtd/drawing/system_colors.h>
+#include <xtd/drawing/system_fonts.h>
 #include <xtd/forms/font_dialog_flags.hpp>
 #include "common_dialog.hpp"
 

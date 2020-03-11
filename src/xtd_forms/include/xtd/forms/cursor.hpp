@@ -2,8 +2,8 @@
 #include <any>
 #include <cstdint>
 #include <memory>
-#include <xtd/drawing/point.hpp>
-#include <xtd/drawing/size.hpp>
+#include <xtd/drawing/point.h>
+#include <xtd/drawing/size.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

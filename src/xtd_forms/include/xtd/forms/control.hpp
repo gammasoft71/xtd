@@ -10,12 +10,12 @@
 #include <string>
 #include <thread>
 #include <vector>
-#include <xtd/drawing/color.hpp>
-#include <xtd/drawing/font.hpp>
-#include <xtd/drawing/point.hpp>
-#include <xtd/drawing/rectangle.hpp>
-#include <xtd/drawing/size.hpp>
-#include <xtd/drawing/system_colors.hpp>
+#include <xtd/drawing/color.h>
+#include <xtd/drawing/font.h>
+#include <xtd/drawing/point.h>
+#include <xtd/drawing/rectangle.h>
+#include <xtd/drawing/size.h>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.hpp>
 
 #include "layout/arranged_element_collection.hpp"

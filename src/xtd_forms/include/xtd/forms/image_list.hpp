@@ -1,6 +1,6 @@
 #pragma once
 #include <any>
-#include <xtd/drawing/image.hpp>
+#include <xtd/drawing/image.h>
 #include "component.hpp"
 #include "layout/arranged_element_collection.hpp"
 

@@ -1,5 +1,5 @@
 #include <xtd/forms/native/image_list.hpp>
-#include <xtd/drawing/bitmap.hpp>
+#include <xtd/drawing/bitmap.h>
 #include "../../../include/xtd/forms/image_list.hpp"
 
 using namespace xtd;
