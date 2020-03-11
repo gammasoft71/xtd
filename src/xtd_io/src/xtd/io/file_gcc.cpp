@@ -1,6 +1,6 @@
 #if defined(__linux__) || defined(__APPLE__)
 
-#include "../include/xtd/file.hpp"
+#include "../../../include/xtd/io/file.h"
 #include <sys/stat.h>
 
 int __get_file_attributes(const char*path) {
