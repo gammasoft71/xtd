@@ -3,21 +3,21 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.delegates VERSION 1.0.0)
 set(INCLUDES
-  include/xtd/action.hpp
-  include/xtd/delegate.hpp
-  include/xtd/event.hpp
-  include/xtd/event_args.hpp
-  include/xtd/event_handler.hpp
-  include/xtd/func.hpp
-  include/xtd/predicate.hpp
+  include/xtd/action.h
+  include/xtd/delegate.h
+  include/xtd/event.h
+  include/xtd/event_args.h
+  include/xtd/event_handler.h
+  include/xtd/func.h
+  include/xtd/predicate.h
   include/xtd/xtd.delegates
-  include/xtd/xtd.delegates.hpp
+  include/xtd/xtd.delegates.h
 )
 set(SOURCES
   src/delegates.cpp
   src/event_args.cpp
 )
-source_group(include FILES ${INCLUDES})
+source_group(include\\xtd FILES ${INCLUDES})
 source_group(src FILES ${SOURCES})
 
 # Options
