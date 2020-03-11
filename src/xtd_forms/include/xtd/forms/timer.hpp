@@ -1,8 +1,8 @@
 #pragma once
 #include <cstdint>
 #include <memory>
-#include <xtd/event.hpp>
-#include <xtd/event_handler.hpp>
+#include <xtd/event.h>
+#include <xtd/event_handler.h>
 #include "component.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

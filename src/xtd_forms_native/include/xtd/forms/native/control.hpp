@@ -4,8 +4,8 @@
 #include <shared_mutex>
 #include <list>
 #include <vector>
-#include <xtd/delegate.hpp>
-#include <xtd/event_args.hpp>
+#include <xtd/delegate.h>
+#include <xtd/event_args.h>
 #include <xtd/static.hpp>
 #include <xtd/drawing/color.hpp>
 #include <xtd/drawing/font.hpp>

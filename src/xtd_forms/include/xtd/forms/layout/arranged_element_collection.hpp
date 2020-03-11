@@ -1,9 +1,9 @@
 #pragma once
 #include <ostream>
 #include <vector>
-#include <xtd/event_args.hpp>
-#include <xtd/event_handler.hpp>
-#include <xtd/event.hpp>
+#include <xtd/event_args.h>
+#include <xtd/event_handler.h>
+#include <xtd/event.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

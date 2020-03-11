@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <xtd/event_args.hpp>
+#include <xtd/event_args.h>
 #include <xtd/xtd.strings>
 #include "check_state.hpp"
 

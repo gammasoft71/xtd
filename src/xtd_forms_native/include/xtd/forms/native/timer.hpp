@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
-#include <xtd/delegate.hpp>
-#include <xtd/event_args.hpp>
+#include <xtd/delegate.h>
+#include <xtd/event_args.h>
 #include <xtd/static.hpp>
 
 namespace xtd {

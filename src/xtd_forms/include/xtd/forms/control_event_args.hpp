@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <xtd/event_args.hpp>
+#include <xtd/event_args.h>
 #include <xtd/drawing/point.hpp>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
