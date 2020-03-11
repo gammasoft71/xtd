@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <vector>
-#include <xtd/static.hpp>
+#include <xtd/static.h>
 
 /// @cond
 namespace xtd {
