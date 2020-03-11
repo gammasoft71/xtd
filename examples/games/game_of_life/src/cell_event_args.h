@@ -1,7 +1,7 @@
 
 #pragma once
-#include <xtd/event_args.hpp>
-#include "cell.hpp"
+#include <xtd/event_args.h>
+#include "cell.h"
 
 namespace game_of_life {
   class cell_event_args : public xtd::event_args {

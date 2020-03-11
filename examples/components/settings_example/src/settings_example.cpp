@@ -1,5 +1,5 @@
 #include <xtd/xtd.forms>
-#include "../properties/settings.hpp"
+#include "../properties/settings.h"
 
 using namespace xtd::drawing;
 using namespace xtd::forms;

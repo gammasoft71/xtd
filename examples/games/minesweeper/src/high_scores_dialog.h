@@ -1,6 +1,6 @@
 #pragma once
-#include "level.hpp"
-#include "../properties/settings.hpp"
+#include "level.h"
+#include "../properties/settings.h"
 #include <xtd/xtd.forms>
 
 namespace minesweeper {

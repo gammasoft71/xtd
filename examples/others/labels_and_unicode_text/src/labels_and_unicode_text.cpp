@@ -1,8 +1,8 @@
 #include <utility>
 #include <vector>
-#include <xtd/forms/application.hpp>
-#include <xtd/forms/form.hpp>
-#include <xtd/forms/label.hpp>
+#include <xtd/forms/application.h>
+#include <xtd/forms/form.h>
+#include <xtd/forms/label.h>
 
 using namespace std;
 using namespace xtd::drawing;

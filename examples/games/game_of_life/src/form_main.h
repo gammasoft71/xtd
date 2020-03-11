@@ -1,7 +1,7 @@
 #pragma once
 #include <random>
 #include <xtd/xtd.forms>
-#include "grid.hpp"
+#include "grid.h"
 
 namespace game_of_life {
   class form_main : public xtd::forms::form {
