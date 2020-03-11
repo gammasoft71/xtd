@@ -4,12 +4,12 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.drawing.native.wxwidgets VERSION 0.0.1)
 
 set(XTD_INCLUDES
-  include/xtd/xtd.drawing.native.wxwidgets.hpp
+  include/xtd/xtd.drawing.native.wxwidgets.h
   include/xtd/xtd.drawing.native.wxwidgets
 )
 
 set(XTD_DRAWING_NATIVE_INCLUDES
-  include/xtd/drawing/native/hdc_wrapper.hpp
+  include/xtd/drawing/native/hdc_wrapper.h
 )
 
 set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES

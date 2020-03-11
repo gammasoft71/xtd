@@ -1,6 +1,6 @@
 #include <cmath>
-#include <xtd/drawing/native/graphics.hpp>
-#include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
+#include <xtd/drawing/native/graphics.h>
+#include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include <wx/app.h>
 #include <wx/dcgraph.h>
 

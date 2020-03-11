@@ -1,2 +1,2 @@
 #pragma once
-#include "xtd.drawing.native.wxwidgets.hpp"
+#include "xtd.drawing.native.wxwidgets.h"
