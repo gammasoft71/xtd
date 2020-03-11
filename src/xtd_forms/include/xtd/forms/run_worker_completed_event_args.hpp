@@ -2,7 +2,7 @@
 #include <any>
 #include <optional>
 #include <cstdint>
-#include <xtd/event_args.hpp>
+#include <xtd/event_args.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

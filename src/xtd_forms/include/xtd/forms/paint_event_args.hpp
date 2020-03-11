@@ -1,6 +1,6 @@
 #pragma once
 
-#include <xtd/event_args.hpp>
+#include <xtd/event_args.h>
 #include <xtd/drawing/graphics.hpp>
 #include <xtd/drawing/rectangle.hpp>
 

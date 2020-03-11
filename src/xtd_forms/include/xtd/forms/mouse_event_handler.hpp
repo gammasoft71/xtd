@@ -1,6 +1,6 @@
 #pragma once
 
-#include <xtd/event_handler.hpp>
+#include <xtd/event_handler.h>
 #include "mouse_event_args.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
