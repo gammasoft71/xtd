@@ -1,5 +1,5 @@
-#include <xtd/forms/native/color_dialog.hpp>
-#include <xtd/forms/color_dialog_flags.hpp>
+#include <xtd/forms/native/color_dialog.h>
+#include <xtd/forms/color_dialog_flags.h>
 #include <wx/colordlg.h>
 
 using namespace xtd;

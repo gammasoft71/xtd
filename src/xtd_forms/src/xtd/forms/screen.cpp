@@ -1,5 +1,5 @@
-#include "../../../include/xtd/forms/screen.hpp"
-#include <xtd/forms/native/screen.hpp>
+#include "../../../include/xtd/forms/screen.h"
+#include <xtd/forms/native/screen.h>
 
 using namespace std;
 using namespace xtd;

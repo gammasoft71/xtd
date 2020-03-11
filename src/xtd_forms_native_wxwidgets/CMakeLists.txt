@@ -4,37 +4,37 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.forms.native.wxwidgets VERSION 0.0.1)
 
 set(XTD_INCLUDES
-  include/xtd/xtd.forms.native.wxwidgets.hpp
+  include/xtd/xtd.forms.native.wxwidgets.h
   include/xtd/xtd.forms.native.wxwidgets
-  include/xtd/forms/native/wxwidgets/control_handler.hpp
-  include/xtd/forms/native/wxwidgets/hdc_wrapper.hpp
-  include/xtd/forms/native/wxwidgets/wx_application.hpp
-  include/xtd/forms/native/wxwidgets/wx_button.hpp
-  include/xtd/forms/native/wxwidgets/wx_check_box.hpp
-  include/xtd/forms/native/wxwidgets/wx_checked_list_box.hpp
-  include/xtd/forms/native/wxwidgets/wx_choice.hpp
-  include/xtd/forms/native/wxwidgets/wx_color_picker.hpp
-  include/xtd/forms/native/wxwidgets/wx_combo_box.hpp
-  include/xtd/forms/native/wxwidgets/wx_control.hpp
-  include/xtd/forms/native/wxwidgets/wx_date_time_picker.hpp
-  include/xtd/forms/native/wxwidgets/wx_domain_up_down.hpp
-  include/xtd/forms/native/wxwidgets/wx_font_picker.hpp
-  include/xtd/forms/native/wxwidgets/wx_form.hpp
-  include/xtd/forms/native/wxwidgets/wx_group_box.hpp
-  include/xtd/forms/native/wxwidgets/wx_label.hpp
-  include/xtd/forms/native/wxwidgets/wx_list_box.hpp
-  include/xtd/forms/native/wxwidgets/wx_numeric_up_down.hpp
-  include/xtd/forms/native/wxwidgets/wx_panel.hpp
-  include/xtd/forms/native/wxwidgets/wx_picture_box.hpp
-  include/xtd/forms/native/wxwidgets/wx_progress_bar.hpp
-  include/xtd/forms/native/wxwidgets/wx_radio_button.hpp
-  include/xtd/forms/native/wxwidgets/wx_tab_control.hpp
-  include/xtd/forms/native/wxwidgets/wx_tab_page.hpp
-  include/xtd/forms/native/wxwidgets/wx_text_box.hpp
-  include/xtd/forms/native/wxwidgets/wx_timer.hpp
-  include/xtd/forms/native/wxwidgets/wx_track_bar.hpp
-  include/xtd/forms/native/wxwidgets/wx_up_down_button.hpp
-  include/xtd/forms/native/wxwidgets/wx_user_control.hpp
+  include/xtd/forms/native/wxwidgets/control_handler.h
+  include/xtd/forms/native/wxwidgets/hdc_wrapper.h
+  include/xtd/forms/native/wxwidgets/wx_application.h
+  include/xtd/forms/native/wxwidgets/wx_button.h
+  include/xtd/forms/native/wxwidgets/wx_check_box.h
+  include/xtd/forms/native/wxwidgets/wx_checked_list_box.h
+  include/xtd/forms/native/wxwidgets/wx_choice.h
+  include/xtd/forms/native/wxwidgets/wx_color_picker.h
+  include/xtd/forms/native/wxwidgets/wx_combo_box.h
+  include/xtd/forms/native/wxwidgets/wx_control.h
+  include/xtd/forms/native/wxwidgets/wx_date_time_picker.h
+  include/xtd/forms/native/wxwidgets/wx_domain_up_down.h
+  include/xtd/forms/native/wxwidgets/wx_font_picker.h
+  include/xtd/forms/native/wxwidgets/wx_form.h
+  include/xtd/forms/native/wxwidgets/wx_group_box.h
+  include/xtd/forms/native/wxwidgets/wx_label.h
+  include/xtd/forms/native/wxwidgets/wx_list_box.h
+  include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h
+  include/xtd/forms/native/wxwidgets/wx_panel.h
+  include/xtd/forms/native/wxwidgets/wx_picture_box.h
+  include/xtd/forms/native/wxwidgets/wx_progress_bar.h
+  include/xtd/forms/native/wxwidgets/wx_radio_button.h
+  include/xtd/forms/native/wxwidgets/wx_tab_control.h
+  include/xtd/forms/native/wxwidgets/wx_tab_page.h
+  include/xtd/forms/native/wxwidgets/wx_text_box.h
+  include/xtd/forms/native/wxwidgets/wx_timer.h
+  include/xtd/forms/native/wxwidgets/wx_track_bar.h
+  include/xtd/forms/native/wxwidgets/wx_up_down_button.h
+  include/xtd/forms/native/wxwidgets/wx_user_control.h
 )
 
 set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES

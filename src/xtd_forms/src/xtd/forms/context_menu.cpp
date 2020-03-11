@@ -1,5 +1,5 @@
-#include <xtd/forms/native/context_menu.hpp>
-#include "../../../include/xtd/forms/context_menu.hpp"
+#include <xtd/forms/native/context_menu.h>
+#include "../../../include/xtd/forms/context_menu.h"
 
 using namespace xtd;
 using namespace xtd::forms;

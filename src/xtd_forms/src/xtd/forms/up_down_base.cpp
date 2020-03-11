@@ -1,5 +1,5 @@
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/up_down_base.hpp"
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/up_down_base.h"
 
 using namespace xtd;
 using namespace xtd::forms;

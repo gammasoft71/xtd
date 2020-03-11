@@ -1,5 +1,5 @@
-#include <xtd/forms/native/check_box.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.hpp"
+#include <xtd/forms/native/check_box.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

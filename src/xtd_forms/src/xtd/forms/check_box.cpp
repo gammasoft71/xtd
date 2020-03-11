@@ -1,8 +1,8 @@
-#include <xtd/forms/native/button_styles.hpp>
-#include <xtd/forms/native/check_box.hpp>
-#include <xtd/forms/window_messages.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/check_box.hpp"
+#include <xtd/forms/native/button_styles.h>
+#include <xtd/forms/native/check_box.h>
+#include <xtd/forms/window_messages.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/check_box.h"
 
 using namespace xtd;
 using namespace xtd::forms;

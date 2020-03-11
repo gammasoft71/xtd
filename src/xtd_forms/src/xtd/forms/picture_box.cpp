@@ -1,8 +1,8 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/picture_box.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include <xtd/forms/native/static_styles.hpp>
-#include "../../../include/xtd/forms/picture_box.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/picture_box.h>
+#include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/native/static_styles.h>
+#include "../../../include/xtd/forms/picture_box.h"
 
 using namespace std;
 using namespace xtd;

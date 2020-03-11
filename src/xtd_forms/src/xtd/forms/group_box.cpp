@@ -1,8 +1,8 @@
-#include <xtd/forms/native/button_styles.hpp>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/group_box.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/group_box.hpp"
+#include <xtd/forms/native/button_styles.h>
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/group_box.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/group_box.h"
 
 using namespace xtd;
 using namespace xtd::forms;

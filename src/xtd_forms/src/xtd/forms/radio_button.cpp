@@ -1,8 +1,8 @@
 #include <xtd/environment.h>
-#include <xtd/forms/native/button_styles.hpp>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/radio_button.hpp>
-#include "../../../include/xtd/forms/radio_button.hpp"
+#include <xtd/forms/native/button_styles.h>
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/radio_button.h>
+#include "../../../include/xtd/forms/radio_button.h"
 
 using namespace xtd;
 using namespace xtd::forms;

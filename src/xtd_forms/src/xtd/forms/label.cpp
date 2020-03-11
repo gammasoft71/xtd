@@ -1,8 +1,8 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/label.hpp>
-#include <xtd/forms/native/static_styles.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/label.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/label.h>
+#include <xtd/forms/native/static_styles.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/label.h"
 
 using namespace xtd;
 using namespace xtd::forms;

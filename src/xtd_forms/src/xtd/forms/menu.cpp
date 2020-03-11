@@ -1,8 +1,8 @@
 #include <xtd/strings.h>
-#include "../../../include/xtd/forms/menu.hpp"
-#include "../../../include/xtd/forms/context_menu.hpp"
-#include "../../../include/xtd/forms/main_menu.hpp"
-#include "../../../include/xtd/forms/menu_item.hpp"
+#include "../../../include/xtd/forms/menu.h"
+#include "../../../include/xtd/forms/context_menu.h"
+#include "../../../include/xtd/forms/main_menu.h"
+#include "../../../include/xtd/forms/menu_item.h"
 
 using namespace xtd;
 using namespace xtd::forms;

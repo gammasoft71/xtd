@@ -1,6 +1,6 @@
-#include <xtd/forms/native/button.hpp>
-#include <xtd/forms/native/content_alignment.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.hpp"
+#include <xtd/forms/native/button.h>
+#include <xtd/forms/native/content_alignment.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
 
 using namespace xtd;
 using namespace xtd::forms::native;

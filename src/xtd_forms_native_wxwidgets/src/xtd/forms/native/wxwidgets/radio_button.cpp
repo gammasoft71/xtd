@@ -1,5 +1,5 @@
-#include <xtd/forms/native/radio_button.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_radio_button.hpp"
+#include <xtd/forms/native/radio_button.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_radio_button.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

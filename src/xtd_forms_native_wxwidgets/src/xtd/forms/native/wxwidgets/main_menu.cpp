@@ -1,4 +1,4 @@
-#include <xtd/forms/native/main_menu.hpp>
+#include <xtd/forms/native/main_menu.h>
 #include <wx/app.h>
 #include <wx/menu.h>
 

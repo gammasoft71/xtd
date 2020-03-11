@@ -1,8 +1,8 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/date_time_picker.hpp>
-#include <xtd/forms/native/date_time_picker_styles.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/date_time_picker.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/date_time_picker.h>
+#include <xtd/forms/native/date_time_picker_styles.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/date_time_picker.h"
 
 using namespace xtd;
 using namespace xtd::forms;

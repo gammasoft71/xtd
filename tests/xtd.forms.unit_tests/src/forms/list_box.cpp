@@ -1,7 +1,7 @@
 #include <xtd/xtd.forms>
 #include <xtd/xtd.tunit>
 #if defined(__XTD_FORMS_NATIVE_WXWIDGETS__)
-#include <xtd/forms/native/wxwidgets/wx_list_box.hpp>
+#include <xtd/forms/native/wxwidgets/wx_list_box.h>
 #endif
 
 using namespace std;

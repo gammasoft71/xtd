@@ -1,8 +1,8 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/numeric_up_down.hpp>
-#include <xtd/forms/native/up_down_styles.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/numeric_up_down.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/numeric_up_down.h>
+#include <xtd/forms/native/up_down_styles.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/numeric_up_down.h"
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -1,5 +1,5 @@
-#include <xtd/forms/native/about_dialog.hpp>
-#include "../../../include/xtd/forms/about_dialog.hpp"
+#include <xtd/forms/native/about_dialog.h>
+#include "../../../include/xtd/forms/about_dialog.h"
 
 using namespace std;
 using namespace xtd;

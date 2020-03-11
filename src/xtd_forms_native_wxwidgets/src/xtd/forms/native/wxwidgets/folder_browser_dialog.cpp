@@ -1,6 +1,6 @@
 #include <xtd/xtd.io>
-#include <xtd/forms/native/folder_browser_dialog.hpp>
-#include <xtd/forms/folder_browser_dialog_flags.hpp>
+#include <xtd/forms/native/folder_browser_dialog.h>
+#include <xtd/forms/folder_browser_dialog_flags.h>
 #include <wx/filefn.h>
 #include <wx/dirdlg.h>
 

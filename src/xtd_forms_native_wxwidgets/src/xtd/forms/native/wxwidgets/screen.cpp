@@ -1,8 +1,8 @@
 #include <xtd/drawing/native/hdc_wrapper.h>
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/native/screen.hpp>
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/native/screen.h>
 #include <xtd/xtd.strings>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <wx/dcscreen.h>
 #include <wx/display.h>
 

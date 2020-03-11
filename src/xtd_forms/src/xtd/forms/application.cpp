@@ -2,9 +2,9 @@
 #include <xtd/io/path.h>
 #include <xtd/environment.h>
 #include <xtd/xtd.diagnostics>
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/window_messages.hpp>
-#include "../../../include/xtd/forms/application.hpp"
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/window_messages.h>
+#include "../../../include/xtd/forms/application.h"
 
 using namespace std;
 using namespace xtd;

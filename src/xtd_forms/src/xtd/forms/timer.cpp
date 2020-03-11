@@ -1,5 +1,5 @@
-#include <xtd/forms/native/timer.hpp>
-#include "../../../include/xtd/forms/timer.hpp"
+#include <xtd/forms/native/timer.h>
+#include "../../../include/xtd/forms/timer.h"
 
 using namespace xtd;
 using namespace xtd::forms;

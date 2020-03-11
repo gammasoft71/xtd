@@ -1,8 +1,8 @@
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/color_picker.hpp>
-#include <xtd/forms/native/static_styles.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/color_picker.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/color_picker.h>
+#include <xtd/forms/native/static_styles.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/color_picker.h"
 
 using namespace xtd;
 using namespace xtd::forms;

@@ -1,6 +1,6 @@
-#include <xtd/forms/native/color_picker.hpp>
-#include <xtd/forms/native/content_alignment.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_color_picker.hpp"
+#include <xtd/forms/native/color_picker.h>
+#include <xtd/forms/native/content_alignment.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_color_picker.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

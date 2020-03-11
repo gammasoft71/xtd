@@ -1,7 +1,7 @@
 #include <tuple>
-#include <xtd/forms/native/date_time_picker.hpp>
-#include <xtd/forms/native/content_alignment.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_date_time_picker.hpp"
+#include <xtd/forms/native/date_time_picker.h>
+#include <xtd/forms/native/content_alignment.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_date_time_picker.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

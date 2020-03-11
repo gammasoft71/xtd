@@ -1,6 +1,6 @@
-#include <xtd/forms/native/menu.hpp>
-#include <xtd/forms/native/menu_item.hpp>
-#include "../../../include/xtd/forms/menu_item.hpp"
+#include <xtd/forms/native/menu.h>
+#include <xtd/forms/native/menu_item.h>
+#include "../../../include/xtd/forms/menu_item.h"
 
 using namespace xtd;
 using namespace xtd::forms;

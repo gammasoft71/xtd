@@ -1,5 +1,5 @@
-#include <xtd/forms/native/up_down_button.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.hpp"
+#include <xtd/forms/native/up_down_button.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

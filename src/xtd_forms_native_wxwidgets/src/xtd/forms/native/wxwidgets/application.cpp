@@ -5,10 +5,10 @@
 //#include <gtk/gtk.h>
 //#endif
 #include <xtd/environment.h>
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/window_messages.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.hpp"
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/window_messages.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.h"
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
 

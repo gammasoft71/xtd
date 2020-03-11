@@ -1,9 +1,9 @@
 #include <codecvt>
 #include <stdexcept>
-#include <xtd/forms/native/application.hpp>
-#include <xtd/forms/native/message_box.hpp>
-#include <xtd/forms/native/message_box_styles.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
+#include <xtd/forms/native/application.h>
+#include <xtd/forms/native/message_box.h>
+#include <xtd/forms/native/message_box_styles.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <wx/app.h>
 #include <wx/msgdlg.h>
 

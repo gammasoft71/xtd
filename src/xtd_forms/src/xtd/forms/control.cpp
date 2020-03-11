@@ -5,12 +5,12 @@
 #include <xtd/xtd.core>
 #include <xtd/xtd.strings>
 #include <xtd/drawing/native/graphics.h>
-#include <xtd/forms/native/control.hpp>
-#include <xtd/forms/native/message_keys.hpp>
-#include <xtd/forms/native/window_styles.hpp>
-#include "../../../include/xtd/forms/application.hpp"
-#include "../../../include/xtd/forms/control.hpp"
-#include "../../../include/xtd/forms/form.hpp"
+#include <xtd/forms/native/control.h>
+#include <xtd/forms/native/message_keys.h>
+#include <xtd/forms/native/window_styles.h>
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/control.h"
+#include "../../../include/xtd/forms/form.h"
 
 using namespace std;
 using namespace xtd;

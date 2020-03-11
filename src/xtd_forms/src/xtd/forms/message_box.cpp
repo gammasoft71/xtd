@@ -1,7 +1,7 @@
-#include <xtd/forms/native/message_box.hpp>
-#include "../../../include/xtd/forms/application.hpp"
-#include "../../../include/xtd/forms/control.hpp"
-#include "../../../include/xtd/forms/message_box.hpp"
+#include <xtd/forms/native/message_box.h>
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/control.h"
+#include "../../../include/xtd/forms/message_box.h"
 
 using namespace xtd;
 using namespace xtd::forms;

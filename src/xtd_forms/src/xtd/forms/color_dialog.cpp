@@ -1,5 +1,5 @@
-#include <xtd/forms/native/color_dialog.hpp>
-#include "../../../include/xtd/forms/color_dialog.hpp"
+#include <xtd/forms/native/color_dialog.h>
+#include "../../../include/xtd/forms/color_dialog.h"
 
 using namespace xtd;
 using namespace xtd::forms;

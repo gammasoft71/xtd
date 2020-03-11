@@ -1,5 +1,5 @@
 #if defined(__APPLE__)
-#include <xtd/forms/native/cursor.hpp>
+#include <xtd/forms/native/cursor.h>
 #include <Quartz/Quartz.h>
 
 using namespace xtd::forms::native;

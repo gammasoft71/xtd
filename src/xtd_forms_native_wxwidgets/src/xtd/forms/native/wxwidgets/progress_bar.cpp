@@ -1,5 +1,5 @@
-#include <xtd/forms/native/progress_bar.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar.hpp"
+#include <xtd/forms/native/progress_bar.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_progress_bar.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

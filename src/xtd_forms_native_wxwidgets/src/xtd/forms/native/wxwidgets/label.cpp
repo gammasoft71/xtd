@@ -1,5 +1,5 @@
-#include <xtd/forms/native/label.hpp>
-#include "../../../../../include/xtd/forms/native/wxwidgets/wx_label.hpp"
+#include <xtd/forms/native/label.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_label.h"
 
 using namespace xtd;
 using namespace xtd::drawing;

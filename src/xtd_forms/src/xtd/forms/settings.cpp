@@ -1,6 +1,6 @@
-#include "../../../include/xtd/forms/settings.hpp"
-#include "../../../include/xtd/forms/application.hpp"
-#include <xtd/forms/native/settings.hpp>
+#include "../../../include/xtd/forms/settings.h"
+#include "../../../include/xtd/forms/application.h"
+#include <xtd/forms/native/settings.h>
 
 using namespace xtd::forms;
 
