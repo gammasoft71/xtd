@@ -1,6 +1,6 @@
 #pragma once
 #include <xtd/static.h>
-#include "image.hpp"
+#include "image.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

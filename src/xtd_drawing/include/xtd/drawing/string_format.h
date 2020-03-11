@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/xtd.strings>
-#include "string_alignment.hpp"
+#include "string_alignment.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

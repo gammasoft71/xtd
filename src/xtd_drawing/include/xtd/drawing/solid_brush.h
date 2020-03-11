@@ -1,6 +1,6 @@
 #pragma once
-#include "brush.hpp"
-#include "color.hpp"
+#include "brush.h"
+#include "color.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/images.hpp"
+#include "../../../include/xtd/drawing/images.h"
 #include "resources/about_64x64.xpm"
 #include "resources/add_64x64.xpm"
 #include "resources/apply_64x64.xpm"
