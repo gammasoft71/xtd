@@ -1249,7 +1249,7 @@ namespace xtdc_command {
       std::filesystem::create_directories(path_/name/"src");
       create_wpf_gui_cmakelists_txt(name);
       create_wpf_gui_source(name);
-      create_wpf_gui_windows1_xaml(name);
+      create_wpf_gui_window1_xaml(name);
       create_wpf_gui_application_config(name);
       create_wpf_gui_application_source(name);
       create_wpf_gui_application_xaml(name);
@@ -1277,13 +1277,20 @@ namespace xtdc_command {
         "  src/App.config",
         "  src/App.xaml",
         "  src/App.xaml.cs",
-        "  src/Windows1.xaml",
-        "  src/Windows1.xaml.cs",
+        "  src/Window1.xaml",
+        "  src/Window1.xaml.cs",
+        ")",
+        "csharp_set_xaml_cs_properties(",
+        "  src/App.xaml",
+        "  src/App.xaml.cs",
+        "  src/Window1.xaml",
+        "  src/Window1.xaml.cs",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
         "# Options",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "set_property(SOURCE src/App.xaml PROPERTY VS_XAML_TYPE \"ApplicationDefinition\")",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} WIN32 ${SOURCES})",
@@ -1314,10 +1321,10 @@ namespace xtdc_command {
         "  }",
         "}",
       };
-      xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml.cs", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.xaml.cs", lines);
     }
       
-    void create_wpf_gui_windows1_xaml(const std::string& name) const {
+    void create_wpf_gui_window1_xaml(const std::string& name) const {
       std::vector<std::string> lines {
         xtd::strings::format("<Window x:Class=\"{}.Window1\"", name),
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
@@ -1333,7 +1340,7 @@ namespace xtdc_command {
         "</Window>",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Windows1.xaml", lines);
+      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.xaml", lines);
     }
     
     void create_wpf_gui_application_config(const std::string& name) const {
@@ -1366,7 +1373,7 @@ namespace xtdc_command {
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
         "        xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
         xtd::strings::format("    xmlns:local=\"clr-namespace:{}\"", name),
-        "        StartupUri=\"Window1.xaml\">",
+        "        StartupUri=\"src\\Window1.xaml\">",
         "    <Application.Resources>",
         "",
         "    </Application.Resources>",
