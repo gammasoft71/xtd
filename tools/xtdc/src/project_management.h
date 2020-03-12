@@ -744,6 +744,7 @@ namespace xtdc_command {
         "// The main entry point for the application.",
         "int main(int argc, char* argv[]) {",
         "  Fl::add_handler([](int event)->int {return event == FL_SHORTCUT && Fl::event_key() == FL_Escape;});",
+        "  Fl::scheme(nullptr);",
         "  Window1 window;",
         "  window.show(argc, argv);",
         "  return Fl::run();",
