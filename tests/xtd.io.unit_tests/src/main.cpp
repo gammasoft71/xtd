@@ -1,8 +1,7 @@
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd::tunit;
 
-int main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
+int main() {
+  return console_unit_test().run();
 }
