@@ -8,6 +8,7 @@ add_projects(
   form_and_messages
   form_paint
   key_events
+  form_click
   mouse_events
   send_message_to_form
 )
