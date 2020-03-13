@@ -1,7 +1,4 @@
-#include <xtd/xtd.tunit>
+#include <xtd/startup.h>
+#include <xtd/tunit_main.h>
 
-using namespace xtd::tunit;
-
-int main(int argc, char* argv[]) {
-  return console_unit_test(argv, argc).run();
-}
+startup_(tunit_main_);
