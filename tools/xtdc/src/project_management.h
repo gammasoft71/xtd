@@ -537,10 +537,11 @@ namespace xtdc_command {
         "#include \"program.h\"",
         "#include <xtd/console.h>",
         "",
+        "using namespace std;",
         "using namespace xtd;",
         xtd::strings::format("using namespace {};", name),
         "",
-        "void program::main(const std::vector<std::string>& args) {",
+        "void program::main(const vector<string>& args) {",
         "  console::write_line(\"Hello, World!\");",
         "}",
       };
@@ -1601,8 +1602,89 @@ namespace xtdc_command {
     
     void create_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
       create_doxygen_txt(name);
+      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::catch2, {*this, &project_management::create_catch2_unit_test_application}}, {project_sdk::gtest, {*this, &project_management::create_gtest_unit_test_application}}, {project_sdk::xtd, {*this, &project_management::create_xtd_unit_test_application}}}[sdk](name, sdk, language);
     }
     
+    void create_catch2_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_gtest_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_xtd_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
+      create_xtd_unit_test_application_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"properties");
+      create_xtd_unit_test_application_application_properties(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_xtd_unit_test_application_cmakelists_txt(name);
+      create_xtd_unit_test_application_source(name);
+    }
+    
+    void create_xtd_unit_test_application_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_projects(",
+        xtd::strings::format("  {0}", name),
+        ")",
+        "",
+        "# Install",
+        "install_package()"
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_unit_test_application_application_properties(const std::string& name) const {
+      std::vector<std::string> lines{
+        xtd::strings::format("application_default_namespace(\"{}\")", name),
+        xtd::strings::format("application_name(\"{}\")", name),
+        xtd::strings::format("application_startup(tunit_main_)", name),
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
+    }
+    
+    void create_xtd_unit_test_application_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_sources(",
+        "  src/unit_test1.cpp",
+        ")",
+        "target_type(TEST_APPLICATION)",
+        "",
+        "# Install",
+        "install_component()",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_unit_test_application_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include <xtd/xtd.tunit>",
+        "",
+        "using namespace xtd::tunit;",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  class test_class_(unit_test1) {",
+        "  public:",
+        "    void test_method_(test_method1) {",
+        "      assert::ignore(\"Hello, World!\");",
+        "    }",
+        "  };",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"unit_test1.cpp", lines);
+    }
+
     void create_doxygen_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "#---------------------------------------------------------------------------\n",
