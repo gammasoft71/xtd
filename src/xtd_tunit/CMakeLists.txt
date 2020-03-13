@@ -48,6 +48,7 @@ set(INCLUDES
   include/xtd/tunit
   include/xtd/tunit.h
   include/xtd/tunit_event_args.h
+  include/xtd/tunit_main.h
   include/xtd/unit_test.h
   include/xtd/valid.h
   include/xtd/xtd.tunit
@@ -59,6 +60,7 @@ set(SOURCES
   src/__demangle_gcc.cpp
   src/__demangle_win32.cpp
   src/base_assert.cpp
+  src/tunit_main.cpp
   src/test.cpp
   src/test_class.cpp
   src/unit_test.cpp
