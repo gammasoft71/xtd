@@ -124,6 +124,14 @@ namespace xtdc_command {
       return targets;
     }
 
+    std::string test(bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Clean project aborted.", path_);
+      build("", false, release);
+      change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
+      system(xtd::strings::format("ctest --output-on-failure --build-config {}", release ? "release" : "debug").c_str());
+      return xtd::strings::format("Project {0} tested", path_);
+    }
+
   private:
     std::string& get_name() const {
       static std::string name;

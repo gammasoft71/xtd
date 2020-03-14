@@ -61,7 +61,7 @@ namespace xtdc_command {
                              "  clean            Clean build output(s).\n"
                              "  open             Open a project in default ide.\n"
                              "  targets          List project targets.\n"
-//                             "  test             Runs unit tests using the test runner specified in the project.\n"
+                             "  test             Runs unit tests using the test runner specified in the project.\n"
 //                             "  uninstall        Uninstall a project.\n"
 //                             "  documentations   Open documentations.\n"
 //                             "  examples         Open xtd examples.\n"
@@ -211,7 +211,19 @@ namespace xtdc_command {
 
     static string get_test_help() noexcept {
       return "Runs unit tests using the test runner specified in the project.\n"
-      "Usage: test [options]\n";
+      "Usage: test [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -d, --debug         test debug config.\n"
+      "  -r, --release       test release config.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc test\n"
+      "    xtdc test -p my_app\n"
+      "    xtdc test --help\n";
     }
     
     static string get_uninstall_help() noexcept {
@@ -470,6 +482,25 @@ namespace xtdc_command {
     }
 
     static int test(const vector<string>& args) {
+      bool show_help = false;
+      string invalid_option;
+      bool release = false;
+      string path;
+      if (!process_test_arguments(args, show_help, release, path, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_test_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_test_help() << endl;
+      else {
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
+        cout << project.test(release) << endl;
+      }
       return 0;
     }
     
@@ -712,7 +743,7 @@ namespace xtdc_command {
         else if (command_args[0] == "open") return open(command_args);
         else if (command_args[0] == "run") return run(command_args);
         else if (command_args[0] == "targets") return targets(command_args);
-        //else if (command_args[0] == "test") return test(command_args);
+        else if (command_args[0] == "test") return test(command_args);
         //else if (command_args[0] == "uninstall") return uninstall(command_args);
         //else if (command_args[0] == "documentations" || command_args[0] == "documentation") return documentations(command_args);
         //else if (command_args[0] == "examples") return examples(command_args);
