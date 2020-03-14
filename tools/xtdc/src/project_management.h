@@ -1606,11 +1606,136 @@ namespace xtdc_command {
     }
     
     void create_catch2_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
+      create_catch2_unit_test_application_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_catch2_unit_test_application_cmakelists_txt(name);
+      create_catch2_unit_test_application_source(name);
+      create_catch2_unit_test_application_main(name);
     }
     
+    void create_catch2_unit_test_application_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "enable_testing()",
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_catch2_unit_test_application_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
+        "find_package(Catch2 REQUIRED)",
+        "set(SOURCES",
+        "  src/main.cpp",
+        "  src/unit_test1.cpp",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} ${SOURCES})",
+        "target_link_libraries(${PROJECT_NAME} Catch2::Catch2)",
+        "",
+        "add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_catch2_unit_test_application_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include <catch2/catch.hpp>",
+        "",
+        xtd::strings::format("namespace {0} {{", name),
+        "  TEST_CASE(\"unit_test1::test_method1\") {",
+        "    WARN(\"Hello, World!\");",
+        "    REQUIRE(true);",
+        "  }",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"unit_test1.cpp", lines);
+    }
+    
+    void create_catch2_unit_test_application_main(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#define CATCH_CONFIG_MAIN",
+        "#include <catch2/catch.hpp>",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
+    }
+
     void create_gtest_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
+      create_gtest_unit_test_application_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_gtest_unit_test_application_cmakelists_txt(name);
+      create_gtest_unit_test_application_source(name);
     }
     
+    void create_gtest_unit_test_application_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "enable_testing()",
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtest_unit_test_application_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
+        "find_package(GTest REQUIRED)",
+        "set(SOURCES",
+        "  src/unit_test1.cpp",
+        ")",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_CXX_STANDARD 17)",
+        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_executable(${PROJECT_NAME} ${SOURCES})",
+        "target_link_libraries(${PROJECT_NAME} GTest::GTest)",
+        "",
+        "add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_gtest_unit_test_application_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include <gtest/gtest.h>",
+        "",
+        xtd::strings::format("namespace {0} {{", name),
+        "  TEST(unit_test1, test_method1) {",
+        "  }",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"unit_test1.cpp", lines);
+    }
+
     void create_xtd_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
       create_xtd_unit_test_application_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"properties");
