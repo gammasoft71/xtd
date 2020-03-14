@@ -1659,8 +1659,8 @@ namespace xtdc_command {
         "",
         xtd::strings::format("namespace {0} {{", name),
         "  TEST_CASE(\"unit_test1::test_method1\") {",
-        "    WARN(\"Hello, World!\");",
         "    REQUIRE(true);",
+        "    WARN(\"Hello, World!\");",
         "  }",
         "}"
       };
@@ -1682,6 +1682,7 @@ namespace xtdc_command {
       std::filesystem::create_directories(path_/name/"src");
       create_gtest_unit_test_application_cmakelists_txt(name);
       create_gtest_unit_test_application_source(name);
+      create_gtest_unit_test_application_main(name);
     }
     
     void create_gtest_unit_test_application_solution_cmakelists_txt(const std::string& name) const {
@@ -1704,6 +1705,7 @@ namespace xtdc_command {
         xtd::strings::format("project({0} VERSION 1.0.0)", name),
         "find_package(GTest REQUIRED)",
         "set(SOURCES",
+        "  src/main.cpp",
         "  src/unit_test1.cpp",
         ")",
         "source_group(src FILES ${SOURCES})",
@@ -1712,6 +1714,9 @@ namespace xtdc_command {
         "set(CMAKE_CXX_STANDARD 17)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "if (WIN32)",
+        "  set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup\")",
+        "endif ()",
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})",
@@ -1729,11 +1734,25 @@ namespace xtdc_command {
         "",
         xtd::strings::format("namespace {0} {{", name),
         "  TEST(unit_test1, test_method1) {",
+        "    ASSERT_TRUE(false) << \"Hello, World!\";",
         "  }",
         "}"
       };
       
       xtd::io::file::write_all_lines(path_/name/"src"/"unit_test1.cpp", lines);
+    }
+    
+    void create_gtest_unit_test_application_main(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include <gtest/gtest.h>",
+        "",
+        "int main(int argc, char* argv[]) {",
+        "  testing::InitGoogleTest(&argc, argv);",
+        "  return RUN_ALL_TESTS();",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
     }
 
     void create_xtd_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
