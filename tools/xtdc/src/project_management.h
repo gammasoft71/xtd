@@ -1644,8 +1644,121 @@ namespace xtdc_command {
     }
     
     void create_xtd_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+      create_xtd_shared_library_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"properties");
+      create_xtd_shared_library_application_properties(name);
+      create_xtd_shared_library_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"include");
+      create_xtd_shared_library_include(name);
+      create_xtd_shared_library_export(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_xtd_shared_library_source(name);
     }
     
+    void create_xtd_shared_library_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_projects(",
+        xtd::strings::format("  {0}", name),
+        ")",
+        "",
+        "# Install",
+        "install_package()"
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_shared_library_application_properties(const std::string& name) const {
+      std::vector<std::string> lines{
+        xtd::strings::format("application_default_namespace(\"{}\")", name),
+        xtd::strings::format("application_name(\"{}\")", name),
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
+    }
+    
+    void create_xtd_shared_library_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_sources(",
+        "  include/class1.h",
+        "  include/export.h",
+        "  src/class1.cpp",
+        ")",
+        "target_type(SHARED_LIBRARY)",
+        "",
+        "# Install",
+        "add_install_include_directories(include)",
+        "install_component()",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_shared_library_include(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains class1 class.",
+        "#pragma once",
+        "#include \"export.h\"",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represents the class1 class",
+        xtd::strings::format("  {}_export_ class class1 {{", xtd::strings::to_lower(name)),
+        "  public:",
+        "    /// @brief Initializes a new instance of the class1 class.",
+        "    class1();",
+        "  };",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"class1.h", lines);
+    }
+    
+    void create_xtd_shared_library_export(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains export.",
+        "#pragma once",
+        "#if defined(WIN32)",
+        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::strings::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
+        "#  else",
+        xtd::strings::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
+        "#  endif",
+        "#else",
+        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::strings::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
+        "#  else",
+        xtd::strings::format("#    define {}_export_", xtd::strings::to_lower(name)),
+        "#  endif",
+        "#endif"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"export.h", lines);
+    }
+    
+    void create_xtd_shared_library_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include \"../include/class1.h\"",
+        "",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "class1::class1() {",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"class1.cpp", lines);
+    }
+
     void create_static_library(const std::string& name, project_sdk sdk, project_language language) const {
       if (sdk == project_sdk::xtd)
         create_xtd_static_library(name, sdk, language);
