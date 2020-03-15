@@ -140,21 +140,20 @@ namespace xtdc_command {
     }
     
     std::string uninstall(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Install project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} does not exists or is empty! Uninstall project aborted.", path_);
+      if (!std::filesystem::exists((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) return xtd::strings::format("File {0} does not exists! Uninstall project aborted.", ((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt").string());
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
-      if (std::filesystem::exists((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
-        std::filesystem::path app_path;
-        for (auto file : xtd::io::file::read_all_lines((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
-          if (std::filesystem::exists({file})) {
-            if (xtd::environment::os_version().is_osx_platform() && xtd::strings::contains(file, "Contents/MacOS"))
-              app_path = xtd::strings::remove(file, xtd::strings::index_of(file, "Contents/MacOS"));
-            std::filesystem::remove({file});
-          }
+
+      std::filesystem::path app_path;
+      for (auto file : xtd::io::file::read_all_lines((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
+        if (std::filesystem::exists({file})) {
+          if (xtd::environment::os_version().is_osx_platform() && xtd::strings::contains(file, "Contents/MacOS")) app_path = xtd::strings::remove(file, xtd::strings::index_of(file, "Contents/MacOS"));
+          std::filesystem::remove({file});
         }
-        
-        if (!app_path.empty())
-          std::filesystem::remove_all(app_path);
       }
+      
+      std::filesystem::remove((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt");
+      if (!app_path.empty()) std::filesystem::remove_all(app_path);
       return xtd::strings::format("Project {0} uninstalled", path_);
     }
 
