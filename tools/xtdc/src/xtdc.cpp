@@ -17,7 +17,7 @@ namespace xtdc_command {
   public:
     static int main(const vector<string>& args) {
       if (args.size() == 0) {
-        cout << get_usage() << endl;
+        cout << get_help() << endl;
         return -1;
       }
       
@@ -46,13 +46,16 @@ namespace xtdc_command {
   #endif
 
     static string get_help() noexcept {
-      return strings::format("xtdc Command Line Tools ({0})\n"
-                             "Usage: xtdc [options] [command] [arguments] [command-options]\n"
+      return strings::format("xtd command line tools ({0})\n"
+                             "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]\n"
                              "\n"
-                             "path-to-application:\n"
-                             "  The path to an application file to execute.\n"
+                             "options:\n"
+                             "  -i, --info       Display xtdc information.\n"
+                             "  -v, --version    Display xtdc version in use.\n"
+                             "  -h, --help       Display xtdc help.\n"
+
                              "\n"
-                             "SDK commands:\n"
+                             "command:\n"
                              "  new              Initialize project.\n"
 //                             "  add              Add new project to project.\n"
                              "  run              Compiles and immediately executes a project.\n"
@@ -69,15 +72,8 @@ namespace xtdc_command {
 //                             "  web              Open xtd website.\n"
                              "  help             Show help.\n"
                              "\n"
-                             "Common options:\n"
-                             "  -v|--verbosity        Set the verbosity level of the command. Allowed values are q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic].\n"
-                             "  -h|--help             Show help.\n"
-                             "\n"
-                             "Run 'xtdc COMMAND --help' for more information on a command.\n"
-                             "\n"
-                             "options:\n"
-                             "  --version        Display xtdc version in use.\n"
-                             "  --info           Display xtdc information.\n", get_version_number());
+                             "Run 'xtdc command --help' for more information on a command.\n"
+                             "\n", get_version_number());
     }
     
     static string get_add_help() noexcept {
@@ -87,9 +83,9 @@ namespace xtdc_command {
 
     static string get_build_help() noexcept {
       return "Builds a project.\n"
-      "Usage: build [options]\n"
+      "Usage: build [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -d, --debug         build debug config.\n"
       "  -r, --release       build release config.\n"
@@ -106,9 +102,9 @@ namespace xtdc_command {
     
     static string get_clean_help() noexcept {
       return "Clean build output(s).\n"
-      "Usage: clean [options]\n"
+      "Usage: clean [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -d, --debug         clean debug config.\n"
       "  -r, --release       clean release config.\n"
@@ -123,9 +119,9 @@ namespace xtdc_command {
     
     static string get_install_help() noexcept {
       return "Install a project.\n"
-      "Usage: install [options]\n"
+      "Usage: install [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -d, --debug         install debug config.\n"
       "  -r, --release       install release config.\n"
@@ -140,9 +136,9 @@ namespace xtdc_command {
     
     static string get_open_help() noexcept {
       return "Open a project in default ide.\n"
-      "Usage: open [options]\n"
+      "Usage: open [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -d, --debug         open debug config.\n"
       "  -r, --release       open release config.\n"
@@ -157,28 +153,31 @@ namespace xtdc_command {
     
     static string get_new_help() noexcept {
       return "Initialize project.\n"
-      "Usage: new template_short_name [options]\n"
+      "Usage: new [template-short-name] [name] [<options>]\n"
       "\n"
-      "Options:\n"
+      "template-short-name:\n"
+      "  A template short name of the following table. If no short name specified, gui is used.\n"
+      "  Templates               Short Name     SDK/Language                      \n"
+      "  -------------------------------------------------------------------------\n"
+      "  GUI Application         gui            [xtd], cocoa, fltk, gtk+2, gtk+3, \n"
+      "                                         gtkmm, wxwidgets, qt5, win32,     \n"
+      "                                         winforms, wpf                     \n"
+      "  Console Application     console        [xtd], c++, c, c#, objective-c    \n"
+      "  Static library          staticlib      [xtd], c++, c, c#, objective-c    \n"
+      "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c    \n"
+      "  Unit Test Project       test           [xtd], gtest, catch2              \n"
+      "  Solution File           sln            [xtd]                             \n"
+      "\n"
+      "name:\n"
+      "  The name for the project. If no name is specified, the name of the specified path or of the current directory is used.\n"
+      "\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -l, --list          Lists templates containing the specified name. If no name is specified, lists all templates.\n"
-      "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.\n"
       "  -p, --path          Location to place the generated output.\n"
       "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".\n"
       "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.\n"
       "  --force             Forces content to be generated even if it would change existing files.\n"
-      "\n"
-      "\n"
-      "Templates               Short Name     SDK/Language                      \n"
-      "-------------------------------------------------------------------------\n"
-      "Console Application     console        [xtd], c++, c, c#, objective-c    \n"
-      "GUI Application         gui            [xtd], cocoa, fltk, gtk+2, gtk+3, \n"
-      "                                       gtkmm, wxwidgets, qt5, win32,     \n"
-      "                                       winforms, wpf                     \n"
-      "Static library          staticlib      [xtd], c++, c, c#, objective-c    \n"
-      "Shared library          sharedlib      [xtd], c++, c, c#, objective-c    \n"
-      "Unit Test Project       test           [xtd], gtest, catch2              \n"
-      "Solution File           sln            [xtd]                             \n"
       "\n"
       "\n"
       "Exemples:\n"
@@ -189,9 +188,9 @@ namespace xtdc_command {
 
     static string get_run_help() noexcept {
       return "Compiles and immediately executes a project.\n"
-      "Usage: run [options]\n"
+      "Usage: run [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -d, --debug         run debug config.\n"
       "  -r, --release       run release config.\n"
@@ -208,9 +207,9 @@ namespace xtdc_command {
     
     static string get_targets_help() noexcept {
       return "List project targets.\n"
-      "Usage: clean [options]\n"
+      "Usage: clean [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -p, --path          Project path location.\n"
       "\n"
@@ -223,9 +222,9 @@ namespace xtdc_command {
 
     static string get_test_help() noexcept {
       return "Runs unit tests using the test runner specified in the project.\n"
-      "Usage: test [options]\n"
+      "Usage: test [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -d, --debug         test debug config.\n"
       "  -r, --release       test release config.\n"
@@ -240,9 +239,9 @@ namespace xtdc_command {
     
     static string get_uninstall_help() noexcept {
       return "Uninstall a project.\n"
-      "Usage: uninstall [options]\n"
+      "Usage: uninstall [<options>]\n"
       "\n"
-      "Options:\n"
+      "options:\n"
       "  -h, --help          Displays help for this command.\n"
       "  -d, --debug         uninstall debug config.\n"
       "  -r, --release       uninstall release config.\n"
@@ -255,7 +254,6 @@ namespace xtdc_command {
       "    xtdc uninstall --help\n";
     }
     
-
     static string get_info() noexcept {
       return strings::format("xtdc:\n"
                             "  Version: {0}\n"
@@ -271,19 +269,6 @@ namespace xtdc_command {
       return names[environment::os_version().platform()];
     }
 
-    static string get_usage() noexcept {
-      return "Usage: xtdc [options]\n"
-      "Usage: xtdc [path-to-application]\n"
-      "\n"
-      "Options:\n"
-      "  -h|--help        Display help.\n"
-      "  --info           Display xtdc information.\n"
-      "  --version        Display xtdc version in use.\n"
-      "\n"
-      "path-to-application:\n"
-      "  The path to an application file to execute.\n";
-    }
-    
     static string get_version() noexcept {
       return strings::format("xtdc version {}, © {:L} by Gammasoft", get_version_number(), chrono::system_clock::now());
     }
@@ -688,23 +673,23 @@ namespace xtdc_command {
     
     static bool process_new_arguments(const vector<string>& args, bool& show_help, bool& show_list, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
-        if (args[i] == "-h" || args[i] == "--help")
+        if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
-        else if (!strings::starts_with(args[i], '-')) {
-          type = args[i];
         } else if (args[i] == "-p" || args[i] == "--path") {
           if (i+1 >= args.size()) return false;
           path = args[++i];
-        } else if (args[i] == "-n" || args[i] == "--name") {
-          if (i+1 >= args.size()) return false;
-          name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
           if (i+1 >= args.size()) return false;
           sdk = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
-        }
+        } else if (type.empty()) {
+            type = args[i];
+        } else if (name.empty()) {
+          name = args[i];
+        } else
+          return false;
       }
       return true;
     }
