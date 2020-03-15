@@ -1625,11 +1625,136 @@ namespace xtdc_command {
     }
 
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+      if (sdk == project_sdk::xtd)
+        create_xtd_shared_library(name, sdk, language);
+      else
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_c_shared_library}}, {project_language::cpp, {*this, &project_management::create_cpp_shared_library}}, {project_language::csharp, {*this, &project_management::create_csharp_shared_library}}, {project_language::objectivec, {*this, &project_management::create_objectivec_shared_library}}}[language](name, sdk, language);
+    }
+    
+    void create_c_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_cpp_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_csharp_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_objectivec_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_xtd_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
     void create_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+      if (sdk == project_sdk::xtd)
+        create_xtd_static_library(name, sdk, language);
+      else
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_c_static_library}}, {project_language::cpp, {*this, &project_management::create_cpp_static_library}}, {project_language::csharp, {*this, &project_management::create_csharp_static_library}}, {project_language::objectivec, {*this, &project_management::create_objectivec_static_library}}}[language](name, sdk, language);
     }
     
+    void create_c_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_cpp_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_csharp_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_objectivec_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    }
+    
+    void create_xtd_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+      create_xtd_static_library_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"properties");
+      create_xtd_static_library_application_properties(name);
+      create_xtd_static_library_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"include");
+      create_xtd_static_library_include(name);
+      std::filesystem::create_directories(path_/name/"src");
+      create_xtd_static_library_source(name);
+    }
+    
+    void create_xtd_static_library_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_projects(",
+        xtd::strings::format("  {0}", name),
+        ")",
+        "",
+        "# Install",
+        "install_package()"
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_static_library_application_properties(const std::string& name) const {
+      std::vector<std::string> lines{
+        xtd::strings::format("application_default_namespace(\"{}\")", name),
+        xtd::strings::format("application_name(\"{}\")", name),
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
+    }
+    
+    void create_xtd_static_library_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0})", name),
+        "find_package(xtd REQUIRED)",
+        "add_sources(",
+        "  include/class1.h",
+        "  src/class1.cpp",
+        ")",
+        "target_type(STATIC_LIBRARY)",
+        "",
+        "# Install",
+        "add_install_include_directories(include)",
+        "install_component()",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_xtd_static_library_include(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/// @file",
+        "/// @brief Contains class1 class.",
+        "#pragma once",
+        "",
+        xtd::strings::format("namespace {} {{", name),
+        "  /// @brief Represents the class1 class",
+        "  class class1 {",
+        "  public:",
+        "    /// @brief Initializes a new instance of the class1 class.",
+        "    class1();",
+        "  };",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"class1.h", lines);
+    }
+    
+    void create_xtd_static_library_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include \"../include/class1.h\"",
+        "",
+        xtd::strings::format("using namespace {};", name),
+        "",
+        "class1::class1() {",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"class1.cpp", lines);
+    }
+
     void create_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
       std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::catch2, {*this, &project_management::create_catch2_unit_test_application}}, {project_sdk::gtest, {*this, &project_management::create_gtest_unit_test_application}}, {project_sdk::xtd, {*this, &project_management::create_xtd_unit_test_application}}}[sdk](name, sdk, language);
     }
