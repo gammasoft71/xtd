@@ -50,14 +50,14 @@ namespace xtdc_command {
         "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]\n"
         "\n"
         "options:\n"
-        "  -i, --info       Display xtdc information.\n"
-        "  -v, --version    Display xtdc version in use.\n"
-        "  -h, --help       Display xtdc help.\n"
+        "  -i, --info       Display information.\n"
+        "  -v, --version    Display version in use.\n"
+        "  -h, --help       Display help.\n"
 
         "\n"
         "command:\n"
         "  new              Initialize project.\n"
-//        "  add              Add new project to project.\n"
+        //"  add              Add new project to project.\n"
         "  run              Compiles and immediately executes a project.\n"
         "  build            Builds a project.\n"
         "  install          Install a project.\n"
@@ -66,14 +66,14 @@ namespace xtdc_command {
         "  targets          List project targets.\n"
         "  test             Runs unit tests using the test runner specified in the project.\n"
         "  uninstall        Uninstall a project.\n"
-//        "  documentations   Open documentations.\n"
-//        "  examples         Open xtd examples.\n"
-//        "  guide            Open xtd reference guide.\n"
-//        "  web              Open xtd website.\n"
+        //"  documentations   Open documentations.\n"
+        //"  examples         Open xtd examples.\n"
+        //"  guide            Open xtd reference guide.\n"
+        //"  web              Open xtd website.\n"
         "  help             Show help.\n"
         "\n"
         "Run 'xtdc command --help' for more information on a command.\n"
-                             "\n";
+        "\n";
     }
     
     static string get_add_help() noexcept {
