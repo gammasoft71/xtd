@@ -69,6 +69,8 @@ namespace xtdc_command {
       if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {0} already exists and not empty! Create project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
       std::filesystem::create_directories(std::filesystem::path {path_}/"build");
+      create_doxygen_txt(name);
+      create_readme_md(name);
       std::map<project_type, xtd::action<const std::string&, project_sdk, project_language>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language);
       generate(name);
       return xtd::strings::format("Project {} created", path_);
@@ -234,7 +236,6 @@ namespace xtdc_command {
     std::filesystem::path working_dir() const {return path_/"build";}
 
     void create_blank_solution(const std::string& name, project_sdk sdk, project_language language) {
-      create_doxygen_txt(name);
       create_blank_solution_cmakelists_txt(name);
     }
     
@@ -255,7 +256,6 @@ namespace xtdc_command {
     }
 
     void create_console(const std::string& name, project_sdk sdk, project_language language) const {
-      create_doxygen_txt(name);
       if (sdk == project_sdk::xtd)
         create_xtd_console(name, sdk, language);
       else
@@ -583,7 +583,6 @@ namespace xtdc_command {
     }
 
     void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_doxygen_txt(name);
       std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::fltk, {*this, &project_management::create_fltk_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::wxwidgets, {*this, &project_management::create_wxwidgets_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
     }
     
@@ -1626,15 +1625,12 @@ namespace xtdc_command {
     }
 
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
-      create_doxygen_txt(name);
     }
     
     void create_static_library(const std::string& name, project_sdk sdk, project_language language) const {
-      create_doxygen_txt(name);
     }
     
     void create_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
-      create_doxygen_txt(name);
       std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::catch2, {*this, &project_management::create_catch2_unit_test_application}}, {project_sdk::gtest, {*this, &project_management::create_gtest_unit_test_application}}, {project_sdk::xtd, {*this, &project_management::create_xtd_unit_test_application}}}[sdk](name, sdk, language);
     }
     
@@ -2046,7 +2042,14 @@ namespace xtdc_command {
         "DOT_CLEANUP            = YES\n",
       };
       xtd::io::file::write_all_lines(path_/".doxygen.txt", lines);
-   }
+    }
+    
+    void create_readme_md(const std::string& name) const {
+      std::vector<std::string> lines {
+        xtd::strings::format("# {}", name),
+      };
+      xtd::io::file::write_all_lines(path_/"README.md", lines);
+    }
 
     void generate() const {generate("");}
 
