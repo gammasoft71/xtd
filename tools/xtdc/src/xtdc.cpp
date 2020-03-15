@@ -57,12 +57,12 @@ namespace xtdc_command {
 //                             "  add              Add new project to project.\n"
                              "  run              Compiles and immediately executes a project.\n"
                              "  build            Builds a project.\n"
-//                             "  install          Install a project.\n"
+                             "  install          Install a project.\n"
                              "  clean            Clean build output(s).\n"
                              "  open             Open a project in default ide.\n"
                              "  targets          List project targets.\n"
                              "  test             Runs unit tests using the test runner specified in the project.\n"
-//                             "  uninstall        Uninstall a project.\n"
+                             "  uninstall        Uninstall a project.\n"
 //                             "  documentations   Open documentations.\n"
 //                             "  examples         Open xtd examples.\n"
 //                             "  guide            Open xtd reference guide.\n"
@@ -123,7 +123,19 @@ namespace xtdc_command {
     
     static string get_install_help() noexcept {
       return "Install a project.\n"
-      "Usage: install [options]\n";
+      "Usage: install [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -d, --debug         install debug config.\n"
+      "  -r, --release       install release config.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc install\n"
+      "    xtdc install -p my_app\n"
+      "    xtdc install --help\n";
     }
     
     static string get_open_help() noexcept {
@@ -228,7 +240,19 @@ namespace xtdc_command {
     
     static string get_uninstall_help() noexcept {
       return "Uninstall a project.\n"
-      "Usage: uninstall [options]\n";
+      "Usage: uninstall [options]\n"
+      "\n"
+      "Options:\n"
+      "  -h, --help          Displays help for this command.\n"
+      "  -d, --debug         uninstall debug config.\n"
+      "  -r, --release       uninstall release config.\n"
+      "  -p, --path          Project path location.\n"
+      "\n"
+      "\n"
+      "Exemples:\n"
+      "    xtdc uninstall\n"
+      "    xtdc uninstall -p my_app\n"
+      "    xtdc uninstall --help\n";
     }
     
 
@@ -409,6 +433,25 @@ namespace xtdc_command {
     }
     
     static int install(const vector<string>& args) {
+      bool show_help = false;
+      string invalid_option;
+      bool release = false;
+      string path;
+      if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_install_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_install_help() << endl;
+      else {
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
+        cout << project.install(release) << endl;
+      }
       return 0;
     }
 
@@ -505,6 +548,25 @@ namespace xtdc_command {
     }
     
     static int uninstall(const vector<string>& args) {
+      bool show_help = false;
+      string invalid_option;
+      bool release = false;
+      string path;
+      if (!process_uninstall_arguments(args, show_help, release, path, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << get_uninstall_help() << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << get_uninstall_help() << endl;
+      else {
+        if (path.empty()) path = environment::current_directory();
+        project_management project(filesystem::absolute(filesystem::path(path)));
+        cout << project.uninstall(release) << endl;
+      }
       return 0;
     }
     
@@ -739,12 +801,12 @@ namespace xtdc_command {
         else if (command_args[0] == "build") return build(command_args);
         else if (command_args[0] == "clean") return clean(command_args);
         else if (command_args[0] == "help") return help(command_args);
-        //else if (command_args[0] == "install") return install(command_args);
+        else if (command_args[0] == "install") return install(command_args);
         else if (command_args[0] == "open") return open(command_args);
         else if (command_args[0] == "run") return run(command_args);
         else if (command_args[0] == "targets") return targets(command_args);
         else if (command_args[0] == "test") return test(command_args);
-        //else if (command_args[0] == "uninstall") return uninstall(command_args);
+        else if (command_args[0] == "uninstall") return uninstall(command_args);
         //else if (command_args[0] == "documentations" || command_args[0] == "documentation") return documentations(command_args);
         //else if (command_args[0] == "examples") return examples(command_args);
         //else if (command_args[0] == "guide") return guide(command_args);
