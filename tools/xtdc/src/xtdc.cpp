@@ -46,34 +46,34 @@ namespace xtdc_command {
   #endif
 
     static string get_help() noexcept {
-      return strings::format("xtd command line tools ({0})\n"
-                             "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]\n"
-                             "\n"
-                             "options:\n"
-                             "  -i, --info       Display xtdc information.\n"
-                             "  -v, --version    Display xtdc version in use.\n"
-                             "  -h, --help       Display xtdc help.\n"
+      return "\n"
+        "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]\n"
+        "\n"
+        "options:\n"
+        "  -i, --info       Display xtdc information.\n"
+        "  -v, --version    Display xtdc version in use.\n"
+        "  -h, --help       Display xtdc help.\n"
 
-                             "\n"
-                             "command:\n"
-                             "  new              Initialize project.\n"
-//                             "  add              Add new project to project.\n"
-                             "  run              Compiles and immediately executes a project.\n"
-                             "  build            Builds a project.\n"
-                             "  install          Install a project.\n"
-                             "  clean            Clean build output(s).\n"
-                             "  open             Open a project in default ide.\n"
-                             "  targets          List project targets.\n"
-                             "  test             Runs unit tests using the test runner specified in the project.\n"
-                             "  uninstall        Uninstall a project.\n"
-//                             "  documentations   Open documentations.\n"
-//                             "  examples         Open xtd examples.\n"
-//                             "  guide            Open xtd reference guide.\n"
-//                             "  web              Open xtd website.\n"
-                             "  help             Show help.\n"
-                             "\n"
-                             "Run 'xtdc command --help' for more information on a command.\n"
-                             "\n", get_version_number());
+        "\n"
+        "command:\n"
+        "  new              Initialize project.\n"
+//        "  add              Add new project to project.\n"
+        "  run              Compiles and immediately executes a project.\n"
+        "  build            Builds a project.\n"
+        "  install          Install a project.\n"
+        "  clean            Clean build output(s).\n"
+        "  open             Open a project in default ide.\n"
+        "  targets          List project targets.\n"
+        "  test             Runs unit tests using the test runner specified in the project.\n"
+        "  uninstall        Uninstall a project.\n"
+//        "  documentations   Open documentations.\n"
+//        "  examples         Open xtd examples.\n"
+//        "  guide            Open xtd reference guide.\n"
+//        "  web              Open xtd website.\n"
+        "  help             Show help.\n"
+        "\n"
+        "Run 'xtdc command --help' for more information on a command.\n"
+                             "\n";
     }
     
     static string get_add_help() noexcept {
@@ -255,13 +255,14 @@ namespace xtdc_command {
     }
     
     static string get_info() noexcept {
-      return strings::format("xtdc:\n"
-                            "  Version: {0}\n"
-                            "\n"
-                            "System Environment:\n"
-                            "  OS Name:    {1}\n"
-                            "  OS Version: {2}\n"
-                            "  Base Path:  {3}\n", get_version_number(), get_os_name(), environment::os_version().version().to_string(2), get_base_path());
+      return strings::format("\n"
+        "xtdc:\n"
+        "  Version: {0}\n"
+        "\n"
+        "System Environment:\n"
+        "  OS Name:    {1}\n"
+        "  OS Version: {2}\n"
+        "  Base Path:  {3}\n", get_version_number(), get_os_name(), environment::os_version().version().to_string(2), get_base_path());
     }
 
     static string get_os_name() noexcept {
@@ -575,9 +576,9 @@ namespace xtdc_command {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
-        else if (args[i] == "--info")
+        else if (args[i] == "-i" || args[i] == "--info")
           show_info = true;
-        else if (args[i] == "--version")
+        else if (args[i] == "-v" || args[i] == "--version")
           show_version = true;
         else if (!strings::starts_with(args[i], '-')) {
           command_args = vector<string>(args.size() - i);
@@ -774,13 +775,13 @@ namespace xtdc_command {
     }
 
     static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<string>& command_args) {
-      if (show_version)
+      if (show_version || show_info || show_help) {
         cout << get_version() << endl;
-      else if (show_help)
-        cout << get_help() << endl;
-      else if (show_info)
-        cout << get_info() << endl;
-      else {
+        if (show_info)
+          cout << get_info() << endl;
+        if (show_help)
+          cout << get_help() << endl;
+      } else {
         if (command_args[0] == "new") return new_project(command_args);
         //else if (command_args[0] == "add") return add(command_args);
         else if (command_args[0] == "build") return build(command_args);
