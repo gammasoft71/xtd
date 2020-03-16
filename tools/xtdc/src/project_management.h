@@ -68,6 +68,7 @@ namespace xtdc_command {
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
       if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} already exists and not empty! Create project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
+      if (type == project_type::static_library && sdk == project_sdk::none && language == project_language::csharp) type = project_type::shared_library;
       std::filesystem::create_directories(std::filesystem::path {path_}/"build");
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -1809,7 +1810,7 @@ namespace xtdc_command {
         "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represents the main class",
-        "  class Class1 {",
+        "  public class Class1 {",
         "    /// @brief Initializes a new instance of the class1 class.",
         "    public Class1() {",
         "    }",
@@ -2187,7 +2188,7 @@ namespace xtdc_command {
         "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represents the main class",
-        "  class Class1 {",
+        "  public class Class1 {",
         "    /// @brief Initializes a new instance of the class1 class.",
         "    public Class1() {",
         "    }",
