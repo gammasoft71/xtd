@@ -263,8 +263,8 @@ namespace xtdc_command {
     }
 
     void create_c_console(const std::string& name, project_sdk sdk, project_language language) const {
-      create_c_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_c_console_solution_cmakelists_txt(name);
       create_c_console_cmakelists_txt(name);
       create_c_console_source(name);
     }
@@ -317,8 +317,8 @@ namespace xtdc_command {
     }
 
     void create_cpp_console(const std::string& name, project_sdk sdk, project_language language) const {
-      create_cpp_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_cpp_console_solution_cmakelists_txt(name);
       create_cpp_console_cmakelists_txt(name);
       create_cpp_console_source(name);
     }
@@ -373,8 +373,8 @@ namespace xtdc_command {
     }
 
     void create_csharp_console(const std::string& name, project_sdk sdk, project_language language) const {
-      create_csharp_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_csharp_console_solution_cmakelists_txt(name);
       create_csharp_console_cmakelists_txt(name);
       create_csharp_console_source(name);
     }
@@ -433,8 +433,8 @@ namespace xtdc_command {
     }
 
     void create_objectivec_console(const std::string& name, project_sdk sdk, project_language language) const {
-      create_objectivec_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_objectivec_console_solution_cmakelists_txt(name);
       create_objectivec_console_cmakelists_txt(name);
       create_objectivec_console_source(name);
     }
@@ -488,10 +488,10 @@ namespace xtdc_command {
     }
 
     void create_xtd_console(const std::string& name, project_sdk sdk, project_language language) const {
-      create_xtd_console_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"properties");
-      create_xtd_console_application_properties(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_xtd_console_solution_cmakelists_txt(name);
+      create_xtd_console_application_properties(name);
       create_xtd_console_cmakelists_txt(name);
       create_xtd_console_include(name);
       create_xtd_console_source(name);
@@ -587,8 +587,8 @@ namespace xtdc_command {
     }
     
     void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_cocoa_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_cocoa_gui_solution_cmakelists_txt(name);
       create_cocoa_gui_cmakelists_txt(name);
       create_cocoa_gui_include(name);
       create_cocoa_gui_source(name);
@@ -690,8 +690,8 @@ namespace xtdc_command {
     }
 
     void create_fltk_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_fltk_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_fltk_gui_solution_cmakelists_txt(name);
       create_fltk_gui_cmakelists_txt(name);
       create_fltk_gui_include(name);
       create_fltk_gui_source(name);
@@ -791,8 +791,8 @@ namespace xtdc_command {
     }
 
     void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_gtk2_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_gtk2_gui_solution_cmakelists_txt(name);
       create_gtk2_gui_cmakelists_txt(name);
       create_gtk2_gui_source(name);
     }
@@ -857,8 +857,8 @@ namespace xtdc_command {
     }
 
     void create_gtk3_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_gtk3_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_gtk3_gui_solution_cmakelists_txt(name);
       create_gtk3_gui_cmakelists_txt(name);
       create_gtk3_gui_source(name);
     }
@@ -923,8 +923,8 @@ namespace xtdc_command {
     }
 
     void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_gtkmm_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_gtkmm_gui_solution_cmakelists_txt(name);
       create_gtkmm_gui_cmakelists_txt(name);
       create_gtkmm_gui_include(name);
       create_gtkmm_gui_source(name);
@@ -1028,8 +1028,8 @@ namespace xtdc_command {
     }
 
     void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_qt5_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_qt5_gui_solution_cmakelists_txt(name);
       create_qt5_gui_cmakelists_txt(name);
       create_qt5_gui_include(name);
       create_qt5_gui_source(name);
@@ -1133,8 +1133,8 @@ namespace xtdc_command {
     }
 
     void create_win32_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_win32_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_win32_gui_solution_cmakelists_txt(name);
       create_win32_gui_cmakelists_txt(name);
       create_win32_gui_source(name);
     }
@@ -1206,8 +1206,8 @@ namespace xtdc_command {
     }
 
     void create_winforms_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_winforms_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_winforms_gui_solution_cmakelists_txt(name);
       create_winforms_gui_cmakelists_txt(name);
       create_winforms_gui_source(name);
     }
@@ -1282,8 +1282,8 @@ namespace xtdc_command {
     }
 
     void create_wpf_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_wpf_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_wpf_gui_solution_cmakelists_txt(name);
       create_wpf_gui_cmakelists_txt(name);
       create_wpf_gui_source(name);
       create_wpf_gui_window1_xaml(name);
@@ -1421,8 +1421,8 @@ namespace xtdc_command {
     }
 
     void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_wxwidgets_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_wxwidgets_gui_solution_cmakelists_txt(name);
       create_wxwidgets_gui_cmakelists_txt(name);
       create_wxwidgets_gui_include(name);
       create_wxwidgets_gui_source(name);
@@ -1524,10 +1524,10 @@ namespace xtdc_command {
     }
 
     void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      create_xtd_gui_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"properties");
-      create_xtd_gui_application_properties(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_xtd_gui_solution_cmakelists_txt(name);
+      create_xtd_gui_application_properties(name);
       create_xtd_gui_cmakelists_txt(name);
       create_xtd_gui_include(name);
       create_xtd_gui_source(name);
@@ -1644,14 +1644,14 @@ namespace xtdc_command {
     }
     
     void create_xtd_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
-      create_xtd_shared_library_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"properties");
+      std::filesystem::create_directories(path_/name/"src");
+      create_xtd_shared_library_solution_cmakelists_txt(name);
       create_xtd_shared_library_application_properties(name);
       create_xtd_shared_library_cmakelists_txt(name);
-      std::filesystem::create_directories(path_/name/"include");
       create_xtd_shared_library_include(name);
       create_xtd_shared_library_export(name);
-      std::filesystem::create_directories(path_/name/"src");
       create_xtd_shared_library_source(name);
     }
     
@@ -1767,8 +1767,80 @@ namespace xtdc_command {
     }
     
     void create_c_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+      std::filesystem::create_directories(path_/name/"include");
+      std::filesystem::create_directories(path_/name/"src");
+      create_c_static_library_solution_cmakelists_txt(name);
+      create_c_static_library_cmakelists_txt(name);
+      create_c_static_library_include(name);
+      create_c_static_library_source(name);
     }
     
+    void create_c_static_library_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({0})", name),
+        xtd::strings::format("add_subdirectory({0})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_c_static_library_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({0} VERSION 1.0.0)", name),
+        "set(INCLUDES",
+        "  include/file1.h",
+        ")",
+        "set(SOURCES",
+        "  src/file1.c",
+        ")",
+        "source_group(include FILES ${INCLUDES})",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_c_static_library_include(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/**",
+        " * @file",
+        " * @brief Contains do_stuff method.",
+        " */",
+        "#pragma once",
+        "",
+        "/** ",
+        " * @brief Represent do_stuff method.",
+        " */",
+        "void do_stuff();",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"file1.h", lines);
+    }
+    
+    void create_c_static_library_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include \"../include/file1.h\"",
+        "",
+        "void do_stuff() {",
+        "}"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"file1.c", lines);
+    }
+
     void create_cpp_static_library(const std::string& name, project_sdk sdk, project_language language) const {
     }
     
@@ -1779,13 +1851,13 @@ namespace xtdc_command {
     }
     
     void create_xtd_static_library(const std::string& name, project_sdk sdk, project_language language) const {
-      create_xtd_static_library_solution_cmakelists_txt(name);
+      std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"properties");
+      std::filesystem::create_directories(path_/name/"src");
+      create_xtd_static_library_solution_cmakelists_txt(name);
       create_xtd_static_library_application_properties(name);
       create_xtd_static_library_cmakelists_txt(name);
-      std::filesystem::create_directories(path_/name/"include");
       create_xtd_static_library_include(name);
-      std::filesystem::create_directories(path_/name/"src");
       create_xtd_static_library_source(name);
     }
     
@@ -1873,8 +1945,8 @@ namespace xtdc_command {
     }
     
     void create_catch2_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
-      create_catch2_unit_test_application_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_catch2_unit_test_application_solution_cmakelists_txt(name);
       create_catch2_unit_test_application_cmakelists_txt(name);
       create_catch2_unit_test_application_source(name);
       create_catch2_unit_test_application_main(name);
@@ -1945,8 +2017,8 @@ namespace xtdc_command {
     }
 
     void create_gtest_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
-      create_gtest_unit_test_application_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_gtest_unit_test_application_solution_cmakelists_txt(name);
       create_gtest_unit_test_application_cmakelists_txt(name);
       create_gtest_unit_test_application_source(name);
       create_gtest_unit_test_application_main(name);
@@ -2023,10 +2095,10 @@ namespace xtdc_command {
     }
 
     void create_xtd_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
-      create_xtd_unit_test_application_solution_cmakelists_txt(name);
       std::filesystem::create_directories(path_/name/"properties");
-      create_xtd_unit_test_application_application_properties(name);
       std::filesystem::create_directories(path_/name/"src");
+      create_xtd_unit_test_application_solution_cmakelists_txt(name);
+      create_xtd_unit_test_application_application_properties(name);
       create_xtd_unit_test_application_cmakelists_txt(name);
       create_xtd_unit_test_application_source(name);
     }
