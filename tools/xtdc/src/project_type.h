@@ -2,6 +2,7 @@
 
 namespace xtdc_command {
   enum class project_type {
+    unknown,
     blank_solution,
     console,
     gui,
