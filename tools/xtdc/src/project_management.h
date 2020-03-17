@@ -1632,8 +1632,130 @@ namespace xtdc_command {
     }
     
     void create_c_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+      std::filesystem::create_directories(path_/name/"include");
+      std::filesystem::create_directories(path_/name/"src");
+      create_c_shared_library_solution_cmakelists_txt(name);
+      create_c_shared_library_cmakelists_txt(name);
+      create_c_shared_library_export(name);
+      create_c_shared_library_include(name);
+      create_c_shared_library_source(name);
     }
     
+    void create_c_shared_library_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({})", name),
+        xtd::strings::format("add_subdirectory({})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_c_shared_library_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.3)",
+        "",
+        "# Project",
+        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        "set(INCLUDES",
+        "  include/export.h",
+        "  include/file1.h",
+        ")",
+        "set(SOURCES",
+        "  src/file1.c",
+        ")",
+        "source_group(include FILES ${INCLUDES})",
+        "source_group(src FILES ${SOURCES})",
+        "",
+        "# Options",
+        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD_REQUIRED ON)",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        xtd::strings::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
+        "",
+        "# Application properties",
+        "add_library(${PROJECT_NAME} SHARED ${INCLUDES} ${SOURCES})",
+        "",
+        "# Install",
+        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        "  \"include(CMakeFindDependencyMacro)\\n\"",
+        "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
+        "  \"\\n\"",
+        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        "  \"\\n\"",
+        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        ")",
+        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
+        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
+        "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
+        "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_c_shared_library_include(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/**",
+        " * @file",
+        " * @brief Contains do_stuff method.",
+        " */",
+        "#pragma once",
+        "#include \"export.h\"",
+        "",
+        "/** ",
+        " * @brief Represent do_stuff method.",
+        " */",
+        xtd::strings::format("{}_export_ void do_stuff();", xtd::strings::to_lower(name)),
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"file1.h", lines);
+    }
+    
+    void create_c_shared_library_export(const std::string& name) const {
+      std::vector<std::string> lines {
+        "/**",
+        " * @file",
+        " * @brief Contains export.",
+        " */",
+        "#pragma once",
+        "",
+        "/** @cond */",
+        "#if defined(WIN32)",
+        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::strings::format("#    define {}_export_ __declspec(dllexport)", xtd::strings::to_lower(name)),
+        "#  else",
+        xtd::strings::format("#    define {}_export_ __declspec(dllimport)", xtd::strings::to_lower(name)),
+        "#  endif",
+        "#else",
+        xtd::strings::format("#  if defined({}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::strings::format("#    define {}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
+        "#  else",
+        xtd::strings::format("#    define {}_export_", xtd::strings::to_lower(name)),
+        "#  endif",
+        "#endif",
+        "/** @endcond */",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"export.h", lines);
+    }
+
+    void create_c_shared_library_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#include \"../include/file1.h\"",
+        "",
+        "void do_stuff() {",
+        "}",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"file1.c", lines);
+    }
+
     void create_cpp_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"src");
