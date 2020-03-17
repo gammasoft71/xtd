@@ -1895,7 +1895,7 @@ endif()
 ################################################################################
 # Reference Guide Generator
 
-option(ADD_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" OFF)
+option(ADD_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" ON)
 option(DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
 
 if (ADD_COMMAND_REFERENCE_GUIDE_GENERATOR AND NOT DOXYGEN_FOUND)  
