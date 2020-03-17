@@ -68,7 +68,6 @@ namespace xtdc_command {
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
       if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} already exists and not empty! Create project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
-      if (type == project_type::static_library && sdk == project_sdk::none && language == project_language::csharp) type = project_type::shared_library;
       std::filesystem::create_directories(std::filesystem::path {path_}/"build");
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -1671,12 +1670,12 @@ namespace xtdc_command {
         ")",
         "source_group(include FILES ${INCLUDES})",
         "source_group(src FILES ${SOURCES})",
-        xtd::strings::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
         "",
         "# Options",
         "set(CMAKE_CXX_STANDARD 17)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        xtd::strings::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
         "",
         "# Application properties",
         "add_library(${PROJECT_NAME} SHARED ${INCLUDES} ${SOURCES})",
@@ -1797,6 +1796,24 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_library(${PROJECT_NAME} SHARED ${SOURCES})",
+        "",
+        "# Install",
+        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        "  \"include(CMakeFindDependencyMacro)\\n\"",
+        "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
+        "  \"\\n\"",
+        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        "  \"\\n\"",
+        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        ")",
+        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
+        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
+        "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
+        "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
       
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
@@ -1822,8 +1839,107 @@ namespace xtdc_command {
     }
 
     void create_objectivec_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+      std::filesystem::create_directories(path_/name/"include");
+      std::filesystem::create_directories(path_/name/"src");
+      create_objectivec_shared_library_solution_cmakelists_txt(name);
+      create_objectivec_shared_library_cmakelists_txt(name);
+      create_objectivec_shared_library_header(name);
+      create_objectivec_shared_library_export(name);
+      create_objectivec_shared_library_source(name);
     }
     
+    void create_objectivec_shared_library_solution_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Solution",
+        xtd::strings::format("project({})", name),
+        xtd::strings::format("add_subdirectory({})", name)
+      };
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
+    }
+    
+    void create_objectivec_shared_library_cmakelists_txt(const std::string& name) const {
+      std::vector<std::string> lines {
+        "cmake_minimum_required(VERSION 3.8)",
+        "",
+        "# Project",
+        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        "set(HEADERS",
+        "  include/Class1.h",
+        "  include/Export.h",
+        ")",
+        "set(SOURCES",
+        "  src/Class1.m",
+        ")",
+        "source_group(include FILES ${HEADERS})",
+        "source_group(src FILES ${SOURCES})",
+        xtd::strings::format("add_definitions(-D{0}_EXPORT)", xtd::strings::to_upper(name)),
+        "",
+        "# Options",
+        "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
+        "",
+        "# Application properties",
+        "add_library(${PROJECT_NAME} SHARED ${HEADERS} ${SOURCES})",
+        "",
+        "# Install",
+        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        "  \"include(CMakeFindDependencyMacro)\\n\"",
+        "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
+        "  \"\\n\"",
+        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        "  \"\\n\"",
+        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        ")",
+        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
+        "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+    }
+    
+    void create_objectivec_shared_library_export(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#pragma once",
+        xtd::strings::format("#if defined({0}_EXPORT)", xtd::strings::to_upper(name)),
+        xtd::strings::format("#  define {0}_export_ __attribute__((visibility (\"default\")))", xtd::strings::to_lower(name)),
+        "#else",
+        xtd::strings::format("#  define {0}_export_", xtd::strings::to_lower(name)),
+        "#endif",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"Export.h", lines);
+    }
+    
+    void create_objectivec_shared_library_header(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#import \"Export.h\"",
+        "#import <Foundation/Foundation.h>",
+        "",
+        xtd::strings::format("{0}_export_ @interface Class1 : NSObject", xtd::strings::to_lower(name)),
+        "",
+        "@end",
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"include"/"Class1.h", lines);
+    }
+
+    void create_objectivec_shared_library_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#import \"../include/Class1.h\"",
+        "",
+        "@implementation Class1",
+        "",
+        "@end"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Class1.m", lines);
+    }
+
     void create_xtd_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"properties");
@@ -2141,13 +2257,19 @@ namespace xtdc_command {
     }
 
     void create_csharp_static_library(const std::string& name, project_sdk sdk, project_language language) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_csharp_static_library_solution_cmakelists_txt(name);
-      create_csharp_static_library_cmakelists_txt(name);
-      create_csharp_static_library_source(name);
+      create_csharp_shared_library(name, sdk, language);
     }
     
-    void create_csharp_static_library_solution_cmakelists_txt(const std::string& name) const {
+    void create_objectivec_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+      std::filesystem::create_directories(path_/name/"include");
+      std::filesystem::create_directories(path_/name/"src");
+      create_objectivec_static_library_solution_cmakelists_txt(name);
+      create_objectivec_static_library_cmakelists_txt(name);
+      create_objectivec_static_library_header(name);
+      create_objectivec_static_library_source(name);
+    }
+    
+    void create_objectivec_static_library_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -2158,48 +2280,69 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_csharp_static_library_cmakelists_txt(const std::string& name) const {
+    void create_objectivec_static_library_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
         "# Project",
-        xtd::strings::format("project({} VERSION 1.0.0 LANGUAGES CSharp)", name),
-        "include(CSharpUtilities)",
-        "set(SOURCES",
-        "  src/Class1.cs",
+        xtd::strings::format("project({} VERSION 1.0.0)", name),
+        "set(HEADERS",
+        "  include/Class1.h",
         ")",
+        "set(SOURCES",
+        "  src/Class1.m",
+        ")",
+        "source_group(include FILES ${HEADERS})",
         "source_group(src FILES ${SOURCES})",
         "",
         "# Options",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
         "",
         "# Application properties",
-        "add_library(${PROJECT_NAME} STATIC ${SOURCES})",
+        "add_library(${PROJECT_NAME} STATIC ${HEADERS} ${SOURCES})",
+        "",
+        "# Install",
+        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        "  \"include(CMakeFindDependencyMacro)\\n\"",
+        "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
+        "  \"\\n\"",
+        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        "  \"\\n\"",
+        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        ")",
+        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
+        "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
       
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
     }
     
-    void create_csharp_static_library_source(const std::string& name) const {
+    void create_objectivec_static_library_header(const std::string& name) const {
       std::vector<std::string> lines {
-        "/// @file",
-        "/// @brief Contains Class1 class.",
-        "using System;",
+        "#import <Foundation/Foundation.h>",
         "",
-        xtd::strings::format("namespace {} {{", name),
-        "  /// @brief Represents the main class",
-        "  public class Class1 {",
-        "    /// @brief Initializes a new instance of the class1 class.",
-        "    public Class1() {",
-        "    }",
-        "  }",
-        "}",
+        "@interface Class1 : NSObject",
+        "",
+        "@end",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Class1.cs", lines);
+      xtd::io::file::write_all_lines(path_/name/"include"/"Class1.h", lines);
     }
     
-    void create_objectivec_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_objectivec_static_library_source(const std::string& name) const {
+      std::vector<std::string> lines {
+        "#import \"../include/Class1.h\"",
+        "",
+        "@implementation Class1",
+        "",
+        "@end"
+      };
+      
+      xtd::io::file::write_all_lines(path_/name/"src"/"Class1.m", lines);
     }
     
     void create_xtd_static_library(const std::string& name, project_sdk sdk, project_language language) const {
