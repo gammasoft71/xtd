@@ -17,7 +17,7 @@ namespace xtdc_command {
   public:
     static int main(const vector<string>& args) {
       if (args.size() == 0) {
-        cout << get_help() << endl;
+        cout << strings::join("\n", get_help()) << endl;
         return -1;
       }
       
@@ -31,7 +31,7 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_help() << endl;
+        cout << strings::join("\n", get_help()) << endl;
         return -1;
       }
       
@@ -45,224 +45,247 @@ namespace xtdc_command {
     static string get_base_path() noexcept {return "";}
   #endif
 
-    static string get_help() noexcept {
-      return "\n"
-        "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]\n"
-        "\n"
-        "options:\n"
-        "  -i, --info       Display information.\n"
-        "  -v, --version    Display version in use.\n"
-        "  -h, --help       Display help.\n"
+    static vector<string> get_help() noexcept {
+      return {
+        "",
+        "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]",
+        "",
+        "options:",
+        "  -i, --info       Display information.",
+        "  -v, --version    Display version in use.",
+        "  -h, --help       Display help.",
 
-        "\n"
-        "command:\n"
-        "  new              Initialize project.\n"
-        //"  add              Add new project to project.\n"
-        "  run              Compiles and immediately executes a project.\n"
-        "  build            Builds a project.\n"
-        "  install          Install a project.\n"
-        "  clean            Clean build output(s).\n"
-        "  open             Open a project in default ide.\n"
-        "  targets          List project targets.\n"
-        "  test             Runs unit tests using the test runner specified in the project.\n"
-        "  uninstall        Uninstall a project.\n"
-        //"  documentations   Open documentations.\n"
-        //"  examples         Open xtd examples.\n"
-        //"  guide            Open xtd reference guide.\n"
-        //"  web              Open xtd website.\n"
-        "  help             Show help.\n"
-        "\n"
-        "Run 'xtdc command --help' for more information on a command.\n"
-        "\n";
+        "",
+        "command:",
+        "  new              Initialize project.",
+        //"  add              Add new project to project.",
+        "  run              Compiles and immediately executes a project.",
+        "  build            Builds a project.",
+        "  install          Install a project.",
+        "  clean            Clean build output(s).",
+        "  open             Open a project in default ide.",
+        "  targets          List project targets.",
+        "  test             Runs unit tests using the test runner specified in the project.",
+        "  uninstall        Uninstall a project.",
+        //"  documentations   Open documentations.",
+        //"  examples         Open xtd examples.",
+        //"  guide            Open xtd reference guide.",
+        //"  web              Open xtd website.",
+        "  help             Show help.",
+        "",
+        "Run 'xtdc command --help' for more information on a command.",
+        "",
+      };
     }
     
-    static string get_add_help() noexcept {
-      return "Add new project to project.\n"
-      "Usage: add [options]\n";
-    }
-
-    static string get_build_help() noexcept {
-      return "Builds a project.\n"
-      "Usage: build [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -d, --debug         build debug config.\n"
-      "  -r, --release       build release config.\n"
-      "  -t, --target        build a specified target project.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc build\n"
-      "    xtdc build -p my_apps\n"
-      "    xtdc build -p my_apps -t my_app1\n"
-      "    xtdc build --help\n";
-    }
-    
-    static string get_clean_help() noexcept {
-      return "Clean build output(s).\n"
-      "Usage: clean [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -d, --debug         clean debug config.\n"
-      "  -r, --release       clean release config.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc clean\n"
-      "    xtdc clean -p my_app\n"
-      "    xtdc clean --help\n";
-    }
-    
-    static string get_install_help() noexcept {
-      return "Install a project.\n"
-      "Usage: install [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -d, --debug         install debug config.\n"
-      "  -r, --release       install release config.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc install\n"
-      "    xtdc install -p my_app\n"
-      "    xtdc install --help\n";
-    }
-    
-    static string get_open_help() noexcept {
-      return "Open a project in default ide.\n"
-      "Usage: open [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -d, --debug         open debug config.\n"
-      "  -r, --release       open release config.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc open\n"
-      "    xtdc open -p my_app\n"
-      "    xtdc open --help\n";
-    }
-    
-    static string get_new_help() noexcept {
-      return "Initialize project.\n"
-      "Usage: new [template-short-name] [name] [<options>]\n"
-      "\n"
-      "template-short-name:\n"
-      "  A template short name of the following table. If no short name specified, gui is used.\n"
-      "  Templates               Short Name     SDK/Language                      \n"
-      "  -------------------------------------------------------------------------\n"
-      "  GUI Application         gui            [xtd], cocoa, fltk, gtk+2, gtk+3, \n"
-      "                                         gtkmm, wxwidgets, qt5, win32,     \n"
-      "                                         winforms, wpf                     \n"
-      "  Console Application     console        [xtd], c++, c, c#, objective-c    \n"
-      "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c    \n"
-      "  Static library          staticlib      [xtd], c++, c, c#, objective-c    \n"
-      "  Unit Test Project       test           [xtd], gtest, catch2              \n"
-      "  Solution File           sln            [xtd]                             \n"
-      "\n"
-      "name:\n"
-      "  The name for the project. If no name is specified, the name of the specified path or of the current directory is used.\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -l, --list          Lists templates containing the specified name. If no name is specified, lists all templates.\n"
-      "  -p, --path          Location to place the generated output.\n"
-      "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".\n"
-      "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.\n"
-      "  --force             Forces content to be generated even if it would change existing files.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc new console\n"
-      "    xtdc new gui -p my_app\n"
-      "    xtdc new --help\n";
+    static vector<string> get_add_help() noexcept {
+      return {
+        "Add new project to project.",
+        "Usage: add [options]",
+      };
     }
 
-    static string get_run_help() noexcept {
-      return "Compiles and immediately executes a project.\n"
-      "Usage: run [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -d, --debug         run debug config.\n"
-      "  -r, --release       run release config.\n"
-      "  -t, --target        run a specified target project.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc run\n"
-      "    xtdc run -p my_apps\n"
-      "    xtdc run -p my_apps -t my_app1\n"
-      "    xtdc run --help\n";
+    static vector<string> get_build_help() noexcept {
+      return {
+        "Builds a project.",
+        "Usage: build [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -d, --debug         build debug config.",
+        "  -r, --release       build release config.",
+        "  -t, --target        build a specified target project.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc build",
+        "    xtdc build -p my_apps",
+        "    xtdc build -p my_apps -t my_app1",
+        "    xtdc build --help"
+      };
     }
     
-    static string get_targets_help() noexcept {
-      return "List project targets.\n"
-      "Usage: clean [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc list\n"
-      "    xtdc list -p my_app\n"
-      "    xtdc list --help\n";
+    static vector<string> get_clean_help() noexcept {
+      return {
+        "Clean build output(s).",
+        "Usage: clean [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -d, --debug         clean debug config.",
+        "  -r, --release       clean release config.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc clean",
+        "    xtdc clean -p my_app",
+        "    xtdc clean --help",
+      };
+    }
+    
+    static vector<string> get_install_help() noexcept {
+      return {
+        "Install a project.",
+        "Usage: install [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -d, --debug         install debug config.",
+        "  -r, --release       install release config.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc install",
+        "    xtdc install -p my_app",
+        "    xtdc install --help",
+      };
+    }
+    
+    static vector<string> get_open_help() noexcept {
+      return {
+        "Open a project in default ide.",
+        "Usage: open [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -d, --debug         open debug config.",
+        "  -r, --release       open release config.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc open",
+        "    xtdc open -p my_app",
+        "    xtdc open --help",
+      };
+    }
+    
+    static vector<string> get_new_help() noexcept {
+      return {
+        "Initialize project.",
+        "Usage: new [template-short-name] [name] [<options>]",
+        "",
+        "template-short-name:",
+        "  A template short name of the following table. If no short name specified, gui is used.",
+        "  Templates               Short Name     SDK/Language                      ",
+        "  -------------------------------------------------------------------------",
+        "  GUI Application         gui            [xtd], cocoa, fltk, gtk+2, gtk+3, ",
+        "                                         gtkmm, wxwidgets, qt5, win32,     ",
+        "                                         winforms, wpf                     ",
+        "  Console Application     console        [xtd], c++, c, c#, objective-c    ",
+        "  Shared library          sharedlib      [xtd], c++, c, c#, objective-c    ",
+        "  Static library          staticlib      [xtd], c++, c, c#, objective-c    ",
+        "  Unit Test Project       test           [xtd], gtest, catch2              ",
+        "  Solution File           sln            [xtd]                             ",
+        "",
+        "name:",
+        "  The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -p, --path          Location to place the generated output.",
+        "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
+        "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
+        "  --force             Forces content to be generated even if it would change existing files.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc new console",
+        "    xtdc new gui -p my_app",
+        "    xtdc new --help",
+      };
     }
 
-    static string get_test_help() noexcept {
-      return "Runs unit tests using the test runner specified in the project.\n"
-      "Usage: test [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -d, --debug         test debug config.\n"
-      "  -r, --release       test release config.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc test\n"
-      "    xtdc test -p my_app\n"
-      "    xtdc test --help\n";
+    static vector<string> get_run_help() noexcept {
+      return {
+        "Compiles and immediately executes a project.",
+        "Usage: run [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -d, --debug         run debug config.",
+        "  -r, --release       run release config.",
+        "  -t, --target        run a specified target project.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc run",
+        "    xtdc run -p my_apps",
+        "    xtdc run -p my_apps -t my_app1",
+        "    xtdc run --help",
+      };
     }
     
-    static string get_uninstall_help() noexcept {
-      return "Uninstall a project.\n"
-      "Usage: uninstall [<options>]\n"
-      "\n"
-      "options:\n"
-      "  -h, --help          Displays help for this command.\n"
-      "  -d, --debug         uninstall debug config.\n"
-      "  -r, --release       uninstall release config.\n"
-      "  -p, --path          Project path location.\n"
-      "\n"
-      "\n"
-      "Exemples:\n"
-      "    xtdc uninstall\n"
-      "    xtdc uninstall -p my_app\n"
-      "    xtdc uninstall --help\n";
+    static vector<string> get_targets_help() noexcept {
+      return {
+        "List project targets.",
+        "Usage: clean [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc list",
+        "    xtdc list -p my_app",
+        "    xtdc list --help",
+      };
+    }
+
+    static vector<string> get_test_help() noexcept {
+      return {
+        "Runs unit tests using the test runner specified in the project.",
+        "Usage: test [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -d, --debug         test debug config.",
+        "  -r, --release       test release config.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc test",
+        "    xtdc test -p my_app",
+        "    xtdc test --help",
+      };
     }
     
-    static string get_info() noexcept {
-      return strings::format("\n"
-        "xtdc:\n"
-        "  Version: {0}\n"
-        "\n"
-        "System Environment:\n"
-        "  OS Name:    {1}\n"
-        "  OS Version: {2}\n"
-        "  Base Path:  {3}\n", get_version_number(), get_os_name(), environment::os_version().version().to_string(2), get_base_path());
+    static vector<string> get_uninstall_help() noexcept {
+      return {
+        "Uninstall a project.",
+        "Usage: uninstall [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -d, --debug         uninstall debug config.",
+        "  -r, --release       uninstall release config.",
+        "  -p, --path          Project path location.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc uninstall",
+        "    xtdc uninstall -p my_app",
+        "    xtdc uninstall --help",
+      };
+    }
+    
+    static vector<string> get_info() noexcept {
+      return {
+        "",
+        "xtdc:",
+        strings::format("  Version: {}", get_version_number()),
+        "",
+        "System Environment:",
+        strings::format("  OS Name:    {}", get_os_name()),
+        strings::format("  OS Version: {}", environment::os_version().version().to_string(2)),
+        strings::format("  Base Path:  {}", get_base_path())
+      };
     }
 
     static string get_os_name() noexcept {
@@ -289,74 +312,28 @@ namespace xtdc_command {
 
     static int new_project(const vector<string>& args) {
       auto show_help = false;
-      auto show_list = false;
       string invalid_option;
-      string type;
-      string sdk;
+      string type = "gui";
+      string sdk = "xtd";
       string name;
-      string path;
-      if (!process_new_arguments(args, show_help, show_list, type, name, path, sdk, invalid_option)) {
+      string path = environment::current_directory();
+      if (!process_new_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_new_help() << endl;
+        cout << strings::join("\n", get_new_help()) << endl;
         return -1;
       }
-      
+      if (name.empty()) name = filesystem::path(path).stem().string();
+
       if (show_help)
-        cout << get_new_help() << endl;
+        cout << strings::join("\n", get_new_help()) << endl;
       else {
-        static map<string, project_type> types = {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}};
-        static map<project_type, vector<string>> sdk_languages = {{project_type::console, {"xtd", "c++", "cpp", "c", "c#", "cs", "csharp", "objective-c", "objectivec"}}, {project_type::gui, {"xtd", "win32", "gtk+2", "gtk+3", "cocoa", "fltk", "gtkmm", "wxwidgets", "qt5", "winforms", "wpf"}}, {project_type::static_library, {"xtd", "c++", "cpp", "c", "cs", "c#", "csharp", "objective-c", "objectivec"}}, {project_type::shared_library, {"xtd", "c++", "cpp", "c", "c#", "cs", "csharp", "objective-c", "objectivec"}}, {project_type::unit_test_application, {"xtd", "gtest", "catch2"}}, {project_type::blank_solution, {"xtd"}}};
-        
-        if (type.empty()) type = "gui";
-        if (sdk.empty()) sdk = "xtd";
-        if (path.empty()) path = environment::current_directory();
-        if (name.empty()) name = filesystem::path(path).stem().string();
-        if (types.find(type) == types.end()) {
-          set_foreground_color_red();
-          cout << format("No templates matched the input template type: {0}.", type) << endl;
-          reset_color();
-          return -1;
-        }
-
-        if (find(sdk_languages[types[type]].begin(), sdk_languages[types[type]].end(), sdk) == sdk_languages[types[type]].end()) {
-          set_foreground_color_red();
-          cout << format("Error: Invalid parameter(s):\n"
-                         "--sdk {0}\n"
-                         "'{0}' is not a valid value for --sdk (SDK/Language).\n"
-                         "Run xtdc new --help for usage information.", sdk) << endl;
-          reset_color();
-          return -1;
-        }
-        
-        xtdc_command::project_type project_type = types[type];
+        xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}}[type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
-        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
-
-        if (sdk == "xtd") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "cocoa") project_language = xtdc_command::project_language::objectivec;
-        else if (sdk == "fltk") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "gtk+2") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "gtk+3") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "gtkmm") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "qt5") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "win32") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "winforms") project_language = xtdc_command::project_language::csharp;
-        else if (sdk == "wpf") project_language = xtdc_command::project_language::csharp;
-        else if (sdk == "wxwidgets") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "c++") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "cpp") project_language = xtdc_command::project_language::cpp;
-        else if (sdk == "c") project_language = xtdc_command::project_language::c;
-        else if (sdk == "c#") project_language = xtdc_command::project_language::csharp;
-        else if (sdk == "cs") project_language = xtdc_command::project_language::csharp;
-        else if (sdk == "csharp") project_language = xtdc_command::project_language::csharp;
-        else if (sdk == "objectivec") project_language = xtdc_command::project_language::objectivec;
-        else if (sdk == "objective-c") project_language = xtdc_command::project_language::objectivec;
-
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.create(name, project_type, project_sdk, project_language) << endl;
+        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
+        cout << project_management(filesystem::absolute(filesystem::path(path))).create(name, project_type, project_sdk, project_language) << endl;
       }
       return 0;
     }
@@ -377,11 +354,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_build_help() << endl;
+        cout << strings::join("\n", get_build_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_build_help() << endl;
+        cout << strings::join("\n", get_build_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -400,11 +377,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_clean_help() << endl;
+        cout << strings::join("\n", get_clean_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_clean_help() << endl;
+        cout << strings::join("\n", get_clean_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -414,7 +391,7 @@ namespace xtdc_command {
     }
     
     static int help(const vector<string>& args) {
-      cout << get_help() << endl;
+      cout << strings::join("\n", get_help()) << endl;
       return 0;
     }
     
@@ -428,11 +405,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_install_help() << endl;
+        cout << strings::join("\n", get_install_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_install_help() << endl;
+        cout << strings::join("\n", get_install_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -451,11 +428,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_open_help() << endl;
+        cout << strings::join("\n", get_open_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_open_help() << endl;
+        cout << strings::join("\n", get_open_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -475,11 +452,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_run_help() << endl;
+        cout << strings::join("\n", get_run_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_run_help() << endl;
+        cout << strings::join("\n", get_run_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -497,11 +474,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_targets_help() << endl;
+        cout << strings::join("\n", get_targets_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_targets_help() << endl;
+        cout << strings::join("\n", get_targets_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -520,11 +497,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_test_help() << endl;
+        cout << strings::join("\n", get_test_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_test_help() << endl;
+        cout << strings::join("\n", get_test_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -543,11 +520,11 @@ namespace xtdc_command {
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << get_uninstall_help() << endl;
+        cout << strings::join("\n", get_uninstall_help()) << endl;
         return -1;
       }
       if (show_help)
-        cout << get_uninstall_help() << endl;
+        cout << strings::join("\n", get_uninstall_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
@@ -592,6 +569,29 @@ namespace xtdc_command {
       return true;
     }
     
+    static bool process_add_arguments(const vector<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
+      for (size_t i = 1; i < args.size(); i += 1) {
+        if (args[i] == "-h" || args[i] == "--help") {
+          show_help = true;
+        } else if (args[i] == "-p" || args[i] == "--path") {
+          if (i+1 >= args.size()) return false;
+          path = args[++i];
+        } else if (args[i] == "-s" || args[i] == "--sdk") {
+          if (i+1 >= args.size()) return false;
+          sdk = args[++i];
+        } else if (strings::starts_with(args[i], '-')) {
+          invalid_option = args[i];;
+          return false;
+        } else if (type.empty()) {
+          type = args[i];
+        } else if (name.empty()) {
+          name = args[i];
+        } else
+          return false;
+      }
+      return true;
+    }
+
     static bool process_build_arguments(const vector<string>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -672,7 +672,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_new_arguments(const vector<string>& args, bool& show_help, bool& show_list, string& type, string& name, string& path, string& sdk, string& invalid_option) {
+    static bool process_new_arguments(const vector<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
@@ -769,21 +769,16 @@ namespace xtdc_command {
       return true;
     }
 
-    static void reset_color() noexcept {
-      if (is_ansi_supported())
-        std::cout << "\033[49m\033[39m";
-    }
-
     static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<string>& command_args) {
       if (show_version || show_info || show_help) {
         cout << get_version() << endl;
         if (show_info)
-          cout << get_info() << endl;
+          cout << strings::join("\n", get_info()) << endl;
         if (show_help)
-          cout << get_help() << endl;
+          cout << strings::join("\n", get_help()) << endl;
       } else {
         if (command_args[0] == "new") return new_project(command_args);
-        //else if (command_args[0] == "add") return add(command_args);
+        else if (command_args[0] == "add") return add(command_args);
         else if (command_args[0] == "build") return build(command_args);
         else if (command_args[0] == "clean") return clean(command_args);
         else if (command_args[0] == "help") return help(command_args);
@@ -798,18 +793,12 @@ namespace xtdc_command {
         //else if (command_args[0] == "guide") return guide(command_args);
         //else if (command_args[0] == "web") return web(command_args);
         else {
-          set_foreground_color_red();
-          cout << format("No option found matching command \"xtdc {0}\"", command_args[0]) << endl;
-          reset_color();
+          cout << "Invalid command" << endl;
+          cout << strings::join("\n", get_help()) << endl;
           return -1;
         }
       }
       return 0;
-    }
-    
-    static void set_foreground_color_red() noexcept {
-      if (is_ansi_supported())
-        std::cout << "\033[31m";
     }
   };
 }
