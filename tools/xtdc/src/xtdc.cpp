@@ -329,10 +329,10 @@ namespace xtdc_command {
     static int add(const vector<string>& args) {
       auto show_help = false;
       string invalid_option;
-      string type = "gui";
-      string sdk = "xtd";
+      string type;
+      string sdk;
       string name;
-      string path = environment::current_directory();
+      string path;
       if (!process_add_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
@@ -341,8 +341,11 @@ namespace xtdc_command {
         cout << strings::join("\n", get_add_help()) << endl;
         return -1;
       }
+      if (type.empty()) type = "gui";
+      if (sdk.empty()) sdk = "xtd";
       if (name.empty()) name = filesystem::path(path).stem().string();
-      
+      if (path.empty()) path = environment::current_directory();
+
       if (show_help)
         cout << strings::join("\n", get_add_help()) << endl;
       else {
@@ -433,10 +436,10 @@ namespace xtdc_command {
     static int new_project(const vector<string>& args) {
       auto show_help = false;
       string invalid_option;
-      string type = "gui";
-      string sdk = "xtd";
+      string type;
+      string sdk;
       string name;
-      string path = environment::current_directory();
+      string path;
       if (!process_new_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
@@ -445,8 +448,11 @@ namespace xtdc_command {
         cout << strings::join("\n", get_new_help()) << endl;
         return -1;
       }
+      if (type.empty()) type = "gui";
+      if (sdk.empty()) sdk = "xtd";
       if (name.empty()) name = filesystem::path(path).stem().string();
-      
+      if (path.empty()) path = environment::current_directory();
+
       if (show_help)
         cout << strings::join("\n", get_new_help()) << endl;
       else {
@@ -726,7 +732,7 @@ namespace xtdc_command {
           invalid_option = args[i];;
           return false;
         } else if (type.empty())
-            type = args[i];
+          type = args[i];
         else if (path.empty())
           path = args[i];
         else
