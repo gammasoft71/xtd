@@ -58,7 +58,7 @@ namespace xtdc_command {
         "",
         "command:",
         "  new              Initialize project.",
-        //"  add              Add new project to project.",
+        "  add              Add new project to project.",
         "  run              Compiles and immediately executes a project.",
         "  build            Builds a project.",
         "  install          Install a project.",
@@ -67,10 +67,10 @@ namespace xtdc_command {
         "  targets          List project targets.",
         "  test             Runs unit tests using the test runner specified in the project.",
         "  uninstall        Uninstall a project.",
-        //"  documentations   Open documentations.",
-        //"  examples         Open xtd examples.",
-        //"  guide            Open xtd reference guide.",
-        //"  web              Open xtd website.",
+        "  documentation    Open xtd documentation.",
+        "  examples         Open xtd examples.",
+        "  guide            Open xtd reference guide.",
+        "  web              Open Gammasoft website.",
         "  help             Show help.",
         "",
         "Run 'xtdc command --help' for more information on a command.",
@@ -88,14 +88,16 @@ namespace xtdc_command {
     static vector<string> get_build_help() noexcept {
       return {
         "Builds a project.",
-        "Usage: build [<options>]",
+        "Usage: build [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -d, --debug         build debug config.",
         "  -r, --release       build release config.",
         "  -t, --target        build a specified target project.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -109,13 +111,15 @@ namespace xtdc_command {
     static vector<string> get_clean_help() noexcept {
       return {
         "Clean build output(s).",
-        "Usage: clean [<options>]",
+        "Usage: clean [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -d, --debug         clean debug config.",
         "  -r, --release       clean release config.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -128,13 +132,15 @@ namespace xtdc_command {
     static vector<string> get_install_help() noexcept {
       return {
         "Install a project.",
-        "Usage: install [<options>]",
+        "Usage: install [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -d, --debug         install debug config.",
         "  -r, --release       install release config.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -147,13 +153,15 @@ namespace xtdc_command {
     static vector<string> get_open_help() noexcept {
       return {
         "Open a project in default ide.",
-        "Usage: open [<options>]",
+        "Usage: open [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -d, --debug         open debug config.",
         "  -r, --release       open release config.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -166,7 +174,7 @@ namespace xtdc_command {
     static vector<string> get_new_help() noexcept {
       return {
         "Initialize project.",
-        "Usage: new [template-short-name] [name] [<options>]",
+        "Usage: new [template-short-name] [path] [<options>]",
         "",
         "template-short-name:",
         "  A template short name of the following table. If no short name specified, gui is used.",
@@ -181,13 +189,13 @@ namespace xtdc_command {
         "  Unit Test Project       test           [xtd], gtest, catch2              ",
         "  Solution File           sln            [xtd]                             ",
         "",
-        "name:",
-        "  The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
+        "path:",
+        "  Location to place the generated output. If no path is specified, the current path is used.",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
-        "  -p, --path          Location to place the generated output.",
-        "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
+        "  -n, --name          The name for the project. If no name is specified, the name of the specified path or of the current directory is used.",
+         "  --type              Filters templates based on available types. Predefined values are \"project\", \"item\" or \"other\".",
         "  -s , --sdk          Filters templates based on SDK/language and specifies the SDK/language of the template to create.",
         "  --force             Forces content to be generated even if it would change existing files.",
         "",
@@ -202,14 +210,16 @@ namespace xtdc_command {
     static vector<string> get_run_help() noexcept {
       return {
         "Compiles and immediately executes a project.",
-        "Usage: run [<options>]",
+        "Usage: run [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -d, --debug         run debug config.",
         "  -r, --release       run release config.",
         "  -t, --target        run a specified target project.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -223,11 +233,13 @@ namespace xtdc_command {
     static vector<string> get_targets_help() noexcept {
       return {
         "List project targets.",
-        "Usage: clean [<options>]",
+        "Usage: targets [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -240,13 +252,15 @@ namespace xtdc_command {
     static vector<string> get_test_help() noexcept {
       return {
         "Runs unit tests using the test runner specified in the project.",
-        "Usage: test [<options>]",
+        "Usage: test [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -d, --debug         test debug config.",
         "  -r, --release       test release config.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -259,13 +273,15 @@ namespace xtdc_command {
     static vector<string> get_uninstall_help() noexcept {
       return {
         "Uninstall a project.",
-        "Usage: uninstall [<options>]",
+        "Usage: uninstall [path] [<options>]",
         "",
         "options:",
         "  -h, --help          Displays help for this command.",
         "  -d, --debug         uninstall debug config.",
         "  -r, --release       uninstall release config.",
-        "  -p, --path          Project path location.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
         "",
         "",
         "Exemples:",
@@ -309,36 +325,32 @@ namespace xtdc_command {
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
 #endif
     }
-
-    static int new_project(const vector<string>& args) {
+    
+    static int add(const vector<string>& args) {
       auto show_help = false;
       string invalid_option;
       string type = "gui";
       string sdk = "xtd";
       string name;
       string path = environment::current_directory();
-      if (!process_new_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
+      if (!process_add_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
         if (!invalid_option.empty())
           cout << format("Unknown option: {0}", invalid_option) << endl;
         else
           cout << "Invalid parameters" << endl;
-        cout << strings::join("\n", get_new_help()) << endl;
+        cout << strings::join("\n", get_add_help()) << endl;
         return -1;
       }
       if (name.empty()) name = filesystem::path(path).stem().string();
-
+      
       if (show_help)
-        cout << strings::join("\n", get_new_help()) << endl;
+        cout << strings::join("\n", get_add_help()) << endl;
       else {
         xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}}[type];
         xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
         xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
-        cout << project_management(filesystem::absolute(filesystem::path(path))).create(name, project_type, project_sdk, project_language) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).add(name, project_type, project_sdk, project_language) << endl;
       }
-      return 0;
-    }
-    
-    static int add(const vector<string>& args) {
       return 0;
     }
     
@@ -414,6 +426,34 @@ namespace xtdc_command {
         if (path.empty()) path = environment::current_directory();
         project_management project(filesystem::absolute(filesystem::path(path)));
         cout << project.install(release) << endl;
+      }
+      return 0;
+    }
+
+    static int new_project(const vector<string>& args) {
+      auto show_help = false;
+      string invalid_option;
+      string type = "gui";
+      string sdk = "xtd";
+      string name;
+      string path = environment::current_directory();
+      if (!process_new_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << strings::join("\n", get_new_help()) << endl;
+        return -1;
+      }
+      if (name.empty()) name = filesystem::path(path).stem().string();
+      
+      if (show_help)
+        cout << strings::join("\n", get_new_help()) << endl;
+      else {
+        xtdc_command::project_type project_type = map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}}[type];
+        xtdc_command::project_sdk project_sdk = map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}}[sdk];
+        xtdc_command::project_language project_language = map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}}[sdk];
+        cout << project_management(filesystem::absolute(filesystem::path(path))).create(name, project_type, project_sdk, project_language) << endl;
       }
       return 0;
     }
@@ -533,22 +573,26 @@ namespace xtdc_command {
       return 0;
     }
     
-    static int documentations(const vector<string>& args) {
+    static int documentation(const vector<string>& args) {
+      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/docs/home.md", environment::os_version().is_osx_platform() ? "open " : "").c_str());
       return 0;
     }
     
     static int examples(const vector<string>& args) {
+      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/examples/README.md", environment::os_version().is_osx_platform() ? "open " : "").c_str());
       return 0;
     }
     
     static int guide(const vector<string>& args) {
+      system(strings::format("{}https://codedocs.xyz/gammasoft71/xtd", environment::os_version().is_osx_platform() ? "open " : "").c_str());
       return 0;
     }
     
     static int web(const vector<string>& args) {
+      system(strings::format("{}https://gammasoft71.wixsite.com/gammasoft", environment::os_version().is_osx_platform() ? "open " : "").c_str());
       return 0;
     }
-
+    
     static bool process_xtdc_arguments(const vector<string>& args, bool& show_help, bool& show_info, bool& show_version, vector<string>& command_args, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -573,9 +617,9 @@ namespace xtdc_command {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
-        } else if (args[i] == "-p" || args[i] == "--path") {
+        } else if (args[i] == "-b" || args[i] == "--name") {
           if (i+1 >= args.size()) return false;
-          path = args[++i];
+          name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
           if (i+1 >= args.size()) return false;
           sdk = args[++i];
@@ -585,7 +629,7 @@ namespace xtdc_command {
         } else if (type.empty()) {
           type = args[i];
         } else if (name.empty()) {
-          name = args[i];
+          path = args[i];
         } else
           return false;
       }
@@ -604,10 +648,9 @@ namespace xtdc_command {
           release = true;
         else if (args[i] == "-t" || args[i] == "--target")
           target = args[++i];
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -623,10 +666,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -642,10 +684,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -654,17 +695,16 @@ namespace xtdc_command {
     }
 
     static bool process_open_arguments(const vector<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
-      for (size_t i = 0; i < args.size(); i += 1) {
+      for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-d" || args[i] == "--debug")
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -676,20 +716,20 @@ namespace xtdc_command {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
-        } else if (args[i] == "-p" || args[i] == "--path") {
+        } else if (args[i] == "-b" || args[i] == "--name") {
           if (i+1 >= args.size()) return false;
-          path = args[++i];
+          name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
           if (i+1 >= args.size()) return false;
           sdk = args[++i];
         } else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
-        } else if (type.empty()) {
+        } else if (type.empty())
             type = args[i];
-        } else if (name.empty()) {
-          name = args[i];
-        } else
+        else if (path.empty())
+          path = args[i];
+        else
           return false;
       }
       return true;
@@ -705,10 +745,9 @@ namespace xtdc_command {
           release = true;
         else if (args[i] == "-t" || args[i] == "--target")
           target = args[++i];
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -720,10 +759,9 @@ namespace xtdc_command {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -739,10 +777,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -758,10 +795,9 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (args[i] == "-p" || args[i] == "--path") {
-          if (i+1 >= args.size()) return false;
-          path = args[++i];
-        } else if (strings::starts_with(args[i], '-')) {
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
           invalid_option = args[i];;
           return false;
         }
@@ -788,10 +824,10 @@ namespace xtdc_command {
         else if (command_args[0] == "targets") return targets(command_args);
         else if (command_args[0] == "test") return test(command_args);
         else if (command_args[0] == "uninstall") return uninstall(command_args);
-        //else if (command_args[0] == "documentations" || command_args[0] == "documentation") return documentations(command_args);
-        //else if (command_args[0] == "examples") return examples(command_args);
-        //else if (command_args[0] == "guide") return guide(command_args);
-        //else if (command_args[0] == "web") return web(command_args);
+        else if (command_args[0] == "documentation") return documentation(command_args);
+        else if (command_args[0] == "examples") return examples(command_args);
+        else if (command_args[0] == "guide") return guide(command_args);
+        else if (command_args[0] == "web") return web(command_args);
         else {
           cout << "Invalid command" << endl;
           cout << strings::join("\n", get_help()) << endl;
