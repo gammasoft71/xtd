@@ -76,7 +76,23 @@ namespace xtdc_command {
       generate(name);
       return xtd::strings::format("Project {} created", path_);
     }
-
+    
+    std::string add(const std::string& name, project_type type, project_sdk sdk, project_language language) const {
+      auto sdks = get_valid_sdks(type);
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Add project aborted.";
+      auto languages = get_valid_languages(sdk);
+      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Add project aborted.";
+      if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} already exists and not empty! Add project aborted.", path_);
+      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
+      std::filesystem::create_directories(std::filesystem::path {path_}/"build");
+      create_doxygen_txt(name);
+      create_readme_md(name);
+      std::map<project_type, xtd::action<const std::string&, project_sdk, project_language>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language);
+      generate(name);
+      // add into current CMakeLists.txt
+      return xtd::strings::format("Project {} added", path_);
+    }
+    
     std::string build(const std::string& target, bool clean_first, bool release) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Build project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
