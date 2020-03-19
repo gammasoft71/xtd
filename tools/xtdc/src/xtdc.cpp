@@ -810,37 +810,23 @@ namespace xtdc_command {
       }
       return true;
     }
+    
+    static int invalid_command(const vector<string>& command_args) {
+      cout << "Invalid command" << endl;
+      cout << strings::join("\n", get_help()) << endl;
+      return -1;
+    }
 
     static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const vector<string>& command_args) {
       if (show_version || show_info || show_help) {
         cout << get_version() << endl;
-        if (show_info)
-          cout << strings::join("\n", get_info()) << endl;
-        if (show_help)
-          cout << strings::join("\n", get_help()) << endl;
-      } else {
-        if (command_args[0] == "new") return new_project(command_args);
-        else if (command_args[0] == "add") return add(command_args);
-        else if (command_args[0] == "build") return build(command_args);
-        else if (command_args[0] == "clean") return clean(command_args);
-        else if (command_args[0] == "help") return help(command_args);
-        else if (command_args[0] == "install") return install(command_args);
-        else if (command_args[0] == "open") return open(command_args);
-        else if (command_args[0] == "run") return run(command_args);
-        else if (command_args[0] == "targets") return targets(command_args);
-        else if (command_args[0] == "test") return test(command_args);
-        else if (command_args[0] == "uninstall") return uninstall(command_args);
-        else if (command_args[0] == "documentation") return documentation(command_args);
-        else if (command_args[0] == "examples") return examples(command_args);
-        else if (command_args[0] == "guide") return guide(command_args);
-        else if (command_args[0] == "web") return web(command_args);
-        else {
-          cout << "Invalid command" << endl;
-          cout << strings::join("\n", get_help()) << endl;
-          return -1;
-        }
+        if (show_info) cout << strings::join("\n", get_info()) << endl;
+        if (show_help) cout << strings::join("\n", get_help()) << endl;
+        return 0;
       }
-      return 0;
+      map<string, function<int(const vector<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
+      if (commands.find(command_args[0]) == commands.end()) return invalid_command(command_args);
+      return commands[command_args[0]](command_args);
     }
   };
 }
