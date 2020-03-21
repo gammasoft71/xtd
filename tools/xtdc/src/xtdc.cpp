@@ -376,8 +376,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_build_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.build(target, clean_first, release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).build(target, clean_first, release) << endl;
       }
       return 0;
     }
@@ -399,8 +398,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_clean_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.clean(release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).clean(release) << endl;
       }
       return 0;
     }
@@ -427,8 +425,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_install_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.install(release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).install(release) << endl;
       }
       return 0;
     }
@@ -481,8 +478,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_open_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.open(release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).open(release) << endl;
       }
       return 0;
     }
@@ -505,8 +501,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_run_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.run(target, release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).run(target, release) << endl;
       }
       return 0;
     }
@@ -527,8 +522,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_targets_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << xtd::strings::join(", ", project.targets()) << endl;
+        cout << xtd::strings::join(", ", project_management(filesystem::absolute(filesystem::path(path))).targets()) << endl;
       }
       return 0;
     }
@@ -550,8 +544,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_test_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.test(release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).test(release) << endl;
       }
       return 0;
     }
@@ -573,8 +566,7 @@ namespace xtdc_command {
         cout << strings::join("\n", get_uninstall_help()) << endl;
       else {
         if (path.empty()) path = environment::current_directory();
-        project_management project(filesystem::absolute(filesystem::path(path)));
-        cout << project.uninstall(release) << endl;
+        cout << project_management(filesystem::absolute(filesystem::path(path))).uninstall(release) << endl;
       }
       return 0;
     }
@@ -623,7 +615,7 @@ namespace xtdc_command {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
-        } else if (args[i] == "-b" || args[i] == "--name") {
+        } else if (args[i] == "-n" || args[i] == "--name") {
           if (i+1 >= args.size()) return false;
           name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
@@ -722,7 +714,7 @@ namespace xtdc_command {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help") {
           show_help = true;
-        } else if (args[i] == "-b" || args[i] == "--name") {
+        } else if (args[i] == "-n" || args[i] == "--name") {
           if (i+1 >= args.size()) return false;
           name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
