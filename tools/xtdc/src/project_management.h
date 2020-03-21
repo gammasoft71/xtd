@@ -72,11 +72,11 @@ namespace xtdc_command {
       std::filesystem::create_directories(std::filesystem::path {path_}/"build");
       create_doxygen_txt(name);
       create_readme_md(name);
-      std::map<project_type, xtd::action<const std::string&, project_sdk, project_language>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language);
+      std::map<project_type, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language, true);
       generate(name);
       return xtd::strings::format("Project {} created", path_);
     }
-    
+
     std::string add(const std::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
       if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Add project aborted.";
@@ -84,13 +84,42 @@ namespace xtdc_command {
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Add project aborted.";
       if (is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} already exists and not empty! Add project aborted.", path_);
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
-      std::filesystem::create_directories(std::filesystem::path {path_}/"build");
-      create_doxygen_txt(name);
-      create_readme_md(name);
-      std::map<project_type, xtd::action<const std::string&, project_sdk, project_language>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language);
+      if (!std::filesystem::exists(path_.parent_path()/"CMakeLists.txt")) return xtd::strings::format("Parent directory \"{}\", is not a known project! Add project aborted.", path_.parent_path().string());
+      auto lines  = xtd::io::file::read_all_lines(path_.parent_path()/"CMakeLists.txt");
+      if (std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) != lines.end()) return "The sdk param not valid with current project sdk! Add project aborted.";
+      /*
+      bool xtd_soultion = false;
+      for (auto it = lines.begin(); it != lines.end(); ++it) {
+        if (xtd::strings::contains(*it, "find_package(xtd")) xtd_soultion = true;
+        if (xtd_soultion && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
+        if (xtd_soultion) {
+          if (xtd::strings::contains(*it, "add_projects(")) {
+            while (!xtd::strings::contains(*it, ")")) ++it;
+            while (xtd::strings::contains(*it, "add_projects(") && xtd::strings::contains(*it++, ")")) ++it;
+            while (!xtd::strings::contains(*it, ")")) ++it;
+            lines.insert(++it, xtd::strings::format("add_projects({})", path_.stem().string()));
+            break;
+          }
+          
+          if (xtd::strings::contains(*it, "install_package")) {
+            --it;
+            while (xtd::strings::trim(*it) == ""|| xtd::strings::starts_with(*it, "#")) --it;
+            lines.insert(++it, xtd::strings::format("add_projects({})", path_.stem().string()));
+            break;
+          }
+        } else {
+          
+        }
+      }
+       */
+      lines.push_back(xtd::strings::format("add_projects({})", path_.stem().string()));
+      std::map<project_type, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language, false);
+
+      auto project_path = path_;
+      path_ = path_.parent_path();
+      xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
       generate(name);
-      // add into current CMakeLists.txt
-      return xtd::strings::format("Project {} added", path_);
+      return xtd::strings::format("Project {} added", project_path);
     }
     
     std::string build(const std::string& target, bool clean_first, bool release) const {
@@ -252,7 +281,7 @@ namespace xtdc_command {
     std::filesystem::path build_path() const {return path_/"build";}
     std::filesystem::path working_dir() const {return path_/"build";}
 
-    void create_blank_solution(const std::string& name, project_sdk sdk, project_language language) {
+    void create_blank_solution(const std::string& name, project_sdk sdk, project_language language, bool create_solution) {
       create_blank_solution_cmakelists_txt(name);
     }
     
@@ -263,8 +292,6 @@ namespace xtdc_command {
         "# Solution",
         xtd::strings::format("project({})", name),
         "find_package(xtd REQUIRED)",
-        "add_projects(",
-        ")",
         "",
         "# Install",
         "install_package()",
@@ -272,18 +299,18 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
 
-    void create_console(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       if (sdk == project_sdk::xtd)
-        create_xtd_console(name, sdk, language);
+        create_xtd_console(name, sdk, language, create_solution);
       else
-        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_c_console}}, {project_language::cpp, {*this, &project_management::create_cpp_console}}, {project_language::csharp, {*this, &project_management::create_csharp_console}}, {project_language::objectivec, {*this, &project_management::create_objectivec_console}}}[language](name, sdk, language);
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_language::c, {*this, &project_management::create_c_console}}, {project_language::cpp, {*this, &project_management::create_cpp_console}}, {project_language::csharp, {*this, &project_management::create_csharp_console}}, {project_language::objectivec, {*this, &project_management::create_objectivec_console}}}[language](name, sdk, language, create_solution);
     }
 
-    void create_c_console(const std::string& name, project_sdk sdk, project_language language) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_c_console_solution_cmakelists_txt(name);
-      create_c_console_cmakelists_txt(name);
-      create_c_console_source(name);
+    void create_c_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_c_console_solution_cmakelists_txt(name);
+      create_c_console_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_c_console_source(name, create_solution ? path_/name : path_);
     }
     
     void create_c_console_solution_cmakelists_txt(const std::string& name) const {
@@ -297,7 +324,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_c_console_cmakelists_txt(const std::string& name) const {
+    void create_c_console_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -315,12 +342,30 @@ namespace xtdc_command {
         "",
         "# Application properties",
         "add_executable(${PROJECT_NAME} ${SOURCES})",
+        "",
+        "# Install",
+        xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
+        xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
+        "  \"include(CMakeFindDependencyMacro)\\n\"",
+        "  \"include(\\\"\\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\\\")\\n\"",
+        "  \"\\n\"",
+        xtd::strings::format("  \"get_filename_component({}_INCLUDE_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../include\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        xtd::strings::format("  \"get_filename_component({}_LIBRARIES_DIRS \\\"\\${{CMAKE_CURRENT_LIST_DIR}}/../lib\\\" ABSOLUTE)\\n\"", xtd::strings::to_upper(name)),
+        "  \"\\n\"",
+        xtd::strings::format("  \"set({}_LIBRARIES {})\\n\"", xtd::strings::to_upper(name), name),
+        xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
+        ")",
+        xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
+        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION bin CONFIGURATIONS Debug OPTIONAL)",
+        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION bin CONFIGURATIONS Release OPTIONAL)",
+        "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION bin)",
+        "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
 
-    void create_c_console_source(const std::string& name) const {
+    void create_c_console_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include <stdio.h>",
         "",
@@ -330,10 +375,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
+      xtd::io::file::write_all_lines(path/"src"/"program.c", lines);
     }
 
-    void create_cpp_console(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_cpp_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_cpp_console_solution_cmakelists_txt(name);
       create_cpp_console_cmakelists_txt(name);
@@ -389,7 +434,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"program.cpp", lines);
     }
 
-    void create_csharp_console(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_csharp_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_csharp_console_solution_cmakelists_txt(name);
       create_csharp_console_cmakelists_txt(name);
@@ -449,7 +494,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.cs", lines);
     }
 
-    void create_objectivec_console(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_objectivec_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_objectivec_console_solution_cmakelists_txt(name);
       create_objectivec_console_cmakelists_txt(name);
@@ -504,14 +549,14 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.m", lines);
     }
 
-    void create_xtd_console(const std::string& name, project_sdk sdk, project_language language) const {
-      std::filesystem::create_directories(path_/name/"properties");
-      std::filesystem::create_directories(path_/name/"src");
-      create_xtd_console_solution_cmakelists_txt(name);
-      create_xtd_console_application_properties(name);
-      create_xtd_console_cmakelists_txt(name);
-      create_xtd_console_include(name);
-      create_xtd_console_source(name);
+    void create_xtd_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
+      std::filesystem::create_directories(create_solution ? path_/name/"properties" : path_/"properties");
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_xtd_console_solution_cmakelists_txt(name);
+      create_xtd_console_application_properties(name, create_solution ? path_/name : path_);
+      create_xtd_console_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_xtd_console_include(name, create_solution ? path_/name : path_);
+      create_xtd_console_source(name, create_solution ? path_/name : path_);
     }
     
     void create_xtd_console_solution_cmakelists_txt(const std::string& name) const {
@@ -531,7 +576,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_xtd_console_application_properties(const std::string& name) const {
+    void create_xtd_console_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
         xtd::strings::format("application_default_namespace(\"{}\")", name),
         xtd::strings::format("application_name(\"{}\")", name),
@@ -541,7 +586,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
     }
 
-    void create_xtd_console_cmakelists_txt(const std::string& name) const {
+    void create_xtd_console_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -558,10 +603,10 @@ namespace xtdc_command {
         "install_component()",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_xtd_console_include(const std::string& name) const {
+    void create_xtd_console_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains program class.",
@@ -579,10 +624,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"program.h", lines);
+      xtd::io::file::write_all_lines(path/"src"/"program.h", lines);
     }
     
-    void create_xtd_console_source(const std::string& name) const {
+    void create_xtd_console_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"program.h\"",
         "#include <xtd/console.h>",
@@ -596,14 +641,14 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"program.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"program.cpp", lines);
     }
 
-    void create_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::fltk, {*this, &project_management::create_fltk_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::wxwidgets, {*this, &project_management::create_wxwidgets_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language);
+    void create_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
+      std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_sdk::cocoa, {*this, &project_management::create_cocoa_gui}}, {project_sdk::fltk, {*this, &project_management::create_fltk_gui}}, {project_sdk::gtk2, {*this, &project_management::create_gtk2_gui}}, {project_sdk::gtk3, {*this, &project_management::create_gtk3_gui}}, {project_sdk::gtkmm, {*this, &project_management::create_gtkmm_gui}}, {project_sdk::qt5, {*this, &project_management::create_qt5_gui}}, {project_sdk::win32, {*this, &project_management::create_win32_gui}}, {project_sdk::winforms, {*this, &project_management::create_winforms_gui}}, {project_sdk::wpf, {*this, &project_management::create_wpf_gui}}, {project_sdk::wxwidgets, {*this, &project_management::create_wxwidgets_gui}}, {project_sdk::xtd, {*this, &project_management::create_xtd_gui}}}[sdk](name, sdk, language, create_solution);
     }
     
-    void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_cocoa_gui_solution_cmakelists_txt(name);
       create_cocoa_gui_cmakelists_txt(name);
@@ -706,7 +751,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.m", lines);
     }
 
-    void create_fltk_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_fltk_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_fltk_gui_solution_cmakelists_txt(name);
       create_fltk_gui_cmakelists_txt(name);
@@ -807,7 +852,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
-    void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_gtk2_gui_solution_cmakelists_txt(name);
       create_gtk2_gui_cmakelists_txt(name);
@@ -873,7 +918,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
     }
 
-    void create_gtk3_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_gtk3_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_gtk3_gui_solution_cmakelists_txt(name);
       create_gtk3_gui_cmakelists_txt(name);
@@ -939,7 +984,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
     }
 
-    void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_gtkmm_gui_solution_cmakelists_txt(name);
       create_gtkmm_gui_cmakelists_txt(name);
@@ -1044,7 +1089,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
-    void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_qt5_gui_solution_cmakelists_txt(name);
       create_qt5_gui_cmakelists_txt(name);
@@ -1149,7 +1194,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
-    void create_win32_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_win32_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_win32_gui_solution_cmakelists_txt(name);
       create_win32_gui_cmakelists_txt(name);
@@ -1222,7 +1267,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.c", lines);
     }
 
-    void create_winforms_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_winforms_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_winforms_gui_solution_cmakelists_txt(name);
       create_winforms_gui_cmakelists_txt(name);
@@ -1298,7 +1343,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.cs", lines);
     }
 
-    void create_wpf_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_wpf_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_wpf_gui_solution_cmakelists_txt(name);
       create_wpf_gui_cmakelists_txt(name);
@@ -1437,7 +1482,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"App.xaml", lines);
     }
 
-    void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_wxwidgets_gui_solution_cmakelists_txt(name);
       create_wxwidgets_gui_cmakelists_txt(name);
@@ -1540,16 +1585,16 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
     }
 
-    void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language) const {
-      std::filesystem::create_directories(path_/name/"properties");
-      std::filesystem::create_directories(path_/name/"src");
-      create_xtd_gui_solution_cmakelists_txt(name);
-      create_xtd_gui_application_properties(name);
-      create_xtd_gui_cmakelists_txt(name);
-      create_xtd_gui_include(name);
-      create_xtd_gui_source(name);
-   }
-    
+    void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
+      std::filesystem::create_directories(create_solution ? path_/name/"properties" : path_/"properties");
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_xtd_gui_solution_cmakelists_txt(name);
+      create_xtd_gui_application_properties(name, create_solution ? path_/name : path_);
+      create_xtd_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_xtd_gui_include(name, create_solution ? path_/name : path_);
+      create_xtd_gui_source(name, create_solution ? path_/name : path_);
+    }
+
     void create_xtd_gui_solution_cmakelists_txt(const std::string& name) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
@@ -1567,17 +1612,17 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_xtd_gui_application_properties(const std::string& name) const {
+    void create_xtd_gui_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
         xtd::strings::format("application_default_namespace(\"{}\")", name),
         xtd::strings::format("application_name(\"{}\")", name),
         xtd::strings::format("application_startup(\"{}::form1\" src/form1.h)", name),
       };
       
-      xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
+      xtd::io::file::write_all_lines(path/"properties"/"application_properties.cmake", lines);
     }
 
-    void create_xtd_gui_cmakelists_txt(const std::string& name) const {
+    void create_xtd_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -1594,10 +1639,10 @@ namespace xtdc_command {
         "install_component()",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_xtd_gui_include(const std::string& name) const {
+    void create_xtd_gui_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains form1 class.",
@@ -1617,10 +1662,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"form1.h", lines);
+      xtd::io::file::write_all_lines(path/"src"/"form1.h", lines);
     }
     
-    void create_xtd_gui_source(const std::string& name) const {
+    void create_xtd_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"form1.h\"",
         "#include <xtd/forms/application.h>",
@@ -1639,10 +1684,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"form1.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"form1.cpp", lines);
     }
 
-    void create_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       if (sdk == project_sdk::xtd)
         create_xtd_shared_library(name, sdk, language);
       else
@@ -2199,7 +2244,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"class1.cpp", lines);
     }
 
-    void create_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       if (sdk == project_sdk::xtd)
         create_xtd_static_library(name, sdk, language);
       else
@@ -2221,7 +2266,10 @@ namespace xtdc_command {
         "",
         "# Solution",
         xtd::strings::format("project({})", name),
-        xtd::strings::format("add_subdirectory({})", name)
+        xtd::strings::format("add_subdirectory({})", name),
+        "",
+        "# Install",
+        "set(INSTALL_PROJECT_NAME ${PROJECT_NAME})",
       };
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
@@ -2250,6 +2298,9 @@ namespace xtdc_command {
         "add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})",
         "",
         "# Install",
+        "if (NOT INSTALL_PROJECT_NAME)",
+        "  set(INSTALL_PROJECT_NAME ${PROJECT_NAME})",
+        "endif()",
         xtd::strings::format("install(DIRECTORY include/. DESTINATION include/{})", name),
         xtd::strings::format("file(WRITE ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake", name),
         "  \"include(CMakeFindDependencyMacro)\\n\"",
@@ -2262,10 +2313,10 @@ namespace xtdc_command {
         xtd::strings::format("  \"set({}_FOUND TRUE)\\n\"", xtd::strings::to_upper(name)),
         ")",
         xtd::strings::format("install(FILES ${{CMAKE_CURRENT_BINARY_DIR}}/{}Config.cmake DESTINATION cmake)", name),
-        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
-        "install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
-        "install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
-        "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
+        "install(FILES $<TARGET_FILE_DIR:${INSTALL_PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)",
+        "install(FILES $<TARGET_FILE_DIR:${INSTALL_PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)",
+        "install(TARGETS ${INSTALL_PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)",
+        "install(EXPORT ${INSTALL_PROJECT_NAME} DESTINATION cmake)",
       };
       
       xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
@@ -2575,7 +2626,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"class1.cpp", lines);
     }
 
-    void create_unit_test_application(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_unit_test_application(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::map<project_sdk, xtd::action<const std::string&, project_sdk, project_language>> {{project_sdk::catch2, {*this, &project_management::create_catch2_unit_test_application}}, {project_sdk::gtest, {*this, &project_management::create_gtest_unit_test_application}}, {project_sdk::xtd, {*this, &project_management::create_xtd_unit_test_application}}}[sdk](name, sdk, language);
     }
     
@@ -3022,6 +3073,6 @@ namespace xtdc_command {
       return true;
     }
     
-    std::filesystem::path path_ {xtd::environment::current_directory()};
+    mutable std::filesystem::path path_ {xtd::environment::current_directory()};
   };
 }
