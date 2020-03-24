@@ -86,35 +86,11 @@ namespace xtdc_command {
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
       if (!std::filesystem::exists(path_.parent_path()/"CMakeLists.txt")) return xtd::strings::format("Parent directory \"{}\", is not a known project! Add project aborted.", path_.parent_path().string());
       auto lines  = xtd::io::file::read_all_lines(path_.parent_path()/"CMakeLists.txt");
-      if (std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) != lines.end()) return "The sdk param not valid with current project sdk! Add project aborted.";
-      /*
-      bool xtd_soultion = false;
-      for (auto it = lines.begin(); it != lines.end(); ++it) {
-        if (xtd::strings::contains(*it, "find_package(xtd")) xtd_soultion = true;
-        if (xtd_soultion && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
-        if (xtd_soultion) {
-          if (xtd::strings::contains(*it, "add_projects(")) {
-            while (!xtd::strings::contains(*it, ")")) ++it;
-            while (xtd::strings::contains(*it, "add_projects(") && xtd::strings::contains(*it++, ")")) ++it;
-            while (!xtd::strings::contains(*it, ")")) ++it;
-            lines.insert(++it, xtd::strings::format("add_projects({})", path_.stem().string()));
-            break;
-          }
-          
-          if (xtd::strings::contains(*it, "install_package")) {
-            --it;
-            while (xtd::strings::trim(*it) == ""|| xtd::strings::starts_with(*it, "#")) --it;
-            lines.insert(++it, xtd::strings::format("add_projects({})", path_.stem().string()));
-            break;
-          }
-        } else {
-          
-        }
-      }
-       */
-      lines.push_back(xtd::strings::format("add_projects({})", path_.stem().string()));
+      if (std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
+      if (std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
+     
+      lines.push_back(xtd::strings::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const std::string& value) {return xtd::strings::contains(value, "find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", path_.stem().string()));
       std::map<project_type, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_type::blank_solution, {*this, &project_management::create_blank_solution}}, {project_type::console, {*this, &project_management::create_console}}, {project_type::gui, {*this, &project_management::create_gui}}, {project_type::shared_library, {*this, &project_management::create_shared_library}}, {project_type::static_library, {*this, &project_management::create_static_library}}, {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}}[type](name, sdk, language, false);
-
       auto project_path = path_;
       path_ = path_.parent_path();
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
@@ -583,7 +559,7 @@ namespace xtdc_command {
         xtd::strings::format("application_startup(\"{}::program\" src/program.h)", name),
       };
       
-      xtd::io::file::write_all_lines(path_/name/"properties"/"application_properties.cmake", lines);
+      xtd::io::file::write_all_lines(path/"properties"/"application_properties.cmake", lines);
     }
 
     void create_xtd_console_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
@@ -1689,12 +1665,12 @@ namespace xtdc_command {
 
     void create_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       if (sdk == project_sdk::xtd)
-        create_xtd_shared_library(name, sdk, language);
+        create_xtd_shared_library(name, sdk, language, create_solution);
       else
-        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_c_shared_library}}, {project_language::cpp, {*this, &project_management::create_cpp_shared_library}}, {project_language::csharp, {*this, &project_management::create_csharp_shared_library}}, {project_language::objectivec, {*this, &project_management::create_objectivec_shared_library}}}[language](name, sdk, language);
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_language::c, {*this, &project_management::create_c_shared_library}}, {project_language::cpp, {*this, &project_management::create_cpp_shared_library}}, {project_language::csharp, {*this, &project_management::create_csharp_shared_library}}, {project_language::objectivec, {*this, &project_management::create_objectivec_shared_library}}}[language](name, sdk, language, create_solution);
     }
     
-    void create_c_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_c_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"src");
       create_c_shared_library_solution_cmakelists_txt(name);
@@ -1819,7 +1795,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"file1.c", lines);
     }
 
-    void create_cpp_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_cpp_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"src");
       create_cpp_shared_library_solution_cmakelists_txt(name);
@@ -1946,7 +1922,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"class1.cpp", lines);
     }
 
-    void create_csharp_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_csharp_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"src");
       create_csharp_shared_library_solution_cmakelists_txt(name);
       create_csharp_shared_library_cmakelists_txt(name);
@@ -2023,7 +1999,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Class1.cs", lines);
     }
 
-    void create_objectivec_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_objectivec_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"src");
       create_objectivec_shared_library_solution_cmakelists_txt(name);
@@ -2125,7 +2101,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Class1.m", lines);
     }
 
-    void create_xtd_shared_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_xtd_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"properties");
       std::filesystem::create_directories(path_/name/"src");
@@ -2246,12 +2222,12 @@ namespace xtdc_command {
 
     void create_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       if (sdk == project_sdk::xtd)
-        create_xtd_static_library(name, sdk, language);
+        create_xtd_static_library(name, sdk, language, create_solution);
       else
-        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language>> {{project_language::c, {*this, &project_management::create_c_static_library}}, {project_language::cpp, {*this, &project_management::create_cpp_static_library}}, {project_language::csharp, {*this, &project_management::create_csharp_static_library}}, {project_language::objectivec, {*this, &project_management::create_objectivec_static_library}}}[language](name, sdk, language);
+        std::map<project_language, xtd::action<const std::string&, project_sdk, project_language, bool>> {{project_language::c, {*this, &project_management::create_c_static_library}}, {project_language::cpp, {*this, &project_management::create_cpp_static_library}}, {project_language::csharp, {*this, &project_management::create_csharp_static_library}}, {project_language::objectivec, {*this, &project_management::create_objectivec_static_library}}}[language](name, sdk, language, create_solution);
     }
     
-    void create_c_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_c_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"src");
       create_c_static_library_solution_cmakelists_txt(name);
@@ -2350,7 +2326,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"file1.c", lines);
     }
 
-    void create_cpp_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_cpp_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"src");
       create_cpp_static_library_solution_cmakelists_txt(name);
@@ -2447,11 +2423,11 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"class1.cpp", lines);
     }
 
-    void create_csharp_static_library(const std::string& name, project_sdk sdk, project_language language) const {
-      create_csharp_shared_library(name, sdk, language);
+    void create_csharp_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
+      create_csharp_shared_library(name, sdk, language, create_solution);
     }
     
-    void create_objectivec_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_objectivec_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"src");
       create_objectivec_static_library_solution_cmakelists_txt(name);
@@ -2536,7 +2512,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/name/"src"/"Class1.m", lines);
     }
     
-    void create_xtd_static_library(const std::string& name, project_sdk sdk, project_language language) const {
+    void create_xtd_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(path_/name/"include");
       std::filesystem::create_directories(path_/name/"properties");
       std::filesystem::create_directories(path_/name/"src");
