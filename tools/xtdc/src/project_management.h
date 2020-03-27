@@ -2453,12 +2453,12 @@ namespace xtdc_command {
     }
     
     void create_objectivec_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"include");
-      std::filesystem::create_directories(path_/name/"src");
-      create_objectivec_static_library_solution_cmakelists_txt(name);
-      create_objectivec_static_library_cmakelists_txt(name);
-      create_objectivec_static_library_header(name);
-      create_objectivec_static_library_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"include" : path_/"include");
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_objectivec_static_library_solution_cmakelists_txt(name);
+      create_objectivec_static_library_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_objectivec_static_library_header(name, create_solution ? path_/name : path_);
+      create_objectivec_static_library_source(name, create_solution ? path_/name : path_);
     }
     
     void create_objectivec_static_library_solution_cmakelists_txt(const std::string& name) const {
@@ -2472,7 +2472,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_objectivec_static_library_cmakelists_txt(const std::string& name) const {
+    void create_objectivec_static_library_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -2510,10 +2510,10 @@ namespace xtdc_command {
         "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_objectivec_static_library_header(const std::string& name) const {
+    void create_objectivec_static_library_header(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#import <Foundation/Foundation.h>",
         "",
@@ -2522,10 +2522,10 @@ namespace xtdc_command {
         "@end",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"include"/"Class1.h", lines);
+      xtd::io::file::write_all_lines(path/"include"/"Class1.h", lines);
     }
     
-    void create_objectivec_static_library_source(const std::string& name) const {
+    void create_objectivec_static_library_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#import \"../include/Class1.h\"",
         "",
@@ -2534,7 +2534,7 @@ namespace xtdc_command {
         "@end"
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Class1.m", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Class1.m", lines);
     }
     
     void create_xtd_static_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
