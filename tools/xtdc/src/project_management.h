@@ -854,10 +854,10 @@ namespace xtdc_command {
     }
 
     void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_gtk2_gui_solution_cmakelists_txt(name);
-      create_gtk2_gui_cmakelists_txt(name);
-      create_gtk2_gui_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_gtk2_gui_solution_cmakelists_txt(name);
+      create_gtk2_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_gtk2_gui_source(name, create_solution ? path_/name : path_);
     }
     
     void create_gtk2_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -871,7 +871,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_gtk2_gui_cmakelists_txt(const std::string& name) const {
+    void create_gtk2_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -896,10 +896,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_gtk2_gui_source(const std::string& name) const {
+    void create_gtk2_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include <gtk/gtk.h>",
         "",
@@ -916,14 +916,14 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
+      xtd::io::file::write_all_lines(path/"src"/"program.c", lines);
     }
 
     void create_gtk3_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_gtk3_gui_solution_cmakelists_txt(name);
-      create_gtk3_gui_cmakelists_txt(name);
-      create_gtk3_gui_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_gtk3_gui_solution_cmakelists_txt(name);
+      create_gtk3_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_gtk3_gui_source(name, create_solution ? path_/name : path_);
     }
     
     void create_gtk3_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -937,7 +937,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_gtk3_gui_cmakelists_txt(const std::string& name) const {
+    void create_gtk3_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -962,10 +962,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_gtk3_gui_source(const std::string& name) const {
+    void create_gtk3_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include <gtk/gtk.h>",
         "",
@@ -982,7 +982,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"program.c", lines);
+      xtd::io::file::write_all_lines(path/"src"/"program.c", lines);
     }
 
     void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
