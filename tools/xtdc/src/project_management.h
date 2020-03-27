@@ -1347,12 +1347,12 @@ namespace xtdc_command {
     void create_wpf_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
       if (create_solution) create_wpf_gui_solution_cmakelists_txt(name);
-      create_wpf_gui_cmakelists_txt(name);
-      create_wpf_gui_source(name);
-      create_wpf_gui_window1_xaml(name);
-      create_wpf_gui_application_config(name);
-      create_wpf_gui_application_source(name);
-      create_wpf_gui_application_xaml(name);
+      create_wpf_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_wpf_gui_source(name, create_solution ? path_/name : path_);
+      create_wpf_gui_window1_xaml(name, create_solution ? path_/name : path_);
+      create_wpf_gui_application_config(name, create_solution ? path_/name : path_);
+      create_wpf_gui_application_source(name, create_solution ? path_/name : path_);
+      create_wpf_gui_application_xaml(name, create_solution ? path_/name : path_);
     }
     
     void create_wpf_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -1366,7 +1366,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_wpf_gui_cmakelists_txt(const std::string& name) const {
+    void create_wpf_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -1406,10 +1406,10 @@ namespace xtdc_command {
         ")",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_wpf_gui_source(const std::string& name) const {
+    void create_wpf_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "using System.Windows;",
         "",
@@ -1421,10 +1421,10 @@ namespace xtdc_command {
         "  }",
         "}",
       };
-      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.xaml.cs", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Window1.xaml.cs", lines);
     }
       
-    void create_wpf_gui_window1_xaml(const std::string& name) const {
+    void create_wpf_gui_window1_xaml(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         xtd::strings::format("<Window x:Class=\"{}.Window1\"", name),
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
@@ -1440,10 +1440,10 @@ namespace xtdc_command {
         "</Window>",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.xaml", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Window1.xaml", lines);
     }
     
-    void create_wpf_gui_application_config(const std::string& name) const {
+    void create_wpf_gui_application_config(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "<?xml version=\"1.0\" encoding=\"utf-8\" ?>",
         "<configuration>",
@@ -1452,10 +1452,10 @@ namespace xtdc_command {
         "    </startup>",
         "</configuration>",
       };
-      xtd::io::file::write_all_lines(path_/name/"src"/"App.config", lines);
+      xtd::io::file::write_all_lines(path/"src"/"App.config", lines);
     }
     
-    void create_wpf_gui_application_source(const std::string& name) const {
+    void create_wpf_gui_application_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "using System.Windows;",
         "",
@@ -1464,10 +1464,10 @@ namespace xtdc_command {
         "  }",
         "}",
       };
-      xtd::io::file::write_all_lines(path_/name/"src"/"App.xaml.cs", lines);
+      xtd::io::file::write_all_lines(path/"src"/"App.xaml.cs", lines);
     }
 
-    void create_wpf_gui_application_xaml(const std::string& name) const {
+    void create_wpf_gui_application_xaml(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         xtd::strings::format("<Application x:Class=\"{}.App\"", name),
         "        xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"",
@@ -1480,7 +1480,7 @@ namespace xtdc_command {
         "</Application>",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"App.xaml", lines);
+      xtd::io::file::write_all_lines(path/"src"/"App.xaml", lines);
     }
 
     void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
