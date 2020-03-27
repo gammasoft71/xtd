@@ -1696,13 +1696,13 @@ namespace xtdc_command {
     }
     
     void create_c_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"include");
-      std::filesystem::create_directories(path_/name/"src");
-      create_c_shared_library_solution_cmakelists_txt(name);
-      create_c_shared_library_cmakelists_txt(name);
-      create_c_shared_library_export(name);
-      create_c_shared_library_include(name);
-      create_c_shared_library_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"include" : path_/"include");
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_c_shared_library_solution_cmakelists_txt(name);
+      create_c_shared_library_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_c_shared_library_export(name, create_solution ? path_/name : path_);
+      create_c_shared_library_include(name, create_solution ? path_/name : path_);
+      create_c_shared_library_source(name, create_solution ? path_/name : path_);
     }
     
     void create_c_shared_library_solution_cmakelists_txt(const std::string& name) const {
@@ -1716,7 +1716,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_c_shared_library_cmakelists_txt(const std::string& name) const {
+    void create_c_shared_library_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -1760,10 +1760,10 @@ namespace xtdc_command {
         "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_c_shared_library_include(const std::string& name) const {
+    void create_c_shared_library_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/**",
         " * @file",
@@ -1778,10 +1778,10 @@ namespace xtdc_command {
         xtd::strings::format("{}_export_ void do_stuff();", xtd::strings::to_lower(name)),
       };
       
-      xtd::io::file::write_all_lines(path_/name/"include"/"file1.h", lines);
+      xtd::io::file::write_all_lines(path/"include"/"file1.h", lines);
     }
     
-    void create_c_shared_library_export(const std::string& name) const {
+    void create_c_shared_library_export(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/**",
         " * @file",
@@ -1806,10 +1806,10 @@ namespace xtdc_command {
         "/** @endcond */",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"include"/"export.h", lines);
+      xtd::io::file::write_all_lines(path/"include"/"export.h", lines);
     }
 
-    void create_c_shared_library_source(const std::string& name) const {
+    void create_c_shared_library_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"../include/file1.h\"",
         "",
@@ -1817,7 +1817,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"file1.c", lines);
+      xtd::io::file::write_all_lines(path/"src"/"file1.c", lines);
     }
 
     void create_cpp_shared_library(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
