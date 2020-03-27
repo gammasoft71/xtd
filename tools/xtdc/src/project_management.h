@@ -380,10 +380,10 @@ namespace xtdc_command {
     }
 
     void create_cpp_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_cpp_console_solution_cmakelists_txt(name);
-      create_cpp_console_cmakelists_txt(name);
-      create_cpp_console_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_cpp_console_solution_cmakelists_txt(name);
+      create_cpp_console_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_cpp_console_source(name, create_solution ? path_/name : path_);
     }
     
     void create_cpp_console_solution_cmakelists_txt(const std::string& name) const {
@@ -397,7 +397,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_cpp_console_cmakelists_txt(const std::string& name) const {
+    void create_cpp_console_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -417,10 +417,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_cpp_console_source(const std::string& name) const {
+    void create_cpp_console_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include <iostream>",
         "",
@@ -432,14 +432,14 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"program.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"program.cpp", lines);
     }
 
     void create_csharp_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_csharp_console_solution_cmakelists_txt(name);
-      create_csharp_console_cmakelists_txt(name);
-      create_csharp_console_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_csharp_console_solution_cmakelists_txt(name);
+      create_csharp_console_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_csharp_console_source(name, create_solution ? path_/name : path_);
     }
     
     void create_csharp_console_solution_cmakelists_txt(const std::string& name) const {
@@ -453,7 +453,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_csharp_console_cmakelists_txt(const std::string& name) const {
+    void create_csharp_console_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -472,10 +472,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_csharp_console_source(const std::string& name) const {
+    void create_csharp_console_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains Program class.",
@@ -492,14 +492,14 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cs", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Program.cs", lines);
     }
 
     void create_objectivec_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_objectivec_console_solution_cmakelists_txt(name);
-      create_objectivec_console_cmakelists_txt(name);
-      create_objectivec_console_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_objectivec_console_solution_cmakelists_txt(name);
+      create_objectivec_console_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_objectivec_console_source(name, create_solution ? path_/name : path_);
     }
     
     void create_objectivec_console_solution_cmakelists_txt(const std::string& name) const {
@@ -513,7 +513,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_objectivec_console_cmakelists_txt(const std::string& name) const {
+    void create_objectivec_console_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -531,10 +531,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_objectivec_console_source(const std::string& name) const {
+    void create_objectivec_console_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#import <Foundation/Foundation.h>",
         "",
@@ -547,7 +547,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Program.m", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Program.m", lines);
     }
 
     void create_xtd_console(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
