@@ -986,12 +986,12 @@ namespace xtdc_command {
     }
 
     void create_gtkmm_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_gtkmm_gui_solution_cmakelists_txt(name);
-      create_gtkmm_gui_cmakelists_txt(name);
-      create_gtkmm_gui_include(name);
-      create_gtkmm_gui_source(name);
-      create_gtkmm_gui_main(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_gtkmm_gui_solution_cmakelists_txt(name);
+      create_gtkmm_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_gtkmm_gui_include(name, create_solution ? path_/name : path_);
+      create_gtkmm_gui_source(name, create_solution ? path_/name : path_);
+      create_gtkmm_gui_main(name, create_solution ? path_/name : path_);
     }
     
     void create_gtkmm_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -1005,7 +1005,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_gtkmm_gui_cmakelists_txt(const std::string& name) const {
+    void create_gtkmm_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -1032,10 +1032,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_gtkmm_gui_include(const std::string& name) const {
+    void create_gtkmm_gui_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
@@ -1051,10 +1051,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.h", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Window1.h", lines);
     }
     
-    void create_gtkmm_gui_source(const std::string& name) const {
+    void create_gtkmm_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"Window1.h\"",
         "",
@@ -1068,10 +1068,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/xtd::strings::format("{}.cpp", name), lines);
+      xtd::io::file::write_all_lines(path/"src"/xtd::strings::format("{}.cpp", name), lines);
     }
     
-    void create_gtkmm_gui_main(const std::string& name) const {
+    void create_gtkmm_gui_main(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"Window1.h\"",
         "",
@@ -1087,7 +1087,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Program.cpp", lines);
     }
 
     void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
