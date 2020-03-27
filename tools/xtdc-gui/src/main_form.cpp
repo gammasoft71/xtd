@@ -91,6 +91,7 @@ main_form::main_form() {
       close();
     } else {
       cancel_button_.text("&Cancel");
+      create_button_.text("&Next");
       create_panel_.visible(true);
       configure_panel_.visible(false);
     }
