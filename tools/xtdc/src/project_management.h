@@ -1931,7 +1931,7 @@ namespace xtdc_command {
         "/// @endcond",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"include"/"export.h", lines);
+      xtd::io::file::write_all_lines(path/"include"/"export.h", lines);
     }
 
     void create_cpp_shared_library_source(const std::string& name, const std::filesystem::path& path) const {
@@ -2085,7 +2085,7 @@ namespace xtdc_command {
         "install(EXPORT ${PROJECT_NAME} DESTINATION cmake)",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
     void create_objectivec_shared_library_export(const std::string& name, const std::filesystem::path& path) const {
