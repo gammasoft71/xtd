@@ -2704,11 +2704,11 @@ namespace xtdc_command {
     }
 
     void create_gtest_unit_test_application(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_gtest_unit_test_application_solution_cmakelists_txt(name);
-      create_gtest_unit_test_application_cmakelists_txt(name);
-      create_gtest_unit_test_application_source(name);
-      create_gtest_unit_test_application_main(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_gtest_unit_test_application_solution_cmakelists_txt(name);
+      create_gtest_unit_test_application_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_gtest_unit_test_application_source(name, create_solution ? path_/name : path_);
+      create_gtest_unit_test_application_main(name, create_solution ? path_/name : path_);
     }
     
     void create_gtest_unit_test_application_solution_cmakelists_txt(const std::string& name) const {
@@ -2723,7 +2723,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_gtest_unit_test_application_cmakelists_txt(const std::string& name) const {
+    void create_gtest_unit_test_application_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.3)",
         "",
@@ -2751,10 +2751,10 @@ namespace xtdc_command {
         "add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_gtest_unit_test_application_source(const std::string& name) const {
+    void create_gtest_unit_test_application_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include <gtest/gtest.h>",
         "",
@@ -2765,10 +2765,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"unit_test1.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"unit_test1.cpp", lines);
     }
     
-    void create_gtest_unit_test_application_main(const std::string& name) const {
+    void create_gtest_unit_test_application_main(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include <gtest/gtest.h>",
         "",
@@ -2778,7 +2778,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"main.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"main.cpp", lines);
     }
 
     void create_xtd_unit_test_application(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
