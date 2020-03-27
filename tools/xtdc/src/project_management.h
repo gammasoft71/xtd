@@ -1484,12 +1484,12 @@ namespace xtdc_command {
     }
 
     void create_wxwidgets_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_wxwidgets_gui_solution_cmakelists_txt(name);
-      create_wxwidgets_gui_cmakelists_txt(name);
-      create_wxwidgets_gui_include(name);
-      create_wxwidgets_gui_source(name);
-      create_wxwidgets_gui_main(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_wxwidgets_gui_solution_cmakelists_txt(name);
+      create_wxwidgets_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_wxwidgets_gui_include(name, create_solution ? path_/name : path_);
+      create_wxwidgets_gui_source(name, create_solution ? path_/name : path_);
+      create_wxwidgets_gui_main(name, create_solution ? path_/name : path_);
     }
     
     void create_wxwidgets_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -1503,7 +1503,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_wxwidgets_gui_cmakelists_txt(const std::string& name) const {
+    void create_wxwidgets_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -1528,10 +1528,10 @@ namespace xtdc_command {
         "target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_wxwidgets_gui_include(const std::string& name) const {
+    void create_wxwidgets_gui_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains Frame1 class.",
@@ -1548,10 +1548,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Frame1.h", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Frame1.h", lines);
     }
     
-    void create_wxwidgets_gui_source(const std::string& name) const {
+    void create_wxwidgets_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"Frame1.h\"",
         "",
@@ -1561,10 +1561,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Frame1.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Frame1.cpp", lines);
     }
     
-    void create_wxwidgets_gui_main(const std::string& name) const {
+    void create_wxwidgets_gui_main(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"Frame1.h\"",
         "#include <wx/app.h>",
@@ -1583,7 +1583,7 @@ namespace xtdc_command {
         xtd::strings::format("wxIMPLEMENT_APP({}::Application);", name),
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Program.cpp", lines);
     }
 
     void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
