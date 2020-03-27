@@ -1196,10 +1196,10 @@ namespace xtdc_command {
     }
 
     void create_win32_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_win32_gui_solution_cmakelists_txt(name);
-      create_win32_gui_cmakelists_txt(name);
-      create_win32_gui_source(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_win32_gui_solution_cmakelists_txt(name);
+      create_win32_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_win32_gui_source(name, create_solution ? path_/name : path_);
     }
     
     void create_win32_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -1213,7 +1213,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_win32_gui_cmakelists_txt(const std::string& name) const {
+    void create_win32_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -1235,10 +1235,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} WIN32 ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_win32_gui_source(const std::string& name) const {
+    void create_win32_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#pragma comment(linker,\"\\\"/manifestdependency:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\\\"\")",
         "",
@@ -1265,7 +1265,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Program.c", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Program.c", lines);
     }
 
     void create_winforms_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
