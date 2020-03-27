@@ -650,12 +650,12 @@ namespace xtdc_command {
     }
     
     void create_cocoa_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_cocoa_gui_solution_cmakelists_txt(name);
-      create_cocoa_gui_cmakelists_txt(name);
-      create_cocoa_gui_include(name);
-      create_cocoa_gui_source(name);
-      create_cocoa_gui_main(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_cocoa_gui_solution_cmakelists_txt(name);
+      create_cocoa_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_cocoa_gui_include(name, create_solution ? path_/name : path_);
+      create_cocoa_gui_source(name, create_solution ? path_/name : path_);
+      create_cocoa_gui_main(name, create_solution ? path_/name : path_);
     }
     
     void create_cocoa_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -669,7 +669,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_cocoa_gui_cmakelists_txt(const std::string& name) const {
+    void create_cocoa_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -694,10 +694,10 @@ namespace xtdc_command {
         "add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_cocoa_gui_include(const std::string& name) const {
+    void create_cocoa_gui_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
@@ -712,10 +712,10 @@ namespace xtdc_command {
         "@end",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.h", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Window1.h", lines);
     }
     
-    void create_cocoa_gui_source(const std::string& name) const {
+    void create_cocoa_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#import \"Window1.h\"",
         "",
@@ -734,10 +734,10 @@ namespace xtdc_command {
         "@end",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.m", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Window1.m", lines);
     }
     
-    void create_cocoa_gui_main(const std::string& name) const {
+    void create_cocoa_gui_main(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#import \"Window1.h\"",
         "",
@@ -749,16 +749,16 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Program.m", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Program.m", lines);
     }
 
     void create_fltk_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
-      std::filesystem::create_directories(path_/name/"src");
-      create_fltk_gui_solution_cmakelists_txt(name);
-      create_fltk_gui_cmakelists_txt(name);
-      create_fltk_gui_include(name);
-      create_fltk_gui_source(name);
-      create_fltk_gui_main(name);
+      std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      if (create_solution) create_fltk_gui_solution_cmakelists_txt(name);
+      create_fltk_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_fltk_gui_include(name, create_solution ? path_/name : path_);
+      create_fltk_gui_source(name, create_solution ? path_/name : path_);
+      create_fltk_gui_main(name, create_solution ? path_/name : path_);
     }
     
     void create_fltk_gui_solution_cmakelists_txt(const std::string& name) const {
@@ -772,7 +772,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
-    void create_fltk_gui_cmakelists_txt(const std::string& name) const {
+    void create_fltk_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
         "",
@@ -797,10 +797,10 @@ namespace xtdc_command {
         "target_link_libraries(${PROJECT_NAME} ${FLTK_LIBRARIES})",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"CMakeLists.txt", lines);
+      xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
-    void create_fltk_gui_include(const std::string& name) const {
+    void create_fltk_gui_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
         "/// @brief Contains Window1 class.",
@@ -817,10 +817,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.h", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Window1.h", lines);
     }
     
-    void create_fltk_gui_source(const std::string& name) const {
+    void create_fltk_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"Window1.h\"",
         "",
@@ -830,10 +830,10 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Window1.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Window1.cpp", lines);
     }
     
-    void create_fltk_gui_main(const std::string& name) const {
+    void create_fltk_gui_main(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"Window1.h\"",
         "#include <FL/Fl.H>",
@@ -850,7 +850,7 @@ namespace xtdc_command {
         "}",
       };
       
-      xtd::io::file::write_all_lines(path_/name/"src"/"Program.cpp", lines);
+      xtd::io::file::write_all_lines(path/"src"/"Program.cpp", lines);
     }
 
     void create_gtk2_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
