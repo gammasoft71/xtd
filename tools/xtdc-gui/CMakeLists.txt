@@ -5,6 +5,12 @@ project(xtdc-gui)
 set(SOURCES
   src/main_form.h
   src/main_form.cpp
+  src/project_language.h
+  src/project_platform.h
+  src/project_type.h
+  src/project_type_item.h
+  src/project_type_item_control.h
+  src/project_type_items_control.h
 )
 set(PROPERTIES
   properties/startup.cpp
