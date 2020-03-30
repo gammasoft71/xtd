@@ -1,6 +1,8 @@
 #include "main_form.h"
+#include <xtd/environment.h>
 #include <xtd/forms/application.h>
 
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtdc_gui;
@@ -38,31 +40,29 @@ main_form::main_form() {
   
   language_choice_.parent(create_panel_);
   language_choice_.width(140);
-  language_choice_.location({create_panel_.size().width() - template_choice_.width() - 400, 50});
+  language_choice_.location({create_panel_.size().width() - project_type_choice_.width() - 400, 50});
   language_choice_.anchor(anchor_styles::top|anchor_styles::right);
-  language_choice_.items().push_back_range({"All", "xtd", "c++", "c", "c#", "objective-c"});
-  language_choice_.selected_index(0);
+  language_choice_.items().push_back_range({"All languages", "xtd (c++)", "c++", "c", "c#", "objective-c"});
+  language_choice_.selected_index(1);
 
   platform_choice_.parent(create_panel_);
   platform_choice_.width(140);
-  platform_choice_.location({create_panel_.size().width() - template_choice_.width() - 230, 50});
+  platform_choice_.location({create_panel_.size().width() - project_type_choice_.width() - 230, 50});
   platform_choice_.anchor(anchor_styles::top|anchor_styles::right);
-  platform_choice_.items().push_back_range({"All", "Windows", "macOS", "Linux"});
-  platform_choice_.selected_index(0);
+  platform_choice_.items().push_back_range({"All platforms", "Windows", "Linux", "macOS"});
+  platform_choice_.selected_index(environment::os_version().is_windows_platform() ? 1 : environment::os_version().is_linux_platform() ? 2 : 3);
   
-  template_choice_.parent(create_panel_);
-  template_choice_.width(140);
-  template_choice_.location({create_panel_.size().width() - template_choice_.width() - 50, 50});
-  template_choice_.anchor(anchor_styles::top|anchor_styles::right);
-  template_choice_.items().push_back_range({"All", "Gui", "Console", "Shared library", "Static library", "UnitTest Project", "Solution File"});
-  template_choice_.selected_index(0);
+  project_type_choice_.parent(create_panel_);
+  project_type_choice_.width(140);
+  project_type_choice_.location({create_panel_.size().width() - project_type_choice_.width() - 50, 50});
+  project_type_choice_.anchor(anchor_styles::top|anchor_styles::right);
+  project_type_choice_.items().push_back_range({"All project types", "Gui", "Console", "Shared library", "Static library", "UnitTest Project", "Solution File"});
+  project_type_choice_.selected_index(0);
   
-  items_panel_.parent(create_panel_);
-  items_panel_.location({create_panel_.size().width() - 475 - 50, 100});
-  items_panel_.size({475, create_panel_.size().height() - 100});
-  items_panel_.back_color(system_colors::window());
-  items_panel_.border_style(xtd::forms::border_style::fixed_3d);
-  items_panel_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
+  project_type_items_control_.parent(create_panel_);
+  project_type_items_control_.location({create_panel_.size().width() - 475 - 50, 100});
+  project_type_items_control_.size({475, create_panel_.size().height() - 100});
+  project_type_items_control_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
   
   configure_panel_.parent(*this);
   configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
