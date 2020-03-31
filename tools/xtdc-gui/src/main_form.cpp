@@ -73,7 +73,6 @@ main_form::main_form() {
   project_type_items_control_.location({create_panel_.size().width() - 475 - 50, 100});
   project_type_items_control_.size({475, create_panel_.size().height() - 100});
   project_type_items_control_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
-  project_type_items_control_.selected_index(0);
 
   configure_panel_.parent(*this);
   configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
@@ -110,6 +109,7 @@ main_form::main_form() {
 
   create_button_.parent(*this);
   create_button_.text("&Next");
+  create_button_.enabled(false);
   create_button_.location(client_size() - xtd::drawing::size {125, 75});
   create_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   create_button_.click += [&] {
