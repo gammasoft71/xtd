@@ -29,7 +29,7 @@ namespace xtdc_gui {
     xtd::forms::list_box recent_projects_list_box_;
     xtd::forms::choice language_choice_;
     xtd::forms::choice platform_choice_;
-    xtd::forms::choice project_type_choice_;
+    xtd::forms::choice type_choice_;
     project_type_items_control project_type_items_control_;
 
     xtd::forms::panel configure_panel_;
