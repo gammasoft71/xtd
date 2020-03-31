@@ -1,6 +1,7 @@
 #include "main_form.h"
 #include <xtd/environment.h>
 #include <xtd/forms/application.h>
+#include <xtd/forms/folder_browser_dialog.h>
 
 using namespace std;
 using namespace xtd;
@@ -9,16 +10,90 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
-  text("xtdc-gui");
+  //text("xtdc-gui");
   client_size({1024, 700});
   minimize_box(false);
   maximize_box(false);
   start_position(form_start_position::center_screen);
   
+  startup_panel_.parent(*this);
+  startup_panel_.size(client_size() - xtd::drawing::size {0, 100});
+  startup_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  
+  startup_title_label_.parent(startup_panel_);
+  startup_title_label_.location({50, 50});
+  startup_title_label_.auto_size(true);
+  startup_title_label_.text("xtdc-gui");
+  startup_title_label_.font({startup_title_label_.font(), 24.0});
+  
+  open_recent_project_title_label_.parent(startup_panel_);
+  open_recent_project_title_label_.location({50, 115});
+  open_recent_project_title_label_.auto_size(true);
+  open_recent_project_title_label_.text("Open recent");
+  open_recent_project_title_label_.font({open_recent_project_title_label_.font(), 16.0});
+  
+  open_recent_projects_list_box_.parent(startup_panel_);
+  open_recent_projects_list_box_.location({50, 175});
+  open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
+  open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_recent_projects_list_box_.items().push_back_range({"gui_app1 (~/Projects/gui_app1)", "console_app1 (~/Projects/console_app1)"});
+  open_recent_projects_list_box_.selected_index(0);
+  
+  get_started_title_label_.parent(startup_panel_);
+  get_started_title_label_.location({startup_panel_.size().width() - 400, 115});
+  get_started_title_label_.auto_size(true);
+  get_started_title_label_.text("Get started");
+  get_started_title_label_.font({get_started_title_label_.font(), 16.0});
+  get_started_title_label_.anchor(anchor_styles::top|anchor_styles::right);
+
+  open_project_button_.parent(startup_panel_);
+  open_project_button_.text("Open a project or solution");
+  open_project_button_.location({startup_panel_.size().width() - 400, 175});
+  open_project_button_.size({350, 120});
+  open_project_button_.font({open_project_button_.font(), 16.0});
+  open_project_button_.anchor(anchor_styles::top|anchor_styles::right);
+  open_project_button_.click += [&] {
+    folder_browser_dialog dialog;
+    
+    if (dialog.show_dialog() == dialog_result::ok) {
+      system(strings::format("xtdc open {}", dialog.selected_path()).c_str());
+      if (auto_close_) close();
+    }
+  };
+
+  run_project_button_.parent(startup_panel_);
+  run_project_button_.text("Run a project");
+  run_project_button_.location({startup_panel_.size().width() - 400, 310});
+  run_project_button_.size({350, 120});
+  run_project_button_.font({run_project_button_.font(), 16.0});
+  run_project_button_.anchor(anchor_styles::top|anchor_styles::right);
+  run_project_button_.click += [&] {
+    folder_browser_dialog dialog;
+    
+    if (dialog.show_dialog() == dialog_result::ok) {
+      system(strings::format("xtdc run {}", dialog.selected_path()).c_str());
+      if (auto_close_) close();
+    }
+  };
+
+  new_project_button_.parent(startup_panel_);
+  new_project_button_.text("Create a new project");
+  new_project_button_.location({startup_panel_.size().width() - 400, 445});
+  new_project_button_.size({350, 120});
+  new_project_button_.font({new_project_button_.font(), 16.0});
+  new_project_button_.anchor(anchor_styles::top|anchor_styles::right);
+  new_project_button_.click += [&] {
+    startup_panel_.visible(false);
+    create_panel_.visible(true);
+    previous_button_.visible(true);
+    next_button_.visible(true);
+  };
+
   create_panel_.parent(*this);
   create_panel_.size(client_size() - xtd::drawing::size {0, 100});
   create_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
   //create_panel_.back_color(color::red);
+  create_panel_.visible(false);
 
   create_title_label_.parent(create_panel_);
   create_title_label_.location({50, 50});
@@ -26,18 +101,18 @@ main_form::main_form() {
   create_title_label_.text("Create a new project");
   create_title_label_.font({create_title_label_.font(), 24.0});
   
-  recent_project_title_label_.parent(create_panel_);
-  recent_project_title_label_.location({50, 115});
-  recent_project_title_label_.auto_size(true);
-  recent_project_title_label_.text("Recent project templates");
-  recent_project_title_label_.font({create_title_label_.font(), 16.0});
+  create_recent_project_title_label_.parent(create_panel_);
+  create_recent_project_title_label_.location({50, 115});
+  create_recent_project_title_label_.auto_size(true);
+  create_recent_project_title_label_.text("Recent project templates");
+  create_recent_project_title_label_.font({create_title_label_.font(), 16.0});
   
-  recent_projects_list_box_.parent(create_panel_);
-  recent_projects_list_box_.location({50, 175});
-  recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
-  recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  recent_projects_list_box_.items().push_back_range({"xtd GUI Application (c++)", "xtd Console Application (c++)"});
-  recent_projects_list_box_.selected_index(0);
+  create_recent_projects_list_box_.parent(create_panel_);
+  create_recent_projects_list_box_.location({50, 175});
+  create_recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
+  create_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  create_recent_projects_list_box_.items().push_back_range({"xtd GUI Application (c++)", "xtd Console Application (c++)"});
+  create_recent_projects_list_box_.selected_index(0);
   
   language_choice_.parent(create_panel_);
   language_choice_.width(140);
@@ -92,36 +167,39 @@ main_form::main_form() {
   project_type_title_label_.text("Project type information");
   project_type_title_label_.font({create_title_label_.font(), 16.0});
 
-  cancel_button_.parent(*this);
-  cancel_button_.text("&Cancel");
-  cancel_button_.location(client_size() - xtd::drawing::size {215, 75});
-  cancel_button_.anchor(anchor_styles::bottom|anchor_styles::right);
-  cancel_button_.click += [&] {
+  previous_button_.parent(*this);
+  previous_button_.text("&Back");
+  previous_button_.visible(false);
+  previous_button_.location(client_size() - xtd::drawing::size {215, 75});
+  previous_button_.anchor(anchor_styles::bottom|anchor_styles::right);
+  previous_button_.click += [&] {
     if (create_panel_.visible()) {
-      close();
+      startup_panel_.visible(true);
+      create_panel_.visible(false);
+      previous_button_.visible(false);
+      next_button_.visible(false);
     } else {
-      cancel_button_.text("&Cancel");
-      create_button_.text("&Next");
+      previous_button_.text("&Back");
+      next_button_.text("&Next");
       create_panel_.visible(true);
       configure_panel_.visible(false);
     }
   };
 
-  create_button_.parent(*this);
-  create_button_.text("&Next");
-  create_button_.enabled(false);
-  create_button_.location(client_size() - xtd::drawing::size {125, 75});
-  create_button_.anchor(anchor_styles::bottom|anchor_styles::right);
-  create_button_.click += [&] {
+  next_button_.parent(*this);
+  next_button_.text("&Next");
+  next_button_.visible(false);
+  next_button_.enabled(false);
+  next_button_.location(client_size() - xtd::drawing::size {125, 75});
+  next_button_.anchor(anchor_styles::bottom|anchor_styles::right);
+  next_button_.click += [&] {
     if (!create_panel_.visible()) {
-      hide();
-      close();
-      application::do_events();
       system("xtdc new gui /Users/yves/Projects/gui_app1");
       system("xtdc open /Users/yves/Projects/gui_app1");
+      if (auto_close_) close();
     } else {
-      cancel_button_.text("&Back");
-      create_button_.text("&Create");
+      previous_button_.text("&Back");
+      next_button_.text("&Create");
       create_panel_.visible(false);
       configure_panel_.visible(true);
     }
