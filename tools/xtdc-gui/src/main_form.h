@@ -23,10 +23,19 @@ namespace xtdc_gui {
     static void main();
     
   private:
+    xtd::forms::panel startup_panel_;
+    xtd::forms::label startup_title_label_;
+    xtd::forms::label open_recent_project_title_label_;
+    xtd::forms::list_box open_recent_projects_list_box_;
+    xtd::forms::label get_started_title_label_;
+    xtd::forms::button open_project_button_;
+    xtd::forms::button run_project_button_;
+    xtd::forms::button new_project_button_;
+
     xtd::forms::panel create_panel_;
     xtd::forms::label create_title_label_;
-    xtd::forms::label recent_project_title_label_;
-    xtd::forms::list_box recent_projects_list_box_;
+    xtd::forms::label create_recent_project_title_label_;
+    xtd::forms::list_box create_recent_projects_list_box_;
     xtd::forms::choice language_choice_;
     xtd::forms::choice platform_choice_;
     xtd::forms::choice type_choice_;
@@ -36,7 +45,8 @@ namespace xtdc_gui {
     xtd::forms::label configure_title_label_;
     xtd::forms::label project_type_title_label_;
 
-    xtd::forms::button cancel_button_;
-    xtd::forms::button create_button_;
+    xtd::forms::button previous_button_;
+    xtd::forms::button next_button_;
+    bool auto_close_ = false;
   };
 }
