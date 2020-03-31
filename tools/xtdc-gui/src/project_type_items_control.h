@@ -57,7 +57,6 @@ namespace xtdc_gui {
       auto_scroll(true);
       back_color(xtd::drawing::system_colors::window());
       border_style(xtd::forms::border_style::fixed_3d);
-      selected_index(0);
     }
 
     size_t selected_index() const {return selected_index_;}
