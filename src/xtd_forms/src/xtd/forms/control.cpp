@@ -761,6 +761,7 @@ void control::do_layout_childs_with_dock_style() {
   if (docked) {
     drawing::rectangle docking_rect = this->client_rectangle();
     for(control_collection::reverse_iterator iterator = this->controls_.rbegin(); iterator != this->controls_.rend(); ++iterator) {
+      if (!iterator->get().visible()) continue;
       if (iterator->get().dock() == dock_style::top) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().width(docking_rect.width());
