@@ -77,7 +77,8 @@ namespace xtdc_gui {
 
     void filter_items(project_language language, project_platform platform, project_type type) {
       for (auto& item : project_type_item_controls_)
-        item->height((language == project_language::all || (item->project_type_item().project_language() & language) == language) && (platform == project_platform::all || (item->project_type_item().project_platform() & platform) == platform) && (type == project_type::all || (item->project_type_item().project_type() & type) == type) ? 90 : 0);
+        item->visible((language == project_language::all || (item->project_type_item().project_language() & language) == language) && (platform == project_platform::all || (item->project_type_item().project_platform() & platform) == platform) && (type == project_type::all || (item->project_type_item().project_type() & type) == type));
+      if (selected_index_ != -1 && !project_type_item_controls_[selected_index_]->visible()) selected_index(-1);
       perform_layout();
     }
     
