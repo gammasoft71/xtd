@@ -47,6 +47,5 @@ namespace xtdc_gui {
 
     xtd::forms::button previous_button_;
     xtd::forms::button next_button_;
-    bool auto_close_ = false;
   };
 }
