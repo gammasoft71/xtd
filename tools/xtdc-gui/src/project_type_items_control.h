@@ -10,7 +10,7 @@ namespace xtdc_gui {
     /// @brief Initializes a new instance of the project_type_item_control class.
     project_type_items_control() {
       std::vector<project_type_item> project_type_items {
-        {"Solution File", "A project for creating an empty solution file.", project_language::all, project_platform::all, project_type::solution_file},
+        {"Solution File", "A project for creating an empty solution file.", project_language::all&~project_language::xtd, project_platform::all, project_type::solution_file},
         {"xtd Solution File", "A project for creating an empty xtd solution file.", project_language::xtd, project_platform::all, project_type::solution_file},
         {"catch2 Unit Test project (c++)", "A project for creating a catch2 unit tests application.", project_language::cpp, project_platform::all, project_type::unit_tests_project},
         {"gtest Unit Test project (c++)", "A project for creating a gtest unit tests application.", project_language::cpp, project_platform::all, project_type::unit_tests_project},
@@ -75,6 +75,12 @@ namespace xtdc_gui {
       }
     }
 
+    void filter_items(project_language language, project_platform platform, project_type type) {
+      for (auto& item : project_type_item_controls_)
+        item->height((language == project_language::all || (item->project_type_item().project_language() & language) == language) && (platform == project_platform::all || (item->project_type_item().project_platform() & platform) == platform) && (type == project_type::all || (item->project_type_item().project_type() & type) == type) ? 90 : 0);
+      perform_layout();
+    }
+    
     xtd::event<project_type_items_control, xtd::event_handler<xtd::forms::control&>> selected_index_changed;
     xtd::event<project_type_items_control, xtd::event_handler<xtd::forms::control&>> selected_project_type_item_changed;
     
