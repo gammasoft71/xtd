@@ -56,7 +56,7 @@ main_form::main_form() {
   project_type_choice_.width(140);
   project_type_choice_.location({create_panel_.size().width() - project_type_choice_.width() - 50, 50});
   project_type_choice_.anchor(anchor_styles::top|anchor_styles::right);
-  project_type_choice_.items().push_back_range({"All project types", "Gui", "Console", "Shared library", "Static library", "UnitTest Project", "Solution File"});
+  project_type_choice_.items().push_back_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
   project_type_choice_.selected_index(0);
   
   project_type_items_control_.parent(create_panel_);
