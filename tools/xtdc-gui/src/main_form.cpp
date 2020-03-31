@@ -36,7 +36,7 @@ main_form::main_form() {
   recent_projects_list_box_.location({50, 175});
   recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
   recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  recent_projects_list_box_.items().push_back_range({"gui_app1 (GUI Application - xtd)", "console_app1 (Console Application - xtd)"});
+  recent_projects_list_box_.items().push_back_range({"xtd GUI Application (c++)", "xtd Console Application (c++)"});
   recent_projects_list_box_.selected_index(0);
   
   language_choice_.parent(create_panel_);
