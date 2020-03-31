@@ -12,7 +12,7 @@ main_form::main_form() {
   client_size({1024, 700});
   minimize_box(false);
   maximize_box(false);
-  //form_border_style(xtd::forms::form_border_style::fixed_dialog);
+  start_position(form_start_position::center_screen);
   
   create_panel_.parent(*this);
   create_panel_.size(client_size() - xtd::drawing::size {0, 100});
@@ -42,14 +42,14 @@ main_form::main_form() {
   language_choice_.width(140);
   language_choice_.location({create_panel_.size().width() - project_type_choice_.width() - 400, 50});
   language_choice_.anchor(anchor_styles::top|anchor_styles::right);
-  language_choice_.items().push_back_range({"All languages", "xtd (c++)", "c++", "c", "c#", "objective-c"});
+  language_choice_.items().push_back_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
   language_choice_.selected_index(1);
 
   platform_choice_.parent(create_panel_);
   platform_choice_.width(140);
   platform_choice_.location({create_panel_.size().width() - project_type_choice_.width() - 230, 50});
   platform_choice_.anchor(anchor_styles::top|anchor_styles::right);
-  platform_choice_.items().push_back_range({"All platforms", "Windows", "Linux", "macOS"});
+  platform_choice_.items().push_back_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
   platform_choice_.selected_index(environment::os_version().is_windows_platform() ? 1 : environment::os_version().is_linux_platform() ? 2 : 3);
   
   project_type_choice_.parent(create_panel_);
@@ -63,6 +63,7 @@ main_form::main_form() {
   project_type_items_control_.location({create_panel_.size().width() - 475 - 50, 100});
   project_type_items_control_.size({475, create_panel_.size().height() - 100});
   project_type_items_control_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
+  project_type_items_control_.selected_index(0);
   
   configure_panel_.parent(*this);
   configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
