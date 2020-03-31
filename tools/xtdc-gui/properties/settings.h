@@ -23,11 +23,15 @@ namespace xtdc_gui::properties {
     bool auto_close() const {return auto_close_;}
     void auto_close(bool value) {auto_close_ = value;}
     
+    std::string create_propject_folder() const {return create_propject_folder_;}
+    void create_propject_folder(std::string value) {create_propject_folder_ = value;}
+    
     std::string open_propject_folder() const {return open_propject_folder_;}
     void open_propject_folder(std::string value) {open_propject_folder_ = value;}
     
     void reload() {
-      open_propject_folder_ = settings_.read("auto_close", auto_close_);
+      auto_close_ = settings_.read("auto_close", auto_close_);
+      create_propject_folder_ = settings_.read("create_propject_folder", create_propject_folder_);
       open_propject_folder_ = settings_.read("open_propject_folder", open_propject_folder_);
     }
     
@@ -39,6 +43,7 @@ namespace xtdc_gui::properties {
     
     void save() {
       settings_.write("auto_close", auto_close_);
+      settings_.write("create_propject_folder", create_propject_folder_);
       settings_.write("open_propject_folder", open_propject_folder_);
       settings_.save();
     }
@@ -47,6 +52,7 @@ namespace xtdc_gui::properties {
     settings(bool load) {if (load) reload();}
     xtd::forms::settings settings_;
     bool auto_close_ {false};
+    std::string create_propject_folder_ {xtd::environment::get_folder_path(xtd::environment::special_folder::home)};
     std::string open_propject_folder_ {xtd::environment::get_folder_path(xtd::environment::special_folder::home)};
   };
 }
