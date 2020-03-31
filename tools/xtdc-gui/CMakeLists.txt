@@ -13,6 +13,7 @@ set(SOURCES
   src/project_type_items_control.h
 )
 set(PROPERTIES
+  properties/settings.h
   properties/startup.cpp
 )
 # Options)

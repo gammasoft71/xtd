@@ -1,4 +1,5 @@
 #include "main_form.h"
+#include "../properties/settings.h"
 #include <xtd/environment.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
@@ -54,10 +55,12 @@ main_form::main_form() {
   open_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   open_project_button_.click += [&] {
     folder_browser_dialog dialog;
-    
+    dialog.selected_path(properties::settings::default_settings().open_propject_folder());
     if (dialog.show_dialog() == dialog_result::ok) {
+      properties::settings::default_settings().open_propject_folder(dialog.selected_path());
+      properties::settings::default_settings().save();
       system(strings::format("xtdc open {}", dialog.selected_path()).c_str());
-      if (auto_close_) close();
+      if (properties::settings::default_settings().auto_close()) close();
     }
   };
 
@@ -69,10 +72,12 @@ main_form::main_form() {
   run_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   run_project_button_.click += [&] {
     folder_browser_dialog dialog;
-    
+    dialog.selected_path(properties::settings::default_settings().open_propject_folder());
     if (dialog.show_dialog() == dialog_result::ok) {
+      properties::settings::default_settings().open_propject_folder(dialog.selected_path());
+      properties::settings::default_settings().save();
       system(strings::format("xtdc run {}", dialog.selected_path()).c_str());
-      if (auto_close_) close();
+      if (properties::settings::default_settings().auto_close()) close();
     }
   };
 
@@ -196,7 +201,7 @@ main_form::main_form() {
     if (!create_panel_.visible()) {
       system("xtdc new gui /Users/yves/Projects/gui_app1");
       system("xtdc open /Users/yves/Projects/gui_app1");
-      if (auto_close_) close();
+      if (properties::settings::default_settings().auto_close()) close();
     } else {
       previous_button_.text("&Back");
       next_button_.text("&Create");
