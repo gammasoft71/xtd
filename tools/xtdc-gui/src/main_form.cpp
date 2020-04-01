@@ -1,5 +1,6 @@
 #include "main_form.h"
 #include "../properties/settings.h"
+#include <filesystem>
 #include <xtd/environment.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
@@ -37,8 +38,12 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.location({50, 175});
   startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  startup_open_recent_projects_list_box_.items().push_back_range({"gui_app1 (~/Projects/gui_app1)", "console_app1 (~/Projects/console_app1)"});
-  startup_open_recent_projects_list_box_.selected_index(0);
+  for (auto item : properties::settings::default_settings().open_recent_propjects())
+    startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(item).stem().string(), item));
+  startup_open_recent_projects_list_box_.double_click += [&] {
+    if (startup_open_recent_projects_list_box_.selected_index() != -1)
+      system(strings::format("xtdc open {}", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]).c_str());
+  };
   
   startup_get_started_title_label_.parent(startup_panel_);
   startup_get_started_title_label_.location({startup_panel_.size().width() - 400, 115});
@@ -57,6 +62,12 @@ main_form::main_form() {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().open_propject_folder());
     if (dialog.show_dialog() == dialog_result::ok) {
+      auto open_recent_projects = properties::settings::default_settings().open_recent_propjects();
+      if (std::find(open_recent_projects.begin(), open_recent_projects.end(), dialog.selected_path()) == open_recent_projects.end()) {
+        startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(dialog.selected_path()).stem().string(), dialog.selected_path()));
+        open_recent_projects.push_back(dialog.selected_path());
+        properties::settings::default_settings().open_recent_propjects(open_recent_projects);
+      }
       properties::settings::default_settings().open_propject_folder(dialog.selected_path());
       properties::settings::default_settings().save();
       system(strings::format("xtdc open {}", dialog.selected_path()).c_str());
@@ -74,6 +85,12 @@ main_form::main_form() {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().open_propject_folder());
     if (dialog.show_dialog() == dialog_result::ok) {
+      auto open_recent_projects = properties::settings::default_settings().open_recent_propjects();
+      if (std::find(open_recent_projects.begin(), open_recent_projects.end(), dialog.selected_path()) == open_recent_projects.end()) {
+        startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(dialog.selected_path()).stem().string(), dialog.selected_path()));
+        open_recent_projects.push_back(dialog.selected_path());
+        properties::settings::default_settings().open_recent_propjects(open_recent_projects);
+      }
       properties::settings::default_settings().open_propject_folder(dialog.selected_path());
       properties::settings::default_settings().save();
       system(strings::format("xtdc run {}", dialog.selected_path()).c_str());
@@ -250,8 +267,21 @@ main_form::main_form() {
   next_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   next_button_.click += [&] {
     if (!create_panel_.visible()) {
-      system("xtdc new gui /Users/yves/Projects/gui_app1");
-      system("xtdc open /Users/yves/Projects/gui_app1");
+      auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
+      auto open_recent_projects = properties::settings::default_settings().open_recent_propjects();
+      if (std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path) == open_recent_projects.end()) {
+        startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(project_path).stem().string(), project_path));
+        open_recent_projects.push_back(project_path);
+        properties::settings::default_settings().open_recent_propjects(open_recent_projects);
+      }
+      properties::settings::default_settings().open_propject_folder(project_path);
+      system(xtd::strings::format("xtdc new gui {}", project_path).c_str());
+      system(xtd::strings::format("xtdc open {}", project_path).c_str());
+      startup_panel_.visible(true);
+      configure_panel_.visible(false);
+      previous_button_.visible(false);
+      next_button_.text("&Next");
+      next_button_.visible(false);
       if (properties::settings::default_settings().auto_close()) close();
     } else {
       previous_button_.text("&Back");

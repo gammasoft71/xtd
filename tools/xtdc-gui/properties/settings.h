@@ -8,7 +8,7 @@
 #include <xtd/environment.h>
 #include <xtd/forms/component.h>
 #include <xtd/forms/settings.h>
-#include <string>
+#include <xtd/strings.h>
 
 namespace xtdc_gui::properties {
   class settings : public xtd::forms::component {
@@ -24,15 +24,19 @@ namespace xtdc_gui::properties {
     void auto_close(bool value) {auto_close_ = value;}
     
     std::string create_propject_folder() const {return create_propject_folder_;}
-    void create_propject_folder(std::string value) {create_propject_folder_ = value;}
+    void create_propject_folder(const std::string& value) {create_propject_folder_ = value;}
     
     std::string open_propject_folder() const {return open_propject_folder_;}
-    void open_propject_folder(std::string value) {open_propject_folder_ = value;}
+    void open_propject_folder(const std::string& value) {open_propject_folder_ = value;}
+    
+    std::vector<std::string> open_recent_propjects() const {return open_recent_propjects_;}
+    void open_recent_propjects(const std::vector<std::string>& value) {open_recent_propjects_ = value;}
     
     void reload() {
       auto_close_ = settings_.read("auto_close", auto_close_);
       create_propject_folder_ = settings_.read("create_propject_folder", create_propject_folder_);
       open_propject_folder_ = settings_.read("open_propject_folder", open_propject_folder_);
+      open_recent_propjects_ = xtd::strings::split(settings_.read("open_recent_propjects", xtd::strings::join(";", open_recent_propjects_)), {';'});
     }
     
     void reset() {
@@ -45,6 +49,7 @@ namespace xtdc_gui::properties {
       settings_.write("auto_close", auto_close_);
       settings_.write("create_propject_folder", create_propject_folder_);
       settings_.write("open_propject_folder", open_propject_folder_);
+      settings_.write("open_recent_propjects", xtd::strings::join(";", open_recent_propjects_));
       settings_.save();
     }
     
@@ -54,6 +59,7 @@ namespace xtdc_gui::properties {
     bool auto_close_ {false};
     std::string create_propject_folder_ {xtd::environment::get_folder_path(xtd::environment::special_folder::home)};
     std::string open_propject_folder_ {xtd::environment::get_folder_path(xtd::environment::special_folder::home)};
+    std::vector<std::string> open_recent_propjects_;
   };
 }
 
