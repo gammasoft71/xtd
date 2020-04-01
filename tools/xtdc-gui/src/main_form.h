@@ -32,6 +32,10 @@ namespace xtdc_gui {
     xtd::forms::button startup_open_project_button_;
     xtd::forms::button startup_run_project_button_;
     xtd::forms::button startup_new_project_button_;
+    xtd::forms::button startup_open_xtd_examples_button_;
+
+    xtd::forms::panel open_xtd_examples_panel_;
+    xtd::forms::label open_xtd_examples_title_label_;
 
     xtd::forms::panel create_panel_;
     xtd::forms::label create_title_label_;
