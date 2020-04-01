@@ -55,7 +55,7 @@ main_form::main_form() {
   startup_open_project_button_.parent(startup_panel_);
   startup_open_project_button_.text("Open a project or solution");
   startup_open_project_button_.location({startup_panel_.size().width() - 400, 175});
-  startup_open_project_button_.size({350, 120});
+  startup_open_project_button_.size({350, 100});
   startup_open_project_button_.font({startup_open_project_button_.font(), 16.0});
   startup_open_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   startup_open_project_button_.click += [&] {
@@ -77,8 +77,8 @@ main_form::main_form() {
 
   startup_run_project_button_.parent(startup_panel_);
   startup_run_project_button_.text("Run a project");
-  startup_run_project_button_.location({startup_panel_.size().width() - 400, 310});
-  startup_run_project_button_.size({350, 120});
+  startup_run_project_button_.location({startup_panel_.size().width() - 400, 285});
+  startup_run_project_button_.size({350, 100});
   startup_run_project_button_.font({startup_run_project_button_.font(), 16.0});
   startup_run_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   startup_run_project_button_.click += [&] {
@@ -100,16 +100,43 @@ main_form::main_form() {
 
   startup_new_project_button_.parent(startup_panel_);
   startup_new_project_button_.text("Create a new project");
-  startup_new_project_button_.location({startup_panel_.size().width() - 400, 445});
-  startup_new_project_button_.size({350, 120});
+  startup_new_project_button_.location({startup_panel_.size().width() - 400, 395});
+  startup_new_project_button_.size({350, 100});
   startup_new_project_button_.font({startup_new_project_button_.font(), 16.0});
   startup_new_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   startup_new_project_button_.click += [&] {
     startup_panel_.visible(false);
     create_panel_.visible(true);
     previous_button_.visible(true);
+    next_button_.text("&Next");
     next_button_.visible(true);
   };
+
+  startup_open_xtd_examples_button_.parent(startup_panel_);
+  startup_open_xtd_examples_button_.text("Open xtd examples");
+  startup_open_xtd_examples_button_.location({startup_panel_.size().width() - 400, 505});
+  startup_open_xtd_examples_button_.size({350, 100});
+  startup_open_xtd_examples_button_.font({startup_new_project_button_.font(), 16.0});
+  startup_open_xtd_examples_button_.anchor(anchor_styles::top|anchor_styles::right);
+  startup_open_xtd_examples_button_.click += [&] {
+    startup_panel_.visible(false);
+    open_xtd_examples_panel_.visible(true);
+    previous_button_.visible(true);
+    next_button_.text("&Open");
+    next_button_.visible(true);
+  };
+
+  open_xtd_examples_panel_.parent(*this);
+  open_xtd_examples_panel_.size(client_size() - xtd::drawing::size {0, 100});
+  open_xtd_examples_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  //create_panel_.back_color(color::red);
+  open_xtd_examples_panel_.visible(false);
+
+  open_xtd_examples_title_label_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_title_label_.location({50, 50});
+  open_xtd_examples_title_label_.auto_size(true);
+  open_xtd_examples_title_label_.text("Open xtd examples");
+  open_xtd_examples_title_label_.font({open_xtd_examples_title_label_.font(), 24.0});
 
   create_panel_.parent(*this);
   create_panel_.size(client_size() - xtd::drawing::size {0, 100});
@@ -246,7 +273,12 @@ main_form::main_form() {
   previous_button_.location(client_size() - xtd::drawing::size {215, 75});
   previous_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   previous_button_.click += [&] {
-    if (create_panel_.visible()) {
+    if (open_xtd_examples_panel_.visible()) {
+      startup_panel_.visible(true);
+      open_xtd_examples_panel_.visible(false);
+      previous_button_.visible(false);
+      next_button_.visible(false);
+    } else if (create_panel_.visible()) {
       startup_panel_.visible(true);
       create_panel_.visible(false);
       previous_button_.visible(false);
