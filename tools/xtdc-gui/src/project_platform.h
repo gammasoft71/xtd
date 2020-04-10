@@ -1,5 +1,7 @@
 #pragma once
 
+#undef linux
+
 namespace xtdc_gui {
   enum class project_platform {
     windows = 0b1,
