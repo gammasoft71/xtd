@@ -297,7 +297,7 @@ main_form::main_form() {
       configure_panel_.visible(true);
     } else {
       auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
-      new_project(project_path, current_project_type_.project_type());
+      new_project(project_path, current_project_type_.project_type(), current_project_type_.project_language());
       startup_panel_.visible(true);
       configure_panel_.visible(false);
       previous_button_.visible(false);
@@ -343,10 +343,10 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
   init_startup_open_recent_projects_list_box();
 }
 
-void main_form::new_project(const std::string& project_path, project_type type) {
+void main_form::new_project(const std::string& project_path, project_type type, project_language language) {
   add_to_open_recent_projects(project_path);
   application::do_events();
-  system(strings::format("xtdc new {} {}", std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}, }[type], project_path).c_str());
+  system(strings::format("xtdc new {} -s {} {}", std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}, }[type], std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}, }[language], project_path).c_str());
   system(strings::format("xtdc open {}", project_path).c_str());
 }
 
