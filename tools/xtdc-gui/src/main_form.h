@@ -28,7 +28,7 @@ namespace xtdc_gui {
     void delete_project(const std::string& project_path);
     void init();
     void init_startup_open_recent_projects_list_box();
-    void new_project(const std::string& project_path, project_type type);
+    void new_project(const std::string& project_path, project_type type, project_language language);
     void open_project(const std::string& project_path);
     void run_project(const std::string& project_path);
 
