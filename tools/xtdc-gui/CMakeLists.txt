@@ -11,6 +11,7 @@ set(SOURCES
   src/project_type.h
   src/project_type_item.h
   src/project_type_item_control.h
+  src/project_type_item_control.cpp
   src/project_type_items_control.h
 )
 set(PROPERTIES

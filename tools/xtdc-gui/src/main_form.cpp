@@ -203,6 +203,9 @@ main_form::main_form() {
       next_button_.enabled(true);
     }
   };
+  create_project_type_items_control_.double_click += [&] {
+    next_button_.perform_click();
+  };
 
   configure_panel_.parent(*this);
   configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
@@ -255,6 +258,15 @@ main_form::main_form() {
     }
   };
 
+  auto_close_check_box_.parent(*this);
+  auto_close_check_box_.text("&Auto close");
+  auto_close_check_box_.checked(properties::settings::default_settings().auto_close());
+  auto_close_check_box_.location({50, client_size().height() - 75});
+  auto_close_check_box_.checked_changed += [&] {
+    properties::settings::default_settings().auto_close(auto_close_check_box_.checked());
+    properties::settings::default_settings().save();
+  };
+  
   previous_button_.parent(*this);
   previous_button_.text("&Back");
   previous_button_.visible(false);

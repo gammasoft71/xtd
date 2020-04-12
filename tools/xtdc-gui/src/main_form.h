@@ -6,6 +6,7 @@
 #include <memory>
 #include <vector>
 #include <xtd/forms/button.h>
+#include <xtd/forms/check_box.h>
 #include <xtd/forms/choice.h>
 #include <xtd/forms/form.h>
 #include <xtd/forms/label.h>
@@ -63,6 +64,7 @@ namespace xtdc_gui {
     xtd::forms::text_box configure_project_location_text_box_;
     xtd::forms::button configure_project_location_button_;
 
+    xtd::forms::check_box auto_close_check_box_;
     xtd::forms::button previous_button_;
     xtd::forms::button next_button_;
     
