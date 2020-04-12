@@ -722,7 +722,7 @@ namespace xtdc_command {
         "@implementation Window1",
         "- (instancetype)init {",
         "  [super initWithContentRect:NSMakeRect(100, 500, 800, 450) styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskResizable backing:NSBackingStoreBuffered defer:NO];",
-        "  [self setTitle:@\"Form1\"];",
+        "  [self setTitle:@\"Window1\"];",
         "  [self setIsVisible:YES];",
         "  return self;",
         "}",
