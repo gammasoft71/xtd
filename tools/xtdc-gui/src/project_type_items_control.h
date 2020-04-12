@@ -85,6 +85,8 @@ namespace xtdc_gui {
     xtd::event<project_type_items_control, xtd::event_handler<xtd::forms::control&>> selected_index_changed;
     xtd::event<project_type_items_control, xtd::event_handler<xtd::forms::control&>> selected_project_type_item_changed;
     
+    void perform_double_click() {on_double_click(xtd::event_args::empty);}
+    
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != -1) project_type_item_controls_[project_type_item_controls_.size() - 1 - previous_selected_index_]->back_color(back_color());

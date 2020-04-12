@@ -27,7 +27,7 @@ namespace xtdc_gui {
       name_.text(project_type_item_.name());
       name_.font({name_.font(), xtd::drawing::font_style::bold});
       name_.click += {*this, &project_type_item_control::perform_click};
-      name_.double_click += {*this, &project_type_item_control::perform_double_click};
+      //name_.double_click += {*this, &project_type_item_control::perform_double_click};
 
       description_.parent(*this);
       description_.location({50, 30});
@@ -35,12 +35,15 @@ namespace xtdc_gui {
       //description_.back_color(xtd::drawing::color::black);
       description_.text(project_type_item_.description());
       description_.click += {*this, &project_type_item_control::perform_click};
-      description_.double_click += {*this, &project_type_item_control::perform_double_click};
+      //description_.double_click += {*this, &project_type_item_control::perform_double_click};
 
       height(90);
     }
 
     xtdc_gui::project_type_item project_type_item() const {return project_type_item_;}
+    
+  protected:
+    void on_double_click(const xtd::event_args& e) override;
     
   private:
     void perform_click() {on_click(xtd::event_args::empty);}
