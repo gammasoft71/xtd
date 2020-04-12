@@ -164,6 +164,12 @@ namespace xtd {
             key_data = static_cast<intptr_t>(key_event.GetUnicodeKey());
           else {
             switch (key_event.GetKeyCode()) {
+              case WXK_BACK: key_data = VK_BACK; break;
+              case WXK_TAB: key_data = VK_TAB; break;
+              case WXK_RETURN: key_data = VK_RETURN; break;
+              case WXK_ESCAPE: key_data = VK_ESCAPE; break;
+              case WXK_SPACE: key_data = VK_SPACE; break;
+              case WXK_DELETE: key_data = VK_DELETE; break;
               case WXK_START: key_data = VK_LAUNCH_APP1; break;
               case WXK_LBUTTON: key_data = VK_LBUTTON; break;
               case WXK_RBUTTON: key_data = VK_RBUTTON; break;
