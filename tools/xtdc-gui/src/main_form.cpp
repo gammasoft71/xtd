@@ -285,9 +285,7 @@ main_form::main_form() {
   next_button_.click += [&] {
     if (!create_panel_.visible()) {
       auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
-      add_to_open_recent_projects(project_path);
-      system(xtd::strings::format("xtdc new gui {}", project_path).c_str());
-      system(xtd::strings::format("xtdc open {}", project_path).c_str());
+      new_project(project_path, current_project_type_.project_type());
       startup_panel_.visible(true);
       configure_panel_.visible(false);
       previous_button_.visible(false);
@@ -328,6 +326,13 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
   properties::settings::default_settings().save();
 
   init_startup_open_recent_projects_list_box();
+}
+
+void main_form::new_project(const std::string& project_path, project_type type) {
+  add_to_open_recent_projects(project_path);
+  application::do_events();
+  system(strings::format("xtdc new {} {}", std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}, }[type], project_path).c_str());
+  system(strings::format("xtdc open {}", project_path).c_str());
 }
 
 void main_form::open_project(const std::string& project_path) {
