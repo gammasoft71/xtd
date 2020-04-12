@@ -39,8 +39,6 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.location({50, 175});
   startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  for (auto item : properties::settings::default_settings().open_recent_propjects())
-    startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(item).stem().string(), item));
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != -1) {
       open_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
@@ -303,6 +301,19 @@ main_form::main_form() {
       configure_panel_.visible(true);
     }
   };
+  
+  init();
+}
+
+void main_form::init() {
+  init_startup_open_recent_projects_list_box();
+}
+
+void main_form::init_startup_open_recent_projects_list_box() {
+  startup_open_recent_projects_list_box_.items().clear();
+  for (auto item : properties::settings::default_settings().open_recent_propjects())
+    startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(item).stem().string(), item));
+  startup_open_recent_projects_list_box_.selected_index(0);
 }
 
 void main_form::add_to_open_recent_projects(const std::string& project_path) {
@@ -310,15 +321,13 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
   std::list<std::string> open_recent_projects {open_recent_projects_from_settings.begin(), open_recent_projects_from_settings.end()};
   if (std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path) != open_recent_projects.end())
     open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
+
   open_recent_projects.push_front(project_path);
   properties::settings::default_settings().open_recent_propjects(std::vector<std::string> {open_recent_projects.begin(), open_recent_projects.end()});
   properties::settings::default_settings().open_propject_folder(project_path);
   properties::settings::default_settings().save();
 
-  startup_open_recent_projects_list_box_.items().clear();
-  for (auto item : properties::settings::default_settings().open_recent_propjects())
-    startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(item).stem().string(), item));
-  startup_open_recent_projects_list_box_.selected_index(0);
+  init_startup_open_recent_projects_list_box();
 }
 
 void main_form::open_project(const std::string& project_path) {

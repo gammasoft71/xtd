@@ -25,6 +25,8 @@ namespace xtdc_gui {
     
   private:
     void add_to_open_recent_projects(const std::string& project_path);
+    void init();
+    void init_startup_open_recent_projects_list_box();
     void open_project(const std::string& project_path);
     void run_project(const std::string& project_path);
 
