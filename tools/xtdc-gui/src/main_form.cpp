@@ -13,7 +13,7 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
-  client_size({1024, 700});
+  client_size({1000, 710});
   minimize_box(false);
   maximize_box(false);
   start_position(form_start_position::center_screen);
