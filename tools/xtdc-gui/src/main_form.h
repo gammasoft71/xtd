@@ -19,6 +19,8 @@ namespace xtdc_gui {
   public:
     /// @brief Initializes a new instance of the main_form class.
     main_form();
+    
+    void add_to_open_recent_projects(const std::string& project_path);
 
     // The main entry point for the application.
     static void main();
