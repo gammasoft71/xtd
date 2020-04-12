@@ -13,7 +13,6 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
-  //text("xtdc-gui");
   client_size({1024, 700});
   minimize_box(false);
   maximize_box(false);
@@ -39,6 +38,11 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.location({50, 175});
   startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  startup_open_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
+    if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != -1)
+      delete_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
+  };
+
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != -1) {
       open_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
@@ -303,6 +307,14 @@ main_form::main_form() {
   init();
 }
 
+void main_form::delete_project(const std::string& project_path) {
+  auto open_recent_projects = properties::settings::default_settings().open_recent_propjects();
+  open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
+  properties::settings::default_settings().open_recent_propjects(open_recent_projects);
+  properties::settings::default_settings().save();
+  init_startup_open_recent_projects_list_box();
+}
+
 void main_form::init() {
   init_startup_open_recent_projects_list_box();
 }
@@ -311,7 +323,7 @@ void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.items().clear();
   for (auto item : properties::settings::default_settings().open_recent_propjects())
     startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(item).stem().string(), item));
-  startup_open_recent_projects_list_box_.selected_index(0);
+  startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
 void main_form::add_to_open_recent_projects(const std::string& project_path) {
