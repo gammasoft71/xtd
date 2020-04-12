@@ -323,11 +323,13 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
 
 void main_form::open_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
+  application::do_events();
   system(strings::format("xtdc open {}", project_path).c_str());
 }
 
 void main_form::run_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
+  application::do_events();
   system(strings::format("xtdc run {}", project_path).c_str());
 }
 
