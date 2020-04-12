@@ -204,7 +204,7 @@ main_form::main_form() {
     }
   };
   create_project_type_items_control_.double_click += [&] {
-    next_button_.perform_click();
+    if (create_panel_.visible()) next_button_.perform_click();
   };
 
   configure_panel_.parent(*this);
