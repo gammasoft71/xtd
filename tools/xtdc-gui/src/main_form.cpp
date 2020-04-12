@@ -297,7 +297,7 @@ main_form::main_form() {
       configure_panel_.visible(true);
     } else {
       auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
-      new_project(project_path, current_project_type_.project_type(), current_project_type_.project_language());
+      new_project(project_path, current_project_type_.project_type(), current_project_type_.project_language(), current_project_type_.project_sdk());
       startup_panel_.visible(true);
       configure_panel_.visible(false);
       previous_button_.visible(false);
@@ -343,10 +343,10 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
   init_startup_open_recent_projects_list_box();
 }
 
-void main_form::new_project(const std::string& project_path, project_type type, project_language language) {
+void main_form::new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk) {
   add_to_open_recent_projects(project_path);
   application::do_events();
-  system(strings::format("xtdc new {} -s {} {}", std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}, }[type], std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}, }[language], project_path).c_str());
+  system(strings::format("xtdc new {} -s {} {}", std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}}[type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}}[language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}}[sdk]), project_path).c_str());
   system(strings::format("xtdc open {}", project_path).c_str());
 }
 
