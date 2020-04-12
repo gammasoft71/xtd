@@ -230,7 +230,6 @@ main_form::main_form() {
   configure_project_name_text_box_.parent(configure_panel_);
   configure_project_name_text_box_.location({50, 210});
   configure_project_name_text_box_.width(550);
-  configure_project_name_text_box_.text("gui_app1");
 
   configure_project_location_label_.parent(configure_panel_);
   configure_project_location_label_.location({50, 270});
@@ -287,7 +286,16 @@ main_form::main_form() {
   next_button_.location(client_size() - xtd::drawing::size {125, 75});
   next_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   next_button_.click += [&] {
-    if (!create_panel_.visible()) {
+    if (create_panel_.visible()) {
+      auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}}[current_project_type_.project_type()];
+      auto index = 1;
+      while (std::filesystem::exists(std::filesystem::path {configure_project_location_text_box_.text()}/xtd::strings::format("{}{}", project_name, index))) index++;
+      configure_project_name_text_box_.text(xtd::strings::format("{}{}", project_name, index));
+      previous_button_.text("&Back");
+      next_button_.text("&Create");
+      create_panel_.visible(false);
+      configure_panel_.visible(true);
+    } else {
       auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
       new_project(project_path, current_project_type_.project_type());
       startup_panel_.visible(true);
@@ -296,11 +304,6 @@ main_form::main_form() {
       next_button_.text("&Next");
       next_button_.visible(false);
       if (properties::settings::default_settings().auto_close()) close();
-    } else {
-      previous_button_.text("&Back");
-      next_button_.text("&Create");
-      create_panel_.visible(false);
-      configure_panel_.visible(true);
     }
   };
   
