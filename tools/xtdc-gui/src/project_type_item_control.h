@@ -17,7 +17,8 @@ namespace xtdc_gui {
       icon_.parent(*this);
       icon_.location({5, 25});
       icon_.size({40, 40});
-      icon_.back_color(xtd::drawing::color::light_gray);
+      icon_.image(project_type_item.icon());
+      //icon_.back_color(xtd::drawing::color::light_gray);
       icon_.click += {*this, &project_type_item_control::perform_click};
       icon_.double_click += {*this, &project_type_item_control::perform_double_click};
 

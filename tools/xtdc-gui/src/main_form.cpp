@@ -303,6 +303,7 @@ main_form::main_form() {
   next_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   next_button_.click += [&] {
     if (create_panel_.visible()) {
+      configure_project_type_title_label_.text(create_project_type_items_control_.project_type_items()[current_project_type_index_].name());
       auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}}[create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
       while (std::filesystem::exists(std::filesystem::path {configure_project_location_text_box_.text()}/xtd::strings::format("{}{}", project_name, index))) index++;
