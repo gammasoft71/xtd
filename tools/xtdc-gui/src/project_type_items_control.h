@@ -89,8 +89,6 @@ namespace xtdc_gui {
     
     std::vector<project_type_item> project_type_items() const {
       std::vector<project_type_item> items;
-      //for (auto item : project_type_item_controls_)
-      //  items.push_back(item->project_type_item());
       for (auto it = project_type_item_controls_.rbegin(); it != project_type_item_controls_.rend(); ++it)
         items.push_back((*it)->project_type_item());
       return items;
