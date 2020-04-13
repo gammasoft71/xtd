@@ -25,10 +25,13 @@ namespace xtdc_gui {
     static void main();
     
   private:
+    void add_to_create_recent_projects(size_t create_project_items_index);
     void add_to_open_recent_projects(const std::string& project_path);
     void delete_project(const std::string& project_path);
     void init();
+    void init_create_create_recent_projects_list_box();
     void init_startup_open_recent_projects_list_box();
+    void new_project(const std::string& project_path, size_t project_type_items_index);
     void new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk);
     void open_project(const std::string& project_path);
     void run_project(const std::string& project_path);
@@ -49,7 +52,7 @@ namespace xtdc_gui {
     xtd::forms::panel create_panel_;
     xtd::forms::label create_title_label_;
     xtd::forms::label create_recent_project_title_label_;
-    xtd::forms::list_box create_recent_projects_list_box_;
+    xtd::forms::list_box create_create_recent_projects_list_box_;
     xtd::forms::choice create_language_choice_;
     xtd::forms::choice create_platform_choice_;
     xtd::forms::choice create_type_choice_;
@@ -68,6 +71,6 @@ namespace xtdc_gui {
     xtd::forms::button previous_button_;
     xtd::forms::button next_button_;
     
-    project_type_item current_project_type_;
+    size_t current_project_type_index_ = -1;
   };
 }
