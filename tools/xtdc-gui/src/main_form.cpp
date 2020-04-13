@@ -158,6 +158,9 @@ main_form::main_form() {
       next_button_.enabled(true);
     }
   };
+  create_create_recent_projects_list_box_.double_click += [&] {
+    if (create_panel_.visible()) next_button_.perform_click();
+  };
   create_create_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
     if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != -1)
       delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]));
