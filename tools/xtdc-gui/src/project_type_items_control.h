@@ -7,6 +7,7 @@
 #include "../resources/xtd_gui.xpm"
 #include "../resources/xtd_sharedlib.xpm"
 #include "../resources/xtd_staticlib.xpm"
+#include "../resources/xtd_solution.xpm"
 #include "../resources/xtd_tunit.xpm"
 #include "../resources/xtd.xpm"
 
@@ -17,8 +18,8 @@ namespace xtdc_gui {
     /// @brief Initializes a new instance of the project_type_item_control class.
     project_type_items_control() {
       std::vector<project_type_item> project_type_items {
-        {xtd::drawing::bitmap(xtd_icon), "Solution File", "A project for creating an empty solution file.", project_language::all&~project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
-        {xtd::drawing::bitmap(xtd_icon), "xtd Solution File", "A project for creating an empty xtd solution file.", project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
+        {xtd::drawing::bitmap(xtd_solution_icon), "Solution File", "A project for creating an empty solution file.", project_language::all&~project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
+        {xtd::drawing::bitmap(xtd_solution_icon), "xtd Solution File", "A project for creating an empty xtd solution file.", project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
         {xtd::drawing::bitmap(xtd_icon), "catch2 Unit Test project (c++)", "A project for creating a catch2 unit tests application.", project_language::cpp, project_sdk::catch2, project_platform::all, project_type::unit_tests_project},
         {xtd::drawing::bitmap(xtd_icon), "gtest Unit Test project (c++)", "A project for creating a gtest unit tests application.", project_language::cpp, project_sdk::gtest, project_platform::all, project_type::unit_tests_project},
         {xtd::drawing::bitmap(xtd_tunit_icon), "xtd Unit Test project (c++)", "A project for creating a xtd unit tests application.", project_language::xtd, project_sdk::none, project_platform::all, project_type::unit_tests_project},
