@@ -15,7 +15,7 @@ namespace xtdc_gui {
 
     project_type_item_control(const xtdc_gui::project_type_item& project_type_item) : project_type_item_(project_type_item) {
       icon_.parent(*this);
-      icon_.location({5, 25});
+      icon_.location({5, 20});
       icon_.size({40, 40});
       icon_.image(project_type_item.icon());
       //icon_.back_color(xtd::drawing::color::light_gray);
@@ -38,7 +38,7 @@ namespace xtdc_gui {
       description_.click += {*this, &project_type_item_control::perform_click};
       description_.double_click += {*this, &project_type_item_control::perform_double_click};
 
-      height(90);
+      height(80);
     }
 
     xtdc_gui::project_type_item project_type_item() const {return project_type_item_;}
