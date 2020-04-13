@@ -40,7 +40,7 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
   startup_open_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
     if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != -1)
-      delete_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
+      delete_from_open_recent_projects(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
   };
 
   startup_open_recent_projects_list_box_.double_click += [&] {
@@ -157,6 +157,10 @@ main_form::main_form() {
       current_project_type_index_ = xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects()[create_create_recent_projects_list_box_.selected_index()]);
       next_button_.enabled(true);
     }
+  };
+  create_create_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
+    if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != -1)
+      delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]));
   };
 
   create_language_choice_.parent(create_panel_);
@@ -322,7 +326,15 @@ main_form::main_form() {
   init();
 }
 
-void main_form::delete_project(const std::string& project_path) {
+void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
+  auto create_recent_projects = properties::settings::default_settings().create_recent_propjects();
+  create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
+  properties::settings::default_settings().create_recent_propjects(create_recent_projects);
+  properties::settings::default_settings().save();
+  init_create_create_recent_projects_list_box();
+}
+
+void main_form::delete_from_open_recent_projects(const std::string& project_path) {
   auto open_recent_projects = properties::settings::default_settings().open_recent_propjects();
   open_recent_projects.erase(std::find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
   properties::settings::default_settings().open_recent_propjects(open_recent_projects);
