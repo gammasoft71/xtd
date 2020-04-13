@@ -87,6 +87,15 @@ namespace xtdc_gui {
     
     void perform_double_click() {on_double_click(xtd::event_args::empty);}
     
+    std::vector<project_type_item> project_type_items() const {
+      std::vector<project_type_item> items;
+      //for (auto item : project_type_item_controls_)
+      //  items.push_back(item->project_type_item());
+      for (auto it = project_type_item_controls_.rbegin(); it != project_type_item_controls_.rend(); ++it)
+        items.push_back((*it)->project_type_item());
+      return items;
+    }
+
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != -1) project_type_item_controls_[project_type_item_controls_.size() - 1 - previous_selected_index_]->back_color(back_color());

@@ -145,17 +145,16 @@ main_form::main_form() {
   create_recent_project_title_label_.text("Recent project templates");
   create_recent_project_title_label_.font({create_title_label_.font(), 16.0});
   
-  create_recent_projects_list_box_.parent(create_panel_);
-  create_recent_projects_list_box_.location({50, 175});
-  create_recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
-  create_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  create_recent_projects_list_box_.items().push_back_range({"xtd GUI Application (c++)", "xtd Console Application (c++)"});
-  create_recent_projects_list_box_.selected_index_changed += [&] {
-    if (create_recent_projects_list_box_.selected_index() == -1)
+  create_create_recent_projects_list_box_.parent(create_panel_);
+  create_create_recent_projects_list_box_.location({50, 175});
+  create_create_recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
+  create_create_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  create_create_recent_projects_list_box_.selected_index_changed += [&] {
+    if (create_create_recent_projects_list_box_.selected_index() == -1)
       next_button_.enabled(false);
     else {
       create_project_type_items_control_.selected_index(-1);
-      //current_project_type_ = create_recent_projects_list_box_.selected_item();
+      current_project_type_index_ = xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects()[create_create_recent_projects_list_box_.selected_index()]);
       next_button_.enabled(true);
     }
   };
@@ -198,8 +197,8 @@ main_form::main_form() {
     if (create_project_type_items_control_.selected_index() == -1)
       next_button_.enabled(false);
     else {
-      create_recent_projects_list_box_.selected_index(-1);
-      current_project_type_ = create_project_type_items_control_.selected_project_type_item();
+      create_create_recent_projects_list_box_.selected_index(-1);
+      current_project_type_index_ = create_project_type_items_control_.selected_index();
       next_button_.enabled(true);
     }
   };
@@ -262,6 +261,7 @@ main_form::main_form() {
   auto_close_check_box_.text("&Auto close");
   auto_close_check_box_.checked(properties::settings::default_settings().auto_close());
   auto_close_check_box_.location({50, client_size().height() - 75});
+  auto_close_check_box_.anchor(anchor_styles::left|anchor_styles::bottom);
   auto_close_check_box_.checked_changed += [&] {
     properties::settings::default_settings().auto_close(auto_close_check_box_.checked());
     properties::settings::default_settings().save();
@@ -299,7 +299,7 @@ main_form::main_form() {
   next_button_.anchor(anchor_styles::bottom|anchor_styles::right);
   next_button_.click += [&] {
     if (create_panel_.visible()) {
-      auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}}[current_project_type_.project_type()];
+      auto project_name = std::map<project_type, std::string> {{project_type::gui, "gui_app"}, {project_type::console, "console_app"}, {project_type::shared_library, "class_library"}, {project_type::static_library, "class_library"}, {project_type::unit_tests_project, "unit_test_project"}, {project_type::solution_file, "solution_file"}}[create_project_type_items_control_.project_type_items()[current_project_type_index_].project_type()];
       auto index = 1;
       while (std::filesystem::exists(std::filesystem::path {configure_project_location_text_box_.text()}/xtd::strings::format("{}{}", project_name, index))) index++;
       configure_project_name_text_box_.text(xtd::strings::format("{}{}", project_name, index));
@@ -309,7 +309,7 @@ main_form::main_form() {
       configure_panel_.visible(true);
     } else {
       auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
-      new_project(project_path, current_project_type_.project_type(), current_project_type_.project_language(), current_project_type_.project_sdk());
+      new_project(project_path, current_project_type_index_);
       startup_panel_.visible(true);
       configure_panel_.visible(false);
       previous_button_.visible(false);
@@ -331,7 +331,16 @@ void main_form::delete_project(const std::string& project_path) {
 }
 
 void main_form::init() {
+  init_create_create_recent_projects_list_box();
   init_startup_open_recent_projects_list_box();
+}
+
+void main_form::init_create_create_recent_projects_list_box() {
+  auto project_type_items = create_project_type_items_control_.project_type_items();
+  create_create_recent_projects_list_box_.items().clear();
+  for (auto item : properties::settings::default_settings().create_recent_propjects())
+    create_create_recent_projects_list_box_.items().push_back(project_type_items[xtd::parse<size_t>(item)].name());
+  create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
 }
 
 void main_form::init_startup_open_recent_projects_list_box() {
@@ -339,6 +348,19 @@ void main_form::init_startup_open_recent_projects_list_box() {
   for (auto item : properties::settings::default_settings().open_recent_propjects())
     startup_open_recent_projects_list_box_.items().push_back(xtd::strings::format("{} ({})", std::filesystem::path(item).stem().string(), item));
   startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
+}
+
+void main_form::add_to_create_recent_projects(size_t create_project_items_index) {
+  auto create_recent_projects_from_settings = properties::settings::default_settings().create_recent_propjects();
+  std::list<std::string> create_recent_projects {create_recent_projects_from_settings.begin(), create_recent_projects_from_settings.end()};
+  if (std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)) != create_recent_projects.end())
+    create_recent_projects.erase(std::find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
+  
+  create_recent_projects.push_front(std::to_string(create_project_items_index));
+  properties::settings::default_settings().create_recent_propjects(std::vector<std::string> {create_recent_projects.begin(), create_recent_projects.end()});
+  properties::settings::default_settings().save();
+  
+  init_create_create_recent_projects_list_box();
 }
 
 void main_form::add_to_open_recent_projects(const std::string& project_path) {
@@ -353,6 +375,12 @@ void main_form::add_to_open_recent_projects(const std::string& project_path) {
   properties::settings::default_settings().save();
 
   init_startup_open_recent_projects_list_box();
+}
+
+void main_form::new_project(const std::string& project_path, size_t project_type_items_index) {
+  auto current_project_type = create_project_type_items_control_.project_type_items()[current_project_type_index_];
+  add_to_create_recent_projects(project_type_items_index);
+  new_project(project_path, current_project_type.project_type(), current_project_type.project_language(), current_project_type.project_sdk());
 }
 
 void main_form::new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk) {

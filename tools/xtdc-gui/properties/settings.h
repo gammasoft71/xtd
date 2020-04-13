@@ -32,11 +32,15 @@ namespace xtdc_gui::properties {
     std::vector<std::string> open_recent_propjects() const {return open_recent_propjects_;}
     void open_recent_propjects(const std::vector<std::string>& value) {open_recent_propjects_ = value;}
     
+    std::vector<std::string> create_recent_propjects() const {return create_recent_propjects_;}
+    void create_recent_propjects(const std::vector<std::string>& value) {create_recent_propjects_ = value;}
+
     void reload() {
       auto_close_ = settings_.read("auto_close", auto_close_);
       create_propject_folder_ = settings_.read("create_propject_folder", create_propject_folder_);
       open_propject_folder_ = settings_.read("open_propject_folder", open_propject_folder_);
       open_recent_propjects_ = xtd::strings::split(settings_.read("open_recent_propjects", xtd::strings::join(";", open_recent_propjects_)), {';'});
+      create_recent_propjects_ = xtd::strings::split(settings_.read("create_recent_propjects", xtd::strings::join(";", create_recent_propjects_)), {';'});
     }
     
     void reset() {
@@ -50,16 +54,18 @@ namespace xtdc_gui::properties {
       settings_.write("create_propject_folder", create_propject_folder_);
       settings_.write("open_propject_folder", open_propject_folder_);
       settings_.write("open_recent_propjects", xtd::strings::join(";", open_recent_propjects_));
+      settings_.write("create_recent_propjects", xtd::strings::join(";", create_recent_propjects_));
       settings_.save();
     }
     
   private:
     settings(bool load) {if (load) reload();}
     xtd::forms::settings settings_;
-    bool auto_close_ {false};
+    bool auto_close_ {true};
     std::string create_propject_folder_ {xtd::environment::get_folder_path(xtd::environment::special_folder::home)};
     std::string open_propject_folder_ {xtd::environment::get_folder_path(xtd::environment::special_folder::home)};
     std::vector<std::string> open_recent_propjects_;
+    std::vector<std::string> create_recent_propjects_;
   };
 }
 
