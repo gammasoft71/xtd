@@ -5,6 +5,7 @@
 #include <xtd/environment.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
+#include "../resources/xtd.xpm"
 
 using namespace std;
 using namespace xtd;
@@ -102,6 +103,8 @@ main_form::main_form() {
   };
 
   startup_open_xtd_examples_button_.parent(startup_panel_);
+  startup_open_xtd_examples_button_.image(xtd::drawing::bitmap(xtd_icon));
+  startup_open_xtd_examples_button_.image_align(content_alignment::middle_left);
   startup_open_xtd_examples_button_.text("Open xtd examples");
   startup_open_xtd_examples_button_.location({startup_panel_.size().width() - 400, 505});
   startup_open_xtd_examples_button_.size({350, 100});

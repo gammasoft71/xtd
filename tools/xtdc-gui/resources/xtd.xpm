@@ -1,3 +1,4 @@
+#pragma once
 /* XPM */
 static const char *xtd_icon[] = {
 /* columns rows colors chars-per-pixel */
