@@ -18,11 +18,12 @@ using namespace xtd::drawing::native;
 
 namespace {
   bool dark_mode() {
-    bool dark_mode = false;
 #if defined(__WXMSW__)
-    dark_mode = true; // read value AppsUseLightTheme in key HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize
+    DWORD value = 0, value_size = sizeof(value);
+    if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
+      return value == 0 || __xtd_enable_dark_mode__;
 #endif
-    return dark_mode || __xtd_enable_dark_mode__;
+    return __xtd_enable_dark_mode__;
   }
 
   bool light_mode() {
