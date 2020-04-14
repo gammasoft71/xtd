@@ -1,9 +1,9 @@
 #include "main_form.h"
 #include "../properties/settings.h"
+#include "../resources/xtd_open_examples.xpm"
 #include "../resources/xtd_open.xpm"
 #include "../resources/xtd_new.xpm"
 #include "../resources/xtd_run.xpm"
-#include "../resources/xtd_open_examples.xpm"
 #include <list>
 #include <filesystem>
 #include <xtd/environment.h>
