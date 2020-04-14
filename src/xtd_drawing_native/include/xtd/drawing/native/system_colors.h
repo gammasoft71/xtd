@@ -9,6 +9,7 @@ namespace xtd {
     namespace native {
       class system_colors static_ {
       public:
+        static bool force_set_color_with_dark_mode();
         static uint32_t to_argb(intptr_t color);
         static intptr_t active_border();
         static intptr_t active_caption();

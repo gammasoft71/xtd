@@ -21,7 +21,14 @@ namespace {
   }
 }
 
-uint32_t system_colors::to_argb(intptr_t color){
+bool system_colors::force_set_color_with_dark_mode() {
+#if defined(__WXMSW__)
+  return __xtd_enable_dark_mode__;
+#endif
+  return false;
+}
+
+uint32_t system_colors::to_argb(intptr_t color) {
 #if defined(__WXOSX__)
   return ::to_argb(wxColour(reinterpret_cast<WX_NSColor>(color)));
 #else
