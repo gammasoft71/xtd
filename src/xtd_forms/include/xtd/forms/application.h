@@ -137,8 +137,8 @@ namespace xtd {
       /// @brief Enables dark mode for the application.
       static void enable_dark_mode();
       
-      /// @brief Enables white mode for the application.
-      static void enable_white_mode();
+      /// @brief Enables light mode for the application.
+      static void enable_light_mode();
 
       /// @brief Enables visual styles for the application.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, nnable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
