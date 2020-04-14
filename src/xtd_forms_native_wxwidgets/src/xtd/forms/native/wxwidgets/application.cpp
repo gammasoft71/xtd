@@ -15,6 +15,7 @@
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms::native;
+extern bool __xtd_enable_dark_mode__;
 
 event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
 
@@ -44,6 +45,11 @@ void application::do_events() {
 
 void application::do_idle() {
   wxWakeUpIdle();
+}
+
+void application::enable_dark_mode() {
+  __xtd_enable_dark_mode__ = true;
+  initialize(); // Must be first
 }
 
 void application::enable_visual_style() {
