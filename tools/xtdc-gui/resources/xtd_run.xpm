@@ -3,7 +3,7 @@
 static const char *xtd_run_icon[] = {
 /* columns rows colors chars-per-pixel */
 "40 40 2 1 ",
-"  c #004080",
+"  c #00AC00",
 ". c None",
 /* pixels */
 "........................................",

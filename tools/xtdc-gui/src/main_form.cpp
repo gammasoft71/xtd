@@ -1,8 +1,9 @@
 #include "main_form.h"
 #include "../properties/settings.h"
-#include "../resources/xtd_create.xpm"
+#include "../resources/xtd_open.xpm"
+#include "../resources/xtd_new.xpm"
 #include "../resources/xtd_run.xpm"
-#include "../resources/xtd.xpm"
+#include "../resources/xtd_open_examples.xpm"
 #include <list>
 #include <filesystem>
 #include <xtd/environment.h>
@@ -61,6 +62,8 @@ main_form::main_form() {
   startup_get_started_title_label_.anchor(anchor_styles::top|anchor_styles::right);
 
   startup_open_project_button_.parent(startup_panel_);
+  startup_open_project_button_.image(xtd::drawing::bitmap(xtd_open_icon));
+  startup_open_project_button_.image_align(content_alignment::middle_left);
   startup_open_project_button_.text("Open a project or solution");
   startup_open_project_button_.location({startup_panel_.size().width() - 400, 175});
   startup_open_project_button_.size({350, 100});
@@ -93,7 +96,7 @@ main_form::main_form() {
   };
 
   startup_new_project_button_.parent(startup_panel_);
-  startup_new_project_button_.image(xtd::drawing::bitmap(xtd_create_icon));
+  startup_new_project_button_.image(xtd::drawing::bitmap(xtd_new_icon));
   startup_new_project_button_.image_align(content_alignment::middle_left);
   startup_new_project_button_.text("Create a new project");
   startup_new_project_button_.location({startup_panel_.size().width() - 400, 395});
@@ -109,7 +112,7 @@ main_form::main_form() {
   };
 
   startup_open_xtd_examples_button_.parent(startup_panel_);
-  startup_open_xtd_examples_button_.image(xtd::drawing::bitmap(xtd_icon));
+  startup_open_xtd_examples_button_.image(xtd::drawing::bitmap(xtd_open_examples_icon));
   startup_open_xtd_examples_button_.image_align(content_alignment::middle_left);
   startup_open_xtd_examples_button_.text("Open xtd examples");
   startup_open_xtd_examples_button_.location({startup_panel_.size().width() - 400, 505});
