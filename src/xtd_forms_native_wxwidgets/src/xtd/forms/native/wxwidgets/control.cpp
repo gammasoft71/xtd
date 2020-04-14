@@ -5,6 +5,7 @@
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/hdc_wrapper.h>
+#include <xtd/drawing/native/system_colors.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
@@ -134,7 +135,7 @@ color control::back_color(intptr_t control) {
 void control::back_color(intptr_t control, const color& color) {
   if (control == 0) return;
 #if defined (__WXOSX__)
-  if (color.handle())
+  if (color.handle() && !drawing::native::system_colors::force_set_system_color())
     reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
   else
     reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
@@ -285,7 +286,7 @@ color control::fore_color(intptr_t control) {
 void control::fore_color(intptr_t control, const color& color) {
   if (control == 0) return;
 #if defined (__WXOSX__)
-  if (color.handle())
+  if (color.handle() && !drawing::native::system_colors::force_set_system_color())
     reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
   else
     reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
