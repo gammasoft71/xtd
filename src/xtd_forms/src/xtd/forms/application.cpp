@@ -148,6 +148,10 @@ void application::enable_dark_mode() {
   native::application::enable_dark_mode();
 }
 
+void application::enable_white_mode() {
+  native::application::enable_white_mode();
+}
+
 void application::enable_visual_styles() {
   application::use_visual_styles_ = true;
   native::application::enable_visual_style();

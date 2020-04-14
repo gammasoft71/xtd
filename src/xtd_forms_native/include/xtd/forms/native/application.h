@@ -14,6 +14,7 @@ namespace xtd {
         static void do_events();
         static void do_idle();
         static void enable_dark_mode();
+        static void enable_white_mode();
         static void enable_visual_style();
         static void exit();
         static void initialize();
