@@ -25,7 +25,7 @@ intptr_t cursor::create() {
 }
 
 
-#if defined __APPLE__
+#if defined (__WXOSX__)
 #elif defined (__WXMSW__)
 void cursor::hide() {
   ShowCursor(FALSE);
@@ -49,7 +49,7 @@ point cursor::position() {
   return {position.x, position.y};
 }
 
-#if defined __APPLE__
+#if defined (__WXOSX__)
 #elif defined (__WXMSW__)
 void cursor::position(const point& position) {
   SetCursorPos(position.x(), position.y());
@@ -68,7 +68,7 @@ drawing::size cursor::size(intptr_t cursor) {
   return {32, 32};
 }
 
-#if defined __APPLE__
+#if defined (__WXOSX__)
 #elif defined (__WXMSW__)
 void cursor::show() {
   ShowCursor(TRUE);

@@ -134,10 +134,13 @@ namespace xtd {
       /// @warning Calling this method causes the current thread to be suspended while all waiting window messages are processed. If a message causes an event to be triggered, then other areas of your application code may execute. This can cause your application to exhibit unexpected behaviors that are difficult to debug. If you perform operations or computations that take a long time, it is often preferable to perform those operations on a new thread.
       static void do_events();
       
+      /// @brief Enables dark mode for the application.
+      static void enable_dark_mode();
+      
       /// @brief Enables visual styles for the application.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, nnable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       static void enable_visual_styles();
-
+      
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
       /// @remarks The exit method stops all running message loops on all threads and closes all windows of the application. This method does not necessarily force the application to exit. The exit method is typically called from within a message loop, and forces Run to return. To exit a message loop for the current thread only, call exit_thread.
       /// @remarks Exit raises the following events and performs the associated conditional actions:
