@@ -48,8 +48,10 @@ void application::do_idle() {
 }
 
 void application::enable_dark_mode() {
+#if defined(__WXMSW__)
   __xtd_enable_dark_mode__ = true;
-  initialize(); // Must be first
+#endif
+  initialize();
 }
 
 void application::enable_visual_style() {

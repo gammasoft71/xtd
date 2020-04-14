@@ -145,7 +145,6 @@ void application::do_events() {
 }
 
 void application::enable_dark_mode() {
-  application::use_visual_styles_ = true;
   native::application::enable_dark_mode();
 }
 
