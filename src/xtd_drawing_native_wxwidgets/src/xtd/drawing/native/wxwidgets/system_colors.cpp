@@ -12,21 +12,21 @@
 #endif
 
 bool __xtd_enable_dark_mode__ = false;
-bool __xtd_enable_white_mode__ = false;
+bool __xtd_enable_light_mode__ = false;
 
 using namespace xtd::drawing::native;
 
 namespace {
   bool dark_mode() {
-#if defined(__WXMSW__)
     bool dark_mode = false;
-    return dark_mode || __xtd_enable_dark_mode__;
+#if defined(__WXMSW__)
+    dark_mode = true; // read value AppsUseLightTheme in key HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize
 #endif
-    return __xtd_enable_dark_mode__;
+    return dark_mode || __xtd_enable_dark_mode__;
   }
 
-  bool white_mode() {
-    return __xtd_enable_white_mode__;
+  bool light_mode() {
+    return __xtd_enable_light_mode__;
   }
 
   uint32_t to_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) {
@@ -39,7 +39,7 @@ namespace {
 }
 
 bool system_colors::force_set_system_color() {
-  return ::dark_mode() || ::white_mode();
+  return ::dark_mode() || ::light_mode();
 }
 
 uint32_t system_colors::to_argb(intptr_t color) {
