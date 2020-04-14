@@ -1,11 +1,13 @@
 #include "main_form.h"
 #include "../properties/settings.h"
+#include "../resources/xtd_create.xpm"
+#include "../resources/xtd_run.xpm"
+#include "../resources/xtd.xpm"
 #include <list>
 #include <filesystem>
 #include <xtd/environment.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
-#include "../resources/xtd.xpm"
 
 using namespace std;
 using namespace xtd;
@@ -74,6 +76,8 @@ main_form::main_form() {
   };
 
   startup_run_project_button_.parent(startup_panel_);
+  startup_run_project_button_.image(xtd::drawing::bitmap(xtd_run_icon));
+  startup_run_project_button_.image_align(content_alignment::middle_left);
   startup_run_project_button_.text("Run a project");
   startup_run_project_button_.location({startup_panel_.size().width() - 400, 285});
   startup_run_project_button_.size({350, 100});
@@ -89,6 +93,8 @@ main_form::main_form() {
   };
 
   startup_new_project_button_.parent(startup_panel_);
+  startup_new_project_button_.image(xtd::drawing::bitmap(xtd_create_icon));
+  startup_new_project_button_.image_align(content_alignment::middle_left);
   startup_new_project_button_.text("Create a new project");
   startup_new_project_button_.location({startup_panel_.size().width() - 400, 395});
   startup_new_project_button_.size({350, 100});
