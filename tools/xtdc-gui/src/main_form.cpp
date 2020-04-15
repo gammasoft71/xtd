@@ -130,7 +130,6 @@ main_form::main_form() {
   open_xtd_examples_panel_.parent(*this);
   open_xtd_examples_panel_.size(client_size() - xtd::drawing::size {0, 100});
   open_xtd_examples_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  //create_panel_.back_color(color::red);
   open_xtd_examples_panel_.visible(false);
 
   open_xtd_examples_title_label_.parent(open_xtd_examples_panel_);
@@ -142,7 +141,6 @@ main_form::main_form() {
   create_panel_.parent(*this);
   create_panel_.size(client_size() - xtd::drawing::size {0, 100});
   create_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  //create_panel_.back_color(color::red);
   create_panel_.visible(false);
 
   create_title_label_.parent(create_panel_);
@@ -184,9 +182,11 @@ main_form::main_form() {
   create_language_choice_.anchor(anchor_styles::top|anchor_styles::right);
   create_language_choice_.items().push_back_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
   create_language_choice_.selected_value_changed += [&] {
+    properties::settings::default_settings().language_index(create_language_choice_.selected_index());
+    properties::settings::default_settings().save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
-  create_language_choice_.selected_index(1);
+  create_language_choice_.selected_index(properties::settings::default_settings().language_index());
 
   create_platform_choice_.parent(create_panel_);
   create_platform_choice_.width(140);
@@ -194,9 +194,11 @@ main_form::main_form() {
   create_platform_choice_.anchor(anchor_styles::top|anchor_styles::right);
   create_platform_choice_.items().push_back_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
   create_platform_choice_.selected_value_changed += [&] {
+    properties::settings::default_settings().platform_index(create_platform_choice_.selected_index());
+    properties::settings::default_settings().save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
-  create_platform_choice_.selected_index(environment::os_version().is_windows_platform() ? 1 : environment::os_version().is_linux_platform() ? 2 : 3);
+  create_platform_choice_.selected_index(properties::settings::default_settings().platform_index());
   
   create_type_choice_.parent(create_panel_);
   create_type_choice_.width(140);
@@ -204,9 +206,11 @@ main_form::main_form() {
   create_type_choice_.anchor(anchor_styles::top|anchor_styles::right);
   create_type_choice_.items().push_back_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
   create_type_choice_.selected_value_changed += [&] {
+    properties::settings::default_settings().type_index(create_type_choice_.selected_index());
+    properties::settings::default_settings().save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
-  create_type_choice_.selected_index(0);
+  create_type_choice_.selected_index(properties::settings::default_settings().type_index());
 
   create_project_type_items_control_.parent(create_panel_);
   create_project_type_items_control_.location({create_panel_.size().width() - 475 - 50, 100});
@@ -228,7 +232,6 @@ main_form::main_form() {
   configure_panel_.parent(*this);
   configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
   configure_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
-  //configure_panel_.back_color(color::red);
   configure_panel_.visible(false);
 
   configure_title_label_.parent(configure_panel_);
