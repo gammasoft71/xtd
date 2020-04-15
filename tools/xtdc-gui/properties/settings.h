@@ -35,12 +35,24 @@ namespace xtdc_gui::properties {
     std::vector<std::string> create_recent_propjects() const {return create_recent_propjects_;}
     void create_recent_propjects(const std::vector<std::string>& value) {create_recent_propjects_ = value;}
 
+    size_t language_index() const {return language_index_;}
+    void language_index(size_t value) {language_index_ = value;}
+    
+    size_t platform_index() const {return platform_index_;}
+    void platform_index(size_t value) {platform_index_ = value;}
+    
+    size_t type_index() const {return type_index_;}
+    void type_index(size_t value) {type_index_ = value;}
+    
     void reload() {
       auto_close_ = settings_.read("auto_close", auto_close_);
       create_propject_folder_ = settings_.read("create_propject_folder", create_propject_folder_);
       open_propject_folder_ = settings_.read("open_propject_folder", open_propject_folder_);
       open_recent_propjects_ = xtd::strings::split(settings_.read("open_recent_propjects", xtd::strings::join(";", open_recent_propjects_)), {';'});
       create_recent_propjects_ = xtd::strings::split(settings_.read("create_recent_propjects", xtd::strings::join(";", create_recent_propjects_)), {';'});
+      language_index_ = settings_.read("language_index", language_index_);
+      platform_index_ = settings_.read("platform_index", platform_index_);
+      type_index_ = settings_.read("type_index", type_index_);
     }
     
     void reset() {
@@ -55,6 +67,9 @@ namespace xtdc_gui::properties {
       settings_.write("open_propject_folder", open_propject_folder_);
       settings_.write("open_recent_propjects", xtd::strings::join(";", open_recent_propjects_));
       settings_.write("create_recent_propjects", xtd::strings::join(";", create_recent_propjects_));
+      settings_.write("language_index", language_index_);
+      settings_.write("platform_index", platform_index_);
+      settings_.write("type_index", type_index_);
       settings_.save();
     }
     
@@ -66,6 +81,9 @@ namespace xtdc_gui::properties {
     std::string open_propject_folder_ {xtd::environment::get_folder_path(xtd::environment::special_folder::home)};
     std::vector<std::string> open_recent_propjects_;
     std::vector<std::string> create_recent_propjects_;
+    size_t language_index_ = 1;
+    size_t platform_index_  = xtd::environment::os_version().is_windows_platform() ? 1 : xtd::environment::os_version().is_linux_platform() ? 2 : 3;
+    size_t type_index_ = 0;
   };
 }
 
