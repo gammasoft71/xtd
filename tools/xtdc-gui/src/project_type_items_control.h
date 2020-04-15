@@ -3,13 +3,26 @@
 #pragma once
 #include <xtd/drawing/bitmap.h>
 #include "project_type_item_control.h"
+#include "../resources/catch2.xpm"
+#include "../resources/cocoa.xpm"
+#include "../resources/console.xpm"
+#include "../resources/fltk.xpm"
+#include "../resources/gtest.xpm"
+#include "../resources/gtk.xpm"
+#include "../resources/qt5.xpm"
+#include "../resources/sharedlib.xpm"
+#include "../resources/solution.xpm"
+#include "../resources/staticlib.xpm"
+#include "../resources/win32.xpm"
+#include "../resources/winforms.xpm"
+#include "../resources/wpf.xpm"
+#include "../resources/wxwidgets.xpm"
 #include "../resources/xtd_console.xpm"
 #include "../resources/xtd_gui.xpm"
 #include "../resources/xtd_sharedlib.xpm"
 #include "../resources/xtd_staticlib.xpm"
 #include "../resources/xtd_solution.xpm"
 #include "../resources/xtd_tunit.xpm"
-#include "../resources/xtd.xpm"
 
 namespace xtdc_gui {
   /// @brief Represents the project_type_items_control control
@@ -18,36 +31,36 @@ namespace xtdc_gui {
     /// @brief Initializes a new instance of the project_type_item_control class.
     project_type_items_control() {
       std::vector<project_type_item> project_type_items {
-        {xtd::drawing::bitmap(xtd_solution_icon), "Solution File", "A project for creating an empty solution file.", project_language::all&~project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
+        {xtd::drawing::bitmap(solution_icon), "Solution File", "A project for creating an empty solution file.", project_language::all&~project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
         {xtd::drawing::bitmap(xtd_solution_icon), "xtd Solution File", "A project for creating an empty xtd solution file.", project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
-        {xtd::drawing::bitmap(xtd_icon), "catch2 Unit Test project (c++)", "A project for creating a catch2 unit tests application.", project_language::cpp, project_sdk::catch2, project_platform::all, project_type::unit_tests_project},
-        {xtd::drawing::bitmap(xtd_icon), "gtest Unit Test project (c++)", "A project for creating a gtest unit tests application.", project_language::cpp, project_sdk::gtest, project_platform::all, project_type::unit_tests_project},
+        {xtd::drawing::bitmap(catch2_icon), "catch2 Unit Test project (c++)", "A project for creating a catch2 unit tests application.", project_language::cpp, project_sdk::catch2, project_platform::all, project_type::unit_tests_project},
+        {xtd::drawing::bitmap(gtest_icon), "gtest Unit Test project (c++)", "A project for creating a gtest unit tests application.", project_language::cpp, project_sdk::gtest, project_platform::all, project_type::unit_tests_project},
         {xtd::drawing::bitmap(xtd_tunit_icon), "xtd Unit Test project (c++)", "A project for creating a xtd unit tests application.", project_language::xtd, project_sdk::none, project_platform::all, project_type::unit_tests_project},
-        {xtd::drawing::bitmap(xtd_staticlib_icon), "Static library (objective-c)", "A project for creating a objective-c static class library.", project_language::objectivec, project_sdk::none, project_platform::macos, project_type::static_library},
-        {xtd::drawing::bitmap(xtd_staticlib_icon), "Static library (c#)", "A project for creating a c# static class library.", project_language::csharp, project_sdk::none, project_platform::windows, project_type::static_library},
-        {xtd::drawing::bitmap(xtd_staticlib_icon), "Static library (c)", "A project for creating a c static library.", project_language::c, project_sdk::none, project_platform::all, project_type::static_library},
-        {xtd::drawing::bitmap(xtd_staticlib_icon), "Static library (c++)", "A project for creating a c++ static class library.", project_language::cpp, project_sdk::none, project_platform::all, project_type::static_library},
+        {xtd::drawing::bitmap(staticlib_icon), "Static library (objective-c)", "A project for creating a objective-c static class library.", project_language::objectivec, project_sdk::none, project_platform::macos, project_type::static_library},
+        {xtd::drawing::bitmap(staticlib_icon), "Static library (c#)", "A project for creating a c# static class library.", project_language::csharp, project_sdk::none, project_platform::windows, project_type::static_library},
+        {xtd::drawing::bitmap(staticlib_icon), "Static library (c)", "A project for creating a c static library.", project_language::c, project_sdk::none, project_platform::all, project_type::static_library},
+        {xtd::drawing::bitmap(staticlib_icon), "Static library (c++)", "A project for creating a c++ static class library.", project_language::cpp, project_sdk::none, project_platform::all, project_type::static_library},
         {xtd::drawing::bitmap(xtd_staticlib_icon), "xtd Static library (c++)", "A project for creating a xtd static class library.", project_language::xtd, project_sdk::none, project_platform::all, project_type::static_library},
-        {xtd::drawing::bitmap(xtd_sharedlib_icon), "Shared library (objective-c)", "A project for creating a objective-c shared class library.", project_language::objectivec, project_sdk::none, project_platform::macos, project_type::shared_library},
-        {xtd::drawing::bitmap(xtd_sharedlib_icon), "Shared library (c#)", "A project for creating a c# shared class library.", project_language::csharp, project_sdk::none, project_platform::windows, project_type::shared_library},
-        {xtd::drawing::bitmap(xtd_sharedlib_icon), "Shared library (c)", "A project for creating a c shared library.", project_language::c, project_sdk::none, project_platform::all, project_type::shared_library},
-        {xtd::drawing::bitmap(xtd_sharedlib_icon), "Shared library (c++)", "A project for creating a c++ shared class library.", project_language::cpp, project_sdk::none, project_platform::all, project_type::shared_library},
+        {xtd::drawing::bitmap(sharedlib_icon), "Shared library (objective-c)", "A project for creating a objective-c shared class library.", project_language::objectivec, project_sdk::none, project_platform::macos, project_type::shared_library},
+        {xtd::drawing::bitmap(sharedlib_icon), "Shared library (c#)", "A project for creating a c# shared class library.", project_language::csharp, project_sdk::none, project_platform::windows, project_type::shared_library},
+        {xtd::drawing::bitmap(sharedlib_icon), "Shared library (c)", "A project for creating a c shared library.", project_language::c, project_sdk::none, project_platform::all, project_type::shared_library},
+        {xtd::drawing::bitmap(sharedlib_icon), "Shared library (c++)", "A project for creating a c++ shared class library.", project_language::cpp, project_sdk::none, project_platform::all, project_type::shared_library},
         {xtd::drawing::bitmap(xtd_sharedlib_icon), "xtd Shared library (c++)", "A project for creating a xtd shared class library.", project_language::xtd, project_sdk::none, project_platform::all, project_type::shared_library},
-        {xtd::drawing::bitmap(xtd_console_icon), "Console Application (objective-c)", "A project for creating an objective-c command-line application.", project_language::objectivec, project_sdk::none, project_platform::macos, project_type::console},
-        {xtd::drawing::bitmap(xtd_console_icon), "Console Application (c#)", "A project for creating a c# command-line application.", project_language::csharp, project_sdk::none, project_platform::windows, project_type::console},
-        {xtd::drawing::bitmap(xtd_console_icon), "Console Application (c)", "A project for creating a c command-line application.", project_language::c, project_sdk::none, project_platform::all, project_type::console},
-        {xtd::drawing::bitmap(xtd_console_icon), "Console Application (c++)", "A project for creating a c++ command-line application.", project_language::cpp, project_sdk::none, project_platform::all, project_type::console},
+        {xtd::drawing::bitmap(console_icon), "Console Application (objective-c)", "A project for creating an objective-c command-line application.", project_language::objectivec, project_sdk::none, project_platform::macos, project_type::console},
+        {xtd::drawing::bitmap(console_icon), "Console Application (c#)", "A project for creating a c# command-line application.", project_language::csharp, project_sdk::none, project_platform::windows, project_type::console},
+        {xtd::drawing::bitmap(console_icon), "Console Application (c)", "A project for creating a c command-line application.", project_language::c, project_sdk::none, project_platform::all, project_type::console},
+        {xtd::drawing::bitmap(console_icon), "Console Application (c++)", "A project for creating a c++ command-line application.", project_language::cpp, project_sdk::none, project_platform::all, project_type::console},
         {xtd::drawing::bitmap(xtd_console_icon), "xtd Console Application (c++)", "A project for creating a xtd command-line application.", project_language::xtd, project_sdk::none, project_platform::all, project_type::console},
-        {xtd::drawing::bitmap(xtd_gui_icon), "Cocoa UI Application (objective-c)", "A project for creating a cocoa application with a graphic user\ninterface.", project_language::objectivec, project_sdk::cocoa, project_platform::macos, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "Gtkmm GUI Application (c++)", "A project for creating a gtkmm application with a graphic user\ninterface.", project_language::cpp, project_sdk::gtkmm, project_platform::linux, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "Gtk+3 GUI Application (c)", "A project for creating a gtk+3 application with a graphic user\ninterface.", project_language::c, project_sdk::gtk3, project_platform::linux, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "Gtk+2 GUI Application (c)", "A project for creating a gtk+2 application with a graphic user\ninterface.", project_language::c, project_sdk::gtk2, project_platform::linux, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "WPF GUI Application (c#)", "A project for creating a WPF application with a graphic user\ninterface.", project_language::csharp, project_sdk::wpf, project_platform::windows, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "Winforms GUI Application (c#)", "A project for creating a Winforms application with a graphic user\ninterface.", project_language::csharp, project_sdk::winforms, project_platform::windows, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "Win32 GUI Application (c)", "A project for creating a Win32 application with a graphic user\ninterface.", project_language::c, project_sdk::win32, project_platform::windows, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "fltk GUI Application (c++)", "A project for creating a fltk application with a graphic user\ninterface.", project_language::cpp, project_sdk::fltk, project_platform::all, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "Qt GUI Application (c++)", "A project for creating a Qt application with a graphic user interface.", project_language::cpp, project_sdk::qt5, project_platform::all, project_type::gui},
-        {xtd::drawing::bitmap(xtd_gui_icon), "wxWidgets GUI Application (c++)", "A project for creating a wxWidgets application with a graphic user\ninterface.", project_language::cpp, project_sdk::wxwidgets, project_platform::all, project_type::gui},
+        {xtd::drawing::bitmap(cocoa_icon), "Cocoa UI Application (objective-c)", "A project for creating a cocoa application with a graphic user\ninterface.", project_language::objectivec, project_sdk::cocoa, project_platform::macos, project_type::gui},
+        {xtd::drawing::bitmap(gtk_icon), "Gtkmm GUI Application (c++)", "A project for creating a gtkmm application with a graphic user\ninterface.", project_language::cpp, project_sdk::gtkmm, project_platform::linux, project_type::gui},
+        {xtd::drawing::bitmap(gtk_icon), "Gtk+3 GUI Application (c)", "A project for creating a gtk+3 application with a graphic user\ninterface.", project_language::c, project_sdk::gtk3, project_platform::linux, project_type::gui},
+        {xtd::drawing::bitmap(gtk_icon), "Gtk+2 GUI Application (c)", "A project for creating a gtk+2 application with a graphic user\ninterface.", project_language::c, project_sdk::gtk2, project_platform::linux, project_type::gui},
+        {xtd::drawing::bitmap(wpf_icon), "WPF GUI Application (c#)", "A project for creating a WPF application with a graphic user\ninterface.", project_language::csharp, project_sdk::wpf, project_platform::windows, project_type::gui},
+        {xtd::drawing::bitmap(winforms_icon), "Winforms GUI Application (c#)", "A project for creating a Winforms application with a graphic user\ninterface.", project_language::csharp, project_sdk::winforms, project_platform::windows, project_type::gui},
+        {xtd::drawing::bitmap(win32_icon), "Win32 GUI Application (c)", "A project for creating a Win32 application with a graphic user\ninterface.", project_language::c, project_sdk::win32, project_platform::windows, project_type::gui},
+        {xtd::drawing::bitmap(fltk_icon), "fltk GUI Application (c++)", "A project for creating a fltk application with a graphic user\ninterface.", project_language::cpp, project_sdk::fltk, project_platform::all, project_type::gui},
+        {xtd::drawing::bitmap(qt5_icon), "Qt GUI Application (c++)", "A project for creating a Qt application with a graphic user interface.", project_language::cpp, project_sdk::qt5, project_platform::all, project_type::gui},
+        {xtd::drawing::bitmap(wxwidgets_icon), "wxWidgets GUI Application (c++)", "A project for creating a wxWidgets application with a graphic user\ninterface.", project_language::cpp, project_sdk::wxwidgets, project_platform::all, project_type::gui},
         {xtd::drawing::bitmap(xtd_gui_icon), "xtd GUI Application (c++)", "A project for creating a xtd application with a graphic user interface.", project_language::xtd, project_sdk::none, project_platform::all, project_type::gui},
       };
       
