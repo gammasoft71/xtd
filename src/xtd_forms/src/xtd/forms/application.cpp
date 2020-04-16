@@ -145,18 +145,17 @@ void application::do_events() {
 }
 
 void application::enable_dark_mode() {
+  if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_dark_mode() before application::run()");
   native::application::enable_dark_mode();
-  for (auto f : application::open_forms())
-    f.get().recreate_handle();
 }
 
 void application::enable_light_mode() {
+  if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_light_mode() before application::run()");
   native::application::enable_light_mode();
-  for (auto f : application::open_forms())
-    f.get().recreate_handle();
 }
 
 void application::enable_visual_styles() {
+  if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_visual_styles() before application::run()");
   application::use_visual_styles_ = true;
   native::application::enable_visual_style();
 }
@@ -224,6 +223,7 @@ void application::run() {
 }
 
 void application::run(application_context& context) {
+  if (application::application::message_loop_ == true) throw std::runtime_error("Application already running");
   try {
     context.thread_exit += application::on_app_thread_exit;
     native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));

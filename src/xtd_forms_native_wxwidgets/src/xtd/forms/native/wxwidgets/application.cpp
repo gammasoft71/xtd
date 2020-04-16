@@ -12,9 +12,9 @@
 #if defined(__WXMSW__)
 #include "DarkMode.h"
 extern bool __xtd_enable_dark_mode__;
-extern bool ___xtd_enable_light_mode__;
-//#elif defined(__WXGTK__)
-//#include <gtk/gtk.h>
+extern bool __xtd_enable_light_mode__;
+#elif defined(__WXGTK__)
+#include <gtk/gtk.h>
 #elif defined(__WXOSX__)
 void __xtd_enable_dark_mode__();
 void __xtd_enable_light_mode__();
@@ -60,6 +60,7 @@ void application::enable_dark_mode() {
   __xtd_enable_light_mode__ = false;
   initialize();
 #elif defined(__WXGTK__)
+  g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", true, nullptr);
   initialize();
 #elif defined(__WXOSX__)
   initialize();
@@ -73,6 +74,7 @@ void application::enable_light_mode() {
   __xtd_enable_light_mode__ = true;
   initialize();
 #elif defined(__WXGTK__)
+  g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", false, nullptr);
   initialize();
 #elif defined(__WXOSX__)
   initialize();
@@ -101,8 +103,9 @@ void application::initialize() {
   wxTheApp->SetExitOnFrameDelete(false);
 #if defined(__WXMSW__)
   if (!__xtd_enable_light_mode__) InitDarkMode();
-  //#elif defined(__WXGTK__)
-  //  gtk_settings_set_long_property(gtk_settings_get_default(), "gtk-button-images", 1, "ButtonImage");
+//#elif defined(__WXGTK__)
+//  g_object_set(gtk_settings_get_default(), "gtk-button-images", true, nullptr);
+//  gtk_settings_set_long_property(gtk_settings_get_default(), "gtk-button-images", 1, "ButtonImage");
 #elif defined(__WXOSX__)
   wxMenuBar* menubar = new wxMenuBar();
   menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
