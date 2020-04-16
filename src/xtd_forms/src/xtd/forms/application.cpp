@@ -146,10 +146,14 @@ void application::do_events() {
 
 void application::enable_dark_mode() {
   native::application::enable_dark_mode();
+  for (auto f : application::open_forms())
+    f.get().recreate_handle();
 }
 
 void application::enable_light_mode() {
   native::application::enable_light_mode();
+  for (auto f : application::open_forms())
+    f.get().recreate_handle();
 }
 
 void application::enable_visual_styles() {

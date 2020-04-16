@@ -85,6 +85,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
 
 if (APPLE)
   set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES ${XTD_FORMS_NATIVE_WXWIDGETS_SOURCES}
+    src/xtd/forms/native/wxwidgets/application.mm
     src/xtd/forms/native/wxwidgets/button.mm
     src/xtd/forms/native/wxwidgets/cursor.mm
     src/xtd/forms/native/wxwidgets/message_box.mm

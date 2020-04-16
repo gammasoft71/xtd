@@ -11,15 +11,18 @@
 
 #if defined(__WXMSW__)
 #include "DarkMode.h"
+extern bool __xtd_enable_dark_mode__;
+extern bool ___xtd_enable_light_mode__;
 //#elif defined(__WXGTK__)
 //#include <gtk/gtk.h>
+#elif defined(__WXOSX__)
+void __xtd_enable_dark_mode__();
+void __xtd_enable_light_mode__();
 #endif
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms::native;
-extern bool __xtd_enable_dark_mode__;
-extern bool __xtd_enable_light_mode__;
 
 event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
 
@@ -56,10 +59,11 @@ void application::enable_dark_mode() {
   __xtd_enable_dark_mode__ = true;
   __xtd_enable_light_mode__ = false;
   initialize();
-#elif defined(__WXOSX__)
-  initialize();
 #elif defined(__WXGTK__)
   initialize();
+#elif defined(__WXOSX__)
+  initialize();
+  __xtd_enable_dark_mode__();
 #endif
 }
 
@@ -67,10 +71,13 @@ void application::enable_light_mode() {
 #if defined(__WXMSW__)
   __xtd_enable_dark_mode__ = false;
   __xtd_enable_light_mode__ = true;
-#elif defined(__WXOSX__)
-#elif defined(__WXGTK__)
-#endif
   initialize();
+#elif defined(__WXGTK__)
+  initialize();
+#elif defined(__WXOSX__)
+  initialize();
+  __xtd_enable_light_mode__();
+#endif
 }
 
 void application::enable_visual_style() {
