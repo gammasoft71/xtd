@@ -8,7 +8,7 @@ public:
     label1.parent(*this);
     label1.auto_size(true);
     label1.location({10, 13});
-    label1.text("Dark mode");
+    label1.text("Light mode");
 
     button1.parent(*this);
     button1.auto_size(true);
