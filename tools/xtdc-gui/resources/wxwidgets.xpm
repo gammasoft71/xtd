@@ -1,4 +1,4 @@
-#pragma onceà
+#pragma once
 /* XPM */
 static const char *wxwidgets_icon[] = {
 /* columns rows colors chars-per-pixel */
