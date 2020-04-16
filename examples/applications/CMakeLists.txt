@@ -6,5 +6,6 @@ find_package(xtd.forms REQUIRED)
 add_projects(
   application
   application_context
+  application_enable_dark_light_mode
   application_icon
 )
