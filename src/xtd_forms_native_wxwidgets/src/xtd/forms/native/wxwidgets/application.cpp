@@ -1,9 +1,6 @@
 #if !defined(_WIN32)
 #include <unistd.h>
 #endif
-//#if defined(__WXGTK__)
-//#include <gtk/gtk.h>
-//#endif
 #include <xtd/environment.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
@@ -11,6 +8,12 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.h"
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
+
+#if defined(__WXMSW__)
+#include "DarkMode.h"
+//#elif defined(__WXGTK__)
+//#include <gtk/gtk.h>
+#endif
 
 using namespace std;
 using namespace xtd;
@@ -21,7 +24,7 @@ extern bool __xtd_enable_light_mode__;
 event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wx_application::message_filter_proc;
 
 namespace {
-  bool restart_asked = false;
+bool restart_asked = false;
 }
 
 bool application::allow_quit() {
@@ -40,7 +43,7 @@ void application::cleanup() {
 
 void application::do_events() {
   initialize(); // Must be first
-
+  
   wxTheApp->ProcessPendingEvents();
 }
 
@@ -49,14 +52,24 @@ void application::do_idle() {
 }
 
 void application::enable_dark_mode() {
+#if defined(__WXMSW__)
   __xtd_enable_dark_mode__ = true;
   __xtd_enable_light_mode__ = false;
   initialize();
+#elif defined(__WXOSX__)
+  initialize();
+#elif defined(__WXGTK__)
+  initialize();
+#endif
 }
 
 void application::enable_light_mode() {
+#if defined(__WXMSW__)
   __xtd_enable_dark_mode__ = false;
   __xtd_enable_light_mode__ = true;
+#elif defined(__WXOSX__)
+#elif defined(__WXGTK__)
+#endif
   initialize();
 }
 
@@ -79,7 +92,11 @@ void application::initialize() {
   wxEntryStart(argc, (wxChar**)nullptr);
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
-#if __WXOSX__
+#if defined(__WXMSW__)
+  if (!__xtd_enable_light_mode__) InitDarkMode();
+  //#elif defined(__WXGTK__)
+  //  gtk_settings_set_long_property(gtk_settings_get_default(), "gtk-button-images", 1, "ButtonImage");
+#elif defined(__WXOSX__)
   wxMenuBar* menubar = new wxMenuBar();
   menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
     if (event.GetId() == wxID_EXIT) {
@@ -87,11 +104,10 @@ void application::initialize() {
       for (auto window : wxTopLevelWindows)
         if (!(can_quit = window->Close())) break;
       if (can_quit) wxTheApp->ExitMainLoop();
-    } else event.Skip();
+    }
+    else event.Skip();
   });
   wxMenuBar::MacSetCommonMenuBar(menubar);
-//#elif defined(__WXGTK__)
-//  gtk_settings_set_long_property(gtk_settings_get_default(), "gtk-button-images", 1, "ButtonImage");
 #endif
 }
 
@@ -113,7 +129,7 @@ void application::run() {
   initialize(); { // Must be first
     class uninitializer {
     public:
-      ~uninitializer() {cleanup();}
+      ~uninitializer() { cleanup(); }
     } uninitializer;
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
     wxTheApp->OnRun();
@@ -122,12 +138,12 @@ void application::run() {
   }
   if (restart_asked) {
     std::vector<string> command_line_args = environment::get_command_line_args();
-    char** argv = new char*[command_line_args.size() + 1];
-    for(int index = 0; index <command_line_args.size(); index++)
+    char** argv = new char* [command_line_args.size() + 1];
+    for (int index = 0; index < command_line_args.size(); index++)
       argv[index] = command_line_args[index].data();
     argv[command_line_args.size()] = 0;
     execv(argv[0], argv);
-    delete [] argv;
+    delete[] argv;
     _Exit(0);
   }
 }
