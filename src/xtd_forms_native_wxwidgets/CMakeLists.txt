@@ -101,10 +101,10 @@ include(${wxWidgets_USE_FILE})
 
 #if (APPLE)
 #elseif (UNIX)
-#  find_package(PkgConfig)
-#  pkg_check_modules(GTK gtk+-2.0)
-#  include_directories(${GTK_INCLUDE_DIRS})
-#  link_directories(${GTK_LIBRARY_DIRS})
+  find_package(PkgConfig)
+  pkg_check_modules(GTK gtk+-3.0)
+  include_directories(${GTK_INCLUDE_DIRS})
+  link_directories(${GTK_LIBRARY_DIRS})
 #endif()
 
 # Options
