@@ -99,13 +99,13 @@ source_group(src\\xtd\\forms\\native\\wxwidgets FILES ${XTD_FORMS_NATIVE_WXWIDGE
 find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-#if (APPLE)
-#elseif (UNIX)
+if (APPLE)
+elseif (UNIX)
   find_package(PkgConfig)
   pkg_check_modules(GTK gtk+-3.0)
   include_directories(${GTK_INCLUDE_DIRS})
   link_directories(${GTK_LIBRARY_DIRS})
-#endif()
+endif()
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
