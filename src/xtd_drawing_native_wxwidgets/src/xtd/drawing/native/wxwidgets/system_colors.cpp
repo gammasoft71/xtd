@@ -11,8 +11,10 @@
 #include <Windows.h>
 #endif
 
+#if defined(__WXMSW__)
 bool __xtd_win32_enable_dark_mode__ = false;
 bool __xtd_win32_enable_light_mode__ = false;
+#endif
 
 using namespace xtd::drawing::native;
 
@@ -77,7 +79,7 @@ intptr_t system_colors::active_caption() {
 
 intptr_t system_colors::active_caption_text() {
   if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
-  if (::light_mode()) return ::to_argb(255, 32, 32, 32);
+  if (::light_mode()) return ::to_argb(255, 36, 36, 36);
 #if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_CAPTIONTEXT).OSXGetNSColor());
 #else
@@ -86,7 +88,7 @@ intptr_t system_colors::active_caption_text() {
 }
 
 intptr_t system_colors::app_workspace() {
-  if (::dark_mode()) return ::to_argb(255, 25, 25, 25);
+  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
   if (::light_mode()) return ::to_argb(255, 231, 231, 231);
 #if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_APPWORKSPACE).OSXGetNSColor());
@@ -96,7 +98,7 @@ intptr_t system_colors::app_workspace() {
 }
 
 intptr_t system_colors::button_face() {
-  if (::dark_mode()) return ::to_argb(255, 25, 25, 25);
+  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
   if (::light_mode()) return ::to_argb(255, 231, 231, 231);
 #if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).OSXGetNSColor());
@@ -126,7 +128,7 @@ intptr_t system_colors::button_shadow() {
 }
 
 intptr_t system_colors::control() {
-  if (::dark_mode()) return ::to_argb(255, 25, 25, 25);
+  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
   if (::light_mode()) return ::to_argb(255, 231, 231, 231);
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
@@ -188,7 +190,7 @@ intptr_t system_colors::control_light_light() {
 
 intptr_t system_colors::control_text() {
   if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
-  if (::light_mode()) return ::to_argb(255, 32, 32, 32);
+  if (::light_mode()) return ::to_argb(255, 36, 36, 36);
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNTEXT).OSXGetNSColor());
@@ -269,7 +271,7 @@ intptr_t system_colors::highlight_text() {
 
 intptr_t system_colors::hot_track() {
   if (::dark_mode()) return ::to_argb(255, 223, 223, 223);
-  if (::light_mode()) return ::to_argb(255, 32, 32, 32);
+  if (::light_mode()) return ::to_argb(255, 36, 36, 36);
 #if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HOTLIGHT).OSXGetNSColor());
 #else
@@ -317,7 +319,7 @@ intptr_t system_colors::info() {
 }
 
 intptr_t system_colors::info_text() {
-  if (::light_mode()) return ::to_argb(255, 32, 32, 32);
+  if (::light_mode()) return ::to_argb(255, 36, 36, 36);
 #if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOTEXT).OSXGetNSColor());
 #else
@@ -356,7 +358,7 @@ intptr_t system_colors::menu_highlight() {
 
 intptr_t system_colors::menu_text() {
   if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
-  if (::light_mode()) return ::to_argb(255, 32, 32, 32);
+  if (::light_mode()) return ::to_argb(255, 36, 36, 36);
 #if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUTEXT).OSXGetNSColor());
 #else
@@ -365,7 +367,7 @@ intptr_t system_colors::menu_text() {
 }
 
 intptr_t system_colors::scroll_bar() {
-  if (::dark_mode()) return ::to_argb(255, 25, 25, 25);
+  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
   if (::light_mode()) return ::to_argb(255, 154, 154, 154);
 #if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_SCROLLBAR).OSXGetNSColor());
@@ -375,7 +377,7 @@ intptr_t system_colors::scroll_bar() {
 }
 
 intptr_t system_colors::window() {
-  if (::dark_mode()) return ::to_argb(255, 25, 25, 25);
+  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
   if (::light_mode()) return ::to_argb(255, 255, 255, 255);
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
@@ -407,7 +409,7 @@ intptr_t system_colors::window_frame() {
 
 intptr_t system_colors::window_text() {
   if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
-  if (::light_mode()) return ::to_argb(255, 32, 32, 32);
+  if (::light_mode()) return ::to_argb(255, 36, 36, 36);
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
 #  if defined(__WXOSX__)
   return reinterpret_cast<intptr_t>(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT).OSXGetNSColor());
