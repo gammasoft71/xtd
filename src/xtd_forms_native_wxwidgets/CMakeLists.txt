@@ -7,6 +7,7 @@ set(XTD_INCLUDES
   include/xtd/xtd.forms.native.wxwidgets.h
   include/xtd/xtd.forms.native.wxwidgets
   include/xtd/forms/native/wxwidgets/control_handler.h
+  include/xtd/forms/native/wxwidgets/dark_mode.h
   include/xtd/forms/native/wxwidgets/hdc_wrapper.h
   include/xtd/forms/native/wxwidgets/wx_application.h
   include/xtd/forms/native/wxwidgets/wx_button.h
@@ -51,6 +52,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp
   src/xtd/forms/native/wxwidgets/cursors.cpp
+  src/xtd/forms/native/wxwidgets/dark_mode.cpp
   src/xtd/forms/native/wxwidgets/date_time_picker.cpp
   src/xtd/forms/native/wxwidgets/domain_up_down.cpp
   src/xtd/forms/native/wxwidgets/file_dialog.cpp

@@ -4,13 +4,13 @@
 #include <xtd/environment.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.h"
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
 
 #if defined(__WXMSW__)
-#include "DarkMode.h"
 extern int __xtd_win32_enable_dark_mode__;
 #elif defined(__WXGTK__)
 bool __xtd_gtk_is_dark_mode__ = false;
@@ -101,10 +101,10 @@ void application::initialize() {
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
 #if defined(__WXMSW__)
-  if (__xtd_win32_enable_dark_mode__ != 0) InitDarkMode();
+  init_dark_mode(__xtd_win32_enable_dark_mode__);
 #elif defined(__WXGTK__)
   g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", __xtd_gtk_is_dark_mode__, nullptr);
-//  g_object_set(gtk_settings_get_default(), "gtk-button-images", true, nullptr);
+  //g_object_set(gtk_settings_get_default(), "gtk-button-images", true, nullptr);
 #elif defined(__WXOSX__)
   wxMenuBar* menubar = new wxMenuBar();
   menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
