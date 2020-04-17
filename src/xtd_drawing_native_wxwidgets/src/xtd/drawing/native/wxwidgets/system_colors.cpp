@@ -19,7 +19,7 @@ namespace {
 #if defined(__WXMSW__)
     DWORD value = 0, value_size = sizeof(value);
     if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
-      return __xtd_win32_enable_light_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
+      return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
 #endif
     return false;
   }
