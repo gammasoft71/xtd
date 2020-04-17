@@ -101,7 +101,7 @@ void application::initialize() {
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
 #if defined(__WXMSW__)
-  if (!__xtd_win32_enable_light_mode__) InitDarkMode();
+  if (__xtd_win32_enable_dark_mode__ != 0) InitDarkMode();
 #elif defined(__WXGTK__)
   g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", __xtd_gtk_is_dark_mode__, nullptr);
 //  g_object_set(gtk_settings_get_default(), "gtk-button-images", true, nullptr);
