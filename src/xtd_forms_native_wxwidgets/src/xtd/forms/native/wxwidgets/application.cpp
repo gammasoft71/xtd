@@ -11,15 +11,15 @@
 
 #if defined(__WXMSW__)
 #include "DarkMode.h"
-extern bool __xtd_enable_dark_mode__;
-extern bool __xtd_enable_light_mode__;
+extern bool __xtd_win32_enable_dark_mode__;
+extern bool __xtd_win32_enable_light_mode__;
 #elif defined(__WXGTK__)
-bool __xtd_is_dark_mode__ = false;
+bool __xtd_gtk_is_dark_mode__ = false;
 #undef interface_
 #include <gtk/gtk.h>
 #elif defined(__WXOSX__)
-void __xtd_enable_dark_mode__();
-void __xtd_enable_light_mode__();
+void __xtd_osx_enable_dark_mode__();
+void __xtd_osx_enable_light_mode__();
 #endif
 
 using namespace std;
@@ -58,29 +58,29 @@ void application::do_idle() {
 
 void application::enable_dark_mode() {
 #if defined(__WXMSW__)
-  __xtd_enable_dark_mode__ = true;
-  __xtd_enable_light_mode__ = false;
+  __xtd_win32_enable_dark_mode__ = true;
+  __xtd_win32_enable_light_mode__ = false;
   initialize();
 #elif defined(__WXGTK__)
-  __xtd_is_dark_mode__ = true;
+  __xtd_gtk_is_dark_mode__ = true;
   initialize();
 #elif defined(__WXOSX__)
   initialize();
-  __xtd_enable_dark_mode__();
+  __xtd_osx_enable_dark_mode__();
 #endif
 }
 
 void application::enable_light_mode() {
 #if defined(__WXMSW__)
-  __xtd_enable_dark_mode__ = false;
-  __xtd_enable_light_mode__ = true;
+  __xtd_win32_enable_dark_mode__ = false;
+  __xtd_win32_enable_light_mode__ = true;
   initialize();
 #elif defined(__WXGTK__)
-  __xtd_is_dark_mode__ = false;
+  __xtd_gtk_is_dark_mode__ = false;
   initialize();
 #elif defined(__WXOSX__)
   initialize();
-  __xtd_enable_light_mode__();
+  __xtd_osx_enable_light_mode__();
 #endif
 }
 
@@ -104,9 +104,9 @@ void application::initialize() {
   wxTheApp->CallOnInit();
   wxTheApp->SetExitOnFrameDelete(false);
 #if defined(__WXMSW__)
-  if (!__xtd_enable_light_mode__) InitDarkMode();
+  if (!__xtd_win32_enable_light_mode__) InitDarkMode();
 #elif defined(__WXGTK__)
-  g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", __xtd_is_dark_mode__, nullptr);
+  g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", __xtd_gtk_is_dark_mode__, nullptr);
 //  g_object_set(gtk_settings_get_default(), "gtk-button-images", true, nullptr);
 #elif defined(__WXOSX__)
   wxMenuBar* menubar = new wxMenuBar();
