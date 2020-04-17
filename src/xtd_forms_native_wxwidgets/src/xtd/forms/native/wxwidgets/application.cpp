@@ -11,8 +11,7 @@
 
 #if defined(__WXMSW__)
 #include "DarkMode.h"
-extern bool __xtd_win32_enable_dark_mode__;
-extern bool __xtd_win32_enable_light_mode__;
+extern int __xtd_win32_enable_dark_mode__;
 #elif defined(__WXGTK__)
 bool __xtd_gtk_is_dark_mode__ = false;
 #undef interface_
@@ -58,8 +57,7 @@ void application::do_idle() {
 
 void application::enable_dark_mode() {
 #if defined(__WXMSW__)
-  __xtd_win32_enable_dark_mode__ = true;
-  __xtd_win32_enable_light_mode__ = false;
+  __xtd_win32_enable_dark_mode__ = 1;
   initialize();
 #elif defined(__WXGTK__)
   __xtd_gtk_is_dark_mode__ = true;
@@ -72,8 +70,7 @@ void application::enable_dark_mode() {
 
 void application::enable_light_mode() {
 #if defined(__WXMSW__)
-  __xtd_win32_enable_dark_mode__ = false;
-  __xtd_win32_enable_light_mode__ = true;
+  __xtd_win32_enable_dark_mode__ = 0;
   initialize();
 #elif defined(__WXGTK__)
   __xtd_gtk_is_dark_mode__ = false;
