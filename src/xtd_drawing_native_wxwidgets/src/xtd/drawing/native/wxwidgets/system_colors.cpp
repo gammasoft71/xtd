@@ -9,9 +9,6 @@
 
 #if defined(__WXMSW__)
 #include <Windows.h>
-#endif
-
-#if defined(__WXMSW__)
 int __xtd_win32_enable_dark_mode__ = -1;
 #endif
 
