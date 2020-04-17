@@ -4,6 +4,7 @@
 #include <xtd/forms/native/message_box.h>
 #include <xtd/forms/native/message_box_styles.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include <wx/app.h>
 #include <wx/msgdlg.h>
 
@@ -11,9 +12,23 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 #if defined(__WXMSW__)
+namespace {
+  HHOOK handle_hook;
+  LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
+    if (ncode == HCBT_ACTIVATE) {
+      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      UnhookWindowsHookEx(handle_hook);
+    } else
+      CallNextHookEx(handle_hook, ncode, wparam, lparam);
+    return 0;
+  }
+}
+
 int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool displayHelpButton) {
 #pragma warning(push)
 #pragma warning(suppress:4996)
+  handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   return MessageBoxW(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(text.c_str()).c_str(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(caption.c_str()).c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 #pragma warning(pop)
 }
