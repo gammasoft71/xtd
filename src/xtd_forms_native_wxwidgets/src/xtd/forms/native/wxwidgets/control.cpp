@@ -8,6 +8,7 @@
 #include <xtd/drawing/native/system_colors.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_choice.h"
@@ -45,75 +46,86 @@ using namespace std::literals;
 using namespace std::chrono;
 
 namespace {
-  std::mutex invoke_time_points_access;
-  std::map<intptr_t, system_clock::duration> invoke_time_points;
+std::mutex invoke_time_points_access;
+std::map<intptr_t, system_clock::duration> invoke_time_points;
 #if defined (__WXGTK__)
-  static bool is_window_manager_ready = false;
+static bool is_window_manager_ready = false;
 
-  bool wait_window_manager() {
-    if (wxTopLevelWindows.size() == 0) return false;
-    static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
-    while (value == -1) {
-      value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, wxTopLevelWindows[0]);
-      wxYield();
-    }
-    is_window_manager_ready = true;
-    return true;
+bool wait_window_manager() {
+  if (wxTopLevelWindows.size() == 0) return false;
+  static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
+  while (value == -1) {
+    value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, wxTopLevelWindows[0]);
+    wxYield();
   }
+  is_window_manager_ready = true;
+  return true;
+}
 
-  wxSize GetFrameDecorationsize(wxFrame& frame) {
-    wxSize size;
+wxSize GetFrameDecorationsize(wxFrame& frame) {
+  wxSize size;
+  
+  if (frame.GetMenuBar() != nullptr)
+    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_MENU_Y, &frame));
+  
+  return size;
+}
 
-    if (frame.GetMenuBar() != nullptr)
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_MENU_Y, &frame));
-
-    return size;
+wxSize GetDecorationsize(wxTopLevelWindow& topLevelWindow) {
+  wxSize size;
+  
+  if (topLevelWindow.HasFlag(wxRESIZE_BORDER)) {
+    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_BORDER_Y, &topLevelWindow) * 2);
+    size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_BORDER_X, &topLevelWindow) * 2);
   }
-
-  wxSize GetDecorationsize(wxTopLevelWindow& topLevelWindow) {
-    wxSize size;
-
-    if (topLevelWindow.HasFlag(wxRESIZE_BORDER)) {
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_BORDER_Y, &topLevelWindow) * 2);
-      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_BORDER_X, &topLevelWindow) * 2);
-    }
-
-    if (topLevelWindow.HasFlag(wxCAPTION))
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, &topLevelWindow));
-
-    if (topLevelWindow.HasFlag(wxALWAYS_SHOW_SB)) {
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_HSCROLL_Y, &topLevelWindow));
-      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_VSCROLL_X, &topLevelWindow));
-    }
-
-    if (dynamic_cast<wxFrame*>(&topLevelWindow) != nullptr)
-      size += GetFrameDecorationsize(static_cast<wxFrame&>(topLevelWindow));
-
-    return size;
+  
+  if (topLevelWindow.HasFlag(wxCAPTION))
+    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, &topLevelWindow));
+  
+  if (topLevelWindow.HasFlag(wxALWAYS_SHOW_SB)) {
+    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_HSCROLL_Y, &topLevelWindow));
+    size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_VSCROLL_X, &topLevelWindow));
   }
+  
+  if (dynamic_cast<wxFrame*>(&topLevelWindow) != nullptr)
+    size += GetFrameDecorationsize(static_cast<wxFrame&>(topLevelWindow));
+  
+  return size;
+}
 
-  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
-    return topLevelWindow.GetSize() - GetDecorationsize(topLevelWindow);
-  }
+wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
+  return topLevelWindow.GetSize() - GetDecorationsize(topLevelWindow);
+}
 
-  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
-    topLevelWindow.SetSize(size + GetDecorationsize(topLevelWindow));
-  }
+void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
+  topLevelWindow.SetSize(size + GetDecorationsize(topLevelWindow));
+}
 #else
-  static bool is_window_manager_ready = true;
+static bool is_window_manager_ready = true;
 
-  bool wait_window_manager() {
-    return true;
-  }
+bool wait_window_manager() {
+  return true;
+}
 
-  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
-    return topLevelWindow.GetClientSize();
-  }
+wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
+  return topLevelWindow.GetClientSize();
+}
 
-  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
-    topLevelWindow.SetClientSize(size);
-  }
+void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
+  topLevelWindow.SetClientSize(size);
+}
 #endif
+
+intptr_t set_control_extra_options(intptr_t control) {
+  allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
+  return control;
+}
+
+intptr_t set_form_extra_options(intptr_t control) {
+  allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
+  refresh_title_bar_theme_color(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
+  return control;
+}
 }
 
 using namespace std;
@@ -146,31 +158,31 @@ void control::back_color(intptr_t control, const color& color) {
 
 intptr_t control::create(const forms::create_params& create_params) {
   application::initialize(); // Must be first
-  if (create_params.class_name() == "button") return reinterpret_cast<intptr_t>(new wx_button(create_params));
-  if (create_params.class_name() == "checkbox") return reinterpret_cast<intptr_t>(new wx_check_box(create_params));
-  if (create_params.class_name() == "checkedlistbox") return reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params));
-  if (create_params.class_name() == "choice") return reinterpret_cast<intptr_t>(new wx_choice(create_params));
-  if (create_params.class_name() == "colorpicker") return reinterpret_cast<intptr_t>(new wx_color_picker(create_params));
-  if (create_params.class_name() == "combobox") return reinterpret_cast<intptr_t>(new wx_combo_box(create_params));
-  if (create_params.class_name() == "datetimepicker") return reinterpret_cast<intptr_t>(new wx_date_time_picker(create_params));
-  if (create_params.class_name() == "domainupdown") return reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params));
-  if (create_params.class_name() == "fontpicker") return reinterpret_cast<intptr_t>(new wx_font_picker(create_params));
-  if (create_params.class_name() == "form") return reinterpret_cast<intptr_t>(new wx_form(create_params));
-  if (create_params.class_name() == "groupbox") return reinterpret_cast<intptr_t>(new wx_group_box(create_params));
-  if (create_params.class_name() == "label") return reinterpret_cast<intptr_t>(new wx_label(create_params));
-  if (create_params.class_name() == "listbox") return reinterpret_cast<intptr_t>(new wx_list_box(create_params));
-  if (create_params.class_name() == "numericupdown") return reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params));
-  if (create_params.class_name() == "panel") return reinterpret_cast<intptr_t>(new wx_panel(create_params));
-  if (create_params.class_name() == "picturebox") return reinterpret_cast<intptr_t>(new wx_picture_box(create_params));
-  if (create_params.class_name() == "progressbar") return reinterpret_cast<intptr_t>(new wx_progress_bar(create_params));
-  if (create_params.class_name() == "radiobutton") return reinterpret_cast<intptr_t>(new wx_radio_button(create_params));
-  if (create_params.class_name() == "tabcontrol") return reinterpret_cast<intptr_t>(new wx_tab_control(create_params));
-  if (create_params.class_name() == "tabpage") return reinterpret_cast<intptr_t>(new wx_tab_page(create_params));
-  if (create_params.class_name() == "textbox") return reinterpret_cast<intptr_t>(new wx_text_box(create_params));
-  if (create_params.class_name() == "trackbar") return reinterpret_cast<intptr_t>(new wx_track_bar(create_params));
-  if (create_params.class_name() == "updownbutton") return reinterpret_cast<intptr_t>(new wx_up_down_button(create_params));
-  if (create_params.class_name() == "usercontrol") return reinterpret_cast<intptr_t>(new wx_user_control(create_params));
-  return reinterpret_cast<intptr_t>(new wx_control(create_params));
+  if (create_params.class_name() == "button") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_button(create_params)));
+  if (create_params.class_name() == "checkbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_check_box(create_params)));
+  if (create_params.class_name() == "checkedlistbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_checked_list_box(create_params)));
+  if (create_params.class_name() == "choice") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_choice(create_params)));
+  if (create_params.class_name() == "colorpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_color_picker(create_params)));
+  if (create_params.class_name() == "combobox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_combo_box(create_params)));
+  if (create_params.class_name() == "datetimepicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_date_time_picker(create_params)));
+  if (create_params.class_name() == "domainupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params)));
+  if (create_params.class_name() == "fontpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_font_picker(create_params)));
+  if (create_params.class_name() == "form") return set_form_extra_options(reinterpret_cast<intptr_t>(new wx_form(create_params)));
+  if (create_params.class_name() == "groupbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_group_box(create_params)));
+  if (create_params.class_name() == "label") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_label(create_params)));
+  if (create_params.class_name() == "listbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_list_box(create_params)));
+  if (create_params.class_name() == "numericupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_numeric_up_down(create_params)));
+  if (create_params.class_name() == "panel") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_panel(create_params)));
+  if (create_params.class_name() == "picturebox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_picture_box(create_params)));
+  if (create_params.class_name() == "progressbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_progress_bar(create_params)));
+  if (create_params.class_name() == "radiobutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_radio_button(create_params)));
+  if (create_params.class_name() == "tabcontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_control(create_params)));
+  if (create_params.class_name() == "tabpage") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_tab_page(create_params)));
+  if (create_params.class_name() == "textbox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_text_box(create_params)));
+  if (create_params.class_name() == "trackbar") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_track_bar(create_params)));
+  if (create_params.class_name() == "updownbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_up_down_button(create_params)));
+  if (create_params.class_name() == "usercontrol") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_user_control(create_params)));
+  return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_control(create_params)));
 }
 
 intptr_t control::create_paint_graphics(intptr_t control) {
@@ -231,24 +243,24 @@ drawing::rectangle control::client_rectangle(intptr_t control) {
 
 drawing::size control::client_size(intptr_t control) {
   if (control == 0) return {};
-
+  
   wxSize size;
   if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
     size = GetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
   else
     size = reinterpret_cast<control_handler*>(control)->GetClientSize();
-
+  
   return {size.GetWidth(), size.GetHeight()};
 }
 
 void control::client_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
-
+  
   if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())) {
     int width = size.width();
-    #if defined(__WXOSX__)
+#if defined(__WXOSX__)
     if (width < 75) width = 75;
-    #endif
+#endif
     SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {width, size.height()});
   }else
     reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
@@ -313,7 +325,7 @@ void control::invoke_in_control_thread(intptr_t control, delegate<void(std::vect
       invoked->unlock();
     });
   }
- }
+}
 
 point control::location(intptr_t control) {
   if (control == 0) return {};
@@ -367,7 +379,7 @@ bool control::visible(intptr_t control) {
 void control::visible(intptr_t control, bool visible) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Show(visible);
-
+  
   if (!is_window_manager_ready && visible == true && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
     wait_window_manager();
 }
@@ -379,13 +391,13 @@ void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool 
 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
-
+  
   reinterpret_cast<control_handler*>(control)->control()->Refresh();
 }
 
 void control::update(intptr_t control) {
   if (control == 0) return;
-
+  
   reinterpret_cast<control_handler*>(control)->control()->Update();
 }
 
