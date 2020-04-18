@@ -1,5 +1,8 @@
 #include "main_form.h"
 #include "../properties/settings.h"
+#include "../resources/xtd_console.xpm"
+#include "../resources/xtd_gui.xpm"
+#include "../resources/xtd_tunit.xpm"
 #include "../resources/xtd_open_examples.xpm"
 #include "../resources/xtd_open.xpm"
 #include "../resources/xtd_new.xpm"
@@ -19,7 +22,10 @@ using namespace xtdc_gui;
 main_form::main_form() {
   client_size({1000, 710});
   minimize_box(false);
-  maximize_box(false);
+  /// @todo Remove two folluwing lines when anchor in anchor will fixed
+  //maximize_box(false);
+  //form_border_style(forms::form_border_style::fixed_3d);
+  /// <-- end todo
   start_position(form_start_position::center_screen);
   
   startup_panel_.parent(*this);
@@ -137,6 +143,104 @@ main_form::main_form() {
   open_xtd_examples_title_label_.auto_size(true);
   open_xtd_examples_title_label_.text("Open xtd examples");
   open_xtd_examples_title_label_.font({open_xtd_examples_title_label_.font(), 24.0});
+
+  open_xtd_example_tab_control_.parent(open_xtd_examples_panel_);
+  open_xtd_example_tab_control_.location({50, 115});
+  open_xtd_example_tab_control_.size({450, open_xtd_examples_panel_.size().height() - 115});
+  open_xtd_example_tab_control_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+
+  open_xtd_examples_information_panel_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_information_panel_.auto_scroll(true);
+  open_xtd_examples_information_panel_.back_color(system_colors::window());
+  open_xtd_examples_information_panel_.border_style(forms::border_style::fixed_3d);
+  open_xtd_examples_information_panel_.location({550, 50});
+  open_xtd_examples_information_panel_.size({400, open_xtd_examples_panel_.size().height() - 350});
+  open_xtd_examples_information_panel_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
+
+  open_xtd_examples_information_label_.parent(open_xtd_examples_information_panel_);
+  open_xtd_examples_information_label_.location({10, 10});
+  open_xtd_examples_information_label_.auto_size(true);
+
+  open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
+  open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 260});
+  open_xtd_examples_information_picture_box_.size({400, 250});
+  open_xtd_examples_information_picture_box_.size_mode(picture_box_size_mode::zoom);
+  open_xtd_examples_information_picture_box_.anchor(anchor_styles::bottom|anchor_styles::right);
+
+  open_xtd_example_console_tab_page_.text("xtd.console");
+  open_xtd_example_console_tab_page_.parent(open_xtd_example_tab_control_);
+
+  open_xtd_example_forms_tab_page_.text("xtd.forms");
+  open_xtd_example_forms_tab_page_.parent(open_xtd_example_tab_control_);
+
+  open_xtd_example_tunit_tab_page_.text("xtd.tunit");
+  open_xtd_example_tunit_tab_page_.parent(open_xtd_example_tab_control_);
+  
+  open_xtd_example_console_picture_box_.parent(open_xtd_example_console_tab_page_);
+  open_xtd_example_console_picture_box_.location({30, 30});
+  open_xtd_example_console_picture_box_.size({40, 40});
+  open_xtd_example_console_picture_box_.image(drawing::bitmap(xtd_console_icon));
+  
+  open_xtd_example_forms_picture_box_.parent(open_xtd_example_forms_tab_page_);
+  open_xtd_example_forms_picture_box_.location({30, 30});
+  open_xtd_example_forms_picture_box_.size({40, 40});
+  open_xtd_example_forms_picture_box_.image(drawing::bitmap(xtd_gui_icon));
+  
+  open_xtd_example_tunit_picture_box_.parent(open_xtd_example_tunit_tab_page_);
+  open_xtd_example_tunit_picture_box_.location({30, 30});
+  open_xtd_example_tunit_picture_box_.size({40, 40});
+  open_xtd_example_tunit_picture_box_.image(drawing::bitmap(xtd_tunit_icon));
+
+  open_xtd_example_console_title_label_.parent(open_xtd_example_console_tab_page_);
+  open_xtd_example_console_title_label_.text("xtd Console Application (c++)");
+  open_xtd_example_console_title_label_.font({open_xtd_example_console_title_label_.font(), 16.0});
+  open_xtd_example_console_title_label_.location({80, 35});
+  open_xtd_example_console_title_label_.auto_size(true);
+
+  open_xtd_example_forms_title_label_.parent(open_xtd_example_forms_tab_page_);
+  open_xtd_example_forms_title_label_.text("xtd Gui Application (c++)");
+  open_xtd_example_forms_title_label_.font({open_xtd_example_forms_title_label_.font(), 16.0});
+  open_xtd_example_forms_title_label_.location({80, 35});
+  open_xtd_example_forms_title_label_.auto_size(true);
+
+  open_xtd_example_tunit_title_label_.parent(open_xtd_example_tunit_tab_page_);
+  open_xtd_example_tunit_title_label_.text("xtd Unit Test Project (c++)");
+  open_xtd_example_tunit_title_label_.font({open_xtd_example_tunit_title_label_.font(), 16.0});
+  open_xtd_example_tunit_title_label_.location({80, 35});
+  open_xtd_example_tunit_title_label_.auto_size(true);
+
+  open_xtd_example_console_list_box_.parent(open_xtd_example_console_tab_page_);
+  open_xtd_example_console_list_box_.location({30, 110});
+  open_xtd_example_console_list_box_.size(open_xtd_example_console_tab_page_.size() - xtd::drawing::size {60, 140});
+  //open_xtd_example_console_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  for (auto item : xtd_console_examples_)
+    open_xtd_example_console_list_box_.items().push_back({item.name(), item});
+  open_xtd_example_console_list_box_.selected_value_changed += [&] {
+    open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).description());
+    open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).picture());
+  };
+  
+  open_xtd_example_forms_list_box_.parent(open_xtd_example_forms_tab_page_);
+  open_xtd_example_forms_list_box_.location({30, 110});
+  open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - xtd::drawing::size {60, 140});
+  //open_xtd_example_forms_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  for (auto item : xtd_forms_examples_)
+    open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
+  open_xtd_example_forms_list_box_.selected_value_changed += [&] {
+    open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
+    open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
+  };
+
+  open_xtd_example_tunit_list_box_.parent(open_xtd_example_tunit_tab_page_);
+  open_xtd_example_tunit_list_box_.location({30, 110});
+  open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - xtd::drawing::size {60, 140});
+  //open_xtd_example_tunit_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  for (auto item : xtd_tunit_examples_)
+    open_xtd_example_tunit_list_box_.items().push_back({item.name(), item});
+  open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
+    open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
+    open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
+  };
 
   create_panel_.parent(*this);
   create_panel_.size(client_size() - xtd::drawing::size {0, 100});
@@ -364,6 +468,7 @@ void main_form::delete_from_open_recent_projects(const std::string& project_path
 void main_form::init() {
   init_create_create_recent_projects_list_box();
   init_startup_open_recent_projects_list_box();
+  open_xtd_example_console_list_box_.selected_index(0);
 }
 
 void main_form::init_create_create_recent_projects_list_box() {

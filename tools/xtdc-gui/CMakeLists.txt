@@ -13,6 +13,7 @@ set(SOURCES
   src/project_type_item_control.h
   src/project_type_item_control.cpp
   src/project_type_items_control.h
+  src/xtd_example_item.h
 )
 set(PROPERTIES
   properties/settings.h
