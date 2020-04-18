@@ -1,4 +1,5 @@
 #include <xtd/forms/native/tab_control.h>
+#include <xtd/forms/native/control.h>
 #include <xtd/forms/native/tab_page.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/tab_control.h"
@@ -34,4 +35,9 @@ control& tab_page::text(const std::string& text) {
 void tab_page::destroy_handle() {
   if (this->parent().has_value()) native::tab_control::delete_item(this->parent().value().get().handle(), handle());
   panel::destroy_handle();
+}
+
+void tab_page::on_handle_created(const event_args &e) {
+  panel::on_handle_created(e);
+  size_ = native::control::size(handle_);
 }
