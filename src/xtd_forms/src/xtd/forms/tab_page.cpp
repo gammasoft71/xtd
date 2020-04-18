@@ -1,3 +1,4 @@
+#include <xtd/environment.h>
 #include <xtd/forms/native/tab_control.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/tab_page.h>
@@ -39,5 +40,5 @@ void tab_page::destroy_handle() {
 
 void tab_page::on_handle_created(const event_args &e) {
   panel::on_handle_created(e);
-  size_ = native::control::size(handle_);
+  if (xtd::environment::os_version().is_linux_platform()) size_ = native::control::client_size(parent_) - drawing::size {0, 38};
 }
