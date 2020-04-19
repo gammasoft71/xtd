@@ -19,7 +19,7 @@ namespace xtdc_gui {
     bool operator!=(const xtd_example_item& value) const {return !operator==(value);}
 
     /// @brief Initializes a new instance of the project_type_item class.
-    xtd_example_item(const std::string& name, const std::string& description, const std::filesystem::path& path) : name_(name), description_(description), path_(path) {}
+    xtd_example_item(const std::string& name, const std::string& description, const std::filesystem::path& path) : name_(name), description_(description), path_(get_base_path()/"share"/"xtd"/"examples"/path) {}
 
     xtd::drawing::image picture() const {
       auto picture_file_name = get_base_path()/"share"/"xtd"/"resources"/"pictures/examples"/"xtd_forms"/(path_.stem().string() + "_" + get_os_potfix() + get_theme_postfix() +".png");
