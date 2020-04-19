@@ -29,6 +29,15 @@ tab_control& tab_control::alignment(tab_alignment alignment) {
   return *this;
 }
 
+tab_control& tab_control::selected_index(size_t selected_index) {
+  if (selected_index_ != selected_index) {
+    selected_index_ = selected_index;
+    native::tab_control::selected_index(handle(), selected_index_);
+    on_selected_index_changed(event_args::empty);
+  }
+  return *this;
+}
+
 forms::create_params tab_control::create_params() const {
   forms::create_params create_params = this->control::create_params();
   
@@ -59,4 +68,16 @@ void tab_control::recreate_handle() {
     native::tab_control::insert_item(handle(), index, controls()[index].get().handle());
     native::tab_control::page_text(handle(), index, controls()[index].get().text());
   }
+}
+
+void tab_control::wnd_proc(message& message) {
+  switch (message.msg()) {
+    case WM_REFLECT + WM_COMMAND: wm_reflect_command(message); break;
+    default: this->control::wnd_proc(message);
+  }
+}
+
+void tab_control::wm_reflect_command(message& message) {
+  this->def_wnd_proc(message);
+  selected_index(native::tab_control::selected_index(this->handle()));
 }
