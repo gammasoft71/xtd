@@ -93,16 +93,19 @@ namespace xtdc_gui {
     xtd::forms::button next_button_;
     
     size_t current_project_type_index_ = -1;
+    size_t current_open_xtd_example_console_list_box_index_ = 0;
+    size_t current_open_xtd_example_forms_list_box_index_ = 0;
+    size_t current_open_xtd_example_tunit_list_box_index_ = 0;
     std::vector<xtd_example_item> xtd_console_examples_ {
-      {"* Hello world (console)", "The classic first \"Hello, World!\"\nconsole application.\n", "xtd_console/hello_world_console"},
-      {"Console color", "Show how to set background and foreground color.\n", "xtd_console/console_color"},
+      {"* Hello world (console)", "The classic first \"Hello, World!\"\nconsole application.\n", {"xtd_console/hello_world_console"}},
+      {"Console color", "Show how to set background and foreground color.\n", {"xtd_console/console_color"}},
     };
     std::vector<xtd_example_item> xtd_forms_examples_ {
-      {"* Hello world (label)", "The classic first \"Hello, World!\"\nwith xtd::forms::label control.\n", "xtd_forms/hello_world_examples/hello_world_forms"},
-      {"* Hello world (emoticons)", "The classic first \"Hello, World!\"\nwith xtd::forms::emoticons component.\n", "xtd_forms/hello_world_examples/hello_world_emoticons"},
-      {"* Hello world (message_box)", "The classic first \"Hello, World!\"\nwith xtd::forms::message_box dialog.\n", "xtd_forms/hello_world_examples/hello_world_message_box"},
-      {"* Hello world (paint)", "The classic first \"Hello, World!\"\nwith GDI+ drawing objects.\n", "xtd_forms/hello_world_examples/hello_world_paint"},
-      {"Application", "shows how to create an application with xtd::forms::application class.\n", "xtd_forms/application/application"},
+      {"* Hello world (label)", "The classic first \"Hello, World!\"\nwith xtd::forms::label control.\n", {"xtd_forms/hello_world_examples/hello_world_form"}},
+      {"* Hello world (emoticons)", "The classic first \"Hello, World!\"\nwith xtd::forms::emoticons component.\n", {"xtd_forms/hello_world_examples/hello_world_emoticons"}},
+      {"* Hello world (message_box)", "The classic first \"Hello, World!\"\nwith xtd::forms::message_box dialog.\n", {"xtd_forms/hello_world_examples/hello_world_message_box"}},
+      {"* Hello world (paint)", "The classic first \"Hello, World!\"\nwith GDI+ drawing objects.\n", {"xtd_forms/hello_world_examples/hello_world_paint"}},
+      {"Application", "shows how to create an application with xtd::forms::application class.\n", {"xtd_forms/application/application"}},
     };
     std::vector<xtd_example_item> xtd_tunit_examples_ {
       {"Hello world", "The classic first \"Hello, World!\"\nunit tests application.\n", "xtd_tunit/hello_world_tunit"},
