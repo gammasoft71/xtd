@@ -33,6 +33,10 @@ namespace xtd {
 
       drawing::size measure_control() const override;
 
+      void on_control_added(const control_event_args& e) override;
+      
+      void on_control_removed(const control_event_args& e) override;
+      
       virtual void on_selected_index_changed(const event_args& e) {selected_index_changed(*this, e);}
       
       void recreate_handle() override;
