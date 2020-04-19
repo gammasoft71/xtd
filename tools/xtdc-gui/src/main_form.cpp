@@ -162,7 +162,6 @@ main_form::main_form() {
       open_xtd_example_forms_list_box_.selected_index(-1);
       open_xtd_example_tunit_list_box_.selected_index(current_open_xtd_example_tunit_list_box_index_);
     }
-
   };
 
   open_xtd_examples_information_panel_.parent(open_xtd_examples_panel_);
@@ -434,7 +433,7 @@ main_form::main_form() {
       create_panel_.visible(false);
       previous_button_.visible(false);
       next_button_.visible(false);
-    } else {
+    } else if (open_xtd_examples_panel_.visible()) {
       previous_button_.text("&Back");
       next_button_.text("&Next");
       create_panel_.visible(true);
@@ -459,7 +458,7 @@ main_form::main_form() {
       next_button_.text("&Create");
       create_panel_.visible(false);
       configure_panel_.visible(true);
-    } else {
+    } else if (configure_panel_.visible()) {
       auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
       new_project(project_path, current_project_type_index_);
       startup_panel_.visible(true);
@@ -467,6 +466,28 @@ main_form::main_form() {
       previous_button_.visible(false);
       next_button_.text("&Next");
       next_button_.visible(false);
+      if (properties::settings::default_settings().auto_close()) close();
+    } else if (open_xtd_examples_panel_.visible()) {
+      auto xtd_example = xtd_example_item();
+      std::string exemple_subproject_path;
+      if (open_xtd_example_tab_control_.selected_index() == 0) {
+        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag());
+        exemple_subproject_path = "xtd_console";
+      } else if (open_xtd_example_tab_control_.selected_index() == 1) {
+        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag());
+        exemple_subproject_path = "xtd_forms";
+      } else if (open_xtd_example_tab_control_.selected_index() == 2) {
+        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag());
+        exemple_subproject_path = "xtd_tunit";
+      }
+      
+      auto target_path = std::filesystem::temp_directory_path()/"xtd_examples"/exemple_subproject_path/xtd_example.path().stem();
+      if (std::filesystem::exists(target_path)) std::filesystem::remove_all(target_path);
+      std::filesystem::create_directories(target_path);
+      for (auto file : std::filesystem::directory_iterator( xtd_example.path()))
+        std::filesystem::copy(file, target_path/file.path().filename());
+      //message_box::show(strings::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
+      system(strings::format("xtdc open {}", target_path).c_str());
       if (properties::settings::default_settings().auto_close()) close();
     }
   };
