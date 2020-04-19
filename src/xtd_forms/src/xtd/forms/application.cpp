@@ -144,6 +144,14 @@ void application::do_events() {
   native::application::do_events();
 }
 
+bool application::dark_mode_enabled() {
+  return native::application::dark_mode_enabled();
+}
+
+bool application::light_mode_enabled() {
+  return !dark_mode_enabled();
+}
+
 void application::enable_dark_mode() {
   if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_dark_mode() before application::run()");
   native::application::enable_dark_mode();
