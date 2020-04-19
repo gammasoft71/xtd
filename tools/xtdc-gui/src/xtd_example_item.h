@@ -4,6 +4,7 @@
 #include <string>
 #include <filesystem>
 #include <xtd/drawing/image.h>
+#include <xtd/forms/application.h>
 #include <xtd/environment.h>
 #include "../resources/noimage.xpm"
 
@@ -37,7 +38,7 @@ namespace xtdc_gui {
     static std::filesystem::path get_base_path() noexcept {return {};}
 #endif
     static std::string get_os_potfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_linux_platform() ? "g" : "m";}
-    static std::string get_theme_postfix() noexcept {return "";}
+    static std::string get_theme_postfix() noexcept {return xtd::forms::application::dark_mode_enabled() ? "d" : "";}
     std::string name_;
     std::string description_;
     std::filesystem::path path_;
