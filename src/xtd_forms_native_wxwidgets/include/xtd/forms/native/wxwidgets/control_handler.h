@@ -20,6 +20,7 @@
 #include <wx/stattext.h>
 #include <wx/frame.h>
 #include <wx/gauge.h>
+#include <wx/notebook.h>
 #include <wx/radiobut.h>
 #include <wx/slider.h>
 #include <wx/spinctrl.h>
@@ -88,7 +89,7 @@ namespace xtd {
         }
         
         bool is_command_event(wxEventType event_type) const {
-          static std::set<wxEventType> event_types = {wxEVT_BUTTON, wxEVT_CHECKBOX, wxEVT_CHOICE, wxEVT_COLOURPICKER_CHANGED, wxEVT_DATE_CHANGED, wxEVT_FONTPICKER_CHANGED, wxEVT_LISTBOX, wxEVT_LISTBOX_DCLICK, wxEVT_CHECKLISTBOX, wxEVT_MENU, wxEVT_SLIDER, wxEVT_SPINCTRLDOUBLE, wxEVT_RADIOBOX, wxEVT_RADIOBUTTON, wxEVT_SCROLLBAR, wxEVT_VLBOX, wxEVT_COMBOBOX, wxEVT_TOOL_RCLICKED, wxEVT_TIME_CHANGED, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_COMBOBOX_DROPDOWN, wxEVT_COMBOBOX_CLOSEUP};
+          static std::set<wxEventType> event_types = {wxEVT_BUTTON, wxEVT_CHECKBOX, wxEVT_CHOICE, wxEVT_COLOURPICKER_CHANGED, wxEVT_DATE_CHANGED, wxEVT_FONTPICKER_CHANGED, wxEVT_LISTBOX, wxEVT_NOTEBOOK_PAGE_CHANGED, wxEVT_LISTBOX_DCLICK, wxEVT_CHECKLISTBOX, wxEVT_MENU, wxEVT_SLIDER, wxEVT_SPINCTRLDOUBLE, wxEVT_RADIOBOX, wxEVT_RADIOBUTTON, wxEVT_SCROLLBAR, wxEVT_VLBOX, wxEVT_COMBOBOX, wxEVT_TOOL_RCLICKED, wxEVT_TIME_CHANGED, wxEVT_TOOL_DROPDOWN, wxEVT_TOOL_ENTER, wxEVT_COMBOBOX_DROPDOWN, wxEVT_COMBOBOX_CLOSEUP};
           return event_types.find(event_type) != event_types.end();
         }
         
@@ -496,6 +497,7 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_DATE_CHANGED) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_FONTPICKER_CHANGED) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_LISTBOX) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_NOTEBOOK_PAGE_CHANGED) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_RADIOBUTTON) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SLIDER) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), (event_handler_->control()->GetWindowStyle() & wxSL_VERTICAL) == wxSL_VERTICAL ? WM_VSCROLL : WM_HSCROLL, SB_THUMBPOSITION, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SPINCTRLDOUBLE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, UDN_DELTAPOS, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
