@@ -19,6 +19,7 @@ bool __xtd_gtk_is_dark_mode__ = false;
 #elif defined(__WXOSX__)
 void __xtd_osx_enable_dark_mode__();
 void __xtd_osx_enable_light_mode__();
+bool __xtd_osx_dark_mode_enabled__();
 #endif
 
 using namespace std;
@@ -44,6 +45,22 @@ void application::cleanup() {
     wxApp::SetInstance(nullptr);
   }
 }
+
+bool application::dark_mode_enabled() {
+#if defined(__WXMSW__)
+  DWORD value = 0, value_size = sizeof(value);
+  if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
+    value;
+  return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
+#elif defined(__WXGTK__)
+  bool is_dark_mode = false;
+  g_object_get(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", &is_dark_mode, nullptr);
+  return is_dark_mode;
+#elif defined(__WXOSX__)
+  return __xtd_osx_dark_mode_enabled__();
+#endif
+}
+
 
 void application::do_events() {
   initialize(); // Must be first
