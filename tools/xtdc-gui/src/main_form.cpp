@@ -148,6 +148,22 @@ main_form::main_form() {
   open_xtd_example_tab_control_.location({50, 115});
   open_xtd_example_tab_control_.size({450, open_xtd_examples_panel_.size().height() - 115});
   open_xtd_example_tab_control_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
+  open_xtd_example_tab_control_.selected_index_changed += [&] {
+    if (open_xtd_example_tab_control_.selected_index() == 0) {
+      open_xtd_example_console_list_box_.selected_index(current_open_xtd_example_console_list_box_index_);
+      open_xtd_example_forms_list_box_.selected_index(-1);
+      open_xtd_example_tunit_list_box_.selected_index(-1);
+    } else if (open_xtd_example_tab_control_.selected_index() == 1) {
+      open_xtd_example_console_list_box_.selected_index(-1);
+      open_xtd_example_forms_list_box_.selected_index(current_open_xtd_example_forms_list_box_index_);
+      open_xtd_example_tunit_list_box_.selected_index(-1);
+    } else if (open_xtd_example_tab_control_.selected_index() == 2) {
+      open_xtd_example_console_list_box_.selected_index(-1);
+      open_xtd_example_forms_list_box_.selected_index(-1);
+      open_xtd_example_tunit_list_box_.selected_index(current_open_xtd_example_tunit_list_box_index_);
+    }
+
+  };
 
   open_xtd_examples_information_panel_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_panel_.auto_scroll(true);
@@ -216,8 +232,11 @@ main_form::main_form() {
   for (auto item : xtd_console_examples_)
     open_xtd_example_console_list_box_.items().push_back({item.name(), item});
   open_xtd_example_console_list_box_.selected_value_changed += [&] {
-    open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).description());
-    open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).picture());
+    if (open_xtd_example_console_list_box_.selected_index() != -1) {
+      current_open_xtd_example_console_list_box_index_ = open_xtd_example_console_list_box_.selected_index();
+      open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).picture());
+    }
   };
   
   open_xtd_example_forms_list_box_.parent(open_xtd_example_forms_tab_page_);
@@ -227,8 +246,11 @@ main_form::main_form() {
   for (auto item : xtd_forms_examples_)
     open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
-    open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
-    open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
+    if (open_xtd_example_forms_list_box_.selected_index() != -1) {
+      current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
+      open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
+    }
   };
 
   open_xtd_example_tunit_list_box_.parent(open_xtd_example_tunit_tab_page_);
@@ -238,8 +260,11 @@ main_form::main_form() {
   for (auto item : xtd_tunit_examples_)
     open_xtd_example_tunit_list_box_.items().push_back({item.name(), item});
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
-    open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
-    open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
+    if (open_xtd_example_tunit_list_box_.selected_index() != -1) {
+      current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
+      open_xtd_examples_information_label_.text(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
+      open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
+    }
   };
 
   create_panel_.parent(*this);
