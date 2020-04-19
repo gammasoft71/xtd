@@ -10,10 +10,14 @@ using namespace xtd::forms;
 tab_control::tab_control() {
   this->can_focus_ = false;
   this->size_ = this->default_size();
+
+  /*
   this->controls_.item_added += [this](size_t index, std::reference_wrapper<control> item) {
     native::tab_control::insert_item(handle(), index, item.get().handle());
     native::tab_control::page_text(handle(), index, item.get().text());
+    if (selected_index_ == -1) selected_index_ = 0;
   };
+   */
   
   /* tab_page is removed by tab_page::destroy_handle() method.
   this->controls_.item_erased += [this](size_t index, std::reference_wrapper<control> item) {
@@ -59,6 +63,19 @@ drawing::size tab_control::measure_control() const {
   for (auto item : this->controls())
     if (item.get().visible()) bounds = drawing::rectangle::make_union(bounds, item.get().bounds());
   return drawing::size(bounds.location() + bounds.size());
+}
+
+void tab_control::on_control_added(const control_event_args &e) {
+  native::tab_control::insert_item(handle(), controls().size() - 1, controls()[controls().size() - 1].get().handle());
+  native::tab_control::page_text(handle(), controls().size() - 1, controls()[controls().size() - 1].get().text());
+  if (selected_index_ == -1) selected_index_ = 0;
+
+  control::on_control_added(e);
+}
+
+void tab_control::on_control_removed(const control_event_args &e) {
+  control::on_control_removed(e);
+  if (selected_index_ != -1) selected_index(-1);
 }
 
 void tab_control::recreate_handle() {
