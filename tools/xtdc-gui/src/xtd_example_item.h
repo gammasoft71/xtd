@@ -23,8 +23,9 @@ namespace xtdc_gui {
 
     xtd::drawing::image picture() const {
       auto picture_file_name = get_base_path()/"share"/"xtd"/"resources"/"pictures/examples"/"xtd_forms"/(path_.stem().string() + "_" + get_os_potfix() + get_theme_postfix() +".png");
-      if (std::filesystem::exists(picture_file_name))
-        return xtd::drawing::bitmap(picture_file_name.string());
+      if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
+      picture_file_name = get_base_path()/"share"/"xtd"/"resources"/"pictures/examples"/"xtd_forms"/(path_.stem().string() + "_" + get_os_potfix() +".png");
+      if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
       return xtd::drawing::bitmap(noimage_picture);
     }
     const std::string& name() const {return name_;}
