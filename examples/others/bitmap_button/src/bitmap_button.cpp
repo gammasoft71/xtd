@@ -42,5 +42,6 @@ private:
 };
 
 int main() {
+  application::enable_button_images();
   application::run(form1());
 }
