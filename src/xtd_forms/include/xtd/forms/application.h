@@ -145,7 +145,7 @@ namespace xtd {
       
       /// @brief Enables image button for the application.
       /// @remarks This method has aneffect only on linux.
-      static void enable_image_button();
+      static void enable_button_images();
       
       /// @brief Enables light mode for the application.
       static void enable_light_mode();
