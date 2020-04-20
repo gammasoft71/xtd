@@ -48,6 +48,7 @@ void application::cleanup() {
 }
 
 bool application::dark_mode_enabled() {
+  initialize(); // Must be first
   return drawing::system_colors::window().get_lightness() < 0.5;
   /*
   //the following code check if dark_mode enabled if possible.
@@ -66,7 +67,6 @@ bool application::dark_mode_enabled() {
 
 void application::do_events() {
   initialize(); // Must be first
-  
   wxTheApp->ProcessPendingEvents();
 }
 
@@ -90,12 +90,12 @@ void application::enable_dark_mode() {
 void application::enable_light_mode() {
 #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = 0;
-  initialize();
+  initialize(); // Must be last
 #elif defined(__WXGTK__)
   __xtd_gtk_is_dark_mode__ = false;
-  initialize();
+  initialize(); // Must be last
 #elif defined(__WXOSX__)
-  initialize();
+  initialize(); // Must be first 
   __xtd_osx_enable_light_mode__();
 #endif
 }
