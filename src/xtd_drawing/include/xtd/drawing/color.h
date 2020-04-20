@@ -879,7 +879,7 @@ namespace xtd {
       static xtd::drawing::color from_name(const std::string& name);
       
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
-      /// @return The lightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
       /// @par Examples
       /// The following code example is designed for use with Windows Forms, and it requires PaintEventArgse, which is a parameter of the Paint event handler. The code performs the following actions:
       /// * Creates an instance of a xtd::drawing::color structure, redShade, to be used for comparisons.
@@ -979,6 +979,10 @@ namespace xtd {
       /// }
       /// @endcode
       float get_hue() const;
+      
+      /// @brief Gets the hue-saturation-lightness (HSL) lightness value for this xtd::drawing::color structure.
+      /// @return The lightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      float get_lightness() const;
       
       /// @brief Gets the hue-saturation-brightness (HSB) saturation value for this xtd::drawing::color structure.
       /// @return The saturation of this xtd::drawing::color. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
