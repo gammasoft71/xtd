@@ -48,7 +48,7 @@ size_t tab_control::selected_index(intptr_t control) {
 
 void tab_control::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
-  static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
+  if (index != -1) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }
 
 void tab_control::update_item(intptr_t control, size_t index, intptr_t page) {

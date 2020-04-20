@@ -14,6 +14,7 @@ namespace xtd {
         static void do_events();
         static void do_idle();
         static bool dark_mode_enabled();
+        static void enable_image_button();
         static void enable_dark_mode();
         static void enable_light_mode();
         static void enable_visual_style();

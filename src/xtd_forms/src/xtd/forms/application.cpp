@@ -157,6 +157,11 @@ void application::enable_dark_mode() {
   native::application::enable_dark_mode();
 }
 
+void application::enable_image_button() {
+  if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_dark_mode() before application::run()");
+  native::application::enable_image_button();
+}
+
 void application::enable_light_mode() {
   if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_light_mode() before application::run()");
   native::application::enable_light_mode();
