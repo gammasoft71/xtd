@@ -50,6 +50,7 @@ void application::cleanup() {
 bool application::dark_mode_enabled() {
   return drawing::system_colors::window().get_lightness() < 0.5;
   /*
+  //the following code check if dark_mode enabled if possible.
 #if defined(__WXMSW__)
   DWORD value = 0, value_size = sizeof(value);
   if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
