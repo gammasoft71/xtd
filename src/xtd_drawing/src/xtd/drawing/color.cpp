@@ -1,4 +1,5 @@
 #include "../../../include/xtd/drawing/color.h"
+#include <xtd/delegate.h>
 #include <xtd/drawing/native/system_colors.h>
 #include <cmath>
 #include <map>
@@ -183,8 +184,7 @@ color color::from_handle(intptr_t handle) {
 
 color color::from_hsb(float hue, float saturation, float brightness) {
   // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsv-to-rgb)
-  if (saturation == 0)
-    return color::from_argb(255, (uint8_t)(brightness * 255.0f), (uint8_t)(brightness * 255.0f), (uint8_t)(brightness * 255.0f));
+  if (saturation == 0) return color::from_argb(255, (uint8_t)(brightness * 255.0f), (uint8_t)(brightness * 255.0f), (uint8_t)(brightness * 255.0f));
   
   hue = hue == 360 ? 0 : hue / 60;
   
@@ -201,6 +201,28 @@ color color::from_hsb(float hue, float saturation, float brightness) {
     case 4: return color::from_argb(255, (uint8_t)(t * 255.0f), (uint8_t)(p * 255.0f), (uint8_t)(brightness * 255.0f));
     default: return color::from_argb(255, (uint8_t)(brightness * 255.0f), (uint8_t)(p * 255.0f), (uint8_t)(q * 255.0f));
   }
+}
+
+color color::from_hsl(float hue, float saturation, float lightness) {
+  // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsl-to-rgb)
+  if (saturation == 0) return color::from_argb(255, (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f));
+
+  auto hue_to_rgb = [](float v1, float v2, float vh)->float {
+    if (vh < 0) vh += 1;
+    if (vh > 1) vh -= 1;
+    if ((6 * vh) < 1) return (v1 + (v2 - v1) * 6 * vh);
+    if ((2 * vh) < 1) return v2;
+    if ((3 * vh) < 2) return (v1 + (v2 - v1) * ((2.0f / 3) - vh) * 6);
+    return v1;
+  };
+  
+  if (saturation == 0) return color::from_argb(255, (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f));
+
+  hue = (float)hue / 360.0f;
+  float v2 = (lightness < 0.5f) ? (lightness * (1 + saturation)) : ((lightness + saturation) - (lightness * saturation));
+  float v1 = 2 * lightness - v2;
+  
+  return color::from_argb(255, (uint8_t)(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), (uint8_t)(hue_to_rgb(v1, v2, hue) * 255.0f), (uint8_t)(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f));
 }
 
 color color::from_name(const string& name) {
