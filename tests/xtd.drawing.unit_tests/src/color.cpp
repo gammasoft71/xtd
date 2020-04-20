@@ -184,6 +184,35 @@ namespace unit_tests {
       assert::are_equal((known_color)0, c.to_known_color());
     }
     
+    void test_method_(create_from_hsl_138_050_076) {
+      color c = color::from_hsl(138, 0.50f, 0.76f);
+      
+      assert::are_equal(color::from_hsl(138, 0.50f, 0.76f), c, line_info_);
+      assert::are_not_equal(color(), c, line_info_);
+      assert::are_not_equal(color::empty, c, line_info_);
+      
+      assert::are_equal(0xFF, c.a(), line_info_);
+      assert::are_equal(0xA3, c.r(), line_info_);
+      assert::are_equal(0xE0, c.g(), line_info_);
+      assert::are_equal(0xB5, c.b(), line_info_);
+      assert::are_equal(0, c.handle(), line_info_);
+      assert::are_equal("FFA3E0B5", c.name(), line_info_);
+      
+      assert::are_equal(138.0f, c.get_hue(), 0.5f, line_info_);
+      assert::are_equal(0.50f, c.get_saturation(), 0.005f, line_info_);
+      assert::are_equal(0.76f, c.get_lightness(), 0.005f, line_info_);
+      
+      assert::are_equal("color [a=255, r=163, g=224, b=181]", c.to_string(), line_info_);
+      
+      assert::is_false(c.is_empty(), line_info_);
+      assert::is_false(c.is_known_color(), line_info_);
+      assert::is_false(c.is_system_color(), line_info_);
+      assert::is_false(c.is_named_color(), line_info_);
+      
+      assert::are_equal(0xFFA3E0B5, c.to_argb(), line_info_);
+      assert::are_equal((known_color)0, c.to_known_color(), line_info_);
+    }
+    
     void test_method_(create_from_know_color_invalid) {
       assert::throws<std::invalid_argument>([] {color::from_known_color((known_color)7654);});
     }

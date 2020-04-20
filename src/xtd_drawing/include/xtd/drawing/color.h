@@ -799,8 +799,14 @@ namespace xtd {
       /// @brief Creates a xtd::drawing::color class from the three HSV component (hue, saturation, and brightness) values.
       /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
       /// @param saturation The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
-      /// @param brightness The xtd::drawing::color lightness. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      /// @param brightness The xtd::drawing::color lightness. The brightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
       static xtd::drawing::color from_hsb(float hue, float saturation, float brightness);
+      
+      /// @brief Creates a xtd::drawing::color class from the three HSL component (hue, saturation, and lightness) values.
+      /// @param hue The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
+      /// @param saturation The xtd::drawing::color saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated.
+      /// @param lightness The xtd::drawing::color lightness. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
+      static xtd::drawing::color from_hsl(float hue, float saturation, float lightness);
       
       /// @brief Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.
       /// @param alpha The alpha value for the new xtd::drawing::color. Valid values are 0 through 255.
