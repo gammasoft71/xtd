@@ -48,7 +48,7 @@ void application::cleanup() {
 }
 
 bool application::dark_mode_enabled() {
-  return (1 - (0.299 * drawing::system_colors::window().r() + 0.587 * drawing::system_colors::window().g() + 0.114 * drawing::system_colors::window().b()) / 255) >= 0.5;
+  return drawing::system_colors::window().get_lightness() < 0.5;
   /*
 #if defined(__WXMSW__)
   DWORD value = 0, value_size = sizeof(value);
@@ -56,13 +56,12 @@ bool application::dark_mode_enabled() {
     value;
   return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
 #elif defined(__WXGTK__)
-  return (1 - (0.299 * drawing::system_colors::window().r() + 0.587 * drawing::system_colors::window().g() + 0.114 * drawing::system_colors::window().b()) / 255) >= 0.5;
+  return drawing::system_colors::window().get_lightness() < 0.5;
 #elif defined(__WXOSX__)
   return __xtd_osx_dark_mode_enabled__();
 #endif
    */
 }
-
 
 void application::do_events() {
   initialize(); // Must be first
