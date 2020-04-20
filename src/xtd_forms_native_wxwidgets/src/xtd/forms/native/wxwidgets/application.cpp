@@ -14,7 +14,8 @@
 #if defined(__WXMSW__)
 extern int __xtd_win32_enable_dark_mode__;
 #elif defined(__WXGTK__)
-bool __xtd_gtk_is_dark_mode__ = false;
+bool __xtd_gtk_enable_dark_mode__ = false;
+bool __xtd_gtk_enable_image_button__ = false;
 #undef interface_
 #include <gtk/gtk.h>
 #elif defined(__WXOSX__)
@@ -51,17 +52,17 @@ bool application::dark_mode_enabled() {
   initialize(); // Must be first
   return drawing::system_colors::window().get_lightness() < 0.5;
   /*
-  //the following code check if dark_mode enabled if possible.
-#if defined(__WXMSW__)
-  DWORD value = 0, value_size = sizeof(value);
-  if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
-    value;
-  return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
-#elif defined(__WXGTK__)
-  return drawing::system_colors::window().get_lightness() < 0.5;
-#elif defined(__WXOSX__)
-  return __xtd_osx_dark_mode_enabled__();
-#endif
+   //the following code check if dark_mode enabled if possible.
+   #if defined(__WXMSW__)
+   DWORD value = 0, value_size = sizeof(value);
+   if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
+   value;
+   return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);
+   #elif defined(__WXGTK__)
+   return drawing::system_colors::window().get_lightness() < 0.5;
+   #elif defined(__WXOSX__)
+   return __xtd_osx_dark_mode_enabled__();
+   #endif
    */
 }
 
@@ -79,11 +80,18 @@ void application::enable_dark_mode() {
   __xtd_win32_enable_dark_mode__ = 1;
   initialize();
 #elif defined(__WXGTK__)
-  __xtd_gtk_is_dark_mode__ = true;
+  __xtd_gtk_enable_dark_mode__ = true;
   initialize();
 #elif defined(__WXOSX__)
   initialize();
   __xtd_osx_enable_dark_mode__();
+#endif
+}
+
+void application::enable_image_button() {
+#if defined(__WXGTK__)
+  __xtd_gtk_enable_image_button__ = true;
+  initialize();
 #endif
 }
 
@@ -92,10 +100,10 @@ void application::enable_light_mode() {
   __xtd_win32_enable_dark_mode__ = 0;
   initialize(); // Must be last
 #elif defined(__WXGTK__)
-  __xtd_gtk_is_dark_mode__ = false;
+  __xtd_gtk_enable_dark_mode__ = false;
   initialize(); // Must be last
 #elif defined(__WXOSX__)
-  initialize(); // Must be first 
+  initialize(); // Must be first
   __xtd_osx_enable_light_mode__();
 #endif
 }
@@ -122,8 +130,8 @@ void application::initialize() {
 #if defined(__WXMSW__)
   init_dark_mode(__xtd_win32_enable_dark_mode__);
 #elif defined(__WXGTK__)
-  g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", __xtd_gtk_is_dark_mode__, nullptr);
-  //g_object_set(gtk_settings_get_default(), "gtk-button-images", true, nullptr);
+  g_object_set(gtk_settings_get_default(), "gtk-application-prefer-dark-theme", __xtd_gtk_enable_dark_mode__, nullptr);
+  g_object_set(gtk_settings_get_default(), "gtk-button-images", __xtd_gtk_enable_image_button__, nullptr);
 #elif defined(__WXOSX__)
   wxMenuBar* menubar = new wxMenuBar();
   menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
