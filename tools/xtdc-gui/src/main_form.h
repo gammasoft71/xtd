@@ -66,8 +66,7 @@ namespace xtdc_gui {
     xtd::forms::list_box open_xtd_example_console_list_box_;
     xtd::forms::list_box open_xtd_example_forms_list_box_;
     xtd::forms::list_box open_xtd_example_tunit_list_box_;
-    xtd::forms::panel open_xtd_examples_information_panel_;
-    xtd::forms::label open_xtd_examples_information_label_;
+    xtd::forms::text_box open_xtd_examples_information_text_box_;
     xtd::forms::picture_box open_xtd_examples_information_picture_box_;
 
     xtd::forms::panel create_panel_;
@@ -97,32 +96,32 @@ namespace xtdc_gui {
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;
     std::vector<xtd_example_item> xtd_console_examples_ {
-      {"Console color", "Show how to set background and foreground color.\n", {"xtd_console/console_color"}},
-      {"Hello world (console)", "The classic first \"Hello, World!\"\nconsole application.\n", {"xtd_console/hello_world_console"}},
+      {"Console color", "Show how to set background and foreground color.", {"xtd_console/console_color"}},
+      {"Hello world (console)", "The classic first \"Hello, World!\" console application.", {"xtd_console/hello_world_console"}},
     };
     std::vector<xtd_example_item> xtd_forms_examples_ {
-      {"Application - Application", "shows how to create an application with\nxtd::forms::application class.\n", {"xtd_forms/application/application"}},
-      {"Application - Application_context", "shows how to create an application with\nxtd::forms::application class with\nxtd::forms::application_context class.\n", {"xtd_forms/application/application_context"}},
-      {"Common controls - button", "represents a Windows xtd::forms::button control.\n", {"xtd_forms/common_controls/button"}},
-      {"Common controls - check_box", "represents a Windows xtd::forms::check_box control.\n", {"xtd_forms/common_controls/check_box"}},
-      {"Common controls - checked_list_box", "represents a Windows control to display a list of check box.\n", {"xtd_forms/common_controls/checked_list_box"}},
-      {"Common controls - choice", "represents a Windows xtd::forms::choice control.\n", {"xtd_forms/common_controls/choice"}},
-      {"Common controls - combo_box", "represents a Windows xtd::forms::combo_box control.\n", {"xtd_forms/common_controls/combo_box"}},
-      {"Common controls - control", "defines the base class for controls, which are components\nwith visual representation.\n", {"xtd_forms/common_controls/control"}},
-      {"Common controls - domain_up_down", "represents a Windows spin box (also known as an up-down\ncontrol) that displays string values.\n", {"xtd_forms/common_controls/domain_up_down"}},
-      {"Common controls - label", " represents a standard Windows xtd::forms::label.\n", {"xtd_forms/common_controls/label"}},
-      {"Common controls - list_box", "represents a Windows control to display a list of items.\n", {"xtd_forms/common_controls/list_box"}},
-      {"Common controls - nunmeric_up_down", "represents a Windows spin box (also known as an up-down\ncontrol) that displays numeric values.\n", {"xtd_forms/common_controls/numeric_up_down"}},
-      {"Common controls - picture_box", "represents a Windows picture box control for displaying\nan image.\n", {"xtd_forms/common_controls/picture_box"}},
-      {"Common controls - progress_bar", "represents a Windows xtd::forms::progress_bar control.\n", {"xtd_forms/common_controls/progress_bar"}},
-      {"Common controls - radio_button", "enables the user to select a single option from a group\nof choices when paired with other\nxtd::forms::radio_button controls.\n", {"xtd_forms/common_controls/radio_button"}},
-      {"Hello world - Hello world (emoticons)", "The classic first \"Hello, World!\"\nwith xtd::forms::emoticons component.\n", {"xtd_forms/hello_world_examples/hello_world_emoticons"}},
-      {"Hello world - Hello world (label)", "The classic first \"Hello, World!\"\nwith xtd::forms::label control.\n", {"xtd_forms/hello_world_examples/hello_world_form"}},
-      {"Hello world - Hello world (message_box)", "The classic first \"Hello, World!\"\nwith xtd::forms::message_box dialog.\n", {"xtd_forms/hello_world_examples/hello_world_message_box"}},
-      {"Hello world - Hello world (paint)", "The classic first \"Hello, World!\"\nwith GDI+ drawing objects.\n", {"xtd_forms/hello_world_examples/hello_world_paint"}},
+      {"Application - Application", "shows how to create an application with xtd::forms::application class.", {"xtd_forms/application/application"}},
+      {"Application - Application_context", "shows how to create an application with xtd::forms::application class with xtd::forms::application_context class.", {"xtd_forms/application/application_context"}},
+      {"Common controls - button", "represents a Windows xtd::forms::button control.", {"xtd_forms/common_controls/button"}},
+      {"Common controls - check_box", "represents a Windows xtd::forms::check_box control.", {"xtd_forms/common_controls/check_box"}},
+      {"Common controls - checked_list_box", "represents a Windows control to display a list of check box.", {"xtd_forms/common_controls/checked_list_box"}},
+      {"Common controls - choice", "represents a Windows xtd::forms::choice control.", {"xtd_forms/common_controls/choice"}},
+      {"Common controls - combo_box", "represents a Windows xtd::forms::combo_box control.", {"xtd_forms/common_controls/combo_box"}},
+      {"Common controls - control", "defines the base class for controls, which are components with visual representation.", {"xtd_forms/common_controls/control"}},
+      {"Common controls - domain_up_down", "represents a Windows spin box (also known as an up-down control) that displays string values.", {"xtd_forms/common_controls/domain_up_down"}},
+      {"Common controls - label", " represents a standard Windows xtd::forms::label.", {"xtd_forms/common_controls/label"}},
+      {"Common controls - list_box", "represents a Windows control to display a list of items.", {"xtd_forms/common_controls/list_box"}},
+      {"Common controls - nunmeric_up_down", "represents a Windows spin box (also known as an up-down control) that displays numeric values.", {"xtd_forms/common_controls/numeric_up_down"}},
+      {"Common controls - picture_box", "represents a Windows picture box control for displaying an image.", {"xtd_forms/common_controls/picture_box"}},
+      {"Common controls - progress_bar", "represents a Windows xtd::forms::progress_bar control.", {"xtd_forms/common_controls/progress_bar"}},
+      {"Common controls - radio_button", "enables the user to select a single option from a group of choices when paired with other xtd::forms::radio_button controls.", {"xtd_forms/common_controls/radio_button"}},
+      {"Hello world - Hello world (emoticons)", "The classic first \"Hello, World!\" with xtd::forms::emoticons component.", {"xtd_forms/hello_world_examples/hello_world_emoticons"}},
+      {"Hello world - Hello world (label)", "The classic first \"Hello, World!\" with xtd::forms::label control.", {"xtd_forms/hello_world_examples/hello_world_form"}},
+      {"Hello world - Hello world (message_box)", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd_forms/hello_world_examples/hello_world_message_box"}},
+      {"Hello world - Hello world (paint)", "The classic first \"Hello, World!\" with GDI+ drawing objects.", {"xtd_forms/hello_world_examples/hello_world_paint"}},
     };
     std::vector<xtd_example_item> xtd_tunit_examples_ {
-      {"Hello world", "The classic first \"Hello, World!\"\nunit tests application.\n", "xtd_tunit/hello_world_tunit"},
+      {"Hello world", "The classic first \"Hello, World!\" unit tests application.", "xtd_tunit/hello_world_tunit"},
     };
   };
 }
