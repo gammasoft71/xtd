@@ -426,6 +426,10 @@ float color::get_hue() const {
   return hue;
 }
 
+float color::get_lightness() const {
+  return ((float)max(max(this->r(), this->g()), this->b()) + (float)min(min(this->r(), this->g()), this->b())) / 2.0f / 255.0f;
+}
+
 float color::get_saturation() const {
   float max = (float)std::max(std::max(this->r(), this->g()), this->b()) / 255.0f;
   float min = (float)std::min(std::min(this->r(), this->g()), this->b()) / 255.0f;
