@@ -16,7 +16,7 @@ namespace examples {
 
   class operation : public user_control {
   public:
-    operation() {this->size_ = default_size();}
+    operation() {size_ = default_size();}
     
     operation_status status() const {return status_;}
     void status(operation_status status) {
@@ -29,18 +29,16 @@ namespace examples {
   protected:
     void on_paint(paint_event_args& e) override {
       user_control::on_paint(e);
-      e.graphics().fill_rectangle(solid_brush(system_colors::control()), 1, 1, 28, 28);
-      switch (this->status()) {
-        case operation_status::none: break;
-        case operation_status::running: e.graphics().draw_string(u8"☞", drawing::font(default_font(), 18, font_style::italic), solid_brush(color::medium_purple), 0, 0); break;
-        case operation_status::succeed: e.graphics().draw_string(u8"√", drawing::font(default_font(), 18, font_style::italic), solid_brush(color::green), 2, 0); break;
-        case operation_status::failed: e.graphics().draw_string(u8"X", drawing::font(default_font(), 18, font_style::italic), solid_brush(color::red), 5, 0); break;
-      }
-      e.graphics().draw_line(pen(color::dark_gray), point(1, 1), point(28, 1));
-      e.graphics().draw_line(pen(color::dark_gray), point(1, 1), point(1, 28));
-      e.graphics().draw_line(pen(color::white), point(1, 28), point(28, 28));
-      e.graphics().draw_line(pen(color::white), point(28, 1), point(28, 28));
-      e.graphics().draw_string(this->text(), default_font(), solid_brush(system_colors::control_text()), 35, 5);
+      auto status_rectangle = rectangle {1, 1, 28, 28};
+      e.graphics().fill_rectangle(solid_brush(color::darker(back_color())), status_rectangle);
+      auto status_string = std::map<operation_status, std::string> {{operation_status::none, u8""}, {operation_status::running, u8"☞"}, {operation_status::succeed, u8"√"}, {operation_status::failed, u8"X"}}[status()];
+      auto status_brush = solid_brush(std::map<operation_status, color> {{operation_status::none, fore_color()}, {operation_status::running, color::yellow}, {operation_status::succeed, color::green}, {operation_status::failed, color::red}}[status()]);
+      e.graphics().draw_string(status_string, drawing::font(default_font(), 18, font_style::italic), status_brush, status_rectangle, string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
+      e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), status_rectangle.location(), point(status_rectangle.width(), 1));
+      e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), status_rectangle.location(), point(1, status_rectangle.height()));
+      e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), point(1, status_rectangle.height()), point(status_rectangle.width(), status_rectangle.height()));
+      e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), point(status_rectangle.width(), 1), point(status_rectangle.width(), status_rectangle.height()));
+      e.graphics().draw_string(text(), default_font(), solid_brush(system_colors::control_text()), 35, e.graphics().measure_string(text(), default_font()).height() / 2);
     }
 
     drawing::size default_size() const override {return {150, 30};}

@@ -104,6 +104,10 @@ namespace xtd {
           return panel_;
         }
         
+        wxWindow* graphic_control() const override {
+          return panel_;
+        }
+        
         void SetBackgroundColour(const wxColour &colour) override {
           control_handler::SetBackgroundColour(colour);
           panel_->SetBackgroundColour(colour);
