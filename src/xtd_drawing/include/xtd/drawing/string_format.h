@@ -17,6 +17,16 @@ namespace xtd {
       
       string_format(const string_format&) = default;
       
+      /// @brief Gets a generic default StringFormat object.
+      /// @return The generic default StringFormat object.
+      /// @remarks The following table shows initial property values for a generic default instance of the StringFormat class.
+      /// | property       | initial value |
+      /// |----------------|---------------|
+      /// | format_flag    | 0             |
+      /// | alignment      | near          |
+      /// | line_alignment | near          |
+      static string_format generic_default() {return string_format();}
+      
       /// @brief Gets horizontal alignment of the string.
       /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
