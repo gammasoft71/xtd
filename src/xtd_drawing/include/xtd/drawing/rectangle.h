@@ -4,15 +4,12 @@
 #include <string>
 #include "point.h"
 #include "size.h"
+#include "rectangle_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @cond
-    class rectangle_f;
-    /// @endcond
-
     class rectangle {
     public:
       static const rectangle empty;
@@ -24,6 +21,7 @@ namespace xtd {
       /// @cond
       rectangle(const rectangle&) = default;
       rectangle& operator=(const rectangle&) = default;
+      operator rectangle_f() const {return rectangle_f(static_cast<float>(this->x_), static_cast<float>(this->y_), static_cast<float>(this->width_), static_cast<float>(this->height_));}
       /// @endcond
       
       bool operator==(const rectangle& value) const {return this->x_ == value.x_ && this->y_ == value.y_ && this->width_ == value.width_ && this->height_ == value.height_;}
