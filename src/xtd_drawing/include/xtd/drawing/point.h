@@ -118,7 +118,7 @@ namespace xtd {
       /// @cond
       point(const point&) = default;
       point& operator=(const point&) = default;
-      operator point_f() {return point_f(static_cast<float>(this->x_), static_cast<float>(this->y_));}
+      operator point_f() const {return point_f(static_cast<float>(this->x_), static_cast<float>(this->y_));}
       /// @endcond
       
       /// @brief Gets a value indicating whether this point is empty.
