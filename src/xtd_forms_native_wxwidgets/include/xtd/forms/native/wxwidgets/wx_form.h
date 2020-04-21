@@ -105,7 +105,11 @@ namespace xtd {
         }
         
         wxWindow* graphic_control() const override {
+#if defined(__WXOSX__)
+          return control();
+#else
           return panel_;
+#endif
         }
         
         void SetBackgroundColour(const wxColour &colour) override {
