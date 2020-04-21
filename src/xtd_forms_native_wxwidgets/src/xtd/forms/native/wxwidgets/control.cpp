@@ -205,7 +205,7 @@ intptr_t control::create_double_buffered_paint_graphics(intptr_t control) {
 intptr_t control::create_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
-  else  hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->control());
+  else  hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
