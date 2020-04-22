@@ -1,5 +1,8 @@
 #!/bin/bash
 
+brew update
+brew install doxygen
+
 mkdir -p build/examples
 pushd build
 
