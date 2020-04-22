@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.examples)
+find_package(xtd.console REQUIRED)
 
 option(ADD_XTD_CMAKE_HELPERS "Add xtd CMake Helpers example" ON)
 option(ADD_XTD_CONSOLE "Add xtd.console example" ON)
@@ -15,58 +16,58 @@ option(ADD_XTD_FORMS "Add xtd.forms example" ON)
 option(ADD_XTD_TUNIT "Add xtd.tunit example" ON)
 
 if (ADD_XTD_CMAKE_HELPERS)
-  add_subdirectory(cmake_helpers)
+  add_projects(cmake_helpers)
 endif()
 
 if (ADD_XTD_CONSOLE)
-  add_subdirectory(hello_world_xtd_console)
+  add_projects(hello_world_xtd_console)
 endif()
   
 if (ADD_XTD_FORMS)
-  add_subdirectory(hello_world_xtd_forms)
+  add_projects(hello_world_xtd_forms)
 endif()
   
 if (ADD_XTD_TUNIT)
-  add_subdirectory(hello_world_xtd_tunit)
+  add_projects(hello_world_xtd_tunit)
 endif()
   
 if (ADD_XTD_CONSOLE)
-#  add_subdirectory(../src/xtd_console/examples ${CMAKE_BINARY_DIR}/xtd_console/build)
+#  add_projects(../src/xtd_console/examples ${CMAKE_BINARY_DIR}/xtd_console/build)
 endif()
   
 if (ADD_XTD_CORE)
-#  add_subdirectory(../src/xtd_core/examples ${CMAKE_BINARY_DIR}/xtd_core/build)
+#  add_projects(../src/xtd_core/examples ${CMAKE_BINARY_DIR}/xtd_core/build)
 endif()
   
 if (ADD_XTD_DELEGATES)
-#  add_subdirectory(../src/xtd_delegates/examples ${CMAKE_BINARY_DIR}/xtd_delegates/build)
+#  add_projects(../src/xtd_delegates/examples ${CMAKE_BINARY_DIR}/xtd_delegates/build)
 endif()
   
 if (ADD_XTD_DIAGNOSTICS)
-#  add_subdirectory(../src/xtd_diagnostics/examples ${CMAKE_BINARY_DIR}/xtd_diagnostics/build)
+#  add_projects(../src/xtd_diagnostics/examples ${CMAKE_BINARY_DIR}/xtd_diagnostics/build)
 endif()
   
 if (ADD_XTD_DRAWING)
-#  add_subdirectory(../src/xtd_drawing/examples .${CMAKE_BINARY_DIR}/xtd_drawing/build)
+#  add_projects(../src/xtd_drawing/examples .${CMAKE_BINARY_DIR}/xtd_drawing/build)
 endif()
   
 if (ADD_XTD_FORMS)
-#  add_subdirectory(../src/xtd_forms/examples ${CMAKE_BINARY_DIR}/xtd_forms/build)
+#  add_projects(../src/xtd_forms/examples ${CMAKE_BINARY_DIR}/xtd_forms/build)
 endif()
   
 if (ADD_XTD_IO)
-#  add_subdirectory(../src/xtd_io/examples ${CMAKE_BINARY_DIR}/xtd_io/build)
+#  add_projects(../src/xtd_io/examples ${CMAKE_BINARY_DIR}/xtd_io/build)
 endif()
   
 if (ADD_XTD_PROPERTIES)
-#  add_subdirectory(../src/xtd_properties/examples ${CMAKE_BINARY_DIR}/xtd_properties/build)
+#  add_projects(../src/xtd_properties/examples ${CMAKE_BINARY_DIR}/xtd_properties/build)
 endif()
   
 if (ADD_XTD_STRINGS)
-#  add_subdirectory(../src/xtd_strings/examples ${CMAKE_BINARY_DIR}/xtd_strings/build)
+#  add_projects(../src/xtd_strings/examples ${CMAKE_BINARY_DIR}/xtd_strings/build)
 endif()
   
 if (ADD_XTD_TUNIT)
-#  add_subdirectory(../src/xtd_tunit/examples ${CMAKE_BINARY_DIR}/xtd_tunit/build)
+#  add_projects(../src/xtd_tunit/examples ${CMAKE_BINARY_DIR}/xtd_tunit/build)
 endif()
  
