@@ -33,6 +33,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/string_alignment.h
   include/xtd/drawing/string_format.h
   include/xtd/drawing/string_format_flags.h
+  include/xtd/drawing/string_trimming.h
   include/xtd/drawing/system_colors.h
   include/xtd/drawing/system_fonts.h
 )
