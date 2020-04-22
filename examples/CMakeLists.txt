@@ -1,20 +1,23 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(core.examples)
+find_package(xtd.core REQUIRED)
 
-add_subdirectory(block_scope)
-add_subdirectory(guid)
-add_subdirectory(hello_world_environment)
-add_subdirectory(interface)
-add_subdirectory(interface2)
-add_subdirectory(main)
-add_subdirectory(main1)
-add_subdirectory(main2)
-add_subdirectory(main3)
-add_subdirectory(main4)
-add_subdirectory(main5)
-add_subdirectory(startup)
-add_subdirectory(static)
-add_subdirectory(static2)
-add_subdirectory(static3)
-add_subdirectory(using)
+add_projects(
+  block_scope
+  guid
+  hello_world_environment
+  interface
+  interface2
+  main
+  main1
+  main2
+  main3
+  main4
+  main5
+  startup
+  static
+  static2
+  static3
+  using
+)
