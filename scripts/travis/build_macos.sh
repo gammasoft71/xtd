@@ -1,7 +1,7 @@
 #!/bin/bash
 
 brew update
-brew install doxygen -y
+brew install doxygen
 
 # init and update submodule
 git submodule update --init
