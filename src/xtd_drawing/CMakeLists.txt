@@ -17,6 +17,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/font_style.h
   include/xtd/drawing/graphics.h
   include/xtd/drawing/graphics_unit.h
+  include/xtd/drawing/hotkey_prefix.h
   include/xtd/drawing/icon.h
   include/xtd/drawing/image.h
   include/xtd/drawing/images.h
