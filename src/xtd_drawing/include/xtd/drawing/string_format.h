@@ -47,6 +47,18 @@ namespace xtd {
         return format;
       }
       
+      /// @brief Gets a generic typographic string_format object.
+      /// @return A generic typographic string_format object.
+      /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
+      /// | property       | initial value                                        |
+      /// |----------------|------------------------------------------------------|
+      /// | format_flag    | 0b110000000000100 (no_clip|fit_black_box|line_limit) |
+      /// | alignment      | near                                                 |
+      /// | line_alignment | near                                                 |
+      /// | hotkey_prefix  | none                                                 |
+      /// | trimming       | none                                                 |
+      static xtd::drawing::string_format generic_typographic() {return xtd::drawing::string_format(xtd::drawing::string_format_flags::no_clip|xtd::drawing::string_format_flags::fit_black_box|xtd::drawing::string_format_flags::line_limit);}
+      
       /// @brief Gets horizontal alignment of the string.
       /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
