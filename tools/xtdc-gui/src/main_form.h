@@ -96,8 +96,15 @@ namespace xtdc_gui {
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;
     std::vector<xtd_example_item> xtd_console_examples_ {
-      {"Console color", "Show how to set background and foreground color.", {"xtd_console/console_color"}},
-      {"Hello world (console)", "The classic first \"Hello, World!\" console application.", {"xtd_console/hello_world_console"}},
+      {"Console - Console background color", "Show how to set console background color.", {"xtd_console/console_background_color"}},
+      {"Console - Console beep", "Show how to use console beep.", {"xtd_console/console_beep"}},
+      {"Console - Console buffer", "Show how to use console buffer.\n\nThis code produces the following output:\n\nThe current buffer height is 300 rows.\nThe current buffer width is 85 columns.", {"xtd_console/console_buffer"}},
+      {"Console - Console color", "Show how to set background and foreground color.", {"xtd_console/console_color"}},
+      {"Console - Console cursor", "Show how to use console cursor position.\n\nThis code produces the following output:\n\n+---+\n|   |\n|   |\n|   |\n+---+\n\nAll done!", {"xtd_console/console_cursor"}},
+      {"Console - Console in out", "Show how to use in and out stream properties.", {"xtd_console/console_in_out"}},
+      {"Console - Console read line", "Show how to use read line.", {"xtd_console/console_read_line"}},
+      {"Hello world - Hello world (console)", "The classic first \"Hello, World!\" console application.\n\nThis code produces the following output with colors :\n\nHello, World!", {"xtd_console/hello_world_console"}},
+      {"other - Console song", "Show how to play song with beep.", {"xtd_console/console_song"}},
     };
     std::vector<xtd_example_item> xtd_forms_examples_ {
       {"Application - Application", "shows how to create an application with xtd::forms::application class.", {"xtd_forms/application/application"}},
