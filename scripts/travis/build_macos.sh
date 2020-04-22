@@ -1,5 +1,8 @@
 #!/bin/bash
 
+brew update
+brew install dixygenb -y
+
 # init and update submodule
 git submodule update --init
 
