@@ -33,6 +33,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
     "include(CMakeFindDependencyMacro)\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
+    "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_commands.cmake\")\n"
     "\n"
     "find_package(wxWidgets REQUIRED)\n"
     "\n"
@@ -41,12 +42,6 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     "\n"
     "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME})\n"
     "set(${PROJECT_NAME}_FOUND TRUE)\n"
-    "\n"
-    "set(CMAKE_CXX_STANDARD 17)\n"
-    "set(CMAKE_CXX_STANDARD_REQUIRED ON)\n"
-    "if (MSVC)\n"
-    "  set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS} /utf-8\")\n"
-    "endif ()\n"
   )
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake DESTINATION cmake)
   install(EXPORT ${PROJECT_NAME} DESTINATION cmake)
