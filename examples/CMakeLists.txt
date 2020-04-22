@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(xtd.console.examples)
-option(ADD_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" OFF)
+find_package(xtd.console REQUIRED)
 
 add_subdirectory(console_background_color)
 add_subdirectory(console_background_color2)
