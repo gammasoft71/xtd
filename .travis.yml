@@ -8,7 +8,7 @@ addons:
     packages:
     - g++-7
     - lcov
-    - doxyden
+    - doxygen
 
 matrix:
   include:
