@@ -28,7 +28,12 @@ namespace xtd {
       /// | alignment      | near          |
       /// | line_alignment | near          |
       /// | hotkey_prefix  | none          |
-      static xtd::drawing::string_format generic_default() {return xtd::drawing::string_format();}
+      /// | trimming       | character     |
+      static xtd::drawing::string_format generic_default() {
+        xtd::drawing::string_format format;
+        format.trimming_ = xtd::drawing::string_trimming::character;
+        return format;
+      }
       
       /// @brief Gets horizontal alignment of the string.
       /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
@@ -76,7 +81,11 @@ namespace xtd {
         return *this;
       }
       
+      /// @brief Gets the string_trimming enumeration for this string_format object.
+      /// @return A string_trimming enumeration that indicates how text drawn with this string_format object is trimmed when it exceeds the edges of the layout rectangle.
       xtd::drawing::string_trimming trimming() const {return trimming_;}
+      /// @brief Sets the string_trimming enumeration for this string_format object.
+      /// @param trimming A string_trimming enumeration that indicates how text drawn with this string_format object is trimmed when it exceeds the edges of the layout rectangle.
       xtd::drawing::string_format& trimming(xtd::drawing::string_trimming trimming) {
         trimming_ = trimming;
         return *this;
