@@ -100,13 +100,6 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     "\n"
     "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME})\n"
     "set(${PROJECT_NAME}_FOUND TRUE)\n"
-    "\n"
-    "set(CMAKE_CXX_STANDARD 17)\n"
-    "set(CMAKE_CXX_STANDARD_REQUIRED ON)\n"
-    "if (MSVC)\n"
-    "  set(CMAKE_CXX_FLAGS \"\${CMAKE_CXX_FLAGS} /utf-8\")\n"
-    "  set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup\")\n"
-    "endif ()\n"
   )
   
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake DESTINATION cmake)
