@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <ostream>
 #include <xtd/xtd.strings>
+#include "hotkey_prefix.h"
 #include "string_alignment.h"
 #include "string_format_flags.h"
 
@@ -15,7 +16,7 @@ namespace xtd {
     public:
       string_format() = default;
       
-      string_format(const string_format&) = default;
+      string_format(const xtd::drawing::string_format&) = default;
       
       /// @brief Gets a generic default StringFormat object.
       /// @return The generic default StringFormat object.
@@ -25,40 +26,59 @@ namespace xtd {
       /// | format_flag    | 0             |
       /// | alignment      | near          |
       /// | line_alignment | near          |
-      static string_format generic_default() {return string_format();}
+      static xtd::drawing::string_format generic_default() {return xtd::drawing::string_format();}
       
       /// @brief Gets horizontal alignment of the string.
       /// @return A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
-      string_alignment alignment() const {return this->alignment_;}
-      
+      xtd::drawing::string_alignment alignment() const {return this->alignment_;}
       /// @brief Sets horizontal alignment of the string.
       /// @param alignment A string_alignment enumeration that specifies the horizontal alignment of the string.
       /// @remarks Use line_alignment to specify the vertical alignment of the string.
-      string_format& alignment(string_alignment alignment) {this->alignment_ = alignment; return *this;}
+      xtd::drawing::string_format& alignment(xtd::drawing::string_alignment alignment) {
+        this->alignment_ = alignment;
+        return *this;
+      }
 
       /// @brief Gets a StringFormatFlags enumeration that contains formatting information.
       /// @return A StringFormatFlags enumeration that contains formatting information.
-      string_format_flags format_flags() const {return format_flags_;}
-      
+      xtd::drawing::string_format_flags format_flags() const {return format_flags_;}
       /// @brief Sets a StringFormatFlags enumeration that contains formatting information.
       /// @param format_flag A StringFormatFlags enumeration that contains formatting information.
-      string_format& format_flags(string_format_flags format_flag) {format_flags_ = format_flag; return *this;}
+      xtd::drawing::string_format& format_flags(xtd::drawing::string_format_flags format_flag) {
+        format_flags_ = format_flag;
+        return *this;
+      }
       
+      /// @brief Gets the HotkeyPrefix object for this StringFormat object.
+      /// @return The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
+      /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
+      xtd::drawing::hotkey_prefix hotkey_prefix() const {return hotkey_prefix_;}
+      /// @brief Sets the HotkeyPrefix object for this StringFormat object.
+      /// @param hotkey_prefix The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
+      /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
+      xtd::drawing::string_format&  hotkey_prefix(xtd::drawing::hotkey_prefix hotkey_prefix) {
+        hotkey_prefix_ = hotkey_prefix;
+        return *this;
+      }
+
       /// @brief Gets vertical alignment of the string.
       /// @return A string_alignment enumeration that specifies the vertical alignment of the string.
       /// @remarks Use alignment to specify the horizontal alignment of the string.
-      string_alignment line_alignment() const {return this->line_alignment_;}
-      
+      xtd::drawing::string_alignment line_alignment() const {return this->line_alignment_;}
       /// @brief Sets vertical alignment of the string.
       /// @param alignment A string_alignment enumeration that specifies the vertical alignment of the string.
       /// @remarks Use alignment to specify the horizontal alignment of the string.
-      string_format& line_alignment(string_alignment line_alignment) {this->line_alignment_ = line_alignment; return *this;}
+      xtd::drawing::string_format& line_alignment(xtd::drawing::string_alignment line_alignment) {
+        this->line_alignment_ = line_alignment;
+        return *this;
+      }
 
     private:
-      string_format_flags format_flags_ = static_cast<string_format_flags>(0);
-      string_alignment alignment_ = string_alignment::near;
-      string_alignment line_alignment_ = string_alignment::near;
+      xtd::drawing::hotkey_prefix hotkey_prefix_ = xtd::drawing::hotkey_prefix::none;
+      xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);
+      xtd::drawing::string_alignment alignment_ = xtd::drawing::string_alignment::near;
+      xtd::drawing::string_alignment line_alignment_ = xtd::drawing::string_alignment::near;
     };
   }
 }
