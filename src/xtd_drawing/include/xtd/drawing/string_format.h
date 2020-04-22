@@ -15,13 +15,25 @@ namespace xtd {
     /// @remarks Many common formats are provided through the string_format_flags enumeration. string_format objects can be changed.
     class string_format final {
     public:
+      /// @brief Initializes a new string_format object.
+      /// @remarks The following table shows initial property values for an instance of string_format class.
+      /// | property       | initial value |
+      /// |----------------|---------------|
+      /// | format_flag    | 0             |
+      /// | hotkey_prefix  | none          |
       string_format() = default;
       
-      string_format(const xtd::drawing::string_format&) = default;
-      
-      /// @brief Gets a generic default StringFormat object.
-      /// @return The generic default StringFormat object.
-      /// @remarks The following table shows initial property values for a generic default instance of the StringFormat class.
+      /// @brief Initializes a new string_format object from the specified existing string_format object.
+      /// @param format The string_format object from which to initialize the new string_format object.
+      string_format(const xtd::drawing::string_format& format) = default;
+
+      /// @brief Initializes a new string_format object with the specified string_format_flags enumeration.
+      /// @param options The StringFormatFlags enumeration for the new StringFormat object.
+      explicit string_format(xtd::drawing::string_format_flags options) : format_flags_(options) {}
+
+      /// @brief Gets a generic default string_format object.
+      /// @return The generic default string_format object.
+      /// @remarks The following table shows initial property values for a generic default instance of the string_format class.
       /// | property       | initial value |
       /// |----------------|---------------|
       /// | format_flag    | 0             |
@@ -47,21 +59,21 @@ namespace xtd {
         return *this;
       }
 
-      /// @brief Gets a StringFormatFlags enumeration that contains formatting information.
-      /// @return A StringFormatFlags enumeration that contains formatting information.
+      /// @brief Gets a string_formatFlags enumeration that contains formatting information.
+      /// @return A string_formatFlags enumeration that contains formatting information.
       xtd::drawing::string_format_flags format_flags() const {return format_flags_;}
-      /// @brief Sets a StringFormatFlags enumeration that contains formatting information.
-      /// @param format_flag A StringFormatFlags enumeration that contains formatting information.
+      /// @brief Sets a string_formatFlags enumeration that contains formatting information.
+      /// @param format_flag A string_formatFlags enumeration that contains formatting information.
       xtd::drawing::string_format& format_flags(xtd::drawing::string_format_flags format_flag) {
         format_flags_ = format_flag;
         return *this;
       }
       
-      /// @brief Gets the HotkeyPrefix object for this StringFormat object.
+      /// @brief Gets the HotkeyPrefix object for this string_format object.
       /// @return The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
       /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
       xtd::drawing::hotkey_prefix hotkey_prefix() const {return hotkey_prefix_;}
-      /// @brief Sets the HotkeyPrefix object for this StringFormat object.
+      /// @brief Sets the HotkeyPrefix object for this string_format object.
       /// @param hotkey_prefix The hotkey_prefix object for this string_format object, the default is hotkey_prefix::none.
       /// @remarks In a graphical user interface, a hot key is the underlined letter in a word (usually combined with another key, such as the Alt key) that you can press on the keyboard to activate the functionality that the word represents.
       xtd::drawing::string_format&  hotkey_prefix(xtd::drawing::hotkey_prefix hotkey_prefix) {
