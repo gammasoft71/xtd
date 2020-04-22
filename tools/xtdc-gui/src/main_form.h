@@ -96,13 +96,13 @@ namespace xtdc_gui {
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;
     std::vector<xtd_example_item> xtd_console_examples_ {
-      {"Console - Console background color", "Show how to set console background color.", {"xtd_console/console_background_color"}},
-      {"Console - Console beep", "Show how to use console beep.", {"xtd_console/console_beep"}},
-      {"Console - Console buffer", "Show how to use console buffer.\n\nThis code produces the following output:\n\nThe current buffer height is 300 rows.\nThe current buffer width is 85 columns.", {"xtd_console/console_buffer"}},
-      {"Console - Console color", "Show how to set background and foreground color.", {"xtd_console/console_color"}},
-      {"Console - Console cursor", "Show how to use console cursor position.\n\nThis code produces the following output:\n\n+---+\n|   |\n|   |\n|   |\n+---+\n\nAll done!", {"xtd_console/console_cursor"}},
-      {"Console - Console in out", "Show how to use in and out stream properties.", {"xtd_console/console_in_out"}},
-      {"Console - Console read line", "Show how to use read line.", {"xtd_console/console_read_line"}},
+      {"Console - Console background color", "shows how to set console background color.", {"xtd_console/console_background_color"}},
+      {"Console - Console beep", "shows how to use console beep.", {"xtd_console/console_beep"}},
+      {"Console - Console buffer", "shows how to use console buffer.\n\nThis code produces the following output:\n\nThe current buffer height is 300 rows.\nThe current buffer width is 85 columns.", {"xtd_console/console_buffer"}},
+      {"Console - Console color", "shows how to set background and foreground color.", {"xtd_console/console_color"}},
+      {"Console - Console cursor", "shows how to use console cursor position.\n\nThis code produces the following output:\n\n+---+\n|   |\n|   |\n|   |\n+---+\n\nAll done!", {"xtd_console/console_cursor"}},
+      {"Console - Console in out", "shows how to use in and out stream properties.", {"xtd_console/console_in_out"}},
+      {"Console - Console read line", "shows how to use read line.", {"xtd_console/console_read_line"}},
       {"Hello world - Hello world (console)", "The classic first \"Hello, World!\" console application.\n\nThis code produces the following output with colors :\n\nHello, World!", {"xtd_console/hello_world_console"}},
       {"other - Console song", "Show how to play song with beep.", {"xtd_console/console_song"}},
     };
@@ -132,7 +132,9 @@ namespace xtdc_gui {
       {"Hello world - Hello world (paint)", "The classic first \"Hello, World!\" with GDI+ drawing objects.", {"xtd_forms/hello_world_examples/hello_world_paint"}},
     };
     std::vector<xtd_example_item> xtd_tunit_examples_ {
-      {"Hello world", "The classic first \"Hello, World!\" unit tests application.", "xtd_tunit/hello_world_tunit"},
+      {"assert - abort", "Tshows how to use assert abort.", "xtd_tunit/assert_abort"},
+      {"assert - abort", "Tshows how to use assert abort.", "xtd_tunit/assert_abort"},
+      {"Hello world - Hello world (assert)", "The classic first \"Hello, World!\" unit tests application.", "xtd_tunit/hello_world_tunit"},
     };
   };
 }
