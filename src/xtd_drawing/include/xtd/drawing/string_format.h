@@ -5,6 +5,7 @@
 #include "hotkey_prefix.h"
 #include "string_alignment.h"
 #include "string_format_flags.h"
+#include "string_trimming.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -26,6 +27,7 @@ namespace xtd {
       /// | format_flag    | 0             |
       /// | alignment      | near          |
       /// | line_alignment | near          |
+      /// | hotkey_prefix  | none          |
       static xtd::drawing::string_format generic_default() {return xtd::drawing::string_format();}
       
       /// @brief Gets horizontal alignment of the string.
@@ -73,12 +75,19 @@ namespace xtd {
         this->line_alignment_ = line_alignment;
         return *this;
       }
+      
+      xtd::drawing::string_trimming trimming() const {return trimming_;}
+      xtd::drawing::string_format& trimming(xtd::drawing::string_trimming trimming) {
+        trimming_ = trimming;
+        return *this;
+      }
 
     private:
       xtd::drawing::hotkey_prefix hotkey_prefix_ = xtd::drawing::hotkey_prefix::none;
       xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);
       xtd::drawing::string_alignment alignment_ = xtd::drawing::string_alignment::near;
       xtd::drawing::string_alignment line_alignment_ = xtd::drawing::string_alignment::near;
+      xtd::drawing::string_trimming trimming_ = xtd::drawing::string_trimming::none;
     };
   }
 }
