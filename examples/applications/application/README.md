@@ -22,6 +22,8 @@ xtdc run
 
 ![Screenshot](../../../docs/pictures/examples/application_w.png)
 
+![Screenshot](../../../docs/pictures/examples/application_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/application_m.png)
