@@ -28,7 +28,7 @@ namespace {
 int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool displayHelpButton) {
 #pragma warning(push)
 #pragma warning(suppress:4996)
-  handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
+  //handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   return MessageBoxW(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(text.c_str()).c_str(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(caption.c_str()).c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 #pragma warning(pop)
 }
