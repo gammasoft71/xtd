@@ -29,7 +29,7 @@ bool font_dialog::run_dialog(intptr_t hwnd, drawing::font& font, drawing::color&
   font_data.SetRange(min_size, max_size);
   font_data.SetShowHelp((options & CF_SHOWHELP) == CF_SHOWHELP);
 #if defined(__WXMSW__)
-  handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
+  //handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
   wxFontDialog dialog(reinterpret_cast<wxWindow*>(hwnd), font_data);
   if (dialog.ShowModal() != wxID_OK) return false;

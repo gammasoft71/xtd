@@ -29,7 +29,7 @@ bool about_dialog::run_dialog(intptr_t hwnd, const std::string& name, const std:
   about_info.SetVersion(version, long_version);
   about_info.SetCopyright(copyright);
 #if defined(__WXMSW__)
-  handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
+  //handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
   wxAboutBox(about_info, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr);
   return true;

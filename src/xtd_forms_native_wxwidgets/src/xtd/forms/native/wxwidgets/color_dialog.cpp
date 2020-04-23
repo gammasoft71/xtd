@@ -35,7 +35,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optiona
       color_data.SetCustomColour(index, wxColour(custom_colors.value()[index]));
   }
 #if defined(__WXMSW__)
-  handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
+  //handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
   wxColourDialog dialog(reinterpret_cast<wxWindow*>(hwnd), &color_data);
   if (dialog.ShowModal() != wxID_OK) return false;
