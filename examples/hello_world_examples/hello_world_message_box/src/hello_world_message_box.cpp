@@ -11,7 +11,7 @@ int main() {
   };
 
   form form;
-  form.text("Hello world (label)");
+  form.text("Hello world (message_box)");
   form.controls().push_back(button);
 
   application::run(form);
