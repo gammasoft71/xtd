@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/radio_buttons_w.png)
 
+![Screenshot](../../../docs/pictures/examples/radio_buttons_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/radio_buttons_m.png)
