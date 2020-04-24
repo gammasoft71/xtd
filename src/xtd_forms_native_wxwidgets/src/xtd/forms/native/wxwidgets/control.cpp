@@ -2,6 +2,7 @@
 #include <chrono>
 #include <map>
 #include <stdexcept>
+#include <xtd/environment.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/hdc_wrapper.h>
@@ -188,7 +189,8 @@ intptr_t control::create(const forms::create_params& create_params) {
 intptr_t control::create_paint_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
-  else  hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
+  else if (!environment::os_version().is_linux_platform()) hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
+  else hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
