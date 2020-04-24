@@ -127,7 +127,7 @@ namespace xtdc_gui {
       {"Common controls - up_down_button", "represents a Windows spin button.", {"xtd_forms/common_controls/up_down_button"}},
       {"Common controls - user_control", "defines the base class for user controls.", {"xtd_forms/common_controls/user_control"}},
       {"Hello world - Hello world (emoticons)", "The classic first \"Hello, World!\" with xtd::forms::emoticons component.", {"xtd_forms/hello_world_examples/hello_world_emoticons"}},
-      {"Hello world - Hello world (label)", "The classic first \"Hello, World!\" with xtd::forms::label control.", {"xtd_forms/hello_world_examples/hello_world_form"}},
+      {"Hello world - Hello world (label)", "The classic first \"Hello, World!\" with xtd::forms::label control.", {"xtd_forms/hello_world_examples/hello_world_label"}},
       {"Hello world - Hello world (message_box)", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd_forms/hello_world_examples/hello_world_message_box"}},
       {"Hello world - Hello world (paint)", "The classic first \"Hello, World!\" with GDI+ drawing objects.", {"xtd_forms/hello_world_examples/hello_world_paint"}},
     };
