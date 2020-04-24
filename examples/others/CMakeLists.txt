@@ -37,4 +37,5 @@ add_projects(
   text_box_multiline
   text_box_password
   texts
+  wiggly
 )

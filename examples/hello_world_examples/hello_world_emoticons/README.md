@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_emoticons_w.png)
 
+![Screenshot](../../../docs/pictures/examples/hello_world_emoticons_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/hello_world_emoticons_m.png)
