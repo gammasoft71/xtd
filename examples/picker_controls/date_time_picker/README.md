@@ -21,6 +21,7 @@ xtd run
 ## Windows :
 
 ![Screenshot](../../../docs/pictures/examples/date_time_picker_w.png)
+![Screenshot](../../../docs/pictures/examples/date_time_picker_wd.png)
 
 ## macOS :
 
