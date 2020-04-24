@@ -38,6 +38,9 @@ void checked_list_box::insert_item(intptr_t control, size_t index, const std::st
   if (control == 0) return;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert({value.c_str(), wxMBConvUTF8()}, index);
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->Check(index, checked);
+#if defined(__WXMSW__)
+  static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetItem(index)->SetTextColour(static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetForegroundColour());
+#endif
 }
 
 size_t checked_list_box::selected_index(intptr_t control) {
