@@ -9,7 +9,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("My first application");
+      text("Hello world (paint)");
       client_size({300, 300});
 
       paint += [&](control& sender, paint_event_args& e) {

@@ -8,7 +8,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("My first application");
+      text("Hello world (label)");
       client_size({300, 300});
       controls().push_back(label);
 
