@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/lcd_label_w.png)
 
+![Screenshot](../../../docs/pictures/examples/lcd_label_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/lcd_label_m.png)
