@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/font_picker_w.png)
 
+![Screenshot](../../../docs/pictures/examples/font_picker_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/font_picker_m.png)
