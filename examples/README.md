@@ -182,6 +182,7 @@
 * [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * [texts](others/texts/README.md) demonstrates the use of [xtd::forms::texts](../src/xtd_forms/include/xtd/forms/texts.hpp) strings.
+* [wiggly](others/wiggly/README.md) shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.
 * [All](.) You can see all examples here. 
 
 ## [Games](games/README.md)
