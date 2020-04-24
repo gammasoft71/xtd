@@ -14,7 +14,12 @@ namespace xtd {
           this->control_handler::create<wxColourPickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxColour(0, 0, 0), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()));
         }
         
-        virtual void SetPosition(const wxPoint& pt) override {
+        void SetBackgroundColour(const wxColour &colour) override {
+          control_handler::SetBackgroundColour(colour);
+          static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->SetBackgroundColour(colour);
+        }
+
+        void SetPosition(const wxPoint& pt) override {
           control_handler::SetPosition(pt);
         }
 
