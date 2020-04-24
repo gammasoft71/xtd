@@ -74,7 +74,7 @@ int main() {
   };
   
   form form;
-  form.text("Hello world (lessage_box)");
+  form.text("Hello world (message_box)");
   form.controls().push_back(button);
   
   application::run(form);
