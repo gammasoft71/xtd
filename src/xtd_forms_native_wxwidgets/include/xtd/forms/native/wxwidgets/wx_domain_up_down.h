@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/up_down_styles.h>
 #include <wx/event.h>
@@ -17,6 +18,12 @@ public:
     textBox = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, textBoxStyle);
     upDown = new wxSpinButton(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, spinStyle);
 
+#if defined(__WXMSW__)
+    auto window_color = xtd::drawing::system_colors::window();
+    auto window_text_color = xtd::drawing::system_colors::window_text();
+    textBox->SetBackgroundColour({window_color.r(), window_color.g(), window_color.b(), window_color.a()});
+    textBox->SetForegroundColour({window_text_color.r(), window_text_color.g(), window_text_color.b(), window_text_color.a()});
+#endif
     if (size == wxDefaultSize) SetSize(120, textBox->GetSize().GetHeight());
 
     textBox->SetPosition(wxPoint(0, 0));
