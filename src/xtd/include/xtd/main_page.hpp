@@ -60,7 +60,7 @@
 ///   };
 ///
 ///   form form1;
-///   form1.text("Hello World Form");
+///   form1.text("Hello world (message_box)");
 ///   form.controls().push_back(button1);
 ///
 ///   application::run(form1);
