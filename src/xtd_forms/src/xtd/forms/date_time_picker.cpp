@@ -8,6 +8,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 date_time_picker::date_time_picker() {
+  this->back_color_ = this->default_back_color();
+  this->fore_color_ = this->default_fore_color();
   can_focus_ = false;
   size_ = default_size();
 }
