@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/progress_bar_w.png)
 
+![Screenshot](../../../docs/pictures/examples/progress_bar_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/progress_bar_m.png)
