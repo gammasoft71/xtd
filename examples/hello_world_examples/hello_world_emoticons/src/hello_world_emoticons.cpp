@@ -7,7 +7,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("\"Hello, World!\" with emoticons");
+      text("Hello world (emoticons)");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
 
