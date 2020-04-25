@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/application_idle_w.png)
 
+![Screenshot](../../../docs/pictures/examples/application_idle_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/application_idle_m.png)
