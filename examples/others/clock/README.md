@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/clock_w.png)
 
+![Screenshot](../../../docs/pictures/examples/clock_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/clock_m.png)
