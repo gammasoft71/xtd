@@ -1,5 +1,4 @@
 #include <codecvt>
-#include <chrono>
 #include <map>
 #include <stdexcept>
 #include <xtd/environment.h>
@@ -43,90 +42,85 @@
 #include <wx/font.h>
 #include <wx/settings.h>
 
-using namespace std::literals;
-using namespace std::chrono;
-
 namespace {
-std::mutex invoke_time_points_access;
-std::map<intptr_t, system_clock::duration> invoke_time_points;
 #if defined (__WXGTK__)
-static bool is_window_manager_ready = false;
+  static bool is_window_manager_ready = false;
 
-bool wait_window_manager() {
-  if (wxTopLevelWindows.size() == 0) return false;
-  static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
-  while (value == -1) {
-    value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, wxTopLevelWindows[0]);
-    wxYield();
+  bool wait_window_manager() {
+    if (wxTopLevelWindows.size() == 0) return false;
+    static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
+    while (value == -1) {
+      value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, wxTopLevelWindows[0]);
+      wxYield();
+    }
+    is_window_manager_ready = true;
+    return true;
   }
-  is_window_manager_ready = true;
-  return true;
-}
 
-wxSize GetFrameDecorationsize(wxFrame& frame) {
-  wxSize size;
-  
-  if (frame.GetMenuBar() != nullptr)
-    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_MENU_Y, &frame));
-  
-  return size;
-}
-
-wxSize GetDecorationsize(wxTopLevelWindow& topLevelWindow) {
-  wxSize size;
-  
-  if (topLevelWindow.HasFlag(wxRESIZE_BORDER)) {
-    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_BORDER_Y, &topLevelWindow) * 2);
-    size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_BORDER_X, &topLevelWindow) * 2);
+  wxSize GetFrameDecorationsize(wxFrame& frame) {
+    wxSize size;
+    
+    if (frame.GetMenuBar() != nullptr)
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_MENU_Y, &frame));
+    
+    return size;
   }
-  
-  if (topLevelWindow.HasFlag(wxCAPTION))
-    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, &topLevelWindow));
-  
-  if (topLevelWindow.HasFlag(wxALWAYS_SHOW_SB)) {
-    size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_HSCROLL_Y, &topLevelWindow));
-    size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_VSCROLL_X, &topLevelWindow));
+
+  wxSize GetDecorationsize(wxTopLevelWindow& topLevelWindow) {
+    wxSize size;
+    
+    if (topLevelWindow.HasFlag(wxRESIZE_BORDER)) {
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_BORDER_Y, &topLevelWindow) * 2);
+      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_BORDER_X, &topLevelWindow) * 2);
+    }
+    
+    if (topLevelWindow.HasFlag(wxCAPTION))
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, &topLevelWindow));
+    
+    if (topLevelWindow.HasFlag(wxALWAYS_SHOW_SB)) {
+      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_HSCROLL_Y, &topLevelWindow));
+      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_VSCROLL_X, &topLevelWindow));
+    }
+    
+    if (dynamic_cast<wxFrame*>(&topLevelWindow) != nullptr)
+      size += GetFrameDecorationsize(static_cast<wxFrame&>(topLevelWindow));
+    
+    return size;
   }
-  
-  if (dynamic_cast<wxFrame*>(&topLevelWindow) != nullptr)
-    size += GetFrameDecorationsize(static_cast<wxFrame&>(topLevelWindow));
-  
-  return size;
-}
 
-wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
-  return topLevelWindow.GetSize() - GetDecorationsize(topLevelWindow);
-}
+  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
+    return topLevelWindow.GetSize() - GetDecorationsize(topLevelWindow);
+  }
 
-void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
-  topLevelWindow.SetSize(size + GetDecorationsize(topLevelWindow));
-}
+  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
+    topLevelWindow.SetSize(size + GetDecorationsize(topLevelWindow));
+  }
 #else
-static bool is_window_manager_ready = true;
+  static bool is_window_manager_ready = true;
 
-bool wait_window_manager() {
-  return true;
-}
+  bool wait_window_manager() {
+    return true;
+  }
 
-wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
-  return topLevelWindow.GetClientSize();
-}
+  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
+    return topLevelWindow.GetClientSize();
+  }
 
-void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
-  topLevelWindow.SetClientSize(size);
-}
+  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
+    topLevelWindow.SetClientSize(size);
+  }
 #endif
 
-intptr_t set_control_extra_options(intptr_t control) {
-  allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
-  return control;
-}
+  intptr_t set_control_extra_options(intptr_t control) {
+    allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
+    return control;
+  }
 
-intptr_t set_form_extra_options(intptr_t control) {
-  allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
-  refresh_title_bar_theme_color(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
-  return control;
-}
+  intptr_t set_form_extra_options(intptr_t control) {
+    allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
+    refresh_title_bar_theme_color(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
+    return control;
+  }
 }
 
 using namespace std;
