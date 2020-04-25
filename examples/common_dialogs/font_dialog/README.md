@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/font_dialog_w.png)
 
+![Screenshot](../../../docs/pictures/examples/font_dialog_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/font_dialog_m.png)
