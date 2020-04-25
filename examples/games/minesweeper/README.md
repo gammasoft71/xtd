@@ -35,6 +35,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/minesweeper_w.png)
 
+![Screenshot](../../../docs/pictures/examples/minesweeper_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/minesweeper_m.png)

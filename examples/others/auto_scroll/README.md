@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/auto_scroll_w.png)
 
+![Screenshot](../../../docs/pictures/examples/auto_scroll_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/auto_scroll_m.png)
