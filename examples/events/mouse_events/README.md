@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/mouse_events_w.png)
 
+![Screenshot](../../../docs/pictures/examples/mouse_events_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/mouse_events_m.png)
