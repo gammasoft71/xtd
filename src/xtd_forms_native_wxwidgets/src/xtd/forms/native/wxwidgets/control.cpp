@@ -190,9 +190,9 @@ intptr_t control::create_paint_graphics(intptr_t control) {
 
 intptr_t control::create_double_buffered_paint_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
-  //wxColour back_color = reinterpret_cast<control_handler*>(control)->control()->GetBackgroundColour();
-  reinterpret_cast<control_handler*>(control)->control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
-  //reinterpret_cast<control_handler*>(control)->control()->SetBackgroundColour(back_color);
+  //wxColour back_color = reinterpret_cast<control_handler*>(control)->graphic_control()->GetBackgroundColour();
+  reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
+  //reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundColour(back_color);
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
   else  hdc_wrapper->create<wxAutoBufferedPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
