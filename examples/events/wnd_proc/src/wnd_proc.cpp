@@ -22,7 +22,7 @@ namespace examples {
         e.graphics().draw_string("Application is active", font(), solid_brush(system_colors::control_text()), 10, 10);
       } else {
         e.graphics().fill_rectangle(solid_brush(system_colors::control()), 10, 10, 280, 50);
-        e.graphics().draw_string("Application is Inactive", font(), solid_brush(system_colors::control_text()), 10, 10);
+        e.graphics().draw_string("Application is inactive", font(), solid_brush(system_colors::control_text()), 10, 10);
       }
     }
     
@@ -32,7 +32,7 @@ namespace examples {
           // The WM_ACTIVATEAPP message occurs when the application becomes the active application or becomes inactive.
         case WM_ACTIVATEAPP:
           // The wparam value identifies what is occurring.
-          app_active = ((static_cast<int>(m.wparam()) != 0));
+          app_active = (static_cast<int>(m.wparam()) != 0);
           // Invalidate to get new text painted.
           invalidate();
           break;
