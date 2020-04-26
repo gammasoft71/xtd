@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/painting_w.png)
 
+![Screenshot](../../../docs/pictures/examples/painting_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/painting_m.png)

@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/labels_and_unicode_text_w.png)
 
+![Screenshot](../../../docs/pictures/examples/labels_and_unicode_text_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/labels_and_unicode_text_m.png)
