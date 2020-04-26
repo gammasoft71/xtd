@@ -310,7 +310,10 @@ std::optional<std::reference_wrapper<control>> control::from_handle(intptr_t han
 }
 
 void control::invalidate(const drawing::rectangle& rect, bool invalidate_children) const {
-  native::control::invalidate(handle_, rect, invalidate_children);
+  native::control::invalidate(handle_, rect, true);
+  if (invalidate_children)
+    for ( auto child : controls_)
+      child.get().invalidate(rect, invalidate_children);
 }
 
 bool control::is_handle_created() const {
