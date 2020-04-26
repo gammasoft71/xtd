@@ -52,7 +52,7 @@ namespace xtd {
         static void visible(intptr_t control, bool visible);
         static drawing::point point_to_client(intptr_t control, const drawing::point& p);
         static drawing::point point_to_screen(intptr_t control, const drawing::point& p);
-        static void invalidate(intptr_t control, const drawing::rectangle& rect, bool invalidate_children);
+        static void invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background);
         static void register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void unregister_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void register_client_size_changed(intptr_t control, delegate<void(const event_args&)> callback);
