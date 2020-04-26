@@ -183,8 +183,8 @@ intptr_t control::create(const forms::create_params& create_params) {
 intptr_t control::create_paint_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
-  else if (!environment::os_version().is_linux_platform()) hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
-  else hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
+  else if (reinterpret_cast<control_handler*>(control)->graphic_control() != reinterpret_cast<control_handler*>(control)->control()) hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
+  else hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
 
@@ -218,7 +218,7 @@ void control::destroy(intptr_t control) {
   if (control == 0 || !wxTheApp) return;
   /// @todo Fix destroy_handle on recreate with old parent and remove the following line
   if (reinterpret_cast<control_handler*>(control)->control() == 0) return;
-  if (reinterpret_cast<control_handler*>(control)->control()->GetParent() &&  dynamic_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())) {
+  if (reinterpret_cast<control_handler*>(control)->control()->GetParent() && dynamic_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())) {
     int index = static_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())->FindPage(reinterpret_cast<control_handler*>(control)->control());
     if (index >= 0) static_cast<wxNotebook*>(reinterpret_cast<control_handler*>(control)->control()->GetParent())->RemovePage(index);
   }
@@ -380,9 +380,9 @@ void control::visible(intptr_t control, bool visible) {
     wait_window_manager();
 }
 
-void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool invalidate_children) {
+void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), invalidate_children);
+  reinterpret_cast<control_handler*>(control)->graphic_control()->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()), erase_background);
 }
 
 void control::refresh(intptr_t control) {
