@@ -43,6 +43,7 @@ namespace xtd {
           else if (event.GetEventType() == wxEVT_KEY_DOWN) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_CHAR) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_KEY_UP) wxPostEvent(GetParent(), event);
+          else if (event.GetEventType() == wxEVT_PAINT) wxPostEvent(GetParent(), event);
           return result;
         }
       };
