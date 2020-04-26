@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/lcd_label_with_fourteen_segment_w.png)
 
+![Screenshot](../../../docs/pictures/examples/lcd_label_with_fourteen_segment_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/lcd_label_with_fourteen_segment_m.png)

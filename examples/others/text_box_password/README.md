@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/text_box_password_w.png)
 
+![Screenshot](../../../docs/pictures/examples/text_box_password_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/text_box_password_m.png)

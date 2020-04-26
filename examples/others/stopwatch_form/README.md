@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/stopwatch_form_w.png)
 
+![Screenshot](../../../docs/pictures/examples/stopwatch_form_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/stopwatch_form_m.png)

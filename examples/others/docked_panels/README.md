@@ -22,6 +22,8 @@ xtd run
 
 ![Screenshot](../../../docs/pictures/examples/docked_panels_w.png)
 
+![Screenshot](../../../docs/pictures/examples/docked_panels_wd.png)
+
 ## macOS :
 
 ![Screenshot](../../../docs/pictures/examples/docked_panels_m.png)
