@@ -388,13 +388,13 @@ void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool 
 void control::refresh(intptr_t control) {
   if (control == 0) return;
   
-  reinterpret_cast<control_handler*>(control)->control()->Refresh();
+  reinterpret_cast<control_handler*>(control)->graphic_control()->Refresh();
 }
 
 void control::update(intptr_t control) {
   if (control == 0) return;
   
-  reinterpret_cast<control_handler*>(control)->control()->Update();
+  reinterpret_cast<control_handler*>(control)->graphic_control()->Update();
 }
 
 void control::register_wnd_proc(intptr_t control, const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
