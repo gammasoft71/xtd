@@ -20,6 +20,10 @@ public:
     log_form_.text("Debug form");
     text("Form and Messages");
     location({100, 100});
+
+    paint += [&](control& sender, paint_event_args& e) {
+      e.graphics().draw_string("Hello, World!", font(), drawing::solid_brush(drawing::system_colors::control_text()), {10, 10});
+    };
   }
 
 protected:
@@ -51,6 +55,7 @@ protected:
       case WM_MOUSELEAVE: log_form_.append("WM_MOUSELEAVE"); break;
       case WM_MOUSEMOVE: log_form_.append(strings::format("WM_MOUSEMOVE [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_MOUSEWHEEL: log_form_.append(strings::format("WM_MOUSEWHEEL [Buttons={}, delta={}, x={}, y={}]", LOWORD(message.wparam()), HIWORD(message.wparam()), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
+      case WM_PAINT: log_form_.append("WM_PAINT"); break;
       case WM_RBUTTONDBLCLK: log_form_.append(strings::format("WM_RBUTTONDBLCLK [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_RBUTTONDOWN: log_form_.append(strings::format("WM_RBUTTONDOWN [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
       case WM_RBUTTONUP: log_form_.append(strings::format("WM_RBUTTONUP [Buttons={}, x={}, y={}]", message.wparam(), LOWORD(message.lparam()), HIWORD(message.lparam()))); break;
