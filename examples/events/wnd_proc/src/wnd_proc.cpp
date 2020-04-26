@@ -15,6 +15,7 @@ namespace examples {
 
   protected:
     void on_paint(paint_event_args& e) override {
+      form::on_paint(e);
       // Paint a string in different styles depending on whether the application is active.
       if (app_active) {
         e.graphics().fill_rectangle(solid_brush(system_colors::menu_highlight()), 10, 10, 280, 50);
