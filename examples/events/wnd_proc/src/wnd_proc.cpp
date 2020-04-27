@@ -18,11 +18,11 @@ namespace examples {
       form::on_paint(e);
       // Paint a string in different styles depending on whether the application is active.
       if (app_active) {
-        e.graphics().fill_rectangle(solid_brush(system_colors::menu_highlight()), 10, 10, 280, 50);
-        e.graphics().draw_string("Application is active", font(), solid_brush(system_colors::control_text()), 10, 10);
+        e.graphics().fill_rectangle(system_brushes::menu_highlight(), 10, 10, 280, 50);
+        e.graphics().draw_string("Application is active", font(), system_brushes::control_text(), 10, 10);
       } else {
-        e.graphics().fill_rectangle(solid_brush(system_colors::control()), 10, 10, 280, 50);
-        e.graphics().draw_string("Application is inactive", font(), solid_brush(system_colors::control_text()), 10, 10);
+        e.graphics().fill_rectangle(system_brushes::control(), 10, 10, 280, 50);
+        e.graphics().draw_string("Application is inactive", font(), system_brushes::control_text(), 10, 10);
       }
     }
     

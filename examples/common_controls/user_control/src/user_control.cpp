@@ -38,7 +38,7 @@ namespace examples {
       e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), status_rectangle.location(), point(1, status_rectangle.height()));
       e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), point(1, status_rectangle.height()), point(status_rectangle.width(), status_rectangle.height()));
       e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), point(status_rectangle.width(), 1), point(status_rectangle.width(), status_rectangle.height()));
-      e.graphics().draw_string(text(), default_font(), solid_brush(system_colors::control_text()), 35, e.graphics().measure_string(text(), default_font()).height() / 2);
+      e.graphics().draw_string(text(), default_font(), system_brushes::control_text(), 35, e.graphics().measure_string(text(), default_font()).height() / 2);
     }
 
     drawing::size default_size() const override {return {150, 30};}
