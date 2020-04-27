@@ -5,6 +5,7 @@ find_package(xtd.forms REQUIRED)
 
 add_projects(
   application_idle
+  enable_changed_event
   form_and_messages
   form_paint
   key_events
