@@ -11,6 +11,7 @@ set(XTD_INCLUDES
 set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//bitmap.h
   include/xtd/drawing//brush.h
+  include/xtd/drawing//brushes.h
   include/xtd/drawing/color.h
   include/xtd/drawing/font.h
   include/xtd/drawing/font_family.h
@@ -23,6 +24,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/images.h
   include/xtd/drawing/known_color.h
   include/xtd/drawing/pen.h
+  include/xtd/drawing/pens.h
   include/xtd/drawing/point.h
   include/xtd/drawing/point_f.h
   include/xtd/drawing/rectangle.h
@@ -64,6 +66,7 @@ set(XTD_DRAWING_TEXT_INCLUDES
 set(XTD_DRAWING_SOURCES
   src/xtd/drawing/bitmap.cpp
   src/xtd/drawing/brush.cpp
+  src/xtd/drawing/brushes.cpp
   src/xtd/drawing/color.cpp
   src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp
@@ -77,6 +80,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/images_128x128.cpp
   src/xtd/drawing/images_256x256.cpp
   src/xtd/drawing/pen.cpp
+  src/xtd/drawing/pens.cpp
   src/xtd/drawing/point_f.cpp
   src/xtd/drawing/point.cpp
   src/xtd/drawing/rectangle_f.cpp
