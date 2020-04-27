@@ -140,7 +140,7 @@
 * [application_idle](events/application_idle/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class and [idle](../src/xtd_forms/include/xtd/forms/application.hpp) event.
 * [key_events](events/key_events/README.md) demonstrates the use of key events.
 * [mouse_events](events/mouse_events/README.md) demonstrates the use of mouse events.
-* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changedl](../src/xtd_forms/include/xtd/forms/control.hpp) event.
+* [enable_changed_event](events/enable_changed_event/README.md) demonstrates the use of [enable_changed](../src/xtd_forms/include/xtd/forms/control.hpp) event.
 * [font_changed_event](events/font_changed_event/README.md) demonstrates the use of [font_changed](../src/xtd_forms/include/xtd/forms/control.hpp) event.
 * [form_click](events/form_click/README.md) demonstrates the use of [xtd::forms::form](../src/xtd_forms/include/xtd/forms/form.hpp) control and [click](../src/xtd_forms/include/xtd/forms/control.hpp) event.
 * [form_and_messages](events/form_and_messages/README.md) demonstrates some events received by [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
