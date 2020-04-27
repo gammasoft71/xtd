@@ -36,8 +36,10 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/string_format.h
   include/xtd/drawing/string_format_flags.h
   include/xtd/drawing/string_trimming.h
+  include/xtd/drawing/system_brushes.h
   include/xtd/drawing/system_colors.h
   include/xtd/drawing/system_fonts.h
+  include/xtd/drawing/system_pens.h
 )
 
 set(XTD_DRAWING_DRAWING2D_INCLUDES
@@ -89,8 +91,10 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/size.cpp
   src/xtd/drawing/solid_brush.cpp
   src/xtd/drawing/string_format.cpp
+  src/xtd/drawing/system_brushes.cpp
   src/xtd/drawing/system_colors.cpp
   src/xtd/drawing/system_fonts.cpp
+  src/xtd/drawing/system_pens.cpp
 )
 
 set(XTD_DRAWING_RESOURCES_SOURCES
