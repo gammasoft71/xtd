@@ -37,5 +37,7 @@
 #include "drawing/solid_brush.h"
 #include "drawing/string_alignment.h"
 #include "drawing/string_format.h"
+#include "drawing/system_brushes.h"
 #include "drawing/system_colors.h"
 #include "drawing/system_fonts.h"
+#include "drawing/system_pens.h"
