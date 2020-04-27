@@ -8,6 +8,9 @@ int main() {
   button button_run;
   button_run.text("Run");
   button_run.location({10, 10});
+  button_run.click += [&] {
+    
+  };
 
   form form_main;
   form_main.text("Manual tests");
