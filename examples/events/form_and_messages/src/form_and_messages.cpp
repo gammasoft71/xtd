@@ -20,10 +20,6 @@ public:
     log_form_.text("Debug form");
     text("Form and Messages");
     location({100, 100});
-
-    paint += [&](control& sender, paint_event_args& e) {
-      e.graphics().draw_string("Hello, World!", font(), drawing::solid_brush(drawing::system_colors::control_text()), {10, 10});
-    };
   }
 
 protected:
