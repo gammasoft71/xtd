@@ -116,9 +116,9 @@ namespace examples {
               e.graphics().fill_rectangle(solid_brush(picture.get_pixel(x/zoom, y/zoom)), x, y, zoom, zoom);
         if (zoom > 3) {
           for (auto index = 0; index < panel_painting.client_size().width(); index += zoom)
-            e.graphics().draw_line(pen(color::light_blue, 1), index, 0, index, panel_painting.client_size().height());
+            e.graphics().draw_line(pens::light_blue(), index, 0, index, panel_painting.client_size().height());
           for (auto index = 0; index < panel_painting.client_size().height(); index += zoom)
-            e.graphics().draw_line(pen(color::light_blue, 1), 0, index, panel_painting.client_size().width(), index);
+            e.graphics().draw_line(pens::light_blue(), 0, index, panel_painting.client_size().width(), index);
         }
       };
     }
