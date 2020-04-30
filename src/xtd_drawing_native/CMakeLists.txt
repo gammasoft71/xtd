@@ -15,6 +15,7 @@ set(XTD_DRAWING_NATIVE_INCLUDES
   include/xtd/drawing/native/font_family.h
   include/xtd/drawing/native/frame_dimension.h
   include/xtd/drawing/native/graphics.h
+  include/xtd/drawing/native/icon.h
   include/xtd/drawing/native/image.h
   include/xtd/drawing/native/image_flags.h
   include/xtd/drawing/native/image_format.h

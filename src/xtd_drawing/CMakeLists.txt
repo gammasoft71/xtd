@@ -73,6 +73,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp
   src/xtd/drawing/graphics.cpp
+  src/xtd/drawing/icon.cpp
   src/xtd/drawing/image.cpp
   src/xtd/drawing/images_16x16.cpp
   src/xtd/drawing/images_24x24.cpp

@@ -121,6 +121,8 @@ namespace xtd {
       /// @return The width, in pixels, of this image.
       int32_t width() const {return this->data_->size_.width();}
       
+      static image from_hbitmap(intptr_t hbitmap) {return image(hbitmap);}
+
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The Image this method creates.
@@ -138,6 +140,7 @@ namespace xtd {
       
     protected:
       image() = default;
+      explicit image(intptr_t hbitmap);
       explicit image(const std::string& fileName);
       explicit image(std::istream& stream);
       explicit image(const char* const* bits);
