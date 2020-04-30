@@ -50,7 +50,8 @@ namespace {
     if (wxTopLevelWindows.size() == 0) return false;
     static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
     while (value == -1) {
-      value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, wxTopLevelWindows[0]);
+      for (auto window : wxTopLevelWindows)
+        if ((value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, window)) != -1) break;
       wxYield();
     }
     is_window_manager_ready = true;
