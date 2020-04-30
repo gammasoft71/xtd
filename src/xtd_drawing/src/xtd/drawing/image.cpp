@@ -22,8 +22,10 @@ namespace {
 }
 
 image::image(intptr_t hbitmap) {
-  this->data_->handle_ = hbitmap;
-  this->update_properties();
+  if (hbitmap) {
+    this->data_->handle_ = hbitmap;
+    this->update_properties();
+  }
 }
 
 image::image(const std::string &filename) {

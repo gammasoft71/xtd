@@ -97,5 +97,8 @@ void icon::save(intptr_t icon, std::ostream& stream) {
 }
 
 intptr_t icon::to_bitmap(intptr_t icon) {
-  return reinterpret_cast<intptr_t>(new wxImage(reinterpret_cast<wxIconBundle*>(icon)->GetIcon().ConvertToImage()));
+  wxIconBundle* icon_bundle = reinterpret_cast<wxIconBundle*>(icon);
+  wxIcon wx_icon = icon_bundle->GetIcon();
+  if (!wx_icon.IsOk()) return 0;
+  return reinterpret_cast<intptr_t>(new wxImage(wx_icon.ConvertToImage()));
 }
