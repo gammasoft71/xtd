@@ -35,9 +35,12 @@ namespace xtd {
       void save(const std::string& filename) const;
       void save(std::ostream& stream) const;
       
+      static icon from_bitmap(const bitmap& bitmap);
+      
       bitmap to_bitmap() const;
 
     private:
+      explicit icon(const bitmap& bitmap);
       struct data {
         intptr_t handle_ = 0;
       };

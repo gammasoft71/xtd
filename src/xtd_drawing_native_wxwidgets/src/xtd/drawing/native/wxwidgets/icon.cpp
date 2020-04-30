@@ -75,6 +75,16 @@ intptr_t icon::create(const char* const* bits) {
   return reinterpret_cast<intptr_t>(new wxIconBundle(wxIcon(bits)));
 }
 
+intptr_t icon::create(intptr_t image) {
+  if (image == 0) return 0;
+  __xtd_init_image_handlers__();
+  wxIconBundle* result = new wxIconBundle();
+  wxIcon icon;
+  icon.CopyFromBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image)));
+  result->AddIcon(icon);
+  return reinterpret_cast<intptr_t>(result);
+}
+
 intptr_t icon::create(intptr_t icon, int32_t width, int32_t height) {
   if (icon == 0) return 0;
   __xtd_init_image_handlers__();
@@ -96,7 +106,7 @@ void icon::save(intptr_t icon, std::ostream& stream) {
   //reinterpret_cast<wxImage*>(image)->SaveFile(output_stream, to_bitmap_type(raw_format));
 }
 
-intptr_t icon::to_bitmap(intptr_t icon) {
+intptr_t icon::to_image(intptr_t icon) {
   wxIconBundle* icon_bundle = reinterpret_cast<wxIconBundle*>(icon);
   wxIcon wx_icon = icon_bundle->GetIcon();
   if (!wx_icon.IsOk()) return 0;

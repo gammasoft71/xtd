@@ -22,11 +22,12 @@ namespace xtd {
         static intptr_t create(const std::string& filename);
         static intptr_t create(std::istream& stream);
         static intptr_t create(const char* const* bits);
+        static intptr_t create(intptr_t image);
         static intptr_t create(intptr_t icon, int32_t width, int32_t height);
         static void destroy(intptr_t icon);
         static void save(intptr_t icon, const std::string& filename);
         static void save(intptr_t icon, std::ostream& stream);
-        static intptr_t to_bitmap(intptr_t icon);
+        static intptr_t to_image(intptr_t icon);
       };
     }
   }
