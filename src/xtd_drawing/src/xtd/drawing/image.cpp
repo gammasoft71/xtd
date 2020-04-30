@@ -21,6 +21,11 @@ namespace {
   }
 }
 
+image::image(intptr_t hbitmap) {
+  this->data_->handle_ = hbitmap;
+  this->update_properties();
+}
+
 image::image(const std::string &filename) {
   this->data_->handle_ = native::image::create(filename);
   this->update_properties();

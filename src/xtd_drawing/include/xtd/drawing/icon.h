@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <memory>
 #include <xtd/xtd.strings>
+#include "bitmap.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -9,22 +10,36 @@ namespace xtd {
   namespace drawing {
     class icon {
     public:
-      explicit icon(const std::string& filename) {}
+      icon() = default;
+      ~icon();
 
-      explicit icon(std::istream& stream) {}
+      explicit icon(const std::string& filename);
 
-      explicit icon(const char* const* bits) {}
+      explicit icon(std::istream& stream);
+
+      explicit icon(const char* const* bits);
       
-      icon(const icon& icon, int32_t width, int32_t height) {}
+      icon(const icon& icon, int32_t width, int32_t height);
 
       /// @cond
       icon(const icon& icon) = default;
       icon& operator=(const icon& icon) = default;
       /// @endcond
       
+      /// @brief Get the handle of this image.
+      /// @return The handle of this image.
+      intptr_t handle() const {return this->data_->handle_;}
+
+      static icon empty;
+
+      void save(const std::string& filename) const;
+      void save(std::ostream& stream) const;
+      
+      bitmap to_bitmap() const;
+
     private:
       struct data {
-        intptr_t icon_;
+        intptr_t handle_ = 0;
       };
       
       std::shared_ptr<data> data_ = std::make_shared<data>();
