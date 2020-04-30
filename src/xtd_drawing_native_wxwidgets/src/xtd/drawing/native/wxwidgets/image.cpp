@@ -12,7 +12,6 @@
 using namespace xtd;
 using namespace xtd::drawing::native;
 
-
 std::atomic<uint32_t> __xtd_count_image_handler__ = 0;
 
 void __xtd_init_image_handlers__() {
