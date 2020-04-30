@@ -120,7 +120,7 @@ void application::exit() {
 
 void application::initialize() {
   if (wxTheApp) return;
-  wxDISABLE_DEBUG_SUPPORT();
+  //wxDISABLE_DEBUG_SUPPORT();
   wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
   wxApp::SetInstance(new wx_application());
   int argc = 0;
