@@ -2,7 +2,10 @@
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
 #include <atomic>
+#include <wx/bitmap.h>
+#include <wx/icon.h>
 #include <wx/iconbndl.h>
+#include <wx/image.h>
 #include <wx/stream.h>
 
 using namespace xtd;
@@ -110,5 +113,7 @@ intptr_t icon::to_image(intptr_t icon) {
   wxIconBundle* icon_bundle = reinterpret_cast<wxIconBundle*>(icon);
   wxIcon wx_icon = icon_bundle->GetIcon();
   if (!wx_icon.IsOk()) return 0;
-  return reinterpret_cast<intptr_t>(new wxImage(wx_icon.ConvertToImage()));
+  wxBitmap wx_bitmap;
+  wx_bitmap.CopyFromIcon(wx_icon);
+  return reinterpret_cast<intptr_t>(new wxImage(wx_bitmap.ConvertToImage()));
 }
