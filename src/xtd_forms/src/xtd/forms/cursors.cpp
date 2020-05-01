@@ -11,8 +11,8 @@ cursor cursors::arrow() {
   return cursor(native::cursors::arrow(), true, "arrow");
 }
 
-cursor cursors::close_hand() {
-  return cursor(native::cursors::close_hand(), true, "close_hand");
+cursor cursors::closed_hand() {
+  return cursor(native::cursors::closed_hand(), true, "closed_hand");
 }
 
 cursor cursors::contextual_menu() {

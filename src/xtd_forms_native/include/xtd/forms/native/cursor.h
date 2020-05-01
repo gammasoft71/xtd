@@ -10,6 +10,7 @@ namespace xtd {
       class cursor static_ {
       public:
         static intptr_t create();
+        static intptr_t create(intptr_t image, const drawing::point& hot_spot);
         static intptr_t copy(intptr_t cursor);
         static void destroy(intptr_t cursor);
         static void hide();

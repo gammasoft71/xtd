@@ -8,8 +8,8 @@ intptr_t cursors::app_starting() {
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROWWAIT));
 }
 
-intptr_t cursors::close_hand() {
-  /// @todo create a bitmap represented close_hand cursor
+intptr_t cursors::closed_hand() {
+  /// @todo create a bitmap represented closed_hand cursor
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_HAND));
 }
 

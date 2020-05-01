@@ -2,6 +2,7 @@
 #include <any>
 #include <cstdint>
 #include <memory>
+#include <xtd/drawing/bitmap.h>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/size.h>
 
@@ -69,6 +70,9 @@ namespace xtd {
       /// @remarks The handle created as a result of calling this method must be deleted of when you are done with it.
       intptr_t copy_handle() const;
       
+      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot) {return cursor(bitmap, hot_spot);}
+      static cursor from_bitmap(const xtd::drawing::bitmap& bitmap) {return from_bitmap(bitmap, {});}
+
       /// @brief Hides the cursor.
       /// @brief The show and hide method calls must be balanced. For every call to the hide method there must be a corresponding call to the show method.
       static void hide();
@@ -87,6 +91,7 @@ namespace xtd {
 
     private:
       friend class cursors;
+      cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);
       cursor(intptr_t handle, bool destroyable, const std::string& name);
 
       struct data {

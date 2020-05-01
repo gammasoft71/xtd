@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <xtd/forms/native/cursor.h>
+#include <wx/bitmap.h>
 #include <wx/cursor.h>
 #include <wx/window.h>
 
@@ -13,9 +14,16 @@ using namespace xtd::forms::native;
 
 intptr_t cursor::create() {
   return reinterpret_cast<intptr_t>(new wxCursor());
-  }
+}
 
-  intptr_t cursor::copy(intptr_t cursor) {
+intptr_t cursor::create(intptr_t image, const xtd::drawing::point& hot_spot) {
+  wxImage wx_image(*reinterpret_cast<wxImage*>(image));
+  wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
+  wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
+  return reinterpret_cast<intptr_t>(new wxCursor(wx_image));
+}
+
+intptr_t cursor::copy(intptr_t cursor) {
     return reinterpret_cast<intptr_t>(new wxCursor(*reinterpret_cast<wxCursor*>(cursor)));
   }
 
@@ -38,8 +46,9 @@ void cursor::hide() {
 point cursor::hot_spot(intptr_t cursor) {
   if (cursor == 0) return {};
   #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
-    wxPoint hot_spot = reinterpret_cast<wxCursor*>(cursor)->GetHotSpot();
-    return {hot_spot.x, hot_spot.y};
+  wxPoint hot_spot = reinterpret_cast<wxCursor*>(cursor)->GetHotSpot();
+  if (hot_spot == wxDefaultPosition) return {};
+  return {hot_spot.x, hot_spot.y};
   #endif
   return {};
 }
