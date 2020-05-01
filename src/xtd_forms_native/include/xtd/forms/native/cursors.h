@@ -9,7 +9,7 @@ namespace xtd {
       public:
         static intptr_t app_starting();
         static intptr_t arrow();
-        static intptr_t close_hand();
+        static intptr_t closed_hand();
         static intptr_t contextual_menu();
         static intptr_t cross();
         static intptr_t default_cursor();

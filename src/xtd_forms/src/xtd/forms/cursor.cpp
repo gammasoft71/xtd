@@ -6,22 +6,28 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 cursor::cursor(intptr_t handle, bool destroyable, const std::string& name) {
-  this->data_->handle_ = handle;
-  this->data_->destroyable_ = destroyable;
-  this->data_->name_ = name;
-  this->data_->hot_spot_ = native::cursor::hot_spot(this->data_->handle_);
-  this->data_->size_ = native::cursor::size(this->data_->handle_);
+  data_->handle_ = handle;
+  data_->destroyable_ = destroyable;
+  data_->name_ = name;
+  data_->hot_spot_ = native::cursor::hot_spot(data_->handle_);
+  data_->size_ = native::cursor::size(data_->handle_);
 }
 
 cursor::cursor() {
-  this->data_->handle_ = native::cursor::create();
-  this->data_->hot_spot_ = native::cursor::hot_spot(this->data_->handle_);
-  this->data_->size_ = native::cursor::size(this->data_->handle_);
+  data_->handle_ = native::cursor::create();
+  data_->hot_spot_ = native::cursor::hot_spot(data_->handle_);
+  data_->size_ = native::cursor::size(data_->handle_);
+}
+
+cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) {
+  data_->handle_ = native::cursor::create(bitmap.handle(), hot_spot);
+  data_->hot_spot_ = hot_spot;
+  data_->size_ = native::cursor::size(data_->handle_);
 }
 
 cursor::~cursor() {
-  if (this->data_.use_count() == 1 && this->data_->handle_ && this->data_->destroyable_)
-    native::cursor::destroy(this->data_->handle_);
+  if (data_.use_count() == 1 && data_->handle_ && data_->destroyable_)
+    native::cursor::destroy(data_->handle_);
 }
 
 point cursor::position() {
@@ -33,7 +39,7 @@ void cursor::position(const point& position) {
 }
 
 intptr_t cursor::copy_handle() const {
-  return native::cursor::copy(this->data_->handle_);
+  return native::cursor::copy(data_->handle_);
 }
 
 void cursor::hide() {
@@ -45,5 +51,5 @@ void cursor::show() {
 }
 
 std::string cursor::to_string() const {
-  return strings::format("[cursor: {}]", this->data_->name_ != "" ? this->data_->name_ : strings::full_class_name(*this));
+  return strings::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : strings::full_class_name(*this));
 }

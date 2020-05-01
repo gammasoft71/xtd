@@ -17,9 +17,9 @@ namespace xtd {
       /// @return The cursor that represents the arrow cursor.
       static cursor arrow();
 
-      /// @brief Gets the close hand cursor.
+      /// @brief Gets the closed hand cursor.
       /// @return The cursor that represents the close hand cursor.
-      static cursor close_hand();
+      static cursor closed_hand();
 
       /// @brief Gets the contextual menu cursor.
       /// @return The cursor that represents the contextual menu cursor.
