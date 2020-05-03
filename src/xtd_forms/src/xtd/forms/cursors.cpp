@@ -19,6 +19,10 @@ cursor cursors::contextual_menu() {
   return cursor(native::cursors::contextual_menu(), true, "contextual_menu");
 }
 
+cursor cursors::cell() {
+  return cursor(native::cursors::cell(), true, "cell");
+}
+
 cursor cursors::cross() {
   return cursor(native::cursors::cross(), true, "cross");
 }
@@ -57,6 +61,10 @@ cursor cursors::ibeam() {
 
 cursor cursors::no() {
   return cursor(native::cursors::no(), true, "no");
+}
+
+cursor cursors::no_drag() {
+  return cursor(native::cursors::no_drag(), true, "no_drag");
 }
 
 cursor cursors::no_move_2d() {

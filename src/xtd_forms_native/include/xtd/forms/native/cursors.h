@@ -11,6 +11,7 @@ namespace xtd {
         static intptr_t arrow();
         static intptr_t closed_hand();
         static intptr_t contextual_menu();
+        static intptr_t cell();
         static intptr_t cross();
         static intptr_t default_cursor();
         static intptr_t disappearing_item();
@@ -21,6 +22,7 @@ namespace xtd {
         static intptr_t hsplit();
         static intptr_t ibeam();
         static intptr_t no();
+        static intptr_t no_drag();
         static intptr_t no_move_2d();
         static intptr_t no_move_horiz();
         static intptr_t no_move_vert();
