@@ -1,10 +1,11 @@
 #include <stdexcept>
 #include <xtd/forms/native/cursors.h>
-#include <wx/cursor.h>
 #include <xtd/environment.h>
 #include <xtd/drawing/point.h>
 #include <xtd/io/path.h>
 #include <xtd/strings.h>
+#include <wx/cursor.h>
+#include <wx/image.h>
 
 void __xtd_init_image_handlers__();
 void __xtd_clean_image_handlers__();
@@ -49,25 +50,25 @@ intptr_t cursors::contextual_menu() {
 }
 
 intptr_t cursors::arrow() {
+  //return create_cursor_from_resources("arrow", {0, 0});
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROW));
 }
 
 intptr_t cursors::cross() {
+  //return create_cursor_from_resources("cross", {7, 7});
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
 }
 
 intptr_t cursors::default_cursor() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return arrow();
 }
 
 intptr_t cursors::disappearing_item() {
-  /// @todo create a bitmap represented disappearing_item cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("disappearing_item", {0, 0});
 }
 
 intptr_t cursors::drag_copy() {
-  /// @todo create a bitmap represented drag_copy cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("drag_copy", {0, 0});
 }
 
 intptr_t cursors::drag_link() {
