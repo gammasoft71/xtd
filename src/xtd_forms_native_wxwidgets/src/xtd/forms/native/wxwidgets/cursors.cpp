@@ -1,21 +1,51 @@
 #include <stdexcept>
 #include <xtd/forms/native/cursors.h>
 #include <wx/cursor.h>
+#include <xtd/environment.h>
+#include <xtd/drawing/point.h>
+#include <xtd/io/path.h>
+#include <xtd/strings.h>
+
+void __xtd_init_image_handlers__();
+void __xtd_clean_image_handlers__();
 
 using namespace xtd::forms::native;
+
+namespace {
+  static std::string get_os_potfix() noexcept {
+    return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_osx_platform() ? "_m" : "";
+  }
+ 
+  static std::string forms_resource_path() {
+#if defined(__XTD_FORMS_RESOURCES_PATH__)
+    return xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "share", "xtd", "resources");
+#else
+    return "";
+#endif
+  }
+
+  static intptr_t create_cursor_from_resources(const std::string& name, const xtd::drawing::point& hot_spot ) {
+    __xtd_init_image_handlers__();
+    if (!xtd::io::file::exists(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::strings::format("{}{}.png", name, get_os_potfix())))) return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+    wxImage image(xtd::io::path::combine(forms_resource_path(), "cursors", xtd::strings::format("{}{}.png", name, get_os_potfix())));
+    image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
+    image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
+    wxCursor* cursor = new wxCursor(image);
+    __xtd_clean_image_handlers__();
+    return reinterpret_cast<intptr_t>(cursor);
+  }
+}
 
 intptr_t cursors::app_starting() {
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROWWAIT));
 }
 
 intptr_t cursors::closed_hand() {
-  /// @todo create a bitmap represented closed_hand cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_HAND));
+  return create_cursor_from_resources("close_hand", {7, 7});
 }
 
 intptr_t cursors::contextual_menu() {
-  /// @todo create a bitmap represented contextual_menu cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("contextual_menu", {0, 0});
 }
 
 intptr_t cursors::arrow() {
@@ -66,18 +96,15 @@ intptr_t cursors::no() {
 }
 
 intptr_t cursors::no_move_2d() {
-  /// @todo create a bitmap represented no_move_2d cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_NO_ENTRY));
-}
-
-intptr_t cursors::no_move_vert() {
-  /// @todo create a bitmap represented no_move_vert cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_NO_ENTRY));
+  return create_cursor_from_resources("no_move_2d", {15, 15});
 }
 
 intptr_t cursors::no_move_horiz() {
-  /// @todo create a bitmap represented no_move_horiz cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_NO_ENTRY));
+  return create_cursor_from_resources("no_move_horiz", {15, 15});
+}
+
+intptr_t cursors::no_move_vert() {
+  return create_cursor_from_resources("no_move_vert", {15, 15});
 }
 
 intptr_t cursors::open_hand() {
