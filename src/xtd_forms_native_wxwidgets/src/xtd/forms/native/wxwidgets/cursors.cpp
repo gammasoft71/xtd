@@ -85,7 +85,8 @@ intptr_t cursors::hand() {
 }
 
 intptr_t cursors::help() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_QUESTION_ARROW));
+  return create_cursor_from_resources("help", {0, 0});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_QUESTION_ARROW));
 }
 
 intptr_t cursors::hsplit() {
