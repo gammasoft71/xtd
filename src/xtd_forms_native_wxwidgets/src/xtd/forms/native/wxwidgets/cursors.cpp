@@ -55,8 +55,8 @@ intptr_t cursors::arrow() {
 }
 
 intptr_t cursors::cross() {
-  //return create_cursor_from_resources("cross", {7, 7});
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
+  return create_cursor_from_resources("cross", {7, 7});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
 }
 
 intptr_t cursors::default_cursor() {
