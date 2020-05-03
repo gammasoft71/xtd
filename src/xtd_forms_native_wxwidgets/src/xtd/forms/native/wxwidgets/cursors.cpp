@@ -118,13 +118,11 @@ intptr_t cursors::no_move_vert() {
 }
 
 intptr_t cursors::open_hand() {
-  /// @todo create a bitmap represented open_hand cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_HAND));
+  return create_cursor_from_resources("open_hand", {0, 0});
 }
 
 intptr_t cursors::pan_east() {
-  /// @todo create a bitmap represented pan_east cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("pan_east", {0, 0});
 }
 
 intptr_t cursors::pan_ne() {
@@ -158,8 +156,7 @@ intptr_t cursors::pan_sw() {
 }
 
 intptr_t cursors::pan_west() {
-  /// @todo create a bitmap represented pan_west cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("pan_west", {0, 0});
 }
 
 intptr_t cursors::size_all() {
