@@ -25,10 +25,14 @@ namespace xtd {
       /// @return The cursor that represents the contextual menu cursor.
       static cursor contextual_menu();
 
+      /// @brief Gets the cell cursor.
+      /// @return The cursor that represents the cell cursor.
+      static cursor cell();
+      
       /// @brief Gets the crosshair cursor.
       /// @return The cursor that represents the crosshair cursor.
       static cursor cross();
-
+      
       /// @brief Gets the default cursor, which is usually an arrow cursor.
       /// @return The cursor that represents the default cursor.
       static cursor default_cursor();
@@ -64,7 +68,11 @@ namespace xtd {
       /// @brief Gets the cursor that indicates that a particular region is invalid for the current operation.
       /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the current operation.
       static cursor no();
-
+      
+      /// @brief Gets the cursor that indicates that a particular region is invalid for the current drag & drop operation.
+      /// @return The cursor that represents the cursor that indicates that a particular region is invalid for the curren drag & dropt operation.
+      static cursor no_drag();
+      
       /// @brief Gets the cursor that appears during wheel operations when the mouse is not moving, but the window can be scrolled in both a horizontal and vertical direction.
       /// @return The cursor that represents the cursor that appears during wheel operations when the mouse is not moving.
       static cursor no_move_2d();

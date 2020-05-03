@@ -54,6 +54,10 @@ intptr_t cursors::arrow() {
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROW));
 }
 
+intptr_t cursors::cell() {
+  return create_cursor_from_resources("cell", {7, 7});
+}
+
 intptr_t cursors::cross() {
   return create_cursor_from_resources("cross", {7, 7});
   //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
@@ -72,11 +76,11 @@ intptr_t cursors::drag_copy() {
 }
 
 intptr_t cursors::drag_link() {
-  /// @todo create a bitmap represented drag_link cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("drag_link", {0, 0});
 }
 
 intptr_t cursors::hand() {
+  //return create_cursor_from_resources("hand", {0, 0});
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_HAND));
 }
 
@@ -93,7 +97,11 @@ intptr_t cursors::ibeam() {
 }
 
 intptr_t cursors::no() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_NO_ENTRY));
+  return create_cursor_from_resources("no", {0, 0});
+}
+
+intptr_t cursors::no_drag() {
+  return create_cursor_from_resources("no_drag", {0, 0});
 }
 
 intptr_t cursors::no_move_2d() {
@@ -179,8 +187,7 @@ intptr_t cursors::up_arrow() {
 }
 
 intptr_t cursors::vibeam() {
-  /// @todo create a bitmap vibeam up_arrow cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_IBEAM));
+  return create_cursor_from_resources("vibeam", {0, 0});
 }
 
 intptr_t cursors::vsplit() {
