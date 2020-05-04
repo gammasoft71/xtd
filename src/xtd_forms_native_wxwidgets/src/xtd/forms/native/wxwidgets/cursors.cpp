@@ -95,12 +95,12 @@ intptr_t cursors::hsplit() {
 }
 
 intptr_t cursors::ibeam() {
-  return create_cursor_from_resources("ibeam", {0, 0});
+  return create_cursor_from_resources("ibeam", {8, 9});
   //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_IBEAM));
 }
 
 intptr_t cursors::no() {
-  return create_cursor_from_resources("no", {0, 0});
+  return create_cursor_from_resources("no", {8, 8});
 }
 
 intptr_t cursors::no_drag() {
@@ -108,15 +108,15 @@ intptr_t cursors::no_drag() {
 }
 
 intptr_t cursors::no_move_2d() {
-  return create_cursor_from_resources("no_move_2d", {15, 15});
+  return create_cursor_from_resources("no_move_2d", {16, 15});
 }
 
 intptr_t cursors::no_move_horiz() {
-  return create_cursor_from_resources("no_move_horiz", {15, 15});
+  return create_cursor_from_resources("no_move_horiz", {16, 15});
 }
 
 intptr_t cursors::no_move_vert() {
-  return create_cursor_from_resources("no_move_vert", {15, 15});
+  return create_cursor_from_resources("no_move_vert", {16, 15});
 }
 
 intptr_t cursors::open_hand() {
@@ -124,7 +124,7 @@ intptr_t cursors::open_hand() {
 }
 
 intptr_t cursors::pan_east() {
-  return create_cursor_from_resources("pan_east", {0, 0});
+  return create_cursor_from_resources("pan_east", environment::os_version().is_linux_platform() ? drawing::point {17, 9} : drawing::point {10, 14});
 }
 
 intptr_t cursors::pan_ne() {
@@ -158,7 +158,7 @@ intptr_t cursors::pan_sw() {
 }
 
 intptr_t cursors::pan_west() {
-  return create_cursor_from_resources("pan_west", {0, 0});
+  return create_cursor_from_resources("pan_west", environment::os_version().is_linux_platform() ? drawing::point {3, 9} : drawing::point {21, 14});
 }
 
 intptr_t cursors::size_all() {
@@ -187,7 +187,7 @@ intptr_t cursors::up_arrow() {
 }
 
 intptr_t cursors::vibeam() {
-  return create_cursor_from_resources("vibeam", {0, 0});
+  return create_cursor_from_resources("vibeam", {9, 9});
 }
 
 intptr_t cursors::vsplit() {
