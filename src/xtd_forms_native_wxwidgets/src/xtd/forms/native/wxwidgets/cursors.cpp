@@ -156,28 +156,32 @@ intptr_t cursors::pan_west() {
 }
 
 intptr_t cursors::size_all() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZING));
+  return create_cursor_from_resources("size_all", {11, 11});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZING));
 }
 
 intptr_t cursors::size_nesw() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENESW));
+  return create_cursor_from_resources("size_nesw", {8, 8});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENESW));
 }
 
 intptr_t cursors::size_ns() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
+  return create_cursor_from_resources("size_ns", environment::os_version().is_linux_platform() ? drawing::point {7, 11} : drawing::point {4, 11});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
 }
 
 intptr_t cursors::size_nwse() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENWSE));
+  return create_cursor_from_resources("size_nwse", {8, 8});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENWSE));
 }
 
 intptr_t cursors::size_we() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
+  return create_cursor_from_resources("size_we", environment::os_version().is_linux_platform() ? drawing::point {11, 8} : drawing::point {11, 4});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
 }
 
 intptr_t cursors::up_arrow() {
-  /// @todo create a bitmap represented up_arrow cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("up_arrow", {4, 0});
 }
 
 intptr_t cursors::vibeam() {
