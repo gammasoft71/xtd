@@ -59,7 +59,7 @@ intptr_t cursors::cell() {
 }
 
 intptr_t cursors::cross() {
-  return create_cursor_from_resources("cross", {7, 7});
+  return create_cursor_from_resources("cross", {16, 16});
   //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
 }
 
@@ -90,7 +90,7 @@ intptr_t cursors::help() {
 }
 
 intptr_t cursors::hsplit() {
-  return create_cursor_from_resources("hsplit", {7, 7});
+  return create_cursor_from_resources("hsplit", {15, 15});
   //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
 }
 
@@ -191,7 +191,7 @@ intptr_t cursors::vibeam() {
 }
 
 intptr_t cursors::vsplit() {
-  return create_cursor_from_resources("vsplit", {7, 7});
+  return create_cursor_from_resources("vsplit", {15, 15});
   //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
 }
 
