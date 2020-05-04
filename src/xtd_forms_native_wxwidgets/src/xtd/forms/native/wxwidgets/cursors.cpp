@@ -136,8 +136,7 @@ intptr_t cursors::pan_north() {
 }
 
 intptr_t cursors::pan_nw() {
-  /// @todo create a bitmap represented pan_nw cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("pan_nw", environment::os_version().is_linux_platform() ? drawing::point {5, 5} : drawing::point {19, 18});
 }
 
 intptr_t cursors::pan_se() {
@@ -146,8 +145,7 @@ intptr_t cursors::pan_se() {
 }
 
 intptr_t cursors::pan_south() {
-  /// @todo create a bitmap represented pan_south cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("pan_south", environment::os_version().is_linux_platform() ? drawing::point {12, 18} : drawing::point {16, 8});
 }
 
 intptr_t cursors::pan_sw() {
