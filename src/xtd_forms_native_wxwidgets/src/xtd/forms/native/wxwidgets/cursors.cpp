@@ -128,8 +128,7 @@ intptr_t cursors::pan_east() {
 }
 
 intptr_t cursors::pan_ne() {
-  /// @todo create a bitmap represented pan_ne cursor
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_DEFAULT));
+  return create_cursor_from_resources("pan_ne", environment::os_version().is_linux_platform() ? drawing::point {18, 5} : drawing::point {12, 18});
 }
 
 intptr_t cursors::pan_north() {
