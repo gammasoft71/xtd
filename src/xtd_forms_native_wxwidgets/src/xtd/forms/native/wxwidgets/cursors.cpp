@@ -55,7 +55,7 @@ intptr_t cursors::contextual_menu() {
 }
 
 intptr_t cursors::cell() {
-  return create_cursor_from_resources("cell", {7, 7});
+  return create_cursor_from_resources("cell", {16, 16});
 }
 
 intptr_t cursors::cross() {
