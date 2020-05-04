@@ -47,7 +47,7 @@ intptr_t cursors::arrow() {
 }
 
 intptr_t cursors::closed_hand() {
-  return create_cursor_from_resources("close_hand", {7, 7});
+  return create_cursor_from_resources("closed_hand", {7, 7});
 }
 
 intptr_t cursors::contextual_menu() {
