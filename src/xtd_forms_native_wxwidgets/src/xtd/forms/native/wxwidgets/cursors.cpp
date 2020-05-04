@@ -41,17 +41,17 @@ intptr_t cursors::app_starting() {
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROWWAIT));
 }
 
+intptr_t cursors::arrow() {
+  //return create_cursor_from_resources("arrow", {0, 0});
+  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROW));
+}
+
 intptr_t cursors::closed_hand() {
   return create_cursor_from_resources("close_hand", {7, 7});
 }
 
 intptr_t cursors::contextual_menu() {
   return create_cursor_from_resources("contextual_menu", {0, 0});
-}
-
-intptr_t cursors::arrow() {
-  //return create_cursor_from_resources("arrow", {0, 0});
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROW));
 }
 
 intptr_t cursors::cell() {
@@ -90,11 +90,13 @@ intptr_t cursors::help() {
 }
 
 intptr_t cursors::hsplit() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
+  return create_cursor_from_resources("hsplit", {7, 7});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZENS));
 }
 
 intptr_t cursors::ibeam() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_IBEAM));
+  return create_cursor_from_resources("ibeam", {0, 0});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_IBEAM));
 }
 
 intptr_t cursors::no() {
@@ -189,7 +191,8 @@ intptr_t cursors::vibeam() {
 }
 
 intptr_t cursors::vsplit() {
-  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
+  return create_cursor_from_resources("vsplit", {7, 7});
+  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_SIZEWE));
 }
 
 intptr_t cursors::wait_cursor() {
