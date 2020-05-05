@@ -6,10 +6,12 @@ project(src)
 # Projects
 
 if (IS_MAIN_PROJECT)
+  option(ENABLE_GUIDGEN_COMMAND_LINE "Enable guidgen command line" OFF)
+  option(ENABLE_XTD_COMMAND_LINE "Enable xtd command line" OFF)
   add_subdirectory(xtd_core)
   add_subdirectory(xtd_io)
   add_subdirectory(xtd_strings)
-  add_subdirectory(xtd_tunit)
+  add_subdirectory(xtd_tunit)  
 endif ()
 
 add_subdirectory(xtd_drawing_native)
