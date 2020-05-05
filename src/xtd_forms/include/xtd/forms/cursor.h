@@ -32,6 +32,15 @@ namespace xtd {
       ~cursor();
       /// @endcond
       
+      /// @brief Gets a cursor object that represents the mouse cursor.
+      /// @return A cursor that represents the mouse cursor. The default is cursor::none.
+      /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
+      static xtd::forms::cursor current();
+      /// @brief Sets a cursor object that represents the mouse cursor.
+      /// @param cursor A cursor that represents the mouse cursor. The default is cursor::none.
+      /// @remarks Setting the current property changes the cursor currently displayed. The application may or may not continue to listen for mouse events. To signal that the application should not respond to mouse events during a long-running operation, use the application::use_wait_cursor property. In most cases, however, it's better to use a background thread to manage a long-running operation, and leave your user interface accessible to the user.
+      static void current(const xtd::forms::cursor& cursor);
+
       /// @brief Gets the handle of the cursor.
       /// @return An intptr_t that represents the cursor's handle.
       /// @remarks This is not a copy of the handle; do not detroy it.
@@ -89,6 +98,8 @@ namespace xtd {
       bool operator!=(const cursor& value) const {return !this->operator==(value);}
       /// @endcond
 
+      static cursor none;
+      
     private:
       friend class cursors;
       cursor(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot);

@@ -24,14 +24,17 @@ intptr_t cursor::create(intptr_t image, const xtd::drawing::point& hot_spot) {
 }
 
 intptr_t cursor::copy(intptr_t cursor) {
-    return reinterpret_cast<intptr_t>(new wxCursor(*reinterpret_cast<wxCursor*>(cursor)));
-  }
+  return reinterpret_cast<intptr_t>(new wxCursor(*reinterpret_cast<wxCursor*>(cursor)));
+}
 
-  void cursor::destroy(intptr_t cursor) {
+void cursor::current(intptr_t cursor) {
+  wxSetCursor(cursor ? *reinterpret_cast<wxCursor*>(cursor) : wxNullCursor);
+}
+
+void cursor::destroy(intptr_t cursor) {
   if (cursor == 0) return;
   delete reinterpret_cast<wxCursor*>(cursor);
 }
-
 
 #if defined (__WXOSX__)
 #elif defined (__WXMSW__)
