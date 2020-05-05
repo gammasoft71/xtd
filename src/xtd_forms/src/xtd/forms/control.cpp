@@ -51,6 +51,7 @@ control::control_collection control::top_level_controls_;
 
 control::control() {
   native::control::init();
+  if (!application::message_loop() && cursor::current() == cursor::none) cursor::current(cursors::wait_cursor());
   this->set_state(state::enabled, true);
   this->set_state(state::visible, true);
   this->set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);

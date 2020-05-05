@@ -12,6 +12,7 @@ namespace xtd {
         static intptr_t create();
         static intptr_t create(intptr_t image, const drawing::point& hot_spot);
         static intptr_t copy(intptr_t cursor);
+        static void current(intptr_t cursor);
         static void destroy(intptr_t cursor);
         static void hide();
         static drawing::point hot_spot(intptr_t cursor);

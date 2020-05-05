@@ -237,6 +237,7 @@ void application::run() {
 
 void application::run(application_context& context) {
   if (application::application::message_loop_ == true) throw std::runtime_error("Application already running");
+  cursor::current(cursors::default_cursor());
   try {
     context.thread_exit += application::on_app_thread_exit;
     native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));

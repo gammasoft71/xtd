@@ -59,8 +59,8 @@ intptr_t cursors::cell() {
 }
 
 intptr_t cursors::cross() {
-  return create_cursor_from_resources("cross", {16, 16});
-  //return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
+  //return create_cursor_from_resources("cross", {16, 16});
+  return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_CROSS));
 }
 
 intptr_t cursors::default_cursor() {
