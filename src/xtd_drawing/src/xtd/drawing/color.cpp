@@ -1,5 +1,4 @@
 #include "../../../include/xtd/drawing/color.h"
-#include <xtd/delegate.h>
 #include <xtd/drawing/native/system_colors.h>
 #include <cmath>
 #include <map>
