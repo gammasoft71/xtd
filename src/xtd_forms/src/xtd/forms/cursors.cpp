@@ -150,3 +150,11 @@ cursor cursors::vsplit() {
 cursor cursors::wait_cursor() {
   return cursor(native::cursors::wait_cursor(), true, "wait_cursor");
 }
+
+cursor cursors::zoom_in() {
+  return cursor(native::cursors::zoom_in(), true, "zoom_in");
+}
+
+cursor cursors::zoom_out() {
+  return cursor(native::cursors::zoom_out(), true, "zoom_out");
+}
