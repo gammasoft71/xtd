@@ -1,3 +1,4 @@
+#include <optional>
 #include <xtd/forms/native/cursor.h>
 #include "../../../include/xtd/forms/cursor.h"
 #include "../../../include/xtd/forms/cursors.h"
