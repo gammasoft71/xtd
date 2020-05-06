@@ -38,6 +38,7 @@ namespace {
 }
 
 intptr_t cursors::app_starting() {
+  if (environment::os_version().is_osx_platform()) return create_cursor_from_resources("app_starting", {0, 0});
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROWWAIT));
 }
 
@@ -194,7 +195,7 @@ intptr_t cursors::vsplit() {
 }
 
 intptr_t cursors::wait_cursor() {
-  if (environment::os_version().is_osx_platform())   return create_cursor_from_resources("wait", {7, 7});
+  if (environment::os_version().is_osx_platform()) return create_cursor_from_resources("wait", {7, 7});
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_WAIT));
 }
 
