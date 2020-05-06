@@ -156,6 +156,14 @@ namespace xtd {
       /// @brief Gets the wait cursor, typically an hourglass shape.
       /// @return The cursor that represents the wait cursor.
       static cursor wait_cursor();
+
+      /// @brief Gets the zoom int cursor, typically to zoom in an object.
+      /// @return The cursor that represents the zoom in cursor.
+      static cursor zoom_in();
+
+      /// @brief Gets the zoom out cursor, typically to zoom out an object.
+      /// @return The cursor that represents the zoom out cursor.
+      static cursor zoom_out();
     };
   }
 }

@@ -44,6 +44,8 @@ namespace xtd {
         static intptr_t vibeam();
         static intptr_t vsplit();
         static intptr_t wait_cursor();
+        static intptr_t zoom_in();
+        static intptr_t zoom_out();
       };
     }
   }
