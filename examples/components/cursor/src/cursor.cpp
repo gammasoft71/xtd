@@ -34,6 +34,6 @@ private:
 };
 
 int main() {
-  application::enable_light_mode();
+  //application::enable_light_mode();
   application::run(form1());
 }
