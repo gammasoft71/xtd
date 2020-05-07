@@ -17,6 +17,7 @@ namespace examples {
 
       text_box2.parent(*this);
       text_box2.location({10, 50});
+      text_box2.cursor(cursors::ibeam());
       text_box2.text_changed += [&] {
         text_box1.text(text_box2.text());
       };
@@ -31,5 +32,6 @@ namespace examples {
 }
 
 int main() {
+  application::enable_light_mode();
   application::run(examples::form1());
 }
