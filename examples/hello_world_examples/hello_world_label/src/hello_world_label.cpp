@@ -13,7 +13,7 @@ namespace examples {
       controls().push_back(label);
 
       label.auto_size(true);
-      label.font(drawing::font(label.font(), 32, font_style::bold | font_style::italic));
+      label.font(drawing::font(label.font(), 32, font_style::bold|font_style::italic));
       label.fore_color(color::green);
       label.location({5, 100});
       label.text("Hello, World!");
