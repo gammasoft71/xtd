@@ -1092,8 +1092,12 @@ namespace xtdc_command {
 
     void create_qt5_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
-      if (create_solution) create_qt5_gui_solution_cmakelists_txt(name);
+      if (create_solution) {
+        create_qt5_gui_solution_cmakelists_txt(name);
+        create_qt5_gui_solution_qmake_pro(name);
+      }
       create_qt5_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
+      create_qt5_gui_qmake_pro(name, create_solution ? path_/name : path_);
       create_qt5_gui_include(name, create_solution ? path_/name : path_);
       create_qt5_gui_source(name, create_solution ? path_/name : path_);
       create_qt5_gui_main(name, create_solution ? path_/name : path_);
@@ -1110,6 +1114,14 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"CMakeLists.txt", lines);
     }
     
+    void create_qt5_gui_solution_qmake_pro(const std::string& name) const {
+      std::vector<std::string> lines {
+        "TEMPLATE = subdirs",
+        xtd::strings::format("SUBDIRS = {}", name),
+      };
+      xtd::io::file::write_all_lines(path_/xtd::strings::format("{}.pro", name), lines);
+    }
+
     void create_qt5_gui_cmakelists_txt(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "cmake_minimum_required(VERSION 3.8)",
@@ -1125,6 +1137,9 @@ namespace xtdc_command {
         "find_package(Qt5 COMPONENTS Widgets REQUIRED)",
         "",
         "# Options",
+        "set(CMAKE_AUTOMOC ON)",
+        "set(CMAKE_AUTORCC ON)",
+        "set(CMAKE_AUTOUIC ON)",
         "set(CMAKE_CXX_STANDARD 17)",
         "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
@@ -1137,6 +1152,17 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path/"CMakeLists.txt", lines);
     }
     
+    void create_qt5_gui_qmake_pro(const std::string& name, const std::filesystem::path& path) const {
+      std::vector<std::string> lines {
+        "CONFIG += c++17",
+        "QT = widgets",
+        "HEADERS = src/Window1.h",
+        "SOURCES = src/Window1.cpp src/Program.cpp",
+      };
+      
+      xtd::io::file::write_all_lines(path/xtd::strings::format("{}.pro", name), lines);
+    }
+
     void create_qt5_gui_include(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "/// @file",
@@ -1147,9 +1173,7 @@ namespace xtdc_command {
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represent the main window",
         "  class Window1 : public QMainWindow {",
-        "    // Uncomment the following line when you use signals ans slots.",
-        "    // Q_OBJECT",
-        "",
+        "    Q_OBJECT",
         "  public:",
         "    /// @brief Initializes a new instance of the Window1 class.",
         "    Window1();",
