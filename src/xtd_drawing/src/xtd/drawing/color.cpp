@@ -183,28 +183,28 @@ color color::from_handle(intptr_t handle) {
 
 color color::from_hsb(float hue, float saturation, float brightness) {
   // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsv-to-rgb)
-  if (saturation == 0) return color::from_argb(255, (uint8_t)(brightness * 255.0f), (uint8_t)(brightness * 255.0f), (uint8_t)(brightness * 255.0f));
+  if (saturation == 0) return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
   
-  hue = hue == 360 ? 0 : hue / 60;
+  hue = hue >= 360 ? 0 : hue / 60;
   
-  float f = hue - (float)trunc(hue);
+  float f = hue - trunc(hue);
   float p = brightness * (1.0f - saturation);
   float q = brightness * (1.0f - (saturation * f));
   float t = brightness * (1.0f - (saturation * (1.0f - f)));
   
-  switch ((int)trunc(hue)) {
-    case 0: return color::from_argb(255, (uint8_t)(brightness * 255.0f), (uint8_t)(t * 255.0f), (uint8_t)(p * 255.0f));
-    case 1: return color::from_argb(255, (uint8_t)(q * 255.0f), (uint8_t)(brightness * 255.0f), (uint8_t)(p * 255.0f));
-    case 2: return color::from_argb(255, (uint8_t)(p * 255.0f), (uint8_t)(brightness * 255.0f), (uint8_t)(t * 255.0f));
-    case 3: return color::from_argb(255, (uint8_t)(p * 255.0f), (uint8_t)(q * 255.0f), (uint8_t)(brightness * 255.0f));
-    case 4: return color::from_argb(255, (uint8_t)(t * 255.0f), (uint8_t)(p * 255.0f), (uint8_t)(brightness * 255.0f));
-    default: return color::from_argb(255, (uint8_t)(brightness * 255.0f), (uint8_t)(p * 255.0f), (uint8_t)(q * 255.0f));
+  switch (static_cast<int>(trunc(hue))) {
+    case 0: return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(t * 255.0f), static_cast<uint8_t>(p * 255.0f));
+    case 1: return color::from_argb(255, static_cast<uint8_t>(q * 255.0f), static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(p * 255.0f));
+    case 2: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f),  (brightness * 255.0f), static_cast<uint8_t>(t * 255.0f));
+    case 3: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(q * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
+    case 4: return color::from_argb(255, static_cast<uint8_t>(t * 255.0f), static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
+    default: return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(q * 255.0f));
   }
 }
 
 color color::from_hsl(float hue, float saturation, float lightness) {
   // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsl-to-rgb)
-  if (saturation == 0) return color::from_argb(255, (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f));
+  if (saturation == 0) return color::from_argb(255, static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f));
 
   auto hue_to_rgb = [](float v1, float v2, float vh)->float {
     if (vh < 0) vh += 1;
@@ -215,13 +215,13 @@ color color::from_hsl(float hue, float saturation, float lightness) {
     return v1;
   };
   
-  if (saturation == 0) return color::from_argb(255, (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f), (uint8_t)(lightness * 255.0f));
+  if (saturation == 0) return color::from_argb(255, static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f), static_cast<uint8_t>(lightness * 255.0f));
 
-  hue = (float)hue / 360.0f;
+  hue = hue / 360.0f;
   float v2 = (lightness < 0.5f) ? (lightness * (1 + saturation)) : ((lightness + saturation) - (lightness * saturation));
   float v1 = 2 * lightness - v2;
   
-  return color::from_argb(255, (uint8_t)(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), (uint8_t)(hue_to_rgb(v1, v2, hue) * 255.0f), (uint8_t)(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f));
+  return color::from_argb(255, static_cast<uint8_t>(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), static_cast<uint8_t>(hue_to_rgb(v1, v2, hue) * 255.0f), static_cast<uint8_t>(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f));
 }
 
 color color::from_name(const string& name) {
