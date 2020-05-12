@@ -18,8 +18,9 @@ Thumbs.db
 # Visual Studio Code files
 .vscode
 
-# QT user config cmake files
+# Qt user config make files
 CMakeLists.txt.user
+*.pro.user
 
 # Visual Studio user config cmake files
 CMakeSettings.json
