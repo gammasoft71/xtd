@@ -81,7 +81,7 @@ intptr_t icon::create(const char* const* bits) {
 intptr_t icon::create(intptr_t image) {
   if (image == 0) return 0;
   __xtd_init_image_handlers__();
-  wxIconBundle* result = new wxIconBundle();
+  wxIconBundle* result = new wxIconBundle;
   wxIcon icon;
   icon.CopyFromBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image)));
   result->AddIcon(icon);
