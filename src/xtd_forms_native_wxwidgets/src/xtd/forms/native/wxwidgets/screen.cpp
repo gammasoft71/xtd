@@ -13,7 +13,7 @@ using namespace xtd::forms::native;
 
 intptr_t screen::create_graphics() {
   application::initialize();
-  xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper();
+  xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   hdc_wrapper->create<wxScreenDC>();
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }
