@@ -133,7 +133,7 @@ void application::initialize() {
   __gtk_button_image__(__xtd_gtk_enable_button_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
 #elif defined(__WXOSX__)
-  wxMenuBar* menubar = new wxMenuBar();
+  wxMenuBar* menubar = new wxMenuBar;
   menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
     if (event.GetId() == wxID_EXIT) {
       auto can_quit = true;
