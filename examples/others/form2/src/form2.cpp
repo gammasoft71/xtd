@@ -6,6 +6,6 @@ int main() {
   auto button_close = xtd::forms::control::create<xtd::forms::button>(*form, "Close", {10, 10});
   button_close->click += {*form, &xtd::forms::form::close};
   auto button_exit = xtd::forms::control::create<xtd::forms::button>(*form, "Exit", {100, 10});
-  button_exit->click += xtd::overload<>::of(xtd::forms::application::exit);
+  button_exit->click += overload_<>(xtd::forms::application::exit);
   xtd::forms::application::run(*form);
 }
