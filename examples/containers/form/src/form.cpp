@@ -1,5 +1,6 @@
 #include <xtd/xtd.forms>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -16,16 +17,12 @@ public:
     button_close.parent(*this);
     button_close.text("Close");
     button_close.location({10, 10});
-    button_close.click += [&] {
-      close();
-    };
+    button_close.click += {*this, &form::close};
     
     button_exit.parent(*this);
     button_exit.text("Exit");
     button_exit.location({100, 10});
-    button_exit.click += [&] {
-      application::exit();
-    };
+    button_exit.click += overload<>::of(&application::exit);
   }
   
 private:
