@@ -9,6 +9,7 @@ set(INCLUDES
   include/xtd/event_args.h
   include/xtd/event_handler.h
   include/xtd/func.h
+  include/xtd/overload.h
   include/xtd/predicate.h
   include/xtd/xtd.delegates
   include/xtd/xtd.delegates.h
