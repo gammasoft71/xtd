@@ -22,7 +22,7 @@ public:
     button_exit.parent(*this);
     button_exit.text("Exit");
     button_exit.location({100, 10});
-    button_exit.click += overload<>::of(&application::exit);
+    button_exit.click += overload_<>(&application::exit);
   }
   
 private:
