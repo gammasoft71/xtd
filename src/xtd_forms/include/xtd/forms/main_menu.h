@@ -8,7 +8,9 @@ namespace xtd {
     class main_menu : public menu {
     public:      
       main_menu();
-      
+      main_menu(const std::initializer_list<menu_item>& menu_items);
+      main_menu(const std::vector<menu_item>& menu_items);
+
       /// @cond
       ~main_menu();
       /// @endcond

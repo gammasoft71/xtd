@@ -54,7 +54,11 @@ namespace xtd {
       /// @param value A menu::menu_item_collection that represents the list of menu_item objects stored in the menu.
       /// @remarks You can use this property to obtain a reference to the list of menu items that are currently stored in the menu. For main_menu and context_menu objects, the menu_items property contains the entire menu structure in the control. For the menu_item class, the menu_items property contains the list of submenu items associated with the menu_item. With the reference to the collection of menu items for the menu (provided by this property), you can add and remove menu items, determine the total number of menu items, and clear the list of menu items from the collection. For more information on maintaining the menu item collection for a menu, see the xtd::forms::menu::menu_item_collection documentation.
       menu& menu_items(const menu_item_collection& value);
-      
+      /// @cond
+      menu& menu_items(const std::initializer_list<menu_item>& value);
+      menu& menu_items(const std::vector<menu_item>& value);
+      /// @endcond
+
       /// @brief Gets the name of the menu.
       /// @return A string representing the name.
       /// @remarks At design time, this property is set to the programmatic identifier of the control. However, this property has no bearing on the control at run time.
@@ -117,7 +121,9 @@ namespace xtd {
       /// @param items An array of type MenuItem containing the objects to add to the menu.
       /// @remarks Since menu is an abstract class, only inherited classes can call the menu constructor.
       explicit menu(const menu_item_collection& items);
-      
+      explicit menu(const std::initializer_list<menu_item>& items);
+      explicit menu(const std::vector<menu_item>& items);
+
       /// @brief Copies the menu that is passed as a parameter to the current menu.
       /// @param menu_src The Menu to copy.
       /// @remarks This method copies the entire list of menuItem objects (stored in the menu passed in to menu_src) into the current menu. You can use this method in your derived class to clone menu_item objects. They can then be reused by other classes that derive from menu, such as main_menu, context_menu, and menu_item.

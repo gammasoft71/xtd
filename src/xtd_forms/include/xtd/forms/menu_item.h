@@ -12,8 +12,10 @@ namespace xtd {
     /// @endcond
     class menu_item : public menu {
     public:      
-      menu_item() : menu(menu::menu_item_collection {}) {};
-      menu_item(const std::string& text) : menu(menu::menu_item_collection {}), text_(text) {}
+      menu_item();
+      menu_item(const std::string& text);
+      menu_item(const std::string& text, const std::initializer_list<menu_item>& items);
+      menu_item(const std::string& text, const std::vector<menu_item>& items);
 
     protected:
       friend main_menu;

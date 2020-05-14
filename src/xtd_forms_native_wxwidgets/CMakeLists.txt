@@ -24,6 +24,7 @@ set(XTD_INCLUDES
   include/xtd/forms/native/wxwidgets/wx_group_box.h
   include/xtd/forms/native/wxwidgets/wx_label.h
   include/xtd/forms/native/wxwidgets/wx_list_box.h
+  include/xtd/forms/native/wxwidgets/wx_menu.h
   include/xtd/forms/native/wxwidgets/wx_numeric_up_down.h
   include/xtd/forms/native/wxwidgets/wx_panel.h
   include/xtd/forms/native/wxwidgets/wx_picture_box.h
