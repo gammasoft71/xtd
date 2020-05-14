@@ -16,18 +16,27 @@ public:
 
     button_close.parent(*this);
     button_close.text("Close");
+    button_close.auto_size(true);
     button_close.location({10, 10});
     button_close.click += {*this, &form::close};
     
     button_exit.parent(*this);
     button_exit.text("Exit");
+    button_exit.auto_size(true);
     button_exit.location({100, 10});
     button_exit.click += overload_<>(&application::exit);
+    
+    button_exit_thread.parent(*this);
+    button_exit_thread.text("Exit thread");
+    button_exit_thread.auto_size(true);
+    button_exit_thread.location({190, 10});
+    button_exit_thread.click += &application::exit_thread;
   }
   
 private:
   forms::button button_close;
   forms::button button_exit;
+  forms::button button_exit_thread;
 };
 
 int main() {
