@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
+#include <xtd/drawing/image.h>
 #include "menu.h"
+#include "shortcut.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -10,11 +12,44 @@ namespace xtd {
     class main_menu;
     class context_menu;
     /// @endcond
-    class menu_item : public menu {
+    
+    enum class menu_item_kind {
+      normal = 0,
+      check = 1,
+      radio = 2,
+      drop_down = 3,
+      separator = 4,
+    };
+  
+    class menu_item : public xtd::forms::menu {
     public:      
       menu_item();
       menu_item(const std::string& text);
-      menu_item(const std::string& text, const std::initializer_list<menu_item>& items);
+      menu_item(const std::string& text, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::drawing::image& image);
+      menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, xtd::forms::menu_item_kind kind);
+      menu_item(const std::string& text, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind);
+      menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, xtd::forms::menu_item_kind kind, bool checked);
+      menu_item(const std::string& text, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
+      menu_item(const std::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
+
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind, bool checked);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
+      menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
+
       menu_item(const std::string& text, const std::vector<menu_item>& items);
 
       const std::string& text() const {return text_;}
@@ -26,6 +61,10 @@ namespace xtd {
       void destroy_menu_handle(intptr_t handle) override;
 
       std::string text_;
+      xtd::drawing::image image_ = xtd::drawing::image::empty;
+      xtd::forms::menu_item_kind kind_ = xtd::forms::menu_item_kind::normal;
+      bool checked_ = false;
+      xtd::forms::shortcut shortcut_ = static_cast<xtd::forms::shortcut>(0);
     };
   }
 }
