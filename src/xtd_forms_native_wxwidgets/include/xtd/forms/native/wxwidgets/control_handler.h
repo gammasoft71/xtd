@@ -28,6 +28,7 @@
 #include <wx/timer.h>
 #include <wx/tglbtn.h>
 #include "wx_application.h"
+#include "wx_menu.h"
 
 namespace xtd {
   namespace forms {
@@ -505,9 +506,10 @@ namespace xtd {
         else if (event.GetEventType() == wxEVT_SPINCTRLDOUBLE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, UDN_DELTAPOS, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_TIME_CHANGED) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_TOGGLEBUTTON) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_COMMAND, BN_CLICKED, event.GetEventObject() != this ? reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()) : 0, reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_MENU) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MENUCOMMAND, wx_menu_bar::find_index_from_id(event.GetId()), reinterpret_cast<intptr_t>(wx_menu_bar::find_menu_from_id(event.GetId())), reinterpret_cast<intptr_t>(&event));
         else def_process_event(event);
       }
-      
+    
       template<typename control_t>
       inline void control_wrapper<control_t>::process_cursor_event(wxEvent& event) {
         def_process_event(event);

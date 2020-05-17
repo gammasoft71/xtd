@@ -77,5 +77,6 @@ int main() {
     }},
   });
   
+  application::enable_menu_images();
   application::run(form_main);
 }

@@ -17,6 +17,7 @@ namespace xtd {
         static void enable_button_images();
         static void enable_dark_mode();
         static void enable_light_mode();
+        static void enable_menu_images();
         static void enable_visual_style();
         static void exit();
         static void initialize();

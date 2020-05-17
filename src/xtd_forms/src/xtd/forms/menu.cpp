@@ -7,6 +7,8 @@
 using namespace xtd;
 using namespace xtd::forms;
 
+std::map<intptr_t, menu*> menu::handles_;
+
 menu::menu() {
   data_ = std::make_shared<data>();
   data_->mdi_list_item_ = std::make_unique<menu_item>();
@@ -14,18 +16,21 @@ menu::menu() {
 
 menu::menu(const menu_item_collection& items) {
   data_ = std::make_shared<data>();
+  data_->owner_ = this;
   //data_->mdi_list_item_ = std::make_unique<menu_item>();
   menu_items(items);
 }
 
 menu::menu(const std::initializer_list<menu_item>& items) {
   data_ = std::make_shared<data>();
+  data_->owner_ = this;
   //data_->mdi_list_item_ = std::make_unique<menu_item>();
   menu_items(items);
 }
 
 menu::menu(const std::vector<menu_item>& items) {
   data_ = std::make_shared<data>();
+  data_->owner_ = this;
   //data_->mdi_list_item_ = std::make_unique<menu_item>();
   menu_items(items);
 }
@@ -109,3 +114,20 @@ void menu::recreate_menu() {
   destroy_menu();
   create_menu();
 }
+
+void menu::add_handles(const menu_item_collection& menu_items) {
+  for (auto menu_item :  menu_items) {
+    handles_[menu_item.data_->handle_] = &menu_item;
+    if (menu_item.data_->menu_items_.size() != 0)
+      add_handles(menu_item.data_->menu_items_);
+  }
+}
+
+void menu::remove_handles(const menu_item_collection& menu_items) {
+  for (auto menu_item :  menu_items) {
+    handles_.erase(menu_item.data_->handle_);
+    if (menu_item.data_->menu_items_.size() != 0)
+      remove_handles(menu_item.data_->menu_items_);
+  }
+}
+
