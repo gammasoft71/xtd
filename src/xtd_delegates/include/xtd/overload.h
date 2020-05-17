@@ -37,13 +37,13 @@ namespace xtd {
 
   /// @cond
   template <typename... args_t>
-  inline constexpr overload<args_t...> overload_;
+  inline const overload<args_t...> overload_;
 
   template <typename... args_t>
-  inline constexpr const_overload<args_t...> const_overload_;
+  inline const const_overload<args_t...> const_overload_;
 
   template <typename... args_t>
-  inline constexpr non_const_overload<args_t...> non_const_overload_;
+  inline const non_const_overload<args_t...> non_const_overload_;
   /// @endcond
 }
 
