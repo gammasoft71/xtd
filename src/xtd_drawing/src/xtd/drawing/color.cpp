@@ -195,7 +195,7 @@ color color::from_hsb(float hue, float saturation, float brightness) {
   switch (static_cast<int>(trunc(hue))) {
     case 0: return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(t * 255.0f), static_cast<uint8_t>(p * 255.0f));
     case 1: return color::from_argb(255, static_cast<uint8_t>(q * 255.0f), static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(p * 255.0f));
-    case 2: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f),  (brightness * 255.0f), static_cast<uint8_t>(t * 255.0f));
+    case 2: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f),  static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(t * 255.0f));
     case 3: return color::from_argb(255, static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(q * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
     case 4: return color::from_argb(255, static_cast<uint8_t>(t * 255.0f), static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(brightness * 255.0f));
     default: return color::from_argb(255, static_cast<uint8_t>(brightness * 255.0f), static_cast<uint8_t>(p * 255.0f), static_cast<uint8_t>(q * 255.0f));
