@@ -6,9 +6,9 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
-intptr_t menu_item::create(const std::string& text) {
+intptr_t menu_item::create(const std::string& text, const xtd::drawing::image& image, int kind, bool checked, size_t shortcut) {
   //return reinterpret_cast<intptr_t>(new wxMenuItem());
-  return reinterpret_cast<intptr_t>(new wx_menu_item(text));
+  return reinterpret_cast<intptr_t>(new wx_menu_item(text, image.handle(), static_cast<wx_menu_item_kind>(kind), checked, shortcut));
 }
 
 

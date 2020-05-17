@@ -25,21 +25,12 @@ namespace xtd {
       class wx_menu_item {
       public:
         wx_menu_item() = default;
-        wx_menu_item(const std::string& text) : text_(text), kind_(text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal) {}
-        wx_menu_item(const std::string& text, size_t shortcut) : text_(text), shortcut_(shortcut) {}
-        
-        wx_menu_item(const std::string& text, size_t shortcut, wx_menu_item_kind kind) : text_(text), shortcut_(shortcut), kind_(kind) {}
-        wx_menu_item(const std::string& text, wx_menu_item_kind kind) : text_(text), kind_(kind) {}
-        
-        wx_menu_item(const std::string& text, size_t shortcut, intptr_t image) : text_(text), shortcut_(shortcut), image_(image) {}
-        wx_menu_item(const std::string& text, intptr_t image) : text_(text), image_(image) {}
-        
-        wx_menu_item(const std::string& text, size_t shortcut, wx_menu_item_kind kind, bool checked) : text_(text), shortcut_(shortcut), kind_(kind), checked_(checked) {}
-        wx_menu_item(const std::string& text, wx_menu_item_kind kind, bool checked) : text_(text), kind_(kind), checked_(checked) {}
-        
+
+        wx_menu_item(const std::string& text, intptr_t image, wx_menu_item_kind kind, bool checked, size_t shortcut) : text_(text), shortcut_(shortcut), image_(image), kind_(kind != wx_menu_item_kind::normal ? kind : (text == "-" ? wx_menu_item_kind::separator : wx_menu_item_kind::normal)), checked_(checked) {}
+
         wx_menu_item(const std::string& text, const std::vector<wx_menu_item>& items) : text_(text), items_(items) {}
         wx_menu_item(const std::string& text, size_t shortcut, const std::vector<wx_menu_item>& items) : text_(text), shortcut_(shortcut), items_(items) {}
-        
+
         const std::string& text() const {return text_;}
         const size_t shortcut() const {return shortcut_;}
         bool enabled() const {return enabled_;}
