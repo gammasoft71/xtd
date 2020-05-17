@@ -158,13 +158,18 @@ void application::enable_dark_mode() {
 }
 
 void application::enable_button_images() {
-  if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_dark_mode() before application::run()");
+  if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_button_images() before application::run()");
   native::application::enable_button_images();
 }
 
 void application::enable_light_mode() {
   if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_light_mode() before application::run()");
   native::application::enable_light_mode();
+}
+
+void application::enable_menu_images() {
+  if (application::application::message_loop_ == true) throw std::runtime_error("Call applicaiton::enable_menu_images() before application::run()");
+  native::application::enable_menu_images();
 }
 
 void application::enable_visual_styles() {

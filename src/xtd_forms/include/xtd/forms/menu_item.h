@@ -17,6 +17,8 @@ namespace xtd {
       menu_item(const std::string& text, const std::initializer_list<menu_item>& items);
       menu_item(const std::string& text, const std::vector<menu_item>& items);
 
+      const std::string& text() const {return text_;}
+      
     protected:
       friend main_menu;
       friend context_menu;

@@ -1,7 +1,9 @@
 #pragma once
 #include <any>
+#include <map>
 #include <optional>
 #include <string>
+#include "component.h"
 #include "component.h"
 #include "layout/arranged_element_collection.h"
 
@@ -142,8 +144,12 @@ namespace xtd {
       virtual void destroy_menu();
       void recreate_menu();
 
+      void add_handles(const menu_item_collection& menu_items);
+      void remove_handles(const menu_item_collection& menu_items);
+
       struct data {
         intptr_t handle_ = 0;
+        menu* owner_ = nullptr;
         std::optional<std::reference_wrapper<menu>> context_menu_;
         menu_item_collection menu_items_;
         std::unique_ptr<menu_item> mdi_list_item_;
@@ -151,8 +157,13 @@ namespace xtd {
         std::string name_;
         std::optional<std::reference_wrapper<menu>> parent_;
         std::any tag_;
+        event_handler<component&> on_click_;
+        void callback() {
+          on_click_(*owner_, event_args::empty);
+        };
       };
       std::shared_ptr<data> data_;
+      static std::map<intptr_t, menu*> handles_;
       /// @endcond
     };
   }

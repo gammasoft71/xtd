@@ -291,6 +291,7 @@ void form::wnd_proc(message &message) {
     case WM_ACTIVATE: this->wm_activate(message); break;
     case WM_KEYUP: this->wm_key_up(message); break;
     case WM_CLOSE: this->wm_close(message); break;
+    case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().wm_click(message); break;
     default: this->container_control::wnd_proc(message); break;
   }
 }

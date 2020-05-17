@@ -16,7 +16,9 @@ extern int __xtd_win32_enable_dark_mode__;
 #elif defined(__WXGTK__)
 bool __xtd_gtk_enable_dark_mode__ = false;
 bool __xtd_gtk_enable_button_images__ = false;
-void __gtk_button_image__(bool button_image);
+bool __xtd_gtk_enable_menu_images__ = false;
+void __gtk_button_images__(bool enable);
+void __gtk_menu_images__(bool enable);
 void __gtk_application_prefer_dark_theme__(bool prefer_dark_theme);
 #elif defined(__WXOSX__)
 void __xtd_osx_enable_dark_mode__();
@@ -108,6 +110,13 @@ void application::enable_light_mode() {
 #endif
 }
 
+void application::enable_menu_images() {
+#if defined(__WXGTK__)
+  __xtd_gtk_enable_menu_images__ = true;
+  initialize();
+#endif
+}
+
 void application::enable_visual_style() {
   initialize(); // Must be first
   wxTheApp->SetUseBestVisual(true);
@@ -130,7 +139,8 @@ void application::initialize() {
 #if defined(__WXMSW__)
   init_dark_mode(__xtd_win32_enable_dark_mode__);
 #elif defined(__WXGTK__)
-  __gtk_button_image__(__xtd_gtk_enable_button_images__);
+  __gtk_button_images__(__xtd_gtk_enable_button_images__);
+  __gtk_menu_images__(__xtd_gtk_enable_button_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
 #elif defined(__WXOSX__)
   wxMenuBar* menubar = new wxMenuBar;
