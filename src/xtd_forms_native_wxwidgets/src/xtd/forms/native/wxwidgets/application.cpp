@@ -107,7 +107,8 @@ void application::enable_light_mode() {
 
 void application::enable_menu_images() {
 #if defined(__WXGTK__)
-  __xtd_gtk_enable_menu_images__ = true;
+  // This option does not work with wxWidgets...
+  //__xtd_gtk_enable_menu_images__ = true;
 #endif
 }
 
