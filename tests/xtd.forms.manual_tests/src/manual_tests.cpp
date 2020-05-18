@@ -4,6 +4,10 @@ using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
+void on_menu_click(component& sender, const event_args& e) {
+  cdebug << format("Clik on menu item : {}", static_cast<menu_item&>(sender).text()) << endl;
+}
+
 int main() {
   /*
   main_menu menu;
@@ -19,61 +23,61 @@ int main() {
   //form_main.menu(menu);
   form_main.menu({
     {texts::file, {
-      {texts::new_, xtd::drawing::images::new_16x16(), shortcut::cmd_n},
+      {texts::new_, {on_menu_click}, xtd::drawing::images::new_16x16(), shortcut::cmd_n},
       {"-"},
-      {texts::open, xtd::drawing::images::open_16x16(), shortcut::cmd_o},
+      {texts::open, {on_menu_click}, xtd::drawing::images::open_16x16(), shortcut::cmd_o},
       {"Open recen", {
-        {"Path/File1"},
-        {"Path/File2"},
-        {"Path/File3"},
-        {"Path/File4"},
-        {"Path/File5"},
+        {"Path/File1", {on_menu_click}},
+        {"Path/File2", {on_menu_click}},
+        {"Path/File3", {on_menu_click}},
+        {"Path/File4", {on_menu_click}},
+        {"Path/File5", {on_menu_click}},
       }},
-      {texts::close, shortcut::cmd_w},
+      {texts::close, {on_menu_click}, shortcut::cmd_w},
       {"-"},
-      {texts::save, xtd::drawing::images::save_16x16(), shortcut::cmd_s},
-      {texts::save_as},
+      {texts::save, {on_menu_click}, xtd::drawing::images::save_16x16(), shortcut::cmd_s},
+      {texts::save_as, {on_menu_click}},
       {"-"},
-      {"Page &Seup..."},
-      {texts::print, xtd::drawing::images::print_16x16(), shortcut::cmd_p},
+      {"Page &Seup...", {on_menu_click}},
+      {texts::print, {on_menu_click}, xtd::drawing::images::print_16x16(), shortcut::cmd_p},
       {"-"},
-      {texts::quit, xtd::drawing::images::quit_16x16(), shortcut::cmd_q},
+      {texts::quit, {on_menu_click}, xtd::drawing::images::quit_16x16(), shortcut::cmd_q},
     }},
     {texts::edit, {
-      {texts::undo, xtd::drawing::images::undo_16x16(), shortcut::cmd_z},
-      {texts::redo, xtd::drawing::images::redo_16x16(), shortcut::cmd_shift_z},
+      {texts::undo, {on_menu_click}, xtd::drawing::images::undo_16x16(), shortcut::cmd_z},
+      {texts::redo, {on_menu_click}, xtd::drawing::images::redo_16x16(), shortcut::cmd_shift_z},
       {"-"},
-      {texts::cut, xtd::drawing::images::cut_16x16(), shortcut::cmd_x},
-      {texts::copy, xtd::drawing::images::copy_16x16(), shortcut::cmd_c},
-      {texts::paste, xtd::drawing::images::paste_16x16(), shortcut::cmd_v},
+      {texts::cut, {on_menu_click}, xtd::drawing::images::cut_16x16(), shortcut::cmd_x},
+      {texts::copy, {on_menu_click}, xtd::drawing::images::copy_16x16(), shortcut::cmd_c},
+      {texts::paste, {on_menu_click}, xtd::drawing::images::paste_16x16(), shortcut::cmd_v},
       {"-"},
-      {texts::select_all, shortcut::cmd_a},
+      {texts::select_all, {on_menu_click}, shortcut::cmd_a},
       {"-"},
-      {texts::options},
+      {texts::options, {on_menu_click}},
     }},
     {texts::view, {
-      {texts::back, xtd::drawing::images::back_16x16()},
-      {texts::forward, xtd::drawing::images::forward_16x16()},
+      {texts::back, {on_menu_click}, xtd::drawing::images::back_16x16()},
+      {texts::forward, {on_menu_click}, xtd::drawing::images::forward_16x16()},
       {"-"},
-      {"Show"},
-      {"Hide"},
+      {"Show", {on_menu_click}},
+      {"Hide", {on_menu_click}},
     }},
     {texts::options, {
-      {"Value A", menu_item_kind::check, shortcut::alt_1},
-      {"Value B", menu_item_kind::check, shortcut::alt_2},
-      {"Value C", menu_item_kind::check, shortcut::alt_3},
+      {"Value A", {on_menu_click}, menu_item_kind::check, shortcut::alt_1},
+      {"Value B", {on_menu_click}, menu_item_kind::check, shortcut::alt_2},
+      {"Value C", {on_menu_click}, menu_item_kind::check, shortcut::alt_3},
       {"-"},
-      {"Value D", menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::d)},
-      {"Value E", menu_item_kind::radio, true, static_cast<shortcut>(keys::alt|keys::e)},
-      {"Value F", menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::f)},
+      {"Value D", {on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::d)},
+      {"Value E", {on_menu_click}, menu_item_kind::radio, true, static_cast<shortcut>(keys::alt|keys::e)},
+      {"Value F", {on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::f)},
       {"-"},
-      {"Value G", menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::shift|keys::left)},
-      {"Value H", menu_item_kind::radio},
-      {"Value I", menu_item_kind::radio, true},
+      {"Value G", {on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::shift|keys::left)},
+      {"Value H", {on_menu_click}, menu_item_kind::radio},
+      {"Value I", {on_menu_click}, menu_item_kind::radio, true},
     }},
     {"&Window"},
     {texts::help, {
-      {texts::about},
+      {texts::about, {on_menu_click}},
     }},
   });
   
