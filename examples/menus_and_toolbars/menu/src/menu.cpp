@@ -81,5 +81,6 @@ namespace examples {
 }
 
 int main() {
+  application::enable_menu_images();
   application::run(examples::form1());
 }
