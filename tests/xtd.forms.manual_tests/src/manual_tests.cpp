@@ -41,7 +41,7 @@ int main() {
       {"Page &Seup...", {on_menu_click}},
       {texts::print, {on_menu_click}, xtd::drawing::images::print_16x16(), shortcut::cmd_p},
       {"-"},
-      {texts::quit, {on_menu_click}, xtd::drawing::images::quit_16x16(), shortcut::cmd_q},
+      {texts::exit, {on_menu_click}, xtd::drawing::images::quit_16x16(), environment::os_version().is_windows_platform() ? shortcut::alt_f4 : shortcut::cmd_q},
     }},
     {texts::edit, {
       {texts::undo, {on_menu_click}, xtd::drawing::images::undo_16x16(), shortcut::cmd_z},

@@ -65,6 +65,8 @@ namespace xtd {
       static const std::string edit;
       /// @brief Gets a system-defined text that has a string value of "&Execute". This field is constant.
       static const std::string execute;
+      /// @brief Gets a system-defined text that has a string value of "E&xit". This field is constant.
+      static const std::string exit;
       /// @brief Gets a system-defined text that has a string value of "&File". This field is constant.
       static const std::string file;
       /// @brief Gets a system-defined text that has a string value of "&Find...". This field is constant.
