@@ -28,7 +28,7 @@ namespace examples {
           {"Page &Seup...", {*this, &form1::on_menu_click}},
           {texts::print, {*this, &form1::on_menu_click}, xtd::drawing::images::print_16x16(), shortcut::cmd_p},
           {"-"},
-          {texts::quit, {*this, &form1::on_menu_click}, xtd::drawing::images::quit_16x16(), shortcut::cmd_q},
+          {texts::quit, {*this, &form1::on_menu_click}, xtd::drawing::images::quit_16x16(), environment::os_version().is_windows_platform() ? shortcut::alt_f4 : shortcut::cmd_q},
         }},
         {texts::edit, {
           {texts::undo, {*this, &form1::on_menu_click}, xtd::drawing::images::undo_16x16(), shortcut::cmd_z},
