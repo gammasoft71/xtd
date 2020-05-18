@@ -39,10 +39,6 @@ namespace xtd {
         bool checked() const {return checked_;}
         const std::vector<wx_menu_item>& items() const {return items_;}
         std::vector<wx_menu_item>& items() {return items_;}
-
-      private:
-        friend class wx_menu_bar;
-        friend class wx_menu;
         
         static bool isAboutItem(const std::string& text) {
           wxString itemText = text;
@@ -50,6 +46,14 @@ namespace xtd {
           itemText.Replace(".", "");
           itemText.LowerCase();
           return itemText == "about";
+        }
+        
+        static bool isHelpItem(const std::string& text) {
+          wxString itemText = text;
+          itemText.Replace("&", "");
+          itemText.Replace(".", "");
+          itemText.LowerCase();
+          return itemText == "help";
         }
         
         static bool isQuitItem(const std::string& text) {
@@ -68,6 +72,18 @@ namespace xtd {
           return itemText == "preferences" || itemText == "options";
         }
         
+        static bool isWindowItem(const std::string& text) {
+          wxString itemText = text;
+          itemText.Replace("&", "");
+          itemText.Replace(".", "");
+          itemText.LowerCase();
+          return itemText == "window";
+        }
+
+      private:
+        friend class wx_menu_bar;
+        friend class wx_menu;
+
         static wxWindowID MakeWindowID(const std::string& text) {
           if (isAboutItem(text)) return wxID_ABOUT;
           if (isQuitItem(text)) return wxID_EXIT;
@@ -187,14 +203,24 @@ namespace xtd {
     class wx_menu_bar : public wxMenuBar {
     public:
       wx_menu_bar(const std::vector<wx_menu_item>& items) : items_(items) {
+        auto has_window_menu = false;
+        auto has_help_menu = false;
+        
         for (auto& menu_item : items_) {
           auto [menu, name] = wx_menu_item::MakeMenu(menu_item);
+          if (wx_menu_item::isWindowItem(name)) has_window_menu = true;
+          if (wx_menu_item::isHelpItem(name)) {
+            has_help_menu = true;
+            if (!has_window_menu) {
+              has_window_menu = true;
+              Append(new wxMenu(), "&Window");
+            }          }
           Append(menu, name);
         }
         
 #if defined(__WXOSX__)
-        if (FindMenu("Window") == wxNOT_FOUND) Append(new wxMenu(), "&Window");
-        if (FindMenu("Help") == wxNOT_FOUND) Append(new wxMenu(), "&Help");
+        if (!has_window_menu) Append(new wxMenu(), "&Window");
+        if (!has_help_menu) Append(new wxMenu(), "&Help");
 #endif
         add_ids(items_);
       }
