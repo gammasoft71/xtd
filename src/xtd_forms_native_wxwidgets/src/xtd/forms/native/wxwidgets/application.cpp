@@ -80,10 +80,8 @@ void application::do_idle() {
 void application::enable_dark_mode() {
 #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = 1;
-  initialize();
 #elif defined(__WXGTK__)
   __xtd_gtk_enable_dark_mode__ = true;
-  initialize();
 #elif defined(__WXOSX__)
   initialize();
   __xtd_osx_enable_dark_mode__();
@@ -93,17 +91,14 @@ void application::enable_dark_mode() {
 void application::enable_button_images() {
 #if defined(__WXGTK__)
   __xtd_gtk_enable_button_images__ = true;
-  initialize();
 #endif
 }
 
 void application::enable_light_mode() {
 #if defined(__WXMSW__)
   __xtd_win32_enable_dark_mode__ = 0;
-  initialize(); // Must be last
 #elif defined(__WXGTK__)
   __xtd_gtk_enable_dark_mode__ = false;
-  initialize(); // Must be last
 #elif defined(__WXOSX__)
   initialize(); // Must be first
   __xtd_osx_enable_light_mode__();
@@ -113,7 +108,6 @@ void application::enable_light_mode() {
 void application::enable_menu_images() {
 #if defined(__WXGTK__)
   __xtd_gtk_enable_menu_images__ = true;
-  initialize();
 #endif
 }
 
@@ -140,7 +134,7 @@ void application::initialize() {
   init_dark_mode(__xtd_win32_enable_dark_mode__);
 #elif defined(__WXGTK__)
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
-  __gtk_menu_images__(__xtd_gtk_enable_button_images__);
+  __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
 #elif defined(__WXOSX__)
   wxMenuBar* menubar = new wxMenuBar;
