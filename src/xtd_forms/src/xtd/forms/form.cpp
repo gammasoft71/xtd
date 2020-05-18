@@ -336,6 +336,7 @@ void form::wm_key_up(message &message) {
 
 void form::on_handle_created(const event_args &e) {
   this->container_control::on_handle_created(e);
+  if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (this->accept_button_.has_value()) native::form::default_control(this->handle(), dynamic_cast<control&>(this->accept_button_.value().get()).handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
 }

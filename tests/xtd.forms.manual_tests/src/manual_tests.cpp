@@ -63,9 +63,9 @@ int main() {
       {"Hide", {on_menu_click}},
     }},
     {texts::options, {
-      {"Value A", {on_menu_click}, menu_item_kind::check, shortcut::alt_1},
+      {"Value A", {on_menu_click}, menu_item_kind::check, true, shortcut::alt_1},
       {"Value B", {on_menu_click}, menu_item_kind::check, shortcut::alt_2},
-      {"Value C", {on_menu_click}, menu_item_kind::check, shortcut::alt_3},
+      {"Value C", {on_menu_click}, menu_item_kind::check, true, shortcut::alt_3},
       {"-"},
       {"Value D", {on_menu_click}, menu_item_kind::radio, static_cast<shortcut>(keys::alt|keys::d)},
       {"Value E", {on_menu_click}, menu_item_kind::radio, true, static_cast<shortcut>(keys::alt|keys::e)},
@@ -75,7 +75,6 @@ int main() {
       {"Value H", {on_menu_click}, menu_item_kind::radio},
       {"Value I", {on_menu_click}, menu_item_kind::radio, true},
     }},
-    {"&Window"},
     {texts::help, {
       {texts::about, {on_menu_click}},
     }},
