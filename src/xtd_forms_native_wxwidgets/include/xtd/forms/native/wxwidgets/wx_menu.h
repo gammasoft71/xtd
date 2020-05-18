@@ -203,11 +203,14 @@ namespace xtd {
     class wx_menu_bar : public wxMenuBar {
     public:
       wx_menu_bar(const std::vector<wx_menu_item>& items) : items_(items) {
+#if defined(__WXOSX__)
         auto has_window_menu = false;
         auto has_help_menu = false;
-        
+#endif
+
         for (auto& menu_item : items_) {
           auto [menu, name] = wx_menu_item::MakeMenu(menu_item);
+#if defined(__WXOSX__)
           if (wx_menu_item::isWindowItem(name)) has_window_menu = true;
           if (wx_menu_item::isHelpItem(name)) {
             has_help_menu = true;
@@ -215,6 +218,7 @@ namespace xtd {
               has_window_menu = true;
               Append(new wxMenu(), "&Window");
             }          }
+#endif
           Append(menu, name);
         }
         
