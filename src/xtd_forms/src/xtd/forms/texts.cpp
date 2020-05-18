@@ -30,6 +30,7 @@ const std::string texts::descending = "&Descending";
 const std::string texts::down = "&Down";
 const std::string texts::edit = "&Edit";
 const std::string texts::execute = "&Execute";
+const std::string texts::exit = "E&xit";
 const std::string texts::file = "&File";
 const std::string texts::find = "&Find...";
 const std::string texts::first = "&First";

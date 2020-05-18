@@ -105,6 +105,8 @@ namespace xtd {
         static std::string MakeItemText(const std::string& text, size_t shortcut) {
           using namespace std::literals;
 #if defined(__WXOSX__)
+          if (isAboutItem(text)) return "";
+          if (isQuitItem(text)) return "";
           if (isPreferencesItem(text)) return "";
 #endif
           if (shortcut == VK_NONE) return text;
