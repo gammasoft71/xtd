@@ -20,6 +20,14 @@ forms::create_params tab_page::create_params() const {
   return create_params;
 }
 
+scrollable_control& tab_page::auto_scroll(bool auto_scroll) {
+  if (this->auto_scroll_ != auto_scroll) {
+    panel::auto_scroll(auto_scroll);
+    if (parent().has_value()) static_cast<tab_control&>(parent().value().get()).recreate_handle();
+  }
+  return *this;
+}
+
 control& tab_page::text(const std::string& text) {
   if (this->text_ != text) {
     if (this->parent().has_value()) {
