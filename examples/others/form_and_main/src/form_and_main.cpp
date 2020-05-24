@@ -21,9 +21,7 @@ namespace examples {
       button.parent(*this);
       button.text("Close");
       button.location({10, 10});
-      button.click += [&] {
-        close();
-      };
+      button.click += {*this, &form::close};
     }
     
   private:
