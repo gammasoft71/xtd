@@ -52,7 +52,7 @@ void form::menu(intptr_t form, intptr_t menu) {
 #endif
 
   if (menu && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
-  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(reinterpret_cast<wx_menu_bar*>(menu));
+  static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(menu ? reinterpret_cast<wx_menu_bar*>(menu) : new wxMenuBar);
 }
 
 bool form::minimize(intptr_t form) {
