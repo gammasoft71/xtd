@@ -9,6 +9,9 @@ namespace xtd {
     public:
       tab_page();
 
+      using panel::auto_scroll;
+      scrollable_control& auto_scroll(bool auto_scroll) override;
+      
       using panel::text;
       control& text(const std::string& text) override;
 
