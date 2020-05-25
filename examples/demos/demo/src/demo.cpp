@@ -291,6 +291,7 @@ int main() {
 
   panel panel_color;
   panel_color.location({10, 10});
+  panel_color.border_style(forms::border_style::fixed_single);
   panel_color.back_color(system_colors::window());
   panel_color.parent(tab_page_dialogs);
   panel_color.size({400, 250});
