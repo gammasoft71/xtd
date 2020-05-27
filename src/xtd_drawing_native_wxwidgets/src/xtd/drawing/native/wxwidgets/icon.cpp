@@ -110,6 +110,7 @@ void icon::save(intptr_t icon, std::ostream& stream) {
 }
 
 intptr_t icon::to_image(intptr_t icon) {
+  if (icon == 0) return 0;
   wxIconBundle* icon_bundle = reinterpret_cast<wxIconBundle*>(icon);
   wxIcon wx_icon = icon_bundle->GetIcon();
   if (!wx_icon.IsOk()) return 0;

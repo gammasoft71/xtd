@@ -40,4 +40,5 @@
 #include "drawing/system_brushes.h"
 #include "drawing/system_colors.h"
 #include "drawing/system_fonts.h"
+#include "drawing/system_icons.h"
 #include "drawing/system_pens.h"
