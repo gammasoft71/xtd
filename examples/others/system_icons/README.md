@@ -1,6 +1,6 @@
 # system_icons
 
-demonstrates the use of [xtd::forms::system_icons](../../../src/xtd_forms/include/xtd/drawing/system_icons.hpp) component.
+demonstrates the use of **xtd::drawing::system_icon** component.
 
 # Sources
 
