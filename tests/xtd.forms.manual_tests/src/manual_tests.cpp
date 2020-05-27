@@ -80,6 +80,14 @@ int main() {
     }},
   });
   
+  picture_box picture;
+  picture.parent(form_main);
+  picture.size_mode(picture_box_size_mode::auto_size);
+  picture.image(drawing::system_icons::gnome_logo().to_bitmap());
+  //picture.image(drawing::system_icons::from_name("x-office-address-book", drawing::size(512, 512)).to_bitmap());
+  form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+  form_main.auto_size(true);
+  
   application::enable_menu_images();
   application::run(form_main);
 }
