@@ -39,6 +39,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/system_brushes.h
   include/xtd/drawing/system_colors.h
   include/xtd/drawing/system_fonts.h
+  include/xtd/drawing/system_icons.h
   include/xtd/drawing/system_pens.h
 )
 
@@ -95,6 +96,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/system_brushes.cpp
   src/xtd/drawing/system_colors.cpp
   src/xtd/drawing/system_fonts.cpp
+  src/xtd/drawing/system_icons.cpp
   src/xtd/drawing/system_pens.cpp
 )
 
@@ -615,6 +617,7 @@ source_group(src\\xtd\\drawing\\text FILES ${XTD_DRAWING_TEXT_SOURCES})
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_definitions(-D__XTD_DRAWING_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
 # Library properties
 add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_DRAWING_INCLUDES} ${XTD_DRAWING_DRAWING2D_INCLUDES} ${XTD_DRAWING_IMAGING_INCLUDES} ${XTD_DRAWING_TEXT_INCLUDES} ${XTD_DRAWING_SOURCES} ${XTD_DRAWING_RESOURCES_SOURCES} ${XTD_DRAWING_TEXT_SOURCES})
