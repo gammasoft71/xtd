@@ -40,6 +40,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/system_colors.h
   include/xtd/drawing/system_fonts.h
   include/xtd/drawing/system_icons.h
+  include/xtd/drawing/system_images.h
   include/xtd/drawing/system_pens.h
 )
 
@@ -96,7 +97,7 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/system_brushes.cpp
   src/xtd/drawing/system_colors.cpp
   src/xtd/drawing/system_fonts.cpp
-  src/xtd/drawing/system_icons.cpp
+  src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
 )
 

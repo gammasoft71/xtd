@@ -1,8 +1,9 @@
-#include "../../../include/xtd/drawing/system_icons.h"
+#include "../../../include/xtd/drawing/bitmap.h"
+#include "../../../include/xtd/drawing/system_images.h"
 #include <filesystem>
 #include <map>
 #include <xtd/environment.h>
-//#include <xtd/drawing/native/system_icons.h>
+//#include <xtd/drawing/native/system_images.h>
 
 using namespace std;
 using namespace std::filesystem;
@@ -10,39 +11,39 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 namespace {
-  static path system_icons_resource_path() {
+  static path system_images_resource_path() {
   #if defined(__XTD_DRAWING_RESOURCES_PATH__)
-    return path(__XTD_DRAWING_RESOURCES_PATH__)/"share"/"xtd"/"resources"/"system_icons";
+    return path(__XTD_DRAWING_RESOURCES_PATH__)/"share"/"xtd"/"resources"/"system_images";
   #else
     return {};
   #endif
   }
 }
 
-icon system_icons::from_name(const string& theme, const string& name, const size& size) {
+image system_images::from_name(const string& theme, const string& name, const size& size) {
   static vector<drawing::size> default_sizes = {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
   static vector<string> default_size_names = {"16x16", "24x24", "32x32", "48x48", "64x64", "96x96", "128x128", "256x256", "512x512", "1024x1024"};
 
-  auto theme_path = exists(system_icons_resource_path()/theme) ? system_icons_resource_path()/theme : system_icons_resource_path()/default_theme();
+  auto theme_path = exists(system_images_resource_path()/theme) ? system_images_resource_path()/theme : system_images_resource_path()/default_theme();
   /// @todo find closed user size
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), size);
   auto index_sizes = it_sizes != default_sizes.end() ? it_sizes - default_sizes.begin() : 2;
   
-  if (exists(theme_path/default_size_names[index_sizes]/(name + ".png"))) return icon(theme_path/default_size_names[index_sizes]/(name + ".png"));
-  if (exists(system_icons_resource_path()/"xtd"/default_size_names[index_sizes]/(name + ".png"))) return icon(system_icons_resource_path()/"xtd"/default_size_names[index_sizes]/(name + ".png"));
-  if (exists(theme_path/default_size_names[index_sizes]/"image-missing.png")) return icon(theme_path/default_size_names[index_sizes]/"image-missing.png");
-  if (exists(system_icons_resource_path()/"xtd"/default_size_names[index_sizes]/"image-missing.png")) return icon(system_icons_resource_path()/"xtd"/default_size_names[index_sizes]/"image-missing.png");
-  return icon();
+  if (exists(theme_path/default_size_names[index_sizes]/(name + ".png"))) return bitmap((theme_path/default_size_names[index_sizes]/(name + ".png")).string());
+  if (exists(system_images_resource_path()/"xtd"/default_size_names[index_sizes]/(name + ".png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[index_sizes]/(name + ".png")).string());
+  if (exists(theme_path/default_size_names[index_sizes]/"image-missing.png")) return bitmap((theme_path/default_size_names[index_sizes]/"image-missing.png").string());
+  if (exists(system_images_resource_path()/"xtd"/default_size_names[index_sizes]/"image-missing.png")) return bitmap((system_images_resource_path()/"xtd"/default_size_names[index_sizes]/"image-missing.png").string());
+  return image::empty;
 }
 
-vector<string> system_icons::contexts() {
+vector<string> system_images::contexts() {
   vector<string> result;
   for (const auto& context_name : context_names())
     result.push_back(context_name.first);
   return result;
 }
 
-map<string, vector<string>> system_icons::context_names() {
+map<string, vector<string>> system_images::context_names() {
   static map<string, vector<string>> context_names {
     {"Actions", {"address-book-new", "application-exit", "appointment-new", "call-start", "call-stop", "contact-new", "document-new", "document-open", "document-open-recent", "document-page-setup", "document-print", "document-print-preview", "document-properties", "document-revert", "document-save", "document-save-as", "document-send", "edit-clear", "edit-copy", "edit-cut", "edit-delete", "edit-find", "edit-find-replace", "edit-paste", "edit-redo", "edit-select-all", "edit-undo", "folder-new", "format-indent-less", "format-indent-more", "format-justify-center", "format-justify-fill", "format-justify-left", "format-justify-right", "format-text-direction-ltr", "format-text-direction-rtl", "format-text-bold", "format-text-italic", "format-text-underline", "format-text-strikethrough", "go-bottom", "go-down", "go-first", "go-home", "go-jump", "go-last", "go-next", "go-previous", "go-top", "go-up", "help-about", "help-contents", "help-faq", "insert-image", "insert-link", "insert-object", "insert-text", "list-add", "list-remove", "mail-forward", "mail-mark-important", "mail-mark-junk", "mail-mark-notjunk", "mail-mark-read", "mail-mark-unread", "mail-message-new", "mail-reply-all", "mail-reply-sender", "mail-send", "mail-send-receive", "media-eject", "media-playback-pause", "media-playback-start", "media-playback-stop", "media-record", "media-seek-backward", "media-seek-forward", "media-skip-backward", "media-skip-forward", "object-flip-horizontal", "object-flip-vertical", "object-rotate-left", "object-rotate-right", "process-stop", "system-lock-screen", "system-log-out", "system-run", "system-search", "system-reboot", "system-shutdown", "tools-check-spelling", "view-fullscreen", "view-refresh", "view-restore", "view-sort-ascending", "view-sort-descending", "window-close", "window-new", "zoom-fit-best", "zoom-in", "zoom-original", "zoom-out"}},
     {"Animations", {"process-working"}},
@@ -60,14 +61,14 @@ map<string, vector<string>> system_icons::context_names() {
   return context_names;
 }
 
-string system_icons::default_theme() {
+string system_images::default_theme() {
   if (environment::os_version().is_windows_platform()) return "windows";
   if (environment::os_version().is_osx_platform()) return "macos";
   if (environment::os_version().is_linux_platform()) return "gnome";
   return "xtd";
 }
 
-std::vector<string> system_icons::names() {
+std::vector<string> system_images::names() {
   vector<string> result;
   for (const auto& context_name : context_names())
     for (const auto& name : context_name.second)
@@ -75,10 +76,10 @@ std::vector<string> system_icons::names() {
   return result;
 }
 
-std::vector<xtd::drawing::size> system_icons::sizes() {
+std::vector<xtd::drawing::size> system_images::sizes() {
   return {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
 }
 
-vector<string> system_icons::themes() {
+vector<string> system_images::themes() {
   return {"windows", "macos", "gnome", "xtd"};
 }
