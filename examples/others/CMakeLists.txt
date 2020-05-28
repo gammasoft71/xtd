@@ -34,7 +34,7 @@ add_projects(
   painting
   smileys
   stopwatch_form
-  system_icons
+  system_images
   text_box_multiline
   text_box_password
   texts

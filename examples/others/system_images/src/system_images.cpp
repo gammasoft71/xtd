@@ -12,7 +12,7 @@ namespace example {
   class form1 : public form {
   public:
     form1() {
-      text("System icons example");
+      text("System images example");
       client_size({430, 530});
       controls().push_back_range({choice_theme, choice_context, choice_size, picture, label_picture_name, button_previous, button_next});
 
@@ -23,12 +23,12 @@ namespace example {
 
       choice_theme.bounds({75, 25, 280, 25});
       choice_theme.items().push_back("default_theme");
-      choice_theme.items().push_back_range(system_icons::themes());
+      choice_theme.items().push_back_range(system_images::themes());
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += {*this, &form1::update_form};
 
       choice_context.bounds({75, 55, 280, 25});
-      choice_context.items().push_back_range(system_icons::contexts());
+      choice_context.items().push_back_range(system_images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += [&] {
         current_image_index = 0;
@@ -36,7 +36,7 @@ namespace example {
       };
 
       choice_size.bounds({75, 85, 280, 25});
-      for (auto size  : system_icons::sizes())
+      for (auto size  : system_images::sizes())
         if (size.width() <= picture.width() && size.height() <= picture.height())
           choice_size.items().push_back({strings::format("{}x{} pixels", size.width(), size.height()), size});
       choice_size.selected_index(7);
@@ -47,7 +47,7 @@ namespace example {
 
       button_previous.auto_repeat(true);
       button_previous.enabled(false);
-      button_previous.image(system_icons::from_name("go-previous").to_bitmap());
+      button_previous.image(system_images::from_name("go-previous"));
       button_previous.image_align(content_alignment::middle_left);
       button_previous.text("&Previous");
       button_previous.click += [&] {
@@ -57,12 +57,12 @@ namespace example {
 
       button_previous.bounds({75, 460, 125, 40});
       button_next.auto_repeat(true);
-      button_next.image(system_icons::from_name("go-next").to_bitmap());
+      button_next.image(system_images::from_name("go-next"));
       button_next.image_align(content_alignment::middle_right);
       button_next.text("&Next");
       button_next.bounds({230, 460, 125, 40});
       button_next.click += [&] {
-        if (current_image_index < system_icons::names(choice_context.selected_item().value()).size()) ++current_image_index;
+        if (current_image_index < system_images::names(choice_context.selected_item().value()).size()) ++current_image_index;
         update_form();
       };
       
@@ -72,12 +72,12 @@ namespace example {
   private:
     void update_form() {
       if (choice_theme.selected_index() == 0)
-        picture.image(system_icons::from_name(system_icons::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())).to_bitmap());
+        picture.image(system_images::from_name(system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
       else
-        picture.image(system_icons::from_name(choice_theme.selected_item().value(), system_icons::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())).to_bitmap());
-      label_picture_name.text(system_icons::names(choice_context.selected_item().value())[current_image_index]);
+        picture.image(system_images::from_name(choice_theme.selected_item().value(), system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
+      label_picture_name.text(system_images::names(choice_context.selected_item().value())[current_image_index]);
       button_previous.enabled(current_image_index > 0);
-      button_next.enabled(current_image_index < system_icons::names(choice_context.selected_item().value()).size() - 1);
+      button_next.enabled(current_image_index < system_images::names(choice_context.selected_item().value()).size() - 1);
     }
     
     int current_image_index = 0;
