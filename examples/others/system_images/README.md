@@ -1,6 +1,6 @@
 # system_images
 
-demonstrates the use of **xtd::drawing::system_icon** component.
+demonstrates the use of **xtd::drawing::system_images** component.
 
 # Sources
 

@@ -50,12 +50,12 @@ namespace example {
       button_previous.image(system_images::from_name("go-previous"));
       button_previous.image_align(content_alignment::middle_left);
       button_previous.text("&Previous");
+      button_previous.bounds({75, 460, 125, 40});
       button_previous.click += [&] {
         if (current_image_index > 0) --current_image_index;
         update_form();
       };
 
-      button_previous.bounds({75, 460, 125, 40});
       button_next.auto_repeat(true);
       button_next.image(system_images::from_name("go-next"));
       button_next.image_align(content_alignment::middle_right);
