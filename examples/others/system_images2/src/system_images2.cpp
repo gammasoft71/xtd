@@ -13,9 +13,33 @@ namespace example {
   public:
     form1() {
       text("System images 2 example");
-      client_size({1170, 470});
-      controls().push_back_range({choice_context, choice_size, picture_xtd_theme, picture_gnome_theme, picture_macos_theme, picture_windows_theme, label_picture_name, label_picture_xtd_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_windows_theme, button_previous, button_next});
+      client_size({1170, 485});
+      controls().push_back_range({label_picture_xtd_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_windows_theme, picture_xtd_theme, picture_gnome_theme, picture_macos_theme, picture_windows_theme, panel_separator_line, label_picture_context, label_picture_name, label_picture_size, button_context_previous, button_context_next, button_name_previous, button_name_next, button_decrease, button_increase});
 
+      label_picture_xtd_theme.text_align(content_alignment::middle_center);
+      label_picture_xtd_theme.bounds({10, 25, 280, label_picture_name.height()});
+      label_picture_xtd_theme.text("xtd");
+      label_picture_xtd_theme.border_style(forms::border_style::fixed_3d);
+      label_picture_xtd_theme.back_color(label_picture_xtd_theme.text() == system_images::default_theme() ? system_colors::menu_highlight() : system_colors::window());
+      
+      label_picture_gnome_theme.text_align(content_alignment::middle_center);
+      label_picture_gnome_theme.bounds({300, 25, 280, label_picture_name.height()});
+      label_picture_gnome_theme.text("gnome");
+      label_picture_gnome_theme.border_style(forms::border_style::fixed_3d);
+      label_picture_gnome_theme.back_color(label_picture_gnome_theme.text() == system_images::default_theme() ? system_colors::menu_highlight() : system_colors::window());
+      
+      label_picture_macos_theme.text_align(content_alignment::middle_center);
+      label_picture_macos_theme.bounds({590, 25, 280, label_picture_name.height()});
+      label_picture_macos_theme.text("macos");
+      label_picture_macos_theme.border_style(forms::border_style::fixed_3d);
+      label_picture_macos_theme.back_color(label_picture_macos_theme.text() == system_images::default_theme() ? system_colors::menu_highlight() : system_colors::window());
+      
+      label_picture_windows_theme.text_align(content_alignment::middle_center);
+      label_picture_windows_theme.bounds({880, 25, 280, label_picture_name.height()});
+      label_picture_windows_theme.text("windows");
+      label_picture_windows_theme.border_style(forms::border_style::fixed_3d);
+      label_picture_windows_theme.back_color(label_picture_windows_theme.text() == system_images::default_theme() ? system_colors::menu_highlight() : system_colors::window());
+      
       picture_xtd_theme.back_color(system_colors::window());
       picture_xtd_theme.border_style(forms::border_style::fixed_3d);
       picture_xtd_theme.bounds({10, 65, 280, 280});
@@ -35,92 +59,131 @@ namespace example {
       picture_windows_theme.border_style(forms::border_style::fixed_3d);
       picture_windows_theme.bounds({880, 65, 280, 280});
       picture_windows_theme.size_mode(picture_box_size_mode::center_image);
-      
-      choice_context.bounds({10, 25, 280, 25});
-      choice_context.items().push_back_range(system_images::contexts());
-      choice_context.selected_index(0);
-      choice_context.selected_index_changed += [&] {
-        current_image_index = 0;
-        update_form();
-      };
 
-      choice_size.bounds({300, 25, 280, 25});
-      for (auto size  : system_images::sizes())
-        if (size.width() <= picture_xtd_theme.width() && size.height() <= picture_xtd_theme.height())
-          choice_size.items().push_back({strings::format("{}x{} pixels", size.width(), size.height()), size});
-      choice_size.selected_index(7);
-      choice_size.selected_index_changed += {*this, &form1::update_form};
+      panel_separator_line.back_color(system_colors::control_text());
+      panel_separator_line.bounds({10, 360, 1150, 1});
+
+      label_picture_context.text_align(content_alignment::middle_center);
+      label_picture_context.border_style(forms::border_style::fixed_3d);
+      label_picture_context.back_color(system_colors::window());
+      label_picture_context.bounds({10, 375, 280, label_picture_name.height()});
 
       label_picture_name.text_align(content_alignment::middle_center);
       label_picture_name.border_style(forms::border_style::fixed_3d);
       label_picture_name.back_color(system_colors::window());
-      label_picture_name.bounds({590, 25, 280, label_picture_name.height()});
+      label_picture_name.bounds({300, 375, 280, label_picture_name.height()});
+      
+      label_picture_size.text_align(content_alignment::middle_center);
+      label_picture_size.border_style(forms::border_style::fixed_3d);
+      label_picture_size.back_color(system_colors::window());
+      label_picture_size.bounds({590, 375, 280, label_picture_name.height()});
 
-      label_picture_xtd_theme.text_align(content_alignment::middle_center);
-      label_picture_xtd_theme.bounds({10, 360, 280, label_picture_name.height()});
-      label_picture_xtd_theme.text("xtd");
-      
-      label_picture_gnome_theme.text_align(content_alignment::middle_center);
-      label_picture_gnome_theme.bounds({300, 360, 280, label_picture_name.height()});
-      label_picture_gnome_theme.text("gnome");
-      
-      label_picture_macos_theme.text_align(content_alignment::middle_center);
-      label_picture_macos_theme.bounds({590, 360, 280, label_picture_name.height()});
-      label_picture_macos_theme.text("macos");
-      
-      label_picture_windows_theme.text_align(content_alignment::middle_center);
-      label_picture_windows_theme.bounds({880, 360, 280, label_picture_name.height()});
-      label_picture_windows_theme.text("windows");
-      
-      button_previous.auto_repeat(true);
-      button_previous.enabled(false);
-      button_previous.image(system_images::from_name("go-previous"));
-      button_previous.image_align(content_alignment::middle_left);
-      button_previous.text("&Previous");
-      button_previous.bounds({10, 400, 125, 40});
-      button_previous.click += [&] {
-        if (current_image_index > 0) --current_image_index;
-        update_form();
-      };
-
-      button_next.auto_repeat(true);
-      button_next.image(system_images::from_name("go-next"));
-      button_next.image_align(content_alignment::middle_right);
-      button_next.text("&Next");
-      button_next.bounds({165, 400, 125, 40});
-      button_next.click += [&] {
-        if (current_image_index < system_images::names(choice_context.selected_item().value()).size()) ++current_image_index;
+      button_context_previous.auto_repeat(true);
+      button_context_previous.enabled(false);
+      button_context_previous.image(system_images::from_name("go-previous"));
+      button_context_previous.image_align(content_alignment::middle_left);
+      button_context_previous.text("&Previous");
+      button_context_previous.bounds({10, 415, 125, 40});
+      button_context_previous.click += [&] {
+        current_context_index--;
+        current_name_index= 0;
         update_form();
       };
       
+      button_context_next.auto_repeat(true);
+      button_context_next.image(system_images::from_name("go-next"));
+      button_context_next.image_align(content_alignment::middle_right);
+      button_context_next.text("&Next");
+      button_context_next.bounds({165, 415, 125, 40});
+      button_context_next.click += [&] {
+        current_context_index++;
+        current_name_index= 0;
+        update_form();
+      };
+
+      button_name_previous.auto_repeat(true);
+      button_name_previous.enabled(false);
+      button_name_previous.image(system_images::from_name("go-previous"));
+      button_name_previous.image_align(content_alignment::middle_left);
+      button_name_previous.text("P&revious");
+      button_name_previous.bounds({300, 415, 125, 40});
+      button_name_previous.click += [&] {
+        current_name_index--;
+        update_form();
+      };
+      
+      button_name_next.auto_repeat(true);
+      button_name_next.image(system_images::from_name("go-next"));
+      button_name_next.image_align(content_alignment::middle_right);
+      button_name_next.text("N&ext");
+      button_name_next.bounds({455, 415, 125, 40});
+      button_name_next.click += [&] {
+        current_name_index++;
+        update_form();
+      };
+
+      button_decrease.auto_repeat(true);
+      button_decrease.enabled(false);
+      button_decrease.image(system_images::from_name("list-remove"));
+      button_decrease.image_align(content_alignment::middle_left);
+      button_decrease.text("&Decrease");
+      button_decrease.bounds({590, 415, 125, 40});
+      button_decrease.click += [&] {
+        current_size_index--;
+        update_form();
+      };
+      
+      button_increase.auto_repeat(true);
+      button_increase.image(system_images::from_name("list-add"));
+      button_increase.image_align(content_alignment::middle_right);
+      button_increase.text("&Increase");
+      button_increase.bounds({745, 415, 125, 40});
+      button_increase.click += [&] {
+        current_size_index++;
+        update_form();
+      };
+
       update_form();
     }
     
   private:
     void update_form() {
-      picture_xtd_theme.image(system_images::from_name("xtd", system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
-      picture_gnome_theme.image(system_images::from_name("gnome", system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
-      picture_macos_theme.image(system_images::from_name("macos", system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
-      picture_windows_theme.image(system_images::from_name("windows", system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
-      label_picture_name.text(system_images::names(choice_context.selected_item().value())[current_image_index]);
-      button_previous.enabled(current_image_index > 0);
-      button_next.enabled(current_image_index < system_images::names(choice_context.selected_item().value()).size() - 1);
+      picture_xtd_theme.image(system_images::from_name("xtd", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]));
+      picture_gnome_theme.image(system_images::from_name("gnome", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]));
+      picture_macos_theme.image(system_images::from_name("macos", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]));
+      picture_windows_theme.image(system_images::from_name("windows", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]));
+      label_picture_context.text(system_images::contexts()[current_context_index]);
+      label_picture_name.text(system_images::names(system_images::contexts()[current_context_index])[current_name_index]);
+      label_picture_size.text(strings::format("{}x{} pixels", system_images::sizes()[current_size_index].width(), system_images::sizes()[current_size_index].height()));
+      button_context_previous.enabled(current_context_index > 0);
+      button_context_next.enabled(current_context_index < system_images::contexts().size() - 1);
+      button_name_previous.enabled(current_name_index > 0);
+      button_name_next.enabled(current_name_index < system_images::names(system_images::contexts()[current_context_index]).size() - 1);
+      button_decrease.enabled(current_size_index > 0);
+      button_increase.enabled(current_size_index < system_images::sizes().size() - 1);
     }
     
-    int current_image_index = 0;
-    choice choice_context;
-    choice choice_size;
-    picture_box picture_xtd_theme;
-    picture_box picture_gnome_theme;
-    picture_box picture_macos_theme;
-    picture_box picture_windows_theme;
-    label label_picture_name;
+    int current_context_index = 0;
+    int current_name_index = 0;
+    int current_size_index = 7;
     label label_picture_xtd_theme;
     label label_picture_gnome_theme;
     label label_picture_macos_theme;
     label label_picture_windows_theme;
-    button button_previous;
-    button button_next;
+    picture_box picture_xtd_theme;
+    picture_box picture_gnome_theme;
+    picture_box picture_macos_theme;
+    picture_box picture_windows_theme;
+    panel panel_separator_line;
+    label label_picture_context;
+    label label_picture_name;
+    label label_picture_size;
+    button button_context_previous;
+    button button_context_next;
+    button button_name_previous;
+    button button_name_next;
+    button button_decrease;
+    button button_increase;
   };
 }
 
