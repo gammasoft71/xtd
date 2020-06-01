@@ -16,15 +16,26 @@ namespace xtd {
     class system_icons static_ {
     public:
       static xtd::drawing::icon application() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("application-x-executable")));}
+      static xtd::drawing::icon application(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("application-x-executable", size)));}
       static xtd::drawing::icon error() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-error")));}
+      static xtd::drawing::icon error(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-error", size)));}
       static xtd::drawing::icon exclamation() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-warning")));}
+      static xtd::drawing::icon exclamation(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-warning", size)));}
       static xtd::drawing::icon information() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-information")));}
+      static xtd::drawing::icon information(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-information", size)));}
       static xtd::drawing::icon question() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-question")));}
+      static xtd::drawing::icon question(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-question", size)));}
       static xtd::drawing::icon shield() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-password")));}
+      static xtd::drawing::icon shield(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-password", size)));}
       static xtd::drawing::icon win_logo() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("windows", "start-here")));}
-      
+      static xtd::drawing::icon win_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("windows", "start-here", size)));}
+
       static xtd::drawing::icon macos_logo() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("macos", "start-here")));}
+      static xtd::drawing::icon macos_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("macos", "start-here", size)));}
       static xtd::drawing::icon gnome_logo() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("gnome", "start-here")));}
+      static xtd::drawing::icon gnome_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("gnome", "start-here", size)));}
+      static xtd::drawing::icon xtd_logo() {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("xtd", "start-here")));}
+      static xtd::drawing::icon xtd_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("xtd", "start-here", size)));}
     };
   }
 }
