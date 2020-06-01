@@ -1,6 +1,7 @@
 #pragma once
 #include "menu.h"
 #include "message.h"
+#include <xtd/drawing/size.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,7 +20,10 @@ namespace xtd {
       /// @cond
       ~main_menu();
       /// @endcond
-      
+
+      static xtd::forms::main_menu create_standard_items();
+      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size);
+
     protected:
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
