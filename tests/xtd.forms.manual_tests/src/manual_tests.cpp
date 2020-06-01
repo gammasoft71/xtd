@@ -23,9 +23,9 @@ int main() {
   //form_main.menu(menu);
   form_main.menu({
     {texts::file, {
-      {texts::new_, {on_menu_click}, xtd::drawing::images::new_16x16(), shortcut::cmd_n},
+      {texts::new_, {on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
       {"-"},
-      {texts::open, {on_menu_click}, xtd::drawing::images::open_16x16(), shortcut::cmd_o},
+      {texts::open, {on_menu_click}, menu_images::file_open(), shortcut::cmd_o},
       {"Open recen", {
         {"Path/File1", {on_menu_click}},
         {"Path/File2", {on_menu_click}},
@@ -35,29 +35,29 @@ int main() {
       }},
       {texts::close, {on_menu_click}, shortcut::cmd_w},
       {"-"},
-      {texts::save, {on_menu_click}, xtd::drawing::images::save_16x16(), shortcut::cmd_s},
+      {texts::save, {on_menu_click}, menu_images::file_save(), shortcut::cmd_s},
       {texts::save_as, {on_menu_click}},
       {"-"},
       {"Page &Seup...", {on_menu_click}},
-      {texts::print, {on_menu_click}, xtd::drawing::images::print_16x16(), shortcut::cmd_p},
+      {texts::print, {on_menu_click},menu_images::file_print(), shortcut::cmd_p},
       {"-"},
-      {texts::exit, {on_menu_click}, xtd::drawing::images::quit_16x16(), shortcut::alt_f4},
+      {texts::exit, {on_menu_click}, menu_images::file_exit(), shortcut::alt_f4},
     }},
     {texts::edit, {
-      {texts::undo, {on_menu_click}, xtd::drawing::images::undo_16x16(), shortcut::cmd_z},
-      {texts::redo, {on_menu_click}, xtd::drawing::images::redo_16x16(), shortcut::cmd_shift_z},
+      {texts::undo, {on_menu_click}, menu_images::edit_undo(), shortcut::cmd_z},
+      {texts::redo, {on_menu_click}, menu_images::edit_redo(), shortcut::cmd_shift_z},
       {"-"},
-      {texts::cut, {on_menu_click}, xtd::drawing::images::cut_16x16(), shortcut::cmd_x},
-      {texts::copy, {on_menu_click}, xtd::drawing::images::copy_16x16(), shortcut::cmd_c},
-      {texts::paste, {on_menu_click}, xtd::drawing::images::paste_16x16(), shortcut::cmd_v},
+      {texts::cut, {on_menu_click}, menu_images::edit_cut(), shortcut::cmd_x},
+      {texts::copy, {on_menu_click}, menu_images::edit_copy(), shortcut::cmd_c},
+      {texts::paste, {on_menu_click}, menu_images::edit_paste(), shortcut::cmd_v},
       {"-"},
       {texts::select_all, {on_menu_click}, shortcut::cmd_a},
       {"-"},
       {texts::options, {on_menu_click}},
     }},
     {texts::view, {
-      {texts::back, {on_menu_click}, xtd::drawing::images::back_16x16()},
-      {texts::forward, {on_menu_click}, xtd::drawing::images::forward_16x16()},
+      {texts::back, {on_menu_click}, menu_images::view_back()},
+      {texts::forward, {on_menu_click}, menu_images::view_forward()},
       {"-"},
       {"Show", {on_menu_click}},
       {"Hide", {on_menu_click}},
@@ -76,15 +76,15 @@ int main() {
       {"Value I", {on_menu_click}, menu_item_kind::radio, true},
     }},
     {texts::help, {
-      {texts::about, {on_menu_click}},
+      {texts::about, {on_menu_click}, menu_images::help_about()},
     }},
   });
   
   picture_box picture;
   picture.parent(form_main);
   picture.size_mode(picture_box_size_mode::auto_size);
-  picture.image(drawing::system_icons::gnome_logo().to_bitmap());
-  //picture.image(drawing::system_icons::from_name("x-office-address-book", drawing::size(512, 512)).to_bitmap());
+  //picture.image(drawing::system_icons::macos_logo({512, 512}).to_bitmap());
+  picture.image(drawing::system_images::from_name("text-x-generic", drawing::size(512, 512)));
   form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   form_main.auto_size(true);
   

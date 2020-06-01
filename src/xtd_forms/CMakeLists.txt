@@ -96,6 +96,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/main_menu.h
   include/xtd/forms/menu.h
   include/xtd/forms/menu_item.h
+  include/xtd/forms/menu_images.h
   include/xtd/forms/message.h
   include/xtd/forms/message_box.h
   include/xtd/forms/message_box_buttons.h
