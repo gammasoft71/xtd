@@ -24,7 +24,6 @@
 #include "drawing/graphics_unit.h"
 #include "drawing/icon.h"
 #include "drawing/image.h"
-#include "drawing/images.h"
 #include "drawing/known_color.h"
 #include "drawing/pen.h"
 #include "drawing/pens.h"
