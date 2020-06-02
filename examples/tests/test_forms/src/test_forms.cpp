@@ -21,7 +21,7 @@ int main() {
   auto source_path = path("/Users/yves/Projects/xtd/src/xtd_drawing/resources/system_images/gnome");
   auto target_path = path("/Users/yves/Projects/xtd/src/xtd_drawing/resources/system_images/xtd");
   auto sizes = {"16x16", "24x24", "32x32", "48x48", "64x64", "96x96", "128x128", "256x256", "512x512", "1024x1024"};
-  auto images = {"help-faq"};
+  auto images = {"object-rotate-left", "objct-rotate-right"};
   
   for (auto size : sizes) {
     for (auto image : images) {
