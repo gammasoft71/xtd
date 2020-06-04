@@ -22,21 +22,30 @@ namespace {
     return {};
   #endif
   }
+
+  drawing::size get_closed_size(const drawing::size& size) {
+    static vector<drawing::size> default_sizes = {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
+    for (auto default_size : default_sizes)
+      if (default_size.width() >= size.width() && default_size.height() >= size.height()) return default_size;
+    return {1024, 1024};
+  }
 }
 
 image system_images::from_name(const string& theme, const string& name, const size& size) {
-  static vector<drawing::size> default_sizes = {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
-  static vector<string> default_size_names = {"16x16", "24x24", "32x32", "48x48", "64x64", "96x96", "128x128", "256x256", "512x512", "1024x1024"};
+  static vector<drawing::size> default_sizes = {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
+  static vector<string> default_size_names = {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
 
   auto theme_path = exists(system_images_resource_path()/theme) ? system_images_resource_path()/theme : system_images_resource_path()/default_theme();
-  /// @todo find closed user size
-  auto it_sizes = find(default_sizes.begin(), default_sizes.end(), size);
-  auto index_sizes = it_sizes != default_sizes.end() ? it_sizes - default_sizes.begin() : 2;
+  auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
-  if (exists(theme_path/default_size_names[index_sizes]/(name + ".png"))) return bitmap((theme_path/default_size_names[index_sizes]/(name + ".png")).string());
-  if (exists(system_images_resource_path()/"xtd"/default_size_names[index_sizes]/(name + ".png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[index_sizes]/(name + ".png")).string());
-  if (exists(theme_path/default_size_names[index_sizes]/"image-missing.png")) return bitmap((theme_path/default_size_names[index_sizes]/"image-missing.png").string());
-  if (exists(system_images_resource_path()/"xtd"/default_size_names[index_sizes]/"image-missing.png")) return bitmap((system_images_resource_path()/"xtd"/default_size_names[index_sizes]/"image-missing.png").string());
+  if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
+  for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
+    if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
+  
+  if (exists(system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
+  for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
+    if (exists(system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
+
   return image::empty;
 }
 
@@ -49,7 +58,7 @@ vector<string> system_images::contexts() {
 
 map<string, vector<string>> system_images::context_names() {
   static map<string, vector<string>> context_names {
-    {"Actions", {"address-book-new", "application-exit", "appointment-new", "burn-disk", "call-start", "call-stop", "contact-new", "dialog-cancel", "dialog-ok", "dialog-ok-apply", "document-new", "document-open", "document-open-recent", "document-page-setup", "document-print", "document-print-preview", "document-properties", "document-revert", "document-save", "document-save-as", "document-send", "drive-download", "drive-upload", "edit", "edit-clear", "edit-copy", "edit-cut", "edit-delete", "edit-find", "edit-find-replace", "edit-paste", "edit-redo", "edit-rename", "edit-select-all", "edit-undo", "folder-new", "format-indent-less", "format-indent-more", "format-justify-center", "format-justify-fill", "format-justify-left", "format-justify-right", "format-text-direction-ltr", "format-text-direction-rtl", "format-text-bold", "format-text-italic", "format-text-underline", "format-text-strikethrough", "go-bottom", "go-down", "go-first", "go-home", "go-jump", "go-last", "go-next", "go-previous", "go-top", "go-up", "help-about", "help-contents", "help-faq", "insert-image", "insert-link", "insert-object", "insert-table", "insert-text", "list-add", "list-remove", "mail-forward", "mail-mark-important", "mail-mark-junk", "mail-mark-notjunk", "mail-mark-read", "mail-mark-unread", "mail-message-new", "mail-reply-all", "mail-reply-sender", "mail-send", "mail-send-receive", "media-eject", "media-playback-pause", "media-playback-start", "media-playback-stop", "media-record", "media-seek-backward", "media-seek-forward", "media-skip-backward", "media-skip-forward", "object-flip-horizontal", "object-flip-vertical", "object-rotate-left", "object-rotate-right", "process-stop", "system-lock-screen", "system-log-out", "system-run", "system-search", "system-reboot", "system-shutdown", "tools-check-spelling", "view-fullscreen", "view-media-equalizer", "view-media-lyrics", "view-refresh", "view-restore", "view-sort-ascending", "view-sort-descending", "window-close", "window-new", "zoom-fit-best", "zoom-in", "zoom-original", "zoom-out"}},
+    {"Actions", {"address-book-new", "application-exit", "appointment-new", "burn-disk", "call-start", "call-stop", "contact-new", "dialog-cancel", "dialog-ok", "dialog-ok-apply", "document-new", "document-open", "document-open-recent", "document-page-setup", "document-print", "document-print-preview", "document-properties", "document-revert", "document-save", "document-save-as", "document-send", "edit", "edit-clear", "edit-copy", "edit-cut", "edit-delete", "edit-find", "edit-find-replace", "edit-paste", "edit-redo", "edit-rename", "edit-select-all", "edit-undo", "folder-new", "format-indent-less", "format-indent-more", "format-justify-center", "format-justify-fill", "format-justify-left", "format-justify-right", "format-text-direction-ltr", "format-text-direction-rtl", "format-text-bold", "format-text-italic", "format-text-underline", "format-text-strikethrough", "go-bottom", "go-down", "go-first", "go-home", "go-jump", "go-last", "go-next", "go-previous", "go-top", "go-up", "help-about", "help-contents", "help-faq", "insert-image", "insert-link", "insert-object", "insert-table", "insert-text", "list-add", "list-remove", "mail-forward", "mail-mark-important", "mail-mark-junk", "mail-mark-notjunk", "mail-mark-read", "mail-mark-unread", "mail-message-new", "mail-reply-all", "mail-reply-sender", "mail-send", "mail-send-receive", "media-eject", "media-playback-pause", "media-playback-start", "media-playback-stop", "media-record", "media-seek-backward", "media-seek-forward", "media-skip-backward", "media-skip-forward", "object-flip-horizontal", "object-flip-vertical", "object-rotate-left", "object-rotate-right", "process-stop", "system-lock-screen", "system-log-out", "system-run", "system-search", "system-reboot", "system-shutdown", "tools-check-spelling", "view-fullscreen", "view-media-equalizer", "view-media-lyrics", "view-refresh", "view-restore", "view-sort-ascending", "view-sort-descending", "window-close", "window-new", "zoom-fit-best", "zoom-in", "zoom-original", "zoom-out"}},
     {"Animations", {"process-working"}},
     {"Applications", {"accessories-calculator", "accessories-character-map", "accessories-dictionary", "accessories-text-editor", "help-browser", "multimedia-volume-control", "preferences-desktop-accessibility", "preferences-desktop-font", "preferences-desktop-keyboard", "preferences-desktop-locale", "preferences-desktop-screensaver", "preferences-desktop-theme", "preferences-desktop-wallpaper", "system-file-manager", "system-software-install", "system-software-update", "utilities-system-monitor", "utilities-terminal"}},
     {"Categories", {"applications-accessories", "applications-development", "applications-engineering", "applications-games", "applications-graphics", "applications-internet", "applications-multimedia", "applications-office", "applications-other", "applications-science", "applications-system", "applications-utilities", "preferences-desktop", "preferences-desktop-peripherals", "preferences-desktop-personal", "preferences-other", "preferences-system", "preferences-system-network", "system-help"}},
