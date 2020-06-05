@@ -21,8 +21,15 @@ set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
   src/xtd/drawing/native/wxwidgets/image.cpp
   src/xtd/drawing/native/wxwidgets/pen.cpp
   src/xtd/drawing/native/wxwidgets/system_colors.cpp
+  src/xtd/drawing/native/wxwidgets/system_images.cpp
   src/xtd/drawing/native/wxwidgets/system_fonts.cpp
 )
+
+if (APPLE)
+  set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES ${XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES}
+    src/xtd/drawing/native/wxwidgets/system_images.mm
+  )
+endif()
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\drawing\\native FILES ${XTD_DRAWING_NATIVE_INCLUDES})
