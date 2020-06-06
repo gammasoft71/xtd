@@ -72,9 +72,9 @@ namespace example {
   private:
     void update_form() {
       if (choice_theme.selected_index() == 0)
-        picture.image(system_images::from_name(system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
+        picture.image(system_images::from_name(system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) != drawing::image::empty ? system_images::from_name(system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) : system_images::from_name("image-missing",  any_cast<drawing::size>(choice_size.selected_item().tag())));
       else
-        picture.image(system_images::from_name(choice_theme.selected_item().value(), system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())));
+        picture.image(system_images::from_name(choice_theme.selected_item().value(), system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) != drawing::image::empty ? system_images::from_name(choice_theme.selected_item().value(), system_images::names(choice_context.selected_item().value())[current_image_index], any_cast<drawing::size>(choice_size.selected_item().tag())) : system_images::from_name("image-missing",  any_cast<drawing::size>(choice_size.selected_item().tag())));
       label_picture_name.text(system_images::names(choice_context.selected_item().value())[current_image_index]);
       button_previous.enabled(current_image_index > 0);
       button_next.enabled(current_image_index < system_images::names(choice_context.selected_item().value()).size() - 1);
@@ -92,5 +92,7 @@ namespace example {
 }
 
 int main() {
+  //application::enable_light_mode();
+  //application::enable_dark_mode();
   application::run(example::form1());
 }
