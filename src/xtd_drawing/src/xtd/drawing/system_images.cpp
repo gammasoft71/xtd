@@ -9,6 +9,14 @@
 // macos resources folders:
 // * /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/
 // * /System/Library/
+// *
+// * Light mode:
+// *   Normal symbol : color = RGB(92, 97, 108), Opacity = 100 %
+// *   shadow : color = RGB(92, 97, 108), Opacity = 30 %
+// *
+// * Dark mode:
+// *   Normal symbol : color = RGB(255, 255, 255), Opacity = 85 %
+// *   shadow : color = RGB(255, 255, 255), Opacity = 15 %
 
 using namespace std;
 using namespace std::filesystem;
@@ -47,16 +55,19 @@ image system_images::from_name(const string& theme, const string& name, const si
     if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
       if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
-    
-    if (exists(system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
-    for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
   }
   
   if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
     if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
   
+  
+  if (dark_mode_enabled()) {
+    if (exists(system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
+    for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
+      if (exists(system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
+  }
+
   if (exists(system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
     if (exists(system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
@@ -81,7 +92,7 @@ map<string, vector<string>> system_images::context_names() {
     {"Emblems", {"emblem-default", "emblem-documents", "emblem-downloads", "emblem-favorite", "emblem-important", "emblem-locked", "emblem-mail", "emblem-new", "emblem-photos", "emblem-readonly", "emblem-shared", "emblem-symbolic-link", "emblem-system", "emblem-unlocked", "emblem-unreadable"}},
     {"Emotes", {"face-angel", "face-angry", "face-cool", "face-crying", "face-devilish", "face-embarrassed", "face-kiss", "face-laugh", "face-monkey", "face-plain", "face-raspberry", "face-sad", "face-sick", "face-smile", "face-smile-big", "face-smirk", "face-surprise", "face-tired", "face-uncertain", "face-wink", "face-worried"}},
     {"International", {"flag-af", "flag-ax", "flag-al", "flag-dz", "flag-as", "flag-ad", "flag-ao", "flag-ai", "flag-aq", "flag-ag", "flag-ar", "flag-am", "flag-aw", "flag-au", "flag-at", "flag-az", "flag-bs", "flag-bh", "flag-bd", "flag-bb", "flag-by", "flag-be", "flag-bz", "flag-bj", "flag-bm", "flag-bt", "flag-bo", "flag-bq", "flag-ba", "flag-bw", "flag-bv", "flag-br", "flag-io", "flag-bn", "flag-bg", "flag-bf", "flag-bi", "flag-cv", "flag-kh", "flag-cm", "flag-ca", "flag-ky", "flag-cf", "flag-td", "flag-cl", "flag-cn", "flag-cx", "flag-cc", "flag-co", "flag-km", "flag-cg", "flag-cd", "flag-ck", "flag-cr", "flag-ci", "flag-hr", "flag-cu", "flag-cw", "flag-cy", "flag-cz", "flag-dk", "flag-dj", "flag-dm", "flag-do", "flag-ec", "flag-eg", "flag-sv", "flag-gq", "flag-er", "flag-ee", "flag-sz", "flag-et", "flag-fk", "flag-fo", "flag-fj", "flag-fi", "flag-fr", "flag-gf", "flag-pf", "flag-tf", "flag-ga", "flag-gm", "flag-ge", "flag-de", "flag-gh", "flag-gi", "flag-gr", "flag-gl", "flag-gd", "flag-gp", "flag-gu", "flag-gt", "flag-gg", "flag-gn", "flag-gw", "flag-gy", "flag-ht", "flag-hm", "flag-va", "flag-hn", "flag-hk", "flag-hu", "flag-is", "flag-in", "flag-id", "flag-ir", "flag-iq", "flag-ie", "flag-im", "flag-il", "flag-it", "flag-jm", "flag-jp", "flag-je", "flag-jo", "flag-kz", "flag-ke", "flag-ki", "flag-kp", "flag-kr", "flag-kw", "flag-kg", "flag-la", "flag-lv", "flag-lb", "flag-ls", "flag-lr", "flag-ly", "flag-li", "flag-lt", "flag-lu", "flag-mo", "flag-mg", "flag-mw", "flag-my", "flag-mv", "flag-ml", "flag-mt", "flag-mh", "flag-mq", "flag-mr", "flag-mu", "flag-yt", "flag-mx", "flag-fm", "flag-md", "flag-mc", "flag-mn", "flag-me", "flag-ms", "flag-ma", "flag-mz", "flag-mm", "flag-na", "flag-nr", "flag-np", "flag-nl", "flag-nc", "flag-nz", "flag-ni", "flag-ne", "flag-ng", "flag-nu", "flag-nf", "flag-mk", "flag-mp", "flag-no", "flag-om", "flag-pk", "flag-pw", "flag-ps", "flag-pa", "flag-pg", "flag-py", "flag-pe", "flag-ph", "flag-pn", "flag-pl", "flag-pt", "flag-pr", "flag-qa", "flag-re", "flag-ro", "flag-ru", "flag-rw", "flag-bl", "flag-sh", "flag-kn", "flag-lc", "flag-mf", "flag-pm", "flag-vc", "flag-ws", "flag-sm", "flag-st", "flag-sa", "flag-sn", "flag-rs", "flag-sc", "flag-sl", "flag-sg", "flag-sx", "flag-sk", "flag-si", "flag-sb", "flag-so", "flag-za", "flag-gs", "flag-ss", "flag-es", "flag-lk", "flag-sd", "flag-sr", "flag-sj", "flag-se", "flag-ch", "flag-sy", "flag-tw", "flag-tj", "flag-tz", "flag-th", "flag-tl", "flag-tg", "flag-tk", "flag-to", "flag-tt", "flag-tn", "flag-tr", "flag-tm", "flag-tc", "flag-tv", "flag-ug", "flag-ua", "flag-ae", "flag-gb", "flag-us", "flag-um", "flag-uy", "flag-uz", "flag-vu", "flag-ve", "flag-vn", "flag-vg", "flag-vi", "flag-wf", "flag-eh", "flag-ye", "flag-zm", "flag-zw"}},
-    {"MimeTypes", {"application-x-executable", "audio-x-generic", "font-x-generic", "image-x-generic", "package-x-generic", "text-html", "text-x-generic", "text-x-generic-template", "text-x-script", "video-x-generic", "x-office-address-book", "x-office-calendar", "x-office-document", "x-office-presentation", "x-office-spreadsheet"}},
+    {"MimeTypes", {"application-x-executable", "audio-x-generic", "font-x-generic", "image-x-generic", "package-x-generic", "text-html", "text-x-generic", "text-x-generic-template", "text-x-script", "video-x-generic", "x-office-address-book", "x-office-calendar", "x-office-contact", "x-office-document", "x-office-presentation", "x-office-spreadsheet"}},
     {"Places", {"folder", "folder-remote", "network-server", "network-workgroup", "start-here", "user-bookmarks", "user-desktop", "user-home", "user-trash"}},
     {"Status", {"appointment-missed", "appointment-soon", "audio-volume-high", "audio-volume-low", "audio-volume-medium", "audio-volume-muted", "battery-caution", "battery-low", "dialog-error", "dialog-information", "dialog-password", "dialog-question", "dialog-warning", "folder-drag-accept", "folder-open", "folder-visiting", "image-loading", "image-missing", "mail-attachment", "mail-unread", "mail-read", "mail-replied", "mail-signed", "mail-signed-verified", "media-playlist-repeat", "media-playlist-shuffle", "network-error", "network-idle", "network-offline", "network-receive", "network-transmit", "network-transmit-receive", "printer-error", "printer-printing", "security-high", "security-medium", "security-low", "software-update-available", "software-update-urgent", "sync-error", "sync-synchronizing", "task-due", "task-past-due", "user-available", "user-away", "user-idle", "user-offline", "user-trash-full", "weather-clear", "weather-clear-night", "weather-few-clouds", "weather-few-clouds-night", "weather-fog", "weather-overcast", "weather-severe-alert", "weather-showers", "weather-showers-scattered", "weather-snow", "weather-storm"}},
     {"xtd", {"gammasoft", "xtd", "xtd-console", "xtd-forms"}},
