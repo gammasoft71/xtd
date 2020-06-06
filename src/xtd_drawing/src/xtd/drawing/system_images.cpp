@@ -15,8 +15,8 @@
 // *   shadow : color = RGB(92, 97, 108), Opacity = 30 %
 // *
 // * Dark mode:
-// *   Normal symbol : color = RGB(255, 255, 255), Opacity = 85 %
-// *   shadow : color = RGB(255, 255, 255), Opacity = 15 %
+// *   Normal symbol : color = RGB(241, 247, 248), Opacity = 85 %
+// *   shadow : color = RGB(241, 247, 248), Opacity = 15 %
 
 using namespace std;
 using namespace std::filesystem;
