@@ -13,8 +13,8 @@ namespace example {
   public:
     form1() {
       text("System images 2 example");
-      client_size({1170, 485});
-      controls().push_back_range({label_picture_xtd_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_windows_theme, picture_xtd_theme, picture_gnome_theme, picture_macos_theme, picture_windows_theme, panel_separator_line, label_picture_context, label_picture_name, label_picture_size, button_context_previous, button_context_next, button_name_previous, button_name_next, button_decrease, button_increase});
+      client_size({1460, 485});
+      controls().push_back_range({label_picture_xtd_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_windows_theme, label_picture_symbols_theme, picture_xtd_theme, picture_gnome_theme, picture_macos_theme, picture_windows_theme, picture_symbols_theme, panel_separator_line, label_picture_context, label_picture_name, label_picture_size, button_context_previous, button_context_next, button_name_previous, button_name_next, button_decrease, button_increase});
 
       label_picture_xtd_theme.text_align(content_alignment::middle_center);
       label_picture_xtd_theme.bounds({10, 25, 280, label_picture_name.height()});
@@ -40,6 +40,12 @@ namespace example {
       label_picture_windows_theme.border_style(forms::border_style::fixed_3d);
       label_picture_windows_theme.back_color(label_picture_windows_theme.text() == system_images::default_theme() ? system_colors::menu_highlight() : system_colors::window());
       
+      label_picture_symbols_theme.text_align(content_alignment::middle_center);
+      label_picture_symbols_theme.bounds({1170, 25, 280, label_picture_name.height()});
+      label_picture_symbols_theme.text("symbols");
+      label_picture_symbols_theme.border_style(forms::border_style::fixed_3d);
+      label_picture_symbols_theme.back_color(label_picture_symbols_theme.text() == system_images::default_theme() ? system_colors::menu_highlight() : system_colors::window());
+
       picture_xtd_theme.back_color(system_colors::window());
       picture_xtd_theme.border_style(forms::border_style::fixed_3d);
       picture_xtd_theme.bounds({10, 65, 280, 280});
@@ -59,6 +65,11 @@ namespace example {
       picture_windows_theme.border_style(forms::border_style::fixed_3d);
       picture_windows_theme.bounds({880, 65, 280, 280});
       picture_windows_theme.size_mode(picture_box_size_mode::center_image);
+      
+      picture_symbols_theme.back_color(system_colors::window());
+      picture_symbols_theme.border_style(forms::border_style::fixed_3d);
+      picture_symbols_theme.bounds({1170, 65, 280, 280});
+      picture_symbols_theme.size_mode(picture_box_size_mode::center_image);
 
       panel_separator_line.back_color(system_colors::control_text());
       panel_separator_line.bounds({10, 360, 1150, 1});
@@ -152,6 +163,7 @@ namespace example {
       picture_gnome_theme.image(system_images::from_name("gnome", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("gnome", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
       picture_macos_theme.image(system_images::from_name("macos", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("macos", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
       picture_windows_theme.image(system_images::from_name("windows", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("windows", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
+      picture_symbols_theme.image(system_images::from_name("symbols", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) != image::empty ? system_images::from_name("symbols", system_images::names(system_images::contexts()[current_context_index])[current_name_index], system_images::sizes()[current_size_index]) : system_images::image_missing({256, 256}));
       label_picture_context.text(system_images::contexts()[current_context_index]);
       label_picture_name.text(system_images::names(system_images::contexts()[current_context_index])[current_name_index]);
       label_picture_size.text(strings::format("{}x{} pixels", system_images::sizes()[current_size_index].width(), system_images::sizes()[current_size_index].height()));
@@ -170,10 +182,12 @@ namespace example {
     label label_picture_gnome_theme;
     label label_picture_macos_theme;
     label label_picture_windows_theme;
+    label label_picture_symbols_theme;
     picture_box picture_xtd_theme;
     picture_box picture_gnome_theme;
     picture_box picture_macos_theme;
     picture_box picture_windows_theme;
+    picture_box picture_symbols_theme;
     panel panel_separator_line;
     label label_picture_context;
     label label_picture_name;
