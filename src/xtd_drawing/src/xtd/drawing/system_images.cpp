@@ -109,6 +109,7 @@ string system_images::default_theme() {
   if (environment::os_version().is_windows_platform()) return "windows";
   if (environment::os_version().is_osx_platform()) return "macos";
   if (environment::os_version().is_linux_platform()) return "gnome";
+  if (environment::os_version().is_linux_platform()) return "symbols";
   return "xtd";
 }
 
@@ -125,5 +126,5 @@ std::vector<xtd::drawing::size> system_images::sizes() {
 }
 
 vector<string> system_images::themes() {
-  return {"windows", "macos", "gnome", "xtd"};
+  return {"windows", "macos", "gnome", "xtd", "symbols"};
 }
