@@ -72,7 +72,7 @@ namespace example {
       picture_symbols_theme.size_mode(picture_box_size_mode::center_image);
 
       panel_separator_line.back_color(system_colors::control_text());
-      panel_separator_line.bounds({10, 360, 1150, 1});
+      panel_separator_line.bounds({10, 360, 1440, 1});
 
       label_picture_context.text_align(content_alignment::middle_center);
       label_picture_context.border_style(forms::border_style::fixed_3d);
