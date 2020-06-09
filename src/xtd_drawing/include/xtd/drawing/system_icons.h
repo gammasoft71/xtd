@@ -36,7 +36,7 @@ namespace xtd {
       static xtd::drawing::icon gnome_logo() {return gnome_logo(default_size());}
       static xtd::drawing::icon gnome_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("gnome", "start-here", size)));}
       static xtd::drawing::icon xtd_logo() {return xtd_logo(default_size());}
-      static xtd::drawing::icon xtd_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("xtd", "start-here", size)));}
+      static xtd::drawing::icon xtd_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("xtd", size)));}
     };
   }
 }
