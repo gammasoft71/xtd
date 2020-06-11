@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/environment.h>
 #include <xtd/static.h>
 #include <xtd/drawing/system_images.h>
 
@@ -6,7 +7,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class menu_images static_ {
+    class tool_bar_images static_ {
     public:
       static xtd::drawing::image file_new() {return file_new(xtd::drawing::system_images::default_theme(), size());}
       static xtd::drawing::image file_new(const std::string& theme) {return file_new(theme, size());}
@@ -20,6 +21,10 @@ namespace xtd {
       static xtd::drawing::image file_save(const std::string& theme) {return file_save(theme, size());}
       static xtd::drawing::image file_save(const xtd::drawing::size& size) {return file_save(xtd::drawing::system_images::default_theme(), size);}
       static xtd::drawing::image file_save(const std::string& theme, const xtd::drawing::size& size) {return from_name(theme, "document-save", size);}
+      static xtd::drawing::image file_save_as() {return file_save_as(xtd::drawing::system_images::default_theme(), size());}
+      static xtd::drawing::image file_save_as(const std::string& theme) {return file_save_as(theme, size());}
+      static xtd::drawing::image file_save_as(const xtd::drawing::size& size) {return file_save_as(xtd::drawing::system_images::default_theme(), size);}
+      static xtd::drawing::image file_save_as(const std::string& theme, const xtd::drawing::size& size) {return from_name(theme, "document-save-as", size);}
       static xtd::drawing::image file_print() {return file_print(xtd::drawing::system_images::default_theme(), size());}
       static xtd::drawing::image file_print(const std::string& theme) {return file_print(theme, size());}
       static xtd::drawing::image file_print(const xtd::drawing::size& size) {return file_print(xtd::drawing::system_images::default_theme(), size);}
@@ -28,6 +33,10 @@ namespace xtd {
       static xtd::drawing::image file_print_preview(const std::string& theme) {return file_print_preview(theme, size());}
       static xtd::drawing::image file_print_preview(const xtd::drawing::size& size) {return file_print_preview(xtd::drawing::system_images::default_theme(), size);}
       static xtd::drawing::image file_print_preview(const std::string& theme, const xtd::drawing::size& size) {return from_name(theme, "document-print-preview", size);}
+      static xtd::drawing::image file_page_setup() {return file_page_setup(xtd::drawing::system_images::default_theme(), size());}
+      static xtd::drawing::image file_page_setup(const std::string& theme) {return file_page_setup(theme, size());}
+      static xtd::drawing::image file_page_setup(const xtd::drawing::size& size) {return file_page_setup(xtd::drawing::system_images::default_theme(), size);}
+      static xtd::drawing::image file_page_setup(const std::string& theme, const xtd::drawing::size& size) {return from_name(theme, "document-page-setup", size);}
       static xtd::drawing::image file_exit() {return file_exit(xtd::drawing::system_images::default_theme(), size());}
       static xtd::drawing::image file_exit(const std::string& theme) {return file_exit(theme, size());}
       static xtd::drawing::image file_exit(const xtd::drawing::size& size) {return file_exit(xtd::drawing::system_images::default_theme(), size);}
@@ -65,7 +74,7 @@ namespace xtd {
       static xtd::drawing::image help_about(const xtd::drawing::size& size) {return help_about(xtd::drawing::system_images::default_theme(), size);}
       static xtd::drawing::image help_about(const std::string& theme, const xtd::drawing::size& size) {return from_name(theme, "help-about", size);}
 
-      static xtd::drawing::size size() {return {16, 16};}
+      static xtd::drawing::size size() {return xtd::environment::os_version().is_osx_platform() ? xtd::drawing::size {24, 24} : xtd::drawing::size {16, 16};}
       static xtd::drawing::image from_name(const std::string& name) {return from_name(name, size());}
       static xtd::drawing::image from_name(const std::string& theme, const std::string& name) {return from_name(theme, name, size());}
       static xtd::drawing::image from_name(const std::string& name, const xtd::drawing::size& size) {return from_name(xtd::drawing::system_images::default_theme(), name, size);}

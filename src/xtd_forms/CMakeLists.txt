@@ -24,6 +24,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/bounds_specified.h
   include/xtd/forms/button.h
   include/xtd/forms/button_base.h
+  include/xtd/forms/button_images.h
   include/xtd/forms/buttons.h
   include/xtd/forms/cancel_event_args.h
   include/xtd/forms/cancel_event_handler.h
@@ -145,6 +146,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/texts.h
   include/xtd/forms/tick_style.h
   include/xtd/forms/timer.h
+  include/xtd/forms/tool_bar_images.h
   include/xtd/forms/track_bar.h
   include/xtd/forms/up_down_base.h
   include/xtd/forms/up_down_button.h
