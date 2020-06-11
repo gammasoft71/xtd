@@ -91,20 +91,20 @@ namespace example {
 
       button_context_previous.auto_repeat(true);
       button_context_previous.enabled(false);
-      button_context_previous.image(system_images::from_name("go-previous"));
+      button_context_previous.image(button_images::previous(drawing::size {32, 32}));
       button_context_previous.image_align(content_alignment::middle_left);
-      button_context_previous.text("&Previous");
+      button_context_previous.text(texts::previous);
       button_context_previous.bounds({10, 415, 125, 40});
       button_context_previous.click += [&] {
         current_context_index--;
         current_name_index= 0;
         update_form();
       };
-      
+   
       button_context_next.auto_repeat(true);
-      button_context_next.image(system_images::from_name("go-next"));
+      button_context_next.image(button_images::next(drawing::size {32, 32}));
       button_context_next.image_align(content_alignment::middle_right);
-      button_context_next.text("&Next");
+      button_context_next.text(texts::next);
       button_context_next.bounds({165, 415, 125, 40});
       button_context_next.click += [&] {
         current_context_index++;
@@ -114,7 +114,7 @@ namespace example {
 
       button_name_previous.auto_repeat(true);
       button_name_previous.enabled(false);
-      button_name_previous.image(system_images::from_name("go-previous"));
+      button_name_previous.image(button_images::previous(drawing::size {32, 32}));
       button_name_previous.image_align(content_alignment::middle_left);
       button_name_previous.text("P&revious");
       button_name_previous.bounds({300, 415, 125, 40});
@@ -124,7 +124,7 @@ namespace example {
       };
       
       button_name_next.auto_repeat(true);
-      button_name_next.image(system_images::from_name("go-next"));
+      button_name_next.image(button_images::next(drawing::size {32, 32}));
       button_name_next.image_align(content_alignment::middle_right);
       button_name_next.text("N&ext");
       button_name_next.bounds({455, 415, 125, 40});
@@ -135,7 +135,7 @@ namespace example {
 
       button_decrease.auto_repeat(true);
       button_decrease.enabled(false);
-      button_decrease.image(system_images::from_name("list-remove"));
+      button_decrease.image(button_images::remove(drawing::size {32, 32}));
       button_decrease.image_align(content_alignment::middle_left);
       button_decrease.text("&Decrease");
       button_decrease.bounds({590, 415, 125, 40});
@@ -145,7 +145,7 @@ namespace example {
       };
       
       button_increase.auto_repeat(true);
-      button_increase.image(system_images::from_name("list-add"));
+      button_increase.image(button_images::add(drawing::size {32, 32}));
       button_increase.image_align(content_alignment::middle_right);
       button_increase.text("&Increase");
       button_increase.bounds({745, 415, 125, 40});
@@ -202,5 +202,6 @@ namespace example {
 }
 
 int main() {
+  application::enable_button_images();
   application::run(example::form1());
 }

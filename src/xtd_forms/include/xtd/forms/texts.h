@@ -105,6 +105,8 @@ namespace xtd {
       static const std::string network;
       /// @brief Gets a system-defined text that has a string value of "&New". This field is constant.
       static const std::string new_;
+      /// @brief Gets a system-defined text that has a string value of "&Next". This field is constant.
+      static const std::string next;
       /// @brief Gets a system-defined text that has a string value of "&No". This field is constant.
       static const std::string no;
       /// @brief Gets a system-defined text that has a string value of "&OK". This field is constant.
@@ -117,6 +119,8 @@ namespace xtd {
       static const std::string paste;
       /// @brief Gets a system-defined text that has a string value of "&Preference". This field is constant.
       static const std::string preferences;
+      /// @brief Gets a system-defined text that has a string value of "&Previous". This field is constant.
+      static const std::string previous;
       /// @brief Gets a system-defined text that has a string value of "&Print...". This field is constant.
       static const std::string print;
       /// @brief Gets a system-defined text that has a string value of "Print Re&view". This field is constant.
