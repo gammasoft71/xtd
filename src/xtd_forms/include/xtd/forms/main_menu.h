@@ -23,6 +23,8 @@ namespace xtd {
 
       static xtd::forms::main_menu create_standard_items();
       static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size);
+      static xtd::forms::main_menu create_standard_items(const std::string& theme);
+      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size);
 
     protected:
       intptr_t create_menu_handle() override;

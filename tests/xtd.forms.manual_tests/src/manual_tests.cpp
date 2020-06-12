@@ -21,6 +21,7 @@ int main() {
   form form_main;
   form_main.text("Manual tests");
   //form_main.menu(menu);
+  /*
   form_main.menu({
     {texts::file, {
       {texts::new_, {on_menu_click}, menu_images::file_new(), shortcut::cmd_n},
@@ -79,14 +80,8 @@ int main() {
       {texts::about, {on_menu_click}, menu_images::help_about()},
     }},
   });
-  
-  picture_box picture;
-  picture.parent(form_main);
-  picture.size_mode(picture_box_size_mode::auto_size);
-  //picture.image(drawing::system_icons::macos_logo({512, 512}).to_bitmap());
-  picture.image(drawing::system_images::from_name("text-x-generic", drawing::size(512, 512)));
-  form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
-  form_main.auto_size(true);
+   */
+  form_main.menu(forms::main_menu::create_standard_items("symbols"));
   
   application::enable_menu_images();
   application::run(form_main);
