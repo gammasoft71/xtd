@@ -99,9 +99,17 @@ void main_menu::wm_click(message& message) {
 }
 
 xtd::forms::main_menu main_menu::create_standard_items() {
-  return  create_standard_items(menu_images::size());
+  return  create_standard_items(system_images::default_theme(), menu_images::size());
 }
 
 xtd::forms::main_menu main_menu::create_standard_items(const size& size) {
-  return  {{texts::file, {{texts::new_, menu_images::file_new(size), shortcut::cmd_n}, {texts::open, menu_images::file_open(size), shortcut::cmd_o}, {"-"}, {texts::save, menu_images::file_save(size), shortcut::cmd_s}, {texts::save_as}, {"-"}, {texts::print, menu_images::file_print(size), shortcut::cmd_p}, {texts::print_preview, menu_images::file_print_preview(size), shortcut::cmd_p}, {"-"}, {texts::exit, shortcut::alt_f4}}}, {texts::edit, {{texts::undo, shortcut::cmd_z}, {texts::redo, shortcut::cmd_shift_z}, {"-"}, {texts::cut, menu_images::edit_cut(size), shortcut::cmd_x}, {texts::copy, menu_images::edit_copy(size), shortcut::cmd_c}, {texts::paste, menu_images::edit_paste(size), shortcut::cmd_v}, {"-"}, {texts::select_all, shortcut::cmd_a}, {"-"}, {texts::options}}}, {texts::tools, {{texts::customize}, {texts::options}}}, {texts::help, {{texts::contents }, {texts::index}, {texts::search}, {"-"}, {texts::about}}}};
+  return  create_standard_items(system_images::default_theme(), size);
+}
+
+xtd::forms::main_menu main_menu::create_standard_items(const std::string& theme) {
+  return  create_standard_items(theme, menu_images::size());
+}
+
+xtd::forms::main_menu main_menu::create_standard_items(const std::string& theme, const size& size) {
+  return  {{texts::file, {{texts::new_, menu_images::file_new(theme, size), shortcut::cmd_n}, {texts::open, menu_images::file_open(theme, size), shortcut::cmd_o}, {"-"}, {texts::save, menu_images::file_save(theme, size), shortcut::cmd_s}, {texts::save_as}, {"-"}, {texts::print, menu_images::file_print(theme, size), shortcut::cmd_p}, {texts::print_preview, menu_images::file_print_preview(theme, size), shortcut::cmd_p}, {"-"}, {texts::exit, shortcut::alt_f4}}}, {texts::edit, {{texts::undo, shortcut::cmd_z}, {texts::redo, shortcut::cmd_shift_z}, {"-"}, {texts::cut, menu_images::edit_cut(theme, size), shortcut::cmd_x}, {texts::copy, menu_images::edit_copy(theme, size), shortcut::cmd_c}, {texts::paste, menu_images::edit_paste(theme, size), shortcut::cmd_v}, {"-"}, {texts::select_all, shortcut::cmd_a}, {"-"}, {texts::options}}}, {texts::tools, {{texts::customize}, {texts::options}}}, {texts::help, {{texts::contents }, {texts::index}, {texts::search}, {"-"}, {texts::about}}}};
 }
