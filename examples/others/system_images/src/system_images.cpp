@@ -47,9 +47,9 @@ namespace example {
 
       button_previous.auto_repeat(true);
       button_previous.enabled(false);
-      button_previous.image(system_images::from_name("go-previous"));
+      button_previous.image(button_images::previous());
       button_previous.image_align(content_alignment::middle_left);
-      button_previous.text("&Previous");
+      button_previous.text(texts::previous);
       button_previous.bounds({75, 460, 125, 40});
       button_previous.click += [&] {
         if (current_image_index > 0) --current_image_index;
@@ -57,9 +57,9 @@ namespace example {
       };
 
       button_next.auto_repeat(true);
-      button_next.image(system_images::from_name("go-next"));
+      button_next.image(button_images::next());
       button_next.image_align(content_alignment::middle_right);
-      button_next.text("&Next");
+      button_next.text(texts::next);
       button_next.bounds({230, 460, 125, 40});
       button_next.click += [&] {
         if (current_image_index < system_images::names(choice_context.selected_item().value()).size()) ++current_image_index;
@@ -94,5 +94,6 @@ namespace example {
 int main() {
   //application::enable_light_mode();
   //application::enable_dark_mode();
+  application::enable_button_images();
   application::run(example::form1());
 }
