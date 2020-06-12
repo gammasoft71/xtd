@@ -92,8 +92,6 @@ namespace example {
 }
 
 int main() {
-  //application::enable_light_mode();
-  //application::enable_dark_mode();
   application::enable_button_images();
   application::run(example::form1());
 }
