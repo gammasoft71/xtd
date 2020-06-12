@@ -27,8 +27,9 @@ namespace xtd {
       virtual const std::string alpha_3_code() const {return alpha_3_code_;}
       virtual const int numeric_code() const {return numeric_code_;}
       virtual const std::string emoticon() const {return emoticon_;}
-      virtual const xtd::drawing::image flag() const {return flag_;}
-      
+      virtual const xtd::drawing::image flag() const;
+      virtual const xtd::drawing::image flag_squared() const;
+
       static country from_name(const std::string& name);
       static country from_alpha_2_code(const std::string& alpha_2_code);
       static country from_alpha_3_code(const std::string& alpha_3_code);
@@ -46,14 +47,12 @@ namespace xtd {
       
       static const std::vector<std::string> enclosed_letters;
       country(const std::string& name, const std::string& alpha_2_code, const std::string& alpha_3_code, int numeric_code) : name_(name), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']) {}
-      country(const std::string& name, const std::string& alpha_2_code, const std::string& alpha_3_code, int numeric_code, xtd::drawing::image& flag) : name_(name), alpha_2_code_(alpha_2_code), alpha_3_code_(alpha_3_code), numeric_code_(numeric_code), emoticon_(enclosed_letters[alpha_2_code[0] - 'A'] + enclosed_letters[alpha_2_code[1] - 'A']), flag_(flag) {}
       
       std::string name_;
       std::string alpha_2_code_;
       std::string alpha_3_code_;
       int numeric_code_;
       std::string emoticon_;
-      xtd::drawing::image flag_  = xtd::drawing::bitmap(256, 256);
     };
   }
 }
