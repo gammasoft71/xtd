@@ -10,6 +10,7 @@ if (NOT DEFINED EXPORT_PROJECT_NAME)
   set(IS_MAIN_PROJECT ON)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
+add_definitions(-D__XTD_FORMS_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
 # Code coverage
 option(ENABLE_COVERAGE "Enable code coverage" OFF)
