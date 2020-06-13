@@ -109,6 +109,7 @@
 * [settings](components/settings_example/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
 * **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
+* [system_images](components/system_images/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 
 ## Printing
@@ -178,7 +179,6 @@
 * [smileys](others/smileys/README.md) demonstrates the use of [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control.
 * [some_controls](others/some_controls/README.md) demonstrates the use of some controls.
 * [stopwatch_form](others/stopwatch_form/README.md) demonstrates the use of stopwatch class, [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) and [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) controls.
-* [system_images](others/system_images/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [system_sound](others/system_sound/README.md) demonstrates the use of xtd::media::system_sound component.
 * [text_box_multiline](others/text_box_multiline/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * [text_box_password](others/text_box_password/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.

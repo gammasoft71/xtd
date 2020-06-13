@@ -81,7 +81,7 @@ int main() {
     }},
   });
    */
-  form_main.menu(forms::main_menu::create_standard_items("symbols"));
+  form_main.menu(forms::main_menu::create_standard_items());
   
   application::enable_menu_images();
   application::run(form_main);

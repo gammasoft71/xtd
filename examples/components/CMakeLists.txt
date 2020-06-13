@@ -5,10 +5,12 @@ find_package(xtd.forms REQUIRED)
 
 add_projects(
   background_worker
+  button_images
   cursor
   image_list
   screen
   settings_example
   settings_example2
+  system_images
   timer
 )
