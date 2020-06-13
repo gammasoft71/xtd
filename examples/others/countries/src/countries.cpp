@@ -39,12 +39,10 @@ namespace examples {
       country_panel.auto_scroll(true);
       
       country_flag_picture_box.parent(country_panel);
-      country_flag_picture_box.border_style(forms::border_style::fixed_3d);
       country_flag_picture_box.location({10, 10});
       country_flag_picture_box.size({256, 192});
       
       country_flag_squared_picture_box.parent(country_panel);
-      country_flag_squared_picture_box.border_style(forms::border_style::fixed_3d);
       country_flag_squared_picture_box.location({10, 212});
       country_flag_squared_picture_box.size({128, 128});
       
