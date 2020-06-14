@@ -4,7 +4,7 @@
 #include <filesystem>
 #include <map>
 #include <xtd/environment.h>
-//#include <xtd/drawing/native/system_images.h>
+#include <xtd/drawing/native/system_images.h>
 
 // macos resources folders:
 // * /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/
@@ -56,6 +56,11 @@ image system_images::from_name(const string& theme, const string& name, const si
   auto theme_path = exists(system_images_resource_path()/theme) ? system_images_resource_path()/theme : system_images_resource_path()/default_theme();
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
+  if (theme == default_theme()) {
+    auto hbitmap = native::system_images::from_name(name, size.width(), size.height());
+    if (hbitmap) return image::from_hbitmap(hbitmap);
+  }
+
   if (dark_mode_enabled()) {
     if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
