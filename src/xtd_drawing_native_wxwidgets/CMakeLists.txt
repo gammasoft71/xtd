@@ -39,6 +39,14 @@ source_group(src\\xtd\\drawing\\native\\wxwidgets FILES ${XTD_DRAWING_NATIVE_WXW
 find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
+if (APPLE)
+elseif (UNIX)
+  find_package(PkgConfig)
+  pkg_check_modules(GTK gtk+-3.0)
+  include_directories(${GTK_INCLUDE_DIRS})
+  link_directories(${GTK_LIBRARY_DIRS})
+endif()
+
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
