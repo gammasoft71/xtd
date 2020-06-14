@@ -111,11 +111,7 @@ map<string, vector<string>> system_images::context_names() {
 }
 
 string system_images::default_theme() {
-  if (environment::os_version().is_windows_platform()) return "windows";
-  if (environment::os_version().is_osx_platform()) return "macos";
-  if (environment::os_version().is_linux_platform()) return "gnome";
-  if (environment::os_version().is_linux_platform()) return "symbols";
-  return "xtd";
+  return native::system_images::default_theme();
 }
 
 std::vector<string> system_images::names() {
