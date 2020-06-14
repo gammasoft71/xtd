@@ -95,5 +95,6 @@ namespace examples {
 }
 
 int main() {
+  application::enable_button_images();
   application::run(examples::form1());
 }
