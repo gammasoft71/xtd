@@ -127,5 +127,5 @@ std::vector<xtd::drawing::size> system_images::sizes() {
 }
 
 vector<string> system_images::themes() {
-  return {"gnome", "macos", "symbols", "windows", "xtd"};
+  return {"kde", "gnome", "macos", "symbols", "windows", "xtd"};
 }
