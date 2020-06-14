@@ -73,14 +73,14 @@ image system_images::from_name(const string& theme, const string& name, const si
   
   
   if (dark_mode_enabled()) {
-    if (exists(system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
+    if (exists(system_images_resource_path()/"symbols"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((system_images_resource_path()/"symbols"/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-      if (exists(system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
+      if (exists(system_images_resource_path()/"symbols"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((system_images_resource_path()/"symbols"/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
   }
 
-  if (exists(system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((system_images_resource_path()/"xtd"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
+  if (exists(system_images_resource_path()/"symbols"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png"))) return bitmap((system_images_resource_path()/"symbols"/default_size_names[it_sizes - default_sizes.begin()]/(name + ".png")).string());
   for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
-    if (exists(system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((system_images_resource_path()/"xtd"/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
+    if (exists(system_images_resource_path()/"symbols"/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((system_images_resource_path()/"symbols"/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
 
   return image::empty;
 }
@@ -127,5 +127,5 @@ std::vector<xtd::drawing::size> system_images::sizes() {
 }
 
 vector<string> system_images::themes() {
-  return {"windows", "macos", "gnome", "xtd", "symbols"};
+  return {"gnome", "macos", "symbols", "windows", "xtd"};
 }
