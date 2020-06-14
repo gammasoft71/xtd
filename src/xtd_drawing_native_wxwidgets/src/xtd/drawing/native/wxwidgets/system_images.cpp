@@ -26,7 +26,7 @@ intptr_t system_images::from_name(const std::string& name, int32_t width, int32_
   GError* error = nullptr;
   auto icon = gtk_icon_info_load_icon(iconInfo, &error);
   if (!icon) return 0;
-  return reinterpret_cast<intptr_t>(new wxBitmap(icon));
+  return reinterpret_cast<intptr_t>(new wxImage(wxBitmap(icon).ConvertToImage()));
 #elif defined(__WXOSX__)
   return __osx_get_image_from_name__(name.c_str(), width, height);
 #endif
