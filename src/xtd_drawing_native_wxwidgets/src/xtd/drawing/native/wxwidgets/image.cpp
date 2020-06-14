@@ -21,9 +21,12 @@ void __xtd_init_image_handlers__() {
 }
 
 void __xtd_clean_image_handlers__() {
+  /// @todo fix memory leak before activate cleanup...
+  /*
   --__xtd_count_image_handler__;
   if (__xtd_count_image_handler__ == 0)
     wxImage::CleanUpHandlers();
+   */
 }
 
 namespace {
