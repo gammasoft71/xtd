@@ -21,21 +21,21 @@ std::string system_images::default_theme() {
    if (environment::os_version().is_windows_platform()) return "windows";
    if (environment::os_version().is_osx_platform()) return "macos";
    if (environment::os_version().is_linux_platform()) return "gnome";
-   return "symbols";
+   return "symbolic";
    */
 
 #if defined(__WXMSW__)
   return "windows";
 #elif defined(__WXGTK__)
   auto current_desktop = xtd::environment::get_environment_variable("XDG_CURRENT_DESKTOP");
-  if (current_desktop.empty()) return "symbols";
+  if (current_desktop.empty()) return "symbolic";
   if (strings::contains(current_desktop, "GNOME")) return "gnome";
   if (strings::contains(current_desktop, "KDE")) return "kde";
   return strings::to_lower(current_desktop);
 #elif defined(__WXOSX__)
   return "macos";
 #endif
-  return "symbols";
+  return "symbolic";
 }
 
 intptr_t system_images::from_name(const std::string& name, int32_t width, int32_t height) {

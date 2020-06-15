@@ -28,6 +28,7 @@ namespace xtd {
       static std::vector<std::string> contexts();
       static std::map<std::string, std::vector<std::string>> context_names();
       static std::string default_theme();
+      static std::string fallback_theme();
       static std::vector<std::string> names();
       static std::vector<std::string> names(const std::string& context) {return context_names()[context];}
       static std::vector<xtd::drawing::size> sizes();
