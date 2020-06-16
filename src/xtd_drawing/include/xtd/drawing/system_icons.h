@@ -27,14 +27,20 @@ namespace xtd {
       static xtd::drawing::icon question(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-question", size)));}
       static xtd::drawing::icon shield() {return shield(default_size());}
       static xtd::drawing::icon shield(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("dialog-password", size)));}
-      static xtd::drawing::icon win_logo() {return win_logo(default_size());}
-      static xtd::drawing::icon win_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("windows", "start-here", size)));}
+      static xtd::drawing::icon win_logo() {return windows_logo(default_size());}
+      static xtd::drawing::icon win_logo(const xtd::drawing::size& size) {return windows_logo(size);}
 
       static xtd::drawing::size default_size() {return {32, 32};}
+      static xtd::drawing::icon kde_logo() {return kde_logo(default_size());}
+      static xtd::drawing::icon kde_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("kde", "start-here", size)));}
       static xtd::drawing::icon macos_logo() {return macos_logo(default_size());}
       static xtd::drawing::icon macos_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("macos", "start-here", size)));}
       static xtd::drawing::icon gnome_logo() {return gnome_logo(default_size());}
       static xtd::drawing::icon gnome_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("gnome", "start-here", size)));}
+      static xtd::drawing::icon symbolic_logo() {return symbolic_logo(default_size());}
+      static xtd::drawing::icon symbolic_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("symbolic", "start-here", size)));}
+      static xtd::drawing::icon windows_logo() {return windows_logo(default_size());}
+      static xtd::drawing::icon windows_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("windows", "start-here", size)));}
       static xtd::drawing::icon xtd_logo() {return xtd_logo(default_size());}
       static xtd::drawing::icon xtd_logo(const xtd::drawing::size& size) {return xtd::drawing::icon::from_bitmap(bitmap(system_images::from_name("xtd", size)));}
     };
