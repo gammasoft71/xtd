@@ -34,6 +34,7 @@ add_projects(
   smileys
   stopwatch_form
   system_images2
+  system_images3
   text_box_multiline
   text_box_password
   texts
