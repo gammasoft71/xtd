@@ -65,6 +65,7 @@
 #include "xtd/forms/font_picker.h"
 #include "xtd/forms/form.h"
 #include "xtd/forms/form_border_style.h"
+#include "xtd/forms/form_button_images.h"
 #include "xtd/forms/form_closed_event_args.h"
 #include "xtd/forms/form_closed_event_handler.h"
 #include "xtd/forms/form_closing_event_args.h"
