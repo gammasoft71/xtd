@@ -5,7 +5,7 @@
 #include <wx/button.h>
 #include "control_handler.h"
 
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
 void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height);
 #endif
 
@@ -17,7 +17,7 @@ namespace xtd {
         wx_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           this->control_handler::create<wxButton>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-          #if defined(__WXOSX__)
+          #if defined(__APPLE__)
           __set_button_bezel_style__((wxButton*)this->control(), create_params.location().x(), create_params.location().y(), create_params.size().width(), create_params.size().height());
           #endif
         }
@@ -40,7 +40,7 @@ namespace xtd {
         virtual void SetPosition(const wxPoint& pt) override {
           control_handler::SetPosition(pt);
           
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
           wxSize size = control()->GetSize();
           __set_button_bezel_style__((wxButton*)control(), pt.x, pt.y, size.GetWidth(), size.GetHeight());
 #endif
@@ -56,7 +56,7 @@ namespace xtd {
 
         void SetSize(int32_t width, int32_t height) override {
           control_handler::SetSize(width, height);
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
           wxPoint location = control()->GetPosition();
           __set_button_bezel_style__((wxButton*)control(), location.x, location.y, width, height);
 #endif

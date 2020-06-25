@@ -134,7 +134,7 @@ extern int32_t __mainloop_runnning__;
 color control::back_color(intptr_t control) {
   if (control == 0) return color::empty;
   wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetBackgroundColour();
-#if defined (__WXOSX__)
+#if defined (__APPLE__)
   return color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #endif
   return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
@@ -142,7 +142,7 @@ color control::back_color(intptr_t control) {
 
 void control::back_color(intptr_t control, const color& color) {
   if (control == 0) return;
-#if defined (__WXOSX__)
+#if defined (__APPLE__)
   if (color.handle() && !drawing::native::system_colors::force_set_system_color())
     reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
   else
@@ -255,7 +255,7 @@ void control::client_size(intptr_t control, const drawing::size& size) {
   
   if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())) {
     int width = size.width();
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
     if (width < 75) width = 75;
 #endif
     SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {width, size.height()});
@@ -286,7 +286,7 @@ void control ::focus(intptr_t control) {
 color control::fore_color(intptr_t control) {
   if (control == 0) return color::empty;
   wxColour colour = reinterpret_cast<control_handler*>(control)->control()->GetForegroundColour();
-#if defined (__WXOSX__)
+#if defined (__APPLE__)
   return color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
 #endif
   return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
@@ -294,7 +294,7 @@ color control::fore_color(intptr_t control) {
 
 void control::fore_color(intptr_t control, const color& color) {
   if (control == 0) return;
-#if defined (__WXOSX__)
+#if defined (__APPLE__)
   if (color.handle() && !drawing::native::system_colors::force_set_system_color())
     reinterpret_cast<control_handler*>(control)->control()->SetForegroundColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
   else

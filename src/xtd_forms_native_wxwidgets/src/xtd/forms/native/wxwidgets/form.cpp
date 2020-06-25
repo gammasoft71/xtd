@@ -44,7 +44,7 @@ void form::maximize(intptr_t form, bool maximize) {
 void form::menu(intptr_t form, intptr_t menu) {
   if (form == 0) return;
   
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
   if (menu != 0) {
     if (reinterpret_cast<wxMenuBar*>(menu)->FindMenu("Window") == wxNOT_FOUND) reinterpret_cast<wxMenuBar*>(menu)->Append(new wxMenu(), "&Window");
     if (reinterpret_cast<wxMenuBar*>(menu)->FindMenu("Help") == wxNOT_FOUND) reinterpret_cast<wxMenuBar*>(menu)->Append(new wxMenu(), "&Help");

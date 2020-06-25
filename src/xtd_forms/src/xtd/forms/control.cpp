@@ -434,7 +434,7 @@ void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(handle_, {*this, &control::wnd_proc_});
   handles_[handle_] = this;
   if (this->get_state(state::client_size_setted)) native::control::client_size(handle_, this->client_size());
-  if (drawing::native::system_colors::force_set_system_color() || (this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_osx_platform() && this->back_color() != this->default_back_color())) native::control::back_color(handle_, this->back_color());
+  if (drawing::native::system_colors::force_set_system_color() || (this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_macos_platform() && this->back_color() != this->default_back_color())) native::control::back_color(handle_, this->back_color());
   if (this->cursor_.has_value() && this->cursor_.value() != this->default_cursor()) native::control::cursor(handle_, this->cursor().handle());
   if (drawing::native::system_colors::force_set_system_color() || this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(handle_, this->fore_color());
   if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(handle_, this->font());
@@ -528,7 +528,7 @@ void control::on_parent_back_color_changed(const event_args &e) {
   if (!this->back_color_.has_value()) {
     if (this->back_color() == this->default_back_color())
       this->recreate_handle();
-    else if (!environment::os_version().is_osx_platform())
+    else if (!environment::os_version().is_macos_platform())
       native::control::back_color(handle_, this->back_color());
     for (auto control : this->controls())
       control.get().on_parent_back_color_changed(event_args::empty);

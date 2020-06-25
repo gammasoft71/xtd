@@ -106,7 +106,7 @@ namespace xtd {
         }
         
         wxWindow* graphic_control() const override {
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
           return control();
 #else
           return panel_;
@@ -129,7 +129,7 @@ namespace xtd {
         }
 
         void SetSize(int32_t width, int32_t height) override {
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
           if (width < 75) width = 75;
           if (height < 23) height = 23;
 #endif

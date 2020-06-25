@@ -14,7 +14,7 @@ using namespace xtd::forms::native;
 
 namespace {
   static std::string get_os_potfix() noexcept {
-    return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_osx_platform() ? "_m" : "";
+    return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";
   }
  
   static std::string forms_resource_path() {
@@ -38,7 +38,7 @@ namespace {
 }
 
 intptr_t cursors::app_starting() {
-  if (environment::os_version().is_osx_platform()) return create_cursor_from_resources("app_starting", {0, 0});
+  if (environment::os_version().is_macos_platform()) return create_cursor_from_resources("app_starting", {0, 0});
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_ARROWWAIT));
 }
 
@@ -195,7 +195,7 @@ intptr_t cursors::vsplit() {
 }
 
 intptr_t cursors::wait_cursor() {
-  if (environment::os_version().is_osx_platform()) return create_cursor_from_resources("wait", {7, 7});
+  if (environment::os_version().is_macos_platform()) return create_cursor_from_resources("wait", {7, 7});
   return reinterpret_cast<intptr_t>(new wxCursor(wxCURSOR_WAIT));
 }
 
