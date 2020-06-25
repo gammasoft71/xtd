@@ -74,7 +74,7 @@ namespace xtd {
       static xtd::drawing::image help_about(const xtd::drawing::size& size) {return help_about(xtd::drawing::system_images::default_theme(), size);}
       static xtd::drawing::image help_about(const std::string& theme, const xtd::drawing::size& size) {return from_name(theme, "help-about", size);}
 
-      static xtd::drawing::size size() {return xtd::environment::os_version().is_osx_platform() ? xtd::drawing::size {24, 24} : xtd::drawing::size {16, 16};}
+      static xtd::drawing::size size() {return xtd::environment::os_version().is_macos_platform() ? xtd::drawing::size {24, 24} : xtd::drawing::size {16, 16};}
       static xtd::drawing::image from_name(const std::string& name) {return from_name(name, size());}
       static xtd::drawing::image from_name(const std::string& theme, const std::string& name) {return from_name(theme, name, size());}
       static xtd::drawing::image from_name(const std::string& name, const xtd::drawing::size& size) {return from_name(xtd::drawing::system_images::default_theme(), name, size);}

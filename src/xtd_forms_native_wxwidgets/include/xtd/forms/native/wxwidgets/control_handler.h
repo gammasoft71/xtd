@@ -180,7 +180,7 @@ namespace xtd {
               case WXK_CLEAR: key_data = VK_CLEAR; break;
               case WXK_SHIFT: key_data = VK_SHIFT; break;
               case WXK_ALT: key_data = VK_MENU; break;
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
               case WXK_RAW_CONTROL: key_data = VK_CONTROL; break;
               case WXK_CONTROL: key_data = VK_COMMAND; break;
 #else
@@ -318,7 +318,7 @@ namespace xtd {
           }
           /*
           if (key_event.AltDown()) key_data += VK_ALT_MODIFIER;
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
           if (key_event.CmdDown()) key_data += VK_COMMAND_MODIFIER;
           if (key_event.RawControlDown()) key_data += VK_CONTROL_MODIFIER;
 #else
@@ -329,7 +329,7 @@ namespace xtd {
            */
 
           if ((key_event.GetModifiers() & wxMOD_ALT) == wxMOD_ALT) key_data += VK_ALT_MODIFIER;
- #if defined(__WXOSX__)
+ #if defined(__APPLE__)
           if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_COMMAND_MODIFIER;
           if ((key_event.GetModifiers() & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) key_data += VK_CONTROL_MODIFIER;
 #else

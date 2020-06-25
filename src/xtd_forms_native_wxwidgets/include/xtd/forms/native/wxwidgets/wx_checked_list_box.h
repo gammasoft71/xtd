@@ -13,7 +13,7 @@ namespace xtd {
         wx_checked_list_box(const forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           this->control_handler::create<wxCheckListBox>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(0, 0), 0, nullptr, style_to_wx_style(create_params.style(), create_params.ex_style()));
-          /// workaround to fix alignment error on osx...
+          /// workaround to fix alignment error on macos...
           static_cast<wxCheckListBox*>(control())->SetSize(create_params.width(), create_params.height());
         }
         

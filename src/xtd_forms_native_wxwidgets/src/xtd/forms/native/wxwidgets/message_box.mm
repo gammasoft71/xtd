@@ -1,4 +1,4 @@
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
 #include <xtd/xtd.strings>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/message_box.h>

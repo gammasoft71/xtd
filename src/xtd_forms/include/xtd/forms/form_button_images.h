@@ -96,7 +96,7 @@ namespace xtd {
       static xtd::drawing::size size() {return size(false);}
       static xtd::drawing::size size(bool maximized) {
         if (environment::os_version().is_windows_platform()) return {90, maximized ? 42 : 58};
-        if (environment::os_version().is_osx_platform()) return {24, 24};
+        if (environment::os_version().is_macos_platform()) return {24, 24};
         if (environment::os_version().is_linux_platform()) return {64, 64};
         return {32, 32};
       }
