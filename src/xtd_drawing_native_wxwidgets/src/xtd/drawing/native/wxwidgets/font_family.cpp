@@ -10,7 +10,7 @@
 using namespace xtd::drawing::native;
 
 namespace {
-#if defined(__WXOSX__)
+#if defined(__APPLE__)
   float pixel_to_native_font_graphics_untit(float size) {
     return size;  // font is in points
   }
@@ -39,7 +39,7 @@ std::string font_family::generic_serif_name() {
    */
 #if defined(__WXMSW__)
   return "Times New Roman";
-#elif defined(__WXOSX__)
+#elif defined(__APPLE__)
   return "Times New Roman";
 #elif defined(__WXGTK__)
   return "Serif";
@@ -57,7 +57,7 @@ std::string font_family::generic_sans_serif_name() {
    */
 #if defined(__WXMSW__)
   return "Microsoft Sans Serif";
-#elif defined(__WXOSX__)
+#elif defined(__APPLE__)
   return "Arial";
 #elif defined(__WXGTK__)
   return "Sans";
@@ -75,7 +75,7 @@ std::string font_family::generic_monospace_name() {
    */
 #if defined(__WXMSW__)
   return "Courier New";
-#elif defined(__WXOSX__)
+#elif defined(__APPLE__)
   return "Courier";
 #elif defined(__WXGTK__)
   return "Monospace";
