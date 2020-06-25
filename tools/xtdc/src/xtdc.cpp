@@ -305,7 +305,7 @@ namespace xtdc_command {
     }
 
     static string get_os_name() noexcept {
-      static map<platform_id, string> names = {{platform_id::unknown, "Unknown System"}, {platform_id::win32s, "Windows"}, {platform_id::win32_windows, "Windows"}, {platform_id::win32_nt, "Windows NT"}, {platform_id::win_ce, "Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::mac_os_x, "Mac OS X"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, };
+      static map<platform_id, string> names = {{platform_id::unknown, "Unknown System"}, {platform_id::win32s, "Windows"}, {platform_id::win32_windows, "Windows"}, {platform_id::win32_nt, "Windows NT"}, {platform_id::win_ce, "Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, };
       return names[environment::os_version().platform()];
     }
 
@@ -572,22 +572,22 @@ namespace xtdc_command {
     }
     
     static int documentation(const vector<string>& args) {
-      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/docs/home.md", environment::os_version().is_osx_platform() ? "open " : "").c_str());
+      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/docs/home.md", environment::os_version().is_macos_platform() ? "open " : "").c_str());
       return 0;
     }
     
     static int examples(const vector<string>& args) {
-      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/examples/README.md", environment::os_version().is_osx_platform() ? "open " : "").c_str());
+      system(strings::format("{}https://github.com/gammasoft71/xtd/blob/master/examples/README.md", environment::os_version().is_macos_platform() ? "open " : "").c_str());
       return 0;
     }
     
     static int guide(const vector<string>& args) {
-      system(strings::format("{}https://codedocs.xyz/gammasoft71/xtd", environment::os_version().is_osx_platform() ? "open " : "").c_str());
+      system(strings::format("{}https://codedocs.xyz/gammasoft71/xtd", environment::os_version().is_macos_platform() ? "open " : "").c_str());
       return 0;
     }
     
     static int web(const vector<string>& args) {
-      system(strings::format("{}https://gammasoft71.wixsite.com/gammasoft", environment::os_version().is_osx_platform() ? "open " : "").c_str());
+      system(strings::format("{}https://gammasoft71.wixsite.com/gammasoft", environment::os_version().is_macos_platform() ? "open " : "").c_str());
       return 0;
     }
     

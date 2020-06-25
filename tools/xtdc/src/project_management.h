@@ -102,7 +102,7 @@ namespace xtdc_command {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Build project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       generate();
-      if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_osx_platform())
+      if (xtd::environment::os_version().is_windows_platform() || xtd::environment::os_version().is_macos_platform())
         system(xtd::strings::format("cmake --build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "").c_str());
       else
         system(xtd::strings::format("cmake --build {}{}", build_path()/(release ? "Release" : "Debug"), target.empty() ? "" : xtd::strings::format(" --target {}", target), clean_first ? " --clean-first {}" : "").c_str());
@@ -129,7 +129,7 @@ namespace xtdc_command {
       generate();
       if (xtd::environment::os_version().is_windows_platform())
         system(xtd::strings::format("explorer {}.sln", (build_path()/get_name()).string()).c_str());
-      else if (xtd::environment::os_version().is_osx_platform())
+      else if (xtd::environment::os_version().is_macos_platform())
         system(xtd::strings::format("open {}.xcodeproj", (build_path()/get_name()).string()).c_str());
       else
         system(xtd::strings::format("xdg-open {}.cbp > /dev/null 2>&1", (build_path()/(release ? "Release" : "Debug")/get_name()).string()).c_str());
@@ -171,7 +171,7 @@ namespace xtdc_command {
       std::filesystem::path app_path;
       for (auto file : xtd::io::file::read_all_lines((xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path())/"install_manifest.txt")) {
         if (std::filesystem::exists({file})) {
-          if (xtd::environment::os_version().is_osx_platform() && xtd::strings::contains(file, "Contents/MacOS")) app_path = xtd::strings::remove(file, xtd::strings::index_of(file, "Contents/MacOS"));
+          if (xtd::environment::os_version().is_macos_platform() && xtd::strings::contains(file, "Contents/MacOS")) app_path = xtd::strings::remove(file, xtd::strings::index_of(file, "Contents/MacOS"));
           std::filesystem::remove({file});
         }
       }
@@ -215,9 +215,9 @@ namespace xtdc_command {
         return xtd::strings::format("start \"{}\" {}", target, (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)).string());
       else if (xtd::environment::os_version().is_windows_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)))
         return (path/(release ? "Release" : "Debug")/xtd::strings::format("{}.exe", target)).string();
-      else if (xtd::environment::os_version().is_osx_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)))
+      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target)))
         return xtd::strings::format("open {}", path/(release ? "Release" : "Debug")/xtd::strings::format("{}.app", target));
-      else if (xtd::environment::os_version().is_osx_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
+      else if (xtd::environment::os_version().is_macos_platform() && std::filesystem::exists(path/(release ? "Release" : "Debug")/target))
         return (path/(release ? "Release" : "Debug")/target).string();
       else if (xtd::environment::os_version().is_linux_platform() && is_linux_gui_app(path, target))
         return xtd::strings::format("xdg-open {}", path/target);
@@ -3080,7 +3080,7 @@ namespace xtdc_command {
       if (!first_generation && name.empty()) name = get_name();
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.sln", name))))
         system(xtd::strings::format("cmake -S {} -B {}", path_, build_path()).c_str());
-      else if (xtd::environment::os_version().is_osx_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.xcodeproj", name))))
+      else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !std::filesystem::exists(build_path()/xtd::strings::format("{}.xcodeproj", name))))
         system(xtd::strings::format("cmake -S {} -B {} -G \"Xcode\"", path_, build_path()).c_str());
       else if (xtd::environment::os_version().is_linux_platform() && (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name)))) {
         std::filesystem::create_directories(build_path()/"Debug");
@@ -3094,7 +3094,7 @@ namespace xtdc_command {
     bool is_path_already_exist_and_not_empty(const std::filesystem::path& path) const {
       if (!std::filesystem::exists({path_})) return false;
       if (std::filesystem::is_empty({path_})) return false;
-      if (xtd::environment::os_version().is_osx_platform() && std::count_if(std::filesystem::directory_iterator(path_), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
+      if (xtd::environment::os_version().is_macos_platform() && std::count_if(std::filesystem::directory_iterator(path_), std::filesystem::directory_iterator(), [](auto item) {return item.path().filename().string() != ".DS_Store";}) == 0) return false;
       return true;
     }
     

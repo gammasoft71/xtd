@@ -365,7 +365,7 @@ namespace xtd {
         __opaque_environment::get_os_version(major, minor, build, revision);
         xtd::version version;
         version = xtd::version(major, minor, build, revision);
-        os = operating_system(__opaque_environment::get_os_platform_id(), version, __opaque_environment::get_service_pack());
+        os = operating_system(__opaque_environment::get_os_platform_id(), version, __opaque_environment::get_service_pack(), __opaque_environment::get_desktop_environment());
       }
       return os;
     }

@@ -16,6 +16,10 @@ std::string __opaque_environment::get_current_directory() noexcept {
   return _getcwd(path, MAX_PATH) ? path : "";
 }
 
+std::string __opaque_environment::get_desktop_environment() noexcept {
+  return "windows";
+}
+
 std::string __opaque_environment::get_environment_variable(const std::string& variable) noexcept {
   size_t size = 0;
   getenv_s(&size, NULL, 0, variable.c_str());

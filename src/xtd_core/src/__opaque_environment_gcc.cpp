@@ -58,6 +58,19 @@ std::string __opaque_environment::get_current_directory() noexcept {
   return getcwd(path, MAXPATHLEN) ? path : "";
 }
 
+std::string __opaque_environment::get_desktop_environment() noexcept {
+#if defined(__APPLE__)
+  return "macos";
+#else
+  auto current_desktop = get_environment_variable("XDG_CURRENT_DESKTOP");
+  if (current_desktop == "") current_desktop = get_environment_variable("XDG_DATA_DIRS");
+  for (auto environment_desktop : {"budgie", "cinamon",  "deepin", "Enlightenment", "étoilé", "gnome", "kde", "lxqt", "mate", "pantheon", "razor", "unity", "xfce"}) {
+    if (xtd::strings::contains(xtd::strings::to_lower(current_desktop), environment_desktop)) return environment_desktop;
+  }
+  return "";
+#endif
+}
+
 std::string __opaque_environment::get_environment_variable(const std::string& variable) noexcept {
   char* value = getenv(variable.c_str());
   return value == nullptr ? "" : value;
@@ -82,7 +95,7 @@ xtd::platform_id __opaque_environment::get_os_platform_id() noexcept {
   #if TARGET_OS_SIMULATOR == 1 || TARGET_OS_IPHONE == 1
     return xtd::platform_id::ios;
   #else
-    return xtd::platform_id::mac_os_x;
+    return xtd::platform_id::macos;
   #endif
 #else
   #if defined(__ANDROID__)
