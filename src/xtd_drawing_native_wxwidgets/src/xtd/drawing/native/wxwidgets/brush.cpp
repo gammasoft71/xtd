@@ -10,7 +10,7 @@ intptr_t brush::create() {
 }
 
 void brush::color(intptr_t brush, intptr_t handle, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
-#if defined (__WXOSX__)
+#if defined (__APPLE__)
   if (handle && !drawing::native::system_colors::force_set_system_color())
     reinterpret_cast<wxBrush*>(brush)->SetColour(wxColour(reinterpret_cast<WX_NSColor>(handle)));
   else

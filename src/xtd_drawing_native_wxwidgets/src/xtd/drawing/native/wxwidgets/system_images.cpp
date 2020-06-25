@@ -12,29 +12,13 @@
 using namespace xtd;
 using namespace xtd::drawing::native;
 
-#if defined(__WXOSX__)
-intptr_t __osx_get_image_from_name__(const char* name, int32_t width, int32_t height);
+#if defined(__APPLE__)
+intptr_t __macos_get_image_from_name__(const char* name, int32_t width, int32_t height);
 #endif
 
 std::string system_images::default_theme() {
-  /*
-   if (environment::os_version().is_windows_platform()) return "windows";
-   if (environment::os_version().is_osx_platform()) return "macos";
-   if (environment::os_version().is_linux_platform()) return "gnome";
-   return "symbolic";
-   */
-
-#if defined(__WXMSW__)
-  return "windows";
-#elif defined(__WXGTK__)
-  auto current_desktop = xtd::environment::get_environment_variable("XDG_CURRENT_DESKTOP");
-  if (current_desktop.empty()) return "symbolic";
-  if (strings::contains(current_desktop, "GNOME")) return "gnome";
-  if (strings::contains(current_desktop, "KDE")) return "kde";
-  return strings::to_lower(current_desktop);
-#elif defined(__WXOSX__)
-  return "macos";
-#endif
+  auto desktop_environment = environment::os_version().desktop_environment();
+  if (desktop_environment == "macos" || desktop_environment == "windows" || desktop_environment == "gnome" || desktop_environment == "kde") return desktop_environment;
   return "symbolic";
 }
 
@@ -50,8 +34,8 @@ intptr_t system_images::from_name(const std::string& name, int32_t width, int32_
   auto icon = gtk_icon_info_load_icon(iconInfo, &error);
   if (error || !icon) return 0;
   return reinterpret_cast<intptr_t>(new wxImage(wxBitmap(icon).ConvertToImage()));
-#elif defined(__WXOSX__)
-  return __osx_get_image_from_name__(name.c_str(), width, height);
+#elif defined(__APPLE__)
+  return __macos_get_image_from_name__(name.c_str(), width, height);
 #endif
   return 0;
 }
