@@ -93,7 +93,7 @@ namespace unit_tests {
     }
     
     void test_method_(add_size) {
-      assert::are_equal(point(4, 6), point::add({1, 2}, {3, 4}));
+      assert::are_equal(point(4, 6), point::add({1, 2}, size {3, 4}));
     }
     
     void test_method_(operator_plus_size) {
@@ -107,7 +107,7 @@ namespace unit_tests {
     }
 
     void test_method_(subtract_size) {
-      assert::are_equal(point(2, 3), point::subtract({3, 5}, {1, 2}));
+      assert::are_equal(point(2, 3), point::subtract({3, 5}, size {1, 2}));
     }
     
     void test_method_(operator_minus_size) {
