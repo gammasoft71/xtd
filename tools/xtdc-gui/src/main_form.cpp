@@ -485,7 +485,7 @@ main_form::main_form() {
       auto target_path = std::filesystem::temp_directory_path()/"xtd_examples"/exemple_subproject_path/xtd_example.path().stem();
       if (std::filesystem::exists(target_path)) std::filesystem::remove_all(target_path);
       std::filesystem::create_directories(target_path);
-      for (auto file : std::filesystem::directory_iterator( xtd_example.path()))
+      for (auto file : std::filesystem::directory_iterator(xtd_example.path()))
         std::filesystem::copy(file, target_path/file.path().filename());
       //message_box::show(strings::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
       system(strings::format("xtdc open {}", target_path).c_str());
