@@ -626,9 +626,16 @@ void control::update() const {
 }
 
 intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
-  message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
-  wnd_proc(message);
-  return message.result();
+  try {
+    message message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+    wnd_proc(message);
+    return message.result();
+  } catch(const std::exception& e) {
+    message_box::show(xtd::strings::format("message: {}", e.what()), xtd::strings::format("Exception {}", xtd::strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+  } catch(...) {
+    message_box::show("message: An unknown exception occure", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
+  }
+  return 0;
 }
 
 void control::wnd_proc(message& message) {
