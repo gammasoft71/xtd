@@ -232,7 +232,10 @@ namespace xtd {
       /// }
       /// @endcode
       static point add(const point& pt, const size& sz);
-      
+      /// @cond
+      static point add(const point& pt1, const point& pt2);
+      /// @endcond
+
       /// @brief Converts the specified point_f to a point by rounding the values of the point_f to the next higher integer values.
       /// @param value The point_f to convert.
       /// @return The point this method converts to.
@@ -272,6 +275,9 @@ namespace xtd {
       /// @return The point that is the result of the subtraction operation.
       /// @remarks The subtract subtracts the width and height of the specified size from the x and y values of the specified point.
       static point subtract(const point& pt, const size& sz);
+      /// @cond
+      static point subtract(const point& pt1, const point& pt2);
+      /// @endcond
 
       /// @brief Converts this point to a human-readable string.
       /// @return A string that represents this point.
@@ -291,9 +297,13 @@ namespace xtd {
       }
       
       point operator+(const size& sz) const;
+      point operator+(const point& pt) const;
       point& operator+=(const size& sz);
+      point& operator+=(const point& pt);
       point operator-(const size& sz) const;
+      point operator-(const point& pt) const;
       point& operator-=(const size& sz);
+      point& operator-=(const point& pt);
       /// @endcond
       
     private:
