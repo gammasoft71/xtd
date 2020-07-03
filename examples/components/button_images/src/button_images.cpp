@@ -75,7 +75,7 @@ namespace examples {
       button_go_home.parent(*this);
       button_go_home.image(button_images::from_name("go-home"));
       button_go_home.image_align(content_alignment::middle_left);
-      button_go_home.text(texts::next);
+      button_go_home.text(texts::home);
       button_go_home.location({210, 130});
       button_go_home.width(90);
     }
