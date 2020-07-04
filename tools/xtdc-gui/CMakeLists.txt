@@ -71,7 +71,7 @@ if (MSVC)
     "#pragma endregion\n"
   )
   source_group(Resources FILES ${CMAKE_CURRENT_BINARY_DIR}/resources/xtdc-gui.rc)
-  set(PROJECT_SOURCES "${PROJECT_SOURCES};${CMAKE_CURRENT_BINARY_DIR}/resources/xtdc-gui.rc")
+  set(SOURCES "${SOURCES};${CMAKE_CURRENT_BINARY_DIR}/resources/xtdc-gui.rc")
 elseif (APPLE)
   set(APPLICATION_ICON resources/xtdc-gui.icns)
   set_source_files_properties(${APPLICATION_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
