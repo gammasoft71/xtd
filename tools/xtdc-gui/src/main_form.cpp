@@ -21,6 +21,7 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
+  //image(<#const image &image#>);
   client_size({1000, 710});
   minimize_box(false);
   if (environment::os_version().is_macos_platform())
