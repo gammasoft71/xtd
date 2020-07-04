@@ -12,6 +12,7 @@ add_projects(
   key_events
   form_click
   mouse_events
+  move_form
   send_message_to_form
   wnd_proc
 )
