@@ -23,6 +23,8 @@ using namespace xtdc_gui;
 main_form::main_form() {
   client_size({1000, 710});
   minimize_box(false);
+  if (environment::os_version().is_macos_platform())
+    environment::set_environment_variable("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin");
   /// @todo Remove two folluwing lines when anchor in anchor will fixed
   //maximize_box(false);
   //form_border_style(forms::form_border_style::fixed_3d);
