@@ -83,7 +83,7 @@ elseif (APPLE)
 elseif (UNIX)
   set(APPLICATION_ICON resources/xtdc-gui.png)
   configure_file(${APPLICATION_ICON} $ENV{HOME}/.local/share/icons/hicolor/512x512/apps/xtdc-gui.png COPYONLY)
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/resources/xtd-gui.desktop}
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/resources/xtdc-gui.desktop}
     "[Desktop Entry]\n"
     "Type=Application\n"
     "Encoding=UTF-8\n"
