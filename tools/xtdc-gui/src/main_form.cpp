@@ -139,6 +139,7 @@ main_form::main_form() {
     previous_button_.visible(true);
     next_button_.text("&Open");
     next_button_.visible(true);
+    next_button_.enabled(true);
   };
 
   open_xtd_examples_panel_.parent(*this);
@@ -437,6 +438,12 @@ main_form::main_form() {
       create_panel_.visible(false);
       previous_button_.visible(false);
       next_button_.visible(false);
+    } else if (configure_panel_.visible()) {
+      next_button_.text("&Next");
+      create_panel_.visible(true);
+      configure_panel_.visible(false);
+      previous_button_.visible(true);
+      next_button_.visible(true);
     } else if (open_xtd_examples_panel_.visible()) {
       previous_button_.text("&Back");
       next_button_.text("&Next");
