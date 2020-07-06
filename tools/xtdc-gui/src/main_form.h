@@ -166,6 +166,8 @@ namespace xtdc_gui {
       {"Event - paint", "demonstrates paint event with xtd::forms::form.", {"xtd_forms/events/form_paint"}},
       {"Event - send message", "demonstrates how to send message to xtd::forms::form.", {"xtd_forms/events/send_message_to_form"}},
       {"Event - windows process", "demonstrates the use of wnd_proc method.", {"xtd_forms/events/wnd_proc"}},
+      {"Games - game of life", "The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.", {"xtd_forms/games/game_of_life"}},
+      {"Games - minesweeper", "The goal of the game is to uncover all the squares that do not contain mines.", {"xtd_forms/games/minesweeper"}},
       {"Hello world - hello world (emoticons)", "The classic first \"Hello, World!\" with xtd::forms::emoticons component.", {"xtd_forms/hello_world_examples/hello_world_emoticons"}},
       {"Hello world - hello world (label)", "The classic first \"Hello, World!\" with xtd::forms::label control.", {"xtd_forms/hello_world_examples/hello_world_label"}},
       {"Hello world - hello world (message box)", "The classic first \"Hello, World!\" with xtd::forms::message_box dialog.", {"xtd_forms/hello_world_examples/hello_world_message_box"}},
