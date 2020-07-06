@@ -182,6 +182,12 @@ namespace xtdc_command {
     }
 
   private:
+#if defined(__XTD_FORMS_RESOURCES_PATH__)
+    static std::filesystem::path get_base_path() noexcept {return std::filesystem::path(__XTD_FORMS_RESOURCES_PATH__);}
+#else
+    static std::string get_base_path() noexcept {return std::filesystem::path;}
+#endif
+    
     std::string& get_name() const {
       static std::string name;
       if (name.empty()) {
@@ -1612,7 +1618,11 @@ namespace xtdc_command {
 
     void create_xtd_gui(const std::string& name, project_sdk sdk, project_language language, bool create_solution) const {
       std::filesystem::create_directories(create_solution ? path_/name/"properties" : path_/"properties");
+      std::filesystem::create_directories(create_solution ? path_/name/"resources" : path_/"resources");
       std::filesystem::create_directories(create_solution ? path_/name/"src" : path_/"src");
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.icns", path_/(create_solution ? name : "" )/"resources"/xtd::strings::format("{}.icns", name));
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.ico", path_/(create_solution ? name : "" )/"resources"/xtd::strings::format("{}.ico", name));
+      std::filesystem::copy(get_base_path()/"share"/"xtd"/"resources"/"icons"/"xtd_forms.png", path_/(create_solution ? name : "" )/"resources"/xtd::strings::format("{}.png", name));
       if (create_solution) create_xtd_gui_solution_cmakelists_txt(name);
       create_xtd_gui_application_properties(name, create_solution ? path_/name : path_);
       create_xtd_gui_cmakelists_txt(name, create_solution ? path_/name : path_);
@@ -1654,6 +1664,7 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({})", name),
         "find_package(xtd REQUIRED)",
+        xtd::strings::format("application_icon(resources/{})", name),
         "add_sources(",
         "  src/form1.h",
         "  src/form1.cpp",
@@ -1701,6 +1712,7 @@ namespace xtdc_command {
         "form1::form1() {",
         "  text(\"form1\");",
         "  client_size({800, 450});",
+        "  menu(main_menu::create_standard_items());",
         "}",
         "",
         "void form1::main() {",
