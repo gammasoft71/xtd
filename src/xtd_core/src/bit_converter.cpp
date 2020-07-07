@@ -139,7 +139,7 @@ string bit_converter::to_string(const vector<uint8_t>& value, size_t start_index
   if (start_index + length > value.size()) throw std::out_of_range("out of range arguments");
 
   string str;
-  for (int32_t index = start_index; index < start_index + length; index++)
+  for (size_t index = start_index; index < start_index + length; index++)
     str.append(strings::format("{:X2}", value[index])).append(index < start_index + length - 1 ? "-" : "");
   return str;
 }
