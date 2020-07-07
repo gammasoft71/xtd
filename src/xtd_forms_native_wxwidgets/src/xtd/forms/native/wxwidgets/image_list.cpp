@@ -13,7 +13,7 @@ intptr_t image_list::create(const drawing::size &image_size) {
 
 void image_list::delete_item(intptr_t image_list, size_t pos) {
   if (image_list == 0) return;
-  reinterpret_cast<wxImageList*>(image_list)->Remove(pos);
+  reinterpret_cast<wxImageList*>(image_list)->Remove(static_cast<int32_t>(pos));
 }
 
 void image_list::destroy(intptr_t image_list) {
@@ -40,5 +40,5 @@ void image_list::insert_item(intptr_t image_list, size_t pos, const drawing::ima
 
 void image_list::update_item(intptr_t image_list, size_t pos, const drawing::image& image) {
   if (image_list == 0) return;
-  reinterpret_cast<wxImageList*>(image_list)->Replace(pos, wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
+  reinterpret_cast<wxImageList*>(image_list)->Replace(static_cast<int32_t>(pos), wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
 }
