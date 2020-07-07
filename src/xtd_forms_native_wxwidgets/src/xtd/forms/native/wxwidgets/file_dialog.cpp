@@ -19,7 +19,7 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const std::string& default_ext,
   if ((options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN) wx_style |= wxFD_SHOW_HIDDEN;
 #endif
   wxFileDialog dialog(reinterpret_cast<wxWindow*>(hwnd), {title.c_str(), wxMBConvUTF8()}, {initial_directory.c_str(), wxMBConvUTF8()}, {file_name.c_str(), wxMBConvUTF8()}, {filter.c_str(), wxMBConvUTF8()}, wx_style);
-  dialog.SetFilterIndex(filter_index - 1);
+  dialog.SetFilterIndex(static_cast<int32_t>(filter_index - 1));
   if (dialog.ShowModal() != wxID_OK) return false;
   if ((options & OFN_ALLOWMULTISELECT) != OFN_ALLOWMULTISELECT) {
     file_name = dialog.GetPath().utf8_str().data();
@@ -51,7 +51,7 @@ bool file_dialog::run_save_dialog(intptr_t hwnd, const std::string& default_ext,
   if ((options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN) wx_style |= wxFD_SHOW_HIDDEN;
 #endif
   wxFileDialog dialog(reinterpret_cast<wxWindow*>(hwnd), {title.c_str(), wxMBConvUTF8()}, {initial_directory.c_str(), wxMBConvUTF8()}, {file_name.c_str(), wxMBConvUTF8()}, {filter.c_str(), wxMBConvUTF8()}, wx_style);
-  dialog.SetFilterIndex(filter_index - 1);
+  dialog.SetFilterIndex(static_cast<int32_t>(filter_index - 1));
   if (dialog.ShowModal() != wxID_OK) return false;
   file_name = dialog.GetPath();
   return true;
