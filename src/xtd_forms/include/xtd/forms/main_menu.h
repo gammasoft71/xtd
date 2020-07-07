@@ -21,10 +21,10 @@ namespace xtd {
       ~main_menu();
       /// @endcond
 
-      static xtd::forms::main_menu create_standard_items();
-      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size);
-      static xtd::forms::main_menu create_standard_items(const std::string& theme);
-      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size);
+      static xtd::forms::main_menu create_standard_items(const xtd::event_handler<xtd::forms::component&>& on_click);
+      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click);
+      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::event_handler<xtd::forms::component&>& on_click);
+      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click);
 
     protected:
       intptr_t create_menu_handle() override;
