@@ -1712,7 +1712,6 @@ namespace xtdc_command {
         "form1::form1() {",
         "  text(\"form1\");",
         "  client_size({800, 450});",
-        "  menu(main_menu::create_standard_items());",
         "}",
         "",
         "void form1::main() {",
