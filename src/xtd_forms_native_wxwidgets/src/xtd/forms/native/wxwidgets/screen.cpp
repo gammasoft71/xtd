@@ -25,29 +25,29 @@ size_t screen::count() {
 
 int32_t screen::bits_per_pixel(size_t index) {
   application::initialize();
-  return wxDisplay(index).GetCurrentMode().GetDepth();
+  return wxDisplay(static_cast<int32_t>(index)).GetCurrentMode().GetDepth();
 }
 
 rectangle screen::bounds(size_t index) {
   application::initialize();
-  wxRect bounds = wxDisplay(index).GetGeometry();
+  wxRect bounds = wxDisplay(static_cast<int32_t>(index)).GetGeometry();
   return {bounds.GetX(), bounds.GetY(), bounds.GetWidth(), bounds.GetHeight()};
 }
 
 std::string screen::device_name(size_t index) {
   application::initialize();
-  std::string device_name = wxDisplay(index).GetName().utf8_str().data();
+  std::string device_name = wxDisplay(static_cast<int32_t>(index)).GetName().utf8_str().data();
   return device_name.empty() ? strings::format("\\\\.\\DISPLAY{}", index + 1) : device_name;
 }
 
 bool screen::primary(size_t index) {
   application::initialize();
-  return wxDisplay(index).IsPrimary();
+  return wxDisplay(static_cast<int32_t>(index)).IsPrimary();
 }
 
 rectangle screen::working_area(size_t index) {
   application::initialize();
-  wxRect working_area = wxDisplay(index).GetClientArea();
+  wxRect working_area = wxDisplay(static_cast<int32_t>(index)).GetClientArea();
   return {working_area.GetX(), working_area.GetY(), working_area.GetWidth(), working_area.GetHeight()};
 }
 
