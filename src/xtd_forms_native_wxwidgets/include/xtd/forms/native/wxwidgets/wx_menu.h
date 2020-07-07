@@ -248,7 +248,7 @@ namespace xtd {
         return item->parent_;
       }
       
-      static int find_index_from_id(wxWindowID id) {
+      static size_t find_index_from_id(wxWindowID id) {
         auto item = ids_[id];
         if (item == nullptr) return -1;
         return item->index_;
