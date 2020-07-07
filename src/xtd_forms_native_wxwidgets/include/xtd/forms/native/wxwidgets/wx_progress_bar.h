@@ -26,7 +26,7 @@ namespace xtd {
         }
 
         void marquee(bool marquee, size_t animation_speed) {
-          if (marquee) this->timer_marquee.Start(animation_speed);
+          if (marquee) this->timer_marquee.Start(static_cast<int32_t>(animation_speed));
           else this->timer_marquee.Stop();
         }
         
