@@ -16,7 +16,7 @@ void list_box::begin_update(intptr_t control) {
 
 void list_box::delete_item(intptr_t control, size_t index) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(index);
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32_t>(index));
 }
 
 void list_box::end_update(intptr_t control) {
@@ -26,7 +26,7 @@ void list_box::end_update(intptr_t control) {
 
 void list_box::insert_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert({value.c_str(), wxMBConvUTF8()}, index);
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert({value.c_str(), wxMBConvUTF8()}, static_cast<int32_t>(index));
 }
 
 size_t list_box::selected_index(intptr_t control) {
@@ -41,7 +41,7 @@ size_t list_box::selected_index(intptr_t control) {
 
 void list_box::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
-  return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
+  return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32_t>(index));
 }
 
 vector<size_t> list_box::selected_indices(intptr_t control) {
@@ -56,5 +56,5 @@ vector<size_t> list_box::selected_indices(intptr_t control) {
 
 void list_box::update_item(intptr_t control, size_t index, const std::string& value) {
   if (control == 0) return;
-  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(index, {value.c_str(), wxMBConvUTF8()});
+  static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32_t>(index), {value.c_str(), wxMBConvUTF8()});
 }
