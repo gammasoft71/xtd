@@ -37,7 +37,7 @@ public:
     upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
     upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
       if (index == -1)
-        upDown->SetValue(items.GetCount() - 1);
+        upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
       index = items.GetCount() - 1 - upDown->GetValue();
       SetTextWithSelectedIndex();
     });
@@ -58,8 +58,8 @@ public:
 
   void SetSelectedIndex(size_t index) {
     this->index = index;
-    if (index != -1) upDown->SetValue(items.GetCount() - 1 - index);
-    else upDown->SetValue(items.GetCount() - 1);
+    if (index != -1) upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1 - index));
+    else upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
     SetTextWithSelectedIndex();
   }
 
@@ -68,7 +68,7 @@ public:
   void SetLabel(const wxString& value) override {textBox->SetValue(value);}
   
   void updateSpin() {
-    upDown->SetRange(0, items.GetCount()-1);
+    upDown->SetRange(0, static_cast<int32_t>(items.GetCount()-1));
   }
 
 private:
