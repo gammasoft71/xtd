@@ -26,7 +26,7 @@ bool font_dialog::run_dialog(intptr_t hwnd, drawing::font& font, drawing::color&
   wxFontData font_data;
   font_data.SetColour(wxColour(color.r(), color.g(), color.b(), color.a()));
   font_data.SetInitialFont(*reinterpret_cast<wxFont*>(font.handle()));
-  font_data.SetRange(min_size, max_size);
+  font_data.SetRange(static_cast<int32_t>(min_size), static_cast<int32_t>(max_size));
   font_data.SetShowHelp((options & CF_SHOWHELP) == CF_SHOWHELP);
 #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
