@@ -32,7 +32,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optiona
   if (custom_colors.has_value()) {
     size_t max_index = custom_colors.value().size() > 16 ? 16 : custom_colors.value().size();
     for(size_t index = 0; index < max_index; ++index)
-      color_data.SetCustomColour(index, wxColour(custom_colors.value()[index]));
+      color_data.SetCustomColour(static_cast<int32_t>(index), wxColour(custom_colors.value()[index]));
   }
 #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
@@ -45,7 +45,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optiona
   if (custom_colors.has_value()) {
     size_t max_index = custom_colors.value().size() > 16 ? 16 : custom_colors.value().size();
     for(size_t index = 0; index < max_index; ++index)
-      custom_colors.value()[index] = color_data.GetCustomColour(index).GetRGB();
+      custom_colors.value()[index] = color_data.GetCustomColour(static_cast<int32_t>(index)).GetRGB();
   }
   return true;
 }
