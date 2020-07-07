@@ -382,7 +382,7 @@ namespace xtd {
           //def_wnd_proc -= {static_cast<control_wrapper<control_type>&>(*control_), &control_wrapper<control_type>::def_wnd_proc};
         }
 
-        intptr_t send_message(intptr_t hwnd, intptr_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
+        intptr_t send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle) {
           if (destroyed_) return 0;
           if (wx_application::message_filter(hwnd, msg, wparam, lparam, handle)) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 1, handle);
           if (wnd_proc.is_empty()) return call_def_wnd_proc(hwnd, msg, wparam, lparam, 0, handle);
