@@ -7,12 +7,17 @@
 #include <xtd/xtd.forms>
 
 namespace minesweeper {
-  class form_main : public xtd::forms::form {
+  class form_minesweeper : public xtd::forms::form {
     using column_cell = std::vector<std::shared_ptr<cell>>;
     using row_cell = std::vector<column_cell>;
     using grid_size = xtd::drawing::size;
+    
   public:
-    form_main() {
+    static void main() {
+      xtd::forms::application::run(form_minesweeper());
+    }
+    
+    form_minesweeper() {
       using namespace xtd;
       using namespace xtd::drawing;
       using namespace xtd::forms;
@@ -21,31 +26,42 @@ namespace minesweeper {
       auto_size_mode(xtd::forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       
+      //properties::settings::default_settings().original_color(false);
+      //properties::settings::default_settings().save();
+      
       if (properties::settings::default_settings().original_color()) {
         back_color(color::silver);
         fore_color(color::black);
       }
       
-      /// @todo Create menu...
-      /*
-      main_menu.menu_items().push_back("&Game");
-      main_menu.menu_items()[0].menu_items().push_back("&New games");
-      main_menu.menu_items()[0].menu_items().push_back("-");
-      main_menu.menu_items()[0].menu_items().push_back("&Beginner");
-      main_menu.menu_items()[0].menu_items().push_back("&Intermediate");
-      main_menu.menu_items()[0].menu_items().push_back("&Expert");
-      main_menu.menu_items()[0].menu_items().push_back("&Custom...");
-      main_menu.menu_items()[0].menu_items().push_back("-");
-      main_menu.menu_items()[0].menu_items().push_back("&Marks [?]");
-      main_menu.menu_items()[0].menu_items().push_back(texts::color);
-      main_menu.menu_items()[0].menu_items().push_back("-");
-      main_menu.menu_items()[0].menu_items().push_back("Best &Times...");
-      main_menu.menu_items()[0].menu_items().push_back("-");
-      main_menu.menu_items()[0].menu_items().push_back(texts::quit);
-      main_menu.menu_items().push_back(texts::help);
-      main_menu.menu_items()[1].menu_items().push_back(texts::about);
-      menu(main_menu);
-       */
+      menu({
+        {
+          "&Game", {
+            {"&New games", {[&] {new_game();}}, shortcut::f2},
+            {"-"},
+            {"&Beginner", {[&] {change_level(level::beginner);}}, menu_item_kind::radio, true},
+            {"&Intermediate", {[&] {change_level(level::intermediate);}}, menu_item_kind::radio},
+            {"&Expert", {[&] {change_level(level::expert);}}, menu_item_kind::radio},
+            {"&Custom...", {[&] {change_level(level::custom);}}, menu_item_kind::radio},
+            {"-"},
+            {"&Marks [?]", {[&](component& sender, const event_args& e) {/*reinterpret_cast<menu_item&>(sender).checked(!reinterpret_cast<menu_item&>(sender).checked());*/ properties::settings::default_settings().marks(!properties::settings::default_settings().marks());}}, menu_item_kind::check, true},
+            {"&Original color", {[&](component& sender, const event_args& e) {/*reinterpret_cast<menu_item&>(sender).checked(!reinterpret_cast<menu_item&>(sender).checked());*/ properties::settings::default_settings().original_color(!properties::settings::default_settings().original_color());}}, menu_item_kind::check, true},
+            {"-"},
+            {"Best &times...", {[&] {minesweeper::high_scores_dialog().show_dialog(*this);}}},
+            {"-"},
+            {texts::exit, {[&] {close();}}},
+          }
+        },
+        {
+          texts::help, {
+            {"&Contens", {[&] {}}, shortcut::f1},
+            {"&Search for Help On...", {[&] {}}},
+            {"&How to Use Help", {[&] {}}},
+            {"-"},
+            {texts::about, {[&] {about_dialog().common_dialog::show_dialog();}}}
+          }
+        },
+      });
 
       status_panel.parent(*this);
       status_panel.height(60);
@@ -190,8 +206,7 @@ namespace minesweeper {
                       set_settings_high_scores_names[level_](gamer_name);
                       properties::settings::default_settings().save();
                       
-                      minesweeper::high_scores_dialog high_scores_dialog;
-                      high_scores_dialog.show_dialog(*this);
+                      minesweeper::high_scores_dialog().show_dialog(*this);
                     }
                   } else
                     start_game.image(bitmap(properties::resources::smiley1(), {24, 24}));
@@ -288,7 +303,6 @@ namespace minesweeper {
       return cells_[cell_location.x()][cell_location.y()]->neighbors();
     }
 
-    xtd::forms::main_menu main_menu;
     xtd::forms::panel status_panel;
     xtd::forms::lcd_label mine_count_label;
     xtd::forms::lcd_label stopwatch_label;
