@@ -38,5 +38,6 @@ add_projects(
   text_box_multiline
   text_box_password
   texts
+  track_bar2
   wiggly
 )
