@@ -64,6 +64,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/group_box.cpp
   src/xtd/forms/native/wxwidgets/gtk_settings.cpp
   src/xtd/forms/native/wxwidgets/image_list.cpp
+  src/xtd/forms/native/wxwidgets/input_box.cpp
   src/xtd/forms/native/wxwidgets/label.cpp
   src/xtd/forms/native/wxwidgets/list_box.cpp
   src/xtd/forms/native/wxwidgets/main_menu.cpp

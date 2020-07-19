@@ -1,10 +1,10 @@
-# bitmap_button
+# toggle_button
 
-demonstrates the use of [xtd::forms::button](../../../src/xtd_forms/include/xtd/forms/button.hpp) control with image.
+demonstrates the use of [xtd::forms::check_box](../../../src/xtd_forms/include/xtd/forms/check_box.hpp) control with forms::appearance::button.
 
 # Sources
 
-[src/bitmap_button.cpp](src/bitmap_button.cpp)
+[src/toggle_button.cpp](src/toggle_button.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,18 +20,18 @@ xtd run
 
 ## Windows :
 
-![Screenshot](../../../docs/pictures/examples/bitmap_button_w.png)
+![Screenshot](../../../docs/pictures/examples/toggle_button_w.png)
 
-![Screenshot](../../../docs/pictures/examples/bitmap_button_wd.png)
+![Screenshot](../../../docs/pictures/examples/toggle_button_wd.png)
 
 ## macOS :
 
-![Screenshot](../../../docs/pictures/examples/bitmap_button_m.png)
+![Screenshot](../../../docs/pictures/examples/toggle_button_m.png)
 
-![Screenshot](../../../docs/pictures/examples/bitmap_button_md.png)
+![Screenshot](../../../docs/pictures/examples/toggle_button_md.png)
 
 ## Gnome :
 
-![Screenshot](../../../docs/pictures/examples/bitmap_button_g.png)
+![Screenshot](../../../docs/pictures/examples/toggle_button_g.png)
 
-![Screenshot](../../../docs/pictures/examples/bitmap_button_gd.png)
+![Screenshot](../../../docs/pictures/examples/toggle_button_gd.png)
