@@ -323,6 +323,7 @@ void form::wm_close(message &message) {
 }
 
 void form::wm_key_up(message& message) {
+  container_control::wnd_proc(message);
   key_event_args key_event_args(static_cast<keys>(message.wparam()));
   if (key_event_args.key_data() == keys::enter && accept_button_.has_value()) {
     accept_button_.value().get().perform_click();
@@ -332,7 +333,6 @@ void form::wm_key_up(message& message) {
     cancel_button_.value().get().perform_click();
     cdebug << "cancel_button::perform_click" << endl;
   }
-  container_control::wnd_proc(message);
 }
 
 void form::on_handle_created(const event_args &e) {
