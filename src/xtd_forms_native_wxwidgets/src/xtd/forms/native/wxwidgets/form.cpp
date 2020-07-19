@@ -10,6 +10,8 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+extern wxMenuBar* __xtd_default_menu_bar__;
+
 void form::activate(intptr_t form) {
   if (form == 0) return;
   reinterpret_cast<control_handler*>(form)->control()->Raise();
@@ -52,6 +54,12 @@ void form::menu(intptr_t form, intptr_t menu) {
 #endif
 
   if (menu && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
+#if defined(__APPLE__)
+  if (!menu) {
+    wxMenuBar::MacSetCommonMenuBar(__xtd_default_menu_bar__);
+    return;
+  }
+#endif
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(menu ? reinterpret_cast<wx_menu_bar*>(menu) : new wxMenuBar);
 }
 
