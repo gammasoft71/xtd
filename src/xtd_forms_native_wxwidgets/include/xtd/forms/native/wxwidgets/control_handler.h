@@ -45,7 +45,7 @@ namespace xtd {
           if (handle != 0) {
             wxEvent* event = reinterpret_cast<wxEvent*>(handle);
             event->Skip(!result);
-            process_result_ = control_t::ProcessEvent(*event);
+            process_result_ = msg == WM_CLOSE ? 1 : process_result_ = control_t::ProcessEvent(*event);
           }
           return process_result_;
         }
@@ -597,10 +597,7 @@ namespace xtd {
       template<typename control_t>
       inline void control_wrapper<control_t>::process_system_event(wxEvent& event) {
         wxWindow* window = reinterpret_cast<wxWindow*>(event.GetEventObject());
-        if (event.GetEventType() == wxEVT_CLOSE_WINDOW) {
-          bool can_close = event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event));
-          if (!can_close) static_cast<wxCloseEvent&>(event).Veto(!can_close); // this redendent test is needed on macos when right click on app desktop and choose quit.
-        }
+        if (event.GetEventType() == wxEVT_CLOSE_WINDOW) static_cast<wxCloseEvent&>(event).Veto(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CLOSE, 0, 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_ACTIVATE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_ACTIVATE, reinterpret_cast<intptr_t>(static_cast<wxWindow*>(event.GetEventObject())->GetClientData()), static_cast<wxActivateEvent&>(event).GetActive() ? (static_cast<wxActivateEvent&>(event).GetActivationReason() == wxActivateEvent::Reason::Reason_Mouse ? WA_CLICKACTIVE : WA_ACTIVE) : WA_INACTIVE, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_DESTROY) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_DESTROY, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MOVE) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOVE, 0, window->GetPosition().x + (window->GetPosition().y << 16), reinterpret_cast<intptr_t>(&event));
