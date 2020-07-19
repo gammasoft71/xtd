@@ -1650,6 +1650,7 @@ namespace xtdc_command {
     void create_xtd_gui_application_properties(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines{
         xtd::strings::format("application_default_namespace(\"{}\")", name),
+        xtd::strings::format("application_icon(resources/{})", name),
         xtd::strings::format("application_name(\"{}\")", name),
         xtd::strings::format("application_startup(\"{}::form1\" src/form1.h)", name),
       };
@@ -1664,7 +1665,6 @@ namespace xtdc_command {
         "# Project",
         xtd::strings::format("project({})", name),
         "find_package(xtd REQUIRED)",
-        xtd::strings::format("application_icon(resources/{})", name),
         "add_sources(",
         "  src/form1.h",
         "  src/form1.cpp",
