@@ -24,6 +24,7 @@ void __gtk_application_prefer_dark_theme__(bool prefer_dark_theme);
 void __xtd_macos_enable_dark_mode__();
 void __xtd_macos_enable_light_mode__();
 bool __xtd_macos_dark_mode_enabled__();
+wxMenuBar* __xtd_default_menu_bar__ = nullptr;
 #endif
 
 using namespace std;
@@ -139,18 +140,18 @@ void application::initialize() {
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
   __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
-#elif defined(__APPLE__)
-  wxMenuBar* menubar = new wxMenuBar;
-  menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
+#endif
+  __xtd_default_menu_bar__ = new wxMenuBar;
+  __xtd_default_menu_bar__->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
     if (event.GetId() == wxID_EXIT) {
-      auto can_quit = true;
       for (auto window : wxTopLevelWindows)
-        if (!(can_quit = window->Close())) break;
-      if (can_quit) wxTheApp->ExitMainLoop();
-    }
-    else event.Skip();
+        if (!window->Close())
+          return;
+      wxTheApp->ExitMainLoop();
+    } else event.Skip();
   });
-  wxMenuBar::MacSetCommonMenuBar(menubar);
+#if defined(__APPLE__)
+  wxMenuBar::MacSetCommonMenuBar(__xtd_default_menu_bar__);
 #endif
 }
 
