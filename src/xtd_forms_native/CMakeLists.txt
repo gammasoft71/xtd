@@ -20,7 +20,7 @@ set(XTD_FORMS_INCLUDES
 set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/about_dialog.h
   include/xtd/forms/native/application.h
- include/xtd/forms/native/arranged_direction_window.h
+  include/xtd/forms/native/arranged_direction_window.h
   include/xtd/forms/native/button.h
   include/xtd/forms/native/button_styles.h
   include/xtd/forms/native/check_box.h
@@ -46,6 +46,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/form.h
   include/xtd/forms/native/group_box.h
   include/xtd/forms/native/image_list.h
+  include/xtd/forms/native/input_box.h
   include/xtd/forms/native/label.h
   include/xtd/forms/native/list_box.h
   include/xtd/forms/native/list_box_styles.h
