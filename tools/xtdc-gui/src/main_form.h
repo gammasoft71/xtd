@@ -136,6 +136,7 @@ namespace xtdc_gui {
       {"Common dialogs - color dialog", "represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.", {"xtd_forms/common_dialogs/color_dialog"}},
       {"Common dialogs - folder browser dialog", "prompts the user to select a folder.", {"xtd_forms/common_dialogs/folder_browser_dialog"}},
       {"Common dialogs - font dialog", "prompts the user to choose a font from among those installed on the local computer.", {"xtd_forms/common_dialogs/font_dialog"}},
+      {"Common dialogs - input box", "prompts the user to input text.", {"xtd_forms/common_dialogs/input_box"}},
       {"Common dialogs - message box", "displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.", {"xtd_forms/common_dialogs/message_box"}},
       {"Common dialogs - open file dialog", "displays a standard dialog box that prompts the user to open a file.", {"xtd_forms/common_dialogs/open_file_dialog"}},
       {"Common dialogs - save file dialog", "prompts the user to select a location for saving a file.", {"xtd_forms/common_dialogs/save_file_dialog"}},
