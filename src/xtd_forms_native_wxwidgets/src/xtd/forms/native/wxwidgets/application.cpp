@@ -24,8 +24,8 @@ void __gtk_application_prefer_dark_theme__(bool prefer_dark_theme);
 void __xtd_macos_enable_dark_mode__();
 void __xtd_macos_enable_light_mode__();
 bool __xtd_macos_dark_mode_enabled__();
-wxMenuBar* __xtd_default_menu_bar__ = nullptr;
 #endif
+wxMenuBar* __xtd_default_menu_bar__ = nullptr;
 
 using namespace std;
 using namespace xtd;
