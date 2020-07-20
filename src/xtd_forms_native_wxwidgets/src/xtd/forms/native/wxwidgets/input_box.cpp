@@ -1,3 +1,5 @@
+#include <xtd/drawing/system_colors.h>
+#include <xtd/forms/native/application.h>
 #include <xtd/forms/native/input_box.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
@@ -30,6 +32,14 @@ bool input_box::run_dialog(intptr_t hwnd, const std::string& text, const std::st
   if (multiline) style |= wxTE_MULTILINE;
   if (use_system_password_char) style |= wxTE_PASSWORD;
   wxTextEntryDialog text_entry_dialog(reinterpret_cast<wxWindow*>(hwnd), text == "" ? " " : text, caption, value, style);
+  
+#if defined(__WXMSW__)
+  if (application::dark_mode_enabled()) {
+    text_entry_dialog.SetBackgroundColour({xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b()});
+    for (auto child : text_entry_dialog.GetChildren())
+      if (dynamic_cast<wxButton*>(child)) child->SetBackgroundColour({xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b()});
+  }
+#endif
   if (text_entry_dialog.ShowModal() != wxID_OK) return false;
   value = text_entry_dialog.GetValue();
   return true;
