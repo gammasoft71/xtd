@@ -36,8 +36,12 @@ bool input_box::run_dialog(intptr_t hwnd, const std::string& text, const std::st
 #if defined(__WXMSW__)
   if (application::dark_mode_enabled()) {
     text_entry_dialog.SetBackgroundColour({xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b()});
-    for (auto child : text_entry_dialog.GetChildren())
-      if (dynamic_cast<wxButton*>(child)) child->SetBackgroundColour({xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b()});
+    for (auto child : text_entry_dialog.GetChildren()) {
+      auto back_color = dynamic_cast<wxTextEntry*>(child) ? xtd::drawing::system_colors::window() : xtd::drawing::system_colors::control();
+      auto fore_color = dynamic_cast<wxTextEntry*>(child) ? xtd::drawing::system_colors::window_text() : xtd::drawing::system_colors::control_text();
+      child->SetBackgroundColour({back_color.r(), back_color.g(), back_color.b()});
+      child->SetForegroundColour({fore_color.r(), fore_color.g(), fore_color.b()});
+    }
   }
 #endif
   if (text_entry_dialog.ShowModal() != wxID_OK) return false;
