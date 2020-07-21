@@ -25,4 +25,5 @@ add_projects(
   tests
   demos
   games
+  tutorial
 )
