@@ -1,37 +1,63 @@
-# application
+## A simple application
 
-Shows how to create an application with  [xtd::forms::application](../../../src/xtd_forms/include/xtd/forms/application.hpp) class.
+First we create the very basic xtd_forms program.
 
-# Sources
+```c++
+#include <xtd/xtd.forms>
 
-[src/application.cpp](src/application.cpp)
+using namespace xtd::forms;
 
-[CMakeLists.txt](CMakeLists.txt)
+namespace tutorial {
+  class simple : public form {
+  public:
+    simple() {
+      text("Simple");
+      start_position(form_start_position::center_screen);
+    }
 
-# Build and run
+    static void main() {
+      xtd::forms::application::run(simple());
+    }
+  };
+}
 
-Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
-
-```shell
-xtdc run
+startup_(tutorial::simple);
 ```
 
-# Output
+This very basic example shows a small window on the screen. The window is centered.
 
-## Windows :
+```c++
+start_position(form_start_position::center_screen);
+```
 
-![Screenshot](../../../docs/pictures/examples/application_w.png)
+This method centers the form on the screen, both horizontally and vertically.
 
-![Screenshot](../../../docs/pictures/examples/application_wd.png)
+```c++
+startup_(tutorial::simple);
+```
 
-## macOS :
+The code behind startup_ macro can be replaced by :
 
-![Screenshot](../../../docs/pictures/examples/application_m.png)
+```c++
+int main(int argc, char* argv[]) {
+  tutorial::simple::main();
+  return xtd::environment::exit_code();
+}
+```
 
-![Screenshot](../../../docs/pictures/examples/application_md.png)
+This example can be build on Windows, macOS or linux operating system with CMake.
 
-## Gnome :
+```cmake
+cmake_minimum_required(VERSION 3.3)
 
-![Screenshot](../../../docs/pictures/examples/application_g.png)
+project(simple)
+find_package(xtd.forms REQUIRED)
+add_sources(src/simple.cpp)
+target_type(GUI_APPLICATION)
+```
 
-![Screenshot](../../../docs/pictures/examples/application_gd.png)
+See [cmake](htps:\\cmake.org) for more information.
+
+![Screenshot](../../../docs/pictures/examples/tutorial/simple.png)
+
+Figure: simple

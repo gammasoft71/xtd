@@ -192,3 +192,7 @@
 * [game_of_life](games/game_of_life/README.md) The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.
 * [minesweeper](games/minesweeper/README.md) The goal of the game is to uncover all the squares that do not contain mines.
 
+## [Tutorial](tutorial/README.md)
+
+* [simple](tutorial/simple/README.md) a very basic xtd_forms program.
+
