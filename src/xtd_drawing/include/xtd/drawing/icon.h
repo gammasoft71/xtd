@@ -24,6 +24,8 @@ namespace xtd {
       /// @cond
       icon(const icon& icon) = default;
       icon& operator=(const icon& icon) = default;
+      bool operator==(const icon& icon) const {return data_->handle_ == icon.data_->handle_;}
+      bool operator!=(const icon& icon) const {return !operator==(icon);}
       /// @endcond
       
       /// @brief Get the handle of this image.
