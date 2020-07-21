@@ -9,7 +9,7 @@ This section contains the xtd.forms documentation. ​
 * [License](license.md) provide license information.
 * [Getting started](getting_started.md) provide getting started documentation.
 * [Writing applications](writing_applications.md) provide writing applications documentation.
-* [tutorial](../examples/tutorial/README.md) provide a tutorial to cover the basics needed to create wxWidgets applications.
+* [tutorial](../examples/tutorial/README.md) provide a tutorial to cover the basics needed to create xtd_forms applications.
 * [Design Guidelines](design_guidelines.md) provides guidelines for designing libraries that extend and interact with the xtd.forms.
 * [Development status](development_status.md) provide information about classes development status.
 
