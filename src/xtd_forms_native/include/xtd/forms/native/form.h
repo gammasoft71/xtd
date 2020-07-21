@@ -11,6 +11,7 @@ namespace xtd {
         static void close(intptr_t form);
         static void default_control(intptr_t form, intptr_t default_control);
         static void full_screen(intptr_t form, bool full_screen);
+        static void icon(intptr_t form, intptr_t icon);
         static bool maximize(intptr_t form);
         static void maximize(intptr_t form, bool maximize);
         static bool minimize(intptr_t form);

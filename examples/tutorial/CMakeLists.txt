@@ -6,5 +6,7 @@ find_package(xtd.forms REQUIRED)
 #build_output_directory("${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
 
 add_projects(
-  simple
+  tutorial_simple_application
+  tutorial_application_icon
+  tutorial_button
 )

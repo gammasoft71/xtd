@@ -96,6 +96,14 @@ form& form::help_button(bool value) {
   return *this;
 }
 
+form& form::icon(const xtd::drawing::icon& value) {
+  if (icon_ != value) {
+    icon_ = value;
+    native::form::icon(handle(), icon_.handle());
+  }
+  return *this;
+}
+
 form& form::maximize_box(bool value) {
   if (this->maximize_box_ != value) {
     this->maximize_box_ = value;
@@ -337,6 +345,7 @@ void form::wm_key_up(message& message) {
 
 void form::on_handle_created(const event_args &e) {
   this->container_control::on_handle_created(e);
+  if (icon_ != drawing::icon::empty) native::form::icon(handle(), icon_.handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (this->accept_button_.has_value()) native::form::default_control(this->handle(), dynamic_cast<control&>(this->accept_button_.value().get()).handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());

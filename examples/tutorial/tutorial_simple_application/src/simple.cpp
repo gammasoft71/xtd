@@ -1,13 +1,11 @@
 #include <xtd/xtd.forms>
 
-using namespace xtd::forms;
-
 namespace tutorial {
-  class simple : public form {
+  class simple : public xtd::forms::form {
   public:
     simple() {
       text("Simple");
-      start_position(form_start_position::center_screen);
+      start_position(xtd::forms::form_start_position::center_screen);
     }
 
     static void main() {

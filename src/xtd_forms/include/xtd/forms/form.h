@@ -1,5 +1,6 @@
 #pragma once
 #include <cstddef>
+#include <xtd/drawing/icon.h>
 #include "form_border_style.h"
 #include "form_closed_event_handler.h"
 #include "form_closing_event_handler.h"
@@ -55,6 +56,9 @@ namespace xtd {
       
       virtual forms::dialog_result dialog_result() const {return this->dialog_result_;}
       virtual form& dialog_result(forms::dialog_result value);
+      
+      virtual const xtd::drawing::icon& icon() const {return icon_;}
+      virtual form& icon(const xtd::drawing::icon& value);
       
       virtual forms::form_border_style form_border_style() const {return this->form_border_style_;}
       virtual form& form_border_style(forms::form_border_style value);
@@ -150,6 +154,7 @@ namespace xtd {
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
       forms::form_border_style form_border_style_ = form_border_style::sizable;
       bool help_button_ = true;
+      xtd::drawing::icon icon_ = xtd::drawing::icon::empty;
       bool maximize_box_ = true;
       std::optional<forms::main_menu> menu_;
       bool minimize_box_ = true;

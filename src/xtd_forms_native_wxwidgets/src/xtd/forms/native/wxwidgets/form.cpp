@@ -27,6 +27,13 @@ void form::full_screen(intptr_t form, bool full_screen) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(full_screen);
 }
 
+void form::icon(intptr_t form, intptr_t icon) {
+  if (form == 0) return;
+
+  if (!icon) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(wxIcon());
+  else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(*reinterpret_cast<wxIcon*>(icon));
+}
+
 bool form::maximize(intptr_t form) {
   if (form == 0) return false;
 #if defined(__WXGTK__)
