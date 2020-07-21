@@ -31,7 +31,7 @@ void form::icon(intptr_t form, intptr_t icon) {
   if (form == 0) return;
 
   if (!icon) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(wxIcon());
-  else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(*reinterpret_cast<wxIcon*>(icon));
+  else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon)->GetIcon());
 }
 
 bool form::maximize(intptr_t form) {
