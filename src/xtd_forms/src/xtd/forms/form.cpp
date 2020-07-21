@@ -21,6 +21,8 @@ form::form() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->back_color_ = this->default_back_color();
   this->cursor_ = this->default_cursor();
+  if (xtd::io::file::exists(xtd::io::path::combine(forms_resource_path_, "icons", "default_icon.png")))
+    icon_ = xtd::drawing::icon(xtd::io::path::combine(forms_resource_path_, "icons", "default_icon.png"));
   this->fore_color_ = this->default_fore_color();
   this->font_ = this->default_font();
   this->size_ = this->default_size();
