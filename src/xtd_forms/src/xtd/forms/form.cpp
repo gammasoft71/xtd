@@ -11,7 +11,6 @@
 #include "../../../include/xtd/forms/screen.h"
 
 using namespace std;
-using namespace std::literals;
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -22,9 +21,7 @@ form::form() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->back_color_ = this->default_back_color();
   this->cursor_ = this->default_cursor();
-  cdebug << format("resources_path = {}", xtd::io::path::combine(get_forms_resources_path(), "icons", "default_icon.png")) << endl;
-  if (xtd::io::file::exists(xtd::io::path::combine({get_forms_resources_path(), "share"s, "xtd"s, "resources"s, "icons"s, "default_icon.png"s})))
-    icon_ = xtd::drawing::icon(xtd::io::path::combine({get_forms_resources_path(), "share"s, "xtd"s, "resources"s, "icons"s, "default_icon.png"s}));
+  icon_ = internal_get_default_icon();
   this->fore_color_ = this->default_fore_color();
   this->font_ = this->default_font();
   this->size_ = this->default_size();
@@ -102,7 +99,7 @@ form& form::help_button(bool value) {
 
 form& form::icon(const xtd::drawing::icon& value) {
   if (icon_ != value) {
-    icon_ = value;
+    icon_ = value != drawing::icon::empty ? value : internal_get_default_icon();
     native::form::icon(handle(), icon_.handle());
   }
   return *this;

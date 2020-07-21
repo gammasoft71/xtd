@@ -1,6 +1,7 @@
 #pragma once
 #include <cstddef>
 #include <xtd/drawing/icon.h>
+#include <xtd/io/path.h>
 #include "form_border_style.h"
 #include "form_closed_event_handler.h"
 #include "form_closing_event_handler.h"
@@ -165,13 +166,14 @@ namespace xtd {
       form_window_state window_state_ = form_window_state::normal;
       
     private:
-      void internal_set_window_state();
-      std::string get_forms_resources_path() const {
+      xtd::drawing::icon internal_get_default_icon() const {
 #if defined(__XTD_FORMS_RESOURCES_PATH__)
-        return __XTD_FORMS_RESOURCES_PATH__;
+        return xtd::drawing::icon(xtd::io::path::combine({__XTD_FORMS_RESOURCES_PATH__, "share", "xtd", "resources", "icons", "default_icon.png"}));
+#else
+        return xtd::drawing::icon::empty;
 #endif
-        return "";
       }
+      void internal_set_window_state();
     };
   }
 }
