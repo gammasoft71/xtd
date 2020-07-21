@@ -166,11 +166,12 @@ namespace xtd {
       
     private:
       void internal_set_window_state();
+      std::string get_forms_resources_path() const {
 #if defined(__XTD_FORMS_RESOURCES_PATH__)
-      static constexpr const char* forms_resource_path_ = __XTD_FORMS_RESOURCES_PATH__;
-#else
-      static constexpr const char* forms_resource_path_ = "";
+        return __XTD_FORMS_RESOURCES_PATH__;
 #endif
+        return "";
+      }
     };
   }
 }
