@@ -166,6 +166,11 @@ namespace xtd {
       
     private:
       void internal_set_window_state();
+#if defined(__XTD_FORMS_RESOURCES_PATH__)
+      static constexpr const char* forms_resource_path_ = __XTD_FORMS_RESOURCES_PATH__;
+#else
+      static constexpr const char* forms_resource_path_ = "";
+#endif
     };
   }
 }
