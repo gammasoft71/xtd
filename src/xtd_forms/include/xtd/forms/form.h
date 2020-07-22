@@ -168,7 +168,7 @@ namespace xtd {
     private:
       xtd::drawing::icon internal_get_default_icon() const {
 #if defined(__XTD_FORMS_RESOURCES_PATH__)
-        return xtd::drawing::icon(xtd::io::path::combine({__XTD_FORMS_RESOURCES_PATH__, "share", "xtd", "resources", "icons", "default_icon.png"}));
+        return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(xtd::io::path::combine({__XTD_FORMS_RESOURCES_PATH__, "share", "xtd", "resources", "icons", "default_icon.png"})));
 #else
         return xtd::drawing::icon::empty;
 #endif
