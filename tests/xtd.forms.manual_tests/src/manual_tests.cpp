@@ -24,6 +24,7 @@ int main() {
   form_main.menu(forms::main_menu::create_standard_items({[&](component& sender, const event_args& e) {
     cdebug << format("Clik on menu item : {}", static_cast<menu_item&>(sender).text()) << endl;
   }}));
+  //form_main.menu(nullptr);
   
   application::enable_menu_images();
   application::run(form_main);

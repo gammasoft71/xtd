@@ -8,6 +8,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_application.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_menu.h"
 #include <wx/aboutdlg.h>
 #include <wx/sysopt.h>
 
@@ -25,7 +26,6 @@ void __xtd_macos_enable_dark_mode__();
 void __xtd_macos_enable_light_mode__();
 bool __xtd_macos_dark_mode_enabled__();
 #endif
-wxMenuBar* __xtd_default_menu_bar__ = nullptr;
 
 using namespace std;
 using namespace xtd;
@@ -140,18 +140,8 @@ void application::initialize() {
   __gtk_button_images__(__xtd_gtk_enable_button_images__);
   __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
-#endif
-  __xtd_default_menu_bar__ = new wxMenuBar;
-  __xtd_default_menu_bar__->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-    if (event.GetId() == wxID_EXIT) {
-      for (auto window : wxTopLevelWindows)
-        if (!window->Close())
-          return;
-      wxTheApp->ExitMainLoop();
-    } else event.Skip();
-  });
-#if defined(__APPLE__)
-  wxMenuBar::MacSetCommonMenuBar(__xtd_default_menu_bar__);
+#elif defined(__APPLE__)
+    wxMenuBar::MacSetCommonMenuBar(wx_menu_bar::create_default_menu_bar());
 #endif
 }
 

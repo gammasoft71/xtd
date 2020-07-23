@@ -50,8 +50,32 @@ namespace xtd {
       menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
       menu_item(const std::string& text, const xtd::event_handler<xtd::forms::component&>& on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut);
 
+      /// @cond
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click));}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), shortcut);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image, shortcut);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind, shortcut);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind, checked);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), kind, checked, shortcut);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image, kind, checked);}
+      template<typename delegate_type>
+      menu_item(const std::string& text, delegate_type on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked, xtd::forms::shortcut shortcut) {menu_item(text, xtd::event_handler<xtd::forms::component&>(on_click), image, kind, checked, shortcut);}
+      /// @endcond
+
       menu_item(const std::string& text, const std::vector<menu_item>& items);
 
+      int menu_id() const;
       const std::string& text() const {return text_;}
       
     protected:
