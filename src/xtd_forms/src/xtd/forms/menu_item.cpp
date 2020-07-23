@@ -135,3 +135,7 @@ void menu_item::destroy_menu_handle(intptr_t handle) {
   if (is_parent()) return native::menu::destroy(handle);
   return native::menu_item::destroy(handle);
 }
+
+int menu_item::menu_id() const {
+  return native::menu_item::menu_id(data_->handle_);
+}

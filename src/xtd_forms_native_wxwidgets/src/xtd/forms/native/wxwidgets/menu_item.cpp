@@ -11,9 +11,13 @@ intptr_t menu_item::create(const std::string& text, const xtd::drawing::image& i
   return reinterpret_cast<intptr_t>(new wx_menu_item(text, image.handle(), static_cast<wx_menu_item_kind>(kind), checked, shortcut));
 }
 
+void menu_item::destroy(intptr_t handle) {
+  if (!handle) return;
+  //delete reinterpret_cast<wxMenuItem*>(handle);
+  delete reinterpret_cast<wx_menu_item*>(handle);
+}
 
-void menu_item::destroy(intptr_t menu_item) {
-  if (!menu_item) return;
-  //delete reinterpret_cast<wxMenuItem*>(menu_item);
-  delete reinterpret_cast<wx_menu_item*>(menu_item);
+int menu_item::menu_id(intptr_t handle) {
+  //return reinterpret_cast<wx_menu_item*>(handle)->;
+  return 0;
 }

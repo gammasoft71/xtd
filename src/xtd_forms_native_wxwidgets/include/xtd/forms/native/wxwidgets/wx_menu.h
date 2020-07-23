@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <xtd/forms/native/virtual_keys.h>
+#include <wx/app.h>
 #include <wx/string.h>
 #include <wx/menu.h>
 #include <wx/menuitem.h>
@@ -254,7 +255,22 @@ namespace xtd {
         return item->index_;
       }
       
+      static wxMenuBar* create_default_menu_bar() {
+        wxMenuBar* default_menu_bar = new wxMenuBar;
+        default_menu_bar->Bind(wxEVT_MENU, &on_exit_menu);
+        return default_menu_bar;
+      }
+
     private:
+      static void on_exit_menu(wxCommandEvent& event) {
+        if (event.GetId() == wxID_EXIT) {
+          for (auto window : wxTopLevelWindows)
+            if (!window->Close())
+              return;
+          wxTheApp->ExitMainLoop();
+        } else event.Skip();
+      }
+      
       void add_ids(std::vector<wx_menu_item>& items) {
         for (auto& menu_item : items) {
           if (menu_item.items().size() != 0) add_ids(menu_item.items());
