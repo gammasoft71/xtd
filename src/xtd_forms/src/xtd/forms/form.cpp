@@ -1,6 +1,7 @@
 #include <random>
 #include <stdexcept>
 #include <xtd/xtd.diagnostics>
+#include <xtd/drawing/system_icons.h>
 #include <xtd/forms/native/class_styles.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/form.h>
@@ -21,7 +22,7 @@ form::form() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->back_color_ = this->default_back_color();
   this->cursor_ = this->default_cursor();
-  icon_ = internal_get_default_icon();
+  icon_ = system_icons::xtd_forms_logo();
   this->fore_color_ = this->default_fore_color();
   this->font_ = this->default_font();
   this->size_ = this->default_size();
@@ -99,7 +100,7 @@ form& form::help_button(bool value) {
 
 form& form::icon(const xtd::drawing::icon& value) {
   if (icon_ != value) {
-    icon_ = value != drawing::icon::empty ? value : internal_get_default_icon();
+    icon_ = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo();
     native::form::icon(handle(), icon_.handle());
   }
   return *this;

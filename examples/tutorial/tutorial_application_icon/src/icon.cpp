@@ -6,6 +6,7 @@ namespace tutorial {
     form_icon() {
       text("Icon");
       start_position(xtd::forms::form_start_position::center_screen);
+      icon(xtd::drawing::system_icons::gammasoft());
     }
 
     static void main() {

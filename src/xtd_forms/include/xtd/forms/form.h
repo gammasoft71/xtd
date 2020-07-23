@@ -166,13 +166,6 @@ namespace xtd {
       form_window_state window_state_ = form_window_state::normal;
       
     private:
-      xtd::drawing::icon internal_get_default_icon() const {
-#if defined(__XTD_FORMS_RESOURCES_PATH__)
-        return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(xtd::io::path::combine({__XTD_FORMS_RESOURCES_PATH__, "share", "xtd", "resources", "icons", "default_icon.png"})));
-#else
-        return xtd::drawing::icon::empty;
-#endif
-      }
       void internal_set_window_state();
     };
   }

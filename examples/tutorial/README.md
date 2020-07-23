@@ -64,6 +64,43 @@ See [cmake](htps:\\cmake.org) for more information.
 
 Figure: simple
 
+## Application icon
+
+In this example, we provide an icon for our application. It became a standard to display a small icon in the upper left corner of the window. The icon is a graphical identity of the program.
+
+```c++
+#include <xtd/xtd.forms>
+
+namespace tutorial {
+  class form_icon : public xtd::forms::form {
+  public:
+    form_icon() {
+      text("Icon");
+      start_position(xtd::forms::form_start_position::center_screen);
+      icon(xtd::drawing::system_icons::gammasoft());
+    }
+
+    static void main() {
+      xtd::forms::application::run(form_icon());
+    }
+  };
+}
+
+startup_(tutorial::form_icon);
+```
+
+In our example we show a small gammasoft icon.
+
+```c++
+icon(xtd::drawing::system_icons::gammasoft());
+```
+
+To display an application icon is a matter of one code line.
+
+![Screenshot](../../docs/pictures/examples/tutorial/application_icon.png)
+
+Figure: icon
+
 ## A simple button
 
 In the following example, we create a button on the form control. We will show, how to create a simple event handler.
