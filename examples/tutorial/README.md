@@ -97,7 +97,7 @@ icon(xtd::drawing::system_icons::gammasoft());
 
 To display an application icon is a matter of one code line.
 
-![Screenshot](../../docs/pictures/examples/tutorial/application_icon.png)
+![Screenshot](../../docs/pictures/examples/tutorial/icon.png)
 
 Figure: icon
 
