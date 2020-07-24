@@ -157,6 +157,13 @@ button_quit.location(xtd::drawing::point(20, 20));
 
 It will be placed inside a form control. It will cause to display a small operating system dependent exit icon on the button. The label of the button is "Quit". The button is positioned manually at x=20, y=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
 
+
+```c++
+xtd::forms::application::enable_button_images();
+```
+
+By default, some operating systems do not display button images. With this method, we allow the display of the button image.
+
 ```c++
 button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
 ```
