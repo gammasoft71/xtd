@@ -38,7 +38,7 @@ This method centers the form on the screen, both horizontally and vertically.
 startup_(tutorial::simple);
 ```
 
-The code behind startup_ macro can be replaced by :
+The code behind ***startup_*** macro can be replaced by :
 
 ```c++
 int main(int argc, char* argv[]) {
@@ -114,14 +114,18 @@ namespace tutorial {
     form_button() {
       text("Button");
       start_position(xtd::forms::form_start_position::center_screen);
+      active_control(button_quit);
       
       button_quit.parent(*this);
-      button_quit.location({20, 20});
-      button_quit.text("Quit");
+      button_quit.image(xtd::drawing::system_images::from_name("application-exit", xtd::drawing::size(16, 16)));
+      button_quit.image_align(xtd::forms::content_alignment::middle_left);
+      button_quit.text("&Quit");
+      button_quit.location(xtd::drawing::point(20, 20));
       button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
     }
 
     static void main() {
+      xtd::forms::application::enable_button_images();
       xtd::forms::application::run(form_button());
     }
     
@@ -145,8 +149,32 @@ First we create a button control.
 
 ```c++
 button_quit.parent(*this);
-button_quit.location({20, 20});
-button_quit.text("Quit");
+button_quit.image(xtd::drawing::system_images::from_name("application-exit", xtd::drawing::size(16, 16)));
+button_quit.image_align(xtd::forms::content_alignment::middle_left);
+button_quit.text("&Quit");
+button_quit.location(xtd::drawing::point(20, 20));
 ```
 
-It will be placed inside a form control.
+It will be placed inside a form control. It will cause to display a small operating system dependent exit icon on the button. The label of the button is "Quit". The button is positioned manually at x=20, y=20 coordinates. The beginning of the coordinate system is at the upper left hand corner.
+
+```c++
+button_quit.click += xtd::event_handler<xtd::forms::control&>(*this, &form_button::on_quit);
+```
+
+If we click on the button, a ***click*** event is generated. We connect the event to the ***on_quit()*** method of the button class. So when we click on the button, the ***on_quit()*** method is called.
+
+```c++
+active_control(button_quit);
+```
+
+We set the keyboard focus to the button. So if we press the Enter key, the button is being clicked.
+
+```c++
+close();
+```
+
+Inside the ***on_quit()*** method, we call the ***close()*** method. This will close the form and terminate our application.
+
+![Screenshot](../../docs/pictures/examples/tutorial/button.png)
+
+Figure: button
