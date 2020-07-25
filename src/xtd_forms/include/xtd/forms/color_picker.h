@@ -12,7 +12,7 @@ namespace xtd {
       const drawing::color& color() const {return color_;}
       void color(const drawing::color& color);
       
-      drawing::size default_size() const override {return{100, 25};}
+      drawing::size default_size() const override {return {100, 25};}
       
       event<color_picker, event_handler<control&>> color_changed;
       

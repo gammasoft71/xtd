@@ -16,7 +16,7 @@ namespace xtd {
       virtual forms::border_style border_style() const {return this->border_style_;}
       virtual picture_box& border_style(forms::border_style border_style);
 
-      drawing::size default_size() const override {return{100, 50};}
+      drawing::size default_size() const override {return {100, 50};}
       
       const std::optional<drawing::image> image() const {return this->image_;}
       picture_box& image(const drawing::image& image);

@@ -16,7 +16,7 @@ namespace xtd {
       virtual forms::border_style border_style() const {return this->border_style_;}
       virtual user_control& border_style(forms::border_style border_style);
 
-      drawing::size default_size() const override {return{150, 150};}
+      drawing::size default_size() const override {return {150, 150};}
       
     protected:
       forms::create_params create_params() const override;

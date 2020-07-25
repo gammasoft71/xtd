@@ -38,7 +38,7 @@ namespace xtd {
         return this->value(mktime(&internal_value));
       }
 
-      drawing::size default_size() const override {return{100, 25};}
+      drawing::size default_size() const override {return {100, 25};}
       
       event<date_time_picker, event_handler<control&>> value_changed;
 

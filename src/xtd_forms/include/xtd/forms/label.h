@@ -14,7 +14,7 @@ namespace xtd {
       virtual forms::border_style border_style() const {return this->border_style_;}
       virtual label& border_style(forms::border_style border_style);
       
-      drawing::size default_size() const override {return{100, 23};}
+      drawing::size default_size() const override {return {100, 23};}
       
       /// @brief Gets the alignment of the text on the button control.
       /// @return One of the content_alignment values. The default is middle_center.
