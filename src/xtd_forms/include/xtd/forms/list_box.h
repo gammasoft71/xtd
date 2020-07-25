@@ -15,7 +15,7 @@ namespace xtd {
       virtual forms::border_style border_style() const {return this->border_style_;}
       virtual list_box& border_style(forms::border_style border_style);
       
-      virtual drawing::size default_size() const override {return{120, 96};}
+      virtual drawing::size default_size() const override {return {120, 96};}
       
       item_collection& items() {return this->items_;}
 

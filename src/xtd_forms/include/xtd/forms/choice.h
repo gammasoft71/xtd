@@ -17,7 +17,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the combo_box class.
       choice();
 
-      virtual drawing::size default_size() const override {return{121, 23};}
+      virtual drawing::size default_size() const override {return {121, 23};}
       
       item_collection& items() {return this->items_;}
 

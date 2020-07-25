@@ -15,7 +15,7 @@ namespace xtd {
       drawing::font font() const override {return font_;}
       control& font(const drawing::font& font) override;
       
-      drawing::size default_size() const override {return{100, 25};}
+      drawing::size default_size() const override {return {100, 25};}
       
       event<font_picker, event_handler<control&>> font_changed;
 

@@ -53,7 +53,7 @@ namespace xtd {
       virtual bool control_box() const {return this->control_box_;}
       virtual form& control_box(bool value);
 
-      drawing::size default_size() const override {return{300, 300};}
+      drawing::size default_size() const override {return {300, 300};}
       
       virtual forms::dialog_result dialog_result() const {return this->dialog_result_;}
       virtual form& dialog_result(forms::dialog_result value);

@@ -13,7 +13,7 @@ namespace xtd {
       virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
       virtual group_box& auto_size_mode(forms::auto_size_mode value);
       
-      drawing::size default_size() const override {return{200, 100};}
+      drawing::size default_size() const override {return {200, 100};}
       
     protected:
       forms::create_params create_params() const override;

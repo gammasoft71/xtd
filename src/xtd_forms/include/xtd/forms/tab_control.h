@@ -20,7 +20,7 @@ namespace xtd {
       virtual tab_alignment alignment() const {return this->alignment_;}
       virtual tab_control& alignment(tab_alignment alignment);
       
-      drawing::size default_size() const override {return{200, 100};}
+      drawing::size default_size() const override {return {200, 100};}
       
       virtual size_t selected_index() const {return this->selected_index_;}
       virtual tab_control& selected_index(size_t selected_index_);
