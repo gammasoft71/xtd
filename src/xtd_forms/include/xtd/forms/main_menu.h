@@ -26,6 +26,17 @@ namespace xtd {
       static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::event_handler<xtd::forms::component&>& on_click);
       static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click);
 
+      /// @cond
+      template<typename on_click_type>
+      static xtd::forms::main_menu create_standard_items(on_click_type on_click) { return create_standard_items(xtd::event_handler<xtd::forms::component&>(on_click)); }
+      template<typename on_click_type>
+      static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size, on_click_type on_click) { return create_standard_items(size, xtd::event_handler<xtd::forms::component&>(on_click)); }
+      template<typename on_click_type>
+      static xtd::forms::main_menu create_standard_items(const std::string& theme, on_click_type on_click) { return create_standard_items(theme, xtd::event_handler<xtd::forms::component&>(on_click)); }
+      template<typename on_click_type>
+      static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size, on_click_type on_click) { return create_standard_items(theme, size, xtd::event_handler<xtd::forms::component&>(on_click)); }
+      /// @endcond
+ 
     protected:
       intptr_t create_menu_handle() override;
       void destroy_menu_handle(intptr_t handle) override;
