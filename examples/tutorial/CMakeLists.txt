@@ -9,4 +9,5 @@ add_projects(
   tutorial_simple_application
   tutorial_application_icon
   tutorial_button
+  tutorial_communicate
 )
