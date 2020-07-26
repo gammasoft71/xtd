@@ -22,7 +22,7 @@ form::form() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
   this->back_color_ = this->default_back_color();
   this->cursor_ = this->default_cursor();
-  icon_ = system_icons::xtd_forms_logo();
+  icon_ = system_icons::xtd_forms_logo({16, 16});
   this->fore_color_ = this->default_fore_color();
   this->font_ = this->default_font();
   this->size_ = this->default_size();
@@ -100,7 +100,7 @@ form& form::help_button(bool value) {
 
 form& form::icon(const xtd::drawing::icon& value) {
   if (icon_ != value) {
-    icon_ = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo();
+    icon_ = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo({16, 16});
     native::form::icon(handle(), icon_.handle());
   }
   return *this;
