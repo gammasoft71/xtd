@@ -185,3 +185,11 @@ Inside the ***on_quit()*** method, we call the ***close()*** method. This will c
 ![Screenshot](../../docs/pictures/examples/tutorial/button.png)
 
 Figure: button
+
+## Controls communicate
+
+It is important to know, how controls can communicate in application. Follow the next example.
+
+```c++
+```
+
