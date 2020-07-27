@@ -13,11 +13,6 @@ namespace tutorial {
       label.text("0");
     }
     
-    void update_label_text(const std::string& text) {
-      label.text(text);
-    }
-    
-  private:
     xtd::forms::label label;
   };
 
@@ -33,20 +28,21 @@ namespace tutorial {
       button_plus.location({30, 10});
       button_plus.text("+");
       button_plus.click += [&] {
-        auto& form = parent().value().get();
-        static_cast<panel_right&>(form.controls()[0].get()).update_label_text(xtd::strings::format("{}", ++count));
+        count++;
+        control& form = parent().value().get();
+        static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::format("{}", count));
       };
 
       button_minus.auto_repeat(true);
       button_minus.location({30, 60});
       button_minus.text("-");
       button_minus.click += [&] {
-        auto& form = parent().value().get();
-        static_cast<panel_right&>(form.controls()[0].get()).update_label_text(xtd::strings::format("{}", --count));
+        count--;
+        control& form = parent().value().get();
+        static_cast<panel_right&>(form.controls()[0].get()).label.text(xtd::strings::format("{}", count));
       };
     }
-    
-  private:
+
     xtd::forms::button button_plus;
     xtd::forms::button button_minus;
     int count = 0;
@@ -64,7 +60,6 @@ namespace tutorial {
       xtd::forms::application::run(communicate());
     }
     
-  private:
     panel_left panel_left;
     panel_right panel_right;
   };
