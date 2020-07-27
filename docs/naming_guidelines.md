@@ -17,7 +17,6 @@ Although adopting these naming conventions as general code development guideline
 * [Naming Parameters](naming_parameters.md)
 * [Naming Resources](naming_resources.md)
 ​
-
 # See also
 ​
 Other Resources
