@@ -90,7 +90,7 @@ main_form::main_form() {
   };
 
   startup_run_project_button_.parent(startup_panel_);
-  //startup_run_project_button_.image(system_images::from_name("system-run", drawing::size {48, 48}));
+  startup_run_project_button_.image(system_images::from_name("system-run", drawing::size {48, 48}));
   startup_run_project_button_.image(xtd::drawing::bitmap(xtd_run_icon));
   startup_run_project_button_.image_align(content_alignment::middle_left);
   startup_run_project_button_.text("Run a project");
@@ -597,7 +597,7 @@ void main_form::run_project(const std::string& project_path) {
 
 void main_form::main() {
   application::enable_button_images();
-  application::enable_dark_mode();
+  //application::enable_dark_mode();
   application::enable_visual_styles();
   application::run(main_form());
 }
