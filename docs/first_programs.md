@@ -62,7 +62,7 @@ target_type(GUI_APPLICATION)
 
 See [cmake](htps:\\cmake.org) for more information.
 
-![Screenshot](../../docs/pictures/examples/tutorial/simple.png)
+![Screenshot](pictures/examples/tutorial/simple.png)
 
 Figure: simple
 
@@ -99,7 +99,7 @@ icon(xtd::drawing::system_icons::gammasoft());
 
 To display an application icon is a matter of one code line.
 
-![Screenshot](../../docs/pictures/examples/tutorial/icon.png)
+![Screenshot](pictures/examples/tutorial/icon.png)
 
 Figure: icon
 
@@ -184,7 +184,7 @@ close();
 
 Inside the ***on_quit()*** method, we call the ***close()*** method. This will close the form and terminate our application.
 
-![Screenshot](../../docs/pictures/examples/tutorial/button.png)
+![Screenshot](pictures/examples/tutorial/button.png)
 
 Figure: button
 
