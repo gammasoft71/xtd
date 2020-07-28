@@ -6,8 +6,6 @@ As mentioned in [introdcution](introduction.md) [xtd_forms](https://github.com/g
 
 [xtd_console](https://github.com/gammasoft71/xtd_console) library can be used to create console applications. In this chapter, we will illustrate some of the helper classes in console based applications.
 
-[xtd_tunit](https://github.com/gammasoft71/xtd_tunit) library can be used to create unit testing applications. In this chapter, we will illustrate some of the helper classes in unit testing based applications.
-
 # Console
 
 # See also
