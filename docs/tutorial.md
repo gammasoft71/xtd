@@ -5,7 +5,8 @@ This is xtd_forms tutorial for the C++ programming language. xtd_forms is a cros
 Table of contents
 
 * [Introduction to xtd_forms](introduction.md)
-* [helper classes](helper_classes.md)
+* [console classes](console_classes.md)
+* [unit testing classes](unit_testing_classes.md)
 * [First programs](first_programs.md)
 * [Menus and toolbars](menus_and_toolbars.md)
 * [layout_management](layout_management.md)
