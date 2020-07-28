@@ -4,7 +4,7 @@ This tutorial will introduce you to the programming with the [xtd_forms](https:/
 
 # xtd_forms
 
-[xtd_forms](https://github.com/gammasoft71/xtd_forms) is a Graphical User Interface (GUI) toolkit for creating C++ applications. It is an open source and cross-platform toolkit. [xtd_forms](https://github.com/gammasoft71/xtd_forms) applications run on all major OS platforms, including Windows, Linux, and macOS. The project was started by Gammasoft in 2019. [xtd_forms](https://github.com/gammasoft71/xtd_forms) is much more than a toolkit. [xtd_forms](https://github.com/gammasoft71/xtd_forms) is a part of [xtd_forms](https://github.com/gammasoft71/xtd). xtd provides a large variety of classes for handling streams, databases, threads, online help, or application settings. [xtd_forms](https://github.com/gammasoft71/xtd_forms) consists of a large group of controls.
+[xtd_forms](https://github.com/gammasoft71/xtd_forms) is a Graphical User Interface (GUI) toolkit for creating C++ applications. It is an open source and cross-platform toolkit. [xtd_forms](https://github.com/gammasoft71/xtd_forms) applications run on all major OS platforms, including Windows, Linux, and macOS. The project was started by Gammasoft in 2019. [xtd_forms](https://github.com/gammasoft71/xtd_forms) is much more than a toolkit. [xtd_forms](https://github.com/gammasoft71/xtd_forms) is a part of [xtd](https://github.com/gammasoft71/xtd). xtd provides a large variety of classes for handling streams, databases, threads, online help, or application settings. [xtd_forms](https://github.com/gammasoft71/xtd_forms) consists of a large group of controls.
 
 # The C++ programming language
 
