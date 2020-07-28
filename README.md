@@ -67,6 +67,10 @@ target_type(GUI_APPLICATION)
 
 For more examples see [examples](examples/README.md)
 
+# Tutorial
+
+[Tutorial](docs/tutorial.md) provide a tutorial to cover the basics needed to create xtd_forms applications.
+
 # Download and install
 
 Before running examples you must download and install xtd.forms. To download and install it read [downloads](docs/downloads.md) file.
