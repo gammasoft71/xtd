@@ -54,8 +54,7 @@ number '1024' :
 
 This is the output
 
-
-# xtd::strings
+# xtd::environment
 
 ```c++
 #include <xtd/xtd.core>

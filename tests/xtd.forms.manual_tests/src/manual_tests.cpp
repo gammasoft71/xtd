@@ -114,10 +114,18 @@ namespace xtd {
         next_control_ = nullptr;
       }
       
+      void on_handle_created(const event_args& e) override {
+        control::on_handle_created(e);
+        parent().value().get().mouse_move +=  [&] {
+          cdebug << "Mouse move..." << endl;
+        };
+
+      }
+      
     private:
       int min_size_ = 25;
-      int min_size_extra = 25;
-      int split_position_ = -1;
+      //int min_size_extra = 25;
+      //int split_position_ = -1;
       int mouse_down_location = -1;
       xtd::forms::splitter_style splitter_style_ = xtd::forms::splitter_style::update_childs;
       xtd::forms::cursor previous_control_cursor_;
@@ -196,7 +204,7 @@ namespace xtd {
       splitter splitter_;
       splitter_panel panel2_;
       int splitter_distance_ = 50;
-      int splitter_increment_ = 1;
+      //int splitter_increment_ = 1;
       int splitter_width_ = 4;
     };
   }
