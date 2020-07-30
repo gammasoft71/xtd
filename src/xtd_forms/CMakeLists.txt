@@ -114,6 +114,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/numeric_up_down.h
   include/xtd/forms/open_file_dialog.h
   include/xtd/forms/orientation.h
+  include/xtd/forms/padding.h
   include/xtd/forms/paint_event_args.h
   include/xtd/forms/paint_event_handler.h
   include/xtd/forms/panel.h
@@ -205,6 +206,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/mouse_event_args.cpp
   src/xtd/forms/numeric_up_down.cpp
   src/xtd/forms/open_file_dialog.cpp
+  src/xtd/forms/padding.cpp
   src/xtd/forms/paint_event_args.cpp
   src/xtd/forms/panel.cpp
   src/xtd/forms/picture_box.cpp
