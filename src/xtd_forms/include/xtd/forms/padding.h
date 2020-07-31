@@ -18,6 +18,8 @@ namespace xtd {
       /// @cond
       padding(const padding&) = default;
       padding& operator=(const padding&) = default;
+      bool operator==(const padding& value) {return all_ == value.all_ && left_ == value.left_ && top_ == value.top_ && right_ == value.right_ && bottom_ == value.bottom_;}
+      bool operator!=(const padding& value) {return !operator==(value);}
       /// @endcond
       
       int all() const {return all_ ? top_ : -1;}
