@@ -92,7 +92,6 @@ namespace xtd {
             if (new_size < min_size_) new_size = min_size_;
             if (control::dock() == dock_style::left || control::dock() == dock_style::right) next_control_->width(new_size);
             else next_control_->height(new_size);
-            parent().value().get().perform_layout();
             mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x() : cursor::position().y();
           }
         }
@@ -107,7 +106,6 @@ namespace xtd {
           if (new_size < min_size_) new_size = min_size_;
           if (control::dock() == dock_style::left || control::dock() == dock_style::right) next_control_->width(new_size);
           else next_control_->height(new_size);
-          parent().value().get().perform_layout();
           mouse_down_location = -1;
         }
         previous_control_ = nullptr;

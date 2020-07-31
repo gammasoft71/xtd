@@ -420,7 +420,7 @@ void control::on_fore_color_changed(const event_args &e) {
 }
 
 void control::on_font_changed(const event_args &e) {
-  do_layout_parent();
+  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   this->on_layout(event_args::empty);
   if (this->can_raise_events()) this->font_changed(*this, e);
 }
@@ -449,7 +449,7 @@ void control::on_handle_created(const event_args &e) {
 
   if (this->can_raise_events()) handle_created(*this, e);
   
-  do_layout_parent();
+  if (parent_) parent().value().get().perform_layout();
   this->on_layout(event_args::empty);
 }
 
@@ -470,12 +470,17 @@ void control::on_key_up(key_event_args& e) {
 }
 
 void control::on_layout(const event_args &e) {
-  do_layout();
+  if (this->get_state(state::layout_deferred) || reentrant_layout::is_reentrant(this)) return;
+  reentrant_layout reentrant_laout(this);
+  
+  this->do_layout_childs_with_dock_style();
+  this->do_layout_with_anchor_styles();
+  this->do_layout_with_auto_size_mode();
   if (this->can_raise_events()) this->layout(*this, e);
 }
 
 void control::on_location_changed(const event_args &e) {
-  do_layout_parent();
+  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (this->can_raise_events()) this->location_changed(*this, e);
 }
 
@@ -564,7 +569,7 @@ void control::on_resize(const event_args &e) {
 }
 
 void control::on_size_changed(const event_args &e) {
-  do_layout_parent();
+  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   this->client_rectangle_ = native::control::client_rectangle(handle_);
   this->on_layout(e);
   this->refresh();
@@ -572,7 +577,7 @@ void control::on_size_changed(const event_args &e) {
 }
 
 void control::on_text_changed(const event_args &e) {
-  do_layout_parent();
+  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   this->on_layout(event_args::empty);
   if (this->can_raise_events()) this->text_changed(*this, e);
 }
@@ -583,13 +588,8 @@ void control::on_visible_changed(const event_args &e) {
     this->focus();
   for (auto item : this->controls_)
     if (item.get().focused()) item.get().focus();
-  do_layout_parent();
+  if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (this->can_raise_events()) this->visible_changed(*this, e);
-}
-
-void control::perform_layout() {
-  if (!this->get_state(state::layout_deferred))
-    on_layout(event_args::empty);
 }
 
 drawing::point control::point_to_client(const xtd::drawing::point &p) {
@@ -717,7 +717,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
     native::control::location(handle_, this->location_);
     this->on_location_changed(event_args::empty);
-    do_layout_parent();
+    if (this->parent_) parent().value().get().perform_layout();
     this->on_layout(event_args::empty);
   }
   
@@ -725,7 +725,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
     native::control::size(handle_, this->size_);
     this->on_client_size_changed(event_args::empty);
     this->on_size_changed(event_args::empty);
-    do_layout_parent();
+    if (parent_) parent().value().get().perform_layout();
     this->on_layout(event_args::empty);
   }
 }
@@ -737,23 +737,6 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   native::control::client_size(handle_, this->client_size_);
   this->on_client_size_changed(event_args::empty);
   this->on_size_changed(event_args::empty);
-}
-
-void control::do_layout_parent() {
-  if (!this->parent_) return;
-  control* parent = &this->parent().value().get();
-  if (parent->get_state(state::auto_size))
-    parent->on_layout(event_args::empty);
-}
-
-void control::do_layout() {
-  if (this->get_state(state::layout_deferred) || reentrant_layout::is_reentrant(this)) return;
-  reentrant_layout reentrant_laout(this);
-  
-  // do_layout_parent();
-  this->do_layout_childs_with_dock_style();
-  this->do_layout_with_anchor_styles();
-  this->do_layout_with_auto_size_mode();
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {

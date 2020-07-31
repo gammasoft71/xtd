@@ -568,7 +568,7 @@ namespace xtd {
 
       /// @brief Forces the control to apply layout logic to all its child controls.
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the layout event is suppressed.
-      void perform_layout();
+      void perform_layout() {on_layout(event_args::empty);}
       
       xtd::drawing::point point_to_client(const xtd::drawing::point& p);
       
@@ -881,8 +881,6 @@ namespace xtd {
       /// @endcond
       
     private:
-      void do_layout_parent();
-      void do_layout();
       void on_parent_size_changed(const control& sender, const event_args& e);
       void do_layout_childs_with_dock_style();
       void do_layout_with_auto_size_mode();
