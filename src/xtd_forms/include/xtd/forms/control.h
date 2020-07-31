@@ -31,6 +31,7 @@
 #include "key_event_handler.h"
 #include "key_press_event_handler.h"
 #include "mouse_event_handler.h"
+#include "padding.h"
 #include "paint_event_handler.h"
 #include "message.h"
 #include "timer.h"
@@ -381,6 +382,13 @@ namespace xtd {
           this->set_bounds_core(location.x(), location.y(), 0, 0, bounds_specified::location);
         return *this;
       }
+      
+      virtual forms::padding margin() const {return margin_;}
+      virtual control& margin(const forms::padding& margin) {
+        if (margin_ != margin)
+          this->margin_ = margin;
+        return *this;
+      }
 
       static forms::keys modifier_keys() {return modifier_keys_;}
       
@@ -390,6 +398,13 @@ namespace xtd {
       virtual control& name(const std::string& name) {
         this->name_ = name;
         return*this;
+      }
+      
+      virtual forms::padding padding() const {return padding_;}
+      virtual control& padding(const forms::padding& padding) {
+        if (padding_ != padding)
+          this->padding_ = padding;
+        return *this;
       }
       
       virtual std::optional<control_ref> parent() const {return from_handle(this->parent_);}
@@ -849,6 +864,8 @@ namespace xtd {
       std::optional<drawing::font> font_;
       intptr_t handle_ = 0;
       drawing::point location_;
+      forms::padding margin_ {3};
+      forms::padding padding_;
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
       std::string name_;
