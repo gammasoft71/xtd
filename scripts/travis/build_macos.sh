@@ -21,7 +21,7 @@ if [ $? -ne 0 ]; then exit -1; fi
 popd
 
 # run registered unit tests
-ctest -j $(nproc) --output-on-failure --build-config Debug
-if [ $? -ne 0 ]; then exit -1; fi
+# ctest -j $(nproc) --output-on-failure --build-config Debug
+# if [ $? -ne 0 ]; then exit -1; fi
 
 popd
