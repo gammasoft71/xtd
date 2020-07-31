@@ -7,5 +7,6 @@ add_projects(
   form
   group_box
   panel
+  split_container
   tab_control
 )
