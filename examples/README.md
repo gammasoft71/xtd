@@ -36,7 +36,7 @@
 * [progress_bar](common_controls/progress_bar/README.md) represents a Windows [xtd::forms::progress_bar](../src/xtd_forms/include/xtd/forms/progress_bar.hpp) control.
 * [radio_button](common_controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) controls.
 * **rich_text_box** represents a Windows rich text box control.
-* **splitter** represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
+* [splitter](common_controls/splitter/README.md) represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
 * [text_box](common_controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
 * [track_bar](common_controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp).
@@ -70,7 +70,7 @@
 * [form](containers/form/README.md) represents a window or dialog box that makes up an application's user interface.
 * [group_box](containers/group_box/README.md) represents a Windows control that displays a frame around a group of controls with an optional caption.
 * [panel](containers/panel/README.md) used to group collections of controls.
-* **split_container** represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
+* [split_container](containers/split_container/README.md) represents a control consisting of a movable bar that divides a container's display area into two resizable panels.
 * [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 

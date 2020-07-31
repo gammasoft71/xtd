@@ -25,35 +25,7 @@ int main() {
     cdebug << format("Clik on menu item : {}", static_cast<menu_item&>(sender).text()) << endl;
   }));
   //form_main.menu(nullptr);
-  
-  /*
-  split_container splitter;
-  splitter.parent(form_main);
-  splitter.location({10, 10});
-  //splitter.dock(dock_style::fill);
-  //splitter.splitter_style(xtd::forms::splitter_style::update_childs);
-  //splitter.orientation(xtd::forms::orientation::horzontal);
-  splitter.splitter_width(1);
-  
-  splitter.panel1().border_style(forms::border_style::fixed_3d);
-  splitter.panel2().border_style(forms::border_style::fixed_3d);
-   */
-  
-  panel panel1;
-  panel1.dock(dock_style::left);
-  panel1.back_color(drawing::color::pink);
-  panel1.width(70);
 
-  splitter splitter;
-  splitter.dock(dock_style::left);
-  splitter.min_size(0);
-  
-  panel panel2;
-  panel2.dock(dock_style::fill);
-  panel2.back_color(drawing::color::light_green);
-
-  form_main.controls().push_back_range({panel2, splitter, panel1});
-  
   application::enable_menu_images();
   application::run(form_main);
 }
