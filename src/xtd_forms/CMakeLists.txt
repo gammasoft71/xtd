@@ -139,6 +139,10 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/seven_segment_display.h
   include/xtd/forms/shortcut.h
   include/xtd/forms/sixteen_segment_display.h
+  include/xtd/forms/split_container.h
+  include/xtd/forms/splitter.h
+  include/xtd/forms/splitter_panel.h
+  include/xtd/forms/splitter_style.h
   include/xtd/forms/switch_button.h
   include/xtd/forms/system_information.h
   include/xtd/forms/tab_alignment.h
@@ -216,6 +220,8 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/screen.cpp
   src/xtd/forms/scrollable_control.cpp
   src/xtd/forms/settings.cpp
+  src/xtd/forms/split_container.cpp
+  src/xtd/forms/splitter.cpp
   src/xtd/forms/system_information.cpp
   src/xtd/forms/tab_control.cpp
   src/xtd/forms/tab_page.cpp

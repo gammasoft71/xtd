@@ -20,6 +20,7 @@ add_projects(
   progress_bar
   radio_button
   radio_buttons
+  splitter
   text_box
   track_bar
   up_down_button
