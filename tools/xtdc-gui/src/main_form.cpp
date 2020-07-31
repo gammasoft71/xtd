@@ -59,8 +59,11 @@ main_form::main_form() {
 
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != -1) {
-      open_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
-      if (properties::settings::default_settings().auto_close()) close();
+      if (!std::filesystem::exists(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()])) message_box::show(*this, xtd::strings::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
+      else {
+        open_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
+        if (properties::settings::default_settings().auto_close()) close();
+      }
     }
   };
   
@@ -471,13 +474,16 @@ main_form::main_form() {
       configure_panel_.visible(true);
     } else if (configure_panel_.visible()) {
       auto project_path = std::filesystem::path {std::filesystem::path {configure_project_location_text_box_.text()}/configure_project_name_text_box_.text()}.string();
-      new_project(project_path, current_project_type_index_);
-      startup_panel_.visible(true);
-      configure_panel_.visible(false);
-      previous_button_.visible(false);
-      next_button_.text("&Next");
-      next_button_.visible(false);
-      if (properties::settings::default_settings().auto_close()) close();
+      if (std::filesystem::exists(project_path)) message_box::show(*this, xtd::strings::format("Project \"{}\" already exists!", project_path), "Create project", message_box_buttons::ok, message_box_icon::error);
+      else {
+        new_project(project_path, current_project_type_index_);
+        startup_panel_.visible(true);
+        configure_panel_.visible(false);
+        previous_button_.visible(false);
+        next_button_.text("&Next");
+        next_button_.visible(false);
+        if (properties::settings::default_settings().auto_close()) close();
+      }
     } else if (open_xtd_examples_panel_.visible()) {
       auto xtd_example = xtd_example_item();
       std::string exemple_subproject_path;
