@@ -6,7 +6,7 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - g++-0
+    - g++-9
     - lcov
 
 matrix:
