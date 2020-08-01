@@ -20,6 +20,7 @@ namespace unit_tests {
       assert::are_equal_(1, click_control_check);
     }
 
+    /*
     void test_method_(send_message_button_click_form_panel_button) {
       form form;
       panel panel;
@@ -32,7 +33,7 @@ namespace unit_tests {
       };
       send_message(button.handle(), WM_COMMAND, BN_CLICKED, button.handle());
       assert::are_equal_(1, click_control_check);
-    }
+    }*/
     
     void test_method_(set_client_size) {
       form form;
