@@ -6,14 +6,14 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - g++-8
+    - g++-0
     - lcov
 
 matrix:
   include:
   - env: TEST="Build on macOS"
     os: osx
-    osx_image: xcode10.0
+    osx_image: xcode11.6
     script: scripts/travis/build_macos.sh
   - env: TEST="Build on Linux"
     os: linux
