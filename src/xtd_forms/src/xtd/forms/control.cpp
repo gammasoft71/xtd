@@ -52,77 +52,77 @@ control::control_collection control::top_level_controls_;
 control::control() {
   native::control::init();
   if (!application::message_loop() && cursor::current() == cursor::none) cursor::current(cursors::wait_cursor());
-  this->set_state(state::enabled, true);
-  this->set_state(state::visible, true);
-  this->set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
-  this->size_ = this->default_size();
-  this->controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
+  set_state(state::enabled, true);
+  set_state(state::visible, true);
+  set_style(control_styles::all_painting_in_wm_paint | control_styles::user_paint | control_styles::standard_click | control_styles::standard_double_click | control_styles::use_text_for_accessibility | control_styles::selectable, true);
+  size_ = default_size();
+  controls_.item_added += [&](size_t, std::reference_wrapper<control> item) {
     item.get().parent_ = handle_;
     if (handle_) {
       item.get().create_control();
       item.get().on_parent_changed(event_args::empty);
-      this->on_control_added(control_event_args(item.get()));
+      on_control_added(control_event_args(item.get()));
     }
   };
   
-  this->controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
+  controls_.item_erased += [&](size_t, std::reference_wrapper<control> item) {
     item.get().parent_ = 0;
     item.get().destroy_control();
-    this->on_control_removed(control_event_args(item.get()));
+    on_control_removed(control_event_args(item.get()));
   };
 }
 
 control::~control() {
-  this->destroy_control();
+  destroy_control();
 }
 
 control& control::anchor(anchor_styles anchor) {
-  if (this->anchor_ != anchor) {
-    this->anchor_ = anchor;
-    this->set_state(state::docked, false);
-    this->on_layout(event_args::empty);
+  if (anchor_ != anchor) {
+    anchor_ = anchor;
+    set_state(state::docked, false);
+    on_layout(event_args::empty);
   }
   return *this;
 }
 
 control& control::auto_size(bool auto_size) {
-  if (this->get_state(state::auto_size) != auto_size) {
-    this->set_state(state::auto_size, auto_size);
-    this->on_auto_size_changed(event_args::empty);
+  if (get_state(state::auto_size) != auto_size) {
+    set_state(state::auto_size, auto_size);
+    on_auto_size_changed(event_args::empty);
   }
   return *this;
 }
 
 control& control::back_color(const color& color) {
-  if (this->back_color_ != color) {
-    this->back_color_ = color;
-    native::control::back_color(handle_, this->back_color_.value());
-    this->on_back_color_changed(event_args::empty);
-    for (auto control : this->controls())
+  if (back_color_ != color) {
+    back_color_ = color;
+    native::control::back_color(handle_, back_color_.value());
+    on_back_color_changed(event_args::empty);
+    for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
   return *this;
 }
 
 bool control::can_focus() const {
-  bool visible_and_enebled = handle_ && this->get_state(state::visible) && this->get_state(state::enabled);
+  bool visible_and_enebled = handle_ && get_state(state::visible) && get_state(state::enabled);
 
   std::optional<std::reference_wrapper<control>> top_level_control = const_cast<control&>(*this);
   while (visible_and_enebled && top_level_control.has_value() && !top_level_control.value().get().get_state(state::top_level)) {
     top_level_control = top_level_control.value().get().parent();
-    if (top_level_control.has_value()) visible_and_enebled = top_level_control.value().get().get_state(state::visible) && this->get_state(state::enabled);
+    if (top_level_control.has_value()) visible_and_enebled = top_level_control.value().get().get_state(state::visible) && get_state(state::enabled);
   }
   
   if (!visible_and_enebled) return false;
-  return this->can_focus_;
+  return can_focus_;
 }
 
 control& control::cursor(const forms::cursor &cursor) {
-  if (this->cursor_ != cursor) {
-    this->cursor_ = cursor;
-    native::control::cursor(handle_, this->cursor_.value().handle());
-    this->on_cursor_changed(event_args::empty);
-    for (auto control : this->controls())
+  if (cursor_ != cursor) {
+    cursor_ = cursor;
+    native::control::cursor(handle_, cursor_.value().handle());
+    on_cursor_changed(event_args::empty);
+    for (auto control : controls())
       control.get().on_parent_cursor_changed(event_args::empty);
   }
   return *this;
@@ -133,40 +133,40 @@ drawing::font control::default_font() const {
 }
 
 control& control::dock(dock_style dock) {
-  if (this->dock_ != dock) {
-    this->dock_ = dock;
-    this->set_state(state::docked, true);
-    this->on_dock_changed(event_args::empty);
+  if (dock_ != dock) {
+    dock_ = dock;
+    set_state(state::docked, true);
+    on_dock_changed(event_args::empty);
   }
   return *this;
 }
 
 control& control::enabled(bool enabled) {
-  if (this->get_state(state::enabled) != enabled) {
-    this->set_state(state::enabled, enabled);
-    native::control::enabled(handle_, this->get_state(state::enabled));
-    this->on_enabled_changed(event_args::empty);
+  if (get_state(state::enabled) != enabled) {
+    set_state(state::enabled, enabled);
+    native::control::enabled(handle_, get_state(state::enabled));
+    on_enabled_changed(event_args::empty);
   }
   return *this;
 }
 
 control& control::fore_color(const color& color) {
-  if (this->fore_color_ != color) {
-    this->fore_color_ = color;
-    native::control::fore_color(handle_, this->fore_color_.value());
-    this->on_fore_color_changed(event_args::empty);
-    for (auto control : this->controls())
+  if (fore_color_ != color) {
+    fore_color_ = color;
+    native::control::fore_color(handle_, fore_color_.value());
+    on_fore_color_changed(event_args::empty);
+    for (auto control : controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
   }
   return *this;
 }
 
 control& control::font(const drawing::font& font) {
-  if (this->font_ != font) {
-    this->font_ = font;
-    native::control::font(handle_, this->font_.value());
-    this->on_font_changed(event_args::empty);
-    for (auto control : this->controls())
+  if (font_ != font) {
+    font_ = font;
+    native::control::font(handle_, font_.value());
+    on_font_changed(event_args::empty);
+    for (auto control : controls())
       control.get().on_parent_font_changed(event_args::empty);
   }
   return *this;
@@ -177,19 +177,19 @@ intptr_t control::handle() const {
 }
 
 control& control::parent(const control& parent) {
-  if (parent.handle_ != this->parent_) {
+  if (parent.handle_ != parent_) {
     this->parent(nullptr);
     if (parent.handle_) const_cast<control&>(parent).controls_.push_back(*this);
-  } else if (parent.handle_ == 0 && this->parent_ == 0)
+  } else if (parent.handle_ == 0 && parent_ == 0)
     const_cast<control&>(parent).controls_.push_back(*this);
   return *this;
 }
 
 control& control::parent(nullptr_t) {
-  if (this->parent_ != 0) {
-    for (size_t index = 0; index < this->parent().value().get().controls_.size(); index++) {
-      if (this->parent().value().get().controls_[index].get().handle_ == handle_) {
-        this->parent().value().get().controls_.erase_at(index);
+  if (parent_ != 0) {
+    for (size_t index = 0; index < parent().value().get().controls_.size(); index++) {
+      if (parent().value().get().controls_[index].get().handle_ == handle_) {
+        parent().value().get().controls_.erase_at(index);
         break;
       }
     }
@@ -198,10 +198,10 @@ control& control::parent(nullptr_t) {
 }
 
 control& control::text(const std::string& text) {
-  if (this->text_ != text) {
-    this->text_ = text;
-    native::control::text(handle_, this->text_);
-    this->on_text_changed(event_args::empty);
+  if (text_ != text) {
+    text_ = text;
+    native::control::text(handle_, text_);
+    on_text_changed(event_args::empty);
   }
   return *this;
 }
@@ -215,40 +215,40 @@ std::optional<std::reference_wrapper<control>> control::top_level_control() cons
 }
 
 control& control::visible(bool visible) {
-  if (this->get_state(state::visible) != visible) {
-    this->set_state(state::visible, visible);
-    native::control::visible(handle_, this->get_state(state::visible));
-    this->on_visible_changed(event_args::empty);
+  if (get_state(state::visible) != visible) {
+    set_state(state::visible, visible);
+    native::control::visible(handle_, get_state(state::visible));
+    on_visible_changed(event_args::empty);
   }
   return *this;
 }
 
 void control::create_control() {
-  this->suspend_layout();
-  if (!this->get_state(state::destroying) && !this->get_state(state::creating) && !this->get_state(state::created)) {
-    this->set_state(state::destroyed, false);
-    this->set_state(state::creating, true);
-    this->create_handle();
-    if (!this->parent_) top_level_controls_.push_back(control_ref(*this));
-    this->send_message(handle_, WM_CREATE, 0, 0);
-    this->on_create_control();
-    this->set_state(state::creating, false);
-    this->set_state(state::created, true);
-    this->resume_layout();
+  suspend_layout();
+  if (!get_state(state::destroying) && !get_state(state::creating) && !get_state(state::created)) {
+    set_state(state::destroyed, false);
+    set_state(state::creating, true);
+    create_handle();
+    if (!parent_) top_level_controls_.push_back(control_ref(*this));
+    send_message(handle_, WM_CREATE, 0, 0);
+    on_create_control();
+    set_state(state::creating, false);
+    set_state(state::created, true);
+    resume_layout();
   }
 }
 
 void control::destroy_control() {
-  if (this->get_state(state::created)) {
-    this->suspend_layout();
-    this->set_state(state::created, false);
-    this->set_state(state::destroying, true);
+  if (get_state(state::created)) {
+    suspend_layout();
+    set_state(state::created, false);
+    set_state(state::destroying, true);
     if (handle_) {
-      for(control_ref child : this->controls_)
+      for(control_ref child : controls_)
         child.get().destroy_control();
       
-      if (this->parent_ != 0 && this->parent().has_value() && !this->parent().value().get().get_state(state::destroying))
-        this->parent(nullptr);
+      if (parent_ != 0 && parent().has_value() && !parent().value().get().get_state(state::destroying))
+        parent(nullptr);
       else {
         for (size_t index = 0; index < top_level_controls_.size(); index++) {
           if (top_level_controls_[index].get().handle_ == handle_) {
@@ -257,10 +257,10 @@ void control::destroy_control() {
           }
         }
       }
-      this->destroy_handle();
+      destroy_handle();
     }
-    this->set_state(state::destroying, false);
-    this->set_state(state::destroyed, true);
+    set_state(state::destroying, false);
+    set_state(state::destroyed, true);
   }
 }
 
@@ -269,24 +269,24 @@ graphics control::create_graphics() const {
 }
 
 void control::create_handle() {
-  this->set_state(state::creating_handle, true);
-  handle_ = native::control::create(this->create_params());
-  this->on_handle_created(event_args::empty);
-  this->set_state(state::creating_handle, false);
+  set_state(state::creating_handle, true);
+  handle_ = native::control::create(create_params());
+  on_handle_created(event_args::empty);
+  set_state(state::creating_handle, false);
 }
 
 void control::destroy_handle() {
   if (handle_) native::control::unregister_wnd_proc(handle_, {*this, &control::wnd_proc_});
   handles_.erase(handle_);
-  this->on_handle_destroyed(event_args::empty);
+  on_handle_destroyed(event_args::empty);
   native::control::destroy(handle_);
   handle_ = 0;
 }
 
 bool control::focus() {
-  if (!handle_ || !this->can_focus_) return false;
+  if (!handle_ || !can_focus_) return false;
   native::control::focus(handle_);
-  this->focused_ = true;
+  focused_ = true;
   return true;
 }
 
@@ -337,259 +337,259 @@ void control::end_invoke(async_result_invoke async) {
 forms::create_params control::create_params() const {
   forms::create_params create_params;
   
-  create_params.caption(this->text_);
+  create_params.caption(text_);
   create_params.style(WS_VISIBLE | WS_CHILD);
-  if (this->parent_) create_params.parent(this->parent().value().get().handle_);
-  create_params.location(this->location_);
-  create_params.size(this->size_);
+  if (parent_) create_params.parent(parent().value().get().handle_);
+  create_params.location(location_);
+  create_params.size(size_);
   
   return create_params;
 }
 
 drawing::size control::measure_control() const {
-  return this->client_size_;
+  return client_size_;
 }
 
 drawing::size control::measure_text() const {
-  return drawing::size::ceiling(this->create_graphics().measure_string(this->text_, this->font())) + drawing::size(2, 1);
+  return drawing::size::ceiling(create_graphics().measure_string(text_, font())) + drawing::size(2, 1);
 }
 
 void control::on_auto_size_changed(const event_args& e) {
-  this->on_layout(e);
-  if (this->can_raise_events()) this->auto_size_changed(*this, e);
+  on_layout(e);
+  if (can_raise_events()) auto_size_changed(*this, e);
 }
 
 void control::on_back_color_changed(const event_args &e) {
-  this->refresh();
-  if (this->can_raise_events()) this->back_color_changed(*this, e);
+  refresh();
+  if (can_raise_events()) back_color_changed(*this, e);
 }
 
 void control::on_create_control() {
-  for (auto control : this->controls_) {
+  for (auto control : controls_) {
     control.get().parent_ = handle_;
     control.get().create_control();
   }
-  this->on_layout(event_args::empty);
+  on_layout(event_args::empty);
 }
 
 void control::on_click(const event_args &e) {
-  if (this->can_raise_events()) this->click(*this, e);
+  if (can_raise_events()) click(*this, e);
 }
 
 void control::on_client_size_changed(const event_args &e) {
-  this->on_layout(e);
-  this->refresh();
-  if (this->can_raise_events()) this->client_size_changed(*this, e);
+  on_layout(e);
+  refresh();
+  if (can_raise_events()) client_size_changed(*this, e);
 }
 
 void control::on_control_added(const control_event_args &e) {
-  this->on_layout(event_args::empty);
-  this->size_changed += {e.control(), &control::on_parent_size_changed};
-  if (this->can_raise_events()) this->control_added(*this, e);
+  on_layout(event_args::empty);
+  size_changed += {e.control(), &control::on_parent_size_changed};
+  if (can_raise_events()) control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  this->on_layout(event_args::empty);
-  this->size_changed -= {e.control(), &control::on_parent_size_changed};
-  if (this->can_raise_events()) this->control_removed(*this, e);
+  on_layout(event_args::empty);
+  size_changed -= {e.control(), &control::on_parent_size_changed};
+  if (can_raise_events()) control_removed(*this, e);
 }
 
 void control::on_cursor_changed(const event_args &e) {
-  if (this->can_raise_events()) this->cursor_changed(*this, e);
+  if (can_raise_events()) cursor_changed(*this, e);
 }
 
 void control::on_dock_changed(const event_args &e) {
-  if (this->parent().has_value()) this->parent().value().get().on_layout(e);
-  this->on_layout(e);
-  if (this->can_raise_events()) this->dock_changed(*this, e);
+  if (parent().has_value()) parent().value().get().on_layout(e);
+  on_layout(e);
+  if (can_raise_events()) dock_changed(*this, e);
 }
 
 void control::on_double_click(const event_args &e) {
-  if (this->can_raise_events()) this->double_click(*this, e);
+  if (can_raise_events()) double_click(*this, e);
 }
 
 void control::on_enabled_changed(const event_args &e) {
-  this->set_state(state::enabled, native::control::enabled(handle_));
-  this->refresh();
-  if (this->can_raise_events()) this->enabled_changed(*this, e);
+  set_state(state::enabled, native::control::enabled(handle_));
+  refresh();
+  if (can_raise_events()) enabled_changed(*this, e);
 }
 
 void control::on_fore_color_changed(const event_args &e) {
-  this->refresh();
-  if (this->can_raise_events()) this->fore_color_changed(*this, e);
+  refresh();
+  if (can_raise_events()) fore_color_changed(*this, e);
 }
 
 void control::on_font_changed(const event_args &e) {
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  this->on_layout(event_args::empty);
-  if (this->can_raise_events()) this->font_changed(*this, e);
+  on_layout(event_args::empty);
+  if (can_raise_events()) font_changed(*this, e);
 }
 
 void control::on_got_focus(const event_args &e) {
-  this->focused_ = true;
-  if (this->can_raise_events()) this->got_focus(*this, e);
+  focused_ = true;
+  if (can_raise_events()) got_focus(*this, e);
 }
 
 void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(handle_, {*this, &control::wnd_proc_});
   handles_[handle_] = this;
-  if (this->get_state(state::client_size_setted)) native::control::client_size(handle_, this->client_size());
-  if (drawing::native::system_colors::force_set_system_color() || (this->back_color_.has_value() && this->back_color_.value() != this->default_back_color()) || (!environment::os_version().is_macos_platform() && this->back_color() != this->default_back_color())) native::control::back_color(handle_, this->back_color());
-  if (this->cursor_.has_value() && this->cursor_.value() != this->default_cursor()) native::control::cursor(handle_, this->cursor().handle());
-  if (drawing::native::system_colors::force_set_system_color() || this->fore_color_.has_value() || this->fore_color() != this->default_fore_color()) native::control::fore_color(handle_, this->fore_color());
-  if (this->font_.has_value() || this->font() != this->default_font()) native::control::font(handle_, this->font());
-  native::control::enabled(handle_, this->enabled());
-  native::control::visible(handle_, this->visible());
-  if (this->focused()) native::control::focus(handle_);
+  if (get_state(state::client_size_setted)) native::control::client_size(handle_, client_size());
+  if (drawing::native::system_colors::force_set_system_color() || (back_color_.has_value() && back_color_.value() != default_back_color()) || (!environment::os_version().is_macos_platform() && back_color() != default_back_color())) native::control::back_color(handle_, back_color());
+  if (cursor_.has_value() && cursor_.value() != default_cursor()) native::control::cursor(handle_, cursor().handle());
+  if (drawing::native::system_colors::force_set_system_color() || fore_color_.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle_, fore_color());
+  if (font_.has_value() || font() != default_font()) native::control::font(handle_, font());
+  native::control::enabled(handle_, enabled());
+  native::control::visible(handle_, visible());
+  if (focused()) native::control::focus(handle_);
 
-  this->client_rectangle_ = native::control::client_rectangle(handle_);
-  this->client_size_ = native::control::client_size(handle_);
-  this->location_ = native::control::location(handle_);
-  this->size_ = native::control::size(handle_);
+  client_rectangle_ = native::control::client_rectangle(handle_);
+  client_size_ = native::control::client_size(handle_);
+  location_ = native::control::location(handle_);
+  size_ = native::control::size(handle_);
 
-  if (this->can_raise_events()) handle_created(*this, e);
+  if (can_raise_events()) handle_created(*this, e);
   
   if (parent_) parent().value().get().perform_layout();
-  this->on_layout(event_args::empty);
+  on_layout(event_args::empty);
 }
 
 void control::on_handle_destroyed(const event_args &e) {
-  if (this->can_raise_events()) handle_destroyed(*this, e);
+  if (can_raise_events()) handle_destroyed(*this, e);
 }
 
 void control::on_key_down(key_event_args& e) {
-  if (this->can_raise_events()) this->key_down(*this, e);
+  if (can_raise_events()) key_down(*this, e);
 }
 
 void control::on_key_press(key_press_event_args& e) {
-  if (this->can_raise_events()) this->key_press(*this, e);
+  if (can_raise_events()) key_press(*this, e);
 }
 
 void control::on_key_up(key_event_args& e) {
-  if (this->can_raise_events()) this->key_up(*this, e);
+  if (can_raise_events()) key_up(*this, e);
 }
 
 void control::on_layout(const event_args &e) {
-  if (this->get_state(state::layout_deferred) || reentrant_layout::is_reentrant(this)) return;
+  if (get_state(state::layout_deferred) || reentrant_layout::is_reentrant(this)) return;
   reentrant_layout reentrant_laout(this);
   
-  this->do_layout_childs_with_dock_style();
-  this->do_layout_with_anchor_styles();
-  this->do_layout_with_auto_size_mode();
-  if (this->can_raise_events()) this->layout(*this, e);
+  do_layout_with_anchor_styles();
+  do_layout_with_auto_size_mode();
+  do_layout_childs_with_dock_style();
+  if (can_raise_events()) layout(*this, e);
 }
 
 void control::on_location_changed(const event_args &e) {
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  if (this->can_raise_events()) this->location_changed(*this, e);
+  if (can_raise_events()) location_changed(*this, e);
 }
 
 void control::on_lost_focus(const event_args &e) {
-  this->focused_ = false;
-  if (this->can_raise_events()) this->lost_focus(*this, e);
+  focused_ = false;
+  if (can_raise_events()) lost_focus(*this, e);
 }
 
 void control::on_mouse_click(const mouse_event_args& e) {
-  if (this->can_raise_events()) this->mouse_click(*this, e);
+  if (can_raise_events()) mouse_click(*this, e);
 }
 
 void control::on_mouse_double_click(const mouse_event_args& e) {
-  if (this->can_raise_events()) this->mouse_double_click(*this, e);
+  if (can_raise_events()) mouse_double_click(*this, e);
 }
 
 void control::on_mouse_down(const mouse_event_args& e) {
-  if (this->can_raise_events()) this->mouse_down(*this, e);
+  if (can_raise_events()) mouse_down(*this, e);
 }
 
 void control::on_mouse_horizontal_wheel(const mouse_event_args& e) {
-  if (this->can_raise_events()) this->mouse_horizontal_wheel(*this, e);
+  if (can_raise_events()) mouse_horizontal_wheel(*this, e);
 }
 
 void control::on_mouse_enter(const event_args &e) {
-  if (this->can_raise_events()) this->mouse_enter(*this, e);
+  if (can_raise_events()) mouse_enter(*this, e);
 }
 
 void control::on_mouse_leave(const event_args &e) {
-  if (this->can_raise_events()) this->mouse_leave(*this, e);
+  if (can_raise_events()) mouse_leave(*this, e);
 }
 
 void control::on_mouse_move(const mouse_event_args& e) {
-  if (this->can_raise_events()) this->mouse_move(*this, e);
+  if (can_raise_events()) mouse_move(*this, e);
 }
 
 void control::on_mouse_up(const mouse_event_args& e) {
-  if (this->can_raise_events()) this->mouse_up(*this, e);
+  if (can_raise_events()) mouse_up(*this, e);
 }
 
 void control::on_mouse_wheel(const mouse_event_args& e) {
-  if (this->can_raise_events()) this->mouse_wheel(*this, e);
+  if (can_raise_events()) mouse_wheel(*this, e);
 }
 
 void control::on_paint(paint_event_args &e) {
-  if (this->can_raise_events()) this->paint(*this, e);
+  if (can_raise_events()) paint(*this, e);
 }
 
 void control::on_parent_back_color_changed(const event_args &e) {
-  if (!this->back_color_.has_value()) {
-    if (this->back_color() == this->default_back_color())
-      this->recreate_handle();
+  if (!back_color_.has_value()) {
+    if (back_color() == default_back_color())
+      recreate_handle();
     else if (!environment::os_version().is_macos_platform())
-      native::control::back_color(handle_, this->back_color());
-    for (auto control : this->controls())
+      native::control::back_color(handle_, back_color());
+    for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
 }
 
 void control::on_parent_changed(const event_args &e) {
-  if (this->parent().has_value()) this->parent_size_ = this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size();
-  if (this->can_raise_events()) this->parent_changed(*this, e);
+  if (parent().has_value()) parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();
+  if (can_raise_events()) parent_changed(*this, e);
 }
 
 void control::on_parent_cursor_changed(const event_args &e) {
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
-  if (!this->fore_color_.has_value()) {
-    native::control::fore_color(handle_, this->fore_color());
-    for (auto control : this->controls())
+  if (!fore_color_.has_value()) {
+    native::control::fore_color(handle_, fore_color());
+    for (auto control : controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
   }
 }
 
 void control::on_parent_font_changed(const event_args &e) {
-  if (!this->font_.has_value()) {
-    native::control::font(handle_, this->font());
-    for (auto control : this->controls())
+  if (!font_.has_value()) {
+    native::control::font(handle_, font());
+    for (auto control : controls())
       control.get().on_parent_font_changed(event_args::empty);
   }
 }
 
 void control::on_resize(const event_args &e) {
-  if (this->can_raise_events()) this->resize(*this, e);
+  if (can_raise_events()) resize(*this, e);
 }
 
 void control::on_size_changed(const event_args &e) {
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  this->client_rectangle_ = native::control::client_rectangle(handle_);
-  this->on_layout(e);
-  this->refresh();
-  if (this->can_raise_events()) this->size_changed(*this, e);
+  client_rectangle_ = native::control::client_rectangle(handle_);
+  on_layout(e);
+  refresh();
+  if (can_raise_events()) size_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args &e) {
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  this->on_layout(event_args::empty);
-  if (this->can_raise_events()) this->text_changed(*this, e);
+  on_layout(event_args::empty);
+  if (can_raise_events()) text_changed(*this, e);
 }
 
 void control::on_visible_changed(const event_args &e) {
-  this->set_state(state::visible, native::control::visible(handle_));
-  if (this->focused())
-    this->focus();
-  for (auto item : this->controls_)
+  set_state(state::visible, native::control::visible(handle_));
+  if (focused())
+    focus();
+  for (auto item : controls_)
     if (item.get().focused()) item.get().focus();
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  if (this->can_raise_events()) this->visible_changed(*this, e);
+  if (can_raise_events()) visible_changed(*this, e);
 }
 
 drawing::point control::point_to_client(const xtd::drawing::point &p) {
@@ -609,15 +609,15 @@ intptr_t control::send_message(intptr_t hwnd, int32_t msg, intptr_t wparam, intp
 }
 
 void control::set_auto_size_mode(auto_size_mode auto_size_mode) {
-  if (this->auto_size_mode_ != auto_size_mode) {
-    this->auto_size_mode_ = auto_size_mode;
-    this->on_layout(event_args::empty);
+  if (auto_size_mode_ != auto_size_mode) {
+    auto_size_mode_ = auto_size_mode;
+    on_layout(event_args::empty);
   }
 }
 
 std::string control::to_string() const {
-  if (!this->name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), this->name_);
-  if (!this->text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), this->text_);
+  if (!name_.empty()) return strings::format("{}, name: {}", strings::full_class_name(*this), name_);
+  if (!text_.empty()) return strings::format("{}, text: {}", strings::full_class_name(*this), text_);
   return strings::full_class_name(*this);
 }
 
@@ -639,7 +639,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 }
 
 void control::wnd_proc(message& message) {
-  diagnostics::debug::write_line_if(debug_events, strings::format("({}) receive message [{}]", this->name_, message));
+  diagnostics::debug::write_line_if(debug_events, strings::format("({}) receive message [{}]", name_, message));
   switch (message.msg()) {
       // keyboard:
     case WM_CHAR:
@@ -647,37 +647,37 @@ void control::wnd_proc(message& message) {
     case WM_KEYUP:
     case WM_SYSCHAR:
     case WM_SYSKEYDOWN:
-    case WM_SYSKEYUP: this->wm_key_char(message); break;
+    case WM_SYSKEYUP: wm_key_char(message); break;
       // mouse events
     case WM_LBUTTONDOWN:
     case WM_MBUTTONDOWN:
     case WM_RBUTTONDOWN:
-    case WM_XBUTTONDOWN: this->wm_mouse_down(message); break;
+    case WM_XBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP:
     case WM_MBUTTONUP:
     case WM_RBUTTONUP:
-    case WM_XBUTTONUP: this->wm_mouse_up(message); break;
+    case WM_XBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK:
     case WM_MBUTTONDBLCLK:
     case WM_RBUTTONDBLCLK:
-    case WM_XBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
-    case WM_MOUSEMOVE: this->wm_mouse_move(message); break;
-    case WM_MOUSEENTER: this->wm_mouse_enter(message); break;
-    case WM_MOUSELEAVE: this->wm_mouse_leave(message); break;
-    case WM_CHILDACTIVATE: this->wm_child_activate(message); break;
-    case WM_SETFOCUS: this->wm_set_focus(message); break;
-    case WM_KILLFOCUS: this->wm_kill_focus(message); break;
+    case WM_XBUTTONDBLCLK: wm_mouse_double_click(message); break;
+    case WM_MOUSEMOVE: wm_mouse_move(message); break;
+    case WM_MOUSEENTER: wm_mouse_enter(message); break;
+    case WM_MOUSELEAVE: wm_mouse_leave(message); break;
+    case WM_CHILDACTIVATE: wm_child_activate(message); break;
+    case WM_SETFOCUS: wm_set_focus(message); break;
+    case WM_KILLFOCUS: wm_kill_focus(message); break;
     case WM_MOUSEHWHEEL:
-    case WM_MOUSEWHEEL: this->wm_mouse_wheel(message); break;
+    case WM_MOUSEWHEEL: wm_mouse_wheel(message); break;
       // System events
-    case WM_COMMAND: this->wm_command(message); break;
-    case WM_PAINT: this->wm_paint(message); break;
+    case WM_COMMAND: wm_command(message); break;
+    case WM_PAINT: wm_paint(message); break;
     case WM_MOVE: wm_move(message);  break;
     case WM_SETTEXT: wm_set_text(message); break;
-    case WM_SIZE:  this->wm_size(message); break;
+    case WM_SIZE:  wm_size(message); break;
     case WM_HSCROLL:
-    case WM_VSCROLL: this->wm_scroll(message); break;
-    default: this->def_wnd_proc(message); break;
+    case WM_VSCROLL: wm_scroll(message); break;
+    default: def_wnd_proc(message); break;
   }
 }
 
@@ -687,79 +687,79 @@ void control::def_wnd_proc(message& message) {
 
 void control::recreate_handle() {
   if (handle_ != 0) {
-    this->set_state(state::recreate, true);
-    for (auto control : this->controls()) control.get().set_state(state::parent_recreating, true);
+    set_state(state::recreate, true);
+    for (auto control : controls()) control.get().set_state(state::parent_recreating, true);
 
-    this->on_handle_destroyed(event_args::empty);
+    on_handle_destroyed(event_args::empty);
     intptr_t old_handle = handle_;
     handle_ = 0;
-    this->create_handle();
-    for (auto control : this->controls()) {
+    create_handle();
+    for (auto control : controls()) {
       control.get().parent_ = handle_;
       control.get().recreate_handle();
     }
     intptr_t new_handle = handle_;
     handle_ = old_handle;
-    this->destroy_handle();
+    destroy_handle();
     handle_ = new_handle;
 
-    for (auto control : this->controls()) control.get().set_state(state::parent_recreating, false);
-    this->set_state(state::recreate, false);
+    for (auto control : controls()) control.get().set_state(state::parent_recreating, false);
+    set_state(state::recreate, false);
   }
 }
 
 void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t height, bounds_specified specified) {
-  if ((specified & bounds_specified::x) == bounds_specified::x) this->location_.x(x);
-  if ((specified & bounds_specified::y) == bounds_specified::y) this->location_.y(y);
-  if ((specified & bounds_specified::width) == bounds_specified::width) this->size_.width(width);
-  if ((specified & bounds_specified::height) == bounds_specified::height) this->size_.height(height);
+  if ((specified & bounds_specified::x) == bounds_specified::x) location_.x(x);
+  if ((specified & bounds_specified::y) == bounds_specified::y) location_.y(y);
+  if ((specified & bounds_specified::width) == bounds_specified::width) size_.width(width);
+  if ((specified & bounds_specified::height) == bounds_specified::height) size_.height(height);
   
   if ((specified & bounds_specified::x) == bounds_specified::x || (specified & bounds_specified::y) == bounds_specified::y) {
-    native::control::location(handle_, this->location_);
-    this->on_location_changed(event_args::empty);
-    if (this->parent_) parent().value().get().perform_layout();
-    this->on_layout(event_args::empty);
+    native::control::location(handle_, location_);
+    on_location_changed(event_args::empty);
+    if (parent_) parent().value().get().perform_layout();
+    on_layout(event_args::empty);
   }
   
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
-    native::control::size(handle_, this->size_);
-    this->on_client_size_changed(event_args::empty);
-    this->on_size_changed(event_args::empty);
+    native::control::size(handle_, size_);
+    on_client_size_changed(event_args::empty);
+    on_size_changed(event_args::empty);
     if (parent_) parent().value().get().perform_layout();
-    this->on_layout(event_args::empty);
+    on_layout(event_args::empty);
   }
 }
 
 void control::set_client_size_core(int32_t width, int32_t height) {
-  this->client_size_.width(width);
-  this->client_size_.height(height);
+  client_size_.width(width);
+  client_size_.height(height);
   
-  native::control::client_size(handle_, this->client_size_);
-  this->on_client_size_changed(event_args::empty);
-  this->on_size_changed(event_args::empty);
+  native::control::client_size(handle_, client_size_);
+  on_client_size_changed(event_args::empty);
+  on_size_changed(event_args::empty);
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
-  if (!this->get_state(state::layout_deferred)) {
-    this->on_layout(event_args::empty);
-    this->parent_size_ = this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size();
+  if (!get_state(state::layout_deferred) && !reentrant_layout::is_reentrant(this)) {
+    on_layout(event_args::empty);
+    parent_size_ = parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size();
   }
 }
 
 void control::do_layout_childs_with_dock_style() {
   bool docked = false;
-  for(control_ref control : this->controls_) {
+  for(control_ref control : controls_) {
     docked = control.get().get_state(state::docked);
     if (docked) break;
   }
 
   if (docked) {
-    drawing::rectangle docking_rect = this->client_rectangle();
+    drawing::rectangle docking_rect = client_rectangle();
     docking_rect.left(docking_rect.left() + padding_.left());
     docking_rect.top(docking_rect.top() + padding_.top());
     docking_rect.width(docking_rect.width() - padding_.left() - padding_.right());
     docking_rect.height(docking_rect.height() - padding_.top() - padding_.bottom());
-    for(control_collection::reverse_iterator iterator = this->controls_.rbegin(); iterator != this->controls_.rend(); ++iterator) {
+    for(control_collection::reverse_iterator iterator = controls_.rbegin(); iterator != controls_.rend(); ++iterator) {
       if (!iterator->get().visible()) continue;
       if (iterator->get().dock() == dock_style::top) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
@@ -788,47 +788,47 @@ void control::do_layout_childs_with_dock_style() {
 }
 
 void control::do_layout_with_anchor_styles() {
-  if (this->parent().has_value()) {
-    point diff = (this->parent().value().get().get_state(state::client_size_setted) ? this->parent().value().get().client_size() :  this->parent().value().get().size()) - this->parent_size_;
+  if (parent().has_value() && parent_size_ != drawing::size::empty) {
+    point diff = (parent().value().get().get_state(state::client_size_setted) ? parent().value().get().client_size() :  parent().value().get().size()) - parent_size_;
 
-    if ((this->anchor_ & anchor_styles::left) == anchor_styles::left && (this->anchor_ & anchor_styles::right) != anchor_styles::right)
-      this->left(this->left());
-    else if ((this->anchor_ & anchor_styles::left) == anchor_styles::left && (this->anchor_ & anchor_styles::right) == anchor_styles::right)
-      this->width(this->width() + diff.x());
-    else if ((this->anchor_ & anchor_styles::left) != anchor_styles::left && (this->anchor_ & anchor_styles::right) == anchor_styles::right)
-      this->left(this->left() + diff.x());
+    if ((anchor_ & anchor_styles::left) == anchor_styles::left && (anchor_ & anchor_styles::right) != anchor_styles::right)
+      left(left());
+    else if ((anchor_ & anchor_styles::left) == anchor_styles::left && (anchor_ & anchor_styles::right) == anchor_styles::right)
+      width(width() + diff.x());
+    else if ((anchor_ & anchor_styles::left) != anchor_styles::left && (anchor_ & anchor_styles::right) == anchor_styles::right)
+      left(left() + diff.x());
     else
-      this->left(this->left() + (diff.x() / 2));
+      left(left() + (diff.x() / 2));
 
-    if ((this->anchor_ & anchor_styles::top) == anchor_styles::top && (this->anchor_ & anchor_styles::bottom) != anchor_styles::bottom)
-      this->top(this->top());
-    else if ((this->anchor_ & anchor_styles::top) == anchor_styles::top && (this->anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
-      this->height(this->height() + diff.y());
-    else if ((this->anchor_ & anchor_styles::top) != anchor_styles::top && (this->anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
-      this->top(this->top() + diff.y());
+    if ((anchor_ & anchor_styles::top) == anchor_styles::top && (anchor_ & anchor_styles::bottom) != anchor_styles::bottom)
+      top(top());
+    else if ((anchor_ & anchor_styles::top) == anchor_styles::top && (anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
+      height(height() + diff.y());
+    else if ((anchor_ & anchor_styles::top) != anchor_styles::top && (anchor_ & anchor_styles::bottom) == anchor_styles::bottom)
+      top(top() + diff.y());
     else
-      this->top(this->top() + (diff.y() / 2));
+      top(top() + (diff.y() / 2));
   }
 
 }
 
 void control::do_layout_with_auto_size_mode() {
-  if (this->get_state(state::auto_size)) {
-    drawing::size auto_size_size_ = this->measure_control();
-    if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.width() < this->client_size_.width())
-      auto_size_size_.width(this->client_size_.width());
-    if (this->auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.height() < this->client_size_.height())
-      auto_size_size_.height(this->client_size_.height());
-    this->client_size(auto_size_size_);
+  if (get_state(state::auto_size)) {
+    drawing::size auto_size_size_ = measure_control();
+    if (auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.width() < client_size_.width())
+      auto_size_size_.width(client_size_.width());
+    if (auto_size_mode_ == auto_size_mode::grow_only && auto_size_size_.height() < client_size_.height())
+      auto_size_size_.height(client_size_.height());
+    client_size(auto_size_size_);
   }
 }
 
 void control::wm_child_activate(message& message) {
-  this->def_wnd_proc(message);
+  def_wnd_proc(message);
 }
 
 void control::wm_command(message& message) {
-  this->def_wnd_proc(message);
+  def_wnd_proc(message);
   if (message.lparam() != 0)
     from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
@@ -837,118 +837,118 @@ void control::wm_key_char(message& message) {
   if (message.msg() == WM_KEYDOWN || message.msg ()== WM_SYSKEYDOWN) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     modifier_keys_ = key_event_args.modifiers();
-    this->on_key_down(key_event_args);
+    on_key_down(key_event_args);
     message.result(key_event_args.suppress_key_press());
-    if (!key_event_args.handled()) this->def_wnd_proc(message);
+    if (!key_event_args.handled()) def_wnd_proc(message);
   } else if (message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) {
     key_press_event_args key_press_event_args(static_cast<int32_t>(message.wparam()));
-    this->on_key_press(key_press_event_args);
+    on_key_press(key_press_event_args);
     message.result(key_press_event_args.handled());
-    if (!key_press_event_args.handled()) this->def_wnd_proc(message);
+    if (!key_press_event_args.handled()) def_wnd_proc(message);
   } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
     key_event_args key_event_args(static_cast<keys>(message.wparam()));
     modifier_keys_ = key_event_args.modifiers();
-    this->on_key_up(key_event_args);
+    on_key_up(key_event_args);
     message.result(key_event_args.handled());
-    if (!key_event_args.handled()) this->def_wnd_proc(message);
+    if (!key_event_args.handled()) def_wnd_proc(message);
   } else
-    this->def_wnd_proc(message);
+    def_wnd_proc(message);
 }
 
 void control::wm_kill_focus(message& message) {
-  this->def_wnd_proc(message);
-  this->on_lost_focus(event_args::empty);
+  def_wnd_proc(message);
+  on_lost_focus(event_args::empty);
 }
 
 void control::wm_mouse_down(message& message) {
-  this->def_wnd_proc(message);
-  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
-  mouse_event_args e = mouse_event_args::create(message, this->get_state(state::double_click_fired));
+  def_wnd_proc(message);
+  set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+  mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
-  this->on_mouse_down(e);
+  on_mouse_down(e);
 }
 
 void control::wm_mouse_double_click(message& message) {
-  this->def_wnd_proc(message);
-  this->set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
-  this->on_double_click(event_args::empty);
-  this->on_mouse_double_click(mouse_event_args::create(message, this->get_state(state::double_click_fired)));
+  def_wnd_proc(message);
+  set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+  on_double_click(event_args::empty);
+  on_mouse_double_click(mouse_event_args::create(message, get_state(state::double_click_fired)));
 }
 
 void control::wm_mouse_enter(message& message) {
-  this->def_wnd_proc(message);
-  this->on_mouse_enter(event_args::empty);
+  def_wnd_proc(message);
+  on_mouse_enter(event_args::empty);
 }
 
 void control::wm_mouse_leave(message& message) {
-  this->def_wnd_proc(message);
-  this->on_mouse_leave(event_args::empty);
+  def_wnd_proc(message);
+  on_mouse_leave(event_args::empty);
 }
 
 void control::wm_mouse_up(message& message) {
-  this->def_wnd_proc(message);
+  def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
-  if (e.button() == mouse_buttons::left) this->on_click(event_args::empty);
-  this->on_mouse_click(e);
-  this->on_mouse_up(e);
+  if (e.button() == mouse_buttons::left) on_click(event_args::empty);
+  on_mouse_click(e);
+  on_mouse_up(e);
 }
 
 void control::wm_mouse_move(message& message) {
-  this->def_wnd_proc(message);
-  this->on_mouse_move(mouse_event_args(wparam_to_mouse_buttons(message), this->point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), this->get_state(control::state::double_click_fired) ? 2 : 1, 0));
+  def_wnd_proc(message);
+  on_mouse_move(mouse_event_args(wparam_to_mouse_buttons(message), point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), get_state(control::state::double_click_fired) ? 2 : 1, 0));
 }
 
 void control::wm_move(message& message) {
-  this->def_wnd_proc(message);
-  if (this->location_ != native::control::location(handle_)) {
-    this->location_ = native::control::location(handle_);
-    this->on_location_changed(event_args::empty);
+  def_wnd_proc(message);
+  if (location_ != native::control::location(handle_)) {
+    location_ = native::control::location(handle_);
+    on_location_changed(event_args::empty);
   }
 }
 
 void control::wm_mouse_wheel(message& message) {
-  this->def_wnd_proc(message);
+  def_wnd_proc(message);
   if (message.msg() == WM_MOUSEHWHEEL)
-    this->on_mouse_horizontal_wheel(mouse_event_args::create(message, this->get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
+    on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
   else
-    this->on_mouse_wheel(mouse_event_args::create(message, this->get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
+    on_mouse_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32_t>(HIWORD(message.wparam()))));
 }
 
 void control::wm_paint(message& message) {
-  this->def_wnd_proc(message);
-  paint_event_args e(this->client_rectangle_, *this, get_state(state::double_buffered));
-  this->on_paint(e);
+  def_wnd_proc(message);
+  paint_event_args e(client_rectangle_, *this, get_state(state::double_buffered));
+  on_paint(e);
 }
 
 void control::wm_scroll(message& message) {
-  this->def_wnd_proc(message);
+  def_wnd_proc(message);
   if (message.lparam() != 0)
     from_handle(message.lparam()).value().get().send_message(message.hwnd(), WM_REFLECT + message.msg(), message.wparam(), message.lparam());
 }
 
 void control::wm_set_focus(message& message) {
-  this->def_wnd_proc(message);
-  this->on_got_focus(event_args::empty);
+  def_wnd_proc(message);
+  on_got_focus(event_args::empty);
 }
 
 void control::wm_set_text(message& message) {
-  this->def_wnd_proc(message);
-  if (this->text_ != reinterpret_cast<const char*>(message.lparam())) {
-    this->text_ = reinterpret_cast<const char*>(message.lparam());
-    this->on_text_changed(event_args::empty);
+  def_wnd_proc(message);
+  if (text_ != reinterpret_cast<const char*>(message.lparam())) {
+    text_ = reinterpret_cast<const char*>(message.lparam());
+    on_text_changed(event_args::empty);
   }
 }
 
 void control::wm_size(message& message) {
-  this->def_wnd_proc(message);
-  if (this->client_size_ != native::control::client_size(handle_)) {
-    this->client_size_ = native::control::client_size(handle_);
-    this->on_client_size_changed(event_args::empty);
+  def_wnd_proc(message);
+  if (client_size_ != native::control::client_size(handle_)) {
+    client_size_ = native::control::client_size(handle_);
+    on_client_size_changed(event_args::empty);
   }
-  if (this->size_ != native::control::size(handle_)) {
-    this->size_ = native::control::size(handle_);
-    this->on_size_changed(event_args::empty);
+  if (size_ != native::control::size(handle_)) {
+    size_ = native::control::size(handle_);
+    on_size_changed(event_args::empty);
   }
-  this->on_resize(event_args::empty);
+  on_resize(event_args::empty);
 }
