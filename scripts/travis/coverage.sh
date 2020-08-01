@@ -7,7 +7,7 @@ mkdir -p build
 cd build
 
 # generate and build lib with coverage
-cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DENABLE_XTD_COMMAND_LINE=OFF -DCMAKE_CXX_COMPILER=g++-7 -DENABLE_COVERAGE=ON ..
+cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DENABLE_XTD_COMMAND_LINE=OFF -DCMAKE_CXX_COMPILER=g++-8 -DENABLE_COVERAGE=ON ..
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
