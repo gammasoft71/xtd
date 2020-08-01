@@ -88,17 +88,20 @@ int main() {
   table_layout_panel.dock(dock_style::fill);
    */
   
-  
+  // !!!: Flag 1
   form_main.client_size({300, 300});
   form_main.padding(10);
   
+  // ???: Flag 2
   panel panel_left;
   panel_left.dock(dock_style::left);
   panel_left.back_color(color::light_green);
   panel_left.width(150);
 
+  // TODO: Flag 3
   form_main.controls().push_back_range({panel_left});
 
+  // FIXME: Flag 4
   button button_left1;
   button_left1.parent(panel_left);
   button_left1.location({50, 100});
@@ -107,8 +110,8 @@ int main() {
   //button_left1.parent().value().get().size_changed += [&] {
   //  cdebug << format("new size = {}", button_left1.parent().value().get().size()) << endl;
   //};
-  
 
+  // MARK: Flag 5
   application::enable_menu_images();
   application::run(form_main);
 }
