@@ -6,7 +6,7 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-    - g++-7
+    - g++-8
     - lcov
     - libwxgtk3.0-dev
     - libgtk-3-dev
