@@ -37,7 +37,7 @@ namespace unit_tests {
       label.parent(form);
       label.auto_size(true);
       label.text("00");
-      assert::are_equal_(size(28, 25),  label.size());
+      assert::are_equal_(size(27, 25),  label.size());
     }
 
     void test_method_(lcd_label_auto_size_with_default_spacing_with_3_chars) {
@@ -46,7 +46,7 @@ namespace unit_tests {
       label.parent(form);
       label.auto_size(true);
       label.text("000");
-      assert::are_equal_(size(43, 25),  label.size());
+      assert::are_equal_(size(41, 25),  label.size());
     }
 
     void test_method_(lcd_label_auto_size_set_spacing_to_8_with_2_chars) {
@@ -76,7 +76,7 @@ namespace unit_tests {
       label.auto_size(true);
       label.height(203);
       label.text("00000");
-      assert::are_equal_(size(518, 203),  label.size());
+      assert::are_equal_(size(586, 203),  label.size());
     }
 
     void test_method_(lcd_label_auto_size_set_spacing_to_10_with_5_chars_and_height_to_203) {
@@ -96,7 +96,7 @@ namespace unit_tests {
       label.parent(form);
       label.auto_size(true);
       label.text("12345678.90");
-      assert::are_equal_(size(163, 25),  label.size());
+      assert::are_equal_(size(153, 25),  label.size());
     }
   };
 }
