@@ -1,6 +1,6 @@
 [![console](docs/pictures/header.png)](https://gammasoft71.wixsite.com/xtd-console)
 
-[![Build Status](https://travis-ci.org/gammasoft71/xtd.console.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd.console)
+[![Build Status](https://travis-ci.org/gammasoft71/xtd_console.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd_console)
 [![Build status](https://ci.appveyor.com/api/projects/status/7i6t0xilki708d2s?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-console)
 [![codecov](https://codecov.io/gh/gammasoft71/xtd.console/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.console)
 [![Documentation](https://codedocs.xyz/gammasoft71/xtd.console.svg)](https://codedocs.xyz/gammasoft71/xtd.console/)
