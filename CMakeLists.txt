@@ -10,6 +10,13 @@ if (NOT DEFINED EXPORT_PROJECT_NAME)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
 
+# Code coverage
+option(ENABLE_COVERAGE "Enable code coverage" OFF)
+if (ENABLE_COVERAGE AND UNIX)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g --coverage")
+  set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} --coverage")
+endif ()
+
 # Projects
 add_subdirectory(src)
 add_subdirectory(tools)
