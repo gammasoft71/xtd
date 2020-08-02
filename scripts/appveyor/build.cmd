@@ -14,7 +14,7 @@ if %ERRORLEVEL% NEQ 0 exit 1
 
 :: generate and build examples
 cd examples
-cmake ../../examples -G "%BUILD_OPTION%" -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+cmake ../../examples -G "%BUILD_OPTION%" -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local -DDOWNLOAD_DOXYGEN=ON
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config Debug
 if %ERRORLEVEL% NEQ 0 exit 1
