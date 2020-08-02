@@ -1,7 +1,7 @@
 [![drawing](docs/pictures/header.png)](https://gammasoft71.wixsite.com/xtd-drawing)
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd_drawing.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd_drawing)
-[![Build status](https://ci.appveyor.com/api/projects/status/7i6t0xilki708d2s?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd.drawing)
+[![Build status](https://ci.appveyor.com/api/projects/status/mj2nrfvudaa9u4uu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-drawing)
 [![codecov](https://codecov.io/gh/gammasoft71/xtd.drawing/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.drawing)
 [![Documentation](https://codedocs.xyz/gammasoft71/xtd_drawing.svg)](https://codedocs.xyz/gammasoft71/xtd_drawing/)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-drawing%20website)](https://gammasoft71.wixsite.com/xtd-drawing)
