@@ -13,12 +13,12 @@ cmake --build . --target install -- -j 8
 if [ $? -ne 0 ]; then exit -1; fi
 
 # generate and build examples
-pushd examples
-cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local ../../examples
-if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . -- -j 8
-if [ $? -ne 0 ]; then exit -1; fi
-popd
+#pushd examples
+#cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local ../../examples
+#if [ $? -ne 0 ]; then exit -1; fi
+#cmake --build . -- -j 8
+#if [ $? -ne 0 ]; then exit -1; fi
+#popd
 
 # run registered unit tests
 # ctest -j $(nproc) --output-on-failure --build-config Debug
