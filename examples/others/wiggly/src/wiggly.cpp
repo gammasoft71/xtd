@@ -25,7 +25,7 @@ namespace examples {
       auto pos = point {(e.clip_rectangle().size().width() - static_cast<int>(e.graphics().measure_string(text(), font()).width())) / 2, (e.clip_rectangle().size().height() - static_cast<int>(e.graphics().measure_string(text(), font()).height())) / 2};
       for (auto i = 0; i < text().length(); i++) {
         auto index = (step + i) % sins.size();
-        e.graphics().draw_string(strings::format("{}", text()[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, {0, sins[index] * font().height() / 400}));
+        e.graphics().draw_string(strings::format("{}", text()[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
         pos.x(pos.x() + static_cast<int>(e.graphics().measure_string(strings::format("{}", text()[i]), font()).width()));
       }
     }
