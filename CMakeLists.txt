@@ -44,6 +44,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     "set(${PROJECT_NAME}_FOUND TRUE)\n"
   )
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake DESTINATION cmake)
+  install(FILES src/xtd_core/scripts/cmake/xtd_commands.cmake DESTINATION cmake)
   install(EXPORT ${PROJECT_NAME} DESTINATION cmake)
   install(DIRECTORY resources DESTINATION share/xtd)
 endif ()
