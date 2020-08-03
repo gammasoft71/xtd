@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+export xtd_forms_version=0.1.0
+scripts/install/install.sh "$@"
