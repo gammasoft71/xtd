@@ -5,7 +5,7 @@
 using namespace std;
 using namespace xtd;
 
-namespace guid_command {
+namespace guidgen {
   class program static_ {
   public:
     static int main(const vector<string>& args) {
@@ -77,4 +77,4 @@ namespace guid_command {
   };
 }
 
-startup_(guid_command::program);
+startup_(guidgen::program);
