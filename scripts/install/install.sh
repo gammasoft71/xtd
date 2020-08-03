@@ -30,9 +30,9 @@ esac
 
 # detecting, generate, build and install wxwdigets
 echo "Detecting if wxwidgets is installed..."
-mkdir -p scripts/install/test_wxwidgets/build
-pushd scripts/install/test_wxwidgets/build
-cmake ..
+mkdir -p build/test_wxwidgets
+pushd build/test_wxwidgets
+cmake ../../scripts/install/test_wxwidgets
 popd
 
 if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
