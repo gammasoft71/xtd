@@ -7,7 +7,7 @@ environment:
   - BUILD_OPTION: "Visual Studio 15 2017 Win64"
 
 install:
-  - choco install doxygen
+  - choco install doxygen.install
 
 build_script:
 - cmd: scripts\appveyor\build.cmd
