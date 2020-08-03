@@ -3,5 +3,5 @@ project(test_wxwidgets)
 
 find_package(wxWidgets)
 if (wxWidgets_FOUND)
-  file(WRITE wxwidgets.lock)
+  file(WRITE wxwidgets.lck)
 endif()
