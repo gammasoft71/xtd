@@ -90,6 +90,6 @@ if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   open /usr/local/bin/xtdc-gui.app
 else
-fi
   xdg-open /usr/local/bin/xtdc-gui
+fi
 popd
