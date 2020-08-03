@@ -6,38 +6,60 @@ echo "Install xtd_forms library version $xtd_forms_version, copyright Gammasoft,
 echo ""
 
 # detecting linux distribution
+echo "Detecting operating system..."
 OSTYPE=`uname -a`
 if [[ "$OSTYPE" == *"Linux"* ]]; then
   OSTYPE=`lsb_release -si`;
 fi
 
+if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+  echo "  Operating System is Windows"
+elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+  echo "  Operating System is macOS"
+else
+  echo "  Operating System is linux"
+fi
+
 # install needed packages and libraries for known distribution
+echo "install needed packages and libraries..."
 case "$OSTYPE" in
-  *"Darwin"*) brew update; brew install cmake -y;;
+  *"Darwin"*) brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential libgtk-3-dev cmake -y;;
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install cmake3 gtk3-devel -y;;
 esac
 
 # detecting, generate, build and install wxwdigets
-mkdir -p test_wxwidgets/build
-pushd test_wxwidgets/build
+echo "Detecting if wxwidgets is installed..."
+mkdir -p scripts/install/test_wxwidgets/build
+pushd scripts/install/test_wxwidgets/build
 cmake ..
 popd
 
-if [! -f "test_wxwidgets/wxwidgets.lck" ]; then
-  mkdir -p build/thirdparty/wxwidgets/build
-  pushd build/thirdparty/wxwidgets
-  git clone https://github.com/wxWidgets/wxWidgets.git -b $WXWIDGETS_VERSION
-  pushd build
+if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
+  echo "  wxwidgets is not found"
+else
+  echo "  wxwidgets is found"
+fi
+
+if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
+  echo "dowload and install wxwidgets..."
+  mkdir -p build/3rdparty
+  pushd build/3rdparty
+  git clone https://github.com/wxWidgets/wxWidgets.git -b $WXWIDGETS_VERSION --depth 1
+  pushd wxwidgets
+  git submodule update --init
+  popd
+  mkdir -p wxwidgets/build_cmake
+  pushd wxwidgets/build_cmake
   if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
     cmake .. -DwxBUILD_SHARED=OFF
     cmake --build . --target install --config Debug
     cmake --build . --target install --config Release
   elif [[ "$OSTYPE" == *"Darwin"* ]]; then
     cmake .. -G "Xcode" -DwxBUILD_SHARED=OFF
-    cmake --build . --config Debug -- -j8
+    cmake --build . --config Debug
     sudo  cmake --build . --target install --config Debug
-    cmake --build . --config Release -- -j8
+    cmake --build . --config Release
     sudo cmake --build . --target install --config Release
   else
     mkdir Release && mkdir Debug
@@ -57,7 +79,9 @@ if [! -f "test_wxwidgets/wxwidgets.lck" ]; then
 fi
 
 # generate, build and install xtd_forms
-mkdir -p build/examples
+echo "install xtd_forms..."
+git submodule update --init
+mkdir build
 pushd build
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   cmake .. "$@"
@@ -65,9 +89,9 @@ if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   cmake --build . --target install --config Release
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   cmake .. -G "Xcode" "$@"
-  cmake --build . --config Debug -- -j8
+  cmake --build . --config Debug
   sudo  cmake --build . --target install --config Debug
-  cmake --build . --config Release -- -j8
+  cmake --build . --config Release
   sudo cmake --build . --target install --config Release
 else
   mkdir Release && mkdir Debug
@@ -85,6 +109,7 @@ fi
 popd
 
 # launch xtd-gui
+echo "launch xtdc-gui..."
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   start "C:\Program Files (x86)\xtd_forms\bin\xtdc-gui.exe"
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
@@ -92,4 +117,3 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
 else
   xdg-open /usr/local/bin/xtdc-gui
 fi
-popd
