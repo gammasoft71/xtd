@@ -117,7 +117,7 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   if [ -d "/Applications/xtdc-gui" ]; then rm "/Applications/xtdc-gui"; fi
   ln -s "/usr/local/bin/xtdc-gui.app" "/Applications/xtdc-gui"
 else
-# nothing to do...
+  # nothing to do...
 fi
 
 
