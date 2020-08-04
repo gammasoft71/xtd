@@ -108,6 +108,19 @@ else
 fi
 popd
 
+:: create xtdc-gui shortcut in system operating applications
+if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then 
+  xtd_program_path="$USERPROFILE/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/xtd"
+  if [ ! -d "$xtd_program_path" ]; then mkdir -p "$xtd_program_path"; fi
+  scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xtdc-gui.lnk" "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"  
+elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+  if [ -d "/Applications/xtdc-gui" ]; then rm "/Applications/xtdc-gui"; fi
+  ln -s "/usr/local/bin/xtdc-gui.app" "/Applications/xtdc-gui"
+else
+# nothing to do...
+fi
+
+
 # launch xtd-gui
 echo "launch xtdc-gui..."
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
