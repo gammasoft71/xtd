@@ -44,10 +44,9 @@ cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
 cd ..
 
-:: create xtdc-gui "Start Menu" shortcut
+:: create xtdc-gui shortcut in system operating applications
 set xtd_program_path=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd
 if not exist "%xtd_program_path%" mkdir "%xtd_program_path%"
-rem mklink "%xtd_program_path%\xtdc-gui" "%USERPROFILE%\local\xtd\bin\xtdc-gui.exe"
 rem call shortcut.bat "%xtd_program_path%\xtdc-gui.lnk" "%USERPROFILE%\local\xtd\bin\xtdc-gui.exe"
 call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
 
