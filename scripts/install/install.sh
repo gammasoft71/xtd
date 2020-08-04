@@ -58,9 +58,9 @@ if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
   elif [[ "$OSTYPE" == *"Darwin"* ]]; then
     cmake .. -G "Xcode" -DwxBUILD_SHARED=OFF
     cmake --build . --config Debug
-    sudo  cmake --build . --target install --config Debug
+    cmake --build . --target install --config Debug
     cmake --build . --config Release
-    sudo cmake --build . --target install --config Release
+    cmake --build . --target install --config Release
   else
     mkdir Release && mkdir Debug
     pushd Release
