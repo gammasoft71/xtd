@@ -1,4 +1,7 @@
 @echo off
+
+set WXWIDGETS_VERSION=v3.1.4
+
 echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2020
 echo.
 
@@ -11,7 +14,7 @@ cd build\test_wxwidgets
 cmake ..\..\scripts\install\test_wxwidgets
 cd..\..
 
-if exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
+if not exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
   echo   wxwidgets is not found
 ) else (
   echo   wxwidgets is found
@@ -21,7 +24,7 @@ if not exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
   echo dowload and install wxwidgets...
   mkdir build\3rdparty
   cd build\3rdparty
-  git clone https://github.com/wxWidgets/wxWidgets.git -b $WXWIDGETS_VERSION --depth 1
+  git clone https://github.com/wxWidgets/wxWidgets.git -b %WXWIDGETS_VERSION% --depth 1
   cd wxwidgets
   git submodule update --init
   cd..
