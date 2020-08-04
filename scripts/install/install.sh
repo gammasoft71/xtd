@@ -29,19 +29,20 @@ case "$OSTYPE" in
 esac
 
 # detecting, generate, build and install wxwdigets
-echo "Detecting if wxwidgets is installed..."
-mkdir -p build/test_wxwidgets
-pushd build/test_wxwidgets
-cmake ../../scripts/install/test_wxwidgets
-popd
+#echo "Detecting if wxwidgets is installed..."
+#mkdir -p build/test_wxwidgets
+#pushd build/test_wxwidgets
+#cmake ../../scripts/install/test_wxwidgets
+#popd
 
-if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
-  echo "  wxwidgets is not found"
-else
-  echo "  wxwidgets is found"
-fi
+#if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
+#  echo "  wxwidgets is not found"
+#else
+#  echo "  wxwidgets is found"
+#  rm "scripts/install/test_wxwidgets/wxwidgets.lck"
+#fi
 
-if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
+#if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
   echo "dowload and install wxwidgets..."
   mkdir -p build/3rdparty
   pushd build/3rdparty
@@ -76,7 +77,7 @@ if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
   fi
   popd
   popd
-fi
+#fi
 
 # generate, build and install xtd
 echo "install xtd..."
@@ -108,7 +109,7 @@ else
 fi
 popd
 
-:: create xtdc-gui shortcut in system operating applications
+# create xtdc-gui shortcut in system operating applications
 if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then 
   xtd_program_path="$USERPROFILE/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/xtd"
   if [ ! -d "$xtd_program_path" ]; then mkdir -p "$xtd_program_path"; fi
@@ -116,8 +117,6 @@ if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
 elif [[ "$OSTYPE" == *"Darwin"* ]]; then
   if [ -d "/Applications/xtdc-gui" ]; then rm "/Applications/xtdc-gui"; fi
   ln -s "/usr/local/bin/xtdc-gui.app" "/Applications/xtdc-gui"
-else
-  # nothing to do...
 fi
 
 

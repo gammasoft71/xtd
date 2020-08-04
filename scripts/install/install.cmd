@@ -7,20 +7,20 @@ echo.
 
 echo   Operating System is Windows
 
-:: detecting, generate, build and install wxwdigets
-echo Detecting if wxwidgets is installed...
-mkdir build\test_wxwidgets
-cd build\test_wxwidgets
-cmake ..\..\scripts\install\test_wxwidgets
-cd..\..
+::detecting, generate, build and install wxwdigets
+::echo Detecting if wxwidgets is installed...
+::mkdir build\test_wxwidgets
+::cd build\test_wxwidgets
+::cmake ..\..\scripts\install\test_wxwidgets
+::cd..\..
 
-if not exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
-  echo   wxwidgets is not found
-) else (
-  echo   wxwidgets is found
-)
+::if not exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
+::  echo   wxwidgets is not found
+::) else (
+::  echo   wxwidgets is found
+::)
 
-if not exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
+::if not exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
   echo dowload and install wxwidgets...
   mkdir build\3rdparty
   cd build\3rdparty
@@ -34,7 +34,7 @@ if not exist "scripts/install/test_wxwidgets/wxwidgets.lck" (
   cmake --build . --target install --config Debug
   cmake --build . --target install --config Release
   cd ..\..\..\..
-)
+::)
 
 :: generate, build and install xtd
 mkdir build
