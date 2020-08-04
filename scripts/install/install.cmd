@@ -53,4 +53,4 @@ call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFil
 
 :: launch xtdc-gui
 echo launch xtdc-gui...
-explorer "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
+start "xtdc-gui" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
