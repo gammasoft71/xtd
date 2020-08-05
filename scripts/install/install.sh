@@ -8,13 +8,13 @@ echo ""
 # detecting linux distribution
 echo "Detecting operating system..."
 OSTYPE=`uname -a`
-if [[ "$OSTYPE" == *"Linux"* ]]; then
+if [ [ "$OSTYPE" == *"Linux"* ] ]; then
   OSTYPE=`lsb_release -si`;
 fi
 
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [ [ "$OSTYPE" == *"MSYS"* ] ] || [ [ "$OSTYPE" == *"MINGW64"* ] ]; then
   echo "  Operating System is Windows"
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+elif [ [ "$OSTYPE" == *"Darwin"* ] ]; then
   echo "  Operating System is macOS"
 else
   echo "  Operating System is linux"
@@ -52,11 +52,11 @@ esac
   popd
   mkdir -p wxwidgets/build_cmake
   pushd wxwidgets/build_cmake
-  if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+  if [ [ "$OSTYPE" == *"MSYS"* ] ] || [ [ "$OSTYPE" == *"MINGW64"* ] ]; then
     cmake .. -DwxBUILD_SHARED=OFF
     cmake --build . --target install --config Debug
     cmake --build . --target install --config Release
-  elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+  elif [ [ "$OSTYPE" == *"Darwin"* ] ]; then
     cmake .. -G "Xcode" -DwxBUILD_SHARED=OFF
     cmake --build . --config Debug
     cmake --build . --target install --config Debug
@@ -84,11 +84,11 @@ echo "install xtd..."
 git submodule update --init
 mkdir build
 pushd build
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [ [ "$OSTYPE" == *"MSYS"* ] ] || [ [ "$OSTYPE" == *"MINGW64"* ] ]; then
   cmake .. "$@"
   cmake --build . --target install --config Debug
   cmake --build . --target install --config Release
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+elif [ [ "$OSTYPE" == *"Darwin"* ] ]; then
   cmake .. -G "Xcode" "$@"
   cmake --build . --config Debug
   cmake --build . --target install --config Debug
@@ -110,11 +110,11 @@ fi
 popd
 
 # create xtdc-gui shortcut in system operating applications
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then 
+if [ [ "$OSTYPE" == *"MSYS"* ] ] || [ [ "$OSTYPE" == *"MINGW64"* ] ]; then 
   xtd_program_path="$USERPROFILE/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/xtd"
   if [ ! -d "$xtd_program_path" ]; then mkdir -p "$xtd_program_path"; fi
   scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xtdc-gui.lnk" "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"  
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+elif [ [ "$OSTYPE" == *"Darwin"* ] ]; then
   if [ -d "/Applications/xtdc-gui" ]; then rm "/Applications/xtdc-gui"; fi
   ln -s "/usr/local/bin/xtdc-gui.app" "/Applications/xtdc-gui"
 fi
@@ -122,9 +122,9 @@ fi
 
 # launch xtd-gui
 echo "launch xtdc-gui..."
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [ [ "$OSTYPE" == *"MSYS"* ] ] || [ [ "$OSTYPE" == *"MINGW64"* ] ]; then
   start "C:\Program Files (x86)\xtd\bin\xtdc-gui.exe"
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+elif [ [ "$OSTYPE" == *"Darwin"* ] ]; then
   open /usr/local/bin/xtdc-gui.app
 else
   xdg-open /usr/local/bin/xtdc-gui
