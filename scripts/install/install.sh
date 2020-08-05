@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/bash
 
 WXWIDGETS_VERSION=v3.1.4
 
