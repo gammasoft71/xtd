@@ -44,8 +44,8 @@ esac
 
 #if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
   echo "dowload and install wxwidgets..."
-  mkdir -p build/3rdparty
-  pushd build/3rdparty
+  mkdir -p build/thirdparty
+  pushd build/thirdparty
   git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
   pushd wxwidgets
   git submodule update --init
