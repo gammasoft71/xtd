@@ -8,13 +8,13 @@ echo ""
 # detecting linux distribution
 echo "Detecting operating system..."
 OSTYPE=`uname -a`
-if [[ "$OSTYPE" == *"Linux"* ]]; then
+if [ [ "$OSTYPE" == *"Linux"* ] ]; then
   OSTYPE=`lsb_release -si`;
 fi
 
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
+if [ [ "$OSTYPE" == *"MSYS"* ] ] || [ [ "$OSTYPE" == *"MINGW64"* ] ]; then
   echo "  Operating System is Windows"
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+elif [ [ "$OSTYPE" == *"Darwin"* ] ]; then
   echo "  Operating System is macOS"
 else
   echo "  Operating System is linux"
@@ -45,7 +45,7 @@ esac
 #if [ ! -f "scripts/install/test_wxwidgets/wxwidgets.lck" ]; then
   echo "dowload and install wxwidgets..."
   mkdir -p build/3rdparty
-  pushd build/3rdparty
+  cd build/3rdparty
   git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
   pushd wxwidgets
   git submodule update --init
