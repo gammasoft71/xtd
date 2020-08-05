@@ -46,7 +46,7 @@ esac
   echo "dowload and install wxwidgets..."
   mkdir -p build/3rdparty
   pushd build/3rdparty
-  git clone https://github.com/wxWidgets/wxWidgets.git -b $WXWIDGETS_VERSION --depth 1
+  git clone https://github.com/wxwidgets/wxwidgets.git -b $WXWIDGETS_VERSION --depth 1
   pushd wxwidgets
   git submodule update --init
   popd
