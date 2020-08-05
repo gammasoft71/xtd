@@ -1895,7 +1895,7 @@ endif()
 # Reference Guide Generator
 
 include(ExternalProject)
-option(ADD_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" ON)
+option(ADD_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" OFF)
 option(DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
 
 if (ADD_COMMAND_REFERENCE_GUIDE_GENERATOR AND NOT DOXYGEN_FOUND)  
@@ -1908,8 +1908,7 @@ if (ADD_COMMAND_REFERENCE_GUIDE_GENERATOR AND NOT DOXYGEN_FOUND)
     set(DOXYGEN_EXECUTABLE ${CMAKE_BINARY_DIR}/bin/doxygen)
     set(DOXYGEN_PROJECT doxygen)
   else ()
-    #message(FATAL_ERROR "Doxygen not found try with set \"DOWNLOAD_DOXYGEN\" option to ON")
-    set(DOXYGEN_EXECUTABLE doxygen)
+    message(FATAL_ERROR "Doxygen not found try with set \"DOWNLOAD_DOXYGEN\" option to ON")
   endif ()
   
   if (NOT "$ENV{PROJECT_DOCUMENTATION_ROOT}" STREQUAL "")
