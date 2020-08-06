@@ -21,7 +21,7 @@ git clone https://github.com/gammasoft71/xtd_forms.git
 # Libraries dependency
 
 xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../src/xtd_forms_native_wxwidgets/README.md) backend is supported.
-See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
+So [wxWidgets](https://www.wxwidgets.org/) 3.1.4 will be installed too on your system.
 
 In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.form.native.gtk3](../src/xtd_forms_native_gtk3/README.md) on linux. Other backend like [xtd.form.native.qt5](../src/xtd_forms_native_qt5/README.md) will be ported too.
 
