@@ -37,6 +37,8 @@ echo   Operating System is Windows
 ::)
 
 :: generate, build and install xtd
+echo install xtd...
+git submodule update --init
 mkdir build
 cd build
 cmake .. %*
