@@ -127,5 +127,5 @@ if [ "$OSTYPE" == *"MSYS"* ] || [ "$OSTYPE" == *"MINGW64"* ]; then
 elif [ "$OSTYPE" == *"Darwin"* ]; then
   open /usr/local/bin/xtdc-gui.app
 else
-  /usr/local/bin/xtdc-gui &
+  /usr/local/bin/xtdc-gui &>/dev/null &
 fi
