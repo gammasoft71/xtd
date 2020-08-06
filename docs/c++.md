@@ -20,8 +20,8 @@ For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) an
 ## Operating System
 
 * Windows 7 32 or 64 bits or later
-* macOS X 10.13.6 or later
-* Linux (compatible with g++7)
+* macOS X 10.14 or later
+* Linux (compatible with g++9)
 * Probably others (if a compatible C++17 compiler is supported and if [xtd.form.native](../src/xtd_forms_native) library is ported)
 
 ## Libraries dependency
@@ -35,9 +35,9 @@ In the future xtd.forms will use [xtd.form.native.win32](../src/xtd_forms_native
 
 Compilers list where xtd.forms are tested
 
-* Visual studio 2017
-* clang Apple LLVM version 10.0.0 (clang-1000.11.45.5) - Xcode 10.1
-* g++ 7
+* Visual studio 2019
+* clang Apple LLVM version 10.0.0 (clang-1000.11.45.5) - Xcode 11
+* g++ 9
 
 More compilers can be used see [C++ compiler support for C++17](https://en.cppreference.com/w/cpp/compiler_support#cpp17).
 
