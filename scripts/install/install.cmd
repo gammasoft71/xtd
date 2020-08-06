@@ -38,9 +38,9 @@ IF %ERRORLEVEL% neq 0 (
   cd..
   mkdir wxwidgets\build_cmake
   cd wxwidgets\build_cmake
-  cmake .. -DwxBUILD_SHARED=OFF -DwxBUILD_USE_STATTIC_RUNTIME=ON
+  cmake .. -DwxBUILD_SHARED=OFF
   cmake --build . --target install --config Debug
-  cmake --build . --target install --config Release
+  #cmake --build . --target install --config Release
   cd ..\..\..\..
 ::)
 
