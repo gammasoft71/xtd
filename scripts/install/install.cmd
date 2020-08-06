@@ -1,5 +1,13 @@
 @echo off
 
+:: check if administrator mode
+net session > nul 2>&1
+IF %ERRORLEVEL% neq 0 (
+  echo You are not in administrator mode!
+  echo Run cmd as administrator before execute install.
+  exit /B 1
+)
+
 set WXWIDGETS_VERSION=v3.1.4
 
 echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2020
