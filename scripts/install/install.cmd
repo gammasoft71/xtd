@@ -61,7 +61,7 @@ rem call shortcut.bat "%xtd_program_path%\xtdc-gui.lnk" "%USERPROFILE%\local\xtd
 call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
 
 :: add xtdc-gui path
-setx path "%path%;%ProgramFiles(x86)%\xtd\bin"
+setx path "%ProgramFiles(x86)%\xtd\bin;%path%"
 
 :: launch xtdc-gui
 echo launch xtdc-gui...
