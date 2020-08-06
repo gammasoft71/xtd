@@ -1,5 +1,12 @@
 @echo off
 
+set WXWIDGETS_VERSION=v3.1.4
+
+echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2020
+echo.
+
+echo   Operating System is Windows
+
 :: check if administrator mode
 net session > nul 2>&1
 IF %ERRORLEVEL% neq 0 (
@@ -7,13 +14,6 @@ IF %ERRORLEVEL% neq 0 (
   echo Run cmd as administrator before execute install.
   exit /B 1
 )
-
-set WXWIDGETS_VERSION=v3.1.4
-
-echo Install xtd libraries version %xtd_version%, copyright Gammasoft, 2020
-echo.
-
-echo   Operating System is Windows
 
 ::detecting, generate, build and install wxwdigets
 ::echo Detecting if wxwidgets is installed...
@@ -36,9 +36,9 @@ echo   Operating System is Windows
   cd wxwidgets
   git submodule update --init
   cd..
-  mkdir -p wxwidgets\build_cmake
+  mkdir wxwidgets\build_cmake
   cd wxwidgets\build_cmake
-  cmake .. -DwxBUILD_SHARED=OFF
+  cmake .. -DwxBUILD_SHARED=OFF -DwxBUILD_USE_STATTIC_RUNTIME=ON
   cmake --build . --target install --config Debug
   cmake --build . --target install --config Release
   cd ..\..\..\..
@@ -59,6 +59,9 @@ set xtd_program_path=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\
 if not exist "%xtd_program_path%" mkdir "%xtd_program_path%"
 rem call shortcut.bat "%xtd_program_path%\xtdc-gui.lnk" "%USERPROFILE%\local\xtd\bin\xtdc-gui.exe"
 call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
+
+:: add xtdc-gui path
+setx path "%path%;%ProgramFiles(x86)%\xtd\bin"
 
 :: launch xtdc-gui
 echo launch xtdc-gui...
