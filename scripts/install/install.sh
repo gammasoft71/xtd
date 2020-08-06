@@ -25,7 +25,7 @@ echo "install needed packages and libraries..."
 case "$OSTYPE" in
   *"Darwin"*) brew update; brew install cmake;;
   *"Debian"* | *"elementary"* | *"LinuxMint"* | *"Ubuntu"*) sudo apt update; sudo apt install build-essential codeblocks libgtk-3-dev cmake -y;;
-  *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install cmake3 codeblocks gtk3-devel -y;;
+  *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum groupinstall "Development Tools" -y; sudo yum install cmake3 gtk3-devel -y;;
 esac
 
 # detecting, generate, build and install wxwdigets
