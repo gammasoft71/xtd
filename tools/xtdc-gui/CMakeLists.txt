@@ -88,7 +88,7 @@ elseif (UNIX)
     "Type=Application\n"
     "Encoding=UTF-8\n"
     "Comment=Open, run, create new xtd project or show any xtd example\n"
-    "Exec=/usr/local/bin/xtdc-gui\n"
+    "Exec=${CMAKE_INSTALL_PREFIX}/xtdc-gui\n"
     "Icon=xtdc-gui\n"
     "Name=xtdc-gui\n"
     "Terminal=false\n"
