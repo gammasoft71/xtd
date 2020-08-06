@@ -80,7 +80,7 @@ cd /Users/YourName/YourProject/
 
 ```shell
 cd /home/YourName/YourProject
-./install.sh
+./install
 ```
 
 2. Create as many applications as you want with xtd.forms.
