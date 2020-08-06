@@ -83,13 +83,13 @@ target_link_libraries(${PROJECT_NAME} xtd.forms)
 2. Compile the form.
 
 ```shell
-xtd build
+xtdc build
 ```
 
 3. At the command prompt, type:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 ## Adding a Control and Handling an Event
@@ -143,7 +143,7 @@ button1.click += {*this, &form1::button1_click};
 7. Compile and run the application.
 
 ```shell
-xtd run
+xtdc run
 ```
 
 ## Example
