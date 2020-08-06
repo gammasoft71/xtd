@@ -40,7 +40,7 @@ IF %ERRORLEVEL% neq 0 (
   cd wxwidgets\build_cmake
   cmake .. -DwxBUILD_SHARED=OFF
   cmake --build . --target install --config Debug
-  ::cmake --build . --target install --config Release
+  cmake --build . --target install --config Release
   cd ..\..\..\..
 ::)
 
@@ -51,7 +51,7 @@ mkdir build
 cd build
 cmake .. %*
 cmake --build . --target install --config Debug
-::cmake --build . --target install --config Release
+cmake --build . --target install --config Release
 cd ..
 
 :: create xtdc-gui shortcut in system operating applications
@@ -61,7 +61,7 @@ rem call shortcut.bat "%xtd_program_path%\xtdc-gui.lnk" "%USERPROFILE%\local\xtd
 call scripts\install\shortcut.cmd "%xtd_program_path%\xtdc-gui.lnk" "%ProgramFiles(x86)%\xtd\bin\xtdc-gui.exe"
 
 :: add xtdc-gui path
-set path="%ProgramFiles(x86)%\xtd\bin;%path%"
+set path=%ProgramFiles(x86)%\xtd\bin;%path%
 setx path "%path%"
 
 :: launch xtdc-gui
