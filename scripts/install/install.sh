@@ -1,8 +1,8 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 WXWIDGETS_VERSION=v3.1.4
 
-echo "Install xtd_forms library version $xtd_forms_version, copyright Gammasoft, 2020"
+echo "Install xtd.forms libraries version $xtd_forms_version, copyright Gammasoft, 2020"
 echo ""
 
 # detecting linux distribution
@@ -79,8 +79,8 @@ esac
   popd
 #fi
 
-# generate, build and install xtd
-echo "install xtd..."
+# generate, build and install xtd.forms
+echo "install xtd.forms..."
 git submodule update --init
 mkdir build
 pushd build
