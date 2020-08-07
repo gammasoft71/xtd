@@ -1,8 +1,6 @@
 :: cmd
 
-:: init and update submodule
-git submodule update --init
-
+:: generate, build and install wxwdigets
 mkdir build\3rdparty
 cd build\3rdparty
 git clone https://github.com/wxWidgets/wxWidgets.git -b %WXWIDGETS_VERSION% --depth 1
@@ -20,6 +18,7 @@ mkdir build\examples
 cd build
 
 :: generate and build lib
+git submodule update --init
 cmake .. -G "%BUILD_OPTION%" -DENABLE_TESTS=ON -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config Debug --target install
