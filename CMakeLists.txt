@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.delegates)
 
 # Options
+set(CMAKE_DEBUG_POSTFIX d)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(IS_MAIN_PROJECT OFF)
 if (NOT DEFINED EXPORT_PROJECT_NAME)
