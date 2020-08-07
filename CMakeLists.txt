@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.tunit)
 
 # Options
+set(CMAKE_DEBUG_POSTFIX d)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 if (NOT DEFINED EXPORT_PROJECT_NAME)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
