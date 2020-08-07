@@ -3,6 +3,18 @@
 :: init and update submodule
 git submodule update --init
 
+mkdir build\3rdparty
+cd build\3rdparty
+git clone https://github.com/wxWidgets/wxWidgets.git -b %WXWIDGETS_VERSION% --depth 1
+cd wxwidgets
+git submodule update --init
+cd..
+mkdir wxwidgets\build_cmake
+cd wxwidgets\build_cmake
+cmake .. -DwxBUILD_SHARED=OFF
+cmake --build . --target install --config Debug
+cd ..\..\..\..
+
 :: create build directory
 mkdir build\examples
 cd build
