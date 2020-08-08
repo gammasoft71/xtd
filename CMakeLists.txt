@@ -41,16 +41,8 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME})\n"
     "set(${PROJECT_NAME}_FOUND TRUE)\n"
   )
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.consoleConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.delegatesConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.coreConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${CMAKE_CONFIG})
-  install(FILES src/xtd_core/scripts/cmake/xtd_commands.cmake DESTINATION cmake)
 
-  set (CMAKE_XTD_FORMS_CONFIG
+  set (CMAKE_CONFIG_WITH_WXWIDGETS
     "include(CMakeFindDependencyMacro)\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_commands.cmake\")\n"
@@ -64,7 +56,14 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     "set(${PROJECT_NAME}_FOUND TRUE)\n"
   )
 
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.formsConfig.cmake ${CMAKE_XTD_FORMS_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.consoleConfig.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.delegatesConfig.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake ${CMAKE_CONFIG_WITH_WXWIDGETS})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.coreConfig.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${CMAKE_CONFIG})
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.formsConfig.cmake ${CMAKE_CONFIG_WITH_WXWIDGETS})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.ioConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.propertiesConfig.cmake ${CMAKE_CONFIG})
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.stringsConfig.cmake ${CMAKE_CONFIG})
@@ -81,6 +80,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.propertiesConfig.cmake DESTINATION cmake)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.stringsConfig.cmake DESTINATION cmake)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.tunitConfig.cmake DESTINATION cmake)
+  install(FILES src/xtd_core/scripts/cmake/xtd_commands.cmake DESTINATION cmake)
   install(EXPORT ${PROJECT_NAME} DESTINATION cmake)
   install(DIRECTORY src/xtd_drawing/resources DESTINATION share/xtd)
   install(DIRECTORY src/xtd_forms/resources DESTINATION share/xtd)
