@@ -13,10 +13,6 @@
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
 
-# Notes
-
-xtd.forms is under development.
-
 # Features
 
 * Contains common controls, containers, menu, toolbar, components, various dialogs, ...
