@@ -31,8 +31,8 @@ git clone https://github.com/gammasoft71/xtd.strings .
 3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" to build and install xtd.strings :
 
 ```shell
-cd C:\Users\YourName\xtd.strings\
-install.cmd
+cd xtd_string_path_name
+install
 ```
 
 4. Create as many unit tests as you want with xtd.strings.
@@ -57,8 +57,8 @@ install.cmd
 3. After installing Xcode and Homebrew, do the following in "Terminal" to Build and install :
 
 ```shell
-cd /Users/YourName/YourProject/
-./install.sh
+cd xtd_string_path_name
+./install
 ```
 
 4. Create as many unit tests as you want with xtd.strings.
@@ -68,8 +68,8 @@ cd /Users/YourName/YourProject/
 1. Do the following in "Terminal" to Build and install :
 
 ```shell
-cd /home/YourName/YourProject
-./install.sh
+cd xtd_string_path_name
+./install
 ```
 
 2. Create as many unit tests as you want with xtd.strings.
@@ -92,8 +92,8 @@ cd /home/YourName/YourProject
 3. After installing g++ and CMake, do the following in "Terminal" to Build and install :
 
 ```shell
-cd /home/YourName/YourProject
-./install.sh
+cd xtd_string_path_name
+./install
 ```
 
 4. Create as many unit tests as you want with xtd.strings.
