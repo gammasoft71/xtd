@@ -42,7 +42,7 @@ In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win
 3. After installing Microsoft Visual Studio and CMake, do the following in "Command Prompt" as administrator to build and install xtd.forms :
 
 ```shell
-cd C:\Users\YourName\xtd.forms\
+cd xtd_forms_path_name
 install
 ```
 
@@ -68,7 +68,7 @@ install
 3. After installing Xcode and Homebrew, do the following in "Terminal" to Build and install :
 
 ```shell
-cd /Users/YourName/YourProject/
+cd xtd_forms_path_name
 ./install
 ```
 
@@ -79,7 +79,7 @@ cd /Users/YourName/YourProject/
 1. Do the following in "Terminal" to Build and install :
 
 ```shell
-cd /home/YourName/YourProject
+cd xtd_forms_path_name
 ./install
 ```
 
@@ -103,7 +103,7 @@ cd /home/YourName/YourProject
 3. After installing g++ and CMake, do the following in "Terminal" to Build and install :
 
 ```shell
-cd /home/YourName/YourProject
+cd xtd_forms_path_name
 ./install
 ```
 
