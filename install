@@ -1,2 +1,4 @@
+#!/usr/bin/env bash
+
 export xtd_version=0.1.0
 scripts/install/install.sh "$@"
