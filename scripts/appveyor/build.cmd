@@ -3,7 +3,7 @@
 :: generate, build and install wxwdigets
 mkdir build\3rdparty
 cd build\3rdparty
-git clone https://github.com/wxWidgets/wxWidgets.git -b %WXWIDGETS_VERSION% --depth 1
+git clone https://github.com/wxWidgets/wxWidgets.git -b v3.1.4 --depth 1
 cd wxwidgets
 git submodule update --init
 cd..
