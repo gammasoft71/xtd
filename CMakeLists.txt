@@ -19,7 +19,6 @@ endif ()
 
 # Projects
 add_subdirectory(src)
-add_subdirectory(tools)
 
 # Tests projects
 option(ENABLE_TESTS "Enable tests" OFF)
