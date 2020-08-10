@@ -38,6 +38,7 @@ endif ()
 
 # if we want to use native libraries for testing we can't include src project but dependent projects instead
 #add_subdirectory(src)
+add_subdirectory(tools)
 
 add_subdirectory(src/xtd_forms_native)
 
