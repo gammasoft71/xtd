@@ -1,5 +1,6 @@
 #include <xtd/xtd.forms>
 #include <xtd/xtd.tunit>
+#undef __XTD_FORMS_NATIVE_WXWIDGETS__
 #if defined(__XTD_FORMS_NATIVE_WXWIDGETS__)
 #include <xtd/forms/native/wxwidgets/wx_list_box.h>
 #endif
