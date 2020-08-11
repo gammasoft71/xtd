@@ -1,9 +1,5 @@
 #include <xtd/xtd.forms>
 #include <xtd/xtd.tunit>
-#undef __XTD_FORMS_NATIVE_WXWIDGETS__
-#if defined(__XTD_FORMS_NATIVE_WXWIDGETS__)
-#include <xtd/forms/native/wxwidgets/wx_list_box.h>
-#endif
 
 using namespace std;
 using namespace xtd::forms;
@@ -30,14 +26,6 @@ namespace unit_tests {
       assert::are_equal_("a", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);
       assert::are_equal_("b", list_box.items()[3]);
-     
-#if defined(__XTD_FORMS_NATIVE_WXWIDGETS__)
-      assert::are_equal_(4, static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetCount());
-      assert::are_equal_("d", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(0));
-      assert::are_equal_("a", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(1));
-      assert::are_equal_("c", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(2));
-      assert::are_equal_("b", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(3));
-#endif
     }
     
     void test_method_(unsorted_add_items_with_tags) {
@@ -69,14 +57,6 @@ namespace unit_tests {
       assert::are_equal_("b", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);
       assert::are_equal_("d", list_box.items()[3]);
-
-#if defined(__XTD_FORMS_NATIVE_WXWIDGETS__)
-      assert::are_equal_(4, static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetCount());
-      assert::are_equal_("a", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(0));
-      assert::are_equal_("b", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(1));
-      assert::are_equal_("c", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(2));
-      assert::are_equal_("d", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(3));
-#endif
     }
 
     void test_method_(unsorted_add_items_then_make_sorted) {
@@ -91,14 +71,6 @@ namespace unit_tests {
       assert::are_equal_("b", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);
       assert::are_equal_("d", list_box.items()[3]);
-
-#if defined(__XTD_FORMS_NATIVE_WXWIDGETS__)
-      assert::are_equal_(4, static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetCount());
-      assert::are_equal_("a", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(0));
-      assert::are_equal_("b", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(1));
-      assert::are_equal_("c", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(2));
-      assert::are_equal_("d", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(3));
-#endif
     }
 
     void test_method_(unsorted_add_items_then_make_std_sorted) {
@@ -113,14 +85,6 @@ namespace unit_tests {
       assert::are_equal_("b", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);
       assert::are_equal_("d", list_box.items()[3]);
-
-#if defined(__XTD_FORMS_NATIVE_WXWIDGETS__)
-      assert::are_equal_(4, static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetCount());
-      assert::are_equal_("a", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(0));
-      assert::are_equal_("b", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(1));
-      assert::are_equal_("c", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(2));
-      assert::are_equal_("d", static_cast<wxListBox*>(reinterpret_cast<xtd::forms::native::control_handler*>(list_box.handle())->control())->GetString(3));
-#endif
     }
     
     void test_method_(empty_list_box_selection_index_with_bad_index) {
