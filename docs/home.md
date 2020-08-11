@@ -25,9 +25,9 @@ Modern c++17 library containing classes for creating Windows-based applications 
 
 # Compilers
 
-* Visual studio 2017
-* clang Apple LLVM version 10.0.0 (clang-1000.11.45.5) - Xcode 10.1
-* g++ 7
+* Visual studio 2019
+* clang Apple LLVM version 10.0.0 (clang-1000.11.45.5) - Xcode 11
+* g++ 9
 
 ______________________________________________________________________________________________
 
