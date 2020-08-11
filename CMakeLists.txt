@@ -35,55 +35,8 @@ if (ENABLE_COVERAGE AND UNIX)
 endif ()
 
 # Projects
-
-# if we want to use native libraries for testing we can't include src project but dependent projects instead
-#add_subdirectory(src)
+add_subdirectory(src)
 add_subdirectory(tools)
-
-add_subdirectory(src/xtd_forms_native)
-
-if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "cocoa")
-  add_subdirectory(src/xtd_forms_native_cocoa)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.cocoa)
-endif ()
-
-if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "fltk")
-  add_subdirectory(src/xtd_forms_native_fltk)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.fltk)
-endif ()
-
-if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "gtk3")
-  add_subdirectory(src/xtd_forms_native_gtk3)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.gtk3)
-endif ()
-
-if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "qt5")
-  add_subdirectory(src/xtd_forms_native_qt5)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.fltk)
-endif ()
-
-if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "msw")
-  add_subdirectory(src/xtd_forms_native_win32)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.win32)
-endif ()
-
-if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "wxwidgets")
-  add_subdirectory(src/xtd_forms_native_wxwidgets)
-  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.wxwidgets)
-  add_definitions(-D__XTD_FORMS_NATIVE_WXWIDGETS__)
-endif ()
-
-if (IS_MAIN_PROJECT)
-  add_subdirectory(src/xtd_delegates)
-  add_subdirectory(src/xtd_diagnostics)
-  add_subdirectory(src/xtd_core)
-  add_subdirectory(src/xtd_drawing)
-  add_subdirectory(src/xtd_io)
-  add_subdirectory(src/xtd_strings)
-  add_subdirectory(src/xtd_tunit)
-endif ()
-
-add_subdirectory(src/xtd_forms)
 
 # Tests projects
 option(ENABLE_TESTS "Enable tests" OFF)
