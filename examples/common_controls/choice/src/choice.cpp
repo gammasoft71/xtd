@@ -13,20 +13,20 @@ namespace examples {
       choice1.location({10, 10});
       choice1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice1.selected_index(0);
-      choice1.selected_index_changed += [&] {
-        choice2.selected_index(choice1.selected_index());
-      };
+      choice1.selected_index_changed += {*this, &form1::on_choice_click};
 
       choice2.parent(*this);
       choice2.location({10, 50});
       choice2.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice2.selected_index(0);
-      choice2.selected_index_changed += [&] {
-        choice1.selected_index(choice2.selected_index());
-      };
+      choice2.selected_index_changed += {*this, &form1::on_choice_click};
     }
     
   private:
+    void on_choice_click(control& sender, const xtd::event_args& e) {
+      choice1.selected_index(static_cast<choice&>(sender).selected_index());
+      choice2.selected_index(static_cast<choice&>(sender).selected_index());
+    }
     choice choice1;
     choice choice2;
   };
