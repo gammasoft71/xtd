@@ -7,5 +7,6 @@ add_projects(
   hello_world_emoticons
   hello_world_label
   hello_world_message_box
+  hello_world_message_box2
   hello_world_paint
 )
