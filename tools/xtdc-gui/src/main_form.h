@@ -119,6 +119,7 @@ namespace xtdc_gui {
       {"Common controls - checked list box", "represents a Windows control to display a list of check box.", {"xtd_forms/common_controls/checked_list_box"}},
       {"Common controls - choice", "represents a Windows xtd::forms::choice control.", {"xtd_forms/common_controls/choice"}},
       {"Common controls - combo box", "represents a Windows xtd::forms::combo_box control.", {"xtd_forms/common_controls/combo_box"}},
+      {"Common controls - command link button", "represents a Windows xtd::forms::command_link_button control.", {"xtd_forms/common_controls/command_link_button"}},
       {"Common controls - control", "defines the base class for controls, which are components with visual representation.", {"xtd_forms/common_controls/control"}},
       {"Common controls - domain up down", "represents a Windows spin box (also known as an up-down control) that displays string values.", {"xtd_forms/common_controls/domain_up_down"}},
       {"Common controls - label", " represents a standard Windows xtd::forms::label.", {"xtd_forms/common_controls/label"}},
