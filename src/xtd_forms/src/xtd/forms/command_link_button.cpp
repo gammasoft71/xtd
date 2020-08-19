@@ -10,7 +10,6 @@ using namespace xtd::forms;
 
 command_link_button::command_link_button() {
   this->size_ = this->default_size();
-  text_align(content_alignment::middle_left);
 }
 
 command_link_button& command_link_button::auto_size_mode(forms::auto_size_mode value) {
