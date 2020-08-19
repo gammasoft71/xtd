@@ -21,6 +21,7 @@
 * [checked_list_box](common_controls/checked_list_box/README.md) represents a Windows control to display a list of check box.
 * [choice](common_controls/choice/README.md) represents a [xtd::forms::choice](../src/xtd_forms/include/xtd/forms/choice.hpp) control.
 * [combo_box](common_controls/combo_box/README.md) represents a Windows [xtd::forms::combo_box](../src/xtd_forms/include/xtd/forms/combo_box.hpp)control.
+* [command_link_button](common_controls/command_link_button/README.md) represents a Windows [xtd::forms::command_link_button](../src/xtd_forms/include/xtd/forms/command_link_button.hpp) control.
 * [control](common_controls/control/README.md) defines the base class for controls, which are components with visual representation.
 * [domain_up_down](common_controls/domain_up_down/README.md) represents a Windows spin box (also known as an up-down control) that displays string values.
 * **hscroll_bar** represents a standard Windows horizontal scroll bar.
