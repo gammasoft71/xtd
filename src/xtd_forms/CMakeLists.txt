@@ -38,6 +38,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/color_picker.h
   include/xtd/forms/combo_box.h
   include/xtd/forms/combo_box_style.h
+  include/xtd/forms/command_link_button.h
   include/xtd/forms/common_dialog.h
   include/xtd/forms/component.h
   include/xtd/forms/container_control.h
@@ -180,6 +181,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/color_dialog.cpp
   src/xtd/forms/color_picker.cpp
   src/xtd/forms/combo_box.cpp
+  src/xtd/forms/command_link_button.cpp
   src/xtd/forms/container_control.cpp
   src/xtd/forms/context_menu.cpp
   src/xtd/forms/control.cpp
