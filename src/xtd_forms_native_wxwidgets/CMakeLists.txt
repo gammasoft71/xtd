@@ -16,6 +16,7 @@ set(XTD_INCLUDES
   include/xtd/forms/native/wxwidgets/wx_choice.h
   include/xtd/forms/native/wxwidgets/wx_color_picker.h
   include/xtd/forms/native/wxwidgets/wx_combo_box.h
+  include/xtd/forms/native/wxwidgets/wx_command_link_button.h
   include/xtd/forms/native/wxwidgets/wx_control.h
   include/xtd/forms/native/wxwidgets/wx_date_time_picker.h
   include/xtd/forms/native/wxwidgets/wx_domain_up_down.h
@@ -49,6 +50,7 @@ set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
   src/xtd/forms/native/wxwidgets/color_dialog.cpp
   src/xtd/forms/native/wxwidgets/color_picker.cpp
   src/xtd/forms/native/wxwidgets/combo_box.cpp
+  src/xtd/forms/native/wxwidgets/command_link_button.cpp
   src/xtd/forms/native/wxwidgets/context_menu.cpp
   src/xtd/forms/native/wxwidgets/control.cpp
   src/xtd/forms/native/wxwidgets/cursor.cpp

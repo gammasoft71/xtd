@@ -31,6 +31,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/color_picker.h
   include/xtd/forms/native/combo_box.h
   include/xtd/forms/native/combo_box_styles.h
+  include/xtd/forms/native/command_link_button.h
   include/xtd/forms/native/context_menu.h
   include/xtd/forms/native/content_alignment.h
   include/xtd/forms/native/control.h

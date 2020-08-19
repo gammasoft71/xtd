@@ -17,6 +17,7 @@
 #include "forms/native/color_dialog.h"
 #include "forms/native/color_picker.h"
 #include "forms/native/combo_box.h"
+#include "forms/native/command_link_button.h"
 #include "forms/native/content_alignment.h"
 #include "forms/native/control.h"
 #include "forms/native/cursor.h"

@@ -30,6 +30,11 @@ constexpr size_t BS_MULTILINE = 0x00002000;
 constexpr size_t BS_NOTIFY = 0x00004000;
 constexpr size_t BS_FLAT = 0x00008000;
 constexpr size_t BS_RIGHTBUTTON = BS_LEFTTEXT;
+
+constexpr size_t BS_SPLITBUTTON = 0x0000000C;
+constexpr size_t BS_DEFSPLITBUTTON = 0x0000000D;
+constexpr size_t BS_COMMANDLINK = 0x0000000E;
+constexpr size_t BS_DEFCOMMANDLINK = 0x0000000F;
 #endif
 
 #ifndef BST_UNCHECKED
@@ -38,5 +43,6 @@ constexpr size_t BST_CHECKED = 0x0001;
 constexpr size_t BST_INDETERMINATE = 0x0002;
 constexpr size_t BST_PUSHED = 0x0004;
 constexpr size_t BST_FOCUS = 0x0008;
-#endif
 
+constexpr size_t BST_DROPDOWNPUSHED = 0x0400;
+#endif

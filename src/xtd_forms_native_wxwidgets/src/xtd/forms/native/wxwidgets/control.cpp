@@ -13,6 +13,7 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_check_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_choice.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.h"
+#include "../../../../../include/xtd/forms/native/wxwidgets/wx_command_link_button.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_checked_list_box.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_color_picker.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_combo_box.h"
@@ -160,6 +161,7 @@ intptr_t control::create(const forms::create_params& create_params) {
   if (create_params.class_name() == "choice") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_choice(create_params)));
   if (create_params.class_name() == "colorpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_color_picker(create_params)));
   if (create_params.class_name() == "combobox") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_combo_box(create_params)));
+  if (create_params.class_name() == "commandlinkbutton") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_command_link_button(create_params)));
   if (create_params.class_name() == "datetimepicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_date_time_picker(create_params)));
   if (create_params.class_name() == "domainupdown") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_domain_up_down(create_params)));
   if (create_params.class_name() == "fontpicker") return set_control_extra_options(reinterpret_cast<intptr_t>(new wx_font_picker(create_params)));

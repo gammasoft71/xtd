@@ -11,6 +11,7 @@ add_projects(
   checked_list_box
   choice
   combo_box
+  command_link_button
   control
   domain_up_down
   label
