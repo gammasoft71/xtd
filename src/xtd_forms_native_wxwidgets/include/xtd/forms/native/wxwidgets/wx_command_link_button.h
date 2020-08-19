@@ -15,7 +15,9 @@ namespace xtd {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           this->control_handler::create<wxCommandLinkButton>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxEmptyString, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
           static_cast<wxCommandLinkButton*>(control())->SetLabel(wxString(create_params.caption().c_str(), wxMBConvUTF8()));
+          #if !defined(__WXMSW__)
           static_cast<wxCommandLinkButton*>(control())->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(xtd::drawing::system_images::from_name("go-next", xtd::drawing::size(16, 16)).handle())));
+          #endif
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
