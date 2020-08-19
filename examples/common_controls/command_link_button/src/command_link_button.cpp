@@ -10,7 +10,7 @@ namespace examples {
       text("Command link button example");
       
       command_link_button1.parent(*this);
-      command_link_button1.text("Link\nInformation text");
+      command_link_button1.text("Command link\nwidth supplementary text");
       command_link_button1.location({30, 30});
       command_link_button1.click += [&] {
         label1.text(strings::format("command link button 1 clicked {} times", ++command_link_button1_clicked));
