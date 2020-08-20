@@ -63,14 +63,14 @@ esac
     cmake --build . --config Release
     cmake --build . --target install --config Release
   else
-    mkdir Release && mkdir Debug
-    pushd Release
-    cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF
+    mkdir Debug && mkdir Release
+    pushd Debug
+    cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
     cmake --build . -- -j8
     sudo cmake --build . --target install
     popd
-    pushd Debug
-    cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
+    pushd Release
+    cmake ../.. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF
     cmake --build . -- -j8
     sudo cmake --build . --target install
     popd
