@@ -71,7 +71,7 @@ namespace {
         tab_control_about_.pages().push_back(tab_page_about_);
         panel_about_.parent(tab_page_about_);
         panel_about_.location({0, 0});
-        panel_about_.size(tab_page_about_.client_size());
+        panel_about_.size(tab_page_about_.size());
       } else
         panel_about_.parent(*this);
 
@@ -87,7 +87,7 @@ namespace {
       label_description_.text(xtd::strings::format("{}", description));
 
       label_copyright_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
-      label_copyright_.width(panel_about_.client_size().width());
+      label_copyright_.width(panel_about_.size().width());
       label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)", u8"\u00A9")));
 
       if (has_credit) {
@@ -97,7 +97,7 @@ namespace {
       if (has_license) {
         tab_control_about_.pages().push_back(tab_page_license_);
         text_box_license_.text(license);
-        text_box_license_.size(tab_page_license_.client_size());
+        text_box_license_.size(tab_page_license_.size());
       }
       
       show_dialog();
