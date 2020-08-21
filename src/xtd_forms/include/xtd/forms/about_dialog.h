@@ -1,5 +1,7 @@
 #pragma once
+#include "about_dialog_style.h"
 #include "common_dialog.h"
+#include "layout/arranged_element_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,8 +13,19 @@ namespace xtd {
     /// @include about_dialog.cpp
     class about_dialog : public common_dialog {
     public:
+      using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      using doc_writers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+      using translators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
+
       /// @brief Initializes a new instance of the about_dialog class.
       about_dialog() = default;
+      
+      xtd::forms::about_dialog_style about_dialog_style() const {return about_dialog_style_;}
+      about_dialog& about_dialog_style(xtd::forms::about_dialog_style about_dialog_style) {
+        about_dialog_style_ = about_dialog_style;
+        return *this;
+      }
       
       /// @brief Gets the product copyright.
       /// @return The product copyright.
@@ -68,6 +81,95 @@ namespace xtd {
         version_ = version;
         return *this;
       }
+      
+      /// @brief Gets the website.
+      /// @return The website.
+      std::string website() const {return this->website_;}
+      /// @brief Sets the website.
+      /// @param website The  website.
+      /// @return Current about_box instance.
+      about_dialog& website(const std::string& website) {
+        website_ = website;
+        return *this;
+      }
+      
+      /// @brief Gets the website label.
+      /// @return The website label.
+      std::string website_label() const {return this->website_label_;}
+      /// @brief Sets the website label.
+      /// @param website_label The website label.
+      /// @return Current about_box instance.
+      about_dialog& website_label(const std::string& website_label) {
+        website_label_ = website_label;
+        return *this;
+      }
+      
+      /// @brief Gets the creators array.
+      /// @return The creator array.
+      const creators_collection& creators() const {return creators_;}
+      /// @brief Gets the creators array.
+      /// @return The creator array.
+      creators_collection& creators() {return creators_;}
+      /// @brief Sets the creators array.
+      /// @param creators The creators array.
+      /// @return Current about_box instance.
+      about_dialog& creators(const creators_collection& creators) {
+        creators_ = creators;
+        return *this;
+      }
+      
+      /// @brief Gets the designers array.
+      /// @return The designers array.
+      const designers_collection& designers() const {return designers_;}
+      /// @brief Gets the designers array.
+      /// @return The designers array.
+      designers_collection& designers() {return designers_;}
+      /// @brief Sets the designers array.
+      /// @param designers The designers array.
+      /// @return Current about_box instance.
+      about_dialog& designers(const designers_collection& designers) {
+        designers_ = designers;
+        return *this;
+      }
+      
+      /// @brief Gets the documentation writers array.
+      /// @return The documentation writers array.
+      const doc_writers_collection& doc_writers() const {return doc_writers_;}
+      /// @brief Gets the documentation writers array.
+      /// @return The designers array.
+      doc_writers_collection& doc_writers() {return doc_writers_;}
+      /// @brief Sets the documentation writers array.
+      /// @param doc_writers The documentation writers array.
+      /// @return Current about_box instance.
+      about_dialog& doc_writers(const doc_writers_collection& doc_writers) {
+        doc_writers_ = doc_writers;
+        return *this;
+      }
+      
+      /// @brief Gets the translators array.
+      /// @return The translators array.
+      const translators_collection& translators() const {return translators_;}
+      /// @brief Gets the translators array.
+      /// @return The translators array.
+      translators_collection& translators() {return translators_;}
+      /// @brief Sets the translators array.
+      /// @param translators The translators array.
+      /// @return Current about_box instance.
+      about_dialog& translators(const translators_collection& translators) {
+        translators_ = translators;
+        return *this;
+      }
+
+      /// @brief Gets the product license.
+      /// @return The product license.
+      std::string license() const {return this->license_;}
+      /// @brief Sets the product license.
+      /// @param name The product license.
+      /// @return Current about_box instance.
+      about_dialog& license(const std::string& license) {
+        license_ = license;
+        return *this;
+      }
 
       /// @brief Resets all properties to empty string.
       void reset() override;
@@ -83,11 +185,20 @@ namespace xtd {
 
       dialog_result show_dialog();
       dialog_result show_dialog(const iwin32_window& owner);
-      std::string copyright_;
-      std::string description_;
+
+      xtd::forms::about_dialog_style about_dialog_style_ = xtd::forms::about_dialog_style::system;
       std::string name_;
-      std::string long_version_;
       std::string version_;
+      std::string long_version_;
+      std::string description_;
+      std::string copyright_;
+      std::string website_;
+      std::string website_label_;
+      creators_collection creators_;
+      doc_writers_collection doc_writers_;
+      translators_collection translators_;
+      designers_collection designers_;
+      std::string license_;
     };
   }
 }

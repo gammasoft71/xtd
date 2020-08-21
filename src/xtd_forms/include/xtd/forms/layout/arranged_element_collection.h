@@ -72,6 +72,14 @@ namespace xtd {
         explicit arranged_element_collection(const allocator_type& allocator = allocator_type()) : collection_(allocator) {}
         
         /// @cond
+        arranged_element_collection(const std::initializer_list<type_t>& il) {
+          for (auto item : il)
+            this->push_back(item);
+        }
+        arranged_element_collection(const std::vector<type_t>& collection) {
+          for (auto item : collection)
+            this->push_back(item);
+        }
         arranged_element_collection(const arranged_element_collection& collection) {this->push_back_range(collection);}
         arranged_element_collection& operator=(const arranged_element_collection& collection) {
           this->clear();
@@ -279,7 +287,16 @@ namespace xtd {
           sorter_t sorter;
           sorter(begin(), end());
         }
-      
+
+        std::vector<type_t> to_array() const {
+          std::vector<type_t> array;
+          for (auto item : collection_)
+            array.push_back(item);
+          return array;
+        }
+        
+        std::vector<type_t> to_vector() const {return to_array();}
+
       private:
         std::vector<value_type, allocator_type> collection_;
         bool inserting_ = false;
