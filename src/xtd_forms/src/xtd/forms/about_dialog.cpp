@@ -31,6 +31,7 @@ namespace {
       label_name_.location({0, 52});
       label_name_.text_align(content_alignment::middle_center);
       label_name_.width(client_size().width());
+      label_name_.font({label_name_.font(), label_name_.font().size() + 4, xtd::drawing::font_style::bold});
       
       tab_page_about_.text("About");
       
@@ -39,24 +40,32 @@ namespace {
 
       tab_page_license_.text("License");
 
-      tab_control_about_.location({0, 85});
-      tab_control_about_.size({client_size().width(), 215});
+      tab_control_about_.location({5, 75});
+      tab_control_about_.size({client_size().width() - 10, 220});
 
-      panel_about_.location({0, 85});
+      panel_about_.location({0, 75});
       panel_about_.size({client_size().width(), 215});
       
       label_version_.parent(panel_about_);
-      label_version_.location({0, 0});
+      label_version_.location({0, 10});
       label_version_.text_align(content_alignment::middle_center);
       
       label_description_.parent(panel_about_);
-      label_description_.location({0, 33});
+      label_description_.location({0, 43});
       label_description_.text_align(content_alignment::middle_center);
-      
+      label_description_.font({label_description_.font(), label_description_.font().size() + 2, xtd::drawing::font_style::bold});
+
+      link_label_website_.parent(panel_about_);
+      link_label_website_.location({0, 76});
+      link_label_website_.text_align(content_alignment::middle_center);
+      link_label_website_.fore_color(xtd::drawing::color::blue);
+      link_label_website_.font({link_label_website_.font(), xtd::drawing::font_style::underline});
+      link_label_website_.cursor(forms::cursors::hand());
+
       label_copyright_.parent(panel_about_);
-      label_copyright_.location({0, 66});
+      label_copyright_.location({0, 109});
       label_copyright_.text_align(content_alignment::middle_center);
-      
+
       text_box_license_.parent(tab_page_license_);
       text_box_license_.multiline(true);
       text_box_license_.read_only(true);
@@ -86,10 +95,14 @@ namespace {
       label_description_.width(panel_about_.client_size().width());
       label_description_.text(xtd::strings::format("{}", description));
 
+      link_label_website_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
+      link_label_website_.width(panel_about_.size().width());
+      link_label_website_.text(!website_label.empty() ? website_label : website);
+      
       label_copyright_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
       label_copyright_.width(panel_about_.size().width());
       label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)", u8"\u00A9")));
-
+      
       if (has_credit) {
         tab_control_about_.pages().push_back(tab_page_credit_);
       }
