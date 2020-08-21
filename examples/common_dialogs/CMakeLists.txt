@@ -5,6 +5,7 @@ find_package(xtd.forms REQUIRED)
 
 add_projects(
   about_dialog
+  about_dialog_generic
   color_dialog
   folder_browser_dialog
   font_dialog
