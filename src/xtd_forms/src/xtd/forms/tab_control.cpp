@@ -1,3 +1,4 @@
+#include <xtd/environment.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/tab_control.h>
 #include <xtd/forms/native/tab_control_styles.h>
@@ -68,8 +69,11 @@ drawing::size tab_control::measure_control() const {
 void tab_control::on_control_added(const control_event_args &e) {
   native::tab_control::insert_item(handle(), controls().size() - 1, controls()[controls().size() - 1].get().handle());
   native::tab_control::page_text(handle(), controls().size() - 1, controls()[controls().size() - 1].get().text());
+  if (xtd::environment::os_version().is_linux_platform()) {
+    controls()[controls().size() - 1].get().size(size() - xtd::drawing::size(0, 40));
+    controls()[controls().size() - 1].get().client_size(size() - xtd::drawing::size(0, 40));
+  }
   if (selected_index_ == -1) selected_index_ = 0;
-
   control::on_control_added(e);
 }
 

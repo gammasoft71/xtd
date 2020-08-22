@@ -1,4 +1,3 @@
-#include <xtd/environment.h>
 #include <xtd/forms/native/tab_control.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/tab_page.h>
@@ -44,9 +43,4 @@ control& tab_page::text(const std::string& text) {
 void tab_page::destroy_handle() {
   if (this->parent().has_value()) native::tab_control::delete_item(this->parent().value().get().handle(), handle());
   panel::destroy_handle();
-}
-
-void tab_page::on_handle_created(const event_args &e) {
-  panel::on_handle_created(e);
-  if (xtd::environment::os_version().is_linux_platform()) size_ = native::control::client_size(parent_) - drawing::size {0, 38};
 }
