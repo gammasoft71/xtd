@@ -211,6 +211,8 @@ namespace xtd {
       /// @remarks Typically, the main function of an application calls this method and passes to it the main window of the application.
       /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls exit_thread to clean up the application.
       static void run(const form& main_form);
+      
+      static void yield();
 
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions.
