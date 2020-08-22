@@ -1,3 +1,4 @@
+#include <memory>
 #include <xtd/forms/native/about_dialog.h>
 #include <xtd/drawing/system_images.h>
 #include "../../../include/xtd/forms/about_dialog.h"
@@ -14,9 +15,9 @@ using namespace xtd::forms;
 
 namespace {
   using link_label = label;
-  class about_dialog_geeneric : public form {
+  class about_dialog_generic : public form {
   public:
-    about_dialog_geeneric() {
+    about_dialog_generic() {
       maximize_box(false);
       minimize_box(false);
       form_border_style(forms::form_border_style::fixed_dialog);
@@ -75,46 +76,54 @@ namespace {
       text_box_license_.dock(dock_style::fill);
     }
     
-    bool run_dialog(intptr_t hwnd, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
+    static bool run_dialog(intptr_t hwnd, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
+      static std::unique_ptr<about_dialog_generic> about_dialog_generic;
+      if (about_dialog_generic != nullptr) {
+        about_dialog_generic->activate();
+        return true;
+      }
+      about_dialog_generic = std::make_unique<::about_dialog_generic>();
       auto has_credit = !(creators.empty() && doc_writers.empty() && translators.empty() && designers.empty());
       auto has_license = !license.empty();
-      label_name_.height(30 * xtd::strings::split(name, {'\n'}).size());
-      label_name_.text(name);
+      about_dialog_generic->label_name_.height(30 * xtd::strings::split(name, {'\n'}).size());
+      about_dialog_generic->label_name_.text(name);
       if (has_credit || has_license) {
-        controls().push_back_range({tab_control_about_, label_name_, picture_box_logo_});
-        tab_control_about_.pages().push_back(tab_page_about_);
-        tab_page_about_.controls().push_back(panel_about_);
+        about_dialog_generic->controls().push_back_range({about_dialog_generic->tab_control_about_, about_dialog_generic->label_name_, about_dialog_generic->picture_box_logo_});
+        about_dialog_generic->tab_control_about_.pages().push_back(about_dialog_generic->tab_page_about_);
+        about_dialog_generic->tab_page_about_.controls().push_back(about_dialog_generic->panel_about_);
       } else {
-        controls().push_back_range({panel_about_, label_name_, picture_box_logo_});
+        about_dialog_generic->controls().push_back_range({about_dialog_generic->panel_about_, about_dialog_generic->label_name_, about_dialog_generic->picture_box_logo_});
       }
 
-
       if (!version.empty() && !long_version.empty())
-        label_version_.text(xtd::strings::format("{} ({})", version, long_version));
+        about_dialog_generic->label_version_.text(xtd::strings::format("{} ({})", version, long_version));
       else if (!version.empty())
-        label_version_.text(xtd::strings::format("{}", version));
+        about_dialog_generic->label_version_.text(xtd::strings::format("{}", version));
       else if (!long_version.empty())
-        label_version_.text(xtd::strings::format("({})", long_version));
+        about_dialog_generic->label_version_.text(xtd::strings::format("({})", long_version));
 
-      label_description_.height(23 * xtd::strings::split(description, {'\n'}).size());
-      label_description_.text(xtd::strings::format("{}", description));
+      about_dialog_generic->label_description_.height(23 * xtd::strings::split(description, {'\n'}).size());
+      about_dialog_generic->label_description_.text(xtd::strings::format("{}", description));
 
-      link_label_website_.height(23 * xtd::strings::split(!website_label.empty() ? website_label : website, {'\n'}).size());
-      link_label_website_.text(!website_label.empty() ? website_label : website);
+      about_dialog_generic->link_label_website_.height(23 * xtd::strings::split(!website_label.empty() ? website_label : website, {'\n'}).size());
+      about_dialog_generic->link_label_website_.text(!website_label.empty() ? website_label : website);
       
-      label_copyright_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
-      label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)", u8"\u00A9")));
+      about_dialog_generic->label_copyright_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
+      about_dialog_generic->label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)", u8"\u00A9")));
       
       if (has_credit) {
-        tab_control_about_.pages().push_back(tab_page_credit_);
+        about_dialog_generic->tab_control_about_.pages().push_back(about_dialog_generic->tab_page_credit_);
       }
       
       if (has_license) {
-        tab_control_about_.pages().push_back(tab_page_license_);
-        text_box_license_.text(license);
+        about_dialog_generic->tab_control_about_.pages().push_back(about_dialog_generic->tab_page_license_);
+        about_dialog_generic->text_box_license_.text(license);
       }
       
-      show_dialog();
+      about_dialog_generic->show();
+      while (about_dialog_generic->visible())
+        application::yield();
+      about_dialog_generic.reset();
       return true;
     }
     
@@ -151,7 +160,6 @@ void about_dialog::reset() {
 }
 
 bool about_dialog::run_dialog(intptr_t owner) {
-  if (about_dialog_style_ == xtd::forms::about_dialog_style::system)
-    return native::about_dialog::run_dialog(owner, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
-  return about_dialog_geeneric().run_dialog(owner, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+  if (about_dialog_style_ == xtd::forms::about_dialog_style::system) return native::about_dialog::run_dialog(owner, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+  return about_dialog_generic::run_dialog(owner, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
 }
