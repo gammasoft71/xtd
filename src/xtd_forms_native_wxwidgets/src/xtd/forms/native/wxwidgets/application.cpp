@@ -186,3 +186,8 @@ void application::use_wait_cursor(bool use_wait_cursor) {
   if (use_wait_cursor) wxBeginBusyCursor();
   else wxEndBusyCursor();
 }
+
+void application::yield() {
+  initialize(); // Must be first
+  wxYield();
+}

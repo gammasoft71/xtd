@@ -265,6 +265,10 @@ void application::run(const form& form) {
   application::run(context);
 }
 
+void application::yield() {
+  native::application::yield();
+}
+
 void application::on_app_thread_exit(const application_context& sender, const event_args& e) {
   application::exit_thread();
 }

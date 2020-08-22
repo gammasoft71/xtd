@@ -25,6 +25,7 @@ namespace xtd {
         static void register_message_filter(const delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& message_filter);
         static void register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc);
         static void run();
+        static void yield();
         static void use_wait_cursor(bool use_wait_cursor);
       };
     }
