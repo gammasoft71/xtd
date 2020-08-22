@@ -23,68 +23,75 @@ namespace {
       client_size({476, 300});
       start_position(form_start_position::center_screen);
       
-      picture_box_logo_.parent(*this);
-      picture_box_logo_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(32, 32)));
-      picture_box_logo_.location({222, 10});
+      picture_box_logo_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
+      picture_box_logo_.height(64);
+      picture_box_logo_.size_mode(picture_box_size_mode::center_image);
+      picture_box_logo_.padding(5);
+      picture_box_logo_.dock(dock_style::top);
       
-      label_name_.parent(*this);
-      label_name_.location({0, 52});
       label_name_.text_align(content_alignment::middle_center);
-      label_name_.width(client_size().width());
       label_name_.font({label_name_.font(), label_name_.font().size() + 4, xtd::drawing::font_style::bold});
-      
+      label_name_.padding(5);
+      label_name_.dock(dock_style::top);
+
       tab_page_about_.text("About");
       
       tab_page_credit_.text("Credit");
       tab_page_credit_.auto_scroll(true);
 
       tab_page_license_.text("License");
+      tab_page_license_.controls().push_back(text_box_license_);
 
       tab_control_about_.location({5, 75});
-      tab_control_about_.size({client_size().width() - 10, 220});
+      tab_control_about_.padding(5);
+      tab_control_about_.dock(dock_style::fill);
 
       panel_about_.location({0, 75});
-      panel_about_.size({client_size().width(), 215});
+      panel_about_.padding(5);
+      panel_about_.controls().push_back_range({label_copyright_, link_label_website_, label_description_, label_version_});
+      panel_about_.dock(dock_style::fill);
       
-      label_version_.parent(panel_about_);
-      label_version_.location({0, 10});
       label_version_.text_align(content_alignment::middle_center);
+      label_version_.padding(5);
+      label_version_.dock(dock_style::top);
       
-      label_description_.parent(panel_about_);
-      label_description_.location({0, 43});
       label_description_.text_align(content_alignment::middle_center);
       label_description_.font({label_description_.font(), label_description_.font().size() + 2, xtd::drawing::font_style::bold});
+      label_description_.padding(5);
+      label_description_.dock(dock_style::top);
 
-      link_label_website_.parent(panel_about_);
-      link_label_website_.location({0, 76});
       link_label_website_.text_align(content_alignment::middle_center);
       link_label_website_.fore_color(xtd::drawing::color::blue);
       link_label_website_.font({link_label_website_.font(), xtd::drawing::font_style::underline});
       link_label_website_.cursor(forms::cursors::hand());
+      link_label_website_.padding(5);
+      link_label_website_.dock(dock_style::top);
 
-      label_copyright_.parent(panel_about_);
       label_copyright_.location({0, 109});
       label_copyright_.text_align(content_alignment::middle_center);
+      label_copyright_.padding(5);
+      label_copyright_.dock(dock_style::top);
 
       text_box_license_.parent(tab_page_license_);
       text_box_license_.multiline(true);
       text_box_license_.read_only(true);
+      text_box_license_.dock(dock_style::fill);
     }
     
     bool run_dialog(intptr_t hwnd, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
       auto has_credit = !(creators.empty() && doc_writers.empty() && translators.empty() && designers.empty());
       auto has_license = !license.empty();
+      label_name_.height(23 * xtd::strings::split(name, {'\n'}).size());
       label_name_.text(name);
       if (has_credit || has_license) {
-        tab_control_about_.parent(*this);
         tab_control_about_.pages().push_back(tab_page_about_);
-        panel_about_.parent(tab_page_about_);
-        panel_about_.location({0, 0});
-        panel_about_.size(tab_page_about_.size());
-      } else
-        panel_about_.parent(*this);
+        tab_page_about_.controls().push_back(panel_about_);
+        controls().push_back_range({tab_control_about_, label_name_, picture_box_logo_});
+      } else {
+        controls().push_back_range({panel_about_, label_name_, picture_box_logo_});
+      }
 
-      label_version_.width(panel_about_.client_size().width());
+
       if (!version.empty() && !long_version.empty())
         label_version_.text(xtd::strings::format("{} ({})", version, long_version));
       else if (!version.empty())
@@ -92,15 +99,13 @@ namespace {
       else if (!long_version.empty())
         label_version_.text(xtd::strings::format("({})", long_version));
 
-      label_description_.width(panel_about_.client_size().width());
+      label_description_.height(23 * xtd::strings::split(description, {'\n'}).size());
       label_description_.text(xtd::strings::format("{}", description));
 
-      link_label_website_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
-      link_label_website_.width(panel_about_.size().width());
+      link_label_website_.height(23 * xtd::strings::split(!website_label.empty() ? website_label : website, {'\n'}).size());
       link_label_website_.text(!website_label.empty() ? website_label : website);
       
       label_copyright_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
-      label_copyright_.width(panel_about_.size().width());
       label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)", u8"\u00A9")));
       
       if (has_credit) {
@@ -110,7 +115,6 @@ namespace {
       if (has_license) {
         tab_control_about_.pages().push_back(tab_page_license_);
         text_box_license_.text(license);
-        text_box_license_.size(tab_page_license_.size());
       }
       
       show_dialog();
