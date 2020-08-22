@@ -84,9 +84,9 @@ namespace {
       label_name_.height(23 * xtd::strings::split(name, {'\n'}).size());
       label_name_.text(name);
       if (has_credit || has_license) {
+        controls().push_back_range({tab_control_about_, label_name_, picture_box_logo_});
         tab_control_about_.pages().push_back(tab_page_about_);
         tab_page_about_.controls().push_back(panel_about_);
-        controls().push_back_range({tab_control_about_, label_name_, picture_box_logo_});
       } else {
         controls().push_back_range({panel_about_, label_name_, picture_box_logo_});
       }
