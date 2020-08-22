@@ -24,7 +24,7 @@ namespace {
       start_position(form_start_position::center_screen);
       
       picture_box_logo_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
-      picture_box_logo_.height(64);
+      picture_box_logo_.height(74);
       picture_box_logo_.size_mode(picture_box_size_mode::center_image);
       picture_box_logo_.padding(5);
       picture_box_logo_.dock(dock_style::top);
