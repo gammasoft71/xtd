@@ -78,7 +78,7 @@ namespace {
     bool run_dialog(intptr_t hwnd, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
       auto has_credit = !(creators.empty() && doc_writers.empty() && translators.empty() && designers.empty());
       auto has_license = !license.empty();
-      label_name_.height(23 * xtd::strings::split(name, {'\n'}).size());
+      label_name_.height(30 * xtd::strings::split(name, {'\n'}).size());
       label_name_.text(name);
       if (has_credit || has_license) {
         controls().push_back_range({tab_control_about_, label_name_, picture_box_logo_});

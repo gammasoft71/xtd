@@ -19,8 +19,6 @@ namespace xtd {
 
     protected:
       forms::create_params create_params() const override;
-
-      void on_handle_created(const event_args &e) override;      
     };
   }
 }

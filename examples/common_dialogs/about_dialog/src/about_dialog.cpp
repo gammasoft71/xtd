@@ -47,7 +47,7 @@ public:
                            "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
                            "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
                            "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
-                           "OR OTHER DEALINGS IN THE SOFTWARE.");
+                           "OR OTHER DEALINGS IN THE SOFTWARE.\n");
       about_dialog.show();
     };
   }
