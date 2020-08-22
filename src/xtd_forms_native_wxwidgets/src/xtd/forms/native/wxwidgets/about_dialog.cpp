@@ -27,7 +27,7 @@ bool about_dialog::run_dialog(intptr_t hwnd, const std::string& name, const std:
   about_info.SetName(name);
   about_info.SetDescription(description);
   about_info.SetVersion(version, long_version);
-  about_info.SetCopyright(copyright);
+  about_info.SetCopyright(xtd::strings::replace(copyright, u8"\u00A9", u8"(c)"));
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
     about_info.SetWebSite(website, website_label);
     for (auto creator : creators)
