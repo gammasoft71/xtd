@@ -42,11 +42,9 @@ namespace {
       tab_page_license_.text("License");
       tab_page_license_.controls().push_back(text_box_license_);
 
-      tab_control_about_.location({5, 75});
       tab_control_about_.padding(5);
       tab_control_about_.dock(dock_style::fill);
 
-      panel_about_.location({0, 75});
       panel_about_.padding(5);
       panel_about_.controls().push_back_range({label_copyright_, link_label_website_, label_description_, label_version_});
       panel_about_.dock(dock_style::fill);
@@ -67,7 +65,6 @@ namespace {
       link_label_website_.padding(5);
       link_label_website_.dock(dock_style::top);
 
-      label_copyright_.location({0, 109});
       label_copyright_.text_align(content_alignment::middle_center);
       label_copyright_.padding(5);
       label_copyright_.dock(dock_style::top);
