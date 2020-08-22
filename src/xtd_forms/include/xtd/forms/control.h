@@ -467,6 +467,8 @@ namespace xtd {
         child.parent(parent);
         return parent;
       }
+      
+      virtual void bring_to_front();
 
       template<typename control_t>
       static std::unique_ptr<control_t> create(const drawing::point& location = {-1, -1}, const drawing::size& size = {-1, -1}, const drawing::color& back_color = drawing::color::empty, const drawing::color& fore_color = drawing::color::empty) {

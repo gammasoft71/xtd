@@ -223,6 +223,11 @@ control& control::visible(bool visible) {
   return *this;
 }
 
+
+void control::bring_to_front() {
+  focus();
+}
+
 void control::create_control() {
   suspend_layout();
   if (!get_state(state::destroying) && !get_state(state::creating) && !get_state(state::created)) {
