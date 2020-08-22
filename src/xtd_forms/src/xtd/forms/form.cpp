@@ -187,6 +187,11 @@ void form::activate() {
   native::form::activate(this->handle());
 }
 
+void form::bring_to_front() {
+  activate();
+  control::focus();
+}
+
 void form::center_to_screen() {
   screen screen = screen::from_control(*this);
   left((screen.working_area().width() - width()) / 2);
@@ -320,6 +325,7 @@ void form::wm_close(message &message) {
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
+    visible(false);
     if (!this->get_state(state::modal)) {
       this->def_wnd_proc(message);
       this->destroy_control();

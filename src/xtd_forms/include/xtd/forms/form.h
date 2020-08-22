@@ -96,6 +96,8 @@ namespace xtd {
       /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
       virtual form& top_level(bool top_level);
       
+      void bring_to_front() override;
+      
       using container_control::visible;
       control& visible(bool visible) override;
       
