@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/drawing/icon.h>
 #include "about_dialog_style.h"
 #include "common_dialog.h"
 #include "layout/arranged_element_collection.h"
@@ -42,13 +43,24 @@ namespace xtd {
       /// @return The product description.
       std::string description() const {return this->description_;}
       /// @brief Sets the product description.
-      /// @param description The description description.
+      /// @param description The product description.
       /// @return Current about_box instance.
       about_dialog& description(const std::string& description) {
         description_ = description;
         return *this;
       }
       
+      /// @brief Gets the product icon.
+      /// @return The product icon.
+      xtd::drawing::icon icon() const {return this->icon_;}
+      /// @brief Sets the product icon.
+      /// @param description The product icon.
+      /// @return Current about_box instance.
+      about_dialog& icon(const xtd::drawing::icon& icon) {
+        icon_ = icon;
+        return *this;
+      }
+
       /// @brief Gets the product long version.
       /// @return The product long version.
       std::string long_version() const {return this->long_version_;}
@@ -82,22 +94,22 @@ namespace xtd {
         return *this;
       }
       
-      /// @brief Gets the website.
+      /// @brief Gets the product website.
       /// @return The website.
       std::string website() const {return this->website_;}
-      /// @brief Sets the website.
-      /// @param website The  website.
+      /// @brief Sets the product website.
+      /// @param website The  product website.
       /// @return Current about_box instance.
       about_dialog& website(const std::string& website) {
         website_ = website;
         return *this;
       }
       
-      /// @brief Gets the website label.
-      /// @return The website label.
+      /// @brief Gets the product website label.
+      /// @return The product website label.
       std::string website_label() const {return this->website_label_;}
-      /// @brief Sets the website label.
-      /// @param website_label The website label.
+      /// @brief Sets the product website label.
+      /// @param website_label The product website label.
       /// @return Current about_box instance.
       about_dialog& website_label(const std::string& website_label) {
         website_label_ = website_label;
@@ -187,6 +199,7 @@ namespace xtd {
       dialog_result show_dialog(const iwin32_window& owner);
 
       xtd::forms::about_dialog_style about_dialog_style_ = xtd::forms::about_dialog_style::system;
+      xtd::drawing::icon icon_;
       std::string name_;
       std::string version_;
       std::string long_version_;
