@@ -198,7 +198,7 @@ namespace xtd {
       dialog_result show_dialog();
       dialog_result show_dialog(const iwin32_window& owner);
 
-      xtd::forms::about_dialog_style about_dialog_style_ = xtd::forms::about_dialog_style::system;
+      xtd::forms::about_dialog_style about_dialog_style_ = xtd::forms::about_dialog_style::standard;
       xtd::drawing::icon icon_;
       std::string name_;
       std::string version_;

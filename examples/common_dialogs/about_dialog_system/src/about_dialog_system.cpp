@@ -7,16 +7,16 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("About dialog generic example");
+    text("About dialog system example");
     controls().push_back(button1);
 
     button1.location({10, 10});
     button1.text("About...");
     button1.click += [&] {
       about_dialog about_dialog;
+      about_dialog.about_dialog_style(xtd::forms::about_dialog_style::system);
       about_dialog.icon(xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(gammasoft_64x64_xpm)));
-      about_dialog.about_dialog_style(xtd::forms::about_dialog_style::generic);
-      about_dialog.name("About dialog generic");
+      about_dialog.name("About dialog system");
       about_dialog.version("1.0");
       about_dialog.long_version("1.0.0");
       about_dialog.description("About dialog description.");
@@ -25,7 +25,7 @@ public:
       about_dialog.website_label("gammasoft website");
       about_dialog.creators({"Gammasoft", "Contributors"});
       about_dialog.doc_writers({"Gammasoft"});
-      about_dialog.translators({"Gammasoft", "Contributirs"});
+      about_dialog.translators({"Gammasoft", "Contributors"});
       about_dialog.designers({"Gammasoft"});
       about_dialog.license("MIT License\n"
                            "\n"
