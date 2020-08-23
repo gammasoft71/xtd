@@ -97,5 +97,5 @@ size_f graphics::measure_string(const std::string &text, const font &font) {
   int32_t width = 0;
   int32_t height = 0;
   native::graphics::measure_string(this->data_->handle_, text, font.handle(), width, height);
-  return size_f(static_cast<float>(width), static_cast<float>(height) * xtd::strings::split(text, {'\n'}).size());
+  return size_f(static_cast<float>(width), static_cast<float>(height));
 }
