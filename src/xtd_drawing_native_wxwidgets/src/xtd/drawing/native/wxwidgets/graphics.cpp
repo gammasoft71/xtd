@@ -1,4 +1,5 @@
 #include <cmath>
+#include <xtd/xtd.strings>
 #include <xtd/drawing/native/graphics.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include <wx/app.h>
@@ -146,7 +147,7 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetMultiLineTextExtent({text.c_str(), wxMBConvUTF8()});
   wxFontMetrics metrics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFontMetrics();
   width = size.GetWidth();
-  height = size.GetHeight();
+  height = size.GetHeight() * xtd::strings::split(text, {'\n'}).size();
 #if defined(__APPLE__) || defined(__WXGTK__)
   if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(metrics.averageWidth / 2.3f);
 #endif
