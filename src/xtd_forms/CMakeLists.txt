@@ -65,6 +65,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/emoticon.h
   include/xtd/forms/emoticons.h
   include/xtd/forms/file_dialog.h
+  include/xtd/forms/flat_style.h
   include/xtd/forms/folder_browser_dialog.h
   include/xtd/forms/font_dialog.h
   include/xtd/forms/font_picker.h

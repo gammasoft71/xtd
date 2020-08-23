@@ -1,3 +1,5 @@
+#include <xtd/drawing/solid_brush.h>
+#include <xtd/drawing/string_format.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/label.h>
 #include <xtd/forms/native/static_styles.h>
@@ -8,35 +10,44 @@ using namespace xtd;
 using namespace xtd::forms;
 
 label::label() {
-  this->can_focus_ = false;
-  this->size_ = this->default_size();
+  can_focus_ = false;
+  size_ = default_size();
 }
 
-label& label::border_style(forms::border_style border_style) {
-  if (this->border_style_ != border_style) {
-    this->border_style_ = border_style;
-    this->recreate_handle();
+label& label::border_style(xtd::forms::border_style border_style) {
+  if (border_style_ != border_style) {
+    border_style_ = border_style;
+    recreate_handle();
+  }
+  return *this;
+}
+
+label& label::flat_style(xtd::forms::flat_style flat_style) {
+  if (flat_style_ != flat_style) {
+    flat_style_ = flat_style;
+    recreate_handle();
   }
   return *this;
 }
 
 label& label::text_align(content_alignment text_align) {
-  if (this->text_align_ != text_align)
-    this->text_align_ = text_align;
-    this->recreate_handle();
+  if (text_align_ != text_align)
+    text_align_ = text_align;
+    recreate_handle();
   return *this;
 }
 
 forms::create_params label::create_params() const {
-  forms::create_params create_params = this->control::create_params();
+  forms::create_params create_params = control::create_params();
   
   create_params.class_name("label");
   create_params.style(create_params.style() | SS_LEFT);
 
-  if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
-  else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
-  
-  switch (this->text_align_) {
+  if (border_style_ == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
+  else if (border_style_ == xtd::forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
+  if (flat_style_ != xtd::forms::flat_style::system) create_params.style(create_params.style() | SS_OWNERDRAW);
+
+  switch (text_align_) {
     case content_alignment::top_left: create_params.style(create_params.style() | SS_TOP | SS_LEFT); break;
     case content_alignment::top_center: create_params.style(create_params.style() | SS_TOP  | SS_CENTER); break;
     case content_alignment::top_right: create_params.style(create_params.style() | SS_TOP  | SS_RIGHT); break;
@@ -53,5 +64,25 @@ forms::create_params label::create_params() const {
 }
 
 drawing::size label::measure_control() const {
-  return this->control::measure_text() + drawing::size(this->border_style_ == border_style::none ? 0 : 4, this->border_style_ == border_style::none ? 0 : 4);
+  return control::measure_text() + drawing::size(border_style_ == border_style::none ? 0 : 4, border_style_ == border_style::none ? 0 : 4);
+}
+void label::on_paint(paint_event_args& e) {
+  if (flat_style_ == xtd::forms::flat_style::system)
+    control::on_paint(e);
+  else {
+    xtd::drawing::string_format string_format;
+    switch (text_align_) {
+      case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
+      case content_alignment::top_center: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::center); break;
+      case content_alignment::top_right: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::far); break;
+      case content_alignment::middle_left: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::near); break;
+      case content_alignment::middle_center: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::center); break;
+      case content_alignment::middle_right: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::far); break;
+      case content_alignment::bottom_left: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::near); break;
+      case content_alignment::bottom_center: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::center); break;
+      case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
+      default: break;
+    }
+    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(fore_color()), xtd::drawing::rectangle_f(0, 0, client_size().width(), client_size().height()), string_format);
+  }
 }
