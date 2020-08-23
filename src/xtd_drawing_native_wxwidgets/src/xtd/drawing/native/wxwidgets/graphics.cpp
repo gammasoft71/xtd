@@ -145,11 +145,12 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   graphics_context gc(hdc);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetFont(*reinterpret_cast<wxFont*>(font));
   wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetMultiLineTextExtent({text.c_str(), wxMBConvUTF8()});
-  wxFontMetrics metrics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFontMetrics();
   width = size.GetWidth();
-  height = size.GetHeight() * xtd::strings::split(text, {'\n'}).size();
-#if defined(__APPLE__) || defined(__WXGTK__)
-  if (reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(metrics.averageWidth / 2.3f);
-#endif
+  height = size.GetHeight();
+
+  // Workaround : with wxWidgets version <= 3.1.4 hight size text is too small on macOS.
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" && xtd::strings::split((text), {'\n'}).size() > 1) height += 1;
+  // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFontMetrics().averageWidth / 2.3f);
 }
 

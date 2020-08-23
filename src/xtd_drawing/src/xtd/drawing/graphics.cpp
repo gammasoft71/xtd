@@ -56,18 +56,8 @@ void graphics::draw_string(const std::string& text, const font& font, const brus
 void graphics::draw_string(const std::string& text, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr) {
     auto text_size = measure_string(text, font);
-    auto x = layout_rectangle.x();
     auto y = layout_rectangle.y();
-    auto width = layout_rectangle.width();
     auto height = layout_rectangle.height();
-
-    if (format.alignment() == string_alignment::center) {
-      x += (layout_rectangle.width() - text_size.width()) / 2;
-      width -= (layout_rectangle.width() - text_size.width()) / 2;
-    } else  if (format.alignment() == string_alignment::far) {
-      x += (layout_rectangle.width() - text_size.width());
-      width -= (layout_rectangle.width() - text_size.width());
-    }
     
     if (format.line_alignment() == string_alignment::center) {
       y += (layout_rectangle.height() - text_size.height()) / 2;
@@ -76,8 +66,35 @@ void graphics::draw_string(const std::string& text, const font& font, const brus
       y += (layout_rectangle.height() - text_size.height());
       height -= (layout_rectangle.height() - text_size.height());
     }
-    
+
+    /*
+    auto x = layout_rectangle.x();
+    auto width = layout_rectangle.width();
+    if (format.alignment() == string_alignment::center) {
+      x += (layout_rectangle.width() - text_size.width()) / 2;
+      width -= (layout_rectangle.width() - text_size.width()) / 2;
+    } else  if (format.alignment() == string_alignment::far) {
+      x += (layout_rectangle.width() - text_size.width());
+      width -= (layout_rectangle.width() - text_size.width());
+    }
     native::graphics::draw_string(this->data_->handle_, text, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+     */
+
+    auto lines = xtd::strings::split(text, {'\n'});
+    for (auto line : lines) {
+      auto x = layout_rectangle.x();
+      auto width = layout_rectangle.width();
+      auto line_size = measure_string(line, font);
+      if (format.alignment() == string_alignment::center) {
+        x += (layout_rectangle.width() - line_size.width()) / 2;
+        width -= (layout_rectangle.width() - line_size.width()) / 2;
+      } else  if (format.alignment() == string_alignment::far) {
+        x += (layout_rectangle.width() - line_size.width());
+        width -= (layout_rectangle.width() - line_size.width());
+      }
+      native::graphics::draw_string(this->data_->handle_, line, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
+      y += line_size.height();
+    }
   }
 }
 

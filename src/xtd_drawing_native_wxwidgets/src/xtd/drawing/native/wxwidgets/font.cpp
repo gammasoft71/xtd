@@ -6,23 +6,13 @@
 using namespace xtd::drawing::native;
 
 namespace {
-#if defined(__APPLE__)
+  // Workaround : with wxWidgets version <= 3.1.4 font is in pixels and not in points on macOS
   float points_to_native_font_graphics_untit(float size) {
-    return size / font::dpi() * 96.0f;  // font is in pixels and not in points
+    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : size / font::dpi() * 96.0f;
   }
-
   float native_font_graphics_untit_to_points(float size) {
-    return size / 96.0f * font::dpi();  // font is in pixels and not in points
+    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : size / 96.0f * font::dpi();
   }
-#else
-  float points_to_native_font_graphics_untit(float size) {
-    return size;  // font is in points
-  }
-
-  float native_font_graphics_untit_to_points(float size) {
-    return size;  // font is in points
-  }
-#endif
 }
 
 intptr_t font::create(const std::string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, uint8_t gdi_char_set, bool gdi_vertical_font) {
