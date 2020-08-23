@@ -1,4 +1,5 @@
 #include <xtd/xtd.forms>
+#include "../resources/gammasoft_64x64.xpm"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -13,6 +14,7 @@ public:
     button1.text("About...");
     button1.click += [&] {
       about_dialog about_dialog;
+      about_dialog.icon(xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(gammasoft_64x64_xpm)));
       about_dialog.about_dialog_style(xtd::forms::about_dialog_style::generic);
       about_dialog.name("About dialog generic");
       about_dialog.version("1.0");
