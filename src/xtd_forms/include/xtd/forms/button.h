@@ -3,6 +3,7 @@
 #include "dialog_result.h"
 #include "ibutton_control.h"
 #include "timer.h"
+#include "visual_styles/push_button_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -101,14 +102,47 @@ namespace xtd {
       void on_handle_created(const event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
+        state_ = xtd::forms::visual_styles::push_button_state::pressed;
         button_base::on_mouse_down(e);
         auto_repeat_timer_.interval(auto_repeat_delay_);
         auto_repeat_timer_.enabled(auto_repeat_);
+        if (flat_style_ != xtd::forms::flat_style::system) {
+          state_ = xtd::forms::visual_styles::push_button_state::pressed;
+          invalidate();
+        }
+      }
+
+      void on_mouse_enter(const event_args& e) override {
+        button_base::on_mouse_enter(e);
+        if (flat_style_ != xtd::forms::flat_style::system) {
+          state_ = xtd::forms::visual_styles::push_button_state::hot;
+          invalidate();
+        }
+      }
+
+      void on_mouse_leave(const event_args& e) override {
+        button_base::on_mouse_enter(e);
+        if (flat_style_ != xtd::forms::flat_style::system) {
+          state_ = xtd::forms::visual_styles::push_button_state::normal;
+          invalidate();
+        }
+      }
+
+      void on_mouse_move(const mouse_event_args& e) override {
+        button_base::on_mouse_move(e);
+        if (flat_style_ != xtd::forms::flat_style::system && (e.button() & mouse_buttons::left) == mouse_buttons::left && !client_rectangle().contains(e.location()) && state_ == xtd::forms::visual_styles::push_button_state::pressed) {
+          state_ = xtd::forms::visual_styles::push_button_state::hot;
+          invalidate();
+        }
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
         button_base::on_mouse_up(e);
         auto_repeat_timer_.enabled(false);
+        if (flat_style_ != xtd::forms::flat_style::system && state_ == xtd::forms::visual_styles::push_button_state::pressed) {
+          state_ = xtd::forms::visual_styles::push_button_state::hot;
+          invalidate();
+        }
       }
 
       void on_paint(paint_event_args& e) override;
@@ -129,6 +163,7 @@ namespace xtd {
       timer auto_repeat_timer_;
       int32_t auto_repeat_delay_ = 300;
       int32_t auto_repeat_interval_ = 100;
+      xtd::forms::visual_styles::push_button_state state_ = xtd::forms::visual_styles::push_button_state::normal;
    };
   }
 }

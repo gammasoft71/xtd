@@ -161,7 +161,6 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/up_down_base.h
   include/xtd/forms/up_down_button.h
   include/xtd/forms/user_control.h
-  include/xtd/forms/visual_styles/push_button_state.h
 )
 
 set(XTD_FORMS_LAYOUT_INCLUDES
@@ -170,6 +169,10 @@ set(XTD_FORMS_LAYOUT_INCLUDES
 
 set(XTD_FORMS_PROPERTIES_INCLUDES
   include/xtd/forms/properties/resources.h
+)
+
+set(XTD_FORMS_VISUAL_STYLES_INCLUDES
+  include/xtd/forms/visual_styles/push_button_state.h
 )
 
 set(XTD_FORMS_SOURCES
@@ -243,6 +246,7 @@ source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\forms FILES ${XTD_FORMS_INCLUDES})
 source_group(include\\xtd\\forms\\layout FILES ${XTD_FORMS_LAYOUT_INCLUDES})
 source_group(include\\xtd\\forms\\properties FILES ${XTD_FORMS_PROPERTIES_INCLUDES})
+source_group(include\\xtd\\forms\\visual_styles FILES ${XTD_FORMS_VISUAL_STYLES_INCLUDES})
 source_group(src\\xtd\\forms FILES ${XTD_FORMS_SOURCES})
 source_group(src\\native FILES ${NATIVE_SOURCES})
 source_group(src\\native\\wxwidgets FILES ${NATIVE_WXWIDGETS_SOURCES})
@@ -252,7 +256,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_LAYOUT_INCLUDES} ${XTD_FORMS_PROPERTIES_INCLUDES} ${XTD_FORMS_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_LAYOUT_INCLUDES} ${XTD_FORMS_PROPERTIES_INCLUDES} ${XTD_FORMS_VISUAL_STYLES_INCLUDES} ${XTD_FORMS_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

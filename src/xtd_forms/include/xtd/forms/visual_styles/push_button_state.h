@@ -5,24 +5,27 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Specifies the appearance of a control.
-    /// @remarks This enumeration is used by members such as button_base::flat_style, group_box::flat_style, and label::flat_style.
-    /// @remarks In the case of the popup style button, this enumeration controls some behavior as well as appearance. The popup style control initially appears flat until the mouse pointer moves over it. When the mouse pointer moves over the popup control, it appears as a standard style control until the mouse pointer is moved off of it again.
-    /// @remarks If the system style is used, the appearance of the control is determined by the user's operating system and the following property values will be ignored: control_background_image, image_align, image, image_index, image_list, and text_align. In addition, the control.back_color property will be ignored for button controls. If supported, users can change the appearance of controls by adjusting the appearance settings of their operating system.
-    enum class flat_style {
-      /// @brief The control appears flat.
-      flat = 0,
-      /// @brief A control appears flat until the mouse pointer moves over it, at which point it appears three-dimensional.
-      popup,
-      /// @brief The control appears three-dimensional.
-      standard,
-      /// @brief The appearance of the control is determined by the user's operating system.
-      system,
-    };
+    /// @brief The xtd::forms::visual_styles namespace contains classes for rendering controls and other windows user interface (UI) elements with visual styles in operating systems that support them.
+    namespace visual_styles {
+      /// @brief Specifies the visual state of a button that is drawn with visual styles.
+      /// @remarks The push_button_state values correspond to the states of the visual_style_element objects exposed by the visual_style_element:bvutton::push_button class. The push_button_state values are also used as an argument in the button_renderer.draw_button method.
+      enum class push_button_state {
+        /// @brief The button has the normal appearance.
+        normal = 1,
+        /// @brief The button is hot.
+        hot,
+        /// @brief The button is pressed.
+        pressed,
+        /// @brief The button is disabled.
+        disabled,
+        /// @brief The button has the default appearance.
+        default_state,
+      };
 
-    /// @cond
-    inline std::ostream& operator<<(std::ostream& os, flat_style value) {return os << to_string(value, {{flat_style::flat, "flat"}, {flat_style::popup, "popup"}, {flat_style::standard, "standard"}, {flat_style::system, "system"}});}
-    inline std::wostream& operator<<(std::wostream& os, flat_style value) {return os << to_string(value, {{flat_style::flat, L"flat"}, {flat_style::popup, L"popup"}, {flat_style::standard, L"standard"}, {flat_style::system, L"system"}});}
-    /// @endcond
+      /// @cond
+      inline std::ostream& operator<<(std::ostream& os, push_button_state value) {return os << to_string(value, {{push_button_state::normal, "normal"}, {push_button_state::hot, "hot"}, {push_button_state::pressed, "pressed"}, {push_button_state::disabled, "disabled"}, {push_button_state::default_state, "default_state"}});}
+      inline std::wostream& operator<<(std::wostream& os, push_button_state value) {return os << to_string(value, {{push_button_state::normal, L"normal"}, {push_button_state::hot, L"hot"}, {push_button_state::pressed, L"pressed"}, {push_button_state::disabled, L"disabled"}, {push_button_state::default_state, L"default_state"}});}
+      /// @endcond
+    }
   }
 }
