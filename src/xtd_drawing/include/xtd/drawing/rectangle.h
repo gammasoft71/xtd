@@ -70,6 +70,12 @@ namespace xtd {
       
       void width(int32_t width) {this->width_ = width;}
       
+      bool contains(int x, int y) const {return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;}
+
+      bool contains(const point& pt) const {return contains(pt.x(), pt.y());}
+
+      bool contains(const rectangle& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ &&  (rect.y_ + rect.height_) <= (y_ + height_);}
+      
       bool is_empty() const {return *this == rectangle::empty;}
 
       static rectangle make_intersect(const rectangle& a, const rectangle& b);
