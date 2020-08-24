@@ -3,6 +3,7 @@
 #include "control.h"
 #include "content_alignment.h"
 #include "image_list.h"
+#include "flat_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,6 +42,9 @@ namespace xtd {
         return *this;
       }
       
+      virtual xtd::forms::flat_style flat_style() const {return flat_style_;}
+      virtual xtd::forms::button_base& flat_style(xtd::forms::flat_style flat_style);
+
       virtual const drawing::image& image() const {return image_;}
       virtual button_base& image(const drawing::image& value);
       
@@ -84,6 +88,7 @@ namespace xtd {
     protected:
       /// @cond
       bool auto_ellipsis_ = false;
+      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::system;
       drawing::image image_ = drawing::image::empty;
       forms::image_list image_list_;
       int32_t image_index_ = -1;

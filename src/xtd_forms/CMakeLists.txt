@@ -161,6 +161,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/up_down_base.h
   include/xtd/forms/up_down_button.h
   include/xtd/forms/user_control.h
+  include/xtd/forms/visual_styles/push_button_state.h
 )
 
 set(XTD_FORMS_LAYOUT_INCLUDES

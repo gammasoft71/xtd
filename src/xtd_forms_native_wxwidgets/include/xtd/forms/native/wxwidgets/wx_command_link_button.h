@@ -6,6 +6,7 @@
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/button_styles.h>
 #include <wx/commandlinkbutton.h>
+#include <wx/panel.h>
 #include "control_handler.h"
 
 namespace xtd {
@@ -15,10 +16,14 @@ namespace xtd {
       public:
         wx_command_link_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
-          this->control_handler::create<wxCommandLinkButton>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxEmptyString, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-          static_cast<wxCommandLinkButton*>(control())->SetLabel(wxString(create_params.caption().c_str(), wxMBConvUTF8()));
-          if (!xtd::environment::os_version().is_windows_platform() || (xtd::environment::os_version().is_windows_platform() && application::dark_mode_enabled()))
-            static_cast<wxCommandLinkButton*>(control())->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(xtd::drawing::system_images::from_name("go-next", xtd::drawing::size(16, 16)).handle())));
+          owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;
+          if (owner_draw_) this->control_handler::create<wxPanel>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+          else {
+            this->control_handler::create<wxCommandLinkButton>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxEmptyString, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            static_cast<wxCommandLinkButton*>(control())->SetLabel(wxString(create_params.caption().c_str(), wxMBConvUTF8()));
+            if (!xtd::environment::os_version().is_windows_platform() || (xtd::environment::os_version().is_windows_platform() && application::dark_mode_enabled()))
+              static_cast<wxCommandLinkButton*>(control())->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(xtd::drawing::system_images::from_name("go-next", xtd::drawing::size(16, 16)).handle())));
+          }
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
@@ -47,6 +52,8 @@ namespace xtd {
         void SetSize(int32_t width, int32_t height) override {
           control_handler::SetSize(width, height);
         }
+        
+        bool owner_draw_ = false;
       };
     }
   }
