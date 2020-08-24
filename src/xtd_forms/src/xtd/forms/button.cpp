@@ -3,6 +3,8 @@
 #include <xtd/drawing/pen.h>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/string_format.h>
+#include <xtd/drawing/system_brushes.h>
+#include <xtd/drawing/system_pens.h>
 #include <xtd/forms/native/button.h>
 #include <xtd/forms/native/button_styles.h>
 #include <xtd/forms/native/control.h>
@@ -69,7 +71,29 @@ void button::on_paint(paint_event_args& e) {
   if (flat_style_ == xtd::forms::flat_style::system)
     control::on_paint(e);
   else {
-    e.graphics().draw_rectangle(xtd::drawing::pen(fore_color(), 1), client_rectangle());
+    auto border_color = xtd::drawing::system_colors::active_border();
+    auto button_color = back_color();
+    auto text_color = fore_color();
+    auto border_thickness = 1;
+    if (state_ == xtd::forms::visual_styles::push_button_state::hot) {
+      border_color = xtd::drawing::system_colors::highlight();
+      button_color = xtd::drawing::color::lighter(back_color());
+      text_color = xtd::drawing::system_colors::highlight_text();
+    } else if (state_ == xtd::forms::visual_styles::push_button_state::pressed) {
+      border_color = xtd::drawing::system_colors::highlight();
+      button_color = xtd::drawing::color::lighter(xtd::drawing::color::lighter(back_color()));
+      text_color = xtd::drawing::system_colors::highlight_text();
+    } else if (state_ == xtd::forms::visual_styles::push_button_state::default_state) {
+      border_color = xtd::drawing::system_colors::active_border();
+      button_color = back_color();
+      text_color = fore_color();
+      border_thickness = 2;
+    }
+    
+    auto button_rectangle = xtd::drawing::rectangle(client_rectangle().x() + 1, client_rectangle().y() + 1, client_rectangle().width() - 2, client_rectangle().height() - 2);
+    e.graphics().fill_rectangle(xtd::drawing::solid_brush(button_color), button_rectangle);
+    e.graphics().draw_rectangle(xtd::drawing::pen(border_color, border_thickness), button_rectangle);
+    
     xtd::drawing::string_format string_format;
     switch (text_align_) {
       case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
@@ -83,7 +107,7 @@ void button::on_paint(paint_event_args& e) {
       case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
       default: break;
     }
-    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(fore_color()), xtd::drawing::rectangle_f(0, 0, client_size().width(), client_size().height()), string_format);
+    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(text_color), xtd::drawing::rectangle_f(0, 0, client_size().width(), client_size().height()), string_format);
   }
 }
 
