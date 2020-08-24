@@ -1,5 +1,8 @@
 #include "../../../include/xtd/forms/button.h"
 #include "../../../include/xtd/forms/form.h"
+#include <xtd/drawing/pen.h>
+#include <xtd/drawing/solid_brush.h>
+#include <xtd/drawing/string_format.h>
 #include <xtd/forms/native/button.h>
 #include <xtd/forms/native/button_styles.h>
 #include <xtd/forms/native/control.h>
@@ -59,6 +62,28 @@ void button::on_handle_created(const event_args& e) {
     if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
     native::control::location(handle(), location_);
     native::control::size(handle(), size_);
+  }
+}
+
+void button::on_paint(paint_event_args& e) {
+  if (flat_style_ == xtd::forms::flat_style::system)
+    control::on_paint(e);
+  else {
+    e.graphics().draw_rectangle(xtd::drawing::pen(fore_color(), 1), client_rectangle());
+    xtd::drawing::string_format string_format;
+    switch (text_align_) {
+      case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
+      case content_alignment::top_center: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::center); break;
+      case content_alignment::top_right: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::far); break;
+      case content_alignment::middle_left: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::near); break;
+      case content_alignment::middle_center: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::center); break;
+      case content_alignment::middle_right: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::far); break;
+      case content_alignment::bottom_left: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::near); break;
+      case content_alignment::bottom_center: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::center); break;
+      case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
+      default: break;
+    }
+    e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(fore_color()), xtd::drawing::rectangle_f(0, 0, client_size().width(), client_size().height()), string_format);
   }
 }
 

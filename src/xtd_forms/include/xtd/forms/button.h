@@ -110,7 +110,9 @@ namespace xtd {
         button_base::on_mouse_up(e);
         auto_repeat_timer_.enabled(false);
       }
-      
+
+      void on_paint(paint_event_args& e) override;
+
       /// @brief Processes Windows messages.
       /// @param m The Windows Message to process.
       /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.

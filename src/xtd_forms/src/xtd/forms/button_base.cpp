@@ -9,6 +9,14 @@ button_base::button_base() {
   this->size_ = this->default_size();
 }
 
+button_base& button_base::flat_style(xtd::forms::flat_style flat_style) {
+  if (flat_style_ != flat_style) {
+    flat_style_ = flat_style;
+    recreate_handle();
+  }
+  return *this;
+}
+
 button_base& button_base::image(const drawing::image& value) {
   if (this->image_ != value) {
     this->image_ = value;
@@ -54,7 +62,9 @@ button_base& button_base::text_align(content_alignment text_align) {
 
 forms::create_params button_base::create_params() const {
   forms::create_params create_params = this->control::create_params();
-  
+
+  if (flat_style_ != xtd::forms::flat_style::system) create_params.style(create_params.style() | BS_OWNERDRAW);
+
   switch (this->text_align_) {
     case content_alignment::top_left: create_params.style(create_params.style() | BS_TOP | BS_LEFT); break;
     case content_alignment::top_center: create_params.style(create_params.style() | BS_TOP | BS_CENTER); break;

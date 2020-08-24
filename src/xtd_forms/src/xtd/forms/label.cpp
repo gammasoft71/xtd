@@ -66,6 +66,7 @@ forms::create_params label::create_params() const {
 drawing::size label::measure_control() const {
   return control::measure_text() + drawing::size(border_style_ == border_style::none ? 0 : 4, border_style_ == border_style::none ? 0 : 4);
 }
+
 void label::on_paint(paint_event_args& e) {
   if (flat_style_ == xtd::forms::flat_style::system)
     control::on_paint(e);

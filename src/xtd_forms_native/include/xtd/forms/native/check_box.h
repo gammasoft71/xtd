@@ -7,7 +7,6 @@ namespace xtd {
     namespace native {
       class check_box static_ {
       public:
-        static int check_state(intptr_t control);
         static void check_state(intptr_t control, int check_state);
       };
     }

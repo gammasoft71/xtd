@@ -7,7 +7,6 @@ namespace xtd {
     namespace native {
       class radio_button static_ {
       public:
-        static bool checked(intptr_t control);
         static void checked(intptr_t control, bool checked);
       };
     }
