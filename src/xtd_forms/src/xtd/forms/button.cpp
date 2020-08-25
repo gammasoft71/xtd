@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/button.h"
+#include "../../../include/xtd/forms/button_renderrer.h"
 #include "../../../include/xtd/forms/form.h"
 #include <xtd/drawing/pen.h>
 #include <xtd/drawing/solid_brush.h>
@@ -12,6 +13,14 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+
+namespace {
+  text_format_flags to_text_format_flags(content_alignment text_align) {
+    text_format_flags flags = text_format_flags::default_format;
+    
+    return flags;
+  }
+}
 
 button& button::auto_size_mode(forms::auto_size_mode value) {
   this->set_auto_size_mode(value);
@@ -71,6 +80,23 @@ void button::on_paint(paint_event_args& e) {
   if (flat_style_ == xtd::forms::flat_style::system)
     control::on_paint(e);
   else {
+    xtd::drawing::rectangle image_bounds = {(width() - image_.width()) / 2, (height() - image_.height()) / 2, image_.width(), image_.height()};
+    auto image_margin = 4;
+    switch (image_align_) {
+      case content_alignment::top_left: image_bounds = {image_margin, image_margin, image_.width(), image_.height()}; break;
+      case content_alignment::top_center: image_bounds = {(width() - image_.width()) / 2, image_margin, image_.width(), image_.height()}; break;
+      case content_alignment::top_right: image_bounds = {width() - image_.width() - image_margin, image_margin, image_.width(), image_.height()}; break;
+      case content_alignment::middle_left: image_bounds = {image_margin, (height() - image_.height()) / 2, image_.width(), image_.height()}; break;
+      case content_alignment::middle_center: image_bounds = {(width() - image_.width()) / 2, (height() - image_.height()) / 2, image_.width(), image_.height()}; break;
+      case content_alignment::middle_right: image_bounds = {width() - image_.width() - image_margin, (height() - image_.height()) / 2, image_.width(), image_.height()}; break;
+      case content_alignment::bottom_left: image_bounds = {image_margin, height() - image_.height() - image_margin, image_.width(), image_.height()}; break;
+      case content_alignment::bottom_center: image_bounds = {(width() - image_.width()) / 2, height() - image_.height() - image_margin, image_.width(), image_.height()}; break;
+      case content_alignment::bottom_right: image_bounds = {width() - image_.width() - image_margin, height() - image_.height() - image_margin, image_.width(), image_.height()}; break;
+      default: break;
+    }
+
+    button_renderrer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), to_text_format_flags(text_align_), image_, image_bounds, false, state_, back_color(), fore_color());
+    /*
     auto border_color = xtd::drawing::system_colors::active_border();
     auto button_color = back_color();
     auto text_color = fore_color();
@@ -108,6 +134,7 @@ void button::on_paint(paint_event_args& e) {
       default: break;
     }
     e.graphics().draw_string(text_, font(), xtd::drawing::solid_brush(text_color), xtd::drawing::rectangle_f(0, 0, client_size().width(), client_size().height()), string_format);
+     */
   }
 }
 

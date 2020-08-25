@@ -99,10 +99,17 @@ namespace xtd {
       /// @param e An event_args that contains the event data.
       void on_click(const event_args& e) override;
 
+      void on_enabled_changed(const event_args& e) override {
+        button_base::on_enabled_changed(e);
+        if (flat_style_ != xtd::forms::flat_style::system) {
+          state_ = enabled() ? xtd::forms::visual_styles::push_button_state::normal : xtd::forms::visual_styles::push_button_state::disabled;
+          invalidate();
+        }
+      }
+
       void on_handle_created(const event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
-        state_ = xtd::forms::visual_styles::push_button_state::pressed;
         button_base::on_mouse_down(e);
         auto_repeat_timer_.interval(auto_repeat_delay_);
         auto_repeat_timer_.enabled(auto_repeat_);

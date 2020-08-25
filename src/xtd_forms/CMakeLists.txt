@@ -26,6 +26,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/button.h
   include/xtd/forms/button_base.h
   include/xtd/forms/button_images.h
+  include/xtd/forms/button_renderrer.h
   include/xtd/forms/buttons.h
   include/xtd/forms/cancel_event_args.h
   include/xtd/forms/cancel_event_handler.h
@@ -153,6 +154,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/tab_page.h
   include/xtd/forms/text_box_base.h
   include/xtd/forms/text_box.h
+  include/xtd/forms/text_format_flags.h
   include/xtd/forms/texts.h
   include/xtd/forms/tick_style.h
   include/xtd/forms/timer.h
@@ -181,6 +183,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/button.cpp
   src/xtd/forms/button_base.cpp
+  src/xtd/forms/button_renderrer.cpp
   src/xtd/forms/check_box.cpp
   src/xtd/forms/checked_list_box.cpp
   src/xtd/forms/choice.cpp

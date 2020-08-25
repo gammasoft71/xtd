@@ -26,14 +26,14 @@ namespace examples {
       };
       
       label1.parent(*this);
-      label1.auto_size(true);
       label1.text("Button 1 clicked 0 times");
       label1.location({50, 200});
+      label1.width(200);
       
       label2.parent(*this);
-      label2.auto_size(true);
       label2.text("Button 2 clicked 0 times");
       label2.location({50, 230});
+      label2.width(200);
     }
     
   private:

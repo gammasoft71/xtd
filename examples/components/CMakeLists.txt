@@ -6,6 +6,7 @@ find_package(xtd.forms REQUIRED)
 add_projects(
   background_worker
   button_images
+  button_renderrer
   cursor
   image_list
   screen
