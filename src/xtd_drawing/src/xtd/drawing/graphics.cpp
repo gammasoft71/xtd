@@ -48,6 +48,10 @@ void graphics::draw_rectangle(const pen& pen, int32_t x, int32_t y, int32_t widt
   native::graphics::draw_rectangle(this->data_->handle_, pen.data_->handle_, x, y, width, height);
 }
 
+void graphics::draw_rounded_rectangle(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
+  native::graphics::draw_rounded_rectangle(this->data_->handle_, pen.data_->handle_, x, y, width, height, radius);
+}
+
 void graphics::draw_string(const std::string& text, const font& font, const brush& brush, float x, float y, const string_format& format) {
   if (dynamic_cast<const solid_brush*>(&brush) != nullptr)
     native::graphics::draw_string(this->data_->handle_, text, font.data_->handle_, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<const solid_brush&>(brush).color().a(), static_cast<const solid_brush&>(brush).color().r(), static_cast<const solid_brush&>(brush).color().g(), static_cast<const solid_brush&>(brush).color().b());
@@ -108,6 +112,10 @@ void graphics::fill_pie(const brush& brush, int32_t x, int32_t y, int32_t width,
 
 void graphics::fill_rectangle(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height) {
   native::graphics::fill_rectangle(this->data_->handle_, brush.data_->handle_, x, y, width, height);
+}
+
+void graphics::fill_rounded_rectangle(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
+  native::graphics::fill_rounded_rectangle(this->data_->handle_, brush.data_->handle_, x, y, width, height, radius);
 }
 
 size_f graphics::measure_string(const std::string &text, const font &font) {

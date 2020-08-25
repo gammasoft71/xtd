@@ -77,6 +77,14 @@ namespace xtd {
       void draw_rectangle(const pen& pen, const rectangle& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
       
       void draw_rectangle(const pen& pen, const rectangle_f& rect) {draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());}
+      
+      void draw_rounded_rectangle(const pen& pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
+      
+      void draw_rounded_rectangle(const pen& pen, float x, float y, float width, float height, float radius) {draw_rounded_rectangle(pen, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<int32_t>(radius));}
+      
+      void draw_rounded_rectangle(const pen& pen, const rectangle& rect, int32_t radius) {draw_rounded_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height(), radius);}
+      
+      void draw_rounded_rectangle(const pen& pen, const rectangle_f& rect, float radius) {draw_rounded_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height(), radius);}
 
       void draw_string(const std::string& text, const font& font, const brush& brush, float x, float y, const string_format& format);
       
@@ -113,6 +121,14 @@ namespace xtd {
       void fill_rectangle(const brush& brush, const rectangle& rect) {fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());}
       
       void fill_rectangle(const brush& brush, const rectangle_f& rect) {fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());}
+
+      void fill_rounded_rectangle(const brush& brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
+      
+      void fill_rounded_rectangle(const brush& brush, float x, float y, float width, float height, float radius) {fill_rounded_rectangle(brush, static_cast<int32_t>(x), static_cast<int32_t>(y), static_cast<int32_t>(width), static_cast<int32_t>(height), static_cast<int32_t>(radius));}
+      
+      void fill_rounded_rectangle(const brush& brush, const rectangle& rect, int32_t radius) {fill_rounded_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height(), radius);}
+      
+      void fill_rounded_rectangle(const brush& brush, const rectangle_f& rect, float radius) {fill_rounded_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height(), radius);}
 
       size_f measure_string(const std::string& text, const font& font);
       

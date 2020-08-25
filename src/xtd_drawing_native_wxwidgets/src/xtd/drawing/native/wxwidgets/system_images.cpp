@@ -15,12 +15,6 @@ GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32_t width, int32_t 
 intptr_t __macos_get_image_from_name__(const char* name, int32_t width, int32_t height);
 #endif
 
-std::string system_images::default_theme() {
-  auto desktop_environment = environment::os_version().desktop_environment();
-  if (desktop_environment == "") return "symbolic";
-  return desktop_environment;
-}
-
 intptr_t system_images::from_name(const std::string& name, int32_t width, int32_t height) {
 #if defined(__WXMSW__)
   return 0;

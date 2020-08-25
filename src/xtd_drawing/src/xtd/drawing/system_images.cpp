@@ -112,14 +112,6 @@ map<string, vector<string>> system_images::context_names() {
   return context_names;
 }
 
-string system_images::default_theme() {
-  return native::system_images::default_theme();
-}
-
-string system_images::fallback_theme() {
-  return "symbolic";
-}
-
 std::vector<string> system_images::names() {
   vector<string> result;
   for (const auto& context_name : context_names())
@@ -130,8 +122,4 @@ std::vector<string> system_images::names() {
 
 std::vector<xtd::drawing::size> system_images::sizes() {
   return {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
-}
-
-vector<string> system_images::themes() {
-  return {"kde", "gnome", "macos", "symbolic", "windows", "xtd"};
 }

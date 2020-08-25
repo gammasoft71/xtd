@@ -41,6 +41,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing/system_icons.h
   include/xtd/drawing/system_images.h
   include/xtd/drawing/system_pens.h
+  include/xtd/drawing/theme.h
 )
 
 set(XTD_DRAWING_DRAWING2D_INCLUDES
@@ -91,7 +92,8 @@ set(XTD_DRAWING_SOURCES
   src/xtd/drawing/system_fonts.cpp
   src/xtd/drawing/system_images.cpp
   src/xtd/drawing/system_pens.cpp
-)
+  src/xtd/drawing/theme.cpp
+  )
 
 set(XTD_DRAWING_TEXT_SOURCES
   src/xtd/drawing/text/installed_font_collection.cpp
