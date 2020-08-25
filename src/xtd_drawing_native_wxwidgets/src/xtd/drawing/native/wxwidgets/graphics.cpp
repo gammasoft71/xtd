@@ -98,6 +98,14 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawRectangle(x, y, width, height);
 }
 
+void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
+  if (!hdc) return;
+  graphics_context gc(hdc);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetBrush(*wxTRANSPARENT_BRUSH);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(*reinterpret_cast<wxPen*>(pen));
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawRoundedRectangle(x, y, width, height, radius);
+}
+
 void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
   graphics_context gc(hdc);
@@ -140,6 +148,14 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawRectangle(x, y, width, height);
 }
 
+void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius) {
+  if (!hdc) return;
+  graphics_context gc(hdc);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetBrush(*reinterpret_cast<wxBrush*>(brush));
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->SetPen(*wxTRANSPARENT_PEN);
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawRoundedRectangle(x, y, width, height, radius);
+}
+
 void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
   if (!hdc) return;
   graphics_context gc(hdc);
@@ -149,7 +165,7 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   height = size.GetHeight();
 
   // Workaround : with wxWidgets version <= 3.1.4 hight size text is too small on macOS.
-  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" && xtd::strings::split((text), {'\n'}).size() > 1) height += 1;
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") height += 1;
   // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->GetFontMetrics().averageWidth / 2.3f);
 }
