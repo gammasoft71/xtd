@@ -17,7 +17,20 @@ using namespace xtd::forms;
 namespace {
   text_format_flags to_text_format_flags(content_alignment text_align) {
     text_format_flags flags = text_format_flags::default_format;
-    
+
+    switch (text_align) {
+      case content_alignment::top_left: flags |= text_format_flags::top | text_format_flags::left; break;
+      case content_alignment::top_center: flags |= text_format_flags::top | text_format_flags::horizontal_center; break;
+      case content_alignment::top_right: flags |= text_format_flags::top | text_format_flags::rigth; break;
+      case content_alignment::middle_left: flags |= text_format_flags::vertical_center | text_format_flags::left; break;
+      case content_alignment::middle_center: flags |= text_format_flags::vertical_center | text_format_flags::horizontal_center; break;
+      case content_alignment::middle_right: flags |= text_format_flags::vertical_center | text_format_flags::rigth; break;
+      case content_alignment::bottom_left: flags |= text_format_flags::bottom | text_format_flags::left; break;
+      case content_alignment::bottom_center: flags |= text_format_flags::bottom | text_format_flags::horizontal_center; break;
+      case content_alignment::bottom_right: flags |= text_format_flags::bottom | text_format_flags::rigth; break;
+      default: break;
+    }
+
     return flags;
   }
 }
@@ -95,7 +108,9 @@ void button::on_paint(paint_event_args& e) {
       default: break;
     }
 
-    button_renderrer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), to_text_format_flags(text_align_), image_, image_bounds, false, state_, back_color(), fore_color());
+    text_format_flags flags = text_format_flags::default_format;
+    flags |= to_text_format_flags(text_align_);
+    button_renderrer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, image_bounds, false, state_, back_color(), fore_color());
     /*
     auto border_color = xtd::drawing::system_colors::active_border();
     auto button_color = back_color();
