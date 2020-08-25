@@ -14,20 +14,14 @@ namespace {
     string_format.line_alignment(xtd::drawing::string_alignment::center);
     string_format.alignment(xtd::drawing::string_alignment::center);
     
-    /*
-     switch (text_align_) {
-     case content_alignment::top_left: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::near); break;
-     case content_alignment::top_center: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::center); break;
-     case content_alignment::top_right: string_format.line_alignment(xtd::drawing::string_alignment::near); string_format.alignment(xtd::drawing::string_alignment::far); break;
-     case content_alignment::middle_left: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::near); break;
-     case content_alignment::middle_center: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::center); break;
-     case content_alignment::middle_right: string_format.line_alignment(xtd::drawing::string_alignment::center); string_format.alignment(xtd::drawing::string_alignment::far); break;
-     case content_alignment::bottom_left: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::near); break;
-     case content_alignment::bottom_center: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::center); break;
-     case content_alignment::bottom_right: string_format.line_alignment(xtd::drawing::string_alignment::far); string_format.alignment(xtd::drawing::string_alignment::far); break;
-     default: break;
-     }
-     */
+    if ((flags & text_format_flags::left) == text_format_flags::top) string_format.alignment(xtd::drawing::string_alignment::near);
+    if ((flags & text_format_flags::horizontal_center) == text_format_flags::horizontal_center) string_format.alignment(xtd::drawing::string_alignment::center);
+    if ((flags & text_format_flags::rigth) == text_format_flags::rigth) string_format.alignment(xtd::drawing::string_alignment::far);
+   
+    if ((flags & text_format_flags::top) == text_format_flags::top) string_format.line_alignment(xtd::drawing::string_alignment::near);
+    if ((flags & text_format_flags::vertical_center) == text_format_flags::vertical_center) string_format.line_alignment(xtd::drawing::string_alignment::center);
+    if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(xtd::drawing::string_alignment::far);
+
     return string_format;
   }
 }
@@ -55,15 +49,17 @@ void button_renderrer::draw_button_macos(graphics g, const rectangle& bounds, co
   auto text_color = fore_color;
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed) {
-    active_border_color = button_color = xtd::drawing::system_colors::menu_highlight();
+    //active_border_color = button_color = xtd::drawing::system_colors::menu_highlight();
+    active_border_color = button_color = xtd::drawing::system_colors::highlight();
     if (system_colors::window().get_lightness() >= 0.5) text_color = color::white;
   } else if (state == xtd::forms::visual_styles::push_button_state::disabled) active_border_color = xtd::drawing::color::from_argb(85, 85, 55);
   else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = color::darker(xtd::drawing::system_colors::menu_highlight());
   
-  g.fill_rounded_rectangle(xtd::drawing::solid_brush(button_color), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 3);
-  g.draw_rounded_rectangle(xtd::drawing::pen(active_border_color, 1), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 3);
+  auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
+  g.fill_rounded_rectangle(xtd::drawing::solid_brush(button_color), button_rect, 3.);
+  g.draw_rounded_rectangle(xtd::drawing::pen(active_border_color, 1), button_rect, 3.);
   if (image != xtd::drawing::image::empty) g.draw_image(image, image_bounds.location());
-  g.draw_string(text, font, xtd::drawing::solid_brush(text_color), xtd::drawing::rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), to_string_format(flags));
+  g.draw_string(text, font, xtd::drawing::solid_brush(text_color), button_rect, to_string_format(flags));
 }
 
 void button_renderrer::draw_button_symbolic(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const color& back_color, const color& fore_color) {
