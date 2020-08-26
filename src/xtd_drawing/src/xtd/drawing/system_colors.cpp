@@ -133,3 +133,7 @@ color xtd::drawing::system_colors::menu_bar() {
 color xtd::drawing::system_colors::menu_highlight() {
   return color::from_known_color(xtd::drawing::known_color::menu_highlight);
 }
+
+color xtd::drawing::system_colors::accent() {
+  return color::from_known_color(xtd::drawing::known_color::accent);
+}

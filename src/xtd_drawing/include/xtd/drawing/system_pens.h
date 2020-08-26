@@ -106,7 +106,10 @@ namespace xtd {
       static xtd::drawing::pen menu_bar();
       
       /// Gets a pen that is the color of the menu highlight.
-      static xtd::drawing::pen menu_highlight();      
+      static xtd::drawing::pen menu_highlight();
+      
+      /// Gets a pen that is the color of the accent
+      static xtd::drawing::pen accent();
     };
   }
 }

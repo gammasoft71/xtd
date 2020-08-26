@@ -2,6 +2,7 @@
 #include <wx/settings.h>
 
 #include <cstdint>
+#include <map>
 #include <wx/app.h>
 #include <wx/button.h>
 #include <wx/frame.h>
@@ -43,6 +44,33 @@ uint32_t system_colors::to_argb(intptr_t color) {
   return ::to_argb(wxColour(reinterpret_cast<WX_NSColor>(color)));
 #else
   return static_cast<uint32_t>(color);
+#endif
+}
+
+intptr_t system_colors::accent() {
+  if (::dark_mode()) return ::to_argb(255, 154, 154, 154);
+#if defined(__APPLE__)
+  std::map<uint32_t, wxColour> accent_colors = {
+    {wxColour(49, 79, 120).GetRGBA(), wxColour(23, 105, 230)}, // Blue (Dark appearance)
+    {wxColour(92, 67, 93).GetRGBA(), wxColour(165, 65, 165)}, // Purple (Dark appearance)
+    {wxColour(116, 66, 91).GetRGBA(), wxColour(222, 60, 127)}, // Pink (Dark appearance)
+    {wxColour(119, 68, 70).GetRGBA(), wxColour(247, 63, 54)}, // Red (Dark appearance)
+    {wxColour(116, 82, 55).GetRGBA(), wxColour(254, 143, 0)}, // Orange (Dark appearance)
+    {wxColour(119, 98, 58).GetRGBA(), wxColour(251, 189, 4)}, // Yellow (Dark appearance)
+    {wxColour(74, 100, 66).GetRGBA(), wxColour(61, 192, 39)}, // Green (Dark appearance)
+    {wxColour(255, 255, 255, 63).GetRGBA(), wxColour(168, 168, 168)}, // Graphite (Dark appearance)
+    {wxColour(165, 205, 255).GetRGBA(), wxColour(60, 135, 253)}, // Blue (Light appearance)
+    {wxColour(215, 183, 215).GetRGBA(), wxColour(190, 100, 180)}, // Purple (Light appearance)
+    {wxColour(250, 188, 219).GetRGBA(), wxColour(236, 82, 172)}, // Pink (Light appearance)
+    {wxColour(241, 181, 185).GetRGBA(), wxColour(208, 78, 66)}, // Red (Light appearance)
+    {wxColour(250, 208, 173).GetRGBA(), wxColour(237, 144, 16)}, // Orange (Light appearance)
+    {wxColour(253, 229, 177).GetRGBA(), wxColour(240, 171, 50)}, // Yellow (Light appearance)
+    {wxColour(198, 231, 187).GetRGBA(), wxColour(112, 175, 72)}, // Green (Light appearance)
+    {wxColour(217, 217, 217).GetRGBA(), wxColour(140, 140, 145)}, // Graphite (Light appearance)
+  };
+  return reinterpret_cast<intptr_t>(accent_colors[wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHT).GetRGBA()].OSXGetNSColor());
+#else
+  return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUHILIGHT));
 #endif
 }
 
