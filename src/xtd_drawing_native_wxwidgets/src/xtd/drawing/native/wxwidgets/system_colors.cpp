@@ -51,7 +51,6 @@ uint32_t system_colors::to_argb(intptr_t color) {
 }
 
 intptr_t system_colors::accent() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 154);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_control__();
 #else
