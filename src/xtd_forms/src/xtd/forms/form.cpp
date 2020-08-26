@@ -20,10 +20,10 @@ std::optional<std::reference_wrapper<form>> form::active_form_;
 
 form::form() {
   this->auto_size_mode_ = forms::auto_size_mode::grow_only;
-  this->back_color_ = this->default_back_color();
+  //this->back_color_ = this->default_back_color();
+  //this->fore_color_ = this->default_fore_color();
   this->cursor_ = this->default_cursor();
   icon_ = system_icons::xtd_forms_logo();
-  this->fore_color_ = this->default_fore_color();
   this->font_ = this->default_font();
   this->size_ = this->default_size();
   this->set_state(state::visible, false);

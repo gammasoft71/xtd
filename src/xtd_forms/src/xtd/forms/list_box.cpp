@@ -10,8 +10,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 list_box::list_box() {
-  this->back_color_ = this->default_back_color();
-  this->fore_color_ = this->default_fore_color();
+  //this->back_color_ = this->default_back_color();
+  //this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
 
   this->items_.item_added += [this](size_t index, const item& item) {

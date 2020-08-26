@@ -11,8 +11,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 text_box::text_box() {
-  this->back_color_ = this->default_back_color();
-  this->fore_color_ = this->default_fore_color();
+  //this->back_color_ = this->default_back_color();
+  //this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
 }
 

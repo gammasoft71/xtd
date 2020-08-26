@@ -10,8 +10,8 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 checked_list_box::checked_list_box() {
-  this->back_color_ = this->default_back_color();
-  this->fore_color_ = this->default_fore_color();
+  //this->back_color_ = this->default_back_color();
+  //this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
 
   this->items_.item_added += [&](size_t pos, const item& item) {

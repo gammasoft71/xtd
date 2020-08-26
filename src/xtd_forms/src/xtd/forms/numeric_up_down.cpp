@@ -8,8 +8,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 numeric_up_down::numeric_up_down() {
-  this->back_color_ = this->default_back_color();
-  this->fore_color_ = this->default_fore_color();
+  //this->back_color_ = this->default_back_color();
+  //this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
 }
 

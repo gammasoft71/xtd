@@ -8,28 +8,13 @@ using namespace xtd::forms::native;
 
 color font_picker::color(intptr_t control) {
   if (!control) return {};
-  wxColour colour;
-#if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
-  colour = static_cast<wxFontPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelectedColour();
-#if defined (__APPLE__)
-  return color::from_handle(reinterpret_cast<intptr_t>(colour.OSXGetNSColor()));
-#endif
-#endif
+  wxColour colour = static_cast<wxFontPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelectedColour();
   return color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
 }
 
 void font_picker::color(intptr_t control, const drawing::color& color) {
   if (control == 0) return;
-#if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
-#if defined (__APPLE__)
-  if (color.handle())
-    static_cast<wxFontPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedColour(wxColour(reinterpret_cast<WX_NSColor>(color.handle())));
-  else
-    static_cast<wxFontPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedColour(wxColour(color.r(), color.g(), color.b(), color.a()));
-#else
   static_cast<wxFontPickerCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelectedColour(wxColour(color.r(), color.g(), color.b(), color.a()));
-#endif
-#endif
 }
 
 font font_picker::font(intptr_t control) {
