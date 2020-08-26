@@ -413,6 +413,7 @@ color color::from_known_color(known_color color) {
     case known_color::gradient_inactive_caption: return drawing::color(color::from_handle(native::system_colors::gradient_inactive_caption()), color);
     case known_color::menu_bar: return drawing::color(color::from_handle(native::system_colors::menu_bar()), color);
     case known_color::menu_highlight: return drawing::color(color::from_handle(native::system_colors::menu_highlight()), color);
+    case known_color::accent: return drawing::color(color::from_handle(native::system_colors::accent()), color);
     default: throw std::invalid_argument("unknown know_color");
   }
 }

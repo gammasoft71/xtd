@@ -133,3 +133,7 @@ pen system_pens::menu_bar() {
 pen system_pens::menu_highlight() {
   return pen(color::from_known_color(known_color::menu_highlight), 1);
 }
+
+pen system_pens::accent() {
+  return pen(color::from_known_color(known_color::accent), 1);
+}

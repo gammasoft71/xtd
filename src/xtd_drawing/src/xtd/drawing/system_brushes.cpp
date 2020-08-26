@@ -133,3 +133,7 @@ solid_brush system_brushes::menu_bar() {
 solid_brush system_brushes::menu_highlight() {
   return solid_brush(color::from_known_color(known_color::menu_highlight));
 }
+
+solid_brush system_brushes::accent() {
+  return solid_brush(color::from_known_color(known_color::accent));
+}
