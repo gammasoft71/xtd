@@ -29,6 +29,7 @@ set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
 
 if (APPLE)
   set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES ${XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES}
+    src/xtd/drawing/native/wxwidgets/system_colors.mm
     src/xtd/drawing/native/wxwidgets/system_images.mm
   )
 endif()
@@ -42,11 +43,13 @@ find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 if (APPLE)
+  set(XTD_EXTRA_LIBS "-framework Cocoa")
 elseif (UNIX)
   find_package(PkgConfig)
   pkg_check_modules(GTK gtk+-3.0)
   include_directories(${GTK_INCLUDE_DIRS})
   link_directories(${GTK_LIBRARY_DIRS})
+  set(XTD_EXTRA_LIBS ${GTK_LIBRARIES})
 endif()
 
 # Options
@@ -61,7 +64,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} xtd.drawing.native xtd.io xtd.strings ${wxWidgets_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} xtd.drawing.native xtd.io xtd.strings ${wxWidgets_LIBRARIES} ${XTD_EXTRA_LIBS})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install
