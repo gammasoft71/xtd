@@ -55,7 +55,7 @@ namespace xtd {
       void on_paint(paint_event_args& e) override {
         button_base::on_paint(e);
 
-        drawing::color button_back_color = checked_ ? drawing::system_colors::menu_highlight() : drawing::system_colors::gray_text();
+        drawing::color button_back_color = checked_ ? drawing::system_colors::accent() : drawing::system_colors::gray_text();
         drawing::color text_color = checked_ ? fore_color() : drawing::color::average(fore_color(), button_back_color, .33);
         drawing::color slider_color = back_color();
         

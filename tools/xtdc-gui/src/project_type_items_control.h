@@ -119,7 +119,7 @@ namespace xtdc_gui {
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != -1) project_type_item_controls_[project_type_item_controls_.size() - 1 - previous_selected_index_]->back_color(back_color());
       if (selected_index_ != -1) {
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->back_color(xtd::drawing::system_colors::menu_highlight());
+        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->back_color(xtd::drawing::system_colors::accent());
         selected_project_type_item(project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->project_type_item());
       }
       previous_selected_index_ = selected_index_;
