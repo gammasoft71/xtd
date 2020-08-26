@@ -38,7 +38,7 @@ namespace examples {
       fore_color(system_colors::window_text());
       auto_scroll(true);
 
-      for (drawing::known_color known_color = drawing::known_color::menu_highlight; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
+      for (drawing::known_color known_color = drawing::known_color::accent; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
         auto color = std::make_shared<color_panel>();
         color->dock(dock_style::top);
         color->color(drawing::color::from_known_color(known_color));
@@ -74,7 +74,7 @@ namespace examples {
     void on_selected_index_changed(const event_args& e) {
       if (previous_selected_index_ != -1) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(back_color());
       if (selected_index_ != -1) {
-        colors_[colors_.size() - 1 - selected_index_]->back_color(system_colors::menu_highlight());
+        colors_[colors_.size() - 1 - selected_index_]->back_color(system_colors::accent());
         selected_color(colors_[colors_.size() - 1 - selected_index_]->color());
       }
       previous_selected_index_ = selected_index_;
