@@ -59,7 +59,29 @@ namespace xtd {
       xtd::forms::border_style cell_border_style_ = xtd::forms::border_style::none;
       int column_count_ = 0;
       int row_count_ = 0;
-      xtd::forms::table_layout_panel_grow_style grow_style_ = xtd::forms::table_layout_panel_grow_style::add_rows;
+      //xtd::forms::table_layout_panel_grow_style grow_style_ = xtd::forms::table_layout_panel_grow_style::add_rows;
+    };
+  }
+}
+
+namespace xtd {
+  namespace forms {
+    class link_label : public label {
+    public:
+      class link {
+      public:
+        link() = default;
+      };
+      using link_collection  = xtd::forms::layout::arranged_element_collection<xtd::forms::link_label::link>;
+      link_label() {
+      }
+      
+    protected:
+      void on_paint(paint_event_args& e) override {
+        label::on_paint(e);
+        //e.graphics().clear(back_color());
+        //e.graphics().draw_string(text_, {font(), xtd::drawing::font_style::underline}, xtd::drawing::brushes::blue(), 0, 0, string_format());
+      }
     };
   }
 }
@@ -88,20 +110,17 @@ int main() {
   table_layout_panel.dock(dock_style::fill);
    */
   
-  // !!!: Flag 1
   form_main.client_size({300, 300});
+
+  /*
   form_main.padding(10);
-  
-  // ???: Flag 2
   panel panel_left;
   panel_left.dock(dock_style::left);
   panel_left.back_color(color::light_green);
   panel_left.width(150);
 
-  // TODO: Flag 3
   form_main.controls().push_back_range({panel_left});
 
-  // FIXME: Flag 4
   button button_left1;
   button_left1.parent(panel_left);
   button_left1.location({50, 100});
@@ -110,8 +129,30 @@ int main() {
   //button_left1.parent().value().get().size_changed += [&] {
   //  cdebug << format("new size = {}", button_left1.parent().value().get().size()) << endl;
   //};
+   */
 
-  // MARK: Flag 5
+  link_label link_label1;
+  link_label1.location({10, 10});
+  link_label1.auto_size(true);
+  link_label1.parent(form_main);
+  link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
+
+  button button1;
+  //button1.enabled(false);
+  button1.text("Click me");
+  button1.location({10, 50});
+  button1.parent(form_main);
+  //button1.fore_color(xtd::drawing::color::green);
+  
+  button button2;
+  button2.flat_style(xtd::forms::flat_style::standard);
+  //button2.enabled(false);
+  button2.text("Click me");
+  button2.location({100, 50});
+  button2.parent(form_main);
+  
+  //form_main.back_color(drawing::color::red);
+  
   application::enable_menu_images();
   application::run(form_main);
 }
