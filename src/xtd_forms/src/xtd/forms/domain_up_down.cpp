@@ -9,8 +9,8 @@ using namespace xtd;
 using namespace xtd::forms;
 
 domain_up_down::domain_up_down() {
-  this->back_color_ = this->default_back_color();
-  this->fore_color_ = this->default_fore_color();
+  //this->back_color_ = this->default_back_color();
+  //this->fore_color_ = this->default_fore_color();
   this->size_ = this->default_size();
 
   this->items_.item_added += [&](size_t pos, const item& item) {

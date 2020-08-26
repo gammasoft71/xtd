@@ -46,16 +46,20 @@ void button_renderrer::draw_button_gnome(graphics g, const rectangle& bounds, co
 
 void button_renderrer::draw_button_macos(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const color& back_color, const color& fore_color) {
   auto active_border_color = system_colors::window().get_lightness() < 0.5 ? color::average(back_color, color::black, .95) : color::from_argb(200, 200, 200);
-  auto button_color = system_colors::window().get_lightness() < 0.5 ? color::from_argb(65, color::white) : color::white;
+  auto button_color = system_colors::button_face();
   auto text_color = fore_color;
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed) {
     active_border_color = button_color = xtd::drawing::system_colors::accent();
+    text_color = color::white;
     if (system_colors::window().get_lightness() >= 0.5) text_color = color::white;
-  } else if (state == xtd::forms::visual_styles::push_button_state::disabled) active_border_color = xtd::drawing::color::from_argb(85, 85, 55);
-  else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = color::darker(xtd::drawing::system_colors::accent());
+  } else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
+    button_color = system_colors::window().get_lightness() < 0.5 ? color::average(color::from_argb(120, 120, 120), back_color, .45) : color::white;
+    text_color = color::from_argb(120, 120, 120);
+  } else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = color::darker(xtd::drawing::system_colors::accent());
   
   auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
+  g.fill_rounded_rectangle(xtd::drawing::solid_brush(back_color), button_rect, 3.);
   g.fill_rounded_rectangle(xtd::drawing::solid_brush(button_color), button_rect, 3.);
   g.draw_rounded_rectangle(xtd::drawing::pen(active_border_color, 1), button_rect, 3.);
   if (image != xtd::drawing::image::empty) g.draw_image(image, image_bounds.location());
@@ -68,8 +72,10 @@ void button_renderrer::draw_button_symbolic(graphics g, const rectangle& bounds,
   auto text_color = fore_color;
   
   if (state == xtd::forms::visual_styles::push_button_state::hot) active_border_color = color::lighter(system_colors::active_border());
-  else if (state == xtd::forms::visual_styles::push_button_state::pressed) active_border_color = button_color = xtd::drawing::system_colors::accent();
-  else if (state == xtd::forms::visual_styles::push_button_state::disabled) active_border_color = xtd::drawing::color::from_argb(85, 85, 55);
+  else if (state == xtd::forms::visual_styles::push_button_state::pressed) {
+    active_border_color = button_color = xtd::drawing::system_colors::accent();
+    text_color = color::white;
+  } else if (state == xtd::forms::visual_styles::push_button_state::disabled) active_border_color = xtd::drawing::color::from_argb(85, 85, 55);
   else if (state == xtd::forms::visual_styles::push_button_state::default_state) active_border_color = color::darker(xtd::drawing::system_colors::accent());
   
   g.fill_rounded_rectangle(xtd::drawing::solid_brush(button_color), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);

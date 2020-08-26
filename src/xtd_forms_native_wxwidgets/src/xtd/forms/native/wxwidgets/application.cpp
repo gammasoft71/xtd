@@ -141,7 +141,7 @@ void application::initialize() {
   __gtk_menu_images__(__xtd_gtk_enable_menu_images__);
   __gtk_application_prefer_dark_theme__(__xtd_gtk_enable_dark_mode__);
 #elif defined(__APPLE__)
-    wxMenuBar::MacSetCommonMenuBar(wx_menu_bar::create_default_menu_bar());
+  wxMenuBar::MacSetCommonMenuBar(wx_menu_bar::create_default_menu_bar());
 #endif
 }
 
