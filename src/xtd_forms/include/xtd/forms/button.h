@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/environment.h>
 #include "button_base.h"
 #include "dialog_result.h"
 #include "ibutton_control.h"
@@ -23,6 +24,8 @@ namespace xtd {
       /// @brief Initializes a new instance of the button class.
       /// @remarks By default the button displays no caption. To specify the caption text, set the text property.
       button() {
+        /// @todo set flat_style_ to xtd::forms::flat_style::standard for all platforms.
+        flat_style_ = xtd::environment::os_version().is_linux_platform() ? xtd::forms::flat_style::system : xtd::forms::flat_style::standard;
         auto_repeat_timer_.tick += [&] {
           auto_repeat_timer_.enabled(false);
           if (enabled()) {
