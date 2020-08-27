@@ -582,13 +582,23 @@ namespace xtd {
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
       /// @return the darker color result.
-      static color darker(const color& color) {return color::average(color, drawing::color::black, .67);}
+      static color darker(const color& color, double weight) {return color::average(color, drawing::color::black, weight);}
+      
+      /// @brief Returns a darker version of the specified color.
+      /// @param color The color to dark.
+      /// @return the darker color result.
+      static color darker(const color& color) {return color::darker(color, .67);}
       
       /// @brief Returns a lighter version of the specified color.
       /// @param color The color to light.
       /// @return the lighter color result.
-      static color lighter(const color& color) {return color::average(color, drawing::color::white, .67);}
+      static color lighter(const color& color, double weight) {return color::average(color, drawing::color::white, weight);}
       
+      /// @brief Returns a lighter version of the specified color.
+      /// @param color The color to light.
+      /// @return the lighter color result.
+      static color lighter(const color& color) {return color::lighter(color, .67);}
+
       /// @brief Creates a xtd::drawing::color class from a 32-bit ARGB value.
       /// @param argb A value specifying the 32-bit ARGB value
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
