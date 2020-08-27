@@ -138,21 +138,26 @@ int main() {
   link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
 
   button button1;
-  //button1.enabled(false);
+  button1.enabled(false);
   button1.text("Click me");
   button1.location({10, 50});
   button1.parent(form_main);
-  //button1.fore_color(xtd::drawing::color::green);
+  //button1.fore_color(xtd::drawing::system_colors::accent());
   
   button button2;
   button2.flat_style(xtd::forms::flat_style::standard);
-  //button2.enabled(false);
+  button2.enabled(false);
   button2.text("Click me");
   button2.location({100, 50});
   button2.parent(form_main);
-  
+  //button2.fore_color(xtd::drawing::system_colors::accent());
+
   //form_main.back_color(drawing::color::red);
   
+  cdebug << format("color = {:X}", xtd::drawing::system_colors::button_face().to_argb()) << endl;
+  cdebug << format("color = {}", color::from_argb(30, xtd::drawing::system_colors::button_face())) << endl;
+  cdebug << format("color = {:X}", button2.back_color().to_argb()) << endl;
+
   application::enable_menu_images();
   application::run(form_main);
 }
