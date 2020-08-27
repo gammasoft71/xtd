@@ -59,6 +59,9 @@ uint32_t system_colors::to_argb(intptr_t color) {
 intptr_t system_colors::accent() {
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_control__();
+#elif defined(__WXMSW__)
+  if (::dark_mode()) return ::to_argb(0, 160, 250);
+  return ::to_argb(210, 232, 248);
 #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUHILIGHT));
 #endif
@@ -73,7 +76,7 @@ intptr_t system_colors::accent_text() {
 }
 
 intptr_t system_colors::active_border() {
-  if (::dark_mode()) return ::to_argb(85, 85, 55);
+  if (::dark_mode()) return ::to_argb(96, 96, 96);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_active_border__();
 #else
@@ -97,16 +100,18 @@ intptr_t system_colors::app_workspace() {
 }
 
 intptr_t system_colors::button_face() {
-  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_button_face__();
+#elif defined(__WXMSW__)
+  if (::dark_mode()) return ::to_argb(255, 72, 72, 80);
+  return ::to_argb(225, 225, 225);
 #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
 #endif
 }
 
 intptr_t system_colors::button_highlight() {
-  if (::dark_mode()) return ::to_argb(255, 74, 74, 74);
+  if (::dark_mode()) return ::to_argb(0, 160, 250);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
 }
 
@@ -116,7 +121,7 @@ intptr_t system_colors::button_shadow() {
 }
 
 intptr_t system_colors::control() {
-  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
+  if (::dark_mode()) return ::to_argb(255, 42, 42, 43);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_control__();
 #else
@@ -236,7 +241,7 @@ intptr_t system_colors::scroll_bar() {
 }
 
 intptr_t system_colors::window() {
-  if (::dark_mode()) return ::to_argb(255, 23, 23, 23);
+  if (::dark_mode()) return ::to_argb(255, 58, 58, 63);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 }
 
