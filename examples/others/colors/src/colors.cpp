@@ -74,6 +74,7 @@ namespace examples {
   private:
     void on_selected_index_changed(const event_args& e) {
       if (previous_selected_index_ != -1) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(back_color());
+      if (previous_selected_index_ != -1) colors_[colors_.size() - 1 - previous_selected_index_]->fore_color(fore_color());
       if (selected_index_ != -1) {
         colors_[colors_.size() - 1 - selected_index_]->back_color(system_colors::accent());
         colors_[colors_.size() - 1 - selected_index_]->fore_color(system_colors::accent_text());

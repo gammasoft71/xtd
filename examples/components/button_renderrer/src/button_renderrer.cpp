@@ -14,6 +14,7 @@ namespace examples {
       choice_theme.items().push_back_range(xtd::drawing::theme::themes());
       choice_theme.selected_index_changed += [&] {
         theme = choice_theme.selected_item().value();
+        invalidate();
       };
       choice_theme.selected_index(0);
       

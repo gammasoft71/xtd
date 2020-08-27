@@ -15,49 +15,49 @@ namespace minesweeper::properties {
   public:
     /// @brief Looks up a localized resource of type xtd::drawing::icon.
     static const xtd::drawing::icon& minesweeper_ico() {
-      static xtd::drawing::icon icon(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "minesweeper.ico"));
+      static xtd::drawing::icon icon(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "minesweeper.ico"));
       return icon;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& minesweeper_png() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "minesweeper.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "minesweeper.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& flag() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "flag.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "flag.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& mine() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "mine.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "mine.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& smiley1() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "smiley1.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "smiley1.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& smiley2() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "smiley2.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "smiley2.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& smiley3() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "smiley3.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "smiley3.png"));
       return bitmap;
     }
 
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& smiley4() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "smiley4.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "smiley4.png"));
       return bitmap;
     }
 
