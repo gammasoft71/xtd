@@ -15,6 +15,8 @@ int __xtd_win32_enable_dark_mode__ = -1;
 
 #if defined(__APPLE__)
 intptr_t __xtd__macos_system_colors_accent_control__();
+intptr_t __xtd__macos_system_colors_accent_text__();
+intptr_t __xtd__macos_system_colors_active_border__();
 intptr_t __xtd__macos_system_colors_button_face__();
 intptr_t __xtd__macos_system_colors_button_text__();
 intptr_t __xtd__macos_system_colors_control__();
@@ -32,13 +34,17 @@ namespace {
 #endif
     return false;
   }
-
+  
   uint32_t to_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) {
     return (alpha << 24) + (red << 16) + (green << 8) + blue;
   }
 
+  uint32_t to_argb(uint8_t red, uint8_t green, uint8_t blue) {
+    return to_argb(255, red, green, blue);
+  }
+
   uint32_t to_argb(const wxColour color) {
-    return ::to_argb(color.Alpha(), color.Red(), color.Green(), color.Blue());
+    return to_argb(color.Alpha(), color.Red(), color.Green(), color.Blue());
   }
 }
 
@@ -58,18 +64,30 @@ intptr_t system_colors::accent() {
 #endif
 }
 
+intptr_t system_colors::accent_text() {
+#if defined(__APPLE__)
+  return __xtd__macos_system_colors_accent_text__();
+#else
+  return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHTTEXT));
+#endif
+}
+
 intptr_t system_colors::active_border() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 154);
+  if (::dark_mode()) return ::to_argb(85, 85, 55);
+#if defined(__APPLE__)
+  return __xtd__macos_system_colors_active_border__();
+#else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVEBORDER));
+#endif
 }
 
 intptr_t system_colors::active_caption() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 154);
+  if (::dark_mode()) return ::to_argb(154, 154, 154);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVECAPTION));
 }
 
 intptr_t system_colors::active_caption_text() {
-  if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
+  if (::dark_mode()) return ::to_argb(255, 255, 255);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_CAPTIONTEXT));
 }
 
