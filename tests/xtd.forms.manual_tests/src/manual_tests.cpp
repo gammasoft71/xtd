@@ -138,7 +138,7 @@ int main() {
   link_label1.text("Gammasoft present xtd_forms examples\nNext line...");
 
   button button1;
-  button1.enabled(false);
+  //button1.enabled(false);
   button1.text("Click me");
   button1.location({10, 50});
   button1.parent(form_main);
@@ -146,7 +146,7 @@ int main() {
   
   button button2;
   button2.flat_style(xtd::forms::flat_style::standard);
-  button2.enabled(false);
+  //button2.enabled(false);
   button2.text("Click me");
   button2.location({100, 50});
   button2.parent(form_main);
