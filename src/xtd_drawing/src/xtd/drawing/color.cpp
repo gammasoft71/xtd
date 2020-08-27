@@ -166,7 +166,7 @@ color color::from_argb(uint32_t argb) {
 }
 
 color color::from_argb(uint8_t alpha, const color& baseColor) {
-  return color((alpha << 24) + (baseColor.argb_ & 0x00FFFFFF));
+  return color((alpha << 24) + ((baseColor.handle_ ? native::system_colors::to_argb(baseColor.handle_) : baseColor.argb_) & 0x00FFFFFF));
 }
 
 color color::from_argb(uint8_t alpha, uint8_t red, uint8_t green, uint8_t blue) {
@@ -414,6 +414,7 @@ color color::from_known_color(known_color color) {
     case known_color::menu_bar: return drawing::color(color::from_handle(native::system_colors::menu_bar()), color);
     case known_color::menu_highlight: return drawing::color(color::from_handle(native::system_colors::menu_highlight()), color);
     case known_color::accent: return drawing::color(color::from_handle(native::system_colors::accent()), color);
+    case known_color::accent_text: return drawing::color(color::from_handle(native::system_colors::accent_text()), color);
     default: throw std::invalid_argument("unknown know_color");
   }
 }
