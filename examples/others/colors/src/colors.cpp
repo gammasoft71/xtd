@@ -14,6 +14,7 @@ namespace examples {
       }
 
       void on_paint(paint_event_args& e) override {
+        e.graphics().fill_rectangle(solid_brush(system_colors::control()), 0, 0, 100, e.clip_rectangle().height());
         e.graphics().fill_rectangle(solid_brush(color_), 0, 0, 100, e.clip_rectangle().height());
         e.graphics().draw_string(color_.name(), font(), solid_brush(fore_color()), 120, (e.clip_rectangle().height() - e.graphics().measure_string(color_.name(), font()).height()) / 2);
         user_control::on_paint(e);
@@ -38,7 +39,7 @@ namespace examples {
       fore_color(system_colors::window_text());
       auto_scroll(true);
 
-      for (drawing::known_color known_color = drawing::known_color::accent; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
+      for (drawing::known_color known_color = drawing::known_color::accent_text; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
         auto color = std::make_shared<color_panel>();
         color->dock(dock_style::top);
         color->color(drawing::color::from_known_color(known_color));
@@ -75,6 +76,7 @@ namespace examples {
       if (previous_selected_index_ != -1) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(back_color());
       if (selected_index_ != -1) {
         colors_[colors_.size() - 1 - selected_index_]->back_color(system_colors::accent());
+        colors_[colors_.size() - 1 - selected_index_]->fore_color(system_colors::accent_text());
         selected_color(colors_[colors_.size() - 1 - selected_index_]->color());
       }
       previous_selected_index_ = selected_index_;
