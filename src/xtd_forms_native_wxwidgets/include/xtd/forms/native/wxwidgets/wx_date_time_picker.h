@@ -1,5 +1,6 @@
 #pragma once
 #include <stdexcept>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/date_time_picker_styles.h>
 #include <wx/datectrl.h>
@@ -18,6 +19,12 @@ namespace xtd {
             this->control_handler::create<wxTimePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
           else
             this->control_handler::create<wxDatePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+#if defined(__WIN32__)
+          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+            control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::window().r(), xtd::drawing::system_colors::window().g(), xtd::drawing::system_colors::window().b(), xtd::drawing::system_colors::window().a()));
+            control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::window_text().r(), xtd::drawing::system_colors::window_text().g(), xtd::drawing::system_colors::window_text().b(), xtd::drawing::system_colors::window_text().a()));
+          }
+#endif
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {

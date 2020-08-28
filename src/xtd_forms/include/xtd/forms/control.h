@@ -219,7 +219,7 @@ namespace xtd {
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
       /// @remarks The back_color property does not support transparent colors unless the supports_transparent_back_color value of xtd::forms::control_styles is set to true.
       /// @remarks The back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same back_color as its parent form by default.
-      virtual drawing::color back_color() const {return back_color_.value_or(parent_ ? parent().value().get().back_color() : default_back_color());}
+      virtual drawing::color back_color() const;
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the default_back_color property.
       /// @return This control.
@@ -315,7 +315,7 @@ namespace xtd {
       /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
       virtual bool created() {return get_state(state::created);}
       
-      virtual forms::cursor cursor() const {return cursor_.value_or(parent_ ? parent().value().get().cursor() : default_cursor());}
+      virtual forms::cursor cursor() const;
       virtual control& cursor(const forms::cursor& cursor);
 
       /// @brief Gets the default background color of the control.
@@ -354,10 +354,10 @@ namespace xtd {
       virtual control& enabled(bool enabled);
 
       virtual bool focused() const {return focused_;}
-      virtual drawing::color fore_color() const {return fore_color_.value_or(parent_ ? parent().value().get().fore_color() : default_fore_color());}
+      virtual drawing::color fore_color() const;
       virtual control& fore_color(const drawing::color& color);
       
-      virtual drawing::font font() const {return font_.value_or(parent_ ? parent().value().get().font() : default_font());}
+      virtual drawing::font font() const;
       virtual control& font(const drawing::font& font);
       
       intptr_t handle() const override;

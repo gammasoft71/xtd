@@ -1,5 +1,6 @@
 #pragma once
 #include <stdexcept>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/list_box_styles.h>
 #include <wx/checklst.h>
@@ -15,6 +16,12 @@ namespace xtd {
           this->control_handler::create<wxCheckListBox>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(0, 0), 0, nullptr, style_to_wx_style(create_params.style(), create_params.ex_style()));
           // Workaround : with wxWidgets version <= 3.1.4 checked item alignment error on macos...
           static_cast<wxCheckListBox*>(control())->SetSize(create_params.width(), create_params.height());
+#if defined(__WIN32__)
+          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+            control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::window().r(), xtd::drawing::system_colors::window().g(), xtd::drawing::system_colors::window().b(), xtd::drawing::system_colors::window().a()));
+            control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::window_text().r(), xtd::drawing::system_colors::window_text().g(), xtd::drawing::system_colors::window_text().b(), xtd::drawing::system_colors::window_text().a()));
+          }
+#endif
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
