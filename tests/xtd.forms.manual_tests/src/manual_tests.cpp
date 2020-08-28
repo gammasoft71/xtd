@@ -152,6 +152,10 @@ int main() {
   button2.parent(form_main);
   //button2.fore_color(xtd::drawing::system_colors::accent());
 
+  list_box list_box1;
+  list_box1.location({ 10, 90 });
+  list_box1.parent(form_main);
+
   //form_main.back_color(drawing::color::red);
   
   cdebug << format("color = {:X}", xtd::drawing::system_colors::button_face().to_argb()) << endl;

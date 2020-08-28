@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/native/virtual_keys.h>
 #include <wx/app.h>
 #include <wx/string.h>

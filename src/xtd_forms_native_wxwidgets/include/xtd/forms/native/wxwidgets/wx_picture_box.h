@@ -1,5 +1,6 @@
 #pragma once
 #include <stdexcept>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/static_styles.h>
 #include <wx/statbmp.h>
@@ -27,6 +28,12 @@ namespace xtd {
               static_cast<wxGenericStaticBitmap*>(this->control())->SetScaleMode(wxGenericStaticBitmap::Scale_None);
             }
           }
+#if defined(__WIN32__)
+          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+            control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
+            control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
+          }
+#endif
           this->control()->SetSize(create_params.width(), create_params.height());
         }
         

@@ -1,5 +1,6 @@
 #pragma once
 #include <stdexcept>
+#include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/button_styles.h>
 #include <wx/panel.h>
@@ -21,6 +22,12 @@ namespace xtd {
             this->control_handler::create<wxToggleButton>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
           else
             this->control_handler::create<wxRadioButton>(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()),wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+#if defined(__WIN32__)
+          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+            control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
+            control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
+          }
+#endif
           this->hiden_radio_button = new wxRadioButton(reinterpret_cast<control_handler*>(create_params.parent())->container(), wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), 0);
           this->hiden_radio_button->Show(false);
         }
