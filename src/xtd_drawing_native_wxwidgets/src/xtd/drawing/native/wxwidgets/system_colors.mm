@@ -52,4 +52,12 @@ intptr_t __xtd__macos_system_colors_control_text__() {
   return to_argb(NSColor.controlTextColor);
 }
 
+intptr_t __xtd__macos_system_colors_text_box__() {
+  return to_argb(NSColor.controlBackgroundColor);
+}
+
+intptr_t __xtd__macos_system_colors_text_box_text__() {
+  return to_argb(NSColor.textColor);
+}
+
 #endif

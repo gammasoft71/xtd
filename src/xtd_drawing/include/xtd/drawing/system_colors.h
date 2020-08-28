@@ -114,6 +114,12 @@ namespace xtd {
 
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
       static xtd::drawing::color accent_text();
+      
+      /// @brief Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.
+      static xtd::drawing::color text_box();
+      
+      /// @brief Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.
+      static xtd::drawing::color text_box_text();
     };
   }
 }
