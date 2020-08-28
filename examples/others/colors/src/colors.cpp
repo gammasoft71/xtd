@@ -39,7 +39,7 @@ namespace examples {
       fore_color(system_colors::window_text());
       auto_scroll(true);
 
-      for (drawing::known_color known_color = drawing::known_color::accent_text; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
+      for (drawing::known_color known_color = drawing::known_color::text_box_text; known_color >= drawing::known_color::active_border; known_color = drawing::known_color(int(known_color) - 1)) {
         auto color = std::make_shared<color_panel>();
         color->dock(dock_style::top);
         color->color(drawing::color::from_known_color(known_color));
