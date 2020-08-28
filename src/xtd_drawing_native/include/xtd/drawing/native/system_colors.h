@@ -45,6 +45,8 @@ namespace xtd {
         static intptr_t window();
         static intptr_t window_frame();
         static intptr_t window_text();
+        static intptr_t text_box();
+        static intptr_t text_box_text();
       };
     }
   }

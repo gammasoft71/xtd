@@ -141,3 +141,11 @@ color xtd::drawing::system_colors::accent() {
 color xtd::drawing::system_colors::accent_text() {
   return color::from_known_color(xtd::drawing::known_color::accent_text);
 }
+
+color xtd::drawing::system_colors::text_box() {
+  return color::from_known_color(xtd::drawing::known_color::text_box);
+}
+
+color xtd::drawing::system_colors::text_box_text() {
+  return color::from_known_color(xtd::drawing::known_color::text_box_text);
+}

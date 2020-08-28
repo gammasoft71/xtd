@@ -415,6 +415,8 @@ color color::from_known_color(known_color color) {
     case known_color::menu_highlight: return drawing::color(color::from_handle(native::system_colors::menu_highlight()), color);
     case known_color::accent: return drawing::color(color::from_handle(native::system_colors::accent()), color);
     case known_color::accent_text: return drawing::color(color::from_handle(native::system_colors::accent_text()), color);
+    case known_color::text_box: return drawing::color(color::from_handle(native::system_colors::text_box()), color);
+    case known_color::text_box_text: return drawing::color(color::from_handle(native::system_colors::text_box_text()), color);
     default: throw std::invalid_argument("unknown know_color");
   }
 }
