@@ -81,7 +81,7 @@ main_form::main_form() {
   startup_open_project_button_.text("Open a project or solution");
   startup_open_project_button_.location({startup_panel_.size().width() - 400, 175});
   startup_open_project_button_.size({350, 100});
-  startup_open_project_button_.font({startup_open_project_button_.font(), 16.0});
+  startup_open_project_button_.font({startup_open_project_button_.font(), 14.0});
   startup_open_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   startup_open_project_button_.click += [&] {
     folder_browser_dialog dialog;
@@ -99,7 +99,7 @@ main_form::main_form() {
   startup_run_project_button_.text("Run a project");
   startup_run_project_button_.location({startup_panel_.size().width() - 400, 285});
   startup_run_project_button_.size({350, 100});
-  startup_run_project_button_.font({startup_run_project_button_.font(), 16.0});
+  startup_run_project_button_.font({startup_run_project_button_.font(), 14.0});
   startup_run_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   startup_run_project_button_.click += [&] {
     folder_browser_dialog dialog;
@@ -117,7 +117,7 @@ main_form::main_form() {
   startup_new_project_button_.text("Create a new project");
   startup_new_project_button_.location({startup_panel_.size().width() - 400, 395});
   startup_new_project_button_.size({350, 100});
-  startup_new_project_button_.font({startup_new_project_button_.font(), 16.0});
+  startup_new_project_button_.font({startup_new_project_button_.font(), 14.0});
   startup_new_project_button_.anchor(anchor_styles::top|anchor_styles::right);
   startup_new_project_button_.click += [&] {
     startup_panel_.visible(false);
@@ -134,7 +134,7 @@ main_form::main_form() {
   startup_open_xtd_examples_button_.text("Open xtd examples");
   startup_open_xtd_examples_button_.location({startup_panel_.size().width() - 400, 505});
   startup_open_xtd_examples_button_.size({350, 100});
-  startup_open_xtd_examples_button_.font({startup_new_project_button_.font(), 16.0});
+  startup_open_xtd_examples_button_.font({startup_new_project_button_.font(), 14.0});
   startup_open_xtd_examples_button_.anchor(anchor_styles::top|anchor_styles::right);
   startup_open_xtd_examples_button_.click += [&] {
     startup_panel_.visible(false);
