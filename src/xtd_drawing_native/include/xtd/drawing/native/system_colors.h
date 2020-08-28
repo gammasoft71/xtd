@@ -9,7 +9,6 @@ namespace xtd {
     namespace native {
       class system_colors static_ {
       public:
-        static bool force_set_system_color();
         static uint32_t to_argb(intptr_t color);
         static intptr_t accent();
         static intptr_t accent_text();

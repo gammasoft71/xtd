@@ -48,10 +48,6 @@ namespace {
   }
 }
 
-bool system_colors::force_set_system_color() {
-  return ::dark_mode();
-}
-
 uint32_t system_colors::to_argb(intptr_t color) {
   return static_cast<uint32_t>(color);
 }
@@ -242,6 +238,7 @@ intptr_t system_colors::scroll_bar() {
 
 intptr_t system_colors::window() {
   if (::dark_mode()) return ::to_argb(255, 58, 58, 63);
+  //if (::dark_mode()) return ::to_argb(255, 0, 0, 0);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 }
 
