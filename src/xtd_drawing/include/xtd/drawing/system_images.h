@@ -10,7 +10,7 @@ namespace xtd {
   namespace drawing {
     /// @brief Each property of the system_images class is an image object for Windows system-wide images. This class cannot be inherited.
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
-    class system_images : public theme {
+    class system_images : public theme_image {
     public:
       static xtd::drawing::size default_size() {return {32, 32};}
       static xtd::drawing::image image_loading() {return image_loading(default_size());}
