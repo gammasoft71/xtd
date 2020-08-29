@@ -5,18 +5,14 @@
 using namespace std;
 using namespace xtd::drawing;
 
-string theme::application_theme() {
-  return default_theme();
-}
-
-string theme::default_theme() {
+string theme_image::default_theme() {
   return native::theme::default_theme();
 }
 
-string theme::fallback_theme() {
+string theme_image::fallback_theme() {
   return "symbolic";
 }
 
-vector<string> theme::themes() {
+vector<string> theme_image::themes() {
   return {"kde", "gnome", "macos", "symbolic", "windows", "xtd"};
 }
