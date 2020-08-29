@@ -238,6 +238,23 @@ intptr_t system_colors::scroll_bar() {
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_SCROLLBAR));
 }
 
+intptr_t system_colors::text_box() {
+#if defined(__APPLE__)
+  return __xtd__macos_system_colors_text_box__();
+#else
+  return window();
+#endif
+}
+
+intptr_t system_colors::text_box_text() {
+#if defined(__APPLE__)
+  
+  return __xtd__macos_system_colors_text_box_text__();
+#else
+  return window_text();
+#endif
+}
+
 intptr_t system_colors::window() {
   if (::dark_mode()) return ::to_argb(255, 58, 58, 63);
   //if (::dark_mode()) return ::to_argb(255, 0, 0, 0);
@@ -252,26 +269,4 @@ intptr_t system_colors::window_frame() {
 intptr_t system_colors::window_text() {
   if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT));
-}
-
-intptr_t system_colors::text_box() {
-#if defined(__APPLE__)
-  uint32_t argb = window();
-  if (argb != 0xFFFFFFFF) {
-    argb &= 0x00FFFFFF;
-    argb |= 0x01000000;
-  }
-  return argb;
-#else
-  return window();
-#endif
-}
-
-intptr_t system_colors::text_box_text() {
-#if defined(__APPLE__)
-  
-  return __xtd__macos_system_colors_text_box_text__();
-#else
-  return window_text();
-#endif
 }
