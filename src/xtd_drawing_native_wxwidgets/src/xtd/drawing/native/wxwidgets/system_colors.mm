@@ -53,7 +53,12 @@ intptr_t __xtd__macos_system_colors_control_text__() {
 }
 
 intptr_t __xtd__macos_system_colors_text_box__() {
-  return to_argb(NSColor.controlBackgroundColor);
+  uint32_t argb = __xtd__macos_system_colors_button_face__();
+  if (argb != 0xFFFFFFFF) {
+    argb &= 0x00FFFFFF;
+    argb |= 0x10000000;
+  }
+  return argb;
 }
 
 intptr_t __xtd__macos_system_colors_text_box_text__() {
