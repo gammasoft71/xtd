@@ -95,7 +95,8 @@ void button_renderrer::draw_button_macos(graphics g, const rectangle& bounds, co
   auto text_color = xtd::forms::theme_color::current_theme_color().window().get_lightness() < 0.5 ? color::lighter(foreground_color, 0.90) : foreground_color;
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed) {
-    border_color = button_color = xtd::forms::theme_color::current_theme_color().accent();
+    if (bounds.height() <= 25) border_color = button_color = xtd::forms::theme_color::current_theme_color().accent();
+    else border_color = button_color = xtd::forms::theme_color::current_theme_color().window().get_lightness() < 0.5 ? color::from_argb(124, 124, 124) : color::from_argb(240, 240, 240);
     if (xtd::forms::theme_color::current_theme_color().window().get_lightness() >= 0.5) text_color = xtd::forms::theme_color::current_theme_color().accent_text();
   } else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
     button_color = xtd::forms::theme_color::current_theme_color().window().get_lightness() < 0.5 ? color::from_argb(30, xtd::forms::theme_color::current_theme_color().button_face()) : color::darker(xtd::forms::theme_color::current_theme_color().button_face(), 0.96);
