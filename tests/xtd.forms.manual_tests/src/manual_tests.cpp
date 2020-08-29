@@ -86,7 +86,73 @@ namespace xtd {
   }
 }
 
+namespace xtd {
+  namespace forms {
+      
+    class theme_image : public theme {
+    public:
+      using theme_image_collection = std::vector<theme_image>;
+
+      static std::vector<std::string> contexts();
+      static std::map<std::string, std::vector<std::string>> context_names();
+      static std::vector<std::string> names();
+      static std::vector<std::string> names(const std::string& context) {return context_names()[context];}
+      static std::vector<xtd::drawing::size> sizes();
+      static theme_image_collection themes();
+    };
+  }
+}
+
 int main() {
+  theme_color::current_theme_color(theme_color("frozen", xtd::forms::theme_style::light, {[](xtd::forms::known_themed_color color)->xtd::drawing::color {
+    switch (color) {
+      case known_themed_color::accent: return color::white;
+      case known_themed_color::accent_text: return color::dark_gray;
+      case known_themed_color::active_border: return color::dark_gray;
+      case known_themed_color::active_caption: return color::alice_blue;
+      case known_themed_color::active_caption_text: return color::dark_gray;
+      case known_themed_color::app_workspace: return color::alice_blue;
+      case known_themed_color::button_face: return color::white;
+      case known_themed_color::button_highlight: return color::white;
+      case known_themed_color::button_shadow: return color::light_gray;
+      case known_themed_color::control: return color::alice_blue;
+      case known_themed_color::control_dark: return color::dark_gray;
+      case known_themed_color::control_dark_dark: return color::dark_gray;
+      case known_themed_color::control_light: return color::white;
+      case known_themed_color::control_light_light: return color::white;
+      case known_themed_color::control_text: return color::dark_gray;
+      case known_themed_color::desktop: return color::alice_blue;
+      case known_themed_color::gradient_active_caption: return color::alice_blue;
+      case known_themed_color::gradient_inactive_caption: return color::alice_blue;
+      case known_themed_color::gray_text: return color::gray;
+      case known_themed_color::highlight: return system_colors::highlight();
+      case known_themed_color::highlight_text: return system_colors::highlight_text();
+      case known_themed_color::hot_track: return system_colors::hot_track();
+      case known_themed_color::inactive_border: return color::dark_gray;
+      case known_themed_color::inactive_caption: return color::alice_blue;
+      case known_themed_color::inactive_caption_text: return color::dark_gray;
+      case known_themed_color::info: return system_colors::info();
+      case known_themed_color::info_text: return system_colors::info_text();
+      case known_themed_color::menu: return color::alice_blue;;
+      case known_themed_color::menu_text: return color::dark_gray;
+      case known_themed_color::menu_bar: return color::alice_blue;;
+      case known_themed_color::menu_highlight: return system_colors::menu_highlight();
+      case known_themed_color::scroll_bar: return color::alice_blue;
+      case known_themed_color::text_box: return color::white;
+      case known_themed_color::text_box_text: return color::dark_gray;
+      case known_themed_color::window: return color::white;
+      case known_themed_color::window_frame: return color::dark_gray;
+      case known_themed_color::window_text: return color::dark_gray;
+      default: throw std::invalid_argument("unknown know_color");
+    }
+  }}));
+  
+  
+  for (known_themed_color color = known_themed_color::accent; color < known_themed_color::window_text; color = (known_themed_color)((int)color + 1)) {
+    cdebug << format("{} = {}", color, theme_color::current_theme_color().from_known_themed_color(color)) << endl;
+  }
+  cdebug << format("current theme color \"{}\" {} default", theme_color::current_theme_color().name(), theme_color::current_theme_color().is_default() ? "is" : "is not") << endl;
+
   /*
   main_menu menu;
   menu.menu_items().push_back("&File");
@@ -145,16 +211,18 @@ int main() {
   //button1.fore_color(xtd::drawing::system_colors::accent());
   
   button button2;
-  button2.flat_style(xtd::forms::flat_style::standard);
+  //button2.flat_style(xtd::forms::flat_style::system);
   //button2.enabled(false);
   button2.text("Click me");
   button2.location({100, 50});
   button2.parent(form_main);
   //button2.fore_color(xtd::drawing::system_colors::accent());
 
-  list_box list_box1;
-  list_box1.location({ 10, 90 });
-  list_box1.parent(form_main);
+  text_box text_box1;
+  text_box1.location({ 10, 90 });
+  text_box1.size({ 200, 100 });
+  text_box1.parent(form_main);
+  text_box1.text("One,\nTwo,\nThree,\nFour");
 
   //form_main.back_color(drawing::color::red);
 
