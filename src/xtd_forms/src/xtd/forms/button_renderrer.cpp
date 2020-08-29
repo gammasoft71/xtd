@@ -22,8 +22,35 @@ namespace {
     if ((flags & text_format_flags::top) == text_format_flags::top) string_format.line_alignment(string_alignment::near);
     if ((flags & text_format_flags::vertical_center) == text_format_flags::vertical_center) string_format.line_alignment(string_alignment::center);
     if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(string_alignment::far);
+    
+    if ((flags & text_format_flags::no_prefix) == text_format_flags::no_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::none);
+    else if ((flags & text_format_flags::hide_prefix) == text_format_flags::hide_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);
+    else string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::show);
 
     return string_format;
+  }
+
+  std::string get_hotkey_prefix_locations(const std::string& str, std::vector<size_t>& locations) {
+    size_t offset = 0;
+    for (auto index = 0; index < str.size(); index++) {
+      if (str[index] == '&' && str[index+1] != '&') {
+        locations.push_back(index + offset);
+      } else if (str[index] == '&' && str[index+1] == '&') {
+        offset-=2;
+        ++index;
+      }
+    }
+    auto new_str = xtd::strings::replace(str, "&&", "&");
+    for (int index = 0; index < locations.size(); ++index)
+      new_str = xtd::strings::remove(new_str, locations[index], 1);
+    return new_str;
+  }
+
+  void draw_string(graphics g, const string& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
+    vector<size_t> hotkey_prefix_locations;
+    string text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
+    if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
+    else g.draw_string(text, font, solid_brush(text_color), button_rect, to_string_format(flags));
   }
 }
 
@@ -68,7 +95,7 @@ void button_renderrer::draw_button_macos(graphics g, const rectangle& bounds, co
   g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3.);
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
   if (image != image::empty) g.draw_image(image, image_bounds.location());
-  g.draw_string(text, font, solid_brush(text_color), button_rect, to_string_format(flags));
+  draw_string(g, text, font, text_color, button_rect, flags);
 }
 
 void button_renderrer::draw_button_symbolic(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -91,6 +118,7 @@ void button_renderrer::draw_button_symbolic(graphics g, const rectangle& bounds,
   g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);
   if (image != image::empty) g.draw_image(image, image_bounds.location());
   g.draw_string(text, font, solid_brush(text_color), rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), to_string_format(flags));
+  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
 }
 
 void button_renderrer::draw_button_windows(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -122,7 +150,7 @@ void button_renderrer::draw_button_windows(graphics g, const rectangle& bounds, 
   g.draw_rectangle(pen(border_color, 1), bounds.x() + 2, bounds.y() + 2, bounds.width() - 4, bounds.height() - 4);
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
   if (image != image::empty) g.draw_image(image, image_bounds.location());
-  g.draw_string(text, font, solid_brush(text_color), rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), to_string_format(flags));
+  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
 }
 
 void button_renderrer::draw_button_xtd(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
