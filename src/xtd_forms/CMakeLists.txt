@@ -95,6 +95,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/key_press_event_args.h
   include/xtd/forms/key_press_event_handler.h
   include/xtd/forms/keys.h
+  include/xtd/forms/known_themed_color.h
   include/xtd/forms/label.h
   include/xtd/forms/lcd_label.h
   include/xtd/forms/lcd_style.h
@@ -156,6 +157,9 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/text_box.h
   include/xtd/forms/text_format_flags.h
   include/xtd/forms/texts.h
+  include/xtd/forms/theme.h
+  include/xtd/forms/theme_color.h
+  include/xtd/forms/theme_style.h
   include/xtd/forms/tick_style.h
   include/xtd/forms/timer.h
   include/xtd/forms/tool_bar_images.h
@@ -238,6 +242,8 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/tab_page.cpp
   src/xtd/forms/text_box.cpp
   src/xtd/forms/texts.cpp
+  src/xtd/forms/theme.cpp
+  src/xtd/forms/theme_color.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp

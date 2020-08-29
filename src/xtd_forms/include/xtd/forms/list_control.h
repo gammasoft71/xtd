@@ -75,9 +75,9 @@ namespace xtd {
       /// @return true if the list enables list item selection; otherwise, false. The default is true.
       virtual bool allow_selection() {return true;}
       
-      virtual drawing::color default_back_color() const override {return drawing::system_colors::window();}
+      virtual drawing::color default_back_color() const override {return xtd::forms::theme_color::current_theme_color().window();}
       
-      virtual drawing::color default_fore_color() const override {return drawing::system_colors::window_text();}
+      virtual drawing::color default_fore_color() const override {return xtd::forms::theme_color::current_theme_color().window_text();}
       
       virtual void on_selected_index_changed(const event_args& e) {this->selected_index_changed(*this, e);}
 
