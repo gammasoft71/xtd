@@ -560,10 +560,8 @@ void control::on_paint(paint_event_args &e) {
 
 void control::on_parent_back_color_changed(const event_args &e) {
   if (!back_color_.has_value()) {
-    if (back_color() == default_back_color())
-      recreate_handle();
-    else if (!environment::os_version().is_macos_platform())
-      native::control::back_color(handle_, back_color());
+    if (back_color() == default_back_color()) recreate_handle();
+    else native::control::back_color(handle_, back_color());
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
