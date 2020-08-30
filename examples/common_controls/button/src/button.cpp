@@ -10,7 +10,6 @@ namespace examples {
       text("Button example");
 
       button1.parent(*this);
-      button1.flat_style(xtd::forms::flat_style::system);
       button1.text("Button 1");
       button1.location({50, 50});
       button1.click += [&] {
@@ -18,7 +17,6 @@ namespace examples {
       };
       
       button2.parent(*this);
-      button2.flat_style(xtd::forms::flat_style::system);
       button2.text("Button 2");
       button2.location({50, 100});
       button2.auto_repeat(true);
