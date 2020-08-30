@@ -94,8 +94,7 @@ namespace xtd {
 
       /// @cond
       bool auto_ellipsis_ = false;
-      /// @todo set flat_style_ to xtd::forms::flat_style::standard for all platforms.
-      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::system;
+      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
       drawing::image image_ = drawing::image::empty;
       forms::image_list image_list_;
       int32_t image_index_ = -1;
