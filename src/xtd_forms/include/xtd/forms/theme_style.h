@@ -9,6 +9,7 @@ namespace xtd {
     /// @remarks Use the members of this enumeration to set the value of the theme_style property of the theme classl.
     enum theme_style {
       system_auto = 0,
+      undefined = 0,
       light,
       dark,
     };
