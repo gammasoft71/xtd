@@ -46,7 +46,7 @@ namespace xtd {
       
     private:
       std::string name_;
-      xtd::forms::theme_style theme_style_;
+      xtd::forms::theme_style theme_style_ = xtd::forms::theme_style::undefined;
       bool is_default_ = false;
     };
   }

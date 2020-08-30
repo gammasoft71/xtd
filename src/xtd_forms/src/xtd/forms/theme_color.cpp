@@ -452,8 +452,8 @@ theme_color theme_color::default_theme_color() {
   return theme_color(system_theme_name(), theme_style::system_auto, {system_kown_themed_color_to_color}, true);
 }
 
-xtd::drawing::color theme_color::from_known_themed_color(xtd::forms::known_themed_color known_themed_color) {
-  return current_theme_color().kown_themed_color_to_color_(known_themed_color);
+xtd::drawing::color theme_color::from_known_themed_color(xtd::forms::known_themed_color known_themed_color) const {
+  return kown_themed_color_to_color_(known_themed_color);
 }
 
 const theme_color::theme_color_collection& theme_color::theme_colors() {

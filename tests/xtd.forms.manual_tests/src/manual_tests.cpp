@@ -149,11 +149,6 @@ int main() {
   }}));
   */
   
-  for (known_themed_color color = known_themed_color::accent; color < known_themed_color::window_text; color = (known_themed_color)((int)color + 1)) {
-    cdebug << format("{} = {} (0x{:X})", color, theme_color::current_theme_color().from_known_themed_color(color), theme_color::current_theme_color().from_known_themed_color(color).to_argb()) << endl;
-  }
-  cdebug << format("current theme color \"{}\" {} default", theme_color::current_theme_color().name(), theme_color::current_theme_color().is_default() ? "is" : "is not") << endl;
-
   /*
   main_menu menu;
   menu.menu_items().push_back("&File");
