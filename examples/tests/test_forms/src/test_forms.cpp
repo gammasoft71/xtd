@@ -1,6 +1,7 @@
 #include <xtd/xtd.forms>
 
 int main() {
+  /*
   xtd::forms::theme_color::current_theme_color(xtd::forms::theme_color("frozen", xtd::forms::theme_style::light, {[](xtd::forms::known_themed_color color)->xtd::drawing::color {
     switch (color) {
       case xtd::forms::known_themed_color::accent: return xtd::drawing::color::white;
@@ -43,6 +44,8 @@ int main() {
       default: throw std::invalid_argument("unknown know_color");
     }
   }}));
+    */
+  xtd::forms::theme_color::current_theme_color("kde");
 
   auto main_form = xtd::forms::control::create<xtd::forms::form>("Test Gui", xtd::drawing::point(-1, -1), xtd::drawing::size(400, 300));
   auto label = xtd::forms::control::create<xtd::forms::label>(*main_form, "This example showhow to use theme_color.\nSet current theme color to \"Frozen\" theme color.", xtd::drawing::point(10, 10));

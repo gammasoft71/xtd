@@ -602,8 +602,6 @@ void main_form::run_project(const std::string& project_path) {
 }
 
 void main_form::main() {
-  application::enable_button_images();
-  //application::enable_dark_mode();
   application::enable_visual_styles();
   application::run(main_form());
 }

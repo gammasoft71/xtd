@@ -17,7 +17,6 @@ namespace tutorial {
     }
 
     static void main() {
-      xtd::forms::application::enable_button_images();
       xtd::forms::application::run(form_button());
     }
     

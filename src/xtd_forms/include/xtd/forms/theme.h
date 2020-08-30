@@ -14,8 +14,9 @@ namespace xtd {
       /// @cond
       theme(const theme&) = default;
       theme& operator=(const theme&) = default;
-      bool operator==(const theme& value) {return name_ == value.name_ && theme_style_ == value.theme_style_ && is_default_ == value.is_default();}
-      bool operator!=(const theme& value) {return !operator==(value);}
+      bool operator==(const theme& value) const {return name_ == value.name_ && theme_style_ == value.theme_style_ && is_default_ == value.is_default();}
+      bool operator!=(const theme& value) const {return !operator==(value);}
+      bool operator<(const theme& value) const {return name_ < value.name_;}
       virtual ~theme() = default;
       /// @endcond
       
