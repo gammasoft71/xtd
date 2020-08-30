@@ -8,12 +8,6 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace {
-  string system_theme_name() {
-    auto desktop_environment = environment::os_version().desktop_environment();
-    if (desktop_environment == "") return "symbolic";
-    return desktop_environment;
-  }
-
   color system_kown_themed_color_to_color(known_themed_color color) {
     switch (color) {
       case known_themed_color::accent: return system_colors::accent();
@@ -63,7 +57,7 @@ namespace {
   //
   // int main() {
   //   for (xtd::forms::known_themed_color color = xtd::forms::known_themed_color::accent; color <= xtd::forms::known_themed_color::window_text; color = (xtd::forms::known_themed_color)((int)color + 1))
-  //     xtd::cdebug << xtd::format("      case xtd::forms::known_themed_color::{}: return xtd::drawing::color::from_argb(0x{:X8});", color, xtd::forms::theme_color::current_theme_color().from_known_themed_color(color).to_argb()) << std::endl;
+  //     xtd::cdebug << xtd::format("      case xtd::forms::known_themed_color::{}: return xtd::drawing::color::from_argb(0x{:X8});", color, xtd::forms::theme_color::current_theme().from_known_themed_color(color).to_argb()) << std::endl;
   // }
 
   color gnome_dark_kown_themed_color_to_color(known_themed_color color) {
@@ -428,55 +422,21 @@ namespace {
 }
 
 const theme_color theme_color::empty {};
-theme_color theme_color::current_theme_color_;
-theme_color::theme_color_collection theme_color::theme_colors_;
+theme_color theme_color::current_theme_;
 
-theme_color theme_color::current_theme_color() {
-  if (current_theme_color_ == theme_color::empty) current_theme_color_ = theme_color(system_theme_name(), theme_style::system_auto, {system_kown_themed_color_to_color}, true);
-  return current_theme_color_;
-}
-
-void theme_color::current_theme_color(const theme_color& theme_color) {
-  theme_color::current_theme_color_ = theme_color;
-}
-
-theme_color theme_color::default_theme_color() {
-  return theme_color(system_theme_name(), theme_style::system_auto, {system_kown_themed_color_to_color}, true);
-}
-
-xtd::drawing::color theme_color::from_known_themed_color(xtd::forms::known_themed_color known_themed_color) const {
-  return kown_themed_color_to_color_(known_themed_color);
-}
-
-const theme_color::theme_color_collection& theme_color::theme_colors() {
-  if (theme_colors_.size() == 0) {
-    theme_colors_.push_back(default_theme_color());
-    if (system_theme_name() != "gnome") theme_colors_.push_back(theme_color("gnome", theme_style::system_auto, {gnome_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("gnome (dark)", theme_style::dark, {gnome_dark_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("gnome (light)", theme_style::light, {gnome_light_kown_themed_color_to_color}));
-    if (system_theme_name() != "kde") theme_colors_.push_back(theme_color("kde", theme_style::system_auto, {kde_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("kde (dark)", theme_style::dark, {kde_dark_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("kde (light)", theme_style::light, {kde_light_kown_themed_color_to_color}));
-    if (system_theme_name() != "macos") theme_colors_.push_back(theme_color("macos", theme_style::system_auto, {macos_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("macos (dark)", theme_style::dark, {macos_dark_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("macos (light)", theme_style::light, {macos_light_kown_themed_color_to_color}));
-    if (system_theme_name() != "windows") theme_colors_.push_back(theme_color("windows", theme_style::system_auto, {windows_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("windows (dark)", theme_style::dark, {windows_dark_kown_themed_color_to_color}));
-    theme_colors_.push_back(theme_color("windows (light)", theme_style::light, {windows_light_kown_themed_color_to_color}));
-    std::sort(theme_colors_.begin(), theme_colors_.end());
-  }
-  return theme_colors_;
-}
-
-theme_color theme_color::theme_color_from_name(const std::string& theme_color_name) {
-  for (const auto& theme_color : theme_colors())
-    if (theme_color.name() == theme_color_name)return theme_color;
-  return default_theme_color();
-}
-
-theme_color::theme_color_name_collection theme_color::theme_color_names() {
-  theme_color_name_collection theme_color_names;
-  for (const auto& theme_color : theme_colors())
-    theme_color_names.push_back(theme_color.name());
-  return theme_color_names;
+theme_color theme_color::theme_from_name(const std::string& name) {
+  if (name == default_theme_name()) return theme_color(default_theme_name(), theme_style::system_auto, {system_kown_themed_color_to_color});
+  if (name == "gnome") return theme_color("gnome", theme_style::system_auto, {gnome_kown_themed_color_to_color});
+  if (name == "gnome (dark)") return theme_color("gnome (dark)", theme_style::dark, {gnome_dark_kown_themed_color_to_color});
+  if (name == "gnome (light)") return theme_color("gnome (light)", theme_style::light, {gnome_light_kown_themed_color_to_color});
+  if (name == "kde") return theme_color("kde", theme_style::system_auto, {kde_kown_themed_color_to_color});
+  if (name == "kde (dark)") return theme_color("kde (dark)", theme_style::dark, {kde_dark_kown_themed_color_to_color});
+  if (name == "kde (light)") return theme_color("kde (light)", theme_style::light, {kde_light_kown_themed_color_to_color});
+  if (name == "macos") return theme_color("macos", theme_style::system_auto, {macos_kown_themed_color_to_color});
+  if (name == "macos (dark)") return theme_color("macos (dark)", theme_style::dark, {macos_dark_kown_themed_color_to_color});
+  if (name == "macos (light)") return theme_color("macos (light)", theme_style::light, {macos_light_kown_themed_color_to_color});
+  if (name == "windows") return theme_color("windows", theme_style::system_auto, {windows_kown_themed_color_to_color});
+  if (name == "windows (dark)") return theme_color("windows (dark)", theme_style::dark, {windows_dark_kown_themed_color_to_color});
+  if (name == "windows (light)") return theme_color("windows (light)", theme_style::light, {windows_light_kown_themed_color_to_color});
+  return default_theme();
 }

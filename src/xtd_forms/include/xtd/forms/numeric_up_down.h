@@ -44,9 +44,9 @@ namespace xtd {
       event<numeric_up_down, event_handler<control&>> value_changed;
       
     protected:
-      drawing::color default_back_color() const override {return xtd::forms::theme_color::current_theme_color().window();}
+      drawing::color default_back_color() const override {return xtd::forms::theme_color::current_theme().window();}
       
-      drawing::color default_fore_color() const override {return xtd::forms::theme_color::current_theme_color().window_text();}
+      drawing::color default_fore_color() const override {return xtd::forms::theme_color::current_theme().window_text();}
       
       drawing::size default_size() const override {return {120, 21};}
 

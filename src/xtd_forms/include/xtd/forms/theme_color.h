@@ -1,5 +1,5 @@
 #pragma once
-#include "theme.h"
+#include "theme_base.h"
 #include "known_themed_color.h"
 #include <string>
 #include <vector>
@@ -9,21 +9,18 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class theme_color final : public theme {
+    class theme_color final : public theme_base {
     public:
       using kown_themed_color_to_color = delegate<xtd::drawing::color(xtd::forms::known_themed_color)>;
-      using theme_color_collection = std::vector<theme_color>;
-      using theme_color_name_collection = std::vector<std::string>;
 
       theme_color() = default;
-      theme_color(const std::string& name, const kown_themed_color_to_color& kown_themed_color_to_color) : theme(name), kown_themed_color_to_color_(kown_themed_color_to_color) {}
-      theme_color(const std::string& name, xtd::forms::theme_style theme_style, const kown_themed_color_to_color& kown_themed_color_to_color) : theme(name, theme_style), kown_themed_color_to_color_(kown_themed_color_to_color) {}
+      theme_color(const std::string& name, const kown_themed_color_to_color& kown_themed_color_to_color) : theme_base(name), kown_themed_color_to_color_(kown_themed_color_to_color) {}
+      theme_color(const std::string& name, xtd::forms::theme_style theme_style, const kown_themed_color_to_color& kown_themed_color_to_color) : theme_base(name, theme_style), kown_themed_color_to_color_(kown_themed_color_to_color) {}
       /// @cond
       theme_color(const theme_color&) = default;
       theme_color& operator=(const theme_color&) = default;
-      bool operator==(const theme_color& value) const {return theme::operator==(value);}
+      bool operator==(const theme_color& value) const {return theme_base::operator==(value);}
       bool operator!=(const theme_color& value) const {return !operator==(value);}
-      bool operator<(const theme_color& value) const {return theme::operator<(value);}
       /// @endcond
 
       static const theme_color empty;
@@ -66,24 +63,23 @@ namespace xtd {
       xtd::drawing::color window_frame() const {return from_known_themed_color(xtd::forms::known_themed_color::window_frame);}
       xtd::drawing::color window_text() const {return from_known_themed_color(xtd::forms::known_themed_color::window_text);}
 
-      xtd::drawing::color from_known_themed_color(xtd::forms::known_themed_color known_themed_color) const;
+      xtd::drawing::color from_known_themed_color(xtd::forms::known_themed_color known_themed_color) const {return kown_themed_color_to_color_(known_themed_color);}
 
-      static theme_color current_theme_color();
-      static void current_theme_color(const theme_color& theme_color);
-      static void current_theme_color(const std::string& theme_color_name) {return current_theme_color(theme_color_from_name(theme_color_name));}
+      static theme_color current_theme() {
+        if (current_theme_ == theme_color::empty) current_theme_ = default_theme();
+        return current_theme_;
+      }
+      static void current_theme(const theme_color& theme_color) {current_theme_ = theme_color;}
+      static void current_theme(const std::string& name) {current_theme_ = theme_from_name(name);}
 
-      static theme_color default_theme_color();
-
-      static theme_color theme_color_from_name(const std::string& theme_color_name);
-
-      static const theme_color_collection& theme_colors();
-      static theme_color_name_collection theme_color_names();
+      static theme_color default_theme() {return theme_from_name(default_theme_name());}
+      
+      static theme_color theme_from_name(const std::string& theme_color_name);
 
     private:
-      theme_color(const std::string& name, xtd::forms::theme_style theme_style, const kown_themed_color_to_color& kown_themed_color_to_color, bool is_default) : theme(name, theme_style, is_default), kown_themed_color_to_color_(kown_themed_color_to_color) {}
-      static theme_color current_theme_color_;
-      static theme_color_collection theme_colors_;
+      theme_color(const std::string& name, xtd::forms::theme_style theme_style, const kown_themed_color_to_color& kown_themed_color_to_color, bool is_default) : theme_base(name, theme_style, is_default), kown_themed_color_to_color_(kown_themed_color_to_color) {}
       kown_themed_color_to_color kown_themed_color_to_color_;
+      static theme_color current_theme_;
     };
   }
 }

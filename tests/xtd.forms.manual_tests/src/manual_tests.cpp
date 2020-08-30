@@ -89,7 +89,7 @@ namespace xtd {
 namespace xtd {
   namespace forms {
       
-    class theme_image : public theme {
+    class theme_image : public theme_base {
     public:
       using theme_image_collection = std::vector<theme_image>;
 
@@ -105,7 +105,7 @@ namespace xtd {
 
 int main() {
   /*
-  theme_color::current_theme_color(theme_color("frozen", xtd::forms::theme_style::light, {[](xtd::forms::known_themed_color color)->xtd::drawing::color {
+  theme_color::current_theme(theme_color("frozen", xtd::forms::theme_style::light, {[](xtd::forms::known_themed_color color)->xtd::drawing::color {
     switch (color) {
       case known_themed_color::accent: return color::white;
       case known_themed_color::accent_text: return color::dark_gray;
@@ -222,6 +222,5 @@ int main() {
 
   //form_main.back_color(drawing::color::red);
 
-  application::enable_menu_images();
   application::run(form_main);
 }

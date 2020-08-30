@@ -321,11 +321,11 @@ namespace xtd {
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      virtual drawing::color default_back_color() const {return xtd::forms::theme_color::current_theme_color().control();}
+      virtual drawing::color default_back_color() const {return xtd::forms::theme_color::current_theme().control();}
 
       virtual forms::cursor default_cursor() const {return cursors::default_cursor();}
 
-      virtual drawing::color default_fore_color() const {return xtd::forms::theme_color::current_theme_color().control_text();}
+      virtual drawing::color default_fore_color() const {return xtd::forms::theme_color::current_theme().control_text();}
       
       virtual drawing::font default_font() const;
       
