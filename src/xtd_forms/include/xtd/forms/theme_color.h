@@ -12,14 +12,16 @@ namespace xtd {
     class theme_color : public theme {
     public:
       using theme_color_collection = std::vector<theme_color>;
+      using theme_color_name_collection = std::vector<std::string>;
 
       theme_color() = default;
       theme_color(const std::string& name, xtd::forms::theme_style theme_style, delegate<xtd::drawing::color(xtd::forms::known_themed_color)> kown_themed_color_to_color) : theme(name, theme_style), kown_themed_color_to_color_(kown_themed_color_to_color) {}
       /// @cond
       theme_color(const theme_color&) = default;
       theme_color& operator=(const theme_color&) = default;
-      bool operator==(const theme_color& value) {return theme::operator==(value);}
-      bool operator!=(const theme_color& value) {return !operator==(value);}
+      bool operator==(const theme_color& value) const {return theme::operator==(value);}
+      bool operator!=(const theme_color& value) const {return !operator==(value);}
+      bool operator<(const theme_color& value) const {return theme::operator<(value);}
       virtual ~theme_color() = default;
       /// @endcond
 
@@ -65,10 +67,12 @@ namespace xtd {
       
       static theme_color current_theme_color();
       static void current_theme_color(const theme_color& theme_color);
+      static void current_theme_color(const std::string& theme_color_name);
       static theme_color default_theme_color();
       static xtd::drawing::color from_known_themed_color(xtd::forms::known_themed_color known_themed_color);
-      static theme_color_collection& theme_colors();
-      
+      static const theme_color_collection& theme_colors();
+      static theme_color_name_collection theme_color_names();
+
     protected:
       theme_color(const std::string& name, xtd::forms::theme_style theme_style, delegate<xtd::drawing::color(xtd::forms::known_themed_color)> kown_themed_color_to_color, bool is_default) : theme(name, theme_style, is_default), kown_themed_color_to_color_(kown_themed_color_to_color) {}
 
