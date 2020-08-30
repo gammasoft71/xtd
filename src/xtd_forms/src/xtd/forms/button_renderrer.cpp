@@ -119,13 +119,15 @@ void button_renderrer::draw_button_symbolic(graphics g, const rectangle& bounds,
   auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_color::current_theme_color().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_color::current_theme_color().control_text();
   auto active_border_color = xtd::forms::theme_color::current_theme_color().active_border();
-  auto button_color = xtd::forms::theme_color::current_theme_color().window().get_lightness() < 0.5 ? color::lighter(background_color) : color::darker(background_color);
+  auto button_color = xtd::forms::theme_color::current_theme_color().window().get_lightness() < 0.5 ? color::lighter(background_color, .95) : color::darker(background_color, .95);
   auto text_color = foreground_color;
   
-  if (state == xtd::forms::visual_styles::push_button_state::hot) active_border_color = color::lighter(xtd::forms::theme_color::current_theme_color().active_border());
-  else if (state == xtd::forms::visual_styles::push_button_state::pressed) {
+  if (state == xtd::forms::visual_styles::push_button_state::hot) {
+      active_border_color = color::lighter(xtd::forms::theme_color::current_theme_color().active_border());
+      button_color = xtd::forms::theme_color::current_theme_color().window().get_lightness() < 0.5 ? color::lighter(background_color, .9) : color::darker(background_color, .9);
+  } else if (state == xtd::forms::visual_styles::push_button_state::pressed) {
     active_border_color = button_color = xtd::forms::theme_color::current_theme_color().accent();
-    text_color = color::white;
+    text_color = xtd::forms::theme_color::current_theme_color().accent_text();
   } else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
     active_border_color = color::from_argb(85, 85, 55);
     text_color = xtd::forms::theme_color::current_theme_color().gray_text();
