@@ -104,6 +104,7 @@ namespace xtd {
 }
 
 int main() {
+  /*
   theme_color::current_theme_color(theme_color("frozen", xtd::forms::theme_style::light, {[](xtd::forms::known_themed_color color)->xtd::drawing::color {
     switch (color) {
       case known_themed_color::accent: return color::white;
@@ -146,10 +147,10 @@ int main() {
       default: throw std::invalid_argument("unknown know_color");
     }
   }}));
-  
+  */
   
   for (known_themed_color color = known_themed_color::accent; color < known_themed_color::window_text; color = (known_themed_color)((int)color + 1)) {
-    cdebug << format("{} = {}", color, theme_color::current_theme_color().from_known_themed_color(color)) << endl;
+    cdebug << format("{} = {} (0x{:X})", color, theme_color::current_theme_color().from_known_themed_color(color), theme_color::current_theme_color().from_known_themed_color(color).to_argb()) << endl;
   }
   cdebug << format("current theme color \"{}\" {} default", theme_color::current_theme_color().name(), theme_color::current_theme_color().is_default() ? "is" : "is not") << endl;
 

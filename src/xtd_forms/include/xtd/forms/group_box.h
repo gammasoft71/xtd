@@ -1,6 +1,7 @@
 #pragma once
 #include "control.h"
 #include "border_style.h"
+#include "flat_style.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,6 +20,16 @@ namespace xtd {
       forms::create_params create_params() const override;
       
       drawing::size measure_control() const override;
+      
+      void on_font_changed(const xtd::event_args& e) override;
+      
+      void on_resize(const xtd::event_args& e) override;
+      
+      void on_text_changed(const xtd::event_args& e) override;
+      
+      /// @cond
+      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
+      /// @endcond
     };
   }
 }

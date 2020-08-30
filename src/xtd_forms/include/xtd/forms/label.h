@@ -31,8 +31,14 @@ namespace xtd {
       xtd::forms::create_params create_params() const override;
       
       xtd::drawing::size measure_control() const override;
+      
+      void on_font_changed(const xtd::event_args& e) override;
 
-      void on_paint(paint_event_args& e) override;
+      void on_paint(xtd::forms::paint_event_args& e) override;
+      
+      void on_resize(const xtd::event_args& e) override;
+      
+      void on_text_changed(const xtd::event_args& e) override;
 
       xtd::forms::border_style border_style_ = xtd::forms::border_style::none;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
