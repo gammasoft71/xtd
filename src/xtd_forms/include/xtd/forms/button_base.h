@@ -86,6 +86,12 @@ namespace xtd {
       drawing::size measure_control() const override;
       
     protected:
+      void on_font_changed(const xtd::event_args& e) override;
+      
+      void on_resize(const xtd::event_args& e) override;
+      
+      void on_text_changed(const xtd::event_args& e) override;
+
       /// @cond
       bool auto_ellipsis_ = false;
       /// @todo set flat_style_ to xtd::forms::flat_style::standard for all platforms.

@@ -35,3 +35,18 @@ drawing::size group_box::measure_control() const {
   }
   return drawing::size(bounds.location() + bounds.size());
 }
+
+void group_box::on_font_changed(const xtd::event_args& e) {
+  control::on_font_changed(e);
+  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+}
+
+void group_box::on_text_changed(const xtd::event_args& e) {
+  control::on_text_changed(e);
+  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+}
+
+void group_box::on_resize(const xtd::event_args& e) {
+  control::on_resize(e);
+  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+}
