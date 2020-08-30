@@ -9,7 +9,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class theme_color : public theme {
+    class theme_color final : public theme {
     public:
       using kown_themed_color_to_color = delegate<xtd::drawing::color(xtd::forms::known_themed_color)>;
       using theme_color_collection = std::vector<theme_color>;
@@ -24,7 +24,6 @@ namespace xtd {
       bool operator==(const theme_color& value) const {return theme::operator==(value);}
       bool operator!=(const theme_color& value) const {return !operator==(value);}
       bool operator<(const theme_color& value) const {return theme::operator<(value);}
-      virtual ~theme_color() = default;
       /// @endcond
 
       static const theme_color empty;
@@ -66,21 +65,25 @@ namespace xtd {
       xtd::drawing::color window() const {return from_known_themed_color(xtd::forms::known_themed_color::window);}
       xtd::drawing::color window_frame() const {return from_known_themed_color(xtd::forms::known_themed_color::window_frame);}
       xtd::drawing::color window_text() const {return from_known_themed_color(xtd::forms::known_themed_color::window_text);}
-      
+
+      xtd::drawing::color from_known_themed_color(xtd::forms::known_themed_color known_themed_color) const;
+
       static theme_color current_theme_color();
       static void current_theme_color(const theme_color& theme_color);
-      static void current_theme_color(const std::string& theme_color_name);
+      static void current_theme_color(const std::string& theme_color_name) {return current_theme_color(theme_color_from_name(theme_color_name));}
+
       static theme_color default_theme_color();
-      xtd::drawing::color from_known_themed_color(xtd::forms::known_themed_color known_themed_color) const;
+
+      static theme_color theme_color_from_name(const std::string& theme_color_name);
+
       static const theme_color_collection& theme_colors();
       static theme_color_name_collection theme_color_names();
 
-    protected:
-      theme_color(const std::string& name, xtd::forms::theme_style theme_style, const kown_themed_color_to_color& kown_themed_color_to_color, bool is_default) : theme(name, theme_style, is_default), kown_themed_color_to_color_(kown_themed_color_to_color) {}
-
     private:
+      theme_color(const std::string& name, xtd::forms::theme_style theme_style, const kown_themed_color_to_color& kown_themed_color_to_color, bool is_default) : theme(name, theme_style, is_default), kown_themed_color_to_color_(kown_themed_color_to_color) {}
       static theme_color current_theme_color_;
-      delegate<xtd::drawing::color(xtd::forms::known_themed_color)> kown_themed_color_to_color_;
+      static theme_color_collection theme_colors_;
+      kown_themed_color_to_color kown_themed_color_to_color_;
     };
   }
 }
