@@ -429,6 +429,7 @@ namespace {
 
 const theme_color theme_color::empty {};
 theme_color theme_color::current_theme_color_;
+theme_color::theme_color_collection theme_color::theme_colors_;
 
 theme_color theme_color::current_theme_color() {
   if (current_theme_color_ == theme_color::empty) current_theme_color_ = theme_color(system_theme_name(), theme_style::system_auto, {system_kown_themed_color_to_color}, true);
@@ -437,15 +438,6 @@ theme_color theme_color::current_theme_color() {
 
 void theme_color::current_theme_color(const theme_color& theme_color) {
   theme_color::current_theme_color_ = theme_color;
-}
-
-void theme_color::current_theme_color(const std::string& theme_color_name) {
-  for (const auto& theme_color : theme_colors())
-    if (theme_color.name() == theme_color_name) {
-      current_theme_color(theme_color);
-      return;
-    }
-  current_theme_color(default_theme_color());
 }
 
 theme_color theme_color::default_theme_color() {
@@ -457,24 +449,29 @@ xtd::drawing::color theme_color::from_known_themed_color(xtd::forms::known_theme
 }
 
 const theme_color::theme_color_collection& theme_color::theme_colors() {
-  static theme_color_collection theme_colors;
-  if (theme_colors.size() == 0) {
-    theme_colors.push_back(default_theme_color());
-    if (system_theme_name() != "gnome") theme_colors.push_back(theme_color("gnome", theme_style::system_auto, {gnome_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("gnome (dark)", theme_style::dark, {gnome_dark_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("gnome (light)", theme_style::light, {gnome_light_kown_themed_color_to_color}));
-    if (system_theme_name() != "kde") theme_colors.push_back(theme_color("kde", theme_style::system_auto, {kde_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("kde (dark)", theme_style::dark, {kde_dark_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("kde (light)", theme_style::light, {kde_light_kown_themed_color_to_color}));
-    if (system_theme_name() != "macos") theme_colors.push_back(theme_color("macos", theme_style::system_auto, {macos_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("macos (dark)", theme_style::dark, {macos_dark_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("macos (light)", theme_style::light, {macos_light_kown_themed_color_to_color}));
-    if (system_theme_name() != "windows") theme_colors.push_back(theme_color("windows", theme_style::system_auto, {windows_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("windows (dark)", theme_style::dark, {windows_dark_kown_themed_color_to_color}));
-    theme_colors.push_back(theme_color("windows (light)", theme_style::light, {windows_light_kown_themed_color_to_color}));
-    std::sort(theme_colors.begin(), theme_colors.end());
+  if (theme_colors_.size() == 0) {
+    theme_colors_.push_back(default_theme_color());
+    if (system_theme_name() != "gnome") theme_colors_.push_back(theme_color("gnome", theme_style::system_auto, {gnome_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("gnome (dark)", theme_style::dark, {gnome_dark_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("gnome (light)", theme_style::light, {gnome_light_kown_themed_color_to_color}));
+    if (system_theme_name() != "kde") theme_colors_.push_back(theme_color("kde", theme_style::system_auto, {kde_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("kde (dark)", theme_style::dark, {kde_dark_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("kde (light)", theme_style::light, {kde_light_kown_themed_color_to_color}));
+    if (system_theme_name() != "macos") theme_colors_.push_back(theme_color("macos", theme_style::system_auto, {macos_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("macos (dark)", theme_style::dark, {macos_dark_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("macos (light)", theme_style::light, {macos_light_kown_themed_color_to_color}));
+    if (system_theme_name() != "windows") theme_colors_.push_back(theme_color("windows", theme_style::system_auto, {windows_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("windows (dark)", theme_style::dark, {windows_dark_kown_themed_color_to_color}));
+    theme_colors_.push_back(theme_color("windows (light)", theme_style::light, {windows_light_kown_themed_color_to_color}));
+    std::sort(theme_colors_.begin(), theme_colors_.end());
   }
-  return theme_colors;
+  return theme_colors_;
+}
+
+theme_color theme_color::theme_color_from_name(const std::string& theme_color_name) {
+  for (const auto& theme_color : theme_colors())
+    if (theme_color.name() == theme_color_name)return theme_color;
+  return default_theme_color();
 }
 
 theme_color::theme_color_name_collection theme_color::theme_color_names() {
