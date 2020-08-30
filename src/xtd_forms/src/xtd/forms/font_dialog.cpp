@@ -5,7 +5,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void font_dialog::reset() {
-  this->color_ = xtd::forms::theme_color::current_theme_color().control_text();
+  this->color_ = xtd::forms::theme_color::current_theme().control_text();
   this->font_ = drawing::system_fonts::default_font();
   this->max_size_ = 0;
   this->min_size_ = 0;

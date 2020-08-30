@@ -45,9 +45,9 @@ namespace xtd {
     protected:
       forms::create_params create_params() const override;
       
-      drawing::color default_back_color() const override {return xtd::forms::theme_color::current_theme_color().window();}
+      drawing::color default_back_color() const override {return xtd::forms::theme_color::current_theme().window();}
       
-      drawing::color default_fore_color() const override {return xtd::forms::theme_color::current_theme_color().window_text();}
+      drawing::color default_fore_color() const override {return xtd::forms::theme_color::current_theme().window_text();}
       
       virtual void on_value_changed(const event_args& e);
       

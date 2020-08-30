@@ -158,6 +158,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/text_format_flags.h
   include/xtd/forms/texts.h
   include/xtd/forms/theme.h
+  include/xtd/forms/theme_base.h
   include/xtd/forms/theme_color.h
   include/xtd/forms/theme_style.h
   include/xtd/forms/tick_style.h
@@ -243,6 +244,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/text_box.cpp
   src/xtd/forms/texts.cpp
   src/xtd/forms/theme.cpp
+  src/xtd/forms/theme_base.cpp
   src/xtd/forms/theme_color.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/track_bar.cpp

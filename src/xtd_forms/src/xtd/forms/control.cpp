@@ -463,9 +463,9 @@ void control::on_handle_created(const event_args &e) {
   native::control::register_wnd_proc(handle_, {*this, &control::wnd_proc_});
   handles_[handle_] = this;
   if (get_state(state::client_size_setted)) native::control::client_size(handle_, client_size());
-  if (!xtd::forms::theme_color::current_theme_color().is_default() || back_color_.has_value() || back_color() != default_back_color()) native::control::back_color(handle_, back_color());
+  if (!xtd::forms::theme_color::current_theme().is_default() || back_color_.has_value() || back_color() != default_back_color()) native::control::back_color(handle_, back_color());
   if (cursor_.has_value() || cursor() != default_cursor()) native::control::cursor(handle_, cursor().handle());
-  if (!xtd::forms::theme_color::current_theme_color().is_default() || fore_color_.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle_, fore_color());
+  if (!xtd::forms::theme_color::current_theme().is_default() || fore_color_.has_value() || fore_color() != default_fore_color()) native::control::fore_color(handle_, fore_color());
   if (font_.has_value() || font() != default_font()) native::control::font(handle_, font());
   native::control::enabled(handle_, enabled());
   native::control::visible(handle_, visible());
