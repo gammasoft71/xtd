@@ -4,6 +4,7 @@
 #include "../../../include/xtd/forms/main_menu.h"
 #include "../../../include/xtd/forms/menu_images.h"
 #include "../../../include/xtd/forms/shortcut.h"
+#include "../../../include/xtd/forms/theme.h"
 #include "../../../include/xtd/forms/texts.h"
 
 using namespace xtd;
@@ -99,11 +100,11 @@ void main_menu::wm_click(message& message) {
 }
 
 xtd::forms::main_menu main_menu::create_standard_items(const xtd::event_handler<xtd::forms::component&>& on_click) {
-  return  create_standard_items(system_images::default_theme(), menu_images::size(), on_click);
+  return  create_standard_items(theme::default_theme_name(), menu_images::size(), on_click);
 }
 
 xtd::forms::main_menu main_menu::create_standard_items(const size& size, const xtd::event_handler<xtd::forms::component&>& on_click) {
-  return  create_standard_items(system_images::default_theme(), size, on_click);
+  return  create_standard_items(theme::default_theme_name(), size, on_click);
 }
 
 xtd::forms::main_menu main_menu::create_standard_items(const std::string& theme, const xtd::event_handler<xtd::forms::component&>& on_click) {
