@@ -5,6 +5,7 @@
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/theme.h"
 
 using namespace std;
 using namespace xtd;
@@ -263,6 +264,18 @@ void application::run(application_context& context) {
 void application::run(const form& form) {
   application_context context(form);
   application::run(context);
+}
+
+void application::theme(const std::string& theme) {
+  theme::current_theme(theme);
+}
+
+std::string application::theme() {
+  return theme::current_theme().name();
+}
+
+std::vector<std::string> application::themes() {
+  return theme::theme_names();
 }
 
 void application::yield() {
