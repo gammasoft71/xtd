@@ -149,7 +149,7 @@ int main() {
   }}));
   */
   
-  theme::current_theme("kde");
+  theme::current_theme("windows");
   
   /*
   main_menu menu;
@@ -203,10 +203,15 @@ int main() {
 
   button button1;
   //button1.enabled(false);
-  button1.text("&Click me");
+  //button1.flat_style(xtd::forms::flat_style::system);
   button1.location({10, 50});
   button1.parent(form_main);
+  button1.image(button_images::ok());
   //button1.fore_color(xtd::drawing::system_colors::accent());
+  button1.click += [&] {
+    //form_main.back_color(theme_color::current_theme().window());
+    form_main.close();
+  };
   
   button button2;
   //button2.flat_style(xtd::forms::flat_style::system);
@@ -219,12 +224,12 @@ int main() {
   text_box text_box1;
   text_box1.location({10, 90});
   text_box1.parent(form_main);
-  text_box1.text("Text box line");
+  text_box1.text(xtd::forms::theme::current_theme().name());
   
   picture_box picture_box1;
   picture_box1.location({10, 120});
   picture_box1.parent(form_main);
-  picture_box1.image(system_images::from_name("folder"));
+  picture_box1.image(button_images::from_name("start-here", xtd::drawing::size(32, 32)));
 
   //form_main.back_color(drawing::color::red);
 

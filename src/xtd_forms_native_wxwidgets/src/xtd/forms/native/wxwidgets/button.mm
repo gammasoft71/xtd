@@ -7,6 +7,7 @@
 using namespace xtd::forms::native;
 
 void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height) {
+  if (control == 0) return;
   NSButton* button = (NSButton*)control->GetHandle();
   [button setWantsLayer:YES];
   if (height >= 20 && height <= 25)

@@ -5,11 +5,8 @@
 using namespace xtd;
 using namespace xtd::forms::native;
 
-void __set_button_bezel_style__(wxButton* control, int32_t x, int32_t y, int32_t width, int32_t height);
-
 void button::default_button(intptr_t control, bool default_button) {
-  if (control == 0) return;
-  
+  if (control == 0 || reinterpret_cast<wx_button*>(control)->owner_draw_) return;
   wxWindow* top_level_control = static_cast<wxWindow*>(reinterpret_cast<control_handler*>(control)->control());
   while (top_level_control && dynamic_cast<wxTopLevelWindow*>(top_level_control) == nullptr && top_level_control->GetParent() != nullptr)
     top_level_control = top_level_control->GetParent();
