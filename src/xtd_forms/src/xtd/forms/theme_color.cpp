@@ -146,6 +146,10 @@ namespace {
     }
   }
 
+  color gnome_kown_themed_color_to_color(known_themed_color color) {
+    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? gnome_dark_kown_themed_color_to_color(color) : gnome_light_kown_themed_color_to_color(color);
+  }
+
   color kde_dark_kown_themed_color_to_color(known_themed_color color) {
     switch (color) {
       case xtd::forms::known_themed_color::accent: return xtd::drawing::color::from_argb(0xFF3DAEE9);
@@ -230,6 +234,10 @@ namespace {
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF23262);
       default: throw std::invalid_argument("unknown know_color");
     }
+  }
+
+  color kde_kown_themed_color_to_color(known_themed_color color) {
+    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? kde_dark_kown_themed_color_to_color(color) : kde_light_kown_themed_color_to_color(color);
   }
 
   color macos_dark_kown_themed_color_to_color(known_themed_color color) {
@@ -318,6 +326,100 @@ namespace {
     }
   }
 
+  color macos_kown_themed_color_to_color(known_themed_color color) {
+    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? macos_dark_kown_themed_color_to_color(color) : macos_light_kown_themed_color_to_color(color);
+  }
+
+  color symbolic_dark_kown_themed_color_to_color(known_themed_color color) {
+    switch (color) {
+      case xtd::forms::known_themed_color::accent: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::accent_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::active_border: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::active_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::active_caption_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::app_workspace: return xtd::drawing::color::from_argb(0xFF232629);
+      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::button_highlight: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::button_shadow: return xtd::drawing::color::from_argb(0xFF606468);
+      case xtd::forms::known_themed_color::control: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::control_dark: return xtd::drawing::color::from_argb(0xFF606468);
+      case xtd::forms::known_themed_color::control_dark_dark: return xtd::drawing::color::from_argb(0xFF000000);
+      case xtd::forms::known_themed_color::control_light: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::control_light_light: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::control_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::desktop: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::gradient_active_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::gradient_inactive_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::gray_text: return xtd::drawing::color::from_argb(0xFF6E7175);
+      case xtd::forms::known_themed_color::highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::highlight_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::hot_track: return xtd::drawing::color::from_argb(0xFF2980B9);
+      case xtd::forms::known_themed_color::inactive_border: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::inactive_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::inactive_caption_text: return xtd::drawing::color::from_argb(0xFF7F8C8D);
+      case xtd::forms::known_themed_color::info: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::info_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::menu: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::menu_bar: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::menu_highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::menu_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::scroll_bar: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::text_box: return xtd::drawing::color::from_argb(0xFF232629);
+      case xtd::forms::known_themed_color::text_box_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF232629);
+      case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      default: throw std::invalid_argument("unknown know_color");
+    }
+  }
+
+  color symbolic_light_kown_themed_color_to_color(known_themed_color color) {
+    switch (color) {
+      case xtd::forms::known_themed_color::accent: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::accent_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::active_border: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::active_caption: return xtd::drawing::color::from_argb(0xFF475057);
+      case xtd::forms::known_themed_color::active_caption_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::app_workspace: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::button_highlight: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::button_shadow: return xtd::drawing::color::from_argb(0xFFBCBEBF);
+      case xtd::forms::known_themed_color::control: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::control_dark: return xtd::drawing::color::from_argb(0xFFBCBEBF);
+      case xtd::forms::known_themed_color::control_dark_dark: return xtd::drawing::color::from_argb(0xFF000000);
+      case xtd::forms::known_themed_color::control_light: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::control_light_light: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::control_text: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::desktop: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::gradient_active_caption: return xtd::drawing::color::from_argb(0xFF475057);
+      case xtd::forms::known_themed_color::gradient_inactive_caption: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::gray_text: return xtd::drawing::color::from_argb(0xFFA0A2A2);
+      case xtd::forms::known_themed_color::highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::highlight_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::hot_track: return xtd::drawing::color::from_argb(0xFF2980B9);
+      case xtd::forms::known_themed_color::inactive_border: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::inactive_caption: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::inactive_caption_text: return xtd::drawing::color::from_argb(0xFFBDC3C7);
+      case xtd::forms::known_themed_color::info: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::info_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::menu: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::menu_bar: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::menu_highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::menu_text: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::scroll_bar: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::text_box: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::text_box_text: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF23262);
+      default: throw std::invalid_argument("unknown know_color");
+    }
+  }
+
+  color symbolic_kown_themed_color_to_color(known_themed_color color) {
+    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? symbolic_dark_kown_themed_color_to_color(color) : symbolic_light_kown_themed_color_to_color(color);
+  }
+
   color windows_dark_kown_themed_color_to_color(known_themed_color color) {
     switch (color) {
       case xtd::forms::known_themed_color::accent: return xtd::drawing::color::from_argb(0xFF00A0FA);
@@ -404,20 +506,98 @@ namespace {
     }
   }
 
-  color gnome_kown_themed_color_to_color(known_themed_color color) {
-    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? gnome_dark_kown_themed_color_to_color(color) : gnome_light_kown_themed_color_to_color(color);
-  }
-
-  color kde_kown_themed_color_to_color(known_themed_color color) {
-    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? kde_dark_kown_themed_color_to_color(color) : kde_light_kown_themed_color_to_color(color);
-  }
-
-  color macos_kown_themed_color_to_color(known_themed_color color) {
-    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? macos_dark_kown_themed_color_to_color(color) : macos_light_kown_themed_color_to_color(color);
-  }
-
   color windows_kown_themed_color_to_color(known_themed_color color) {
     return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? windows_dark_kown_themed_color_to_color(color) : windows_light_kown_themed_color_to_color(color);
+  }
+
+  color xtd_dark_kown_themed_color_to_color(known_themed_color color) {
+    switch (color) {
+      case xtd::forms::known_themed_color::accent: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::accent_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::active_border: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::active_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::active_caption_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::app_workspace: return xtd::drawing::color::from_argb(0xFF232629);
+      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::button_highlight: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::button_shadow: return xtd::drawing::color::from_argb(0xFF606468);
+      case xtd::forms::known_themed_color::control: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::control_dark: return xtd::drawing::color::from_argb(0xFF606468);
+      case xtd::forms::known_themed_color::control_dark_dark: return xtd::drawing::color::from_argb(0xFF000000);
+      case xtd::forms::known_themed_color::control_light: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::control_light_light: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::control_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::desktop: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::gradient_active_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::gradient_inactive_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::gray_text: return xtd::drawing::color::from_argb(0xFF6E7175);
+      case xtd::forms::known_themed_color::highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::highlight_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::hot_track: return xtd::drawing::color::from_argb(0xFF2980B9);
+      case xtd::forms::known_themed_color::inactive_border: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::inactive_caption: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::inactive_caption_text: return xtd::drawing::color::from_argb(0xFF7F8C8D);
+      case xtd::forms::known_themed_color::info: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::info_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::menu: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::menu_bar: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::menu_highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::menu_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::scroll_bar: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::text_box: return xtd::drawing::color::from_argb(0xFF232629);
+      case xtd::forms::known_themed_color::text_box_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF232629);
+      case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF31363B);
+      case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      default: throw std::invalid_argument("unknown know_color");
+    }
+  }
+
+  color xtd_light_kown_themed_color_to_color(known_themed_color color) {
+    switch (color) {
+      case xtd::forms::known_themed_color::accent: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::accent_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::active_border: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::active_caption: return xtd::drawing::color::from_argb(0xFF475057);
+      case xtd::forms::known_themed_color::active_caption_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::app_workspace: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::button_highlight: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::button_shadow: return xtd::drawing::color::from_argb(0xFFBCBEBF);
+      case xtd::forms::known_themed_color::control: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::control_dark: return xtd::drawing::color::from_argb(0xFFBCBEBF);
+      case xtd::forms::known_themed_color::control_dark_dark: return xtd::drawing::color::from_argb(0xFF000000);
+      case xtd::forms::known_themed_color::control_light: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::control_light_light: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::control_text: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::desktop: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::gradient_active_caption: return xtd::drawing::color::from_argb(0xFF475057);
+      case xtd::forms::known_themed_color::gradient_inactive_caption: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::gray_text: return xtd::drawing::color::from_argb(0xFFA0A2A2);
+      case xtd::forms::known_themed_color::highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::highlight_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::hot_track: return xtd::drawing::color::from_argb(0xFF2980B9);
+      case xtd::forms::known_themed_color::inactive_border: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::inactive_caption: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::inactive_caption_text: return xtd::drawing::color::from_argb(0xFFBDC3C7);
+      case xtd::forms::known_themed_color::info: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::info_text: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::menu: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::menu_bar: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::menu_highlight: return xtd::drawing::color::from_argb(0xFF3DAEE9);
+      case xtd::forms::known_themed_color::menu_text: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::scroll_bar: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::text_box: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::text_box_text: return xtd::drawing::color::from_argb(0xFF232627);
+      case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFFFCFCFC);
+      case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFFEFF0F1);
+      case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFF23262);
+      default: throw std::invalid_argument("unknown know_color");
+    }
+  }
+
+  color xtd_kown_themed_color_to_color(known_themed_color color) {
+    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? xtd_dark_kown_themed_color_to_color(color) : xtd_light_kown_themed_color_to_color(color);
   }
 }
 
@@ -435,8 +615,14 @@ theme_color theme_color::theme_from_name(const std::string& name) {
   if (name == "macos") return theme_color("macos", theme_style::system_auto, {macos_kown_themed_color_to_color});
   if (name == "macos (dark)") return theme_color("macos (dark)", theme_style::dark, {macos_dark_kown_themed_color_to_color});
   if (name == "macos (light)") return theme_color("macos (light)", theme_style::light, {macos_light_kown_themed_color_to_color});
+  if (name == "symbolic") return theme_color("symbolic", theme_style::system_auto, {symbolic_kown_themed_color_to_color});
+  if (name == "symbolic (dark)") return theme_color("symbolic (dark)", theme_style::dark, {symbolic_dark_kown_themed_color_to_color});
+  if (name == "symbolic (light)") return theme_color("symbolic (light)", theme_style::light, {symbolic_light_kown_themed_color_to_color});
   if (name == "windows") return theme_color("windows", theme_style::system_auto, {windows_kown_themed_color_to_color});
   if (name == "windows (dark)") return theme_color("windows (dark)", theme_style::dark, {windows_dark_kown_themed_color_to_color});
   if (name == "windows (light)") return theme_color("windows (light)", theme_style::light, {windows_light_kown_themed_color_to_color});
+  if (name == "xtd") return theme_color("xtd", theme_style::system_auto, {xtd_kown_themed_color_to_color});
+  if (name == "xtd (dark)") return theme_color("xtd (dark)", theme_style::dark, {xtd_dark_kown_themed_color_to_color});
+  if (name == "xtd (light)") return theme_color("xtd (light)", theme_style::light, {xtd_light_kown_themed_color_to_color});
   return default_theme();
 }
