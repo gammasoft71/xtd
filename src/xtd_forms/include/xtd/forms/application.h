@@ -212,6 +212,10 @@ namespace xtd {
       /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls exit_thread to clean up the application.
       static void run(const form& main_form);
       
+      static void theme(const std::string& theme);
+      static std::string theme();
+      static std::vector<std::string> themes();
+
       static void yield();
 
       /*

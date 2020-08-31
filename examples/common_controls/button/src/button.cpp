@@ -47,5 +47,7 @@ namespace examples {
 }
 
 int main() {
+  cdebug << format("themes = {}", strings::join(", ", application::themes())) << std::endl;
+  cdebug << format("theme = {}", application::theme()) << std::endl;
   application::run(examples::form1());
 }
