@@ -8,6 +8,7 @@
 #include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/system_fonts.h>
 #include "text_format_flags.h"
+#include "theme.h"
 #include "theme_color.h"
 #include "visual_styles/push_button_state.h"
 
@@ -15,14 +16,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class theme_renderrer : public xtd::static_class {
-    public:
-      static std::string default_theme();
-      static std::string fallback_theme();
-      static std::vector<std::string> themes();
-    };
-  
-    class button_renderrer final : public theme_renderrer {
+    class button_renderrer static_ {
     public:
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::push_button_state& state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), false, state, xtd::forms::theme_color::current_theme().control(), xtd::forms::theme_color::current_theme().control_text());}
       static void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, bool focused, xtd::forms::visual_styles::push_button_state& state) {draw_button(default_theme(), g, bounds, "", xtd::drawing::system_fonts::default_font(), xtd::forms::text_format_flags::default_format, xtd::drawing::image::empty, xtd::drawing::rectangle(0, 0, 0, 0), true, state, xtd::forms::theme_color::current_theme().control(), xtd::forms::theme_color::current_theme().control_text());}
@@ -42,6 +36,7 @@ namespace xtd {
       static void draw_button(const std::string& theme, xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       
     private:
+      static std::string default_theme() {return theme::current_theme().name(); /*return theme_renderrer::current_theme().name();*/}
       static void draw_button_kde(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       static void draw_button_kde_dark(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
       static void draw_button_kde_light(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);

@@ -37,7 +37,9 @@ namespace xtd {
       
       std::string to_string() const {return xtd::strings::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
       
-      static std::string default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? "symbolic" :  xtd::environment::os_version().desktop_environment();}
+      static std::string default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? fallback_theme_name() :  xtd::environment::os_version().desktop_environment();}
+      
+      static std::string fallback_theme_name() {return "symbolic";}
       
       static const theme_name_collection& theme_names() {return theme_names_;}
       
@@ -65,11 +67,11 @@ namespace xtd {
 }
 
 
+/* Include file :
+ --------------
 #pragma once
 #include "theme_base.h"
 
-/* Include file :
-   --------------
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
@@ -128,9 +130,15 @@ theme theme::theme_from_name(const std::string& name) {
   if (name == "macos") return theme("macos", theme_style::system_auto);
   if (name == "macos (dark)") return theme("macos (dark)", theme_style::dark);
   if (name == "macos (light)") return theme("macos (light)", theme_style::light);
+  if (name == "symbolic") return theme("symbolic", theme_style::system_auto);
+  if (name == "symbolic (dark)") return theme("symbolic (dark)", theme_style::dark);
+  if (name == "symbolic (light)") return theme("symbolic (light)", theme_style::light);
   if (name == "windows") return theme("windows", theme_style::system_auto);
   if (name == "windows (dark)") return theme("windows (dark)", theme_style::dark);
   if (name == "windows (light)") return theme("windows (light)", theme_style::light);
+  if (name == "xtd") return theme("xtd", theme_style::system_auto);
+  if (name == "xtd (dark)") return theme("xtd (dark)", theme_style::dark);
+  if (name == "xtd (light)") return theme("xtd (light)", theme_style::light);
   return default_theme();
 }
 
