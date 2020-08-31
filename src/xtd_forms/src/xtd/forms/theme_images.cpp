@@ -50,7 +50,7 @@ namespace {
   }
 
   xtd::drawing::image macos_image_getter(const std::string& name, const xtd::drawing::size& size) {
-    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? gnome_dark_image_getter(name, size) : gnome_light_image_getter(name, size);
+    return xtd::drawing::system_colors::window().get_lightness() < 0.5 ? macos_dark_image_getter(name, size) : macos_light_image_getter(name, size);
   }
 
 xtd::drawing::image symbolic_dark_image_getter(const std::string& name, const xtd::drawing::size& size) {
