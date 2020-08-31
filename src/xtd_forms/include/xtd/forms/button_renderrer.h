@@ -7,7 +7,6 @@
 #include <xtd/drawing/image.h>
 #include <xtd/drawing/rectangle.h>
 #include <xtd/drawing/system_fonts.h>
-#include <xtd/drawing/theme.h>
 #include "text_format_flags.h"
 #include "theme_color.h"
 #include "visual_styles/push_button_state.h"
