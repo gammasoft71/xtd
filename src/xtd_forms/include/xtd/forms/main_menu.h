@@ -1,6 +1,7 @@
 #pragma once
 #include "menu.h"
 #include "message.h"
+#include "theme_images.h"
 #include <xtd/drawing/size.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -25,6 +26,7 @@ namespace xtd {
       static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click);
       static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::event_handler<xtd::forms::component&>& on_click);
       static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click);
+      static xtd::forms::main_menu create_standard_items(const xtd::forms::theme_images& theme, const xtd::drawing::size& size, const xtd::event_handler<xtd::forms::component&>& on_click);
 
       /// @cond
       template<typename on_click_type>
@@ -35,6 +37,8 @@ namespace xtd {
       static xtd::forms::main_menu create_standard_items(const std::string& theme, on_click_type on_click) { return create_standard_items(theme, xtd::event_handler<xtd::forms::component&>(on_click)); }
       template<typename on_click_type>
       static xtd::forms::main_menu create_standard_items(const std::string& theme, const xtd::drawing::size& size, on_click_type on_click) { return create_standard_items(theme, size, xtd::event_handler<xtd::forms::component&>(on_click)); }
+      template<typename on_click_type>
+      static xtd::forms::main_menu create_standard_items(const xtd::forms::theme_images& theme, const xtd::drawing::size& size, on_click_type on_click) { return create_standard_items(theme, size, xtd::event_handler<xtd::forms::component&>(on_click)); }
       /// @endcond
  
     protected:

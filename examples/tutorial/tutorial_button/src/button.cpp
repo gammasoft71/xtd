@@ -9,7 +9,7 @@ namespace tutorial {
       active_control(button_quit);
       
       button_quit.parent(*this);
-      button_quit.image(xtd::drawing::system_images::from_name("application-exit", xtd::drawing::size(16, 16)));
+      button_quit.image(xtd::forms::theme_images::current_theme().from_name("application-exit", xtd::drawing::size(16, 16)));
       button_quit.image_align(xtd::forms::content_alignment::middle_left);
       button_quit.text("&Quit");
       button_quit.location(xtd::drawing::point(20, 20));

@@ -18,7 +18,6 @@ namespace xtd {
       friend std::ostream& operator<<(std::ostream& os, const theme_base& theme) noexcept {return os << theme.to_string();}
       /// @endcond
       
-
       using theme_name_collection = std::vector<std::string>;
 
       virtual const std::string& name() const {return name_;}
@@ -65,7 +64,6 @@ namespace xtd {
     };
   }
 }
-
 
 /* Include file :
  --------------
