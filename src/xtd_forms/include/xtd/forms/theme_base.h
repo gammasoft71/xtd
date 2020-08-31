@@ -1,6 +1,7 @@
 #pragma once
 #include "theme_style.h"
 #include <xtd/environment.h>
+#include <xtd/strings.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,8 +15,10 @@ namespace xtd {
       bool operator==(const theme_base& value) const {return name_ == value.name_ && theme_style_ == value.theme_style_ && is_default_ == value.is_default();}
       bool operator!=(const theme_base& value) const {return !operator==(value);}
       virtual ~theme_base() = default;
+      friend std::ostream& operator<<(std::ostream& os, const theme_base& theme) noexcept {return os << theme.to_string();}
       /// @endcond
       
+
       using theme_name_collection = std::vector<std::string>;
 
       virtual const std::string& name() const {return name_;}
@@ -31,6 +34,8 @@ namespace xtd {
       }
       
       bool is_default() const {return is_default_;}
+      
+      std::string to_string() const {return xtd::strings::format("[name={}, style={}, is_default={}] ", name_, theme_style_, is_default_);}
       
       static std::string default_theme_name() {return xtd::environment::os_version().desktop_environment() == "" ? "symbolic" :  xtd::environment::os_version().desktop_environment();}
       
