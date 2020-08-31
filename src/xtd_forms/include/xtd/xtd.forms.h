@@ -151,6 +151,7 @@
 #include "xtd/forms/text_format_flags.h"
 #include "xtd/forms/texts.h"
 #include "xtd/forms/theme.h"
+#include "xtd/forms/theme_base.h"
 #include "xtd/forms/theme_color.h"
 #include "xtd/forms/theme_style.h"
 #include "xtd/forms/tool_bar_images.h"

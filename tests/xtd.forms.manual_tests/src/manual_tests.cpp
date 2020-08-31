@@ -149,6 +149,8 @@ int main() {
   }}));
   */
   
+  theme::current_theme("kde");
+  
   /*
   main_menu menu;
   menu.menu_items().push_back("&File");
@@ -215,10 +217,14 @@ int main() {
   //button2.fore_color(xtd::drawing::system_colors::accent());
 
   text_box text_box1;
-  text_box1.location({ 10, 90 });
-  text_box1.size({ 200, 100 });
+  text_box1.location({10, 90});
   text_box1.parent(form_main);
-  text_box1.text("One,\nTwo,\nThree,\nFour");
+  text_box1.text("Text box line");
+  
+  picture_box picture_box1;
+  picture_box1.location({10, 120});
+  picture_box1.parent(form_main);
+  picture_box1.image(system_images::from_name("folder"));
 
   //form_main.back_color(drawing::color::red);
 

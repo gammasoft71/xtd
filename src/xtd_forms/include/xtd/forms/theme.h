@@ -1,5 +1,6 @@
 #pragma once
 #include "theme_base.h"
+#include "theme_color.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -9,7 +10,7 @@ namespace xtd {
     public:
       theme() = default;
       explicit theme(const std::string& name) : theme_base(name) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style) : theme_base(name, theme_style) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style) : theme_base(name, theme_style), theme_color_(theme_color::theme_from_name(name)) {}
       /// @cond
       theme(const theme&) = default;
       theme& operator=(const theme&) = default;
@@ -23,8 +24,11 @@ namespace xtd {
         if (current_theme_ == theme::empty) current_theme_ = default_theme();
         return current_theme_;
       }
-      static void current_theme(const theme& theme) {current_theme_ = theme;}
-      static void current_theme(const std::string& name) {current_theme_ = theme_from_name(name);}
+      static void current_theme(const theme& theme) {
+        current_theme_ = theme;
+        theme_color::current_theme(current_theme_.theme_color_);
+      }
+      static void current_theme(const std::string& name) {current_theme(theme_from_name(name));}
 
       static theme default_theme() {return theme_from_name(default_theme_name());}
 
@@ -32,6 +36,7 @@ namespace xtd {
       
     private:
       theme(const std::string& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default) {}
+      theme_color theme_color_;
       static theme current_theme_;
     };
   }

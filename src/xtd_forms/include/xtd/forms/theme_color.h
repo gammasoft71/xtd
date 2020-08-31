@@ -70,7 +70,7 @@ namespace xtd {
         return current_theme_;
       }
       static void current_theme(const theme_color& theme_color) {current_theme_ = theme_color;}
-      static void current_theme(const std::string& name) {current_theme_ = theme_from_name(name);}
+      static void current_theme(const std::string& name) {current_theme(theme_from_name(name));}
 
       static theme_color default_theme() {return theme_from_name(default_theme_name());}
       
