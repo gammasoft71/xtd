@@ -45,17 +45,15 @@ namespace {
       if (default_size.width() >= size.width() && default_size.height() >= size.height()) return default_size;
     return {1024, 1024};
   }
-
-  bool dark_mode_enabled() {
-    return system_colors::window().get_lightness() < 0.5;
-  }
 }
 
 image system_images::from_name(const string& theme, const string& name, const size& size) {
   static vector<drawing::size> default_sizes = {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
   static vector<string> default_size_names = {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
+  auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !strings::ends_with(theme, " (light)")) || strings::ends_with(theme, " (dark)");
+  auto theme_name = strings::replace(strings::replace(theme, " (dark)", ""), " (light)", "");
 
-  auto theme_path = exists(system_images_resource_path()/theme) ? system_images_resource_path()/theme : system_images_resource_path()/default_theme();
+  auto theme_path = exists(system_images_resource_path()/theme_name) ? system_images_resource_path()/theme_name : system_images_resource_path()/default_theme();
   auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
   if (theme == default_theme()) {
@@ -63,7 +61,7 @@ image system_images::from_name(const string& theme, const string& name, const si
     if (hbitmap) return image::from_hbitmap(hbitmap);
   }
 
-  if (dark_mode_enabled()) {
+  if (dark_mode) {
     if (exists(theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((theme_path/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
       if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
@@ -74,7 +72,7 @@ image system_images::from_name(const string& theme, const string& name, const si
     if (exists(theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png"))) return bitmap(bitmap((theme_path/default_size_names[it - default_sizes.begin()]/(name + ".png")).string()), *it_sizes);
   
   
-  if (dark_mode_enabled()) {
+  if (dark_mode) {
     if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png"))) return bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it_sizes - default_sizes.begin()]/(name + "-dark.png")).string());
     for (auto it = default_sizes.begin(); it != default_sizes.end(); ++it)
       if (exists(system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png"))) return bitmap(bitmap((system_images_resource_path()/fallback_theme()/default_size_names[it - default_sizes.begin()]/(name + "-dark.png")).string()), *it_sizes);
@@ -133,5 +131,5 @@ string system_images::fallback_theme() {
 }
 
 vector<string> system_images::themes() {
-  return {"kde", "gnome", "macos", "symbolic", "windows", "xtd"};
+  return {"gnome", "gnome (dark)", "gnome (light)", "kde", "kde (dark)", "kde (light)", "macos", "macos (dark)", "macos (light)", "symbolic", "symbolic (dark)", "symbolic (light)", "windows", "windows (dark)", "windows (light)", "xtd", "xtd (dark)", "xtd (light)"};
 }

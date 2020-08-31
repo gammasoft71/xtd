@@ -8,6 +8,10 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
+    /// @cond
+    class system_icons;
+    /// @endcond
+
     /// @brief Each property of the system_images class is an image object for Windows system-wide images. This class cannot be inherited.
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
     class system_images static_ {
@@ -29,6 +33,8 @@ namespace xtd {
       static std::vector<std::string> names(const std::string& context) {return context_names()[context];}
       static std::vector<xtd::drawing::size> sizes();
       
+    private:
+      friend class system_icons;
       static std::string default_theme();
       static std::string fallback_theme();
       static std::vector<std::string> themes();
