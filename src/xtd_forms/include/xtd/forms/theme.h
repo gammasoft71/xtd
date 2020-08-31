@@ -1,6 +1,7 @@
 #pragma once
 #include "theme_base.h"
-#include "theme_color.h"
+#include "theme_colors.h"
+#include "theme_images.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -10,7 +11,10 @@ namespace xtd {
     public:
       theme() = default;
       explicit theme(const std::string& name) : theme_base(name) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style) : theme_base(name, theme_style), theme_color_(theme_color::theme_from_name(name)) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style) : theme_base(name, theme_style), theme_colors_(theme_colors::theme_from_name(name)), theme_images_(theme_images::theme_from_name(name)) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_colors& theme_colors) : theme_base(name, theme_style), theme_colors_(theme_colors) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_images& theme_images) : theme_base(name, theme_style), theme_images_(theme_images) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_colors& theme_colors, const theme_images& theme_images) : theme_base(name, theme_style), theme_colors_(theme_colors), theme_images_(theme_images) {}
       /// @cond
       theme(const theme&) = default;
       theme& operator=(const theme&) = default;
@@ -26,7 +30,8 @@ namespace xtd {
       }
       static void current_theme(const theme& theme) {
         current_theme_ = theme;
-        theme_color::current_theme(current_theme_.theme_color_);
+        theme_colors::current_theme(current_theme_.theme_colors_);
+        theme_images::current_theme(current_theme_.theme_images_);
       }
       static void current_theme(const std::string& name) {current_theme(theme_from_name(name));}
 
@@ -36,7 +41,8 @@ namespace xtd {
       
     private:
       theme(const std::string& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default) {}
-      theme_color theme_color_;
+      theme_colors theme_colors_ = theme_colors::current_theme();
+      theme_images theme_images_ = theme_images::current_theme();
       static theme current_theme_;
     };
   }

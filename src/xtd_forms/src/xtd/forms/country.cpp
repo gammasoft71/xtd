@@ -1,6 +1,6 @@
 #include "../../../include/xtd/forms/country.h"
 #include "../../../include/xtd/forms/countries.h"
-#include <xtd/drawing/system_images.h>
+#include "../../../include/xtd/forms/theme_images.h"
 #include <filesystem>
 
 using namespace std;
@@ -20,7 +20,7 @@ const image country::flag() const {
 }
 
 const image country::flag_squared() const {
-  return system_images::from_name(strings::format("flag-{}", strings::to_lower(alpha_2_code())), drawing::size {1024, 1024});
+  return theme_images::current_theme().from_name(strings::format("flag-{}", strings::to_lower(alpha_2_code())), drawing::size {1024, 1024});
 }
 
 country country::from_name(const std::string& name) {

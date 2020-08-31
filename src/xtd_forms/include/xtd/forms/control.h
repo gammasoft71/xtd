@@ -33,7 +33,7 @@
 #include "padding.h"
 #include "paint_event_handler.h"
 #include "message.h"
-#include "theme_color.h"
+#include "theme_colors.h"
 #include "timer.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -321,11 +321,11 @@ namespace xtd {
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
       /// @remarks This is the default back_color property value of a generic top-level control. Derived classes can have different defaults.
-      virtual drawing::color default_back_color() const {return xtd::forms::theme_color::current_theme().control();}
+      virtual drawing::color default_back_color() const {return xtd::forms::theme_colors::current_theme().control();}
 
       virtual forms::cursor default_cursor() const {return cursors::default_cursor();}
 
-      virtual drawing::color default_fore_color() const {return xtd::forms::theme_color::current_theme().control_text();}
+      virtual drawing::color default_fore_color() const {return xtd::forms::theme_colors::current_theme().control_text();}
       
       virtual drawing::font default_font() const;
       

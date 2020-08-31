@@ -76,7 +76,7 @@ namespace xtdc_gui {
       }
       
       auto_scroll(true);
-      back_color(xtd::forms::theme_color::current_theme().window());
+      back_color(xtd::forms::theme_colors::current_theme().window());
       border_style(xtd::forms::border_style::fixed_3d);
     }
 
@@ -122,8 +122,8 @@ namespace xtdc_gui {
         project_type_item_controls_[project_type_item_controls_.size() - 1 - previous_selected_index_]->fore_color(fore_color());
       }
       if (selected_index_ != -1) {
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->back_color(xtd::forms::theme_color::current_theme().accent());
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->fore_color(xtd::forms::theme_color::current_theme().accent_text());
+        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->back_color(xtd::forms::theme_colors::current_theme().accent());
+        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->fore_color(xtd::forms::theme_colors::current_theme().accent_text());
         selected_project_type_item(project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->project_type_item());
       }
       previous_selected_index_ = selected_index_;

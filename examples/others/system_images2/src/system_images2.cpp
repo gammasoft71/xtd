@@ -20,43 +20,43 @@ namespace example {
       label_picture_kde_theme.bounds({10, 25, 280, label_picture_name.height()});
       label_picture_kde_theme.text("kde");
       label_picture_kde_theme.border_style(forms::border_style::fixed_3d);
-      label_picture_kde_theme.back_color(label_picture_kde_theme.text() == theme::default_theme_name() ? system_colors::menu_highlight() : system_colors::window());
-      label_picture_kde_theme.fore_color(label_picture_kde_theme.text() == theme::fallback_theme_name() ? system_colors::menu_highlight() : system_colors::window_text());
+      label_picture_kde_theme.back_color(label_picture_kde_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
+      label_picture_kde_theme.fore_color(label_picture_kde_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
 
       label_picture_gnome_theme.text_align(content_alignment::middle_center);
       label_picture_gnome_theme.bounds({300, 25, 280, label_picture_name.height()});
       label_picture_gnome_theme.text("gnome");
       label_picture_gnome_theme.border_style(forms::border_style::fixed_3d);
-      label_picture_gnome_theme.back_color(label_picture_gnome_theme.text() == theme::default_theme_name() ? system_colors::menu_highlight() : system_colors::window());
-      label_picture_gnome_theme.fore_color(label_picture_gnome_theme.text() == theme::fallback_theme_name() ? system_colors::menu_highlight() : system_colors::window_text());
+      label_picture_gnome_theme.back_color(label_picture_gnome_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
+      label_picture_gnome_theme.fore_color(label_picture_gnome_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
 
       label_picture_macos_theme.text_align(content_alignment::middle_center);
       label_picture_macos_theme.bounds({590, 25, 280, label_picture_name.height()});
       label_picture_macos_theme.text("macos");
       label_picture_macos_theme.border_style(forms::border_style::fixed_3d);
-      label_picture_macos_theme.back_color(label_picture_macos_theme.text() == theme::default_theme_name() ? system_colors::menu_highlight() : system_colors::window());
-      label_picture_macos_theme.fore_color(label_picture_macos_theme.text() == theme::fallback_theme_name() ? system_colors::menu_highlight() : system_colors::window_text());
+      label_picture_macos_theme.back_color(label_picture_macos_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
+      label_picture_macos_theme.fore_color(label_picture_macos_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
 
       label_picture_symbolic_theme.text_align(content_alignment::middle_center);
       label_picture_symbolic_theme.bounds({10, 360, 280, label_picture_name.height()});
       label_picture_symbolic_theme.text("symbolic");
       label_picture_symbolic_theme.border_style(forms::border_style::fixed_3d);
-      label_picture_symbolic_theme.back_color(label_picture_symbolic_theme.text() == theme::default_theme_name() ? system_colors::menu_highlight() : system_colors::window());
-      label_picture_symbolic_theme.fore_color(label_picture_symbolic_theme.text() == theme::fallback_theme_name() ? system_colors::menu_highlight() : system_colors::window_text());
+      label_picture_symbolic_theme.back_color(label_picture_symbolic_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
+      label_picture_symbolic_theme.fore_color(label_picture_symbolic_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
 
       label_picture_windows_theme.text_align(content_alignment::middle_center);
       label_picture_windows_theme.bounds({300, 360, 280, label_picture_name.height()});
       label_picture_windows_theme.text("windows");
       label_picture_windows_theme.border_style(forms::border_style::fixed_3d);
-      label_picture_windows_theme.back_color(label_picture_windows_theme.text() == theme::default_theme_name() ? system_colors::menu_highlight() : system_colors::window());
-      label_picture_windows_theme.fore_color(label_picture_windows_theme.text() == theme::fallback_theme_name() ? system_colors::menu_highlight() : system_colors::window_text());
+      label_picture_windows_theme.back_color(label_picture_windows_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
+      label_picture_windows_theme.fore_color(label_picture_windows_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
 
       label_picture_xtd_theme.text_align(content_alignment::middle_center);
       label_picture_xtd_theme.bounds({590, 360, 280, label_picture_name.height()});
       label_picture_xtd_theme.text("xtd");
       label_picture_xtd_theme.border_style(forms::border_style::fixed_3d);
-      label_picture_xtd_theme.back_color(label_picture_xtd_theme.text() == theme::default_theme_name() ? system_colors::menu_highlight() : system_colors::window());
-      label_picture_xtd_theme.fore_color(label_picture_xtd_theme.text() == theme::fallback_theme_name() ? system_colors::menu_highlight() : system_colors::window_text());
+      label_picture_xtd_theme.back_color(label_picture_xtd_theme.text() == theme::default_theme_name() ? system_colors::accent() : system_colors::window());
+      label_picture_xtd_theme.fore_color(label_picture_xtd_theme.text() == theme::fallback_theme_name() ? system_colors::accent() : system_colors::window_text());
 
       picture_kde_theme.back_color(system_colors::window());
       picture_kde_theme.border_style(forms::border_style::fixed_3d);
