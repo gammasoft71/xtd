@@ -24,7 +24,6 @@ set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
   src/xtd/drawing/native/wxwidgets/system_images.cpp
   src/xtd/drawing/native/wxwidgets/system_images_gtk.cpp
   src/xtd/drawing/native/wxwidgets/system_fonts.cpp
-  src/xtd/drawing/native/wxwidgets/theme.cpp
 )
 
 if (APPLE)

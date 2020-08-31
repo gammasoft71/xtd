@@ -123,3 +123,15 @@ std::vector<string> system_images::names() {
 std::vector<xtd::drawing::size> system_images::sizes() {
   return {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
 }
+
+string system_images::default_theme()  {
+  return xtd::environment::os_version().desktop_environment() == "" ? "symbolic" :  xtd::environment::os_version().desktop_environment();
+}
+
+string system_images::fallback_theme() {
+  return "symbolic";
+}
+
+vector<string> system_images::themes() {
+  return {"kde", "gnome", "macos", "symbolic", "windows", "xtd"};
+}
