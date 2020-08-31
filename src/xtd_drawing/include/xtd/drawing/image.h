@@ -23,6 +23,7 @@ namespace xtd {
     class image {
     public:
       /// @cond
+      image() = default;
       image(const image& image) = default;
       image& operator=(const image& image) = default;
       virtual ~image();
@@ -139,7 +140,6 @@ namespace xtd {
       static image empty;
       
     protected:
-      image() = default;
       explicit image(intptr_t hbitmap);
       explicit image(const std::string& fileName);
       explicit image(std::istream& stream);
