@@ -425,7 +425,7 @@ const theme_color theme_color::empty {};
 theme_color theme_color::current_theme_;
 
 theme_color theme_color::theme_from_name(const std::string& name) {
-  if (name == default_theme_name()) return theme_color(default_theme_name(), theme_style::system_auto, {system_kown_themed_color_to_color});
+  if (name == default_theme_name()) return theme_color(default_theme_name(), theme_style::system_auto, {system_kown_themed_color_to_color}, true);
   if (name == "gnome") return theme_color("gnome", theme_style::system_auto, {gnome_kown_themed_color_to_color});
   if (name == "gnome (dark)") return theme_color("gnome (dark)", theme_style::dark, {gnome_dark_kown_themed_color_to_color});
   if (name == "gnome (light)") return theme_color("gnome (light)", theme_style::light, {gnome_light_kown_themed_color_to_color});

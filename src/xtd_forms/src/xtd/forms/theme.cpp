@@ -6,7 +6,7 @@ const theme theme::empty {};
 theme theme::current_theme_;
 
 theme theme::theme_from_name(const std::string& name) {
-  if (name == default_theme_name()) return theme(default_theme_name(), theme_style::system_auto);
+  if (name == default_theme_name()) return theme(default_theme_name(), theme_style::system_auto, true);
   if (name == "gnome") return theme("gnome", theme_style::system_auto);
   if (name == "gnome (dark)") return theme("gnome (dark)", theme_style::dark);
   if (name == "gnome (light)") return theme("gnome (light)", theme_style::light);
