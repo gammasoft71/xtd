@@ -101,56 +101,56 @@ namespace xtd {
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {
-        button_base::on_enabled_changed(e);
         if (flat_style_ != xtd::forms::flat_style::system) {
           state_ = enabled() ? xtd::forms::visual_styles::push_button_state::normal : xtd::forms::visual_styles::push_button_state::disabled;
           invalidate();
         }
+        button_base::on_enabled_changed(e);
       }
 
       void on_handle_created(const event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
-        button_base::on_mouse_down(e);
         auto_repeat_timer_.interval(auto_repeat_delay_);
         auto_repeat_timer_.enabled(auto_repeat_);
         if (flat_style_ != xtd::forms::flat_style::system) {
           state_ = xtd::forms::visual_styles::push_button_state::pressed;
           invalidate();
         }
+        button_base::on_mouse_down(e);
       }
 
       void on_mouse_enter(const event_args& e) override {
-        button_base::on_mouse_enter(e);
         if (flat_style_ != xtd::forms::flat_style::system) {
           state_ = xtd::forms::visual_styles::push_button_state::hot;
           invalidate();
         }
+        button_base::on_mouse_enter(e);
       }
 
       void on_mouse_leave(const event_args& e) override {
-        button_base::on_mouse_enter(e);
         if (flat_style_ != xtd::forms::flat_style::system) {
           state_ = xtd::forms::visual_styles::push_button_state::normal;
           invalidate();
+          button_base::on_mouse_leave(e);
         }
       }
 
       void on_mouse_move(const mouse_event_args& e) override {
-        button_base::on_mouse_move(e);
         if (flat_style_ != xtd::forms::flat_style::system && (e.button() & mouse_buttons::left) == mouse_buttons::left && !client_rectangle().contains(e.location()) && state_ == xtd::forms::visual_styles::push_button_state::pressed) {
           state_ = xtd::forms::visual_styles::push_button_state::hot;
           invalidate();
         }
+        button_base::on_mouse_move(e);
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
-        button_base::on_mouse_up(e);
         auto_repeat_timer_.enabled(false);
         if (flat_style_ != xtd::forms::flat_style::system && state_ == xtd::forms::visual_styles::push_button_state::pressed) {
           state_ = xtd::forms::visual_styles::push_button_state::hot;
           invalidate();
         }
+        button_base::on_mouse_up(e);
       }
 
       void on_paint(paint_event_args& e) override;
