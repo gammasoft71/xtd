@@ -45,8 +45,8 @@ bool application::allow_quit() {
 void application::cleanup() {
   if (wxTheApp) {
     wxTheApp->OnExit();
-    wxEntryCleanup();
     delete wxTheApp;
+    wxEntryCleanup();
     wxApp::SetInstance(nullptr);
   }
 }
