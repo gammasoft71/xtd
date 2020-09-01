@@ -26,7 +26,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/button.h
   include/xtd/forms/button_base.h
   include/xtd/forms/button_images.h
-  include/xtd/forms/button_renderrer.h
+  include/xtd/forms/button_renderer.h
   include/xtd/forms/buttons.h
   include/xtd/forms/cancel_event_args.h
   include/xtd/forms/cancel_event_handler.h
@@ -131,6 +131,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/progress_changed_event_handler.h
   include/xtd/forms/radio_button.h
   include/xtd/forms/radio_buttons.h
+  include/xtd/forms/renderer.h
   include/xtd/forms/run_worker_completed_event_args.h
   include/xtd/forms/run_worker_completed_event_handler.h
   include/xtd/forms/save_file_dialog.h
@@ -161,6 +162,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/theme_base.h
   include/xtd/forms/theme_colors.h
   include/xtd/forms/theme_images.h
+  include/xtd/forms/theme_renderers.h
   include/xtd/forms/theme_style.h
   include/xtd/forms/tick_style.h
   include/xtd/forms/timer.h
@@ -189,7 +191,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/background_worker.cpp
   src/xtd/forms/button.cpp
   src/xtd/forms/button_base.cpp
-  src/xtd/forms/button_renderrer.cpp
+  src/xtd/forms/button_renderer.cpp
   src/xtd/forms/check_box.cpp
   src/xtd/forms/checked_list_box.cpp
   src/xtd/forms/choice.cpp
@@ -248,6 +250,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/theme_base.cpp
   src/xtd/forms/theme_colors.cpp
   src/xtd/forms/theme_images.cpp
+  src/xtd/forms/theme_renderers.cpp
   src/xtd/forms/timer.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp

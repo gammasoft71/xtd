@@ -149,7 +149,7 @@ int main() {
   }}));
   */
   
-  theme::current_theme("windows");
+  //theme::current_theme("windows (light)");
   
   /*
   main_menu menu;

@@ -1,7 +1,8 @@
 #include "../../../include/xtd/forms/button.h"
-#include "../../../include/xtd/forms/button_renderrer.h"
+#include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/form.h"
 #include "../../../include/xtd/forms/theme_colors.h"
+#include "../../../include/xtd/forms/theme_renderers.h"
 #include <xtd/drawing/pen.h>
 #include <xtd/drawing/solid_brush.h>
 #include <xtd/drawing/string_format.h>
@@ -111,7 +112,8 @@ void button::on_paint(paint_event_args& e) {
 
     text_format_flags flags = text_format_flags::default_format;
     flags |= to_text_format_flags(text_align_);
-    button_renderrer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, image_bounds, false, state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    //button_renderer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, image_bounds, false, state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, image_bounds, false, state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
   }
 }
 
