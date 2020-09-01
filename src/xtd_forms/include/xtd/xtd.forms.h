@@ -11,7 +11,7 @@
 #include "xtd/forms/layout/arranged_element_collection.h"
 #include "xtd/forms/properties/resources.h"
 #include "xtd/forms/about_dialog.h"
-#include "xtd/forms/about_dialog_style.h"
+#include "xtd/forms/dialog_style.h"
 #include "xtd/forms/anchor_styles.h"
 #include "xtd/forms/appearance.h"
 #include "xtd/forms/application.h"

@@ -75,7 +75,7 @@ namespace {
       text_box_license_.dock(dock_style::fill);
     }
     
-    static bool run_dialog(intptr_t hwnd, const xtd::drawing::icon& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
+    static bool run_dialog(intptr_t hwnd, const xtd::drawing::image& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
       static std::unique_ptr<about_dialog_standard> about_dialog_standard;
       if (about_dialog_standard != nullptr) {
         about_dialog_standard->activate();
@@ -84,10 +84,10 @@ namespace {
       about_dialog_standard = std::make_unique<::about_dialog_standard>();
       auto has_credit = !(creators.empty() && doc_writers.empty() && translators.empty() && designers.empty());
       auto has_license = !license.empty();
-      if (icon != xtd::drawing::icon::empty)
-        about_dialog_standard->picture_box_icon_.image(xtd::drawing::icon(icon, 64, 64).to_bitmap());
+      if (icon != xtd::drawing::bitmap::empty)
+        about_dialog_standard->picture_box_icon_.image(xtd::drawing::bitmap(icon, {64, 64}));
       else {
-        about_dialog_standard->picture_box_icon_.image(xtd::drawing::system_icons::from_name("xtd-forms", xtd::drawing::size(64, 64)).to_bitmap());
+        about_dialog_standard->picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
       }
       about_dialog_standard->label_name_.height(30 * xtd::strings::split(name, {'\n'}).size());
       about_dialog_standard->label_name_.text(name);
@@ -148,8 +148,8 @@ namespace {
 }
 
 void about_dialog::reset() {
-  about_dialog_style_ = xtd::forms::about_dialog_style::system;
-  icon_ = xtd::drawing::icon::empty;
+  dialog_style_ = xtd::forms::dialog_style::system;
+  icon_ = xtd::drawing::image::empty;
   name_ = "";
   description_ = "";
   version_ = "";
@@ -165,6 +165,6 @@ void about_dialog::reset() {
 }
 
 bool about_dialog::run_dialog(intptr_t owner) {
-  if (about_dialog_style_ == xtd::forms::about_dialog_style::system) return native::about_dialog::run_dialog(owner, icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+  if (dialog_style_ == xtd::forms::dialog_style::system) return native::about_dialog::run_dialog(owner, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
   return about_dialog_standard::run_dialog(owner, icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
 }

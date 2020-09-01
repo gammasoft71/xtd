@@ -1,6 +1,6 @@
 #pragma once
 #include <xtd/drawing/icon.h>
-#include "about_dialog_style.h"
+#include "dialog_style.h"
 #include "common_dialog.h"
 #include "layout/arranged_element_collection.h"
 
@@ -22,9 +22,9 @@ namespace xtd {
       /// @brief Initializes a new instance of the about_dialog class.
       about_dialog() = default;
       
-      xtd::forms::about_dialog_style about_dialog_style() const {return about_dialog_style_;}
-      about_dialog& about_dialog_style(xtd::forms::about_dialog_style about_dialog_style) {
-        about_dialog_style_ = about_dialog_style;
+      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      about_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
+        dialog_style_ = dialog_style;
         return *this;
       }
       
@@ -52,12 +52,26 @@ namespace xtd {
       
       /// @brief Gets the product icon.
       /// @return The product icon.
-      xtd::drawing::icon icon() const {return this->icon_;}
+      xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(this->icon_));}
       /// @brief Sets the product icon.
-      /// @param description The product icon.
+      /// @param icon The product icon.
       /// @return Current about_box instance.
       about_dialog& icon(const xtd::drawing::icon& icon) {
-        icon_ = icon;
+        icon_ = icon.to_bitmap();
+        return *this;
+      }
+      /// @brief Sets the product icon.
+      /// @param image The product icon.
+      /// @return Current about_box instance.
+      about_dialog& icon(const xtd::drawing::image& image) {
+        icon_ = image;
+        return *this;
+      }
+      /// @brief Sets the product icon.
+      /// @param bitmap The product icon.
+      /// @return Current about_box instance.
+      about_dialog& icon(const xtd::drawing::bitmap& bitmap) {
+        icon_ = bitmap;
         return *this;
       }
 
@@ -198,8 +212,8 @@ namespace xtd {
       dialog_result show_dialog();
       dialog_result show_dialog(const iwin32_window& owner);
 
-      xtd::forms::about_dialog_style about_dialog_style_ = xtd::forms::about_dialog_style::standard;
-      xtd::drawing::icon icon_;
+      xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
+      xtd::drawing::image icon_;
       std::string name_;
       std::string version_;
       std::string long_version_;
