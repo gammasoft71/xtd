@@ -624,5 +624,5 @@ theme_colors theme_colors::theme_from_name(const std::string& name) {
   if (name == "xtd") return theme_colors("xtd", theme_style::system_auto, {xtd_color_getter});
   if (name == "xtd (dark)") return theme_colors("xtd (dark)", theme_style::dark, {xtd_dark_color_getter});
   if (name == "xtd (light)") return theme_colors("xtd (light)", theme_style::light, {xtd_light_color_getter});
-  return default_theme();
+  return current_theme_;
 }
