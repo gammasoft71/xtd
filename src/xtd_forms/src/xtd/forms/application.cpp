@@ -266,15 +266,15 @@ void application::run(const form& form) {
   application::run(context);
 }
 
-void application::theme(const std::string& theme) {
-  theme::current_theme(theme);
+void application::theme(const std::string& theme_name) {
+  theme::current_theme(theme_name);
 }
 
-std::string application::theme() {
-  return theme::current_theme().name();
+const xtd::forms::theme& application::theme() {
+  return theme::current_theme();
 }
 
-std::vector<std::string> application::themes() {
+const std::vector<std::string>& application::theme_names() {
   return theme::theme_names();
 }
 

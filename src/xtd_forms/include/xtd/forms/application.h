@@ -8,6 +8,7 @@
 #include "message.h"
 #include "message_box.h"
 #include "message_loop_callback.h"
+#include "theme.h"
 #include <xtd/xtd.delegates>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -212,9 +213,10 @@ namespace xtd {
       /// @remarks This method adds an event handler to the main_form parameter for the closed event. The event handler calls exit_thread to clean up the application.
       static void run(const form& main_form);
       
-      static void theme(const std::string& theme);
-      static std::string theme();
-      static std::vector<std::string> themes();
+      static void theme(const std::string& theme_name);
+      static void theme(const xtd::forms::theme& theme);
+      static const xtd::forms::theme& theme();
+      static const std::vector<std::string>& theme_names();
 
       static void yield();
 
