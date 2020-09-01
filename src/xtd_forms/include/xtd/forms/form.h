@@ -19,6 +19,7 @@ namespace xtd {
   namespace forms {
     /// @cond
     class application;
+    class application_context;
     /// @endcond
     
     /// @brief Represents a window or dialog box that makes up an application's user interface.
@@ -168,6 +169,8 @@ namespace xtd {
       form_window_state window_state_ = form_window_state::normal;
       
     private:
+      friend class application_context;
+      bool can_close_ = false;
       void internal_set_window_state();
     };
   }

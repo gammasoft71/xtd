@@ -170,6 +170,7 @@ control& form::visible(bool visible) {
   if (current_window_state.has_value())
     this->window_state(current_window_state.value());
   this->internal_set_window_state();
+  if (visible) can_close_ = false;
   return *this;
 }
 
@@ -325,10 +326,11 @@ void form::wm_close(message &message) {
   form_closing_event_args event_args;
   this->on_form_closing(event_args);
   if (event_args.cancel() != true) {
-    visible(false);
+    can_close_ = true;
+    hide();
     if (!this->get_state(state::modal)) {
       this->def_wnd_proc(message);
-      this->destroy_control();
+      //this->destroy_control();
     } else {
       if (this->dialog_result_ == forms::dialog_result::none) this->dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(this->handle(), static_cast<int32_t>(this->dialog_result_));

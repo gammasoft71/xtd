@@ -43,7 +43,7 @@ namespace xtd {
       void main_form(const form& main_form) {
         if (this->main_form_ != nullptr) this->main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
         this->main_form_ = const_cast<form*>(&main_form);
-        this->main_form_->handle_destroyed += {*this, &application_context::on_main_form_closed};
+        this->main_form_->visible_changed += {*this, &application_context::on_main_form_closed};
       }
 
       /// @brief Gets an object that contains data about the control.
@@ -76,9 +76,12 @@ namespace xtd {
       /// @param e The event_args that contains the event data.
       /// @remarks The default implementation of this method calls exit_thread_core.
       virtual void on_main_form_closed(const control& sender, const event_args& e) {
-        if (!this->main_form_->recreating_handle()) {
-          this->main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
-          this->exit_thread_core();
+        if (!this->main_form_->visible()) {
+          if (!this->main_form_->can_close_) this->main_form_->close();
+          if (this->main_form_->can_close_) {
+            this->main_form_->handle_destroyed -= {*this, &application_context::on_main_form_closed};
+            this->exit_thread_core();
+          }
         }
       }
       

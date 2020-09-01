@@ -100,11 +100,11 @@ namespace {
       }
 
       if (!version.empty() && !long_version.empty())
-        about_dialog_standard->label_version_.text(xtd::strings::format("{} ({})", version, long_version));
-      else if (!version.empty())
-        about_dialog_standard->label_version_.text(xtd::strings::format("{}", version));
+        about_dialog_standard->label_version_.text(xtd::strings::format("{} ({})", long_version, version));
       else if (!long_version.empty())
-        about_dialog_standard->label_version_.text(xtd::strings::format("({})", long_version));
+        about_dialog_standard->label_version_.text(xtd::strings::format("{}", long_version));
+      else if (!version.empty())
+        about_dialog_standard->label_version_.text(xtd::strings::format("({})", version));
 
       about_dialog_standard->label_description_.height(23 * xtd::strings::split(description, {'\n'}).size());
       about_dialog_standard->label_description_.text(xtd::strings::format("{}", description));
