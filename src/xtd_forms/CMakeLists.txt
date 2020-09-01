@@ -10,7 +10,6 @@ set(XTD_INCLUDES
 
 set(XTD_FORMS_INCLUDES
   include/xtd/forms/about_dialog.h
-  include/xtd/forms/about_dialog_style.h
   include/xtd/forms/anchor_styles.h
   include/xtd/forms/appearance.h
   include/xtd/forms/application.h
@@ -57,6 +56,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/date_time_picker.h
   include/xtd/forms/date_time_picker_format.h
   include/xtd/forms/dialog_result.h
+  include/xtd/forms/dialog_style.h
   include/xtd/forms/do_work_event_args.h
   include/xtd/forms/do_work_event_handler.h
   include/xtd/forms/dock_style.h
