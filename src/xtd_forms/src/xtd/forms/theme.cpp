@@ -25,5 +25,5 @@ theme theme::theme_from_name(const std::string& name) {
   if (name == "xtd") return theme("xtd", theme_style::system_auto);
   if (name == "xtd (dark)") return theme("xtd (dark)", theme_style::dark);
   if (name == "xtd (light)") return theme("xtd (light)", theme_style::light);
-  return default_theme();
+  return current_theme_;
 }

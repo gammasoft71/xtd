@@ -114,5 +114,5 @@ theme_images theme_images::theme_from_name(const std::string& name) {
   if (name == "xtd") return theme_images("xtd", theme_style::system_auto, {xtd_image_getter});
   if (name == "xtd (dark)") return theme_images("xtd (dark)", theme_style::dark, {xtd_dark_image_getter});
   if (name == "xtd (light)") return theme_images("xtd (light)", theme_style::light, {xtd_light_image_getter});
-  return default_theme();
+  return current_theme_;
 }
