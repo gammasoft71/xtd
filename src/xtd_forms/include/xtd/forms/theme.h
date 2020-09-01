@@ -35,6 +35,7 @@ namespace xtd {
         current_theme_ = theme;
         theme_colors::current_theme(current_theme_.theme_colors_);
         theme_images::current_theme(current_theme_.theme_images_);
+        theme_renderers::current_theme(current_theme_.theme_renderers_);
       }
       static void current_theme(const std::string& name) {current_theme(theme_from_name(name));}
 
