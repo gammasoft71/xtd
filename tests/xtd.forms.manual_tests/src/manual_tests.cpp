@@ -194,6 +194,10 @@ int main() {
   //  cdebug << format("new size = {}", button_left1.parent().value().get().size()) << endl;
   //};
    */
+  
+  form_main.form_closing += [&](control& sender, form_closing_event_args& e) {
+    e.cancel(true);
+  };
 
   link_label link_label1;
   link_label1.location({10, 10});
@@ -220,6 +224,9 @@ int main() {
   button2.location({100, 50});
   button2.parent(form_main);
   //button2.fore_color(xtd::drawing::system_colors::accent());
+  button2.click += [&] {
+    form_main.hide();
+  };
 
   text_box text_box1;
   text_box1.location({10, 90});

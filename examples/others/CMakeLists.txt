@@ -20,6 +20,7 @@ add_projects(
   form2
   form_and_main
   form_and_thread
+  form_show
   form_window_state
   group_box_and_check_box
   group_box_and_radio_button
