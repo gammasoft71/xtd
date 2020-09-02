@@ -8,7 +8,7 @@ namespace example {
   class form1 : public form {
   public:
     form1() {
-      client_size({320, 425});
+      client_size({320, 410});
       controls().push_back_range({button_modal, button_top_most, button_modeless, button_normal});
       padding(5);
       text("Form show example");
