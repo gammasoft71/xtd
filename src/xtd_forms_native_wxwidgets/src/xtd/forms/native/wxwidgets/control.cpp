@@ -59,7 +59,7 @@ namespace {
     return true;
   }
 
-  wxSize GetFrameDecorationsize(wxFrame& frame) {
+  wxSize GetFrameDecorationsize(wxTopLevelWindow& frame) {
     wxSize size;
     
     if (frame.GetMenuBar() != nullptr)
@@ -84,8 +84,8 @@ namespace {
       size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_VSCROLL_X, &topLevelWindow));
     }
     
-    if (dynamic_cast<wxFrame*>(&topLevelWindow) != nullptr)
-      size += GetFrameDecorationsize(static_cast<wxFrame&>(topLevelWindow));
+    if (dynamic_cast<wxTopLevelWindow*>(&topLevelWindow) != nullptr)
+      size += GetFrameDecorationsize(static_cast<wxTopLevelWindow&>(topLevelWindow));
     
     return size;
   }

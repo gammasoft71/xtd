@@ -55,11 +55,9 @@ namespace xtd {
           wxSize size = wxSize(create_params.width(), create_params.height());
           if (size.GetWidth() > -1 && size.GetWidth() < 75) size.SetWidth(75);
           if (size.GetHeight() > -1 && size.GetHeight() < 23) size.SetHeight(23);
-          this->modal_ = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW;
-          if (this->modal_)
-            this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
-          else
-            this->control_handler::create<wxFrame>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style()));
+          bool dialog = (create_params.ex_style() & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || ((create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST && create_params.parent() && (create_params.style() & WS_CHILD) != WS_CHILD);
+          if (dialog) this->control_handler::create<wxDialog>(create_params.parent() ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
+          else this->control_handler::create<wxFrame>(create_params.parent() && (create_params.ex_style() & WS_EX_TOPMOST) != WS_EX_TOPMOST ? ((control_handler*)create_params.parent())->container() : nullptr, wxID_ANY, wxString(create_params.caption().c_str(), wxMBConvUTF8()), location, size, form_style_to_wx_style(create_params.style(), create_params.ex_style(), create_params.class_style(), create_params.parent()));
 #if defined(__WIN32__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::control().r(), xtd::drawing::system_colors::control().g(), xtd::drawing::system_colors::control().b(), xtd::drawing::system_colors::control().a()));
@@ -76,7 +74,7 @@ namespace xtd {
 #endif
         }
 
-        static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style) {
+        static long form_style_to_wx_style(size_t style, size_t ex_style, size_t class_style, intptr_t parent) {
           long wx_style = wxTAB_TRAVERSAL;
 
           if ((style & WS_MAXIMIZEBOX) == WS_MAXIMIZEBOX) wx_style |= wxMAXIMIZE_BOX;
@@ -92,7 +90,7 @@ namespace xtd {
           if ((ex_style & WS_EX_APPWINDOW) != WS_EX_APPWINDOW) wx_style |= wxFRAME_NO_TASKBAR;
           if ((ex_style & WS_EX_TOOLWINDOW) == WS_EX_TOOLWINDOW) wx_style |= wxFRAME_TOOL_WINDOW;
           if ((ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) wx_style &= ~(wxRESIZE_BORDER|wxSYSTEM_MENU);
-          
+                      
           if ((class_style & CS_NOCLOSE) != CS_NOCLOSE) wx_style |= wxCLOSE_BOX;
 
           //if ((style & WS_HSCROLL) == WS_HSCROLL) wx_style |= wxHSCROLL;
@@ -100,7 +98,10 @@ namespace xtd {
           //if (((style & WS_HSCROLL) == WS_HSCROLL || (style & WS_VSCROLL) == WS_VSCROLL) && (ex_style & WS_EX_AUTOSCROLL) != WS_EX_AUTOSCROLL) wx_style |= wxALWAYS_SHOW_SB;
 
           //cdebug << format("style = 0x{:X}, ex_style = 0x{:X}, wx_style = 0x{:X}", style, ex_style, wx_style) << std::endl;
-          
+
+          if ((ex_style & WS_EX_TOPMOST) == WS_EX_TOPMOST) wx_style |= wxSTAY_ON_TOP;
+          else if (parent && (style & WS_CHILD) != WS_CHILD) wx_style |= wxFRAME_FLOAT_ON_PARENT;
+
           return wx_style;
         }
 
@@ -149,11 +150,8 @@ namespace xtd {
           this->control_handler::SetSize(width, height);
         }
 
-        bool modal() const {return this->modal_;}
-        
       private:
         wxMainPanel* panel_;
-        bool modal_ = false;
       };
     }
   }

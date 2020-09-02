@@ -138,6 +138,15 @@ form& form::minimize_box(bool value) {
   return *this;
 }
 
+form& form::owner(const control& value) {
+  //if (!value.handle()) value.recreating_handle();
+  if (owner_ != value.handle()) {
+    owner_ = value.handle();
+    recreate_handle();
+  }
+  return *this;
+}
+
 control& form::parent(const control& parent) {
   throw std::invalid_argument("Top-level control cannot be added to a control.");
   return *this;
@@ -152,6 +161,14 @@ form& form::start_position(form_start_position start_position) {
 form& form::top_level(bool top_level) {
   if (!this->get_state(state::top_level) != top_level) {
     this->set_state(state::top_level, top_level);
+  }
+  return *this;
+}
+
+form& form::top_most(bool value) {
+  if (this->top_most_ != value) {
+    this->top_most_ = value;
+    this->recreate_handle();
   }
   return *this;
 }
@@ -224,6 +241,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
 
 forms::create_params form::create_params() const {
   forms::create_params create_params = this->container_control::create_params();
+  create_params.style(create_params.style() & !WS_CHILD);
   static int32_t default_location = 0;
   if (default_location == 0) {
     std::random_device rand;
@@ -265,6 +283,10 @@ forms::create_params form::create_params() const {
   if (!this->show_icon_ && (this->form_border_style_ == forms::form_border_style::sizable || this->form_border_style_ == forms::form_border_style::fixed_3d || this->form_border_style_ == forms::form_border_style::fixed_single)) create_params.ex_style(create_params.ex_style() | WS_EX_DLGMODALFRAME);
   
   if (this->get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);
+
+  if (owner_ != 0) create_params.parent(owner_);
+
+  if (top_most_) create_params.ex_style(create_params.ex_style() | WS_EX_TOPMOST);
   
   if (this->previous_screeen_) {
     switch (this->start_position_) {

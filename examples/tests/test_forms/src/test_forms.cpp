@@ -13,7 +13,7 @@ int main() {
   auto button = xtd::forms::control::create<xtd::forms::button>(*main_form, "Message", xtd::drawing::point(10, 10));
   button->click += [&] {
     xtd::cdebug << "begin message..." << std::endl;
-    auto dialog = xtd::forms::control::create<xtd::forms::form>("Dialog");
+    sttd::weak_ptr<<#class _Tp#>> dialog = xtd::forms::control::create<xtd::forms::form>("Dialog");
     dialog->show();
     std::thread t([&]() {
       dialog->show_dialog();

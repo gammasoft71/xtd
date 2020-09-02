@@ -45,64 +45,70 @@ namespace xtd {
       
       static std::optional<std::reference_wrapper<form>> active_form() {return active_form_;}
       
-      virtual forms::auto_size_mode auto_size_mode() const {return this->auto_size_mode_;}
+      virtual forms::auto_size_mode auto_size_mode() const {return auto_size_mode_;}
       virtual form& auto_size_mode(forms::auto_size_mode value);
       
-      virtual bool close_box() const {return this->close_box_;}
+      virtual bool close_box() const {return close_box_;}
       virtual form& close_box(bool value);
       
-      virtual bool control_box() const {return this->control_box_;}
+      virtual bool control_box() const {return control_box_;}
       virtual form& control_box(bool value);
 
       drawing::size default_size() const override {return {300, 300};}
       
-      virtual forms::dialog_result dialog_result() const {return this->dialog_result_;}
+      virtual forms::dialog_result dialog_result() const {return dialog_result_;}
       virtual form& dialog_result(forms::dialog_result value);
       
       virtual const xtd::drawing::icon& icon() const {return icon_;}
       virtual form& icon(const xtd::drawing::icon& value);
       
-      virtual forms::form_border_style form_border_style() const {return this->form_border_style_;}
+      virtual forms::form_border_style form_border_style() const {return form_border_style_;}
       virtual form& form_border_style(forms::form_border_style value);
 
-      virtual bool help_button() const {return this->help_button_;}
+      virtual bool help_button() const {return help_button_;}
       virtual form& help_button(bool value);
       
-      virtual bool maximize_box() const {return this->maximize_box_;}
+      virtual bool maximize_box() const {return maximize_box_;}
       virtual form& maximize_box(bool value);
       
       virtual std::optional<forms::main_menu> menu() const {return menu_;}
       virtual form& menu(const forms::main_menu& value);
       virtual form& menu(nullptr_t);
 
-      virtual bool minimize_box() const {return this->minimize_box_;}
+      virtual bool minimize_box() const {return minimize_box_;}
       virtual form& minimize_box(bool value);
 
-      bool modal() const {return this->get_state(state::modal);}
+      bool modal() const {return get_state(state::modal);}
       
+      virtual std::optional<control_ref> owner() const {return from_handle(owner_);}
+      virtual form& owner(const control& value);
+
       using container_control::parent;
       control& parent(const control& value) override;
       
-      virtual form_start_position start_position() const {return this->start_position_;}
+      virtual form_start_position start_position() const {return start_position_;}
       virtual form& start_position(form_start_position value);
 
       /// @brief Gets a value indicating whether to display the form as a top-level window.
       /// @return true to display the form as a top-level window; otherwise, false. The default is true.
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
       /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
-      virtual bool top_level() const {return this->get_state(state::top_level);}
+      virtual bool top_level() const {return get_state(state::top_level);}
       /// @brief Sets a value indicating whether to display the form as a top-level window.
       /// @return true to display the form as a top-level window; otherwise, false. The default is true.
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to false has no effect.
       /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
       virtual form& top_level(bool top_level);
+
+      virtual bool top_most() const {return top_most_;}
+      virtual form& top_most(bool value);
       
       void bring_to_front() override;
       
       using container_control::visible;
       control& visible(bool visible) override;
       
-      virtual form_window_state window_state() const {return this->window_state_;}
+      virtual form_window_state window_state() const {return window_state_;}
       virtual form& window_state(form_window_state value);
       
       void activate();
@@ -126,17 +132,17 @@ namespace xtd {
       friend class application;
       forms::create_params create_params() const override;
    
-      virtual void on_activated(const event_args& e) {this->activated(*this, e);}
+      virtual void on_activated(const event_args& e) {activated(*this, e);}
       
-      virtual void on_deactivate(const event_args& e) {this->deactivate(*this, e);}
+      virtual void on_deactivate(const event_args& e) {deactivate(*this, e);}
       
       void on_handle_created(const event_args &e) override;
       
       void on_handle_destroyed(const event_args &e) override;
       
-      void on_form_closed(const form_closed_event_args& e) {this->form_closed(*this, e);}
+      void on_form_closed(const form_closed_event_args& e) {form_closed(*this, e);}
       
-      void on_form_closing(form_closing_event_args& e) {this->form_closing(*this, e);}
+      void on_form_closing(form_closing_event_args& e) {form_closing(*this, e);}
       
       void on_layout(const event_args& e) override;
       
@@ -171,6 +177,8 @@ namespace xtd {
     private:
       friend class application_context;
       bool can_close_ = false;
+      bool top_most_ = false;
+      intptr_t owner_ = 0;
       void internal_set_window_state();
     };
   }

@@ -1,5 +1,6 @@
 #include <xtd/xtd.forms>
 
+using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
 
@@ -7,36 +8,45 @@ namespace example {
   class form1 : public form {
   public:
     form1() {
-      text("Form show");
-      client_size({320, 320});
-      controls().push_back_range({button_modal, button_modeless, button_normal});
+      client_size({320, 425});
+      controls().push_back_range({button_modal, button_top_most, button_modeless, button_normal});
       padding(5);
-      
-      dialog.client_size({200, 100});
-      
-      button_normal.height(100);
+      text("Form show example");
+
       button_normal.dock(xtd::forms::dock_style::top);
+      button_normal.height(100);
       button_normal.text("Show normal");
       button_normal.click += [&] {
-        dialog.text("dialog show normal");
-        dialog.show();
+        auto dialog = control::create<form>("dialog show normal", {}, {250, 100});
+        dialog->show();
+        dialogs.push_back(std::move(dialog));
       };
       
-      button_modeless.height(100);
       button_modeless.dock(xtd::forms::dock_style::top);
+      button_modeless.height(100);
       button_modeless.text("Show modeless");
       button_modeless.click += [&] {
-        //dialog.owner = *this;
-        dialog.text("dialog show modeless");
-        dialog.show();
+        auto dialog = control::create<form>("dialog show modeless", {}, {250, 100});
+        dialog->owner(*this);
+        dialog->show();
+        dialogs.push_back(std::move(dialog));
+      };
+      
+      button_top_most.dock(xtd::forms::dock_style::top);
+      button_top_most.height(100);
+      button_top_most.text("Show top most");
+      button_top_most.click += [&] {
+        auto dialog = control::create<form>("dialog top most", {}, {250, 100});
+        dialog->top_most(true);
+        dialog->show();
+        dialogs.push_back(std::move(dialog));
       };
 
-      button_modal.height(100);
       button_modal.dock(xtd::forms::dock_style::fill);
       button_modal.text("Show modal");
       button_modal.click += [&] {
-        dialog.text("dialog show modal");
-        dialog.show_dialog(*this);
+        auto dialog = control::create<form>("dialog show modal", {}, {250, 100});
+        dialog->show_dialog(*this);
       };
     }
     
@@ -47,8 +57,9 @@ namespace example {
   private:
     button button_normal;
     button button_modeless;
+    button button_top_most;
     button button_modal;
-    form dialog;
+    vector<shared_ptr<form>> dialogs;
   };
 }
 
