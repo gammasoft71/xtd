@@ -10,7 +10,7 @@ namespace xtd {
   namespace forms {
     class theme_renderers final : public theme_base {
     public:
-      using renderer_getter = xtd::delegate<renderer()>;
+      using renderer_getter = xtd::delegate<xtd::forms::renderer()>;
 
       theme_renderers() = default;
       explicit theme_renderers(const std::string& name) : theme_base(name) {}
