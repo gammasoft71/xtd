@@ -916,7 +916,7 @@ void control::wm_mouse_up(message& message) {
   def_wnd_proc(message);
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
-  if (e.button() == mouse_buttons::left) on_click(event_args::empty);
+  if (e.button() == mouse_buttons::left && client_rectangle().contains(e.location())) on_click(event_args::empty);
   on_mouse_click(e);
   on_mouse_up(e);
 }
