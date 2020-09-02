@@ -58,7 +58,11 @@ void form::menu(intptr_t form, intptr_t menu) {
   }
 #endif
 
-  if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
+  //if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("dialog can't have menu");
+  if (!dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())) {
+    if (menu != 0) throw std::invalid_argument("dialog can't have menu");
+    return;
+  }
   static_cast<wxFrame*>(reinterpret_cast<control_handler*>(form)->control())->SetMenuBar(menu != 0 ? reinterpret_cast<wx_menu_bar*>(menu) : wx_menu_bar::create_default_menu_bar());
 }
 
@@ -90,11 +94,13 @@ void form::restore(intptr_t form) {
 
 int32_t form::show_dialog(intptr_t form) {
   if (form == 0) return 0;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("show_dialog work only dialog");
   return static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->ShowModal();
 }
 
 void form::end_dialog(intptr_t form, int32_t result) {
   if (form == 0) return;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("end_dialog work only dialog");
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->EndModal(result);
 }
 
