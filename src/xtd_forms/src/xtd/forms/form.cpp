@@ -352,7 +352,7 @@ void form::wm_close(message &message) {
     hide();
     if (!get_state(state::modal)) {
       def_wnd_proc(message);
-      //destroy_control();
+      destroy_control();
     } else {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
