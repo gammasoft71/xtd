@@ -27,7 +27,6 @@ void form::full_screen(intptr_t form, bool full_screen) {
 
 void form::icon(intptr_t form, intptr_t icon) {
   if (form == 0) return;
-
   if (!icon) static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(wxIcon());
   else static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetIcon(reinterpret_cast<wxIconBundle*>(icon)->GetIcon());
 }
@@ -45,12 +44,12 @@ bool form::maximize(intptr_t form) {
 
 void form::maximize(intptr_t form, bool maximize) {
   if (form == 0) return;
-    static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
+  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(maximize);
 }
 
 void form::menu(intptr_t form, intptr_t menu) {
   if (form == 0) return;
-  
+
 #if defined(__APPLE__)
   if (menu != 0) {
     if (reinterpret_cast<wxMenuBar*>(menu)->FindMenu("Window") == wxNOT_FOUND) reinterpret_cast<wxMenuBar*>(menu)->Append(new wxMenu(), "&Window");
@@ -68,7 +67,6 @@ void form::menu(intptr_t form, intptr_t menu) {
 
 bool form::minimize(intptr_t form) {
   if (form == 0) return false;
-  
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsIconized();
 }
 
