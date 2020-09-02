@@ -1,4 +1,5 @@
 #pragma once
+#include <optional>
 #include <xtd/delegate.h>
 #include <xtd/strings.h>
 #include <xtd/drawing/color.h>
