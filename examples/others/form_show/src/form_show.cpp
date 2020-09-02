@@ -27,8 +27,7 @@ namespace example {
       button_modeless.text("Show modeless");
       button_modeless.click += [&] {
         auto dialog = control::create<form>("dialog show modeless", {}, {250, 100});
-        dialog->owner(*this);
-        dialog->show();
+        dialog->owner(*this).show();
         dialogs.push_back(std::move(dialog));
       };
       
@@ -37,8 +36,7 @@ namespace example {
       button_top_most.text("Show top most");
       button_top_most.click += [&] {
         auto dialog = control::create<form>("dialog top most", {}, {250, 100});
-        dialog->top_most(true);
-        dialog->show();
+        dialog->top_most(true).show();
         dialogs.push_back(std::move(dialog));
       };
 
