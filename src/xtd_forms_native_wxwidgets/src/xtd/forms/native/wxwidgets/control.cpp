@@ -287,6 +287,7 @@ void control::fore_color(intptr_t control, const color& color) {
 }
 
 drawing::font control::font(intptr_t control) {
+  if (control == 0) return drawing::system_fonts::default_font();
   return drawing::font::from_hfont(reinterpret_cast<intptr_t>(new wxFont(reinterpret_cast<control_handler*>(control)->control()->GetFont())));
 }
 
