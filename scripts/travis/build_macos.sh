@@ -11,7 +11,7 @@ git submodule update --init
 mkdir -p build_cmake && cd build_cmake
 cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
 cmake --build . -- -j8
-sudo cmake --build . --target install
+cmake --build . --target install
 cd ../../../..
 
 # generate and build lib
@@ -24,7 +24,7 @@ cd ..
 
 # generate and build examples
 # mkdir -p build/examples && cd build/examples
-#cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local ../../examples
+#cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local
 #if [ $? -ne 0 ]; then exit -1; fi
 #cmake --build . -- -j 8
 #if [ $? -ne 0 ]; then exit -1; fi
