@@ -96,6 +96,11 @@ namespace xtd {
       /// @remarks Inheriting classes can override this property to add extra functionality, but must first call the create_params constructor on the base class to verify that the control continues to work correctly.
       forms::create_params create_params() const override;
       
+      void on_back_color_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        button_base::on_parent_back_color_changed(e);
+      }
+
       /// @brief Raises the Click event.
       /// @param e An event_args that contains the event data.
       void on_click(const event_args& e) override;
@@ -107,7 +112,12 @@ namespace xtd {
         }
         button_base::on_enabled_changed(e);
       }
-
+      
+      void on_fore_color_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        button_base::on_fore_color_changed(e);
+      }
+      
       void on_handle_created(const event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
@@ -153,6 +163,11 @@ namespace xtd {
         button_base::on_mouse_up(e);
       }
 
+      void on_text_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        button_base::on_text_changed(e);
+      }
+      
       void on_paint(paint_event_args& e) override;
 
       /// @brief Processes Windows messages.
