@@ -111,6 +111,17 @@ control& control::back_color(const color& color) {
   return *this;
 }
 
+control& control::back_color(nullptr_t) {
+  if (back_color_.has_value()) {
+    back_color_.reset();
+    recreate_handle();
+    on_back_color_changed(event_args::empty);
+    for (auto& control : controls())
+      control.get().on_parent_back_color_changed(event_args::empty);
+  }
+  return *this;
+}
+
 bool control::can_focus() const {
   bool visible_and_enebled = handle_ && get_state(state::visible) && get_state(state::enabled);
 
@@ -141,6 +152,17 @@ control& control::cursor(const forms::cursor &cursor) {
   return *this;
 }
 
+control& control::cursor(nullptr_t) {
+  if (cursor_.has_value()) {
+    cursor_.reset();
+    recreate_handle();
+    on_cursor_changed(event_args::empty);
+    for (auto& control : controls())
+      control.get().on_parent_cursor_changed(event_args::empty);
+  }
+  return *this;
+}
+
 drawing::font control::default_font() const {
   return system_fonts::default_font();
 }
@@ -163,6 +185,34 @@ control& control::enabled(bool enabled) {
   return *this;
 }
 
+drawing::font control::font() const {
+  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
+    if (control->font_.has_value()) return control->font_.value();
+  return default_font();
+}
+
+control& control::font(const drawing::font& font) {
+  if (font_ != font) {
+    font_ = font;
+    native::control::font(handle_, font_.value());
+    on_font_changed(event_args::empty);
+    for (auto control : controls())
+      control.get().on_parent_font_changed(event_args::empty);
+  }
+  return *this;
+}
+
+control& control::font(nullptr_t) {
+  if (font_.has_value()) {
+    font_.reset();
+    recreate_handle();
+    on_font_changed(event_args::empty);
+    for (auto& control : controls())
+      control.get().on_parent_font_changed(event_args::empty);
+  }
+  return *this;
+}
+
 color control::fore_color() const {
   for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
     if (control->fore_color_.has_value()) return control->fore_color_.value();
@@ -180,19 +230,13 @@ control& control::fore_color(const color& color) {
   return *this;
 }
 
-drawing::font control::font() const {
-  for (const control* control = this; control; control = control->parent().has_value() ? &control->parent().value().get() : nullptr)
-    if (control->font_.has_value()) return control->font_.value();
-  return default_font();
-}
-
-control& control::font(const drawing::font& font) {
-  if (font_ != font) {
-    font_ = font;
-    native::control::font(handle_, font_.value());
-    on_font_changed(event_args::empty);
-    for (auto control : controls())
-      control.get().on_parent_font_changed(event_args::empty);
+control& control::fore_color(nullptr_t) {
+  if (fore_color_.has_value()) {
+    fore_color_.reset();
+    recreate_handle();
+    on_fore_color_changed(event_args::empty);
+    for (auto& control : controls())
+      control.get().on_parent_fore_color_changed(event_args::empty);
   }
   return *this;
 }
@@ -561,7 +605,7 @@ void control::on_paint(paint_event_args &e) {
 
 void control::on_parent_back_color_changed(const event_args &e) {
   if (!back_color_.has_value()) {
-    if (parent().value().get().back_color() == default_back_color()) recreate_handle();
+    if (!parent().value().get().back_color_.has_value()) recreate_handle();
     else native::control::back_color(handle_, parent().value().get().back_color());
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
@@ -576,7 +620,8 @@ void control::on_parent_changed(const event_args &e) {
 
 void control::on_parent_cursor_changed(const event_args &e) {
   if (!cursor_.has_value()) {
-    native::control::cursor(handle_, parent().value().get().cursor().handle());
+    if (!parent().value().get().cursor_.has_value()) recreate_handle();
+    else native::control::cursor(handle_, parent().value().get().cursor().handle());
     for (auto control : controls())
       control.get().on_parent_back_color_changed(event_args::empty);
   }
@@ -584,7 +629,8 @@ void control::on_parent_cursor_changed(const event_args &e) {
 
 void control::on_parent_fore_color_changed(const event_args &e) {
   if (!fore_color_.has_value()) {
-    native::control::fore_color(handle_, parent().value().get().fore_color());
+    if (!parent().value().get().fore_color_.has_value()) recreate_handle();
+    else native::control::fore_color(handle_, parent().value().get().fore_color());
     for (auto control : controls())
       control.get().on_parent_fore_color_changed(event_args::empty);
   }
@@ -592,7 +638,8 @@ void control::on_parent_fore_color_changed(const event_args &e) {
 
 void control::on_parent_font_changed(const event_args &e) {
   if (!font_.has_value()) {
-    native::control::font(handle_, parent().value().get().font());
+    if (!parent().value().get().font_.has_value()) recreate_handle();
+    else native::control::font(handle_, parent().value().get().font());
     for (auto control : controls())
       control.get().on_parent_font_changed(event_args::empty);
   }
