@@ -1,6 +1,7 @@
 #include <xtd/xtd.forms>
 
 using namespace std;
+using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -10,7 +11,9 @@ namespace examples {
     form1() {
       text("Button renderrer example");
       client_size({400, 300});
-      
+      set_color(color::blue);
+      set_color(nullptr);
+
       choice_theme.parent(*this);
       choice_theme.location({10, 10});
       choice_theme.items().push_back("default theme");
@@ -19,12 +22,14 @@ namespace examples {
       choice_theme.selected_index_changed += [&] {
         auto theme = choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value();
         theme::current_theme(theme);
-        back_color(theme_colors::current_theme().control());
-        fore_color(theme_colors::current_theme().control_text());
         color_picker_background.color(back_color());
         color_picker_foreground.color(fore_color());
-        back_color_changed = false;
-        fore_color_changed = false;
+        bcolor.reset();
+        fcolor.reset();
+        button_system.back_color(nullptr);
+        button_system.fore_color(nullptr);
+        button_standard.back_color(nullptr);
+        button_standard.fore_color(nullptr);
         invalidate(true);
       };
       
@@ -32,16 +37,18 @@ namespace examples {
       color_picker_background.location({140, 10});
       color_picker_background.color(back_color());
       color_picker_background.color_changed += [&] {
-        back_color(color_picker_background.color());
-        back_color_changed = true;
+        bcolor = color_picker_background.color();
+        button_system.back_color(bcolor.value());
+        button_standard.back_color(bcolor.value());
       };
       
       color_picker_foreground.parent(*this);
       color_picker_foreground.location({250, 10});
       color_picker_foreground.color(fore_color());
       color_picker_foreground.color_changed += [&] {
-        fore_color(color_picker_foreground.color());
-        fore_color_changed = true;
+        fcolor = color_picker_foreground.color();
+        button_system.fore_color(fcolor.value());
+        button_standard.fore_color(fcolor.value());
       };
 
       button_system.parent(*this);
@@ -57,10 +64,6 @@ namespace examples {
   protected:
     void on_paint(paint_event_args& e) override {
       form::on_paint(e);
-      optional<color> bcolor;
-      if (back_color_changed) bcolor = back_color();
-      optional<color> fcolor;
-      if (fore_color_changed) fcolor = fore_color();
       button_renderer::draw_button(e.graphics(), {10, 70, 75, 25}, "Normal", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::normal, bcolor, fcolor);
       button_renderer::draw_button(e.graphics(), {100, 70, 75, 25}, "Hot", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::hot, bcolor, fcolor);
       button_renderer::draw_button(e.graphics(), {190, 70, 75, 25}, "Pressed", font(), xtd::forms::text_format_flags::vertical_center|xtd::forms::text_format_flags::horizontal_center, xtd::drawing::image::empty, {0, 0, 0, 0}, false, xtd::forms::visual_styles::push_button_state::pressed, bcolor, fcolor);
@@ -69,13 +72,19 @@ namespace examples {
     }
 
   private:
+    void set_color(const color& color) {
+      cdebug << format("color = {}", color.to_string()) << endl;
+    }
+    void set_color(nullptr_t) {
+      cdebug << "color = (nullptr)" << endl;
+    }
+    optional<color> bcolor;
+    optional<color> fcolor;
     choice choice_theme;
     color_picker color_picker_background;
     color_picker color_picker_foreground;
     button button_system;
     button button_standard;
-    bool back_color_changed = false;
-    bool fore_color_changed = false;
   };
 }
 
