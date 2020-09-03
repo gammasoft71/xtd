@@ -228,7 +228,10 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding the back_color property in a derived class, use the base class's back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the back_color property; you can override only one if needed.
       virtual control& back_color(const drawing::color& color);
-      
+      /// @cond
+      virtual control& back_color(nullptr_t);
+      /// @endcond
+
       /// @brief Gets the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @return An int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @remarks The value of this property is equal to the sum of the top property value, and the height property value.
@@ -317,6 +320,9 @@ namespace xtd {
       
       virtual forms::cursor cursor() const;
       virtual control& cursor(const forms::cursor& cursor);
+      /// @cond
+      virtual control& cursor(nullptr_t);
+      /// @endcond
 
       /// @brief Gets the default background color of the control.
       /// @return The default background color of the control. The default is control.
@@ -356,10 +362,16 @@ namespace xtd {
       virtual bool focused() const {return focused_;}
       virtual drawing::color fore_color() const;
       virtual control& fore_color(const drawing::color& color);
-      
+      /// @cond
+      virtual control& fore_color(nullptr_t);
+      /// @endcond
+
       virtual drawing::font font() const;
       virtual control& font(const drawing::font& font);
-      
+      /// @cond
+      virtual control& font(nullptr_t);
+      /// @endcond
+
       intptr_t handle() const override;
       
       virtual int32_t height() const {return size_.height();}
