@@ -109,7 +109,7 @@ void button_renderer::draw_button_macos(graphics g, const rectangle& bounds, con
 }
 
 void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
-  auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
+  auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = color::darker(background_color, 0.95);
   auto button_color = xtd::forms::theme_colors::current_theme().button_face();
@@ -124,7 +124,7 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
     border_color = button_color = color::darker(xtd::forms::theme_colors::current_theme().accent(), 0.85);
   
   auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
-  g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
+  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
   g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3.);
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
   if (image != image::empty) g.draw_image(image, image_bounds.location());
@@ -132,7 +132,7 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
 }
 
 void button_renderer::draw_button_macos_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
-  auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
+  auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = color::from_argb(200, 200, 200);
   auto button_color = back_color.has_value() ? color::from_argb(150, 255, 255, 255) : xtd::forms::theme_colors::current_theme().button_face();
@@ -152,7 +152,7 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   }
   
   auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
-  g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
+  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
   g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3.);
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
   if (image != image::empty) g.draw_image(image, image_bounds.location());
