@@ -381,6 +381,9 @@ void form::on_handle_created(const event_args &e) {
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (accept_button_.has_value()) native::form::default_control(handle(), dynamic_cast<control&>(accept_button_.value().get()).handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
+  if (get_state(control::state::recreate)) {
+    native::control::location(handle_, location_);
+  }
 }
 
 void form::on_handle_destroyed(const event_args &e) {

@@ -604,7 +604,7 @@ void control::on_paint(paint_event_args &e) {
 }
 
 void control::on_parent_back_color_changed(const event_args &e) {
-  if (!back_color_.has_value()) {
+  if (!back_color_.has_value() && parent().value().get().back_color() != parent().value().get().default_back_color()) {
     if (!parent().value().get().back_color_.has_value()) recreate_handle();
     else native::control::back_color(handle_, parent().value().get().back_color());
     for (auto control : controls())
@@ -619,7 +619,7 @@ void control::on_parent_changed(const event_args &e) {
 }
 
 void control::on_parent_cursor_changed(const event_args &e) {
-  if (!cursor_.has_value()) {
+  if (!cursor_.has_value() && parent().value().get().cursor() != parent().value().get().default_cursor()) {
     if (!parent().value().get().cursor_.has_value()) recreate_handle();
     else native::control::cursor(handle_, parent().value().get().cursor().handle());
     for (auto control : controls())
@@ -628,7 +628,7 @@ void control::on_parent_cursor_changed(const event_args &e) {
 }
 
 void control::on_parent_fore_color_changed(const event_args &e) {
-  if (!fore_color_.has_value()) {
+  if (!fore_color_.has_value() && parent().value().get().fore_color() != parent().value().get().default_fore_color()) {
     if (!parent().value().get().fore_color_.has_value()) recreate_handle();
     else native::control::fore_color(handle_, parent().value().get().fore_color());
     for (auto control : controls())
@@ -637,7 +637,7 @@ void control::on_parent_fore_color_changed(const event_args &e) {
 }
 
 void control::on_parent_font_changed(const event_args &e) {
-  if (!font_.has_value()) {
+  if (!font_.has_value() && parent().value().get().font() != parent().value().get().default_font()) {
     if (!parent().value().get().font_.has_value()) recreate_handle();
     else native::control::font(handle_, parent().value().get().font());
     for (auto control : controls())

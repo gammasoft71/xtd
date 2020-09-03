@@ -20,8 +20,7 @@ namespace examples {
       choice_theme.items().push_back_range(theme::theme_names());
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += [&] {
-        auto theme = choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value();
-        theme::current_theme(theme);
+        application::theme(choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value());
         color_picker_background.color(back_color());
         color_picker_foreground.color(fore_color());
         bcolor.reset();
@@ -30,7 +29,6 @@ namespace examples {
         button_system.fore_color(nullptr);
         button_standard.back_color(nullptr);
         button_standard.fore_color(nullptr);
-        invalidate(true);
       };
       
       color_picker_background.parent(*this);

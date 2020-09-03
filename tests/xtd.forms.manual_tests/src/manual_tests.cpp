@@ -210,7 +210,8 @@ int main() {
   //button1.fore_color(xtd::drawing::system_colors::accent());
   button1.click += [&] {
     //form_main.back_color(theme_color::current_theme().window());
-    message_box::show("message");
+    //message_box::show("message");
+    application::theme("windows (light)");
   };
   
   button button2;
