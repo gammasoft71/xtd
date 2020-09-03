@@ -267,11 +267,20 @@ void application::run(const form& form) {
 }
 
 void application::theme(const std::string& theme_name) {
-  theme::current_theme(theme_name);
+  application::theme(xtd::forms::theme::theme_from_name(theme_name));
+}
+
+void application::theme(const xtd::forms::theme& theme) {
+  xtd::forms::theme::current_theme(theme);
+  for (auto form : open_forms()) {
+    form.get().back_color(theme_colors::current_theme().control());
+    form.get().fore_color(theme_colors::current_theme().control_text());
+    form.get().invalidate(true);
+  }
 }
 
 const xtd::forms::theme& application::theme() {
-  return theme::current_theme();
+  return xtd::forms::theme::current_theme();
 }
 
 const std::vector<std::string>& application::theme_names() {
