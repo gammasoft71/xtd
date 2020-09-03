@@ -9,7 +9,7 @@ git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.4 --depth 1
 cd wxwidgets
 git submodule update --init
 mkdir -p build_cmake && cd build_cmake
-cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
+cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/loca
 cmake --build . -- -j8
 cmake --build . --target install
 cd ../../../..
@@ -18,7 +18,7 @@ cd ../../../..
 mkdir -p build && cd build
 cmake .. -G "Xcode"
 cmake --build . --config Debug
-cmake --build . --target install --config Debug
+cmake --build . --target install --config Debug -DCMAKE_INSTALL_PREFIX=~/loca
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
