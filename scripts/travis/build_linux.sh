@@ -6,14 +6,14 @@ git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.4 --depth 1
 cd wxwidgets
 git submodule update --init
 mkdir build_cmake && cd build_cmake
-cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF
+cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
 cmake --build . -- -j8
-sudo cmake --build . --target install
+cmake --build . --target install
 cd ../../../..
 
 # generate and build lib
 mkdir -p build && cd build
-cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DENABLE_XTD_COMMAND_LINE=OFF -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local ..
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DENABLE_XTD_COMMAND_LINE=OFF -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
@@ -21,7 +21,7 @@ cd ..
 
 # generate and build examples
 mkdir -p build/examples && cd build/examples
-cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local ../../examples
+cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
