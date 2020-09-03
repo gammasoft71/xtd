@@ -11,8 +11,8 @@ namespace xtd {
     class theme final : public theme_base {
     public:
       theme() = default;
-      explicit theme(const std::string& name) : theme_base(name) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style) : theme_base(name, theme_style), theme_colors_(theme_colors::theme_from_name(name)), theme_images_(theme_images::theme_from_name(name)), theme_renderers_(theme_renderers::theme_from_name(name)) {}
+      explicit theme(const std::string& name) : theme(name, xtd::forms::theme_style::system_auto, false) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style) : theme(name, theme_style, false) {}
       theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_colors& theme_colors) : theme_base(name, theme_style), theme_colors_(theme_colors) {}
       theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_images& theme_images) : theme_base(name, theme_style), theme_images_(theme_images) {}
       theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_renderers& theme_renderers) : theme_base(name, theme_style), theme_renderers_(theme_renderers) {}
@@ -44,7 +44,7 @@ namespace xtd {
       static theme theme_from_name(const std::string& theme_name);
       
     private:
-      theme(const std::string& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default), theme_colors_(theme_colors::theme_from_name(name)), theme_images_(theme_images::theme_from_name(name)), theme_renderers_(theme_renderers::theme_from_name(name)) {}
       theme_colors theme_colors_ = theme_colors::current_theme();
       theme_images theme_images_ = theme_images::current_theme();
       theme_renderers theme_renderers_ = theme_renderers::current_theme();

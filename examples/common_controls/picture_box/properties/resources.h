@@ -15,7 +15,7 @@ namespace picture_box::properties {
   public:
     /// @brief Looks up a localized resource of type xtd::drawing::bitmap.
     static const xtd::drawing::bitmap& logo() {
-      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "resources", "logo.png"));
+      static xtd::drawing::bitmap bitmap(xtd::io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "logo.png"));
       return bitmap;
     }
 
