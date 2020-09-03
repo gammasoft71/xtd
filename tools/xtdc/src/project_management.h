@@ -1683,7 +1683,7 @@ namespace xtdc_command {
         "/// @file",
         "/// @brief Contains form1 class.",
         "#pragma once",
-        "#include <xtd/forms/form.h>",
+        "#include <xtd/xtd.forms>",
         "",
         xtd::strings::format("namespace {} {{", name),
         "  /// @brief Represents the main form",
@@ -1704,7 +1704,6 @@ namespace xtdc_command {
     void create_xtd_gui_source(const std::string& name, const std::filesystem::path& path) const {
       std::vector<std::string> lines {
         "#include \"form1.h\"",
-        "#include <xtd/forms/application.h>",
         "",
         "using namespace xtd::forms;",
         xtd::strings::format("using namespace {};", name),
