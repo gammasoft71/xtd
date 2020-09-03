@@ -19,14 +19,12 @@ namespace xtd {
     namespace native {
       class control static_ {
       public:
-        static drawing::color back_color(intptr_t control);
         static void back_color(intptr_t control, const drawing::color& color);
         static intptr_t create(const create_params& create_params);
         static intptr_t create_graphics(intptr_t control);
         static intptr_t create_paint_graphics(intptr_t control);
         static intptr_t create_double_buffered_paint_graphics(intptr_t control);
         static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle);
-        static drawing::font default_font();
         static void destroy(intptr_t control);
         static void init();
         static drawing::rectangle client_rectangle(intptr_t control);
@@ -37,9 +35,7 @@ namespace xtd {
         static void enabled(intptr_t control, bool enabled);
         static void focus(intptr_t control);
         static bool focused(intptr_t control);
-        static drawing::color fore_color(intptr_t control);
         static void fore_color(intptr_t control, const drawing::color& color);
-        static drawing::font font(intptr_t control);
         static void font(intptr_t control, const drawing::font& font);
         static void invoke_in_control_thread(intptr_t control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, std::shared_ptr<std::shared_mutex> invoked);
         static drawing::point location(intptr_t control);
