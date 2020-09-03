@@ -50,6 +50,10 @@ namespace xtd {
           return wx_style;
         }
         
+        void SetBackgroundColour(const wxColour &colour) override {
+          
+        }
+        
         virtual void SetPosition(const wxPoint& pt) override {
           control_handler::SetPosition(pt);
           
@@ -66,8 +70,8 @@ namespace xtd {
         void SetClientSize(int32_t width, int32_t height) override {
           SetSize(width, height);
         }
-
-        void SetSize(int32_t width, int32_t height) override {
+        
+       void SetSize(int32_t width, int32_t height) override {
           control_handler::SetSize(width, height);
 #if defined(__APPLE__)
           wxPoint location = control()->GetPosition();
