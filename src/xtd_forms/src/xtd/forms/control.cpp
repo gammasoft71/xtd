@@ -4,6 +4,7 @@
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.core>
 #include <xtd/xtd.strings>
+#include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/system_colors.h>
 #include <xtd/forms/native/control.h>
@@ -141,7 +142,7 @@ control& control::cursor(const forms::cursor &cursor) {
 }
 
 drawing::font control::default_font() const {
-  return native::control::default_font();
+  return system_fonts::default_font();
 }
 
 control& control::dock(dock_style dock) {
