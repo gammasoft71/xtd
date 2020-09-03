@@ -59,7 +59,7 @@ namespace {
       label_description_.dock(dock_style::top);
 
       link_label_website_.text_align(content_alignment::middle_center);
-      link_label_website_.fore_color(xtd::drawing::color::blue);
+      link_label_website_.fore_color(theme_colors::current_theme().hot_track());
       link_label_website_.font({link_label_website_.font(), xtd::drawing::font_style::underline});
       link_label_website_.cursor(forms::cursors::hand());
       link_label_website_.padding(5);
