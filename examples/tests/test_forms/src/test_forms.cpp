@@ -1,4 +1,3 @@
-#include <thread>
 #include <xtd/xtd.forms>
 
 int main() {
@@ -13,15 +12,10 @@ int main() {
   auto button = xtd::forms::control::create<xtd::forms::button>(*main_form, "Message", xtd::drawing::point(10, 10));
   button->click += [&] {
     xtd::cdebug << "begin message..." << std::endl;
-    sttd::weak_ptr<<#class _Tp#>> dialog = xtd::forms::control::create<xtd::forms::form>("Dialog");
+    auto dialog = xtd::forms::control::create<xtd::forms::form>("Dialog", {}, {200, 100}).release();
+    dialog->start_position(xtd::forms::form_start_position::center_screen);
     dialog->show();
-    std::thread t([&]() {
-      dialog->show_dialog();
-    });
-    t.detach();
     xtd::cdebug << "end message..." << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
-    dialog->close();
   };
   
   xtd::forms::application::run(*main_form);
