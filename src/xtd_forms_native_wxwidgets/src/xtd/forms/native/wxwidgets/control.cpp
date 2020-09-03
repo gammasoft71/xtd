@@ -134,7 +134,7 @@ extern int32_t __mainloop_runnning__;
 
 void control::back_color(intptr_t control, const color& color) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->graphic_control()->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
+  reinterpret_cast<control_handler*>(control)->SetBackgroundColour(wxColour(color.r(), color.g(), color.b(), color.a()));
 }
 
 intptr_t control::create(const forms::create_params& create_params) {

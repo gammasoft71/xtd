@@ -129,7 +129,9 @@ namespace xtd {
         
         void SetBackgroundColour(const wxColour &colour) override {
           control_handler::SetBackgroundColour(colour);
+#if !defined(__APPLE__)
           panel_->SetBackgroundColour(colour);
+#endif
         }
         
         void SetCursor(const wxCursor &cursor) override {
