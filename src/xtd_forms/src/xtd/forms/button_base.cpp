@@ -87,22 +87,3 @@ forms::create_params button_base::create_params() const {
 drawing::size button_base::measure_control() const {
   return this->control::measure_text() + drawing::size(13, 0);
 }
-
-void button_base::on_font_changed(const xtd::event_args& e) {
-  control::on_font_changed(e);
-  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-}
-
-void button_base::on_image_changed(const xtd::event_args& e) {
-  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-}
-
-void button_base::on_text_changed(const xtd::event_args& e) {
-  control::on_text_changed(e);
-  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-}
-
-void button_base::on_resize(const xtd::event_args& e) {
-  control::on_resize(e);
-  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-}

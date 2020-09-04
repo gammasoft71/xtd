@@ -48,12 +48,6 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
   return *this;
 }
 
-button_base& button::image(const drawing::image& value) {
-  if (this->image_ != value)
-    native::button::image(handle(), value);
-  return button_base::image(value);
-}
-
 void button::notify_default(bool value) {
   native::button::default_button(handle(), value);
 }
@@ -78,6 +72,11 @@ void button::on_click(const event_args& e) {
     static_cast<form&>(this->top_level_control().value().get()).dialog_result(this->dialog_result());
     static_cast<form&>(this->top_level_control().value().get()).close();
   }
+}
+
+void button::on_image_changed(const xtd::event_args& e) {
+  if (flat_style_ == xtd::forms::flat_style::system) native::button::image(handle_, image_);
+  button_base::on_image_changed(e);
 }
 
 void button::on_handle_created(const event_args& e) {

@@ -67,6 +67,8 @@ namespace xtd {
       /// @brief Gets the alignment of the text on the button control.
       /// @param value One of the content_alignment values. The default is middle_center.
       virtual button_base& text_align(content_alignment value);
+      
+      event<button_base, event_handler<control&>> image_changed;
 
     protected:
       /// @brief Initializes a new instance of the ButtonBase class.
@@ -84,15 +86,66 @@ namespace xtd {
       /// @return The drawing::size size of this control.
       /// @remarks This method is used when auto_size is true.
       drawing::size measure_control() const override;
-      
-    protected:
-      void on_font_changed(const xtd::event_args& e) override;
-      
-      virtual void on_image_changed(const xtd::event_args& e);
 
-      void on_resize(const xtd::event_args& e) override;
+      void on_back_color_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_parent_back_color_changed(e);
+      }
       
-      void on_text_changed(const xtd::event_args& e) override;
+      void on_enabled_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_enabled_changed(e);
+      }
+
+      void on_font_changed(const xtd::event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_font_changed(e);
+      }
+      
+      void on_fore_color_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_fore_color_changed(e);
+      }
+
+      virtual void on_image_changed(const xtd::event_args& e) {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (can_raise_events()) image_changed(*this, e);
+      }
+      
+      void on_mouse_down(const mouse_event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_mouse_down(e);
+      }
+      
+      void on_mouse_enter(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_mouse_enter(e);
+      }
+      
+      void on_mouse_leave(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_mouse_leave(e);
+      }
+      
+      void on_mouse_move(const mouse_event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_mouse_move(e);
+      }
+      
+      void on_mouse_up(const mouse_event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_mouse_up(e);
+      }
+
+      void on_resize(const xtd::event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_resize(e);
+      }
+      
+      void on_text_changed(const xtd::event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_text_changed(e);
+      }
 
       /// @cond
       bool auto_ellipsis_ = false;
