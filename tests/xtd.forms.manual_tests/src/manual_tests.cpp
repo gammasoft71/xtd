@@ -203,25 +203,29 @@ int main() {
 
   button button1;
   //button1.enabled(false);
-  //button1.flat_style(xtd::forms::flat_style::system);
+  button1.text("button1");
+  button1.flat_style(xtd::forms::flat_style::system);
   button1.location({10, 50});
   button1.parent(form_main);
-  button1.image(button_images::ok());
   //button1.fore_color(xtd::drawing::system_colors::accent());
-  button1.click += [&] {
-    //form_main.back_color(theme_color::current_theme().window());
-    //message_box::show("message");
-    application::theme("windows (light)");
-  };
   
   button button2;
-  //button2.flat_style(xtd::forms::flat_style::system);
+  button2.flat_style(xtd::forms::flat_style::system);
   //button2.enabled(false);
-  button2.text("Click me");
+  button2.text("button2");
   button2.location({100, 50});
   button2.parent(form_main);
   //button2.fore_color(xtd::drawing::system_colors::accent());
+  form_main.accept_button(button2);
 
+  button1.click += [&] {
+    form_main.accept_button(button2);
+  };
+  
+  button2.click += [&] {
+    form_main.accept_button(button1);
+  };
+  
   text_box text_box1;
   text_box1.location({10, 90});
   text_box1.parent(form_main);

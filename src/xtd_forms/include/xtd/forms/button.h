@@ -34,8 +34,8 @@ namespace xtd {
         };
       }
       
-      bool auto_repeat() const {return auto_repeat_;}
-      button& auto_repeat(bool auto_repeat) {
+      virtual bool auto_repeat() const {return auto_repeat_;}
+      virtual button& auto_repeat(bool auto_repeat) {
         if (auto_repeat_ != auto_repeat) {
           auto_repeat_ = auto_repeat;
           if (!auto_repeat_) auto_repeat_timer_.enabled(false);
@@ -43,15 +43,15 @@ namespace xtd {
         return *this;
       }
       
-      int32_t auto_repeat_delay() const {return auto_repeat_delay_;}
-      button& auto_repeat_delay(int32_t auto_repeat_delay) {
+      virtual int32_t auto_repeat_delay() const {return auto_repeat_delay_;}
+      virtual button& auto_repeat_delay(int32_t auto_repeat_delay) {
         if (auto_repeat_delay_ != auto_repeat_delay)
           auto_repeat_delay_ = auto_repeat_delay;
         return *this;
       }
       
-      int32_t auto_repeat_interval() const {return auto_repeat_interval_;}
-      button& auto_repeat_interval(int32_t auto_repeat_interval) {
+      virtual int32_t auto_repeat_interval() const {return auto_repeat_interval_;}
+      virtual button& auto_repeat_interval(int32_t auto_repeat_interval) {
         if (auto_repeat_interval_ != auto_repeat_interval)
           auto_repeat_interval_ = auto_repeat_interval;
         return *this;
@@ -63,7 +63,7 @@ namespace xtd {
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is growonly.
       virtual button& auto_size_mode(forms::auto_size_mode value);
-
+      
       /// @brief Gets the value returned to the parent form when the button is clicked.
       /// @return One of the DialogResult values.
       /// @remarks When a form is shown as a dialog box using the show_dialog method and one of its buttons is clicked, the button's dialog_result value is assigned to the form's dialog_result property.
@@ -98,7 +98,7 @@ namespace xtd {
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? xtd::forms::visual_styles::push_button_state::normal : xtd::forms::visual_styles::push_button_state::disabled;
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? (state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
         button_base::on_enabled_changed(e);
       }
       
@@ -114,12 +114,12 @@ namespace xtd {
       }
 
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) state_ = xtd::forms::visual_styles::push_button_state::hot;
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_enter(e);
       }
 
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) state_ = xtd::forms::visual_styles::push_button_state::normal;
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;;
         button_base::on_mouse_leave(e);
       }
 
@@ -152,6 +152,7 @@ namespace xtd {
       timer auto_repeat_timer_;
       int32_t auto_repeat_delay_ = 300;
       int32_t auto_repeat_interval_ = 100;
+      bool default_button_ = false;
       xtd::forms::visual_styles::push_button_state state_ = xtd::forms::visual_styles::push_button_state::normal;
    };
   }
