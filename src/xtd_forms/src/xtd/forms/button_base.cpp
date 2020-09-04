@@ -22,6 +22,7 @@ button_base& button_base::image(const drawing::image& value) {
     this->image_ = value;
     this->image_list_ = forms::image_list();
     this->image_index_ = -1;
+    on_image_changed(xtd::event_args::empty);
   }
   return *this;
 }
@@ -29,7 +30,8 @@ button_base& button_base::image(const drawing::image& value) {
 button_base& button_base::image_align(content_alignment value) {
   if (this->image_align_ != value) {
     this->image_align_ = value;
-    this->recreate_handle();
+    if (flat_style_ == xtd::forms::flat_style::system) this->recreate_handle();
+    else invalidate();
   }
   return *this;
 }
@@ -55,7 +57,8 @@ button_base& button_base::image_list(const forms::image_list& value) {
 button_base& button_base::text_align(content_alignment text_align) {
   if (this->text_align_ != text_align) {
     this->text_align_ = text_align;
-    this->recreate_handle();
+    if (flat_style_ == xtd::forms::flat_style::system) this->recreate_handle();
+    else invalidate();
   }
   return *this;
 }
@@ -87,6 +90,10 @@ drawing::size button_base::measure_control() const {
 
 void button_base::on_font_changed(const xtd::event_args& e) {
   control::on_font_changed(e);
+  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+}
+
+void button_base::on_image_changed(const xtd::event_args& e) {
   if (flat_style_ != xtd::forms::flat_style::system) invalidate();
 }
 

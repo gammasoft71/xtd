@@ -127,7 +127,8 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
   g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3.);
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
-  if (image != image::empty) g.draw_image(image, image_bounds.location());
+  if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, button_rect, flags);
 }
 
@@ -155,7 +156,8 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
   g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3.);
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
-  if (image != image::empty) g.draw_image(image, image_bounds.location());
+  if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
+  else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, button_rect, flags);
 }
 
@@ -184,8 +186,8 @@ void button_renderer::draw_button_symbolic_dark(graphics g, const rectangle& bou
   
   g.fill_rounded_rectangle(solid_brush(button_color), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);
   g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);
-  if (image != image::empty) g.draw_image(image, image_bounds.location());
-  g.draw_string(text, font, solid_brush(text_color), rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), to_string_format(flags));
+  if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
 }
 
@@ -209,8 +211,8 @@ void button_renderer::draw_button_symbolic_light(graphics g, const rectangle& bo
   
   g.fill_rounded_rectangle(solid_brush(button_color), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);
   g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);
-  if (image != image::empty) g.draw_image(image, image_bounds.location());
-  g.draw_string(text, font, solid_brush(text_color), rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), to_string_format(flags));
+  if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
+  else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
 }
 
@@ -245,7 +247,8 @@ void button_renderer::draw_button_windows_dark(graphics g, const rectangle& boun
   g.draw_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2);
   g.draw_rectangle(pen(border_color, 1), bounds.x() + 2, bounds.y() + 2, bounds.width() - 4, bounds.height() - 4);
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
-  if (image != image::empty) g.draw_image(image, image_bounds.location());
+  if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
+  else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
 }
 
@@ -276,7 +279,8 @@ void button_renderer::draw_button_windows_light(graphics g, const rectangle& bou
   g.draw_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2);
   g.draw_rectangle(pen(border_color, 1), bounds.x() + 2, bounds.y() + 2, bounds.width() - 4, bounds.height() - 4);
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
-  if (image != image::empty) g.draw_image(image, image_bounds.location());
+  if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
+  else if (image != image::empty) g.draw_image(image, image_bounds.location());
   draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
 }
 
