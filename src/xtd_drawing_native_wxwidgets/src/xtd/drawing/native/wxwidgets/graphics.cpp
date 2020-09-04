@@ -82,6 +82,13 @@ void graphics::draw_image(intptr_t hdc, intptr_t image, int32_t x, int32_t y) {
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image)), x, y, true);
 }
 
+void graphics::draw_image_disabled(intptr_t hdc, intptr_t image, int32_t x, int32_t y, float brightness) {
+  if (!hdc) return;
+  graphics_context gc(hdc);
+  wxBitmap image_result = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<uint8_t>(255 * brightness));
+  reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc()->DrawBitmap(image_result, x, y, true);
+}
+
 void graphics::draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2) {
   if (!hdc) return;
   graphics_context gc(hdc);

@@ -15,6 +15,7 @@ namespace xtd {
         static void draw_bezier(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2, int32_t x3, int32_t y3, int32_t x4, int32_t y4);
         static void draw_ellipse(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t heigh);
         static void draw_image(intptr_t hdc, intptr_t image, int32_t x, int32_t y);
+        static void draw_image_disabled(intptr_t hdc, intptr_t image, int32_t x, int32_t y, float brightness);
         static void draw_line(intptr_t hdc, intptr_t pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
         static void draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height);
         static void draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, int32_t width, int32_t height, int32_t radius);
