@@ -78,9 +78,6 @@ namespace xtd {
       /// @remarks This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border.
       void notify_default(bool value) override;
 
-      using button_base::image;
-      button_base& image(const drawing::image& value) override;
-      
       /// @brief Generates a click event for the control.
       /// @remarks This method is called for the button that has focus, or for the default button (if no other button has focus) when the user presses the ENTER key. This method is also called when the user presses the ESC key if the button is set as the cancel button.
       void perform_click() override;
@@ -96,76 +93,45 @@ namespace xtd {
       /// @remarks Inheriting classes can override this property to add extra functionality, but must first call the create_params constructor on the base class to verify that the control continues to work correctly.
       forms::create_params create_params() const override;
       
-      void on_back_color_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-        button_base::on_parent_back_color_changed(e);
-      }
-
       /// @brief Raises the Click event.
       /// @param e An event_args that contains the event data.
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
-          state_ = enabled() ? xtd::forms::visual_styles::push_button_state::normal : xtd::forms::visual_styles::push_button_state::disabled;
-          invalidate();
-        }
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? xtd::forms::visual_styles::push_button_state::normal : xtd::forms::visual_styles::push_button_state::disabled;
         button_base::on_enabled_changed(e);
       }
       
-      void on_fore_color_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-        button_base::on_fore_color_changed(e);
-      }
-      
       void on_handle_created(const event_args& e) override;
+      
+      void on_image_changed(const xtd::event_args& e) override;
 
       void on_mouse_down(const mouse_event_args& e) override {
         auto_repeat_timer_.interval(auto_repeat_delay_);
         auto_repeat_timer_.enabled(auto_repeat_);
-        if (flat_style_ != xtd::forms::flat_style::system) {
-          state_ = xtd::forms::visual_styles::push_button_state::pressed;
-          invalidate();
-        }
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = xtd::forms::visual_styles::push_button_state::pressed;
         button_base::on_mouse_down(e);
       }
 
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
-          state_ = xtd::forms::visual_styles::push_button_state::hot;
-          invalidate();
-        }
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_enter(e);
       }
 
       void on_mouse_leave(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) {
-          state_ = xtd::forms::visual_styles::push_button_state::normal;
-          invalidate();
-          button_base::on_mouse_leave(e);
-        }
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = xtd::forms::visual_styles::push_button_state::normal;
+        button_base::on_mouse_leave(e);
       }
 
       void on_mouse_move(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system && (e.button() & mouse_buttons::left) == mouse_buttons::left && !client_rectangle().contains(e.location()) && state_ == xtd::forms::visual_styles::push_button_state::pressed) {
-          state_ = xtd::forms::visual_styles::push_button_state::hot;
-          invalidate();
-        }
+        if (flat_style_ != xtd::forms::flat_style::system && (e.button() & mouse_buttons::left) == mouse_buttons::left && !client_rectangle().contains(e.location()) && state_ == xtd::forms::visual_styles::push_button_state::pressed) state_ = xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_move(e);
       }
       
       void on_mouse_up(const mouse_event_args& e) override {
         auto_repeat_timer_.enabled(false);
-        if (flat_style_ != xtd::forms::flat_style::system && state_ == xtd::forms::visual_styles::push_button_state::pressed) {
-          state_ = xtd::forms::visual_styles::push_button_state::hot;
-          invalidate();
-        }
+        if (flat_style_ != xtd::forms::flat_style::system && state_ == xtd::forms::visual_styles::push_button_state::pressed) state_ = xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_up(e);
-      }
-
-      void on_text_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-        button_base::on_text_changed(e);
       }
       
       void on_paint(paint_event_args& e) override;
