@@ -20,12 +20,12 @@ if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
 # generate and build examples
-mkdir -p build/examples && cd build/examples
-cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local
-if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . -- -j $(nproc)
-if [ $? -ne 0 ]; then exit -1; fi
-cd ../..
+# mkdir -p build/examples && cd build/examples
+# cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local
+# if [ $? -ne 0 ]; then exit -1; fi
+# cmake --build . -- -j $(nproc)
+# if [ $? -ne 0 ]; then exit -1; fi
+# cd ../..
 
 # run registered unit tests
 # cd build
