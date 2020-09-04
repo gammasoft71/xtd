@@ -33,12 +33,15 @@ form::form() {
 
 form& form::accept_button(const ibutton_control& accept_button) {
   if (!accept_button_.has_value() || &accept_button_.value().get() != &accept_button) {
+    if (accept_button_.has_value()) accept_button_.value().get().notify_default(false);
     accept_button_ = const_cast<ibutton_control&>(accept_button);
+    accept_button_.value().get().notify_default(true);
   }
   return *this;
 }
 
 form& form::accept_button(nullptr_t) {
+  if (accept_button_.has_value()) accept_button_.value().get().notify_default(false);
   accept_button_.reset();
   return *this;
 }
@@ -188,6 +191,7 @@ control& form::visible(bool visible) {
     window_state(current_window_state.value());
   internal_set_window_state();
   if (visible) can_close_ = false;
+  if (visible && accept_button_.has_value()) accept_button_.value().get().notify_default(true);
   return *this;
 }
 
@@ -381,9 +385,7 @@ void form::on_handle_created(const event_args &e) {
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (accept_button_.has_value()) native::form::default_control(handle(), dynamic_cast<control&>(accept_button_.value().get()).handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
-  if (get_state(control::state::recreate)) {
-    native::control::location(handle_, location_);
-  }
+  if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
 }
 
 void form::on_handle_destroyed(const event_args &e) {

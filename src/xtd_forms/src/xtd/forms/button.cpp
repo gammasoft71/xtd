@@ -49,7 +49,13 @@ control& button::dialog_result(forms::dialog_result dialog_result) {
 }
 
 void button::notify_default(bool value) {
-  native::button::default_button(handle(), value);
+  default_button_ = value;
+  if (enabled()) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal;
+  if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+  else {
+    if (value) native::button::set_default_button(handle_);
+    else recreate_handle();
+  }
 }
 
 void button::perform_click() {
