@@ -59,9 +59,17 @@ namespace xtd {
       void draw_ellipse(const pen& pen, const rectangle_f& rect) {draw_ellipse(pen, rect.x(), rect.y(), rect.width(), rect.height());}
 
       void draw_image(const image& image, const point& point) {draw_image(image, point.x(), point.y());}
-      
+            
       void draw_image(const image& image, int32_t x, int32_t y);
       
+      void draw_image_disabled(const image& image, const point& point) {draw_image_disabled(image, point.x(), point.y());}
+      
+      void draw_image_disabled(const image& image, const point& point, float brightness) {draw_image_disabled(image, point.x(), point.y(), brightness);}
+      
+      void draw_image_disabled(const image& image, int32_t x, int32_t y) {draw_image_disabled(image, x, y, 1.0);}
+      
+      void draw_image_disabled(const image& image, int32_t x, int32_t y, float brightness);
+
       void draw_line(const pen& pen, int32_t x1, int32_t y1, int32_t x2, int32_t y2);
       
       void draw_line(const pen& pen, float x1, float y1, float x2, float y2) {draw_line(pen, static_cast<int32_t>(x1), static_cast<int32_t>(y1), static_cast<int32_t>(x2), static_cast<int32_t>(y2));}
