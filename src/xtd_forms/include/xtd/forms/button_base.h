@@ -88,6 +88,8 @@ namespace xtd {
     protected:
       void on_font_changed(const xtd::event_args& e) override;
       
+      virtual void on_image_changed(const xtd::event_args& e);
+
       void on_resize(const xtd::event_args& e) override;
       
       void on_text_changed(const xtd::event_args& e) override;
