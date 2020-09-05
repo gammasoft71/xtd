@@ -31,3 +31,5 @@ examples/games/minesweeper/properties/resources.hpp
 examples/games/minesweeper/properties/settings.hpp
 examples/games/game_of_life/properties/startup.cpp
 scripts/install/test_wxwidgets/wxwidgets.lck
+examples/common_controls/picture_box/properties/resources.h
+examples/games/minesweeper/properties/resources.h
