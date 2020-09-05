@@ -121,7 +121,7 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
     button_color = color::from_argb(30, xtd::forms::theme_colors::current_theme().button_face());
     text_color = xtd::forms::theme_colors::current_theme().gray_text();
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state)
-    border_color = button_color = color::darker(xtd::forms::theme_colors::current_theme().accent(), 0.85);
+    if (bounds.height() <= 25) button_color = color::darker(xtd::forms::theme_colors::current_theme().accent(), 0.85);
   
   auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
@@ -141,15 +141,14 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed) {
     if (bounds.height() <= 25) {
-      button_color = border_color = xtd::forms::theme_colors::current_theme().accent();
+      button_color = xtd::forms::theme_colors::current_theme().accent();
       text_color = xtd::forms::theme_colors::current_theme().accent_text();
     } else button_color = color::from_argb(240, 240, 240);
   } else if (state == xtd::forms::visual_styles::push_button_state::disabled) {
     button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : color::darker(button_color, 0.96);
     text_color = xtd::forms::theme_colors::current_theme().gray_text();
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) {
-    border_color = button_color = color::darker(xtd::forms::theme_colors::current_theme().accent(), 0.85);
-    text_color = xtd::forms::theme_colors::current_theme().accent_text();
+    if (bounds.height() <= 25) button_color = color::lighter(xtd::forms::theme_colors::current_theme().accent(), 0.85);
   }
   
   auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);

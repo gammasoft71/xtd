@@ -87,12 +87,15 @@ void button::on_image_changed(const xtd::event_args& e) {
 
 void button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
-  if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
-    native::button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
-    native::button::image_align(handle(), static_cast<uint32_t>(image_align_));
-    if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
-    native::control::location(handle(), location_);
-    native::control::size(handle(), size_);
+  if (flat_style_ == xtd::forms::flat_style::system) {
+    if (image_ != drawing::image::empty || (image_list_.images().size() && image_index_ > -1)) {
+      native::button::image(handle(), image_ != drawing::image::empty ? image_ : image_list_.images()[image_index_]);
+      native::button::image_align(handle(), static_cast<uint32_t>(image_align_));
+      if (image_align_ != content_alignment::middle_center) native::control::text(handle(), text_);
+      native::control::location(handle(), location_);
+      native::control::size(handle(), size_);
+    }
+    if (default_button_) native::button::set_default_button(handle_);
   }
 }
 
@@ -117,8 +120,7 @@ void button::on_paint(paint_event_args& e) {
 
     text_format_flags flags = text_format_flags::default_format;
     flags |= to_text_format_flags(text_align_);
-    //button_renderer::draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, image_bounds, false, state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
-    theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, image_bounds, false, state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, image_bounds, false, xtd::environment::os_version().is_macos_platform() && default_button_ && state_ == xtd::forms::visual_styles::push_button_state::hot ? xtd::forms::visual_styles::push_button_state::default_state  : state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
   }
 }
 
