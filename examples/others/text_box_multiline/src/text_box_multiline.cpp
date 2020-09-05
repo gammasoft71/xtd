@@ -19,6 +19,7 @@ namespace examples {
       text_box1.text("Line 1\nLine 2\nLine 3\n...");
 
       text_box2.location({10, 150});
+      text_box2.word_wrap(true);
       text_box2.multiline(true);
       text_box2.size({280, 130});
       text_box2.text_changed += [&] {
