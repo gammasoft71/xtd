@@ -114,7 +114,7 @@ namespace xtd {
       }
 
       void on_mouse_enter(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::hot;
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = xtd::forms::visual_styles::push_button_state::hot;
         button_base::on_mouse_enter(e);
       }
 
