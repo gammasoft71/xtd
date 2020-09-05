@@ -37,7 +37,7 @@ namespace xtd {
           if ((style & ES_MULTILINE) == ES_MULTILINE) wx_style |= wxTE_MULTILINE;
           if ((style & ES_PASSWORD) == ES_PASSWORD) wx_style |= wxTE_PASSWORD;
           if ((style & ES_READONLY) == ES_READONLY) wx_style |= wxTE_READONLY;
-          if ((style & ES_AUTOHSCROLL) == ES_AUTOHSCROLL) wx_style |= wxTE_DONTWRAP;
+          if ((style & ES_MULTILINE) == ES_MULTILINE && (style & ES_AUTOHSCROLL) == ES_AUTOHSCROLL) wx_style |= wxTE_DONTWRAP;
 
           return wx_style;
         }
