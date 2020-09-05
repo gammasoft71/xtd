@@ -177,7 +177,7 @@ intptr_t system_colors::gray_text() {
 }
 
 intptr_t system_colors::highlight() {
-  if (::dark_mode()) return ::to_argb(255, 49, 79, 120);
+  if (::dark_mode()) return ::to_argb(255, 2, 117, 200);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHT));
 }
 
