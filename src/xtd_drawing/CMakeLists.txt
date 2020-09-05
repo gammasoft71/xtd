@@ -13,6 +13,7 @@ set(XTD_DRAWING_INCLUDES
   include/xtd/drawing//brush.h
   include/xtd/drawing//brushes.h
   include/xtd/drawing/color.h
+  include/xtd/drawing/dash_style.h
   include/xtd/drawing/font.h
   include/xtd/drawing/font_family.h
   include/xtd/drawing/font_style.h
