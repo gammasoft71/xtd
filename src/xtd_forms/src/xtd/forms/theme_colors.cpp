@@ -441,7 +441,7 @@ namespace {
       case xtd::forms::known_themed_color::gradient_active_caption: return xtd::drawing::color::from_argb(0xFF9A9A9A);
       case xtd::forms::known_themed_color::gradient_inactive_caption: return xtd::drawing::color::from_argb(0xFF9A9AB8);
       case xtd::forms::known_themed_color::gray_text: return xtd::drawing::color::from_argb(0xFF6B6B6B);
-      case xtd::forms::known_themed_color::highlight: return xtd::drawing::color::from_argb(0xFF314F78);
+      case xtd::forms::known_themed_color::highlight: return xtd::drawing::color::from_argb(0x0274C8);
       case xtd::forms::known_themed_color::highlight_text: return xtd::drawing::color::from_argb(0xFFFFFFFF);
       case xtd::forms::known_themed_color::hot_track: return xtd::drawing::color::from_argb(0xFFDFDFDF);
       case xtd::forms::known_themed_color::inactive_border: return xtd::drawing::color::from_argb(0xFF9A9AB8);
