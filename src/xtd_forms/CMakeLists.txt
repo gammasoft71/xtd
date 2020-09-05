@@ -48,6 +48,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/control.h
   include/xtd/forms/control_event_args.h
   include/xtd/forms/control_event_handler.h
+  include/xtd/forms/control_paint.h
   include/xtd/forms/control_styles.h
   include/xtd/forms/countries.h
   include/xtd/forms/country.h
@@ -202,6 +203,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/container_control.cpp
   src/xtd/forms/context_menu.cpp
   src/xtd/forms/control.cpp
+  src/xtd/forms/control_paint.cpp
   src/xtd/forms/countries.cpp
   src/xtd/forms/country.cpp
   src/xtd/forms/cursor.cpp

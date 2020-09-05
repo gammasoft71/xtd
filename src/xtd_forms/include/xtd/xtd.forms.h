@@ -49,6 +49,7 @@
 #include "xtd/forms/control.h"
 #include "xtd/forms/control_event_args.h"
 #include "xtd/forms/control_event_handler.h"
+#include "xtd/forms/control_paint.h"
 #include "xtd/forms/countries.h"
 #include "xtd/forms/country.h"
 #include "xtd/forms/cursor.h"
