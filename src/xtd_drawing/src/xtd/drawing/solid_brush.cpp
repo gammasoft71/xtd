@@ -11,7 +11,7 @@ solid_brush::solid_brush() {
 solid_brush& solid_brush::color(const drawing::color& color) {
   if (this->data_->color_ != color) {
     this->data_->color_ = color;
-    native::brush::color(this->brush::data_->handle_, this->data_->color_.handle(), this->data_->color_.a(), this->data_->color_.r(), this->data_->color_.g(), this->data_->color_.b());
+    native::brush::solid(this->brush::data_->handle_, this->data_->color_.a(), this->data_->color_.r(), this->data_->color_.g(), this->data_->color_.b());
   }
   return *this;
 }
