@@ -1,6 +1,7 @@
 #pragma once
 #include <xtd/xtd.strings>
 
+#include "drawing/drawing2d/linear_gradient_brush.h"
 #include "drawing/drawing2d/pen_alignment.h"
 #include "drawing/drawing2d/pen_type.h"
 #include "drawing/imaging/color_palette.h"

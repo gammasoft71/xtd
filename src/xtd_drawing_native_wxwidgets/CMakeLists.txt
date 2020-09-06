@@ -10,6 +10,7 @@ set(XTD_INCLUDES
 
 set(XTD_DRAWING_NATIVE_INCLUDES
   include/xtd/drawing/native/hdc_wrapper.h
+  include/xtd/drawing/native/wx_brush.h
 )
 
 set(XTD_DRAWING_NATIVE_WXWIDGETS_SOURCES
