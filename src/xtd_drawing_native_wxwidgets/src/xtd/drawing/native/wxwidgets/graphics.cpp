@@ -199,17 +199,14 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   height = 0;
   auto strings = xtd::strings::split(text, { '\n' });
   for (auto string : strings) {
-    wxSize line_size;
+    double line_width = 0, line_height = 0;
     // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.
-    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows")
-      line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetTextExtent({string.c_str(), wxMBConvUTF8()});
-    else {
-      double line_width = 0, line_height = 0;
-      graphics.GetTextExtent({ string.c_str(), wxMBConvUTF8() }, &line_width, &line_height);
-      line_size = { static_cast<int32_t>(line_width) , static_cast<int32_t>(line_height) };
-    }
-    width = std::max(width, line_size.GetWidth());;
-    height += line_size.GetHeight();
+    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
+      wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetTextExtent({string.c_str(), wxMBConvUTF8()});
+      line_width = line_size.GetWidth();
+      line_height = line_size.GetHeight();
+    } else graphics.GetTextExtent({string.c_str(), wxMBConvUTF8()}, &line_width, &line_height);
+    width = std::max(width, static_cast<int32_t>(line_width));
+    height += static_cast<int32_t>(line_height);
   }
 }
-
