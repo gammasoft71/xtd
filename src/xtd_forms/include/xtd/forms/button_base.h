@@ -137,6 +137,16 @@ namespace xtd {
         control::on_mouse_up(e);
       }
 
+      void on_parent_back_color_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_parent_back_color_changed(e);
+      }
+
+      void on_parent_fore_color_changed(const event_args& e) override {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        control::on_parent_fore_color_changed(e);
+      }
+
       void on_resize(const xtd::event_args& e) override {
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();
         control::on_resize(e);
