@@ -140,7 +140,9 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.SetFont(*reinterpret_cast<wxFont*>(font), {r, g, b, a});
-  graphics.DrawText({text.c_str(), wxMBConvUTF8()}, x, y);
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+  else graphics.DrawText({text.c_str(), wxMBConvUTF8()}, x, y);
 }
 
 void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
@@ -148,7 +150,9 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   graphics.Clip(x, y, w, h);
   graphics.SetFont(*reinterpret_cast<wxFont*>(font), {r, g, b, a});
-  graphics.DrawText({text.c_str(), wxMBConvUTF8()}, x, y);
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+  else graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
   graphics.ResetClip();
 }
 
@@ -193,12 +197,20 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   graphics.SetFont(*reinterpret_cast<wxFont*>(font), {0, 0, 0});
   width = 0;
   height = 0;
-  auto strings = xtd::strings::split(text, {'\n'});
-  for (auto string : strings) {
-    double w, h;
-    graphics.GetTextExtent({string.c_str(), wxMBConvUTF8()}, &w, &h);
-    width = std::max(width, static_cast<int32_t>(w));
-    height += h;
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
+    wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetMultiLineTextExtent({ text.c_str(), wxMBConvUTF8() });
+    width = size.GetWidth();
+    height = size.GetHeight();
+  } else {
+
+    auto strings = xtd::strings::split(text, { '\n' });
+    for (auto string : strings) {
+      double w, h;
+      graphics.GetTextExtent({ string.c_str(), wxMBConvUTF8() }, &w, &h);
+      width = std::max(width, static_cast<int32_t>(w));
+      height += h;
+    }
   }
 
   /*
