@@ -15,12 +15,7 @@ namespace xtd {
         void create(args_type&& ...args) {
           hdc_t* hdc = new hdc_t(args...);
           hdc_ = hdc;
-          graphics_ = wxGraphicsContext::Create(*hdc);
-        }
-        template<>
-        void create<wxScreenDC>() {
-          hdc_ = new wxScreenDC();
-          graphics_ = wxGraphicsContext::Create();
+          graphics_ = create_graphics(*hdc);
         }
         ~hdc_wrapper() {
           delete graphics_;
@@ -32,6 +27,9 @@ namespace xtd {
         wxGraphicsContext& graphics() {return *graphics_;}
 
       private:
+        template<typename hdc_t>
+        wxGraphicsContext* create_graphics(const hdc_t& hdc) {return wxGraphicsContext::Create(hdc);}
+        wxGraphicsContext* create_graphics(const wxScreenDC& hdc) {return wxGraphicsContext::Create();}
         wxDC* hdc_ = nullptr;
         wxGraphicsContext* graphics_ = nullptr;
       };
