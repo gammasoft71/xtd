@@ -16,6 +16,7 @@ add_projects(
   menus_and_toolbars
   datas
   components
+  painting
   printing
   common_dialogs
   other_dialogs
