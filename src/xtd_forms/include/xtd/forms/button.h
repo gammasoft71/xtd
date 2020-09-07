@@ -101,10 +101,20 @@ namespace xtd {
         if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? (state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
         button_base::on_enabled_changed(e);
       }
-      
+
+      void on_got_focus(const event_args& e) override {
+          button_base::on_got_focus(e);
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? (state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
+      }
+
       void on_handle_created(const event_args& e) override;
       
       void on_image_changed(const xtd::event_args& e) override;
+
+      void on_lost_focus(const event_args& e) override {
+          button_base::on_lost_focus(e);
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? (state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
+      }
 
       void on_mouse_down(const mouse_event_args& e) override {
         auto_repeat_timer_.interval(auto_repeat_delay_);

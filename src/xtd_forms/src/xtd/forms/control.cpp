@@ -500,7 +500,6 @@ void control::on_font_changed(const event_args &e) {
 }
 
 void control::on_got_focus(const event_args &e) {
-  focused_ = true;
   if (can_raise_events()) got_focus(*this, e);
 }
 
@@ -559,7 +558,6 @@ void control::on_location_changed(const event_args &e) {
 }
 
 void control::on_lost_focus(const event_args &e) {
-  focused_ = false;
   if (can_raise_events()) lost_focus(*this, e);
 }
 
@@ -938,6 +936,7 @@ void control::wm_key_char(message& message) {
 
 void control::wm_kill_focus(message& message) {
   def_wnd_proc(message);
+  focused_ = false;
   on_lost_focus(event_args::empty);
 }
 
@@ -1012,6 +1011,7 @@ void control::wm_scroll(message& message) {
 
 void control::wm_set_focus(message& message) {
   def_wnd_proc(message);
+  focused_ = true;
   on_got_focus(event_args::empty);
 }
 
