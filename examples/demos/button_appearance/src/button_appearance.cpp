@@ -48,7 +48,8 @@ public:
     label_image.location({10, 83});
     
     choice_image.selected_value_changed += [&] {
-      button_demo.image(button_images::from_name(choice_image.selected_item().value()));
+      if (choice_image.selected_index() == 0) button_demo.image(xtd::drawing::image::empty);
+      else button_demo.image(button_images::from_name(choice_image.selected_item().value()));
     };
     choice_image.items().push_back("none");
     choice_image.items().push_back_range(system_images::names());
