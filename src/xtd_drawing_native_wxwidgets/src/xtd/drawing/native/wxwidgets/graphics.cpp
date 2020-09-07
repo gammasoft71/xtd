@@ -122,7 +122,8 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  path.AddRectangle(x, y, width, height);
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRectangle add 1 to height and width.
+  path.AddRectangle(x, y, width - 1, height - 1);
   graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
   graphics.DrawPath(path);
 }
@@ -131,7 +132,8 @@ void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  path.AddRoundedRectangle(x, y, width, height, radius);
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRoundRect add 1 to height and width.
+  path.AddRoundedRectangle(x, y, width - 1, height - 1, radius);
   graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
   graphics.DrawPath(path);
 }
