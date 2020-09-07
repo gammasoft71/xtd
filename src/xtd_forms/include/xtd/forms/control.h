@@ -360,6 +360,7 @@ namespace xtd {
       virtual control& enabled(bool enabled);
 
       virtual bool focused() const {return focused_;}
+
       virtual drawing::color fore_color() const;
       virtual control& fore_color(const drawing::color& color);
       /// @cond
