@@ -201,7 +201,7 @@ void button_renderer::draw_button_macos(graphics g, const rectangle& bounds, con
 void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
-  auto border_color = color::darker(background_color, 0.95);
+  auto border_color = color::darker(back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control(), 0.95);
   auto button_color = xtd::forms::theme_colors::current_theme().button_face();
   auto text_color = color::lighter(foreground_color, 0.90);
   
@@ -219,14 +219,15 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, button_rect, flags);
+  auto text_rect = rectangle_f(bounds.x() + 2, bounds.y(), bounds.width() - 4, bounds.height() - 2);
+  draw_string(g, text, font, text_color, text_rect, flags);
 }
 
 void button_renderer::draw_button_macos_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = color::from_argb(200, 200, 200);
-  auto button_color = back_color.has_value() ? color::from_argb(150, 255, 255, 255) : xtd::forms::theme_colors::current_theme().button_face();
+  auto button_color = back_color.has_value() ? color::from_argb(128, xtd::forms::theme_colors::current_theme().control()) : xtd::forms::theme_colors::current_theme().button_face();
   auto text_color = foreground_color;
   
   if (state == xtd::forms::visual_styles::push_button_state::pressed) {
@@ -238,7 +239,10 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
     button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : color::darker(button_color, 0.96);
     text_color = xtd::forms::theme_colors::current_theme().gray_text();
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state) {
-    if (bounds.height() <= 25) button_color = color::lighter(xtd::forms::theme_colors::current_theme().accent(), 0.85);
+    if (bounds.height() <= 25) {
+      button_color = color::lighter(xtd::forms::theme_colors::current_theme().accent(), 0.85);
+      if (!fore_color.has_value()) text_color = xtd::forms::theme_colors::current_theme().accent_text();
+    }
   }
   
   auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
@@ -247,7 +251,8 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
   g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, button_rect, flags);
+  auto text_rect = rectangle_f(bounds.x() + 2, bounds.y(), bounds.width() - 4, bounds.height() - 2);
+  draw_string(g, text, font, text_color, text_rect, flags);
 }
 
 void button_renderer::draw_button_symbolic(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
