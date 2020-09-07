@@ -197,27 +197,19 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
   graphics.SetFont(*reinterpret_cast<wxFont*>(font), {0, 0, 0});
   width = 0;
   height = 0;
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.
-  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
-    wxSize size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetMultiLineTextExtent({ text.c_str(), wxMBConvUTF8() });
-    width = size.GetWidth();
-    height = size.GetHeight();
-  } else {
-
-    auto strings = xtd::strings::split(text, { '\n' });
-    for (auto string : strings) {
-      double w, h;
-      graphics.GetTextExtent({ string.c_str(), wxMBConvUTF8() }, &w, &h);
-      width = std::max(width, static_cast<int32_t>(w));
-      height += h;
+  auto strings = xtd::strings::split(text, { '\n' });
+  for (auto string : strings) {
+    wxSize line_size;
+    // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.
+    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows")
+      line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetTextExtent({string.c_str(), wxMBConvUTF8()});
+    else {
+      double line_width = 0, line_height = 0;
+      graphics.GetTextExtent({ string.c_str(), wxMBConvUTF8() }, &line_width, &line_height);
+      line_size = { static_cast<int32_t>(line_width) , static_cast<int32_t>(line_height) };
     }
+    width = std::max(width, line_size.GetWidth());;
+    height += line_size.GetHeight();
   }
-
-  /*
-  // Workaround : with wxWidgets version <= 3.1.4 hight size text is too small on macOS.
-  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") height += 1;
-  // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
-  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetFontMetrics().averageWidth / 2.3f);
-   */
 }
 
