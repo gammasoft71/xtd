@@ -4,6 +4,7 @@
 #include "content_alignment.h"
 #include "image_list.h"
 #include "flat_style.h"
+#include "text_format_flags.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -158,6 +159,9 @@ namespace xtd {
       }
 
       /// @cond
+      text_format_flags to_text_format_flags(content_alignment text_align);
+      xtd::drawing::rectangle compute_image_bounds();
+      
       bool auto_ellipsis_ = false;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
       drawing::image image_ = drawing::image::empty;

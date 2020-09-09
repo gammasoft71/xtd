@@ -184,6 +184,7 @@ set(XTD_FORMS_PROPERTIES_INCLUDES
 )
 
 set(XTD_FORMS_VISUAL_STYLES_INCLUDES
+  include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
 )
 
