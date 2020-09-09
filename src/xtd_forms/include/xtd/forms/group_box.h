@@ -28,7 +28,7 @@ namespace xtd {
       void on_text_changed(const xtd::event_args& e) override;
       
       /// @cond
-      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
+      xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::system;
       /// @endcond
     };
   }

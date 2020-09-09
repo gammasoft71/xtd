@@ -170,7 +170,6 @@ intptr_t control::create(const forms::create_params& create_params) {
 intptr_t control::create_paint_graphics(intptr_t control) {
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   if (control == 0) hdc_wrapper->create<wxScreenDC>();
-  else if (reinterpret_cast<control_handler*>(control)->graphic_control() != reinterpret_cast<control_handler*>(control)->control()) hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
   else hdc_wrapper->create<wxPaintDC>(reinterpret_cast<control_handler*>(control)->graphic_control());
   return reinterpret_cast<intptr_t>(hdc_wrapper);
 }

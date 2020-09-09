@@ -417,13 +417,12 @@ namespace xtd {
           return wx_style;
         }
 
-        virtual wxWindow* container() const {return control_;}
-
         wxWindow* control() const {return control_;}
-        void clear_control() {control_ = nullptr;}
-        
         virtual wxWindow* graphic_control() const {return control_;}
+        virtual wxWindow* main_control() const {return control_->GetMainWindowOfCompositeControl();}
 
+        void clear_control() {control_ = nullptr;}
+                
         intptr_t call_def_wnd_proc(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t result, intptr_t handle) {return def_wnd_proc(hwnd, msg, wparam, lparam, result, handle);}
         
         event<control_handler, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;

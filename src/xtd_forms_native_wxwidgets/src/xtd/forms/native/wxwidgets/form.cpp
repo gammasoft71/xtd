@@ -105,6 +105,6 @@ void form::end_dialog(intptr_t form, int32_t result) {
 void form::virtual_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
   
-  reinterpret_cast<control_handler*>(control)->container()->SetVirtualSize(wxSize(size.width(), size.height()));
-  if (dynamic_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->container())) static_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->container())->SetScrollRate(10, 10);
+  reinterpret_cast<control_handler*>(control)->main_control()->SetVirtualSize(wxSize(size.width(), size.height()));
+  if (dynamic_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->main_control())) static_cast<wxMainPanel*>(reinterpret_cast<control_handler*>(control)->main_control())->SetScrollRate(10, 10);
 }
