@@ -30,6 +30,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/cancel_event_args.h
   include/xtd/forms/cancel_event_handler.h
   include/xtd/forms/check_box.h
+  include/xtd/forms/check_box_renderer.h
   include/xtd/forms/check_boxes.h
   include/xtd/forms/check_state.h
   include/xtd/forms/checked_list_box.h
@@ -194,6 +195,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/button_base.cpp
   src/xtd/forms/button_renderer.cpp
   src/xtd/forms/check_box.cpp
+  src/xtd/forms/check_box_renderer.cpp
   src/xtd/forms/checked_list_box.cpp
   src/xtd/forms/choice.cpp
   src/xtd/forms/color_dialog.cpp

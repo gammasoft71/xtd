@@ -1,6 +1,6 @@
 #pragma once
 #include <cstdint>
-#include <string>
+#include <xtd/strings.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -61,6 +61,14 @@ namespace xtd {
           top_ = top;
         }
       }
+      
+      std::string to_string() const {return xtd::strings::format("padding [all={}, left={}, top={}, right={}, bottom={}]", all_, left_, top_, right_, bottom_);}
+      
+      /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const xtd::forms::padding& padding) noexcept {
+        return os << padding.to_string();
+      }
+      /// @endcond
 
       static const padding empty;
                                         

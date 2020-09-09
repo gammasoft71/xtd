@@ -33,7 +33,8 @@ namespace {
   std::set<control*> reentrant_layout::do_layouts;
 
   bool debug_events = false;
-  
+  bool debug_layout = false;
+
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)
       return mouse_buttons::left;
@@ -644,14 +645,15 @@ void control::on_parent_font_changed(const event_args &e) {
 }
 
 void control::on_resize(const event_args &e) {
+  client_rectangle_ = native::control::client_rectangle(handle_);
+  on_layout(e);
+  refresh();
   if (can_raise_events()) resize(*this, e);
 }
 
 void control::on_size_changed(const event_args &e) {
   if (parent_ && parent().value().get().auto_size()) parent().value().get().perform_layout();
   client_rectangle_ = native::control::client_rectangle(handle_);
-  on_layout(e);
-  refresh();
   if (can_raise_events()) size_changed(*this, e);
 }
 
@@ -804,6 +806,7 @@ void control::set_bounds_core(int32_t x, int32_t y, int32_t width, int32_t heigh
     native::control::size(handle_, size_);
     on_client_size_changed(event_args::empty);
     on_size_changed(event_args::empty);
+    on_resize(event_args::empty);
     if (parent_) parent().value().get().perform_layout();
     on_layout(event_args::empty);
   }
@@ -816,6 +819,7 @@ void control::set_client_size_core(int32_t width, int32_t height) {
   native::control::client_size(handle_, client_size_);
   on_client_size_changed(event_args::empty);
   on_size_changed(event_args::empty);
+  on_resize(event_args::empty);
 }
 
 void control::on_parent_size_changed(const control& sender, const event_args& e) {
@@ -833,7 +837,11 @@ void control::do_layout_childs_with_dock_style() {
   }
 
   if (docked) {
-    drawing::rectangle docking_rect = client_rectangle();
+    drawing::rectangle docking_rect = {{0, 0}, client_size()};
+    diagnostics::debug::write_line_if(debug_layout, strings::format("do_layout ({}):", name()));
+    diagnostics::debug::indent();
+    diagnostics::debug::write_line_if(debug_layout, strings::format("docking_rect = {}", docking_rect));
+    diagnostics::debug::write_line_if(debug_layout, strings::format("padding = {}", padding_));
     docking_rect.left(docking_rect.left() + padding_.left());
     docking_rect.top(docking_rect.top() + padding_.top());
     docking_rect.width(docking_rect.width() - padding_.left() - padding_.right());
@@ -845,24 +853,31 @@ void control::do_layout_childs_with_dock_style() {
         iterator->get().width(docking_rect.width());
         docking_rect.top(docking_rect.top() + iterator->get().height());
         docking_rect.height(docking_rect.height() - iterator->get().height());
+        diagnostics::debug::write_line_if(debug_layout, strings::format("top ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::bottom) {
         iterator->get().location({docking_rect.left(), docking_rect.bottom() - iterator->get().height()});
         iterator->get().width(docking_rect.width());
         docking_rect.height(docking_rect.height() - iterator->get().height());
+        diagnostics::debug::write_line_if(debug_layout, strings::format("bottom ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::left) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.left(docking_rect.left() + iterator->get().width());
         docking_rect.width(docking_rect.width() - iterator->get().width());
+        diagnostics::debug::write_line_if(debug_layout, strings::format("left ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::right) {
         iterator->get().location({docking_rect.right() - iterator->get().width(), docking_rect.top()});
         iterator->get().height(docking_rect.height());
         docking_rect.width(docking_rect.width() - iterator->get().width());
+        diagnostics::debug::write_line_if(debug_layout, strings::format("right ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::fill) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
         iterator->get().size({docking_rect.width(), docking_rect.height()});
+        diagnostics::debug::write_line_if(debug_layout, strings::format("fill ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       }
     }
+    diagnostics::debug::unindent();
+    diagnostics::debug::write_line_if(debug_layout, "----------------------------------");
   }
 }
 
