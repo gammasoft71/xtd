@@ -117,21 +117,27 @@ namespace xtd {
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_appearance_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
       virtual void on_appearance_changed(const event_args& e) {
-        this->appearance_changed(*this, e);
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        this->appearance_changed(*this, e);
       }
       
       /// @brief Raises the checked_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_checked_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-      virtual void on_checked_changed(const event_args& e) {this->checked_changed(*this, e);}
+      virtual void on_checked_changed(const event_args& e) {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        this->checked_changed(*this, e);
+      }
       
       /// @brief Raises the check_state_changed event.
       /// @param e An event_args that contains the event data.
       /// @remarks Raising an event invokes the event handler through a delegate.
       /// @remarks The on_check_state_changed method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.
-      virtual void on_check_state_changed(const event_args& e) {this->check_state_changed(*this, e);}
+      virtual void on_check_state_changed(const event_args& e) {
+        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        this->check_state_changed(*this, e);
+      }
 
       void on_enabled_changed(const event_args& e) override {
         if (flat_style_ != xtd::forms::flat_style::system) {

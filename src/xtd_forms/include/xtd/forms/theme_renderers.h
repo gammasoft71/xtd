@@ -29,9 +29,11 @@ namespace xtd {
       xtd::forms::renderer renderer() const {return renderer_getter_();}
       xtd::forms::renderer::button_renderer button_renderer() const {return renderer_getter_().button_render();}
       xtd::forms::renderer::check_box_renderer check_box_renderer() const {return renderer_getter_().check_box_render();}
+      xtd::forms::renderer::radio_button_renderer radio_button_renderer() const {return renderer_getter_().radio_button_render();}
 
       void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {button_renderer()(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
       void draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {check_box_renderer()(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
+      void draw_radio_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {radio_button_renderer()(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
 
       static theme_renderers current_theme() {
         if (current_theme_ == theme_renderers::empty) current_theme_ = default_theme();

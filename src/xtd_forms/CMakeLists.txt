@@ -132,6 +132,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/progress_changed_event_args.h
   include/xtd/forms/progress_changed_event_handler.h
   include/xtd/forms/radio_button.h
+  include/xtd/forms/radio_button_renderer.h
   include/xtd/forms/radio_buttons.h
   include/xtd/forms/renderer.h
   include/xtd/forms/run_worker_completed_event_args.h
@@ -186,6 +187,7 @@ set(XTD_FORMS_PROPERTIES_INCLUDES
 set(XTD_FORMS_VISUAL_STYLES_INCLUDES
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
+  include/xtd/forms/visual_styles/radio_button_state.h
 )
 
 set(XTD_FORMS_SOURCES
@@ -240,6 +242,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/picture_box.cpp
   src/xtd/forms/progress_bar.cpp
   src/xtd/forms/radio_button.cpp
+  src/xtd/forms/radio_button_renderer.cpp
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/scrollable_control.cpp
