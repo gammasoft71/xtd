@@ -164,3 +164,6 @@
 #include "xtd/forms/up_down_base.h"
 #include "xtd/forms/up_down_button.h"
 #include "xtd/forms/user_control.h"
+#include "xtd/forms/visual_styles/check_box_state.h"
+#include "xtd/forms/visual_styles/push_button_state.h"
+#include "xtd/forms/visual_styles/radio_button_state.h"

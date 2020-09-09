@@ -3,6 +3,7 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/radio_button.h>
 #include "../../../include/xtd/forms/radio_button.h"
+#include "../../../include/xtd/forms/radio_button_renderer.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -79,6 +80,17 @@ drawing::size radio_button::measure_control() const {
 void radio_button::on_handle_created(const event_args &e) {
   this->button_base::on_handle_created(e);
   native::radio_button::checked(handle(), this->checked_);
+}
+
+void radio_button::on_paint(paint_event_args& e) {
+  if (flat_style_ == xtd::forms::flat_style::system)
+    control::on_paint(e);
+  else {
+    text_format_flags flags = to_text_format_flags(text_align_);
+    if (flat_style_ == xtd::forms::flat_style::flat) radio_button_renderer::draw_flat_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    else if (flat_style_ == xtd::forms::flat_style::popup) radio_button_renderer::draw_popup_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    else theme_renderers::current_theme().draw_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+  }
 }
 
 void radio_button::wnd_proc(message &message) {
