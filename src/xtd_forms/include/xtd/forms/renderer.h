@@ -8,6 +8,7 @@
 #include <xtd/drawing/image.h>
 #include <xtd/drawing/rectangle.h>
 #include "text_format_flags.h"
+#include "visual_styles/check_box_state.h"
 #include "visual_styles/push_button_state.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -17,6 +18,7 @@ namespace xtd {
     class renderer {
     public:
       using button_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const std::string&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::push_button_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
+      using check_box_renderer = xtd::delegate<void(xtd::drawing::graphics, const xtd::drawing::rectangle&, const std::string&, const xtd::drawing::font&, xtd::forms::text_format_flags, const xtd::drawing::image&, const xtd::drawing::rectangle&, bool focused, xtd::forms::visual_styles::check_box_state, const std::optional<xtd::drawing::color>&, const std::optional<xtd::drawing::color>&)>;
 
       renderer() = default;
       explicit renderer(const std::string& name) : name_(name) {}
@@ -38,7 +40,11 @@ namespace xtd {
       button_renderer button_render() const  {return button_renderer_;}
       void button_render(button_renderer button_renderer) {button_renderer_ = button_renderer;}
       
+      check_box_renderer check_box_render() const  {return check_box_renderer_;}
+      void check_box_render(check_box_renderer check_box_renderer) {check_box_renderer_ = check_box_renderer;}
+      
       void draw_button(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {button_renderer_(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
+      void draw_check_box(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color) {check_box_renderer_(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);}
 
       std::string to_string() const {
         if (!name_.empty()) return xtd::strings::format("{}, name: {}", strings::full_class_name(*this), name_);
@@ -52,6 +58,7 @@ namespace xtd {
     private:
       std::string name_;
       button_renderer button_renderer_;
+      check_box_renderer check_box_renderer_;
     };
   }
 }

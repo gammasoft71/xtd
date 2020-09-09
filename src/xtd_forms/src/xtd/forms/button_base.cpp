@@ -87,3 +87,40 @@ forms::create_params button_base::create_params() const {
 drawing::size button_base::measure_control() const {
   return this->control::measure_text() + drawing::size(13, 0);
 }
+
+text_format_flags button_base::to_text_format_flags(content_alignment text_align) {
+  text_format_flags flags = text_format_flags::default_format;
+  
+  switch (text_align) {
+    case content_alignment::top_left: flags |= text_format_flags::top | text_format_flags::left; break;
+    case content_alignment::top_center: flags |= text_format_flags::top | text_format_flags::horizontal_center; break;
+    case content_alignment::top_right: flags |= text_format_flags::top | text_format_flags::rigth; break;
+    case content_alignment::middle_left: flags |= text_format_flags::vertical_center | text_format_flags::left; break;
+    case content_alignment::middle_center: flags |= text_format_flags::vertical_center | text_format_flags::horizontal_center; break;
+    case content_alignment::middle_right: flags |= text_format_flags::vertical_center | text_format_flags::rigth; break;
+    case content_alignment::bottom_left: flags |= text_format_flags::bottom | text_format_flags::left; break;
+    case content_alignment::bottom_center: flags |= text_format_flags::bottom | text_format_flags::horizontal_center; break;
+    case content_alignment::bottom_right: flags |= text_format_flags::bottom | text_format_flags::rigth; break;
+    default: break;
+  }
+  
+  return flags;
+}
+
+xtd::drawing::rectangle button_base::compute_image_bounds() {
+  xtd::drawing::rectangle image_bounds = {(width() - image_.width()) / 2, (height() - image_.height()) / 2, image_.width(), image_.height()};
+  auto image_margin = 4;
+  switch (image_align_) {
+    case content_alignment::top_left: image_bounds = {image_margin, image_margin, image_.width(), image_.height()}; break;
+    case content_alignment::top_center: image_bounds = {(width() - image_.width()) / 2, image_margin, image_.width(), image_.height()}; break;
+    case content_alignment::top_right: image_bounds = {width() - image_.width() - image_margin, image_margin, image_.width(), image_.height()}; break;
+    case content_alignment::middle_left: image_bounds = {image_margin, (height() - image_.height()) / 2, image_.width(), image_.height()}; break;
+    case content_alignment::middle_center: image_bounds = {(width() - image_.width()) / 2, (height() - image_.height()) / 2, image_.width(), image_.height()}; break;
+    case content_alignment::middle_right: image_bounds = {width() - image_.width() - image_margin, (height() - image_.height()) / 2, image_.width(), image_.height()}; break;
+    case content_alignment::bottom_left: image_bounds = {image_margin, height() - image_.height() - image_margin, image_.width(), image_.height()}; break;
+    case content_alignment::bottom_center: image_bounds = {(width() - image_.width()) / 2, height() - image_.height() - image_margin, image_.width(), image_.height()}; break;
+    case content_alignment::bottom_right: image_bounds = {width() - image_.width() - image_margin, height() - image_.height() - image_margin, image_.width(), image_.height()}; break;
+    default: break;
+  }
+  return image_bounds;
+}

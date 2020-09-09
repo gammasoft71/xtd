@@ -3,6 +3,7 @@
 #include <xtd/forms/window_messages.h>
 #include <xtd/forms/native/window_styles.h>
 #include "../../../include/xtd/forms/check_box.h"
+#include "../../../include/xtd/forms/check_box_renderer.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -86,6 +87,17 @@ drawing::size check_box::measure_control() const {
 void check_box::on_handle_created(const event_args &e) {
   this->button_base::on_handle_created(e);
   native::check_box::check_state(handle(), static_cast<int32_t>(this->check_state_));
+}
+
+void check_box::on_paint(paint_event_args& e) {
+  if (flat_style_ == xtd::forms::flat_style::system)
+    control::on_paint(e);
+  else {
+    text_format_flags flags = to_text_format_flags(text_align_);
+    if (flat_style_ == xtd::forms::flat_style::flat) check_box_renderer::draw_flat_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    else if (flat_style_ == xtd::forms::flat_style::popup) check_box_renderer::draw_popup_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    else theme_renderers::current_theme().draw_check_box(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+  }
 }
 
 void check_box::wnd_proc(message &message) {

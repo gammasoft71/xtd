@@ -19,9 +19,9 @@ public:
     group_box_properties.size({320, 445});
     group_box_properties.text("properties");
     
-    panel_properties.dock(dock_style::fill);
-    panel_properties.controls().push_back_range({label_text, text_box_text, label_text_align, choice_text_align, label_image, choice_image, label_image_align, choice_image_align, label_flat_style, choice_flat_style, label_back_color, color_picker_back_color, label_fore_color, color_picker_fore_color, label_width, numeric_up_down_width, label_height, numeric_up_down_height, label_auto_size, check_box_auto_size, label_default_button, check_box_default_buttton, label_enebaled, check_box_enabled});
     panel_properties.auto_scroll(true);
+    panel_properties.controls().push_back_range({label_text, text_box_text, label_text_align, choice_text_align, label_image, choice_image, label_image_align, choice_image_align, label_flat_style, choice_flat_style, label_back_color, color_picker_back_color, label_fore_color, color_picker_fore_color, label_width, numeric_up_down_width, label_height, numeric_up_down_height, label_auto_size, check_box_auto_size, label_default_button, check_box_default_buttton, label_enebaled, check_box_enabled});
+    panel_properties.dock(dock_style::fill);
 
     label_text.auto_size(true);
     label_text.location({10, 13});
