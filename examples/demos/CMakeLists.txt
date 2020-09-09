@@ -6,6 +6,7 @@ find_package(xtd.forms REQUIRED)
 add_projects(
   demo
   button_appearance
+  check_box_appearance
   lcd_label_appearance
   message_box_appearance
 )
