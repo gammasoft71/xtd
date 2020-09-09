@@ -101,7 +101,11 @@ namespace xtd {
       /// @par Note to Inhearitors
       /// When overriding on_checked_changed(const event_args&) in a derived class, be sure to call the base class' on_checked_changed(const event_args&) method so that registered delegates receive the event.
       virtual void on_checked_changed(const event_args& e) {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
+        if (flat_style_ != xtd::forms::flat_style::system)  {
+          if (!checked_) state_ = xtd::forms::visual_styles::radio_button_state::unchecked_normal;
+          else state_ = xtd::forms::visual_styles::radio_button_state::checked_normal;
+          invalidate();
+        }
         this->checked_changed(*this, e);
       }
 

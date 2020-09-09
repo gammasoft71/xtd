@@ -153,10 +153,10 @@ public:
     };
     check_box_auto_size.appearance(forms::appearance::button);
     check_box_auto_size.checked(button_demo.auto_size());
-    check_box_auto_size.flat_style(xtd::forms::flat_style::system);
     check_box_auto_size.location({100, 325});
     check_box_auto_size.width(200);
     check_box_auto_size.text("false");
+    check_box_auto_size.text_align(content_alignment::middle_center);
     check_box_auto_size.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
 
     label_default_button.text("default: ");
@@ -170,10 +170,10 @@ public:
     };
     check_box_default_buttton.appearance(forms::appearance::button);
     check_box_default_buttton.checked(accept_button().has_value());
-    check_box_default_buttton.flat_style(xtd::forms::flat_style::system);
     check_box_default_buttton.location({100, 360});
     check_box_default_buttton.width(200);
     check_box_default_buttton.text("false");
+    check_box_default_buttton.text_align(content_alignment::middle_center);
     check_box_default_buttton.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
 
     label_enebaled.text("enabled: ");
@@ -186,10 +186,10 @@ public:
     };
     check_box_enabled.appearance(forms::appearance::button);
     check_box_enabled.checked(button_demo.enabled());
-    check_box_enabled.flat_style(xtd::forms::flat_style::system);
     check_box_enabled.location({100, 395});
     check_box_enabled.width(200);
     check_box_enabled.text("true");
+    check_box_enabled.text_align(content_alignment::middle_center);
     check_box_enabled.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
 
     button_demo.location({360, 30});
