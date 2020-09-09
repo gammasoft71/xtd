@@ -160,8 +160,9 @@ namespace xtd {
 
       /// @cond
       text_format_flags to_text_format_flags(content_alignment text_align);
-      xtd::drawing::rectangle compute_image_bounds();
-      
+      xtd::drawing::rectangle compute_image_bounds() {return compute_image_bounds({0, 0, width(), height()});}
+      xtd::drawing::rectangle compute_image_bounds(const xtd::drawing::rectangle& rectangle);
+
       bool auto_ellipsis_ = false;
       xtd::forms::flat_style flat_style_ = xtd::forms::flat_style::standard;
       drawing::image image_ = drawing::image::empty;

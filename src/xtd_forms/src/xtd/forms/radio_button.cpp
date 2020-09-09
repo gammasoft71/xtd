@@ -3,10 +3,28 @@
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/radio_button.h>
 #include "../../../include/xtd/forms/radio_button.h"
+#include "../../../include/xtd/forms/button_renderer.h"
 #include "../../../include/xtd/forms/radio_button_renderer.h"
+#include "../../../include/xtd/forms/visual_styles/push_button_state.h"
 
 using namespace xtd;
 using namespace xtd::forms;
+
+namespace {
+xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::visual_styles::radio_button_state state) {
+  switch (state) {
+    case xtd::forms::visual_styles::radio_button_state::unchecked_normal: return xtd::forms::visual_styles::push_button_state::normal;
+    case xtd::forms::visual_styles::radio_button_state::unchecked_hot: return xtd::forms::visual_styles::push_button_state::hot;
+    case xtd::forms::visual_styles::radio_button_state::unchecked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::unchecked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    case xtd::forms::visual_styles::radio_button_state::checked_normal: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::checked_hot: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::checked_pressed: return xtd::forms::visual_styles::push_button_state::pressed;
+    case xtd::forms::visual_styles::radio_button_state::checked_disabled: return xtd::forms::visual_styles::push_button_state::disabled;
+    default: return xtd::forms::visual_styles::push_button_state::normal;
+  }
+}
+}
 
 radio_button::radio_button() {
   this->size_ = this->default_size();
@@ -87,9 +105,15 @@ void radio_button::on_paint(paint_event_args& e) {
     control::on_paint(e);
   else {
     text_format_flags flags = to_text_format_flags(text_align_);
-    if (flat_style_ == xtd::forms::flat_style::flat) radio_button_renderer::draw_flat_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
-    else if (flat_style_ == xtd::forms::flat_style::popup) radio_button_renderer::draw_popup_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
-    else theme_renderers::current_theme().draw_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    if (appearance_ == xtd::forms::appearance::normal) {
+      if (flat_style_ == xtd::forms::flat_style::flat) radio_button_renderer::draw_flat_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+      else if (flat_style_ == xtd::forms::flat_style::popup) radio_button_renderer::draw_popup_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+      else theme_renderers::current_theme().draw_radio_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), state_, !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    } else if (appearance_ == xtd::forms::appearance::button) {
+      if (flat_style_ == xtd::forms::flat_style::flat) button_renderer::draw_flat_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+      else if (flat_style_ == xtd::forms::flat_style::popup) button_renderer::draw_popup_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+      else theme_renderers::current_theme().draw_button(e.graphics(), e.clip_rectangle(), text(), font(), flags, image_, compute_image_bounds(), focused(), to_push_button_style(state_), !back_color_.has_value() && back_color() != xtd::forms::theme_colors::current_theme().control() ? back_color() : back_color_, !fore_color_.has_value() && fore_color() != xtd::forms::theme_colors::current_theme().control_text() ? fore_color() : fore_color_);
+    }
   }
 }
 

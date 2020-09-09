@@ -16,14 +16,14 @@ namespace {
     string_format.line_alignment(string_alignment::center);
     string_format.alignment(string_alignment::center);
     
-    if ((flags & text_format_flags::left) == text_format_flags::top) string_format.alignment(string_alignment::near);
     if ((flags & text_format_flags::horizontal_center) == text_format_flags::horizontal_center) string_format.alignment(string_alignment::center);
-    if ((flags & text_format_flags::rigth) == text_format_flags::rigth) string_format.alignment(string_alignment::far);
-   
-    if ((flags & text_format_flags::top) == text_format_flags::top) string_format.line_alignment(string_alignment::near);
+    else if ((flags & text_format_flags::rigth) == text_format_flags::rigth) string_format.alignment(string_alignment::far);
+    else string_format.alignment(string_alignment::near);
+
     if ((flags & text_format_flags::vertical_center) == text_format_flags::vertical_center) string_format.line_alignment(string_alignment::center);
-    if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(string_alignment::far);
-    
+    else if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(string_alignment::far);
+    else string_format.line_alignment(string_alignment::near);
+
     if ((flags & text_format_flags::no_prefix) == text_format_flags::no_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::none);
     else if ((flags & text_format_flags::hide_prefix) == text_format_flags::hide_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);
     else string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::show);
