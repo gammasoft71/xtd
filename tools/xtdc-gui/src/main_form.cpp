@@ -10,6 +10,7 @@
 #include <list>
 #include <filesystem>
 #include <xtd/environment.h>
+#include <xtd/drawing/system_icons.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
 #include <xtd/forms/theme_images.h>
@@ -21,17 +22,14 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 main_form::main_form() {
-  //image(<#const image &image#>);
   client_size({1000, 710});
+  icon(system_icons::from_name("xtd"));
   minimize_box(false);
   if (environment::os_version().is_macos_platform())
     environment::set_environment_variable("PATH", "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin");
-  /// @todo Remove two folluwing lines when anchor in anchor will fixed
-  //maximize_box(false);
-  //form_border_style(forms::form_border_style::fixed_3d);
-  /// <-- end todo
   start_position(form_start_position::center_screen);
   
+  startup_panel_.auto_scroll(true);
   startup_panel_.parent(*this);
   startup_panel_.size(client_size() - xtd::drawing::size {0, 100});
   startup_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
@@ -365,6 +363,7 @@ main_form::main_form() {
     if (create_panel_.visible()) next_button_.perform_click();
   };
 
+  configure_panel_.auto_scroll(true);
   configure_panel_.parent(*this);
   configure_panel_.size(client_size() - xtd::drawing::size {0, 100});
   configure_panel_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
