@@ -128,11 +128,6 @@ namespace xtd {
         control::on_mouse_leave(e);
       }
       
-      void on_mouse_move(const mouse_event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) invalidate();
-        control::on_mouse_move(e);
-      }
-      
       void on_mouse_up(const mouse_event_args& e) override {
         if (flat_style_ != xtd::forms::flat_style::system) invalidate();
         control::on_mouse_up(e);
