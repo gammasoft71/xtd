@@ -1,22 +1,31 @@
 #include <xtd/xtd.forms>
 
-int main() {
-  auto main_form = xtd::forms::control::create<xtd::forms::form>("Test forms");
-  /*
-  auto picture = xtd::forms::control::create<xtd::forms::picture_box>(*main_form);
-  picture->image(xtd::forms::theme_images::current_theme().from_name("xtd-forms", xtd::drawing::size(1024, 1024)));
-  picture->size_mode(xtd::forms::picture_box_size_mode::zoom);
-  picture->dock(xtd::forms::dock_style::fill);
-   */
-  
-  auto button = xtd::forms::control::create<xtd::forms::button>(*main_form, "Message", xtd::drawing::point(10, 10));
-  button->click += [&] {
-    xtd::cdebug << "begin message..." << std::endl;
-    auto dialog = xtd::forms::control::create<xtd::forms::form>("Dialog", {}, {200, 100}).release();
-    dialog->start_position(xtd::forms::form_start_position::center_screen);
-    dialog->show();
-    xtd::cdebug << "end message..." << std::endl;
-  };
-  
-  xtd::forms::application::run(*main_form);
-}
+using namespace xtd;
+using namespace xtd::diagnostics;
+using namespace xtd::drawing;
+using namespace xtd::forms;
+
+class form_main : public form {
+public:
+  form_main() {
+    client_size({300, 300});
+
+    panel_.parent(*this);
+    panel_.dock(dock_style::fill);
+    panel_.paint += [&](control& sender, paint_event_args& e) {
+      e.graphics().draw_rectangle(pen(color::black, 1), 10, 10, 20, 20);
+      e.graphics().draw_rectangle(pen(color::black, 1), 12, 12, 16, 16);
+
+      e.graphics().fill_rectangle(solid_brush(color::black), 10, 40, 20, 20);
+      e.graphics().fill_rectangle(solid_brush(color::white), 12, 42, 16, 16);
+    };
+  }
+
+  static void main() {
+    xtd::forms::application::run(form_main());
+  }
+
+  panel panel_;
+};
+
+startup_(form_main);
