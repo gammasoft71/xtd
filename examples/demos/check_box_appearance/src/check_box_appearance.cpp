@@ -10,13 +10,13 @@ class form1 : public form {
 public:
   form1() {
     text("Button appearance");
-    client_size({600, 465});
+    client_size({800, 450});
     controls().push_back_range({group_box_properties, check_box_demo});
     
     group_box_properties.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::bottom);
     group_box_properties.controls().push_back(panel_properties);
     group_box_properties.location({10, 10});
-    group_box_properties.size({320, 445});
+    group_box_properties.size({340, 430});
     group_box_properties.text("properties");
     
     panel_properties.auto_scroll(true);
@@ -204,7 +204,7 @@ public:
     check_box_enabled.text_align(content_alignment::middle_center);
     check_box_enabled.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
 
-    check_box_demo.location({360, 30});
+    check_box_demo.location({380, 30});
     check_box_demo.click += [&] {
       //message_box::show(*this, "Button clicked", "Button appearance");
     };
