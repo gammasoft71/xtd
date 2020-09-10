@@ -99,7 +99,7 @@ void button_renderer::draw_button_gnome_dark(graphics g, const rectangle& bounds
     g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x(), bounds.y(), bounds.width()-1, bounds.height()-1, 4);
     if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
     else if (image != image::empty) g.draw_image(image, image_bounds.location());
-    draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+    draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_button_gnome_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -119,7 +119,7 @@ void button_renderer::draw_button_gnome_light(graphics g, const rectangle& bound
     g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x(), bounds.y(), bounds.width()-1, bounds.height()-1, 4);
     if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
     else if (image != image::empty) g.draw_image(image, image_bounds.location());
-    draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+    draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_button_kde(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -157,7 +157,7 @@ void button_renderer::draw_button_kde_dark(graphics g, const rectangle& bounds, 
     g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x()+offset, bounds.y()+offset, bounds.width()-3+offset, bounds.height()-3+offset, 4);
     if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
     else if (image != image::empty) g.draw_image(image, image_bounds.location());
-    draw_string(g, text, font, text_color, rectangle_f(bounds.x()+offset, bounds.y()+offset, bounds.width()-2+offset, bounds.height()-2+offset), flags);
+    draw_string(g, text, font, text_color, rectangle(bounds.x()+offset, bounds.y()+offset, bounds.width()-2+offset, bounds.height()-2+offset), flags);
 }
 
 void button_renderer::draw_button_kde_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -190,7 +190,7 @@ void button_renderer::draw_button_kde_light(graphics g, const rectangle& bounds,
     g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x()+offset, bounds.y()+offset, bounds.width()-3+offset, bounds.height()-3+offset, 4);
     if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
     else if (image != image::empty) g.draw_image(image, image_bounds.location());
-    draw_string(g, text, font, text_color, rectangle_f(bounds.x()+offset, bounds.y()+offset, bounds.width()-2+offset, bounds.height()-2+offset), flags);
+    draw_string(g, text, font, text_color, rectangle(bounds.x()+offset, bounds.y()+offset, bounds.width()-2+offset, bounds.height()-2+offset), flags);
 }
 
 void button_renderer::draw_button_macos(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -213,13 +213,13 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state)
     if (bounds.height() <= 25) button_color = color::darker(xtd::forms::theme_colors::current_theme().accent(), 0.85);
   
-  auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
-  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
-  g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3.);
-  g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
+  auto button_rect = rectangle(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
+  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3);
+  g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3);
+  g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  auto text_rect = rectangle_f(bounds.x() + 2, bounds.y(), bounds.width() - 4, bounds.height() - 2);
+  auto text_rect = rectangle(bounds.x() + 2, bounds.y(), bounds.width() - 4, bounds.height() - 2);
   draw_string(g, text, font, text_color, text_rect, flags);
 }
 
@@ -245,13 +245,13 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
     }
   }
   
-  auto button_rect = rectangle_f(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
-  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3.);
-  g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3.);
-  g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3.);
+  auto button_rect = rectangle(bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4);
+  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect, 3);
+  g.fill_rounded_rectangle(solid_brush(button_color), button_rect, 3);
+  g.draw_rounded_rectangle(pen(border_color, 1), button_rect, 3);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  auto text_rect = rectangle_f(bounds.x() + 2, bounds.y(), bounds.width() - 4, bounds.height() - 2);
+  auto text_rect = rectangle(bounds.x() + 2, bounds.y(), bounds.width() - 4, bounds.height() - 2);
   draw_string(g, text, font, text_color, text_rect, flags);
 }
 
@@ -282,7 +282,7 @@ void button_renderer::draw_button_symbolic_dark(graphics g, const rectangle& bou
   g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_button_symbolic_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -307,7 +307,7 @@ void button_renderer::draw_button_symbolic_light(graphics g, const rectangle& bo
   g.draw_rounded_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2, 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_button_windows(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -343,7 +343,7 @@ void button_renderer::draw_button_windows_dark(graphics g, const rectangle& boun
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_button_windows_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -375,7 +375,7 @@ void button_renderer::draw_button_windows_light(graphics g, const rectangle& bou
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_button_xtd(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -420,7 +420,7 @@ void button_renderer::draw_flat_button_dark(graphics g, const rectangle& bounds,
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_flat_button_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -447,7 +447,7 @@ void button_renderer::draw_flat_button_light(graphics g, const rectangle& bounds
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_popup_button(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -479,7 +479,7 @@ void button_renderer::draw_popup_button_dark(graphics g, const rectangle& bounds
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
 
 void button_renderer::draw_popup_button_light(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, push_button_state state, const optional<color>& back_color, const optional<color>& fore_color) {
@@ -506,5 +506,5 @@ void button_renderer::draw_popup_button_light(graphics g, const rectangle& bound
   g.fill_rectangle(solid_brush(button_color), bounds.x() + 3, bounds.y() + 3, bounds.width() - 6, bounds.height() - 6);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 1.0);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  draw_string(g, text, font, text_color, rectangle_f(bounds.x(), bounds.y(), bounds.width(), bounds.height()), flags);
+  draw_string(g, text, font, text_color, bounds, flags);
 }
