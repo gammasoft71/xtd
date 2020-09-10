@@ -33,6 +33,7 @@ namespace examples {
       check_box3.location({30, 90});
 
       check_box4.appearance(forms::appearance::button);
+      check_box4.text_align(content_alignment::middle_center);
       check_box4.check_state_changed += [&] {
         check_box4.text(strings::format("{}", check_box4.check_state()));
       };
@@ -40,6 +41,7 @@ namespace examples {
       check_box4.location({30, 120});
 
       check_box5.appearance(forms::appearance::button);
+      check_box5.text_align(content_alignment::middle_center);
       check_box5.auto_check(false);
       check_box5.click += [&] {
         //check_box5.checked(!check_box5.checked());
