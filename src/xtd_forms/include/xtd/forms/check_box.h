@@ -212,6 +212,7 @@ namespace xtd {
           if (check_state_ == xtd::forms::check_state::unchecked) state_ = xtd::forms::visual_styles::check_box_state::unchecked_hot;
           else if (check_state_ == xtd::forms::check_state::checked) state_ = xtd::forms::visual_styles::check_box_state::checked_hot;
           else if (check_state_ == xtd::forms::check_state::indeterminate) state_ = xtd::forms::visual_styles::check_box_state::mixed_hot;
+          invalidate();
         }
         button_base::on_mouse_move(e);
       }
