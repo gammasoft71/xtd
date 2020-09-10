@@ -577,12 +577,12 @@ namespace xtd {
       /// color = color1 * weight + color2 * (1 - weight);
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
-      static color average(const color& color1, const color& color2, float weight) {return from_argb(static_cast<uint8_t>(color1.a() * weight + color2.a() * (1 - weight)), static_cast<uint8_t>(color1.r() * weight + color2.r() * (1 - weight)), static_cast<uint8_t>(color1.g() * weight + color2.g() * (1 - weight)), static_cast<uint8_t>(color1.b() * weight + color2.b() * (1 - weight)));}
+      static color average(const color& color1, const color& color2, double weight) {return from_argb(static_cast<uint8_t>(color1.a() * weight + color2.a() * (1 - weight)), static_cast<uint8_t>(color1.r() * weight + color2.r() * (1 - weight)), static_cast<uint8_t>(color1.g() * weight + color2.g() * (1 - weight)), static_cast<uint8_t>(color1.b() * weight + color2.b() * (1 - weight)));}
       
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
       /// @return the darker color result.
-      static color darker(const color& color, float weight) {return color::average(color, drawing::color::black, weight);}
+      static color darker(const color& color, double weight) {return color::average(color, drawing::color::black, weight);}
       
       /// @brief Returns a darker version of the specified color.
       /// @param color The color to dark.
@@ -592,7 +592,7 @@ namespace xtd {
       /// @brief Returns a lighter version of the specified color.
       /// @param color The color to light.
       /// @return the lighter color result.
-      static color lighter(const color& color, float weight) {return color::average(color, drawing::color::white, weight);}
+      static color lighter(const color& color, double weight) {return color::average(color, drawing::color::white, weight);}
       
       /// @brief Returns a lighter version of the specified color.
       /// @param color The color to light.
