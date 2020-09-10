@@ -153,8 +153,11 @@ void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font,
   graphics.Clip(x, y, w, h);
   graphics.SetFont(*reinterpret_cast<wxFont*>(font), {r, g, b, a});
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
-  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
-  else graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetTextForeground({ r, g, b, a });
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+  } else graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
   graphics.ResetClip();
 }
 
@@ -179,7 +182,8 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  path.AddRectangle(x, y, width, height);
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRectangle add 1 to height and width.
+  path.AddRectangle(x, y, width - 1, height - 1);
   graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
   graphics.FillPath(path);
 }
@@ -188,7 +192,8 @@ void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, i
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  path.AddRoundedRectangle(x, y, width, height, radius);
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRectangle add 1 to height and width.
+  path.AddRoundedRectangle(x, y, width - 1, height - 1, radius);
   graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
   graphics.FillPath(path);
 }
