@@ -34,6 +34,7 @@ namespace {
 
   bool debug_events = false;
   bool debug_layout = false;
+  bool debug_workaround = true;
 
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)
@@ -972,11 +973,13 @@ void control::wm_mouse_double_click(message& message) {
 }
 
 void control::wm_mouse_enter(message& message) {
+  mouse_in_ = true;
   def_wnd_proc(message);
   on_mouse_enter(event_args::empty);
 }
 
 void control::wm_mouse_leave(message& message) {
+  mouse_in_ = false;
   def_wnd_proc(message);
   on_mouse_leave(event_args::empty);
 }
@@ -993,7 +996,18 @@ void control::wm_mouse_up(message& message) {
 
 void control::wm_mouse_move(message& message) {
   def_wnd_proc(message);
-  on_mouse_move(mouse_event_args(wparam_to_mouse_buttons(message), point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), get_state(control::state::double_click_fired) ? 2 : 1, 0));
+  mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), point_to_client({(int32_t)LOWORD(message.lparam()), (int32_t)HIWORD(message.lparam())}), get_state(control::state::double_click_fired) ? 2 : 1, 0);
+  // Workaround : sometimes mouse enter and/or mouse leave message are not send
+  // For example on macos when mouse down in control and mouse is moved out then moved in, the mouse enter messege is not send...
+  // The two followed line fixed it
+  if (!mouse_in_ && client_rectangle().contains(e.location())) {
+    xtd::diagnostics::debug::write_line_if(debug_events || debug_workaround, "Workaround : mouse enter event !!!");
+    wm_mouse_enter(message);
+  } else if (mouse_in_ && !client_rectangle().contains(e.location())) {
+    xtd::diagnostics::debug::write_line_if(debug_events || debug_workaround, "Workaround : mouse leave event !!!");
+    wm_mouse_leave(message);
+  }
+  on_mouse_move(e);
 }
 
 void control::wm_move(message& message) {
