@@ -89,7 +89,7 @@ namespace {
       else {
         about_dialog_standard->picture_box_icon_.image(xtd::drawing::system_images::from_name("xtd-forms", xtd::drawing::size(64, 64)));
       }
-      about_dialog_standard->label_name_.height(30 * xtd::strings::split(name, {'\n'}).size());
+      about_dialog_standard->label_name_.height(static_cast<int32_t>(30 * xtd::strings::split(name, {'\n'}).size()));
       about_dialog_standard->label_name_.text(name);
       if (has_credit || has_license) {
         about_dialog_standard->controls().push_back_range({about_dialog_standard->tab_control_about_, about_dialog_standard->label_name_, about_dialog_standard->picture_box_icon_});
@@ -106,13 +106,13 @@ namespace {
       else if (!version.empty())
         about_dialog_standard->label_version_.text(xtd::strings::format("({})", version));
 
-      about_dialog_standard->label_description_.height(23 * xtd::strings::split(description, {'\n'}).size());
+      about_dialog_standard->label_description_.height(static_cast<int32_t>(23 * xtd::strings::split(description, {'\n'}).size()));
       about_dialog_standard->label_description_.text(xtd::strings::format("{}", description));
 
-      about_dialog_standard->link_label_website_.height(23 * xtd::strings::split(!website_label.empty() ? website_label : website, {'\n'}).size());
+      about_dialog_standard->link_label_website_.height(static_cast<int32_t>(23 * xtd::strings::split(!website_label.empty() ? website_label : website, {'\n'}).size()));
       about_dialog_standard->link_label_website_.text(!website_label.empty() ? website_label : website);
       
-      about_dialog_standard->label_copyright_.height(23 * xtd::strings::split(copyright, {'\n'}).size());
+      about_dialog_standard->label_copyright_.height(static_cast<int32_t>(23 * xtd::strings::split(copyright, {'\n'}).size()));
       about_dialog_standard->label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)", u8"\u00A9")));
       
       if (has_credit) {
