@@ -122,8 +122,7 @@ void graphics::draw_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int32_t y, 
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRectangle add 1 to height and width.
-  path.AddRectangle(x, y, width - 1, height - 1);
+  path.AddRectangle(x, y, width, height);
   graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
   graphics.DrawPath(path);
 }
@@ -132,33 +131,41 @@ void graphics::draw_rounded_rectangle(intptr_t hdc, intptr_t pen, int32_t x, int
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRoundRect add 1 to height and width.
-  path.AddRoundedRectangle(x, y, width - 1, height - 1, radius);
+  path.AddRoundedRectangle(x, y, width, height, radius);
   graphics.SetPen(*reinterpret_cast<wxPen*>(pen));
   graphics.DrawPath(path);
 }
 
 void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
   if (!hdc) return;
-  wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  graphics.SetFont(*reinterpret_cast<wxFont*>(font), {r, g, b, a});
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
-  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
-  else graphics.DrawText({text.c_str(), wxMBConvUTF8()}, x, y);
-}
-
-void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
-  if (!hdc) return;
-  wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  graphics.Clip(x, y, w, h);
-  graphics.SetFont(*reinterpret_cast<wxFont*>(font), {r, g, b, a});
   // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
     reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
     reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetTextForeground({ r, g, b, a });
     reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
-  } else graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
-  graphics.ResetClip();
+  } else {
+    wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+    graphics.SetFont(*reinterpret_cast<wxFont*>(font), { r, g, b, a });
+    graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+  }
+}
+
+void graphics::draw_string(intptr_t hdc, const std::string& text, intptr_t font, int32_t x, int32_t y, int32_t w, int32_t h, uint8_t a, uint8_t r, uint8_t g, uint8_t b) {
+  if (!hdc) return;
+  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::DrawText doesn't work witth unicode on Windows.
+  if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetClippingRegion({ x, y }, { w, h });
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetTextForeground({ r, g, b, a });
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().DestroyClippingRegion();
+  } else {
+    wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+    graphics.Clip(x, y, w, h);
+    graphics.SetFont(*reinterpret_cast<wxFont*>(font), { r, g, b, a });
+    graphics.DrawText({ text.c_str(), wxMBConvUTF8() }, x, y);
+    graphics.ResetClip();
+  }
 }
 
 void graphics::fill_ellipse(intptr_t hdc, intptr_t brush, int32_t x, int32_t y, int32_t width, int32_t height) {
@@ -182,8 +189,7 @@ void graphics::fill_rectangle(intptr_t hdc, intptr_t brush, int32_t x, int32_t y
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRectangle add 1 to height and width.
-  path.AddRectangle(x, y, width - 1, height - 1);
+  path.AddRectangle(x, y, width, height);
   graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
   graphics.FillPath(path);
 }
@@ -192,16 +198,13 @@ void graphics::fill_rounded_rectangle(intptr_t hdc, intptr_t brush, int32_t x, i
   if (!hdc) return;
   wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
   auto path = graphics.CreatePath();
-  // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsPath::AddRectangle add 1 to height and width.
-  path.AddRoundedRectangle(x, y, width - 1, height - 1, radius);
+  path.AddRoundedRectangle(x, y, width, height, radius);
   graphics.SetBrush(to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
   graphics.FillPath(path);
 }
 
 void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t font, int32_t &width, int32_t &height) {
   if (!hdc) return;
-  wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
-  graphics.SetFont(*reinterpret_cast<wxFont*>(font), {0, 0, 0});
   width = 0;
   height = 0;
   auto strings = xtd::strings::split(text, { '\n' });
@@ -209,10 +212,15 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
     double line_width = 0, line_height = 0;
     // Workaround : with wxWidgets version <= 3.1.4 wxGraphicsContext::GetTextExtent doesn't work witth unicode on Windows.
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") {
+      reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().SetFont(*reinterpret_cast<wxFont*>(font));
       wxSize line_size = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetTextExtent({string.c_str(), wxMBConvUTF8()});
       line_width = line_size.GetWidth();
       line_height = line_size.GetHeight();
-    } else graphics.GetTextExtent({string.c_str(), wxMBConvUTF8()}, &line_width, &line_height);
+    } else {
+      wxGraphicsContext& graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->graphics();
+      graphics.SetFont(*reinterpret_cast<wxFont*>(font), { 0, 0, 0 });
+      graphics.GetTextExtent({ string.c_str(), wxMBConvUTF8() }, &line_width, &line_height);
+    }
     width = std::max(width, static_cast<int32_t>(line_width));
     height += static_cast<int32_t>(line_height);
   }
