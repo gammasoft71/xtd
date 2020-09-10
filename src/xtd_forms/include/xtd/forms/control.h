@@ -883,6 +883,7 @@ namespace xtd {
       forms::padding padding_;
       static forms::keys modifier_keys_;
       static forms::mouse_buttons mouse_buttons_;
+      bool mouse_in_ = false;
       bool mouse_left_down_ = false;
       std::string name_;
       intptr_t parent_ = 0;
