@@ -110,6 +110,7 @@ drawing::size check_box::measure_control() const {
 void check_box::on_handle_created(const event_args &e) {
   button_base::on_handle_created(e);
   native::check_box::check_state(handle(), static_cast<int32_t>(check_state_));
+  if (flat_style_ != xtd::forms::flat_style::system && check_state_ != xtd::forms::check_state::unchecked) invalidate();
 }
 
 void check_box::on_paint(paint_event_args& e) {
