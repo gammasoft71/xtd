@@ -181,32 +181,14 @@ void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangl
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
 
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border());
-    button_color = color::lighter(background_color, .9);
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed) {
+  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::mixed_normal) {
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled) {
-    border_color = color::from_argb(85, 85, 55);
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_normal) {
-    border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_hot) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
     border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border());
     button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_pressed) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-    text_color = xtd::forms::theme_colors::current_theme().accent_text();
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
-    border_color = color::from_argb(85, 85, 55);
-    mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal) {
-    border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border());
-    button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
-    border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
@@ -233,32 +215,14 @@ void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectang
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
   
-  if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border());
-    button_color = color::darker(background_color, .9);
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed) {
+  if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::mixed_normal) {
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled) {
-    border_color = color::from_argb(85, 85, 55);
-    text_color = xtd::forms::theme_colors::current_theme().gray_text();
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_normal) {
-    border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_hot) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
     border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border());
     button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_pressed) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
-    border_color = color::from_argb(85, 85, 55);
-    mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_normal) {
-    border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border());
-    button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
-    border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
-  } else if (state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
+  } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
   }
