@@ -13,11 +13,11 @@ namespace xtd {
       theme() = default;
       explicit theme(const std::string& name) : theme(name, xtd::forms::theme_style::system_auto, false) {}
       theme(const std::string& name, xtd::forms::theme_style theme_style) : theme(name, theme_style, false) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_colors& theme_colors) : theme_base(name, theme_style), theme_colors_(theme_colors) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_images& theme_images) : theme_base(name, theme_style), theme_images_(theme_images) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_renderers& theme_renderers) : theme_base(name, theme_style), theme_renderers_(theme_renderers) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_colors& theme_colors, const theme_images& theme_images) : theme_base(name, theme_style), theme_colors_(theme_colors), theme_images_(theme_images) {}
-      theme(const std::string& name, xtd::forms::theme_style theme_style, const theme_colors& theme_colors, const theme_images& theme_images, const theme_renderers& theme_renderers) : theme_base(name, theme_style), theme_colors_(theme_colors), theme_images_(theme_images), theme_renderers_(theme_renderers) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_colors& theme_colors) : theme_base(name, theme_style), theme_colors_(theme_colors) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_images& theme_images) : theme_base(name, theme_style), theme_images_(theme_images) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_renderers& theme_renderers) : theme_base(name, theme_style), theme_renderers_(theme_renderers) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_colors& theme_colors, const xtd::forms::theme_images& theme_images) : theme_base(name, theme_style), theme_colors_(theme_colors), theme_images_(theme_images) {}
+      theme(const std::string& name, xtd::forms::theme_style theme_style, const xtd::forms::theme_colors& theme_colors, const xtd::forms::theme_images& theme_images, const xtd::forms::theme_renderers& theme_renderers) : theme_base(name, theme_style), theme_colors_(theme_colors), theme_images_(theme_images), theme_renderers_(theme_renderers) {}
       /// @cond
       theme(const theme&) = default;
       theme& operator=(const theme&) = default;
@@ -25,6 +25,30 @@ namespace xtd {
       bool operator!=(const theme& value) const {return !operator==(value);}
       /// @endcond
 
+      const xtd::forms::theme_colors& theme_colors() const {return theme_colors_;}
+      xtd::forms::theme_colors& theme_colors() {return theme_colors_;}
+      theme& theme_colors(const xtd::forms::theme_colors& theme_colors) {
+        if (theme_colors_ != theme_colors)
+          theme_colors_ = theme_colors;
+        return *this;
+      }
+      
+      const xtd::forms::theme_images& theme_images() const {return theme_images_;}
+      xtd::forms::theme_images& theme_images() {return theme_images_;}
+      theme& theme_images(const xtd::forms::theme_images& theme_images) {
+        if (theme_images_ != theme_images)
+          theme_images_ = theme_images;
+        return *this;
+      }
+      
+      const xtd::forms::theme_renderers& theme_renderers() const {return theme_renderers_;}
+      xtd::forms::theme_renderers& theme_renderers() {return theme_renderers_;}
+      theme& theme_renderers(const xtd::forms::theme_renderers& theme_renderers) {
+        if (theme_renderers_ != theme_renderers)
+          theme_renderers_ = theme_renderers;
+        return *this;
+      }
+      
       static const theme empty;
 
       static const theme& current_theme() {
@@ -45,9 +69,9 @@ namespace xtd {
       
     private:
       theme(const std::string& name, xtd::forms::theme_style theme_style, bool is_default) : theme_base(name, theme_style, is_default), theme_colors_(theme_colors::theme_from_name(name)), theme_images_(theme_images::theme_from_name(name)), theme_renderers_(theme_renderers::theme_from_name(name)) {}
-      theme_colors theme_colors_ = theme_colors::current_theme();
-      theme_images theme_images_ = theme_images::current_theme();
-      theme_renderers theme_renderers_ = theme_renderers::current_theme();
+      xtd::forms::theme_colors theme_colors_ = xtd::forms::theme_colors::current_theme();
+      xtd::forms::theme_images theme_images_ = xtd::forms::theme_images::current_theme();
+      xtd::forms::theme_renderers theme_renderers_ = xtd::forms::theme_renderers::current_theme();
       static theme current_theme_;
     };
   }
