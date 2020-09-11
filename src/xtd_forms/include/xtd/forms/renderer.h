@@ -62,10 +62,14 @@ namespace xtd {
     protected:
       
     private:
+      static void default_button_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::push_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
+      static void default_check_box_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::check_box_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
+      static void default_radio_button_renderer(xtd::drawing::graphics g, const xtd::drawing::rectangle& bounds, const std::string& text, const xtd::drawing::font& font, xtd::forms::text_format_flags flags, const xtd::drawing::image& image, const xtd::drawing::rectangle& image_bounds, bool focused, xtd::forms::visual_styles::radio_button_state state, const std::optional<xtd::drawing::color>& back_color, const std::optional<xtd::drawing::color>& fore_color);
+
       std::string name_;
-      button_renderer button_renderer_;
-      check_box_renderer check_box_renderer_;
-      radio_button_renderer radio_button_renderer_;
+      button_renderer button_renderer_ = button_renderer(default_button_renderer);
+      check_box_renderer check_box_renderer_ = check_box_renderer(default_check_box_renderer);
+      radio_button_renderer radio_button_renderer_ = radio_button_renderer(default_radio_button_renderer);
     };
   }
 }
