@@ -1,8 +1,10 @@
 #include "../../../include/xtd/forms/button_renderer.h"
+#include "../../../include/xtd/forms/control_paint.h"
 #include <map>
 #include <xtd/environment.h>
 #include <xtd/drawing/pen.h>
 #include <xtd/drawing/solid_brush.h>
+#include <xtd/drawing/drawing2d/linear_gradient_brush.h>
 
 using namespace std;
 using namespace xtd;
@@ -11,26 +13,6 @@ using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 
 namespace {
-  string_format to_string_format(text_format_flags flags) {
-    string_format string_format;
-    string_format.line_alignment(string_alignment::center);
-    string_format.alignment(string_alignment::center);
-    
-    if ((flags & text_format_flags::horizontal_center) == text_format_flags::horizontal_center) string_format.alignment(string_alignment::center);
-    else if ((flags & text_format_flags::rigth) == text_format_flags::rigth) string_format.alignment(string_alignment::far);
-    else string_format.alignment(string_alignment::near);
-
-    if ((flags & text_format_flags::vertical_center) == text_format_flags::vertical_center) string_format.line_alignment(string_alignment::center);
-    else if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(string_alignment::far);
-    else string_format.line_alignment(string_alignment::near);
-
-    if ((flags & text_format_flags::no_prefix) == text_format_flags::no_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::none);
-    else if ((flags & text_format_flags::hide_prefix) == text_format_flags::hide_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);
-    else string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::show);
-
-    return string_format;
-  }
-
   std::string get_hotkey_prefix_locations(const std::string& str, std::vector<size_t>& locations) {
     size_t offset = 0;
     for (auto index = 0; index < str.size(); index++) {
@@ -50,8 +32,8 @@ namespace {
   void draw_string(graphics g, const string& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
     vector<size_t> hotkey_prefix_locations;
     string text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
-    if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
-    else g.draw_string(text, font, solid_brush(text_color), button_rect, to_string_format(flags));
+    if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
+    else g.draw_string(text, font, solid_brush(text_color), button_rect, control_paint::string_format(flags));
   }
 }
 
@@ -220,7 +202,7 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
     if (bounds.height() <= 25) button_color = color::darker(xtd::forms::theme_colors::current_theme().accent(), 0.85);
   
   if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 4);
-  g.fill_rounded_rectangle(solid_brush(button_color), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 4);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, control_paint::light(button_color, .97), button_color), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 4);
   g.draw_rounded_rectangle(pen(border_color, 1), bounds.x(), bounds.y() + 2, bounds.width() - 1, bounds.height() - 5, 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
@@ -283,7 +265,7 @@ void button_renderer::draw_button_symbolic_dark(graphics g, const rectangle& bou
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state)
     border_color = color::darker(xtd::forms::theme_colors::current_theme().accent());
   
-  g.fill_rounded_rectangle(solid_brush(button_color), bounds.x(), bounds.y(), bounds.width(), bounds.height(), 4);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, control_paint::light(button_color, .9), control_paint::dark(button_color, .9)), bounds.x(), bounds.y(), bounds.width(), bounds.height(), 4);
   g.draw_rounded_rectangle(pen(border_color, 1), bounds.x(), bounds.y(), bounds.width() - 1, bounds.height() - 1, 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
