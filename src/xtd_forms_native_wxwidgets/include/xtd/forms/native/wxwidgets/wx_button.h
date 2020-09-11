@@ -26,13 +26,13 @@ namespace xtd {
             #if defined(__APPLE__)
             __set_button_bezel_style__((wxButton*)this->control(), create_params.location().x(), create_params.location().y(), create_params.size().width(), create_params.size().height());
             #endif
-          }
 #if defined(__WIN32__)
-          if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
-            control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::button_face().r(), xtd::drawing::system_colors::button_face().g(), xtd::drawing::system_colors::button_face().b(), xtd::drawing::system_colors::button_face().a()));
-            control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
-          }
+            if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
+              control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::button_face().r(), xtd::drawing::system_colors::button_face().g(), xtd::drawing::system_colors::button_face().b(), xtd::drawing::system_colors::button_face().a()));
+              control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
+            }
 #endif
+          }
         }
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
