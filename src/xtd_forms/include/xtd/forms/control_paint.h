@@ -6,7 +6,9 @@
 #include <xtd/drawing/graphics.h>
 #include <xtd/drawing/image.h>
 #include <xtd/drawing/rectangle.h>
+#include <xtd/drawing/string_format.h>
 #include <xtd/drawing/system_fonts.h>
+#include "text_format_flags.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -60,6 +62,27 @@ namespace xtd {
       /// @return A xtd::drawing::color that represents the light color on the control.
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_light_lightk color; otherwise, the color's luminosity value is decreased.
       static xtd::drawing::color light_light(const xtd::drawing::color& base_color) {return light(base_color, 1.0);}
+      
+      static xtd::drawing::string_format string_format(xtd::forms::text_format_flags flags) {
+        xtd::drawing::string_format string_format;
+        string_format.line_alignment(xtd::drawing::string_alignment::center);
+        string_format.alignment(xtd::drawing::string_alignment::center);
+        
+        if ((flags & text_format_flags::horizontal_center) == text_format_flags::horizontal_center) string_format.alignment(xtd::drawing::string_alignment::center);
+        else if ((flags & text_format_flags::rigth) == text_format_flags::rigth) string_format.alignment(xtd::drawing::string_alignment::far);
+        else string_format.alignment(xtd::drawing::string_alignment::near);
+        
+        if ((flags & text_format_flags::vertical_center) == text_format_flags::vertical_center) string_format.line_alignment(xtd::drawing::string_alignment::center);
+        else if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(xtd::drawing::string_alignment::far);
+        else string_format.line_alignment(xtd::drawing::string_alignment::near);
+        
+        if ((flags & text_format_flags::no_prefix) == text_format_flags::no_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::none);
+        else if ((flags & text_format_flags::hide_prefix) == text_format_flags::hide_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);
+        else string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::show);
+        
+        return string_format;
+      }
+
     };
   }
 }
