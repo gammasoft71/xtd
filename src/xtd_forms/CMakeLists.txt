@@ -243,6 +243,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/progress_bar.cpp
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/radio_button_renderer.cpp
+  src/xtd/forms/renderer.cpp
   src/xtd/forms/save_file_dialog.cpp
   src/xtd/forms/screen.cpp
   src/xtd/forms/scrollable_control.cpp
