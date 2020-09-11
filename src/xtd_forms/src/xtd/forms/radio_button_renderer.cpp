@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/radio_button_renderer.h"
+#include "../../../include/xtd/forms/control_paint.h"
 #include <map>
 #include <xtd/environment.h>
 #include <xtd/drawing/pen.h>
@@ -11,26 +12,6 @@ using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 
 namespace {
-  string_format to_string_format(text_format_flags flags) {
-    string_format string_format;
-    string_format.line_alignment(string_alignment::center);
-    string_format.alignment(string_alignment::center);
-    
-    if ((flags & text_format_flags::left) == text_format_flags::top) string_format.alignment(string_alignment::near);
-    if ((flags & text_format_flags::horizontal_center) == text_format_flags::horizontal_center) string_format.alignment(string_alignment::center);
-    if ((flags & text_format_flags::rigth) == text_format_flags::rigth) string_format.alignment(string_alignment::far);
-   
-    if ((flags & text_format_flags::top) == text_format_flags::top) string_format.line_alignment(string_alignment::near);
-    if ((flags & text_format_flags::vertical_center) == text_format_flags::vertical_center) string_format.line_alignment(string_alignment::center);
-    if ((flags & text_format_flags::bottom) == text_format_flags::bottom) string_format.line_alignment(string_alignment::far);
-    
-    if ((flags & text_format_flags::no_prefix) == text_format_flags::no_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::none);
-    else if ((flags & text_format_flags::hide_prefix) == text_format_flags::hide_prefix) string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::hide);
-    else string_format.hotkey_prefix(xtd::drawing::hotkey_prefix::show);
-
-    return string_format;
-  }
-
   std::string get_hotkey_prefix_locations(const std::string& str, std::vector<size_t>& locations) {
     size_t offset = 0;
     for (auto index = 0; index < str.size(); index++) {
@@ -50,8 +31,8 @@ namespace {
   void draw_string(graphics g, const string& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
     vector<size_t> hotkey_prefix_locations;
     string text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
-    if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, to_string_format(flags));
-    else g.draw_string(text, font, solid_brush(text_color), button_rect, to_string_format(flags));
+    if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(strings::substring(text_without_hotkey_prefix, hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
+    else g.draw_string(text, font, solid_brush(text_color), button_rect, control_paint::string_format(flags));
   }
 }
 
