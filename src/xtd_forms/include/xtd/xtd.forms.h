@@ -157,6 +157,7 @@
 #include "xtd/forms/theme_colors.h"
 #include "xtd/forms/theme_images.h"
 #include "xtd/forms/theme_style.h"
+#include "xtd/forms/toggle_button.h"
 #include "xtd/forms/tool_bar_images.h"
 #include "xtd/forms/tick_style.h"
 #include "xtd/forms/timer.h"

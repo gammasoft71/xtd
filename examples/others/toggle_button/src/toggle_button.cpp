@@ -12,17 +12,20 @@ public:
     text("Toggle button example");
 
     button_red.location({20, 20});
-    button_red.appearance(forms::appearance::button);
+    button_red.image(image_from_color(color::red));
+    button_red.image_align(content_alignment::middle_left);
     button_red.text("Red");
     button_red.checked_changed += {*this, &form1::update_color};
 
     button_green.location({20, 70});
-    button_green.appearance(forms::appearance::button);
+    button_green.image(image_from_color(color::lime));
+    button_green.image_align(content_alignment::middle_left);
     button_green.text("Green");
     button_green.checked_changed += {*this, &form1::update_color};
 
     button_blue.location({20, 120});
-    button_blue.appearance(forms::appearance::button);
+    button_blue.image(image_from_color(color::blue));
+    button_blue.image_align(content_alignment::middle_left);
     button_blue.text("Blue");
     button_blue.checked_changed += {*this, &form1::update_color};
 
@@ -38,9 +41,17 @@ private:
     panel_color.back_color(color::from_argb(button_red.checked() ? 255 : 0, button_green.checked() ? 255 : 0, button_blue.checked() ? 255 : 0));
   }
 
-  check_box button_red;
-  check_box button_green;
-  check_box button_blue;
+  image image_from_color(const color& color) {
+    bitmap bitmap(16, 16);
+    auto g = graphics::from_image(bitmap);
+    g.fill_ellipse(solid_brush(color), 0, 0, bitmap.width(), bitmap.height());
+    g.draw_ellipse(pen(control_paint::light(color)), 0, 0, bitmap.width() - 1, bitmap.height() - 1);
+    return bitmap;
+  }
+  
+  toggle_button button_red;
+  toggle_button button_green;
+  toggle_button button_blue;
   panel panel_color;
 };
 
