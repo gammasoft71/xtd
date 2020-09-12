@@ -1,4 +1,5 @@
 #include "button_base.h"
+#include "control_paint.h"
 
 namespace xtd {
   namespace forms {
@@ -84,16 +85,16 @@ namespace xtd {
 
           e.graphics().clear(button_back_color);
           e.graphics().draw_string(text, font(), drawing::solid_brush(text_color), string_location);
-          e.graphics().draw_line(drawing::pen(drawing::color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());
-          e.graphics().draw_line(drawing::pen(drawing::color::darker(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
-          e.graphics().draw_line(drawing::pen(drawing::color::lighter(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
-          e.graphics().draw_line(drawing::pen(drawing::color::lighter(button_back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
+          e.graphics().draw_line(drawing::pen(control_paint::dark(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().right(), e.clip_rectangle().top());
+          e.graphics().draw_line(drawing::pen(control_paint::dark(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().top(), e.clip_rectangle().left(), e.clip_rectangle().bottom());
+          e.graphics().draw_line(drawing::pen(control_paint::light(button_back_color), 2), e.clip_rectangle().left(), e.clip_rectangle().bottom(), e.clip_rectangle().right(), e.clip_rectangle().bottom());
+          e.graphics().draw_line(drawing::pen(control_paint::light(button_back_color), 2), e.clip_rectangle().right(), e.clip_rectangle().top() + 2, e.clip_rectangle().right(), e.clip_rectangle().bottom());
           
           e.graphics().fill_rectangle(drawing::solid_brush(slider_color), {slider_location, slider_size});
-          e.graphics().draw_line(drawing::pen(drawing::color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
-          e.graphics().draw_line(drawing::pen(drawing::color::lighter(slider_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
-          e.graphics().draw_line(drawing::pen(drawing::color::darker(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
-          e.graphics().draw_line(drawing::pen(drawing::color::darker(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+          e.graphics().draw_line(drawing::pen(control_paint::light(slider_color)), slider_location.x(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y());
+          e.graphics().draw_line(drawing::pen(control_paint::light(slider_color)), slider_location.x(), slider_location.y(), slider_location.x(), slider_location.y() + slider_size.height() - 2);
+          e.graphics().draw_line(drawing::pen(control_paint::dark(slider_color)), slider_location.x(), slider_location.y() + slider_size.height() - 1, slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
+          e.graphics().draw_line(drawing::pen(control_paint::dark(slider_color)), slider_location.x() + slider_size.width(), slider_location.y(), slider_location.x() + slider_size.width(), slider_location.y() + slider_size.height() - 1);
         }
       }
       

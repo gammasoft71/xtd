@@ -94,17 +94,17 @@ void check_box_renderer::draw_check_box_macos(graphics g, const rectangle& bound
 void check_box_renderer::draw_check_box_macos_dark(graphics g, const rectangle& bounds, const string& text, const font& font, text_format_flags flags, const image& image, const rectangle& image_bounds, bool focused, check_box_state state, const optional<color>& back_color, const optional<color>& fore_color) {
   auto background_color = back_color.has_value() ? back_color.value() : color::transparent;
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
-  auto border_color = color::darker(back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control(), 0.05);
+  auto border_color = control_paint::dark(back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control(), 0.05);
   auto button_color = xtd::forms::theme_colors::current_theme().button_face();
-  auto text_color = color::lighter(foreground_color, 0.1);
+  auto text_color = control_paint::light(foreground_color, 0.1);
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
   
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
-    button_color = color::darker(xtd::forms::theme_colors::current_theme().accent(), 0.15);
+    button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 0.15);
   } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = color::from_argb(85, 85, 55);
     mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
-    button_color = color::darker(xtd::forms::theme_colors::current_theme().button_face(), 0.7);
+    button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().button_face(), 0.7);
   }
   
   rectangle button_rectangle = {bounds.x() + 1, (bounds.height() - bounds.y()) / 2 - 7, 15, 15};
@@ -136,7 +136,7 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
     button_color = xtd::forms::theme_colors::current_theme().accent();
   } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
     border_color = mark_color = text_color = xtd::forms::theme_colors::current_theme().gray_text();
-    button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : color::darker(button_color, 0.04);
+    button_color = back_color.has_value() ? color::from_argb(210, 255, 255, 255) : control_paint::dark(button_color, 0.04);
   }
   
   rectangle button_rectangle = {bounds.x() + 1, (bounds.height() - bounds.y()) / 2 - 7, 15, 15};
@@ -166,17 +166,17 @@ void check_box_renderer::draw_check_box_symbolic_dark(graphics g, const rectangl
   auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = xtd::forms::theme_colors::current_theme().active_border();
-  auto button_color = color::lighter(background_color, .05);
+  auto button_color = control_paint::light(background_color, .05);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
 
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::mixed_normal) {
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
   } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
-    button_color = color::lighter(background_color, .1);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    button_color = control_paint::light(background_color, .1);
   } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
   } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
@@ -203,7 +203,7 @@ void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectang
   auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = xtd::forms::theme_colors::current_theme().active_border();
-  auto button_color = color::darker(background_color, .05);
+  auto button_color = control_paint::dark(background_color, .05);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
   
@@ -211,10 +211,10 @@ void check_box_renderer::draw_check_box_symbolic_light(graphics g, const rectang
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
   }
   else if (state == xtd::forms::visual_styles::check_box_state::unchecked_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
-    button_color = color::darker(background_color, .1);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    button_color = control_paint::dark(background_color, .1);
   } else if (state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_hot) {
-    border_color = color::lighter(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
+    border_color = control_paint::light(xtd::forms::theme_colors::current_theme().active_border(), 2.0/3);
     button_color = xtd::forms::theme_colors::current_theme().accent();
   } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
     border_color = button_color = xtd::forms::theme_colors::current_theme().accent();
@@ -246,7 +246,7 @@ void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle
   auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = xtd::forms::theme_colors::current_theme().active_border();
-  auto button_color = color::darker(background_color, .05);
+  auto button_color = control_paint::dark(background_color, .05);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
 
@@ -277,7 +277,7 @@ void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangl
   auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = xtd::forms::theme_colors::current_theme().control_text();
-  auto button_color = color::lighter(background_color, .2);
+  auto button_color = control_paint::light(background_color, .2);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().control_text();
 

@@ -28,7 +28,7 @@ namespace xtd {
       /// color = color1 * (1 - weight) + color2 * weight;
       /// @endcode
       /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
-      static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight, bool average_alpha) {return xtd::drawing::color::from_argb(average_alpha ? static_cast<uint8_t>(color1.a() * (1 - weight) + color2.a() * weight) : static_cast<uint8_t>(color1.a()), static_cast<uint8_t>(color1.r() * (1 - weight) + color2.r() * weight), static_cast<uint8_t>(color1.g() * (1 - weight) + color2.g() * weight), static_cast<uint8_t>(color1.b() * (1 - weight) + color2.b() * weight));}
+      static xtd::drawing::color average(const xtd::drawing::color& color1, const xtd::drawing::color& color2, double weight, bool average_alpha) {return xtd::drawing::color::average(color1, color2, weight, average_alpha);}
 
       /// @brief Returns the weighted average color between the two given colors.
       /// @param color1 The first color.
@@ -52,7 +52,7 @@ namespace xtd {
       /// @param color The xtd::drawing::color to be darkened.
       /// @param perc_of_dark The percentage to darken the specified xtd::drawing::color.
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_dark color; otherwise, the color's luminosity value is decreased.
-      static xtd::drawing::color dark(const xtd::drawing::color& base_color, double perc_of_dark_dark) {return average(base_color, xtd::drawing::color::black, perc_of_dark_dark);}
+      static xtd::drawing::color dark(const xtd::drawing::color& base_color, double perc_of_dark_dark) {return xtd::drawing::color::dark(base_color, perc_of_dark_dark);}
 
       /// @brief Creates a new dark color object for the control from the specified color.
       /// @param color The xtd::drawing::color to be darkened.
@@ -69,7 +69,7 @@ namespace xtd {
       /// @param color The xtd::drawing::color to be lightened.
       /// @param perc_of_lightt The percentage to lighten the specified xtd::drawing::color.
       /// @remarks If the specified xtd::drawing::color is one of the xtd::drawing::system_color, the color is converted to a xtd::drawing::system_color.control_light color; otherwise, the color's luminosity value is decreased.
-      static xtd::drawing::color light(const xtd::drawing::color& base_color, double perc_of_light_light) {return average(base_color, xtd::drawing::color::white, perc_of_light_light);}
+      static xtd::drawing::color light(const xtd::drawing::color& base_color, double perc_of_light_light) {return xtd::drawing::color::light(base_color, perc_of_light_light);}
       
       /// @brief Creates a new light color object for the control from the specified color.
       /// @param color The xtd::drawing::color to be lightened.
