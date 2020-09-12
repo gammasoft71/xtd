@@ -145,6 +145,10 @@ void graphics::fill_rounded_rectangle(const brush& brush, int32_t x, int32_t y, 
   native::graphics::fill_rounded_rectangle(this->data_->handle_, brush.data_->handle_, x, y, width, height, radius);
 }
 
+graphics graphics::from_image(const image& image) {
+  return graphics(native::graphics::from_image(image.handle()));
+}
+
 size_f graphics::measure_string(const std::string &text, const font &font) {
   int32_t width = 0;
   int32_t height = 0;
