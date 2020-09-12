@@ -33,10 +33,10 @@ int main() {
   //to_ppm("/Users/yves/Desktop/test.png");
   //bitmap img = bitmap(logo_xpm);
   //to_ppm("/Users/yves/Desktop/logo.ppm", img, color::magenta);
-  cout << format("color = {}", color::lighter(color::lighter(color::from_argb(128, 128, 128)))) << endl;
-  cout << format("color = {}", color::lighter(color::from_argb(128, 128, 128))) << endl;
+  cout << format("color = {}", color::light(color::light(color::from_argb(128, 128, 128)))) << endl;
+  cout << format("color = {}", color::light(color::from_argb(128, 128, 128))) << endl;
   cout << format("color = {}", color::from_argb(128, 128, 128)) << endl;
-  cout << format("color = {}", color::darker(color::from_argb(128, 128, 128))) << endl;
-  cout << format("color = {}", color::darker(color::darker(color::from_argb(128, 128, 128)))) << endl;
+  cout << format("color = {}", color::dark(color::from_argb(128, 128, 128))) << endl;
+  cout << format("color = {}", color::dark(color::dark(color::from_argb(128, 128, 128)))) << endl;
   image img = image::empty;
 }
