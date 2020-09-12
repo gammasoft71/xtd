@@ -74,6 +74,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/text_box.h
   include/xtd/forms/native/text_box_styles.h
   include/xtd/forms/native/timer.h
+  include/xtd/forms/native/toggle_button.h
   include/xtd/forms/native/track_bar.h
   include/xtd/forms/native/track_bar_styles.h
   include/xtd/forms/native/up_down_button.h

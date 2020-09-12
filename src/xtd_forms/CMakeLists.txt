@@ -169,6 +169,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/theme_style.h
   include/xtd/forms/tick_style.h
   include/xtd/forms/timer.h
+  include/xtd/forms/toggle_button.h
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/track_bar.h
   include/xtd/forms/up_down_base.h
@@ -188,6 +189,7 @@ set(XTD_FORMS_VISUAL_STYLES_INCLUDES
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
   include/xtd/forms/visual_styles/radio_button_state.h
+  include/xtd/forms/visual_styles/toggle_button_state.h
 )
 
 set(XTD_FORMS_SOURCES
@@ -261,6 +263,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/theme_images.cpp
   src/xtd/forms/theme_renderers.cpp
   src/xtd/forms/timer.cpp
+  src/xtd/forms/toggle_button.cpp
   src/xtd/forms/track_bar.cpp
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp

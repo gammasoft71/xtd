@@ -13,6 +13,7 @@ namespace xtd {
     class button;
     class control;
     class check_box;
+    class toggle_button;
     /// @endcond
     
     class mouse_event_args : public event_args {
@@ -43,6 +44,7 @@ namespace xtd {
       friend class button;
       friend class control;
       friend class check_box;
+      friend class toggle_button;
       static mouse_event_args create(const message& message, bool double_click_fired = false, int32_t delta = 0);
       mouse_buttons button_ = mouse_buttons::none;
       drawing::point location_;
