@@ -56,13 +56,13 @@ namespace xtd {
         button_base::on_paint(e);
 
         drawing::color button_back_color = checked_ ? xtd::forms::theme_colors::current_theme().accent() : xtd::forms::theme_colors::current_theme().gray_text();
-        drawing::color text_color = checked_ ? fore_color() : drawing::color::average(fore_color(), button_back_color, .33);
+        drawing::color text_color = checked_ ? fore_color() : drawing::color::average(button_back_color, fore_color(), .33);
         drawing::color slider_color = back_color();
         
         if (!this->enabled()) {
-          button_back_color = drawing::color::average(button_back_color, back_color(), .33);
-          text_color = drawing::color::average(text_color, button_back_color, .33);
-          slider_color = drawing::color::average(slider_color, button_back_color, .33);
+          button_back_color = drawing::color::average(back_color(), button_back_color, .33);
+          text_color = drawing::color::average(button_back_color, text_color, .33);
+          slider_color = drawing::color::average(button_back_color, slider_color, .33);
         }
 
         if (rounded_) {
