@@ -18,7 +18,7 @@ namespace xtd {
         size_ = default_size();
       }
 
-      virtual drawing::color background_dot_color() {return background_dot_color_.value_or(drawing::color::average(fore_color(), back_color(), background_dot_transparency_));}
+      virtual drawing::color background_dot_color() {return background_dot_color_.value_or(drawing::color::average(back_color(), fore_color(), background_dot_transparency_));}
       virtual dot_matrix_display& background_dot_color(const drawing::color& value) {
         if (!background_dot_color_.has_value() || background_dot_color_.value() != value) {
           background_dot_color_ = value;

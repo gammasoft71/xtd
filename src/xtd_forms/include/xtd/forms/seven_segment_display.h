@@ -13,7 +13,7 @@ namespace xtd {
         size_ = default_size();
       }
 
-      virtual drawing::color background_segment_color() {return background_segment_color_.value_or(drawing::color::average(fore_color(), back_color(), background_segment_transparency_));}
+      virtual drawing::color background_segment_color() {return background_segment_color_.value_or(drawing::color::average(back_color(), fore_color(), background_segment_transparency_));}
       virtual seven_segment_display& background_segment_color(const drawing::color& value) {
         if (!background_segment_color_.has_value() || background_segment_color_.value() != value) {
           background_segment_color_ = value;
