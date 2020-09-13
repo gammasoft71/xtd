@@ -7,6 +7,7 @@ add_projects(
   background_worker
   button_images
   button_renderer
+  check_box_renderer
   cursor
   image_list
   screen
