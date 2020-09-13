@@ -70,35 +70,45 @@ namespace xtd {
 
       static rectangle_f from_ltrb(float left, float top, float right, float bottom) {return rectangle_f(left, top, right - left, bottom - top);}
       
+      void inflate(const drawing::size_f& sz) {inflate(sz.width(), sz.height());}
       void inflate(float width, float height) {
         width_ += width;
         height_ += height;
       }
-      void inflate(const drawing::size_f& sz) {inflate(sz.width(), sz.height());}
-      
+      static rectangle_f inflate(const rectangle_f& rect, const drawing::size_f& sz) {return inflate(rect, sz.width(), sz.height());}
       static rectangle_f inflate(const rectangle_f& rect, float width, float height) {
         auto result = rect;
         result.inflate(width, height);
         return result;
       }
-      static rectangle_f inflate(const rectangle_f& rect, const drawing::size_f& sz) {return inflate(rect, sz.width(), sz.height());}
 
-      static rectangle_f make_intersect(const rectangle_f& a, const rectangle_f& b);
-  
-      static rectangle_f make_union(const rectangle_f& a, const rectangle_f& b);
+      bool intersects_with(const rectangle_f& rect) const {return (rect.x_ < x_ + width_) && (x_ < (rect.x_ + rect.width_)) && (rect.y_ < y_ + height_) && (y_ < rect.y_ + rect.height_);}
 
+      static rectangle_f make_intersect(const rectangle_f& a, const rectangle_f& b) {
+        auto result = a;
+        result.make_intersect(b);
+        return result;
+      }
+      void make_intersect(const rectangle_f& rect);
+      
+      static rectangle_f make_union(const rectangle_f& a, const rectangle_f& b) {
+        auto result = a;
+        result.make_union(b);
+        return result;
+      }
+      void make_union(const rectangle_f& rect);
+
+      void offset(const point_f& pt) {offset(pt.x(), pt.y());}
       void offset(float dx, float dy) {
         x_ += dx;
         y_ += dy;
       }
-      void offset(const rectangle_f& pt) {offset(pt.x_, pt.y_);}
-      
+      static rectangle_f offset(const rectangle_f& rect, const point_f& pt) {return offset(rect, pt.x(), pt.y());}
       static rectangle_f offset(const rectangle_f& rect, float x, float y) {
         auto result = rect;
         result.offset(x, y);
         return result;
       }
-      static rectangle_f offset(const rectangle_f& rect, const point_f& pt) {return offset(rect, pt.x(), pt.y());}
       
       std::string to_string() const {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
       

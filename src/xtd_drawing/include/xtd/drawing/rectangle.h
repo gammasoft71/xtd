@@ -63,7 +63,7 @@ namespace xtd {
       int32_t width() const {return width_;}
       void width(int32_t width) {width_ = width;}
       
-      static rectangle ceiling(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::ceil(rect.x())), static_cast<int32_t>(std::ceil(rect.y())), static_cast<int32_t>(std::ceil(rect.width())), static_cast<int32_t>(std::ceil(rect.height())));}
+      static rectangle ceil(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::ceil(rect.x())), static_cast<int32_t>(std::ceil(rect.y())), static_cast<int32_t>(std::ceil(rect.width())), static_cast<int32_t>(std::ceil(rect.height())));}
       
       bool contains(const point& pt) const {return contains(pt.x(), pt.y());}
       bool contains(const rectangle& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ &&  (rect.y_ + rect.height_) <= (y_ + height_);}
@@ -76,12 +76,12 @@ namespace xtd {
         width_ += width;
         height_ += height;
       }
+      static rectangle inflate(const rectangle& rect, const drawing::size& sz) {return inflate(rect, sz.width(), sz.height());}
       static rectangle inflate(const rectangle& rect, int width, int height) {
         auto result = rect;
         result.inflate(width, height);
         return result;
       }
-      static rectangle inflate(const rectangle& rect, const drawing::size& sz) {return inflate(rect, sz.width(), sz.height());}
 
       bool intersects_with(const rectangle& rect) const {return (rect.x_ < x_ + width_) && (x_ < (rect.x_ + rect.width_)) && (rect.y_ < y_ + height_) && (y_ < rect.y_ + rect.height_);}
       
@@ -99,21 +99,21 @@ namespace xtd {
       }
       void make_union(const rectangle& rect);
 
+      void offset(const point& pt) {offset(pt.x(), pt.y());}
       void offset(int32_t dx, int32_t dy) {
         x_ += dx;
         y_ += dy;
       }
-      void offset(const point& pt) {offset(pt.x(), pt.y());}
+      static rectangle offset(const rectangle& rect, const point& pt) {return offset(rect, pt.x(), pt.y());}
       static rectangle offset(const rectangle& rect, int x, int y) {
         auto result = rect;
         result.offset(x, y);
         return result;
       }
-      static rectangle offset(const rectangle& rect, const point& pt) {return offset(rect, pt.x(), pt.y());}
 
       static rectangle round(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::round(rect.x())), static_cast<int32_t>(std::round(rect.y())), static_cast<int32_t>(std::round(rect.width())), static_cast<int32_t>(std::round(rect.height())));}
       
-      static rectangle truncate(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::trunc(rect.x())), static_cast<int32_t>(std::trunc(rect.y())), static_cast<int32_t>(std::trunc(rect.width())), static_cast<int32_t>(std::trunc(rect.height())));}
+      static rectangle trunc(const rectangle_f& rect) {return rectangle(static_cast<int32_t>(std::trunc(rect.x())), static_cast<int32_t>(std::trunc(rect.y())), static_cast<int32_t>(std::trunc(rect.width())), static_cast<int32_t>(std::trunc(rect.height())));}
       
       std::string to_string() const {return "{x=" + std::to_string(x_) + ", y=" + std::to_string(y_) + ", width=" + std::to_string(width_) + ", height=" + std::to_string(height_) + "}";}
 
