@@ -67,27 +67,43 @@ namespace xtd {
       }
 
       int32_t width() const {return this->width_;}
-      
       void width(int32_t width) {this->width_ = width;}
       
       bool contains(int x, int y) const {return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;}
-
       bool contains(const point& pt) const {return contains(pt.x(), pt.y());}
-
       bool contains(const rectangle& rect) const {return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ &&  (rect.y_ + rect.height_) <= (y_ + height_);}
-      
+
+      void inflate(int width, int height) {
+        width_ += width;
+        height_ += height;
+      }
+      void inflate(const drawing::size& sz) {inflate(sz.width(), sz.height());}
+
+      static rectangle inflate(const rectangle& rect, int width, int height) {
+        rectangle result(rect);
+        result.inflate(width, height);
+        return result;
+      }
+      static rectangle inflate(const rectangle& rect, const drawing::size& sz) {return inflate(rect, sz.width(), sz.height());}
+
       bool is_empty() const {return *this == rectangle::empty;}
 
       static rectangle make_intersect(const rectangle& a, const rectangle& b);
       
       static rectangle make_union(const rectangle& a, const rectangle& b);
       
-      void offset(const rectangle& pt) {this->offset(pt.x_, pt.y_);}
-
       void offset(int32_t dx, int32_t dy) {
         this->x_ += dx;
         this->y_ += dy;
       }
+      void offset(const point& pt) {this->offset(pt.x(), pt.y());}
+      
+      static rectangle offset(const rectangle& rect, int x, int y) {
+        rectangle result(rect);
+        result.offset(x, y);
+        return result;
+      }
+      static rectangle offset(const rectangle& rect, const point& pt) {return offset(rect, pt.x(), pt.y());}
 
       std::string to_string() const {return "{x=" + std::to_string(this->x_) + ", y=" + std::to_string(this->y_) + ", width=" + std::to_string(this->width_) + ", height=" + std::to_string(this->height_) + "}";}
 
