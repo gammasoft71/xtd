@@ -13,10 +13,8 @@ add_projects(
   colored_forms
   colored_tab_pages
   colors
-  countries
   docked_panels
-  emoticons
-  font_family
+  font_families
   form2
   form_and_main
   form_and_thread
