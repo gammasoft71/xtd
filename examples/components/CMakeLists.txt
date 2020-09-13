@@ -8,7 +8,9 @@ add_projects(
   button_images
   button_renderer
   check_box_renderer
+  countries
   cursor
+  emoticons
   image_list
   screen
   settings_example
