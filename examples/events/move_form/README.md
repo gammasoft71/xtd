@@ -13,7 +13,7 @@ demonstrates the use of [mouse_click](../../../src/xtd_forms/include/xtd/forms/c
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

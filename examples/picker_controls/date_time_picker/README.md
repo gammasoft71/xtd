@@ -13,7 +13,7 @@ demonstrates the use of [xtd::forms::date_time_picker](../../../src/xtd_forms/in
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

@@ -13,7 +13,7 @@ The Wiggly example shows how to animate a user control using timer and timer::ev
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output
