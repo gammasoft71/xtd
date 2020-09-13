@@ -23,7 +23,9 @@ add_projects(
   radio_buttons
   splitter
   text_box
+  toggle_button
   track_bar
   up_down_button
   user_control
+  switch_button
 )

@@ -1,6 +1,6 @@
 # toggle_button
 
-demonstrates the use of [xtd::forms::check_box](../../../src/xtd_forms/include/xtd/forms/check_box.hpp) control with forms::appearance::button.
+demonstrates the use of [xtd::forms::toggle_button](../../../src/xtd_forms/include/xtd/forms/toggle_button.hpp) control.
 
 # Sources
 

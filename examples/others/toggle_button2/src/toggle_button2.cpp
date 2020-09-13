@@ -15,19 +15,22 @@ public:
     button_red.image(image_from_color(color::red));
     button_red.image_align(content_alignment::middle_left);
     button_red.text("Red");
-    button_red.checked_changed += {*this, &form1::update_color};
+    button_red.three_state(true);
+    button_red.check_state_changed += {*this, &form1::update_color};
 
     button_green.location({20, 70});
     button_green.image(image_from_color(color::lime));
     button_green.image_align(content_alignment::middle_left);
     button_green.text("Green");
-    button_green.checked_changed += {*this, &form1::update_color};
+    button_green.three_state(true);
+    button_green.check_state_changed += {*this, &form1::update_color};
 
     button_blue.location({20, 120});
     button_blue.image(image_from_color(color::blue));
     button_blue.image_align(content_alignment::middle_left);
     button_blue.text("Blue");
-    button_blue.checked_changed += {*this, &form1::update_color};
+    button_blue.three_state(true);
+    button_blue.check_state_changed += {*this, &form1::update_color};
 
     panel_color.border_style(forms::border_style::fixed_3d);
     panel_color.location({150, 20});
@@ -38,7 +41,8 @@ public:
   
 private:
   void update_color(control& sender, const event_args& e) {
-    panel_color.back_color(color::from_argb(button_red.checked() ? 255 : 0, button_green.checked() ? 255 : 0, button_blue.checked() ? 255 : 0));
+    std::map<check_state, int> color_levels = {{check_state::unchecked, 0}, {check_state::checked, 255}, {check_state::indeterminate, 128}};
+    panel_color.back_color(color::from_argb(color_levels[button_red.check_state()], color_levels[button_green.check_state()], color_levels[button_blue.check_state()]));
   }
 
   image image_from_color(const color& color) {
