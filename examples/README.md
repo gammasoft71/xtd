@@ -38,8 +38,10 @@
 * [radio_button](common_controls/radio_button/README.md) enables the user to select a single option from a group of choices when paired with other [xtd::forms::radio_button](../src/xtd_forms/include/xtd/forms/radio_button.hpp) controls.
 * **rich_text_box** represents a Windows rich text box control.
 * [splitter](common_controls/splitter/README.md) represents a splitter control that enables the user to resize docked controls. Splitter has been replaced by SplitContainer and is provided only for compatibility with previous versions.
+* [switch_button](common_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
 * [text_box](common_controls/text_box/README.md) represents a Windows [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 * **tool_tip** Represents a small rectangular pop-up window that displays a brief description of a control's purpose when the user rests the pointer on the control.
+* [toggle_button](common_controls/toggle_button/README.md) represents a [xtd::forms::toggle_button](../src/xtd_forms/include/xtd/forms/toggle_button.hpp) control.
 * [track_bar](common_controls/track_bar/README.md) represents a standard Windows [xtd::forms::track_bar](../src/xtd_forms/include/xtd/forms/track_bar.hpp).
 * **tree_view** displays a hierarchical collection of labeled items, each represented by a TreeNode.
 * [up_down_button](common_controls/up_down_button/README.md) represents a Windows spin button.
@@ -59,7 +61,6 @@
 * [nine_segment_display](other_controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](../src/xtd_forms/include/xtd/forms/nine_segment_display.hpp) control.
 * [seven_segment_display](other_controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../src/xtd_forms/include/xtd/forms/seven_segment_display.hpp) control.
 * [sixteen_segment_display](other_controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](../src/xtd_forms/include/xtd/forms/sixteen_segment_display.hpp) control.
-* [switch_button](other_controls/switch_button/README.md) represents a [xtd::forms::switch_button](../src/xtd_forms/include/xtd/forms/switch_button.hpp) control.
 
 ## Custom Controls
 * [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.

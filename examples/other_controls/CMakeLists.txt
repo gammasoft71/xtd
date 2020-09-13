@@ -10,5 +10,4 @@ add_projects(
   nine_segment_display
   seven_segment_display
   sixteen_segment_display
-  switch_button
 )

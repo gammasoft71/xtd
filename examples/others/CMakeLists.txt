@@ -40,7 +40,7 @@ add_projects(
   text_box_multiline
   text_box_password
   texts
-  toggle_button
+  toggle_button2
   track_bar2
   wiggly
 )
