@@ -13,7 +13,7 @@ demonstrates the use of **xtd::drawing::system_image** component.
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

@@ -13,7 +13,7 @@ demonstrates how to use [xtd::forms::lcd_label_with_dot_matrix](../../../src/xtd
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

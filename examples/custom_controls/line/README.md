@@ -13,7 +13,7 @@ demonstrates how to create a custom control with [xtd::forms::user_control](../.
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

@@ -13,7 +13,7 @@ demonstrates how to use [xtd::forms::seven_segment_display](../../../src/xtd_for
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

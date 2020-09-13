@@ -13,7 +13,7 @@ demonstrates the use of [idle](../../../src/xtd_forms/include/xtd/forms/applicat
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

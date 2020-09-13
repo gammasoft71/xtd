@@ -46,7 +46,7 @@ Game speed is regulated by the speed track bar and the size of the cells with th
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output

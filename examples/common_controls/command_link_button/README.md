@@ -13,7 +13,7 @@ demonstrates the use of [xtd::forms::command_link_button](../../../src/xtd_forms
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 # Output
