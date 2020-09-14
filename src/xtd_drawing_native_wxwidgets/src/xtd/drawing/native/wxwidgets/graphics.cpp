@@ -247,5 +247,8 @@ void graphics::measure_string(intptr_t hdc, const std::string &text, intptr_t fo
     }
     width = std::max(width, static_cast<int32_t>(line_width));
     height += static_cast<int32_t>(line_height);
+
+    // Workaround : with wxWidgets version <= 3.1.4 width size text is too small on macOS and linux.
+    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Windows" && reinterpret_cast<wxFont*>(font)->GetStyle() > wxFontStyle::wxFONTSTYLE_NORMAL) width += std::ceil(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(hdc)->hdc().GetFontMetrics().averageWidth / 2.3f);
   }
 }
