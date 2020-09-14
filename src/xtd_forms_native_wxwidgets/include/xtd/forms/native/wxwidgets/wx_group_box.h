@@ -14,6 +14,8 @@ namespace xtd {
     class wxGroupBox : public wxStaticBox {
     public:
       wxGroupBox(wxWindow* parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = wxASCII_STR(wxStaticBoxNameStr)) : wxStaticBox(parent, id, label, pos, size, style, name) {
+        //SetBackgroundColour({255, 0, 0});
+        //inner_panel->SetBackgroundColour({0, 255, 0});
         Bind(wxEVT_SIZE, [&](wxSizeEvent& event) {
           inner_panel->SetPosition(get_inner_box_position());
           inner_panel->SetSize(get_inner_box_size());
@@ -21,16 +23,12 @@ namespace xtd {
       }
       
       wxPoint GetClientAreaOrigin() const override {return {inner_margin, inner_margin + extra_inner_margin_up};}
-    
-      void DoSetSize(int x, int y, int width, int height, int sizeFlags = wxSIZE_AUTO) override {wxStaticBox::DoSetSize(x, y, width, height, sizeFlags);}
       
       void DoGetClientSize(int* width, int* height) const override {
         wxStaticBox::DoGetSize(width, height);
         *width = *width - GetClientAreaOrigin().x - inner_margin;
         *height = *height - GetClientAreaOrigin().y - inner_margin;
       }
-      
-      void DoSetClientSize(int width, int height) override {DoSetSize(GetPosition().x, GetPosition().y, width + GetClientAreaOrigin().x + inner_margin, height + GetClientAreaOrigin().y + inner_margin);}
       
       wxWindow* GetMainWindowOfCompositeControl() override {return inner_panel;}
       
@@ -48,6 +46,7 @@ namespace xtd {
         if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") return {GetClientSize().GetWidth() - inner_margin, GetClientSize().GetHeight() - GetClientAreaOrigin().y - inner_margin};
         return GetClientSize();
       }
+
       static constexpr int32_t inner_margin = 3;
       static constexpr int32_t extra_inner_margin_up = 5;
       wxPanel* inner_panel = new wxPanel(this, wxID_ANY,get_inner_box_position(), get_inner_box_size());
