@@ -6,8 +6,9 @@
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/button_styles.h>
 #include <wx/commandlinkbutton.h>
-#include <wx/panel.h>
+#include <wx/platform.h>
 #include "control_handler.h"
+#include "wx_user_window.h"
 
 namespace xtd {
   namespace forms {
@@ -17,8 +18,10 @@ namespace xtd {
         wx_command_link_button(const xtd::forms::create_params& create_params) {
           if (!create_params.parent()) throw std::invalid_argument("control must have a parent");
           owner_draw_ = (create_params.style() & BS_OWNERDRAW) == BS_OWNERDRAW;
-          if (owner_draw_) this->control_handler::create<wxPanel>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
-          else {
+          if (owner_draw_) {
+            this->control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
+            reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh");
+          } else {
             this->control_handler::create<wxCommandLinkButton>(reinterpret_cast<control_handler*>(create_params.parent())->main_control(), wxID_ANY, wxEmptyString, wxEmptyString, wxPoint(create_params.x(), create_params.y()), wxSize(create_params.width(), create_params.height()), style_to_wx_style(create_params.style(), create_params.ex_style()));
             static_cast<wxCommandLinkButton*>(control())->SetLabel(wxString(create_params.caption().c_str(), wxMBConvUTF8()));
             if (!xtd::environment::os_version().is_windows_platform() || (xtd::environment::os_version().is_windows_platform() && application::dark_mode_enabled()))
