@@ -20,7 +20,7 @@ public:
       dot_matrix_display1.dots(chaser[counter++ % chaser.size()]);
     };
     
-    back_color(color::average(dot_matrix_display1.fore_color(), color::black, 0.20));
+    back_color(color::average(color::black, dot_matrix_display1.fore_color(), 0.20));
     text("Dot matrix display example");
     resize += [&] {
       dot_matrix_display1.left((client_size().width() - dot_matrix_display1.width()) / 2);

@@ -17,7 +17,7 @@ public:
     watch_panel.parent(*this);
     watch_panel.border_style(forms::border_style::fixed_3d);
     watch_panel.bounds({20, 10, 235, 50});
-    watch_panel.back_color(drawing::color::average(drawing::color::lime, drawing::color::black, 0.25));
+    watch_panel.back_color(drawing::color::average(drawing::color::black, drawing::color::lime, 0.25));
     watch_panel.fore_color(drawing::color::lime);
 
     watch.parent(watch_panel);
