@@ -26,7 +26,7 @@ public:
     button1.bounds({280, 10, 80, 80});
     button1.click += [&] {
       muted = !muted;
-      track_bar1.value(muted ?  0 : volume);
+      track_bar1.value(muted ? 0 : volume);
     };
   }
   
