@@ -56,27 +56,19 @@ namespace xtd {
     public:
       wxGroupBoxOwnerDraw(wxWindow* parent, wxWindowID id, const wxString& label, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = wxASCII_STR(wxStaticBoxNameStr)) : wxPanel(parent, id, pos, size, style, name) {
         Bind(wxEVT_SIZE, [&](wxSizeEvent&) {
-          wxMessageOutputDebug().Output("Size Event:");
-          wxMessageOutputDebug().Printf("  Position = {%d, %d} Size = {%d, %d}", GetPosition().x, GetPosition().y, GetSize().GetWidth(), GetSize().GetHeight());
-          wxMessageOutputDebug().Printf("  ClientAreaOrigin = {%d, %d} ClientSize = {%d, %d}", GetClientAreaOrigin().x, GetClientAreaOrigin().y, GetClientSize().GetWidth(), GetClientSize().GetHeight());
-          wxMessageOutputDebug().Printf("  Rect = {%d, %d, %d, %d}", GetRect().x, GetRect().y, GetRect().width, GetRect().height);
-          wxMessageOutputDebug().Printf("  ClientRect = {%d, %d, %d, %d}", GetClientRect().x, GetClientRect().y, GetClientRect().width, GetClientRect().height);
-          wxMessageOutputDebug().Output("----------------------------------");
         });
       }
       
+      //bool AcceptsFocus() const override {return false;}
+      
+      //bool AcceptsFocusFromKeyboard() const override {return false;}
+
       wxPoint GetClientAreaOrigin() const override {
         return {inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 2 : 0), inner_margin + (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh" ? 13 : 5)};
       }
       
       void DoSetSize(int x, int y, int width, int height, int sizeFlags = wxSIZE_AUTO) override {
         wxPanel::DoSetSize(x, y, width, height, sizeFlags);
-        wxMessageOutputDebug().Output("Set Size:");
-        wxMessageOutputDebug().Printf("  Position = {%d, %d} Size = {%d, %d}", GetPosition().x, GetPosition().y, GetSize().GetWidth(), GetSize().GetHeight());
-        wxMessageOutputDebug().Printf("  ClientAreaOrigin = {%d, %d} ClientSize = {%d, %d}", GetClientAreaOrigin().x, GetClientAreaOrigin().y, GetClientSize().GetWidth(), GetClientSize().GetHeight());
-        wxMessageOutputDebug().Printf("  Rect = {%d, %d, %d, %d}", GetRect().x, GetRect().y, GetRect().width, GetRect().height);
-        wxMessageOutputDebug().Printf("  ClientRect = {%d, %d, %d, %d}", GetClientRect().x, GetClientRect().y, GetClientRect().width, GetClientRect().height);
-        wxMessageOutputDebug().Output("----------------------------------");
       }
 
       void DoGetClientSize(int* width, int* height) const override {

@@ -38,6 +38,7 @@ set(XTD_INCLUDES
   include/xtd/forms/native/wxwidgets/wx_track_bar.h
   include/xtd/forms/native/wxwidgets/wx_up_down_button.h
   include/xtd/forms/native/wxwidgets/wx_user_control.h
+  include/xtd/forms/native/wxwidgets/wx_user_window.h
 )
 
 set(XTD_FORMS_NATIVE_WXWIDGETS_SOURCES
