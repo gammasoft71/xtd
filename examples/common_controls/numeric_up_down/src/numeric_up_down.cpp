@@ -8,6 +8,7 @@ namespace examples {
   public:
     form1() {
       text("Numeric up down example");
+      active_control(numeric_up_down1);
 
       numeric_up_down1.parent(*this);
       numeric_up_down1.location({80, 50});
