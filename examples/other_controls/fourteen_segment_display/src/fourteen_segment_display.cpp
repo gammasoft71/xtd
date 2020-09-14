@@ -20,7 +20,7 @@ public:
       fourteen_segment_display1.value(chaser[counter++ % chaser.size()]);
     };
     
-    back_color(color::average(fourteen_segment_display1.fore_color(), color::black, 0.20));
+    back_color(color::average(color::black, fourteen_segment_display1.fore_color(), 0.20));
     text("Fourteen segment display example");
     resize += [&] {
       fourteen_segment_display1.left((client_size().width() - fourteen_segment_display1.width()) / 2);

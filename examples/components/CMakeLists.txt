@@ -16,5 +16,6 @@ add_projects(
   settings_example
   settings_example2
   system_images
+  texts
   timer
 )
