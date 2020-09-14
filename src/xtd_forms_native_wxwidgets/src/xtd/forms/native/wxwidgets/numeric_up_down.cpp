@@ -28,6 +28,8 @@ void numeric_up_down::minimum(intptr_t control, double minimum) {
 void numeric_up_down::value(intptr_t control, double value) {
   if (!control) return;
   static_cast<wxSpinCtrlDouble*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(value);
+  // Workaround : with wxWidgets version <= 3.1.4 when wxSpinCtrlDouble lost focus the value is changed by error.
+  reinterpret_cast<wx_numeric_up_down*>(control)->value_ = value;
 }
 
 double numeric_up_down::value(intptr_t control) {
