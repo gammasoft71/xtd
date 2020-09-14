@@ -220,6 +220,13 @@ namespace xtdc_gui {
       {"Others - group box and check box", "demonstrates the use of xtd::forms::group_box container and  xtd::forms::check_box control.", {"xtd_forms/others/group_box_and_check_box"}},
       {"Others - group box and radio button", "demonstrates the use of xtd::forms::group_box container and  xtd::forms::check_box control.", {"xtd_forms/others/group_box_and_radio_button"}},
       {"Others - input box password", "demonstrates the use of xtd::forms::input_box dialog.", {"xtd_forms/others/input_box_password"}},
+      {"Others - labels and unicode text", "demonstrates the use of xtd::forms::label control with unicode text.", {"xtd_forms/others/labels_and_unicode_text"}},
+      {"Others - lcd label with dot matrix", "demonstrates the use of xtd::forms::lcd_label control with dot matrix.", {"xtd_forms/others/lcd_label_with dot matrix"}},
+      {"Others - lcd label with fourteen segment", "demonstrates the use of xtd::forms::lcd_label control with fourteen segment.", {"xtd_forms/others/lcd_label_with fourteen_segment"}},
+      {"Others - lcd label with nine segment", "demonstrates the use of xtd::forms::lcd_label control with nine segment.", {"xtd_forms/others/lcd_label_with nine_segment"}},
+      {"Others - lcd label with seven segment", "demonstrates the use of xtd::forms::lcd_label control with seven segment.", {"xtd_forms/others/lcd_label_with seven_segment"}},
+      {"Others - lcd label with sixteen segment", "demonstrates the use of xtd::forms::lcd_label control with sixteen segment.", {"xtd_forms/others/lcd_label_with sixteen_segment"}},
+      {"Other controls - lcd label 2", "represents a xtd::forms::lcd_label control.", {"xtd_forms/others/lcd_label2"}},
 
       {"Other controls - dot matrix display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd_forms/other_controls/dot_matrix_display"}},
       {"Other controls - fourteen segment display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd_forms/other_controls/fourteen_segment_display"}},
