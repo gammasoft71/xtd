@@ -8,7 +8,6 @@ using namespace xtd::forms;
 namespace calculator {
   class form_main : public form {
     enum class operators {
-      none = -1,
       divide,
       multiply,
       subtract,
@@ -17,9 +16,7 @@ namespace calculator {
     };
     
   public:
-    // The main entry point for the application.
     static void main() {
-      application::enable_visual_styles();
       application::run(form_main());
     }
     
@@ -66,7 +63,7 @@ namespace calculator {
       button_decimal.back_color(drawing::color::from_argb(102, 102, 102));
       button_decimal.flat_style(xtd::forms::flat_style::flat);
       button_decimal.location({120, 260});
-      button_decimal.text(",");
+      button_decimal.text(".");
       button_decimal.size({60, 50});
       button_decimal.click += {*this, &form_main::button_number_click};
       
@@ -126,53 +123,40 @@ namespace calculator {
     
     void button_clear_click(control& sender, const event_args& e) {
       result.text("0");
-      first_operand = .0f;
-      operation = operators::none;
-      reset_result = true;
+      first_operand.reset();
+      second_operand.reset();
     }
     
     void button_percent_click(control& sender, const event_args& e) {
-      ;
-      result.text(strings::replace(strings::format("{}", (parse<double>(strings::replace(result.text(), ',', '.')) / 100)), '.', ','));
+      result.text(strings::format("{}", parse<double>(result.text()) / 100));
     }
     
     void button_plus_minus_click(control& sender, const event_args& e) {
-      result.text(strings::replace(strings::format("{}", -parse<double>(strings::replace(result.text(), ',', '.'))), '.', ','));
+      if (result.text() != "0" && result.text() != "0.") result.text(strings::format("{}", -parse<double>(result.text())));
     }
     
     void button_number_click(control& sender, const event_args& e) {
-      if (sender.handle() == button_decimal.handle() && strings::contains(result.text(), ",")) return;
-      if (sender.handle() == button_numbers[0].handle() && !strings::contains(result.text(), ",") && parse<double>(result.text()) == 0) return;
-      if (reset_result) {
-        reset_result = false;
-        if (sender.handle() != button_decimal.handle()) result.text("");
-      }
+      if ((sender.handle() == button_decimal.handle() && strings::contains(result.text(), ".")) || (result.text() == "0" && sender.handle() == button_numbers[0].handle())) return;
+      if ((first_operand.has_value() && first_operand == parse<double>(result.text())) || (result.text() == "0" && sender.handle() != button_decimal.handle())) result.text("");
+      if (second_operand.has_value()) second_operand.reset();
       result.text(result.text() + sender.text());
     }
     
     void button_operator_click(control& sender, const event_args& e) {
-      reset_result = true;
-      if (operation == operators::none) {
-        first_operand = parse<double>(strings::replace(result.text(), ',', '.'));
-      } else {
+      static operators operation = operators::equal;
+      if (!first_operand.has_value()) first_operand = parse<double>(result.text());
+      else {
+        if (!second_operand.has_value()) second_operand = parse<double>(result.text());
         switch (operation) {
-          case operators::divide: result.text(strings::replace(strings::format("{}", first_operand / parse<double>(strings::replace(result.text(), ',', '.'))), '.', ',')); break;
-          case operators::multiply: result.text(strings::replace(strings::format("{}", first_operand * parse<double>(strings::replace(result.text(), ',', '.'))), '.', ',')); break;
-          case operators::subtract: result.text(strings::replace(strings::format("{}", first_operand - parse<double>(strings::replace(result.text(), ',', '.'))), '.', ',')); break;
-          case operators::add: result.text(strings::replace(strings::format("{}", first_operand + parse<double>(strings::replace(result.text(), ',', '.'))), '.', ',')); break;
+          case operators::divide: result.text(strings::format("{}", first_operand.value() / second_operand.value())); break;
+          case operators::multiply: result.text(strings::format("{}", first_operand.value() * second_operand.value())); break;
+          case operators::subtract: result.text(strings::format("{}", first_operand.value() - second_operand.value())); break;
+          case operators::add: result.text(strings::format("{}", first_operand.value() + second_operand.value())); break;
           default: break;
         }
         first_operand = parse<double>(result.text());
       }
-      
-      switch (sender.text()[0]) {
-        case '/': operation = operators::divide; break;
-        case 'X': operation = operators::multiply; break;
-        case '-': operation = operators::subtract; break;
-        case '+': operation = operators::add; break;
-        case '=': break;
-        default: operation = operators::none; break;
-      }
+      operation = map<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}}[sender.text()];
     }
     
   private:
@@ -183,9 +167,8 @@ namespace calculator {
     button button_decimal;
     array<button, 10> button_numbers;
     array<button, 5> button_operators;
-    double first_operand = .0f;
-    bool reset_result = true;
-    operators operation = operators::none;
+    optional<double> first_operand;
+    optional<double> second_operand;
   };
 }
 
