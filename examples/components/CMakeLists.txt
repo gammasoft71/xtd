@@ -12,6 +12,7 @@ add_projects(
   cursor
   emoticons
   image_list
+  radio_button_renderer
   screen
   settings_example
   settings_example2
