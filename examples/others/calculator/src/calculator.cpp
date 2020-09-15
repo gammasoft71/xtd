@@ -115,10 +115,8 @@ namespace calculator {
     }
     
     void back_space_key_press(control& sender, const event_args& e) {
-      if (result.text().length() > 0)
-        result.text(strings::remove(result.text(), result.text().length()-1));
-      if (result.text().length() == 0 || result.text() == "-")
-        button_clear_click(sender, e);
+      if (result.text().length() > 0) result.text(strings::remove(result.text(), result.text().length() - 1));
+      if (result.text().length() == 0 || result.text() == "-") button_clear_click(sender, e);
     }
     
     void button_clear_click(control& sender, const event_args& e) {
