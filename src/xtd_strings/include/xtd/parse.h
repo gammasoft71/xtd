@@ -107,7 +107,7 @@ inline value_t __parse_floating_point(const std::basic_string<char_t>& str, int 
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<value_t>::min() || result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
+  if (result < -std::numeric_limits<value_t>::max() || result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
   return static_cast<value_t>(result);
 }
 
