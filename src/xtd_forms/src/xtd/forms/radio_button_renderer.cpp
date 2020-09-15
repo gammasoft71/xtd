@@ -96,7 +96,7 @@ void radio_button_renderer::draw_radio_button_macos_dark(graphics g, const recta
   auto border_color = control_paint::dark(back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control(), 0.05);
   auto button_color = xtd::forms::theme_colors::current_theme().button_face();
   auto text_color = control_paint::light(foreground_color, 0.1);
-  auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
+  auto mark_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent_text(), 0.15);
   
   if (state == xtd::forms::visual_styles::radio_button_state::checked_normal || state == xtd::forms::visual_styles::radio_button_state::checked_hot || state == xtd::forms::visual_styles::radio_button_state::checked_pressed) {
     button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 0.15);
