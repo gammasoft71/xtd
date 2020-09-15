@@ -9,7 +9,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
-      text("Button renderrer example");
+      text("Button renderer example");
       client_size({400, 300});
       set_color(color::blue);
       set_color(nullptr);
