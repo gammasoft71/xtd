@@ -28,6 +28,7 @@ xtd::forms::visual_styles::push_button_state to_push_button_style(xtd::forms::vi
 
 radio_button::radio_button() {
   this->size_ = this->default_size();
+  text_align_ = content_alignment::middle_left;
 }
 
 radio_button& radio_button::appearance(forms::appearance appearance) {
