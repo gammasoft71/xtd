@@ -95,23 +95,23 @@ namespace calculator {
     
     void form_main_key_press(control& sender, key_press_event_args& e) {
       if (e.key_char() >= '0' && e.key_char() <= '9') {
-        button_number_click(button_numbers[e.key_char() - '0'], e);
+        button_numbers[e.key_char() - '0'].perform_click();
         e.handled(true);
         return;
       }
       switch (e.key_char()) {
-        case 'c' : button_clear_click(button_clear, e); e.handled(true); break;
-        case 'C' : button_clear_click(button_clear, e); e.handled(true); break;
-        case '%' : button_percent_click(button_percent, e); e.handled(true); break;
-        case ',' : button_number_click(button_decimal,e); e.handled(true); break;
-        case '.' : button_number_click(button_decimal, e); e.handled(true); break;
-        case '/' : button_operator_click(button_operators[(int)operators::divide], e); e.handled(true); break;
-        case '*' : button_operator_click(button_operators[(int)operators::multiply], e); e.handled(true); break;
-        case '-' : button_operator_click(button_operators[(int)operators::subtract], e); e.handled(true); break;
-        case '+' : button_operator_click(button_operators[(int)operators::add], e); e.handled(true); break;
-        case '=' : button_operator_click(button_operators[(int)operators::equal], e); e.handled(true); break;
-        case 13 : button_operator_click(button_operators[(int)operators::equal], e); e.handled(true); break;
-        case 127 : back_space_key_press(button_operators[(int)operators::equal], e); e.handled(true); break;
+        case 'c' : button_clear.perform_click(); e.handled(true); break;
+        case 'C' : button_clear.perform_click(); e.handled(true); break;
+        case '%' : button_percent.perform_click(); e.handled(true); break;
+        case ',' : button_decimal.perform_click(); e.handled(true); break;
+        case '.' : button_decimal.perform_click(); e.handled(true); break;
+        case '/' : button_operators[static_cast<int>(operators::divide)].perform_click(); e.handled(true); break;
+        case '*' : button_operators[static_cast<int>(operators::multiply)].perform_click(); e.handled(true); break;
+        case '-' : button_operators[static_cast<int>(operators::subtract)].perform_click(); e.handled(true); break;
+        case '+' : button_operators[static_cast<int>(operators::add)].perform_click(); e.handled(true); break;
+        case '=' : button_operators[static_cast<int>(operators::equal)].perform_click(); e.handled(true); break;
+        case 13 : button_operators[static_cast<int>(operators::equal)].perform_click(); e.handled(true); break;
+        case 127 : back_space_key_press(sender, e); e.handled(true); break;
       }
     }
     
