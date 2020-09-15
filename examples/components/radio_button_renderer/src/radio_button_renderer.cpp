@@ -50,6 +50,7 @@ namespace examples {
       };
 
       radio_button_system.parent(*this);
+      radio_button_system.checked(true);
       radio_button_system.flat_style(xtd::forms::flat_style::system);
       radio_button_system.location({10, 170});
       radio_button_system.text("System");
