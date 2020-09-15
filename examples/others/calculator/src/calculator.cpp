@@ -27,73 +27,70 @@ namespace calculator {
       text("Calculator");
       back_color(drawing::color::from_argb(44, 44, 47));
       fore_color(drawing::color::white);
-      form_border_style(forms::form_border_style::fixed_dialog);
-      maximize_box(false);
-      start_position(form_start_position::manual);
-      location({300, 200});
-      client_size({325, 220});
-      //key_preview(true);
+      font(xtd::drawing::font(font(), 16));
+      auto_size_mode(forms::auto_size_mode::grow_and_shrink);
+      auto_size(true);
       key_press += {*this, &form_main::form_main_key_press};
       
+      result.bounds({0, 0, 240, 60});
+      result.font(xtd::drawing::font(font(), font().size() * 2));
       result.parent(*this);
-      result.bounds({5, 5, 315, 60});
-      result.font(xtd::drawing::font(xtd::drawing::font_family::generic_monospace().name(), 36, xtd::drawing::font_style::regular));
       result.text_align(content_alignment::middle_right);
       result.text("0");
       
       button_clear.parent(*this);
-      button_clear.back_color(drawing::color::from_argb(76, 81, 78));
+      button_clear.back_color(drawing::color::from_argb(64, 64, 64));
       button_clear.flat_style(xtd::forms::flat_style::flat);
-      button_clear.location({5, 70});
-      button_clear.text("AC");
-      button_clear.size({75, 25});
+      button_clear.location({0, 60});
+      button_clear.text("C");
+      button_clear.size({60, 50});
       button_clear.click += {*this, &form_main::button_clear_click};
       
       button_plus_minus.parent(*this);
-      button_plus_minus.back_color(drawing::color::from_argb(76, 81, 78));
+      button_plus_minus.back_color(drawing::color::from_argb(64, 64, 64));
       button_plus_minus.flat_style(xtd::forms::flat_style::flat);
-      button_plus_minus.location({85, 70});
+      button_plus_minus.location({60, 60});
       button_plus_minus.text("±");
-      button_plus_minus.size({75, 25});
+      button_plus_minus.size({60, 50});
       button_plus_minus.click += {*this, &form_main::button_plus_minus_click};
       
       button_percent.parent(*this);
-      button_percent.back_color(drawing::color::from_argb(76, 81, 78));
+      button_percent.back_color(drawing::color::from_argb(64, 64, 64));
       button_percent.flat_style(xtd::forms::flat_style::flat);
-      button_percent.location({165, 70});
+      button_percent.location({120, 60});
       button_percent.text("%");
-      button_percent.size({75, 25});
+      button_percent.size({60, 50});
       button_percent.click += {*this, &form_main::button_percent_click};
       
       button_decimal.parent(*this);
-      button_decimal.back_color(drawing::color::from_argb(105, 110, 107));
+      button_decimal.back_color(drawing::color::from_argb(102, 102, 102));
       button_decimal.flat_style(xtd::forms::flat_style::flat);
-      button_decimal.location({165, 190});
+      button_decimal.location({120, 260});
       button_decimal.text(",");
-      button_decimal.size({75, 25});
+      button_decimal.size({60, 50});
       button_decimal.click += {*this, &form_main::button_number_click};
       
-      vector<xtd::drawing::point> button_number_locations = {{5, 190}, {5, 160}, {85, 160}, {165, 160}, {5, 130}, {85, 130}, {165, 130}, {5, 100}, {85, 100}, {165, 100}};
+      vector<xtd::drawing::point> button_number_locations = {{0, 260}, {0, 210}, {60, 210}, {120, 210}, {0, 160}, {60, 160}, {120, 160}, {0, 110}, {60, 110}, {120, 110}};
       for (int i = 0; i < 10; i++) {
         button_numbers[i].parent(*this);
-        button_numbers[i].back_color(drawing::color::from_argb(105, 110, 107));
+        button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));
         button_numbers[i].flat_style(xtd::forms::flat_style::flat);
         button_numbers[i].text(strings::format("{}", i));
         button_numbers[i].location(button_number_locations[i]);
-        button_numbers[i].size({75, 25});
+        button_numbers[i].size({60, 50});
         button_numbers[i].click += {*this, &form_main::button_number_click};
       }
-      button_numbers[0].width(155);
+      button_numbers[0].width(120);
       
-      vector button_operator_texts = {"/", "X", "-", "+", "="};
-      vector<xtd::drawing::point> button_operator_locations = {{245, 70}, {245, 100}, {245, 130}, {245, 160}, {245, 190}};
+      vector button_operator_texts = {"÷", "x", "-", "+", "="};
+      vector<xtd::drawing::point> button_operator_locations = {{180, 60}, {180, 110}, {180, 160}, {180, 210}, {180, 260}};
       for (int i = 0; i < 5; i++) {
         button_operators[i].parent(*this);
         button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));
         button_operators[i].flat_style(xtd::forms::flat_style::flat);
         button_operators[i].text(button_operator_texts[i]);
         button_operators[i].location(button_operator_locations[i]);
-        button_operators[i].size({75, 25});
+        button_operators[i].size({60, 50});
         button_operators[i].click += {*this, &form_main::button_operator_click};
       }
     }
