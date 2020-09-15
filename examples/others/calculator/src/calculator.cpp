@@ -8,6 +8,7 @@ using namespace xtd::forms;
 namespace calculator {
   class form_main : public form {
     enum class operators {
+      none = -1,
       divide,
       multiply,
       subtract,
@@ -102,8 +103,8 @@ namespace calculator {
         case 'c' : button_clear_click(button_clear, e); e.handled(true); break;
         case 'C' : button_clear_click(button_clear, e); e.handled(true); break;
         case '%' : button_percent_click(button_percent, e); e.handled(true); break;
-        case ',' : button_number_click(button_percent,e); e.handled(true); break;
-        case '.' : button_number_click(button_percent, e); e.handled(true); break;
+        case ',' : button_number_click(button_decimal,e); e.handled(true); break;
+        case '.' : button_number_click(button_decimal, e); e.handled(true); break;
         case '/' : button_operator_click(button_operators[(int)operators::divide], e); e.handled(true); break;
         case '*' : button_operator_click(button_operators[(int)operators::multiply], e); e.handled(true); break;
         case '-' : button_operator_click(button_operators[(int)operators::subtract], e); e.handled(true); break;
@@ -123,6 +124,7 @@ namespace calculator {
       result.text("0");
       first_operand.reset();
       second_operand.reset();
+      operation = operators::none;
     }
     
     void button_percent_click(control& sender, const event_args& e) {
@@ -141,11 +143,11 @@ namespace calculator {
     }
     
     void button_operator_click(control& sender, const event_args& e) {
-      static operators operation = operators::equal;
       if (!first_operand.has_value()) first_operand = parse<double>(result.text());
       else {
         if (!second_operand.has_value()) second_operand = parse<double>(result.text());
         switch (operation) {
+          case operators::none: break;
           case operators::divide: result.text(strings::format("{}", first_operand.value() / second_operand.value())); break;
           case operators::multiply: result.text(strings::format("{}", first_operand.value() * second_operand.value())); break;
           case operators::subtract: result.text(strings::format("{}", first_operand.value() - second_operand.value())); break;
@@ -167,6 +169,7 @@ namespace calculator {
     array<button, 5> button_operators;
     optional<double> first_operand;
     optional<double> second_operand;
+    operators operation = operators::none;
   };
 }
 
