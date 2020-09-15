@@ -9,6 +9,7 @@ add_projects(
   button2
   button3
   button4
+  calculator
   clock
   colored_forms
   colored_tab_pages
