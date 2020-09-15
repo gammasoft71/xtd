@@ -130,8 +130,8 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
   auto border_color = color::from_argb(200, 200, 200);
   auto button_color = back_color.has_value() ? color::from_argb(128, xtd::forms::theme_colors::current_theme().control()) : xtd::forms::theme_colors::current_theme().button_face();
   auto text_color = foreground_color;
-  auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
-  
+  auto mark_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent_text(), 0.15);
+
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::mixed_normal || state == xtd::forms::visual_styles::check_box_state::mixed_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::mixed_pressed) {
     button_color = xtd::forms::theme_colors::current_theme().accent();
   } else if (state == xtd::forms::visual_styles::check_box_state::unchecked_disabled || state == xtd::forms::visual_styles::check_box_state::checked_disabled || state == xtd::forms::visual_styles::check_box_state::mixed_disabled) {
@@ -143,7 +143,7 @@ void check_box_renderer::draw_check_box_macos_light(graphics g, const rectangle&
   if (state == xtd::forms::visual_styles::check_box_state::unchecked_normal || state == xtd::forms::visual_styles::check_box_state::unchecked_hot || state == xtd::forms::visual_styles::check_box_state::unchecked_pressed ||state == xtd::forms::visual_styles::check_box_state::unchecked_disabled)
     g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, button_color, control_paint::light(button_color)), button_rectangle, 4);
   else
-    g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 3);
+    g.fill_rounded_rectangle(solid_brush(button_color), button_rectangle, 4);
   g.draw_rounded_rectangle(pen(border_color, 1), rectangle::inflate(button_rectangle, {-1, -1}), 4);
   rectangle string_rectangle = {bounds.x() + 19, bounds.y(), bounds.width() - 19, bounds.height()};
   if (state == xtd::forms::visual_styles::check_box_state::checked_normal || state == xtd::forms::visual_styles::check_box_state::checked_hot || state == xtd::forms::visual_styles::check_box_state::checked_pressed || state == xtd::forms::visual_styles::check_box_state::checked_disabled) {
