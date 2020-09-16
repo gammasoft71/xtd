@@ -120,7 +120,7 @@ void radio_button::on_paint(paint_event_args& e) {
 
 void radio_button::wnd_proc(message &message) {
   switch (message.msg()) {
-    case WM_LBUTTONDOWN: break;
+    case WM_LBUTTONDOWN: this->wm_mouse_down(message); break;
     case WM_LBUTTONDBLCLK: this->wm_mouse_double_click(message); break;
     case WM_LBUTTONUP: this->wm_mouse_up(message); break;
     default: this->button_base::wnd_proc(message);
@@ -131,8 +131,20 @@ void radio_button::wm_mouse_double_click(message& message) {
   this->on_double_click(event_args::empty);
 }
 
-void radio_button::wm_mouse_up(message& message) {
-  if (this->auto_check_) this->checked(true);
-  this->on_click(event_args::empty);
+void radio_button::wm_mouse_down(message &message) {
+  set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+  mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
+  mouse_buttons_ |= e.button();
+  on_mouse_down(e);
+  if (message.msg() == WM_LBUTTONDOWN) mouse_left_down_ = true;
 }
 
+void radio_button::wm_mouse_up(message& message) {
+  if (this->auto_check_) this->checked(true);
+  mouse_event_args e = mouse_event_args::create(message);
+  mouse_buttons_ &= ~e.button();
+  if (mouse_left_down_ && client_rectangle().contains(e.location())) on_click(event_args::empty);
+  if (message.msg() == WM_LBUTTONDOWN) mouse_left_down_ = false;
+  on_mouse_click(e);
+  on_mouse_up(e);
+}

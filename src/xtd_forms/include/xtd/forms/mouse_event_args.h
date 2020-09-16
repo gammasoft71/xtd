@@ -13,6 +13,7 @@ namespace xtd {
     class button;
     class control;
     class check_box;
+    class radio_button;
     class toggle_button;
     /// @endcond
     
@@ -44,6 +45,7 @@ namespace xtd {
       friend class button;
       friend class control;
       friend class check_box;
+      friend class radio_button;
       friend class toggle_button;
       static mouse_event_args create(const message& message, bool double_click_fired = false, int32_t delta = 0);
       mouse_buttons button_ = mouse_buttons::none;
