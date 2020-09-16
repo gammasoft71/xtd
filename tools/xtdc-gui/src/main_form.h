@@ -156,6 +156,7 @@ namespace xtdc_gui {
       {"Components - cursor", "represents the image used to paint the mouse pointer.", {"xtd_forms/components/cursor"}},
       {"Components - emoticons", "demonstrates the use of xtd::forms::emoticons class.", {"xtd_forms/components/emoticons"}},
       {"Components - image list", "provides methods to manage a collection of image objects.", {"xtd_forms/components/image_list"}},
+      {"Components - radio button renderer", "shows how to draw radio button with xtd::froms::radio_button_renderer class.", {"xtd_forms/components/radio_button_renderer"}},
       {"Components - screen", "represents a display device or multiple display devices on a single system.", {"xtd_forms/components/screen"}},
       {"Components - settings", "represents settings application.", {"xtd_forms/components/settings_example"}},
       {"Components - settings2", "represents settings application.", {"xtd_forms/components/settings_example2"}},
