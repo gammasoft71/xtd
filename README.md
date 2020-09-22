@@ -23,7 +23,8 @@ The classic first application 'Hello World'.
 src/environment_hello_world.cpp:
 
 ```c++
-#include <xtd/xtd.environment>
+#define TRACE
+#include <xtd/xtd.diagnostics>
 #include <iostream>
 
 using namespace std;
@@ -31,7 +32,7 @@ using namespace xtd;
 
 // The main entry point for the application.
 int main() {
-  cout << "Hello, " << environment::user_name() << "!" << endl;
+  ctrace << "Hello, World!" << endl;
 }
 ```
 
