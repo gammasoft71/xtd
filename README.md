@@ -20,7 +20,7 @@ For more information see [Documentation](docs).
 
 The classic first application 'Hello World'.
 
-src/environment_hello_world.cpp:
+src/ctrace_hello_world.cpp:
 
 ```c++
 #define TRACE
@@ -41,10 +41,10 @@ CMakeLists.txt:
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(string_hello_world)
-find_package(xtd.environment REQUIRED)
-add_executable(${PROJECT_NAME} src/environment_hello_world.cpp)
-target_link_libraries(${PROJECT_NAME} xtd.environment)
+project(ctrace_hello_world)
+find_package(xtd.diagnostics REQUIRED)
+add_executable(${PROJECT_NAME} src/ctrace_hello_world.cpp)
+target_link_libraries(${PROJECT_NAME} xtd.diagnostics)
 ```
 
 For more examples see [examples](examples)
