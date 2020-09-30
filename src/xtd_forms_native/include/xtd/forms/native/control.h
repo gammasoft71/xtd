@@ -26,7 +26,6 @@ namespace xtd {
         static intptr_t create_double_buffered_paint_graphics(intptr_t control);
         static intptr_t def_wnd_proc(intptr_t control, intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t presult, intptr_t handle);
         static void destroy(intptr_t control);
-        static void init();
         static drawing::rectangle client_rectangle(intptr_t control);
         static drawing::size client_size(intptr_t control);
         static void client_size(intptr_t control, const drawing::size& size);
