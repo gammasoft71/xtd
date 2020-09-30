@@ -383,7 +383,6 @@ void form::on_handle_created(const event_args &e) {
   container_control::on_handle_created(e);
   if (icon_ != drawing::icon::empty) native::form::icon(handle(), icon_.handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
-  if (accept_button_.has_value()) native::form::default_control(handle(), dynamic_cast<control&>(accept_button_.value().get()).handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
 }

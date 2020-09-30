@@ -75,11 +75,6 @@ void form::minimize(intptr_t form, bool minimize) {
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Iconize(minimize);
 }
 
-void form::default_control(intptr_t form, intptr_t default_control) {
-  if (form == 0 || default_control == 0) return;
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->SetDefaultItem(reinterpret_cast<control_handler*>(default_control)->control());
-}
-
 void form::restore(intptr_t form) {
   if (form == 0) return;
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(false);
