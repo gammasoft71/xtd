@@ -15,7 +15,7 @@ int main() {
   label.parent(form_main);
   label.dock(dock_style::fill);
   label.fore_color(color::yellow);
-  label.back_color(color::black, color::average(label.fore_color(), 0.05));
+  label.back_color(color::average(color::black, label.fore_color(), 0.05));
   label.lcd_style(forms::lcd_style::dot_matrix_display);
   label.text(strings::format("{}", label.valid_characters()[index]));
 

@@ -19,7 +19,7 @@ namespace example {
       button_normal.click += [&] {
         auto dialog = control::create<form>("dialog show normal", {}, {250, 100});
         dialog->show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.push_back(move(dialog));
       };
       
       button_modeless.dock(xtd::forms::dock_style::top);
@@ -28,7 +28,7 @@ namespace example {
       button_modeless.click += [&] {
         auto dialog = control::create<form>("dialog show modeless", {}, {250, 100});
         dialog->owner(*this).show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.push_back(move(dialog));
       };
       
       button_top_most.dock(xtd::forms::dock_style::top);
@@ -37,7 +37,7 @@ namespace example {
       button_top_most.click += [&] {
         auto dialog = control::create<form>("dialog top most", {}, {250, 100});
         dialog->top_most(true).show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.push_back(move(dialog));
       };
 
       button_modal.dock(xtd::forms::dock_style::fill);

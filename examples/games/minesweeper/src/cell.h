@@ -81,8 +81,8 @@ namespace minesweeper {
         auto x = (e.clip_rectangle().width() - e.graphics().measure_string(text, font()).width()) / 2;
         auto y = (e.clip_rectangle().height() - e.graphics().measure_string(text, font()).height()) / 2;
         if (back_color().get_brightness() < 0.5f) {
-          e.graphics().draw_string(text, font(), solid_brush(color::lighter(color::lighter(text_color))), x - 1, y - 1);
-          e.graphics().draw_string(text, font(), solid_brush(color::darker(color::darker(text_color))), x + 1, y + 1);
+          e.graphics().draw_string(text, font(), solid_brush(color::light(color::light(text_color))), x - 1, y - 1);
+          e.graphics().draw_string(text, font(), solid_brush(color::dark(color::dark(text_color))), x + 1, y + 1);
         }
         e.graphics().draw_string(text, font(), solid_brush(text_color), x, y);
       }
@@ -137,27 +137,27 @@ namespace minesweeper {
     
     void draw_border_unchecked(xtd::forms::paint_event_args& e) {
       using namespace xtd::drawing;
-      e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), 0, 0, e.clip_rectangle().width(), 0);
-      e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), 0, 1, e.clip_rectangle().width(), 1);
-      e.graphics().draw_line(pen(color::lighter(back_color())), 1, 2, e.clip_rectangle().width(), 2);
-      e.graphics().draw_line(pen(color::lighter(color::lighter(color::lighter(back_color())))), 0, 0, 0, e.clip_rectangle().height());
-      e.graphics().draw_line(pen(color::lighter(color::lighter(back_color()))), 1, 1, 1, e.clip_rectangle().height());
-      e.graphics().draw_line(pen(color::lighter(back_color())), 2, 2, 2, e.clip_rectangle().height());
-      e.graphics().draw_line(pen(color::darker(back_color())), 2, e.clip_rectangle().height() - 3, e.clip_rectangle().width(), e.clip_rectangle().height() - 3);
-      e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), 1, e.clip_rectangle().height() - 2, e.clip_rectangle().width(), e.clip_rectangle().height() - 2);
-      e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), 0, e.clip_rectangle().height() - 1, e.clip_rectangle().width(), e.clip_rectangle().height() - 1);
-      e.graphics().draw_line(pen(color::darker(back_color())), e.clip_rectangle().width() - 3, 2, e.clip_rectangle().width() - 3, e.clip_rectangle().height() - 3);
-      e.graphics().draw_line(pen(color::darker(color::darker(back_color()))), e.clip_rectangle().width() - 2, 1, e.clip_rectangle().width() - 2, e.clip_rectangle().height() - 2);
-      e.graphics().draw_line(pen(color::darker(color::darker(color::darker(back_color())))), e.clip_rectangle().width() - 1, 0, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
+      e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), 0, 0, e.clip_rectangle().width(), 0);
+      e.graphics().draw_line(pen(color::light(color::light(back_color()))), 0, 1, e.clip_rectangle().width(), 1);
+      e.graphics().draw_line(pen(color::light(back_color())), 1, 2, e.clip_rectangle().width(), 2);
+      e.graphics().draw_line(pen(color::light(color::light(color::light(back_color())))), 0, 0, 0, e.clip_rectangle().height());
+      e.graphics().draw_line(pen(color::light(color::light(back_color()))), 1, 1, 1, e.clip_rectangle().height());
+      e.graphics().draw_line(pen(color::light(back_color())), 2, 2, 2, e.clip_rectangle().height());
+      e.graphics().draw_line(pen(color::dark(back_color())), 2, e.clip_rectangle().height() - 3, e.clip_rectangle().width(), e.clip_rectangle().height() - 3);
+      e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), 1, e.clip_rectangle().height() - 2, e.clip_rectangle().width(), e.clip_rectangle().height() - 2);
+      e.graphics().draw_line(pen(color::dark(color::dark(color::dark(back_color())))), 0, e.clip_rectangle().height() - 1, e.clip_rectangle().width(), e.clip_rectangle().height() - 1);
+      e.graphics().draw_line(pen(color::dark(back_color())), e.clip_rectangle().width() - 3, 2, e.clip_rectangle().width() - 3, e.clip_rectangle().height() - 3);
+      e.graphics().draw_line(pen(color::dark(color::dark(back_color()))), e.clip_rectangle().width() - 2, 1, e.clip_rectangle().width() - 2, e.clip_rectangle().height() - 2);
+      e.graphics().draw_line(pen(color::dark(color::dark(color::dark(back_color())))), e.clip_rectangle().width() - 1, 0, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
     }
     
     void draw_border_checked(xtd::forms::paint_event_args& e) {
       using namespace xtd::drawing;
       
-      e.graphics().draw_line(pen(color::darker(back_color())), 0, 0, e.clip_rectangle().width(), 0);
-      e.graphics().draw_line(pen(color::darker(back_color())), 0, 0, 0, e.clip_rectangle().height());
-      e.graphics().draw_line(pen(color::lighter(back_color())), 1, e.clip_rectangle().height() - 1, e.clip_rectangle().width(), e.clip_rectangle().height() - 1);
-      e.graphics().draw_line(pen(color::lighter(back_color())), e.clip_rectangle().width() - 1, 1, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
+      e.graphics().draw_line(pen(color::dark(back_color())), 0, 0, e.clip_rectangle().width(), 0);
+      e.graphics().draw_line(pen(color::dark(back_color())), 0, 0, 0, e.clip_rectangle().height());
+      e.graphics().draw_line(pen(color::light(back_color())), 1, e.clip_rectangle().height() - 1, e.clip_rectangle().width(), e.clip_rectangle().height() - 1);
+      e.graphics().draw_line(pen(color::light(back_color())), e.clip_rectangle().width() - 1, 1, e.clip_rectangle().width() - 1, e.clip_rectangle().height() - 1);
     }
     
     cell_state state_ = cell_state::unchecked;
