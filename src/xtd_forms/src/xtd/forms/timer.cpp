@@ -5,20 +5,20 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void timer::enabled(bool enabled) {
-  if (data_->enabled_ != enabled) {
-    data_->enabled_ = enabled;
-    if (data_->enabled_ == true)
-      data_->handle_ = native::timer::create(data_->interval_, {*this, &timer::on_tick});
+  if (enabled_ != enabled) {
+    enabled_ = enabled;
+    if (enabled_ == true)
+      handle_ = native::timer::create(interval_, {*this, &timer::on_tick});
     else
-      native::timer::destroy(data_->handle_);
+      native::timer::destroy(handle_);
   }
 }
 
 void timer::interval(int32_t interval) {
-  if (data_->interval_ != interval) {
-    data_->interval_ = interval;
+  if (interval_ != interval) {
+    interval_ = interval;
     
-    if (data_->enabled_ == true) {
+    if (enabled_ == true) {
       stop();
       start();
     }
