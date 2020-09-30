@@ -5,9 +5,9 @@ using namespace xtd::drawing;
 using namespace xtd::forms;
 
 namespace examples {
-  class form1 : public form {
+  class main_form : public form {
   public:
-    form1() {
+    main_form() {
       text("Hello world (paint)");
       client_size({300, 300});
 
@@ -19,5 +19,5 @@ namespace examples {
 }
 
 int main() {
-  application::run(examples::form1());
+  application::run(examples::main_form());
 }

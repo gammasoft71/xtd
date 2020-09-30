@@ -4,9 +4,9 @@ using namespace xtd;
 using namespace xtd::forms;
 
 namespace examples {
-  class form1 : public form {
+  class main_form : public form {
   public:
-    form1() {
+    main_form() {
       text("Hello world (emoticons)");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
@@ -23,5 +23,5 @@ namespace examples {
 }
 
 int main() {
-  application::run(examples::form1());
+  application::run(examples::main_form());
 }

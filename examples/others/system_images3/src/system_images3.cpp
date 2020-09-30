@@ -43,7 +43,7 @@ namespace example {
 
       choice_theme.bounds({10, 10, 280, 25});
       choice_theme.items().push_back("default_theme");
-      choice_theme.items().push_back_range(system_images::themes());
+      choice_theme.items().push_back_range(theme::theme_names());
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += {*this, &form1::update_form};
 
@@ -83,7 +83,7 @@ namespace example {
     
   private:
     void update_form() {
-      auto theme = choice_theme.selected_index() == 0 ? system_images::default_theme() : choice_theme.selected_item().value();
+      auto theme = choice_theme.selected_index() == 0 ? theme::default_theme_name() : choice_theme.selected_item().value();
       picture_16.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {16, 16}));
       picture_32.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {32, 32}));
       picture_64.image(system_images::from_name(theme, system_images::names(choice_context.selected_item().value())[current_image_index], drawing::size {64, 64}));

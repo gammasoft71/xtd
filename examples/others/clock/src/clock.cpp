@@ -27,7 +27,7 @@ int main() {
   label.auto_size(true);
   
   label.fore_color(color::lime);
-  label.back_color(color::black, color::average(label.fore_color(), 0.20));
+  label.back_color(color::average(color::black, label.fore_color(), 0.20));
   label.segment_style(segment_style::modern);
   label.show_background_digit(false);
   label.text(strings::format("{:t}", std::chrono::system_clock::now()));
