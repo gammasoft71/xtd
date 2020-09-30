@@ -210,10 +210,6 @@ void control::destroy(intptr_t control) {
   delete reinterpret_cast<class control_handler*>(control);
 }
 
-void control::init() {
-  application::initialize(); // Must be first
-}
-
 drawing::rectangle control::client_rectangle(intptr_t control) {
   if (control == 0) return {};
   wxRect rect = reinterpret_cast<control_handler*>(control)->control()->GetClientRect();
