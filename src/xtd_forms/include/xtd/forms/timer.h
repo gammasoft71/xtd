@@ -14,17 +14,16 @@ namespace xtd {
       timer() = default;
 
       /// @cond
-      timer(timer&&) = delete;
       timer(const timer&) = delete;
       ~timer() {this->stop();}
       /// @endcond
       
       event<timer, event_handler<timer&>> tick;
 
-      bool enabled() const {return data_->enabled_;}
+      bool enabled() const {return enabled_;}
       void enabled(bool enabled);
       
-      int32_t interval() const {return data_->interval_;}
+      int32_t interval() const {return interval_;}
       void interval(int32_t interval);
 
       void start() {enabled(true);}
@@ -35,12 +34,9 @@ namespace xtd {
       void on_tick(const event_args& e);
       
     private:
-      struct data {
-        bool enabled_ = false;
-        int32_t interval_ = 100;
-        intptr_t handle_ = 0;
-      };
-      std::shared_ptr<data> data_ = std::make_shared<data>();
+      bool enabled_ = false;
+      int32_t interval_ = 100;
+      intptr_t handle_ = 0;
     };
   }
 }
