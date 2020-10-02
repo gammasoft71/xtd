@@ -22,9 +22,9 @@ elseif (APPLE)
   set(XTD_NATIVE_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
   set_property(CACHE XTD_NATIVE_TOOLKIT PROPERTY STRINGS cocoa fltk qt5 wxwidgets)
 else ()
-  #set(XTD_NATIVE_TOOLKIT "gtk3" CACHE STRING "Choose toolkit for native drawing and forms libraries")
+  #set(XTD_NATIVE_TOOLKIT "gtk4" CACHE STRING "Choose toolkit for native drawing and forms libraries")
   set(XTD_NATIVE_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
-  set_property(CACHE XTD_NATIVE_TOOLKIT PROPERTY STRINGS fltk gtk3 qt5 wxwidgets)
+  set_property(CACHE XTD_NATIVE_TOOLKIT PROPERTY STRINGS fltk gtk3 gtk4 qt5 wxwidgets)
 endif ()
 
 # Code coverage

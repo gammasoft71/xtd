@@ -21,6 +21,11 @@ if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "gtk3")
   set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.gtk3)
 endif ()
 
+if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "gtk4")
+  add_subdirectory(xtd_forms_native_gtk4)
+  set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.gtk4)
+endif ()
+
 if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "qt5")
   add_subdirectory(xtd_forms_native_qt5)
   set(XTD_FORMS_NATIVE_LIBRARY xtd.forms.native.fltk)
