@@ -44,10 +44,11 @@ namespace xtd {
           else if (event.GetEventType() == wxEVT_KEY_DOWN) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_CHAR) wxPostEvent(GetParent(), event);
           else if (event.GetEventType() == wxEVT_KEY_UP) wxPostEvent(GetParent(), event);
-          else if (event.GetEventType() == wxEVT_PAINT) wxPostEvent(GetParent(), event);
+          //else if (event.GetEventType() == wxEVT_PAINT) wxPostEvent(GetParent(), event);
           return result;
         }
       };
+
       class wx_form : public control_handler {
       public:
         wx_form(const forms::create_params& create_params) {
@@ -120,7 +121,7 @@ namespace xtd {
         }
         
         wxWindow* graphic_control() const override {
-#if defined(__APPLE__)
+#if defined(__APPLE__) || defined(__WXGTK__)
           return control();
 #else
           return panel_;
