@@ -1,9 +1,9 @@
 
 # xtd.form.native.qt5
 
-xtd.forms is made to have many backend: native backend like win32 api, cocoa, ... or other third party libraries/framework backend like wxWidgets, qt5, ....
+xtd.forms is made to have many toolkit: native toolkit like win32 api, cocoa, ... or other third party libraries/framework toolkit like wxWidgets, qt5, ....
 
-The backend [xtd.form.native.qt5](.) is based on [Qt](https://www.qt.io)  libraries.
+The toolkit [xtd.form.native.qt5](.) is based on [Qt](https://www.qt.io)  libraries.
 
 ## Download and install
 
