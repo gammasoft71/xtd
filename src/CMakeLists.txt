@@ -31,6 +31,11 @@ if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "gtk3")
   set(XTD_DRAWING_NATIVE_LIBRARY xtd.drawing.native.gtk3)
 endif ()
 
+if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "gtk4")
+  add_subdirectory(xtd_drawing_native_gtk4)
+  set(XTD_DRAWING_NATIVE_LIBRARY xtd.drawing.native.gtk4)
+endif ()
+
 if ("${XTD_NATIVE_TOOLKIT}" STREQUAL "qt5")
   add_subdirectory(xtd_drawing_native_qt5)
   set(XTD_DRAWING_NATIVE_LIBRARY xtd.drawing.native.fltk)
