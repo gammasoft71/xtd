@@ -53,8 +53,7 @@ map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
 control::control() {
-  /// @todo remove next lcommented line...
-  //application::initialize();
+  application::initialize();
   if (!application::message_loop() && cursor::current() == cursor::none) cursor::current(cursors::wait_cursor());
   set_state(state::enabled, true);
   set_state(state::visible, true);
