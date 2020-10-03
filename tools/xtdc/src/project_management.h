@@ -3081,7 +3081,7 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(path_/"README.md", lines);
     }
 
-    void generate() const {generate("");}
+    void generate() const {generate(path_.filename());}
 
     void generate(std::string name) const {
       bool first_generation = !std::filesystem::exists(build_path());
