@@ -3095,9 +3095,24 @@ namespace xtdc_command {
       else if (xtd::environment::os_version().is_linux_platform() && (first_generation || !std::filesystem::exists(build_path()/"Debug"/xtd::strings::format("{}.cbp", name)))) {
         std::filesystem::create_directories(build_path()/"Debug");
         system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Debug").c_str());
+        patch_cbp_file(name, "Debug");
       } else if (xtd::environment::os_version().is_linux_platform() && (first_generation || !std::filesystem::exists(build_path()/"Release"/xtd::strings::format("{}.cbp", name)))) {
         std::filesystem::create_directories(build_path()/"Release");
         system(xtd::strings::format("cmake -S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, build_path()/"Release").c_str());
+        patch_cbp_file(name, "Release");
+      }
+    }
+    
+    void patch_cbp_file(const std::string& name, const std::string& build_config) const {
+      if (xtd::strings::contains(xtd::io::file::read_all_text(std::filesystem::exists(path_/name/"CMakeLists.txt") ? path_/name/"CMakeLists.txt" : path_/"CMakeLists.txt"), "GUI_APPLICATION")) {
+        auto cbp_file_lines = xtd::io::file::read_all_lines(build_path()/build_config/xtd::strings::format("{}.cbp", name));
+        for (auto iterator = std::find(cbp_file_lines.begin(), cbp_file_lines.end(), xtd::strings::format("\t\t\t<Target title=\"{}\">", name)); iterator != cbp_file_lines.end(); ++iterator) {
+          if (*iterator == "\t\t\t\t<Option type=\"1\"/>") {
+            *iterator = "\t\t\t\t<Option type=\"0\"/>";
+            break;
+          }
+        }
+        xtd::io::file::write_all_lines(build_path()/build_config/xtd::strings::format("{}.cbp", name), cbp_file_lines);
       }
     }
 
