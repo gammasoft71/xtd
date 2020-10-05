@@ -304,10 +304,8 @@ namespace xtd {
           this->write_line(xtd::strings::format("{0}LogicalOperationStack={1}", std::string(this->indent_size_, ' '), xtd::strings::join(", ", event_cache.logical_operation_stack())));
         if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::thread_id) == (int)xtd::diagnostics::trace_options::thread_id)
           this->write_line(xtd::strings::format("{0}ThreadId={1}", std::string(this->indent_size_, ' '), event_cache.thread_id()));
-        /*
-         if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::date_time) == (int)xtd::diagnostics::trace_options::date_time)
+        if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::date_time) == (int)xtd::diagnostics::trace_options::date_time)
          this->write_line(xtd::strings::format("{0}DateTime={1:D}T{1:T}", std::string(this->indent_size_, ' '), event_cache.date_time()));
-         */
         if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::timestamp) == (int)xtd::diagnostics::trace_options::timestamp)
           this->write_line(xtd::strings::format("{0}Timestamp={1}", std::string(this->indent_size_, ' '), event_cache.timestamp()));
         if (((int)this->trace_output_options_ & (int)xtd::diagnostics::trace_options::callstack) == (int)xtd::diagnostics::trace_options::callstack)
