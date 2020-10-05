@@ -155,6 +155,11 @@ namespace xtd {
             key_data = static_cast<intptr_t>(key_event.GetUnicodeKey());
           else {
             switch (key_event.GetKeyCode()) {
+              case WXK_NONE:
+#if defined(__APPLE__)
+                if (key_event.GetRawKeyCode() == functionRawKeyCode) key_data = VK_FUNCTION;
+#endif
+                break;
               case WXK_BACK: key_data = VK_BACK; break;
               case WXK_TAB: key_data = VK_TAB; break;
               case WXK_RETURN: key_data = VK_RETURN; break;
@@ -303,22 +308,12 @@ namespace xtd {
               default: break;
             }
           }
-          /*
-          if (key_event.AltDown()) key_data += VK_ALT_MODIFIER;
-#if defined(__APPLE__)
-          if (key_event.CmdDown()) key_data += VK_COMMAND_MODIFIER;
-          if (key_event.RawControlDown()) key_data += VK_CONTROL_MODIFIER;
-#else
-          if (key_event.ControlDown()) key_data += VK_CONTROL_MODIFIER;
-#endif
-          if (key_event.MetaDown()) key_data += VK_META_MODIFIER;
-          if (key_event.ShiftDown()) key_data += VK_SHIFT_MODIFIER;
-           */
 
           if ((key_event.GetModifiers() & wxMOD_ALT) == wxMOD_ALT) key_data += VK_ALT_MODIFIER;
- #if defined(__APPLE__)
+#if defined(__APPLE__)
           if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_COMMAND_MODIFIER;
           if ((key_event.GetModifiers() & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) key_data += VK_CONTROL_MODIFIER;
+          if (functionKeyModifierIsDown) key_data += VK_FUNCTION_MODIFIER;
 #else
           if ((key_event.GetModifiers() & wxMOD_CONTROL) == wxMOD_CONTROL) key_data += VK_CONTROL_MODIFIER;
 #endif
@@ -346,6 +341,10 @@ namespace xtd {
         
         control_handler* event_handler_;
         bool process_result_ = true;
+#if defined(__APPLE__)
+        static constexpr size_t functionRawKeyCode = 0x0000003F;
+#endif
+        bool functionKeyModifierIsDown = false;
       };
       
       class control_handler {
@@ -514,6 +513,15 @@ namespace xtd {
       
       template<typename control_t>
       inline void control_wrapper<control_t>::process_key_event(wxEvent& event) {
+#if defined(__APPLE__)
+        if (event.GetEventType() == wxEVT_KEY_DOWN &&  static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == functionRawKeyCode) {
+          if (!functionKeyModifierIsDown) functionKeyModifierIsDown = true;
+          else {
+            functionKeyModifierIsDown = false;
+            event.SetEventType(wxEVT_KEY_UP);
+          }
+        }
+#endif
         if (event.GetEventType() == wxEVT_KEY_DOWN) event.Skip(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_CHAR) event.Skip(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CHAR, static_cast<wxKeyEvent&>(event).GetUnicodeKey(), 0, reinterpret_cast<intptr_t>(&event)));
         else if (event.GetEventType() == wxEVT_KEY_UP) event.Skip(!event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr_t>(&event)));
@@ -525,7 +533,13 @@ namespace xtd {
         wxMouseEvent& mouse_event = static_cast<wxMouseEvent&>(event);
         wxMouseState mouse_state = wxGetMouseState();
         int32_t virtual_keys = 0;
+
+#if defined(__APPLE__)
+        if (mouse_state.RawControlDown()) virtual_keys += VK_COMMAND;
         if (mouse_state.ControlDown()) virtual_keys += MK_CONTROL;
+#else
+        if (mouse_state.ControlDown()) virtual_keys += MK_CONTROL;
+#endif
         if (mouse_state.ShiftDown()) virtual_keys += MK_SHIFT;
         if (mouse_state.LeftIsDown()) virtual_keys += MK_LBUTTON;
         if (mouse_state.MiddleIsDown()) virtual_keys += MK_MBUTTON;

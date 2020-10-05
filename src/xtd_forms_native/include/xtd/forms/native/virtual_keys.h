@@ -47,12 +47,15 @@ constexpr size_t VK_Z = 0x00005A;
 constexpr size_t VK_COMMAND = 0x00000100;
 constexpr size_t VK_LCOMMAND = 0x00000101;
 constexpr size_t VK_RCOMMAND = 0x00000102;
+// 0x00000103 : reserved for VK_LCOMMAND and VK_RCOMMAND combined
+constexpr size_t VK_FUNCTION = 0x00000104;
 
 constexpr size_t VK_SHIFT_MODIFIER = 0x00010000;
 constexpr size_t VK_CONTROL_MODIFIER = 0x00020000;
 constexpr size_t VK_ALT_MODIFIER = 0x00040000;
 constexpr size_t VK_COMMAND_MODIFIER = 0x00080000;
 constexpr size_t VK_META_MODIFIER = 0x00100000;
+constexpr size_t VK_FUNCTION_MODIFIER = 0x00200000;
 
 #ifndef VK_LBUTTON
 constexpr size_t VK_LBUTTON = 0x000001;
