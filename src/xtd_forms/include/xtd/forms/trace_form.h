@@ -13,8 +13,14 @@ namespace xtd {
         xtd::diagnostics::trace::listeners().push_back(listener_);
         dock(xtd::forms::dock_style::bottom);
         start_position(xtd::forms::form_start_position::manual);
-        text("Trace form").visible(true);
-        text_.multiline(true).read_only(true).word_wrap(false).parent(*this).dock(xtd::forms::dock_style::fill);
+        text("Trace form");
+        visible(true);
+
+        text_.dock(xtd::forms::dock_style::fill);
+        text_.multiline(true);
+        text_.parent(*this);
+        text_.read_only(true);
+        text_.word_wrap(false);
       }
       
       /// @cond
