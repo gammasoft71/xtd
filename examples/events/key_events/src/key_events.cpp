@@ -8,12 +8,10 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    trace_form_.dock(xtd::forms::dock_style::right);
     text("Key events example");
     
     key_down += [&](control& sender, key_event_args& e) {
       trace::write_line(strings::format("key_down={{key_code={}, key_data=[{}], value={}, modifiers=[{}]}}", e.key_code(), e.key_data(), e.key_value(), e.modifiers()));
-      trace::indent();
     };
 
     key_press += [&](control& sender, key_press_event_args& e) {
@@ -21,7 +19,6 @@ public:
     };
 
     key_up += [&](control& sender, key_event_args& e) {
-      trace::unindent();
       trace::write_line(strings::format("key_up={{key_code={}, key_data=[{}], value={}, modifiers=[{}]}}", e.key_code(), e.key_data(), e.key_value(), e.modifiers()));
       if (e.modifiers() == keys::none) trace::write_line();
     };

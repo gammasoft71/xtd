@@ -8,7 +8,6 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    //trace_form_.dock(dock_style::right);
     text("Mouse events example");
 
     click += [&] {
@@ -20,15 +19,15 @@ public:
     };
     
     mouse_click += [&](control& sender, const mouse_event_args& e) {
-      trace::write_line(strings::format("mouse_click={{button={}, clicks={}, delta={}, location=[{}]}}", e.button(), e.clicks(), e.delta(), e.location()));
+      trace::write_line(strings::format("mouse_click={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys()));
     };
     
     mouse_double_click += [&](control& sender, const mouse_event_args& e) {
-      trace::write_line(strings::format("mouse_double_click={{button={}, clicks={}, delta={}, location=[{}]}}", e.button(), e.clicks(), e.delta(), e.location()));
+      trace::write_line(strings::format("mouse_double_click={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys()));
     };
     
     mouse_down += [&](control& sender, const mouse_event_args& e) {
-      trace::write_line(strings::format("mouse_down={{button={}, clicks={}, delta={}, location=[{}]}}", e.button(), e.clicks(), e.delta(), e.location()));
+      trace::write_line(strings::format("mouse_down={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys()));
     };
 
     mouse_enter += [&] {
@@ -44,11 +43,11 @@ public:
     };
     
     mouse_move += [&](control& sender, const mouse_event_args& e) {
-      trace::write_line(strings::format("mouse_move={{button={}, clicks={}, delta={}, location=[{}]}}", e.button(), e.clicks(), e.delta(), e.location()));
+      trace::write_line(strings::format("mouse_move={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys()));
     };
     
     mouse_up += [&](control& sender, const mouse_event_args& e) {
-      trace::write_line(strings::format("mouse_up={{button={}, clicks={}, delta={}, location=[{}]}}", e.button(), e.clicks(), e.delta(), e.location()));
+      trace::write_line(strings::format("mouse_up={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys()));
     };
     
     mouse_wheel += [&](control& sender, const mouse_event_args& e) {
