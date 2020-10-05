@@ -14,6 +14,8 @@ namespace xtd {
     /// @brief Provides trace event data specific to a thread and a process.
     class trace_event_cache {
     public:
+      //using clock = std::chrono::high_resolution_clock;
+      using clock = std::chrono::system_clock;
       /// @brief Initializes a new instance of the trace_event_cache class.
       trace_event_cache() = default;
       
@@ -31,9 +33,9 @@ namespace xtd {
       /// @brief Gets the date and time at which the event trace occurred.
       /// @return DateTime A DateTime structure whose value is a date and time expressed in Coordinated Universal Time (UTC).
       /// @remarks The first time the property is accessed in an instance of the trace_event_cache class, the current time is returned. Subsequent queries of this property in that instance return that same DateTime value, allowing it to be used as a timestamp.
-      std::chrono::high_resolution_clock::time_point date_time() const {
-        if (this->date_time_ == std::chrono::high_resolution_clock::time_point::min())
-          this->date_time_ = std::chrono::high_resolution_clock::now();
+      clock::time_point date_time() const {
+        if (this->date_time_ == clock::time_point::min())
+          this->date_time_ = clock::now();
         return this->date_time_;
       }
       
@@ -66,7 +68,7 @@ namespace xtd {
       }
     
     private:
-      mutable std::chrono::high_resolution_clock::time_point date_time_;
+      mutable clock::time_point date_time_ = clock::time_point::min();
     };
   }
 }
