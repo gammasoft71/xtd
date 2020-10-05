@@ -266,6 +266,12 @@ namespace xtd {
 #endif
       }
 
+      static void write_line() {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        write_line("");
+#endif
+      }      
+
       static void write_line(const std::string& message) {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         for (auto listener : listeners_) {
