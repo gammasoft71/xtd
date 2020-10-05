@@ -107,7 +107,7 @@ inline value_t __parse_floating_point(const std::basic_string<char_t>& str, int 
   }
   
   result = sign < 0 ? -result : result;
-  if (result < -std::numeric_limits<value_t>::max() || result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
+  if (result < std::numeric_limits<value_t>::min() || result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
   return static_cast<value_t>(result);
 }
 
@@ -153,7 +153,18 @@ inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s,
   
   __parse_check_valid_characters(str, styles);
   
-  return __parse_floating_point<value_t>(str, sign, styles);
+  long double result;
+  if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
+    result = std::stold(str, nullptr);
+  else {
+    std::stringstream ss(str);
+    ss.imbue(std::locale());
+    ss >> result;
+  }
+  
+  result = sign < 0 ? -result : result;
+  if (result < -std::numeric_limits<value_t>::max() || result > std::numeric_limits<value_t>::max()) throw std::out_of_range("Out of range");
+  return static_cast<value_t>(result);
 }
 
 template <typename value_t, typename char_t>
