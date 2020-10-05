@@ -57,6 +57,8 @@ forms::create_params text_box::create_params() const {
   if (this->border_style_ == forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
   else if (this->border_style_ == forms::border_style::fixed_3d) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
 
+  if (accepts_return_) create_params.style(create_params.style() | ES_WANTRETURN);
+  if (accepts_tab_) create_params.style(create_params.style() | ES_WANTTAB);
   if (multiline_) create_params.style(create_params.style() | ES_MULTILINE);
   if (use_system_password_char_) create_params.style(create_params.style() | ES_PASSWORD);
   if (read_only_) create_params.style(create_params.style() | ES_READONLY);
@@ -67,6 +69,10 @@ forms::create_params text_box::create_params() const {
 
 drawing::size text_box::measure_control() const {
   return drawing::size(this->client_size_.width(), static_cast<int32_t>(this->font().get_height()) + 2 + (this->border_style_ == border_style::none ? 0 : 4));
+}
+
+void text_box::append_text(const std::string& value) {
+  native::text_box::append(handle_, value);
 }
 
 void text_box::select(size_t start, size_t length) {

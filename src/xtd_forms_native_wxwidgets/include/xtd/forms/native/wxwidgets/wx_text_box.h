@@ -38,6 +38,8 @@ namespace xtd {
           if ((style & ES_PASSWORD) == ES_PASSWORD) wx_style |= wxTE_PASSWORD;
           if ((style & ES_READONLY) == ES_READONLY) wx_style |= wxTE_READONLY;
           if ((style & ES_MULTILINE) == ES_MULTILINE && (style & ES_AUTOHSCROLL) == ES_AUTOHSCROLL) wx_style |= wxTE_DONTWRAP;
+          if ((style & ES_WANTRETURN) == ES_WANTRETURN) wx_style |= wxTE_PROCESS_ENTER;
+          if ((style & ES_WANTTAB) == ES_WANTTAB) wx_style |= wxTE_PROCESS_TAB;
 
           return wx_style;
         }

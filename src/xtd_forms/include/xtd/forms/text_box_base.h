@@ -9,6 +9,16 @@ namespace xtd {
     public:      
       forms::cursor default_cursor() const override {return forms::cursors::ibeam();}
 
+      virtual bool accepts_tab() const {return accepts_tab_;}
+      virtual text_box_base& accepts_tab(bool value) {
+        if (accepts_tab_ != value) {
+          accepts_tab_ = value;
+          recreate_handle();
+          on_accepts_tab_changed(event_args::empty);
+        }
+        return *this;
+      }
+
       virtual bool read_only() const {return read_only_;}
       virtual text_box_base& read_only(bool value) {
         if (read_only_ != value) {
@@ -18,7 +28,7 @@ namespace xtd {
         }
         return *this;
       }
-      
+
       virtual bool word_wrap() const {return word_wrap_;}
       virtual text_box_base& word_wrap(bool value) {
         if (word_wrap_ != value) {
@@ -28,11 +38,14 @@ namespace xtd {
         return *this;
       }
       
+      event<text_box_base, event_handler<control&>> accepts_tab_changed;
       event<text_box_base, event_handler<control&>> read_only_changed;
 
-      void append_text(const std::string& value) {
+      virtual void append_text(const std::string& value) {
+        suspend_layout();
         text(text() + value);
         select(text().size(), 0);
+        resume_layout();
       }
       
       void clear() {
@@ -60,7 +73,9 @@ namespace xtd {
 
     protected:
       text_box_base() = default;
+      virtual void on_accepts_tab_changed(const event_args& e) {if (can_raise_events()) accepts_tab_changed(*this, e);}
       virtual void on_read_only_changed(const event_args& e) {if (can_raise_events()) read_only_changed(*this, e);}
+      bool accepts_tab_ = false;
       bool read_only_ = false;
       bool word_wrap_ = false;
       size_t selection_start_ = 0;
