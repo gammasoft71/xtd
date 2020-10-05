@@ -175,6 +175,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/toggle_button.h
   include/xtd/forms/tool_bar_images.h
   include/xtd/forms/trace_form.h
+  include/xtd/forms/trace_form_base.h
   include/xtd/forms/track_bar.h
   include/xtd/forms/up_down_base.h
   include/xtd/forms/up_down_button.h
