@@ -1,4 +1,4 @@
-#define TRACE 1
+#define TRACE
 #include <xtd/xtd.forms>
 
 using namespace xtd::forms;
@@ -21,11 +21,9 @@ public:
       if (e.modifiers() == keys::none) xtd::diagnostics::trace::write_line();
     };
   }
-  
-private:
-  trace_form trace_form_;
 };
 
 int main() {
+  trace_form trace;
   application::run(form1());
 }
