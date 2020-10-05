@@ -136,8 +136,15 @@ namespace xtdc_command {
       return xtd::strings::format("Project {} opened", get_name());
     }
 
+    std::string update(const std::string& target) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Update project aborted.", path_);
+      change_current_directory current_directory {build_path()};
+      generate(target);
+      return "";
+    }
+
     std::string run(const std::string& target, bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Rn project aborted.", path_);
+      if (!is_path_already_exist_and_not_empty(path_)) return xtd::strings::format("Path {} does not exists or is empty! Run project aborted.", path_);
       change_current_directory current_directory {xtd::environment::os_version().is_linux_platform() ? (build_path()/(release ? "Release" : "Debug")) : build_path()};
       build(target, false, release);
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
@@ -145,7 +152,7 @@ namespace xtdc_command {
       system(target_path.c_str());
       return "";
     }
-    
+
     std::vector<std::string>& targets() const {
       static std::vector<std::string> targets;
       if (targets.size() == 0)
