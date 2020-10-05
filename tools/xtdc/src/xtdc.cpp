@@ -57,8 +57,9 @@ namespace xtdc_command {
 
         "",
         "command:",
-        "  new              Initialize project.",
-        "  add              Add new project to project.",
+        "  new              Initializes project.",
+        "  add              Adds new project to project.",
+        "  update           Regenerates a project.",
         "  run              Compiles and immediately executes a project.",
         "  build            Builds a project.",
         "  install          Install a project.",
@@ -207,6 +208,27 @@ namespace xtdc_command {
       };
     }
 
+    static vector<string> get_update_help() noexcept {
+      return {
+        "Regenrates a project.",
+        "Usage: update [path] [<options>]",
+        "",
+        "options:",
+        "  -h, --help          Displays help for this command.",
+        "  -t, --target        update a specified target project.",
+        "",
+        "path:",
+        "  Project path location. If no path is specified, the current path is used.",
+        "",
+        "",
+        "Exemples:",
+        "    xtdc update",
+        "    xtdc update -p my_apps",
+        "    xtdc update -p my_apps -t my_app1",
+        "    xtdc update --help",
+      };
+    }
+
     static vector<string> get_run_help() noexcept {
       return {
         "Compiles and immediately executes a project.",
@@ -229,7 +251,7 @@ namespace xtdc_command {
         "    xtdc run --help",
       };
     }
-    
+
     static vector<string> get_targets_help() noexcept {
       return {
         "List project targets.",
@@ -483,6 +505,28 @@ namespace xtdc_command {
       return 0;
     }
     
+    static int update(const vector<string>& args) {
+      bool show_help = false;
+      string invalid_option;
+      string target;
+      string path;
+      if (!process_update_arguments(args, show_help, target, path, invalid_option)) {
+        if (!invalid_option.empty())
+          cout << format("Unknown option: {0}", invalid_option) << endl;
+        else
+          cout << "Invalid parameters" << endl;
+        cout << strings::join("\n", get_update_help()) << endl;
+        return -1;
+      }
+      if (show_help)
+        cout << strings::join("\n", get_update_help()) << endl;
+      else {
+        if (path.empty()) path = environment::current_directory();
+        cout << project_management(filesystem::absolute(filesystem::path(path))).update(target) << endl;
+      }
+      return 0;
+    }
+
     static int run(const vector<string>& args) {
       bool show_help = false;
       string invalid_option;
@@ -733,6 +777,22 @@ namespace xtdc_command {
       return true;
     }
 
+    static bool process_update_arguments(const vector<string>& args, bool& show_help, string& target, string& path, string& invalid_option) {
+      for (size_t i = 1; i < args.size(); i += 1) {
+        if (args[i] == "-h" || args[i] == "--help")
+          show_help = true;
+        else if (args[i] == "-t" || args[i] == "--target")
+          target = args[++i];
+        else if (path.empty())
+          path = args[i];
+        else if (strings::starts_with(args[i], '-')) {
+          invalid_option = args[i];;
+          return false;
+        }
+      }
+      return true;
+    }
+
     static bool process_run_arguments(const vector<string>& args, bool& show_help, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -752,7 +812,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_targets_arguments(const vector<string>& args, bool& show_help, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -816,7 +876,7 @@ namespace xtdc_command {
         if (show_help) cout << strings::join("\n", get_help()) << endl;
         return 0;
       }
-      map<string, function<int(const vector<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
+      map<string, function<int(const vector<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
       if (commands.find(command_args[0]) == commands.end()) return invalid_command(command_args);
       return commands[command_args[0]](command_args);
     }
