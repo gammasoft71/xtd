@@ -34,7 +34,7 @@ namespace {
 
   bool debug_events = false;
   bool debug_layout = false;
-  bool debug_workaround = true;
+  bool debug_workaround = false;
 
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
     if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON)

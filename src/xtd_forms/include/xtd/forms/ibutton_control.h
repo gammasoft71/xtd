@@ -1,4 +1,5 @@
 #pragma once
+#include <xtd/interface.h>
 #include "control.h"
 #include "dialog_result.h"
 
@@ -10,7 +11,7 @@ namespace xtd {
     /// @remarks An example of where this interface might be implemented is default and cancel button processing. Default buttons are notified when an unprocessed ENTER key is entered for a form, just like a dialog box would be closed. Similarly, cancel buttons are notified whenever an unprocessed ESC key is entered on a form, much like a dialog box would be dismissed.
     /// @par Notes to implementers
     /// Implement this interface in classes that act as button controls. The members of this interface will provide basic button functionality, such as providing a dialog_result to the parent form or the ability to perform a click event, or acting as the default button of a form.
-    class ibutton_control  {
+    class ibutton_control interface_  {
     public:
       /// @brief Gets the value returned to the parent form when the button is clicked.
       /// @return One of the DialogResult values.
