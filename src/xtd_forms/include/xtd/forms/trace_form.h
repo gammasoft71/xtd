@@ -8,7 +8,12 @@ namespace xtd {
   namespace forms {
     class trace_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
-      trace_form() : trace_form_base("Trace") {xtd::diagnostics::trace::listeners().push_back(listener_);}
+      trace_form() : trace_form_base("Trace") {
+        xtd::diagnostics::trace::listeners().push_back(listener_);
+#if defined(TRACE)
+        visible(true);
+#endif
+      }
       /// @cond
       ~trace_form() {xtd::diagnostics::trace::listeners().erase(std::find(xtd::diagnostics::trace::listeners().begin(), xtd::diagnostics::trace::listeners().end(), listener_));}
       /// @endcond
