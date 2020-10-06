@@ -8,7 +8,12 @@ namespace xtd {
   namespace forms {
     class debug_form final : public xtd::forms::icontrol_trace, public xtd::forms::trace_form_base {
     public:
-      debug_form() : trace_form_base("Debug") {xtd::diagnostics::debug::listeners().push_back(listener_);}
+      debug_form() : trace_form_base("Debug") {
+        xtd::diagnostics::debug::listeners().push_back(listener_);
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        visible(true);
+#endif
+      }
       /// @cond
       ~debug_form() {xtd::diagnostics::debug::listeners().erase(std::find(xtd::diagnostics::debug::listeners().begin(), xtd::diagnostics::debug::listeners().end(), listener_));}
       /// @endcond
