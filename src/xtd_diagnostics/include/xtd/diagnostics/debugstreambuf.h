@@ -12,9 +12,11 @@ namespace xtd {
     public:
       int sync() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (!this->str().empty()) {
-          xtd::diagnostics::debug::write_line(strings::trim_end(this->str(), '\n'));
-          this->str("");
+        if (!str().empty()) {
+          if (str() == "\n") xtd::diagnostics::debug::write_line();
+          else if (strings::ends_with(str(), '\n')) xtd::diagnostics::debug::write_line(strings::trim_end(str(), '\n'));
+          else xtd::diagnostics::debug::write(str());
+          str("");
         }
 #endif
         return 0;
