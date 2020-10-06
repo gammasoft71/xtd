@@ -38,7 +38,6 @@ namespace xtd {
         dock(xtd::forms::dock_style::bottom);
         start_position(xtd::forms::form_start_position::manual);
         this->text(text);
-        visible(true);
         
         text_.dock(xtd::forms::dock_style::fill);
         text_.multiline(true);
