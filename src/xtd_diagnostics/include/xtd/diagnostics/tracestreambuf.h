@@ -12,8 +12,12 @@ namespace xtd {
     public:
       int sync() override {
 #if defined(TRACE)
-        xtd::diagnostics::trace::write_line(strings::trim_end(this->str(), '\n'));
-        this->str("");
+        if (!str().empty()) {
+          if (str() == "\n") xtd::diagnostics::trace::write_line();
+          else if (strings::ends_with(str(), '\n')) xtd::diagnostics::trace::write_line(strings::trim_end(str(), '\n'));
+          else xtd::diagnostics::trace::write(str());
+          str("");
+        }
 #endif
         return 0;
       }
