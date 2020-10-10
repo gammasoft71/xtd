@@ -22,7 +22,7 @@ public:
     label_dialog_result.width(200);
     
     message_box::message_box_closed += [&](const message_box_closed_event_args& e) {
-      label_dialog_result.text(strings::format("DialogResult = {}", e.dialog_result()));
+      label_dialog_result.text(strings::format("dialog_result = {}", e.dialog_result()));
     };
   }
   
