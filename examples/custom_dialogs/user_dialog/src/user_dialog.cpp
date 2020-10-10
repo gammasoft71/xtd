@@ -7,7 +7,6 @@ using namespace xtd::forms;
 class user_input_dialog : public form {
 public:
   user_input_dialog() {
-    back_color(drawing::color::dark_blue);
     accept_button(button_ok);
     cancel_button(button_cancel);
     client_size({200, 80});
