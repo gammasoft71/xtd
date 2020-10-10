@@ -225,22 +225,38 @@ void form::close() {
 }
 
 forms::dialog_result form::show_dialog() {
-  return show_dialog(application::open_forms()[0].get());
-}
-
-forms::dialog_result form::show_dialog(const iwin32_window& owner) {
-  intptr_t current_parent = parent_;
   set_state(state::modal, true);
-  if (owner.handle() != handle()) parent_ = owner.handle();
-  show();
+  previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+  recreate_handle();
   forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
   result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
   application::raise_leave_thread_modal(event_args::empty);
   set_state(state::modal, false);
-  parent_ = current_parent;
-  hide();
   return result;
+}
+
+forms::dialog_result form::show_dialog(const iwin32_window& owner) {
+  parent_before_show_dialog_ = parent_;
+  set_state(state::modal, true);
+  if (owner.handle() != handle()) parent_ = owner.handle();
+  previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+  recreate_handle();
+  forms::dialog_result result = dialog_result_ = forms::dialog_result::none;
+  application::raise_enter_thread_modal(event_args::empty);
+  result = static_cast<forms::dialog_result>(native::form::show_dialog(handle()));
+  return result;
+}
+
+void form::show_dialog_sheet(const iwin32_window& owner) {
+  parent_before_show_dialog_ = parent_;
+  set_state(state::modal, true);
+  if (owner.handle() != handle()) parent_ = owner.handle();
+  previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
+  recreate_handle();
+  dialog_result_ = forms::dialog_result::none;
+  application::raise_enter_thread_modal(event_args::empty);
+  native::form::show_dialog_sheet(handle());
 }
 
 forms::create_params form::create_params() const {
@@ -360,6 +376,9 @@ void form::wm_close(message &message) {
     } else {
       if (dialog_result_ == forms::dialog_result::none) dialog_result_ = forms::dialog_result::cancel;
       native::form::end_dialog(handle(), static_cast<int32_t>(dialog_result_));
+      application::raise_leave_thread_modal(event_args::empty);
+      set_state(state::modal, false);
+      parent_ = parent_before_show_dialog_;
     }
     form_closed_event_args close_event_args;
     on_form_closed(close_event_args);
@@ -369,14 +388,8 @@ void form::wm_close(message &message) {
 void form::wm_key_up(message& message) {
   container_control::wnd_proc(message);
   key_event_args key_event_args(static_cast<keys>(message.wparam()));
-  if (key_event_args.key_data() == keys::enter && accept_button_.has_value()) {
-    accept_button_.value().get().perform_click();
-    cdebug << "accept_button::perform_click" << endl;
-  }
-  if (key_event_args.key_data() == keys::escape && cancel_button_.has_value()) {
-    cancel_button_.value().get().perform_click();
-    cdebug << "cancel_button::perform_click" << endl;
-  }
+  if (key_event_args.key_data() == keys::enter && accept_button_.has_value()) accept_button_.value().get().perform_click();
+  else if (key_event_args.key_data() == keys::escape && cancel_button_.has_value()) cancel_button_.value().get().perform_click();
 }
 
 void form::on_handle_created(const event_args &e) {

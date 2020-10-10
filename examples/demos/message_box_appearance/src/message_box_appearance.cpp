@@ -57,8 +57,7 @@ public:
     button_try_it.parent(*this);
     button_try_it.click += [&] {
       label_dialog_result.text("result = ");
-      forms::dialog_result result = message_box::show(*this, text_message.text(), text_caption.text(), any_cast<message_box_buttons>(choice_buttons.selected_item().tag()), any_cast<message_box_icon>(choice_icons.selected_item().tag()));
-      label_dialog_result.text(strings::format("result = {}", result));
+      label_dialog_result.text(strings::format("result = {}", message_box::show(*this, text_message.text(), text_caption.text(), any_cast<message_box_buttons>(choice_buttons.selected_item().tag()), any_cast<message_box_icon>(choice_icons.selected_item().tag()))));
     };
 
     label_dialog_result.text("result = ");

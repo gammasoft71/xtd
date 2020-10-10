@@ -121,6 +121,8 @@ namespace xtd {
       
       virtual forms::dialog_result show_dialog(const iwin32_window& owner);
       
+      virtual void show_dialog_sheet(const iwin32_window& owner);
+      
       event<form, event_handler<control&>> activated;
       event<form, event_handler<control&>> deactivate;
 
@@ -180,6 +182,7 @@ namespace xtd {
       bool top_most_ = false;
       intptr_t owner_ = 0;
       void internal_set_window_state();
+      intptr_t parent_before_show_dialog_ = 0;
     };
   }
 }
