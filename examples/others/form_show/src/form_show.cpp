@@ -8,8 +8,8 @@ namespace example {
   class form1 : public form {
   public:
     form1() {
-      client_size({320, 410});
-      controls().push_back_range({button_modal, button_top_most, button_modeless, button_normal});
+      client_size({320, 510});
+      controls().push_back_range({button_sheet_modal, button_modal, button_top_most, button_modeless, button_normal});
       padding(5);
       text("Form show example");
 
@@ -40,11 +40,23 @@ namespace example {
         dialogs.push_back(move(dialog));
       };
 
-      button_modal.dock(xtd::forms::dock_style::fill);
+      button_modal.dock(xtd::forms::dock_style::top);
+      button_modal.height(100);
       button_modal.text("Show modal");
       button_modal.click += [&] {
         auto dialog = control::create<form>("dialog show modal", {}, {250, 100});
-        dialog->show_dialog(*this);
+        dialog->show_dialog();
+      };
+
+      button_sheet_modal.dock(xtd::forms::dock_style::fill);
+      button_sheet_modal.text("Show sheet modal");
+      button_sheet_modal.click += [&] {
+        auto dialog = control::create<form>("dialog show sheet modal", {}, {250, 100});
+        dialog->key_up += [&](control& control, key_event_args& e) {
+          if (e.key_code() == keys::escape) static_cast<form&>(control).close();
+        };
+        dialog->show_sheet_dialog(*this);
+        dialogs.push_back(move(dialog));
       };
     }
     
@@ -57,6 +69,7 @@ namespace example {
     button button_modeless;
     button button_top_most;
     button button_modal;
+    button button_sheet_modal;
     vector<shared_ptr<form>> dialogs;
   };
 }
