@@ -121,7 +121,7 @@ namespace xtd {
       
       virtual forms::dialog_result show_dialog(const iwin32_window& owner);
       
-      virtual void show_dialog_sheet(const iwin32_window& owner);
+      virtual void show_sheet_dialog(const iwin32_window& owner);
       
       event<form, event_handler<control&>> activated;
       event<form, event_handler<control&>> deactivate;

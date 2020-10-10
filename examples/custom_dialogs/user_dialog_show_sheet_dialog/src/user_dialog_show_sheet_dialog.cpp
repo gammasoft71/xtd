@@ -59,7 +59,11 @@ public:
     button_dialog.text("Dialog...");
     button_dialog.click += [&] {
       dialog.input_text(input_text.text());
-      if (dialog.show_dialog(*this) == forms::dialog_result::ok)
+      dialog.show_sheet_dialog(*this);
+    };
+    
+    dialog.form_closed += [&] {
+      if (dialog.dialog_result() == forms::dialog_result::ok)
         input_text.text(dialog.input_text());
     };
   }
