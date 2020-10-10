@@ -12,49 +12,49 @@ namespace  {
   }
 }
 
-dialog_result message_box::show(const control& owner, const std::string &text) {
+dialog_result message_box::show(const iwin32_window& owner, const std::string &text) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, "", message_box_buttons::ok, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
-dialog_result message_box::show(const control& owner, const std::string &text, const std::string &caption) {
+dialog_result message_box::show(const iwin32_window& owner, const std::string &text, const std::string &caption) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, message_box_buttons::ok, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
-dialog_result message_box::show(const control& owner, const std::string &text, const std::string &caption, message_box_buttons buttons) {
+dialog_result message_box::show(const iwin32_window& owner, const std::string &text, const std::string &caption, message_box_buttons buttons) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
-dialog_result message_box::show(const control& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon) {
+dialog_result message_box::show(const iwin32_window& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
-dialog_result message_box::show(const control& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button) {
+dialog_result message_box::show(const iwin32_window& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, default_button, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
-dialog_result message_box::show(const control& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options) {
+dialog_result message_box::show(const iwin32_window& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, default_button, options, false);
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
-dialog_result message_box::show(const control& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {
+dialog_result message_box::show(const iwin32_window& owner, const std::string &text, const std::string &caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, default_button, options, display_help_button);
   application::raise_leave_thread_modal(event_args::empty);
