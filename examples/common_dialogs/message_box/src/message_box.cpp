@@ -15,7 +15,7 @@ public:
     button_show_message.text("Message box");
     button_show_message.width(100);
     button_show_message.click += [&] {
-      forms::dialog_result result = message_box::show("Hello, World!", "Message", message_box_buttons::ok_cancel, message_box_icon::asterisk);
+      forms::dialog_result result = message_box::show(*this, "Hello, World!", "Message", message_box_buttons::ok_cancel, message_box_icon::asterisk);
       label_dialog_result.text(strings::format("DialogResult = {}", result));
     };
     
