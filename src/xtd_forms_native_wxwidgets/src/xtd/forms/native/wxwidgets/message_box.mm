@@ -1,3 +1,4 @@
+/*
 #if defined(__APPLE__)
 #include <xtd/xtd.strings>
 #include <xtd/forms/native/application.h>
@@ -126,3 +127,4 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
   }
 }
 #endif
+*/
