@@ -187,9 +187,9 @@ void application::exit() {
 void application::exit(cancel_event_args& e) {
   bool cancel_exit = false;
   for (auto f : application::open_forms()) {
-    form_closing_event_args e;
-    f.get().on_form_closing(e);
-    if (e.cancel()) {
+    form_closing_event_args closing_args;
+    f.get().on_form_closing(closing_args);
+    if (closing_args.cancel()) {
       cancel_exit = true;
       break;
     }
@@ -197,10 +197,8 @@ void application::exit(cancel_event_args& e) {
   
   e.cancel(cancel_exit);
   if (!cancel_exit) {
-    for (auto f : application::open_forms()) {
-      form_closed_event_args e;
-      f.get().on_form_closed(e);
-    }
+    for (auto f : application::open_forms())
+      f.get().on_form_closed(form_closed_event_args());
     native::application::exit();
   }
 }
