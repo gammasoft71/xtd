@@ -248,7 +248,7 @@ forms::dialog_result form::show_dialog(const iwin32_window& owner) {
   return result;
 }
 
-void form::show_dialog_sheet(const iwin32_window& owner) {
+void form::show_sheet_dialog(const iwin32_window& owner) {
   parent_before_show_dialog_ = parent_;
   set_state(state::modal, true);
   if (owner.handle() != handle()) parent_ = owner.handle();
@@ -256,7 +256,7 @@ void form::show_dialog_sheet(const iwin32_window& owner) {
   recreate_handle();
   dialog_result_ = forms::dialog_result::none;
   application::raise_enter_thread_modal(event_args::empty);
-  native::form::show_dialog_sheet(handle());
+  native::form::show_sheet_dialog(handle());
 }
 
 forms::create_params form::create_params() const {

@@ -101,7 +101,7 @@ int32_t form::show_dialog(intptr_t form) {
   return result;
 }
 
-void form::show_dialog_sheet(intptr_t form) {
+void form::show_sheet_dialog(intptr_t form) {
   if (form == 0) return;
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("show_dialog work only dialog");
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->ShowWindowModal();

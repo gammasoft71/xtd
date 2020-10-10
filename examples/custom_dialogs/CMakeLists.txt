@@ -5,4 +5,5 @@ find_package(xtd.forms REQUIRED)
 
 add_projects(
   user_dialog
+  user_dialog_show_sheet_dialog
 )
