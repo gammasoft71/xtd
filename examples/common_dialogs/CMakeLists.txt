@@ -11,6 +11,7 @@ add_projects(
   font_dialog
   input_box
   message_box
+  message_box_show_sheet
   open_file_dialog
   save_file_dialog
 )
