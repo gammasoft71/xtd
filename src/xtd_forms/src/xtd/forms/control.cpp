@@ -13,6 +13,7 @@
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/control.h"
 #include "../../../include/xtd/forms/form.h"
+#include "../../../include/xtd/forms/message_box.h"
 
 using namespace std;
 using namespace xtd;

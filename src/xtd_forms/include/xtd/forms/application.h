@@ -6,7 +6,6 @@
 #include "application_informations.h"
 #include "imessage_filter.h"
 #include "message.h"
-#include "message_box.h"
 #include "message_loop_callback.h"
 #include "theme.h"
 #include <xtd/xtd.delegates>
@@ -15,7 +14,12 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a collection of form objects.
+    /// @cond
+    class input_dialog;
+    class message_box;
+    /// @endcond
+
+  /// @brief Represents a collection of form objects.
     /// @remarks form_collection is used by the application object to list the currently open forms in an application through the open_forms property.
     using form_collection = std::vector<std::reference_wrapper<form>>;
     
@@ -275,6 +279,7 @@ namespace xtd {
     private:
       /// @cond
       friend class form;
+      friend class input_dialog;
       friend class message_box;
       /// @endcond
       static void on_app_thread_exit(const application_context& sender, const event_args& e);

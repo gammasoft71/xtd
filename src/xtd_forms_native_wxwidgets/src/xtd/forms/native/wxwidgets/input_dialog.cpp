@@ -25,14 +25,14 @@ namespace {
   }
 #endif
 
-  wxWindowPtr<wxTextEntryDialog> create_text_entry_dialog(intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
+  wxTextEntryDialog* create_text_entry_dialog(intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
 #if defined(__WXMSW__)
     handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
     int style = wxTextEntryDialogStyle;
     if (multiline) style |= wxTE_MULTILINE;
     if (use_system_password_char) style |= wxTE_PASSWORD;
-    wxWindowPtr<wxTextEntryDialog> text_entry_dialog(new wxTextEntryDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), text == "" ? " " : text, caption, value, style));
+    wxTextEntryDialog* text_entry_dialog = new wxTextEntryDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), text == "" ? " " : text, caption, value, style);
     
 #if defined(__WXMSW__)
     if (application::dark_mode_enabled()) {
@@ -51,19 +51,19 @@ namespace {
 
 
 int32_t input_dialog::show_dialog(intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
-  wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, caption, value, multiline, use_system_password_char));
+  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, caption, value, multiline, use_system_password_char);
   int result = IDNONE;
 
   if (!control) {
     result = text_entry_dialog->ShowModal() == wxID_OK ? IDOK : IDCANCEL;
-    if (result == IDOK) value = text_entry_dialog->GetValue();
+    if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
     return result;
   }
 
-  text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&text_entry_dialog, &result, &value](wxWindowModalDialogEvent& event) {
+  text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, &result, &value](wxWindowModalDialogEvent& event) {
     result = event.GetReturnCode() == wxID_OK ? IDOK : IDCANCEL;
-    if (result == IDOK) value = text_entry_dialog->GetValue();
-    text_entry_dialog.reset();
+    if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
+    text_entry_dialog->Destroy();
   });
   text_entry_dialog->ShowWindowModal();
   while (result == IDNONE)
@@ -71,13 +71,14 @@ int32_t input_dialog::show_dialog(intptr_t control, const std::string& text, con
   return result;
 }
 
-void input_dialog::show_sheet_dialog(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
-  wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, caption, value, multiline, use_system_password_char));
-  text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&text_entry_dialog, on_dialog_closed, &value](wxWindowModalDialogEvent& event) {
-    auto result = event.GetReturnCode();
-    if (result == wxID_OK) value = text_entry_dialog->GetValue();
-    on_dialog_closed(result == wxID_OK ? IDOK : IDCANCEL);
-    text_entry_dialog.reset();
+void input_dialog::show_sheet_dialog(xtd::delegate<void(int32_t, const std::string&)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
+  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, caption, value, multiline, use_system_password_char);
+
+  text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, on_dialog_closed, &value](wxWindowModalDialogEvent& event) {
+    auto result = event.GetReturnCode() == wxID_OK ? IDOK : IDCANCEL;
+    if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
+    on_dialog_closed(result, text_entry_dialog->GetValue().ToUTF8().data());
+    text_entry_dialog->Destroy();
   });
   text_entry_dialog->ShowWindowModal();
 }

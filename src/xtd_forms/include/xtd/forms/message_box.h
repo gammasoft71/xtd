@@ -22,7 +22,7 @@ namespace xtd {
     class message_box_closed_event_args : public event_args {
     public:
       message_box_closed_event_args() = default;
-      message_box_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
+      explicit message_box_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
       
       /// @cond
       message_box_closed_event_args(const message_box_closed_event_args& form_closed_event_args) = default;
