@@ -2,6 +2,8 @@
 #include <xtd/forms/native/about_dialog.h>
 #include <xtd/drawing/system_icons.h>
 #include "../../../include/xtd/forms/about_dialog.h"
+#include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/form.h"
 #include "../../../include/xtd/forms/label.h"
 #include "../../../include/xtd/forms/panel.h"
 #include "../../../include/xtd/forms/picture_box.h"
@@ -147,7 +149,7 @@ namespace {
 }
 
 void about_dialog::reset() {
-  dialog_style_ = xtd::forms::dialog_style::system;
+  dialog_style_ = xtd::forms::dialog_style::standard;
   icon_ = xtd::drawing::image::empty;
   name_ = "";
   description_ = "";
