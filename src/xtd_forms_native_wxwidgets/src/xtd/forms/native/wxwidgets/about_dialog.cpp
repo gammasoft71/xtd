@@ -22,7 +22,7 @@ namespace {
 }
 #endif
 
-bool about_dialog::run_dialog(intptr_t hwnd, const xtd::drawing::icon& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
+void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
   wxAboutDialogInfo about_info;
   about_info.SetName(name);
   about_info.SetDescription(description);
@@ -46,5 +46,4 @@ bool about_dialog::run_dialog(intptr_t hwnd, const xtd::drawing::icon& icon, con
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
   wxAboutBox(about_info, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr);
-  return true;
 }

@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(other_dialogs)
+project(dialogs)
 find_package(xtd.forms REQUIRED)
 
 add_projects(
-  #find_replace__dialog
+  about_dialog
+  about_dialog_system
+  input_dialog
 )

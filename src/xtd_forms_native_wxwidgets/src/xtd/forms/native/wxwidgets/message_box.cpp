@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/message_box.h>
+#include <xtd/forms/native/dialog_box_ids.h>
 #include <xtd/forms/native/message_box_styles.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
@@ -103,17 +104,17 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
 
 #endif
 
-void message_box::show_sheet(xtd::delegate<void(int)> on_message_box_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
+void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   native::application::initialize(); // Must be first
 #if !defined(__APPLE__)
   on_message_box_closed(show(control, text, caption, style, display_help_button));
 #else
-  if (!control) return on_message_box_closed(show(control, text, caption, style, display_help_button));
+  if (!control) return on_dialog_closed(show(control, text, caption, style, display_help_button));
   wxWindowPtr<wxMessageDialog> dialog(new wxMessageDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {text.c_str(), wxMBConvUTF8()}, {caption.c_str(), wxMBConvUTF8()}, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0)));
   set_button_labels(*dialog, style);
   int32_t result = wxID_ANY;
-  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [on_message_box_closed, dialog, style](wxWindowModalDialogEvent& event) {
-    on_message_box_closed(convert_to_dialog_result(event.GetReturnCode(), style));
+  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [on_dialog_closed, dialog, style](wxWindowModalDialogEvent& event) {
+    on_dialog_closed(convert_to_dialog_result(event.GetReturnCode(), style));
   });
   dialog->SetParent(reinterpret_cast<control_handler*>(control)->control());
   dialog->ShowWindowModal();

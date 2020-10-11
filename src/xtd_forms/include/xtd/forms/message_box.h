@@ -86,8 +86,8 @@ namespace xtd {
       
     private:
       friend struct ::__xtd_forms_message_box_closed_caller__;
-      static void call_message_box_closed(dialog_result dialog_result) {
-        message_box_closed(dialog_result);
+      static void on_message_box_closed(const message_box_closed_event_args& e) {
+        message_box_closed(e);
       }
     };
   }

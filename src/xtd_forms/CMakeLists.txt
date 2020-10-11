@@ -91,7 +91,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/icontrol_trace.h
   include/xtd/forms/image_list.h
   include/xtd/forms/imessage_filter.h
-  include/xtd/forms/input_box.h
+  include/xtd/forms/input_dialog.h
   include/xtd/forms/item_check_event_args.h
   include/xtd/forms/item_check_event_handler.h
   include/xtd/forms/iwin32_window.h
@@ -231,7 +231,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/form.cpp
   src/xtd/forms/group_box.cpp
   src/xtd/forms/image_list.cpp
-  src/xtd/forms/input_box.cpp
+  src/xtd/forms/input_dialog.cpp
   src/xtd/forms/label.cpp
   src/xtd/forms/list_box.cpp
   src/xtd/forms/list_control.cpp

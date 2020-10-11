@@ -10,8 +10,8 @@ add_projects(
   applications
   common_controls
   picker_controls
+  controls
   custom_controls
-  other_controls
   containers
   menus_and_toolbars
   datas
@@ -19,7 +19,7 @@ add_projects(
   painting
   printing
   common_dialogs
-  other_dialogs
+  dialogs
   custom_dialogs
   events
   others

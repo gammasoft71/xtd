@@ -138,16 +138,20 @@ namespace xtdc_gui {
       {"Common controls - up down button", "represents a Windows spin button.", {"xtd_forms/common_controls/up_down_button"}},
       {"Common controls - user control", "defines the base class for user controls.", {"xtd_forms/common_controls/user_control"}},
       
-      {"Common dialogs - about dialog", "represents a common dialog box that displays about dialog.", {"xtd_forms/common_dialogs/about_dialog"}},
-      {"Common dialogs - about dialog (system)", "represents a common dialog box that displays system about dlialog.", {"xtd_forms/common_dialogs/about_dialog_system"}},
       {"Common dialogs - color dialog", "represents a common dialog box that displays available colors along with controls that enable the user to define custom colors.", {"xtd_forms/common_dialogs/color_dialog"}},
       {"Common dialogs - folder browser dialog", "prompts the user to select a folder.", {"xtd_forms/common_dialogs/folder_browser_dialog"}},
       {"Common dialogs - font dialog", "prompts the user to choose a font from among those installed on the local computer.", {"xtd_forms/common_dialogs/font_dialog"}},
-      {"Common dialogs - input box", "prompts the user to input text.", {"xtd_forms/common_dialogs/input_box"}},
       {"Common dialogs - message box", "displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.", {"xtd_forms/common_dialogs/message_box"}},
       {"Common dialogs - open file dialog", "displays a standard dialog box that prompts the user to open a file.", {"xtd_forms/common_dialogs/open_file_dialog"}},
       {"Common dialogs - save file dialog", "prompts the user to select a location for saving a file.", {"xtd_forms/common_dialogs/save_file_dialog"}},
-      
+ 
+      {"Controls - dot matrix display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd_forms/controls/dot_matrix_display"}},
+      {"Controls - fourteen segment display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd_forms/controls/fourteen_segment_display"}},
+      {"Controls - lcd label", "represents a xtd::forms::lcd_label control.", {"xtd_forms/controls/lcd_label"}},
+      {"Controls - nine segment display", "represents a xtd::forms::nine_segment_display control.", {"xtd_forms/controls/fourteen_nine_display"}},
+      {"Controls - seven segment display", "represents a xtd::forms::seven_segment_display control.", {"xtd_forms/controls/seven_segment_display"}},
+      {"Controls - sixteen segment display", "represents a xtd::forms::sixteen_segment_display control.", {"xtd_forms/controls/sixteen_segment_display"}},
+
       {"Components - background worker", "executes an operation on a separate thread.", {"xtd_forms/components/background_worker"}},
       {"Components - button images", "shows how to create a bitmap button with xtd::froms::button_images factory class.", {"xtd_forms/components/button_images"}},
       {"Components - button renderer", "shows how to draw button with xtd::froms::button_renderer class.", {"xtd_forms/components/button_renderer"}},
@@ -179,6 +183,10 @@ namespace xtdc_gui {
       {"Demo - check box appearance", "demonstrates the different appearance of xtd::forms::check_box control.", {"xtd_forms/custom_dialogs/check_box_appearance"}},
       {"Demo - lcd label appearance", "demonstrates the different appearance of xtd::forms::lcd_label control.", {"xtd_forms/custom_dialogs/lcd_label_appearance"}},
       {"Demo - message box appearance", "demonstrates the different appearance of xtd::forms::message_box dialog.", {"xtd_forms/custom_dialogs/message_box_appearance"}},
+
+      {"Dialogs - about dialog", "represents a common dialog box that displays about dialog.", {"xtd_forms/dialogs/about_dialog"}},
+      {"Dialogs - about dialog (system)", "represents a common dialog box that displays system about dlialog.", {"xtd_forms/dialogs/about_dialog_system"}},
+      {"Dialogs - input dialog", "prompts the user to input text.", {"xtd_forms/dialogs/input_dialog"}},
 
       {"Event - click", "demonstrates the use of xtd::forms::form control and click event.", {"xtd_forms/events/form_click"}},
       {"Event - enable changed event", "demonstrates the use of enable_changed event.", {"xtd_forms/events/enable_changed_event"}},
@@ -240,13 +248,6 @@ namespace xtdc_gui {
       {"Others - toggle button 2", "represents a Windows xtd::forms::toggle_button control.", {"xtd_forms/otheers/toggle_button2"}},
       {"Others - track bar 2", "represents a standard Windows xtd::forms::track_bar.", {"xtd_forms/others/track_bar2"}},
       {"Others - wiggly", "shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.", {"xtd_forms/others/wiggly"}},
-
-      {"Other controls - dot matrix display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd_forms/other_controls/dot_matrix_display"}},
-      {"Other controls - fourteen segment display", "represents a xtd::forms::fourteen_segment_display control.", {"xtd_forms/other_controls/fourteen_segment_display"}},
-      {"Other controls - lcd label", "represents a xtd::forms::lcd_label control.", {"xtd_forms/other_controls/lcd_label"}},
-      {"Other controls - nine segment display", "represents a xtd::forms::nine_segment_display control.", {"xtd_forms/other_controls/fourteen_nine_display"}},
-      {"Other controls - seven segment display", "represents a xtd::forms::seven_segment_display control.", {"xtd_forms/other_controls/seven_segment_display"}},
-      {"Other controls - sixteen segment display", "represents a xtd::forms::sixteen_segment_display control.", {"xtd_forms/other_controls/sixteen_segment_display"}},
       
       {"Picker controls - color picker", "represents a Windows control that allows the user to select and display a color.", {"xtd_forms/picker_controls/color_picker"}},
       {"Picker controls - date time_picker", "represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.", {"xtd_forms/picker_controls/date_time_picker"}},
