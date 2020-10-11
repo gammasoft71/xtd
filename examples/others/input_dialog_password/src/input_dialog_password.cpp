@@ -18,13 +18,14 @@ namespace examples {
         input_dialog.text("User password");
         input_dialog.message("user: admin");
         input_dialog.use_system_password_char(true);
-        input_dialog.value("sysad47@74dasys");
-        if (input_dialog.show_dialog(*this) == dialog_result::ok)
+        input_dialog.value(label1.text());
+        if (input_dialog.show_sheet_dialog(*this) == dialog_result::ok)
           label1.text(input_dialog.value());
       };
 
       label1.location({10, 50});
       label1.auto_size(true);
+      label1.text("sysad47@74dasys");
     }
     
   private:

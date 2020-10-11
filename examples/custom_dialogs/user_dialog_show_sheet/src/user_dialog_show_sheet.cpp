@@ -59,7 +59,7 @@ public:
     button_dialog.text("Dialog...");
     button_dialog.click += [&] {
       dialog.input_text(input_text.text());
-      dialog.show_sheet_dialog(*this);
+      dialog.show_sheet(*this);
     };
     
     dialog.form_closed += [&] {

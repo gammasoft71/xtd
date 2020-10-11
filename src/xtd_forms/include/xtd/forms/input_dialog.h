@@ -95,7 +95,8 @@ namespace xtd {
       
       dialog_result show_dialog();
       dialog_result show_dialog(const iwin32_window& owner);
-      void show_sheet_dialog(const iwin32_window& owner);
+      void show_sheet(const iwin32_window& owner);
+      dialog_result show_sheet_dialog(const iwin32_window& owner);
 
     protected:
       /// @cond

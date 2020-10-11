@@ -89,7 +89,20 @@ int32_t form::show_dialog(intptr_t form) {
   if (form == 0) return 0;
   if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("show_dialog work only dialog");
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control());
+  return dialog->ShowModal();
+}
 
+void form::show_sheet(intptr_t form) {
+  if (form == 0) return;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("show_dialog work only dialog");
+  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->ShowWindowModal();
+}
+
+int32_t form::show_sheet_dialog(intptr_t form) {
+  if (form == 0) return 0;
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("show_dialog work only dialog");
+  auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control());
+  
   if (!dialog->GetParent()) return dialog->ShowModal();
   int32_t result = wxID_ANY;
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&, dialog](wxWindowModalDialogEvent& event) {
@@ -99,12 +112,6 @@ int32_t form::show_dialog(intptr_t form) {
   while (result == wxID_ANY)
     wxYield();
   return result;
-}
-
-void form::show_sheet_dialog(intptr_t form) {
-  if (form == 0) return;
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())) throw std::invalid_argument("show_dialog work only dialog");
-  static_cast<wxDialog*>(reinterpret_cast<control_handler*>(form)->control())->ShowWindowModal();
 }
 
 void form::end_dialog(intptr_t form, int32_t result) {
