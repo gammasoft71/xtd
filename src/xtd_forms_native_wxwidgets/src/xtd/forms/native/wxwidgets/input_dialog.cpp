@@ -49,29 +49,14 @@ namespace {
   }
 }
 
-
 int32_t input_dialog::show_dialog(intptr_t control, const std::string& text, const std::string& message, std::string& value, bool multiline, bool use_system_password_char) {
   wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, message, value, multiline, use_system_password_char);
-  int result = IDNONE;
-
-  if (!control) {
-    result = text_entry_dialog->ShowModal() == wxID_OK ? IDOK : IDCANCEL;
-    if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
-    return result;
-  }
-
-  text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, &result, &value](wxWindowModalDialogEvent& event) {
-    result = event.GetReturnCode() == wxID_OK ? IDOK : IDCANCEL;
-    if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
-    text_entry_dialog->Destroy();
-  });
-  text_entry_dialog->ShowWindowModal();
-  while (result == IDNONE)
-    wxYield();
+  int result = text_entry_dialog->ShowModal() == wxID_OK ? IDOK : IDCANCEL;
+  if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
   return result;
 }
 
-void input_dialog::show_sheet_dialog(xtd::delegate<void(int32_t, const std::string&)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& message, std::string& value, bool multiline, bool use_system_password_char) {
+void input_dialog::show_sheet(xtd::delegate<void(int32_t, const std::string&)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& message, std::string& value, bool multiline, bool use_system_password_char) {
   wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, message, value, multiline, use_system_password_char);
 
   text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, on_dialog_closed, &value](wxWindowModalDialogEvent& event) {
@@ -81,4 +66,25 @@ void input_dialog::show_sheet_dialog(xtd::delegate<void(int32_t, const std::stri
     text_entry_dialog->Destroy();
   });
   text_entry_dialog->ShowWindowModal();
+}
+
+int32_t input_dialog::show_sheet_dialog(intptr_t control, const std::string& text, const std::string& message, std::string& value, bool multiline, bool use_system_password_char) {
+  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, message, value, multiline, use_system_password_char);
+  int result = IDNONE;
+  
+  if (!control) {
+    result = text_entry_dialog->ShowModal() == wxID_OK ? IDOK : IDCANCEL;
+    if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
+    return result;
+  }
+  
+  text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, &result, &value](wxWindowModalDialogEvent& event) {
+    result = event.GetReturnCode() == wxID_OK ? IDOK : IDCANCEL;
+    if (result == IDOK) value = text_entry_dialog->GetValue().ToUTF8().data();
+    text_entry_dialog->Destroy();
+  });
+  text_entry_dialog->ShowWindowModal();
+  while (result == IDNONE)
+    wxYield();
+  return result;
 }
