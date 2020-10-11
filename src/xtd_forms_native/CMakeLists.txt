@@ -39,6 +39,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/cursors.h
   include/xtd/forms/native/date_time_picker.h
   include/xtd/forms/native/date_time_picker_styles.h
+  include/xtd/forms/native/dialog_box_ids.h
   include/xtd/forms/native/domain_up_down.h
   include/xtd/forms/native/file_dialog.h
   include/xtd/forms/native/folder_browser_dialog.h
@@ -47,7 +48,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/form.h
   include/xtd/forms/native/group_box.h
   include/xtd/forms/native/image_list.h
-  include/xtd/forms/native/input_box.h
+  include/xtd/forms/native/input_dialog.h
   include/xtd/forms/native/label.h
   include/xtd/forms/native/list_box.h
   include/xtd/forms/native/list_box_styles.h

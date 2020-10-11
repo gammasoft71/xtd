@@ -75,7 +75,7 @@ namespace {
       text_box_license_.dock(dock_style::fill);
     }
     
-    static bool run_dialog(intptr_t hwnd, const xtd::drawing::image& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
+    static void show(intptr_t hwnd, const xtd::drawing::image& icon, const std::string& name, const std::string& description, const std::string& version, const std::string& long_version, const std::string& copyright, const std::string& website, const std::string& website_label, const std::vector<std::string>& creators, const std::vector<std::string>& designers, const std::vector<std::string>& doc_writers, const std::vector<std::string>& translators, const std::string& license) {
       static std::unique_ptr<about_dialog_standard> about_dialog_standard;
       if (about_dialog_standard != nullptr) {
         about_dialog_standard->activate();
@@ -124,11 +124,10 @@ namespace {
         about_dialog_standard->text_box_license_.text(license);
       }
       
-      about_dialog_standard->show();
+      about_dialog_standard->visible(true);
       while (about_dialog_standard->visible())
         application::yield();
       about_dialog_standard.reset();
-      return true;
     }
     
   private:
@@ -164,7 +163,12 @@ void about_dialog::reset() {
   license_ = "";
 }
 
-bool about_dialog::run_dialog(intptr_t owner) {
-  if (dialog_style_ == xtd::forms::dialog_style::system) return native::about_dialog::run_dialog(owner, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
-  return about_dialog_standard::run_dialog(owner, icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+void about_dialog::show() {
+  if (dialog_style_ == xtd::forms::dialog_style::system) return native::about_dialog::show(0, xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+  return about_dialog_standard::show(0, icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+}
+
+void about_dialog::show(const iwin32_window& owner) {
+  if (dialog_style_ == xtd::forms::dialog_style::system) return native::about_dialog::show(owner.handle(), xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(icon_)), name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
+  return about_dialog_standard::show(owner.handle(), icon_, name_, description_, version_, long_version_, copyright_, website_, website_label_, creators_.to_array(), designers_.to_array(), doc_writers_.to_array(), translators_.to_array(), license_);
 }

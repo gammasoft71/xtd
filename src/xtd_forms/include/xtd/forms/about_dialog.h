@@ -12,7 +12,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
-    class about_dialog : public common_dialog {
+    class about_dialog {
     public:
       using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
       using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
@@ -198,20 +198,14 @@ namespace xtd {
       }
 
       /// @brief Resets all properties to empty string.
-      void reset() override;
+      void reset();
       
       /// @brief Runs about dialog box.
-      void show()  {run_dialog(0);}
-      
+      void show();
+      /// @brief Runs about dialog box.
+      void show(const iwin32_window& owner);
+
     protected:
-      /// @brief When overridden in a derived class, specifies a common dialog box.
-      /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-      /// @return true if the dialog box was successfully run; otherwise, false.
-      bool run_dialog(intptr_t owner) override;
-
-      dialog_result show_dialog();
-      dialog_result show_dialog(const iwin32_window& owner);
-
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       xtd::drawing::image icon_;
       std::string name_;

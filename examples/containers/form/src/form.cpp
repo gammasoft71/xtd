@@ -10,8 +10,8 @@ public:
     text("form1");
     location({300, 200});
     size({640, 480});
-    form_closing += [](control& sender, form_closing_event_args& e) {
-      e.cancel(message_box::show("Are you sure you want exit?", "Close Form", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
+    form_closing += [&](control& sender, form_closing_event_args& e) {
+      e.cancel(message_box::show(*this, "Are you sure you want exit?", "Close Form", message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);
     };
 
     button_close.parent(*this);

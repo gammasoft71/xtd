@@ -13,12 +13,12 @@ namespace examples {
       button1.location({10, 10});
       button1.text("Text...");
       button1.click += [&] {
-        input_box input_box;
-        input_box.caption("Caption text");
-        input_box.text("Message text");
-        input_box.value(label1.text());
-        if (input_box.show_dialog() == dialog_result::ok)
-          label1.text(input_box.value());
+        input_dialog input_dialog;
+        input_dialog.caption("Caption text");
+        input_dialog.text("Message text");
+        input_dialog.value(label1.text());
+        if (input_dialog.show_dialog(*this) == dialog_result::ok)
+          label1.text(input_dialog.value());
       };
 
       label1.location({10, 50});

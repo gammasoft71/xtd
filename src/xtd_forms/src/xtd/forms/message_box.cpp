@@ -7,7 +7,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 struct __xtd_forms_message_box_closed_caller__ {
-  static void on_message_box_closed(int result) {message_box::call_message_box_closed(static_cast<dialog_result>(result));}
+  static void on_message_box_closed(int result) {message_box::on_message_box_closed(message_box_closed_event_args(static_cast<dialog_result>(result)));}
 };
 
 namespace  {
