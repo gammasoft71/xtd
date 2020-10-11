@@ -1,7 +1,9 @@
 #pragma once
+#include <string>
+#include <xtd/delegate.h>
 #include <xtd/drawing/icon.h>
 #include "dialog_style.h"
-#include "common_dialog.h"
+#include "iwin32_window.h"
 #include "layout/arranged_element_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

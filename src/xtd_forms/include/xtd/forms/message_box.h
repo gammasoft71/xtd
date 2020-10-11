@@ -41,7 +41,6 @@ namespace xtd {
     public:
       static event<message_box, message_box_closed_event_handler> message_box_closed;
 
-      
       static void show_sheet(const iwin32_window& owner, const std::string& text);
       
       static void show_sheet(const iwin32_window& owner, const std::string& text, const std::string& caption);

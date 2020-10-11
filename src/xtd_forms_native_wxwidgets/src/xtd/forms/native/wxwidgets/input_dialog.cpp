@@ -25,14 +25,14 @@ namespace {
   }
 #endif
 
-  wxTextEntryDialog* create_text_entry_dialog(intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
+  wxTextEntryDialog* create_text_entry_dialog(intptr_t control, const std::string& text, const std::string& message, std::string& value, bool multiline, bool use_system_password_char) {
 #if defined(__WXMSW__)
     handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
     int style = wxTextEntryDialogStyle;
     if (multiline) style |= wxTE_MULTILINE;
     if (use_system_password_char) style |= wxTE_PASSWORD;
-    wxTextEntryDialog* text_entry_dialog = new wxTextEntryDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), text == "" ? " " : text, caption, value, style);
+    wxTextEntryDialog* text_entry_dialog = new wxTextEntryDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), message == "" ? " " : message, text, value, style);
     
 #if defined(__WXMSW__)
     if (application::dark_mode_enabled()) {
@@ -50,8 +50,8 @@ namespace {
 }
 
 
-int32_t input_dialog::show_dialog(intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
-  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, caption, value, multiline, use_system_password_char);
+int32_t input_dialog::show_dialog(intptr_t control, const std::string& text, const std::string& message, std::string& value, bool multiline, bool use_system_password_char) {
+  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, message, value, multiline, use_system_password_char);
   int result = IDNONE;
 
   if (!control) {
@@ -71,8 +71,8 @@ int32_t input_dialog::show_dialog(intptr_t control, const std::string& text, con
   return result;
 }
 
-void input_dialog::show_sheet_dialog(xtd::delegate<void(int32_t, const std::string&)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, std::string& value, bool multiline, bool use_system_password_char) {
-  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, caption, value, multiline, use_system_password_char);
+void input_dialog::show_sheet_dialog(xtd::delegate<void(int32_t, const std::string&)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& message, std::string& value, bool multiline, bool use_system_password_char) {
+  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, message, value, multiline, use_system_password_char);
 
   text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, on_dialog_closed, &value](wxWindowModalDialogEvent& event) {
     auto result = event.GetReturnCode() == wxID_OK ? IDOK : IDCANCEL;

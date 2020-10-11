@@ -1,5 +1,8 @@
 #pragma once
-#include "common_dialog.h"
+#include <string>
+#include <xtd/delegate.h>
+#include "dialog_style.h"
+#include "iwin32_window.h"
 
 /// @cond
 struct __xtd_forms_input_dialog_closed_caller__;
@@ -39,32 +42,38 @@ namespace xtd {
     public:
       /// @brief Initializes a new instance of the input_dialog class.
       input_dialog() = default;
-      
-      /// @brief Gets the caption.
-      /// @return The product name.
-      std::string caption() const {return text_;}
-      /// @brief Sets the caption.
-      /// @param caption The caption.
-      /// @return Current input_dialog instance.
-      input_dialog& caption(const std::string& caption) {
-        caption_ = caption;
+
+      xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
+      input_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
+        dialog_style_ = dialog_style;
         return *this;
       }
-
+      
       bool multiline() const {return multiline_;}
       void multiline(bool multiline) {multiline_ = multiline;}
 
       /// @brief Gets the text message.
       /// @return The text message.
-      std::string text() const {return caption_;}
+      std::string messsage() const {return message_;}
       /// @brief Sets the text message.
-      /// @param text The text message.
+      /// @param value The text message.
       /// @return Current input_dialog instance.
-      input_dialog& text(const std::string& text) {
-        text_ = text;
+      input_dialog& message(const std::string& value) {
+        message_ = value;
         return *this;
       }
       
+      /// @brief Gets the dialog caption text.
+      /// @return The current dialog caption text.
+      std::string text() const {return text_;}
+      /// @brief Sets the dialog caption text.
+      /// @param value The new dialog caption text.
+      /// @return Current input_dialog instance.
+      input_dialog& text(const std::string& value) {
+        text_ = value;
+        return *this;
+      }
+
       bool use_system_password_char() const {return use_system_password_char_;}
       void use_system_password_char(bool use_system_password_char) {use_system_password_char_ = use_system_password_char;}
       
@@ -96,8 +105,9 @@ namespace xtd {
         input_dialog_closed(*this, e);
       }
 
-      std::string caption_;
+      xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       bool multiline_ = false;
+      std::string message_;
       std::string text_;
       bool use_system_password_char_ = false;
       std::string value_;
