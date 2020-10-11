@@ -13,6 +13,7 @@
 #include <xtd/drawing/system_icons.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
+#include <xtd/forms/message_box.h>
 #include <xtd/forms/theme_images.h>
 
 using namespace std;

@@ -75,7 +75,7 @@ dialog_result message_box::show(const iwin32_window& owner, const std::string &t
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, message_box_buttons::ok, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -83,7 +83,7 @@ dialog_result message_box::show(const iwin32_window& owner, const std::string &t
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -91,7 +91,7 @@ dialog_result message_box::show(const iwin32_window& owner, const std::string &t
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -99,7 +99,7 @@ dialog_result message_box::show(const iwin32_window& owner, const std::string &t
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, default_button, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -107,7 +107,7 @@ dialog_result message_box::show(const iwin32_window& owner, const std::string &t
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, default_button, options, false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -115,7 +115,7 @@ dialog_result message_box::show(const iwin32_window& owner, const std::string &t
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(owner.handle(), text, caption, buttons, icon, default_button, options, display_help_button);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -123,7 +123,7 @@ dialog_result message_box::show(const std::string &text) {
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(0, text, "", message_box_buttons::ok, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -131,7 +131,7 @@ dialog_result message_box::show(const std::string &text, const std::string &capt
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(0, text, caption, message_box_buttons::ok, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -139,7 +139,7 @@ dialog_result message_box::show(const std::string &text, const std::string &capt
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(0, text, caption, buttons, message_box_icon::none, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -147,7 +147,7 @@ dialog_result message_box::show(const std::string &text, const std::string &capt
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(0, text, caption, buttons, icon, message_box_default_button::button1, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -155,7 +155,7 @@ dialog_result message_box::show(const std::string &text, const std::string &capt
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(0, text, caption, buttons, icon, default_button, static_cast<message_box_options>(0), false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -163,7 +163,7 @@ dialog_result message_box::show(const std::string &text, const std::string &capt
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(0, text, caption, buttons, icon, default_button, options, false);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }
 
@@ -171,6 +171,6 @@ dialog_result message_box::show(const std::string &text, const std::string &capt
   application::raise_enter_thread_modal(event_args::empty);
   dialog_result result = show_message_box(0, text, caption, buttons, icon, default_button, options, display_help_button);
   application::raise_leave_thread_modal(event_args::empty);
-  message_box_closed(result);
+  message_box_closed(message_box_closed_event_args(result));
   return result;
 }

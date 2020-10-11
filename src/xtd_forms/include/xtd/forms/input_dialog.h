@@ -12,17 +12,19 @@ namespace xtd {
     class input_dialog_closed_event_args : public event_args {
     public:
       input_dialog_closed_event_args() = default;
-      input_dialog_closed_event_args(forms::dialog_result dialog_result) : dialog_result_(dialog_result) {};
+      input_dialog_closed_event_args(forms::dialog_result dialog_result, const std::string& value) : dialog_result_(dialog_result), value_(value) {};
       
       /// @cond
       input_dialog_closed_event_args(const input_dialog_closed_event_args& form_closed_event_args) = default;
       input_dialog_closed_event_args& operator=(const input_dialog_closed_event_args& form_closed_event_args) = default;
       /// @endcond
       
-      forms::dialog_result dialog_result() const {return this->dialog_result_;}
-      
+      forms::dialog_result dialog_result() const {return dialog_result_;}
+      std::string value() const {return value_;}
+
     private:
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
+      std::string value_;
     };
 
     template<typename type_t>
@@ -40,7 +42,7 @@ namespace xtd {
       
       /// @brief Gets the caption.
       /// @return The product name.
-      std::string caption() const {return this->text_;}
+      std::string caption() const {return text_;}
       /// @brief Sets the caption.
       /// @param caption The caption.
       /// @return Current input_dialog instance.
@@ -54,7 +56,7 @@ namespace xtd {
 
       /// @brief Gets the text message.
       /// @return The text message.
-      std::string text() const {return this->caption_;}
+      std::string text() const {return caption_;}
       /// @brief Sets the text message.
       /// @param text The text message.
       /// @return Current input_dialog instance.
@@ -68,7 +70,7 @@ namespace xtd {
       
       /// @brief Gets the value.
       /// @return The value.
-      std::string value() const {return this->value_;}
+      std::string value() const {return value_;}
       /// @brief Sets thevalue.
       /// @param value The value.
       /// @return Current input_dialog instance.
@@ -77,7 +79,7 @@ namespace xtd {
         return *this;
       }
 
-      event<input_dialog, input_dialog_closed_event_handler<const input_dialog&>> input_dialog_closed;
+      event<input_dialog, input_dialog_closed_event_handler<input_dialog&>> input_dialog_closed;
 
       /// @brief Resets all properties to empty string.
       void reset();
