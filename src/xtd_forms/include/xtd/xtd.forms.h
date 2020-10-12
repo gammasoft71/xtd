@@ -31,6 +31,7 @@
 #include "xtd/forms/buttons.h"
 #include "xtd/forms/cancel_event_args.h"
 #include "xtd/forms/cancel_event_handler.h"
+#include "xtd/forms/character_casing.h"
 #include "xtd/forms/check_box.h"
 #include "xtd/forms/check_box_renderer.h"
 #include "xtd/forms/check_boxes.h"
