@@ -81,7 +81,7 @@ namespace {
       static std::unique_ptr<about_dialog_standard> about_dialog_standard;
       if (about_dialog_standard != nullptr) {
         about_dialog_standard->activate();
-        return true;
+        return;
       }
       about_dialog_standard = std::make_unique<::about_dialog_standard>();
       auto has_credit = !(creators.empty() && doc_writers.empty() && translators.empty() && designers.empty());
