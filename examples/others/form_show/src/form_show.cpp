@@ -14,7 +14,6 @@ namespace example {
       text("Form show example");
 
       button_normal.dock(xtd::forms::dock_style::top);
-      button_normal.flat_style(xtd::forms::flat_style::system);
       button_normal.height(100);
       button_normal.text("Show normal");
       button_normal.click += [&] {

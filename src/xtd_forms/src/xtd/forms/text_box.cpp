@@ -24,6 +24,14 @@ text_box& text_box::border_style(forms::border_style border_style) {
   return *this;
 }
 
+text_box& text_box::character_casing(xtd::forms::character_casing value) {
+  if (this->character_casing_ != value) {
+    this->character_casing_ = value;
+    recreate_handle();
+  }
+  return *this;
+}
+
 text_box& text_box::multiline(bool value) {
   if (this->multiline_ != value) {
     this->multiline_ = value;
@@ -32,19 +40,34 @@ text_box& text_box::multiline(bool value) {
   return *this;
 }
 
-text_box& text_box::use_system_password_char(bool value) {
-  if (use_system_password_char_ != value) {
-    use_system_password_char_ = value;
-    recreate_handle();
-  }
-  return *this;
+size_t text_box::selection_length() const {
+  selection_length_ = native::text_box::selection_length(handle());
+  return text_box_base::selection_length();
+}
+
+size_t text_box::selection_start() const {
+  selection_start_ = native::text_box::selection_start(handle());
+  return text_box_base::selection_start();
 }
 
 control& text_box::text(const std::string& text) {
   if (this->text_ != text) {
-    this->text_ = text;
+    switch (character_casing_) {
+      case xtd::forms::character_casing::normal: this->text_ = text; break;
+      case xtd::forms::character_casing::upper: this->text_ = xtd::strings::to_upper(text); break;
+      case xtd::forms::character_casing::lower: this->text_ = xtd::strings::to_lower(text); break;
+      default: break;
+    }
     native::text_box::text(handle(), this->text_.c_str());
     on_text_changed(event_args::empty);
+  }
+  return *this;
+}
+
+text_box& text_box::use_system_password_char(bool value) {
+  if (use_system_password_char_ != value) {
+    use_system_password_char_ = value;
+    recreate_handle();
   }
   return *this;
 }
@@ -63,6 +86,8 @@ forms::create_params text_box::create_params() const {
   if (use_system_password_char_) create_params.style(create_params.style() | ES_PASSWORD);
   if (read_only_) create_params.style(create_params.style() | ES_READONLY);
   if (!word_wrap_) create_params.style(create_params.style() | ES_AUTOHSCROLL);
+  if (character_casing_ == xtd::forms::character_casing::upper) create_params.style(create_params.style() | ES_UPPERCASE);
+  if (character_casing_ == xtd::forms::character_casing::lower) create_params.style(create_params.style() | ES_LOWERCASE);
 
   return create_params;
 }
@@ -78,4 +103,13 @@ void text_box::append_text(const std::string& value) {
 void text_box::select(size_t start, size_t length) {
   text_box_base::select(start, length);  
   native::text_box::select(handle_, selection_start_, selection_length_);
+}
+
+void text_box::on_handle_created(const event_args& e) {
+  text_box_base::on_handle_created(e);
+  switch (character_casing_) {
+    case xtd::forms::character_casing::upper: this->text_ = xtd::strings::to_upper(this->text_); break;
+    case xtd::forms::character_casing::lower: this->text_ = xtd::strings::to_lower(this->text_); break;
+    default: break;
+  }
 }

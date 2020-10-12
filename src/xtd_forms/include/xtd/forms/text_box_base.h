@@ -29,6 +29,18 @@ namespace xtd {
         return *this;
       }
 
+      virtual size_t selection_length() const {return selection_length_;}
+      virtual text_box_base& selection_length(size_t value) {
+        select(selection_start_, value);
+        return *this;
+      }
+      
+      virtual size_t selection_start() const {return selection_start_;}
+      virtual text_box_base& selection_start(size_t value) {
+        select(value, selection_length_);
+        return *this;
+      }
+      
       virtual bool word_wrap() const {return word_wrap_;}
       virtual text_box_base& word_wrap(bool value) {
         if (word_wrap_ != value) {
@@ -61,10 +73,12 @@ namespace xtd {
       }
       
       virtual void select(size_t start, size_t length) {
-        if (start > text().size()) throw std::invalid_argument("start greater than text size");
-        if (start + length > text().size()) throw std::invalid_argument("start + lenght greater than text size");
-        selection_start_ = start;
-        selection_length_ = length;
+        if (selection_start_ != start || length != selection_length_) {
+          if (start > text().size()) throw std::invalid_argument("start greater than text size");
+          if (start + length > text().size()) throw std::invalid_argument("start + lenght greater than text size");
+          selection_start_ = start;
+          selection_length_ = length;
+        }
       }
       
       void select_all() {
@@ -78,8 +92,8 @@ namespace xtd {
       bool accepts_tab_ = false;
       bool read_only_ = false;
       bool word_wrap_ = false;
-      size_t selection_start_ = 0;
-      size_t selection_length_ = 0;
+      mutable size_t selection_start_ = 0;
+      mutable size_t selection_length_ = 0;
     };
   }
 }

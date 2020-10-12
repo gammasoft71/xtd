@@ -1,5 +1,6 @@
 #pragma once
 #include "border_style.h"
+#include "character_casing.h"
 #include "text_box_base.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -23,6 +24,9 @@ namespace xtd {
       virtual forms::border_style border_style() const {return this->border_style_;}
       virtual text_box& border_style(forms::border_style border_style);
       
+      virtual xtd::forms::character_casing character_casing() const {return character_casing_;}
+      virtual text_box& character_casing(xtd::forms::character_casing value);
+
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().text_box();}
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().text_box_text();}
@@ -31,6 +35,12 @@ namespace xtd {
 
       virtual bool multiline() const {return multiline_;}
       virtual text_box& multiline(bool value);
+      
+      using text_box_base::selection_length;
+      size_t selection_length() const override;
+
+      using text_box_base::selection_start;
+      size_t selection_start() const override;
       
       using text_box_base::text;
       control& text(const std::string& text) override;
@@ -51,8 +61,11 @@ namespace xtd {
       
       virtual void on_accepts_return_changed(const event_args& e) {if (can_raise_events()) accepts_return_changed(*this, e);}
 
+      void on_handle_created(const event_args& e) override;
+
       bool accepts_return_ = false;
-      forms::border_style border_style_ = forms::border_style::fixed_single;
+      xtd::forms::border_style border_style_ = xtd::forms::border_style::fixed_single;
+      xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       bool multiline_ = false;
       bool use_system_password_char_ = false;
     };

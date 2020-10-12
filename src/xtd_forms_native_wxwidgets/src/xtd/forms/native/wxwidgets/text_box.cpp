@@ -9,6 +9,20 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+size_t text_box::selection_length(intptr_t control) {
+  long from = 0, to = 0;
+  if (control == 0) return;
+  static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection(&from, &to);
+  return static_cast<size_t>(to - from);
+}
+
+size_t text_box::selection_start(intptr_t control) {
+  long from = 0, to = 0;
+  if (control == 0) return;
+  static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection(&from, &to);
+  return static_cast<size_t>(from);
+}
+
 void text_box::append(intptr_t control, const std::string& text) {
   if (control == 0) return;
   static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->AppendText({text.c_str(), wxMBConvUTF8()});
@@ -25,5 +39,9 @@ std::string text_box::text(intptr_t control) {
 
 void text_box::text(intptr_t control, const std::string& text) {
   if (control == 0) return;
-  static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue({text.c_str(), wxMBConvUTF8()});
+  switch (reinterpret_cast<wx_text_box*>(control)->character_casing_) {
+    case wx_text_box::character_casing::normal: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue({text.c_str(), wxMBConvUTF8()}); break;
+    case wx_text_box::character_casing::upper: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue({xtd::strings::to_upper(text).c_str(), wxMBConvUTF8()}); break;
+    case wx_text_box::character_casing::lower: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue({xtd::strings::to_lower(text).c_str(), wxMBConvUTF8()}); break;
+  }
 }

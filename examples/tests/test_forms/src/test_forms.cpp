@@ -24,7 +24,7 @@ public:
   static void main() {
     xtd::forms::application::run(form_main());
   }
-
+private:
   panel panel_;
 };
 
