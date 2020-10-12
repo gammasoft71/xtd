@@ -211,12 +211,18 @@ void button_renderer::draw_button_macos_dark(graphics g, const rectangle& bounds
   } else if (state == xtd::forms::visual_styles::push_button_state::default_state)
     if (bounds.height() <= 25) button_color = control_paint::dark(xtd::forms::theme_colors::current_theme().accent(), 0.15);
   
-  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 4);
-  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, control_paint::light(button_color, .03), button_color), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 4);
-  g.draw_rounded_rectangle(pen(border_color, 1), bounds.x(), bounds.y() + 2, bounds.width() - 1, bounds.height() - 5, 4);
+  auto button_rect = bounds;
+  if (bounds.height() > 25) {
+    button_rect.offset({2, 0});
+    button_rect.inflate({-4, -1});
+  }
+
+  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 4);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({button_rect.x(), button_rect.top()}, {button_rect.x(), button_rect.bottom()}, control_paint::light(button_color, .03), button_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 4);
+  g.draw_rounded_rectangle(pen(border_color, 1), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 5, 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  auto text_rect = rectangle(bounds.x() + 5, bounds.y() + 3, bounds.width() - 10, bounds.height() - 7);
+  auto text_rect = rectangle(button_rect.x() + 5, button_rect.y() + 3, button_rect.width() - 10, button_rect.height() - 7);
   draw_string(g, text, font, text_color, text_rect, flags);
 }
 
@@ -242,12 +248,18 @@ void button_renderer::draw_button_macos_light(graphics g, const rectangle& bound
     }
   }
   
-  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 4);
-  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({bounds.x(), bounds.top()}, {bounds.x(), bounds.bottom()}, button_color, control_paint::dark(button_color, .03)), bounds.x(), bounds.y() + 2, bounds.width(), bounds.height() - 4, 4);
-  g.draw_rounded_rectangle(pen(border_color, 1), bounds.x(), bounds.y() + 2, bounds.width() - 1, bounds.height() - 5, 4);
+  auto button_rect = bounds;
+  if (bounds.height() > 25) {
+    button_rect.offset({2, 0});
+    button_rect.inflate({-4, -1});
+  }
+  
+  if (background_color != color::transparent) g.fill_rounded_rectangle(solid_brush(background_color), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 4);
+  g.fill_rounded_rectangle(drawing2d::linear_gradient_brush({button_rect.x(), button_rect.top()}, {button_rect.x(), button_rect.bottom()}, button_color, control_paint::dark(button_color, .03)), button_rect.x(), button_rect.y() + 2, button_rect.width(), button_rect.height() - 4, 4);
+  g.draw_rounded_rectangle(pen(border_color, 1), button_rect.x(), button_rect.y() + 2, button_rect.width() - 1, button_rect.height() - 5, 4);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location());
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
-  auto text_rect = rectangle(bounds.x() + 5, bounds.y() + 3, bounds.width() - 10, bounds.height() - 7);
+  auto text_rect = rectangle(button_rect.x() + 5, button_rect.y() + 3, button_rect.width() - 10, button_rect.height() - 7);
   draw_string(g, text, font, text_color, text_rect, flags);
 }
 
