@@ -12,6 +12,8 @@
 #include "diagnostics/trace.h"
 #include "diagnostics/trace_event_cache.h"
 #include "diagnostics/trace_event_type.h"
+#include "diagnostics/trace_level.h"
 #include "diagnostics/trace_listener.h"
 #include "diagnostics/trace_listener_collection.h"
 #include "diagnostics/trace_options.h"
+#include "diagnostics/trace_switch.h"
