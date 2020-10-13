@@ -11,25 +11,25 @@ namespace xtd {
     /// @see trace
     enum class trace_event_type {
       /// @brief Fatal error or application crash.
-      critical,
+      critical = 0b1,
       /// @brief Recoverable error.
-      error,
-      /// @brief Informational message.
-      information,
-      /// @brief Resumption of a logical operation.
-      resume,
-      /// @brief Starting of a logical operation.
-      start,
-      /// @brief Stopping of a logical operation.
-      stop,
-      /// @brief Suspension of a logical operation.
-      suspend,
-      /// @brief Changing of correlation identity.
-      transfer,
-      /// @brief Debugging trace.
-      verbose,
+      error = 0b10,
       /// @brief Warning Noncritical problem.
-      warning
+      warning = 0b100,
+      /// @brief Informational message.
+      information = 0b1000,
+      /// @brief Debugging trace.
+      verbose = 0b10000,
+      /// @brief Starting of a logical operation.
+      start = 0b100000000,
+      /// @brief Stopping of a logical operation.
+      stop = 0b1000000000,
+      /// @brief Suspension of a logical operation.
+      suspend = 0b10000000000,
+      /// @brief Resumption of a logical operation.
+      resume = 0b100000000000,
+      /// @brief Changing of correlation identity.
+      transfer = 0b1000000000000,
     };
 
     inline std::ostream& operator<<(std::ostream& os, xtd::diagnostics::trace_event_type value) {return os << to_string(value, {{diagnostics::trace_event_type::critical, "critical"}, {diagnostics::trace_event_type::error, "error"}, {diagnostics::trace_event_type::information, "information"}, {diagnostics::trace_event_type::resume, "resume"}, {diagnostics::trace_event_type::start, "start"}, {diagnostics::trace_event_type::stop, "stop"}, {diagnostics::trace_event_type::suspend, "suspend"}, {diagnostics::trace_event_type::transfer, "transfer"}, {diagnostics::trace_event_type::verbose, "verbose"}, {diagnostics::trace_event_type::warning, "warning"}});}

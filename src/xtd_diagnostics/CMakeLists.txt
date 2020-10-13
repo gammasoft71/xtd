@@ -17,9 +17,11 @@ set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/trace.h
   include/xtd/diagnostics/trace_event_cache.h
   include/xtd/diagnostics/trace_event_type.h
+  include/xtd/diagnostics/trace_level.h
   include/xtd/diagnostics/trace_listener.h
   include/xtd/diagnostics/trace_listener_collection.h
   include/xtd/diagnostics/trace_options.h
+  include/xtd/diagnostics/trace_switch.h
   include/xtd/diagnostics/tracestreambuf.h
 )
 set(SOURCES
