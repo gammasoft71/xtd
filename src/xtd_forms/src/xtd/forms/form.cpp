@@ -392,8 +392,7 @@ void form::wm_close(message &message) {
       set_state(state::modal, false);
       parent_ = parent_before_show_dialog_;
     }
-    form_closed_event_args close_event_args;
-    on_form_closed(close_event_args);
+    on_form_closed(form_closed_event_args());
   }
 }
 

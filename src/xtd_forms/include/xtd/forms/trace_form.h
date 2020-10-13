@@ -23,7 +23,12 @@ namespace xtd {
 
       void write(const std::string& trace) override {
 #if defined(TRACE)
-        write_trace(trace);
+        trace_form_base::write(trace);
+#endif
+      }
+      void write_line(const std::string& trace) override {
+#if defined(TRACE)
+        trace_form_base::write_line(trace);
 #endif
       }
       void flush() override {}

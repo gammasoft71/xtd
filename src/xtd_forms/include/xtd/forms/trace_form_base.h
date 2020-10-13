@@ -47,16 +47,35 @@ namespace xtd {
         update_format();
       }
       
-      virtual void write_trace(const std::string& trace) {text_.append_text(xtd::strings::format(format_, trace, std::chrono::system_clock::now()));}
+      virtual void write(const std::string& trace) {
+        if (need_header()) write_header();
+        text_.append_text(trace);
+      }
       
+      virtual void write_line(const std::string& trace) {
+        if (need_header()) write_header();
+        text_.append_text(trace);
+        text_.append_text("\n");
+        need_header(true);
+      }
+      
+      void write_header() {
+        text_.append_text(xtd::strings::format(format_, std::chrono::system_clock::now()));
+        need_header_ = false;
+      }
+      
+      bool need_header() const {return need_header_;}
+      void need_header(bool value) {need_header_ = value;}
+
     private:
       void update_format() {
-        format_ = "{0}";
-        if (show_date_ && show_time_) format_ = "{1:u}: " + format_;
-        else if (show_date_) format_ = "{1:L}-{1:k}-{1:i}: " + format_;
-        else if (show_time_) format_ = "{1:t}: " + format_;
+        format_ = "";
+        if (show_date_ && show_time_) format_ = "{0:u} - " + format_;
+        else if (show_date_) format_ = "{0:L}-{0:k}-{0:i} - " + format_;
+        else if (show_time_) format_ = "{0:t} - " + format_;
       }
 
+      bool need_header_ = true;
       bool show_date_ = true;
       bool show_time_ = true;
       std::string format_ = "{0}";

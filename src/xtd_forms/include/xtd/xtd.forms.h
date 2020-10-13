@@ -69,6 +69,7 @@
 #include "xtd/forms/dot_matrix_style.h"
 #include "xtd/forms/emoticon.h"
 #include "xtd/forms/emoticons.h"
+#include "xtd/forms/enable_debug.h"
 #include "xtd/forms/flat_style.h"
 #include "xtd/forms/folder_browser_dialog.h"
 #include "xtd/forms/font_dialog.h"
