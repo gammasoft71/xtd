@@ -2,6 +2,7 @@
 #include <string>
 #include <xtd/delegate.h>
 #include "dialog_style.h"
+#include "character_casing.h"
 #include "iwin32_window.h"
 
 /// @cond
@@ -12,18 +13,13 @@ struct __xtd_forms_input_dialog_closed_caller__;
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class input_dialog_closed_event_args : public event_args {
+    class input_dialog_closed_event_args final : public event_args {
     public:
       input_dialog_closed_event_args() = default;
       input_dialog_closed_event_args(forms::dialog_result dialog_result, const std::string& value) : dialog_result_(dialog_result), value_(value) {};
       
-      /// @cond
-      input_dialog_closed_event_args(const input_dialog_closed_event_args& form_closed_event_args) = default;
-      input_dialog_closed_event_args& operator=(const input_dialog_closed_event_args& form_closed_event_args) = default;
-      /// @endcond
-      
-      forms::dialog_result dialog_result() const {return dialog_result_;}
-      std::string value() const {return value_;}
+      virtual forms::dialog_result dialog_result() const {return dialog_result_;}
+      virtual std::string value() const {return value_;}
 
     private:
       forms::dialog_result dialog_result_ = forms::dialog_result::none;
@@ -45,12 +41,30 @@ namespace xtd {
 
       xtd::forms::dialog_style dialog_style() const {return dialog_style_;}
       input_dialog& dialog_style(xtd::forms::dialog_style dialog_style) {
-        dialog_style_ = dialog_style;
+        if (dialog_style_ != dialog_style)
+          dialog_style_ = dialog_style;
+        return *this;
+      }
+      
+      xtd::forms::character_casing character_casing() const {return character_casing_;}
+      input_dialog& character_casing(xtd::forms::character_casing value) {
+        if (character_casing_ != value) {
+          character_casing_ = value;
+          switch (character_casing_) {
+            case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value_); break;
+            case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value_); break;
+            default: break;
+          }
+        }
         return *this;
       }
       
       bool multiline() const {return multiline_;}
-      void multiline(bool multiline) {multiline_ = multiline;}
+      input_dialog& multiline(bool multiline) {
+        if (multiline_ != multiline)
+          multiline_ = multiline;
+        return *this;
+      }
 
       /// @brief Gets the text message.
       /// @return The text message.
@@ -59,7 +73,8 @@ namespace xtd {
       /// @param value The text message.
       /// @return Current input_dialog instance.
       input_dialog& message(const std::string& value) {
-        message_ = value;
+        if (message_ != value)
+          message_ = value;
         return *this;
       }
       
@@ -70,7 +85,8 @@ namespace xtd {
       /// @param value The new dialog caption text.
       /// @return Current input_dialog instance.
       input_dialog& text(const std::string& value) {
-        text_ = value;
+        if (text_ != value)
+          text_ = value;
         return *this;
       }
 
@@ -84,7 +100,13 @@ namespace xtd {
       /// @param value The value.
       /// @return Current input_dialog instance.
       input_dialog& value(const std::string& value) {
-        value_ = value;
+        if (value != value_) {
+          switch (character_casing_) {
+            case xtd::forms::character_casing::normal: value_ = value; break;
+            case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value); break;
+            case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value); break;
+          }
+        }
         return *this;
       }
 
@@ -106,6 +128,7 @@ namespace xtd {
         input_dialog_closed(*this, e);
       }
 
+      xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       bool multiline_ = false;
       std::string message_;

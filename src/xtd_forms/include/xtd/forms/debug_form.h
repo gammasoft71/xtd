@@ -22,9 +22,14 @@ namespace xtd {
       xtd::diagnostics::trace_listener& trace_listener() {return *listener_;}
       
       void write(const std::string& debug) override {
-  #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        write_trace(debug);
-  #endif
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        trace_form_base::write(debug);
+#endif
+      }
+      void write_line(const std::string& debug) override {
+#if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        trace_form_base::write_line(debug);
+#endif
       }
       void flush() override {}
       

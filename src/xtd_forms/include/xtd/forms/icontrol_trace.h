@@ -8,6 +8,7 @@ namespace xtd {
     class icontrol_trace interface_ {
     public:
       virtual void write(const std::string& message) = 0;
+      virtual void write_line(const std::string& message) = 0;
       virtual void flush() = 0;
     };
   }
