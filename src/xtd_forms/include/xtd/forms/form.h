@@ -117,6 +117,8 @@ namespace xtd {
       
       void close();
       
+      bool pre_process_message(xtd::forms::message& message) override; 
+      
       virtual forms::dialog_result show_dialog();
       
       virtual forms::dialog_result show_dialog(const iwin32_window& owner);
@@ -157,8 +159,6 @@ namespace xtd {
       virtual void wm_activate(message& message);
       
       virtual void wm_close(message& message);
-      
-      virtual void wm_key_up(message& message);
       
       std::optional<std::reference_wrapper<ibutton_control>> accept_button_;
       std::optional<std::reference_wrapper<ibutton_control>> cancel_button_;

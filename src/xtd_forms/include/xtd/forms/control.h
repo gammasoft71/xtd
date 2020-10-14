@@ -588,6 +588,8 @@ namespace xtd {
       xtd::drawing::point point_to_client(const xtd::drawing::point& p);
       
       xtd::drawing::point point_to_screen(const xtd::drawing::point& p);
+      
+      virtual bool pre_process_message(xtd::forms::message& message);
 
       virtual void refresh() const;
       

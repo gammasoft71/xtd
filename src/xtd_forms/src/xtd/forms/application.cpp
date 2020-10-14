@@ -25,6 +25,14 @@ namespace {
       if (block == true) break;
     }
     
+    if (!block) {
+      for(auto open_form :application::open_forms()) {
+        auto message = xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+        block = open_form.get().pre_process_message(message);
+        if (block == true) break;
+      }
+    }
+    
     return block;
   }
 }

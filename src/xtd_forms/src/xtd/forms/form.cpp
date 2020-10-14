@@ -224,6 +224,20 @@ void form::close() {
   native::form::close(handle());
 }
 
+bool form::pre_process_message(xtd::forms::message& message) {
+  if (message.msg() == WM_KEYUP) {
+    key_event_args key_event_args(static_cast<keys>(message.wparam()));
+    if (key_event_args.key_data() == keys::enter && accept_button_.has_value()) {
+      accept_button_.value().get().perform_click();
+      return true;
+    } else if (key_event_args.key_data() == keys::escape && cancel_button_.has_value()) {
+      cancel_button_.value().get().perform_click();
+      return true;
+    }
+  }
+  
+  return container_control::pre_process_message(message);
+}
 forms::dialog_result form::show_dialog() {
   set_state(state::modal, true);
   previous_screeen_ = std::make_shared<screen>(screen::from_control(*this));
@@ -359,7 +373,6 @@ forms::create_params form::create_params() const {
 void form::wnd_proc(message &message) {
   switch (message.msg()) {
     case WM_ACTIVATE: wm_activate(message); break;
-    case WM_KEYUP: wm_key_up(message); break;
     case WM_CLOSE: wm_close(message); break;
     case WM_MENUCOMMAND: if (menu_.has_value()) menu_.value().wm_click(message); break;
     default: container_control::wnd_proc(message); break;
@@ -394,13 +407,6 @@ void form::wm_close(message &message) {
     }
     on_form_closed(form_closed_event_args());
   }
-}
-
-void form::wm_key_up(message& message) {
-  container_control::wnd_proc(message);
-  key_event_args key_event_args(static_cast<keys>(message.wparam()));
-  if (key_event_args.key_data() == keys::enter && accept_button_.has_value()) accept_button_.value().get().perform_click();
-  else if (key_event_args.key_data() == keys::escape && cancel_button_.has_value()) cancel_button_.value().get().perform_click();
 }
 
 void form::on_handle_created(const event_args &e) {
