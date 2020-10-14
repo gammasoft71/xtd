@@ -146,9 +146,9 @@ namespace xtd {
       
       void on_handle_destroyed(const event_args &e) override;
       
-      void on_form_closed(const form_closed_event_args& e) {form_closed(*this, e);}
+      virtual void on_form_closed(const form_closed_event_args& e) {form_closed(*this, e);}
       
-      void on_form_closing(form_closing_event_args& e) {form_closing(*this, e);}
+      virtual void on_form_closing(form_closing_event_args& e) {form_closing(*this, e);}
       
       void on_layout(const event_args& e) override;
       
