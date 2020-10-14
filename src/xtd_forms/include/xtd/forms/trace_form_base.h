@@ -50,6 +50,12 @@ namespace xtd {
         update_format();
       }
       
+      void on_form_closing(form_closing_event_args& e) override {
+        e.cancel(true);
+        window_state(form_window_state::minimized);
+        form::on_form_closing(e);
+      }
+
       virtual void write(const std::string& trace) {
         if (need_header()) write_header();
         text_.append_text(trace);
