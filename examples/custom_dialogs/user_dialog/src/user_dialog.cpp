@@ -23,10 +23,12 @@ public:
     button_cancel.dialog_result(forms::dialog_result::cancel);
     button_cancel.location({10, 50});
     button_cancel.text("Cancel");
+    button_cancel.width(85);
 
     button_ok.dialog_result(forms::dialog_result::ok);
-    button_ok.location({110, 50});
+    button_ok.location({105, 50});
     button_ok.text("OK");
+    button_ok.width(85);
 
     active_control(input);
   }
