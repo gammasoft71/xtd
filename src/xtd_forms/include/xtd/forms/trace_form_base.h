@@ -35,6 +35,9 @@ namespace xtd {
 
     protected:
       trace_form_base(const std::string& text) {
+        name("__xtd_forms_trace_form");
+        text_.name("__xtd_forms_trace_form_text");
+
         dock(xtd::forms::dock_style::bottom);
         start_position(xtd::forms::form_start_position::manual);
         this->text(text);
