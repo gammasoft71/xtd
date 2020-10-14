@@ -13,14 +13,21 @@ set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/debug.h
   include/xtd/diagnostics/debugstreambuf.h
   include/xtd/diagnostics/default_trace_listener.h
+  include/xtd/diagnostics/event_type_filter.h
   include/xtd/diagnostics/ostream_trace_listener.h
+  include/xtd/diagnostics/source_filter.h
+  include/xtd/diagnostics/source_levels.h
+  include/xtd/diagnostics/source_switch.h
+  include/xtd/diagnostics/switch_base.h
   include/xtd/diagnostics/trace.h
   include/xtd/diagnostics/trace_event_cache.h
   include/xtd/diagnostics/trace_event_type.h
+  include/xtd/diagnostics/trace_filter.h
   include/xtd/diagnostics/trace_level.h
   include/xtd/diagnostics/trace_listener.h
   include/xtd/diagnostics/trace_listener_collection.h
   include/xtd/diagnostics/trace_options.h
+  include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
   include/xtd/diagnostics/tracestreambuf.h
 )

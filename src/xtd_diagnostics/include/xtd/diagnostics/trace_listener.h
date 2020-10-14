@@ -284,6 +284,8 @@ namespace xtd {
     protected:
       bool need_indent() const {return this->need_indent_;}
       void need_indent(bool need_indent) {this->need_indent_ = need_indent;}
+      
+      void thread_safe(bool thread_safe) {is_thread_safe_ = thread_safe;}
 
       /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.
       /// @remarks This method writes the indent and resets the NeedIndent property to false. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes.
