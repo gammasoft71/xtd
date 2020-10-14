@@ -680,6 +680,14 @@ drawing::point control::point_to_screen(const xtd::drawing::point &p) {
   return native::control::point_to_screen(handle_, p);
 }
 
+bool control::pre_process_message(xtd::forms::message& message) {
+  bool message_processed = false;
+  for (auto child : controls()) {
+    message_processed = child.get().pre_process_message(message);
+    if (message_processed) break;
+  }
+  return message_processed;
+}
 void control::refresh() const {
   native::control::refresh(handle_);
 }
@@ -719,7 +727,7 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
 }
 
 void control::wnd_proc(message& message) {
-  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
+  if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!xtd::strings::starts_with(name(), "__xtd_forms_trace_form") && enable_debug::get(enable_debug::events), strings::format("({}) receive message [{}]", *this, message));
   switch (message.msg()) {
       // keyboard:
     case WM_CHAR:
