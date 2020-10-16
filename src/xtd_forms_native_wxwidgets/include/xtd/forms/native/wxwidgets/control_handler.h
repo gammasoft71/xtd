@@ -535,40 +535,40 @@ namespace xtd {
         int32_t virtual_keys = 0;
 
 #if defined(__APPLE__)
-        if (mouse_state.RawControlDown()) virtual_keys += VK_COMMAND;
-        if (mouse_state.ControlDown()) virtual_keys += MK_CONTROL;
+        if (mouse_state.RawControlDown()) virtual_keys |= VK_COMMAND;
+        if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
 #else
-        if (mouse_state.ControlDown()) virtual_keys += MK_CONTROL;
+        if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
 #endif
-        if (mouse_state.ShiftDown()) virtual_keys += MK_SHIFT;
-        if (mouse_state.LeftIsDown()) virtual_keys += MK_LBUTTON;
-        if (mouse_state.MiddleIsDown()) virtual_keys += MK_MBUTTON;
-        if (mouse_state.RightIsDown()) virtual_keys += MK_RBUTTON;
-        if (mouse_state.Aux1IsDown()) virtual_keys += MK_XBUTTON1;
-        if (mouse_state.Aux2IsDown()) virtual_keys += MK_XBUTTON2;
+        if (mouse_state.ShiftDown()) virtual_keys |= MK_SHIFT;
+        if (mouse_state.LeftIsDown()) virtual_keys |= MK_LBUTTON;
+        if (mouse_state.MiddleIsDown()) virtual_keys |= MK_MBUTTON;
+        if (mouse_state.RightIsDown()) virtual_keys |= MK_RBUTTON;
+        if (mouse_state.Aux1IsDown()) virtual_keys |= MK_XBUTTON1;
+        if (mouse_state.Aux2IsDown()) virtual_keys |= MK_XBUTTON2;
         
-        if (event.GetEventType() == wxEVT_LEFT_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONDOWN, MK_LBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONDOWN, MK_MBUTTON+ virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_RIGHT_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONDOWN, MK_RBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_LEFT_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONUP, MK_LBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_MIDDLE_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONUP, MK_MBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_RIGHT_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONUP, MK_RBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        if (event.GetEventType() == wxEVT_LEFT_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONDOWN, MK_LBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_MIDDLE_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONDOWN, MK_MBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_RIGHT_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONDOWN, MK_RBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_LEFT_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONUP, MK_LBUTTON |virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_MIDDLE_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONUP, MK_MBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_RIGHT_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONUP, MK_RBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MOTION) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOUSEMOVE, virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_ENTER_WINDOW) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOUSEENTER, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_LEAVE_WINDOW) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MOUSELEAVE, 0, 0, reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_LEFT_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONDBLCLK, MK_LBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONDBLCLK, MK_MBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_RIGHT_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONDBLCLK, MK_RBUTTON + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_LEFT_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_LBUTTONDBLCLK, MK_LBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_MIDDLE_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_MBUTTONDBLCLK, MK_MBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_RIGHT_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_RBUTTONDBLCLK, MK_RBUTTON|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_SET_FOCUS) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_SETFOCUS, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_KILL_FOCUS) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_KILLFOCUS, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_CHILD_FOCUS) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_CHILDACTIVATE, 0, 0, reinterpret_cast<intptr_t>(&event));
         else if (event.GetEventType() == wxEVT_MOUSEWHEEL) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), mouse_event.GetWheelAxis() == wxMouseWheelAxis::wxMOUSE_WHEEL_VERTICAL ? WM_MOUSEWHEEL : WM_MOUSEHWHEEL, virtual_keys + ((mouse_event.GetWheelRotation() < 0 ? -mouse_event.GetWheelDelta() : mouse_event.GetWheelDelta()) << 16), mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_AUX1_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDOWN, MK_XBUTTON1 + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_AUX1_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONUP, MK_XBUTTON1 + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_AUX2_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDOWN, MK_XBUTTON2 +virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_AUX2_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONUP, MK_XBUTTON2 + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_AUX1_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDBLCLK, MK_XBUTTON1 + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
-        else if (event.GetEventType() == wxEVT_AUX2_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDBLCLK, MK_XBUTTON2 + virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_AUX1_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDOWN, MK_XBUTTON1|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_AUX1_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONUP, MK_XBUTTON1|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_AUX2_DOWN) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDOWN, MK_XBUTTON2|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_AUX2_UP) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONUP, MK_XBUTTON2|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_AUX1_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDBLCLK, MK_XBUTTON1|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
+        else if (event.GetEventType() == wxEVT_AUX2_DCLICK) event_handler_->send_message(reinterpret_cast<intptr_t>(event_handler_), WM_XBUTTONDBLCLK, MK_XBUTTON2|virtual_keys, mouse_state.GetX() + (mouse_state.GetY() << 16), reinterpret_cast<intptr_t>(&event));
         else def_process_event(event);
       }
       
