@@ -13,7 +13,7 @@ cd ../../../..
 
 # generate and build lib
 git submodule update --init
-mkdir -p build & cd build
+mkdir -p build && cd build
 cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DENABLE_XTD_COMMAND_LINE=OFF -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local ..
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install -- -j $(nproc)
