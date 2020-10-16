@@ -11,14 +11,14 @@ using namespace xtd::forms::native;
 
 size_t text_box::selection_length(intptr_t control) {
   long from = 0, to = 0;
-  if (control == 0) return;
+  if (control == 0) return 0;
   static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection(&from, &to);
   return static_cast<size_t>(to - from);
 }
 
 size_t text_box::selection_start(intptr_t control) {
   long from = 0, to = 0;
-  if (control == 0) return;
+  if (control == 0) return 0;
   static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection(&from, &to);
   return static_cast<size_t>(from);
 }
