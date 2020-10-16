@@ -18,6 +18,12 @@ namespace xtd {
     /// If you need trace levels, or mechanisms for setting switch levels different from those provided by boolean_switch, source_switch and trace_switch, you can inherit from switch_base. When inheriting from this class, you must implement the switch_setting method.
     class switch_base {
     public:
+      /// @cond
+      switch_base(const switch_base& value) = default;
+      switch_base& operator =(const switch_base& value) = default;
+      bool operator==(const switch_base& value) const {return display_name_ == value.display_name_ && description_ == value.description_ && default_switch_value_ == value.default_switch_value_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;}
+      bool operator!=(const switch_base& value) const {return !operator==(value);}
+      /// @endcond
       /// @brief Gets the custom switch attributes
       /// @rettur nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
       const std::map<std::string, std::string>& attributes() const {return attributes_;}

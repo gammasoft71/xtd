@@ -5,6 +5,7 @@
 #include "default_trace_listener.h"
 #include "source_levels.h"
 #include "source_switch.h"
+#include "trace_event_cache.h"
 #include "trace_listener_collection.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -44,6 +45,116 @@ namespace xtd {
       /// @brief Gets the name of the trace source.
       /// @return The name of the trace source.
       const std::string& name() const {return name_;}
+      
+      /// @brief Gets the source switch value.
+      /// @return A SourceSwitch object representing the source switch value.
+      /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
+      /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
+      const xtd::diagnostics::source_switch& source_switch() const {return source_switch_;}
+      /// @brief Sets the source switch value.
+      /// @param source_switch A SourceSwitch object representing the source switch value.
+      /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
+      /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
+      void source_switch(const xtd::diagnostics::source_switch& source_switch) {
+        if (source_switch_ != source_switch) {
+          source_switch_ = source_switch;
+        }
+      }
+            
+      /// @brief Closes all the trace listeners in the trace listener collection.
+      /// @remarks The close method calls the close method of each trace listener in the listeners collection.
+      void close() {
+        for (auto listener : listeners_)
+          listener->close();
+      }
+      
+      /// @brief Flushes all the trace listeners in the trace listener collection.
+      /// @remarks The flush method calls the flush method of each trace listener in the listeners collection.
+      void flush() {
+        for (auto listener : listeners_)
+          listener->flush();
+      }
+      
+      /// @brief Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.
+      /// @param event_type One of the enumeration values that specifies the event type of the trace data.
+      /// @param id A numeric identifier for the event.
+      /// @param data The trace data.
+      /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
+      /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
+      template<typename object_t>
+      void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32_t id, const object_t& data) {
+#if defined(TRACE)
+        if (source_switch_.should_trace(event_type))
+          for (auto listener : listeners_)
+            listener->trace_data(trace_event_cache(), name_, event_type, id, data);
+#endif
+      }
+      
+      /// @brief Writes trace data to the trace listeners in the Listeners collection using the specified event type, event identifier, and trace data.
+      /// @param event_type One of the enumeration values that specifies the event type of the trace data.
+      /// @param id A numeric identifier for the event.
+      /// @param data The trace data.
+      /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
+      /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
+      template<typename object_t>
+      void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32_t id, const std::vector<object_t>& data) {
+#if defined(TRACE)
+        if (source_switch_.should_trace(event_type))
+          for (auto listener : listeners_)
+            listener->trace_data(trace_event_cache(), name_, event_type, id, data);
+#endif
+      }
+      
+      /// @brief Writes a trace event message to the trace listeners in the listeners collection using the specified event type and event identifier.
+      /// @param event_type One of the enumeration values that specifies the event type of the trace data.
+      /// @param id A numeric identifier for the event.
+      /// @remarks The trace_event method is intended to trace events that can be processed automatically by tools. For example, a monitoring tool can notify an administrator if a specific event is traced by a specific source.
+      void trace_event(const xtd::diagnostics::trace_event_type& event_type, int32_t id) {
+#if defined(TRACE)
+        if (source_switch_.should_trace(event_type))
+          for (auto listener : listeners_)
+            listener->trace_event(trace_event_cache(), name_, event_type, id);
+#endif
+      }
+      
+      /// @brief Writes a trace event message to the trace listeners in the listeners collection using the specified event type, event identifier adn message.
+      /// @param event_type One of the enumeration values that specifies the event type of the trace data.
+      /// @param id A numeric identifier for the event.
+      /// @param message The trace message to write.
+      void trace_event(const xtd::diagnostics::trace_event_type& event_type, int32_t id, const std::string& message) {
+#if defined(TRACE)
+        if (source_switch_.should_trace(event_type))
+          for (auto listener : listeners_)
+            listener->trace_event(trace_event_cache(), name_, event_type, id, message);
+#endif
+      }
+      
+      /// @brief Writes a trace event message to the trace listeners in the listeners collection using the specified event type,  event identifier, and argument array and format
+      /// @param event_type One of the enumeration values that specifies the event type of the trace data.
+      /// @param id A numeric identifier for the event.
+      /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
+      /// @param args... An object array containing zero or more objects to format.
+      template<typename ...objects>
+      void trace_event(const xtd::diagnostics::trace_event_type& event_type, int32_t id, const std::string& format, const objects& ... args) {
+#if defined(TRACE)
+        if (source_switch_.should_trace(event_type))
+          for (auto listener : listeners_)
+            listener->trace_event(trace_event_cache(), name_, event_type, id, xtd::strings::format(format, args...));
+#endif
+      }
+    
+      void trace_information(const std::string& message) {trace_event(trace_event_type::information, 0, message);}
+      
+      template<typename ...objects>
+      void trace_information(const std::string& message, const objects& ... args) {trace_event(trace_event_type::information, 0, message, args...);}
+
+      template<typename guid_t>
+      void trace_transfer (int32_t id, const std::string& message,const  guid_t& related_activity_id) {
+#if defined(TRACE)
+        for (auto listener : listeners_)
+          listener->trace_transfer(trace_event_cache(), name_, id, message, related_activity_id);
+#endif
+      }
       
     private:
       std::map<std::string, std::string> attributes_;
