@@ -3,8 +3,8 @@ image: Visual Studio 2019
 
 environment:
   matrix:
-  - BUILD_OPTION: "Visual Studio 15 2019"
-  - BUILD_OPTION: "Visual Studio 15 2019 Win64"
+  - BUILD_OPTION: "Visual Studio 16 2019"
+  - BUILD_OPTION: "Visual Studio 16 2019 Win64"
 
 install:
   - choco install doxygen.install
