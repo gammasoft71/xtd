@@ -11,7 +11,7 @@
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
-# [![codecov](https://codecov.io/gh/gammasoft71/xtd_forms/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd_forms)
+<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd_forms/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd_forms) --->
 
 # Features
 
