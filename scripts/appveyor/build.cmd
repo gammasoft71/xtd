@@ -8,7 +8,7 @@ cd wxwidgets
 git submodule update --init
 mkdir build_cmake 
 cd build_cmake
-cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+cmake .. -G "%BUILD_OPTION%" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 cmake --build . -- -j8
 cmake --build . --target install
 cd ../../../..
