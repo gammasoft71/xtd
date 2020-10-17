@@ -13,10 +13,6 @@
 <!--- [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download) --->
 <!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd) --->
 
-# Notes
-
-[xtd is under development](docs/development_status.md).
-
 # Features
 
 * a collection of native C++ classes libraries, to complete std;
