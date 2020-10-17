@@ -143,11 +143,26 @@ namespace xtd {
 #endif
       }
     
+      /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified message.
+      /// @param message The informative message to write.
+      /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
+      /// @remarks trace_information(const std::dtring&, calls the trace_event(const trace_eventType&, Int32_t, const std::string&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, std::string&) method in turn calls the trace_event(const trace_event_cache&, const std::string&, trace_event_type, Int32_t, const std::string&) method of each trace listener.
       void trace_information(const std::string& message) {trace_event(trace_event_type::information, 0, message);}
       
-      template<typename ...objects>
-      void trace_information(const std::string& message, const objects& ... args) {trace_event(trace_event_type::information, 0, message, args...);}
+      /// @brief Writes an informational message to the trace listeners in the listeners collection using the specified object array and formatting information.
+      /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
+      /// @param args... An array containing zero or more objects to format.
+      /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
+      /// @remarks trace_information(const std::dtring&, const Objects_t) calls the trace_event(const trace_eventType&, Int32_t, const std::string&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, std::string&, ...objects_t) method in turn calls the trace_event(const trace_event_cache&, const std::string&, trace_event_type, Int32_t, const std::string&, ...objects_t) method of each trace listener.
+      template<typename ...objects_t>
+      void trace_information(const std::string& format, const objects_t& ... args) {trace_event(trace_event_type::information, 0, format, args...);}
 
+      /// @brief Writes a trace transfer message to the trace listeners in the listeners collection using the specified numeric identifier, message, and related activity identifier.
+      /// @param id A numeric identifier for the event.
+      /// @param message The trace message to write.
+      /// @param related_activity_id A structure that identifies the related activity.
+      /// @remarks The trace_transfer method calls the trace_transfer method of each trace listener in the listeners property to write the trace information. The default trace_transfer method in the base trace_listener class calls the trace_listener::trace_event(const trace_event_cache&, const std::string&, trace_svent_type, Int32_t, const std::string&) method to process the call, setting event_type to trace_event_type::transfer and appending a string representation of the related_activity_id GUID to message.
+      /// @remarks trace_transfer is intended to be used with the logical operations of a correlation_manager. The related_activity_id parameter relates to the activity_id property of a correlation_manager object. If a logical operation begins in one activity and transfers to another, the second activity logs the transfer by calling the trace_transfer method. The trace_transfer call relates the new activity identity to the previous identity. The most likely consumer of this functionality is a trace viewer that can report logical operations that span multiple activities.
       template<typename guid_t>
       void trace_transfer (int32_t id, const std::string& message,const  guid_t& related_activity_id) {
 #if defined(TRACE)
