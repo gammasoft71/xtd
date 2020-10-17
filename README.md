@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd_forms.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd_forms)
 [![Build status](https://ci.appveyor.com/api/projects/status/ok6m6omcftt8qque?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-forms)
-<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd_forms/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd_forms) --->
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd_forms/)
 [![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./docs/home.md)
 [![Website](https://img.shields.io/badge/web-xtd--forms-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
@@ -12,6 +11,7 @@
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
+<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd_forms/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd_forms) --->
 
 # Features
 
