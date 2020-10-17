@@ -3,6 +3,17 @@
 brew update
 brew install doxygen
 
+# clone, generate and build wxwidgets 3.1.4
+mkdir -p build/thirdparty/ && cd build/thirdparty
+git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.4 --depth 1
+cd wxwidgets
+git submodule update --init
+mkdir build_cmake && cd build_cmake
+cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
+cmake --build . -- -j8
+cmake --build . --target install
+cd ../../../..
+
 # generate and build lib
 git submodule update --init
 mkdir -p build && cd build
