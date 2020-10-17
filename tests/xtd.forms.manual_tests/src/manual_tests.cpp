@@ -85,10 +85,26 @@ namespace xtd {
 int main() {
   form form_main;
   form_main.text("Manual tests");
+
+  label label1;
+  label1.location({10, 50});
+  label1.auto_size(true);
+  label1.parent(form_main);
+
+  text_box text_box1;
+  text_box1.location({10, 10});
+  text_box1.password_char('@');
+  text_box1.text_changed += [&] {
+    label1.text(text_box1.text());
+  };
+  text_box1.text("123456");
+  text_box1.parent(form_main);
   
+  /*
    table_layout_panel table_layout_panel;
    table_layout_panel.parent(form_main);
    table_layout_panel.dock(dock_style::fill);
+   */
   
   form_main.client_size({300, 300});
   

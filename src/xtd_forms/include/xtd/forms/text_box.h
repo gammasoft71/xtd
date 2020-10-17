@@ -36,13 +36,16 @@ namespace xtd {
       virtual bool multiline() const {return multiline_;}
       virtual text_box& multiline(bool value);
       
+      virtual char32_t password_char() const {return password_char_;}
+      virtual text_box& password_char(char32_t value);
+      
       using text_box_base::selection_length;
       size_t selection_length() const override;
 
       using text_box_base::selection_start;
       size_t selection_start() const override;
       
-      using text_box_base::text;
+      const std::string& text() const override;
       control& text(const std::string& text) override;
       
       virtual bool use_system_password_char() const {return use_system_password_char_;}
@@ -62,11 +65,24 @@ namespace xtd {
       virtual void on_accepts_return_changed(const event_args& e) {if (can_raise_events()) accepts_return_changed(*this, e);}
 
       void on_handle_created(const event_args& e) override;
+      
+      void on_text_changed(const event_args& e) override;
+      
+      /// @brief Processes Windows messages.
+      /// @param m The Windows Message to process.
+      /// @remarks All messages are sent to the wnd_proc method after getting filtered through the pre_process_message method.
+      void wnd_proc(message& message) override;
+
+      /// @cond
+      void wm_key_char(message& message);
+      void wm_set_text(message& message);
+      /// @endcond
 
       bool accepts_return_ = false;
       xtd::forms::border_style border_style_ = xtd::forms::border_style::fixed_single;
       xtd::forms::character_casing character_casing_ = xtd::forms::character_casing::normal;
       bool multiline_ = false;
+      char32_t password_char_ = 0;
       bool use_system_password_char_ = false;
     };
   }
