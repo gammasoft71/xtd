@@ -58,7 +58,7 @@ namespace minesweeper {
             {"&Search for Help On...", {[&] {}}},
             {"&How to Use Help", {[&] {}}},
             {"-"},
-            {texts::about, {[&] {about_dialog().common_dialog::show_dialog();}}}
+            {texts::about, {[&] {about_dialog().show();}}}
           }
         },
       });
