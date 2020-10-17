@@ -8,7 +8,7 @@ cd wxwidgets
 git submodule update --init
 mkdir build_cmake 
 cd build_cmake
-cmake .. -G "%BUILD_OPTION%"-DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+cmake .. -G "%BUILD_OPTION%" -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 cmake --build . --config Debug --target install
 cd ../../../..
 
