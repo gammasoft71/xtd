@@ -39,6 +39,7 @@ add_projects(
   system_images3
   text_box_multiline
   text_box_password
+  text_box_password2
   toggle_button2
   track_bar2
   wiggly
