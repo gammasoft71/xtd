@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd)
 [![Build status](https://ci.appveyor.com/api/projects/status/uqn1xbctwy88eghu?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd)
-<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd) --->
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd/)
 [![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./docs/home.md)
 [![Website](https://img.shields.io/badge/web-xtd-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
@@ -12,6 +11,7 @@
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
+<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd) --->
 
 # Notes
 
