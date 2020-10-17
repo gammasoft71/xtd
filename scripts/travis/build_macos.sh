@@ -8,16 +8,19 @@ mkdir -p build/thirdparty/ && cd build/thirdparty
 git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.4 --depth 1
 cd wxwidgets
 git submodule update --init
-mkdir -p build_cmake && cd build_cmake
-cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
+mkdir build_cmake && cd build_cmake
+cmake ..  -G "Xcode" -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
 cmake --build . -- -j8
 cmake --build . --target install
 cd ../../../..
 
 # generate and build lib
+git submodule update --init
 mkdir -p build && cd build
 cmake .. -G "Xcode" -DCMAKE_INSTALL_PREFIX=~/local
+if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --config Debug
+if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install --config Debug
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
