@@ -6,30 +6,27 @@ cd build\3rdparty
 git clone https://github.com/wxWidgets/wxWidgets.git -b v3.1.4 --depth 1
 cd wxwidgets
 git submodule update --init
-cd..
-mkdir wxwidgets\build_cmake
+mkdir build_cmake
 cd wxwidgets\build_cmake
-cmake .. -DwxBUILD_SHARED=OFF
+cmake .. -G "%BUILD_OPTION%" -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 cmake --build . --target install --config Debug
 cd ..\..\..\..
 
-:: create build directory
-mkdir build\examples
-cd build
-
 :: generate and build lib
+mkdir build
+cd build
 git submodule update --init
-cmake .. -G "%BUILD_OPTION%" -DENABLE_TESTS=ON
+cmake .. -G "%BUILD_OPTION%" -DENABLE_TESTS=ON -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config Debug --target install
 if %ERRORLEVEL% NEQ 0 exit 1
+cd ..
 
 :: generate and build examples
-cd examples
-cmake ../../examples -G "%BUILD_OPTION%"
-if %ERRORLEVEL% NEQ 0 exit 1
-cmake --build . --config Debug
-if %ERRORLEVEL% NEQ 0 exit 1
-cd ..
-
-cd ..
+::mkdir build\examples
+::cd build\examples
+::cmake ../../examples -G "%BUILD_OPTION%" -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+::if %ERRORLEVEL% NEQ 0 exit 1
+::cmake --build . --config Debug
+::if %ERRORLEVEL% NEQ 0 exit 1
+::cd ..\..
