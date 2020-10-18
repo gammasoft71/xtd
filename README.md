@@ -4,7 +4,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ok6m6omcftt8qque?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-forms)
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd_forms/)
 [![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./docs/home.md)
-[![Website](https://img.shields.io/badge/web-xtd--forms-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
+[![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.forms.svg)](LICENSE.md)
 <!--- [![SourceForge Download forms](https://img.shields.io/sourceforge/dt/formspro.svg)](https://sourceforge.net/projects/formspro/files/latest/download) --->
 <!--- [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.forms.svg)](README.md) --->
