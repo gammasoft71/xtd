@@ -9,6 +9,7 @@ namespace xtd {
       public:
         static void activate(intptr_t form);
         static void close(intptr_t form);
+        static bool full_screen(intptr_t form);
         static void full_screen(intptr_t form, bool full_screen);
         static void icon(intptr_t form, intptr_t icon);
         static bool maximize(intptr_t form);

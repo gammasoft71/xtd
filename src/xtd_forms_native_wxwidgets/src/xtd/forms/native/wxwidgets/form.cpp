@@ -10,6 +10,9 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
+bool __toogle_full_screen_frame__(wxTopLevelWindow* control);
+void __toogle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
+
 void form::activate(intptr_t form) {
   if (form == 0) return;
   reinterpret_cast<control_handler*>(form)->control()->Raise();
@@ -20,9 +23,22 @@ void form::close(intptr_t form) {
   reinterpret_cast<control_handler*>(form)->control()->Close();
 }
 
+bool form::full_screen(intptr_t form) {
+  if (form == 0) return false;
+#if defined(__APPLE__)
+  return __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control()));
+#else
+  return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->IsFullScreen();
+#endif
+}
+
 void form::full_screen(intptr_t form, bool full_screen) {
   if (form == 0) return;
+#if defined(__APPLE__)
+  __toogle_full_screen_frame__(static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control()), full_screen);
+#else
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(full_screen);
+#endif
 }
 
 void form::icon(intptr_t form, intptr_t icon) {
@@ -77,11 +93,11 @@ void form::minimize(intptr_t form, bool minimize) {
 
 void form::restore(intptr_t form) {
   if (form == 0) return;
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->ShowFullScreen(false);
+  full_screen(form, false);
   static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Restore();
 #if defined(__WXGTK__)
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Maximize(false);
-  static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(form)->control())->Iconize(false);
+  maximize(form, false);
+  minimize(form, false);
 #endif
 }
 
