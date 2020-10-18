@@ -97,6 +97,7 @@ if (APPLE)
     src/xtd/forms/native/wxwidgets/application.mm
     src/xtd/forms/native/wxwidgets/button.mm
     src/xtd/forms/native/wxwidgets/cursor.mm
+    src/xtd/forms/native/wxwidgets/form.mm
     src/xtd/forms/native/wxwidgets/message_box.mm
   )
 endif()

@@ -196,8 +196,6 @@ control& form::visible(bool visible) {
 }
 
 form& form::window_state(form_window_state value) {
-  if (window_state_ == form_window_state::full_screen && value != form_window_state::normal) return *this;
-  if (window_state_ != form_window_state::normal && value == form_window_state::full_screen) return *this;
   if (window_state_ != value) {
     window_state_ = value;
     internal_set_window_state();
@@ -432,7 +430,9 @@ void form::on_resize(const event_args& e) {
     window_state_ = forms::form_window_state::minimized;
   else if (native::form::maximize(handle()))
     window_state_ = forms::form_window_state::maximized;
-  else if (window_state_ != form_window_state::full_screen)
+  else if (native::form::full_screen(handle()))
+    window_state_ = forms::form_window_state::full_screen;
+  else
     window_state_ = forms::form_window_state::normal;
   container_control::on_resize(e);
 }
