@@ -7,13 +7,15 @@
 [![Website](https://img.shields.io/badge/web-xtd--tunit-brightgreen.svg)](https://gammasoft71.wixsite.com/xtd-tunit)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.tunit.svg)](LICENSE.md)
 [![SourceForge Download tunit](https://img.shields.io/sourceforge/dt/tunitpro.svg)](https://sourceforge.net/projects/tunitpro/files/latest/download)
-<!--- [![c++17](https://img.shields.io/badge/c++-17-004080.svg)](https://en.wikipedia.org/wiki/C%2B%2B17) --->
-<!--- [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](https://en.wikipedia.org/wiki/Microsoft_Windows) --->
-<!--- [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](https://en.wikipedia.org/wiki/MacOS) --->
-<!--- [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](https://en.wikipedia.org/wiki/Linux) --->
-<!--- [![iOS](https://img.shields.io/badge/os-iOS-004080.svg)](https://en.wikipedia.org/wiki/IOS) --->
-<!--- [![android](https://img.shields.io/badge/os-android-004080.svg)](https://en.wikipedia.org/wiki/Android_(operating_system)) --->
-<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd.tunit/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.tunit) --->
+<!--- 
+[![c++17](https://img.shields.io/badge/c++-17-004080.svg)](https://en.wikipedia.org/wiki/C%2B%2B17)
+[![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](https://en.wikipedia.org/wiki/Microsoft_Windows)
+[![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](https://en.wikipedia.org/wiki/MacOS)
+[![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](https://en.wikipedia.org/wiki/Linux)
+[![iOS](https://img.shields.io/badge/os-iOS-004080.svg)](https://en.wikipedia.org/wiki/IOS)
+[![android](https://img.shields.io/badge/os-android-004080.svg)](https://en.wikipedia.org/wiki/Android_(operating_system))
+[![codecov](https://codecov.io/gh/gammasoft71/xtd.tunit/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.tunit)
+ --->
 
 Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
 
