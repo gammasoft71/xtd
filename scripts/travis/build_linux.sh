@@ -8,7 +8,7 @@ git submodule update --init
 mkdir build_cmake && cd build_cmake
 cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . --target install -- -j $(nproc) -- -quiet
+cmake --build . --target install -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
 cd ../../../..
 
@@ -18,7 +18,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DENABLE_XTD_COMMAND_LINE=OF
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
-#cmake --build . --target install -- -quiet
+#cmake --build . --target install
 #if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
