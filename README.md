@@ -4,7 +4,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/2nlokdfs0w3c3jdx?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-diagnostics)
 [![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd_diagnostics/)
 [![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./README.md)
-[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-environment%20website)](https://gammasoft71.wixsite.com/xtd-environment)
+[![Website](https://img.shields.io/badge/web-xtd-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.environment.svg)](LICENSE.md)
 <!--- [![Download diagnostics](https://img.shields.io/sourceforge/dt/environmentpro.svg)](https://sourceforge.net/projects/environmentpro//files/latest/download) --->
 <!--- [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.environment.svg)](README.md) --->
