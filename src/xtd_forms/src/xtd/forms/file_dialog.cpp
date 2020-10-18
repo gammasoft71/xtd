@@ -4,6 +4,7 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void file_dialog::reset() {
+  dialog_result_ = xtd::forms::dialog_result::none;
   auto_upgrade_enabled_ = true;
   default_ext_ = "";
   file_name_ = "";
@@ -18,4 +19,8 @@ void file_dialog::reset() {
 
 bool file_dialog::run_dialog(intptr_t hwnd_owner) {
   return run_file_dialog(hwnd_owner);
+}
+
+void file_dialog::run_sheet_dialog(intptr_t hwnd_owner) {
+  return run_sheet_file_dialog(hwnd_owner);
 }

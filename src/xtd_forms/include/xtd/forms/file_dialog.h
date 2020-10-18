@@ -173,7 +173,8 @@ namespace xtd {
       void reset() override;
       
       bool run_dialog (intptr_t hwnd_owner) override;
-      
+      void run_sheet_dialog (intptr_t hwnd_owner) override;
+
       std::string to_string() const {
         return strings::format("{}: title: {}, filename: {}", strings::full_class_name(*this), title_, file_name_);
       }
@@ -205,6 +206,7 @@ namespace xtd {
       friend class open_file_dialog;
       friend class save_file_dialog;
       virtual bool run_file_dialog(intptr_t hwnd_owner) = 0;
+      virtual void run_sheet_file_dialog(intptr_t hwnd_owner) = 0;
     };
   }
 }

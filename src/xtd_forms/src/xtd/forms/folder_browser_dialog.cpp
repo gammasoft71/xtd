@@ -5,9 +5,15 @@ using namespace xtd;
 using namespace xtd::forms;
 
 void folder_browser_dialog::reset() {
-  this->options_ = BIF_USENEWUI;
+  dialog_result_ = xtd::forms::dialog_result::none;
+  options_ = BIF_USENEWUI;
 }
 
 bool folder_browser_dialog::run_dialog(intptr_t owner) {
-  return native::folder_browser_dialog::run_dialog(owner, this->description_, this->root_folder_, this->selected_path_, this->options_);
+  return native::folder_browser_dialog::run_dialog(owner, description_, root_folder_, selected_path_, options_);
+}
+
+void folder_browser_dialog::run_sheet_dialog(intptr_t owner) {
+  /// @todo call native::color_dialog::run_sheeet_dialog and catch close event...
+  on_common_dialog_closed(common_dialog_closed_event_args(native::folder_browser_dialog::run_dialog(owner, description_, root_folder_, selected_path_, options_) ? dialog_result::ok : dialog_result::cancel));
 }
