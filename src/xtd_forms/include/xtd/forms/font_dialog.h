@@ -214,6 +214,10 @@ namespace xtd {
       /// @remarks The run_dialog method is invoked when the user of a font dialog box calls the show_dialog method.
       bool run_dialog(intptr_t owner) override;
 
+      /// @brief When overridden in a derived class, specifies a common dialog box.
+      /// @param owner A value that represents the window handle of the owner window for the common dialog box.
+      void run_sheet_dialog(intptr_t owner) override;
+
     private:
       bool get_option(size_t flag) const {return (this->options_ & flag) == flag;}
       void set_option(size_t flag, bool value) {this->options_ = value ? this->options_ | flag : this->options_ & ~flag;}
