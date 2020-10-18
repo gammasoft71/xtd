@@ -2,15 +2,16 @@
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd_diagnostics.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd_diagnostics)
 [![Build status](https://ci.appveyor.com/api/projects/status/2nlokdfs0w3c3jdx?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-diagnostics)
-[![codecov](https://codecov.io/gh/gammasoft71/xtd.environment/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.environment)
-[![Documentation](https://codedocs.xyz/gammasoft71/xtd.environment.svg)](https://codedocs.xyz/gammasoft71/xtd.environment/)
+[![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd_diagnostics/)
+[![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./README.md)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-environment%20website)](https://gammasoft71.wixsite.com/xtd-environment)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.environment.svg)](LICENSE.md)
-[![SourceForge Download environment](https://img.shields.io/sourceforge/dt/environmentpro.svg)](https://sourceforge.net/projects/environmentpro//files/latest/download)
-[![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.environment.svg)](README.md)
-[![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
-[![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
-[![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
+<!--- [![Download diagnostics](https://img.shields.io/sourceforge/dt/environmentpro.svg)](https://sourceforge.net/projects/environmentpro//files/latest/download) --->
+<!--- [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.environment.svg)](README.md) --->
+<!--- [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md) --->
+<!--- [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md) --->
+<!--- [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md) --->
+<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd.environment/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.environment) --->
 
 # Features
 
