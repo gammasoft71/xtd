@@ -2,16 +2,18 @@
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd_strings.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd_strings)
 [![Build status](https://ci.appveyor.com/api/projects/status/tark5puo8mou967a?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-strings)
-[![codecov](https://codecov.io/gh/gammasoft71/xtd.strings/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.strings)
-[![Documented](https://codedocs.xyz/gammasoft71/xtd.strings.svg)](https://codedocs.xyz/gammasoft71/xtd.strings/)
-[![Documentation](https://img.shields.io/badge/wiki-Documentation-brightgreen.svg)](./docs/documentation.md)
-[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-strings%20website)](https://gammasoft71.wixsite.com/xtd-strings)
+[![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd_strings/)
+[![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./docs/home.md)
+[![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.strings.svg)](LICENSE.md)
-[![SourceForge Download strings](https://img.shields.io/sourceforge/dt/stringspro.svg)](https://sourceforge.net/projects/stringspro//files/latest/download)
+[![Download strings](https://img.shields.io/sourceforge/dt/stringspro.svg)](https://sourceforge.net/projects/stringspro//files/latest/download)
+<!---
 [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.strings.svg)](README.md)
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
 [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
+[![codecov](https://codecov.io/gh/gammasoft71/xtd.strings/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.strings)
+--->
 
 # Features
 
