@@ -2,11 +2,11 @@
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd_io.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd_io)
 [![Build status](https://ci.appveyor.com/api/projects/status/qverymyu0fopqnt4?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-io)
-[![codecov](https://codecov.io/gh/gammasoft71/xtd.io/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.io)
-[![Documented](https://codedocs.xyz/gammasoft71/xtd.io.svg)](https://codedocs.xyz/gammasoft71/xtd.io/)
-[![Documentation](https://img.shields.io/badge/markdown-Documentation-brightgreen.svg)](./docs/home.md)
-[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=xtd-tunit%20website)](https://gammasoft71.wixsite.com/xtd-tunit)
+[![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd_io/)
+[![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./README.md)
+[![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.io.svg)](LICENSE.md)
+<!--- 
 [![Download xtd.io](https://img.shields.io/sourceforge/dt/iopro.svg)](https://sourceforge.net/projects/iopro/files/latest/download)
 [![c++17](https://img.shields.io/badge/c++-17-004080.svg)](https://en.wikipedia.org/wiki/C%2B%2B17)
 [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](https://en.wikipedia.org/wiki/Microsoft_Windows)
@@ -14,6 +14,8 @@
 [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](https://en.wikipedia.org/wiki/Linux)
 [![iOS](https://img.shields.io/badge/os-iOS-004080.svg)](https://en.wikipedia.org/wiki/IOS)
 [![android](https://img.shields.io/badge/os-android-004080.svg)](https://en.wikipedia.org/wiki/Android_(operating_system))
+[![codecov](https://codecov.io/gh/gammasoft71/xtd.io/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd.io) 
+--->
 
 xtd.io is a modern c++17 library, that allow reading and writing to files and data streams, and that provide basic file and directory support, for Windows, macOS, Linux, iOS and android.
 
