@@ -23,7 +23,7 @@ namespace example {
       };
 
       button_previous.auto_repeat(true);
-      button_previous.text("&<");
+      button_previous.image(button_images::previous());
       button_previous.location({75, 200});
       button_previous.enabled(false);
       button_previous.click += [&] {
@@ -33,7 +33,7 @@ namespace example {
       };
       
       button_next.auto_repeat(true);
-      button_next.text("&>");
+      button_next.image(button_images::next());
       button_next.location({150, 200});
       button_next.enabled(false);
       button_next.click += [&] {
