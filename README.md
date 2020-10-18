@@ -6,12 +6,14 @@
 [![Documentation](https://img.shields.io/badge/wiki-Documentaions-brightgreen.svg)](./docs/home.md)
 [![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.forms.svg)](LICENSE.md)
-<!--- [![SourceForge Download forms](https://img.shields.io/sourceforge/dt/formspro.svg)](https://sourceforge.net/projects/formspro/files/latest/download) --->
-<!--- [![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.forms.svg)](README.md) --->
-<!--- [![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md) --->
-<!--- [![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md) --->
-<!--- [![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md) --->
-<!--- [![codecov](https://codecov.io/gh/gammasoft71/xtd_forms/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd_forms) --->
+<!--- 
+[![SourceForge Download forms](https://img.shields.io/sourceforge/dt/formspro.svg)](https://sourceforge.net/projects/formspro/files/latest/download)
+[![GitHub top language](https://img.shields.io/github/languages/top/gammasoft71/xtd.forms.svg)](README.md)
+[![Windows](https://img.shields.io/badge/os-Windows-004080.svg)](README.md)
+[![macOS](https://img.shields.io/badge/os-macOS-004080.svg)](README.md)
+[![Linux](https://img.shields.io/badge/os-Linux-004080.svg)](README.md)
+[![codecov](https://codecov.io/gh/gammasoft71/xtd_forms/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd_forms)
+--->
 
 # Features
 
