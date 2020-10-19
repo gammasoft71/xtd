@@ -22,7 +22,7 @@ bool font_dialog::run_dialog(intptr_t owner) {
   return native::font_dialog::run_dialog(owner, font_, color_, options_, min_size_, max_size_, show_color_);
 }
 
-void font_dialog::run_sheet_dialog(intptr_t owner) {
+void font_dialog::run_sheet(intptr_t owner) {
   /// @todo call native::color_dialog::run_sheeet_dialog and catch close event...
   on_common_dialog_closed(common_dialog_closed_event_args(native::font_dialog::run_dialog(owner, font_, color_, options_, min_size_, max_size_, show_color_) ? dialog_result::ok : dialog_result::cancel));
 }

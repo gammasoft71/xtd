@@ -5,20 +5,11 @@
 #include "../../../include/xtd/forms/label.h"
 #include "../../../include/xtd/forms/input_dialog.h"
 #include "../../../include/xtd/forms/text_box.h"
+#include "xtd_forms_input_dialog_closed_caller.h"
 
 using namespace std;
 using namespace xtd;
 using namespace xtd::forms;
-
-struct __xtd_forms_input_dialog_closed_caller__ {
-  __xtd_forms_input_dialog_closed_caller__(xtd::forms::input_dialog* input_dialog) : input_dialog_(input_dialog) {}
-  void on_input_closed(int32_t result, const std::string& value) {
-    input_dialog_->input_dialog::on_input_dialog_closed(input_dialog_closed_event_args(static_cast<dialog_result>(result), value));
-    delete this;
-  }
-private:
-  xtd::forms::input_dialog* input_dialog_ = nullptr;
-};
 
 namespace {
   class input_dialog_standard : public form {
@@ -66,15 +57,24 @@ namespace {
       return form::show_dialog();
     }
     
-    forms::dialog_result show_dialog(const iwin32_window& owner) override {
-      this->owner(dynamic_cast<const control&>(owner));
-      start_position(form_start_position::center_parent);
-      return form::show_dialog(owner);
+    bool run_dialog(intptr_t owner) {
+      if (!owner)
+        start_position(form_start_position::center_screen);
+      else {
+        this->owner(control::from_handle(owner).value());
+        start_position(form_start_position::center_parent);
+      }
+      if (owner) return form::show_dialog(control::from_handle(owner).value()) == dialog_result::ok;
+      return form::show_dialog() == dialog_result::ok;
     }
     
-    void show_sheet(const iwin32_window& owner) override {
-      start_position(form_start_position::center_parent);
-      form::show_sheet(owner);
+    void run_sheet(intptr_t owner) {
+      if (!owner)
+        run_dialog(owner);
+      else {
+        start_position(form_start_position::center_parent);
+        form::show_sheet(control::from_handle(owner).value());
+      }
     }
 
   private:
@@ -95,7 +95,7 @@ void input_dialog::reset() {
   value_ = "";
 }
 
-dialog_result input_dialog::show_dialog() {
+bool input_dialog::run_dialog(intptr_t owner) {
   switch (character_casing_) {
     case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value_); break;
     case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value_); break;
@@ -103,59 +103,39 @@ dialog_result input_dialog::show_dialog() {
   }
   if (dialog_style_ == xtd::forms::dialog_style::standard) {
     input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
-    auto result = dialog.show_dialog();
-    if (result == dialog_result::ok) value_ = dialog.value();
-    on_input_dialog_closed(input_dialog_closed_event_args(result, value_));
+    auto result = dialog.run_dialog(owner);
+    if (result) value_ = dialog.value();
+    on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
     return result;
   }
   application::raise_enter_thread_modal(event_args::empty);
-  auto result = static_cast<dialog_result>(native::input_dialog::show_dialog(0, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_));
-  on_input_dialog_closed(input_dialog_closed_event_args(result, value_));
-  return result;
-}
-
-dialog_result input_dialog::show_dialog(const iwin32_window& owner) {
-  if (dialog_style_ == xtd::forms::dialog_style::standard) {
-    input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
-    auto result = dialog.show_dialog(owner);
-    if (result == dialog_result::ok) value_ = dialog.value();
-    on_input_dialog_closed(input_dialog_closed_event_args(result, value_));
-    return result;
-  }
-  application::raise_enter_thread_modal(event_args::empty);
-  auto result = static_cast<dialog_result>(native::input_dialog::show_dialog(owner.handle(), text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_));
-  on_input_dialog_closed(input_dialog_closed_event_args(result, value_));
+  auto result = native::input_dialog::run_dialog(owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
+  on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
 
-void input_dialog::show_sheet(const iwin32_window& owner) {
-  if (dialog_style_ == xtd::forms::dialog_style::standard) {
-    input_dialog_standard* dialog = new input_dialog_standard(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
-    dialog->show_sheet(owner);
-    dialog->form_closed += [&](control& sender, const form_closed_event_args& e) {
-      if (static_cast<input_dialog_standard*>(&sender)->dialog_result() == dialog_result::ok) value_ = static_cast<input_dialog_standard*>(&sender)->value();
-      on_input_dialog_closed(input_dialog_closed_event_args(static_cast<input_dialog_standard*>(&sender)->dialog_result(), value_));
-      delete static_cast<input_dialog_standard*>(&sender);
-    };
-    return ;
+void input_dialog::run_sheet(intptr_t owner) {
+  switch (character_casing_) {
+    case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value_); break;
+    case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value_); break;
+    default: break;
   }
-  application::raise_enter_thread_modal(event_args::empty);
-  native::input_dialog::show_sheet({*new __xtd_forms_input_dialog_closed_caller__(this), &__xtd_forms_input_dialog_closed_caller__::on_input_closed}, owner.handle(), text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
-  application::raise_leave_thread_modal(event_args::empty);
-}
-
-dialog_result input_dialog::show_sheet_dialog(const iwin32_window& owner) {
-  if (dialog_style_ == xtd::forms::dialog_style::standard) {
-    input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
-    auto result = dialog.show_sheet_dialog(owner);
-    if (result == dialog_result::ok) value_ = dialog.value();
-    on_input_dialog_closed(input_dialog_closed_event_args(result, value_));
-    return result;
+  if (!owner)
+    run_dialog(owner);
+  else {
+    if (dialog_style_ == xtd::forms::dialog_style::standard) {
+      input_dialog_standard* dialog = new input_dialog_standard(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
+      dialog->run_sheet(owner);
+      dialog->form_closed += [&](control& sender, const form_closed_event_args& e) {
+        if (static_cast<input_dialog_standard*>(&sender)->dialog_result() == dialog_result::ok) value_ = static_cast<input_dialog_standard*>(&sender)->value();
+        on_common_dialog_closed(common_dialog_closed_event_args(static_cast<input_dialog_standard*>(&sender)->dialog_result()));
+        delete static_cast<input_dialog_standard*>(&sender);
+      };
+      return ;
+    }
+    application::raise_enter_thread_modal(event_args::empty);
+    native::input_dialog::run_sheet({*new __xtd_forms_input_dialog_closed_caller__(this), &__xtd_forms_input_dialog_closed_caller__::on_input_closed}, owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
+    application::raise_leave_thread_modal(event_args::empty);
   }
-  application::raise_enter_thread_modal(event_args::empty);
-  auto result = static_cast<dialog_result>(native::input_dialog::show_sheet_dialog(owner.handle(), text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_));
-  on_input_dialog_closed(input_dialog_closed_event_args(result, value_));
-  application::raise_leave_thread_modal(event_args::empty);
-  return result;
 }

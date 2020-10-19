@@ -15,7 +15,7 @@ namespace xtd {
 
     private:
       bool run_file_dialog(intptr_t hwnd_owner) override;
-      void run_sheet_file_dialog(intptr_t owner) override;
+      void run_file_sheet(intptr_t owner) override;
     };
   }
 }

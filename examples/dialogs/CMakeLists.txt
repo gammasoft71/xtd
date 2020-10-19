@@ -6,5 +6,6 @@ find_package(xtd.forms REQUIRED)
 add_projects(
   about_dialog
   about_dialog_system
-  input_dialog
+  message_box
+  message_box_show_sheet
 )

@@ -276,6 +276,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/up_down_base.cpp
   src/xtd/forms/up_down_button.cpp
   src/xtd/forms/user_control.cpp
+  src/xtd/forms/xtd_forms_input_dialog_closed_caller.h
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})

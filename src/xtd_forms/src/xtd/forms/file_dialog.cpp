@@ -21,6 +21,6 @@ bool file_dialog::run_dialog(intptr_t hwnd_owner) {
   return run_file_dialog(hwnd_owner);
 }
 
-void file_dialog::run_sheet_dialog(intptr_t hwnd_owner) {
-  return run_sheet_file_dialog(hwnd_owner);
+void file_dialog::run_sheet(intptr_t hwnd_owner) {
+  return run_file_sheet(hwnd_owner);
 }
