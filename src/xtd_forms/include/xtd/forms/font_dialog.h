@@ -216,7 +216,7 @@ namespace xtd {
 
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-      void run_sheet_dialog(intptr_t owner) override;
+      void run_sheet(intptr_t owner) override;
 
     private:
       bool get_option(size_t flag) const {return (this->options_ & flag) == flag;}

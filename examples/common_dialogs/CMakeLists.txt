@@ -7,8 +7,7 @@ add_projects(
   color_dialog
   folder_browser_dialog
   font_dialog
-  message_box
-  message_box_show_sheet
+  input_dialog
   open_file_dialog
   save_file_dialog
 )
