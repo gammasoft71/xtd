@@ -5,7 +5,7 @@
 #include "../../../include/xtd/forms/label.h"
 #include "../../../include/xtd/forms/input_dialog.h"
 #include "../../../include/xtd/forms/text_box.h"
-#include "xtd_forms_input_dialog_closed_caller.h"
+#include "xtd_forms_common_dialog_closed_caller.h"
 
 using namespace std;
 using namespace xtd;
@@ -105,12 +105,12 @@ bool input_dialog::run_dialog(intptr_t owner) {
     input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
     auto result = dialog.run_dialog(owner);
     if (result) value_ = dialog.value();
-    on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
+    //on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
     return result;
   }
   application::raise_enter_thread_modal(event_args::empty);
   auto result = native::input_dialog::run_dialog(owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
-  on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
+  //on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
@@ -125,17 +125,16 @@ void input_dialog::run_sheet(intptr_t owner) {
     run_dialog(owner);
   else {
     if (dialog_style_ == xtd::forms::dialog_style::standard) {
-      input_dialog_standard* dialog = new input_dialog_standard(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
+      std::shared_ptr<input_dialog_standard> dialog = std::make_shared<input_dialog_standard>(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
       dialog->run_sheet(owner);
-      dialog->form_closed += [&](control& sender, const form_closed_event_args& e) {
-        if (static_cast<input_dialog_standard*>(&sender)->dialog_result() == dialog_result::ok) value_ = static_cast<input_dialog_standard*>(&sender)->value();
-        on_common_dialog_closed(common_dialog_closed_event_args(static_cast<input_dialog_standard*>(&sender)->dialog_result()));
-        delete static_cast<input_dialog_standard*>(&sender);
+      dialog->form_closed += [&, dialog](control& sender, const form_closed_event_args& e) {
+        if (dialog->dialog_result() == dialog_result::ok) value_ = dialog->value();
+        on_common_dialog_closed(common_dialog_closed_event_args(dialog->dialog_result()));
       };
       return ;
     }
     application::raise_enter_thread_modal(event_args::empty);
-    native::input_dialog::run_sheet({*new __xtd_forms_input_dialog_closed_caller__(this), &__xtd_forms_input_dialog_closed_caller__::on_input_closed}, owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
+    native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
     application::raise_leave_thread_modal(event_args::empty);
   }
 }

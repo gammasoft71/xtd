@@ -51,22 +51,22 @@ namespace {
 }
 
 bool input_dialog::run_dialog(intptr_t control, const std::string& text, const std::string& message, std::string& value, int32_t character_casing, bool multiline, bool use_system_password_char) {
-  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char);
+  wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
   int result = text_entry_dialog->ShowModal() == wxID_OK ? IDOK : IDCANCEL;
   if (result == IDCANCEL) return false;
 
   if (character_casing == 1) value = text_entry_dialog->GetValue().Upper().ToUTF8().data();
   else if (character_casing == 2) value = text_entry_dialog->GetValue().Lower().ToUTF8().data();
   else value = text_entry_dialog->GetValue().ToUTF8().data();
-  text_entry_dialog->Destroy();
   return true;
 }
 
-void input_dialog::run_sheet(xtd::delegate<void(int32_t)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& message, std::string& value, int32_t character_casing, bool multiline, bool use_system_password_char) {
-  wxTextEntryDialog* text_entry_dialog = create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char);
+void input_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& message, std::string& value, int32_t character_casing, bool multiline, bool use_system_password_char) {
+  //wxWindowPtr<wxTextEntryDialog> text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
+  wxTextEntryDialog* text_entry_dialog(create_text_entry_dialog(control, text, message, value, character_casing, multiline, use_system_password_char));
   text_entry_dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [text_entry_dialog, on_dialog_closed, &value, character_casing](wxWindowModalDialogEvent& event) {
-    auto result = event.GetReturnCode() == wxID_OK ? IDOK : IDCANCEL;
-    if (result == IDOK) {
+    auto result = event.GetReturnCode() == wxID_OK;
+    if (result) {
       if (character_casing == 1) value = text_entry_dialog->GetValue().Upper().ToUTF8().data();
       else if (character_casing == 2) value = text_entry_dialog->GetValue().Lower().ToUTF8().data();
       else value = text_entry_dialog->GetValue().ToUTF8().data();

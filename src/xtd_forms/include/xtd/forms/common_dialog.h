@@ -8,7 +8,7 @@
 #include "iwin32_window.h"
 
 /// @cond
-struct __xtd_forms_input_dialog_closed_caller__;
+struct __xtd_forms_common_dialog_closed_caller__;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -104,7 +104,7 @@ namespace xtd {
       
     protected:
       /// @cond
-      friend struct ::__xtd_forms_input_dialog_closed_caller__;
+      friend struct ::__xtd_forms_common_dialog_closed_caller__;
       /// @endcond
       
       /// @brief Raises the close event.
