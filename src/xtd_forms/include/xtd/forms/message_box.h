@@ -84,7 +84,9 @@ namespace xtd {
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       
     private:
+      /// @cond
       friend struct ::__xtd_forms_message_box_closed_caller__;
+      /// @endcond
       static void on_message_box_closed(const message_box_closed_event_args& e) {
         message_box_closed(e);
       }
