@@ -1,6 +1,7 @@
 #include <xtd/forms/native/font_dialog.h>
 #include <xtd/forms/font_dialog_flags.h>
 #include <wx/fontdlg.h>
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 
 using namespace xtd;
@@ -31,10 +32,14 @@ bool font_dialog::run_dialog(intptr_t hwnd, drawing::font& font, drawing::color&
 #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
-  wxFontDialog dialog(reinterpret_cast<wxWindow*>(hwnd), font_data);
+  wxFontDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), font_data);
   if (dialog.ShowModal() != wxID_OK) return false;
   font = drawing::font(reinterpret_cast<intptr_t>(new wxFont(dialog.GetFontData().GetChosenFont())));
   wxColour colour = dialog.GetFontData().GetColour();
   color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
   return true;
+}
+
+void font_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, drawing::font& font, drawing::color& color, size_t options, size_t min_size, size_t max_size, bool show_color) {
+  on_dialog_closed(run_dialog(hwnd, font, color, options, min_size, max_size, show_color));
 }

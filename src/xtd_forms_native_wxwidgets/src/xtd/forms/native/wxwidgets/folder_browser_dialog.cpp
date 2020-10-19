@@ -28,15 +28,15 @@ namespace {
 #endif
 }
 
-bool folder_browser_dialog::run_dialog(intptr_t control, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
-  wxWindowPtr<DirDialog> dialog(new DirDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {description.c_str(), wxMBConvUTF8()}, {(!selected_path.empty() && wxDirExists({selected_path.c_str(), wxMBConvUTF8()}) ? selected_path : environment::get_folder_path(root_folder)).c_str(), wxMBConvUTF8()}, wxDD_DEFAULT_STYLE));
+bool folder_browser_dialog::run_dialog(intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
+  wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), {description.c_str(), wxMBConvUTF8()}, {(!selected_path.empty() && wxDirExists({selected_path.c_str(), wxMBConvUTF8()}) ? selected_path : environment::get_folder_path(root_folder)).c_str(), wxMBConvUTF8()}, wxDD_DEFAULT_STYLE));
   if (dialog->ShowModal() != wxID_OK) return false;
   selected_path = dialog->GetPath().utf8_str().data();
   return true;
 }
 
-void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t control, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
-  wxWindowPtr<DirDialog> dialog(new DirDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {description.c_str(), wxMBConvUTF8()}, {(!selected_path.empty() && wxDirExists({selected_path.c_str(), wxMBConvUTF8()}) ? selected_path : environment::get_folder_path(root_folder)).c_str(), wxMBConvUTF8()}, wxDD_DEFAULT_STYLE));
+void folder_browser_dialog::run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& description, environment::special_folder root_folder, std::string& selected_path, size_t options) {
+  wxWindowPtr<DirDialog> dialog(new DirDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), {description.c_str(), wxMBConvUTF8()}, {(!selected_path.empty() && wxDirExists({selected_path.c_str(), wxMBConvUTF8()}) ? selected_path : environment::get_folder_path(root_folder)).c_str(), wxMBConvUTF8()}, wxDD_DEFAULT_STYLE));
   dialog->ShowWindowModal();
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, &selected_path](wxWindowModalDialogEvent& event) {
     auto result = event.GetReturnCode() == wxID_OK;

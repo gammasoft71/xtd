@@ -27,7 +27,7 @@ namespace {
   };
   #endif
 
-  wxWindowPtr<FileDialog> create_file_dialog(intptr_t control, bool open_dialog, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
+  wxWindowPtr<FileDialog> create_file_dialog(intptr_t hwnd, bool open_dialog, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
     long wx_style = open_dialog ? wxFD_OPEN : wxFD_SAVE;
     if ((options & OFN_NODEREFERENCELINKS) == OFN_NODEREFERENCELINKS) wx_style |= wxFD_NO_FOLLOW;
     if ((options & OFN_FILEMUSTEXIST) == OFN_FILEMUSTEXIST) wx_style |= wxFD_FILE_MUST_EXIST;
@@ -35,7 +35,7 @@ namespace {
     if ((options & OFN_SHOWPREVIEW) == OFN_SHOWPREVIEW) wx_style |= wxFD_PREVIEW;
     if ((options & OFN_ALLOWMULTISELECT) == OFN_ALLOWMULTISELECT) wx_style |= wxFD_MULTIPLE;
     if ((options & OFN_FORCESHOWHIDDEN) == OFN_FORCESHOWHIDDEN) wx_style |= wxFD_SHOW_HIDDEN;
-    wxWindowPtr<FileDialog> file_dialog(new FileDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {title.c_str(), wxMBConvUTF8()}, {initial_directory.c_str(), wxMBConvUTF8()}, {file_name.c_str(), wxMBConvUTF8()}, {filter.c_str(), wxMBConvUTF8()}, wx_style));
+    wxWindowPtr<FileDialog> file_dialog(new FileDialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), {title.c_str(), wxMBConvUTF8()}, {initial_directory.c_str(), wxMBConvUTF8()}, {file_name.c_str(), wxMBConvUTF8()}, {filter.c_str(), wxMBConvUTF8()}, wx_style));
     file_dialog->SetFilterIndex(static_cast<int32_t>(filter_index - 1));
     return file_dialog;
   }
