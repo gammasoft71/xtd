@@ -16,7 +16,7 @@ public:
       font_dialog font_dialog;
       font_dialog.color(label1.fore_color());
       font_dialog.font(label1.font());
-      if (font_dialog.show_dialog() == forms::dialog_result::ok) {
+      if (font_dialog.show_dialog(*this) == forms::dialog_result::ok) {
         label1.fore_color(font_dialog.color());
         label1.font(font_dialog.font());
       }
