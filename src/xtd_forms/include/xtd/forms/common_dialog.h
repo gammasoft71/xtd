@@ -107,6 +107,9 @@ namespace xtd {
       friend struct ::__xtd_forms_input_dialog_closed_caller__;
       /// @endcond
       
+      /// @brief Raises the close event.
+      /// @param e An common_dialog_close_event_args that provides the event data.
+      /// @remarks This method is invoked when the common dialog box is closed.
       virtual void on_common_dialog_closed(const common_dialog_closed_event_args& e) {
         dialog_result_ = e.dialog_result();
         common_dialog_closed(*this, e);
