@@ -15,7 +15,7 @@ public:
       open_file_dialog dialog;
       dialog.initial_directory(environment::get_folder_path(environment::special_folder::desktop));
       dialog.filter("Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
-      if (dialog.show_dialog() == forms::dialog_result::ok)
+      if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok)
         label1.text(strings::format("File = {}", dialog.file_name()));
     };
 
