@@ -1,5 +1,6 @@
 #include <xtd/forms/native/folder_browser_dialog.h>
 #include "../../../include/xtd/forms/folder_browser_dialog.h"
+#include "xtd_forms_common_dialog_closed_caller.h"
 
 using namespace xtd;
 using namespace xtd::forms;
@@ -14,6 +15,6 @@ bool folder_browser_dialog::run_dialog(intptr_t owner) {
 }
 
 void folder_browser_dialog::run_sheet(intptr_t owner) {
-  /// @todo call native::color_dialog::run_sheeet_dialog and catch close event...
-  on_common_dialog_closed(common_dialog_closed_event_args(native::folder_browser_dialog::run_dialog(owner, description_, root_folder_, selected_path_, options_) ? dialog_result::ok : dialog_result::cancel));
+  if (!owner) run_dialog(owner);
+  else native::folder_browser_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, description_, root_folder_, selected_path_, options_);
 }
