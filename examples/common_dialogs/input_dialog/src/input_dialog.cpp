@@ -17,7 +17,7 @@ namespace examples {
         input_dialog.text("Caption text");
         input_dialog.message("Message text");
         input_dialog.value(label1.text());
-        if (input_dialog.show_dialog(*this) == dialog_result::ok)
+        if (input_dialog.show_sheet_dialog(*this) == dialog_result::ok)
           label1.text(input_dialog.value());
       };
 
