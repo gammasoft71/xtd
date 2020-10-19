@@ -3,9 +3,6 @@
 
 /// @mainpage xtd.forms - Reference Guide Documentation
 ///
-/// @section NotesSection Notes
-/// xtd.forms is under development.
-///
 /// @section FeaturesSection Features
 ///   * Contains common controls, containers, menu, toolbar, components, various dialogs, ...
 ///   * Easy catch control events by using event and delegates classes.
