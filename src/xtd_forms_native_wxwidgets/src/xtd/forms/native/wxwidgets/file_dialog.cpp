@@ -66,12 +66,12 @@ bool file_dialog::run_open_dialog(intptr_t hwnd, const std::string& default_ext,
 
 void file_dialog::run_open_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, true, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
-  dialog->ShowWindowModal();
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, options, &file_name, &file_names](wxWindowModalDialogEvent& event) {
     auto result = event.GetReturnCode() == wxID_OK;
     if (result) get_results(*dialog, options, file_name, file_names);
     on_dialog_closed(result);
   });
+  dialog->ShowWindowModal();
 }
 
 bool file_dialog::run_save_dialog(intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
@@ -83,10 +83,10 @@ bool file_dialog::run_save_dialog(intptr_t hwnd, const std::string& default_ext,
 
 void file_dialog::run_save_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr_t hwnd, const std::string& default_ext, std::string& file_name, std::vector<std::string>& file_names, const std::string& filter, size_t filter_index, const std::string& initial_directory, size_t options, bool support_multi_dotted_extensions, const std::string& title) {
   wxWindowPtr<FileDialog> dialog(create_file_dialog(hwnd, false, default_ext, file_name, file_names, filter, filter_index, initial_directory, options, support_multi_dotted_extensions, title));
-  dialog->ShowWindowModal();
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [dialog, on_dialog_closed, options, &file_name](wxWindowModalDialogEvent& event) {
     auto result = event.GetReturnCode() == wxID_OK;
     if (result) file_name = dialog->GetPath();
     on_dialog_closed(result);
   });
+  dialog->ShowWindowModal();
 }
