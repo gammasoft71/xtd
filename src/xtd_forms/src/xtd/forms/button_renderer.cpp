@@ -351,9 +351,9 @@ void button_renderer::draw_button_windows_dark(graphics g, const rectangle& boun
     border_color = xtd::forms::theme_colors::current_theme().highlight();
   }
   
-  g.fill_rectangle(solid_brush(button_color), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2);
-  g.draw_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 3, bounds.height() - 3);
-  g.draw_rectangle(pen(border_color, 1), bounds.x() + 2, bounds.y() + 2, bounds.width() - 5, bounds.height() - 5);
+  g.fill_rectangle(solid_brush(button_color), bounds.x() + 1, bounds.y() + 2, bounds.width() - 2, bounds.height() - 4);
+  g.draw_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 2, bounds.width() - 3, bounds.height() - 5);
+  g.draw_rectangle(pen(border_color, 1), bounds.x() + 2, bounds.y() + 3, bounds.width() - 5, bounds.height() - 7);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   auto text_rect = rectangle(bounds.x() + 5, bounds.y() + 3, bounds.width() - 10, bounds.height() - 7);
@@ -386,9 +386,9 @@ void button_renderer::draw_button_windows_light(graphics g, const rectangle& bou
     draw_string(g, text, font, text_color, text_rect, flags);
   }
 
-  g.fill_rectangle(solid_brush(button_color), bounds.x() + 1, bounds.y() + 1, bounds.width() - 2, bounds.height() - 2);
-  g.draw_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 1, bounds.width() - 3, bounds.height() - 3);
-  g.draw_rectangle(pen(border_color, 1), bounds.x() + 2, bounds.y() + 2, bounds.width() - 5, bounds.height() - 5);
+  g.fill_rectangle(solid_brush(button_color), bounds.x() + 1, bounds.y() + 2, bounds.width() - 2, bounds.height() - 4);
+  g.draw_rectangle(pen(active_border_color, 1), bounds.x() + 1, bounds.y() + 2, bounds.width() - 3, bounds.height() - 5);
+  g.draw_rectangle(pen(border_color, 1), bounds.x() + 2, bounds.y() + 3, bounds.width() - 5, bounds.height() - 7);
   if (image != image::empty && state == xtd::forms::visual_styles::push_button_state::disabled) g.draw_image_disabled(image, image_bounds.location(), 0.25);
   else if (image != image::empty) g.draw_image(image, image_bounds.location());
   auto text_rect = rectangle(bounds.x() + 5, bounds.y() + 3, bounds.width() - 10, bounds.height() - 7);
