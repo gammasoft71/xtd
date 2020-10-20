@@ -18,17 +18,20 @@ namespace {
     input_dialog_standard(const std::string& text, const std::string& message, const std::string& value, xtd::forms::character_casing character_casing, bool multiline, bool use_system_password_char) {
       auto offset_multiline = multiline ? 100 : 0;
       
+      icon(xtd::drawing::icon::empty);
       accept_button(ok_button_);
       cancel_button(cancel_button_);
       client_size({330, 115 + offset_multiline});
       controls().push_back_range({input_panel_, cancel_button_, ok_button_});
+      control_box(false);
       maximize_box(false);
       minimize_box(false);
+      show_icon(false);
       this->text(text);
       
       if (xtd::environment::os_version().is_windows_platform()) input_panel_.back_color(theme_colors::current_theme().window());
-      input_panel_.size({330, 115 - 42 + offset_multiline});
-      input_panel_.dock(dock_style::top);
+      input_panel_.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
+      input_panel_.bounds({0, 0, 330, 115 - 42 + offset_multiline});
       input_panel_.controls().push_back_range({message_label_, input_text_box_});
 
       message_label_.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
