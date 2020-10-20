@@ -86,6 +86,9 @@ namespace xtd {
       using container_control::parent;
       control& parent(const control& value) override;
       
+      virtual bool show_icon() const {return show_icon_;}
+      virtual form& show_icon(bool value);
+
       virtual form_start_position start_position() const {return start_position_;}
       virtual form& start_position(form_start_position value);
 
