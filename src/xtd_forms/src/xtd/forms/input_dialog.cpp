@@ -3,6 +3,7 @@
 #include "../../../include/xtd/forms/button.h"
 #include "../../../include/xtd/forms/texts.h"
 #include "../../../include/xtd/forms/label.h"
+#include "../../../include/xtd/forms/panel.h"
 #include "../../../include/xtd/forms/input_dialog.h"
 #include "../../../include/xtd/forms/text_box.h"
 #include "xtd_forms_common_dialog_closed_caller.h"
@@ -20,11 +21,16 @@ namespace {
       accept_button(ok_button_);
       cancel_button(cancel_button_);
       client_size({330, 115 + offset_multiline});
-      controls().push_back_range({message_label_, input_text_box_, cancel_button_, ok_button_});
+      controls().push_back_range({input_panel_, cancel_button_, ok_button_});
       maximize_box(false);
       minimize_box(false);
       this->text(text);
       
+      if (xtd::environment::os_version().is_windows_platform()) input_panel_.back_color(theme_colors::current_theme().window());
+      input_panel_.size({330, 115 - 42 + offset_multiline});
+      input_panel_.dock(dock_style::top);
+      input_panel_.controls().push_back_range({message_label_, input_text_box_});
+
       message_label_.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right);
       message_label_.bounds({10, 10, 310, 23});
       message_label_.text(message);
@@ -39,12 +45,12 @@ namespace {
       cancel_button_.anchor(anchor_styles::right|anchor_styles::bottom);
       cancel_button_.dialog_result(forms::dialog_result::cancel);
       cancel_button_.text(texts::cancel);
-      cancel_button_.location({xtd::environment::os_version().is_windows_platform() ? 245 : 160, 75 + offset_multiline});
+      cancel_button_.location({xtd::environment::os_version().is_windows_platform() ? 245 : 160, 81 + offset_multiline});
 
       ok_button_.anchor(anchor_styles::right|anchor_styles::bottom);
       ok_button_.dialog_result(forms::dialog_result::ok);
       ok_button_.text(texts::ok);
-      ok_button_.location({xtd::environment::os_version().is_windows_platform() ? 160 : 245, 75 + offset_multiline});
+      ok_button_.location({xtd::environment::os_version().is_windows_platform() ? 160 : 245, 81 + offset_multiline});
     
       //active_control(input_text_box_);
       input_text_box_.focus();
@@ -78,6 +84,8 @@ namespace {
     }
 
   private:
+    panel input_panel_;
+    panel button_panel_;
     label message_label_;
     text_box input_text_box_;
     button cancel_button_;
@@ -105,12 +113,10 @@ bool input_dialog::run_dialog(intptr_t owner) {
     input_dialog_standard dialog(text_, message_, value_, character_casing_, multiline_, use_system_password_char_);
     auto result = dialog.run_dialog(owner);
     if (result) value_ = dialog.value();
-    //on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
     return result;
   }
   application::raise_enter_thread_modal(event_args::empty);
   auto result = native::input_dialog::run_dialog(owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
-  //on_common_dialog_closed(common_dialog_closed_event_args(result ? dialog_result::ok : dialog_result::cancel));
   application::raise_leave_thread_modal(event_args::empty);
   return result;
 }
@@ -131,7 +137,7 @@ void input_dialog::run_sheet(intptr_t owner) {
         on_common_dialog_closed(common_dialog_closed_event_args(dialog->dialog_result()));
       };
       dialog->run_sheet(owner);
-      return ;
+      return;
     }
     application::raise_enter_thread_modal(event_args::empty);
     native::input_dialog::run_sheet({*new __xtd_forms_common_dialog_closed_caller__(this), &__xtd_forms_common_dialog_closed_caller__::on_common_dialog_closed}, owner, text_, message_, value_, static_cast<int32_t>(character_casing_), multiline_, use_system_password_char_);
