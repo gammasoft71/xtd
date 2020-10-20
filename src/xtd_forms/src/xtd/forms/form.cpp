@@ -104,7 +104,7 @@ form& form::help_button(bool value) {
 form& form::icon(const xtd::drawing::icon& value) {
   if (icon_ != value) {
     icon_ = value != drawing::icon::empty ? value : system_icons::xtd_forms_logo();
-    native::form::icon(handle(), icon_.handle());
+    if (show_icon_) native::form::icon(handle(), icon_.handle());
   }
   return *this;
 }
@@ -152,6 +152,15 @@ form& form::owner(const control& value) {
 
 control& form::parent(const control& parent) {
   throw std::invalid_argument("Top-level control cannot be added to a control.");
+  return *this;
+}
+
+form& form::show_icon(bool value) {
+  if (show_icon_ != value) {
+    show_icon_ = value;
+    recreate_handle();
+  }
+
   return *this;
 }
 
@@ -409,7 +418,7 @@ void form::wm_close(message &message) {
 
 void form::on_handle_created(const event_args &e) {
   container_control::on_handle_created(e);
-  if (icon_ != drawing::icon::empty) native::form::icon(handle(), icon_.handle());
+  if (show_icon_ && icon_ != drawing::icon::empty) native::form::icon(handle(), icon_.handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (menu_.has_value()) native::form::menu(handle(), menu_.value().handle());
   if (accept_button_.has_value()) accept_button_.value().get().notify_default(true);
