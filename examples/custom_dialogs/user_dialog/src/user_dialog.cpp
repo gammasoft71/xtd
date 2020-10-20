@@ -11,8 +11,10 @@ public:
     cancel_button(button_cancel);
     client_size({200, 80});
     form_border_style(forms::form_border_style::fixed_dialog);
+    control_box(false);
     minimize_box(false);
     maximize_box(false);
+    show_icon(false);
     start_position(form_start_position::center_screen);
     text("Input dialog");
     controls().push_back_range({input, button_ok, button_cancel});
