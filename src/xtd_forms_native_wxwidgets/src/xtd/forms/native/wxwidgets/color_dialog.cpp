@@ -37,6 +37,7 @@ bool color_dialog::run_dialog(intptr_t hwnd, drawing::color& color, std::optiona
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
   wxColourDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), &color_data);
+  dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
   if (dialog.ShowModal() != wxID_OK) return false;
   wxColour colour = dialog.GetColourData().GetColour();
   color = drawing::color::from_argb(colour.Alpha(), colour.Red(), colour.Green(), colour.Blue());
