@@ -39,12 +39,12 @@ namespace {
       cancel_button_.anchor(anchor_styles::right|anchor_styles::bottom);
       cancel_button_.dialog_result(forms::dialog_result::cancel);
       cancel_button_.text(texts::cancel);
-      cancel_button_.location({160, 75 + offset_multiline});
+      cancel_button_.location({xtd::environment::os_version().is_windows_platform() ? 245 : 160, 75 + offset_multiline});
 
       ok_button_.anchor(anchor_styles::right|anchor_styles::bottom);
       ok_button_.dialog_result(forms::dialog_result::ok);
       ok_button_.text(texts::ok);
-      ok_button_.location({245, 75 + offset_multiline});
+      ok_button_.location({xtd::environment::os_version().is_windows_platform() ? 160 : 245, 75 + offset_multiline});
     
       //active_control(input_text_box_);
       input_text_box_.focus();
