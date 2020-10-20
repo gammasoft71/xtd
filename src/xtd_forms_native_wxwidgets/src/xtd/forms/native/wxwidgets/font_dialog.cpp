@@ -33,6 +33,7 @@ bool font_dialog::run_dialog(intptr_t hwnd, drawing::font& font, drawing::color&
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
   wxFontDialog dialog(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control(), font_data);
+  dialog.SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
   if (dialog.ShowModal() != wxID_OK) return false;
   font = drawing::font(reinterpret_cast<intptr_t>(new wxFont(dialog.GetFontData().GetChosenFont())));
   wxColour colour = dialog.GetFontData().GetColour();
