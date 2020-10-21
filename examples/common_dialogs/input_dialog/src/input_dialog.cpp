@@ -7,6 +7,7 @@ namespace examples {
   class form1 : public form {
   public:
     form1() {
+      client_size({100, 100});
       text("Input box example");
       controls().push_back_range({button1, label1});
 
@@ -25,7 +26,7 @@ namespace examples {
       label1.auto_size(true);
       label1.text("Default value");
     }
-    
+
   private:
     button button1;
     label label1;

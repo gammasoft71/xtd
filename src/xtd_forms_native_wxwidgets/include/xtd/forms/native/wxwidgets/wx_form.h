@@ -145,6 +145,15 @@ namespace xtd {
           panel_->SetForegroundColour(colour);
         }
 
+
+        void SetClientSize(int32_t width, int32_t height) override {
+#if defined(__APPLE__)
+          if (width < 75) width = 75;
+          if (height < 23) height = 23;
+#endif
+          control()->SetClientSize(wxSize(width, height));
+        }
+
         void SetSize(int32_t width, int32_t height) override {
 #if defined(__APPLE__)
           if (width < 75) width = 75;
