@@ -6,6 +6,7 @@
 #include <thread>
 #include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
+#include <xtd/drawing/size.h>
 #include <xtd/forms/window_messages.h>
 #include <xtd/forms/native/message_keys.h>
 #include <xtd/forms/native/scroll_bar_styles.h>
@@ -406,6 +407,9 @@ namespace xtd {
           control_->SetSize(width, height);
         }
 
+        const xtd::drawing::size& client_size_stored() const {return client_size_stored_;}
+        void client_size_stored(const xtd::drawing::size& value) {client_size_stored_ = value;}
+        
         static long common_window_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = 0;
           
@@ -430,6 +434,7 @@ namespace xtd {
       private:
         wxWindow* control_;
         bool destroyed_ = false;
+        xtd::drawing::size client_size_stored_;
       };
       
       template<typename control_t>
