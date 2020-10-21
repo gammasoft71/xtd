@@ -1,3 +1,4 @@
+#include <xtd/drawing/bitmap.h>
 #include <xtd/forms/native/about_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
@@ -29,7 +30,7 @@ void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const std
   about_info.SetVersion(version, long_version);
   about_info.SetCopyright(xtd::strings::replace(copyright, u8"\u00A9", u8"(c)"));
   if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
-    about_info.SetIcon(*reinterpret_cast<wxIcon*>(icon.handle()));
+    about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
     about_info.SetWebSite(website, website_label);
     for (auto creator : creators)
       about_info.AddDeveloper(creator);
@@ -40,10 +41,9 @@ void about_dialog::show(intptr_t hwnd, const xtd::drawing::icon& icon, const std
     for (auto designer : designers)
       about_info.AddArtist(designer);
     about_info.SetLicense(license);
-
   }
 #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
-  wxAboutBox(about_info, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr);
+  wxAboutBox(about_info);
 }
