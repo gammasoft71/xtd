@@ -11,6 +11,7 @@ public:
     cancel_button(button_cancel);
     client_size({200, 80});
     form_border_style(forms::form_border_style::fixed_dialog);
+    form_start_position(xtd::forms::form_start_position::center_screen);
     control_box(false);
     minimize_box(false);
     maximize_box(false);
@@ -63,8 +64,11 @@ public:
     button_dialog.text("Dialog...");
     button_dialog.click += [&] {
       dialog.input_text(input_text.text());
+      dialog.visible(true);
+      /*
       if (dialog.show_dialog(*this) == forms::dialog_result::ok)
         input_text.text(dialog.input_text());
+        */
     };
   }
   

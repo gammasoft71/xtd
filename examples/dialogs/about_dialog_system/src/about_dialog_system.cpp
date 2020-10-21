@@ -51,7 +51,7 @@ public:
                            "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
                            "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
                            "OR OTHER DEALINGS IN THE SOFTWARE.\n");
-      about_dialog.show();
+      about_dialog.show(*this);
     };
   }
   

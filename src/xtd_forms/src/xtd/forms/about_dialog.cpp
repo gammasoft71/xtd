@@ -22,10 +22,10 @@ namespace {
     about_dialog_standard() {
       maximize_box(false);
       minimize_box(false);
-      form_border_style(forms::form_border_style::fixed_dialog);
       client_size({476, 300});
+      //form_border_style(forms::form_border_style::fixed_dialog);
       start_position(form_start_position::center_screen);
-      
+
       picture_box_icon_.height(74);
       picture_box_icon_.size_mode(picture_box_size_mode::center_image);
       picture_box_icon_.padding(5);
@@ -38,8 +38,8 @@ namespace {
 
       tab_page_about_.text("About");
       
-      tab_page_credit_.text("Credit");
-      tab_page_credit_.auto_scroll(true);
+      tab_page_credits_.text("Credits");
+      tab_page_credits_.auto_scroll(true);
 
       tab_page_license_.text("License");
       tab_page_license_.controls().push_back(text_box_license_);
@@ -118,7 +118,7 @@ namespace {
       about_dialog_standard->label_copyright_.text(xtd::strings::format("{}", xtd::strings::replace(copyright, u8"(c)", u8"\u00A9")));
       
       if (has_credit) {
-        about_dialog_standard->tab_control_about_.pages().push_back(about_dialog_standard->tab_page_credit_);
+        about_dialog_standard->tab_control_about_.pages().push_back(about_dialog_standard->tab_page_credits_);
       }
       
       if (has_license) {
@@ -142,7 +142,7 @@ namespace {
     label label_description_;
     label label_copyright_;
     link_label link_label_website_;
-    tab_page tab_page_credit_;
+    tab_page tab_page_credits_;
     tab_page tab_page_license_;
     text_box text_box_license_;
   };
