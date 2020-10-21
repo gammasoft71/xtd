@@ -2,7 +2,6 @@
 #include <map>
 #include <stdexcept>
 #include <xtd/environment.h>
-#include <xtd/xtd.diagnostics>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/hdc_wrapper.h>
@@ -42,85 +41,14 @@
 #include <wx/dcclient.h>
 #include <wx/dcscreen.h>
 #include <wx/font.h>
-#include <wx/settings.h>
+#include <wx/frame.h>
 
 using namespace std;
 using namespace xtd;
-using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 namespace {
-#if defined (__WXGTK__)
-  static bool is_window_manager_ready = false;
-
-  bool wait_window_manager() {
-    if (wxTopLevelWindows.size() == 0) return false;
-    static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
-    while (value == -1) {
-      for (auto window : wxTopLevelWindows)
-        if ((value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, window)) != -1) break;
-      wxYield();
-    }
-    cdebug << format("wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]) = {}", value) << endl;
-    is_window_manager_ready = true;
-    return true;
-  }
-
-  wxSize GetFrameDecorationsize(wxFrame& frame) {
-    wxSize size;
-    
-    if (frame.GetMenuBar() != nullptr)
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_MENU_Y, &frame));
-    
-    return size;
-  }
-
-  wxSize GetDecorationsize(wxTopLevelWindow& topLevelWindow) {
-    wxSize size;
-    
-    if (topLevelWindow.HasFlag(wxRESIZE_BORDER)) {
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_BORDER_Y, &topLevelWindow) * 2);
-      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_BORDER_X, &topLevelWindow) * 2);
-    }
-    
-    if (topLevelWindow.HasFlag(wxCAPTION))
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, &topLevelWindow));
-    
-    if (topLevelWindow.HasFlag(wxALWAYS_SHOW_SB)) {
-      size.SetHeight(size.GetHeight() + wxSystemSettings::GetMetric(wxSYS_HSCROLL_Y, &topLevelWindow));
-      size.SetWidth(size.GetWidth() + wxSystemSettings::GetMetric(wxSYS_VSCROLL_X, &topLevelWindow));
-    }
-    
-    if (dynamic_cast<wxFrame*>(&topLevelWindow) != nullptr)
-      size += GetFrameDecorationsize(static_cast<wxFrame&>(topLevelWindow));
-    
-    return size;
-  }
-
-  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
-    return topLevelWindow.GetSize() - GetDecorationsize(topLevelWindow);
-  }
-
-  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
-    topLevelWindow.SetSize(size + GetDecorationsize(topLevelWindow));
-  }
-#else
-  static bool is_window_manager_ready = true;
-
-  bool wait_window_manager() {
-    return true;
-  }
-
-  wxSize GetClientSize(wxTopLevelWindow& topLevelWindow) {
-    return topLevelWindow.GetClientSize();
-  }
-
-  void SetClientSize(wxTopLevelWindow& topLevelWindow, const wxSize& size) {
-    topLevelWindow.SetClientSize(size);
-  }
-#endif
-
   intptr_t set_control_extra_options(intptr_t control) {
     allow_dark_mode_for_window(reinterpret_cast<intptr_t>(reinterpret_cast<xtd::forms::native::control_handler*>(control)->control()->GetHandle()));
     return control;
@@ -222,11 +150,7 @@ drawing::rectangle control::client_rectangle(intptr_t control) {
 drawing::size control::client_size(intptr_t control) {
   if (control == 0) return {};
   
-  wxSize size;
-  if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
-    size = GetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()));
-  else
-    size = reinterpret_cast<control_handler*>(control)->GetClientSize();
+  wxSize size = reinterpret_cast<control_handler*>(control)->GetClientSize();
   
   return {size.GetWidth(), size.GetHeight()};
 }
@@ -234,15 +158,7 @@ drawing::size control::client_size(intptr_t control) {
 void control::client_size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
   
-  if (is_window_manager_ready && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())) {
-    int width = size.width();
-#if defined(__APPLE__)
-    if (width < 75) width = 75;
-#endif
-    reinterpret_cast<control_handler*>(control)->client_size_stored(size);
-    SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {width, size.height()});
-  }else
-    reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
+  reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
 }
 
 void control::cursor(intptr_t control, intptr_t cursor) {
@@ -317,7 +233,6 @@ drawing::size control::size(intptr_t control) {
 
 void control::size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
-  reinterpret_cast<control_handler*>(control)->client_size_stored(xtd::drawing::size::empty);
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
@@ -339,14 +254,6 @@ bool control::visible(intptr_t control) {
 void control::visible(intptr_t control, bool visible) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Show(visible);
-  
-  if (!is_window_manager_ready && visible == true && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())) {
-    wait_window_manager();
-    if (reinterpret_cast<control_handler*>(control)->client_size_stored() != xtd::drawing::size::empty) {
-      client_size(control, reinterpret_cast<control_handler*>(control)->client_size_stored());
-      reinterpret_cast<control_handler*>(control)->client_size_stored(xtd::drawing::size::empty);
-    }
-  }
 }
 
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
