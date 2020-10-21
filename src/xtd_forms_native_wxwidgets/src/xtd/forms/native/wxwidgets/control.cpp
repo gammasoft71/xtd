@@ -2,6 +2,7 @@
 #include <map>
 #include <stdexcept>
 #include <xtd/environment.h>
+#include <xtd/xtd.diagnostics>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/hdc_wrapper.h>
@@ -43,6 +44,12 @@
 #include <wx/font.h>
 #include <wx/settings.h>
 
+using namespace std;
+using namespace xtd;
+using namespace xtd::diagnostics;
+using namespace xtd::drawing;
+using namespace xtd::forms::native;
+
 namespace {
 #if defined (__WXGTK__)
   static bool is_window_manager_ready = false;
@@ -52,9 +59,10 @@ namespace {
     static int value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]);
     while (value == -1) {
       for (auto window : wxTopLevelWindows)
-        if ((value = wxSystemSettings::GetMetric(wxSYS_BORDER_Y, window)) != -1) break;
+        if ((value = wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, window)) != -1) break;
       wxYield();
     }
+    cdebug << format("wxSystemSettings::GetMetric(wxSYS_CAPTION_Y, wxTopLevelWindows[0]) = {}", value) << endl;
     is_window_manager_ready = true;
     return true;
   }
@@ -124,11 +132,6 @@ namespace {
     return control;
   }
 }
-
-using namespace std;
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms::native;
 
 extern int32_t __mainloop_runnning__;
 
@@ -236,6 +239,7 @@ void control::client_size(intptr_t control, const drawing::size& size) {
 #if defined(__APPLE__)
     if (width < 75) width = 75;
 #endif
+    reinterpret_cast<control_handler*>(control)->client_size_stored(size);
     SetClientSize(*static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()), {width, size.height()});
   }else
     reinterpret_cast<control_handler*>(control)->SetClientSize(size.width(), size.height());
@@ -313,6 +317,7 @@ drawing::size control::size(intptr_t control) {
 
 void control::size(intptr_t control, const drawing::size& size) {
   if (control == 0) return;
+  reinterpret_cast<control_handler*>(control)->client_size_stored(xtd::drawing::size::empty);
   reinterpret_cast<control_handler*>(control)->SetSize(size.width(), size.height());
 }
 
@@ -335,8 +340,13 @@ void control::visible(intptr_t control, bool visible) {
   if (control == 0) return;
   reinterpret_cast<control_handler*>(control)->control()->Show(visible);
   
-  if (!is_window_manager_ready && visible == true && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control()))
+  if (!is_window_manager_ready && visible == true && dynamic_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())) {
     wait_window_manager();
+    if (reinterpret_cast<control_handler*>(control)->client_size_stored() != xtd::drawing::size::empty) {
+      client_size(control, reinterpret_cast<control_handler*>(control)->client_size_stored());
+      reinterpret_cast<control_handler*>(control)->client_size_stored(xtd::drawing::size::empty);
+    }
+  }
 }
 
 void control::invalidate(intptr_t control, const drawing::rectangle& rect, bool erase_background) {
