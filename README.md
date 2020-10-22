@@ -32,15 +32,14 @@ src/delegates_hello_world.cpp:
 using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
-  delegate<void(string str)> write_line;
+  delegate<void(const string& str)> write_line;
   
-  write_line += [&](string str)  {
+  write_line += [](const string& str)  {
     cout << str << endl;
   };
   
-  write_line += [&](string str)  {
+  write_line += [](auto str)  {
     cerr << str << endl;
   };
   
