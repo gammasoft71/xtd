@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/gammasoft71/xtd_delegates.svg?branch=master)](https://travis-ci.org/gammasoft71/xtd_delegates)
 [![Build status](https://ci.appveyor.com/api/projects/status/6483r6dkpixsyxs9?svg=true)](https://ci.appveyor.com/project/gammasoft71/xtd-delegates)
-[![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd-delegates/)
+[![Reference Guide](https://img.shields.io/badge/code-Reference_Guide-brightgreen.svg)](https://codedocs.xyz/gammasoft71/xtd_delegates/)
 [![Website](https://img.shields.io/badge/web-gammasoft-brightgreen.svg)](https://gammasoft71.wixsite.com/gammasoft)
 [![license](https://img.shields.io/github/license/gammasoft71/xtd.delegates.svg)](LICENSE.md)
 <!--- 
@@ -23,7 +23,7 @@
 * predicate represents a delagate that defines a set of criteria and determines whether the specified object meets those criteria.
 * overload represents class that use to determine one of const and non const overloaded methods.
 
-For more information see [Documentation](docs) and [Reference guide](https://codedocs.xyz/gammasoft71/xtd-delegates).
+For more information see [Documentation](docs) and [Reference guide](https://codedocs.xyz/gammasoft71/xtd_delegates).
 
 # Examples
 
