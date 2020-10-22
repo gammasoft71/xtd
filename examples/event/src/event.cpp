@@ -2,43 +2,48 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-using namespace xtd;
+class control {
+public:
+  control() = default;
 
-struct control {
-  const string& text() const {return this->text_;}
-  void text(const string& text) {
-    if (this->text_ != text) {
-      this->text_ = text;
-      this->on_text_changed(event_args::empty);
+  const std::string& text() const {return text_;}
+  void text(const std::string& text) {
+    if (text_ != text) {
+      text_ = text;
+      on_text_changed(xtd::event_args::empty);
     }
   }
   
-  event<control, event_handler<control&>> text_changed;
-  
-  void on_text_changed(const event_args& e) {this->text_changed(*this, e);}
+  xtd::event<control, xtd::event_handler<control&>> text_changed;
+
+protected:
+  void on_text_changed(const xtd::event_args& e) {text_changed(*this, e);}
   
 private:
-  string text_;
+  std::string text_;
 };
 
-struct button : public control {
-  event<button, event_handler<control&>> click;
+class button : public control {
+public:
+  button() = default;
+
+  xtd::event<button, xtd::event_handler<control&>> click;
   
-  void perform_click() {this->on_click(event_args::empty);}
+  void perform_click() {on_click(xtd::event_args::empty);}
   
-  virtual void on_click(const event_args& e) {this->click(*this, e);}
+protected:
+  virtual void on_click(const xtd::event_args& e) {click(*this, e);}
 };
 
 int main() {
   button button1;
   
-  button1.text_changed += [](control& sender, const event_args& e)  {
-    cout << "text_changed [text=" << sender.text() << "]" << endl;
+  button1.text_changed += [](control& sender, const xtd::event_args& e)  {
+    std::cout << "text_changed [text=" << sender.text() << "]" << std::endl;
   };
   
   button1.click += []  {
-    cout << "click on button" << endl;
+    std::cout << "click on button1" << std::endl;
   };
   
   button1.text("button1");
