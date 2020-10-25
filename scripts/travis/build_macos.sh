@@ -1,5 +1,6 @@
 #!/bin/bash
 
+brew update && brew upgrade
 brew install doxygen
 
 # clone, generate and build wxwidgets 3.1.4
