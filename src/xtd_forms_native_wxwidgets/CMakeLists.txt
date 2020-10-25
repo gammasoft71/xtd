@@ -107,7 +107,8 @@ source_group(src\\xtd\\forms\\native\\wxwidgets FILES ${XTD_FORMS_NATIVE_WXWIDGE
 
 # Add packages
 if (APPLE)
-  find_package(wxWidgets REQUIRED COMPONENTS base core aui html gl net qa richtext webview xml xrc)
+#  find_package(wxWidgets REQUIRED COMPONENTS base core aui html gl net qa richtext webview xml xrc)
+  find_package(wxWidgets REQUIRED COMPONENTS base core aui html net qa richtext webview xml xrc)
 elseif (UNIX)
   find_package(wxWidgets REQUIRED COMPONENTS base core aui html gl net qa richtext xml xrc)
 else ()
