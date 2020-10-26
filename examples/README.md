@@ -54,7 +54,7 @@
 * [date_time_picker](picker_controls/date_time_picker/README.md) represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
 * [font_picker](picker_controls/font_picker/README.md) represents a Windows control that allows the user to select and display a font.
 
-## Other Controls
+## [Other Controls](other_controls/README.md)
 * [lcd_label](other_controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [dot_matrix_display](other_controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../src/xtd_forms/include/xtd/forms/dot_matrix_display.hpp) control.
 * [fourteen_segment_display](other_controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../src/xtd_forms/include/xtd/forms/fourteen_segment_display.hpp) control.
@@ -62,11 +62,11 @@
 * [seven_segment_display](other_controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../src/xtd_forms/include/xtd/forms/seven_segment_display.hpp) control.
 * [sixteen_segment_display](other_controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](../src/xtd_forms/include/xtd/forms/sixteen_segment_display.hpp) control.
 
-## Custom Controls
+## [Custom Controls](custom_controls/README.md)
 * [line](custom_controls/line/README.md) demonstrates the use of [xtd::forms::user_control](../src/xtd_forms/include/xtd/forms/user_control.hpp)control to draw simple lines.
 * [numeric_text_box](custom_controls/numeric_text_box/README.md) demonstrates the customize [xtd::forms::text_box](../src/xtd_forms/include/xtd/forms/text_box.hpp) control.
 
-## Containers
+## [Containers](containers/README.md)
 
 * **flow_layout_panel** represents a panel that dynamically lays out its contents horizontally or vertically.
 * [form](containers/form/README.md) represents a window or dialog box that makes up an application's user interface.
@@ -76,7 +76,7 @@
 * [tab_control](containers/tab_control/README.md) manages a related set of tab pages.
 * **table_layout_panel** represents a panel that dynamically lays out its contents in a grid composed of rows and columns.
 
-## Menus and Toolbars
+## [Menus and Toolbars](menus_and_tollbars/README.md)
 
 * [menu](menus_and_toolbars/menu/README.md) provides a menu system for a form.
 * **context_menu_strip** represents a shortcut menu.
@@ -85,7 +85,7 @@
 * **tool_strip** provides a container for Windows toolbar objects.
 * **tool_strip_container** provides panels on each side of the form and a central panel that can hold one or more controls.
 
-## Datas
+## [Datas](datas/README.md)
 
 * **binding_navigator** represents the navigation and manipulation user interface (UI) for controls on a form that are bound to data.
 * **binding_source** encapsulates the data source for a form.
@@ -93,7 +93,7 @@
 * **data_grid_view** displays data in a customizable grid.
 * **data_set** 
 
-## Components
+## [Components](components/README.md)
 
 * [background_worker](components/background_worker/README.md) executes an operation on a separate thread.
 * [cursor](components/cursor/README.md) represents the image used to paint the mouse pointer.
@@ -114,7 +114,7 @@
 * [system_images](components/system_images/README.md) demonstrates the use of **xtd::drawing::system_images** class.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
 
-## Printing
+## [Printing](printing/README.md)
 
 * **page_setup_dialog** enables users to change page-related print settings, including margins and paper orientation. This class cannot be inherited.
 * **print_dialog** lets users select a printer and choose which sections of the document to print from a Windows Forms application.
@@ -131,16 +131,17 @@
 * [open_file_dialog](common_dialogs/open_file_dialog/README.md) displays a standard dialog box that prompts the user to open a file.
 * [save_file_dialog](common_dialogs/save_file_dialog/README.md) prompts the user to select a location for saving a file.
 
-## Dialogs
+## [Dialogs](dialogs/README.md)
 
 * [about_dialog](common_dialogs/about_dialog/README.md) represents a common dialog box that displays about box.
 * [message_box](common_dialogs/message_box/README.md) displays a message window, also known as a dialog box, which presents a message to the user. It is a modal window, blocking other actions in the application until the user closes it. A MessageBox can contain text, buttons, and symbols that inform and instruct the user.
 * **find_replace_dialog** represents a find replace dialog box.
 
-## Custom Dialogs
+## [Custom Dialogs](custom_dialogs/README.md)
+
 * [user_dialog](custom_dialogs/user_dialog/README.md) demonstrates the use of [xtd::forms::form](../../src/xtd_forms/include/xtd/forms/form.hpp) as dialog.
 
-## Events
+## [Events](events/README.md)
 
 * [application_idle](events/application_idle/README.md) shows how to create an application with [xtd::forms::application](../src/xtd_forms/include/xtd/forms/application.hpp) class and [idle](../src/xtd_forms/include/xtd/forms/application.hpp) event.
 * [key_events](events/key_events/README.md) demonstrates the use of key events.
@@ -152,7 +153,7 @@
 * [form_paint](events/form_paint/README.md) demonstrates paint event with [xtd::forms::form](../../../src/xtd_forms/include/xtd/forms/form.hpp).
 * [wnd_proc](events/wnd_proc/README.md) demonstrates the use of [wnd_proc](../src/xtd_forms/include/xtd/forms/control.hpp) method.
 
-## Others
+## [Others](others/README.md)
 
 * [auto_scroll](others/auto_scroll/README.md) demonstrates the use of [xtd::forms::panel](../src/xtd_forms/include/xtd/forms/panel.hpp) container with [xtd::forms/scrollable_control::auto_scroll](../src/xtd_forms/include/xtd/forms/scrollable_control.hpp).
 * [bitmap_button](others/bitmap_button/README.md) demonstrates the use of [xtd::forms::button](../src/xtd_forms/include/xtd/forms/button.hpp) control and xtd::drawing::image].
