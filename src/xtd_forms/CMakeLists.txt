@@ -22,6 +22,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/boot_mode.h
   include/xtd/forms/border_style.h
   include/xtd/forms/bounds_specified.h
+  include/xtd/forms/busy_dialog.h
   include/xtd/forms/button.h
   include/xtd/forms/button_base.h
   include/xtd/forms/button_images.h
@@ -181,6 +182,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/track_bar.h
   include/xtd/forms/up_down_base.h
   include/xtd/forms/up_down_button.h
+  include/xtd/forms/use_wait_cursor.h
   include/xtd/forms/user_control.h
 )
 
@@ -203,6 +205,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/about_dialog.cpp
   src/xtd/forms/application.cpp
   src/xtd/forms/background_worker.cpp
+  src/xtd/forms/busy_dialog.cpp
   src/xtd/forms/button.cpp
   src/xtd/forms/button_base.cpp
   src/xtd/forms/button_renderer.cpp
