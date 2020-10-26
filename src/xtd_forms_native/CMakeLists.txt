@@ -21,6 +21,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/about_dialog.h
   include/xtd/forms/native/application.h
   include/xtd/forms/native/arranged_direction_window.h
+  include/xtd/forms/native/busy_dialog.h
   include/xtd/forms/native/button.h
   include/xtd/forms/native/button_styles.h
   include/xtd/forms/native/check_box.h

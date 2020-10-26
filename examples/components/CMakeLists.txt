@@ -19,4 +19,5 @@ add_projects(
   system_images
   texts
   timer
+  use_wait_cursor
 )

@@ -35,7 +35,7 @@ namespace xtd {
       std::string copyright() const {return this->copyright_;}
       /// @brief Sets the product description.
       /// @param copyright The description copyright.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& copyright(const std::string& copyright) {
         copyright_ = copyright;
         return *this;
@@ -46,7 +46,7 @@ namespace xtd {
       std::string description() const {return this->description_;}
       /// @brief Sets the product description.
       /// @param description The product description.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& description(const std::string& description) {
         description_ = description;
         return *this;
@@ -57,21 +57,21 @@ namespace xtd {
       xtd::drawing::icon icon() const {return xtd::drawing::icon::from_bitmap(xtd::drawing::bitmap(this->icon_));}
       /// @brief Sets the product icon.
       /// @param icon The product icon.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& icon(const xtd::drawing::icon& icon) {
         icon_ = icon.to_bitmap();
         return *this;
       }
       /// @brief Sets the product icon.
       /// @param image The product icon.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& icon(const xtd::drawing::image& image) {
         icon_ = image;
         return *this;
       }
       /// @brief Sets the product icon.
       /// @param bitmap The product icon.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& icon(const xtd::drawing::bitmap& bitmap) {
         icon_ = bitmap;
         return *this;
@@ -82,7 +82,7 @@ namespace xtd {
       std::string long_version() const {return this->long_version_;}
       /// @brief Sets the product long version.
       /// @param version The version version.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& long_version(const std::string& long_version) {
         long_version_ = long_version;
         return *this;
@@ -93,7 +93,7 @@ namespace xtd {
       std::string name() const {return this->name_;}
       /// @brief Sets the product name.
       /// @param name The product name.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& name(const std::string& name) {
         name_ = name;
         return *this;
@@ -104,7 +104,7 @@ namespace xtd {
       std::string version() const {return this->version_;}
       /// @brief Sets the product version.
       /// @param version The version version.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& version(const std::string& version) {
         version_ = version;
         return *this;
@@ -115,7 +115,7 @@ namespace xtd {
       std::string website() const {return this->website_;}
       /// @brief Sets the product website.
       /// @param website The  product website.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& website(const std::string& website) {
         website_ = website;
         return *this;
@@ -126,7 +126,7 @@ namespace xtd {
       std::string website_label() const {return this->website_label_;}
       /// @brief Sets the product website label.
       /// @param website_label The product website label.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& website_label(const std::string& website_label) {
         website_label_ = website_label;
         return *this;
@@ -140,7 +140,7 @@ namespace xtd {
       creators_collection& creators() {return creators_;}
       /// @brief Sets the creators array.
       /// @param creators The creators array.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& creators(const creators_collection& creators) {
         creators_ = creators;
         return *this;
@@ -154,7 +154,7 @@ namespace xtd {
       designers_collection& designers() {return designers_;}
       /// @brief Sets the designers array.
       /// @param designers The designers array.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& designers(const designers_collection& designers) {
         designers_ = designers;
         return *this;
@@ -168,7 +168,7 @@ namespace xtd {
       doc_writers_collection& doc_writers() {return doc_writers_;}
       /// @brief Sets the documentation writers array.
       /// @param doc_writers The documentation writers array.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& doc_writers(const doc_writers_collection& doc_writers) {
         doc_writers_ = doc_writers;
         return *this;
@@ -182,7 +182,7 @@ namespace xtd {
       translators_collection& translators() {return translators_;}
       /// @brief Sets the translators array.
       /// @param translators The translators array.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& translators(const translators_collection& translators) {
         translators_ = translators;
         return *this;
@@ -193,7 +193,7 @@ namespace xtd {
       std::string license() const {return this->license_;}
       /// @brief Sets the product license.
       /// @param name The product license.
-      /// @return Current about_box instance.
+      /// @return Current about_dialog instance.
       about_dialog& license(const std::string& license) {
         license_ = license;
         return *this;
