@@ -14,7 +14,7 @@ namespace xtd {
     /// @par Example
     /// The following code example demonstrate the use of about_dialog dialog.
     /// @include about_dialog.cpp
-    class about_dialog {
+    class about_dialog final {
     public:
       using creators_collection = xtd::forms::layout::arranged_element_collection<std::string>;
       using designers_collection = xtd::forms::layout::arranged_element_collection<std::string>;
@@ -207,7 +207,7 @@ namespace xtd {
       /// @brief Runs about dialog box.
       void show(const iwin32_window& owner);
 
-    protected:
+    private:
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::standard;
       xtd::drawing::image icon_;
       std::string name_;
