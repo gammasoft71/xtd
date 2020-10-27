@@ -12,11 +12,11 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    /// @brief Represents a common dialog box that displays about box.
+    /// @brief Represents a common dialog box that displays busy box.
     /// @par Example
     /// The following code example demonstrate the use of busy_dialog dialog.
     /// @include busy_dialog.cpp
-    class busy_dialog {
+    class busy_dialog  final {
     public:
       /// @brief Initializes a new instance of the busy_dialog class.
       busy_dialog() = default;
@@ -97,14 +97,14 @@ namespace xtd {
       /// @brief Resets all properties to empty string.
       void reset();
       
-      /// @brief Runs about dialog box.
+      /// @brief Runs busy dialog box.
       void show();
-      /// @brief Runs about dialog box.
+      /// @brief Runs busy dialog box.
       void show(const iwin32_window& owner);
-      
+
       void hide();
 
-    protected:
+    private:
       xtd::drawing::color back_color_ = xtd::forms::theme_colors::current_theme().control();
       xtd::forms::dialog_style dialog_style_ = xtd::forms::dialog_style::system;
       xtd::drawing::color fore_color_ = xtd::forms::theme_colors::current_theme().control_text();
