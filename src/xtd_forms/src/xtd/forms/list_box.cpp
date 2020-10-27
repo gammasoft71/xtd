@@ -67,8 +67,13 @@ vector<size_t> list_box::selected_indices() const {
 list_box& list_box::selected_item(const item& selected_item) {
   if (this->selected_item_ != selected_item) {
     auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
-    if (it == this->items_.end())
-      this->selected_item_ = this->selected_index() != -1 ? this->items()[this->selected_index()] : "";
+    if (it == this->items_.end()) {
+      if (this->selected_index() == -1 || this->items().size() == 0) this->selected_item_ = "";
+      else {
+        if (this->selected_index() >= this->items().size()) this->selected_item_ = this->items()[this->items().size() - 1];
+        else this->selected_item_ = this->items()[this->selected_index()];
+      }
+    }
     else {
       size_t index = it - this->items_.begin();
       this->selected_index(index);
