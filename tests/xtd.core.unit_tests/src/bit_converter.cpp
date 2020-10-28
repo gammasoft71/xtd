@@ -416,13 +416,13 @@ namespace unit_tests {
       assert::throws<out_of_range>([] {bit_converter::to_char({0x00, 0x00, 0x00, 0x00}, 4);}, line_info_);
       assert::throws<out_of_range>([] {bit_converter::to_char({0x00, 0x00, 0x00, 0x00}, 1);}, line_info_);
       
-      assert::are_equal(' ', bit_converter::to_char({0x20, 0x00, 0x00, 0x00}, 0), line_info_);
-      assert::are_equal('*', bit_converter::to_char({0x2A, 0x00, 0x00, 0x00}, 0), line_info_);
-      assert::are_equal('3', bit_converter::to_char({0x33, 0x00, 0x00, 0x00}, 0), line_info_);
-      assert::are_equal('A', bit_converter::to_char({0x41, 0x00, 0x00, 0x00}, 0), line_info_);
-      assert::are_equal('[', bit_converter::to_char({0x5B, 0x00, 0x00, 0x00}, 0), line_info_);
-      assert::are_equal('a', bit_converter::to_char({0x61, 0x00, 0x00, 0x00}, 0), line_info_);
-      assert::are_equal('{', bit_converter::to_char({0x7B, 0x00, 0x00, 0x00}, 0), line_info_);
+      assert::are_equal(U' ', bit_converter::to_char({0x20, 0x00, 0x00, 0x00}, 0), line_info_);
+      assert::are_equal(U'*', bit_converter::to_char({0x2A, 0x00, 0x00, 0x00}, 0), line_info_);
+      assert::are_equal(U'3', bit_converter::to_char({0x33, 0x00, 0x00, 0x00}, 0), line_info_);
+      assert::are_equal(U'A', bit_converter::to_char({0x41, 0x00, 0x00, 0x00}, 0), line_info_);
+      assert::are_equal(U'[', bit_converter::to_char({0x5B, 0x00, 0x00, 0x00}, 0), line_info_);
+      assert::are_equal(U'a', bit_converter::to_char({0x61, 0x00, 0x00, 0x00}, 0), line_info_);
+      assert::are_equal(U'{', bit_converter::to_char({0x7B, 0x00, 0x00, 0x00}, 0), line_info_);
     }
     
     void test_method_(to_double) {
