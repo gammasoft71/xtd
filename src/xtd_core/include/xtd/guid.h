@@ -36,14 +36,14 @@ namespace xtd {
     explicit guid(int a, int b, int c, const std::vector<uint8_t>& d) {
       if (d.size() != 8) throw std::invalid_argument("vector size must be 8");
       
-      this->data_[0] = (a & 0xFF000000) >> 24;
-      this->data_[1] = (a & 0x00FF0000) >> 16;
-      this->data_[2] = (a & 0x0000FF00) >> 8;
-      this->data_[3] = (a & 0x000000FF) >> 0;
-      this->data_[4] = (b & 0xFF00) >> 8;
-      this->data_[5] = (b & 0x00FF) >> 0;
-      this->data_[6] = (c & 0xFF00) >> 8;
-      this->data_[7] = (c & 0x00FF) >> 0;
+      this->data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
+      this->data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
+      this->data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
+      this->data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
+      this->data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
+      this->data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
+      this->data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
+      this->data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
       
       for (int index = 0; index < 8; index++)
         this->data_[8 + index] = d[index];
@@ -62,14 +62,14 @@ namespace xtd {
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
     guid(int a, short b, short c, uint8_t d, uint8_t e, uint8_t f, uint8_t g, uint8_t h, uint8_t i, uint8_t j, uint8_t k) noexcept {
-      this->data_[0] = (a & 0xFF000000) >> 24;
-      this->data_[1] = (a & 0x00FF0000) >> 16;
-      this->data_[2] = (a & 0x0000FF00) >> 8;
-      this->data_[3] = (a & 0x000000FF) >> 0;
-      this->data_[4] = (b & 0xFF00) >> 8;
-      this->data_[5] = (b & 0x00FF) >> 0;
-      this->data_[6] = (c & 0xFF00) >> 8;
-      this->data_[7] = (c & 0x00FF) >> 0;
+      this->data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
+      this->data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
+      this->data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
+      this->data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
+      this->data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
+      this->data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
+      this->data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
+      this->data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
       this->data_[8] = d;
       this->data_[9] = e;
       this->data_[10] = f;
@@ -93,14 +93,14 @@ namespace xtd {
     /// @param j The next byte of the GUID.
     /// @param k The next byte of the GUID.
     guid(uint32_t a, uint16_t b, uint16_t c, uint8_t d, uint8_t e, uint8_t f, uint8_t g, uint8_t h, uint8_t i, uint8_t j, uint8_t k) noexcept {
-      this->data_[0] = (a & 0xFF000000) >> 24;
-      this->data_[1] = (a & 0x00FF0000) >> 16;
-      this->data_[2] = (a & 0x0000FF00) >> 8;
-      this->data_[3] = (a & 0x000000FF) >> 0;
-      this->data_[4] = (b & 0xFF00) >> 8;
-      this->data_[5] = (b & 0x00FF) >> 0;
-      this->data_[6] = (c & 0xFF00) >> 8;
-      this->data_[7] = (c & 0x00FF) >> 0;
+      this->data_[0] = static_cast<uint8_t>((a & 0xFF000000) >> 24);
+      this->data_[1] = static_cast<uint8_t>((a & 0x00FF0000) >> 16);
+      this->data_[2] = static_cast<uint8_t>((a & 0x0000FF00) >> 8);
+      this->data_[3] = static_cast<uint8_t>((a & 0x000000FF) >> 0);
+      this->data_[4] = static_cast<uint8_t>((b & 0xFF00) >> 8);
+      this->data_[5] = static_cast<uint8_t>((b & 0x00FF) >> 0);
+      this->data_[6] = static_cast<uint8_t>((c & 0xFF00) >> 8);
+      this->data_[7] = static_cast<uint8_t>((c & 0x00FF) >> 0);
       this->data_[8] = d;
       this->data_[9] = e;
       this->data_[10] = f;
