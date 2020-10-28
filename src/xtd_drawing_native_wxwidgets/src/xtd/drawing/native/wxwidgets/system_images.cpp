@@ -21,9 +21,10 @@ intptr_t system_images::from_name(const std::string& name, int32_t width, int32_
 #elif defined(__WXGTK__)
   GdkPixbuf* icon = __gtk_get_image_from_name__(name.c_str(), width, height);
   if (icon) return reinterpret_cast<intptr_t>(new wxImage(wxBitmap(icon).ConvertToImage()));
+  return 0;
 #elif defined(__APPLE__)
   intptr_t icon = __macos_get_image_from_name__(name.c_str(), width, height);
   if (icon) return icon;
-#endif
   return 0;
+#endif
 }
