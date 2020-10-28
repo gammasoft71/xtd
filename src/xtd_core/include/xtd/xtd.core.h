@@ -22,5 +22,6 @@
 #include "startup.h"
 #include "static.h"
 #include "typeof.h"
+#include "unused.h"
 #include "using.h"
 #include "version.h"

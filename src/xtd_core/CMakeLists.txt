@@ -19,6 +19,7 @@ set(INCLUDES
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/typeof.h
+  include/xtd/unused.h
   include/xtd/using.h
   include/xtd/version.h
   include/xtd/xtd.core
