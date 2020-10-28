@@ -98,7 +98,7 @@ namespace xtd {
       void on_click(const event_args& e) override;
 
       void on_enabled_changed(const event_args& e) override {
-        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? (state_ = default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
+        if (flat_style_ != xtd::forms::flat_style::system) state_ = enabled() ? (default_button_ ? xtd::forms::visual_styles::push_button_state::default_state : xtd::forms::visual_styles::push_button_state::normal) : xtd::forms::visual_styles::push_button_state::disabled;
         button_base::on_enabled_changed(e);
       }
 
