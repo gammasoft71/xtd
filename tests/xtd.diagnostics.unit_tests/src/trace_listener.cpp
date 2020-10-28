@@ -38,8 +38,8 @@ namespace unit_tests {
   public:
     void test_method_(new_trace_listener) {
       unit_test_trace_listener trace_listener;
-      assert::are_equal_(0, trace_listener.indent_level());
-      assert::are_equal_(4, trace_listener.indent_size());
+      assert::are_equal_(0U, trace_listener.indent_level());
+      assert::are_equal_(4U, trace_listener.indent_size());
       assert::is_false_(trace_listener.is_thread_safe());
       assert::is_empty_(trace_listener.name());
       assert::is_true_(trace_listener.need_indent());
@@ -50,13 +50,13 @@ namespace unit_tests {
     void test_method_(indent_level) {
       unit_test_trace_listener trace_listener;
       trace_listener.indent_level(5);
-      assert::are_equal_(5, trace_listener.indent_level());
+      assert::are_equal_(5U, trace_listener.indent_level());
     }
     
     void test_method_(indent_size) {
       unit_test_trace_listener trace_listener;
       trace_listener.indent_size(8);
-      assert::are_equal_(8, trace_listener.indent_size());
+      assert::are_equal_(8U, trace_listener.indent_size());
     }
     
     void test_method_(name) {
