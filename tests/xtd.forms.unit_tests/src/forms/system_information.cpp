@@ -88,7 +88,7 @@ namespace unit_tests {
 
     void test_method_(caret_blink_time) {
 #if defined(_WIN32)
-      assert::are_equal_(GetCaretBlinkTime(), system_information::caret_blink_time());
+      assert::are_equal_(GetCaretBlinkTime(), static_cast<uint32_t>(system_information::caret_blink_time()));
 #else
       assert::are_equal_(530, system_information::caret_blink_time());
 #endif
@@ -142,7 +142,7 @@ namespace unit_tests {
 
     void test_method_(double_click_time) {
 #if defined(_WIN32)
-      assert::are_equal_(GetDoubleClickTime(), system_information::double_click_time());
+      assert::are_equal_(GetDoubleClickTime(), static_cast<uint32_t>(system_information::double_click_time()));
 #elif (__APPLE__)
       assert::are_equal_(get_double_click_time(), system_information::double_click_time());
 #else

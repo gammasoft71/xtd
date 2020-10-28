@@ -30,7 +30,7 @@ void choice::insert_item(intptr_t control, size_t index, const std::string& valu
 }
 
 size_t choice::selected_index(intptr_t control) {
-  if (control == 0) return -1;
+  if (control == 0) return 0xFFFFFFFFFFFFFFFF;
   return static_cast<wxChoice*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 

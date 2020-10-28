@@ -51,7 +51,6 @@ point cursor::hot_spot(intptr_t cursor) {
   wxPoint hot_spot = reinterpret_cast<wxCursor*>(cursor)->GetHotSpot();
   if (hot_spot == wxDefaultPosition) return {};
   return {hot_spot.x, hot_spot.y};
-  return {};
 }
 
 point cursor::position() {

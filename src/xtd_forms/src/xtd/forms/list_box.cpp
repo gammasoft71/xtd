@@ -143,7 +143,7 @@ void list_box::on_handle_created(const event_args& e) {
   items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::list_box::insert_item(this->handle(), index, this->items_[index].value());
-  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(-1);
+  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(0xFFFFFFFFFFFFFFFF);
   native::list_box::selected_index(this->handle(), this->selected_index_);
   if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item_ = this->items_[this->selected_index_];
 }

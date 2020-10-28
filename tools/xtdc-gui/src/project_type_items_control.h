@@ -100,7 +100,7 @@ namespace xtdc_gui {
       for (auto item : project_type_item_controls_)
         item->visible((language == project_language::all || (item->project_type_item().project_language() & language) == language) && (platform == project_platform::all || (item->project_type_item().project_platform() & platform) == platform) && (type == project_type::all || (item->project_type_item().project_type() & type) == type));
       perform_layout();
-      selected_index(-1);
+      selected_index(0xFFFFFFFFFFFFFFFF);
     }
     
     xtd::event<project_type_items_control, xtd::event_handler<xtd::forms::control&>> selected_index_changed;
@@ -140,8 +140,8 @@ namespace xtdc_gui {
     }
 
     std::vector<std::shared_ptr<project_type_item_control>> project_type_item_controls_;
-    size_t previous_selected_index_ = -1;
-    size_t selected_index_ = -1;
+    size_t previous_selected_index_ = 0xFFFFFFFFFFFFFFFF;
+    size_t selected_index_ = 0xFFFFFFFFFFFFFFFF;
     project_type_item selected_project_type_item_;
   };
 }

@@ -162,15 +162,15 @@ main_form::main_form() {
   open_xtd_example_tab_control_.selected_index_changed += [&] {
     if (open_xtd_example_tab_control_.selected_index() == 0) {
       open_xtd_example_console_list_box_.selected_index(current_open_xtd_example_console_list_box_index_);
-      open_xtd_example_forms_list_box_.selected_index(-1);
-      open_xtd_example_tunit_list_box_.selected_index(-1);
+      open_xtd_example_forms_list_box_.selected_index(0xFFFFFFFFFFFFFFFF);
+      open_xtd_example_tunit_list_box_.selected_index(0xFFFFFFFFFFFFFFFF);
     } else if (open_xtd_example_tab_control_.selected_index() == 1) {
-      open_xtd_example_console_list_box_.selected_index(-1);
+      open_xtd_example_console_list_box_.selected_index(0xFFFFFFFFFFFFFFFF);
       open_xtd_example_forms_list_box_.selected_index(current_open_xtd_example_forms_list_box_index_);
-      open_xtd_example_tunit_list_box_.selected_index(-1);
+      open_xtd_example_tunit_list_box_.selected_index(0xFFFFFFFFFFFFFFFF);
     } else if (open_xtd_example_tab_control_.selected_index() == 2) {
-      open_xtd_example_console_list_box_.selected_index(-1);
-      open_xtd_example_forms_list_box_.selected_index(-1);
+      open_xtd_example_console_list_box_.selected_index(0xFFFFFFFFFFFFFFFF);
+      open_xtd_example_forms_list_box_.selected_index(0xFFFFFFFFFFFFFFFF);
       open_xtd_example_tunit_list_box_.selected_index(current_open_xtd_example_tunit_list_box_index_);
     }
   };
@@ -298,7 +298,7 @@ main_form::main_form() {
     if (create_create_recent_projects_list_box_.selected_index() == 0xFFFFFFFFFFFFFFFF)
       next_button_.enabled(false);
     else {
-      create_project_type_items_control_.selected_index(-1);
+      create_project_type_items_control_.selected_index(0xFFFFFFFFFFFFFFFF);
       current_project_type_index_ = xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects()[create_create_recent_projects_list_box_.selected_index()]);
       next_button_.enabled(true);
     }
@@ -355,7 +355,7 @@ main_form::main_form() {
     if (create_project_type_items_control_.selected_index() == 0xFFFFFFFFFFFFFFFF)
       next_button_.enabled(false);
     else {
-      create_create_recent_projects_list_box_.selected_index(-1);
+      create_create_recent_projects_list_box_.selected_index(0xFFFFFFFFFFFFFFFF);
       current_project_type_index_ = create_project_type_items_control_.selected_index();
       next_button_.enabled(true);
     }

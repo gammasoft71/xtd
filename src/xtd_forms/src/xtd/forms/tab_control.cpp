@@ -79,7 +79,7 @@ void tab_control::on_control_added(const control_event_args &e) {
 
 void tab_control::on_control_removed(const control_event_args &e) {
   control::on_control_removed(e);
-  if (selected_index_ != 0xFFFFFFFFFFFFFFFF) selected_index(-1);
+  if (selected_index_ != 0xFFFFFFFFFFFFFFFF) selected_index(0xFFFFFFFFFFFFFFFF);
 }
 
 void tab_control::recreate_handle() {

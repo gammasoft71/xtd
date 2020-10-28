@@ -152,7 +152,6 @@ form& form::owner(const control& value) {
 
 control& form::parent(const control& parent) {
   throw std::invalid_argument("Top-level control cannot be added to a control.");
-  return *this;
 }
 
 form& form::show_icon(bool value) {
