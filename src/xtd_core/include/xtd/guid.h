@@ -222,7 +222,7 @@ namespace xtd {
     std::string to_string(std::string format) const {
       format = format.empty() ? "d" : xtd::strings::to_lower(format);
       
-      if (format.size() != 1 || xtd::strings::index_of("ndbpx", format) == -1)
+      if (format.size() != 1 || xtd::strings::index_of("ndbpx", format) == std::string::npos)
         throw std::invalid_argument("bad format");
       
       bool hyphens = format != "n" && format != "x";
