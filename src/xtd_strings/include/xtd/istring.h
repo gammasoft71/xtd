@@ -135,7 +135,7 @@ namespace xtd {
     int compare(size_type pos1, size_type count1, const T& t, size_type pos2, size_type count2 = npos) const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::compare(pos1, count1, t, pos2, count2);}
 
     immutable_basic_string substr(size_type pos = 0, size_type count = npos) const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::substr(pos, count);}
-    static const size_type npos = -1;
+    static const size_type npos = 0xFFFFFFFFFFFFFFFF;
     
     size_type copy(char_t* dest, size_type count, size_type pos = 0) const {return this->std::basic_string<char_t, char_traits_t, allocator_t>::copy(dest, count, pos);}
     void swap(immutable_basic_string& other) noexcept {this->std::basic_string<char_t, char_traits_t, allocator_t>::swap(other);}
