@@ -369,7 +369,7 @@ struct __tunit_value_printer<Char, CharTraits, std::tuple<Types ...>> {
 
 template <typename Char, typename CharTraits>
 struct __tunit_value_printer<Char, CharTraits, std::tuple<>> {
-  static void print(std::basic_ostream<Char, CharTraits>& os, const std::tuple<>& value) {
+  static void print(std::basic_ostream<Char, CharTraits>& os, const std::tuple<>&) {
     os << "()";
   }
 };
