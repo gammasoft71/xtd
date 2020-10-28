@@ -33,7 +33,8 @@ namespace unit_tests {
       stringstream result;
       console::set_out(result);
       // dynamic_cast needed for test only because xtd::unit overload ostream operator <<.
-      console::write(dynamic_cast<std::exception&&>(std::invalid_argument("Invalid format")));
+      std::invalid_argument exception("Invalid format");
+      console::write(dynamic_cast<std::exception&&>(exception));
       std::cout << result.str() << std::endl;
       assert::are_equal_("exception: Invalid format", result.str());
     }
