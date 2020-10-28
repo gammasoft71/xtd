@@ -717,7 +717,7 @@ namespace xtd {
     /// | width    | description                                                                                                                                                                                          |
     /// |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     /// | (number) | Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger. |
-    /// | *        | The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                        |
+    /// | *        | The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                        |
     ///
     /// | .precision | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
     /// |------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -726,15 +726,15 @@ namespace xtd {
     /// @remarks The length sub-specifier modifies the length of the data type. This is a chart showing the types used to interpret the corresponding arguments with and without length specifier (if a different type is used, the proper type promotion or conversion is performed, if allowed):
     /// | length | d i           | u o x X                | f F e E g G a A | c     | s        | p     | n              |
     /// |--------|---------------|------------------------|-----------------|-------|----------|-------|----------------|
-    /// | (none) | int           | unsigned int           | double          | int   | char*    | void* | int*           |
-    /// | hh     | signed char   | unsigned char          |                 |       |          |       | unsigned char* |
-    /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*     |
+    /// | (none) | int           | unsigned int           | double          | int   | char*    | void* | int*           |
+    /// | hh     | signed char   | unsigned char          |                 |       |          |       | unsigned char* |
+    /// | h      | short int     | unsigned short int     |                 |       |          |       | short int*     |
     /// | l      | long int      | unsigned long int      |                 | win_t | wchar_t* |       | long int*      |
-    /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int* |
-    /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*      |
-    /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*        |
-    /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*     |
-    /// | L      |               |                        | long double     |       |          |       |                |
+    /// | ll     | long long int | unsigned long long int |                 |       |          |       | long long int* |
+    /// | j      | intmax_t      | uintmax_t              |                 |       |          |       | intmax_t*      |
+    /// | z      | size_t        | size_t                 |                 |       |          |       | size_t*        |
+    /// | t      | ptrdiff_t     | ptrdiff_t              |                 |       |          |       | ptrdiff_t*     |
+    /// | L      |               |                        | long double     |       |          |       |                |
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char value (or a wchar_t) before formatting it for output.
     /// @remarks you can use std::string or std::wstring with format param %%s.
     template<typename char_t, typename ... args_t>
@@ -1714,6 +1714,7 @@ template<typename char_t, typename ...args_t>
 void __extract_format_arg(std::basic_string<char_t>& fmt, std::vector<__format_information<char_t>>& formats, args_t&&... args) {
   size_t index = 0;
   (__extract_format_arg(fmt, index, formats, args),...);
+  std::move(index); // workouround to mute gcc warning: unused-but-set-variable
 }
 
 /// @cond
