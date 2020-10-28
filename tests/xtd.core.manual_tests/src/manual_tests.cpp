@@ -16,7 +16,7 @@ string to_value(const string& value) {
   auto items = strings::split(strings::trim(value), {' '});
   if (items.size() == 1) return xtd::strings::format("0x{:X8}", xtd::parse<int>(xtd::strings::remove(items[0], 0, 2), number_styles::hex_number));
   std::string result = "{";
-  for (auto index  = 0; index < items.size(); index++)
+  for (auto index  = 0U; index < items.size(); index++)
     result.append(xtd::strings::format("0x{:X8}{}", xtd::parse<int>(xtd::strings::remove(items[index], 0, 2), number_styles::hex_number), index < items.size() - 1 ? ", " : ""));
   result += "}";
   return result;
@@ -27,7 +27,7 @@ void generate_header_file(const std::string& filename) {
   cout << endl;
 
   auto lines = file::read_all_lines(filename);
-  for(auto index = 0; index < lines.size(); index += 2) {
+  for(auto index = 0U; index < lines.size(); index += 2) {
     cout << format("      /// @brief Gets a system-defined emoticon that has a string value of {}. This field is constant.\n", to_value(lines[index+1]));
     cout << format("      static const xtd::forms::emoticon {};\n", to_variable(lines[index]));
   }
@@ -39,14 +39,14 @@ void generate_source_file(const std::string& filename) {
   cout << endl;
   
   auto lines = file::read_all_lines(filename);
-  for(auto index = 0; index < lines.size(); index += 2)
+  for(auto index = 0U; index < lines.size(); index += 2)
     cout << format("const xtd::forms::emoticon xtd::forms::emoticons::{} = {{\"{}\", {}}};\n", to_variable(lines[index]), xtd::strings::to_lower(lines[index]), to_value(lines[index + 1]));
   cout << endl;
 }
 
 void generate_vector_items(const std::string& filename) {
   auto lines = file::read_all_lines(filename);
-  for(auto index = 0; index < lines.size(); index += 2)
+  for(auto index = 0U; index < lines.size(); index += 2)
     cout << format("{}, ", to_variable(lines[index]));
   cout << endl;
 }
@@ -54,7 +54,7 @@ void generate_vector_items(const std::string& filename) {
 void generate_flags_header_file(const std::string& filename) {
   static const vector<int> enclosed_letters {0x1F1E6, 0x1F1E7, 0x1F1E8, 0x1F1E9, 0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1ED, 0x1F1EE, 0x1F1EF, 0x1F1F0, 0x1F1F1, 0x1F1F2, 0x1F1F3, 0x1F1F4, 0x1F1F5, 0x1F1F6, 0x1F1F7, 0x1F1F8, 0x1F1F9, 0x1F1FA, 0x1F1FB, 0x1F1FC, 0x1F1FD, 0x1F1FE, 0x1F1FF};
   auto lines = file::read_all_lines(filename);
-  for(auto index = 0; index < lines.size(); index += 2) {
+  for(auto index = 0U; index < lines.size(); index += 2) {
     auto items = strings::split(strings::trim(lines[index]), {'\t'});
     cout << format("      /// @brief Gets a system-defined emoticon that has a string value of {{0x{:X8}, 0x{:X8}}}. This field is constant.\n", enclosed_letters[items[1][0] - 'A'], enclosed_letters[items[1][1] - 'A']);
     cout << format("      static const xtd::forms::emoticon {}_flag;\n\n", to_variable(items[0]));
@@ -65,7 +65,7 @@ void generate_flags_header_file(const std::string& filename) {
 void generate_flags_source_file(const std::string& filename) {
   static const vector<int> enclosed_letters {0x1F1E6, 0x1F1E7, 0x1F1E8, 0x1F1E9, 0x1F1EA, 0x1F1EB, 0x1F1EC, 0x1F1ED, 0x1F1EE, 0x1F1EF, 0x1F1F0, 0x1F1F1, 0x1F1F2, 0x1F1F3, 0x1F1F4, 0x1F1F5, 0x1F1F6, 0x1F1F7, 0x1F1F8, 0x1F1F9, 0x1F1FA, 0x1F1FB, 0x1F1FC, 0x1F1FD, 0x1F1FE, 0x1F1FF};
   auto lines = file::read_all_lines(filename);
-  for(auto index = 0; index < lines.size(); index++) {
+  for(auto index = 0U; index < lines.size(); index++) {
     auto items = strings::split(strings::trim(lines[index]), {'\t'});
     cout << format("const xtd::forms::emoticon xtd::forms::emoticons::{}_flag = {{\"flag of {}\", {{0x{:X8}, 0x{:X8}}}}};\n", to_variable(items[0]), items[0], enclosed_letters[items[1][0] - 'A'], enclosed_letters[items[1][1] - 'A']);
   }
@@ -74,7 +74,7 @@ void generate_flags_source_file(const std::string& filename) {
 
 void generate_flags_vector_items(const std::string& filename) {
   auto lines = file::read_all_lines(filename);
-  for(auto index = 0; index < lines.size(); index += 2) {
+  for(auto index = 0U; index < lines.size(); index += 2) {
     auto items = strings::split(strings::trim(lines[index]), {'\t'});
     cout << format("{}_flag, ", to_variable(items[0]));
   }
