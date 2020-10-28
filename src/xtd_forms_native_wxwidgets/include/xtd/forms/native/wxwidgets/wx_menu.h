@@ -201,7 +201,7 @@ namespace xtd {
         wx_menu_item* parent_ = nullptr;
         wxMenuItem* menu_item_ = nullptr;
         wxMenu* menu_ = nullptr;
-        size_t index_ = -1;
+        size_t index_ = 0xFFFFFFFFFFFFFFFF;
       };
     
     class wx_menu_bar : public wxMenuBar {
@@ -252,7 +252,7 @@ namespace xtd {
       
       static size_t find_index_from_id(wxWindowID id) {
         auto item = ids_[id];
-        if (item == nullptr) return -1;
+        if (item == nullptr) return 0xFFFFFFFFFFFFFFFF;
         return item->index_;
       }
       

@@ -303,7 +303,7 @@ namespace unit_tests {
     void test_method_(insert_at_item_width_bad_index) {
       arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c"});
-      assert::throws_(invalid_argument, [&] {items.insert_at(-1, "z");});
+      assert::throws_(invalid_argument, [&] {items.insert_at(0xFFFFFFFFFFFFFFFF, "z");});
     }
       
     void test_method_(insert_at_item_in_first) {
@@ -498,7 +498,7 @@ namespace unit_tests {
     void test_method_(erase_at_item_width_bad_index) {
       arranged_element_collection<std::string> items;
       items.push_back_range({"a", "b", "c"});
-      assert::throws_(invalid_argument, [&] {items.erase_at(-1);});
+      assert::throws_(invalid_argument, [&] {items.erase_at(0xFFFFFFFFFFFFFFFF);});
     }
 
     void test_method_(update_item) {

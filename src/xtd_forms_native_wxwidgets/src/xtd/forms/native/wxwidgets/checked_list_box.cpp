@@ -44,10 +44,10 @@ void checked_list_box::insert_item(intptr_t control, size_t index, const std::st
 }
 
 size_t checked_list_box::selected_index(intptr_t control) {
-  if (control == 0) return -1;
+  if (control == 0) return 0xFFFFFFFFFFFFFFFF;
   if (static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->HasMultipleSelection()) {
     vector<size_t> indices = selected_indices(control);
-    if (indices.empty()) return -1;
+    if (indices.empty()) return 0xFFFFFFFFFFFFFFFF;
     return indices[0];
   }
   return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();

@@ -48,7 +48,7 @@ namespace xtd {
       /// @cond
       friend class tab_page;
       tab_alignment alignment_ = tab_alignment::top;
-      size_t selected_index_ = -1;
+      size_t selected_index_ = 0xFFFFFFFFFFFFFFFF;
       /// @endcond
     };
   }

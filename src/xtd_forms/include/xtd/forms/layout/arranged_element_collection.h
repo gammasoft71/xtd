@@ -48,7 +48,7 @@ namespace xtd {
           
           friend std::ostream& operator<<(std::ostream& os, const item_t& value) {return os << static_cast<const type_t&>(value);}
           
-          size_t pos = -1;
+          size_t pos = 0xFFFFFFFFFFFFFFFF;
           arranged_element_collection* parent = nullptr;
         };
         
