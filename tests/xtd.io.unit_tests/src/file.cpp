@@ -238,7 +238,7 @@ namespace unit_tests {
       existing_file.close();
       std::vector<unsigned char> bytes = file::read_all_bytes(test_file_name);
       
-      assert::are_equal(4, bytes.size());
+      assert::are_equal(4U, bytes.size());
       assert::are_equal(0x42, bytes[0]);
       assert::are_equal(0x24, bytes[1]);
       assert::are_equal(0x12, bytes[2]);
@@ -255,7 +255,7 @@ namespace unit_tests {
       existing_file << "Line 1\nLine 2\nLine 3\n";
       existing_file.close();
       std::vector<std::string> lines = file::read_all_lines(test_file_name);
-      assert::are_equal(3, lines.size());
+      assert::are_equal(3U, lines.size());
       assert::are_equal("Line 1", lines[0]);
       assert::are_equal("Line 2", lines[1]);
       assert::are_equal("Line 3", lines[2]);
