@@ -25,7 +25,7 @@ namespace xtd {
       virtual const std::string name() const {return name_;}
       virtual const std::string alpha_2_code() const {return alpha_2_code_;}
       virtual const std::string alpha_3_code() const {return alpha_3_code_;}
-      virtual const int numeric_code() const {return numeric_code_;}
+      virtual int numeric_code() const {return numeric_code_;}
       virtual const std::string emoticon() const {return emoticon_;}
       virtual const xtd::drawing::image flag() const;
       virtual const xtd::drawing::image flag_squared() const;

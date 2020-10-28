@@ -91,8 +91,8 @@ namespace xtd {
       }
 
       virtual void set_all_dots(bool on) {
-        for (int32_t x = 0; x < dots_.size(); x++)
-          for (int32_t y = 0; y < dots_[x].size(); y++)
+        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++)
+          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
             dots_[x][y] = on;
       }
       
@@ -111,8 +111,8 @@ namespace xtd {
         drawing::graphics graphics = e.graphics();
         graphics.clear(back_color());
         if (show_background_dot_) draw_background_dot(graphics);
-        for (int32_t x = 0; x < dots_.size(); x++)
-          for (int32_t y = 0; y < dots_[x].size(); y++)
+        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++)
+          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
             if (dots_[x][y]) draw_dot(graphics, fore_color(), {x, y});
       }
       
@@ -122,8 +122,8 @@ namespace xtd {
       }
 
       virtual void draw_background_dot(drawing::graphics& graphics) {
-        for (int32_t x = 0; x < dots_.size(); x++)
-          for (int32_t y = 0; y < dots_[x].size(); y++)
+        for (int32_t x = 0; x < static_cast<int32_t>(dots_.size()); x++)
+          for (int32_t y = 0; y < static_cast<int32_t>(dots_[x].size()); y++)
             draw_dot(graphics, background_dot_color(), {x, y});
       }
 

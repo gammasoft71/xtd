@@ -21,7 +21,7 @@ namespace unit_tests {
       list_box.parent(form);
       list_box.items().push_back_range({"d", "a", "c", "b"});
       
-      assert::are_equal_(4, list_box.items().size());
+      assert::are_equal_(4U, list_box.items().size());
       assert::are_equal_("d", list_box.items()[0]);
       assert::are_equal_("a", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);
@@ -34,7 +34,7 @@ namespace unit_tests {
       list_box.parent(form);
       list_box.items().push_back_range({{"d", 4}, {"a", 1}, {"c", 3}, {"b", 2}});
       
-      assert::are_equal_(4, list_box.items().size());
+      assert::are_equal_(4U, list_box.items().size());
       assert::are_equal_("d", list_box.items()[0]);
       assert::are_equal_(4, any_cast<int>(list_box.items()[0].tag()));
       assert::are_equal_("a", list_box.items()[1]);
@@ -52,7 +52,7 @@ namespace unit_tests {
       list_box.sorted(true);
       list_box.items().push_back_range({"d", "a", "c", "b"});
 
-      assert::are_equal_(4, list_box.items().size());
+      assert::are_equal_(4U, list_box.items().size());
       assert::are_equal_("a", list_box.items()[0]);
       assert::are_equal_("b", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);
@@ -66,7 +66,7 @@ namespace unit_tests {
       list_box.items().push_back_range({"d", "a", "c", "b"});
       list_box.sorted(true);
       
-      assert::are_equal_(4, list_box.items().size());
+      assert::are_equal_(4U, list_box.items().size());
       assert::are_equal_("a", list_box.items()[0]);
       assert::are_equal_("b", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);
@@ -80,7 +80,7 @@ namespace unit_tests {
       list_box.items().push_back_range({"d", "a", "c", "b"});
       std::sort(list_box.items().begin(), list_box.items().end());
       
-      assert::are_equal_(4, list_box.items().size());
+      assert::are_equal_(4U, list_box.items().size());
       assert::are_equal_("a", list_box.items()[0]);
       assert::are_equal_("b", list_box.items()[1]);
       assert::are_equal_("c", list_box.items()[2]);

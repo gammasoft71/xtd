@@ -38,7 +38,7 @@ button_base& button_base::image_align(content_alignment value) {
 
 button_base& button_base::image_index(int32_t value) {
  if (this->image_index_ != value) {
-   if (value < -1 || value >= image_list_.images().size()) throw std::invalid_argument("Index out of range");
+   if (value < -1 || static_cast<size_t>(value) >= image_list_.images().size()) throw std::invalid_argument("Index out of range");
    this->image_index_ = value;
    this->recreate_handle();
  }

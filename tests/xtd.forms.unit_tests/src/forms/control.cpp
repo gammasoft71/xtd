@@ -99,7 +99,7 @@ namespace unit_tests {
       form form;
       control control;
       control.parent(form);
-      assert::are_equal_(1, form.controls().size());
+      assert::are_equal_(1U, form.controls().size());
       assert::are_equal_(control, form.controls()[0].get());
     }
 

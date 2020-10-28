@@ -73,19 +73,19 @@ void tab_control::on_control_added(const control_event_args &e) {
     controls()[controls().size() - 1].get().size(size() - xtd::drawing::size(0, 40));
     controls()[controls().size() - 1].get().client_size(size() - xtd::drawing::size(0, 40));
   }
-  if (selected_index_ == -1) selected_index_ = 0;
+  if (selected_index_ == 0xFFFFFFFFFFFFFFFF) selected_index_ = 0;
   control::on_control_added(e);
 }
 
 void tab_control::on_control_removed(const control_event_args &e) {
   control::on_control_removed(e);
-  if (selected_index_ != -1) selected_index(-1);
+  if (selected_index_ != 0xFFFFFFFFFFFFFFFF) selected_index(-1);
 }
 
 void tab_control::recreate_handle() {
   control::recreate_handle();
 
-  for (int index = 0; index < controls().size(); index++) {
+  for (auto index = 0U; index < controls().size(); index++) {
     native::tab_control::insert_item(handle(), index, controls()[index].get().handle());
     native::tab_control::page_text(handle(), index, controls()[index].get().text());
   }

@@ -112,7 +112,6 @@ void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t
   if (!control) return on_dialog_closed(show(control, text, caption, style, display_help_button));
   wxWindowPtr<wxMessageDialog> dialog(new wxMessageDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {text.c_str(), wxMBConvUTF8()}, {caption.c_str(), wxMBConvUTF8()}, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0)));
   set_button_labels(*dialog, style);
-  int32_t result = wxID_ANY;
   dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [on_dialog_closed, dialog, style](wxWindowModalDialogEvent& event) {
     on_dialog_closed(convert_to_dialog_result(event.GetReturnCode(), style));
   });
