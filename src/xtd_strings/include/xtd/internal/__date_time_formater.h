@@ -91,7 +91,6 @@ inline std::string __date_time_formater(std::string fmt, const std::tm& time, co
     case 'Z': return __tm_formater("%Z", time, loc);
     default: throw std::invalid_argument("Invalid format");
   }
-  throw std::invalid_argument("Invalid format");
 }
 
 inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, const std::locale& loc) {
@@ -134,7 +133,6 @@ inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, 
     case 'Z': return __tm_formater(L"%Z", time, loc);
     default: throw std::invalid_argument("Invalid format");
   }
-  throw std::invalid_argument("Invalid format");
 }
 
 inline std::string __date_time_formater(std::string fmt, time_t time, const std::locale& loc) {
