@@ -121,7 +121,7 @@ int32_t form::show_sheet_dialog(intptr_t form) {
   
   if (!dialog->GetParent()) return dialog->ShowModal();
   int32_t result = wxID_ANY;
-  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&, dialog](wxWindowModalDialogEvent& event) {
+  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent& event) {
     result = event.GetReturnCode();
   });
   dialog->ShowWindowModal();

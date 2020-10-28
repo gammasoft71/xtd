@@ -82,7 +82,6 @@ namespace xtd {
       /// @param owner Any object that implements iwn32_window that represents the top-level window that will own the modal dialog box.
       /// @remarks This version of the show_dialog method allows you to specify a specific form or control that will own the dialog box that is shown. If you use the version of this method that has no parameters, the dialog box being shown would be owned automatically by the currently active window of your application.
       void show_sheet(const iwin32_window& owner) {
-        auto form = form::active_form();
         dialog_result_ = xtd::forms::dialog_result::none;
         run_sheet(owner.handle());
       }

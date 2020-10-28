@@ -18,7 +18,7 @@ void tab_control::delete_item(intptr_t control, size_t index) {
 void tab_control::delete_item(intptr_t control, intptr_t page) {
   if (control == 0 || page == 0) return;
   size_t index = static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->FindPage(reinterpret_cast<control_handler*>(page)->control());
-  if (index != -1) delete_item(control, index);
+  if (index != 0xFFFFFFFFFFFFFFFF) delete_item(control, index);
 }
 
 void tab_control::image_list(intptr_t control, intptr_t image_list) {
@@ -48,7 +48,7 @@ size_t tab_control::selected_index(intptr_t control) {
 
 void tab_control::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
-  if (index != -1) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
+  if (index != 0xFFFFFFFFFFFFFFFF) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }
 
 void tab_control::update_item(intptr_t control, size_t index, intptr_t page) {

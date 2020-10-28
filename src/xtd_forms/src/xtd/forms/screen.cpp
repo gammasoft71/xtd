@@ -20,8 +20,8 @@ graphics screen::create_graphics() {
 
 screen screen::from_control(const control& control) {
   size_t index = native::screen::from_handle(control.handle());
-  if (index == -1 && control.parent().has_value()) index = native::screen::from_handle(control.parent().value().get().handle());
-  if (index == -1) index  = native::screen::from_point(forms::cursor::position());
+  if (index == 0xFFFFFFFFFFFFFFFF && control.parent().has_value()) index = native::screen::from_handle(control.parent().value().get().handle());
+  if (index == 0xFFFFFFFFFFFFFFFF) index  = native::screen::from_point(forms::cursor::position());
   return all_screens()[index];
 }
 

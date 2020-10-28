@@ -616,10 +616,14 @@ namespace xtd {
       control& text(const std::string& value) override {
         if (text_ != value) {
           suspend_layout();
+#if defined(WIN32)
 #pragma warning(push)
 #pragma warning(suppress:4996)
+#endif
           std::wstring str = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(value.c_str());
+#if defined(WIN32)
 #pragma warning(pop)
+#endif
           if (str.size() < digits_.size())
             digits_.erase(digits_.begin() + value.size(), digits_.end());
           if (str.size() > digits_.size())

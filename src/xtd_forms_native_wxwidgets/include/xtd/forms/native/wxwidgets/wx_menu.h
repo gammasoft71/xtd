@@ -34,7 +34,7 @@ namespace xtd {
         wx_menu_item(const std::string& text, size_t shortcut, const std::vector<wx_menu_item>& items) : text_(text), shortcut_(shortcut), items_(items) {}
 
         const std::string& text() const {return text_;}
-        const size_t shortcut() const {return shortcut_;}
+        size_t shortcut() const {return shortcut_;}
         bool enabled() const {return enabled_;}
         intptr_t image() const {return image_;}
         wx_menu_item_kind kind() const {return kind_;}
