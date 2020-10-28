@@ -1526,7 +1526,7 @@ namespace xtd {
     template<typename char_t>
     static const std::basic_string<char_t> to_upper(const std::basic_string<char_t>& str) noexcept {
       std::basic_string<char_t> result;
-      for(char c : str) result.push_back(toupper(c));
+      for(char_t c : str) result.push_back(static_cast<char_t>(toupper(c)));
       return result;
     }
     
