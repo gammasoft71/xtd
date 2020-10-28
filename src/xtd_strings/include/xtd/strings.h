@@ -1675,8 +1675,8 @@ namespace xtd {
     
     static std::string get_class_name(const std::string& full_name) {
       size_t length = last_index_of(full_name, "<");
-      if (length == -1) length = full_name.length();
-      if (last_index_of(full_name, "::", 0, length) == -1) return full_name;
+      if (length == -1U) length = full_name.length();
+      if (last_index_of(full_name, "::", 0, length) == -1U) return full_name;
       return  substring(full_name, last_index_of(full_name, "::", 0, length) + 2);
     }
   };
