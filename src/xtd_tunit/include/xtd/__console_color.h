@@ -28,19 +28,19 @@ void __opaque_foreground_color(__console_color);
 void __opaque_reset_color();
 
 template<class Char>
-inline std::basic_streambuf<Char>* __opaque_get_out_rdbuf() {return nullptr;};
+inline std::basic_streambuf<Char>* __opaque_get_out_rdbuf() {return nullptr;}
 
 template<>
 inline std::basic_streambuf<char>* __opaque_get_out_rdbuf<char>() {
   static std::basic_streambuf<char>* rdbuf = std::cout.rdbuf();
   return rdbuf;
-};
+}
 
 template<>
 inline std::basic_streambuf<wchar_t>* __opaque_get_out_rdbuf<wchar_t>() {
   static std::basic_streambuf<wchar_t>* rdbuf = std::wcout.rdbuf();
   return rdbuf;
-};
+}
 
 class __foreground_color final {
 public:
