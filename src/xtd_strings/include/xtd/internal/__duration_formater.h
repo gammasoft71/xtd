@@ -58,6 +58,5 @@ inline std::basic_string<char_t> __duration_formater(std::basic_string<char_t> f
     case 'S': return xtd::strings::format(std::basic_string<char_t> {'{', ':', 'D', '2', '}'}, std::chrono::duration_cast<std::chrono::seconds>(value).count() % 60);
     default: throw std::invalid_argument("Invalid format");
   }
-  throw std::invalid_argument("Invalid format");
 }
 /// @endcond
