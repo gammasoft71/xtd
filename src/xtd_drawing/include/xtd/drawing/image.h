@@ -87,7 +87,7 @@ namespace xtd {
       
       /// @brief Gets the pixel format for this image.
       /// @return A pixel_format that represents the pixel format for this image.
-      const imaging::pixel_format pixel_format() const {return this->data_->pixel_format_;}
+      imaging::pixel_format pixel_format() const {return this->data_->pixel_format_;}
       
       /// @brief Gets IDs of the property items stored in this image.
       /// @return An array of the property IDs, one for each property item stored in this image.
