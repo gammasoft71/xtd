@@ -11,7 +11,7 @@ using namespace xtd::drawing;
 namespace {
   std::string get_hotkey_prefix_locations(const std::string& str, std::vector<size_t>& locations) {
     size_t offset = 0;
-    for (auto index = 0; index < str.size(); index++) {
+    for (auto index = 0U; index < str.size(); index++) {
       if (str[index] == '&' && str[index+1] != '&') {
         locations.push_back(index + offset);
       } else if (str[index] == '&' && str[index+1] == '&') {
@@ -20,7 +20,7 @@ namespace {
       }
     }
     auto new_str = xtd::strings::replace(str, "&&", "&");
-    for (int index = 0; index < locations.size(); ++index)
+    for (auto index = 0U; index < locations.size(); ++index)
       new_str = xtd::strings::remove(new_str, locations[index], 1);
     return new_str;
   }
