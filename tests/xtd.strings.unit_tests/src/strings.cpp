@@ -140,21 +140,21 @@ namespace unit_tests {
     }
     
     void test_method_(index_of_char) {
-      assert::are_equal(3, strings::index_of("01234", '3'));
-      assert::are_equal(3, strings::index_of("0123434", '3'));
+      assert::are_equal(3U, strings::index_of("01234", '3'));
+      assert::are_equal(3U, strings::index_of("0123434", '3'));
     }
 
     void test_method_(index_of_string) {
-      assert::are_equal(2, strings::index_of("01234", "23"));
-      assert::are_equal(2, strings::index_of("0123423", "23"));
+      assert::are_equal(2U, strings::index_of("01234", "23"));
+      assert::are_equal(2U, strings::index_of("0123423", "23"));
     }
     
     void test_method_(index_of_char_start_index) {
-      assert::are_equal(5, strings::index_of("0123434", '3', 4));
+      assert::are_equal(5U, strings::index_of("0123434", '3', 4));
     }
     
     void test_method_(index_of_string_start_index) {
-      assert::are_equal(5, strings::index_of("0123423", "23", 3));
+      assert::are_equal(5U, strings::index_of("0123423", "23", 3));
     }
     
     void test_method_(index_of_char_start_index_count) {
@@ -166,15 +166,15 @@ namespace unit_tests {
     }
     
     void test_method_(index_of_any) {
-      assert::are_equal(2, strings::index_of_any("01234", {'5', '3', '2'}));
+      assert::are_equal(2U, strings::index_of_any("01234", {'5', '3', '2'}));
     }
     
     void test_method_(index_of_any_start_index) {
-      assert::are_equal(3, strings::index_of_any("01234", {'5', '3', '2'}, 3));
+      assert::are_equal(3U, strings::index_of_any("01234", {'5', '3', '2'}, 3));
     }
     
     void test_method_(index_of_any_start_index_and_count) {
-      assert::are_equal(2, strings::index_of_any("01234", {'5', '2'}, 2, 1));
+      assert::are_equal(2U, strings::index_of_any("01234", {'5', '2'}, 2, 1));
       assert::are_equal(std::string::npos, strings::index_of_any("01234", {'5', '3'}, 0, 2));
     }
     
@@ -199,21 +199,21 @@ namespace unit_tests {
     }
     
     void test_method_(last_index_of_char) {
-      assert::are_equal(3, strings::last_index_of("01234", '3'));
-      assert::are_equal(5, strings::last_index_of("0123434", '3'));
+      assert::are_equal(3U, strings::last_index_of("01234", '3'));
+      assert::are_equal(5U, strings::last_index_of("0123434", '3'));
     }
     
     void test_method_(last_index_of_string) {
-      assert::are_equal(2, strings::last_index_of("01234", "23"));
-      assert::are_equal(5, strings::last_index_of("0123423", "23"));
+      assert::are_equal(2U, strings::last_index_of("01234", "23"));
+      assert::are_equal(5U, strings::last_index_of("0123423", "23"));
     }
     
     void test_method_(last_index_of_char_start_index) {
-      assert::are_equal(5, strings::last_index_of("0123434", '3', 4));
+      assert::are_equal(5U, strings::last_index_of("0123434", '3', 4));
     }
     
     void test_method_(last_index_of_string_start_index) {
-      assert::are_equal(5, strings::last_index_of("0123423", "23", 3));
+      assert::are_equal(5U, strings::last_index_of("0123423", "23", 3));
     }
     
     void test_method_(last_index_of_char_start_index_count) {
@@ -225,15 +225,15 @@ namespace unit_tests {
     }
     
     void test_method_(last_index_of_any) {
-      assert::are_equal(3, strings::last_index_of_any("01234", {'5', '3', '2'}));
+      assert::are_equal(3U, strings::last_index_of_any("01234", {'5', '3', '2'}));
     }
     
     void test_method_(last_index_of_any_start_index) {
-      assert::are_equal(3, strings::last_index_of_any("01234", {'5', '3', '2'}, 3));
+      assert::are_equal(3U, strings::last_index_of_any("01234", {'5', '3', '2'}, 3));
     }
     
     void test_method_(last_index_of_any_start_index_and_count) {
-      assert::are_equal(2, strings::last_index_of_any("01234", {'5', '2'}, 2, 1));
+      assert::are_equal(2U, strings::last_index_of_any("01234", {'5', '2'}, 2, 1));
       assert::are_equal(std::string::npos, strings::last_index_of_any("01234", {'5', '3'}, 0, 2));
     }
 
