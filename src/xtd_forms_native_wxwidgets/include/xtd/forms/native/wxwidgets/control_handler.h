@@ -46,7 +46,7 @@ namespace xtd {
           if (handle != 0) {
             wxEvent* event = reinterpret_cast<wxEvent*>(handle);
             event->Skip(!result);
-            process_result_ = msg == WM_CLOSE ? 1 : process_result_ = control_t::ProcessEvent(*event);
+            process_result_ = msg == WM_CLOSE ? 1 : control_t::ProcessEvent(*event);
           }
           return process_result_;
         }

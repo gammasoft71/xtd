@@ -31,9 +31,10 @@ label& label::flat_style(xtd::forms::flat_style flat_style) {
 }
 
 label& label::text_align(content_alignment text_align) {
-  if (text_align_ != text_align)
+  if (text_align_ != text_align) {
     text_align_ = text_align;
     recreate_handle();
+  }
   return *this;
 }
 
