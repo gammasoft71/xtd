@@ -1385,7 +1385,7 @@ namespace xtd {
     template<typename char_t>
     static bool starts_with(const std::basic_string<char_t>& str, char_t value, bool ignore_case) noexcept {
       if (ignore_case)
-        return to_lower(str).find(tolower(value)) == 0;
+        return to_lower(str).find(static_cast<char_t>(tolower(value))) == 0;
       return str.find(value) == 0;
     }
     
@@ -1406,7 +1406,7 @@ namespace xtd {
     template<typename char_t>
     static bool starts_with(const std::basic_string<char_t>& str, const std::basic_string<char_t>& value, bool ignore_case) noexcept {
       if (ignore_case)
-        return to_lower(str).find(to_lower(value)) == 0;
+        return to_lower(str).find(to_lower(value)) == 0U;
       return str.find(value) == 0;
     }
     
@@ -1499,7 +1499,7 @@ namespace xtd {
     template<typename char_t>
     static const std::basic_string<char_t> to_lower(const std::basic_string<char_t>& str) noexcept {
       std::basic_string<char_t> result;
-      for(char c : str) result.push_back(tolower(c));
+      for(char_t c : str) result.push_back(static_cast<char_t>(tolower(c)));
       return result;
     }
     
