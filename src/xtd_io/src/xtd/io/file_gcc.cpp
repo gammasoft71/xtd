@@ -4,7 +4,8 @@
 #include <sys/stat.h>
 
 int __get_file_attributes(const char*path) {
-  struct stat status {0};
+  struct stat status;
+  memset(&status, 0, sizeof(status));
   if (stat(path, &status) != 0) return -1;
   int file_attribute = 0x00;
   if ((status.st_mode & S_IRUSR) == S_IRUSR && (status.st_mode & S_IWUSR) == 0)
