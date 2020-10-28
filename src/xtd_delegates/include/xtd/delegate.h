@@ -19,6 +19,10 @@ namespace xtd {
     delegate() = default;
     delegate(const delegate& delegate) noexcept : functions_(delegate.functions_) {}
     delegate(const function_t& function) noexcept { this->functions_.push_back(function); }
+    delegate& operator=(const delegate& delegate) noexcept {
+      functions_ = delegate.functions_;
+      return *this;
+    }
     
     template<typename object1_t, typename object2_t>
     delegate(const object1_t& object, result_t(object2_t::*method)() const) noexcept {
@@ -170,6 +174,13 @@ namespace xtd {
     /// @brief Initializes a delegate that invokes the specified delegate instance.
     /// @param delegate The delegate instance.
     delegate(const delegate& delegate) noexcept : no_arguments_functions_(delegate.no_arguments_functions_), functions_(delegate.functions_) {}
+    /// @cond
+    delegate& operator=(const delegate& delegate) noexcept {
+      no_arguments_functions_ = delegate.no_arguments_functions_;
+      functions_ = delegate.functions_;
+      return *this;
+    }
+    /// @endcond
 
     /// @brief Initializes a delegate that invokes the specified instance method.
     /// @param function the method instance.
