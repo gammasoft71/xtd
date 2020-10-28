@@ -1293,7 +1293,7 @@ namespace xtd {
       for (std::string::const_iterator it = str.begin(); it != str.end(); it++) {
         bool is_separator =  std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
         if (!is_separator) subString.append(std::string(1, *it));
-        if ((it - str.begin() == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0 && options != string_split_options::remove_empty_entries))) {
+        if ((static_cast<size_t>(it - str.begin()) == str.length() - 1 || is_separator) && (subString.length() > 0 || (subString.length() == 0 && options != string_split_options::remove_empty_entries))) {
           if (list.size() == count - 1) {
             list.push_back(subString + std::string(str.c_str(), it - str.begin() + (is_separator ? 0 : 1), str.length() - (it - str.begin()) + (is_separator ? 0 : 1)));
             return list;
