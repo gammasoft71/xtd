@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.3)
 
+if (MSVC)
+  # warning level 4 and all warnings as errors
+  add_compile_options(/W4 /wd4100 /wd4458 /wd4127 /WX)
+endif()
+
 # Project
 project(xtd.strings.unit_tests)
 set(SOURCES
