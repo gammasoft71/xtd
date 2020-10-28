@@ -30,7 +30,9 @@ namespace xtd {
       /// @brief Initializes a new instance of the Trace_Source class, using the specified name for the source.
       /// @param name The name of the source (typically, the name of the application).
       /// @param default_level A bitwise combination of the enumeration values that specifies the default source level at which to trace
-      explicit trace_source(const std::string& name, xtd::diagnostics::source_levels default_levels) : name_(name), switch_levels_(default_levels) {}
+      explicit trace_source(const std::string& name, xtd::diagnostics::source_levels default_levels) : name_(name), switch_levels_(default_levels) {
+        source_switch_.level(switch_levels_);
+      }
 
       /// @brief Gets the collection of trace listeners for the trace source.
       /// @return A trace_listener_collection that contains the active trace listeners associated with the source.
@@ -174,6 +176,7 @@ namespace xtd {
     private:
       std::map<std::string, std::string> attributes_;
       std::string name_;
+      /// @todo Update source_swith with this...
       xtd::diagnostics::source_levels switch_levels_ = xtd::diagnostics::source_levels::off;
       xtd::diagnostics::trace_listener_collection listeners_ {std::make_shared<xtd::diagnostics::default_trace_listener>()};
       xtd::diagnostics::source_switch source_switch_ {""};
