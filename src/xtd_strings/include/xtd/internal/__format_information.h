@@ -13,7 +13,7 @@
 /// @cond
 template<typename char_t>
 struct __format_information {
-  size_t index = -1;
+  size_t index = 0xFFFFFFFFFFFFFFFF;
   size_t location;
   std::basic_string<char_t> alignment;
   std::basic_string<char_t> format;
