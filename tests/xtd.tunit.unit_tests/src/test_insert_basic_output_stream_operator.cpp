@@ -57,7 +57,7 @@ namespace unit_tests {
     std::exception e;
     std::stringstream ss;
     ss << e;
-    assert_value_(0, ss.str().find("exception: "));
+    assert_value_(0U, ss.str().find("exception: "));
   }
   
 #if !__APPLE__ || __MAC_OS_X_VERSION_MAX_ALLOWED >= 101401
