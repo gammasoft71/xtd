@@ -471,7 +471,6 @@ color color::parse(const string& color) {
    } catch(...) {
      return color::from_name(strings::replace(strings::replace(color, "]", ""), "color [", ""));
    }
-  return color::empty;
 }
 
 uint32_t color::to_argb() const {
