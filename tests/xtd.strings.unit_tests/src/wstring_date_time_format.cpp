@@ -25,7 +25,9 @@ namespace {
   }
   
   static std::tm to_universal_time(time_t time) noexcept {return *std::gmtime(&time);}
-  //static std::tm to_universal_time(const std::chrono::system_clock::time_point& time) noexcept {return to_universal_time(std::chrono::system_clock::to_time_t(time));}
+#if !defined (WIN32)
+  static std::tm to_universal_time(const std::chrono::system_clock::time_point& time) noexcept {return to_universal_time(std::chrono::system_clock::to_time_t(time));}
+#endif
   static std::tm to_universal_time(std::tm time) noexcept {
     if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_universal_time(__make_local_date_time(&time));
     return to_universal_time(__make_utc_date_time(&time));
