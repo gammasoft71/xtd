@@ -157,7 +157,7 @@ namespace xtdc_command {
       static std::vector<std::string> targets;
       if (targets.size() == 0)
         for (const auto& line : get_system_information())
-          if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != -1)
+          if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != std::string::npos)
             targets.push_back(xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")));
       return targets;
     }
@@ -218,7 +218,7 @@ namespace xtdc_command {
     
     std::string get_first_target_path(bool release) const {
       for (const auto& line : get_system_information())
-        if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != -1)
+        if (xtd::strings::index_of(line, "_BINARY_DIR:STATIC=") != std::string::npos)
           return make_platform_target_path({xtd::strings::replace(line, xtd::strings::format("{}_BINARY_DIR:STATIC=", xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC="))), "")}, xtd::strings::substring(line, 0, xtd::strings::index_of(line, "_BINARY_DIR:STATIC=")), release);
       return (build_path()/(release ? "Release" : "Debug")/path_.filename()/path_.filename()).string();
     }
