@@ -10,10 +10,9 @@ if (NOT DEFINED EXPORT_PROJECT_NAME)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
 if (MSVC)
-  # warning level 4 and all warnings as errors
-  add_compile_options(/W4 /wd4100 /wd4458 /WX)
+  add_definitions(-D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
+  add_compile_options(/W4 /wd4100 /wd4458 /wd4996 /WX)
 else()
-  # lots of warnings and all warnings as errors
   add_compile_options(-Wall -Wextra -Wno-unused-parameter -pedantic -Werror)
 endif()
 
