@@ -1845,6 +1845,25 @@ enable_testing()
 #endif ()
 
 # add compile and link flags
+option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" OFF)
+option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
+
+if (XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL)
+  if (MSVC)
+    add_compile_options(/W4 /wd4100 /wd4458)
+  else()
+    add_compile_options(-Wall -Wextra -Wno-unused-parameter -pedantic)
+  endif()
+endif()
+
+if (XTD_ENABLE_COMPILER_OPTION_WARNINGS_AS_ERRORS)
+  if (MSVC)
+    add_compile_options(/WX)
+  else()
+    add_compile_options(-Werror)
+  endif()
+endif()
+
 if (MSVC)
   add_definitions(-D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8 /wd4251 /wd4275")
