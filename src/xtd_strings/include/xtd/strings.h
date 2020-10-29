@@ -1714,7 +1714,7 @@ template<typename char_t, typename ...args_t>
 void __extract_format_arg(std::basic_string<char_t>& fmt, std::vector<__format_information<char_t>>& formats, args_t&&... args) {
   size_t index = 0;
   (__extract_format_arg(fmt, index, formats, args),...);
-  std::move(index); // workouround to mute gcc warning: unused-but-set-variable
+  index = std::move(index); // workouround to mute gcc warning: unused-but-set-variable
 }
 
 /// @cond
