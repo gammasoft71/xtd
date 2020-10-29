@@ -14,7 +14,7 @@ public:
     text("Labels and Unicode text example");
     client_size({400, 350});
 
-    for (auto index = 0; index < languages.size(); ++index) {
+    for (auto index = 0U; index < languages.size(); ++index) {
       items[index].first.location(point(10, 10 + index * 30)).parent(*this).text(languages[index].first).width(150);
       items[index].second.location(point(160, 10 + index * 30)).parent(*this).text(languages[index].second).width(220);
     }

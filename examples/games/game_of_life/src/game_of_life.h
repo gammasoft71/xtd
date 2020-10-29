@@ -177,7 +177,7 @@ namespace game_of_life {
     
     void fill_figure(const std::vector<std::string>& figure) {
       auto height = static_cast<int>(figure.size());
-      auto width = 0;
+      auto width = 0U;
       for (auto line : figure)
         if (line.length() > width) width = static_cast<int>(line.length());
       

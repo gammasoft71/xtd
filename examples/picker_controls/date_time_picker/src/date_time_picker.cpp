@@ -14,8 +14,8 @@ public:
       label1.text(strings::format("{:d}", picker1.value()));
     };
     picker1.max_date(std::chrono::system_clock::now());
-    picker1.min_date({0, 0, 0, 4, 3, 75});
-    picker1.value({0, 0, 0, 4, 3, 75});
+    picker1.min_date(1975, 4, 4);
+    picker1.value(1975, 4, 4);
 
     label1.location({10, 50});
     label1.size({380, 340});
@@ -25,9 +25,9 @@ public:
     picker2.value_changed += [&] {
       label2.text(strings::format("{:t}", picker2.value()));
     };
-    picker2.max_date({0, 58, 23, 1, 0, 70});
-    picker2.min_date({0, 0, 10, 1, 0, 70});
-    picker2.value({56, 34, 12, 1, 0, 70});
+    picker2.max_date(1970, 1, 1, 13, 59, 59);
+    picker2.min_date(1970, 1, 1, 12, 0, 0);
+    picker2.value(1970, 1, 1, 13, 0, 0);
 
     label2.location({10, 130});
     label2.size({380, 340});

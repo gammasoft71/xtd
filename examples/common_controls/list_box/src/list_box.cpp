@@ -16,7 +16,7 @@ namespace examples {
       list_box_left.parent(*this);
       list_box_left.size({150, 200});
       list_box_left.double_click += [&] {
-        if (list_box_left.selected_index() != -1) {
+        if (list_box_left.selected_index() != 0xFFFFFFFFFFFFFFFF) {
           list_box_right.items().push_back(list_box_left.selected_item());
           list_box_right.selected_index(0);
           list_box_left.items().erase_at(list_box_left.selected_index());
@@ -29,7 +29,7 @@ namespace examples {
       list_box_right.sorted(true);
       list_box_right.size({150, 200});
       list_box_right.double_click += [&] {
-        if (list_box_right.selected_index() != -1) {
+        if (list_box_right.selected_index() != 0xFFFFFFFFFFFFFFFF) {
           list_box_left.items().push_back(list_box_right.selected_item());
           list_box_left.selected_index(0);
           list_box_right.items().erase_at(list_box_right.selected_index());

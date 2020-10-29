@@ -193,9 +193,9 @@ namespace example {
       button_increase.enabled(current_size_index < system_images::sizes().size() - 1);
     }
     
-    int current_context_index = 0;
-    int current_name_index = 0;
-    int current_size_index = 7;
+    size_t current_context_index = 0;
+    size_t current_name_index = 0;
+    size_t current_size_index = 7;
     label label_picture_kde_theme;
     label label_picture_gnome_theme;
     label label_picture_macos_theme;
