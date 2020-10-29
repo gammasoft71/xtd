@@ -77,7 +77,7 @@ namespace example {
       button_next.enabled(current_image_index < system_images::names(choice_context.selected_item().value()).size() - 1);
     }
     
-    int current_image_index = 0;
+    size_t current_image_index = 0;
     choice choice_theme;
     choice choice_context;
     choice choice_size;

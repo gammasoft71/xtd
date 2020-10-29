@@ -62,7 +62,7 @@ namespace example {
       }
     }
 
-    int current_image_index = 0;
+    size_t current_image_index = 0;
     image_list pictures;
     picture_box picture;
     button button_previous;
