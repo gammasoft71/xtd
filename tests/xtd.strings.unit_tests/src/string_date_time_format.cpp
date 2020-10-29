@@ -4,10 +4,8 @@
 
 #include <time.h>
 #if defined (WIN32)
-static time_t __make_local_date_time(struct tm *tm) noexcept {return mktime(tm);}
 static time_t __make_utc_date_time(struct tm *tm) noexcept {return _mkgmtime(tm);}
 #else
-static time_t __make_local_date_time(struct tm *tm) noexcept {return mktime(tm);}
 static time_t __make_utc_date_time(struct tm *tm) noexcept {return timegm(tm);}
 #endif
 
@@ -21,7 +19,7 @@ namespace {
   //static std::tm to_local_time(const std::chrono::system_clock::time_point& time) noexcept {return to_local_time(std::chrono::system_clock::to_time_t(time));}
   static std::tm to_local_time(std::tm time) noexcept {
     if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_local_time(__make_utc_date_time(&time));
-    return to_local_time(__make_local_date_time(&time));
+    return to_local_time(mktime(&time));
   }
   
   static std::tm to_universal_time(time_t time) noexcept {return *std::gmtime(&time);}
@@ -29,7 +27,7 @@ namespace {
   static std::tm to_universal_time(const std::chrono::system_clock::time_point& time) noexcept {return to_universal_time(std::chrono::system_clock::to_time_t(time));}
 #endif
   static std::tm to_universal_time(std::tm time) noexcept {
-    if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_universal_time(__make_local_date_time(&time));
+    if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_universal_time(mktime(&time));
     return to_universal_time(__make_utc_date_time(&time));
   }
 
