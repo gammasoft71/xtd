@@ -243,12 +243,7 @@ namespace xtd {
       
       std::string to_string(const std::chrono::time_point<std::chrono::system_clock>& time) {
         std::time_t time_t = std::chrono::system_clock::to_time_t(time);
-        std::tm tm;
-#if defined(WIN32)
-        localtime_s(&tm, &time_t);
-#else
-        tm = *std::localtime(&time_t);
-#endif
+        std::tm tm = *std::localtime(&time_t);
         std::stringstream ss;
         ss << tm.tm_year + 1900 << "-" << std::setfill('0') << std::setw(2) << tm.tm_mon << "-" << std::setfill('0') << std::setw(2) << tm.tm_mday;
         ss << "T" << std::setfill('0') << std::setw(2) << tm.tm_hour << ":" << std::setfill('0') << std::setw(2) << tm.tm_min << ":" << std::setfill('0') << std::setw(2) << tm.tm_sec;
