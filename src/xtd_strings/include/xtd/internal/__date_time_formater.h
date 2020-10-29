@@ -136,22 +136,10 @@ inline std::wstring __date_time_formater(std::wstring fmt, const std::tm& time, 
 }
 
 inline std::string __date_time_formater(std::string fmt, time_t time, const std::locale& loc) {
-#if defined(WIN32)
-  tm tm;
-  localtime_s(&tm, &time);
-  return __date_time_formater(fmt, tm, loc);
-#else
   return __date_time_formater(fmt, *std::localtime(&time), loc);
-#endif
 }
 
 inline std::wstring __date_time_formater(std::wstring fmt, time_t time, const std::locale& loc) {
-#if defined(WIN32)
-  tm tm;
-  localtime_s(&tm, &time);
-  return __date_time_formater(fmt, tm, loc);
-#else
   return __date_time_formater(fmt, *std::localtime(&time), loc);
-#endif
 }
 /// @endcond
