@@ -30,7 +30,7 @@ void combo_box::insert_item(intptr_t control, size_t index, const std::string& v
 }
 
 size_t combo_box::selected_index(intptr_t control) {
-  if (control == 0) return -1;
+  if (control == 0) return 0xFFFFFFFFFFFFFFFF;
   return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
