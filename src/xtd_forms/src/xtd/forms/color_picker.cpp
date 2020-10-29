@@ -2,6 +2,7 @@
 #include <xtd/forms/native/color_picker.h>
 #include <xtd/forms/native/static_styles.h>
 #include <xtd/forms/native/window_styles.h>
+#include <xtd/forms/color_dialog_flags.h>
 #include "../../../include/xtd/forms/color_picker.h"
 
 using namespace xtd;
@@ -23,6 +24,7 @@ void color_picker::color(const drawing::color& value) {
 forms::create_params color_picker::create_params() const {
   forms::create_params create_params = control::create_params();
   create_params.class_name("colorpicker");
+  if (alpha_color_) create_params.style(create_params.style() | CC_ALPHACOLOR);
   return create_params;
 }
 

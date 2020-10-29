@@ -93,6 +93,7 @@ public:
     label_back_color.auto_size(true);
     label_back_color.location({10, 188});
     
+    color_picker_back_color.alpha_color(true);
     color_picker_back_color.color(button_demo.back_color());
     color_picker_back_color.color_changed += [&] {
       button_demo.back_color(color_picker_back_color.color());
@@ -105,6 +106,7 @@ public:
     label_fore_color.auto_size(true);
     label_fore_color.location({10, 223});
     
+    color_picker_fore_color.alpha_color(true);
     color_picker_fore_color.color(button_demo.fore_color());
     color_picker_fore_color.color_changed += [&] {
       button_demo.fore_color(color_picker_fore_color.color());
