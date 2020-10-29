@@ -14,6 +14,20 @@ namespace xtd {
       
       drawing::size default_size() const override {return {100, 25};}
       
+      
+      /// @brief Gets a value indicating whether the dialog box  shows alpha values and an opacity selector (slider).
+      /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
+      bool alpha_color() const {return alpha_color_;}
+      /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
+      /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false.
+      color_picker& alpha_color(bool alpha_color) {
+        if (alpha_color_ != alpha_color) {
+          alpha_color_ = alpha_color;
+          recreate_handle();
+        }
+        return *this;
+      }
+
       event<color_picker, event_handler<control&>> color_changed;
       
     protected:
@@ -31,6 +45,7 @@ namespace xtd {
     private:
       void wm_click(message& message);
       drawing::color color_;
+      bool alpha_color_ = false;
     };
   }
 }
