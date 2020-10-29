@@ -15,6 +15,7 @@
 #include "icomparable.h"
 #include "iequatable.h"
 #include "interface.h"
+#include "literals.h"
 #include "nameof.h"
 #include "object.h"
 #include "operating_system.h"

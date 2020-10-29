@@ -12,6 +12,7 @@ set(INCLUDES
   include/xtd/icomparable.h
   include/xtd/iequatable.h
   include/xtd/interface.h
+  include/xtd/literals.h
   include/xtd/nameof.h
   include/xtd/object.h
   include/xtd/operating_system.h
