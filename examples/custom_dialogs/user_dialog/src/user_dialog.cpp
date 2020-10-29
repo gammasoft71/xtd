@@ -11,7 +11,6 @@ public:
     cancel_button(button_cancel);
     client_size({200, 80});
     form_border_style(forms::form_border_style::fixed_dialog);
-    form_start_position(xtd::forms::form_start_position::center_screen);
     control_box(false);
     minimize_box(false);
     maximize_box(false);
