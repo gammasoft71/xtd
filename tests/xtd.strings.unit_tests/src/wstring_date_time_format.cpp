@@ -1,7 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <xtd/xtd.strings>
 #include <xtd/xtd.tunit>
+
 #include <time.h>
+#if defined (WIN32)
+static time_t __make_utc_date_time(struct tm* tm) noexcept { return _mkgmtime(tm); }
+#else
+static time_t __make_utc_date_time(struct tm* tm) noexcept { return timegm(tm); }
+#endif
 
 using namespace std;
 using namespace std::string_literals;
@@ -12,7 +18,7 @@ namespace {
   static std::tm to_local_time(time_t time) noexcept {return *std::localtime(&time);}
   //static std::tm to_local_time(const std::chrono::system_clock::time_point& time) noexcept {return to_local_time(std::chrono::system_clock::to_time_t(time));}
   static std::tm to_local_time(std::tm time) noexcept {
-    if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_local_time(timegm(&time));
+    if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_local_time(__make_utc_date_time(&time));
     return to_local_time(mktime(&time));
   }
   
@@ -22,7 +28,7 @@ namespace {
 #endif
   static std::tm to_universal_time(std::tm time) noexcept {
     if (xtd::to_string(time, "Z") != "" && xtd::to_string(time, "Z") == "UTC") return to_universal_time(mktime(&time));
-    return to_universal_time(timegm(&time));
+    return to_universal_time(__make_utc_date_time(&time));
   }
 
   std::tm make_time(int year, int month, int day, int hour, int minute, int second, bool utc = false) {
