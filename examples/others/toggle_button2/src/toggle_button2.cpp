@@ -41,7 +41,7 @@ public:
   
 private:
   void update_color(control& sender, const event_args& e) {
-    std::map<check_state, int> color_levels = {{check_state::unchecked, 0}, {check_state::checked, 255}, {check_state::indeterminate, 128}};
+    static std::map<check_state, int> color_levels = {{check_state::unchecked, 0}, {check_state::checked, 255}, {check_state::indeterminate, 128}};
     panel_color.back_color(color::from_argb(color_levels[button_red.check_state()], color_levels[button_green.check_state()], color_levels[button_blue.check_state()]));
   }
 
