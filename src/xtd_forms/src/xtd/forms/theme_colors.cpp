@@ -428,10 +428,10 @@ namespace {
       case xtd::forms::known_themed_color::active_caption: return xtd::drawing::color::from_argb(0xFF9A9A9A);
       case xtd::forms::known_themed_color::active_caption_text: return xtd::drawing::color::from_argb(0xFFFFFFFF);
       case xtd::forms::known_themed_color::app_workspace: return xtd::drawing::color::from_argb(0xFF262626);
-      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(0xFF484850);
+      case xtd::forms::known_themed_color::button_face: return xtd::drawing::color::from_argb(0xFF3C3C3C);
       case xtd::forms::known_themed_color::button_highlight: return xtd::drawing::color::from_argb(0xFF00A0FA);
       case xtd::forms::known_themed_color::button_shadow: return xtd::drawing::color::from_argb(0xFF232323);
-      case xtd::forms::known_themed_color::control: return xtd::drawing::color::from_argb(0xFF2A2A2B);
+      case xtd::forms::known_themed_color::control: return xtd::drawing::color::from_argb(0xFF222222);
       case xtd::forms::known_themed_color::control_dark: return xtd::drawing::color::from_argb(0xFF232323);
       case xtd::forms::known_themed_color::control_dark_dark: return xtd::drawing::color::from_argb(0xFF171717);
       case xtd::forms::known_themed_color::control_light: return xtd::drawing::color::from_argb(0xFF4A4A4A);
@@ -454,9 +454,9 @@ namespace {
       case xtd::forms::known_themed_color::menu_highlight: return xtd::drawing::color::from_argb(0xFF0078D7);
       case xtd::forms::known_themed_color::menu_text: return xtd::drawing::color::from_argb(0xFFFFFFFF);
       case xtd::forms::known_themed_color::scroll_bar: return xtd::drawing::color::from_argb(0xFF262626);
-      case xtd::forms::known_themed_color::text_box: return xtd::drawing::color::from_argb(0xFF3A3A3F);
+      case xtd::forms::known_themed_color::text_box: return xtd::drawing::color::from_argb(0xFF121212);
       case xtd::forms::known_themed_color::text_box_text: return xtd::drawing::color::from_argb(0xFFFFFFFF);
-      case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF3A3A3F);
+      case xtd::forms::known_themed_color::window: return xtd::drawing::color::from_argb(0xFF000000);
       case xtd::forms::known_themed_color::window_frame: return xtd::drawing::color::from_argb(0xFF9A9AB8);
       case xtd::forms::known_themed_color::window_text: return xtd::drawing::color::from_argb(0xFFFFFFFF);
       default: throw std::invalid_argument("unknown know_color");
