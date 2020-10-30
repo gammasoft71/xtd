@@ -256,8 +256,7 @@ intptr_t system_colors::text_box_text() {
 }
 
 intptr_t system_colors::window() {
-  if (::dark_mode()) return ::to_argb(255, 58, 58, 63);
-  //if (::dark_mode()) return ::to_argb(255, 0, 0, 0);
+  if (::dark_mode()) return ::to_argb(0xFF000000);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 }
 
