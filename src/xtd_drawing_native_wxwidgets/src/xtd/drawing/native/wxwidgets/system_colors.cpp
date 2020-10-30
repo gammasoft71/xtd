@@ -101,8 +101,8 @@ intptr_t system_colors::button_face() {
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_button_face__();
 #elif defined(__WXMSW__)
-  if (::dark_mode()) return ::to_argb(255, 72, 72, 80);
-  return ::to_argb(225, 225, 225);
+  if (::dark_mode()) return ::to_argb(0xFF3C3C3C);
+  return ::to_argb(0xFFFFFFFF);
 #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
 #endif
@@ -119,7 +119,7 @@ intptr_t system_colors::button_shadow() {
 }
 
 intptr_t system_colors::control() {
-  if (::dark_mode()) return ::to_argb(255, 42, 42, 43);
+  if (::dark_mode()) return ::to_argb(0xFF222222);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_control__();
 #else
