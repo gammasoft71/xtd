@@ -29,7 +29,10 @@ namespace {
       show_icon(false);
       this->text(text);
       
-      if (xtd::environment::os_version().is_windows_platform()) input_panel_.back_color(theme_colors::current_theme().window());
+      if (xtd::environment::os_version().is_windows_platform()) {
+        input_panel_.back_color(theme_colors::current_theme().window());
+        input_text_box_.back_color(theme_colors::current_theme().text_box());
+      }
       input_panel_.anchor(anchor_styles::left|anchor_styles::top|anchor_styles::right|anchor_styles::bottom);
       input_panel_.bounds({0, 0, 330, 115 - 42 + offset_multiline});
       input_panel_.controls().push_back_range({message_label_, input_text_box_});
