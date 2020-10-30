@@ -300,7 +300,7 @@ void check_box_renderer::draw_check_box_windows_dark(graphics g, const rectangle
   auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = xtd::forms::theme_colors::current_theme().active_border();
-  auto button_color = control_paint::dark(background_color, .05);
+  auto button_color = control_paint::light(background_color, .1);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().accent_text();
 
@@ -331,7 +331,7 @@ void check_box_renderer::draw_check_box_windows_light(graphics g, const rectangl
   auto background_color = back_color.has_value() ? back_color.value() : xtd::forms::theme_colors::current_theme().control();
   auto foreground_color = fore_color.has_value() ? fore_color.value() : xtd::forms::theme_colors::current_theme().control_text();
   auto border_color = xtd::forms::theme_colors::current_theme().control_text();
-  auto button_color = control_paint::light(background_color, .2);
+  auto button_color = control_paint::light(background_color, .75);
   auto text_color = foreground_color;
   auto mark_color = xtd::forms::theme_colors::current_theme().control_text();
 
