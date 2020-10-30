@@ -242,6 +242,7 @@ intptr_t system_colors::text_box() {
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_text_box__();
 #else
+  if (::dark_mode()) return ::to_argb(0xFF121212);
   return window();
 #endif
 }
