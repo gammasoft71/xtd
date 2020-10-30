@@ -247,7 +247,7 @@ namespace xtdc_gui {
       {"Others - system images 3", "demonstrates the use of xtd::drawing::system_images class.", {"xtd_forms/others/system_images3"}},
       {"Others - text box multiline", "represents a Windows xtd::forms::text_box control.", {"xtd_forms/others/text_box_multiline"}},
       {"Others - text box password", "represents a Windows xtd::forms::text_box control.", {"xtd_forms/others/text_box_password"}},
-      {"Others - toggle button 2", "represents a Windows xtd::forms::toggle_button control.", {"xtd_forms/otheers/toggle_button2"}},
+      {"Others - toggle button 2", "represents a Windows xtd::forms::toggle_button control.", {"xtd_forms/others/toggle_button2"}},
       {"Others - track bar 2", "represents a standard Windows xtd::forms::track_bar.", {"xtd_forms/others/track_bar2"}},
       {"Others - wiggly", "shows how to animate a user control using timer and timer::event. In addition, the example demonstrates how to use graphics::measure_string to determine the size of text on screen.", {"xtd_forms/others/wiggly"}},
       
