@@ -119,7 +119,7 @@ intptr_t system_colors::button_shadow() {
 }
 
 intptr_t system_colors::control() {
-  if (::dark_mode()) return ::to_argb(0xFF222222);
+  if (::dark_mode()) return ::to_argb(0xFF1A1A1A);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_control__();
 #else
@@ -257,7 +257,7 @@ intptr_t system_colors::text_box_text() {
 }
 
 intptr_t system_colors::window() {
-  if (::dark_mode()) return ::to_argb(0xFF000000);
+  if (::dark_mode()) return ::to_argb(0xFF232323);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 }
 
