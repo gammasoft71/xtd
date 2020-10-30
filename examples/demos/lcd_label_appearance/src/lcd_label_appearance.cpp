@@ -40,7 +40,7 @@ namespace examples {
       numeric_up_down_height.location({270, 10});
       numeric_up_down_height.set_range(1, 400);
       numeric_up_down_height.value_changed += [&] {
-        lcd_label_label.height(numeric_up_down_height.value());
+        lcd_label_label.height(static_cast<int>(numeric_up_down_height.value()));
       };
       numeric_up_down_height.value(25);
       
