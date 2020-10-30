@@ -45,6 +45,10 @@ namespace {
     return to_argb(255, red, green, blue);
   }
 
+  uint32_t to_argb(uint32_t argb_color) {
+    return argb_color;
+  }
+
   uint32_t to_argb(const wxColour color) {
     return to_argb(color.Alpha(), color.Red(), color.Green(), color.Blue());
   }
