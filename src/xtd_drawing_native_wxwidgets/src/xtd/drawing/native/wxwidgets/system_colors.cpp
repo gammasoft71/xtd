@@ -58,7 +58,7 @@ intptr_t system_colors::accent() {
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_control__();
 #elif defined(__WXMSW__)
-  if (::dark_mode()) return ::to_argb(0, 160, 250);
+  if (::dark_mode()) return ::to_argb(0xFF00A0FA);
   return ::to_argb(210, 232, 248);
 #else
   return menu_highlight();
@@ -69,12 +69,13 @@ intptr_t system_colors::accent_text() {
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_accent_text__();
 #else
+  if (::dark_mode()) return ::to_argb(0xFFFFFFFF);
   return highlight_text();
 #endif
 }
 
 intptr_t system_colors::active_border() {
-  if (::dark_mode()) return ::to_argb(96, 96, 96);
+  if (::dark_mode()) return ::to_argb(0xFF2C2C2C);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_active_border__();
 #else
@@ -83,17 +84,17 @@ intptr_t system_colors::active_border() {
 }
 
 intptr_t system_colors::active_caption() {
-  if (::dark_mode()) return ::to_argb(154, 154, 154);
+  if (::dark_mode()) return ::to_argb(0xFF000000);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_ACTIVECAPTION));
 }
 
 intptr_t system_colors::active_caption_text() {
-  if (::dark_mode()) return ::to_argb(255, 255, 255);
+  if (::dark_mode()) return ::to_argb(0xFFFFFFFF);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_CAPTIONTEXT));
 }
 
 intptr_t system_colors::app_workspace() {
-  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
+  if (::dark_mode()) return ::to_argb(0xFF191919);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_APPWORKSPACE));
 }
 
@@ -101,7 +102,7 @@ intptr_t system_colors::button_face() {
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_button_face__();
 #elif defined(__WXMSW__)
-  if (::dark_mode()) return ::to_argb(0xFF3C3C3C);
+  if (::dark_mode()) return ::to_argb(0xFF353535);
   return ::to_argb(0xFFFFFFFF);
 #else
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
@@ -109,17 +110,17 @@ intptr_t system_colors::button_face() {
 }
 
 intptr_t system_colors::button_highlight() {
-  if (::dark_mode()) return ::to_argb(0, 160, 250);
+  if (::dark_mode()) return ::to_argb(0xFF00A0FA);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
 }
 
 intptr_t system_colors::button_shadow() {
-  if (::dark_mode()) return ::to_argb(255, 35, 35, 35);
+  if (::dark_mode()) return ::to_argb(0xFF232323);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
 }
 
 intptr_t system_colors::control() {
-  if (::dark_mode()) return ::to_argb(0xFF1A1A1A);
+  if (::dark_mode()) return ::to_argb(0xFF191919);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_control__();
 #else
@@ -128,27 +129,27 @@ intptr_t system_colors::control() {
 }
 
 intptr_t system_colors::control_dark() {
-  if (::dark_mode()) return ::to_argb(255, 35, 35, 35);
+  if (::dark_mode()) return ::to_argb(0xFF232323);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNSHADOW));
 }
 
 intptr_t system_colors::control_dark_dark() {
-  if (::dark_mode()) return ::to_argb(255, 23, 23, 23);
+  if (::dark_mode()) return ::to_argb(0xFF171717);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DDKSHADOW));
 }
 
 intptr_t system_colors::control_light() {
-  if (::dark_mode()) return ::to_argb(255, 74, 74, 74);
+  if (::dark_mode()) return ::to_argb(0xFF4A4A4A);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_3DLIGHT));
 }
 
 intptr_t system_colors::control_light_light() {
-  if (::dark_mode()) return ::to_argb(255, 74, 74, 74);
+  if (::dark_mode()) return ::to_argb(0xFF4A4A4A);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNHIGHLIGHT));
 }
 
 intptr_t system_colors::control_text() {
-  if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
+  if (::dark_mode()) return ::to_argb(0XFFFFFFFF);
 #if defined(__APPLE__)
   return __xtd__macos_system_colors_control_text__();
 #else
@@ -157,70 +158,72 @@ intptr_t system_colors::control_text() {
 }
 
 intptr_t system_colors::desktop() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 184);
+  if (::dark_mode()) return ::to_argb(0xFF0078D7);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_DESKTOP));
 }
 
 intptr_t system_colors::gradient_active_caption() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 154);
+  if (::dark_mode()) return ::to_argb(0xFF000000);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTACTIVECAPTION));
 }
 
 intptr_t system_colors::gradient_inactive_caption() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 184);
+  if (::dark_mode()) return ::to_argb(0xFF2B2B2B);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
 }
 
 intptr_t system_colors::gray_text() {
-  if (::dark_mode()) return ::to_argb(255, 107, 107, 107);
+  if (::dark_mode()) return ::to_argb(0xFF6B6B6B);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_GRAYTEXT));
 }
 
 intptr_t system_colors::highlight() {
-  if (::dark_mode()) return ::to_argb(255, 2, 117, 200);
+  if (::dark_mode()) return ::to_argb(0xFF4D4D4D);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHT));
 }
 
 intptr_t system_colors::highlight_text() {
-  if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
+  if (::dark_mode()) return ::to_argb(0xFFFFFFFF);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HIGHLIGHTTEXT));
 }
 
 intptr_t system_colors::hot_track() {
-  if (::dark_mode()) return ::to_argb(255, 223, 223, 223);
+  if (::dark_mode()) return ::to_argb(0xFF4D4D4D);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_HOTLIGHT));
 }
 
 intptr_t system_colors::inactive_border() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 184);
+  if (::dark_mode()) return ::to_argb(0xFF414143);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVEBORDER));
 }
 
 intptr_t system_colors::inactive_caption() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 184);
+  if (::dark_mode()) return ::to_argb(0xFF2B2B2B);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTION));
 }
 
 intptr_t system_colors::inactive_caption_text() {
-  if (::dark_mode()) return ::to_argb(255, 107, 107, 107);
+  if (::dark_mode()) return ::to_argb(0xFF494949);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INACTIVECAPTIONTEXT));
 }
 
 intptr_t system_colors::info() {
+  if (::dark_mode()) return ::to_argb(0xFF2B2B2B);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOBK));
 }
 
 intptr_t system_colors::info_text() {
+  if (::dark_mode()) return ::to_argb(0XFFFFFFFF);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_INFOTEXT));
 }
 
 intptr_t system_colors::menu() {
-  if (::dark_mode()) return ::to_argb(255, 0, 0, 0);
+  if (::dark_mode()) return ::to_argb(0xFF2B2B2B);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENU));
 }
 
 intptr_t system_colors::menu_bar() {
-  if (::dark_mode()) return ::to_argb(255, 0, 0, 0);
+  if (::dark_mode()) return ::to_argb(0XFF000000);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUBAR));
 }
 
@@ -229,12 +232,12 @@ intptr_t system_colors::menu_highlight() {
 }
 
 intptr_t system_colors::menu_text() {
-  if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
+  if (::dark_mode()) return ::to_argb(0xFFFFFFFF);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUTEXT));
 }
 
 intptr_t system_colors::scroll_bar() {
-  if (::dark_mode()) return ::to_argb(255, 38, 38, 38);
+  if (::dark_mode()) return ::to_argb(0xFF171717);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_SCROLLBAR));
 }
 
@@ -252,21 +255,22 @@ intptr_t system_colors::text_box_text() {
   
   return __xtd__macos_system_colors_text_box_text__();
 #else
+  if (::dark_mode()) return ::to_argb(0xFFFFFFFF);
   return window_text();
 #endif
 }
 
 intptr_t system_colors::window() {
-  if (::dark_mode()) return ::to_argb(0xFF232323);
+  if (::dark_mode()) return ::to_argb(0xFF202020);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
 }
 
 intptr_t system_colors::window_frame() {
-  if (::dark_mode()) return ::to_argb(255, 154, 154, 184);
+  if (::dark_mode()) return ::to_argb(0xFF333333);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWFRAME));
 }
 
 intptr_t system_colors::window_text() {
-  if (::dark_mode()) return ::to_argb(255, 255, 255, 255);
+  if (::dark_mode()) return ::to_argb(0xFFFFFFFF);
   return ::to_argb(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOWTEXT));
 }
