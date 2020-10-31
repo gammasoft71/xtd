@@ -137,6 +137,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/progress_bar_style.h
   include/xtd/forms/progress_changed_event_args.h
   include/xtd/forms/progress_changed_event_handler.h
+  include/xtd/forms/progress_dialog.h
   include/xtd/forms/radio_button.h
   include/xtd/forms/radio_button_renderer.h
   include/xtd/forms/radio_buttons.h
@@ -254,6 +255,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/panel.cpp
   src/xtd/forms/picture_box.cpp
   src/xtd/forms/progress_bar.cpp
+  src/xtd/forms/progress_dialog.cpp
   src/xtd/forms/radio_button.cpp
   src/xtd/forms/radio_button_renderer.cpp
   src/xtd/forms/renderer.cpp

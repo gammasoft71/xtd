@@ -1,6 +1,5 @@
 #pragma once
-
-#include <cstdint>
+#include <cstddef>
 
 #if !defined(OFN_READONLY)
 constexpr size_t OFN_READONLY = 0x00000001;

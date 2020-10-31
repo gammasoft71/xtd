@@ -14,6 +14,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/file_dialog_flags.h
   include/xtd/forms/folder_browser_dialog_flags.h
   include/xtd/forms/font_dialog_flags.h
+  include/xtd/forms/progress_dialog_flags.h
   include/xtd/forms/window_messages.h
 )
 
@@ -64,6 +65,7 @@ set(XTD_FORMS_NATIVE_INCLUDES
   include/xtd/forms/native/picture_box.h
   include/xtd/forms/native/progress_bar.h
   include/xtd/forms/native/progress_bar_styles.h
+  include/xtd/forms/native/progress_dialog.h
   include/xtd/forms/native/radio_button.h
   include/xtd/forms/native/screen.h
   include/xtd/forms/native/scroll_bar_styles.h
