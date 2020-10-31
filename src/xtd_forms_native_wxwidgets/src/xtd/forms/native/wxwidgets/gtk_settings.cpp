@@ -1,5 +1,8 @@
 #if defined(__WXGTK__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wparentheses"
 #include <gtk/gtk.h>
+#pragma GCC diagnostic pop
 
 void __gtk_button_images__(bool enable) {
   g_object_set(gtk_settings_get_default(), "gtk-button-images", enable, nullptr);
