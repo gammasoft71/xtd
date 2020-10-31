@@ -1,7 +1,7 @@
 #include <iostream>
 #include <xtd/xtd.io>
 #include <xtd/xtd.drawing>
-#include "logo.xpm"
+//#include "logo.xpm"
 
 using namespace std;
 using namespace xtd;
