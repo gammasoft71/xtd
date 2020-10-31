@@ -1845,7 +1845,7 @@ enable_testing()
 #endif ()
 
 # add compile and link flags
-option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" OFF)
+option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
 option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" OFF)
 
 if (XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL)
