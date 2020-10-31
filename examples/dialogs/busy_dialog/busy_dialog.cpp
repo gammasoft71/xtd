@@ -22,8 +22,8 @@ public:
       dialog.transparency(0.75);
       dialog.show();
       for (auto count = 0; count < 500; ++count) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         application::yield();
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
       }
     };
   }
