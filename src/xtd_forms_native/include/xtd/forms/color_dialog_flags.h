@@ -1,6 +1,5 @@
 #pragma once
-
-#include <cstdint>
+#include <cstddef>
 
 #if !defined(CC_RGBINIT)
 constexpr size_t CC_RGBINIT = 0x00000001;

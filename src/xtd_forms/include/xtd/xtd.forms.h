@@ -132,6 +132,7 @@
 #include "xtd/forms/progress_bar_style.h"
 #include "xtd/forms/progress_changed_event_args.h"
 #include "xtd/forms/progress_changed_event_handler.h"
+#include "xtd/forms/progress_dialog.h"
 #include "xtd/forms/radio_button.h"
 #include "xtd/forms/radio_button_renderer.h"
 #include "xtd/forms/radio_buttons.h"

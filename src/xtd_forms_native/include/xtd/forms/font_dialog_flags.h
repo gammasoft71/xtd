@@ -1,6 +1,5 @@
 #pragma once
-
-#include <cstdint>
+#include <cstddef>
 
 #if !defined(CF_SCREENFONTS)
 constexpr size_t CF_SCREENFONTS = 0x00000001;

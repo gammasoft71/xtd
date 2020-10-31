@@ -1,6 +1,5 @@
 #pragma once
-
-#include <cstdint>
+#include <cstddef>
 
 #if !defined(BIF_RETURNONLYFSDIRS)
 constexpr size_t BIF_RETURNONLYFSDIRS = 0x00000001; // For finding a folder to start document searching
