@@ -15,8 +15,8 @@ public:
     button1.click += [] {
       application::use_wait_cursor(true);
       for (auto count = 0; count < 500; ++count) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         application::yield();
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
       }
       application::use_wait_cursor(false);
     };
