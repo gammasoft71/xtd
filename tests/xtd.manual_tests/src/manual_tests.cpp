@@ -1,5 +1,5 @@
 #include <xtd/xtd.forms>
-#include "error_m.xpm"
+//#include "error_m.xpm"
 
 using namespace std;
 using namespace xtd;
