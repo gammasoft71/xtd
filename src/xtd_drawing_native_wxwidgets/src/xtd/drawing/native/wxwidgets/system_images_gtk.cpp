@@ -1,8 +1,8 @@
 #if defined(__WXGTK__)
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wparentheses"
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wparentheses"
 #include <gtk/gtk.h>
-#pragma clang diagnostic pop
+#pragma GCC diagnostic pop
 
 GdkPixbuf* __gtk_get_image_from_name__(const char* name, int32_t width, int32_t /*height*/) {
   if (name[0] == 0) return 0;
