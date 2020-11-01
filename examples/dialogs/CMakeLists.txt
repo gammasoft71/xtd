@@ -8,7 +8,8 @@ add_projects(
   about_dialog_system
   busy_dialog
   message_box
-  message_box_show_sheet
+  message_dialog
+  message_dialog_show_sheet
   input_box
   progress_dialog
 )

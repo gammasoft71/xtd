@@ -9,18 +9,26 @@ public:
     controls().push_back_range({button_show_message, label_dialog_result});
     location({400, 200});
     start_position(form_start_position::manual);
-    text("Message box exemple");
+    text("Message dialog (show sheet) exemple");
 
     button_show_message.location({10, 10});
     button_show_message.text("Message...");
     button_show_message.width(100);
     button_show_message.click += [&] {
-      forms::dialog_result result = message_box::show(*this, "Hello, World!", "Message", message_box_buttons::ok_cancel, message_box_icon::warning);
-      label_dialog_result.text(strings::format("dialog_result = {}", result));
+      std::shared_ptr<message_dialog> dialog = std::make_shared<message_dialog>();
+      dialog->text("Message");
+      dialog->message("Hello, World!");
+      dialog->buttons(xtd::forms::message_dialog_buttons::ok_cancel);
+      dialog->icon(xtd::forms::message_dialog_icon::warning);
+      dialog->message_dialog_closed += [this, dialog](message_dialog& sender, const message_dialog_closed_event_args& e) {
+        label_dialog_result.text(strings::format("dialog_result = {}", e.dialog_result()));
+      };
+      dialog->show_sheet(*this);
     };
     
     label_dialog_result.location({10, 45});
     label_dialog_result.width(200);
+    
   }
   
 private:

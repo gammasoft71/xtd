@@ -14,7 +14,7 @@ namespace examples {
       button1.text("Text...");
       button1.click += [&] {
         std::string value = label1.text();
-        if (input_box::show(value, *this, "Caption text", "Message text") == dialog_result::ok)
+        if (input_box::show(value, *this, "Message text", "Caption text") == dialog_result::ok)
           label1.text(value);
       };
 

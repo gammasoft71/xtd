@@ -121,6 +121,11 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/message_box_default_button.h
   include/xtd/forms/message_box_icon.h
   include/xtd/forms/message_box_options.h
+  include/xtd/forms/message_dialog.h
+  include/xtd/forms/message_dialog_buttons.h
+  include/xtd/forms/message_dialog_default_button.h
+  include/xtd/forms/message_dialog_icon.h
+  include/xtd/forms/message_dialog_options.h
   include/xtd/forms/message_loop_callback.h
   include/xtd/forms/mouse_buttons.h
   include/xtd/forms/mouse_event_args.h
@@ -248,7 +253,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/menu.cpp
   src/xtd/forms/menu_item.cpp
   src/xtd/forms/message.cpp
-  src/xtd/forms/message_box.cpp
+  src/xtd/forms/message_dialog.cpp
   src/xtd/forms/mouse_event_args.cpp
   src/xtd/forms/numeric_up_down.cpp
   src/xtd/forms/open_file_dialog.cpp
@@ -284,6 +289,7 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/up_down_button.cpp
   src/xtd/forms/user_control.cpp
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
+  src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
 )
 
 source_group(include\\xtd FILES ${XTD_INCLUDES})
