@@ -86,20 +86,7 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
   native::application::initialize(); // Must be first
   wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {text.c_str(), wxMBConvUTF8()}, {caption.c_str(), wxMBConvUTF8()}, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);
-#if !defined(__APPLE__)
   return convert_to_dialog_result(dialog.ShowModal(), style);
-#else
-  if (!control) return convert_to_dialog_result(dialog.ShowModal(), style);
-  int32_t result = wxID_ANY;
-  dialog.Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent& event) {
-    result = event.GetReturnCode();
-  });
-  dialog.SetParent(reinterpret_cast<control_handler*>(control)->control());
-  dialog.ShowWindowModal();
-  while (result == wxID_ANY)
-    wxYield();
-  return convert_to_dialog_result(result, style);
-#endif
 }
 
 #endif
