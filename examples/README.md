@@ -111,6 +111,7 @@
 * [check_box_renderer](components/check_box_renderer/README.md) show how to use [xtd::forms::check_box_renderer](../src/xtd_forms/include/xtd/forms/check_box_renderer.h) renderer.
 * [countries](components/countries/README.md) shows how to use [xtd::forms::coutries](../src/xtd_forms/include/xtd/forms/countries.h) collection and [xtd::forms::country](../src/xtd_forms/include/xtd/forms/country.h) component.
 * [cursors](components/cursors/README.md) shows how to used [xtd::forms::cursors](../src/xtd_forms/include/xtd/forms/cursors.h) collection and [xtd::forms::cursor](../src/xtd_forms/include/xtd/forms/cursor.h) component.
+* [emoticons](components/emoticons/README.md) shows how to used [xtd::forms::emoticons](../src/xtd_forms/include/xtd/forms/emoticons.h) collection and [xtd::forms::emoticon](../src/xtd_forms/include/xtd/forms/emoticon.h) component.
 * **directory_entry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
 * **directory_searcher** performs queries against Active Directory Domain Services.
 * **error_provider** provides a user interface for indicating that a control on a form has an error associated with it.
@@ -121,12 +122,15 @@
 * **message_queue** provides access to a queue on a Message Queuing server.
 * **performance_counter** represents a Windows NT performance counter component.
 * **process** provides access to local and remote processes and enables you to start and stop local system processes.
+* [radio_button_renderer](components/radio_button_renderer/README.md) show how to use [xtd::forms::radio_button_renderer](../src/xtd_forms/include/xtd/forms/radio_button_renderer.h) renderer.
 * [screen](components/screen/README.md) represents a display device or multiple display devices on a single system.
 * [settings](components/settings_example/README.md) represents settings application.
 * **serial_port** represents a serial port resource.
 * **service_controler** represents a Windows service and allows you to connect to a running or stopped service, manipulate it, or get information about it.
 * [system_images](components/system_images/README.md) demonstrates the use of **xtd::drawing::system_images** class.
+* [texts](components/texts/README.md) shows how to used [xtd::forms::texts](../src/xtd_forms/include/xtd/forms/texts.h) collection.
 * [timer](components/timer/README.md) implements a timer that raises an event at user-defined intervals. This timer is optimized for use in Windows Forms applications and must be used in a window.
+* [use_wait_cursor](components/use_wait_cursor/README.md) shows how to use [xtd::forms::use_wait_cursor](../src/xtd_forms/include/xtd/forms/use_wait_cursor.h) component.
 
 ## [Printing](printing/README.md)
 

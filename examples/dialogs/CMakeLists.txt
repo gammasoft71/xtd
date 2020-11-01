@@ -9,5 +9,6 @@ add_projects(
   busy_dialog
   message_box
   message_box_show_sheet
+  input_box
   progress_dialog
 )
