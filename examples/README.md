@@ -2,7 +2,7 @@
 
 [This folder](.) contains all examples used by [xtd::forms](../src/xtd_forms) docmentation and more.
 
-## [Hello Worldw](hello_worlds/README.md)
+## [Hello Worlds](hello_worlds/README.md)
 
 * [hello_world_emoticons](hello_worlds/hello_world_emoticons/README.md) The classic first application "Hello, World!" with  [xtd::forms::emoticons](../src/xtd_forms/include/xtd/forms/emoticons.hpp) component.
 * [hello_world_label](hello_worlds/hello_world_label/README.md) The classic first application "Hello, World!" with  [xtd::forms::label](../src/xtd_forms/include/xtd/forms/label.hpp) control.
