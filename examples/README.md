@@ -106,6 +106,9 @@
 ## [Components](components/README.md)
 
 * [background_worker](components/background_worker/README.md) executes an operation on a separate thread.
+* [button_images](components/button_images/README.md) represents common images collection can be used for button.
+* [button_renderer](components/button_renderer/README.md) show how to use [xtd::forms::button_renderer](../src/xtd_forms/include/xtd/forms/button_renderer.hpp) renderer.
+* [check_box_renderer](components/check_box_renderer/README.md) show how to use [xtd::forms::check_box_renderer](../src/xtd_forms/include/xtd/forms/check_box_renderer.hpp) renderer.
 * [cursor](components/cursor/README.md) represents the image used to paint the mouse pointer.
 * **directory_entry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
 * **directory_searcher** performs queries against Active Directory Domain Services.
