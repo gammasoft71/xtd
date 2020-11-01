@@ -23,6 +23,7 @@ add_projects(
   form_window_state
   group_box_and_check_box
   group_box_and_radio_button
+  hello_world_message_box2
   input_dialog_multiline
   input_dialog_password
   labels_and_unicode_text
