@@ -74,9 +74,9 @@
 
 ## [Controls](controls/README.md)
 
-* [lcd_label](controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [dot_matrix_display](controls/dot_matrix_display/README.md) represents a [xtd::forms::fourteen_segment_display](../src/xtd_forms/include/xtd/forms/dot_matrix_display.hpp) control.
 * [fourteen_segment_display](controls/fourteen_segment_display/README.md) represents a [xtd::forms::fourteen_segment_display](../src/xtd_forms/include/xtd/forms/fourteen_segment_display.hpp) control.
+* [lcd_label](controls/lcd_label/README.md) represents a [xtd::forms::lcd_label](../src/xtd_forms/include/xtd/forms/lcd_label.hpp) control.
 * [nine_segment_display](controls/nine_segment_display/README.md) represents a [xtd::forms::nine_segment_display](../src/xtd_forms/include/xtd/forms/nine_segment_display.hpp) control.
 * [seven_segment_display](controls/seven_segment_display/README.md) represents a [xtd::forms::seven_segment_display](../src/xtd_forms/include/xtd/forms/seven_segment_display.hpp) control.
 * [sixteen_segment_display](controls/sixteen_segment_display/README.md) represents a [xtd::forms::sixteen_segment_display](../src/xtd_forms/include/xtd/forms/sixteen_segment_display.hpp) control.
