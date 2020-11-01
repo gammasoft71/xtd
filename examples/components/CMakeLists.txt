@@ -9,7 +9,7 @@ add_projects(
   button_renderer
   check_box_renderer
   countries
-  cursor
+  cursors
   emoticons
   image_list
   radio_button_renderer
