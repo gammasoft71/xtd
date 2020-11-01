@@ -1,7 +1,7 @@
 #include <xtd/forms/progress_dialog_flags.h>
 #include <xtd/forms/native/progress_dialog.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
-
+#include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.h"
 #include <wx/progdlg.h>
 #include <wx/timer.h>
 
@@ -9,6 +9,20 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 namespace {
+#if defined(__WXMSW__)
+  HHOOK handle_hook;
+  LRESULT CALLBACK callbackProc(INT ncode, WPARAM wparam, LPARAM lparam) {
+    if (ncode == HCBT_ACTIVATE) {
+      allow_dark_mode_for_window(static_cast<intptr_t>(wparam));
+      refresh_title_bar_theme_color(static_cast<intptr_t>(wparam));
+      UnhookWindowsHookEx(handle_hook);
+    }
+    else
+      CallNextHookEx(handle_hook, ncode, wparam, lparam);
+    return 0;
+  }
+#endif
+
   class wx_progress_dialog : public wxProgressDialog {
   public:
     wx_progress_dialog(const std::string& title, const std::string& message, int32_t maximum = 100, wxWindow* parent = nullptr, int32_t style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(title, message, maximum, parent, style) {
@@ -82,7 +96,10 @@ bool progress_dialog::cancelled(intptr_t dialog) {
 }
 
 intptr_t progress_dialog::create(intptr_t hwnd, const std::string& text, const std::string& message, const std::vector<std::string>& informations, size_t animation_speed, int32_t minimum, int32_t maximum, int32_t value, size_t options) {
-  auto dialog = new wx_progress_dialog(text, message, 0, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr, options_to_wx_style(options));
+#if defined(__WXMSW__)
+  handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
+#endif
+  auto dialog = new wx_progress_dialog(text, message.empty() ? " " : message, 0, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr, options_to_wx_style(options));
   dialog->marquee((options & PROGDLG_MARQUEEPROGRESS) == PROGDLG_MARQUEEPROGRESS, animation_speed);
   dialog->minimum(minimum);
   dialog->maximum(maximum);
