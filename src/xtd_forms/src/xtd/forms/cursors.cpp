@@ -158,3 +158,8 @@ cursor cursors::zoom_in() {
 cursor cursors::zoom_out() {
   return cursor(native::cursors::zoom_out(), true, "zoom_out");
 }
+
+const std::vector<cursor>& cursors::get_cursors() {
+  static std::vector<cursor> cursors {app_starting(), arrow(), closed_hand(), contextual_menu(), cell(), cross(), default_cursor(), disappearing_item(), drag_copy(), drag_link(), hand(), help(), hsplit(), ibeam(), no(), no_drag(), no_move_2d(), no_move_horiz(), no_move_vert(), open_hand(), pan_east(), pan_ne(), pan_north(), pan_nw(), pan_se(), pan_south(), pan_sw(), pan_west(), size_all(), size_nesw(), size_ns(), size_we(), up_arrow(), vibeam(), vsplit(), wait_cursor(), zoom_in(), zoom_out()};
+  return cursors;
+}
