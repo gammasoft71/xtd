@@ -92,6 +92,8 @@
 #include "xtd/forms/icontrol_trace.h"
 #include "xtd/forms/image_list.h"
 #include "xtd/forms/imessage_filter.h"
+#include "xtd/forms/input_box.h"
+#include "xtd/forms/input_box_style.h"
 #include "xtd/forms/input_dialog.h"
 #include "xtd/forms/item_check_event_args.h"
 #include "xtd/forms/item_check_event_handler.h"

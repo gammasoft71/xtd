@@ -34,6 +34,7 @@ add_projects(
   lcd_label_with_seven_segment
   lcd_label_with_sixteen_segment
   painting
+  settings_example2
   smileys
   stopwatch_form
   system_images2

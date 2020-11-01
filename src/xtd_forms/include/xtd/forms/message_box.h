@@ -42,45 +42,27 @@ namespace xtd {
       static event<message_box, message_box_closed_event_handler> message_box_closed;
 
       static void show_sheet(const iwin32_window& owner, const std::string& text);
-      
       static void show_sheet(const iwin32_window& owner, const std::string& text, const std::string& caption);
-      
       static void show_sheet(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons);
-      
       static void show_sheet(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon);
-      
       static void show_sheet(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
-      
       static void show_sheet(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
-      
       static void show_sheet(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       
       static dialog_result show(const iwin32_window& owner, const std::string& text);
-      
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption);
-      
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons);
-      
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon);
-      
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
-      
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
-      
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       
       static dialog_result show(const std::string& text);
-      
       static dialog_result show(const std::string& text, const std::string& caption);
-      
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons);
-
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon);
-
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button);
-
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options);
-
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       
     private:

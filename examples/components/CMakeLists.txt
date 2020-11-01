@@ -15,7 +15,6 @@ add_projects(
   radio_button_renderer
   screen
   settings_example
-  settings_example2
   system_images
   texts
   timer

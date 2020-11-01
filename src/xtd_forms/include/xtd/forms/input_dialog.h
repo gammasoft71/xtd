@@ -26,9 +26,9 @@ namespace xtd {
       }
       
       xtd::forms::character_casing character_casing() const {return character_casing_;}
-      input_dialog& character_casing(xtd::forms::character_casing value) {
-        if (character_casing_ != value) {
-          character_casing_ = value;
+      input_dialog& character_casing(xtd::forms::character_casing character_casing) {
+        if (character_casing_ != character_casing) {
+          character_casing_ = character_casing;
           switch (character_casing_) {
             case xtd::forms::character_casing::upper: value_ = xtd::strings::to_upper(value_); break;
             case xtd::forms::character_casing::lower: value_ = xtd::strings::to_lower(value_); break;
@@ -49,11 +49,11 @@ namespace xtd {
       /// @return The text message.
       std::string messsage() const {return message_;}
       /// @brief Sets the text message.
-      /// @param value The text message.
+      /// @param message The text message.
       /// @return Current input_dialog instance.
-      input_dialog& message(const std::string& value) {
-        if (message_ != value)
-          message_ = value;
+      input_dialog& message(const std::string& message) {
+        if (message_ != message)
+          message_ = message;
         return *this;
       }
       
@@ -61,11 +61,11 @@ namespace xtd {
       /// @return The current dialog caption text.
       std::string text() const {return text_;}
       /// @brief Sets the dialog caption text.
-      /// @param value The new dialog caption text.
+      /// @param text The new dialog caption text.
       /// @return Current input_dialog instance.
-      input_dialog& text(const std::string& value) {
-        if (text_ != value)
-          text_ = value;
+      input_dialog& text(const std::string& text) {
+        if (text_ != text)
+          text_ = text;
         return *this;
       }
 
