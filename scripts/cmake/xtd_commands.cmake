@@ -1852,7 +1852,7 @@ if (XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL)
   if (MSVC)
     add_compile_options(/W4 /wd4100 /wd4458)
   else()
-    add_compile_options(-Wall -Wextra -Wno-unused-parameter -pedantic)
+    add_compile_options(-Wall -Wextra -Wno-unused-parameter -Wno-unknown-pragmas -pedantic)
   endif()
 endif()
 
