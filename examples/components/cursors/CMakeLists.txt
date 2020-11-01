@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(cursor)
+project(cursors)
 find_package(xtd.forms REQUIRED)
-add_sources(src/cursor.cpp)
+add_sources(src/cursors.cpp)
 target_type(GUI_APPLICATION)

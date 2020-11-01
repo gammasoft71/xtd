@@ -109,7 +109,8 @@
 * [button_images](components/button_images/README.md) represents common images collection can be used for button.
 * [button_renderer](components/button_renderer/README.md) show how to use [xtd::forms::button_renderer](../src/xtd_forms/include/xtd/forms/button_renderer.h) renderer.
 * [check_box_renderer](components/check_box_renderer/README.md) show how to use [xtd::forms::check_box_renderer](../src/xtd_forms/include/xtd/forms/check_box_renderer.h) renderer.
-* [cursor](components/cursor/README.md) represents the image used to paint the mouse pointer.
+* [countries](components/countries/README.md) shows how to use [xtd::forms::coutries](../src/xtd_forms/include/xtd/forms/countries.h) collection and [xtd::forms::country](../src/xtd_forms/include/xtd/forms/country.h) component.
+* [cursors](components/cursors/README.md) shows how to used [xtd::forms::cursors](../src/xtd_forms/include/xtd/forms/cursors.h) collection and [xtd::forms::cursor](../src/xtd_forms/include/xtd/forms/cursor.h) component.
 * **directory_entry** The DirectoryEntry class encapsulates a node or object in the Active Directory Domain Services hierarchy.
 * **directory_searcher** performs queries against Active Directory Domain Services.
 * **error_provider** provides a user interface for indicating that a control on a form has an error associated with it.
