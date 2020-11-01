@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(containers)
+project(container_controls)
 find_package(xtd.forms REQUIRED)
 
 add_projects(

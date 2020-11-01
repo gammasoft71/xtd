@@ -6,13 +6,13 @@ find_package(xtd.forms REQUIRED)
 #build_output_directory("${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE}")
 
 add_projects(
-  hello_world_examples
+  hello_worlds
   applications
   common_controls
   picker_controls
+  container_controls
   controls
   custom_controls
-  containers
   menus_and_toolbars
   datas
   components
