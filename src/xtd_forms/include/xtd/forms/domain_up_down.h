@@ -73,7 +73,7 @@ namespace xtd {
       
       drawing::color default_fore_color() const override {return xtd::forms::theme_colors::current_theme().window_text();}
       
-      drawing::size default_size() const override {return {120, 21};}
+      drawing::size default_size() const override {return {200, 21};}
 
       /// @brief Overrides control::on_handle_created(const event_args&)
       /// @param e A EventArgs that contains the event data.
