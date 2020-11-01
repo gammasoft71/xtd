@@ -164,6 +164,8 @@ namespace xtd {
       /// @brief Gets the zoom out cursor, typically to zoom out an object.
       /// @return The cursor that represents the zoom out cursor.
       static cursor zoom_out();
+
+      static const std::vector<cursor>& get_cursors();
     };
   }
 }
