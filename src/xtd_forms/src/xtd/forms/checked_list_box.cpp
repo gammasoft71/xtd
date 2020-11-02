@@ -17,7 +17,7 @@ checked_list_box::checked_list_box() {
   this->items_.item_added += [&](size_t pos, const item& item) {
     native::checked_list_box::insert_item(handle(), pos, item.value(), item.checked());
     checked_list_box::item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 
@@ -25,14 +25,14 @@ checked_list_box::checked_list_box() {
     native::checked_list_box::delete_item(handle(), pos);
 
     checked_list_box::item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
   
   this->items_.item_updated += [&](size_t pos, const item& item) {
     native::checked_list_box::update_item(handle(), pos, item.value(), item.checked());
     checked_list_box::item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 }
@@ -53,12 +53,12 @@ checked_list_box::checked_item_collection checked_list_box::checked_items() cons
 
 list_control& checked_list_box::selected_index(size_t selected_index) {
   if (this->selected_index_ != selected_index) {
-    if (selected_index != 0xFFFFFFFFFFFFFFFF && selected_index > this->items_.size()) throw invalid_argument("out of range index");
+    if (selected_index != UINT_MAX && selected_index > this->items_.size()) throw invalid_argument("out of range index");
     this->selected_index_ = selected_index;
     native::checked_list_box::selected_index(handle(), this->selected_index_);
 
     item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
 
     this->on_selected_index_changed(event_args::empty);
@@ -74,7 +74,7 @@ list_box& checked_list_box::selected_item(const item& selected_item) {
   if (this->selected_item_ != selected_item) {
     auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
     if (it == this->items_.end())
-      this->selected_item_ = this->selected_index() != 0xFFFFFFFFFFFFFFFF ? this->items()[this->selected_index()] : "";
+      this->selected_item_ = this->selected_index() != UINT_MAX ? this->items()[this->selected_index()] : "";
     else {
       size_t index = it - this->items_.begin();
       this->selected_index(index);
@@ -156,9 +156,9 @@ void checked_list_box::on_handle_created(const event_args& e) {
   items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::checked_list_box::insert_item(handle(), index, this->items_[index].value(), this->items_[index].checked());
-  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(0xFFFFFFFFFFFFFFFF);
+  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(UINT_MAX);
   native::checked_list_box::selected_index(handle(), this->selected_index_);
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item_ = this->items_[this->selected_index_];
+  if (this->selected_index_ != UINT_MAX) this->selected_item_ = this->items_[this->selected_index_];
 }
 
 void checked_list_box::on_selected_value_changed(const event_args& e) {
@@ -178,7 +178,7 @@ void checked_list_box::wnd_proc(message& message) {
 
 void checked_list_box::wm_mouse_double_click(message& message) {
   this->selected_index(native::checked_list_box::selected_index(handle()));
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
@@ -190,7 +190,7 @@ void checked_list_box::wm_mouse_down(message& message) {
 
 void checked_list_box::wm_mouse_up(message& message) {
   this->selected_index(native::checked_list_box::selected_index(handle()));
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
@@ -198,7 +198,7 @@ void checked_list_box::wm_mouse_up(message& message) {
 void checked_list_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
   size_t selected_index = native::checked_list_box::selected_index(handle());
-  if (selected_index != 0xFFFFFFFFFFFFFFFF) {
+  if (selected_index != UINT_MAX) {
     forms::check_state check_state = static_cast<forms::check_state>(native::checked_list_box::check_state(handle(), selected_index));
     if (this->items_[selected_index].check_state() != check_state) {
       item_check_event_args item_check_event_args(selected_index, check_state, this->items_[selected_index].check_state());
@@ -208,5 +208,5 @@ void checked_list_box::wm_reflect_command(message& message) {
     }
   }
   this->selected_index(selected_index);
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
 }

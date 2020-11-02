@@ -47,7 +47,7 @@ namespace xtd {
       void new_value(check_state new_value) {this->new_value_ = new_value;}
 
     private:
-      size_t index_ = 0xFFFFFFFFFFFFFFFF;
+      size_t index_ = UINT_MAX;
       check_state new_value_ = check_state::indeterminate;
       check_state current_value_ = check_state::unchecked;
     };

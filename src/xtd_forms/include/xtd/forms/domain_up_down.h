@@ -84,7 +84,7 @@ namespace xtd {
       void on_text_changed(const event_args& e) override;
       
       item_collection items_;
-      size_t selected_index_ = 0xFFFFFFFFFFFFFFFF;
+      size_t selected_index_ = UINT_MAX;
       item selected_item_;
       bool wrapped_ = false;
     };

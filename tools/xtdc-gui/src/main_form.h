@@ -91,7 +91,7 @@ namespace xtdc_gui {
     xtd::forms::button previous_button_;
     xtd::forms::button next_button_;
     
-    size_t current_project_type_index_ = 0xFFFFFFFFFFFFFFFF;
+    size_t current_project_type_index_ = UINT_MAX;
     size_t current_open_xtd_example_console_list_box_index_ = 0;
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;

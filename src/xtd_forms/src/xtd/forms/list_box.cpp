@@ -17,21 +17,21 @@ list_box::list_box() {
   this->items_.item_added += [this](size_t index, const item& item) {
     native::list_box::insert_item(this->handle(), index, item.value());
     list_box::item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 
   this->items_.item_erased += [this](size_t index, const item& item) {
     native::list_box::delete_item(this->handle(), index);
     list_box::item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
   
   this->items_.item_updated += [this](size_t index, const item& item) {
     native::list_box::update_item(this->handle(), index, item.value());
     list_box::item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 }
@@ -45,14 +45,14 @@ list_box& list_box::border_style(forms::border_style border_style) {
 }
 
 list_control& list_box::selected_index(size_t selected_index) {
-  if (selected_index != 0xFFFFFFFFFFFFFFFF && selected_index >= items_.size()) throw std::invalid_argument("selected_index out of range.");
+  if (selected_index != UINT_MAX && selected_index >= items_.size()) throw std::invalid_argument("selected_index out of range.");
   if (this->selected_index_ != selected_index) {
-    if (selected_index != 0xFFFFFFFFFFFFFFFF && selected_index > this->items_.size()) throw invalid_argument("out of range index");
+    if (selected_index != UINT_MAX && selected_index > this->items_.size()) throw invalid_argument("out of range index");
     this->selected_index_ = selected_index;
     native::list_box::selected_index(this->handle(), this->selected_index_);
 
     item selected_item;
-    if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != UINT_MAX) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
 
     this->on_selected_index_changed(event_args::empty);
@@ -68,7 +68,7 @@ list_box& list_box::selected_item(const item& selected_item) {
   if (this->selected_item_ != selected_item) {
     auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
     if (it == this->items_.end()) {
-      if (this->selected_index() == 0xFFFFFFFFFFFFFFFF || this->items().size() == 0) this->selected_item_ = "";
+      if (this->selected_index() == UINT_MAX || this->items().size() == 0) this->selected_item_ = "";
       else {
         if (this->selected_index() >= this->items().size()) this->selected_item_ = this->items()[this->items().size() - 1];
         else this->selected_item_ = this->items()[this->selected_index()];
@@ -143,9 +143,9 @@ void list_box::on_handle_created(const event_args& e) {
   items_.sorted(sorted_);
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::list_box::insert_item(this->handle(), index, this->items_[index].value());
-  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(0xFFFFFFFFFFFFFFFF);
+  if (this->selection_mode_ == forms::selection_mode::none) this->selected_index(UINT_MAX);
   native::list_box::selected_index(this->handle(), this->selected_index_);
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item_ = this->items_[this->selected_index_];
+  if (this->selected_index_ != UINT_MAX) this->selected_item_ = this->items_[this->selected_index_];
 }
 
 void list_box::on_selected_value_changed(const event_args& e) {
@@ -165,7 +165,7 @@ void list_box::wnd_proc(message& message) {
 
 void list_box::wm_mouse_double_click(message& message) {
   this->selected_index(native::list_box::selected_index(this->handle()));
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
@@ -177,7 +177,7 @@ void list_box::wm_mouse_down(message& message) {
 
 void list_box::wm_mouse_up(message& message) {
   this->selected_index(native::list_box::selected_index(this->handle()));
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
@@ -185,5 +185,5 @@ void list_box::wm_mouse_up(message& message) {
 void list_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
   this->selected_index(native::list_box::selected_index(this->handle()));
-  if (this->selected_index_ != 0xFFFFFFFFFFFFFFFF) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
 }
