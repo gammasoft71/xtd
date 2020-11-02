@@ -18,7 +18,7 @@ void domain_up_down::insert_item(intptr_t control, size_t index, const std::stri
 }
 
 size_t domain_up_down::selected_index(intptr_t control) {
-  if (control == 0) return 0xFFFFFFFFFFFFFFFF;
+  if (control == 0) return UINT_MAX;
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelectedIndex();
 }
 

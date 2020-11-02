@@ -36,7 +36,7 @@ public:
     upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
     upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
     upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
-      if (index == 0xFFFFFFFFFFFFFFFF)
+      if (index == UINT_MAX)
         upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
       index = items.GetCount() - 1 - upDown->GetValue();
       SetTextWithSelectedIndex();
@@ -58,7 +58,7 @@ public:
 
   void SetSelectedIndex(size_t index) {
     this->index = index;
-    if (index != 0xFFFFFFFFFFFFFFFF) upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1 - index));
+    if (index != UINT_MAX) upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1 - index));
     else upDown->SetValue(static_cast<int32_t>(items.GetCount() - 1));
     SetTextWithSelectedIndex();
   }
@@ -73,13 +73,13 @@ public:
 
 private:
   void SetTextWithSelectedIndex() {
-    if (index != 0xFFFFFFFFFFFFFFFF) textBox->SetValue(items[index]);
+    if (index != UINT_MAX) textBox->SetValue(items[index]);
   }
 
   wxTextCtrl* textBox;
   wxSpinButton* upDown;
   wxArrayString items;
-  size_t index = 0xFFFFFFFFFFFFFFFF;
+  size_t index = UINT_MAX;
 };
 
 namespace xtd {

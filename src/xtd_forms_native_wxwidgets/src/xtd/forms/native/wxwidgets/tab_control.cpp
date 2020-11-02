@@ -18,7 +18,7 @@ void tab_control::delete_item(intptr_t control, size_t index) {
 void tab_control::delete_item(intptr_t control, intptr_t page) {
   if (control == 0 || page == 0) return;
   size_t index = static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->FindPage(reinterpret_cast<control_handler*>(page)->control());
-  if (index != 0xFFFFFFFFFFFFFFFF) delete_item(control, index);
+  if (index != UINT_MAX) delete_item(control, index);
 }
 
 void tab_control::image_list(intptr_t control, intptr_t image_list) {
@@ -42,13 +42,13 @@ void tab_control::page_text(intptr_t control, size_t index, const std::string& t
 }
 
 size_t tab_control::selected_index(intptr_t control) {
-  if (control == 0) return 0xFFFFFFFFFFFFFFFF;
+  if (control == 0) return UINT_MAX;
   return static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
 void tab_control::selected_index(intptr_t control, size_t index) {
   if (control == 0) return;
-  if (index != 0xFFFFFFFFFFFFFFFF) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
+  if (index != UINT_MAX) static_cast<wxNotebookBase*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(index);
 }
 
 void tab_control::update_item(intptr_t control, size_t index, intptr_t page) {

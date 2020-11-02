@@ -148,7 +148,6 @@ void check_box::wm_mouse_down(message &message) {
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
   on_mouse_down(e);
-  if (message.msg() == WM_LBUTTONDOWN) mouse_left_down_ = true;
 }
 
 void check_box::wm_mouse_up(message &message) {
@@ -160,8 +159,7 @@ void check_box::wm_mouse_up(message &message) {
     }
   mouse_event_args e = mouse_event_args::create(message);
   mouse_buttons_ &= ~e.button();
-  if (mouse_left_down_ && client_rectangle().contains(e.location())) on_click(event_args::empty);
-  if (message.msg() == WM_LBUTTONDOWN) mouse_left_down_ = false;
+  if (client_rectangle().contains(e.location())) on_click(event_args::empty);
   on_mouse_click(e);
   on_mouse_up(e);
 }

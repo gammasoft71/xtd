@@ -86,7 +86,7 @@ namespace xtd {
       virtual void on_value_member_changed(const event_args& e) {this->value_member_changed(*this, e);}
 
       /// @cond
-      size_t selected_index_ = 0xFFFFFFFFFFFFFFFF;
+      size_t selected_index_ = UINT_MAX;
       std::string value_member_;
       /// @endcond;
     };
