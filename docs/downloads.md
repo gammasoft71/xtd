@@ -136,7 +136,7 @@ xtdc open hello_world
 For more information type
 
 ```bash
-xtd --help
+xtdc --help
 ```
 
 ______________________________________________________________________________________________
