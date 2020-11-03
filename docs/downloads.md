@@ -109,6 +109,40 @@ cd xtd_forms_path_name
 
 4. Create as many applications as you want with xtd.forms.
 
+# Build and run your first xtd application
+
+Use internal tools installed with xtdc-gui.
+
+## xtdc-gui (gui)
+
+Let the gui tools drive you for create your new project.
+
+* First step choose "Create a new project" button.
+* Choose your project template then click to "Next" button
+* Choose the name for your new project and the path where the project will be create, and finaly click "Create button" to create it.
+
+![xtdc-gui](pictures/xtdc-gui.gif)
+
+## xtdc (console)
+
+Create your new project with a simple command line tools.
+
+For example, you can type :
+
+```bash
+xtdc new gui hello_world
+xtdc open hello_world
+```
+"xtdc" command line tool will creating hello_world gui application, generate Visual Studio sultion if you running it on Windows, Xcode project if you are on macOS or Code::Blocks project if you are on Linux. If you are on Windows, Visual Studio will running with your new project. If you are on macOS, Xcode will running with your new project. If you are on Linux, Code::Blocks will running with your project.
+
+## Remarks
+
+For more information type
+
+```bash
+xtdc --help
+```
+
 ______________________________________________________________________________________________
 
 © 2020 Gammasoft.
