@@ -109,7 +109,7 @@ cd xtd_forms_path_name
 
 4. Create as many applications as you want with xtd.forms.
 
-# Build and run your first xtd application
+# Build and run your first xtd.forms application
 
 Use internal tools installed with xtdc-gui.
 
