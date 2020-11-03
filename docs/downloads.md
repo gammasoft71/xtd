@@ -16,10 +16,10 @@ git clone https://github.com/gammasoft71/xtd.git
 
 # Libraries dependency
 
-xtd is currently in development mode and the only [xtd.form.native.wxwidgets](../xtd.forms.native.wxwidgets/README.md) backend is supported.
+xtd is currently in development mode and the only [xtd.form.native.wxwidgets](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd.forms.native.wxwidgets/README.md) backend is supported.
 See [wxWidgets downloads](https://www.wxwidgets.org/downloads/) to install [wxWidgets](https://www.wxwidgets.org/)  on your system.
 
-In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../xtd.forms.native.cocoa/README.md) on macOS and [xtd.form.native.gtk4](../xtd.forms.native.gtk4/README.md) on linux. Other backend like [xtd.form.native.qt5](../xtd.forms.native.qt5/README.md) will be ported too.
+In the future xtd.forms will use [xtd.form.native.win32](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd.forms.native.cocoa/README.md) on macOS and [xtd.form.native.gtk4](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd.forms.native.gtk4/README.md) on linux. Other backend like [xtd.form.native.qt5](https://github.com/gammasoft71/xtd_forms/tree/master/src/xtd.forms.native.qt5/README.md) will be ported too.
 
 # Installation
 
