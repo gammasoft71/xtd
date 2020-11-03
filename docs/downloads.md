@@ -109,7 +109,7 @@ cd xtd_path_name
 
 Use internal tools installed with xtdc-gui.
 
-## xtdc-gui (Gui)
+## xtdc-gui (gui)
 
 Let the gui tools drive you for create your new project.
 
@@ -119,7 +119,7 @@ Let the gui tools drive you for create your new project.
 
 ![xtdc-gui](pictures/xtdc-gui.gif)
 
-## xtdc (Console)
+## xtdc (console)
 
 Create your new project with a simple command line tools.
 
@@ -136,7 +136,7 @@ xtdc open hello_world
 For more information type
 
 ```bash
-switch --help
+xtd --help
 ```
 
 ______________________________________________________________________________________________
