@@ -99,7 +99,7 @@ namespace xtd {
       }
       
     private:
-      bool rounded_ = false;
+      bool rounded_ = true;
       bool auto_check_ = true;
       bool checked_ = false;
     };
