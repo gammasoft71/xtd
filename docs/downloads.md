@@ -23,7 +23,7 @@ git clone https://github.com/gammasoft71/xtd_forms.git
 xtd.forms is currently in development mode and the only [xtd.form.native.wxwidgets](../src/xtd_forms_native_wxwidgets/README.md) toolkit is supported.
 So [wxWidgets](https://www.wxwidgets.org/) 3.1.4 will be installed too on your system.
 
-In the future xtd.forms will use [xtd.form.native.win32](../xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.form.native.gtk4](../src/xtd_forms_native_gtk4/README.md) on linux. Other toolkit like [xtd.form.native.qt5](../src/xtd_forms_native_qt5/README.md) will be ported too.
+In the future xtd.forms will use [xtd.form.native.win32](../src/xtd.forms.native.win32/README.md) on Windows, [xtd.form.native.cocoa](../src/xtd_forms_native_cocoa/README.md) on macOS and [xtd.form.native.gtk4](../src/xtd_forms_native_gtk4/README.md) on linux. Other toolkit like [xtd.form.native.qt5](../src/xtd_forms_native_qt5/README.md) will be ported too.
 
 # Installation
 
