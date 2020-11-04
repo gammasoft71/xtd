@@ -17,7 +17,7 @@
 
 # Libraries
 
-xtd is composed of several libraries grouped by theme :
+xtd is composed of several [libraries](libraries.md) grouped by theme :
 
 ## xtd.tunit
 
