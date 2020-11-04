@@ -1,21 +1,8 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
-[![operating_systems_logo](pictures/operating_systems.png)](https://gammasoft71.wixsite.com/gammasoft)
-
-# xtd is ...
-
-💾 Modern c++17 libraries to create console, gui and unit test applications.
-
-# Features
-
-* a collection of native C++ classes libraries, to complete std;
-* written in efficient, modern C++17;
-* and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
-
+# The xtd libraries hierarchy
 
 [![libraries_img](pictures/libraries.png)](home.md)
-
-# Libraries
 
 xtd is composed of several libraries grouped by theme :
 
