@@ -13,7 +13,7 @@ public:
     button1.parent(*this);
     button1.text("Do something...");
     button1.click += [] {
-      busy_box::show();
+      busy_box::show("Please wait while do something...", "Application busy");
       for (auto count = 0; count < 500; ++count) {
         application::yield();
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
