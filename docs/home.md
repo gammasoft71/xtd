@@ -66,6 +66,19 @@ The xtd.forms library contains classes for creating Windows-based applications t
 | [![xtd_drawing_logo](pictures/xtd.drawing.png)](https://gammasoft71.wixsite.com/xtd-drawing) | [xtd.drawing](https://github.com/gammasoft71/xtd_drawing) | [examples](https://github.com/gammasoft71/xtd_drawing/tree/master/examples)     | [codedocs.xyz](https://codedocs.xyz/gammasoft71/xtd_drawing/) |
 | [![xtd_forms_logo](pictures/xtd.forms.png)](https://gammasoft71.wixsite.com/xtd-forms)       | [xtd.forms](https://github.com/gammasoft71/xtd_forms)   | [examples](https://github.com/gammasoft71/xtd_forms/tree/master/examples)       | [codedocs.xyz](https://codedocs.xyz/gammasoft71/xtd_forms/)   |
 
+# Objectives and Mission
+
+* xtd is a powerful, yet easy to use platform to build your applications upon
+* xtd allows you to build highly portable applications (write once – compile and run anywhere)
+* xtd is modular and scalable from embedded applications
+* xtd provides consistent, comprehensive and comprehensible programming interfaces
+* xtd favors simplicity over complexity ("as simple as possible, but not simpler")
+* xtd aims for consistency in design, coding style and documentation
+* xtd emphasizes source code quality, in terms of readability, comprehensiveness, consistency, style and testability
+* xtd aims to make C++ programming fun again Guiding Principles
+* Strong focus on code quality, style, consistency and code readability –all code must satisfy our coding style guide
+* Strong focus on tests (automated unit tests with high coverage)
+* Build on top of solid foundations – use existing proven C, C++ or Objective-C libraries (e.g. Win32 APi, Gtk4, AppKit,...) where it makes sense
 ______________________________________________________________________________________________
 
 © 2020 Gammasoft.

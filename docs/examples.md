@@ -36,7 +36,7 @@ target_type(CONSOLE_APPLICATION)
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 ### Output
@@ -87,7 +87,7 @@ target_type(GUI_APPLICATION)
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 ### Output
@@ -159,13 +159,13 @@ target_type(TEST_APPLICATION)
 Open "Command Prompt" or "Terminal". Navigate to the folder that contains the project and type the following:
 
 ```shell
-xtd run
+xtdc run
 ```
 
 ### Output
 
 ```
-tart 2 tests from 1 test case
+Start 2 tests from 1 test case
 Run tests:
   SUCCEED hello_world_test.create_string_from_literal (0 ms total)
   SUCCEED hello_world_test.create_string_from_chars (0 ms total)

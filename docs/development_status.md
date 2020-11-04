@@ -32,15 +32,15 @@ xtd is under development.
 |----------------------------------------------------------------------------------------------------------|------------------------------------------|
 | [xtd.properties](https://github.com/gammasoft71/xtd_properties/tree/master/docs/development_status.md)   | ![progress100](pictures/progress100.png) |
 
-## xtd.core
+## xtd.system
 
 | Name                                                                                                     | Status                                   |
 |----------------------------------------------------------------------------------------------------------|------------------------------------------|
+| [xtd.core](https://github.com/gammasoft71/xtd_core/tree/master/docs/development_status.md)               | ![progress100](pictures/progress50.png)  |
 | [xtd.delegates](https://github.com/gammasoft71/xtd_delegates/tree/master/docs/development_status.md)     | ![progress100](pictures/progress100.png) |
 | [xtd.diagnostics](https://github.com/gammasoft71/xtd_diagnostics/tree/master/docs/development_status.md) | ![progress100](pictures/progress75.png)  |
 | [xtd.io](https://github.com/gammasoft71/xtd_io/tree/master/docs/development_status.md)                   | ![progress100](pictures/progress75.png)  |
 | [xtd.strings](https://github.com/gammasoft71/xtd_strings/tree/master/docs/development_status.md)         | ![progress100](pictures/progress75.png)  |
-| [xtd.system](https://github.com/gammasoft71/xtd_system/tree/master/docs/development_status.md)           | ![progress100](pictures/progress50.png)  |
 
 ## xtd.console
 
