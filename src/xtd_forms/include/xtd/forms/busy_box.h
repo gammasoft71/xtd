@@ -8,6 +8,11 @@ namespace xtd {
   namespace forms {
     class busy_box static_ {
     public:
+      static void hide() {
+        delete dialog_;
+        dialog_ = nullptr;
+      }
+      
       static void show(const iwin32_window& owner) {show_busy_dialog(&owner);}
       static void show(const iwin32_window& owner, const std::string& text) {show_busy_dialog(&owner, text);}
       static void show(const iwin32_window& owner, const std::string& text, const std::string& caption) {show_busy_dialog(&owner, text, caption);}
@@ -23,11 +28,6 @@ namespace xtd {
       static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color) {show_busy_dialog(nullptr, text, caption, icon, back_color);}
       static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color) {show_busy_dialog(nullptr, text, caption, icon, back_color, fore_color);}
       static void show(const std::string& text, const std::string& caption, const xtd::drawing::icon& icon, const xtd::drawing::color& back_color, const xtd::drawing::color& fore_color, float transparency) {show_busy_dialog(nullptr, text, caption, icon, back_color, fore_color, transparency);}
-      
-      static void hide() {
-        delete dialog_;
-        dialog_ = nullptr;
-      }
       
     private:
       static busy_dialog* dialog_;
