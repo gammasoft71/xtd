@@ -10,7 +10,6 @@ This section contains the xtd documentation. ​
 * [Design Guidelines](design_guidelines.md) provides guidelines for designing libraries that extend and interact with the xtd.forms.
 * [Development status](development_status.md) provide information about classes development status.
 * [Release notes](release_notes.md) provide release notes information.
-* [Portability](portability.md) provide informations about Operating System suported, Compilators and Devepment Environment tools.
 * [License](license.md) provide license information.
 
 ______________________________________________________________________________________________
