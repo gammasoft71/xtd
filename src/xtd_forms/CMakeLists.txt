@@ -22,6 +22,7 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/boot_mode.h
   include/xtd/forms/border_style.h
   include/xtd/forms/bounds_specified.h
+  include/xtd/forms/busy_box.h
   include/xtd/forms/busy_dialog.h
   include/xtd/forms/button.h
   include/xtd/forms/button_base.h

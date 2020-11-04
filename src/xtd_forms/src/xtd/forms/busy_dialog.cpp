@@ -1,6 +1,7 @@
 #include <memory>
 #include <xtd/forms/native/busy_dialog.h>
 #include <xtd/drawing/system_icons.h>
+#include "../../../include/xtd/forms/busy_box.h"
 #include "../../../include/xtd/forms/busy_dialog.h"
 
 using namespace std;
@@ -9,6 +10,8 @@ using namespace xtd::forms;
 
 namespace {
 }
+
+busy_dialog* busy_box::dialog_ = nullptr;
 
 void busy_dialog::reset() {
   dialog_style_ = xtd::forms::dialog_style::standard;
