@@ -17,6 +17,7 @@ namespace xtd {
 
     class message_box static_ {
     public:
+      static dialog_result show(const iwin32_window& owner) {return show_message_dialog(&owner);}
       static dialog_result show(const iwin32_window& owner, const std::string& text) {return show_message_dialog(&owner, text);}
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption) {return show_message_dialog(&owner, text, caption);}
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons) {return show_message_dialog(&owner, text, caption, buttons);}
@@ -25,6 +26,7 @@ namespace xtd {
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button, options);}
       static dialog_result show(const iwin32_window& owner, const std::string& text, const std::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button) {return show_message_dialog(&owner, text, caption, buttons, icon, default_button, options, display_help_button);}
       
+      static dialog_result show() {return show_message_dialog(nullptr);}
       static dialog_result show(const std::string& text) {return show_message_dialog(nullptr, text);}
       static dialog_result show(const std::string& text, const std::string& caption) {return show_message_dialog(nullptr, text, caption);}
       static dialog_result show(const std::string& text, const std::string& caption, message_box_buttons buttons) {return show_message_dialog(nullptr, text, caption, buttons);}
