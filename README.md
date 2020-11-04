@@ -140,3 +140,32 @@ For more examples see [examples](examples/README.md)
 # Download and install
 
 Before running examples you must download and install xtd. To download and install it read [downloads](docs/downloads.md) file.
+
+# Motivations
+
+## All libraries
+
+* Modern C++17 only
+* std c++ design guidelines.
+* Multiplatform (Windows, macOS, Android and ios and linux base oprating system).
+
+## xtd.tunit
+
+* Create a full [xunit](https://en.wikipedia.org/wiki/XUnit) unit testing library in C++17 with an api closely to [NUnit](https://nunit.org) for C# and [Microsoft.VisualStudio.TestTools.CppUnitTestFramework](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference?view=vs-2019) for C++ on Windows.
+
+## xtd.system
+
+* Basic extend of std c++. The objectevie is not to replace [boost](https://www.boost.org) but get acces to a basic and simple api. For more complex development, it recommanded to use [boost](https://www.boost.org).
+* Basic string formater and parser. The objectevie is not to replace [fmtlib ](https://github.com/fmtlib/fmt) but get a basic and simple api to wait C++20 string format and string parse.
+* Implement Multicast delegates with easy registration (+= operator) and unregistration (-= operator) with event safe invocation by creator only.
+
+## xtd.console
+
+* Create a simple and light multiplatform console api compatible with std::stream (with an easy way redirection like std) with cursor visibility, background and forground color, position and size of console and more.
+
+## xtd.forms
+
+* Create a modern api for gui application (like Winforms in .Net).
+* Why create another c++ gui ? After reading the [Philippe Groarke C++ UI Libraries post](https://philippegroarke.com/posts/2018/c++_ui_solutions/). I don't find a gui api more simple as Winforms C# or Borland C++ builder.
+* If when the development you ask you about allocated object, if you must / should delete pointer or desttroy it or do nothing. I think is more complexe and it can create a memory leak or crash. I want an unequivocal simple RAI api.
+
