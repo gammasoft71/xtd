@@ -26,3 +26,8 @@
 #include "unused.h"
 #include "using.h"
 #include "version.h"
+#include "collections/any_pair.h"
+#include "collections/vector_list.h"
+#include "collections/specialized/string_map.h"
+#include "collections/specialized/string_pair.h"
+#include "collections/specialized/string_vector.h"

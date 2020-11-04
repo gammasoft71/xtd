@@ -16,6 +16,7 @@
 #include "platform_id.h"
 #include "static.h"
 #include "version.h"
+#include "collections/specialized/string_vector.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -228,7 +229,7 @@ namespace xtd {
     /// | MyApp \\\alpha \\\\"beta                     | MyApp, \\\alpha, \\beta                    |
     /// | MyApp \\\\\"alpha \"beta                     | MyApp, \\"alpha, "beta                     |
     /// @remarks To obtain the command line as a single string, use the command_line method.
-    static std::vector<std::string> get_command_line_args() noexcept;
+    static xtd::collections::specialized::string_vector get_command_line_args() noexcept;
     
     /// @brief Retrieves the value of an environment variable from the current process.
     /// @param variable The name of the environment variable.
@@ -296,7 +297,7 @@ namespace xtd {
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
     /// @todo Add xtd::io::__opaque_io and uncomment lines.
-    static std::vector<std::string> get_logical_drives() noexcept {
+    static xtd::collections::specialized::string_vector get_logical_drives() noexcept {
       return {}; //__opaque_io::get_drives();
     }
     

@@ -25,12 +25,12 @@ namespace xtd {
       class startup {\
       public:\
         startup() = delete; \
-        static int run(void (*main_function)(), const std::vector<std::string>& args) {main_function(); return xtd::environment::exit_code();}\
-        static int run(int (*main_function)(), const std::vector<std::string>& args) {return main_function();}\
-        static int run(void (*main_function)(std::vector<std::string>), const std::vector<std::string>& args) {main_function(args); return xtd::environment::exit_code();}\
-        static int run(void (*main_function)(const std::vector<std::string>&), const std::vector<std::string>& args) {main_function(args); return xtd::environment::exit_code();}\
-        static int run(int (*main_function)(std::vector<std::string>), const std::vector<std::string>& args) {return main_function(args);}\
-        static int run(int (*main_function)(const std::vector<std::string>&), const std::vector<std::string>& args) {return main_function(args);}\
+        static int run(void (*main_function)(), const xtd::collections::specialized::string_vector& args) {main_function(); return xtd::environment::exit_code();}\
+        static int run(int (*main_function)(), const xtd::collections::specialized::string_vector& args) {return main_function();}\
+        static int run(void (*main_function)(xtd::collections::specialized::string_vector), const xtd::collections::specialized::string_vector& args) {main_function(args); return xtd::environment::exit_code();}\
+        static int run(void (*main_function)(const xtd::collections::specialized::string_vector&), const xtd::collections::specialized::string_vector& args) {main_function(args); return xtd::environment::exit_code();}\
+        static int run(int (*main_function)(xtd::collections::specialized::string_vector), const xtd::collections::specialized::string_vector& args) {return main_function(args);}\
+        static int run(int (*main_function)(const xtd::collections::specialized::string_vector&), const xtd::collections::specialized::string_vector& args) {return main_function(args);}\
       };\
       return startup::run(main_class::main, {argv + 1, argv + argc});\
     } \

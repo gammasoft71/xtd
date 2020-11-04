@@ -17,7 +17,7 @@ int xtd::environment::exit_code() noexcept {return __exit_code;}
 
 void xtd::environment::exit_code(int value) noexcept {__exit_code = value;}
 
-std::vector<std::string> xtd::environment::get_command_line_args() noexcept {
+xtd::collections::specialized::string_vector xtd::environment::get_command_line_args() noexcept {
   return {__environment_argv, __environment_argv + __environment_argc};
 }
 
@@ -26,7 +26,7 @@ std::map<std::string, std::string>& xtd::environment::get_environment_variables(
     static std::map<std::string, std::string> envs;
     if (envs.size() == 0) {
       for (size_t index = 0; environ[index] != nullptr; index++) {
-        std::vector<std::string> key_value = xtd::strings::split(environ[index], {'='});
+        xtd::collections::specialized::string_vector key_value = xtd::strings::split(environ[index], {'='});
         if (key_value.size() == 2)
           envs[key_value[0]] = key_value[1];
       }

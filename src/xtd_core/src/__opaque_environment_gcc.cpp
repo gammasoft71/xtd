@@ -28,6 +28,7 @@
 
 #include "../include/xtd/__opaque_environment.h"
 #include "../include/xtd/environment.h"
+#include "../include/xtd/collections/specialized/string_vector.h"
 #include <xtd/xtd.strings>
 
 int __environment_argc;
@@ -108,9 +109,9 @@ xtd::platform_id __opaque_environment::get_os_platform_id() noexcept {
 
 int __opaque_environment::get_os_version(int& major, int& minor, int& build, int& revision) noexcept {
 #if defined(__APPLE__)
-  std::vector<std::string> numbers = xtd::strings::split(create_process("sw_vers -productVersion"), {'.', '\n'});
+  xtd::collections::specialized::string_vector numbers = xtd::strings::split(create_process("sw_vers -productVersion"), {'.', '\n'});
 #else
-  std::vector<std::string> numbers = xtd::strings::split(create_process("uname -r"), {'.', '-', '\n'});
+  xtd::collections::specialized::string_vector numbers = xtd::strings::split(create_process("uname -r"), {'.', '-', '\n'});
 #endif
   if (numbers.size() < 1 || !xtd::strings::try_parse(numbers[0], major))
     major = 0;

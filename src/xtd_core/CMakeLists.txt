@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.3)
 
 # Project
 project(xtd.core VERSION 1.0.0)
-set(INCLUDES
+set(XTD_INCLUDES
   include/xtd/__opaque_environment.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
@@ -26,6 +26,15 @@ set(INCLUDES
   include/xtd/xtd.core
   include/xtd/xtd.core.h
 )
+set(XTD_COLLECTIONS_INCLUDES
+  include/xtd/collections/any_pair.h
+  include/xtd/collections/vector_list.h
+)
+set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
+  include/xtd/collections/specialized/string_map.h
+  include/xtd/collections/specialized/string_pair.h
+  include/xtd/collections/specialized/string_vector.h
+)
 set(SOURCES
   src/__opaque_environment_gcc.cpp
   src/__opaque_environment_win32.cpp
@@ -33,7 +42,9 @@ set(SOURCES
   src/environment.cpp
   src/guid.cpp
 )
-source_group(include\\xtd FILES ${INCLUDES})
+source_group(include\\xtd FILES ${XTD_INCLUDES})
+source_group(include\\xtd\\collections FILES ${XTD_COLLECTIONS_INCLUDES})
+source_group(include\\xtd\\collections\\specialized FILES ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES})
 source_group(src FILES ${SOURCES})
 
 # Options
@@ -41,7 +52,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

@@ -3,6 +3,7 @@
 #include <sstream>
 #include <regex>
 #include <vector>
+#include "collections/specialized//string_vector.h"
 
 /// @cond
 #undef major
@@ -41,7 +42,7 @@ namespace xtd {
     
     static version parse(const std::string& ver) {
       std::regex rgx("\\.");
-      std::vector<std::string> versions;
+      xtd::collections::specialized::string_vector versions;
       for (std::sregex_token_iterator it(ver.begin(), ver.end(), rgx, -1), end; it != end; ++it)
         versions.push_back(*it);
       
