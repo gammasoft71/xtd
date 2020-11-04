@@ -4,7 +4,7 @@
 
 # xtd is ...
 
-💾 Modern c++17 libraries to create console, gui and unit test applications.
+Modern c++17 libraries to create console, gui and unit test applications.
 
 # Features
 
