@@ -1,4 +1,5 @@
 #pragma once
+#include <limits>
 #include <ostream>
 #include <vector>
 #include <xtd/event_args.h>
@@ -296,6 +297,8 @@ namespace xtd {
         }
         
         std::vector<type_t> to_vector() const {return to_array();}
+
+        static const size_t npos = std::numeric_limits<size_t>::max();
 
       private:
         std::vector<value_type, allocator_type> collection_;
