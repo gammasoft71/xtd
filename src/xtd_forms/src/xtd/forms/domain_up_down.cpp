@@ -16,7 +16,7 @@ domain_up_down::domain_up_down() {
   this->items_.item_added += [&](size_t pos, const item& item) {
     native::domain_up_down::insert_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
-    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 
@@ -24,7 +24,7 @@ domain_up_down::domain_up_down() {
     native::domain_up_down::delete_item(handle(), pos);
 
     domain_up_down::item selected_item;
-    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
   
@@ -33,19 +33,19 @@ domain_up_down::domain_up_down() {
     if (update_disabled) return;
     native::domain_up_down::update_item(handle(), pos, item.value());
     domain_up_down::item selected_item;
-    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 }
 
 domain_up_down& domain_up_down::selected_index(size_t selected_index) {
   if (this->selected_index_ != selected_index) {
-    if (selected_index != UINT_MAX && selected_index > this->items_.size()) throw invalid_argument("out of range index");
+    if (selected_index != npos && selected_index > this->items_.size()) throw invalid_argument("out of range index");
     this->selected_index_ = selected_index;
     native::domain_up_down::selected_index(handle(), this->selected_index_);
 
     item selected_item;
-    if (this->selected_index_ != UINT_MAX) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
 
     this->on_text_changed(event_args::empty);
@@ -57,7 +57,7 @@ domain_up_down& domain_up_down::selected_item(const item& selected_item) {
   if (this->selected_item_ != selected_item) {
     auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
     if (it == this->items_.end())
-      this->selected_item_ = this->selected_index() != UINT_MAX ? this->items()[this->selected_index()] : "";
+      this->selected_item_ = this->selected_index() != npos ? this->items()[this->selected_index()] : "";
     else {
       size_t index = it - this->items_.begin();
       this->selected_index(index);
@@ -91,7 +91,7 @@ void domain_up_down::on_handle_created(const event_args &e) {
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::domain_up_down::insert_item(handle(), index, this->items_[index].value());
   native::domain_up_down::selected_index(handle(), this->selected_index_);
-  if (this->selected_index_ != UINT_MAX) this->selected_item_ = this->items_[this->selected_index_];
+  if (this->selected_index_ != npos) this->selected_item_ = this->items_[this->selected_index_];
   else native::control::text(handle(), text_);
 }
 
@@ -99,7 +99,7 @@ void domain_up_down::on_text_changed(const event_args& e) {
   text_ = native::control::text(handle());
   if (selected_index_ != native::domain_up_down::selected_index(handle())) {
     selected_index_ = native::domain_up_down::selected_index(handle());
-    if (selected_index_ == UINT_MAX)
+    if (selected_index_ == npos)
       selected_item_ = "";
     else
       selected_item_ = items_[selected_index_];

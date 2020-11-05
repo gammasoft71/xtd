@@ -68,6 +68,8 @@ namespace xtd {
 
       event<list_control, event_handler<control&>> value_member_changed;
 
+      static const size_t npos = std::numeric_limits<size_t>::max();
+      
     protected:
       list_control();
   
@@ -86,7 +88,7 @@ namespace xtd {
       virtual void on_value_member_changed(const event_args& e) {this->value_member_changed(*this, e);}
 
       /// @cond
-      size_t selected_index_ = UINT_MAX;
+      size_t selected_index_ = npos;
       std::string value_member_;
       /// @endcond;
     };

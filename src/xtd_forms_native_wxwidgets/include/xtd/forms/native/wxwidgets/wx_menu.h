@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <limits>
 #include <map>
 #include <string>
 #include <vector>
@@ -201,7 +202,7 @@ namespace xtd {
         wx_menu_item* parent_ = nullptr;
         wxMenuItem* menu_item_ = nullptr;
         wxMenu* menu_ = nullptr;
-        size_t index_ = UINT_MAX;
+        size_t index_ = std::numeric_limits<size_t>::max();
       };
     
     class wx_menu_bar : public wxMenuBar {
@@ -252,7 +253,7 @@ namespace xtd {
       
       static size_t find_index_from_id(wxWindowID id) {
         auto item = ids_[id];
-        if (item == nullptr) return UINT_MAX;
+        if (item == nullptr) return std::numeric_limits<size_t>::max();
         return item->index_;
       }
       

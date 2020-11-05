@@ -4,6 +4,7 @@
 #include "project_type_item_control.h"
 #include "project_type_items_control.h"
 #include "xtd_example_item.h"
+#include <limits>
 #include <memory>
 #include <vector>
 #include <xtd/forms/button.h>
@@ -91,7 +92,7 @@ namespace xtdc_gui {
     xtd::forms::button previous_button_;
     xtd::forms::button next_button_;
     
-    size_t current_project_type_index_ = UINT_MAX;
+    size_t current_project_type_index_ = std::numeric_limits<size_t>::max();
     size_t current_open_xtd_example_console_list_box_index_ = 0;
     size_t current_open_xtd_example_forms_list_box_index_ = 0;
     size_t current_open_xtd_example_tunit_list_box_index_ = 0;

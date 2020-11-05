@@ -1,3 +1,4 @@
+#include <limits>
 #include <stdexcept>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/native/application.h>
@@ -30,10 +31,10 @@ void list_box::insert_item(intptr_t control, size_t index, const std::string& va
 }
 
 size_t list_box::selected_index(intptr_t control) {
-  if (control == 0) return UINT_MAX;
+  if (control == 0) return std::numeric_limits<size_t>::max();
   if (static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->HasMultipleSelection()) {
     vector<size_t> indices = selected_indices(control);
-    if (indices.empty()) return UINT_MAX;
+    if (indices.empty()) return std::numeric_limits<size_t>::max();
     return indices[0];
   }
   return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();

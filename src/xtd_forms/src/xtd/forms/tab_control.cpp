@@ -73,13 +73,13 @@ void tab_control::on_control_added(const control_event_args &e) {
     controls()[controls().size() - 1].get().size(size() - xtd::drawing::size(0, 40));
     controls()[controls().size() - 1].get().client_size(size() - xtd::drawing::size(0, 40));
   }
-  if (selected_index_ == UINT_MAX) selected_index_ = 0;
+  if (selected_index_ == npos) selected_index_ = 0;
   control::on_control_added(e);
 }
 
 void tab_control::on_control_removed(const control_event_args &e) {
   control::on_control_removed(e);
-  if (selected_index_ != UINT_MAX) selected_index(UINT_MAX);
+  if (selected_index_ != npos) selected_index(npos);
 }
 
 void tab_control::recreate_handle() {

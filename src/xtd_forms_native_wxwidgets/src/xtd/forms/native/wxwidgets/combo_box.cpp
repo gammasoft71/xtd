@@ -1,3 +1,4 @@
+#include <limits>
 #include <stdexcept>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/native/application.h>
@@ -30,7 +31,7 @@ void combo_box::insert_item(intptr_t control, size_t index, const std::string& v
 }
 
 size_t combo_box::selected_index(intptr_t control) {
-  if (control == 0) return UINT_MAX;
+  if (control == 0) return std::numeric_limits<size_t>::max();
   return static_cast<wxComboBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelection();
 }
 
