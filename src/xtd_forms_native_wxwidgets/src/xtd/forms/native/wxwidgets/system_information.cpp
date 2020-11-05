@@ -2,6 +2,8 @@
 #include <wx/frame.h>
 #if defined(__WXMSW__)
 #include <Windows.h>
+#undef max
+#undef min
 #endif
 #include <xtd/forms/native/arranged_direction_window.h>
 #include <xtd/forms/native/system_information.h>
