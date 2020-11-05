@@ -6,6 +6,8 @@
 
 #if defined(__WXMSW__)
 #include <Windows.h>
+#undef max
+#undef min
 #endif
 
 using namespace xtd;
