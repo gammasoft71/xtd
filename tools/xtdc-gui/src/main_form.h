@@ -7,6 +7,7 @@
 #include <limits>
 #include <memory>
 #include <vector>
+#include <xtd/forms/background_worker.h>
 #include <xtd/forms/button.h>
 #include <xtd/forms/check_box.h>
 #include <xtd/forms/choice.h>
@@ -15,6 +16,7 @@
 #include <xtd/forms/list_box.h>
 #include <xtd/forms/panel.h>
 #include <xtd/forms/picture_box.h>
+#include <xtd/forms/progress_dialog.h>
 #include <xtd/forms/tab_control.h>
 #include <xtd/forms/tab_page.h>
 #include <xtd/forms/text_box.h>
@@ -42,6 +44,8 @@ namespace xtdc_gui {
     void open_project(const std::string& project_path);
     void run_project(const std::string& project_path);
 
+    std::unique_ptr<xtd::forms::background_worker> background_worker_;
+    std::unique_ptr<xtd::forms::progress_dialog> progress_dialog_;
     xtd::forms::panel startup_panel_;
     xtd::forms::label startup_title_label_;
     xtd::forms::label startup_open_recent_project_title_label_;
