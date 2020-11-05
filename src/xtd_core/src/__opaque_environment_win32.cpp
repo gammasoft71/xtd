@@ -8,6 +8,9 @@
 #include <windows.h>
 #include <Lmcons.h>
 
+#undef min
+#undef max
+
 #include "../include/xtd/__opaque_environment.h"
 #include <xtd/xtd.strings>
 
