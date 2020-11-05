@@ -5,6 +5,8 @@
 #if defined(_WIN32)
 #include <Windows.h>
 #include <Uxtheme.h>
+#undef max
+#undef min
 
 namespace {
 template <typename T, typename T1, typename T2>
