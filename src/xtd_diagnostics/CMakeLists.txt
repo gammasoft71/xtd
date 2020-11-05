@@ -15,6 +15,8 @@ set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/default_trace_listener.h
   include/xtd/diagnostics/event_type_filter.h
   include/xtd/diagnostics/ostream_trace_listener.h
+  include/xtd/diagnostics/process_start_info.h
+  include/xtd/diagnostics/process_window_style.h
   include/xtd/diagnostics/source_filter.h
   include/xtd/diagnostics/source_levels.h
   include/xtd/diagnostics/source_switch.h
@@ -36,6 +38,7 @@ set(SOURCES
   src/diagnostics.cpp
   src/default_trace_listener_gcc.cpp
   src/default_trace_listener_win32.cpp
+  src/process_start_info.cpp
   src/trace.cpp
 )
 source_group(include\\xtd FILES ${XTD_INCLUDES})
