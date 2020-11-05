@@ -14,7 +14,7 @@
 /// @cond
 template<typename char_t>
 struct __format_information {
-  size_t index = UINT_MAX;
+  size_t index = std::numeric_limits<size_t>::max();
   size_t location;
   std::basic_string<char_t> alignment;
   std::basic_string<char_t> format;
