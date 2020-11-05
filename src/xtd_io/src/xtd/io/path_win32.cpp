@@ -5,6 +5,8 @@
 #include <string>
 #include <direct.h>
 #include <Windows.h>
+#undef max
+#undef min
 
 std::string __get_current_dirirectory() noexcept {
   char path[MAX_PATH + 1];
