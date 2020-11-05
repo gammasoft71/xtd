@@ -59,10 +59,7 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
       if (!std::filesystem::exists(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()])) message_box::show(*this, xtd::strings::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
-      else {
-        open_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
-        if (properties::settings::default_settings().auto_close()) close();
-      }
+      else open_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
     }
   };
   
@@ -85,10 +82,7 @@ main_form::main_form() {
   startup_open_project_button_.click += [&] {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().open_propject_folder());
-    if (dialog.show_dialog() == dialog_result::ok) {
-      open_project(dialog.selected_path());
-      if (properties::settings::default_settings().auto_close()) close();
-    }
+    if (dialog.show_dialog() == dialog_result::ok) open_project(dialog.selected_path());
   };
 
   startup_run_project_button_.parent(startup_panel_);
@@ -103,10 +97,7 @@ main_form::main_form() {
   startup_run_project_button_.click += [&] {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().open_propject_folder());
-    if (dialog.show_dialog() == dialog_result::ok) {
-      run_project(dialog.selected_path());
-      if (properties::settings::default_settings().auto_close()) close();
-    }
+    if (dialog.show_dialog() == dialog_result::ok) run_project(dialog.selected_path());
   };
 
   startup_new_project_button_.parent(startup_panel_);
@@ -482,7 +473,6 @@ main_form::main_form() {
         previous_button_.visible(false);
         next_button_.text("&Next");
         next_button_.visible(false);
-        if (properties::settings::default_settings().auto_close()) close();
       }
     } else if (open_xtd_examples_panel_.visible()) {
       auto xtd_example = xtd_example_item();
@@ -504,8 +494,26 @@ main_form::main_form() {
       for (auto file : std::filesystem::directory_iterator(xtd_example.path()))
         std::filesystem::copy(file, target_path/file.path().filename());
       //message_box::show(strings::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
-      system(strings::format("xtdc open {}", target_path).c_str());
-      if (properties::settings::default_settings().auto_close()) close();
+      background_worker_ = std::make_unique<background_worker>();
+      background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+        begin_invoke([&] {
+          progress_dialog_ = std::make_unique<progress_dialog>();
+          progress_dialog_->text(strings::format("Opening {} example", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+          progress_dialog_->message("Please wait...");
+          progress_dialog_->marquee(true);
+          progress_dialog_->show_dialog(*this);
+        });
+        system(strings::format("xtdc open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str());
+      };
+      background_worker_->run_worker_completed += [&] {
+        begin_invoke([&] {
+          progress_dialog_->hide();
+          progress_dialog_.reset();
+          if (properties::settings::default_settings().auto_close()) close();
+        });
+        background_worker_.reset();
+      };
+      background_worker_->run_worker_async(target_path);
     }
   };
   
@@ -584,21 +592,76 @@ void main_form::new_project(const std::string& project_path, size_t project_type
 
 void main_form::new_project(const std::string& project_path, project_type type, project_language language, project_sdk sdk) {
   add_to_open_recent_projects(project_path);
-  application::do_events();
-  system(strings::format("xtdc new {} -s {} {}", std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}}[type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}}[language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}}[sdk]), project_path).c_str());
-  system(strings::format("xtdc open {}", project_path).c_str());
+  background_worker_ = std::make_unique<background_worker>();
+  background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+    std::tuple<std::string, std::string, std::filesystem::path> new_project = std::any_cast<std::tuple<std::string, std::string, std::filesystem::path>>(e.argument());
+    begin_invoke([&] {
+      progress_dialog_ = std::make_unique<progress_dialog>();
+      progress_dialog_->text(strings::format("Creating {} project", std::get<2>(new_project).filename()));
+      progress_dialog_->message("Please wait...");
+      progress_dialog_->marquee(true);
+      progress_dialog_->show_dialog(*this);
+    });
+    system(strings::format("xtdc new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str());
+    system(strings::format("xtdc open {}", std::get<2>(new_project)).c_str());
+  };;
+  background_worker_->run_worker_completed += [&] {
+    begin_invoke([&] {
+      progress_dialog_->hide();
+      progress_dialog_.reset();
+      if (properties::settings::default_settings().auto_close()) close();
+    });
+    background_worker_.reset();
+  };
+  background_worker_->run_worker_async(std::make_tuple(std::map<project_type, std::string> {{project_type::gui, "gui"}, {project_type::console, "console"}, {project_type::shared_library, "sharedlib"}, {project_type::static_library, "staticlib"}, {project_type::unit_tests_project, "test"}, {project_type::solution_file, "sln"}}[type], (sdk == project_sdk::none ? std::map<project_language, std::string> {{project_language::xtd, "xtd"}, {project_language::cpp, "c++"}, {project_language::c, "c"}, {project_language::csharp, "c#"}, {project_language::objectivec, "objective-c"}}[language] : std::map<project_sdk, std::string> {{project_sdk::cocoa, "cocoa"}, {project_sdk::fltk, "fltk"}, {project_sdk::gtk2, "gtk+2"}, {project_sdk::gtk3, "gtk+3"}, {project_sdk::gtkmm, "gtkmm"}, {project_sdk::wxwidgets, "wxwidgets"}, {project_sdk::qt5, "qt5"}, {project_sdk::win32, "win32"}, {project_sdk::winforms, "winforms"}, {project_sdk::wpf, "wpf"}, {project_sdk::gtest, "gtest"}, {project_sdk::catch2, "catch2"}}[sdk]), std::filesystem::path(project_path)));
 }
 
 void main_form::open_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
-  application::do_events();
-  system(strings::format("xtdc open {}", project_path).c_str());
+  background_worker_ = std::make_unique<background_worker>();
+  background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+    begin_invoke([&] {
+      progress_dialog_ = std::make_unique<progress_dialog>();
+      progress_dialog_->text(strings::format("Opening {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+      progress_dialog_->message("Please wait...");
+      progress_dialog_->marquee(true);
+      progress_dialog_->show_dialog(*this);
+    });
+    system(strings::format("xtdc open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str());
+  };
+  background_worker_->run_worker_completed += [&] {
+    begin_invoke([&] {
+      progress_dialog_->hide();
+      progress_dialog_.reset();
+      if (properties::settings::default_settings().auto_close()) close();
+    });
+    background_worker_.reset();
+  };
+  background_worker_->run_worker_async(std::filesystem::path(project_path));
 }
 
 void main_form::run_project(const std::string& project_path) {
   add_to_open_recent_projects(project_path);
-  application::do_events();
-  system(strings::format("xtdc run {}", project_path).c_str());
+  background_worker_ = std::make_unique<background_worker>();
+  background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
+    begin_invoke([&] {
+      progress_dialog_ = std::make_unique<progress_dialog>();
+      progress_dialog_->text(strings::format("Running {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
+      progress_dialog_->message("Please wait...");
+      progress_dialog_->marquee(true);
+      progress_dialog_->show_dialog(*this);
+    });
+    system(strings::format("xtdc run {}", std::any_cast<std::filesystem::path>(e.argument())).c_str());
+  };
+  background_worker_->run_worker_completed += [&] {
+    begin_invoke([&] {
+      progress_dialog_->hide();
+      progress_dialog_.reset();
+      if (properties::settings::default_settings().auto_close()) close();
+    });
+    background_worker_.reset();
+  };
+  background_worker_->run_worker_async(std::filesystem::path(project_path));
 }
 
 void main_form::main() {
