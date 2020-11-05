@@ -10,6 +10,7 @@
 #include "diagnostics/default_trace_listener.h"
 #include "diagnostics/event_type_filter.h"
 #include "diagnostics/ostream_trace_listener.h"
+#include "diagnostics/process_start_info.h"
 #include "diagnostics/source_levels.h"
 #include "diagnostics/source_switch.h"
 #include "diagnostics/switch_base.h"
