@@ -2,6 +2,8 @@
 
 #include "../include/xtd/__console_color.h"
 #include <Windows.h>
+#undef max
+#undef min
 
 namespace {
  __console_color __foreground_color() noexcept {
