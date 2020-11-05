@@ -143,7 +143,7 @@ Before running examples you must download and install xtd. To download and insta
 
 # Motivations
 
-## All libraries
+## All xtd libraries
 
 * Modern C++17 only
 * std c++ design guidelines.
@@ -166,6 +166,5 @@ Before running examples you must download and install xtd. To download and insta
 ## xtd.forms
 
 * Create a modern api for gui application (like Winforms in .Net).
-* Why create another c++ gui ? After reading the [Philippe Groarke C++ UI Libraries post](https://philippegroarke.com/posts/2018/c++_ui_solutions/). I don't find a gui api more simple as Winforms C# or Borland C++ builder.
+* Why create another c++ gui ? After reading [List of widget toolkits](https://en.wikipedia.org/wiki/List_of_widget_toolkits) and the [Philippe Groarke C++ UI Libraries post](https://philippegroarke.com/posts/2018/c++_ui_solutions/). I don't find a gui api more simple as Winforms C# or Borland C++ builder.
 * If when the development you ask you about allocated object, if you must / should delete pointer or desttroy it or do nothing. I think is more complexe and it can create a memory leak or crash. I want an unequivocal simple RAI api.
-
