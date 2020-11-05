@@ -1,3 +1,4 @@
+#include<limits>
 #include <xtd/forms/native/domain_up_down.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_domain_up_down.h"
 
@@ -18,7 +19,7 @@ void domain_up_down::insert_item(intptr_t control, size_t index, const std::stri
 }
 
 size_t domain_up_down::selected_index(intptr_t control) {
-  if (control == 0) return UINT_MAX;
+  if (control == 0) return std::numeric_limits<size_t>::max();
   return static_cast<wxDomainSpinCtrl*>(reinterpret_cast<control_handler*>(control)->control())->GetSelectedIndex();
 }
 

@@ -52,12 +52,12 @@ main_form::main_form() {
   startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
   startup_open_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
-    if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != UINT_MAX)
+    if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos)
       delete_from_open_recent_projects(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
   };
 
   startup_open_recent_projects_list_box_.double_click += [&] {
-    if (startup_open_recent_projects_list_box_.selected_index() != UINT_MAX) {
+    if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
       if (!std::filesystem::exists(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()])) message_box::show(*this, xtd::strings::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
       else {
         open_project(properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]);
@@ -162,15 +162,15 @@ main_form::main_form() {
   open_xtd_example_tab_control_.selected_index_changed += [&] {
     if (open_xtd_example_tab_control_.selected_index() == 0) {
       open_xtd_example_console_list_box_.selected_index(current_open_xtd_example_console_list_box_index_);
-      open_xtd_example_forms_list_box_.selected_index(UINT_MAX);
-      open_xtd_example_tunit_list_box_.selected_index(UINT_MAX);
+      open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
+      open_xtd_example_tunit_list_box_.selected_index(open_xtd_example_tunit_list_box_.npos);
     } else if (open_xtd_example_tab_control_.selected_index() == 1) {
-      open_xtd_example_console_list_box_.selected_index(UINT_MAX);
+      open_xtd_example_console_list_box_.selected_index(open_xtd_example_console_list_box_.npos);
       open_xtd_example_forms_list_box_.selected_index(current_open_xtd_example_forms_list_box_index_);
-      open_xtd_example_tunit_list_box_.selected_index(UINT_MAX);
+      open_xtd_example_tunit_list_box_.selected_index(open_xtd_example_tunit_list_box_.npos);
     } else if (open_xtd_example_tab_control_.selected_index() == 2) {
-      open_xtd_example_console_list_box_.selected_index(UINT_MAX);
-      open_xtd_example_forms_list_box_.selected_index(UINT_MAX);
+      open_xtd_example_console_list_box_.selected_index(open_xtd_example_console_list_box_.npos);
+      open_xtd_example_forms_list_box_.selected_index(open_xtd_example_forms_list_box_.npos);
       open_xtd_example_tunit_list_box_.selected_index(current_open_xtd_example_tunit_list_box_index_);
     }
   };
@@ -238,7 +238,7 @@ main_form::main_form() {
   for (auto item : xtd_console_examples_)
     open_xtd_example_console_list_box_.items().push_back({item.name(), item});
   open_xtd_example_console_list_box_.selected_value_changed += [&] {
-    if (open_xtd_example_console_list_box_.selected_index() != UINT_MAX) {
+    if (open_xtd_example_console_list_box_.selected_index() != open_xtd_example_console_list_box_.npos) {
       current_open_xtd_example_console_list_box_index_ = open_xtd_example_console_list_box_.selected_index();
       open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_console_list_box_.selected_item().tag()).picture());
@@ -252,7 +252,7 @@ main_form::main_form() {
   for (auto item : xtd_forms_examples_)
     open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
-    if (open_xtd_example_forms_list_box_.selected_index() != UINT_MAX) {
+    if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
       current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
       open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()).picture());
@@ -266,7 +266,7 @@ main_form::main_form() {
   for (auto item : xtd_tunit_examples_)
     open_xtd_example_tunit_list_box_.items().push_back({item.name(), item});
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
-    if (open_xtd_example_tunit_list_box_.selected_index() != UINT_MAX) {
+    if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
       current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
       open_xtd_examples_information_text_box_.text(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).description());
       open_xtd_examples_information_picture_box_.image(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()).picture());
@@ -295,10 +295,10 @@ main_form::main_form() {
   create_create_recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
   create_create_recent_projects_list_box_.anchor(anchor_styles::top|anchor_styles::left|anchor_styles::bottom|anchor_styles::right);
   create_create_recent_projects_list_box_.selected_index_changed += [&] {
-    if (create_create_recent_projects_list_box_.selected_index() == UINT_MAX)
+    if (create_create_recent_projects_list_box_.selected_index() == create_create_recent_projects_list_box_.npos)
       next_button_.enabled(false);
     else {
-      create_project_type_items_control_.selected_index(UINT_MAX);
+      create_project_type_items_control_.selected_index(create_project_type_items_control_.npos);
       current_project_type_index_ = xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects()[create_create_recent_projects_list_box_.selected_index()]);
       next_button_.enabled(true);
     }
@@ -307,7 +307,7 @@ main_form::main_form() {
     if (create_panel_.visible()) next_button_.perform_click();
   };
   create_create_recent_projects_list_box_.key_down += [&](control& sender, key_event_args& e) {
-    if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != UINT_MAX)
+    if (e.key_code() == keys::del && create_create_recent_projects_list_box_.selected_index() != create_create_recent_projects_list_box_.npos)
       delete_from_create_recent_projects(xtd::parse<size_t>(properties::settings::default_settings().create_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]));
   };
 
@@ -352,10 +352,10 @@ main_form::main_form() {
   create_project_type_items_control_.size({475, create_panel_.size().height() - 100});
   create_project_type_items_control_.anchor(anchor_styles::top|anchor_styles::bottom|anchor_styles::right);
   create_project_type_items_control_.selected_index_changed += [&] {
-    if (create_project_type_items_control_.selected_index() == UINT_MAX)
+    if (create_project_type_items_control_.selected_index() == create_project_type_items_control_.npos)
       next_button_.enabled(false);
     else {
-      create_create_recent_projects_list_box_.selected_index(UINT_MAX);
+      create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.npos);
       current_project_type_index_ = create_project_type_items_control_.selected_index();
       next_button_.enabled(true);
     }

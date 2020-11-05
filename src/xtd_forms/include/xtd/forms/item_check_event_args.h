@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <limits>
 #include <xtd/event_args.h>
 #include <xtd/xtd.strings>
 #include "check_state.h"
@@ -47,7 +48,7 @@ namespace xtd {
       void new_value(check_state new_value) {this->new_value_ = new_value;}
 
     private:
-      size_t index_ = UINT_MAX;
+      size_t index_ = std::numeric_limits<size_t>::max();
       check_state new_value_ = check_state::indeterminate;
       check_state current_value_ = check_state::unchecked;
     };

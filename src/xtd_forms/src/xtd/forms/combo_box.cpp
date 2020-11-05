@@ -19,7 +19,7 @@ combo_box::combo_box() {
   this->items_.item_added += [&](size_t pos, const item& item) {
     native::combo_box::insert_item(handle(), pos, item.value());
     combo_box::item selected_item;
-    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 
@@ -27,14 +27,14 @@ combo_box::combo_box() {
     native::combo_box::delete_item(handle(), pos);
 
     combo_box::item selected_item;
-    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
   
   this->items_.item_updated += [&](size_t pos, const item& item) {
     native::combo_box::update_item(handle(), pos, item.value());
     combo_box::item selected_item;
-    if (this->selected_index_ != UINT_MAX && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos && this->selected_index_ < this->items_.size()) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
   };
 }
@@ -50,12 +50,12 @@ combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
 
 list_control& combo_box::selected_index(size_t selected_index) {
   if (this->selected_index_ != selected_index) {
-    if (selected_index != UINT_MAX && selected_index > this->items_.size()) throw invalid_argument("out of range index");
+    if (selected_index != npos && selected_index > this->items_.size()) throw invalid_argument("out of range index");
     this->selected_index_ = selected_index;
     native::combo_box::selected_index(handle(), this->selected_index_);
 
     item selected_item;
-    if (this->selected_index_ != UINT_MAX) selected_item = this->items_[this->selected_index_];
+    if (this->selected_index_ != npos) selected_item = this->items_[this->selected_index_];
     this->selected_item(selected_item);
 
     this->on_selected_index_changed(event_args::empty);
@@ -67,7 +67,7 @@ combo_box& combo_box::selected_item(const item& selected_item) {
   if (this->selected_item_ != selected_item) {
     auto it = std::find(this->items_.begin(), this->items_.end(), selected_item);
     if (it == this->items_.end())
-      this->selected_item_ = this->selected_index() != UINT_MAX ? this->items()[this->selected_index()] : "";
+      this->selected_item_ = this->selected_index() != npos ? this->items()[this->selected_index()] : "";
     else {
       size_t index = it - this->items_.begin();
       this->selected_index(index);
@@ -124,7 +124,7 @@ void combo_box::on_handle_created(const event_args& e) {
   for (size_t index = 0; index < this->items_.size(); ++index)
     native::combo_box::insert_item(handle(), index, this->items_[index].value());
   native::combo_box::selected_index(handle(), this->selected_index_);
-  if (this->selected_index_ != UINT_MAX) this->selected_item_ = this->items_[this->selected_index_];
+  if (this->selected_index_ != npos) this->selected_item_ = this->items_[this->selected_index_];
 }
 
 void combo_box::on_selected_value_changed(const event_args& e) {
@@ -158,7 +158,7 @@ void combo_box::wnd_proc(message& message) {
 
 void combo_box::wm_mouse_double_click(message& message) {
   this->selected_index(native::combo_box::selected_index(handle()));
-  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != npos) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
@@ -170,7 +170,7 @@ void combo_box::wm_mouse_down(message& message) {
 
 void combo_box::wm_mouse_up(message& message) {
   this->selected_index(native::combo_box::selected_index(handle()));
-  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != npos) this->selected_item(this->items_[this->selected_index_]);
   if (this->allow_selection())
     this->list_control::wnd_proc(message);
 }
@@ -178,5 +178,5 @@ void combo_box::wm_mouse_up(message& message) {
 void combo_box::wm_reflect_command(message& message) {
   this->def_wnd_proc(message);
   this->selected_index(native::combo_box::selected_index(handle()));
-  if (this->selected_index_ != UINT_MAX) this->selected_item(this->items_[this->selected_index_]);
+  if (this->selected_index_ != npos) this->selected_item(this->items_[this->selected_index_]);
 }

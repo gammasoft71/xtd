@@ -49,7 +49,7 @@ namespace xtd {
           
           friend std::ostream& operator<<(std::ostream& os, const item_t& value) {return os << static_cast<const type_t&>(value);}
           
-          size_t pos = UINT_MAX;
+          size_t pos = std::numeric_limits<size_t>::max();
           arranged_element_collection* parent = nullptr;
         };
         

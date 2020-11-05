@@ -27,6 +27,7 @@ namespace xtd {
 
       event<tab_control, event_handler<control&>> selected_index_changed;
 
+      static const size_t npos = std::numeric_limits<size_t>::max();
       
     protected:
       forms::create_params create_params() const override;
@@ -48,7 +49,7 @@ namespace xtd {
       /// @cond
       friend class tab_page;
       tab_alignment alignment_ = tab_alignment::top;
-      size_t selected_index_ = UINT_MAX;
+      size_t selected_index_ = npos;
       /// @endcond
     };
   }

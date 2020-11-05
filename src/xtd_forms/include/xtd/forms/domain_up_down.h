@@ -67,7 +67,9 @@ namespace xtd {
       event<domain_up_down, event_handler<control&>> selected_item_changed;
 
       event<domain_up_down, event_handler<control&>> value_changed;
-      
+
+      static const size_t npos = std::numeric_limits<size_t>::max();
+
     protected:
       drawing::color default_back_color() const override {return xtd::forms::theme_colors::current_theme().window();}
       
@@ -84,7 +86,7 @@ namespace xtd {
       void on_text_changed(const event_args& e) override;
       
       item_collection items_;
-      size_t selected_index_ = UINT_MAX;
+      size_t selected_index_ = npos;
       item selected_item_;
       bool wrapped_ = false;
     };

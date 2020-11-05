@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/screen.h"
+#include <limits>
 #include <xtd/forms/native/screen.h>
 
 using namespace std;
@@ -20,8 +21,8 @@ graphics screen::create_graphics() {
 
 screen screen::from_control(const control& control) {
   size_t index = native::screen::from_handle(control.handle());
-  if (index == UINT_MAX && control.parent().has_value()) index = native::screen::from_handle(control.parent().value().get().handle());
-  if (index == UINT_MAX) index  = native::screen::from_point(forms::cursor::position());
+  if (index == std::numeric_limits<size_t>::max() && control.parent().has_value()) index = native::screen::from_handle(control.parent().value().get().handle());
+  if (index == std::numeric_limits<size_t>::max()) index  = native::screen::from_point(forms::cursor::position());
   return all_screens()[index];
 }
 
