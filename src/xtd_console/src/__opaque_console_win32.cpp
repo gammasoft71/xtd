@@ -6,6 +6,8 @@
 #include <csignal>
 #include <conio.h>
 #include <Windows.h>
+#undef max
+#undef min
 
 namespace {
   xtd::console_color __background_color() noexcept {
