@@ -10,6 +10,8 @@
 
 #if defined(__WXMSW__)
 #include <Windows.h>
+#undef max
+#undef min
 int __xtd_win32_enable_dark_mode__ = -1;
 #endif
 
