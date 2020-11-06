@@ -118,6 +118,10 @@ namespace xtd {
         file_name_ = value;
         return *this;
       }
+      process_start_info& file_name(const char* value) {
+        file_name_ = value;
+        return *this;
+      }
       process_start_info& file_name(const std::filesystem::path& value) {
         file_name_ = value.c_str();
         return *this;
