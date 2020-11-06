@@ -40,7 +40,13 @@ int main() {
       "spd-say \"$*\""
     });
     permissions("say", perms::owner_all);
+  } else if (environment::os_version().is_macos_platform()) {
+    file::write_all_lines("say", {
+      "#!/bin/bash",
+      "say \"$*\""
+    });
+    permissions("say", perms::owner_all);
   }
-  
+
   application::run(form1());
 }
