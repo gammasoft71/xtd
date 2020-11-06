@@ -16,7 +16,7 @@ public:
     button1.parent(*this);
     button1.text("Say...");
     button1.click += [&] {
-      process::start(process_start_info().file_name("say").arguments("\"Hello world\"").window_style(process_window_style::hidden)).wait_for_exit();
+      process::start(process_start_info().file_name("./say").arguments("\"Hello world\"").window_style(process_window_style::hidden)).wait_for_exit();
     };
   }
   
@@ -37,7 +37,7 @@ int main() {
   } else if (environment::os_version().is_linux_platform()) {
     file::write_all_lines("say", {
       "#!/bin/bash",
-      "echo $* | espeak"
+      "spd-say \"$*\""
     });
     permissions("say", perms::owner_all);
   }
