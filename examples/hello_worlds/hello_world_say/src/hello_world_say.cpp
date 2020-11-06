@@ -16,7 +16,7 @@ public:
     button1.parent(*this);
     button1.text("Say...");
     button1.click += [&] {
-      process::start(process_start_info().file_name(io::path::combine(io::path::get_temp_path(), "say.cmd")).arguments("\"Hello world\"").window_style(process_window_style::hidden)).wait_for_exit();
+      process::start(process_start_info().file_name(temp_directory_path()/"say.cmd").arguments("\"Hello world\"").window_style(process_window_style::hidden)).wait_for_exit();
     };
   }
   
@@ -42,10 +42,10 @@ int main() {
     "#!/bin/bash",
     "say \"$*\""
   };
-  file::write_all_lines(io::path::combine(io::path::get_temp_path(), "say.cmd"), lines);
-  permissions(io::path::combine(io::path::get_temp_path(), "say.cmd"), perms::owner_all);
+  file::write_all_lines(temp_directory_path()/"say.cmd", lines);
+  permissions(temp_directory_path()/"say.cmd", perms::owner_all);
   
   application::run(form1());
 
-  file::remove(io::path::combine(io::path::get_temp_path(), "say.cmd"));
+  remove(temp_directory_path()/"say.cmd");
 }
