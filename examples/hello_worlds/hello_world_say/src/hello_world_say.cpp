@@ -16,7 +16,7 @@ public:
     button1.parent(*this);
     button1.text("Say...");
     button1.click += [&] {
-      process::start(process_start_info().file_name(io::path::combine(".", "say")).arguments("\"Hello world\"").window_style(process_window_style::hidden)).wait_for_exit();
+      process::start(process_start_info().file_name(io::path::combine(io::path::get_temp_path(), "say.cmd")).arguments("\"Hello world\"").window_style(process_window_style::hidden)).wait_for_exit();
     };
   }
   
@@ -25,30 +25,27 @@ private:
 };
 
 int main() {
-  if (environment::os_version().is_windows_platform()) {
-    file::write_all_lines("say.cmd", {
-      "@echo off",
-      "echo Dim Speak >> %TEMP%\\speak.vbs",
-      "echo Set Speak=CreateObject(\"sapi.spvoice\") >> %TEMP%\\speak.vbs",
-      "echo Speak.Speak %* >> %TEMP%\\speak.vbs",
-      "%TEMP%\\speak.vbs",
-      "del %TEMP%\\speak.vbs"
-    });
-  } else if (environment::os_version().is_linux_platform()) {
-    file::write_all_lines("say", {
-      "#!/bin/bash",
-      "spd-say \"$*\""
-    });
-    permissions("say", perms::owner_all);
-  } else if (environment::os_version().is_macos_platform()) {
-    file::write_all_lines("say", {
-      "#!/bin/bash",
-      "say \"$*\""
-    });
-    permissions("say", perms::owner_all);
-  }
-
+  std::vector<std::string> lines;
+  if (environment::os_version().is_windows_platform()) lines = {
+    "@echo off",
+    "echo Dim Speak >> %TEMP%\\speak.vbs",
+    "echo Set Speak=CreateObject(\"sapi.spvoice\") >> %TEMP%\\speak.vbs",
+    "echo Speak.Speak %* >> %TEMP%\\speak.vbs",
+    "%TEMP%\\speak.vbs",
+    "del %TEMP%\\speak.vbs"
+  };
+  else if (environment::os_version().is_linux_platform()) lines = {
+    "#!/bin/bash",
+    "spd-say \"$*\""
+  };
+  else if (environment::os_version().is_macos_platform()) lines = {
+    "#!/bin/bash",
+    "say \"$*\""
+  };
+  file::write_all_lines(io::path::combine(io::path::get_temp_path(), "say.cmd"), lines);
+  permissions(io::path::combine(io::path::get_temp_path(), "say.cmd"), perms::owner_all);
+  
   application::run(form1());
 
-  file::remove(environment::os_version().is_windows_platform() ? "say.cmd" : "say");
+  file::remove(io::path::combine(io::path::get_temp_path(), "say.cmd"));
 }
