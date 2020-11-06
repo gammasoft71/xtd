@@ -123,7 +123,7 @@ namespace xtd {
         return *this;
       }
       process_start_info& file_name(const std::filesystem::path& value) {
-        file_name_ = value.c_str();
+        file_name_ = value.string();
         return *this;
       }
 
