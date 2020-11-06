@@ -10,6 +10,7 @@
 #include <list>
 #include <filesystem>
 #include <xtd/environment.h>
+#include <xtd/diagnostics/process.h>
 #include <xtd/drawing/system_icons.h>
 #include <xtd/forms/application.h>
 #include <xtd/forms/folder_browser_dialog.h>
@@ -18,6 +19,7 @@
 
 using namespace std;
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtdc_gui;
@@ -503,7 +505,7 @@ main_form::main_form() {
           progress_dialog_->marquee(true);
           progress_dialog_->show_dialog(*this);
         });
-        system(strings::format("xtdc open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str());
+        process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
       };
       background_worker_->run_worker_completed += [&] {
         begin_invoke([&] {
@@ -602,8 +604,8 @@ void main_form::new_project(const std::string& project_path, project_type type, 
       progress_dialog_->marquee(true);
       progress_dialog_->show_dialog(*this);
     });
-    system(strings::format("xtdc new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str());
-    system(strings::format("xtdc open {}", std::get<2>(new_project)).c_str());
+    process::start(process_start_info().file_name("xtdc").arguments(strings::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::get<2>(new_project)).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
   };;
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -627,7 +629,7 @@ void main_form::open_project(const std::string& project_path) {
       progress_dialog_->marquee(true);
       progress_dialog_->show_dialog(*this);
     });
-    system(strings::format("xtdc open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str());
+    process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -651,7 +653,7 @@ void main_form::run_project(const std::string& project_path) {
       progress_dialog_->marquee(true);
       progress_dialog_->show_dialog(*this);
     });
-    system(strings::format("xtdc run {}", std::any_cast<std::filesystem::path>(e.argument())).c_str());
+    process::start(process_start_info().file_name("xtdc").arguments(strings::format("run {}", std::any_cast<std::filesystem::path>(e.argument())).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
