@@ -10,25 +10,9 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    if (environment::os_version().is_windows_platform())
-      file::write_all_lines(temp_directory_path()/"say.cmd", {
-        "@echo off",
-        "echo Dim Speak >> %TEMP%\\speak.vbs",
-        "echo Set Speak=CreateObject(\"sapi.spvoice\") >> %TEMP%\\speak.vbs",
-        "echo Speak.Speak %* >> %TEMP%\\speak.vbs",
-        "%TEMP%\\speak.vbs",
-        "del %TEMP%\\speak.vbs"
-      });
-    else if (environment::os_version().is_linux_platform())
-      file::write_all_lines(temp_directory_path()/"say.cmd", {
-        "#!/bin/bash",
-        "spd-say \"$*\""
-      });
-    else if (environment::os_version().is_macos_platform())
-      file::write_all_lines(temp_directory_path()/"say.cmd", {
-        "#!/bin/bash",
-        "say \"$*\""
-      });
+    if (environment::os_version().is_windows_platform()) file::write_all_text(temp_directory_path()/"say.cmd", "@echo Set Speaker=CreateObject(\"sapi.spvoice\") > %TEMP%\\say.vbs\n@echo Speaker.Speak %* >> %TEMP%\\say.vbs\n@%TEMP%\\say.vbs");
+    else if (environment::os_version().is_macos_platform()) file::write_all_text(temp_directory_path()/"say.cmd", "say $*");
+    else file::write_all_text(temp_directory_path()/"say.cmd", "spd-say $*");
     permissions(temp_directory_path()/"say.cmd", perms::owner_all);
     
     text("Hello world (say)");
