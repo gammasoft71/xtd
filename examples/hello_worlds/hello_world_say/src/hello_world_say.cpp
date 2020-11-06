@@ -1,5 +1,7 @@
+#include <filesystem>
 #include <xtd/xtd.forms>
 
+using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::io;
@@ -23,6 +25,22 @@ private:
 };
 
 int main() {
-  if (environment::os_version().is_windows_platform()) file::write_all_text("say.bat", "@echo off\necho Dim Speak >> %TEMP%\\speak.vbs\necho Set Speak=CreateObject(\"sapi.spvoice\") >> %TEMP%\\speak.vbs\necho Speak.Speak %*>> %TEMP%\\speak.vbs\n%TEMP%\\speak.vbs\ndel %TEMP%\\speak.vbs");
+  if (environment::os_version().is_windows_platform()) {
+    file::write_all_lines("say.bat", {
+      "@echo off",
+      "echo Dim Speak >> %TEMP%\\speak.vbs",
+      "echo Set Speak=CreateObject(\"sapi.spvoice\") >> %TEMP%\\speak.vbs",
+      "echo Speak.Speak %* >> %TEMP%\\speak.vbs",
+      "%TEMP%\\speak.vbs",
+      "del %TEMP%\\speak.vbs"
+    });
+  } else if (environment::os_version().is_linux_platform()) {
+    file::write_all_lines("say", {
+      "#!/bin/bash",
+      "echo $* | espeak"
+    });
+    permissions("say", perms::owner_all);
+  }
+  
   application::run(form1());
 }
