@@ -55,19 +55,28 @@ namespace xtd {
       
       /// @brief Sets the set of command-line arguments_ to use when starting the application.
       /// @param value File type–specific arguments_ that the system can associate with the application specified in the FileName property. The default is an empty string (""). On Windows Vista and earlier versions of the Windows operating system, the length of the arguments_ added to the length of the full path to the process must be less than 2080. On Windows 7 and later versions, the length must be less than 32699.
-      void arguments(const std::string& value) {arguments_ = value;}
+      process_start_info& arguments(const std::string& value) {
+        arguments_ = value;
+        return *this;
+      }
       
       /// @brief Gets a value indicating whether to start the process in a new window.
       /// @param createWindow true if the process should be started without creating a new window to contain it; otherwise, false. The default is false.
       /// @return Boolean true if the process should be started without creating a new window to contain it; otherwise, false. The default is false.
       /// @remarks If the UseShellExecute property is true or the UserName and Password properties are not null, the CreateNoWindow property value is ignored and a new window is created.
       bool create_no_window() const {return create_no_window_;}
-      void create_no_window(bool value) {create_no_window_ = value;}
+      process_start_info& create_no_window(bool value) {
+        create_no_window_ = value;
+        return *this;
+      }
       
       /// @brief Gets a value that identifies the domain_ to use when starting the process.
       /// @return string The Active Directory domain_ to use when starting the process. The domain_ property is primarily of interest to users within enterprise environments that use Active Directory.
       std::string domain() const {return domain_;}
-      void domain(const std::string& value) {domain_ = value;}
+      process_start_info& domain(const std::string& value) {
+        domain_ = value;
+        return *this;
+      }
       
       /// @brief Gets the environment variables that apply to this process and its child processes.
       /// @return std::map<std::string, std::string> A generic dictionary containing the environment variables that apply to this process and its child processes.
@@ -84,13 +93,19 @@ namespace xtd {
       /// @return bool true if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, false. The default is false.
       /// @note UseShellExecute must be true if you want to set ErrorDialog to true.
       bool error_dialog() const {return error_dialog_;}
-      void error_dialog(bool value) {error_dialog_ = value;}
+      process_start_info& error_dialog(bool value) {
+        error_dialog_ = value;
+        return *this;
+      }
       
       /// @brief Gets or sets the window handle to use when an error dialog box is shown for a process that cannot be started.
       /// @return intptr A pointer to the handle of the error dialog box that results from a process start failure.
       /// @remarks If ErrorDialog is true, the ErrorDialogParentHandle property specifies the parent window for the dialog box that is shown. It is useful to specify a parent to keep the dialog box in front of the application.
       intptr_t error_dialog_param_handle() const {return error_dialog_param_handle_;}
-      void error_dialog_param_handle(intptr_t value) {error_dialog_param_handle_ = value;}
+      process_start_info& error_dialog_param_handle(intptr_t value) {
+        error_dialog_param_handle_ = value;
+        return *this;
+      }
       
       /// @brief Gets the application or document to start.
       /// @return string The name of the application to start, or the name of a document of a file type that is associated with an application and that has a default open action available to it. The default is an empty string ("").
@@ -98,14 +113,20 @@ namespace xtd {
       /// @remarks The set of file types available to you depends in part on the value of the UseShellExecute property. If UseShellExecute is true, you can start any document and perform operations on the file, such as printing, with the Process component. When UseShellExecute is false, you can start only executables with the Process component.
       /// @remarks You can start a ClickOnce application by setting the FileName property to the location (for example, a Web address) from which you originally installed the application. Do not start a ClickOnce application by specifying its installed location on your hard disk.
       const std::string& file_name() const {return file_name_;}
-      void file_name(const std::string& value) {file_name_ = value;}
+      process_start_info& file_name(const std::string& value) {
+        file_name_ = value;
+        return *this;
+      }
       
       /// @brief Gets or sets a value that indicates whether the Windows user profile is to be loaded from the registry.
       /// @return bool true if the Windows user profile should be loaded; otherwise, false. The default is false.
       /// @remarks This property is referenced if the process is being started by using the user name, password, and domain_.
       /// @remarks If the value is true, the user's profile in the HKEY_USERS registry key is loaded. Loading the profile can be time-consuming. Therefore, it is best to use this value only if you must access the information in the HKEY_CURRENT_USER registry key.
       bool load_user_profile() const {return load_user_profile_;}
-      void load_user_profile(bool value) {load_user_profile_ = value;}
+      process_start_info& load_user_profile(bool value) {
+        load_user_profile_ = value;
+        return *this;
+      }
       
       /// @brief Gets or sets a secure string that contains the user password to use when starting the process.
       /// @return System::Security::Securestd::string The user password to use when starting the process.
@@ -118,12 +139,18 @@ namespace xtd {
       //const xtd::security::secure_string& pasword() const {return password;}
       const std::string& pasword() const {return password_;}
       //void pasword(const xtd::security::secure_string& value) {password = value;}
-      void pasword(const std::string& value) {password_ = value;}
+      process_start_info& pasword(const std::string& value) {
+        password_ = value;
+        return *this;
+      }
 
       /// @brief Gets or sets the user password in clear text to use when starting the process.
       /// @return string The user password in clear text.
       std::string PasswordInClearText() const {return get_password_in_clear_text();}
-      void PasswordInClearText(const std::string& value) {set_password_in_clear_text(value);}
+      process_start_info& PasswordInClearText(const std::string& value) {
+        set_password_in_clear_text(value);
+        return *this;
+      }
       
       /// @brief Gets or sets a value that indicates whether the error output of an application is written to the Process.StandardError stream.
       /// @return bool true if error output should be written to Process::StandardError; otherwise, false. The default is false.
@@ -165,14 +192,20 @@ namespace xtd {
       /// @remarks The code example avoids the deadlock condition by performing asynchronous read operations on the StandardOutput stream. A deadlock condition results if the parent process calls p.StandardOutput.ReadToEnd followed by p.StandardError.ReadToEnd and the child process writes enough text to fill its error stream. The parent process would wait indefinitely for the child process to close its StandardOutput stream. The child process would wait indefinitely for the parent to read from the full StandardError stream.
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
       bool redirect_standard_error() const {return redirect_standard_error_;}
-      void redirect_standard_error(bool value) {redirect_standard_error_ = value;}
+      process_start_info& redirect_standard_error(bool value) {
+        redirect_standard_error_ = value;
+        return *this;
+      }
       
       /// @biref Gets or sets a value indicating whether the input for an application is read from the Process.StandardInput stream.
       /// @return bool true if input should be read from Process.StandardInput; otherwise, false. The default is false.
       /// @remarks A Process can read input text from its standard input stream, typically the keyboard. By redirecting the StandardInput stream, you can programmatically specify the input of a process. For example, instead of using keyboard input, you can provide text from the contents of a designated file or output from another application.
       /// @note You must set UseShellExecute to false if you want to set RedirectStandardInput to true. Otherwise, writing to the StandardInput stream throws an exception.
       bool redirect_standard_input() const {return redirect_standard_input_;}
-      void redirect_standard_input(bool value) {redirect_standard_input_ = value;}
+      process_start_info& redirect_standard_input(bool value) {
+        redirect_standard_input_ = value;
+        return *this;
+      }
       
       /// @brief Gets or sets a value that indicates whether the textual output of an application is written to the Process.StandardOutput stream.
       /// @return bool true if output should be written to Process.StandardOutput; otherwise, false. The default is false.
@@ -206,7 +239,10 @@ namespace xtd {
       /// @remarks The code example avoids the deadlock condition by performing asynchronous read operations on the StandardOutput stream. A deadlock condition results if the parent process calls p.StandardOutput.ReadToEnd followed by p.StandardError.ReadToEnd and the child process writes enough text to fill its error stream. The parent process would wait indefinitely for the child process to close its StandardOutput stream. The child process would wait indefinitely for the parent to read from the full StandardError stream.
       /// @remarks You can use asynchronous read operations to avoid these dependencies and their deadlock potential. Alternately, you can avoid the deadlock condition by creating two threads and reading the output of each stream on a separate thread.
       bool redirect_standard_output() const {return redirect_standard_output_;}
-      void redirect_standard_output(bool value) {redirect_standard_output_ = value;}
+      process_start_info& redirect_standard_output(bool value) {
+        redirect_standard_output_ = value;
+        return *this;
+      }
       
       /// @brief Gets or sets the user name to be used when starting the process.
       /// @return string The user name to use when starting the process.
@@ -214,7 +250,10 @@ namespace xtd {
       /// The WorkingDirectory property must be set if UserName and Password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @remarks If the UserName property is not an empty string, the UseShellExecute property must be false, or an InvalidOperationException will be thrown when the Process.Start(process_start_info) method is called.
       const std::string& user_name() const {return user_name_;}
-      void user_name(const std::string& value) {user_name_ = value;}
+      process_start_info& user_name(const std::string& value) {
+        user_name_ = value;
+        return *this;
+      }
       
       /// @brief Gets or sets a value indicating whether to use the operating system shell to start the process.
       /// @return string true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
@@ -225,14 +264,20 @@ namespace xtd {
       /// @remarks The WorkingDirectory property behaves differently depending on the value of the UseShellExecute property. When UseShellExecute is true, the WorkingDirectory property specifies the location of the executable. If WorkingDirectory is an empty string, it is assumed that the current directory contains the executable.
       /// @remarks When UseShellExecute is false, the WorkingDirectory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When UseShellExecute is false, the FileName property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
       bool use_shell_execute() const {return use_shell_execute_;}
-      void use_shell_execute(bool value) {use_shell_execute_ = value;}
+      process_start_info& use_shell_execute(bool value) {
+        use_shell_execute_ = value;
+        return *this;
+      }
       
       /// @brief Gets or sets the verb to use when opening the application or document specified by the FileName property.
       /// @return string The action to take with the file that the process opens. The default is an empty string (""), which signifies no action.
       /// @remarks Each file name extension has its own set of verbs, which can be obtained by using the Verbs property. For example, the "print" verb will print a document specified by using FileName. The default verb can be specified by using an empty string (""). Examples of verbs are "Edit", "Open", "OpenAsReadOnly", "Print", and "Printto". You should use only verbs that appear in the set of verbs returned by the Verbs property.
       /// @remarks When you use the Verb property, you must include the file name extension when you set the value of the FileName property. The file name does not need to have an extension if you manually enter a value for the Verb property.
       std::string Verb() const {return verb_;}
-      void Verb(const std::string& value) {verb_ = value;}
+      process_start_info& Verb(const std::string& value) {
+        verb_ = value;
+        return *this;
+      }
       
       /// @brief Gets the set of verbs associated with the type of file specified by the FileName property.
       /// @return Array<string> The actions that the system can apply to the file indicated by the FileName property.
@@ -244,7 +289,10 @@ namespace xtd {
       /// @return ProcessWindowStyle One of the enumeration values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is Normal.
       /// @exception InvalidEnumArgumentException The window style is not one of the ProcessWindowStyle enumeration members.
       process_window_style window_style() const {return window_style_;}
-      void window_style(process_window_style value){window_style_ = value;}
+      process_start_info& window_style(process_window_style value){
+        window_style_ = value;
+        return *this;
+      }
       
       /// When the UseShellExecute property is false, gets or sets the working directory for the process to be started. When UseShellExecute is true, gets or sets the directory that contains the process to be started.
       /// @return string When UseShellExecute is true, the fully qualified name of the directory that contains the process to be started. When the UseShellExecute property is false, the working directory for the process to be started. The default is an empty string ("").
@@ -255,7 +303,10 @@ namespace xtd {
       /// @note When UseShellExecute is true, the working directory of the application that starts the executable is also the working directory of the executable.
       /// @remarks When UseShellExecute is false, the WorkingDirectory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
       const std::string& working_directory() const {return working_directory_;}
-      void working_directory(const std::string& value) {working_directory_ = value;}
+      process_start_info& working_directory(const std::string& value) {
+        working_directory_ = value;
+        return *this;
+      }
       
     private:
       std::string get_password_in_clear_text() const;
