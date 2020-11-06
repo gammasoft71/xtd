@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::diagnostics::debug class.
 #pragma once
+#include <filesystem>
 #include <map>
 #include <memory>
 #include <string>
@@ -117,7 +118,11 @@ namespace xtd {
         file_name_ = value;
         return *this;
       }
-      
+      process_start_info& file_name(const std::filesystem::path& value) {
+        file_name_ = value.c_str();
+        return *this;
+      }
+
       /// @brief Gets or sets a value that indicates whether the Windows user profile is to be loaded from the registry.
       /// @return bool true if the Windows user profile should be loaded; otherwise, false. The default is false.
       /// @remarks This property is referenced if the process is being started by using the user name, password, and domain_.
