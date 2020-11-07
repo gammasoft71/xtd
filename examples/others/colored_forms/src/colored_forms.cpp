@@ -14,10 +14,12 @@ int main() {
   button->click += [&] {
     static vector<shared_ptr<form>> forms;
     static auto form_color = known_color::alice_blue;
+    
     auto form = control::create<forms::form>(strings::format("{}", form_color));
     form->back_color(color::from_known_color(form_color));
     form->visible(true);
     forms.push_back(move(form));
+    
     form_color = form_color != known_color::yellow_green ? static_cast<known_color>(static_cast<int>(form_color) + 1) : known_color::alice_blue;
   };
 
