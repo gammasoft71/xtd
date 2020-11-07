@@ -46,7 +46,6 @@ void application::cleanup() {
   if (wxTheApp) {
     wxTheApp->OnExit();
     wxApp::SetInstance(nullptr);
-    wxEntryCleanup();
     delete wxTheApp;
   }
 }
@@ -161,14 +160,12 @@ void application::restart() {
 
 void application::run() {
   initialize(); { // Must be first
-    class uninitializer {
-    public:
-      ~uninitializer() { cleanup(); }
-    } uninitializer;
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, true, 0, 0);
-    wxTheApp->OnRun();
+    static_cast<wx_application*>(wxTheApp)->MainLoop();
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_ACTIVATEAPP, false, 0, 0);
     static_cast<wx_application*>(wxTheApp)->send_message(0, WM_QUIT, 0, 0, 0);
+    wxApp::SetInstance(nullptr);
+    delete wxTheApp;
   }
   if (restart_asked) {
     std::vector<string> command_line_args = environment::get_command_line_args();
