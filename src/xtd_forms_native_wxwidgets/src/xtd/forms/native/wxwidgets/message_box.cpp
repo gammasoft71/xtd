@@ -53,11 +53,11 @@ namespace {
   }
   
   int32_t convert_to_buttons(uint32_t style) {
-    if ((style & MB_BUTTONS_MASK) == MB_RETRYCANCEL) return wxOK | wxCANCEL;
-    if ((style & MB_BUTTONS_MASK) == MB_YESNOCANCEL) return wxYES_NO | wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_RETRYCANCEL) return wxOK|wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_YESNOCANCEL) return wxYES_NO|wxCANCEL;
     if ((style & MB_BUTTONS_MASK) == MB_YESNO) return wxYES_NO;
-    if ((style & MB_BUTTONS_MASK) == MB_ABORTRETRYIGNORE) return wxYES_NO | wxCANCEL;
-    if ((style & MB_BUTTONS_MASK) == MB_OKCANCEL)return wxOK | wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_ABORTRETRYIGNORE) return wxYES_NO|wxCANCEL;
+    if ((style & MB_BUTTONS_MASK) == MB_OKCANCEL)return wxOK|wxCANCEL;
     return wxOK;
   }
   
