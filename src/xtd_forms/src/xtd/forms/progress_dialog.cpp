@@ -160,16 +160,27 @@ void progress_dialog::show_dialog(const iwin32_window& owner) {
   show(owner);
 }
 
+void progress_dialog::show_sheet_dialog(const iwin32_window& owner) {
+  set_option(PROGDLG_MODAL, true);
+  show_sheet(owner);
+}
+
 void progress_dialog::show() {
   native_ = dialog_style_ == xtd::forms::dialog_style::system;
-  if (native_)
-    handle_ = native::progress_dialog::create(0, text_, message_, informations_, marquee_animation_speed_, minimum_, maximum_, value_, options_);
+  if (native_) handle_ = native::progress_dialog::create(0, text_, message_, informations_, marquee_animation_speed_, minimum_, maximum_, value_, options_);
+  native::progress_dialog::show(handle_);
 }
 
 void progress_dialog::show(const iwin32_window& owner) {
   native_ = dialog_style_ == xtd::forms::dialog_style::system;
-  if (native_)
-    handle_ = native::progress_dialog::create(owner.handle(), text_, message_, informations_, marquee_animation_speed_, minimum_, maximum_, value_, options_);
+  if (native_) handle_ = native::progress_dialog::create(owner.handle(), text_, message_, informations_, marquee_animation_speed_, minimum_, maximum_, value_, options_);
+  native::progress_dialog::show(handle_);
+}
+
+void progress_dialog::show_sheet(const iwin32_window& owner) {
+  native_ = dialog_style_ == xtd::forms::dialog_style::system;
+  if (native_) handle_ = native::progress_dialog::create(owner.handle(), text_, message_, informations_, marquee_animation_speed_, minimum_, maximum_, value_, options_);
+  native::progress_dialog::show_sheet(handle_);
 }
 
 void progress_dialog::hide() {

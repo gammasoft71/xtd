@@ -84,7 +84,7 @@ main_form::main_form() {
   startup_open_project_button_.click += [&] {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().open_propject_folder());
-    if (dialog.show_dialog() == dialog_result::ok) open_project(dialog.selected_path());
+    if (dialog.show_sheet_dialog(*this) == dialog_result::ok) open_project(dialog.selected_path());
   };
 
   startup_run_project_button_.parent(startup_panel_);
@@ -99,7 +99,7 @@ main_form::main_form() {
   startup_run_project_button_.click += [&] {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().open_propject_folder());
-    if (dialog.show_dialog() == dialog_result::ok) run_project(dialog.selected_path());
+    if (dialog.show_sheet_dialog(*this) == dialog_result::ok) run_project(dialog.selected_path());
   };
 
   startup_new_project_button_.parent(startup_panel_);
@@ -401,7 +401,7 @@ main_form::main_form() {
   configure_project_location_button_.click += [&] {
     folder_browser_dialog dialog;
     dialog.selected_path(properties::settings::default_settings().create_propject_folder());
-    if (dialog.show_dialog() == dialog_result::ok) {
+    if (dialog.show_sheet_dialog(*this) == dialog_result::ok) {
       properties::settings::default_settings().create_propject_folder(dialog.selected_path());
       properties::settings::default_settings().save();
       configure_project_location_text_box_.text(properties::settings::default_settings().create_propject_folder());
@@ -495,7 +495,7 @@ main_form::main_form() {
       std::filesystem::create_directories(target_path);
       for (auto file : std::filesystem::directory_iterator(xtd_example.path()))
         std::filesystem::copy(file, target_path/file.path().filename());
-      //message_box::show(strings::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
+      //message_box::show(*this, strings::format("Open example \"{}\" in {}.", xtd_example.name(), target_path.string()));
       background_worker_ = std::make_unique<background_worker>();
       background_worker_->do_work += [&](component& sender, do_work_event_args& e) {
         begin_invoke([&] {
@@ -503,7 +503,7 @@ main_form::main_form() {
           progress_dialog_->text(strings::format("Opening {} example", std::any_cast<std::filesystem::path>(e.argument()).filename()));
           progress_dialog_->message("Please wait...");
           progress_dialog_->marquee(true);
-          progress_dialog_->show_dialog(*this);
+          progress_dialog_->show_sheet_dialog(*this);
         });
         process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
       };
@@ -602,7 +602,7 @@ void main_form::new_project(const std::string& project_path, project_type type, 
       progress_dialog_->text(strings::format("Creating {} project", std::get<2>(new_project).filename()));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
-      progress_dialog_->show_dialog(*this);
+      progress_dialog_->show_sheet_dialog(*this);
     });
     process::start(process_start_info().file_name("xtdc").arguments(strings::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
     process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::get<2>(new_project)).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
@@ -627,7 +627,7 @@ void main_form::open_project(const std::string& project_path) {
       progress_dialog_->text(strings::format("Opening {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
-      progress_dialog_->show_dialog(*this);
+      progress_dialog_->show_sheet_dialog(*this);
     });
     process::start(process_start_info().file_name("xtdc").arguments(strings::format("open {}", std::any_cast<std::filesystem::path>(e.argument())).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
   };
@@ -651,7 +651,7 @@ void main_form::run_project(const std::string& project_path) {
       progress_dialog_->text(strings::format("Running {} project", std::any_cast<std::filesystem::path>(e.argument()).filename()));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
-      progress_dialog_->show_dialog(*this);
+      progress_dialog_->show_sheet_dialog(*this);
     });
     process::start(process_start_info().file_name("xtdc").arguments(strings::format("run {}", std::any_cast<std::filesystem::path>(e.argument())).c_str()).window_style(process_window_style::hidden)).wait_for_exit();
   };

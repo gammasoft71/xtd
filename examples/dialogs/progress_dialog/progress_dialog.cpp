@@ -8,7 +8,7 @@ using namespace xtd::forms;
 class form1 : public form {
 public:
   form1() {
-    text("Progrss dialog example");
+    text("Progress dialog example");
     
     button_process.auto_size(true);
     button_process.location({10, 10});
@@ -19,7 +19,7 @@ public:
       dialog.text("Process running");
       dialog.show_skip_button(true);
       dialog.show_remaining_time(true);
-      dialog.show_dialog(*this);
+      dialog.show_sheet_dialog(*this);
       for (auto step = 1; step <= dialog.maximum(); ++step) {
         dialog.value(step);
         dialog.message(strings::format("Step {}/{} ==> {}", dialog.value(), dialog.maximum(), dialog.skipped() ? "skipped" : "done"));
@@ -38,7 +38,7 @@ public:
       dialog.marquee(true);
       dialog.show_cancel_button(true);
       dialog.show_elapsed_time(true);
-      dialog.show_dialog(*this);
+      dialog.show_sheet_dialog(*this);
       while (!dialog.cancelled()) {
         application::yield();
         std::this_thread::sleep_for(100ms);
