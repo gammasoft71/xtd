@@ -100,6 +100,7 @@ intptr_t progress_dialog::create(intptr_t hwnd, const std::string& text, const s
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
 #endif
   auto dialog = new wx_progress_dialog(text, message.empty() ? " " : message, 0, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr, options_to_wx_style(options));
+  dialog->Hide();
   dialog->marquee((options & PROGDLG_MARQUEEPROGRESS) == PROGDLG_MARQUEEPROGRESS, animation_speed);
   dialog->minimum(minimum);
   dialog->maximum(maximum);
@@ -138,6 +139,14 @@ void progress_dialog::minimum(intptr_t dialog, int32_t minimum) {
 void progress_dialog::resume(intptr_t dialog) {
   if (dialog == 0) return;
   reinterpret_cast<wx_progress_dialog*>(dialog)->Resume();
+}
+
+void progress_dialog::show(intptr_t dialog) {
+  reinterpret_cast<wx_progress_dialog*>(dialog)->Show();
+}
+
+void progress_dialog::show_sheet(intptr_t dialog) {
+  reinterpret_cast<wx_progress_dialog*>(dialog)->ShowWindowModal();
 }
 
 bool progress_dialog::skipped(intptr_t dialog) {

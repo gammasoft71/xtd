@@ -153,9 +153,14 @@ namespace xtd {
       void show(const iwin32_window& owner);
       
       /// @brief Runs busy dialog box.
+      void show_sheet(const iwin32_window& owner);
+      
+      /// @brief Runs busy dialog box.
       void show_dialog();
       /// @brief Runs busy dialog box.
       void show_dialog(const iwin32_window& owner);
+      /// @brief Runs busy dialog box.
+      void show_sheet_dialog(const iwin32_window& owner);
 
     private:
       bool get_option(size_t flag) const {return (options_ & flag) == flag;}

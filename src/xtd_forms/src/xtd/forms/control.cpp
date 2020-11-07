@@ -719,9 +719,9 @@ intptr_t control::wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_
     wnd_proc(message);
     return message.result();
   } catch(const std::exception& e) {
-    message_box::show(xtd::strings::format("message: {}", e.what()), xtd::strings::format("Exception {}", xtd::strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+    message_box::show(from_handle(hwnd).value(), xtd::strings::format("message: {}", e.what()), xtd::strings::format("Exception {}", xtd::strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(...) {
-    message_box::show("message: An unknown exception occure", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
+    message_box::show(from_handle(hwnd).value(), "message: An unknown exception occure", "Unknown Exception", message_box_buttons::ok, message_box_icon::error);
   }
   return 0;
 }

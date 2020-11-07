@@ -20,6 +20,8 @@ namespace xtd {
         static void message(intptr_t dialog, const std::string& message);
         static void minimum(intptr_t dialog, int32_t minimum);
         static void resume(intptr_t dialog);
+        static void show(intptr_t dialog);
+        static void show_sheet(intptr_t dialog);
         static bool skipped(intptr_t dialog);
         static void value(intptr_t dialog, int32_t value);
       };
