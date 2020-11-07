@@ -250,21 +250,13 @@ void application::run() {
 void application::run(application_context& context) {
   if (application::application::message_loop_ == true) throw std::runtime_error("Application already running");
   cursor::current(cursors::default_cursor());
-  try {
-    context.thread_exit += application::on_app_thread_exit;
-    native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
-    native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
-    application::message_loop_ = true;
-    if (context.main_form_ != nullptr) context.main_form().show();
-    native::application::run();
-    application::message_loop_ = false;
-  } catch(std::exception& exception) {
-    /// @todo add exception message...
-    cdebug << format("exception ({}) throws : {}", strings::full_class_name(exception), exception.what()) << endl;
-  } catch(...) {
-    /// @todo add exception message...
-    cdebug << "exception (unknown) throws : ..." << endl;
-  }
+  context.thread_exit += application::on_app_thread_exit;
+  native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
+  native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
+  application::message_loop_ = true;
+  if (context.main_form_ != nullptr) context.main_form().show();
+  native::application::run();
+  application::message_loop_ = false;
 }
 
 void application::run(const form& form) {
