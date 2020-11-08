@@ -52,6 +52,6 @@ int main() {
   } catch(const exception& e) {
     message_box::show(strings::format("Message : {}", e.what()), strings::format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(...) {
-    message_box::show("Message : (none)", "Unknown Exception occured", message_box_buttons::ok, message_box_icon::error);
+    message_box::show("Message : (none)", "Unknown exception occured", message_box_buttons::ok, message_box_icon::error);
   }
 }
