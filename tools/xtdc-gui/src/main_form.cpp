@@ -10,6 +10,7 @@
 #include <list>
 #include <filesystem>
 #include <xtd/environment.h>
+#include <xtd/system_exception.h>
 #include <xtd/diagnostics/process.h>
 #include <xtd/drawing/system_icons.h>
 #include <xtd/forms/application.h>
@@ -667,6 +668,13 @@ void main_form::run_project(const std::string& project_path) {
 }
 
 void main_form::main() {
-  application::enable_visual_styles();
-  application::run(main_form());
+  try {
+    application::run(main_form());
+  } catch(const system_exception& e) {
+    message_box::show(e.to_string(), strings::format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+  } catch(const exception& e) {
+    message_box::show(strings::format("Message : {}", e.what()), strings::format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
+  } catch(...) {
+    message_box::show("Message : (none)", "Unknown exception occured", message_box_buttons::ok, message_box_icon::error);
+  }
 }
