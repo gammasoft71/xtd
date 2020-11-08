@@ -6,6 +6,7 @@ set(XTD_INCLUDES
   include/xtd/__opaque_environment.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
+  include/xtd/caller_info.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
   include/xtd/guid.h
@@ -19,9 +20,11 @@ set(XTD_INCLUDES
   include/xtd/platform_id.h
   include/xtd/startup.h
   include/xtd/static.h
+  include/xtd/system_exception.h
   include/xtd/typeof.h
   include/xtd/unused.h
   include/xtd/using.h
+  include/xtd/va_args_comma.h
   include/xtd/version.h
   include/xtd/xtd.core
   include/xtd/xtd.core.h
