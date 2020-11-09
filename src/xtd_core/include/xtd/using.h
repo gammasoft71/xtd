@@ -8,7 +8,7 @@ namespace xtd {
   /// xtd.core
   /// @par Examples
   /// @code
-  /// // mo is released automatically after the end closure }.
+  /// // values is released automatically after the end closure }.
   /// using_(auto values = {1, 2, 3, 4, 5}) {
   ///   cout << strings::join(", ", values) << endl;
   /// }
