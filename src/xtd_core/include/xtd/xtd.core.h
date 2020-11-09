@@ -44,4 +44,5 @@
 #include "collections/specialized/string_pair.h"
 #include "collections/specialized/string_vector.h"
 #include "io/file_format_exception.h"
+#include "io/directory_not_found_exception.h"
 #include "io/ioexception.h"

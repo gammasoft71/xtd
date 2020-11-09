@@ -49,6 +49,7 @@ set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
   include/xtd/collections/specialized/string_vector.h
 )
 set(XTD_IO_INCLUDES
+  include/xtd/io/directory_not_found_exception.h
   include/xtd/io/file_format_exception.h
   include/xtd/io/ioexception.h
 )

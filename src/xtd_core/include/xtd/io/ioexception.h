@@ -4,7 +4,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   namespace io {
-    /// @brief The exception that is thrown when the format of an argument does not meet the parameter specifications of the invoked method.
+    /// @brief The exception that is thrown when an I/O error occurs.
     /// @par Library
     /// xtd.core
     /// @par Examples

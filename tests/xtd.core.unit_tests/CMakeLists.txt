@@ -13,10 +13,8 @@ set(SOURCES
   src/divided_by_zero_exception.cpp
   src/domain_exception.cpp
   src/environment.cpp
-  src/file_format_exception.cpp
   src/format_exception.cpp
   src/guid.cpp
-  src/ioexception.cpp
   src/not_finite_number_exception.cpp
   src/object.cpp
   src/overflow_exception.cpp
@@ -24,14 +22,20 @@ set(SOURCES
   src/underflow_exception.cpp
   src/version.cpp
 )
+set(IO_SOURCES
+  src/io/directory_not_found_exception.cpp
+  src/io/file_format_exception.cpp
+  src/io/ioexception.cpp
+)
 source_group(src FILES ${SOURCES})
+source_group(src\\io FILES ${IO_SOURCES})
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Target
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} ${IO_SOURCES})
 target_link_libraries(${PROJECT_NAME} xtd.core xtd.tunit)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
 
