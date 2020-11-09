@@ -48,4 +48,5 @@
 #include "io/end_of_stream_exception.h"
 #include "io/file_format_exception.h"
 #include "io/file_load_exception.h"
+#include "io/file_not_found_exception.h"
 #include "io/ioexception.h"
