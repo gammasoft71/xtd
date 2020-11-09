@@ -17,6 +17,7 @@
 #include "domain_exception.h"
 #include "environment.h"
 #include "environment_variable_target.h"
+#include "file_format_exception.h"
 #include "format_exception.h"
 #include "guid.h"
 #include "icomparable.h"

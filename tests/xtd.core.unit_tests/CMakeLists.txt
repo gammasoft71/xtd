@@ -13,6 +13,7 @@ set(SOURCES
   src/divided_by_zero_exception.cpp
   src/domain_exception.cpp
   src/environment.cpp
+  src/file_format_exception.cpp
   src/format_exception.cpp
   src/guid.cpp
   src/not_finite_number_exception.cpp
