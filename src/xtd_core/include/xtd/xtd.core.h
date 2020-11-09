@@ -22,6 +22,7 @@
 #include "interface.h"
 #include "literals.h"
 #include "nameof.h"
+#include "not_finite_number_exception.h"
 #include "object.h"
 #include "operating_system.h"
 #include "platform_id.h"

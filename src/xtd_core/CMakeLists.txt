@@ -20,6 +20,7 @@ set(XTD_INCLUDES
   include/xtd/interface.h
   include/xtd/literals.h
   include/xtd/nameof.h
+  include/xtd/not_finite_number_exception.h
   include/xtd/object.h
   include/xtd/operating_system.h
   include/xtd/platform_id.h
