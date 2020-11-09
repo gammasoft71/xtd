@@ -27,6 +27,7 @@ set(IO_SOURCES
   src/io/drive_not_found_exception.cpp
   src/io/end_of_stream_exception.cpp
   src/io/file_format_exception.cpp
+  src/io/file_load_exception.cpp
   src/io/ioexception.cpp
 )
 source_group(src FILES ${SOURCES})
