@@ -50,6 +50,7 @@ set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
 )
 set(XTD_IO_INCLUDES
   include/xtd/io/directory_not_found_exception.h
+  include/xtd/io/drive_not_found_exception.h
   include/xtd/io/file_format_exception.h
   include/xtd/io/ioexception.h
 )

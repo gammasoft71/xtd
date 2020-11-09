@@ -24,6 +24,7 @@ set(SOURCES
 )
 set(IO_SOURCES
   src/io/directory_not_found_exception.cpp
+  src/io/drive_not_found_exception.cpp
   src/io/file_format_exception.cpp
   src/io/ioexception.cpp
 )
