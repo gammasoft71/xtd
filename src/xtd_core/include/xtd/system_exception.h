@@ -13,6 +13,9 @@ namespace xtd {
   /// xtd.core
   class system_exception : public std::exception {
   public:
+    /// @brief Optional reference wrapper on std::eception
+    using exception_ref = std::optional<std::reference_wrapper<const std::exception>>;
+    
     /// @brief Create a new instance of class system_exception
     /// @param information (optional) Conatains current information about memeber name, file path and  line number in the file where the exception is occurred. Typically #caller_information_.
     /// @remarks Message is set with the default message associate to the exception.
@@ -86,7 +89,7 @@ namespace xtd {
     
     /// @brief Gets the exception instance that caused the current exception.
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
-    virtual std::optional<std::reference_wrapper<const std::exception>> inner_exception() const noexcept {return inner_exception_;}
+    virtual exception_ref inner_exception() const noexcept {return inner_exception_;}
     
     /// @brief Get Line number where the exception occurred
     /// @return the line number where exception occurred
@@ -130,7 +133,7 @@ namespace xtd {
   private:
     static constexpr const char* default_message_ = "Sytem error.";
     std::string message_;
-    std::optional<std::reference_wrapper<const std::exception>> inner_exception_;
+    exception_ref inner_exception_;
     std::error_code error_;
     std::string help_link_;
     xtd::caller_info information_;
