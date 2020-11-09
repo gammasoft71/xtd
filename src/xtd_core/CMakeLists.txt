@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.core VERSION 1.0.0)
 set(XTD_INCLUDES
   include/xtd/__opaque_environment.h
+  include/xtd/argument_exception.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/caller_info.h

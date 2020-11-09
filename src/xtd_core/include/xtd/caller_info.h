@@ -29,13 +29,13 @@ namespace xtd {
     
     /// @brief Return an empty caller info.
     /// @return Empty caller info.
-    static xtd::caller_info empty() {return {};}
+    static xtd::caller_info empty() noexcept {return {};}
     
     /// @cond
-    caller_info(const caller_info& caller_info) = default;
-    caller_info& operator=(const caller_info&) = default;
-    bool operator==(const caller_info& li) const {return this->member_name_ == li.member_name_ && this->file_path_ == li.file_path_ && this->line_number_ == li.line_number_;}
-    bool operator!=(const caller_info& li) const {return !this->operator==(li);}
+    caller_info(const caller_info& caller_info) noexcept = default;
+    caller_info& operator=(const caller_info&) noexcept = default;
+    bool operator==(const caller_info& li) const noexcept {return this->member_name_ == li.member_name_ && this->file_path_ == li.file_path_ && this->line_number_ == li.line_number_;}
+    bool operator!=(const caller_info& li) const noexcept {return !this->operator==(li);}
     /// @endcond
     
     /// @brief Gets the member name
@@ -50,16 +50,22 @@ namespace xtd {
     /// @return int32 line number
     unsigned int line_number() const noexcept {return this->line_number_;}
     
-    /// @cond
-    friend std::ostream& operator<<(std::ostream& os, const xtd::caller_info caller_info) noexcept {
-      if (caller_info.file_path_ == "" && caller_info.line_number_ == 0 && caller_info.member_name_ == "")
-        return os << "{Empty}";
-      if (caller_info.member_name_ == "")
-        return os << "{file_path=\"" << caller_info.file_path_ << "\", line_number=" << caller_info.line_number_<< "}";
-      return os << "{member_name=\"" << caller_info.member_name_ << "\", file_path=\"" << caller_info.file_path_ << "\", line_number=" << caller_info.line_number_<< "}";
+    std::string to_string() const noexcept {
+      if (file_path_ == "" && line_number_ == 0 && member_name_ == "") return "{Empty}";
+      if (member_name_ == "") return "{file_path=\"" + file_path_ + "\", line_number=" + std::to_string(line_number_) + "}";
+      return "{member_name=\"" + member_name_ + "\", file_path=\"" + file_path_ + "\", line_number=" + std::to_string(line_number_) + "}";
     }
-    /// @endcond
     
+    std::string to_trace() const noexcept {
+      if (file_path_ == "" && line_number_ == 0 && member_name_ == "") return "";
+      if (member_name_ == "") return "  at {unknown} in " + file_path_ + ": " + std::to_string(line_number_);
+      return "  at " + member_name_ + " in " + file_path_ + ": " + std::to_string(line_number_);
+    }
+    
+    /// @cond
+    friend std::ostream& operator<<(std::ostream& os, const xtd::caller_info caller_info) noexcept {return os << caller_info.to_string();}
+    /// @endcond
+
   private:
     std::string member_name_;
     std::string file_path_;

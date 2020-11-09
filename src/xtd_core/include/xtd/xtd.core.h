@@ -7,6 +7,7 @@
 
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
+#include "argument_exception.h"
 #include "bit_converter.h"
 #include "block_scope.h"
 #include "environment.h"
