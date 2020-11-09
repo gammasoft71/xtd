@@ -5,6 +5,7 @@ project(xtd.core.unit_tests)
 set(SOURCES
   src/main.cpp 
   src/argument_exception.cpp
+  src/argument_null_exception.cpp
   src/bit_converter.cpp
   src/bytes_assert.h
   src/environment.cpp
