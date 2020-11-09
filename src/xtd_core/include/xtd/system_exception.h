@@ -149,4 +149,5 @@ namespace xtd {
 ///   ...
 /// }
 /// @endcode
+/// @ingroup keywords
 #define system_exception_(...) system_exception(add_caller_information_(__VA_ARGS__))

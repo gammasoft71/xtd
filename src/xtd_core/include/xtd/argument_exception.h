@@ -83,4 +83,5 @@ namespace xtd {
 ///   ...
 /// }
 /// @endcode
+/// @ingroup keywords
 #define argument_exception_(...) argument_exception(add_caller_info_(__VA_ARGS__))
