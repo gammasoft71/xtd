@@ -32,10 +32,10 @@ namespace xtd {
     static xtd::caller_info empty() noexcept {return {};}
     
     /// @cond
-    caller_info(const caller_info& caller_info) noexcept = default;
-    caller_info& operator=(const caller_info&) noexcept = default;
-    bool operator==(const caller_info& li) const noexcept {return this->member_name_ == li.member_name_ && this->file_path_ == li.file_path_ && this->line_number_ == li.line_number_;}
-    bool operator!=(const caller_info& li) const noexcept {return !this->operator==(li);}
+    caller_info(const caller_info& caller_info) = default;
+    caller_info& operator=(const caller_info&) = default;
+    bool operator==(const caller_info& li) const {return this->member_name_ == li.member_name_ && this->file_path_ == li.file_path_ && this->line_number_ == li.line_number_;}
+    bool operator!=(const caller_info& li) const {return !this->operator==(li);}
     /// @endcond
     
     /// @brief Gets the member name
