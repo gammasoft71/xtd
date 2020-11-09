@@ -10,6 +10,7 @@ set(XTD_INCLUDES
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
   include/xtd/guid.h
+  include/xtd/hresults.h
   include/xtd/icomparable.h
   include/xtd/iequatable.h
   include/xtd/interface.h

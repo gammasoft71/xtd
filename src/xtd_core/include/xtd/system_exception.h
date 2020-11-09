@@ -14,8 +14,8 @@ namespace xtd {
     /// @brief Create a new instance of class system_exception
     /// @remarks Message is set with the default message associate to the error.
     system_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : info_(info) {}
-    explicit system_exception(const std::string& str, const xtd::caller_info& info = xtd::caller_info::empty()) : what_(str), info_(info) {}
-    explicit system_exception(const std::string& str, int32_t hresult, std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : what_(str), hresult_(hresult), help_link_(help_link), info_(info) {}
+    explicit system_exception(const std::string& message, const xtd::caller_info& info = xtd::caller_info::empty()) : message_(message), info_(info) {}
+    explicit system_exception(const std::string& message, uint32_t hresult, std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : message_(message), hresult_(hresult), help_link_(help_link), info_(info) {}
 
     /// @cond
     system_exception(const system_exception&) = default;
@@ -24,17 +24,21 @@ namespace xtd {
     
     xtd::caller_info caller_info() const {return info_;}
     
-    const char* what() const noexcept override {return what_.c_str();}
-    
     const std::string& help_link() const noexcept {return help_link_;}
     
-    int32_t hresult() const noexcept {return hresult_;}
+    uint32_t hresult() const noexcept {return hresult_;}
 
-    std::string to_string() const {return info_ == caller_info::empty() ? xtd::strings::format("{} : {}", strings::class_name(*this), what()) : xtd::strings::format("{} : {}\n{}", strings::class_name(*this), what(), caller_info());}
+    std::string name() const {return xtd::strings::class_name(*this);}
+    
+    const std::string& message() const {return message_;}
+    
+    std::string to_string() const {return info_ == caller_info::empty() ? xtd::strings::format("{} : {}", name(), what()) : xtd::strings::format("{} : {}\n{}", name(), message(), caller_info());}
+    
+    const char* what() const noexcept override {return message_.c_str();}
 
   private:
-    std::string what_ = "Sytem error.";
-    int32_t hresult_ = 0;
+    std::string message_ = "Sytem error.";
+    uint32_t hresult_ = 0;
     std::string help_link_;
     xtd::caller_info info_;
   };
