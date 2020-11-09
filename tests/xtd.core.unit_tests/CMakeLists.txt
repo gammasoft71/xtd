@@ -30,6 +30,7 @@ set(IO_SOURCES
   src/io/file_load_exception.cpp
   src/io/file_not_found_exception.cpp
   src/io/ioexception.cpp
+  src/io/path_too_long_exception.cpp
 )
 source_group(src FILES ${SOURCES})
 source_group(src\\io FILES ${IO_SOURCES})
