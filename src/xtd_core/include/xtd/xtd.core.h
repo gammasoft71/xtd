@@ -9,6 +9,7 @@
 #include <xtd/xtd.strings>
 #include "argument_exception.h"
 #include "argument_null_exception.h"
+#include "argument_out_of_range_exception.h"
 #include "bit_converter.h"
 #include "block_scope.h"
 #include "environment.h"
