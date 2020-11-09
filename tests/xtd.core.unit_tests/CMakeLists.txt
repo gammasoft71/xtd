@@ -11,6 +11,7 @@ set(SOURCES
   src/bit_converter.cpp
   src/bytes_assert.h
   src/divided_by_zero_exception.cpp
+  src/domain_exception.cpp
   src/environment.cpp
   src/guid.cpp
   src/not_finite_number_exception.cpp

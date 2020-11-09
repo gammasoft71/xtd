@@ -12,6 +12,7 @@ set(XTD_INCLUDES
   include/xtd/block_scope.h
   include/xtd/caller_info.h
   include/xtd/divided_by_zero_exception.h
+  include/xtd/domain_exception.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
   include/xtd/guid.h
