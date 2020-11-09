@@ -10,6 +10,7 @@ set(SOURCES
   src/arithmetic_exception.cpp
   src/bit_converter.cpp
   src/bytes_assert.h
+  src/divided_by_zero_exception.cpp
   src/environment.cpp
   src/guid.cpp
   src/object.cpp

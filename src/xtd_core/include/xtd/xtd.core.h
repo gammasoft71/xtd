@@ -13,6 +13,7 @@
 #include "arithmetic_exception.h"
 #include "bit_converter.h"
 #include "block_scope.h"
+#include "divided_by_zero_exception.h"
 #include "environment.h"
 #include "environment_variable_target.h"
 #include "guid.h"
