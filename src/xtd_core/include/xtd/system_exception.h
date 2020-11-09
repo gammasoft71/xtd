@@ -131,7 +131,7 @@ namespace xtd {
     const char* what() const noexcept override {return message().c_str();}
 
   private:
-    static constexpr const char* default_message_ = "Sytem error.";
+    static constexpr const char* default_message_ = "System error.";
     std::string message_;
     exception_ref inner_exception_;
     std::error_code error_;

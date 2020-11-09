@@ -9,6 +9,7 @@ set(SOURCES
   src/environment.cpp
   src/guid.cpp
   src/object.cpp
+  src/system_exception.cpp
   src/version.cpp
 )
 source_group(src FILES ${SOURCES})
