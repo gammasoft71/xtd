@@ -7,6 +7,7 @@ set(SOURCES
   src/argument_exception.cpp
   src/argument_null_exception.cpp
   src/argument_out_of_range_exception.cpp
+  src/arithmetic_exception.cpp
   src/bit_converter.cpp
   src/bytes_assert.h
   src/environment.cpp

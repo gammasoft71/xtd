@@ -3,7 +3,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The exception that is thrown when one of the arguments provided to a method is null.
+  /// @brief The exception that is thrown when one of the arguments provided to a method is out of range.
   /// @par Library
   /// xtd.core
   /// @par Examples

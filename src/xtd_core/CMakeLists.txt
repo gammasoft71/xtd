@@ -7,6 +7,7 @@ set(XTD_INCLUDES
   include/xtd/argument_exception.h
   include/xtd/argument_null_exception.h
   include/xtd/argument_out_of_range_exception.h
+  include/xtd/arithmetic_exception.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/caller_info.h
