@@ -25,6 +25,7 @@
 #include "not_finite_number_exception.h"
 #include "object.h"
 #include "operating_system.h"
+#include "overflow_exception.h"
 #include "platform_id.h"
 #include "startup.h"
 #include "static.h"

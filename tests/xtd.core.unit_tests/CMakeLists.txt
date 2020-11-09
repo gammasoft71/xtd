@@ -15,6 +15,7 @@ set(SOURCES
   src/guid.cpp
   src/not_finite_number_exception.cpp
   src/object.cpp
+  src/overflow_exception.cpp
   src/system_exception.cpp
   src/version.cpp
 )

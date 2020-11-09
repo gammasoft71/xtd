@@ -23,6 +23,7 @@ set(XTD_INCLUDES
   include/xtd/not_finite_number_exception.h
   include/xtd/object.h
   include/xtd/operating_system.h
+  include/xtd/overflow_exception.h
   include/xtd/platform_id.h
   include/xtd/startup.h
   include/xtd/static.h
