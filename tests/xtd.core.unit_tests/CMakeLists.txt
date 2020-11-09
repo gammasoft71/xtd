@@ -17,6 +17,7 @@ set(SOURCES
   src/object.cpp
   src/overflow_exception.cpp
   src/system_exception.cpp
+  src/underflow_exception.cpp
   src/version.cpp
 )
 source_group(src FILES ${SOURCES})

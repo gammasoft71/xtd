@@ -29,6 +29,7 @@ set(XTD_INCLUDES
   include/xtd/static.h
   include/xtd/system_exception.h
   include/xtd/typeof.h
+  include/xtd/underflow_exception.h
   include/xtd/unused.h
   include/xtd/using.h
   include/xtd/va_args_comma.h

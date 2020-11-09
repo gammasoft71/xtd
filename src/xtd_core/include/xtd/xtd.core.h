@@ -31,6 +31,7 @@
 #include "static.h"
 #include "system_exception.h"
 #include "typeof.h"
+#include "underflow_exception.h"
 #include "unused.h"
 #include "using.h"
 #include "va_args_comma.h"
