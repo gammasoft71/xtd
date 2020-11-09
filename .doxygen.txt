@@ -2,9 +2,9 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 
-PROJECT_NAME           = "xtd.environment - Reference Guide"
+PROJECT_NAME           = "xtd.core - Reference Guide"
 PROJECT_NUMBER         = 1.0.0
-PROJECT_BRIEF          = "Modern c++17 library providing information about, and means to manipulate, the current environment and platform on Windows, macOS, Linux, iOS and android."
+PROJECT_BRIEF          = "Modern c++17 library providing fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.
 PROJECT_LOGO           = docs/pictures/environment_doxygen.png
 OUTPUT_DIRECTORY       =
 ALWAYS_DETAILED_SEC    = YES
