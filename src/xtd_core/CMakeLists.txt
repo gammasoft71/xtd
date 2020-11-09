@@ -15,6 +15,7 @@ set(XTD_INCLUDES
   include/xtd/domain_exception.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
+  include/xtd/format_exception.h
   include/xtd/guid.h
   include/xtd/icomparable.h
   include/xtd/iequatable.h
