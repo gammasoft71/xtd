@@ -7,10 +7,10 @@ using namespace xtd::io;
 using namespace xtd::tunit;
 
 namespace unit_tests {
-  class test_class_(test_file_format_exception) {
+  class test_class_(test_ioexception) {
   public:
     void test_method_(default_creator) {
-      file_format_exception e;
+      ioexception e;
       assert::are_equal_(std::system_category(), e.error().category());
       assert::is_false_(e.inner_exception().has_value());
       assert::is_empty(e.file_path());
@@ -18,16 +18,16 @@ namespace unit_tests {
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
-      assert::are_equal_("Input file or data stream does not conform to the expected file format specification.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("I/O error occured.", e.message());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::is_empty(e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Input file or data stream does not conform to the expected file format specification.", e.to_string());
-      assert::are_equal_("Input file or data stream does not conform to the expected file format specification.", e.what());
+      assert::are_equal_("xtd::io::ioexception : I/O error occured.", e.to_string());
+      assert::are_equal_("I/O error occured.", e.what());
     }
 
     void test_method_(default_creator_with_caller_info) {
       auto info = caller_info_;
-      file_format_exception e(info);
+      ioexception e(info);
       assert::are_equal_(std::system_category(), e.error().category());
       assert::is_false_(e.inner_exception().has_value());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -35,15 +35,15 @@ namespace unit_tests {
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
-      assert::are_equal_("Input file or data stream does not conform to the expected file format specification.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("I/O error occured.", e.message());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Input file or data stream does not conform to the expected file format specification.\n" + info.to_trace(), e.to_string());
-      assert::are_equal_("Input file or data stream does not conform to the expected file format specification.", e.what());
+      assert::are_equal_("xtd::io::ioexception : I/O error occured.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("I/O error occured.", e.what());
     }
 
     void test_method_(creator_with_message) {
-      file_format_exception e("Test excpetion message.");
+      ioexception e("Test excpetion message.");
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(std::system_category(), e.error().category());
       assert::is_empty(e.file_path());
@@ -52,15 +52,15 @@ namespace unit_tests {
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::is_empty(e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.", e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.", e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
     void test_method_(creator_with_message_and_caller_info) {
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", info);
+      ioexception e("Test excpetion message.", info);
       assert::are_equal_(info.file_path(), e.file_path());
       assert::is_empty_(e.help_link());
       assert::are_equal_(0, e.error().value());
@@ -69,15 +69,15 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
     void test_method_(creator_with_message_error_and_caller_info) {
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), info);
+      ioexception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), info);
       assert::are_equal_(EBUSY, e.error().value());
       assert::are_equal_(std::generic_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -86,15 +86,15 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
     void test_method_(creator_with_message_help_link_and_caller_info) {
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", "https://codedocs.xyz/gammasoft71/xtd_core/", info);
+      ioexception e("Test excpetion message.", "https://codedocs.xyz/gammasoft71/xtd_core/", info);
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(std::system_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -103,15 +103,15 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
     void test_method_(creator_with_message_error_help_link_and_caller_info) {
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
+      ioexception e("Test excpetion message.", std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
       assert::are_equal_(EBUSY, e.error().value());
       assert::are_equal_(std::generic_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -120,15 +120,15 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
     void test_method_(creator_with_message_and_inner_exception) {
       system_exception inner_exception;
-      file_format_exception e("Test excpetion message.", inner_exception);
+      ioexception e("Test excpetion message.", inner_exception);
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(std::system_category(), e.error().category());
       assert::is_empty(e.file_path());
@@ -138,16 +138,16 @@ namespace unit_tests {
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::is_empty(e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.", e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.", e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
     void test_method_(creator_with_message_inner_exception_and_caller_info) {
       system_exception inner_exception;
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", inner_exception, info);
+      ioexception e("Test excpetion message.", inner_exception, info);
       assert::are_equal_(info.file_path(), e.file_path());
       assert::is_empty_(e.help_link());
       assert::are_equal_(0, e.error().value());
@@ -157,16 +157,16 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
     void test_method_(creator_with_message_inner_exception_error_and_caller_info) {
       system_exception inner_exception;
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), info);
+      ioexception e("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), info);
       assert::are_equal_(EBUSY, e.error().value());
       assert::are_equal_(std::generic_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -176,16 +176,16 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
     void test_method_(creator_with_message_inner_exception_help_link_and_caller_info) {
       system_exception inner_exception;
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", inner_exception, "https://codedocs.xyz/gammasoft71/xtd_core/", info);
+      ioexception e("Test excpetion message.", inner_exception, "https://codedocs.xyz/gammasoft71/xtd_core/", info);
       assert::are_equal_(0, e.error().value());
       assert::are_equal_(std::system_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -195,16 +195,16 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
     void test_method_(creator_with_message_inner_exception_error_help_link_and_caller_info) {
       system_exception inner_exception;
       auto info = caller_info_;
-      file_format_exception e("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
+      ioexception e("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
       assert::are_equal_(EBUSY, e.error().value());
       assert::are_equal_(std::generic_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -214,16 +214,16 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
     void test_method_(copy_constructor) {
       system_exception inner_exception;
       auto info = caller_info_;
-      file_format_exception e = file_format_exception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
+      ioexception e = ioexception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
       assert::are_equal_(EBUSY, e.error().value());
       assert::are_equal_(std::generic_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -233,17 +233,17 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
     void test_method_(copy_operator) {
       system_exception inner_exception;
       auto info = caller_info_;
-      file_format_exception e;
-      e = file_format_exception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
+      ioexception e;
+      e = ioexception("Test excpetion message.", inner_exception, std::error_code(EBUSY, std::generic_category()), "https://codedocs.xyz/gammasoft71/xtd_core/", info);
       assert::are_equal_(EBUSY, e.error().value());
       assert::are_equal_(std::generic_category(), e.error().category());
       assert::are_equal_(info.file_path(), e.file_path());
@@ -253,9 +253,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::io::file_format_exception", e.name());
+      assert::are_equal_("xtd::io::ioexception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::io::file_format_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::io::ioexception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
   };

@@ -16,6 +16,7 @@ set(SOURCES
   src/file_format_exception.cpp
   src/format_exception.cpp
   src/guid.cpp
+  src/ioexception.cpp
   src/not_finite_number_exception.cpp
   src/object.cpp
   src/overflow_exception.cpp

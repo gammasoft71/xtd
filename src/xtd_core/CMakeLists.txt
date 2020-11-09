@@ -50,6 +50,7 @@ set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
 )
 set(XTD_IO_INCLUDES
   include/xtd/io/file_format_exception.h
+  include/xtd/io/ioexception.h
 )
 set(SOURCES
   src/__opaque_environment_gcc.cpp
