@@ -1,6 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <stdexcept>
+#include <system_error>
 #include <xtd/strings.h>
 #include "caller_info.h"
 
@@ -15,7 +16,7 @@ namespace xtd {
     /// @remarks Message is set with the default message associate to the error.
     system_exception(const xtd::caller_info& info = xtd::caller_info::empty()) : info_(info) {}
     explicit system_exception(const std::string& message, const xtd::caller_info& info = xtd::caller_info::empty()) : message_(message), info_(info) {}
-    explicit system_exception(const std::string& message, uint32_t hresult, std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : message_(message), hresult_(hresult), help_link_(help_link), info_(info) {}
+    explicit system_exception(const std::string& message, const std::error_code& error, std::string& help_link, const xtd::caller_info& info = xtd::caller_info::empty()) : message_(message), error_(error), help_link_(help_link), info_(info) {}
 
     /// @cond
     system_exception(const system_exception&) = default;
@@ -26,7 +27,7 @@ namespace xtd {
     
     const std::string& help_link() const noexcept {return help_link_;}
     
-    uint32_t hresult() const noexcept {return hresult_;}
+    std::error_code error() const noexcept {return error_;}
 
     std::string name() const {return xtd::strings::class_name(*this);}
     
@@ -38,7 +39,7 @@ namespace xtd {
 
   private:
     std::string message_ = "Sytem error.";
-    uint32_t hresult_ = 0;
+    std::error_code error_;
     std::string help_link_;
     xtd::caller_info info_;
   };
