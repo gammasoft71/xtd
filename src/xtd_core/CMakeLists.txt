@@ -15,7 +15,6 @@ set(XTD_INCLUDES
   include/xtd/domain_exception.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
-  include/xtd/file_format_exception.h
   include/xtd/format_exception.h
   include/xtd/guid.h
   include/xtd/icomparable.h
@@ -49,6 +48,9 @@ set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
 )
+set(XTD_IO_INCLUDES
+  include/xtd/io/file_format_exception.h
+)
 set(SOURCES
   src/__opaque_environment_gcc.cpp
   src/__opaque_environment_win32.cpp
@@ -59,6 +61,7 @@ set(SOURCES
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\collections FILES ${XTD_COLLECTIONS_INCLUDES})
 source_group(include\\xtd\\collections\\specialized FILES ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES})
+source_group(include\\xtd\\io FILES ${XTD_IO_INCLUDES})
 source_group(src FILES ${SOURCES})
 
 # Options
@@ -66,7 +69,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_IO_INCLUDES} ${SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

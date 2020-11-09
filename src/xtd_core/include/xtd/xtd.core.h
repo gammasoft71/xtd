@@ -17,7 +17,6 @@
 #include "domain_exception.h"
 #include "environment.h"
 #include "environment_variable_target.h"
-#include "file_format_exception.h"
 #include "format_exception.h"
 #include "guid.h"
 #include "icomparable.h"
@@ -44,3 +43,4 @@
 #include "collections/specialized/string_map.h"
 #include "collections/specialized/string_pair.h"
 #include "collections/specialized/string_vector.h"
+#include "io/file_format_exception.h"
