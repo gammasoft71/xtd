@@ -34,7 +34,13 @@ namespace xtd {
     const std::string& message() const {return message_;}
     
     std::string to_string() const {return info_ == caller_info::empty() ? xtd::strings::format("{} : {}", name(), what()) : xtd::strings::format("{} : {}\n{}", name(), message(), caller_info());}
-    
+
+    /// @cond
+    friend std::ostream& operator<<(std::ostream& os, const xtd::system_exception& e) noexcept {
+      return os << e.to_string();
+    }
+    /// @endcond
+
     const char* what() const noexcept override {return message_.c_str();}
 
   private:
