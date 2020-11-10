@@ -29,6 +29,7 @@ set(SOURCES
   src/overflow_exception.cpp
   src/platform_not_supported_exception.cpp
   src/system_exception.cpp
+  src/time_out_exception.cpp
   src/underflow_exception.cpp
   src/version.cpp
 )

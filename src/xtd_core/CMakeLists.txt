@@ -40,6 +40,7 @@ set(XTD_INCLUDES
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/system_exception.h
+  include/xtd/time_out_exception.h
   include/xtd/typeof.h
   include/xtd/underflow_exception.h
   include/xtd/unused.h
