@@ -19,6 +19,7 @@ set(XTD_INCLUDES
   include/xtd/guid.h
   include/xtd/icomparable.h
   include/xtd/iequatable.h
+  include/xtd/index_out_of_range_exception.h
   include/xtd/interface.h
   include/xtd/literals.h
   include/xtd/nameof.h

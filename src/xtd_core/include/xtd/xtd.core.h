@@ -21,6 +21,7 @@
 #include "guid.h"
 #include "icomparable.h"
 #include "iequatable.h"
+#include "index_out_of_range_exception.h"
 #include "interface.h"
 #include "literals.h"
 #include "nameof.h"
