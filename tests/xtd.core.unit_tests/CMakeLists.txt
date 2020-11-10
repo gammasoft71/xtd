@@ -21,6 +21,7 @@ set(SOURCES
   src/invalid_program_exception.cpp
   src/length_exception.cpp
   src/not_finite_number_exception.cpp
+  src/not_implemented_exception.cpp
   src/object.cpp
   src/overflow_exception.cpp
   src/system_exception.cpp

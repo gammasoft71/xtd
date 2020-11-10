@@ -30,6 +30,7 @@
 #include "literals.h"
 #include "nameof.h"
 #include "not_finite_number_exception.h"
+#include "not_implemented_exception.h"
 #include "object.h"
 #include "operating_system.h"
 #include "overflow_exception.h"
