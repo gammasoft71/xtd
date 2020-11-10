@@ -26,6 +26,7 @@
 #include "invalid_cast_exception.h"
 #include "invalid_operation_exception.h"
 #include "invalid_program_exception.h"
+#include "length_exception.h"
 #include "literals.h"
 #include "nameof.h"
 #include "not_finite_number_exception.h"
