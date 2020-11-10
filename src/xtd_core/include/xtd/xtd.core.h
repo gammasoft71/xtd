@@ -36,6 +36,7 @@
 #include "operating_system.h"
 #include "overflow_exception.h"
 #include "platform_id.h"
+#include "platform_not_supported_exception.h"
 #include "startup.h"
 #include "static.h"
 #include "system_exception.h"

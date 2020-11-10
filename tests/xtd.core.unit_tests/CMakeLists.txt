@@ -25,6 +25,7 @@ set(SOURCES
   src/not_supported_exception.cpp
   src/object.cpp
   src/overflow_exception.cpp
+  src/platform_not_supported_exception.cpp
   src/system_exception.cpp
   src/underflow_exception.cpp
   src/version.cpp
