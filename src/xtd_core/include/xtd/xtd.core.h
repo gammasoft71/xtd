@@ -49,6 +49,7 @@
 #include "using.h"
 #include "va_args_comma.h"
 #include "version.h"
+#include "xml_syntax_exception.h"
 #include "collections/any_pair.h"
 #include "collections/key_not_found_exception.h"
 #include "collections/vector_list.h"

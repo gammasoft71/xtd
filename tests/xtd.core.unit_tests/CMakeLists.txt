@@ -32,6 +32,7 @@ set(SOURCES
   src/time_out_exception.cpp
   src/underflow_exception.cpp
   src/version.cpp
+  src/xml_syntax_exception.cpp
 )
 set(COLLECTIONS_SOURCES
   src/collections/key_not_found_exception.cpp
