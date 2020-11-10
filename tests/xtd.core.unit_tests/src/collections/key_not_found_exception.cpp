@@ -1,8 +1,8 @@
-#include <xtd/xtd.core>
+#include <xtd/collections/key_not_found_exception.h>
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd;
+using namespace xtd::collections;
 using namespace xtd::tunit;
 
 namespace unit_tests {
@@ -18,9 +18,9 @@ namespace unit_tests {
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
       assert::are_equal_("The given key was not present in the dictionnary.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::is_empty(e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : The given key was not present in the dictionnary.", e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : The given key was not present in the dictionnary.", e.to_string());
       assert::are_equal_("The given key was not present in the dictionnary.", e.what());
     }
 
@@ -35,10 +35,43 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("The given key was not present in the dictionnary.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : The given key was not present in the dictionnary.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : The given key was not present in the dictionnary.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("The given key was not present in the dictionnary.", e.what());
+    }
+    
+    void test_method_(creator_with_empty_message) {
+      key_not_found_exception e("");
+      assert::are_equal_(0, e.error().value());
+      assert::are_equal_(std::system_category(), e.error().category());
+      assert::is_empty(e.file_path());
+      assert::is_empty(e.help_link());
+      assert::is_false_(e.inner_exception().has_value());
+      assert::are_equal_(0U, e.line_numer());
+      assert::is_empty(e.member_name());
+      assert::are_equal_("", e.message());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
+      assert::is_empty(e.stack_trace());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.what());
+    }
+    
+    void test_method_(creator_with_message_empty_and_caller_info) {
+      auto info = caller_info_;
+      key_not_found_exception e("", info);
+      assert::are_equal_(info.file_path(), e.file_path());
+      assert::is_empty_(e.help_link());
+      assert::are_equal_(0, e.error().value());
+      assert::is_false_(e.inner_exception().has_value());
+      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(info.line_number(), e.line_numer());
+      assert::are_equal_(info.member_name(), e.member_name());
+      assert::are_equal_("", e.message());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
+      assert::are_equal_(info.to_trace(), e.stack_trace());
+      assert::are_equal_("xtd::collections::key_not_found_exception\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.what());
     }
 
     void test_method_(creator_with_message) {
@@ -51,9 +84,9 @@ namespace unit_tests {
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::is_empty(e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.", e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.", e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
@@ -68,9 +101,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
@@ -85,9 +118,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
@@ -102,9 +135,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
@@ -119,9 +152,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
@@ -137,9 +170,9 @@ namespace unit_tests {
       assert::are_equal_(0U, e.line_numer());
       assert::is_empty(e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::is_empty(e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.", e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.", e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
@@ -156,9 +189,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
@@ -175,9 +208,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
@@ -194,9 +227,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
@@ -213,9 +246,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
     
@@ -232,9 +265,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
 
@@ -252,9 +285,9 @@ namespace unit_tests {
       assert::are_equal_(info.line_number(), e.line_numer());
       assert::are_equal_(info.member_name(), e.member_name());
       assert::are_equal_("Test excpetion message.", e.message());
-      assert::are_equal_("xtd::key_not_found_exception", e.name());
+      assert::are_equal_("xtd::collections::key_not_found_exception", e.name());
       assert::are_equal_(info.to_trace(), e.stack_trace());
-      assert::are_equal_("xtd::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::collections::key_not_found_exception : Test excpetion message.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Test excpetion message.", e.what());
     }
   };

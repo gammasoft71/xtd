@@ -1,9 +1,8 @@
-#include "bytes_assert.h"
-#include <xtd/bit_converter.h>
-#include <xtd/using.h>
-
 #include <cfloat>
 #include <cmath>
+#include <xtd/bit_converter.h>
+#include <xtd/using.h>
+#include "bytes_assert.h"
 
 using namespace std;
 using namespace xtd;

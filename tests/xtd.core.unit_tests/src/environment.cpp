@@ -1,7 +1,6 @@
-#include <xtd/xtd.core>
+#include <xtd/environment.h>
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 

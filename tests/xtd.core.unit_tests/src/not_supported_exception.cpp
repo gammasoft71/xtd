@@ -1,7 +1,6 @@
-#include <xtd/xtd.core>
+#include <xtd/not_supported_exception.h>
 #include <xtd/xtd.tunit>
 
-using namespace std;
 using namespace xtd;
 using namespace xtd::tunit;
 
@@ -39,6 +38,39 @@ namespace unit_tests {
       assert::are_equal_(info.to_trace(), e.stack_trace());
       assert::are_equal_("xtd::not_supported_exception : Specified method is not supported.\n" + info.to_trace(), e.to_string());
       assert::are_equal_("Specified method is not supported.", e.what());
+    }
+    
+    void test_method_(creator_with_empty_message) {
+      not_supported_exception e("");
+      assert::are_equal_(0, e.error().value());
+      assert::are_equal_(std::system_category(), e.error().category());
+      assert::is_empty(e.file_path());
+      assert::is_empty(e.help_link());
+      assert::is_false_(e.inner_exception().has_value());
+      assert::are_equal_(0U, e.line_numer());
+      assert::is_empty(e.member_name());
+      assert::are_equal_("", e.message());
+      assert::are_equal_("xtd::not_supported_exception", e.name());
+      assert::is_empty(e.stack_trace());
+      assert::are_equal_("xtd::not_supported_exception", e.to_string());
+      assert::are_equal_("xtd::not_supported_exception", e.what());
+    }
+    
+    void test_method_(creator_with_message_empty_and_caller_info) {
+      auto info = caller_info_;
+      not_supported_exception e("", info);
+      assert::are_equal_(info.file_path(), e.file_path());
+      assert::is_empty_(e.help_link());
+      assert::are_equal_(0, e.error().value());
+      assert::is_false_(e.inner_exception().has_value());
+      assert::are_equal_(std::system_category(), e.error().category());
+      assert::are_equal_(info.line_number(), e.line_numer());
+      assert::are_equal_(info.member_name(), e.member_name());
+      assert::are_equal_("", e.message());
+      assert::are_equal_("xtd::not_supported_exception", e.name());
+      assert::are_equal_(info.to_trace(), e.stack_trace());
+      assert::are_equal_("xtd::not_supported_exception\n" + info.to_trace(), e.to_string());
+      assert::are_equal_("xtd::not_supported_exception", e.what());
     }
 
     void test_method_(creator_with_message) {

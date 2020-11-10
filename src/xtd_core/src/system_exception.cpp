@@ -1,48 +1,21 @@
-#include "../include/xtd/xtd.core"
+#include "../include/xtd/system_exception.h"
 
-#if defined(_WIN32)
-__declspec(dllimport) extern char** environ;
-__declspec(dllimport) extern int __argc;
-__declspec(dllimport) extern char** __argv;
-int __environment_argc = __argc;
-char** __environment_argv = __argv;
-#else
-extern char** environ;
-extern int __environment_argc;
-extern char** __environment_argv;
-#endif
-int __exit_code = 0;
+using namespace xtd;
 
-int xtd::environment::exit_code() noexcept {return __exit_code;}
+bool system_exception::enable_stack_trace_ = true;
 
-void xtd::environment::exit_code(int value) noexcept {__exit_code = value;}
-
-xtd::collections::specialized::string_vector xtd::environment::get_command_line_args() noexcept {
-  return {__environment_argv, __environment_argv + __environment_argc};
-}
-
-std::map<std::string, std::string>& xtd::environment::get_environment_variables(environment_variable_target target) {
-  if (target == environment_variable_target::process) {
-    static std::map<std::string, std::string> envs;
-    if (envs.size() == 0) {
-      for (size_t index = 0; environ[index] != nullptr; index++) {
-        xtd::collections::specialized::string_vector key_value = xtd::strings::split(environ[index], {'='});
-        if (key_value.size() == 2)
-          envs[key_value[0]] = key_value[1];
-      }
-    }
-    return envs;
+system_exception::system_exception(const std::string& message, const std::exception* inner_exception, const std::error_code& error, const std::string& help_link, const xtd::caller_info& information) : message_(message), error_(error), help_link_(help_link), information_(information) {
+  if (inner_exception) inner_exception_ = *inner_exception;
+  if (enable_stack_trace_) {
+    // Get stack trace...
   }
   
-  if(target == environment_variable_target::user || target == environment_variable_target::machine) {
-    static std::map<std::string, std::string> envs;
-    envs.clear();
-    //microsoft::win32::registry_key key = target == environment_variable_target::user ? microsoft::win32::registry::current_user().create_sub_key("Environment") : microsoft::win32::registry::local_machine().create_sub_key("System").create_sub_key("CurrentControlSet").create_sub_key("Control").create_sub_key("Session Manager").create_sub_key("Environment");
-    //for (auto name : key.get_value_names())
-    //  envs[name] = key.get_value(name).to_string();
-    return envs;
-  }
-  
-  throw std::invalid_argument("invalid environment_variable_target value");
+  if (!stack_trace_.size()) stack_trace_.push_back(information_.to_trace());
 }
 
+std::string system_exception::to_string() const noexcept {
+  if (message().empty() && stack_trace().empty()) return name();
+  if (message().empty()) return xtd::strings::format("{}\n{}", name(), stack_trace());
+  if (stack_trace().empty()) return xtd::strings::format("{} : {}", name(), message());
+  return xtd::strings::format("{} : {}\n{}", name(), message(), stack_trace());
+}

@@ -1,4 +1,5 @@
-#include <xtd/xtd.core>
+#include <map>
+#include <xtd/guid.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;

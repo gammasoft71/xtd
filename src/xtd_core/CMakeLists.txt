@@ -74,6 +74,7 @@ set(SOURCES
   src/bit_converter.cpp
   src/environment.cpp
   src/guid.cpp
+  src/system_exception.cpp
 )
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\collections FILES ${XTD_COLLECTIONS_INCLUDES})
