@@ -1,0 +1,4 @@
+/// @file
+/// @brief Contains xtd::console and xtd::wconsole typedefs.
+#pragma once
+#include "xtd.console.h"
