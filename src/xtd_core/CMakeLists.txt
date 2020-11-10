@@ -29,6 +29,7 @@ set(XTD_INCLUDES
   include/xtd/nameof.h
   include/xtd/not_finite_number_exception.h
   include/xtd/not_implemented_exception.h
+  include/xtd/not_supported_exception.h
   include/xtd/object.h
   include/xtd/operating_system.h
   include/xtd/overflow_exception.h
