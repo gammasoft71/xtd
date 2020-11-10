@@ -1,0 +1,13 @@
+Sound files location :
+
+Windows: c:\\Windows\\Media\\
+macOS: /System/Library/Sounds/
+linux: /usr/share/sounds/gnome/default/alerts/
+
+| alert       | Windows            | macOS    | linux              |
+|-------------|--------------------|----------|--------------------|
+| beep        | Windows Background | (NSBeep) | bell               |
+| hand        | Windows Forground  | Funk     | dialog-error       |
+| question    | (none)             | Purr     | dialog-question    |
+| exclamation | Windows Background | Hero     | dialog-warning     |
+| asterisk    | Windows Background | Glass    | dialog-information |
