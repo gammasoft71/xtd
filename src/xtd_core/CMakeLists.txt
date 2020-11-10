@@ -21,6 +21,7 @@ set(XTD_INCLUDES
   include/xtd/iequatable.h
   include/xtd/index_out_of_range_exception.h
   include/xtd/interface.h
+  include/xtd/invalid_cast_exception.h
   include/xtd/literals.h
   include/xtd/nameof.h
   include/xtd/not_finite_number_exception.h
