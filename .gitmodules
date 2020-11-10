@@ -1,6 +1,3 @@
-[submodule "src/xtd_console"]
-	path = src/xtd_console
-	url = https://github.com/gammasoft71/xtd_console
 [submodule "src/xtd_core"]
 	path = src/xtd_core
 	url = https://github.com/gammasoft71/xtd_core
