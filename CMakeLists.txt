@@ -13,13 +13,6 @@ if (NOT DEFINED EXPORT_PROJECT_NAME)
 endif ()
 add_definitions(-D__XTD_FORMS_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
-# Specific macro flags
-if (MSVC)
-  add_compile_options(/wd5105 /Zc:preprocessor)
-else ()
-    add_compile_options(-Wno-gnu-zero-variadic-macro-arguments)
-endif ()
-
 # Add compile and link flags
 option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
 option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" ON)
