@@ -12,13 +12,6 @@ if (NOT DEFINED EXPORT_PROJECT_NAME)
   set(EXPORT_PROJECT_NAME ${PROJECT_NAME})
 endif ()
 
-# Specific macro flags
-if (MSVC)
-  add_compile_options(/wd5105 /Zc:preprocessor)
-else ()
-    add_compile_options(-Wno-gnu-zero-variadic-macro-arguments)
-endif ()
-
 # Add compile and link flags
 option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL "Enable compiler option warnings to all" ON)
 option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" ON)
