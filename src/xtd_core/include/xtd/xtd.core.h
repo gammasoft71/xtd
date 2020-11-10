@@ -43,6 +43,7 @@
 #include "va_args_comma.h"
 #include "version.h"
 #include "collections/any_pair.h"
+#include "collections/key_not_found_exception.h"
 #include "collections/vector_list.h"
 #include "collections/specialized/string_map.h"
 #include "collections/specialized/string_pair.h"

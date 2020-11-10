@@ -45,6 +45,7 @@ set(XTD_INCLUDES
 )
 set(XTD_COLLECTIONS_INCLUDES
   include/xtd/collections/any_pair.h
+  include/xtd/collections/key_not_found_exception.h
   include/xtd/collections/vector_list.h
 )
 set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
