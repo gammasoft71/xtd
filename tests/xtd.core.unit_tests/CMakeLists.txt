@@ -23,6 +23,7 @@ set(SOURCES
   src/not_finite_number_exception.cpp
   src/not_implemented_exception.cpp
   src/not_supported_exception.cpp
+  src/null_pointer_exception.cpp
   src/object.cpp
   src/overflow_exception.cpp
   src/platform_not_supported_exception.cpp
