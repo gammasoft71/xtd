@@ -1614,7 +1614,7 @@ EXTERNAL_SEARCH_ID     =
 # EXTRA_SEARCH_MAPPINGS = tagname1=loc1 tagname2=loc2 ...
 # This tag requires that the tag SEARCHENGINE is set to YES.
 
-EXTRA_SEARCH_MAPPINGS  = 
+EXTRA_SEARCH_MAPPINGS  =
 
 #---------------------------------------------------------------------------
 # Configuration options related to the LaTeX output
