@@ -34,6 +34,7 @@
 #include "not_supported_exception.h"
 #include "null_pointer_exception.h"
 #include "object.h"
+#include "operation_canceled_exception.h"
 #include "operating_system.h"
 #include "overflow_exception.h"
 #include "platform_id.h"

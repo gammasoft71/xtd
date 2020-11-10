@@ -32,6 +32,7 @@ set(XTD_INCLUDES
   include/xtd/not_supported_exception.h
   include/xtd/null_pointer_exception.h
   include/xtd/object.h
+  include/xtd/operation_canceled_exception.h
   include/xtd/operating_system.h
   include/xtd/overflow_exception.h
   include/xtd/platform_id.h

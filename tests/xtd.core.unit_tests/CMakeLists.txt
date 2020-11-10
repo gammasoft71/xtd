@@ -25,6 +25,7 @@ set(SOURCES
   src/not_supported_exception.cpp
   src/null_pointer_exception.cpp
   src/object.cpp
+  src/operation_canceled_exception.cpp
   src/overflow_exception.cpp
   src/platform_not_supported_exception.cpp
   src/system_exception.cpp
