@@ -17,6 +17,7 @@ set(SOURCES
   src/guid.cpp
   src/index_out_of_range_exception.cpp
   src/invalid_cast_exception.cpp
+  src/invalid_operation_exception.cpp
   src/not_finite_number_exception.cpp
   src/object.cpp
   src/overflow_exception.cpp

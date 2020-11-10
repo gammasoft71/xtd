@@ -24,6 +24,7 @@
 #include "index_out_of_range_exception.h"
 #include "interface.h"
 #include "invalid_cast_exception.h"
+#include "invalid_operation_exception.h"
 #include "literals.h"
 #include "nameof.h"
 #include "not_finite_number_exception.h"
