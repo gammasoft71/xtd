@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Solution
-project(xtd_cmake_helpers)
+project(xtd.cmake.xamples)
 find_package(xtd REQUIRED)
 
 # Projects
