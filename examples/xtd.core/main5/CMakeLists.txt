@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(console_beep)
+project(main5)
+find_package(xtd.core REQUIRED)
 find_package(xtd REQUIRED)
-add_sources(src/console_beep.cpp)
+add_sources(main5.cpp)
 target_type(CONSOLE_APPLICATION)
