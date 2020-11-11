@@ -11,6 +11,7 @@ namespace xtd {
     /// @cond
     class graphics;
     /// @endcond
+
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
     class brush {
     public:
