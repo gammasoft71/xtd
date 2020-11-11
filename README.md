@@ -141,6 +141,7 @@ For more examples see [examples](examples/README.md)
 
 Before running examples you must download and install xtd. To download and install it read [downloads](docs/downloads.md) file.
 
+<!---
 # Motivations
 
 ## All xtd libraries
@@ -170,3 +171,4 @@ Before running examples you must download and install xtd. To download and insta
 * A gui must follow the de operating system design guidelines. And sometimes if you want customize your application, not.
 * After reading [List of widget toolkits](https://en.wikipedia.org/wiki/List_of_widget_toolkits) and the [Philippe Groarke C++ UI Libraries post](https://philippegroarke.com/posts/2018/c++_ui_solutions/). I don't find a gui api more simple as Winforms C# or Borland C++ builder.
 * 
+--->
