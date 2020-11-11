@@ -231,11 +231,17 @@ namespace xtd {
       static bool copy(const std::basic_string<char_t>& src, const std::basic_string<char_t>& dest, bool overwrite) {
         try {
           if (exists(dest) && overwrite == false) return false;
+#if defined(__cpp_lib_filesystem)
+          std::filesystem::copy(src, dest, std::filesystem::copy_options::overwrite_existing);
+          return true;
+#else
           std::basic_ifstream<char_t> file_src(src, std::ios::binary);
           std::basic_ofstream<char_t> file_dest(dest, std::ios::binary);
           file_dest << file_src.rdbuf();
           return true;
-        } catch(...) {
+#endif
+        }
+        catch (...) {
           return false;
         }
       }
@@ -426,7 +432,12 @@ namespace xtd {
       static bool move(const char_t* src, const char_t* dest) noexcept {
         try {
           if (exists(dest)) return false;
+#if defined(__cpp_lib_filesystem)
+          std::filesystem::rename(src, dest);
+          return true;
+#else
           return rename(src, dest) == 0;
+#endif
         } catch(...) {
           return false;
         }
@@ -692,7 +703,9 @@ namespace xtd {
 
       /// @cond
       template<typename char_t>
-      static bool remove(const char_t* path) noexcept {return ::remove(path) == 0;}
+      static bool remove(const char_t* path) noexcept {
+        return ::remove(path) == 0;
+      }
       /// @endcond
       
       /// @brief Replaces the contents of a specified file with the contents of another file, deleting the original file, and creating a backup of the replaced file and optionally ignores merge errors.

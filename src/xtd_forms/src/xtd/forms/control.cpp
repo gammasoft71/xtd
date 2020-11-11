@@ -463,7 +463,7 @@ void control::on_control_added(const control_event_args &e) {
 }
 
 void control::on_control_removed(const control_event_args &e) {
-  on_layout(event_args::empty);
+  //on_layout(event_args::empty);
   size_changed -= {e.control(), &control::on_parent_size_changed};
   if (can_raise_events()) control_removed(*this, e);
 }
