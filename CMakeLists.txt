@@ -48,7 +48,8 @@ endif ()
 
 # install
 if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-  set (CMAKE_CONFIG
+
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake 
     "include(CMakeFindDependencyMacro)\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_commands.cmake\")\n"
@@ -58,51 +59,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME})\n"
     "set(${PROJECT_NAME}_FOUND TRUE)\n"
   )
-
-  set (CMAKE_CONFIG_WITH_WXWIDGETS
-    "include(CMakeFindDependencyMacro)\n"
-    "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
-    "include(\"\${CMAKE_CURRENT_LIST_DIR}/xtd_commands.cmake\")\n"
-    "\n"
-    "if (APPLE)\n"
-    "#  find_package(wxWidgets REQUIRED COMPONENTS base core aui html gl net qa richtext webview xml xrc)\n"
-    "  find_package(wxWidgets REQUIRED COMPONENTS base core aui html net qa richtext webview xml xrc)\n"
-    "elseif (UNIX)\n"
-    "  find_package(wxWidgets REQUIRED COMPONENTS base core aui html gl net qa richtext xml xrc)\n"
-    "else ()\n"
-    "  find_package(wxWidgets REQUIRED COMPONENTS base core aui html gl net qa richtext webview xml xrc)\n"
-    "endif ()\n"
-    "\n"
-    "set(${PROJECT_NAME}_INCLUDE_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../include\")\n"
-    "set(${PROJECT_NAME}_LIBRARIES_DIRS \"\${CMAKE_CURRENT_LIST_DIR}/../lib\")\n"
-    "set(${PROJECT_NAME}_LIBRARIES ${PROJECT_NAME})\n"
-    "set(${PROJECT_NAME}_FOUND TRUE)\n"
-  )
-
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.consoleConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.delegatesConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake ${CMAKE_CONFIG_WITH_WXWIDGETS})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.coreConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.formsConfig.cmake ${CMAKE_CONFIG_WITH_WXWIDGETS})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.ioConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.propertiesConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.stringsConfig.cmake ${CMAKE_CONFIG})
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/xtd.tunitConfig.cmake ${CMAKE_CONFIG})
-
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.consoleConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.delegatesConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.diagnosticsConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.drawingConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.coreConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.formsConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.ioConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.propertiesConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.stringsConfig.cmake DESTINATION cmake)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/xtd.tunitConfig.cmake DESTINATION cmake)
   install(FILES src/xtd_core/scripts/cmake/xtd_commands.cmake DESTINATION cmake)
   install(EXPORT ${PROJECT_NAME} DESTINATION cmake)
   option(XTD_ENABLE_INSTALL_RESOURCES "Enable install resources" ON)
@@ -113,7 +70,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   endif ()
   option(XTD_ENABLE_INSTALL_EXAMPLES "Enable install examples" ON)
   if (XTD_ENABLE_INSTALL_EXAMPLES)
-    install(DIRECTORY src/xtd_console/examples/. DESTINATION share/xtd/examples/xtd_console)
+    install(DIRECTORY examples/. DESTINATION share/xtd/examples)
     install(DIRECTORY src/xtd_forms/examples/. DESTINATION share/xtd/examples/xtd_forms)
     install(DIRECTORY src/xtd_tunit/examples/. DESTINATION share/xtd/examples/xtd_tunit)
   endif ()

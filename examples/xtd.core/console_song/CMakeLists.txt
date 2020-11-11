@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_console)
+# Project
+project(console_song)
 find_package(xtd REQUIRED)
-add_sources(src/hello_world_console.cpp)
+add_sources(src/console_song.cpp)
 target_type(CONSOLE_APPLICATION)

@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(event)
-find_package(xtd.delegates REQUIRED)
-add_executable(${PROJECT_NAME} src/event.cpp)
-target_link_libraries(${PROJECT_NAME} xtd.delegates)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd.delegates")
+find_package(xtd REQUIRED)
+add_sources(src/event.cpp)
+target_type(CONSOLE_APPLICATION)
