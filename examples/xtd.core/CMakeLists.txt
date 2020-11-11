@@ -27,6 +27,7 @@ add_projects(
   hello_world_console
   hello_world_console2
   hello_world_console3
+  hello_world_diagnostics
   hello_world_environment
   interface
   interface2
