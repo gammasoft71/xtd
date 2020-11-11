@@ -1,0 +1,32 @@
+Ballet Shoes
+U+1FA70
+One-Piece Swinsuit
+U+1FA71
+Briefs
+U+1FA72
+Shorts
+U+1FA73
+Drop of Blood
+U+1FA78
+Adhesive Bandage
+U+1FA79
+Stethoscope
+U+1FA7A
+Yo-Yo
+U+1FA80
+Kite
+U+1FA81
+Parachute
+U+1FA82
+Ringed Planet
+U+1FA90
+Chair
+U+1FA91
+Razor
+U+1FA92
+Axe
+U+1FA93
+Diya Lamp
+U+1FA94
+Banjo
+U+1FA95

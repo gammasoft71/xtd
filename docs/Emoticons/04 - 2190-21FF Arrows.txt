@@ -1,0 +1,16 @@
+Left Right Arrow
+U+2194 U+FE0F
+Up Down Arrow
+U+2195 U+FE0F
+North West Arrow
+U+2196 U+FE0F
+North East Arrow
+U+2197 U+FE0F
+South East Arrow
+U+2198 U+FE0F
+South West Arrow
+U+2199 U+FE0F
+Leftwards Arrow with Hook
+U+21A9 U+FE0F
+Rightwards Arrow with Hook
+U+21AA U+FE0F

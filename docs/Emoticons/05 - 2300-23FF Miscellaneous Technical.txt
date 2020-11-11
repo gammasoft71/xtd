@@ -1,0 +1,36 @@
+Watch
+U+231A
+Hourglass
+U+231B
+Keyboard U+FE0F
+U+2328
+Eject Symbol
+U+23CF U+FE0F
+Black Right-Pointing Double Triangle
+U+23E9
+Black Left-Pointing Double Triangle
+U+23EA
+Black Up-Pointing Double Triangle
+U+23EB
+Black Down-Pointing Double Triangle
+U+23EC
+Black Right-Pointing Double Triangle with Vertical Bar
+U+23ED
+Black Left-Pointing Double Triangle with Vertical Bar
+U+23EE
+Black Right-Pointing Triangle with Double Vertical Bar
+U+23EF
+Alarm Clock
+U+23F0
+Stopwatch
+U+23F1
+Timer Clock
+U+23F2
+Hourglass with Flowing Sand
+U+23F3
+Double Vertical Bar
+U+23F8
+Black Square for Stop
+U+23F9
+Black Circle for Record
+U+23FA

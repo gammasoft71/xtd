@@ -1,0 +1,16 @@
+Black Small Square
+U+25AA U+FE0F
+White Small Square
+U+25AB U+FE0F
+Black Right-Pointing Triangle
+U+25B6 U+FE0F
+Black Left-Pointing Triangle
+U+25C0 U+FE0F
+White Medium Square
+U+25FB U+FE0F
+Black Medium Square
+U+25FC U+FE0F
+White Medium Small Square
+U+25FD
+Black Medium Small Square
+U+25FE

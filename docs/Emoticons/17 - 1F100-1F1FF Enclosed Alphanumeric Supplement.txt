@@ -1,0 +1,30 @@
+Negative Squared Latin Capital Letter A
+U+1F170 U+FE0F
+Negative Squared Latin Capital Letter B
+U+1F171 U+FE0F
+Negative Squared Latin Capital Letter O
+U+1F17E U+FE0F
+Negative Squared Latin Capital Letter P
+U+1F17F U+FE0F
+Negative Squared Ab
+U+1F18E
+Squared Cl
+U+1F191
+Squared Cool
+U+1F192
+Squared Free
+U+1F193
+Squared Id
+U+1F194
+Squared New
+U+1F195
+Squared Ng
+U+1F196
+Squared Ok
+U+1F197
+Squared Sos
+U+1F198
+Squared Up with Exclamation Mark
+U+1F199
+Squared Vs
+U+1F19A

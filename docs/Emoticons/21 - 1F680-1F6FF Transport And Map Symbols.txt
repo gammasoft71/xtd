@@ -1,0 +1,192 @@
+Rocket
+U+1F680
+Helicopter
+U+1F681
+Steam Locomotive
+U+1F682
+Railway Car
+U+1F683
+High-Speed Train
+U+1F684
+High-Speed Train with Bullet Nose
+U+1F685
+Train
+U+1F686
+Metro
+U+1F687
+Light Rail
+U+1F688
+Station
+U+1F689
+Tram
+U+1F68A
+Tram Car
+U+1F68B
+Bus
+U+1F68C
+Oncoming Bus
+U+1F68D
+Trolleybus
+U+1F68E
+Bus Stop
+U+1F68F
+Minibus
+U+1F690
+Ambulance
+U+1F691
+Fire Engine
+U+1F692
+Police Car
+U+1F693
+Oncoming Police Car
+U+1F694
+Taxi
+U+1F695
+Oncoming Taxi
+U+1F696
+Automobile
+U+1F697
+Oncoming Automobile
+U+1F698
+Recreational Vehicle
+U+1F699
+Delivery Truck
+U+1F69A
+Articulated Lorry
+U+1F69B
+Tractor
+U+1F69C
+Monorail
+U+1F69D
+Mountain Railway
+U+1F69E
+Suspension Railway
+U+1F69F
+Mountain Cableway
+U+1F6A0
+Aerial Tramway
+U+1F6A1
+Ship
+U+1F6A2
+Rowboat
+U+1F6A3
+Speedboat
+U+1F6A4
+Horizontal Traffic Light
+U+1F6A5
+Vertical Traffic Light
+U+1F6A6
+Construction Sign
+U+1F6A7
+Police Cars Revolving Light
+U+1F6A8
+Triangular Flag On Post
+U+1F6A9
+Door
+U+1F6AA
+No Entry Sign
+U+1F6AB
+Smoking Symbol
+U+1F6AC
+No Smoking Symbol
+U+1F6AD
+Put Litter In Its Place Symbol
+U+1F6AE
+Do Not Litter Symbol
+U+1F6AF
+Potable Water Symbol
+U+1F6B0
+Non-Potable Water Symbol
+U+1F6B1
+Bicycle
+U+1F6B2
+No Bicycles
+U+1F6B3
+Bicyclist
+U+1F6B4
+Mountain Bicyclist
+U+1F6B5
+Pedestrian
+U+1F6B6
+No Pedestrians
+U+1F6B7
+Children Crossing
+U+1F6B8
+Mens Symbol
+U+1F6B9
+Womens Symbol
+U+1F6BA
+Restroom
+U+1F6BB
+Baby Symbol
+U+1F6BC
+Toilet
+U+1F6BD
+Water Closet
+U+1F6BE
+Shower
+U+1F6BF
+Bath
+U+1F6C0
+Bathtub
+U+1F6C1
+Passport Control
+U+1F6C2
+Customs
+U+1F6C3
+Baggage Claim
+U+1F6C4
+Left Luggage
+U+1F6C5
+Couch and Lamp
+U+1F6CB
+Sleeping Accommodation
+U+1F6CC
+Shopping Bags
+U+1F6CD
+Bellhop Bell
+U+1F6CE
+Bed
+U+1F6CF
+Place of Worship
+U+1F6D0
+Octagonal Sign
+U+1F6D1
+Shopping Trolley
+U+1F6D2
+Hammer and Wrench
+U+1F6E0
+Shield
+U+1F6E1
+Oil Drum
+U+1F6E2
+Motorway
+U+1F6E3
+Railway Track
+U+1F6E4
+Motor Boat
+U+1F6E5
+Small Airplane
+U+1F6E9
+Airplane Departure
+U+1F6EB
+Airplane Arriving
+U+1F6EC
+Satellite
+U+1F6F0
+Passenger Ship
+U+1F6F3
+Scooter
+U+1F6F4
+Motor Scooter
+U+1F6F5
+Canoe
+U+1F6F6
+Sled
+U+1F6F7
+Flying Saucer
+U+1F6F8
+Skateboard
+U+1F6F9
+Auto rRickshaw
+U+1F6FA

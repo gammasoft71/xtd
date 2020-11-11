@@ -1,0 +1,164 @@
+Black Sun with Rays
+U+2600 U+FE0F
+Cloud
+U+2601 U+FE0F
+Umbrella
+U+2602 U+FE0F
+Snowman
+U+2603 U+FE0F
+Comet
+U+2604 U+FE0F
+Black Telephone
+U+260E U+FE0F
+Ballot Box with Check
+U+2611 U+FE0F
+Umbrella with Rain Drops
+U+2614
+Hot Beverage
+U+2615 U+FE0F
+Shamrock
+U+2618 U+FE0F
+White Up Pointing Index
+U+261D U+FE0F
+Skull and Crossbones
+U+2620 U+FE0F
+Radioactive Sign
+U+2622 U+FE0F
+Biohazard Sign
+U+2623 U+FE0F
+Orthodox Cross
+U+2626 U+FE0F
+Star and Crescent
+U+262A U+FE0F
+Peace Symbol
+U+262E U+FE0F
+Yin Yang
+U+262F U+FE0F
+Wheel of Dharma
+U+2638 U+FE0F
+White Frowning Face
+U+2639 U+FE0F
+White Smiling Face
+U+263A U+FE0F
+Female Sign
+U+2640 U+FE0F
+Male Sign
+U+2642 U+FE0F
+Aries
+U+2648
+Taurus
+U+2649
+Gemini
+U+264A
+Cancer
+U+264B
+Leo
+U+264C
+Virgo
+U+264D
+Libra
+U+264E
+Scorpius
+U+264F
+Sagittarius
+U+2650
+Capricorn
+U+2651
+Aquarius
+U+2652
+Pisces
+U+2653
+Black Chess Pawn
+U+265F U+FE0F
+Black Spade Suit
+U+2660 U+FE0F
+Black Club Suit
+U+2663 U+FE0F
+Black Heart Suit
+U+2665 U+FE0F
+Black Diamond Suit
+U+2666 U+FE0F
+Hot Springs
+U+2668 U+FE0F
+Black Universal Recycling Symbol
+U+267B U+FE0F
+Permanent Paper Sign
+U+267E U+FE0F
+Wheelchair Symbol
+U+267F
+Hammer and Pick
+U+2692 U+FE0F
+Anchor
+U+2693
+Crossed Swords
+U+2694 U+FE0F
+Staff of Aesculapius
+U+2695 U+FE0F
+Scales
+U+2696 U+FE0F
+Alembic
+U+2697 U+FE0F
+Gear
+U+2699 U+FE0F
+Atom Symbol
+U+269B U+FE0F
+Fleur-De-Lis
+U+269C U+FE0F
+Warning Sign
+U+26A0 U+FE0F
+High Voltage Sign
+U+26A1
+Medium White Circle
+U+26AA
+Medium Black Circle
+U+26AB
+Coffin
+U+26B0 U+FE0F
+Funeral Urn
+U+26B1 U+FE0F
+Soccer Ball
+U+26BD
+Baseball
+U+26BE
+Snowman Without Snow
+U+26C4
+Sun Behind Cloud
+U+26C5
+Thunder Cloud and Rain
+U+26C8
+Ophiuchus
+U+26CE
+Pick
+U+26CF
+Helmet with White Cross
+U+26D1
+Chains
+U+26D3
+No Entry
+U+26D4
+Shinto Shrine
+U+26E9
+Church
+U+26EA
+Mountain
+U+26F0
+Umbrella On Ground
+U+26F1
+Fountain
+U+26F2
+Flag In Hole
+U+26F3
+Ferry
+U+26F4
+Sailboat
+U+26F5
+Skier
+U+26F7
+Ice Skate
+U+26F8
+Person with Ball
+U+26F9
+Tent
+U+26FA
+Fuel Pump
+U+26FD
