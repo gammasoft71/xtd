@@ -10,8 +10,8 @@ namespace xtd {
   namespace forms {
     /// @brief Specifies shortcut keys that can be used by menu items.
     /// @par Library
-    /// Switch.System.Windows.Forms
-    /// @ingroup SwitchSystemWindowsForms
+    /// xtd.forms
+    /// @ingroup xtd_forms
     enum class shortcut {
       alt_0 = 0x00040030,
       alt_1,
