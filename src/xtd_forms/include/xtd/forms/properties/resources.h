@@ -52,8 +52,8 @@ namespace xtd {
 
     private:
       static std::string get_os_potfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "_w" : xtd::environment::os_version().is_linux_platform() ? "_g" : xtd::environment::os_version().is_macos_platform() ? "_m" : "";}
-#if defined(__XTD_FORMS_RESOURCES_PATH__)
-      static constexpr const char* forms_resource_path_ = __XTD_FORMS_RESOURCES_PATH__;
+#if defined(__XTD_RESOURCES_PATH__)
+      static constexpr const char* forms_resource_path_ = __XTD_RESOURCES_PATH__;
 #else
       static constexpr const char* forms_resource_path_ = "";
 #endif

@@ -18,8 +18,8 @@ namespace {
   }
  
   static std::string forms_resource_path() {
-#if defined(__XTD_FORMS_RESOURCES_PATH__)
-    return xtd::io::path::combine(__XTD_FORMS_RESOURCES_PATH__, "share", "xtd", "resources");
+#if defined(__XTD_RESOURCES_PATH__)
+    return xtd::io::path::combine(__XTD_RESOURCES_PATH__, "share", "xtd", "resources");
 #else
     return "";
 #endif

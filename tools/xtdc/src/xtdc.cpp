@@ -39,8 +39,8 @@ namespace xtdc_command {
     }
     
   private:
-  #if defined(__XTD_FORMS_RESOURCES_PATH__)
-    static string get_base_path() noexcept {return __XTD_FORMS_RESOURCES_PATH__;}
+  #if defined(__XTD_RESOURCES_PATH__)
+    static string get_base_path() noexcept {return __XTD_RESOURCES_PATH__;}
   #else
     static string get_base_path() noexcept {return "";}
   #endif

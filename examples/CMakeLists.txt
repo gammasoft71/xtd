@@ -22,7 +22,7 @@ if (ADD_XTD_DRAWING)
 endif()
   
 if (ADD_XTD_FORMS)
-#  add_projects(xtd.forms)
+  add_projects(xtd.forms)
 endif()
   
 if (ADD_XTD_TUNIT)
