@@ -32,5 +32,5 @@ namespace xtd {
 /// @see System::Type
 /// @ingroup Keywords
   #define typeof_ \
-    __s__::__typeof_
+    xtd::__s__::__typeof_
 }
