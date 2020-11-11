@@ -22,9 +22,9 @@ namespace xtdc_gui {
     xtd_example_item(const std::string& name, const std::string& description, const std::filesystem::path& path) : name_(name), description_(description), path_(get_base_path()/"share"/"xtd"/"examples"/path) {}
 
     xtd::drawing::image picture() const {
-      auto picture_file_name = get_base_path()/"share"/"xtd"/"resources"/"pictures/examples"/"xtd_forms"/(path_.stem().string() + "_" + get_os_potfix() + get_theme_postfix() +".png");
+      auto picture_file_name = get_base_path()/"share"/"xtd"/"resources"/"pictures/examples"/(path_.stem().string() + "_" + get_os_potfix() + get_theme_postfix() +".png");
       if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
-      picture_file_name = get_base_path()/"share"/"xtd"/"resources"/"pictures/examples"/"xtd_forms"/(path_.stem().string() + "_" + get_os_potfix() +".png");
+      picture_file_name = get_base_path()/"share"/"xtd"/"resources"/"pictures/examples"/(path_.stem().string() + "_" + get_os_potfix() +".png");
       if (std::filesystem::exists(picture_file_name)) return xtd::drawing::bitmap(picture_file_name.string());
       return xtd::drawing::bitmap(noimage_picture);
     }
@@ -33,11 +33,7 @@ namespace xtdc_gui {
     const std::filesystem::path& path() const {return path_;}
 
   private:
-#if defined(__XTD_FORMS_RESOURCES_PATH__)
-    static std::filesystem::path get_base_path() noexcept {return {__XTD_FORMS_RESOURCES_PATH__};}
-#else
-    static std::filesystem::path get_base_path() noexcept {return {};}
-#endif
+    static std::filesystem::path get_base_path() noexcept {return {__XTD_RESOURCES_PATH__};}
     static std::string get_os_potfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_linux_platform() ? "g" : "m";}
     static std::string get_theme_postfix() noexcept {return xtd::forms::application::dark_mode_enabled() ? "d" : "";}
     std::string name_;

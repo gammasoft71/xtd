@@ -11,3 +11,8 @@ option(XTD_ENABLE_COMMAND_LINE "Enable xtd command line" ON)
 if (XTD_ENABLE_COMMAND_LINE)
   add_subdirectory(xtdc)
 endif ()
+
+option(XTD_ENABLE_GUI_COMMAND_LINE "Enable xtdc-gui command line" ON)
+if (XTD_ENABLE_GUI_COMMAND_LINE)
+  add_subdirectory(xtdc-gui)
+endif ()

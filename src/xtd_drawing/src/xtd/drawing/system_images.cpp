@@ -32,12 +32,8 @@ using namespace xtd::drawing;
 
 namespace {
   static path system_images_resource_path() {
-  #if defined(__XTD_DRAWING_RESOURCES_PATH__)
-    return path(__XTD_DRAWING_RESOURCES_PATH__)/"share"/"xtd"/"resources"/"system_images";
-  #else
-    return {};
-  #endif
-  }
+  return path(__XTD_RESOURCES_PATH__)/"share"/"xtd"/"resources"/"system_images";
+}
 
   drawing::size get_closed_size(const drawing::size& size) {
     static vector<drawing::size> default_sizes = {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
