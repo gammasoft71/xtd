@@ -18,7 +18,7 @@ add_definitions(-D__XTD_FORMS_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
 # Target
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd.core)
+target_link_libraries(${PROJECT_NAME} xtd)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tools")
 
 install(TARGETS ${PROJECT_NAME} EXPORT ${EXPORT_PROJECT_NAME} RUNTIME DESTINATION bin RENAME xtd)
