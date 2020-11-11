@@ -16,15 +16,18 @@
 #include "string_format.h"
 #include "size_f.h"
 
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+/// @cond
 namespace xtd {
-  /// @cond
   namespace forms {
     class control;
     class paint_event_args;
     class screen;
   }
-  /// @endcond
+}
+/// @endcond
+  
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Defines an object used to draw lines and curves. This class cannot be inherited.
