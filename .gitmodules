@@ -1,6 +1,3 @@
-[submodule "src/xtd_core"]
-	path = src/xtd_core
-	url = https://github.com/gammasoft71/xtd_core
 [submodule "src/xtd_diagnostics"]
 	path = src/xtd_diagnostics
 	url = https://github.com/gammasoft71/xtd_diagnostics
