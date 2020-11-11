@@ -18,6 +18,6 @@ namespace examples {
 
 startup_(examples::program);
 
-// This code produces the following output if one two "three four" five are entered on command line:
+// This code produces the following output if one two "three four" five six are entered on command line:
 //
 // args = one, two, three, four five, six
