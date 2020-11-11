@@ -1,0 +1,24 @@
+Grinning Cat Face with Smiling Eyes
+U+1F638
+Cat Face with Tears of Joy
+U+1F639
+Smiling Cat Face with Open Mouth
+U+1F63A
+Smiling Cat Face with Heart-Shaped Eyes
+U+1F63B
+Cat Face with Wry Smile
+U+1F63C
+Kissing Cat Face with Closed Eyes
+U+1F63D
+Pouting Cat Face
+U+1F63E
+Crying Cat Face
+U+1F63F
+Weary Cat Face
+U+1F640
+Cat
+U+1F408
+Cat Face
+U+1F431
+Paw Prints
+U+1F43E

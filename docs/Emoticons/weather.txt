@@ -1,0 +1,58 @@
+Fire
+U+1F525
+Droplet
+U+1F4A7
+Splashing Sweat Symbol
+U+1F4A6
+Dash Symbol
+U+1F4A8
+Cyclone
+U+1F300
+Cloud
+U+2601
+Sun Behind Cloud
+U+26C5
+Thunder Cloud and Rain
+U+26C8
+White Sun with Small Cloud
+U+1F324
+White Sun Behind Cloud
+U+1F325
+White Sun Behind Cloud with Rain
+U+1F326
+Cloud with Rain
+U+1F327
+Cloud with Snow
+U+1F328
+Cloud with Lightning
+U+1F329
+Cloud with Tornado
+U+1F32A
+Fog
+U+1F32B
+Wind Blowing Face
+U+1F32C
+Rainbow
+U+1F308
+Umbrella
+U+2602
+Umbrella with Rain Drops
+U+2614
+High Voltage Sign
+U+26A1
+Lightning
+U+2607
+Thunderstorm
+U+2608
+Snowflake
+U+2744
+Snowman
+U+2603
+Snowman Without Snow
+U+26C4
+Water Wave
+U+1F30A
+Foggy
+U+1F301
+Thermometer
+U+1F321

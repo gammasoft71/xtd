@@ -1,0 +1,110 @@
+Microbe
+U+1F9A0
+Bouquet
+U+1F490
+Cherry Blossom
+U+1F338
+White Flower
+U+1F4AE
+Rosette
+U+1F3F5
+Rose
+U+1F339
+Wilted Flower
+U+1F940
+Hibiscus
+U+1F33A
+Sunflower
+U+1F33B
+Blossom
+U+1F33C
+Tulip
+U+1F337
+Seedling
+U+1F331
+Evergreen Tree
+U+1F332
+Deciduous Tree
+U+1F333
+Palm Tree
+U+1F334
+Cactus
+U+1F335
+Ear of Rice
+U+1F33E
+Herb
+U+1F33F
+Shamrock
+U+2618
+Four Leaf Clover
+U+1F340
+Maple Leaf
+U+1F341
+Fallen Leaf
+U+1F342
+Leaf Fluttering In Wind
+U+1F343
+Mushroom
+U+1F344
+Chestnut
+U+1F330
+Earth Globe Europe-Africa
+U+1F30D
+Earth Globe Americas
+U+1F30E
+Earth Globe Asia-Australia
+U+1F30F
+Globe with Meridians
+U+1F310
+New Moon Symbol
+U+1F311
+Waxing Crescent Moon Symbol
+U+1F312
+First Quarter Moon Symbol
+U+1F313
+Waxing Gibbous Moon Symbol
+U+1F314
+Full Moon Symbol
+U+1F315
+Waning Gibbous Moon Symbol
+U+1F316
+Last Quarter Moon Symbol
+U+1F317
+Waning Crescent Moon Symbol
+U+1F318
+Crescent Moon
+U+1F319
+New Moon with Face
+U+1F31A
+First Quarter Moon with Face
+U+1F31B
+Last Quarter Moon with Face
+U+1F31C
+Black Sun with Rays
+U+2600
+High Brightness Symbol
+U+1F506
+Full Moon with Face
+U+1F31D
+Sun with Face
+U+1F31E
+White Medium Star
+U+2B50
+Collision Symbol
+U+1F4A5
+Dizzy Symbol
+U+1F4AB
+Glowing Star
+U+1F31F
+Shooting Star
+U+1F320
+Comet
+U+2604
+Sparkles
+U+2728
+Christmas Tree
+U+1F384
+Tanabata Tree
+U+1F38B
+Pine Decoration
+U+1F38D

@@ -1,0 +1,1274 @@
+Cyclone
+U+1F300
+Foggy
+U+1F301
+Closed Umbrella
+U+1F302
+Night with Stars
+U+1F303
+Sunrise Over Mountains
+U+1F304
+Sunrise
+U+1F305
+Cityscape At Dusk
+U+1F306
+Sunset Over Buildings
+U+1F307
+Rainbow
+U+1F308
+Bridge At Night
+U+1F309
+Water Wave
+U+1F30A
+Volcano
+U+1F30B
+Milky Way
+U+1F30C
+Earth Globe Europe-Africa
+U+1F30D
+Earth Globe Americas
+U+1F30E
+Earth Globe Asia-Australia
+U+1F30F
+Globe with Meridians
+U+1F310
+New Moon Symbol
+U+1F311
+Waxing Crescent Moon Symbol
+U+1F312
+First Quarter Moon Symbol
+U+1F313
+Waxing Gibbous Moon Symbol
+U+1F314
+Full Moon Symbol
+U+1F315
+Waning Gibbous Moon Symbol
+U+1F316
+Last Quarter Moon Symbol
+U+1F317
+Waning Crescent Moon Symbol
+U+1F318
+Crescent Moon
+U+1F319
+New Moon with Face
+U+1F31A
+First Quarter Moon with Face
+U+1F31B
+Last Quarter Moon with Face
+U+1F31C
+Full Moon with Face
+U+1F31D
+Sun with Face
+U+1F31E
+Glowing Star
+U+1F31F
+Shooting Star
+U+1F320
+Thermometer
+U+1F321
+White Sun with Small Cloud
+U+1F324
+White Sun Behind Cloud
+U+1F325
+White Sun Behind Cloud with Rain
+U+1F326
+Cloud with Rain
+U+1F327
+Cloud with Snow
+U+1F328
+Cloud with Lightning
+U+1F329
+Cloud with Tornado
+U+1F32A
+Fog
+U+1F32B
+Wind Blowing Face
+U+1F32C
+Hot Dog
+U+1F32D
+Taco
+U+1F32E
+Burrito
+U+1F32F
+Chestnut
+U+1F330
+Seedling
+U+1F331
+Evergreen Tree
+U+1F332
+Deciduous Tree
+U+1F333
+Palm Tree
+U+1F334
+Cactus
+U+1F335
+Hot Pepper
+U+1F336
+Tulip
+U+1F337
+Cherry Blossom
+U+1F338
+Rose
+U+1F339
+Hibiscus
+U+1F33A
+Sunflower
+U+1F33B
+Blossom
+U+1F33C
+Ear of Maize
+U+1F33D
+Ear of Rice
+U+1F33E
+Herb
+U+1F33F
+Four Leaf Clover
+U+1F340
+Maple Leaf
+U+1F341
+Fallen Leaf
+U+1F342
+Leaf Fluttering In Wind
+U+1F343
+Mushroom
+U+1F344
+Tomato
+U+1F345
+Aubergine
+U+1F346
+Grapes
+U+1F347
+Melon
+U+1F348
+Watermelon
+U+1F349
+Tangerine
+U+1F34A
+Lemon
+U+1F34B
+Banana
+U+1F34C
+Pineapple
+U+1F34D
+Red Apple
+U+1F34E
+Green Apple
+U+1F34F
+Pear
+U+1F350
+Peach
+U+1F351
+Cherries
+U+1F352
+Strawberry
+U+1F353
+Hamburger
+U+1F354
+Slice of Pizza
+U+1F355
+Meat On Bone
+U+1F356
+Poultry Leg
+U+1F357
+Rice Cracker
+U+1F358
+Rice Ball
+U+1F359
+Cooked Rice
+U+1F35A
+Curry and Rice
+U+1F35B
+Steaming Bowl
+U+1F35C
+Spaghetti
+U+1F35D
+Bread
+U+1F35E
+French Fries
+U+1F35F
+Roasted Sweet Potato
+U+1F360
+Dango
+U+1F361
+Oden
+U+1F362
+Sushi
+U+1F363
+Fried Shrimp
+U+1F364
+Fish Cake with Swirl Design
+U+1F365
+Soft Ice Cream
+U+1F366
+Shaved Ice
+U+1F367
+Ice Cream
+U+1F368
+Doughnut
+U+1F369
+Cookie
+U+1F36A
+Chocolate Bar
+U+1F36B
+Candy
+U+1F36C
+Lollipop
+U+1F36D
+Custard
+U+1F36E
+Honey Pot
+U+1F36F
+Shortcake
+U+1F370
+Bento Box
+U+1F371
+Pot of Food
+U+1F372
+Cooking
+U+1F373
+Fork and Knife
+U+1F374
+Teacup Without Handle
+U+1F375
+Sake Bottle and Cup
+U+1F376
+Wine Glass
+U+1F377
+Cocktail Glass
+U+1F378
+Tropical Drink
+U+1F379
+Beer Mug
+U+1F37A
+Clinking Beer Mugs
+U+1F37B
+Baby Bottle
+U+1F37C
+Fork and Knife with Plate
+U+1F37D
+Bottle with Popping Cork
+U+1F37E
+Popcorn
+U+1F37F
+Ribbon
+U+1F380
+Wrapped Present
+U+1F381
+Birthday Cake
+U+1F382
+Jack-O-Lantern
+U+1F383
+Christmas Tree
+U+1F384
+Father Christmas
+U+1F385
+Fireworks
+U+1F386
+Firework Sparkler
+U+1F387
+Balloon
+U+1F388
+Party Popper
+U+1F389
+Confetti Ball
+U+1F38A
+Tanabata Tree
+U+1F38B
+Crossed Flags
+U+1F38C
+Pine Decoration
+U+1F38D
+Japanese Dolls
+U+1F38E
+Carp Streamer
+U+1F38F
+Wind Chime
+U+1F390
+Moon Viewing Ceremony
+U+1F391
+School Satchel
+U+1F392
+Graduation Cap
+U+1F393
+Military Medal
+U+1F396
+Reminder Ribbon
+U+1F397
+Studio Microphone
+U+1F399
+Level Slider
+U+1F39A
+Control Knobs
+U+1F39B
+Film Frames
+U+1F39E
+Admission Tickets
+U+1F39F
+Carousel Horse
+U+1F3A0
+Ferris Wheel
+U+1F3A1
+Roller Coaster
+U+1F3A2
+Fishing Pole and Fish
+U+1F3A3
+Microphone
+U+1F3A4
+Movie Camera
+U+1F3A5
+Cinema
+U+1F3A6
+Headphone
+U+1F3A7
+Artist Palette
+U+1F3A8
+Top Hat
+U+1F3A9
+Circus Tent
+U+1F3AA
+Ticket
+U+1F3AB
+Clapper Board
+U+1F3AC
+Performing Arts
+U+1F3AD
+Video Game
+U+1F3AE
+Direct Hit
+U+1F3AF
+Slot Machine
+U+1F3B0
+Billiards
+U+1F3B1
+Game Die
+U+1F3B2
+Bowling
+U+1F3B3
+Flower Playing Cards
+U+1F3B4
+Musical Note
+U+1F3B5
+Multiple Musical Notes
+U+1F3B6
+Saxophone
+U+1F3B7
+Guitar
+U+1F3B8
+Musical Keyboard
+U+1F3B9
+Trumpet
+U+1F3BA
+Violin
+U+1F3BB
+Musical Score
+U+1F3BC
+Running Shirt with Sash
+U+1F3BD
+Tennis Racquet and Ball
+U+1F3BE
+Ski and Ski Boot
+U+1F3BF
+Basketball and Hoop
+U+1F3C0
+Chequered Flag
+U+1F3C1
+Snowboarder
+U+1F3C2
+Runner
+U+1F3C3
+Surfer
+U+1F3C4
+Sports Medal
+U+1F3C5
+Trophy
+U+1F3C6
+Horse Racing
+U+1F3C7
+American Football
+U+1F3C8
+Rugby Football
+U+1F3C9
+Swimmer
+U+1F3CA
+Weight Lifter
+U+1F3CB
+Golfer
+U+1F3CC
+Racing Motorcycle
+U+1F3CD
+Racing Car
+U+1F3CE
+Cricket Bat And Ball
+U+1F3CF
+Volleyball
+U+1F3D0
+Field Hockey Stick And Ball
+U+1F3D1
+Ice Hockey Stick And Puck
+U+1F3D2
+Table Tennis Paddle And Ball
+U+1F3D3
+Snow Capped Mountain
+U+1F3D4
+Camping
+U+1F3D5
+Beach with Umbrella
+U+1F3D6
+Building Construction
+U+1F3D7
+House Buildings
+U+1F3D8
+Cityscape
+U+1F3D9
+Derelict House Building
+U+1F3DA
+Classical Building
+U+1F3DB
+Desert
+U+1F3DC
+Desert Island
+U+1F3DD
+National Park
+U+1F3DE
+Stadium
+U+1F3DF
+House Building
+U+1F3E0
+House with Garden
+U+1F3E1
+Office Building
+U+1F3E2
+Japanese Post Office
+U+1F3E3
+European Post Office
+U+1F3E4
+Hospital
+U+1F3E5
+Bank
+U+1F3E6
+Automated Teller Machine
+U+1F3E7
+Hotel
+U+1F3E8
+Love Hotel
+U+1F3E9
+Convenience Store
+U+1F3EA
+School
+U+1F3EB
+Department Store
+U+1F3EC
+Factory
+U+1F3ED
+Izakaya Lantern
+U+1F3EE
+Japanese Castle
+U+1F3EF
+European Castle
+U+1F3F0
+Waving White Flag
+U+1F3F3
+Waving Black Flag
+U+1F3F4
+Rosette
+U+1F3F5
+Label
+U+1F3F7
+Badminton Racquet And Shuttlecock
+U+1F3F8
+Bow And Arrow
+U+1F3F9
+Amphora
+U+1F3FA
+Emoji Modifier Fitzpatrick Type-1-2
+U+1F3FB
+Emoji Modifier Fitzpatrick Type-3
+U+1F3FC
+Emoji Modifier Fitzpatrick Type-4
+U+1F3FD
+Emoji Modifier Fitzpatrick Type-5
+U+1F3FE
+Emoji Modifier Fitzpatrick Type-6
+U+1F3FF
+Rat
+U+1F400
+Mouse
+U+1F401
+Ox
+U+1F402
+Water Buffalo
+U+1F403
+Cow
+U+1F404
+Tiger
+U+1F405
+Leopard
+U+1F406
+Rabbit
+U+1F407
+Cat
+U+1F408
+Dragon
+U+1F409
+Crocodile
+U+1F40A
+Whale
+U+1F40B
+Snail
+U+1F40C
+Snake
+U+1F40D
+Horse
+U+1F40E
+Ram
+U+1F40F
+Goat
+U+1F410
+Sheep
+U+1F411
+Monkey
+U+1F412
+Rooster
+U+1F413
+Chicken
+U+1F414
+Dog
+U+1F415
+Pig
+U+1F416
+Boar
+U+1F417
+Elephant
+U+1F418
+Octopus
+U+1F419
+Spiral Shell
+U+1F41A
+Bug
+U+1F41B
+Ant
+U+1F41C
+Honeybee
+U+1F41D
+Lady Beetle
+U+1F41E
+Fish
+U+1F41F
+Tropical Fish
+U+1F420
+Blowfish
+U+1F421
+Turtle
+U+1F422
+Hatching Chick
+U+1F423
+Baby Chick
+U+1F424
+Front-Facing Baby Chick
+U+1F425
+Bird
+U+1F426
+Penguin
+U+1F427
+Koala
+U+1F428
+Poodle
+U+1F429
+Dromedary Camel
+U+1F42A
+Bactrian Camel
+U+1F42B
+Dolphin
+U+1F42C
+Mouse Face
+U+1F42D
+Cow Face
+U+1F42E
+Tiger Face
+U+1F42F
+Rabbit Face
+U+1F430
+Cat Face
+U+1F431
+Dragon Face
+U+1F432
+Spouting Whale
+U+1F433
+Horse Face
+U+1F434
+Monkey Face
+U+1F435
+Dog Face
+U+1F436
+Pig Face
+U+1F437
+Frog Face
+U+1F438
+Hamster Face
+U+1F439
+Wolf Face
+U+1F43A
+Bear Face
+U+1F43B
+Panda Face
+U+1F43C
+Pig Nose
+U+1F43D
+Paw Prints
+U+1F43E
+Chipmunk
+U+1F43F
+Eyes
+U+1F440
+Eye
+U+1F441
+Ear
+U+1F442
+Nose
+U+1F443
+Mouth
+U+1F444
+Tongue
+U+1F445
+White Up Pointing Backhand Index
+U+1F446
+White Down Pointing Backhand Index
+U+1F447
+White Left Pointing Backhand Index
+U+1F448
+White Right Pointing Backhand Index
+U+1F449
+Fisted Hand Sign
+U+1F44A
+Waving Hand Sign
+U+1F44B
+Ok Hand Sign
+U+1F44C
+Thumbs Up Sign
+U+1F44D
+Thumbs Down Sign
+U+1F44E
+Clapping Hands Sign
+U+1F44F
+Open Hands Sign
+U+1F450
+Crown
+U+1F451
+Womans Hat
+U+1F452
+Eyeglasses
+U+1F453
+Necktie
+U+1F454
+T-Shirt
+U+1F455
+Jeans
+U+1F456
+Dress
+U+1F457
+Kimono
+U+1F458
+Bikini
+U+1F459
+Womans Clothes
+U+1F45A
+Purse
+U+1F45B
+Handbag
+U+1F45C
+Pouch
+U+1F45D
+Mans Shoe
+U+1F45E
+Athletic Shoe
+U+1F45F
+High-Heeled Shoe
+U+1F460
+Womans Sandal
+U+1F461
+Womans Boots
+U+1F462
+Footprints
+U+1F463
+Bust In Silhouette
+U+1F464
+Busts In Silhouette
+U+1F465
+Boy
+U+1F466
+Girl
+U+1F467
+Man
+U+1F468
+Woman
+U+1F469
+Family
+U+1F46A
+Man and Woman Holding Hands
+U+1F46B
+Two Men Holding Hands
+U+1F46C
+Two Women Holding Hands
+U+1F46D
+Police Officer
+U+1F46E
+Woman with Bunny Ears
+U+1F46F
+Bride with Veil
+U+1F470
+Person with Blond Hair
+U+1F471
+Man with Gua Pi Mao
+U+1F472
+Man with Turban
+U+1F473
+Older Man
+U+1F474
+Older Woman
+U+1F475
+Baby
+U+1F476
+Construction Worker
+U+1F477
+Princess
+U+1F478
+Japanese Ogre
+U+1F479
+Japanese Goblin
+U+1F47A
+Ghost
+U+1F47B
+Baby Angel
+U+1F47C
+Extraterrestrial Alien
+U+1F47D
+Alien Monster
+U+1F47E
+Imp
+U+1F47F
+Skull
+U+1F480
+Information Desk Person
+U+1F481
+Guardsman
+U+1F482
+Dancer
+U+1F483
+Lipstick
+U+1F484
+Nail Polish
+U+1F485
+Face Massage
+U+1F486
+Haircut
+U+1F487
+Barber Pole
+U+1F488
+Syringe
+U+1F489
+Pill
+U+1F48A
+Kiss Mark
+U+1F48B
+Love Letter
+U+1F48C
+Ring
+U+1F48D
+Gem Stone
+U+1F48E
+Kiss
+U+1F48F
+Bouquet
+U+1F490
+Couple with Heart
+U+1F491
+Wedding
+U+1F492
+Beating Heart
+U+1F493
+Broken Heart
+U+1F494
+Two Hearts
+U+1F495
+Sparkling Heart
+U+1F496
+Growing Heart
+U+1F497
+Heart with Arrow
+U+1F498
+Blue Heart
+U+1F499
+Green Heart
+U+1F49A
+Yellow Heart
+U+1F49B
+Purple Heart
+U+1F49C
+Heart with Ribbon
+U+1F49D
+Revolving Hearts
+U+1F49E
+Heart Decoration
+U+1F49F
+Diamond Shape with a Dot Inside
+U+1F4A0
+Electric Light Bulb
+U+1F4A1
+Anger Symbol
+U+1F4A2
+Bomb
+U+1F4A3
+Sleeping Symbol
+U+1F4A4
+Collision Symbol
+U+1F4A5
+Splashing Sweat Symbol
+U+1F4A6
+Droplet
+U+1F4A7
+Dash Symbol
+U+1F4A8
+Pile of Poo
+U+1F4A9
+Flexed Biceps
+U+1F4AA
+Dizzy Symbol
+U+1F4AB
+Speech Balloon
+U+1F4AC
+Thought Balloon
+U+1F4AD
+White Flower
+U+1F4AE
+Hundred Points Symbol
+U+1F4AF
+Money Bag
+U+1F4B0
+Currency Exchange
+U+1F4B1
+Heavy Dollar Sign
+U+1F4B2
+Credit Card
+U+1F4B3
+Banknote with Yen Sign
+U+1F4B4
+Banknote with Dollar Sign
+U+1F4B5
+Banknote with Euro Sign
+U+1F4B6
+Banknote with Pound Sign
+U+1F4B7
+Money with Wings
+U+1F4B8
+Chart with Upwards Trend and Yen Sign
+U+1F4B9
+Seat
+U+1F4BA
+Personal Computer
+U+1F4BB
+Briefcase
+U+1F4BC
+Minidisc
+U+1F4BD
+Floppy Disk
+U+1F4BE
+Optical Disc
+U+1F4BF
+Dvd
+U+1F4C0
+File Folder
+U+1F4C1
+Open File Folder
+U+1F4C2
+Page with Curl
+U+1F4C3
+Page Facing Up
+U+1F4C4
+Calendar
+U+1F4C5
+Tear-Off Calendar
+U+1F4C6
+Card Index
+U+1F4C7
+Chart with Upwards Trend
+U+1F4C8
+Chart with Downwards Trend
+U+1F4C9
+Bar Chart
+U+1F4CA
+Clipboard
+U+1F4CB
+Pushpin
+U+1F4CC
+Round Pushpin
+U+1F4CD
+Paperclip
+U+1F4CE
+Straight Ruler
+U+1F4CF
+Triangular Ruler
+U+1F4D0
+Bookmark Tabs
+U+1F4D1
+Ledger
+U+1F4D2
+Notebook
+U+1F4D3
+Notebook with Decorative Cover
+U+1F4D4
+Closed Book
+U+1F4D5
+Open Book
+U+1F4D6
+Green Book
+U+1F4D7
+Blue Book
+U+1F4D8
+Orange Book
+U+1F4D9
+Books
+U+1F4DA
+Name Badge
+U+1F4DB
+Scroll
+U+1F4DC
+Memo
+U+1F4DD
+Telephone Receiver
+U+1F4DE
+Pager
+U+1F4DF
+Fax Machine
+U+1F4E0
+Satellite Antenna
+U+1F4E1
+Public Address Loudspeaker
+U+1F4E2
+Cheering Megaphone
+U+1F4E3
+Outbox Tray
+U+1F4E4
+Inbox Tray
+U+1F4E5
+Package
+U+1F4E6
+E-Mail Symbol
+U+1F4E7
+Incoming Envelope
+U+1F4E8
+Envelope with Downwards Arrow Above
+U+1F4E9
+Closed Mailbox with Lowered Flag
+U+1F4EA
+Closed Mailbox with Raised Flag
+U+1F4EB
+Open Mailbox with Raised Flag
+U+1F4EC
+Open Mailbox with Lowered Flag
+U+1F4ED
+Postbox
+U+1F4EE
+Postal Horn
+U+1F4EF
+Newspaper
+U+1F4F0
+Mobile Phone
+U+1F4F1
+Mobile Phone with Rightwards Arrow At Left
+U+1F4F2
+Vibration Mode
+U+1F4F3
+Mobile Phone Off
+U+1F4F4
+No Mobile Phones
+U+1F4F5
+Antenna with Bars
+U+1F4F6
+Camera
+U+1F4F7
+Camera with Flash
+U+1F4F8
+Video Camera
+U+1F4F9
+Television
+U+1F4FA
+Radio
+U+1F4FB
+Videocassette
+U+1F4FC
+Film Projector
+U+1F4FD
+Prayer Beads
+U+1F4FF
+Twisted Rightwards Arrows
+U+1F500
+Clockwise Rightwards and Leftwards Open Circle Arrows
+U+1F501
+Clockwise Rightwards and Leftwards Open Circle Arrows with Circled One Overlay
+U+1F502
+Clockwise Downwards and Upwards Open Circle Arrows
+U+1F503
+Anticlockwise Downwards and Upwards Open Circle Arrows
+U+1F504
+Low Brightness Symbol
+U+1F505
+High Brightness Symbol
+U+1F506
+Speaker with Cancellation Stroke
+U+1F507
+Speaker
+U+1F508
+Speaker with One Sound Wave
+U+1F509
+Speaker with Three Sound Waves
+U+1F50A
+Battery
+U+1F50B
+Electric Plug
+U+1F50C
+Left-Pointing Magnifying Glass
+U+1F50D
+Right-Pointing Magnifying Glass
+U+1F50E
+Lock with Ink Pen
+U+1F50F
+Closed Lock with Key
+U+1F510
+Key
+U+1F511
+Lock
+U+1F512
+Open Lock
+U+1F513
+Bell
+U+1F514
+Bell with Cancellation Stroke
+U+1F515
+Bookmark
+U+1F516
+Link Symbol
+U+1F517
+Radio Button
+U+1F518
+Back with Leftwards Arrow Above
+U+1F519
+End with Leftwards Arrow Above
+U+1F51A
+On with Exclamation Mark with Left Right Arrow Above
+U+1F51B
+Soon with Rightwards Arrow Above
+U+1F51C
+Top with Upwards Arrow Above
+U+1F51D
+No One Under Eighteen Symbol
+U+1F51E
+Keycap Ten
+U+1F51F
+Input Symbol for Latin Capital Letters
+U+1F520
+Input Symbol for Latin Small Letters
+U+1F521
+Input Symbol for Numbers
+U+1F522
+Input Symbol for Symbols
+U+1F523
+Input Symbol for Latin Letters
+U+1F524
+Fire
+U+1F525
+Electric Torch
+U+1F526
+Wrench
+U+1F527
+Hammer
+U+1F528
+Nut and Bolt
+U+1F529
+Hocho
+U+1F52A
+Pistol
+U+1F52B
+Microscope
+U+1F52C
+Telescope
+U+1F52D
+Crystal Ball
+U+1F52E
+Six Pointed Star with Middle Dot
+U+1F52F
+Japanese Symbol for Beginner
+U+1F530
+Trident Emblem
+U+1F531
+Black Square Button
+U+1F532
+White Square Button
+U+1F533
+Large Red Circle
+U+1F534
+Large Blue Circle
+U+1F535
+Large Orange Diamond
+U+1F536
+Large Blue Diamond
+U+1F537
+Small Orange Diamond
+U+1F538
+Small Blue Diamond
+U+1F539
+Up-Pointing Red Triangle
+U+1F53A
+Down-Pointing Red Triangle
+U+1F53B
+Up-Pointing Small Red Triangle
+U+1F53C
+Down-Pointing Small Red Triangle
+U+1F53D
+Om Symbol
+U+1F549
+Dove of Peace
+U+1F54A
+Kaaba
+U+1F54B
+Mosque
+U+1F54C
+Synagogue
+U+1F54D
+Menorah With Nine Branches
+U+1F54E
+Clock Face One Oclock
+U+1F550
+Clock Face Two Oclock
+U+1F551
+Clock Face Three Oclock
+U+1F552
+Clock Face Four Oclock
+U+1F553
+Clock Face Five Oclock
+U+1F554
+Clock Face Six Oclock
+U+1F555
+Clock Face Seven Oclock
+U+1F556
+Clock Face Eight Oclock
+U+1F557
+Clock Face Nine Oclock
+U+1F558
+Clock Face Ten Oclock
+U+1F559
+Clock Face Eleven Oclock
+U+1F55A
+Clock Face Twelve Oclock
+U+1F55B
+Clock Face One-Thirty
+U+1F55C
+Clock Face Two-Thirty
+U+1F55D
+Clock Face Three-Thirty
+U+1F55E
+Clock Face Four-Thirty
+U+1F55F
+Clock Face Five-Thirty
+U+1F560
+Clock Face Six-Thirty
+U+1F561
+Clock Face Seven-Thirty
+U+1F562
+Clock Face Eight-Thirty
+U+1F563
+Clock Face Nine-Thirty
+U+1F564
+Clock Face Ten-Thirty
+U+1F565
+Clock Face Eleven-Thirty
+U+1F566
+Clock Face Twelve-Thirty
+U+1F567
+Candle
+U+1F56F
+Mantelpiece Clock
+U+1F570
+Hole
+U+1F573
+Man In Business Suit Levitating
+U+1F574
+Sleuth or Spy
+U+1F575
+Dark Sunglasses
+U+1F576
+Spider
+U+1F577
+Spider Web
+U+1F578
+Joystick
+U+1F579
+Man Dancing
+U+1F57A
+Linked Paperclips
+U+1F587
+Lower Left Ballpoint Pen
+U+1F58A
+Lower Left Fountain Pen
+U+1F58B
+Lower Left Paintbrush
+U+1F58C
+Lower Left Crayon
+U+1F58D
+Raised Hand with Fingers Splayed
+U+1F590
+Reversed Hand with Middle Finger Extended
+U+1F595
+Raised Hand with Part Between Middle and Ring Fingers
+U+1F596
+Black Heart
+U+1F5A4
+Desktop Computer
+U+1F5A5
+Printer
+U+1F5A8
+Three Button Mouse
+U+1F5B1
+Trackball
+U+1F5B2
+Frame with Picture
+U+1F5BC
+Card Index Dividers
+U+1F5C2
+Card File Box
+U+1F5C3
+File Cabinet
+U+1F5C4
+Wastebasket
+U+1F5D1
+Spiral Note Pad
+U+1F5D2
+Spiral Calendar Pad
+U+1F5D3
+Compression
+U+1F5DC
+Old Key
+U+1F5DD
+Rolled-Up Newspaper
+U+1F5DE
+Dagger Knife
+U+1F5E1
+Speaking Head In Silhouette
+U+1F5E3
+Left Speech Bubble
+U+1F5E8
+Right Anger Bubble
+U+1F5EF
+Ballot Box with Ballot
+U+1F5F3
+World Map
+U+1F5FA
+Mount Fuji
+U+1F5FB
+Tokyo Tower
+U+1F5FC
+Statue of Liberty
+U+1F5FD
+Silhouette of Japan
+U+1F5FE
+Moyai
+U+1F5FF

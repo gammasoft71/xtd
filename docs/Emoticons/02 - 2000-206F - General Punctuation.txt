@@ -1,0 +1,6 @@
+Zero Width Joiner
+U+200D
+Double Exclamation Mark
+U+203C U+FE0F
+Exclamation Question Mark
+U+2049 U+FE0F

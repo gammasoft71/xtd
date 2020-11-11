@@ -1,0 +1,4 @@
+Arrow Pointing Rightwards Then Curving Upwards
+U+2934 U+FE0F
+Arrow Pointing Rightwards Then Curving Downwards
+U+2935 U+FE0F

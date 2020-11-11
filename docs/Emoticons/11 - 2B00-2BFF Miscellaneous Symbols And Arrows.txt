@@ -1,0 +1,14 @@
+Leftwards Black Arrow
+U+2B05 U+FE0F
+Upwards Black Arrow
+U+2B06 U+FE0F
+Downwards Black Arrow
+U+2B07 U+FE0F
+Black Large Square
+U+2B1B
+White Large Square
+U+2B1C
+White Medium Star
+U+2B50
+Heavy Large Circle
+U+2B55

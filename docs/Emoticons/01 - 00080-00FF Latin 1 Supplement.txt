@@ -1,0 +1,4 @@
+Copyright Sign
+U+00A9 U+FE0F
+Registered Sign
+U+00AE U+FE0F

@@ -1,0 +1,30 @@
+Squared Katakana Koko
+U+1F201
+Squared Katakana Sa
+U+1F202 U+FE0F
+Squared Cjk Unified Ideograph-7121
+U+1F21A
+Squared Cjk Unified Ideograph-6307
+U+1F22F
+Squared Cjk Unified Ideograph-7981
+U+1F232
+Squared Cjk Unified Ideograph-7a7a
+U+1F233
+Squared Cjk Unified Ideograph-5408
+U+1F234
+Squared Cjk Unified Ideograph-6e80
+U+1F235
+Squared Cjk Unified Ideograph-6709
+U+1F236
+Squared Cjk Unified Ideograph-6708
+U+1F237 U+FE0F
+Squared Cjk Unified Ideograph-7533
+U+1F238
+Squared Cjk Unified Ideograph-5272
+U+1F239
+Squared Cjk Unified Ideograph-55b6
+U+1F23A
+Circled Ideograph Advantage
+U+1F250
+Circled Ideograph Accept
+U+1F251

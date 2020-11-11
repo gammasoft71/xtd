@@ -1,0 +1,1218 @@
+Eye in Speech Bubble
+U+1F441 U+200D U+1F5E8
+Person: Red Hair
+U+1F9D1 U+200D U+1F9B0
+Person: Light Skin Tone, Red Hair
+U+1F9D1 U+1F3FB U+200D U+1F9B0
+Person: Medium-Light Skin Tone, Red Hair
+U+1F9D1 U+1F3FC U+200D U+1F9B0
+Person: Medium Skin Tone, Red Hair
+U+1F9D1 U+1F3FD U+200D U+1F9B0
+Person: Medium-Dark Skin Tone, Red Hair
+U+1F9D1 U+1F3FE U+200D U+1F9B0
+Person: Dark Skin Tone, Red Hair
+U+1F9D1 U+1F3FF U+200D U+1F9B0
+Person: Curly Hair
+U+1F9D1 U+200D U+1F9B1
+Person: Light Skin Tone, Curly Hair
+U+1F9D1 U+1F3FB U+200D U+1F9B1
+Person: Medium-Light Skin Tone, Curly Hair
+U+1F9D1 U+1F3FC U+200D U+1F9B1
+Person: Medium Skin Tone, Curly Hair
+U+1F9D1 U+1F3FD U+200D U+1F9B1
+Person: Medium-Dark Skin Tone, Curly Hair
+U+1F9D1 U+1F3FE U+200D U+1F9B1
+Person: Dark Skin Tone, Curly Hair
+U+1F9D1 U+1F3FF U+200D U+1F9B1
+Person: White Hair
+U+1F9D1 U+200D U+1F9B3
+Person: Light Skin Tone, White Hair
+U+1F9D1 U+1F3FB U+200D U+1F9B3
+Person: Medium-Light Skin Tone, White Hair
+U+1F9D1 U+1F3FC U+200D U+1F9B3
+Person: Medium Skin Tone, White Hair
+U+1F9D1 U+1F3FD U+200D U+1F9B3
+Person: Medium-Dark Skin Tone, White Hair
+U+1F9D1 U+1F3FE U+200D U+1F9B3
+Person: Dark Skin Tone, White Hair
+U+1F9D1 U+1F3FF U+200D U+1F9B3
+Person: Bald
+U+1F9D1 U+200D U+1F9B2
+Person: Light Skin Tone, Bald
+U+1F9D1 U+1F3FB U+200D U+1F9B2
+Person: Medium-Light Skin Tone, Bald
+U+1F9D1 U+1F3FC U+200D U+1F9B2
+Person: Medium Skin Tone, Bald
+U+1F9D1 U+1F3FD U+200D U+1F9B2
+Person: Medium-Dark Skin Tone, Bald
+U+1F9D1 U+1F3FE U+200D U+1F9B2
+Person: Dark Skin Tone, Bald
+U+1F9D1 U+1F3FF U+200D U+1F9B2
+Man: Red Hair
+U+1F468 U+200D U+1F9B0
+Man: Light Skin Tone, Red Hair
+U+1F468 U+1F3FB U+200D U+1F9B0
+Man: Medium-Light Skin Tone, Red Hair
+U+1F468 U+1F3FC U+200D U+1F9B0
+Man: Medium Skin Tone, Red Hair
+U+1F468 U+1F3FD U+200D U+1F9B0
+Man: Medium-Dark Skin Tone, Red Hair
+U+1F468 U+1F3FE U+200D U+1F9B0
+Man: Dark Skin Tone, Red Hair
+U+1F468 U+1F3FF U+200D U+1F9B0
+Man: Curly Hair
+U+1F468 U+200D U+1F9B1
+Man: Light Skin Tone, Curly Hair
+U+1F468 U+1F3FB U+200D U+1F9B1
+Man: Medium-Light Skin Tone, Curly Hair
+U+1F468 U+1F3FC U+200D U+1F9B1
+Man: Medium Skin Tone, Curly Hair
+U+1F468 U+1F3FD U+200D U+1F9B1
+Man: Medium-Dark Skin Tone, Curly Hair
+U+1F468 U+1F3FE U+200D U+1F9B1
+Man: Dark Skin Tone, Curly Hair
+U+1F468 U+1F3FF U+200D U+1F9B1
+Man: White Hair
+U+1F468 U+200D U+1F9B3
+Man: Light Skin Tone, White Hair
+U+1F468 U+1F3FB U+200D U+1F9B3
+Man: Medium-Light Skin Tone, White Hair
+U+1F468 U+1F3FC U+200D U+1F9B3
+Man: Medium Skin Tone, White Hair
+U+1F468 U+1F3FD U+200D U+1F9B3
+Man: Medium-Dark Skin Tone, White Hair
+U+1F468 U+1F3FE U+200D U+1F9B3
+Man: Dark Skin Tone, White Hair
+U+1F468 U+1F3FF U+200D U+1F9B3
+Man: Bald
+U+1F468 U+200D U+1F9B2
+Man: Light Skin Tone, Bald
+U+1F468 U+1F3FB U+200D U+1F9B2
+Man: Medium-Light Skin Tone, Bald
+U+1F468 U+1F3FC U+200D U+1F9B2
+Man: Medium Skin Tone, Bald
+U+1F468 U+1F3FD U+200D U+1F9B2
+Man: Medium-Dark Skin Tone, Bald
+U+1F468 U+1F3FE U+200D U+1F9B2
+Man: Dark Skin Tone, Bald
+U+1F468 U+1F3FF U+200D U+1F9B2
+Woman: Red Hair
+U+1F469 U+200D U+1F9B0
+Woman: Light Skin Tone, Red Hair
+U+1F469 U+1F3FB U+200D U+1F9B0
+Woman: Medium-Light Skin Tone, Red Hair
+U+1F469 U+1F3FC U+200D U+1F9B0
+Woman: Medium Skin Tone, Red Hair
+U+1F469 U+1F3FD U+200D U+1F9B0
+Woman: Medium-Dark Skin Tone, Red Hair
+U+1F469 U+1F3FE U+200D U+1F9B0
+Woman: Dark Skin Tone, Red Hair
+U+1F469 U+1F3FF U+200D U+1F9B0
+Woman: Curly Hair
+U+1F469 U+200D U+1F9B1
+Woman: Light Skin Tone, Curly Hair
+U+1F469 U+1F3FB U+200D U+1F9B1
+Woman: Medium-Light Skin Tone, Curly Hair
+U+1F469 U+1F3FC U+200D U+1F9B1
+Woman: Medium Skin Tone, Curly Hair
+U+1F469 U+1F3FD U+200D U+1F9B1
+Woman: Medium-Dark Skin Tone, Curly Hair
+U+1F469 U+1F3FE U+200D U+1F9B1
+Woman: Dark Skin Tone, Curly Hair
+U+1F469 U+1F3FF U+200D U+1F9B1
+Woman: White Hair
+U+1F469 U+200D U+1F9B3
+Woman: Light Skin Tone, White Hair
+U+1F469 U+1F3FB U+200D U+1F9B3
+Woman: Medium-Light Skin Tone, White Hair
+U+1F469 U+1F3FC U+200D U+1F9B3
+Woman: Medium Skin Tone, White Hair
+U+1F469 U+1F3FD U+200D U+1F9B3
+Woman: Medium-Dark Skin Tone, White Hair
+U+1F469 U+1F3FE U+200D U+1F9B3
+Woman: Dark Skin Tone, White Hair
+U+1F469 U+1F3FF U+200D U+1F9B3
+Woman: Bald
+U+1F469 U+200D U+1F9B2
+Woman: Light Skin Tone, Bald
+U+1F469 U+1F3FB U+200D U+1F9B2
+Woman: Medium-Light Skin Tone, Bald
+U+1F469 U+1F3FC U+200D U+1F9B2
+Woman: Medium Skin Tone, Bald
+U+1F469 U+1F3FD U+200D U+1F9B2
+Woman: Medium-Dark Skin Tone, Bald
+U+1F469 U+1F3FE U+200D U+1F9B2
+Woman: Dark Skin Tone, Bald
+U+1F469 U+1F3FF U+200D U+1F9B2
+Person: Blond Hair
+U+1F471
+Person: Light Skin Tone, Blond Hair
+U+1F471 U+1F3FB
+Person: Medium-Light Skin Tone, Blond Hair
+U+1F471 U+1F3FC
+Person: Medium Skin Tone, Blond Hair
+U+1F471 U+1F3FD
+Person: Medium-Dark Skin Tone, Blond Hair
+U+1F471 U+1F3FE
+Person: Dark Skin Tone, Blond Hair
+U+1F471 U+1F3FF
+Man: Blond Hair
+U+1F471 U+200D U+2642 U+FE0F
+Man: Light Skin Tone, Blond Hair
+U+1F471 U+1F3FB U+200D U+2642 U+FE0F
+Man: Medium-Light Skin Tone, Blond Hair
+U+1F471 U+1F3FC U+200D U+2642 U+FE0F
+Man: Medium Skin Tone, Blond Hair
+U+1F471 U+1F3FD U+200D U+2642 U+FE0F
+Man: Medium-Dark Skin Tone, Blond Hair
+U+1F471 U+1F3FE U+200D U+2642 U+FE0F
+Man: Dark Skin Tone, Blond Hair
+U+1F471 U+1F3FF U+200D U+2642 U+FE0F
+Woman: Blond Hair
+U+1F471 U+200D U+2640 U+FE0F
+Woman: Light Skin Tone, Blond Hair
+U+1F471 U+1F3FB U+200D U+2640 U+FE0F
+Woman: Medium-Light Skin Tone, Blond Hair
+U+1F471 U+1F3FC U+200D U+2640 U+FE0F
+Woman: Medium Skin Tone, Blond Hair
+U+1F471 U+1F3FD U+200D U+2640 U+FE0F
+Woman: Medium-Dark Skin Tone, Blond Hair
+U+1F471 U+1F3FE U+200D U+2640 U+FE0F
+Woman: Dark Skin Tone, Blond Hair
+U+1F471 U+1F3FF U+200D U+2640 U+FE0F
+Person Frowning: Light Skin Tone
+U+1F64D U+1F3FB
+Person Frowning: Medium-Light Skin Tone
+U+1F64D U+1F3FC
+Person Frowning: Medium Skin Tone
+U+1F64D U+1F3FD
+Person Frowning: Medium-Dark Skin Tone,
+U+1F64D U+1F3FE
+Person Frowning: Dark Skin Tone
+U+1F64D U+1F3FF
+Man Frowning
+U+1F64D U+200D U+2642 U+FE0F
+Man Frowning: Light Skin Tone
+U+1F64D U+1F3FB U+200D U+2642 U+FE0F
+Man Frowning: Medium-Light Skin Tone
+U+1F64D U+1F3FC U+200D U+2642 U+FE0F
+Man Frowning: Medium Skin Tone
+U+1F64D U+1F3FD U+200D U+2642 U+FE0F
+Man Frowning: Medium-Dark Skin Tone
+U+1F64D U+1F3FE U+200D U+2642 U+FE0F
+Man Frowning: Dark Skin Tone
+U+1F64D U+1F3FF U+200D U+2642 U+FE0F
+Woman Frowning
+U+1F64D U+200D U+2640 U+FE0F
+Woman Frowning: Light Skin Tone
+U+1F64D U+1F3FB U+200D U+2640 U+FE0F
+Woman Frowning: Medium-Light Skin Tone
+U+1F64D U+1F3FC U+200D U+2640 U+FE0F
+Woman Frowning: Medium Skin Tone
+U+1F64D U+1F3FD U+200D U+2640 U+FE0F
+Woman Frowning: Medium-Dark Skin Tone
+U+1F64D U+1F3FE U+200D U+2640 U+FE0F
+Woman Frowning: Dark Skin Tone
+U+1F64D U+1F3FF U+200D U+2640 U+FE0F
+Person Pouting
+U+1F64E
+Person Pouting: Light Skin Tone
+U+1F64E U+1F3FB
+Person Pouting: Medium-Light Skin Tone
+U+1F64E U+1F3FC
+Person Pouting: Medium Skin Tone
+U+1F64E U+1F3FD
+Person Pouting: Medium-Dark Skin Tone
+U+1F64E U+1F3FE
+Person Pouting: Dark Skin Tone
+U+1F64E U+1F3FF
+Man Pouting
+U+1F64E U+200D U+2642 U+FE0F
+Man Pouting: Light Skin Tone
+U+1F64E U+1F3FB U+200D U+2642 U+FE0F
+Man Pouting: Medium-Light Skin Tone
+U+1F64E U+1F3FC U+200D U+2642 U+FE0F
+Man Pouting: Medium Skin Tone
+U+1F64E U+1F3FD U+200D U+2642 U+FE0F
+Man Pouting: Medium-Dark Skin Tone
+U+1F64E U+1F3FE U+200D U+2642 U+FE0F
+Man Pouting: Dark Skin Tone
+U+1F64E U+1F3FF U+200D U+2642 U+FE0F
+Woman Pouting
+U+1F64E U+200D U+2640 U+FE0F
+Woman Pouting: Light Skin Tone
+U+1F64E U+1F3FB U+200D U+2640 U+FE0F
+Woman Pouting: Medium-Light Skin Tone
+U+1F64E U+1F3FC U+200D U+2640 U+FE0F
+Woman Pouting: Medium Skin Tone
+U+1F64E U+1F3FD U+200D U+2640 U+FE0F
+Woman Pouting: Medium-Dark Skin Tone
+U+1F64E U+1F3FE U+200D U+2640 U+FE0F
+Woman Pouting: Dark Skin Tone
+U+1F64E U+1F3FF U+200D U+2640 U+FE0F
+Person Gesturing No
+U+1F645
+Person Gesturing No: Light Skin Tone
+U+1F645 U+1F3FB
+Person Gesturing No: Medium-Light Skin Tone
+U+1F645 U+1F3FC
+Person Gesturing No: Medium Skin Tone
+U+1F645 U+1F3FD
+Person Gesturing No: Medium-Dark Skin Tone
+U+1F645 U+1F3FE
+Person Gesturing No: Dark Skin Tone
+U+1F645 U+1F3FF
+Man Gesturing No
+U+1F645 U+200D U+2642 U+FE0F
+Man Gesturing No: Light Skin Tone
+U+1F645 U+1F3FB U+200D U+2642 U+FE0F
+Man Gesturing No: Medium-Light Skin Tone
+U+1F645 U+1F3FC U+200D U+2642 U+FE0F
+Man Gesturing No: Medium Skin Tone
+U+1F645 U+1F3FD U+200D U+2642 U+FE0F
+Man Gesturing No: Medium-Dark Skin Tone
+U+1F645 U+1F3FE U+200D U+2642 U+FE0F
+Man Gesturing No: Dark Skin Tone
+U+1F645 U+1F3FF U+200D U+2642 U+FE0F
+Woman Gesturing No
+U+1F645 U+200D U+2640 U+FE0F
+Woman Gesturing No: Light Skin Tone
+U+1F645 U+1F3FB U+200D U+2640 U+FE0F
+Woman Gesturing No: Medium-Light Skin Tone
+U+1F645 U+1F3FC U+200D U+2640 U+FE0F
+Woman Gesturing No: Medium Skin Tone
+U+1F645 U+1F3FD U+200D U+2640 U+FE0F
+Woman Gesturing No: Medium-Dark Skin Tone
+U+1F645 U+1F3FE U+200D U+2640 U+FE0F
+Woman Gesturing No: Dark Skin Tone
+U+1F645 U+1F3FF U+200D U+2640 U+FE0F
+Person Gesturing OK
+U+1F646
+Person Gesturing OK: Light Skin Tone
+U+1F646 U+1F3FB
+Person Gesturing OK: Medium-Light Skin Tone
+U+1F646 U+1F3FC
+Person Gesturing OK: Medium Skin Tone
+U+1F646 U+1F3FD
+Person Gesturing OK: Medium-Dark Skin Tone
+U+1F646 U+1F3FE
+Person Gesturing OK: Dark Skin Tone
+U+1F646 U+1F3FF
+Man Gesturing OK
+U+1F646 U+200D U+2642 U+FE0F
+Man Gesturing OK: Light Skin Tone
+U+1F646 U+1F3FB U+200D U+2642 U+FE0F
+Man Gesturing OK: Medium-Light Skin Tone
+U+1F646 U+1F3FC U+200D U+2642 U+FE0F
+Man Gesturing OK: Medium Skin Tone
+U+1F646 U+1F3FD U+200D U+2642 U+FE0F
+Man Gesturing OK: Medium-Dark Skin Tone
+U+1F646 U+1F3FE U+200D U+2642 U+FE0F
+Man Gesturing OK: Dark Skin Tone
+U+1F646 U+1F3FF U+200D U+2642 U+FE0F
+Woman Gesturing OK
+U+1F646 U+200D U+2640 U+FE0F
+Woman Gesturing OK: Light Skin Tone
+U+1F646 U+1F3FB U+200D U+2640 U+FE0F
+Woman Gesturing OK: Medium-Light Skin Tone
+U+1F646 U+1F3FC U+200D U+2640 U+FE0F
+Woman Gesturing OK: Medium Skin Tone
+U+1F646 U+1F3FD U+200D U+2640 U+FE0F
+Woman Gesturing OK: Medium-Dark Skin Tone
+U+1F646 U+1F3FE U+200D U+2640 U+FE0F
+Woman Gesturing OK: Dark Skin Tone
+U+1F646 U+1F3FF U+200D U+2640 U+FE0F
+Person Tipping Hand
+U+1F481
+Person Tipping Hand: Light Skin Tone
+U+1F481 U+1F3FB
+Person Tipping Hand: Medium-Light Skin Tone
+U+1F481 U+1F3FC
+Person Tipping Hand: Medium Skin Tone
+U+1F481 U+1F3FD
+Person Tipping Hand: Medium-Dark Skin Tone
+U+1F481 U+1F3FE
+Person Tipping Hand: Dark Skin Tone
+U+1F481 U+1F3FF
+Man Tipping Hand
+U+1F481 U+200D U+2642 U+FE0F
+Man Tipping Hand: Light Skin Tone
+U+1F481 U+1F3FB U+200D U+2642 U+FE0F
+Man Tipping Hand: Medium-Light Skin Tone
+U+1F481 U+1F3FC U+200D U+2642 U+FE0F
+Man Tipping Hand: Medium Skin Tone
+U+1F481 U+1F3FD U+200D U+2642 U+FE0F
+Man Tipping Hand: Medium-Dark Skin Tone
+U+1F481 U+1F3FE U+200D U+2642 U+FE0F
+Man Tipping Hand: Dark Skin Tone
+U+1F481 U+1F3FF U+200D U+2642 U+FE0F
+Woman Tipping Hand
+U+1F481 U+200D U+2640 U+FE0F
+Woman Tipping Hand: Light Skin Tone
+U+1F481 U+1F3FB U+200D U+2640 U+FE0F
+Woman Tipping Hand: Medium-Light Skin Tone
+U+1F481 U+1F3FC U+200D U+2640 U+FE0F
+Woman Tipping Hand: Medium Skin Tone
+U+1F481 U+1F3FD U+200D U+2640 U+FE0F
+Woman Tipping Hand: Medium-Dark Skin Tone
+U+1F481 U+1F3FE U+200D U+2640 U+FE0F
+Woman Tipping Hand: Dark Skin Tone
+U+1F481 U+1F3FF U+200D U+2640 U+FE0F
+Person Raising Hand
+U+1F64B
+Person Raising Hand: Light Skin Tone
+U+1F64B U+1F3FB
+Person Raising Hand: Medium-Light Skin Tone
+U+1F64B U+1F3FC
+Person Raising Hand: Medium Skin Tone
+U+1F64B U+1F3FD
+Person Raising Hand: Medium-Dark Skin Tone
+U+1F64B U+1F3FE
+Person Raising Hand: Dark Skin Tone
+U+1F64B U+1F3FF
+Man Raising Hand
+U+1F64B U+200D U+2642 U+FE0F
+Man Raising Hand: Light Skin Tone
+U+1F64B U+1F3FB U+200D U+2642 U+FE0F
+Man Raising Hand: Medium-Light Skin Tone
+U+1F64B U+1F3FC U+200D U+2642 U+FE0F
+Man Raising Hand: Medium Skin Tone
+U+1F64B U+1F3FD U+200D U+2642 U+FE0F
+Man Raising Hand: Medium-Dark Skin Tone
+U+1F64B U+1F3FE U+200D U+2642 U+FE0F
+Man Raising Hand: Dark Skin Tone
+U+1F64B U+1F3FF U+200D U+2642 U+FE0F
+Woman Raising Hand
+U+1F64B U+200D U+2640 U+FE0F
+Woman Raising Hand: Light Skin Tone
+U+1F64B U+1F3FB U+200D U+2640 U+FE0F
+Woman Raising Hand: Medium-Light Skin Tone
+U+1F64B U+1F3FC U+200D U+2640 U+FE0F
+Woman Raising Hand: Medium Skin Tone
+U+1F64B U+1F3FD U+200D U+2640 U+FE0F
+Woman Raising Hand: Medium-Dark Skin Tone
+U+1F64B U+1F3FE U+200D U+2640 U+FE0F
+Woman Raising Hand: Dark Skin Tone
+U+1F64B U+1F3FF U+200D U+2640 U+FE0F
+Person Bowing: Light Skin Tone
+U+1F647 U+1F3FB
+Person Bowing: Medium-Light Skin Tone
+U+1F647 U+1F3FC
+Person Bowing: Medium Skin Tone
+U+1F647 U+1F3FD
+Person Bowing: Medium-Dark Skin Tone
+U+1F647 U+1F3FE
+Person Bowing: Dark Skin Tone
+U+1F647 U+1F3FF
+Man Bowing
+U+1F647 U+200D U+2642 U+FE0F
+Man Bowing: Light Skin Tone
+U+1F647 U+1F3FB U+200D U+2642 U+FE0F
+Man Bowing: Medium-Light Skin Tone
+U+1F647 U+1F3FC U+200D U+2642 U+FE0F
+Man Bowing: Medium Skin Tone
+U+1F647 U+1F3FD U+200D U+2642 U+FE0F
+Man Bowing: Medium-Dark Skin Tone
+U+1F647 U+1F3FE U+200D U+2642 U+FE0F
+Man Bowing: Dark Skin Tone
+U+1F647 U+1F3FF U+200D U+2642 U+FE0F
+Woman Bowing
+U+1F647 U+200D U+2640 U+FE0F
+Woman Bowing: Light Skin Tone
+U+1F647 U+1F3FB U+200D U+2640 U+FE0F
+Woman Bowing: Medium-Light Skin Tone
+U+1F647 U+1F3FC U+200D U+2640 U+FE0F
+Woman Bowing: Medium Skin Tone
+U+1F647 U+1F3FD U+200D U+2640 U+FE0F
+Woman Bowing: Medium-Dark Skin Tone
+U+1F647 U+1F3FE U+200D U+2640 U+FE0F
+Woman Bowing: Dark Skin Tone
+U+1F647 U+1F3FF U+200D U+2640 U+FE0F
+Person Facepalming
+U+1F926
+Person Facepalming: Light Skin Tone
+U+1F926 U+1F3FB
+Person Facepalming: Medium-Light Skin Tone
+U+1F926 U+1F3FC
+Person Facepalming: Medium Skin Tone
+U+1F926 U+1F3FD
+Person Facepalming: Medium-Dark Skin Tone
+U+1F926 U+1F3FE
+Person Facepalming: Dark Skin Tone
+U+1F926 U+1F3FF
+Man Facepalming
+U+1F926 U+200D U+2642 U+FE0F
+Man Facepalming: Light Skin Tone
+U+1F926 U+1F3FB U+200D U+2642 U+FE0F
+Man Facepalming: Medium-Light Skin Tone
+U+1F926 U+1F3FC U+200D U+2642 U+FE0F
+Man Facepalming: Medium Skin Tone
+U+1F926 U+1F3FD U+200D U+2642 U+FE0F
+Man Facepalming: Medium-Dark Skin Tone
+U+1F926 U+1F3FE U+200D U+2642 U+FE0F
+Man Facepalming: Dark Skin Tone
+U+1F926 U+1F3FF U+200D U+2642 U+FE0F
+Woman Facepalming
+U+1F926 U+200D U+2640 U+FE0F
+Woman Facepalming: Light Skin Tone
+U+1F926 U+1F3FB U+200D U+2640 U+FE0F
+Woman Facepalming: Medium-Light Skin Tone
+U+1F926 U+1F3FC U+200D U+2640 U+FE0F
+Woman Facepalming: Medium Skin Tone
+U+1F926 U+1F3FD U+200D U+2640 U+FE0F
+Woman Facepalming: Medium-Dark Skin Tone
+U+1F926 U+1F3FE U+200D U+2640 U+FE0F
+Woman Facepalming: Dark Skin Tone
+U+1F926 U+1F3FF U+200D U+2640 U+FE0F
+Person Shrugging
+U+1F937
+Person Shrugging: Light Skin Tone
+U+1F937 U+1F3FB
+Person Shrugging: Medium-Light Skin Tone
+U+1F937 U+1F3FC
+Person Shrugging: Medium Skin Tone
+U+1F937 U+1F3FD
+Person Shrugging: Medium-Dark Skin Tone
+U+1F937 U+1F3FE
+Person Shrugging: Dark Skin Tone
+U+1F937 U+1F3FF
+Man Shrugging
+U+1F937 U+200D U+2642 U+FE0F
+Man Shrugging: Light Skin Tone
+U+1F937 U+1F3FB U+200D U+2642 U+FE0F
+Man Shrugging: Medium-Light Skin Tone
+U+1F937 U+1F3FC U+200D U+2642 U+FE0F
+Man Shrugging: Medium Skin Tone
+U+1F937 U+1F3FD U+200D U+2642 U+FE0F
+Man Shrugging: Medium-Dark Skin Tone
+U+1F937 U+1F3FE U+200D U+2642 U+FE0F
+Man Shrugging: Dark Skin Tone
+U+1F937 U+1F3FF U+200D U+2642 U+FE0F
+Woman Shrugging
+U+1F937 U+200D U+2640 U+FE0F
+Woman Shrugging: Light Skin Tone
+U+1F937 U+1F3FB U+200D U+2640 U+FE0F
+Woman Shrugging: Medium-Light Skin Tone
+U+1F937 U+1F3FC U+200D U+2640 U+FE0F
+Woman Shrugging: Medium Skin Tone
+U+1F937 U+1F3FD U+200D U+2640 U+FE0F
+Woman Shrugging: Medium-Dark Skin Tone
+U+1F937 U+1F3FE U+200D U+2640 U+FE0F
+Woman Shrugging: Dark Skin Tone
+U+1F937 U+1F3FF U+200D U+2640 U+FE0F
+Health Worker
+U+1F9D1 U+200D U+2695 U+FE0F
+Health Worker: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+2695 U+FE0F
+Health Worker: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+2695 U+FE0F
+Health Worker: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+2695 U+FE0F
+Health Worker: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+2695 U+FE0F
+Health Worker: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+2695 U+FE0F
+Man Health Worker
+U+1F468 U+200D U+2695 U+FE0F
+Man Health Worker: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+2695 U+FE0F
+Man Health Worker: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+2695 U+FE0F
+Man Health Worker: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+2695 U+FE0F
+Man Health Worker: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+2695 U+FE0F
+Man Health Worker: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+2695 U+FE0F
+Woman Health Worker
+U+1F469 U+200D U+2695 U+FE0F
+Woman Health Worker: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+2695 U+FE0F
+Woman Health Worker: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+2695 U+FE0F
+Woman Health Worker: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+2695 U+FE0F
+Woman Health Worker: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+2695 U+FE0F
+Woman Health Worker: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+2695 U+FE0F
+Student
+U+1F9D1 U+200D U+1F393
+Student: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F393
+Student: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F393
+Student: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F393
+Student: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F393
+Student: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F393
+Man Student
+U+1F468 U+200D U+1F393
+Man Student: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F393
+Man Student: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F393
+Man Student: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F393
+Man Student: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F393
+Man Student: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F393
+Woman Student
+U+1F469 U+200D U+1F393
+Woman Student: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F393
+Woman Student: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F393
+Woman Student: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F393
+Woman Student: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F393
+Woman Student: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F393
+Teacher
+U+1F9D1 U+200D U+1F3EB
+Teacher: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F3EB
+Teacher: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F3EB
+Teacher: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F3EB
+Teacher: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F3EB
+Teacher: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F3EB
+Man Teacher
+U+1F468 U+200D U+1F3EB
+Man Teacher: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F3EB
+Man Teacher: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F3EB
+Man Teacher: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F3EB
+Man Teacher: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F3EB
+Man Teacher: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F3EB
+Woman Teacher
+U+1F469 U+200D U+1F3EB
+Woman Teacher: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F3EB
+Woman Teacher: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F3EB
+Woman Teacher: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F3EB
+Woman Teacher: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F3EB
+Woman Teacher: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F3EB
+Farmer
+U+1F9D1 U+200D U+1F33E
+Farmer: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F33E
+Farmer: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F33E
+Farmer: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F33E
+Farmer: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F33E
+Farmer: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F33E
+Man Farmer
+U+1F468 U+200D U+1F33E
+Man Farmer: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F33E
+Man Farmer: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F33E
+Man Farmer: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F33E
+Man Farmer: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F33E
+Man Farmer: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F33E
+Woman Farmer
+U+1F469 U+200D U+1F33E
+Woman Farmer: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F33E
+Woman Farmer: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F33E
+Woman Farmer: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F33E
+Woman Farmer: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F33E
+Woman Farmer: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F33E
+Cook
+U+1F9D1 U+200D U+1F373
+Cook: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F373
+Cook: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F373
+Cook: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F373
+Cook: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F373
+Cook: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F373
+Man Cook
+U+1F468 U+200D U+1F373
+Man Cook: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F373
+Man Cook: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F373
+Man Cook: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F373
+Man Cook: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F373
+Man Cook: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F373
+Woman Cook
+U+1F469 U+200D U+1F373
+Woman Cook: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F373
+Woman Cook: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F373
+Woman Cook: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F373
+Woman Cook: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F373
+Woman Cook: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F373
+Mechanic
+U+1F9D1 U+200D U+1F527
+Mechanic: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F527
+Mechanic: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F527
+Mechanic: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F527
+Mechanic: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F527
+Mechanic: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F527
+Man Mechanic
+U+1F468 U+200D U+1F527
+Man Mechanic: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F527
+Man Mechanic: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F527
+Man Mechanic: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F527
+Man Mechanic: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F527
+Man Mechanic: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F527
+Woman Mechanic
+U+1F469 U+200D U+1F527
+Woman Mechanic: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F527
+Woman Mechanic: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F527
+Woman Mechanic: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F527
+Woman Mechanic: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F527
+Woman Mechanic: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F527
+Factory Worker
+U+1F9D1 U+200D U+1F3ED
+Factory Worker: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F3ED
+Factory Worker: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F3ED
+Factory Worker: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F3ED
+Factory Worker: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F3ED
+Factory Worker: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F3ED
+Man Factory Worker
+U+1F468 U+200D U+1F3ED
+Man Factory Worker: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F3ED
+Man Factory Worker: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F3ED
+Man Factory Worker: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F3ED
+Man Factory Worker: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F3ED
+Man Factory Worker: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F3ED
+Woman Factory Worker
+U+1F469 U+200D U+1F3ED
+Woman Factory Worker: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F3ED
+Woman Factory Worker: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F3ED
+Woman Factory Worker: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F3ED
+Woman Factory Worker: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F3ED
+Woman Factory Worker: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F3ED
+Office Worker
+U+1F9D1 U+200D U+1F4BC
+Office Worker: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F4BC
+Office Worker: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F4BC
+Office Worker: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F4BC
+Office Worker: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F4BC
+Office Worker: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F4BC
+Man Office Worker
+U+1F468 U+200D U+1F4BC
+Man Office Worker: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F4BC
+Man Office Worker: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F4BC
+Man Office Worker: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F4BC
+Man Office Worker: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F4BC
+Man Office Worker: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F4BC
+Woman Office Worker
+U+1F469 U+200D U+1F4BC
+Woman Office Worker: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F4BC
+Woman Office Worker: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F4BC
+Woman Office Worker: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F4BC
+Woman Office Worker: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F4BC
+Woman Office Worker: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F4BC
+Scientist
+U+1F9D1 U+200D U+1F52C
+Scientist: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F52C
+Scientist: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F52C
+Scientist: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F52C
+Scientist: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F52C
+Scientist: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F52C
+Man Scientist
+U+1F468 U+200D U+1F52C
+Man Scientist: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F52C
+Man Scientist: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F52C
+Man Scientist: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F52C
+Man Scientist: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F52C
+Man Scientist: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F52C
+Woman Scientist
+U+1F469 U+200D U+1F52C
+Woman Scientist: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F52C
+Woman Scientist: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F52C
+Woman Scientist: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F52C
+Woman Scientist: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F52C
+Woman Scientist: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F52C
+Technologist
+U+1F9D1 U+200D U+1F4BB
+Technologist: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F4BB
+Technologist: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F4BB
+Technologist: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F4BB
+Technologist: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F4BB
+Technologist: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F4BB
+Man Technologist
+U+1F468 U+200D U+1F4BB
+Man Technologist: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F4BB
+Man Technologist: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F4BB
+Man Technologist: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F4BB
+Man Technologist: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F4BB
+Man Technologist: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F4BB
+Woman Technologist
+U+1F469 U+200D U+1F4BB
+Woman Technologist: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F4BB
+Woman Technologist: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F4BB
+Woman Technologist: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F4BB
+Woman Technologist: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F4BB
+Woman Technologist: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F4BB
+Singer
+U+1F9D1 U+200D U+1F3A4
+Singer: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F3A4
+Singer: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F3A4
+Singer: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F3A4
+Singer: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F3A4
+Singer: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F3A4
+Man Singer
+U+1F468 U+200D U+1F3A4
+Man Singer: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F3A4
+Man Singer: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F3A4
+Man Singer: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F3A4
+Man Singer: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F3A4
+Man Singer: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F3A4
+Woman Singer
+U+1F469 U+200D U+1F3A4
+Woman Singer: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F3A4
+Woman Singer: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F3A4
+Woman Singer: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F3A4
+Woman Singer: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F3A4
+Woman Singer: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F3A4
+Artist
+U+1F9D1 U+200D U+1F3A8
+Artist: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F3A8
+Artist: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F3A8
+Artist: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F3A8
+Artist: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F3A8
+Artist: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F3A8
+Man Artist
+U+1F468 U+200D U+1F3A8
+Man Artist: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F3A8
+Man Artist: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F3A8
+Man Artist: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F3A8
+Man Artist: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F3A8
+Man Artist: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F3A8
+Woman Artist
+U+1F469 U+200D U+1F3A8
+Woman Artist: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F3A8
+Woman Artist: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F3A8
+Woman Artist: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F3A8
+Woman Artist: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F3A8
+Woman Artist: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F3A8
+Pilot
+U+1F9D1 U+200D U+2708 U+FE0F
+Pilot: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+2708 U+FE0F
+Pilot: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+2708 U+FE0F
+Pilot: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+2708 U+FE0F
+Pilot: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+2708 U+FE0F
+Pilot: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+2708 U+FE0F
+Man Pilot
+U+1F468 U+200D U+2708 U+FE0F
+Man Pilot: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+2708 U+FE0F
+Man Pilot: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+2708 U+FE0F
+Man Pilot: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+2708 U+FE0F
+Man Pilot: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+2708 U+FE0F
+Man Pilot: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+2708 U+FE0F
+Woman Pilot
+U+1F469 U+200D U+2708 U+FE0F
+Woman Pilot: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+2708 U+FE0F
+Woman Pilot: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+2708 U+FE0F
+Woman Pilot: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+2708 U+FE0F
+Woman Pilot: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+2708 U+FE0F
+Woman Pilot: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+2708 U+FE0F
+Astronaut
+U+1F9D1 U+200D U+1F680
+Astronaut: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F680
+Astronaut: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F680
+Astronaut: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F680
+Astronaut: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F680
+Astronaut: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F680
+Man Astronaut
+U+1F468 U+200D U+1F680
+Man Astronaut: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F680
+Man Astronaut: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F680
+Man Astronaut: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F680
+Man Astronaut: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F680
+Man Astronaut: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F680
+Woman Astronaut
+U+1F469 U+200D U+1F680
+Woman Astronaut: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F680
+Woman Astronaut: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F680
+Woman Astronaut: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F680
+Woman Astronaut: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F680
+Woman Astronaut: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F680
+Firefighter
+U+1F9D1 U+200D U+1F692
+Firefighter: Light Skin Tone
+U+1F9D1 U+1F3FB U+200D U+1F692
+Firefighter: Medium-Light Skin Tone
+U+1F9D1 U+1F3FC U+200D U+1F692
+Firefighter: Medium Skin Tone
+U+1F9D1 U+1F3FD U+200D U+1F692
+Firefighter: Medium-Dark Skin Tone
+U+1F9D1 U+1F3FE U+200D U+1F692
+Firefighter: Dark Skin Tone
+U+1F9D1 U+1F3FF U+200D U+1F692
+Man Firefighter
+U+1F468 U+200D U+1F692
+Man Firefighter: Light Skin Tone
+U+1F468 U+1F3FB U+200D U+1F692
+Man Firefighter: Medium-Light Skin Tone
+U+1F468 U+1F3FC U+200D U+1F692
+Man Firefighter: Medium Skin Tone
+U+1F468 U+1F3FD U+200D U+1F692
+Man Firefighter: Medium-Dark Skin Tone
+U+1F468 U+1F3FE U+200D U+1F692
+Man Firefighter: Dark Skin Tone
+U+1F468 U+1F3FF U+200D U+1F692
+Woman Firefighter
+U+1F469 U+200D U+1F692
+Woman Firefighter: Light Skin Tone
+U+1F469 U+1F3FB U+200D U+1F692
+Woman Firefighter: Medium-Light Skin Tone
+U+1F469 U+1F3FC U+200D U+1F692
+Woman Firefighter: Medium Skin Tone
+U+1F469 U+1F3FD U+200D U+1F692
+Woman Firefighter: Medium-Dark Skin Tone
+U+1F469 U+1F3FE U+200D U+1F692
+Woman Firefighter: Dark Skin Tone
+U+1F469 U+1F3FF U+200D U+1F692
+Police Officer: Light Skin Tone
+U+1F46E U+1F3FB
+Police Officer: Medium-Light Skin Tone
+U+1F46E U+1F3FC
+Police Officer: Medium Skin Tone
+U+1F46E U+1F3FD
+Police Officer: Medium-Dark Skin Tone
+U+1F46E U+1F3FE
+Police Officer: Dark Skin Tone
+U+1F46E U+1F3FF
+Man Police Officer
+U+1F46E U+200D U+2642 U+FE0F
+Man Police Officer: Light Skin Tone
+U+1F46E U+1F3FB U+200D U+2642 U+FE0F
+Man Police Officer: Medium-Light Skin Tone
+U+1F46E U+1F3FC U+200D U+2642 U+FE0F
+Man Police Officer: Medium Skin Tone
+U+1F46E U+1F3FD U+200D U+2642 U+FE0F
+Man Police Officer: Medium-Dark Skin Tone
+U+1F46E U+1F3FE U+200D U+2642 U+FE0F
+Man Police Officer: Dark Skin Tone
+U+1F46E U+1F3FF U+200D U+2642 U+FE0F
+Woman Police Officer
+U+1F46E U+200D U+2640 U+FE0F
+Woman Police Officer: Light Skin Tone
+U+1F46E U+1F3FB U+200D U+2640 U+FE0F
+Woman Police Officer: Medium-Light Skin Tone
+U+1F46E U+1F3FC U+200D U+2640 U+FE0F
+Woman Police Officer: Medium Skin Tone
+U+1F46E U+1F3FD U+200D U+2640 U+FE0F
+Woman Police Officer: Medium-Dark Skin Tone
+U+1F46E U+1F3FE U+200D U+2640 U+FE0F
+Woman Police Officer: Dark Skin Tone
+U+1F46E U+1F3FF U+200D U+2640 U+FE0F
+Detective
+U+1F575 U+FE0F
+Detective: Light Skin Tone
+U+1F575 U+FE0F U+1F3FB
+Detective: Medium-Light Skin Tone
+U+1F575 U+FE0F U+1F3FC
+Detective: Medium Skin Tone
+U+1F575 U+FE0F U+1F3FD
+Detective: Medium-Dark Skin Tone
+U+1F575 U+FE0F U+1F3FE
+Detective: Dark Skin Tone
+U+1F575 U+FE0F U+1F3FF
+Man Detective
+U+1F575 U+FE0F U+200D U+2642 U+FE0F
+Man Detective: Light Skin Tone
+U+1F575 U+FE0F U+1F3FB U+200D U+2642 U+FE0F
+Man Detective: Medium-Light Skin Tone
+U+1F575 U+FE0F U+1F3FC U+200D U+2642 U+FE0F
+Man Detective: Medium Skin Tone
+U+1F575 U+FE0F U+1F3FD U+200D U+2642 U+FE0F
+Man Detective: Medium-Dark Skin Tone
+U+1F575 U+FE0F U+1F3FE U+200D U+2642 U+FE0F
+Man Detective: Dark Skin Tone
+U+1F575 U+FE0F U+1F3FF U+200D U+2642 U+FE0F
+Woman Detective
+U+1F575 U+FE0F U+200D U+2640 U+FE0F
+Woman Detective: Light Skin Tone
+U+1F575 U+FE0F U+1F3FB U+200D U+2640 U+FE0F
+Woman Detective: Medium-Light Skin Tone
+U+1F575 U+FE0F U+1F3FC U+200D U+2640 U+FE0F
+Woman Detective: Medium Skin Tone
+U+1F575 U+FE0F U+1F3FD U+200D U+2640 U+FE0F
+Woman Detective: Medium-Dark Skin Tone
+U+1F575 U+FE0F U+1F3FE U+200D U+2640 U+FE0F
+Woman Detective: Dark Skin Tone
+U+1F575 U+FE0F U+1F3FF U+200D U+2640 U+FE0F
+Contruction Worker: Light Skin Tone
+U+1F477 U+1F3FB
+Contruction Worker: Medium-Light Skin Tone
+U+1F477 U+1F3FC
+Contruction Worker: Medium Skin Tone
+U+1F477 U+1F3FD
+Contruction Worker: Medium-Dark Skin Tone
+U+1F477 U+1F3FE
+Contruction Worker: Dark Skin Tone
+U+1F477 U+1F3FF
+Man Contruction Worker
+U+1F477 U+200D U+2642 U+FE0F
+Man Contruction Worker: Light Skin Tone
+U+1F477 U+1F3FB U+200D U+2642 U+FE0F
+Man Contruction Worker: Medium-Light Skin Tone
+U+1F477 U+1F3FC U+200D U+2642 U+FE0F
+Man Contruction Worker: Medium Skin Tone
+U+1F477 U+1F3FD U+200D U+2642 U+FE0F
+Man Contruction Worker: Medium-Dark Skin Tone
+U+1F477 U+1F3FE U+200D U+2642 U+FE0F
+Man Contruction Worker: Dark Skin Tone
+U+1F477 U+1F3FF U+200D U+2642 U+FE0F
+Woman Contruction Worker
+U+1F477 U+200D U+2640 U+FE0F
+Woman Contruction Worker: Light Skin Tone
+U+1F477 U+1F3FB U+200D U+2640 U+FE0F
+Woman Contruction Worker: Medium-Light Skin Tone
+U+1F477 U+1F3FC U+200D U+2640 U+FE0F
+Woman Contruction Worker: Medium Skin Tone
+U+1F477 U+1F3FD U+200D U+2640 U+FE0F
+Woman Contruction Worker: Medium-Dark Skin Tone
+U+1F477 U+1F3FE U+200D U+2640 U+FE0F
+Woman Contruction Worker: Dark Skin Tone
+U+1F477 U+1F3FF U+200D U+2640 U+FE0F
+Person Wearing Turban
+U+1F473
+Person Wearing Turban: Light Skin Tone
+U+1F473 U+1F3FB
+Person Wearing Turban: Medium-Light Skin Tone
+U+1F473 U+1F3FC
+Person Wearing Turban: Medium Skin Tone
+U+1F473 U+1F3FD
+Person Wearing Turban: Medium-Dark Skin Tone
+U+1F473 U+1F3FE
+Person Wearing Turban: Dark Skin Tone
+U+1F473 U+1F3FF
+Man Wearing Turban
+U+1F473 U+200D U+2642 U+FE0F
+Man Wearing Turban: Light Skin Tone
+U+1F473 U+1F3FB U+200D U+2642 U+FE0F
+Man Wearing Turban: Medium-Light Skin Tone
+U+1F473 U+1F3FC U+200D U+2642 U+FE0F
+Man Wearing Turban: Medium Skin Tone
+U+1F473 U+1F3FD U+200D U+2642 U+FE0F
+Man Wearing Turban: Medium-Dark Skin Tone
+U+1F473 U+1F3FE U+200D U+2642 U+FE0F
+Man Wearing Turban: Dark Skin Tone
+U+1F473 U+1F3FF U+200D U+2642 U+FE0F
+Woman Wearing Turban
+U+1F473 U+200D U+2640 U+FE0F
+Woman Wearing Turban: Light Skin Tone
+U+1F473 U+1F3FB U+200D U+2640 U+FE0F
+Woman Wearing Turban: Medium-Light Skin Tone
+U+1F473 U+1F3FC U+200D U+2640 U+FE0F
+Woman Wearing Turban: Medium Skin Tone
+U+1F473 U+1F3FD U+200D U+2640 U+FE0F
+Woman Wearing Turban: Medium-Dark Skin Tone
+U+1F473 U+1F3FE U+200D U+2640 U+FE0F
+Woman Wearing Turban: Dark Skin Tone
+U+1F473 U+1F3FF U+200D U+2640 U+FE0F
+Person Getting Massage
+U+1F486
+Person Getting Massage: Light Skin Tone
+U+1F486 U+1F3FB
+Person Getting Massage: Medium-Light Skin Tone
+U+1F486 U+1F3FC
+Person Getting Massage: Medium Skin Tone
+U+1F486 U+1F3FD
+Person Getting Massage: Medium-Dark Skin Tone
+U+1F486 U+1F3FE
+Person Getting Massage: Dark Skin Tone
+U+1F486 U+1F3FF
+Man Getting Massage
+U+1F486 U+200D U+2642 U+FE0F
+Man Getting Massage: Light Skin Tone
+U+1F486 U+1F3FB U+200D U+2642 U+FE0F
+Man Getting Massage: Medium-Light Skin Tone
+U+1F486 U+1F3FC U+200D U+2642 U+FE0F
+Man Getting Massage: Medium Skin Tone
+U+1F486 U+1F3FD U+200D U+2642 U+FE0F
+Man Getting Massage: Medium-Dark Skin Tone
+U+1F486 U+1F3FE U+200D U+2642 U+FE0F
+Man Getting Massage: Dark Skin Tone
+U+1F486 U+1F3FF U+200D U+2642 U+FE0F
+Woman Getting Massage
+U+1F486 U+200D U+2640 U+FE0F
+Woman Getting Massage: Light Skin Tone
+U+1F486 U+1F3FB U+200D U+2640 U+FE0F
+Woman Getting Massage: Medium-Light Skin Tone
+U+1F486 U+1F3FC U+200D U+2640 U+FE0F
+Woman Getting Massage: Medium Skin Tone
+U+1F486 U+1F3FD U+200D U+2640 U+FE0F
+Woman Getting Massage: Medium-Dark Skin Tone
+U+1F486 U+1F3FE U+200D U+2640 U+FE0F
+Woman Getting Massage: Dark Skin Tone
+U+1F486 U+1F3FF U+200D U+2640 U+FE0F
