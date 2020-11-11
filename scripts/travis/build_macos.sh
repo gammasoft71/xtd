@@ -17,7 +17,7 @@ cd ../../../..
 # generate and build lib
 git submodule update --init
 mkdir -p build && cd build
-cmake .. -G "Xcode" -DCMAKE_INSTALL_PREFIX=~/local
+cmake .. -G "Xcode" -DENABLE_TESTS=ON  -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --config Debug --target
 if [ $? -ne 0 ]; then exit -1; fi
