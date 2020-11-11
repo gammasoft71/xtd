@@ -71,9 +71,9 @@ namespace unit_tests {
 
     void test_method_(directory_separator_char) {
 #if defined(_WIN32)
-      assert::are_equal('\\', path::alt_directory_separator_char());
+      assert::are_equal('\\', path::directory_separator_char());
 #else
-      assert::are_equal('/', path::alt_directory_separator_char());
+      assert::are_equal('/', path::directory_separator_char());
 #endif
     }
     
