@@ -8,7 +8,7 @@ namespace xtd {
   /// @brief Defines a generalized comparison method that a value type or class implements to create a type-specific comparison method.
   /// @par Library
   /// xtd.core
-  /// @ingroup SwitchCore
+  /// @ingroup xtd_core
   template <typename type_t>
   class icomparable interface_ {
   public:
