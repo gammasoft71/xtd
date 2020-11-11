@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(bitmap_button)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 add_sources(
   src/bitmap_button.cpp
   resources/gammasoft_16x16.xpm

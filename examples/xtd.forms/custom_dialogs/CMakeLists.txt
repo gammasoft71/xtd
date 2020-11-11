@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(custom_dialogs)
-find_package(xtd.forms REQUIRED)
+find_package(xtd REQUIRED)
 
 add_projects(
   user_dialog
