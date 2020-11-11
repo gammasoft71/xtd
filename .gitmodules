@@ -1,6 +1,3 @@
-[submodule "src/xtd_drawing"]
-	path = src/xtd_drawing
-	url = https://github.com/gammasoft71/xtd_drawing
 [submodule "src/xtd_forms"]
 	path = src/xtd_forms
 	url = https://github.com/gammasoft71/xtd_forms
