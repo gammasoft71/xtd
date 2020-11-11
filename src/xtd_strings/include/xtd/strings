@@ -1,0 +1,2 @@
+#pragma once
+#error "include xtd.strings file instead"
