@@ -5,6 +5,15 @@
 /// @defgroup keywords keywords
 /// @brief Keywords are predefined, reserved identifiers that have special meanings to the compiler.
 
+/// @defgroup types types
+/// @brief Types definitions
+
+/// @defgroup literals literals
+/// @brief Literals Allows integer, floating-point, character, and string literals to produce objects.
+
+/// @defgroup xtd_core xtd.core
+/// @brief xtd.core library.
+
 #include <xtd/xtd.io>
 #include <xtd/xtd.strings>
 #include "argument_exception.h"
