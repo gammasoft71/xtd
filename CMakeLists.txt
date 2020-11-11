@@ -36,6 +36,20 @@ if (ENABLE_COVERAGE AND UNIX)
   set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} --coverage")
 endif ()
 
+if (WIN32)
+  #set(XTD_NATIVE_GRAPHIC_TOOLKIT "wsw" CACHE STRING "Choose toolkit for native drawing and forms libraries")
+  set(XTD_NATIVE_GRAPHIC_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
+  set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS fltk qt5 msw wxwidgets)
+elseif (APPLE)
+  #set(XTD_NATIVE_GRAPHIC_TOOLKIT "cocoa" CACHE STRING "Choose toolkit for native drawing and forms libraries")
+  set(XTD_NATIVE_GRAPHIC_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
+  set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS cocoa fltk qt5 wxwidgets)
+else ()
+  #set(XTD_NATIVE_GRAPHIC_TOOLKIT "gtk4" CACHE STRING "Choose toolkit for native drawing and forms libraries")
+  set(XTD_NATIVE_GRAPHIC_TOOLKIT "wxwidgets" CACHE STRING "Choose toolkit for native drawing and forms libraries")
+  set_property(CACHE XTD_NATIVE_GRAPHIC_TOOLKIT PROPERTY STRINGS fltk gtk3 gtk4 qt5 wxwidgets)
+endif ()
+
 # Projects
 add_subdirectory(src)
 add_subdirectory(tools)
@@ -49,7 +63,6 @@ endif ()
 
 # install
 if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake 
     "include(CMakeFindDependencyMacro)\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/${PROJECT_NAME}.cmake\")\n"
@@ -65,7 +78,7 @@ if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   install(EXPORT ${PROJECT_NAME} DESTINATION cmake)
   option(XTD_ENABLE_INSTALL_RESOURCES "Enable install resources" ON)
   if (XTD_ENABLE_INSTALL_RESOURCES)
-    install(DIRECTORY src/xtd_drawing/resources DESTINATION share/xtd)
+    install(DIRECTORY resources DESTINATION share/xtd)
     install(DIRECTORY src/xtd_forms/resources DESTINATION share/xtd)
     install(DIRECTORY src/xtd_forms/docs/pictures/examples/. DESTINATION share/xtd/resources/pictures/examples/xtd_forms)
   endif ()

@@ -18,7 +18,7 @@ if (ADD_XTD_CORE)
 endif()
   
 if (ADD_XTD_DRAWING)
-#  add_projects(xtd.drawing)
+  add_projects(xtd.drawing)
 endif()
   
 if (ADD_XTD_FORMS)

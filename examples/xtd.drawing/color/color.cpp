@@ -12,6 +12,7 @@ int main() {
   cout << format("Color::light_green = {0}", color::light_green) << endl;
   cout << format("Color::from_argb(255, 253, 2, 0) = {0}", color::from_argb(255, 253, 2, 0)) << endl;
   cout << format("color::from_name(\"dodger_blue\") = {0}", color::from_name("dodger_blue")) << endl;
+  cout << format("color::from_name(\"dodger blue\") = {0}", color::from_name("dodger blue")) << endl;
 }
 
 // This code produces the following output:
@@ -22,3 +23,4 @@ int main() {
 // Color::light_green = color [light_green]
 // Color::from_argb(255, 253, 2, 0) = color [a=255, r=253, g=2, b=0]
 // color::from_name("dodger_blue") = color [dodger_blue]
+// color::from_name("dodger blue") = color [dodger_blue]
