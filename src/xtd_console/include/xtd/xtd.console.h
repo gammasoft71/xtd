@@ -1,6 +1,10 @@
 /// @file
 /// @brief Contains xtd::console and xtd::wconsole typedefs.
 #pragma once
+
+/// @defgroup xtd_core xtd.core
+/// @brief xtd.core library.
+
 #include "__generic_stream_output.h" // must be included first
 #include <xtd/xtd.core>
 #include <xtd/xtd.delegates>
