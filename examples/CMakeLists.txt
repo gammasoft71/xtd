@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.examples)
 find_package(xtd REQUIRED)
 
-option(XTD_ENABLE_CMAKE_HELPERS_EXAMPLES "Add xtd CMake Helpers example" ON)
+option(XTD_ENABLE_CMAKE_HELPERS_EXAMPLES "Enable xtd CMake Helpers example" ON)
 if (XTD_ENABLE_CMAKE_HELPERS_EXAMPLES)
   add_projects(cmake_helpers)
 endif()
