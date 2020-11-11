@@ -5,6 +5,11 @@ find_package(xtd REQUIRED)
 
 add_projects(
   block_scope
+  compare
+  compare_ignore_case
+  concat
+  concat_collection
+  contains
   console_background_color
   console_background_color2
   console_background_color3
@@ -23,6 +28,8 @@ add_projects(
   console_song
   delegate
   event
+  format
+  format_with_order
   guid
   hello_world_console
   hello_world_console2
@@ -30,14 +37,17 @@ add_projects(
   hello_world_diagnostics
   hello_world_environment
   hello_world_io
+  hello_world_strings
   interface
   interface2
+  join
   main
   main1
   main2
   main3
   main4
   main5
+  split
   startup
   static
   static2
