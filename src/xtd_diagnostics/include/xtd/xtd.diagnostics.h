@@ -1,0 +1,27 @@
+/// @file
+/// @brief Contains xtd::strings class.
+#pragma once
+#include <xtd/xtd.io>
+#include <xtd/xtd.strings>
+#include "diagnostics/cdebug.h"
+#include "diagnostics/ctrace.h"
+#include "diagnostics/debug.h"
+#include "diagnostics/console_trace_listener.h"
+#include "diagnostics/default_trace_listener.h"
+#include "diagnostics/event_type_filter.h"
+#include "diagnostics/ostream_trace_listener.h"
+#include "diagnostics/process.h"
+#include "diagnostics/process_start_info.h"
+#include "diagnostics/source_levels.h"
+#include "diagnostics/source_switch.h"
+#include "diagnostics/switch_base.h"
+#include "diagnostics/trace.h"
+#include "diagnostics/trace_event_cache.h"
+#include "diagnostics/trace_event_type.h"
+#include "diagnostics/trace_filter.h"
+#include "diagnostics/trace_level.h"
+#include "diagnostics/trace_listener.h"
+#include "diagnostics/trace_listener_collection.h"
+#include "diagnostics/trace_options.h"
+#include "diagnostics/trace_source.h"
+#include "diagnostics/trace_switch.h"

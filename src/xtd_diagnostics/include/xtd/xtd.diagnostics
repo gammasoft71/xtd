@@ -1,0 +1,5 @@
+/// @file
+/// @brief Contains xtd::strings class.
+#pragma once
+#include <xtd/xtd.strings>
+#include "xtd.diagnostics.h"
