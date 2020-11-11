@@ -2065,7 +2065,14 @@ INCLUDE_FILE_PATTERNS  =
 # recursively expanded use the := operator instead of the = operator.
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
-PREDEFINED             = 
+PREDEFINED             = "block_scope_=" \
+                         "caller_info_=xtd::caller_info {__func__, __FILE__, __LINE__}" \
+                         "interface_=: public xtd::interface" \
+                         "nameof_=std::string(#__VA_ARGS__)" \
+                         "startup_=" \
+                         "static_=: public xtd::static" \
+                         "typeof_=xtd::__s__::__typeof_" \
+                         "using_=" \
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
 # tag can be used to specify a list of macro names that should be expanded. The
