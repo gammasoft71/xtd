@@ -790,7 +790,16 @@ WARN_LOGFILE           = doxygen_warnings.txt
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = src/xtd/include
+INPUT                  = src/xtd/include \
+                         src/xtd_console/include \
+                         src/xtd_core/include \
+                         src/xtd_delegates/include \
+                         src/xtd_diagnostics/include \
+                         src/xtd_drawing/include \
+                         src/xtd_forms/include \
+                         src/xtd_io/include \
+                         src/xtd_strings/include \
+                         src/xtd_tunit/include \
                          
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -815,7 +824,7 @@ INPUT_ENCODING         = UTF-8
 # *.m, *.markdown, *.md, *.mm, *.dox, *.py, *.pyw, *.f90, *.f95, *.f03, *.f08,
 # *.f, *.for, *.tcl, *.vhd, *.vhdl, *.ucf and *.qsf.
 
-FILE_PATTERNS          = *.hpp
+FILE_PATTERNS          = *.h
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -1114,7 +1123,7 @@ HTML_FILE_EXTENSION    = .html
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_HEADER            = 
+HTML_HEADER            = "docs/doxygen/html_header.html"
 
 # The HTML_FOOTER tag can be used to specify a user-defined HTML footer for each
 # generated HTML page. If the tag is left blank doxygen will generate a standard
@@ -1124,7 +1133,7 @@ HTML_HEADER            =
 # that doxygen normally uses.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_FOOTER            = 
+HTML_FOOTER            = "docs/doxygen/html_footer.html"
 
 # The HTML_STYLESHEET tag can be used to specify a user-defined cascading style
 # sheet that is used by each HTML page. It can be used to fine-tune the look of
@@ -1149,7 +1158,7 @@ HTML_STYLESHEET        =
 # list). For an example see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = 
+HTML_EXTRA_STYLESHEET  = "docs/doxygen/custom.css" "docs/doxygen/custom_dark_theme.css"
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -2056,30 +2065,7 @@ INCLUDE_FILE_PATTERNS  =
 # recursively expanded use the := operator instead of the = operator.
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
-PREDEFINED             = "abstract_=: public Abstract" \
-                         async_= \
-                         "await_=await() <<" \
-                         "caller_=Switch::System::Runtime::CompilerServices::Caller(__func__, __FILE__, __LINE__)" \
-                         delegate_=[&] \
-                         event_=__event__ \
-                         get_=[&]() \
-                         global_= \
-                         "interface_=: public Interface" \
-                         internal_=public: \
-                         lock_= \
-                         nameof_= \
-                         private_=private: \
-                         property_=property_ \
-                         protected_=protected: \
-                         public_=public: \
-                         readonly_=readonly_ \
-                         readwrite=readwrite_ \
-                         "set_=[&](auto value)" \
-                         startup_= \
-                         "static_=final: public Static" \
-                         typeof_=__s__::__typeof_ \
-                         using_= \
-                         writeonly_=writeonly_
+PREDEFINED             = 
 
 # If the MACRO_EXPANSION and EXPAND_ONLY_PREDEF tags are set to YES then this
 # tag can be used to specify a list of macro names that should be expanded. The
