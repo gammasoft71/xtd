@@ -10,9 +10,6 @@
 [submodule "src/xtd_io"]
 	path = src/xtd_io
 	url = https://github.com/gammasoft71/xtd_io
-[submodule "src/xtd_properties"]
-	path = src/xtd_properties
-	url = https://github.com/gammasoft71/xtd_properties
 [submodule "src/xtd_strings"]
 	path = src/xtd_strings
 	url = https://github.com/gammasoft71/xtd_strings
