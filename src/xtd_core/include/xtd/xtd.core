@@ -1,0 +1,4 @@
+/// @file
+/// @brief Contains xtd::core classes.
+#pragma once
+#include "xtd.core.h"
