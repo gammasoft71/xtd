@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::diagnostics::debug class.
 #pragma once
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "source_levels.h"
 #include "switch_base.h"
 

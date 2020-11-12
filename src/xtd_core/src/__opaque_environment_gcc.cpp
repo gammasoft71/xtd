@@ -29,7 +29,7 @@
 #include "../include/xtd/__opaque_environment.h"
 #include "../include/xtd/environment.h"
 #include "../include/xtd/collections/specialized/string_vector.h"
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 
 int __environment_argc;
 char** __environment_argv;

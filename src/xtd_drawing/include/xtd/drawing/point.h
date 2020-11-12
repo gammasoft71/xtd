@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "point_f.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

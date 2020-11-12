@@ -4,7 +4,7 @@
 #include <string>
 #include <xtd/drawing/point.h>
 #include <xtd/drawing/size.h>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

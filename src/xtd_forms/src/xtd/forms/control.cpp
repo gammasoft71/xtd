@@ -3,7 +3,7 @@
 #include <set>
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.core>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/system_colors.h>

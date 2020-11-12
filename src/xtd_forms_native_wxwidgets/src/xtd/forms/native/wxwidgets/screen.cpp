@@ -1,7 +1,7 @@
 #include <xtd/drawing/native/hdc_wrapper.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/screen.h>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.h"
 #include <wx/dcscreen.h>
 #include <wx/display.h>

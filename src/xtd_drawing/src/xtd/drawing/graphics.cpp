@@ -1,7 +1,7 @@
 #include <vector>
 #include "../../../include/xtd/drawing/graphics.h"
 #include "../../../include/xtd/drawing/solid_brush.h"
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include <xtd/drawing/native/graphics.h>
 
 using namespace std;

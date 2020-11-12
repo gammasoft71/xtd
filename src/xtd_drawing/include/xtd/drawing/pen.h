@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <memory>
 #include <ostream>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "drawing2d/pen_alignment.h"
 #include "drawing2d/pen_type.h"
 #include "brush.h"

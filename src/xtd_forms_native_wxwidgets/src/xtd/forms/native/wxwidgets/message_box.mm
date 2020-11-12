@@ -1,6 +1,6 @@
 /*
 #if defined(__APPLE__)
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/native/message_box.h>
 #include <xtd/forms/native/message_box_styles.h>

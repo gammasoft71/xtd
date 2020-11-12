@@ -1,4 +1,4 @@
-#include <xtd/xtd.strings>
+#include <xtd/xtd.core>
 #include <iostream>
 
 using namespace std;

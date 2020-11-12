@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <limits>
 #include <ostream>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "brush.h"
 #include "color.h"
 #include "font.h"
