@@ -19,8 +19,8 @@ cmake -DCMAKE_BUILD_TYPE=Debug -DENABLE_TESTS=ON -DENABLE_XTD_COMMAND_LINE=OFF -
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
-#cmake --build . --target install
-#if [ $? -ne 0 ]; then exit -1; fi
+cmake --build . --target install
+if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
 # generate and build examples
@@ -33,7 +33,7 @@ cd ..
 #cd ../..
 
 # run registered unit tests
-#cd build
-#ctest -j $(nproc) --output-on-failure --build-config Debug
-#if [ $? -ne 0 ]; then exit -1; fi
-#cd ..
+cd build
+ctest -j $(nproc) --output-on-failure --build-config Debug
+if [ $? -ne 0 ]; then exit -1; fi
+cd ..
