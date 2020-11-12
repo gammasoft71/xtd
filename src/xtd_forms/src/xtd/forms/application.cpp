@@ -145,10 +145,6 @@ void application::add_message_filter(const imessage_filter& value) {
   message_filters.push_back(const_cast<imessage_filter&>(value));
 }
 
-void application::cleanup() {
-  native::application::cleanup();
-}
-
 void application::do_events() {
   native::application::do_events();
 }
@@ -213,10 +209,6 @@ void application::exit(cancel_event_args& e) {
 
 void application::exit_thread() {
   native::application::exit();
-}
-
-void application::initialize() {
-  native::application::initialize();
 }
 
 void application::raise_idle(const event_args &e) {

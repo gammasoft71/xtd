@@ -246,11 +246,6 @@ namespace xtd {
       static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
        */
 
-      /// @cond
-      static void cleanup();
-      static void initialize();
-      /// @endcond
-
       /// @brief Occurs when the application is about to shut down.
       /// @remarks You must attach the event handlers to the application_exit event to perform unhandled, required tasks before the application stops running. You can close files opened by this application, or dispose of objects that garbage collection did not reclaim.
       static event<application, delegate<void(const event_args&)>> application_exit;
