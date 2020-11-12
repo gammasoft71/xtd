@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::diagnostics::debug class.
 #pragma once
-#include <xtd/xtd.io>
+#include <xtd/io/file.h>
 #include "trace_listener.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

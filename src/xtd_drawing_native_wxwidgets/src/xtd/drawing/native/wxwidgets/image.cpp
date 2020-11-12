@@ -2,7 +2,6 @@
 #include <xtd/drawing/native/frame_dimension.h>
 #include <xtd/drawing/native/image_flags.h>
 #include <xtd/drawing/native/image_format.h>
-#include <xtd/xtd.io>
 #include <xtd/strings.h>
 #include <atomic>
 #include <wx/image.h>

@@ -58,7 +58,7 @@ if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} xtd.io xtd.core)
+target_link_libraries(${PROJECT_NAME} xtd.core)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 
 # install

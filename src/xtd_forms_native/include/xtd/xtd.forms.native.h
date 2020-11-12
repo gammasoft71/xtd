@@ -2,7 +2,6 @@
 #include <xtd/xtd.core>
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.drawing>
-#include <xtd/xtd.io>
 
 #include <xtd/strings.h>
 #include "forms/create_params.h"

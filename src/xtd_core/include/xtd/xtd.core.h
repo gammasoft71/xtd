@@ -14,8 +14,6 @@
 /// @defgroup xtd_core xtd.core
 /// @brief xtd.core library.
 
-#include <xtd/xtd.io>
-
 #include "action.h"
 #include "argument_exception.h"
 #include "argument_null_exception.h"
@@ -84,8 +82,10 @@
 #include "io/directory_not_found_exception.h"
 #include "io/drive_not_found_exception.h"
 #include "io/end_of_stream_exception.h"
+#include "io/file.h"
 #include "io/file_format_exception.h"
 #include "io/file_load_exception.h"
 #include "io/file_not_found_exception.h"
 #include "io/ioexception.h"
+#include "io/path.h"
 #include "io/path_too_long_exception.h"

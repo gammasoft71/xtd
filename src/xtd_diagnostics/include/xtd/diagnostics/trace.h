@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::trace class.
 #pragma once
 #include <mutex>
-#include <xtd/xtd.io>
+#include <string>
 #include "trace_listener_collection.h"
 
 /// @cond

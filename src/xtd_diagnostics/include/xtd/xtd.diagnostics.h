@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains xtd::strings class.
 #pragma once
-#include <xtd/xtd.io>
+#include <xtd/xtd.core>
 #include <xtd/strings.h>
 #include "diagnostics/cdebug.h"
 #include "diagnostics/ctrace.h"
