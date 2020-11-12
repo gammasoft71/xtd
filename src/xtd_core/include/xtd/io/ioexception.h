@@ -76,15 +76,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on ioexception to call it with caller information
-/// @remarks Is equivalent to ioexception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw ioexception_(); // same as : throw ioexception(caller_info_)
-///   if (invalid_value) throw ioexception_("Bad value"); // same as : throw ioexception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define ioexception_(...) ioexception(add_caller_info_(__VA_ARGS__))

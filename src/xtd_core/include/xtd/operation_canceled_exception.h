@@ -73,15 +73,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "The operation was canceled.";
   };
 }
-
-/// @brief Helper on operation_canceled_exception to call it with caller information
-/// @remarks Is equivalent to operation_canceled_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw operation_canceled_exception_(); // same as : throw operation_canceled_exception(caller_info_)
-///   if (invalid_value) throw operation_canceled_exception_("Bad value"); // same as : throw operation_canceled_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define operation_canceled_exception_(...) operation_canceled_exception(add_caller_info_(__VA_ARGS__))

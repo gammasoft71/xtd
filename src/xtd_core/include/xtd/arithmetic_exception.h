@@ -73,15 +73,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "Overflow or underflow in the arithmetic operation.";
   };
 }
-
-/// @brief Helper on arithmetic_exception to call it with caller information
-/// @remarks Is equivalent to arithmetic_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw arithmetic_exception_(); // same as : throw arithmetic_exception(caller_info_)
-///   if (invalid_value) throw arithmetic_exception_("Bad value"); // same as : throw arithmetic_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define arithmetic_exception_(...) arithmetic_exception(add_caller_info_(__VA_ARGS__))

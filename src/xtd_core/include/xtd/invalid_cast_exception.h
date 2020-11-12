@@ -73,15 +73,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "Specified cast is not valid.";
   };
 }
-
-/// @brief Helper on invalid_cast_exception to call it with caller information
-/// @remarks Is equivalent to invalid_cast_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw invalid_cast_exception_(); // same as : throw invalid_cast_exception(caller_info_)
-///   if (invalid_value) throw invalid_cast_exception_("Bad value"); // same as : throw invalid_cast_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define invalid_cast_exception_(...) invalid_cast_exception(add_caller_info_(__VA_ARGS__))

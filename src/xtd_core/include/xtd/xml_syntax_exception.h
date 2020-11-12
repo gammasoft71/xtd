@@ -74,15 +74,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "Syntax error in XML.";
   };
 }
-
-/// @brief Helper on xml_syntax_exception to call it with caller information
-/// @remarks Is equivalent to xml_syntax_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw xml_syntax_exception_(); // same as : throw xml_syntax_exception(caller_info_)
-///   if (invalid_value) throw xml_syntax_exception_("Bad value"); // same as : throw xml_syntax_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define xml_syntax_exception_(...) xml_syntax_exception(add_caller_info_(__VA_ARGS__))

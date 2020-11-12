@@ -76,15 +76,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on path_too_long_exception to call it with caller information
-/// @remarks Is equivalent to path_too_long_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw path_too_long_exception_(); // same as : throw path_too_long_exception(caller_info_)
-///   if (invalid_value) throw path_too_long_exception_("Bad value"); // same as : throw path_too_long_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define path_too_long_exception_(...) path_too_long_exception(add_caller_info_(__VA_ARGS__))
