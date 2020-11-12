@@ -7,7 +7,7 @@
 
 #include "__generic_stream_output.h" // must be included first
 #include <xtd/xtd.core>
-#include <xtd/xtd.delegates>
+
 #include "__get_err_rdbuf.h"
 #include "__get_in_rdbuf.h"
 #include "__get_out_rdbuf.h"

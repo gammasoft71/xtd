@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.core VERSION 1.0.0)
 set(XTD_INCLUDES
   include/xtd/__opaque_environment.h
+  include/xtd/action.h
   include/xtd/argument_exception.h
   include/xtd/argument_null_exception.h
   include/xtd/argument_out_of_range_exception.h
@@ -11,12 +12,17 @@ set(XTD_INCLUDES
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/caller_info.h
+  include/xtd/delegate.h
   include/xtd/divided_by_zero_exception.h
   include/xtd/domain_exception.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
+  include/xtd/event.h
+  include/xtd/event_args.h
+  include/xtd/event_handler.h
   include/xtd/format.h
   include/xtd/format_exception.h
+  include/xtd/func.h
   include/xtd/guid.h
   include/xtd/icomparable.h
   include/xtd/iequatable.h
@@ -38,9 +44,11 @@ set(XTD_INCLUDES
   include/xtd/operation_canceled_exception.h
   include/xtd/operating_system.h
   include/xtd/overflow_exception.h
+  include/xtd/overload.h
   include/xtd/parse.h
   include/xtd/platform_id.h
   include/xtd/platform_not_supported_exception.h
+  include/xtd/predicate.h
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/string_comparison.h
@@ -104,6 +112,7 @@ set(SOURCES
   src/__opaque_environment_win32.cpp
   src/bit_converter.cpp
   src/environment.cpp
+  src/event_args.cpp
   src/guid.cpp
   src/strings.cpp
   src/system_exception.cpp
@@ -128,13 +137,13 @@ if (MSVC)
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
 if(MSVC)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io rpcrt4)
+  target_link_libraries(${PROJECT_NAME} xtd.io rpcrt4)
 elseif (APPLE)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io)
+  target_link_libraries(${PROJECT_NAME} xtd.io)
 elseif (ANDROID)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io)
+  target_link_libraries(${PROJECT_NAME} xtd.io)
 elseif (UNIX)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io uuid)
+  target_link_libraries(${PROJECT_NAME} xtd.io uuid)
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 

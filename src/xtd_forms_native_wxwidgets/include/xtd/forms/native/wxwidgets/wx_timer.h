@@ -1,5 +1,6 @@
 #pragma once
-#include <xtd/xtd.delegates>
+#include <xtd/delegate.h>
+#include <xtd/event_args.h>
 #include <wx/timer.h>
 
 namespace xtd {

@@ -8,7 +8,8 @@
 #include "message.h"
 #include "message_loop_callback.h"
 #include "theme.h"
-#include <xtd/xtd.delegates>
+#include <xtd/delegate.h>
+#include <xtd/event_args.h>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

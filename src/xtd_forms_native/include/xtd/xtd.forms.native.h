@@ -1,9 +1,9 @@
 #pragma once
-#include <xtd/xtd.delegates>
+#include <xtd/xtd.core>
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.drawing>
-#include <xtd/xtd.core>
 #include <xtd/xtd.io>
+
 #include <xtd/strings.h>
 #include "forms/create_params.h"
 #include "forms/color_dialog_flags.h"

@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <vector>
 #include <xtd/static.h>
-#include <xtd/xtd.delegates>
+#include <xtd/delegate.h>
 
 namespace xtd {
   namespace forms {

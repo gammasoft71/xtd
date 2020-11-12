@@ -12,6 +12,7 @@ set(SOURCES
   src/bytes_assert.h
   src/divided_by_zero_exception.cpp
   src/domain_exception.cpp
+  src/delegate.cpp
   src/environment.cpp
   src/format_exception.cpp
   src/guid.cpp
