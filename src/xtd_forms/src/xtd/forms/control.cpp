@@ -7,6 +7,7 @@
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/graphics.h>
 #include <xtd/drawing/native/system_colors.h>
+#include <xtd/forms/native/application.h>
 #include <xtd/forms/native/control.h>
 #include <xtd/forms/native/message_keys.h>
 #include <xtd/forms/native/window_styles.h>
@@ -51,7 +52,7 @@ map<intptr_t, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
 control::control() {
-  application::initialize();
+  native::application::initialize();
   if (!application::message_loop() && cursor::current() == cursor::none) cursor::current(cursors::wait_cursor());
   set_state(state::enabled, true);
   set_state(state::visible, true);
