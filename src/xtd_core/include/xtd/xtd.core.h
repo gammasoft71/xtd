@@ -15,7 +15,7 @@
 /// @brief xtd.core library.
 
 #include <xtd/xtd.io>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "argument_exception.h"
 #include "argument_null_exception.h"
 #include "argument_out_of_range_exception.h"
@@ -26,6 +26,7 @@
 #include "domain_exception.h"
 #include "environment.h"
 #include "environment_variable_target.h"
+#include "format.h"
 #include "format_exception.h"
 #include "guid.h"
 #include "icomparable.h"
@@ -35,6 +36,7 @@
 #include "invalid_cast_exception.h"
 #include "invalid_operation_exception.h"
 #include "invalid_program_exception.h"
+#include "istring.h"
 #include "length_exception.h"
 #include "literals.h"
 #include "nameof.h"
@@ -42,16 +44,22 @@
 #include "not_implemented_exception.h"
 #include "not_supported_exception.h"
 #include "null_pointer_exception.h"
+#include "number_styles.h"
 #include "object.h"
 #include "operation_canceled_exception.h"
 #include "operating_system.h"
 #include "overflow_exception.h"
+#include "parse.h"
 #include "platform_id.h"
 #include "platform_not_supported_exception.h"
 #include "startup.h"
 #include "static.h"
+#include "string_comparison.h"
+#include "string_split_options.h"
+#include "strings.h"
 #include "system_exception.h"
 #include "time_out_exception.h"
+#include "to_string.h"
 #include "typeof.h"
 #include "underflow_exception.h"
 #include "unused.h"

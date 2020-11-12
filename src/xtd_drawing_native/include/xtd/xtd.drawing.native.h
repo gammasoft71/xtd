@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "drawing/native/brush.h"
 #include "drawing/native/font_family.h"
 #include "drawing/native/font.h"

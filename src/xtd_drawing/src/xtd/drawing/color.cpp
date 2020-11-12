@@ -4,7 +4,7 @@
 #include <map>
 #include <stdexcept>
 #include <sstream>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 
 using namespace std;
 using namespace xtd;

@@ -1,5 +1,6 @@
-#include <xtd/forms/native/main_menu.h>
+#include <xtd/format.h>
 #include <xtd/diagnostics/cdebug.h>
+#include <xtd/forms/native/main_menu.h>
 #include "../../../include/xtd/forms/menu_item.h"
 #include "../../../include/xtd/forms/main_menu.h"
 #include "../../../include/xtd/forms/menu_images.h"

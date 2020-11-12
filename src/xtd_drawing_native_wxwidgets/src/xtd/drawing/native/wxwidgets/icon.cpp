@@ -1,6 +1,6 @@
 #include <xtd/drawing/native/icon.h>
 #include <xtd/xtd.io>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include <atomic>
 #include <wx/bitmap.h>
 #include <wx/icon.h>

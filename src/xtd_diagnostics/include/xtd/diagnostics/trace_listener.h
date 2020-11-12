@@ -4,7 +4,7 @@
 #include <memory>
 #include <string>
 #include <stdexcept>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "trace_event_cache.h"
 #include "trace_event_type.h"
 #include "trace_options.h"

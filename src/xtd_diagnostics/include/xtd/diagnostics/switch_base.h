@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <map>
 #include <vector>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "source_levels.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

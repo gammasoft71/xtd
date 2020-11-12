@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 #include <ostream>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "hotkey_prefix.h"
 #include "string_alignment.h"
 #include "string_format_flags.h"

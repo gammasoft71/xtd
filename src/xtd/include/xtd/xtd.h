@@ -8,5 +8,5 @@
 #include <xtd/xtd.core>
 #include <xtd/xtd.forms>
 #include <xtd/xtd.io>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include <xtd/xtd.tunit>

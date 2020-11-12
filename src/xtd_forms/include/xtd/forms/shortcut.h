@@ -1,7 +1,7 @@
 /// @file
 /// @brief Contains keys enum.
 #pragma once
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "keys.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

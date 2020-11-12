@@ -2,7 +2,7 @@
 /// @brief Contains xtd::basic_console class.
 #pragma once
 #include "__generic_stream_output.h"
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "__get_err_rdbuf.h"
 #include "__get_in_rdbuf.h"
 #include "__get_out_rdbuf.h"

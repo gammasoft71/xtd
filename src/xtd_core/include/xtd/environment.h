@@ -7,7 +7,7 @@
 #include <vector>
 
 //#include <xtd/io>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 
 #include "__opaque_environment.h"
 #include "environment_variable_target.h"

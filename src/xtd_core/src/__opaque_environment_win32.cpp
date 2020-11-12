@@ -12,7 +12,7 @@
 #undef max
 
 #include "../include/xtd/__opaque_environment.h"
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 
 std::string __opaque_environment::get_current_directory() noexcept {
   char path[MAX_PATH + 1];

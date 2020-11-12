@@ -4,7 +4,7 @@
 #include <ostream>
 #include <stdexcept>
 #include <vector>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "font_family.h"
 #include "graphics_unit.h"
 

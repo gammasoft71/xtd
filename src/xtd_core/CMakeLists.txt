@@ -15,6 +15,7 @@ set(XTD_INCLUDES
   include/xtd/domain_exception.h
   include/xtd/environment.h
   include/xtd/environment_variable_target.h
+  include/xtd/format.h
   include/xtd/format_exception.h
   include/xtd/guid.h
   include/xtd/icomparable.h
@@ -24,6 +25,7 @@ set(XTD_INCLUDES
   include/xtd/invalid_cast_exception.h
   include/xtd/invalid_operation_exception.h
   include/xtd/invalid_program_exception.h
+  include/xtd/istring.h
   include/xtd/length_exception.h
   include/xtd/literals.h
   include/xtd/nameof.h
@@ -31,16 +33,22 @@ set(XTD_INCLUDES
   include/xtd/not_implemented_exception.h
   include/xtd/not_supported_exception.h
   include/xtd/null_pointer_exception.h
+  include/xtd/number_styles.h
   include/xtd/object.h
   include/xtd/operation_canceled_exception.h
   include/xtd/operating_system.h
   include/xtd/overflow_exception.h
+  include/xtd/parse.h
   include/xtd/platform_id.h
   include/xtd/platform_not_supported_exception.h
   include/xtd/startup.h
   include/xtd/static.h
+  include/xtd/string_comparison.h
+  include/xtd/string_split_options.h
+  include/xtd/strings.h
   include/xtd/system_exception.h
   include/xtd/time_out_exception.h
+  include/xtd/to_string.h
   include/xtd/typeof.h
   include/xtd/underflow_exception.h
   include/xtd/unused.h
@@ -61,6 +69,26 @@ set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
 )
+set(XTD_DOCS_INCLUDES
+  include/xtd/docs/format_page.h
+  include/xtd/docs/main_page.h
+)
+set(XTD_INTERNAL_INCLUDES
+  include/xtd/internal/__binary_formater.h
+  include/xtd/internal/__boolean_formater.h
+  include/xtd/internal/__character_formater.h
+  include/xtd/internal/__currency_formater.h
+  include/xtd/internal/__date_time_formater.h
+  include/xtd/internal/__duration_formater.h
+  include/xtd/internal/__enum_formater.h
+  include/xtd/internal/__fixed_point_formater.h
+  include/xtd/internal/__format.h
+  include/xtd/internal/__format_information.h
+  include/xtd/internal/__format_stringer.h
+  include/xtd/internal/__natural_formater.h
+  include/xtd/internal/__numeric_formater.h
+  include/xtd/internal/__string_formater.h
+)
 set(XTD_IO_INCLUDES
   include/xtd/io/directory_not_found_exception.h
   include/xtd/io/drive_not_found_exception.h
@@ -77,11 +105,14 @@ set(SOURCES
   src/bit_converter.cpp
   src/environment.cpp
   src/guid.cpp
+  src/strings.cpp
   src/system_exception.cpp
 )
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\collections FILES ${XTD_COLLECTIONS_INCLUDES})
 source_group(include\\xtd\\collections\\specialized FILES ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES})
+source_group(include\\xtd\\docs FILES ${XTD_DOCS_INCLUDES})
+source_group(include\\xtd\\internal FILES ${XTD_INTERNAL_INCLUDES})
 source_group(include\\xtd\\io FILES ${XTD_IO_INCLUDES})
 source_group(src FILES ${SOURCES})
 
@@ -90,20 +121,20 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_IO_INCLUDES} ${SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_DOCS_INCLUDES} ${XTD_INTERNAL_INCLUDES} ${XTD_IO_INCLUDES} ${SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
 if(MSVC)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io xtd.strings rpcrt4)
+  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io rpcrt4)
 elseif (APPLE)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io xtd.strings)
+  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io)
 elseif (ANDROID)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io xtd.strings)
+  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io)
 elseif (UNIX)
-  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io xtd.strings uuid)
+  target_link_libraries(${PROJECT_NAME} xtd.delegates xtd.io uuid)
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 

@@ -4,7 +4,7 @@
 #include <xtd/xtd.drawing>
 #include <xtd/xtd.core>
 #include <xtd/xtd.io>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include "forms/create_params.h"
 #include "forms/color_dialog_flags.h"
 #include "forms/font_dialog_flags.h"

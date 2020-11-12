@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 
 #if defined(_WIN32)
 #undef far

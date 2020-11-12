@@ -1,6 +1,6 @@
 #include <cmath>
 #include <vector>
-#include <xtd/xtd.strings>
+#include <xtd/strings.h>
 #include <xtd/drawing/native/graphics.h>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.h"
 #include "../../../../../include/xtd/drawing/native/wx_brush.h"
