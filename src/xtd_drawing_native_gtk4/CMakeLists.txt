@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.drawing.native.gtk4 VERSION 0.0.1)
 
 set(XTD_INCLUDES
-  include/xtd/xtd.drawing.native.gtk4.hpp
+  include/xtd/xtd.drawing.native.gtk4.h
   include/xtd/xtd.drawing.native.gtk4
 )
 

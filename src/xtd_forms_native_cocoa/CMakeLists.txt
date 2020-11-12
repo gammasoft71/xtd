@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.forms.native.cocoa VERSION 0.0.1)
 
 set(XTD_INCLUDES
-  include/xtd/xtd.forms.native.cocoa.hpp
+  include/xtd/xtd.forms.native.cocoa.h
   include/xtd/xtd.forms.native.cocoa
 )
 
