@@ -155,7 +155,7 @@ namespace unit_tests {
     void test_method_(drag_full_windows) {
 #if defined(_WIN32)
       int32_t drag_full_windows = 0;
-      SystemParametersInfo(SPI_GETCARETWIDTH, 0, &drag_full_windows, 0);
+      SystemParametersInfo(SPI_GETDRAGFULLWINDOWS, 0, &drag_full_windows, 0);
       assert::are_equal_(drag_full_windows != 0, system_information::drag_full_windows());
 #else
       assert::is_true_(system_information::drag_full_windows());
