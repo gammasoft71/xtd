@@ -4,15 +4,15 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.drawing.native.fltk VERSION 0.0.1)
 
 set(XTD_INCLUDES
-  include/xtd/xtd.drawing.native.fltk.hpp
+  include/xtd/xtd.drawing.native.fltk.h
   include/xtd/xtd.drawing.native.fltk
 )
 
 set(XTD_DRAWING_NATIVE_INCLUDES
-  include/xtd/drawing/native/fl_brush.hpp
-  include/xtd/drawing/native/fl_dc.hpp
-  include/xtd/drawing/native/fl_font.hpp
-  include/xtd/drawing/native/fl_pen.hpp
+  include/xtd/drawing/native/fl_brush.h
+  include/xtd/drawing/native/fl_dc.h
+  include/xtd/drawing/native/fl_font.h
+  include/xtd/drawing/native/fl_pen.h
 )
 
 set(XTD_DRAWING_NATIVE_FLTK_SOURCES

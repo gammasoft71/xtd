@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.forms.native.win32 VERSION 0.0.1)
 
 set(XTD_INCLUDES
-  include/xtd/xtd.forms.native.win32.hpp
+  include/xtd/xtd.forms.native.win32.h
   include/xtd/xtd.forms.native.win32
 )
 
@@ -56,3 +56,4 @@ install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_PO
 install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)
 install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)
 install(EXPORT ${PROJECT_NAME} DESTINATION cmake)
+w
