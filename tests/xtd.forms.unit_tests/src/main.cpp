@@ -1,12 +1,4 @@
-#include <xtd/xtd.forms>
-#include <xtd/xtd.tunit>
+#include <xtd/startup.h>
+#include <xtd/tunit_main.h>
 
-using namespace xtd::forms;
-using namespace xtd::tunit;
-
-int main() {
-  application::initialize();
-  int result = console_unit_test().run();
-  application::cleanup();
-  return result;
-}
+startup_(tunit_main_);

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <xtd/xtd.core>
-#include <xtd/xtd.io>
 #include <xtd/xtd.drawing>
 //#include "logo.xpm"
 

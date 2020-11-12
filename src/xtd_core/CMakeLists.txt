@@ -98,24 +98,34 @@ set(XTD_INTERNAL_INCLUDES
   include/xtd/internal/__string_formater.h
 )
 set(XTD_IO_INCLUDES
+  include/xtd/io/cnull.h
   include/xtd/io/directory_not_found_exception.h
   include/xtd/io/drive_not_found_exception.h
   include/xtd/io/end_of_stream_exception.h
+  include/xtd/io/file.h
+  include/xtd/io/file_attributes.h
   include/xtd/io/file_format_exception.h
   include/xtd/io/file_load_exception.h
   include/xtd/io/file_not_found_exception.h
   include/xtd/io/ioexception.h
+  include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
 )
-set(SOURCES
-  src/__opaque_environment_gcc.cpp
-  src/__opaque_environment_win32.cpp
-  src/bit_converter.cpp
-  src/environment.cpp
-  src/event_args.cpp
-  src/guid.cpp
-  src/strings.cpp
-  src/system_exception.cpp
+set(XTD_SOURCES
+  src/xtd/__opaque_environment_gcc.cpp
+  src/xtd/__opaque_environment_win32.cpp
+  src/xtd/bit_converter.cpp
+  src/xtd/environment.cpp
+  src/xtd/event_args.cpp
+  src/xtd/guid.cpp
+  src/xtd/strings.cpp
+  src/xtd/system_exception.cpp
+)
+set(XTD_IO_SOURCES
+  src/xtd/io/file_gcc.cpp
+  src/xtd/io/file_win32.cpp
+  src/xtd/io/path_gcc.cpp
+  src/xtd/io/path_win32.cpp
 )
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\collections FILES ${XTD_COLLECTIONS_INCLUDES})
@@ -123,27 +133,28 @@ source_group(include\\xtd\\collections\\specialized FILES ${XTD_COLLECTIONS_SPEC
 source_group(include\\xtd\\docs FILES ${XTD_DOCS_INCLUDES})
 source_group(include\\xtd\\internal FILES ${XTD_INTERNAL_INCLUDES})
 source_group(include\\xtd\\io FILES ${XTD_IO_INCLUDES})
-source_group(src FILES ${SOURCES})
+source_group(src\\xtd FILES ${XTD_SOURCES})
+source_group(src\\xtd\\io FILES ${XTD_IO_SOURCES})
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_DOCS_INCLUDES} ${XTD_INTERNAL_INCLUDES} ${XTD_IO_INCLUDES} ${SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_DOCS_INCLUDES} ${XTD_INTERNAL_INCLUDES} ${XTD_IO_INCLUDES} ${XTD_SOURCES} ${XTD_IO_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
 endif ()
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
 if(MSVC)
-  target_link_libraries(${PROJECT_NAME} xtd.io rpcrt4)
+  target_link_libraries(${PROJECT_NAME} rpcrt4)
 elseif (APPLE)
-  target_link_libraries(${PROJECT_NAME} xtd.io)
+  target_link_libraries(${PROJECT_NAME})
 elseif (ANDROID)
-  target_link_libraries(${PROJECT_NAME} xtd.io)
+  target_link_libraries(${PROJECT_NAME})
 elseif (UNIX)
-  target_link_libraries(${PROJECT_NAME} xtd.io uuid)
+  target_link_libraries(${PROJECT_NAME} uuid)
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
 

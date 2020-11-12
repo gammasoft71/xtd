@@ -3,7 +3,6 @@
 #include <wx/bitmap.h>
 #include <xtd/drawing/native/system_images.h>
 #include <xtd/environment.h>
-#include <xtd/xtd.io>
 #include <xtd/strings.h>
 
 using namespace xtd;
