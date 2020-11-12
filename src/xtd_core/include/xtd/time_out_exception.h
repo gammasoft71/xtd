@@ -73,15 +73,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "The operation has timed out.";
   };
 }
-
-/// @brief Helper on time_out_exception to call it with caller information
-/// @remarks Is equivalent to time_out_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw time_out_exception_(); // same as : throw time_out_exception(caller_info_)
-///   if (invalid_value) throw time_out_exception_("Bad value"); // same as : throw time_out_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define time_out_exception_(...) time_out_exception(add_caller_info_(__VA_ARGS__))

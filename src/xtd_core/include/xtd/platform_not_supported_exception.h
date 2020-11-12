@@ -73,15 +73,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "Operation is not supported on this platform.";
   };
 }
-
-/// @brief Helper on platform_not_supported_exception to call it with caller information
-/// @remarks Is equivalent to platform_not_supported_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw platform_not_supported_exception_(); // same as : throw platform_not_supported_exception(caller_info_)
-///   if (invalid_value) throw platform_not_supported_exception_("Bad value"); // same as : throw platform_not_supported_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define platform_not_supported_exception_(...) platform_not_supported_exception(add_caller_info_(__VA_ARGS__))

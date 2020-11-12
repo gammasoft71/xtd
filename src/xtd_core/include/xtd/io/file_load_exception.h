@@ -76,15 +76,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on file_load_exception to call it with caller information
-/// @remarks Is equivalent to file_load_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw file_load_exception_(); // same as : throw file_load_exception(caller_info_)
-///   if (invalid_value) throw file_load_exception_("Bad value"); // same as : throw file_load_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define file_load_exception_(...) file_load_exception(add_caller_info_(__VA_ARGS__))

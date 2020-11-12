@@ -76,15 +76,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on file_format_exception to call it with caller information
-/// @remarks Is equivalent to file_format_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw file_format_exception_(); // same as : throw file_format_exception(caller_info_)
-///   if (invalid_value) throw file_format_exception_("Bad value"); // same as : throw file_format_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define file_format_exception_(...) file_format_exception(add_caller_info_(__VA_ARGS__))

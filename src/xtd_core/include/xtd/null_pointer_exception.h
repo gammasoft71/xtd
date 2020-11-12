@@ -73,15 +73,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "Object pointer not set to an instance of an object.";
   };
 }
-
-/// @brief Helper on null_pointer_exception to call it with caller information
-/// @remarks Is equivalent to null_pointer_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw null_pointer_exception_(); // same as : throw null_pointer_exception(caller_info_)
-///   if (invalid_value) throw null_pointer_exception_("Bad value"); // same as : throw null_pointer_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define null_pointer_exception_(...) null_pointer_exception(add_caller_info_(__VA_ARGS__))

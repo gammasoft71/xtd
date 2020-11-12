@@ -76,15 +76,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on directory_not_found_exception to call it with caller information
-/// @remarks Is equivalent to directory_not_found_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw directory_not_found_exception_(); // same as : throw directory_not_found_exception(caller_info_)
-///   if (invalid_value) throw directory_not_found_exception_("Bad value"); // same as : throw directory_not_found_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define directory_not_found_exception_(...) directory_not_found_exception(add_caller_info_(__VA_ARGS__))

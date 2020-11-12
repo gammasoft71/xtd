@@ -76,15 +76,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on end_of_stream_exception to call it with caller information
-/// @remarks Is equivalent to end_of_stream_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw end_of_stream_exception_(); // same as : throw end_of_stream_exception(caller_info_)
-///   if (invalid_value) throw end_of_stream_exception_("Bad value"); // same as : throw end_of_stream_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define end_of_stream_exception_(...) end_of_stream_exception(add_caller_info_(__VA_ARGS__))

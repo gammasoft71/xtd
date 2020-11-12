@@ -75,15 +75,3 @@ namespace xtd {
     };
   }
 }
-
-/// @brief Helper on key_not_found_exception to call it with caller information
-/// @remarks Is equivalent to key_not_found_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw key_not_found_exception_(); // same as : throw key_not_found_exception(caller_info_)
-///   if (invalid_value) throw key_not_found_exception_("Bad value"); // same as : throw key_not_found_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define key_not_found_exception_(...) key_not_found_exception(add_caller_info_(__VA_ARGS__))

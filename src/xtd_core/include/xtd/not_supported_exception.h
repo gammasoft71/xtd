@@ -73,15 +73,3 @@ namespace xtd {
     static constexpr const char* default_message_ = "Specified method is not supported.";
   };
 }
-
-/// @brief Helper on not_supported_exception to call it with caller information
-/// @remarks Is equivalent to not_supported_exception({any argument}, caller_info_)
-/// @code
-/// void my_func() {
-///   if (invalid_info) throw not_supported_exception_(); // same as : throw not_supported_exception(caller_info_)
-///   if (invalid_value) throw not_supported_exception_("Bad value"); // same as : throw not_supported_exception("Bad value", caller_info_)
-///   ...
-/// }
-/// @endcode
-/// @ingroup keywords
-#define not_supported_exception_(...) not_supported_exception(add_caller_info_(__VA_ARGS__))
