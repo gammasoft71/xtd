@@ -1,6 +1,5 @@
 #pragma once
 #include <xtd/xtd.core>
-#include <xtd/xtd.delegates>
 #include <xtd/xtd.diagnostics>
 #include <xtd/xtd.drawing>
 #include <xtd/xtd.io>

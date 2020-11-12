@@ -1,4 +1,4 @@
-#include <xtd/xtd.delegates>
+#include <xtd/xtd.core>
 #include <iostream>
 #include <string>
 

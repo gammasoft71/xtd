@@ -1,6 +1,6 @@
 #pragma once
 #include <stdexcept>
-#include <xtd/xtd.delegates>
+#include <xtd/event.h>
 #include <wx/aboutdlg.h>
 #include <wx/app.h>
 #include <wx/menu.h>

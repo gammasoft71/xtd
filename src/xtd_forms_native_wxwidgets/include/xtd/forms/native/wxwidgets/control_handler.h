@@ -4,7 +4,7 @@
 #include <memory>
 #include <set>
 #include <thread>
-#include <xtd/xtd.delegates>
+#include <xtd/delegate.h>
 #include <xtd/xtd.diagnostics>
 #include <xtd/drawing/size.h>
 #include <xtd/forms/window_messages.h>
