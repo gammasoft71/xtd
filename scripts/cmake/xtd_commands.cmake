@@ -1521,7 +1521,7 @@ macro(write_project_config_cmake)
   if (PROJECT_REFERENCES)
     string(REPLACE ";" " " REFERENCES ${PROJECT_REFERENCES})
   endif ()
-  set(INSTALL_CMAKE_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_NAME}_config.cmake")
+  set(INSTALL_CMAKE_PROJECT_CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/${APPLICATION_NAME}Config.cmake")
   file(WRITE ${INSTALL_CMAKE_PROJECT_CONFIG_FILE}
     "include(CMakeFindDependencyMacro)\n"
     "include(\"\${CMAKE_CURRENT_LIST_DIR}/${APPLICATION_NAME}.cmake\")\n"
