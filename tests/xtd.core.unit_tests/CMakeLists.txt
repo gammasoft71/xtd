@@ -87,6 +87,10 @@ source_group(src\\collections FILES ${COLLECTIONS_SOURCES})
 source_group(src\\diagnostics FILES ${DIAGNOSTICS_SOURCES})
 source_group(src\\io FILES ${IO_SOURCES})
 
+if (MSVC)
+  add_compile_options(/bigobj)
+endif()
+
 # Options
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
