@@ -17,7 +17,7 @@ option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option war
 if (XTD_ENABLE_COMPILER_OPTION_WARNINGS_TO_ALL)
   if (MSVC)
     add_definitions(-D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
-    add_compile_options(/W4 /wd4100 /wd4458 /wd4996 /wd5105)
+    add_compile_options(/W4 /wd4100 /wd4127 /wd4458 /wd4996 /wd5105)
   else()
     add_compile_options(-Wall -Wextra -Wno-unused-parameter -Wno-gnu-zero-variadic-macro-arguments -pedantic)
   endif()
