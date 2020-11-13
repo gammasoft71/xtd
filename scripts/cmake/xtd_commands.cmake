@@ -300,14 +300,14 @@ macro(target_type TYPE)
     add_definitions(-D${TARGET_NAME_UPPER}_EXPORT)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
     add_library(${APPLICATION_NAME} SHARED ${ALL_FILES})
-     if ("${APPLICATION_NAME}" STREQUAL "xtd.core")
+    if ("${APPLICATION_NAME}" STREQUAL "xtd.core")
       target_link_libraries(${APPLICATION_NAME} ${PROJECT_REFERENCES})
     else ()
       target_link_libraries(${APPLICATION_NAME} xtd.core ${PROJECT_REFERENCES})
     endif ()
   elseif ("${TYPE}" STREQUAL "STATIC_LIBRARY")
     add_library(${APPLICATION_NAME} STATIC ${ALL_FILES})
-     if ("${APPLICATION_NAME}" STREQUAL "xtd.core")
+    if ("${APPLICATION_NAME}" STREQUAL "xtd.core")
       target_link_libraries(${APPLICATION_NAME} ${PROJECT_REFERENCES})
     else ()
       target_link_libraries(${APPLICATION_NAME} xtd.core ${PROJECT_REFERENCES})
@@ -1102,19 +1102,19 @@ macro(write_assembly_informations)
       "// Remarks : If this file was manually created, you need re-run cmake generator after creating\n"
       "//           or modifying any parameter bellow.\n"
       "\n"
-      "#include <xtd/assembly_info.h>\n"
+      "//#include <xtd/assembly_info.h>\n"
       "\n"
       "// Information about this assembly is defined by the following attributes.\n"
       "// Change them to the values specific to your project.\n"
       "\n"
-      "assembly_title_(\"${TITLE}\");\n"
-      "assembly_description_(\"${ASSEMBLY_DESCRIPTION}\");\n"
-      "assembly_configuration_(\"${CONFIGURATION}\");\n"
-      "assembly_company_(\"${ASSEMBLY_COMPANY}\");\n"
-      "assembly_product_(\"${PRODUCT}\");\n"
-      "assembly_copyright_(\"${ASSEMBLY_COPYRIGHT}\");\n"
-      "assembly_trademark_(\"${ASSEMBLY_TRADEMARK}\");\n"
-      "assembly_culture_(\"${ASSEMBLY_CULTURE}\");\n"
+      "//assembly_title_(\"${TITLE}\");\n"
+      "//assembly_description_(\"${ASSEMBLY_DESCRIPTION}\");\n"
+      "//assembly_configuration_(\"${CONFIGURATION}\");\n"
+      "//assembly_company_(\"${ASSEMBLY_COMPANY}\");\n"
+      "//assembly_product_(\"${PRODUCT}\");\n"
+      "//assembly_copyright_(\"${ASSEMBLY_COPYRIGHT}\");\n"
+      "//assembly_trademark_(\"${ASSEMBLY_TRADEMARK}\");\n"
+      "//assembly_culture_(\"${ASSEMBLY_CULTURE}\");\n"
       "\n"
       "// The following GUID is for the ID of the typelib if this project is exposed to COM\n"
       "${GUID}"
@@ -1122,7 +1122,7 @@ macro(write_assembly_informations)
       "// The assembly version has the format \"{Major}.{Minor}.{Build}.{Revision}\".\n"
       "// In not specify or empty or \"*\" the cmake project version is used.\n"
       "\n"
-      "assembly_version_(\"${PROJECT_VERSION}\");\n"
+      "//assembly_version_(\"${PROJECT_VERSION}\");\n"
       "${FILE_VERSION}"
       "#pragma endregion"
     )
@@ -1914,20 +1914,20 @@ endif()
 # Reference Guide Generator
 
 include(ExternalProject)
-option(ADD_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" ON)
-option(DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
+option(XTD_ENABLE_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" ON)
+option(XTD_ENABLE_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
 
-if (ADD_COMMAND_REFERENCE_GUIDE_GENERATOR AND NOT DOXYGEN_FOUND)  
+if (XTD_ENABLE_COMMAND_REFERENCE_GUIDE_GENERATOR AND NOT DOXYGEN_FOUND)
   find_package(Doxygen QUIET)
   if (DOXYGEN_FOUND)
     set(DOXYGEN_EXECUTABLE Doxygen::doxygen)
-  elseif (NOT DOXYGEN_FOUND AND DOWNLOAD_DOXYGEN)
+  elseif (NOT DOXYGEN_FOUND AND XTD_ENABLE_DOWNLOAD_DOXYGEN)
     ExternalProject_Add(doxygen GIT_REPOSITORY https://github.com/doxygen/doxygen.git GIT_TAG Release_1_8_13 GIT_SHALLOW 1 CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR})
     set(DOXYGEN_FOUND TRUE)
     set(DOXYGEN_EXECUTABLE ${CMAKE_BINARY_DIR}/bin/doxygen)
     set(DOXYGEN_PROJECT doxygen)
   else ()
-    message(FATAL_ERROR "Doxygen not found try with set \"DOWNLOAD_DOXYGEN\" option to ON")
+    message(FATAL_ERROR "Doxygen not found try with set \"XTD_ENABLE_DOWNLOAD_DOXYGEN\" option to ON")
   endif ()
   
   if (NOT "$ENV{PROJECT_DOCUMENTATION_ROOT}" STREQUAL "")

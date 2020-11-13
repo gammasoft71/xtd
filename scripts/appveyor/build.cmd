@@ -16,7 +16,7 @@ cd ../../../..
 git submodule update --init
 mkdir build
 cd build
-cmake .. -G "Visual Studio 16 2019" -A %BUILD_OPTION% -DENABLE_TESTS=ON -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+cmake .. -G "Visual Studio 16 2019" -A %BUILD_OPTION% -DXTD_ENABLE_TESTS=ON -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 if %ERRORLEVEL% NEQ 0 exit 1
 cmake --build . --config Debug --target install
 if %ERRORLEVEL% NEQ 0 exit 1

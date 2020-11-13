@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.forms VERSION 0.0.1)
-
-set(XTD_INCLUDES
+project(xtd.forms)
+include(../../scripts/cmake/xtd_commands.cmake)
+include(../../scripts/cmake/xtd_version.cmake)
+add_include_directories(include)
+add_references(${XTD_FORMS_NATIVE_LIBRARY})
+add_sources(
   include/xtd/xtd.forms.h
   include/xtd/xtd.forms
-)
-
-set(XTD_FORMS_INCLUDES
   include/xtd/forms/about_dialog.h
   include/xtd/forms/anchor_styles.h
   include/xtd/forms/appearance.h
@@ -193,24 +193,12 @@ set(XTD_FORMS_INCLUDES
   include/xtd/forms/up_down_button.h
   include/xtd/forms/use_wait_cursor.h
   include/xtd/forms/user_control.h
-)
-
-set(XTD_FORMS_LAYOUT_INCLUDES
   include/xtd/forms/layout/arranged_element_collection.h
-)
-
-set(XTD_FORMS_PROPERTIES_INCLUDES
   include/xtd/forms/properties/resources.h
-)
-
-set(XTD_FORMS_VISUAL_STYLES_INCLUDES
   include/xtd/forms/visual_styles/check_box_state.h
   include/xtd/forms/visual_styles/push_button_state.h
   include/xtd/forms/visual_styles/radio_button_state.h
   include/xtd/forms/visual_styles/toggle_button_state.h
-)
-
-set(XTD_FORMS_SOURCES
   src/xtd/forms/about_dialog.cpp
   src/xtd/forms/application.cpp
   src/xtd/forms/background_worker.cpp
@@ -292,32 +280,8 @@ set(XTD_FORMS_SOURCES
   src/xtd/forms/xtd_forms_common_dialog_closed_caller.h
   src/xtd/forms/xtd_forms_message_dialog_closed_caller.h
 )
+target_type(${XTD_LIBRARY_TYPE})
 
-source_group(include\\xtd FILES ${XTD_INCLUDES})
-source_group(include\\xtd\\forms FILES ${XTD_FORMS_INCLUDES})
-source_group(include\\xtd\\forms\\layout FILES ${XTD_FORMS_LAYOUT_INCLUDES})
-source_group(include\\xtd\\forms\\properties FILES ${XTD_FORMS_PROPERTIES_INCLUDES})
-source_group(include\\xtd\\forms\\visual_styles FILES ${XTD_FORMS_VISUAL_STYLES_INCLUDES})
-source_group(src\\xtd\\forms FILES ${XTD_FORMS_SOURCES})
-source_group(src\\native FILES ${NATIVE_SOURCES})
-source_group(src\\native\\wxwidgets FILES ${NATIVE_WXWIDGETS_SOURCES})
-
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_FORMS_INCLUDES} ${XTD_FORMS_LAYOUT_INCLUDES} ${XTD_FORMS_PROPERTIES_INCLUDES} ${XTD_FORMS_VISUAL_STYLES_INCLUDES} ${XTD_FORMS_SOURCES})
-if (MSVC)
-  target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
-  target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
-endif ()
-target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} xtd.drawing ${XTD_FORMS_NATIVE_LIBRARY})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
-
-# install
-install(DIRECTORY include/xtd/. DESTINATION include/xtd)
-install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)
-install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)
-install(TARGETS xtd.forms EXPORT ${EXPORT_PROJECT_NAME} DESTINATION lib)
+# Install
+add_install_include_directories(include/xtd)
+install_component()
