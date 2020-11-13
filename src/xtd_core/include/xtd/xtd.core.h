@@ -14,13 +14,22 @@
 /// @defgroup xtd_core xtd.core
 /// @brief xtd.core library.
 
+#include "__generic_stream_output.h" // must be included first
+#include "__get_err_rdbuf.h"
+#include "__get_in_rdbuf.h"
+#include "__get_out_rdbuf.h"
+#include "__opaque_console.h"
 #include "action.h"
 #include "argument_exception.h"
 #include "argument_null_exception.h"
 #include "argument_out_of_range_exception.h"
 #include "arithmetic_exception.h"
+#include "background_color.h"
+#include "beep.h"
 #include "bit_converter.h"
 #include "block_scope.h"
+#include "console.h"
+#include "console_cancel_event_handler.h"
 #include "divided_by_zero_exception.h"
 #include "delegate.h"
 #include "domain_exception.h"
@@ -29,6 +38,7 @@
 #include "event.h"
 #include "event_args.h"
 #include "event_handler.h"
+#include "foreground_color.h"
 #include "format.h"
 #include "format_exception.h"
 #include "func.h"
@@ -58,6 +68,7 @@
 #include "platform_id.h"
 #include "platform_not_supported_exception.h"
 #include "predicate.h"
+#include "reset_color.h"
 #include "startup.h"
 #include "static.h"
 #include "string_comparison.h"

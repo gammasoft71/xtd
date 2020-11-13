@@ -1,4 +1,4 @@
-#include <xtd/xtd.console>
+#include <xtd/console_key_info.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;
@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace unit_tests {
-  class test_class_(test_delegate) {
+  class test_class_(test_console_key_info) {
   public:
     void test_method_(create_empty_console_key_info) {
       console_key_info cki;

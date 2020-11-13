@@ -183,7 +183,7 @@ main_form::main_form() {
   open_xtd_examples_information_picture_box_.size_mode(picture_box_size_mode::zoom);
   open_xtd_examples_information_picture_box_.anchor(anchor_styles::bottom|anchor_styles::right);
 
-  open_xtd_example_console_tab_page_.text("xtd.console");
+  open_xtd_example_console_tab_page_.text("xtd.core");
   open_xtd_example_console_tab_page_.parent(open_xtd_example_tab_control_);
 
   open_xtd_example_forms_tab_page_.text("xtd.forms");

@@ -284,7 +284,7 @@ macro(target_type TYPE)
 
   if ("${TYPE}" STREQUAL "CONSOLE_APPLICATION")
     add_executable(${APPLICATION_NAME} ${ALL_FILES})
-    target_link_libraries(${APPLICATION_NAME} xtd.console ${PROJECT_REFERENCES})
+    target_link_libraries(${APPLICATION_NAME} xtd.core ${PROJECT_REFERENCES})
   elseif ("${TYPE}" STREQUAL "GUI_APPLICATION" OR "${TYPE}" STREQUAL "WINDOWS_APPLICATION")
     add_executable(${APPLICATION_NAME} ${GUI} ${ALL_FILES})
     target_link_libraries(${APPLICATION_NAME} xtd.forms ${PROJECT_REFERENCES})
