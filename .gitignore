@@ -32,3 +32,4 @@ examples/xtd.forms.examples/games/minesweeper/properties/resources.h
 examples/xtd.forms.examples/common_controls/picture_box/properties/resources.h
 examples/xtd.cmake.examples/project_commands/resources_command/properties/resources.h
 scripts/install/test_wxwidgets/wxwidgets.lck
+src/xtd.forms/properties/assembly_info.cpp

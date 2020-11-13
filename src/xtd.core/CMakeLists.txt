@@ -1,8 +1,20 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.core VERSION 1.0.0)
-set(XTD_INCLUDES
+project(xtd.core)
+include(../../scripts/cmake/xtd_commands.cmake)
+include(../../scripts/cmake/xtd_version.cmake)
+add_include_directories(include)
+if(MSVC)
+  add_references(rpcrt4)
+elseif (APPLE)
+  add_references()
+elseif (ANDROID)
+  add_references()
+elseif (UNIX)
+  add_references(uuid)
+endif ()
+add_sources(
   include/xtd/__generic_stream_output.h
   include/xtd/__get_err_rdbuf.h
   include/xtd/__get_in_rdbuf.h
@@ -88,18 +100,12 @@ set(XTD_INCLUDES
   include/xtd/xml_syntax_exception.h
   include/xtd/xtd.core
   include/xtd/xtd.core.h
-)
-set(XTD_COLLECTIONS_INCLUDES
   include/xtd/collections/any_pair.h
   include/xtd/collections/key_not_found_exception.h
   include/xtd/collections/vector_list.h
-)
-set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
   include/xtd/collections/specialized/string_map.h
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
-)
-set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/console_trace_listener.h
   include/xtd/diagnostics/debug.h
   include/xtd/diagnostics/default_trace_listener.h
@@ -122,12 +128,8 @@ set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/trace_options.h
   include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
-)
-set(XTD_DOCS_INCLUDES
   include/xtd/docs/format_page.h
   include/xtd/docs/main_page.h
-)
-set(XTD_INTERNAL_INCLUDES
   include/xtd/internal/__binary_formater.h
   include/xtd/internal/__boolean_formater.h
   include/xtd/internal/__character_formater.h
@@ -142,8 +144,6 @@ set(XTD_INTERNAL_INCLUDES
   include/xtd/internal/__natural_formater.h
   include/xtd/internal/__numeric_formater.h
   include/xtd/internal/__string_formater.h
-)
-set(XTD_IO_INCLUDES
   include/xtd/io/cnull.h
   include/xtd/io/directory_not_found_exception.h
   include/xtd/io/drive_not_found_exception.h
@@ -156,8 +156,6 @@ set(XTD_IO_INCLUDES
   include/xtd/io/ioexception.h
   include/xtd/io/path.h
   include/xtd/io/path_too_long_exception.h
-)
-set(XTD_SOURCES
   src/xtd/__opaque_console_gcc.cpp
   src/xtd/__opaque_console_win32.cpp
   src/xtd/__opaque_environment_gcc.cpp
@@ -168,56 +166,19 @@ set(XTD_SOURCES
   src/xtd/guid.cpp
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
-)
-set(XTD_DIAGNOSTICS_SOURCES
   src/xtd/diagnostics/debug.cpp
   src/xtd/diagnostics/default_trace_listener_gcc.cpp
   src/xtd/diagnostics/default_trace_listener_win32.cpp
   src/xtd/diagnostics/process.cpp
   src/xtd/diagnostics/process_start_info.cpp
   src/xtd/diagnostics/trace.cpp
-)
-set(XTD_IO_SOURCES
   src/xtd/io/file_gcc.cpp
   src/xtd/io/file_win32.cpp
   src/xtd/io/path_gcc.cpp
   src/xtd/io/path_win32.cpp
 )
-source_group(include\\xtd FILES ${XTD_INCLUDES})
-source_group(include\\xtd\\collections FILES ${XTD_COLLECTIONS_INCLUDES})
-source_group(include\\xtd\\collections\\specialized FILES ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES})
-source_group(include\\xtd\\diagnostics FILES ${XTD_DIAGNOSTICS_INCLUDES})
-source_group(include\\xtd\\docs FILES ${XTD_DOCS_INCLUDES})
-source_group(include\\xtd\\internal FILES ${XTD_INTERNAL_INCLUDES})
-source_group(include\\xtd\\io FILES ${XTD_IO_INCLUDES})
-source_group(src\\xtd FILES ${XTD_SOURCES})
-source_group(src\\xtd\\diagnostics FILES ${XTD_DIAGNOSTICS_SOURCES})
-source_group(src\\xtd\\io FILES ${XTD_IO_SOURCES})
+target_type(${XTD_LIBRARY_TYPE})
 
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_DIAGNOSTICS_INCLUDES} ${XTD_DOCS_INCLUDES} ${XTD_INTERNAL_INCLUDES} ${XTD_IO_INCLUDES} ${XTD_SOURCES} ${XTD_DIAGNOSTICS_SOURCES} ${XTD_IO_SOURCES})
-if (MSVC)
-  target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
-  target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
-endif ()
-target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include> PUBLIC ${UUID_INCLUDE_DIRS})
-if(MSVC)
-  target_link_libraries(${PROJECT_NAME} rpcrt4)
-elseif (APPLE)
-  target_link_libraries(${PROJECT_NAME})
-elseif (ANDROID)
-  target_link_libraries(${PROJECT_NAME})
-elseif (UNIX)
-  target_link_libraries(${PROJECT_NAME} uuid)
-endif ()
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
-
-# install
-install(DIRECTORY include/xtd/. DESTINATION include/xtd)
-install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)
-install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)
-install(TARGETS ${PROJECT_NAME} EXPORT ${EXPORT_PROJECT_NAME} DESTINATION lib)
+# Install
+add_install_include_directories(include/xtd)
+install_component()

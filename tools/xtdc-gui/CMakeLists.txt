@@ -113,4 +113,4 @@ add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES} ${PROPERTIES} ${AP
 target_link_libraries(${PROJECT_NAME} xtd.forms)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tools")
 
-install(TARGETS ${PROJECT_NAME} EXPORT ${EXPORT_PROJECT_NAME} DESTINATION bin)
+install(TARGETS ${PROJECT_NAME} EXPORT xtd DESTINATION bin)
