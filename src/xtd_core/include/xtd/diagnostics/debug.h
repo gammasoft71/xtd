@@ -15,6 +15,8 @@ namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     /// @brief Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited.
+    /// @par Library
+    /// xtd.core
     /// @remarks You can use the properties and methods in the debug class to instrument release builds. Instrumentation allows you to monitor the health of your application running in real-life settings. Tracing helps you isolate problems and fix them without disturbing a running system.
     /// @remarks This class provides methods to display an assert dialog box, and to emit an assertion that will always Fail. This class provides write methods in the following variations: write, write_line, write_if, and write_line_if.
     /// @remarks The boolean_switch and trace_switch classes provide means to dynamically control the tracing output. You can modify the values of these switches without recompiling your application. For information on using the configuration file to set a switch, see the switch class and the trace_switches topic.
@@ -27,6 +29,7 @@ namespace xtd {
     /// @par Examples
     /// The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the debug::indent and debug::unindent methods to distinguish the tracing output.
     /// @include debug.cpp
+    /// @ingroup xtd_core
     class debug {
     public:
       /// @brief Get whether Flush should be called on the Listeners after every write.

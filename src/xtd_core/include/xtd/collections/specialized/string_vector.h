@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::collections::specialized::string_vector typedef.
 #pragma once
 #include <string>
 #include <vector>

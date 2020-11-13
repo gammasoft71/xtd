@@ -8,6 +8,10 @@
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
+    /// @brief Provides the default output methods and behavior for tracing.
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
     class default_trace_listener : public trace_listener {
     public:
       default_trace_listener() : trace_listener("default") {};

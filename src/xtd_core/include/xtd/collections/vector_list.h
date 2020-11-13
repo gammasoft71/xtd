@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::collections::vector_list typedef.
 #pragma once
 #include <any>
 #include <vector>
