@@ -1,5 +1,5 @@
 #define TRACE
-#include <xtd/xtd.diagnostics>
+#include <xtd/xtd.core>
 #include <iostream>
 
 using namespace std;

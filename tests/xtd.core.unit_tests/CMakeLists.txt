@@ -65,6 +65,9 @@ set(SOURCES
 set(COLLECTIONS_SOURCES
   src/collections/key_not_found_exception.cpp
 )
+set(DIAGNOSTICS_SOURCES
+  src/diagnostics/trace_listener.cpp
+)
 set(IO_SOURCES
   src/io/directory_not_found_exception.cpp
   src/io/drive_not_found_exception.cpp
@@ -79,6 +82,7 @@ set(IO_SOURCES
 )
 source_group(src FILES ${SOURCES})
 source_group(src\\collections FILES ${COLLECTIONS_SOURCES})
+source_group(src\\diagnostics FILES ${DIAGNOSTICS_SOURCES})
 source_group(src\\io FILES ${IO_SOURCES})
 
 # Options
@@ -86,7 +90,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Target
-add_executable(${PROJECT_NAME} ${SOURCES} ${COLLECTIONS_SOURCES} ${IO_SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} ${COLLECTIONS_SOURCES} ${DIAGNOSTICS_SOURCES} ${IO_SOURCES})
 target_link_libraries(${PROJECT_NAME} xtd.core xtd.tunit)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
 

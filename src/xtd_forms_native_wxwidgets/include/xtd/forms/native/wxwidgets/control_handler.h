@@ -5,7 +5,7 @@
 #include <set>
 #include <thread>
 #include <xtd/delegate.h>
-#include <xtd/xtd.diagnostics>
+#include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/size.h>
 #include <xtd/forms/window_messages.h>
 #include <xtd/forms/native/message_keys.h>

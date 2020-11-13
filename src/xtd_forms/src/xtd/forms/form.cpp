@@ -1,6 +1,6 @@
 #include <random>
 #include <stdexcept>
-#include <xtd/xtd.diagnostics>
+#include <xtd/diagnostics/debug.h>
 #include <xtd/drawing/system_icons.h>
 #include <xtd/forms/native/class_styles.h>
 #include <xtd/forms/native/control.h>
