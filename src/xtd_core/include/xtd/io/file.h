@@ -7,9 +7,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#if defined(__cpp_lib_filesystem)
 #include <filesystem>
-#endif
 
 /// @cond
 int __get_file_attributes(const char*path);
