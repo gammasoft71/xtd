@@ -1,4 +1,4 @@
-#include <xtd/diagnostics/cdebug.h>
+#include <xtd/cdebug.h>
 #include <xtd/forms/native/button.h>
 #include <xtd/forms/native/content_alignment.h>
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button.h"

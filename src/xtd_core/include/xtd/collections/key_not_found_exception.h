@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::collections::key_not_found_exception exception.
 #pragma once
 #include "../system_exception.h"
 

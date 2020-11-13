@@ -28,6 +28,9 @@ set(XTD_INCLUDES
   include/xtd/console_key_info.h
   include/xtd/console_modifiers.h
   include/xtd/console_special_key.h
+  include/xtd/cdebug.h
+  include/xtd/ctrace.h
+  include/xtd/debugstreambuf.h
   include/xtd/delegate.h
   include/xtd/divided_by_zero_exception.h
   include/xtd/domain_exception.h
@@ -75,6 +78,7 @@ set(XTD_INCLUDES
   include/xtd/system_exception.h
   include/xtd/time_out_exception.h
   include/xtd/to_string.h
+  include/xtd/tracestreambuf.h
   include/xtd/typeof.h
   include/xtd/underflow_exception.h
   include/xtd/unused.h
@@ -97,10 +101,7 @@ set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
 )
 set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/console_trace_listener.h
-  include/xtd/diagnostics/cdebug.h
-  include/xtd/diagnostics/ctrace.h
   include/xtd/diagnostics/debug.h
-  include/xtd/diagnostics/debugstreambuf.h
   include/xtd/diagnostics/default_trace_listener.h
   include/xtd/diagnostics/event_type_filter.h
   include/xtd/diagnostics/ostream_trace_listener.h
@@ -121,7 +122,6 @@ set(XTD_DIAGNOSTICS_INCLUDES
   include/xtd/diagnostics/trace_options.h
   include/xtd/diagnostics/trace_source.h
   include/xtd/diagnostics/trace_switch.h
-  include/xtd/diagnostics/tracestreambuf.h
 )
 set(XTD_DOCS_INCLUDES
   include/xtd/docs/format_page.h

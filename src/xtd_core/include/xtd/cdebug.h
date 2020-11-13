@@ -1,10 +1,12 @@
 /// @file
-/// @brief Contains xtd::cdebug object.
+/// @brief Contains xtd::cdebug ostream.
 #pragma once
 #include <iostream>
 #include "debugstreambuf.h"
 
-inline xtd::diagnostics::debugstreambuf __cdebugstreambuf__;
+/// @cond
+inline xtd::debugstreambuf __cdebugstreambuf__;
+/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

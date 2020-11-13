@@ -1,3 +1,5 @@
+/// @file
+/// @brief Contains xtd::collections::any_pair typedef.
 #pragma once
 #include <any>
 #include <utility>
