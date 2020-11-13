@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.forms.native.gtk3 VERSION 0.0.1)
+project(xtd.forms.native.gtk3)
 
 set(XTD_INCLUDES
   include/xtd/xtd.forms.native.gtk3.h
