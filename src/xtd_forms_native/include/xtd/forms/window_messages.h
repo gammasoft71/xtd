@@ -331,26 +331,33 @@ constexpr int32_t UDN_DELTAPOS = -722;
 
 inline int16_t HIBYTE(int16_t word) {
   return int8_t((word >> 8) & 0xFF);
+template<typename type1_t, typename type2_t>
 }
 
 inline uint16_t HIBYTE(uint16_t word) {
-  return uint8_t((word >> 8) & 0xFF);
+template<typename type1_t, typename type2_t>
+uint32_t MAKELONG(type1_t a, type2_t b) {
+  return static_cast<uint32_t>((static_cast<uint16_t>((static_cast<uint32_t>(a)) & 0xffff)) | (static_cast<uint32_t>(static_cast<uint16_t>((static_cast<uint32_t>(b)) & 0xffff))) << 16);
 }
 
-inline intptr_t HIWORD(intptr_t dWord) {
-  return int16_t((dWord >> 16) & 0xFFFF);
+template<typename type_t>
+inline uint16_t LOWORD(type_t value) {
+  return static_cast<uint16_t>(static_cast<uint32_t>(value) & 0xFFFF);
 }
 
-inline int16_t LOBYTE(int16_t word) {
-  return int8_t(word & 0xFF);
+template<typename type_t>
+inline uint16_t HIWORD(type_t value) {
+  return static_cast<uint16_t>((static_cast<uint32_t>(value) >> 16) & 0xFFFF);
 }
 
-inline uint16_t LOBYTE(uint16_t word) {
-  return uint8_t(word & 0xFF);
+template<typename type_t>
+inline uint16_t LOBYTE(type_t value) {
+  return static_cast<uint8_t>(static_cast<uint32_t>(value) & 0xFF);
 }
 
-inline intptr_t LOWORD(intptr_t dWord) {
-  return int16_t(dWord & 0xFFFF);
+template<typename type_t>
+inline uint8_t HIBYTE(type_t value) {
+  return static_cast<uint8_t>((static_cast<uint32_t>(value) >> 8) & 0xFF);
 }
 
 #endif
