@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.3)
 
 # Project
-project(xtd.tunit VERSION 1.0.0)
-set(INCLUDES
+project(xtd.tunit)
+include(../../scripts/cmake/xtd_commands.cmake)
+include(../../scripts/cmake/xtd_version.cmake)
+add_include_directories(include)
+add_sources(
   include/xtd/__console_color.h
   include/xtd/__demangle.h
   include/xtd/__tunit_join__items.h
@@ -53,8 +56,6 @@ set(INCLUDES
   include/xtd/valid.h
   include/xtd/xtd.tunit
   include/xtd/xtd.tunit.h
-)
-set(SOURCES
   src/__console_color_gcc.cpp
   src/__console_color_win32.cpp
   src/__demangle_gcc.cpp
@@ -65,24 +66,8 @@ set(SOURCES
   src/test_class.cpp
   src/unit_test.cpp
 )
-source_group(include FILES ${INCLUDES})
-source_group(src FILES ${SOURCES})
+target_type(${XTD_LIBRARY_TYPE})
 
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Library properties
-add_library(${PROJECT_NAME} STATIC ${INCLUDES} ${SOURCES})
-if (MSVC)
-  target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
-  target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")
-endif ()
-target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> PUBLIC $<INSTALL_INTERFACE:include>)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/src")
-
-# install
-install(DIRECTORY include/xtd/. DESTINATION include/xtd)
-install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb DESTINATION lib CONFIGURATIONS Debug OPTIONAL)
-install(FILES $<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb DESTINATION lib CONFIGURATIONS Release OPTIONAL)
-install(TARGETS ${PROJECT_NAME} EXPORT xtd DESTINATION lib)
+# Install
+add_install_include_directories(include/xtd)
+install_component()
