@@ -329,10 +329,9 @@ constexpr size_t EN_AFTER_PASTE = 0x0801;
 
 constexpr int32_t UDN_DELTAPOS = -722;
 
-inline int16_t HIBYTE(int16_t word) {
-  return int8_t((word >> 8) & 0xFF);
 template<typename type1_t, typename type2_t>
 uint16_t MAKEWORD(type1_t a, type2_t b) {
+  return static_cast<uint16_t>((static_cast<uint16_t>((static_cast<uint32_t>(a)) & 0xff)) | (static_cast<uint16_t>(static_cast<uint16_t>((static_cast<uint32_t>(b)) & 0xff))) << 8);
 }
 
 template<typename type1_t, typename type2_t>
