@@ -1,5 +1,5 @@
 #pragma once
-#include <xtd/xtd.diagnostics>
+#include <xtd/diagnostics/cdebug.h>
 #include <xtd/drawing/system_colors.h>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/native/class_styles.h>

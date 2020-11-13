@@ -70,8 +70,8 @@
 /// The composite formatting feature is supported by methods such as the following:
 /// * xtd::strings::format, which returns a formatted result string (xtd library).
 /// * Some overloads of the console::write_line method, which display a formatted result string to the console (xtd.console library).
-/// * xtd::diagnostics::debug::write_line method, which outputs a formatted message to trace listeners (xtd.diagnostics library).
-/// * The xtd::diagnostics::trace::trace_error, xtd::diagnostics::trace::trace_information, and xtd::diagnostics::trace::trace_warning methods, which output formatted messages to trace listeners (xtd.diagnostics library).
+/// * xtd::diagnostics::debug::write_line method, which outputs a formatted message to trace listeners (xtd.core library).
+/// * The xtd::diagnostics::trace::trace_error, xtd::diagnostics::trace::trace_information, and xtd::diagnostics::trace::trace_warning methods, which output formatted messages to trace listeners (xtd.core library).
 ///
 /// @subsection CompositeFormatStringSection Composite Format String
 ///

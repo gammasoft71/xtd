@@ -77,6 +77,34 @@ set(XTD_COLLECTIONS_SPECIALIZED_INCLUDES
   include/xtd/collections/specialized/string_pair.h
   include/xtd/collections/specialized/string_vector.h
 )
+set(XTD_DIAGNOSTICS_INCLUDES
+  include/xtd/diagnostics/console_trace_listener.h
+  include/xtd/diagnostics/cdebug.h
+  include/xtd/diagnostics/ctrace.h
+  include/xtd/diagnostics/debug.h
+  include/xtd/diagnostics/debugstreambuf.h
+  include/xtd/diagnostics/default_trace_listener.h
+  include/xtd/diagnostics/event_type_filter.h
+  include/xtd/diagnostics/ostream_trace_listener.h
+  include/xtd/diagnostics/process.h
+  include/xtd/diagnostics/process_start_info.h
+  include/xtd/diagnostics/process_window_style.h
+  include/xtd/diagnostics/source_filter.h
+  include/xtd/diagnostics/source_levels.h
+  include/xtd/diagnostics/source_switch.h
+  include/xtd/diagnostics/switch_base.h
+  include/xtd/diagnostics/trace.h
+  include/xtd/diagnostics/trace_event_cache.h
+  include/xtd/diagnostics/trace_event_type.h
+  include/xtd/diagnostics/trace_filter.h
+  include/xtd/diagnostics/trace_level.h
+  include/xtd/diagnostics/trace_listener.h
+  include/xtd/diagnostics/trace_listener_collection.h
+  include/xtd/diagnostics/trace_options.h
+  include/xtd/diagnostics/trace_source.h
+  include/xtd/diagnostics/trace_switch.h
+  include/xtd/diagnostics/tracestreambuf.h
+)
 set(XTD_DOCS_INCLUDES
   include/xtd/docs/format_page.h
   include/xtd/docs/main_page.h
@@ -121,6 +149,14 @@ set(XTD_SOURCES
   src/xtd/strings.cpp
   src/xtd/system_exception.cpp
 )
+set(XTD_DIAGNOSTICS_SOURCES
+  src/xtd/diagnostics/debug.cpp
+  src/xtd/diagnostics/default_trace_listener_gcc.cpp
+  src/xtd/diagnostics/default_trace_listener_win32.cpp
+  src/xtd/diagnostics/process.cpp
+  src/xtd/diagnostics/process_start_info.cpp
+  src/xtd/diagnostics/trace.cpp
+)
 set(XTD_IO_SOURCES
   src/xtd/io/file_gcc.cpp
   src/xtd/io/file_win32.cpp
@@ -130,10 +166,12 @@ set(XTD_IO_SOURCES
 source_group(include\\xtd FILES ${XTD_INCLUDES})
 source_group(include\\xtd\\collections FILES ${XTD_COLLECTIONS_INCLUDES})
 source_group(include\\xtd\\collections\\specialized FILES ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES})
+source_group(include\\xtd\\diagnostics FILES ${XTD_DIAGNOSTICS_INCLUDES})
 source_group(include\\xtd\\docs FILES ${XTD_DOCS_INCLUDES})
 source_group(include\\xtd\\internal FILES ${XTD_INTERNAL_INCLUDES})
 source_group(include\\xtd\\io FILES ${XTD_IO_INCLUDES})
 source_group(src\\xtd FILES ${XTD_SOURCES})
+source_group(src\\xtd\\diagnostics FILES ${XTD_DIAGNOSTICS_SOURCES})
 source_group(src\\xtd\\io FILES ${XTD_IO_SOURCES})
 
 # Options
@@ -141,7 +179,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Library properties
-add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_DOCS_INCLUDES} ${XTD_INTERNAL_INCLUDES} ${XTD_IO_INCLUDES} ${XTD_SOURCES} ${XTD_IO_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${XTD_INCLUDES} ${XTD_COLLECTIONS_INCLUDES} ${XTD_COLLECTIONS_SPECIALIZED_INCLUDES} ${XTD_DIAGNOSTICS_INCLUDES} ${XTD_DOCS_INCLUDES} ${XTD_INTERNAL_INCLUDES} ${XTD_IO_INCLUDES} ${XTD_SOURCES} ${XTD_DIAGNOSTICS_SOURCES} ${XTD_IO_SOURCES})
 if (MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Debug>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}${CMAKE_DEBUG_POSTFIX}.pdb>")
   target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release>:/Fd$<TARGET_FILE_DIR:${PROJECT_NAME}>/${PROJECT_NAME}.pdb>")

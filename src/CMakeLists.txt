@@ -6,7 +6,6 @@ project(src)
 # Projects
 add_subdirectory(xtd_console)
 add_subdirectory(xtd_core)
-add_subdirectory(xtd_diagnostics)
 add_subdirectory(xtd_drawing_native)
 if ("${XTD_NATIVE_GRAPHIC_TOOLKIT}" STREQUAL "cocoa")
   add_subdirectory(xtd_drawing_native_cocoa)

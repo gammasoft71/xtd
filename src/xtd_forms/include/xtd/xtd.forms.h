@@ -1,6 +1,5 @@
 #pragma once
 #include <xtd/xtd.core>
-#include <xtd/xtd.diagnostics>
 #include <xtd/xtd.drawing>
 #include <xtd/forms/create_params.h>
 #include <xtd/forms/window_messages.h>

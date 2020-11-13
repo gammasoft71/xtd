@@ -1,7 +1,6 @@
 #include <chrono>
 #include <xtd/io/path.h>
 #include <xtd/environment.h>
-#include <xtd/xtd.diagnostics>
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"

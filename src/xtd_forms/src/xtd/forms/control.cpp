@@ -1,7 +1,8 @@
 #include <codecvt>
 #include <iostream>
 #include <set>
-#include <xtd/xtd.diagnostics>
+#include <xtd/diagnostics/debug.h>
+#include <xtd/diagnostics/trace_switch.h>
 #include <xtd/xtd.core>
 #include <xtd/strings.h>
 #include <xtd/drawing/system_fonts.h>
