@@ -12,7 +12,7 @@
 /// @brief Literals Allows integer, floating-point, character, and string literals to produce objects.
 
 /// @defgroup xtd_core xtd.core
-/// @brief xtd.core library.
+/// @brief xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
 
 #include "__generic_stream_output.h" // must be included first
 #include "__get_err_rdbuf.h"
