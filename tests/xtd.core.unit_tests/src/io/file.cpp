@@ -50,6 +50,7 @@ namespace unit_tests {
       assert::are_equal_("Text", contents);
       ::remove("file2.txt");
     }
+
     void test_method_(copy_with_override) {
       ofstream existing_file("file2.txt");
       existing_file << "Existing";
