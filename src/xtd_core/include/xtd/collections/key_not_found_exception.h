@@ -10,6 +10,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an key_not_found_exception.
     /// @include key_not_found_exception.cpp
+    /// @ingroup xtd_core
     class key_not_found_exception :public system_exception {
     public:
       /// @brief Create a new instance of class key_not_found_exception
