@@ -6,6 +6,10 @@
 namespace xtd {
   namespace collections {
     namespace collections {
+      /// @brief Represents a collection of std::any.
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core
       using vector_list = std::vector<std::any>;
     }
   }
