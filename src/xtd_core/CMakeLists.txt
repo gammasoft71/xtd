@@ -3,15 +3,31 @@ cmake_minimum_required(VERSION 3.3)
 # Project
 project(xtd.core VERSION 1.0.0)
 set(XTD_INCLUDES
+  include/xtd/__generic_stream_output.h
+  include/xtd/__get_err_rdbuf.h
+  include/xtd/__get_in_rdbuf.h
+  include/xtd/__get_out_rdbuf.h
+  include/xtd/__opaque_console.h
   include/xtd/__opaque_environment.h
   include/xtd/action.h
   include/xtd/argument_exception.h
   include/xtd/argument_null_exception.h
   include/xtd/argument_out_of_range_exception.h
   include/xtd/arithmetic_exception.h
+  include/xtd/background_color.h
+  include/xtd/basic_console.h
+  include/xtd/beep.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/caller_info.h
+  include/xtd/console.h
+  include/xtd/console_cancel_event_args.h
+  include/xtd/console_cancel_event_handler.h
+  include/xtd/console_color.h
+  include/xtd/console_key.h
+  include/xtd/console_key_info.h
+  include/xtd/console_modifiers.h
+  include/xtd/console_special_key.h
   include/xtd/delegate.h
   include/xtd/divided_by_zero_exception.h
   include/xtd/domain_exception.h
@@ -20,6 +36,7 @@ set(XTD_INCLUDES
   include/xtd/event.h
   include/xtd/event_args.h
   include/xtd/event_handler.h
+  include/xtd/foreground_color.h
   include/xtd/format.h
   include/xtd/format_exception.h
   include/xtd/func.h
@@ -49,6 +66,7 @@ set(XTD_INCLUDES
   include/xtd/platform_id.h
   include/xtd/platform_not_supported_exception.h
   include/xtd/predicate.h
+  include/xtd/reset_color.h
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/string_comparison.h
@@ -140,6 +158,8 @@ set(XTD_IO_INCLUDES
   include/xtd/io/path_too_long_exception.h
 )
 set(XTD_SOURCES
+  src/xtd/__opaque_console_gcc.cpp
+  src/xtd/__opaque_console_win32.cpp
   src/xtd/__opaque_environment_gcc.cpp
   src/xtd/__opaque_environment_win32.cpp
   src/xtd/bit_converter.cpp
