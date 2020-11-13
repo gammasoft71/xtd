@@ -332,9 +332,9 @@ constexpr int32_t UDN_DELTAPOS = -722;
 inline int16_t HIBYTE(int16_t word) {
   return int8_t((word >> 8) & 0xFF);
 template<typename type1_t, typename type2_t>
+uint16_t MAKEWORD(type1_t a, type2_t b) {
 }
 
-inline uint16_t HIBYTE(uint16_t word) {
 template<typename type1_t, typename type2_t>
 uint32_t MAKELONG(type1_t a, type2_t b) {
   return static_cast<uint32_t>((static_cast<uint16_t>((static_cast<uint32_t>(a)) & 0xffff)) | (static_cast<uint32_t>(static_cast<uint16_t>((static_cast<uint32_t>(b)) & 0xffff))) << 16);
