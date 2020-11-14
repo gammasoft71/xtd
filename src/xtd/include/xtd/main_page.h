@@ -7,7 +7,7 @@
 ///   * a collection of native C++ classes libraries, to complete std;
 ///   * written in efficient, modern C++17;
 ///   * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);///
-/// For more information see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/home.md">markdown documentations</a> (or <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft website</a>) and <a href="https://codedocs.xyz/gammasoft71/xtd/">Reference Guide</a>).
+/// For more information see <a href="https://github.com/gammasoft71/xtd/tree/master/docs/home.md">markdown documentations</a> (or <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft website</a>) and <a href="https://codedocs.xyz/gammasoft71/xtd/">Reference Guide</a>).
 ///
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
@@ -92,4 +92,4 @@
 /// For more examples see <a href="https://github.com/gammasoft71/xtd/tree/master/examples/">examples</a>.
 ///
 /// @section DownloadSection Download and install
-/// Before running examples you must download and install xtd. To download and install it read <a href="https://github.com/gammasoft71/xtd/blob/master/docs/downloads.md">Downloads.md</a> file.
+/// Before running examples you must download and install xtd. To download and install it read <a href="https://github.com/gammasoft71/xtd/tree/master/docs/downloads.md">Downloads.md</a> file.
