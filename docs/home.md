@@ -13,7 +13,7 @@ Modern c++17 libraries to create console, gui and unit test applications.
 * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);
 
 
-[![architecture_logo](pictures/architecture.png)](libraries.md)
+[![architecture_logo](pictures/architecture.png)](hierarchy.md)
 
 # xttd is composed of several libraries
 
@@ -24,7 +24,7 @@ These libreries are grouped by theme :
 - **forms** : The *xtd.forms* library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
 - **tunit** : The *xtd.tunit* library is a unit-testing framework for modern C++17. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
-See [xtd libraries hierarchy](libraries.md).
+See [xtd libraries hierarchy](hierarchy.md).
 
 # Objectives and Mission
 
