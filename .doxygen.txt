@@ -791,15 +791,12 @@ WARN_LOGFILE           = doxygen_warnings.txt
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = src/xtd/include \
-                         src/xtd_console/include \
-                         src/xtd_core/include \
-                         src/xtd_delegates/include \
-                         src/xtd_diagnostics/include \
-                         src/xtd_drawing/include \
-                         src/xtd_forms/include \
-                         src/xtd_io/include \
-                         src/xtd_strings/include \
-                         src/xtd_tunit/include \
+                         src/xtd.core/include \
+                         src/xtd.drawing/include \
+                         src/xtd.forms/include \
+                         src/xtd.tunit/include \
+#                        src/xtd.drawing.native/include \
+#                        src/xtd.forms.native/include \
                          
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
