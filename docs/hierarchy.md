@@ -5,7 +5,7 @@
 [![libraries_img](pictures/hierarchy.png)](architecture.md)
 
 
-# xttd is composed of several libraries
+# xtd is composed of several libraries
 
 These libreries are grouped by theme :
 
