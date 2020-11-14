@@ -1,8 +1,8 @@
 | [Home](home.md) | [Downloads](downloads.md) | [Examples](examples.md) | [Documentation](documentation.md) | [Sources](https://github.com/gammasoft71/xtd) | [Project](https://sourceforge.net/projects/xtdpro/) | [Contact](contact.md) | [Gammasoft](https://gammasoft71.wixsite.com/gammasoft) |
 
-# The xtd libraries hierarchy
+# The xtd libraries architecture
 
-[![libraries_img](pictures/libraries.png)](architecture.md)
+[![libraries_img](pictures/architecture.png)](home.md)
 
 
 # xttd is composed of several libraries
@@ -14,7 +14,7 @@ These libreries are grouped by theme :
 - **forms** : The *xtd.forms* library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
 - **tunit** : The *xtd.tunit* library is a unit-testing framework for modern C++17. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
-See [xtd libraries architecture](home.md).
+See [xtd libraries architecture](architecture.md).
 
 ______________________________________________________________________________________________
 
