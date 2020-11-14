@@ -10,7 +10,13 @@ add_projects(
   xtd.drawing.manual_tests
   xtd.drawing.unit_tests
   xtd.forms.manual_tests
-  xtd.forms.unit_tests
+)
+
+if (not XTD_DISABLE_FOMRS_TESTS)
+  add_projects(xtd.forms.unit_tests)
+endif()
+
+add_projects(
   xtd.tunit.manual_tests
   xtd.tunit.unit_tests
 )
