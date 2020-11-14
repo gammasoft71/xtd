@@ -4,22 +4,17 @@
 /// @mainpage xtd. - Reference Guide Documentation
 ///
 /// @section FeaturesSection Features
-///   * <a href="https://github.com/gammasoft71/xtd.console">xtd.console</a> Modern c++17 library to manage console application on Windows, macOS and Linux.
-///   * <a href="https://github.com/gammasoft71/xtd.delegates">xtd.delegates</a> Modern c ++17 library  containing delegate which is a data structure that refers to a static method or to a class instance and an instance method of that class.
-///   * <a href="https://github.com/gammasoft71/xtd.io">xtd.io</a> Modern c++17 library, that allow reading and writing to files and data streams, and that provide basic file and directory support, for Windows, macOS, Linux, iOS and android.
-///   * <a href="https://github.com/gammasoft71/xtd.properties">xtd.properties</a> another c#-like property accessor for C++11 and above.
-///   * <a href="https://github.com/gammasoft71/xtd.strings">xtd.strings</a> Modern c++17 library to add string utilities on Windows, macOS and Linux.
-///   * <a href="https://github.com/gammasoft71/xtd.tunit">xtd.tunit</a> Modern c++17 unit testing framework on Windows, macOS, Linux, iOS and android.
-///
-/// For more information see <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft website</a> (or <a href="https://github.com/gammasoft71/xtd/blob/master/docs/home.md">markdown documentations</a>) and <a href="https://codedocs.xyz/gammasoft71/xtd/">Reference Guide</a>).
+///   * a collection of native C++ classes libraries, to complete std;
+///   * written in efficient, modern C++17;
+///   * and highly portable and available on many different platforms (Windows, macOS, Linux, iOS and android);///
+/// For more information see <a href="https://github.com/gammasoft71/xtd/blob/master/docs/home.md">markdown documentations</a> (or <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft website</a>) and <a href="https://codedocs.xyz/gammasoft71/xtd/">Reference Guide</a>).
 ///
 /// @section ExamplesSection Examples
 /// The classic first application 'Hello World'.
 ///
-/// src/tunit_hello_world_console.cpp:
+/// src/hello_world_console.cpp:
 /// @code
 /// #include <xtd/xtd>
-/// #include <string>
 ///
 /// using namespace std;
 /// using namespace xtd;
@@ -30,12 +25,12 @@
 ///   string s2 = "World!";
 ///
 ///   cout << foreground_color(console_color::green);
-///   cout << format("%s%7s", s1, s2);
+///   cout << format("{}{,7}", s1, s2);
 ///   cout << reset_color() << endl;
 ///
 ///   console::background_color(console_color::blue);
 ///   console::foreground_color(console_color::white);
-///   console::write_line("%s%7s", s1, s2);
+///   console::write_line("{}{,7}", s1, s2);
 ///   console::reset_color();
 /// }
 /// @endcode
@@ -50,8 +45,6 @@
 ///
 /// // The main entry point for the application.
 /// int main() {
-///   application::enable_visual_styles();
-///
 ///   button button1;
 ///   button1.text("Click me");
 ///   button1.location(point(10, 10));
