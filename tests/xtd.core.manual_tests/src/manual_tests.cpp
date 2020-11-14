@@ -3,5 +3,5 @@
 using namespace xtd;
 
 int main() {
-  //console::write_line("Hello, World!");
+  console::write_line("Hello, World!");
 }

@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.3)
 
 # Project
 project(xtd.tunit.unit_tests)
-set(SOURCES
+include(../../scripts/cmake/xtd_commands.cmake)
+include(../../scripts/cmake/xtd_version.cmake)
+add_sources(
   src/assert_unit_tests.h
   src/main.cpp
   src/one_test_one_test_case.cpp
@@ -130,20 +132,4 @@ set(SOURCES
   src/two_tests_five_test_cases.cpp
   src/unit_tests_event_listener.h
 )
-source_group(src FILES ${SOURCES})
-
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4834")
-endif ()
-
-
-# Target
-add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd.tunit)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
-
-# Tests
-add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)
+target_type(TEST_APPLICATION)

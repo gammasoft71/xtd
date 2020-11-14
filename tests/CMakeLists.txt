@@ -1,14 +1,16 @@
 cmake_minimum_required(VERSION 3.3)
 
 project(tests)
+include(../scripts/cmake/xtd_commands.cmake)
+include(../scripts/cmake/xtd_version.cmake)
 
-add_subdirectory(xtd.core.manual_tests)
-add_subdirectory(xtd.core.unit_tests)
-add_subdirectory(xtd.drawing.manual_tests)
-add_subdirectory(xtd.drawing.unit_tests)
-add_subdirectory(xtd.forms.manual_tests)
-add_subdirectory(xtd.forms.unit_tests)
-add_subdirectory(xtd.tunit.manual_tests)
-add_subdirectory(xtd.tunit.unit_tests)
-add_subdirectory(xtd.manual_tests)
-add_subdirectory(xtd.unit_tests)
+add_projects(
+  xtd.core.manual_tests
+  xtd.core.unit_tests
+  xtd.drawing.manual_tests
+  xtd.drawing.unit_tests
+  xtd.forms.manual_tests
+  xtd.forms.unit_tests
+  xtd.tunit.manual_tests
+  xtd.tunit.unit_tests
+)
