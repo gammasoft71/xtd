@@ -1,19 +1,11 @@
 cmake_minimum_required(VERSION 3.3)
 
-#Project
+# Project
 project(guidgen)
-set(SOURCES
-  src/guidgen.cpp
-)
-source_group(src FILES ${SOURCES})
+include(../../scripts/cmake/xtd_commands.cmake)
+include(../../scripts/cmake/xtd_version.cmake)
+add_sources(src/guidgen.cpp)
+target_type(CONSOLE_APPLICATION)
 
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Target
-add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tools")
-
-install(TARGETS ${PROJECT_NAME} EXPORT xtd DESTINATION bin)
+# Install
+install_component()

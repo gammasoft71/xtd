@@ -1,18 +1,22 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(tools)
-
+# Options
 option(XTD_ENABLE_GUIDGEN_COMMAND_LINE "Enable guidgen command line" ON)
-if (XTD_ENABLE_GUIDGEN_COMMAND_LINE)
-  add_subdirectory(guidgen)
-endif ()
-
 option(XTD_ENABLE_COMMAND_LINE "Enable xtd command line" ON)
-if (XTD_ENABLE_COMMAND_LINE)
-  add_subdirectory(xtdc)
-endif ()
-
 option(XTD_ENABLE_GUI_COMMAND_LINE "Enable xtdc-gui command line" ON)
+
+# Solution
+project(tools)
+include(../scripts/cmake/xtd_commands.cmake)
+include(../scripts/cmake/xtd_version.cmake)
+
+# Add projects
+if (XTD_ENABLE_GUIDGEN_COMMAND_LINE)
+  add_projects(guidgen)
+endif ()
+if (XTD_ENABLE_COMMAND_LINE)
+  add_projects(xtdc)
+endif ()
 if (XTD_ENABLE_GUI_COMMAND_LINE)
-  add_subdirectory(xtdc-gui)
+  add_projects(xtdc-gui)
 endif ()
