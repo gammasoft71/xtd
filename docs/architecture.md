@@ -2,7 +2,7 @@
 
 # The xtd libraries architecture
 
-[![libraries_img](pictures/architecture.png)](home.md)
+[![libraries_img](pictures/architecture.png)](hierarchy.md)
 
 
 # xttd is composed of several libraries
@@ -14,7 +14,7 @@ These libreries are grouped by theme :
 - **forms** : The *xtd.forms* library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows, Apple macOS and linux base operating system.
 - **tunit** : The *xtd.tunit* library is a unit-testing framework for modern C++17. Initially ported from [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
-See [xtd libraries architecture](architecture.md).
+See [xtd libraries hierarchy](hierarchy.md).
 
 ______________________________________________________________________________________________
 
