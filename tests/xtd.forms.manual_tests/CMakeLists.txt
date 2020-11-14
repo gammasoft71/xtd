@@ -1,21 +1,9 @@
 cmake_minimum_required(VERSION 3.3)
 
-#Project
+# Project
 project(xtd.forms.manual_tests)
-set(SOURCES
-  src/manual_tests.cpp
-)
-source_group(src FILES ${SOURCES})
-
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4996")
-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
-endif ()
-
-# Target
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd.forms ${XTD_FORMS_NATIVE_LIBRARY} ${XTD_NATIVE_LIBRARY})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
+add_references(xtd.forms xtd.tunit)
+include(../../scripts/cmake/xtd_commands.cmake)
+include(../../scripts/cmake/xtd_version.cmake)
+add_sources(src/manual_tests.cpp)
+target_type(GUI_APPLICATION)

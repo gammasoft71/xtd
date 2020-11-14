@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.3)
 
 # Project
 project(xtd.core.unit_tests)
-set(SOURCES
+include(../../scripts/cmake/xtd_commands.cmake)
+include(../../scripts/cmake/xtd_version.cmake)
+add_references(xtd.core)
+add_sources(
   src/main.cpp 
   src/argument_exception.cpp
   src/argument_null_exception.cpp
@@ -63,14 +66,8 @@ set(SOURCES
   src/wstring_object_format_without_xtd_to_string.cpp
   src/wstring_string_format.cpp
   src/xml_syntax_exception.cpp
-)
-set(COLLECTIONS_SOURCES
   src/collections/key_not_found_exception.cpp
-)
-set(DIAGNOSTICS_SOURCES
   src/diagnostics/trace_listener.cpp
-)
-set(IO_SOURCES
   src/io/directory_not_found_exception.cpp
   src/io/drive_not_found_exception.cpp
   src/io/end_of_stream_exception.cpp
@@ -82,23 +79,4 @@ set(IO_SOURCES
   src/io/path.cpp
   src/io/path_too_long_exception.cpp
 )
-source_group(src FILES ${SOURCES})
-source_group(src\\collections FILES ${COLLECTIONS_SOURCES})
-source_group(src\\diagnostics FILES ${DIAGNOSTICS_SOURCES})
-source_group(src\\io FILES ${IO_SOURCES})
-
-
-# Options
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-if (MSVC)
-  add_compile_options(/bigobj)
-endif()
-
-# Target
-add_executable(${PROJECT_NAME} ${SOURCES} ${COLLECTIONS_SOURCES} ${DIAGNOSTICS_SOURCES} ${IO_SOURCES})
-target_link_libraries(${PROJECT_NAME} xtd.core xtd.tunit)
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "xtd/tests")
-
-# Tests
-add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)
+target_type(TEST_APPLICATION)
