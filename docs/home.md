@@ -15,7 +15,7 @@ Modern c++17 libraries to create console, gui and unit test applications.
 
 [![architecture_logo](pictures/architecture.png)](hierarchy.md)
 
-# xttd is composed of several libraries
+# xtd is composed of several libraries
 
 These libreries are grouped by theme :
 
