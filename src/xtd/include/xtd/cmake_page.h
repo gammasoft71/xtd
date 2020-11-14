@@ -112,7 +112,7 @@
 ///  find_package(xtd REQUIRED)
 ///  add_sources(my_project.cpp)
 ///
-///  application_name("my_exe")
+///  application_default_namespace("my_namespace")
 ///  target_type(CONSOLE_APPLICATION)
 /// @endcode
 ///
