@@ -12,7 +12,7 @@ add_projects(
   xtd.forms.manual_tests
 )
 
-if (not XTD_DISABLE_FROMS_TESTS)
+if (NOT XTD_DISABLE_FROMS_TESTS)
   add_projects(xtd.forms.unit_tests)
 endif()
 
