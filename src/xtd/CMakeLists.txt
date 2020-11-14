@@ -8,6 +8,10 @@ add_include_directories(include)
 add_references(xtd.core xtd.drawing xtd.forms xtd.tunit)
 add_sources(
   include/xtd/xtd
+  include/xtd/cmake_page.h
+  include/xtd/format_page.h
+  include/xtd/main_page.h
+  include/xtd/xtd.h
   include/xtd/xtd.h
   src/xtd.cpp
   ../../scripts/cmake/xtd_commands.cmake
