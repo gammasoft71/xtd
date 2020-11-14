@@ -29,11 +29,11 @@ intptr_t __xtd__macos_system_colors_accent_text__() {
 }
 
 intptr_t __xtd__macos_system_colors_active_border__() {
-  return to_argb([[NSColor controlHighlightColor] colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]]);
+  return to_argb([[NSColor highlightColor] colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]]);
 }
 
 intptr_t __xtd__macos_system_colors_active_caption__() {
-  return to_argb([[NSColor controlHighlightColor] colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]]);
+  return to_argb([[NSColor highlightColor] colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]]);
 }
 
 intptr_t __xtd__macos_system_colors_button_face__() {
