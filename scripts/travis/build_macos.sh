@@ -8,33 +8,34 @@ git clone https://github.com/wxwidgets/wxwidgets.git -b v3.1.4 --depth 1
 cd wxwidgets
 git submodule update --init
 mkdir build_cmake && cd build_cmake
-cmake ..  -G "Xcode" -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
+cmake .. -G "CodeBlocks - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . --config Debug --target install -- -quiet
+cmake --build . --target install -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
 cd ../../../..
 
 # generate and build lib
 git submodule update --init
 mkdir -p build && cd build
-cmake .. -G "Xcode" -DCMAKE_INSTALL_PREFIX=~/local
+cmake -DCMAKE_BUILD_TYPE=Debug -DXTD_ENABLE_TESTS=ON -DXTD_DISABLE_FROMS_TESTS=ON -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local ..
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . --config Debug --target
+cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
-#cmake --build . --config Debug --target install -- -quiet
-#//if [ $? -ne 0 ]; then exit -1; fi
+cmake --build . --target install
+if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
 # generate and build examples
-#mkdir -p build/examples && cd build/examples
-#cmake ../../examples -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=~/local
+#mkdir -p build/examples
+#cd examples
+#cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local ../../examples
 #if [ $? -ne 0 ]; then exit -1; fi
-#cmake --build . -- -j 8
+#cmake --build . -- -j $(nproc)
 #if [ $? -ne 0 ]; then exit -1; fi
 #cd ../..
 
 # run registered unit tests
-#cd build
-#ctest -j $(nproc) --output-on-failure --build-config Debug
-#if [ $? -ne 0 ]; then exit -1; fi
-#cd ..
+cd build
+ctest -j $(nproc) --output-on-failure --build-config Debug
+if [ $? -ne 0 ]; then exit -1; fi
+cd ..
