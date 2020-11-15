@@ -18,13 +18,13 @@ addons:
 
 matrix:
   include:
-  - env: TEST="Build on macOS"
+  - env: TEST="Build xtd and launch unit tests on macOS"
     os: osx
     osx_image: xcode11.6
-    script: scripts/travis/build_macos.sh
-  - env: TEST="Build on Linux"
+    script: scripts/travis/build_xtd_and_launch_unit_tests_on_macos.sh
+  - env: TEST="Build xtd and launch unit tests on Linux"
     os: linux
-    script: scripts/travis/build_linux.sh
-  - env: TEST="Coverage"
+    script: scripts/travis/build_xtd_and_launch_unit_tests_on_linux.sh
+  - env: TEST="Build xtd and launch Coverage"
     os: linux
-    script: scripts/travis/coverage.sh
+    script: scripts/travis/build_xtd_and_launch_coverage_on_linux.sh
