@@ -1,5 +1,5 @@
 /**********************************************************************
- * 
+ *
  * StackWalker.cpp
  *
  *
@@ -22,7 +22,7 @@
  *                       (thanks to owillebo: http://www.codeproject.com/script/profile/whos_who.asp?id=536268)
  *  2005-08-05   v5    - Removed most Lint (http://www.gimpel.com/) errors... thanks to Okko Willeboordse!
  *
- **********************************************************************/
+  **********************************************************************/
 #if defined(_WIN32) && !defined(_WIN32_WCE)
 #pragma warning(disable:4091)
 #pragma warning(disable:4127)
