@@ -1,5 +1,6 @@
 #include <algorithm>
-#include <xtd/xtd.forms>
+#include <xtd/strings.h>
+#include <xtd/forms/layout/arranged_element_collection.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;

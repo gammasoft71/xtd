@@ -1,4 +1,6 @@
-#include <xtd/xtd.forms>
+#include <xtd/forms/control.h>
+#include <xtd/drawing/system_colors.h>
+#include <xtd/forms/form.h>
 #include <xtd/xtd.tunit>
 
 using namespace std;

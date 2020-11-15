@@ -1,5 +1,6 @@
 #pragma once
 #include <array>
+#include <xtd/drawing/solid_brush.h>
 #include "control.h"
 #include "segments.h"
 #include "dot_matrix_style.h"
