@@ -15,7 +15,7 @@ addons:
     - doxygen
     - graphviz
     update: true
-    
+
 matrix:
   include:
   - env: TEST="Build on macOS"
