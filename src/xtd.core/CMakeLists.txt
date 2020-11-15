@@ -117,6 +117,7 @@ add_sources(
   include/xtd/diagnostics/source_filter.h
   include/xtd/diagnostics/source_levels.h
   include/xtd/diagnostics/source_switch.h
+  include/xtd/diagnostics/stack_frame.h
   include/xtd/diagnostics/switch_base.h
   include/xtd/diagnostics/trace.h
   include/xtd/diagnostics/trace_event_cache.h

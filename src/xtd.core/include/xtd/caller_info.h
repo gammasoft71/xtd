@@ -25,7 +25,7 @@ namespace xtd {
     /// @param member_name Contains the member name string.
     /// @param file_path Contains the file path string.
     /// @param line_number Contains the line number.
-    caller_info(const std::string& member_name, const std::string& file_path, unsigned int line_number) noexcept : member_name_(member_name), file_path_(file_path), line_number_(line_number) {}
+    caller_info(const std::string& file_path, unsigned int line_number, const std::string& member_name) noexcept : file_path_(file_path), line_number_(line_number), member_name_(member_name) {}
     
     /// @brief Return an empty caller info.
     /// @return Empty caller info.
@@ -67,9 +67,9 @@ namespace xtd {
     /// @endcond
 
   private:
-    std::string member_name_;
     std::string file_path_;
     unsigned int line_number_ = 0;
+    std::string member_name_;
   };
 }
 
@@ -80,7 +80,7 @@ namespace xtd {
 /// @include caller_info.cpp
 /// @ingroup keywords
 #define caller_info_ \
-  xtd::caller_info {__func__, __FILE__, __LINE__}
+  xtd::caller_info {__FILE__, __LINE__, __func__}
 
 #define add_caller_info_(...) \
   __VA_ARGS__ __VA_ARGS_COMMA__(__VA_ARGS__) caller_info_
