@@ -23,15 +23,6 @@ cmake --build . --target install
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
-# generate and build examples
-#mkdir -p build/examples
-#cd examples
-#cmake ../../examples -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=g++-9 -DCMAKE_INSTALL_PREFIX=~/local
-#if [ $? -ne 0 ]; then exit -1; fi
-#cmake --build . -- -j $(nproc)
-#if [ $? -ne 0 ]; then exit -1; fi
-#cd ../..
-
 # run registered unit tests
 cd build
 ctest -j $(nproc) --output-on-failure --build-config Debug
