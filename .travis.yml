@@ -10,7 +10,12 @@ addons:
     - lcov
     - libgtk-3-dev
     - doxygen
-
+  homebrew:
+    packages:
+    - doxygen
+    - graphviz
+    update: true
+    
 matrix:
   include:
   - env: TEST="Build on macOS"
