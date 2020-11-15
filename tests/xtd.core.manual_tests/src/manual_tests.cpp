@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 void test3() {
-  console::write_line("{}", stack_trace());
+  console::write_line(stack_trace());
 }
 
 void test2() {
