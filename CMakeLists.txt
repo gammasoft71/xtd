@@ -4,8 +4,9 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd)
 
 # Options
-option(XTD_ENABLE_COVERAGE "Enable code coverage" OFF)
+option(XTD_ENABLE_COMMAND_REFERENCE_GUIDE_GENERATOR "Add command Referecne Guide Generator" OFF)
 option(XTD_ENABLE_COMPILER_OPTION_WARNINGS_AS_ERRORS "Enable compiler option warnings as errors" ON)
+option(XTD_ENABLE_COVERAGE "Enable code coverage" OFF)
 option(XTD_ENABLE_INSTALL_EXAMPLES "Enable install examples" ON)
 option(XTD_ENABLE_INSTALL_RESOURCES "Enable install resources" ON)
 option(XTD_BUILD_SHARED_LIBRARIES "Build shared libraries" OFF)
