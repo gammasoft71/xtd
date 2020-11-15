@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::diagnostics::trace class.
 #pragma once
+#include <exception>
 #include <vector>
 #include "stack_frame.h"
 #include "../environment.h"
@@ -17,15 +18,11 @@ namespace xtd {
       explicit stack_trace(bool need_file_info) : stack_trace("", 1, need_file_info) {}
       explicit stack_trace(size_t skip_frames) : stack_trace("", skip_frames + 1, false) {}
       stack_trace(size_t skip_frames, bool need_file_info) : stack_trace("", skip_frames + 1, need_file_info) {}
-      stack_trace(const std::string& str) : stack_trace(str, 1, false) {}
-      stack_trace(const std::string& str, bool need_file_info) : stack_trace(str, 1, need_file_info) {}
-      stack_trace(const std::string& str, size_t skip_frames) : stack_trace(str, skip_frames + 1, false) {}
-      stack_trace(const std::string& str, size_t skip_frames, bool need_file_info);
+      stack_trace(const std::exception& exception) : stack_trace(xtd::strings::full_class_name(exception), 1, false) {}
+      stack_trace(const std::exception& exception, bool need_file_info) : stack_trace(xtd::strings::full_class_name(exception), 1, need_file_info) {}
+      stack_trace(const std::exception& exception, size_t skip_frames) : stack_trace(xtd::strings::full_class_name(exception), skip_frames + 1, false) {}
+      stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info);
       /// @cond
-      stack_trace(const char* str) : stack_trace(std::string(str), 1, false) {}
-      stack_trace(const char* str, bool need_file_info) : stack_trace(std::string(str), 1, need_file_info) {}
-      stack_trace(const char* str, size_t skip_frames) : stack_trace(std::string(str), skip_frames + 1, false) {}
-      stack_trace(const char* str, size_t skip_frames, bool need_file_info) : stack_trace(std::string(str), skip_frames + 1, need_file_info) {}
       stack_trace(const stack_trace&) = default;
       stack_trace& operator=(const stack_trace&) = default;
       ~stack_trace();
@@ -52,6 +49,7 @@ namespace xtd {
       static constexpr size_t METHODS_TO_SKIP = 0;
       
     private:
+      stack_trace(const std::string& str, size_t skip_frames, bool need_file_info);
       void get_frames(const std::string& str, size_t skip_frames, bool need_file_info);
       frame_collection frames_;
       intptr_t handle_;
