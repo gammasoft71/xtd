@@ -15,7 +15,7 @@ cd ../../../..
 # generate and build lib
 git submodule update --init
 mkdir -p build && cd build
-cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DXTD_ENABLE_TESTS=ON -DXTD_DISABLE_FROMS_TESTS=ON -DCMAKE_INSTALL_PREFIX=~/local
+cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DXTD_ENABLE_TESTS=ON -DCMAKE_INSTALL_PREFIX=~/local
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
