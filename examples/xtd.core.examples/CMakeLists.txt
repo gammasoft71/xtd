@@ -27,6 +27,7 @@ add_projects(
   console_read_line2
   console_song
   delegate
+  environment_stack_trace
   event
   format
   format_with_order

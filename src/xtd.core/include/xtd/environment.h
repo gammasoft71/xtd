@@ -17,6 +17,7 @@
 #include "static.h"
 #include "version.h"
 #include "collections/specialized/string_vector.h"
+#include "diagnostics/stack_trace.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -418,7 +419,7 @@ namespace xtd {
     /// @return A string containing stack trace information. This value can be empty "".
     /// @todo Add xtd::diagnostics and uncomment line.
     static std::string stack_trace() noexcept {
-      return ""; // return xtd::diagnostics::stack_trace(3, true).to_string();
+      return xtd::diagnostics::stack_trace(true).to_string();
     }
     
     /// @brief Gets the fully qualified path of the system directory.
