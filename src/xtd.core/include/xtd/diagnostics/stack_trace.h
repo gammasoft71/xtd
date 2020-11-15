@@ -14,13 +14,13 @@ namespace xtd {
     public:
       using frame_collection = std::vector<xtd::diagnostics::stack_frame>;
       
-      stack_trace() : stack_trace("", 1, false) {}
-      explicit stack_trace(bool need_file_info) : stack_trace("", 1, need_file_info) {}
-      explicit stack_trace(size_t skip_frames) : stack_trace("", skip_frames + 1, false) {}
-      stack_trace(size_t skip_frames, bool need_file_info) : stack_trace("", skip_frames + 1, need_file_info) {}
-      stack_trace(const std::exception& exception) : stack_trace(xtd::strings::full_class_name(exception), 1, false) {}
-      stack_trace(const std::exception& exception, bool need_file_info) : stack_trace(xtd::strings::full_class_name(exception), 1, need_file_info) {}
-      stack_trace(const std::exception& exception, size_t skip_frames) : stack_trace(xtd::strings::full_class_name(exception), skip_frames + 1, false) {}
+      stack_trace() : stack_trace("", METHODS_TO_SKIP, false) {}
+      explicit stack_trace(bool need_file_info) : stack_trace("", METHODS_TO_SKIP, need_file_info) {}
+      explicit stack_trace(size_t skip_frames) : stack_trace("", skip_frames, false) {}
+      stack_trace(size_t skip_frames, bool need_file_info) : stack_trace("", skip_frames, need_file_info) {}
+      stack_trace(const std::exception& exception) : stack_trace(xtd::strings::full_class_name(exception), METHODS_TO_SKIP, false) {}
+      stack_trace(const std::exception& exception, bool need_file_info) : stack_trace(xtd::strings::full_class_name(exception), METHODS_TO_SKIP, need_file_info) {}
+      stack_trace(const std::exception& exception, size_t skip_frames) : stack_trace(xtd::strings::full_class_name(exception), skip_frames, false) {}
       stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info);
       /// @cond
       stack_trace(const stack_trace&) = default;
