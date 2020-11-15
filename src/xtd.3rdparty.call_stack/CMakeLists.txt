@@ -4,6 +4,15 @@ cmake_minimum_required(VERSION 3.3)
 project(xtd.3rdparty.call_stack)
 include("../../scripts/cmake/xtd_commands.cmake")
 add_include_directories(.)
+if(MSVC)
+  add_references()
+elseif (APPLE)
+  add_references(dl)
+elseif (ANDROID)
+  add_references()
+elseif (UNIX)
+  add_references(dl rt)
+endif ()
 add_sources(
   module_information.cpp
   module_information.h
