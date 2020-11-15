@@ -27,10 +27,10 @@ std::string stack_trace::to_string() const {
 }
 
 void stack_trace::get_frames(const std::string& str, size_t skip_frames, bool need_file_info) {
-  auto skip_frames_before_str = 0;
+  size_t skip_frames_before_str = 0;
   if (!str.empty()) {
     skip_frames_before_str = reinterpret_cast<stacktrace::call_stack*>(handle_)->stack.size();
-    for (auto index = 0U; index < reinterpret_cast<stacktrace::call_stack*>(handle_)->stack.size(); ++index) {
+    for (size_t index = 0; index < reinterpret_cast<stacktrace::call_stack*>(handle_)->stack.size(); ++index) {
       if (xtd::strings::starts_with(reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].function, str)) {
         skip_frames_before_str = index;
         break;
@@ -39,7 +39,7 @@ void stack_trace::get_frames(const std::string& str, size_t skip_frames, bool ne
   }
 
   if (reinterpret_cast<stacktrace::call_stack*>(handle_)->stack.size() > 0) {
-    for (auto index = 0U; index < reinterpret_cast<stacktrace::call_stack*>(handle_)->stack.size() - 1; ++index) {
+    for (size_t index = 0; index < reinterpret_cast<stacktrace::call_stack*>(handle_)->stack.size() - 1; ++index) {
       if (index > skip_frames_before_str + skip_frames) {
         if (need_file_info) frames_.push_back({reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].file, reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].line, reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].column, reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].function, reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].offset});
         else frames_.push_back({reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].function, reinterpret_cast<stacktrace::call_stack*>(handle_)->stack[index].offset});
