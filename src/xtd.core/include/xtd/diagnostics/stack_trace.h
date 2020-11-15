@@ -13,18 +13,18 @@ namespace xtd {
     public:
       using frame_collection = std::vector<xtd::diagnostics::stack_frame>;
       
-      stack_trace() : stack_trace("", 1, true) {}
+      stack_trace() : stack_trace("", 1, false) {}
       explicit stack_trace(bool need_file_info) : stack_trace("", 1, need_file_info) {}
-      explicit stack_trace(size_t skip_frames) : stack_trace("", skip_frames + 1, true) {}
+      explicit stack_trace(size_t skip_frames) : stack_trace("", skip_frames + 1, false) {}
       stack_trace(size_t skip_frames, bool need_file_info) : stack_trace("", skip_frames + 1, need_file_info) {}
-      stack_trace(const std::string& str) : stack_trace(str, 1, true) {}
+      stack_trace(const std::string& str) : stack_trace(str, 1, false) {}
       stack_trace(const std::string& str, bool need_file_info) : stack_trace(str, 1, need_file_info) {}
-      stack_trace(const std::string& str, size_t skip_frames) : stack_trace(str, skip_frames + 1, true) {}
+      stack_trace(const std::string& str, size_t skip_frames) : stack_trace(str, skip_frames + 1, false) {}
       stack_trace(const std::string& str, size_t skip_frames, bool need_file_info);
       /// @cond
-      stack_trace(const char* str) : stack_trace(std::string(str), 1, true) {}
+      stack_trace(const char* str) : stack_trace(std::string(str), 1, false) {}
       stack_trace(const char* str, bool need_file_info) : stack_trace(std::string(str), 1, need_file_info) {}
-      stack_trace(const char* str, size_t skip_frames) : stack_trace(std::string(str), skip_frames + 1, true) {}
+      stack_trace(const char* str, size_t skip_frames) : stack_trace(std::string(str), skip_frames + 1, false) {}
       stack_trace(const char* str, size_t skip_frames, bool need_file_info) : stack_trace(std::string(str), skip_frames + 1, need_file_info) {}
       stack_trace(const stack_trace&) = default;
       stack_trace& operator=(const stack_trace&) = default;
