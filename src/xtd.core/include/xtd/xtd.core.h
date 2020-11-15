@@ -104,6 +104,7 @@
 #include "diagnostics/source_levels.h"
 #include "diagnostics/source_switch.h"
 #include "diagnostics/stack_frame.h"
+#include "diagnostics/stack_trace.h"
 #include "diagnostics/switch_base.h"
 #include "diagnostics/trace.h"
 #include "diagnostics/trace_event_cache.h"

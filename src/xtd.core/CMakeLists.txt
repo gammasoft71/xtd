@@ -118,6 +118,7 @@ add_sources(
   include/xtd/diagnostics/source_levels.h
   include/xtd/diagnostics/source_switch.h
   include/xtd/diagnostics/stack_frame.h
+  include/xtd/diagnostics/stack_trace.h
   include/xtd/diagnostics/switch_base.h
   include/xtd/diagnostics/trace.h
   include/xtd/diagnostics/trace_event_cache.h
@@ -170,6 +171,7 @@ add_sources(
   src/xtd/diagnostics/default_trace_listener_win32.cpp
   src/xtd/diagnostics/process.cpp
   src/xtd/diagnostics/process_start_info.cpp
+  src/xtd/diagnostics/stack_trace.cpp
   src/xtd/diagnostics/trace.cpp
   src/xtd/io/file_gcc.cpp
   src/xtd/io/file_win32.cpp

@@ -2,7 +2,7 @@
 /// @brief Contains xtd::diagnostics::trace class.
 #pragma once
 #include <cstdint>
-#include <string>
+#include "../strings.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,7 +18,7 @@ namespace xtd {
       /// @cond
       stack_frame(const stack_frame&) = default;
       stack_frame& operator=(const stack_frame&) = default;
-      ~stack_frame() {}
+      virtual ~stack_frame() {}
       /// @endcond
 
       virtual const std::string& file_path() const {return file_path_;}
@@ -50,6 +50,12 @@ namespace xtd {
         offset_ = offset;
         return *this;
       }
+      
+      virtual std::string to_string() const {return xtd::strings::format("{} at {}  in file:line:column {} : {} : {}", method_name_.empty() ? "<unknown method>" : method_name_, file_path_.empty() ? "<unknown offset>" : std::to_string(offset_), file_path_.empty() ? "<filename unknown>" : file_path_, file_line_, file_column_);}
+
+      /// @cond
+      friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_frame& stack_frame) noexcept {return os << stack_frame.to_string();}
+      /// @endcond
 
     private:
       friend class stack_trace;

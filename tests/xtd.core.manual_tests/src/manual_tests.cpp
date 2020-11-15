@@ -1,11 +1,11 @@
 #include <xtd/xtd.core>
-#include <call_stack.h>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 
 void test3() {
-  stacktrace::call_stack cs(1);
-  for (auto item : cs.stack)
+  stack_trace st(1);
+  for (auto item : st.frames())
     console::write_line(item.to_string());
 }
 
