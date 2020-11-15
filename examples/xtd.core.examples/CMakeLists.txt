@@ -56,3 +56,5 @@ add_projects(
   wconsole1
   wconsole2
 )
+
+add_projects(diagnostics)

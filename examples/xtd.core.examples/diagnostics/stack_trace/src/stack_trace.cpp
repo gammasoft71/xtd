@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 void test3() {
-  console::write_line(stack_trace(true));
+  console::write_line(stack_trace());
 }
 
 void test2() {
@@ -16,6 +16,12 @@ void test1() {
 }
 
 int main() {
-  //console::write_line("Hello, World!");
   test1();
 }
+
+// This code produces the following output :
+//
+//    at test3()
+//    at test2()
+//    at test1()
+//    at main

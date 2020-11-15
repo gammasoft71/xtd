@@ -36,7 +36,7 @@ namespace xtd {
         for (auto frame : frames_) {
           if (!first) str += xtd::environment::new_line();
           str += "   at " + frame.method_name();
-          if (!frame.file_path().empty()) str += xtd::strings::format(" [0x{:X8}] in {}:{}", frame.offset(), frame.file_path(), frame.file_line());
+          if (!frame.file_path().empty()) str += xtd::strings::format(" [0x{:X8}] in {}:line {}", frame.offset(), frame.file_path(), frame.file_line());
           first = false;
         }
         return  str;
