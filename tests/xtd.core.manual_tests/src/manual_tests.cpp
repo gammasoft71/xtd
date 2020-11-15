@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 void test3() {
-  stack_trace st(1);
+  stack_trace st {"test2", 0, true};
   for (auto item : st.frames())
     console::write_line(item.to_string());
 }
@@ -18,6 +18,6 @@ void test1() {
 }
 
 int main() {
-  console::write_line("Hello, World!");
+  //console::write_line("Hello, World!");
   test1();
 }

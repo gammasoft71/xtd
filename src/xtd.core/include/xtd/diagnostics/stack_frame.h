@@ -60,6 +60,7 @@ namespace xtd {
     private:
       friend class stack_trace;
       stack_frame(const std::string& file_path, size_t file_line, size_t file_column, const std::string& method_name, size_t offset) : file_path_(file_path), file_line_(file_line), file_column_(file_column), method_name_(method_name), offset_(offset) {}
+      stack_frame(const std::string& method_name, size_t offset) : method_name_(method_name), offset_(offset) {}
 
       std::string file_path_;
       size_t file_line_ = 0;
