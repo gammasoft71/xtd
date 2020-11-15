@@ -37,6 +37,7 @@ endif ()
 
 # Projects
 add_projects(
+  xtd.3rdparty.call_stack
   xtd.core
   xtd.drawing.native
   ${XTD_DRAWING_NATIVE_LIBRARY}
