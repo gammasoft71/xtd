@@ -1,4 +1,5 @@
-#include <xtd/xtd.forms>
+#include <xtd/forms/lcd_label.h>
+#include <xtd/forms/form.h>
 #include <xtd/xtd.tunit>
 
 using namespace xtd::drawing;

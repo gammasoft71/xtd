@@ -1,4 +1,5 @@
-#include <xtd/xtd.drawing>
+#include <xtd/drawing/point.h>
+#include <xtd/drawing/size.h>
 #include <xtd/xtd.tunit>
 
 using namespace xtd::drawing;

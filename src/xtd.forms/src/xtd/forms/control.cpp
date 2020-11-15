@@ -3,7 +3,6 @@
 #include <set>
 #include <xtd/diagnostics/debug.h>
 #include <xtd/diagnostics/trace_switch.h>
-#include <xtd/xtd.core>
 #include <xtd/strings.h>
 #include <xtd/drawing/system_fonts.h>
 #include <xtd/drawing/native/graphics.h>
