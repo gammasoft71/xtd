@@ -2,11 +2,17 @@
 /// @brief Contains xtd::diagnostics::trace class.
 #pragma once
 #include <exception>
+#include <memory>
 #include <vector>
+#include "../caller_info.h"
 #include "stack_frame.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class system_exception;
+  /// @endcond
+  
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
   namespace diagnostics {
     class stack_trace {
@@ -27,9 +33,9 @@ namespace xtd {
       ~stack_trace();
       /// @endcond
       
-      const frame_collection& frames() const {return frames_;}
+      const frame_collection& frames() const {return data_->frames_;}
             
-      std::string to_string() const;
+      std::string to_string() const {return to_string(0);}
 
       /// @cond
       friend std::ostream& operator<<(std::ostream& os, const xtd::diagnostics::stack_trace& stack_trace) noexcept {return os << stack_trace.to_string();}
@@ -38,10 +44,15 @@ namespace xtd {
       static constexpr size_t METHODS_TO_SKIP = 0;
       
     private:
+      friend class xtd::system_exception;
+      std::string to_string(size_t skip_frames, const xtd::caller_info& info = xtd::caller_info::empty()) const;
       stack_trace(const std::string& str, size_t skip_frames, bool need_file_info);
       void get_frames(const std::string& str, size_t skip_frames, bool need_file_info);
-      frame_collection frames_;
-      intptr_t handle_;
+      struct data {
+        frame_collection frames_;
+        intptr_t handle_ = 0;
+      };
+      std::shared_ptr<data> data_ = std::make_shared<data>();
     };
   }
 }

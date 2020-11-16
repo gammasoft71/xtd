@@ -5,6 +5,7 @@
 #include <system_error>
 #include <xtd/strings.h>
 #include "caller_info.h"
+#include "diagnostics/stack_trace.h"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -113,7 +114,7 @@ namespace xtd {
     
     /// @brief Gets a string representation of the immediate frames on the call stack.
     /// @return A string that describes the immediate frames of the call stack.
-    virtual std::string stack_trace() const noexcept {return xtd::strings::join("\n", stack_trace_);}
+    virtual std::string stack_trace() const noexcept {return stack_trace_to_string();}
     
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
@@ -131,6 +132,7 @@ namespace xtd {
 
   private:
     system_exception(const std::string& message, const std::exception* inner_exception, const std::error_code& error, const std::string& help_link, const xtd::caller_info& information);
+    std::string stack_trace_to_string() const noexcept;
     
     static constexpr const char* default_message_ = "System error.";
     static bool enable_stack_trace_;
@@ -140,7 +142,7 @@ namespace xtd {
     std::error_code error_;
     std::string help_link_;
     xtd::caller_info information_;
-    std::vector<std::string> stack_trace_;
+    std::shared_ptr<xtd::diagnostics::stack_trace> stack_trace_;
   };
 }
 
