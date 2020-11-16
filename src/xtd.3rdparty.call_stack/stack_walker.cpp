@@ -32,7 +32,7 @@
 #include <stdio.h>
 #pragma comment(lib, "version.lib")  // for "VerQueryValue"
 
-#include "StackWalker.h"
+#include "stack_walker.h"
 
 
 // If VC7 and later, then use the shipped 'dbghelp.h'-file
@@ -534,7 +534,7 @@ private:
     pGMBN = (tGMFNE) GetProcAddress( hPsapi, "GetModuleBaseNameA" );
     pGMI = (tGMI) GetProcAddress( hPsapi, "GetModuleInformation" );
     if ( (pEPM == NULL) || (pGMFNE == NULL) || (pGMBN == NULL) || (pGMI == NULL) ) {
-      // we couldn´t find all functions
+      // we couldn't find all functions
       FreeLibrary(hPsapi);
       return FALSE;
     }
