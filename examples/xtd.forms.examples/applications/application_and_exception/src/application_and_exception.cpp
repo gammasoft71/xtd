@@ -16,39 +16,39 @@ public:
     generate_handled_exception_button.location({10, 10});
     generate_handled_exception_button.parent(*this);
     generate_handled_exception_button.text("Generate handled exception");
-    generate_handled_exception_button.click += [] {
-      try {
-        throw system_exception("Generate handled exception");
-      } catch(const exception& e) {
-        // do something on exception...
-      }
-    };
+    generate_handled_exception_button.click += {*this, &main_form::generate_handled_exception};
 
     generate_exception_button.auto_size(true);
     generate_exception_button.location({10, 40});
     generate_exception_button.parent(*this);
     generate_exception_button.text("Generate exception");
-    generate_exception_button.click += [] {
-      throw invalid_argument("Generate exception");
-    };
+    generate_exception_button.click += {*this, &main_form::generate_exception};
 
     generate_system_exception_button.auto_size(true);
     generate_system_exception_button.location({10, 70});
     generate_system_exception_button.parent(*this);
     generate_system_exception_button.text("Generate system exception");
-    generate_system_exception_button.click += [] {
-      throw system_exception("Generate system exception", caller_info_);
-    };
+    generate_system_exception_button.click += {*this, &main_form::generate_system_exception};
 
     generate_unknown_exception_button.auto_size(true);
     generate_unknown_exception_button.location({10, 100});
     generate_unknown_exception_button.parent(*this);
     generate_unknown_exception_button.text("Generate unknown exception");
-    generate_unknown_exception_button.click += [] {
-      throw "Generate unknown exception";
-    };
+    generate_unknown_exception_button.click += {*this, &main_form::generate_unknown_exception};
   }
+  
 private:
+  void generate_handled_exception() {
+    try {
+      throw system_exception("Exception handled generated");
+    } catch(const exception& e) {
+      message_box::show(*this, strings::format("Exception {} handled", strings::class_name(e)));
+    }
+  }
+  void generate_exception() {throw invalid_argument("Exception generated");}
+  void generate_system_exception() {throw argument_out_of_range_exception("System exception generated", caller_info_);}
+  void generate_unknown_exception() {throw "Unknown exception generated";}
+  
   button generate_handled_exception_button;
   button generate_exception_button;
   button generate_system_exception_button;
@@ -59,6 +59,7 @@ int main() {
   try {
     application::run(main_form());
   } catch(const system_exception& e) {
+    console::write_line(e);
     message_box::show(e.to_string(), strings::format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
   } catch(const exception& e) {
     message_box::show(strings::format("Message : {}", e.what()), strings::format("Exception {} occured", strings::class_name(e)), message_box_buttons::ok, message_box_icon::error);
