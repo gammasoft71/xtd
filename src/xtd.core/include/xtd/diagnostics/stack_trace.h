@@ -20,7 +20,7 @@ namespace xtd {
       stack_trace(const std::exception& exception) : stack_trace(xtd::strings::full_class_name(exception), METHODS_TO_SKIP, false) {}
       stack_trace(const std::exception& exception, bool need_file_info) : stack_trace(xtd::strings::full_class_name(exception), METHODS_TO_SKIP, need_file_info) {}
       stack_trace(const std::exception& exception, size_t skip_frames) : stack_trace(xtd::strings::full_class_name(exception), skip_frames, false) {}
-      stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info);
+      stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info) : stack_trace(xtd::strings::full_class_name(exception), skip_frames, need_file_info) {}
       /// @cond
       stack_trace(const stack_trace&) = default;
       stack_trace& operator=(const stack_trace&) = default;

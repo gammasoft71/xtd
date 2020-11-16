@@ -4,7 +4,8 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 void test3() {
-  console::write_line(stack_trace());
+  //console::write_line(stack_trace());
+  throw argument_out_of_range_exception(caller_info_);
 }
 
 void test2() {
@@ -17,5 +18,10 @@ void test1() {
 
 int main() {
   //console::write_line("Hello, World!");
-  test1();
+  system_exception::enable_stack_trace(false);
+  try {
+    test1();
+  } catch(const system_exception& e) {
+    console::write_line(e);
+  }
 }
