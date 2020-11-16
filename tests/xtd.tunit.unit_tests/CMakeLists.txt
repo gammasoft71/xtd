@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.3)
 
+# Options
+if (MSVC)
+  add_compile_options(/wd4834)
+endif ()
+
 # Project
 project(xtd.tunit.unit_tests)
 include(../../scripts/cmake/xtd_commands.cmake)
