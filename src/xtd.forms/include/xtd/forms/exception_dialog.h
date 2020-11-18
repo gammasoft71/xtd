@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <xtd/delegate.h>
+#include <xtd/version.h>
 #include <xtd/drawing/icon.h>
 #include <xtd/system_exception.h>
 #include "dialog_result.h"
