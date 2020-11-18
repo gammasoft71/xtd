@@ -4,6 +4,7 @@
 #include <xtd/forms/native/application.h>
 #include <xtd/forms/window_messages.h>
 #include "../../../include/xtd/forms/application.h"
+#include "../../../include/xtd/forms/exception_dialog.h"
 #include "../../../include/xtd/forms/theme.h"
 
 using namespace std;
@@ -243,6 +244,7 @@ void application::run(application_context& context) {
   cursor::current(cursors::default_cursor());
   context.thread_exit += application::on_app_thread_exit;
   native::application::register_message_filter(delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(message_filter_proc));
+  native::application::register_thread_exception(delegate<bool()>(on_app_thread_exception));
   native::application::register_wnd_proc(delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>(application::wnd_proc_));
   application::message_loop_ = true;
   if (context.main_form_ != nullptr) context.main_form().show();
@@ -282,6 +284,20 @@ void application::yield() {
 
 void application::on_app_thread_exit(const application_context& sender, const event_args& e) {
   application::exit_thread();
+}
+
+bool application::on_app_thread_exception() {
+  try {
+    throw;
+  } catch (const std::exception& e) {
+    exception_dialog dialog;
+    dialog.exception(e);
+    return dialog.show_dialog() == dialog_result::ok;
+  } catch (...) {
+    exception_dialog dialog;
+    return dialog.show_dialog() == dialog_result::ok;
+  }
+  return false;
 }
 
 void application::raise_enter_thread_modal(const event_args &e) {

@@ -73,6 +73,7 @@ add_sources(
   include/xtd/forms/emoticon.h
   include/xtd/forms/emoticons.h
   include/xtd/forms/enable_debug.h
+  include/xtd/forms/exception_dialog.h
   include/xtd/forms/file_dialog.h
   include/xtd/forms/flat_style.h
   include/xtd/forms/folder_browser_dialog.h
@@ -227,6 +228,7 @@ add_sources(
   src/xtd/forms/emoticon.cpp
   src/xtd/forms/emoticons.cpp
   src/xtd/forms/enable_debug.cpp
+  src/xtd/forms/exception_dialog.cpp
   src/xtd/forms/file_dialog.cpp
   src/xtd/forms/folder_browser_dialog.cpp
   src/xtd/forms/font_dialog.cpp
