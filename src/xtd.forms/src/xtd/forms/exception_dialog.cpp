@@ -144,7 +144,7 @@ namespace {
           return names[id()];
         }
         
-        static const version& version() {
+        static const xtd::version& version() {
           static xtd::version ver(__cplusplus/100, __cplusplus%100);
           return ver;
         }
