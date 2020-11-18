@@ -87,11 +87,11 @@ namespace {
     
   private:
     std::string generate_report() const {
-      std::string report = strings::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information see documentation.{0}{0}", environment::new_line());
+      std::string report = strings::format("Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}", environment::new_line());
       report += generate_exception_report();
       report += generate_libraries_report();
       report += generate_operating_system_report();
-      report += generate_lib_cpp_report();
+      report += generate_standard_cpp_report();
       report += generate_compiler_report();
       return report;
     }
@@ -127,20 +127,20 @@ namespace {
       std::string report = strings::format("{0} Operating System {0}{1}", std::string(14, '*'), environment::new_line());
       report += strings::format("{}{}", operating_system_names[environment::os_version().platform()], environment::new_line());
       report += strings::format("    Version : {}{}", environment::os_version().version(), environment::new_line());
-      report += strings::format("    ID : {}{}", environment::os_version().platform(), environment::new_line());
+      report += strings::format("    Platform : {}{}", environment::os_version().platform(), environment::new_line());
       report += strings::format("    OS Version : {}{}", environment::os_version(), environment::new_line());
       report += strings::format("    Is 64 bits : {}{}", environment::is_64_bit_operating_system(), environment::new_line());
       report += environment::new_line();
       return report;
     }
     
-    std::string generate_lib_cpp_report() const {
-      enum class libcpp_id {unknown = -1, cpp98 = 0, cpp11 = 1, cpp14 = 2, cpp17 = 3, cpp20 = 4};
+    std::string generate_standard_cpp_report() const {
+      enum class libcpp_id {unknown = -1, cpp_pre98 = 0, cpp98, cpp11, cpp14, cpp17, cpp20};
       
       class libcpp_info static_ {
       public:
         static string name() {
-          static map<libcpp_id, string> names {{libcpp_id::cpp11, "Lib C++ 11"}, {libcpp_id::cpp14, "Lib C++ 14"}, {libcpp_id::cpp17, "Lib C++ 17"}, {libcpp_id::cpp20, "Lib C++ 20"}, {libcpp_id::unknown, "<unknown>"}};
+          static map<libcpp_id, string> names {{libcpp_id::cpp_pre98, "Standard C++ Pre 98"}, {libcpp_id::cpp98, "Standard C++ 98"}, {libcpp_id::cpp11, "Standard C++ 11"}, {libcpp_id::cpp14, "Standard C++ 14"}, {libcpp_id::cpp17, "Standard C++ 17"}, {libcpp_id::cpp20, "Standard C++ 20"}, {libcpp_id::unknown, "<unknown>"}};
           return names[id()];
         }
         
@@ -150,24 +150,25 @@ namespace {
         }
         
         static libcpp_id id() {
-          int32_t cpp = __cplusplus;
+          uint32_t cpp = __cplusplus;
           if (cpp >= 202002L) return libcpp_id::cpp20;
           if (cpp >= 201703L) return libcpp_id::cpp17;
           if (cpp >= 201402L) return libcpp_id::cpp14;
           if (cpp >= 201103L) return libcpp_id::cpp11;
           if (cpp >= 199711L) return libcpp_id::cpp98;
+          if (cpp == 1L) return libcpp_id::cpp_pre98;
           return libcpp_id::unknown;
         }
         
         static bool is_supported() {return __cplusplus >= 201703L;}
-        static int32_t GetYear() {return __cplusplus / 100;}
-        static int32_t GetMonth() {return __cplusplus % 100;}
+        static int32_t year() {return __cplusplus / 100;}
+        static int32_t month() {return __cplusplus % 100;}
       };
       
-      std::string report = strings::format("{0} Lib C++ {0}{1}", std::string(14, '*'), environment::new_line());
+      std::string report = strings::format("{0} Standard C++ {0}{1}", std::string(14, '*'), environment::new_line());
       report += strings::format("{}{}", libcpp_info::name(), environment::new_line());
       report += strings::format("    Version : {}{}", libcpp_info::version(), environment::new_line());
-      report += strings::format("    ID : {}{}", static_cast<int32_t>(libcpp_info::id()), environment::new_line());
+      report += strings::format("    Value : {}{}", static_cast<uint32_t>(__cplusplus), environment::new_line());
       report += strings::format("    Is supported : {}{}", libcpp_info::is_supported(), environment::new_line());
       report += environment::new_line();
       return report;
