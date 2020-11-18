@@ -449,6 +449,8 @@ namespace xtd {
     /// @brief Gets the user name of the person who is currently logged on to the operating system.
     /// @return The user name of the person who is logged on to the operating system.
     static std::string user_name() noexcept {return __opaque_environment::get_user_name();}
+    
+    static xtd::version version() noexcept;
   };
 
   /// @cond

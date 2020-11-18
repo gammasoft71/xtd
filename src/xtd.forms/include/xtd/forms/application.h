@@ -279,6 +279,7 @@ namespace xtd {
       friend class message_box;
       /// @endcond
       static void on_app_thread_exit(const application_context& sender, const event_args& e);
+      static bool on_app_thread_exception();
       static void raise_enter_thread_modal(const event_args& e);
       static void raise_leave_thread_modal(const event_args& e);
       static intptr_t wnd_proc_(intptr_t hwnd, int32_t msg, intptr_t wparam, intptr_t lparam, intptr_t handle);

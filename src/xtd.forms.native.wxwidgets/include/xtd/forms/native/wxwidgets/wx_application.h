@@ -14,6 +14,8 @@ namespace xtd {
         wx_application() = default;
         
         bool OnExceptionInMainLoop() override {
+          if (!thread_exception.is_empty())
+            return thread_exception();
           exceptionStored = std::current_exception();
           return false;
         }
@@ -49,7 +51,8 @@ namespace xtd {
         
         static event<wx_application, delegate<bool(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> message_filter_proc;
         event<wx_application, delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>> wnd_proc;
-        
+        event<wx_application, delegate<bool()>> thread_exception;
+
         std::exception_ptr exceptionStored;
       };
     }

@@ -149,6 +149,11 @@ void application::register_message_filter(const delegate<bool(intptr_t, int32_t,
   static_cast<wx_application*>(wxTheApp)->message_filter_proc += message_filter_proc;
 }
 
+void application::register_thread_exception(const delegate<bool()>& thread_exception) {
+  application::initialize(); // Must be first
+  static_cast<wx_application*>(wxTheApp)->thread_exception += thread_exception;
+}
+
 void application::register_wnd_proc(const delegate<intptr_t(intptr_t, int32_t, intptr_t, intptr_t, intptr_t)>& wnd_proc) {
   initialize(); // Must be first
   static_cast<wx_application*>(wxTheApp)->wnd_proc += wnd_proc;

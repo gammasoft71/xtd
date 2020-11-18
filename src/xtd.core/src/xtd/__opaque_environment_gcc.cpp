@@ -164,7 +164,7 @@ std::string __opaque_environment::get_user_name() noexcept {
 }
 
 bool __opaque_environment::is_os_64_bit() noexcept {
-  return  xtd::strings::ends_with(create_process("uname -m"), "64");
+  return  xtd::strings::contains(create_process("uname -m"), "64");
 }
 
 xtd::guid __opaque_environment::new_guid() noexcept {
