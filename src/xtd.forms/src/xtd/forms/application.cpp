@@ -297,7 +297,6 @@ bool application::on_app_thread_exception() {
     exception_dialog dialog;
     return dialog.show_dialog() == dialog_result::ok;
   }
-  return false;
 }
 
 void application::raise_enter_thread_modal(const event_args &e) {
