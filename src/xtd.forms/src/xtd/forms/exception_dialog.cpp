@@ -62,12 +62,12 @@ namespace {
       };
 
       //button_continue_.enabled(false);
-      button_continue_.location({330, 115});
+      button_continue_.location({environment::os_version().is_macos_platform() ? 440 : 330, 115});
       button_continue_.width(100);
       button_continue_.text("Continue");
       button_continue_.dialog_result(forms::dialog_result::ok);
       
-      button_quit_.location({440, 115});
+      button_quit_.location({environment::os_version().is_macos_platform() ? 330 : 440, 115});
       button_quit_.width(100);
       button_quit_.text("Quit");
       button_quit_.dialog_result(forms::dialog_result::cancel);
