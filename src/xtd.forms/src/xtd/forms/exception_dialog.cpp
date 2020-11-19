@@ -49,7 +49,6 @@ namespace {
       picture_box_error_.image(xtd::drawing::system_images::from_name("dialog-error", xtd::drawing::size(64, 64)));
       
       label_exception_.location({85, 10});
-      //label_exception_.flat_style(xtd::forms::flat_style::system);
       label_exception_.size({455, 95});
       label_exception_.text_align(content_alignment::top_left);
       auto text_m = strings::format("Unhandled exception occured in your application. If you click\nContinue, the application will ignore this error and attempt to continue.\nIf you click Quit, the application will close immediately.\n\n{}", exception_ ? exception_->what() : "(Unknown exception)");
