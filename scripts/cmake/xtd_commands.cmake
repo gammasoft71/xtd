@@ -1868,7 +1868,7 @@ endif()
 
 if (MSVC)
   add_definitions(-D_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8 /wd4251 /wd4275 /wd4996")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8 /wd4251 /wd4275 /wd4996 /Zc:__cplusplus")
   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /bigobj")
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 endif ()
