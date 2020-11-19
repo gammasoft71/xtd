@@ -1,6 +1,7 @@
 #include <memory>
 #include <xtd/system_exception.h>
 #include <xtd/drawing/system_icons.h>
+#include <xtd/io/path.h>
 #include "../../../include/xtd/forms/exception_dialog.h"
 #include "../../../include/xtd/forms/application.h"
 #include "../../../include/xtd/forms/button.h"
@@ -116,6 +117,9 @@ namespace {
         report += strings::format("{}{}", library, environment::new_line());
         report += strings::format("    Name: {}.{}{}", library, environment::os_version().is_windows_platform() ? "lib" : "a", environment::new_line());
         report += strings::format("    Version: {}{}", environment::version(), environment::new_line());
+        report += strings::format("    include path: {}{}", xtd::io::path::combine(__XTD_INSTALL_PATH__, "include"), environment::new_line());
+        report += strings::format("    library path: {}{}", xtd::io::path::combine(__XTD_INSTALL_PATH__, "lib"), environment::new_line());
+        report += strings::format("    resources path: {}{}", xtd::io::path::combine(__XTD_RESOURCES_PATH__, "resources", "xtd"), environment::new_line());
         first = false;
       }
       report += environment::new_line();
@@ -135,41 +139,11 @@ namespace {
     }
     
     std::string generate_standard_cpp_report() const {
-      enum class libcpp_id {unknown = -1, cpp_pre98 = 0, cpp98, cpp11, cpp14, cpp17, cpp20};
-      
-      class libcpp_info final static_ {
-      public:
-        static string name() {
-          static map<libcpp_id, string> names {{libcpp_id::cpp_pre98, "Standard C++ Pre 98"}, {libcpp_id::cpp98, "Standard C++ 98"}, {libcpp_id::cpp11, "Standard C++ 11"}, {libcpp_id::cpp14, "Standard C++ 14"}, {libcpp_id::cpp17, "Standard C++ 17"}, {libcpp_id::cpp20, "Standard C++ 20"}, {libcpp_id::unknown, "<unknown>"}};
-          return names[id()];
-        }
-        
-        static const xtd::version& version() {
-          static xtd::version ver(__cplusplus/100, __cplusplus%100);
-          return ver;
-        }
-        
-        static libcpp_id id() {
-          uint32_t cpp = __cplusplus;
-          if (cpp >= 202002L) return libcpp_id::cpp20;
-          if (cpp >= 201703L) return libcpp_id::cpp17;
-          if (cpp >= 201402L) return libcpp_id::cpp14;
-          if (cpp >= 201103L) return libcpp_id::cpp11;
-          if (cpp >= 199711L) return libcpp_id::cpp98;
-          if (cpp == 1L) return libcpp_id::cpp_pre98;
-          return libcpp_id::unknown;
-        }
-        
-        static bool is_supported() {return __cplusplus >= 201703L;}
-        static int32_t year() {return __cplusplus / 100;}
-        static int32_t month() {return __cplusplus % 100;}
-      };
-      
       std::string report = strings::format("{0} Standard C++ {0}{1}", std::string(14, '*'), environment::new_line());
-      report += strings::format("{}{}", libcpp_info::name(), environment::new_line());
-      report += strings::format("    Version : {}{}", libcpp_info::version(), environment::new_line());
-      report += strings::format("    Value : {}{}", static_cast<uint32_t>(__cplusplus), environment::new_line());
-      report += strings::format("    Is supported : {}{}", libcpp_info::is_supported(), environment::new_line());
+      report += strings::format("{}{}", environment::cpp_version().to_string(), environment::new_line());
+      report += strings::format("    Version : {}{}", environment::cpp_version().version(), environment::new_line());
+      report += strings::format("    Standard : {}{}", environment::cpp_version().standard(), environment::new_line());
+      report += strings::format("    Is supported : {}{}", environment::cpp_version().is_supported(), environment::new_line());
       report += environment::new_line();
       return report;
     }
