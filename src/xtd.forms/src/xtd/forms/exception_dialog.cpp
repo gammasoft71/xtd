@@ -101,9 +101,9 @@ namespace {
       if (exception_ && dynamic_cast<const xtd::system_exception*>(exception_))
         report += strings::format("{}{}", static_cast<const xtd::system_exception*>(exception_)->to_string(), environment::new_line());
       else if (exception_ && dynamic_cast<const std::exception*>(exception_))
-        report += strings::format("{0}: {1}{2}{3}{2}", xtd::strings::full_class_name(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line(), xtd::diagnostics::stack_trace(5, true));
+        report += strings::format("{0}: {1}{2}", xtd::strings::full_class_name(*exception_), static_cast<const std::exception*>(exception_)->what(), environment::new_line());
       else
-        report += strings::format("(Unknown exception){0}{1}{0}", environment::new_line(), xtd::diagnostics::stack_trace(5, true));
+        report += strings::format("(Unknown exception){0}", environment::new_line());
       report += environment::new_line();
       return report;
     }
