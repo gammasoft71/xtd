@@ -98,6 +98,7 @@ void graphics::draw_string(const std::string& text, const font& font, const brus
 
     auto lines = xtd::strings::split(text, {'\n'});
     for (auto line : lines) {
+      if (line.empty()) line = " ";
       vector<size_t> hotkey_prefix_locations;
       string line_without_hotkey_prefix = get_hotkey_prefix_locations(line, hotkey_prefix_locations);
       auto drawable_line = format.hotkey_prefix() == hotkey_prefix::none ? line : line_without_hotkey_prefix;
