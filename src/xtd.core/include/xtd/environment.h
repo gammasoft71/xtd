@@ -10,6 +10,7 @@
 #include <xtd/strings.h>
 
 #include "__opaque_environment.h"
+#include "compiler.h"
 #include "cpp_standard.h"
 #include "environment_variable_target.h"
 #include "guid.h"
@@ -201,11 +202,18 @@ namespace xtd {
     
     /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
     /// @return An object that contains the c++ standard identifier and version number.
+    static xtd::compiler compiler_version() noexcept {
+      static xtd::compiler compiler;
+      return compiler;
+    }
+    
+    /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
+    /// @return An object that contains the c++ standard identifier and version number.
     static xtd::cpp_standard cpp_version() noexcept {
       static xtd::cpp_standard cpp_standard;
       return cpp_standard;
     }
-    
+
     /// @brief Gets the fully qualified path of the current working directory.
     /// @return std::sgtring A string containing a directory path.
     /// @remarks By definition, if this process starts in the root directory of a local or network drive, the value returned by this method is the drive name followed by a trailing slash (for example, "C:\"). If this process starts in a subdirectory, the value returned by this method is the drive and subdirectory path, without a trailing slash (for example, "C:\mySubDirectory").
