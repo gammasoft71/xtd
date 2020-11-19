@@ -249,6 +249,7 @@ void application::run(application_context& context) {
   application::message_loop_ = true;
   if (context.main_form_ != nullptr) context.main_form().show();
   native::application::run();
+  context.thread_exit -= application::on_app_thread_exit;
   application::message_loop_ = false;
 }
 
