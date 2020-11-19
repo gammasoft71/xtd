@@ -8,7 +8,7 @@ namespace xtd {
   namespace drawing {
     /// @brief Each property of the xtd::drawing::system_colors class is a xtd::drawing::Color structure that is the color of a Windows display element.
     /// @remarks Better performance is achieved by using the properties of the xtd::drawing::SystemPens or xtd::drawing::SystemBrushes classes rather than creating a new pen or brush based on a value from xtd::drawing::system_colors. For example, if you wanted to get a brush for the face color of a 3-D element, use the SystemBrushes.Control property because it gets a brush that already exists, whereas calling the SolidBrush.#ctor(Color) constructor with a parameter value of system_colors::Control will create a new brush.
-    class system_colors static_ {
+    class system_colors final static_ {
     public:
       /// @brief Gets a system-defined color that has an ARGB value of 0xFFD4D0C8. This field is constant.
       static xtd::drawing::color active_border();

@@ -7,7 +7,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class timer static_ {
+      class timer final static_ {
       public:
         static intptr_t create(int32_t interval, const delegate<void(const event_args&)>& tick);
         static void destroy(intptr_t handle);

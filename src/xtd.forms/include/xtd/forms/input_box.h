@@ -7,7 +7,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class input_box static_ {
+    class input_box final static_ {
     public:
       static xtd::forms::dialog_result show(std::string& value) {return show_input_box(value);}
       static xtd::forms::dialog_result show(std::string& value, const std::string& text) {return show_input_box(value, nullptr, text);}

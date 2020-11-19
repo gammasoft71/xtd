@@ -13,7 +13,7 @@ using namespace std;
 using namespace xtd;
 
 namespace xtdc_command {
-  class xtdc static_ {
+  class xtdc final static_ {
   public:
     static int main(const vector<string>& args) {
       if (args.size() == 0) {

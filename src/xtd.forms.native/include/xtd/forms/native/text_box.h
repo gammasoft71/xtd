@@ -6,7 +6,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class text_box static_ {
+      class text_box final static_ {
       public:
         static size_t selection_length(intptr_t control);
         static size_t selection_start(intptr_t control);

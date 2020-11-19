@@ -6,7 +6,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class button static_ {
+      class button final static_ {
       public:
         static void image(intptr_t control, const drawing::image& image);
         static void image_align(intptr_t control, uint32_t align);

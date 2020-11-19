@@ -7,7 +7,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class font_picker static_ {
+      class font_picker final static_ {
       public:
         static drawing::color color(intptr_t control);
         static void color(intptr_t control, const drawing::color& color);

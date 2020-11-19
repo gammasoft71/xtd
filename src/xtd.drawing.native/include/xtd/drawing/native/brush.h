@@ -6,7 +6,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      class brush static_ {
+      class brush final static_ {
       public:
         static intptr_t create();
         static void solid(intptr_t brush, uint8_t a, uint8_t r, uint8_t g, uint8_t b);

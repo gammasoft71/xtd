@@ -29,7 +29,7 @@ namespace xtd {
   /// @endcode
   /// @ingroup keywords
   #define static_ \
-    final : xtd::static_class
+    : xtd::static_class
 
   /// @brief This keyword is use to represent a static class. A static class can't be instancied (constructors are deleted).
   /// @par Library
@@ -43,5 +43,5 @@ namespace xtd {
   /// @endcode
   /// @ingroup keywords
   #define static_class_ \
-    final : xtd::static_class
+    : xtd::static_class
 }

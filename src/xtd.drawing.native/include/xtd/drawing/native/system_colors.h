@@ -7,7 +7,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      class system_colors static_ {
+      class system_colors final static_ {
       public:
         static uint32_t to_argb(intptr_t color);
         static intptr_t accent();

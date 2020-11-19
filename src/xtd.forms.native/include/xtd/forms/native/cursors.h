@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class cursors static_ {
+      class cursors final static_ {
       public:
         static intptr_t app_starting();
         static intptr_t arrow();

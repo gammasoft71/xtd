@@ -8,7 +8,7 @@ namespace xtd {
   namespace drawing {
     /// @brief pens for all the standard colors. This class cannot be inherited.
     /// @remarks The pen objects returned by this class are immutable, meaning their properties cannot be changed.
-    class pens static_ {
+    class pens final static_ {
     public:
       // A system-defined pen object with a width of 1.
       static xtd::drawing::pen transparent();

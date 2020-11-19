@@ -7,7 +7,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class application static_ {
+      class application final static_ {
       public:
         static bool allow_quit();
         static void cleanup();

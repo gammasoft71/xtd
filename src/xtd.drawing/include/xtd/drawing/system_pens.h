@@ -7,7 +7,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @brief Each property of the system_pens class is a pen that is the color of a Windows display element and that has a width of 1 pixel.
-    class system_pens static_ {
+    class system_pens final static_ {
     public:
       /// Gets a pen that is the color of the active border.
       static xtd::drawing::pen active_border();

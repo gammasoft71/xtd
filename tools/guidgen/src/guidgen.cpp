@@ -6,7 +6,7 @@ using namespace std;
 using namespace xtd;
 
 namespace guidgen {
-  class program static_ {
+  class program final static_ {
   public:
     static int main(const vector<string>& args) {
       string format = "";

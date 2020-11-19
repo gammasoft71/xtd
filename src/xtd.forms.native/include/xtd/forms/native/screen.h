@@ -7,7 +7,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class screen static_ {
+      class screen final static_ {
       public:
         static size_t count();
         static intptr_t create_graphics();

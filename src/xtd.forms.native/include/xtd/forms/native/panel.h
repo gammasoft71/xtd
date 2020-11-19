@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class panel static_ {
+      class panel final static_ {
       public:
         static void virtual_size(intptr_t control, const drawing::size& size);
       };

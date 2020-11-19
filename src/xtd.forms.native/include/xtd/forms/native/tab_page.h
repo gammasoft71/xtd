@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class tab_page static_ {
+      class tab_page final static_ {
       public:
       };
     }

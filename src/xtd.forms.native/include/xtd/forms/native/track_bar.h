@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class track_bar static_ {
+      class track_bar final static_ {
       public:
         static void large_change(intptr_t control, int32_t large_change);
         static void maximum(intptr_t control, int32_t maximum);

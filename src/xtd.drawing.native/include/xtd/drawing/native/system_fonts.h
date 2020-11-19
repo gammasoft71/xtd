@@ -7,7 +7,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      class system_fonts static_ {
+      class system_fonts final static_ {
       public:
         static intptr_t caption_font();
         static intptr_t default_font();
