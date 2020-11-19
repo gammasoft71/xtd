@@ -137,7 +137,7 @@ namespace {
     std::string generate_standard_cpp_report() const {
       enum class libcpp_id {unknown = -1, cpp_pre98 = 0, cpp98, cpp11, cpp14, cpp17, cpp20};
       
-      class libcpp_info static_ {
+      class libcpp_info final static_ {
       public:
         static string name() {
           static map<libcpp_id, string> names {{libcpp_id::cpp_pre98, "Standard C++ Pre 98"}, {libcpp_id::cpp98, "Standard C++ 98"}, {libcpp_id::cpp11, "Standard C++ 11"}, {libcpp_id::cpp14, "Standard C++ 14"}, {libcpp_id::cpp17, "Standard C++ 17"}, {libcpp_id::cpp20, "Standard C++ 20"}, {libcpp_id::unknown, "<unknown>"}};
@@ -177,7 +177,7 @@ namespace {
     std::string generate_compiler_report() const {
       enum class compilator_id {unknown = -1, microsoft_visual_studio = 0, gcc = 1, clang = 2};
       enum class compilator_mode {release = 0, debug = 1};
-      class compilator_info static_ {
+      class compilator_info final static_ {
       public:
         static string name() {
           switch (id()) {

@@ -8,7 +8,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class system_information static_ {
+      class system_information final static_ {
       public:
         static int32_t active_window_tracking_delay();
         static int32_t arrange_direction();

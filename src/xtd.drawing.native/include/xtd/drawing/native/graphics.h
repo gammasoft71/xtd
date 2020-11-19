@@ -7,7 +7,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      class graphics static_ {
+      class graphics final static_ {
       public:
         static void clear(intptr_t hdc, uint8_t a, uint8_t r, uint8_t g, uint8_t b);
         static void destroy(intptr_t hdc);

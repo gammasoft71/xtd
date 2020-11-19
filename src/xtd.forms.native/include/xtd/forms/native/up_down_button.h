@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class up_down_button static_ {
+      class up_down_button final static_ {
       public:
         static void maximum(intptr_t control, int32_t maximum);
         static void minimum(intptr_t control, int32_t minimum);

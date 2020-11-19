@@ -22,7 +22,7 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The environment class.
-  class environment static_ {
+  class environment final static_ {
   public:
     /// @enum special_folder
     /// @brief Specifies enumerated constants used to retrieve directory paths to system special folders.

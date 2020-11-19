@@ -3030,7 +3030,7 @@ namespace xtdc_command {
         "SEARCH_INCLUDES        = YES",
         "INCLUDE_PATH           = ",
         "INCLUDE_FILE_PATTERNS  = ",
-        "PREDEFINED             = \"static_=final : public xtd::static\"",
+        "PREDEFINED             = \"final static_=final : public xtd::static\"",
         "EXPAND_AS_DEFINED      = ",
         "SKIP_FUNCTION_MACROS   = YES",
         "",

@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class form static_ {
+      class form final static_ {
       public:
         static void activate(intptr_t form);
         static void close(intptr_t form);

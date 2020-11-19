@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class radio_button static_ {
+      class radio_button final static_ {
       public:
         static void checked(intptr_t control, bool checked);
       };

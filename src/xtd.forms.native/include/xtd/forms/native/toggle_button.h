@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class toggle_button static_ {
+      class toggle_button final static_ {
       public:
         static void check_state(intptr_t control, int check_state);
       };

@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class group_box static_ {
+      class group_box final static_ {
       public:
       };
     }

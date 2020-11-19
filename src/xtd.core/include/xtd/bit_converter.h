@@ -43,7 +43,7 @@ namespace xtd {
   /// @par Example
   /// The following code example illustrates the use of several bit_converter class methods.
   /// @include bit_converter.cpp
-  class bit_converter static_ {
+  class bit_converter final static_ {
   public:
     /// @cond
 #if defined(__linux__) && defined(_LP64)

@@ -6,7 +6,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      class pen static_ {
+      class pen final static_ {
       public:
         static intptr_t create();
         static void color(intptr_t pen, uint8_t a, uint8_t r, uint8_t g, uint8_t b);

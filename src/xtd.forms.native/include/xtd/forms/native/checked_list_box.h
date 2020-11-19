@@ -6,7 +6,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class checked_list_box static_ {
+      class checked_list_box final static_ {
       public:
         static void begin_update(intptr_t control);
         static void check_state(intptr_t control, size_t index, int check_state);

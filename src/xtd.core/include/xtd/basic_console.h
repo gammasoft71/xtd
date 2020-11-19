@@ -20,7 +20,7 @@ namespace xtd {
   /// @include console1.cpp
   /// @include console_out.cpp
   template<class char_t>
-  class basic_console static_ {
+  class basic_console final static_ {
   public:    
     /// @brief Gets the error output stream. A std::basic_ostream<char_t> that represents the error output stream.
     static std::basic_ostream<char_t> error;

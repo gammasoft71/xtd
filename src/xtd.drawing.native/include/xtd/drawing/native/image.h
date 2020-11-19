@@ -10,7 +10,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      class image static_ {
+      class image final static_ {
       public:
         struct property_item {
           int32_t id = 0;

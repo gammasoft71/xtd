@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class main_menu static_ {
+      class main_menu final static_ {
       public:
         static intptr_t create(const std::vector<intptr_t>& menu_items);
         static void destroy(intptr_t main_menu);

@@ -8,7 +8,7 @@
 namespace xtd {
   namespace drawing {
     namespace native {
-      class font_family static_ {
+      class font_family final static_ {
       public:
         static intptr_t create(const std::string& name);
         static void destroy(intptr_t font_family);

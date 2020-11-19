@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class label static_ {
+      class label final static_ {
       public:
       };
     }

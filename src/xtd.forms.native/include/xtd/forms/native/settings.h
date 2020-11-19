@@ -6,7 +6,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class settings static_ {
+      class settings final static_ {
       public:
         static intptr_t create(const std::string& product_name, const std::string& company_name);
         static void destroy(intptr_t config);

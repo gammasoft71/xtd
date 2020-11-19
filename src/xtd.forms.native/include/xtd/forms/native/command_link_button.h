@@ -6,7 +6,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class command_link_button static_ {
+      class command_link_button final static_ {
       public:
       };
     }

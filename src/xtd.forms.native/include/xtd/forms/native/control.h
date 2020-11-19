@@ -17,7 +17,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class control static_ {
+      class control final static_ {
       public:
         static void back_color(intptr_t control, const drawing::color& color);
         static intptr_t create(const create_params& create_params);

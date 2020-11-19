@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class progress_bar static_ {
+      class progress_bar final static_ {
       public:
         static void marquee(intptr_t control, bool marquee, size_t animation_speed);
         static void maximum(intptr_t control, int32_t maximum);

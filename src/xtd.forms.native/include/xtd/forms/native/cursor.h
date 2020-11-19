@@ -7,7 +7,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class cursor static_ {
+      class cursor final static_ {
       public:
         static intptr_t create();
         static intptr_t create(intptr_t image, const drawing::point& hot_spot);

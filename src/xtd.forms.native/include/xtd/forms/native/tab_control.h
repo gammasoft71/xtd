@@ -7,7 +7,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class tab_control static_ {
+      class tab_control final static_ {
       public:
         static void add_item(intptr_t control, intptr_t page, const std::string& text);
         static void delete_item(intptr_t control, size_t index);

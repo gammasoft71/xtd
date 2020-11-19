@@ -13,7 +13,7 @@ namespace xtd {
   namespace drawing {
     /// @brief Each property of the system_icons class is an icon object for Windows system-wide icons. This class cannot be inherited.
     /// @remarks Each property of the system_fonts class returns a Font used to display text in a particular Windows display element, such as the title bar of a window. These fonts reflect the current settings in Control Panel.
-    class system_icons static_ {
+    class system_icons final static_ {
     public:
       static xtd::drawing::icon application() {return application(default_size());}
       static xtd::drawing::icon application(const xtd::drawing::size& size) {return from_name("application-x-executable", size);}

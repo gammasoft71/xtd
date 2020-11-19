@@ -6,7 +6,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class combo_box static_ {
+      class combo_box final static_ {
       public:
         static void begin_update(intptr_t control);
         static void delete_item(intptr_t control, size_t index);

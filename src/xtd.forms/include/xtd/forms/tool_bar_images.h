@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    class tool_bar_images static_ {
+    class tool_bar_images final static_ {
     public:
       static xtd::drawing::image file_new() {return file_new(xtd::forms::theme_images::current_theme(), size());}
       static xtd::drawing::image file_new(const std::string& theme) {return file_new(theme, size());}

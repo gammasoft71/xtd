@@ -5,7 +5,7 @@
 namespace xtd {
   namespace forms {
     namespace native {
-      class numeric_up_down static_ {
+      class numeric_up_down final static_ {
       public:
         static void decimal_place(intptr_t control, int32_t decimal_place);
         static void increment(intptr_t control, double increment);

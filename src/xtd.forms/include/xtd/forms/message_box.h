@@ -15,7 +15,7 @@ namespace xtd {
     class control;
     /// @endcond
 
-    class message_box static_ {
+    class message_box final static_ {
     public:
       static dialog_result show(const iwin32_window& owner) {return show_message_dialog(&owner);}
       static dialog_result show(const iwin32_window& owner, const std::string& text) {return show_message_dialog(&owner, text);}
