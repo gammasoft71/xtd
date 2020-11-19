@@ -49,7 +49,7 @@ namespace {
       picture_box_error_.image(xtd::drawing::system_images::from_name("dialog-error", xtd::drawing::size(64, 64)));
       
       label_exception_.location({85, 10});
-      label_exception_.flat_style(xtd::forms::flat_style::system);
+      //label_exception_.flat_style(xtd::forms::flat_style::system);
       label_exception_.size({455, 95});
       label_exception_.text_align(content_alignment::top_left);
       auto text_m = strings::format("Unhandled exception occured in your application. If you click\nContinue, the application will ignore this error and attempt to continue.\nIf you click Quit, the application will close immediately.\n\n{}", exception_ ? exception_->what() : "(Unknown exception)");
@@ -149,53 +149,12 @@ namespace {
     }
     
     std::string generate_compiler_report() const {
-      enum class compilator_id {unknown = -1, microsoft_visual_studio = 0, gcc = 1, clang = 2};
-      enum class compilator_mode {release = 0, debug = 1};
-      class compilator_info final static_ {
-      public:
-        static string name() {
-          switch (id()) {
-            case compilator_id::microsoft_visual_studio: return "Microsoft Visual Studio";
-            case compilator_id::gcc: return "gcc";
-            case compilator_id::clang: return "clang";
-            case compilator_id::unknown: return "<Unknown>";
-            default: return "<Unknown>";
-          }
-        }
-        
-#if __clang__
-        static xtd::version version() {return xtd::version(__clang_major__ , __clang_minor__, __clang_patchlevel__);}
-#elif __GNUC__
-        static xtd::version version() {return xtd::version(__GNUC__ , __GNUC_MINOR__, __GNUC_PATCHLEVEL__);}
-#elif _MSC_VER
-        static xtd::version version() {return xtd::version(_MSC_VER/100, _MSC_VER%100, 0);}
-#else
-        static xtd::version version() {return xtd::version(0, 0, 0);}
-#endif
-#if __clang__
-        static compilator_id id() {return compilator_id::clang;}
-#elif __GNUC__
-        static compilator_id id() {return compilator_id::gcc;}
-#elif _MSC_VER
-        static compilator_id id() {return compilator_id::microsoft_visual_studio;}
-#else
-        static compilator_id id() {return compilator_id::unknown;}
-#endif
-        
-#if NDEBUG
-        static compilator_mode mode() {return compilator_mode::release;}
-#else
-        static compilator_mode mode() {return compilator_mode::debug;}
-#endif
-        static bool is_debug_mode() { return mode() == compilator_mode::debug; }
-      };
-
       std::string report = strings::format("{0} Compiler {0}{1}", std::string(14, '*'), environment::new_line());
-      report += strings::format("{0}{1}", compilator_info::name(), environment::new_line());
-      report += strings::format("    Version : {0}{1}", compilator_info::version(), environment::new_line());
-      report += strings::format("    ID : {0}{1}", static_cast<int32_t>(compilator_info::id()), environment::new_line());
-      report += strings::format("    Mode : {0}{1}", compilator_info::is_debug_mode() ? "Debug" : "Release", environment::new_line());
-      report += strings::format("    Is 64 bits : {0}{1}", environment::is_64_bit_process(), environment::new_line());
+      report += strings::format("{0}{1}", environment::compiler_version().to_string(), environment::new_line());
+      report += strings::format("    Version : {0}{1}", environment::compiler_version().version(), environment::new_line());
+      report += strings::format("    ID : {0}{1}", environment::compiler_version().compiler_id(), environment::new_line());
+      report += strings::format("    Mode : {0}{1}", environment::compiler_version().is_build_type_debug() ? "Debug" : "Release", environment::new_line());
+      report += strings::format("    Is 64 bits : {0}{1}", environment::compiler_version().is_64_bit(), environment::new_line());
       report += environment::new_line();
       return report;
     }

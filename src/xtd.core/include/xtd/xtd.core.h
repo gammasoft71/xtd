@@ -29,6 +29,8 @@
 #include "bit_converter.h"
 #include "block_scope.h"
 #include "cdebug.h"
+#include "compiler.h"
+#include "compiler_id.h"
 #include "console.h"
 #include "console_cancel_event_handler.h"
 #include "cpp_standard.h"

@@ -31,8 +31,11 @@ add_sources(
   include/xtd/beep.h
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
+  include/xtd/build_type.h
   include/xtd/caller_info.h
   include/xtd/cdebug.h
+  include/xtd/compiler.h
+  include/xtd/compiler_id.h
   include/xtd/console.h
   include/xtd/console_cancel_event_args.h
   include/xtd/console_cancel_event_handler.h
