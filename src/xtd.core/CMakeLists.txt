@@ -32,6 +32,7 @@ add_sources(
   include/xtd/bit_converter.h
   include/xtd/block_scope.h
   include/xtd/caller_info.h
+  include/xtd/cdebug.h
   include/xtd/console.h
   include/xtd/console_cancel_event_args.h
   include/xtd/console_cancel_event_handler.h
@@ -40,7 +41,7 @@ add_sources(
   include/xtd/console_key_info.h
   include/xtd/console_modifiers.h
   include/xtd/console_special_key.h
-  include/xtd/cdebug.h
+  include/xtd/cpp_standard.h
   include/xtd/ctrace.h
   include/xtd/debugstreambuf.h
   include/xtd/delegate.h
@@ -82,6 +83,7 @@ add_sources(
   include/xtd/platform_not_supported_exception.h
   include/xtd/predicate.h
   include/xtd/reset_color.h
+  include/xtd/standard_id.h
   include/xtd/startup.h
   include/xtd/static.h
   include/xtd/string_comparison.h

@@ -10,6 +10,7 @@
 #include <xtd/strings.h>
 
 #include "__opaque_environment.h"
+#include "cpp_standard.h"
 #include "environment_variable_target.h"
 #include "guid.h"
 #include "operating_system.h"
@@ -197,6 +198,13 @@ namespace xtd {
     /// @remarks The program name can include path information, but is not required to do so. Use the get_command_line_args method to retrieve the command-line information parsed and stored in an array of strings.
     /// @remarks The maximum size of the command-line buffer is not set to a specific number of characters; it varies depending on the operating system that is running on the computer.
     static std::string command_line() noexcept {return xtd::strings::join(" ", get_command_line_args());}
+    
+    /// @brief Gets an cpp_standard object that contains the current c++ standard identifier and version number.
+    /// @return An object that contains the c++ standard identifier and version number.
+    static xtd::cpp_standard cpp_version() noexcept {
+      static xtd::cpp_standard cpp_standard;
+      return cpp_standard;
+    }
     
     /// @brief Gets the fully qualified path of the current working directory.
     /// @return std::sgtring A string containing a directory path.

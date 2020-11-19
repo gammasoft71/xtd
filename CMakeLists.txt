@@ -11,6 +11,7 @@ option(XTD_ENABLE_INSTALL_EXAMPLES "Enable install examples" ON)
 option(XTD_ENABLE_INSTALL_RESOURCES "Enable install resources" ON)
 option(XTD_BUILD_SHARED_LIBRARIES "Build shared libraries" OFF)
 option(XTD_ENABLE_TESTS "Enable tests" OFF)
+add_definitions(-D__XTD_INSTALL_PATH__="${CMAKE_INSTALL_PREFIX}")
 add_definitions(-D__XTD_RESOURCES_PATH__="${CMAKE_INSTALL_PREFIX}")
 
 # incldue xtd_commands
