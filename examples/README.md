@@ -4,7 +4,7 @@
 
 ## xtd.core
 
-[xtd.cpre](xtd.core.examples/README.md) contains xtd.core library examples.
+[xtd.core](xtd.core.examples/README.md) contains xtd.core library examples.
 
 ## xtd.drawing
 
