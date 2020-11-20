@@ -20,6 +20,7 @@ namespace xtd {
             control()->SetForegroundColour(wxColour(xtd::drawing::system_colors::control_text().r(), xtd::drawing::system_colors::control_text().g(), xtd::drawing::system_colors::control_text().b(), xtd::drawing::system_colors::control_text().a()));
           }
 #endif
+          //static_cast<wxCollapsiblePane*>(control())->Layout();
           static_cast<wxCollapsiblePane*>(control())->Collapse(false);
           static_cast<wxCollapsiblePane*>(control())->Collapse(true);
         }
