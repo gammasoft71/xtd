@@ -34,8 +34,7 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
   return MessageBoxW(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(text.c_str()).c_str(), std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(caption.c_str()).c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 #pragma warning(pop)
 }
-//#elif !defined(__APPLE__)
-#else
+#elif !defined(__APPLE__)
 namespace {
   constexpr int32_t MB_BUTTONS_MASK = 0xF;
   constexpr int32_t MB_ICON_MASK = 0xF0;
@@ -89,20 +88,8 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
   return convert_to_dialog_result(dialog.ShowModal(), style);
 }
 
-#endif
-
 void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   native::application::initialize(); // Must be first
-#if !defined(__APPLE__)
   on_dialog_closed(show(control, text, caption, style, display_help_button));
-#else
-  if (!control) return on_dialog_closed(show(control, text, caption, style, display_help_button));
-  wxWindowPtr<wxMessageDialog> dialog(new wxMessageDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), {text.c_str(), wxMBConvUTF8()}, {caption.c_str(), wxMBConvUTF8()}, convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0)));
-  set_button_labels(*dialog, style);
-  dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [on_dialog_closed, dialog, style](wxWindowModalDialogEvent& event) {
-    on_dialog_closed(convert_to_dialog_result(event.GetReturnCode(), style));
-  });
-  dialog->SetParent(reinterpret_cast<control_handler*>(control)->control());
-  dialog->ShowWindowModal();
-#endif
 }
+#endif
