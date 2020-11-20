@@ -4,6 +4,7 @@ project(container_controls)
 find_package(xtd REQUIRED)
 
 add_projects(
+  collapsible_panel
   form
   group_box
   panel

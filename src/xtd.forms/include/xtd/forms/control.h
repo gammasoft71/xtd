@@ -430,7 +430,7 @@ namespace xtd {
       
       virtual int32_t right() const {return left() + width();}
 
-      virtual drawing::size size() const {return size_;}
+      virtual const drawing::size& size() const {return size_;}
       virtual control& size(const drawing::size& size) {
         if (get_state(state::client_size_setted) || size_ != size) {
           set_state(state::client_size_setted, false);
