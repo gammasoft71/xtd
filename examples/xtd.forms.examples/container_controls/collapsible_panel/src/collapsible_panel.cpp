@@ -1,5 +1,5 @@
 #define TRACE
-#include <vector>
+#include <list>
 #include <xtd/xtd.forms>
 
 using namespace std;
@@ -38,10 +38,15 @@ public:
     button_remove.location({10, 30});
     button_remove.text("Remove");
     button_remove.click += [&] {
+      if (control_items.size()) {
+        control_items.front()->parent(nullptr);
+        control_items.pop_front();
+      }
     };
 
     button_expand.parent(collapsible_panel1);
     button_expand.location({10, 60});
+    button_expand.checked(false);
     button_expand.text("Expand");
     button_expand.click += [&] {
       collapsible_panel2.expanded(!collapsible_panel2.expanded());
@@ -54,8 +59,8 @@ private:
   collapsible_panel collapsible_panel2;
   button button_add;
   button button_remove;
-  button button_expand;
-  vector<shared_ptr<control>> control_items;
+  toggle_button button_expand;
+  list<shared_ptr<control>> control_items;
 };
 
 int main() {
