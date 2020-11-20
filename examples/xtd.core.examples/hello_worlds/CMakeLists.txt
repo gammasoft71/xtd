@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(xtd.core.examples.hello_worlds)
+project(hello_worlds)
 find_package(xtd REQUIRED)
 
 add_projects(
