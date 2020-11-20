@@ -1,10 +1,10 @@
-# hello_world_diagnostics
+# hello_world_diagnostics2
 
 The classic first application "Hello, World!" with [xtd::ctrace](../../../../src/xtd.core/include/xtd/ctrace.h) class.
 
 ## Sources
 
-[src/hello_world_diagnostics.cpp](src/hello_world_diagnostics.cpp)
+[src/hello_world_diagnostics2.cpp](src/hello_world_diagnostics2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
