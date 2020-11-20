@@ -40,6 +40,29 @@ forms::create_params collapsible_panel::create_params() const {
   return create_params;
 }
 
+void collapsible_panel::on_control_added(const control_event_args& e) {
+  control::on_control_added(e);
+  if (expanded()) {
+    expanded(false);
+    expanded(true);
+  }
+}
+
+void collapsible_panel::on_control_removed(const control_event_args& e) {
+  control::on_control_removed(e);
+  /*
+  if (expanded()) {
+    expanded(false);
+    expanded(true);
+  }
+   */
+}
+
+void collapsible_panel::on_expanded_changed(const xtd::event_args& e) {
+  if (parent_) parent().value().get().perform_layout();
+  expanded_changed(*this, e);
+}
+
 void collapsible_panel::on_handle_created(const event_args& e) {
   control::on_handle_created(e);
   size(native::control::size(handle_));
