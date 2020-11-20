@@ -1,10 +1,11 @@
 #define TRACE
 #include <xtd/xtd.core>
 
-using namespace xtd::diagnostics;
+using namespace std;
+using namespace xtd;
 
 int main() {
-  trace::write_line("Hello, World!");
+  ctrace << "Hello, World!" << endl;
 }
 
 // This code can produces the following output debug:
