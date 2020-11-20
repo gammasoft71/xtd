@@ -1,6 +1,5 @@
 #define TRACE
 #include <xtd/xtd.core>
-#include <iostream>
 
 using namespace std;
 using namespace xtd;
