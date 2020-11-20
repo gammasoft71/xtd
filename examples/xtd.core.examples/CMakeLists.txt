@@ -32,13 +32,6 @@ add_projects(
   format
   format_with_order
   guid
-  hello_world_console
-  hello_world_console2
-  hello_world_console3
-  hello_world_diagnostics
-  hello_world_environment
-  hello_world_io
-  hello_world_strings
   interface
   interface2
   join
@@ -58,4 +51,8 @@ add_projects(
   wconsole2
 )
 
-add_projects(diagnostics)
+add_projects(
+  diagnostics
+  hello_worlds
+)
+
