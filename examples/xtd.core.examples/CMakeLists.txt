@@ -54,5 +54,6 @@ add_projects(
 add_projects(
   diagnostics
   hello_worlds
+  others
 )
 
