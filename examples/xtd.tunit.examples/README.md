@@ -6,7 +6,5 @@
 
 ## [Assert](assert/README.md)
 
-## [Assert](assert/README.md)
-
 ## [Others](others/README.md)
 
