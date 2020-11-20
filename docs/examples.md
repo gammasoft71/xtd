@@ -50,7 +50,7 @@ Hello, World!
 ### hello_world_form.cpp
 
 ```c++
-#include <xtd/xtd.forms>
+#include <xtd/xtd.xtd>
 
 using namespace xtd::forms;
 
