@@ -47,7 +47,7 @@ Hello, World!
 
 ## Forms
 
-### hello_world_forms.cpp
+### hello_world_form.cpp
 
 ```c++
 #include <xtd/xtd.forms>
@@ -63,7 +63,7 @@ int main() {
   };
 
   form form1;
-  form1.text("Hello world (message_box)");
+  form1.text("Hello world Form");
   form1.controls().push_back(button1);
 
   application::run(form1);
@@ -76,9 +76,9 @@ int main() {
 ```cmake
 cmake_minimum_required(VERSION 3.3)
 
-project(hello_world_forms)
+project(hello_world_form)
 find_package(xtd REQUIRED)
-add_sources(hello_world_forms.cpp)
+add_sources(hello_world_form.cpp)
 target_type(GUI_APPLICATION)
 ```
 
