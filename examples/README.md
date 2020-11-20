@@ -20,4 +20,4 @@
 
 ## xtd.cmake
 
-[xtd.core](xtd.cmake.examples/README.md) contains xtd.cmake extension examples.
+[xtd.cmake](xtd.cmake.examples/README.md) contains xtd.cmake extension examples.
