@@ -17,3 +17,7 @@
 ## xtd.tunit
 
 [xtd.tunit](xtd.tunit.examples/README.md) contains xtd.tunit library examples.
+
+## xtd.cmake
+
+[xtd.core](xtd.cmake.examples/README.md) contains xtd.cmake extension examples.
