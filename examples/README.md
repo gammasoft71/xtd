@@ -1,6 +1,6 @@
 # Examples
 
-[This folder](.) contains all examples used by xtd docmentation and more.
+[This folder](.) contains all examples used by [Reference Guide](https://codedocs.xyz/gammasoft71/xtd/) and more.
 
 ## xtd.core
 
