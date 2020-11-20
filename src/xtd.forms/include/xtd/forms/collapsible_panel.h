@@ -38,10 +38,11 @@ namespace xtd {
       
       drawing::size measure_control() const override;
       
-      void on_expanded_changed(const xtd::event_args& e) {
-        if (parent_) parent().value().get().perform_layout();
-        expanded_changed(*this, e);
-      }
+      void on_control_added(const control_event_args& e) override;
+      
+      void on_control_removed(const control_event_args& e) override;
+      
+      virtual void on_expanded_changed(const xtd::event_args& e);
 
       void on_handle_created(const event_args& e) override;
 
