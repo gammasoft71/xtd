@@ -12,46 +12,6 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 namespace {
-  static void message_box_add_buttons_ok(NSAlert *alert) {
-    [alert addButtonWithTitle:@"OK"];
-  }
-  
-  static void message_box_add_buttons_ok_cancel(NSAlert *alert) {
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
-  }
-  
-  static void message_box_add_buttons_abort_retry_ignore(NSAlert *alert) {
-    [alert addButtonWithTitle:@"Abort"];
-    [alert addButtonWithTitle:@"Retry"];
-    [alert addButtonWithTitle:@"Ignore"];
-  }
-  
-  static void message_box_add_buttons_yes_no_cancel(NSAlert *alert) {
-    [alert addButtonWithTitle:@"Yes"];
-    [alert addButtonWithTitle:@"No"];
-    [alert addButtonWithTitle:@"Cancel"];
-  }
-  
-  static void message_box_add_buttons_yes_no(NSAlert *alert) {
-    [alert addButtonWithTitle:@"Yes"];
-    [alert addButtonWithTitle:@"No"];
-  }
-  
-  static void message_box_add_buttons_retry_cancel(NSAlert *alert) {
-    [alert addButtonWithTitle:@"Retry"];
-    [alert addButtonWithTitle:@"Cancel"];
-  }
-
-  static void add_buttons(uint32_t style, NSAlert* alert) {
-    if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) message_box_add_buttons_retry_cancel(alert);
-    else if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) message_box_add_buttons_yes_no_cancel(alert);
-    else if ((style & MB_YESNO) == MB_YESNO) message_box_add_buttons_yes_no(alert);
-    else if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) message_box_add_buttons_abort_retry_ignore(alert);
-    else if ((style & MB_OKCANCEL) == MB_OKCANCEL) message_box_add_buttons_ok_cancel(alert);
-    else message_box_add_buttons_ok(alert);
-  }
-  
   static int convert_to_dialog_rsult(uint32_t style, NSModalResponse return_code) {
     int result = IDOK;
     if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) result = return_code == NSAlertFirstButtonReturn ? IDRETRY : IDCANCEL;
@@ -62,7 +22,7 @@ namespace {
     return result;
   }
 
-  static NSAlertStyle convert_to_icon(int32_t style) {
+  static NSAlertStyle convert_to_icon(uint32_t style) {
     if ((style & MB_ICONINFORMATION) == MB_ICONINFORMATION) return NSAlertStyleInformational;
     if ((style & MB_ICONEXCLAMATION) == MB_ICONEXCLAMATION) return NSAlertStyleCritical;
     if ((style & MB_ICONQUESTION) == MB_ICONQUESTION) return NSAlertStyleInformational;
@@ -71,8 +31,25 @@ namespace {
   }
   
   static NSAlert* create_alert(const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
-    NSAlert *alert = [[NSAlert alloc] init];
-    add_buttons(style, alert);
+    NSAlert* alert = [[NSAlert alloc] init];
+    if ((style & MB_RETRYCANCEL) == MB_RETRYCANCEL) {
+      [alert addButtonWithTitle:@"Retry"];
+      [alert addButtonWithTitle:@"Cancel"];
+    } else if ((style & MB_YESNOCANCEL) == MB_YESNOCANCEL) {
+      [alert addButtonWithTitle:@"Yes"];
+      [alert addButtonWithTitle:@"No"];
+      [alert addButtonWithTitle:@"Cancel"];
+    } else if ((style & MB_YESNO) == MB_YESNO) {
+      [alert addButtonWithTitle:@"Yes"];
+      [alert addButtonWithTitle:@"No"];
+    } else if ((style & MB_ABORTRETRYIGNORE) == MB_ABORTRETRYIGNORE) {
+      [alert addButtonWithTitle:@"Abort"];
+      [alert addButtonWithTitle:@"Retry"];
+      [alert addButtonWithTitle:@"Ignore"];
+    } else if ((style & MB_OKCANCEL) == MB_OKCANCEL) {
+      [alert addButtonWithTitle:@"OK"];
+      [alert addButtonWithTitle:@"Cancel"];
+    } else [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:[NSString stringWithUTF8String:caption.c_str()]];
     [alert setInformativeText:[NSString stringWithUTF8String:text.c_str()]];
     [alert setAlertStyle:convert_to_icon(style)];
@@ -90,7 +67,7 @@ namespace {
 
 int32_t message_box::show(intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
-    NSAlert *alert = create_alert(text, caption, style, display_help_button);
+    NSAlert* alert = create_alert(text, caption, style, display_help_button);
     return convert_to_dialog_rsult(style, [alert runModal]);
   }
 }
@@ -98,8 +75,7 @@ int32_t message_box::show(intptr_t control, const std::string& text, const std::
 void message_box::show_sheet(xtd::delegate<void(int)> on_dialog_closed, intptr_t control, const std::string& text, const std::string& caption, uint32_t style, bool display_help_button) {
   @autoreleasepool {
     NSAlert *alert = create_alert(text, caption, style, display_help_button);
-    [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler:
-     ^(NSModalResponse return_code) {
+    [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler:^(NSModalResponse return_code) {
       on_dialog_closed(convert_to_dialog_rsult(style, return_code));
     }];
   }

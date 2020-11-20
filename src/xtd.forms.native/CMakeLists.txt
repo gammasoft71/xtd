@@ -26,6 +26,7 @@ add_sources(
   include/xtd/forms/native/checked_list_box.h
   include/xtd/forms/native/choice.h
   include/xtd/forms/native/class_styles.h
+  include/xtd/forms/native/collapsible_panel.h
   include/xtd/forms/native/color_dialog.h
   include/xtd/forms/native/color_picker.h
   include/xtd/forms/native/combo_box.h

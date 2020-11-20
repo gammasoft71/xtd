@@ -37,6 +37,7 @@
 #include "xtd/forms/checked_list_box.h"
 #include "xtd/forms/choice.h"
 #include "xtd/forms/close_reason.h"
+#include "xtd/forms/collapsible_panel.h"
 #include "xtd/forms/color_dialog.h"
 #include "xtd/forms/color_picker.h"
 #include "xtd/forms/combo_box.h"

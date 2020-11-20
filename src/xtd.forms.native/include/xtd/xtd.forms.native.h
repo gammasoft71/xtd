@@ -17,6 +17,7 @@
 #include "forms/native/checked_list_box.h"
 #include "forms/native/choice.h"
 #include "forms/native/class_styles.h"
+#include "forms/native/collapsible_panel.h"
 #include "forms/native/color_dialog.h"
 #include "forms/native/color_picker.h"
 #include "forms/native/combo_box.h"

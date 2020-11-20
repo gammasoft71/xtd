@@ -28,6 +28,7 @@ add_sources(
   include/xtd/forms/native/wxwidgets/wx_check_box.h
   include/xtd/forms/native/wxwidgets/wx_checked_list_box.h
   include/xtd/forms/native/wxwidgets/wx_choice.h
+  include/xtd/forms/native/wxwidgets/wx_collapsible_panel.h
   include/xtd/forms/native/wxwidgets/wx_color_picker.h
   include/xtd/forms/native/wxwidgets/wx_combo_box.h
   include/xtd/forms/native/wxwidgets/wx_command_link_button.h
@@ -60,6 +61,7 @@ add_sources(
   src/xtd/forms/native/wxwidgets/check_box.cpp
   src/xtd/forms/native/wxwidgets/checked_list_box.cpp
   src/xtd/forms/native/wxwidgets/choice.cpp
+  src/xtd/forms/native/wxwidgets/collapsible_panel.cpp
   src/xtd/forms/native/wxwidgets/color_dialog.cpp
   src/xtd/forms/native/wxwidgets/color_picker.cpp
   src/xtd/forms/native/wxwidgets/combo_box.cpp
