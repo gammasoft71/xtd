@@ -5,7 +5,6 @@
 using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   ctrace << "Hello, World!" << endl;
 }
