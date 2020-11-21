@@ -30,6 +30,19 @@
 * [Applications](xtd.forms.examples/applications/README.md) contains applications examples.
 * [Common Controls](xtd.forms.examples/common_controls/README.md) contains common controls examples.
 * [Picker Controls](xtd.forms.examples/picker_controls/README.md) contains picker controls examples.
+* [Container Controls](xtd.forms.examples/container_controls/README.md) contains container controls examples.
+* [Controls](xtd.forms.examples/controls/README.md) contains controls examples.
+* [Custom Controls](xtd.forms.examples/coustom_controls/README.md) contains custom controls examples.
+* [Menus and Toolbars](xtd.forms.examples/menus_and_toolbars/README.md) contains menus and toolbars examples.
+* [Datas](xtd.forms.examples/datas/README.md) contains datas examples.
+* [Components](xtd.forms.examples/components/README.md) contains components examples.
+* [Printing](xtd.forms.examples/datas/README.md) contains printing examples.
+* [Common Dialogs](xtd.forms.examples/common_dialogs/README.md) contains common dialogs examples.
+* [Dialogs](xtd.forms.examples/dialogs/README.md) contains dialogs examples.
+* [Custom dialogs](xtd.forms.examples/custom_dialogs/README.md) contains custom dialogs examples.
+* [Others](xtd.forms.examples/others/README.md) contains others examples.
+* [Games](xtd.forms.examples/games/README.md) contains games examples.
+* [Tutorial](xtd.forms.examples/tutorial/README.md) contains tutorial.
 
 ## [xtd.tunit](xtd.tunit.examples/README.md)
 
