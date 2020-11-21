@@ -1,10 +1,7 @@
 #include <xtd/xtd.core>
-#include <vector>
 
-using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   console::background_color(console_color::dark_blue);
   console::write_line("                    ");
@@ -50,13 +47,6 @@ int main() {
 }
 
 // This code produces the following output with colors:
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
