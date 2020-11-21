@@ -4,7 +4,7 @@ Shows how to use [xtd::console::background_color](../../../../src/xtd.core/inclu
 
 ## Sources
 
-[src/console_background_color2.cpp](src/console_background_color.cpp)
+[src/console_background_color2.cpp](src/console_background_color2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
