@@ -4,7 +4,6 @@
 using namespace std;
 using namespace xtd;
 
-// The main entry point for the application.
 int main() {
   console::out << "Hello ";
   console::out << "World!" << endl;
