@@ -33,35 +33,35 @@ namespace xtd {
       test(const std::string& name, const std::function<void()>& method, const xtd::tunit::line_info& caller) noexcept : test(name, method, false, caller) {}
       test(const std::string& name, const std::function<void()>& method, bool ignore, const xtd::tunit::line_info& info) noexcept :  info_(info), method_(method), name_(name), status_(ignore ? test_status::ignored : test_status::not_started) {}
       
-      bool aborted() const noexcept {return this->status_ == test_status::aborted;}
+      bool aborted() const noexcept {return status_ == test_status::aborted;}
       
-      const std::string& actual() const noexcept {return this->actual_;}
+      const std::string& actual() const noexcept {return actual_;}
       
-      const std::string& expect() const noexcept {return this->expect_;}
+      const std::string& expect() const noexcept {return expect_;}
       
-      bool failed() const noexcept {return this->status_ == test_status::failed;}
+      bool failed() const noexcept {return status_ == test_status::failed;}
       
-      bool ignored() const noexcept {return this->status_ == test_status::ignored;}
+      bool ignored() const noexcept {return status_ == test_status::ignored;}
       
-      bool not_started() const noexcept {return this->status_ == test_status::not_started;}
+      bool not_started() const noexcept {return status_ == test_status::not_started;}
       
-      bool succeed() const noexcept {return this->status_ == test_status::succeed;}
+      bool succeed() const noexcept {return status_ == test_status::succeed;}
       
-      const xtd::tunit::line_info line_info() const noexcept {return this->info_;}
+      const xtd::tunit::line_info line_info() const noexcept {return info_;}
       
-      std::function<void()> method() const noexcept {return this->method_;}
+      std::function<void()> method() const noexcept {return method_;}
       
-      const std::string& message() const noexcept {return this->message_;}
+      const std::string& message() const noexcept {return message_;}
       
-      const std::string& name() const noexcept {return this->name_;}
+      const std::string& name() const noexcept {return name_;}
       
-      const std::string& user_message() const noexcept {return this->user_message_;}
+      const std::string& user_message() const noexcept {return user_message_;}
       
       std::chrono::milliseconds elapsed_time() const noexcept {
         using namespace std::chrono_literals;
-        if (this->start_time_point.time_since_epoch() == 0ms && this->end_time_point.time_since_epoch() == 0ms) return 0ms;
-        if (this->end_time_point.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->start_time_point);
-        return std::chrono::duration_cast<std::chrono::milliseconds>(this->end_time_point - this->start_time_point);
+        if (start_time_point.time_since_epoch() == 0ms && end_time_point.time_since_epoch() == 0ms) return 0ms;
+        if (end_time_point.time_since_epoch() == 0ms) return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start_time_point);
+        return std::chrono::duration_cast<std::chrono::milliseconds>(end_time_point - start_time_point);
       }
 
     private:

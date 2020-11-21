@@ -8,56 +8,56 @@ using namespace xtd::tunit;
 class gtest_event_listener final : public event_listener {
 private:
   void on_unit_test_start(const xtd::tunit::tunit_event_args& e) const override {
-    this->event_listener::on_unit_test_start(e);
+    event_listener::on_unit_test_start(e);
     cout << "[==========] Running " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case." << endl;
   }
   
   //void on_unit_test_initialize_start(const xtd::tunit::tunit_event_args& e) const override {
-  //  this->event_listener::on_unit_test_initialize_start(e);
+  //  event_listener::on_unit_test_initialize_start(e);
   //}
   
   void on_unit_test_initialize_end(const xtd::tunit::tunit_event_args& e) const override {
-    this->event_listener::on_unit_test_initialize_end(e);
+    event_listener::on_unit_test_initialize_end(e);
     cout << "[----------] Global test environment set-up." << endl;
   }
   
   void on_class_start(const xtd::tunit::class_event_args& e) const override {
-    this->event_listener::on_class_start(e);
+    event_listener::on_class_start(e);
     cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << endl;
   }
   
   //void on_class_initialize_start(const xtd::tunit::class_event_args& e) const override {
-  //  this->event_listener::on_class_initialize_start(e);
+  //  event_listener::on_class_initialize_start(e);
   //}
   
   //void on_class_initialize_end(const xtd::tunit::class_event_args& e) const override {
-  //  this->event_listener::on_class_initialize_end(e);
+  //  event_listener::on_class_initialize_end(e);
   //}
   
   //void on_test_initialize_start(const xtd::tunit::test_event_args& e) const override {
-  //  this->event_listener::on_test_initialize_start(e);
+  //  event_listener::on_test_initialize_start(e);
   //}
   
   //void on_test_initialize_end(const xtd::tunit::test_event_args& e) const override {
-  //  this->event_listener::on_test_initialize_end(e);
+  //  event_listener::on_test_initialize_end(e);
   //}
   
   void on_test_start(const xtd::tunit::test_event_args& e) const override {
-    this->event_listener::on_test_start(e);
+    event_listener::on_test_start(e);
     cout << "[ RUN      ] " << e.test_class().name() << "." << e.test().name() << endl;
   }
   
   void on_test_succeed(const xtd::tunit::test_event_args& e) const override {
-    this->event_listener::on_test_succeed(e);
+    event_listener::on_test_succeed(e);
     cout << "[       OK ] " << e.test_class().name() << "." << e.test().name() << " (" << e.test().elapsed_time().count() << " ms)" << endl;
   }
   
   //void on_test_aborted(const xtd::tunit::test_event_args& e) const override {
-  //  this->event_listener::on_test_aborted(e);
+  //  event_listener::on_test_aborted(e);
   //}
 
   void on_test_failed(const xtd::tunit::test_event_args& e) const override {
-    this->event_listener::on_test_failed(e);
+    event_listener::on_test_failed(e);
     cout << e.test().line_info().file_path() << ":" << e.test().line_info().line_number() << ": Failure" << endl;
     if (e.test().actual() != "") cout << "  Actual: " << e.test().actual() << endl;
     if (e.test().expect() != "") cout << "Expected: " << e.test().expect() << endl;
@@ -66,45 +66,45 @@ private:
   }
   
   //void on_test_ignored(const xtd::tunit::test_event_args& e) const override {
-  //  this->event_listener::on_test_ignored(e);
+  //  event_listener::on_test_ignored(e);
   //}
 
   //void on_test_end(const xtd::tunit::test_event_args& e) const override {
-  //  this->event_listener::on_test_end(e);
+  //  event_listener::on_test_end(e);
   //}
 
   //void on_test_cleanup_start(const xtd::tunit::test_event_args& e) const override {
-  //  this->event_listener::on_test_cleanup_start(e);
+  //  event_listener::on_test_cleanup_start(e);
   //}
   
   //void on_test_cleanup_end(const xtd::tunit::test_event_args& e) const override {
-  //  this->event_listener::on_test_cleanup_end(e);
+  //  event_listener::on_test_cleanup_end(e);
   //}
  
   //void on_class_cleanup_start(const xtd::tunit::class_event_args& e) const override {
-  //  this->event_listener::on_class_cleanup_start(e);
+  //  event_listener::on_class_cleanup_start(e);
   //}
   
   //void on_class_cleanup_end(const xtd::tunit::class_event_args& e) const override {
-  //  this->event_listener::on_class_cleanup_end(e);
+  //  event_listener::on_class_cleanup_end(e);
   //}
   
   void on_class_end(const xtd::tunit::class_event_args& e) const override {
-    this->event_listener::on_class_end(e);
+    event_listener::on_class_end(e);
     cout << "[----------] " << e.test_class().test_count() << " tests from " << e.test_class().name() << " (" << e.test_class().elapsed_time().count() << " ms)" << endl;
   }
 
   //void on_unit_test_cleanup_start(const xtd::tunit::tunit_event_args& e) const override {
-  //  this->event_listener::on_unit_test_cleanup_start(e);
+  //  event_listener::on_unit_test_cleanup_start(e);
   //}
   
   void on_unit_test_cleanup_end(const xtd::tunit::tunit_event_args& e) const override {
-    this->event_listener::on_unit_test_cleanup_end(e);
+    event_listener::on_unit_test_cleanup_end(e);
     cout << endl << "[----------] Global test environment tear-down" << endl;
   }
 
   void on_unit_test_end(const xtd::tunit::tunit_event_args& e) const override {
-    this->event_listener::on_unit_test_end(e);
+    event_listener::on_unit_test_end(e);
     cout << "[==========] " << e.unit_test().test_count() << " tests from " << e.unit_test().test_cases_count() << " test case ran. (" << e.unit_test().elapsed_time().count() << " ms total)" << endl;
     cout << "[  PASSED  ] " << e.unit_test().succeed_test_count() << " tests." << endl;
     if (e.unit_test().failed_test_count()) {

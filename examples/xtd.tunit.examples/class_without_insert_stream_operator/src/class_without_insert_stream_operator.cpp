@@ -9,10 +9,10 @@ namespace unit_tests {
     class_without_insert_stream_operator() = default;
     explicit class_without_insert_stream_operator(int value) : value_(value) {}
     
-    int value() const noexcept {return this->value_;}
+    int value() const noexcept {return value_;}
     
-    bool operator==(const class_without_insert_stream_operator& c) const noexcept {return this->value_ == c.value_;}
-    bool operator!=(const class_without_insert_stream_operator& c) const noexcept {return !this->operator==(c);}
+    bool operator==(const class_without_insert_stream_operator& c) const noexcept {return value_ == c.value_;}
+    bool operator!=(const class_without_insert_stream_operator& c) const noexcept {return !operator==(c);}
 
   private:
     int value_ = 0;

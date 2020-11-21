@@ -26,7 +26,7 @@ namespace xtd {
 
       /// @brief Returns a string that represents the current assert_error.
       /// @return string A string that represents the current assert_error.
-      const char* what() const noexcept {return this->message_.c_str();}
+      const char* what() const noexcept {return message_.c_str();}
       
     private:
       std::string message_;

@@ -44,7 +44,7 @@ namespace examples {
       
       text_box.location({20, 90});
       text_box.text_changed += [&] {
-        this->wiggly.text(text_box.text());
+        wiggly.text(text_box.text());
       };
       text_box.text("Habemus papam");
       text_box.width(290);
