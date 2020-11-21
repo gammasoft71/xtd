@@ -520,7 +520,7 @@ namespace xtd {
       public:
         auto_delete_char_pointer(char* value) : value_(value) {}
         ~auto_delete_char_pointer() {free(value_);}
-        char* operator()() const {return this->value_;}
+        char* operator()() const {return value_;}
       private:
         char* value_;
       };

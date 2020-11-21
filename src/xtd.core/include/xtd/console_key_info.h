@@ -20,8 +20,8 @@ namespace xtd {
     /// @cond
     console_key_info(const console_key_info& key_info) noexcept = default;
     console_key_info& operator=(const console_key_info& key_info) noexcept = default;
-    bool operator==(const console_key_info& key_info) const noexcept {return this->key_char_ == key_info.key_char_ && this->key_ == key_info.key_ && this->modifiers_ == key_info.modifiers_;}
-    bool operator!=(const console_key_info& key_info) const noexcept {return !this->operator==(key_info);}
+    bool operator==(const console_key_info& key_info) const noexcept {return key_char_ == key_info.key_char_ && key_ == key_info.key_ && modifiers_ == key_info.modifiers_;}
+    bool operator!=(const console_key_info& key_info) const noexcept {return !operator==(key_info);}
     /// @endcond
     
     /// @brief Initializes a new instance of the console_key_info class using the specified character, console key, and modifier keys.
@@ -34,24 +34,24 @@ namespace xtd {
     /// @remarks The console_key_info type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
     console_key_info(char32_t key_char, console_key key, bool shift, bool alt, bool control) : key_char_(key_char), key_(key) {
       if (shift == true)
-        this->modifiers_ = (console_modifiers)((int)this->modifiers_ | (int)console_modifiers::shift);
+        modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::shift);
       if (alt == true)
-        this->modifiers_ = (console_modifiers)((int)this->modifiers_ | (int)console_modifiers::alt);
+        modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::alt);
       if (control == true)
-        this->modifiers_ = (console_modifiers)((int)this->modifiers_ | (int)console_modifiers::control);
+        modifiers_ = (console_modifiers)((int)modifiers_ | (int)console_modifiers::control);
     }
     
     /// @brief Gets the console key represented by the current console_key_info object.
     /// @param A console_key value that identifies the console key that was pressed
-    console_key key() {return this->key_;}
+    console_key key() {return key_;}
     
     /// @brief Gets the Unicode character represented by the current console_key_info object.
     /// @param An char32 object that corresponds to the console key represented by the current console_key_info object.
-    char32_t key_char() {return this->key_char_;}
+    char32_t key_char() {return key_char_;}
     
     /// @brief Gets a bitwise combination of console_modifiers values that specifies one or more modifier keys pressed simultaneously with the console key.
     /// @param A bitwise combination of console_modifiers values. There is no default value.
-    console_modifiers modifiers() {return this->modifiers_;}
+    console_modifiers modifiers() {return modifiers_;}
     
   private:
     char32_t key_char_ {0};

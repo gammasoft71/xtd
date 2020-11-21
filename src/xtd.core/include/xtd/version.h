@@ -23,22 +23,22 @@ namespace xtd {
     version(const version&) noexcept = default;
     version& operator=(const version&) noexcept = default;
     
-    bool operator==(const version& v) const noexcept {return this->major_ == v.major_ && this->minor_ == v.minor_ && this->build_ == v.build_ && this->revision_ == v.revision_;}
-    bool operator!=(const version& v) const noexcept {return !this->operator==(v);}
+    bool operator==(const version& v) const noexcept {return major_ == v.major_ && minor_ == v.minor_ && build_ == v.build_ && revision_ == v.revision_;}
+    bool operator!=(const version& v) const noexcept {return !operator==(v);}
     friend std::ostream& operator <<(std::ostream& os, const version& ver) noexcept {return os << ver.to_string();}
     /// @endcond
 
-    int build() const noexcept {return this->build_;}
+    int build() const noexcept {return build_;}
     
-    int major() const noexcept {return this->major_;}
+    int major() const noexcept {return major_;}
     
-    int16_t major_revision() const noexcept {return (int16_t)((this->revision_ & 0xFFFF0000) >> 16);}
+    int16_t major_revision() const noexcept {return (int16_t)((revision_ & 0xFFFF0000) >> 16);}
     
-    int minor() const noexcept {return this->minor_;}
+    int minor() const noexcept {return minor_;}
     
-    int16_t mainor_revision() const noexcept {return (int16_t)(this->revision_ & 0x0000FFFF);}
+    int16_t mainor_revision() const noexcept {return (int16_t)(revision_ & 0x0000FFFF);}
     
-    int revision() const noexcept {return this->revision_;}
+    int revision() const noexcept {return revision_;}
     
     static version parse(const std::string& ver) {
       std::regex rgx("\\.");
@@ -63,20 +63,20 @@ namespace xtd {
       }
     }
     
-    std::string to_string() const noexcept {return this->to_string(2 + (this->build_ != -1 ? 1 : 0) + (this->revision_ != -1 ? 1 : 0));}
+    std::string to_string() const noexcept {return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));}
     
     std::string to_string(size_t field_count) const {
-      if (field_count > 4 || (field_count >= 3 && this->build_ == -1) || (field_count == 4 && this->revision_ == -1))
+      if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1))
         throw std::invalid_argument("field_count invalid");
       std::stringstream result;
       if (field_count >= 1)
-        result << std::to_string(this->major_);
+        result << std::to_string(major_);
       if (field_count >= 2)
-        result << "." << std::to_string(this->minor_);
+        result << "." << std::to_string(minor_);
       if (field_count >= 3)
-        result << "." << std::to_string(this->build_);
+        result << "." << std::to_string(build_);
       if (field_count == 4)
-        result << "." << std::to_string(this->revision_);
+        result << "." << std::to_string(revision_);
       return result.str();
     }
     

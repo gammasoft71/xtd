@@ -26,15 +26,15 @@ namespace xtd {
     
     /// @brief Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process.
     /// @return true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
-    bool cancel() const {return this->cancel_;}
+    bool cancel() const {return cancel_;}
     
     /// @brief Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process.
     /// @param true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
-    void cancel(bool cancel) {this->cancel_ = cancel;}
+    void cancel(bool cancel) {cancel_ = cancel;}
     
     /// @brief Gets the combination of modifier and console keys that interrupted the current process.
     /// @return One of the enumeration values that specifies the key combination that interrupted the current process. There is no default value.
-    console_special_key special_key() const {return this->special_key_;}
+    console_special_key special_key() const {return special_key_;}
 
   private:
     bool cancel_ = false;

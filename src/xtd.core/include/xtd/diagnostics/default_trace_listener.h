@@ -15,37 +15,37 @@ namespace xtd {
     class default_trace_listener : public trace_listener {
     public:
       default_trace_listener() : trace_listener("default") {};
-      ~default_trace_listener() {this->flush();}
+      ~default_trace_listener() {flush();}
       
-      std::string log_file_name() const {return this->log_file_name_;}
-      void log_file_name(const std::string log_file_name) {this->log_file_name_ = log_file_name;}
+      std::string log_file_name() const {return log_file_name_;}
+      void log_file_name(const std::string log_file_name) {log_file_name_ = log_file_name;}
 
       void close() override {}
       void flush() override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (!this->message_line_.empty())
-          this->write_line("");
+        if (!message_line_.empty())
+          write_line("");
 #endif
       }
       
       using trace_listener::write;
       void write(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        if (this->need_indent())
-          this->write_indent();
-        this->message_line_ += message;
-        if (!this->log_file_name_.empty())
-          xtd::io::file::append_all_text(this->log_file_name_, message);
+        if (need_indent())
+          write_indent();
+        message_line_ += message;
+        if (!log_file_name_.empty())
+          xtd::io::file::append_all_text(log_file_name_, message);
 #endif
       }
       
       using trace_listener::write_line;
       void write_line(const std::string& message) override {
 #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
-        this->write(message + "\n");
-        this->write_to_output_debug(this->message_line_);
-        this->message_line_ = "";
-        this->need_indent(true);
+        write(message + "\n");
+        write_to_output_debug(message_line_);
+        message_line_ = "";
+        need_indent(true);
 #endif
       }
       

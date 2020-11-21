@@ -34,9 +34,9 @@ namespace xtd {
       /// @return DateTime A DateTime structure whose value is a date and time expressed in Coordinated Universal Time (UTC).
       /// @remarks The first time the property is accessed in an instance of the trace_event_cache class, the current time is returned. Subsequent queries of this property in that instance return that same DateTime value, allowing it to be used as a timestamp.
       clock::time_point date_time() const {
-        if (this->date_time_ == clock::time_point::min())
-          this->date_time_ = clock::now();
-        return this->date_time_;
+        if (date_time_ == clock::time_point::min())
+          date_time_ = clock::now();
+        return date_time_;
       }
       
       /// @brief Gets the correlation data, contained in a stack.
