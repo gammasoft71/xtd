@@ -19,6 +19,6 @@ xtdc run
 # Output (with colors)
 
 ```
-Hello,World!
+Hello, World!
 ```
 
